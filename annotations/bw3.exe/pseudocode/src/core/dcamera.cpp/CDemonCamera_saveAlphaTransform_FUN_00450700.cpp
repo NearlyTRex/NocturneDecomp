@@ -11,16 +11,18 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00450700(CDemonCamera *this_ptr,int alpha_index)
 
 {
-  int *piVar1;
+  uint *puVar1;
   byte bVar2;
-  int aiStack_ffc [1021];
+  int aiStack_ffc [1018];
+  CVector3i CStack_14;
   
   bVar2 = 0;
-  engine_matrix_c_getCameraOrigin_FUN_004e6a90();
-  piVar1 = (int *)((int)this_ptr + (uint)bVar2 * -8 + alpha_index * 0xc + 0x11f0);
-  this_ptr->alpha_translations[alpha_index].x = aiStack_ffc[0x3fa];
-  *piVar1 = aiStack_ffc[(uint)bVar2 * -2 + 0x3fb];
-  piVar1[(uint)bVar2 * -2 + 1] = aiStack_ffc[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x3fc];
+  engine_matrix_c_getCameraOrigin_FUN_004e6a90(&CStack_14);
+  puVar1 = (uint *)((int)this_ptr + (uint)bVar2 * -8 + alpha_index * 0xc + 0x11f0);
+  this_ptr->alpha_translations[alpha_index].x = CStack_14.x;
+  *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);
+  puVar1[(uint)bVar2 * -2 + 1] =
+       *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   this_ptr->alpha_transform_matrices[0][alpha_index] = _DAT_01c6e2fc;
   this_ptr->alpha_transform_matrices[1][alpha_index] = _DAT_01c6e300;
   this_ptr->alpha_transform_matrices[2][alpha_index] = _DAT_01c6e304;

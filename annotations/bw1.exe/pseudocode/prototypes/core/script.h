@@ -35,11 +35,11 @@ char * __cdecl parseConditionExpr(char **cursor,char *out_buffer);
 
 // Original: core_script.cpp_getActor_FUN_005433c0
 // Address: 005433c0
-CDemonActor * __cdecl getActor(char *param_1,undefined4 param_2);
+CDemonActor * __cdecl getActor(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class);
 
 // Original: core_script.cpp_getActionState_FUN_00543540
 // Address: 00543540
-int __cdecl getActionState(int param_1,char *param_2);
+int * __cdecl getActionState(SPlayerActionState *action_state,char *action_name);
 
 // Original: core_script.cpp_parseBodyPartMask_FUN_00543610
 // Address: 00543610
@@ -139,11 +139,11 @@ int __cdecl CScript::findDialogEntry(CScript *this_ptr,char *path);
 
 // Original: core_script.cpp_readActorReference_FUN_0054b320
 // Address: 0054b320
-void __cdecl readActorReference(undefined4 param_1,undefined4 *param_2);
+void __cdecl readActorReference(_FILE *file_handle,CDemonActor *actor_out);
 
 // Original: core_script.cpp_writeActorReference_FUN_0054b3a0
 // Address: 0054b3a0
-void __cdecl writeActorReference(undefined4 param_1,int *param_2);
+void __cdecl writeActorReference(_FILE *file_handle,CDemonActor **actor);
 
 // Original: core_script.cpp_CScript_loadState_FUN_0054b3e0
 // Address: 0054b3e0

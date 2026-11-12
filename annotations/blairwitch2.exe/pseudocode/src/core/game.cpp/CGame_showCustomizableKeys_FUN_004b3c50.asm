@@ -421,7 +421,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x28]      ; 004b40e9
     PUSH EDX                            ; 004b40ec
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b40ed
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b40f2
     PUSH EAX                            ; 004b40f5
     PUSH 0x5d7333                       ; 004b40f6 | s_s_s_005d7332+1
@@ -473,7 +473,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x2c]      ; 004b4191
     PUSH EDX                            ; 004b4194
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4195
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b419a
     PUSH EAX                            ; 004b419d
     PUSH 0x5d7333                       ; 004b419e | s_s_s_005d7332+1
@@ -530,7 +530,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x30]      ; 004b424d
     PUSH EDX                            ; 004b4250
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4251
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4256
     PUSH EAX                            ; 004b4259
     PUSH 0x5d7333                       ; 004b425a | s_s_s_005d7332+1
@@ -584,7 +584,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x34]      ; 004b42f7
     PUSH EDX                            ; 004b42fa
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b42fb
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4300
     PUSH EAX                            ; 004b4303
     PUSH 0x5d7333                       ; 004b4304 | s_s_s_005d7332+1
@@ -637,7 +637,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x38]      ; 004b43a1
     PUSH EDX                            ; 004b43a4
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b43a5
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b43aa
     PUSH EAX                            ; 004b43ad
     PUSH 0x5d7333                       ; 004b43ae | s_s_s_005d7332+1
@@ -689,7 +689,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x3c]      ; 004b4444
     PUSH EDX                            ; 004b4447
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4448
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b444d
     PUSH EAX                            ; 004b4450
     PUSH 0x5d7333                       ; 004b4451 | s_s_s_005d7332+1
@@ -742,7 +742,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x44]      ; 004b44ee
     PUSH EDX                            ; 004b44f1
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b44f2
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b44f7
     PUSH EAX                            ; 004b44fa
     PUSH 0x5d7333                       ; 004b44fb | s_s_s_005d7332+1
@@ -795,7 +795,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x40]      ; 004b4598
     PUSH EDX                            ; 004b459b
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b459c
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b45a1
     PUSH EAX                            ; 004b45a4
     PUSH 0x5d7333                       ; 004b45a5 | s_s_s_005d7332+1
@@ -847,7 +847,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x48]      ; 004b4641
     PUSH EDX                            ; 004b4644
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4645
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b464a
     PUSH EAX                            ; 004b464d
     PUSH 0x5d7333                       ; 004b464e | s_s_s_005d7332+1
@@ -900,7 +900,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x4c]      ; 004b46eb
     PUSH EDX                            ; 004b46ee
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b46ef
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b46f4
     PUSH EAX                            ; 004b46f7
     PUSH 0x5d7333                       ; 004b46f8 | s_s_s_005d7332+1
@@ -953,7 +953,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x50]      ; 004b4795
     PUSH EDX                            ; 004b4798
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4799
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b479e
     PUSH EAX                            ; 004b47a1
     PUSH 0x5d7333                       ; 004b47a2 | s_s_s_005d7332+1
@@ -1005,7 +1005,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x68]      ; 004b483e
     PUSH EDX                            ; 004b4841
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4842
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4847
     PUSH EAX                            ; 004b484a
     PUSH 0x5d7333                       ; 004b484b | s_s_s_005d7332+1
@@ -1058,7 +1058,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x74]      ; 004b48e8
     PUSH EDX                            ; 004b48eb
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b48ec
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b48f1
     PUSH EAX                            ; 004b48f4
     PUSH 0x5d7333                       ; 004b48f5 | s_s_s_005d7332+1
@@ -1111,7 +1111,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x78]      ; 004b4992
     PUSH EDX                            ; 004b4995
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4996
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b499b
     PUSH EAX                            ; 004b499e
     PUSH 0x5d7333                       ; 004b499f | s_s_s_005d7332+1
@@ -1163,7 +1163,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x7c]      ; 004b4a3b
     PUSH EDX                            ; 004b4a3e
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4a3f
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4a44
     PUSH EAX                            ; 004b4a47
     PUSH 0x5d7333                       ; 004b4a48 | s_s_s_005d7332+1
@@ -1216,7 +1216,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x80]      ; 004b4ae5
     PUSH EDX                            ; 004b4aeb
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4aec
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4af1
     PUSH EAX                            ; 004b4af4
     PUSH 0x5d7333                       ; 004b4af5 | s_s_s_005d7332+1
@@ -1269,7 +1269,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x84]      ; 004b4b92
     PUSH EDX                            ; 004b4b98
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4b99
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4b9e
     PUSH EAX                            ; 004b4ba1
     PUSH 0x5d7333                       ; 004b4ba2 | s_s_s_005d7332+1
@@ -1321,7 +1321,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x90]      ; 004b4c3e
     PUSH EDX                            ; 004b4c44
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4c45
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4c4a
     PUSH EAX                            ; 004b4c4d
     PUSH 0x5d7333                       ; 004b4c4e | s_s_s_005d7332+1
@@ -1374,7 +1374,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x94]      ; 004b4ceb
     PUSH EDX                            ; 004b4cf1
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4cf2
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4cf7
     PUSH EAX                            ; 004b4cfa
     PUSH 0x5d7333                       ; 004b4cfb | s_s_s_005d7332+1
@@ -1427,7 +1427,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x98]      ; 004b4d98
     PUSH EDX                            ; 004b4d9e
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4d9f
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4da4
     PUSH EAX                            ; 004b4da7
     PUSH 0x5d7333                       ; 004b4da8 | s_s_s_005d7332+1
@@ -1479,7 +1479,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x9c]      ; 004b4e44
     PUSH EDX                            ; 004b4e4a
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4e4b
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4e50
     PUSH EAX                            ; 004b4e53
     PUSH 0x5d7333                       ; 004b4e54 | s_s_s_005d7332+1
@@ -1532,7 +1532,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0xa0]      ; 004b4ef1
     PUSH EDX                            ; 004b4ef7
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4ef8
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4efd
     PUSH EAX                            ; 004b4f00
     PUSH 0x5d7333                       ; 004b4f01 | s_s_s_005d7332+1
@@ -1585,7 +1585,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0xa4]      ; 004b4f9e
     PUSH EDX                            ; 004b4fa4
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b4fa5
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b4faa
     PUSH EAX                            ; 004b4fad
     PUSH 0x5d7333                       ; 004b4fae | s_s_s_005d7332+1
@@ -1637,7 +1637,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0xaf0]     ; 004b504a
     PUSH EDX                            ; 004b5050
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b5051
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b5056
     PUSH EAX                            ; 004b5059
     PUSH 0x5d7333                       ; 004b505a | s_s_s_005d7332+1
@@ -1685,7 +1685,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x30]      ; 004b50dc
     PUSH EDX                            ; 004b50df
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b50e0
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b50e5
     PUSH EAX                            ; 004b50e8
     PUSH 0x5d7333                       ; 004b50e9 | s_s_s_005d7332+1

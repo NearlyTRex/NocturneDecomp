@@ -43,11 +43,11 @@ void __cdecl CCharacter::setPositionAndOrientation(CCharacter *this_ptr,CVector3
 
 // Original: core_charactr.cpp_clampFloat_FUN_0042b920
 // Address: 0042b920
-float clampFloat(float param_1,float param_2);
+float __cdecl clampFloat(float value,float limit);
 
 // Original: core_charactr.cpp_FUN_0042b970
 // Address: 0042b970
-float FUN_0042b970(undefined4 param_1,float param_2);
+float FUN_0042b970(float param_1,float param_2);
 
 // Original: core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 // Address: 0042b9e0
@@ -73,9 +73,9 @@ void __cdecl FUN_0042c230(CCharacter *this_ptr,CVector3f *velocity);
 // Address: 0042ccf0
 int __cdecl CCharacter::isOnGround(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042cd30
+// Original: core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 // Address: 0042cd30
-void __cdecl FUN_0042cd30(CCharacter *this_ptr);
+void __cdecl CCharacter::preProcess(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_0042cd70
 // Address: 0042cd70
@@ -175,7 +175,7 @@ CBoundingBox3D * __cdecl CCharacter::getBoundingBox(CCharacter *this_ptr,CBoundi
 
 // Original: core_charactr.cpp_FUN_0042ff70
 // Address: 0042ff70
-void FUN_0042ff70(int param_1);
+void FUN_0042ff70(CDemonActor *param_1);
 
 // Original: core_charactr.cpp_FUN_0042ffe0
 // Address: 0042ffe0

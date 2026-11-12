@@ -32,7 +32,7 @@
 ;   core_turret.cpp_CTurret_updatePatrol_FUN_0057fa00
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_memory.c___arrinit_FUN_005b7f5f
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -182,8 +182,8 @@ section .text
     PUSH 0x5ed7e7                       ; 0057f2ad | = "%s has no guard trigger!\n"
     MOV EBX,dword ptr [0x00609ed0]      ; 0057f2b2 | g_CConsolePtr
     PUSH EBX                            ; 0057f2b8 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0057f2b9
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0057f2b9
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0057f2be
     MOV ESP,EBP                         ; 0057f2c1
     POP EBP                             ; 0057f2c3
@@ -241,7 +241,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0057f347
     PUSH EAX                            ; 0057f34b
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0057f34c
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0057f351
     MOV EDX,ESP                         ; 0057f354
     PUSH EDX                            ; 0057f356

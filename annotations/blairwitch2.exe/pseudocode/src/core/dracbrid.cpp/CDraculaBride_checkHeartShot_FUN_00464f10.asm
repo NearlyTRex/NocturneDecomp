@@ -17,7 +17,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     PUSH EDI                            ; 00464f4c | g_CConsoleInstance
     FSTP ST1                            ; 00464f4d
     FSTP float ptr [EAX + 0x4]          ; 00464f4f
-    CALL engine_console.cpp_FUN_00436710 ; 00464f52
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 00464f52
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00464f57
     POP EDI                             ; 00464f5a
     ADD ESP,0x8                         ; 00464f5b

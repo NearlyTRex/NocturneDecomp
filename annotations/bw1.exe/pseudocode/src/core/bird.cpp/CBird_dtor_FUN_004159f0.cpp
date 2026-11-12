@@ -19,7 +19,7 @@ CBird * core_bird_cpp_CBird_dtor_FUN_004159f0(CBird *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBirdTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBirdTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

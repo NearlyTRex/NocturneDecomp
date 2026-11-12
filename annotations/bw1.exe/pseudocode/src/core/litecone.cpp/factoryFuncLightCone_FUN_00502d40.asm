@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_litecone_cpp_factoryFuncLightCone_FUN_00502d40(void)
+; CLightCone * __cdecl core_litecone_cpp_factoryFuncLightCone_FUN_00502d40(void)
 ;
 ;
 ; Called Functions:

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_weather_cpp_FUN_0057bda0(CWeather *param_1)
@@ -23,13 +22,9 @@ void core_weather_cpp_FUN_0057bda0(CWeather *param_1)
   float local_54;
   float local_50;
   float local_4c;
-  uint local_48;
-  float local_44;
+  CVector3f local_48;
   float local_3c;
-  float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
+  float local_38 [4];
   int local_28;
   int local_24;
   float local_20;
@@ -38,10 +33,10 @@ void core_weather_cpp_FUN_0057bda0(CWeather *param_1)
   float local_14;
   
   bVar5 = 0;
-  local_30 = g_CGamePtr->delta_time_float;
-  local_20 = local_30;
+  local_38[2] = g_CGamePtr->delta_time_float;
+  local_20 = local_38[2];
   if (param_1->lightning_active != 0) {
-    fVar2 = param_1->flash_timer - local_30;
+    fVar2 = param_1->flash_timer - local_38[2];
     param_1->flash_timer = fVar2;
     if ((fVar2 < 0.0) ||
        (iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
@@ -53,15 +48,15 @@ void core_weather_cpp_FUN_0057bda0(CWeather *param_1)
     }
     else {
       local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
-      local_2c = (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_005d7933 - local_30
-      ;
-      if (local_2c < param_1->base_ambient) {
-        local_2c = param_1->base_ambient;
+      local_38[3] = (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_005d7933 -
+                    local_38[2];
+      if (local_38[3] < param_1->base_ambient) {
+        local_38[3] = param_1->base_ambient;
         param_1->lightning_active = 0;
         param_1->flash_timer = 0.0;
       }
       core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_0044f680
-                (&g_CDemonCameraInstance,local_2c);
+                (&g_CDemonCameraInstance,local_38[3]);
     }
   }
   if ((param_1->weather_type != WEATHER_TYPE_RAIN) && (param_1->weather_type != 5)) {
@@ -89,13 +84,12 @@ void core_weather_cpp_FUN_0057bda0(CWeather *param_1)
           *(float *)(&DAT_02d17d90 + iVar4) =
                local_14 * local_20 + *(float *)(&DAT_02d17d90 + iVar4);
           local_3c = *local_18 * local_20;
-          local_38 = local_18[1] * local_20;
-          local_34 = local_18[2] * local_20;
+          local_38[0] = local_18[1] * local_20;
+          local_38[1] = local_18[2] * local_20;
           local_54 = *local_18 * local_20;
-          *(uint *)((int)&stack0xffffffb0 + (uint)bVar5 * -8) =
-               *(uint *)((int)&stack0xffffffc8 + (uint)bVar5 * -8);
-          *(uint *)((int)&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-               *(uint *)((int)&stack0xffffffcc + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+          *(float *)((int)&stack0xffffffb0 + (uint)bVar5 * -8) = local_38[(uint)bVar5 * -2];
+          *(float *)((int)&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+               local_38[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
           *pfVar3 = *pfVar3 + local_54;
           pfVar3[1] = pfVar3[1] + local_50;
           pfVar3[2] = pfVar3[2] + local_4c;
@@ -113,17 +107,21 @@ void core_weather_cpp_FUN_0057bda0(CWeather *param_1)
           }
           if ((param_1->weather_type == WEATHER_TYPE_RAIN) || (param_1->weather_type == 5)) {
             fVar2 = *(float *)(local_24 + 0x2d1db48);
-            local_48 = *(uint *)(&DAT_02d0c208 + iVar4);
-            (&stack0xffffffbc)[(uint)bVar5 * 0xfffffffe] =
-                 (float)*(uint *)(&DAT_02d0c20c + (uint)bVar5 * -8 + iVar4);
-            *(uint *)(&stack0xffffffc0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+            local_48.x = *(float *)(&DAT_02d0c208 + iVar4);
+            *(uint *)((int)&local_48 + (uint)bVar5 * -8 + 4) =
+                 *(uint *)(&DAT_02d0c20c + (uint)bVar5 * -8 + iVar4);
+            *(uint *)((int)&local_48 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
                  *(uint *)
                   ((int)(&DAT_02d0c20c + (uint)bVar5 * -8 + iVar4) + ((uint)bVar5 * -2 + 1) * 4);
-            local_44 = fVar2;
-            core_fire_cpp_FUN_004a3f20(0x01C73654,&stack0xffffffb8,0);
-            core_fire_cpp_FUN_004a3f20(0x01C73654,&stack0xffffffb8,0);
-            core_fire_cpp_FUN_004a3f20(0x01C73654,&stack0xffffffb8,0);
-            core_fire_cpp_FUN_004a3f20(0x01C73654,&stack0xffffffb8,0);
+            local_48.y = fVar2;
+            core_fire_cpp_CFireEffect_createRainDrop_FUN_004a3f20
+                      (0x01C73654,&local_48,(CVector3f *)0x0);
+            core_fire_cpp_CFireEffect_createRainDrop_FUN_004a3f20
+                      (0x01C73654,&local_48,(CVector3f *)0x0);
+            core_fire_cpp_CFireEffect_createRainDrop_FUN_004a3f20
+                      (0x01C73654,&local_48,(CVector3f *)0x0);
+            core_fire_cpp_CFireEffect_createRainDrop_FUN_004a3f20
+                      (0x01C73654,&local_48,(CVector3f *)0x0);
           }
         }
         iVar4 = iVar4 + 0xc;

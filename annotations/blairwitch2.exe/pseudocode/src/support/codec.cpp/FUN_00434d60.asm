@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   support_codec.cpp_FUN_00434dd0 at 00434e0d
+;   support_codec.cpp_CCheesyCipher_process_FUN_00434dd0 at 00434e0d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_codec_cpp_005cd9d0

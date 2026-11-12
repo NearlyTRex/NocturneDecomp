@@ -118,7 +118,11 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
     afStack_c0[3] = afStack_54[0];
     fStack_b0 = afStack_54[1];
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_005b5200();
+  core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
+            (&CStack_124,
+             (CMatrix3x4f *)
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices[iStack_10].m,
+             (CMatrix3x4f *)&stack0xfffffe7c);
   puVar2 = (uint *)&stack0xfffffe7c;
   puVar5 = (uint *)&stack0xfffffeac;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

@@ -307,7 +307,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x14d144]  ; 00501ddd | g_CDemonSetInstance.collision_actor
     PUSH ECX                            ; 00501de3
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 00501de4
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00501de9
     MOV dword ptr [ESP + 0x1f8],EAX     ; 00501dec
     TEST EAX,EAX                        ; 00501df3
@@ -329,7 +329,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 00501e20 | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 00501e26
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 00501e27
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ECX,dword ptr [0x02c8ae44]      ; 00501e2c | g_CTriggerClassInfo.name_hash
     ADD ESP,0x8                         ; 00501e32
     MOV ESI,EAX                         ; 00501e35
@@ -338,7 +338,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x14d144]  ; 00501e3d | g_CDemonSetInstance.collision_actor
     PUSH EBX                            ; 00501e43
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 00501e44
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00501e49
     MOV EBX,EAX                         ; 00501e4c
     MOV dword ptr [ESP + 0x1e8],EAX     ; 00501e4e
@@ -477,8 +477,8 @@ section .text
     PUSH 0x5e6fd5                       ; 00501fd5 | = "%s in volume\n"
     MOV EDI,dword ptr [0x00611100]      ; 00501fda | g_CConsolePtr
     PUSH EDI                            ; 00501fe0 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00501fe1
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00501fe1
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     MOV EDX,dword ptr [0x01d06ab4]      ; 00501fe6 | DAT_01d06ab4
     MOV EDX,dword ptr [EDX*0x4 + 0x1d06aa4] ; 00501fec
     LEA ESI,[ESP + 0x15c]               ; 00501ff3

@@ -14,7 +14,7 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_dtor_FUN_00571a30(CSvetlana *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSvetlanaTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSvetlanaTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

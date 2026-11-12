@@ -18,8 +18,7 @@ SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004
   
   pSVar2 = _DAT_01cc4200;
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete
-                            (this_ptr,&g_PageResource_TwanaEntryTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_PageResource_TwanaEntryTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

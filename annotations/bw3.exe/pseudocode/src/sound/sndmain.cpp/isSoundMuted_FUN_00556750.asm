@@ -10,9 +10,9 @@
 ;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea7f4
 ;   core_sound.cpp_CSound_configure_FUN_005607d0 at 0056084e
 ;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f02f
-;   sound_sndmain.cpp_FUN_00559520 at 00559643
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00558050 at 00558062
 ;   sound_sndmain.cpp_readIni_FUN_00559220 at 0055940d
+;   sound_sndmain.cpp_writeIni_FUN_00559520 at 00559643
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02cf3290

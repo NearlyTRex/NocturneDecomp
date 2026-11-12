@@ -14,9 +14,9 @@
 ; int              Stack[0x20]:4   param_8
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_FUN_005168e0
-;   cockpit_pkbitmap.cpp_FUN_005175b0
-;   cockpit_pkbitmap.cpp_FUN_00517640
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_005175b0
+;   cockpit_pkbmpset.cpp_FUN_00517640
 ;   cockpit_pkbmpset.cpp_FUN_00517670
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;
@@ -34,12 +34,12 @@ section .text
     MOV ESI,dword ptr [ESP + 0x88]      ; 0051771b
     MOV EBP,dword ptr [ESP + 0x8c]      ; 00517722
     PUSH EDI                            ; 00517729
-    CALL cockpit_pkbitmap.cpp_FUN_00517640 ; 0051772a
-        ;   XREF to: 00517640 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_00517640()
+    CALL cockpit_pkbmpset.cpp_FUN_00517640 ; 0051772a
+        ;   XREF to: 00517640 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbmpset.cpp_FUN_00517640()
     ADD ESP,0x4                         ; 0051772f
     PUSH EDI                            ; 00517732
-    CALL cockpit_pkbitmap.cpp_FUN_005175b0 ; 00517733
-        ;   XREF to: 005175b0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_005175b0()
+    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_005175b0 ; 00517733
+        ;   XREF to: 005175b0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_005175b0(CPackedBitmapSet * this_ptr)
     MOV EAX,EBP                         ; 00517738
     SUB EAX,ESI                         ; 0051773a
     ADD ESP,0x4                         ; 0051773c
@@ -86,8 +86,8 @@ section .text
     ADD EAX,ESI                         ; 005177b4
     PUSH EAX                            ; 005177b6
     INC EBX                             ; 005177b7
-    CALL cockpit_pkbitmap.cpp_FUN_005168e0 ; 005177b8
-        ;   XREF to: 005168e0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_FUN_005168e0(CPackedBitmap * this_ptr, char * filename, int width, int height, ...)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0 ; 005177b8
+        ;   XREF to: 005168e0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0(CPackedBitmap * this_ptr, char * filename, int width, int height, ...)
     ADD ESI,0x24                        ; 005177bd
     ADD ESP,0x18                        ; 005177c0
     CMP EBX,EBP                         ; 005177c3

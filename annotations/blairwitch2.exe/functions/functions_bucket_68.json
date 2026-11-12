@@ -11,6 +11,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_004926e8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -29,10 +30,67 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdio.c_vsprintf_FUN_005b7768",
-    "ret":"undefined1",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"buffer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"format",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"args",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"va_list_t"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -168,6 +226,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c1168",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -268,6 +327,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c2568",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -286,6 +346,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c34e8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -304,6 +365,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c3de8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -322,6 +384,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c4e68",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -341,6 +404,7 @@
     "importable":true,
     "name":"crt_kernel32.c_SetStdHandle",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000095",
     "thunk":true,
     "vars":{
@@ -403,6 +467,7 @@
     "importable":true,
     "name":"crt_user32.c_DefWindowProcA",
     "ret":"LRESULT",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000030",
     "thunk":true,
     "vars":{
@@ -497,6 +562,7 @@
     "importable":true,
     "name":"crt_kernel32.c_SetEnvironmentVariableA",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000008e",
     "thunk":true,
     "vars":{

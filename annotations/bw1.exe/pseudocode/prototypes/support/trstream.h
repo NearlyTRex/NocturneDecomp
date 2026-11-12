@@ -29,10 +29,6 @@ undefined4 FUN_0059f580(void);
 // Address: 0059f590
 undefined4 FUN_0059f590(void);
 
-// Original: support_trstream.cpp_FUN_0059f59c
-// Address: 0059f59c
-void FUN_0059f59c(undefined4 param_1,undefined4 param_2);
-
 // Original: support_trstream.cpp_FUN_0059f5a0
 // Address: 0059f5a0
 void FUN_0059f5a0(undefined4 param_1,undefined4 param_2);
@@ -231,11 +227,11 @@ uint __cdecl COutStreamFile::putChar(COutStreamFile *this_ptr,byte param_2);
 
 // Original: support_trstream.cpp_COutStreamFile_write_FUN_005a18f0
 // Address: 005a18f0
-int __cdecl COutStreamFile::write(COutStreamFile *this_ptr,undefined4 param_2,int param_3);
+int __cdecl COutStreamFile::write(COutStreamFile *this_ptr,void *param_2,int param_3);
 
 // Original: support_trstream.cpp_COutStreamFile_seek_FUN_005a1940
 // Address: 005a1940
-bool __cdecl COutStreamFile::seek(COutStreamFile *this_ptr,undefined4 param_2,undefined4 param_3);
+bool __cdecl COutStreamFile::seek(COutStreamFile *this_ptr,long param_2,int param_3);
 
 // Original: support_trstream.cpp_COutStreamFile_tell_FUN_005a1970
 // Address: 005a1970
@@ -251,7 +247,7 @@ undefined4 __cdecl COutStreamFile::close(COutStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_COutStreamFile_open_FUN_005a19e0
 // Address: 005a19e0
-undefined4 __cdecl COutStreamFile::open(COutStreamFile *this_ptr,undefined4 param_2,undefined4 param_3);
+undefined4 __cdecl COutStreamFile::open(COutStreamFile *this_ptr,char *param_2,char *param_3);
 
 // Original: support_trstream.cpp_COutStreamFile_openInDirectory_FUN_005a1a20
 // Address: 005a1a20

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_0057dcf0(COutStreamFile *this_ptr,undefined4 param_2,undefined4 param_3)
+; bool __cdecl support_trstream_cpp_COutStreamFile_seek_FUN_0057dcf0(COutStreamFile *this_ptr,long param_2,int param_3)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
@@ -31,7 +31,7 @@ section .text
     PUSH EBX                            ; 0057dd08
     PUSH EDX                            ; 0057dd09
     CALL crt_stdio.c_fseek_FUN_005b929c ; 0057dd0a
-        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005b929c()
+        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005b929c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 0057dd0f
     TEST EAX,EAX                        ; 0057dd12
     SETZ AL                             ; 0057dd14

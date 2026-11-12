@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_spike.cpp_factoryFuncSpike_FUN_00566830
 // Address: 00566830
-void factoryFuncSpike(void);
+CSpike * __cdecl factoryFuncSpike(void);
 
 // Original: core_spike.cpp_CSpike_getActorType_FUN_00566850
 // Address: 00566850
@@ -45,9 +45,9 @@ void __cdecl CSpike::archive(CSpike *this_ptr);
 // Address: 00566fc0
 ECollisionType __cdecl CSpike::getCollisionType(CSpike *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_spike.cpp_FUN_00566fd0
+// Original: core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0
 // Address: 00566fd0
-void __cdecl FUN_00566fd0(CSpike *this_ptr);
+void __cdecl CSpike::testCollisionWithCharacters(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_dtor_FUN_005675e0
 // Address: 005675e0

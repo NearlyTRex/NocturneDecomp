@@ -19,6 +19,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SPlayerActionState.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x540000
@@ -31,7 +32,7 @@ float __cdecl core_rifle_cpp_CRifle_getDamage_FUN_00540930(CRifle *this_ptr);
 void __cdecl core_rifle_cpp_CRifle_renderAimBeam_FUN_005409b0(CRifle *this_ptr);
 CRifle * core_rifle_cpp_CRifle_dtor_FUN_005409c0(CRifle *this_ptr,uint flags);
 void core_scat_cpp_staticInit_FUN_00540a10(void);
-void core_scat_cpp_factoryFuncScat_FUN_00540aa0(void);
+CScat * __cdecl core_scat_cpp_factoryFuncScat_FUN_00540aa0(void);
 CDemonActorType * core_scat_cpp_CScat_getActorType_FUN_00540ac0(CScat *this_ptr);
 CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00540ad0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_setup_FUN_00540b90(CScat *this_ptr);
@@ -59,8 +60,8 @@ void __cdecl core_script_cpp_trimString_FUN_00543240(char *str);
 char * __cdecl core_script_cpp_skipWhitespace_FUN_005432b0(char *str);
 char * __cdecl core_script_cpp_parseArgument_FUN_005432d0(char **cursor,char *out_buffer,int max_length);
 char * __cdecl core_script_cpp_parseConditionExpr_FUN_00543380(char **cursor,char *out_buffer);
-CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *param_1,undefined4 param_2);
-int __cdecl core_script_cpp_getActionState_FUN_00543540(int param_1,char *param_2);
+CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class);
+int * __cdecl core_script_cpp_getActionState_FUN_00543540(SPlayerActionState *action_state,char *action_name);
 int __cdecl core_script_cpp_parseBodyPartMask_FUN_00543610(CCharacter *character,char *part_names,int *part_mask);
 CScript * __cdecl core_script_cpp_CScript_ctor_FUN_005436d0(CScript *this_ptr);
 CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00543710(CScript *this_ptr,uint flags);
@@ -85,14 +86,14 @@ void __cdecl core_script_cpp_CScript_resetDialogState_FUN_0054ae10(CScript *this
 int __cdecl core_script_cpp_CScript_skipCinematic_FUN_0054ae40(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_dbLoad_FUN_0054af20(CScript *this_ptr,char *filename);
 int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_0054b2a0(CScript *this_ptr,char *path);
-void __cdecl core_script_cpp_readActorReference_FUN_0054b320(undefined4 param_1,undefined4 *param_2);
-void __cdecl core_script_cpp_writeActorReference_FUN_0054b3a0(undefined4 param_1,int *param_2);
+void __cdecl core_script_cpp_readActorReference_FUN_0054b320(_FILE *file_handle,CDemonActor *actor_out);
+void __cdecl core_script_cpp_writeActorReference_FUN_0054b3a0(_FILE *file_handle,CDemonActor **actor);
 void __cdecl core_script_cpp_CScript_loadState_FUN_0054b3e0(CScript *this_ptr,_FILE *file_handle);
 void __cdecl core_script_cpp_CScript_saveState_FUN_0054b710(CScript *this_ptr,_FILE *file_handle);
 uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_0054b940(CScript *this_ptr);
 char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_0054b9a0(CDeformableModel *model_ptr);
 void core_sentinel_cpp_staticInit_FUN_0054b9b0(void);
-void core_sentinel_cpp_factoryFuncSentinel_FUN_0054b9e0(void);
+CSentinel * __cdecl core_sentinel_cpp_factoryFuncSentinel_FUN_0054b9e0(void);
 CDemonActorType * core_sentinel_cpp_CSentinel_getActorType_FUN_0054ba00(CSentinel *this_ptr);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_0054ba10(CSentinel *this_ptr);
 void __cdecl core_sentinel_cpp_CSentinel_setup_FUN_0054ba80(CSentinel *this_ptr);

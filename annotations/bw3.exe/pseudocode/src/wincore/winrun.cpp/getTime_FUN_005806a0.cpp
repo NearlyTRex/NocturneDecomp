@@ -1,14 +1,14 @@
 // Name: wincore_winrun.cpp_getTime_FUN_005806a0
 // Address: 005806a0
 // Address Range: [[005806a0, 0058076c]]
-// Convention: unknown
-// Signature: int wincore_winrun_cpp_getTime_FUN_005806a0(void)
+// Convention: __cdecl
+// Signature: int __cdecl wincore_winrun_cpp_getTime_FUN_005806a0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int wincore_winrun_cpp_getTime_FUN_005806a0(void)
+int __cdecl wincore_winrun_cpp_getTime_FUN_005806a0(void)
 
 {
   double dVar1;

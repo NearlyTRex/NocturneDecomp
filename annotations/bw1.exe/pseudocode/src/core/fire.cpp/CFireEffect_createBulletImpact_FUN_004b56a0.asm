@@ -228,7 +228,7 @@ section .text
     JZ 0x004b57a0                       ; 004b5864
         ;   XREF to: 004b57a0 (CONDITIONAL_JUMP)  ; LAB_004b57a0
     CALL core_fire.cpp_allocateBulletHole_FUN_004b4ac0 ; 004b586a
-        ;   XREF to: 004b4ac0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_allocateBulletHole_FUN_004b4ac0()
+        ;   XREF to: 004b4ac0 (UNCONDITIONAL_CALL)  ; CBulletHole * core_fire.cpp_allocateBulletHole_FUN_004b4ac0()
     MOV EDX,dword ptr [EBP + 0x24]      ; 004b586f
     PUSH EDX                            ; 004b5872
     MOV ECX,dword ptr [EBP + 0x1c]      ; 004b5873

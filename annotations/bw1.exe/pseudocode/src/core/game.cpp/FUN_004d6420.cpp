@@ -79,11 +79,11 @@ void __cdecl core_game_cpp_FUN_004d6420(CGame *this_ptr,char *save_filename)
   _mkdir("save");
   local_14 = 1;
   DAT_007c3040 = (_FILE *)0x1;
-  file_handle = (_FILE *)_fopen("save\\$$SAVE$$.TMP","wt");
+  file_handle = _fopen("save\\$$SAVE$$.TMP","wt");
   if (file_handle == (_FILE *)0x0) {
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Warning!  Your game didn't save.")
     ;
-    shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,pcVar4);
+    shape_edittool_cpp_CEditorTools_showError_FUN_004943a0(g_CEditorToolsPtr,pcVar4);
     DAT_007c3040 = file_handle;
     return;
   }
@@ -129,7 +129,7 @@ void __cdecl core_game_cpp_FUN_004d6420(CGame *this_ptr,char *save_filename)
     iVar2 = support_trstream_cpp_CInStreamFile_open_FUN_005a0f60
                       (&local_48,"save\\$$SAVE$$.TMP",1);
     if (iVar2 == 0) {
-      shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,pcVar3);
+      shape_edittool_cpp_CEditorTools_showError_FUN_004943a0(g_CEditorToolsPtr,pcVar3);
       support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860(&local_1c,0);
       support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_48,0);
       return;
@@ -138,7 +138,7 @@ void __cdecl core_game_cpp_FUN_004d6420(CGame *this_ptr,char *save_filename)
     iVar2 = support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(&local_1c,local_390,&DAT_005e2fac)
     ;
     if (iVar2 == 0) {
-      shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,pcVar3);
+      shape_edittool_cpp_CEditorTools_showError_FUN_004943a0(g_CEditorToolsPtr,pcVar3);
       support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860(&local_1c,0);
       support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_48,0);
       return;

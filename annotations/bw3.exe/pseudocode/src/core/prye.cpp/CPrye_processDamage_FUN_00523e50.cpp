@@ -18,6 +18,7 @@ void __cdecl core_prye_cpp_CPrye_processDamage_FUN_00523e50(CPrye *this_ptr,SDam
   SMotion *pSVar4;
   uint uVar5;
   float fVar6;
+  CDemonActor *pCVar7;
   int desired_state_index;
   
   if ((this_ptr->base).base.is_invulnerable != 0) {
@@ -52,8 +53,9 @@ void __cdecl core_prye_cpp_CPrye_processDamage_FUN_00523e50(CPrye *this_ptr,SDam
            ((((this_ptr->base).ladder_to_climb == (CLadder *)0x0 &&
              (this_ptr->ladder_to_descend == (CLadder *)0x0)) &&
             ((this_ptr->base).action_pending == 0)))))) &&
-         ((iVar3 = core_actor_cpp_castToClassHash_FUN_0040c840
-                             (damage_info->attacker,g_CTommyGunClassInfo.name_hash), iVar3 == 0 ||
+         ((pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c840
+                              (damage_info->attacker,g_CTommyGunClassInfo.name_hash),
+          pCVar7 == (CDemonActor *)0x0 ||
           (iVar3 = core_actor_cpp_randomChance_FUN_0040cf40(0.333), iVar3 != 0)))) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,0x31,1);
       }

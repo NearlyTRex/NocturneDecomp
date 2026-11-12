@@ -95,18 +95,18 @@ section .text
     PUSH EBP                            ; 00529c75
         ;   Label: LAB_00529c75
     CALL crt_stdio.c_ftell_FUN_005baab0 ; 00529c76
-        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005baab0()
+        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005baab0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00529c7b
     ADD dword ptr [ESP + 0x330],EAX     ; 00529c7e
     PUSH 0x5e4ed3                       ; 00529c85 | DAT_005e4ed3
         ;   Label: LAB_00529c85
     PUSH EBP                            ; 00529c8a
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 00529c8b
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00529c90
     PUSH EBP                            ; 00529c93
     CALL crt_stdio.c_ftell_FUN_005baab0 ; 00529c94
-        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005baab0()
+        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005baab0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00529c99
     CMP EAX,dword ptr [ESP + 0x330]     ; 00529c9c
     JGE 0x00529f79                      ; 00529ca3
@@ -116,7 +116,7 @@ section .text
     PUSH 0x5e4ed5                       ; 00529cae | = "%[^,], "
     PUSH EBP                            ; 00529cb3
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 00529cb4
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00529cb9
     CMP EAX,0x1                         ; 00529cbc
     JZ 0x00529cf0                       ; 00529cbf
@@ -136,7 +136,7 @@ section .text
     PUSH EBP                            ; 00529cf0
         ;   Label: LAB_00529cf0
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 00529cf1
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 00529cf6
     CMP EAX,0x2c                        ; 00529cf9
     JNZ 0x00529e9c                      ; 00529cfc
@@ -149,7 +149,7 @@ section .text
     PUSH 0x5e4f64                       ; 00529d13 | = " %[^\n]\n"
     PUSH EBP                            ; 00529d18
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 00529d19
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00529d1e
     CMP EAX,0x1                         ; 00529d21
     JZ 0x00529d55                       ; 00529d24
@@ -291,14 +291,14 @@ section .text
         ;   Label: LAB_00529e9c
     PUSH EAX                            ; 00529e9d
     CALL crt_stdio.c_ungetc_FUN_005b8350 ; 00529e9e
-        ;   XREF to: 005b8350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ungetc_FUN_005b8350()
+        ;   XREF to: 005b8350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005b8350(int character, _FILE * stream)
     ADD ESP,0x8                         ; 00529ea3
     LEA EAX,[ESP + 0x80]                ; 00529ea6
     PUSH EAX                            ; 00529ead
     PUSH 0x5e4f1d                       ; 00529eae | = "%[^,],"
     PUSH EBP                            ; 00529eb3
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 00529eb4
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00529eb9
     CMP EAX,0x1                         ; 00529ebc
     JZ 0x00529d0b                       ; 00529ebf

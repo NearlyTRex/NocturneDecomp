@@ -2,13 +2,13 @@
 // Address: 004b4ac0
 // Address Range: [[004b4ac0, 004b4b06]]
 // Convention: __cdecl
-// Signature: undefined * __cdecl core_fire_cpp_allocateBulletHole_FUN_004b4ac0(void)
+// Signature: CBulletHole * __cdecl core_fire_cpp_allocateBulletHole_FUN_004b4ac0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-byte * __cdecl core_fire_cpp_allocateBulletHole_FUN_004b4ac0(void)
+CBulletHole * __cdecl core_fire_cpp_allocateBulletHole_FUN_004b4ac0(void)
 
 {
   int iVar1;
@@ -22,5 +22,5 @@ byte * __cdecl core_fire_cpp_allocateBulletHole_FUN_004b4ac0(void)
   if (0x100 < _DAT_01c6eaa0) {
     _DAT_01c6eaa0 = 0x100;
   }
-  return &DAT_01c6eaa8 + iVar1;
+  return (CBulletHole *)(&DAT_01c6eaa8 + iVar1);
 }

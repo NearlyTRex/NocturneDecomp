@@ -79,7 +79,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00460cc5
     PUSH EAX                            ; 00460cc9
     CALL crt_stdio.c_fopen_FUN_005b910c ; 00460cca
-        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005b910c()
+        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005b910c(char * filename, char * mode)
     ADD ESP,0x8                         ; 00460ccf
     ADD ESP,0x214                       ; 00460cd2
         ;   Label: LAB_00460cd2
@@ -97,7 +97,7 @@ section .text
         ;   Label: LAB_00460ce4
     PUSH EAX                            ; 00460ce6
     CALL engine_dosio.cpp_findFile_FUN_00460980 ; 00460ce7
-        ;   XREF to: 00460980 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_00460980()
+        ;   XREF to: 00460980 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_00460980(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 00460cec
     TEST EAX,EAX                        ; 00460cef
     JZ 0x00460cd2                       ; 00460cf1
@@ -106,7 +106,7 @@ section .text
     LEA EAX,[ESP + 0x104]               ; 00460cf4
     PUSH EAX                            ; 00460cfb
     CALL crt_stdio.c_fopen_FUN_005b910c ; 00460cfc
-        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005b910c()
+        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005b910c(char * filename, char * mode)
     ADD ESP,0x8                         ; 00460d01
     MOV EBX,EAX                         ; 00460d04
     TEST EAX,EAX                        ; 00460d06
@@ -120,7 +120,7 @@ section .text
     PUSH ECX                            ; 00460d17
     PUSH EAX                            ; 00460d18
     CALL crt_stdio.c_fseek_FUN_005b929c ; 00460d19
-        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005b929c()
+        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005b929c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00460d1e
     MOV EAX,EBX                         ; 00460d21
         ;   Label: LAB_00460d21

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint * __cdecl support_trisock_cpp_convertSockAddr_FUN_00578e80(uint *param_1,short *param_2)
+; SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_00578e80(SNetworkAddr *dest_addr,SOCKADDR *src_addr)
 ;
+; Parameters:
+; SNetworkAddr *   Stack[0x4]:4   dest_addr
+; SOCKADDR *       Stack[0x8]:4   src_addr
 ;
 ; XREF[2]:
 ;   support_trisock.cpp_CSocket_getSocketName_FUN_00579430 at 00579468

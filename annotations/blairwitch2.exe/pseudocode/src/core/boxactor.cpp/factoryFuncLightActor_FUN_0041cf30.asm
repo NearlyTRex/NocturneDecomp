@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_factoryFuncLightActor_FUN_0041cf30(void)
+; CLightActor * __cdecl core_boxactor_cpp_factoryFuncLightActor_FUN_0041cf30(void)
 ;
 ;
 ; Called Functions:

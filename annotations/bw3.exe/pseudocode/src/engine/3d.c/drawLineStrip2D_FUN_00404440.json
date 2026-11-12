@@ -2,20 +2,23 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 193,
+    "complexity_score": 453,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
-    "suspect_count": 12,
+    "pseudocode_lines": 68,
+    "suspect_count": 35,
     "suspect_types": [
       "raw_address_constant",
+      "stack_param",
+      "stack_ref",
       "undefined_data",
+      "unknown_field",
       "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 110
+    "total_lines": 125
   },
   "cross_references": [],
   "function": {
@@ -98,6 +101,32 @@
     },
     "pcode_op_count": 312
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00404590",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00404440",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00404570",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.565
+    },
+    "nocturne.exe": {
+      "addr": "00405870",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -147,8 +176,24 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_ffffff30",
+      "severity": "moderate",
+      "text": "SRenderVertex in_stack_ffffff30;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_ffffff60",
+      "severity": "moderate",
+      "text": "byte in_stack_ffffff60 [44];",
+      "type": "stack_param"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "piVar2 = (int *)(param_1 + 8);",
@@ -156,7 +201,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "while (iVar3 < *(int *)(param_1 + 4) + -1) {",
@@ -164,7 +209,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 25,
       "match": "DAT_0060b014",
       "severity": "mild",
       "text": "puVar4 = &DAT_0060b014 + *piVar2 * 0xc;",
@@ -172,15 +217,183 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 32,
       "match": "DAT_0060b014",
       "severity": "mild",
       "text": "puVar4 = &DAT_0060b014 + piVar2[1] * 0xc;",
       "type": "undefined_data"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 40,
+      "match": "&stack0xffffff60",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)&stack0xffffff60;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 49,
+      "match": "&stack0xffffff30",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)&stack0xffffff30;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_ffffff60",
+      "severity": "moderate",
+      "text": "auVar7 = in_stack_ffffff60._0_24_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 56,
+      "match": "._0_24_",
+      "severity": "mild",
+      "text": "auVar7 = in_stack_ffffff60._0_24_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 57,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.transformed_x = auVar7._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.transformed_y = auVar7._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 59,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.transformed_z = auVar7._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.inv_z = auVar7._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.screen_x = auVar7._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "vertex2.projected_vertex.screen_y = auVar7._20_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_ffffff60",
+      "severity": "moderate",
+      "text": "vertex2.u = in_stack_ffffff60._24_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "vertex2.u = in_stack_ffffff60._24_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_ffffff60",
+      "severity": "moderate",
+      "text": "vertex2.v = in_stack_ffffff60._28_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "vertex2.v = in_stack_ffffff60._28_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_ffffff60",
+      "severity": "moderate",
+      "text": "vertex2.r = in_stack_ffffff60._32_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 65,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "vertex2.r = in_stack_ffffff60._32_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_ffffff60",
+      "severity": "moderate",
+      "text": "vertex2.g = in_stack_ffffff60._36_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._36_4_",
+      "severity": "mild",
+      "text": "vertex2.g = in_stack_ffffff60._36_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_ffffff60",
+      "severity": "moderate",
+      "text": "vertex2.b = in_stack_ffffff60._40_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 67,
+      "match": "._40_4_",
+      "severity": "mild",
+      "text": "vertex2.b = in_stack_ffffff60._40_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_ffffff30",
+      "severity": "moderate",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407b30(in_stack_ffffff30,vertex2);",
+      "type": "stack_param"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "return *(int *)(param_1 + 4) * 4 + param_1 + 8;",
@@ -188,23 +401,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "return *(int *)(param_1 + 4) * 4 + param_1 + 8;",
       "type": "unnamed_param"
     },
     {
-      "description": "Raw hex address 0x40444c assigned to bare local `uStack_74`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_74` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 18,
+      "description": "Raw hex address 0x40444c assigned to bare local `iVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 20,
       "match": "0x40444c",
       "severity": "moderate",
-      "text": "uStack_74 = 0x40444c;",
+      "text": "iVar8 = 0x40444c;",
       "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 25,
+      "line": 27,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -212,7 +425,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 32,
+      "line": 34,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -220,7 +433,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 39,
+      "line": 41,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -228,7 +441,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 48,
+      "line": 50,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",

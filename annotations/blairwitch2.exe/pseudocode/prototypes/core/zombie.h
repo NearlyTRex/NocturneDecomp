@@ -23,11 +23,11 @@ void getObjectGrabPointWorld(int param_1);
 
 // Original: core_zombie.cpp_classifyObjectShape_FUN_00595910
 // Address: 00595910
-undefined4 __cdecl classifyObjectShape(float *param_1);
+int __cdecl classifyObjectShape(CVector3f *dimensions);
 
 // Original: core_zombie.cpp_factoryFuncZombie_FUN_00595a60
 // Address: 00595a60
-void factoryFuncZombie(void);
+CZombie * __cdecl factoryFuncZombie(void);
 
 // Original: core_zombie.cpp_CZombie_getActorType_FUN_00595a80
 // Address: 00595a80
@@ -129,9 +129,9 @@ int * FUN_0059a06e(int param_1,int *param_2);
 // Address: 0059a0b0
 void __cdecl FUN_0059a0b0(SRenderVertex *vertex_buffer,int vertex_count);
 
-// Original: core_zombie.cpp_FUN_0059a5d0
+// Original: core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0
 // Address: 0059a5d0
-void __cdecl FUN_0059a5d0(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
+void __cdecl rasterizePolygonCustom(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
 
 // Original: core_zombie.cpp_FUN_0059aa80
 // Address: 0059aa80

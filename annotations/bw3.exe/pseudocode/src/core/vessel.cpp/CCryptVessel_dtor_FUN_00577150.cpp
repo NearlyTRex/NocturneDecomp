@@ -14,7 +14,7 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_dtor_FUN_00577150(CCryptVess
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CCryptVesselTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CCryptVesselTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

@@ -21,8 +21,8 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_bodypart.cpp_CBodyPart_processFires_FUN_004164b0
+;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417a70
-;   core_bodypart.cpp_FUN_00415890
 ;   core_box.cpp_CBox_process_FUN_005b2290
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
@@ -96,8 +96,8 @@ section .text
     PUSH 0x0                            ; 00416344
     PUSH EBX                            ; 00416346
     MOV dword ptr [EBX + 0x70],0x2      ; 00416347
-    CALL core_bodypart.cpp_FUN_00415890 ; 0041634e
-        ;   XREF to: 00415890 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00415890()
+    CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890 ; 0041634e
+        ;   XREF to: 00415890 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890(CBodyPart * this_ptr, int vertex_count, int tri_count)
     LEA EAX,[EBX + 0x2c4]               ; 00416353
     ADD ESP,0xc                         ; 00416359
     MOV ESI,EAX                         ; 0041635c

@@ -18,7 +18,7 @@ CBugs * core_bugs_cpp_CBugs_dtor_FUN_00422150(CBugs *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBugsTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBugsTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

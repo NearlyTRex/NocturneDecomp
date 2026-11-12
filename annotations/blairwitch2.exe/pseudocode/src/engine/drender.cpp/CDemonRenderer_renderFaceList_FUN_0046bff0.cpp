@@ -57,7 +57,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046bff0(CDemo
           if (0 < face_count) {
             local_18 = 0;
             do {
-              iVar3 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0051ca00(face_array);
+              iVar3 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0051ca00
+                                (&face_array->vertex_indices);
               if (iVar3 != 0) {
                 iVar4 = iVar4 + 1;
                 iVar3 = local_18 + 4;
@@ -75,7 +76,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046bff0(CDemo
           }
           if (0 < iVar4) {
             engine_special_cpp_drawPolyList2_FUN_0055fa90
-                      (this_ptr->vertex_buffer_ptr,&DAT_0060b288,iVar4,_DAT_01c38b54);
+                      (this_ptr->vertex_buffer_ptr,(SInputFace **)&DAT_0060b288,iVar4,_DAT_01c38b54)
+            ;
             return;
           }
         }

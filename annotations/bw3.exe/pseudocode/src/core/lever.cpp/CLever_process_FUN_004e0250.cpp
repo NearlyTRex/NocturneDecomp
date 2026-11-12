@@ -13,7 +13,7 @@ void __cdecl core_lever_cpp_CLever_process_FUN_004e0250(CLever *this_ptr,float d
 {
   float fVar1;
   float fVar2;
-  int iVar3;
+  CDemonActor *pCVar3;
   int iVar4;
   int iVar5;
   char *commands;
@@ -55,15 +55,15 @@ LAB_004e033c:
   iVar5 = 0;
   iVar4 = 0;
   while (iVar4 < g_CDemonSetPtr->actor_count) {
-    iVar3 = core_actor_cpp_castToClassHash_FUN_0040c840
-                      (*(uint *)((int)g_CDemonSetPtr->actors + iVar5),
-                       g_CLeverClassInfo.name_hash);
-    if ((iVar3 == 0) || (this_ptr != *(CLever **)(iVar3 + 0x410))) {
+    pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c840
+                       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),
+                        g_CLeverClassInfo.name_hash);
+    if ((pCVar3 == (CDemonActor *)0x0) || (this_ptr != *(CLever **)(pCVar3[3].actor_name + 8))) {
       iVar4 = iVar4 + 1;
       iVar5 = iVar5 + 4;
     }
     else {
-      core_lever_cpp_FUN_004e04b0(iVar3,(*(CLever **)(iVar3 + 0x410))->param,0);
+      core_lever_cpp_FUN_004e04b0(pCVar3,(*(CLever **)(pCVar3[3].actor_name + 8))->param,0);
       iVar4 = iVar4 + 1;
       iVar5 = iVar5 + 4;
     }

@@ -15,7 +15,7 @@ CAsciiArmor * support_codec_cpp_CAsciiArmor_dtor_FUN_00441e20(CAsciiArmor *this_
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CAsciiArmorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CAsciiArmorTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

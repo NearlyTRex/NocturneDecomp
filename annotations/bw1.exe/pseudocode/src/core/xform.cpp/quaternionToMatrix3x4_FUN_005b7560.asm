@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_quaternionToMatrix3x4_FUN_005b7560(CQuaternion4f *param_1)
+; CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_005b7560(CQuaternion4f *quat_in,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quat_in
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
 ;
@@ -12,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_xform.cpp_clearTranslation_FUN_005b5600
-;   core_xform.cpp_FUN_005b7410
+;   core_xform.cpp_quaternionToMatrix3x3_FUN_005b7410
 ;
 ; *****************************************************************************
 
@@ -27,15 +29,15 @@ section .text
     PUSH EDX                            ; 005b756b
     LEA EAX,[ESP + 0x4]                 ; 005b756c
     PUSH EAX                            ; 005b7570
-    CALL core_xform.cpp_FUN_005b7410    ; 005b7571
-        ;   XREF to: 005b7410 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_FUN_005b7410(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005b7410 ; 005b7571
+        ;   XREF to: 005b7410 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005b7410(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 005b7576
     MOV EAX,ESP                         ; 005b7579
     PUSH EAX                            ; 005b757b
     MOV EDI,ESI                         ; 005b757c
     LEA ESI,[ESP + 0x4]                 ; 005b757e
     CALL core_xform.cpp_clearTranslation_FUN_005b5600 ; 005b7582
-        ;   XREF to: 005b5600 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clearTranslation_FUN_005b5600()
+        ;   XREF to: 005b5600 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clearTranslation_FUN_005b5600(CMatrix3x4f * matrix)
     MOV ECX,0xc                         ; 005b7587
     ADD ESP,0x4                         ; 005b758c
     MOVSD.REP ES:EDI,ESI                ; 005b758f

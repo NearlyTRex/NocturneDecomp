@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_FUN_00538990
+;   cockpit_pkbmpset.cpp_FUN_00538990
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c___vec_new_FUN_005c2694
 ;   crt_memory.c_operator_new_array_FUN_005c1268
@@ -30,8 +30,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0xd4]      ; 005389c8
     MOV EBX,dword ptr [ESP + 0xd8]      ; 005389cf
     PUSH ESI                            ; 005389d6
-    CALL cockpit_pkbitmap.cpp_FUN_00538990 ; 005389d7
-        ;   XREF to: 00538990 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_00538990()
+    CALL cockpit_pkbmpset.cpp_FUN_00538990 ; 005389d7
+        ;   XREF to: 00538990 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbmpset.cpp_FUN_00538990()
     ADD ESP,0x4                         ; 005389dc
     TEST EBX,EBX                        ; 005389df
     JG 0x005389ec                       ; 005389e1

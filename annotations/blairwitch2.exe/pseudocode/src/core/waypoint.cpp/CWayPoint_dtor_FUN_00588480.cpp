@@ -13,7 +13,7 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_00588480(CWayPoint *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CWayPointTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CWayPointTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

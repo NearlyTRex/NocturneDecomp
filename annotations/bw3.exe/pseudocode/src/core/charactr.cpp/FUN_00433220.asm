@@ -18,7 +18,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[4]:
-;   core_charactr.cpp_FUN_0042cd30 at 0042cd5d
+;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30 at 0042cd5d
 ;   core_prye.cpp_CPrye_process_FUN_00518ab0 at 00518cb0
 ;   core_prye.cpp_FUN_00518cd0 at 0051a213
 ;   core_toxhand.cpp_CTheHand_attractActorToward_FUN_0056ca00 at 0056cb77

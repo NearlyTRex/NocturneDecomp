@@ -35,11 +35,11 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0
 ;   core_level.cpp_FUN_004fe840
 ;   core_main.c_FUN_005030e0
+;   core_mission.cpp_CDemonMission_clearMissionData_FUN_0051a3b0
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0
 ;   core_mission.cpp_CDemonMission_load_FUN_0051a3f0
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_0051b4d0
-;   core_mission.cpp_FUN_0051a3b0
-;   core_mission.cpp_FUN_0051b1d0
+;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0
 ;   core_mission.cpp_FUN_0051b610
 ;   core_mission.cpp_FUN_0051b7b0
 ;   core_mission.cpp_FUN_0051bdc0
@@ -97,16 +97,16 @@ section .text
     PUSH ESI                            ; 0051bb5c
     PUSH EBX                            ; 0051bb5d
     MOV EDI,EAX                         ; 0051bb5e
-    CALL core_mission.cpp_FUN_0051b1d0  ; 0051bb60
-        ;   XREF to: 0051b1d0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b1d0()
+    CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0 ; 0051bb60
+        ;   XREF to: 0051b1d0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 0051bb65
     MOV EAX,dword ptr [ESI + 0x154]     ; 0051bb68
     PUSH ESI                            ; 0051bb6e
     CALL dword ptr [EAX + 0x14c]        ; 0051bb6f
     ADD ESP,0x4                         ; 0051bb75
     PUSH EBX                            ; 0051bb78
-    CALL core_mission.cpp_FUN_0051a3b0  ; 0051bb79
-        ;   XREF to: 0051a3b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051a3b0()
+    CALL core_mission.cpp_CDemonMission_clearMissionData_FUN_0051a3b0 ; 0051bb79
+        ;   XREF to: 0051a3b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMissionData_FUN_0051a3b0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0051bb7e
     TEST EDI,EDI                        ; 0051bb81
     JZ 0x0051bb8e                       ; 0051bb83

@@ -6756,37 +6756,30 @@
       "0043ff50",
       "005090f0"
     ],
+    "cls":"CDemonCamera",
     "conv":"__cdecl",
     "instructions":6,
-    "method":"CDemonCamera",
-    "name":"core_dcamera.cpp_CDemonCamera_FUN_004401b0",
+    "method":"setFramebufferSize",
+    "name":"core_dcamera.cpp_CDemonCamera_setFramebufferSize_FUN_004401b0",
     "params":[
       {
-        "name":"this_ptr",
+        "name":"width",
         "type":{
-          "kind":"class",
-          "name":"CDemonCamera",
-          "ptr":1
-        }
-      },
-      {
-        "name":"param_2",
-        "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       },
       {
-        "name":"param_3",
+        "name":"height",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":0
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -17978,21 +17971,12 @@
     "callers":[
       "0049cc10"
     ],
+    "cls":"CSlew",
     "conv":"__cdecl",
     "instructions":17,
-    "method":"CSlew",
-    "name":"core_slew.cpp_CSlew_FUN_0051f930",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CSlew",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"init",
+    "name":"core_slew.cpp_CSlew_init_FUN_0051f930",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -18899,14 +18883,33 @@
       "00529a90",
       "00563c90"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":25,
     "method":"checkDirectSoundError",
     "name":"sound_snddx.cpp_checkDirectSoundError_FUN_00529bb0",
+    "params":[
+      {
+        "name":"error_code",
+        "type":{
+          "header":"windef",
+          "kind":"system",
+          "name":"HRESULT",
+          "ptr":0
+        }
+      },
+      {
+        "name":"operation_description",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/snddx.cpp",

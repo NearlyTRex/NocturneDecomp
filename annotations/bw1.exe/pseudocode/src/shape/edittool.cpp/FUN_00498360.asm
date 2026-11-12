@@ -120,7 +120,7 @@ section .text
     MOV EDI,ESP                         ; 00498454
     MOVSD.REP ES:EDI,ESI                ; 00498456
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407af0 ; 00498458
-        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407af0()
+        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407af0(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0049845d
     MOV EAX,dword ptr [ESP + 0x20]      ; 00498460
     MOV dword ptr [ESP + 0x18],EAX      ; 00498464
@@ -143,7 +143,7 @@ section .text
     MOV EDI,ESP                         ; 0049849d
     MOVSD.REP ES:EDI,ESI                ; 0049849f
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407af0 ; 004984a1
-        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407af0()
+        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407af0(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004984a6
     MOV EAX,dword ptr [ESP + 0x20]      ; 004984a9
     MOV dword ptr [ESP + 0x1c],EAX      ; 004984ad
@@ -168,7 +168,7 @@ section .text
     ADD EBX,0x30                        ; 004984ed
     MOVSD.REP ES:EDI,ESI                ; 004984f0
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407af0 ; 004984f2
-        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407af0()
+        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407af0(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004984f7
     XOR ESI,ESI                         ; 004984fa
     TEST byte ptr [EBX + 0x13],0x80     ; 004984fc

@@ -18,7 +18,7 @@ CTentacle * core_tentacle_cpp_CTentacle_dtor_FUN_005733d0(CTentacle *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTentacleTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTentacleTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

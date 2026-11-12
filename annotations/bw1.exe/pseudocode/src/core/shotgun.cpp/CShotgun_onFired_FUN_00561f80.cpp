@@ -53,7 +53,7 @@ void __cdecl core_shotgun_cpp_CShotgun_onFired_FUN_00561f80(CShotgun *this_ptr)
     CStack_48.y = CStack_24.y;
     CStack_48.z = CStack_24.z;
   }
-  model_ptr = (CKeyFramedModel *)core_dmodel_cpp_loadModel_FUN_00468780("shell.kfm");
+  model_ptr = core_dmodel_cpp_loadModel_FUN_00468780("shell.kfm");
   core_fire_cpp_CFireEffect_createShell_FUN_004b7270
             (0x01C57074,&(this_ptr->base).base.location.position,&(this_ptr->base).base.orient.vec
              ,&CStack_48,model_ptr);

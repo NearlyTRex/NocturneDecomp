@@ -43,7 +43,7 @@ section .text
     INC EDI                             ; 0052faa3
     MOV dword ptr [0x01d51dac],EDI      ; 0052faa4 | DAT_01d51dac
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0052faaa
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005b2420()
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
     MOV EDX,EAX                         ; 0052faaf
     MOV ECX,0x12                        ; 0052fab1
     SAR EDX,0x1f                        ; 0052fab6

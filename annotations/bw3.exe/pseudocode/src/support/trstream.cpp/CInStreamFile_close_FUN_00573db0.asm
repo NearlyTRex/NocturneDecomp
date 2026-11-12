@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   CloseHandle
-;   support_trstream.cpp_FUN_00573e70
+;   support_trstream.cpp_CInStreamFile_freeBuffer_FUN_00573e70
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     MOV dword ptr [EBX + 0x10],0x0      ; 00573dc3
     PUSH EBX                            ; 00573dca
     MOV dword ptr [EBX + 0x8],0x0       ; 00573dcb
-    CALL support_trstream.cpp_FUN_00573e70 ; 00573dd2
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00573e70()
+    CALL support_trstream.cpp_CInStreamFile_freeBuffer_FUN_00573e70 ; 00573dd2
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_CInStreamFile_freeBuffer_FUN_00573e70(CInStreamFile * this_ptr)
     MOV EAX,0x1                         ; 00573dd7
     ADD ESP,0x4                         ; 00573ddc
     POP EBX                             ; 00573ddf

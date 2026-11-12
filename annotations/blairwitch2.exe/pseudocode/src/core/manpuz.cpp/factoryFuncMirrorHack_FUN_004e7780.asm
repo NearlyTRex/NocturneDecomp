@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_factoryFuncMirrorHack_FUN_004e7780(void)
+; CMirrorHack * __cdecl core_manpuz_cpp_factoryFuncMirrorHack_FUN_004e7780(void)
 ;
 ;
 ; Called Functions:

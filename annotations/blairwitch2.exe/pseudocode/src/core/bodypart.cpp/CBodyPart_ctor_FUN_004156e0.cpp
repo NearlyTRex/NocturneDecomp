@@ -10,14 +10,15 @@ CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_004156e0(CBodyPart *thi
 
 {
   CDemonActor *pCVar1;
-  int iVar2;
+  void *pvVar2;
   CBox *pCVar3;
   
   pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
-  iVar2 = __arrinit
-                    (&pCVar1[1].previous_transform_state.orientation,3,&g_SBodyPartModelTypeInfo);
-  iVar2 = __arrinit(iVar2 + 0x4c0,2,&g_SBodyPartFireTypeInfo);
-  pCVar3 = core_box_cpp_CBox_ctor_FUN_005b1bc0((CBox *)(iVar2 + 0x834));
+  pvVar2 = __arrinit
+                     (&pCVar1[1].previous_transform_state.orientation,3,&g_SBodyPartModelTypeInfo);
+  pvVar2 = __arrinit
+                     ((void *)((int)pvVar2 + 0x4c0),2,&g_SBodyPartFireTypeInfo);
+  pCVar3 = core_box_cpp_CBox_ctor_FUN_005b1bc0((CBox *)((int)pvVar2 + 0x834));
   pCVar3[-7].scrape_points[7].previous_position.x = (float)&g_CBodyPartVTable;
   pCVar3[1].position.y = 0.0;
   pCVar3[-6].position.x = 0.0;

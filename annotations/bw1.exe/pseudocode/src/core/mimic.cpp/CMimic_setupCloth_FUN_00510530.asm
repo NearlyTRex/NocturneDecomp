@@ -24,7 +24,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_00524ae0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
 
@@ -52,7 +52,7 @@ section .text
     MOV ECX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0051056a
     PUSH ECX                            ; 00510571
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 00510572
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EDX,EAX                         ; 00510577
     ADD ESP,0x8                         ; 00510579
     TEST EAX,EAX                        ; 0051057c
@@ -85,8 +85,8 @@ section .text
     PUSH 0x5e8a00                       ; 005105c4 | s_s_attacking_hero_005e89fe+2
     MOV EBX,dword ptr [0x00611100]      ; 005105c9 | g_CConsolePtr
     PUSH EBX                            ; 005105cf | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 005105d0
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 005105d0
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 005105d5
     POP ESI                             ; 005105d8
     POP EBX                             ; 005105d9

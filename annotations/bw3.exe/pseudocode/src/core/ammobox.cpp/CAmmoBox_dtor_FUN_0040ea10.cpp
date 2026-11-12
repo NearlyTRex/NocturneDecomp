@@ -13,7 +13,7 @@ CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_dtor_FUN_0040ea10(CAmmoBox *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CAmmoBoxTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CAmmoBoxTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

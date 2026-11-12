@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 315,
-    "complexity_score": 258,
+    "complexity_score": 280,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 93,
-    "suspect_count": 14,
+    "pseudocode_lines": 95,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -16,7 +16,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 408
+    "total_lines": 410
   },
   "cross_references": [
     {
@@ -322,6 +322,32 @@
     },
     "pcode_op_count": 1034
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004fbce0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0051ac40",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00523600",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8667
+    },
+    "nocturne.exe": {
+      "addr": "004d8720",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8775
+    }
+  },
   "stack_frame": {
     "frame_size": 32,
     "local_size": 24,
@@ -363,7 +389,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 21,
       "match": "DAT_005c87f9",
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,&DAT_005c87f9,this_ptr->mission_name);",
@@ -371,7 +397,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_005c8809",
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,&DAT_005c8809,this_ptr->num_sets);",
@@ -379,15 +405,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 29,
       "match": "DAT_005c880d",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c880d,pacVar4);",
+      "text": "FUN_005a3140(file_handle,&DAT_005c880d,pacVar5);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_005c8823",
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,&DAT_005c8823,DAT_007df9c4);",
@@ -395,7 +421,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_007df9c4",
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,&DAT_005c8823,DAT_007df9c4);",
@@ -403,7 +429,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 37,
       "match": "DAT_007df9c4",
       "severity": "mild",
       "text": "if (0 < DAT_007df9c4) {",
@@ -411,58 +437,74 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 40,
       "match": "DAT_007df9c8",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)&DAT_007df9c8 + iVar7);",
+      "text": "piVar1 = (int *)((int)&DAT_007df9c8 + iVar8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 45,
       "match": "DAT_007df9c4",
       "severity": "mild",
-      "text": "} while (iVar6 < DAT_007df9c4);",
+      "text": "} while (iVar7 < DAT_007df9c4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 49,
       "match": "DAT_005c883e",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c883e,iVar6);",
+      "text": "FUN_005a3140(file_handle,&DAT_005c883e,iVar7);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 58,
       "match": "DAT_005c885c",
       "severity": "mild",
-      "text": "FUN_005a3140(file_handle,&DAT_005c885c,iVar6);",
+      "text": "FUN_005a3140(file_handle,&DAT_005c885c,iVar7);",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `&DAT_007df9c8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 39,
+      "line": 40,
       "match": "(int)&DAT_007df9c8",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&DAT_007df9c8 + iVar7);",
+      "text": "piVar1 = (int *)((int)&DAT_007df9c8 + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar3[0x182].orient` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 77,
+      "match": "(int)&pCVar3[0x182].orient",
+      "severity": "moderate",
+      "text": "this_ptr_00 = (CInventory *)((int)&pCVar3[0x182].orient + 8);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 39,
+      "line": 40,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&DAT_007df9c8 + iVar7);",
+      "text": "piVar1 = (int *)((int)&DAT_007df9c8 + iVar8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar5->owner`). Replace `pCVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 84,
-      "match": "pCVar5 = (T *)&pCVar5->FIELD",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 77,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pCVar5 = (CInventory *)&pCVar5->owner;",
+      "text": "this_ptr_00 = (CInventory *)((int)&pCVar3[0x182].orient + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 86,
+      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CInventory *)&pCVar6->owner;",
       "type": "shadow_pointer_walk"
     }
   ]

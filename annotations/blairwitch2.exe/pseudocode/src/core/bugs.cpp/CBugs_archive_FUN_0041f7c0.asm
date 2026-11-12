@@ -81,7 +81,7 @@ section .text
     PUSH ESI                            ; 0041f847
     INC EBX                             ; 0041f848
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 0041f849
-        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60()
+        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0041f84e
     MOV EBP,dword ptr [EDI + 0x16f00]   ; 0041f851
     ADD ESI,0x17c                       ; 0041f857

@@ -2,13 +2,13 @@
 // Address: 00578f80
 // Address Range: [[00578f80, 005798fd]]
 // Convention: unknown
-// Signature: int sound_snddx_cpp_FUN_00578f80(undefined4 param_1,int param_2,uint param_3)
+// Signature: int sound_snddx_cpp_FUN_00578f80(undefined4 param_1,int *param_2,uint param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int sound_snddx_cpp_FUN_00578f80(uint param_1,int param_2,uint param_3)
+int sound_snddx_cpp_FUN_00578f80(uint param_1,int *param_2,uint param_3)
 
 {
   int *piVar1;
@@ -16,8 +16,7 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int param_2,uint param_3)
   int iVar3;
   uint uVar4;
   int iVar5;
-  int iVar6;
-  float10 fVar7;
+  float10 fVar6;
   float fStack_1308;
   char acStack_1300 [400];
   char acStack_1170 [400];
@@ -43,42 +42,41 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int param_2,uint param_3)
   int *piStack_18;
   float fStack_14;
   
-  iVar5 = *(int *)(param_2 + 0x60);
-  if (((iVar5 < 1) || (0x1e < iVar5)) || (*(int *)(iVar5 * 0x24 + 0x2c823e0) == 0)) {
+  iVar3 = param_2[0x18];
+  if (((iVar3 < 1) || (0x1e < iVar3)) || (*(int *)(iVar3 * 0x24 + 0x2c823e0) == 0)) {
     _DAT_01d1d400 = "..\\sound\\snddx.cpp";
     _DAT_01d1d404 = 0x4f3;
     core_main_c_FUN_005030e0();
   }
   iStack_1c = 1;
-  piStack_18 = (int *)(iVar5 * 0x24 + 0x2c823e0);
+  piStack_18 = (int *)(iVar3 * 0x24 + 0x2c823e0);
   piVar1 = (int *)*piStack_18;
-  piVar2 = *(int **)(iVar5 * 0x24 + 0x2c823e4);
+  piVar2 = *(int **)(iVar3 * 0x24 + 0x2c823e4);
   if (piVar1 == (int *)0x0) {
     return 0;
   }
   if (piVar2 != (int *)0x0) {
     if ((param_3 & 0x88) != 0) {
-      fStack_28 = *(float *)(param_2 + 0xf0);
-      fStack_30 = *(float *)(param_2 + 0xf8);
-      fStack_14 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0();
-      if (((*(byte *)(param_2 + 0x4c) & 1) == 0) && (0.0 < fStack_14)) {
+      fStack_28 = (float)param_2[0x3c];
+      fStack_30 = (float)param_2[0x3e];
+      fStack_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0(*param_2);
+      if (((*(byte *)(param_2 + 0x13) & 1) == 0) && (0.0 < fStack_14)) {
         fStack_28 = fStack_28 * fStack_14;
         fStack_30 = fStack_30 * fStack_14;
       }
     }
     if (((param_3 & 2) != 0) &&
        (uVar4 = (**(code **)(*piVar2 + 0x4c))
-                          (piVar2,(float)*(double *)(param_2 + 4),(float)*(double *)(param_2 + 0xc),
-                           (float)*(double *)(param_2 + 0x14)), uVar4 != 0)) {
+                          (piVar2,(float)*(double *)(param_2 + 1),(float)*(double *)(param_2 + 3),
+                           (float)*(double *)(param_2 + 5)), uVar4 != 0)) {
       sound_snddx_cpp_FUN_00577500(uVar4);
       _sprintf(acStack_b30,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_FUN_005773f0();
       iStack_1c = 0;
     }
     if (((param_3 & 4) != 0) &&
-       (uVar4 = (**(code **)(*piVar2 + 0x50))
-                          (piVar2,*(uint *)(param_2 + 0x24),*(uint *)(param_2 + 0x28),
-                           *(uint *)(param_2 + 0x2c)), uVar4 != 0)) {
+       (uVar4 = (**(code **)(*piVar2 + 0x50))(piVar2,param_2[9],param_2[10],param_2[0xb]),
+       uVar4 != 0)) {
       sound_snddx_cpp_FUN_00577500(uVar4);
       _sprintf(acStack_4f0,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_FUN_005773f0();
@@ -112,7 +110,7 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int param_2,uint param_3)
     }
     if ((param_3 & 0x40) != 0) {
       iStack_24 = 0;
-      if ((*(byte *)(param_2 + 0x4c) & 1) != 0) {
+      if ((*(byte *)(param_2 + 0x13) & 1) != 0) {
         iStack_24 = 2;
       }
       if ((param_3 == 0xffffffff) || (iStack_24 != piStack_18[8])) {
@@ -143,9 +141,9 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int param_2,uint param_3)
       }
     }
     if ((param_3 & 0x100) != 0) {
-      fVar7 = (float10)*(double *)(param_2 + 0x10c);
+      fVar6 = (float10)*(double *)(param_2 + 0x43);
       round();
-      uStack_40 = (double)(longlong)ROUND(fVar7);
+      uStack_40 = (double)(longlong)ROUND(fVar6);
       uVar4 = (**(code **)(*piVar1 + 0x34))(piVar1);
       if (uVar4 != 0) {
         sound_snddx_cpp_FUN_00577500(uVar4);
@@ -158,30 +156,30 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int param_2,uint param_3)
   }
   if ((param_3 & 0xca) != 0) {
     iVar3 = sound_sndmain_cpp_FUN_00575240();
-    iVar6 = 1;
-    fStack_1308 = *(float *)(param_2 + 0x90);
-    iVar5 = param_2;
+    iVar5 = 1;
+    fStack_1308 = (float)param_2[0x24];
+    piVar2 = param_2;
     if (1 < iVar3) {
       do {
-        if (fStack_1308 < *(float *)(iVar5 + 0x94)) {
-          fStack_1308 = *(float *)(iVar5 + 0x94);
+        if (fStack_1308 < (float)piVar2[0x25]) {
+          fStack_1308 = (float)piVar2[0x25];
         }
-        iVar6 = iVar6 + 1;
-        iVar5 = iVar5 + 4;
-      } while (iVar6 < iVar3);
+        iVar5 = iVar5 + 1;
+        piVar2 = piVar2 + 1;
+      } while (iVar5 < iVar3);
     }
     iStack_2c = sound_snddx_cpp_FUN_005779b0();
     iStack_20 = 0;
     if ((iVar3 == 2) && (0.0 < fStack_1308)) {
-      if (*(float *)(param_2 + 0x94) <= *(float *)(param_2 + 0x90)) {
-        if (*(float *)(param_2 + 0x90) < *(float *)(param_2 + 0x94)) {
-          if (0.0 < *(float *)(param_2 + 0x94)) {
+      if ((float)param_2[0x25] <= (float)param_2[0x24]) {
+        if ((float)param_2[0x24] < (float)param_2[0x25]) {
+          if (0.0 < (float)param_2[0x25]) {
             uStack_40 = floor
-                                  ((double)((*(float *)(param_2 + 0x90) / *(float *)(param_2 + 0x94)
-                                            ) * 0.6931472 * (float)_DAT_005f528b));
-            fVar7 = (float10)uStack_40;
+                                  ((double)(((float)param_2[0x24] / (float)param_2[0x25]) *
+                                            0.6931472 * (float)_DAT_005f528b));
+            fVar6 = (float10)uStack_40;
             round();
-            iStack_20 = (int)ROUND(fVar7);
+            iStack_20 = (int)ROUND(fVar6);
             if ((iStack_20 < 0) || (-10000 < iStack_20)) goto LAB_00579098;
           }
           else {
@@ -189,17 +187,17 @@ int sound_snddx_cpp_FUN_00578f80(uint param_1,int param_2,uint param_3)
           }
         }
       }
-      else if (*(float *)(param_2 + 0x90) <= 0.0) {
+      else if ((float)param_2[0x24] <= 0.0) {
 LAB_00579098:
         iStack_20 = 10000;
       }
       else {
         uStack_40 = floor
-                              ((double)((*(float *)(param_2 + 0x94) / *(float *)(param_2 + 0x90)) *
-                                        0.6931472 * (float)_DAT_005f5293));
-        fVar7 = (float10)uStack_40;
+                              ((double)(((float)param_2[0x25] / (float)param_2[0x24]) * 0.6931472 *
+                                       (float)_DAT_005f5293));
+        fVar6 = (float10)uStack_40;
         round();
-        iStack_20 = (int)ROUND(fVar7);
+        iStack_20 = (int)ROUND(fVar6);
         if ((iStack_20 < 10000) || (0 < iStack_20)) {
           iStack_20 = 0;
         }
@@ -231,9 +229,9 @@ LAB_00579098:
     }
   }
   if ((param_3 & 0x96) != 0) {
-    iVar5 = sound_snddx_cpp_FUN_00577a50();
+    iVar3 = sound_snddx_cpp_FUN_00577a50();
     if ((param_3 != 0xffffffff) ||
-       (uVar4 = iVar5 - piStack_18[7] >> 0x1f, 1 < (int)((iVar5 - piStack_18[7] ^ uVar4) - uVar4)))
+       (uVar4 = iVar3 - piStack_18[7] >> 0x1f, 1 < (int)((iVar3 - piStack_18[7] ^ uVar4) - uVar4)))
     {
       uVar4 = (**(code **)(*piVar1 + 0x44))(piVar1);
       if (uVar4 != 0) {
@@ -242,13 +240,13 @@ LAB_00579098:
         sound_sndmain_cpp_FUN_005773f0();
         iStack_1c = 0;
       }
-      piStack_18[7] = iVar5;
+      piStack_18[7] = iVar3;
     }
   }
   if ((param_3 & 0x100) != 0) {
-    fVar7 = (float10)*(double *)(param_2 + 0x10c);
+    fVar6 = (float10)*(double *)(param_2 + 0x43);
     round();
-    uStack_40 = (double)(longlong)ROUND(fVar7);
+    uStack_40 = (double)(longlong)ROUND(fVar6);
     uVar4 = (**(code **)(*piVar1 + 0x34))(piVar1);
     if (uVar4 != 0) {
       sound_snddx_cpp_FUN_00577500(uVar4);
@@ -258,7 +256,7 @@ LAB_00579098:
     }
   }
 LAB_005791b0:
-  *(uint *)(param_2 + 0x118) = *(uint *)(param_2 + 0x118) & (~param_3 | 0x40000000);
+  param_2[0x46] = param_2[0x46] & (~param_3 | 0x40000000);
   if (iStack_1c == 0) {
     sound_sndmain_cpp_FUN_005773f0();
   }

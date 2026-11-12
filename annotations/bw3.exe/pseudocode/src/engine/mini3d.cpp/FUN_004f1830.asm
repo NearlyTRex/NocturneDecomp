@@ -670,7 +670,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f1fb2
     PUSH EAX                            ; 004f1fb6
     CALL engine_special.cpp_drawPolygon_FUN_00565c10 ; 004f1fb7
-        ;   XREF to: 00565c10 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon_FUN_00565c10()
+        ;   XREF to: 00565c10 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_00565c10(SRenderVertex * vertices, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 004f1fbc
     ADD ESP,0xb0                        ; 004f1fbf
     POP EBP                             ; 004f1fc5
@@ -746,7 +746,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xa8]      ; 004f2055
     MOV EDI,EBP                         ; 004f205c
     CALL engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_00562c33 ; 004f205e
-        ;   XREF to: 00562c33 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_00562c33()
+        ;   XREF to: 00562c33 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_00562c33(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x004f1a7f                      ; 004f2063
         ;   XREF to: 004f1a7f (UNCONDITIONAL_JUMP)  ; LAB_004f1a7f
     MOV ESI,dword ptr [ESP + 0xac]      ; 004f2068
@@ -754,7 +754,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xa8]      ; 004f206f
     MOV EDI,EBP                         ; 004f2076
     CALL engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00562e69 ; 004f2078
-        ;   XREF to: 00562e69 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00562e69()
+        ;   XREF to: 00562e69 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00562e69(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x004f1a7f                      ; 004f207d
         ;   XREF to: 004f1a7f (UNCONDITIONAL_JUMP)  ; LAB_004f1a7f
 

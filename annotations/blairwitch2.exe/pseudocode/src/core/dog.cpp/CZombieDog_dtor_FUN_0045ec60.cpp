@@ -18,7 +18,7 @@ CZombieDog * core_dog_cpp_CZombieDog_dtor_FUN_0045ec60(CZombieDog *this_ptr,uint
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CZombieDogTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CZombieDogTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

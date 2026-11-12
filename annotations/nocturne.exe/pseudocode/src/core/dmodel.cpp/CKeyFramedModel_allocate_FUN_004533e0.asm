@@ -28,7 +28,7 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_dmodel.cpp_CKeyFramedModel_FUN_00452f10
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
@@ -43,8 +43,8 @@ section .text
     PUSH EBP                            ; 004533e3
     MOV EBX,dword ptr [ESP + 0x14]      ; 004533e4
     PUSH EBX                            ; 004533e8
-    CALL core_dmodel.cpp_CKeyFramedModel_FUN_00452f10 ; 004533e9
-        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_FUN_00452f10(CKeyFramedModel * this_ptr)
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10 ; 004533e9
+        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 004533ee
     MOV EAX,dword ptr [ESP + 0x18]      ; 004533f1
     MOV dword ptr [EBX + 0x104],EAX     ; 004533f5
@@ -122,8 +122,8 @@ section .text
         ;   XREF to: 00453573 (CONDITIONAL_JUMP)  ; LAB_00453573
     PUSH EBX                            ; 004534f8
         ;   Label: LAB_004534f8
-    CALL core_dmodel.cpp_CKeyFramedModel_FUN_00452f10 ; 004534f9
-        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_FUN_00452f10(CKeyFramedModel * this_ptr)
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10 ; 004534f9
+        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 004534fe
     MOV EDI,dword ptr [EBX + 0x110]     ; 00453501
     PUSH EDI                            ; 00453507

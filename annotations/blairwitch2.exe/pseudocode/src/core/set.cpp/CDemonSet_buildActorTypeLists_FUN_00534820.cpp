@@ -9,58 +9,61 @@
 void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00534820(CDemonSet *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  uint uVar2;
-  CCharacter *pCVar3;
-  CEnemy *pCVar4;
-  CWayPoint *pCVar5;
-  int iVar6;
-  int iVar7;
-  CDemonSet *pCVar8;
+  CDemonActor *actor_ptr;
+  uint class_name_hash;
+  CCharacter *pCVar1;
+  CEnemy *pCVar2;
+  CWayPoint *pCVar3;
+  CDemonActor *pCVar4;
+  int iVar5;
+  CDemonSet *pCVar6;
   
   this_ptr->enemy_count = 0;
   this_ptr->threat_count = 0;
   this_ptr->waypoint_count = 0;
   this_ptr->renderable_actor_count = 0;
   this_ptr->character_count = 0;
-  iVar7 = 0;
-  pCVar8 = this_ptr;
+  iVar5 = 0;
+  pCVar6 = this_ptr;
   if (0 < this_ptr->actor_count) {
     do {
-      pCVar1 = pCVar8->actors[0];
-      if ((pCVar1->is_transparent != 0) || (pCVar1->is_renderable != 0)) {
-        this_ptr->renderable_actors[this_ptr->renderable_actor_count] = pCVar1;
+      actor_ptr = pCVar6->actors[0];
+      if ((actor_ptr->is_transparent != 0) || (actor_ptr->is_renderable != 0)) {
+        this_ptr->renderable_actors[this_ptr->renderable_actor_count] = actor_ptr;
         this_ptr->renderable_actor_count = this_ptr->renderable_actor_count + 1;
       }
-      pCVar3 = (CCharacter *)
-               core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar1,g_CCharacterClassInfo.name_hash);
-      this_ptr->characters[this_ptr->character_count] = pCVar3;
-      uVar2 = g_CEnemyClassInfo.name_hash;
+      pCVar1 = (CCharacter *)
+               core_actor_cpp_castToClassHash_FUN_0040c8f0
+                         (actor_ptr,g_CCharacterClassInfo.name_hash);
+      this_ptr->characters[this_ptr->character_count] = pCVar1;
+      class_name_hash = g_CEnemyClassInfo.name_hash;
       if (this_ptr->characters[this_ptr->character_count] == (CCharacter *)0x0) {
-        pCVar5 = (CWayPoint *)
-                 core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar1,g_CWayPointClassInfo.name_hash);
-        this_ptr->waypoints[this_ptr->waypoint_count] = pCVar5;
+        pCVar3 = (CWayPoint *)
+                 core_actor_cpp_castToClassHash_FUN_0040c8f0
+                           (actor_ptr,g_CWayPointClassInfo.name_hash);
+        this_ptr->waypoints[this_ptr->waypoint_count] = pCVar3;
         if (this_ptr->waypoints[this_ptr->waypoint_count] != (CWayPoint *)0x0) {
           this_ptr->waypoint_count = this_ptr->waypoint_count + 1;
         }
-        iVar6 = (CTrigger *)core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar1,g_CTriggerClassInfo.name_hash);
-        if (((iVar6 != 0) && (*(int *)(iVar6 + 0x2d0) == 4)) && (*(int *)(iVar6 + 0x460) != 0))
-        goto LAB_00534905;
+        pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                           (actor_ptr,g_CTriggerClassInfo.name_hash);
+        if (((pCVar4 != (CDemonActor *)0x0) && (*(int *)(pCVar4[1].actor_name + 0x1c) == 4)) &&
+           (pCVar4[1].particle_systems[1].owner != (CDemonActor *)0x0)) goto LAB_00534905;
       }
       else {
         this_ptr->character_count = this_ptr->character_count + 1;
-        pCVar4 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar1,uVar2);
-        this_ptr->enemies[this_ptr->enemy_count] = pCVar4;
+        pCVar2 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c8f0(actor_ptr,class_name_hash);
+        this_ptr->enemies[this_ptr->enemy_count] = pCVar2;
         if (this_ptr->enemies[this_ptr->enemy_count] != (CEnemy *)0x0) {
           this_ptr->enemy_count = this_ptr->enemy_count + 1;
 LAB_00534905:
-          this_ptr->threats[this_ptr->threat_count] = pCVar1;
+          this_ptr->threats[this_ptr->threat_count] = actor_ptr;
           this_ptr->threat_count = this_ptr->threat_count + 1;
         }
       }
-      iVar7 = iVar7 + 1;
-      pCVar8 = (CDemonSet *)pCVar8->cameras;
-    } while (iVar7 < this_ptr->actor_count);
+      iVar5 = iVar5 + 1;
+      pCVar6 = (CDemonSet *)pCVar6->cameras;
+    } while (iVar5 < this_ptr->actor_count);
   }
   return;
 }

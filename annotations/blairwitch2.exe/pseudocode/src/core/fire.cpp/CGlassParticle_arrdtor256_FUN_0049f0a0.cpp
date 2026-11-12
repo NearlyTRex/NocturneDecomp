@@ -13,7 +13,6 @@ CGlassParticle * core_fire_cpp_CGlassParticle_arrdtor256_FUN_0049f0a0(CGlassPart
 {
   CGlassParticle *pCVar1;
   
-  pCVar1 = (CGlassParticle *)
-           __arrfini(this_ptr,0x100,&g_CGlassParticleTypeInfo);
+  pCVar1 = (CGlassParticle *)__arrfini(this_ptr,0x100,&g_CGlassParticleTypeInfo);
   return pCVar1;
 }

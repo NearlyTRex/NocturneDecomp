@@ -9,8 +9,8 @@
 void core_wateract_cpp_staticInit_FUN_00577cf0(void)
 
 {
-  __arrinit(0x2d059b8,100,&g_CVectorTypeInfo);
-  __arrinit(0x2d05e68,100,&g_SCollisionInfoTypeInfo);
+  __arrinit((void *)0x2d059b8,100,&g_CVectorTypeInfo);
+  __arrinit((void *)0x2d05e68,100,&g_SCollisionInfoTypeInfo);
   core_actor_cpp_registerActorClass_FUN_0040c3a0
             (&g_CWaterActorClassInfo,"@CWaterActor" + 1,
              core_wateract_cpp_factoryFuncWaterActor_FUN_00577d60,&g_CWaterActorClassVersion,7,

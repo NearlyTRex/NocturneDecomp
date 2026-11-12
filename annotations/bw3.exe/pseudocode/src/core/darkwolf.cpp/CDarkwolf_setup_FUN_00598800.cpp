@@ -24,7 +24,7 @@ void __cdecl core_darkwolf_cpp_CDarkwolf_setup_FUN_00598800(CDarkwolf *this_ptr)
   pCVar2 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(pCVar2);
   core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(pCVar2);
-  pCVar4 = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c4f0("CTawiscara");
+  pCVar4 = core_actor_cpp_createActorByName_FUN_0040c4f0("CTawiscara");
   this_ptr->morph_target = pCVar4;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
             ((CDeformableModelInstance *)(pCVar4 + 1),"wolfbrn.dfm");

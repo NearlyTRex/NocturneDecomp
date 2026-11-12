@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_pendulum_cpp_factoryFuncPendulum_FUN_00514ca0(void)
+; CPendulum * __cdecl core_pendulum_cpp_factoryFuncPendulum_FUN_00514ca0(void)
 ;
 ;
 ; Called Functions:

@@ -1,20 +1,20 @@
 // Name: core_melee.cpp_factoryFuncMelee_FUN_004e6f60
 // Address: 004e6f60
 // Address Range: [[004e6f60, 004e6f7b]]
-// Convention: unknown
-// Signature: void core_melee_cpp_factoryFuncMelee_FUN_004e6f60(void)
+// Convention: __cdecl
+// Signature: CMelee * __cdecl core_melee_cpp_factoryFuncMelee_FUN_004e6f60(void)
 
 #include "nocturne.h"
 
-void core_melee_cpp_factoryFuncMelee_FUN_004e6f60(void)
+CMelee * __cdecl core_melee_cpp_factoryFuncMelee_FUN_004e6f60(void)
 
 {
-  CMelee *this_ptr;
+  CMelee *pCVar1;
   
-  this_ptr = (CMelee *)operator_new(0x6e8);
-  if (this_ptr == (CMelee *)0x0) {
-    return;
+  pCVar1 = (CMelee *)operator_new(0x6e8);
+  if (pCVar1 == (CMelee *)0x0) {
+    return (CMelee *)0x0;
   }
-  core_melee_cpp_CMelee_ctor_FUN_004e6f90(this_ptr);
-  return;
+  pCVar1 = core_melee_cpp_CMelee_ctor_FUN_004e6f90(pCVar1);
+  return pCVar1;
 }

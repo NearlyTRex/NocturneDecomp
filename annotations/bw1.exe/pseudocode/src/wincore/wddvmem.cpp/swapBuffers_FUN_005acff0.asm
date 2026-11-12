@@ -80,7 +80,7 @@ section .text
     MOV ESI,dword ptr [0x00629010]      ; 005ad02f | DAT_00629010
     MOV dword ptr [0x02c9931c],ECX      ; 005ad035 | DAT_02c9931c
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10 ; 005ad03b
-        ;   XREF to: 005acb10 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10()
+        ;   XREF to: 005acb10 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10()
     MOV EBX,dword ptr [0x0061b49c]      ; 005ad040 | DAT_0061b49c
     XOR ECX,ECX                         ; 005ad046
     TEST EBX,EBX                        ; 005ad048

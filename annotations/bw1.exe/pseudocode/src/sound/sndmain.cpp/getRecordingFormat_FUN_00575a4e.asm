@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_getRecordingFormat_FUN_00575a4e(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
+; void __cdecl sound_sndmain_cpp_getRecordingFormat_FUN_00575a4e(int *out_bits_per_sample,int *out_channels,int *out_sample_rate,int *out_signed)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   out_bits_per_sample
+; int *            Stack[0x8]:4   out_channels
+; int *            Stack[0xc]:4   out_sample_rate
+; int *            Stack[0x10]:4   out_signed
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00623320

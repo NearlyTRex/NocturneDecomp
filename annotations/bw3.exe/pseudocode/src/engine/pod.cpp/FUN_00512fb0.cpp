@@ -26,10 +26,7 @@ uint engine_pod_cpp_FUN_00512fb0(CPodFile *param_1,char *param_2,char *param_3)
   char *pcVar12;
   byte bVar13;
   bool bVar14;
-  byte local_8cc [256];
-  char local_7cc [260];
-  int local_6c8;
-  uint local_6c0;
+  SFoundFileInfo local_8cc;
   char local_6b8 [512];
   uint local_4b8 [2];
   char local_4b0 [80];
@@ -82,14 +79,14 @@ uint engine_pod_cpp_FUN_00512fb0(CPodFile *param_1,char *param_2,char *param_3)
   }
   support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_84);
   engine_pod_cpp_CPodFile_cleanup_FUN_00513b90(param_1);
-  engine_dosio_cpp_FUN_00465660(local_8cc,0,param_2);
-  iVar6 = engine_dosio_cpp_findFileNormally_FUN_00465730(local_8cc);
+  engine_dosio_cpp_FUN_00465660(&local_8cc,0,param_2);
+  iVar6 = engine_dosio_cpp_findFileNormally_FUN_00465730(&local_8cc);
   if (iVar6 == 0) {
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00508960("File not found");
     _sprintf(local_6b8,pcVar2);
   }
   else {
-    pcVar2 = local_7cc;
+    pcVar2 = local_8cc.target_path;
     pcVar12 = param_1->filename;
     do {
       cVar1 = *pcVar2;
@@ -100,7 +97,7 @@ uint engine_pod_cpp_FUN_00512fb0(CPodFile *param_1,char *param_2,char *param_3)
       pcVar12[1] = cVar1;
       pcVar12 = pcVar12 + 2;
     } while (cVar1 != '\0');
-    param_1->timestamp = local_6c0;
+    param_1->timestamp = local_8cc.timestamp;
     iVar6 = support_trstream_cpp_CInStreamFile_open_FUN_00573f50(&local_84,param_1->filename,1);
     if (iVar6 == 0) {
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Unable to open file '%s'");
@@ -411,8 +408,9 @@ LAB_00513493:
                         param_1->file_data_buffer = pcVar2;
                       }
                       if (((local_38 < 0) || (999999999 < local_38)) ||
-                         ((local_6c8 < local_38 ||
-                          ((local_34 < 0x54 || (local_6c8 - local_38 < (int)local_34))))))
+                         (((int)local_8cc.file_size < local_38 ||
+                          ((local_34 < 0x54 ||
+                           ((int)(local_8cc.file_size - local_38) < (int)local_34))))))
                       goto LAB_0051345e;
                       pcVar2 = local_58;
                       pcVar12 = param_1->file_data_buffer +

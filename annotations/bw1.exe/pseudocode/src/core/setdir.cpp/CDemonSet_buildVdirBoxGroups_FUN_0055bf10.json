@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 65,
+    "complexity_score": 80,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "pointer_cast",
       "shadow_pointer_walk"
     ],
     "total_lines": 167
@@ -116,6 +117,32 @@
     },
     "pcode_op_count": 423
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0053a610",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005418d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00576710",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005141f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 48,
     "local_size": 44,
@@ -175,6 +202,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 35,
+      "match": "(SVDBox *)((int)(this_ptr->vdir_boxes[0].rotation_matrix.m + -2) +",
+      "severity": "moderate",
+      "text": "obb_a = (SVDBox *)((int)(this_ptr->vdir_boxes[0].rotation_matrix.m + -2) + local_28);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on an array-indexed field reached by an (unparenthesized) arrow deref; the inner sibling array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 21,

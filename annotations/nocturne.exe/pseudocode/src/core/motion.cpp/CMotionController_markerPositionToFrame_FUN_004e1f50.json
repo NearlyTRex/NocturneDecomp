@@ -38,12 +38,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005384d0",
-      "from_addr": "0053967c",
-      "name": "core_stranger.cpp_CStranger_FUN_005384d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053a260",
       "from_addr": "0053a363",
       "name": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260",
@@ -53,6 +47,12 @@
       "addr": "00539b10",
       "from_addr": "00539d59",
       "name": "core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005384d0",
+      "from_addr": "0053967c",
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -160,7 +160,7 @@
       {
         "call_addr": "0053967c",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_FUN_005384d0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -240,6 +240,14 @@
       "TRUNC": 1
     },
     "pcode_op_count": 695
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "0052e3a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 56,

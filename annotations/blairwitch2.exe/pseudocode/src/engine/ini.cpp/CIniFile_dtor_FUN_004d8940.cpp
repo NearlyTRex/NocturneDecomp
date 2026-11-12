@@ -14,7 +14,7 @@ CIniFile * engine_ini_cpp_CIniFile_dtor_FUN_004d8940(CIniFile *this_ptr,uint fla
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CIniFileTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CIniFileTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

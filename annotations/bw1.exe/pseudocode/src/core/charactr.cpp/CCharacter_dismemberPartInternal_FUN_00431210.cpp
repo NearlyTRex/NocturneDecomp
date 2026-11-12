@@ -13,8 +13,8 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00431210(CCh
   SFire *pSVar2;
   CCharacter *pCVar3;
   int iVar4;
-  uint *puVar5;
-  uint *puVar6;
+  CMatrix3x4f *pCVar5;
+  float *pfVar6;
   byte bVar7;
   float afStackY_1050 [15];
   CMatrix3x4f *apCStackY_1014 [975];
@@ -22,6 +22,8 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00431210(CCh
   char *model_name;
   CVector3f *position_offset;
   CVector3f *euler_angles;
+  CMatrix3x4f local_c8;
+  float local_98 [3];
   float local_8c;
   float local_7c;
   uint local_6c;
@@ -49,15 +51,15 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00431210(CCh
       do {
         if (part_index == pSVar1->part_index) {
           core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
-                    (&pSVar1->transform,apCStack_28[2] + pSVar1->bone_index);
-          puVar5 = (uint *)&stack0xffffff38;
-          puVar6 = (uint *)&stack0xffffff68;
+                    (&pSVar1->transform,apCStack_28[2] + pSVar1->bone_index,&local_c8);
+          pCVar5 = &local_c8;
+          pfVar6 = local_98;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *puVar6 = *puVar5;
-            puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-            puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+            *pfVar6 = pCVar5->m[0].w;
+            pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
+            pfVar6 = pfVar6 + (uint)bVar7 * -2 + 1;
           }
-          core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&stack0xffffff68);
+          core_xform_cpp_matrixToEulerAngles_FUN_005b5930(local_98);
           euler_angles = &local_5c;
           local_50 = local_8c;
           local_4c[0] = local_7c;

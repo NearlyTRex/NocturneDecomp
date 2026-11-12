@@ -44,7 +44,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamFile_write_FUN_005a18f0",
-    "signature": "int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile *this_ptr,undefined4 param_2,int param_3)"
+    "signature": "int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile *this_ptr,void *param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -132,6 +132,20 @@
     },
     "pcode_op_count": 116
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057dca0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005748e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -168,7 +182,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile *this_ptr,uint param_2,int param_3)",
+      "text": "int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile *this_ptr,void *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -176,7 +190,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile *this_ptr,uint param_2,int param_3)",
+      "text": "int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile *this_ptr,void *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -184,7 +198,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = _fwrite(param_2,1,param_3,this_ptr->file);",
+      "text": "SVar1 = _fwrite(param_2,1,param_3,this_ptr->file);",
       "type": "unnamed_param"
     },
     {
@@ -192,7 +206,7 @@
       "line": 8,
       "match": "param_3",
       "severity": "mild",
-      "text": "iVar1 = _fwrite(param_2,1,param_3,this_ptr->file);",
+      "text": "SVar1 = _fwrite(param_2,1,param_3,this_ptr->file);",
       "type": "unnamed_param"
     },
     {
@@ -200,7 +214,7 @@
       "line": 9,
       "match": "param_3",
       "severity": "mild",
-      "text": "if ((iVar1 == param_3) || ((this_ptr->file->_flag & 0x20) == 0)) {",
+      "text": "if ((SVar1 == param_3) || ((this_ptr->file->_flag & 0x20) == 0)) {",
       "type": "unnamed_param"
     }
   ],

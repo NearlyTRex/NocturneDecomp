@@ -15,7 +15,7 @@ CPatrolPoint * core_hpatrol_cpp_CPatrolPoint_dtor_FUN_0059c610(CPatrolPoint *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CPatrolPointTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CPatrolPointTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

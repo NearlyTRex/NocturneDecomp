@@ -22,9 +22,9 @@ CConstruct * core_construc_cpp_CConstruct_ctor_FUN_00445820(CConstruct *this_ptr
   char *pcVar7;
   
   pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
-  dest = (void *)__arrinit
-                           (&pCVar4[1].base.base.previous_transform_state.position.y,0x18,
-                            &g_SBoneGuyBoxTypeInfo);
+  dest = __arrinit
+                   (&pCVar4[1].base.base.previous_transform_state.position.y,0x18,
+                    &g_SBoneGuyBoxTypeInfo);
   pcVar5 = (char *)0x5d6d17;
   *(CConstruct_full_vtable **)((int)dest + -0xc244) = &g_CConstructVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50

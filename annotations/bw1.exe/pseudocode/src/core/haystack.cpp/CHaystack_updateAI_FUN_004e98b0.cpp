@@ -117,8 +117,8 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004e98b0(CHaystack *this_p
                         (this_ptr_01,&(this_ptr->base).base.base.location.position,&local_d8,
                          (this_ptr->base).base.base.direction_hint);
       if (iVar4 != 0) {
-        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                    (local_d8.y - (this_ptr->base).base.base.orient.vec.y);
+        local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                             (local_d8.y - (this_ptr->base).base.base.orient.vec.y);
         fVar3 = local_18 * _DAT_005e4557 * (float)_DAT_005e455f;
         local_3c = -local_20;
         (this_ptr->base).player_input.turn_speed = fVar3;
@@ -164,8 +164,8 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004e98b0(CHaystack *this_p
         afStack_b0[(uint)bVar6 * -2 + 0xf] = afStack_b0[(uint)bVar6 * -2];
         afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x10] =
              afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                    (local_74 - (this_ptr->base).base.base.orient.vec.y);
+        local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                             (local_74 - (this_ptr->base).base.base.orient.vec.y);
         fVar1 = local_18 * _DAT_005e4557 * (float)_DAT_005e455f;
         local_40 = -local_20;
         (this_ptr->base).player_input.turn_speed = fVar1;
@@ -205,8 +205,8 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004e98b0(CHaystack *this_p
       local_94 = local_64;
     }
     afStack_c8[3] =
-         (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                          (local_98 - (this_ptr->base).base.base.orient.vec.y);
+         core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                   (local_98 - (this_ptr->base).base.base.orient.vec.y);
     if (local_30 < afStack_c8[3]) {
       afStack_c8[3] = local_30;
     }

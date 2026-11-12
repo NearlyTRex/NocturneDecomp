@@ -51,7 +51,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004606b4
     PUSH EAX                            ; 004606b8
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004606b9
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004606be
     CMP EAX,0x1                         ; 004606c1
     JNZ 0x00460719                      ; 004606c4
@@ -85,7 +85,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 00460707
     PUSH EAX                            ; 0046070b
     CALL crt_stdio.c_fread_FUN_005a3890 ; 0046070c
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00460711
     CMP EAX,0x1                         ; 00460714
     JZ 0x00460745                       ; 00460717
@@ -133,7 +133,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x10c]     ; 00460784
     PUSH ECX                            ; 0046078a
     CALL crt_stdio.c_fread_FUN_005a3890 ; 0046078b
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00460790
     CMP EAX,0x1                         ; 00460793
     JNZ 0x00460719                      ; 00460796
@@ -151,7 +151,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x114]     ; 004607b1
     PUSH EBP                            ; 004607b7
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004607b8
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004607bd
     CMP EAX,0x1                         ; 004607c0
     JNZ 0x00460719                      ; 004607c3
@@ -164,7 +164,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x118]     ; 004607d5
     PUSH EAX                            ; 004607db
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004607dc
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004607e1
     CMP EAX,0x1                         ; 004607e4
     JNZ 0x00460719                      ; 004607e7
@@ -195,7 +195,7 @@ section .text
     ADD EAX,EDX                         ; 0046082d
     PUSH EAX                            ; 0046082f
     CALL crt_stdio.c_fread_FUN_005a3890 ; 00460830
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00460835
     CMP EAX,0x1                         ; 00460838
     JNZ 0x00460719                      ; 0046083b
@@ -212,7 +212,7 @@ section .text
     LEA EAX,[EBX + 0x248]               ; 00460852
     PUSH EAX                            ; 00460858
     CALL crt_stdio.c_fread_FUN_005a3890 ; 00460859
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0046085e
     CMP EAX,0x1                         ; 00460861
     JNZ 0x00460719                      ; 00460864

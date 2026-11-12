@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tommygun_cpp_factoryFuncTommyGun_FUN_0056b340(void)
+; CTommyGun * __cdecl core_tommygun_cpp_factoryFuncTommyGun_FUN_0056b340(void)
 ;
 ;
 ; Called Functions:

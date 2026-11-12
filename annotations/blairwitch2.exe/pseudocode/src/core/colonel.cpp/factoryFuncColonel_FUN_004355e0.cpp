@@ -1,20 +1,20 @@
 // Name: core_colonel.cpp_factoryFuncColonel_FUN_004355e0
 // Address: 004355e0
 // Address Range: [[004355e0, 004355fb]]
-// Convention: unknown
-// Signature: void core_colonel_cpp_factoryFuncColonel_FUN_004355e0(void)
+// Convention: __cdecl
+// Signature: CColonel * __cdecl core_colonel_cpp_factoryFuncColonel_FUN_004355e0(void)
 
 #include "nocturne.h"
 
-void core_colonel_cpp_factoryFuncColonel_FUN_004355e0(void)
+CColonel * __cdecl core_colonel_cpp_factoryFuncColonel_FUN_004355e0(void)
 
 {
-  CColonel *this_ptr;
+  CColonel *pCVar1;
   
-  this_ptr = (CColonel *)operator_new(0x25658);
-  if (this_ptr == (CColonel *)0x0) {
-    return;
+  pCVar1 = (CColonel *)operator_new(0x25658);
+  if (pCVar1 == (CColonel *)0x0) {
+    return (CColonel *)0x0;
   }
-  core_colonel_cpp_CColonel_ctor_FUN_00435610(this_ptr);
-  return;
+  pCVar1 = core_colonel_cpp_CColonel_ctor_FUN_00435610(pCVar1);
+  return pCVar1;
 }

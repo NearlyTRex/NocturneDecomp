@@ -24,8 +24,8 @@
 ;   crt_memory.c_operator_new_array_FUN_005c1268
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_sprintf_FUN_005bfb40
+;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00498290
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004998a0
-;   shape_edittool.cpp_FUN_00498290
 ;
 ; *****************************************************************************
 
@@ -121,8 +121,8 @@ section .text
     MOV EBX,dword ptr [0x0061abc0]      ; 00499c54 | g_CEditorToolsPtr
     PUSH EBX                            ; 00499c5a
     MOV byte ptr [EDI],0x0              ; 00499c5b
-    CALL shape_edittool.cpp_FUN_00498290 ; 00499c5e
-        ;   XREF to: 00498290 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_00498290(CEditorTools * this_ptr, char * text_data)
+    CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00498290 ; 00499c5e
+        ;   XREF to: 00498290 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00498290(CEditorTools * this_ptr, char * text_data)
     ADD ESP,0x8                         ; 00499c63
     MOV ESI,dword ptr [ESP]             ; 00499c66
     PUSH ESI                            ; 00499c69

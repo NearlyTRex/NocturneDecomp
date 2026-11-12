@@ -51,7 +51,7 @@ LAB_004e1dfd:
   while (iVar3 < g_CDemonSetPtr->actor_count) {
     this_ptr_00 = (CLever *)
                   core_actor_cpp_castToClassHash_FUN_0040c8f0
-                            (*(uint *)((int)g_CDemonSetPtr->actors + iVar2),
+                            (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2),
                              g_CLeverClassInfo.name_hash);
     if ((this_ptr_00 == (CLever *)0x0) || (this_ptr != this_ptr_00->linked_lever)) {
       iVar3 = iVar3 + 1;

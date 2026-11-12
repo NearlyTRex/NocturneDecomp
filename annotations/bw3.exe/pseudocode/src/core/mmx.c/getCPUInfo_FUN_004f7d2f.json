@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 153,
+    "complexity_score": 68,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 13,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 41
   },
@@ -27,7 +26,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_mmx.c_getCPUInfo_FUN_004f7d2f",
-    "signature": "bool __cdecl core_mmx_c_getCPUInfo_FUN_004f7d2f(uint *param_1)"
+    "signature": "int __cdecl core_mmx_c_getCPUInfo_FUN_004f7d2f(SCPUInfo *cpu_info)"
   },
   "function_calls": [
     {
@@ -77,9 +76,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -104,118 +103,88 @@
     },
     "pcode_op_count": 58
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004fd58f",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0051c54f",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052500f",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d9f6f",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "cpu_info",
+        "offset": 4,
+        "size": 4,
+        "type": "SCPUInfo *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bool __cdecl core_mmx_c_getCPUInfo_FUN_004f7d2f(uint *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 != (uint *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = (uint)DAT_00600698;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 8,
       "match": "DAT_00600698",
       "severity": "mild",
-      "text": "*param_1 = (uint)DAT_00600698;",
+      "text": "cpu_info->family = (uint)DAT_00600698;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1] = (uint)DAT_00600699;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 9,
       "match": "DAT_00600699",
       "severity": "mild",
-      "text": "param_1[1] = (uint)DAT_00600699;",
+      "text": "cpu_info->model = (uint)DAT_00600699;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2] = (uint)DAT_0060069a;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 10,
       "match": "DAT_0060069a",
       "severity": "mild",
-      "text": "param_1[2] = (uint)DAT_0060069a;",
+      "text": "cpu_info->stepping = (uint)DAT_0060069a;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3] = (uint)DAT_0060069c;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_0060069c",
       "severity": "mild",
-      "text": "param_1[3] = (uint)DAT_0060069c;",
+      "text": "cpu_info->is_intel = (uint)DAT_0060069c;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[4] = (uint)DAT_006006a1;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_006006a1",
       "severity": "mild",
-      "text": "param_1[4] = (uint)DAT_006006a1;",
+      "text": "cpu_info->mmx_supported = (uint)DAT_006006a1;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1 != (uint *)0x0;",
-      "type": "unnamed_param"
     }
   ]
 }

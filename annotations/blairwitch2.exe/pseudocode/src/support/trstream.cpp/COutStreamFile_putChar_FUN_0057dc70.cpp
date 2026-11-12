@@ -10,13 +10,13 @@ uint __cdecl support_trstream_cpp_COutStreamFile_putChar_FUN_0057dc70(COutStream
 
 {
   uint uVar1;
-  uint uVar2;
+  uint character;
   
   if (this_ptr->file != (_FILE *)0x0) {
-    uVar2 = (uint)param_2;
-    uVar1 = _fputc(uVar2,this_ptr->file);
-    if (uVar1 == uVar2) {
-      return uVar1 ^ uVar2;
+    character = (uint)param_2;
+    uVar1 = _fputc(character,this_ptr->file);
+    if (uVar1 == character) {
+      return uVar1 ^ character;
     }
   }
   return 0xfffffffe;

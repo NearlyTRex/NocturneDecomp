@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl engine_model_c_loadModelFile_FUN_004f7f20(char *param_1)
+; SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_004f7f20(char *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x5c]:1  local_5c
@@ -158,7 +158,7 @@ section .text
     PUSH 0x1                            ; 004f802c
     PUSH EDI                            ; 004f802e
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004f802f
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004f8034
     CMP EAX,ESI                         ; 004f8037
     JZ 0x004f8070                       ; 004f8039
@@ -227,7 +227,7 @@ section .text
         ;   XREF to: 004f7f4e (CONDITIONAL_JUMP)  ; LAB_004f7f4e
     PUSH EBX                            ; 004f80dc
     CALL engine_boss.c_modelStructNotSupported2_FUN_0041ac60 ; 004f80dd
-        ;   XREF to: 0041ac60 (UNCONDITIONAL_CALL)  ; undefined engine_boss.c_modelStructNotSupported2_FUN_0041ac60()
+        ;   XREF to: 0041ac60 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported2_FUN_0041ac60(char * filename)
     ADD ESP,0x4                         ; 004f80e2
     ADD ESP,0x50                        ; 004f80e5
     POP EBP                             ; 004f80e8

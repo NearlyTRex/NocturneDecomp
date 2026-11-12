@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 95,
+    "complexity_score": 111,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
-    "suspect_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 5,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 137
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -151,6 +152,32 @@
     },
     "pcode_op_count": 484
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004583d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00454520",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00457a90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0044b430",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -185,7 +212,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 30,
       "match": "DAT_01510da8",
       "severity": "mild",
       "text": "if (pCVar1 != (CVector3f *)&DAT_01510da8) {",
@@ -193,7 +220,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 36,
       "match": "DAT_01510db4",
       "severity": "mild",
       "text": "if (pCVar1 != (CVector3f *)&DAT_01510db4) {",
@@ -201,11 +228,19 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 42,
       "match": "DAT_01510dc0",
       "severity": "mild",
       "text": "if (pCVar1 != (CVector3f *)&DAT_01510dc0) {",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 19,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "((STriangleRef *)",
+      "type": "pointer_cast"
     }
   ]
 }

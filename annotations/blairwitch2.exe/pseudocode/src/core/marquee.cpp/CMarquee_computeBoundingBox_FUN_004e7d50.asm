@@ -10,7 +10,7 @@
 ;   core_marquee.cpp_CMarquee_setup_FUN_004e7e80 at 004e7ea5
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00438c40
+;   core_course.cpp_CCourse_evaluate_FUN_00438c40
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     FSTP float ptr [ESP + 0x20]         ; 004e7dbb
     PUSH dword ptr [ESP + 0x20]         ; 004e7dbf
     PUSH EDI                            ; 004e7dc3
-    CALL core_course.cpp_FUN_00438c40   ; 004e7dc4
-        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00438c40 ; 004e7dc4
+        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004e7dc9
     FLD float ptr [ESP + 0xc]           ; 004e7dcc
     FCOMP float ptr [EBX + 0x2e0]       ; 004e7dd0

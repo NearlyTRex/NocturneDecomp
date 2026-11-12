@@ -2,16 +2,17 @@
 // Address: 005c2738
 // Address Range: [[005c2738, 005c274f]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_time_c__localtime_FUN_005c2738(undefined4 param_1)
+// Signature: _tm * __cdecl crt_time_c__localtime_FUN_005c2738(time_t *timer)
 
 #include "nocturne.h"
 
-void __cdecl _localtime(uint param_1)
+_tm * __cdecl _localtime(time_t *timer)
 
 {
   int iVar1;
+  _tm *p_Var2;
   
   iVar1 = (*(code *)PTR_crt_unknown_c_FUN_005c50cc_006265fc)();
-  FUN_005c26e0(param_1,iVar1 + 0x14);
-  return;
+  p_Var2 = (_tm *)FUN_005c26e0(timer,iVar1 + 0x14);
+  return p_Var2;
 }

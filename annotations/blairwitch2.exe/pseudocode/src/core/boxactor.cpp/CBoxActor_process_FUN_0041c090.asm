@@ -149,21 +149,21 @@ section .text
     FSTP float ptr [EAX + 0x8]          ; 0041c224
     PUSH dword ptr [EBX + 0x30]         ; 0041c227
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0041c22a
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x13c],EAX     ; 0041c22f
     FLD float ptr [ESP + 0x13c]         ; 0041c236
     ADD ESP,0x4                         ; 0041c23d
     PUSH dword ptr [EBX + 0x38]         ; 0041c240
     FSTP float ptr [EBX + 0x30]         ; 0041c243
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0041c246
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x13c],EAX     ; 0041c24b
     FLD float ptr [ESP + 0x13c]         ; 0041c252
     ADD ESP,0x4                         ; 0041c259
     PUSH dword ptr [EBX + 0x34]         ; 0041c25c
     FSTP float ptr [EBX + 0x38]         ; 0041c25f
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0041c262
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x13c],EAX     ; 0041c267
     FLD float ptr [ESP + 0x13c]         ; 0041c26e
     MOV AH,byte ptr [EBX + 0x430]       ; 0041c275

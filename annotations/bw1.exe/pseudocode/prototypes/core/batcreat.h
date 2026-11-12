@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_batcreat.cpp_factoryFuncBatCreature_FUN_004111e0
 // Address: 004111e0
-void factoryFuncBatCreature(void);
+CBatCreature * __cdecl factoryFuncBatCreature(void);
 
 // Original: core_batcreat.cpp_CBatCreature_getActorType_FUN_00411200
 // Address: 00411200

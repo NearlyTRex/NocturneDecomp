@@ -35,14 +35,14 @@ section .text
     ADD EAX,0xd05c                      ; 00420eba
     PUSH EAX                            ; 00420ebf
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 00420ec0
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00420ec5
     PUSH 0x5dcd50                       ; 00420ec8
     PUSH 0x1                            ; 00420ecd
     ADD EAX,0x6404                      ; 00420ecf
     PUSH EAX                            ; 00420ed4
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 00420ed5
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00420eda
     LEA EBX,[EAX + 0xfffecba0]          ; 00420edd
     PUSH 0x2d                           ; 00420ee3

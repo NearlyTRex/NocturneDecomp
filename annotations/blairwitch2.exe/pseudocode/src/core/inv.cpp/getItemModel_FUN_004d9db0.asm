@@ -122,7 +122,7 @@ section .text
     PUSH EBX                            ; 004d9e81
         ;   Label: LAB_004d9e81
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004d9e82
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d9e87
     ADD EAX,0x2b4                       ; 004d9e8a
     POP EBP                             ; 004d9e8f

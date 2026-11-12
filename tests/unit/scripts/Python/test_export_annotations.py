@@ -321,6 +321,58 @@ def test_a_missing_refresh_script_is_skipped(monkeypatch, launches, capsys):
     assert "refresh_sibling_mapping.py not found" in capsys.readouterr().out
 
 
+# --- function siblings refresh --------------------------------------------------------------------
+
+def test_siblings_are_not_written_when_disabled_without_programs_or_without_functions(launches):
+    ea.maybe_refresh_function_siblings(["bw1.exe"], ["functions"], False)
+    ea.maybe_refresh_function_siblings([], ["functions"], True)
+    ea.maybe_refresh_function_siblings(["bw1.exe"], ["comments", "data_types"], True)
+    assert launches.commands == []
+
+
+@pytest.mark.parametrize("category", ["functions", "pseudocode"])
+def test_siblings_are_written_for_the_exported_programs(launches, capsys, category):
+    ea.maybe_refresh_function_siblings(["bw1.exe", "bw3.exe"], [category], True)
+    assert launches.commands == [[sys.executable, "-u", os.path.join(SCRIPTS_DIR, "sibling_identity.py"),
+                                  "bw1.exe", "bw3.exe"]]
+    assert "WARNING" not in capsys.readouterr().out
+
+
+def test_a_failed_siblings_write_only_warns(launches, capsys):
+    launches.code = 3
+    ea.maybe_refresh_function_siblings(["bw1.exe"], ["functions"], True)
+    assert "sibling_identity.py exited 3" in capsys.readouterr().out
+    launches.error = OSError("no python")
+    ea.maybe_refresh_function_siblings(["bw1.exe"], ["functions"], True)
+    assert "could not launch sibling_identity.py: no python" in capsys.readouterr().out
+
+
+# --- per-program function reports ----------------------------------------------------------------
+
+def test_function_reports_need_a_functions_export_and_can_be_skipped(launches):
+    ea.maybe_write_function_reports(["bw1.exe"], ["functions"], False)
+    ea.maybe_write_function_reports([], ["functions"], True)
+    ea.maybe_write_function_reports(["bw1.exe"], ["pseudocode"], True)
+    assert launches.commands == []
+
+
+def test_each_function_report_runs_for_the_exported_programs(launches, capsys):
+    ea.maybe_write_function_reports(["bw1.exe"], ["functions"], True)
+    assert launches.commands == [[sys.executable, "-u", os.path.join(SCRIPTS_DIR, name), "bw1.exe"]
+                                 for name in ea.FUNCTION_REPORTS]
+    assert "WARNING" not in capsys.readouterr().out
+
+
+def test_a_failed_report_only_warns_and_the_rest_still_run(launches, capsys):
+    launches.code = 2
+    ea.maybe_write_function_reports(["bw1.exe"], ["functions"], True)
+    assert len(launches.commands) == 3
+    assert "report_unnamed_functions.py exited 2" in capsys.readouterr().out
+    launches.error = OSError("no python")
+    ea.maybe_write_function_reports(["bw1.exe"], ["functions"], True)
+    assert "could not launch report_bad_instructions.py: no python" in capsys.readouterr().out
+
+
 # --- main -----------------------------------------------------------------------------------------
 
 def run_main(monkeypatch, *argv):

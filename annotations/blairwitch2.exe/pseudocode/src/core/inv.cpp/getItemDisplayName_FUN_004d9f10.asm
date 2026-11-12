@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004d9f10(CDemonActor *param_1)
+; char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004d9f10(CDemonActor *actor_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor_ptr
 ;
 ; XREF[3]:
 ;   core_inv.cpp_FUN_004dadb0 at 004dae7d

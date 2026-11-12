@@ -187,16 +187,14 @@ uint core_carved_cpp_FUN_0042a930(CCharacter *param_1,float param_2)
     (pCVar1->base).create_event[0x2f] = -0x3e;
     *(int *)(param_1[1].base.create_event + 0x34) = iVar8;
     *(int *)(param_1[1].base.create_event + 0x24) = iVar7 + 1;
-    engine_console_cpp_FUN_00445430
-              (g_CConsolePtr,"%s is going to try to pick up %s\n",param_1,
-               *(uint *)(param_1[1].base.create_event + 0x30));
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,"%s is going to try to pick up %s\n");
     return 1;
   }
   iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x94))(iVar8);
   if (iVar8 != 0) {
-    engine_console_cpp_FUN_00445430
-              (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,param_1,
-               *(uint *)(param_1[1].base.create_event + 0x30));
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1);
     pCVar1 = param_1 + 1;
     (pCVar1->base).create_event[0x30] = '\0';
     (pCVar1->base).create_event[0x31] = '\0';
@@ -352,9 +350,8 @@ LAB_0042af2f:
                       (param_1,&CStack_60,(CPathMap *)0x0,&CStack_120,0.0,0.0);
   }
   if (iVar8 < 0) {
-    engine_console_cpp_FUN_00445430
-              (g_CConsolePtr,"%s can't pick up %s, giving up\n",param_1,
-               *(uint *)(param_1[1].base.create_event + 0x30));
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,"%s can't pick up %s, giving up\n");
     pCVar1 = param_1 + 1;
     (pCVar1->base).create_event[0x30] = '\0';
     (pCVar1->base).create_event[0x31] = '\0';
@@ -371,9 +368,7 @@ LAB_0042af2f:
   if (iVar8 < 1) {
     return 1;
   }
-  engine_console_cpp_FUN_00445430
-            (g_CConsolePtr,"%s beginning to pickup %s\n",param_1,
-             *(uint *)(param_1[1].base.create_event + 0x30));
+  engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"%s beginning to pickup %s\n");
   uVar3 = *(uint *)(param_1[1].base.create_event + 0x34);
   if (uVar3 < 2) {
     if (uVar3 != 1) {

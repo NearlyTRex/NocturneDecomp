@@ -12,7 +12,8 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char 
 
 {
   char cVar1;
-  _FILE *p_Var2;
+  _FILE *file_handle;
+  long lVar2;
   int iVar3;
   SDialogEntry *pSVar4;
   char *pcVar5;
@@ -31,35 +32,35 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char 
   if (local_c < 1) {
     return;
   }
-  p_Var2 = engine_dosio_cpp_FUN_00460c70("world",filename,&DAT_005e4ea3);
-  if (p_Var2 == (_FILE *)0x0) {
+  file_handle = engine_dosio_cpp_FUN_00460c70("world",filename,&DAT_005e4ea3);
+  if (file_handle == (_FILE *)0x0) {
     _DAT_01d046a0 = "..\\core\\script.cpp";
     _DAT_01d046a4 = 0x11af;
     core_main_c_FUN_004e4500("Can't open world\\%s",filename);
   }
-  iVar3 = _ftell(p_Var2);
-  local_c = local_c + iVar3;
+  lVar2 = _ftell(file_handle);
+  local_c = local_c + lVar2;
   do {
-    _fscanf(p_Var2,&DAT_005e4ed3);
-    iVar3 = _ftell(p_Var2);
-    if (local_c <= iVar3) {
-      _fclose(p_Var2);
+    _fscanf(file_handle,&DAT_005e4ed3);
+    lVar2 = _ftell(file_handle);
+    if (local_c <= lVar2) {
+      _fclose(file_handle);
       return;
     }
-    iVar3 = _fscanf(p_Var2,"%[^,], ",local_334);
+    iVar3 = _fscanf(file_handle,"%[^,], ");
     if (iVar3 != 1) {
       _DAT_01d046a0 = "..\\core\\script.cpp";
       _DAT_01d046a4 = 0x11c4;
       core_main_c_FUN_004e4500
                 ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
     }
-    iVar3 = _fgetc(p_Var2);
+    iVar3 = _fgetc(file_handle);
     if (iVar3 == 0x2c) {
       local_2bc[0] = '\0';
     }
     else {
-      _ungetc(iVar3,p_Var2);
-      iVar3 = _fscanf(p_Var2,"%[^,],",local_2bc);
+      _ungetc(iVar3,file_handle);
+      iVar3 = _fscanf(file_handle,"%[^,],");
       if (iVar3 != 1) {
         _DAT_01d046a0 = "..\\core\\script.cpp";
         _DAT_01d046a4 = 0x11cd;
@@ -67,7 +68,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char 
                   ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
       }
     }
-    iVar3 = _fscanf(p_Var2," %[^\n]\n",local_29e);
+    iVar3 = _fscanf(file_handle," %[^\n]\n");
     if (iVar3 != 1) {
       _DAT_01d046a0 = "..\\core\\script.cpp";
       _DAT_01d046a4 = 0x11d2;

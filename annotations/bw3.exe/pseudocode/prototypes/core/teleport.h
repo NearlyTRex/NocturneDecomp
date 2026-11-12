@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_teleport.cpp_factoryFuncTeleportDest_FUN_00568d20
 // Address: 00568d20
-void factoryFuncTeleportDest(void);
+CTeleportDest * __cdecl factoryFuncTeleportDest(void);
 
 // Original: core_teleport.cpp_CTeleportDest_getActorType_FUN_00568d40
 // Address: 00568d40
@@ -31,7 +31,7 @@ ECollisionType __cdecl CTeleportDest::getCollisionType(CTeleportDest *this_ptr,S
 
 // Original: core_teleport.cpp_factoryFuncTeleport_FUN_00568dd0
 // Address: 00568dd0
-void factoryFuncTeleport(void);
+CTeleport * __cdecl factoryFuncTeleport(void);
 
 // Original: core_teleport.cpp_CTeleport_getActorType_FUN_00568df0
 // Address: 00568df0

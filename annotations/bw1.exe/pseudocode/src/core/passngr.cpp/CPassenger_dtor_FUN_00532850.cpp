@@ -21,7 +21,7 @@ CPassenger * core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *this_ptr,
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CPassengerTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CPassengerTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

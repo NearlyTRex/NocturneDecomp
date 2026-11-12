@@ -28,7 +28,6 @@
 // =============================================================================
 
 void shape_edittool_cpp_FUN_00480000(float *param_1,float *param_2);
-void shape_edittool_cpp_FUN_0048014e(undefined4 param_1,int *param_2,int *param_3,int param_4);
 void shape_edittool_cpp_FUN_00480150(undefined4 param_1,int *param_2,int *param_3,int param_4);
 void shape_edittool_cpp_FUN_00480720(undefined4 param_1,float *param_2,undefined4 param_3);
 void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004807e0(CEditorTools *this_ptr,char *output_buffer);
@@ -104,7 +103,7 @@ void __cdecl shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_00484ed0(CEdButto
 void shape_edittool_cpp_FUN_00484f20(int param_1,int param_2);
 int __cdecl shape_edittool_cpp_CEdButton_wasClicked_FUN_00485240(CEdButton *this_ptr);
 int __cdecl shape_edittool_cpp_calculateButtonWidth_FUN_004852f0(char *button_text);
-int shape_edittool_cpp_calculateButtonHeight_FUN_00485380(char *param_1);
+int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_00485380(char *button_text);
 void shape_edittool_cpp_FUN_0048546e(CEdCheck *param_1,int param_2,int param_3,char *param_4);
 void shape_edittool_cpp_FUN_0048555e(int param_1);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00485580(CEdCheck *this_ptr);
@@ -114,7 +113,7 @@ void shape_edittool_cpp_FUN_0048569e(void);
 int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_00485840(char *pattern,char *target_string,int case_sensitive);
 int __cdecl shape_edittool_cpp_FUN_004858f0(CStrList *this_ptr);
 void core_elephant_cpp_staticInit_FUN_00485940(void);
-void core_elephant_cpp_factoryFuncElephantGun_FUN_00485970(void);
+CElephantGun * __cdecl core_elephant_cpp_factoryFuncElephantGun_FUN_00485970(void);
 CDemonActorType * core_elephant_cpp_CElephantGun_getActorType_FUN_00485990(CElephantGun *this_ptr);
 CElephantGun * __cdecl core_elephant_cpp_CElephantGun_ctor_FUN_004859a0(CElephantGun *this_ptr);
 void __cdecl core_elephant_cpp_CElephantGun_process_FUN_00485a30(CElephantGun *this_ptr,float delta_time);
@@ -124,7 +123,7 @@ float __cdecl core_elephant_cpp_CElephantGun_getDamage_FUN_00486490(CElephantGun
 void __cdecl core_elephant_cpp_CElephantGun_renderAimBeam_FUN_004864d0(CElephantGun *this_ptr);
 CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_00486730(CElephantGun *this_ptr,uint flags);
 void core_emitter_cpp_staticInit_FUN_00486780(void);
-void core_emitter_cpp_factoryFuncEmitter_FUN_004867b0(void);
+CEmitter * __cdecl core_emitter_cpp_factoryFuncEmitter_FUN_004867b0(void);
 CDemonActorType * core_emitter_cpp_CEmitter_getActorType_FUN_004867d0(CEmitter *this_ptr);
 CEmitter * core_emitter_cpp_CEmitter_ctor_FUN_004867e0(CEmitter *this_ptr);
 void __cdecl core_emitter_cpp_CEmitter_setup_FUN_004869b0(CEmitter *this_ptr);
@@ -159,10 +158,10 @@ int __cdecl core_event_cpp_setEventError_FUN_00488b70(char *source_file,int sour
 int __cdecl core_event_cpp_formatEventError_FUN_00488ba0(char *format);
 char * __cdecl core_event_cpp_skipWhitespace_FUN_00488bd0(char *str);
 int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_00488bf0(char *expression,int *parse_position);
-undefined4 core_event_cpp_parseComparisonOp_FUN_00488c1e(char *param_1);
+int __cdecl core_event_cpp_parseComparisonOp_FUN_00488c1e(char *str);
 int __cdecl core_event_cpp_parseIntOrCounter_FUN_00488cc0(char *str);
-CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_00488d00(char *param_1,undefined4 param_2,undefined4 param_3);
-undefined4 __cdecl core_event_cpp_parseVectorLocation_FUN_00488e30(int param_1,int *param_2,undefined4 *param_3);
+CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_00488d00(char *name,uint class_hash,char *class_name);
+int __cdecl core_event_cpp_parseVectorLocation_FUN_00488e30(char *buffer,int *offset,CVector3f *out_position);
 void __cdecl core_event_cpp_trimWhitespace_FUN_00488f50(char *str);
 char * core_event_cpp_extractParenArg_FUN_00488fc0(int *param_1,char *param_2,int param_3,int param_4);
 int __cdecl core_event_cpp_parseDeathType_FUN_004890e0(char *type_name,int *out_type_id);

@@ -11,109 +11,113 @@
 void engine_mini3d_cpp_FUN_004f2090(int param_1,int param_2)
 
 {
-  float fVar1;
+  int *piVar1;
   float fVar2;
-  int iVar3;
+  float fVar3;
   int iVar4;
   int iVar5;
+  int iVar6;
   int local_28;
-  int *local_24;
-  int *local_20;
+  SSoftwareEdge *local_24;
+  SSoftwareEdge *local_20;
   
-  fVar1 = (*(float *)(param_1 + 0x58) - *(float *)(param_1 + 0x18)) *
+  fVar2 = (*(float *)(param_1 + 0x58) - *(float *)(param_1 + 0x18)) *
           (*(float *)(param_1 + 0x94) - *(float *)(param_1 + 0x54));
-  fVar2 = (*(float *)(param_1 + 0x54) - *(float *)(param_1 + 0x14)) *
+  fVar3 = (*(float *)(param_1 + 0x54) - *(float *)(param_1 + 0x14)) *
           (*(float *)(param_1 + 0x98) - *(float *)(param_1 + 0x58));
   if (_DAT_01d76cf8 == 0) {
-    if (fVar2 <= fVar1) {
+    if (fVar3 <= fVar2) {
       return;
     }
   }
-  else if (fVar1 <= fVar2) {
+  else if (fVar2 <= fVar3) {
     return;
   }
-  iVar4 = 0;
+  iVar5 = 0;
   _DAT_01d80d4c = 0;
   _DAT_01d80844 = 0;
   _DAT_01d80d48 = 0x4b0;
-  iVar5 = param_1;
+  iVar6 = param_1;
   if (0 < param_2) {
     do {
-      iVar3 = iVar4 + 1;
-      if (param_2 <= iVar3) {
-        iVar3 = 0;
+      iVar4 = iVar5 + 1;
+      if (param_2 <= iVar4) {
+        iVar4 = 0;
       }
-      iVar4 = iVar4 + 1;
-      engine_mini3d_cpp_FUN_004f13a0(iVar5,iVar3 * 0x40 + param_1);
-      iVar5 = iVar5 + 0x40;
-    } while (iVar4 < param_2);
+      iVar5 = iVar5 + 1;
+      engine_mini3d_cpp_FUN_004f13a0(iVar6,iVar4 * 0x40 + param_1);
+      iVar6 = iVar6 + 0x40;
+    } while (iVar5 < param_2);
   }
-  local_20 = (int *)&DAT_01d80848;
-  iVar5 = 0;
+  local_20 = (SSoftwareEdge *)&DAT_01d80848;
+  iVar6 = 0;
   if (0 < _DAT_01d80844) {
     do {
-      if ((_DAT_01d80d48 == *local_20) && (local_20 != (int *)0x0)) goto LAB_004f2184;
-      iVar5 = iVar5 + 1;
-      local_20 = local_20 + 0x14;
-    } while (iVar5 < _DAT_01d80844);
+      if ((_DAT_01d80d48 == (local_20->base).y_min) && (local_20 != (SSoftwareEdge *)0x0))
+      goto LAB_004f2184;
+      iVar6 = iVar6 + 1;
+      local_20 = local_20 + 1;
+    } while (iVar6 < _DAT_01d80844);
   }
-  local_20 = (int *)0x0;
+  local_20 = (SSoftwareEdge *)0x0;
 LAB_004f2184:
-  if (local_20 != (int *)0x0) {
-    iVar5 = 0;
-    local_24 = (int *)&DAT_01d80848;
+  if (local_20 != (SSoftwareEdge *)0x0) {
+    iVar6 = 0;
+    local_24 = (SSoftwareEdge *)&DAT_01d80848;
     if (0 < _DAT_01d80844) {
       do {
-        if ((_DAT_01d80d48 == *local_24) && (local_24 != local_20)) goto LAB_004f21b7;
-        iVar5 = iVar5 + 1;
-        local_24 = local_24 + 0x14;
-      } while (iVar5 < _DAT_01d80844);
+        if ((_DAT_01d80d48 == (local_24->base).y_min) && (local_24 != local_20)) goto LAB_004f21b7;
+        iVar6 = iVar6 + 1;
+        local_24 = local_24 + 1;
+      } while (iVar6 < _DAT_01d80844);
     }
-    local_24 = (int *)0x0;
+    local_24 = (SSoftwareEdge *)0x0;
 LAB_004f21b7:
-    if (local_24 != (int *)0x0) {
+    if (local_24 != (SSoftwareEdge *)0x0) {
       local_28 = _DAT_01d80d48;
       do {
-        if (local_20[1] <= local_28) {
-          *local_20 = -1;
-          local_20 = (int *)&DAT_01d80848;
-          iVar5 = 0;
+        if ((local_20->base).y_max <= local_28) {
+          (local_20->base).y_min = -1;
+          local_20 = (SSoftwareEdge *)&DAT_01d80848;
+          iVar6 = 0;
           if (0 < _DAT_01d80844) {
             do {
-              if ((local_28 == *local_20) && (local_20 != local_24)) goto LAB_004f2204;
-              iVar5 = iVar5 + 1;
-              local_20 = local_20 + 0x14;
-            } while (iVar5 < _DAT_01d80844);
+              if ((local_28 == (local_20->base).y_min) && (local_20 != local_24)) goto LAB_004f2204;
+              iVar6 = iVar6 + 1;
+              local_20 = local_20 + 1;
+            } while (iVar6 < _DAT_01d80844);
           }
-          local_20 = (int *)0x0;
+          local_20 = (SSoftwareEdge *)0x0;
 LAB_004f2204:
-          if (local_20 == (int *)0x0) {
+          if (local_20 == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        if (local_24[1] <= local_28) {
-          *local_24 = -1;
-          local_24 = (int *)&DAT_01d80848;
-          iVar5 = 0;
+        if ((local_24->base).y_max <= local_28) {
+          (local_24->base).y_min = -1;
+          local_24 = (SSoftwareEdge *)&DAT_01d80848;
+          iVar6 = 0;
           if (0 < _DAT_01d80844) {
             do {
-              if ((local_28 == *local_24) && (local_24 != local_20)) goto LAB_004f2248;
-              iVar5 = iVar5 + 1;
-              local_24 = local_24 + 0x14;
-            } while (iVar5 < _DAT_01d80844);
+              if ((local_28 == (local_24->base).y_min) && (local_24 != local_20)) goto LAB_004f2248;
+              iVar6 = iVar6 + 1;
+              local_24 = local_24 + 1;
+            } while (iVar6 < _DAT_01d80844);
           }
-          local_24 = (int *)0x0;
+          local_24 = (SSoftwareEdge *)0x0;
 LAB_004f2248:
-          if (local_24 == (int *)0x0) {
+          if (local_24 == (SSoftwareEdge *)0x0) {
             return;
           }
         }
         if (_DAT_01c6e2a0 == 0) {
           if (DAT_005fba20 == 0x20) {
-            engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33();
+            engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33
+                      (local_24,local_20,local_28);
           }
           else {
-            engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69();
+            engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69
+                      (local_24,local_20,local_28);
           }
         }
         else if (DAT_005fba20 == 0x20) {
@@ -122,25 +126,34 @@ LAB_004f2248:
         else {
           engine_special_cpp_FUN_005625a3();
         }
-        local_20[2] = local_20[2] + local_20[3];
-        local_20[6] = local_20[6] + local_20[7];
-        local_20[8] = local_20[8] + local_20[9];
-        local_20[10] = local_20[10] + local_20[0xb];
-        local_20[4] = local_20[4] + local_20[5];
-        local_20[0xe] = local_20[0xe] + local_20[0xf];
-        local_20[0x10] = local_20[0x10] + local_20[0x11];
-        local_20[0x12] = local_20[0x12] + local_20[0x13];
-        local_20[0xc] = local_20[0xc] + local_20[0xd];
-        local_24[2] = local_24[2] + local_24[3];
-        local_24[6] = local_24[6] + local_24[7];
-        local_24[8] = local_24[8] + local_24[9];
-        local_24[10] = local_24[10] + local_24[0xb];
-        local_24[4] = local_24[4] + local_24[5];
-        local_24[0xe] = local_24[0xe] + local_24[0xf];
+        (local_20->base).x_current = (local_20->base).x_current + (local_20->base).x_gradient;
+        (local_20->base).u_current = (local_20->base).u_current + (local_20->base).u_gradient;
+        (local_20->base).v_current = (local_20->base).v_current + (local_20->base).v_gradient;
+        (local_20->base).depth_current =
+             (local_20->base).depth_current + (local_20->base).depth_gradient;
+        (local_20->base).red_current = (local_20->base).red_current + (local_20->base).red_gradient;
+        iVar6 = (local_20->base).alpha_current;
+        local_20->green_current = local_20->green_current + local_20->green_gradient;
+        local_20->blue_current = local_20->blue_current + local_20->blue_gradient;
+        iVar5 = (local_20->base).alpha_gradient;
+        *(int *)&local_20->field_0x48 =
+             *(int *)&local_20->field_0x48 + *(int *)&local_20->field_0x4c;
+        (local_20->base).alpha_current = iVar6 + iVar5;
+        piVar1 = &(local_24->base).x_current;
+        *piVar1 = *piVar1 + (local_24->base).x_gradient;
+        (local_24->base).u_current = (local_24->base).u_current + (local_24->base).u_gradient;
+        (local_24->base).v_current = (local_24->base).v_current + (local_24->base).v_gradient;
+        (local_24->base).depth_current =
+             (local_24->base).depth_current + (local_24->base).depth_gradient;
+        (local_24->base).red_current = (local_24->base).red_current + (local_24->base).red_gradient;
+        iVar6 = (local_24->base).alpha_current;
+        local_24->green_current = local_24->green_current + local_24->green_gradient;
         local_28 = local_28 + 1;
-        local_24[0x10] = local_24[0x10] + local_24[0x11];
-        local_24[0x12] = local_24[0x12] + local_24[0x13];
-        local_24[0xc] = local_24[0xc] + local_24[0xd];
+        local_24->blue_current = local_24->blue_current + local_24->blue_gradient;
+        iVar5 = (local_24->base).alpha_gradient;
+        *(int *)&local_24->field_0x48 =
+             *(int *)&local_24->field_0x48 + *(int *)&local_24->field_0x4c;
+        (local_24->base).alpha_current = iVar6 + iVar5;
       } while( true );
     }
   }

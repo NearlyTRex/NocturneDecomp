@@ -15,7 +15,7 @@ SPageResourceText * core_fldnotes_cpp_SPageResourceText_dtor_FUN_004a2000(SPageR
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_PageResource_TextTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_PageResource_TextTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

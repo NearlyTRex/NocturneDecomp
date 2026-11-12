@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stairs_cpp_factoryFuncStairs_FUN_00584910(void)
+; CStairs * __cdecl core_stairs_cpp_factoryFuncStairs_FUN_00584910(void)
 ;
 ;
 ; Called Functions:

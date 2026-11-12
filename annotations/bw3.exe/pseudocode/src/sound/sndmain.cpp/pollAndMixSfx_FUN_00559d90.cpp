@@ -25,8 +25,6 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_00559d90(LPVOID *channel_buffer
   byte bVar10;
   uint auStack_98 [5];
   uint uStack_84;
-  int iStack_80;
-  uint uStack_7c;
   uint local_6c [8];
   int local_4c;
   int local_48;
@@ -82,7 +80,6 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_00559d90(LPVOID *channel_buffer
         if (0 < DAT_0060422c) {
           iVar4 = 0;
           do {
-            uStack_7c = 0x559eca;
             memmove
                       (*(void **)(iVar4 + 0x2cf32cc),
                        (void *)(_DAT_02cf329c * 4 + (int)*(void **)(iVar4 + 0x2cf32cc)),
@@ -90,7 +87,6 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_00559d90(LPVOID *channel_buffer
             piVar1 = (int *)(iVar4 + 0x2cf32cc);
             iVar4 = iVar4 + 4;
             iVar3 = iVar3 + 1;
-            uStack_7c = 0x559ef4;
             memset
                       ((void *)((_DAT_02cf32a0 + -1) * _DAT_02cf329c * 4 + *piVar1),0,count);
           } while (iVar3 < DAT_0060422c);
@@ -137,10 +133,10 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_00559d90(LPVOID *channel_buffer
       if (0 < num_channels) {
         iVar6 = 0;
         do {
-          uStack_7c = *(uint *)((int)local_44 + iVar6 + 4);
-          iStack_80 = _DAT_02cf3298 * 4 + *(int *)(iVar6 + 0x2cf32cc);
           uStack_84 = 0x55a006;
-          sound_sndmain_cpp_convertMixBufToOutput_FUN_00552d90();
+          sound_sndmain_cpp_convertMixBufToOutput_FUN_00552d90
+                    ((float *)(_DAT_02cf3298 * 4 + *(int *)(iVar6 + 0x2cf32cc)),
+                     *(ushort **)((int)local_44 + iVar6 + 4),bits_per_sample,iVar4,block_align);
           iVar7 = iVar6 + 4;
           *(int *)((int)local_44 + iVar6 + 4) =
                *(int *)((int)local_44 + iVar6 + 4) + block_align * iVar4;

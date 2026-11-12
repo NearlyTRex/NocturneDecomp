@@ -19,7 +19,7 @@ void core_doc_cpp_FUN_00476150(int param_1,uint param_2)
     (**(code **)(*(int *)(iVar2 + 0x154) + 0xc))(iVar2,param_2);
     this_ptr = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040c600
-                         (*(uint *)(param_1 + 0x20004),g_CDynamiteClassInfo.name_hash);
+                         (*(CDemonActor **)(param_1 + 0x20004),g_CDynamiteClassInfo.name_hash);
     if (this_ptr != (CCharacter *)0x0) {
       iVar2 = core_dynamite_cpp_CDynamite_isFuseBurnedOut_FUN_004926b0((CDynamite *)this_ptr);
       if (iVar2 != 0) {

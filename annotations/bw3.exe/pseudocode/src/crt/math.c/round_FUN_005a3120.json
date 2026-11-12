@@ -416,6 +416,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00477e60",
+      "from_addr": "00477edf",
+      "name": "core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00477e60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00475720",
       "from_addr": "00475dff",
       "name": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00475720",
@@ -446,6 +452,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00477a10",
+      "from_addr": "00477a4a",
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_00477a10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00477ac0",
+      "from_addr": "00477afa",
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00473cd0",
       "from_addr": "00473d3d",
       "name": "core_dtrace.cpp_FUN_00473cd0",
@@ -464,39 +482,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00477a10",
-      "from_addr": "00477a4a",
-      "name": "core_dtrace.cpp_FUN_00477a10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00477ac0",
-      "from_addr": "00477afa",
-      "name": "core_dtrace.cpp_FUN_00477ac0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00477e60",
-      "from_addr": "00477edf",
-      "name": "core_dtrace.cpp_FUN_00477e60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047ae9c",
       "from_addr": "0047af80",
       "name": "core_dtri.cpp_FUN_0047ae9c",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004893f0",
-      "from_addr": "00489453",
-      "name": "core_enemy.cpp_FUN_004893f0",
+      "addr": "00489490",
+      "from_addr": "004894f9",
+      "name": "core_enemy.cpp_CEnemy_testAttackLine_FUN_00489490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00489490",
-      "from_addr": "004894f9",
-      "name": "core_enemy.cpp_FUN_00489490",
+      "addr": "004893f0",
+      "from_addr": "00489453",
+      "name": "core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -515,6 +515,12 @@
       "addr": "0049ad20",
       "from_addr": "0049adf4",
       "name": "core_fire.cpp_CBulletTrail_render_FUN_0049ad20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a3d50",
+      "from_addr": "004a3dba",
+      "name": "core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004a3d50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -593,12 +599,6 @@
       "addr": "0049f520",
       "from_addr": "0049fac6",
       "name": "core_fire.cpp_FUN_0049f520",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a3d50",
-      "from_addr": "004a3dba",
-      "name": "core_fire.cpp_FUN_004a3d50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -836,15 +836,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004fca20",
-      "from_addr": "004fca78",
-      "name": "core_motion.cpp_FUN_004fca20",
+      "addr": "004fcb50",
+      "from_addr": "004fcbfb",
+      "name": "core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_004fcb50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004fcb50",
-      "from_addr": "004fcbfb",
-      "name": "core_motion.cpp_FUN_004fcb50",
+      "addr": "004fca20",
+      "from_addr": "004fca78",
+      "name": "core_motion.cpp_FUN_004fca20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -940,7 +940,7 @@
     {
       "addr": "005430dc",
       "from_addr": "0054320d",
-      "name": "core_setutil.cpp_FUN_005430dc",
+      "name": "core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_005430dc",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1076,9 +1076,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046d120",
+      "from_addr": "0046d13e",
+      "name": "engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0046d120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0046cb90",
       "from_addr": "0046cbae",
       "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046d0d0",
+      "from_addr": "0046d0dd",
+      "name": "engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0046d0d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046d090",
+      "from_addr": "0046d0a0",
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1091,24 +1109,6 @@
       "addr": "0046cc40",
       "from_addr": "0046ccbc",
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046d090",
-      "from_addr": "0046d0a0",
-      "name": "engine_drender.cpp_FUN_0046d090",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046d0d0",
-      "from_addr": "0046d0dd",
-      "name": "engine_drender.cpp_FUN_0046d0d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046d120",
-      "from_addr": "0046d13e",
-      "name": "engine_drender.cpp_FUN_0046d120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1385,6 +1385,32 @@
       "STORE": 4
     },
     "pcode_op_count": 24
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b7ff0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c03a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005fe6b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00563a30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

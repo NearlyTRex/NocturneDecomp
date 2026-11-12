@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_door_cpp_factoryFuncDoor_FUN_0045ed30(void)
+; CDoor * __cdecl core_door_cpp_factoryFuncDoor_FUN_0045ed30(void)
 ;
 ;
 ; Called Functions:

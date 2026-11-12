@@ -34,7 +34,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 004dea2c
     PUSH EAX                            ; 004dea32
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0 ; 004dea33
-        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0()
+        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004dea38
     PUSH 0x5c66c7                       ; 004dea3b | = "keyMask"
     LEA EAX,[EBX + 0x2d4]               ; 004dea40

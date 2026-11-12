@@ -2,17 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 70,
+    "complexity_score": 6,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 19
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
   },
   "cross_references": [],
   "function": {
@@ -23,9 +21,9 @@
         "005738ab"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_stdlib.c_strtoul_FUN_00573890",
-    "signature": "void crt_stdlib_c_strtoul_FUN_00573890(char *param_1,char **param_2,int param_3)"
+    "signature": "ulong __cdecl crt_stdlib_c_strtoul_FUN_00573890(char *str,char **endptr,int base)"
   },
   "function_calls": [
     {
@@ -39,9 +37,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -64,62 +62,61 @@
     },
     "pcode_op_count": 43
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005c6170",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005ce470",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005b1200",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0060ede0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "endptr",
+        "offset": 8,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "base",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void strtoul(char *param_1,char **param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void strtoul(char *param_1,char **param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void strtoul(char *param_1,char **param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "strtol_internal(param_1,param_2,param_3,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "strtol_internal(param_1,param_2,param_3,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "strtol_internal(param_1,param_2,param_3,0);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

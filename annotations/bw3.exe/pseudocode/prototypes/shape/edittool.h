@@ -131,7 +131,7 @@ void __cdecl CEditorTools::showMessage(CEditorTools *this_ptr,char *format);
 
 // Original: shape_edittool.cpp_FUN_0047cee0
 // Address: 0047cee0
-void FUN_0047cee0(undefined4 param_1,undefined4 param_2);
+void FUN_0047cee0(undefined4 param_1,char *param_2);
 
 // Original: shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 // Address: 0047cf40
@@ -143,7 +143,7 @@ void __cdecl CEditorTools::displayCenteredStatusMessage(CEditorTools *this_ptr,c
 
 // Original: shape_edittool.cpp_FUN_0047d09e
 // Address: 0047d09e
-void FUN_0047d09e(undefined4 param_1,undefined4 param_2);
+void FUN_0047d09e(undefined4 param_1,char *param_2);
 
 // Original: shape_edittool.cpp_FUN_0047d19e
 // Address: 0047d19e
@@ -159,11 +159,11 @@ int __cdecl CEditorTools::showDestructiveActionConfirmDialog(CEditorTools *this_
 
 // Original: shape_edittool.cpp_FUN_0047d980
 // Address: 0047d980
-bool FUN_0047d980(undefined4 param_1,undefined4 param_2);
+bool FUN_0047d980(undefined4 param_1,char *param_2);
 
 // Original: shape_edittool.cpp_FUN_0047da40
 // Address: 0047da40
-undefined4 FUN_0047da40(undefined4 param_1,undefined4 param_2);
+undefined4 FUN_0047da40(undefined4 param_1,char *param_2);
 
 // Original: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70
 // Address: 0047db70
@@ -233,25 +233,21 @@ void FUN_0047fa80(void);
 // Address: 00480200
 void FUN_00480200(undefined4 param_1,int param_2);
 
-// Original: shape_edittool.cpp_FUN_004803d0
+// Original: shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0
 // Address: 004803d0
-uint __cdecl FUN_004803d0(CEditorTools *this_ptr);
+uint __cdecl CEditorTools::getTimeCycledColorByte(CEditorTools *this_ptr);
 
 // Original: shape_edittool.cpp_FUN_00480410
 // Address: 00480410
 void FUN_00480410(CEditorTools *param_1,int param_2);
 
-// Original: shape_edittool.cpp_FUN_00480db0
+// Original: shape_edittool.cpp_CEditorTools_getClipboardText_FUN_00480db0
 // Address: 00480db0
-char * __cdecl FUN_00480db0(CEditorTools *this_ptr);
+char * __cdecl CEditorTools::getClipboardText(CEditorTools *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_00480e30
+// Original: shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00480e30
 // Address: 00480e30
-void __cdecl FUN_00480e30(CEditorTools *this_ptr,char *text_data);
-
-// Original: shape_edittool.cpp_FUN_00480efe
-// Address: 00480efe
-void FUN_00480efe(undefined4 param_1,float param_2,undefined4 param_3);
+void __cdecl CEditorTools::setClipboardText(CEditorTools *this_ptr,char *text_data);
 
 // Original: shape_edittool.cpp_FUN_00480f00
 // Address: 00480f00
@@ -264,10 +260,6 @@ void FUN_0048114e(CEditorTools *param_1,float param_2,int param_3,float *param_4
 // Original: shape_edittool.cpp_FUN_00481200
 // Address: 00481200
 void FUN_00481200(float *param_1,float *param_2);
-
-// Original: shape_edittool.cpp_FUN_0048134e
-// Address: 0048134e
-void FUN_0048134e(undefined4 param_1,int *param_2,int *param_3,int param_4);
 
 // Original: shape_edittool.cpp_FUN_00481350
 // Address: 00481350

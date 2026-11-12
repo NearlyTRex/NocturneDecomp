@@ -15,7 +15,7 @@ CDoc * core_doc_cpp_CDoc_dtor_FUN_00476700(CDoc *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDocTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDocTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

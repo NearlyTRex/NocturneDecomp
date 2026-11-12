@@ -24,8 +24,8 @@
 ;   core_tentacle.cpp_FUN_005732e0 at 00573332
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_005938c0
 ;   core_xform.cpp_matrixToQuaternion_FUN_00593a50
+;   core_xform.cpp_quaternionToMatrix3x3_FUN_005938c0
 ;   core_xform.cpp_slerpQuaternion_FUN_00593df0
 ;
 ; *****************************************************************************
@@ -112,8 +112,8 @@ section .text
     PUSH ESI                            ; 00593853
     LEA ESI,[ESP + 0x4]                 ; 00593854
     PUSH ESI                            ; 00593858
-    CALL core_xform.cpp_FUN_005938c0    ; 00593859
-        ;   XREF to: 005938c0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_FUN_005938c0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005938c0 ; 00593859
+        ;   XREF to: 005938c0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005938c0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 0059385e
     FLD1                                ; 00593861
     MOV ESI,dword ptr [ESP + 0xd4]      ; 00593863

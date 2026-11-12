@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 909,
+    "complexity_score": 498,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 189,
-    "suspect_count": 69,
+    "pseudocode_lines": 188,
+    "suspect_count": 29,
     "suspect_types": [
       "extra_output",
-      "param_count_too_few",
       "pointer_cast",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 583
+    "total_lines": 582
   },
   "cross_references": [
     {
@@ -38,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_mp3.cpp_requantizeLayer3Samples_FUN_00507910",
-    "signature": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00507910(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6)"
+    "signature": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00507910(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3GranuleInfo *granule,int channel_index,SMpegFrame *frame)"
   },
   "function_calls": [
     {
@@ -148,11 +146,11 @@
         "stack_params": 6
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
     "estimated_params": 6,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.228658536585366,
@@ -196,11 +194,37 @@
     },
     "pcode_op_count": 2043
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00528ae0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005003f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00531d50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e58d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 116,
+    "frame_size": 140,
     "local_size": 116,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -370,6 +394,48 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "quantized_samples",
+        "offset": 4,
+        "size": 4,
+        "type": "SMpegSubbandQuantizedSamples *"
+      },
+      {
+        "is_param": true,
+        "name": "output_samples",
+        "offset": 8,
+        "size": 4,
+        "type": "SMpegSubbandSamples *"
+      },
+      {
+        "is_param": true,
+        "name": "scalefactor_data",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "granule",
+        "offset": 16,
+        "size": 4,
+        "type": "SMpegLayer3GranuleInfo *"
+      },
+      {
+        "is_param": true,
+        "name": "channel_index",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "frame",
+        "offset": 24,
+        "size": 4,
+        "type": "SMpegFrame *"
       }
     ]
   },
@@ -400,59 +466,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00507910(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00507910(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00507910(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00507910(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00507910(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00507910(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 10,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "int extraout_ECX;",
+      "text": "SMpegLayer3GranuleInfo *extraout_ECX;",
       "type": "extra_output"
     },
     {
@@ -460,7 +478,7 @@
       "line": 11,
       "match": "extraout_ECX_00",
       "severity": "moderate",
-      "text": "int extraout_ECX_00;",
+      "text": "SMpegLayer3GranuleInfo *extraout_ECX_00;",
       "type": "extra_output"
     },
     {
@@ -468,7 +486,7 @@
       "line": 12,
       "match": "extraout_ECX_01",
       "severity": "moderate",
-      "text": "int extraout_ECX_01;",
+      "text": "SMpegLayer3GranuleInfo *extraout_ECX_01;",
       "type": "extra_output"
     },
     {
@@ -488,52 +506,12 @@
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "iVar8 = ((int *)*param_6)[4] + *(int *)*param_6 * 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "iVar8 = ((int *)*param_6)[4] + *(int *)*param_6 * 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_4 + 0x10) == 0) || (*(int *)(param_4 + 0x14) != 2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_4 + 0x10) == 0) || (*(int *)(param_4 + 0x14) != 2)) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 41,
       "match": "DAT_0061933c",
       "severity": "mild",
       "text": "local_1c = *(int *)(&DAT_0061933c + iVar8 * 0x94);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (*(int *)(param_4 + 0x18) == 0) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -580,92 +558,20 @@
       "line": 79,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "param_4 = extraout_ECX;",
+      "text": "granule = extraout_ECX;",
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = extraout_ECX;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + param_5 * 0xf8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = param_3 + param_5 * 0xf8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "param_3 = param_3 + param_5 * 0xf8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_64 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_70 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_4 + 0x10) == 0) || (*(int *)(param_4 + 0x14) != 2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_4 + 0x10) == 0) || (*(int *)(param_4 + 0x14) != 2)) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 99,
       "match": "DAT_0061933c",
       "severity": "mild",
       "text": "local_1c = *(int *)(&DAT_0061933c + iVar7 * 4 + iVar8);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 105,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (*(int *)(param_4 + 0x18) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 106,
       "match": "DAT_00619398",
       "severity": "mild",
       "text": "local_1c = *(int *)(&DAT_00619398 + iVar6);",
@@ -673,7 +579,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 108,
       "match": "DAT_00619398",
       "severity": "mild",
       "text": "local_28 = *(int *)(&DAT_00619398 + iVar6) - iVar2;",
@@ -681,7 +587,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 111,
       "match": "DAT_00619358",
       "severity": "mild",
       "text": "if (local_20 != *(int *)(&DAT_00619358 + iVar8)) {",
@@ -689,7 +595,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 112,
       "match": "DAT_00619358",
       "severity": "mild",
       "text": "if (local_20 < *(int *)(&DAT_00619358 + iVar8)) {",
@@ -697,7 +603,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 113,
       "match": "DAT_0061933c",
       "severity": "mild",
       "text": "local_1c = *(int *)(&DAT_0061933c + iVar6);",
@@ -705,7 +611,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 118,
       "match": "DAT_006193a4",
       "severity": "mild",
       "text": "local_1c = *(int *)(&DAT_006193a4 + iVar8);",
@@ -713,7 +619,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 119,
       "match": "DAT_006193a0",
       "severity": "mild",
       "text": "iVar2 = *(int *)(&DAT_006193a0 + iVar8);",
@@ -721,7 +627,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 120,
       "match": "DAT_006193a4",
       "severity": "mild",
       "text": "local_28 = *(int *)(&DAT_006193a4 + iVar8) - iVar2;",
@@ -729,222 +635,59 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
-      "match": "(int *)((int)param_1",
+      "line": 128,
+      "match": "(int *)((int)quantized_samples",
       "severity": "moderate",
-      "text": "if (*(int *)((int)param_1 + iVar4 + local_68) == 0) {",
+      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar4 + local_68) == 0) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 129,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)((int)param_1 + iVar4 + local_68) == 0) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
-      "match": "(uint *)((int)param_2",
+      "line": 129,
+      "match": "(uint *)((int)output_samples",
       "severity": "moderate",
-      "text": "*(uint *)((int)param_2 + iVar4 + local_68) = 0;",
+      "text": "*(uint *)((int)output_samples->samples[0] + iVar4 + local_68) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 130,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)((int)param_2 + iVar4 + local_68) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 133,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(param_4 + 8) + -0xd2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 134,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_4 + 0x10) == 0) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 135,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(((*(int *)(param_4 + 0x14) != 2 || (*(int *)(param_4 + 0x18) != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 135,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(((*(int *)(param_4 + 0x14) != 2 || (*(int *)(param_4 + 0x18) != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 136,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "((*(int *)(param_4 + 0x14) != 2 || ((*(int *)(param_4 + 0x18) == 0 || (local_44 < 2)))))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 136,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "((*(int *)(param_4 + 0x14) != 2 || ((*(int *)(param_4 + 0x18) == 0 || (local_44 < 2)))))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 138,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar2 = (*(int *)(param_4 + 0x40) + 1) * -2 *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 139,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(*(int *)(iVar7 * 4 + param_3) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 140,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*(int *)(param_4 + 0x3c) * *(int *)(iVar7 * 4 + 0x618de4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 144,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar6 = iVar6 + *(int *)(param_4 + 0x28 + iVar2 * 4) * -8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 145,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar2 = (*(int *)(param_4 + 0x40) + 1) * -2 *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 146,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(int *)(param_3 + iVar2 * 0x34 + iVar7 * 4 + 0x5c);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 157,
+      "line": 156,
       "match": "extraout_ECX_00",
       "severity": "moderate",
-      "text": "param_4 = extraout_ECX_00;",
+      "text": "granule = extraout_ECX_00;",
       "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 157,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = extraout_ECX_00;",
-      "type": "unnamed_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 169,
+      "line": 168,
       "match": "extraout_ECX_01",
       "severity": "moderate",
-      "text": "param_4 = extraout_ECX_01;",
+      "text": "granule = extraout_ECX_01;",
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 169,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = extraout_ECX_01;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 170,
+      "match": "(int *)((int)quantized_samples",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar4 + local_68) < 0) {",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 171,
-      "match": "(int *)((int)param_1",
+      "match": "(float *)((int)output_samples",
       "severity": "moderate",
-      "text": "if (*(int *)((int)param_1 + iVar4 + local_68) < 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 171,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)((int)param_1 + iVar4 + local_68) < 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 172,
-      "match": "(float *)((int)param_2",
-      "severity": "moderate",
-      "text": "*(float *)((int)param_2 + iVar4 + local_68) = -*(float *)((int)param_2 + iVar4 + local_68)",
+      "text": "*(float *)((int)output_samples->samples[0] + iVar4 + local_68) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 172,
-      "match": "(float *)((int)param_2",
+      "match": "(float *)((int)output_samples",
       "severity": "moderate",
-      "text": "*(float *)((int)param_2 + iVar4 + local_68) = -*(float *)((int)param_2 + iVar4 + local_68)",
+      "text": "-*(float *)((int)output_samples->samples[0] + iVar4 + local_68);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 172,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)((int)param_2 + iVar4 + local_68) = -*(float *)((int)param_2 + iVar4 + local_68)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 172,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(float *)((int)param_2 + iVar4 + local_68) = -*(float *)((int)param_2 + iVar4 + local_68)",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

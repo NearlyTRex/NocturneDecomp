@@ -13,7 +13,7 @@ CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004c6800(CGasMask *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CGasMaskTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CGasMaskTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

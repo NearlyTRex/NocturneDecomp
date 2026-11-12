@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_anvil_cpp_factoryFuncAnvil_FUN_0040e5a0(void)
+; CAnvil * __cdecl core_anvil_cpp_factoryFuncAnvil_FUN_0040e5a0(void)
 ;
 ;
 ; Called Functions:

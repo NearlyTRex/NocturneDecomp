@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_setdir_cpp_testOBBIntersection_FUN_00541470(float *param_1,float *param_2)
+; int __cdecl core_setdir_cpp_testOBBIntersection_FUN_00541470(SVDBox *obb_a,SVDBox *obb_b)
 ;
+; Parameters:
+; SVDBox *         Stack[0x4]:4   obb_a
+; SVDBox *         Stack[0x8]:4   obb_b
 ; Local Variables:
 ; undefined4       Stack[-0x194]:4  local_194
 ; undefined4       Stack[-0x190]:4  local_190
@@ -130,7 +133,7 @@ section .text
     LEA EAX,[EBP + 0xfffffef6]          ; 005414e5
     PUSH EAX                            ; 005414eb
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 005414ec
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     MOV EAX,dword ptr [EBP + 0x92]      ; 005414f1
     ADD ESP,0xc                         ; 005414f7
     ADD EAX,0x18                        ; 005414fa

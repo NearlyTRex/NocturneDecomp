@@ -273,7 +273,7 @@
     {
       "addr": "00415890",
       "from_addr": "0041597f",
-      "name": "core_bodypart.cpp_FUN_00415890",
+      "name": "core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -511,15 +511,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00447c50",
-      "from_addr": "00447cc1",
-      "name": "core_dfilter.cpp_CFilterFX_openMovie_FUN_00447c50",
+      "addr": "00447660",
+      "from_addr": "00447714",
+      "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00447660",
-      "from_addr": "00447714",
-      "name": "core_dfilter.cpp_FUN_00447660",
+      "addr": "00447c50",
+      "from_addr": "00447cc1",
+      "name": "core_dfilter.cpp_CFilterFX_openMovie_FUN_00447c50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -531,7 +531,7 @@
     {
       "addr": "00448f40",
       "from_addr": "00448f8c",
-      "name": "core_dimage.cpp_FUN_00448f40",
+      "name": "core_dimage.cpp_CDemonImage_allocMemory_FUN_00448f40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -715,6 +715,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00472470",
+      "from_addr": "004724b2",
+      "name": "core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00472470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00472550",
       "from_addr": "004725b3",
       "name": "core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00472550",
@@ -748,12 +754,6 @@
       "addr": "00477430",
       "from_addr": "0047750e",
       "name": "core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_00477430",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00472470",
-      "from_addr": "004724b2",
-      "name": "core_dtrace.cpp_FUN_00472470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1423,6 +1423,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0050f120",
+      "from_addr": "0050f2b7",
+      "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050c280",
       "from_addr": "0050cc33",
       "name": "core_netgame.cpp_CNetGame_processPacket_FUN_0050c280",
@@ -1480,12 +1486,6 @@
       "addr": "0050d840",
       "from_addr": "0050d876",
       "name": "core_netgame.cpp_CNetGame_updatePing_FUN_0050d840",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050f120",
-      "from_addr": "0050f2b7",
-      "name": "core_netgame.cpp_FUN_0050f120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1989,7 +1989,7 @@
     {
       "addr": "00573770",
       "from_addr": "00573826",
-      "name": "core_texlist.cpp_FUN_00573770",
+      "name": "core_texlist.cpp_CTextureList_save_FUN_00573770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -3403,12 +3403,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00588790",
-      "from_addr": "0058880b",
-      "name": "wincore_wddvmem.cpp_FUN_00588790",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00588a50",
       "from_addr": "00588b5b",
       "name": "wincore_wddvmem.cpp_FUN_00588a50",
@@ -3424,6 +3418,12 @@
       "addr": "00589170",
       "from_addr": "00589226",
       "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588790",
+      "from_addr": "0058880b",
+      "name": "wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00588790",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -3461,7 +3461,7 @@
     ],
     "convention": "unknown",
     "name": "core_main.c_FUN_004e4500",
-    "signature": "void core_main_c_FUN_004e4500(undefined4 param_1)"
+    "signature": "void core_main_c_FUN_004e4500(char *param_1)"
   },
   "function_calls": [
     {
@@ -3541,6 +3541,20 @@
     },
     "pcode_op_count": 309
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005030e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e4330",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 16,
@@ -3571,7 +3585,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_main_c_FUN_004e4500(uint param_1)",
+      "text": "void core_main_c_FUN_004e4500(char *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -3587,7 +3601,7 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "_vsprintf(0x1d035a0,param_1,&local_c);",
+      "text": "_vsprintf((char *)0x1d035a0,param_1,(va_list_t)&local_c);",
       "type": "unnamed_param"
     },
     {

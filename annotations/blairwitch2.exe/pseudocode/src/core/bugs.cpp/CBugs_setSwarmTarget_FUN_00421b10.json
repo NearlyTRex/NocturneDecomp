@@ -69,7 +69,7 @@
     {
       "addr": "00436710",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00436710"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
     }
   ],
   "globals": [
@@ -181,6 +181,32 @@
     },
     "pcode_op_count": 945
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00427b40",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00423cd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9286
+    },
+    "nocedit.exe": {
+      "addr": "00427400",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00423790",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 36,
     "local_size": 28,
@@ -232,7 +258,7 @@
       "line": 53,
       "match": "DAT_007bcf48",
       "severity": "mild",
-      "text": "*(int *)((int)&DAT_007bcf48 + iVar7) = iVar4;",
+      "text": "*(int *)((int)&DAT_007bcf48 + iVar7) = iVar5;",
       "type": "undefined_data"
     },
     {
@@ -288,7 +314,7 @@
       "line": 73,
       "match": "DAT_007bcf48",
       "severity": "mild",
-      "text": "iVar4 = pCVar1[DAT_007bcf48].y;",
+      "text": "iVar5 = pCVar1[DAT_007bcf48].y;",
       "type": "undefined_data"
     },
     {
@@ -304,7 +330,7 @@
       "line": 89,
       "match": "DAT_007bcf48",
       "severity": "mild",
-      "text": "(iVar4 + 0x2a < pCVar1[(&DAT_007bcf48)[iVar8]].y)) {",
+      "text": "(iVar5 + 0x2a < pCVar1[(&DAT_007bcf48)[iVar8]].y)) {",
       "type": "undefined_data"
     },
     {
@@ -312,7 +338,7 @@
       "line": 53,
       "match": "(int)&DAT_007bcf48",
       "severity": "moderate",
-      "text": "*(int *)((int)&DAT_007bcf48 + iVar7) = iVar4;",
+      "text": "*(int *)((int)&DAT_007bcf48 + iVar7) = iVar5;",
       "type": "pointer_truncation"
     },
     {
@@ -376,7 +402,7 @@
       "line": 53,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(int *)((int)&DAT_007bcf48 + iVar7) = iVar4;",
+      "text": "*(int *)((int)&DAT_007bcf48 + iVar7) = iVar5;",
       "type": "pointer_cast"
     },
     {

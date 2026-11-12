@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void support_trstream_cpp_FUN_0057d1d0(int param_1)
+; void support_trstream_cpp_FUN_0057d1d0(CInStreamFile *param_1)
 ;
 ;
 ; XREF[3]:
@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
-;   support_trstream.cpp_FUN_0057d240
+;   support_trstream.cpp_CInStreamFile_freeBuffer_FUN_0057d240
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
         ;   Label: support_trstream.cpp_FUN_0057d1d0
     MOV EBX,dword ptr [ESP + 0x8]       ; 0057d1d1
     PUSH EBX                            ; 0057d1d5
-    CALL support_trstream.cpp_FUN_0057d240 ; 0057d1d6
-        ;   XREF to: 0057d240 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d240()
+    CALL support_trstream.cpp_CInStreamFile_freeBuffer_FUN_0057d240 ; 0057d1d6
+        ;   XREF to: 0057d240 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_CInStreamFile_freeBuffer_FUN_0057d240(CInStreamFile * this_ptr)
     MOV dword ptr [EBX + 0x20],0x1000   ; 0057d1db
     MOV EAX,dword ptr [EBX + 0x20]      ; 0057d1e2
     ADD ESP,0x4                         ; 0057d1e5

@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_lever.cpp_factoryFuncLever_FUN_004e1bf0
 // Address: 004e1bf0
-void factoryFuncLever(void);
+CLever * __cdecl factoryFuncLever(void);
 
 // Original: core_lever.cpp_CLever_getActorType_FUN_004e1c10
 // Address: 004e1c10

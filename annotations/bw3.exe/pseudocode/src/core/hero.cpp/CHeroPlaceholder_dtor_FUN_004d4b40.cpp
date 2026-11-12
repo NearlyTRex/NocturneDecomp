@@ -13,7 +13,7 @@ CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004d4b40(CHer
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHeroPlaceholderTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHeroPlaceholderTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

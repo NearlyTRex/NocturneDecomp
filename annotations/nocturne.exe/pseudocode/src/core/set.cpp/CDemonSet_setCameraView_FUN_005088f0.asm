@@ -30,9 +30,9 @@
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30 at 0049f6f5
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e055
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00502518
-;   core_set.cpp_CDemonSet_FUN_005090f0 at 00509127
+;   core_set.cpp_CDemonSet_reinitCamera_FUN_005090f0 at 00509127
 ;   core_set.cpp_CDemonSet_restoreCameraView_FUN_0050e310 at 0050e324
-;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 005125d9
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0 at 005125d9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_00590422

@@ -2,21 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 179,
+    "complexity_score": 205,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 94,
-    "suspect_count": 6,
+    "pseudocode_lines": 95,
+    "suspect_count": 8,
     "suspect_types": [
+      "bit_int_float_compare",
       "stack_alignment_array",
       "stack_ref",
-      "unresolved_funcptr",
+      "unaffected_reg",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 279
+    "total_lines": 280
   },
   "cross_references": [],
   "function": {
@@ -184,44 +185,60 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
-      "match": "afStackY_1034",
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "float afStackY_1034 [995];",
+      "text": "CBoundingBox3D *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "afStackY_102c",
+      "severity": "moderate",
+      "text": "float afStackY_102c [995];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 52,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 55,
+      "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x1c))(iVar1);",
-      "type": "unresolved_funcptr"
+      "text": "(*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xffffff90",
+      "line": 56,
+      "match": "&stack0xffffff98",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)&stack0xffffff90;",
+      "text": "puVar2 = (uint *)&stack0xffffff98;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 54,
+      "line": 57,
       "match": "&stack0xffffff78",
       "severity": "moderate",
-      "text": "puVar3 = &stack0xffffff78;",
+      "text": "puVar3 = (uint *)&stack0xffffff78;",
       "type": "stack_ref"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 55,
+      "line": 58,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
+      "line": 47,
+      "match": "0x42c80000 < (int)this_ptr_00[0x1b].platform_orientation_delta.y)",
+      "severity": "moderate",
+      "text": "if (0x42c80000 < (int)this_ptr_00[0x1b].platform_orientation_delta.y) {",
+      "type": "bit_int_float_compare"
     }
   ],
   "vtable_info": {

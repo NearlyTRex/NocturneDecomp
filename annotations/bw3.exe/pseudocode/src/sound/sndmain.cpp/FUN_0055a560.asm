@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_FUN_0055a560(undefined4 param_1)
+; void sound_sndmain_cpp_FUN_0055a560(char *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x404]:1  local_404
@@ -43,7 +43,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0055a584
     PUSH EAX                            ; 0055a588
     CALL crt_stdio.c_vsprintf_FUN_005a2898 ; 0055a589
-        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005a2898()
+        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005a2898(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0055a58e
     XOR ECX,ECX                         ; 0055a591
     PUSH 0x5d3fb3                       ; 0055a593 | = "SOUND: "

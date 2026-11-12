@@ -2,13 +2,15 @@
 // Address: 005b910c
 // Address Range: [[005b910c, 005b9122]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_stdio_c_fopen_FUN_005b910c(undefined4 param_1,undefined4 param_2)
+// Signature: _FILE * __cdecl crt_stdio_c_fopen_FUN_005b910c(char *filename,char *mode)
 
 #include "nocturne.h"
 
-void __cdecl _fopen(uint param_1,uint param_2)
+_FILE * __cdecl _fopen(char *filename,char *mode)
 
 {
-  FUN_005b90b0(param_1,param_2,0);
-  return;
+  _FILE *p_Var1;
+  
+  p_Var1 = (_FILE *)FUN_005b90b0(filename,mode,0);
+  return p_Var1;
 }

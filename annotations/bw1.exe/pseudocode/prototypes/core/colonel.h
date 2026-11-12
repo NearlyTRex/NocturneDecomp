@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_colonel.cpp_factoryFuncColonel_FUN_00444300
 // Address: 00444300
-void factoryFuncColonel(void);
+CColonel * __cdecl factoryFuncColonel(void);
 
 // Original: core_colonel.cpp_CColonel_getActorType_FUN_00444320
 // Address: 00444320
@@ -33,9 +33,9 @@ void __cdecl CColonel::process(CColonel *this_ptr,float delta_time);
 // Address: 00444b50
 void FUN_00444b50(int param_1,float param_2);
 
-// Original: core_colonel.cpp_FUN_00445140
+// Original: core_colonel.cpp_CColonel_processMotionEvents_FUN_00445140
 // Address: 00445140
-ushort FUN_00445140(CCharacter *param_1,float param_2);
+void __cdecl CColonel::processMotionEvents(CColonel *this_ptr,float delta_time);
 
 // Original: core_colonel.cpp_CColonel_archive_FUN_004451a0
 // Address: 004451a0

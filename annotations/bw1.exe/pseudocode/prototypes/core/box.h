@@ -89,9 +89,9 @@ int __cdecl FUN_004215d0(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 // Address: 00421620
 float __cdecl CBoundingBox3D::getMaximumBound(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_00421670
+// Original: core_box.cpp_CBoundingBox3D_render_FUN_00421670
 // Address: 00421670
-void __cdecl FUN_00421670(CBoundingBox3D *this_ptr);
+void __cdecl CBoundingBox3D::render(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_FUN_00421af0
 // Address: 00421af0

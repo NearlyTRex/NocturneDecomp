@@ -18,7 +18,7 @@ CBelling * core_belling_cpp_CBelling_dtor_FUN_005a9130(CBelling *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBellingTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBellingTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

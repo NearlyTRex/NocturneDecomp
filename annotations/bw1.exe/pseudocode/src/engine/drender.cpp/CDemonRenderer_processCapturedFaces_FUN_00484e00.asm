@@ -67,7 +67,7 @@ section .text
     PUSH 0x1be8388                      ; 00484e58
         ;   Label: LAB_00484e58
     CALL crt_stdlib.c__qsort_FUN_005bfc68 ; 00484e5d
-        ;   XREF to: 005bfc68 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__qsort_FUN_005bfc68()
+        ;   XREF to: 005bfc68 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005bfc68(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 00484e62
     MOV EAX,dword ptr [EBP + 0x10]      ; 00484e65
     MOV dword ptr [EBP + 0x1c],0x0      ; 00484e68

@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_tbplayer.cpp_factoryFuncBassPlayer_FUN_00594750
 // Address: 00594750
-void factoryFuncBassPlayer(void);
+CBassPlayer * __cdecl factoryFuncBassPlayer(void);
 
 // Original: core_tbplayer.cpp_CBassPlayer_getActorType_FUN_00594770
 // Address: 00594770
@@ -35,7 +35,7 @@ void __cdecl CBassPlayer::processDamage(CBassPlayer *this_ptr,SDamageInfo *damag
 
 // Original: core_tbplayer.cpp_factoryFuncDrummer_FUN_005949d0
 // Address: 005949d0
-void factoryFuncDrummer(void);
+CDrummer * __cdecl factoryFuncDrummer(void);
 
 // Original: core_tbplayer.cpp_CDrummer_getActorType_FUN_005949f0
 // Address: 005949f0

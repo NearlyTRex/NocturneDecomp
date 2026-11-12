@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_bugs.cpp_factoryFuncBugs_FUN_00424f50
 // Address: 00424f50
-void factoryFuncBugs(void);
+CBugs * __cdecl factoryFuncBugs(void);
 
 // Original: core_bugs.cpp_CBugs_getActorType_FUN_00424f70
 // Address: 00424f70
@@ -123,7 +123,7 @@ int FUN_00428120(int param_1);
 
 // Original: core_bugs.cpp_maxFloat_FUN_00428150
 // Address: 00428150
-float __cdecl maxFloat(float param_1,float param_2);
+float __cdecl maxFloat(float a,float b);
 
 // Original: core_bugs.cpp_CBugs_dtor_FUN_00428180
 // Address: 00428180

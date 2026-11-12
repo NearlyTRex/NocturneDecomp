@@ -27,8 +27,8 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
   float local_24;
   float local_20;
   float local_1c;
-  uint local_18;
-  int local_14;
+  float local_18;
+  CBitFont *local_14;
   int local_10;
   int local_c;
   
@@ -47,17 +47,17 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
     local_c = (int)ROUND(fVar5);
     engine_2d_c_fillRectColor_FUN_004031c0(2,2,local_c,iVar6,iVar7);
     if (this_ptr->use_custom_viewport != 0) {
-      engine_drender_cpp_FUN_0046b710
+      engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046b710
                 (DAT_0060b280,this_ptr->viewport_x,this_ptr->viewport_y,this_ptr->viewport_width,
                  this_ptr->viewport_height);
     }
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
               (DAT_0060b280,(CVector3f *)&DAT_0265370c);
-    local_18 = 0x42600000;
+    local_18 = 56.0;
     if (this_ptr->use_custom_viewport != 0) {
-      local_18 = 0x42a80000;
+      local_18 = 84.0;
     }
-    engine_drender_cpp_FUN_0046b4b0(DAT_0060b280,local_18);
+    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(DAT_0060b280,local_18);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
               (DAT_0060b280,(CVector3f *)&DAT_0265370c);
     local_40.x = 0.0;
@@ -148,10 +148,10 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
       engine_2d_c_fillRectColor_FUN_004031c0
                 (iVar3 + -1,local_10 + -1,iVar6 + 1 + iVar3,local_10 + iVar7 + 1,0);
       if (text != (char *)0x0) {
-        iVar4 = engine_font_cpp_FUN_004aaf00(local_14,text);
+        iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(local_14,text);
         engine_font_cpp_FUN_004a8df0
                   (local_14,text,(iVar3 + iVar6 / 2) - iVar4 / 2,
-                   (local_10 + iVar7 / 2) - *(int *)(local_14 + 0x41ec) / 2,0xf8,0xffffffff);
+                   (local_10 + iVar7 / 2) - local_14->max_char_height / 2,0xf8,0xffffffff);
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();

@@ -78,7 +78,7 @@ section .text
     PUSH 0x5d9a43                       ; 004ce5ca | = "motion state"
     PUSH EBX                            ; 004ce5cf
     CALL core_actor.cpp_archiveMotionState_FUN_0040bb60 ; 004ce5d0
-        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveMotionState_FUN_0040bb60()
+        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040bb60(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 004ce5d5
     CMP dword ptr [0x00617a5c],0x3      ; 004ce5d8 | g_CHeroClassVersion
         ;   Label: LAB_004ce5d8
@@ -96,19 +96,19 @@ section .text
     LEA EAX,[ESI + 0x2b4]               ; 004ce5f1
     PUSH EAX                            ; 004ce5f7
     CALL core_actor.cpp_archivePartStatus_FUN_0040bc50 ; 004ce5f8
-        ;   XREF to: 0040bc50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archivePartStatus_FUN_0040bc50()
+        ;   XREF to: 0040bc50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ce5fd
     PUSH 0x5d9a5b                       ; 004ce600 | = "grabbedBy"
     LEA EAX,[ESI + 0x276c]              ; 004ce605
     PUSH EAX                            ; 004ce60b
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 004ce60c
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ce611
     PUSH 0x5d9a65                       ; 004ce614 | = "hitPoints"
     ADD ESI,0x25a8                      ; 004ce619
     PUSH ESI                            ; 004ce61f
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 004ce620
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ce625
     ADD ESP,0xcc                        ; 004ce628
     POP EBP                             ; 004ce62e
@@ -124,12 +124,12 @@ section .text
     PUSH 0x5d9a6f                       ; 004ce63c | = "motion state"
     PUSH EBX                            ; 004ce641
     CALL core_actor.cpp_archiveMotionState_FUN_0040bb60 ; 004ce642
-        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveMotionState_FUN_0040bb60()
+        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040bb60(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 004ce647
     PUSH 0x5d9a7c                       ; 004ce64a | = "partStatus"
     PUSH EBX                            ; 004ce64f
     CALL core_actor.cpp_archivePartStatus_FUN_0040bc50 ; 004ce650
-        ;   XREF to: 0040bc50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archivePartStatus_FUN_0040bc50()
+        ;   XREF to: 0040bc50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance * model_ptr, char * property_name)
     MOV ECX,dword ptr [0x00617a5c]      ; 004ce655 | g_CHeroClassVersion
     ADD ESP,0x8                         ; 004ce65b
     CMP ECX,0x8                         ; 004ce65e
@@ -139,7 +139,7 @@ section .text
     LEA EAX,[ESI + 0x276c]              ; 004ce668
     PUSH EAX                            ; 004ce66e
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 004ce66f
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ce674
     MOV dword ptr [ESI + 0x2770],0x0    ; 004ce677
     CMP dword ptr [0x00617a5c],0x5      ; 004ce681 | g_CHeroClassVersion
@@ -160,31 +160,31 @@ section .text
     LEA EAX,[ESI + 0x25608]             ; 004ce6ac
     PUSH EAX                            ; 004ce6b2
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 004ce6b3
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ce6b8
     PUSH 0x5d9aac                       ; 004ce6bb | = "doorToOpen"
     LEA EAX,[ESI + 0x25604]             ; 004ce6c0
     PUSH EAX                            ; 004ce6c6
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 004ce6c7
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ce6cc
     PUSH 0x5d9ab7                       ; 004ce6cf | = "leverToPull"
     LEA EAX,[ESI + 0x25610]             ; 004ce6d4
     PUSH EAX                            ; 004ce6da
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 004ce6db
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ce6e0
     PUSH 0x5d9ac3                       ; 004ce6e3 | = "ladderToClimb"
     LEA EAX,[ESI + 0x25614]             ; 004ce6e8
     PUSH EAX                            ; 004ce6ee
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 004ce6ef
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ce6f4
     PUSH 0x5d9ad1                       ; 004ce6f7 | = "pushedObject"
     LEA EAX,[ESI + 0x2560c]             ; 004ce6fc
     PUSH EAX                            ; 004ce702
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 004ce703
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ce708
     CMP dword ptr [0x00617a5c],0xa      ; 004ce70b | g_CHeroClassVersion
         ;   Label: LAB_004ce70b

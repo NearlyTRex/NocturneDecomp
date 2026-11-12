@@ -2,24 +2,24 @@
 // Address: 00450c00
 // Address Range: [[00450c00, 00450cb7]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00450c00(int param_1,undefined4 param_2,int param_3)
+// Signature: void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00450c00(SFog *fog,_FILE *file_handle,int file_version)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00450c00(int param_1,uint param_2,int param_3)
+void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00450c00(SFog *fog,_FILE *file_handle,int file_version)
 
 {
-  byte local_108 [256];
+  char local_108 [256];
   
-  _fgets(local_108,0xff,param_2);
-  _fscanf(param_2,"%d,%d,%d\n",param_1,param_1 + 4,param_1 + 8);
-  _fgets(local_108,0xff,param_2);
-  _fscanf(param_2,"%f,%f,%f\n",param_1 + 0xc,param_1 + 0x10,param_1 + 0x14);
-  _fscanf(param_2,"%f,%f\n",param_1 + 0x18,param_1 + 0x1c);
-  if (param_3 < 0x1a) {
-    *(uint *)(param_1 + 0x20) = 0x42480000;
+  _fgets(local_108,0xff,file_handle);
+  _fscanf(file_handle,"%d,%d,%d\n");
+  _fgets(local_108,0xff,file_handle);
+  _fscanf(file_handle,"%f,%f,%f\n");
+  _fscanf(file_handle,"%f,%f\n");
+  if (file_version < 0x1a) {
+    fog->temperature = 50.0;
     return;
   }
-  _fscanf(param_2,&DAT_005ba0a9,param_1 + 0x20);
+  _fscanf(file_handle,&DAT_005ba0a9);
   return;
 }

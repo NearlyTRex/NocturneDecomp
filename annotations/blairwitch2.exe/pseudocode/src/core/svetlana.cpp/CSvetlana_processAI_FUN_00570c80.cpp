@@ -144,8 +144,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_00570c80(CSvetlana *this_
                         (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_d0,
                          (this_ptr->base).base.base.direction_hint);
       if (iVar5 != 0) {
-        fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                     (CStack_d0.y - (this_ptr->base).base.base.orient.vec.y);
+        fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                              (CStack_d0.y - (this_ptr->base).base.base.orient.vec.y);
         fVar4 = fStack_14 * _DAT_005ec323 * (float)_DAT_005ec32b;
         fStack_3c = -local_24;
         (this_ptr->base).player_input.turn_speed = fVar4;
@@ -202,8 +202,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_00570c80(CSvetlana *this_
         afStack_b4[(uint)bVar7 * -2 + 0x15] = afStack_b4[(uint)bVar7 * -2];
         afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x16] =
              afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-        fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                     (fStack_60 - (this_ptr->base).base.base.orient.vec.y);
+        fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                              (fStack_60 - (this_ptr->base).base.base.orient.vec.y);
         fVar2 = fStack_14 * _DAT_005ec323 * (float)_DAT_005ec32b;
         fStack_48 = -local_24;
         (this_ptr->base).player_input.turn_speed = fVar2;
@@ -253,8 +253,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_00570c80(CSvetlana *this_
       local_d8 = fStack_6c;
       local_d4 = fStack_68;
     }
-    fStack_c0 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                 (local_d8 - (this_ptr->base).base.base.orient.vec.y);
+    fStack_c0 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                          (local_d8 - (this_ptr->base).base.base.orient.vec.y);
     if (local_34 < fStack_c0) {
       fStack_c0 = local_34;
     }

@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_larva.cpp_factoryFuncLarva_FUN_004fd920
 // Address: 004fd920
-void factoryFuncLarva(void);
+CLarva * __cdecl factoryFuncLarva(void);
 
 // Original: core_larva.cpp_CLarva_getActorType_FUN_004fd940
 // Address: 004fd940

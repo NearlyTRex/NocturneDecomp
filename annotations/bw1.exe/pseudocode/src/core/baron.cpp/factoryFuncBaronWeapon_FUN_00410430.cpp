@@ -1,20 +1,20 @@
 // Name: core_baron.cpp_factoryFuncBaronWeapon_FUN_00410430
 // Address: 00410430
 // Address Range: [[00410430, 0041044b]]
-// Convention: unknown
-// Signature: void core_baron_cpp_factoryFuncBaronWeapon_FUN_00410430(void)
+// Convention: __cdecl
+// Signature: CBaronWeapon * __cdecl core_baron_cpp_factoryFuncBaronWeapon_FUN_00410430(void)
 
 #include "nocturne.h"
 
-void core_baron_cpp_factoryFuncBaronWeapon_FUN_00410430(void)
+CBaronWeapon * __cdecl core_baron_cpp_factoryFuncBaronWeapon_FUN_00410430(void)
 
 {
-  CBaronWeapon *this_ptr;
+  CBaronWeapon *pCVar1;
   
-  this_ptr = (CBaronWeapon *)operator_new(0x57c);
-  if (this_ptr == (CBaronWeapon *)0x0) {
-    return;
+  pCVar1 = (CBaronWeapon *)operator_new(0x57c);
+  if (pCVar1 == (CBaronWeapon *)0x0) {
+    return (CBaronWeapon *)0x0;
   }
-  core_baron_cpp_CBaronWeapon_ctor_FUN_00410460(this_ptr);
-  return;
+  pCVar1 = core_baron_cpp_CBaronWeapon_ctor_FUN_00410460(pCVar1);
+  return pCVar1;
 }

@@ -23,7 +23,6 @@
 ; Called Functions:
 ;   core_sound.cpp_CSound_reset_FUN_0057d800
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0
-;   sound_sndmain.cpp_FUN_00572980
 ;   sound_sndmain.cpp_FUN_00572a10
 ;   sound_sndmain.cpp_FUN_00573ec0
 ;   sound_sndmain.cpp_FUN_00573f20
@@ -34,6 +33,7 @@
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
 ;   sound_sndmain.cpp_set3DListenerOrientRight_FUN_005756f0
+;   sound_sndmain.cpp_setNextSfxChannel_FUN_00572980
 ;   sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
 ;
@@ -45,7 +45,7 @@ section .text
         ;   Label: core_sound.cpp_CSound_configure_FUN_0057d6a0
     PUSH 0x1                            ; 0057d6a3
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0 ; 0057d6a5
-        ;   XREF to: 00573bc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0()
+        ;   XREF to: 00573bc0 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0(int channel_index)
     MOV dword ptr [ESP + 0x4],EAX       ; 0057d6aa
     FLD float ptr [ESP + 0x4]           ; 0057d6ae
     ADD ESP,0x4                         ; 0057d6b2
@@ -57,7 +57,7 @@ section .text
     PUSH 0x0                            ; 0057d6c4
         ;   Label: LAB_0057d6c4
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0 ; 0057d6c6
-        ;   XREF to: 00573bc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0()
+        ;   XREF to: 00573bc0 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0(int channel_index)
     MOV dword ptr [ESP + 0x4],EAX       ; 0057d6cb
     FLD float ptr [ESP + 0x4]           ; 0057d6cf
     ADD ESP,0x4                         ; 0057d6d3
@@ -69,12 +69,12 @@ section .text
     PUSH dword ptr [0x00605c98]         ; 0057d6e1 | DAT_00605c98
     PUSH 0x0                            ; 0057d6e7
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30 ; 0057d6e9
-        ;   XREF to: 00573b30 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30()
+        ;   XREF to: 00573b30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30(int channel_index, float volume)
     ADD ESP,0x8                         ; 0057d6ee
     PUSH 0x2                            ; 0057d6f1
         ;   Label: LAB_0057d6f1
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0 ; 0057d6f3
-        ;   XREF to: 00573bc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0()
+        ;   XREF to: 00573bc0 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0(int channel_index)
     MOV dword ptr [ESP + 0x4],EAX       ; 0057d6f8
     FLD float ptr [ESP + 0x4]           ; 0057d6fc
     ADD ESP,0x4                         ; 0057d700
@@ -86,7 +86,7 @@ section .text
     PUSH dword ptr [0x00605c9c]         ; 0057d70e | DAT_00605c9c
     PUSH 0x2                            ; 0057d714
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30 ; 0057d716
-        ;   XREF to: 00573b30 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30()
+        ;   XREF to: 00573b30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30(int channel_index, float volume)
     ADD ESP,0x8                         ; 0057d71b
     CALL sound_sndmain.cpp_isSoundMuted_FUN_005735f0 ; 0057d71e
         ;   XREF to: 005735f0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_005735f0()
@@ -103,7 +103,7 @@ section .text
     PUSH 0x0                            ; 0057d73a
     PUSH 0x0                            ; 0057d73c
     CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_005756f0 ; 0057d73e
-        ;   XREF to: 005756f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_set3DListenerOrientRight_FUN_005756f0()
+        ;   XREF to: 005756f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrientRight_FUN_005756f0(float orient_right_x, float orient_right_y, float orient_right_z)
     ADD ESP,0xc                         ; 0057d743
     PUSH 0x0                            ; 0057d746
     PUSH 0x0                            ; 0057d748
@@ -137,8 +137,8 @@ section .text
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 0057d790
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH 0x1                            ; 0057d795
-    CALL sound_sndmain.cpp_FUN_00572980 ; 0057d797
-        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572980(int channel_index)
+    CALL sound_sndmain.cpp_setNextSfxChannel_FUN_00572980 ; 0057d797
+        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_00572980(int channel_index)
     ADD ESP,0x4                         ; 0057d79c
     PUSH 0x1                            ; 0057d79f
     CALL sound_sndmain.cpp_FUN_00572a10 ; 0057d7a1
@@ -162,7 +162,7 @@ section .text
         ;   Label: LAB_0057d7cb
     PUSH 0x1                            ; 0057d7d1
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30 ; 0057d7d3
-        ;   XREF to: 00573b30 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30()
+        ;   XREF to: 00573b30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30(int channel_index, float volume)
     ADD ESP,0x8                         ; 0057d7d8
     JMP 0x0057d6c4                      ; 0057d7db
         ;   XREF to: 0057d6c4 (UNCONDITIONAL_JUMP)  ; LAB_0057d6c4

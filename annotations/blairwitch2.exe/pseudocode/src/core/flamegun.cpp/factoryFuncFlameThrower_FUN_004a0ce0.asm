@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flamegun_cpp_factoryFuncFlameThrower_FUN_004a0ce0(void)
+; CFlameThrower * __cdecl core_flamegun_cpp_factoryFuncFlameThrower_FUN_004a0ce0(void)
 ;
 ;
 ; Called Functions:

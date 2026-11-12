@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 68,
+    "complexity_score": 23,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 8,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 29
@@ -24,9 +23,9 @@
         "00585da4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_water.cpp_calculateWaveHeight_FUN_00585d5e",
-    "signature": "float core_water_cpp_calculateWaveHeight_FUN_00585d5e(int param_1,int param_2)"
+    "signature": "float __cdecl core_water_cpp_calculateWaveHeight_FUN_00585d5e(int x,int y)"
   },
   "function_calls": [],
   "globals": [
@@ -59,9 +58,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -90,13 +89,54 @@
     },
     "pcode_op_count": 114
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a998e",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005771de",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e9dc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9744
+    },
+    "nocturne.exe": {
+      "addr": "00550750",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9744
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -106,38 +146,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float core_water_cpp_calculateWaveHeight_FUN_00585d5e(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float core_water_cpp_calculateWaveHeight_FUN_00585d5e(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar1 = (float10)fsin((float10)param_2 * (float10)_DAT_005ede86 * (float10)_DAT_005ede8e +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float10)param_1 * (float10)_DAT_005ede86 + (float10)_DAT_0265b7e8);",
-      "type": "unnamed_param"
     }
   ]
 }

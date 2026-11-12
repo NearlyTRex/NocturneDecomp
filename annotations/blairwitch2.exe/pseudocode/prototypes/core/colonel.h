@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_colonel.cpp_factoryFuncColonel_FUN_004355e0
 // Address: 004355e0
-void factoryFuncColonel(void);
+CColonel * __cdecl factoryFuncColonel(void);
 
 // Original: core_colonel.cpp_CColonel_getActorType_FUN_00435600
 // Address: 00435600

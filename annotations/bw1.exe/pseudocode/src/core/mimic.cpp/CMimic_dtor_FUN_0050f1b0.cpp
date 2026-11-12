@@ -20,7 +20,7 @@ CMimic * core_mimic_cpp_CMimic_dtor_FUN_0050f1b0(CMimic *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMimicTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMimicTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

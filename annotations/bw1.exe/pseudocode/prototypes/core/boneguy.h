@@ -19,7 +19,7 @@ void getWorldBoundingBoxCenter(int param_1);
 
 // Original: core_boneguy.cpp_factoryFuncBoneGuy_FUN_0041b3a0
 // Address: 0041b3a0
-void factoryFuncBoneGuy(void);
+CBoneGuy * __cdecl factoryFuncBoneGuy(void);
 
 // Original: core_boneguy.cpp_CBoneGuy_getActorType_FUN_0041b3c0
 // Address: 0041b3c0

@@ -35,8 +35,8 @@
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0
 ;   core_hero.cpp_FUN_004eb5b0
 ;   core_hero.cpp_FUN_004eb7f0
-;   engine_console.cpp_FUN_00445430
-;   shape_edittool.cpp_FUN_004943a0
+;   engine_console.cpp_CConsole_printf_FUN_00445430
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     PUSH 0x5e498a                       ; 004ec67b | = "CHero::doHeroAction - type=eHeroActio..."
     MOV ESI,dword ptr [0x0061abc0]      ; 004ec680 | g_CEditorToolsPtr
     PUSH ESI                            ; 004ec686
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004ec687
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004ec687
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec68c
     PUSH EBX                            ; 004ec68f
     CALL core_hero.cpp_FUN_004eb5b0     ; 004ec690
@@ -91,8 +91,8 @@ section .text
         ;   Label: LAB_004ec69d
     MOV EDI,dword ptr [0x0061abc0]      ; 004ec6a2 | g_CEditorToolsPtr
     PUSH EDI                            ; 004ec6a8
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004ec6a9
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004ec6a9
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec6ae
     PUSH EBX                            ; 004ec6b1
     CALL core_hero.cpp_FUN_004eb5b0     ; 004ec6b2
@@ -127,8 +127,8 @@ section .text
         ;   Label: caseD_7
     MOV ESI,dword ptr [0x00611100]      ; 004ec6ef | g_CConsolePtr
     PUSH ESI                            ; 004ec6f5 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 004ec6f6
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004ec6f6
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec6fb
     MOV EDI,dword ptr [0x01d1c21c]      ; 004ec6fe | g_CLeverClassInfo.name_hash
     PUSH EDI                            ; 004ec704
@@ -136,7 +136,7 @@ section .text
     PUSH EBP                            ; 004ec70b
     MOV dword ptr [EBX + 0xc1e4],0x0    ; 004ec70c
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004ec716
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,EAX                         ; 004ec71b
     ADD ESP,0x8                         ; 004ec71d
     TEST EAX,EAX                        ; 004ec720
@@ -168,8 +168,8 @@ section .text
         ;   Label: LAB_004ec757
     MOV EAX,[0x0061abc0]                ; 004ec75c | g_CEditorToolsPtr
     PUSH EAX                            ; 004ec761
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004ec762
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004ec762
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec767
     PUSH EBX                            ; 004ec76a
     CALL core_hero.cpp_FUN_004eb5b0     ; 004ec76b
@@ -186,7 +186,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1ff64]   ; 004ec77f
     PUSH EAX                            ; 004ec785
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004ec786
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,EAX                         ; 004ec78b
     ADD ESP,0x8                         ; 004ec78d
     TEST EAX,EAX                        ; 004ec790
@@ -220,8 +220,8 @@ section .text
         ;   Label: LAB_004ec7ca
     MOV ECX,dword ptr [0x0061abc0]      ; 004ec7cf | g_CEditorToolsPtr
     PUSH ECX                            ; 004ec7d5
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004ec7d6
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004ec7d6
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec7db
     PUSH EBX                            ; 004ec7de
     CALL core_hero.cpp_FUN_004eb5b0     ; 004ec7df
@@ -274,8 +274,8 @@ section .text
     PUSH EAX                            ; 004ec845 | = "CHero::doHeroAction - type=eHeroActio..."
     MOV ECX,dword ptr [0x0061abc0]      ; 004ec846 | g_CEditorToolsPtr
     PUSH ECX                            ; 004ec84c
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004ec84d
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004ec84d
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec852
     PUSH EBX                            ; 004ec855
     CALL core_hero.cpp_FUN_004eb5b0     ; 004ec856
@@ -292,7 +292,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x1ff64]   ; 004ec86a
     PUSH EDI                            ; 004ec870
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004ec871
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004ec876
     TEST EAX,EAX                        ; 004ec879
     JNZ 0x004ec89e                      ; 004ec87b
@@ -300,8 +300,8 @@ section .text
     PUSH 0x5e4ae2                       ; 004ec87d | = "CHero::doHeroAction - type=eHeroActio..."
     MOV EAX,[0x0061abc0]                ; 004ec882 | g_CEditorToolsPtr
     PUSH EAX                            ; 004ec887
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004ec888
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004ec888
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec88d
     PUSH EBX                            ; 004ec890
     CALL core_hero.cpp_FUN_004eb5b0     ; 004ec891
@@ -357,8 +357,8 @@ section .text
         ;   Label: LAB_004ec8fe
     MOV ECX,dword ptr [0x0061abc0]      ; 004ec903 | g_CEditorToolsPtr
     PUSH ECX                            ; 004ec909
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004ec90a
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004ec90a
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004ec90f
     PUSH EBX                            ; 004ec912
     CALL core_hero.cpp_FUN_004eb5b0     ; 004ec913

@@ -32,20 +32,19 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004c6c80(CGhoul *this_pt
     local_1c = 0;
     this_ptr->heal_timer = local_14 + this_ptr->heal_timer;
     for (; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
-      this_ptr_00 = (CDemonActor *)
-                    core_actor_cpp_castToClassHash_FUN_0040c840
-                              (*(uint *)((int)g_CDemonSetPtr->actors + local_1c),
+      this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040c840
+                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c),
                                g_CWayPointClassInfo.name_hash);
       if ((this_ptr_00 != (CDemonActor *)0x0) &&
          (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_00486a40
-                            (PTR_s_darkPoint_005c442c_1_005fecb0,(char *)this_ptr_00,0), iVar2 != 0)
-         ) {
+                            (PTR_s_darkPoint_005c442c_1_005fecb0,this_ptr_00->actor_name,0),
+         iVar2 != 0)) {
         iVar2 = 0;
         local_20 = 1;
         for (iVar4 = 0; iVar4 < g_CDemonSetPtr->enemy_count; iVar4 = iVar4 + 1) {
           pCVar3 = (CGhoul *)
                    core_actor_cpp_castToClassHash_FUN_0040c840
-                             (*(uint *)((int)g_CDemonSetPtr->enemies + iVar2),
+                             (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar2),
                               g_CGhoulClassInfo.name_hash);
           if (((pCVar3 != (CGhoul *)0x0) && (pCVar3 != this_ptr)) &&
              (this_ptr_00 == pCVar3->dark_waypoint)) goto LAB_004c6d1f;

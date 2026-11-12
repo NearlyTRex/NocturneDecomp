@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1075,
-    "complexity_score": 697,
+    "complexity_score": 696,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 417,
+    "pseudocode_lines": 416,
     "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
@@ -19,7 +19,7 @@
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 1492
+    "total_lines": 1491
   },
   "cross_references": [
     {
@@ -345,6 +345,32 @@
       "SUBPIECE": 4
     },
     "pcode_op_count": 4508
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0052d450",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7883
+    },
+    "bw3.exe": {
+      "addr": "00504d60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005406a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9076
+    },
+    "nocturne.exe": {
+      "addr": "004ea830",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9211
+    }
   },
   "stack_frame": {
     "frame_size": 264,
@@ -699,7 +725,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 395,
+      "line": 394,
       "match": "(SPlayerInput *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -707,7 +733,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 415,
+      "line": 414,
       "match": "(SPlayerInput *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -723,7 +749,7 @@
     },
     {
       "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 395,
+      "line": 394,
       "match": "(int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -731,7 +757,7 @@
     },
     {
       "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 415,
+      "line": 414,
       "match": "(int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SPlayerInput *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -779,7 +805,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 393,
+      "line": 392,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -787,7 +813,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 412,
+      "line": 411,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -795,7 +821,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_1c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 398,
+      "line": 397,
       "match": "local_1c = (T *)((local_1c->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "local_1c = (UNetPacket *)((local_1c->server_accept).mission_name + 0x1b);",

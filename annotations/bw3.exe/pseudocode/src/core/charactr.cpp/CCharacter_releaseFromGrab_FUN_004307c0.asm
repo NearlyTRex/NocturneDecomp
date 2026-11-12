@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004d2c20 at 004d2c9e
+;   core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20 at 004d2c9e
 ;
 ; *****************************************************************************
 

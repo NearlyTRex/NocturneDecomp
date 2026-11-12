@@ -15,11 +15,11 @@ int __cdecl core_gore_cpp_CGore_load_FUN_004e6680(CGore *this_ptr,_FILE *file_ha
   CBloodSplat *this_ptr_01;
   int iVar1;
   int iVar2;
-  byte local_110 [256];
+  char local_110 [256];
   
   _fgets(local_110,0xff,file_handle);
   iVar1 = 0;
-  _fscanf(file_handle,&DAT_005e416d,&DAT_01cf69f8);
+  _fscanf(file_handle,&DAT_005e416d);
   if (0 < _DAT_01cf69f8) {
     this_ptr_00 = (CBloodPool *)0x1cf69fc;
     do {
@@ -29,7 +29,7 @@ int __cdecl core_gore_cpp_CGore_load_FUN_004e6680(CGore *this_ptr,_FILE *file_ha
     } while (iVar1 < _DAT_01cf69f8);
   }
   iVar2 = 0;
-  iVar1 = _fscanf(file_handle,&DAT_005e4171,&DAT_01cd56b0);
+  iVar1 = _fscanf(file_handle,&DAT_005e4171);
   if (0 < _DAT_01cd56b0) {
     this_ptr_01 = (CBloodSplat *)0x1cd56b4;
     do {

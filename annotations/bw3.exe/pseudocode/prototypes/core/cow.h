@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_cow.cpp_factoryFuncZombieCow_FUN_00444f30
 // Address: 00444f30
-void factoryFuncZombieCow(void);
+CZombieCow * __cdecl factoryFuncZombieCow(void);
 
 // Original: core_cow.cpp_CZombieCow_getActorType_FUN_00444f50
 // Address: 00444f50

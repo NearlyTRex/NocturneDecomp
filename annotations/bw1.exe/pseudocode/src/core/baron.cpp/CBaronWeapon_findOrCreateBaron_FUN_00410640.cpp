@@ -19,7 +19,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00410640(CBaronWe
     for (iVar2 = 0; iVar2 < g_CDemonSetPtr->actor_count; iVar2 = iVar2 + 1) {
       pCVar1 = (CBaron *)
                core_actor_cpp_castToClassHash_FUN_0040c600
-                         (*(uint *)((int)g_CDemonSetPtr->actors + iVar3),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
                           g_CBaronClassInfo.name_hash);
       this_ptr->baron = pCVar1;
       if (pCVar1 != (CBaron *)0x0) break;

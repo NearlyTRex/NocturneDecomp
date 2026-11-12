@@ -2,7 +2,8 @@
 """The functions each program still has no name for, grouped by unit.
 
 A function is unnamed when its name has no class-and-method part: Ghidra's
-`FUN_<addr>`, or a unit with nothing after it (`core_fire.cpp_FUN_0049e1a0`).
+`FUN_<addr>`, a unit with nothing after it (`core_fire.cpp_FUN_0049e1a0`), or a
+class with no method (`core_slew.cpp_CSlew_FUN_0051f930`).
 The CRT is counted but not listed unless --crt: its interior is left anonymous
 by design (wall_off_crt.py).
 
@@ -18,6 +19,7 @@ Reads exported annotations only. No Ghidra.
 
 import argparse
 import os
+import re
 import sys
 from collections import defaultdict
 
@@ -27,6 +29,8 @@ import sibling_match as sm  # noqa: E402
 DEFAULT_PROGRAMS = ("nocedit.exe", "nocturne.exe", "bw1.exe", "blairwitch2.exe", "bw3.exe")
 NO_UNIT = "(no unit)"
 REPORT = "unnamed_functions.txt"
+# A class (C...) or struct (S...) name and nothing after it.
+CLASS_ONLY = re.compile(r"^[CS][A-Z0-9][A-Za-z0-9]*$")
 
 
 def size_of(function):
@@ -42,7 +46,7 @@ def unnamed(functions):
     out = defaultdict(list)
     for f in functions:
         unit, core = sm.split_qualified_name(f.get("name", ""))
-        if core is None:
+        if core is None or CLASS_ONLY.match(core):
             out[unit or NO_UNIT].append((f["addr"].lower(), size_of(f), f.get("name", "")))
     for rows in out.values():
         rows.sort()

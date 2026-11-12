@@ -2,23 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 498,
-    "complexity_score": 391,
+    "complexity_score": 529,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 216,
-    "suspect_count": 14,
+    "pseudocode_lines": 229,
+    "suspect_count": 26,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "stack_alignment_array",
+      "stack_ref",
       "sub84_truncation",
       "suspect_float",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unaffected_reg",
+      "unknown_field",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 714
+    "total_lines": 727
   },
   "cross_references": [],
   "function": {
@@ -301,6 +302,26 @@
     },
     "pcode_op_count": 2393
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00449a50",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00448f20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6714
+    },
+    "nocturne.exe": {
+      "addr": "0043d1c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6295
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -336,116 +357,212 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
-      "match": "afStackY_10f4",
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "float afStackY_10f4 [995];",
+      "text": "float unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 18,
+      "match": "apCStackY_10f4",
+      "severity": "moderate",
+      "text": "CCrossbow *apCStackY_10f4 [3];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 116,
-      "match": "code *",
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 19,
+      "match": "afStackY_10e8",
       "severity": "moderate",
-      "text": "(iVar1 = (**(code **)(*(int *)(iStack_18 + 0x2b0) + 0x114))(iStack_18), 0 < iVar1)) {",
-      "type": "unresolved_funcptr"
+      "text": "float afStackY_10e8 [31];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 20,
+      "match": "apCStackY_106c",
+      "severity": "moderate",
+      "text": "CDemonActor *apCStackY_106c [5];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 21,
+      "match": "afStackY_1058",
+      "severity": "moderate",
+      "text": "float afStackY_1058 [956];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._40_4_",
+      "severity": "mild",
+      "text": "auStack_134._40_4_ = apCStack_7c[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 80,
+      "match": "._40_4_",
+      "severity": "mild",
+      "text": "uVar1 = auStack_134._40_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 93,
+      "match": "._40_4_",
+      "severity": "mild",
+      "text": "uVar1 = auStack_134._40_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 150,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)",
+      "type": "unaffected_reg"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 141,
+      "line": 151,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar6),0),",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar7),0),",
       "type": "sub84_truncation"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 154,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 153,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(iStack_18 + 0x2b0) + 0xe8))(iStack_18);",
-      "type": "unresolved_funcptr"
+      "text": "core_trigger_cpp_CTrigger_applyDamage_FUN_005785b0(this_ptr_02,unaff_ESI);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 167,
-      "match": "SUB84(",
+      "description": "Direct stack address reference",
+      "line": 175,
+      "match": "&stack0xfffffebc",
       "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar6),0),",
-      "type": "sub84_truncation"
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0((SDamageInfo *)&stack0xfffffebc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 179,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_134._4_4_ = 0.4;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 180,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_134._0_4_ = this_ptr_03;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 200,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_134._8_4_ = afStack_54[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 201,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "auStack_134._12_4_ = afStack_54[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 202,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "auStack_134._16_4_ = afStack_54[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 204,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "core_actor_cpp_FUN_00408de0(unaff_ESI,&g_CDemonSetPtr->collision_impact_position);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 210,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "auStack_134._24_4_ = afStack_e4[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 211,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "auStack_134._28_4_ = afStack_e4[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 212,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "auStack_134._32_4_ = afStack_e4[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 214,
+      "match": "._36_4_",
+      "severity": "mild",
+      "text": "auStack_134._36_4_ = (this_ptr->base).ammo_type;",
+      "type": "unknown_field"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 203,
+      "line": 215,
       "match": "1.45735e-43",
       "severity": "mild",
-      "text": "CStack_10c.x = 1.45735e-43;",
+      "text": "fStack_108 = 1.45735e-43;",
       "type": "suspect_float"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 208,
-      "match": "(int *)((int)fVar3",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0x110))(fVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 208,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)((int)fVar3 + 0x2b0) + 0x110))(fVar3);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer value `&CStack_10c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
-      "match": "(int)&CStack_10c",
-      "severity": "moderate",
-      "text": "*(float *)((int)&CStack_10c + (uint)bVar4 * -8 + 4) = afStack_84[(uint)bVar4 * -2 + 3];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&CStack_10c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
-      "match": "(int)&CStack_10c",
-      "severity": "moderate",
-      "text": "*(float *)((int)&CStack_10c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&SStack_148.impact_point.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 207,
-      "match": "(int)&SStack_148.impact_point.y",
-      "severity": "moderate",
-      "text": "SStack_148.hit_part_index = (int)&SStack_148.impact_point.y;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 57,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&CStack_10c + (uint)bVar4 * -8 + 4) = afStack_84[(uint)bVar4 * -2 + 3];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 59,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&CStack_10c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
-      "type": "pointer_cast"
+      "description": "Unknown/mangled field access",
+      "line": 217,
+      "match": "._40_4_",
+      "severity": "mild",
+      "text": "auStack_134._40_4_ = (CDemonActor *)0x3e19999a;",
+      "type": "unknown_field"
     }
   ],
   "vtable_info": {

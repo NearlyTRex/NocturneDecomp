@@ -314,6 +314,32 @@
     },
     "pcode_op_count": 792
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0052d980",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9809
+    },
+    "bw1.exe": {
+      "addr": "0054ec60",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0056aa10",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005084c0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 28,
     "local_size": 24,
@@ -351,7 +377,7 @@
       "line": 43,
       "match": "DAT_0203a418",
       "severity": "mild",
-      "text": "if (*(int *)(&DAT_0203a418 + iVar5) != 0) {",
+      "text": "if (*(int *)(&DAT_0203a418 + iVar6) != 0) {",
       "type": "undefined_data"
     },
     {
@@ -359,7 +385,7 @@
       "line": 57,
       "match": "DAT_0203a418",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_0203a418 + _DAT_0203a414 * 4) = uVar7;",
+      "text": "*(CDemonLight **)(&DAT_0203a418 + _DAT_0203a414 * 4) = pCVar2;",
       "type": "undefined_data"
     },
     {
@@ -367,7 +393,7 @@
       "line": 74,
       "match": "DAT_0203a418",
       "severity": "mild",
-      "text": "this_ptr_00 = *(CDemonLight **)(&DAT_0203a418 + iVar2);",
+      "text": "pCVar2 = *(CDemonLight **)(&DAT_0203a418 + iVar3);",
       "type": "undefined_data"
     },
     {
@@ -375,7 +401,7 @@
       "line": 32,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar3->x = pCVar4->x;",
+      "text": "pCVar4->x = pCVar5->x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -387,27 +413,27 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar6->vertices[0].a`). Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar7->vertices[0].a`). Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 67,
-      "match": "pCVar6 = (T *)&pCVar6->FIELD[N].SUBFIELD",
+      "match": "pCVar7 = (T *)&pCVar7->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar6 = (CDemonSet *)&pCVar6->cameras[0xe].vdir_zone;",
+      "text": "pCVar7 = (CDemonSet *)&pCVar7->cameras[0xe].vdir_zone;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` was initialized to the address of an array element's subfield (`pCVar3 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCVar3)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCVar3->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` was initialized to the address of an array element's subfield (`pCVar4 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 99,
-      "match": "pCVar3 = pCVar3 + N",
+      "match": "pCVar4 = pCVar4 + N",
       "severity": "moderate",
-      "text": "pCVar3 = pCVar3 + 0x23;",
+      "text": "pCVar4 = pCVar4 + 0x23;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar6->vertices[0].a`). Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar7->vertices[0].a`). Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 100,
-      "match": "pCVar6 = (T *)&pCVar6->FIELD[N].SUBFIELD",
+      "match": "pCVar7 = (T *)&pCVar7->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar6 = (CDemonSet *)&pCVar6->cameras[0].enabled;",
+      "text": "pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;",
       "type": "shadow_pointer_walk"
     }
   ]

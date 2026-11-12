@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_0047be90(undefined4 param_1,undefined4 param_2)
+; void shape_edittool_cpp_FUN_0047be90(undefined4 param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
 ;   core_menu.cpp_FUN_004eed60 at 004efc56
+;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0 at 0050b5a6
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790 at 0050b7a3
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d538
 ;   core_netgame.cpp_FUN_0050b420 at 0050b436
-;   core_netgame.cpp_FUN_0050b4d0 at 0050b5a6
-;   core_netgame.cpp_FUN_0050b790 at 0050b7a3
 ;   engine_pod.cpp_FUN_0051aa80 at 0051aad6
 ;   engine_pod.cpp_FUN_0051b6dc at 0051b6fe
 ;
@@ -69,7 +69,7 @@ section .text
     PUSH 0x1c231f0                      ; 0047bed4
     XOR EDI,EDI                         ; 0047bed9
     CALL crt_stdio.c_vsprintf_FUN_005b7768 ; 0047bedb
-        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005b7768()
+        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005b7768(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047bee0
     MOV dword ptr [ESP],EDI             ; 0047bee3
     CALL engine_special.cpp_clearScreen_FUN_0055b1f0 ; 0047bee6

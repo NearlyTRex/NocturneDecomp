@@ -17,7 +17,7 @@
 ;   core_main.c_FUN_004e4330
 ;   crt_stdlib.c_atoi_FUN_005a5f50
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   engine_ini.cpp_FUN_004d8290
+;   engine_ini.cpp_CIni_getProfileString_FUN_004d8290
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x224]     ; 004d8998
     PUSH ESI                            ; 004d899f
     PUSH 0x1d5bc78                      ; 004d89a0
-    CALL engine_ini.cpp_FUN_004d8290    ; 004d89a5
-        ;   XREF to: 004d8290 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_FUN_004d8290(CIni * this_ptr, char * section, char * key, char * default_value, ...)
+    CALL engine_ini.cpp_CIni_getProfileString_FUN_004d8290 ; 004d89a5
+        ;   XREF to: 004d8290 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_CIni_getProfileString_FUN_004d8290(CIni * this_ptr, char * section, char * key, char * default_value, ...)
     ADD ESP,0x1c                        ; 004d89aa
     TEST EAX,EAX                        ; 004d89ad
     JZ 0x004d89c6                       ; 004d89af

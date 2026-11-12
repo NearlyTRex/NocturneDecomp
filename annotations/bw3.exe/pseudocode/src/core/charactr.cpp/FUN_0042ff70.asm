@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_0042ff70(int param_1)
+; void core_charactr_cpp_FUN_0042ff70(CDemonActor *param_1)
 ;
 ;
 ; XREF[3]:
@@ -50,7 +50,7 @@ section .text
     PUSH EDX                            ; 0042ffb2
     PUSH EBX                            ; 0042ffb3
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0042ffb4
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0042ffb9
     TEST EAX,EAX                        ; 0042ffbc
     JNZ 0x0042ffc9                      ; 0042ffbe

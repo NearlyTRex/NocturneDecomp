@@ -74,13 +74,58 @@
         "start":"0046fcc8"
       }
     ],
+    "conv":"__edi_esi_ebx",
     "importable":true,
     "name":"core_dstrendr.cpp_renderSolidColorDepth16xUnrolled_FUN_0046fcc8",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"left_edge",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"right_edge",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"scanline_y",
+          "storage":{
+            "reg":"EBX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -95,6 +140,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00495f48",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -134,6 +180,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005a73c8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -152,6 +199,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005a7f48",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -170,6 +218,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005adb48",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -188,6 +237,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005ae248",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -206,6 +256,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005af4c8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -224,6 +275,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005b0048",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -286,6 +338,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005b01c8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -306,6 +359,7 @@
     "name":"crt_kernel32.c_ExitProcess",
     "noreturn":true,
     "ret":"void",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000054",
     "thunk":true,
     "vars":{
@@ -342,6 +396,7 @@
     "importable":true,
     "name":"crt_user32.c_OpenClipboard",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000003d",
     "thunk":true,
     "vars":{

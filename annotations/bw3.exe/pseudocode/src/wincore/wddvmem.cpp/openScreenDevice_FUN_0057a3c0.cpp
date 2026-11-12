@@ -1,14 +1,14 @@
 // Name: wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0
 // Address: 0057a3c0
 // Address Range: [[0057a3c0, 0057a4a8]]
-// Convention: unknown
-// Signature: void wincore_wddvmem_cpp_openScreenDevice_FUN_0057a3c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_0057a3c0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void wincore_wddvmem_cpp_openScreenDevice_FUN_0057a3c0(void)
+void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_0057a3c0(void)
 
 {
   int iVar1;

@@ -38,7 +38,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_004fc940(CDemonMission *
     if ((this_ptr->pending_teleport).area_id != this_ptr->current_set_index) {
       engine_special_cpp_clearScreen_FUN_0055b1f0();
       engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&local_24);
-      engine_alphabit_cpp_FUN_0040d540(&local_24);
+      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&local_24);
       wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
       core_mission_cpp_CDemonMission_loadSet_FUN_004fc6b0
                 (this_ptr,(this_ptr->pending_teleport).area_id);

@@ -18,7 +18,7 @@ CHecaitomix * core_hecaitmx_cpp_CHecaitomix_dtor_FUN_00598670(CHecaitomix *this_
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHecaitomixTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHecaitomixTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

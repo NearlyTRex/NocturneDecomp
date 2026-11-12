@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 639,
+    "complexity_score": 642,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 67,
     "suspect_count": 55,
     "suspect_types": [
       "param_count_too_few",
@@ -16,7 +16,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 260
+    "total_lines": 263
   },
   "cross_references": [
     {
@@ -72,7 +72,7 @@
     ],
     "convention": "unknown",
     "name": "core_xform.cpp_inverse_FUN_00592830",
-    "signature": "void core_xform_cpp_inverse_FUN_00592830(float *param_1)"
+    "signature": "void core_xform_cpp_inverse_FUN_00592830(CMatrix3x4f *param_1)"
   },
   "function_calls": [
     {
@@ -282,6 +282,32 @@
     },
     "pcode_op_count": 1312
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005b6380",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00584560",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f6210",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9531
+    },
+    "nocturne.exe": {
+      "addr": "0055bd00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9531
+    }
+  },
   "stack_frame": {
     "frame_size": 112,
     "local_size": 112,
@@ -469,7 +495,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_xform_cpp_inverse_FUN_00592830(float *param_1)",
+      "text": "void core_xform_cpp_inverse_FUN_00592830(CMatrix3x4f *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -485,7 +511,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_3c = (double)core_xform_cpp_determinant_FUN_005927e0(param_1);",
+      "text": "local_3c = core_xform_cpp_determinant_FUN_005927e0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -493,7 +519,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = param_1[5] * param_1[10] - param_1[6] * param_1[9];",
+      "text": "local_14 = param_1->m[1].x * param_1->m[2].y - param_1->m[1].y * param_1->m[2].x;",
       "type": "unnamed_param"
     },
     {
@@ -501,7 +527,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = param_1[5] * param_1[10] - param_1[6] * param_1[9];",
+      "text": "local_14 = param_1->m[1].x * param_1->m[2].y - param_1->m[1].y * param_1->m[2].x;",
       "type": "unnamed_param"
     },
     {
@@ -509,7 +535,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = param_1[5] * param_1[10] - param_1[6] * param_1[9];",
+      "text": "local_14 = param_1->m[1].x * param_1->m[2].y - param_1->m[1].y * param_1->m[2].x;",
       "type": "unnamed_param"
     },
     {
@@ -517,7 +543,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = param_1[5] * param_1[10] - param_1[6] * param_1[9];",
+      "text": "local_14 = param_1->m[1].x * param_1->m[2].y - param_1->m[1].y * param_1->m[2].x;",
       "type": "unnamed_param"
     },
     {
@@ -525,7 +551,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = -(param_1[4] * param_1[10] - param_1[6] * param_1[8]);",
+      "text": "local_34 = -(param_1->m[1].w * param_1->m[2].y - param_1->m[1].y * param_1->m[2].w);",
       "type": "unnamed_param"
     },
     {
@@ -533,7 +559,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = -(param_1[4] * param_1[10] - param_1[6] * param_1[8]);",
+      "text": "local_34 = -(param_1->m[1].w * param_1->m[2].y - param_1->m[1].y * param_1->m[2].w);",
       "type": "unnamed_param"
     },
     {
@@ -541,7 +567,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = -(param_1[4] * param_1[10] - param_1[6] * param_1[8]);",
+      "text": "local_34 = -(param_1->m[1].w * param_1->m[2].y - param_1->m[1].y * param_1->m[2].w);",
       "type": "unnamed_param"
     },
     {
@@ -549,7 +575,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = -(param_1[4] * param_1[10] - param_1[6] * param_1[8]);",
+      "text": "local_34 = -(param_1->m[1].w * param_1->m[2].y - param_1->m[1].y * param_1->m[2].w);",
       "type": "unnamed_param"
     },
     {
@@ -557,7 +583,7 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = param_1[4] * param_1[9] - param_1[5] * param_1[8];",
+      "text": "local_18 = param_1->m[1].w * param_1->m[2].x - param_1->m[1].x * param_1->m[2].w;",
       "type": "unnamed_param"
     },
     {
@@ -565,7 +591,7 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = param_1[4] * param_1[9] - param_1[5] * param_1[8];",
+      "text": "local_18 = param_1->m[1].w * param_1->m[2].x - param_1->m[1].x * param_1->m[2].w;",
       "type": "unnamed_param"
     },
     {
@@ -573,7 +599,7 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = param_1[4] * param_1[9] - param_1[5] * param_1[8];",
+      "text": "local_18 = param_1->m[1].w * param_1->m[2].x - param_1->m[1].x * param_1->m[2].w;",
       "type": "unnamed_param"
     },
     {
@@ -581,7 +607,7 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = param_1[4] * param_1[9] - param_1[5] * param_1[8];",
+      "text": "local_18 = param_1->m[1].w * param_1->m[2].x - param_1->m[1].x * param_1->m[2].w;",
       "type": "unnamed_param"
     },
     {
@@ -589,7 +615,7 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_30 = -(param_1[1] * param_1[10] - param_1[2] * param_1[9]);",
+      "text": "local_30 = -(param_1->m[0].x * param_1->m[2].y - param_1->m[0].y * param_1->m[2].x);",
       "type": "unnamed_param"
     },
     {
@@ -597,7 +623,7 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_30 = -(param_1[1] * param_1[10] - param_1[2] * param_1[9]);",
+      "text": "local_30 = -(param_1->m[0].x * param_1->m[2].y - param_1->m[0].y * param_1->m[2].x);",
       "type": "unnamed_param"
     },
     {
@@ -605,7 +631,7 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_30 = -(param_1[1] * param_1[10] - param_1[2] * param_1[9]);",
+      "text": "local_30 = -(param_1->m[0].x * param_1->m[2].y - param_1->m[0].y * param_1->m[2].x);",
       "type": "unnamed_param"
     },
     {
@@ -613,7 +639,7 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_30 = -(param_1[1] * param_1[10] - param_1[2] * param_1[9]);",
+      "text": "local_30 = -(param_1->m[0].x * param_1->m[2].y - param_1->m[0].y * param_1->m[2].x);",
       "type": "unnamed_param"
     },
     {
@@ -621,7 +647,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = *param_1 * param_1[10] - param_1[2] * param_1[8];",
+      "text": "local_2c = param_1->m[0].w * param_1->m[2].y - param_1->m[0].y * param_1->m[2].w;",
       "type": "unnamed_param"
     },
     {
@@ -629,7 +655,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = *param_1 * param_1[10] - param_1[2] * param_1[8];",
+      "text": "local_2c = param_1->m[0].w * param_1->m[2].y - param_1->m[0].y * param_1->m[2].w;",
       "type": "unnamed_param"
     },
     {
@@ -637,7 +663,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = *param_1 * param_1[10] - param_1[2] * param_1[8];",
+      "text": "local_2c = param_1->m[0].w * param_1->m[2].y - param_1->m[0].y * param_1->m[2].w;",
       "type": "unnamed_param"
     },
     {
@@ -645,7 +671,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = *param_1 * param_1[10] - param_1[2] * param_1[8];",
+      "text": "local_2c = param_1->m[0].w * param_1->m[2].y - param_1->m[0].y * param_1->m[2].w;",
       "type": "unnamed_param"
     },
     {
@@ -653,7 +679,7 @@
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = -(*param_1 * param_1[9] - param_1[1] * param_1[8]);",
+      "text": "local_28 = -(param_1->m[0].w * param_1->m[2].x - param_1->m[0].x * param_1->m[2].w);",
       "type": "unnamed_param"
     },
     {
@@ -661,7 +687,7 @@
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = -(*param_1 * param_1[9] - param_1[1] * param_1[8]);",
+      "text": "local_28 = -(param_1->m[0].w * param_1->m[2].x - param_1->m[0].x * param_1->m[2].w);",
       "type": "unnamed_param"
     },
     {
@@ -669,7 +695,7 @@
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = -(*param_1 * param_1[9] - param_1[1] * param_1[8]);",
+      "text": "local_28 = -(param_1->m[0].w * param_1->m[2].x - param_1->m[0].x * param_1->m[2].w);",
       "type": "unnamed_param"
     },
     {
@@ -677,7 +703,7 @@
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = -(*param_1 * param_1[9] - param_1[1] * param_1[8]);",
+      "text": "local_28 = -(param_1->m[0].w * param_1->m[2].x - param_1->m[0].x * param_1->m[2].w);",
       "type": "unnamed_param"
     },
     {
@@ -685,7 +711,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_64 = (param_1[1] * param_1[6] - param_1[2] * param_1[5]) * local_10;",
+      "text": "local_64 = (param_1->m[0].x * param_1->m[1].y - param_1->m[0].y * param_1->m[1].x) * local_10;",
       "type": "unnamed_param"
     },
     {
@@ -693,7 +719,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_64 = (param_1[1] * param_1[6] - param_1[2] * param_1[5]) * local_10;",
+      "text": "local_64 = (param_1->m[0].x * param_1->m[1].y - param_1->m[0].y * param_1->m[1].x) * local_10;",
       "type": "unnamed_param"
     },
     {
@@ -701,7 +727,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_64 = (param_1[1] * param_1[6] - param_1[2] * param_1[5]) * local_10;",
+      "text": "local_64 = (param_1->m[0].x * param_1->m[1].y - param_1->m[0].y * param_1->m[1].x) * local_10;",
       "type": "unnamed_param"
     },
     {
@@ -709,7 +735,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_64 = (param_1[1] * param_1[6] - param_1[2] * param_1[5]) * local_10;",
+      "text": "local_64 = (param_1->m[0].x * param_1->m[1].y - param_1->m[0].y * param_1->m[1].x) * local_10;",
       "type": "unnamed_param"
     },
     {
@@ -717,7 +743,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_1c = *param_1 * param_1[5] - param_1[1] * param_1[4];",
+      "text": "local_1c = param_1->m[0].w * param_1->m[1].x - param_1->m[0].x * param_1->m[1].w;",
       "type": "unnamed_param"
     },
     {
@@ -725,7 +751,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_1c = *param_1 * param_1[5] - param_1[1] * param_1[4];",
+      "text": "local_1c = param_1->m[0].w * param_1->m[1].x - param_1->m[0].x * param_1->m[1].w;",
       "type": "unnamed_param"
     },
     {
@@ -733,7 +759,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_1c = *param_1 * param_1[5] - param_1[1] * param_1[4];",
+      "text": "local_1c = param_1->m[0].w * param_1->m[1].x - param_1->m[0].x * param_1->m[1].w;",
       "type": "unnamed_param"
     },
     {
@@ -741,7 +767,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_1c = *param_1 * param_1[5] - param_1[1] * param_1[4];",
+      "text": "local_1c = param_1->m[0].w * param_1->m[1].x - param_1->m[0].x * param_1->m[1].w;",
       "type": "unnamed_param"
     },
     {
@@ -749,7 +775,7 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_54 = -(*param_1 * param_1[6] - param_1[2] * param_1[4]) * local_10;",
+      "text": "local_54 = -(param_1->m[0].w * param_1->m[1].y - param_1->m[0].y * param_1->m[1].w) * local_10;",
       "type": "unnamed_param"
     },
     {
@@ -757,7 +783,7 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_54 = -(*param_1 * param_1[6] - param_1[2] * param_1[4]) * local_10;",
+      "text": "local_54 = -(param_1->m[0].w * param_1->m[1].y - param_1->m[0].y * param_1->m[1].w) * local_10;",
       "type": "unnamed_param"
     },
     {
@@ -765,7 +791,7 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_54 = -(*param_1 * param_1[6] - param_1[2] * param_1[4]) * local_10;",
+      "text": "local_54 = -(param_1->m[0].w * param_1->m[1].y - param_1->m[0].y * param_1->m[1].w) * local_10;",
       "type": "unnamed_param"
     },
     {
@@ -773,7 +799,7 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_54 = -(*param_1 * param_1[6] - param_1[2] * param_1[4]) * local_10;",
+      "text": "local_54 = -(param_1->m[0].w * param_1->m[1].y - param_1->m[0].y * param_1->m[1].w) * local_10;",
       "type": "unnamed_param"
     },
     {
@@ -781,7 +807,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_60 = -(param_1[0xb] * local_64 + param_1[3] * local_6c + param_1[7] * local_68);",
+      "text": "local_60 = -(param_1->m[2].z * local_64 + param_1->m[0].z * local_6c + param_1->m[1].z * local_68)",
       "type": "unnamed_param"
     },
     {
@@ -789,7 +815,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_60 = -(param_1[0xb] * local_64 + param_1[3] * local_6c + param_1[7] * local_68);",
+      "text": "local_60 = -(param_1->m[2].z * local_64 + param_1->m[0].z * local_6c + param_1->m[1].z * local_68)",
       "type": "unnamed_param"
     },
     {
@@ -797,31 +823,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_60 = -(param_1[0xb] * local_64 + param_1[3] * local_6c + param_1[7] * local_68);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_50 = -(param_1[0xb] * local_54 + param_1[7] * local_58 + param_1[3] * local_5c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_50 = -(param_1[0xb] * local_54 + param_1[7] * local_58 + param_1[3] * local_5c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_50 = -(param_1[0xb] * local_54 + param_1[7] * local_58 + param_1[3] * local_5c);",
+      "text": "local_60 = -(param_1->m[2].z * local_64 + param_1->m[0].z * local_6c + param_1->m[1].z * local_68)",
       "type": "unnamed_param"
     },
     {
@@ -829,7 +831,7 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_40 = -(param_1[0xb] * local_44 + param_1[7] * local_48 + param_1[3] * local_4c);",
+      "text": "local_50 = -(param_1->m[2].z * local_54 + param_1->m[1].z * local_58 + param_1->m[0].z * local_5c)",
       "type": "unnamed_param"
     },
     {
@@ -837,7 +839,7 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_40 = -(param_1[0xb] * local_44 + param_1[7] * local_48 + param_1[3] * local_4c);",
+      "text": "local_50 = -(param_1->m[2].z * local_54 + param_1->m[1].z * local_58 + param_1->m[0].z * local_5c)",
       "type": "unnamed_param"
     },
     {
@@ -845,12 +847,36 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_40 = -(param_1[0xb] * local_44 + param_1[7] * local_48 + param_1[3] * local_4c);",
+      "text": "local_50 = -(param_1->m[2].z * local_54 + param_1->m[1].z * local_58 + param_1->m[0].z * local_5c)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_40 = -(param_1->m[2].z * local_44 + param_1->m[1].z * local_48 + param_1->m[0].z * local_4c)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_40 = -(param_1->m[2].z * local_44 + param_1->m[1].z * local_48 + param_1->m[0].z * local_4c)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_40 = -(param_1->m[2].z * local_44 + param_1->m[1].z * local_48 + param_1->m[0].z * local_4c)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 63,
+      "line": 66,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = *pfVar2;",
@@ -858,7 +884,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 65,
+      "line": 68,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
@@ -866,7 +892,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 65,
+      "line": 68,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
@@ -874,7 +900,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 62,
+      "line": 65,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",

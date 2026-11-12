@@ -26,7 +26,7 @@
     ],
     "convention": "unknown",
     "name": "cockpit_pkbitmap.cpp_FUN_00538130",
-    "signature": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,undefined4 param_2)"
+    "signature": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,char *param_2)"
   },
   "function_calls": [
     {
@@ -102,6 +102,14 @@
     },
     "pcode_op_count": 165
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "0050fe10",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -124,7 +132,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,uint param_2)",
+      "text": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -132,7 +140,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,uint param_2)",
+      "text": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -140,7 +148,7 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "file_handle = (_FILE *)_fopen(param_2,\"wb\");",
+      "text": "file_handle = _fopen(param_2,\"wb\");",
       "type": "unnamed_param"
     },
     {

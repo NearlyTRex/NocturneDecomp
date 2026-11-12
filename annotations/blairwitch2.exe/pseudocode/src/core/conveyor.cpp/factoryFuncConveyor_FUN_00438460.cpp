@@ -1,20 +1,20 @@
 // Name: core_conveyor.cpp_factoryFuncConveyor_FUN_00438460
 // Address: 00438460
 // Address Range: [[00438460, 0043847b]]
-// Convention: unknown
-// Signature: void core_conveyor_cpp_factoryFuncConveyor_FUN_00438460(void)
+// Convention: __cdecl
+// Signature: CConveyor * __cdecl core_conveyor_cpp_factoryFuncConveyor_FUN_00438460(void)
 
 #include "nocturne.h"
 
-void core_conveyor_cpp_factoryFuncConveyor_FUN_00438460(void)
+CConveyor * __cdecl core_conveyor_cpp_factoryFuncConveyor_FUN_00438460(void)
 
 {
-  CConveyor *this_ptr;
+  CConveyor *pCVar1;
   
-  this_ptr = (CConveyor *)operator_new(0x9b8);
-  if (this_ptr == (CConveyor *)0x0) {
-    return;
+  pCVar1 = (CConveyor *)operator_new(0x9b8);
+  if (pCVar1 == (CConveyor *)0x0) {
+    return (CConveyor *)0x0;
   }
-  core_conveyor_cpp_CConveyor_ctor_FUN_00438490(this_ptr);
-  return;
+  pCVar1 = core_conveyor_cpp_CConveyor_ctor_FUN_00438490(pCVar1);
+  return pCVar1;
 }

@@ -13,7 +13,7 @@ CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_004a76a0(CFlashligh
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFlashlightTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFlashlightTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

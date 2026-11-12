@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdlib_c__qsort_FUN_005bfc68(undefined4 *param_1,uint param_2,uint param_3,code *param_4)
+; void __cdecl crt_stdlib_c__qsort_FUN_005bfc68(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   base
+; SIZE_T           Stack[0x8]:4   num
+; SIZE_T           Stack[0xc]:4   size
+; QSORT_COMPARATOR Stack[0x10]:4   compar
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined4       Stack[-0x68]:4  local_68

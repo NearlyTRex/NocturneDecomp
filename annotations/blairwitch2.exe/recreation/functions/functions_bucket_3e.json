@@ -19,32 +19,36 @@
     "calls":[
       "005b8010"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":58,
     "method":"saveCameraFog",
     "name":"core_dcamera.cpp_saveCameraFog_FUN_004434be",
+    "params":[
+      {
+        "name":"fog",
+        "type":{
+          "kind":"struct",
+          "name":"SFog",
+          "ptr":1
+        }
+      },
+      {
+        "name":"file_handle",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dcamera.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"00448f3e",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_00448f3e",
-    "name":"core_dglobe.cpp_FUN_00448f3e",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/dglobe.cpp",
     "variadic":false
   },
   {
@@ -132,14 +136,24 @@
     "calls":[
       "005bada6"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":80,
     "method":"initializeSynthesisDctTable",
     "name":"sound_mp3.cpp_initializeSynthesisDctTable_FUN_00505fbe",
+    "params":[
+      {
+        "name":"output_dct_table",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/mp3.cpp",

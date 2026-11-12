@@ -1,20 +1,20 @@
 // Name: core_cow.cpp_factoryFuncZombieCow_FUN_00448370
 // Address: 00448370
 // Address Range: [[00448370, 0044838b]]
-// Convention: unknown
-// Signature: void core_cow_cpp_factoryFuncZombieCow_FUN_00448370(void)
+// Convention: __cdecl
+// Signature: CZombieCow * __cdecl core_cow_cpp_factoryFuncZombieCow_FUN_00448370(void)
 
 #include "nocturne.h"
 
-void core_cow_cpp_factoryFuncZombieCow_FUN_00448370(void)
+CZombieCow * __cdecl core_cow_cpp_factoryFuncZombieCow_FUN_00448370(void)
 
 {
-  CZombieCow *this_ptr;
+  CZombieCow *pCVar1;
   
-  this_ptr = (CZombieCow *)operator_new(0xc29c);
-  if (this_ptr == (CZombieCow *)0x0) {
-    return;
+  pCVar1 = (CZombieCow *)operator_new(0xc29c);
+  if (pCVar1 == (CZombieCow *)0x0) {
+    return (CZombieCow *)0x0;
   }
-  core_cow_cpp_CZombieCow_ctor_FUN_004483a0(this_ptr);
-  return;
+  pCVar1 = core_cow_cpp_CZombieCow_ctor_FUN_004483a0(pCVar1);
+  return pCVar1;
 }

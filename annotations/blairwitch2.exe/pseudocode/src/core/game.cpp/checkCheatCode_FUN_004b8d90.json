@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 116,
+    "complexity_score": 62,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 7,
+    "pseudocode_lines": 32,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "unrolled_strlen"
     ],
-    "total_lines": 95
+    "total_lines": 96
   },
   "cross_references": [],
   "function": {
@@ -25,9 +24,9 @@
         "004b8e02"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_game.cpp_checkCheatCode_FUN_004b8d90",
-    "signature": "undefined4 core_game_cpp_checkCheatCode_FUN_004b8d90(byte *param_1)"
+    "signature": "int __cdecl core_game_cpp_checkCheatCode_FUN_004b8d90(char *cheat_string)"
   },
   "function_calls": [
     {
@@ -48,9 +47,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -85,58 +84,52 @@
     },
     "pcode_op_count": 299
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d24c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004baf50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004dd7f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004a0260",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "cheat_string",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint core_game_cpp_checkCheatCode_FUN_004b8d90(byte *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pbVar6 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = toupper((uint)*param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 31,
       "match": "DAT_01cb80f8",
       "severity": "mild",
       "text": "DAT_01cb80f8 = 0;",
@@ -144,7 +137,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 14,
+      "line": 15,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

@@ -15,8 +15,8 @@
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00418e50 at 00418ebe
 ;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00418fc0 at 00419113
 ;   core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_0041cfd0 at 0041cfd7
+;   core_box.cpp_CBoundingBox3D_render_FUN_00421670 at 0042178f
 ;   core_box.cpp_FUN_004207b0 at 004207e7
-;   core_box.cpp_FUN_00421670 at 0042178f
 ;   ... and 60 more
 ;
 ; *****************************************************************************

@@ -164,7 +164,7 @@ section .text
     LEA ESI,[EBP + 0xffffff02]          ; 0059c7d7
     LEA EDI,[EBP + 0xffffff32]          ; 0059c7dd
     CALL core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10 ; 0059c7e3
-        ;   XREF to: 00593a10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10()
+        ;   XREF to: 00593a10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10(CQuaternion4f * quat_in, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0059c7e8
     LEA ESI,[EBP + 0xffffff02]          ; 0059c7ed
     MOVSD.REP ES:EDI,ESI                ; 0059c7f3

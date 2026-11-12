@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   row_stride
 ;
 ; XREF[2]:
-;   cockpit_pkbitmap.cpp_FUN_00537cb0 at 00537cd8
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00537cb0 at 00537cd8
 ;   cockpit_pkbmpset.cpp_FUN_00538db0 at 00538f64
 ;
 ; *****************************************************************************

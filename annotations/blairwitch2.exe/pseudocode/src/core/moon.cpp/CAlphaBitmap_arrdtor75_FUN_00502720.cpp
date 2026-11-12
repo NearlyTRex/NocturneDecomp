@@ -13,7 +13,6 @@ CAlphaBitmap * core_moon_cpp_CAlphaBitmap_arrdtor75_FUN_00502720(CAlphaBitmap *t
 {
   CAlphaBitmap *pCVar1;
   
-  pCVar1 = (CAlphaBitmap *)
-           __arrfini(this_ptr,0x4b,&g_CAlphaBitmapTypeInfo);
+  pCVar1 = (CAlphaBitmap *)__arrfini(this_ptr,0x4b,&g_CAlphaBitmapTypeInfo);
   return pCVar1;
 }

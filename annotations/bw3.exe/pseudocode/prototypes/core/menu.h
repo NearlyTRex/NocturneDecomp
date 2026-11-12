@@ -17,9 +17,9 @@ void __cdecl renderAudioSpectrumBar(int x_center,int y_top,int height_half);
 // Address: 004e7860
 int __cdecl FUN_004e7860(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
 
-// Original: core_menu.cpp_FUN_004e7dc0
+// Original: core_menu.cpp_calibrateGamepad_FUN_004e7dc0
 // Address: 004e7dc0
-undefined4 FUN_004e7dc0(void);
+int __cdecl calibrateGamepad(void);
 
 // Original: core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0
 // Address: 004e80f0

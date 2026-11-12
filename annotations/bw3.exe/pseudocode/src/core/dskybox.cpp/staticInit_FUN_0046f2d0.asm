@@ -19,7 +19,7 @@ section .text
     PUSH 0x1c0b558                      ; 0046f2d0
         ;   Label: core_dskybox.cpp_staticInit_FUN_0046f2d0
     CALL core_dskybox.cpp_initializeSkyboxTexture_FUN_0046f300 ; 0046f2d5
-        ;   XREF to: 0046f300 (UNCONDITIONAL_CALL)  ; undefined core_dskybox.cpp_initializeSkyboxTexture_FUN_0046f300()
+        ;   XREF to: 0046f300 (UNCONDITIONAL_CALL)  ; SMRGLSkyTexture * core_dskybox.cpp_initializeSkyboxTexture_FUN_0046f300(SMRGLSkyTexture * texture)
     XOR EDX,EDX                         ; 0046f2da
     ADD ESP,0x4                         ; 0046f2dc
     MOV dword ptr [0x01c0b798],EDX      ; 0046f2df | DAT_01c0b798

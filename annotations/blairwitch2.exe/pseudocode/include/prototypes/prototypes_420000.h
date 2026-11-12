@@ -9,6 +9,7 @@
 #include "types/classes/CBugs.h"
 #include "types/classes/CCameraView.h"
 #include "types/classes/CCharacter.h"
+#include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDoor.h"
 #include "types/classes/CMatrix3x4f.h"
@@ -21,6 +22,7 @@
 #include "types/structs/SBug.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SEdge.h"
 #include "types/structs/SFire.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SRGBColorPalette.h"
@@ -40,8 +42,8 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00421b10(CBugs *this_ptr,CDe
 void core_bugs_cpp_FUN_00421dd0(int param_1,float *param_2);
 void core_bugs_cpp_FUN_00421fe0(float *param_1);
 CVector3i * __cdecl core_bugs_cpp_convertVector_FUN_00422050(CVector3f *dest,CVector3i *src);
-int __cdecl core_bugs_cpp_getDeformableModelName_FUN_004220f0(int param_1);
-float __cdecl core_bugs_cpp_maxFloat_FUN_00422120(float param_1,float param_2);
+char * __cdecl core_bugs_cpp_getDeformableModelName_FUN_004220f0(CDeformableModelInstance *model_ptr);
+float __cdecl core_bugs_cpp_maxFloat_FUN_00422120(float a,float b);
 CBugs * core_bugs_cpp_CBugs_dtor_FUN_00422150(CBugs *this_ptr,uint flags);
 SBug * core_bugs_cpp_SBug_ctor_FUN_004221f0(SBug *this_ptr);
 CCameraView * __cdecl core_camview_cpp_CCameraView_ctor_FUN_00422200(CCameraView *this_ptr);
@@ -180,27 +182,25 @@ void cockpit_ckptutil_c_FUN_0042d72c(void);
 void cockpit_ckptutil_c_blitFullScreen_FUN_0042d81c(void *param_1,void *param_2);
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_0042d850(void *sprite_data,void *span_data);
 void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_0042d9f0(void *src_data,int width,int height,void *background_base,int dest_x,int dest_y);
-void cockpit_ckptutil_c_copyScreenRegion_FUN_0042da80(undefined4 *param_1,int param_2,int param_3,int param_4,uint param_5,int param_6);
+void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_0042da80(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height);
 void cockpit_ckptutil_c_FUN_0042dae0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7);
 void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_0042dd00(void *bitmap_data,int width,int height,int num_iterations);
 void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_0042de30(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
 void cockpit_ckptutil_c_FUN_0042dec0(char *param_1,int *param_2,int param_3);
 void cockpit_ckptutil_c_FUN_0042e130(char *param_1,int param_2,int param_3);
-void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_0042e290(short *param_1,int param_2,int param_3,int param_4);
+void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_0042e290(SEdge *edges,int count,int x_offset,int y_offset);
 void cockpit_ckptutil_c_FUN_0042e37e(int param_1,short *param_2,int param_3,int param_4,int param_5);
 void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_0042e660(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode);
 void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042e930(int x0,int y0,int x1,int y1,int color);
-void cockpit_ckptutil_c_FUN_0042ebee(int param_1,int param_2,float param_3,int param_4);
 void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_0042ebf0(int x,int y,float alpha,int color);
-void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_0042ef90(int param_1,int param_2,float param_3,int param_4);
+void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_0042ef90(int x,int y,float blend_factor,int palette_index);
 void __cdecl cockpit_ckptutil_c_putPixel_FUN_0042f260(int x,int y,int color);
 undefined4 cockpit_ckptutil_c_FUN_0042f2ee(void);
-undefined4 cockpit_ckptutil_c_FUN_0042f2fc(void);
 int __cdecl cockpit_ckptutil_c_FUN_0042f300(void);
 void cockpit_ckptutil_c_FUN_0042f30c(undefined4 param_1);
 void cockpit_ckptutil_c_FUN_0042f320(undefined4 param_1);
 void * cockpit_ckptutil_c_FUN_0042f330(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
 void cockpit_ckptutil_c_FUN_0042f4f0(undefined4 *param_1,int param_2,uint param_3,uint param_4);
-void cockpit_ckptutil_c_setEdgeData_FUN_0042f6b0(int param_1,int param_2,undefined2 param_3,undefined2 param_4,undefined2 param_5,ushort param_6,byte param_7);
+void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_0042f6b0(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit);
 void * cockpit_ckptutil_c_FUN_0042f74e(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
 

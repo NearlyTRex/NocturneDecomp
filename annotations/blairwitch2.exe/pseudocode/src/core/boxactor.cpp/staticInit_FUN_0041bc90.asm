@@ -27,11 +27,11 @@ section .text
     PUSH 0x8                            ; 0041bcb8
     PUSH 0x7bc9ec                       ; 0041bcba
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0041bcbf
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0041bcc4
     PUSH 0x60994c                       ; 0041bcc7
     CALL crt_stdlib.c__atexit_FUN_005b8d8c ; 0041bccc
-        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005b8d8c()
+        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005b8d8c(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0041bcd1
     PUSH 0x7bc9b0                       ; 0041bcd4
     PUSH 0x2                            ; 0041bcd9

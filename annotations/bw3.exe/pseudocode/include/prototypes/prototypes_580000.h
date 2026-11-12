@@ -30,6 +30,7 @@
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x580000
@@ -42,11 +43,11 @@ int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_005803e0(CWinFont *t
 undefined4 engine_winfont_cpp_FUN_00580450(void);
 void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_00580460(void);
 void __watcallRegister wincore_winrun_cpp_endPeriod_FUN_00580690(void);
-int wincore_winrun_cpp_getTime_FUN_005806a0(void);
+int __cdecl wincore_winrun_cpp_getTime_FUN_005806a0(void);
 void __cdecl wincore_winrun_cpp_clearKeypresses_FUN_00580770(void);
 int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_00580790(void);
 int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_00580800(void);
-undefined1 wincore_winrun_cpp_getValue_FUN_0058081c(void);
+char __cdecl wincore_winrun_cpp_getValue_FUN_0058081c(void);
 void __cdecl wincore_winrun_cpp_enqueueInput_FUN_00580830(int input_value);
 void wincore_winrun_cpp_FUN_00580870(undefined4 param_1);
 void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_00580890(int x_coord,int y_coord);
@@ -57,8 +58,8 @@ LRESULT __stdcall wincore_winrun_cpp_FUN_00580a50(HWND hWnd,UINT message,WPARAM 
 void __cdecl wincore_winrun_cpp_FUN_00580f70(void);
 void wincore_winrun_cpp_FUN_00581010(void);
 void wincore_winrun_cpp_FUN_0058105e(void);
-void wincore_winrun_cpp_winMain_FUN_00581080(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
-void __cdecl wincore_winrun_cpp_FUN_00581300(char *message);
+int __stdcall wincore_winrun_cpp_winMain_FUN_00581080(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
+void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_00581300(char *message);
 char * __cdecl wincore_winrun_cpp_FUN_00581360(EInputCodeType keycode);
 HANDLE __cdecl wincore_winrun_cpp_createMutex_FUN_00581920(void);
 int __cdecl wincore_winrun_cpp_waitForMutex_FUN_00581930(HANDLE mutex_handle);
@@ -68,7 +69,7 @@ HANDLE __cdecl wincore_winrun_cpp_createThread_FUN_005819b0(LPTHREAD_START_ROUTI
 int __cdecl wincore_winrun_cpp_setThreadPriority_FUN_005819e0(HANDLE hThread,int priority_level);
 void wincore_winrun_cpp_FUN_00581a20(HANDLE param_1);
 void __cdecl wincore_winrun_cpp_sleep_FUN_00581a40(double seconds);
-void wincore_winrun_cpp_getComputerAndUserName_FUN_00581a9c(char *param_1);
+void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_00581a9c(char *buffer);
 void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_00581b70(char *key_path,char *value_name,char *output_buffer,uint *buffer_size);
 void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_00581bf0(char *key_path,char *value_name,char *value_data);
 void wincore_winrun_cpp_FUN_00581c70(LPCSTR param_1);
@@ -94,14 +95,14 @@ void __cdecl wincore_winvideo_cpp_openMovie_FUN_00582bb0(HWND parent_window,char
 void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_00582e40(HWND notify_window,int play_state);
 int __cdecl wincore_winvideo_cpp_playMovie_FUN_00582eb0(char *directory_path,char *movie_filename);
 void core_xform_cpp_FUN_00583260(float *param_1,float *param_2);
-float * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_005832e0(float *param_1,float *param_2);
-void core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(float *param_1,float *param_2);
-undefined4 * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_00583590(undefined4 *param_1,undefined4 param_2);
-void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005835d0(undefined4 *param_1);
-void core_xform_cpp_somebodyWriteMe_FUN_0058362e(void);
-void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_00583660(undefined4 *param_1);
+CVector3f * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_005832e0(CVector3f *input_output_vector,CMatrix3x4f *matrix);
+CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,CMatrix3x4f *matrix_out);
+CMatrix3x4f * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_00583590(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b);
+void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005835d0(CMatrix3x4f *matrix);
+void __cdecl core_xform_cpp_somebodyWriteMe_FUN_0058362e(void);
+void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_00583660(CMatrix3x4f *matrix);
 void core_xform_cpp_FUN_005836b0(float *param_1);
-void __cdecl core_xform_cpp_clearTranslation_FUN_005837e0(int param_1);
+void __cdecl core_xform_cpp_clearTranslation_FUN_005837e0(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_FUN_00583800(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
 void core_xform_cpp_FUN_00583940(float *param_1,float *param_2,int param_3);
 float core_xform_cpp_angleFromSinCos_FUN_00583a40(float param_1,float param_2);
@@ -109,23 +110,23 @@ float * core_xform_cpp_matrixToEulerAngles_FUN_00583b10(float *param_1);
 float * core_xform_cpp_matrixToEulerAnglesZYX_FUN_00583fb0(float *param_1);
 void core_xform_cpp_FUN_00584450(int param_1);
 void core_xform_cpp_FUN_00584490(undefined4 param_1);
-double __cdecl core_xform_cpp_determinant_FUN_00584510(float *param_1);
-void core_xform_cpp_inverse_FUN_00584560(float *param_1);
-float core_xform_cpp_computeOrthogonalityError_FUN_00584790(float *param_1);
+double __cdecl core_xform_cpp_determinant_FUN_00584510(CMatrix3x4f *matrix);
+void core_xform_cpp_inverse_FUN_00584560(CMatrix3x4f *param_1);
+float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_00584790(CMatrix3x4f *matrix);
 void core_xform_cpp_FUN_00584b00(void);
-void core_xform_cpp_buildRotationX_FUN_00584f70(float param_1);
-void core_xform_cpp_buildRotationY_FUN_00584ff0(float param_1);
-void core_xform_cpp_buildXFlipMatrix_FUN_00585210(float param_1);
+CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationX_FUN_00584f70(float angle_radians,CMatrix3x4f *matrix_out);
+CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationY_FUN_00584ff0(float angle_radians,CMatrix3x4f *matrix_out);
+CMatrix3x4f * __stack_esi core_xform_cpp_buildXFlipMatrix_FUN_00585210(float x_offset,CMatrix3x4f *matrix_out);
 void core_xform_cpp_FUN_0058526e(float param_1);
-void core_xform_cpp_buildZFlipMatrix_FUN_005852d0(float param_1);
+CMatrix3x4f * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_005852d0(float z_offset,CMatrix3x4f *matrix_out);
 void core_xform_cpp_lerpMatrix3x4_FUN_005854a0(undefined4 *param_1,undefined4 *param_2,float param_3);
 CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005855f0(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
-void core_xform_cpp_quaternionToMatrix3x4_FUN_00585740(CQuaternion4f *param_1);
+CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_00585740(CQuaternion4f *quat_in,CMatrix3x4f *matrix_out);
 void core_xform_cpp_matrixToQuaternion_FUN_00585780(float *param_1);
 void core_xform_cpp_negateFirstComponent_FUN_00585930(float *param_1);
-void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_00585970(undefined4 *param_1);
+void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_00585970(CQuaternion4f *quaternion);
 void core_xform_cpp_multiplyQuaternion_FUN_00585990(float *param_1,float *param_2);
-void core_xform_cpp_quaternionToAxisAngle_FUN_00585a80(float *param_1,float *param_2,float *param_3);
+void __cdecl core_xform_cpp_quaternionToAxisAngle_FUN_00585a80(CQuaternion4f *quat_in,float *angle_out,CVector3f *axis_out);
 float * core_xform_cpp_slerpQuaternion_FUN_00585b20(float *param_1,float *param_2,float param_3);
 void core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(float param_1);
 void core_xform_cpp_quaternionFromAngleY_FUN_00585d10(float param_1);
@@ -145,10 +146,10 @@ void core_yow_cpp_FUN_00586e50(CEnemy *param_1);
 void core_yow_cpp_FUN_00586eb0(CEnemy *param_1,SDamageInfo *param_2);
 int core_yow_cpp_FUN_00586fa0(int param_1,float *param_2);
 CYow * core_yow_cpp_CYow_dtor_FUN_005872b0(CYow *this_ptr,uint flags);
-void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_00587340(int *param_1,int *param_2,int *param_3);
-void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_00587400(int *param_1,int *param_2,int *param_3);
-void __cdecl core_xform_cpp_clipInterpolateTopPlane_FUN_005874c0(int *param_1,int *param_2,int *param_3);
-void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_00587580(int *param_1,int *param_2,int *param_3);
+void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_00587340(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
+void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_00587400(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
+void __cdecl core_xform_cpp_clipInterpolateTopPlane_FUN_005874c0(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
+void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_00587580(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 void __cdecl core_xform_cpp_clipPolygonStage3_FUN_00587940(void);
 void __cdecl core_xform_cpp_clampClippedVertices_FUN_00587c20(void);
 void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_00587cd0(int vertex_count,int *vertex_indices);
@@ -157,7 +158,7 @@ float core_zombie_cpp_FUN_005884f0(int param_1);
 void core_zombie_cpp_FUN_00588590(int param_1);
 void core_zombie_cpp_getObjectGrabPointWorld_FUN_00588650(int param_1);
 int __cdecl core_zombie_cpp_classifyObjectShape_FUN_00588750(CVector3f *dimensions);
-void core_zombie_cpp_factoryFuncZombie_FUN_005888a0(void);
+CZombie * __cdecl core_zombie_cpp_factoryFuncZombie_FUN_005888a0(void);
 CDemonActorType * core_zombie_cpp_CZombie_getActorType_FUN_005888c0(CZombie *this_ptr);
 CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005888d0(CZombie *this_ptr);
 void __cdecl core_zombie_cpp_CZombie_setup_FUN_00588a80(CZombie *this_ptr);

@@ -1,14 +1,14 @@
 // Name: sound_sndmain.cpp_startSoundThread_FUN_00575c00
 // Address: 00575c00
 // Address Range: [[00575c00, 00575c9d]]
-// Convention: unknown
-// Signature: int sound_sndmain_cpp_startSoundThread_FUN_00575c00(float param_1)
+// Convention: __cdecl
+// Signature: int __cdecl sound_sndmain_cpp_startSoundThread_FUN_00575c00(double latency_seconds)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int sound_sndmain_cpp_startSoundThread_FUN_00575c00(float param_1)
+int __cdecl sound_sndmain_cpp_startSoundThread_FUN_00575c00(double latency_seconds)
 
 {
   int iVar1;
@@ -16,8 +16,8 @@ int sound_sndmain_cpp_startSoundThread_FUN_00575c00(float param_1)
   
   iVar1 = sound_sndmain_cpp_killSoundThread_FUN_00575ca0();
   if (iVar1 != 0) {
-    _DAT_02c807dc = param_1;
-    if (param_1 < (float)_DAT_005f4398) {
+    _DAT_02c807dc = latency_seconds._0_4_;
+    if (latency_seconds._0_4_ < (float)_DAT_005f4398) {
       _DAT_02c807dc = 0.002;
     }
     _DAT_02c807e0 = 0;

@@ -16,8 +16,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
   int iVar3;
   byte *pbVar4;
   uint *puVar5;
-  uint *puVar6;
+  ulonglong *puVar6;
   byte *pbVar7;
+  ulonglong *texture_buffer;
   uint uVar8;
   int iVar9;
   
@@ -29,7 +30,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
     if (0xf < _DAT_01480e20) {
       _DAT_01480e20 = 0;
     }
-    core_dcamera_cpp_updateFogScrollOffset_FUN_0044ca20(0x1480e2c,_DAT_01480e20,_DAT_01480e24);
+    core_dcamera_cpp_updateFogScrollOffset_FUN_0044ca20
+              ((SFogGrid *)0x1480e2c,_DAT_01480e20,_DAT_01480e24);
   }
   core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004515b0(this_ptr);
   if (DAT_0061b4a0 == 0x20) {
@@ -48,15 +50,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
     uVar8 = 1;
     while ((int)uVar8 < this_ptr->framebuffer_height + -1) {
       puVar5 = (uint *)(*(int *)(&DAT_01c4354c + (uVar8 - _DAT_0134221c) * 4) + _DAT_01342218 * 2);
-      puVar6 = (uint *)((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar8 * 4
-                       );
+      puVar6 = (ulonglong *)
+               ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar8 * 4);
       iVar3 = ((int)uVar8 >> (DAT_01323d00 & 0x1f)) * 0x140;
       pbVar4 = &DAT_01342220 + iVar3;
       pbVar7 = (byte *)(iVar3 + 0xb23458);
       if ((uVar8 & 1) == 0) {
         if (this_ptr->scale_factor == 1) {
           core_dstrendr_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00489f50
-                    (puVar5,puVar6,pbVar7,pbVar4,this_ptr->framebuffer_width);
+                    (puVar5,(uint *)puVar6,pbVar7,pbVar4,this_ptr->framebuffer_width);
         }
         if (this_ptr->scale_factor == 2) {
           core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_004895f3
@@ -96,30 +98,33 @@ LAB_0045406c:
   else {
     uVar8 = 1;
     while ((int)uVar8 < this_ptr->framebuffer_height + -1) {
-      puVar5 = (uint *)(*(int *)(&DAT_01c4354c + (uVar8 - _DAT_0134221c) * 4) + _DAT_01342218 * 4);
-      puVar6 = (uint *)((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar8 * 4
-                       );
+      puVar6 = (ulonglong *)
+               (*(int *)(&DAT_01c4354c + (uVar8 - _DAT_0134221c) * 4) + _DAT_01342218 * 4);
+      texture_buffer =
+           (ulonglong *)
+           ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar8 * 4);
       iVar3 = ((int)uVar8 >> (DAT_01323d00 & 0x1f)) * 0x140;
       pbVar4 = &DAT_01342220 + iVar3;
       pbVar7 = (byte *)(iVar3 + 0xb23458);
       if ((uVar8 & 1) == 0) {
         if (this_ptr->scale_factor == 1) {
           core_dstrendr_cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_00488dd1
-                    (puVar5,puVar6,pbVar7,pbVar4,this_ptr->framebuffer_width);
+                    ((uint *)puVar6,(uint *)texture_buffer,pbVar7,pbVar4,this_ptr->framebuffer_width
+                    );
         }
         if (this_ptr->scale_factor == 2) {
           core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00487eac
-                    (puVar5,puVar6,pbVar7,pbVar4,this_ptr->framebuffer_width);
+                    (puVar6,texture_buffer,pbVar7,pbVar4,this_ptr->framebuffer_width);
         }
       }
       else {
         if (this_ptr->scale_factor == 1) {
           core_dstrendr_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_004892c5
-                    (puVar5,puVar6,pbVar7,pbVar4,this_ptr->framebuffer_width);
+                    ((uint *)puVar6,texture_buffer,pbVar7,pbVar4,this_ptr->framebuffer_width);
         }
         if (this_ptr->scale_factor == 2) {
           core_dstrendr_cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_0048838a
-                    (puVar5,puVar6,pbVar7,pbVar4,this_ptr->framebuffer_width);
+                    (puVar6,texture_buffer,pbVar7,pbVar4,this_ptr->framebuffer_width);
         }
       }
       iVar3 = iVar9 * 0xc;

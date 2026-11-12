@@ -54,7 +54,7 @@ void core_menu_cpp_FUN_004eed60(void)
   
   bVar33 = 0;
   if (((g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) && (g_CGamePtr->x_center == 0)) &&
-     (iVar29 = core_menu_cpp_FUN_004eb490(), iVar29 == 0)) {
+     (iVar29 = core_menu_cpp_calibrateGamepad_FUN_004eb490(), iVar29 == 0)) {
     return;
   }
   local_c = 0;
@@ -532,7 +532,7 @@ LAB_004eed8e:
     if (0 < _DAT_01d086f0) {
       iVar27 = 0;
       do {
-        core_menu_cpp_getKeyDisplayName_FUN_004ee960(**(uint **)(&DAT_01d086f4 + iVar27));
+        core_menu_cpp_getKeyDisplayName_FUN_004ee960(**(EInputCodeType **)(&DAT_01d086f4 + iVar27));
         _sprintf(local_d4,"%s\t%s");
         iVar27 = iVar27 + 4;
         iVar29 = iVar29 + 1;

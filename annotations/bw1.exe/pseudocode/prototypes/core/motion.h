@@ -5,9 +5,9 @@
 // Function prototypes for core/motion.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_motion.cpp_FUN_00523980
+// Original: core_motion.cpp_CMotionList_load_FUN_00523980
 // Address: 00523980
-void FUN_00523980(int *param_1,undefined4 param_2);
+void __cdecl CMotionList::load(CMotionList *this_ptr,_FILE *file_handle);
 
 // Original: core_motion.cpp_FUN_00523db0
 // Address: 00523db0
@@ -101,13 +101,13 @@ void __cdecl CMotionController::jumpToMotion(CMotionController *this_ptr,int tar
 // Address: 00524b70
 void __cdecl CMotionController::clearTweenState(CMotionController *this_ptr);
 
-// Original: core_motion.cpp_FUN_00524ba0
+// Original: core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00524ba0
 // Address: 00524ba0
-int __cdecl FUN_00524ba0(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor);
+int __cdecl CMotionController::advanceFrameAndCheckSignals(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor);
 
-// Original: core_motion.cpp_FUN_00524d70
+// Original: core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70
 // Address: 00524d70
-int __cdecl FUN_00524d70(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
+int __cdecl CMotionController::advanceFrameToExitPoint(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
 
 // Original: core_motion.cpp_FUN_00524f40
 // Address: 00524f40
@@ -121,9 +121,9 @@ float __cdecl FUN_00525020(CMotionController *this_ptr);
 // Address: 00525110
 float FUN_00525110(int *param_1,int param_2,float param_3);
 
-// Original: core_motion.cpp_FUN_00525240
+// Original: core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00525240
 // Address: 00525240
-void __cdecl FUN_00525240(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
+void __cdecl CMotionController::getFramesForInterpolation(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
 
 // Original: core_motion.cpp_CMotionController_load_FUN_00525380
 // Address: 00525380

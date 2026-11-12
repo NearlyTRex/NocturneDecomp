@@ -18,7 +18,7 @@ CConstructRed * core_construc_cpp_CConstructRed_dtor_FUN_00444660(CConstructRed 
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CConstructRedTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CConstructRedTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

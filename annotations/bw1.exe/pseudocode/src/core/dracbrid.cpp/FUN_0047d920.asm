@@ -71,7 +71,7 @@
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_skeleton.cpp_FUN_00569130
-;   core_sound.cpp_FUN_0057be00
+;   core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00
 ;   core_spline.cpp_FUN_00583d60
 ;   core_spline.cpp_FUN_00583f90
 ;   core_spline.cpp_FUN_005841d0
@@ -415,8 +415,8 @@ section .text
     PUSH EAX                            ; 0047ddbc
     MOV EAX,[0x006236b8]                ; 0047ddbd | DAT_006236b8
     PUSH EAX                            ; 0047ddc2
-    CALL core_sound.cpp_FUN_0057be00    ; 0047ddc3
-        ;   XREF to: 0057be00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057be00(CSound * this_ptr, char * out_result, char * wildcard_pattern)
+    CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00 ; 0047ddc3
+        ;   XREF to: 0057be00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00(CSound * this_ptr, char * out_result, char * wildcard_pattern)
     ADD ESP,0xc                         ; 0047ddc8
     LEA EAX,[ESP + 0x4]                 ; 0047ddcb
     PUSH EAX                            ; 0047ddcf

@@ -35,7 +35,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 0040e873
     PUSH EAX                            ; 0040e879
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 0040e87a
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0040e87f
     PUSH 0x5d3299                       ; 0040e882 | = "dropCondition"
     LEA EAX,[EBX + 0x2d4]               ; 0040e887
@@ -47,7 +47,7 @@ section .text
     LEA EAX,[EBX + 0x338]               ; 0040e89b
     PUSH EAX                            ; 0040e8a1
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 0040e8a2
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0040e8a7
     PUSH 0x5d32b2                       ; 0040e8aa | = "triggered"
     LEA EAX,[EBX + 0x33c]               ; 0040e8af
@@ -59,7 +59,7 @@ section .text
     ADD EBX,0x340                       ; 0040e8c3
     PUSH EBX                            ; 0040e8c9
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 0040e8ca
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0040e8cf
     POP EBX                             ; 0040e8d2
     RET                                 ; 0040e8d3

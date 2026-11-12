@@ -28,6 +28,7 @@
 #include "types/classes/CLocation.h"
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/enums/EBloodType.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
@@ -51,7 +52,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004c1000(CGargoyle *
 ECollisionType __cdecl core_gargoyle_cpp_CGargoyle_getCollisionType_FUN_004c1220(CGargoyle *this_ptr,SCollisionInfo *collision_info);
 CGargoyle * core_gargoyle_cpp_CGargoyle_dtor_FUN_004c1240(CGargoyle *this_ptr,uint flags);
 void core_gasmask_cpp_staticInit_FUN_004c12e0(void);
-void core_gasmask_cpp_factoryFuncGasMask_FUN_004c1310(void);
+CGasMask * __cdecl core_gasmask_cpp_factoryFuncGasMask_FUN_004c1310(void);
 CDemonActorType * core_gasmask_cpp_CGasMask_getActorType_FUN_004c1330(CGasMask *this_ptr);
 CGasMask * __cdecl core_gasmask_cpp_CGasMask_ctor_FUN_004c1340(CGasMask *this_ptr);
 void __cdecl core_gasmask_cpp_CGasMask_setup_FUN_004c1390(CGasMask *this_ptr);
@@ -63,7 +64,7 @@ ECollisionType __cdecl core_gasmask_cpp_CGasMask_getCollisionType_FUN_004c14b0(C
 CBoundingBox3D * __cdecl core_gasmask_cpp_CGasMask_getBoundingBox_FUN_004c14c0(CGasMask *this_ptr,CBoundingBox3D *out_box);
 CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004c1500(CGasMask *this_ptr,uint flags);
 void __cdecl core_ghoul_cpp_staticInit_FUN_004c1550(void);
-void core_ghoul_cpp_factoryFuncGhoul_FUN_004c15b0(void);
+CGhoul * __cdecl core_ghoul_cpp_factoryFuncGhoul_FUN_004c15b0(void);
 CDemonActorType * core_ghoul_cpp_CGhoul_getActorType_FUN_004c15d0(CGhoul *this_ptr);
 CGhoul * core_ghoul_cpp_CGhoul_ctor_FUN_004c15e0(CGhoul *this_ptr);
 void __cdecl core_ghoul_cpp_CGhoul_setup_FUN_004c1710(CGhoul *this_ptr);
@@ -78,7 +79,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c40f0(CGhoul *this_ptr,S
 int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004c44d0(CGhoul *this_ptr,CVector3f *out_points_array);
 CGhoul * core_ghoul_cpp_CGhoul_dtor_FUN_004c47a0(CGhoul *this_ptr,uint flags);
 void core_glass_cpp_staticInit_FUN_004c4840(void);
-void core_glass_cpp_factoryFuncGlass_FUN_004c4870(void);
+CGlass * __cdecl core_glass_cpp_factoryFuncGlass_FUN_004c4870(void);
 CDemonActorType * core_glass_cpp_CGlass_getActorType_FUN_004c4890(CGlass *this_ptr);
 CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004c48a0(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_setup_FUN_004c49e0(CGlass *this_ptr);
@@ -136,7 +137,7 @@ void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004c9d00(CGore *this_ptr,CVe
 int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004c9d80(CGore *this_ptr,CVector3f *position,int *out_blood_type);
 int __cdecl core_gore_cpp_CGore_load_FUN_004c9e70(CGore *this_ptr,_FILE *file_handle);
 int __cdecl core_gore_cpp_CGore_save_FUN_004c9f20(CGore *this_ptr,_FILE *file_handle);
-void core_gore_cpp_convertVecFloatToFixed_FUN_004c9fce(float *param_1,int *param_2);
+CVector3f * __cdecl core_gore_cpp_convertVecFloatToFixed_FUN_004c9fce(CVector3f *src,CVector3i *dst);
 CFootstep * __cdecl core_gore_cpp_CFootstep_ctor_FUN_004ca000(CFootstep *this_ptr);
 CFootstep * core_gore_cpp_CFootstep_dtor_FUN_004ca020(CFootstep *this_ptr,uint flags);
 CBloodPool * core_gore_cpp_CBloodPool_ctor_FUN_004ca030(CBloodPool *this_ptr);
@@ -147,7 +148,7 @@ CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_ctor_FUN_004ca070(CBloodPa
 CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_dtor_FUN_004ca090(CBloodParticle *this_ptr,uint flags);
 CBloodParticle * core_gore_cpp_CBloodParticle_arrdtor256_FUN_004ca0a0(CBloodParticle *this_ptr,uint flags);
 void core_grave_cpp_staticInit_FUN_004ca0c0(void);
-void core_grave_cpp_factoryFuncGrave_FUN_004ca0f0(void);
+CGrave * __cdecl core_grave_cpp_factoryFuncGrave_FUN_004ca0f0(void);
 CDemonActorType * core_grave_cpp_CGrave_getActorType_FUN_004ca110(CGrave *this_ptr);
 CGrave * __cdecl core_grave_cpp_CGrave_ctor_FUN_004ca120(CGrave *this_ptr);
 void __cdecl core_grave_cpp_CGrave_setup_FUN_004ca1b0(CGrave *this_ptr);
@@ -160,10 +161,10 @@ CBoundingBox3D * __cdecl core_grave_cpp_CGrave_getBoundingBox_FUN_004ca540(CGrav
 ECollisionType __cdecl core_grave_cpp_CGrave_getCollisionType_FUN_004ca650(CGrave *this_ptr,SCollisionInfo *collision_info);
 CGrave * __cdecl core_grave_cpp_CGrave_dtor_FUN_004ca660(CGrave *this_ptr,uint flags);
 void __cdecl core_ground_cpp_staticInit_FUN_004ca6b0(void);
-_FILE * core_ground_cpp_openFileWithExtension_FUN_004ca6de(char *param_1,char *param_2,char *param_3,char *param_4);
+_FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004ca6de(char *directory,char *filename,char *new_extension,char *open_mode);
 char * core_ground_cpp_FUN_004ca7c0(uint param_1);
-char * core_ground_cpp_getGroundTypeName_FUN_004ca840(undefined4 param_1);
-undefined4 __cdecl core_ground_cpp_getGroundTypeColor_FUN_004ca8e0(undefined4 param_1);
+char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004ca840(EGroundType type);
+uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004ca8e0(EGroundType type);
 CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004ca940(CGround *this_ptr,int width,int height);
 CGround * __cdecl core_ground_cpp_CGround_dtor_FUN_004ca9a0(CGround *this_ptr,uint flags);
 void __cdecl core_ground_cpp_CGround_init_FUN_004ca9c0(CGround *this_ptr);
@@ -178,16 +179,16 @@ void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004cb400(CGround *thi
 void __cdecl core_ground_cpp_CGround_renderVisibleTerrain_FUN_004cb5e0(CGround *this_ptr);
 void __cdecl core_ground_cpp_CGround_render_FUN_004cb700(CGround *this_ptr);
 int __cdecl core_ground_cpp_CGround_getHeightAtPosition_FUN_004cb7a0(CGround *this_ptr,int world_x,int world_z);
-void core_ground_cpp_FUN_004cba20(int *param_1,uint param_2,uint param_3);
+CVector3i * __stack3_esi core_ground_cpp_CGround_getNormalAtPosition_FUN_004cba20(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal);
 void core_gun_cpp_staticInit_FUN_004cbcf0(void);
-void core_gun_cpp_factoryFuncGun_FUN_004cbd20(void);
+CGun * __cdecl core_gun_cpp_factoryFuncGun_FUN_004cbd20(void);
 CDemonActorType * core_gun_cpp_CGun_getActorType_FUN_004cbd40(CGun *this_ptr);
 CGun * core_gun_cpp_CGun_ctor_FUN_004cbd50(CGun *this_ptr);
 int __cdecl core_gun_cpp_CGun_fire_FUN_004cbdc0(CGun *this_ptr);
 float __cdecl core_gun_cpp_CGun_getDamage_FUN_004cc680(CGun *this_ptr);
 CGun * __cdecl core_gun_cpp_CGun_dtor_FUN_004cc6b0(CGun *this_ptr,uint flags);
 void core_haystack_cpp_staticInit_FUN_004cc700(void);
-void core_haystack_cpp_factoryFuncHaystack_FUN_004cc730(void);
+CHaystack * __cdecl core_haystack_cpp_factoryFuncHaystack_FUN_004cc730(void);
 CDemonActorType * core_haystack_cpp_CHaystack_getActorType_FUN_004cc750(CHaystack *this_ptr);
 CHaystack * core_haystack_cpp_CHaystack_ctor_FUN_004cc760(CHaystack *this_ptr);
 void __cdecl core_haystack_cpp_CHaystack_setup_FUN_004cc7d0(CHaystack *this_ptr);
@@ -202,7 +203,7 @@ int __cdecl core_haystack_cpp_CHaystack_isWeaponDrawn_FUN_004cd9a0(CHaystack *th
 void __cdecl core_haystack_cpp_CHaystack_drawWeapon_FUN_004cd9b0(CHaystack *this_ptr,int drawn);
 CHaystack * __cdecl core_haystack_cpp_CHaystack_dtor_FUN_004cd9c0(CHaystack *this_ptr,uint flags);
 void core_health_cpp_staticInit_FUN_004cda10(void);
-void core_health_cpp_factoryFuncHealthItem_FUN_004cda40(void);
+CHealthItem * __cdecl core_health_cpp_factoryFuncHealthItem_FUN_004cda40(void);
 CDemonActorType * core_health_cpp_CHealthItem_getActorType_FUN_004cda60(CHealthItem *this_ptr);
 CHealthItem * core_health_cpp_CHealthItem_ctor_FUN_004cda70(CHealthItem *this_ptr);
 void __cdecl core_health_cpp_CHealthItem_setup_FUN_004cdae0(CHealthItem *this_ptr);
@@ -218,8 +219,8 @@ int __cdecl core_health_cpp_CHealthItem_useItem_FUN_004cdf90(CHealthItem *this_p
 void __cdecl core_health_cpp_CHealthItem_onPickup_FUN_004cdfe0(CHealthItem *this_ptr,CDemonActor *owner);
 void core_hero_cpp_staticInit_FUN_004ce000(void);
 CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004ce050(CLocation *location);
-undefined4 __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004ce100(float *param_1,float param_2);
-undefined4 __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ce180(float *param_1,float param_2,float param_3);
+int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004ce100(CVector3f *point,float radius);
+int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ce180(CVector3f *point,float horizontal_radius,float vertical_tolerance);
 CHero * core_hero_cpp_FUN_004ce240(CCharacter *param_1);
 void __cdecl core_hero_cpp_CHero_setInventoryIndex_FUN_004ce3b0(CHero *this_ptr,int index);
 CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004ce3d0(CHero *this_ptr,uint flags);

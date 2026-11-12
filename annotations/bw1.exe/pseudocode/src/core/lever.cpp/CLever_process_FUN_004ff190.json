@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 116,
+    "complexity_score": 141,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 71,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "bit_int_float_compare",
+      "derived_field_index_pun",
       "pointer_cast",
       "warning_overlapping_globals"
     ],
@@ -135,6 +136,32 @@
     },
     "pcode_op_count": 1110
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e1d70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7039
+    },
+    "bw3.exe": {
+      "addr": "004e0250",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00504920",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7039
+    },
+    "nocturne.exe": {
+      "addr": "004c6190",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7039
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -187,9 +214,9 @@
     {
       "description": "Complex pointer cast",
       "line": 52,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + iVar5),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),",
       "type": "pointer_cast"
     },
     {
@@ -199,6 +226,20 @@
       "severity": "moderate",
       "text": "(((int)this_ptr->param < 0x3f800000 && (1.0 <= fVar1)))) {",
       "type": "bit_int_float_compare"
+    },
+    {
+      "description": "'pCVar3[3].actor_name + 8' walks 3 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x8 = 0x410, which is exactly offsetof(CDoor, on_open_trigger_event[96]). Ghidra had no CDoor type here and reached the field by index arithmetic; write it as ((CDoor *)pCVar3)->on_open_trigger_event[96] (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::wav_name[24], CGlass::broken_vertices[11], CLever::linked_lever also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 54,
+      "severity": "moderate",
+      "text": "if ((pCVar3 == (CDemonActor *)0x0) || (this_ptr != *(CLever **)(pCVar3[3].actor_name + 8))) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'pCVar3[3].actor_name + 8' walks 3 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x8 = 0x410, which is exactly offsetof(CDoor, on_open_trigger_event[96]). Ghidra had no CDoor type here and reached the field by index arithmetic; write it as ((CDoor *)pCVar3)->on_open_trigger_event[96] (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::wav_name[24], CGlass::broken_vertices[11], CLever::linked_lever also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 59,
+      "severity": "moderate",
+      "text": "core_lever_cpp_FUN_004ff3f0(pCVar3,(*(CLever **)(pCVar3[3].actor_name + 8))->param,0);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

@@ -11,9 +11,9 @@
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(CFileBitStream *this_ptr,int num_bits)
 
 {
-  int iVar1;
-  char *pcVar2;
-  int iVar3;
+  SIZE_T SVar1;
+  char *buffer;
+  int iVar2;
   uint local_14;
   
   local_14 = 0;
@@ -29,16 +29,16 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(CFileBitStream *
     }
     if (this_ptr->bits_available == 0) {
       this_ptr->bits_available = 8;
-      iVar3 = this_ptr->current_byte_index + -1;
-      this_ptr->current_byte_index = iVar3;
-      if ((iVar3 < 4) || (iVar3 < this_ptr->end_of_stream_flag)) {
+      iVar2 = this_ptr->current_byte_index + -1;
+      this_ptr->current_byte_index = iVar2;
+      if ((iVar2 < 4) || (iVar2 < this_ptr->end_of_stream_flag)) {
         if (this_ptr->end_of_stream_flag == 0) {
-          for (iVar3 = this_ptr->current_byte_index; -1 < iVar3; iVar3 = iVar3 + -1) {
-            this_ptr->buffer[((this_ptr->buffer_size + -1) - this_ptr->current_byte_index) + iVar3]
-                 = this_ptr->buffer[iVar3];
+          for (iVar2 = this_ptr->current_byte_index; -1 < iVar2; iVar2 = iVar2 + -1) {
+            this_ptr->buffer[((this_ptr->buffer_size + -1) - this_ptr->current_byte_index) + iVar2]
+                 = this_ptr->buffer[iVar2];
           }
-          iVar3 = (this_ptr->buffer_size + -2) - this_ptr->current_byte_index;
-          if (iVar3 < 0) {
+          iVar2 = (this_ptr->buffer_size + -2) - this_ptr->current_byte_index;
+          if (iVar2 < 0) {
 LAB_004fd6f1:
             this_ptr->current_byte_index = this_ptr->buffer_size + -1;
           }
@@ -46,21 +46,21 @@ LAB_004fd6f1:
             do {
               while( true ) {
                 if (this_ptr->end_of_stream_flag != 0) goto LAB_004fd6f1;
-                iVar1 = 0;
+                SVar1 = 0;
                 if (0 < this_ptr->bytes_remaining) {
-                  pcVar2 = this_ptr->buffer + iVar3;
-                  iVar3 = iVar3 + -1;
-                  iVar1 = _fread(pcVar2,1,1,this_ptr->file_handle);
+                  buffer = this_ptr->buffer + iVar2;
+                  iVar2 = iVar2 + -1;
+                  SVar1 = _fread(buffer,1,1,this_ptr->file_handle);
                 }
-                if (iVar1 != 1) break;
+                if (SVar1 != 1) break;
                 this_ptr->bytes_remaining = this_ptr->bytes_remaining + -1;
-                if (iVar3 < 0) {
+                if (iVar2 < 0) {
                   this_ptr->current_byte_index = this_ptr->buffer_size + -1;
                   goto LAB_004fd60c;
                 }
               }
-              this_ptr->end_of_stream_flag = iVar3 + 1;
-            } while (-1 < iVar3);
+              this_ptr->end_of_stream_flag = iVar2 + 1;
+            } while (-1 < iVar2);
             this_ptr->current_byte_index = this_ptr->buffer_size + -1;
           }
         }
@@ -70,16 +70,16 @@ LAB_004fd6f1:
       }
     }
 LAB_004fd60c:
-    iVar3 = this_ptr->bits_available;
-    if (num_bits < iVar3) {
-      iVar3 = num_bits;
+    iVar2 = this_ptr->bits_available;
+    if (num_bits < iVar2) {
+      iVar2 = num_bits;
     }
-    num_bits = num_bits - iVar3;
-    iVar3 = this_ptr->bits_available - iVar3;
+    num_bits = num_bits - iVar2;
+    iVar2 = this_ptr->bits_available - iVar2;
     local_14 = local_14 |
                ((int)((uint)(byte)this_ptr->buffer[this_ptr->current_byte_index] &
                      *(uint *)(&DAT_00601580 + this_ptr->bits_available * 4)) >>
-               ((byte)iVar3 & 0x1f)) << ((byte)num_bits & 0x1f);
-    this_ptr->bits_available = iVar3;
+               ((byte)iVar2 & 0x1f)) << ((byte)num_bits & 0x1f);
+    this_ptr->bits_available = iVar2;
   } while( true );
 }

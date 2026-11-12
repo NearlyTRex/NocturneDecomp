@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fce(char *param_1,EAmmoType param_2)
+; void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fce(char *class_name,EAmmoType ammo_type)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   class_name
+; EAmmoType        Stack[0x8]:4   ammo_type
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00618170

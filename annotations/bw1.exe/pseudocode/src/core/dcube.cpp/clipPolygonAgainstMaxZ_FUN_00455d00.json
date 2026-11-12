@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 217,
+    "complexity_score": 219,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 59,
     "suspect_count": 15,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 198
+    "total_lines": 200
   },
   "cross_references": [],
   "function": {
@@ -110,6 +110,32 @@
     },
     "pcode_op_count": 596
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00444650",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00451e50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00455070",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00448d60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -157,7 +183,7 @@
       "line": 15,
       "match": "DAT_0152c124",
       "severity": "mild",
-      "text": "puVar4 = (uint *)&DAT_0152c124;",
+      "text": "vertex1 = (CVector3f *)&DAT_0152c124;",
       "type": "undefined_data"
     },
     {
@@ -173,7 +199,7 @@
       "line": 28,
       "match": "DAT_0152c1e8",
       "severity": "mild",
-      "text": "if ((uint *)(&DAT_0152c1e8 + iVar3) != puVar4) {",
+      "text": "if ((CVector3f *)(&DAT_0152c1e8 + iVar3) != vertex1) {",
       "type": "undefined_data"
     },
     {
@@ -181,7 +207,7 @@
       "line": 29,
       "match": "DAT_0152c1e8",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_0152c1e8 + iVar3) = *puVar4;",
+      "text": "((CVector3f *)(&DAT_0152c1e8 + iVar3))->x = vertex1->x;",
       "type": "undefined_data"
     },
     {
@@ -189,7 +215,7 @@
       "line": 30,
       "match": "DAT_0152c1ec",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_0152c1ec + iVar3) = puVar4[1];",
+      "text": "*(float *)(&DAT_0152c1ec + iVar3) = vertex1->y;",
       "type": "undefined_data"
     },
     {
@@ -197,7 +223,7 @@
       "line": 31,
       "match": "DAT_0152c1f0",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_0152c1f0 + iVar3) = puVar4[2];",
+      "text": "*(float *)(&DAT_0152c1f0 + iVar3) = vertex1->z;",
       "type": "undefined_data"
     },
     {
@@ -205,23 +231,15 @@
       "line": 36,
       "match": "DAT_0152c124",
       "severity": "mild",
-      "text": "(&DAT_0152c124 + uVar2 * 0xc,puVar4,&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc,0,0,0,0,0,",
+      "text": "((CVector3f *)(&DAT_0152c124 + uVar2 * 0xc),vertex1,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 37,
       "match": "DAT_0152c1e8",
       "severity": "mild",
-      "text": "(&DAT_0152c124 + uVar2 * 0xc,puVar4,&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc,0,0,0,0,0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_0152c1e8",
-      "severity": "mild",
-      "text": "if ((uint *)(&DAT_0152c1e8 + iVar3) != puVar4) {",
+      "text": "(CVector3f *)(&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc),0.0,0.0,-1.0,",
       "type": "undefined_data"
     },
     {
@@ -229,39 +247,47 @@
       "line": 42,
       "match": "DAT_0152c1e8",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_0152c1e8 + iVar3) = *puVar4;",
+      "text": "if ((CVector3f *)(&DAT_0152c1e8 + iVar3) != vertex1) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 43,
-      "match": "DAT_0152c1ec",
+      "match": "DAT_0152c1e8",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_0152c1ec + iVar3) = puVar4[1];",
+      "text": "((CVector3f *)(&DAT_0152c1e8 + iVar3))->x = vertex1->x;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 44,
+      "match": "DAT_0152c1ec",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_0152c1ec + iVar3) = vertex1->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
       "match": "DAT_0152c1f0",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_0152c1f0 + iVar3) = puVar4[2];",
+      "text": "*(float *)(&DAT_0152c1f0 + iVar3) = vertex1->z;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 49,
       "match": "DAT_0152c124",
       "severity": "mild",
-      "text": "(puVar4,&DAT_0152c124 + uVar2 * 0xc,&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc,0,0,0,0,0,",
+      "text": "(vertex1,(CVector3f *)(&DAT_0152c124 + uVar2 * 0xc),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 50,
       "match": "DAT_0152c1e8",
       "severity": "mild",
-      "text": "(puVar4,&DAT_0152c124 + uVar2 * 0xc,&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc,0,0,0,0,0,",
+      "text": "(CVector3f *)(&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc),0.0,0.0,-1.0,",
       "type": "undefined_data"
     }
   ]

@@ -11,24 +11,7 @@
     "importable":true,
     "name":"cockpit_ckptutil.c_FUN_0042d56e",
     "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"0042ebee",
-    "body":[
-      {
-        "end":"0042ebef",
-        "size":2,
-        "start":"0042ebee"
-      }
-    ],
-    "importable":true,
-    "name":"cockpit_ckptutil.c_FUN_0042ebee",
-    "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -47,6 +30,7 @@
     "importable":true,
     "name":"cockpit_ckptutil.c_FUN_0042f2ee",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -65,6 +49,7 @@
     "importable":true,
     "name":"shape_edittool.cpp_FUN_0047c7ee",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -83,6 +68,7 @@
     "importable":true,
     "name":"shape_edittool.cpp_FUN_00480b6e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -101,6 +87,7 @@
     "importable":true,
     "name":"shape_edittool.cpp_FUN_0048546e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -116,12 +103,20 @@
         "start":"0049c0ee"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_fire.cpp_allocateSmokeParticle_FUN_0049c0ee",
-    "ret":"undefined1",
+    "ret":"CSmokeParticle*",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -137,6 +132,7 @@
     "importable":true,
     "name":"engine_font.cpp_FUN_004abbee",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -155,6 +151,7 @@
     "importable":true,
     "name":"core_game.cpp_FUN_004b296e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -170,12 +167,20 @@
         "start":"004e25ee"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"engine_light.cpp_getAmbientLightLevel_FUN_004e25ee",
-    "ret":"undefined1",
+    "ret":"int",
     "vars":{
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -191,6 +196,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_004f236e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -209,6 +215,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_004f23ee",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -227,6 +234,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_004f4a6e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -245,6 +253,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_004f4e6e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -263,6 +272,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_004f5eee",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -281,6 +291,7 @@
     "importable":true,
     "name":"core_passngr.cpp_FUN_00511b6e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -299,6 +310,7 @@
     "importable":true,
     "name":"core_path.cpp_FUN_005140ee",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -314,12 +326,38 @@
         "start":"0054c76e"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"sound_sndmain.cpp_isStreamableFile_FUN_0054c76e",
-    "ret":"undefined1",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"filename",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -332,14 +370,10 @@
         "start":"0055a16e"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_sound.cpp_syncChannel3WithChannel0_FUN_0055a16e",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"0056046e",
@@ -353,6 +387,7 @@
     "importable":true,
     "name":"engine_special.cpp_switchRenderer_FUN_0056046e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -371,6 +406,7 @@
     "importable":true,
     "name":"shape_spotview.cpp_FUN_005619ee",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -389,6 +425,7 @@
     "importable":true,
     "name":"wincore_wddvmem.cpp_FUN_0058866e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -407,6 +444,7 @@
     "importable":true,
     "name":"core_zombie.cpp_FUN_0059a06e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -426,6 +464,7 @@
     "importable":true,
     "name":"crt_kernel32.c_SetFileTime",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000093",
     "thunk":true,
     "vars":{
@@ -520,6 +559,7 @@
     "importable":true,
     "name":"crt_user32.c_PostQuitMessage",
     "ret":"void",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000003f",
     "thunk":true,
     "vars":{
@@ -556,6 +596,7 @@
     "importable":true,
     "name":"crt_kernel32.c_GetLocalTime",
     "ret":"void",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000070",
     "thunk":true,
     "vars":{

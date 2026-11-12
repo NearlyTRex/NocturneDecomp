@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_inverse_FUN_005b6380(float *param_1)
+; void core_xform_cpp_inverse_FUN_005b6380(CMatrix3x4f *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
@@ -59,7 +59,7 @@ section .text
     MOV EBP,ESI                         ; 005b638a
     PUSH EBX                            ; 005b638c
     CALL core_xform.cpp_determinant_FUN_005b6330 ; 005b638d
-        ;   XREF to: 005b6330 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_determinant_FUN_005b6330()
+        ;   XREF to: 005b6330 (UNCONDITIONAL_CALL)  ; double core_xform.cpp_determinant_FUN_005b6330(CMatrix3x4f * matrix)
     MOV dword ptr [ESP + 0x34],EAX      ; 005b6392
     MOV dword ptr [ESP + 0x38],EDX      ; 005b6396
     FLD double ptr [ESP + 0x34]         ; 005b639a

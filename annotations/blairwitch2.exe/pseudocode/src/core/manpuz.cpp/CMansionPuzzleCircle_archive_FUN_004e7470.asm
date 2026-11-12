@@ -94,19 +94,19 @@ section .text
     LEA EAX,[ESI + 0x728]               ; 004e7517
     PUSH EAX                            ; 004e751d
     CALL core_actor.cpp_archiveVector_FUN_0040b4b0 ; 004e751e
-        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b4b0()
+        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b4b0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e7523
     PUSH 0x5dc6ae                       ; 004e7526 | = "pGemOrient"
     LEA EAX,[ESI + 0x734]               ; 004e752b
     PUSH EAX                            ; 004e7531
     CALL core_actor.cpp_archiveOrientation_FUN_0040b550 ; 004e7532
-        ;   XREF to: 0040b550 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveOrientation_FUN_0040b550()
+        ;   XREF to: 0040b550 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveOrientation_FUN_0040b550(COrientation * orient_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e7537
     PUSH 0x5dc6b9                       ; 004e753a | = "pEmitterPos"
     LEA EAX,[ESI + 0x740]               ; 004e753f
     PUSH EAX                            ; 004e7545
     CALL core_actor.cpp_archiveVector_FUN_0040b4b0 ; 004e7546
-        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b4b0()
+        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b4b0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e754b
     JMP 0x004e7491                      ; 004e754e
         ;   XREF to: 004e7491 (UNCONDITIONAL_JUMP)  ; LAB_004e7491

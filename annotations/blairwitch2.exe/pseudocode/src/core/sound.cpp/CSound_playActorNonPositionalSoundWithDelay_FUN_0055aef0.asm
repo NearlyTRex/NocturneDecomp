@@ -32,7 +32,7 @@ section .text
         ;   XREF to: 00550450 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00550450()
     PUSH dword ptr [ESP + 0x18]         ; 0055aefa
     CALL sound_sndmain.cpp_setNextSfxDelay_FUN_00550360 ; 0055aefe
-        ;   XREF to: 00550360 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxDelay_FUN_00550360()
+        ;   XREF to: 00550360 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxDelay_FUN_00550360(double delay_seconds)
     ADD ESP,0x4                         ; 0055af03
     PUSH 0x0                            ; 0055af06
     PUSH 0x0                            ; 0055af08

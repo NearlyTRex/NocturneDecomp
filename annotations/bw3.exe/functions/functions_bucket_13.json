@@ -13,13 +13,58 @@
         "start":"00561f75"
       }
     ],
+    "conv":"__edi_esi_ebx",
     "importable":true,
     "name":"engine_special.cpp_renderMMXPerspectiveScanline16_FUN_00561713",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"left_vertex",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"right_vertex",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"scanline_y",
+          "storage":{
+            "reg":"EBX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -34,11 +79,26 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdlib.c__atexit_FUN_005a3e13",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"exit_node",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"WatcomStaticDestructorNode*"
+        }
+      ]
     }
   },
   {
@@ -53,6 +113,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005aa893",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -71,6 +132,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005aaa93",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -89,6 +151,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005b0f93",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true

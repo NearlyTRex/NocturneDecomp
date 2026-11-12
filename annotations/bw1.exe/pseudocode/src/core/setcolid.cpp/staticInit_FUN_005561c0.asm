@@ -16,7 +16,7 @@ section .text
     PUSH 0x5                            ; 005561c5
     PUSH 0x20af5cc                      ; 005561c7
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 005561cc
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005561d1
     RET                                 ; 005561d4
 

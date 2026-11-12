@@ -183,6 +183,14 @@
     },
     "pcode_op_count": 472
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "005152e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -213,7 +221,7 @@
       "line": 15,
       "match": "DAT_005edb98",
       "severity": "mild",
-      "text": "iVar1 = _fopen(\"pod.ini\",&DAT_005edb98);",
+      "text": "file = _fopen(\"pod.ini\",&DAT_005edb98);",
       "type": "undefined_data"
     },
     {
@@ -245,7 +253,7 @@
       "line": 32,
       "match": "DAT_005edbd0",
       "severity": "mild",
-      "text": "_fscanf(iVar1,&DAT_005edbd0,&iStack_14);",
+      "text": "_fscanf(file,&DAT_005edbd0);",
       "type": "undefined_data"
     },
     {
@@ -253,7 +261,7 @@
       "line": 36,
       "match": "DAT_005edbd4",
       "severity": "mild",
-      "text": "_fscanf(iVar1,&DAT_005edbd4,auStack_214);",
+      "text": "_fscanf(file,&DAT_005edbd4);",
       "type": "undefined_data"
     },
     {

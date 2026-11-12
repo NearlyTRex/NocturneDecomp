@@ -314,6 +314,20 @@
     },
     "pcode_op_count": 3394
   },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "0054f650",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.571
+    },
+    "nocturne.exe": {
+      "addr": "004f7ae0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1144
+    }
+  },
   "stack_frame": {
     "frame_size": 1712,
     "local_size": 1704,
@@ -708,7 +722,7 @@
       "line": 81,
       "match": "DAT_005e2407",
       "severity": "mild",
-      "text": "iVar2 = _fopen(this_ptr->filename,&DAT_005e2407);",
+      "text": "file_00 = _fopen(this_ptr->filename,&DAT_005e2407);",
       "type": "undefined_data"
     },
     {
@@ -716,7 +730,7 @@
       "line": 86,
       "match": "DAT_005e240a",
       "severity": "mild",
-      "text": "iVar3 = _stricmp(local_260,&DAT_005e240a);",
+      "text": "iVar2 = _stricmp(local_260,&DAT_005e240a);",
       "type": "undefined_data"
     },
     {
@@ -724,7 +738,7 @@
       "line": 88,
       "match": "DAT_005e240e",
       "severity": "mild",
-      "text": "(iVar3 = _stricmp(local_260,&DAT_005e240e), iVar3 == 0)) {",
+      "text": "(iVar2 = _stricmp(local_260,&DAT_005e240e), iVar2 == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -844,7 +858,7 @@
       "line": 369,
       "match": "(int)&this_ptr->directory_entries->name",
       "severity": "moderate",
-      "text": "piVar5 = (int *)((int)&this_ptr->directory_entries->name + iVar3);",
+      "text": "piVar4 = (int *)((int)&this_ptr->directory_entries->name + iVar6);",
       "type": "pointer_truncation"
     },
     {
@@ -1020,7 +1034,7 @@
       "line": 369,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "piVar5 = (int *)((int)&this_ptr->directory_entries->name + iVar3);",
+      "text": "piVar4 = (int *)((int)&this_ptr->directory_entries->name + iVar6);",
       "type": "pointer_cast"
     },
     {

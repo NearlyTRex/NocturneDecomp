@@ -10,7 +10,7 @@
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408890
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_bat.cpp_CBat_updateCoursePosition_FUN_0040f2f0
-;   core_course.cpp_FUN_00444970
+;   core_course.cpp_CCourse_load_FUN_00444970
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
 ;
 ; *****************************************************************************
@@ -30,8 +30,8 @@ section .text
     PUSH EAX                            ; 0040eecd
     LEA EAX,[EBX + 0x178]               ; 0040eece
     PUSH EAX                            ; 0040eed4
-    CALL core_course.cpp_FUN_00444970   ; 0040eed5
-        ;   XREF to: 00444970 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00444970(CCourse * this_ptr, char * filename)
+    CALL core_course.cpp_CCourse_load_FUN_00444970 ; 0040eed5
+        ;   XREF to: 00444970 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_load_FUN_00444970(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040eeda
     PUSH EBX                            ; 0040eedd
     CALL core_actor.cpp_CDemonActor_setup_FUN_00408890 ; 0040eede

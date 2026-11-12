@@ -153,7 +153,7 @@ section .text
     IMUL ESI,EAX                        ; 00483306
     PUSH 0x0                            ; 00483309
     CALL shape_edittool.cpp_calculateButtonHeight_FUN_00485380 ; 0048330b
-        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_calculateButtonHeight_FUN_00485380()
+        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_00485380(char * button_text)
     ADD ESP,0x4                         ; 00483310
     LEA EDX,[EAX + ESI*0x1]             ; 00483313
     MOV EAX,dword ptr [ESP + 0x168]     ; 00483316

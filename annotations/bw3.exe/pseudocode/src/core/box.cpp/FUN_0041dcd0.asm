@@ -170,7 +170,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EBX       ; 0041de34
     MOV dword ptr [ESP + 0x18],EDX      ; 0041de38
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0041de3c
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041de41
     TEST EAX,EAX                        ; 0041de44
     JZ 0x0041de82                       ; 0041de46
@@ -204,7 +204,7 @@ section .text
     MOV dword ptr [ESP + 0x10],ECX      ; 0041de9a
     MOV dword ptr [ESP + 0x14],ECX      ; 0041de9e
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0041dea2
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041dea7
     TEST EAX,EAX                        ; 0041deaa
     JZ 0x0041deee                       ; 0041deac
@@ -242,7 +242,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EBX      ; 0041df0e
     MOV dword ptr [ESP + 0x18],EDX      ; 0041df12
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0041df16
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041df1b
     TEST EAX,EAX                        ; 0041df1e
     JZ 0x0041df5c                       ; 0041df20
@@ -276,7 +276,7 @@ section .text
     MOV dword ptr [ESP + 0x10],ECX      ; 0041df74
     MOV dword ptr [ESP + 0x14],EDX      ; 0041df78
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0041df7c
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041df81
     TEST EAX,EAX                        ; 0041df84
     JZ 0x0041dfc8                       ; 0041df86
@@ -314,7 +314,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EBX      ; 0041dfe8
     MOV dword ptr [ESP + 0x18],EDX      ; 0041dfec
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0041dff0
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041dff5
     TEST EAX,EAX                        ; 0041dff8
     JZ 0x0041e032                       ; 0041dffa
@@ -348,7 +348,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EDX      ; 0041e04a
     MOV dword ptr [ESP + 0x14],EBX      ; 0041e04e
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0041e052
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041e057
     TEST EAX,EAX                        ; 0041e05a
     JZ 0x0041e09a                       ; 0041e05c

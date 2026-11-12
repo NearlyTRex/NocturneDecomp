@@ -83,7 +83,7 @@ section .text
     LEA EAX,[ESP + 0x188]               ; 005b4d01
     PUSH EAX                            ; 005b4d08
     CALL crt_stdio.c_fopen_FUN_005c157c ; 005b4d09
-        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005c157c()
+        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
     ADD ESP,0x8                         ; 005b4d0e
     TEST EAX,EAX                        ; 005b4d11
     JNZ 0x005b4d1d                      ; 005b4d13

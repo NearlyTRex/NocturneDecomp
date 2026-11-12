@@ -18,7 +18,7 @@ CTawiscara * core_tawiscara_cpp_CTawiscara_dtor_FUN_00596570(CTawiscara *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTawiscaraTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTawiscaraTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

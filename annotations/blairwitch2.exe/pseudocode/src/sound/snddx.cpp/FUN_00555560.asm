@@ -238,7 +238,7 @@ section .text
         ;   XREF to: 00555a27 (CONDITIONAL_JUMP)  ; LAB_00555a27
     MOV dword ptr [0x0264a5ec],0x8      ; 00555817 | DAT_0264a5ec
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_00553600 ; 00555821
-        ;   XREF to: 00553600 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getMaxSwLatency_FUN_00553600()
+        ;   XREF to: 00553600 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_00553600()
     MOV dword ptr [ESP + 0x69c],EAX     ; 00555826
     FLD float ptr [ESP + 0x69c]         ; 0055582d
     FILD dword ptr [0x0264a5dc]         ; 00555834 | DAT_0264a5dc

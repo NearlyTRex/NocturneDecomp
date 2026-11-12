@@ -13,7 +13,7 @@ CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_dtor_FUN_00410730(CBaronWeapo
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBaronWeaponTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBaronWeaponTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

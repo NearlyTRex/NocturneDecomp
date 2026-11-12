@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 55,
+    "complexity_score": 54,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 24,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "warning_overlapping_globals"
     ],
-    "total_lines": 66
+    "total_lines": 65
   },
   "cross_references": [
     {
@@ -106,6 +106,26 @@
     },
     "pcode_op_count": 145
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c5e10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d2330",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00495240",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -125,10 +145,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "line": 21,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + iVar3),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),",
       "type": "pointer_cast"
     }
   ]

@@ -135,7 +135,7 @@ section .text
     MOV EAX,ESP                         ; 0051300d
     PUSH EAX                            ; 0051300f
     CALL engine_dosio.cpp_findFileNormally_FUN_00465730 ; 00513010
-        ;   XREF to: 00465730 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFileNormally_FUN_00465730()
+        ;   XREF to: 00465730 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_00465730(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 00513015
     TEST EAX,EAX                        ; 00513018
     JNZ 0x005130a5                      ; 0051301a
@@ -511,7 +511,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x414]     ; 0051343b
     PUSH ECX                            ; 00513441
     CALL crt_stdlib.c__qsort_FUN_005a29e8 ; 00513442
-        ;   XREF to: 005a29e8 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__qsort_FUN_005a29e8()
+        ;   XREF to: 005a29e8 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005a29e8(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 00513447
     PUSH 0x0                            ; 0051344a
     LEA EAX,[ESP + 0x84c]               ; 0051344c

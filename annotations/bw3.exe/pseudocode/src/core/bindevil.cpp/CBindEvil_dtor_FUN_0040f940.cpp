@@ -15,7 +15,7 @@ CBindEvil * core_bindevil_cpp_CBindEvil_dtor_FUN_0040f940(CBindEvil *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBindEvilTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBindEvilTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

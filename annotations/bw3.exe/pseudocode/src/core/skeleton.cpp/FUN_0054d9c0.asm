@@ -129,7 +129,7 @@ section .text
         ;   Label: LAB_0054dade
     PUSH EAX                            ; 0054dae2
     CALL core_xform.cpp_setRotationScaleIdentity_FUN_00583660 ; 0054dae3
-        ;   XREF to: 00583660 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setRotationScaleIdentity_FUN_00583660()
+        ;   XREF to: 00583660 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setRotationScaleIdentity_FUN_00583660(CMatrix3x4f * matrix)
     ADD ESP,0x4                         ; 0054dae8
     MOV EAX,dword ptr [EBX + 0x6a4]     ; 0054daeb
     MOV dword ptr [ESP + 0x3c],EAX      ; 0054daf1

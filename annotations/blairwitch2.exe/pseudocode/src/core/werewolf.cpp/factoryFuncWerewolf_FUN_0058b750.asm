@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_werewolf_cpp_factoryFuncWerewolf_FUN_0058b750(void)
+; CWerewolf * __cdecl core_werewolf_cpp_factoryFuncWerewolf_FUN_0058b750(void)
 ;
 ;
 ; Called Functions:

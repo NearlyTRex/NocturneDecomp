@@ -135,7 +135,7 @@ section .text
         ;   XREF to: 0059e382 (CONDITIONAL_JUMP)  ; LAB_0059e382
     PUSH 0x5d9fbe                       ; 0059e241 | = "CStyler"
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 0059e246
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 0059e24b
     PUSH 0x5d9fc6                       ; 0059e24e | = "bwp_stylersub.dfm"
     MOV dword ptr [EBX + 0xd060],EAX    ; 0059e253
@@ -278,7 +278,7 @@ section .text
     PUSH 0x5d9ff5                       ; 0059e3ea | = "CZombie"
     MOV dword ptr [EBX + 0xcdcc],0x3f800000 ; 0059e3ef
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 0059e3f9
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 0059e3fe
     ADD EAX,0x158                       ; 0059e401
     PUSH EAX                            ; 0059e406

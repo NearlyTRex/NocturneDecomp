@@ -9,7 +9,7 @@
 void __cdecl core_npc_cpp_CNPC_archive_FUN_005109e0(CNPC *this_ptr)
 
 {
-  CDeformableModelInstance *pCVar1;
+  CDeformableModelInstance *model_ptr;
   
   if (g_CNPCClassVersion < 2) {
     core_actor_cpp_CDemonActor_archive_FUN_0040c330((CDemonActor *)this_ptr);
@@ -18,9 +18,9 @@ void __cdecl core_npc_cpp_CNPC_archive_FUN_005109e0(CNPC *this_ptr)
   }
   core_charactr_cpp_CCharacter_archive_FUN_00422c30(&this_ptr->base);
   if (2 < g_CNPCClassVersion) {
-    pCVar1 = &(this_ptr->base).model;
-    core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(pCVar1,"modelName");
-    core_actor_cpp_archiveMotionState_FUN_0040bb60(pCVar1,"motion state");
+    model_ptr = &(this_ptr->base).model;
+    core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(model_ptr,"modelName");
+    core_actor_cpp_archiveMotionState_FUN_0040bb60(&model_ptr->base,"motion state");
   }
   if (3 < g_CNPCClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->shoot_me,"shootMe");

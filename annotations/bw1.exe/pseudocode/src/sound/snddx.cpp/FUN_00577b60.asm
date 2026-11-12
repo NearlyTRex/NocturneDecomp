@@ -72,7 +72,7 @@ section .text
     PUSH dword ptr [ESP + 0x320]        ; 00577be2
         ;   Label: LAB_00577be2
     CALL sound_sndmain.cpp_startSoundThread_FUN_00575c00 ; 00577be9
-        ;   XREF to: 00575c00 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSoundThread_FUN_00575c00()
+        ;   XREF to: 00575c00 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_startSoundThread_FUN_00575c00(double latency_seconds)
     ADD ESP,0x4                         ; 00577bee
     TEST EAX,EAX                        ; 00577bf1
     JZ 0x00577c5f                       ; 00577bf3

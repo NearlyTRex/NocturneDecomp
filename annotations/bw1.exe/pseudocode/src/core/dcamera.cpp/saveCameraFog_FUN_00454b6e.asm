@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dcamera_cpp_saveCameraFog_FUN_00454b6e(int param_1,undefined4 param_2)
+; void __cdecl core_dcamera_cpp_saveCameraFog_FUN_00454b6e(SFog *fog,_FILE *file_handle)
 ;
+; Parameters:
+; SFog *           Stack[0x4]:4   fog
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c03c0

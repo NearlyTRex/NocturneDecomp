@@ -27,7 +27,7 @@ void __cdecl core_bat_cpp_CBat_updateCoursePosition_FUN_004114e0(CBat *this_ptr)
     }
   }
   this_ptr->param = fStack_20;
-  core_course_cpp_FUN_00438c40
+  core_course_cpp_CCourse_evaluate_FUN_00438c40
             (&this_ptr->course,this_ptr->param,&(this_ptr->base).location.position,
              &(this_ptr->base).orient.vec);
   return;

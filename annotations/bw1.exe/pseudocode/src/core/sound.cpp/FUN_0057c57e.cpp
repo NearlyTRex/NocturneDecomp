@@ -78,7 +78,7 @@ uint core_sound_cpp_FUN_0057c57e(void)
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
   sound_sndmain_cpp_FUN_005729f0(1);
-  sound_sndmain_cpp_FUN_00572980(3);
+  sound_sndmain_cpp_setNextSfxChannel_FUN_00572980(3);
   iVar3 = _stricmp(PTR_DAT_006236b0,&DAT_005f5a2b);
   if (iVar3 == 0) {
     sound_sndmain_cpp_killSfx_FUN_00573a80(_DAT_02c8336c);
@@ -189,7 +189,7 @@ uint core_sound_cpp_FUN_0057c57e(void)
     pCStack_28->y = 0.0;
     pCStack_28->z = fVar4;
     sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
-    sound_sndmain_cpp_FUN_00572980(3);
+    sound_sndmain_cpp_setNextSfxChannel_FUN_00572980(3);
     sound_sndmain_cpp_FUN_00572880((CVector3f *)&DAT_02c83354);
     _sprintf(acStack_130,"%s @ %g");
     fVar4 = (float)core_sound_cpp_CSound_playTrackedActorSound_FUN_0057d8d0

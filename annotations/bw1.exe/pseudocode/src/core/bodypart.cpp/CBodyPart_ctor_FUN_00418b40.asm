@@ -35,14 +35,14 @@ section .text
     ADD EAX,0x290                       ; 00418b54
     PUSH EAX                            ; 00418b59
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 00418b5a
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00418b5f
     PUSH 0x5fcbd0                       ; 00418b62 | g_SBodyPartFireTypeInfo
     PUSH 0x2                            ; 00418b67
     ADD EAX,0x4c0                       ; 00418b69
     PUSH EAX                            ; 00418b6e
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 00418b6f
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00418b74
     ADD EAX,0x580                       ; 00418b77
     PUSH EAX                            ; 00418b7c

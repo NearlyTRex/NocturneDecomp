@@ -2,13 +2,13 @@
 // Address: 005090f0
 // Address Range: [[005090f0, 005095f5]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_005090f0(float *param_1,void *param_2,int param_3)
+// Signature: void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_005090f0(float *input_samples,float *output_samples,int mpeg_block_type)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_005090f0(float *param_1,void *param_2,int param_3)
+void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_005090f0(float *input_samples,float *output_samples,int mpeg_block_type)
 
 {
   double *pdVar1;
@@ -20,7 +20,7 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_005090f0(float *param_1,void
   double *pdVar7;
   float fVar8;
   int iVar9;
-  void *pvVar10;
+  float *pfVar10;
   int iVar11;
   int iVar12;
   float10 fVar13;
@@ -177,43 +177,43 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_005090f0(float *param_1,void
     } while (local_20 < 0x24);
     DAT_00618e80 = 0;
   }
-  if (param_3 != 2) {
+  if (mpeg_block_type != 2) {
     iVar12 = 0;
     local_44 = 0;
     do {
       iVar11 = local_44;
-      if ((float)_DAT_005e02ab < ABS(param_1[iVar12])) {
+      if ((float)_DAT_005e02ab < ABS(input_samples[iVar12])) {
         local_44 = local_44 + 1;
         aiStack_9c[iVar11] = iVar12;
       }
       iVar12 = iVar12 + 1;
     } while (iVar12 < 0x12);
-    local_34 = param_3 * 0x120 + 0x1d21a58;
+    local_34 = mpeg_block_type * 0x120 + 0x1d21a58;
     local_1c = 0;
     do {
-      local_40 = (float *)((int)param_2 + local_1c * 4);
+      local_40 = output_samples + local_1c;
       local_3c = local_1c * 0x90 + 0x1d22118;
-      local_18 = param_1;
+      local_18 = input_samples;
       local_38 = (double *)(local_34 + local_1c * 8);
       fVar8 = 0.0;
       iVar12 = local_44;
       if (0 < local_44) {
         do {
           iVar12 = iVar12 + -1;
-          fVar8 = param_1[aiStack_9c[iVar12]] *
+          fVar8 = input_samples[aiStack_9c[iVar12]] *
                   (float)*(double *)(local_3c + aiStack_9c[iVar12] * 8) + fVar8;
         } while (0 < iVar12);
         fVar8 = fVar8 * (float)*local_38;
       }
-      *local_40 = fVar8;
+      output_samples[local_1c] = fVar8;
       local_1c = local_1c + 1;
     } while (local_1c < 0x24);
     return;
   }
-  memset(param_2,0,0x90);
+  memset(output_samples,0,0x90);
   iVar11 = 0;
   iVar12 = 0;
-  pvVar10 = param_2;
+  pfVar10 = output_samples;
   do {
     pdVar1 = (double *)(iVar12 + 0x1d21ee0);
     pdVar2 = (double *)(iVar12 + 0x1d21ed8);
@@ -224,17 +224,17 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_005090f0(float *param_1,void
     pdVar7 = (double *)(iVar11 + 0x1d21c98);
     iVar11 = iVar11 + 8;
     iVar12 = iVar12 + 0x30;
-    *(float *)((int)pvVar10 + 0x18) =
-         (param_1[0xf] * (float)*pdVar6 +
-         param_1[0xc] * (float)*pdVar5 +
-         param_1[9] * (float)*pdVar4 +
-         param_1[6] * (float)*pdVar3 + *param_1 * (float)*pdVar2 + param_1[3] * (float)*pdVar1) *
-         (float)*pdVar7 + *(float *)((int)pvVar10 + 0x18);
-    pvVar10 = (void *)((int)pvVar10 + 4);
+    pfVar10[6] = (input_samples[0xf] * (float)*pdVar6 +
+                 input_samples[0xc] * (float)*pdVar5 +
+                 input_samples[9] * (float)*pdVar4 +
+                 input_samples[6] * (float)*pdVar3 +
+                 *input_samples * (float)*pdVar2 + input_samples[3] * (float)*pdVar1) *
+                 (float)*pdVar7 + pfVar10[6];
+    pfVar10 = pfVar10 + 1;
   } while (iVar11 != 0x60);
   iVar12 = 0;
   iVar11 = 0;
-  pvVar10 = param_2;
+  pfVar10 = output_samples;
   do {
     pdVar1 = (double *)(iVar12 + 0x1d21ee0);
     pdVar2 = (double *)(iVar12 + 0x1d21ed8);
@@ -245,13 +245,13 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_005090f0(float *param_1,void
     pdVar7 = (double *)(iVar11 + 0x1d21c98);
     iVar11 = iVar11 + 8;
     iVar12 = iVar12 + 0x30;
-    *(float *)((int)pvVar10 + 0x30) =
-         (param_1[0x10] * (float)*pdVar6 +
-         param_1[0xd] * (float)*pdVar5 +
-         param_1[10] * (float)*pdVar4 +
-         param_1[7] * (float)*pdVar3 + param_1[1] * (float)*pdVar2 + param_1[4] * (float)*pdVar1) *
-         (float)*pdVar7 + *(float *)((int)pvVar10 + 0x30);
-    pvVar10 = (void *)((int)pvVar10 + 4);
+    pfVar10[0xc] = (input_samples[0x10] * (float)*pdVar6 +
+                   input_samples[0xd] * (float)*pdVar5 +
+                   input_samples[10] * (float)*pdVar4 +
+                   input_samples[7] * (float)*pdVar3 +
+                   input_samples[1] * (float)*pdVar2 + input_samples[4] * (float)*pdVar1) *
+                   (float)*pdVar7 + pfVar10[0xc];
+    pfVar10 = pfVar10 + 1;
   } while (iVar11 != 0x60);
   iVar12 = 0;
   iVar11 = 0;
@@ -265,13 +265,14 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_005090f0(float *param_1,void
     pdVar7 = (double *)(iVar11 + 0x1d21c98);
     iVar11 = iVar11 + 8;
     iVar12 = iVar12 + 0x30;
-    *(float *)((int)param_2 + 0x48) =
-         (param_1[0x11] * (float)*pdVar6 +
-         param_1[0xe] * (float)*pdVar5 +
-         param_1[0xb] * (float)*pdVar4 +
-         param_1[8] * (float)*pdVar3 + param_1[2] * (float)*pdVar2 + param_1[5] * (float)*pdVar1) *
-         (float)*pdVar7 + *(float *)((int)param_2 + 0x48);
-    param_2 = (void *)((int)param_2 + 4);
+    output_samples[0x12] =
+         (input_samples[0x11] * (float)*pdVar6 +
+         input_samples[0xe] * (float)*pdVar5 +
+         input_samples[0xb] * (float)*pdVar4 +
+         input_samples[8] * (float)*pdVar3 +
+         input_samples[2] * (float)*pdVar2 + input_samples[5] * (float)*pdVar1) * (float)*pdVar7 +
+         output_samples[0x12];
+    output_samples = output_samples + 1;
   } while (iVar11 != 0x60);
   return;
 }

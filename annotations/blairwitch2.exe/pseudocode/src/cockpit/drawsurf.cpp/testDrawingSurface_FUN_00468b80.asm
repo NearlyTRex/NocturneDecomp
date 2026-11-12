@@ -19,14 +19,14 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromTopRight_FUN_004666e0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00466820
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_004673b0
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_004685e0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00468a90
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00468790
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00468880
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_004686b0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00468680
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_00468440
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_00468410
-;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00468270
-;   cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_00467ac0
-;   cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00465d30
-;   cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_00466360
 ;   ... and 11 more
 ;
 ; *****************************************************************************
@@ -448,8 +448,8 @@ section .text
     PUSH 0x1                            ; 00468ff6
     LEA EAX,[ESP + 0x98]                ; 00468ff8
     PUSH EAX                            ; 00468fff
-    CALL cockpit_drawsurf.cpp_FUN_004682a0 ; 00469000
-        ;   XREF to: 004682a0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_004682a0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_004682a0 ; 00469000
+        ;   XREF to: 004682a0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_004682a0(CDrawSurface * this_ptr, int x, int y, char * format)
     ADD ESP,0x14                        ; 00469005
     LEA EAX,[ESP + 0xa8]                ; 00469008
     PUSH EAX                            ; 0046900f
@@ -458,8 +458,8 @@ section .text
     PUSH 0xc7                           ; 00469017
     LEA EAX,[ESP + 0x98]                ; 0046901c
     PUSH EAX                            ; 00469023
-    CALL cockpit_drawsurf.cpp_FUN_00468370 ; 00469024
-        ;   XREF to: 00468370 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_00468370()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00468370 ; 00469024
+        ;   XREF to: 00468370 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00468370(CDrawSurface * this_ptr, int x, int y, char * format)
     ADD ESP,0x14                        ; 00469029
     LEA EAX,[ESP + 0xa8]                ; 0046902c
     PUSH EAX                            ; 00469033
@@ -468,8 +468,8 @@ section .text
     PUSH 0x64                           ; 0046903b
     LEA EAX,[ESP + 0x98]                ; 0046903d
     PUSH EAX                            ; 00469044
-    CALL cockpit_drawsurf.cpp_FUN_00468440 ; 00469045
-        ;   XREF to: 00468440 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_00468440()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_00468440 ; 00469045
+        ;   XREF to: 00468440 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_00468440(CDrawSurface * this_ptr, int x, int y, char * format)
     ADD ESP,0x14                        ; 0046904a
     LEA EAX,[ESP + 0xa8]                ; 0046904d
     PUSH EAX                            ; 00469054
@@ -479,8 +479,8 @@ section .text
     PUSH 0x64                           ; 0046905e
     LEA EAX,[ESP + 0x98]                ; 00469060
     PUSH EAX                            ; 00469067
-    CALL cockpit_drawsurf.cpp_FUN_00468510 ; 00469068
-        ;   XREF to: 00468510 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_00468510()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_00468510 ; 00469068
+        ;   XREF to: 00468510 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_00468510(CDrawSurface * this_ptr, int x, int y, char * format)
     ADD ESP,0x14                        ; 0046906d
     LEA EAX,[ESP + 0xa8]                ; 00469070
     PUSH EAX                            ; 00469077
@@ -493,8 +493,8 @@ section .text
     MOV dword ptr [ESP + 0xd0],EAX      ; 0046908b
     LEA EAX,[ESP + 0x98]                ; 00469092
     PUSH EAX                            ; 00469099
-    CALL cockpit_drawsurf.cpp_FUN_004685e0 ; 0046909a
-        ;   XREF to: 004685e0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_004685e0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_004685e0 ; 0046909a
+        ;   XREF to: 004685e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_004685e0(CDrawSurface * this_ptr, int x, int y, char * format)
     ADD ESP,0x14                        ; 0046909f
     LEA EAX,[ESP + 0xa8]                ; 004690a2
     PUSH EAX                            ; 004690a9
@@ -511,8 +511,8 @@ section .text
     MOV dword ptr [ESP + 0xc0],EAX      ; 004690d2
     LEA EAX,[ESP + 0x9c]                ; 004690d9
     PUSH EAX                            ; 004690e0
-    CALL cockpit_drawsurf.cpp_FUN_004686b0 ; 004690e1
-        ;   XREF to: 004686b0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_004686b0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_004686b0 ; 004690e1
+        ;   XREF to: 004686b0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_004686b0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 004690e6
     LEA EAX,[ESP + 0xa8]                ; 004690e9
     MOV EDX,dword ptr [ESP + 0xbc]      ; 004690f0
@@ -529,8 +529,8 @@ section .text
     PUSH 0x64                           ; 00469117
     LEA EAX,[ESP + 0x9c]                ; 00469119
     PUSH EAX                            ; 00469120
-    CALL cockpit_drawsurf.cpp_FUN_00468790 ; 00469121
-        ;   XREF to: 00468790 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_00468790()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00468790 ; 00469121
+        ;   XREF to: 00468790 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00468790(CDrawSurface * this_ptr, int x, int y, int height, ...)
     ADD ESP,0x18                        ; 00469126
     LEA EAX,[ESP + 0xa8]                ; 00469129
     PUSH EAX                            ; 00469130
@@ -680,8 +680,8 @@ section .text
     PUSH 0x1                            ; 004692e7
     LEA EAX,[ESP + 0x58]                ; 004692e9
     PUSH EAX                            ; 004692ed
-    CALL cockpit_drawsurf.cpp_FUN_004682a0 ; 004692ee
-        ;   XREF to: 004682a0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_004682a0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_004682a0 ; 004692ee
+        ;   XREF to: 004682a0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_004682a0(CDrawSurface * this_ptr, int x, int y, char * format)
     ADD ESP,0x14                        ; 004692f3
     LEA EAX,[ESP + 0xa8]                ; 004692f6
     PUSH EAX                            ; 004692fd
@@ -690,8 +690,8 @@ section .text
     PUSH 0xc7                           ; 00469305
     LEA EAX,[ESP + 0x58]                ; 0046930a
     PUSH EAX                            ; 0046930e
-    CALL cockpit_drawsurf.cpp_FUN_00468370 ; 0046930f
-        ;   XREF to: 00468370 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_00468370()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00468370 ; 0046930f
+        ;   XREF to: 00468370 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00468370(CDrawSurface * this_ptr, int x, int y, char * format)
     ADD ESP,0x14                        ; 00469314
     LEA EAX,[ESP + 0xa8]                ; 00469317
     PUSH EAX                            ; 0046931e
@@ -700,8 +700,8 @@ section .text
     PUSH 0x64                           ; 00469326
     LEA EAX,[ESP + 0x58]                ; 00469328
     PUSH EAX                            ; 0046932c
-    CALL cockpit_drawsurf.cpp_FUN_00468440 ; 0046932d
-        ;   XREF to: 00468440 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_00468440()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_00468440 ; 0046932d
+        ;   XREF to: 00468440 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_00468440(CDrawSurface * this_ptr, int x, int y, char * format)
     ADD ESP,0x14                        ; 00469332
     LEA EAX,[ESP + 0xa8]                ; 00469335
     PUSH EAX                            ; 0046933c
@@ -710,8 +710,8 @@ section .text
     PUSH 0x64                           ; 00469343
     LEA EAX,[ESP + 0x58]                ; 00469345
     PUSH EAX                            ; 00469349
-    CALL cockpit_drawsurf.cpp_FUN_00468510 ; 0046934a
-        ;   XREF to: 00468510 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_00468510()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_00468510 ; 0046934a
+        ;   XREF to: 00468510 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_00468510(CDrawSurface * this_ptr, int x, int y, char * format)
     ADD ESP,0x14                        ; 0046934f
     LEA EAX,[ESP + 0xa8]                ; 00469352
     PUSH EAX                            ; 00469359
@@ -721,8 +721,8 @@ section .text
     PUSH 0x64                           ; 00469367
     LEA EAX,[ESP + 0x58]                ; 00469369
     PUSH EAX                            ; 0046936d
-    CALL cockpit_drawsurf.cpp_FUN_004685e0 ; 0046936e
-        ;   XREF to: 004685e0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_004685e0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_004685e0 ; 0046936e
+        ;   XREF to: 004685e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_004685e0(CDrawSurface * this_ptr, int x, int y, char * format)
     ADD ESP,0x14                        ; 00469373
     LEA EAX,[ESP + 0xa8]                ; 00469376
     PUSH EAX                            ; 0046937d
@@ -737,8 +737,8 @@ section .text
     LEA EAX,[ESP + 0x5c]                ; 0046939d
     PUSH EAX                            ; 004693a1
     MOV ESI,EDI                         ; 004693a2
-    CALL cockpit_drawsurf.cpp_FUN_004686b0 ; 004693a4
-        ;   XREF to: 004686b0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_004686b0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_004686b0 ; 004693a4
+        ;   XREF to: 004686b0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_004686b0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 004693a9
     LEA EAX,[ESP + 0xa8]                ; 004693ac
     MOV EDX,dword ptr [ESP + 0xbc]      ; 004693b3
@@ -752,8 +752,8 @@ section .text
     PUSH 0x64                           ; 004693ca
     LEA EAX,[ESP + 0x5c]                ; 004693cc
     PUSH EAX                            ; 004693d0
-    CALL cockpit_drawsurf.cpp_FUN_00468790 ; 004693d1
-        ;   XREF to: 00468790 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_00468790()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00468790 ; 004693d1
+        ;   XREF to: 00468790 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00468790(CDrawSurface * this_ptr, int x, int y, int height, ...)
     ADD ESP,0x18                        ; 004693d6
     LEA EAX,[ESP + 0xa8]                ; 004693d9
     PUSH EAX                            ; 004693e0

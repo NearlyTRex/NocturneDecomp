@@ -36,14 +36,16 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407860(SMRGLHeaderExtended
           }
         }
         else {
-          engine_special_cpp_drawPolyList_FUN_00565c70(&DAT_0060b014,0x7dd9f4,_DAT_007dd9f0,0xcd);
+          engine_special_cpp_drawPolyList_FUN_00565c70
+                    ((SRenderVertex *)&DAT_0060b014,(SMRGLPrimitiveQuad **)0x7dd9f4,_DAT_007dd9f0,
+                     0xcd);
         }
         _DAT_007dd9f0 = 0;
       }
       DAT_005fba40 = 1;
       return;
     }
-    bVar3 = (byte)(mrgl->base).type;
+    bVar3 = (byte)(((SMRGLHeaderPrimitive *)mrgl)->base).type;
     if (bVar3 < 0x14) {
       if (bVar3 < 3) {
         if (bVar3 == 2) {
@@ -80,7 +82,9 @@ LAB_00407a42:
             }
           }
           else {
-            engine_special_cpp_drawPolyList_FUN_00565c70(&DAT_0060b014,0x7dd9f4,_DAT_007dd9f0,0xcd);
+            engine_special_cpp_drawPolyList_FUN_00565c70
+                      ((SRenderVertex *)&DAT_0060b014,(SMRGLPrimitiveQuad **)0x7dd9f4,_DAT_007dd9f0,
+                       0xcd);
           }
           _DAT_007dd9f0 = 0;
         }
@@ -90,10 +94,12 @@ LAB_00407a42:
     else if (0x14 < bVar3) {
       if (bVar3 < 0x29) {
         if (bVar3 != 0x18) goto LAB_00407a42;
-        engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560(mrgl);
+        engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560
+                  ((SMRGLHeaderPrimitive *)mrgl);
       }
       else if (bVar3 < 0x2a) {
-        iVar4 = engine_3d_c_isVisiblePlane_FUN_00403920(&mrgl->child_count);
+        iVar4 = engine_3d_c_isVisiblePlane_FUN_00403920
+                          (&((SMRGLHeaderPrimitive *)mrgl)->surface_normal);
         if (iVar4 != 0) {
           if (1999 < _DAT_007dd9f0) {
             _DAT_01d71de0 = "..\\engine\\3d.c";
@@ -110,7 +116,7 @@ LAB_00407a42:
       }
     }
     iVar4 = engine_model_c_FUN_004f8730(mrgl);
-    mrgl = (SMRGLHeaderExtended *)((int)&(mrgl->base).type + iVar4);
-    cVar2 = (char)(mrgl->base).type;
+    mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);
+    cVar2 = (char)(((SMRGLHeaderPrimitive *)mrgl)->base).type;
   } while( true );
 }

@@ -2,13 +2,13 @@
 // Address: 004d9f80
 // Address Range: [[004d9f80, 004d9feb]]
 // Convention: __cdecl
-// Signature: char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(CDemonActor *param_1)
+// Signature: char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(CDemonActor *actor_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(CDemonActor *param_1)
+char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(CDemonActor *actor_ptr)
 
 {
   CKeyFramedModelInstance *pCVar1;
@@ -18,7 +18,7 @@ char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(CDemonActor *param_1
   
   str2 = (char *)0x1cf0208;
   iVar3 = 0;
-  pCVar1 = core_inv_cpp_getItemModel_FUN_004d9db0(param_1);
+  pCVar1 = core_inv_cpp_getItemModel_FUN_004d9db0(actor_ptr);
   if (0 < _DAT_01cf0200) {
     do {
       iVar2 = _stricmp(pCVar1->model_name,str2);

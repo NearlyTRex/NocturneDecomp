@@ -15,9 +15,9 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(CAlphaBitmap *th
   uint uVar2;
   uint uVar3;
   uint *puVar4;
-  _FILE *p_Var5;
+  _FILE *file;
+  int iVar5;
   int iVar6;
-  int iVar7;
   char local_124 [256];
   uint local_24;
   uint local_20;
@@ -70,26 +70,26 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(CAlphaBitmap *th
   } while (local_18 != 0x400);
   _fclose(local_14);
   _sprintf(local_124,"%s.opa");
-  p_Var5 = engine_dosio_cpp_FUN_00460c70(&DAT_005cb0ba,local_124,&DAT_005cb0b7);
-  if (p_Var5 == (_FILE *)0x0) {
-    iVar7 = width * height;
-    iVar6 = 0;
-    if (0 < iVar7) {
+  file = engine_dosio_cpp_FUN_00460c70(&DAT_005cb0ba,local_124,&DAT_005cb0b7);
+  if (file == (_FILE *)0x0) {
+    iVar6 = width * height;
+    iVar5 = 0;
+    if (0 < iVar6) {
       do {
-        while (this_ptr->act[(byte)this_ptr->raw[iVar6]] != 0) {
-          this_ptr->opa[iVar6] = -1;
-          iVar6 = iVar6 + 1;
-          if (iVar7 <= iVar6) {
+        while (this_ptr->act[(byte)this_ptr->raw[iVar5]] != 0) {
+          this_ptr->opa[iVar5] = -1;
+          iVar5 = iVar5 + 1;
+          if (iVar6 <= iVar5) {
             return;
           }
         }
-        this_ptr->opa[iVar6] = '\0';
-        iVar6 = iVar6 + 1;
-      } while (iVar6 < iVar7);
+        this_ptr->opa[iVar5] = '\0';
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < iVar6);
     }
     return;
   }
-  _fread(this_ptr->opa,width,height,p_Var5);
-  _fclose(p_Var5);
+  _fread(this_ptr->opa,width,height,file);
+  _fclose(file);
   return;
 }

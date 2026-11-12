@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[5]:
-;   core_dcamera.cpp_CDemonCamera_FUN_00447f20 at 00448060
+;   core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00447f20 at 00448060
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0 at 00442276
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00446760 at 00446781
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cdf9

@@ -42,7 +42,7 @@ section .text
     MOV ECX,dword ptr [EDI + 0x1c60dac] ; 004512d3 | DAT_01c60dac
     INC EBX                             ; 004512d9
     CALL crt_watcom.c__memcpy_FUN_00495f68 ; 004512da
-        ;   XREF to: 00495f68 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memcpy_FUN_00495f68()
+        ;   XREF to: 00495f68 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_00495f68(void * dest, void * src, uint size)
     MOV ECX,dword ptr [ESI + 0x148]     ; 004512df
     ADD EDI,0x4                         ; 004512e5
     CMP EBX,ECX                         ; 004512e8

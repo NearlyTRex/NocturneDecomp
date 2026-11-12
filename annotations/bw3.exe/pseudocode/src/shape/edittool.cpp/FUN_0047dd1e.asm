@@ -375,7 +375,7 @@ section .text
         ;   Label: LAB_0047e129
     PUSH EAX                            ; 0047e130
     CALL crt_time.c__localtime_FUN_005a5628 ; 0047e131
-        ;   XREF to: 005a5628 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__localtime_FUN_005a5628()
+        ;   XREF to: 005a5628 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_005a5628(time_t * timer)
     ADD ESP,0x4                         ; 0047e136
     PUSH EAX                            ; 0047e139
     PUSH 0x5bcefc                       ; 0047e13a
@@ -383,7 +383,7 @@ section .text
     LEA EAX,[ESP + 0x1ec0]              ; 0047e141
     PUSH EAX                            ; 0047e148
     CALL crt_time.c__strftime_FUN_005a5674 ; 0047e149
-        ;   XREF to: 005a5674 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__strftime_FUN_005a5674()
+        ;   XREF to: 005a5674 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_005a5674(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 0047e14e
     LEA EAX,[ESP + 0x1eb4]              ; 0047e151
     PUSH EAX                            ; 0047e158

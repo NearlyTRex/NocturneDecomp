@@ -20,7 +20,7 @@ CConfederateZombie * core_confzomb_cpp_CConfederateZombie_dtor_FUN_005a1cc0(CCon
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CConfederateZombieTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CConfederateZombieTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

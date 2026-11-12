@@ -10,20 +10,21 @@ int __cdecl core_basicene_cpp_CBasicEnemy_isGrabbable_FUN_0059fa70(CBasicEnemy *
 
 {
   uint uVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
   
   if ((CBasicEnemy *)grabber == this_ptr) {
     return (uint)grabber ^ (uint)this_ptr;
   }
-  iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(grabber,g_CBasicEnemyClassInfo.name_hash);
-  if (iVar2 != 0) {
-    uVar1 = *(uint *)(iVar2 + 0x11344);
+  pCVar2 = (CBasicEnemy *)core_actor_cpp_castToClassHash_FUN_0040c8f0(grabber,g_CBasicEnemyClassInfo.name_hash);
+  if (pCVar2 != (CDemonActor *)0x0) {
+    uVar1 = *(uint *)&pCVar2[0x65].particle_systems[3].field_0x20;
     if (uVar1 == 0) {
       return 0;
     }
     if (uVar1 < 2) {
-      iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(this_ptr,g_CDogClassInfo.name_hash);
-      if (iVar2 != 0) {
+      pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                         ((CDemonActor *)this_ptr,g_CDogClassInfo.name_hash);
+      if (pCVar2 != (CDemonActor *)0x0) {
         return 0;
       }
     }

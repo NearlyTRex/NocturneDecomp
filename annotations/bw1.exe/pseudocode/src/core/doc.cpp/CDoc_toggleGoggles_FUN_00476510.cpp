@@ -9,21 +9,22 @@
 void __cdecl core_doc_cpp_CDoc_toggleGoggles_FUN_00476510(CDoc *this_ptr)
 
 {
-  int iVar1;
-  uint uVar2;
-  uint uVar3;
+  CDemonActor *pCVar1;
+  float fVar2;
+  uint class_name_hash;
   
-  uVar3 = g_CGogglesClassInfo.name_hash;
-  iVar1 = core_inv_cpp_FUN_004f8c90(&(this_ptr->base).inventory,"CGoggles");
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(iVar1,uVar3);
-  if (iVar1 != 0) {
-    if ((g_CGamePtr->letterbox_mode == 0) && (*(int *)(iVar1 + 0x2d4) == 0)) {
-      uVar2 = 1;
+  class_name_hash = g_CGogglesClassInfo.name_hash;
+  pCVar1 = (CDemonActor *)core_inv_cpp_FUN_004f8c90(&(this_ptr->base).inventory,"CGoggles")
+  ;
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(pCVar1,class_name_hash);
+  if (pCVar1 != (CDemonActor *)0x0) {
+    if ((g_CGamePtr->letterbox_mode == 0) && (pCVar1[2].location.position.y == 0.0)) {
+      fVar2 = 1.4013e-45;
     }
     else {
-      uVar2 = 0;
+      fVar2 = 0.0;
     }
-    *(uint *)(iVar1 + 0x2d4) = uVar2;
+    pCVar1[2].location.position.y = fVar2;
   }
   if ((g_CGamePtr->goggles_active == 0) && (g_CGamePtr->letterbox_mode == 0)) {
     if (g_CGamePtr->letterbox_mode == 0) {

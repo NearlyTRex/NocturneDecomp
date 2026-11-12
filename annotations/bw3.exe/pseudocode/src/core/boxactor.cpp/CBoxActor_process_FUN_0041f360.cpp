@@ -116,13 +116,13 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041f360(CBoxActor *this_pt
   (pUVar1->vec).x = (pUVar1->vec).x + fStack_80;
   (this_ptr->base).orient.vec.y = fVar16 + fStack_7c;
   (this_ptr->base).orient.vec.z = fVar4 + fStack_78;
-  fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0((this_ptr->base).orient.vec.x);
+  fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0((this_ptr->base).orient.vec.x);
   fVar16 = (this_ptr->base).orient.vec.z;
   (this_ptr->base).orient.vec.x = fStack_18;
-  fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fVar16);
+  fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fVar16);
   fVar16 = (this_ptr->base).orient.vec.y;
   (this_ptr->base).orient.vec.z = fStack_18;
-  fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fVar16);
+  fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fVar16);
   cVar6 = this_ptr->loop_wav_name[0];
   (this_ptr->base).orient.vec.y = fStack_18;
   if (cVar6 != '\0') {

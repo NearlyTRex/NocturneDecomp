@@ -37,21 +37,6 @@
     "variadic":false
   },
   {
-    "addr":"0047401c",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_0047401c",
-    "name":"core_dtrace.cpp_FUN_0047401c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/dtrace.cpp",
-    "variadic":false
-  },
-  {
     "addr":"0047c01c",
     "conv":"unknown",
     "instructions":2,
@@ -97,21 +82,6 @@
     "variadic":false
   },
   {
-    "addr":"0050b41c",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_0050b41c",
-    "name":"core_netgame.cpp_FUN_0050b41c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/netgame.cpp",
-    "variadic":false
-  },
-  {
     "addr":"0055141c",
     "calls":[
       "005532f0"
@@ -131,14 +101,24 @@
   },
   {
     "addr":"0055651c",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":12,
     "method":"isValidSfxHandle",
     "name":"sound_snddx.cpp_isValidSfxHandle_FUN_0055651c",
+    "params":[
+      {
+        "name":"sfx_handle",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/snddx.cpp",
@@ -277,10 +257,37 @@
     "instructions":185,
     "method":"fseek",
     "name":"crt_stdio.c_fseek_FUN_005b929c",
+    "params":[
+      {
+        "name":"file",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"long",
+          "ptr":0
+        }
+      },
+      {
+        "name":"whence",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"crt/stdio.c",

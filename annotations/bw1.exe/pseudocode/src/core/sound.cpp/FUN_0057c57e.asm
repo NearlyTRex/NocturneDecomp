@@ -33,11 +33,11 @@
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_sndmain.cpp_FUN_00572880
 ;   sound_sndmain.cpp_FUN_005728e0
-;   sound_sndmain.cpp_FUN_00572980
 ;   sound_sndmain.cpp_FUN_005729f0
 ;   sound_sndmain.cpp_FUN_005735a0
 ;   sound_sndmain.cpp_FUN_00573950
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
+;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -121,8 +121,8 @@ section .text
         ;   XREF to: 005729f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005729f0(uint flags)
     ADD ESP,0x4                         ; 0057c68a
     PUSH 0x3                            ; 0057c68d
-    CALL sound_sndmain.cpp_FUN_00572980 ; 0057c68f
-        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572980(int channel_index)
+    CALL sound_sndmain.cpp_setNextSfxChannel_FUN_00572980 ; 0057c68f
+        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_00572980(int channel_index)
     ADD ESP,0x4                         ; 0057c694
     PUSH 0x5f5a2b                       ; 0057c697
     MOV ESI,dword ptr [0x006236b0]      ; 0057c69c | PTR_DAT_006236b0
@@ -345,8 +345,8 @@ section .text
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 0057c9ae
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH 0x3                            ; 0057c9b3
-    CALL sound_sndmain.cpp_FUN_00572980 ; 0057c9b5
-        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572980(int channel_index)
+    CALL sound_sndmain.cpp_setNextSfxChannel_FUN_00572980 ; 0057c9b5
+        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_00572980(int channel_index)
     ADD ESP,0x4                         ; 0057c9ba
     PUSH 0x2c83354                      ; 0057c9bd | DAT_02c83354
     CALL sound_sndmain.cpp_FUN_00572880 ; 0057c9c2

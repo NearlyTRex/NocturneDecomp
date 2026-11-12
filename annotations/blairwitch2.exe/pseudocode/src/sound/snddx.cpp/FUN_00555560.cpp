@@ -116,7 +116,7 @@ uint sound_snddx_cpp_FUN_00555560(uint *param_1,int param_2,ushort param_3,int p
           return 1;
         }
         _DAT_0264a5ec = 8;
-        fStack_24 = (float)sound_sndmain_cpp_getMaxSwLatency_FUN_00553600();
+        fStack_24 = sound_sndmain_cpp_getMaxSwLatency_FUN_00553600();
         fVar2 = ((float10)_DAT_0264a5dc * (float10)fStack_24) / (float10)_DAT_0264a5ec;
         round();
         _DAT_0264a5e4 = (uint)ROUND(fVar2);

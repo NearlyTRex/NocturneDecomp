@@ -116,6 +116,32 @@
     },
     "pcode_op_count": 866
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00576530",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00599df0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005de770",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9151
+    },
+    "nocturne.exe": {
+      "addr": "00546900",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9151
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -167,9 +193,9 @@
     {
       "description": "Complex pointer cast",
       "line": 54,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->enemies + iVar8),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar8),",
       "type": "pointer_cast"
     },
     {

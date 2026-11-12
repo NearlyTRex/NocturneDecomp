@@ -254,7 +254,7 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
                 else {
                   afStack_a4[3] = afStack_a4[3] - fStack_20;
                 }
-                fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_a4[3]);
+                fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_a4[3]);
                 afStack_a4[3] = fStack_14;
               }
               if ((((float)_DAT_005da2ec <= fVar5) &&
@@ -269,7 +269,7 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
                 else {
                   afStack_a4[2] = afStack_a4[2] - fStack_24;
                 }
-                fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_a4[2]);
+                fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(afStack_a4[2]);
                 afStack_a4[2] = fStack_14;
               }
             }
@@ -330,9 +330,9 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
       fStack_50 = fVar5;
     }
   }
-  fStack_58 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_40 - local_30[3]);
+  fStack_58 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_40 - local_30[3]);
   fStack_14 = fStack_58;
-  fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_44 - local_30[2]);
+  fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_44 - local_30[2]);
   fStack_60 = -fStack_50;
   if (fStack_58 < fStack_60) {
     fStack_58 = fStack_60;
@@ -348,9 +348,9 @@ void core_doc_cpp_FUN_004724a0(CDemonActor *param_1,int param_2,float param_3)
   if (fStack_50 < fStack_54) {
     fStack_54 = fStack_50;
   }
-  fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_30[3] + fStack_58);
+  fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_30[3] + fStack_58);
   local_30[3] = fStack_14;
-  fVar5 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_30[2] + fStack_54);
+  fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_30[2] + fStack_54);
   local_30[2] = fVar5;
   local_30[5] = 1.0;
   if (((local_30[7] == 1.4013e-45) && (ABS(local_30[3] - fStack_40) < (float)_DAT_005da2ec)) &&

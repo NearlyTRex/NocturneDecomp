@@ -1,15 +1,15 @@
 // Name: core_dcamera.cpp_log2Custom_FUN_0043ffcc
 // Address: 0043ffcc
 // Address Range: [[0043ffcc, 0043fff0]]
-// Convention: unknown
-// Signature: double core_dcamera_cpp_log2Custom_FUN_0043ffcc(double param_1)
+// Convention: __cdecl
+// Signature: double __cdecl core_dcamera_cpp_log2Custom_FUN_0043ffcc(double val)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-double core_dcamera_cpp_log2Custom_FUN_0043ffcc(double param_1)
+double __cdecl core_dcamera_cpp_log2Custom_FUN_0043ffcc(double val)
 
 {
-  return param_1 * 0.3010299956639812 * _DAT_005ce5b6;
+  return val * 0.3010299956639812 * _DAT_005ce5b6;
 }

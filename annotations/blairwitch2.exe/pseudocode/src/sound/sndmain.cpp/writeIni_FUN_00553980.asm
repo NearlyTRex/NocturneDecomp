@@ -138,7 +138,7 @@ section .text
         ;   XREF to: 004d8b80 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_FUN_004d8b80()
     ADD ESP,0xc                         ; 00553a79
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_00553600 ; 00553a7c
-        ;   XREF to: 00553600 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getMaxSwLatency_FUN_00553600()
+        ;   XREF to: 00553600 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_00553600()
     MOV dword ptr [ESP + 0x288],EAX     ; 00553a81
     FLD float ptr [ESP + 0x288]         ; 00553a88
     SUB ESP,0x4                         ; 00553a8f
@@ -189,7 +189,7 @@ section .text
     ADD ESP,0xc                         ; 00553b0b
     PUSH EBX                            ; 00553b0e
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00551190 ; 00553b0f
-        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00551190()
+        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00551190(int channel_index)
     MOV dword ptr [ESP + 0x28c],EAX     ; 00553b14
     FLD float ptr [ESP + 0x28c]         ; 00553b1b
     ADD ESP,0x4                         ; 00553b22

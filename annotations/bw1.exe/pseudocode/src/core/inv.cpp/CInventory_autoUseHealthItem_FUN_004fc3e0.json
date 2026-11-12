@@ -54,7 +54,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     }
   ],
   "globals": [
@@ -155,6 +155,26 @@
     },
     "pcode_op_count": 272
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004df010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.922
+    },
+    "nocedit.exe": {
+      "addr": "00501570",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c3350",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -174,7 +194,7 @@
   "suspects": [
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 27,
+      "line": 25,
       "match": "pCVar3 = (T *)&pCVar3->FIELD",
       "severity": "moderate",
       "text": "pCVar3 = (CInventory *)&pCVar3->owner;",

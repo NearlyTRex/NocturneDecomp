@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 97,
+    "complexity_score": 86,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
-    "suspect_count": 7,
+    "pseudocode_lines": 16,
+    "suspect_count": 6,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 79
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -55,7 +55,7 @@
     {
       "addr": "00441ff0",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00441ff0"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441ff0"
     }
   ],
   "globals": [
@@ -169,7 +169,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
       "text": "((CMotionController *)(param_1 + 0x158));",
@@ -177,7 +177,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x20ba0) != 0) {",
@@ -185,15 +185,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CConsolePtr,\"  toggling lever %s\\n\",*(int *)(param_1 + 0x20ba0));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "core_lever_cpp_CLever_activate_FUN_004e0630(*(CLever **)(param_1 + 0x20ba0));",
@@ -201,7 +193,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x20ba0) = 0;",

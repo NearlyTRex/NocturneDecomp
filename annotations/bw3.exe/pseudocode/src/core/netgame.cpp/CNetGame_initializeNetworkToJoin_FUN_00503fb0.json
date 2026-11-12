@@ -2,16 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 220,
+    "complexity_score": 235,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 125,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
+      "unknown_field",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "warning_overlapping_globals"
@@ -208,6 +209,32 @@
     },
     "pcode_op_count": 1115
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050b4d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0052c6b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9465
+    },
+    "nocedit.exe": {
+      "addr": "0053f900",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8143
+    },
+    "nocturne.exe": {
+      "addr": "004e9a90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8319
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -272,6 +299,14 @@
       "severity": "mild",
       "text": "DAT_0060728c = 0;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "uStack_53 = auStack_2c._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",

@@ -19,7 +19,7 @@ void core_doc_cpp_FUN_00470750(int param_1)
     }
     this_ptr = (CAmmoBox *)
                core_actor_cpp_castToClassHash_FUN_0040c600
-                         (*(uint *)(param_1 + 0x1ff78),g_CAmmoBoxClassInfo.name_hash);
+                         (*(CDemonActor **)(param_1 + 0x1ff78),g_CAmmoBoxClassInfo.name_hash);
     if (this_ptr != (CAmmoBox *)0x0) {
       core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e210
                 (this_ptr,(CInventory *)(param_1 + 0x1fae8));

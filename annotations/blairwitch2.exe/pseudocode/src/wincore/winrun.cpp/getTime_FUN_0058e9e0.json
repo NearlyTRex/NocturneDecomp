@@ -77,6 +77,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0050b790",
+      "from_addr": "0050b82b",
+      "name": "core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050d9f0",
       "from_addr": "0050da33",
       "name": "core_netgame.cpp_CNetGame_processChatOut_FUN_0050d9f0",
@@ -128,12 +134,6 @@
       "addr": "0050d840",
       "from_addr": "0050d87e",
       "name": "core_netgame.cpp_CNetGame_updatePing_FUN_0050d840",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050b790",
-      "from_addr": "0050b82b",
-      "name": "core_netgame.cpp_FUN_0050b790",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -241,10 +241,10 @@
         "0058eaac"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "wincore_winrun.cpp_getTime_FUN_0058e9e0",
-    "signature": "int wincore_winrun_cpp_getTime_FUN_0058e9e0(void)"
+    "signature": "int __cdecl wincore_winrun_cpp_getTime_FUN_0058e9e0(void)"
   },
   "function_calls": [
     {
@@ -381,6 +381,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 356
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005b2420",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005806a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f2dc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6972
+    },
+    "nocturne.exe": {
+      "addr": "00558a30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6972
+    }
   },
   "stack_frame": {
     "frame_size": 52,

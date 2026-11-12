@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonDestReadBlendOp33_FUN_004052d0(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDestReadBlendOp33_FUN_004052d0(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0
@@ -28,7 +30,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 004052da
     PUSH EAX                            ; 004052dd
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 004052de
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 004052e3
     TEST EAX,EAX                        ; 004052e6
     JZ 0x00405328                       ; 004052e8

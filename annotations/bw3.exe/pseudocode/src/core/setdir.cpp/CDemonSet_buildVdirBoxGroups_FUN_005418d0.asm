@@ -102,7 +102,7 @@ section .text
         ;   Label: LAB_00541982
     PUSH ESI                            ; 00541983
     CALL core_setdir.cpp_testOBBIntersection_FUN_00541470 ; 00541984
-        ;   XREF to: 00541470 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_testOBBIntersection_FUN_00541470()
+        ;   XREF to: 00541470 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_testOBBIntersection_FUN_00541470(SVDBox * obb_a, SVDBox * obb_b)
     ADD ESP,0x8                         ; 00541989
     TEST EAX,EAX                        ; 0054198c
     JNZ 0x005419cc                      ; 0054198e
@@ -131,7 +131,7 @@ section .text
     ADD EBP,ECX                         ; 005419bd
     PUSH EBP                            ; 005419bf
     CALL core_setdir.cpp_testOBBIntersection_FUN_00541470 ; 005419c0
-        ;   XREF to: 00541470 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_testOBBIntersection_FUN_00541470()
+        ;   XREF to: 00541470 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_testOBBIntersection_FUN_00541470(SVDBox * obb_a, SVDBox * obb_b)
     ADD ESP,0x8                         ; 005419c5
     TEST EAX,EAX                        ; 005419c8
     JZ 0x00541982                       ; 005419ca

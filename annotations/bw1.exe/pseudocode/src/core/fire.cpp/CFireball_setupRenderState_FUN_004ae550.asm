@@ -35,7 +35,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
-;   engine_drender.cpp_FUN_00483b50
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     MOV ECX,0x3                         ; 004ae5a0
     MOV dword ptr [0x01c570b0],EDX      ; 004ae5a5 | DAT_01c570b0
     MOV dword ptr [0x01c570b4],ECX      ; 004ae5ab | DAT_01c570b4
-    CALL engine_drender.cpp_FUN_00483b50 ; 004ae5b1
-        ;   XREF to: 00483b50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483b50()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50 ; 004ae5b1
+        ;   XREF to: 00483b50 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 004ae5b6
     ADD ESP,0x4                         ; 004ae5ba
     MOVSD ES:EDI,ESI                    ; 004ae5bd | DAT_01c57078

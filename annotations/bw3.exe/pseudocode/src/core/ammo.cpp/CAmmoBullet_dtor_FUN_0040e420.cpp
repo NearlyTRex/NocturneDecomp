@@ -15,7 +15,7 @@ CAmmoBullet * core_ammo_cpp_CAmmoBullet_dtor_FUN_0040e420(CAmmoBullet *this_ptr,
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CAmmoBulletTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CAmmoBulletTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

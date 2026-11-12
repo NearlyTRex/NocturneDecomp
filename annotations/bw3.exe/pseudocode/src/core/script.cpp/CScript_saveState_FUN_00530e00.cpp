@@ -33,9 +33,9 @@ void __cdecl core_script_cpp_CScript_saveState_FUN_00530e00(CScript *this_ptr,_F
   FUN_005a3140(file_handle,"// dialogWavTime\n");
   FUN_005a3140(file_handle,&DAT_005cfede,(double)this_ptr->dialog_wav_time);
   FUN_005a3140(file_handle);
-  core_script_cpp_writeActorReference_FUN_00530a90(file_handle);
+  core_script_cpp_writeActorReference_FUN_00530a90(file_handle,&this_ptr->who_is_speaking);
   FUN_005a3140(file_handle);
-  core_script_cpp_writeActorReference_FUN_00530a90(file_handle);
+  core_script_cpp_writeActorReference_FUN_00530a90(file_handle,&this_ptr->focus_actor);
   FUN_005a3140(file_handle);
   FUN_005a3140(file_handle,&DAT_005cff18);
   FUN_005a3140(file_handle);

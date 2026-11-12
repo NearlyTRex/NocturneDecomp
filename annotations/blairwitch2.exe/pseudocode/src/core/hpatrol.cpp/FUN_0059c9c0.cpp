@@ -2,17 +2,17 @@
 // Address: 0059c9c0
 // Address Range: [[0059c9c0, 0059cb64]]
 // Convention: unknown
-// Signature: undefined4 core_hpatrol_cpp_FUN_0059c9c0(char *param_1,uint *param_2)
+// Signature: CDemonActor * core_hpatrol_cpp_FUN_0059c9c0(char *param_1,uint *param_2)
 
 #include "nocturne.h"
 
-uint core_hpatrol_cpp_FUN_0059c9c0(char *param_1,uint *param_2)
+CDemonActor * core_hpatrol_cpp_FUN_0059c9c0(char *param_1,uint *param_2)
 
 {
   char cVar1;
   SIZE_T count;
   int iVar2;
-  uint uVar3;
+  CDemonActor *pCVar3;
   uint uVar4;
   int iVar5;
   char *pcVar6;
@@ -28,7 +28,7 @@ uint core_hpatrol_cpp_FUN_0059c9c0(char *param_1,uint *param_2)
   local_c = (CDemonActor *)0x0;
   count = strtok(param_1,"0123456789");
   if ((int)count < 1) {
-    return 0;
+    return (CDemonActor *)0x0;
   }
   local_10 = count;
   _strncpy(local_34,param_1,count);
@@ -55,9 +55,9 @@ uint core_hpatrol_cpp_FUN_0059c9c0(char *param_1,uint *param_2)
   iVar2 = atoi(local_18);
   do {
     if (((local_c != (CDemonActor *)0x0) || (iVar2 < 0)) || (99 < iVar2)) {
-      uVar3 = (CPatrolPoint *)core_actor_cpp_castToClassHash_FUN_0040c8f0(local_c,g_CPatrolPointClassInfo.name_hash)
-      ;
-      return uVar3;
+      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                         (local_c,g_CPatrolPointClassInfo.name_hash);
+      return pCVar3;
     }
     local_34[local_10] = '\0';
     if ((int)*param_2 < 0) {

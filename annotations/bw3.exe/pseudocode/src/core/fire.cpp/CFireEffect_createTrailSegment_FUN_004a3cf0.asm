@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00442bee
-;   core_fire.cpp_FUN_004a3d50 at 004a3e19
+;   core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004a3d50 at 004a3e19
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d01ab0

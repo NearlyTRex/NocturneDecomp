@@ -18,7 +18,7 @@ CTVBat * core_tvbat_cpp_CTVBat_dtor_FUN_005761a0(CTVBat *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTVBatTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTVBatTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

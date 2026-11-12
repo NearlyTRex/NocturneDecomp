@@ -9,6 +9,6 @@
 void __cdecl core_mission_cpp_CDemonMission_clearMission_FUN_004fb440(CDemonMission *this_ptr)
 
 {
-  core_mission_cpp_FUN_004fb450(this_ptr);
+  core_mission_cpp_CDemonMission_clearMissionData_FUN_004fb450(this_ptr);
   return;
 }

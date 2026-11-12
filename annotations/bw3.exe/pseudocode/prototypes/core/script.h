@@ -35,7 +35,7 @@ char * __cdecl parseConditionExpr(char **cursor,char *out_buffer);
 
 // Original: core_script.cpp_getActor_FUN_005289b0
 // Address: 005289b0
-CDemonActor * __cdecl getActor(char *param_1,undefined4 param_2);
+CDemonActor * __cdecl getActor(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class);
 
 // Original: core_script.cpp_getActionState_FUN_00528b30
 // Address: 00528b30
@@ -139,11 +139,11 @@ int __cdecl CScript::findDialogEntry(CScript *this_ptr,char *path);
 
 // Original: core_script.cpp_readActorReference_FUN_00530a10
 // Address: 00530a10
-void __cdecl readActorReference(undefined4 param_1,undefined4 *param_2);
+void __cdecl readActorReference(_FILE *file_handle,CDemonActor *actor_out);
 
 // Original: core_script.cpp_writeActorReference_FUN_00530a90
 // Address: 00530a90
-void __cdecl writeActorReference(undefined4 param_1,int *param_2);
+void __cdecl writeActorReference(_FILE *file_handle,CDemonActor **actor);
 
 // Original: core_script.cpp_CScript_loadState_FUN_00530ad0
 // Address: 00530ad0

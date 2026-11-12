@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_curtain.cpp_factoryFuncCurtain_FUN_00446320
 // Address: 00446320
-void factoryFuncCurtain(void);
+CCurtain * __cdecl factoryFuncCurtain(void);
 
 // Original: core_curtain.cpp_CCurtain_getActorType_FUN_00446340
 // Address: 00446340

@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408560
-;   core_mission.cpp_FUN_0051b1d0
+;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
         ;   Label: LAB_0051b4db
     MOV EDX,dword ptr [ESP + 0xc]       ; 0051b4dc
     PUSH EDX                            ; 0051b4e0
-    CALL core_mission.cpp_FUN_0051b1d0  ; 0051b4e1
-        ;   XREF to: 0051b1d0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b1d0()
+    CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0 ; 0051b4e1
+        ;   XREF to: 0051b1d0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 0051b4e6
     CMP dword ptr [ESP + 0x10],0x0      ; 0051b4e9
     JZ 0x0051b4d9                       ; 0051b4ee

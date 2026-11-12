@@ -56,7 +56,7 @@ section .text
     ADD ESP,0x4                         ; 00598825
     PUSH 0x5d9805                       ; 00598828 | = "CTawiscara"
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 0059882d
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 00598832
     PUSH 0x5d9810                       ; 00598835 | = "wolfbrn.dfm"
     MOV dword ptr [EBX + 0xd060],EAX    ; 0059883a

@@ -13,8 +13,7 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete
-                            (this_ptr,&g_CDeformableModelInstanceTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDeformableModelInstanceTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

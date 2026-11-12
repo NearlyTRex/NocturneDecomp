@@ -12,17 +12,18 @@ void core_spawner_cpp_FUN_00563970(int param_1,float param_2)
 
 {
   char cVar1;
-  CDemonActor *pCVar2;
-  CMotionList *this_ptr;
-  int iVar3;
-  char *pcVar4;
-  uint *puVar5;
-  char *pcVar6;
+  CCharacter *this_ptr;
+  EDeathState EVar2;
+  CDemonActor *pCVar3;
+  CDemonActor *pCVar4;
+  CMotionList *this_ptr_00;
+  int iVar5;
+  uint *puVar6;
   char *pcVar7;
-  uint *puVar8;
-  CDemonActor *pCVar9;
-  byte bVar10;
-  int iVar11;
+  CCharacter *pCVar8;
+  char *pcVar9;
+  uint *puVar10;
+  byte bVar11;
   uint auStack_b0 [6];
   uint auStack_98 [6];
   uint uStack_80;
@@ -42,7 +43,7 @@ void core_spawner_cpp_FUN_00563970(int param_1,float param_2)
   float fStack_18;
   float fStack_14;
   
-  bVar10 = 0;
+  bVar11 = 0;
   if ((*(uint *)(param_1 + 0x1b4) & 0x7fffffff) == 0) {
     *(float *)(param_1 + 0x1b8) = *(float *)(param_1 + 0x1b8) - param_2;
     if (0.0 < *(float *)(param_1 + 0x1b8)) {
@@ -53,37 +54,38 @@ void core_spawner_cpp_FUN_00563970(int param_1,float param_2)
     {
       return;
     }
-    pCVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90
+    pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90
                        (0x01D81080,(char *)(param_1 + 0x158));
-    pcVar6 = (char *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,g_CEnemyClassInfo.name_hash)
-    ;
-    if ((pcVar6 == (char *)0x0) ||
-       (iVar3 = (**(code **)(*(int *)(pcVar6 + 0x154) + 0x10c))(pcVar6), iVar3 == 0)) {
-      if (pCVar2 != (CDemonActor *)0x0) {
+    this_ptr = (CCharacter *)
+               core_actor_cpp_castToClassHash_FUN_0040c840(pCVar3,g_CEnemyClassInfo.name_hash);
+    if ((this_ptr == (CCharacter *)0x0) ||
+       (EVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr),
+       EVar2 == DEATH_STATE_ALIVE)) {
+      if (pCVar3 != (CDemonActor *)0x0) {
         return;
       }
       *(uint *)(param_1 + 0x1b4) = *(uint *)(param_1 + 0x1bc);
     }
     else {
-      pcVar4 = (char *)0x5d54af;
-      iVar3 = -1;
+      pcVar7 = (char *)0x5d54af;
+      iVar5 = -1;
       do {
-        pcVar7 = pcVar6;
-        if (iVar3 == 0) break;
-        iVar3 = iVar3 + -1;
-        pcVar7 = pcVar6 + (uint)bVar10 * -2 + 1;
-        cVar1 = *pcVar6;
-        pcVar6 = pcVar7;
-      } while (cVar1 != '\0');
-      pcVar7 = pcVar7 + -1;
+        pCVar8 = this_ptr;
+        if (iVar5 == 0) break;
+        iVar5 = iVar5 + -1;
+        pCVar8 = (CCharacter *)((int)this_ptr + (uint)bVar11 * -2 + 1);
+        pCVar3 = &this_ptr->base;
+        this_ptr = pCVar8;
+      } while (pCVar3->actor_name[0] != '\0');
+      pcVar9 = (char *)((int)&pCVar8[-1].walk_immediate_pending + 3);
       do {
-        cVar1 = *pcVar4;
-        *pcVar7 = cVar1;
+        cVar1 = *pcVar7;
+        *pcVar9 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar4[1];
-        pcVar4 = pcVar4 + 2;
-        pcVar7[1] = cVar1;
+        cVar1 = pcVar7[1];
         pcVar7 = pcVar7 + 2;
+        pcVar9[1] = cVar1;
+        pcVar9 = pcVar9 + 2;
       } while (cVar1 != '\0');
       *(uint *)(param_1 + 0x1b4) = *(uint *)(param_1 + 0x1bc);
     }
@@ -110,80 +112,83 @@ void core_spawner_cpp_FUN_00563970(int param_1,float param_2)
     if (1.0 <= fStack_2c) {
       if (*(int *)(param_1 + 0x1c8) != 0) {
         (**(code **)(*(int *)(param_1 + 0x154) + 0x1c))(param_1,0);
-        puVar5 = auStack_98;
-        puVar8 = auStack_b0;
-        for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar8 = *puVar5;
-          puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
-          puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+        puVar6 = auStack_98;
+        puVar10 = auStack_b0;
+        for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+          *puVar10 = *puVar6;
+          puVar6 = puVar6 + (uint)bVar11 * -2 + 1;
+          puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
         }
-        iVar3 = core_box_cpp_FUN_0041daf0(auStack_b0);
-        if (iVar3 != 0) {
+        iVar5 = core_box_cpp_FUN_0041daf0(auStack_b0);
+        if (iVar5 != 0) {
           return;
         }
       }
-      pCVar2 = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c4f0(param_1 + 0x176);
-      if (pCVar2 != (CDemonActor *)0x0) {
-        iVar3 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,g_CCharacterClassInfo.name_hash);
-        core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,g_CBoxActorClassInfo.name_hash);
-        if (iVar3 != 0) {
-          iVar11 = -1;
-          pcVar6 = (char *)(param_1 + 0x2520);
+      pCVar3 = core_actor_cpp_createActorByName_FUN_0040c4f0((char *)(param_1 + 0x176));
+      if (pCVar3 != (CDemonActor *)0x0) {
+        pCVar4 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar3,g_CCharacterClassInfo.name_hash)
+        ;
+        core_actor_cpp_castToClassHash_FUN_0040c840(pCVar3,g_CBoxActorClassInfo.name_hash);
+        if (pCVar4 != (CDemonActor *)0x0) {
+          iVar5 = -1;
+          pcVar7 = (char *)(param_1 + 0x2520);
           do {
-            if (iVar11 == 0) break;
-            iVar11 = iVar11 + -1;
-            cVar1 = *pcVar6;
-            pcVar6 = pcVar6 + (uint)bVar10 * -2 + 1;
+            if (iVar5 == 0) break;
+            iVar5 = iVar5 + -1;
+            cVar1 = *pcVar7;
+            pcVar7 = pcVar7 + (uint)bVar11 * -2 + 1;
           } while (cVar1 != '\0');
-          if (iVar11 != -2) {
+          if (iVar5 != -2) {
             core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
-                      ((CDeformableModelInstance *)(iVar3 + 0x158),(char *)(param_1 + 0x2520));
+                      ((CDeformableModelInstance *)(pCVar4 + 1),(char *)(param_1 + 0x2520));
           }
         }
-        pcVar6 = (char *)(param_1 + 0x158);
-        pCVar9 = pCVar2;
+        pcVar7 = (char *)(param_1 + 0x158);
+        pCVar4 = pCVar3;
         do {
-          cVar1 = *pcVar6;
-          pCVar9->actor_name[0] = cVar1;
+          cVar1 = *pcVar7;
+          pCVar4->actor_name[0] = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar6[1];
-          pcVar6 = pcVar6 + 2;
-          pCVar9->actor_name[1] = cVar1;
-          pCVar9 = (CDemonActor *)(pCVar9->actor_name + 2);
+          cVar1 = pcVar7[1];
+          pcVar7 = pcVar7 + 2;
+          pCVar4->actor_name[1] = cVar1;
+          pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
         } while (cVar1 != '\0');
-        (pCVar2->location).position.x = *(float *)(param_1 + 0x20);
-        (pCVar2->location).position.y = *(float *)(param_1 + 0x24);
-        (pCVar2->location).position.z = *(float *)(param_1 + 0x28);
-        (pCVar2->location).area_id = *(int *)(param_1 + 0x2c);
-        if (&pCVar2->orient != (UOrientationVector *)(param_1 + 0x30)) {
-          (pCVar2->orient).vec.x = *(float *)(param_1 + 0x30);
-          (pCVar2->orient).vec.y = *(float *)(param_1 + 0x34);
-          (pCVar2->orient).vec.z = *(float *)(param_1 + 0x38);
+        (pCVar3->location).position.x = *(float *)(param_1 + 0x20);
+        (pCVar3->location).position.y = *(float *)(param_1 + 0x24);
+        (pCVar3->location).position.z = *(float *)(param_1 + 0x28);
+        (pCVar3->location).area_id = *(int *)(param_1 + 0x2c);
+        if (&pCVar3->orient != (UOrientationVector *)(param_1 + 0x30)) {
+          (pCVar3->orient).vec.x = *(float *)(param_1 + 0x30);
+          (pCVar3->orient).vec.y = *(float *)(param_1 + 0x34);
+          (pCVar3->orient).vec.z = *(float *)(param_1 + 0x38);
         }
-        (*((pCVar2->vtable)._ub)->setup)(pCVar2);
-        iVar3 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,g_CCharacterClassInfo.name_hash);
-        if ((iVar3 != 0) && (*(char *)(param_1 + 0x194) != '\0')) {
-          iVar11 = 1;
-          pcVar6 = (char *)(param_1 + 0x194);
-          this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310
-                               ((CMotionController *)(iVar3 + 0x158));
-          iVar11 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(this_ptr,pcVar6,iVar11);
+        (*((pCVar3->vtable)._ub)->setup)(pCVar3);
+        pCVar4 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar3,g_CCharacterClassInfo.name_hash)
+        ;
+        if ((pCVar4 != (CDemonActor *)0x0) && (*(char *)(param_1 + 0x194) != '\0')) {
+          iVar5 = 1;
+          pcVar7 = (char *)(param_1 + 0x194);
+          this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310
+                                  ((CMotionController *)(pCVar4 + 1));
+          iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(this_ptr_00,pcVar7,iVar5)
+          ;
           core_motion_cpp_CMotionController_jumpToMotion_FUN_004fc420
-                    ((CMotionController *)(iVar3 + 0x158),iVar11,0.0);
-          (*(code *)**(uint **)(iVar3 + 0x154))(iVar3);
+                    ((CMotionController *)(pCVar4 + 1),iVar5,0.0);
+          (*((pCVar4->vtable)._ub)->setup)(pCVar4);
         }
-        iVar3 = (CZombie *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,g_CZombieClassInfo.name_hash);
-        if (iVar3 != 0) {
-          *(uint *)(iVar3 + 0xd0e4) = *(uint *)(param_1 + 0x1cc);
+        pCVar4 = (CZombie *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar3,g_CZombieClassInfo.name_hash);
+        if (pCVar4 != (CDemonActor *)0x0) {
+          *(uint *)(pCVar4[0x9b].create_event + 0x24) = *(uint *)(param_1 + 0x1cc);
         }
-        core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(0x01D81080,pCVar2);
-        if ((CLocation *)&CStack_44 != &pCVar2->location) {
-          CStack_44.x = (pCVar2->location).position.x;
-          CStack_44.y = (pCVar2->location).position.y;
-          CStack_44.z = (pCVar2->location).position.z;
+        core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(0x01D81080,pCVar3);
+        if ((CLocation *)&CStack_44 != &pCVar3->location) {
+          CStack_44.x = (pCVar3->location).position.x;
+          CStack_44.y = (pCVar3->location).position.y;
+          CStack_44.z = (pCVar3->location).position.z;
         }
         CStack_44.y = CStack_44.y + _DAT_005d54bb;
-        iVar3 = 0;
+        iVar5 = 0;
         do {
           fStack_28 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-20.0,20.0);
           fStack_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-20.0,20.0);
@@ -197,12 +202,12 @@ void core_spawner_cpp_FUN_00563970(int param_1,float param_2)
             CStack_5c.z = fStack_28;
             CStack_5c.x = CStack_38.x;
           }
-          iVar3 = iVar3 + 1;
+          iVar5 = iVar5 + 1;
           fStack_18 = CStack_38.x;
           fStack_14 = CStack_38.x;
           core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
                     (0x01C73654,&CStack_44,&CStack_5c,0x20000,0x10000,1,0xffff);
-        } while (iVar3 < 0x20);
+        } while (iVar5 < 0x20);
         *(int *)(param_1 + 0x1c0) = *(int *)(param_1 + 0x1c0) + 1;
         return;
       }

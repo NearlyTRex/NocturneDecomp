@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01cedef4
 ;
 ; Called Functions:
-;   core_dfilter.cpp_FUN_00447660
+;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_0044b600
 ;   core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004dcfb0
 ;   core_lightgun.cpp_FUN_004e2bf0
@@ -129,8 +129,8 @@ section .text
     MOV EAX,0x1                         ; 004e39eb
     PUSH EDX                            ; 004e39f0
     MOV [0x01cb5620],EAX                ; 004e39f1 | g_CDemonLightInstance.antialiasing_enabled
-    CALL core_dfilter.cpp_FUN_00447660  ; 004e39f6
-        ;   XREF to: 00447660 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_FUN_00447660()
+    CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660 ; 004e39f6
+        ;   XREF to: 00447660 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660(CFilterCache * this_ptr, char * filter_name, int blend_filter)
     ADD ESP,0xc                         ; 004e39fb
     PUSH 0x0                            ; 004e39fe
     PUSH 0x0                            ; 004e3a00

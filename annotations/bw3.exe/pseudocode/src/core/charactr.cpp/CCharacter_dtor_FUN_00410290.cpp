@@ -18,7 +18,7 @@ CCharacter * core_charactr_cpp_CCharacter_dtor_FUN_00410290(CCharacter *this_ptr
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CCharacterTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CCharacterTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

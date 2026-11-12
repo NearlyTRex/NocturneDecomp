@@ -12,8 +12,8 @@ void engine_mini3d_cpp_staticInit_FUN_004ec6f0(void)
 
 {
   engine_mini3d_cpp_CMini3D_ctor_FUN_004ec730(&g_CMini3DInstance);
-  _atexit();
-  __arrinit(0x1d79788,0x32);
+  _atexit(&WatcomStaticDestructorNode_006004a8);
+  __arrinit((void *)0x1d79788,0x32,&g_SDynamicLightTypeInfo);
   _DAT_01d7a6b4 = _DAT_005e2974;
   return;
 }

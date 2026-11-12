@@ -11,7 +11,7 @@
 void __cdecl core_pendulum_cpp_CPendulum_process_FUN_00515cd0(CPendulum *this_ptr,float delta_time)
 
 {
-  CDemonActor *actor;
+  CDemonActor *actor_ptr;
   int iVar1;
   CDemonActor *pCVar2;
   int iVar3;
@@ -54,23 +54,21 @@ void __cdecl core_pendulum_cpp_CPendulum_process_FUN_00515cd0(CPendulum *this_pt
       if (g_CDemonSetPtr->character_count <= iVar1) {
         return;
       }
-      actor = *(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar3);
+      actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar3);
       if ((this_ptr->kill_hero == 0) ||
-         (pCVar2 = (CDemonActor *)
-                   core_actor_cpp_castToClassHash_FUN_0040c8f0(actor,g_CHeroClassInfo.name_hash),
-         pCVar2 == (CDemonActor *)0x0)) break;
+         (pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(actor_ptr,g_CHeroClassInfo.name_hash)
+         , pCVar2 == (CDemonActor *)0x0)) break;
       core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_00514f40
-                (this_ptr,actor,pCVar2,(CDemonActor *)0x0);
+                (this_ptr,actor_ptr,pCVar2,(CDemonActor *)0x0);
 LAB_00515d9e:
       iVar1 = iVar1 + 1;
       iVar3 = iVar3 + 4;
     }
     if ((this_ptr->kill_enemy == 0) ||
-       (pCVar2 = (CDemonActor *)
-                 core_actor_cpp_castToClassHash_FUN_0040c8f0(actor,g_CEnemyClassInfo.name_hash),
+       (pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(actor_ptr,g_CEnemyClassInfo.name_hash),
        pCVar2 == (CDemonActor *)0x0)) goto LAB_00515d9e;
     core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_00514f40
-              (this_ptr,actor,(CDemonActor *)0x0,pCVar2);
+              (this_ptr,actor_ptr,(CDemonActor *)0x0,pCVar2);
     iVar1 = iVar1 + 1;
     iVar3 = iVar3 + 4;
   } while( true );

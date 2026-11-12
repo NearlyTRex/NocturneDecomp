@@ -13,7 +13,7 @@ CTrap * __cdecl core_trap_cpp_CTrap_dtor_FUN_0059a140(CTrap *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTrapTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTrapTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

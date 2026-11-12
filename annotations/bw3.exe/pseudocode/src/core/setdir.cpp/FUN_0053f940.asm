@@ -41,14 +41,14 @@
 ;   core_box.cpp_FUN_0041d8b0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890
 ;   core_setdir.cpp_FUN_00541a20
-;   core_setutil.cpp_FUN_005420b0
+;   core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_005420b0
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-;   engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240
+;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0
 ;   ... and 10 more
 ;
 ; *****************************************************************************
@@ -131,8 +131,8 @@ section .text
     PUSH 0x0                            ; 0053f9fd
     MOV ESI,dword ptr [0x005f2afc]      ; 0053f9ff | DAT_005f2afc
     PUSH ESI                            ; 0053fa05 | DAT_01bdd7e4
-    CALL engine_drender.cpp_FUN_0046d2f0 ; 0053fa06
-        ;   XREF to: 0046d2f0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d2f0()
+    CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0 ; 0053fa06
+        ;   XREF to: 0046d2f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 0053fa0b
     MOV EDI,dword ptr [EBP + 0x18]      ; 0053fa0e
     MOV EAX,dword ptr [EBP + 0x18]      ; 0053fa11
@@ -785,8 +785,8 @@ section .text
     PUSH dword ptr [ESP + 0x340]        ; 0054030f
     PUSH ECX                            ; 00540316
     PUSH EBX                            ; 00540317
-    CALL core_setutil.cpp_FUN_005420b0  ; 00540318
-        ;   XREF to: 005420b0 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_FUN_005420b0()
+    CALL core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_005420b0 ; 00540318
+        ;   XREF to: 005420b0 (UNCONDITIONAL_CALL)  ; int core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_005420b0(C3DSCamera * this_ptr, CVector3f * world_position, float radius)
     ADD ESP,0xc                         ; 0054031d
     TEST EAX,EAX                        ; 00540320
     JZ 0x005408b9                       ; 00540322
@@ -800,8 +800,8 @@ section .text
     MOV EDI,dword ptr [0x005f2afc]      ; 00540338 | DAT_005f2afc
     PUSH dword ptr [EBX + 0x144]        ; 0054033e
     PUSH EDI                            ; 00540344 | DAT_01bdd7e4
-    CALL engine_drender.cpp_FUN_0046d090 ; 00540345
-        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d090()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090 ; 00540345
+        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 0054034a
     LEA EAX,[EBX + 0x10c]               ; 0054034d
     PUSH EAX                            ; 00540353
@@ -911,7 +911,7 @@ section .text
     PUSH ESI                            ; 005404ab
     MOV dword ptr [ESI + 0x8],ECX       ; 005404ac
     CALL engine_matrix.c_projectTransformedPoint_FUN_004e5590 ; 005404af
-        ;   XREF to: 004e5590 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectTransformedPoint_FUN_004e5590()
+        ;   XREF to: 004e5590 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectTransformedPoint_FUN_004e5590(SProjectedVertex * point)
     ADD ESP,0x4                         ; 005404b4
     ADD EDI,0x30                        ; 005404b7
         ;   Label: LAB_005404b7

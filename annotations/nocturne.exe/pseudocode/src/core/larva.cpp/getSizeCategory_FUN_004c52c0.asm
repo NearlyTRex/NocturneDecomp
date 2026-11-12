@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * core_larva_cpp_getSizeCategory_FUN_004c52c0(float param_1)
+; char * __cdecl core_larva_cpp_getSizeCategory_FUN_004c52c0(float scale)
 ;
+; Parameters:
+; float            Stack[0x4]:4   scale
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0058786c

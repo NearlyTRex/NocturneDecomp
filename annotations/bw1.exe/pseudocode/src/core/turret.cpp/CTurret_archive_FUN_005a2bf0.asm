@@ -44,7 +44,7 @@ section .text
     LEA EAX,[EBX + 0x578]               ; 005a2c03
     PUSH EAX                            ; 005a2c09
     CALL core_actor.cpp_archiveOrientation_FUN_0040b260 ; 005a2c0a
-        ;   XREF to: 0040b260 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveOrientation_FUN_0040b260()
+        ;   XREF to: 0040b260 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveOrientation_FUN_0040b260(COrientation * orient_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a2c0f
     PUSH 0x5f8ab3                       ; 005a2c12 | = "state"
     LEA EAX,[EBX + 0x700]               ; 005a2c17
@@ -62,37 +62,37 @@ section .text
     LEA EAX,[EBX + 0x768]               ; 005a2c3f
     PUSH EAX                            ; 005a2c45
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a2c46
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a2c4b
     PUSH 0x5f8ad2                       ; 005a2c4e | = "patrolTime"
     LEA EAX,[EBX + 0x76c]               ; 005a2c53
     PUSH EAX                            ; 005a2c59
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a2c5a
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a2c5f
     PUSH 0x5f8add                       ; 005a2c62 | = "powerDownTime"
     LEA EAX,[EBX + 0x770]               ; 005a2c67
     PUSH EAX                            ; 005a2c6d
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a2c6e
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a2c73
     PUSH 0x5f8aeb                       ; 005a2c76 | = "fireDelayTime"
     LEA EAX,[EBX + 0x774]               ; 005a2c7b
     PUSH EAX                            ; 005a2c81
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a2c82
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a2c87
     PUSH 0x5f8af9                       ; 005a2c8a | = "timer"
     LEA EAX,[EBX + 0x77c]               ; 005a2c8f
     PUSH EAX                            ; 005a2c95
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a2c96
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a2c9b
     PUSH 0x5f8aff                       ; 005a2c9e | = "guardZoneTriggerPtr"
     LEA EAX,[EBX + 0x780]               ; 005a2ca3
     PUSH EAX                            ; 005a2ca9
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 005a2caa
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a2caf
     PUSH 0x5f8b13                       ; 005a2cb2 | = "allowedVictimTypes"
     LEA EAX,[EBX + 0x784]               ; 005a2cb7
@@ -104,7 +104,7 @@ section .text
     LEA EAX,[EBX + 0x778]               ; 005a2ccb
     PUSH EAX                            ; 005a2cd1
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a2cd2
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x00625c04]      ; 005a2cd7 | g_CTurretClassVersion
     ADD ESP,0x8                         ; 005a2cdd
     CMP EDX,0x2                         ; 005a2ce0

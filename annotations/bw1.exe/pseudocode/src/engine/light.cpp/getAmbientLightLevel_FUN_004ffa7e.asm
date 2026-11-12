@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_light_cpp_getAmbientLightLevel_FUN_004ffa7e(void)
+; int __cdecl engine_light_cpp_getAmbientLightLevel_FUN_004ffa7e(void)
 ;
 ;
 ; Referenced Globals:

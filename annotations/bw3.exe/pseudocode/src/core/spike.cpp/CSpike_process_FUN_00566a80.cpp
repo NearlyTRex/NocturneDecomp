@@ -154,6 +154,6 @@ LAB_00566b4b:
   if (fStack_48 * fStack_48 + fStack_4c * fStack_4c + fVar4 * fVar4 <= (float)_DAT_005d5b2a) {
     return;
   }
-  core_spike_cpp_FUN_00566fd0(this_ptr);
+  core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0(this_ptr);
   return;
 }

@@ -15,11 +15,11 @@ void __cdecl computePlaneFromTriangle(SClipPlane *out_plane,CVector3f *vertex_a,
 
 // Original: core_mirror.cpp_computePlaneIntersection_FUN_004f3d30
 // Address: 004f3d30
-void __cdecl computePlaneIntersection(float *param_1,float *param_2,float *param_3,float *param_4);
+void __cdecl computePlaneIntersection(SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *out_intersection);
 
 // Original: core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90
 // Address: 004f3e90
-void __cdecl clipPolygonAgainstPlane(float *param_1,float *param_2,uint param_3,int param_4,int *param_5);
+void __cdecl clipPolygonAgainstPlane(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count);
 
 // Original: core_mirror.cpp_CMirror_ctor_FUN_004f3fc0
 // Address: 004f3fc0

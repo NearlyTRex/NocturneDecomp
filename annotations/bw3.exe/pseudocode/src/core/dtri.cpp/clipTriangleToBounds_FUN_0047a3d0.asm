@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_dtri_cpp_clipTriangleToBounds_FUN_0047a3d0(undefined4 *param_1,float *param_2,float *param_3)
+; int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0047a3d0(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   triangle_vertices
+; CVector3f *      Stack[0x8]:4   bounds_min
+; CVector3f *      Stack[0xc]:4   bounds_max
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_0047a368 = 0047a9c9
@@ -655,7 +659,7 @@ section .text
     PUSH EDX                            ; 0047a9f1
     PUSH EDI                            ; 0047a9f2
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047a9f3
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59aa0]      ; 0047a9f8 | DAT_01c59aa0
     INC EDI                             ; 0047a9fe
     ADD ESP,0x2c                        ; 0047a9ff
@@ -694,7 +698,7 @@ section .text
     PUSH EDI                            ; 0047aa5c
     PUSH EDX                            ; 0047aa5d
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047aa5e
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59aa0]      ; 0047aa63 | DAT_01c59aa0
     INC EDI                             ; 0047aa69
     ADD ESP,0x2c                        ; 0047aa6a
@@ -717,7 +721,7 @@ section .text
     PUSH EDX                            ; 0047aa9e | DAT_01c59aa4
     PUSH EDI                            ; 0047aa9f
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047aaa0
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59b64]      ; 0047aaa5 | DAT_01c59b64
     INC EDI                             ; 0047aaab
     ADD ESP,0x2c                        ; 0047aaac
@@ -755,7 +759,7 @@ section .text
     PUSH EDI                            ; 0047ab07
     PUSH EDX                            ; 0047ab08 | DAT_01c59aa4
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ab09
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59b64]      ; 0047ab0e | DAT_01c59b64
     INC EDI                             ; 0047ab14
     ADD ESP,0x2c                        ; 0047ab15
@@ -779,7 +783,7 @@ section .text
     PUSH EDX                            ; 0047ab4b | DAT_01c59b68
     PUSH EDI                            ; 0047ab4c
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ab4d
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59c28]      ; 0047ab52 | DAT_01c59c28
     INC EDI                             ; 0047ab58
     ADD ESP,0x2c                        ; 0047ab59
@@ -818,7 +822,7 @@ section .text
     PUSH EDI                            ; 0047abb6
     PUSH EDX                            ; 0047abb7 | DAT_01c59b68
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047abb8
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59c28]      ; 0047abbd | DAT_01c59c28
     INC EDI                             ; 0047abc3
     ADD ESP,0x2c                        ; 0047abc4
@@ -846,7 +850,7 @@ section .text
     PUSH EDX                            ; 0047ac06 | DAT_01c59c2c
     PUSH EDI                            ; 0047ac07
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ac08
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59cec]      ; 0047ac0d | DAT_01c59cec
     INC EDI                             ; 0047ac13
     ADD ESP,0x2c                        ; 0047ac14
@@ -893,7 +897,7 @@ section .text
     PUSH EDI                            ; 0047ac8a
     PUSH EDX                            ; 0047ac8b | DAT_01c59c2c
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ac8c
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59cec]      ; 0047ac91 | DAT_01c59cec
     INC EDI                             ; 0047ac97
     ADD ESP,0x2c                        ; 0047ac98
@@ -916,7 +920,7 @@ section .text
     PUSH EDX                            ; 0047accb | DAT_01c59cf0
     PUSH EDI                            ; 0047accc
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047accd
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59db0]      ; 0047acd2 | DAT_01c59db0
     INC EDI                             ; 0047acd8
     ADD ESP,0x2c                        ; 0047acd9
@@ -954,7 +958,7 @@ section .text
     PUSH EDI                            ; 0047ad33
     PUSH EDX                            ; 0047ad34 | DAT_01c59cf0
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ad35
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59db0]      ; 0047ad3a | DAT_01c59db0
     INC EDI                             ; 0047ad40
     ADD ESP,0x2c                        ; 0047ad41
@@ -977,7 +981,7 @@ section .text
     PUSH EDX                            ; 0047ad75 | DAT_01c59db4
     PUSH EDI                            ; 0047ad76
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ad77
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59e74]      ; 0047ad7c | DAT_01c59e74
     INC EDI                             ; 0047ad82
     ADD ESP,0x2c                        ; 0047ad83
@@ -1015,7 +1019,7 @@ section .text
     PUSH EDI                            ; 0047adde
     PUSH EDX                            ; 0047addf | DAT_01c59db4
     CALL core_dtri.cpp_clipLineToPlane_FUN_00479970 ; 0047ade0
-        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_clipLineToPlane_FUN_00479970()
+        ;   XREF to: 00479970 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_00479970(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDI,dword ptr [0x01c59e74]      ; 0047ade5 | DAT_01c59e74
     INC EDI                             ; 0047adeb
     ADD ESP,0x2c                        ; 0047adec

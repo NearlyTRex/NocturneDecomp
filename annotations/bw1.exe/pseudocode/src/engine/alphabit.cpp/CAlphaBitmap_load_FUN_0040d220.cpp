@@ -14,9 +14,9 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(CAlphaBitmap *th
   int iVar1;
   int iVar2;
   uint uVar3;
-  _FILE *p_Var4;
-  int iVar5;
-  uint uVar6;
+  _FILE *file;
+  int iVar4;
+  uint uVar5;
   char local_114 [256];
   _FILE *local_14;
   
@@ -37,44 +37,44 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(CAlphaBitmap *th
     _DAT_01d1d404 = 0xe7;
     core_main_c_FUN_005030e0("CAlphaBitmap::load - Can't open %s",local_114);
   }
-  iVar5 = 0;
+  iVar4 = 0;
   do {
     iVar1 = _fgetc(local_14);
     iVar2 = _fgetc(local_14);
     uVar3 = _fgetc(local_14);
     if (DAT_0061b4a0 == 0x20) {
-      uVar6 = iVar1 << (DAT_01c4e9d4 & 0x1f) | iVar2 << (DAT_01c4e9e0 & 0x1f);
+      uVar5 = iVar1 << (DAT_01c4e9d4 & 0x1f) | iVar2 << (DAT_01c4e9e0 & 0x1f);
       uVar3 = uVar3 << (DAT_01c4e9ec & 0x1f);
     }
     else {
-      uVar6 = iVar1 << 0x10 | iVar2 << 8;
+      uVar5 = iVar1 << 0x10 | iVar2 << 8;
     }
-    iVar1 = iVar5 + 4;
-    *(uint *)(iVar5 + (int)this_ptr->act) = uVar6 | uVar3;
-    iVar5 = iVar1;
+    iVar1 = iVar4 + 4;
+    *(uint *)(iVar4 + (int)this_ptr->act) = uVar5 | uVar3;
+    iVar4 = iVar1;
   } while (iVar1 != 0x400);
   _fclose(local_14);
   _sprintf(local_114,"%s.opa");
-  p_Var4 = engine_dosio_cpp_FUN_00479180(&DAT_005d3035,local_114,&DAT_005d3032);
-  if (p_Var4 == (_FILE *)0x0) {
+  file = engine_dosio_cpp_FUN_00479180(&DAT_005d3035,local_114,&DAT_005d3032);
+  if (file == (_FILE *)0x0) {
     iVar1 = width * height;
-    iVar5 = 0;
+    iVar4 = 0;
     if (0 < iVar1) {
       do {
-        while (this_ptr->act[(byte)this_ptr->raw[iVar5]] != 0) {
-          this_ptr->opa[iVar5] = -1;
-          iVar5 = iVar5 + 1;
-          if (iVar1 <= iVar5) {
+        while (this_ptr->act[(byte)this_ptr->raw[iVar4]] != 0) {
+          this_ptr->opa[iVar4] = -1;
+          iVar4 = iVar4 + 1;
+          if (iVar1 <= iVar4) {
             return;
           }
         }
-        this_ptr->opa[iVar5] = '\0';
-        iVar5 = iVar5 + 1;
-      } while (iVar5 < iVar1);
+        this_ptr->opa[iVar4] = '\0';
+        iVar4 = iVar4 + 1;
+      } while (iVar4 < iVar1);
     }
     return;
   }
-  _fread(this_ptr->opa,width,height,p_Var4);
-  _fclose(p_Var4);
+  _fread(this_ptr->opa,width,height,file);
+  _fclose(file);
   return;
 }

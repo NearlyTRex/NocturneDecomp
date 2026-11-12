@@ -12,9 +12,10 @@ void sound_mp3_cpp_FUN_0052af80(CMP3Decoder *param_1,_FILE *param_2,int param_3)
 
 {
   CFileBitStream *pCVar1;
-  int iVar2;
+  long lVar2;
   char *pcVar3;
   float10 fVar4;
+  int sample_offset;
   SMpegFrameHeader local_68;
   SMpegFrame local_38;
   int local_1c;
@@ -36,8 +37,8 @@ void sound_mp3_cpp_FUN_0052af80(CMP3Decoder *param_1,_FILE *param_2,int param_3)
     (param_1->file_bitstream).buffer = (char *)0x0;
   }
   pCVar1->file_handle = local_14;
-  iVar2 = _ftell(local_14);
-  (param_1->file_bitstream).stream_start_position = iVar2;
+  lVar2 = _ftell(local_14);
+  (param_1->file_bitstream).stream_start_position = lVar2;
   (param_1->file_bitstream).stream_length = local_1c;
   (param_1->file_bitstream).buffer_size = local_18;
   pcVar3 = (char *)malloc(local_18);
@@ -62,10 +63,10 @@ void sound_mp3_cpp_FUN_0052af80(CMP3Decoder *param_1,_FILE *param_2,int param_3)
   fVar4 = (float10)*(double *)
                     (&DAT_006202e8 + local_68.sampling_rate_index * 8 + local_68.mpeg_version * 0x20
                     ) * (float10)_DAT_005eb58e;
-  iVar2 = 0;
+  sample_offset = 0;
   round();
   param_1->sample_rate = (int)ROUND(fVar4);
   param_1->num_channels = local_38.channel_count;
-  sound_mp3_cpp_CMP3Decoder_seek_FUN_0052b2b0(param_1,iVar2);
+  sound_mp3_cpp_CMP3Decoder_seek_FUN_0052b2b0(param_1,sample_offset);
   return;
 }

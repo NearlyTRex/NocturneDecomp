@@ -9,6 +9,6 @@
 int __cdecl core_shovel_cpp_CShovel_fire_FUN_0053fea0(CShovel *this_ptr)
 
 {
-  engine_console_cpp_FUN_00436710(g_CConsolePtr,"Warning: called fire() for melee weapon %s\n",this_ptr);
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"Warning: called fire() for melee weapon %s\n");
   return 0;
 }

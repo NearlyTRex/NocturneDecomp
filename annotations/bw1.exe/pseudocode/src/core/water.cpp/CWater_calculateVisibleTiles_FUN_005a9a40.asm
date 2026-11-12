@@ -77,7 +77,7 @@
 ;   core_dtrace.cpp_FUN_0048f230
 ;   core_main.c_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0
 ;   engine_special.cpp_FUN_00580173
@@ -382,8 +382,8 @@ section .text
     PUSH 0x5f9222                       ; 005a9e2f | = "Vis water tiles : %d, SqFt : %f"
     MOV EBX,dword ptr [0x00611100]      ; 005a9e34 | g_CConsolePtr
     PUSH EBX                            ; 005a9e3a | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 005a9e3b
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 005a9e3b
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 005a9e40
     POP EDI                             ; 005a9e43
     ADD ESP,0xbc                        ; 005a9e44

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_biggs_cpp_factoryFuncBiggs_FUN_00414ce0(void)
+; CBiggs * __cdecl core_biggs_cpp_factoryFuncBiggs_FUN_00414ce0(void)
 ;
 ;
 ; Called Functions:

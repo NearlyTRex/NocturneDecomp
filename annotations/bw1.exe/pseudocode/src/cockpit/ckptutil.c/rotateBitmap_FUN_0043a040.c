@@ -11,9 +11,9 @@
 void * cockpit_ckptutil_c_rotateBitmap_FUN_0043a040(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6)
 
 {
-  _FILE *p_Var1;
-  uint uVar2;
-  byte *puVar3;
+  _FILE *file;
+  uint uVar1;
+  byte *puVar2;
   char acStack_6c [80];
   ulong uStack_1c;
   uint uStack_18;
@@ -29,8 +29,8 @@ void * cockpit_ckptutil_c_rotateBitmap_FUN_0043a040(char *param_1,void *param_2,
       core_main_c_FUN_005030e0(acStack_6c);
     }
   }
-  p_Var1 = engine_dosio_cpp_FUN_00479180((char *)0x5d6412,param_1,(char *)0x5d640f);
-  if (p_Var1 == (_FILE *)0x0) {
+  file = engine_dosio_cpp_FUN_00479180((char *)0x5d6412,param_1,(char *)0x5d640f);
+  if (file == (_FILE *)0x0) {
     _sprintf(acStack_6c,"Unable to open bitmap file (%s).");
     _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
     _DAT_01d1d404 = 0x7c0;
@@ -39,27 +39,27 @@ void * cockpit_ckptutil_c_rotateBitmap_FUN_0043a040(char *param_1,void *param_2,
   uStack_18 = 0;
   if (param_4 != 0) {
     do {
-      uVar2 = 0;
-      puVar3 = (byte *)((int)param_2 + (param_4 - uStack_18) + -1);
+      uVar1 = 0;
+      puVar2 = (byte *)((int)param_2 + (param_4 - uStack_18) + -1);
       if (param_3 != 0) {
         do {
-          iStack_14 = _fgetc(p_Var1);
+          iStack_14 = _fgetc(file);
           if (iStack_14 == -1) {
             _sprintf(acStack_6c,"Unable to read bitmap file (%s).");
-            _fclose(p_Var1);
+            _fclose(file);
             _DAT_01d1d404 = 0x7cd;
             _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
             core_main_c_FUN_005030e0(acStack_6c);
           }
-          uVar2 = uVar2 + 1;
-          *puVar3 = (byte)iStack_14;
-          puVar3 = puVar3 + param_4;
-        } while (uVar2 < param_3);
+          uVar1 = uVar1 + 1;
+          *puVar2 = (byte)iStack_14;
+          puVar2 = puVar2 + param_4;
+        } while (uVar1 < param_3);
       }
       uStack_18 = uStack_18 + 1;
     } while (uStack_18 < param_4);
   }
-  _fclose(p_Var1);
+  _fclose(file);
   if (param_5 == 0) {
     return param_2;
   }

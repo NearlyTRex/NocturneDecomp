@@ -12,12 +12,13 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_00493a40(CBulletHole *this_ptr,C
 
 {
   int iVar1;
-  uint *puVar2;
+  CMatrix3x4f *pCVar2;
   uint *puVar3;
   byte bVar4;
   float10 fVar5;
   float afStackY_1070 [967];
-  byte local_118 [48];
+  CMatrix3x4f local_148;
+  CMatrix3x4f local_118;
   CMatrix3x4f local_e8;
   uint local_b8 [12];
   float local_88;
@@ -65,16 +66,16 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_00493a40(CBulletHole *this_ptr,C
   this_ptr->texture_index = iVar1;
   this_ptr->actor_ptr = hit_actor;
   if (hit_actor != (CDemonActor *)0x0) {
-    core_xform_cpp_FUN_00591c10(local_118,this_ptr,&this_ptr->euler_angles);
+    core_xform_cpp_FUN_00591c10(&local_118,this_ptr,&this_ptr->euler_angles);
     core_xform_cpp_FUN_00591ad0
               (&local_e8,&(this_ptr->actor_ptr->location).position,
                &(this_ptr->actor_ptr->orient).vec);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(local_118,&local_e8);
-    puVar2 = (uint *)&stack0xfffffeb8;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&local_118,&local_e8,&local_148);
+    pCVar2 = &local_148;
     puVar3 = local_b8;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar3 = *puVar2;
-      puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
+      *puVar3 = *(uint *)pCVar2;
+      pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
       puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
     core_xform_cpp_FUN_00592720(local_b8);

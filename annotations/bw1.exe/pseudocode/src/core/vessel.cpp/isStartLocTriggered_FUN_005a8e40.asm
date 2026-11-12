@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_vessel_cpp_isStartLocTriggered_FUN_005a8e40(int param_1)
+; int __cdecl core_vessel_cpp_isStartLocTriggered_FUN_005a8e40(CCryptVessel *actor)
 ;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   actor
 ;
 ; XREF[1]:
 ;   core_vessel.cpp_CCryptVessel_process_FUN_005a8e60 at 005a8f06

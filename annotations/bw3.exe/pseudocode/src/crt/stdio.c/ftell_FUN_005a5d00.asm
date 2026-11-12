@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c_ftell_FUN_005a5d00(int param_1)
+; long __cdecl crt_stdio_c_ftell_FUN_005a5d00(_FILE *file_handle)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_handle
 ;
 ; XREF[9]:
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aa8cf

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flamecan_cpp_factoryFuncFlameCan_FUN_004b8f40(void)
+; CFlameCan * __cdecl core_flamecan_cpp_factoryFuncFlameCan_FUN_004b8f40(void)
 ;
 ;
 ; Called Functions:

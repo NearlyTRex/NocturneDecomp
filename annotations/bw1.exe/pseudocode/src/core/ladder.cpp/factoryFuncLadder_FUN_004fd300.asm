@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ladder_cpp_factoryFuncLadder_FUN_004fd300(void)
+; CLadder * __cdecl core_ladder_cpp_factoryFuncLadder_FUN_004fd300(void)
 ;
 ;
 ; Called Functions:

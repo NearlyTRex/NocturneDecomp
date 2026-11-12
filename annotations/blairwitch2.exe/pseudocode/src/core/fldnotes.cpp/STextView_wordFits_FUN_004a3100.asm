@@ -11,7 +11,7 @@
 ;   core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 at 004a2938
 ;
 ; Called Functions:
-;   engine_font.cpp_FUN_004aaf00
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH EBX                            ; 004a310b
     MOV EDX,dword ptr [EDI + 0x2c]      ; 004a310c
     PUSH EDX                            ; 004a310f
-    CALL engine_font.cpp_FUN_004aaf00   ; 004a3110
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004a3110
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     MOV ECX,dword ptr [EDI + 0x14]      ; 004a3115
     MOV ESI,dword ptr [EDI + 0x24]      ; 004a3118
     ADD EAX,ECX                         ; 004a311b

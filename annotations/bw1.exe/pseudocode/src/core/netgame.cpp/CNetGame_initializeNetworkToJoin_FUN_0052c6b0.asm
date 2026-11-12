@@ -29,7 +29,7 @@
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360
 ;   core_netgame.cpp_CNetGame_send_FUN_0052df50
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400
-;   shape_edittool.cpp_FUN_004943a0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;   support_trisock.cpp_createNetworkAddr_FUN_0059c740
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;
@@ -65,7 +65,7 @@ section .text
     LEA EAX,[ESP + 0x44]                ; 0052c6f4
     PUSH EAX                            ; 0052c6f8
     CALL support_trisock.cpp_createNetworkAddr_FUN_0059c740 ; 0052c6f9
-        ;   XREF to: 0059c740 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_createNetworkAddr_FUN_0059c740()
+        ;   XREF to: 0059c740 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_createNetworkAddr_FUN_0059c740(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
     ADD ESP,0xc                         ; 0052c6fe
     PUSH EAX                            ; 0052c701
     PUSH EBX                            ; 0052c702
@@ -94,7 +94,7 @@ section .text
     LEA EAX,[ESP + 0x40]                ; 0052c730
     PUSH EAX                            ; 0052c734
     CALL support_trisock.cpp_createNetworkAddr_FUN_0059c740 ; 0052c735
-        ;   XREF to: 0059c740 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_createNetworkAddr_FUN_0059c740()
+        ;   XREF to: 0059c740 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_createNetworkAddr_FUN_0059c740(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
     ADD ESP,0xc                         ; 0052c73a
     PUSH 0x0                            ; 0052c73d
     PUSH 0x0                            ; 0052c73f
@@ -246,8 +246,8 @@ section .text
         ;   Label: LAB_0052c8d4
     MOV EDI,dword ptr [0x0061abc0]      ; 0052c8d9 | g_CEditorToolsPtr
     PUSH EDI                            ; 0052c8df
-    CALL shape_edittool.cpp_FUN_004943a0 ; 0052c8e0
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 0052c8e0
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0052c8e5
     PUSH 0x0                            ; 0052c8e8
     PUSH EBX                            ; 0052c8ea
@@ -265,8 +265,8 @@ section .text
         ;   Label: LAB_0052c8fc
     MOV ESI,dword ptr [0x0061abc0]      ; 0052c901 | g_CEditorToolsPtr
     PUSH ESI                            ; 0052c907
-    CALL shape_edittool.cpp_FUN_004943a0 ; 0052c908
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 0052c908
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0052c90d
     PUSH 0x0                            ; 0052c910
     PUSH EBX                            ; 0052c912
@@ -284,8 +284,8 @@ section .text
         ;   Label: LAB_0052c924
     MOV ECX,dword ptr [0x0061abc0]      ; 0052c929 | g_CEditorToolsPtr
     PUSH ECX                            ; 0052c92f
-    CALL shape_edittool.cpp_FUN_004943a0 ; 0052c930
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 0052c930
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0052c935
     PUSH 0x0                            ; 0052c938
         ;   Label: LAB_0052c938

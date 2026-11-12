@@ -24,7 +24,7 @@
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004bbfd0
 ;   core_main.c_FUN_005030e0
-;   shape_edittool.cpp_FUN_004943a0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;
 ; *****************************************************************************
 
@@ -107,8 +107,8 @@ section .text
     PUSH 0x5e0190                       ; 004bdda5 | = "CFieldNotes::enableEntry - entry '%s'..."
     MOV EDX,dword ptr [0x0061abc0]      ; 004bddaa | g_CEditorToolsPtr
     PUSH EDX                            ; 004bddb0
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004bddb1
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004bddb1
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bddb6
     MOV dword ptr [0x0061d2e4],0x1      ; 004bddb9 | DAT_0061d2e4
     POP EBP                             ; 004bddc3

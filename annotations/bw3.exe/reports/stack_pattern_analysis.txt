@@ -7,7 +7,7 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 635 / 5725
+Functions with stack patterns: 635 / 5701
 
 Pattern type counts:
   alt_frame_pointer                430
@@ -53,19 +53,19 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0040297a: MOV ESI,ESP
 
   engine_3d.c_drawLineStrip2D_FUN_00404440
-    File: engine/3d.c, Suspects: 12
+    File: engine/3d.c, Suspects: 35
     - [alt_frame_pointer] at 00404490: MOV EDI,ESP
     - [alt_frame_pointer] at 004044ab: MOV EDI,ESP
     - [alt_frame_pointer] at 004044be: MOV EDI,ESP
 
   engine_3d.c_drawLine2DFromIndices_FUN_00407ab0
-    File: engine/3d.c, Suspects: 10
+    File: engine/3d.c, Suspects: 16
     - [alt_frame_pointer] at 00407aca: MOV EDI,ESP
     - [alt_frame_pointer] at 00407b01: MOV EDI,ESP
     - [alt_frame_pointer] at 00407b11: MOV EDI,ESP
 
-  engine_3d.c_FUN_00407db0
-    File: engine/3d.c, Suspects: 10
+  engine_3d.c_drawLine3DFromIndices_FUN_00407db0
+    File: engine/3d.c, Suspects: 16
     - [alt_frame_pointer] at 00407dca: MOV EDI,ESP
     - [alt_frame_pointer] at 00407e01: MOV EDI,ESP
     - [alt_frame_pointer] at 00407e11: MOV EDI,ESP
@@ -103,7 +103,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00409db9: AND ESP,0xfffffff8
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60
-    File: core/actor.cpp, Suspects: 50
+    File: core/actor.cpp, Suspects: 47
     - [stack_alignment] at 00409f6c: AND ESP,0xfffffff8
 
   core_actor.cpp_archiveLocalizedString_FUN_0040b7a0
@@ -114,7 +114,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0040b806: MOV EDI,ESP
 
   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0
-    File: core/actor.cpp, Suspects: 8
+    File: core/actor.cpp, Suspects: 2
     - [alt_frame_pointer] at 0040b9dd: MOV ESI,ESP
     - [alt_frame_pointer] at 0040b9f5: MOV EDI,ESP
 
@@ -186,7 +186,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 004100c8: MOV EDI,ESP
 
   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490
-    File: core/blundrbs.cpp, Suspects: 41
+    File: core/blundrbs.cpp, Suspects: 38
     - [stack_alignment] at 0041049c: AND ESP,0xfffffff8
 
   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50
@@ -211,7 +211,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 004156fe: MOV ESI,ESP
 
   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0
-    File: core/bodypart.cpp, Suspects: 29
+    File: core/bodypart.cpp, Suspects: 30
     - [stack_alignment] at 004157cc: AND ESP,0xfffffff8
 
   core_bodypart.cpp_FUN_00416bd0
@@ -267,5 +267,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 31.7 suspects/function
-  Without stack patterns: avg 8.4 suspects/function
+  With stack patterns:    avg 30.5 suspects/function
+  Without stack patterns: avg 7.6 suspects/function

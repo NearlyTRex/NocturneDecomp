@@ -13,7 +13,7 @@ CAmmo * __cdecl core_ammo_cpp_CAmmo_dtor_FUN_0040e510(CAmmo *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CAmmoTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CAmmoTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

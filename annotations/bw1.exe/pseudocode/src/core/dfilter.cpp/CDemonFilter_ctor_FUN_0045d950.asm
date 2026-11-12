@@ -7,7 +7,7 @@
 ; CDemonFilter *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_dfilter.cpp_FUN_0045d7c0 at 0045d844
+;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0045d7c0 at 0045d844
 ;   core_game.cpp_staticInit_FUN_004cb7d0 at 004cb82d
 ;
 ; Referenced Globals:

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 187,
+    "complexity_score": 188,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 34,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
+    "pseudocode_lines": 98,
     "suspect_count": 7,
     "suspect_types": [
       "suspect_float",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 329
+    "total_lines": 330
   },
   "cross_references": [
     {
@@ -357,15 +357,15 @@
       "line": 57,
       "match": "DAT_007e1a50",
       "severity": "mild",
-      "text": "uVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0(\"CLightActor\",DAT_007e1a50);",
+      "text": "uVar5 = DAT_007e1a50;",
       "type": "undefined_data"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 65,
+      "line": 66,
       "match": "2.8026e-45",
       "severity": "mild",
-      "text": "pCVar3[5].orient.vec.x = 2.8026e-45;",
+      "text": "pCVar2[5].orient.vec.x = 2.8026e-45;",
       "type": "suspect_float"
     },
     {
@@ -386,7 +386,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 67,
+      "line": 68,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -394,7 +394,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 90,
+      "line": 91,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -13,7 +13,7 @@ CShovel * __cdecl core_shovel_cpp_CShovel_dtor_FUN_0053ff00(CShovel *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CShovelTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CShovelTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

@@ -307,7 +307,7 @@ void FUN_004be970(int param_1);
 
 // Original: core_fldnotes.cpp_CFieldNotes_loadState_FUN_004bebc0
 // Address: 004bebc0
-void __cdecl CFieldNotes::loadState(CFieldNotes *this_ptr,undefined4 param_2);
+void __cdecl CFieldNotes::loadState(CFieldNotes *this_ptr,_FILE *param_2);
 
 // Original: core_fldnotes.cpp_FUN_004bf1c0
 // Address: 004bf1c0
@@ -319,7 +319,7 @@ SPageResourceMap * SPageResourceMap::dtor(SPageResourceMap *this_ptr,uint flags)
 
 // Original: core_fldnotes.cpp_FUN_004bf6c0
 // Address: 004bf6c0
-void FUN_004bf6c0(undefined4 param_1);
+void FUN_004bf6c0(void *param_1);
 
 // Original: core_fldnotes.cpp_CAlphaBitmap_arrdtor6_FUN_004bf6e0
 // Address: 004bf6e0

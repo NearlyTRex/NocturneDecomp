@@ -54,7 +54,7 @@ section .text
     LEA ESI,[EBX + 0x21440]             ; 00527acc
     PUSH ESI                            ; 00527ad2
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00527ad3
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x0060398c]      ; 00527ad8 | g_CPryeMorphClassVersion
     ADD ESP,0x8                         ; 00527ade
     CMP EDX,0x2                         ; 00527ae1
@@ -82,7 +82,7 @@ section .text
     LEA ESI,[EBX + 0x21444]             ; 00527b1b
     PUSH ESI                            ; 00527b21
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00527b22
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00527b27
     CMP dword ptr [0x0060398c],0x4      ; 00527b2a | g_CPryeMorphClassVersion
         ;   Label: LAB_00527b2a

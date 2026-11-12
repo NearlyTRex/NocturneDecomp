@@ -18,7 +18,7 @@ CLarva * core_larva_cpp_CLarva_dtor_FUN_004e13a0(CLarva *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CLarvaTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CLarvaTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

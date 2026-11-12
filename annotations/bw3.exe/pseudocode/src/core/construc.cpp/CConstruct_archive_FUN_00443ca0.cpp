@@ -6,20 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_construc_cpp_CConstruct_archive_FUN_00443ca0(CConstruct *this_ptr)
 
 {
   CDeformableModelInstance *model_ptr;
   int iVar1;
-  CQuaternion4f *pCVar2;
-  CBodyPart **ppCVar3;
-  CQuaternion4f *pCVar4;
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  int aiStack_1c [2];
+  CQuaternion4f *quat_ptr;
+  CBodyPart **actor_ptr;
+  CQuaternion4f *quat_ptr_00;
+  CVector3f CStack_28;
+  int iStack_1c;
+  float fStack_18;
   SBoneGuyBox *pSStack_14;
   CVector3f *pCStack_10;
   CVector3f *pCStack_c;
@@ -31,14 +28,14 @@ void __cdecl core_construc_cpp_CConstruct_archive_FUN_00443ca0(CConstruct *this_
   core_actor_cpp_archiveMotionState_FUN_0040bab0(&model_ptr->base,"motion state");
   core_actor_cpp_archiveString_FUN_0040b680(this_ptr->fall_event,"fallEvent");
   if (g_CConstructClassVersion < 3) {
-    aiStack_1c[0] = 0;
-    aiStack_1c[1] = 0;
-    uStack_20 = 0;
-    uStack_24 = 0;
-    uStack_28 = 0;
-    core_actor_cpp_archiveInteger_FUN_0040b8b0(aiStack_1c,"mistState");
-    core_actor_cpp_archiveFloat_FUN_0040b830(aiStack_1c + 1,"vanishTimer");
-    core_actor_cpp_archiveVector_FUN_0040b400(&uStack_28,"newPos");
+    iStack_1c = 0;
+    fStack_18 = 0.0;
+    CStack_28.z = 0.0;
+    CStack_28.y = 0.0;
+    CStack_28.x = 0.0;
+    core_actor_cpp_archiveInteger_FUN_0040b8b0(&iStack_1c,"mistState");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&fStack_18,"vanishTimer");
+    core_actor_cpp_archiveVector_FUN_0040b400(&CStack_28,"newPos");
     if (g_CConstructClassVersion < 2) {
       return;
     }
@@ -58,21 +55,21 @@ void __cdecl core_construc_cpp_CConstruct_archive_FUN_00443ca0(CConstruct *this_
   }
   pSStack_14 = this_ptr->boxes;
   pCStack_10 = &this_ptr->boxes[0].source_pos;
-  ppCVar3 = &this_ptr->boxes[0].body_part;
-  pCVar2 = &this_ptr->boxes[0].start_orient;
+  actor_ptr = &this_ptr->boxes[0].body_part;
+  quat_ptr = &this_ptr->boxes[0].start_orient;
   pCStack_c = &this_ptr->boxes[0].orient;
-  pCVar4 = &this_ptr->boxes[0].dest_orient;
+  quat_ptr_00 = &this_ptr->boxes[0].dest_orient;
   do {
-    core_actor_cpp_archiveVector_FUN_0040b400(pSStack_14 + iVar1,"boxListPos");
+    core_actor_cpp_archiveVector_FUN_0040b400(&pSStack_14[iVar1].pos,"boxListPos");
     core_actor_cpp_archiveVector_FUN_0040b400(pCStack_c,"boxListOrient");
-    core_actor_cpp_archiveQuaternion_FUN_0040b5e0(pCVar4,"boxListDestOrient");
-    core_actor_cpp_archiveQuaternion_FUN_0040b5e0(pCVar2,"boxListStartOrient");
+    core_actor_cpp_archiveQuaternion_FUN_0040b5e0(quat_ptr_00,"boxListDestOrient");
+    core_actor_cpp_archiveQuaternion_FUN_0040b5e0(quat_ptr,"boxListStartOrient");
     core_actor_cpp_archiveVector_FUN_0040b400(pCStack_10,"sourcePos");
     iVar1 = iVar1 + 1;
-    pCVar4 = (CQuaternion4f *)((int)(pCVar4 + 4) + 8);
-    pCVar2 = (CQuaternion4f *)((int)(pCVar2 + 4) + 8);
-    core_actor_cpp_archiveActor_FUN_0040b930(ppCVar3,"boxListPart");
-    ppCVar3 = ppCVar3 + 0x12;
+    quat_ptr_00 = (CQuaternion4f *)&quat_ptr_00[4].y;
+    quat_ptr = (CQuaternion4f *)&quat_ptr[4].y;
+    core_actor_cpp_archiveActor_FUN_0040b930((CDemonActor **)actor_ptr,"boxListPart");
+    actor_ptr = actor_ptr + 0x12;
     pCStack_10 = pCStack_10 + 6;
     pCStack_c = pCStack_c + 6;
   } while (iVar1 < this_ptr->box_count);

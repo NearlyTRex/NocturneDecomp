@@ -39,7 +39,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x34]      ; 004787cb
     PUSH EDX                            ; 004787cf
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004787d0
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0x2c                        ; 004787d5
     PUSH EBX                            ; 004787d8
     CALL core_dtri.cpp_CDemonTriangle_calculateData_FUN_00478900 ; 004787d9

@@ -13,7 +13,7 @@ CLightGun * __cdecl core_lightgun_cpp_CLightGun_dtor_FUN_004e40e0(CLightGun *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CLightGunTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CLightGunTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

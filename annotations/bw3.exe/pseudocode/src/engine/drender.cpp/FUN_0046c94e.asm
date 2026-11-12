@@ -84,7 +84,7 @@ section .text
         ;   Label: LAB_0046c9d1
     PUSH EAX                            ; 0046c9d4
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0046c9d5
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0046c9da
     TEST EAX,EAX                        ; 0046c9dd
     JZ 0x0046c9cc                       ; 0046c9df

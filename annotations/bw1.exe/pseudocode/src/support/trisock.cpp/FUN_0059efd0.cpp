@@ -9,13 +9,13 @@
 bool support_trisock_cpp_FUN_0059efd0(uint *param_1,char *param_2)
 
 {
-  byte *puVar1;
+  byte *pbVar1;
   uint *puVar2;
   int iVar3;
-  char *pcVar4;
+  int iVar4;
+  char *str2;
   int iVar5;
-  int iVar6;
-  char *pcStack_14;
+  int in_stack_0000001c;
   int iStack_10;
   int iStack_c;
   char *pcStack_8;
@@ -25,7 +25,7 @@ bool support_trisock_cpp_FUN_0059efd0(uint *param_1,char *param_2)
     return false;
   }
   _strncpy(param_2,(char *)*param_1,0x7f);
-  iVar6 = 0;
+  iVar5 = 0;
   iStack_10 = 0;
   pcStack_8 = param_2 + 0x84;
   do {
@@ -34,52 +34,51 @@ bool support_trisock_cpp_FUN_0059efd0(uint *param_1,char *param_2)
       if ((char *)*puVar2 == (char *)0x0) goto LAB_0059f033;
       iStack_10 = iStack_10 + 4;
       _strncpy(pcStack_8,(char *)*puVar2,0x7f);
-      iVar5 = _strcmp(pcStack_8,param_2);
-      if (iVar5 != 0) break;
+      iVar4 = _strcmp(pcStack_8,param_2);
+      if (iVar4 != 0) break;
 LAB_0059f0cb:
-      if (3 < iVar6) goto LAB_0059f033;
+      if (3 < iVar5) goto LAB_0059f033;
     }
-    iVar5 = 0;
-    pcVar4 = param_2 + 0x84;
-    if (0 < iVar6) {
+    iVar4 = 0;
+    str2 = param_2 + 0x84;
+    if (0 < iVar5) {
       do {
-        iVar3 = _strcmp(pcStack_8,pcVar4);
+        iVar3 = _strcmp(pcStack_8,str2);
         if (iVar3 == 0) break;
-        iVar5 = iVar5 + 1;
-        pcVar4 = pcVar4 + 0x80;
-      } while (iVar5 < iVar6);
+        iVar4 = iVar4 + 1;
+        str2 = str2 + 0x80;
+      } while (iVar4 < iVar5);
     }
-    if (iVar5 < iVar6) goto LAB_0059f0cb;
+    if (iVar4 < iVar5) goto LAB_0059f0cb;
     pcStack_8 = pcStack_8 + 0x80;
-    iVar6 = iVar6 + 1;
-  } while (iVar6 < 4);
+    iVar5 = iVar5 + 1;
+  } while (iVar5 < 4);
 LAB_0059f033:
-  *(int *)(param_2 + 0x80) = iVar6;
+  *(int *)(param_2 + 0x80) = iVar5;
   if ((*(short *)(param_1 + 2) == 2) && (*(short *)((int)param_1 + 10) == 4)) {
-    iVar6 = 0;
+    iVar5 = 0;
     iStack_c = 0;
-    pcStack_14 = param_2 + 0x288;
     do {
-      puVar1 = *(byte **)(param_1[3] + iStack_c);
-      if (puVar1 == (byte *)0x0) break;
+      pbVar1 = *(byte **)(param_1[3] + iStack_c);
+      if (pbVar1 == (byte *)0x0) break;
       iStack_c = iStack_c + 4;
-      iVar5 = 0;
+      iVar4 = 0;
       support_trisock_cpp_buildIPAddress_FUN_0059c640
-                (pcStack_14,*puVar1,puVar1[1],puVar1[2],puVar1[3]);
-      if (0 < iVar6) {
-        pcVar4 = param_2;
+                ((uint8_t *)(param_2 + 0x288),(uint)*pbVar1,(uint)pbVar1[1],(uint)pbVar1[2],
+                 (uint)pbVar1[3]);
+      if (0 < iVar5) {
+        iVar3 = in_stack_0000001c;
         do {
-          if (*(int *)(param_2 + 0x288 + iVar6 * 4) == *(int *)(pcVar4 + 0x288)) break;
-          iVar5 = iVar5 + 1;
-          pcVar4 = pcVar4 + 4;
-        } while (iVar5 < iVar6);
+          if (*(int *)(pcStack_8 + iVar5 * 4) == *(int *)(iVar3 + 0x288)) break;
+          iVar4 = iVar4 + 1;
+          iVar3 = iVar3 + 4;
+        } while (iVar4 < iVar5);
       }
-      if (iVar6 <= iVar5) {
-        pcStack_14 = pcStack_14 + 4;
-        iVar6 = iVar6 + 1;
+      if (iVar5 <= iVar4) {
+        iVar5 = iVar5 + 1;
       }
-    } while (iVar6 < 0xc);
-    *(int *)(param_2 + 0x284) = iVar6;
+    } while (iVar5 < 0xc);
+    *(int *)(param_2 + 0x284) = iVar5;
   }
   return 0 < *(int *)(param_2 + 0x284);
 }

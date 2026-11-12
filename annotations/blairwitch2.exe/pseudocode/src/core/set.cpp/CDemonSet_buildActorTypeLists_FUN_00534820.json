@@ -2,17 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 71,
+    "complexity_score": 104,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
-    "suspect_count": 1,
+    "pseudocode_lines": 59,
+    "suspect_count": 3,
     "suspect_types": [
+      "derived_field_index_pun",
+      "pointer_cast",
       "shadow_pointer_walk"
     ],
-    "total_lines": 168
+    "total_lines": 171
   },
   "cross_references": [
     {
@@ -134,6 +136,26 @@
     },
     "pcode_op_count": 404
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00555ad0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8718
+    },
+    "nocedit.exe": {
+      "addr": "00570fc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0050e6b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -152,12 +174,27 @@
   },
   "suspects": [
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 55,
-      "match": "pCVar8 = (T *)pCVar8->ARRAY",
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 43,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
-      "text": "pCVar8 = (CDemonSet *)pCVar8->cameras;",
+      "text": "if (((pCVar4 != (CDemonActor *)0x0) && (*(int *)(pCVar4[1].actor_name + 0x1c) == 4)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 58,
+      "match": "pCVar6 = (T *)pCVar6->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "'pCVar4[1].actor_name + 0x1c' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(actor_name) (0x0) + 0x1c = 0x2d0, which is exactly offsetof(CActorDestination, dest_class[24]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar4)->dest_class[24] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[12], CBat::course_filename[28], CBodyPart::vertex_count also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 43,
+      "severity": "moderate",
+      "text": "if (((pCVar4 != (CDemonActor *)0x0) && (*(int *)(pCVar4[1].actor_name + 0x1c) == 4)) &&",
+      "type": "derived_field_index_pun"
     }
   ]
 }

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_computeBoneModelMatrices_FUN_0054fcc0(float *param_1,CDeformableModelInstance *param_2)
+; void __cdecl core_skeleton_cpp_computeBoneModelMatrices_FUN_0054fcc0(SPose *bone_data,CDeformableModelInstance *instance_ptr)
 ;
+; Parameters:
+; SPose *          Stack[0x4]:4   bone_data
+; CDeformableModelInstance * Stack[0x8]:4   instance_ptr
 ;
 ; XREF[2]:
 ;   core_skeleton.cpp_FUN_0054eb40 at 0054ebc7

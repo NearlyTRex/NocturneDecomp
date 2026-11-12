@@ -119,7 +119,7 @@ section .text
         ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
     FISTP dword ptr [ESP + 0x3c]        ; 0047eeba
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 0047eebe
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EBX,EAX                         ; 0047eec3
     MOV dword ptr [ESP + 0x30],EAX      ; 0047eec5
     MOV EAX,[0x01c5b104]                ; 0047eec9 | DAT_01c5b104

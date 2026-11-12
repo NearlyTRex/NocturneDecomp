@@ -33,9 +33,8 @@ int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(CHero *this_ptr)
   local_28 = &(this_ptr->base).base.location;
   local_14 = 0;
   for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
-    pCVar1 = (CDemonActor *)
-             core_actor_cpp_castToClassHash_FUN_0040c840
-                       (*(uint *)((int)g_CDemonSetPtr->actors + local_14),
+    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
+                       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_14),
                         g_CLeverClassInfo.name_hash);
     if (pCVar1 != (CDemonActor *)0x0) {
       core_actor_cpp_FUN_00408bf0(this_ptr,&pCVar1->location);

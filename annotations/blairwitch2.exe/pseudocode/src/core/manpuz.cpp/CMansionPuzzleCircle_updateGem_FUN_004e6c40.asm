@@ -72,7 +72,7 @@ section .text
     PUSH dword ptr [EBX + 0x18]         ; 004e6cb4
     PUSH EAX                            ; 004e6cb7
     CALL core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20 ; 004e6cb8
-        ;   XREF to: 004e6b20 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20()
+        ;   XREF to: 004e6b20 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20(float * hum_value, float target, float max_step, uint * sfx_handle, ...)
     ADD ESP,0x18                        ; 004e6cbd
     MOV ESI,EAX                         ; 004e6cc0
     LEA EAX,[ESP + 0xc]                 ; 004e6cc2
@@ -86,7 +86,7 @@ section .text
     PUSH EAX                            ; 004e6cdd
     AND ESI,0x1                         ; 004e6cde
     CALL core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20 ; 004e6ce1
-        ;   XREF to: 004e6b20 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20()
+        ;   XREF to: 004e6b20 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20(float * hum_value, float target, float max_step, uint * sfx_handle, ...)
     ADD ESP,0x18                        ; 004e6ce6
     AND ESI,EAX                         ; 004e6ce9
     LEA EAX,[ESP + 0xc]                 ; 004e6ceb
@@ -99,7 +99,7 @@ section .text
     PUSH dword ptr [EBX + 0x20]         ; 004e6d03
     PUSH EAX                            ; 004e6d06
     CALL core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20 ; 004e6d07
-        ;   XREF to: 004e6b20 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20()
+        ;   XREF to: 004e6b20 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20(float * hum_value, float target, float max_step, uint * sfx_handle, ...)
     ADD ESP,0x18                        ; 004e6d0c
     AND ESI,EAX                         ; 004e6d0f
     LEA EAX,[ESP + 0x20]                ; 004e6d11

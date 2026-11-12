@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lever_cpp_factoryFuncLever_FUN_004e00d0(void)
+; CLever * __cdecl core_lever_cpp_factoryFuncLever_FUN_004e00d0(void)
 ;
 ;
 ; Called Functions:

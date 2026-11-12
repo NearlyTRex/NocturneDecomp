@@ -16,7 +16,8 @@ void core_zombie_cpp_FUN_0059aa80(void)
   _atexit(&WatcomStaticDestructorNode_0061e9bb);
   core_zombie_cpp_FUN_0059ab30(&g_CAudioRecPuzzleInstance);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&g_CAudioRecPuzzleInstance.background);
-  __arrinit(0x266789c,0x1e,&g___1hlg6hbuttonStructTypeInfo);
+  __arrinit
+            (g_CAudioRecPuzzleInstance.buttons,0x1e,&g___1hlg6hbuttonStructTypeInfo);
   core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80(&g_CAudioRecPuzzleInstance.reel_model);
   core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
             (&g_CAudioRecPuzzleInstance.reel_shadow_model);

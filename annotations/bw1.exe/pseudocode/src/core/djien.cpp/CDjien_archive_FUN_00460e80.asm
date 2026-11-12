@@ -45,7 +45,7 @@ section .text
     LEA EAX,[EBX + 0xc1d0]              ; 00460e94
     PUSH EAX                            ; 00460e9a
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00460e9b
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00460ea0
     PUSH 0x5d8da8                       ; 00460ea3 | = "modelName"
     LEA ESI,[EBX + 0x158]               ; 00460ea8
@@ -82,37 +82,37 @@ section .text
     LEA EAX,[EBX + 0xc2d8]              ; 00460f00
     PUSH EAX                            ; 00460f06
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00460f07
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00460f0c
     PUSH 0x5d8de8                       ; 00460f0f | = "Sack1Damage"
     LEA EAX,[EBX + 0xc2dc]              ; 00460f14
     PUSH EAX                            ; 00460f1a
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00460f1b
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00460f20
     PUSH 0x5d8df4                       ; 00460f23 | = "Sack2Damage"
     LEA EAX,[EBX + 0xc2e0]              ; 00460f28
     PUSH EAX                            ; 00460f2e
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00460f2f
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00460f34
     PUSH 0x5d8e00                       ; 00460f37 | = "Sack3Damage"
     LEA EAX,[EBX + 0xc2e4]              ; 00460f3c
     PUSH EAX                            ; 00460f42
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00460f43
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00460f48
     PUSH 0x5d8e0c                       ; 00460f4b | = "Sack4Damage"
     LEA EAX,[EBX + 0xc2e8]              ; 00460f50
     PUSH EAX                            ; 00460f56
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00460f57
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00460f5c
     PUSH 0x5d8e18                       ; 00460f5f | = "Sack5Damage"
     ADD EBX,0xc2ec                      ; 00460f64
     PUSH EBX                            ; 00460f6a
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00460f6b
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00460f70
     PUSH 0x5d8e24                       ; 00460f73 | = "partStatus"
     PUSH ESI                            ; 00460f78

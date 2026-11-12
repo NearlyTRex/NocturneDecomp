@@ -81,13 +81,13 @@ int __cdecl CBitFont::drawTextFV(CBitFont *this_ptr,int x_pos,int y_pos,int colo
 // Address: 004b0da0
 int __cdecl CBitFont::drawTextRight(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 
-// Original: engine_font.cpp_FUN_004b0de0
+// Original: engine_font.cpp_CBitFont_printF_FUN_004b0de0
 // Address: 004b0de0
-void FUN_004b0de0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void __cdecl CBitFont::printF(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format);
 
-// Original: engine_font.cpp_FUN_004b0e30
+// Original: engine_font.cpp_CBitFont_printFV_FUN_004b0e30
 // Address: 004b0e30
-void FUN_004b0e30(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6 ,undefined4 param_7);
+void __cdecl CBitFont::printFV(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format,va_list_t args);
 
 // Original: engine_font.cpp_CBitFont_drawTextCenter_FUN_004b0ea0
 // Address: 004b0ea0

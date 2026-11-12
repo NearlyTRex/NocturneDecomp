@@ -29,11 +29,11 @@
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
 ;   core_actor.cpp_FUN_00408b80
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_FUN_0042c1e0
 ;   core_charactr.cpp_FUN_0042c230
-;   core_charactr.cpp_FUN_0042cd30
 ;   core_charactr.cpp_FUN_0042cd70
 ;   core_charactr.cpp_FUN_004319d0
 ;   core_charactr.cpp_FUN_00432330
@@ -110,7 +110,7 @@ section .text
     PUSH 0x5da590                       ; 005a0c92 | = "CExorcism"
         ;   Label: LAB_005a0c92
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 005a0c97
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 005a0c9c
     MOV EBX,dword ptr [EBP + 0x14]      ; 005a0c9f
     MOV dword ptr [EBX + 0x33fd0],EAX   ; 005a0ca2
@@ -395,8 +395,8 @@ section .text
         ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 005a1047
     PUSH EBX                            ; 005a104a
-    CALL core_charactr.cpp_FUN_0042cd30 ; 005a104b
-        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042cd30(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30 ; 005a104b
+        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005a1050
     LEA EAX,[EBX + 0x158]               ; 005a1053
     PUSH EAX                            ; 005a1059
@@ -434,8 +434,8 @@ section .text
     PUSH 0x5da5a6                       ; 005a109c | = "%s confused while walking to scriptDe..."
     MOV EBX,dword ptr [0x005f1690]      ; 005a10a1 | g_CConsolePtr
     PUSH EBX                            ; 005a10a7 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 005a10a8
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 005a10a8
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     JMP 0x005a0eac                      ; 005a10ad
         ;   XREF to: 005a0eac (UNCONDITIONAL_JUMP)  ; LAB_005a0eac
     PUSH 0x0                            ; 005a10b2

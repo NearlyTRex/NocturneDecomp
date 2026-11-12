@@ -35,9 +35,9 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0
-;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_004f5350
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadStoredACTFile_FUN_004f5c60
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_004f5320
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_004f5c40
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_free_FUN_005638d0
@@ -61,8 +61,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1ac]     ; 004f54ca
     MOV EBP,dword ptr [ESP + 0x1b8]     ; 004f54d1
     PUSH EBX                            ; 004f54d8
-    CALL cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320 ; 004f54d9
-        ;   XREF to: 004f5320 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320(CPackedBitmapSet * this_ptr)
+    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_004f5320 ; 004f54d9
+        ;   XREF to: 004f5320 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_004f5320(CPackedBitmapSet * this_ptr)
     ADD ESP,0x4                         ; 004f54de
     MOV EDX,dword ptr [ESP + 0x1b0]     ; 004f54e1
     PUSH EDX                            ; 004f54e8

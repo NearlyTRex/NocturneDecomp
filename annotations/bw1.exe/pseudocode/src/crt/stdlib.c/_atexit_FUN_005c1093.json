@@ -2,17 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 45,
+    "complexity_score": 5,
     "cross_reference_count": 32,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 12
   },
   "cross_references": [
@@ -219,7 +216,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdlib.c__atexit_FUN_005c1093",
-    "signature": "void __cdecl crt_stdlib_c__atexit_FUN_005c1093(undefined4 param_1)"
+    "signature": "void __cdecl crt_stdlib_c__atexit_FUN_005c1093(WatcomStaticDestructorNode *exit_node)"
   },
   "function_calls": [
     {
@@ -344,10 +341,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.2,
@@ -369,41 +366,47 @@
     },
     "pcode_op_count": 21
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b8d8c",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a3e13",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ff060",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00564bb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "exit_node",
+        "offset": 4,
+        "size": 4,
+        "type": "WatcomStaticDestructorNode *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl _atexit(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005c6fdb(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

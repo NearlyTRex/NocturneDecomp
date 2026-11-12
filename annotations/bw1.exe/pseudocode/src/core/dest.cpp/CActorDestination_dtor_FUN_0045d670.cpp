@@ -13,7 +13,7 @@ CActorDestination * __cdecl core_dest_cpp_CActorDestination_dtor_FUN_0045d670(CA
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CActorDestinationTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CActorDestinationTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

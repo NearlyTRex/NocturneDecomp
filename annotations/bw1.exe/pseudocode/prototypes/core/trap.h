@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_trap.cpp_factoryFuncTrap_FUN_00599ce0
 // Address: 00599ce0
-void factoryFuncTrap(void);
+CTrap * __cdecl factoryFuncTrap(void);
 
 // Original: core_trap.cpp_CTrap_getActorType_FUN_00599d00
 // Address: 00599d00

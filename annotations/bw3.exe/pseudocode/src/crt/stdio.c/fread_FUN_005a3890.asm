@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_fread_FUN_005a3890(char *param_1,uint param_2,int param_3,int *param_4)
+; SIZE_T __cdecl crt_stdio_c_fread_FUN_005a3890(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   buffer
+; SIZE_T           Stack[0x8]:4   size
+; SIZE_T           Stack[0xc]:4   count
+; _FILE *          Stack[0x10]:4   file
 ;
 ; XREF[26]:
 ;   cockpit_ckptutil.c_FUN_004367e0 at 00436850

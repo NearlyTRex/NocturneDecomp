@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_beast_cpp_factoryFuncBeast_FUN_004146c0(void)
+; CBeast * __cdecl core_beast_cpp_factoryFuncBeast_FUN_004146c0(void)
 ;
 ;
 ; Called Functions:

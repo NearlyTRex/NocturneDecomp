@@ -16,12 +16,12 @@ SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004baad0(SP
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_PageResource_BitmapTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_PageResource_BitmapTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }
   (this_ptr->base).vtable = &g_SPageResourceBitmapVTable;
-  engine_alphabit_cpp_FUN_0040d1c0(&this_ptr->bitmap);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&this_ptr->bitmap);
   pCVar1 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0(&this_ptr->bitmap,0);
   pSVar2 = (SPageResourceBitmap *)
            core_fldnotes_cpp_SPageResource_dtor_FUN_004ba760((SPageResource *)&pCVar1[-2].height);

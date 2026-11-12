@@ -10,6 +10,6 @@ void support_trstream_cpp_staticInit_FUN_00572510(void)
 
 {
   support_trstream_cpp_COutStreamDebug_ctor_FUN_00574e00(&g_COutStreamDebugInstance);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_00606abc);
   return;
 }

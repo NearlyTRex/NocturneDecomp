@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_script_cpp_getActionState_FUN_00543540(int param_1,char *param_2)
+; int * __cdecl core_script_cpp_getActionState_FUN_00543540(SPlayerActionState *action_state,char *action_name)
 ;
+; Parameters:
+; SPlayerActionState * Stack[0x4]:4   action_state
+; char *           Stack[0x8]:4   action_name
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_00544460 at 005485f3

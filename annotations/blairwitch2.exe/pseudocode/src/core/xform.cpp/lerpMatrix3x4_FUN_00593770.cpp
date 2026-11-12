@@ -53,7 +53,7 @@ void core_xform_cpp_lerpMatrix3x4_FUN_00593770(uint *param_1,uint *param_2,float
     *puVar4 = auStack_5c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd];
     puVar4[(uint)bVar5 * -2 + 1] =
          (auStack_5c + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd)[(uint)bVar5 * -2 + 1];
-    core_xform_cpp_FUN_005938c0(&local_d0,&local_70);
+    core_xform_cpp_quaternionToMatrix3x3_FUN_005938c0(&local_d0,&local_70);
     pCVar3 = &local_d0;
     fVar1 = 1.0 - param_3;
     local_d0.m[0].z = (float)param_2[3] * param_3 + (float)param_1[3] * fVar1;

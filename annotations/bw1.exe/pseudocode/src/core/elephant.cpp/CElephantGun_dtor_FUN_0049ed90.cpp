@@ -13,7 +13,7 @@ CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_0049ed90(CElephan
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CElephantGunTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CElephantGunTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

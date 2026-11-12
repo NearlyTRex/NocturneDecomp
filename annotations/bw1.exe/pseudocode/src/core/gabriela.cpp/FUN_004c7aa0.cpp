@@ -107,8 +107,8 @@ void core_gabriela_cpp_FUN_004c7aa0(CDemonActor *param_1)
                         ((CPathMap *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0xc208),
                          &(param_1->location).position,&local_114,param_1->direction_hint);
       if (iVar6 != 0) {
-        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                    (local_114.y - (param_1->orient).vec.y);
+        local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                             (local_114.y - (param_1->orient).vec.y);
         fVar10 = local_18 * _DAT_005e1044 * (float)_DAT_005e103c;
         local_2c = -local_20;
         *(float *)(param_1[0x90].create_event + 8) = fVar10;
@@ -178,8 +178,8 @@ void core_gabriela_cpp_FUN_004c7aa0(CDemonActor *param_1)
         *(float *)((int)&stack0xfffffe90 + (uint)bVar9 * -8) = local_74[(uint)bVar9 * -2 + 3];
         *(float *)((int)&stack0xfffffe94 + ((uint)bVar9 * -2 + (uint)bVar9 * -2) * 4) =
              local_74[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                    (local_170 - (param_1->orient).vec.y);
+        local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                             (local_170 - (param_1->orient).vec.y);
         fVar10 = local_18 * _DAT_005e1044 * (float)_DAT_005e103c;
         local_28 = -local_20;
         *(float *)(param_1[0x90].create_event + 8) = fVar10;

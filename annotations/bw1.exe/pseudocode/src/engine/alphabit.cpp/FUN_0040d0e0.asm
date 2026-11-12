@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
-;   engine_alphabit.cpp_FUN_0040d1c0
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 0040d0e8
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0040d0ec
     PUSH EBX                            ; 0040d0f0
-    CALL engine_alphabit.cpp_FUN_0040d1c0 ; 0040d0f1
-        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d1c0(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0 ; 0040d0f1
+        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap * this_ptr)
     MOV EAX,EDI                         ; 0040d0f6
     IMUL EAX,ESI                        ; 0040d0f8
     ADD ESP,0x4                         ; 0040d0fb

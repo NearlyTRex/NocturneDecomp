@@ -20,7 +20,7 @@ CSpiritEagle * core_spireagl_cpp_CSpiritEagle_dtor_FUN_00599e40(CSpiritEagle *th
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSpiritEagleTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSpiritEagleTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

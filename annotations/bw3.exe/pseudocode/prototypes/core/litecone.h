@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_litecone.cpp_factoryFuncLightCone_FUN_004e3f90
 // Address: 004e3f90
-void factoryFuncLightCone(void);
+CLightCone * __cdecl factoryFuncLightCone(void);
 
 // Original: core_litecone.cpp_CLightCone_getActorType_FUN_004e3fb0
 // Address: 004e3fb0

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 198,
+    "complexity_score": 180,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 15,
     "suspect_types": [
-      "raw_address_constant",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 83
+    "total_lines": 80
   },
   "cross_references": [],
   "function": {
@@ -100,6 +99,20 @@
     },
     "pcode_op_count": 304
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047ff4e",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004985ae",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -159,31 +172,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 12,
       "match": "param_4",
       "severity": "mild",
-      "text": "iStack_24 = (int)ROUND(*param_4 * _DAT_005deffc);",
+      "text": "SStack_28.point.x = (int)ROUND(*param_4 * _DAT_005deffc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "SStack_28.point.y = (int)ROUND(param_4[1] * _DAT_005deffc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "SStack_28.point.z = (int)ROUND(param_4[2] * _DAT_005deffc);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 16,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iStack_20 = (int)ROUND(param_4[1] * _DAT_005deffc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iStack_1c = (int)ROUND(param_4[2] * _DAT_005deffc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
       "match": "param_5",
       "severity": "mild",
       "text": "iStack_18 = (int)ROUND(*param_5 * _DAT_005df00c);",
@@ -191,7 +204,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 17,
       "match": "param_5",
       "severity": "mild",
       "text": "iStack_14 = (int)ROUND(param_5[2] * _DAT_005df00c);",
@@ -199,7 +212,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 18,
       "match": "param_5",
       "severity": "mild",
       "text": "iStack_10 = (int)ROUND(param_5[1] * _DAT_005df00c);",
@@ -207,7 +220,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_00480f00(param_1,param_2,param_3);",
@@ -215,7 +228,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_00480f00(param_1,param_2,param_3);",
@@ -223,19 +236,11 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 20,
       "match": "param_3",
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_00480f00(param_1,param_2,param_3);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Raw hex address 0x4811ed assigned to bare local `iStack_20`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_20` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 24,
-      "match": "0x4811ed",
-      "severity": "moderate",
-      "text": "iStack_20 = 0x4811ed;",
-      "type": "raw_address_constant"
     }
   ]
 }

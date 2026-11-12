@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 151,
+    "complexity_score": 81,
     "cross_reference_count": 73,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 12,
+    "suspect_count": 6,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 67
   },
@@ -466,7 +464,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0",
-    "signature": "void __cdecl core_actor_cpp_archiveFloat_FUN_0040b8e0(float *param_1,char *param_2)"
+    "signature": "void __cdecl core_actor_cpp_archiveFloat_FUN_0040b8e0(float *float_ptr,char *property_name)"
   },
   "function_calls": [
     {
@@ -643,10 +641,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.358974358974359,
@@ -674,11 +672,37 @@
     },
     "pcode_op_count": 170
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040b5f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040b830",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040b770",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040c880",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 28,
     "local_size": 20,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -687,26 +711,24 @@
         "offset": -16,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "float_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveFloat_FUN_0040b8e0(float *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveFloat_FUN_0040b8e0(float *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 7,
@@ -732,27 +754,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"Floating point value\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab41,&DAT_00609590,(double)*param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 15,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab41,&DAT_00609590,(double)*param_1);",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab41,&DAT_00609590,(double)*float_ptr);",
       "type": "undefined_data"
     },
     {
@@ -760,7 +766,7 @@
       "line": 15,
       "match": "DAT_005cab41",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab41,&DAT_00609590,(double)*param_1);",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab41,&DAT_00609590,(double)*float_ptr);",
       "type": "undefined_data"
     },
     {
@@ -768,27 +774,8 @@
       "line": 15,
       "match": "DAT_00609590",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab41,&DAT_00609590,(double)*param_1);",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab41,&DAT_00609590,(double)*float_ptr);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveDescription_FUN_0040b400(\"Floating point value\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

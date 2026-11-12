@@ -405,7 +405,7 @@ section .text
     PUSH EDX                            ; 00415c1f
     XOR EDI,EDI                         ; 00415c20
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_004dece0 ; 00415c22
-        ;   XREF to: 004dece0 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculateSurfaceNormal_FUN_004dece0()
+        ;   XREF to: 004dece0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_004dece0(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     MOV ECX,dword ptr [ESI + 0x4]       ; 00415c27
     ADD ESP,0x8                         ; 00415c2a
     TEST ECX,ECX                        ; 00415c2d

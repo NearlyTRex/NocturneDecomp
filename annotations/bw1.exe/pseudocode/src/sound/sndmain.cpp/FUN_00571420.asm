@@ -682,7 +682,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x120]     ; 00571b9b
     PUSH EDX                            ; 00571ba1
     CALL sound_sndmain.cpp_mixResampleStereoToStereo_FUN_0056fcd0 ; 00571ba2
-        ;   XREF to: 0056fcd0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_mixResampleStereoToStereo_FUN_0056fcd0()
+        ;   XREF to: 0056fcd0 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_mixResampleStereoToStereo_FUN_0056fcd0(short * sample_data, SStereoBuffers * channel_buffers, SStereoGains * channel_gains, double resample_position, ...)
     MOV dword ptr [ESP + 0x8c],EAX      ; 00571ba7
     MOV dword ptr [ESP + 0x90],EDX      ; 00571bae
     FLD double ptr [ESP + 0x8c]         ; 00571bb5
@@ -758,7 +758,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x120]     ; 00571c7f
     PUSH EDX                            ; 00571c85
     CALL sound_sndmain.cpp_mixResampleMonoToStereo_FUN_0056fb90 ; 00571c86
-        ;   XREF to: 0056fb90 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_mixResampleMonoToStereo_FUN_0056fb90()
+        ;   XREF to: 0056fb90 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_mixResampleMonoToStereo_FUN_0056fb90(short * sample_data, SStereoBuffers * channel_buffers, SStereoGains * channel_gains, double resample_position, ...)
     MOV dword ptr [ESP + 0x8c],EAX      ; 00571c8b
     MOV dword ptr [ESP + 0x90],EDX      ; 00571c92
     FLD double ptr [ESP + 0x8c]         ; 00571c99

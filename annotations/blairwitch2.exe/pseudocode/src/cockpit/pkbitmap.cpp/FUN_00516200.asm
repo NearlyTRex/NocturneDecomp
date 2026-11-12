@@ -9,7 +9,7 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00516a60 at 00516a72
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00517130 at 0051713a
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30 at 00516f40
-;   cockpit_pkbitmap.cpp_FUN_005168e0 at 005168ed
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0 at 005168ed
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_005161d0

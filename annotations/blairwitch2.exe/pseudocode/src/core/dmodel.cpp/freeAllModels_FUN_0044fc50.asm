@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_FUN_004e4e20 at 004e4e64
-;   core_mission.cpp_FUN_004fcf50 at 004fcf55
+;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004fcf50 at 004fcf55
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01b13a1c

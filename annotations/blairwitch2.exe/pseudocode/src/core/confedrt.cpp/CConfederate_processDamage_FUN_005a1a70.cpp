@@ -9,11 +9,11 @@
 void __cdecl core_confedrt_cpp_CConfederate_processDamage_FUN_005a1a70(CConfederate *this_ptr,SDamageInfo *damage_info)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                    (damage_info->wielder,g_CConfederateClassInfo.name_hash);
-  if (iVar1 != 0) {
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                     (damage_info->wielder,g_CConfederateClassInfo.name_hash);
+  if (pCVar1 != (CDemonActor *)0x0) {
     return;
   }
   core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(&this_ptr->base,damage_info);

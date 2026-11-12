@@ -110,7 +110,7 @@ section .text
         ;   Label: LAB_0056be32
     PUSH dword ptr [ESP + 0x34]         ; 0056be36
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0056be3a
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x58],EAX      ; 0056be3f
     FLD float ptr [ESP + 0x58]          ; 0056be43
     ADD ESP,0x4                         ; 0056be47
@@ -166,7 +166,7 @@ section .text
         ;   Label: LAB_0056bebd
     PUSH dword ptr [ESP + 0x38]         ; 0056bec1
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0056bec5
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x58],EAX      ; 0056beca
     FLD float ptr [ESP + 0x58]          ; 0056bece
     ADD ESP,0x4                         ; 0056bed2

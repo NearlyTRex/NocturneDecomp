@@ -193,7 +193,7 @@
       "line": 39,
       "match": "param_2",
       "severity": "mild",
-      "text": "piVar4 = param_2 + 1;",
+      "text": "buffer = param_2 + 1;",
       "type": "unnamed_param"
     },
     {
@@ -233,7 +233,7 @@
       "line": 54,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_2 = (int)pvVar3;",
+      "text": "*param_2 = (int)pvVar2;",
       "type": "unnamed_param"
     },
     {
@@ -241,7 +241,7 @@
       "line": 62,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = _fread(*param_2,size,1,p_Stack_14);",
+      "text": "SVar1 = _fread((void *)*param_2,size,1,p_Stack_14);",
       "type": "unnamed_param"
     },
     {
@@ -265,15 +265,15 @@
       "line": 73,
       "match": "param_3",
       "severity": "mild",
-      "text": "} while (iVar1 < param_3);",
+      "text": "} while (iVar3 < param_3);",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `pvVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 54,
-      "match": "(int)pvVar3",
+      "match": "(int)pvVar2",
       "severity": "moderate",
-      "text": "*param_2 = (int)pvVar3;",
+      "text": "*param_2 = (int)pvVar2;",
       "type": "pointer_truncation"
     }
   ]

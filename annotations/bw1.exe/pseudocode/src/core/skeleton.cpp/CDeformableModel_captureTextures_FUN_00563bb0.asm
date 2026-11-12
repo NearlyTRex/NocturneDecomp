@@ -35,7 +35,7 @@ section .text
     LEA EAX,[EDI + 0x355c]              ; 00563bbb
     PUSH EAX                            ; 00563bc1
     CALL core_skeleton.cpp_loadSkeleton_FUN_0056b650 ; 00563bc2
-        ;   XREF to: 0056b650 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_loadSkeleton_FUN_0056b650()
+        ;   XREF to: 0056b650 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_loadSkeleton_FUN_0056b650(char * filename)
     ADD ESP,0x4                         ; 00563bc7
     PUSH EAX                            ; 00563bca
     PUSH EDI                            ; 00563bcb

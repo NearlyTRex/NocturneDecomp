@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stranger_cpp_factoryFuncStranger_FUN_00585240(void)
+; CStranger * __cdecl core_stranger_cpp_factoryFuncStranger_FUN_00585240(void)
 ;
 ;
 ; Called Functions:

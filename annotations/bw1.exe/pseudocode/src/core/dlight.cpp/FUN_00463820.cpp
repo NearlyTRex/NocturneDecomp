@@ -19,7 +19,10 @@ void __cdecl core_dlight_cpp_FUN_00463820(CDemonLight *this_ptr)
   byte bVar4;
   float10 fVar5;
   ulonglong uVar6;
-  float afStackY_1094 [996];
+  int aiStackY_1094 [6];
+  float afStackY_107c [6];
+  int aiStackY_1064 [15];
+  float afStackY_1028 [969];
   CVector3f *translation;
   SMRGLHeaderPrimitive SStack_f8;
   uint local_e0;
@@ -36,10 +39,9 @@ void __cdecl core_dlight_cpp_FUN_00463820(CDemonLight *this_ptr)
   float local_94;
   float local_90 [4];
   float local_80;
-  int local_7c;
-  float afStack_78 [5];
-  int local_64;
-  float local_60;
+  CVector3i local_7c;
+  float local_70;
+  int aiStack_6c [4];
   int local_5c;
   uint local_58;
   uint local_54;
@@ -64,24 +66,24 @@ void __cdecl core_dlight_cpp_FUN_00463820(CDemonLight *this_ptr)
             (DAT_00612560,&world_position->f);
   engine_drender_cpp_FUN_00483b70(DAT_00612560);
   translation = (CVector3f *)0x0;
-  local_ac.x = afStack_78[2];
-  *(float *)((int)&local_ac + (uint)bVar4 * -8 + 4) = afStack_78[(uint)bVar4 * -2 + 3];
-  *(float *)((int)&local_ac + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-       afStack_78[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+  local_ac.x = local_70;
+  *(int *)((int)&local_ac + (uint)bVar4 * -8 + 4) = aiStack_6c[(uint)bVar4 * -2];
+  *(int *)((int)&local_ac + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       aiStack_6c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
             (DAT_00612560,&local_ac,translation);
-  engine_drender_cpp_FUN_00483ac0(DAT_00612560);
-  local_64 = local_7c;
-  (&local_60)[(uint)bVar4 * -2] = afStack_78[(uint)bVar4 * -2];
-  (&local_60)[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       afStack_78[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0(DAT_00612560,&local_7c);
+  aiStack_6c[2] = local_7c.x;
+  aiStack_6c[(uint)bVar4 * -2 + 3] = *(int *)((int)&local_7c + (uint)bVar4 * -8 + 4);
+  aiStack_6c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+       *(int *)((int)&local_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   fVar2 = (float)_DAT_005d9184;
   local_18 = local_5c;
-  local_90[2] = (float)local_64 * fVar2;
-  local_94 = (world_position->f).x - (float)local_64 * fVar2;
-  local_90[3] = (float)(int)local_60 * fVar2;
+  local_90[2] = (float)aiStack_6c[2] * fVar2;
+  local_94 = (world_position->f).x - (float)aiStack_6c[2] * fVar2;
+  local_90[3] = (float)aiStack_6c[3] * fVar2;
   local_80 = (float)local_5c * fVar2;
-  local_90[0] = (this_ptr->base).base.position.f.y - (float)(int)local_60 * fVar2;
+  local_90[0] = (this_ptr->base).base.position.f.y - (float)aiStack_6c[3] * fVar2;
   local_90[1] = (this_ptr->base).base.position.f.z - (float)local_5c * fVar2;
   local_40 = local_94;
   local_3c[(uint)bVar4 * -2] = local_90[(uint)bVar4 * -2];

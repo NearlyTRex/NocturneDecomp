@@ -12,8 +12,8 @@
 ; int              Stack[0x18]:4   apply_palette_flag
 ;
 ; Called Functions:
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0050f200
-;   cockpit_pkbitmap.cpp_FUN_0050f910
 ;   crt_memory.c_memset_FUN_005a28f0
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x28]      ; 0050f1c2
     PUSH EBP                            ; 0050f1c6
     PUSH EBX                            ; 0050f1c7
-    CALL cockpit_pkbitmap.cpp_FUN_0050f910 ; 0050f1c8
-        ;   XREF to: 0050f910 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_FUN_0050f910(CPackedBitmap * this_ptr, char * filename, int width, int height, ...)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910 ; 0050f1c8
+        ;   XREF to: 0050f910 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910(CPackedBitmap * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x18                        ; 0050f1cd
     MOV EAX,EBX                         ; 0050f1d0
     POP EBP                             ; 0050f1d2

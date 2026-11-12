@@ -73,7 +73,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x26fc]    ; 00541b3b
     PUSH ECX                            ; 00541b41
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 00541b42
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 00541b47
     ADD ESP,0x8                         ; 00541b49
     TEST EAX,EAX                        ; 00541b4c

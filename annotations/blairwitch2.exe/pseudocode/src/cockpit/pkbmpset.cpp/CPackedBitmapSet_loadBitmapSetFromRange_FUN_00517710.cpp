@@ -10,23 +10,26 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00
 
 {
   int iVar1;
-  char acStack_74 [100];
+  int iVar2;
+  int in_stack_00000024;
+  char acStack_70 [96];
   
-  cockpit_pkbitmap_cpp_FUN_00517640(this_ptr);
-  cockpit_pkbitmap_cpp_FUN_005175b0(this_ptr);
+  cockpit_pkbmpset_cpp_FUN_00517640(this_ptr);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_005175b0(this_ptr);
   cockpit_pkbmpset_cpp_FUN_00517670(this_ptr,(param_6 - param_5) + 1);
-  this_ptr->height = param_4;
-  this_ptr->width = param_3;
+  this_ptr->height = param_5;
+  this_ptr->width = param_4;
   if (param_5 <= param_6) {
-    iVar1 = 0;
+    iVar2 = 0;
+    iVar1 = param_5;
     do {
-      _sprintf(acStack_74,param_2);
-      param_5 = param_5 + 1;
-      cockpit_pkbitmap_cpp_FUN_005168e0
-                ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar1),acStack_74,param_3,
-                 param_4,param_7,param_8);
-      iVar1 = iVar1 + 0x24;
-    } while (param_5 <= param_6);
+      _sprintf(acStack_70,(char *)param_3);
+      iVar1 = iVar1 + 1;
+      cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0
+                ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar2),acStack_70,param_4,
+                 param_5,param_8,in_stack_00000024);
+      iVar2 = iVar2 + 0x24;
+    } while (iVar1 <= param_6);
   }
   return;
 }

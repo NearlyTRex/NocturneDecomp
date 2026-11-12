@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_colonel_cpp_factoryFuncColonel_FUN_00444300(void)
+; CColonel * __cdecl core_colonel_cpp_factoryFuncColonel_FUN_00444300(void)
 ;
 ;
 ; Called Functions:

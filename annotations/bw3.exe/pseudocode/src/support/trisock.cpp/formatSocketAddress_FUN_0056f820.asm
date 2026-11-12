@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0056f820(uchar *param_1,char *param_2)
+; void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0056f820(SNetworkAddr *network_addr,char *output_buffer)
 ;
+; Parameters:
+; SNetworkAddr *   Stack[0x4]:4   network_addr
+; char *           Stack[0x8]:4   output_buffer
 ;
 ; XREF[2]:
 ;   support_trisock.cpp_FUN_0056fef0 at 0056ffeb

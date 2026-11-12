@@ -381,9 +381,9 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr)
       local_50 = (float)(fVar11 * (float10)fVar2);
     }
     local_40 = (uint)(0.0 < fVar1);
-    local_3c = (float)core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(0,this_ptr->halo_spread);
+    local_3c = core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(0.0,this_ptr->halo_spread);
     local_14 = local_3c;
-    local_38 = (float)core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(fVar2,local_50);
+    local_38 = core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(fVar2,local_50);
     local_1c = 0;
     local_14 = local_38;
     if (-1 < (int)local_24) {

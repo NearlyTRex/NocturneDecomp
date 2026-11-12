@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_time_c__localtime_FUN_005a5628(undefined4 param_1)
+; _tm * __cdecl crt_time_c__localtime_FUN_005a5628(time_t *timer)
 ;
+; Parameters:
+; time_t *         Stack[0x4]:4   timer
 ;
 ; XREF[3]:
 ;   crt_unknown.c_FUN_005ab1d0 at 005ab254

@@ -46,10 +46,10 @@
 ;   engine_keys.cpp_CKeys_toggleInputMask_FUN_004fd2b0
 ;   engine_special.cpp_clearScreen_FUN_0057dc40
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_0049a620
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0
 ;   shape_edittool.cpp_CPickList_dtor_FUN_0049a710
-;   shape_edittool.cpp_CPickList_setCancelButtonText_FUN_0049a820
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -1541,8 +1541,8 @@ section .text
     PUSH EAX                            ; 0050e764
     MOV ECX,dword ptr [0x0061abc0]      ; 0050e765 | g_CEditorToolsPtr
     PUSH ECX                            ; 0050e76b
-    CALL shape_edittool.cpp_FUN_004943a0 ; 0050e76c
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 0050e76c
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0050e771
         ;   Label: LAB_0050e771
     PUSH 0x0                            ; 0050e774
@@ -2380,8 +2380,8 @@ section .text
     PUSH 0x5e875f                       ; 0050efcd | = "One or more keys not valid.  Restorin..."
     MOV EDX,dword ptr [0x0061abc0]      ; 0050efd2 | g_CEditorToolsPtr
     PUSH EDX                            ; 0050efd8
-    CALL shape_edittool.cpp_FUN_004943a0 ; 0050efd9
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 0050efd9
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0050efde
     ADD ESP,0xc8c                       ; 0050efe1
     POP EBP                             ; 0050efe7

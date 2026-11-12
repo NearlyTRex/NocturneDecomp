@@ -16,11 +16,9 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00554430(CSfxSlot *this_ptr,f
   float fVar3;
   float fVar4;
   int iVar5;
-  int iVar6;
-  CSfxSlot *pCVar7;
+  float10 fVar6;
+  float10 fVar7;
   float10 fVar8;
-  float10 fVar9;
-  float10 fVar10;
   float local_28;
   
   if (_DAT_02cf341c < 1) {
@@ -32,7 +30,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00554430(CSfxSlot *this_ptr,f
     return 0;
   }
   if (this_ptr->is_active == 1) {
-    engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"SFXDBG: sample = %s\n");
+    engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"SFXDBG: sample = %s\n");
   }
   if ((this_ptr->playback_state != 0) && (0.0 <= (this_ptr->options).playback_position)) {
     if ((0.0 < delta_time) && (0.0 <= this_ptr->fade_time_remaining)) {
@@ -63,31 +61,30 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00554430(CSfxSlot *this_ptr,f
     }
     if ((this_ptr->options).delay_remaining == _DAT_005e4824) {
       if (this_ptr->is_active == 1) {
-        engine_console_cpp_FUN_00441ff0(g_CConsolePtr);
+        engine_console_cpp_CConsole_printf_FUN_00441ff0
+                  (g_CConsolePtr,"  auto computing delay...\n");
       }
       sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_00554390(this_ptr);
     }
     if (this_ptr->is_active == 1) {
-      engine_console_cpp_FUN_00441ff0
-                (g_CConsolePtr,"  delayRemaining = %7.2fs\n",
-                 (double)(this_ptr->options).delay_remaining);
+      engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"  delayRemaining = %7.2fs\n")
+      ;
     }
     this_ptr->effective_frequency = (this_ptr->options).base_frequency;
     if (this_ptr->is_active == 1) {
-      engine_console_cpp_FUN_00441ff0
-                (g_CConsolePtr,"  freq = %5.2f\n",(double)this_ptr->effective_frequency);
+      engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"  freq = %5.2f\n");
     }
     if (((this_ptr->options).flags & 1) == 0) {
-      fVar8 = (float10)(this_ptr->options).position.x -
+      fVar6 = (float10)(this_ptr->options).position.x -
               (float10)*(double *)(&DAT_02cf2828 + _DAT_02cf28b8 * 8);
-      fVar9 = (float10)(this_ptr->options).position.y -
+      fVar7 = (float10)(this_ptr->options).position.y -
               (float10)*(double *)(&DAT_02cf2838 + _DAT_02cf28b8 * 8);
-      fVar10 = (float10)(this_ptr->options).position.z -
-               (float10)*(double *)(&DAT_02cf2848 + _DAT_02cf28b8 * 8);
-      fVar1 = (float)SQRT(fVar10 * (float10)(double)fVar10 +
-                          fVar9 * (float10)(double)fVar9 + fVar8 * (float10)(double)fVar8);
+      fVar8 = (float10)(this_ptr->options).position.z -
+              (float10)*(double *)(&DAT_02cf2848 + _DAT_02cf28b8 * 8);
+      fVar1 = (float)SQRT(fVar8 * (float10)(double)fVar8 +
+                          fVar7 * (float10)(double)fVar7 + fVar6 * (float10)(double)fVar6);
       if (this_ptr->is_active == 1) {
-        engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"  distToEar = %7.2fs\n",(double)fVar1);
+        engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"  distToEar = %7.2fs\n");
       }
       fVar2 = *(float *)(_DAT_02cf28b8 * 4 + 0x2cf2858) - (this_ptr->options).velocity.x;
       fVar3 = *(float *)(_DAT_02cf28b8 * 4 + 0x2cf2860) - (this_ptr->options).velocity.y;
@@ -96,11 +93,11 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00554430(CSfxSlot *this_ptr,f
         fVar1 = SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2);
       }
       else {
-        fVar1 = (fVar4 * (float)fVar10 + fVar3 * (float)fVar9 + fVar2 * (float)fVar8) / fVar1;
+        fVar1 = (fVar4 * (float)fVar8 + fVar3 * (float)fVar7 + fVar2 * (float)fVar6) / fVar1;
       }
       local_28 = (fVar1 * DAT_00604240 + _DAT_005e4844) / _DAT_005e4844;
       if (this_ptr->is_active == 1) {
-        engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"  doppler = %5.2f\n",(double)local_28);
+        engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"  doppler = %5.2f\n");
       }
       if (local_28 < 1.0 / 0x40800000) {
         local_28 = 1.0 / 0x40800000;
@@ -109,31 +106,25 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00554430(CSfxSlot *this_ptr,f
         local_28 = 0x40800000;
       }
       if (this_ptr->is_active == 1) {
-        engine_console_cpp_FUN_00441ff0
-                  (g_CConsolePtr,"  doppler (clamped) = %5.2f\n",(double)local_28);
+        engine_console_cpp_CConsole_printf_FUN_00441ff0
+                  (g_CConsolePtr,"  doppler (clamped) = %5.2f\n");
       }
       this_ptr->effective_frequency = this_ptr->effective_frequency * local_28;
     }
     else if (this_ptr->is_active == 1) {
-      engine_console_cpp_FUN_00441ff0(g_CConsolePtr);
+      engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"  non spatialized\n");
     }
     sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005540d0(this_ptr);
     sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_00554140(this_ptr);
     if (this_ptr->is_active == 1) {
-      engine_console_cpp_FUN_00441ff0
-                (g_CConsolePtr,"  vol = %5.2f\n",(double)(this_ptr->options).current_volume);
+      engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"  vol = %5.2f\n");
     }
     sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00554250(this_ptr);
-    if ((this_ptr->is_active == 1) && (iVar5 = 0, pCVar7 = this_ptr, 0 < DAT_0060422c)) {
+    if ((this_ptr->is_active == 1) && (iVar5 = 0, 0 < DAT_0060422c)) {
       do {
-        iVar6 = iVar5 + 1;
-        engine_console_cpp_FUN_00441ff0
-                  (g_CConsolePtr,"  channelVol[%d] = %5.2f\n",iVar5,
-                   (double)((float)(1 << ((char)(this_ptr->sample->sample_info).bit_depth - 1U &
-                                         0x1f)) * pCVar7->channel_volumes[0]));
-        iVar5 = iVar6;
-        pCVar7 = (CSfxSlot *)&(pCVar7->options).position;
-      } while (iVar6 < DAT_0060422c);
+        iVar5 = iVar5 + 1;
+        engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"  channelVol[%d] = %5.2f\n");
+      } while (iVar5 < DAT_0060422c);
     }
     if (this_ptr->effective_frequency < 1.0 / 0x41A00000) {
       this_ptr->effective_frequency = 1.0 / 0x41A00000;
@@ -142,12 +133,11 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_00554430(CSfxSlot *this_ptr,f
       this_ptr->effective_frequency = 0x41A00000;
     }
     if (this_ptr->is_active == 1) {
-      engine_console_cpp_FUN_00441ff0
-                (g_CConsolePtr,"  effFreq = %5.2f\n",(double)this_ptr->effective_frequency);
+      engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"  effFreq = %5.2f\n");
     }
     return 1;
   }
-  engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"Killing %s in compute()\n");
+  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"Killing %s in compute()\n");
 LAB_00554712:
   sound_sndmain_cpp_CSfxSlot_kill_FUN_00555270(this_ptr);
   return 0;

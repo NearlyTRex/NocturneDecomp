@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_time_c__mktime_FUN_005a4f20(int *param_1)
+; time_t __cdecl crt_time_c__mktime_FUN_005a4f20(_tm *timeptr)
 ;
+; Parameters:
+; _tm *            Stack[0x4]:4   timeptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

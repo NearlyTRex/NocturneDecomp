@@ -16,18 +16,20 @@ void engine_drender_cpp_FUN_00483b70(void)
   float *unaff_ESI;
   byte bVar3;
   float afStack_1004 [1015];
-  int local_28;
-  int local_24;
-  int local_20;
-  float local_18 [3];
+  CVector3i local_28;
+  float local_1c;
+  float local_18 [2];
+  int local_10;
   
   bVar3 = 0;
-  engine_matrix_c_getCameraRotation_FUN_00509080();
+  engine_matrix_c_getCameraRotation_FUN_00509080(&local_28);
   fVar2 = (float)_DAT_005db3cc;
   fVar1 = (float)_DAT_005db3d4;
-  local_18[1] = (float)local_24 * fVar2 * fVar1;
-  local_18[0] = (float)local_20 * fVar2 * fVar1;
-  *unaff_ESI = (float)local_28 * fVar2 * fVar1;
+  local_1c = (float)local_28.x * fVar2 * fVar1;
+  local_10 = local_28.z;
+  local_18[1] = (float)local_28.y * fVar2 * fVar1;
+  local_18[0] = (float)local_28.z * fVar2 * fVar1;
+  *unaff_ESI = local_1c;
   unaff_ESI[(uint)bVar3 * -2 + 1] = local_18[(uint)bVar3 * -2];
   (unaff_ESI + (uint)bVar3 * -2 + 1)[(uint)bVar3 * -2 + 1] =
        local_18[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];

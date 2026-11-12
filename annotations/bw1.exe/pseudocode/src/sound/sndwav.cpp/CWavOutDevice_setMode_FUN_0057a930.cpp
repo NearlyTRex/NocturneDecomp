@@ -34,7 +34,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0057a930(CWavOutDevice *t
   _DAT_02c828c8 = sample_rate;
   _DAT_02c828d4 = 4;
   _DAT_02c828cc = out_buffer_size;
-  fVar2 = (float)sound_sndmain_cpp_getMaxSwLatency_FUN_00576030();
+  fVar2 = sound_sndmain_cpp_getMaxSwLatency_FUN_00576030();
   fVar7 = ((float10)(int)_DAT_02c828cc * (float10)fVar2) / (float10)_DAT_02c828d4;
   round();
   _DAT_02c828d0 = (uint)ROUND(fVar7);

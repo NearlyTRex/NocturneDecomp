@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_memory_c___arrfini_FUN_005b854f(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void * __cdecl crt_memory_c___arrfini_FUN_005b854f(void *obj_array,int obj_count,WatcomTypeInfo *type_info)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   obj_array
+; int              Stack[0x8]:4   obj_count
+; WatcomTypeInfo * Stack[0xc]:4   type_info
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
@@ -11,8 +15,8 @@
 ; XREF[36]:
 ;   core_actor.cpp_FUN_0040d400 at 0040d40c
 ;   core_armour.cpp_FUN_0040f2b0 at 0040f2bc
+;   core_bmppuzzl.cpp_CAlphaBitmap_arrdtor30_FUN_0059bfc0 at 0059bfcc
 ;   core_bmppuzzl.cpp_CAlphaBitmap_arrdtor4_FUN_0059bfe0 at 0059bfec
-;   core_bmppuzzl.cpp_FUN_0059bfc0 at 0059bfcc
 ;   core_bodypart.cpp_FUN_00417d10 at 00417d1c
 ;   core_boxactor.cpp_CDemonFilter_arrdtor8_FUN_0041d8a0 at 0041d8ac
 ;   core_dfilter.cpp_CDemonFilter_arrdtor4_FUN_00447e80 at 00447e8c

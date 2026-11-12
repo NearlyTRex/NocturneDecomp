@@ -11,7 +11,7 @@ void __cdecl setAmbientLightLevel(int light_level);
 
 // Original: engine_light.cpp_getAmbientLightLevel_FUN_004ffa7e
 // Address: 004ffa7e
-undefined4 getAmbientLightLevel(void);
+int __cdecl getAmbientLightLevel(void);
 
 // Original: engine_light.cpp_setDirectionalLightVector_FUN_004ffa90
 // Address: 004ffa90
@@ -35,4 +35,4 @@ int __cdecl calculateLighting(int normal_x,int normal_y,int normal_z);
 
 // Original: engine_light.cpp_calculateAndStoreVertexLight_FUN_004ffe10
 // Address: 004ffe10
-void __cdecl calculateAndStoreVertexLight(int param_1,int *param_2);
+void __cdecl calculateAndStoreVertexLight(int vertex_index,CVector3i *vertex_position);

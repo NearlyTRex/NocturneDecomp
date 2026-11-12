@@ -116,7 +116,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005148f1
     PUSH EAX                            ; 005148f5
     CALL crt_stdio.c_fopen_FUN_005b910c ; 005148f6
-        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005b910c()
+        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005b910c(char * filename, char * mode)
     ADD ESP,0x8                         ; 005148fb
     MOV EDI,EAX                         ; 005148fe
     TEST EAX,EAX                        ; 00514900
@@ -166,13 +166,13 @@ section .text
     PUSH EDX                            ; 00514995
     MOV dword ptr [ESP + 0x58],EAX      ; 00514996
     CALL crt_stdio.c_fputc_FUN_005bab40 ; 0051499a
-        ;   XREF to: 005bab40 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005bab40()
+        ;   XREF to: 005bab40 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005bab40(int character, _FILE * file)
     ADD ESP,0x8                         ; 0051499f
     PUSH EDI                            ; 005149a2
     AND EBP,0xff                        ; 005149a3
     PUSH EBP                            ; 005149a9
     CALL crt_stdio.c_fputc_FUN_005bab40 ; 005149aa
-        ;   XREF to: 005bab40 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005bab40()
+        ;   XREF to: 005bab40 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005bab40(int character, _FILE * file)
     ADD ESP,0x8                         ; 005149af
     PUSH EDI                            ; 005149b2
     MOV EBP,dword ptr [ESP + 0x54]      ; 005149b3
@@ -180,7 +180,7 @@ section .text
     ADD EBX,0x4                         ; 005149b8
     INC ESI                             ; 005149bb
     CALL crt_stdio.c_fputc_FUN_005bab40 ; 005149bc
-        ;   XREF to: 005bab40 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005bab40()
+        ;   XREF to: 005bab40 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005bab40(int character, _FILE * file)
     MOV EAX,[0x006141b8]                ; 005149c1 | DAT_006141b8
     ADD ESP,0x8                         ; 005149c6
     CMP ESI,EAX                         ; 005149c9

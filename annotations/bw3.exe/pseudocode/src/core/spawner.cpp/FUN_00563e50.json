@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 191,
+    "complexity_score": 192,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 32,
     "suspect_count": 15,
     "suspect_types": [
       "primitive_walker_cast",
       "unnamed_param"
     ],
-    "total_lines": 128
+    "total_lines": 129
   },
   "cross_references": [],
   "function": {
@@ -217,7 +217,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&param_1[1].health,\"spawn_time\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830((float *)&param_1[1].health,\"spawn_time\");",
       "type": "unnamed_param"
     },
     {
@@ -262,15 +262,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&param_1[1].runtime_state,\"reset_timer\");",
+      "text": "((float *)&param_1[1].runtime_state,\"reset_timer\");",
       "type": "unnamed_param"
     },
     {
       "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "line": 26,
+      "line": 27,
       "match": "(int *)&param_1[",
       "severity": "moderate",
       "text": "((int *)&param_1[1].lifecycle_state,\"dont_spawn_when_in_view\");",
@@ -278,7 +278,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "((int *)&param_1[1].lifecycle_state,\"dont_spawn_when_in_view\");",
@@ -286,7 +286,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&param_1[1].create_prob,\"startGuardDist\");",

@@ -57,13 +57,13 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_main.c_FUN_005030e0
+;   core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00524ba0
+;   core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70
 ;   core_motion.cpp_CMotionController_clearTweenState_FUN_00524b70
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_00524620
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_reverseTransition_FUN_00524710
 ;   core_motion.cpp_CMotionController_startTransition_FUN_00524880
-;   core_motion.cpp_FUN_00524ba0
-;   core_motion.cpp_FUN_00524d70
 ;   core_motion.cpp_FUN_00524f40
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
@@ -190,8 +190,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x9c]      ; 00524399
     PUSH ESI                            ; 005243a0
     PUSH EBX                            ; 005243a1
-    CALL core_motion.cpp_FUN_00524ba0   ; 005243a2
-        ;   XREF to: 00524ba0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00524ba0(CMotionController * this_ptr, int * inout_motion_index, float * inout_frame_number, float delta_time, ...)
+    CALL core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00524ba0 ; 005243a2
+        ;   XREF to: 00524ba0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00524ba0(CMotionController * this_ptr, int * inout_motion_index, float * inout_frame_number, float delta_time, ...)
     ADD ESP,0x14                        ; 005243a7
     MOV ESI,EAX                         ; 005243aa
     CMP dword ptr [ESP + 0xa4],0x0      ; 005243ac
@@ -209,8 +209,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0xa0]      ; 005243cf
     PUSH ECX                            ; 005243d6
     PUSH EBX                            ; 005243d7
-    CALL core_motion.cpp_FUN_00524ba0   ; 005243d8
-        ;   XREF to: 00524ba0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00524ba0(CMotionController * this_ptr, int * inout_motion_index, float * inout_frame_number, float delta_time, ...)
+    CALL core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00524ba0 ; 005243d8
+        ;   XREF to: 00524ba0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00524ba0(CMotionController * this_ptr, int * inout_motion_index, float * inout_frame_number, float delta_time, ...)
     ADD ESP,0x14                        ; 005243dd
     TEST ESI,ESI                        ; 005243e0
     JNZ 0x005243e6                      ; 005243e2
@@ -411,8 +411,8 @@ section .text
     PUSH dword ptr [EBX + 0x8]          ; 005245de
     PUSH ECX                            ; 005245e1
     PUSH EBX                            ; 005245e2
-    CALL core_motion.cpp_FUN_00524d70   ; 005245e3
-        ;   XREF to: 00524d70 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00524d70(CMotionController * this_ptr, int motion_index, float current_frame, float * inout_delta_time, ...)
+    CALL core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70 ; 005245e3
+        ;   XREF to: 00524d70 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70(CMotionController * this_ptr, int motion_index, float current_frame, float * inout_delta_time, ...)
     ADD ESP,0x14                        ; 005245e8
     MOV ESI,EAX                         ; 005245eb
     MOV EAX,dword ptr [ESP + 0x78]      ; 005245ed

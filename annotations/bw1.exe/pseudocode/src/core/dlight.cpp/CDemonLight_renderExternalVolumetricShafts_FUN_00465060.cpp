@@ -22,7 +22,11 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0046
   float10 fVar8;
   unkbyte10 Var9;
   float10 fVar10;
-  float afStackY_1140 [1002];
+  float afStackY_1140 [39];
+  int aiStackY_10a4 [3];
+  float afStackY_1098 [3];
+  int aiStackY_108c [3];
+  float afStackY_1080 [954];
   CVector3f *translation;
   SMRGLHeaderPrimitive local_18c;
   uint local_174;
@@ -50,12 +54,11 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0046
   float local_cc;
   float local_c8;
   float local_c4 [2];
-  int local_bc;
-  float afStack_b8 [4];
-  float local_a8;
+  CVector3i local_bc;
+  float local_b0;
+  float local_ac [2];
   int local_a4;
-  float local_a0;
-  int local_9c;
+  int local_a0 [2];
   float local_98;
   float afStack_94 [7];
   int local_78;
@@ -87,21 +90,21 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0046
   if (((this_ptr->volumetric_enabled != 0) &&
       ((float)_DAT_005d922c <= (g_CDemonSetPtr->active_fog).density_multiplier)) &&
      (g_CGamePtr->halo_mode != 0)) {
-    engine_drender_cpp_FUN_00483ac0(DAT_00612560);
-    local_a4 = local_bc;
-    (&local_a0)[(uint)bVar4 * -2] = afStack_b8[(uint)bVar4 * -2];
-    (&local_a0)[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         afStack_b8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0(DAT_00612560,&local_bc);
+    local_a4 = local_bc.x;
+    local_a0[(uint)bVar4 * -2] = *(int *)((int)&local_bc + (uint)bVar4 * -8 + 4);
+    local_a0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+         *(int *)((int)&local_bc + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     afStack_154[2] = (float)local_a4 * _DAT_005febd8;
-    afStack_154[3] = (float)(int)local_a0 * _DAT_005febd8;
-    local_144 = (float)local_9c * _DAT_005febd8;
-    afStack_b8[2] = (float)local_a4 * _DAT_005febd8 - (this_ptr->base).base.position.f.x;
-    afStack_b8[3] = (float)(int)local_a0 * _DAT_005febd8 - (this_ptr->base).base.position.f.y;
-    local_a8 = (float)local_9c * _DAT_005febd8 - (this_ptr->base).base.position.f.z;
-    local_c8 = afStack_b8[2];
-    local_c4[(uint)bVar4 * -2] = afStack_b8[(uint)bVar4 * -2 + 3];
+    afStack_154[3] = (float)local_a0[0] * _DAT_005febd8;
+    local_144 = (float)local_a0[1] * _DAT_005febd8;
+    local_b0 = (float)local_a4 * _DAT_005febd8 - (this_ptr->base).base.position.f.x;
+    local_ac[0] = (float)local_a0[0] * _DAT_005febd8 - (this_ptr->base).base.position.f.y;
+    local_ac[1] = (float)local_a0[1] * _DAT_005febd8 - (this_ptr->base).base.position.f.z;
+    local_c8 = local_b0;
+    local_c4[(uint)bVar4 * -2] = local_ac[(uint)bVar4 * -2];
     local_c4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         afStack_b8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+         local_ac[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     if (0.0 < SQRT(local_c4[1] * local_c4[1] + local_c8 * local_c8 + local_c4[0] * local_c4[0])) {
       local_f0 = 0x3f800000;
       local_f8 = 0;

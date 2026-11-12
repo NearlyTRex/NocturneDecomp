@@ -311,15 +311,26 @@ extern char* g_DllFileNameA;
 extern char* g_EnvironmentStrings;
 
 // char[104]
+extern char g_HideActorsWildcardBuffer[104];
 extern char g_MsnEditHideByTypeBuffer[104];
+extern char g_DeleteActorsWildcardBuffer[104];
 extern char g_MsnEditDeleteByTypePattern[104];
 extern char g_MsnEditLastSelectedPropertyName[104];
+extern char g_GoreBuffer[104];
 extern char g_SoundResultBufferTemplate[104];
 
 // char[108]
 extern char g_TrainSoundFilenameTemplate[108];
 
+// char[116]
+extern char g_MsnEditImportWildcardPattern[116];
+
+// char[128]
+extern char g_OSFontName[128];
+
 // char[200]
+extern char g_ActorEnemyBuffer[200];
+extern char g_ActorWildcardBuffer[200];
 extern char g_MsnEditCameraStatusBuffer[200];
 extern char g_ActorRefDefaultBuffer[200];
 
@@ -329,6 +340,8 @@ extern char g_DefaultDeviceName[256];
 extern char g_RendererDllPath[256];
 
 // char[260]
+extern char g_GroundTypesBuffer[260];
+extern char g_FileErrorBuffer[260];
 extern char g_TempDirectoryBuffer[260];
 
 // double

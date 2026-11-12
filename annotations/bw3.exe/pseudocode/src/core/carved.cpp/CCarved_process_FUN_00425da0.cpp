@@ -240,8 +240,8 @@ LAB_00425e3e:
             iVar5 = core_carved_cpp_FUN_00428520();
             if (-1 < iVar5) {
               core_charactr_cpp_FUN_004319d0(this_ptr,iVar5,pCVar10);
-              engine_console_cpp_FUN_00441ff0
-                        (g_CConsolePtr,"%s picked up %s using hand %d\n",this_ptr);
+              engine_console_cpp_CConsole_printf_FUN_00441ff0
+                        (g_CConsolePtr,"%s picked up %s using hand %d\n");
             }
           }
         }
@@ -388,7 +388,7 @@ LAB_00425e7b:
         core_main_c_FUN_004e4330();
       }
       if ((this_ptr->base).base.carry_hands[iVar5].carry_actor != (CDemonActor *)0x0) {
-        engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"%s lugging %s\n");
+        engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s lugging %s\n");
         CStack_2e8.x = 0.0;
         CStack_2e8.y = 6.0;
         CStack_2e8.z = 17.0;
@@ -409,7 +409,7 @@ LAB_00425e7b:
       }
       pcStack_1c = (this_ptr->base).base.base.actor_name + iStack_30 * 0x78;
       if (*(int *)(pcStack_1c + 0x25b0) != 0) {
-        engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"%s tossing %s\n");
+        engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s tossing %s\n");
         CStack_1a4.x = 0.0;
         CStack_1a4.y = 0.0;
         CStack_1a4.z = 1.0;
@@ -605,7 +605,8 @@ LAB_00426d3d:
       if (EVar3 == WALK_STATE_NO_PATH) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                   (&(this_ptr->base).base.model.base,0,1);
-        engine_console_cpp_FUN_00441ff0(g_CConsolePtr);
+        engine_console_cpp_CConsole_printf_FUN_00441ff0
+                  (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
         goto LAB_004269b6;
       }
       goto LAB_00426d3d;
@@ -758,7 +759,8 @@ LAB_00426d3d:
                            (CVector3f *)in_stack_fffffb38,fVar22,(float)in_stack_fffffb40);
         pCStack_3c = (CCarved *)&(this_ptr->base).base.model;
         if (iVar5 < 0) {
-          engine_console_cpp_FUN_00441ff0();
+          engine_console_cpp_CConsole_printf_FUN_00441ff0
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           fVar22 = 1.4013e-45;
           iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,2);
           in_stack_fffffb38 = pCStack_3c;
@@ -796,7 +798,7 @@ LAB_00426d3d:
                 ((uVar6 = this_ptr->object_shape_class, 1 < uVar6 && ((2 < uVar6 && (uVar6 == 3)))))
                 ) && ((this_ptr->base).base.carry_hands[iStack_4c].carry_actor != (CDemonActor *)0x0
                      )) {
-              engine_console_cpp_FUN_00441ff0();
+              engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s tossing\n");
               in_stack_fffffb38 = pCStack_3c;
               core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                         ((CMotionController *)pCStack_3c,0x1a,1);
@@ -870,7 +872,7 @@ LAB_00426d3d:
         break;
       }
     }
-    engine_console_cpp_FUN_00441ff0(g_CConsolePtr);
+    engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s gave up swing\n");
     core_carved_cpp_FUN_00429090();
     break;
   case 0xc:
@@ -943,7 +945,7 @@ LAB_00427596:
                       ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->base).location.position,
                        pCVar9,pCVar21,fVar22,(float)in_stack_fffffb38);
     if (iVar5 != 1) {
-      engine_console_cpp_FUN_00441ff0();
+      engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s giving up attack\n");
       core_carved_cpp_FUN_00429090();
       (this_ptr->base).base.turn_angle_accumulator = 0.0;
     }
@@ -994,7 +996,7 @@ LAB_004269b6:
     pCVar20->x = (this_ptr->base).base.model.accumulated_root_motion.y;
     core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_2d0);
   }
-  core_charactr_cpp_FUN_0042cd30((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,delta_time);

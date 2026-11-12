@@ -16,7 +16,8 @@ void __cdecl core_boxactor_cpp_CLightActor_archive_FUN_004207f0(CLightActor *thi
             ((int *)&this_ptr->light_actor_type,"lightType");
   if (this_ptr->light_actor_type == LIGHT_TYPE_CUSTOM) {
     core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->blight_pos,"bLightPos");
-    core_actor_cpp_archiveOrientation_FUN_0040b4a0(&this_ptr->light_orient,"lightOrient");
+    core_actor_cpp_archiveOrientation_FUN_0040b4a0
+              (&(this_ptr->light_orient).orient,"lightOrient");
     if (DAT_007df9b8 == 1) {
       core_actor_cpp_archiveFloat_FUN_0040b830(&fStack_c,"lightFov");
       (this_ptr->light).base.base.focal_length = fStack_c;

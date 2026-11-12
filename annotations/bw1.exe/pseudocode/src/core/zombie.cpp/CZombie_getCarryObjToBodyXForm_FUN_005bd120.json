@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 358,
-    "complexity_score": 604,
+    "complexity_score": 618,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 224,
-    "suspect_count": 34,
+    "pseudocode_lines": 228,
+    "suspect_count": 35,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -19,7 +19,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 582
+    "total_lines": 586
   },
   "cross_references": [],
   "function": {
@@ -134,6 +134,32 @@
     },
     "pcode_op_count": 2049
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005980a0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0058af90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3187
+    },
+    "nocedit.exe": {
+      "addr": "005fb1f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4676
+    },
+    "nocturne.exe": {
+      "addr": "00560cd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4676
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -232,7 +258,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 198,
+      "line": 201,
+      "match": "&stack0xfffffdf8",
+      "severity": "moderate",
+      "text": "(CMatrix3x4f *)&stack0xfffffdf8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 202,
       "match": "&stack0xfffffdf8",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xfffffdf8;",
@@ -240,7 +274,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 199,
+      "line": 203,
       "match": "&stack0xfffffe28",
       "severity": "moderate",
       "text": "puVar7 = (uint *)&stack0xfffffe28;",
@@ -248,7 +282,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 220,
+      "line": 224,
       "match": "&stack0xfffffe28",
       "severity": "moderate",
       "text": "pfVar4 = (float *)&stack0xfffffe28;",
@@ -256,7 +290,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 225,
+      "line": 229,
       "match": "(CMatrix3x4f *)((int)pCVar5",
       "severity": "moderate",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -312,7 +346,7 @@
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 225,
+      "line": 229,
       "match": "(int)pCVar5",
       "severity": "moderate",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -344,7 +378,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 200,
+      "line": 204,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -352,7 +386,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 222,
+      "line": 226,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",

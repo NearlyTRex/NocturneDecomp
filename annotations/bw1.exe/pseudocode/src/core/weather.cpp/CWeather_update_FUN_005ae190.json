@@ -1,0 +1,543 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 346,
+    "complexity_score": 350,
+    "cross_reference_count": 1,
+    "function_call_count": 10,
+    "global_count": 19,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 145,
+    "suspect_count": 17,
+    "suspect_types": [
+      "dropped_fyl2x",
+      "inline_exp_idiom",
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 491
+  },
+  "cross_references": [
+    {
+      "addr": "004d8060",
+      "from_addr": "004d842e",
+      "name": "core_game.cpp_CGame_process_FUN_004d8060",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ae190",
+    "address_range": [
+      [
+        "005ae190",
+        "005ae557"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_weather.cpp_CWeather_update_FUN_005ae190",
+    "signature": "void __cdecl core_weather_cpp_CWeather_update_FUN_005ae190(CWeather *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
+    },
+    {
+      "addr": "0040cd00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd00"
+    },
+    {
+      "addr": "00453540",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00453540"
+    },
+    {
+      "addr": "004a6c30",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30"
+    },
+    {
+      "addr": "004b7320",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createRainDrop_FUN_004b7320"
+    },
+    {
+      "addr": "0057d880",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playSound_FUN_0057d880"
+    },
+    {
+      "addr": "005ae580",
+      "is_variadic": false,
+      "name": "core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580"
+    },
+    {
+      "addr": "005ae840",
+      "is_variadic": false,
+      "name": "core_weather.cpp_CWeather_createThunder_FUN_005ae840"
+    },
+    {
+      "addr": "005735a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005735a0"
+    },
+    {
+      "addr": "00573a80",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00573a80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f991a",
+      "name": "s_noLightningFlash_005f9919+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f992b",
+      "name": "s_noLightningFlash_005f992b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f993c",
+      "name": "s_rain_wav_1_005f993c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f994a",
+      "name": "DAT_005f994a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f9952",
+      "name": "DAT_005f9952",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f995a",
+      "name": "DAT_005f995a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f9962",
+      "name": "DAT_005f9962",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f996a",
+      "name": "DAT_005f996a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061c010",
+      "name": "DAT_0061c010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "006236b8",
+      "name": "DAT_006236b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf624",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fe49d4",
+      "name": "g_CDemonCameraInstance.corona_blend_factor",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c997f8",
+      "name": "DAT_02c997f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c997fc",
+      "name": "DAT_02c997fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c99800",
+      "name": "DAT_02c99800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c99808",
+      "name": "DAT_02c99808",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c9a540",
+      "name": "DAT_02c9a540",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d842e",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_process_FUN_004d8060",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.484429065743945,
+    "instruction_count": 289,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 10,
+      "BRANCH": 6,
+      "CALL": 18,
+      "CALLOTHER": 2,
+      "CBRANCH": 16,
+      "COPY": 583,
+      "FLOAT2FLOAT": 42,
+      "FLOAT_ADD": 4,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 7,
+      "FLOAT_LESS": 7,
+      "FLOAT_MULT": 8,
+      "FLOAT_NAN": 14,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 7,
+      "INT_ADD": 139,
+      "INT_AND": 112,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 72,
+      "INT_LEFT": 28,
+      "INT_LESS": 7,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 36,
+      "INT_OR": 35,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 36,
+      "INT_SUB": 72,
+      "INT_XOR": 3,
+      "INT_ZEXT": 34,
+      "LOAD": 80,
+      "POPCOUNT": 36,
+      "RETURN": 3,
+      "STORE": 97
+    },
+    "pcode_op_count": 1585
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058a660",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005eeaf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8348
+    },
+    "nocturne.exe": {
+      "addr": "00554980",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8348
+    }
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 72,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeather *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005ae199",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "afStackY_1018",
+      "severity": "moderate",
+      "text": "float afStackY_1018 [1011];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_02c997fc",
+      "severity": "mild",
+      "text": "fVar2 = *(float *)(&DAT_02c997fc + iVar4) - this_ptr->particle_speed * fVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_02c997fc",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02c997fc + iVar4) = fVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_02c997fc",
+      "severity": "mild",
+      "text": "(*(float *)(&DAT_02c997fc + iVar4) = *(float *)(&DAT_02c997fc + iVar4) + _DAT_005f996a,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_02c997fc",
+      "severity": "mild",
+      "text": "(*(float *)(&DAT_02c997fc + iVar4) = *(float *)(&DAT_02c997fc + iVar4) + _DAT_005f996a,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_02c997f8",
+      "severity": "mild",
+      "text": "local_30.x = *(float *)(&DAT_02c997f8 + iVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_02c997fc",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_02c997fc + (uint)bVar5 * -8 + iVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 73,
+      "match": "DAT_02c997fc",
+      "severity": "mild",
+      "text": "((int)(&DAT_02c997fc + (uint)bVar5 * -8 + iVar4) + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&local_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)&local_30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_30 + (uint)bVar5 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)&local_30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&DAT_02c997fc + (uint)bVar5 * -8 + iVar4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 73,
+      "match": "(int)(&DAT_02c997fc + (uint)bVar5 * -8 + iVar4)",
+      "severity": "moderate",
+      "text": "((int)(&DAT_02c997fc + (uint)bVar5 * -8 + iVar4) + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 69,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_30 + (uint)bVar5 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 71,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar6 - (fVar6 / fVar8) * fVar8` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
+      "line": 136,
+      "match": "fVar7 = (float10)f2xm1(fVar6 - (fVar6 / fVar8) * fVar8);",
+      "severity": "major",
+      "text": "fVar7 = (float10)f2xm1(fVar6 - (fVar6 / fVar8) * fVar8);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
+      "line": 137,
+      "match": "fVar8 = (float10)fscale(fVar7 + fVar8,fVar6);",
+      "severity": "moderate",
+      "text": "fVar8 = (float10)fscale(fVar7 + fVar8,fVar6);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "x87 log constant multiplied by `this_ptr->max_flash_interval` in a function whose asm has 1 FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops it and leaves only the loaded constant, so ln(x) decompiles as 0.693*x. Read the asm and restore the logarithm in a .keep (e.g. `log(x) * 868.589` for a dB conversion). Note log2(e)*ln(2) == 1, so in a pow()-shaped site the constants cancel and the arithmetic looks innocent.",
+      "line": 135,
+      "match": "(float10)0.6931471805599453 * (float10)this_ptr->max_flash_interval);",
+      "severity": "major",
+      "text": "(float10)0.6931471805599453 * (float10)this_ptr->max_flash_interval);",
+      "type": "dropped_fyl2x"
+    }
+  ]
+}

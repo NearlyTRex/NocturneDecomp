@@ -151,7 +151,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = (param_1->base).base.vtable._ue;",
@@ -159,7 +159,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->base).follow_leader = (CCharacter *)0x0;",
@@ -167,7 +167,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(pCVar1->_ue).updateVictim)(param_1,param_2);",
@@ -175,7 +175,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
       "text": "(*(pCVar1->_ue).updateVictim)(param_1,param_2);",
@@ -183,7 +183,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->victim != (CCharacter *)0x0) {",
@@ -191,7 +191,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "core_muzzle_cpp_FUN_0059d8e0(param_1 + 1,\"Chasing\");",
@@ -199,7 +199,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar4 = param_1[1].base.model.rest_bone_scales[0x39];",
@@ -207,7 +207,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x01D182F0,param_1->patrol_name_pattern);",
@@ -215,23 +215,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.model.rest_bone_scales[0x39] = fVar4;",
+      "text": "param_1[1].base.model.rest_bone_scales[0x39] = (float)pCVar3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&(param_1->base).model.base,(int)param_1[1].base.model.rest_bone_scales[0x30],1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "(&(param_1->base).model.base,(int)param_1[1].base.model.rest_bone_scales[0x30],1);",
@@ -239,7 +231,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).model.base,(int)param_1[1].base.model.rest_bone_scales[0x30],1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[1].base.model.rest_bone_scales[0x3a] == 0.0) {",
@@ -247,10 +247,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar3 = core_waypoint_cpp_FUN_005882d0(&(param_1->base).base.location,fVar4,0);",
+      "text": "pCVar3 = (CDemonActor *)core_waypoint_cpp_FUN_005882d0(&(param_1->base).base.location,fVar4,0)",
       "type": "unnamed_param"
     },
     {
@@ -258,7 +258,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1].base.model.rest_bone_scales[0x3a] = fVar4;",
+      "text": "param_1[1].base.model.rest_bone_scales[0x3a] = (float)pCVar3;",
       "type": "unnamed_param"
     },
     {

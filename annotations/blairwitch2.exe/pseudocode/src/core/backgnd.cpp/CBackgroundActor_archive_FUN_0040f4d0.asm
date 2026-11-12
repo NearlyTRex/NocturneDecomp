@@ -33,7 +33,7 @@ section .text
     LEA EAX,[EBX + 0x2b8]               ; 0040f4e3
     PUSH EAX                            ; 0040f4e9
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 0040f4ea
-        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60()
+        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0040f4ef
     PUSH 0x5cb3d6                       ; 0040f4f2 | = "collideWithMe"
     LEA EAX,[EBX + 0x434]               ; 0040f4f7

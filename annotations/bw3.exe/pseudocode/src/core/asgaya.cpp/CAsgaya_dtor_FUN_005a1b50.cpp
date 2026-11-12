@@ -19,7 +19,7 @@ CAsgaya * core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CAsgayaTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CAsgayaTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

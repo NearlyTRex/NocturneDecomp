@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_prim_c_prepareDepthBuffer_FUN_0053dbc0(int param_1,int param_2)
+; void __cdecl engine_prim_c_prepareDepthBuffer_FUN_0053dbc0(SRenderVertex *vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[7]:
 ;   core_dpart.cpp_FUN_0047ab00 at 0047ac1a

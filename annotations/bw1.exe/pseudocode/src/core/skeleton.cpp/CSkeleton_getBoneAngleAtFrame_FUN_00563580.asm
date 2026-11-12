@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   frame_index
 ;
 ; XREF[2]:
-;   core_skeleton.cpp_FUN_005635a0 at 005635d9
+;   core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_005635a0 at 005635d9
 ;   core_skeleton.cpp_FUN_00567620 at 00567c66
 ;
 ; *****************************************************************************

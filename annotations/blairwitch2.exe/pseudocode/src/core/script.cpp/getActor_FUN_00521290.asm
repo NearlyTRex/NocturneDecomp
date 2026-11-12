@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * __cdecl core_script_cpp_getActor_FUN_00521290(char *param_1,undefined4 param_2,undefined4 param_3)
+; CDemonActor * __cdecl core_script_cpp_getActor_FUN_00521290(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   actor_specifier
+; uint             Stack[0x8]:4   expected_class_hash
+; CDemonActorType * Stack[0xc]:4   expected_class
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_startDialogLine_FUN_00529750 at 0052978e
@@ -112,7 +116,7 @@ section .text
     PUSH EDX                            ; 00521314
     PUSH ESI                            ; 00521315
     CALL core_actor.cpp_isOfClassHash_FUN_0040c8c0 ; 00521316
-        ;   XREF to: 0040c8c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClassHash_FUN_0040c8c0()
+        ;   XREF to: 0040c8c0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClassHash_FUN_0040c8c0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0052131b
     TEST EAX,EAX                        ; 0052131e
     JZ 0x005213e5                       ; 00521320

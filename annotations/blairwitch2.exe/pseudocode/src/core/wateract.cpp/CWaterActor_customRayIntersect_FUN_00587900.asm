@@ -102,7 +102,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 005879ee
     PUSH EAX                            ; 005879f2
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_00477a50 ; 005879f3
-        ;   XREF to: 00477a50 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_00477a50()
+        ;   XREF to: 00477a50 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_00477a50(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0xc0],EAX      ; 005879f8
     FLD float ptr [ESP + 0xc0]          ; 005879ff
     ADD ESP,0xc                         ; 00587a06

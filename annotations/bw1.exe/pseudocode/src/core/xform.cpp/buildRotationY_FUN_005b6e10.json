@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 142,
+    "complexity_score": 63,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 9,
+    "pseudocode_lines": 38,
+    "suspect_count": 2,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 75
+    "total_lines": 76
   },
   "cross_references": [
     {
@@ -56,9 +54,9 @@
         "005b6e83"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "core_xform.cpp_buildRotationY_FUN_005b6e10",
-    "signature": "void core_xform_cpp_buildRotationY_FUN_005b6e10(float param_1)"
+    "signature": "CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationY_FUN_005b6e10(float angle_radians,CMatrix3x4f *matrix_out)"
   },
   "function_calls": [],
   "globals": [],
@@ -91,11 +89,37 @@
     },
     "pcode_op_count": 179
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005932c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00584ff0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f6cc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0055c7b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 72,
+    "frame_size": 76,
     "local_size": 72,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -195,6 +219,13 @@
         "offset": -8,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "angle_radians",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -217,64 +248,8 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_xform_cpp_buildRotationY_FUN_005b6e10(float param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar3 = (float10)fsin((float10)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = (float10)fcos((float10)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = *pfVar2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 34,
+      "line": 35,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",

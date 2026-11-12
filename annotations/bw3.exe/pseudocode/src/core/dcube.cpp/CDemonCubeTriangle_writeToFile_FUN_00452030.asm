@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00452030(CDemonCubeTriangle *this_ptr,undefined4 param_2,int param_3)
+; void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00452030(CDemonCubeTriangle *this_ptr,_FILE *param_2,int param_3)
 ;
 ; Parameters:
 ; CDemonCubeTriangle * Stack[0x4]:4   this_ptr
@@ -47,7 +47,7 @@ section .text
     PUSH 0x1548b7c                      ; 0045206c
     MOV [0x01548b84],EAX                ; 00452071 | DAT_01548b84
     CALL crt_stdio.c_fwrite_FUN_005a48e0 ; 00452076
-        ;   XREF to: 005a48e0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005a48e0()
+        ;   XREF to: 005a48e0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005a48e0(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0045207b
     MOV ECX,dword ptr [ESP + 0x10]      ; 0045207e
     PUSH ECX                            ; 00452082
@@ -56,7 +56,7 @@ section .text
     ADD EBX,0xc                         ; 00452087
     PUSH EBX                            ; 0045208a
     CALL crt_stdio.c_fwrite_FUN_005a48e0 ; 0045208b
-        ;   XREF to: 005a48e0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005a48e0()
+        ;   XREF to: 005a48e0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005a48e0(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00452090
     POP ESI                             ; 00452093
     POP EBX                             ; 00452094

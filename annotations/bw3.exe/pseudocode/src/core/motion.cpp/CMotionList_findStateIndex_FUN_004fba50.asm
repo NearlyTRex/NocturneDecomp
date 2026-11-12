@@ -14,9 +14,9 @@
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_004331a0 at 004331ee
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00431470 at 004314b9
 ;   core_event.cpp_FUN_0048c2e0 at 00490485
-;   core_hero.cpp_FUN_004d2aa0 at 004d2acf
-;   core_hero.cpp_FUN_004d2af0 at 004d2b67
-;   core_hero.cpp_FUN_004d2c20 at 004d2c66
+;   core_hero.cpp_CHero_canBeGrabbed_FUN_004d2aa0 at 004d2acf
+;   core_hero.cpp_CHero_getGrabbed_FUN_004d2af0 at 004d2b67
+;   core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20 at 004d2c66
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004fc160 at 004fc170
 ;   core_npc.cpp_CNPC_process_FUN_00509120 at 00509457
 ;   ... and 6 more

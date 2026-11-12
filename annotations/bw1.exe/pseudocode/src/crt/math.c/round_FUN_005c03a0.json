@@ -398,6 +398,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0048f2e0",
+      "from_addr": "0048f35f",
+      "name": "core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_0048f2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0048cba0",
       "from_addr": "0048d27f",
       "name": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0",
@@ -428,6 +434,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0048ee90",
+      "from_addr": "0048eeca",
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0048ee90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048ef40",
+      "from_addr": "0048ef7a",
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0048b150",
       "from_addr": "0048b1bd",
       "name": "core_dtrace.cpp_FUN_0048b150",
@@ -443,24 +461,6 @@
       "addr": "0048bdc0",
       "from_addr": "0048be63",
       "name": "core_dtrace.cpp_FUN_0048bdc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0048ee90",
-      "from_addr": "0048eeca",
-      "name": "core_dtrace.cpp_FUN_0048ee90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0048ef40",
-      "from_addr": "0048ef7a",
-      "name": "core_dtrace.cpp_FUN_0048ef40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0048f2e0",
-      "from_addr": "0048f35f",
-      "name": "core_dtrace.cpp_FUN_0048f2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -800,15 +800,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00525110",
-      "from_addr": "00525168",
-      "name": "core_motion.cpp_FUN_00525110",
+      "addr": "00525240",
+      "from_addr": "005252eb",
+      "name": "core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00525240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00525240",
-      "from_addr": "005252eb",
-      "name": "core_motion.cpp_FUN_00525240",
+      "addr": "00525110",
+      "from_addr": "00525168",
+      "name": "core_motion.cpp_FUN_00525110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1004,9 +1004,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00483a40",
+      "from_addr": "00483a5e",
+      "name": "engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_00483a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004834b0",
       "from_addr": "004834ce",
       "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004839f0",
+      "from_addr": "004839fd",
+      "name": "engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_004839f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004839b0",
+      "from_addr": "004839c0",
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1019,24 +1037,6 @@
       "addr": "00483560",
       "from_addr": "004835dc",
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004839b0",
-      "from_addr": "004839c0",
-      "name": "engine_drender.cpp_FUN_004839b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004839f0",
-      "from_addr": "004839fd",
-      "name": "engine_drender.cpp_FUN_004839f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00483a40",
-      "from_addr": "00483a5e",
-      "name": "engine_drender.cpp_FUN_00483a40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1313,6 +1313,32 @@
       "STORE": 4
     },
     "pcode_op_count": 24
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b7ff0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a3120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005fe6b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00563a30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

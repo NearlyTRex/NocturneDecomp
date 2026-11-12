@@ -64,7 +64,7 @@ section .text
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 00410677 | g_CDemonSetInstance.actors[0]
     PUSH EDX                            ; 0041067e
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 0041067f
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00410684
     MOV dword ptr [EDI + 0x578],EAX     ; 00410687
     TEST EAX,EAX                        ; 0041068d
@@ -77,7 +77,7 @@ section .text
     PUSH 0x5d3573                       ; 00410697 | = "CBaron"
         ;   Label: LAB_00410697
     CALL core_actor.cpp_createActorByName_FUN_0040c2b0 ; 0041069c
-        ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c2b0()
+        ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c2b0(char * class_name)
     ADD ESP,0x4                         ; 004106a1
     PUSH EAX                            ; 004106a4
     MOV EBP,dword ptr [0x0061f650]      ; 004106a5 | DAT_0061f650

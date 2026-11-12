@@ -9,6 +9,6 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_generateFogGrid_FUN_00453600(CDemonCamera *this_ptr)
 
 {
-  core_dcamera_cpp_generateFogGrid_FUN_0044c610(0x1480e2c);
+  core_dcamera_cpp_generateFogGrid_FUN_0044c610((SFogGrid *)0x1480e2c);
   return;
 }

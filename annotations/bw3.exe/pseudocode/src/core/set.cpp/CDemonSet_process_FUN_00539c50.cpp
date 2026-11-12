@@ -11,61 +11,61 @@
 void __cdecl core_set_cpp_CDemonSet_process_FUN_00539c50(CDemonSet *this_ptr)
 
 {
+  CDemonLight *light;
   int iVar1;
   int iVar2;
-  int iVar3;
-  C3DSLight *pCVar4;
+  C3DSLight *this_ptr_00;
   char local_118 [256];
-  uint local_18;
+  int local_18;
   int local_14;
   
-  iVar3 = 0;
+  iVar2 = 0;
   if (0 < this_ptr->light_count) {
     local_14 = 0;
-    pCVar4 = this_ptr->lights;
+    this_ptr_00 = this_ptr->lights;
     do {
-      if (pCVar4->light_type == 0) {
-        iVar1 = *(int *)(&DAT_0203a418 + local_14);
-        if (iVar1 == 0) {
+      if (this_ptr_00->light_type == 0) {
+        light = *(CDemonLight **)(&DAT_0203a418 + local_14);
+        if (light == (CDemonLight *)0x0) {
           return;
         }
         local_18 = 0;
         if (0 < _DAT_0203a598) {
-          iVar2 = 0;
+          iVar1 = 0;
           do {
-            if (iVar1 == *(int *)(&DAT_0203a59c + iVar2)) {
+            if (light == *(CDemonLight **)(&DAT_0203a59c + iVar1)) {
               local_18 = 1;
               break;
             }
-            iVar2 = iVar2 + 4;
-          } while (iVar2 < _DAT_0203a598 * 4);
+            iVar1 = iVar1 + 4;
+          } while (iVar1 < _DAT_0203a598 * 4);
         }
-        core_setutil_cpp_C3DSLight_process_FUN_00542b60(pCVar4,iVar1,local_18);
+        core_setutil_cpp_C3DSLight_process_FUN_00542b60(this_ptr_00,light,local_18);
         _sprintf(local_118,&DAT_005d0803);
-        iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0(0x01C6E360,local_118);
-        if (iVar2 != 0) {
-          *(uint *)(iVar1 + 0x1cb4) = 1;
+        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0(0x01C6E360,local_118);
+        if (iVar1 != 0) {
+          light->light_enabled_flag = 1;
         }
         _sprintf(local_118,"%soff");
-        iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0(0x01C6E360,local_118);
-        if (iVar2 != 0) {
-          *(uint *)(iVar1 + 0x1cb4) = 0;
+        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0(0x01C6E360,local_118);
+        if (iVar1 != 0) {
+          light->light_enabled_flag = 0;
         }
-        iVar2 = _strnicmp(pCVar4->name,&DAT_005d080e,4);
-        if (iVar2 == 0) {
+        iVar1 = _strnicmp(this_ptr_00->name,&DAT_005d080e,4);
+        if (iVar1 == 0) {
           if (this_ptr->last_switch_area_invalid == 0) {
-            *(uint *)(iVar1 + 0x1cb4) = 0;
+            light->light_enabled_flag = 0;
             local_14 = local_14 + 4;
             goto LAB_00539c82;
           }
-          *(uint *)(iVar1 + 0x1cb4) = 1;
+          light->light_enabled_flag = 1;
         }
         local_14 = local_14 + 4;
       }
 LAB_00539c82:
-      iVar3 = iVar3 + 1;
-      pCVar4 = pCVar4 + 1;
-    } while (iVar3 < this_ptr->light_count);
+      iVar2 = iVar2 + 1;
+      this_ptr_00 = this_ptr_00 + 1;
+    } while (iVar2 < this_ptr->light_count);
   }
   return;
 }

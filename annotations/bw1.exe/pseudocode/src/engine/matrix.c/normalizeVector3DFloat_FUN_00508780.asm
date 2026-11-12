@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   core_ground.cpp_FUN_004e82a0 at 004e83a1
+;   core_ground.cpp_CGround_getNormalAtPosition_FUN_004e82a0 at 004e83a1
 ;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30 at 00554f38
 ;   engine_light.cpp_calculatePhongLighting_FUN_004ffaf0 at 004ffc0f
 ;

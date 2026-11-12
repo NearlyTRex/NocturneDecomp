@@ -5,6 +5,18 @@
 // Function prototypes for cockpit/pkbmpset.cpp
 // Generated from Ghidra function signatures
 
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_00538900
+// Address: 00538900
+void __cdecl CPackedBitmapSet::ctor(CPackedBitmapSet *this_ptr);
+
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_00538930
+// Address: 00538930
+void __cdecl CPackedBitmapSet::init(CPackedBitmapSet *this_ptr);
+
+// Original: cockpit_pkbmpset.cpp_FUN_00538990
+// Address: 00538990
+void FUN_00538990(undefined4 *param_1);
+
 // Original: cockpit_pkbmpset.cpp_FUN_005389c0
 // Address: 005389c0
 void FUN_005389c0(int *param_1,int param_2);

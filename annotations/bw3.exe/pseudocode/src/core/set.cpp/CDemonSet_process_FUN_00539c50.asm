@@ -91,7 +91,7 @@ section .text
     PUSH EBX                            ; 00539ced
     PUSH ESI                            ; 00539cee
     CALL core_setutil.cpp_C3DSLight_process_FUN_00542b60 ; 00539cef
-        ;   XREF to: 00542b60 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSLight_process_FUN_00542b60()
+        ;   XREF to: 00542b60 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_process_FUN_00542b60(C3DSLight * this_ptr, CDemonLight * light, int apply_filter_flag)
     ADD ESP,0xc                         ; 00539cf4
     LEA EAX,[ESI + 0x4]                 ; 00539cf7
     PUSH EAX                            ; 00539cfa

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 42,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 13,
     "suspect_count": 2,
     "suspect_types": [
       "raw_address_pointer_store",
       "warning_overlapping_globals"
     ],
-    "total_lines": 44
+    "total_lines": 45
   },
   "cross_references": [],
   "function": {
@@ -122,10 +122,10 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 11,
+      "line": 12,
       "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
       "severity": "moderate",
-      "text": "if ((iVar1 == 0) && (damage_info->wielder != *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4))) {",
+      "text": "(damage_info->wielder != *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4))) {",
       "type": "raw_address_pointer_store"
     }
   ],

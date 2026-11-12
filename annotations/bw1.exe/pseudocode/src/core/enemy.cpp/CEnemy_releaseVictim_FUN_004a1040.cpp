@@ -13,8 +13,7 @@ void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_004a1040(CEnemy *this_ptr)
   CVector3f CStack_14;
   
   if (this_ptr->victim != (CCharacter *)0x0) {
-    engine_console_cpp_FUN_00445430(g_CConsolePtr,"CEnemy::stopGrabbing %s\n",this_ptr->victim)
-    ;
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"CEnemy::stopGrabbing %s\n");
     pCVar1 = (CEnemy *)(*(((this_ptr->victim->base).vtable._uc)->_uc).getGrabber)(this_ptr->victim);
     if (pCVar1 == this_ptr) {
       (*(((this_ptr->victim->base).vtable._uc)->_uc).releaseFromGrab)(this_ptr->victim);

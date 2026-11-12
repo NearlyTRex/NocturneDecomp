@@ -48,13 +48,13 @@ section .text
     LEA EAX,[EBX + 0x57c]               ; 005096cb
     PUSH EAX                            ; 005096d1
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005096d2
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005096d7
     PUSH 0x5e78b1                       ; 005096da | = "strengthHi"
     LEA EAX,[EBX + 0x580]               ; 005096df
     PUSH EAX                            ; 005096e5
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005096e6
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005096eb
     PUSH 0x5e78bc                       ; 005096ee | = "canAttachLight"
     LEA EAX,[EBX + 0x2f0]               ; 005096f3
@@ -70,7 +70,7 @@ section .text
     LEA EAX,[EBX + 0x584]               ; 00509710
     PUSH EAX                            ; 00509716
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00509717
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0050971c
     CMP dword ptr [0x0061f43c],0x5      ; 0050971f | g_CMeleeClassVersion
         ;   Label: LAB_0050971f

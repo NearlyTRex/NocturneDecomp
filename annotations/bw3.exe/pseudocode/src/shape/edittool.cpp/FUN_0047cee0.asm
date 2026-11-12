@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_0047cee0(undefined4 param_1,undefined4 param_2)
+; void shape_edittool_cpp_FUN_0047cee0(undefined4 param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x408]:1  local_408
@@ -41,7 +41,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0047cf05
     PUSH EAX                            ; 0047cf09
     CALL crt_stdio.c_vsprintf_FUN_005a2898 ; 0047cf0a
-        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005a2898()
+        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005a2898(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047cf0f
     MOV EBX,dword ptr [0x01c5bb08]      ; 0047cf12 | DAT_01c5bb08
     PUSH EBX                            ; 0047cf18

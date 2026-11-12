@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 448,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
-    "suspect_count": 38,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 60,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
+      "unrolled_memcpy"
     ],
-    "total_lines": 202
+    "total_lines": 204
   },
   "cross_references": [
     {
@@ -33,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f3e90",
-    "signature": "void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(float *param_1,float *param_2,uint param_3,int param_4,int *param_5)"
+    "signature": "void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count)"
   },
   "function_calls": [
     {
@@ -116,10 +115,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.033613445378151,
@@ -163,11 +162,37 @@
     },
     "pcode_op_count": 718
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f9770",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005186c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00521290",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d6420",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 44,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -176,316 +201,60 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "clip_plane",
+        "offset": 4,
+        "size": 4,
+        "type": "SClipPlane *"
+      },
+      {
+        "is_param": true,
+        "name": "input_vertices",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "input_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "output_vertices",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "output_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(float *param_1,float *param_2,uint param_3,int param_4,int *param_5)",
-      "type": "unnamed_param"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 34,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar5->x = vertex_a->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(float *param_1,float *param_2,uint param_3,int param_4,int *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(float *param_1,float *param_2,uint param_3,int param_4,int *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(float *param_1,float *param_2,uint param_3,int param_4,int *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(float *param_1,float *param_2,uint param_3,int param_4,int *param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "*param_5 = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar6 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (0 < (int)param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (uVar3 == param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uVar3 = uVar3 ^ param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pfVar4 = param_2 + uVar3 * 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bVar2 = 0.0 < param_1[2] * pfVar6[2] + *param_1 * *pfVar6 + param_1[1] * pfVar6[1] +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bVar2 = 0.0 < param_1[2] * pfVar6[2] + *param_1 * *pfVar6 + param_1[1] * pfVar6[1] +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bVar2 = 0.0 < param_1[2] * pfVar6[2] + *param_1 * *pfVar6 + param_1[1] * pfVar6[1] +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0.0 < param_1[2] * pfVar4[2] + *param_1 * *pfVar4 + param_1[1] * pfVar4[1] + param_1[3]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0.0 < param_1[2] * pfVar4[2] + *param_1 * *pfVar4 + param_1[1] * pfVar4[1] + param_1[3]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0.0 < param_1[2] * pfVar4[2] + *param_1 * *pfVar4 + param_1[1] * pfVar4[1] + param_1[3]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0.0 < param_1[2] * pfVar4[2] + *param_1 * *pfVar4 + param_1[1] * pfVar4[1] + param_1[3]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "pfVar4 = (float *)(*param_5 * 0xc + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "pfVar4 = (float *)(*param_5 * 0xc + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "*param_5 = *param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "*param_5 = *param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,pfVar4,pfVar6,*param_5 * 0xc + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_1,pfVar4,pfVar6,*param_5 * 0xc + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,pfVar4,pfVar6,*param_5 * 0xc + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "*param_5 = *param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "*param_5 = *param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "pfVar5 = (float *)(*param_5 * 0xc + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "pfVar5 = (float *)(*param_5 * 0xc + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar1 = *param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "*param_5 = iVar1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,pfVar6,pfVar4,(iVar1 + 1) * 0xc + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(param_1,pfVar6,pfVar4,(iVar1 + 1) * 0xc + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "*param_5 = *param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "*param_5 = *param_5 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "} while (local_14 < (int)param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 5,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 48,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar4->x = vertex_a->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

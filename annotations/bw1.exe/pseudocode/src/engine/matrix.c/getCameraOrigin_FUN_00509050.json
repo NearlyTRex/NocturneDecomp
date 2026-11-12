@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 73,
+    "complexity_score": 27,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 13,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 1,
     "suspect_types": [
-      "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 31
+    "total_lines": 30
   },
   "cross_references": [
     {
@@ -31,7 +30,7 @@
     {
       "addr": "00483ac0",
       "from_addr": "00483acb",
-      "name": "engine_drender.cpp_FUN_00483ac0",
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,9 +48,9 @@
         "0050907e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__esi",
     "name": "engine_matrix.c_getCameraOrigin_FUN_00509050",
-    "signature": "void engine_matrix_c_getCameraOrigin_FUN_00509050(void)"
+    "signature": "void __esi engine_matrix_c_getCameraOrigin_FUN_00509050(CVector3i *output)"
   },
   "function_calls": [],
   "globals": [
@@ -80,13 +79,12 @@
       {
         "call_addr": "00483acb",
         "call_type": "direct",
-        "caller": "engine_drender.cpp_FUN_00483ac0",
-        "estimated_params": 2,
+        "caller": "engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0",
+        "estimated_params": 1,
         "instructions_analyzed": 4,
         "method": "push_count",
         "reg_params": [
-          "EBX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 0,
         "stack_params": 0
@@ -99,7 +97,7 @@
         "instructions_analyzed": 3,
         "method": "push_count",
         "reg_params": [
-          "EBX"
+          "ESI"
         ],
         "stack_bytes": 0,
         "stack_params": 0
@@ -112,7 +110,7 @@
         "instructions_analyzed": 3,
         "method": "push_count",
         "reg_params": [
-          "EBX"
+          "ESI"
         ],
         "stack_bytes": 0,
         "stack_params": 0
@@ -121,16 +119,18 @@
         "call_addr": "004545b7",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_004545b0",
-        "estimated_params": 0,
+        "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 0,
         "stack_params": 0
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
+    "confidence": "high",
+    "declared_params": 1,
     "declared_stack_bytes": 0,
     "estimated_params": 1,
     "matches_declared": true
@@ -157,6 +157,32 @@
       "STORE": 7
     },
     "pcode_op_count": 81
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ea3b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e6a90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050e2c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004ce760",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 20,
@@ -213,38 +239,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = _DAT_01c51d38;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[1] = uVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[2] = uVar2;",
-      "type": "unaffected_reg"
     }
   ]
 }

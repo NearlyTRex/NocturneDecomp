@@ -19,7 +19,7 @@ CNPC * core_npc_cpp_CNPC_dtor_FUN_00509af0(CNPC *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CNPCTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CNPCTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

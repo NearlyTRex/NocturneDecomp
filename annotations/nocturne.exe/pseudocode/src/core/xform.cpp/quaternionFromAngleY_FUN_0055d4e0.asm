@@ -17,10 +17,10 @@
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0 at 004db99b
 ;   core_scat.cpp_CScat_blendAimBones_FUN_004fd1d0 at 004fd216
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0051d650 at 0051d714
-;   core_stranger.cpp_CStranger_FUN_005384d0 at 00538710
-;   core_stranger.cpp_CStranger_FUN_005396d0 at 0053975d
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260 at 0053a2a1
+;   core_stranger.cpp_CStranger_extractTurnPose_FUN_005396d0 at 0053975d
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 at 0053a0e1
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0 at 00538710
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0059837e = 0.5

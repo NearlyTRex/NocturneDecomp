@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_factoryFuncBugs_FUN_0041ef20(void)
+; CBugs * __cdecl core_bugs_cpp_factoryFuncBugs_FUN_0041ef20(void)
 ;
 ;
 ; Called Functions:

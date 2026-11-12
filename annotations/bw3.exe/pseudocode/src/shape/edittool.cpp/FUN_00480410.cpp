@@ -17,7 +17,7 @@ void shape_edittool_cpp_FUN_00480410(CEditorTools *param_1,int param_2)
   int iVar4;
   int iVar5;
   
-  uVar1 = shape_edittool_cpp_FUN_004803d0(param_1);
+  uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0(param_1);
   if (_DAT_01c5baec != 0) {
     iVar4 = (uVar1 & 0xff) * 3;
     engine_mini3d_cpp_FUN_004f3520

@@ -19,6 +19,7 @@
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SProjectedVertex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4E0000
@@ -26,7 +27,7 @@
 
 void core_level_cpp_FUN_004e0000(int *param_1,undefined4 param_2,int param_3);
 void core_lever_cpp_staticInit_FUN_004e00a0(void);
-void core_lever_cpp_factoryFuncLever_FUN_004e00d0(void);
+CLever * __cdecl core_lever_cpp_factoryFuncLever_FUN_004e00d0(void);
 CDemonActorType * core_lever_cpp_CLever_getActorType_FUN_004e00f0(CLever *this_ptr);
 CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_004e0100(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_setup_FUN_004e01d0(CLever *this_ptr);
@@ -41,12 +42,12 @@ ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_004e0a10(CLeve
 undefined4 core_lever_cpp_FUN_004e0a30(int param_1,undefined4 param_2);
 CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_004e0ab0(CLever *this_ptr,uint flags);
 void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004e0b10(int light_level);
-undefined4 engine_light_cpp_getAmbientLightLevel_FUN_004e0b3e(void);
+int __cdecl engine_light_cpp_getAmbientLightLevel_FUN_004e0b3e(void);
 void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004e0b50(int dir_x,int dir_y,int dir_z);
 void engine_light_cpp_FUN_004e0b80(undefined4 param_1);
 int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004e0bb0(int world_x,int world_y,int world_z);
 int __cdecl engine_light_cpp_calculateLighting_FUN_004e0e00(int normal_x,int normal_y,int normal_z);
-void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_004e0ed0(int param_1,int *param_2);
+void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_004e0ed0(int vertex_index,CVector3i *vertex_position);
 void core_lightsta_cpp_staticInit_FUN_004e0f10(void);
 void core_lightsta_cpp_factoryFuncLightStaff_FUN_004e0f40(void);
 CDemonActorType * core_lightsta_cpp_CLightStaff_getActorType_FUN_004e0f60(CLightStaff *this_ptr);
@@ -59,7 +60,7 @@ void __cdecl core_lightsta_cpp_CLightStaff_setWeaponState_FUN_004e3e60(CLightSta
 void __cdecl core_lightsta_cpp_CLightStaff_setup_FUN_004e3eb0(CLightStaff *this_ptr);
 CLightStaff * core_lightsta_cpp_CLightStaff_dtor_FUN_004e3f10(CLightStaff *this_ptr,uint flags);
 void core_litecone_cpp_staticInit_FUN_004e3f60(void);
-void core_litecone_cpp_factoryFuncLightCone_FUN_004e3f90(void);
+CLightCone * __cdecl core_litecone_cpp_factoryFuncLightCone_FUN_004e3f90(void);
 CDemonActorType * core_litecone_cpp_CLightCone_getActorType_FUN_004e3fb0(CLightCone *this_ptr);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004e3fc0(CLightCone *this_ptr);
 void __cdecl core_litecone_cpp_CLightCone_setup_FUN_004e4060(CLightCone *this_ptr);
@@ -70,9 +71,9 @@ void __cdecl core_litecone_cpp_CLightCone_archive_FUN_004e41d0(CLightCone *this_
 ECollisionType __cdecl core_litecone_cpp_CLightCone_getCollisionType_FUN_004e4260(CLightCone *this_ptr,SCollisionInfo *collision_info);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_004e4270(CLightCone *this_ptr,uint flags);
 void __cdecl core_main_c_staticInit_FUN_004e42c0(void);
-void core_main_c_FUN_004e4330(undefined4 param_1);
+void core_main_c_FUN_004e4330(char *param_1);
 void core_main_c_FUN_004e4400(void);
-int __cdecl core_main_c_FUN_004e44d0(void);
+int __cdecl core_main_c_enterMainGameMenu_FUN_004e44d0(void);
 void __cdecl core_main_c_FUN_004e44e0(int argc,char **argv);
 void core_main_c_FUN_004e4c70(void);
 undefined8 core_main_c_FUN_004e4d00(void);
@@ -81,10 +82,9 @@ int __cdecl engine_matrix_c_FUN_004e4d90(int angle);
 int engine_matrix_c_FUN_004e4dd0(uint param_1);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004e4e10(void);
 void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004e50f0(int pitch,int yaw,int roll);
-void engine_matrix_c_FUN_004e553e(int param_1,CVector3i *param_2);
 void __cdecl engine_matrix_c_transformToCache_FUN_004e5540(int cacheIndex,CVector3i *inputPoint);
 void __cdecl engine_matrix_c_projectCachedPoint_FUN_004e5570(int cacheIndex);
-void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004e5590(int *param_1);
+void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004e5590(SProjectedVertex *point);
 void __cdecl engine_matrix_c_projectCachedPointUnchecked_FUN_004e5630(int cache_index);
 void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_004e56b0(int rot_x,int rot_y,int rot_z,int translate_x,int translate_y,int translate_z);
 void __cdecl engine_matrix_c_matrixPush_FUN_004e5df0(void);
@@ -95,14 +95,14 @@ void engine_matrix_c_normalizeVector3DFixed_FUN_004e6140(int *param_1);
 int * engine_matrix_c_normalizeVector3DFloat_FUN_004e61c0(int *param_1);
 int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_004e62a0(CVector3i *vector_ptr);
 void __cdecl engine_matrix_c_setCameraOrigin_FUN_004e6a40(int x,int y,int z);
-void engine_matrix_c_getCameraOrigin_FUN_004e6a90(void);
-void engine_matrix_c_getCameraRotation_FUN_004e6ac0(void);
+void __esi engine_matrix_c_getCameraOrigin_FUN_004e6a90(CVector3i *output);
+void __esi engine_matrix_c_getCameraRotation_FUN_004e6ac0(CVector3i *output);
 void __cdecl engine_matrix_c_pushViewport_FUN_004e6af0(int x,int y,int width,int height);
 void __cdecl engine_matrix_c_popViewport_FUN_004e6c50(void);
 void engine_matrix_c_FUN_004e6e0e(int param_1,int param_2,int param_3);
 void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_004e6ec0(void);
 void core_melee_cpp_staticInit_FUN_004e6f30(void);
-void core_melee_cpp_factoryFuncMelee_FUN_004e6f60(void);
+CMelee * __cdecl core_melee_cpp_factoryFuncMelee_FUN_004e6f60(void);
 CDemonActorType * core_melee_cpp_CMelee_getActorType_FUN_004e6f80(CMelee *this_ptr);
 CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_004e6f90(CMelee *this_ptr);
 void __cdecl core_melee_cpp_CMelee_archive_FUN_004e70e0(CMelee *this_ptr);
@@ -121,7 +121,7 @@ void core_melee_cpp_FUN_004e7540(undefined4 param_1);
 void __cdecl core_menu_cpp_staticInit_FUN_004e7610(void);
 void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004e76d0(int x_center,int y_top,int height_half);
 int __cdecl core_menu_cpp_FUN_004e7860(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
-undefined4 core_menu_cpp_FUN_004e7dc0(void);
+int __cdecl core_menu_cpp_calibrateGamepad_FUN_004e7dc0(void);
 void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004e80f0(int *sensitivity_value_ptr,char *window_title);
 void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004e8380(char *message_text);
 void __cdecl core_menu_cpp_showCalibrationTest_FUN_004e84d0(void);
@@ -200,13 +200,11 @@ void engine_mini3d_cpp_FUN_004ef22e(float *param_1,float *param_2);
 void engine_mini3d_cpp_FUN_004ef29e(float *param_1,float *param_2);
 void engine_mini3d_cpp_FUN_004ef360(undefined4 param_1);
 void engine_mini3d_cpp_FUN_004ef38e(float *param_1,float param_2);
-void engine_mini3d_cpp_FUN_004ef46e(float *param_1,float *param_2);
 void engine_mini3d_cpp_FUN_004ef470(float *param_1,float *param_2);
 void engine_mini3d_cpp_FUN_004ef890(int param_1);
 void engine_mini3d_cpp_FUN_004ef8f0(void);
 void engine_mini3d_cpp_FUN_004ef920(undefined4 *param_1,CVector3f *param_2,float param_3,float param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7);
 void engine_mini3d_cpp_FUN_004efa90(float *param_1,float *param_2,float *param_3,float *param_4);
-void engine_mini3d_cpp_FUN_004efd7c(float *param_1);
 void engine_mini3d_cpp_FUN_004efd80(float *param_1);
 void engine_mini3d_cpp_FUN_004efe20(void);
 

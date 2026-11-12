@@ -116,17 +116,17 @@ LAB_0047c1ff:
   local_40 = DAT_006141bc / 0x60;
   if (dialog_mode == 0) {
     iVar9 = local_18 * iVar2;
-    iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+    iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
     iVar5 = iVar5 + -1;
     iVar9 = iVar9 + (iVar2 + -1) * (iVar8 + -2) + 1;
   }
   else {
     iVar9 = local_40 + -2;
-    iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+    iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
     iVar5 = iVar9 * (iVar2 + -1) + iVar5 * iVar2;
     iVar9 = local_18;
   }
-  iVar6 = engine_font_cpp_FUN_004aaf00(_DAT_01c25590,str_list);
+  iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,(char *)str_list);
   if (iVar6 < iVar9) {
     iVar6 = iVar9;
   }
@@ -146,7 +146,7 @@ LAB_0047c1ff:
       iVar8 = _DAT_01c35e48 + local_2c;
       if (dialog_mode == 0) {
         iVar8 = iVar8 + local_1c + local_24;
-        iVar9 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+        iVar9 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
         local_4c = (_DAT_01c35e54 - iVar9) + 1;
         pcVar11 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240
                             ((CStrList *)dialog_title,iVar5);
@@ -155,11 +155,11 @@ LAB_0047c1ff:
         iVar6 = _DAT_01c35e54;
       }
       else {
-        iVar9 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+        iVar9 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
         local_48 = iVar9 * iVar5 + _DAT_01c35e4c + local_28 + -1;
         pcVar11 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240
                             ((CStrList *)dialog_title,iVar5);
-        iVar9 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+        iVar9 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
         iVar6 = iVar9 + local_48 + -1;
         iVar7 = local_18 + iVar8;
         iVar9 = local_48;
@@ -247,7 +247,7 @@ LAB_0047c1ff:
     shape_edittool_cpp_FUN_0047f210(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
   } while (iVar8 == -2);
-  ptr = (void *)__vec_delete(local_44,&g_CEdButtonTypeInfo);
+  ptr = __vec_delete(local_44,&g_CEdButtonTypeInfo);
   FUN_005b7fce(ptr);
   DAT_006141cc = local_50;
   engine_2d_c_clearInputAndWait_FUN_004032b0();

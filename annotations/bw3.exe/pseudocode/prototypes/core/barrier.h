@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_barrier.cpp_factoryFuncBarrier_FUN_0040ea90
 // Address: 0040ea90
-void factoryFuncBarrier(void);
+CBarrier * __cdecl factoryFuncBarrier(void);
 
 // Original: core_barrier.cpp_CBarrier_getActorType_FUN_0040eab0
 // Address: 0040eab0

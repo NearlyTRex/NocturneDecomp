@@ -13,7 +13,7 @@ CFlame * __cdecl core_armour_cpp_CFlame_dtor_FUN_0040f260(CFlame *this_ptr,uint 
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFlameTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFlameTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

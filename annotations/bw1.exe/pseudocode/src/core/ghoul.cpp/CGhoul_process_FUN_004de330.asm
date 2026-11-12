@@ -976,8 +976,8 @@ section .text
     PUSH EAX                            ; 004dede4 | = "%s confused while walking to scriptDe..."
     MOV EDI,dword ptr [0x00611100]      ; 004dede5 | g_CConsolePtr
     PUSH EDI                            ; 004dedeb | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 004dedec
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004dedec
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     JMP 0x004de46e                      ; 004dedf1
         ;   XREF to: 004de46e (UNCONDITIONAL_JUMP)  ; LAB_004de46e
     PUSH 0x1                            ; 004dedf6

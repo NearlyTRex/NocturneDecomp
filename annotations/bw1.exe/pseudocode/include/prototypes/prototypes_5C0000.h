@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "system/iostream.h"
 #include "system/stdio.h"
+#include "system/time.h"
 #include "system/watcom.h"
 #include "system/winbase.h"
 #include "system/windef.h"
@@ -15,21 +16,21 @@
 // FUNCTION PROTOTYPES - Range 0x5C0000
 // =============================================================================
 
-undefined4 * __cdecl crt_memory_c___vec_delete_FUN_005c030f(int param_1,undefined4 param_2);
+void * __cdecl crt_memory_c___vec_delete_FUN_005c030f(void *object_ptr,WatcomTypeInfo *type_info);
 void __cdecl crt_unknown_c_FUN_005c0336(void *ptr);
 void crt_unknown_c_FUN_005c0344(int param_1);
-int __cdecl crt_memory_c___arrinit_FUN_005c0357(int param_1,uint param_2,int param_3);
+void * __cdecl crt_memory_c___arrinit_FUN_005c0357(void *array_start,int element_count,WatcomTypeInfo *type_info);
 void crt_math_c_round_FUN_005c03a0(void);
 void crt_unknown_c_FUN_005c03c0(undefined4 param_1,undefined4 param_2);
 int crt_unknown_c_FUN_005c03f0(int param_1);
-void crt_unknown_c_FUN_005c0410(undefined4 param_1,int param_2);
+void crt_unknown_c_FUN_005c0410(int param_1,int param_2);
 undefined4 crt_unknown_c_FUN_005c0428(int param_1,undefined4 param_2,undefined4 param_3);
-void __cdecl crt_stdio_c_fscanf_FUN_005c04b0(undefined4 param_1,undefined4 param_2);
+int __cdecl crt_stdio_c_fscanf_FUN_005c04b0(_FILE *file,char *format);
 int __cdecl crt_string_c__stricmp_FUN_005c04e0(char *str1,char *str2);
-uint __cdecl crt_stdio_c_fgetc_FUN_005c0530(undefined4 *param_1);
+int __cdecl crt_stdio_c_fgetc_FUN_005c0530(_FILE *file);
 uint crt_unknown_c_FUN_005c0600(undefined4 *param_1);
 undefined4 crt_unknown_c_FUN_005c0630(undefined4 *param_1);
-uint __cdecl crt_stdio_c_ungetc_FUN_005c0700(uint param_1,int *param_2);
+int __cdecl crt_stdio_c_ungetc_FUN_005c0700(int character,_FILE *stream);
 int __cdecl crt_ctype_c_tolower_FUN_005c0820(int character);
 int crt_unknown_c_FUN_005c0840(void);
 int __cdecl crt_stdlib_c_rand_FUN_005c084c(void);
@@ -39,37 +40,37 @@ void * __cdecl crt_memory_c_malloc_FUN_005c08d0(ulong size);
 void * __cdecl crt_unknown_c_InternalHeapAlloc_FUN_005c08e0(ulong size);
 void crt_unknown_c_FUN_005c09f0(undefined4 param_1);
 void crt_unknown_c_FUN_005c0a00(int *param_1);
-uint __cdecl crt_stdio_c_fread_FUN_005c0b10(char *param_1,uint param_2,int param_3,int *param_4);
+SIZE_T __cdecl crt_stdio_c_fread_FUN_005c0b10(void *buffer,SIZE_T size,SIZE_T count,_FILE *file);
 undefined4 __cdecl crt_stdio_c_fclose_FUN_005c0d10(int param_1);
 undefined4 crt_unknown_c_FUN_005c0d54(undefined4 param_1,undefined4 param_2);
 int crt_unknown_c_FUN_005c0d7c(int param_1);
 void crt_unknown_c_FUN_005c0d8c(char *param_1,uint param_2);
-uint __cdecl crt_stdio_c_fclose_FUN_005c0e40(int param_1,int param_2);
+uint __cdecl crt_stdio_c_fclose_FUN_005c0e40(_FILE *param_1,int param_2);
 void * crt_memory_c_operator_new_FUN_005c0f32(ulong param_1);
 int __cdecl crt_string_c__strcmp_FUN_005c0f80(char *str1,char *str2);
 int crt_unknown_c_FUN_005c102c(int *param_1);
-undefined4 __cdecl crt_memory_c___arrfini_FUN_005c1066(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-void __cdecl crt_stdlib_c__atexit_FUN_005c1093(undefined4 param_1);
+void * __cdecl crt_memory_c___arrfini_FUN_005c1066(void *obj_array,int obj_count,WatcomTypeInfo *type_info);
+void __cdecl crt_stdlib_c__atexit_FUN_005c1093(WatcomStaticDestructorNode *exit_node);
 void crt_unknown_c_FUN_005c10a1(void);
 void * __cdecl crt_memory_c_realloc_FUN_005c10d0(void *ptr,ulong new_size);
 undefined4 * crt_unknown_c_FUN_005c10e8(undefined4 *param_1,ulong param_2);
-char * __cdecl crt_stdio_c_fgets_FUN_005c1180(char *param_1,int param_2,int param_3);
+char * __cdecl crt_stdio_c_fgets_FUN_005c1180(char *str,int num,_FILE *stream);
 int __cdecl crt_string_c__strnicmp_FUN_005c1210(char *str1,char *str2,int count);
 void crt_memory_c_operator_new_array_FUN_005c1268(undefined4 param_1);
 int __cdecl crt_unknown_c_printf_FUN_005c1280(char *format);
 int __cdecl crt_ctype_c_toupper_FUN_005c12b0(int c);
 uint crt_unknown_c_FUN_005c12d0(byte *param_1,byte *param_2);
-int crt_unknown_c_FUN_005c140c(undefined4 param_1,byte param_2,uint param_3,undefined4 param_4,undefined4 param_5,int param_6);
+_FILE * crt_unknown_c_FUN_005c140c(undefined4 param_1,byte param_2,uint param_3,char *param_4,undefined4 param_5,_FILE *param_6);
 undefined4 crt_unknown_c_FUN_005c1520(undefined4 param_1,undefined1 *param_2,undefined4 param_3);
-void __cdecl crt_stdio_c_fopen_FUN_005c157c(undefined4 param_1,undefined4 param_2);
+_FILE * __cdecl crt_stdio_c_fopen_FUN_005c157c(char *filename,char *mode);
 int crt_unknown_c_FUN_005c1594(int param_1);
-undefined4 __cdecl crt_stdio_c_freopen_FUN_005c1614(undefined4 param_1,undefined1 *param_2,int param_3);
+_FILE * __cdecl crt_stdio_c_freopen_FUN_005c1614(char *filename,char *mode,_FILE *stream);
 undefined4 crt_unknown_c_FUN_005c16b0(int param_1,int *param_2);
 void crt_unknown_c_FUN_005c16f4(undefined4 *param_1);
-undefined4 __cdecl crt_stdio_c_fseek_FUN_005c170c(undefined4 *param_1,int param_2,uint param_3);
+int __cdecl crt_stdio_c_fseek_FUN_005c170c(_FILE *file,long offset,int whence);
 void crt_math_c_pow_FUN_005c18f4(void);
 void crt_unknown_c_FUN_005c1a30(void);
-uint __cdecl crt_stdio_c_fwrite_FUN_005c1a70(undefined4 *param_1,uint param_2,int param_3,int *param_4);
+SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005c1a70(void *ptr,SIZE_T size,SIZE_T count,_FILE *file);
 void crt_memory_c_calloc_FUN_005c1cb0(int param_1,int param_2);
 void crt_math_c_asin_FUN_005c1cd6(void);
 undefined2 crt_math_c_acos_FUN_005c1d04(void);
@@ -98,20 +99,20 @@ void __cdecl crt_memory_c___vec_new_FUN_005c2694(undefined4 param_1,undefined4 p
 char * __cdecl crt_unknown_c__getcwd_FUN_005c26ae(char *buffer,SIZE_T size);
 int __cdecl crt_unknown_c_FUN_005c26c0(char *path);
 undefined4 crt_unknown_c_FUN_005c26e0(undefined4 *param_1,undefined4 param_2);
-void __cdecl crt_time_c__localtime_FUN_005c2738(undefined4 param_1);
+_tm * __cdecl crt_time_c__localtime_FUN_005c2738(time_t *timer);
 int crt_unknown_c_FUN_005c2750(char *param_1,int param_2);
-uint __cdecl crt_time_c__strftime_FUN_005c2784(int param_1,uint param_2,char *param_3,undefined4 *param_4);
+uint __cdecl crt_time_c__strftime_FUN_005c2784(char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr);
 char * __cdecl crt_string_c_strupr_FUN_005c2c20(char *string);
 uint crt_unknown_c_FUN_005c2c40(int param_1);
 void crt_unknown_c_FUN_005c2c68(undefined4 param_1,int param_2);
 void crt_unknown_c_FUN_005c2c70(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 int __cdecl crt_stdio_c_sscanf_FUN_005c2cac(char *str,char *format);
-void __cdecl crt_heap_c__heapwalk_FUN_005c2ce0(undefined4 param_1);
+int __cdecl crt_heap_c__heapwalk_FUN_005c2ce0(WatcomHeapInfo *heap_info);
 undefined4 crt_unknown_c_FUN_005c2cf0(int *param_1,uint *param_2);
 undefined4 crt_unknown_c_FUN_005c2d94(undefined4 param_1);
 char * __cdecl crt_string_c_strstr_FUN_005c2dc0(char *haystack_str,char *needle_str);
-int __cdecl crt_stdio_c_ftell_FUN_005c2e90(int param_1);
-uint __cdecl crt_stdio_c_fputc_FUN_005c2f00(uint param_1,int *param_2);
+long __cdecl crt_stdio_c_ftell_FUN_005c2e90(_FILE *file_handle);
+int __cdecl crt_stdio_c_fputc_FUN_005c2f00(int character,_FILE *file);
 char * __cdecl crt_env_c_getenv_FUN_005c3050(char *name);
 int __watcallStack crt_stdio_c_rename_FUN_005c30b0(char *old_filename,char *new_filename);
 int __cdecl crt_stdlib_c_atoi_FUN_005c30e0(char *string_ptr);
@@ -164,7 +165,7 @@ void crt_unknown_c_FUN_005c4f2c(void);
 void crt_unknown_c_FUN_005c4f34(void);
 void crt_unknown_c_FUN_005c4f70(void);
 void crt_unknown_c_FUN_005c4fb4(void);
-void crt_unknown_c_FUN_005c4fc0(undefined4 *param_1,undefined4 param_2);
+void crt_unknown_c_FUN_005c4fc0(undefined4 *param_1,int param_2);
 undefined4 crt_unknown_c_FUN_005c4fe0(int param_1,undefined4 param_2,undefined4 param_3);
 undefined4 crt_unknown_c_FUN_005c50cc(void);
 void __cdecl crt_unknown_c_FUN_005c50d4(void);
@@ -516,7 +517,7 @@ void crt_unknown_c_FUN_005ce010(undefined4 *param_1,undefined4 *param_2,undefine
 uint crt_unknown_c_FUN_005ce060(uint param_1,uint param_2);
 undefined4 crt_unknown_c_FUN_005ce114(void);
 undefined * crt_unknown_c_FUN_005ce120(uint param_1);
-int crt_unknown_c_FUN_005ce150(char *param_1,int param_2);
+int crt_unknown_c_FUN_005ce150(byte *param_1,_FILE *param_2);
 uint crt_unknown_c_FUN_005ce203(int *param_1);
 uint crt_unknown_c_FUN_005ce269(int *param_1);
 undefined * crt_unknown_c_FUN_005ce300(char *param_1,undefined4 *param_2,int param_3,int param_4);

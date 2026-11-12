@@ -34,6 +34,7 @@
 #include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
+#include "types/structs/STrianglePackedIndices.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x510000
@@ -50,7 +51,7 @@ void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_00510250(CMouse *this_ptr);
 CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor7_FUN_005103c0(CAlphaBitmap *this_ptr,uint flags);
 CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor15_FUN_005103e0(CAlphaBitmap *this_ptr,uint flags);
 void core_npc_cpp_staticInit_FUN_00510400(void);
-void core_npc_cpp_factoryFuncNPC_FUN_00510430(void);
+CNPC * __cdecl core_npc_cpp_factoryFuncNPC_FUN_00510430(void);
 CDemonActorType * core_npc_cpp_CNPC_getActorType_FUN_00510450(CNPC *this_ptr);
 CNPC * core_npc_cpp_CNPC_ctor_FUN_00510460(CNPC *this_ptr);
 void __cdecl core_npc_cpp_CNPC_setup_FUN_00510510(CNPC *this_ptr);
@@ -71,11 +72,11 @@ undefined4 engine_palette_cpp_FUN_00510dc0(void);
 CParticle * __cdecl core_particle_cpp_CParticle_ctor_FUN_00510dd0(CParticle *this_ptr);
 CParticle * __cdecl core_particle_cpp_CParticle_dtor_FUN_00510df0(CParticle *this_ptr,uint flags);
 void __cdecl core_particle_cpp_CParticle_setup_FUN_00510e00(CParticle *this_ptr,CVector3f *position,CVector3f *velocity);
-void core_particle_cpp_FUN_00510ef0(float *param_1);
+void core_particle_cpp_FUN_00510ef0(CVector3f *param_1);
 void __cdecl core_particle_cpp_CParticle_render_FUN_00511370(CParticle *this_ptr);
 undefined4 core_particle_cpp_FUN_005113a0(void);
 void core_passngr_cpp_staticInit_FUN_005113b0(void);
-void core_passngr_cpp_factoryFuncPassenger_FUN_005113e0(void);
+CPassenger * __cdecl core_passngr_cpp_factoryFuncPassenger_FUN_005113e0(void);
 CDemonActorType * core_passngr_cpp_CPassenger_getActorType_FUN_00511400(CPassenger *this_ptr);
 CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00511410(CPassenger *this_ptr);
 CPassenger * core_passngr_cpp_CPassenger_dtor_FUN_005114f0(CPassenger *this_ptr,uint flags);
@@ -97,7 +98,7 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0(CPathMap *t
 int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
 void core_path_cpp_FUN_0051354e(void);
 int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_00513650(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
-void core_path_cpp_renderGridQuad_FUN_00513720(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,int param_7);
+void __cdecl core_path_cpp_renderGridQuad_FUN_00513720(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha);
 void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00513950(CPathMap *this_ptr,int depth,int red,int green,int fog);
 CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00513d30(CLocation *location);
 CPathMap * __cdecl core_path_cpp_getPathMap_FUN_00513ea0(CLocation *location);
@@ -108,17 +109,17 @@ void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_00514020(CVector3f *posi
 void core_path_cpp_FUN_005140ee(CPathMap *param_1);
 uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_00514140(CPathMap *this_ptr,int start_height);
 CPathMap * core_path_cpp_CPathMap_arrdtor12_FUN_005145d0(CPathMap *this_ptr,uint flags);
-void __cdecl engine_pcx_c_writePCXScanline_FUN_005145f0(int param_1,int *param_2);
+void __cdecl engine_pcx_c_writePCXScanline_FUN_005145f0(int row_index,_FILE *pcx_file);
 void __cdecl engine_pcx_c_saveScreenRaw16_FUN_005146c0(char *filename);
 void __cdecl engine_pcx_c_saveScreenRaw32_FUN_00514880(char *filename);
 void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_00514a30(char *filename);
 void core_pendulum_cpp_staticInit_FUN_00514c70(void);
-void core_pendulum_cpp_factoryFuncPendulum_FUN_00514ca0(void);
+CPendulum * __cdecl core_pendulum_cpp_factoryFuncPendulum_FUN_00514ca0(void);
 CDemonActorType * core_pendulum_cpp_CPendulum_getActorType_FUN_00514cc0(CPendulum *this_ptr);
 CPendulum * __cdecl core_pendulum_cpp_CPendulum_ctor_FUN_00514cd0(CPendulum *this_ptr);
 void __cdecl core_pendulum_cpp_CPendulum_setup_FUN_00514de0(CPendulum *this_ptr);
 void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_00514f40(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor);
-bool core_pendulum_cpp_didPhaseCross_FUN_005155de(float param_1,float param_2,float param_3);
+int __cdecl core_pendulum_cpp_didPhaseCross_FUN_005155de(float threshold,float old_phase,float new_phase);
 void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_005156d0(CPendulum *this_ptr,float delta_time);
 void __cdecl core_pendulum_cpp_CPendulum_process_FUN_00515cd0(CPendulum *this_ptr,float delta_time);
 int __cdecl core_pendulum_cpp_CPendulum_renderOpaque_FUN_00515e40(CPendulum *this_ptr);
@@ -138,8 +139,8 @@ int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getPixelValue_FUN_00516290(CPacke
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_00516410(CPackedBitmap *this_ptr,int dest_x,int dest_y,int clip_left,int start_row,int clip_right,int end_row);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_00516590(CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,int height);
 void cockpit_pkbitmap_cpp_FUN_0051668e(CPackedBitmap *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7);
-void __cdecl cockpit_pkbitmap_cpp_FUN_005168e0(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag);
-void __cdecl cockpit_pkbitmap_cpp_FUN_00516960(CPackedBitmap *this_ptr,int apply_palette_flag);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00516960(CPackedBitmap *this_ptr,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_005169b0(CPackedBitmap *this_ptr,uchar *raw_bitmap_data,int row_stride);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_00516a60(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride);
 void cockpit_pkbitmap_cpp_FUN_00516c88(void);
@@ -147,7 +148,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyACTPalette_FUN_00516cb0(CPa
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_00516d00(CPackedBitmap *this_ptr,uchar *palette_buffer);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_00516d60(CPackedBitmap *this_ptr);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_00516d70(CPackedBitmap *this_ptr,int apply_palette_flag);
-void cockpit_pkbitmap_cpp_FUN_00516de0(CPackedBitmap *param_1,undefined4 param_2);
+void cockpit_pkbitmap_cpp_FUN_00516de0(CPackedBitmap *param_1,char *param_2);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_00516e60(CPackedBitmap *this_ptr,_FILE *file_handle);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00516f30(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00517130(CPackedBitmap *this_ptr,char *filename,int apply_palette_flag);
@@ -155,9 +156,9 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_005171e0(CPacked
 void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_00517200(int total_entries,_FILE *file_header);
 CPackedBitmap * cockpit_pkbitmap_cpp_parsePBGFile_FUN_00517280(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6);
 CPackedBitmap * cockpit_pkbitmap_cpp_FUN_00517400(int *param_1,char *param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6);
-void cockpit_pkbitmap_cpp_FUN_005175b0(undefined4 *param_1);
-void cockpit_pkbitmap_cpp_FUN_005175e0(int *param_1);
-void cockpit_pkbitmap_cpp_FUN_00517640(undefined4 *param_1);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_005175b0(CPackedBitmapSet *this_ptr);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_005175e0(CPackedBitmapSet *this_ptr);
+void cockpit_pkbmpset_cpp_FUN_00517640(undefined4 *param_1);
 void cockpit_pkbmpset_cpp_FUN_00517670(int *param_1,int param_2);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00517710(CPackedBitmapSet *this_ptr,char *param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
 void cockpit_pkbmpset_cpp_FUN_005177de(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,int param_8);
@@ -169,7 +170,7 @@ int __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_00517f
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_00517f60(CPackedBitmapSet *this_ptr,char *filename);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_00517f80(CPackedBitmapSet *this_ptr);
 void core_platfrm_cpp_staticInit_FUN_00518050(void);
-void core_platfrm_cpp_factoryFuncPlatform_FUN_00518080(void);
+CPlatform * __cdecl core_platfrm_cpp_factoryFuncPlatform_FUN_00518080(void);
 CDemonActorType * core_platfrm_cpp_CPlatform_getActorType_FUN_005180a0(CPlatform *this_ptr);
 CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_005180b0(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_00518280(CPlatform *this_ptr);
@@ -196,7 +197,6 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile *this_pt
 void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_0051a8f0(CPodFile *this_ptr);
 int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_0051a990(CPodFile *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_0051aa00(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
-bool engine_pod_cpp_FUN_0051aa7e(int *param_1);
 bool engine_pod_cpp_FUN_0051aa80(int *param_1);
 void engine_pod_cpp_FUN_0051ad50(int param_1,int param_2);
 void engine_pod_cpp_FUN_0051ae70(int param_1,int param_2);
@@ -208,7 +208,7 @@ void __cdecl engine_pod_cpp_CPod_remount_FUN_0051b1e0(CPod *this_ptr);
 void __cdecl engine_pod_cpp_CPod_dismount_FUN_0051b280(CPod *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPod_init_FUN_0051b320(CPod *this_ptr);
 void __cdecl engine_pod_cpp_CPod_cleanup_FUN_0051b370(CPod *this_ptr);
-int __cdecl engine_pod_cpp_findFilesByExtension_FUN_0051b3c0(int *param_1,byte *param_2,int param_3,int param_4,int param_5);
+int __cdecl engine_pod_cpp_findFilesByExtension_FUN_0051b3c0(CPod *pod,char *extension,char *output_buffer,int max_results,int result_string_length);
 void __cdecl engine_pod_cpp_CPod_initSearch_FUN_0051b580(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context);
 int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_0051b5d0(CPod *this_ptr,CPodSearchContext *search_context);
 void engine_pod_cpp_FUN_0051b6dc(undefined4 param_1,char *param_2);
@@ -219,27 +219,27 @@ int __cdecl engine_pod_cpp_CPod_getPodIndexByFilename_FUN_0051be70(CPod *this_pt
 void __cdecl engine_pod_cpp_CPod_dismountPod_FUN_0051bf10(CPod *this_ptr,int index);
 int __cdecl engine_pod_cpp_findFileInPod_FUN_0051bfa0(SFoundFileInfo *info);
 void __cdecl core_podmain_cpp_staticInit_FUN_0051bfd0(void);
-void core_podmain_cpp_FUN_0051c000(int param_1);
+void __cdecl core_podmain_cpp_CDemonPod_load_FUN_0051c000(CDemonPod *this_ptr);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_ctor_FUN_0051c110(CDemonPod *this_ptr);
 CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_0051c130(CDemonPod *this_ptr,uint flags);
 void core_podmain_cpp_FUN_0051c18e(undefined4 param_1);
 void __cdecl engine_prim_c_FUN_0051c1a0(int culling_mode);
 void engine_prim_c_FUN_0051c1b0(int param_1,int param_2);
 SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_0051c580(int y_value,SSoftwareEdge *edge_ptr);
-void __cdecl engine_prim_c_prepareDepthBuffer_FUN_0051c5c0(int param_1,int param_2);
-void __cdecl engine_prim_c_normalizeTextureCoords_FUN_0051c630(int param_1,int param_2);
-void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_0051c6b0(int param_1,int param_2);
-void __cdecl engine_prim_c_replaceWWithDepth_FUN_0051c720(int param_1,int param_2);
-bool __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760(int param_1,int param_2,int param_3);
-int __cdecl engine_prim_c_FUN_0051c820(SMRGLPrimitiveTriangle *triangle);
-bool __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0051ca00(ushort *param_1);
+void __cdecl engine_prim_c_prepareDepthBuffer_FUN_0051c5c0(SRenderVertex *vertices,int vertex_count);
+void __cdecl engine_prim_c_normalizeTextureCoords_FUN_0051c630(SRenderVertex *vertices,int vertex_count);
+void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_0051c6b0(SRenderVertex *vertices,int vertex_count);
+void __cdecl engine_prim_c_replaceWWithDepth_FUN_0051c720(SRenderVertex *vertices,int vertex_count);
+int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2);
+int __cdecl engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_0051c820(SMRGLPrimitiveTriangle *triangle);
+int __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0051ca00(STrianglePackedIndices *triangle);
 void __cdecl engine_prim_c_renderPolygonSoftware_FUN_0051cb20(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_0051d050(int *vertex_indices,int vertex_count);
 void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_0051d7a0(SRenderVertex *vertex0,SRenderVertex *vertex1);
 void __cdecl engine_prim_c_FUN_0051da80(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_0051e130(int *vertex_indices,int vertex_count);
 void core_scat_cpp_staticInit_FUN_0051e8d0(void);
-void core_scat_cpp_factoryFuncScat_FUN_0051e970(void);
+CScat * __cdecl core_scat_cpp_factoryFuncScat_FUN_0051e970(void);
 CDemonActorType * core_scat_cpp_CScat_getActorType_FUN_0051e990(CScat *this_ptr);
 CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_0051e9a0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_setup_FUN_0051ea60(CScat *this_ptr);

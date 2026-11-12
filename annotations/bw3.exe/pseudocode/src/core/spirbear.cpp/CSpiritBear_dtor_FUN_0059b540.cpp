@@ -20,7 +20,7 @@ CSpiritBear * core_spirbear_cpp_CSpiritBear_dtor_FUN_0059b540(CSpiritBear *this_
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSpiritBearTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSpiritBearTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

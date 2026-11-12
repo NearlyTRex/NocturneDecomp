@@ -13,7 +13,7 @@ CIcePick * __cdecl core_icepick_cpp_CIcePick_dtor_FUN_004d6540(CIcePick *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CIcePickTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CIcePickTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

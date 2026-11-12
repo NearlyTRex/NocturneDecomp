@@ -85,7 +85,7 @@ section .text
     MOV EBX,0x3ff5c28f                  ; 004c9528
     LEA EDI,[ESP + 0xcc]                ; 004c952d
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 004c9534
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     MOV EDX,0xbda3d70a                  ; 004c9539
     MOV ECX,0x3ee147ae                  ; 004c953e
     ADD ESP,0xc                         ; 004c9543

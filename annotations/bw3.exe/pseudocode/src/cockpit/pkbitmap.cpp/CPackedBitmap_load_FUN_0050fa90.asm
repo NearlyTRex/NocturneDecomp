@@ -12,7 +12,7 @@
 ; int              Stack[0x18]:4   row_stride
 ;
 ; XREF[2]:
-;   cockpit_pkbitmap.cpp_FUN_0050f910 at 0050f956
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910 at 0050f956
 ;   cockpit_pkbmpset.cpp_FUN_0051080e at 005109dd
 ;
 ; Referenced Globals:

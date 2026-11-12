@@ -32,7 +32,7 @@ section .text
     PUSH 0x41f00000                     ; 00504408
     PUSH EAX                            ; 0050440d
     CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0 ; 0050440e
-        ;   XREF to: 004ea6f0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0()
+        ;   XREF to: 004ea6f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 00504413
     TEST EAX,EAX                        ; 00504416
     JZ 0x0050450c                       ; 00504418

@@ -7,7 +7,7 @@
 
 // Original: engine_pcx.c_writePCXScanline_FUN_0050d620
 // Address: 0050d620
-void __cdecl writePCXScanline(int param_1,int *param_2);
+void __cdecl writePCXScanline(int row_index,_FILE *pcx_file);
 
 // Original: engine_pcx.c_saveScreenRaw16_FUN_0050d6f0
 // Address: 0050d6f0

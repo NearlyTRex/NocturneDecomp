@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sentinel_cpp_factoryFuncSentinel_FUN_0052a6f0(void)
+; CSentinel * __cdecl core_sentinel_cpp_factoryFuncSentinel_FUN_0052a6f0(void)
 ;
 ;
 ; Called Functions:

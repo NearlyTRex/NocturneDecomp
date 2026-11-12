@@ -19,7 +19,7 @@ CDrummer * core_tbplayer_cpp_CDrummer_dtor_FUN_00572060(CDrummer *this_ptr,uint 
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDrummerTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDrummerTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

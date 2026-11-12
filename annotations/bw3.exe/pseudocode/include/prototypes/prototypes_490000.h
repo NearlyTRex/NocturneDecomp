@@ -27,6 +27,7 @@
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMuzzleFlash.h"
 #include "types/classes/CParticle.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRing.h"
 #include "types/classes/CRock.h"
 #include "types/classes/CRuleList.h"
@@ -76,18 +77,18 @@ void core_event_cpp_FUN_00495b4e(int *param_1,int param_2,char *param_3,char *pa
 void core_event_cpp_FUN_00495c8e(int *param_1,int param_2);
 int __cdecl core_event_cpp_CRuleList_findFirst_FUN_00495d60(CRuleList *this_ptr);
 int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_00495db0(CRuleList *this_ptr);
-void __cdecl core_event_cpp_copyQuaternion_FUN_00495e40(undefined4 *param_1,undefined4 *param_2);
+CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_00495e40(CQuaternion4f *dest,CQuaternion4f *src);
 undefined4 core_event_cpp_FUN_00495e60(int param_1);
-void crt_watcom_c__memset_FUN_00495ec0(uint param_1);
+void __fastcall crt_watcom_c__memset_FUN_00495ec0(void *dest,int fill_byte,uint size);
 void crt_unknown_c_FUN_00495f30(void);
 void crt_unknown_c_FUN_00495f38(void);
 void crt_unknown_c_FUN_00495f48(void);
 void crt_unknown_c_FUN_00495f54(void);
 void crt_unknown_c_FUN_00495f60(void);
-void crt_watcom_c__memcpy_FUN_00495f68(uint param_1);
+void __fastcall crt_watcom_c__memcpy_FUN_00495f68(void *dest,void *src,uint size);
 void crt_watcom_c_FUN_0049604c(void);
 void core_filmreel_cpp_staticInit_FUN_004960f0(void);
-void core_filmreel_cpp_factoryFuncFilmReel_FUN_00496140(void);
+CFilmReel * __cdecl core_filmreel_cpp_factoryFuncFilmReel_FUN_00496140(void);
 CDemonActorType * core_filmreel_cpp_CFilmReel_getActorType_FUN_00496160(CFilmReel *this_ptr);
 CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_00496170(CFilmReel *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmReel_setup_FUN_004961e0(CFilmReel *this_ptr);
@@ -101,7 +102,7 @@ void __cdecl core_filmreel_cpp_CFilmReel_renderBackground_FUN_00496360(CFilmReel
 void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_00496380(CFilmReel *this_ptr);
 ECollisionType __cdecl core_filmreel_cpp_CFilmReel_getCollisionType_FUN_004963d0(CFilmReel *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004963f0(CFilmReel *this_ptr,CBoundingBox3D *out_box);
-void core_filmreel_cpp_factoryFuncFilmProjector_FUN_00496430(void);
+CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_00496430(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_00496450(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_00496460(CFilmProjector *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmProjector_setup_FUN_00496520(CFilmProjector *this_ptr);
@@ -160,7 +161,7 @@ void __cdecl core_fire_cpp_CBulletTrail_init_FUN_0049aca0(CBulletTrail *this_ptr
 void __cdecl core_fire_cpp_CBulletTrail_process_FUN_0049ad00(CBulletTrail *this_ptr);
 void __cdecl core_fire_cpp_CBulletTrail_render_FUN_0049ad20(CBulletTrail *this_ptr);
 void __cdecl core_fire_cpp_CLaserBeam_init_FUN_0049b030(CLaserBeam *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread,float cone_angle);
-float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(float param_1,float param_2);
+float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(float depth,float min_size);
 void __cdecl core_fire_cpp_CLaserBeam_render_FUN_0049b1d0(CLaserBeam *this_ptr);
 void __cdecl core_fire_cpp_updateTextureAnimCounts_FUN_0049c620(void);
 CExplosion * __cdecl core_fire_cpp_CExplosion_ctor_FUN_0049c670(CExplosion *this_ptr);

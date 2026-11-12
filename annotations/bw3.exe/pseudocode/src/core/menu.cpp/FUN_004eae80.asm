@@ -38,7 +38,7 @@
 ;   core_game.cpp_CGame_resetKeyState_FUN_004b93e0
 ;   core_game.cpp_FUN_004b8e60
 ;   core_main.c_FUN_004e4330
-;   core_menu.cpp_FUN_004e7dc0
+;   core_menu.cpp_calibrateGamepad_FUN_004e7dc0
 ;   core_menu.cpp_getKeyDisplayName_FUN_004eaa60
 ;   core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0
 ;   crt_unknown.c_sprintf_FUN_005a28c0
@@ -1389,8 +1389,8 @@ section .text
     ADD ESP,0x8                         ; 004ebe11
     JMP 0x004eaeae                      ; 004ebe14
         ;   XREF to: 004eaeae (UNCONDITIONAL_JUMP)  ; LAB_004eaeae
-    CALL core_menu.cpp_FUN_004e7dc0     ; 004ebe19
-        ;   XREF to: 004e7dc0 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_FUN_004e7dc0()
+    CALL core_menu.cpp_calibrateGamepad_FUN_004e7dc0 ; 004ebe19
+        ;   XREF to: 004e7dc0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_calibrateGamepad_FUN_004e7dc0()
         ;   Label: LAB_004ebe19
     TEST EAX,EAX                        ; 004ebe1e
     JNZ 0x004eaea3                      ; 004ebe20

@@ -599,6 +599,12 @@ def export_functions(currentProgram, path, allow_name_address_mismatch=False,
         # Only include comment if present
         if func_cmt:
             func_data["cmt"] = func_cmt
+
+        # A signature nobody committed (default, analysis or imported), which the
+        # decompiler re-infers each time; report_uncommitted_signatures.py lists them
+        sig_source = str(f.getSignatureSource())
+        if sig_source != "USER_DEFINED":
+            func_data["sig"] = sig_source.lower()
         functions.append(clean_data(func_data))
 
     # Export functions

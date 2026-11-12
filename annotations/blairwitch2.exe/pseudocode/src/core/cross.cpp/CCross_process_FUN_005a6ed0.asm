@@ -57,7 +57,7 @@ section .text
     ADD ESP,0x4                         ; 005a6ef9
     PUSH EAX                            ; 005a6efc
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 005a6efd
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 005a6f02
     TEST EAX,EAX                        ; 005a6f05
     JNZ 0x005a77ba                      ; 005a6f07
@@ -540,7 +540,7 @@ section .text
     PUSH EAX                            ; 005a7574
     LEA ESI,[EBP + 0xfffffe02]          ; 005a7575
     CALL core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10 ; 005a757b
-        ;   XREF to: 00593a10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10()
+        ;   XREF to: 00593a10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10(CQuaternion4f * quat_in, CMatrix3x4f * matrix_out)
     ADD ESP,0x4                         ; 005a7580
     LEA EAX,[EBP + 0xfffffdd2]          ; 005a7583
     LEA EDI,[EBP + 0xfffffdd2]          ; 005a7589

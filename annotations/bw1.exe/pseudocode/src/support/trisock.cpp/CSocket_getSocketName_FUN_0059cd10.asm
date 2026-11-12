@@ -45,7 +45,7 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 0059cd43
     PUSH EAX                            ; 0059cd47
     CALL support_trisock.cpp_convertSockAddr_FUN_0059c760 ; 0059cd48
-        ;   XREF to: 0059c760 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_convertSockAddr_FUN_0059c760()
+        ;   XREF to: 0059c760 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_0059c760(SNetworkAddr * dest_addr, SOCKADDR * src_addr)
     ADD ESP,0x8                         ; 0059cd4d
     MOV ESI,EAX                         ; 0059cd50
     MOV EDI,dword ptr [ESP + 0x2c]      ; 0059cd52

@@ -49,8 +49,8 @@
 ;   core_actor.cpp_FUN_00408b40
 ;   core_set.cpp_CDemonSet_isCameraPanning_FUN_00555fe0
 ;   crt_stdlib.c__qsort_FUN_005bfc68
-;   engine_console.cpp_FUN_00445430
-;   engine_drender.cpp_FUN_00483ac0
+;   engine_console.cpp_CConsole_printf_FUN_00445430
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0
 ;   engine_drender.cpp_FUN_00483ae0
 ;   wincore_winrun.cpp_getTime_FUN_005b2420
 ;
@@ -74,8 +74,8 @@ section .text
     PUSH EBX                            ; 005545c4 | DAT_01bc120c
     LEA ESI,[ESP + 0x64]                ; 005545c5
     MOV dword ptr [0x020ab728],ECX      ; 005545c9 | DAT_020ab728
-    CALL engine_drender.cpp_FUN_00483ac0 ; 005545cf
-        ;   XREF to: 00483ac0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483ac0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0 ; 005545cf
+        ;   XREF to: 00483ac0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 005545d4
     MOV ESI,dword ptr [0x00612560]      ; 005545d7 | DAT_00612560
     PUSH ESI                            ; 005545dd | DAT_01bc120c
@@ -138,7 +138,7 @@ section .text
     PUSH EBP                            ; 005546a8
     PUSH 0x20ab72c                      ; 005546a9 | DAT_020ab72c
     CALL crt_stdlib.c__qsort_FUN_005bfc68 ; 005546ae
-        ;   XREF to: 005bfc68 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__qsort_FUN_005bfc68()
+        ;   XREF to: 005bfc68 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005bfc68(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     MOV ESI,dword ptr [0x01d06ab4]      ; 005546b3 | DAT_01d06ab4
     SHL ESI,0x2                         ; 005546b9
     MOV EAX,dword ptr [ESI + 0x1d06aa4] ; 005546bc
@@ -184,7 +184,7 @@ section .text
     POP EBX                             ; 0055473e
     RET                                 ; 0055473f
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 00554740
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005b2420()
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
         ;   Label: LAB_00554740
     MOV dword ptr [ESP + 0xb4],EAX      ; 00554745
     JMP 0x005545bc                      ; 0055474c
@@ -418,7 +418,7 @@ section .text
     JMP 0x0055471d                      ; 005549ec
         ;   XREF to: 0055471d (UNCONDITIONAL_JUMP)  ; LAB_0055471d
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 005549f1
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005b2420()
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
         ;   Label: LAB_005549f1
     MOV EDX,dword ptr [ESP + 0xb4]      ; 005549f6
     SUB EAX,EDX                         ; 005549fd
@@ -438,8 +438,8 @@ section .text
     PUSH 0x5f0b6a                       ; 00554a3b | = "buildDispList %d items : %3.2f ms\n"
     MOV EBX,dword ptr [0x00611100]      ; 00554a40 | g_CConsolePtr
     PUSH EBX                            ; 00554a46 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00554a47
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00554a47
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 00554a4c
     ADD ESP,0xc4                        ; 00554a4f
     POP EBP                             ; 00554a55

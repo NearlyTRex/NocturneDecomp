@@ -17,7 +17,7 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004a6a50(CFlame *this_pt
   float fVar3;
   CDemonRenderer *this_ptr_00;
   int iVar4;
-  int iVar5;
+  CDemonActor *pCVar5;
   uint *puVar6;
   uint *puVar7;
   byte bVar8;
@@ -57,13 +57,13 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004a6a50(CFlame *this_pt
       iVar4 = 0;
       iStack_20 = 0;
       for (iStack_18 = 0; iStack_18 < g_CDemonSetPtr->actor_count; iStack_18 = iStack_18 + 1) {
-        iVar5 = core_actor_cpp_castToClassHash_FUN_0040c840
-                          (*(uint *)((int)g_CDemonSetPtr->actors + iVar4),
-                           g_CFlameClassInfo.name_hash);
-        if (iVar5 != 0) {
-          afStack_34[2] = (pCStack_1c->position).x - *(float *)(iVar5 + 0x20);
-          afStack_34[3] = (pCStack_1c->position).y - *(float *)(iVar5 + 0x24);
-          fStack_24 = (pCStack_1c->position).z - *(float *)(iVar5 + 0x28);
+        pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c840
+                           (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4),
+                            g_CFlameClassInfo.name_hash);
+        if (pCVar5 != (CDemonActor *)0x0) {
+          afStack_34[2] = (pCStack_1c->position).x - (pCVar5->location).position.x;
+          afStack_34[3] = (pCStack_1c->position).y - (pCVar5->location).position.y;
+          fStack_24 = (pCStack_1c->position).z - (pCVar5->location).position.z;
           fStack_38 = afStack_34[2];
           *(float *)((int)afStack_34 + (uint)bVar8 * 0xfffffff8) =
                afStack_34[(uint)bVar8 * 0xfffffffe + 3];
@@ -71,7 +71,7 @@ void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004a6a50(CFlame *this_pt
                afStack_34[(uint)bVar8 * 0xfffffffe + (uint)bVar8 * 0xfffffffe + 4];
           if ((SQRT(afStack_34[1] * afStack_34[1] +
                     fStack_38 * fStack_38 + afStack_34[0] * afStack_34[0]) < (float)_DAT_005c0bf4)
-             && (*(int *)(iVar5 + 0x2a0) == 1)) {
+             && (pCVar5[1].render_needs_update == 1)) {
             return;
           }
         }

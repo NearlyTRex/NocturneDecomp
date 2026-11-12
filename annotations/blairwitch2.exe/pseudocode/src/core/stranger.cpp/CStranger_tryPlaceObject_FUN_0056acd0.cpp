@@ -16,10 +16,10 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0056acd0(CStranger *t
   double dVar2;
   double dVar3;
   double dVar4;
-  CDemonActor *pCVar5;
-  CLocation *pCVar6;
-  UOrientationVector *pUVar7;
-  int iVar8;
+  CLocation *pCVar5;
+  UOrientationVector *pUVar6;
+  int iVar7;
+  CDemonActor *pCVar8;
   UOrientationVector *pUVar9;
   uint *puVar10;
   byte bVar11;
@@ -116,30 +116,30 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0056acd0(CStranger *t
   if (local_14 < 1.0) {
     return 0;
   }
-  pCVar5 = (this_ptr->base).base.carry_hands[1].carry_actor;
-  if ((pCVar5 == (CDemonActor *)0x0) ||
-     (iVar8 = (*((pCVar5->vtable)._ub)->canPickup)(pCVar5,(CDemonActor *)this_ptr), iVar8 != 4)) {
+  pCVar8 = (this_ptr->base).base.carry_hands[1].carry_actor;
+  if ((pCVar8 == (CDemonActor *)0x0) ||
+     (iVar7 = (*((pCVar8->vtable)._ub)->canPickup)(pCVar8,(CDemonActor *)this_ptr), iVar7 != 4)) {
     local_18 = 0;
     for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
       local_44 = (CActorDestination *)
                  core_actor_cpp_castToClassHash_FUN_0040c8f0
-                           (*(uint *)((int)g_CDemonSetPtr->actors + local_18),
+                           (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),
                             g_CActorDestinationClassInfo.name_hash);
       local_24 = local_44;
       if ((local_44 != (CActorDestination *)0x0) &&
-         (iVar8 = core_dest_cpp_CActorDestination_acceptsActor_FUN_004473f0
-                            (local_44,(this_ptr->base).base.carry_hands[1].carry_actor), iVar8 != 0)
+         (iVar7 = core_dest_cpp_CActorDestination_acceptsActor_FUN_004473f0
+                            (local_44,(this_ptr->base).base.carry_hands[1].carry_actor), iVar7 != 0)
          ) {
         core_actor_cpp_FUN_00408de0
                   (this_ptr,&((this_ptr->base).base.carry_hands[1].carry_actor)->location);
-        pCVar6 = &(local_24->base).location;
+        pCVar5 = &(local_24->base).location;
         local_c4 = local_130;
         *(uint *)((int)&stack0xffffff40 + (uint)bVar11 * -8) =
              *(uint *)(&stack0xfffffed4 + (uint)bVar11 * -8);
         *(uint *)((int)&stack0xffffff44 + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
              *(uint *)(&stack0xfffffed8 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
-        local_38 = pCVar6;
-        core_actor_cpp_FUN_00408de0(this_ptr,pCVar6);
+        local_38 = pCVar5;
+        core_actor_cpp_FUN_00408de0(this_ptr,pCVar5);
         local_dc = local_58;
         *(uint *)((int)&stack0xffffff28 + (uint)bVar11 * -8) =
              *(uint *)(&stack0xffffffac + (uint)bVar11 * -8);
@@ -156,8 +156,8 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0056acd0(CStranger *t
         dVar2 = (double)local_104;
         dVar3 = (double)local_108;
         dVar4 = (double)local_10c;
-        engine_console_cpp_FUN_00436710
-                  (g_CConsolePtr,"Delta to dest : %3.2f,%3.2f,%3.2f\n",dVar4,dVar3,dVar2);
+        engine_console_cpp_CConsole_printf_FUN_00436710
+                  (g_CConsolePtr,"Delta to dest : %3.2f,%3.2f,%3.2f\n");
         if ((((0.0 < local_104) && ((dVar2 < _DAT_005ebb8d && (ABS(dVar4) < _DAT_005ebb95)))) &&
             (0.0 < dVar3)) && (dVar3 < _DAT_005ebb9d)) {
           pCVar1 = &(this_ptr->base).target_position;
@@ -167,10 +167,10 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0056acd0(CStranger *t
             (this_ptr->base).target_position.y = (local_38->position).y;
             (this_ptr->base).target_position.z = (local_38->position).z;
           }
-          pUVar7 = &(this_ptr->base).target_orientation;
+          pUVar6 = &(this_ptr->base).target_orientation;
           pUVar9 = &(local_44->base).orient;
-          if (pUVar7 != pUVar9) {
-            (pUVar7->vec).x = (pUVar9->vec).x;
+          if (pUVar6 != pUVar9) {
+            (pUVar6->vec).x = (pUVar9->vec).x;
             (this_ptr->base).target_orientation.vec.y = (local_44->base).orient.vec.y;
             (this_ptr->base).target_orientation.vec.z = (local_44->base).orient.vec.z;
           }
@@ -187,23 +187,23 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0056acd0(CStranger *t
     for (iStack_30 = 0; iStack_30 < g_CDemonSetPtr->actor_count; iStack_30 = iStack_30 + 1) {
       pCStack_40 = (CActorDestination *)
                    core_actor_cpp_castToClassHash_FUN_0040c8f0
-                             (*(uint *)((int)g_CDemonSetPtr->actors + iStack_34),
+                             (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_34),
                               g_CActorDestinationClassInfo.name_hash);
       pCStack_28 = pCStack_40;
       if ((pCStack_40 != (CActorDestination *)0x0) &&
-         (iVar8 = core_dest_cpp_CActorDestination_acceptsActor_FUN_004473f0
+         (iVar7 = core_dest_cpp_CActorDestination_acceptsActor_FUN_004473f0
                             (pCStack_40,(this_ptr->base).base.carry_hands[1].carry_actor),
-         iVar8 != 0)) {
+         iVar7 != 0)) {
         core_actor_cpp_FUN_00408de0
                   (this_ptr,&((this_ptr->base).base.carry_hands[1].carry_actor)->location);
-        pCVar6 = &(pCStack_28->base).location;
+        pCVar5 = &(pCStack_28->base).location;
         fStack_88 = fStack_100;
         *(uint *)((int)&stack0xffffff7c + (uint)bVar11 * -8) =
              *(uint *)(&stack0xffffff04 + (uint)bVar11 * -8);
         *(uint *)((int)&stack0xffffff80 + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
              *(uint *)(&stack0xffffff08 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
-        pCStack_3c = pCVar6;
-        core_actor_cpp_FUN_00408de0(this_ptr,pCVar6);
+        pCStack_3c = pCVar5;
+        core_actor_cpp_FUN_00408de0(this_ptr,pCVar5);
         fStack_118 = fStack_94;
         *(uint *)((int)&stack0xfffffeec + (uint)bVar11 * -8) =
              *(uint *)(&stack0xffffff70 + (uint)bVar11 * -8);
@@ -235,25 +235,25 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0056acd0(CStranger *t
           fStack_4c = (this_ptr->carry_object_bbox).max.y - (this_ptr->carry_object_bbox).min.y;
           local_14 = core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_005626f0
                                ((this_ptr->base).base.carry_hands[1].carry_actor);
-          iVar8 = this_ptr->action_pending;
+          iVar7 = this_ptr->action_pending;
           (this_ptr->carry_object_world_center).y =
                (fStack_4c - local_14) + (this_ptr->carry_object_world_center).y;
-          if (iVar8 != 0) {
+          if (iVar7 != 0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
                       (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d");
           }
           pCVar1 = &(this_ptr->base).target_position;
-          pCVar6 = &(pCStack_40->base).location;
+          pCVar5 = &(pCStack_40->base).location;
           this_ptr->action_pending = 2;
-          if ((CLocation *)pCVar1 != pCVar6) {
-            pCVar1->x = (pCVar6->position).x;
+          if ((CLocation *)pCVar1 != pCVar5) {
+            pCVar1->x = (pCVar5->position).x;
             (this_ptr->base).target_position.y = (pCStack_40->base).location.position.y;
             (this_ptr->base).target_position.z = (pCStack_40->base).location.position.z;
           }
           pUVar9 = &(this_ptr->base).target_orientation;
-          pUVar7 = &(pCStack_40->base).orient;
-          if (pUVar9 != pUVar7) {
-            (pUVar9->vec).x = (pUVar7->vec).x;
+          pUVar6 = &(pCStack_40->base).orient;
+          if (pUVar9 != pUVar6) {
+            (pUVar9->vec).x = (pUVar6->vec).x;
             (this_ptr->base).target_orientation.vec.y = (pCStack_40->base).orient.vec.y;
             (this_ptr->base).target_orientation.vec.z = (pCStack_40->base).orient.vec.z;
           }
@@ -266,10 +266,10 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0056acd0(CStranger *t
   core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30
             (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
-  pCVar5 = (this_ptr->base).base.carry_hands[1].carry_actor;
+  pCVar8 = (this_ptr->base).base.carry_hands[1].carry_actor;
   puVar13 = &stack0xffffff0c;
-  puVar10 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x24);
-  local_13c = (pCVar5->location).position.x;
+  puVar10 = (uint *)((int)pCVar8 + (uint)bVar11 * -8 + 0x24);
+  local_13c = (pCVar8->location).position.x;
   *(uint *)((int)&stack0xfffffec8 + (uint)bVar11 * -8) = *puVar10;
   *(uint *)((int)&stack0xfffffecc + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
        puVar10[(uint)bVar11 * -2 + 1];
@@ -320,28 +320,28 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0056acd0(CStranger *t
     local_20 = 0;
     do {
       if (g_CDemonSetPtr->actor_count <= local_2c) {
-        pCVar5 = (this_ptr->base).base.carry_hands[1].carry_actor;
+        pCVar8 = (this_ptr->base).base.carry_hands[1].carry_actor;
         this_ptr->action_pending = 6;
-        if ((pCVar5 == (CDemonActor *)0x0) ||
-           (iVar8 = (*((pCVar5->vtable)._ub)->canPickup)(pCVar5,(CDemonActor *)this_ptr), iVar8 != 4
+        if ((pCVar8 == (CDemonActor *)0x0) ||
+           (iVar7 = (*((pCVar8->vtable)._ub)->canPickup)(pCVar8,(CDemonActor *)this_ptr), iVar7 != 4
            )) {
-          iVar8 = 0x14;
+          iVar7 = 0x14;
         }
         else {
-          iVar8 = 0x19;
+          iVar7 = 0x19;
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  (&(this_ptr->base).base.model.base,iVar8,1);
+                  (&(this_ptr->base).base.model.base,iVar7,1);
         this_ptr->action_timer = 4.0;
         return 1;
       }
-      iVar8 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                        (*(uint *)((int)g_CDemonSetPtr->actors + local_20),
-                         g_CCrateClassInfo.name_hash);
-      if (iVar8 != 0) {
-        local_d0 = *(float *)(iVar8 + 0x20) - local_13c;
-        local_cc = *(float *)(iVar8 + 0x24) - local_138;
-        local_c8 = *(float *)(iVar8 + 0x28) - local_134;
+      pCVar8 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20),
+                          g_CCrateClassInfo.name_hash);
+      if (pCVar8 != (CDemonActor *)0x0) {
+        local_d0 = (pCVar8->location).position.x - local_13c;
+        local_cc = (pCVar8->location).position.y - local_138;
+        local_c8 = (pCVar8->location).position.z - local_134;
         local_124 = local_d0;
         *(uint *)((int)&stack0xfffffee0 + (uint)bVar11 * -8) =
              *(uint *)((int)&stack0xffffff34 + (uint)bVar11 * -8);

@@ -12,8 +12,8 @@ void __cdecl sound_sndmain_cpp_staticInit_FUN_00550980(void)
 
 {
   _DAT_02ce7210 = _DAT_005e4854 / _DAT_005e4850;
-  __arrinit(0x2ce721c,0x40,&g_SfxSlotTypeInfo);
-  __arrinit(0x2ceb920,8,&g_SfxOptionsTypeInfo);
+  __arrinit((void *)0x2ce721c,0x40,&g_SfxSlotTypeInfo);
+  __arrinit((void *)0x2ceb920,8,&g_SfxOptionsTypeInfo);
   __arrinit(g_SfxSamples,0x40,&g_SfxSampleTypeInfo);
   _atexit(&g_SfxSamplesDestructorNode);
   return;

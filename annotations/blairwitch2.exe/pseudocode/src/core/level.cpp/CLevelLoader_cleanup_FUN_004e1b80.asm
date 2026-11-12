@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_FUN_0044e590
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     MOV ECX,dword ptr [0x00609ed0]      ; 004e1b8c | g_CConsolePtr
     PUSH ECX                            ; 004e1b92 | g_CConsoleInstance
     MOV dword ptr [EAX + 0xc],0x0       ; 004e1b93
-    CALL engine_console.cpp_FUN_00436710 ; 004e1b9a
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 004e1b9a
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004e1b9f
     PUSH 0x1d03130                      ; 004e1ba2
     CALL core_dmodel.cpp_FUN_0044e590   ; 004e1ba7

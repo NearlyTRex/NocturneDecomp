@@ -47,8 +47,8 @@
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   engine_font.cpp_FUN_004a8df0
-;   engine_font.cpp_FUN_004aaf00
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004dfe90
 ;   engine_mini3d.cpp_FUN_004f3570
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
@@ -251,8 +251,8 @@ section .text
     PUSH EAX                            ; 0047d48d
     MOV ESI,dword ptr [0x01c25590]      ; 0047d48e | DAT_01c25590
     PUSH ESI                            ; 0047d494
-    CALL engine_font.cpp_FUN_004aaf00   ; 0047d495
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 0047d495
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     MOV EDI,dword ptr [0x01c25f7c]      ; 0047d49a | DAT_01c25f7c
     MOV ECX,EAX                         ; 0047d4a0
     MOV EAX,[0x01c35e4c]                ; 0047d4a2 | DAT_01c35e4c

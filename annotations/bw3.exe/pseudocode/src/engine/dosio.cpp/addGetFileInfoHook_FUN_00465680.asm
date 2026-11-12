@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00465680(undefined4 param_1)
+; void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00465680(FileSearchHandlerFunc *handler)
 ;
+; Parameters:
+; FileSearchHandlerFunc * Stack[0x4]:4   handler
 ;
 ; XREF[1]:
 ;   core_main.c_FUN_004e44e0 at 004e4566

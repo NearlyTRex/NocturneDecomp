@@ -120,7 +120,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x30]      ; 0051db2c
     PUSH ECX                            ; 0051db30
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760 ; 0051db31
-        ;   XREF to: 0051c760 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760()
+        ;   XREF to: 0051c760 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 0051db36
     TEST EAX,EAX                        ; 0051db39
     JZ 0x0051dd35                       ; 0051db3b
@@ -318,7 +318,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x30]      ; 0051dd3d
     PUSH EDX                            ; 0051dd41
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760 ; 0051dd42
-        ;   XREF to: 0051c760 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760()
+        ;   XREF to: 0051c760 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 0051dd47
     TEST EAX,EAX                        ; 0051dd4a
     JNZ 0x0051db5a                      ; 0051dd4c
@@ -337,7 +337,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x30]      ; 0051dd65
     PUSH ECX                            ; 0051dd69
     CALL engine_special.cpp_drawPolygon_FUN_0055f8f0 ; 0051dd6a
-        ;   XREF to: 0055f8f0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon_FUN_0055f8f0()
+        ;   XREF to: 0055f8f0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_0055f8f0(SRenderVertex * vertices, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 0051dd6f
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0051dd72
     MOV EBX,dword ptr [0x01e61b58]      ; 0051dd76 | DAT_01e61b58
@@ -356,7 +356,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0051dd94
     PUSH EDX                            ; 0051dd98
     CALL engine_prim.c_prepareDepthBuffer_FUN_0051c5c0 ; 0051dd99
-        ;   XREF to: 0051c5c0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_prepareDepthBuffer_FUN_0051c5c0()
+        ;   XREF to: 0051c5c0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_prepareDepthBuffer_FUN_0051c5c0(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0051dd9e
     JMP 0x0051db8e                      ; 0051dda1
         ;   XREF to: 0051db8e (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -366,7 +366,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x2c]      ; 0051ddab
     PUSH EBP                            ; 0051ddaf
     CALL engine_prim.c_normalizeTextureCoords_FUN_0051c630 ; 0051ddb0
-        ;   XREF to: 0051c630 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_normalizeTextureCoords_FUN_0051c630()
+        ;   XREF to: 0051c630 (UNCONDITIONAL_CALL)  ; void engine_prim.c_normalizeTextureCoords_FUN_0051c630(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0051ddb5
     JMP 0x0051db8e                      ; 0051ddb8
         ;   XREF to: 0051db8e (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -376,7 +376,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x2c]      ; 0051ddc2
     PUSH ESI                            ; 0051ddc6
     CALL engine_prim.c_adjustNearPlaneTextureCoords_FUN_0051c6b0 ; 0051ddc7
-        ;   XREF to: 0051c6b0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_adjustNearPlaneTextureCoords_FUN_0051c6b0()
+        ;   XREF to: 0051c6b0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_adjustNearPlaneTextureCoords_FUN_0051c6b0(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0051ddcc
     JMP 0x0051db8e                      ; 0051ddcf
         ;   XREF to: 0051db8e (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -386,7 +386,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2c]      ; 0051ddd9
     PUSH ECX                            ; 0051dddd
     CALL engine_prim.c_normalizeTextureCoords_FUN_0051c630 ; 0051ddde
-        ;   XREF to: 0051c630 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_normalizeTextureCoords_FUN_0051c630()
+        ;   XREF to: 0051c630 (UNCONDITIONAL_CALL)  ; void engine_prim.c_normalizeTextureCoords_FUN_0051c630(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0051dde3
     JMP 0x0051db8e                      ; 0051dde6
         ;   XREF to: 0051db8e (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -396,7 +396,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0051ddf0
     PUSH EAX                            ; 0051ddf4
     CALL engine_prim.c_replaceWWithDepth_FUN_0051c720 ; 0051ddf5
-        ;   XREF to: 0051c720 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_0051c720()
+        ;   XREF to: 0051c720 (UNCONDITIONAL_CALL)  ; void engine_prim.c_replaceWWithDepth_FUN_0051c720(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0051ddfa
     JMP 0x0051db8e                      ; 0051ddfd
         ;   XREF to: 0051db8e (UNCONDITIONAL_JUMP)  ; caseD_4

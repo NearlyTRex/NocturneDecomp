@@ -9,7 +9,7 @@
 ; XREF[4]:
 ;   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00566fd0 at 00567001
 ;   core_skeleton.cpp_FUN_0056ae70 at 0056ae9f
-;   core_spike.cpp_FUN_00583700 at 005837a2
+;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00583700 at 005837a2
 ;   core_turret.cpp_FUN_005a2d00 at 005a2d52
 ;
 ; *****************************************************************************

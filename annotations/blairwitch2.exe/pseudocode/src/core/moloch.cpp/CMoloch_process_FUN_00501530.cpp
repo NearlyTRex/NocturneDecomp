@@ -41,7 +41,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00501530(CMoloch *this_ptr,floa
   float fStack_74;
   float fStack_70;
   uint uStack_6c;
-  uint uStack_68;
+  float fStack_68;
   uint uStack_60;
   CVector3f CStack_54;
   float fStack_48;
@@ -121,8 +121,8 @@ LAB_005018a5:
       if (2 < EVar4) {
         if (EVar4 == WALK_STATE_NO_PATH) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar3->base,0,1);
-          engine_console_cpp_FUN_00436710
-                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+          engine_console_cpp_CConsole_printf_FUN_00436710
+                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
           goto LAB_0050161d;
         }
         goto LAB_005018a5;
@@ -186,7 +186,7 @@ LAB_0050161d:
     afStack_98[(uint)bVar10 * -2 + 0xc] = afStack_98[(uint)bVar10 * -2 + 6];
     afStack_98[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd] =
          afStack_98[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
-    pCStack_14 = (CCharacter_full_vtable *)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(uStack_68)
+    pCStack_14 = (CCharacter_full_vtable *)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_68)
     ;
     fStack_18 = (float)pCStack_14;
     if ((float)pCStack_14 < _DAT_005df235) {

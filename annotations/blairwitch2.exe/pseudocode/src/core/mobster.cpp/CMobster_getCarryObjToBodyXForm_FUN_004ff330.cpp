@@ -11,13 +11,14 @@
 CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004ff330(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
-  float *pfVar3;
+  CMatrix3x4f *pCVar3;
   CMatrix3x4f *pCVar4;
   byte bVar5;
-  float afStackY_1060 [985];
-  byte auStack_c0 [48];
+  uint auStackY_1060 [985];
+  CMatrix3x4f CStack_f0;
+  CMatrix3x4f CStack_c0;
   uint uStack_90;
   uint uStack_8c;
   uint uStack_88;
@@ -36,10 +37,10 @@ CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_
   bVar5 = 0;
   iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 1) {
-    iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                      ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
-                       g_CElephantGunClassInfo.name_hash);
-    if (iVar1 == 0) {
+    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                       ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
+                        g_CElephantGunClassInfo.name_hash);
+    if (pCVar1 == (CDemonActor *)0x0) {
       auStack_38[6] = 0xbe0d3d86;
       auStack_38[7] = 0xbde5c704;
       auStack_38[5] = 0x3e698e54;
@@ -105,14 +106,15 @@ CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_
       auStack_74[10] = 0xbfdac083;
     }
   }
-  core_xform_cpp_FUN_00591c10(auStack_c0,auStack_74 + 2,auStack_74 + 8);
+  core_xform_cpp_FUN_00591c10(&CStack_c0,auStack_74 + 2,auStack_74 + 8);
   core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-            (auStack_c0,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar2);
-  pfVar3 = (float *)&stack0xffffff10;
+            (&CStack_c0,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar2,
+             &CStack_f0);
+  pCVar3 = &CStack_f0;
   pCVar4 = out_matrix;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pCVar4->m[0].w = *pfVar3;
-    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+    pCVar4->m[0].w = *(float *)pCVar3;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
     pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
   return out_matrix;

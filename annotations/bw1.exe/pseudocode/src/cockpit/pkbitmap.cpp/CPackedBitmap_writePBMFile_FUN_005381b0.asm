@@ -60,7 +60,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00538208
     PUSH EAX                            ; 0053820c
     CALL crt_stdio.c_fwrite_FUN_005c1a70 ; 0053820d
-        ;   XREF to: 005c1a70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005c1a70()
+        ;   XREF to: 005c1a70 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005c1a70(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00538212
     MOV EAX,dword ptr [EBX + 0x1c]      ; 00538215
     PUSH EBP                            ; 00538218
@@ -70,7 +70,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x20]      ; 0053821d
     PUSH ESI                            ; 00538220
     CALL crt_stdio.c_fwrite_FUN_005c1a70 ; 00538221
-        ;   XREF to: 005c1a70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005c1a70()
+        ;   XREF to: 005c1a70 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005c1a70(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00538226
     PUSH EBP                            ; 00538229
     MOV EDI,dword ptr [EBX + 0x1c]      ; 0053822a
@@ -81,7 +81,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x14]      ; 00538236
     PUSH ECX                            ; 00538239
     CALL crt_stdio.c_fwrite_FUN_005c1a70 ; 0053823a
-        ;   XREF to: 005c1a70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005c1a70()
+        ;   XREF to: 005c1a70 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005c1a70(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     MOV AH,byte ptr [EBP + 0xc]         ; 0053823f
     ADD ESP,0x10                        ; 00538242
     TEST AH,0x20                        ; 00538245

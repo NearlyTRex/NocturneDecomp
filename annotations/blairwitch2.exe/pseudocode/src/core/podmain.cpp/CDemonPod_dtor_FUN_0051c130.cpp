@@ -13,7 +13,7 @@ CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_0051c130(CDemonPod *this
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDemonPodTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDemonPodTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

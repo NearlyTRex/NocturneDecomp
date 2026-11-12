@@ -261,7 +261,7 @@ section .text
     LEA ESI,[EBP + 0xffffff12]          ; 00503f76
     LEA EDI,[EBP + 0xfffffeb2]          ; 00503f7c
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005b5200 ; 00503f82
-        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005b5200()
+        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005b5200(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 00503f87
     LEA ESI,[EBP + 0xffffff12]          ; 00503f8c
     LEA EAX,[EBP + 0xfffffeb2]          ; 00503f92
@@ -313,7 +313,7 @@ section .text
     PUSH EAX                            ; 00504006
     LEA EBX,[EBP + 0xffffff42]          ; 00504007
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0050400d
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     XOR EAX,EAX                         ; 00504012
     ADD ESP,0xc                         ; 00504014
     MOV dword ptr [EBP + 0x76],EAX      ; 00504017

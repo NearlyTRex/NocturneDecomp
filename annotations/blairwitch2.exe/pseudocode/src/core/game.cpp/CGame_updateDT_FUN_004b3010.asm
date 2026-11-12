@@ -37,7 +37,7 @@ section .text
     PUSH EDI                            ; 004b3012
     MOV EBX,dword ptr [ESP + 0x10]      ; 004b3013
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 004b3017
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EDX,dword ptr [EBX + 0x27c]     ; 004b301c
     MOV ESI,EAX                         ; 004b3022
     SUB EAX,EDX                         ; 004b3024

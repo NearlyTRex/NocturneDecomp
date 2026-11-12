@@ -28,7 +28,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0(CNetG
   char acStack_4b [20];
   EHeroType EStack_37;
   int iStack_33;
-  SNetworkAddr aSStack_2c [2];
+  byte auStack_2c [16];
   uint uStack_1c;
   char *pcStack_18;
   int iStack_14;
@@ -40,9 +40,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0(CNetG
   aim_mode = pCVar2->aim_mode;
   hero_number = pCVar2->hero_number;
   pcVar6 = this_ptr->player_name;
-  addr = (SNetworkAddr *)
-         support_trisock_cpp_createNetworkAddr_FUN_0056f730
-                   (&aSStack_2c[0].port,_DAT_02cfd89c,0x1ddf);
+  support_trisock_cpp_createNetworkAddr_FUN_0056f730
+            ((SNetworkAddr *)(auStack_2c + 4),_DAT_02cfd89c,0x1ddf);
   iVar3 = core_netgame_cpp_CNetGame_addPlayer_FUN_00505950
                     (this_ptr,addr,pcVar6,hero_number,aim_mode);
   this_ptr->local_player_index = iVar3;
@@ -50,9 +49,10 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0(CNetG
   if (iVar3 == 0) {
     return 0;
   }
-  support_trisock_cpp_createNetworkAddr_FUN_0056f730(aSStack_2c,*server_ip,0x1ddf);
+  support_trisock_cpp_createNetworkAddr_FUN_0056f730
+            ((SNetworkAddr *)auStack_2c,(uint32_t *)*server_ip,0x1ddf);
   iVar4 = core_netgame_cpp_CNetGame_addPlayer_FUN_00505950
-                    (this_ptr,aSStack_2c,"TheServer",0,0);
+                    (this_ptr,(SNetworkAddr *)auStack_2c,"TheServer",0,0);
   this_ptr->connection_type = CONNECTION_CLIENT;
   this_ptr->network_mode = NET_MODE_LOBBY;
   iVar3 = _DAT_01da6478;
@@ -77,8 +77,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0(CNetG
       if ((float)_DAT_005ca5b1 < fStack_5c) {
         SStack_58.size = 0x29;
         SStack_58.type = PACKET_PLAYER_ANNOUNCE;
-        uStack_53 = aSStack_2c[0].ip_address;
-        (&uStack_4f)[(uint)bVar7 * -2] = *(uint *)&aSStack_2c[-(uint)bVar7].port;
+        uStack_53 = auStack_2c._0_4_;
+        (&uStack_4f)[(uint)bVar7 * -2] = *(uint *)(auStack_2c + (uint)bVar7 * -8 + 4);
         EStack_37 = this_ptr->players[this_ptr->local_player_index].hero_number;
         iStack_33 = this_ptr->players[this_ptr->local_player_index].aim_mode;
         pcVar6 = acStack_4b;

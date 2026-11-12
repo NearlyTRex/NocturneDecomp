@@ -1,20 +1,20 @@
 // Name: core_biggs.cpp_factoryFuncBiggs_FUN_004149c0
 // Address: 004149c0
 // Address Range: [[004149c0, 004149db]]
-// Convention: unknown
-// Signature: void core_biggs_cpp_factoryFuncBiggs_FUN_004149c0(void)
+// Convention: __cdecl
+// Signature: CBiggs * __cdecl core_biggs_cpp_factoryFuncBiggs_FUN_004149c0(void)
 
 #include "nocturne.h"
 
-void core_biggs_cpp_factoryFuncBiggs_FUN_004149c0(void)
+CBiggs * __cdecl core_biggs_cpp_factoryFuncBiggs_FUN_004149c0(void)
 
 {
-  CBiggs *this_ptr;
+  CBiggs *pCVar1;
   
-  this_ptr = (CBiggs *)operator_new(0xd07c);
-  if (this_ptr == (CBiggs *)0x0) {
-    return;
+  pCVar1 = (CBiggs *)operator_new(0xd07c);
+  if (pCVar1 == (CBiggs *)0x0) {
+    return (CBiggs *)0x0;
   }
-  core_biggs_cpp_CBiggs_ctor_FUN_004149f0(this_ptr);
-  return;
+  pCVar1 = core_biggs_cpp_CBiggs_ctor_FUN_004149f0(pCVar1);
+  return pCVar1;
 }

@@ -12,11 +12,11 @@
 ; XREF[13]:
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e17da
 ;   core_manpuz.cpp_FUN_004e63c0 at 004e6464
-;   core_menu.cpp_FUN_004eb490 at 004eb5b2
 ;   core_menu.cpp_FUN_004ebf10 at 004ebff6
 ;   core_menu.cpp_FUN_004ecc70 at 004eccdb
 ;   core_menu.cpp_FUN_004ed260 at 004ed2d0
 ;   core_menu.cpp_FUN_004ee1a0 at 004ee211
+;   core_menu.cpp_calibrateGamepad_FUN_004eb490 at 004eb5b2
 ;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee4fd
 ;   core_moon.cpp_CMoon_render_FUN_00502510 at 00502626
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10 at 0052dcd1

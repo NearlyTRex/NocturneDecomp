@@ -13,14 +13,14 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_0059af30(CAudioRecPuzzle
   CAlphaBitmap *this_ptr_00;
   
   if (param_2 == 0) {
-    engine_alphabit_cpp_FUN_0040d540(&this_ptr->background);
-    engine_alphabit_cpp_FUN_0040d540(CAlphaBitmap_ARRAY_026677ec);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&this_ptr->background);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap_ARRAY_026677ec);
     iVar1 = 0;
-    engine_alphabit_cpp_FUN_0040d540(CAlphaBitmap_ARRAY_026677ec + 1);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap_ARRAY_026677ec + 1);
     if (0 < this_ptr->button_count) {
       this_ptr_00 = &this_ptr->buttons[0].bitmap;
       do {
-        engine_alphabit_cpp_FUN_0040d540(this_ptr_00);
+        engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(this_ptr_00);
         iVar1 = iVar1 + 1;
         this_ptr_00 = (CAlphaBitmap *)&this_ptr_00[2].opa;
       } while (iVar1 < this_ptr->button_count);

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveFloat_FUN_0040b830(float *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveFloat_FUN_0040b830(float *float_ptr,char *property_name)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   float_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x10]:8  local_10
 ;
@@ -49,7 +52,7 @@ section .text
     MOV EBX,dword ptr [0x007df9b4]      ; 0040b845 | DAT_007df9b4
     PUSH EBX                            ; 0040b84b
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 0040b84c
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b851
     CMP EAX,0x1                         ; 0040b854
     JNZ 0x0040b86e                      ; 0040b857

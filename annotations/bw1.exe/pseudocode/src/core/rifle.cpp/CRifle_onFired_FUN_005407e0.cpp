@@ -54,8 +54,7 @@ void __cdecl core_rifle_cpp_CRifle_onFired_FUN_005407e0(CRifle *this_ptr)
     CStack_48.y = CStack_18.y;
     CStack_48.z = CStack_18.z;
   }
-  model_ptr = (CKeyFramedModel *)
-              core_dmodel_cpp_loadModel_FUN_00468780("$@rifbullet.kfm" + 2);
+  model_ptr = core_dmodel_cpp_loadModel_FUN_00468780("$@rifbullet.kfm" + 2);
   core_fire_cpp_CFireEffect_createShell_FUN_004b7270
             (0x01C57074,&(this_ptr->base).base.location.position,&(this_ptr->base).base.orient.vec
              ,&CStack_48,model_ptr);

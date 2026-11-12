@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 205,
+    "complexity_score": 193,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 100,
-    "suspect_count": 8,
+    "pseudocode_lines": 103,
+    "suspect_count": 7,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 316
+    "total_lines": 319
   },
   "cross_references": [],
   "function": {
@@ -220,16 +219,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 53,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0xf8))(iVar1,this_ptr->opacity);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 77,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "this_ptr_01 = DAT_005f2afc;",
@@ -237,7 +228,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 82,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",
@@ -245,7 +236,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 83,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);",
@@ -253,7 +244,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 87,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);",
@@ -261,18 +252,18 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 68,
+      "line": 71,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `this_ptr_02` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*this_ptr_02) + offsetof(subfield)` equals the real array stride. Replace `this_ptr_02->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 100,
-      "match": "this_ptr_02 = (T *)&this_ptr_02[N].SUBFIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr_03` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*this_ptr_03) + offsetof(subfield)` equals the real array stride. Replace `this_ptr_03->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 103,
+      "match": "this_ptr_03 = (T *)&this_ptr_03[N].SUBFIELD",
       "severity": "moderate",
-      "text": "this_ptr_02 = (CDemonActor *)&this_ptr_02[1].next_actor;",
+      "text": "this_ptr_03 = (CDemonActor *)&this_ptr_03[1].next_actor;",
       "type": "shadow_pointer_walk"
     }
   ],

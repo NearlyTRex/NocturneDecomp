@@ -18,7 +18,7 @@ CEnemy * core_armour_cpp_CEnemy_dtor_FUN_0040ed50(CEnemy *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CEnemyTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CEnemyTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

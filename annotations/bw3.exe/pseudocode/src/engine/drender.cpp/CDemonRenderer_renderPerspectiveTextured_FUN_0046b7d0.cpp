@@ -15,7 +15,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_004
   bool bVar2;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
-     (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(param_2 + 8), iVar1 != 0)) {
+     (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920((SClipPlane *)(param_2 + 8)), iVar1 != 0)) {
     bVar2 = this_ptr->shadow_pass_active == 0;
     if (bVar2) {
       _DAT_01c6e2b8 = 6;

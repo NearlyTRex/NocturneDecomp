@@ -26,7 +26,7 @@ void __cdecl core_doc_cpp_adjustAimAngleForOffset_FUN_00459db0(float *angle,floa
       fVar1 = *angle + (float)fVar2;
     }
     *angle = fVar1;
-    fVar1 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(*angle);
+    fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(*angle);
     *angle = fVar1;
   }
   return;

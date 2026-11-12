@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dest_cpp_factoryFuncActorDestination_FUN_00447060(void)
+; CActorDestination * __cdecl core_dest_cpp_factoryFuncActorDestination_FUN_00447060(void)
 ;
 ;
 ; Called Functions:

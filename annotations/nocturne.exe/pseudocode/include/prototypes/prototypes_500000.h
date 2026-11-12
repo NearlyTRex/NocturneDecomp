@@ -75,7 +75,7 @@ void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(CDemonSe
 void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(CDemonSet *this_ptr,CDemonActor *actor);
 void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_ptr,int index);
 int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(CDemonSet *this_ptr,char *name);
-void __cdecl core_set_cpp_CDemonSet_FUN_005090f0(CDemonSet *this_ptr,undefined4 param_2,undefined4 param_3,int param_4);
+void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_005090f0(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height);
 void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00509a80(CDemonSet *this_ptr,int skip_prerender);
@@ -85,9 +85,9 @@ void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_0050a7e0(CDemonS
 void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(CDemonSet *this_ptr,CDemonLight *light);
 void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet *this_ptr,CDemonGlobe *globe);
 void __cdecl core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20(CDemonSet *this_ptr,CDemonGlobe *globe);
-void __cdecl core_set_cpp_CDemonSet_FUN_0050aa70(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0050aba0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_FUN_0050ad20(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderLightDebugView_FUN_0050aa70(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderCameraAimedAtHero_FUN_0050aba0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_clearLights_FUN_0050ad20(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet *this_ptr,CVector3f *position,UOrientationVector *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix);
 int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(CDemonSet *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix);
 int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal);
@@ -124,7 +124,7 @@ void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_0050e400(CDemonSet *this_ptr,in
 int __cdecl core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(CDemonSet *this_ptr,int index,float value);
 void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510(CDemonSet *this_ptr,int group_id,float value);
-void __cdecl core_set_cpp_CDemonSet_FUN_0050e550(CDemonSet *this_ptr,int param_2,int param_3);
+void __cdecl core_set_cpp_CDemonSet_setCameraEnabled_FUN_0050e550(CDemonSet *this_ptr,int camera_index,int enabled);
 void __cdecl core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_0050e580(CDemonSet *this_ptr,int group_id,int enabled);
 void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(CDemonSet *this_ptr,char *light_name,C3DSLight **out_light,CDemonLight **out_master_light);
 void __cdecl core_set_cpp_CDemonSet_initCameraShake_FUN_0050e660(CDemonSet *this_ptr,float peak,float attack,float sustain,float decay);

@@ -133,7 +133,8 @@ LAB_0059dc5c:
     if (EVar7 < WALK_STATE_NO_PATH) goto LAB_0059daf3;
     if (EVar7 != WALK_STATE_NO_PATH) goto LAB_0059dc5c;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar2->base,0,1);
-    engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+    engine_console_cpp_CConsole_printf_FUN_00441ff0
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -173,7 +174,7 @@ LAB_0059db1e:
        (this_ptr->base).base.model.accumulated_root_motion.z;
   pCVar4->x = (this_ptr->base).base.model.accumulated_root_motion.y;
   core_charactr_cpp_FUN_0042c230((CCharacter *)this_ptr,&CStack_70);
-  core_charactr_cpp_FUN_0042cd30((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)this_ptr,delta_time);

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 416,
+    "complexity_score": 418,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 246,
+    "pseudocode_lines": 248,
     "suspect_count": 13,
     "suspect_types": [
       "fast_sqrt_inline",
@@ -19,7 +19,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 349
+    "total_lines": 351
   },
   "cross_references": [],
   "function": {
@@ -101,6 +101,32 @@
       "STORE": 18
     },
     "pcode_op_count": 316
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0059b240",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0056e230",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005dfac0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2593
+    },
+    "nocturne.exe": {
+      "addr": "00547b30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2625
+    }
   },
   "stack_frame": {
     "frame_size": 12,
@@ -217,7 +243,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 179,
+      "line": 180,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "pCVar5 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar10);",
@@ -225,7 +251,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 201,
       "match": "(CTrigger **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "actor_ptr = *(CTrigger **)((int)g_CDemonSetPtr->actors + iVar10);",
@@ -241,7 +267,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `_DAT_01caf5b4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01caf5b4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 154,
+      "line": 155,
       "match": "iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0049e3e0 (0x01C3DEB",
       "severity": "moderate",
       "text": "iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0049e3e0 (0x01C3DEB4,&pCVar1->position, (float)(((int)fStac",

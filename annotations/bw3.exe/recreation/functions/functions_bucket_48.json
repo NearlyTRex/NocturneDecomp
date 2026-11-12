@@ -42,7 +42,7 @@
   },
   {
     "addr":"0046fcc8",
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "data_refs":[
       "0046b2a2",
       "0046b352"
@@ -50,10 +50,36 @@
     "instructions":186,
     "method":"renderSolidColorDepth16xUnrolled",
     "name":"core_dstrendr.cpp_renderSolidColorDepth16xUnrolled_FUN_0046fcc8",
+    "params":[
+      {
+        "name":"left_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dstrendr.cpp",

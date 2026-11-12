@@ -276,7 +276,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00455f18
     MOVSD ES:EDI,ESI                    ; 00455f19
     CALL core_xform.cpp_multiplyQuaternionInPlace_FUN_00593d20 ; 00455f1a
-        ;   XREF to: 00593d20 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternionInPlace_FUN_00593d20()
+        ;   XREF to: 00593d20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternionInPlace_FUN_00593d20(CQuaternion4f * quat1_inout, CQuaternion4f * quat2_ptr)
     ADD ESP,0x8                         ; 00455f1f
     LEA EAX,[EBP + 0xfffffe62]          ; 00455f22
     PUSH dword ptr [EBX + 0x259b0]      ; 00455f28
@@ -425,7 +425,7 @@ section .text
     LEA EAX,[EBP + 0xfffffe32]          ; 004560cb
     PUSH EAX                            ; 004560d1
     CALL core_xform.cpp_multiplyMatrix3x4InPlace_FUN_00591860 ; 004560d2
-        ;   XREF to: 00591860 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4InPlace_FUN_00591860()
+        ;   XREF to: 00591860 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4InPlace_FUN_00591860(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
     ADD ESP,0x8                         ; 004560d7
     LEA EAX,[EBX + 0x30]                ; 004560da
     PUSH EAX                            ; 004560dd
@@ -442,7 +442,7 @@ section .text
     PUSH EAX                            ; 004560fe
     LEA ESI,[EBP + 0xfffffdd2]          ; 004560ff
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 ; 00456105
-        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005916b0()
+        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005916b0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0045610a
     LEA ESI,[EBP + 0xfffffdd2]          ; 0045610f
     LEA EDI,[EBX + 0x2575c]             ; 00456115
@@ -493,7 +493,7 @@ section .text
     LEA ESI,[EBX + 0x25790]             ; 00456197
     PUSH ESI                            ; 0045619d
     CALL core_xform.cpp_transformVector3x4InPlace_FUN_005915b0 ; 0045619e
-        ;   XREF to: 005915b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4InPlace_FUN_005915b0()
+        ;   XREF to: 005915b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4InPlace_FUN_005915b0(CVector3f * input_output_vector, CMatrix3x4f * matrix)
     ADD ESP,0x8                         ; 004561a3
     PUSH dword ptr [EBX + 0x259b0]      ; 004561a6
     PUSH 0x1cb3950                      ; 004561ac

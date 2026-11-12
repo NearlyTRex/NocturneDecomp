@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_FUN_005b8060(undefined4 param_1,int param_2)
+; void crt_unknown_c_FUN_005b8060(int param_1,int param_2)
 ;
 ;
 ; XREF[1]:
@@ -22,7 +22,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 005b8069
     PUSH EBX                            ; 005b806d
     CALL crt_stdio.c_ungetc_FUN_005b8350 ; 005b806e
-        ;   XREF to: 005b8350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ungetc_FUN_005b8350()
+        ;   XREF to: 005b8350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005b8350(int character, _FILE * stream)
     ADD ESP,0x8                         ; 005b8073
     POP EBX                             ; 005b8076
     RET                                 ; 005b8077

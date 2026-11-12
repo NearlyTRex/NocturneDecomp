@@ -79,7 +79,7 @@ section .text
     PUSH EBP                            ; 004f7a6b
     PUSH EBX                            ; 004f7a6c
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004f7a6d
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004f7a72
     TEST EAX,EAX                        ; 004f7a75
     JNZ 0x004f7b9b                      ; 004f7a77

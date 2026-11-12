@@ -25,24 +25,19 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_0055c1b0(C3DSCamera *this_ptr,
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
-  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->position,&(this_ptr->position).y,
-             &(this_ptr->position).z);
+  _fscanf(file_handle,"%f,%f,%f\n");
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
-  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->orientation,&(this_ptr->orientation).z,
-             &(this_ptr->orientation).y);
+  _fscanf(file_handle,"%f,%f,%f\n");
   if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
-  _fscanf(file_handle,&DAT_005f1099,&this_ptr->projection_scale);
+  _fscanf(file_handle,&DAT_005f1099);
   _fgets(local_110,0xff,file_handle);
-  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->rotation_matrix,
-             &(this_ptr->rotation_matrix).m[0].y,&(this_ptr->rotation_matrix).m[0].z);
-  _fscanf(file_handle,"%f,%f,%f\n",(this_ptr->rotation_matrix).m + 1,
-             &(this_ptr->rotation_matrix).m[1].y,&(this_ptr->rotation_matrix).m[1].z);
-  _fscanf(file_handle,"%f,%f,%f\n",(this_ptr->rotation_matrix).m + 2,
-             &(this_ptr->rotation_matrix).m[2].y,&(this_ptr->rotation_matrix).m[2].z);
+  _fscanf(file_handle,"%f,%f,%f\n");
+  _fscanf(file_handle,"%f,%f,%f\n");
+  _fscanf(file_handle,"%f,%f,%f\n");
   pCVar1 = g_CDemonSetPtr;
   if (g_CDemonSetPtr->set_file_version < 0x12) {
     this_ptr->use_global_fog = 1;
@@ -61,7 +56,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_0055c1b0(C3DSCamera *this_ptr,
     (this_ptr->fog).temperature = (pCVar1->scene_fog).temperature;
   }
   else {
-    _fscanf(file_handle,&DAT_005f10bb,&this_ptr->use_global_fog);
+    _fscanf(file_handle,&DAT_005f10bb);
     if (this_ptr->use_global_fog == 0) {
       core_dcamera_cpp_loadCameraFog_FUN_00454ab0
                 (&this_ptr->fog,file_handle,g_CDemonSetPtr->set_file_version);
@@ -69,18 +64,16 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_0055c1b0(C3DSCamera *this_ptr,
   }
   if (0x16 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
-    _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->box,&(this_ptr->box).min.y,
-               &(this_ptr->box).min.z);
-    _fscanf(file_handle,"%f,%f,%f\n",&(this_ptr->box).max,&(this_ptr->box).max.y,
-               &(this_ptr->box).max.z);
+    _fscanf(file_handle,"%f,%f,%f\n");
+    _fscanf(file_handle,"%f,%f,%f\n");
   }
   if (0x16 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005f10d3,&this_ptr->reverb_preset);
+    _fscanf(file_handle,&DAT_005f10d3);
   }
   if (g_CDemonSetPtr->set_file_version == 0x1b) {
     _fgets(local_110,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005f10d7,&this_ptr->is_panning);
+    _fscanf(file_handle,&DAT_005f10d7);
     if (this_ptr->is_panning != 0) {
       _DAT_01d1d400 = "..\\core\\setutil.cpp";
       _DAT_01d1d404 = 0xd5;

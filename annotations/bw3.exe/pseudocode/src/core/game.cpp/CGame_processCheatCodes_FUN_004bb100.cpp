@@ -620,8 +620,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004bb100(CGame *this_ptr)
                             ((CInventory *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x206e8),
                              "Skeleton_key");
         if (pCVar10 == (CDemonActor *)0x0) {
-          this_ptr_00 = (CDemonActor *)
-                        core_actor_cpp_createActorByName_FUN_0040c4f0("CKeyActor");
+          this_ptr_00 = core_actor_cpp_createActorByName_FUN_0040c4f0("CKeyActor");
           pcVar6 = "Skeleton_key";
           (*((this_ptr_00->vtable)._ub)->setup)(this_ptr_00);
           this_ptr_00[2].location.position.y = -NAN;

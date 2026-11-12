@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408d70
-;   core_course.cpp_FUN_00438c40
+;   core_course.cpp_CCourse_evaluate_FUN_00438c40
 ;   core_marquee.cpp_CMarquee_renderLightBulb_FUN_004e7ff0
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
@@ -81,8 +81,8 @@ section .text
     FSTP float ptr [ESP + 0xa0]         ; 004e8231
     PUSH dword ptr [ESP + 0xa0]         ; 004e8238
     PUSH ECX                            ; 004e823f
-    CALL core_course.cpp_FUN_00438c40   ; 004e8240
-        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00438c40 ; 004e8240
+        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004e8245
     LEA EAX,[ESP + 0x68]                ; 004e8248
     PUSH EAX                            ; 004e824c
@@ -156,8 +156,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xb8]      ; 004e831a
     PUSH dword ptr [ESP + 0xa8]         ; 004e8321
     PUSH EAX                            ; 004e8328
-    CALL core_course.cpp_FUN_00438c40   ; 004e8329
-        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00438c40 ; 004e8329
+        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004e832e
     LEA EAX,[ESP + 0x44]                ; 004e8331
     PUSH EAX                            ; 004e8335
@@ -243,8 +243,8 @@ section .text
     FSTP float ptr [ESP + 0xa4]         ; 004e8430
     PUSH dword ptr [ESP + 0xa4]         ; 004e8437
     PUSH ESI                            ; 004e843e
-    CALL core_course.cpp_FUN_00438c40   ; 004e843f
-        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00438c40 ; 004e843f
+        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004e8444
     LEA EAX,[ESP + 0x50]                ; 004e8447
     PUSH EAX                            ; 004e844b

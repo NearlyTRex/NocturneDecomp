@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_drone.cpp_factoryFuncDrone_FUN_0046d720
 // Address: 0046d720
-void factoryFuncDrone(void);
+CDrone * __cdecl factoryFuncDrone(void);
 
 // Original: core_drone.cpp_CDrone_getActorType_FUN_0046d740
 // Address: 0046d740

@@ -16,8 +16,8 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
 ;   core_actor.cpp_FUN_00408b40
+;   core_box.cpp_CBoundingBox3D_render_FUN_00421670
 ;   core_box.cpp_FUN_004207b0
-;   core_box.cpp_FUN_00421670
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_00465890
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
@@ -87,8 +87,8 @@ section .text
     LEA ESI,[ESP + 0x48]                ; 005a8734
     PUSH EAX                            ; 005a8738
     MOVSD.REP ES:EDI,ESI                ; 005a8739
-    CALL core_box.cpp_FUN_00421670      ; 005a873b
-        ;   XREF to: 00421670 (UNCONDITIONAL_CALL)  ; void core_box.cpp_FUN_00421670(CBoundingBox3D * this_ptr)
+    CALL core_box.cpp_CBoundingBox3D_render_FUN_00421670 ; 005a873b
+        ;   XREF to: 00421670 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_render_FUN_00421670(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 005a8740
     LEA EAX,[EAX]                       ; 005a8743
     LEA EDX,[EDX]                       ; 005a8749

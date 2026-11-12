@@ -48,7 +48,7 @@
 ;   core_demnfolk.cpp_FUN_00458fb0
 ;   core_main.c_FUN_004e4330
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
 
@@ -398,8 +398,8 @@ section .text
     PUSH 0x5ba742                       ; 00457bc0 | s_s_can_t_pick_up_s_sombod_005ba741+1
     MOV EBX,dword ptr [0x005f1690]      ; 00457bc5 | g_CConsolePtr
     PUSH EBX                            ; 00457bcb | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00457bcc
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00457bcc
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 00457bd1
     MOV EAX,dword ptr [EBP + 0x14]      ; 00457bd4
     MOV dword ptr [EAX + 0xd064],0x0    ; 00457bd7
@@ -517,8 +517,8 @@ section .text
     MOV ESI,dword ptr [0x005f1690]      ; 00457d7c | g_CConsolePtr
     PUSH ESI                            ; 00457d82 | g_CConsoleInstance
     MOV EBX,EAX                         ; 00457d83
-    CALL engine_console.cpp_FUN_00441ff0 ; 00457d85
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00457d85
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     MOV EAX,EBX                         ; 00457d8a
     ADD ESP,0x10                        ; 00457d8c
     MOV dword ptr [EAX + 0xd064],0x0    ; 00457d8f
@@ -566,8 +566,8 @@ section .text
     MOV EDI,dword ptr [0x005f1690]      ; 00457dee | g_CConsolePtr
     PUSH EDI                            ; 00457df4 | g_CConsoleInstance
     MOV ESI,EAX                         ; 00457df5
-    CALL engine_console.cpp_FUN_00441ff0 ; 00457df7
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00457df7
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     MOV EAX,ESI                         ; 00457dfc
     MOV EAX,dword ptr [EAX + 0xd068]    ; 00457dfe
     ADD ESP,0x10                        ; 00457e04
@@ -761,8 +761,8 @@ section .text
     PUSH 0x5ba7f4                       ; 00458081 | = "%s is going to try to pick up %s\n"
     MOV EAX,[0x005f1690]                ; 00458086 | g_CConsolePtr
     PUSH EAX                            ; 0045808b | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0045808c
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0045808c
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     MOV EAX,0x1                         ; 00458091
     ADD ESP,0x10                        ; 00458096
     MOV ESP,EBP                         ; 00458099

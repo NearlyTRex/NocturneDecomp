@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveActor_FUN_0040b930(undefined4 *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveActor_FUN_0040b930(CDemonActor **actor_ptr,char *property_name)
 ;
+; Parameters:
+; CDemonActor * *  Stack[0x4]:4   actor_ptr
+; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[31]:
 ;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e8f0 at 0040e99e

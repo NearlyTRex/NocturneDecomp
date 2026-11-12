@@ -12,7 +12,7 @@ void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param
 
 {
   float fVar1;
-  int iVar2;
+  CCharacter *pCVar2;
   int iVar3;
   int iVar4;
   uint *puVar5;
@@ -72,7 +72,7 @@ void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param
   float local_48;
   float local_44;
   int local_30;
-  int local_2c;
+  uint local_2c;
   float local_28;
   float fStack_24;
   float local_20;
@@ -153,7 +153,7 @@ void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param
       }
       local_18 = g_CDemonSetPtr->collision_actor;
       iVar4 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-      local_2c = *(int *)(iVar4 + 0x20b8c);
+      local_2c = *(uint *)(iVar4 + 0x20b8c);
       *(uint *)(iVar4 + 0x20b8c) = 0;
       param_22 = 0.0;
       param_23 = 0.0;
@@ -192,19 +192,23 @@ void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param
           param_20 = local_134;
         }
         if ((((param_25 == 0) && (param_10 != 0)) &&
-            (iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(), iVar2 != 0)) &&
-           (iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0xe0))(), iVar2 != 0)) {
+            (pCVar2 = (CCharacter *)
+                      core_actor_cpp_castToClassHash_FUN_0040c840
+                                (local_18,g_CCharacterClassInfo.name_hash),
+            pCVar2 != (CCharacter *)0x0)) &&
+           (iVar3 = (*(((pCVar2->base).vtable._uc)->_uc).isInvulnerable)(pCVar2), iVar3 != 0)) {
           param_9 = iVar4;
           param_8 = 0xff;
           param_7 = 0xff;
         }
-        iVar4 = core_actor_cpp_castToClassHash_FUN_0040c840();
-        if ((iVar4 != 0) &&
-           (iVar3 = (**(code **)(*(int *)(iVar4 + 0x154) + 0xe0))(), iVar2 = _DAT_01d5ba14,
-           iVar3 == 0)) {
-          *(int *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x20b8c) = iVar4;
-          iVar4 = *(int *)(iVar2 * 4 + 0x1d5ba04);
-          if (local_2c == *(int *)(iVar4 + 0x20b8c)) {
+        pCVar2 = (CCharacter *)
+                 core_actor_cpp_castToClassHash_FUN_0040c840(local_18,g_CEnemyClassInfo.name_hash);
+        if ((pCVar2 != (CCharacter *)0x0) &&
+           (iVar3 = (*(((pCVar2->base).vtable._uc)->_uc).isInvulnerable)(pCVar2),
+           iVar4 = _DAT_01d5ba14, iVar3 == 0)) {
+          *(CCharacter **)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x20b8c) = pCVar2;
+          iVar4 = *(int *)(iVar4 * 4 + 0x1d5ba04);
+          if (local_28 == *(float *)(iVar4 + 0x20b8c)) {
             return;
           }
           *(uint *)(iVar4 + 0x20b90) = 0;

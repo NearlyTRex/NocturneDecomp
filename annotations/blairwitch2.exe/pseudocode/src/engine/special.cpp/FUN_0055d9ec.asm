@@ -9,7 +9,7 @@
 ;
 ; XREF[19]:
 ;   core_bwspart.cpp_FUN_005a86a0 at 005a870d
-;   core_chain.cpp_FUN_005b56c0 at 005b5843
+;   core_chain.cpp_CChain_renderTransparent_FUN_005b56c0 at 005b5843
 ;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_00443af0 at 00443b2f
 ;   core_fire.cpp_CCrater_render_FUN_00499a00 at 00499a70
 ;   core_fire.cpp_CFirefly_render_FUN_00495150 at 004951a9

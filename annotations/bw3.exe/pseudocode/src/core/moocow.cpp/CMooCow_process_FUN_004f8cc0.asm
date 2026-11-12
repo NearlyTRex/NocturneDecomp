@@ -21,11 +21,11 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
+;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_FUN_0042c1e0
 ;   core_charactr.cpp_FUN_0042c230
-;   core_charactr.cpp_FUN_0042cd30
 ;   core_charactr.cpp_FUN_0042cd70
 ;   core_charactr.cpp_FUN_00432330
 ;   core_charactr.cpp_FUN_00434850
@@ -231,8 +231,8 @@ section .text
     ADD ESP,0x8                         ; 004f8ea9
     PUSH EBX                            ; 004f8eac
         ;   Label: LAB_004f8eac
-    CALL core_charactr.cpp_FUN_0042cd30 ; 004f8ead
-        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042cd30(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30 ; 004f8ead
+        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004f8eb2
     LEA EAX,[EBX + 0x158]               ; 004f8eb5
     PUSH EAX                            ; 004f8ebb
@@ -277,8 +277,8 @@ section .text
     PUSH 0x5c91b8                       ; 004f8f10 | = "%s confused while walking to scriptDe..."
     MOV ESI,dword ptr [0x005f1690]      ; 004f8f15 | g_CConsolePtr
     PUSH ESI                            ; 004f8f1b | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004f8f1c
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004f8f1c
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     JMP 0x004f8d9c                      ; 004f8f21
         ;   XREF to: 004f8d9c (UNCONDITIONAL_JUMP)  ; LAB_004f8d9c
     JBE 0x004f8d8c                      ; 004f8f26

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_npc_cpp_factoryFuncNPC_FUN_00510430(void)
+; CNPC * __cdecl core_npc_cpp_factoryFuncNPC_FUN_00510430(void)
 ;
 ;
 ; Called Functions:

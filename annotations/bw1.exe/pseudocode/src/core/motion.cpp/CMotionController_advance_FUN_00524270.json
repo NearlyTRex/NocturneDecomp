@@ -78,7 +78,7 @@
     {
       "addr": "00445140",
       "from_addr": "00445156",
-      "name": "core_colonel.cpp_FUN_00445140",
+      "name": "core_colonel.cpp_CColonel_processMotionEvents_FUN_00445140",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -174,7 +174,7 @@
     {
       "addr": "004f2340",
       "from_addr": "004f2357",
-      "name": "core_icepick.cpp_FUN_004f2340",
+      "name": "core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f2340",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -347,6 +347,16 @@
       "name": "core_main.c_FUN_005030e0"
     },
     {
+      "addr": "00524ba0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00524ba0"
+    },
+    {
+      "addr": "00524d70",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70"
+    },
+    {
       "addr": "00524b70",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_clearTweenState_FUN_00524b70"
@@ -370,16 +380,6 @@
       "addr": "00524880",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_startTransition_FUN_00524880"
-    },
-    {
-      "addr": "00524ba0",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00524ba0"
-    },
-    {
-      "addr": "00524d70",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00524d70"
     },
     {
       "addr": "00524f40",
@@ -539,7 +539,7 @@
       {
         "call_addr": "004f2357",
         "call_type": "direct",
-        "caller": "core_icepick.cpp_FUN_004f2340",
+        "caller": "core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f2340",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -639,6 +639,32 @@
       "STORE": 92
     },
     "pcode_op_count": 1441
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005030c0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004fbb70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052d610",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7882
+    },
+    "nocturne.exe": {
+      "addr": "004e11c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7882
+    }
   },
   "stack_frame": {
     "frame_size": 200,

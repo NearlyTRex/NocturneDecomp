@@ -45,7 +45,7 @@ void shape_edittool_cpp_FUN_0048546e(CEdCheck *param_1,int param_2,int param_3,c
   iVar3 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00485580(param_1);
   iVar2 = param_1->x_position;
   iVar4 = func_0x004855f0(param_1);
-  iVar5 = engine_font_cpp_FUN_004aaf00(_DAT_01c25590,param_1->checkbox_text);
+  iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,param_1->checkbox_text);
   param_1->total_width = iVar2 + iVar3 + iVar4 + iVar5;
   return;
 }

@@ -2,20 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 182,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 13,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 36,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
-      "stack_param",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 124
+    "total_lines": 128
   },
   "cross_references": [
     {
@@ -35,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_calculateMainDataSize_FUN_0052a880",
-    "signature": "int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_0052a880(int *param_1)"
+    "signature": "int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_0052a880(SMpegFrame frame_info)"
   },
   "function_calls": [
     {
@@ -84,11 +81,11 @@
         "stack_params": 7
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 28,
     "estimated_params": 7,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.842105263157895,
@@ -126,11 +123,37 @@
     },
     "pcode_op_count": 520
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005096b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00502190",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00533c50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e77d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 48,
     "local_size": 20,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -146,116 +169,32 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "frame_info",
+        "offset": 4,
+        "size": 28,
+        "type": "SMpegFrame"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_0052a880(int *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = (float10)(*(int *)(&DAT_006203a0 + param_1[3] * 4 + *param_1 * 0xb4) * 0x90) /",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = (float10)(*(int *)(&DAT_006203a0 + param_1[3] * 4 + *param_1 * 0xb4) * 0x90) /",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 9,
       "match": "DAT_006203a0",
       "severity": "mild",
-      "text": "fVar2 = (float10)(*(int *)(&DAT_006203a0 + param_1[3] * 4 + *param_1 * 0xb4) * 0x90) /",
+      "text": "fVar2 = (float10)(*(int *)(&DAT_006203a0 +",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float10)*(double *)(&DAT_006202e8 + param_1[4] * 8 + *param_1 * 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float10)*(double *)(&DAT_006202e8 + param_1[4] * 8 + *param_1 * 0x20);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 13,
       "match": "DAT_006202e8",
       "severity": "mild",
-      "text": "(float10)*(double *)(&DAT_006202e8 + param_1[4] * 8 + *param_1 * 0x20);",
+      "text": "(&DAT_006202e8 +",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "if (in_stack_00000014 == 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "else if (in_stack_00000014 == 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[5] != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1[2] == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:7",
-      "param_delta": 7,
-      "text": "Function declares 0 params but call sites push 7 (7 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

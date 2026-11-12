@@ -151,11 +151,11 @@ void __cdecl CDemonSet::rotateVerticies(CDemonSet *this_ptr,int vertex_count,CVe
 
 // Original: core_set.cpp_transformToWorldSpace_FUN_00553210
 // Address: 00553210
-void transformToWorldSpace(int *param_1);
+CVector3i * __stack_esi transformToWorldSpace(CVector3i *input,CVector3i *output);
 
 // Original: core_set.cpp_transformNormalFixedPoint_FUN_005532e0
 // Address: 005532e0
-void transformNormalFixedPoint(int *param_1);
+CVector3i * __stack_esi transformNormalFixedPoint(CVector3i *input,CVector3i *output);
 
 // Original: core_set.cpp_CDemonSet_lightVerticies_FUN_00553440
 // Address: 00553440
@@ -175,7 +175,7 @@ void __cdecl CDemonSet::loadAssets(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_qsortByDisplayListEntry_FUN_00554570
 // Address: 00554570
-undefined4 __cdecl qsortByDisplayListEntry(int param_1,int param_2);
+int __cdecl qsortByDisplayListEntry(SDisplayListSortEntry *a,SDisplayListSortEntry *b);
 
 // Original: core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0
 // Address: 005545a0
@@ -299,7 +299,7 @@ int FUN_00555d20(int *param_1,undefined4 param_2);
 
 // Original: core_set.cpp_FUN_00555e30
 // Address: 00555e30
-void FUN_00555e30(int *param_1,undefined4 param_2);
+void FUN_00555e30(int *param_1,_FILE *param_2);
 
 // Original: core_set.cpp_CDemonSet_isCameraPanning_FUN_00555fe0
 // Address: 00555fe0
@@ -323,4 +323,4 @@ SVDBox * SVDBox::ctor(SVDBox *this_ptr);
 
 // Original: core_set.cpp_FUN_005561a0
 // Address: 005561a0
-void FUN_005561a0(undefined4 param_1);
+void FUN_005561a0(void *param_1);

@@ -19,7 +19,7 @@ CDarkwolf * core_darkwolf_cpp_CDarkwolf_dtor_FUN_005990d0(CDarkwolf *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDarkwolfTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDarkwolfTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

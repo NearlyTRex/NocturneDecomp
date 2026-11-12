@@ -2003,6 +2003,9 @@ _MMX_INTEGER g_TotalDitherShift = {0x0000000000000008ULL};
 _MMX_INTEGER g_GreenBlueDitherShift = {0x0000000000000005ULL};
 _MMX_INTEGER g_BlueBitShift = {0x0000000000000003ULL};
 
+// char[100]
+char g_IpAddress[100] = "10.0.0.105";
+
 // double
 double g_BufferFillZeroQword = 0;
 double g_BufferFillFpuPopST0 = 0;

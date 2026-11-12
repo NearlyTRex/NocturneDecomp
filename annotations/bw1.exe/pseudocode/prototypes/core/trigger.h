@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_trigger.cpp_factoryFuncTrigger_FUN_0059af80
 // Address: 0059af80
-void factoryFuncTrigger(void);
+CTrigger * __cdecl factoryFuncTrigger(void);
 
 // Original: core_trigger.cpp_CTrigger_getActorType_FUN_0059afa0
 // Address: 0059afa0
@@ -79,7 +79,7 @@ int __cdecl CTrigger::getTargetPoints(CTrigger *this_ptr,CVector3f *out_points_a
 
 // Original: core_trigger.cpp_FUN_0059c090
 // Address: 0059c090
-undefined4 FUN_0059c090(int param_1,int param_2);
+undefined4 FUN_0059c090(int param_1,CDemonActor *param_2);
 
 // Original: core_trigger.cpp_CTrigger_dtor_FUN_0059c420
 // Address: 0059c420

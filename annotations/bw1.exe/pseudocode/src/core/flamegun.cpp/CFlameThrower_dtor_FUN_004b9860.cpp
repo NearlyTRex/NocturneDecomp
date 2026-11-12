@@ -13,7 +13,7 @@ CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_dtor_FUN_004b9860(CFlame
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFlameThrowerTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFlameThrowerTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

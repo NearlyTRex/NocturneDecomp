@@ -18,7 +18,7 @@ CWerewolf * core_werewolf_cpp_CWerewolf_dtor_FUN_005b1a40(CWerewolf *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CWerewolfTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CWerewolfTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

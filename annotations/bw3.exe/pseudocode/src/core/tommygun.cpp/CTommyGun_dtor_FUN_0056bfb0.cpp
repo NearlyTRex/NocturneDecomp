@@ -13,7 +13,7 @@ CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_dtor_FUN_0056bfb0(CTommyGun *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTommyGunTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTommyGunTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

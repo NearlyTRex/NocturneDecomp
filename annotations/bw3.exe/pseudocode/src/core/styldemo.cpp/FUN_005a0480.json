@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 767,
+    "complexity_score": 755,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 117,
-    "suspect_count": 61,
+    "pseudocode_lines": 115,
+    "suspect_count": 60,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -19,7 +19,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 344
+    "total_lines": 342
   },
   "cross_references": [
     {
@@ -70,7 +70,7 @@
     {
       "addr": "00441ff0",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00441ff0"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441ff0"
     }
   ],
   "globals": [
@@ -513,10 +513,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_64 - *(float *)(param_1 + 0x34));",
+      "text": "local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(local_64 - *(float *)(param_1 + 0x34))",
       "type": "unnamed_param"
     },
     {
@@ -633,23 +633,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_58 - *(float *)(param_1 + 0x34));",
+      "text": "local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(local_58 - *(float *)(param_1 + 0x34));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CConsolePtr,\"?Casting %d\\n\" + 1,*(uint *)(param_1 + 0xdc90));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "switch(*(uint *)(param_1 + 0xdc90)) {",
@@ -657,7 +649,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "((CMotionController *)(param_1 + 0x158),iVar2,1);",
@@ -665,7 +657,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 109,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_1 + 0xdc90) + 1;",
@@ -673,7 +665,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0xdc90) = iVar2;",
@@ -681,7 +673,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xdc90) = 0;",

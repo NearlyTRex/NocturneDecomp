@@ -1,20 +1,20 @@
 // Name: core_gasmask.cpp_factoryFuncGasMask_FUN_004c1310
 // Address: 004c1310
 // Address Range: [[004c1310, 004c132b]]
-// Convention: unknown
-// Signature: void core_gasmask_cpp_factoryFuncGasMask_FUN_004c1310(void)
+// Convention: __cdecl
+// Signature: CGasMask * __cdecl core_gasmask_cpp_factoryFuncGasMask_FUN_004c1310(void)
 
 #include "nocturne.h"
 
-void core_gasmask_cpp_factoryFuncGasMask_FUN_004c1310(void)
+CGasMask * __cdecl core_gasmask_cpp_factoryFuncGasMask_FUN_004c1310(void)
 
 {
-  CGasMask *this_ptr;
+  CGasMask *pCVar1;
   
-  this_ptr = (CGasMask *)operator_new(0x434);
-  if (this_ptr == (CGasMask *)0x0) {
-    return;
+  pCVar1 = (CGasMask *)operator_new(0x434);
+  if (pCVar1 == (CGasMask *)0x0) {
+    return (CGasMask *)0x0;
   }
-  core_gasmask_cpp_CGasMask_ctor_FUN_004c1340(this_ptr);
-  return;
+  pCVar1 = core_gasmask_cpp_CGasMask_ctor_FUN_004c1340(pCVar1);
+  return pCVar1;
 }

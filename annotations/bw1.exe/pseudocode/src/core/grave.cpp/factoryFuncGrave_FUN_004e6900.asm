@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_grave_cpp_factoryFuncGrave_FUN_004e6900(void)
+; CGrave * __cdecl core_grave_cpp_factoryFuncGrave_FUN_004e6900(void)
 ;
 ;
 ; Called Functions:

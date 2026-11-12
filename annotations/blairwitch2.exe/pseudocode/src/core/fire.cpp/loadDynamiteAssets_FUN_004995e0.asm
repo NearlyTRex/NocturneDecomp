@@ -20,7 +20,7 @@ section .text
     PUSH 0x5d5590                       ; 004995e0 | = "dynamitestick.kfm"
         ;   Label: core_fire.cpp_loadDynamiteAssets_FUN_004995e0
     CALL core_dmodel.cpp_loadModel_FUN_0044fba0 ; 004995e5
-        ;   XREF to: 0044fba0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_loadModel_FUN_0044fba0()
+        ;   XREF to: 0044fba0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_0044fba0(char * filename)
     ADD ESP,0x4                         ; 004995ea
     RET                                 ; 004995ed
 

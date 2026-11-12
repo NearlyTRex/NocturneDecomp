@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_readActorReference_FUN_0054b320(undefined4 param_1,undefined4 *param_2)
+; void __cdecl core_script_cpp_readActorReference_FUN_0054b320(_FILE *file_handle,CDemonActor *actor_out)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_handle
+; CDemonActor *    Stack[0x8]:4   actor_out
 ; Local Variables:
 ; undefined        Stack[-0xd0]:1  local_d0
 ;
@@ -40,7 +43,7 @@ section .text
     PUSH EDX                            ; 0054b345
     MOVSD.REP ES:EDI,ESI                ; 0054b346 | DAT_00622ae0 | DAT_00622ae4
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054b348
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0054b34d
     PUSH 0x622ad8                       ; 0054b350 | = "(none)"
     LEA EAX,[ESP + 0x4]                 ; 0054b355

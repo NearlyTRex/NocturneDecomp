@@ -121,7 +121,7 @@ void __cdecl core_game_cpp_FUN_004bcbf0(CGame *this_ptr)
     wincore_wddvmem_cpp_openScreenDevice_FUN_005890c0();
     engine_special_cpp_FUN_0055f500();
     engine_special_cpp_clearScreen_FUN_0055b1f0();
-    engine_special_cpp_FUN_0055f550(0);
+    engine_special_cpp_unlockFrame_FUN_0055f550(0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_00589170();
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     local_18 = malloc(this_ptr->bitmap_width * this_ptr->bitmap_height);

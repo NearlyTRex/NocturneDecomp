@@ -7,7 +7,7 @@
 ; CDemonLight *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_dlight.cpp_FUN_00449e70 at 00449e81
+;   core_dlight.cpp_CDemonLight_free_FUN_00449e70 at 00449e81
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052deb8
 ;
 ; *****************************************************************************

@@ -211,7 +211,7 @@ section .text
     JMP 0x004849c3                      ; 00484ab3
         ;   XREF to: 004849c3 (UNCONDITIONAL_JUMP)  ; LAB_004849c3
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 00484ab8
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
         ;   Label: LAB_00484ab8
     MOV ESI,dword ptr [0x01c26418]      ; 00484abd | DAT_01c26418
     MOV EDX,EAX                         ; 00484ac3
@@ -356,7 +356,7 @@ section .text
     MOV dword ptr [0x01c26414],EDI      ; 00484c2d | DAT_01c26414
     MOV dword ptr [EBX],EBP             ; 00484c33
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 00484c35
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
         ;   Label: LAB_00484c35
     MOV [0x01c26418],EAX                ; 00484c3a | DAT_01c26418
     MOV EAX,0x48000                     ; 00484c3f

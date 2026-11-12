@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveOrientation_FUN_0040b550(float *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveOrientation_FUN_0040b550(COrientation *orient_ptr,char *property_name)
 ;
+; Parameters:
+; COrientation *   Stack[0x4]:4   orient_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined8       Stack[-0x18]:8  local_18
@@ -49,7 +52,7 @@ section .text
     MOV EBX,dword ptr [0x007bc034]      ; 0040b56d | DAT_007bc034
     PUSH EBX                            ; 0040b573
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040b574
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040b579
     CMP EAX,0x3                         ; 0040b57c
     JNZ 0x0040b596                      ; 0040b57f

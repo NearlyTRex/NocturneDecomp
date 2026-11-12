@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_trigger_cpp_FUN_0056f080(int param_1,int param_2)
+; undefined4 core_trigger_cpp_FUN_0056f080(int param_1,CDemonActor *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xe0]:1  local_e0
@@ -208,7 +208,7 @@ section .text
     PUSH ECX                            ; 0056f2e0
     PUSH EBP                            ; 0056f2e1
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0056f2e2
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0056f2e7
     TEST EAX,EAX                        ; 0056f2ea
     JZ 0x0056f2fb                       ; 0056f2ec

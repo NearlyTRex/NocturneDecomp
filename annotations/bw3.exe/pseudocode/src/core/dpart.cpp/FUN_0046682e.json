@@ -126,6 +126,20 @@
     },
     "pcode_op_count": 532
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00461a4e",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00479f5e",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -212,7 +226,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "pUVar2 = *(UIntegerFloat **)(param_1 + 0x34);",
+      "text": "plane = *(UIntegerFloat **)(param_1 + 0x34);",
       "type": "unnamed_param"
     },
     {
@@ -228,7 +242,7 @@
       "line": 30,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,-((uVar3 & 0x7f) + 0x80));",
+      "text": "(DAT_005f2afc,-((uVar2 & 0x7f) + 0x80));",
       "type": "undefined_data"
     },
     {
@@ -236,7 +250,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while ((int)uVar3 < *(int *)(param_1 + 0x24));",
+      "text": "} while ((int)uVar2 < *(int *)(param_1 + 0x24));",
       "type": "unnamed_param"
     },
     {

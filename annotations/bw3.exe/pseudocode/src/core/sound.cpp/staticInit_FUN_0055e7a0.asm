@@ -25,13 +25,13 @@ section .text
     ADD ESP,0x4                         ; 0055e7b7
     PUSH 0x6045e0                       ; 0055e7ba
     CALL crt_stdlib.c__atexit_FUN_005a3e13 ; 0055e7bf
-        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005a3e13()
+        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005a3e13(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0055e7c4
     PUSH 0x5e49e0                       ; 0055e7c7
     PUSH 0xa                            ; 0055e7cc
     PUSH 0x2cf5ed4                      ; 0055e7ce
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 0055e7d3
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0055e7d8
     RET                                 ; 0055e7db
 

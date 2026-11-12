@@ -196,6 +196,26 @@
     },
     "pcode_op_count": 1788
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b0a90",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d5c60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6058
+    },
+    "nocturne.exe": {
+      "addr": "004987e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6058
+    }
+  },
   "stack_frame": {
     "frame_size": 272,
     "local_size": 268,
@@ -551,9 +571,9 @@
     {
       "description": "Complex pointer cast",
       "line": 64,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + local_20),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20),",
       "type": "pointer_cast"
     },
     {

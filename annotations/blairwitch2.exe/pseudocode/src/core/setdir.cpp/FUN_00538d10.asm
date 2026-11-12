@@ -796,7 +796,7 @@ section .text
     PUSH EDX                            ; 005396fa
     PUSH EBX                            ; 005396fb
     CALL core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20 ; 005396fc
-        ;   XREF to: 0053ae20 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20()
+        ;   XREF to: 0053ae20 (UNCONDITIONAL_CALL)  ; int core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20(C3DSCamera * this_ptr, CVector3f * world_position, float radius)
     ADD ESP,0xc                         ; 00539701
     TEST EAX,EAX                        ; 00539704
     JZ 0x00539771                       ; 00539706

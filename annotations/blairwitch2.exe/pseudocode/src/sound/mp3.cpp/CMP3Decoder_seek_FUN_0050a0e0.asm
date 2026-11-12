@@ -36,7 +36,7 @@ section .text
     MOV ECX,dword ptr [EDI]             ; 0050a10c
     PUSH ECX                            ; 0050a10e
     CALL crt_stdio.c_fseek_FUN_005b929c ; 0050a10f
-        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005b929c()
+        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005b929c(_FILE * file, long offset, int whence)
     MOV dword ptr [EDI + 0x10],0x0      ; 0050a114
     MOV dword ptr [EDI + 0x14],0x0      ; 0050a11b
     MOV dword ptr [EDI + 0xc],0x0       ; 0050a122

@@ -13,7 +13,7 @@ CBarrier * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_00410a00(CBarrier *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBarrierTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBarrierTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

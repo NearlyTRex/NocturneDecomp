@@ -37,7 +37,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00480db8
     PUSH EAX                            ; 00480dbc
     CALL crt_stdio.c_vsprintf_FUN_005bfb18 ; 00480dbd
-        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005bfb18()
+        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005bfb18(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00480dc2
     MOV EBX,dword ptr [ESP + 0x1028]    ; 00480dc5
     PUSH EBX                            ; 00480dcc

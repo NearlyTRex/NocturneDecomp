@@ -2,13 +2,13 @@
 // Address: 00574e80
 // Address Range: [[00574e80, 00574e94]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_00574e80(int param_1)
+// Signature: SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_00574e80(SMRGLTextureBasic *texture_info)
 
 #include "nocturne.h"
 
-int __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_00574e80(int param_1)
+SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_00574e80(SMRGLTextureBasic *texture_info)
 
 {
-  engine_texture_cpp_FUN_00574e00(param_1);
-  return param_1 + 0x48;
+  engine_texture_cpp_FUN_00574e00(texture_info);
+  return (SMRGLHeaderExtended *)(texture_info + 3);
 }

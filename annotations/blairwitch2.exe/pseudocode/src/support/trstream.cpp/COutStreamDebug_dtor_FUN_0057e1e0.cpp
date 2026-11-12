@@ -15,7 +15,7 @@ COutStreamDebug * support_trstream_cpp_COutStreamDebug_dtor_FUN_0057e1e0(COutStr
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_COutStreamDebugTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_COutStreamDebugTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

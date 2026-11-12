@@ -17,7 +17,8 @@ void __cdecl engine_3d_c_flushRenderQueue_FUN_004077f0(void)
   
   if (_DAT_007dd9f0 != 0) {
     if (_DAT_01c6cee8 != 0) {
-      engine_special_cpp_drawPolyList_FUN_00565c70(&DAT_0060b014,0x7dd9f4,_DAT_007dd9f0,0xcd);
+      engine_special_cpp_drawPolyList_FUN_00565c70
+                ((SRenderVertex *)&DAT_0060b014,(SMRGLPrimitiveQuad **)0x7dd9f4,_DAT_007dd9f0,0xcd);
       _DAT_007dd9f0 = 0;
       return;
     }

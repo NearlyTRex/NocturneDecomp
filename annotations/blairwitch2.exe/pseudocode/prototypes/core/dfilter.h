@@ -21,9 +21,9 @@ CFilterCache * __cdecl CFilterCache::dtor(CFilterCache *this_ptr,uint flags);
 // Address: 00447610
 void __cdecl CFilterCache::free(CFilterCache *this_ptr);
 
-// Original: core_dfilter.cpp_FUN_00447660
+// Original: core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660
 // Address: 00447660
-int FUN_00447660(int *param_1,char *param_2,int param_3);
+CDemonFilter * __cdecl CFilterCache::getFilter(CFilterCache *this_ptr,char *filter_name,int blend_filter);
 
 // Original: core_dfilter.cpp_CFilterCache_findFilter_FUN_004477a0
 // Address: 004477a0

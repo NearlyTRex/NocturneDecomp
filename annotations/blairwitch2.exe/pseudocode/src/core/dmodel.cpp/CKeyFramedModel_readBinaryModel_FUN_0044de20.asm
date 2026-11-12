@@ -51,7 +51,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0044de34
     PUSH EAX                            ; 0044de38
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0044de39
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0044de3e
     CMP EAX,0x1                         ; 0044de41
     JNZ 0x0044de99                      ; 0044de44
@@ -85,7 +85,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 0044de87
     PUSH EAX                            ; 0044de8b
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0044de8c
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0044de91
     CMP EAX,0x1                         ; 0044de94
     JZ 0x0044dec5                       ; 0044de97
@@ -133,7 +133,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x10c]     ; 0044df04
     PUSH ECX                            ; 0044df0a
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0044df0b
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0044df10
     CMP EAX,0x1                         ; 0044df13
     JNZ 0x0044de99                      ; 0044df16
@@ -151,7 +151,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x114]     ; 0044df31
     PUSH EBP                            ; 0044df37
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0044df38
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0044df3d
     CMP EAX,0x1                         ; 0044df40
     JNZ 0x0044de99                      ; 0044df43
@@ -164,7 +164,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x118]     ; 0044df55
     PUSH EAX                            ; 0044df5b
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0044df5c
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0044df61
     CMP EAX,0x1                         ; 0044df64
     JNZ 0x0044de99                      ; 0044df67
@@ -195,7 +195,7 @@ section .text
     ADD EAX,EDX                         ; 0044dfad
     PUSH EAX                            ; 0044dfaf
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0044dfb0
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0044dfb5
     CMP EAX,0x1                         ; 0044dfb8
     JNZ 0x0044de99                      ; 0044dfbb
@@ -212,7 +212,7 @@ section .text
     LEA EAX,[EBX + 0x248]               ; 0044dfd2
     PUSH EAX                            ; 0044dfd8
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0044dfd9
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0044dfde
     CMP EAX,0x1                         ; 0044dfe1
     JNZ 0x0044de99                      ; 0044dfe4

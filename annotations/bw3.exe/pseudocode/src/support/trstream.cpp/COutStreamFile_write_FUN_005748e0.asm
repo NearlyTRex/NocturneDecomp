@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile *this_ptr,undefined4 param_2,int param_3)
+; int __cdecl support_trstream_cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile *this_ptr,void *param_2,int param_3)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
@@ -43,7 +43,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 005748ff
     PUSH EDI                            ; 00574903
     CALL crt_stdio.c_fwrite_FUN_005a48e0 ; 00574904
-        ;   XREF to: 005a48e0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005a48e0()
+        ;   XREF to: 005a48e0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005a48e0(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00574909
     MOV EDX,EAX                         ; 0057490c
     CMP EAX,ESI                         ; 0057490e

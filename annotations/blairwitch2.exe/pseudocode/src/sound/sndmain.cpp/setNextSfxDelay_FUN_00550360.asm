@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_setNextSfxDelay_FUN_00550360(undefined4 param_1)
+; void __cdecl sound_sndmain_cpp_setNextSfxDelay_FUN_00550360(double delay_seconds)
 ;
+; Parameters:
+; double           Stack[0x4]:8   delay_seconds
 ;
 ; XREF[2]:
 ;   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0055aef0 at 0055aefe

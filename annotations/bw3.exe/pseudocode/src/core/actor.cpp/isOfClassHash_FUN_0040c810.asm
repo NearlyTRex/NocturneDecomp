@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_isOfClassHash_FUN_0040c810(int param_1,uint param_2)
+; int __cdecl core_actor_cpp_isOfClassHash_FUN_0040c810(CDemonActor *actor_ptr,uint class_name_hash)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor_ptr
+; uint             Stack[0x8]:4   class_name_hash
 ;
 ; XREF[4]:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840 at 0040c853

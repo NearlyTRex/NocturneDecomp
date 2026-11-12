@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_factoryFuncBoxActor_FUN_00421c70(void)
+; CBoxActor * __cdecl core_boxactor_cpp_factoryFuncBoxActor_FUN_00421c70(void)
 ;
 ;
 ; Called Functions:

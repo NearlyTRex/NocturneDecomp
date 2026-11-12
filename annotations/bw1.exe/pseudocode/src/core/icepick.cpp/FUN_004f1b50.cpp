@@ -145,8 +145,8 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
                         (this_ptr_01,&(this_ptr->base).base.base.location.position,&CStack_d0,
                          (this_ptr->base).base.base.direction_hint);
       if (iVar4 != 0) {
-        fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                     (CStack_d0.y - (this_ptr->base).base.base.orient.vec.y);
+        fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                              (CStack_d0.y - (this_ptr->base).base.base.orient.vec.y);
         fVar3 = fStack_14 * _DAT_005e541f * (float)_DAT_005e5427;
         fStack_3c = -local_24;
         (this_ptr->base).player_input.turn_speed = fVar3;
@@ -205,8 +205,8 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
         afStack_b4[(uint)bVar7 * -2 + 0x15] = afStack_b4[(uint)bVar7 * -2];
         afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x16] =
              afStack_b4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-        fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                     (fStack_60 - (this_ptr->base).base.base.orient.vec.y);
+        fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                              (fStack_60 - (this_ptr->base).base.base.orient.vec.y);
         fVar1 = fStack_14 * _DAT_005e541f * (float)_DAT_005e5427;
         fStack_48 = -local_24;
         (this_ptr->base).player_input.turn_speed = fVar1;
@@ -256,8 +256,8 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
       local_d8 = fStack_6c;
       local_d4 = fStack_68;
     }
-    fStack_c0 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                 (local_d8 - (this_ptr->base).base.base.orient.vec.y);
+    fStack_c0 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                          (local_d8 - (this_ptr->base).base.base.orient.vec.y);
     if (local_34 < fStack_c0) {
       fStack_c0 = local_34;
     }

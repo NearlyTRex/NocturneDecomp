@@ -58,7 +58,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x34]      ; 0056f60d
     PUSH EBP                            ; 0056f611
     CALL support_trisock.cpp_buildIPAddress_FUN_0056f630 ; 0056f612
-        ;   XREF to: 0056f630 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_buildIPAddress_FUN_0056f630()
+        ;   XREF to: 0056f630 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_buildIPAddress_FUN_0056f630(uint8_t * dest_ip, int octet1, int octet2, int octet3, ...)
     ADD ESP,0x14                        ; 0056f617
     POP EBX                             ; 0056f61a
     POP ESI                             ; 0056f61b

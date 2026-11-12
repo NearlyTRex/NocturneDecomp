@@ -27,7 +27,7 @@
     ],
     "convention": "unknown",
     "name": "engine_font.cpp_FUN_004ab35e",
-    "signature": "int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)"
+    "signature": "int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)"
   },
   "function_calls": [
     {
@@ -38,7 +38,7 @@
     {
       "addr": "004aaf00",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004aaf00"
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
     }
   ],
   "globals": [],
@@ -86,6 +86,20 @@
     },
     "pcode_op_count": 811
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c430e",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b2eee",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -100,7 +114,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
+      "text": "int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
       "type": "unnamed_param"
     },
     {
@@ -108,7 +122,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
+      "text": "int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
       "type": "unnamed_param"
     },
     {
@@ -116,7 +130,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
+      "text": "int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
       "type": "unnamed_param"
     },
     {
@@ -124,7 +138,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
+      "text": "int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
       "type": "unnamed_param"
     },
     {
@@ -132,7 +146,7 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
+      "text": "int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
       "type": "unnamed_param"
     },
     {
@@ -140,7 +154,7 @@
       "line": 2,
       "match": "param_6",
       "severity": "mild",
-      "text": "int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
+      "text": "int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
       "type": "unnamed_param"
     },
     {
@@ -148,7 +162,7 @@
       "line": 2,
       "match": "param_7",
       "severity": "mild",
-      "text": "int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
+      "text": "int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
       "type": "unnamed_param"
     },
     {
@@ -156,7 +170,7 @@
       "line": 2,
       "match": "param_8",
       "severity": "mild",
-      "text": "int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
+      "text": "int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
       "type": "unnamed_param"
     },
     {
@@ -292,7 +306,7 @@
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = engine_font_cpp_FUN_004aaf00(param_1,0x1cafe40);",
+      "text": "iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(param_1,(char *)0x1cafe40);",
       "type": "unnamed_param"
     },
     {
@@ -300,7 +314,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0x3668);",
+      "text": "iVar2 = param_1->char_widths[0x20];",
       "type": "unnamed_param"
     },
     {
@@ -308,7 +322,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = engine_font_cpp_FUN_004aaf00(param_1,0x1cafe40);",
+      "text": "iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(param_1,(char *)0x1cafe40);",
       "type": "unnamed_param"
     },
     {

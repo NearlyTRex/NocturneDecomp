@@ -140,21 +140,6 @@
     "variadic":false
   },
   {
-    "addr":"0049835e",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_0049835e",
-    "name":"shape_edittool.cpp_FUN_0049835e",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"shape/edittool.cpp",
-    "variadic":false
-  },
-  {
     "addr":"004abd5e",
     "calls":[
       "005c1d04"
@@ -174,15 +159,33 @@
   },
   {
     "addr":"004e67de",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":15,
     "method":"convertVecFloatToFixed",
     "name":"core_gore.cpp_convertVecFloatToFixed_FUN_004e67de",
+    "params":[
+      {
+        "name":"src",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"dst",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/gore.cpp",
     "variadic":false
@@ -231,21 +234,6 @@
     "variadic":false
   },
   {
-    "addr":"0051765e",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_0051765e",
-    "name":"engine_mini3d.cpp_FUN_0051765e",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/mini3d.cpp",
-    "variadic":false
-  },
-  {
     "addr":"00517dde",
     "conv":"unknown",
     "instructions":62,
@@ -262,14 +250,24 @@
   },
   {
     "addr":"0052c2de",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":31,
     "method":"findSimFrame",
     "name":"core_netgame.cpp_findSimFrame_FUN_0052c2de",
+    "params":[
+      {
+        "name":"sequence_number",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/netgame.cpp",
@@ -300,14 +298,24 @@
       "00479580",
       "005c04e0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":38,
-    "method":"FUN_0056edde",
-    "name":"sound_sndmain.cpp_FUN_0056edde",
+    "method":"isStreamableFile",
+    "name":"sound_sndmain.cpp_isStreamableFile_FUN_0056edde",
+    "params":[
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",

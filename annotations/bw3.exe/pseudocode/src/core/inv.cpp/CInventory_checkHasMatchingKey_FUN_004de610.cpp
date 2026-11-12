@@ -9,8 +9,7 @@
 int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004de610(CInventory *this_ptr,uint key_mask,int show_message)
 
 {
-  CDemonActor *this_ptr_00;
-  int iVar1;
+  CDemonActor *pCVar1;
   char *pcVar2;
   CInventory *pCVar3;
   int iVar4;
@@ -23,20 +22,21 @@ int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004de610(CInventory 
   pCVar3 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                        (pCVar3->items[0],g_CKeyActorClassInfo.name_hash);
-      if ((iVar1 != 0) && ((*(uint *)(iVar1 + 0x2d4) & key_mask) != 0)) {
+      pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
+                         (pCVar3->items[0],g_CKeyActorClassInfo.name_hash);
+      if ((pCVar1 != (CDemonActor *)0x0) && (((uint)pCVar1[2].location.position.y & key_mask) != 0))
+      {
         if (show_message == 0) {
           return 1;
         }
         fVar5 = 5.0;
         pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00508960("@You used a key." + 1);
         core_game_cpp_CGame_displayMessage_FUN_004b46b0(g_CGamePtr,pcVar2,fVar5);
-        this_ptr_00 = this_ptr->owner;
-        if (this_ptr_00 == (CDemonActor *)0x0) {
+        pCVar1 = this_ptr->owner;
+        if (pCVar1 == (CDemonActor *)0x0) {
           return 1;
         }
-        (*((this_ptr_00->vtable)._ub)->playSound)(this_ptr_00,"key-unlock.wav");
+        (*((pCVar1->vtable)._ub)->playSound)(pCVar1,"key-unlock.wav");
         return 1;
       }
       iVar4 = iVar4 + 1;

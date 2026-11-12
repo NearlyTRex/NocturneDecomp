@@ -237,7 +237,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x24]      ; 0053865c
     PUSH ECX                            ; 0053865f
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 00538660
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00538665
     POP EBP                             ; 00538668
     POP EDI                             ; 00538669

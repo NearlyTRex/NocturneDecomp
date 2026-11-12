@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_emitter.cpp_factoryFuncEmitter_FUN_004867b0
 // Address: 004867b0
-void factoryFuncEmitter(void);
+CEmitter * __cdecl factoryFuncEmitter(void);
 
 // Original: core_emitter.cpp_CEmitter_getActorType_FUN_004867d0
 // Address: 004867d0

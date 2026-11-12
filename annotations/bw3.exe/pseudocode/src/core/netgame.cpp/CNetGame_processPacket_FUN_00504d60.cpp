@@ -42,7 +42,7 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_00504d60(CNetGame *this
   SNetPacketHeader local_54;
   uint local_4f;
   SNetPacketHeader local_48 [2];
-  byte local_3c [8];
+  SNetworkAddr local_3c;
   uint local_34;
   UNetPacket *local_30;
   UNetPacket *local_2c;
@@ -344,8 +344,7 @@ LAB_005053b9:
       pcVar12 = "You have been disconnected from the game";
       pcVar11 = &DAT_005caa40;
       iVar5 = 0;
-      sender_addr = (SNetworkAddr *)
-                    support_trisock_cpp_createNetworkAddr_FUN_0056f730(local_3c,_DAT_02cfd89c,0);
+      support_trisock_cpp_createNetworkAddr_FUN_0056f730(&local_3c,_DAT_02cfd89c,0);
       core_netgame_cpp_CNetGame_addChatHistory_FUN_00506a00
                 (this_ptr,sender_addr,iVar5,pcVar11,pcVar12);
       return;

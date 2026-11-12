@@ -16,14 +16,25 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_00498e
   int iVar3;
   uint uVar4;
   char *pcVar5;
+  int iVar6;
+  uint local_28;
+  ushort local_24;
   uint local_22;
   int local_1e;
+  int local_18;
   
   iVar3 = 0;
+  iVar6 = 0;
+  local_24 = 0;
+  local_28 = 0;
   uVar4 = 0;
-  while (iVar2 = _heapwalk(), iVar2 == 0) {
-    if ((local_1e == 0) && (iVar3 = iVar3 + 1, uVar4 < local_22)) {
-      uVar4 = local_22;
+  while (iVar2 = _heapwalk((WatcomHeapInfo *)&local_28), iVar2 == 0) {
+    if (local_1e == 0) {
+      iVar3 = iVar3 + 1;
+      iVar6 = iVar6 + local_22;
+      if (uVar4 < local_22) {
+        uVar4 = local_22;
+      }
     }
   }
   switch(iVar2) {
@@ -32,6 +43,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_00498e
     break;
   case 4:
     if (0 < iVar3) {
+      local_18 = iVar6;
       _sprintf(output_buffer,"?Blocks: %d Total: %.1fk Max: %.1fk" + 1);
       return;
     }

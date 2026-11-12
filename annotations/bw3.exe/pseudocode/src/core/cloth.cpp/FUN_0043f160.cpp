@@ -84,7 +84,8 @@ void core_cloth_cpp_FUN_0043f160(int param_1,int param_2,int param_3)
     iStack_1c = iStack_1c + 0x30;
   } while (vertex_index1 < 0xd);
   if (param_3 != 0) {
-    text_color = shape_edittool_cpp_FUN_004803d0(g_CEditorToolsPtr);
+    text_color = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0
+                           (g_CEditorToolsPtr);
     shape_edittool_cpp_FUN_00480f00
               (g_CEditorToolsPtr,*(float *)(iVar1 + 0x14) + *(float *)(iVar1 + 0x18),text_color);
   }

@@ -26,7 +26,7 @@
     ],
     "convention": "unknown",
     "name": "core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3ce",
-    "signature": "void core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3ce(undefined4 param_1)"
+    "signature": "void core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3ce(char *param_1)"
   },
   "function_calls": [
     {
@@ -45,14 +45,14 @@
       "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
     },
     {
+      "addr": "004aaf00",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
+    },
+    {
       "addr": "004a8df0",
       "is_variadic": false,
       "name": "engine_font.cpp_FUN_004a8df0"
-    },
-    {
-      "addr": "004aaf00",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004aaf00"
     }
   ],
   "globals": [
@@ -116,6 +116,26 @@
     },
     "pcode_op_count": 308
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0050a1f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9919
+    },
+    "nocedit.exe": {
+      "addr": "00510410",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9919
+    },
+    "nocturne.exe": {
+      "addr": "004cf810",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9919
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -138,7 +158,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3ce(uint param_1)",
+      "text": "void core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3ce(char *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -146,7 +166,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = engine_font_cpp_FUN_004aaf00(_DAT_01511cb8,param_1);",
+      "text": "iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01511cb8,param_1);",
       "type": "unnamed_param"
     },
     {

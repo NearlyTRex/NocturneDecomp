@@ -20,7 +20,7 @@
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_005036b0
 ;   core_motion.cpp_CMotionList_findStateIndex_FUN_00502fa0
 ;   core_motion.cpp_FUN_005038a0
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     PUSH 0x5d9c26                       ; 004cec15 | = "CHero::stopGettingGrabbed by %s, type..."
     MOV EDI,dword ptr [0x00609ed0]      ; 004cec1a | g_CConsolePtr
     PUSH EDI                            ; 004cec20 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 004cec21
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 004cec21
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 004cec26
     POP EDI                             ; 004cec29
     JMP 0x004ceb97                      ; 004cec2a

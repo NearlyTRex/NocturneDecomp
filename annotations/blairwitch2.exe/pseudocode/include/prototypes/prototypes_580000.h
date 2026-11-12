@@ -31,6 +31,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/enums/EGroundType.h"
+#include "types/enums/EInputCodeType.h"
 #include "types/enums/EWeatherType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -44,7 +45,7 @@
 int __cdecl core_turret_cpp_CTurret_canPickup_FUN_005801e0(CTurret *this_ptr,CDemonActor *picker);
 CTurret * __cdecl core_turret_cpp_CTurret_dtor_FUN_00580210(CTurret *this_ptr,uint flags);
 void core_tvbat_cpp_staticInit_FUN_00580260(void);
-void core_tvbat_cpp_factoryFuncTVBat_FUN_00580290(void);
+CTVBat * __cdecl core_tvbat_cpp_factoryFuncTVBat_FUN_00580290(void);
 CDemonActorType * core_tvbat_cpp_CTVBat_getActorType_FUN_005802b0(CTVBat *this_ptr);
 CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005802f0(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_setup_FUN_00580450(CTVBat *this_ptr);
@@ -59,7 +60,7 @@ EDeathState __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_00581390(CTVBat *thi
 void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_005813c0(CTVBat *this_ptr,SDamageInfo *damage_info);
 CTVBat * core_tvbat_cpp_CTVBat_dtor_FUN_00581430(CTVBat *this_ptr,uint flags);
 void core_vampboss_cpp_staticInit_FUN_005814d0(void);
-void core_vampboss_cpp_factoryFuncVampireBoss_FUN_00581500(void);
+CVampireBoss * __cdecl core_vampboss_cpp_factoryFuncVampireBoss_FUN_00581500(void);
 CDemonActorType * core_vampboss_cpp_CVampireBoss_getActorType_FUN_00581520(CVampireBoss *this_ptr);
 CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_00581530(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_00581660(CVampireBoss *this_ptr);
@@ -82,7 +83,7 @@ CVampireBoss * core_vampboss_cpp_CVampireBoss_dtor_FUN_005837e0(CVampireBoss *th
 void core_vecdir_cpp_staticInit_FUN_005838d0(void);
 float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(uint *param_1);
 void core_vehicle_cpp_staticInit_FUN_00583990(void);
-void core_vehicle_cpp_factoryFuncVehicle_FUN_005839c0(void);
+CVehicle * __cdecl core_vehicle_cpp_factoryFuncVehicle_FUN_005839c0(void);
 CDemonActorType * core_vehicle_cpp_CVehicle_getActorType_FUN_005839e0(CVehicle *this_ptr);
 CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_005839f0(CVehicle *this_ptr);
 void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_00583c40(CVehicle *this_ptr);
@@ -97,7 +98,7 @@ uint __cdecl core_vehicle_cpp_CVehicle_playTrackedSound_FUN_00584d90(CVehicle *t
 CVehicle * core_vehicle_cpp_CVehicle_dtor_FUN_00584de0(CVehicle *this_ptr,uint flags);
 CTire * __cdecl core_vehicle_cpp_CTire_ctor_FUN_00584e50(CTire *this_ptr);
 void core_vessel_cpp_staticInit_FUN_00584e70(void);
-void core_vessel_cpp_factoryFuncCryptVessel_FUN_00584ea0(void);
+CCryptVessel * __cdecl core_vessel_cpp_factoryFuncCryptVessel_FUN_00584ea0(void);
 CDemonActorType * core_vessel_cpp_CCryptVessel_getActorType_FUN_00584ec0(CCryptVessel *this_ptr);
 CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_00584ed0(CCryptVessel *this_ptr);
 void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_00585030(CCryptVessel *this_ptr);
@@ -115,7 +116,7 @@ ECollisionType __cdecl core_vessel_cpp_CCryptVessel_getCollisionType_FUN_00585c7
 CBoundingBox3D * __cdecl core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_00585c90(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
 CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_dtor_FUN_00585cd0(CCryptVessel *this_ptr,uint flags);
 void core_water_cpp_staticInit_FUN_00585d40(void);
-float core_water_cpp_calculateWaveHeight_FUN_00585d5e(int param_1,int param_2);
+float __cdecl core_water_cpp_calculateWaveHeight_FUN_00585d5e(int x,int y);
 CWater * __cdecl core_water_cpp_CWater_ctor_FUN_00585db0(CWater *this_ptr);
 CWater * core_water_cpp_CWater_dtor_FUN_00585dd0(CWater *this_ptr,uint flags);
 void __cdecl core_water_cpp_CWater_captureTextures_FUN_00585de0(CWater *this_ptr);
@@ -123,7 +124,7 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00585e10(CWater *th
 void __cdecl core_water_cpp_CWater_process_FUN_00585e60(CWater *this_ptr);
 void __cdecl core_water_cpp_CWater_render_FUN_005862e0(CWater *this_ptr,int render_mode);
 void core_wateract_cpp_staticInit_FUN_00586920(void);
-void core_wateract_cpp_factoryFuncWaterActor_FUN_00586970(void);
+CWaterActor * __cdecl core_wateract_cpp_factoryFuncWaterActor_FUN_00586970(void);
 CDemonActorType * core_wateract_cpp_CWaterActor_getActorType_FUN_00586990(CWaterActor *this_ptr);
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_005869a0(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00586af0(CWaterActor *this_ptr);
@@ -142,7 +143,7 @@ SWaterVertex * core_wateract_cpp_SWaterVertex_ctor_FUN_00587be0(SWaterVertex *th
 SCollisionInfo * core_wateract_cpp_SCollisionInfo_dtor_FUN_00587bf0(SCollisionInfo *this_ptr,uint flags);
 void core_waypoint_cpp_staticInit_FUN_00587c00(void);
 bool core_waypoint_cpp_FUN_00587c30(float *param_1,CLocation *param_2,int param_3,int param_4);
-void core_waypoint_cpp_factoryFuncWayPoint_FUN_00587d40(void);
+CWayPoint * __cdecl core_waypoint_cpp_factoryFuncWayPoint_FUN_00587d40(void);
 CDemonActorType * core_waypoint_cpp_CWayPoint_getActorType_FUN_00587d60(CWayPoint *this_ptr);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_ctor_FUN_00587d70(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWayPoint_setup_FUN_00587dc0(CWayPoint *this_ptr);
@@ -153,7 +154,7 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_00588480(CWayPoint *thi
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_00588530(void);
 void wincore_wddvmem_cpp_FUN_0058866e(void);
 void wincore_wddvmem_cpp_FUN_0058873c(void);
-int __cdecl wincore_wddvmem_cpp_FUN_00588790(int width,int height);
+int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_00588790(int width,int height);
 void __cdecl wincore_wddvmem_cpp_FUN_00588900(void);
 void wincore_wddvmem_cpp_FUN_005889be(void);
 int __cdecl wincore_wddvmem_cpp_FUN_00588a50(int width,int height,int bits_per_pixel);
@@ -203,7 +204,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
 void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_0058b470(CWeather *this_ptr,EWeatherType type);
 void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0058b4f0(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
 void __cdecl core_werewolf_cpp_staticInit_FUN_0058b6f0(void);
-void core_werewolf_cpp_factoryFuncWerewolf_FUN_0058b750(void);
+CWerewolf * __cdecl core_werewolf_cpp_factoryFuncWerewolf_FUN_0058b750(void);
 CDemonActorType * core_werewolf_cpp_CWerewolf_getActorType_FUN_0058b770(CWerewolf *this_ptr);
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_0058b780(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_setup_FUN_0058b830(CWerewolf *this_ptr);
@@ -229,11 +230,11 @@ int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_0058e720(CWinFont *t
 undefined4 engine_winfont_cpp_FUN_0058e790(void);
 void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_0058e7a0(void);
 void __watcallRegister wincore_winrun_cpp_endPeriod_FUN_0058e9d0(void);
-int wincore_winrun_cpp_getTime_FUN_0058e9e0(void);
+int __cdecl wincore_winrun_cpp_getTime_FUN_0058e9e0(void);
 void __cdecl wincore_winrun_cpp_clearKeypresses_FUN_0058eab0(void);
 int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_0058ead0(void);
 int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_0058eb40(void);
-undefined1 wincore_winrun_cpp_getValue_FUN_0058eb5c(void);
+char __cdecl wincore_winrun_cpp_getValue_FUN_0058eb5c(void);
 void __cdecl wincore_winrun_cpp_enqueueInput_FUN_0058eb70(int input_value);
 void wincore_winrun_cpp_FUN_0058ebb0(undefined4 param_1);
 void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_0058ebd0(int x_coord,int y_coord);
@@ -242,9 +243,9 @@ void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_0058ed00(void);
 void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_0058ed10(int x,int y);
 LRESULT __stdcall wincore_winrun_cpp_FUN_0058ed90(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_0058f270(void);
-void wincore_winrun_cpp_winMain_FUN_0058f310(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
+int __stdcall wincore_winrun_cpp_winMain_FUN_0058f310(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_0058f5d0(char *message);
-char * __cdecl wincore_winrun_cpp_getKeyName_FUN_0058f630(uint param_1);
+char * __cdecl wincore_winrun_cpp_getKeyName_FUN_0058f630(EInputCodeType keycode);
 HANDLE __cdecl wincore_winrun_cpp_createMutex_FUN_0058fc90(void);
 int __cdecl wincore_winrun_cpp_waitForMutex_FUN_0058fca0(HANDLE mutex_handle);
 int __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_0058fcc0(HANDLE mutex_handle,double timeout_seconds);
@@ -252,7 +253,7 @@ void __cdecl wincore_winrun_cpp_releaseMutex_FUN_0058fd00(HANDLE mutex_handle);
 HANDLE __cdecl wincore_winrun_cpp_createThread_FUN_0058fd20(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_param);
 int __cdecl wincore_winrun_cpp_setThreadPriority_FUN_0058fd50(HANDLE hThread,int priority_level);
 void __cdecl wincore_winrun_cpp_sleep_FUN_0058fd90(double seconds);
-void wincore_winrun_cpp_getComputerAndUserName_FUN_0058fdec(char *param_1);
+void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_0058fdec(char *buffer);
 void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_0058fec0(char *key_path,char *value_name,char *output_buffer,uint *buffer_size);
 void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_0058ff40(char *key_path,char *value_name,char *value_data);
 void wincore_winrun_cpp_FUN_0058ffc0(LPCSTR param_1);

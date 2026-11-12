@@ -17,9 +17,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_hero.cpp_FUN_004d2af0
+;   core_hero.cpp_CHero_getGrabbed_FUN_004d2af0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5cd9ab                       ; 00526e4d | s_CPrye_startGettingGrabbe_005cd9a9+2
     MOV ECX,dword ptr [0x005f1690]      ; 00526e52 | g_CConsolePtr
     PUSH ECX                            ; 00526e58 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00526e59
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00526e59
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 00526e5e
     LEA EAX,[EBX + 0x158]               ; 00526e61
     PUSH EAX                            ; 00526e67
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5cd9d6                       ; 00526e71 | = "  current motion is %s\n"
     MOV EDI,dword ptr [0x005f1690]      ; 00526e76 | g_CConsolePtr
     PUSH EDI                            ; 00526e7c | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00526e7d
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00526e7d
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     MOV EBP,dword ptr [EBX + 0x20b98]   ; 00526e82
     ADD ESP,0xc                         ; 00526e88
     TEST EBP,EBP                        ; 00526e8b
@@ -103,8 +103,8 @@ section .text
     PUSH EBP                            ; 00526ed2
     PUSH ESI                            ; 00526ed3
     PUSH EBX                            ; 00526ed4
-    CALL core_hero.cpp_FUN_004d2af0     ; 00526ed5
-        ;   XREF to: 004d2af0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d2af0()
+    CALL core_hero.cpp_CHero_getGrabbed_FUN_004d2af0 ; 00526ed5
+        ;   XREF to: 004d2af0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_getGrabbed_FUN_004d2af0(CHero * this_ptr, CDemonActor * grabber, int grab_type)
     ADD ESP,0xc                         ; 00526eda
     MOV ESI,EAX                         ; 00526edd
     TEST EAX,EAX                        ; 00526edf
@@ -119,7 +119,7 @@ section .text
     PUSH ECX                            ; 00526ef9
     PUSH EAX                            ; 00526efa
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00526efb
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00526f00
     TEST EAX,EAX                        ; 00526f03
     JZ 0x00526f3a                       ; 00526f05

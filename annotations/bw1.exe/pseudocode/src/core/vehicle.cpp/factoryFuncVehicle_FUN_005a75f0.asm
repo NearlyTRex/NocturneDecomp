@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vehicle_cpp_factoryFuncVehicle_FUN_005a75f0(void)
+; CVehicle * __cdecl core_vehicle_cpp_factoryFuncVehicle_FUN_005a75f0(void)
 ;
 ;
 ; Called Functions:

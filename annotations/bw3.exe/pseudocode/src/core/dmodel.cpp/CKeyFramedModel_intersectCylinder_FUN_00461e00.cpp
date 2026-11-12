@@ -12,7 +12,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00461e00(CKey
 
 {
   int iVar1;
-  CDemonTriangle *pCVar2;
+  CDemonTriangle *triangle;
   
   if (this_ptr->frame_count <= frame_index) {
     frame_index = this_ptr->frame_count + -1;
@@ -30,13 +30,13 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00461e00(CKey
     _DAT_01d71de4 = 0x40e;
     core_main_c_FUN_004e4330("Tried to call CKeyFramedModel::intersectCylinderXZ for model %s but this model does not have a collision triangle list!",this_ptr);
   }
-  pCVar2 = this_ptr->collision_triangle_list + frame_index * this_ptr->collision_triangle_count;
+  triangle = this_ptr->collision_triangle_list + frame_index * this_ptr->collision_triangle_count;
   iVar1 = 0;
   if (0 < this_ptr->collision_triangle_count) {
     do {
       iVar1 = iVar1 + 1;
-      core_dtri_cpp_cylinderTriangleTest_FUN_00479050(pCVar2,cylinder);
-      pCVar2 = pCVar2 + 1;
+      core_dtri_cpp_cylinderTriangleTest_FUN_00479050(triangle,cylinder);
+      triangle = triangle + 1;
     } while (iVar1 < this_ptr->collision_triangle_count);
   }
   return;

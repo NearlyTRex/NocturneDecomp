@@ -9,12 +9,11 @@
 void __cdecl core_ground_cpp_CGround_render_FUN_004e7f80(CGround *this_ptr)
 
 {
-  int local_18;
-  int local_10;
+  CVector3i local_18;
   
-  engine_matrix_c_getCameraOrigin_FUN_00509050();
-  this_ptr->camera_x = local_18 / (this_ptr->vertical_scale << 8);
-  this_ptr->camera_y = local_10 / (this_ptr->vertical_scale << 8);
+  engine_matrix_c_getCameraOrigin_FUN_00509050(&local_18);
+  this_ptr->camera_x = local_18.x / (this_ptr->vertical_scale << 8);
+  this_ptr->camera_y = local_18.z / (this_ptr->vertical_scale << 8);
   if (this_ptr->camera_x < 0) {
     this_ptr->camera_x = this_ptr->camera_x + -1;
   }

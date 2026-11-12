@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_emitter_cpp_factoryFuncEmitter_FUN_0049ee10(void)
+; CEmitter * __cdecl core_emitter_cpp_factoryFuncEmitter_FUN_0049ee10(void)
 ;
 ;
 ; Called Functions:

@@ -34,7 +34,7 @@ section .text
         ;   Label: LAB_00557f63
     PUSH EBX                            ; 00557f68
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90 ; 00557f69
-        ;   XREF to: 00556c90 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90()
+        ;   XREF to: 00556c90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90(int channel_index, float volume)
     ADD ESP,0x8                         ; 00557f6e
     PUSH 0x1                            ; 00557f71
     PUSH EBX                            ; 00557f73
@@ -51,7 +51,7 @@ section .text
     FSTP float ptr [ESP]                ; 00557f91
     PUSH 0x1                            ; 00557f94
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90 ; 00557f96
-        ;   XREF to: 00556c90 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90()
+        ;   XREF to: 00556c90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90(int channel_index, float volume)
     ADD ESP,0x8                         ; 00557f9b
     PUSH 0x3f800000                     ; 00557f9e
     CALL sound_sndmain.cpp_FUN_00557140 ; 00557fa3

@@ -134,8 +134,8 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005415c0(CScat *this_ptr,float del
                       (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_54,
                        (this_ptr->base).base.base.direction_hint);
     if (iVar4 != 0) {
-      local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                  (CStack_54.y - (this_ptr->base).base.base.orient.vec.y);
+      local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                           (CStack_54.y - (this_ptr->base).base.base.orient.vec.y);
       fVar3 = local_14 * _DAT_005ede77 * (float)_DAT_005ede7f;
       fStack_34 = -local_24;
       (this_ptr->base).player_input.turn_speed = fVar3;
@@ -175,8 +175,8 @@ LAB_005418bc:
     local_98 = local_74;
     local_94 = local_70;
   }
-  local_a4 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                              (local_98 - (this_ptr->base).base.base.orient.vec.y);
+  local_a4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                       (local_98 - (this_ptr->base).base.base.orient.vec.y);
   if (local_28 < local_a4) {
     local_a4 = local_28;
   }

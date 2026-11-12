@@ -38,7 +38,7 @@ section .text
     MOV EBX,ESP                         ; 004985e0
     PUSH EBX                            ; 004985e2
     CALL engine_3d.c_processCameraRelativePoint_FUN_004037e0 ; 004985e3
-        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_processCameraRelativePoint_FUN_004037e0()
+        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(SMRGLPoint * block)
     ADD ESP,0x4                         ; 004985e8
     LEA EBX,[ESP + 0x10]                ; 004985eb
     MOV EAX,dword ptr [ESP + 0x3c]      ; 004985ef

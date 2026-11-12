@@ -15,7 +15,7 @@ bool FUN_00587c30(float *param_1,CLocation *param_2,int param_3,int param_4);
 
 // Original: core_waypoint.cpp_factoryFuncWayPoint_FUN_00587d40
 // Address: 00587d40
-void factoryFuncWayPoint(void);
+CWayPoint * __cdecl factoryFuncWayPoint(void);
 
 // Original: core_waypoint.cpp_CWayPoint_getActorType_FUN_00587d60
 // Address: 00587d60

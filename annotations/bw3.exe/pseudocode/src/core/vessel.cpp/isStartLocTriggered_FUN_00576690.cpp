@@ -2,12 +2,12 @@
 // Address: 00576690
 // Address Range: [[00576690, 005766a0]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_vessel_cpp_isStartLocTriggered_FUN_00576690(int param_1)
+// Signature: int __cdecl core_vessel_cpp_isStartLocTriggered_FUN_00576690(CCryptVessel *actor)
 
 #include "nocturne.h"
 
-uint __cdecl core_vessel_cpp_isStartLocTriggered_FUN_00576690(int param_1)
+int __cdecl core_vessel_cpp_isStartLocTriggered_FUN_00576690(CCryptVessel *actor)
 
 {
-  return *(uint *)(*(int *)(param_1 + 0x3a8) + 0x184);
+  return actor->start_loc->triggered;
 }

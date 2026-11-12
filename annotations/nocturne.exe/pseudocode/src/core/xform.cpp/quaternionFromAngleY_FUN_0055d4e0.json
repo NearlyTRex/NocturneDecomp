@@ -44,27 +44,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005384d0",
-      "from_addr": "00538710",
-      "name": "core_stranger.cpp_CStranger_FUN_005384d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005396d0",
-      "from_addr": "0053975d",
-      "name": "core_stranger.cpp_CStranger_FUN_005396d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053a260",
       "from_addr": "0053a2a1",
       "name": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0053a260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005396d0",
+      "from_addr": "0053975d",
+      "name": "core_stranger.cpp_CStranger_extractTurnPose_FUN_005396d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00539b10",
       "from_addr": "0053a0e1",
       "name": "core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005384d0",
+      "from_addr": "00538710",
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -186,7 +186,7 @@
       {
         "call_addr": "00538710",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_FUN_005384d0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +199,7 @@
       {
         "call_addr": "00538a12",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_FUN_005384d0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -212,7 +212,7 @@
       {
         "call_addr": "00538a6f",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_FUN_005384d0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -255,6 +255,32 @@
       "STORE": 9
     },
     "pcode_op_count": 157
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00593fe0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005b7b30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00585d10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f79f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7692
+    }
   },
   "stack_frame": {
     "frame_size": 36,

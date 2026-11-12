@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 436,
-    "complexity_score": 912,
+    "complexity_score": 642,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 222,
-    "suspect_count": 66,
+    "suspect_count": 40,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "self_copy_guard",
       "stack_alignment_array",
-      "unnamed_param",
       "warning_type_propagation"
     ],
     "total_lines": 658
@@ -38,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_setdir.cpp_testOBBIntersection_FUN_00541470",
-    "signature": "undefined4 __cdecl core_setdir_cpp_testOBBIntersection_FUN_00541470(float *param_1,float *param_2)"
+    "signature": "int __cdecl core_setdir_cpp_testOBBIntersection_FUN_00541470(SVDBox *obb_a,SVDBox *obb_b)"
   },
   "function_calls": [
     {
@@ -96,11 +94,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.549738219895288,
@@ -144,11 +142,37 @@
     },
     "pcode_op_count": 2502
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0053a1b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0055bab0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005763a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1821
+    },
+    "nocturne.exe": {
+      "addr": "00513e80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1821
+    }
+  },
   "stack_frame": {
-    "frame_size": 408,
+    "frame_size": 416,
     "local_size": 408,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -584,6 +608,20 @@
         "offset": -16,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "obb_a",
+        "offset": 4,
+        "size": 4,
+        "type": "SVDBox *"
+      },
+      {
+        "is_param": true,
+        "name": "obb_b",
+        "offset": 8,
+        "size": 4,
+        "type": "SVDBox *"
       }
     ]
   },
@@ -597,22 +635,6 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl core_setdir_cpp_testOBBIntersection_FUN_00541470(float *param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_setdir_cpp_testOBBIntersection_FUN_00541470(float *param_1,float *param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,
       "match": "auStackY_1104",
@@ -621,124 +643,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_bc = -param_2[3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_b8 = -param_2[4];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_b4 = -param_2[5];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (&local_128 != param_2 + 3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_128 = param_2[3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_124 = param_2[4];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_120 = param_2[5];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_1c = param_2 + 6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_34 = param_1 + 6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_30 = param_1[3];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(float *)((int)local_194",
       "severity": "moderate",
       "text": "local_24 = (float *)((int)local_194 + local_20 * 0xc);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_2c = param_1[4];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_2c = -param_1[4];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = param_1[5];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = -param_1[5];",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
@@ -773,38 +683,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 113,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_b0 = local_d0[2] + *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 114,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_ac[0] = local_d0[3] + param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 115,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_ac[1] = local_c0 + param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_104 = local_d0[2] + *param_1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 117,
       "match": "(uint *)((int)local_100",
@@ -835,38 +713,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)local_ac + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 126,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_ac[2] = local_e0 - *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 127,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_ac[3] = local_dc - param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 128,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_9c = local_d8 - param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 129,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_110 = local_e0 - *param_2;",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
@@ -1077,14 +923,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 223,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_30 = -param_1[3];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom dead self-copy guard: `if (&local_134 != &local_bc)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
       "line": 71,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
@@ -1107,17 +945,6 @@
       "severity": "moderate",
       "text": "if (&local_e0 != &local_98) {",
       "type": "self_copy_guard"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

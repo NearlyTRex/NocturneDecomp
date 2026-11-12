@@ -47,11 +47,11 @@ section .text
     PUSH EDX                            ; 004eafeb
     PUSH 0x5e4800                       ; 004eafec | DAT_005e4800
     CALL core_actor.cpp_createActorByName_FUN_0040c2b0 ; 004eaff1
-        ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c2b0()
+        ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c2b0(char * class_name)
     ADD ESP,0x4                         ; 004eaff6
     PUSH EAX                            ; 004eaff9
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004eaffa
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004eafff
     MOV EBX,EAX                         ; 004eb002
     TEST EAX,EAX                        ; 004eb004

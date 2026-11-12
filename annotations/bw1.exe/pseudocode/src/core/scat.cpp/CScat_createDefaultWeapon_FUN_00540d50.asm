@@ -39,7 +39,7 @@ section .text
     PUSH 0x5ede09                       ; 00540d66 | = "CBaronWeapon"
     MOV ESI,0x5ede16                    ; 00540d6b | = "BaronProxy"
     CALL core_actor.cpp_createActorByName_FUN_0040c2b0 ; 00540d70
-        ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c2b0()
+        ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c2b0(char * class_name)
     ADD ESP,0x4                         ; 00540d75
     MOV EDI,EAX                         ; 00540d78
     MOV EDX,EAX                         ; 00540d7a

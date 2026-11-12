@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 72,
+    "complexity_score": 84,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
+    "pseudocode_lines": 54,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 143
+    "total_lines": 155
   },
   "cross_references": [
     {
@@ -192,6 +192,32 @@
     },
     "pcode_op_count": 405
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004807e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004819e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a2590",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004736d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 68,
     "local_size": 60,
@@ -292,7 +318,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 34,
+      "line": 46,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

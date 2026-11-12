@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 632,
-    "complexity_score": 1033,
+    "complexity_score": 1099,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 48,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 218,
-    "suspect_count": 77,
+    "pseudocode_lines": 219,
+    "suspect_count": 83,
     "suspect_types": [
+      "derived_field_index_pun",
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
@@ -20,7 +21,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 850
+    "total_lines": 851
   },
   "cross_references": [
     {
@@ -95,9 +96,19 @@
       "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0"
     },
     {
+      "addr": "0046d2f0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0"
+    },
+    {
       "addr": "0046cb90",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90"
+    },
+    {
+      "addr": "0046d090",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090"
     },
     {
       "addr": "0046d4c0",
@@ -113,16 +124,6 @@
       "addr": "0046cc10",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10"
-    },
-    {
-      "addr": "0046d090",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046d090"
-    },
-    {
-      "addr": "0046d2f0",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046d2f0"
     },
     {
       "addr": "0046d080",
@@ -871,7 +872,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 15,
       "match": "afStackY_1078",
       "severity": "moderate",
       "text": "float afStackY_1078 [1004];",
@@ -967,47 +968,47 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 71,
       "match": "param_3",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d2f0(DAT_005f2afc,param_3,param_4,param_5,param_5);",
+      "text": "(DAT_005f2afc,param_3,param_4,param_5,param_5);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d2f0(DAT_005f2afc,param_3,param_4,param_5,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d2f0(DAT_005f2afc,param_3,param_4,param_5,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d2f0(DAT_005f2afc,param_3,param_4,param_5,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d2f0(DAT_005f2afc,param_3,param_4,param_5,param_5);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 71,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,param_3,param_4,param_5,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,param_3,param_4,param_5,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,param_3,param_4,param_5,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 71,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,param_3,param_4,param_5,param_5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
       "match": "param_2",
       "severity": "mild",
       "text": "local_18 = (CKeyFramedModelInstance *)core_inv_cpp_FUN_004d9d20(param_2);",
@@ -1015,23 +1016,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 74,
+      "line": 75,
       "match": "&stack0xffffff4c",
       "severity": "moderate",
-      "text": "pfVar6 = &stack0xffffff4c;",
+      "text": "pfVar7 = &stack0xffffff4c;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(CBoundingBox3D *)((int)pCVar5",
+      "line": 78,
+      "match": "(CBoundingBox3D *)((int)pCVar6",
       "severity": "moderate",
-      "text": "pCVar5 = (CBoundingBox3D *)((int)pCVar5 + (uint)bVar7 * -8 + 4);",
+      "text": "pCVar6 = (CBoundingBox3D *)((int)pCVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 99,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CLightstaff\");",
@@ -1039,7 +1040,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 101,
       "match": "param_2",
       "severity": "mild",
       "text": "(iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CFirestaff\"), iVar2 != 0)) {",
@@ -1047,7 +1048,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 104,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,&DAT_005c62e2);",
@@ -1055,7 +1056,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 104,
       "match": "DAT_005c62e2",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,&DAT_005c62e2);",
@@ -1063,7 +1064,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 106,
       "match": "param_2",
       "severity": "mild",
       "text": "(iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CKeyActor\"), iVar2 != 0))",
@@ -1071,7 +1072,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 107,
       "match": "param_2",
       "severity": "mild",
       "text": "|| ((iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CExorcism\"), iVar2 != 0",
@@ -1079,7 +1080,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 108,
       "match": "param_2",
       "severity": "mild",
       "text": "|| ((iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,&DAT_005c62fb), iVar2 != 0 ||",
@@ -1087,7 +1088,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 108,
       "match": "DAT_005c62fb",
       "severity": "mild",
       "text": "|| ((iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,&DAT_005c62fb), iVar2 != 0 ||",
@@ -1095,7 +1096,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 109,
       "match": "param_2",
       "severity": "mild",
       "text": "(iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CBindEvil\"),",
@@ -1103,7 +1104,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 118,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,&local_9c);",
@@ -1111,15 +1112,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 119,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d090(DAT_005f2afc,0x42100000);",
+      "text": "engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(DAT_005f2afc,36.0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 121,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900);",
@@ -1127,7 +1128,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 121,
       "match": "DAT_02cfd900",
       "severity": "mild",
       "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900);",
@@ -1135,7 +1136,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 123,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900);",
@@ -1143,7 +1144,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 123,
       "match": "DAT_02cfd900",
       "severity": "mild",
       "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900);",
@@ -1151,15 +1152,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 138,
       "match": "param_2",
       "severity": "mild",
-      "text": "actor_ptr = param_2;",
+      "text": "pCVar5 = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 142,
+      "line": 143,
       "match": "param_2",
       "severity": "mild",
       "text": "(iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CFirestaff\"), iVar2 != 0)) {",
@@ -1167,7 +1168,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 145,
+      "line": 146,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CBurncross\");",
@@ -1175,7 +1176,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 148,
       "match": "param_2",
       "severity": "mild",
       "text": "(iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CFirestaff\"), iVar2 != 0)",
@@ -1183,7 +1184,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 148,
+      "line": 149,
       "match": "param_2",
       "severity": "mild",
       "text": ") || (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CHeal\"), iVar2 != 0)",
@@ -1191,7 +1192,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 149,
+      "line": 150,
       "match": "param_2",
       "severity": "mild",
       "text": ") || ((iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CExorcism\"),",
@@ -1199,7 +1200,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 151,
+      "line": 152,
       "match": "param_2",
       "severity": "mild",
       "text": "(iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CHolycross\"),",
@@ -1207,7 +1208,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 153,
+      "line": 154,
       "match": "param_2",
       "severity": "mild",
       "text": "((iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CLightstaff\"), iVar2 != 0",
@@ -1215,7 +1216,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 154,
+      "line": 155,
       "match": "param_2",
       "severity": "mild",
       "text": "|| (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,&DAT_005c635e), iVar2 != 0)))) {",
@@ -1223,7 +1224,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 154,
+      "line": 155,
       "match": "DAT_005c635e",
       "severity": "mild",
       "text": "|| (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,&DAT_005c635e), iVar2 != 0)))) {",
@@ -1231,7 +1232,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 155,
+      "line": 156,
       "match": "param_6",
       "severity": "mild",
       "text": "param_6 = 0.0;",
@@ -1239,7 +1240,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 158,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CBoxActor\");",
@@ -1247,7 +1248,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 159,
+      "line": 160,
       "match": "param_6",
       "severity": "mild",
       "text": "local_30.y = param_6;",
@@ -1255,15 +1256,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 165,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c840(param_2,g_CBoxActorClassInfo.name_hash);",
+      "text": "pCVar5 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c840(param_2,g_CBoxActorClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 178,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CBindEvil\");",
@@ -1271,7 +1272,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 182,
+      "line": 183,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CExorcism\");",
@@ -1279,7 +1280,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 186,
+      "line": 187,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,\"CKeyActor\");",
@@ -1287,15 +1288,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 190,
+      "line": 191,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c840(param_2,g_CMeleeClassInfo.name_hash);",
+      "text": "pCVar5 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c840(param_2,g_CMeleeClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 204,
+      "line": 205,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,&local_30,(CVector3f *)0x0);",
@@ -1303,7 +1304,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 206,
+      "line": 207,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900,&local_60);",
@@ -1311,7 +1312,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 206,
+      "line": 207,
       "match": "DAT_02cfd900",
       "severity": "mild",
       "text": "(DAT_005f2afc,(CVector3f *)&DAT_02cfd900,&local_60);",
@@ -1319,7 +1320,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 207,
+      "line": 208,
       "match": "param_7",
       "severity": "mild",
       "text": "if (param_7 < 65000) {",
@@ -1327,7 +1328,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 208,
+      "line": 209,
       "match": "param_7",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,param_7);",
@@ -1335,7 +1336,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 208,
+      "line": 209,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,param_7);",
@@ -1343,7 +1344,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 209,
+      "line": 210,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);",
@@ -1351,39 +1352,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 211,
+      "line": 212,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 77,
-      "match": "(int)pCVar5",
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 78,
+      "match": "(int)pCVar6",
       "severity": "moderate",
-      "text": "pCVar5 = (CBoundingBox3D *)((int)pCVar5 + (uint)bVar7 * -8 + 4);",
+      "text": "pCVar6 = (CBoundingBox3D *)((int)pCVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 136,
+      "line": 137,
       "match": "(int)&local_60",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_60 + (uint)bVar7 * -8 + 4) = local_8c[(uint)bVar7 * -2 + 9];",
+      "text": "*(float *)((int)&local_60 + (uint)bVar8 * -8 + 4) = local_8c[(uint)bVar8 * -2 + 9];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 138,
+      "line": 139,
       "match": "(int)&local_60",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_60 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
+      "text": "*(float *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 75,
+      "line": 76,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -1391,19 +1392,64 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 136,
+      "line": 137,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_60 + (uint)bVar7 * -8 + 4) = local_8c[(uint)bVar7 * -2 + 9];",
+      "text": "*(float *)((int)&local_60 + (uint)bVar8 * -8 + 4) = local_8c[(uint)bVar8 * -2 + 9];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 138,
+      "line": 139,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_60 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
+      "text": "*(float *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 172,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "else if (&local_30 != (CVector3f *)(pCVar5[5].actor_name + 0x18)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 173,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "local_30.x = ((CVector3f *)(pCVar5[5].actor_name + 0x18))->x;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 174,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "local_30.y = *(float *)(pCVar5[5].actor_name + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "'pCVar5[5].actor_name + 0x18' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x18 = 0x6d0, which is exactly offsetof(CBoxActor, cam_orientation). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar5)->cam_orientation (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_v[22] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 172,
+      "severity": "moderate",
+      "text": "else if (&local_30 != (CVector3f *)(pCVar5[5].actor_name + 0x18)) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'pCVar5[5].actor_name + 0x18' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x18 = 0x6d0, which is exactly offsetof(CBoxActor, cam_orientation). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar5)->cam_orientation (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_v[22] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 173,
+      "severity": "moderate",
+      "text": "local_30.x = ((CVector3f *)(pCVar5[5].actor_name + 0x18))->x;",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'pCVar5[5].actor_name + 0x1c' walks 5 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x1c = 0x6d4, which is exactly offsetof(CGlass, texture_v[23]). Ghidra had no CGlass type here and reached the field by index arithmetic; write it as ((CGlass *)pCVar5)->texture_v[23] (\u00a7de-pun/\u00a712).",
+      "line": 174,
+      "severity": "moderate",
+      "text": "local_30.y = *(float *)(pCVar5[5].actor_name + 0x1c);",
+      "type": "derived_field_index_pun"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 004dbfe7, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

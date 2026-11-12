@@ -19,7 +19,7 @@ CHostage * core_hostage_cpp_CHostage_dtor_FUN_004ef910(CHostage *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHostageTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHostageTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

@@ -10,9 +10,9 @@ void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005848a0(CVehicle *this_ptr)
 
 {
   int iVar1;
-  float *pfVar2;
-  float *pfVar3;
-  CKeyFramedModelInstance *pCVar4;
+  float *float_ptr;
+  float *float_ptr_00;
+  CKeyFramedModelInstance *model_ptr;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60
@@ -20,18 +20,19 @@ void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005848a0(CVehicle *this_ptr)
   core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->tire_count,"tireCount");
   iVar1 = 0;
   if (0 < this_ptr->tire_count) {
-    pfVar3 = &this_ptr->tires[0].width;
-    pfVar2 = &this_ptr->tires[0].radius;
-    pCVar4 = &this_ptr->tires[0].model;
+    float_ptr_00 = &this_ptr->tires[0].width;
+    float_ptr = &this_ptr->tires[0].radius;
+    model_ptr = &this_ptr->tires[0].model;
     do {
-      core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60(pCVar4,0);
-      core_actor_cpp_archiveVector_FUN_0040b4b0(this_ptr->tires + iVar1,"static_bpos");
-      core_actor_cpp_archiveFloat_FUN_0040b8e0(pfVar2,"radius");
-      core_actor_cpp_archiveFloat_FUN_0040b8e0(pfVar3,"width");
-      pCVar4 = (CKeyFramedModelInstance *)((int)((CVector3f *)(pCVar4 + 1) + 4) + 8);
+      core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60(model_ptr,(char *)0x0);
+      core_actor_cpp_archiveVector_FUN_0040b4b0
+                (&this_ptr->tires[iVar1].static_bpos,"static_bpos");
+      core_actor_cpp_archiveFloat_FUN_0040b8e0(float_ptr,"radius");
+      core_actor_cpp_archiveFloat_FUN_0040b8e0(float_ptr_00,"width");
+      model_ptr = (CKeyFramedModelInstance *)(model_ptr[1].part_visibility_flags + 0xe);
       iVar1 = iVar1 + 1;
-      pfVar2 = pfVar2 + 0x6d;
-      pfVar3 = pfVar3 + 0x6d;
+      float_ptr = float_ptr + 0x6d;
+      float_ptr_00 = float_ptr_00 + 0x6d;
     } while (iVar1 < this_ptr->tire_count);
   }
   if (g_CVehicleClassVersion < 2) {

@@ -41,9 +41,9 @@ void __cdecl CDemonCamera::initLookupTable(CDemonCamera *this_ptr);
 // Address: 00440010
 void __cdecl CDemonCamera::init(CDemonCamera *this_ptr,int screen_height);
 
-// Original: core_dcamera.cpp_CDemonCamera_FUN_004401b0
+// Original: core_dcamera.cpp_CDemonCamera_setFramebufferSize_FUN_004401b0
 // Address: 004401b0
-void __cdecl CDemonCamera(CDemonCamera *this_ptr,int param_2,int param_3);
+void __cdecl CDemonCamera::setFramebufferSize(CDemonCamera *this_ptr,int width,int height);
 
 // Original: core_dcamera.cpp_CDemonCamera_free_FUN_004401d0
 // Address: 004401d0
@@ -333,9 +333,9 @@ void __cdecl saveCameraFog(SFog *fog,_FILE *file_handle);
 // Address: 00447e80
 void __cdecl CDemonCamera::initCameraShake(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time);
 
-// Original: core_dcamera.cpp_CDemonCamera_FUN_00447f20
+// Original: core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00447f20
 // Address: 00447f20
-CVector3f * __cdecl CDemonCamera(CDemonCamera *this_ptr,CVector3f *output_bounds);
+CVector3f * __cdecl CDemonCamera::computeVisibleFrustumBounds(CDemonCamera *this_ptr,CVector3f *output_bounds);
 
 // Original: core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00448310
 // Address: 00448310

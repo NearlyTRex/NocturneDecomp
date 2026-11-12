@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00444f70(SIntersectXZCylinder *param_1,float *param_2,float *param_3)
+; int __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00444f70(SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end)
 ;
+; Parameters:
+; SIntersectXZCylinder * Stack[0x4]:4   cylinder
+; CVector3f *      Stack[0x8]:4   segment_start
+; CVector3f *      Stack[0xc]:4   segment_end
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;

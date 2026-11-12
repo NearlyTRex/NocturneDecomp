@@ -951,7 +951,7 @@ section .text
     LEA EAX,[ESP + 0xd0]                ; 00505604
     PUSH EAX                            ; 0050560b
     CALL support_trisock.cpp_createNetworkAddr_FUN_0056f730 ; 0050560c
-        ;   XREF to: 0056f730 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_createNetworkAddr_FUN_0056f730()
+        ;   XREF to: 0056f730 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_createNetworkAddr_FUN_0056f730(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
     ADD ESP,0xc                         ; 00505611
     PUSH EAX                            ; 00505614
     MOV ESI,dword ptr [EBP + 0x14]      ; 00505615

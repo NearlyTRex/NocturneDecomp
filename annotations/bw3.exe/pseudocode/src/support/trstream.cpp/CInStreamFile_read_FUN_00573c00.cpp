@@ -33,8 +33,8 @@ int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile *
       }
       if (((this_ptr->position < this_ptr->buffer_start) ||
           (this_ptr->buffer_start + this_ptr->buffer_length <= this_ptr->position)) &&
-         (iVar2 = support_trstream_cpp_FUN_00573eb0(this_ptr,this_ptr->position), iVar2 == 0))
-      break;
+         (iVar2 = support_trstream_cpp_CInStreamFile_fillBuffer_FUN_00573eb0
+                            (this_ptr,this_ptr->position), iVar2 == 0)) break;
       uVar1 = (this_ptr->buffer_start + this_ptr->buffer_length) - this_ptr->position;
       if ((int)param_3 < (int)uVar1) {
         uVar1 = param_3;

@@ -93,7 +93,7 @@ section .text
     CALL dword ptr CS:[0x5c85b0]        ; 005c20b5 | PTR_GetModuleHandleA_005c85b0
     PUSH EAX                            ; 005c20bc
     CALL wincore_winrun.cpp_winMain_FUN_0058f310 ; 005c20bd
-        ;   XREF to: 0058f310 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_winMain_FUN_0058f310()
+        ;   XREF to: 0058f310 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_winMain_FUN_0058f310(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
     PUSH EAX                            ; 005c20c2
     CALL crt_unknown.c_FUN_005c2154     ; 005c20c3
         ;   XREF to: 005c2154 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c2154()

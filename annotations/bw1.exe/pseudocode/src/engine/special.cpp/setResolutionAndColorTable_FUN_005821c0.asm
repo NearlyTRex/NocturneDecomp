@@ -29,8 +29,8 @@
 ;   undefined4 DAT_02c834c4
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_00581310
 ;   engine_special.cpp_FUN_00581f50
+;   engine_special.cpp_loadExternalRenderer_FUN_00581310
 ;   engine_special.cpp_unlockFrame_FUN_00581fa0
 ;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004ecf70
 ;
@@ -56,8 +56,8 @@ section .text
         ;   XREF to: 005821fa (CONDITIONAL_JUMP)  ; LAB_005821fa
     MOV ESI,dword ptr [0x02c834c0]      ; 005821e3 | DAT_02c834c0
     PUSH ESI                            ; 005821e9
-    CALL engine_special.cpp_FUN_00581310 ; 005821ea
-        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00581310(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_00581310 ; 005821ea
+        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00581310(HWND window_handle)
     ADD ESP,0x4                         ; 005821ef
     TEST EAX,EAX                        ; 005821f2
     JZ 0x005822a9                       ; 005821f4

@@ -2,11 +2,11 @@
 // Address: 00579890
 // Address Range: [[00579890, 00579af0]]
 // Convention: unknown
-// Signature: undefined4 support_trisock_cpp_FUN_00579890(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,CSocket *param_6,code *param_7)
+// Signature: undefined4 support_trisock_cpp_FUN_00579890(undefined4 param_1,undefined4 param_2,uint16_t *param_3,undefined4 param_4,undefined4 param_5,CSocket *param_6,code *param_7)
 
 #include "nocturne.h"
 
-uint support_trisock_cpp_FUN_00579890(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,CSocket *param_6,code *param_7)
+uint support_trisock_cpp_FUN_00579890(uint param_1,uint param_2,uint16_t *param_3,uint param_4,uint param_5,CSocket *param_6,code *param_7)
 
 {
   int iVar1;
@@ -15,9 +15,9 @@ uint support_trisock_cpp_FUN_00579890(uint param_1,uint param_2,uint param_3,uin
   char acStack_bf0 [2300];
   byte auStack_2f4 [648];
   byte auStack_6c [4];
-  uint uStack_68;
-  byte auStack_18 [4];
-  CSocket CStack_14;
+  uint32_t *puStack_68;
+  char acStack_38 [32];
+  ulonglong uStack_18;
   
   iVar1 = support_trisock_cpp_FUN_0057a360(param_1,param_2,param_3,param_4,param_5);
   if (iVar1 == 0) {
@@ -34,9 +34,10 @@ uint support_trisock_cpp_FUN_00579890(uint param_1,uint param_2,uint param_3,uin
         (*param_7)(1,&stack0xfffff40c);
         return 0;
       }
-      support_trisock_cpp_CSocket_ctor_FUN_00579000(&CStack_14);
-      support_trisock_cpp_createNetworkAddr_FUN_00578e60(auStack_18,uStack_68);
-      support_trisock_cpp_formatSocketAddress_FUN_00578f50(auStack_18);
+      support_trisock_cpp_CSocket_ctor_FUN_00579000((CSocket *)((int)&uStack_18 + 4));
+      support_trisock_cpp_createNetworkAddr_FUN_00578e60
+                ((SNetworkAddr *)&uStack_18,puStack_68,*param_3);
+      support_trisock_cpp_formatSocketAddress_FUN_00578f50((SNetworkAddr *)&uStack_18,acStack_38);
       _sprintf(acStack_bf0,"Connecting to site %s");
       iVar1 = (*param_7)(0);
       if (iVar1 != 0) {

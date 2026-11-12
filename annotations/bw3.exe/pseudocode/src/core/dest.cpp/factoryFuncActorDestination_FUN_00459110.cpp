@@ -1,20 +1,20 @@
 // Name: core_dest.cpp_factoryFuncActorDestination_FUN_00459110
 // Address: 00459110
 // Address Range: [[00459110, 0045912b]]
-// Convention: unknown
-// Signature: void core_dest_cpp_factoryFuncActorDestination_FUN_00459110(void)
+// Convention: __cdecl
+// Signature: CActorDestination * __cdecl core_dest_cpp_factoryFuncActorDestination_FUN_00459110(void)
 
 #include "nocturne.h"
 
-void core_dest_cpp_factoryFuncActorDestination_FUN_00459110(void)
+CActorDestination * __cdecl core_dest_cpp_factoryFuncActorDestination_FUN_00459110(void)
 
 {
-  CActorDestination *this_ptr;
+  CActorDestination *pCVar1;
   
-  this_ptr = (CActorDestination *)operator_new(500);
-  if (this_ptr == (CActorDestination *)0x0) {
-    return;
+  pCVar1 = (CActorDestination *)operator_new(500);
+  if (pCVar1 == (CActorDestination *)0x0) {
+    return (CActorDestination *)0x0;
   }
-  core_dest_cpp_CActorDestination_ctor_FUN_00459140(this_ptr);
-  return;
+  pCVar1 = core_dest_cpp_CActorDestination_ctor_FUN_00459140(pCVar1);
+  return pCVar1;
 }

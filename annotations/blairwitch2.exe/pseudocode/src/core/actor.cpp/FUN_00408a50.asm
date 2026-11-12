@@ -23,7 +23,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH 0x5ca494                       ; 00408a56 | = "%s::getClassName()\n"
     MOV EDX,dword ptr [0x00609ed0]      ; 00408a5b | g_CConsolePtr
     PUSH EDX                            ; 00408a61 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 00408a62
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 00408a62
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00408a67
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 00408a6a
     PUSH EBX                            ; 00408a70

@@ -57,7 +57,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_setup_FUN_0059e130(CStylerDemon *thi
   (this_ptr->base).base.health_bar_mode = HEALTH_BAR_NONE;
 LAB_0059e234:
   if (this_ptr->is_morph_partner == 0) {
-    pCVar5 = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c4f0("CStyler");
+    pCVar5 = core_actor_cpp_createActorByName_FUN_0040c4f0("CStyler");
     this_ptr->styler = pCVar5;
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
               ((CDeformableModelInstance *)(pCVar5 + 1),"bwp_stylersub.dfm");
@@ -123,9 +123,9 @@ LAB_0059e234:
             ((CDeformableModelInstance *)(this_ptr->styler + 1));
   core_enemy_cpp_CEnemy_setup_FUN_00489110(&this_ptr->base);
   (this_ptr->base).speed = 1.0;
-  iVar7 = core_actor_cpp_createActorByName_FUN_0040c4f0("CZombie");
+  pCVar5 = core_actor_cpp_createActorByName_FUN_0040c4f0("CZombie");
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
-            ((CDeformableModelInstance *)(iVar7 + 0x158));
+            ((CDeformableModelInstance *)(pCVar5 + 1));
   sound_sndmain_cpp_FUN_00556230("stydem_stand.wav");
   sound_sndmain_cpp_FUN_00556230("stydem_walk.wav");
   sound_sndmain_cpp_FUN_00556230("stydem_run.wav");

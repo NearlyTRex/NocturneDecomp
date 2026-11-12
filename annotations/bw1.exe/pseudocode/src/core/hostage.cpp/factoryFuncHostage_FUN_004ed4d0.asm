@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hostage_cpp_factoryFuncHostage_FUN_004ed4d0(void)
+; CHostage * __cdecl core_hostage_cpp_factoryFuncHostage_FUN_004ed4d0(void)
 ;
 ;
 ; Called Functions:

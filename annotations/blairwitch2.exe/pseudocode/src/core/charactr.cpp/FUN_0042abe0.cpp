@@ -213,8 +213,8 @@ uint core_charactr_cpp_FUN_0042abe0(CCharacter *param_1,float param_2)
         }
         uStack_24 = uStack_24 + 1;
         if (8 < (int)uStack_24) {
-          engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s was in the way, but couldn't figure out where to move!\n",param_1)
-          ;
+          engine_console_cpp_CConsole_printf_FUN_00436710
+                    (g_CConsolePtr,"%s was in the way, but couldn't figure out where to move!\n");
           param_1->hero_proximity_timer = 0.0;
           return 0;
         }

@@ -13,11 +13,12 @@ void __cdecl core_gabriela_cpp_CGabriella_archive_FUN_004c9ef0(CGabriella *this_
   if ((1 < g_CGabriellaClassVersion) && (g_CGabriellaClassVersion < 4)) {
     core_actor_cpp_archiveActor_FUN_0040b6f0
               (&(this_ptr->base).object_to_pick_up,"?objectToPickUp" + 1);
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&(this_ptr->base).door_to_open,"doorToOpen");
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&(this_ptr->base).lever_to_pull,"leverToPull")
-    ;
     core_actor_cpp_archiveActor_FUN_0040b6f0
-              (&(this_ptr->base).ladder_to_climb,"ladderToClimb");
+              ((CDemonActor **)&(this_ptr->base).door_to_open,"doorToOpen");
+    core_actor_cpp_archiveActor_FUN_0040b6f0
+              ((CDemonActor **)&(this_ptr->base).lever_to_pull,"leverToPull");
+    core_actor_cpp_archiveActor_FUN_0040b6f0
+              ((CDemonActor **)&(this_ptr->base).ladder_to_climb,"ladderToClimb");
   }
   if (g_CGabriellaClassVersion != 2) {
     return;

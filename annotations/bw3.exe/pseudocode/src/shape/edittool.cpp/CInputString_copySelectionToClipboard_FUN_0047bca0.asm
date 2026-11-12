@@ -15,7 +15,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c5b0e4
 ;
 ; Called Functions:
-;   shape_edittool.cpp_FUN_00480e30
+;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00480e30
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH ESI                            ; 0047bcd1
     MOV dword ptr [ESP + 0x10],ECX      ; 0047bcd2
     MOV byte ptr [EBX],0x0              ; 0047bcd6
-    CALL shape_edittool.cpp_FUN_00480e30 ; 0047bcd9
-        ;   XREF to: 00480e30 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_00480e30(CEditorTools * this_ptr, char * text_data)
+    CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00480e30 ; 0047bcd9
+        ;   XREF to: 00480e30 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00480e30(CEditorTools * this_ptr, char * text_data)
     ADD ESP,0x8                         ; 0047bcde
     MOV AL,byte ptr [ESP + 0x8]         ; 0047bce1
     MOV byte ptr [EBX],AL               ; 0047bce5

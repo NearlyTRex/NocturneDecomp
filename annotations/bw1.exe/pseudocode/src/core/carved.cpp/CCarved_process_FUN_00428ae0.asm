@@ -539,8 +539,8 @@ section .text
     PUSH EAX                            ; 00429061 | = "%s picked up %s using hand %d\n"
     MOV EDX,dword ptr [0x00611100]      ; 00429062 | g_CConsolePtr
     PUSH EDX                            ; 00429068 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00429069
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00429069
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 0042906e
     JMP 0x00428b77                      ; 00429071
         ;   XREF to: 00428b77 (UNCONDITIONAL_JUMP)  ; LAB_00428b77
@@ -567,8 +567,8 @@ section .text
     MOV EAX,[0x00611100]                ; 004290a1 | g_CConsolePtr
     PUSH EAX                            ; 004290a6 | g_CConsoleInstance
     MOV EDI,0x41880000                  ; 004290a7
-    CALL engine_console.cpp_FUN_00445430 ; 004290ac
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004290ac
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     MOV ECX,0x40c00000                  ; 004290b1
     ADD ESP,0x10                        ; 004290b6
     MOV dword ptr [EBP + 0xfffffe0a],EDI ; 004290b9
@@ -624,8 +624,8 @@ section .text
     MOV ECX,dword ptr [0x00611100]      ; 00429158 | g_CConsolePtr
     PUSH ECX                            ; 0042915e | g_CConsoleInstance
     XOR ESI,ESI                         ; 0042915f
-    CALL engine_console.cpp_FUN_00445430 ; 00429161
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00429161
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     MOV EAX,0x3f800000                  ; 00429166
     MOV dword ptr [EBP + 0xfffffece],ESI ; 0042916b
     MOV dword ptr [EBP + 0xfffffed2],ESI ; 00429171
@@ -1344,8 +1344,8 @@ section .text
     PUSH EAX                            ; 00429a61 | = "%s confused while walking to scriptDe..."
     MOV ESI,dword ptr [0x00611100]      ; 00429a62 | g_CConsolePtr
     PUSH ESI                            ; 00429a68 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00429a69
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00429a69
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00429a6e
     JMP 0x004296f2                      ; 00429a71
         ;   XREF to: 004296f2 (UNCONDITIONAL_JUMP)  ; LAB_004296f2
@@ -1470,8 +1470,8 @@ section .text
     PUSH 0x5d5469                       ; 00429bde | = "%s giving up attack\n"
     MOV ECX,dword ptr [0x00611100]      ; 00429be3 | g_CConsolePtr
     PUSH ECX                            ; 00429be9 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00429bea
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00429bea
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00429bef
     PUSH EBX                            ; 00429bf2
     CALL core_carved.cpp_FUN_0042be20   ; 00429bf3
@@ -1868,8 +1868,8 @@ section .text
     PUSH 0x5d542a                       ; 0042a0c1 | = "%s gave up chase - I'm confused\n"
     MOV ESI,dword ptr [0x00611100]      ; 0042a0c6 | g_CConsolePtr
     PUSH ESI                            ; 0042a0cc | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 0042a0cd
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0042a0cd
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0042a0d2
     PUSH 0x1                            ; 0042a0d5
     PUSH 0x2                            ; 0042a0d7
@@ -1989,8 +1989,8 @@ section .text
     PUSH 0x5d544b                       ; 0042a21c | = "%s tossing\n"
     MOV ECX,dword ptr [0x00611100]      ; 0042a221 | g_CConsolePtr
     PUSH ECX                            ; 0042a227 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 0042a228
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0042a228
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0042a22d
     PUSH 0x1                            ; 0042a230
     PUSH 0x1a                           ; 0042a232
@@ -2188,8 +2188,8 @@ section .text
     PUSH 0x5d5457                       ; 0042a48e | = "%s gave up swing\n"
     MOV EDI,dword ptr [0x00611100]      ; 0042a493 | g_CConsolePtr
     PUSH EDI                            ; 0042a499 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 0042a49a
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0042a49a
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0042a49f
     PUSH EBX                            ; 0042a4a2
     CALL core_carved.cpp_FUN_0042be20   ; 0042a4a3

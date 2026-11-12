@@ -30,7 +30,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004fc040(CDem
     iVar2 = _fgetc(file);
     if (iVar2 != 0x22) {
       _ungetc(iVar2,file);
-      iVar2 = _fscanf(file,"%[^\"]",local_dc);
+      iVar2 = _fscanf(file,"%[^\"]");
       if (iVar2 == 1) {
         iVar2 = _stricmp(local_dc,"(none)");
         if (iVar2 == 0) {
@@ -52,7 +52,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004fc040(CDem
   }
   else {
     _ungetc(iVar2,file);
-    iVar2 = _fscanf(file,&DAT_005de654,&local_14);
+    iVar2 = _fscanf(file,&DAT_005de654);
     pCVar1 = local_14;
     if (iVar2 == 1) goto LAB_004fc0c8;
   }

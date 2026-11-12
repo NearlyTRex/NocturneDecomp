@@ -12,8 +12,8 @@
 ;
 ; XREF[3]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00468900 at 00468916
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_004686b0 at 00468713
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00468680 at 0046869c
-;   cockpit_drawsurf.cpp_FUN_004686b0 at 00468713
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70

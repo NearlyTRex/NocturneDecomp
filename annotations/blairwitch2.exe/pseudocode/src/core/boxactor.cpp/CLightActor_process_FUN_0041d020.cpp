@@ -15,7 +15,7 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041d020(CLightActor *thi
   uint uVar3;
   int iVar4;
   CDemonGlobe *this_ptr_01;
-  uint *puVar5;
+  CMatrix3x4f *pCVar5;
   uint *puVar6;
   byte bVar7;
   float in_stack_00000010;
@@ -23,8 +23,10 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041d020(CLightActor *thi
   int filter_index;
   int filter_pos_x;
   int filter_pos_y;
-  byte auStack_94 [48];
-  byte auStack_64 [48];
+  CMatrix3x4f CStack_f4;
+  uint auStack_c4 [12];
+  CMatrix3x4f CStack_94;
+  CMatrix3x4f CStack_64;
   float fStack_34;
   float afStack_30 [2];
   CVector3f CStack_28;
@@ -61,17 +63,17 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041d020(CLightActor *thi
       (this_ptr->light).base.base.position.f.y = afStack_18[0];
       (this_ptr->light).base.base.position.f.z = afStack_18[1];
     }
-    core_xform_cpp_FUN_00591c10(auStack_94,&DAT_0265370c,&this_ptr->light_orient);
-    core_xform_cpp_FUN_00591c10(auStack_64,&DAT_0265370c,&(this_ptr->base).base.orient);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(auStack_94,auStack_64);
-    puVar5 = (uint *)&stack0xffffff0c;
-    puVar6 = (uint *)&stack0xffffff3c;
+    core_xform_cpp_FUN_00591c10(&CStack_94,&DAT_0265370c,&this_ptr->light_orient);
+    core_xform_cpp_FUN_00591c10(&CStack_64,&DAT_0265370c,&(this_ptr->base).base.orient);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&CStack_94,&CStack_64,&CStack_f4);
+    pCVar5 = &CStack_f4;
+    puVar6 = auStack_c4;
     for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar6 = *puVar5;
-      puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
+      *puVar6 = *(uint *)pCVar5;
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
       puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
     }
-    core_xform_cpp_matrixToEulerAngles_FUN_00591de0(&stack0xffffff3c);
+    core_xform_cpp_matrixToEulerAngles_FUN_00591de0(auStack_c4);
     CStack_28.x = fStack_34;
     *(float *)((int)&CStack_28 + (uint)bVar7 * -8 + 4) = afStack_30[(uint)bVar7 * -2];
     *(float *)((int)&CStack_28 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =

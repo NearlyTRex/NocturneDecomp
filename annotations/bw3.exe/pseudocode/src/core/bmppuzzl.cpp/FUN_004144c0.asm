@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bmppuzzl_cpp_FUN_004144c0(undefined4 param_1)
+; void core_bmppuzzl_cpp_FUN_004144c0(void *param_1)
 ;
 ;
 ; XREF[1]:
@@ -23,7 +23,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004144c7
     PUSH EDX                            ; 004144cb
     CALL crt_memory.c___arrfini_FUN_005a3de6 ; 004144cc
-        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005a3de6()
+        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005a3de6(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004144d1
     RET                                 ; 004144d4
 

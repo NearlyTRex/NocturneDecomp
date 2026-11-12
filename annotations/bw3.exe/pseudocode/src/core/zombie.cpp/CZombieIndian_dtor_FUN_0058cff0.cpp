@@ -18,7 +18,7 @@ CZombieIndian * core_zombie_cpp_CZombieIndian_dtor_FUN_0058cff0(CZombieIndian *t
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CZombieIndianTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CZombieIndianTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

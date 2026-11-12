@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20(float *param_1,float param_2,float param_3,uint *param_4,undefined4 param_5,float *param_6)
+; int __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20(float *hum_value,float target,float max_step,uint *sfx_handle,char *wav_filename,CVector3f *world_position)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   hum_value
+; float            Stack[0x8]:4   target
+; float            Stack[0xc]:4   max_step
+; uint *           Stack[0x10]:4   sfx_handle
+; char *           Stack[0x14]:4   wav_filename
+; CVector3f *      Stack[0x18]:4   world_position
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40 at 004e6cb8

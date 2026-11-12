@@ -78,7 +78,7 @@ section .text
     ADD EAX,0x629014                    ; 0053e697 | DAT_00629014
     PUSH EAX                            ; 0053e69c
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60 ; 0053e69d
-        ;   XREF to: 0053dd60 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60()
+        ;   XREF to: 0053dd60 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 0053e6a2
     TEST EAX,EAX                        ; 0053e6a5
     JZ 0x0053e736                       ; 0053e6a7
@@ -130,7 +130,7 @@ section .text
     PUSH EAX                            ; 0053e71f
     MOV dword ptr [0x01e7dac8],EDI      ; 0053e720 | DAT_01e7dac8
     CALL engine_special.cpp_drawPolygon2_FUN_00582370 ; 0053e726
-        ;   XREF to: 00582370 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon2_FUN_00582370()
+        ;   XREF to: 00582370 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_00582370(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 0053e72b
     ADD ESP,0x54                        ; 0053e72e
         ;   Label: LAB_0053e72e
@@ -166,7 +166,7 @@ section .text
     ADD EAX,0x629014                    ; 0053e780 | DAT_00629014
     PUSH EAX                            ; 0053e785
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60 ; 0053e786
-        ;   XREF to: 0053dd60 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60()
+        ;   XREF to: 0053dd60 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 0053e78b
     TEST EAX,EAX                        ; 0053e78e
     JNZ 0x0053e6bd                      ; 0053e790

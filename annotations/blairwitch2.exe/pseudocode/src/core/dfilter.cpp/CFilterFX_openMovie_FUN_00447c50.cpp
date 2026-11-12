@@ -26,7 +26,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00447c50(CFilterFX *this_p
       _DAT_01d046a4 = 0x15a;
       core_main_c_FUN_004e4500("Can't open movie %s.txt",filename);
     }
-    _fscanf(p_Var1,0x5ced06,this_ptr);
+    _fscanf(p_Var1,(char *)0x5ced06);
     _fclose(p_Var1);
     pSVar2 = (SMovieFrame *)malloc(this_ptr->frame_count << 0xd);
     this_ptr->movie_data = pSVar2;

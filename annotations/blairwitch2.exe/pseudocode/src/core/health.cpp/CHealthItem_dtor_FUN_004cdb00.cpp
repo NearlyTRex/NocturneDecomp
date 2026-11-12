@@ -15,7 +15,7 @@ CHealthItem * core_health_cpp_CHealthItem_dtor_FUN_004cdb00(CHealthItem *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHealthItemTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHealthItemTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_chain_cpp_factoryFuncChain_FUN_005b46f0(void)
+; CChain * __cdecl core_chain_cpp_factoryFuncChain_FUN_005b46f0(void)
 ;
 ;
 ; Called Functions:

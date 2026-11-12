@@ -67,8 +67,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960
   float local_84;
   float local_80;
   float afStack_7c [5];
-  int local_68;
-  int aiStack_64 [2];
+  CVector3i local_68;
   CVector3i local_5c;
   float local_50;
   float local_4c [5];
@@ -109,11 +108,11 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960
     local_2c = local_28 * local_28;
     if (local_24 <= local_2c) {
       local_194 = 1.0 - local_24 / local_2c;
-      engine_drender_cpp_FUN_0046b5c0(DAT_0060b280);
-      local_110 = local_68;
-      local_10c[(uint)bVar5 * -2] = aiStack_64[(uint)bVar5 * -2];
+      engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0(DAT_0060b280,&local_68);
+      local_110 = local_68.x;
+      local_10c[(uint)bVar5 * -2] = *(int *)((int)&local_68 + (uint)bVar5 * -8 + 4);
       local_10c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-           aiStack_64[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+           *(int *)((int)&local_68 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       afStack_a0[2] = (float)local_110 * _DAT_005f5058;
       afStack_a0[3] = (float)local_10c[0] * _DAT_005f5058;
       local_90 = (float)local_10c[1] * _DAT_005f5058;

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_doc_cpp_getVectorDistance_FUN_0045e070(float *param_1,float *param_2)
+; float __cdecl core_doc_cpp_getVectorDistance_FUN_0045e070(CVector3f *a,CVector3f *b)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   a
+; CVector3f *      Stack[0x8]:4   b
 ;
 ; *****************************************************************************
 

@@ -1,20 +1,20 @@
 // Name: core_npc.cpp_factoryFuncNPC_FUN_00508f10
 // Address: 00508f10
 // Address Range: [[00508f10, 00508f2b]]
-// Convention: unknown
-// Signature: void core_npc_cpp_factoryFuncNPC_FUN_00508f10(void)
+// Convention: __cdecl
+// Signature: CNPC * __cdecl core_npc_cpp_factoryFuncNPC_FUN_00508f10(void)
 
 #include "nocturne.h"
 
-void core_npc_cpp_factoryFuncNPC_FUN_00508f10(void)
+CNPC * __cdecl core_npc_cpp_factoryFuncNPC_FUN_00508f10(void)
 
 {
-  CNPC *this_ptr;
+  CNPC *pCVar1;
   
-  this_ptr = (CNPC *)operator_new(0x206c8);
-  if (this_ptr == (CNPC *)0x0) {
-    return;
+  pCVar1 = (CNPC *)operator_new(0x206c8);
+  if (pCVar1 == (CNPC *)0x0) {
+    return (CNPC *)0x0;
   }
-  core_npc_cpp_CNPC_ctor_FUN_00508f40(this_ptr);
-  return;
+  pCVar1 = core_npc_cpp_CNPC_ctor_FUN_00508f40(pCVar1);
+  return pCVar1;
 }

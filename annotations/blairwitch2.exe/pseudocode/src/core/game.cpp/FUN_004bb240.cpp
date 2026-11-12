@@ -15,6 +15,6 @@ void __cdecl core_game_cpp_FUN_004bb240(CGame *this_ptr)
   _DAT_01cb8110 = DAT_006141b8 / 2;
   _DAT_01cb8114 = DAT_006141bc / 2;
   _DAT_01cb810c = 0;
-  core_game_cpp_FUN_004bb2c0();
+  core_game_cpp_calculateIrisFadeCenter_FUN_004bb2c0();
   return;
 }

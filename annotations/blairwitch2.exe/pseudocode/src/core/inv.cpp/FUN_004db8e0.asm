@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408730
 ;   crt_string.c_memmove_FUN_005ba1f0
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH 0x5db732                       ; 004db8ed | = "Deleting: %s\n"
     MOV EDX,dword ptr [0x00609ed0]      ; 004db8f2 | g_CConsolePtr
     PUSH EDX                            ; 004db8f8 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 004db8f9
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 004db8f9
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     MOV EAX,dword ptr [ESI + 0x468]     ; 004db8fe
     SHL EAX,0x2                         ; 004db904
     ADD EAX,ESI                         ; 004db907

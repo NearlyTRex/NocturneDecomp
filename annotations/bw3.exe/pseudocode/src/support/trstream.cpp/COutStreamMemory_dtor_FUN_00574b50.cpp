@@ -15,7 +15,7 @@ COutStreamMemory * support_trstream_cpp_COutStreamMemory_dtor_FUN_00574b50(COutS
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_COutStreamMemoryTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_COutStreamMemoryTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

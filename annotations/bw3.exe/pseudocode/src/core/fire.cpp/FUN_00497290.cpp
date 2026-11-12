@@ -13,12 +13,14 @@ void core_fire_cpp_FUN_00497290(float *param_1,float *param_2,float *param_3,flo
 {
   float fVar1;
   int iVar2;
-  uint *puVar3;
+  CMatrix3x4f *pCVar3;
   uint *puVar4;
   byte bVar5;
   float10 fVar6;
   float afStackY_1070 [967];
-  byte local_e8 [48];
+  CMatrix3x4f local_148;
+  uint local_118 [12];
+  CMatrix3x4f local_e8;
   CMatrix3x4f local_b8;
   float local_88;
   float local_84 [4];
@@ -75,19 +77,19 @@ void core_fire_cpp_FUN_00497290(float *param_1,float *param_2,float *param_3,flo
   param_1[0xf] = param_5;
   param_1[4] = param_4;
   if (param_4 != 0.0) {
-    core_xform_cpp_FUN_00583940(local_e8,param_1,param_1 + 5);
+    core_xform_cpp_FUN_00583940(&local_e8,param_1,param_1 + 5);
     core_xform_cpp_FUN_00583800
               (&local_b8,(CVector3f *)((int)param_1[4] + 0x20),(CVector3f *)((int)param_1[4] + 0x30)
               );
-    core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(local_e8,&local_b8);
-    puVar3 = (uint *)&stack0xfffffeb8;
-    puVar4 = (uint *)&stack0xfffffee8;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(&local_e8,&local_b8,&local_148);
+    pCVar3 = &local_148;
+    puVar4 = local_118;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = *puVar3;
-      puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+      *puVar4 = *(uint *)pCVar3;
+      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
-    core_xform_cpp_FUN_00584450(&stack0xfffffee8);
+    core_xform_cpp_FUN_00584450(local_118);
     local_6c[2] = local_34;
     local_6c[(uint)bVar5 * -2 + 3] = afStack_30[(uint)bVar5 * -2];
     local_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
@@ -97,7 +99,7 @@ void core_fire_cpp_FUN_00497290(float *param_1,float *param_2,float *param_3,flo
       param_1[10] = local_6c[3];
       param_1[0xb] = local_5c;
     }
-    core_xform_cpp_matrixToEulerAngles_FUN_00583b10(&stack0xfffffee8);
+    core_xform_cpp_matrixToEulerAngles_FUN_00583b10(local_118);
     local_70 = local_1c;
     local_6c[(uint)bVar5 * -2] = afStack_30[(uint)bVar5 * -2 + 6];
     local_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =

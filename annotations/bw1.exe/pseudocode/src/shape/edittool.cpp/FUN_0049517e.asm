@@ -285,8 +285,8 @@ section .text
     PUSH 0x5dbe14                       ; 0049547b
         ;   Label: LAB_0049547b
     PUSH EBX                            ; 00495480
-    CALL shape_edittool.cpp_FUN_004943a0 ; 00495481
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 00495481
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00495486
     XOR EAX,EAX                         ; 00495489
     ADD ESP,0x1ed8                      ; 0049548b
@@ -375,7 +375,7 @@ section .text
         ;   Label: LAB_00495589
     PUSH EAX                            ; 00495590
     CALL crt_time.c__localtime_FUN_005c2738 ; 00495591
-        ;   XREF to: 005c2738 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__localtime_FUN_005c2738()
+        ;   XREF to: 005c2738 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_005c2738(time_t * timer)
     ADD ESP,0x4                         ; 00495596
     PUSH EAX                            ; 00495599
     PUSH 0x5dbe3f                       ; 0049559a
@@ -383,7 +383,7 @@ section .text
     LEA EAX,[ESP + 0x1ec0]              ; 004955a1
     PUSH EAX                            ; 004955a8
     CALL crt_time.c__strftime_FUN_005c2784 ; 004955a9
-        ;   XREF to: 005c2784 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__strftime_FUN_005c2784()
+        ;   XREF to: 005c2784 (UNCONDITIONAL_CALL)  ; uint crt_time.c__strftime_FUN_005c2784(char * dest_buffer, uint buffer_size, char * format_string, _tm * time_ptr)
     ADD ESP,0x10                        ; 004955ae
     LEA EAX,[ESP + 0x1eb4]              ; 004955b1
     PUSH EAX                            ; 004955b8
@@ -519,8 +519,8 @@ section .text
     PUSH EAX                            ; 0049573b
     PUSH 0x5dbe9c                       ; 0049573c
     PUSH EBX                            ; 00495741
-    CALL shape_edittool.cpp_FUN_004943a0 ; 00495742
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 00495742
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00495747
     LEA EAX,[ESP + 0x70c]               ; 0049574a
     PUSH EAX                            ; 00495751

@@ -43,8 +43,8 @@ bool core_hero_cpp_FUN_004cec50(int param_1)
   uint uStack_2c;
   uint uStack_28;
   uint uStack_24;
-  uint uStack_20;
-  int iStack_1c;
+  CDemonActor *pCStack_20;
+  CDemonActor *pCStack_1c;
   float fStack_18;
   float fStack_14;
   
@@ -85,21 +85,22 @@ bool core_hero_cpp_FUN_004cec50(int param_1)
   fStack_18 = 1e+30;
   iVar3 = 0;
   for (iVar6 = 0; iVar6 < g_CDemonSetPtr->actor_count; iVar6 = iVar6 + 1) {
-    uStack_20 = *(uint *)((int)g_CDemonSetPtr->actors + iVar3);
-    iStack_1c = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c8f0(uStack_20,g_CWeaponClassInfo.name_hash);
+    pCStack_20 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3);
+    pCStack_1c = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                           (pCStack_20,g_CWeaponClassInfo.name_hash);
     fStack_a8 = -1.0;
-    if (iStack_1c == 0) {
+    if (pCStack_1c == (CDemonActor *)0x0) {
       iVar2 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);
       fStack_a8 = (float)(**(code **)(*(int *)(iVar2 + 0x2b0) + 0x68))
-                                   (iVar2,param_1,&stack0xffffffb0,&stack0xffffffe0);
+                                   (iVar2,param_1,&stack0xffffffb0,&pCStack_20);
       fStack_14 = fStack_a8;
     }
     else {
-      iVar2 = core_weapon_cpp_FUN_0058a5f0(iStack_1c);
-      if ((iVar2 == 0) || (iStack_1c == 0)) {
+      iVar2 = core_weapon_cpp_FUN_0058a5f0(pCStack_1c);
+      if ((iVar2 == 0) || (pCStack_1c == (CDemonActor *)0x0)) {
         iVar2 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);
         fStack_a8 = (float)(**(code **)(*(int *)(iVar2 + 0x2b0) + 0x68))
-                                     (iVar2,param_1,&stack0xffffffb0,&stack0xffffffe0);
+                                     (iVar2,param_1,&stack0xffffffb0,&pCStack_20);
         fStack_14 = fStack_a8;
       }
     }
@@ -109,7 +110,7 @@ bool core_hero_cpp_FUN_004cec50(int param_1)
       *(uint *)(param_1 + 0x255f0) = 1;
       *(uint *)(param_1 + 0x255f4) = *(uint *)((int)pCVar1->actors + iVar3);
       *(uint *)(param_1 + 0x25600) = 0;
-      *(uint *)(param_1 + 0x255f8) = uStack_20;
+      *(CDemonActor **)(param_1 + 0x255f8) = pCStack_20;
     }
     iVar3 = iVar3 + 4;
   }

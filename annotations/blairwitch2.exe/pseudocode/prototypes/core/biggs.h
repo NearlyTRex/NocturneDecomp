@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_biggs.cpp_factoryFuncBiggs_FUN_00414ce0
 // Address: 00414ce0
-void factoryFuncBiggs(void);
+CBiggs * __cdecl factoryFuncBiggs(void);
 
 // Original: core_biggs.cpp_CBiggs_getActorType_FUN_00414d00
 // Address: 00414d00

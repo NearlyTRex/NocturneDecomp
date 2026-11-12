@@ -89,7 +89,7 @@ section .text
     ADD ESP,0x4                         ; 00504302
     MOV dword ptr [0x01da6478],EBP      ; 00504305 | DAT_01da6478
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 0050430b
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 00504310
     MOV EBX,0x12                        ; 00504312
     SAR EDX,0x1f                        ; 00504317

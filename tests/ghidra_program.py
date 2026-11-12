@@ -270,6 +270,9 @@ class Memory:
     def getByte(self, address):
         return struct.unpack("<b", self.read(address, 1))[0]
 
+    def getShort(self, address):
+        return struct.unpack("<h", self.read(address, 2))[0]
+
     def getInt(self, address):
         return struct.unpack("<i", self.read(address, 4))[0]
 
@@ -524,6 +527,8 @@ class Function:
         self.name = name
         self.entry = entry
         self.source = "DEFAULT"
+        # Where the signature came from: committed (USER_DEFINED), or DEFAULT/ANALYSIS/IMPORTED
+        self.signature_source = "USER_DEFINED"
         self.thunk_target = None
         self.external = False
         self.body = ghidra_fake.AddressSet(entry, entry.add(size - 1))
@@ -547,6 +552,12 @@ class Function:
         self.return_variable = None
         # (update type, [parameters]) of each replaceParameters
         self.replaced = []
+
+    def getSignatureSource(self):
+        return self.signature_source
+
+    def setSignatureSource(self, source):
+        self.signature_source = str(source)
 
     def isInline(self):
         return self.inline

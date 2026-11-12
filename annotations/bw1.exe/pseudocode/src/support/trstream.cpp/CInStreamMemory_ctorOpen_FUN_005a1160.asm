@@ -9,8 +9,8 @@
 ; undefined4       Stack[0xc]:4   param_3
 ;
 ; XREF[2]:
+;   support_codec.cpp_CCodec_processBuffer_FUN_00442d90 at 00442da8
 ;   support_codec.cpp_FUN_00442d10 at 00442d28
-;   support_codec.cpp_FUN_00442d90 at 00442da8
 ;
 ; Referenced Globals:
 ;   undefined1* g_CInStreamMemoryVTable = 005a11e0

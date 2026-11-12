@@ -29,10 +29,10 @@
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0046e6b0
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
-;   engine_drender.cpp_FUN_0046d230
 ;   engine_drender.cpp_pop_FUN_0046d080
 ;   engine_special.cpp_FUN_005632a3
 ;   engine_special.cpp_FUN_0056356c
@@ -92,8 +92,8 @@ section .text
     PUSH EBX                            ; 004a0d53 | DAT_01bdd7e4
     LEA ESI,[ESP + 0x30]                ; 004a0d54
     LEA EDI,[ESP + 0x48]                ; 004a0d58
-    CALL engine_drender.cpp_FUN_0046d230 ; 004a0d5c
-        ;   XREF to: 0046d230 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d230()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230 ; 004a0d5c
+        ;   XREF to: 0046d230 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 004a0d61
     LEA ESI,[ESP + 0x2c]                ; 004a0d64
     LEA EAX,[ESP + 0x44]                ; 004a0d68

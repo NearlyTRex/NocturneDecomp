@@ -10,6 +10,6 @@ void core_water_cpp_staticInit_FUN_00585d40(void)
 
 {
   core_water_cpp_CWater_ctor_FUN_00585db0(&g_CWaterInstance);
-  _atexit();
+  _atexit(&g_CWaterDestructorNode);
   return;
 }

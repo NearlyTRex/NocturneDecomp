@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 282,
+    "complexity_score": 208,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 82,
-    "suspect_count": 18,
+    "pseudocode_lines": 83,
+    "suspect_count": 10,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unrolled_memcpy",
-      "warning_type_propagation"
+      "unrolled_memcpy"
     ],
-    "total_lines": 181
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -103,6 +104,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 450
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005af3b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0043fbd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043a2b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9282
+    },
+    "nocturne.exe": {
+      "addr": "00436580",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9282
+    }
   },
   "stack_frame": {
     "frame_size": 340,
@@ -304,60 +331,36 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 12,
       "match": "afStackY_100c",
       "severity": "moderate",
       "text": "float afStackY_100c [944];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xffffffac",
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(CMatrix3x4f *)((int)pCVar4",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)&stack0xffffffac;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 39,
-      "match": "&stack0xffffff7c",
-      "severity": "moderate",
-      "text": "puVar6 = (uint *)&stack0xffffff7c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xffffff7c",
-      "severity": "moderate",
-      "text": "(&stack0xffffff7c,&this_ptr->collide_bones[bone_index].world_matrix);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xfffffeec",
-      "severity": "moderate",
-      "text": "pfVar3 = (float *)&stack0xfffffeec;",
-      "type": "stack_ref"
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 48,
       "match": "&stack0xfffffebc",
       "severity": "moderate",
-      "text": "pfVar5 = &stack0xfffffebc;",
+      "text": "pfVar3 = &stack0xfffffebc;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(CMatrix3x4f *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
@@ -368,60 +371,20 @@
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xffffff1c",
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)pCVar4",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)&stack0xffffff1c;",
-      "type": "stack_ref"
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 65,
-      "match": "&stack0xffffff4c",
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)pCVar4",
       "severity": "moderate",
-      "text": "puVar6 = (uint *)&stack0xffffff4c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 76,
-      "match": "&stack0xffffffe0",
-      "severity": "moderate",
-      "text": "(&stack0xffffffe0)[(uint)bVar7 * -2 + 3] = (&stack0xffffffe0)[(uint)bVar7 * 0xfffffffe];",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 76,
-      "match": "&stack0xffffffe0",
-      "severity": "moderate",
-      "text": "(&stack0xffffffe0)[(uint)bVar7 * -2 + 3] = (&stack0xffffffe0)[(uint)bVar7 * 0xfffffffe];",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 77,
-      "match": "&stack0xffffffe0",
-      "severity": "moderate",
-      "text": "(&stack0xffffffe0)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 78,
-      "match": "&stack0xffffffe0",
-      "severity": "moderate",
-      "text": "(&stack0xffffffe0)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "if (pCVar2 == (CVector3f *)&stack0xffffffe8) {",
-      "type": "stack_ref"
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

@@ -13,8 +13,9 @@ uint core_fire_cpp_FUN_0049d090(CDemonActor *param_1)
 {
   float fVar1;
   uint uVar2;
-  CKeyFramedModel *pCVar3;
   uint extraout_EAX;
+  CKeyFramedModel *pCVar3;
+  uint extraout_EAX_00;
   float *pfVar4;
   int iVar5;
   byte bVar6;
@@ -90,7 +91,8 @@ uint core_fire_cpp_FUN_0049d090(CDemonActor *param_1)
                      param_1[1].orient.vec.x);
           do {
             iVar5 = iVar5 + 1;
-            core_fire_cpp_FUN_004a3f20(0x01C73654,pfVar4,0);
+            core_fire_cpp_CFireEffect_createRainDrop_FUN_004a3f20
+                      (0x01C73654,(CVector3f *)pfVar4,(CVector3f *)0x0);
           } while (iVar5 < 0x10);
           param_1[2].previous_transform_state.position.x = 0.0;
         }
@@ -126,7 +128,7 @@ uint core_fire_cpp_FUN_0049d090(CDemonActor *param_1)
       }
       core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
                 (0x01C73654,&local_70,(CVector3f *)0x0,0x20000,0x10000,0,0xffff);
-      return extraout_EAX;
+      return extraout_EAX_00;
     }
     uVar2 = *(uint *)param_1->actor_name;
     switch(uVar2) {
@@ -154,9 +156,10 @@ uint core_fire_cpp_FUN_0049d090(CDemonActor *param_1)
       iVar5 = 0;
       do {
         iVar5 = iVar5 + 1;
-        uVar2 = core_fire_cpp_FUN_004a3f20(0x01C73654,&param_1[1].location.position.z,0);
+        core_fire_cpp_CFireEffect_createRainDrop_FUN_004a3f20
+                  (0x01C73654,(CVector3f *)&param_1[1].location.position.z,(CVector3f *)0x0);
       } while (iVar5 < 0x10);
-      return uVar2;
+      return extraout_EAX;
     }
   }
   return uVar2;

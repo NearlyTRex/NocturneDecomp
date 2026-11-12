@@ -15,7 +15,7 @@ CLantern * core_lantern_cpp_CLantern_dtor_FUN_0059d170(CLantern *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CLanternTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CLanternTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

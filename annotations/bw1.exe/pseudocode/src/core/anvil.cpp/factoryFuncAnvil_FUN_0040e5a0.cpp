@@ -1,20 +1,20 @@
 // Name: core_anvil.cpp_factoryFuncAnvil_FUN_0040e5a0
 // Address: 0040e5a0
 // Address Range: [[0040e5a0, 0040e5bb]]
-// Convention: unknown
-// Signature: void core_anvil_cpp_factoryFuncAnvil_FUN_0040e5a0(void)
+// Convention: __cdecl
+// Signature: CAnvil * __cdecl core_anvil_cpp_factoryFuncAnvil_FUN_0040e5a0(void)
 
 #include "nocturne.h"
 
-void core_anvil_cpp_factoryFuncAnvil_FUN_0040e5a0(void)
+CAnvil * __cdecl core_anvil_cpp_factoryFuncAnvil_FUN_0040e5a0(void)
 
 {
-  CAnvil *this_ptr;
+  CAnvil *pCVar1;
   
-  this_ptr = (CAnvil *)operator_new(0x344);
-  if (this_ptr == (CAnvil *)0x0) {
-    return;
+  pCVar1 = (CAnvil *)operator_new(0x344);
+  if (pCVar1 == (CAnvil *)0x0) {
+    return (CAnvil *)0x0;
   }
-  core_anvil_cpp_CAnvil_ctor_FUN_0040e5d0(this_ptr);
-  return;
+  pCVar1 = core_anvil_cpp_CAnvil_ctor_FUN_0040e5d0(pCVar1);
+  return pCVar1;
 }

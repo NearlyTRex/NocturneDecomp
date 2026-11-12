@@ -15,7 +15,7 @@ CHolycross * core_holycrss_cpp_CHolycross_dtor_FUN_004d5320(CHolycross *this_ptr
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHolycrossTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHolycrossTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

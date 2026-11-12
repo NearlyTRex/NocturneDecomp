@@ -20,96 +20,84 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456cd0(CDemonCubeTri
   uint uVar7;
   uint uVar8;
   float fVar9;
-  float local_7c;
-  float local_78;
-  float local_74;
+  CVector3f local_7c;
   float local_70;
   float local_6c;
   float local_68;
-  float local_64;
-  float local_60;
-  float local_5c;
-  float local_58;
-  float local_54;
-  float local_50;
-  float local_4c;
-  float local_48;
-  float local_44;
-  float local_40;
-  float local_3c;
-  float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
+  CVector3f local_64;
+  CVector3f local_58;
+  CVector3f local_4c;
+  CVector3f local_40;
+  CVector3f local_34 [3];
   
   if ((triangle->triangle).normal.y <= (float)_DAT_005d7abf) {
     fVar1 = (triangle->triangle).vertices[0]->x - cylinder_center->x;
     fVar9 = (triangle->triangle).vertices[0]->y;
     fVar2 = (triangle->triangle).vertices[0]->z - cylinder_center->z;
-    local_58 = (triangle->triangle).vertices[1]->x - cylinder_center->x;
-    local_54 = (triangle->triangle).vertices[1]->y;
-    local_50 = (triangle->triangle).vertices[1]->z - cylinder_center->z;
-    local_64 = (triangle->triangle).vertices[2]->x - cylinder_center->x;
-    local_60 = (triangle->triangle).vertices[2]->y;
-    local_5c = (triangle->triangle).vertices[2]->z - cylinder_center->z;
-    local_40 = fVar1;
-    local_3c = fVar9;
-    local_38 = fVar2;
-    if (fVar9 < local_54) {
+    local_58.x = (triangle->triangle).vertices[1]->x - cylinder_center->x;
+    local_58.y = (triangle->triangle).vertices[1]->y;
+    local_58.z = (triangle->triangle).vertices[1]->z - cylinder_center->z;
+    local_64.x = (triangle->triangle).vertices[2]->x - cylinder_center->x;
+    local_64.y = (triangle->triangle).vertices[2]->y;
+    local_64.z = (triangle->triangle).vertices[2]->z - cylinder_center->z;
+    local_40.x = fVar1;
+    local_40.y = fVar9;
+    local_40.z = fVar2;
+    if (fVar9 < local_58.y) {
       if (&local_40 != &local_58) {
-        local_40 = local_58;
-        local_3c = local_54;
-        local_38 = local_50;
+        local_40.x = local_58.x;
+        local_40.y = local_58.y;
+        local_40.z = local_58.z;
       }
-      local_34 = fVar1;
-      local_30 = fVar9;
-      local_2c = fVar2;
-      if (&local_58 != &local_34) {
-        local_58 = fVar1;
-        local_54 = fVar9;
-        local_50 = fVar2;
+      local_34[0].x = fVar1;
+      local_34[0].y = fVar9;
+      local_34[0].z = fVar2;
+      if (&local_58 != local_34) {
+        local_58.x = fVar1;
+        local_58.y = fVar9;
+        local_58.z = fVar2;
       }
     }
-    fVar5 = local_38;
-    fVar4 = local_3c;
-    fVar3 = local_40;
-    fVar2 = local_50;
-    fVar1 = local_54;
-    fVar9 = local_58;
-    if (local_54 < local_60) {
-      local_4c = local_58;
-      local_48 = local_54;
-      local_44 = local_50;
+    fVar5 = local_40.z;
+    fVar4 = local_40.y;
+    fVar3 = local_40.x;
+    fVar2 = local_58.z;
+    fVar1 = local_58.y;
+    fVar9 = local_58.x;
+    if (local_58.y < local_64.y) {
+      local_4c.x = local_58.x;
+      local_4c.y = local_58.y;
+      local_4c.z = local_58.z;
       if (&local_58 != &local_64) {
-        local_58 = local_64;
-        local_54 = local_60;
-        local_50 = local_5c;
+        local_58.x = local_64.x;
+        local_58.y = local_64.y;
+        local_58.z = local_64.z;
       }
       if (&local_64 != &local_4c) {
-        local_64 = fVar9;
-        local_60 = fVar1;
-        local_5c = fVar2;
+        local_64.x = fVar9;
+        local_64.y = fVar1;
+        local_64.z = fVar2;
       }
     }
-    if (local_60 <= cylinder_center->y) {
-      if (local_3c < local_54) {
-        local_7c = local_40;
-        local_78 = local_3c;
-        local_74 = local_38;
+    if (local_64.y <= cylinder_center->y) {
+      if (local_40.y < local_58.y) {
+        local_7c.x = local_40.x;
+        local_7c.y = local_40.y;
+        local_7c.z = local_40.z;
         if (&local_40 != &local_58) {
-          local_40 = local_58;
-          local_3c = local_54;
-          local_38 = local_50;
+          local_40.x = local_58.x;
+          local_40.y = local_58.y;
+          local_40.z = local_58.z;
         }
         if (&local_58 != &local_7c) {
-          local_58 = fVar3;
-          local_54 = fVar4;
-          local_50 = fVar5;
+          local_58.x = fVar3;
+          local_58.y = fVar4;
+          local_58.z = fVar5;
         }
       }
-      if (*out_height <= local_3c) {
-        if (local_40 * local_40 + local_38 * local_38 < cylinder_radius * cylinder_radius) {
-          *out_height = local_3c;
+      if (*out_height <= local_40.y) {
+        if (local_40.x * local_40.x + local_40.z * local_40.z < cylinder_radius * cylinder_radius) {
+          *out_height = local_40.y;
           return 1;
         }
         uVar6 = core_dcube_cpp_intersectVerticalCylinderSegment_FUN_00456b60
@@ -144,7 +132,7 @@ uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456cd0(CDemonCubeTri
           fVar9 = (float)core_dcube_cpp_FUN_004560f0(triangle,cylinder_center,&DAT_0152bd2c);
           if (0.0 <= fVar9) {
             uVar8 = 1;
-            *out_height = local_3c;
+            *out_height = local_40.y;
           }
         }
         return uVar8;

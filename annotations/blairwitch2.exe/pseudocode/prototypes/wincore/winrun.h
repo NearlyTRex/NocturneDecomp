@@ -15,7 +15,7 @@ void __watcallRegister endPeriod(void);
 
 // Original: wincore_winrun.cpp_getTime_FUN_0058e9e0
 // Address: 0058e9e0
-int getTime(void);
+int __cdecl getTime(void);
 
 // Original: wincore_winrun.cpp_clearKeypresses_FUN_0058eab0
 // Address: 0058eab0
@@ -31,7 +31,7 @@ int __cdecl wasKeyPressed(void);
 
 // Original: wincore_winrun.cpp_getValue_FUN_0058eb5c
 // Address: 0058eb5c
-undefined1 getValue(void);
+char __cdecl getValue(void);
 
 // Original: wincore_winrun.cpp_enqueueInput_FUN_0058eb70
 // Address: 0058eb70
@@ -67,7 +67,7 @@ void __cdecl processWindowMessages(void);
 
 // Original: wincore_winrun.cpp_winMain_FUN_0058f310
 // Address: 0058f310
-void winMain(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
+int __stdcall winMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 
 // Original: wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_0058f5d0
 // Address: 0058f5d0
@@ -75,7 +75,7 @@ void __cdecl displayMessageBoxAndQuit(char *message);
 
 // Original: wincore_winrun.cpp_getKeyName_FUN_0058f630
 // Address: 0058f630
-char * __cdecl getKeyName(uint param_1);
+char * __cdecl getKeyName(EInputCodeType keycode);
 
 // Original: wincore_winrun.cpp_createMutex_FUN_0058fc90
 // Address: 0058fc90
@@ -107,7 +107,7 @@ void __cdecl sleep(double seconds);
 
 // Original: wincore_winrun.cpp_getComputerAndUserName_FUN_0058fdec
 // Address: 0058fdec
-void getComputerAndUserName(char *param_1);
+void __cdecl getComputerAndUserName(char *buffer);
 
 // Original: wincore_winrun.cpp_getRegistryStringValue_FUN_0058fec0
 // Address: 0058fec0

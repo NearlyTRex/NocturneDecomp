@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 135,
+    "complexity_score": 55,
     "cross_reference_count": 30,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 9,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
       "unrolled_strcpy"
     ],
     "total_lines": 79
@@ -209,7 +207,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770",
-    "signature": "void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance *param_1,char *param_2)"
+    "signature": "void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance *model_ptr,char *property_name)"
   },
   "function_calls": [
     {
@@ -346,10 +344,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.340909090909091,
@@ -375,11 +373,37 @@
     },
     "pcode_op_count": 191
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040ba60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040b9b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040b8f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040ca00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 212,
+    "frame_size": 220,
     "local_size": 212,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -395,6 +419,20 @@
         "offset": -207,
         "size": 1,
         "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
@@ -424,22 +462,6 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_007c3038",
@@ -448,55 +470,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(local_d0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(param_1,local_d0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar2 = param_1->model_name;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(local_d0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 17,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "call_site_count": 31,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

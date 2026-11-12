@@ -16,15 +16,15 @@
   },
   "cross_references": [
     {
-      "addr": "00480e30",
-      "from_addr": "00480e40",
-      "name": "cockpit_drawsurf.cpp_FUN_00480e30",
+      "addr": "00480e50",
+      "from_addr": "00480ea1",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00480e50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00480e50",
-      "from_addr": "00480ea1",
-      "name": "cockpit_drawsurf.cpp_FUN_00480e50",
+      "addr": "00480e30",
+      "from_addr": "00480e40",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00480e30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,7 +54,7 @@
       {
         "call_addr": "00480e40",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00480e30",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00480e30",
         "estimated_params": 3,
         "instructions_analyzed": 7,
         "method": "push_count",
@@ -65,7 +65,7 @@
       {
         "call_addr": "00480ea1",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00480e50",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00480e50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,6 +100,32 @@
       "STORE": 7
     },
     "pcode_op_count": 56
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00468900",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046a4d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00489ab0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045e0f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

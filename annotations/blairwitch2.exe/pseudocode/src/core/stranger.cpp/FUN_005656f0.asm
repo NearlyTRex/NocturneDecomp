@@ -453,7 +453,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x276c]    ; 00565b72
     PUSH EDI                            ; 00565b78
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 00565b79
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     MOV dword ptr [ESP + 0x100],EAX     ; 00565b7e
     ADD ESP,0x8                         ; 00565b85
     MOV dword ptr [ESP + 0xf4],EAX      ; 00565b88

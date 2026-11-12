@@ -78,7 +78,7 @@ void core_werewolf_cpp_FUN_005b1850(CCharacter *param_1)
          local_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -8];
     local_20 = local_44[0] * local_44[0];
     local_28 = SQRT(local_44[1] * local_44[1] + local_48 * local_48 + local_20);
-    engine_console_cpp_FUN_00445430(g_CConsolePtr,"Chain stretched to %f\n",(double)local_28);
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"Chain stretched to %f\n");
     if ((*(float *)(param_1[1].base.create_event + 0x50) < local_28) &&
        (fVar1 = *(float *)(param_1[1].base.create_event + 0x50), fVar1 = fVar1 * fVar1 - local_20,
        local_30 = (double)fVar1, 0.0 <= local_30)) {

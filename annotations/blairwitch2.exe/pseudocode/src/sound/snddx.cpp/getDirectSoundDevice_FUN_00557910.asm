@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(int param_1)
+; CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(UINT device_id)
 ;
+; Parameters:
+; UINT             Stack[0x4]:4   device_id
 ; Local Variables:
 ; undefined        Stack[-0x138]:1  local_138
 ;
@@ -59,7 +61,7 @@ section .text
     PUSH EAX                            ; 00557942
     PUSH EBX                            ; 00557943
     CALL sound_snddx.cpp_enumerateDirectSoundDevice_FUN_00557860 ; 00557944
-        ;   XREF to: 00557860 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_enumerateDirectSoundDevice_FUN_00557860()
+        ;   XREF to: 00557860 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_enumerateDirectSoundDevice_FUN_00557860(UINT device_id, SSoundDeviceInfo * device_info)
     ADD ESP,0x8                         ; 00557949
     TEST EAX,EAX                        ; 0055794c
     JZ 0x00557931                       ; 0055794e

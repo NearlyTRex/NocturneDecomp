@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 353,
+    "complexity_score": 363,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 98,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -243,6 +243,32 @@
       "TRUNC": 6
     },
     "pcode_op_count": 939
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004468c0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00457f70",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00457650",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9622
+    },
+    "nocturne.exe": {
+      "addr": "0044aff0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 84,
@@ -509,6 +535,14 @@
       "severity": "mild",
       "text": "(DAT_005f2afc,local_30 & 0xff,local_2c & 0xff,local_28 & 0xff);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices",
+      "severity": "moderate",
+      "text": "((CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices + local_18),",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",

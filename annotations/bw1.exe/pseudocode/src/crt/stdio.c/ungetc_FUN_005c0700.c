@@ -2,58 +2,57 @@
 // Address: 005c0700
 // Address Range: [[005c0700, 005c081b]]
 // Convention: __cdecl
-// Signature: uint __cdecl crt_stdio_c_ungetc_FUN_005c0700(uint param_1,int *param_2)
+// Signature: int __cdecl crt_stdio_c_ungetc_FUN_005c0700(int character,_FILE *stream)
 
 #include "nocturne.h"
 
-uint __cdecl _ungetc(uint param_1,int *param_2)
+int __cdecl _ungetc(int character,_FILE *stream)
 
 {
-  int iVar1;
-  byte *puVar2;
+  char *pcVar1;
   
-  if (param_1 == 0xffffffff) {
-    return 0xffffffff;
+  if (character == -1) {
+    return -1;
   }
-  (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626600)(param_2[4]);
-  iVar1 = *(int *)(param_2[2] + 0xc);
-  if (iVar1 != 1) {
-    if (iVar1 != 0) {
-      (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(param_2[4]);
-      return 0xffffffff;
+  (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626600)(stream->_handle);
+  pcVar1 = stream->_link->__get_base;
+  if (pcVar1 != (char *)0x1) {
+    if (pcVar1 != (char *)0x0) {
+      (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(stream->_handle);
+      return -1;
     }
-    *(uint *)(param_2[2] + 0xc) = 1;
+    stream->_link->__get_base = (char *)0x1;
   }
-  if ((*(byte *)((int)param_2 + 0xd) & 0x10) != 0) {
-    (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(param_2[4]);
-    return 0xffffffff;
+  if ((stream->_flag & 0x1000) != 0) {
+    (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(stream->_handle);
+    return -1;
   }
-  if ((*(byte *)(param_2 + 3) & 1) == 0) {
+  if ((stream->_flag & 1) == 0) {
 LAB_005c0775:
-    (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(param_2[4]);
-    return 0xffffffff;
+    (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(stream->_handle);
+    return -1;
   }
-  if (*(int *)(param_2[2] + 8) == 0) {
-    FUN_005c64a0(param_2);
+  if (stream->_link->__reserve_end == (char *)0x0) {
+    FUN_005c64a0(stream);
   }
-  if (param_2[1] == 0) {
-    param_2[1] = 1;
-    *param_2 = *(int *)(param_2[2] + 8) + param_2[5] + -1;
-    puVar2 = (byte *)*param_2;
-    *(byte *)(param_2 + 3) = *(byte *)(param_2 + 3) | 4;
+  if (stream->_cnt == 0) {
+    stream->_cnt = 1;
+    stream->_ptr = stream->_link->__reserve_end + (stream->_bufsize - 1);
+    pcVar1 = stream->_ptr;
+    *(byte *)&stream->_flag = (byte)stream->_flag | 4;
   }
   else {
-    if (*param_2 == *(int *)(param_2[2] + 8)) goto LAB_005c0775;
-    iVar1 = *param_2;
-    param_2[1] = param_2[1] + 1;
-    *param_2 = iVar1 + -1;
-    if (*(byte *)(iVar1 + -1) != param_1) {
-      *(byte *)(param_2 + 3) = *(byte *)(param_2 + 3) | 4;
+    if (stream->_ptr == stream->_link->__reserve_end) goto LAB_005c0775;
+    pcVar1 = stream->_ptr;
+    stream->_cnt = stream->_cnt + 1;
+    stream->_ptr = pcVar1 + -1;
+    if ((uint)(byte)pcVar1[-1] != character) {
+      *(byte *)&stream->_flag = (byte)stream->_flag | 4;
     }
-    puVar2 = (byte *)*param_2;
+    pcVar1 = stream->_ptr;
   }
-  *puVar2 = (byte)param_1;
-  *(byte *)(param_2 + 3) = *(byte *)(param_2 + 3) & 0xef;
-  (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(param_2[4]);
-  return param_1 & 0xff;
+  *pcVar1 = (char)character;
+  *(byte *)&stream->_flag = (byte)stream->_flag & 0xef;
+  (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(stream->_handle);
+  return character & 0xff;
 }

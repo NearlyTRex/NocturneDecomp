@@ -15,7 +15,7 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004832b0(CPickList *th
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CPickListTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CPickListTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

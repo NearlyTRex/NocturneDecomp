@@ -141,7 +141,7 @@ uint __cdecl crt_unknown_c_ReadFileBytesMaybe_FUN_005733e0(uint param_1,char *pa
 undefined4 crt_unknown_c_FUN_00573650(void);
 int __cdecl crt_stdio_c_fputs_FUN_00573660(char *str,_FILE *file);
 long __cdecl crt_stdlib_c_strtol_internal_FUN_00573720(char *str,char **endptr,int base,int is_signed);
-void crt_stdlib_c_strtoul_FUN_00573890(char *param_1,char **param_2,int param_3);
+ulong __cdecl crt_stdlib_c_strtoul_FUN_00573890(char *str,char **endptr,int base);
 long __cdecl crt_stdlib_c_strtol_FUN_005738ac(char *str,char **endptr,int base);
 int __cdecl crt_stdlib_c_charToDigit_FUN_005738c8(char ch);
 int __cdecl crt_env_c_putenv_internal_FUN_00573930(char *envstr);

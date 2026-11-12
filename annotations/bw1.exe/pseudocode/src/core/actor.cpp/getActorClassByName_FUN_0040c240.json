@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 191,
+    "complexity_score": 131,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 14,
+    "suspect_count": 9,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 84
   },
@@ -42,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_getActorClassByName_FUN_0040c240",
-    "signature": "int __cdecl core_actor_cpp_getActorClassByName_FUN_0040c240(byte *param_1)"
+    "signature": "CDemonActorType * __cdecl core_actor_cpp_getActorClassByName_FUN_0040c240(char *className)"
   },
   "function_calls": [
     {
@@ -103,11 +101,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.866666666666666,
@@ -140,47 +138,49 @@
     },
     "pcode_op_count": 354
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040c530",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040c480",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040c3c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040d4d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "className",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl core_actor_cpp_getActorClassByName_FUN_0040c240(byte *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bVar1 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 14,
@@ -202,7 +202,7 @@
       "line": 22,
       "match": "DAT_007c3048",
       "severity": "mild",
-      "text": "if (uVar3 == *(uint *)(*(int *)((int)&DAT_007c3048 + iVar2) + 0x38)) {",
+      "text": "if (uVar3 == (*(CDemonActorType **)((int)&DAT_007c3048 + iVar2))->name_hash) {",
       "type": "undefined_data"
     },
     {
@@ -210,7 +210,7 @@
       "line": 23,
       "match": "DAT_007c3048",
       "severity": "mild",
-      "text": "return *(int *)((int)&DAT_007c3048 + iVar2);",
+      "text": "return *(CDemonActorType **)((int)&DAT_007c3048 + iVar2);",
       "type": "undefined_data"
     },
     {
@@ -226,7 +226,7 @@
       "line": 22,
       "match": "(int)&DAT_007c3048",
       "severity": "moderate",
-      "text": "if (uVar3 == *(uint *)(*(int *)((int)&DAT_007c3048 + iVar2) + 0x38)) {",
+      "text": "if (uVar3 == (*(CDemonActorType **)((int)&DAT_007c3048 + iVar2))->name_hash) {",
       "type": "pointer_truncation"
     },
     {
@@ -234,7 +234,7 @@
       "line": 23,
       "match": "(int)&DAT_007c3048",
       "severity": "moderate",
-      "text": "return *(int *)((int)&DAT_007c3048 + iVar2);",
+      "text": "return *(CDemonActorType **)((int)&DAT_007c3048 + iVar2);",
       "type": "pointer_truncation"
     },
     {
@@ -242,7 +242,7 @@
       "line": 22,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (uVar3 == *(uint *)(*(int *)((int)&DAT_007c3048 + iVar2) + 0x38)) {",
+      "text": "if (uVar3 == (*(CDemonActorType **)((int)&DAT_007c3048 + iVar2))->name_hash) {",
       "type": "pointer_cast"
     },
     {
@@ -250,19 +250,8 @@
       "line": 23,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "return *(int *)((int)&DAT_007c3048 + iVar2);",
+      "text": "return *(CDemonActorType **)((int)&DAT_007c3048 + iVar2);",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

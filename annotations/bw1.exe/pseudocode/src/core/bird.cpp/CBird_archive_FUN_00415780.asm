@@ -60,7 +60,7 @@ section .text
     LEA ESI,[EBX + 0x2538]              ; 004157ca
     PUSH ESI                            ; 004157d0
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004157d1
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004157d6
     PUSH 0x5d3d49                       ; 004157d9 | = "shootMe"
     LEA ESI,[EBX + 0x1faac]             ; 004157de
@@ -78,7 +78,7 @@ section .text
     LEA ESI,[EBX + 0x1fab4]             ; 00415806
     PUSH ESI                            ; 0041580c
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 0041580d
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00415812
     POP ESI                             ; 00415815
     PUSH EBX                            ; 00415816

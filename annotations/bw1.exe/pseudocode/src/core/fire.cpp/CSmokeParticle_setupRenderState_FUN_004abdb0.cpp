@@ -22,7 +22,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_setupRenderState_FUN_004abdb0(CSmokePa
   float local_60;
   float local_54;
   float local_48;
-  uint local_18;
+  CVector3i local_18;
   
   bVar4 = 0;
   _DAT_01c57094 = 4;
@@ -34,12 +34,12 @@ void __cdecl core_fire_cpp_CSmokeParticle_setupRenderState_FUN_004abdb0(CSmokePa
   _DAT_01c570ac = 1;
   _DAT_01c570b0 = 2;
   _DAT_01c570b4 = 3;
-  engine_drender_cpp_FUN_00483b50(DAT_00612560);
-  _DAT_01c57078 = local_18;
+  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50(DAT_00612560,&local_18);
+  _DAT_01c57078 = local_18.x;
   *(uint *)(&DAT_01c5707c + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xffffffec + (uint)bVar4 * -8);
+       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + 4);
   *(uint *)(&DAT_01c57080 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   _DAT_01c5707c = 0;
   puVar2 = (uint *)(DAT_007c6120 + 0x10);
   puVar3 = (uint *)&stack0xffffffc0;

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_00585970(undefined4 *param_1)
+; void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_00585970(CQuaternion4f *quaternion)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quaternion
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0054c090 at 0054c0c1

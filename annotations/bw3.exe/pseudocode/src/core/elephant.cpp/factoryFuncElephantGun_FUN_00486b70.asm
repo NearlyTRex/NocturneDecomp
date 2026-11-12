@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_elephant_cpp_factoryFuncElephantGun_FUN_00486b70(void)
+; CElephantGun * __cdecl core_elephant_cpp_factoryFuncElephantGun_FUN_00486b70(void)
 ;
 ;
 ; Called Functions:

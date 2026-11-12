@@ -37,7 +37,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_0051b8d0(CDemonMission *
     *(int *)(iVar2 + 0x2c) = (this_ptr->pending_teleport).area_id;
     if ((this_ptr->pending_teleport).area_id != this_ptr->current_set_index) {
       engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0(&local_24);
-      engine_alphabit_cpp_FUN_0040d1c0(&local_24);
+      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&local_24);
       engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(&local_24,&DAT_01d33b88,0x280,0x1e0);
       iVar2 = 0;
       do {

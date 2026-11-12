@@ -1,20 +1,20 @@
 // Name: core_grave.cpp_factoryFuncGrave_FUN_004ca0f0
 // Address: 004ca0f0
 // Address Range: [[004ca0f0, 004ca10b]]
-// Convention: unknown
-// Signature: void core_grave_cpp_factoryFuncGrave_FUN_004ca0f0(void)
+// Convention: __cdecl
+// Signature: CGrave * __cdecl core_grave_cpp_factoryFuncGrave_FUN_004ca0f0(void)
 
 #include "nocturne.h"
 
-void core_grave_cpp_factoryFuncGrave_FUN_004ca0f0(void)
+CGrave * __cdecl core_grave_cpp_factoryFuncGrave_FUN_004ca0f0(void)
 
 {
-  CGrave *this_ptr;
+  CGrave *pCVar1;
   
-  this_ptr = (CGrave *)operator_new(0x50c);
-  if (this_ptr == (CGrave *)0x0) {
-    return;
+  pCVar1 = (CGrave *)operator_new(0x50c);
+  if (pCVar1 == (CGrave *)0x0) {
+    return (CGrave *)0x0;
   }
-  core_grave_cpp_CGrave_ctor_FUN_004ca120(this_ptr);
-  return;
+  pCVar1 = core_grave_cpp_CGrave_ctor_FUN_004ca120(pCVar1);
+  return pCVar1;
 }

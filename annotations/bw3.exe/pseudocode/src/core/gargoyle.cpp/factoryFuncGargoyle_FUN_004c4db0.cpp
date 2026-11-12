@@ -1,20 +1,20 @@
 // Name: core_gargoyle.cpp_factoryFuncGargoyle_FUN_004c4db0
 // Address: 004c4db0
 // Address Range: [[004c4db0, 004c4dcb]]
-// Convention: unknown
-// Signature: void core_gargoyle_cpp_factoryFuncGargoyle_FUN_004c4db0(void)
+// Convention: __cdecl
+// Signature: CGargoyle * __cdecl core_gargoyle_cpp_factoryFuncGargoyle_FUN_004c4db0(void)
 
 #include "nocturne.h"
 
-void core_gargoyle_cpp_factoryFuncGargoyle_FUN_004c4db0(void)
+CGargoyle * __cdecl core_gargoyle_cpp_factoryFuncGargoyle_FUN_004c4db0(void)
 
 {
-  CGargoyle *this_ptr;
+  CGargoyle *pCVar1;
   
-  this_ptr = (CGargoyle *)operator_new(0xd0b0);
-  if (this_ptr == (CGargoyle *)0x0) {
-    return;
+  pCVar1 = (CGargoyle *)operator_new(0xd0b0);
+  if (pCVar1 == (CGargoyle *)0x0) {
+    return (CGargoyle *)0x0;
   }
-  core_gargoyle_cpp_CGargoyle_ctor_FUN_004c4de0(this_ptr);
-  return;
+  pCVar1 = core_gargoyle_cpp_CGargoyle_ctor_FUN_004c4de0(pCVar1);
+  return pCVar1;
 }

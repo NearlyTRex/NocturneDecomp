@@ -52,6 +52,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
   float fStack_164;
   float afStack_160 [5];
   uint uStack_14c;
+  float fStack_148;
   uint uStack_140;
   float fStack_134;
   float fStack_130;
@@ -317,7 +318,8 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
                            &(((this_ptr->base).victim)->base).location.position,path_map,pCVar15,
                            fVar16,in_stack_fffffdf4);
         if (iVar7 < 0) {
-          engine_console_cpp_FUN_00436710();
+          engine_console_cpp_CConsole_printf_FUN_00436710
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_38,0,1);
         }
         else {
@@ -351,7 +353,9 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
             afStack_160[(uint)bVar13 * -2 + 6] = afStack_160[(uint)bVar13 * -2 + 9];
             afStack_160[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 7] =
                  afStack_160[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 10];
-            pCStack_14 = (CMatrix3x4f *)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0();
+            pCStack_14 = (CMatrix3x4f *)
+                         core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                                   (fStack_148 - (this_ptr->base).base.base.orient.vec.y);
             if (ABS((float)pCStack_14) < (float)_DAT_005cde0b) {
               fVar16 = 1.4013e-45;
               iVar7 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,1);
@@ -466,7 +470,8 @@ LAB_004375f4:
     if (EVar5 < WALK_STATE_NO_PATH) goto LAB_0043739d;
     if (EVar5 != WALK_STATE_NO_PATH) goto LAB_004375f4;
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar3->base,0,1);
-    engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

@@ -13,10 +13,11 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005b4cd0(char *directory_path,cha
 {
   byte *pbVar1;
   byte bVar2;
-  int iVar3;
+  _FILE *p_Var3;
   MCIERROR MVar4;
   byte *pbVar5;
   HANDLE hThread;
+  int nPriority;
   int iVar6;
   bool bVar7;
   char *lpstrCommand;
@@ -29,11 +30,11 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005b4cd0(char *directory_path,cha
   tagRECT local_14;
   
   _sprintf(local_74,"%s\\%s");
-  iVar3 = _fopen(local_74,&DAT_005fa085);
-  if (iVar3 == 0) {
+  p_Var3 = _fopen(local_74,&DAT_005fa085);
+  if (p_Var3 == (_FILE *)0x0) {
     return 0;
   }
-  _fclose(iVar3);
+  _fclose(p_Var3);
   engine_special_cpp_clearScreen_FUN_0057dc40();
   wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
   pHVar8 = _DAT_02c9be68;
@@ -107,14 +108,14 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005b4cd0(char *directory_path,cha
   }
   mciSendStringA(lpstrCommand,(LPSTR)0x0,0,pHVar8);
   hThread = GetCurrentProcess();
-  iVar3 = GetThreadPriority(hThread);
+  nPriority = GetThreadPriority(hThread);
   SetThreadPriority(hThread,-0xf);
   while (((wincore_winrun_cpp_FUN_005b2cf0(), _DAT_02c9d29c != 0 &&
           (iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_005b2580(), iVar6 == 0)) &&
          (_DAT_02c9d2a0 != 0))) {
     Sleep(0x14);
   }
-  SetThreadPriority(hThread,iVar3);
+  SetThreadPriority(hThread,nPriority);
   wincore_winvideo_cpp_closeMovie_FUN_005b4980(_DAT_02c9be68);
   engine_special_cpp_clearScreen_FUN_0057dc40();
   wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();

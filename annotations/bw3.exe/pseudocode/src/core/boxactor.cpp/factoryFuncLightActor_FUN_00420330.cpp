@@ -1,20 +1,20 @@
 // Name: core_boxactor.cpp_factoryFuncLightActor_FUN_00420330
 // Address: 00420330
 // Address Range: [[00420330, 0042034b]]
-// Convention: unknown
-// Signature: void core_boxactor_cpp_factoryFuncLightActor_FUN_00420330(void)
+// Convention: __cdecl
+// Signature: CLightActor * __cdecl core_boxactor_cpp_factoryFuncLightActor_FUN_00420330(void)
 
 #include "nocturne.h"
 
-void core_boxactor_cpp_factoryFuncLightActor_FUN_00420330(void)
+CLightActor * __cdecl core_boxactor_cpp_factoryFuncLightActor_FUN_00420330(void)
 
 {
-  CLightActor *this_ptr;
+  CLightActor *pCVar1;
   
-  this_ptr = (CLightActor *)operator_new(0x36f4);
-  if (this_ptr == (CLightActor *)0x0) {
-    return;
+  pCVar1 = (CLightActor *)operator_new(0x36f4);
+  if (pCVar1 == (CLightActor *)0x0) {
+    return (CLightActor *)0x0;
   }
-  core_boxactor_cpp_CLightActor_ctor_FUN_00420360(this_ptr);
-  return;
+  pCVar1 = core_boxactor_cpp_CLightActor_ctor_FUN_00420360(pCVar1);
+  return pCVar1;
 }

@@ -73,7 +73,7 @@ section .text
     PUSH ECX                            ; 00569617
     XOR EBX,EBX                         ; 00569618
     CALL core_xform.cpp_quaternionToAxisAngle_FUN_005b78a0 ; 0056961a
-        ;   XREF to: 005b78a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToAxisAngle_FUN_005b78a0()
+        ;   XREF to: 005b78a0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionToAxisAngle_FUN_005b78a0(CQuaternion4f * quat_in, float * angle_out, CVector3f * axis_out)
     MOV EDI,dword ptr [ESI + 0x1de78]   ; 0056961f
     ADD ESP,0xc                         ; 00569625
     TEST EDI,EDI                        ; 00569628
@@ -189,7 +189,7 @@ section .text
     PUSH EAX                            ; 00569775
     LEA ESI,[ESP + 0x38]                ; 00569776
     CALL core_xform.cpp_quaternionToMatrix3x4_FUN_005b7560 ; 0056977a
-        ;   XREF to: 005b7560 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToMatrix3x4_FUN_005b7560()
+        ;   XREF to: 005b7560 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_005b7560(CQuaternion4f * quat_in, CMatrix3x4f * matrix_out)
     ADD ESP,0x4                         ; 0056977f
     LEA EAX,[ESP + 0x4]                 ; 00569782
     LEA EDI,[ESP + 0x4]                 ; 00569786
@@ -201,7 +201,7 @@ section .text
     PUSH EAX                            ; 0056979c
     MOVSD.REP ES:EDI,ESI                ; 0056979d
     CALL core_xform.cpp_transformVector3x4InPlace_FUN_005b5100 ; 0056979f
-        ;   XREF to: 005b5100 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4InPlace_FUN_005b5100()
+        ;   XREF to: 005b5100 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4InPlace_FUN_005b5100(CVector3f * input_output_vector, CMatrix3x4f * matrix)
     ADD ESP,0x8                         ; 005697a4
     MOV ESP,EBP                         ; 005697a7
     POP EBP                             ; 005697a9

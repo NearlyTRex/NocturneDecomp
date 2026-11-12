@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl crt_memory_c___vec_delete_FUN_005b7fa7(int param_1,undefined4 param_2)
+; void * __cdecl crt_memory_c___vec_delete_FUN_005b7fa7(void *object_ptr,WatcomTypeInfo *type_info)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   object_ptr
+; WatcomTypeInfo * Stack[0x8]:4   type_info
 ;
 ; XREF[172]:
-;   cockpit_pkbitmap.cpp_FUN_00517640 at 0051764e
+;   cockpit_pkbmpset.cpp_FUN_00517640 at 0051764e
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930 at 00408987
 ;   core_ammo.cpp_CAmmo_dtor_FUN_0040de50 at 0040de86
 ;   core_ammobox.cpp_CAmmoBox_dtor_FUN_0040e980 at 0040e9ac
@@ -42,7 +45,7 @@ section .text
     PUSH ECX                            ; 005b7fc0
     PUSH EAX                            ; 005b7fc1
     CALL crt_memory.c___arrfini_FUN_005b854f ; 005b7fc2
-        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005b854f()
+        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005b854f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005b7fc7
     MOV EAX,EBX                         ; 005b7fca
     POP EBX                             ; 005b7fcc

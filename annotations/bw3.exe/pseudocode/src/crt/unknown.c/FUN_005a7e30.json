@@ -32,7 +32,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005a7e30",
-    "signature": "void crt_unknown_c_FUN_005a7e30(undefined4 *param_1,undefined4 param_2)"
+    "signature": "void crt_unknown_c_FUN_005a7e30(undefined4 *param_1,int param_2)"
   },
   "function_calls": [
     {
@@ -71,6 +71,26 @@
     },
     "pcode_op_count": 57
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005bccf0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c4fc0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0056adf0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -85,7 +105,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_005a7e30(uint *param_1,uint param_2)",
+      "text": "void FUN_005a7e30(uint *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -93,7 +113,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_005a7e30(uint *param_1,uint param_2)",
+      "text": "void FUN_005a7e30(uint *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -101,7 +121,7 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fputc(param_2,*param_1);",
+      "text": "_fputc(param_2,(_FILE *)*param_1);",
       "type": "unnamed_param"
     },
     {
@@ -109,7 +129,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fputc(param_2,*param_1);",
+      "text": "_fputc(param_2,(_FILE *)*param_1);",
       "type": "unnamed_param"
     },
     {

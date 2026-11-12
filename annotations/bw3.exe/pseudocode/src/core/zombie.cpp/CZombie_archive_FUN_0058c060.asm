@@ -49,7 +49,7 @@ section .text
     LEA EAX,[EBX + 0xcdcc]              ; 0058c074
     PUSH EAX                            ; 0058c07a
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0058c07b
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0058c080
     PUSH 0x5d884e                       ; 0058c083 | = "modelName"
     LEA EAX,[EBX + 0x158]               ; 0058c088
@@ -68,7 +68,7 @@ section .text
     LEA EAX,[EBX + 0xcddc]              ; 0058c0ac
     PUSH EAX                            ; 0058c0b2
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0058c0b3
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0058c0b8
     PUSH 0x5d8866                       ; 0058c0bb | = "motion state"
         ;   Label: LAB_0058c0bb
@@ -95,7 +95,7 @@ section .text
     LEA EAX,[EBX + 0x2628]              ; 0058c0fc
     PUSH EAX                            ; 0058c102
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 0058c103
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0058c108
     CMP dword ptr [0x006072a4],0x4      ; 0058c10b | g_CZombieClassVersion
         ;   Label: LAB_0058c10b
@@ -115,7 +115,7 @@ section .text
     LEA EAX,[EBX + 0xd06c]              ; 0058c136
     PUSH EAX                            ; 0058c13c
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 0058c13d
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0058c142
     MOV EDX,dword ptr [0x006072a4]      ; 0058c145 | g_CZombieClassVersion
         ;   Label: LAB_0058c145
@@ -129,7 +129,7 @@ section .text
     LEA EAX,[EBX + 0x2f08]              ; 0058c15a
     PUSH EAX                            ; 0058c160
     CALL core_actor.cpp_archiveClothList_FUN_0040bf20 ; 0058c161
-        ;   XREF to: 0040bf20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveClothList_FUN_0040bf20()
+        ;   XREF to: 0040bf20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveClothList_FUN_0040bf20(CClothList * cloth_list, char * property_name)
     ADD ESP,0x8                         ; 0058c166
     CMP dword ptr [0x006072a4],0x8      ; 0058c169 | g_CZombieClassVersion
         ;   Label: LAB_0058c169
@@ -163,13 +163,13 @@ section .text
     LEA EAX,[EBX + 0xd0e4]              ; 0058c1b4
     PUSH EAX                            ; 0058c1ba
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0058c1bb
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0058c1c0
     PUSH 0x5d88e4                       ; 0058c1c3 | = "guardDistance"
     ADD EBX,0xcddc                      ; 0058c1c8
     PUSH EBX                            ; 0058c1ce
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0058c1cf
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0058c1d4
     POP EDI                             ; 0058c1d7
     POP EBX                             ; 0058c1d8

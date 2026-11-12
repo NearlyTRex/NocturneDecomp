@@ -254,14 +254,14 @@ section .text
         ;   Label: LAB_0052dbae
     PUSH EBP                            ; 0052dbb1
     CALL core_setutil.cpp_C3DSLight_create_FUN_0053b6b0 ; 0052dbb2
-        ;   XREF to: 0053b6b0 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSLight_create_FUN_0053b6b0()
+        ;   XREF to: 0053b6b0 (UNCONDITIONAL_CALL)  ; CDemonLight * core_setutil.cpp_C3DSLight_create_FUN_0053b6b0(C3DSLight * this_ptr)
     ADD ESP,0x4                         ; 0052dbb7
     PUSH EAX                            ; 0052dbba
     MOV EDX,dword ptr [0x01fc8d00]      ; 0052dbbb | DAT_01fc8d00
     PUSH EBP                            ; 0052dbc1
     MOV dword ptr [EDX*0x4 + 0x1fc8d04],EAX ; 0052dbc2 | DAT_01fc8d04
     CALL core_setutil.cpp_C3DSLight_apply_FUN_0053b810 ; 0052dbc9
-        ;   XREF to: 0053b810 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSLight_apply_FUN_0053b810()
+        ;   XREF to: 0053b810 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_apply_FUN_0053b810(C3DSLight * this_ptr, CDemonLight * light)
     MOV EDX,dword ptr [0x01fc8d00]      ; 0052dbce | DAT_01fc8d00
     INC EDX                             ; 0052dbd4
     ADD ESP,0x8                         ; 0052dbd5

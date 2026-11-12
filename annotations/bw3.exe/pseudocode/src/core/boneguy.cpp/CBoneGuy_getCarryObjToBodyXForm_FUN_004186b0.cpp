@@ -25,7 +25,7 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
   float fStack_148;
   float fStack_138;
   float fStack_128;
-  byte auStack_124 [48];
+  CMatrix3x4f CStack_124;
   float fStack_f4;
   float fStack_f0;
   float fStack_ec;
@@ -68,7 +68,7 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
   afStack_78[3] = -2.536;
   afStack_78[2] = -0.771;
   afStack_78[4] = 2.536;
-  core_xform_cpp_FUN_00583940(auStack_124,&DAT_02cfd900,afStack_78 + 2);
+  core_xform_cpp_FUN_00583940(&CStack_124,&DAT_02cfd900,afStack_78 + 2);
   (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_fffffe7c);
   pfVar3 = afStack_dc;
   pfVar4 = &fStack_f4;
@@ -117,7 +117,11 @@ CMatrix3x4f * __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_
     afStack_c0[3] = afStack_54[0];
     fStack_b0 = afStack_54[1];
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_005833e0();
+  core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
+            (&CStack_124,
+             (CMatrix3x4f *)
+             (this_ptr->base).base.model.bone_transform.bone_model_matrices[iStack_10].m,
+             (CMatrix3x4f *)&stack0xfffffe7c);
   puVar2 = (uint *)&stack0xfffffe7c;
   puVar5 = (uint *)&stack0xfffffeac;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

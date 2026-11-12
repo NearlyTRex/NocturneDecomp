@@ -15,11 +15,11 @@ CHero * __cdecl closestHeroToPoint(CLocation *location);
 
 // Original: core_hero.cpp_isAnyHeroWithinRadius_FUN_004ce100
 // Address: 004ce100
-undefined4 __cdecl isAnyHeroWithinRadius(float *param_1,float param_2);
+int __cdecl isAnyHeroWithinRadius(CVector3f *point,float radius);
 
 // Original: core_hero.cpp_isAnyHeroWithinCylinder_FUN_004ce180
 // Address: 004ce180
-undefined4 __cdecl isAnyHeroWithinCylinder(float *param_1,float param_2,float param_3);
+int __cdecl isAnyHeroWithinCylinder(CVector3f *point,float horizontal_radius,float vertical_tolerance);
 
 // Original: core_hero.cpp_FUN_004ce240
 // Address: 004ce240
@@ -155,7 +155,7 @@ void __cdecl CHero::setAiTask(CHero *this_ptr,int ai_task);
 
 // Original: core_hero.cpp_FUN_004d00c0
 // Address: 004d00c0
-int FUN_004d00c0(int param_1,float *param_2);
+CCharacter * FUN_004d00c0(int param_1,float *param_2);
 
 // Original: core_hero.cpp_CHero_kill_FUN_004d02b0
 // Address: 004d02b0
@@ -173,9 +173,9 @@ void __cdecl CHero::doHeroAction(CHero *this_ptr);
 // Address: 004d06c0
 int __cdecl CHero::canDoHeroAction(CHero *this_ptr,int action_type);
 
-// Original: core_hero.cpp_FUN_004d0750
+// Original: core_hero.cpp_CHero_toggleGoggles_FUN_004d0750
 // Address: 004d0750
-void FUN_004d0750(void);
+void __cdecl CHero::toggleGoggles(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004d0780
 // Address: 004d0780
@@ -183,7 +183,7 @@ undefined4 FUN_004d0780(CHero *param_1,undefined4 param_2);
 
 // Original: core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004d0910
 // Address: 004d0910
-void factoryFuncHeroPlaceholder(void);
+CHeroPlaceholder * __cdecl factoryFuncHeroPlaceholder(void);
 
 // Original: core_hero.cpp_CHeroPlaceholder_getActorType_FUN_004d0930
 // Address: 004d0930

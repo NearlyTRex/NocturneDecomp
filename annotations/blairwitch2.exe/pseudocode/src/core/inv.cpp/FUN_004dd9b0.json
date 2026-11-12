@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1498,
-    "complexity_score": 2326,
+    "complexity_score": 2402,
     "cross_reference_count": 1,
     "function_call_count": 27,
     "global_count": 44,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 536,
-    "suspect_count": 172,
+    "pseudocode_lines": 552,
+    "suspect_count": 178,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -25,7 +25,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 2034
+    "total_lines": 2050
   },
   "cross_references": [
     {
@@ -155,14 +155,14 @@
       "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
     },
     {
+      "addr": "004aaf00",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
+    },
+    {
       "addr": "004a8df0",
       "is_variadic": false,
       "name": "engine_font.cpp_FUN_004a8df0"
-    },
-    {
-      "addr": "004aaf00",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004aaf00"
     },
     {
       "addr": "004ab2b0",
@@ -1399,42 +1399,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 138,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1[(int)param_1[0x11a] + 0x184]);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184],",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 138,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1[(int)param_1[0x11a] + 0x184]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 139,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 139,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 139,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184],",
       "type": "unnamed_param"
     },
     {
@@ -1442,7 +1418,7 @@
       "line": 141,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]), iVar3 == 0)",
+      "text": "iVar4 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
       "type": "unnamed_param"
     },
     {
@@ -1450,7 +1426,7 @@
       "line": 141,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]), iVar3 == 0)",
+      "text": "iVar4 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
       "type": "unnamed_param"
     },
     {
@@ -1458,12 +1434,36 @@
       "line": 141,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]), iVar3 == 0)",
+      "text": "iVar4 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 143,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar4 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]), iVar4 == 0)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 143,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar4 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]), iVar4 == 0)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 143,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar4 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]), iVar4 == 0)",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 145,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "local_90 = DAT_006141bc - iVar7;",
@@ -1471,7 +1471,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 146,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "iVar7 = DAT_006141b8 - iVar7;",
@@ -1479,7 +1479,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 149,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184],\"CTommyGun\");",
@@ -1487,7 +1487,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 149,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184],\"CTommyGun\");",
@@ -1495,7 +1495,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 152,
+      "line": 154,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184],\"CShotgun\");",
@@ -1503,7 +1503,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 152,
+      "line": 154,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184],\"CShotgun\");",
@@ -1511,7 +1511,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 159,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184],\"CElephantGun\"",
@@ -1519,7 +1519,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 159,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184],\"CElephantGun\"",
@@ -1527,7 +1527,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 163,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184],&DAT_005dbaaf);",
@@ -1535,7 +1535,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 163,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184],&DAT_005dbaaf);",
@@ -1543,7 +1543,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 163,
+      "line": 165,
       "match": "DAT_005dbaaf",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184],&DAT_005dbaaf);",
@@ -1551,7 +1551,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
+      "line": 167,
       "match": "(int *)((int)param_1",
       "severity": "moderate",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 0) {",
@@ -1559,7 +1559,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 165,
+      "line": 167,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 0) {",
@@ -1567,7 +1567,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 165,
+      "line": 167,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 0) {",
@@ -1575,7 +1575,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 168,
+      "line": 170,
       "match": "(int *)((int)param_1",
       "severity": "moderate",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 3) {",
@@ -1583,7 +1583,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 168,
+      "line": 170,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 3) {",
@@ -1591,7 +1591,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 168,
+      "line": 170,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 3) {",
@@ -1599,7 +1599,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 173,
       "match": "(int *)((int)param_1",
       "severity": "moderate",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 7) {",
@@ -1607,7 +1607,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 171,
+      "line": 173,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 7) {",
@@ -1615,7 +1615,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 171,
+      "line": 173,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 7) {",
@@ -1623,7 +1623,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 174,
+      "line": 176,
       "match": "(int *)((int)param_1",
       "severity": "moderate",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 8) {",
@@ -1631,7 +1631,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 176,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 8) {",
@@ -1639,7 +1639,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 176,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 8) {",
@@ -1647,7 +1647,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 177,
+      "line": 179,
       "match": "(int *)((int)param_1",
       "severity": "moderate",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 1) {",
@@ -1655,7 +1655,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 179,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 1) {",
@@ -1663,7 +1663,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 179,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)((int)param_1[(int)param_1[0x11a] + 0x184] + 0x6c8) == 1) {",
@@ -1671,7 +1671,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 184,
+      "line": 186,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1[0xd4] <= 0.0) || (param_1[0x115] != 0.0)) {",
@@ -1679,7 +1679,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 184,
+      "line": 186,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1[0xd4] <= 0.0) || (param_1[0x115] != 0.0)) {",
@@ -1687,7 +1687,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 185,
+      "line": 187,
       "match": "DAT_005dbab4",
       "severity": "mild",
       "text": "pcVar11 = &DAT_005dbab4;",
@@ -1695,7 +1695,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 193,
+      "line": 195,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "iVar7 = (DAT_006141bc - local_5c) - iVar7;",
@@ -1703,15 +1703,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 194,
+      "line": 196,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "iVar3 = (DAT_006141b8 - local_5c) - iVar3;",
+      "text": "iVar4 = (DAT_006141b8 - local_5c) - iVar4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 203,
+      "line": 205,
       "match": "DAT_005dba8a",
       "severity": "mild",
       "text": "_sprintf(local_700,&DAT_005dba8a);",
@@ -1719,7 +1719,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 206,
+      "line": 208,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "iVar7 = (DAT_006141bc - local_5c) - iVar7;",
@@ -1727,15 +1727,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 207,
+      "line": 209,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "iVar3 = (DAT_006141b8 - local_5c) - iVar3;",
+      "text": "iVar4 = (DAT_006141b8 - local_5c) - iVar4;",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 212,
+      "line": 214,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[0x115] == 0.0) goto LAB_004ddd00;",
@@ -1743,30 +1743,6 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 213,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar7 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 213,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar7 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 213,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar7 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 215,
       "match": "param_1",
       "severity": "mild",
@@ -1794,7 +1770,7 @@
       "line": 217,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar7 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]), iVar7 == 0)",
+      "text": "iVar7 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
       "type": "unnamed_param"
     },
     {
@@ -1802,7 +1778,7 @@
       "line": 217,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar7 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]), iVar7 == 0)",
+      "text": "iVar7 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
       "type": "unnamed_param"
     },
     {
@@ -1810,84 +1786,148 @@
       "line": 217,
       "match": "param_1",
       "severity": "mild",
+      "text": "iVar7 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 219,
+      "match": "param_1",
+      "severity": "mild",
       "text": "(iVar7 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]), iVar7 == 0)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 220,
+      "line": 219,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_1[(int)param_1[0x11a] + 0x184]);",
+      "text": "(iVar7 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]), iVar7 == 0)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 220,
+      "line": 219,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_1[(int)param_1[0x11a] + 0x184]);",
+      "text": "(iVar7 = core_inv_cpp_FUN_004dd0a0(param_1,param_1[(int)param_1[0x11a] + 0x184]), iVar7 == 0)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 225,
+      "line": 222,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar5 = core_inv_cpp_getItemDescription_FUN_004d9f80(param_1[(int)param_1[0x11a] + 0x184]);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 225,
+      "line": 222,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar5 = core_inv_cpp_getItemDescription_FUN_004d9f80(param_1[(int)param_1[0x11a] + 0x184]);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 226,
+      "line": 224,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_1[(int)param_1[0x11a] + 0x184],uVar5);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 226,
+      "line": 224,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_1[(int)param_1[0x11a] + 0x184],uVar5);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 252,
+      "line": 228,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_1[(int)param_1[0x11a] + 0x184]);",
+      "text": "core_inv_cpp_getItemDisplayName_FUN_004d9f10((CDemonActor *)param_1[0x119]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 252,
+      "line": 230,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_1[(int)param_1[0x11a] + 0x184]);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 230,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 232,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 232,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 258,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 258,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 260,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 260,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x184]);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 261,
+      "line": 269,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "iVar3 = (DAT_006141bc - local_78) + local_5c;",
+      "text": "iVar4 = (DAT_006141bc - local_78) + local_5c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 262,
+      "line": 270,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "local_50 = local_5c + (DAT_006141b8 - local_68);",
@@ -1895,7 +1935,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 274,
+      "line": 282,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1[(int)param_1[0x11a] + 0x17f] != 0.0) && (0.0 < param_1[0xd1])) {",
@@ -1903,7 +1943,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 274,
+      "line": 282,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1[(int)param_1[0x11a] + 0x17f] != 0.0) && (0.0 < param_1[0xd1])) {",
@@ -1911,7 +1951,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 274,
+      "line": 282,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1[(int)param_1[0x11a] + 0x17f] != 0.0) && (0.0 < param_1[0xd1])) {",
@@ -1919,7 +1959,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 279,
+      "line": 287,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((DAT_006141bc < 0x180) && (param_1[0x115] == 0.0)) {",
@@ -1927,7 +1967,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 279,
+      "line": 287,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "if ((DAT_006141bc < 0x180) && (param_1[0x115] == 0.0)) {",
@@ -1935,42 +1975,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 285,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1[(int)param_1[0x11a] + 0x17f]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 285,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1[(int)param_1[0x11a] + 0x17f]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 291,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "(local_30,local_400,(DAT_006141b8 - iVar3) - iVar4,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 292,
-      "match": "DAT_006141bc",
-      "severity": "mild",
-      "text": "(DAT_006141bc - iVar3) - (int)local_1c,0xf8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 294,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1[(int)param_1[0x11a] + 0x17f]);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x17f],",
       "type": "unnamed_param"
     },
     {
@@ -1978,44 +1986,76 @@
       "line": 294,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1[(int)param_1[0x11a] + 0x17f]);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x17f],",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 300,
-      "match": "DAT_006141b8",
-      "severity": "mild",
-      "text": "(local_30,local_500,(DAT_006141b8 - iVar3) - iVar4,",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 301,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "(local_30,local_400,(DAT_006141b8 - iVar4) - iVar5,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 302,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "(DAT_006141bc - iVar3) - (int)local_1c,0xf8);",
+      "text": "(DAT_006141bc - iVar4) - (int)local_1c,0xf8);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 303,
+      "line": 305,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1[(int)param_1[0x11a] + 0x17f]);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x17f],",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 303,
+      "line": 305,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1[(int)param_1[0x11a] + 0x17f]);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x17f],",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 306,
+      "line": 312,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "(local_30,local_500,(DAT_006141b8 - iVar4) - iVar5,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 313,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "(DAT_006141bc - iVar4) - (int)local_1c,0xf8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 316,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x17f],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 316,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x17f],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 320,
       "match": "DAT_005dbafa",
       "severity": "mild",
       "text": "_sprintf(local_600,&DAT_005dbafa);",
@@ -2023,23 +2063,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 310,
+      "line": 324,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "(local_30,local_600,(DAT_006141b8 - iVar3) - iVar4,",
+      "text": "(local_30,local_600,(DAT_006141b8 - iVar4) - iVar5,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 311,
+      "line": 325,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "(DAT_006141bc - iVar3) - (int)local_1c,0xf8);",
+      "text": "(DAT_006141bc - iVar4) - (int)local_1c,0xf8);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 313,
+      "line": 327,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[0x115] != 0.0) {",
@@ -2047,39 +2087,55 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 315,
+      "line": 329,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_1[(int)param_1[0x11a] + 0x17f]);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x17f]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 315,
+      "line": 329,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_1[(int)param_1[0x11a] + 0x17f]);",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x17f]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 331,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x17f]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 331,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1[(int)param_1[0x11a] + 0x17f]);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 321,
+      "line": 337,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "iVar7 = (DAT_006141bc - iVar7) + iVar3;",
+      "text": "iVar7 = (DAT_006141bc - iVar7) + iVar4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 322,
+      "line": 338,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "local_38 = (DAT_006141b8 - local_64) + iVar3;",
+      "text": "local_38 = (DAT_006141b8 - local_64) + iVar4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 336,
+      "line": 352,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "local_a0 = DAT_006141bc + -0x21;",
@@ -2087,7 +2143,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 337,
+      "line": 353,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "local_1c = (float)(DAT_006141bc + -6);",
@@ -2095,7 +2151,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 340,
+      "line": 356,
       "match": "param_1",
       "severity": "mild",
       "text": "(float10)(local_a0 - (int)local_1c) * (float10)*param_1 * (float10)_DAT_005dbb12;",
@@ -2103,7 +2159,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 344,
+      "line": 360,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "iVar7 = DAT_006141bc;",
@@ -2111,7 +2167,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 350,
+      "line": 366,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((0.0 < param_1[0xd1]) || (0.0 < param_1[0xd2])) {",
@@ -2119,7 +2175,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 350,
+      "line": 366,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((0.0 < param_1[0xd1]) || (0.0 < param_1[0xd2])) {",
@@ -2127,7 +2183,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 351,
+      "line": 367,
       "match": "param_1",
       "severity": "mild",
       "text": "local_908 = param_1[0xd2];",
@@ -2135,7 +2191,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 352,
+      "line": 368,
       "match": "param_1",
       "severity": "mild",
       "text": "if (local_908 < param_1[0xd1]) {",
@@ -2143,7 +2199,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 353,
+      "line": 369,
       "match": "param_1",
       "severity": "mild",
       "text": "local_908 = param_1[0xd1];",
@@ -2151,7 +2207,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 368,
+      "line": 384,
       "match": "8.82818e-44",
       "severity": "mild",
       "text": "local_1c = 8.82818e-44;",
@@ -2159,7 +2215,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 370,
+      "line": 386,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "if (DAT_006141bc < 0x180) {",
@@ -2167,7 +2223,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 371,
+      "line": 387,
       "match": "4.34403e-44",
       "severity": "mild",
       "text": "local_1c = 4.34403e-44;",
@@ -2175,7 +2231,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 374,
+      "line": 390,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "local_9c = (DAT_006141b8 + -4) - iVar7;",
@@ -2183,7 +2239,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 383,
+      "line": 399,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = param_1[0xd3];",
@@ -2191,7 +2247,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 393,
+      "line": 409,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "if (DAT_006141bc < 0x180) {",
@@ -2199,7 +2255,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 396,
+      "line": 412,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar7 = engine_font_cpp_FUN_004ab2b0(local_2c,param_1 + 0xd5,0x1cef7b0,10,0x100);",
@@ -2207,7 +2263,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 399,
+      "line": 415,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "iVar7 = (DAT_006141bc + -4) - local_3c * iVar7;",
@@ -2215,7 +2271,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 411,
+      "line": 427,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[2] != 0.0) {",
@@ -2223,15 +2279,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 412,
+      "line": 428,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "iVar3 = DAT_006141bc + -2;",
+      "text": "iVar4 = DAT_006141bc + -2;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 454,
+      "line": 470,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_124);",
@@ -2239,7 +2295,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 474,
+      "line": 490,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_124)",
@@ -2247,7 +2303,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 494,
+      "line": 510,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_124)",
@@ -2255,7 +2311,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 514,
+      "line": 530,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_124)",
@@ -2263,7 +2319,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 516,
+      "line": 532,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_200._4_4_ = 4;",
@@ -2271,7 +2327,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 517,
+      "line": 533,
       "match": "._24_4_",
       "severity": "mild",
       "text": "local_200._24_4_ = 0;",
@@ -2279,7 +2335,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 518,
+      "line": 534,
       "match": "._28_4_",
       "severity": "mild",
       "text": "local_200._28_4_ = 0;",
@@ -2287,7 +2343,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 519,
+      "line": 535,
       "match": "._32_4_",
       "severity": "mild",
       "text": "local_200._32_4_ = 0;",
@@ -2295,7 +2351,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 520,
+      "line": 536,
       "match": "._36_4_",
       "severity": "mild",
       "text": "local_200._36_4_ = 1;",
@@ -2303,7 +2359,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 521,
+      "line": 537,
       "match": "._40_4_",
       "severity": "mild",
       "text": "local_200._40_4_ = 0x1000000;",
@@ -2311,7 +2367,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 522,
+      "line": 538,
       "match": "._44_4_",
       "severity": "mild",
       "text": "local_200._44_4_ = 0;",
@@ -2319,7 +2375,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 523,
+      "line": 539,
       "match": "._52_4_",
       "severity": "mild",
       "text": "local_200._52_4_ = 0x1000000;",
@@ -2327,7 +2383,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 524,
+      "line": 540,
       "match": "._56_4_",
       "severity": "mild",
       "text": "local_200._56_4_ = 0x1000000;",
@@ -2335,7 +2391,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 525,
+      "line": 541,
       "match": "._48_4_",
       "severity": "mild",
       "text": "local_200._48_4_ = 2;",
@@ -2343,7 +2399,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 526,
+      "line": 542,
       "match": "._68_4_",
       "severity": "mild",
       "text": "local_200._68_4_ = 0x1000000;",
@@ -2351,7 +2407,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 527,
+      "line": 543,
       "match": "._60_4_",
       "severity": "mild",
       "text": "local_200._60_4_ = 3;",
@@ -2359,7 +2415,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 528,
+      "line": 544,
       "match": "._64_4_",
       "severity": "mild",
       "text": "local_200._64_4_ = 0;",
@@ -2367,7 +2423,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 529,
+      "line": 545,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);",
@@ -2375,7 +2431,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 530,
+      "line": 546,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,0);",
@@ -2383,7 +2439,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 531,
+      "line": 547,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);",
@@ -2391,7 +2447,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 533,
+      "line": 549,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)0x1d02ee4);",
@@ -2399,7 +2455,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 535,
+      "line": 551,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLPrimitivePoly *)local_200,0x23);",
@@ -2407,7 +2463,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 536,
+      "line": 552,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,1);",
@@ -2415,7 +2471,7 @@
     },
     {
       "description": "Pointer value `&local_ac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 430,
+      "line": 446,
       "match": "(int)&local_ac",
       "severity": "moderate",
       "text": "*(float *)((int)&local_ac + (uint)bVar9 * -8 + 4) = local_18c[(uint)bVar9 * -2 + 3];",
@@ -2423,7 +2479,7 @@
     },
     {
       "description": "Pointer value `&local_ac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 431,
+      "line": 447,
       "match": "(int)&local_ac",
       "severity": "moderate",
       "text": "*(float *)((int)&local_ac + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -2431,7 +2487,7 @@
     },
     {
       "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 451,
+      "line": 467,
       "match": "(int)&local_124",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + 4) = aiStack_fc[(uint)bVar9 * -2 + 6];",
@@ -2439,7 +2495,7 @@
     },
     {
       "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 452,
+      "line": 468,
       "match": "(int)&local_124",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -2447,7 +2503,7 @@
     },
     {
       "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 471,
+      "line": 487,
       "match": "(int)&local_124",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + 4) = aiStack_fc[(uint)bVar9 * -2 + 3];",
@@ -2455,7 +2511,7 @@
     },
     {
       "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 472,
+      "line": 488,
       "match": "(int)&local_124",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -2463,7 +2519,7 @@
     },
     {
       "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 491,
+      "line": 507,
       "match": "(int)&local_124",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + 4) = aiStack_fc[(uint)bVar9 * -2];",
@@ -2471,7 +2527,7 @@
     },
     {
       "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 492,
+      "line": 508,
       "match": "(int)&local_124",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -2479,7 +2535,7 @@
     },
     {
       "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 511,
+      "line": 527,
       "match": "(int)&local_124",
       "severity": "moderate",
       "text": "*(float *)((int)&local_124 + (uint)bVar9 * -8 + 4) = afStack_138[(uint)bVar9 * -2];",
@@ -2487,7 +2543,7 @@
     },
     {
       "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 512,
+      "line": 528,
       "match": "(int)&local_124",
       "severity": "moderate",
       "text": "*(float *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -2495,23 +2551,23 @@
     },
     {
       "description": "Raw hex address 0x1cee3b0 assigned to bare local `iVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 265,
+      "line": 273,
       "match": "0x1cee3b0",
       "severity": "moderate",
       "text": "iVar7 = 0x1cee3b0;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x1ceedb0 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 325,
+      "description": "Raw hex address 0x1ceedb0 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 341,
       "match": "0x1ceedb0",
       "severity": "moderate",
-      "text": "iVar3 = 0x1ceedb0;",
+      "text": "iVar4 = 0x1ceedb0;",
       "type": "raw_address_constant"
     },
     {
       "description": "Raw hex address 0x1cef7b0 assigned to bare local `local_28`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_28` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 401,
+      "line": 417,
       "match": "0x1cef7b0",
       "severity": "moderate",
       "text": "local_28 = 0x1cef7b0;",
@@ -2519,7 +2575,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 240,
+      "line": 246,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2527,7 +2583,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 430,
+      "line": 446,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_ac + (uint)bVar9 * -8 + 4) = local_18c[(uint)bVar9 * -2 + 3];",
@@ -2535,7 +2591,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 431,
+      "line": 447,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_ac + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -2543,7 +2599,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 451,
+      "line": 467,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + 4) = aiStack_fc[(uint)bVar9 * -2 + 6];",
@@ -2551,7 +2607,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 452,
+      "line": 468,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -2559,7 +2615,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 471,
+      "line": 487,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + 4) = aiStack_fc[(uint)bVar9 * -2 + 3];",
@@ -2567,7 +2623,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 472,
+      "line": 488,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -2575,7 +2631,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 491,
+      "line": 507,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + 4) = aiStack_fc[(uint)bVar9 * -2];",
@@ -2583,7 +2639,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 492,
+      "line": 508,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -2591,7 +2647,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 511,
+      "line": 527,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_124 + (uint)bVar9 * -8 + 4) = afStack_138[(uint)bVar9 * -2];",
@@ -2599,23 +2655,15 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 512,
+      "line": 528,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_124 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 200,
-      "match": "(float *)(iVar3 + 0x6e0)",
-      "severity": "moderate",
-      "text": "fVar10 = (float10)*(float *)(iVar3 + 0x6e0) * (float10)_DAT_005dbb0a;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 231,
+      "line": 237,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2623,7 +2671,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 231,
+      "line": 237,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

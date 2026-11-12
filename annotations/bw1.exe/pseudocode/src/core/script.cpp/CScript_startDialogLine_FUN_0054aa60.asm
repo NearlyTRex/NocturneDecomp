@@ -34,9 +34,9 @@
 ;   core_sound.cpp_CSound_playSound_FUN_0057d880
 ;   crt_stdio.c_sscanf_FUN_005c2cac
 ;   shape_edittool.cpp_CStrList_add_FUN_004994d0
-;   sound_sndmain.cpp_FUN_00572980
 ;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
+;   sound_sndmain.cpp_setNextSfxChannel_FUN_00572980
 ;
 ; *****************************************************************************
 
@@ -69,7 +69,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x18]      ; 0054aa9a
     PUSH EDI                            ; 0054aa9d
     CALL core_script.cpp_getActor_FUN_005433c0 ; 0054aa9e
-        ;   XREF to: 005433c0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_getActor_FUN_005433c0()
+        ;   XREF to: 005433c0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005433c0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 0054aaa3
     MOV dword ptr [EBX + 0x4],EAX       ; 0054aaa6
     TEST EAX,EAX                        ; 0054aaa9
@@ -193,8 +193,8 @@ section .text
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 0054abbf
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH 0x2                            ; 0054abc4
-    CALL sound_sndmain.cpp_FUN_00572980 ; 0054abc6
-        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572980(int channel_index)
+    CALL sound_sndmain.cpp_setNextSfxChannel_FUN_00572980 ; 0054abc6
+        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_00572980(int channel_index)
     ADD ESP,0x4                         ; 0054abcb
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0054abce
     PUSH ECX                            ; 0054abd1

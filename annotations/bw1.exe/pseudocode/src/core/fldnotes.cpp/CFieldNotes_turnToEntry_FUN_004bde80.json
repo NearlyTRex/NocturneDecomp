@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 214,
+    "complexity_score": 205,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 13,
+    "pseudocode_lines": 45,
+    "suspect_count": 12,
     "suspect_types": [
       "concat_reconstruction",
       "extra_output",
@@ -19,7 +19,7 @@
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 150
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -65,7 +65,7 @@
     {
       "addr": "004943a0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004943a0"
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0"
     }
   ],
   "globals": [
@@ -154,6 +154,20 @@
     },
     "pcode_op_count": 352
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a5490",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9697
+    },
+    "bw3.exe": {
+      "addr": "004abb90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -227,16 +241,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,\"CFieldNotes::turnToEntry - entry '%s' not found\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 31,
       "match": "DAT_0061d2e4",
       "severity": "mild",
       "text": "if (DAT_0061d2e4 != 0) {",
@@ -244,7 +250,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 35,
       "match": "DAT_0061d2e4",
       "severity": "mild",
       "text": "DAT_0061d2e4 = 0;",
@@ -252,7 +258,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 36,
       "match": "DAT_01cc4270",
       "severity": "mild",
       "text": "DAT_01cc4270 = 0;",
@@ -260,7 +266,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 40,
+      "line": 41,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar1) == 0) break;",
@@ -268,7 +274,7 @@
     },
     {
       "description": "Raw hex literal 0x1cc7cd4 matches address of g_STextViewInstance (type STextView). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 39,
+      "line": 40,
       "match": "0x1cc7cd4",
       "severity": "moderate",
       "text": "bVar1 = core_fldnotes_cpp_SNotesSection_layout_FUN_004bc130(pSVar4,0x1cc7cd4);",
@@ -276,7 +282,7 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 40,
+      "line": 41,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar1) == 0) break;",

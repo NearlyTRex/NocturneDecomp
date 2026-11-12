@@ -2,25 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 656,
+    "complexity_score": 533,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 121,
-    "suspect_count": 49,
+    "pseudocode_lines": 133,
+    "suspect_count": 38,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "raw_address_constant",
-      "stack_alignment_array",
       "stack_param",
       "stack_ref",
-      "unaffected_reg",
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 420
+    "total_lines": 432
   },
   "cross_references": [
     {
@@ -167,6 +162,26 @@
     },
     "pcode_op_count": 1674
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005058e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050a610",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8939
+    },
+    "nocturne.exe": {
+      "addr": "004cb010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8939
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -207,388 +222,300 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_EBP",
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000001c",
       "severity": "moderate",
-      "text": "float unaff_EBP;",
-      "type": "unaffected_reg"
+      "text": "CMansionPuzzleCircle *in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "CMansionPuzzleCircle *in_stack_0000002c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000030",
+      "severity": "moderate",
+      "text": "float in_stack_00000030;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
-      "match": "in_stack_0000001c",
+      "match": "in_stack_00000034",
       "severity": "moderate",
-      "text": "int in_stack_0000001c;",
+      "text": "float in_stack_00000034;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 21,
-      "match": "in_stack_0000002c",
+      "match": "in_stack_00000038",
       "severity": "moderate",
-      "text": "int in_stack_0000002c;",
+      "text": "float in_stack_00000038;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000003c",
+      "line": 26,
+      "match": "in_stack_00000050",
       "severity": "moderate",
-      "text": "int in_stack_0000003c;",
+      "text": "int in_stack_00000050;",
       "type": "stack_param"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 23,
-      "match": "auStackY_1030",
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000064",
       "severity": "moderate",
-      "text": "uint auStackY_1030 [1012];",
-      "type": "stack_alignment_array"
+      "text": "int in_stack_00000064;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
-      "match": "in_stack_ffffffe4",
+      "match": "in_stack_00000074",
       "severity": "moderate",
-      "text": "float in_stack_ffffffe4;",
+      "text": "int in_stack_00000074;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
-      "match": "in_stack_ffffffe8",
+      "match": "in_stack_00000084",
       "severity": "moderate",
-      "text": "float in_stack_ffffffe8;",
+      "text": "int in_stack_00000084;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 35,
+      "line": 40,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
-      "text": "puVar15 = &stack0xffffffc4;",
+      "text": "world_position = (CVector3f *)&stack0xffffffc4;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 38,
+      "line": 43,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar12 * -8) =",
+      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar10 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 44,
       "match": "&stack0xffffffbc",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffbc + (uint)bVar12 * -8);",
+      "text": "*(uint *)(&stack0xffffffbc + (uint)bVar10 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 40,
+      "line": 45,
       "match": "&stack0xffffffcc",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffcc + (uint)bVar12 * -8 + (uint)bVar12 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffffc0",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar12 * -8 + (uint)bVar12 * -8);",
+      "text": "*(uint *)(&stack0xffffffcc + (uint)bVar10 * -8 + (uint)bVar10 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 46,
-      "match": "&stack0xffffffc4",
+      "match": "&stack0xffffffc0",
       "severity": "moderate",
-      "text": "\"manpuz-chargegemloop-green.wav\",&stack0xffffffc4);",
+      "text": "*(uint *)(&stack0xffffffc0 + (uint)bVar10 * -8 + (uint)bVar10 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 49,
-      "match": "&stack0xffffffc4",
-      "severity": "moderate",
-      "text": "\"manpuz-chargegemloop-blue.wav\",&stack0xffffffc4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 54,
+      "line": 53,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "(this_ptr,gem_index,(float *)&stack0xffffffdc,(float *)&stack0xffffffd0,",
+      "text": "(CVector3f *)&stack0xffffffdc);",
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xffffffd0",
-      "severity": "moderate",
-      "text": "(this_ptr,gem_index,(float *)&stack0xffffffdc,(float *)&stack0xffffffd0,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Unresolved stack parameter",
       "line": 55,
-      "match": "&stack0xffffffd8",
+      "match": "in_stack_0000001c",
       "severity": "moderate",
-      "text": "(float *)&stack0xffffffd8);",
+      "text": "(&(pSVar9->hum_color).b,(pSVar9->light).b,(float)in_stack_0000001c,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 57,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "(CVector3f *)&stack0xfffffff4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_ffffffe8",
+      "line": 62,
+      "match": "in_stack_00000050",
       "severity": "moderate",
-      "text": "in_stack_ffffffe8 = in_stack_ffffffe8 / _DAT_005f98c8;",
+      "text": "(this_ptr,in_stack_00000050,(float *)&stack0x00000024,(float *)&stack0x00000018,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 62,
+      "match": "&stack0x00000024",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000050,(float *)&stack0x00000024,(float *)&stack0x00000018,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 62,
+      "match": "&stack0x00000018",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000050,(float *)&stack0x00000024,(float *)&stack0x00000018,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 63,
+      "match": "&stack0x00000020",
+      "severity": "moderate",
+      "text": "(float *)&stack0x00000020);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000030",
+      "severity": "moderate",
+      "text": "fStack00000048 = in_stack_00000030 / _DAT_005f98c8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_ffffffe8",
+      "line": 65,
+      "match": "in_stack_00000038",
       "severity": "moderate",
-      "text": "in_stack_ffffffe8 = in_stack_ffffffe8 / _DAT_005f98c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 57,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "fVar1 = unaff_EBP - (pSVar11->color).r;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_ffffffe8",
-      "severity": "moderate",
-      "text": "if (fVar1 < -in_stack_ffffffe8) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_ffffffe8",
-      "severity": "moderate",
-      "text": "fVar1 = (pSVar11->color).r - in_stack_ffffffe8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_ffffffe8",
-      "severity": "moderate",
-      "text": "if (in_stack_ffffffe8 < fVar1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_ffffffe8",
-      "severity": "moderate",
-      "text": "fVar1 = (pSVar11->color).r + in_stack_ffffffe8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 70,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "(pSVar11->color).r = unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_ffffffe8",
-      "severity": "moderate",
-      "text": "if (-in_stack_ffffffe8 <= in_stack_ffffffe4 - *pfVar5) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_ffffffe4",
-      "severity": "moderate",
-      "text": "if (-in_stack_ffffffe8 <= in_stack_ffffffe4 - *pfVar5) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_ffffffe8",
-      "severity": "moderate",
-      "text": "if (in_stack_ffffffe8 < in_stack_ffffffe4 - *pfVar5) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_ffffffe4",
-      "severity": "moderate",
-      "text": "if (in_stack_ffffffe8 < in_stack_ffffffe4 - *pfVar5) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_ffffffe8",
-      "severity": "moderate",
-      "text": "fVar1 = *pfVar5 + in_stack_ffffffe8;",
+      "text": "fStack00000040 = in_stack_00000038 - (pSVar9->color).r;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 78,
-      "match": "in_stack_ffffffe4",
+      "match": "in_stack_00000038",
       "severity": "moderate",
-      "text": "*pfVar5 = in_stack_ffffffe4;",
+      "text": "(pSVar9->color).r = in_stack_00000038;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_ffffffe8",
+      "line": 81,
+      "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "fVar1 = *pfVar5 - in_stack_ffffffe8;",
+      "text": "fStack00000044 = (float)in_stack_0000002c - *pfVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_ffffffe8",
+      "line": 87,
+      "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "if (-in_stack_ffffffe8 <= fVar4 - *pfVar5) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 89,
-      "match": "in_stack_ffffffe8",
-      "severity": "moderate",
-      "text": "if (fVar4 - *pfVar5 <= in_stack_ffffffe8) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 94,
-      "match": "in_stack_ffffffe8",
-      "severity": "moderate",
-      "text": "in_stack_ffffffe8 = *pfVar5 + in_stack_ffffffe8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 94,
-      "match": "in_stack_ffffffe8",
-      "severity": "moderate",
-      "text": "in_stack_ffffffe8 = *pfVar5 + in_stack_ffffffe8;",
+      "text": "*pfVar3 = (float)in_stack_0000002c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 97,
-      "match": "in_stack_ffffffe8",
+      "match": "in_stack_00000034",
       "severity": "moderate",
-      "text": "in_stack_ffffffe8 = *pfVar5 - in_stack_ffffffe8;",
+      "text": "fStack0000003c = in_stack_00000034 - *pfVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_ffffffe8",
+      "line": 100,
+      "match": "in_stack_00000034",
       "severity": "moderate",
-      "text": "in_stack_ffffffe8 = *pfVar5 - in_stack_ffffffe8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 99,
-      "match": "in_stack_ffffffe8",
-      "severity": "moderate",
-      "text": "*pfVar5 = in_stack_ffffffe8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 103,
-      "match": "in_stack_0000001c",
-      "severity": "moderate",
-      "text": "(pSVar10 = this_ptr->panels + in_stack_0000001c, pSVar10->exists != 0)) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_0000001c",
-      "severity": "moderate",
-      "text": "(this_ptr,in_stack_0000001c);",
+      "text": "*pfVar3 = in_stack_00000034;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 113,
-      "match": "in_stack_0000002c",
+      "match": "in_stack_00000064",
       "severity": "moderate",
-      "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220(this_ptr,in_stack_0000002c);",
+      "text": "(pSVar8 = this_ptr->panels + in_stack_00000064, pSVar8->exists != 0)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_0000002c",
+      "line": 119,
+      "match": "in_stack_00000064",
       "severity": "moderate",
-      "text": "(this_ptr,in_stack_0000002c);",
+      "text": "(this_ptr,in_stack_00000064);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 120,
-      "match": "in_stack_0000003c",
+      "line": 122,
+      "match": "in_stack_0000001c",
       "severity": "moderate",
-      "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004e73c0(this_ptr,in_stack_0000003c);",
+      "text": "in_stack_0000001c = this_ptr;",
       "type": "stack_param"
     },
     {
-      "description": "Pointer value `&stack0xffffffc0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
-      "match": "(int)&stack0xffffffc0",
+      "description": "Unresolved stack parameter",
+      "line": 123,
+      "match": "in_stack_00000074",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar12 * -8 + (uint)bVar12 * -8);",
-      "type": "pointer_truncation"
+      "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220(this_ptr,in_stack_00000074);",
+      "type": "stack_param"
     },
     {
-      "description": "Raw hex address 0x4e6ec0 assigned to bare local `uStack_40`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_40` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 108,
-      "match": "0x4e6ec0",
+      "description": "Unresolved stack parameter",
+      "line": 126,
+      "match": "in_stack_0000001c",
       "severity": "moderate",
-      "text": "uStack_40 = 0x4e6ec0;",
-      "type": "raw_address_constant"
+      "text": "in_stack_0000001c = this_ptr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 128,
+      "match": "in_stack_00000074",
+      "severity": "moderate",
+      "text": "(this_ptr,in_stack_00000074);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "in_stack_0000002c = this_ptr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_00000084",
+      "severity": "moderate",
+      "text": "core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004e73c0(this_ptr,in_stack_00000084);",
+      "type": "stack_param"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 50,
+      "line": 58,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "(pSVar11->light).b = 0.0;",
+      "text": "(pSVar9->light).b = 0.0;",
       "type": "unrolled_memset"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 41,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar12 * -8 + (uint)bVar12 * -8);",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hiram_cpp_factoryFuncHiram_FUN_004d0f00(void)
+; CHiram * __cdecl core_hiram_cpp_factoryFuncHiram_FUN_004d0f00(void)
 ;
 ;
 ; Called Functions:

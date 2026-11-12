@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_anvil.cpp_factoryFuncAnvil_FUN_0040ea00
 // Address: 0040ea00
-void factoryFuncAnvil(void);
+CAnvil * __cdecl factoryFuncAnvil(void);
 
 // Original: core_anvil.cpp_CAnvil_getActorType_FUN_0040ea20
 // Address: 0040ea20

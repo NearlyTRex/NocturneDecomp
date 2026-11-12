@@ -11,6 +11,6 @@ void core_bwgrndma_cpp_FUN_005a7eb0(void)
 {
   core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50
             (&g_CSimpleParticleSystemInstance,0x2000);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_0061ebec);
   return;
 }

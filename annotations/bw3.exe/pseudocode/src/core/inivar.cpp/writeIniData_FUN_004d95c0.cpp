@@ -30,7 +30,7 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004d95c0(void)
   engine_ini_cpp_FUN_004d8c90(&local_214,"bloodFlag",g_CGamePtr->blood_flag);
   engine_ini_cpp_FUN_004d8c90(&local_214,"currentBoard",_DAT_01d74020);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_214,"Sound");
-  sound_sndmain_cpp_FUN_00559520(&local_214);
+  sound_sndmain_cpp_writeIni_FUN_00559520(&local_214);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_214,"Control");
   engine_ini_cpp_FUN_004d8c90(&local_214,"gameControl",g_CGamePtr->game_control);
   engine_ini_cpp_FUN_004d8c90(&local_214,"keyWalk",g_CGamePtr->key_walk);

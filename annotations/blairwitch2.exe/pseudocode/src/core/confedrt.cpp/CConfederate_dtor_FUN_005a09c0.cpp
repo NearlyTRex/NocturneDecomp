@@ -19,7 +19,7 @@ CConfederate * core_confedrt_cpp_CConfederate_dtor_FUN_005a09c0(CConfederate *th
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CConfederateTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CConfederateTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

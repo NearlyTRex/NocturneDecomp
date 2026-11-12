@@ -91,7 +91,7 @@ section .text
     ADD EAX,0x98                        ; 004faa9a
     PUSH EAX                            ; 004faa9f
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770 ; 004faaa0
-        ;   XREF to: 004f9770 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770()
+        ;   XREF to: 004f9770 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
     MOV ESI,dword ptr [0x01d18144]      ; 004faaa5 | DAT_01d18144
     ADD ESP,0x14                        ; 004faaab
     CMP ESI,0x3                         ; 004faaae
@@ -114,7 +114,7 @@ section .text
     ADD EAX,0xa8                        ; 004faad1
     PUSH EAX                            ; 004faad6
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770 ; 004faad7
-        ;   XREF to: 004f9770 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770()
+        ;   XREF to: 004f9770 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
     MOV EAX,[0x01d17fc0]                ; 004faadc | DAT_01d17fc0
     ADD ESP,0x14                        ; 004faae1
     CMP EAX,0x3                         ; 004faae4
@@ -128,7 +128,7 @@ section .text
     ADD EAX,0xb8                        ; 004faafd
     PUSH EAX                            ; 004fab02
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770 ; 004fab03
-        ;   XREF to: 004f9770 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770()
+        ;   XREF to: 004f9770 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
     MOV ECX,dword ptr [0x01d18144]      ; 004fab08 | DAT_01d18144
     ADD ESP,0x14                        ; 004fab0e
     CMP ECX,0x3                         ; 004fab11
@@ -142,7 +142,7 @@ section .text
     ADD EAX,0xc8                        ; 004fab2a
     PUSH EAX                            ; 004fab2f
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770 ; 004fab30
-        ;   XREF to: 004f9770 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770()
+        ;   XREF to: 004f9770 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
     MOV ESI,dword ptr [0x01d17fc0]      ; 004fab35 | DAT_01d17fc0
     ADD ESP,0x14                        ; 004fab3b
     CMP ESI,0x3                         ; 004fab3e
@@ -156,7 +156,7 @@ section .text
     ADD EAX,0xd8                        ; 004fab5b
     PUSH EAX                            ; 004fab60
     CALL core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770 ; 004fab61
-        ;   XREF to: 004f9770 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770()
+        ;   XREF to: 004f9770 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_clipPolygonAgainstPlane_FUN_004f9770(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, ...)
     MOV EAX,[0x01d18144]                ; 004fab66 | DAT_01d18144
     ADD ESP,0x14                        ; 004fab6b
     CMP EAX,0x3                         ; 004fab6e

@@ -43,7 +43,7 @@ section .text
     LEA EDI,[ESP + 0xc]                 ; 00510262
     PUSH EDI                            ; 00510266
     CALL crt_stdio.c_fwrite_FUN_005a48e0 ; 00510267
-        ;   XREF to: 005a48e0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005a48e0()
+        ;   XREF to: 005a48e0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005a48e0(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0051026c
     MOV EDI,dword ptr [ESP + 0x18]      ; 0051026f
     TEST byte ptr [EDI + 0xc],0x20      ; 00510273

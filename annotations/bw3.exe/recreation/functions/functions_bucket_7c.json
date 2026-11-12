@@ -70,21 +70,6 @@
     "variadic":false
   },
   {
-    "addr":"004efd7c",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_004efd7c",
-    "name":"engine_mini3d.cpp_FUN_004efd7c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/mini3d.cpp",
-    "variadic":false
-  },
-  {
     "addr":"00503efc",
     "calls":[
       "0047cfa0",
@@ -199,10 +184,37 @@
     "instructions":185,
     "method":"fseek",
     "name":"crt_stdio.c_fseek_FUN_005a457c",
+    "params":[
+      {
+        "name":"file",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"long",
+          "ptr":0
+        }
+      },
+      {
+        "name":"whence",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"crt/stdio.c",

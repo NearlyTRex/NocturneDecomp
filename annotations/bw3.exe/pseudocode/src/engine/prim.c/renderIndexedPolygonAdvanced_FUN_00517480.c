@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex_indices,int vertex_count)
@@ -24,7 +23,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex
   uint uVar10;
   int iVar11;
   uint *puVar12;
-  uint *apuStack_6c [17];
+  SRenderVertex *local_68 [16];
   uint local_28;
   int *local_24;
   int local_20;
@@ -34,10 +33,10 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex
   
   if (DAT_007303fc != 0) {
     if (vertex_count < 4) {
-      apuStack_6c[0] = &DAT_0060b014 + vertex_indices[2] * 0xc;
       iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0
-                        (&DAT_0060b014 + *vertex_indices * 0xc,
-                         &DAT_0060b014 + vertex_indices[1] * 0xc);
+                        ((SRenderVertex *)(&DAT_0060b014 + *vertex_indices * 0xc),
+                         (SRenderVertex *)(&DAT_0060b014 + vertex_indices[1] * 0xc),
+                         (SRenderVertex *)(&DAT_0060b014 + vertex_indices[2] * 0xc));
       if (iVar3 == 0) {
         return;
       }
@@ -49,9 +48,10 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex
       piVar4 = vertex_indices;
       if (0 < iVar3) {
         do {
-          apuStack_6c[0] = &DAT_0060b014 + piVar4[2] * 0xc;
           iVar2 = engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0
-                            (&DAT_0060b014 + *piVar4 * 0xc,&DAT_0060b014 + piVar4[1] * 0xc);
+                            ((SRenderVertex *)(&DAT_0060b014 + *piVar4 * 0xc),
+                             (SRenderVertex *)(&DAT_0060b014 + piVar4[1] * 0xc),
+                             (SRenderVertex *)(&DAT_0060b014 + piVar4[2] * 0xc));
           if (iVar2 == 0) {
             iVar11 = iVar11 + 1;
           }
@@ -72,9 +72,9 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex
       piVar4 = vertex_indices;
       if (0 < vertex_count) {
         do {
-          apuStack_6c[0] = (uint *)0x1;
           iVar3 = iVar3 + 1;
-          engine_prim_c_prepareDepthBuffer_FUN_00515920(&DAT_0060b014 + *piVar4 * 0xc);
+          engine_prim_c_prepareDepthBuffer_FUN_00515920
+                    ((SRenderVertex *)(&DAT_0060b014 + *piVar4 * 0xc),1);
           piVar4 = piVar4 + 1;
         } while (iVar3 < vertex_count);
       }
@@ -84,8 +84,8 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex
       piVar4 = vertex_indices;
       if (0 < vertex_count) {
         do {
-          apuStack_6c[0] = (uint *)0x1;
-          engine_prim_c_normalizeTextureCoords_FUN_00515990(&DAT_0060b014 + *piVar4 * 0xc);
+          engine_prim_c_normalizeTextureCoords_FUN_00515990
+                    ((SRenderVertex *)(&DAT_0060b014 + *piVar4 * 0xc),1);
           iVar3 = iVar3 + 1;
           piVar4 = piVar4 + 1;
         } while (iVar3 < vertex_count);
@@ -96,9 +96,9 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex
       piVar4 = vertex_indices;
       if (0 < vertex_count) {
         do {
-          apuStack_6c[0] = (uint *)0x1;
           iVar3 = iVar3 + 1;
-          engine_prim_c_adjustNearPlaneTextureCoords_FUN_00515a10(&DAT_0060b014 + *piVar4 * 0xc);
+          engine_prim_c_adjustNearPlaneTextureCoords_FUN_00515a10
+                    ((SRenderVertex *)(&DAT_0060b014 + *piVar4 * 0xc),1);
           piVar4 = piVar4 + 1;
         } while (iVar3 < vertex_count);
       }
@@ -108,8 +108,8 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex
       piVar4 = vertex_indices;
       if (0 < vertex_count) {
         do {
-          apuStack_6c[0] = (uint *)0x1;
-          engine_prim_c_normalizeTextureCoords_FUN_00515990(&DAT_0060b014 + *piVar4 * 0xc);
+          engine_prim_c_normalizeTextureCoords_FUN_00515990
+                    ((SRenderVertex *)(&DAT_0060b014 + *piVar4 * 0xc),1);
           iVar3 = iVar3 + 1;
           piVar4 = piVar4 + 1;
         } while (iVar3 < vertex_count);
@@ -120,9 +120,9 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex
       piVar4 = vertex_indices;
       if (0 < vertex_count) {
         do {
-          apuStack_6c[0] = (uint *)0x1;
           iVar3 = iVar3 + 1;
-          engine_prim_c_replaceWWithDepth_FUN_00515a80(&DAT_0060b014 + *piVar4 * 0xc);
+          engine_prim_c_replaceWWithDepth_FUN_00515a80
+                    ((SRenderVertex *)(&DAT_0060b014 + *piVar4 * 0xc),1);
           piVar4 = piVar4 + 1;
         } while (iVar3 < vertex_count);
       }
@@ -302,7 +302,6 @@ LAB_00517870:
               return;
             }
           }
-          apuStack_6c[0] = (uint *)0x517889;
           engine_special_cpp_FUN_00563257();
           local_14[2] = local_14[2] + local_14[3];
           local_14[6] = local_14[6] + local_14[7];
@@ -330,13 +329,13 @@ LAB_00517870:
     if (0 < vertex_count) {
       do {
         iVar8 = *vertex_indices;
-        iVar3 = iVar3 + 1;
+        iVar11 = iVar3 + 1;
         vertex_indices = vertex_indices + 1;
-        apuStack_6c[iVar3] = &DAT_0060b014 + iVar8 * 0xc;
-      } while (iVar3 < vertex_count);
+        local_68[iVar3] = (SRenderVertex *)(&DAT_0060b014 + iVar8 * 0xc);
+        iVar3 = iVar11;
+      } while (iVar11 < vertex_count);
     }
-    apuStack_6c[0] = _DAT_01c6e2b4;
-    engine_special_cpp_drawPolygon2_FUN_00565c40(apuStack_6c + 1,vertex_count);
+    engine_special_cpp_drawPolygon2_FUN_00565c40(local_68,vertex_count,_DAT_01c6e2b4);
     _DAT_01ed3198 = _DAT_01ed3198 + vertex_count + -2;
   }
   return;

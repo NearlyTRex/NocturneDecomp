@@ -45,7 +45,7 @@ int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_0048c170(CEventLi
         if (_DAT_01c734ac != 0) {
           return 0;
         }
-        engine_console_cpp_FUN_00441ff0(g_CConsolePtr,&DAT_005bdf82,&DAT_01c734b0);
+        engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,&DAT_005bdf82);
       }
     }
   } while( true );

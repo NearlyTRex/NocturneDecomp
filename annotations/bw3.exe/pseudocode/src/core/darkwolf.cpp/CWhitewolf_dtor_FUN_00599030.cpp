@@ -19,7 +19,7 @@ CWhitewolf * core_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030(CWhitewolf *this_ptr
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CWhitewolfTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CWhitewolfTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

@@ -21,10 +21,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_0044d800(CDemo
   float10 fVar8;
   float10 fVar9;
   int aiStackY_1048 [1016];
-  int local_60;
+  CVector3i local_60;
   int local_54;
-  int local_50;
-  int local_4c;
+  int local_50 [4];
   int local_40;
   int local_3c;
   int local_38;
@@ -34,7 +33,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_0044d800(CDemo
   int local_28;
   uint *local_24;
   uint *local_20;
-  int local_1c;
+  CVector3i *local_1c;
   int local_18;
   char *local_14;
   
@@ -81,7 +80,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_0044d800(CDemo
       if (this_ptr->display_width != *(int *)(local_2c + 0x14fb300)) {
         local_18 = *(int *)(local_2c + 0x14fb300);
         local_28 = *(int *)(local_2c + 0x14fb6c0);
-        local_1c = local_34 + local_18 * 0xc;
+        local_1c = (CVector3i *)(local_34 + local_18 * 0xc);
         local_14 = (char *)(local_40 + local_18);
         local_24 = (uint *)(local_3c + local_18 * 4);
         local_20 = (uint *)(*(int *)(&DAT_01c60dac + (local_30 << (DAT_013405b0 & 0x1f)) * 4) +
@@ -93,22 +92,22 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_0044d800(CDemo
           if ((*local_20 < *local_24) &&
              (0.0 <= pfVar4[2] * _DAT_013405a8 + *pfVar4 * _DAT_01340590 + pfVar4[1] * _DAT_0134059c
              )) {
-            core_dcamera_cpp_FUN_0044a3e0(_DAT_01340584,local_1c);
-            local_54 = local_60;
-            *(uint *)((int)&stack0xffffffb0 + (uint)bVar6 * -8) =
-                 *(uint *)(&stack0xffffffa4 + (uint)bVar6 * -8);
-            *(uint *)((int)&stack0xffffffb4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-                 *(uint *)(&stack0xffffffa8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-            if ((0 < local_4c) &&
+            core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0
+                      (&_DAT_01340584->base,local_1c,&local_60);
+            local_54 = local_60.x;
+            local_50[(uint)bVar6 * -2] = *(int *)((int)&local_60 + (uint)bVar6 * -8 + 4);
+            local_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+                 *(int *)((int)&local_60 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+            if ((0 < local_50[1]) &&
                ((uVar1 = (uint)_DAT_01340584->shadow_depth_buffer
-                               [(local_50 >> 0x10) * _DAT_01340584->shadow_map_width +
+                               [(local_50[0] >> 0x10) * _DAT_01340584->shadow_map_width +
                                 (local_54 >> 0x10)], (int)uVar1 < _DAT_00b9e54c &&
-                (local_4c < (int)(uVar1 + 0x80))))) {
+                (local_50[1] < (int)(uVar1 + 0x80))))) {
               *local_14 = *local_14 +
                           (char)((int)((_DAT_00b9e54c - uVar1) *
                                       (uint)_DAT_01340584->precomputed_lighting_textures
                                             [((_DAT_01340584->texture_coord_mask &
-                                              local_50 >>
+                                              local_50[0] >>
                                               ((byte)_DAT_01340584->shadow_y_shift & 0x1f)) <<
                                              ((byte)_DAT_01340584->texture_row_shift & 0x1f)) +
                                              (local_54 >>
@@ -119,7 +118,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_0044d800(CDemo
           }
           pfVar4 = pfVar4 + 3;
           local_24 = local_24 + 1;
-          local_1c = local_1c + 0xc;
+          local_1c = local_1c + 1;
           local_18 = local_18 + 1;
           local_20 = local_20 + (1 << (DAT_013405b0 & 0x1f));
           local_14 = local_14 + 1;

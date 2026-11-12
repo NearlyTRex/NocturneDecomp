@@ -15,11 +15,11 @@ void core_inv_cpp_FUN_004dbe70(uint param_1,CDemonActor *param_2,int param_3,int
   int iVar2;
   int iVar3;
   CKeyFramedModel *pCVar4;
-  CBoundingBox3D *pCVar5;
-  float *pfVar6;
-  byte bVar7;
+  CDemonActor *pCVar5;
+  CBoundingBox3D *pCVar6;
+  float *pfVar7;
+  byte bVar8;
   float afStackY_1078 [1004];
-  CDemonActor *actor_ptr;
   char *class_name;
   float local_b4;
   float local_b0;
@@ -50,7 +50,7 @@ void core_inv_cpp_FUN_004dbe70(uint param_1,CDemonActor *param_2,int param_3,int
   float local_14;
   
   pCVar1 = g_CDemonSetPtr;
-  bVar7 = 0;
+  bVar8 = 0;
   if (param_2 != (CDemonActor *)0x0) {
     if (0x280 < DAT_005fba18) {
       param_3 = (param_3 * 0x280) / DAT_005fba18;
@@ -74,30 +74,31 @@ void core_inv_cpp_FUN_004dbe70(uint param_1,CDemonActor *param_2,int param_3,int
     (g_CDemonSetPtr->light_direction).z =
          (uint)((longlong)iVar3 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 0x482b) >> 0x20) << 0x10;
-    engine_drender_cpp_FUN_0046d2f0(DAT_005f2afc,param_3,param_4,param_5,param_5);
+    engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046d2f0
+              (DAT_005f2afc,param_3,param_4,param_5,param_5);
     local_18 = (CKeyFramedModelInstance *)core_inv_cpp_FUN_004d9d20(param_2);
     pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(local_18);
-    pCVar5 = pCVar4->frame_bounds;
-    pfVar6 = &stack0xffffff4c;
+    pCVar6 = pCVar4->frame_bounds;
+    pfVar7 = &stack0xffffff4c;
     for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *pfVar6 = (pCVar5->min).x;
-      pCVar5 = (CBoundingBox3D *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
-      pfVar6 = pfVar6 + (uint)bVar7 * -2 + 1;
+      *pfVar7 = (pCVar6->min).x;
+      pCVar6 = (CBoundingBox3D *)((int)pCVar6 + (uint)bVar8 * -8 + 4);
+      pfVar7 = pfVar7 + (uint)bVar8 * -2 + 1;
     }
     local_3c = local_a8 - local_b4;
     local_38 = local_a4 - local_b0;
     local_34 = local_a0 - local_ac;
     local_8c[2] = local_a8 - local_b4;
-    local_8c[(uint)bVar7 * -2 + 3] = local_50[(uint)bVar7 * -2 + 6];
-    local_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-         local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
+    local_8c[(uint)bVar8 * -2 + 3] = local_50[(uint)bVar8 * -2 + 6];
+    local_8c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
+         local_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
     local_50[2] = local_8c[2] * _DAT_005c63a7;
     local_50[3] = local_8c[3] * _DAT_005c63a7;
     local_40 = local_7c * _DAT_005c63a7;
     local_90 = local_8c[2] * _DAT_005c63a7;
-    local_8c[(uint)bVar7 * -2] = local_50[(uint)bVar7 * -2 + 3];
-    local_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+    local_8c[(uint)bVar8 * -2] = local_50[(uint)bVar8 * -2 + 3];
+    local_8c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+         local_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
     if (((local_90 <= local_8c[0]) || (local_14 = local_90, local_90 <= local_8c[1])) &&
        (local_14 = local_8c[1], local_8c[1] < local_8c[0])) {
       local_14 = local_8c[0];
@@ -122,7 +123,7 @@ void core_inv_cpp_FUN_004dbe70(uint param_1,CDemonActor *param_2,int param_3,int
     local_1c = local_9c.z;
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
               (DAT_005f2afc,&local_9c);
-    engine_drender_cpp_FUN_0046d090(DAT_005f2afc,0x42100000);
+    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(DAT_005f2afc,36.0);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10
               (DAT_005f2afc,(CVector3f *)&DAT_02cfd900);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
@@ -131,20 +132,20 @@ void core_inv_cpp_FUN_004dbe70(uint param_1,CDemonActor *param_2,int param_3,int
     local_74 = local_b0 + local_a4;
     local_70 = local_ac + local_a0;
     local_54 = local_b4 + local_a8;
-    local_50[(uint)bVar7 * -2] = local_8c[(uint)bVar7 * -2 + 6];
-    local_50[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         local_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
+    local_50[(uint)bVar8 * -2] = local_8c[(uint)bVar8 * -2 + 6];
+    local_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+         local_8c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
     class_name = "CLightstaff";
     _DAT_01c6e24c = 0;
     local_6c = local_54 * _DAT_005c63bf;
     local_68 = local_50[0] * _DAT_005c63bf;
     local_64 = local_50[1] * _DAT_005c63bf;
     local_60.x = local_54 * _DAT_005c63bf;
-    *(float *)((int)&local_60 + (uint)bVar7 * -8 + 4) = local_8c[(uint)bVar7 * -2 + 9];
-    actor_ptr = param_2;
-    *(float *)((int)&local_60 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         local_8c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
-    iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(actor_ptr,class_name);
+    *(float *)((int)&local_60 + (uint)bVar8 * -8 + 4) = local_8c[(uint)bVar8 * -2 + 9];
+    pCVar5 = param_2;
+    *(float *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+         local_8c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10];
+    iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(pCVar5,class_name);
     if ((iVar2 != 0) ||
        (iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,"CFirestaff"), iVar2 != 0)) {
       local_60.y = local_60.y - local_a4 * _DAT_005c63a7;
@@ -168,17 +169,17 @@ void core_inv_cpp_FUN_004dbe70(uint param_1,CDemonActor *param_2,int param_3,int
       local_30.z = 0.0;
     }
     else {
-      iVar2 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c840(param_2,g_CBoxActorClassInfo.name_hash);
-      iVar3 = _strcmp((char *)(iVar2 + 0x1d0),"journal.kfm");
-      if (iVar3 == 0) {
+      pCVar5 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c840(param_2,g_CBoxActorClassInfo.name_hash);
+      iVar2 = _strcmp(pCVar5[1].create_event,"journal.kfm");
+      if (iVar2 == 0) {
         local_30.x = local_30.x + _DAT_005c63c3;
         local_30.y = local_30.y + _DAT_005c63c7;
         local_30.z = local_30.z + _DAT_005c63c7;
       }
-      else if (&local_30 != (CVector3f *)(iVar2 + 0x6d0)) {
-        local_30.x = ((CVector3f *)(iVar2 + 0x6d0))->x;
-        local_30.y = *(float *)(iVar2 + 0x6d4);
-        local_30.z = *(float *)(iVar2 + 0x6d8);
+      else if (&local_30 != (CVector3f *)(pCVar5[5].actor_name + 0x18)) {
+        local_30.x = ((CVector3f *)(pCVar5[5].actor_name + 0x18))->x;
+        local_30.y = *(float *)(pCVar5[5].actor_name + 0x1c);
+        local_30.z = pCVar5[5].location.position.x;
       }
     }
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(param_2,"CBindEvil");
@@ -194,14 +195,14 @@ void core_inv_cpp_FUN_004dbe70(uint param_1,CDemonActor *param_2,int param_3,int
     if (iVar2 != 0) {
       local_30.x = local_30.x + _DAT_005c63c3;
     }
-    iVar2 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c840(param_2,g_CMeleeClassInfo.name_hash);
-    if (iVar2 != 0) {
-      iVar3 = _stricmp((char *)(iVar2 + 0x1d0),"axe1.kfm");
-      if (iVar3 == 0) {
+    pCVar5 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c840(param_2,g_CMeleeClassInfo.name_hash);
+    if (pCVar5 != (CDemonActor *)0x0) {
+      iVar2 = _stricmp(pCVar5[1].create_event,"axe1.kfm");
+      if (iVar2 == 0) {
         local_30.x = local_30.x + _DAT_005c63cf;
         local_30.z = local_30.z + _DAT_005c63cf;
       }
-      iVar2 = _stricmp((char *)(iVar2 + 0x1d0),"ax.kfm");
+      iVar2 = _stricmp(pCVar5[1].create_event,"ax.kfm");
       if (iVar2 == 0) {
         local_30.x = local_30.x + _DAT_005c63cf;
         local_30.z = local_30.z + _DAT_005c63cf;

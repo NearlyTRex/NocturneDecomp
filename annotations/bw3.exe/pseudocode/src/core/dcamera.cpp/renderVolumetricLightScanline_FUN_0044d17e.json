@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 334,
+    "complexity_score": 161,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 69,
-    "suspect_count": 25,
+    "pseudocode_lines": 71,
+    "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 220
+    "total_lines": 222
   },
   "cross_references": [],
   "function": {
@@ -25,10 +24,10 @@
         "0044d31c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_renderVolumetricLightScanline_FUN_0044d17e",
-    "signature": "void core_dcamera_cpp_renderVolumetricLightScanline_FUN_0044d17e(int param_1,int param_2,int param_3)"
+    "signature": "void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_0044d17e(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left)"
   },
   "function_calls": [],
   "globals": [
@@ -73,9 +72,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -116,13 +115,61 @@
     },
     "pcode_op_count": 1340
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0043f97e",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0045103e",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00450440",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9963
+    },
+    "nocturne.exe": {
+      "addr": "004442a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9963
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "scanline_y",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right",
+        "offset": 8,
+        "size": 4,
+        "type": "SSoftwareEdge *"
+      },
+      {
+        "is_param": true,
+        "name": "left",
+        "offset": 12,
+        "size": 4,
+        "type": "SSoftwareEdge *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -134,168 +181,32 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_dcamera_cpp_renderVolumetricLightScanline_FUN_0044d17e(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_dcamera_cpp_renderVolumetricLightScanline_FUN_0044d17e(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void core_dcamera_cpp_renderVolumetricLightScanline_FUN_0044d17e(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar9 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar8 = param_1 - _DAT_01c6b5ac;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_013405b0",
-      "severity": "mild",
-      "text": "iVar16 = (int)uVar8 >> (DAT_013405b0 & 0x1f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar14 = (*(int *)(param_2 + 8) >> 0x10) - _DAT_01c6b5a8 >> (DAT_013405b0 & 0x1f);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 30,
       "match": "DAT_013405b0",
       "severity": "mild",
-      "text": "iVar14 = (*(int *)(param_2 + 8) >> 0x10) - _DAT_01c6b5a8 >> (DAT_013405b0 & 0x1f);",
+      "text": "iVar17 = (int)uVar9 >> (DAT_013405b0 & 0x1f);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar17 = (*(int *)(param_3 + 8) >> 0x10) - _DAT_01c6b5a8 >> (DAT_013405b0 & 0x1f);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 31,
       "match": "DAT_013405b0",
       "severity": "mild",
-      "text": "iVar17 = (*(int *)(param_3 + 8) >> 0x10) - _DAT_01c6b5a8 >> (DAT_013405b0 & 0x1f);",
+      "text": "iVar15 = ((right->base).x_current >> 0x10) - _DAT_01c6b5a8 >> (DAT_013405b0 & 0x1f);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_3",
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_013405b0",
       "severity": "mild",
-      "text": "param_3 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_3 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = iVar9;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)(param_2 + 0x28) >> 0x1f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar5 = (int)((*(int *)(param_2 + 0x28) + iVar9 * -0x100) - (uint)(iVar9 << 7 < 0)) >> 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)(param_3 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar10 = *(int *)(param_3 + 0x28) >> 0x1f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar14 = *(int *)(param_2 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar13 = *(int *)(param_2 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar12 = *(int *)(param_3 + 0x10) - iVar13;",
-      "type": "unnamed_param"
+      "text": "iVar18 = ((left->base).x_current >> 0x10) - _DAT_01c6b5a8 >> (DAT_013405b0 & 0x1f);",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 50,
       "match": "DAT_013405b0",
       "severity": "mild",
       "text": "bVar4 = DAT_013405b0 & 0x1f;",
@@ -303,26 +214,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 51,
       "match": "DAT_01c60dac",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_01c60dac + (iVar16 << (DAT_013405b0 & 0x1f)) * 4);",
+      "text": "iVar2 = *(int *)(&DAT_01c60dac + (iVar17 << (DAT_013405b0 & 0x1f)) * 4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 51,
       "match": "DAT_013405b0",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(&DAT_01c60dac + (iVar16 << (DAT_013405b0 & 0x1f)) * 4);",
+      "text": "iVar2 = *(int *)(&DAT_01c60dac + (iVar17 << (DAT_013405b0 & 0x1f)) * 4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 52,
       "match": "DAT_0135ead0",
       "severity": "mild",
-      "text": "pbVar6 = &DAT_0135ead0 + iVar15 + iVar16 * 0x140;",
+      "text": "pbVar7 = &DAT_0135ead0 + iVar16 + iVar17 * 0x140;",
       "type": "undefined_data"
     }
   ]

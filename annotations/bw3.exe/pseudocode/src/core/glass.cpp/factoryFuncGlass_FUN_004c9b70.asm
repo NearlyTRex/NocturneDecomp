@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_factoryFuncGlass_FUN_004c9b70(void)
+; CGlass * __cdecl core_glass_cpp_factoryFuncGlass_FUN_004c9b70(void)
 ;
 ;
 ; Called Functions:

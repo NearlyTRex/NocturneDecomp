@@ -2,21 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 205,
+    "complexity_score": 298,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 14,
+    "pseudocode_lines": 38,
+    "suspect_count": 23,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "unaffected_reg",
       "unnamed_param",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
-    "total_lines": 101
+    "total_lines": 99
   },
   "cross_references": [],
   "function": {
@@ -29,18 +30,18 @@
     ],
     "convention": "unknown",
     "name": "core_dcamera.cpp_FUN_0044f6a0",
-    "signature": "void core_dcamera_cpp_FUN_0044f6a0(undefined4 param_1,undefined4 param_2,undefined4 param_3)"
+    "signature": "void core_dcamera_cpp_FUN_0044f6a0(CDemonCamera *param_1,undefined4 param_2,undefined4 param_3)"
   },
   "function_calls": [
+    {
+      "addr": "00449f80",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80"
+    },
     {
       "addr": "00449eb0",
       "is_variadic": false,
       "name": "core_dcamera.cpp_FUN_00449eb0"
-    },
-    {
-      "addr": "00449f80",
-      "is_variadic": false,
-      "name": "core_dcamera.cpp_FUN_00449f80"
     }
   ],
   "globals": [
@@ -87,6 +88,20 @@
     },
     "pcode_op_count": 344
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00441ea0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00453560",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -97,16 +112,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -114,31 +121,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_dcamera_cpp_FUN_0044f6a0(uint param_1,uint param_2,uint param_3)",
+      "text": "void core_dcamera_cpp_FUN_0044f6a0(CDemonCamera *param_1,uint param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_dcamera_cpp_FUN_0044f6a0(uint param_1,uint param_2,uint param_3)",
+      "text": "void core_dcamera_cpp_FUN_0044f6a0(CDemonCamera *param_1,uint param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_dcamera_cpp_FUN_0044f6a0(uint param_1,uint param_2,uint param_3)",
+      "text": "void core_dcamera_cpp_FUN_0044f6a0(CDemonCamera *param_1,uint param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 8,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "float *unaff_ESI;",
@@ -146,15 +153,31 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
-      "match": "afStackY_1030",
+      "line": 10,
+      "match": "aiStackY_1030",
       "severity": "moderate",
-      "text": "float afStackY_1030 [1015];",
+      "text": "int aiStackY_1030 [3];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "afStackY_1024",
+      "severity": "moderate",
+      "text": "float afStackY_1024 [9];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 12,
+      "match": "aiStackY_1000",
+      "severity": "moderate",
+      "text": "int aiStackY_1000 [1003];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dcamera_cpp_FUN_00449eb0(param_1,param_2,param_3);",
@@ -162,7 +185,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
       "text": "core_dcamera_cpp_FUN_00449eb0(param_1,param_2,param_3);",
@@ -170,7 +193,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_3",
       "severity": "mild",
       "text": "core_dcamera_cpp_FUN_00449eb0(param_1,param_2,param_3);",
@@ -178,15 +201,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_dcamera_cpp_FUN_00449f80(param_1,afStack_44 + 8);",
+      "text": "core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80(param_1,&CStack_24,&CStack_48);",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 39,
+      "line": 37,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = (float)iStack_18 * fVar1;",
@@ -194,19 +217,83 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 38,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = afStack_44[(uint)bVar2 * -2 + 6];",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = afStack_38[(uint)bVar2 * -2 + 3];",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 41,
+      "line": 39,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Pointer value `&CStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 24,
+      "match": "(int)&CStack_24",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_24 + (uint)bVar2 * -8 + 4) = afStack_38[(uint)bVar2 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)&CStack_24",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_48` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)&CStack_48",
+      "severity": "moderate",
+      "text": "aiStack_14[(uint)bVar2 * -2] = *(int *)((int)&CStack_48 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_48` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)&CStack_48",
+      "severity": "moderate",
+      "text": "*(int *)((int)&CStack_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 24,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_24 + (uint)bVar2 * -8 + 4) = afStack_38[(uint)bVar2 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "aiStack_14[(uint)bVar2 * -2] = *(int *)((int)&CStack_48 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 31,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&CStack_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
     }
   ]
 }

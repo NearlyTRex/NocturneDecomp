@@ -10335,21 +10335,12 @@
       "005638d0",
       "00566498"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":377,
-    "method":"CGame",
-    "name":"core_game.cpp_CGame_FUN_004a57c0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"showFullscreenBitmap",
+    "name":"core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -12041,15 +12032,25 @@
   },
   {
     "addr":"004c52c0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":27,
     "method":"getSizeCategory",
     "name":"core_larva.cpp_getSizeCategory_FUN_004c52c0",
+    "params":[
+      {
+        "name":"scale",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"char",
+      "ptr":1
     },
     "tu":"core/larva.cpp",
     "variadic":false
@@ -15039,14 +15040,24 @@
       "00564b20",
       "00566e70"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":217,
     "method":"readMessageFile",
     "name":"support_newmsg.cpp_readMessageFile_FUN_004edfc0",
+    "params":[
+      {
+        "name":"message_file",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"support/newmsg.cpp",
@@ -15669,27 +15680,18 @@
       "004f5920",
       "004f59d0"
     ],
+    "cls":"CPackedBitmapSet",
     "conv":"__cdecl",
     "instructions":34,
-    "method":"CPackedBitmapSet",
-    "name":"cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f52c0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CPackedBitmapSet",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"init",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_004f52c0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
       "ptr":0
     },
-    "tu":"cockpit/pkbitmap.cpp",
+    "tu":"cockpit/pkbmpset.cpp",
     "variadic":false
   },
   {
@@ -21066,8 +21068,8 @@
     ],
     "conv":"__cdecl",
     "instructions":4,
-    "method":"CCryptVessel",
-    "name":"core_vessel.cpp_CCryptVessel_FUN_0054fc40",
+    "method":"isStartLocTriggered",
+    "name":"core_vessel.cpp_isStartLocTriggered_FUN_0054fc40",
     "params":[
       {
         "name":"actor",

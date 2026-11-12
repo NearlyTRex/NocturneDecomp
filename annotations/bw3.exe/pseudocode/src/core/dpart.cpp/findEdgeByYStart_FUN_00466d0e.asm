@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * core_dpart_cpp_findEdgeByYStart_FUN_00466d0e(int param_1,int *param_2)
+; SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00466d0e(int scanline_y,SSoftwareEdge *exclude_edge)
 ;
+; Parameters:
+; int              Stack[0x4]:4   scanline_y
+; SSoftwareEdge *  Stack[0x8]:4   exclude_edge
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bdcfd4

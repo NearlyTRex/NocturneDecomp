@@ -17,9 +17,9 @@ void __cdecl filterSoundFilesByPattern(char *wildcard_pattern);
 // Address: 0055e8b0
 void __cdecl updateListeners(void);
 
-// Original: core_sound.cpp_FUN_0055ef30
+// Original: core_sound.cpp_CSound_findRandomSoundFile_FUN_0055ef30
 // Address: 0055ef30
-void __cdecl FUN_0055ef30(CSound *this_ptr,char *out_result,char *wildcard_pattern);
+void __cdecl CSound::findRandomSoundFile(CSound *this_ptr,char *out_result,char *wildcard_pattern);
 
 // Original: core_sound.cpp_playSfxInternal_FUN_0055f020
 // Address: 0055f020
@@ -47,7 +47,7 @@ void __cdecl shutdownSoundSystem(void);
 
 // Original: core_sound.cpp_syncChannel3WithChannel0_FUN_0055fcce
 // Address: 0055fcce
-void syncChannel3WithChannel0(void);
+void __cdecl syncChannel3WithChannel0(void);
 
 // Original: core_sound.cpp_FUN_0055fd30
 // Address: 0055fd30

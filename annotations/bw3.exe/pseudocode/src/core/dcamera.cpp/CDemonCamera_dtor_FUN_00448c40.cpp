@@ -13,7 +13,7 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_dtor_FUN_00448c40(CDemonCam
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDemonCameraTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDemonCameraTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

@@ -29,10 +29,6 @@ void transformWorldToView(int *param_1);
 // Address: 00507aa0
 int __cdecl calculateTransformedZ(int *input_coords);
 
-// Original: engine_matrix.c_FUN_00507afe
-// Address: 00507afe
-void FUN_00507afe(int param_1,CVector3i *param_2);
-
 // Original: engine_matrix.c_transformToCache_FUN_00507b00
 // Address: 00507b00
 void __cdecl transformToCache(int cacheIndex,CVector3i *inputPoint);
@@ -43,7 +39,7 @@ void __cdecl projectCachedPoint(int cacheIndex);
 
 // Original: engine_matrix.c_projectTransformedPoint_FUN_00507b50
 // Address: 00507b50
-void __cdecl projectTransformedPoint(int *param_1);
+void __cdecl projectTransformedPoint(SProjectedVertex *point);
 
 // Original: engine_matrix.c_projectCachedPointUnchecked_FUN_00507bf0
 // Address: 00507bf0
@@ -87,11 +83,11 @@ void __cdecl setCameraOrigin(int x,int y,int z);
 
 // Original: engine_matrix.c_getCameraOrigin_FUN_00509050
 // Address: 00509050
-void getCameraOrigin(void);
+void __esi getCameraOrigin(CVector3i *output);
 
 // Original: engine_matrix.c_getCameraRotation_FUN_00509080
 // Address: 00509080
-void getCameraRotation(void);
+void __esi getCameraRotation(CVector3i *output);
 
 // Original: engine_matrix.c_pushViewport_FUN_005090b0
 // Address: 005090b0

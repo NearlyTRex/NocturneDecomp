@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 120,
+    "complexity_score": 55,
     "cross_reference_count": 28,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "unrolled_strcpy"
     ],
     "total_lines": 79
@@ -196,7 +195,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0",
-    "signature": "void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance *param_1,char *param_2)"
+    "signature": "void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance *model_ptr,char *property_name)"
   },
   "function_calls": [
     {
@@ -242,11 +241,37 @@
     },
     "pcode_op_count": 191
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040ba60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0040b770",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040b8f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040ca00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 212,
+    "frame_size": 220,
     "local_size": 212,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -262,6 +287,20 @@
         "offset": -207,
         "size": 1,
         "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
@@ -291,60 +330,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_007df9b8",
       "severity": "mild",
       "text": "if (DAT_007df9b8 == 1) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(local_d0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(param_1,local_d0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar2 = param_1->model_name;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(local_d0,param_2);",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

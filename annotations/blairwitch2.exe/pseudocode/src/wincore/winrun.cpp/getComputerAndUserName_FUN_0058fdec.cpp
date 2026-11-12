@@ -1,12 +1,12 @@
 // Name: wincore_winrun.cpp_getComputerAndUserName_FUN_0058fdec
 // Address: 0058fdec
 // Address Range: [[0058fdec, 0058feb8]]
-// Convention: unknown
-// Signature: void wincore_winrun_cpp_getComputerAndUserName_FUN_0058fdec(char *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_0058fdec(char *buffer)
 
 #include "nocturne.h"
 
-void wincore_winrun_cpp_getComputerAndUserName_FUN_0058fdec(char *param_1)
+void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_0058fdec(char *buffer)
 
 {
   char cVar1;
@@ -14,13 +14,13 @@ void wincore_winrun_cpp_getComputerAndUserName_FUN_0058fdec(char *param_1)
   LPSTR lpBuffer;
   DWORD DStack_10;
   
-  memset(param_1,0,0x200);
-  lpBuffer = param_1 + 0x100;
+  memset(buffer,0,0x200);
+  lpBuffer = buffer + 0x100;
   DStack_10 = 0x100;
   GetComputerNameA(lpBuffer,&DStack_10);
   DStack_10 = 0x100;
-  GetUserNameA(param_1,&DStack_10);
-  if ((param_1[0x100] == '\0') &&
+  GetUserNameA(buffer,&DStack_10);
+  if ((buffer[0x100] == '\0') &&
      (pcVar2 = getenv("@COMPUTERNAME" + 1), pcVar2 != (char *)0x0)) {
     do {
       cVar1 = *pcVar2;
@@ -31,11 +31,11 @@ void wincore_winrun_cpp_getComputerAndUserName_FUN_0058fdec(char *param_1)
       lpBuffer[1] = cVar1;
       lpBuffer = lpBuffer + 2;
     } while (cVar1 != '\0');
-    if (*param_1 != '\0') {
+    if (*buffer != '\0') {
       return;
     }
   }
-  else if (*param_1 != '\0') {
+  else if (*buffer != '\0') {
     return;
   }
   pcVar2 = getenv("USERNAME");
@@ -44,14 +44,14 @@ void wincore_winrun_cpp_getComputerAndUserName_FUN_0058fdec(char *param_1)
   }
   do {
     cVar1 = *pcVar2;
-    *param_1 = cVar1;
+    *buffer = cVar1;
     if (cVar1 == '\0') {
       return;
     }
     cVar1 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
-    param_1[1] = cVar1;
-    param_1 = param_1 + 2;
+    buffer[1] = cVar1;
+    buffer = buffer + 2;
   } while (cVar1 != '\0');
   return;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_crossbow_cpp_factoryFuncCrossbow_FUN_0043a490(void)
+; CCrossbow * __cdecl core_crossbow_cpp_factoryFuncCrossbow_FUN_0043a490(void)
 ;
 ;
 ; Called Functions:

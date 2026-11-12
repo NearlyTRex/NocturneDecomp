@@ -34,24 +34,24 @@ section .text
     LEA EBX,[ESI + 0x10a60]             ; 0054a724
     PUSH EBX                            ; 0054a72a
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0054a72b
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0054a730
     PUSH 0x5e780f                       ; 0054a733 | = "modelName"
     LEA EBX,[ESI + 0x2b4]               ; 0054a738
     PUSH EBX                            ; 0054a73e
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0 ; 0054a73f
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0()
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0054a744
     PUSH 0x5e7819                       ; 0054a747 | = "guardDistance"
     ADD ESI,0x10afc                     ; 0054a74c
     PUSH ESI                            ; 0054a752
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0054a753
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0054a758
     PUSH 0x5e7827                       ; 0054a75b | = "motion state"
     PUSH EBX                            ; 0054a760
     CALL core_actor.cpp_archiveMotionState_FUN_0040bb60 ; 0054a761
-        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveMotionState_FUN_0040bb60()
+        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040bb60(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 0054a766
     POP ESI                             ; 0054a769
     POP EBX                             ; 0054a76a

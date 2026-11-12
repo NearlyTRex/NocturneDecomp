@@ -32,8 +32,8 @@
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005c2cac
 ;   crt_unknown.c_sprintf_FUN_005bfb40
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00496150
-;   shape_edittool.cpp_FUN_004943a0
 ;
 ; *****************************************************************************
 
@@ -132,8 +132,8 @@ section .text
     PUSH 0x5dbf2e                       ; 00495f29 | = "Please enter a valid number."
         ;   Label: LAB_00495f29
     PUSH EBX                            ; 00495f2e
-    CALL shape_edittool.cpp_FUN_004943a0 ; 00495f2f
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 00495f2f
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00495f34
     JMP 0x00495e9e                      ; 00495f37
         ;   XREF to: 00495e9e (UNCONDITIONAL_JUMP)  ; LAB_00495e9e
@@ -146,8 +146,8 @@ section .text
     FSTP double ptr [ESP]               ; 00495f4d
     PUSH 0x5dbf4b                       ; 00495f50 | = "Please enter a valid integer between ..."
     PUSH EBX                            ; 00495f55
-    CALL shape_edittool.cpp_FUN_004943a0 ; 00495f56
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 00495f56
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 00495f5b
     JMP 0x00495e9e                      ; 00495f5e
         ;   XREF to: 00495e9e (UNCONDITIONAL_JUMP)  ; LAB_00495e9e

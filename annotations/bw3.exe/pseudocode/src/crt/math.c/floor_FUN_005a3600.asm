@@ -17,10 +17,10 @@
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f3ac
 ;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421c90 at 00421d72
 ;   core_course.cpp_FUN_00444b70 at 00444d68
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_00477a10 at 00477a2d
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0 at 00477add
 ;   core_dtrace.cpp_FUN_00473cd0 at 00473d29
 ;   core_dtrace.cpp_FUN_00474400 at 00474484
-;   core_dtrace.cpp_FUN_00477a10 at 00477a2d
-;   core_dtrace.cpp_FUN_00477ac0 at 00477add
 ;   ... and 15 more
 ;
 ; Referenced Globals:

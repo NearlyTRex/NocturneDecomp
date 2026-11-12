@@ -97,9 +97,9 @@ void __cdecl drawString(char *text,int x_pos,int y_pos,int color);
 // Address: 00402140
 void __cdecl drawTextXY(int x,int y,char *text);
 
-// Original: engine_2d.c_FUN_00402160
+// Original: engine_2d.c_drawTextFormatted_FUN_00402160
 // Address: 00402160
-void FUN_00402160(int param_1,int param_2,undefined4 param_3);
+void __cdecl drawTextFormatted(int x,int y,char *format_string);
 
 // Original: engine_2d.c_drawTextColor_FUN_00402440
 // Address: 00402440
@@ -168,10 +168,6 @@ void draw320x200SizeDot(int param_1,int param_2,int param_3);
 // Original: engine_2d.c_computeOutcode_FUN_00402c60
 // Address: 00402c60
 int __cdecl computeOutcode(int x,int y,int x_min,int y_min,int x_max,int y_max);
-
-// Original: engine_2d.c_FUN_00402c9e
-// Address: 00402c9e
-void FUN_00402c9e(int param_1,int param_2,int param_3,int param_4);
 
 // Original: engine_2d.c_clipLineGlobal_FUN_00402ca0
 // Address: 00402ca0

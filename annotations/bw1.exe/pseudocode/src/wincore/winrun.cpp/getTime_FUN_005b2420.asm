@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int wincore_winrun_cpp_getTime_FUN_005b2420(void)
+; int __cdecl wincore_winrun_cpp_getTime_FUN_005b2420(void)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30

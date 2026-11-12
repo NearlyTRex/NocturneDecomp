@@ -46,7 +46,7 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 00560b63
     PUSH EAX                            ; 00560b69
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 00560b6a
-        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60()
+        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 00560b6f
     PUSH 0x5eb01e                       ; 00560b72 | = "spikeType"
     LEA EAX,[EBX + 0x430]               ; 00560b77
@@ -70,7 +70,7 @@ section .text
     LEA EAX,[EBX + 0x448]               ; 00560bb3
     PUSH EAX                            ; 00560bb9
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00560bba
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00560bbf
     PUSH 0x5eb04e                       ; 00560bc2 | = "startEvent"
     LEA EAX,[EBX + 0x44c]               ; 00560bc7
@@ -100,13 +100,13 @@ section .text
     LEA EAX,[EBX + 0x5dc]               ; 00560c17
     PUSH EAX                            ; 00560c1d
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00560c1e
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00560c23
     PUSH 0x5eb087                       ; 00560c26 | = "retractTime"
     LEA EAX,[EBX + 0x5e0]               ; 00560c2b
     PUSH EAX                            ; 00560c31
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00560c32
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00560c37
     PUSH 0x5eb093                       ; 00560c3a | = "extendSound"
     LEA EAX,[EBX + 0x5e8]               ; 00560c3f
@@ -124,19 +124,19 @@ section .text
     LEA EAX,[EBX + 0x6b0]               ; 00560c67
     PUSH EAX                            ; 00560c6d
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00560c6e
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00560c73
     PUSH 0x5eb0b3                       ; 00560c76 | = "damageStrength"
     LEA EAX,[EBX + 0x6b4]               ; 00560c7b
     PUSH EAX                            ; 00560c81
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00560c82
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00560c87
     PUSH 0x5eb0c2                       ; 00560c8a | = "param"
     ADD EBX,0x6b8                       ; 00560c8f
     PUSH EBX                            ; 00560c95
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00560c96
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00560c9b
     POP EBX                             ; 00560c9e
     RET                                 ; 00560c9f

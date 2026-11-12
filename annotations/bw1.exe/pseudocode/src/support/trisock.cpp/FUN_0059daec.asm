@@ -103,7 +103,7 @@ section .text
     LEA EAX,[ESP + 0x290]               ; 0059dbb2
     PUSH EAX                            ; 0059dbb9
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0059dbba
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0059dbbf
     CMP byte ptr [ESP + 0x2b8],0x0      ; 0059dbc2
     JNZ 0x0059dc7b                      ; 0059dbca

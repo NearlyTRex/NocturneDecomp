@@ -14,8 +14,7 @@ int __cdecl core_icepick_cpp_FUN_004f17e0(CIcePick *this_ptr)
 {
   CDemonActor *this_ptr_00;
   CDemonActor *pCVar1;
-  int iVar2;
-  byte bVar3;
+  byte bVar2;
   float afStackY_1048 [1015];
   float fStack_60;
   float fStack_5c;
@@ -35,7 +34,7 @@ int __cdecl core_icepick_cpp_FUN_004f17e0(CIcePick *this_ptr)
   int local_1c;
   float fStack_18;
   
-  bVar3 = 0;
+  bVar2 = 0;
   this_ptr->pending_pickup_target = (CDemonActor *)0x0;
   local_24 = 4.0;
   local_48 = 0x3f800000;
@@ -45,25 +44,25 @@ int __cdecl core_icepick_cpp_FUN_004f17e0(CIcePick *this_ptr)
   local_20 = 0;
   local_1c = 0;
   local_30 = local_3c;
-  *(uint *)((int)&stack0xffffffd4 + (uint)bVar3 * -8) =
-       *(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * 0xfffffffe * 4);
-  *(uint *)((int)&stack0xffffffd8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-       *(uint *)(&stack0xffffffcc + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+  *(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8) =
+       *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * 0xfffffffe * 4);
+  *(uint *)((int)&stack0xffffffd8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+       *(uint *)(&stack0xffffffcc + (uint)bVar2 * -8 + (uint)bVar2 * -8);
   for (; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
     this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c);
     pCVar1 = (*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
     if (pCVar1 == (CDemonActor *)0x0) {
-      iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600
-                        (this_ptr_00,g_CTommyGunClassInfo.name_hash);
-      if (iVar2 != 0) {
+      pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c600
+                         (this_ptr_00,g_CTommyGunClassInfo.name_hash);
+      if (pCVar1 != (CDemonActor *)0x0) {
         fStack_60 = (this_ptr_00->location).position.x - local_30;
         fStack_5c = (this_ptr_00->location).position.y - fStack_2c;
         fStack_58 = (this_ptr_00->location).position.z - local_28;
         fStack_54 = fStack_60;
-        *(uint *)((int)&stack0xffffffb0 + (uint)bVar3 * -8) =
-             *(uint *)((int)&stack0xffffffa4 + (uint)bVar3 * -8);
-        *(uint *)((int)&stack0xffffffb4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-             *(uint *)((int)&stack0xffffffa8 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+        *(uint *)((int)&stack0xffffffb0 + (uint)bVar2 * -8) =
+             *(uint *)((int)&stack0xffffffa4 + (uint)bVar2 * -8);
+        *(uint *)((int)&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+             *(uint *)((int)&stack0xffffffa8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
         if ((ABS(fStack_50) <= (float)_DAT_005e53c7) &&
            (fStack_18 = fStack_54 * fStack_54 + fStack_4c * fStack_4c, fStack_18 <= local_24)) {
           this_ptr->pending_pickup_target = this_ptr_00;

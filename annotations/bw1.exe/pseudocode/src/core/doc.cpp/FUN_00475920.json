@@ -173,7 +173,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = *(int *)(param_1[1].base.actor_name + 0x14);",
+      "text": "iVar8 = *(int *)(param_1[1].base.actor_name + 0x14);",
       "type": "unnamed_param"
     },
     {
@@ -213,7 +213,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "this_ptr = *(CDemonActor **)(param_1[2].flames[0x1a].on_event + 0x28);",
+      "text": "pCVar6 = *(CDemonActor **)(param_1[2].flames[0x1a].on_event + 0x28);",
       "type": "unnamed_param"
     },
     {
@@ -221,7 +221,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "this_ptr = param_1->carry_hands[1].carry_actor;",
+      "text": "pCVar6 = param_1->carry_hands[1].carry_actor;",
       "type": "unnamed_param"
     },
     {
@@ -229,7 +229,7 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar9 = *(int *)(param_1[2].flames[0x1a].on_event + 0x34) + 1;",
+      "text": "iVar10 = *(int *)(param_1[2].flames[0x1a].on_event + 0x34) + 1;",
       "type": "unnamed_param"
     },
     {
@@ -237,7 +237,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1[2].flames[0x1a].on_event + 0x34) = iVar9;",
+      "text": "*(int *)(param_1[2].flames[0x1a].on_event + 0x34) = iVar10;",
       "type": "unnamed_param"
     },
     {
@@ -253,7 +253,7 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1[2].flames[0x1a].on_event + 0x28),",
+      "text": "(*(CDemonActor **)(param_1[2].flames[0x1a].on_event + 0x28),",
       "type": "unnamed_param"
     },
     {
@@ -261,7 +261,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar6 = *(int *)(param_1[2].flames[0x1a].on_event + 0x34) + 0xc;",
+      "text": "uVar7 = *(int *)(param_1[2].flames[0x1a].on_event + 0x34) + 0xc;",
       "type": "unnamed_param"
     },
     {
@@ -285,7 +285,7 @@
       "line": 76,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = *(int *)(param_1[2].flames[0x1a].on_event + 0x34);",
+      "text": "iVar8 = *(int *)(param_1[2].flames[0x1a].on_event + 0x34);",
       "type": "unnamed_param"
     },
     {
@@ -309,7 +309,7 @@
       "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->layer_action_index = iVar7 + 0xc;",
+      "text": "param_1->layer_action_index = iVar8 + 0xc;",
       "type": "unnamed_param"
     },
     {
@@ -317,7 +317,7 @@
       "line": 88,
       "match": "9.80909e-45",
       "severity": "mild",
-      "text": "else if (this_ptr[2].orient.vec.x == 9.80909e-45) goto LAB_0047597e;",
+      "text": "else if (pCVar6[2].orient.vec.x == 9.80909e-45) goto LAB_0047597e;",
       "type": "suspect_float"
     },
     {
@@ -325,7 +325,7 @@
       "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);",
+      "text": "iVar8 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);",
       "type": "unnamed_param"
     },
     {
@@ -333,7 +333,7 @@
       "line": 97,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1[2].flames[0x18].on_event + 0x50) == 0) && (iVar7 == 0)) {",
+      "text": "if ((*(int *)(param_1[2].flames[0x18].on_event + 0x50) == 0) && (iVar8 == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -341,7 +341,7 @@
       "line": 98,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar8 = &param_1[2].flames[0x1a].globe.inverse_radius;",
+      "text": "pfVar9 = &param_1[2].flames[0x1a].globe.inverse_radius;",
       "type": "unnamed_param"
     },
     {
@@ -365,7 +365,7 @@
       "line": 105,
       "match": "2.8026e-45",
       "severity": "mild",
-      "text": "if ((pfVar3[7] == 2.8026e-45) && (pfVar8[7] != 2.8026e-45)) {",
+      "text": "if ((pfVar3[7] == 2.8026e-45) && (pfVar9[7] != 2.8026e-45)) {",
       "type": "suspect_float"
     },
     {
@@ -373,7 +373,7 @@
       "line": 105,
       "match": "2.8026e-45",
       "severity": "mild",
-      "text": "if ((pfVar3[7] == 2.8026e-45) && (pfVar8[7] != 2.8026e-45)) {",
+      "text": "if ((pfVar3[7] == 2.8026e-45) && (pfVar9[7] != 2.8026e-45)) {",
       "type": "suspect_float"
     },
     {
@@ -397,7 +397,7 @@
       "line": 110,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);",
+      "text": "iVar8 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);",
       "type": "unnamed_param"
     },
     {
@@ -405,7 +405,7 @@
       "line": 140,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar4 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,iVar7);",
+      "text": "fVar4 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(param_1,iVar8);",
       "type": "unnamed_param"
     },
     {
@@ -429,7 +429,7 @@
       "line": 143,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar7 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28),",
+      "text": "(iVar8 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28),",
       "type": "unnamed_param"
     },
     {
@@ -437,7 +437,7 @@
       "line": 144,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)(*(int *)(iVar7 + 0x154) + 0xe8))(iVar7), iVar7 != 0)) {",
+      "text": "iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0xe8))(iVar8), iVar8 != 0)) {",
       "type": "unresolved_funcptr"
     },
     {
@@ -445,7 +445,7 @@
       "line": 145,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);",
+      "text": "iVar8 = *(int *)(param_1[2].flames[0x1a].on_event + 0x28);",
       "type": "unnamed_param"
     },
     {
@@ -461,7 +461,7 @@
       "line": 151,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)(*(int *)(iVar7 + 0x154) + 0xe4))(iVar7);",
+      "text": "iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0xe4))(iVar8);",
       "type": "unresolved_funcptr"
     },
     {

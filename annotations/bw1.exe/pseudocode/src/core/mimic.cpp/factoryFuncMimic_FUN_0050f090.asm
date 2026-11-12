@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mimic_cpp_factoryFuncMimic_FUN_0050f090(void)
+; CMimic * __cdecl core_mimic_cpp_factoryFuncMimic_FUN_0050f090(void)
 ;
 ;
 ; Called Functions:

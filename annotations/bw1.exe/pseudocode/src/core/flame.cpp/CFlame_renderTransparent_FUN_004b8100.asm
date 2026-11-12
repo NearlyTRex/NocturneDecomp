@@ -43,11 +43,11 @@
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00483800
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
-;   engine_drender.cpp_FUN_00483b50
 ;   engine_drender.cpp_FUN_00483b70
 ;   ... and 3 more
 ;
@@ -156,8 +156,8 @@ section .text
     PUSH EAX                            ; 004b8209 | DAT_01bc120c
     LEA ESI,[ESP + 0xe4]                ; 004b820a
     LEA EDI,[ESP + 0x114]               ; 004b8211
-    CALL engine_drender.cpp_FUN_00483b50 ; 004b8218
-        ;   XREF to: 00483b50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483b50()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50 ; 004b8218
+        ;   XREF to: 00483b50 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0xe4]                ; 004b821d
     LEA EAX,[ESP + 0x114]               ; 004b8224
     ADD ESP,0x4                         ; 004b822b
@@ -184,8 +184,8 @@ section .text
     PUSH ECX                            ; 004b827b | DAT_01bc120c
     LEA ESI,[ESP + 0xa8]                ; 004b827c
     LEA EDI,[ESP + 0x114]               ; 004b8283
-    CALL engine_drender.cpp_FUN_00483b50 ; 004b828a
-        ;   XREF to: 00483b50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483b50()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50 ; 004b828a
+        ;   XREF to: 00483b50 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0xa8]                ; 004b828f
     ADD ESP,0x4                         ; 004b8296
     MOVSD ES:EDI,ESI                    ; 004b8299
@@ -629,7 +629,7 @@ section .text
     PUSH ECX                            ; 004b891a
     MOV dword ptr [ECX + 0x8],ESI       ; 004b891b
     CALL engine_matrix.c_projectTransformedPoint_FUN_00507b50 ; 004b891e
-        ;   XREF to: 00507b50 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectTransformedPoint_FUN_00507b50()
+        ;   XREF to: 00507b50 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectTransformedPoint_FUN_00507b50(SProjectedVertex * point)
     ADD ESP,0x4                         ; 004b8923
     MOV EDI,dword ptr [ESP + 0x154]     ; 004b8926
         ;   Label: LAB_004b8926

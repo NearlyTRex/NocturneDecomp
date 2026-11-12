@@ -67,7 +67,7 @@ section .text
     PUSH EDX                            ; 00442d45
     PUSH 0x146592c                      ; 00442d46
     CALL core_dcamera.cpp_sampleFogAlongRay_FUN_0043b1a0 ; 00442d4b
-        ;   XREF to: 0043b1a0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_sampleFogAlongRay_FUN_0043b1a0()
+        ;   XREF to: 0043b1a0 (UNCONDITIONAL_CALL)  ; uint core_dcamera.cpp_sampleFogAlongRay_FUN_0043b1a0(SFogGrid * fog_ptr, CVector3i * start_pos, CVector3i * end_pos, int ray_length)
     MOV EDX,EAX                         ; 00442d50
     SHL EAX,0x4                         ; 00442d52
     ADD EAX,EDX                         ; 00442d55

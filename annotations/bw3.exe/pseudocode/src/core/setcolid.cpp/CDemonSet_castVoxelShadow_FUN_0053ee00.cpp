@@ -31,7 +31,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_0053ee00(CDemonSet 
   if (&fStack_10 != afStack_40) {
     fStack_10 = afStack_40[0];
   }
-  core_dtrace_cpp_FUN_00477e60
+  core_dtrace_cpp_CDemonRaytrace_markShadowVoxels_FUN_00477e60
             (&g_CDemonRaytraceInstance,&(actor->location).position,&(actor->orient).vec,&CStack_1c,
              (CVector3f *)&fStack_10);
   core_path_cpp_resetAllPathMaps_FUN_0050cf60();

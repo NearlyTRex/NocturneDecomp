@@ -12,7 +12,7 @@ int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004b0d30(CBitFont *this_ptr,
   int iVar1;
   char acStack_1010 [4096];
   
-  _vsprintf(acStack_1010,format_string,args.value[0]);
+  _vsprintf(acStack_1010,format_string,args);
   iVar1 = engine_font_cpp_CBitFont_drawTextWrapper_FUN_004b0cb0
                     (this_ptr,x_pos,y_pos,color_mode,color_value,acStack_1010);
   return iVar1;

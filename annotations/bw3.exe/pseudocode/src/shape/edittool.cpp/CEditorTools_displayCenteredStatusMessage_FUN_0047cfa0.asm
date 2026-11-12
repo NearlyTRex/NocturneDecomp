@@ -74,7 +74,7 @@ section .text
     PUSH EAX                            ; 0047cffa
     XOR EDI,EDI                         ; 0047cffb
     CALL crt_stdio.c_vsprintf_FUN_005a2898 ; 0047cffd
-        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005a2898()
+        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005a2898(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047d002
     MOV dword ptr [ESP + 0x400],EDI     ; 0047d005
     CALL engine_special.cpp_clearScreen_FUN_00560d70 ; 0047d00c

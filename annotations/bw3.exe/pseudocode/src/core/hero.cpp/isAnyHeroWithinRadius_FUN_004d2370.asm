@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004d2370(float *param_1,float param_2)
+; int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004d2370(CVector3f *point,float radius)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   point
+; float            Stack[0x8]:4   radius
 ;
 ; XREF[2]:
 ;   core_fire.cpp_initProcess_FUN_0049de60 at 0049dec2

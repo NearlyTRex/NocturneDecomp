@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 393,
+    "complexity_score": 212,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 14,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
-    "suspect_count": 32,
+    "pseudocode_lines": 57,
+    "suspect_count": 15,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 234
+    "total_lines": 233
   },
   "cross_references": [
     {
@@ -52,7 +50,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archiveClothList_FUN_0040bf20",
-    "signature": "void __cdecl core_actor_cpp_archiveClothList_FUN_0040bf20(int *param_1,char *param_2)"
+    "signature": "void __cdecl core_actor_cpp_archiveClothList_FUN_0040bf20(CClothList *cloth_list,char *property_name)"
   },
   "function_calls": [
     {
@@ -221,10 +219,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.257352941176471,
@@ -254,31 +252,56 @@
     },
     "pcode_op_count": 579
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040bfd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0040bce0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040be60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040cf70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "cloth_list",
+        "offset": 4,
+        "size": 4,
+        "type": "CClothList *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveClothList_FUN_0040bf20(int *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveClothList_FUN_0040bf20(int *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 9,
@@ -288,19 +311,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005a3140(DAT_007df9b4,\"%s{ // %s\\n\",&DAT_005f0990,param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 10,
       "match": "DAT_007df9b4",
       "severity": "mild",
-      "text": "FUN_005a3140(DAT_007df9b4,\"%s{ // %s\\n\",&DAT_005f0990,param_2);",
+      "text": "FUN_005a3140(DAT_007df9b4,\"%s{ // %s\\n\",&DAT_005f0990,property_name);",
       "type": "undefined_data"
     },
     {
@@ -308,76 +323,44 @@
       "line": 10,
       "match": "DAT_005f0990",
       "severity": "mild",
-      "text": "FUN_005a3140(DAT_007df9b4,\"%s{ // %s\\n\",&DAT_005f0990,param_2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005a3140(DAT_007df9b4,\"%s%d // clothCount\\n\",&DAT_005f0990,*param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_007df9b4",
-      "severity": "mild",
-      "text": "FUN_005a3140(DAT_007df9b4,\"%s%d // clothCount\\n\",&DAT_005f0990,*param_1);",
+      "text": "FUN_005a3140(DAT_007df9b4,\"%s{ // %s\\n\",&DAT_005f0990,property_name);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005f0990",
-      "severity": "mild",
-      "text": "FUN_005a3140(DAT_007df9b4,\"%s%d // clothCount\\n\",&DAT_005f0990,*param_1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar3 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
       "match": "DAT_007df9b4",
       "severity": "mild",
-      "text": "FUN_005a3140(DAT_007df9b4,\"%s\\\"%s\\\"\\n\",&DAT_005f0990,piVar3);",
+      "text": "(DAT_007df9b4,\"%s%d // clothCount\\n\",&DAT_005f0990,cloth_list->count);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 14,
       "match": "DAT_005f0990",
       "severity": "mild",
-      "text": "FUN_005a3140(DAT_007df9b4,\"%s\\\"%s\\\"\\n\",&DAT_005f0990,piVar3);",
+      "text": "(DAT_007df9b4,\"%s%d // clothCount\\n\",&DAT_005f0990,cloth_list->count);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_007df9b4",
       "severity": "mild",
-      "text": "} while (iVar1 < *param_1);",
-      "type": "unnamed_param"
+      "text": "FUN_005a3140(DAT_007df9b4,\"%s\\\"%s\\\"\\n\",&DAT_005f0990,pacVar3);",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 19,
+      "match": "DAT_005f0990",
+      "severity": "mild",
+      "text": "FUN_005a3140(DAT_007df9b4,\"%s\\\"%s\\\"\\n\",&DAT_005f0990,pacVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
       "match": "DAT_007df9b4",
       "severity": "mild",
       "text": "FUN_005a3140(DAT_007df9b4,&DAT_005b5cdf,&DAT_005f0990);",
@@ -385,7 +368,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_005b5cdf",
       "severity": "mild",
       "text": "FUN_005a3140(DAT_007df9b4,&DAT_005b5cdf,&DAT_005f0990);",
@@ -393,7 +376,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_005f0990",
       "severity": "mild",
       "text": "FUN_005a3140(DAT_007df9b4,&DAT_005b5cdf,&DAT_005f0990);",
@@ -401,126 +384,43 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 28,
       "match": "DAT_007df9b4",
       "severity": "mild",
       "text": "iVar1 = _fgetc(DAT_007df9b4);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"Cloth list opening brace\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007df9b4,&DAT_005b5c66,param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_007df9b4",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007df9b4,&DAT_005b5c66,param_1);",
+      "text": "iVar1 = _fscanf(DAT_007df9b4,&DAT_005b5c66);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_005b5c66",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007df9b4,&DAT_005b5c66,param_1);",
+      "text": "iVar1 = _fscanf(DAT_007df9b4,&DAT_005b5c66);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_handleActorPropertyParseError_FUN_0040b2d0(\"cloth count\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveDescription_FUN_0040b350(\"clothCount\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar3 = param_1 + 1;",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 42,
       "match": "DAT_007df9b4",
       "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_007df9b4,\" \\\"%[^\\\"]\\\"\\n\",piVar3);",
+      "text": "iVar2 = _fscanf(DAT_007df9b4,\" \\\"%[^\\\"]\\\"\\n\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"cloth filename entry\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar1 < *param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 51,
       "match": "DAT_007df9b4",
       "severity": "mild",
       "text": "while (iVar1 = _fgetc(DAT_007df9b4), -1 < iVar1) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"Cloth list closing brace\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

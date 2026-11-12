@@ -151,8 +151,8 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004dc7e0(CGargoyle *this_pt
             afStack_f4[(uint)bVar9 * -2 + 0x12] = afStack_f4[(uint)bVar9 * -2 + 0xf];
             afStack_f4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x13] =
                  afStack_f4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x10];
-            fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                         (fStack_ac - (this_ptr->base).base.base.orient.vec.y);
+            fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                  (fStack_ac - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(fStack_14) < (float)_DAT_005e398c) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCStack_18,3,1);
             }
@@ -272,9 +272,8 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004dc7e0(CGargoyle *this_pt
                 afStack_70[(uint)bVar9 * -2 + 3] = afStack_70[(uint)bVar9 * -2 + 6];
                 afStack_70[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
                      afStack_70[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
-                fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                             (afStack_70[3] -
-                                              (this_ptr->base).base.base.orient.vec.y);
+                fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                      (afStack_70[3] - (this_ptr->base).base.base.orient.vec.y);
                 if (ABS(fStack_14) < (float)_DAT_005e398c) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                             (&(this_ptr->base).base.model.base,3,1);
@@ -367,7 +366,8 @@ LAB_004dcb6f:
     if (EVar2 < WALK_STATE_NO_PATH) goto LAB_004dc8ec;
     if (EVar2 != WALK_STATE_NO_PATH) goto LAB_004dcb6f;
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCStack_18,0,1);
-    engine_console_cpp_FUN_00445430(g_CConsolePtr,">%s confused while walking to scriptDest!\n" + 1,this_ptr);
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,">%s confused while walking to scriptDest!\n" + 1);
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

@@ -446,7 +446,7 @@ LAB_004ec75b:
       _DAT_0264bba0 = (uint)bVar11;
       if (bVar11) {
         engine_special_cpp_kill_FUN_0055f4d0();
-        engine_special_cpp_FUN_0055e8c0((HWND)0x0);
+        engine_special_cpp_loadExternalRenderer_FUN_0055e8c0((HWND)0x0);
         if (_DAT_0264bba0 != 0) {
           engine_special_cpp_buildCardList_FUN_005600e0
                     ((int *)&DAT_01d06a78,(char **)0x1d06a7c,(char **)&DAT_01d06abc,(int *)0x1d06afc

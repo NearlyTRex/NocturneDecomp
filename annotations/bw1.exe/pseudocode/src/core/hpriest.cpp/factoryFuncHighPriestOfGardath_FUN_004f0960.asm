@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004f0960(void)
+; CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004f0960(void)
 ;
 ;
 ; Called Functions:

@@ -19,11 +19,11 @@ int __cdecl FUN_004eb0e0(char **menu_text_array,int menu_count,int *selected_ind
 
 // Original: core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3ce
 // Address: 004eb3ce
-void showJoystickCalibrationScreen(undefined4 param_1);
+void showJoystickCalibrationScreen(char *param_1);
 
-// Original: core_menu.cpp_FUN_004eb490
+// Original: core_menu.cpp_calibrateGamepad_FUN_004eb490
 // Address: 004eb490
-int __cdecl FUN_004eb490(void);
+int __cdecl calibrateGamepad(void);
 
 // Original: core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0
 // Address: 004eb7c0
@@ -71,15 +71,15 @@ void __cdecl addCustomKeyBinding(int *key_code_ptr,char *key_name);
 
 // Original: core_menu.cpp_getKeyDisplayName_FUN_004ee960
 // Address: 004ee960
-char * __cdecl getKeyDisplayName(int param_1);
+char * __cdecl getKeyDisplayName(EInputCodeType key_code);
 
 // Original: core_menu.cpp_isKeyCodeValidForMode_FUN_004eeba0
 // Address: 004eeba0
 int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description);
 
-// Original: core_menu.cpp_FUN_004eece0
+// Original: core_menu.cpp_getSinglePressedKey_FUN_004eece0
 // Address: 004eece0
-int FUN_004eece0(void);
+int __cdecl getSinglePressedKey(void);
 
 // Original: core_menu.cpp_FUN_004eed60
 // Address: 004eed60

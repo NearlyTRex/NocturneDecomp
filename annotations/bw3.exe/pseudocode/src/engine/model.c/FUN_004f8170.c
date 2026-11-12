@@ -64,7 +64,7 @@ uint * engine_model_c_FUN_004f8170(int *param_1)
       puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
       puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
     }
-    engine_model_c_FUN_004f80f0(uVar4);
+    engine_model_c_freeMRGLData_FUN_004f80f0(uVar4);
     iVar6 = 0xd;
     puVar11 = auStack_110;
     puVar10 = &uStack_a8;

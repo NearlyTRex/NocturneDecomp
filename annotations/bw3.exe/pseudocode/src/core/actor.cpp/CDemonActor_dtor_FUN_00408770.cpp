@@ -12,7 +12,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408770(CDemonActor *
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDemonActorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDemonActorTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

@@ -58,7 +58,7 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_0056cde0(CTrap *this_ptr,float delt
     for (; (int)fVar9 < g_CDemonSetPtr->enemy_count; fVar9 = (float)((int)fVar9 + 1)) {
       pCVar3 = (CWerewolf *)
                core_actor_cpp_castToClassHash_FUN_0040c840
-                         (*(uint *)((int)g_CDemonSetPtr->enemies + iVar8),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar8),
                           g_CWerewolfClassInfo.name_hash);
       if ((pCVar3 != (CWerewolf *)0x0) && (pCVar3->chain_anchor == (CDemonActor *)0x0)) {
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_0053ed80((SCollisionInfo *)(auStack_b0 + 0x34));

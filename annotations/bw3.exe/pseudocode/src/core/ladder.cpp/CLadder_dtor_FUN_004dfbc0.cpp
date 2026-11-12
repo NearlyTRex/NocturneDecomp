@@ -13,7 +13,7 @@ CLadder * __cdecl core_ladder_cpp_CLadder_dtor_FUN_004dfbc0(CLadder *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CLadderTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CLadderTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

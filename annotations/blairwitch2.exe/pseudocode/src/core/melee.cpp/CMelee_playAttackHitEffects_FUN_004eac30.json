@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 23,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 83
   },
   "cross_references": [],
@@ -79,6 +81,32 @@
     },
     "pcode_op_count": 216
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005098d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9091
+    },
+    "bw3.exe": {
+      "addr": "004e7310",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9091
+    },
+    "nocedit.exe": {
+      "addr": "0050eb50",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cefe0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7167
+    }
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -116,7 +144,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Pointer value `pCVar1[0xe].particle_systems[3].owner` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 10,
+      "match": "(int)pCVar1[0xe].particle_systems[3].owner",
+      "severity": "moderate",
+      "text": "(this_ptr,0x14,(int)pCVar1[0xe].particle_systems[3].owner);",
+      "type": "pointer_truncation"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

@@ -24,7 +24,7 @@ section .text
     PUSH 0x61b3fc                       ; 0051bfe2
     MOV dword ptr [0x01e61644],EDX      ; 0051bfe7 | g_CDemonPodInstance.base.vtable
     CALL crt_stdlib.c__atexit_FUN_005b8d8c ; 0051bfed
-        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005b8d8c()
+        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005b8d8c(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0051bff2
     RET                                 ; 0051bff5
 

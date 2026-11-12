@@ -100,7 +100,7 @@ section .text
     PUSH EDI                            ; 004d5695
     PUSH EBX                            ; 004d5696
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004d5697
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d569c
     TEST EAX,EAX                        ; 004d569f
     JZ 0x004d5715                       ; 004d56a1

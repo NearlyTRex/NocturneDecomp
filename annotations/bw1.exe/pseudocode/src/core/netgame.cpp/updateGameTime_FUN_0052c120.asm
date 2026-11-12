@@ -16,7 +16,7 @@
 section .text
 
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0052c120
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005b2420()
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
         ;   Label: core_netgame.cpp_updateGameTime_FUN_0052c120
     MOV EDX,EAX                         ; 0052c125
     MOV ECX,0x12                        ; 0052c127

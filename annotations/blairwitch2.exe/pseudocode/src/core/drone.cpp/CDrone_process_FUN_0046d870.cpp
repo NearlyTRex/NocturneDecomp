@@ -129,7 +129,8 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0046d870(CDrone *this_ptr,float d
                            &(((this_ptr->base).victim)->base).location.position,path_map,
                            (CVector3f *)uVar10,SUB84(uVar10,4),in_stack_fffffec4);
         if (iVar4 < 0) {
-          engine_console_cpp_FUN_00436710();
+          engine_console_cpp_CConsole_printf_FUN_00436710
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,0,1);
         }
         else if ((0 < iVar4) && ((this_ptr->base).attack_cooldown <= 0.0)) {
@@ -225,7 +226,8 @@ LAB_0046db93:
     if (EVar2 < WALK_STATE_NO_PATH) goto LAB_0046d946;
     if (EVar2 != WALK_STATE_NO_PATH) goto LAB_0046db93;
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,0,1);
-    engine_console_cpp_FUN_00436710();
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

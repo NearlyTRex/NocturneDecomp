@@ -11,6 +11,7 @@
     "importable":true,
     "name":"core_chain.cpp_FUN_00436eae",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -29,6 +30,7 @@
     "importable":true,
     "name":"shape_edittool.cpp_FUN_004985ae",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -47,6 +49,7 @@
     "importable":true,
     "name":"shape_edittool.cpp_FUN_004987ae",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -65,6 +68,7 @@
     "importable":true,
     "name":"core_flashlit.cpp_FUN_004ba62e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -83,6 +87,7 @@
     "importable":true,
     "name":"core_flashlit.cpp_FUN_004ba6ae",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -101,6 +106,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_0051102e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -119,6 +125,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_00517f2e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -137,6 +144,7 @@
     "importable":true,
     "name":"core_mirror.cpp_FUN_00519cae",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -155,6 +163,7 @@
     "importable":true,
     "name":"core_motion.cpp_FUN_00523e2e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -170,12 +179,38 @@
         "start":"0052c32e"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_netgame.cpp_allocSimFrame_FUN_0052c32e",
-    "ret":"undefined1",
+    "ret":"SSimFrame*",
     "vars":{
+      "params":[
+        {
+          "name":"sequence_number",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -188,12 +223,70 @@
         "start":"0053692e"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_pendulum.cpp_didPhaseCross_FUN_0053692e",
-    "ret":"undefined1",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"threshold",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"old_phase",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"new_phase",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -209,6 +302,7 @@
     "importable":true,
     "name":"cockpit_pkbmpset.cpp_FUN_00538b2e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -227,6 +321,7 @@
     "importable":true,
     "name":"sound_sndmain.cpp_FUN_00573eae",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -308,6 +403,7 @@
     "importable":true,
     "name":"crt_advapi32.c_RegOpenKeyExA",
     "ret":"LSTATUS",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000004",
     "thunk":true,
     "vars":{
@@ -418,6 +514,7 @@
     "importable":true,
     "name":"crt_kernel32.c_CreateFileA",
     "ret":"HANDLE",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000004e",
     "thunk":true,
     "vars":{
@@ -560,6 +657,7 @@
     "importable":true,
     "name":"crt_kernel32.c_InitializeCriticalSection",
     "ret":"void",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000080",
     "thunk":true,
     "vars":{

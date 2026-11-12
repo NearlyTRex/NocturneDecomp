@@ -14,7 +14,7 @@ CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_dtor_FUN_0043ae70(CCrossbow *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CCrossbowTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CCrossbowTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

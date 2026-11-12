@@ -2,14 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 155,
+    "complexity_score": 225,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 10,
+    "suspect_count": 16,
     "suspect_types": [
+      "stack_param",
+      "stack_ref",
       "undefined_data",
       "unnamed_param",
       "unrolled_memcpy"
@@ -77,6 +79,32 @@
     },
     "pcode_op_count": 254
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00407c40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00407a70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00407cf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4965
+    },
+    "nocturne.exe": {
+      "addr": "00409210",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -134,6 +162,22 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_ffffff38",
+      "severity": "moderate",
+      "text": "SRenderVertex in_stack_ffffff38;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_ffffff68",
+      "severity": "moderate",
+      "text": "SRenderVertex in_stack_ffffff68;",
+      "type": "stack_param"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 13,
       "match": "param_1",
@@ -164,6 +208,38 @@
       "severity": "mild",
       "text": "puVar2 = &DAT_0060b014 + param_2 * 0xc;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 28,
+      "match": "&stack0xffffff68",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xffffff68;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xffffff38",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xffffff38;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_ffffff38",
+      "severity": "moderate",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407b30(in_stack_ffffff38,in_stack_ffffff68);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_ffffff68",
+      "severity": "moderate",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407b30(in_stack_ffffff38,in_stack_ffffff68);",
+      "type": "stack_param"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

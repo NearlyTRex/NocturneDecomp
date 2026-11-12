@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01ec1518
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00477ac0
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0
 ;   core_main.c_FUN_004e4330
 ;   core_path.cpp_CPathMap_renderPathMap_FUN_0050c980
 ;
@@ -36,8 +36,8 @@ section .text
     PUSH 0x203b37c                      ; 0050d060
     LEA ESI,[ESP + 0x14]                ; 0050d065
     LEA EDI,[ESP + 0x8]                 ; 0050d069
-    CALL core_dtrace.cpp_FUN_00477ac0   ; 0050d06d
-        ;   XREF to: 00477ac0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00477ac0()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0 ; 0050d06d
+        ;   XREF to: 00477ac0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0x14]                ; 0050d072
     ADD ESP,0x8                         ; 0050d076
     MOVSD ES:EDI,ESI                    ; 0050d079

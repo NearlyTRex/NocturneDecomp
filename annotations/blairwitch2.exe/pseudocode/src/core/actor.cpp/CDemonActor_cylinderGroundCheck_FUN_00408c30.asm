@@ -70,7 +70,7 @@ section .text
     PUSH EDX                            ; 00408c9d
     FSTP float ptr [ESP + 0x8]          ; 00408c9e
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 00408ca2
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00408ca7
     MOV dword ptr [ESI + 0xdc],EAX      ; 00408caa
     TEST EBX,EBX                        ; 00408cb0

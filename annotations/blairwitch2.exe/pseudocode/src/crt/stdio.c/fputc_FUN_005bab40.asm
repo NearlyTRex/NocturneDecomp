@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_fputc_FUN_005bab40(uint param_1,int *param_2)
+; int __cdecl crt_stdio_c_fputc_FUN_005bab40(int character,_FILE *file)
 ;
+; Parameters:
+; int              Stack[0x4]:4   character
+; _FILE *          Stack[0x8]:4   file
 ;
 ; XREF[11]:
-;   core_game.cpp_FUN_004b2a50 at 004b2cbe
 ;   core_game.cpp_FUN_004b5190 at 004b5f25
+;   core_game.cpp_captureDebugMovieFrame_FUN_004b2a50 at 004b2cbe
 ;   crt_stdio.c_fwrite_FUN_005b9690 at 005b984e
 ;   crt_unknown.c_FUN_005bccf0 at 005bccfe
 ;   crt_unknown.c_FUN_005c5760 at 005c57a2

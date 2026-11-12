@@ -14,7 +14,7 @@ CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004cb760(CGabriella *
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CGabriellaTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CGabriellaTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

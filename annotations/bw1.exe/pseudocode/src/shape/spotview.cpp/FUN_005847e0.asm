@@ -11,8 +11,8 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dirmat.cpp_FUN_0045f690
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
+;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
-;   engine_drender.cpp_FUN_004839b0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     MOV EDX,dword ptr [0x00612560]      ; 005847ed | DAT_00612560
     PUSH 0x41e00000                     ; 005847f3
     PUSH EDX                            ; 005847f8
-    CALL engine_drender.cpp_FUN_004839b0 ; 005847f9
-        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_004839b0()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0 ; 005847f9
+        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 005847fe
     MOV EAX,dword ptr [EBX + 0x24]      ; 00584801
     XOR ECX,ECX                         ; 00584804

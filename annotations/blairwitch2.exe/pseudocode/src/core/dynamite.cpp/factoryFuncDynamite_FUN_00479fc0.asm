@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dynamite_cpp_factoryFuncDynamite_FUN_00479fc0(void)
+; CDynamite * __cdecl core_dynamite_cpp_factoryFuncDynamite_FUN_00479fc0(void)
 ;
 ;
 ; Called Functions:

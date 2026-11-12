@@ -45,7 +45,7 @@
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
-;   engine_font.cpp_FUN_004aaf00
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   shape_edittool.cpp_calculateButtonHeight_FUN_00485380
 ;   shape_edittool.cpp_calculateButtonWidth_FUN_004852f0
 ;   shape_edittool.cpp_calculateGridHeight_FUN_00484df0
@@ -129,8 +129,8 @@ section .text
     PUSH EAX                            ; 00482abf
     MOV EAX,[0x01c25590]                ; 00482ac0 | DAT_01c25590
     PUSH EAX                            ; 00482ac5
-    CALL engine_font.cpp_FUN_004aaf00   ; 00482ac6
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 00482ac6
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     MOV EDX,dword ptr [ESI + 0x10]      ; 00482acb
     ADD ESP,0x8                         ; 00482ace
     CMP EAX,EDX                         ; 00482ad1
@@ -415,7 +415,7 @@ section .text
     PUSH 0x0                            ; 00482e86
         ;   Label: LAB_00482e86
     CALL shape_edittool.cpp_calculateButtonHeight_FUN_00485380 ; 00482e88
-        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_calculateButtonHeight_FUN_00485380()
+        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_00485380(char * button_text)
     ADD ESP,0x4                         ; 00482e8d
     MOV EDX,dword ptr [ESP + 0x148]     ; 00482e90
     MOV ECX,dword ptr [ESP + 0x12c]     ; 00482e97

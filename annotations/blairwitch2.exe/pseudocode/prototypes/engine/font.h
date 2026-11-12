@@ -81,13 +81,13 @@ int __cdecl CBitFont::drawTextFV(CBitFont *this_ptr,int x_pos,int y_pos,int colo
 // Address: 004a91a0
 int __cdecl CBitFont::drawTextRight(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 
-// Original: engine_font.cpp_FUN_004a91e0
+// Original: engine_font.cpp_CBitFont_printF_FUN_004a91e0
 // Address: 004a91e0
-void FUN_004a91e0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void __cdecl CBitFont::printF(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format);
 
-// Original: engine_font.cpp_FUN_004a9230
+// Original: engine_font.cpp_CBitFont_printFV_FUN_004a9230
 // Address: 004a9230
-void FUN_004a9230(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6 ,undefined4 param_7);
+void __cdecl CBitFont::printFV(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format,va_list_t args);
 
 // Original: engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0
 // Address: 004a92a0
@@ -145,9 +145,9 @@ void FUN_004a97a0(int param_1);
 // Address: 004a9870
 int __cdecl FUN_004a9870(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value);
 
-// Original: engine_font.cpp_FUN_004aaf00
+// Original: engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 // Address: 004aaf00
-int FUN_004aaf00(int param_1,byte *param_2);
+int __cdecl CBitFont::getTextWidth(CBitFont *this_ptr,char *text);
 
 // Original: engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0
 // Address: 004aafb0
@@ -155,7 +155,7 @@ int __cdecl CBitFont::getTextHeight(CBitFont *this_ptr,char *text_string);
 
 // Original: engine_font.cpp_FUN_004ab090
 // Address: 004ab090
-undefined4 FUN_004ab090(undefined4 param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7);
+undefined4 FUN_004ab090(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7);
 
 // Original: engine_font.cpp_FUN_004ab2b0
 // Address: 004ab2b0
@@ -163,7 +163,7 @@ int FUN_004ab2b0(undefined4 param_1,int param_2,void *param_3,int param_4,int pa
 
 // Original: engine_font.cpp_FUN_004ab35e
 // Address: 004ab35e
-int FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
+int FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
 
 // Original: engine_font.cpp_CBitFont_getCharWidth_FUN_004ab530
 // Address: 004ab530

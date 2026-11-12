@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046f9a6(void)
+; void __edi_esi_ebx core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046f9a6(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 ;
 ;
 ; XREF[13]:

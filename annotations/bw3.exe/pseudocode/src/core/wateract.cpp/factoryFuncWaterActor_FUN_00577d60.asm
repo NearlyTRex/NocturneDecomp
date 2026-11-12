@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_wateract_cpp_factoryFuncWaterActor_FUN_00577d60(void)
+; CWaterActor * __cdecl core_wateract_cpp_factoryFuncWaterActor_FUN_00577d60(void)
 ;
 ;
 ; Called Functions:

@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_werewolf.cpp_factoryFuncWerewolf_FUN_0058b750
 // Address: 0058b750
-void factoryFuncWerewolf(void);
+CWerewolf * __cdecl factoryFuncWerewolf(void);
 
 // Original: core_werewolf.cpp_CWerewolf_getActorType_FUN_0058b770
 // Address: 0058b770

@@ -12,8 +12,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920
   int iVar1;
   char local_74 [100];
   
-  cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5320(this_ptr);
-  cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5290(this_ptr);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_004f5320(this_ptr);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_004f5290(this_ptr);
   cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_004f5350(this_ptr,(end_index - start_index) + 1);
   if (start_index <= end_index) {
     iVar1 = 0;
@@ -26,6 +26,6 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_004f5920
       iVar1 = iVar1 + 0x24;
     } while (start_index <= end_index);
   }
-  cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f52c0(this_ptr);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_004f52c0(this_ptr);
   return;
 }

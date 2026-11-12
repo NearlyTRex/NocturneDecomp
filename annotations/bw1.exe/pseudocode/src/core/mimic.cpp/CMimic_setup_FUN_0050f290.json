@@ -430,6 +430,26 @@
     },
     "pcode_op_count": 1271
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f04f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9946
+    },
+    "nocedit.exe": {
+      "addr": "0051f3e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9272
+    },
+    "nocturne.exe": {
+      "addr": "004d4650",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -481,7 +501,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
+      "line": 17,
       "match": "auStackY_1010",
       "severity": "moderate",
       "text": "uint auStackY_1010 [1014];",
@@ -492,7 +512,7 @@
       "line": 114,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar10 * -8) = *puVar9;",
+      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8) = *puVar8;",
       "type": "stack_ref"
     },
     {
@@ -500,7 +520,7 @@
       "line": 115,
       "match": "&stack0xffffffec",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar10 * -8 + (uint)bVar10 * -8) =",
+      "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -508,7 +528,7 @@
       "line": 120,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar10 * -8) = *puVar9;",
+      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar9 * -8) = *puVar8;",
       "type": "stack_ref"
     },
     {
@@ -516,7 +536,7 @@
       "line": 121,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =",
+      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -524,7 +544,7 @@
       "line": 126,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "*puVar9 = *(uint *)(&stack0xffffffe8 + (uint)bVar10 * -8);",
+      "text": "*puVar8 = *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
@@ -532,7 +552,7 @@
       "line": 128,
       "match": "&stack0xffffffec",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar10 * -8 + (uint)bVar10 * -8);",
+      "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
@@ -540,7 +560,7 @@
       "line": 132,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "*puVar9 = *(uint *)(&stack0xffffffdc + (uint)bVar10 * -8);",
+      "text": "*puVar8 = *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
@@ -548,7 +568,7 @@
       "line": 134,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar10 * -8 + (uint)bVar10 * -8);",
+      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
@@ -556,7 +576,7 @@
       "line": 111,
       "match": "(int)&pSVar4->vertices[2].vertex_index",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar7);",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
       "type": "pointer_truncation"
     },
     {
@@ -564,7 +584,7 @@
       "line": 117,
       "match": "(int)&pSVar4->vertices[0].vertex_index",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar7);",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
       "type": "pointer_truncation"
     },
     {
@@ -572,7 +592,7 @@
       "line": 123,
       "match": "(int)&pSVar4->vertices[0].vertex_index",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar7);",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
       "type": "pointer_truncation"
     },
     {
@@ -580,7 +600,7 @@
       "line": 129,
       "match": "(int)&pSVar4->vertices[2].vertex_index",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar7);",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
       "type": "pointer_truncation"
     },
     {
@@ -588,7 +608,7 @@
       "line": 101,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&(pSVar3->position).x + iVar7) =",
+      "text": "*(float *)((int)&(pSVar3->position).x + iVar6) =",
       "type": "pointer_cast"
     },
     {
@@ -596,7 +616,7 @@
       "line": 102,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "-*(float *)((int)&(pSVar3->position).x + iVar7);",
+      "text": "-*(float *)((int)&(pSVar3->position).x + iVar6);",
       "type": "pointer_cast"
     },
     {
@@ -604,7 +624,7 @@
       "line": 111,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar7);",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
       "type": "pointer_cast"
     },
     {
@@ -612,7 +632,7 @@
       "line": 117,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar7);",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
       "type": "pointer_cast"
     },
     {
@@ -620,7 +640,7 @@
       "line": 123,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar7);",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
       "type": "pointer_cast"
     },
     {
@@ -628,7 +648,7 @@
       "line": 129,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar7);",
+      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
       "type": "pointer_cast"
     }
   ],

@@ -51,7 +51,7 @@ section .text
     MOV ESI,dword ptr [0x007df9b4]      ; 0040b8c6 | DAT_007df9b4
     PUSH ESI                            ; 0040b8cc
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 0040b8cd
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b8d2
     CMP EAX,0x1                         ; 0040b8d5
     JNZ 0x0040b8f0                      ; 0040b8d8

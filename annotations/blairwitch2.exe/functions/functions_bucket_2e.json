@@ -11,6 +11,7 @@
     "importable":true,
     "name":"cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_0042cc2e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -29,6 +30,7 @@
     "importable":true,
     "name":"engine_clipper.c_clipPolygonLeftPlane_FUN_00430cae",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -47,6 +49,7 @@
     "importable":true,
     "name":"engine_clipper.c_clipPolygonBottomPlane_FUN_00430f2e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -65,6 +68,7 @@
     "importable":true,
     "name":"core_dcube.cpp_FUN_00445a2e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -83,6 +87,7 @@
     "importable":true,
     "name":"core_dimage.cpp_FUN_0044902e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -98,12 +103,54 @@
         "start":"00461f2e"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_dpart.cpp_FUN_00461f2e",
-    "ret":"undefined1",
+    "name":"core_dpart.cpp_findEdgeByYStart_FUN_00461f2e",
+    "ret":"SSoftwareEdge*",
     "vars":{
+      "params":[
+        {
+          "name":"scanline_y",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"exclude_edge",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -119,6 +166,7 @@
     "importable":true,
     "name":"shape_edittool.cpp_FUN_0047a92e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -137,6 +185,7 @@
     "importable":true,
     "name":"core_enemy.cpp_FUN_00488aae",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -155,6 +204,7 @@
     "importable":true,
     "name":"engine_matrix.c_transformWorldToView_FUN_004e8d2e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -173,6 +223,7 @@
     "importable":true,
     "name":"engine_matrix.c_FUN_004ea72e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -191,6 +242,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_004f242e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -209,6 +261,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_004f4bae",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -227,6 +280,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_004f8eae",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -245,6 +299,7 @@
     "importable":true,
     "name":"core_sound.cpp_FUN_00559aae",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -263,6 +318,7 @@
     "importable":true,
     "name":"support_trisock.cpp_FUN_0057ac2e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -282,6 +338,7 @@
     "importable":true,
     "name":"crt_advapi32.c_GetUserNameA",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000001",
     "thunk":true,
     "vars":{
@@ -344,6 +401,7 @@
     "importable":true,
     "name":"crt_winmm.c_waveInOpen",
     "ret":"MMRESULT",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000020",
     "thunk":true,
     "vars":{

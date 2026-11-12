@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 911,
-    "complexity_score": 624,
+    "complexity_score": 626,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 289,
+    "pseudocode_lines": 291,
     "suspect_count": 31,
     "suspect_types": [
       "extra_output",
@@ -16,7 +16,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1200
+    "total_lines": 1202
   },
   "cross_references": [
     {
@@ -386,6 +386,20 @@
     },
     "pcode_op_count": 3922
   },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "00500690",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3431
+    },
+    "nocturne.exe": {
+      "addr": "004c2470",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3431
+    }
+  },
   "stack_frame": {
     "frame_size": 1416,
     "local_size": 1412,
@@ -647,7 +661,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 10,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "uint extraout_ECX;",
@@ -655,7 +669,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 11,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "uint extraout_EDX;",
@@ -663,7 +677,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 51,
+      "line": 52,
       "match": "*(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
       "severity": "moderate",
       "text": "if (this_ptr->owner != *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04)) {",
@@ -671,7 +685,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if (DAT_005fba1c != _DAT_01d70a34) {",
@@ -679,7 +693,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 67,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
@@ -687,7 +701,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 76,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
@@ -695,15 +709,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 89,
       "match": "DAT_005c661d",
       "severity": "mild",
-      "text": "pcVar7 = &DAT_005c661d;",
+      "text": "pcVar8 = &DAT_005c661d;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 93,
       "match": "DAT_005c6617",
       "severity": "mild",
       "text": "_sprintf(local_164,&DAT_005c6617);",
@@ -711,7 +725,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 96,
       "match": "DAT_005c661a",
       "severity": "mild",
       "text": "_sprintf(local_164,&DAT_005c661a);",
@@ -719,39 +733,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 107,
       "match": "DAT_005fba18",
       "severity": "mild",
-      "text": "(local_44,local_164,(DAT_005fba18 - iVar5) - iVar2,(DAT_005fba1c - iVar5) - local_14,",
+      "text": "(local_44,local_164,(DAT_005fba18 - iVar6) - iVar2,(DAT_005fba1c - iVar6) - local_14,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 107,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "(local_44,local_164,(DAT_005fba18 - iVar5) - iVar2,(DAT_005fba1c - iVar5) - local_14,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 126,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "iVar3 = (DAT_005fba1c - iVar3) + iVar5;",
+      "text": "(local_44,local_164,(DAT_005fba18 - iVar6) - iVar2,(DAT_005fba1c - iVar6) - local_14,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 127,
-      "match": "DAT_005fba18",
+      "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "local_20 = (DAT_005fba18 - iVar4) + iVar5;",
+      "text": "iVar4 = (DAT_005fba1c - iVar4) + iVar6;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 145,
+      "line": 128,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "local_20 = (DAT_005fba18 - iVar5) + iVar6;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 146,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if ((DAT_005fba1c < 0x180) && (this_ptr->render_mode_flag == 0)) {",
@@ -759,39 +773,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 159,
       "match": "DAT_005fba18",
       "severity": "mild",
-      "text": "(local_44,local_364,(DAT_005fba18 - iVar5) - iVar2,",
+      "text": "(local_44,local_364,(DAT_005fba18 - iVar6) - iVar2,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 160,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "(DAT_005fba1c - iVar5) - (int)local_60,0xf8);",
+      "text": "(DAT_005fba1c - iVar6) - (int)local_60,0xf8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 168,
+      "line": 170,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "iVar3 = (DAT_005fba1c - iVar3) + iVar5;",
+      "text": "iVar4 = (DAT_005fba1c - iVar4) + iVar6;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 169,
+      "line": 171,
       "match": "DAT_005fba18",
       "severity": "mild",
-      "text": "local_30 = (DAT_005fba18 - iVar4) + iVar5;",
+      "text": "local_30 = (DAT_005fba18 - iVar5) + iVar6;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 202,
+      "line": 204,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if (DAT_005fba1c < 0x180) {",
@@ -799,31 +813,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 208,
+      "line": 210,
       "match": "DAT_005fba18",
       "severity": "mild",
-      "text": "iVar4 = (DAT_005fba18 + -4) - local_5c;",
+      "text": "iVar5 = (DAT_005fba18 + -4) - local_5c;",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 222,
+      "line": 224,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "(&CAlphaBitmap_01d708b8,iVar4,local_64 + 4,0,local_64,extraout_ECX);",
+      "text": "(&CAlphaBitmap_01d708b8,iVar5,local_64 + 4,0,local_64,extraout_ECX);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 227,
+      "line": 229,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "(&CAlphaBitmap_01d70890,iVar4,local_64 + 4,0,local_64,extraout_EDX);",
+      "text": "(&CAlphaBitmap_01d70890,iVar5,local_64 + 4,0,local_64,extraout_EDX);",
       "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
-      "line": 235,
+      "line": 237,
       "match": "DAT_005c6640",
       "severity": "mild",
       "text": "_sprintf(local_464,&DAT_005c6640);",
@@ -831,7 +845,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 238,
+      "line": 240,
       "match": "DAT_005c6643",
       "severity": "mild",
       "text": "_sprintf(local_464,&DAT_005c6643);",
@@ -839,7 +853,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 241,
+      "line": 243,
       "match": "DAT_005c6645",
       "severity": "mild",
       "text": "_sprintf(local_464,&DAT_005c6645);",
@@ -847,7 +861,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 255,
+      "line": 257,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if (DAT_005fba1c < 0x180) {",
@@ -855,34 +869,34 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 261,
+      "line": 263,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "iVar3 = (DAT_005fba1c + -4) - local_2c * iVar3;",
+      "text": "iVar4 = (DAT_005fba1c + -4) - local_2c * iVar4;",
       "type": "undefined_data"
     },
     {
-      "description": "Raw hex address 0x1d5be88 assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 130,
+      "description": "Raw hex address 0x1d5be88 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 131,
       "match": "0x1d5be88",
       "severity": "moderate",
-      "text": "iVar5 = 0x1d5be88;",
+      "text": "iVar6 = 0x1d5be88;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x1d5c888 assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 172,
+      "description": "Raw hex address 0x1d5c888 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 174,
       "match": "0x1d5c888",
       "severity": "moderate",
-      "text": "iVar5 = 0x1d5c888;",
+      "text": "iVar6 = 0x1d5c888;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x1d5d288 assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 263,
+      "description": "Raw hex address 0x1d5d288 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 265,
       "match": "0x1d5d288",
       "severity": "moderate",
-      "text": "iVar5 = 0x1d5d288;",
+      "text": "iVar6 = 0x1d5d288;",
       "type": "raw_address_constant"
     }
   ]

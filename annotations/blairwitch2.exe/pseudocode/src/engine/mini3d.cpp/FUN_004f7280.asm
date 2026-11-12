@@ -423,7 +423,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004f7701
     PUSH EAX                            ; 004f7705
     CALL engine_special.cpp_drawPolygon_FUN_0055f8f0 ; 004f7706
-        ;   XREF to: 0055f8f0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon_FUN_0055f8f0()
+        ;   XREF to: 0055f8f0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_0055f8f0(SRenderVertex * vertices, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 004f770b
     ADD ESP,0xa4                        ; 004f770e
         ;   Label: LAB_004f770e
@@ -708,7 +708,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x9c]      ; 004f7a1c
     MOV ESI,EBP                         ; 004f7a23
     CALL engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3 ; 004f7a25
-        ;   XREF to: 0055d0b3 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3()
+        ;   XREF to: 0055d0b3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x004f78c3                      ; 004f7a2a
         ;   XREF to: 004f78c3 (UNCONDITIONAL_JUMP)  ; LAB_004f78c3
     MOV EDI,dword ptr [ESP + 0xa0]      ; 004f7a2f
@@ -716,7 +716,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x9c]      ; 004f7a36
     MOV ESI,EBP                         ; 004f7a3d
     CALL engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9 ; 004f7a3f
-        ;   XREF to: 0055d2e9 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9()
+        ;   XREF to: 0055d2e9 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x004f78c3                      ; 004f7a44
         ;   XREF to: 004f78c3 (UNCONDITIONAL_JUMP)  ; LAB_004f78c3
 

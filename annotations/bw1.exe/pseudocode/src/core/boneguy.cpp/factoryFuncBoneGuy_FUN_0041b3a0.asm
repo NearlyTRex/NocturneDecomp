@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boneguy_cpp_factoryFuncBoneGuy_FUN_0041b3a0(void)
+; CBoneGuy * __cdecl core_boneguy_cpp_factoryFuncBoneGuy_FUN_0041b3a0(void)
 ;
 ;
 ; Called Functions:

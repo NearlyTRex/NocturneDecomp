@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 465,
-    "complexity_score": 689,
+    "complexity_score": 680,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 214,
-    "suspect_count": 42,
+    "pseudocode_lines": 215,
+    "suspect_count": 41,
     "suspect_types": [
       "bit_int_float_compare",
       "pointer_cast",
@@ -22,7 +22,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 679
+    "total_lines": 680
   },
   "cross_references": [],
   "function": {
@@ -92,7 +92,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     }
   ],
   "globals": [
@@ -374,16 +374,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_console_cpp_FUN_00445430(g_CConsolePtr,\"%s has no guard trigger!\\n\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 79,
       "match": "in_stack_fffffe10",
       "severity": "moderate",
       "text": "(*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,in_stack_fffffe10);",
@@ -391,7 +383,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_FUN_00408b40((param_1->model).rest_bone_scales[0x45],pfVar4);",
@@ -399,7 +391,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 118,
       "match": "param_1",
       "severity": "mild",
       "text": "pfStack_20 = (param_1->model).rest_bone_scales + 0x46;",
@@ -407,7 +399,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 121,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "pCVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_18);",
@@ -415,7 +407,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
+      "line": 132,
       "match": "in_stack_fffffe18",
       "severity": "moderate",
       "text": "in_stack_fffffe18 = (CDemonActor *)&fStack_1e4;",
@@ -423,7 +415,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 134,
+      "line": 135,
       "match": "8.282354e-39",
       "severity": "mild",
       "text": "fStack_1e4 = 8.282354e-39;",
@@ -431,7 +423,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 136,
       "match": "in_stack_fffffe24",
       "severity": "moderate",
       "text": "(*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,in_stack_fffffe24);",
@@ -439,7 +431,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 143,
+      "line": 144,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_ac._4_4_ = fStack_12c + *unaff_retaddr;",
@@ -447,7 +439,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 144,
+      "line": 145,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_ac._8_4_ = fStack_128 + unaff_retaddr[1];",
@@ -455,7 +447,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 161,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_1cc = (float)auStack_ac._0_4_;",
@@ -463,7 +455,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 168,
+      "line": 169,
       "match": "in_stack_fffffe24",
       "severity": "moderate",
       "text": "in_stack_fffffe24 = (CBoundingBox3D *)(param_1->model).rest_bone_scales[0x45];",
@@ -471,7 +463,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 168,
+      "line": 169,
       "match": "param_1",
       "severity": "mild",
       "text": "in_stack_fffffe24 = (CBoundingBox3D *)(param_1->model).rest_bone_scales[0x45];",
@@ -479,7 +471,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 183,
+      "line": 184,
       "match": "in_stack_fffffe24",
       "severity": "moderate",
       "text": "in_stack_fffffe24 = (CBoundingBox3D *)0x5a31d1;",
@@ -487,16 +479,8 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 209,
+      "line": 210,
       "match": "param_1",
-      "severity": "mild",
-      "text": "core_turret_cpp_CTurret_aimAtTarget_FUN_005a3350((CTurret *)param_1,&CStack_e0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 209,
-      "match": "param_2",
       "severity": "mild",
       "text": "core_turret_cpp_CTurret_aimAtTarget_FUN_005a3350((CTurret *)param_1,&CStack_e0,param_2);",
       "type": "unnamed_param"
@@ -504,6 +488,14 @@
     {
       "description": "Unnamed function parameter",
       "line": 210,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_turret_cpp_CTurret_aimAtTarget_FUN_005a3350((CTurret *)param_1,&CStack_e0,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 211,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->model).bone_origins[0x1c].x <= 0.0) {",
@@ -511,7 +503,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 211,
+      "line": 212,
       "match": "in_stack_fffffe18",
       "severity": "moderate",
       "text": "(*(((param_1->base).vtable._uc)->_uc).isGrabbable)(param_1,in_stack_fffffe18);",
@@ -519,7 +511,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 211,
+      "line": 212,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(((param_1->base).vtable._uc)->_uc).isGrabbable)(param_1,in_stack_fffffe18);",
@@ -527,7 +519,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 211,
+      "line": 212,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(((param_1->base).vtable._uc)->_uc).isGrabbable)(param_1,in_stack_fffffe18);",
@@ -535,7 +527,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 213,
+      "line": 214,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->model).bone_transform.pose_data.bone_rotations[6].x = 1.0;",
@@ -543,7 +535,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 216,
+      "line": 217,
       "match": "param_1",
       "severity": "mild",
       "text": "core_turret_cpp_CTurret_updatePatrol_FUN_005a3650((CTurret *)param_1,param_2);",
@@ -551,7 +543,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 216,
+      "line": 217,
       "match": "param_2",
       "severity": "mild",
       "text": "core_turret_cpp_CTurret_updatePatrol_FUN_005a3650((CTurret *)param_1,param_2);",
@@ -559,7 +551,7 @@
     },
     {
       "description": "Pointer value `&CStack_e0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 180,
+      "line": 181,
       "match": "(int)&CStack_e0",
       "severity": "moderate",
       "text": "afStack_50[(uint)bVar8 * -2] = *(float *)((int)&CStack_e0 + (uint)bVar8 * -8);",
@@ -567,7 +559,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 82,
+      "line": 83,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -575,7 +567,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 138,
+      "line": 139,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -583,7 +575,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 180,
+      "line": 181,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "afStack_50[(uint)bVar8 * -2] = *(float *)((int)&CStack_e0 + (uint)bVar8 * -8);",
@@ -591,7 +583,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c60001 is the IEEE 754 bit pattern of 99f. Rewrite in a .keep as a plain float compare against 99f.",
-      "line": 208,
+      "line": 209,
       "match": "(int)afStack_5c[1] < 0x42c60001",
       "severity": "moderate",
       "text": "if ((int)afStack_5c[1] < 0x42c60001) {",

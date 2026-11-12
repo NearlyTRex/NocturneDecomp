@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shotgun_cpp_factoryFuncShotgun_FUN_00561590(void)
+; CShotgun * __cdecl core_shotgun_cpp_factoryFuncShotgun_FUN_00561590(void)
 ;
 ;
 ; Called Functions:

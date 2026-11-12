@@ -15,11 +15,11 @@ float FUN_00468a20(undefined4 param_1,undefined4 param_2,float param_3,int param
 
 // Original: core_doc.cpp_FUN_00468a90
 // Address: 00468a90
-undefined4 FUN_00468a90(int param_1);
+undefined4 FUN_00468a90(CDemonActor *param_1);
 
 // Original: core_doc.cpp_FUN_00468b80
 // Address: 00468b80
-float FUN_00468b80(undefined4 param_1);
+float FUN_00468b80(CDemonActor *param_1);
 
 // Original: core_doc.cpp_factoryFuncDoc_FUN_00468c50
 // Address: 00468c50
@@ -43,15 +43,15 @@ void __cdecl CDoc::process(CDoc *this_ptr,float delta_time);
 
 // Original: core_doc.cpp_FUN_00469550
 // Address: 00469550
-void FUN_00469550(CHero *param_1,float param_2);
+void FUN_00469550(CDoc *param_1,float param_2);
 
 // Original: core_doc.cpp_FUN_0046bde0
 // Address: 0046bde0
 void FUN_0046bde0(CHero *param_1,float param_2);
 
-// Original: core_doc.cpp_FUN_0046c980
+// Original: core_doc.cpp_CDoc_getCarryLightIntensity_FUN_0046c980
 // Address: 0046c980
-undefined4 FUN_0046c980(int param_1);
+float __cdecl CDoc::getCarryLightIntensity(CDoc *this_ptr);
 
 // Original: core_doc.cpp_FUN_0046c9e0
 // Address: 0046c9e0
@@ -87,7 +87,7 @@ void FUN_0046f610(int param_1,int param_2);
 
 // Original: core_doc.cpp_FUN_0046f740
 // Address: 0046f740
-float * FUN_0046f740(CCharacter *param_1,int param_2,int param_3);
+float * FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int param_3);
 
 // Original: core_doc.cpp_FUN_00470750
 // Address: 00470750
@@ -137,9 +137,9 @@ void FUN_00473160(CDemonActor *param_1);
 // Address: 004737b0
 void __cdecl CDoc::processDamage(CDoc *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_doc.cpp_FUN_00473c10
+// Original: core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_00473c10
 // Address: 00473c10
-void FUN_00473c10(CCharacter *param_1,float param_2,int param_3);
+void __cdecl CDoc::updateArmRecoilBlend(CDoc *this_ptr,float delta_time,int is_weapon_active);
 
 // Original: core_doc.cpp_CDoc_getCarryObjToBodyXForm_FUN_00474250
 // Address: 00474250

@@ -33,6 +33,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0046d330
   if (DAT_007e3e88 < 3) {
     return;
   }
-  core_asgaya_cpp_FUN_005a23c0(&DAT_007e3e8c,DAT_007e3e88,scanline_renderer);
+  core_asgaya_cpp_rasterizePolygonCustom_FUN_005a23c0
+            ((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88,scanline_renderer);
   return;
 }

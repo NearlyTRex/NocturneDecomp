@@ -18,7 +18,7 @@ CDog * core_helldog_cpp_CDog_dtor_FUN_005abd30(CDog *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDogTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDogTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

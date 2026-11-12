@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1392,
-    "complexity_score": 2526,
+    "complexity_score": 2137,
     "cross_reference_count": 1,
     "function_call_count": 30,
     "global_count": 79,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 466,
-    "suspect_count": 201,
+    "pseudocode_lines": 457,
+    "suspect_count": 163,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -21,7 +21,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1858
+    "total_lines": 1849
   },
   "cross_references": [
     {
@@ -63,7 +63,7 @@
     {
       "addr": "00473b20",
       "is_variadic": false,
-      "name": "core_dtrace.cpp_FUN_00473b20"
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00473b20"
     },
     {
       "addr": "004e0000",
@@ -96,14 +96,14 @@
       "name": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0"
     },
     {
+      "addr": "00540be0",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00540be0"
+    },
+    {
       "addr": "005412b0",
       "is_variadic": false,
       "name": "core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_005412b0"
-    },
-    {
-      "addr": "00540be0",
-      "is_variadic": false,
-      "name": "core_setdir.cpp_FUN_00540be0"
     },
     {
       "addr": "00541b70",
@@ -996,7 +996,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_clear_FUN_00532b30(param_1);",
@@ -1004,7 +1004,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_2",
       "severity": "mild",
       "text": "p_Var5 = engine_dosio_cpp_FUN_004659c0(\"models\",param_2,&DAT_005d012d);",
@@ -1012,7 +1012,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 46,
       "match": "DAT_005d012d",
       "severity": "mild",
       "text": "p_Var5 = engine_dosio_cpp_FUN_004659c0(\"models\",param_2,&DAT_005d012d);",
@@ -1020,87 +1020,63 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
       "text": "core_main_c_FUN_004e4330(\"CDemonSet::Unable to open %s\",param_2);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0164,&param_1->set_file_version);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 52,
       "match": "DAT_005d0164",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0164,&param_1->set_file_version);",
+      "text": "_fscanf(p_Var5,&DAT_005d0164);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_005d0168",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0168,&param_1->set_scale_factor);",
-      "type": "unnamed_param"
+      "text": "_fscanf(p_Var5,&DAT_005d0168);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_005d016c",
+      "severity": "mild",
+      "text": "_fscanf(p_Var5,&DAT_005d016c);",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 55,
-      "match": "DAT_005d0168",
+      "match": "DAT_005d0170",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0168,&param_1->set_scale_factor);",
+      "text": "_fscanf(p_Var5,&DAT_005d0170);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 56,
-      "match": "DAT_005d016c",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d016c,local_330);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_005d0170",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0170,local_130);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0174,&param_1->min_ambient_value);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
       "match": "DAT_005d0174",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0174,&param_1->min_ambient_value);",
+      "text": "_fscanf(p_Var5,&DAT_005d0174);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar11 = &param_1->directional_light_dir;",
+      "text": "pCVar8 = &param_1->directional_light_dir;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 0x1e) {",
@@ -1108,7 +1084,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directional_light_dir).x = -1.0;",
@@ -1116,7 +1092,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directional_light_dir).y = -1.0;",
@@ -1124,7 +1100,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directional_light_dir).z = -1.0;",
@@ -1132,7 +1108,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = (param_1->directional_light_dir).y;",
@@ -1140,7 +1116,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = (param_1->directional_light_dir).z;",
@@ -1148,7 +1124,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directional_light_dir).z = 0.0;",
@@ -1156,7 +1132,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directional_light_dir).y = (param_1->directional_light_dir).z;",
@@ -1164,7 +1140,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directional_light_dir).y = (param_1->directional_light_dir).z;",
@@ -1172,15 +1148,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar11->x = (param_1->directional_light_dir).y;",
+      "text": "pCVar8->x = (param_1->directional_light_dir).y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->directional_light_intensity = 0.0;",
@@ -1188,7 +1164,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directional_light_dir).y = (param_1->directional_light_dir).y * fVar1;",
@@ -1196,7 +1172,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directional_light_dir).y = (param_1->directional_light_dir).y * fVar1;",
@@ -1204,7 +1180,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directional_light_dir).z = (param_1->directional_light_dir).z * fVar1;",
@@ -1212,7 +1188,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directional_light_dir).z = (param_1->directional_light_dir).z * fVar1;",
@@ -1220,7 +1196,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->directional_light_intensity = 0.0;",
@@ -1231,36 +1207,12 @@
       "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%f,%f,%f,%f\\n\",pCVar11,&(param_1->directional_light_dir).y,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&(param_1->directional_light_dir).z,&param_1->directional_light_intensity);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&(param_1->directional_light_dir).z,&param_1->directional_light_intensity);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
-      "severity": "mild",
       "text": "if (param_1->set_file_version == 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 0x11) {",
@@ -1268,71 +1220,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%d,%d,%d,%d\\n\",local_4c,&param_1->scene_fog,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&(param_1->scene_fog).color_index.g,&(param_1->scene_fog).color_index.b);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&(param_1->scene_fog).color_index.g,&(param_1->scene_fog).color_index.b);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%f,%f,%f\\n\",&(param_1->scene_fog).scroll,&(param_1->scene_fog).scroll.y,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%f,%f,%f\\n\",&(param_1->scene_fog).scroll,&(param_1->scene_fog).scroll.y,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&(param_1->scene_fog).scroll.z);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%f,%f,%f,%f\\n\",&(param_1->scene_fog).height_threshold,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "&(param_1->scene_fog).density_multiplier,local_4c,local_4c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->scene_fog).temperature = 50.0;",
@@ -1340,7 +1228,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->scene_fog,p_Var5,param_1->set_file_version);",
@@ -1348,7 +1236,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
       "text": "(&param_1->scene_fog,p_Var5,param_1->set_file_version);",
@@ -1356,7 +1244,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 0x1f) {",
@@ -1364,63 +1252,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 102,
       "match": "DAT_00606b28",
       "severity": "mild",
       "text": "DAT_00606b28 = 0x2000;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_00606b24",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%f,%d,%f,%f\\n\",&DAT_00606b24,&DAT_00606b28,&DAT_02cfd960,&DAT_02cfd964);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_00606b28",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%f,%d,%f,%f\\n\",&DAT_00606b24,&DAT_00606b28,&DAT_02cfd960,&DAT_02cfd964);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_02cfd960",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%f,%d,%f,%f\\n\",&DAT_00606b24,&DAT_00606b28,&DAT_02cfd960,&DAT_02cfd964);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_02cfd964",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%f,%d,%f,%f\\n\",&DAT_00606b24,&DAT_00606b28,&DAT_02cfd960,&DAT_02cfd964);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 118,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%d,%s\\n\",&param_1->use_enviro_model,param_1->enviro_model_name);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 118,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%d,%s\\n\",&param_1->use_enviro_model,param_1->enviro_model_name);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 5) {",
@@ -1428,7 +1268,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 114,
       "match": "DAT_005d01c8",
       "severity": "mild",
       "text": "iVar6 = _strnicmp(local_130,&DAT_005d01c8,4);",
@@ -1436,15 +1276,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 130,
+      "line": 124,
       "match": "DAT_005d01c4",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d01c4,g_CWaterPtr);",
+      "text": "_fscanf(p_Var5,&DAT_005d01c4);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 126,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 6) {",
@@ -1452,31 +1292,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 127,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->has_sky = 1;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 137,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d01cd,&param_1->has_sky);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 137,
+      "line": 131,
       "match": "DAT_005d01cd",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d01cd,&param_1->has_sky);",
+      "text": "_fscanf(p_Var5,&DAT_005d01cd);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 139,
+      "line": 133,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar4 = param_1->sky_texture_name;",
@@ -1484,7 +1316,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 140,
+      "line": 134,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 0xc) {",
@@ -1492,7 +1324,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 151,
+      "line": 145,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->sky_brightness = 0x4000;",
@@ -1500,15 +1332,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 154,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%d,%s\\n\",&param_1->sky_brightness,pcVar4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 156,
+      "line": 150,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar4 = param_1->world_geometry_name;",
@@ -1516,7 +1340,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 151,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 0xd) {",
@@ -1524,15 +1348,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 152,
       "match": "DAT_005d01eb",
       "severity": "mild",
-      "text": "pcVar9 = &DAT_005d01eb;",
+      "text": "pcVar10 = &DAT_005d01eb;",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 159,
+      "line": 153,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->use_world_geometry_flag = 0;",
@@ -1540,15 +1364,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 172,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,\"%d,%s\\n\",&param_1->use_world_geometry_flag,pcVar4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 168,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 0x19) {",
@@ -1556,31 +1372,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 175,
+      "line": 169,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->weather_type = WEATHER_TYPE_NONE;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 179,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d01f0,&param_1->weather_type);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 179,
+      "line": 173,
       "match": "DAT_005d01f0",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d01f0,&param_1->weather_type);",
+      "text": "_fscanf(p_Var5,&DAT_005d01f0);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 181,
+      "line": 175,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 0x1d) {",
@@ -1588,31 +1396,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 182,
+      "line": 176,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->altitude_reference_y = 0.0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 186,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d01f4,&param_1->altitude_reference_y);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 186,
+      "line": 180,
       "match": "DAT_005d01f4",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d01f4,&param_1->altitude_reference_y);",
+      "text": "_fscanf(p_Var5,&DAT_005d01f4);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 192,
+      "line": 186,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->player_on_train = 1;",
@@ -1620,7 +1420,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 197,
+      "line": 191,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->player_on_train = 0;",
@@ -1628,31 +1428,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 199,
+      "line": 193,
       "match": "param_1",
       "severity": "mild",
       "text": "if (10 < param_1->set_file_version) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 202,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d01fe,&param_1->light_count);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 202,
+      "line": 196,
       "match": "DAT_005d01fe",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d01fe,&param_1->light_count);",
+      "text": "_fscanf(p_Var5,&DAT_005d01fe);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 204,
+      "line": 198,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->light_count) {",
@@ -1660,7 +1452,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 205,
+      "line": 199,
       "match": "param_1",
       "severity": "mild",
       "text": "this_ptr_00 = param_1->lights;",
@@ -1668,7 +1460,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 210,
+      "line": 204,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar6 < param_1->light_count);",
@@ -1676,31 +1468,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 212,
+      "line": 206,
       "match": "param_1",
       "severity": "mild",
       "text": "if (10 < param_1->set_file_version) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 215,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0202,param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 215,
+      "line": 209,
       "match": "DAT_005d0202",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0202,param_1);",
+      "text": "_fscanf(p_Var5,&DAT_005d0202);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 217,
+      "line": 211,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->camera_count) {",
@@ -1708,15 +1492,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 218,
+      "line": 212,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar8 = param_1->cameras;",
+      "text": "pCVar9 = param_1->cameras;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 223,
+      "line": 217,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar6 < param_1->camera_count);",
@@ -1724,7 +1508,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 225,
+      "line": 219,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 1) {",
@@ -1732,7 +1516,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 226,
+      "line": 220,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->default_room_size = 0;",
@@ -1740,7 +1524,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 229,
+      "line": 223,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->default_room_size = 2;",
@@ -1748,7 +1532,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 231,
+      "line": 225,
       "match": "DAT_005d0236",
       "severity": "mild",
       "text": "iVar6 = _strnicmp(local_130,&DAT_005d0236,4);",
@@ -1756,7 +1540,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 233,
+      "line": 227,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->default_room_size = 0;",
@@ -1764,7 +1548,31 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 231,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->default_room_size = 3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 235,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->default_room_size = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 237,
+      "match": "DAT_005d0248",
+      "severity": "mild",
+      "text": "iVar6 = _strnicmp(local_130,&DAT_005d0248,4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 239,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->default_room_size = 3;",
@@ -1775,68 +1583,28 @@
       "line": 241,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->default_room_size = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 243,
-      "match": "DAT_005d0248",
-      "severity": "mild",
-      "text": "iVar6 = _strnicmp(local_130,&DAT_005d0248,4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 245,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->default_room_size = 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 247,
-      "match": "param_1",
-      "severity": "mild",
       "text": "param_1->room_count = 0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 251,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0206,&param_1->default_room_size);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 251,
+      "line": 245,
       "match": "DAT_005d0206",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0206,&param_1->default_room_size);",
+      "text": "_fscanf(p_Var5,&DAT_005d0206);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 252,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d020a,&param_1->room_count);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 252,
+      "line": 246,
       "match": "DAT_005d020a",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d020a,&param_1->room_count);",
+      "text": "_fscanf(p_Var5,&DAT_005d020a);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 254,
+      "line": 248,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->room_count) {",
@@ -1844,7 +1612,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 255,
+      "line": 249,
       "match": "param_1",
       "severity": "mild",
       "text": "local_44 = param_1->rooms;",
@@ -1852,7 +1620,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 256,
+      "line": 250,
       "match": "param_1",
       "severity": "mild",
       "text": "local_14 = &param_1->rooms[0].reverb_size;",
@@ -1860,7 +1628,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 257,
+      "line": 251,
       "match": "param_1",
       "severity": "mild",
       "text": "local_34 = &param_1->rooms[0].rotation_matrix;",
@@ -1868,7 +1636,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 258,
+      "line": 252,
       "match": "param_1",
       "severity": "mild",
       "text": "local_18 = &param_1->rooms[0].extents;",
@@ -1876,7 +1644,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 259,
+      "line": 253,
       "match": "param_1",
       "severity": "mild",
       "text": "local_2c = &param_1->rooms[0].extents.y;",
@@ -1884,7 +1652,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 260,
+      "line": 254,
       "match": "param_1",
       "severity": "mild",
       "text": "local_30 = &param_1->rooms[0].extents.z;",
@@ -1892,31 +1660,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 261,
+      "line": 255,
       "match": "param_1",
       "severity": "mild",
       "text": "local_24 = &param_1->rooms[0].position.z;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 262,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar10 = &param_1->rooms[0].position.y;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 269,
+      "line": 261,
       "match": "DAT_005d022c",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d022c,local_14);",
+      "text": "_fscanf(p_Var5,&DAT_005d022c);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 272,
+      "line": 264,
       "match": "(CMatrix3x3f *)((int)(local_34 + 1) +",
       "severity": "moderate",
       "text": "local_34 = (CMatrix3x3f *)((int)(local_34 + 1) + 0x20);",
@@ -1924,7 +1684,7 @@
     },
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 273,
+      "line": 265,
       "match": "(CVector3f *)((int)(local_18 + 5) +",
       "severity": "moderate",
       "text": "local_18 = (CVector3f *)((int)(local_18 + 5) + 8);",
@@ -1932,7 +1692,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 277,
+      "line": 269,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar6 < param_1->room_count);",
@@ -1940,7 +1700,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 280,
+      "line": 272,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 3) {",
@@ -1948,7 +1708,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 281,
+      "line": 273,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->default_ground_type = 2;",
@@ -1956,7 +1716,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 284,
+      "line": 276,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->default_ground_type = 8;",
@@ -1964,7 +1724,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 286,
+      "line": 278,
       "match": "DAT_005d0257",
       "severity": "mild",
       "text": "iVar6 = _strnicmp(local_130,&DAT_005d0257,4);",
@@ -1972,10 +1732,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 288,
+      "line": 280,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->default_ground_type = 3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 284,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->default_ground_type = 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 288,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->default_ground_type = 7;",
       "type": "unnamed_param"
     },
     {
@@ -1987,24 +1763,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 296,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->default_ground_type = 7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 300,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->default_ground_type = 2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 302,
+      "line": 294,
       "match": "DAT_005d0270",
       "severity": "mild",
       "text": "iVar6 = _strnicmp(local_130,&DAT_005d0270,4);",
@@ -2012,31 +1772,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 304,
+      "line": 296,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->default_ground_type = 8;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 309,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d024d,&param_1->default_ground_type);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 309,
+      "line": 301,
       "match": "DAT_005d024d",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d024d,&param_1->default_ground_type);",
+      "text": "_fscanf(p_Var5,&DAT_005d024d);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 311,
+      "line": 303,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 0x18) {",
@@ -2044,31 +1796,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 312,
+      "line": 304,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->default_master_reverb = 0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 316,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0275,&param_1->default_master_reverb);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 316,
+      "line": 308,
       "match": "DAT_005d0275",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0275,&param_1->default_master_reverb);",
+      "text": "_fscanf(p_Var5,&DAT_005d0275);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 318,
+      "line": 310,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((3 < param_1->set_file_version) && (param_1->set_file_version < 10)) {",
@@ -2076,7 +1820,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 318,
+      "line": 310,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((3 < param_1->set_file_version) && (param_1->set_file_version < 10)) {",
@@ -2084,7 +1828,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 319,
+      "line": 311,
       "match": "param_1",
       "severity": "mild",
       "text": "core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_005412b0(param_1,p_Var5);",
@@ -2092,7 +1836,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 321,
+      "line": 313,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version < 5) {",
@@ -2100,31 +1844,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 322,
+      "line": 314,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->vdir_box_count = 0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 326,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0279,&param_1->vdir_box_count);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 326,
+      "line": 318,
       "match": "DAT_005d0279",
       "severity": "mild",
-      "text": "_fscanf(p_Var5,&DAT_005d0279,&param_1->vdir_box_count);",
+      "text": "_fscanf(p_Var5,&DAT_005d0279);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 328,
+      "line": 320,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->vdir_box_count) {",
@@ -2132,7 +1868,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 329,
+      "line": 321,
       "match": "param_1",
       "severity": "mild",
       "text": "local_40 = param_1->vdir_boxes;",
@@ -2140,7 +1876,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 330,
+      "line": 322,
       "match": "param_1",
       "severity": "mild",
       "text": "local_20 = &param_1->vdir_boxes[0].rotation_matrix;",
@@ -2148,7 +1884,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 331,
+      "line": 323,
       "match": "param_1",
       "severity": "mild",
       "text": "local_28 = &param_1->vdir_boxes[0].extents.y;",
@@ -2156,7 +1892,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 332,
+      "line": 324,
       "match": "param_1",
       "severity": "mild",
       "text": "local_1c = &param_1->vdir_boxes[0].extents.z;",
@@ -2164,7 +1900,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 333,
+      "line": 325,
       "match": "param_1",
       "severity": "mild",
       "text": "local_3c = &param_1->vdir_boxes[0].position.y;",
@@ -2172,31 +1908,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 334,
+      "line": 326,
       "match": "param_1",
       "severity": "mild",
       "text": "local_38 = &param_1->vdir_boxes[0].position.z;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 335,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar11 = &param_1->vdir_boxes[0].extents;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 342,
-      "match": "(CVector3f *)((int)(pCVar11 + 5) +",
-      "severity": "moderate",
-      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 5) + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 343,
+      "line": 333,
       "match": "(CMatrix3x3f *)((int)(local_20 + 1) +",
       "severity": "moderate",
       "text": "local_20 = (CMatrix3x3f *)((int)(local_20 + 1) + 0x20);",
@@ -2204,7 +1924,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 348,
+      "line": 338,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar6 < param_1->vdir_box_count);",
@@ -2212,7 +1932,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 350,
+      "line": 340,
       "match": "param_1",
       "severity": "mild",
       "text": "core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0(param_1);",
@@ -2220,7 +1940,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 352,
+      "line": 342,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->set_file_version == 0xe) {",
@@ -2228,7 +1948,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 356,
+      "line": 346,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0x13 < param_1->set_file_version) {",
@@ -2236,7 +1956,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 359,
+      "line": 349,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->camera_count) {",
@@ -2244,15 +1964,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 360,
+      "line": 350,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar8 = param_1->cameras;",
+      "text": "pCVar9 = param_1->cameras;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 365,
+      "line": 355,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar6 < param_1->camera_count);",
@@ -2260,7 +1980,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 372,
+      "line": 362,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar4 = param_1->geometry_filename;",
@@ -2268,7 +1988,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 375,
+      "line": 365,
       "match": "param_1",
       "severity": "mild",
       "text": "core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_0053ef40(param_1);",
@@ -2276,7 +1996,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 389,
+      "line": 379,
       "match": "DAT_005d02b3",
       "severity": "mild",
       "text": "p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005d02b3,pcVar4,&DAT_005d02b0);",
@@ -2284,7 +2004,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 389,
+      "line": 379,
       "match": "DAT_005d02b0",
       "severity": "mild",
       "text": "p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005d02b3,pcVar4,&DAT_005d02b0);",
@@ -2292,15 +2012,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 407,
+      "line": 398,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar9 = param_1->geometry_filename;",
+      "text": "pcVar10 = param_1->geometry_filename;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 441,
+      "line": 432,
       "match": "DAT_005d02ee",
       "severity": "mild",
       "text": "pcVar4 = &DAT_005d02ee;",
@@ -2308,15 +2028,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 451,
+      "line": 442,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_setdir_cpp_FUN_00540be0(param_1,local_cc);",
+      "text": "core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00540be0(param_1,local_cc);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 452,
+      "line": 443,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->use_enviro_model != 0) {",
@@ -2324,7 +2044,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 454,
+      "line": 445,
       "match": "param_1",
       "severity": "mild",
       "text": "(&g_CKeyFramedModelInstance,param_1->enviro_model_name);",
@@ -2332,7 +2052,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 457,
+      "line": 448,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar7 = param_1;",
@@ -2340,7 +2060,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 458,
+      "line": 449,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->camera_count) {",
@@ -2348,7 +2068,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 460,
+      "line": 451,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = param_1->min_ambient_value;",
@@ -2356,7 +2076,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 466,
+      "line": 457,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar6 < param_1->camera_count);",
@@ -2364,7 +2084,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 469,
+      "line": 460,
       "match": "param_1",
       "severity": "mild",
       "text": "return param_1;",
@@ -2372,7 +2092,7 @@
     },
     {
       "description": "Pointer value `(local_34 + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 272,
+      "line": 264,
       "match": "(int)(local_34 + 1)",
       "severity": "moderate",
       "text": "local_34 = (CMatrix3x3f *)((int)(local_34 + 1) + 0x20);",
@@ -2380,23 +2100,15 @@
     },
     {
       "description": "Pointer value `(local_18 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 273,
+      "line": 265,
       "match": "(int)(local_18 + 5)",
       "severity": "moderate",
       "text": "local_18 = (CVector3f *)((int)(local_18 + 5) + 8);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `(pCVar11 + 5)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 342,
-      "match": "(int)(pCVar11 + 5)",
-      "severity": "moderate",
-      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 5) + 8);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Pointer value `(local_20 + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 343,
+      "line": 333,
       "match": "(int)(local_20 + 1)",
       "severity": "moderate",
       "text": "local_20 = (CMatrix3x3f *)((int)(local_20 + 1) + 0x20);",
@@ -2404,7 +2116,7 @@
     },
     {
       "description": "Raw hex address 0x2cfd8b8 assigned to bare local `this_ptr`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 190,
+      "line": 184,
       "match": "0x2cfd8b8",
       "severity": "moderate",
       "text": "this_ptr = 0x02CFD8B8;",
@@ -2412,7 +2124,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 142,
+      "line": 136,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2420,7 +2132,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 160,
+      "line": 154,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2428,7 +2140,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 380,
+      "line": 370,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2436,7 +2148,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 408,
+      "line": 399,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2444,23 +2156,15 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 442,
+      "line": 433,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pfVar10` was initialized to the address of an array element's subfield (`pfVar10 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar10)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar10->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 268,
-      "match": "pfVar10 = pfVar10 + N",
-      "severity": "moderate",
-      "text": "pfVar10 = pfVar10 + 0x11;",
-      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_14` was initialized to the address of an array element's subfield (`local_14 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_14)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_14->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 271,
+      "line": 263,
       "match": "local_14 = local_14 + N",
       "severity": "moderate",
       "text": "local_14 = local_14 + 0x11;",
@@ -2468,7 +2172,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_34` self-updates via element-arithmetic `(int)(local_34 + N) + M`, where `N*sizeof(*local_34) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_34->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 272,
+      "line": 264,
       "match": "local_34 = (T *)((int)(local_34 + N) + M)",
       "severity": "moderate",
       "text": "local_34 = (CMatrix3x3f *)((int)(local_34 + 1) + 0x20);",
@@ -2476,7 +2180,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via element-arithmetic `(int)(local_18 + N) + M`, where `N*sizeof(*local_18) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_18->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 273,
+      "line": 265,
       "match": "local_18 = (T *)((int)(local_18 + N) + M)",
       "severity": "moderate",
       "text": "local_18 = (CVector3f *)((int)(local_18 + 5) + 8);",
@@ -2484,7 +2188,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_30` was initialized to the address of an array element's subfield (`local_30 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_30)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_30->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 274,
+      "line": 266,
       "match": "local_30 = local_30 + N",
       "severity": "moderate",
       "text": "local_30 = local_30 + 0x11;",
@@ -2492,7 +2196,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_2c` was initialized to the address of an array element's subfield (`local_2c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_2c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_2c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 275,
+      "line": 267,
       "match": "local_2c = local_2c + N",
       "severity": "moderate",
       "text": "local_2c = local_2c + 0x11;",
@@ -2500,23 +2204,15 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_24` was initialized to the address of an array element's subfield (`local_24 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_24)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_24->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 276,
+      "line": 268,
       "match": "local_24 = local_24 + N",
       "severity": "moderate",
       "text": "local_24 = local_24 + 0x11;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via element-arithmetic `(int)(pCVar11 + N) + M`, where `N*sizeof(*pCVar11) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar11->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 342,
-      "match": "pCVar11 = (T *)((int)(pCVar11 + N) + M)",
-      "severity": "moderate",
-      "text": "pCVar11 = (CVector3f *)((int)(pCVar11 + 5) + 8);",
-      "type": "shadow_pointer_walk"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `local_20` self-updates via element-arithmetic `(int)(local_20 + N) + M`, where `N*sizeof(*local_20) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_20->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 343,
+      "line": 333,
       "match": "local_20 = (T *)((int)(local_20 + N) + M)",
       "severity": "moderate",
       "text": "local_20 = (CMatrix3x3f *)((int)(local_20 + 1) + 0x20);",
@@ -2524,7 +2220,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_28` was initialized to the address of an array element's subfield (`local_28 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_28)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_28->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 344,
+      "line": 334,
       "match": "local_28 = local_28 + N",
       "severity": "moderate",
       "text": "local_28 = local_28 + 0x11;",
@@ -2532,7 +2228,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_1c` was initialized to the address of an array element's subfield (`local_1c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_1c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_1c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 345,
+      "line": 335,
       "match": "local_1c = local_1c + N",
       "severity": "moderate",
       "text": "local_1c = local_1c + 0x11;",
@@ -2540,7 +2236,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_3c` was initialized to the address of an array element's subfield (`local_3c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_3c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_3c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 346,
+      "line": 336,
       "match": "local_3c = local_3c + N",
       "severity": "moderate",
       "text": "local_3c = local_3c + 0x11;",
@@ -2548,7 +2244,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_38` was initialized to the address of an array element's subfield (`local_38 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_38)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_38->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 347,
+      "line": 337,
       "match": "local_38 = local_38 + N",
       "severity": "moderate",
       "text": "local_38 = local_38 + 0x11;",
@@ -2556,7 +2252,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar7->vertices[0].a`). Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 465,
+      "line": 456,
       "match": "pCVar7 = (T *)&pCVar7->FIELD[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;",
@@ -2564,7 +2260,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 418,
+      "line": 409,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

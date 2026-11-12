@@ -20,8 +20,8 @@
 ;   cockpit_pkbitmap.cpp_FUN_00510430 at 0051045a
 ;   cockpit_pkbmpset.cpp_FUN_0051080e at 0051085a
 ;   cockpit_pkbmpset.cpp_FUN_00510a90 at 00510aaf
-;   core_cloth.cpp_FUN_0043c330 at 0043c353
-;   core_course.cpp_FUN_00444970 at 00444993
+;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c353
+;   core_course.cpp_CCourse_load_FUN_00444970 at 00444993
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044c130 at 0044c1d0
 ;   ... and 34 more
 ;
@@ -79,7 +79,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00465a15
     PUSH EAX                            ; 00465a19
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 00465a1a
-        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005a43ec()
+        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005a43ec(char * filename, char * mode)
     ADD ESP,0x8                         ; 00465a1f
     ADD ESP,0x214                       ; 00465a22
         ;   Label: LAB_00465a22
@@ -97,7 +97,7 @@ section .text
         ;   Label: LAB_00465a34
     PUSH EAX                            ; 00465a36
     CALL engine_dosio.cpp_findFile_FUN_004656d0 ; 00465a37
-        ;   XREF to: 004656d0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_004656d0()
+        ;   XREF to: 004656d0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_004656d0(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 00465a3c
     TEST EAX,EAX                        ; 00465a3f
     JZ 0x00465a22                       ; 00465a41
@@ -106,7 +106,7 @@ section .text
     LEA EAX,[ESP + 0x104]               ; 00465a44
     PUSH EAX                            ; 00465a4b
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 00465a4c
-        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005a43ec()
+        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005a43ec(char * filename, char * mode)
     ADD ESP,0x8                         ; 00465a51
     MOV EBX,EAX                         ; 00465a54
     TEST EAX,EAX                        ; 00465a56
@@ -120,7 +120,7 @@ section .text
     PUSH ECX                            ; 00465a67
     PUSH EAX                            ; 00465a68
     CALL crt_stdio.c_fseek_FUN_005a457c ; 00465a69
-        ;   XREF to: 005a457c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005a457c()
+        ;   XREF to: 005a457c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005a457c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00465a6e
     MOV EAX,EBX                         ; 00465a71
         ;   Label: LAB_00465a71

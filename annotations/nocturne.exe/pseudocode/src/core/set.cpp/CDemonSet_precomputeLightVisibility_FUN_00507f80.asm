@@ -21,13 +21,13 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290
 ;   core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00444ef0
+;   core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00447f20
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20
-;   core_dcamera.cpp_CDemonCamera_FUN_00447f20
 ;   core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_004421b0
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
-;   core_set.cpp_CDemonSet_FUN_0050ad20
+;   core_set.cpp_CDemonSet_clearLights_FUN_0050ad20
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_005148b0
@@ -110,8 +110,8 @@ section .text
     LEA EAX,[ESP + 0x100]               ; 00508085
     PUSH EAX                            ; 0050808c
     PUSH 0x1fb8508                      ; 0050808d
-    CALL core_dcamera.cpp_CDemonCamera_FUN_00447f20 ; 00508092
-        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; CVector3f * core_dcamera.cpp_CDemonCamera_FUN_00447f20(CDemonCamera * this_ptr, CVector3f * output_bounds)
+    CALL core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00447f20 ; 00508092
+        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; CVector3f * core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00447f20(CDemonCamera * this_ptr, CVector3f * output_bounds)
     ADD ESP,0x8                         ; 00508097
     MOV ESI,dword ptr [ESP + 0x138]     ; 0050809a
     MOV EBX,EAX                         ; 005080a1
@@ -397,8 +397,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x174]     ; 0050848e
         ;   Label: LAB_0050848e
     PUSH EAX                            ; 00508495
-    CALL core_set.cpp_CDemonSet_FUN_0050ad20 ; 00508496
-        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050ad20(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0050ad20 ; 00508496
+        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0050ad20(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0050849b
     XOR ECX,ECX                         ; 0050849e
     MOV dword ptr [0x01fba938],ECX      ; 005084a0 | g_CDemonRaytraceInstance

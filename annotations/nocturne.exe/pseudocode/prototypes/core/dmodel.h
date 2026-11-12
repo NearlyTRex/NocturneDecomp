@@ -33,9 +33,9 @@ void __cdecl CKeyFramedModel::readBinaryModel(CKeyFramedModel *this_ptr,_FILE *f
 // Address: 00452990
 void __cdecl CKeyFramedModel::readTextModel(CKeyFramedModel *this_ptr,_FILE *file);
 
-// Original: core_dmodel.cpp_CKeyFramedModel_FUN_00452f10
+// Original: core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10
 // Address: 00452f10
-void __cdecl CKeyFramedModel(CKeyFramedModel *this_ptr);
+void __cdecl CKeyFramedModel::free(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00453040
 // Address: 00453040

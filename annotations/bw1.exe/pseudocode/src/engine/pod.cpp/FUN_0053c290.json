@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 226,
+    "complexity_score": 227,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
+    "pseudocode_lines": 37,
     "suspect_count": 17,
     "suspect_types": [
       "unaffected_reg",
@@ -15,7 +15,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 134
+    "total_lines": 135
   },
   "cross_references": [],
   "function": {
@@ -111,6 +111,14 @@
     },
     "pcode_op_count": 387
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "00513ff0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -146,7 +154,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 9,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "uint *unaff_ESI;",
@@ -154,7 +162,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 < 0) || (*(int *)(param_1 + 0x41c) <= param_2)) {",
@@ -162,7 +170,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_2 < 0) || (*(int *)(param_1 + 0x41c) <= param_2)) {",
@@ -170,7 +178,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 < 0) || (*(int *)(param_1 + 0x41c) <= param_2)) {",
@@ -178,39 +186,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = _fopen(param_1 + 4,0x5ed807);",
+      "text": "file = _fopen((char *)(param_1 + 4),(char *)0x5ed807);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"CPodFile::getAuditRecord - can't open %s\",param_1 + 4);",
+      "text": "core_main_c_FUN_005030e0(\"CPodFile::getAuditRecord - can't open %s\",(char *)(param_1 + 4));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fseek(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x420),0);",
+      "text": "_fseek(file,param_2 * 0x138 + *(int *)(param_1 + 0x420),0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fseek(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x420),0);",
+      "text": "_fseek(file,param_2 * 0x138 + *(int *)(param_1 + 0x420),0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "core_main_c_FUN_005030e0(\"CPodFile::getAuditRecord - error reading %s\",param_1 + 4);",
@@ -218,7 +226,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 35,
+      "line": 36,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = *puVar2;",
@@ -226,7 +234,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 37,
+      "line": 38,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
@@ -234,7 +242,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 37,
+      "line": 38,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
@@ -242,7 +250,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 34,
+      "line": 35,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {",

@@ -25,8 +25,8 @@
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d0a0
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d0c0
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
-;   engine_alphabit.cpp_FUN_0040d1c0
 ;   engine_alphabit.cpp_FUN_0040d9a0
 ;   engine_special.cpp_FUN_00581f50
 ;   engine_special.cpp_unlockFrame_FUN_00581fa0
@@ -119,8 +119,8 @@ section .text
     ADD ESP,0x4                         ; 0051b9b7
     MOV EBX,ESP                         ; 0051b9ba
     PUSH EBX                            ; 0051b9bc
-    CALL engine_alphabit.cpp_FUN_0040d1c0 ; 0051b9bd
-        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d1c0(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0 ; 0051b9bd
+        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0051b9c2
     PUSH 0x1e0                          ; 0051b9c5
     PUSH 0x280                          ; 0051b9ca

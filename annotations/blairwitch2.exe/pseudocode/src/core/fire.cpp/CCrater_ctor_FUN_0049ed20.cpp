@@ -9,8 +9,8 @@
 CCrater * __cdecl core_fire_cpp_CCrater_ctor_FUN_0049ed20(CCrater *this_ptr)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrinit(this_ptr->smoke_positions,3,&g_CVectorTypeInfo);
-  return (CCrater *)(iVar1 + -0x1c);
+  pvVar1 = __arrinit(this_ptr->smoke_positions,3,&g_CVectorTypeInfo);
+  return (CCrater *)((int)pvVar1 + -0x1c);
 }

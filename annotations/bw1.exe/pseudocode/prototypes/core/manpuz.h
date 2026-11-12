@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_manpuz.cpp_factoryFuncMansionPuzzleCircle_FUN_00503b10
 // Address: 00503b10
-void factoryFuncMansionPuzzleCircle(void);
+CMansionPuzzleCircle * __cdecl factoryFuncMansionPuzzleCircle(void);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_getActorType_FUN_00503b30
 // Address: 00503b30
@@ -87,11 +87,11 @@ void __cdecl CMansionPuzzleCircle::getPanelColor(CMansionPuzzleCircle *this_ptr,
 
 // Original: core_manpuz.cpp_stepToward_FUN_00505760
 // Address: 00505760
-undefined4 stepToward(float *param_1,float param_2,float param_3);
+int __cdecl stepToward(float *value,float target,float max_step);
 
 // Original: core_manpuz.cpp_updateGemHumChannel_FUN_005057c0
 // Address: 005057c0
-undefined4 __cdecl updateGemHumChannel(float *param_1,float param_2,float param_3,uint *param_4,char *param_5,float *param_6);
+int __cdecl updateGemHumChannel(float *hum_value,float target,float max_step,uint *sfx_handle,char *wav_filename,CVector3f *world_position);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0
 // Address: 005058e0
@@ -135,7 +135,7 @@ int __cdecl CMansionPuzzleCircle::panelOccupied(CMansionPuzzleCircle *this_ptr,i
 
 // Original: core_manpuz.cpp_factoryFuncMirrorHack_FUN_00506420
 // Address: 00506420
-void factoryFuncMirrorHack(void);
+CMirrorHack * __cdecl factoryFuncMirrorHack(void);
 
 // Original: core_manpuz.cpp_CMirrorHack_getActorType_FUN_00506440
 // Address: 00506440

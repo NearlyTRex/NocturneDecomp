@@ -11,8 +11,8 @@
 void core_inv_cpp_FUN_004f9b20(int param_1)
 
 {
-  int iVar1;
-  uint uVar2;
+  CDemonActor *pCVar1;
+  CDemonActor *pCVar2;
   int iVar3;
   int iVar4;
   
@@ -25,15 +25,15 @@ void core_inv_cpp_FUN_004f9b20(int param_1)
   iVar3 = param_1;
   if (0 < *(int *)(param_1 + 0x10)) {
     do {
-      iVar1 = *(int *)(iVar3 + 0x14);
-      (*(code *)**(uint **)(iVar1 + 0x154))(iVar1);
+      pCVar1 = *(CDemonActor **)(iVar3 + 0x14);
+      (*((pCVar1->vtable)._ub)->setup)(pCVar1);
       if (*(int *)(param_1 + 0x460) == 0) {
-        uVar2 = core_actor_cpp_castToClassHash_FUN_0040c600(iVar1,g_CGogglesClassInfo.name_hash);
-        *(uint *)(param_1 + 0x460) = uVar2;
+        pCVar2 = (CGoggles *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar1,g_CGogglesClassInfo.name_hash);
+        *(CDemonActor **)(param_1 + 0x460) = pCVar2;
       }
       if (*(int *)(param_1 + 0x45c) == 0) {
-        uVar2 = core_actor_cpp_castToClassHash_FUN_0040c600(iVar1,g_CGasMaskClassInfo.name_hash);
-        *(uint *)(param_1 + 0x45c) = uVar2;
+        pCVar1 = (CGasMask *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar1,g_CGasMaskClassInfo.name_hash);
+        *(CDemonActor **)(param_1 + 0x45c) = pCVar1;
       }
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + 4;

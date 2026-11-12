@@ -159,7 +159,7 @@ section .text
     MOV dword ptr [EBX + 0x194],EAX     ; 004828f0
     MOV byte ptr [0x01c2a384],CL        ; 004828f6 | DAT_01c2a384
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 004828fc
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EDI,dword ptr [0x01c26408]      ; 00482901 | DAT_01c26408
     MOV EDX,EAX                         ; 00482907
     SUB EAX,EDI                         ; 00482909

@@ -17,7 +17,7 @@ CParticleBox * core_hpbox_cpp_CParticleBox_dtor_FUN_005ac7f0(CParticleBox *this_
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CParticleBoxTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CParticleBoxTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

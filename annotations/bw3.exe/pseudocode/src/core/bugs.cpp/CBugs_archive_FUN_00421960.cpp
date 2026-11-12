@@ -9,8 +9,8 @@
 void __cdecl core_bugs_cpp_CBugs_archive_FUN_00421960(CBugs *this_ptr)
 
 {
-  CKeyFramedModelInstance *pCVar1;
-  int iVar2;
+  CKeyFramedModelInstance *model_ptr;
+  int iVar1;
   
   core_enemy_cpp_CEnemy_archive_FUN_00489120(&this_ptr->base);
   core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->count,"?count" + 1);
@@ -19,14 +19,14 @@ void __cdecl core_bugs_cpp_CBugs_archive_FUN_00421960(CBugs *this_ptr)
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
               (this_ptr->models,&DAT_005b7782);
   }
-  iVar2 = 0;
+  iVar1 = 0;
   if (0 < this_ptr->model_count) {
-    pCVar1 = this_ptr->models;
+    model_ptr = this_ptr->models;
     do {
-      iVar2 = iVar2 + 1;
-      core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(pCVar1,"modelName");
-      pCVar1 = pCVar1 + 1;
-    } while (iVar2 < this_ptr->model_count);
+      iVar1 = iVar1 + 1;
+      core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(model_ptr,"modelName");
+      model_ptr = model_ptr + 1;
+    } while (iVar1 < this_ptr->model_count);
   }
   core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->allow_chase,"allowChase");
   core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->allow_swarm,"allowSwarm");

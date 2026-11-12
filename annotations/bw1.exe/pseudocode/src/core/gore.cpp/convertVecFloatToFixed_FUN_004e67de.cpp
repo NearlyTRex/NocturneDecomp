@@ -1,18 +1,18 @@
 // Name: core_gore.cpp_convertVecFloatToFixed_FUN_004e67de
 // Address: 004e67de
 // Address Range: [[004e67de, 004e680c]]
-// Convention: unknown
-// Signature: void core_gore_cpp_convertVecFloatToFixed_FUN_004e67de(float *param_1,int *param_2)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_gore_cpp_convertVecFloatToFixed_FUN_004e67de(CVector3f *src,CVector3i *dst)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_gore_cpp_convertVecFloatToFixed_FUN_004e67de(float *param_1,int *param_2)
+CVector3f * __cdecl core_gore_cpp_convertVecFloatToFixed_FUN_004e67de(CVector3f *src,CVector3i *dst)
 
 {
-  *param_2 = (int)ROUND(*param_1 * _DAT_006016ac);
-  param_2[1] = (int)ROUND(param_1[1] * _DAT_006016ac);
-  param_2[2] = (int)ROUND(param_1[2] * _DAT_006016ac);
-  return;
+  dst->x = (int)ROUND(src->x * _DAT_006016ac);
+  dst->y = (int)ROUND(src->y * _DAT_006016ac);
+  dst->z = (int)ROUND(src->z * _DAT_006016ac);
+  return src;
 }

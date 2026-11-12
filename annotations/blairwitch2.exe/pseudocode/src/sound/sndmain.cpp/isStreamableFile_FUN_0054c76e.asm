@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_isStreamableFile_FUN_0054c76e(char *param_1)
+; int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_0054c76e(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130

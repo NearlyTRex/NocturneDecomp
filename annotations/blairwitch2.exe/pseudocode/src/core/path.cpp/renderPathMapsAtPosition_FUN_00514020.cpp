@@ -19,15 +19,16 @@ void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_00514020(CVector3f *posi
   int iStack_28;
   int iStack_24;
   int iStack_20;
-  int iStack_1c;
+  CVector3i CStack_1c;
   
   bVar3 = 0;
-  core_dtrace_cpp_FUN_00476a50(&g_CDemonRaytraceInstance,position);
-  iStack_28 = iStack_1c;
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50
+            (&g_CDemonRaytraceInstance,position,&CStack_1c);
+  iStack_28 = CStack_1c.x;
   *(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8) =
-       *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);
+       *(uint *)((int)&CStack_1c + (uint)bVar3 * -8 + 4);
   *(uint *)((int)&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-       *(uint *)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+       *(uint *)((int)&CStack_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
   iVar2 = 0;
   if (0 < _DAT_01e4fed8) {
     iVar1 = 0;

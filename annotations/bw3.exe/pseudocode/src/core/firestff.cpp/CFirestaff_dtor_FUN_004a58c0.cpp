@@ -16,7 +16,7 @@ CFirestaff * core_firestff_cpp_CFirestaff_dtor_FUN_004a58c0(CFirestaff *this_ptr
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFirestaffTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFirestaffTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 173,
+    "complexity_score": 174,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 93,
+    "pseudocode_lines": 94,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "stack_alignment_array",
       "warning_overlapping_globals"
     ],
-    "total_lines": 339
+    "total_lines": 340
   },
   "cross_references": [],
   "function": {
@@ -219,6 +219,26 @@
     },
     "pcode_op_count": 923
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a6da0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e7030",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9409
+    },
+    "nocturne.exe": {
+      "addr": "0054dd50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9409
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -253,7 +273,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 14,
       "match": "afStackY_1018",
       "severity": "moderate",
       "text": "float afStackY_1018 [1011];",
@@ -261,34 +281,34 @@
     },
     {
       "description": "Pointer value `&CStack_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 25,
+      "line": 26,
       "match": "(int)&CStack_30",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) = auStack_20[(uint)bVar5 * -2];",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar6 * -8 + 4) = auStack_20[(uint)bVar6 * -2];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&CStack_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
+      "line": 27,
       "match": "(int)&CStack_30",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 25,
+      "line": 26,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) = auStack_20[(uint)bVar5 * -2];",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar6 * -8 + 4) = auStack_20[(uint)bVar6 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 26,
+      "line": 27,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
       "type": "pointer_cast"
     }
   ],

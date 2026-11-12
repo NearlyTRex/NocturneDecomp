@@ -41,7 +41,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 005bfb53
     PUSH EBX                            ; 005bfb57
     CALL crt_stdio.c_vsprintf_FUN_005bfb18 ; 005bfb58
-        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005bfb18()
+        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005bfb18(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 005bfb5d
     ADD ESP,0x4                         ; 005bfb60
     POP EBX                             ; 005bfb63

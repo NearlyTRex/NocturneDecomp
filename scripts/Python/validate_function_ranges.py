@@ -22,6 +22,9 @@ Signals (per function, thunks/externals skipped):
   FALLTHROUGH_INTO_FUNCTION - a non-call instruction falls through into another
                    function's entry. Code does not fall into a function, so that
                    function is this one's continuation: an entry split in two. (HIGH)
+  PADDING_FUNCTION - the whole body is alignment padding (`mov ecx,ecx`,
+                   `lea edx,[edx+0]`): a phantom defined on the run before a real
+                   entry, which nothing calls. (HIGH)
 
 Inter-function jumps (tail calls, shared code) are NOT flagged - a target that
 lands inside a *different* function is legitimate. A fall-through is not a jump.
@@ -32,6 +35,9 @@ body with CreateFunctionCmd.fixupFunctionBody (which preserves the function's
 name and signature - it does not delete/recreate). That recompute also absorbs
 FLOW_ORPHAN code. --fix iterates until no new fragments appear (bounded by
 --max-passes) since fixing one tail can reveal the next.
+
+PADDING_FUNCTION is reported, not fixed; the report prints the delete_function.py
+command, which still refuses one that something references.
 
 FALLTHROUGH_INTO_FUNCTION is reported, not fixed: the repair deletes the second
 function and moves its name (it often holds the real one) to the first entry,
@@ -115,7 +121,15 @@ def scan_function(program, func, exec_set, fm):
             "note": "entry never disassembled",
         })
 
-    for instr in listing.getInstructions(body, True):
+    instructions = list(listing.getInstructions(body, True))
+    if instructions and all(is_alignment_nop(i) for i in instructions):
+        findings.append({
+            "kind": "PADDING_FUNCTION", "severity": "HIGH",
+            "from": entry, "target": entry,
+            "note": "body is only alignment padding (%d instruction(s))" % len(instructions),
+        })
+
+    for instr in instructions:
         fallthrough = instr.getFallThrough()
         if fallthrough is not None and not instr.getFlowType().isCall() \
                 and not is_alignment_nop(instr):
@@ -447,6 +461,17 @@ def run(program, out_path, do_fix, max_passes, fix_holes):
             log("   %s %-40s continues %s %s" % (into_addr, into_name, head_addr, head_name))
         log("      delete_function.py <ABS>/projects <project> %s %s --apply --force" % (
             program.getName(), " ".join("--addr %s" % s[1] for s in splits)))
+
+    padding = sorted({(func.getEntryPoint().getOffset(), str(func.getEntryPoint()), func.getName())
+                      for func, findings in results for f in findings
+                      if f["kind"] == "PADDING_FUNCTION"})
+    if padding:
+        log("")
+        log("!! %d function(s) are only alignment padding. Delete them:" % len(padding))
+        for _off, addr, name in padding:
+            log("   %s %s" % (addr, name))
+        log("      delete_function.py <ABS>/projects <project> %s %s --apply" % (
+            program.getName(), " ".join("--addr %s" % p[1] for p in padding)))
 
     write_report(out_path, program.getName(), results, do_fix)
     return changed

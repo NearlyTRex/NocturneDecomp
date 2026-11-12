@@ -39,7 +39,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020
 ;   sound_sndmain.cpp_FUN_0056dfd0
 ;
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5f39a1                       ; 00571d9c | = "Killing sfx %s\n"
     MOV EAX,[0x00611100]                ; 00571da1 | g_CConsolePtr
     PUSH EAX                            ; 00571da6 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00571da7
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00571da7
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00571dac
     CMP dword ptr [EBX + 0x60],0x0      ; 00571daf
         ;   Label: LAB_00571daf

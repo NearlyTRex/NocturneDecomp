@@ -11,27 +11,27 @@ void __cdecl setFarPlaneDistance(int distance);
 
 // Original: engine_clipper.c_getFarPlaneDistance_FUN_004390b0
 // Address: 004390b0
-undefined4 getFarPlaneDistance(void);
+int __cdecl getFarPlaneDistance(void);
 
 // Original: engine_clipper.c_interpolateVertexRightClip_FUN_004390c0
 // Address: 004390c0
-void __cdecl interpolateVertexRightClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexRightClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexLeftClip_FUN_004391c0
 // Address: 004391c0
-void __cdecl interpolateVertexLeftClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexLeftClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexTopClip_FUN_004392c0
 // Address: 004392c0
-void __cdecl interpolateVertexTopClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexTopClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexBottomClip_FUN_004393c0
 // Address: 004393c0
-void __cdecl interpolateVertexBottomClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexBottomClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexFarClip_FUN_004394c0
 // Address: 004394c0
-void __cdecl interpolateVertexFarClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexFarClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_clipPolygonRightPlane_FUN_004395e0
 // Address: 004395e0
@@ -43,7 +43,7 @@ int clipPolygonLeftPlane(undefined4 *param_1,int param_2,int param_3);
 
 // Original: engine_clipper.c_clipPolygonBottomPlane_FUN_0043999e
 // Address: 0043999e
-int clipPolygonBottomPlane(int *param_1,int param_2,int param_3);
+int clipPolygonBottomPlane(undefined4 *param_1,int param_2,int param_3);
 
 // Original: engine_clipper.c_normalizeClippedVertices_FUN_00439ce0
 // Address: 00439ce0
@@ -59,19 +59,19 @@ void __cdecl clipAndRasterize(int vertex_count,int *vertex_indices);
 
 // Original: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043a8c0
 // Address: 0043a8c0
-void __cdecl interpolateVertexRightClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexRightClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_0043a9f0
 // Address: 0043a9f0
-void __cdecl interpolateVertexLeftClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexLeftClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_0043ab20
 // Address: 0043ab20
-void __cdecl interpolateVertexTopClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexTopClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_0043ac50
 // Address: 0043ac50
-void __cdecl interpolateVertexBottomClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexBottomClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_FUN_0043ad8e
 // Address: 0043ad8e
@@ -85,9 +85,9 @@ void FUN_0043aed0(void);
 // Address: 0043b14e
 void clipPolygonBottomPlaneGlobal(void);
 
-// Original: engine_clipper.c_FUN_0043b280
+// Original: engine_clipper.c_perspectiveDivideVertices_FUN_0043b280
 // Address: 0043b280
-void FUN_0043b280(void);
+void __cdecl perspectiveDivideVertices(void);
 
 // Original: engine_clipper.c_FUN_0043b3bc
 // Address: 0043b3bc

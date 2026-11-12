@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_bride.cpp_factoryFuncBride_FUN_00423890
 // Address: 00423890
-void factoryFuncBride(void);
+CBride * __cdecl factoryFuncBride(void);
 
 // Original: core_bride.cpp_CBride_getActorType_FUN_004238b0
 // Address: 004238b0

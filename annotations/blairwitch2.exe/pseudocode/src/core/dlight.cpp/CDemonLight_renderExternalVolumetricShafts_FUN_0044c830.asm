@@ -111,9 +111,9 @@
 ;   core_dirmat.cpp_FUN_004496e0
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0046b750
-;   engine_drender.cpp_FUN_0046b5c0
 ;   engine_drender.cpp_FUN_0046b5e0
 ;   engine_drender.cpp_pop_FUN_0046b4a0
 ;   engine_special.cpp_FUN_0055d723
@@ -157,8 +157,8 @@ section .text
     PUSH EBX                            ; 0044c87d | DAT_01ba5c50
     LEA ESI,[EBP + -0x2e]               ; 0044c87e
     LEA EDI,[EBP + -0x16]               ; 0044c881
-    CALL engine_drender.cpp_FUN_0046b5c0 ; 0044c884
-        ;   XREF to: 0046b5c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b5c0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0 ; 0044c884
+        ;   XREF to: 0046b5c0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[EBP + -0x2e]               ; 0044c889
     LEA EAX,[EBP + -0x16]               ; 0044c88c
     LEA EBX,[EBP + 0xffffff42]          ; 0044c88f

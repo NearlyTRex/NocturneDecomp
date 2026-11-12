@@ -13,8 +13,8 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getTextWidth_FUN_00468b50(CDrawSur
 {
   int iVar1;
   
-  if (_DAT_01ba5c30 != 0) {
-    iVar1 = engine_font_cpp_FUN_004aaf00(_DAT_01ba5c30,text);
+  if (_DAT_01ba5c30 != (CBitFont *)0x0) {
+    iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01ba5c30,text);
     return iVar1;
   }
   iVar1 = engine_2d_c_getStringWidth_FUN_004018b0(text);

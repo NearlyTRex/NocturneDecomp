@@ -9,21 +9,21 @@
 int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_0057b930(CWeapon *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                    (this_ptr->carried_by_actor,g_CHeroClassInfo.name_hash);
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
+                     (this_ptr->carried_by_actor,g_CHeroClassInfo.name_hash);
   if ((0.0 < this_ptr->fire_cooldown_timer) ||
-     (((iVar1 != 0 && (*(int *)(iVar1 + 0x20b60) != 0)) && (this_ptr->ammo_type == AMMO_TYPE_MANA)))
-     ) {
+     (((pCVar1 != (CDemonActor *)0x0 && (*(int *)(pCVar1[0x185].create_event + 0x30) != 0)) &&
+      (this_ptr->ammo_type == AMMO_TYPE_MANA)))) {
     return 0;
   }
   if (this_ptr->uses_hero_ammo != 0) {
-    iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                      (this_ptr->carried_by_actor,g_CHeroClassInfo.name_hash);
-    if (iVar1 != 0) {
+    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
+                       (this_ptr->carried_by_actor,g_CHeroClassInfo.name_hash);
+    if (pCVar1 != (CDemonActor *)0x0) {
       if ((this_ptr->ammo_type == AMMO_TYPE_MANA) &&
-         (*(int *)(iVar1 + 0x20b80) < this_ptr->ammo_per_shot)) {
+         (*(int *)(pCVar1[0x185].create_event + 0x50) < this_ptr->ammo_per_shot)) {
         core_sound_cpp_CSound_playActorSound_FUN_005609d0
                   (0x02CF5680,&this_ptr->base,"=wp_nomana.wav" + 1,
                    &(this_ptr->base).location.position);
@@ -31,7 +31,7 @@ int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_0057b930(CWeapon *this_ptr
         return 0;
       }
       if ((this_ptr->ammo_type == AMMO_TYPE_BULLET) &&
-         (*(int *)(iVar1 + 0x20b84) < this_ptr->ammo_per_shot)) {
+         (*(int *)(pCVar1[0x185].create_event + 0x54) < this_ptr->ammo_per_shot)) {
         return 0;
       }
     }

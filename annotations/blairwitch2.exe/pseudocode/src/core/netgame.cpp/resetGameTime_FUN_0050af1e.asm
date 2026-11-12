@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_netgame_cpp_resetGameTime_FUN_0050af1e(void)
+; void __cdecl core_netgame_cpp_resetGameTime_FUN_0050af1e(void)
 ;
 ;
 ; Referenced Globals:
@@ -19,7 +19,7 @@ section .text
         ;   Label: core_netgame.cpp_resetGameTime_FUN_0050af1e
     MOV dword ptr [0x01d34e38],0x1      ; 0050af20 | DAT_01d34e38
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0050af2a
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EDX,EAX                         ; 0050af2f
     MOV ECX,0x12                        ; 0050af31
     SAR EDX,0x1f                        ; 0050af36

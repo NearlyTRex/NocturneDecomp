@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_pcx_c_writePCXScanline_FUN_00535940(int param_1,int *param_2)
+; void __cdecl engine_pcx_c_writePCXScanline_FUN_00535940(int row_index,_FILE *pcx_file)
 ;
+; Parameters:
+; int              Stack[0x4]:4   row_index
+; _FILE *          Stack[0x8]:4   pcx_file
 ;
 ; XREF[1]:
 ;   engine_pcx.c_saveScreenshotGeneral_FUN_00535d80 at 00535ea8
@@ -44,7 +47,7 @@ section .text
         ;   Label: LAB_00535970
     PUSH 0xc1                           ; 00535971
     CALL crt_stdio.c_fputc_FUN_005c2f00 ; 00535976
-        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005c2f00()
+        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005c2f00(int character, _FILE * file)
         ;   Label: LAB_00535976
     ADD ESP,0x8                         ; 0053597b
     TEST byte ptr [EBX + 0xd],0x4       ; 0053597e
@@ -57,7 +60,7 @@ section .text
     MOV AL,byte ptr [ESI]               ; 00535987
     PUSH EAX                            ; 00535989
     CALL crt_stdio.c_fputc_FUN_005c2f00 ; 0053598a
-        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005c2f00()
+        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005c2f00(int character, _FILE * file)
         ;   Label: LAB_0053598a
     ADD ESP,0x8                         ; 0053598f
     MOV ECX,dword ptr [0x0061b498]      ; 00535992 | DAT_0061b498

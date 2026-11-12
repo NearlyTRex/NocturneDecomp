@@ -10,7 +10,8 @@ void __cdecl core_turret_cpp_CTurret_archive_FUN_005a2bf0(CTurret *this_ptr)
 
 {
   core_weapon_cpp_CWeapon_archive_FUN_005ad8b0(&this_ptr->base);
-  core_actor_cpp_archiveOrientation_FUN_0040b260(&this_ptr->home_orient,"homeOrient");
+  core_actor_cpp_archiveOrientation_FUN_0040b260
+            (&(this_ptr->home_orient).orient,"homeOrient");
   core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->state,"state");
   core_actor_cpp_archiveString_FUN_0040b440(this_ptr->activate_event,"activateEvent");
   core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->charge_time,"chargeTime");

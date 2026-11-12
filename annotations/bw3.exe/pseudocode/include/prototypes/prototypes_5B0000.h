@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 
@@ -42,7 +43,7 @@ void crt_unknown_c_FUN_005b0da0(undefined4 *param_1,undefined4 *param_2,undefine
 uint crt_unknown_c_FUN_005b0df0(uint param_1,uint param_2);
 undefined4 crt_unknown_c_FUN_005b0ea4(void);
 undefined * crt_unknown_c_FUN_005b0eb0(uint param_1);
-int crt_unknown_c_FUN_005b0ee0(char *param_1,int param_2);
+int crt_unknown_c_FUN_005b0ee0(byte *param_1,_FILE *param_2);
 uint crt_unknown_c_FUN_005b0f93(int *param_1);
 uint crt_unknown_c_FUN_005b0ff9(int *param_1);
 undefined * crt_unknown_c_FUN_005b1090(char *param_1,undefined4 *param_2,int param_3,int param_4);

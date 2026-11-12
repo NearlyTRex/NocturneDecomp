@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 207,
+    "complexity_score": 208,
     "cross_reference_count": 7,
     "function_call_count": 17,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 102,
+    "pseudocode_lines": 103,
     "suspect_count": 9,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 375
+    "total_lines": 376
   },
   "cross_references": [
     {
@@ -149,14 +149,14 @@
       "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90"
     },
     {
-      "addr": "0046d0d0",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046d0d0"
-    },
-    {
       "addr": "0046d100",
       "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046d100"
+      "name": "engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0046d100"
+    },
+    {
+      "addr": "0046d0d0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0046d0d0"
     }
   ],
   "globals": [
@@ -361,6 +361,32 @@
     },
     "pcode_op_count": 944
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0052d0e0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0054e3c0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0056a190",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00507c80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9547
+    }
+  },
   "stack_frame": {
     "frame_size": 44,
     "local_size": 32,
@@ -423,31 +449,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 14,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d100(DAT_005f2afc,&DAT_00603b2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00603b2c",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d100(DAT_005f2afc,&DAT_00603b2c);",
+      "text": "(DAT_005f2afc,(CVector3i *)&DAT_00603b2c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 14,
-      "match": "DAT_005f2afc",
+      "match": "DAT_00603b2c",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d0d0(DAT_005f2afc,0x3e800000);",
+      "text": "(DAT_005f2afc,(CVector3i *)&DAT_00603b2c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 15,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0046d0d0(DAT_005f2afc,0.25);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);",
@@ -455,7 +481,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 55,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,&local_1c);",
@@ -463,7 +489,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 90,
       "match": "DAT_00603b38",
       "severity": "mild",
       "text": "else if ((DAT_00603b38 != 0) &&",
@@ -471,7 +497,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 85,
+      "line": 86,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",
@@ -479,7 +505,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 100,
+      "line": 101,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",

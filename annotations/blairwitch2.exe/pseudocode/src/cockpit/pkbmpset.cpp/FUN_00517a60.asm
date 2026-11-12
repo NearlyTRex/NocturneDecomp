@@ -91,7 +91,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x13c]     ; 00517b12
     PUSH EAX                            ; 00517b19
     CALL crt_stdio.c_fseek_FUN_005b929c ; 00517b1a
-        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005b929c()
+        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005b929c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00517b1f
         ;   Label: LAB_00517b1f
     INC EBX                             ; 00517b22
@@ -147,7 +147,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x13c]     ; 00517bab
     PUSH EAX                            ; 00517bb2
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 00517bb3
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00517bb8
     CMP EAX,0x1                         ; 00517bbb
     JZ 0x00517c02                       ; 00517bbe

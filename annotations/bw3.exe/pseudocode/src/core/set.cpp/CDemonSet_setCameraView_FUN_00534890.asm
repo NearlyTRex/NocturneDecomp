@@ -484,7 +484,7 @@ section .text
     ADD EDI,EAX                         ; 00534e4e
     PUSH EDI                            ; 00534e50
     CALL core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0 ; 00534e51
-        ;   XREF to: 00541fb0 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0()
+        ;   XREF to: 00541fb0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0(C3DSCamera * this_ptr, CDemonCamera * camera)
     ADD ESP,0x8                         ; 00534e56
     MOV ECX,dword ptr [ESI + 0x154]     ; 00534e59
     MOV EBX,dword ptr [ESP + 0x1fc]     ; 00534e5f

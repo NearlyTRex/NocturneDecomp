@@ -63,11 +63,11 @@ undefined4 __cdecl CInStreamFile::close(CInStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_FUN_0057d1d0
 // Address: 0057d1d0
-void FUN_0057d1d0(int param_1);
+void FUN_0057d1d0(CInStreamFile *param_1);
 
-// Original: support_trstream.cpp_FUN_0057d240
+// Original: support_trstream.cpp_CInStreamFile_freeBuffer_FUN_0057d240
 // Address: 0057d240
-void FUN_0057d240(int param_1);
+void __cdecl CInStreamFile::freeBuffer(CInStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_FUN_0057d280
 // Address: 0057d280
@@ -183,11 +183,11 @@ uint __cdecl COutStreamFile::putChar(COutStreamFile *this_ptr,byte param_2);
 
 // Original: support_trstream.cpp_COutStreamFile_write_FUN_0057dca0
 // Address: 0057dca0
-int __cdecl COutStreamFile::write(COutStreamFile *this_ptr,undefined4 param_2,int param_3);
+int __cdecl COutStreamFile::write(COutStreamFile *this_ptr,void *param_2,int param_3);
 
 // Original: support_trstream.cpp_COutStreamFile_seek_FUN_0057dcf0
 // Address: 0057dcf0
-bool __cdecl COutStreamFile::seek(COutStreamFile *this_ptr,undefined4 param_2,undefined4 param_3);
+bool __cdecl COutStreamFile::seek(COutStreamFile *this_ptr,long param_2,int param_3);
 
 // Original: support_trstream.cpp_COutStreamFile_tell_FUN_0057dd20
 // Address: 0057dd20
@@ -203,7 +203,7 @@ undefined4 __cdecl COutStreamFile::close(COutStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_COutStreamFile_open_FUN_0057dd90
 // Address: 0057dd90
-undefined4 __cdecl COutStreamFile::open(COutStreamFile *this_ptr,undefined4 param_2,undefined4 param_3);
+undefined4 __cdecl COutStreamFile::open(COutStreamFile *this_ptr,char *param_2,char *param_3);
 
 // Original: support_trstream.cpp_COutStreamFile_openInDirectory_FUN_0057ddd0
 // Address: 0057ddd0
@@ -253,9 +253,9 @@ void __cdecl COutStreamMemory::close(COutStreamMemory *this_ptr);
 // Address: 0057e110
 void __cdecl COutStreamMemory::open(COutStreamMemory *this_ptr,int param_2,int param_3);
 
-// Original: support_trstream.cpp_FUN_0057e150
+// Original: support_trstream.cpp_COutStreamMemory_detachBuffer_FUN_0057e150
 // Address: 0057e150
-int FUN_0057e150(int *param_1,int *param_2);
+int __cdecl COutStreamMemory::detachBuffer(COutStreamMemory *this_ptr,int *param_2);
 
 // Original: support_trstream.cpp_COutStreamDebug_ctor_FUN_0057e1c0
 // Address: 0057e1c0

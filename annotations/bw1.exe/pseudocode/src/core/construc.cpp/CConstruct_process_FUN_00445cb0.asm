@@ -988,8 +988,8 @@ section .text
     PUSH 0x5d6ece                       ; 004467e4 | = "%s confused while walking to scriptDe..."
     MOV EAX,[0x00611100]                ; 004467e9 | g_CConsolePtr
     PUSH EAX                            ; 004467ee | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 004467ef
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004467ef
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     JMP 0x004465cf                      ; 004467f4
         ;   XREF to: 004465cf (UNCONDITIONAL_JUMP)  ; LAB_004465cf
     JBE 0x004465bf                      ; 004467f9
@@ -1292,7 +1292,7 @@ section .text
     SUB ESP,0x4                         ; 00446b83
     FSTP float ptr [ESP]                ; 00446b86
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 00446b89
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cd60()
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     MOV dword ptr [EBP + 0x76],EAX      ; 00446b8e
     FLD float ptr [EBP + 0x76]          ; 00446b91
     FABS                                ; 00446b94
@@ -1337,8 +1337,8 @@ section .text
     PUSH 0x5d6f06                       ; 00446c05 | = "%s gave up chase - I'm confused\n"
     MOV EDX,dword ptr [0x00611100]      ; 00446c0a | g_CConsolePtr
     PUSH EDX                            ; 00446c10 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00446c11
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00446c11
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00446c16
     PUSH 0x1                            ; 00446c19
     PUSH EDI                            ; 00446c1b

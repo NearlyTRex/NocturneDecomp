@@ -19,7 +19,7 @@ CSuccubus * core_succubus_cpp_CSuccubus_dtor_FUN_00570090(CSuccubus *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSuccubusTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSuccubusTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

@@ -1,14 +1,14 @@
 // Name: wincore_winrun.cpp_winMain_FUN_005b2e00
 // Address: 005b2e00
 // Address Range: [[005b2e00, 005b2ed1] [005b2ed7, 005b3064] [005b3071, 005b307d]]
-// Convention: unknown
-// Signature: void wincore_winrun_cpp_winMain_FUN_005b2e00(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4)
+// Convention: __stdcall
+// Signature: int __stdcall wincore_winrun_cpp_winMain_FUN_005b2e00(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void wincore_winrun_cpp_winMain_FUN_005b2e00(HMODULE param_1,uint param_2,uint param_3,int param_4)
+int __stdcall wincore_winrun_cpp_winMain_FUN_005b2e00(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 
 {
   byte *pbVar1;
@@ -88,7 +88,7 @@ void wincore_winrun_cpp_winMain_FUN_005b2e00(HMODULE param_1,uint param_2,uint p
     } while (*pcVar12 != 0);
   }
   GetCurrentDirectoryA(0x100,&DAT_02c9c908);
-  GetModuleFileNameA(param_1,&DAT_02c9c808,0x100);
+  GetModuleFileNameA(hInstance,&DAT_02c9c808,0x100);
   uVar10 = 0xffffffff;
   pcVar12 = &DAT_02c9c808;
   do {
@@ -108,18 +108,18 @@ LAB_005b2f58:
   SetCurrentDirectoryA(&DAT_02c9c808);
   local_58.style = 3;
   local_58.lpfnWndProc = wincore_winrun_cpp_FUN_005b27d0;
-  local_58.hInstance = param_1;
+  local_58.hInstance = hInstance;
   local_58.cbClsExtra = 0;
   local_58.cbWndExtra = 0;
-  local_58.hIcon = LoadIconA(param_1,&DAT_00000065);
+  local_58.hIcon = LoadIconA(hInstance,&DAT_00000065);
   local_58.hCursor = LoadCursorA((HINSTANCE)0x0,&DAT_00007f00);
   local_58.hbrBackground = GetStockObject(4);
   local_58.lpszClassName = PTR_s_Nocturne_006260dc;
   local_58.lpszMenuName = (LPCSTR)0x0;
   RegisterClassA(&local_58);
-  _DAT_02c9be6c = param_1;
+  _DAT_02c9be6c = hInstance;
   wincore_winrun_cpp_FUN_005b2d90();
-  ShowWindow(_DAT_02c9be68,param_4);
+  ShowWindow(_DAT_02c9be68,nCmdShow);
   UpdateWindow(_DAT_02c9be68);
   hThread = GetCurrentProcess();
   SetThreadPriority(hThread,2);
@@ -129,7 +129,7 @@ LAB_005b2f58:
   _DAT_02c9be78 = local_30.dwTotalPhys;
   _DAT_02c9be7c = local_30.dwAvailPageFile;
   core_main_c_FUN_005032a0(_DAT_02c9cb08,(char **)0x2c9cb0c);
-  core_main_c_FUN_00503290();
+  core_main_c_enterMainGameMenu_FUN_00503290();
   core_main_c_FUN_00503a30();
                     /* WARNING: Subroutine does not return */
   ExitProcess(0);

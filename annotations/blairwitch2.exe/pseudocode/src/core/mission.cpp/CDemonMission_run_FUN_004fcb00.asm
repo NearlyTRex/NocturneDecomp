@@ -35,12 +35,12 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170
 ;   core_level.cpp_FUN_004e1480
 ;   core_main.c_FUN_004e4500
+;   core_mission.cpp_CDemonMission_clearMissionData_FUN_004fb450
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004fd0e0
 ;   core_mission.cpp_CDemonMission_load_FUN_004fb490
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004fc6b0
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004fc570
-;   core_mission.cpp_FUN_004fb450
-;   core_mission.cpp_FUN_004fc270
+;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004fc270
 ;   core_mission.cpp_FUN_004fc820
 ;   core_mission.cpp_FUN_004fce00
 ;   crt_string.c__stricmp_FUN_005bada0
@@ -100,16 +100,16 @@ section .text
     PUSH ESI                            ; 004fcb90
     PUSH EBX                            ; 004fcb91
     MOV EDI,EAX                         ; 004fcb92
-    CALL core_mission.cpp_FUN_004fc270  ; 004fcb94
-        ;   XREF to: 004fc270 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fc270()
+    CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_004fc270 ; 004fcb94
+        ;   XREF to: 004fc270 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004fc270(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 004fcb99
     MOV EAX,dword ptr [ESI + 0x2b0]     ; 004fcb9c
     PUSH ESI                            ; 004fcba2
     CALL dword ptr [EAX + 0x158]        ; 004fcba3
     ADD ESP,0x4                         ; 004fcba9
     PUSH EBX                            ; 004fcbac
-    CALL core_mission.cpp_FUN_004fb450  ; 004fcbad
-        ;   XREF to: 004fb450 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fb450()
+    CALL core_mission.cpp_CDemonMission_clearMissionData_FUN_004fb450 ; 004fcbad
+        ;   XREF to: 004fb450 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMissionData_FUN_004fb450(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004fcbb2
     TEST EDI,EDI                        ; 004fcbb5
     JZ 0x004fcbc2                       ; 004fcbb7

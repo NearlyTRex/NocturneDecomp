@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   param_3
 ;
 ; XREF[2]:
-;   cockpit_drawsurf.cpp_FUN_0046a4f0 at 0046a500
-;   cockpit_drawsurf.cpp_FUN_0046a510 at 0046a561
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_0046a510 at 0046a561
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_0046a4f0 at 0046a500
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_0046a220

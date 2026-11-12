@@ -11,6 +11,7 @@
     "importable":true,
     "name":"cockpit_ckptutil.c_FUN_0043843c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -29,6 +30,7 @@
     "importable":true,
     "name":"core_dpart.cpp_FUN_00479b3c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -44,14 +46,10 @@
         "start":"004d7fbc"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_game.cpp_beginProfileTimer_FUN_004d7fbc",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"005601bc",
@@ -65,6 +63,7 @@
     "importable":true,
     "name":"core_shadow.cpp_FUN_005601bc",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -130,13 +129,29 @@
         "start":"005b38bc"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"wincore_winrun.cpp_getComputerAndUserName_FUN_005b38bc",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"buffer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -151,6 +166,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c543c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -169,6 +185,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c69bc",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -187,6 +204,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005cabbc",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -205,6 +223,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005cac3c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -224,6 +243,7 @@
     "importable":true,
     "name":"crt_kernel32.c_GetFullPathNameA",
     "ret":"DWORD",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000006f",
     "thunk":true,
     "vars":{
@@ -318,6 +338,7 @@
     "importable":true,
     "name":"crt_gdi32.c_Rectangle",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000000f",
     "thunk":true,
     "vars":{
@@ -428,6 +449,7 @@
     "importable":true,
     "name":"crt_kernel32.c_VirtualFree",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:000000a2",
     "thunk":true,
     "vars":{

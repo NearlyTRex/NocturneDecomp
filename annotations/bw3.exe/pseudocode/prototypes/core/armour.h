@@ -11,4 +11,4 @@ CFlame * __cdecl CFlame::dtor(CFlame *this_ptr,uint flags);
 
 // Original: core_armour.cpp_FUN_00410370
 // Address: 00410370
-void FUN_00410370(undefined4 param_1);
+void FUN_00410370(void *param_1);

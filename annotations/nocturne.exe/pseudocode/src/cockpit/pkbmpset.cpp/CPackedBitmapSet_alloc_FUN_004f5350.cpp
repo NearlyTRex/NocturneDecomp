@@ -15,7 +15,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_004f5350(CPackedBit
   WatcomTypeInfo *type_info;
   char local_d0 [200];
   
-  cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5320(this_ptr);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_004f5320(this_ptr);
   if (bitmap_count < 1) {
     return;
   }

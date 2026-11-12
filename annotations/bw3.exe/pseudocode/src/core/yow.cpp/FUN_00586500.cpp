@@ -28,6 +28,7 @@ void core_yow_cpp_FUN_00586500(CEnemy *param_1,float param_2)
   CVector3f *pCVar11;
   float fVar12;
   int iVar13;
+  SDamageInfo *damage_info;
   uint *puVar14;
   EBloodType blood_type;
   float max_distance;
@@ -44,7 +45,7 @@ void core_yow_cpp_FUN_00586500(CEnemy *param_1,float param_2)
   float fStack_e4;
   float fStack_e0;
   float fStack_dc;
-  uint uStack_d8;
+  float fStack_d8;
   float fStack_cc;
   float fStack_c8;
   float fStack_c4;
@@ -56,12 +57,10 @@ void core_yow_cpp_FUN_00586500(CEnemy *param_1,float param_2)
   CVector3f CStack_90;
   CVector3f CStack_84;
   uint uStack_78;
-  float afStack_74 [5];
+  float afStack_74 [2];
+  CVector3f CStack_6c;
   float fStack_60;
-  float fStack_5c;
-  float fStack_58;
-  float fStack_54;
-  float fStack_50;
+  float afStack_5c [4];
   float fStack_4c;
   float fStack_48;
   float fStack_44;
@@ -89,7 +88,7 @@ void core_yow_cpp_FUN_00586500(CEnemy *param_1,float param_2)
   fStack_34 = param_2 * param_1->speed * param_1[1].base.base.location.position.x;
   pCVar1 = &(param_1->base).model;
   while (0.0 < fStack_34) {
-    iVar5 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar1->base,afStack_74 + 0x10);
+    iVar5 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar1->base,afStack_5c + 10);
     core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0(&param_1->base,iVar5);
   }
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&pCVar1->base);
@@ -241,7 +240,8 @@ LAB_00586c35:
                          fVar12,max_distance);
       pCVar1 = &(param_1->base).model;
       if (iVar5 < 0) {
-        engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"%s gave up chase - I'm confused\n",param_1);
+        engine_console_cpp_CConsole_printf_FUN_00441ff0
+                  (g_CConsolePtr,"%s gave up chase - I'm confused\n");
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar1->base,0,1);
       }
       else if ((0 < iVar5) && (param_1->attack_cooldown <= 0.0)) {
@@ -260,24 +260,26 @@ LAB_00586c35:
       SStack_15c.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(7.0,15.0);
       SStack_15c.attacker = (CDemonActor *)param_1;
       SStack_15c.wielder = (CDemonActor *)param_1;
+      damage_info = &SStack_15c;
+      fVar12 = 0.7;
       fStack_14 = SStack_15c.damage_amount;
       core_xform_cpp_FUN_00583260
                 (&DAT_02cfd900,
                  (param_1->base).model.bone_transform.bone_model_matrices +
-                 *(int *)(param_1[1].base.base.actor_name + 4),0x3f333333,&SStack_15c);
+                 *(int *)(param_1[1].base.base.actor_name + 4));
       pfVar10 = afStack_11c + 2;
       afStack_11c[2] = (float)uStack_f0;
       afStack_11c[(uint)bVar9 * -2 + 3] = afStack_11c[(uint)bVar9 * -2 + 0xc];
       afStack_11c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
            afStack_11c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd];
       core_actor_cpp_FUN_00408b80(param_1,pfVar10);
-      pfVar10 = afStack_74 + 2;
-      afStack_74[2] = (float)uStack_d8;
-      afStack_74[(uint)bVar9 * -2 + 3] = afStack_11c[(uint)bVar9 * -2 + 0x12];
+      pCVar11 = &CStack_6c;
+      CStack_6c.x = fStack_d8;
+      *(float *)((int)&CStack_6c + (uint)bVar9 * -8 + 4) = afStack_11c[(uint)bVar9 * -2 + 0x12];
       pCVar7 = param_1;
-      afStack_74[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+      *(float *)((int)&CStack_6c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
            afStack_11c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x13];
-      core_enemy_cpp_FUN_004893f0(pCVar7,pfVar10);
+      core_enemy_cpp_CEnemy_testAttackRadius_FUN_004893f0(pCVar7,pCVar11,fVar12,damage_info);
       iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_00560af0
                         (0x02CF5680,*(uint *)(param_1[1].base.base.actor_name + 0x1c));
       if (iVar5 == 0) {
@@ -348,7 +350,8 @@ LAB_0058685d:
   else {
     if (EVar3 != WALK_STATE_NO_PATH) goto LAB_0058685d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar1->base,0,1);
-    engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"%s confused while walking to scriptDest!\n",param_1);
+    engine_console_cpp_CConsole_printf_FUN_00441ff0
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (param_1->base).model.accumulated_root_motion.z = 0.0;
   (param_1->base).model.accumulated_root_motion.y = (param_1->base).model.accumulated_root_motion.z;
@@ -378,17 +381,17 @@ switchD_00586e42_caseD_4:
     fStack_44 = fStack_c8 + (param_1->base).position_delta.y;
     fStack_40 = fStack_c4 + (param_1->base).position_delta.z;
     fStack_60 = fStack_48;
-    afStack_74[(uint)bVar9 * -2 + 6] = afStack_74[(uint)bVar9 * -2 + 0xc];
-    afStack_74[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
-         afStack_74[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd];
+    afStack_5c[(uint)bVar9 * -2] = afStack_5c[(uint)bVar9 * -2 + 6];
+    afStack_5c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+         afStack_5c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
     pCVar2 = &(param_1->base).model.accumulated_root_motion;
-    fStack_54 = fStack_60 + pCVar2->x;
-    fStack_50 = fStack_5c + (param_1->base).model.accumulated_root_motion.y;
-    fStack_4c = fStack_58 + (param_1->base).model.accumulated_root_motion.z;
-    CStack_84.x = fStack_54;
-    *(float *)((int)&CStack_84 + (uint)bVar9 * -8 + 4) = afStack_74[(uint)bVar9 * -2 + 9];
+    afStack_5c[2] = fStack_60 + pCVar2->x;
+    afStack_5c[3] = afStack_5c[0] + (param_1->base).model.accumulated_root_motion.y;
+    fStack_4c = afStack_5c[1] + (param_1->base).model.accumulated_root_motion.z;
+    CStack_84.x = afStack_5c[2];
+    *(float *)((int)&CStack_84 + (uint)bVar9 * -8 + 4) = afStack_5c[(uint)bVar9 * -2 + 3];
     *(float *)((int)&CStack_84 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-         afStack_74[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];
+         afStack_5c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
     (param_1->base).position_delta.z = 0.0;
     (param_1->base).position_delta.y = (param_1->base).position_delta.z;
     pCVar11->x = (param_1->base).position_delta.y;
@@ -398,7 +401,7 @@ switchD_00586e42_caseD_4:
     pCVar2->x = fVar12;
     core_charactr_cpp_FUN_0042c230(&param_1->base,&CStack_84);
   }
-  core_charactr_cpp_FUN_0042cd30(&param_1->base);
+  core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30(&param_1->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(&(param_1->base).model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350(&param_1->base,param_2);
   return;

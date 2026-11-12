@@ -105,9 +105,9 @@ void __cdecl CDemonCube::allocVoxelMemory(CDemonCube *this_ptr);
 // Address: 0044acb0
 void __cdecl CDemonCube::allocGeometryMemory(CDemonCube *this_ptr);
 
-// Original: core_dcube.cpp_CDemonCube_FUN_0044adf0
+// Original: core_dcube.cpp_CDemonCube_freeMemory_FUN_0044adf0
 // Address: 0044adf0
-void __cdecl CDemonCube(CDemonCube *this_ptr);
+void __cdecl CDemonCube::freeMemory(CDemonCube *this_ptr);
 
 // Original: core_dcube.cpp_CDemonCube_setBounds_FUN_0044ae80
 // Address: 0044ae80

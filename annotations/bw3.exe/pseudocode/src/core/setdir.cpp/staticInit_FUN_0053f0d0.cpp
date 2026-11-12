@@ -9,6 +9,6 @@
 void core_setdir_cpp_staticInit_FUN_0053f0d0(void)
 
 {
-  __arrinit(0x2703854,2000,&g_CBoundingBox3DTypeInfo);
+  __arrinit((void *)0x2703854,2000,&g_CBoundingBox3DTypeInfo);
   return;
 }

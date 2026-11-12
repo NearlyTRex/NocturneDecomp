@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_FUN_00467160
-;   engine_alphabit.cpp_FUN_0040d1c0
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0
 ;
 ; *****************************************************************************
 
@@ -48,19 +48,19 @@ section .text
     PUSH ESI                            ; 00521d88
         ;   Label: LAB_00521d88
     PUSH 0x1d33ce4                      ; 00521d89
-    CALL engine_alphabit.cpp_FUN_0040d1c0 ; 00521d8e
-        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d1c0(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0 ; 00521d8e
+        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 00521d93
     MOV EBX,0x1d33cf8                   ; 00521d96
     PUSH 0x1d33f50                      ; 00521d9b
     LEA ESI,[EBX + 0x258]               ; 00521da0
-    CALL engine_alphabit.cpp_FUN_0040d1c0 ; 00521da6
-        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d1c0(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0 ; 00521da6
+        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 00521dab
     PUSH EBX                            ; 00521dae
         ;   Label: LAB_00521dae
-    CALL engine_alphabit.cpp_FUN_0040d1c0 ; 00521daf
-        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d1c0(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0 ; 00521daf
+        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap * this_ptr)
     ADD EBX,0x14                        ; 00521db4
     ADD ESP,0x4                         ; 00521db7
     CMP EBX,ESI                         ; 00521dba

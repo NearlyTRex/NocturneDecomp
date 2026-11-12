@@ -128,7 +128,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004cc07d
     PUSH EAX                            ; 004cc081
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 004cc082
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     FLD float ptr [EBX + 0x158]         ; 004cc087
     FMUL double ptr [0x005c45e0]        ; 004cc08d | DAT_005c45e0
     LEA ESI,[ESP + 0xa4]                ; 004cc093

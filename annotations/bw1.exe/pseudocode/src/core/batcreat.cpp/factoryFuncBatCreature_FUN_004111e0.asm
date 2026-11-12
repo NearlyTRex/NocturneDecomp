@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_batcreat_cpp_factoryFuncBatCreature_FUN_004111e0(void)
+; CBatCreature * __cdecl core_batcreat_cpp_factoryFuncBatCreature_FUN_004111e0(void)
 ;
 ;
 ; Called Functions:

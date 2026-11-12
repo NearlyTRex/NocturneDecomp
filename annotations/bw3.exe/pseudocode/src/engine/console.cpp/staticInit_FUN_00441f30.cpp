@@ -10,11 +10,9 @@ void __cdecl engine_console_cpp_staticInit_FUN_00441f30(void)
 
 {
   uint uStack0000000c;
-  WatcomStaticDestructorNode *pWStack00000010;
   
   engine_console_cpp_CConsole_ctor_FUN_00441f60(&g_CConsoleInstance,0x28,0x20,1,1);
-  pWStack00000010 = &g_ConsoleDestructorNode;
   uStack0000000c = 0x441f4f;
-  _atexit();
+  _atexit(&g_ConsoleDestructorNode);
   return;
 }

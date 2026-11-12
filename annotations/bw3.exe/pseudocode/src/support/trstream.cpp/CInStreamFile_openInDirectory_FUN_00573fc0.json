@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 162,
+    "complexity_score": 160,
     "cross_reference_count": 15,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 25,
     "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 94
+    "total_lines": 92
   },
   "cross_references": [
     {
@@ -139,7 +139,7 @@
     {
       "addr": "00573e00",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_00573e00"
+      "name": "support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00"
     }
   ],
   "globals": [
@@ -295,6 +295,20 @@
     },
     "pcode_op_count": 248
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057d390",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9655
+    },
+    "bw1.exe": {
+      "addr": "005a0fd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -359,7 +373,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 12,
+      "line": 9,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",
@@ -367,7 +381,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 9,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",
@@ -375,23 +389,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465660(auStack_218,param_2,param_3);",
+      "text": "engine_dosio_cpp_FUN_00465660(&SStack_218,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 11,
       "match": "param_3",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465660(auStack_218,param_2,param_3);",
+      "text": "engine_dosio_cpp_FUN_00465660(&SStack_218,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)((int)this_ptr->vtable + 0x1c))(this_ptr);",
@@ -399,7 +413,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
+      "line": 20,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)((int)this_ptr->vtable + 0x1c))(this_ptr);",
@@ -407,7 +421,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_4",
       "severity": "mild",
       "text": "this_ptr->binary_mode = param_4;",
@@ -415,7 +429,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 26,
       "match": "(code **)((int)this_ptr",
       "severity": "moderate",
       "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",
@@ -423,7 +437,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
+      "line": 26,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",

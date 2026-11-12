@@ -16,7 +16,7 @@ CBurncross * core_burncrss_cpp_CBurncross_dtor_FUN_00425420(CBurncross *this_ptr
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBurncrossTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBurncrossTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

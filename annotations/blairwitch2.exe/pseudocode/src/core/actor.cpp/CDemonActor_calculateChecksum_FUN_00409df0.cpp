@@ -10,8 +10,8 @@ void __cdecl core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409df0(CDemonAct
 
 {
   core_actor_cpp_crc32ProcessString_FUN_0040d2e0(out_crc,this_ptr->actor_name);
-  core_actor_cpp_crc32ProcessVector_FUN_0040d2c0(out_crc,&this_ptr->location);
-  core_actor_cpp_crc32ProcessVector_FUN_0040d2c0(out_crc,&this_ptr->orient);
+  core_actor_cpp_crc32ProcessVector_FUN_0040d2c0(out_crc,&(this_ptr->location).position);
+  core_actor_cpp_crc32ProcessVector_FUN_0040d2c0(out_crc,&(this_ptr->orient).vec);
   core_actor_cpp_crc32ProcessInt_FUN_0040d2a0(out_crc,this_ptr->lifecycle_state);
   return;
 }

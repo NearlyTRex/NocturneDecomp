@@ -16,11 +16,12 @@ bool core_hero_cpp_FUN_004d3e20(CHero *param_1,char *param_2)
   CDemonActor *pCVar1;
   int iVar2;
   int iVar3;
+  CDemonActor *pCVar4;
   char *format;
   char acStack_128 [256];
   float local_28;
   int local_24;
-  int iStack_20;
+  CDemonActor *pCStack_20;
   int iStack_1c;
   int local_18;
   
@@ -52,13 +53,13 @@ LAB_004d3fd9:
                             (param_1,(CDemonActor *)this_ptr,iVar2,&local_28);
           if (iVar3 != 0) {
             if ((iVar2 == 5) && ((int)local_28 < 0x40400000)) {
-              iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840
-                                (this_ptr,g_CAmmoClassInfo.name_hash);
-              iStack_20 = iVar2;
-              iVar3 = core_actor_cpp_castToClassHash_FUN_0040c840
-                                (this_ptr,g_CHealthItemClassInfo.name_hash);
-              if (iVar2 == 0) {
-                if (((iVar3 != 0) && (*(int *)(iVar3 + 0x2e0) != 0)) &&
+              pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
+                                 ((CDemonActor *)this_ptr,g_CAmmoClassInfo.name_hash);
+              pCStack_20 = pCVar1;
+              pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840
+                                 ((CDemonActor *)this_ptr,g_CHealthItemClassInfo.name_hash);
+              if (pCVar1 == (CDemonActor *)0x0) {
+                if (((pCVar4 != (CDemonActor *)0x0) && (pCVar4[2].orient.vec.x != 0.0)) &&
                    ((param_1->base).hit_points == 100.0)) {
                   format = "Already have max health!";
                   goto LAB_004d3f97;
@@ -67,11 +68,11 @@ code_r0x004d400c:
                 core_inv_cpp_FUN_004da880(&param_1->inventory,(CDemonActor *)this_ptr,1);
               }
               else {
-                if ((*(int *)(iVar2 + 0x318) == 0xb) && (param_1->bullets == 0x32)) {
+                if ((pCVar1[2].validation_magic == 0xb) && (param_1->bullets == 0x32)) {
                   format = "Already have max bullets!";
                 }
                 else {
-                  if ((*(int *)(iStack_20 + 0x318) != 10) || (param_1->mana != 100))
+                  if ((pCStack_20[2].validation_magic != 10) || (param_1->mana != 100))
                   goto code_r0x004d400c;
                   format = "Already have max mana!";
                 }

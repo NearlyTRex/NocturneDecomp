@@ -11,11 +11,11 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0(CDemonRenderer *this_ptr,CVector3f *world_position)
 
 {
-  uint uVar1;
+  SMRGLPoint *block;
   
   round();
   round();
-  uVar1 = round();
-  engine_3d_c_processCameraRelativePoint_FUN_004037e0(uVar1);
+  block = (SMRGLPoint *)round();
+  engine_3d_c_processCameraRelativePoint_FUN_004037e0(block);
   return;
 }

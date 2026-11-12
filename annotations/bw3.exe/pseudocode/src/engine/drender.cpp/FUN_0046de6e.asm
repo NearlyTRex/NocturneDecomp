@@ -146,7 +146,7 @@ section .text
     ADD EAX,EDX                         ; 0046df82
     PUSH EAX                            ; 0046df84
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0 ; 0046df85
-        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0()
+        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 0046df8a
     TEST EAX,EAX                        ; 0046df8d
     JNZ 0x0046df00                      ; 0046df8f
@@ -256,7 +256,7 @@ section .text
     ADD EAX,EDX                         ; 0046e08b
     PUSH EAX                            ; 0046e08d
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0 ; 0046e08e
-        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0()
+        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 0046e093
     TEST EAX,EAX                        ; 0046e096
     JNZ 0x0046dfea                      ; 0046e098

@@ -14,55 +14,55 @@ void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_004791a0(float z_far)
   byte bVar1;
   uint uVar2;
   int iVar3;
-  uint *puVar4;
-  int iVar5;
+  CVector3f *point1_ptr;
+  int iVar4;
   
-  iVar5 = 0;
+  iVar4 = 0;
   if (0 < (int)_DAT_01c22258) {
-    puVar4 = (uint *)&DAT_01c2225c;
+    point1_ptr = (CVector3f *)&DAT_01c2225c;
     do {
-      uVar2 = iVar5 + 1;
+      uVar2 = iVar4 + 1;
       if (uVar2 == _DAT_01c22258) {
         uVar2 = uVar2 ^ _DAT_01c22258;
       }
-      bVar1 = z_far < (float)puVar4[2];
+      bVar1 = z_far < point1_ptr->z;
       if (z_far < *(float *)(&DAT_01c22264 + uVar2 * 0xc)) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {
       case 0:
         iVar3 = _DAT_01c2231c * 0xc;
-        if ((uint *)(&DAT_01c22320 + iVar3) != puVar4) {
-          *(uint *)(&DAT_01c22320 + iVar3) = *puVar4;
-          *(uint *)(&DAT_01c22324 + iVar3) = puVar4[1];
-          *(uint *)(&DAT_01c22328 + iVar3) = puVar4[2];
+        if ((CVector3f *)(&DAT_01c22320 + iVar3) != point1_ptr) {
+          ((CVector3f *)(&DAT_01c22320 + iVar3))->x = point1_ptr->x;
+          *(float *)(&DAT_01c22324 + iVar3) = point1_ptr->y;
+          *(float *)(&DAT_01c22328 + iVar3) = point1_ptr->z;
         }
         break;
       case 1:
         core_dtri_cpp_clipLineToPlane_FUN_00478900
-                  (&DAT_01c2225c + uVar2 * 0xc,puVar4,&DAT_01c22320 + _DAT_01c2231c * 0xc,0,0,0,0,0,
-                   0xbff00000,(double)z_far);
+                  ((CVector3f *)(&DAT_01c2225c + uVar2 * 0xc),point1_ptr,
+                   (CVector3f *)(&DAT_01c22320 + _DAT_01c2231c * 0xc),0.0,0.0,-1.0,(double)z_far);
         break;
       case 2:
         iVar3 = _DAT_01c2231c * 0xc;
-        if ((uint *)(&DAT_01c22320 + iVar3) != puVar4) {
-          *(uint *)(&DAT_01c22320 + iVar3) = *puVar4;
-          *(uint *)(&DAT_01c22324 + iVar3) = puVar4[1];
-          *(uint *)(&DAT_01c22328 + iVar3) = puVar4[2];
+        if ((CVector3f *)(&DAT_01c22320 + iVar3) != point1_ptr) {
+          ((CVector3f *)(&DAT_01c22320 + iVar3))->x = point1_ptr->x;
+          *(float *)(&DAT_01c22324 + iVar3) = point1_ptr->y;
+          *(float *)(&DAT_01c22328 + iVar3) = point1_ptr->z;
         }
         _DAT_01c2231c = _DAT_01c2231c + 1;
         core_dtri_cpp_clipLineToPlane_FUN_00478900
-                  (puVar4,&DAT_01c2225c + uVar2 * 0xc,&DAT_01c22320 + _DAT_01c2231c * 0xc,0,0,0,0,0,
-                   0xbff00000,(double)z_far);
+                  (point1_ptr,(CVector3f *)(&DAT_01c2225c + uVar2 * 0xc),
+                   (CVector3f *)(&DAT_01c22320 + _DAT_01c2231c * 0xc),0.0,0.0,-1.0,(double)z_far);
         break;
       default:
         goto switchD_00479214_caseD_3;
       }
       _DAT_01c2231c = _DAT_01c2231c + 1;
 switchD_00479214_caseD_3:
-      iVar5 = iVar5 + 1;
-      puVar4 = puVar4 + 3;
-    } while (iVar5 < (int)_DAT_01c22258);
+      iVar4 = iVar4 + 1;
+      point1_ptr = point1_ptr + 1;
+    } while (iVar4 < (int)_DAT_01c22258);
   }
   return;
 }

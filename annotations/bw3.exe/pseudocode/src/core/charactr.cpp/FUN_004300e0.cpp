@@ -11,11 +11,12 @@
 void core_charactr_cpp_FUN_004300e0(CCharacter *param_1,CVector3f *param_2,CBoundingBox3D *param_3,int param_4)
 
 {
-  CDeformableModel *pCVar1;
-  int iVar2;
-  uint *puVar3;
+  CDemonActor *pCVar1;
+  CDeformableModel *pCVar2;
+  int iVar3;
   uint *puVar4;
-  byte bVar5;
+  uint *puVar5;
+  byte bVar6;
   float afStackY_1094 [991];
   CVector3f *initial_velocity;
   float min_value;
@@ -41,11 +42,11 @@ void core_charactr_cpp_FUN_004300e0(CCharacter *param_1,CVector3f *param_2,CBoun
   int local_1c;
   float local_18;
   
-  bVar5 = 0;
+  bVar6 = 0;
   sound_sndmain_cpp_killSfx_FUN_00556be0(param_1->sfx_handle);
   if ((param_1->model).model_name[0] != '\0') {
-    pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(&param_1->model);
-    local_20 = pCVar1->num_parts;
+    pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(&param_1->model);
+    local_20 = pCVar2->num_parts;
     if (1 < local_20) {
       if ((float)param_3 < 0.0) {
         param_3 = (CBoundingBox3D *)0x41a00000;
@@ -59,10 +60,10 @@ void core_charactr_cpp_FUN_004300e0(CCharacter *param_1,CVector3f *param_2,CBoun
             min_value = -(float)param_3;
             local_24 = min_value;
             local_ac.x = local_70[0];
-            *(float *)((int)&local_ac + (uint)bVar5 * -8 + 4) = local_70[(uint)bVar5 * -2 + 1];
+            *(float *)((int)&local_ac + (uint)bVar6 * -8 + 4) = local_70[(uint)bVar6 * -2 + 1];
             max_value = param_3;
-            *(float *)((int)&local_ac + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-                 local_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 2];
+            *(float *)((int)&local_ac + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+                 local_70[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 2];
             local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(min_value,(float)param_3)
             ;
             local_ac.y = local_18 + local_ac.y;
@@ -78,9 +79,9 @@ void core_charactr_cpp_FUN_004300e0(CCharacter *param_1,CVector3f *param_2,CBoun
             local_28 = local_80;
             core_dirmat_cpp_FUN_0045b800(&stack0xfffffefc,&CStack_8c.y);
             local_58.x = local_70[3];
-            *(float *)((int)&local_58 + (uint)bVar5 * -8 + 4) = local_70[(uint)bVar5 * -2 + 4];
-            *(float *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-                 local_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 5];
+            *(float *)((int)&local_58 + (uint)bVar6 * -8 + 4) = local_70[(uint)bVar6 * -2 + 4];
+            *(float *)((int)&local_58 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+                 local_70[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 5];
             initial_velocity = &local_58;
             param_3 = max_value;
           }
@@ -92,32 +93,32 @@ void core_charactr_cpp_FUN_004300e0(CCharacter *param_1,CVector3f *param_2,CBoun
     }
   }
   (*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,param_3);
-  puVar3 = (uint *)&stack0xffffff2c;
-  puVar4 = (uint *)&stack0xffffff3c;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+  puVar4 = (uint *)&stack0xffffff2c;
+  puVar5 = (uint *)&stack0xffffff3c;
+  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *puVar5 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
   fStack_44 = fStack_bc + fStack_b0;
   afStack_40[0] = fStack_b8 + local_ac.x;
   afStack_40[1] = fStack_b4 + local_ac.y;
   fStack_74 = fStack_bc + fStack_b0;
-  local_70[(uint)bVar5 * -2] = afStack_40[(uint)bVar5 * -2];
-  local_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-       afStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+  local_70[(uint)bVar6 * -2] = afStack_40[(uint)bVar6 * -2];
+  local_70[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+       afStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   fStack_2c = fStack_74 * _DAT_005b839e;
   local_28 = local_70[0] * _DAT_005b839e;
   local_24 = local_70[1] * _DAT_005b839e;
   afStack_40[2] = fStack_74 * _DAT_005b839e;
-  afStack_40[(uint)bVar5 * -2 + 3] = afStack_40[(uint)bVar5 * -2 + 6];
-  afStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-       afStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
+  afStack_40[(uint)bVar6 * -2 + 3] = afStack_40[(uint)bVar6 * -2 + 6];
+  afStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+       afStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
   core_actor_cpp_FUN_00408b80(param_1);
   CStack_8c.x = fStack_98;
-  *(float *)((int)&CStack_8c + (uint)bVar5 * -8 + 4) = afStack_94[(uint)bVar5 * -2];
-  *(float *)((int)&CStack_8c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-       afStack_94[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+  *(float *)((int)&CStack_8c + (uint)bVar6 * -8 + 4) = afStack_94[(uint)bVar6 * -2];
+  *(float *)((int)&CStack_8c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+       afStack_94[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   if (param_1->is_fully_burned == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004ce9c0
               (g_CGorePtr,&CStack_8c,param_2,100,param_1->blood_type);
@@ -125,8 +126,8 @@ void core_charactr_cpp_FUN_004300e0(CCharacter *param_1,CVector3f *param_2,CBoun
   else {
     param_1->fire_count = 0;
   }
-  iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1);
-  if (iVar2 != 0) {
+  pCVar1 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c840(&param_1->base,g_CEnemyClassInfo.name_hash);
+  if (pCVar1 != (CDemonActor *)0x0) {
     core_enemy_cpp_FUN_00489c90();
     (param_1->base).lifecycle_state = ACTOR_DESTROYED;
     return;

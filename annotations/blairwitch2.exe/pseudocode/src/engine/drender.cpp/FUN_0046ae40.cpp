@@ -18,7 +18,7 @@ void engine_drender_cpp_FUN_0046ae40(CDemonRenderer *param_1,int param_2)
   uint uStack_14;
   
   if ((param_1->plane_culling_enabled == 0) ||
-     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403970(param_2 + 8), iVar3 != 0)) {
+     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403970((SClipPlane *)(param_2 + 8)), iVar3 != 0)) {
     uStack_14 = 0xffffffff;
     iVar3 = 0;
     if (0 < *(int *)(param_2 + 4)) {

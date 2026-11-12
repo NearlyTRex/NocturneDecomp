@@ -110,6 +110,32 @@
     },
     "pcode_op_count": 596
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004791a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0047a210",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0049bf60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0046dd80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -157,7 +183,7 @@
       "line": 15,
       "match": "DAT_01c3d818",
       "severity": "mild",
-      "text": "puVar4 = (uint *)&DAT_01c3d818;",
+      "text": "point1_ptr = (CVector3f *)&DAT_01c3d818;",
       "type": "undefined_data"
     },
     {
@@ -173,7 +199,7 @@
       "line": 28,
       "match": "DAT_01c3d8dc",
       "severity": "mild",
-      "text": "if ((uint *)(&DAT_01c3d8dc + iVar3) != puVar4) {",
+      "text": "if ((CVector3f *)(&DAT_01c3d8dc + iVar3) != point1_ptr) {",
       "type": "undefined_data"
     },
     {
@@ -181,7 +207,7 @@
       "line": 29,
       "match": "DAT_01c3d8dc",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01c3d8dc + iVar3) = *puVar4;",
+      "text": "((CVector3f *)(&DAT_01c3d8dc + iVar3))->x = point1_ptr->x;",
       "type": "undefined_data"
     },
     {
@@ -189,7 +215,7 @@
       "line": 30,
       "match": "DAT_01c3d8e0",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01c3d8e0 + iVar3) = puVar4[1];",
+      "text": "*(float *)(&DAT_01c3d8e0 + iVar3) = point1_ptr->y;",
       "type": "undefined_data"
     },
     {
@@ -197,7 +223,7 @@
       "line": 31,
       "match": "DAT_01c3d8e4",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01c3d8e4 + iVar3) = puVar4[2];",
+      "text": "*(float *)(&DAT_01c3d8e4 + iVar3) = point1_ptr->z;",
       "type": "undefined_data"
     },
     {
@@ -205,15 +231,15 @@
       "line": 36,
       "match": "DAT_01c3d818",
       "severity": "mild",
-      "text": "(&DAT_01c3d818 + uVar2 * 0xc,puVar4,&DAT_01c3d8dc + _DAT_01c3d8d8 * 0xc,0,0,0,0,0,",
+      "text": "((CVector3f *)(&DAT_01c3d818 + uVar2 * 0xc),point1_ptr,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 37,
       "match": "DAT_01c3d8dc",
       "severity": "mild",
-      "text": "(&DAT_01c3d818 + uVar2 * 0xc,puVar4,&DAT_01c3d8dc + _DAT_01c3d8d8 * 0xc,0,0,0,0,0,",
+      "text": "(CVector3f *)(&DAT_01c3d8dc + _DAT_01c3d8d8 * 0xc),0.0,0.0,-1.0,(double)z_far);",
       "type": "undefined_data"
     },
     {
@@ -221,7 +247,7 @@
       "line": 41,
       "match": "DAT_01c3d8dc",
       "severity": "mild",
-      "text": "if ((uint *)(&DAT_01c3d8dc + iVar3) != puVar4) {",
+      "text": "if ((CVector3f *)(&DAT_01c3d8dc + iVar3) != point1_ptr) {",
       "type": "undefined_data"
     },
     {
@@ -229,7 +255,7 @@
       "line": 42,
       "match": "DAT_01c3d8dc",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01c3d8dc + iVar3) = *puVar4;",
+      "text": "((CVector3f *)(&DAT_01c3d8dc + iVar3))->x = point1_ptr->x;",
       "type": "undefined_data"
     },
     {
@@ -237,7 +263,7 @@
       "line": 43,
       "match": "DAT_01c3d8e0",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01c3d8e0 + iVar3) = puVar4[1];",
+      "text": "*(float *)(&DAT_01c3d8e0 + iVar3) = point1_ptr->y;",
       "type": "undefined_data"
     },
     {
@@ -245,7 +271,7 @@
       "line": 44,
       "match": "DAT_01c3d8e4",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01c3d8e4 + iVar3) = puVar4[2];",
+      "text": "*(float *)(&DAT_01c3d8e4 + iVar3) = point1_ptr->z;",
       "type": "undefined_data"
     },
     {
@@ -253,15 +279,15 @@
       "line": 48,
       "match": "DAT_01c3d818",
       "severity": "mild",
-      "text": "(puVar4,&DAT_01c3d818 + uVar2 * 0xc,&DAT_01c3d8dc + _DAT_01c3d8d8 * 0xc,0,0,0,0,0,",
+      "text": "(point1_ptr,(CVector3f *)(&DAT_01c3d818 + uVar2 * 0xc),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 49,
       "match": "DAT_01c3d8dc",
       "severity": "mild",
-      "text": "(puVar4,&DAT_01c3d818 + uVar2 * 0xc,&DAT_01c3d8dc + _DAT_01c3d8d8 * 0xc,0,0,0,0,0,",
+      "text": "(CVector3f *)(&DAT_01c3d8dc + _DAT_01c3d8d8 * 0xc),0.0,0.0,-1.0,(double)z_far);",
       "type": "undefined_data"
     }
   ]

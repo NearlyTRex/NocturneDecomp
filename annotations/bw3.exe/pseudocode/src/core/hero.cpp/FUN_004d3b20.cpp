@@ -32,7 +32,7 @@ int __cdecl core_hero_cpp_FUN_004d3b20(CHero *this_ptr)
     for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
       this_ptr_00 = (CActorDestination *)
                     core_actor_cpp_castToClassHash_FUN_0040c840
-                              (*(uint *)((int)g_CDemonSetPtr->actors + local_18),
+                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),
                                g_CActorDestinationClassInfo.name_hash);
       if ((this_ptr_00 != (CActorDestination *)0x0) &&
          (iVar1 = core_dest_cpp_CActorDestination_acceptsActor_FUN_004594a0(this_ptr_00,local_20),

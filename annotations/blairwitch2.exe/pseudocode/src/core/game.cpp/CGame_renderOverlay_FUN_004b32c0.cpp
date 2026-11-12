@@ -16,9 +16,9 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b32c0(CGame *this_ptr)
   int iVar3;
   int iVar4;
   int iVar5;
-  int iVar6;
   CBitFont *this_ptr_00;
-  float10 fVar7;
+  char *text;
+  float10 fVar6;
   char local_164 [256];
   int local_64;
   int local_60;
@@ -50,9 +50,9 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b32c0(CGame *this_ptr)
       iVar3 = 0xffff;
     }
     else {
-      fVar7 = (float10)this_ptr->message_timer * (float10)_DAT_005d7313;
+      fVar6 = (float10)this_ptr->message_timer * (float10)_DAT_005d7313;
       round();
-      iVar3 = (int)ROUND(fVar7);
+      iVar3 = (int)ROUND(fVar6);
       local_14 = iVar3;
     }
     engine_3d_c_setRenderAlpha_FUN_00406da0(iVar3);
@@ -74,13 +74,13 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b32c0(CGame *this_ptr)
     }
     iVar3 = 0;
     if (0 < local_48) {
-      iVar4 = 0x1cb0710;
+      text = (char *)0x1cb0710;
       local_4c = DAT_006141b8 + -1;
       do {
-        iVar6 = engine_font_cpp_FUN_004aaf00(local_38,iVar4);
+        iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(local_38,text);
         iVar3 = iVar3 + 1;
-        engine_font_cpp_FUN_004a8df0(local_38,iVar4,(local_4c - iVar6) / 2,iVar5,0xf8,0);
-        iVar4 = iVar4 + 0x100;
+        engine_font_cpp_FUN_004a8df0(local_38,text,(local_4c - iVar4) / 2,iVar5,0xf8,0);
+        text = text + 0x100;
         iVar5 = iVar5 + local_54;
       } while (iVar3 < local_48);
     }
@@ -138,9 +138,9 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b32c0(CGame *this_ptr)
         local_24 = iVar3;
         engine_2d_c_fillRectWithBorder_FUN_00403250(local_3c,local_34,local_58,iVar3,0,0);
         local_14 = (local_28 - iVar4) + 1;
-        fVar7 = (float10)local_14 * (float10)fVar1;
+        fVar6 = (float10)local_14 * (float10)fVar1;
         round();
-        local_2c = (int)ROUND(fVar7);
+        local_2c = (int)ROUND(fVar6);
         if (0 < local_2c) {
           engine_2d_c_fillRectColor_FUN_004031c0(iVar4,local_34,local_2c + iVar4,local_24,iVar5);
         }

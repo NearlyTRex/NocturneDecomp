@@ -338,8 +338,8 @@ LAB_00588fbb:
                               (this_ptr,this_ptr->object_shape_class);
             if (-1 < iVar7) {
               core_charactr_cpp_FUN_004319d0(this_ptr,iVar7,pCVar15);
-              engine_console_cpp_FUN_00441ff0
-                        (g_CConsolePtr,"%s picked up %s using hand %d\n",this_ptr);
+              engine_console_cpp_CConsole_printf_FUN_00441ff0
+                        (g_CConsolePtr,"%s picked up %s using hand %d\n");
             }
           }
         }
@@ -480,7 +480,7 @@ LAB_00588fbb:
         core_main_c_FUN_004e4330();
       }
       if ((this_ptr->base).base.carry_hands[iVar7].carry_actor != (CDemonActor *)0x0) {
-        engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"%s lugging %s\n");
+        engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s lugging %s\n");
         CStack_3ac.y = 6.0;
         CStack_3ac.x = 0.0;
         CStack_3ac.z = 17.0;
@@ -502,7 +502,7 @@ LAB_00588fbb:
         }
         pcStack_bc = (this_ptr->base).base.base.actor_name + iStack_7c * 0x78;
         if (*(int *)(pcStack_bc + 0x25b0) != 0) {
-          engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"%s tossing %s\n");
+          engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s tossing %s\n");
           CStack_208.x = 0.0;
           CStack_208.y = 0.0;
           CStack_208.z = 1.0;
@@ -846,7 +846,8 @@ LAB_00588fbb:
                              fVar27,(float)in_stack_fffffa44);
           pCStack_3c = &(this_ptr->base).base.model.base;
           if (iVar7 < 0) {
-            engine_console_cpp_FUN_00441ff0();
+            engine_console_cpp_CConsole_printf_FUN_00441ff0
+                      (g_CConsolePtr,"%s gave up chase - I'm confused\n");
             in_stack_fffffa44 = (UActorVTable *)0x1;
             core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_3c,0,1);
           }
@@ -883,7 +884,8 @@ LAB_00588fbb:
                 if (uVar9 < 3) {
                   if ((this_ptr->base).base.carry_hands[iStack_58].carry_actor != (CDemonActor *)0x0
                      ) {
-                    engine_console_cpp_FUN_00441ff0();
+                    engine_console_cpp_CConsole_printf_FUN_00441ff0
+                              (g_CConsolePtr,"%s lugging\n");
                     in_stack_fffffa44 = (UActorVTable *)0x1;
                     core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_3c,0xe,1)
                     ;
@@ -892,7 +894,8 @@ LAB_00588fbb:
                 else if ((uVar9 == 3) &&
                         ((this_ptr->base).base.carry_hands[iStack_58].carry_actor !=
                          (CDemonActor *)0x0)) {
-                  engine_console_cpp_FUN_00441ff0();
+                  engine_console_cpp_CConsole_printf_FUN_00441ff0
+                            (g_CConsolePtr,"%s tossing\n");
                   in_stack_fffffa44 = (UActorVTable *)0x1;
                   core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_3c,0xc,1);
                 }
@@ -1005,7 +1008,7 @@ LAB_0058aaf1:
             break;
           }
         }
-        engine_console_cpp_FUN_00441ff0(g_CConsolePtr);
+        engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s gave up swing\n");
         core_zombie_cpp_FUN_0058cc20(this_ptr);
       }
       break;
@@ -1073,7 +1076,8 @@ LAB_0058a628:
                (fStack_264 = 0.0,
                SQRT(fStack_260 * fStack_260 + fStack_268 * fStack_268) <=
                (this_ptr->base).guard_distance)) {
-              engine_console_cpp_FUN_00441ff0(g_CConsolePtr);
+              engine_console_cpp_CConsole_printf_FUN_00441ff0
+                        (g_CConsolePtr,"%s rising from the grave\n");
               core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                         (&(this_ptr->base).base.model.base,0x10,1);
               if ((CGrave *)this_ptr->grave_actor != (CGrave *)0x0) {
@@ -1208,7 +1212,8 @@ LAB_00589ecd:
                         ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->base).location.position
                          ,pCVar14,pCVar26,fVar27,(float)in_stack_fffffa44);
       if (iVar7 != 1) {
-        engine_console_cpp_FUN_00441ff0();
+        engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s giving up attack\n")
+        ;
         core_zombie_cpp_FUN_0058cc20(this_ptr);
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
       }
@@ -1234,7 +1239,8 @@ LAB_00589d98:
       if (EVar4 != WALK_STATE_NO_PATH) goto LAB_00589d98;
       core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                 (&(this_ptr->base).base.model.base,0,1);
-      engine_console_cpp_FUN_00441ff0(g_CConsolePtr);
+      engine_console_cpp_CConsole_printf_FUN_00441ff0
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
     }
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -1249,7 +1255,7 @@ LAB_00589d98:
                       (&(this_ptr->base).base.model.base);
   iVar7 = pSVar12->state_index;
   iStack_30 = iVar7;
-  engine_console_cpp_FUN_00441ff0(g_CConsolePtr);
+  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"State: %d\n");
   pCStack_38 = &(this_ptr->base).base.model.accumulated_root_motion;
   if (iVar7 == 0xf) {
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -1318,7 +1324,7 @@ LAB_00589d98:
   pCStack_38->y = pCStack_38->z;
   pCStack_38->x = pCStack_38->y;
 LAB_00589b68:
-  core_charactr_cpp_FUN_0042cd30((CCharacter *)this_ptr);
+  core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30((CCharacter *)this_ptr);
   if (iStack_30 != 0xf) {
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130
               (&(this_ptr->base).base.model);

@@ -29,9 +29,9 @@ void FUN_00543680(CEnemy *param_1);
 // Address: 005438d0
 void FUN_005438d0(CEnemy *param_1,float param_2);
 
-// Original: core_shadow.cpp_FUN_00544fd0
+// Original: core_shadow.cpp_CShadow_setWalkTarget_FUN_00544fd0
 // Address: 00544fd0
-void FUN_00544fd0(CCharacter *param_1,CDemonActor *param_2,float param_3,float param_4);
+void __cdecl CShadow::setWalkTarget(CShadow *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 
 // Original: core_shadow.cpp_FUN_00545000
 // Address: 00545000

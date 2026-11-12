@@ -2,11 +2,11 @@
 // Address: 004ab35e
 // Address Range: [[004ab35e, 004ab529]]
 // Convention: unknown
-// Signature: int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
+// Signature: int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
 
 #include "nocturne.h"
 
-int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
+int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
 
 {
   char cVar1;
@@ -52,11 +52,11 @@ int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int par
         if ((int)uVar8 < param_5 + -1) {
           *(byte *)(uVar8 + 0x1cafe40) = 0;
           if ((iStack_14 < 2) && (param_8 == 0)) {
-            iVar5 = engine_font_cpp_FUN_004aaf00(param_1,0x1cafe40);
+            iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(param_1,(char *)0x1cafe40);
           }
           else {
-            iVar2 = *(int *)(param_1 + 0x3668);
-            iVar5 = engine_font_cpp_FUN_004aaf00(param_1,0x1cafe40);
+            iVar2 = param_1->char_widths[0x20];
+            iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(param_1,(char *)0x1cafe40);
             iVar5 = iVar5 + iVar2 * param_7;
           }
           if (iVar5 <= param_6) {

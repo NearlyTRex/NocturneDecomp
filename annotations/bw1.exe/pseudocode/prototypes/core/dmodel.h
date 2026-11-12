@@ -67,7 +67,7 @@ void __cdecl CKeyFramedModel::captureTextures(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_FUN_00467c00
 // Address: 00467c00
-float FUN_00467c00(CKeyFramedModel *param_1,int param_2,undefined4 param_3,undefined4 param_4,float *param_5);
+float FUN_00467c00(CKeyFramedModel *param_1,int param_2,CVector3f *param_3,CVector3f *param_4,float *param_5);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00468160
 // Address: 00468160
@@ -87,7 +87,7 @@ void __cdecl CKeyFramedModel::populateCollisionList(CKeyFramedModel *this_ptr,CV
 
 // Original: core_dmodel.cpp_loadModel_FUN_00468780
 // Address: 00468780
-CKeyFramedModel * __cdecl loadModel(char *param_1);
+CKeyFramedModel * __cdecl loadModel(char *filename);
 
 // Original: core_dmodel.cpp_freeAllModels_FUN_00468830
 // Address: 00468830

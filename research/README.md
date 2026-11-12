@@ -846,6 +846,99 @@ Ghidra source location: `~/Repositories/Ghidra/`
 
 ## Changelog
 
+### 2026-11-11
+- **New report `bad_instructions.txt`** (`report_bad_instructions.py`). It checks Ghidra's
+  "Failed to disassemble" bookmarks against each owner's exported `.asm`.
+  - Of the 24 bookmarks, 18 are stale (the problem is gone, the bookmark stays). They
+    include all 15 in bw2, left by the misaligned functions deleted on 2026-11-10.
+  - The other 6 are Watcom `strstr`'s skip trick in each BW build, not bad creations:
+    `test ax,0xcf89` hides `mov edi,ecx`, and the code jumps into it at +2.
+- **How the five programs relate**, over the 2866 named game functions all five share
+  (same source = identical bytes, or only struct offsets differ):
+
+  | Pattern | Functions |
+  |---|---|
+  | Same in all five | 1600 (56%) |
+  | Only nocedit differs (editor code) | 106 |
+  | nocedit = nocturne; the three BW builds agree with each other | 202 |
+  | The BW builds agree; nocturne and nocedit differ from them | 199 |
+  | nocedit = nocturne; the BW builds differ from each other | 230 (84 differ only in constants or operands) |
+  | No two agree | 529 (166 differ only in constants or operands) |
+
+  - bw1 and bw3 are the closest pair: 86% the same source, against 76% for either with bw2.
+    bw2 also has about 3 times as many struct-layout differences from bw1 as bw3 does.
+  - About 80% of each BW build's unnamed game functions are in units that nocedit also has.
+- **Body matching between the BW builds named 292 more functions** (`match_function_bodies.py`
+  run for every program into each BW build and into nocturne):
+  - 259 unnamed functions whose matched twins agree on one name from a unit with the same
+    file: bw1 75, bw2 87, bw3 94, nocturne 3. 140 came from nocturne alone.
+  - 25 resolved by hand from unit mismatches (below), and 4 moved to their unit without a name.
+  - 8 motion functions from the recreation's own `// nocedit` + `// bw1` line pairs, which no
+    body match finds because the motion format changed.
+- **BW classes that are other classes' code under a new name.** Bodies identical, calls
+  agreeing:
+
+  | bw3 | bw1 / bw2 |
+  |---|---|
+  | `CPrye` | `CDoc` |
+  | `CBlunderbus` | `CShotgun` |
+  | `CTheHand` | `CTentacle` |
+  | `CZombiePriest` | `CMobster` |
+  | `factoryFuncHecaitomix` | `factoryFuncBiggs` |
+
+  bw1's `CDoc` and bw3's `CPrye` also carry nocturne `CStranger` and `CGabriella` methods.
+  These now take their own class's name (`CDoc_getCarryLightIntensity`,
+  `CPrye_updateTurnBlending`).
+- **Unit starts found late** (`24-bw_units/`): `pkbmpset.cpp` began 2–3 functions late in
+  nocturne and every BW build, `dimage.cpp` one function late in every BW build, and bw3's
+  `special.cpp` one function late (inside `spawner.cpp`).
+- **69 phantom functions deleted from the BW builds** (23 / 22 / 24). Each was a 2–4-byte
+  `mov r,r` or `lea r,[r+0]` alignment run defined as a function, left by
+  `find_hidden_functions.py`, whose padding table lacked those encodings. The table now has
+  every self-move and self-lea. `validate_function_ranges.py` reports `PADDING_FUNCTION`.
+- **nocturne's last unknowns are named** (32 class-only names such as
+  `core_slew.cpp_CSlew_FUN_0051f930`, which the unnamed report now counts as unnamed).
+  - 25 take the nocedit function in the same slot, confirmed by calls or a near-identical body.
+    `parsePBGFile` and `loadPBGFile` were guessed as `CPackedBitmapSet` methods but are free
+    functions.
+  - 2 are retail-only: `CDemonCamera_setFramebufferSize` (nocedit's `init` derives the width as 4/3
+    of the height), and `CDemonSet_renderCameraAimedAtHero`, which turns the selected camera to
+    the local hero and renders the opaque actors. `renderScene` calls it when
+    `use_world_geometry_flag` is set.
+  - 5 were named earlier the same day.
+  - `00540a10` in `stranger.cpp` is `unusedGetPointerAt8`, an 8-byte `return *(ptr + 8)` that
+    nothing references. Its only byte twin is nocedit's unrelated `CMultiCram_getSecondModel`.
+  - The six game functions with no signature take nocedit's (bodies identical), except retail
+    `readMessageFile`, which returns the last message index where nocedit's returns `void`.
+- **The BW builds' named functions have signatures** (1469: bw1 494, bw2 512, bw3 463). They were what
+  blocked the BW export's receiver check (187 named methods with no parameters).
+  - Taken from nocedit where the BW body is the same code, or where it changed but the decompiler
+    infers the same parameter count (1410).
+  - Taken from nocturne, another BW build or a body-matched twin where the callers' argument count or an
+    identical body agrees (41).
+  - A BW body that takes one argument fewer than nocedit's prototype is often a Watcom struct return:
+    the output pointer arrives in `ESI` (`__stack_esi`, `__stack2_esi`, `__stack5_esi`), and only the
+    stack arguments are popped. `getCameraOriginFixed`, `getCameraRotationFixed`,
+    `worldPositionToVoxelCoords` and `getBoneAngleInterpolated` take nocturne's prototypes, whose
+    bodies are identical. With 3 cross-class twins and the 3 `CDemonMission_setVersionControlDirectory`
+    (`24-bw_units/`), these are the other 18.
+  - About 100 more, where the BW body changed and the inferred count differs, are left for review.
+- **nocturne's 129 analysis-set signatures are committed** (`commit_signatures.py`). 125 match
+  nocedit's exactly, and 4 retail-only ones agree with their callers.
+- **Stale "Failed to disassemble" bookmarks are deleted** (`clear_stale_bookmarks.py`): 18 across
+  nocturne and the BW builds. The 6 left are Watcom `strstr`'s deliberate jumps.
+- **The functions export records an uncommitted signature** as `sig` (`default`, `analysis` or
+  `imported`): Ghidra shows the decompiler's inferred prototype, but stores `undefined` until it is
+  committed. `report_uncommitted_signatures.py` lists these per program, along with undefined
+  return and parameter types and committed signatures with no convention. The export now regenerates
+  it, `unnamed_functions.txt` and `bad_instructions.txt` after every functions export.
+- **Each function's pseudocode JSON lists its twins** (`siblings`, `sibling_identity.py`, run
+  after every functions or pseudocode export; see docs/sibling-binaries.md).
+- **The recreation itinerary tracks Blair Witch work** (`itinerary_bw.py`):
+  - a `BW:` line under each of the 1675 in-scope functions whose body differs in a BW build,
+    with builds sharing one body grouped;
+  - a closing list of the 3665 BW functions with no nocedit twin, 1185 named.
+
 ### 2026-11-10
 - **New `24-bw_units/`: every BW function has a real folder and unit** (862 renames). They
   rest on contiguity, class, factory-pair, assert and link-order evidence.

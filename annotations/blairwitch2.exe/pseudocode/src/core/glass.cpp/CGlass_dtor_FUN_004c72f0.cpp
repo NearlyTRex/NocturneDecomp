@@ -16,7 +16,7 @@ CGlass * core_glass_cpp_CGlass_dtor_FUN_004c72f0(CGlass *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CGlassTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CGlassTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

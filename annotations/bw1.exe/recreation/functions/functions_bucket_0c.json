@@ -18,30 +18,25 @@
     "variadic":false
   },
   {
-    "addr":"0043a00c",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_0043a00c",
-    "name":"cockpit_ckptutil.c_FUN_0043a00c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"cockpit/ckptutil.c",
-    "variadic":false
-  },
-  {
     "addr":"0045168c",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":12,
     "method":"log2Custom",
     "name":"core_dcamera.cpp_log2Custom_FUN_0045168c",
+    "params":[
+      {
+        "name":"val",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"double",
       "ptr":0
     },
     "tu":"core/dcamera.cpp",
@@ -60,21 +55,6 @@
       "ptr":0
     },
     "tu":"cockpit/drawsurf.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0048c50c",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_0048c50c",
-    "name":"core_dtrace.cpp_FUN_0048c50c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/dtrace.cpp",
     "variadic":false
   },
   {
@@ -179,10 +159,37 @@
     "instructions":185,
     "method":"fseek",
     "name":"crt_stdio.c_fseek_FUN_005c170c",
+    "params":[
+      {
+        "name":"file",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"long",
+          "ptr":0
+        }
+      },
+      {
+        "name":"whence",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"crt/stdio.c",

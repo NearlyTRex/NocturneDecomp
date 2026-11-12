@@ -9,8 +9,8 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0
-;   engine_alphabit.cpp_FUN_0040d540
 ;
 ; *****************************************************************************
 
@@ -404,17 +404,17 @@ section .text
     RET                                 ; 0059b36d
     PUSH ESI                            ; 0059b36e
         ;   Label: LAB_0059b36e
-    CALL engine_alphabit.cpp_FUN_0040d540 ; 0059b36f
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d540(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540 ; 0059b36f
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0059b374
     PUSH 0x26677ec                      ; 0059b377
-    CALL engine_alphabit.cpp_FUN_0040d540 ; 0059b37c
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d540(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540 ; 0059b37c
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0059b381
     PUSH 0x2667800                      ; 0059b384
     XOR ESI,ESI                         ; 0059b389
-    CALL engine_alphabit.cpp_FUN_0040d540 ; 0059b38b
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d540(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540 ; 0059b38b
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap * this_ptr)
     MOV ECX,dword ptr [EBX + 0x1c]      ; 0059b390
     ADD ESP,0x4                         ; 0059b393
     TEST ECX,ECX                        ; 0059b396
@@ -424,8 +424,8 @@ section .text
     LEA EDI,[EBX + 0x4c]                ; 0059b39b
     PUSH EDI                            ; 0059b39e
         ;   Label: LAB_0059b39e
-    CALL engine_alphabit.cpp_FUN_0040d540 ; 0059b39f
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d540(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540 ; 0059b39f
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap * this_ptr)
     INC ESI                             ; 0059b3a4
     ADD ESP,0x4                         ; 0059b3a5
     MOV EBP,dword ptr [EBX + 0x1c]      ; 0059b3a8

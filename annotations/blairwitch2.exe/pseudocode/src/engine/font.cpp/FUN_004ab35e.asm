@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_font_cpp_FUN_004ab35e(int param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
+; int engine_font_cpp_FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
 ;
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
-;   engine_font.cpp_FUN_004aaf00
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;
 ; *****************************************************************************
 
@@ -172,8 +172,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x38]      ; 004ab4c7
     PUSH ECX                            ; 004ab4cb
     MOV dword ptr [ESP + 0x10],EAX      ; 004ab4cc
-    CALL engine_font.cpp_FUN_004aaf00   ; 004ab4d0
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004ab4d0
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004ab4d5
     ADD EAX,dword ptr [ESP + 0x8]       ; 004ab4d8
     CMP EAX,dword ptr [ESP + 0x48]      ; 004ab4dc
@@ -198,8 +198,8 @@ section .text
     PUSH 0x1cafe40                      ; 004ab503
     MOV EAX,dword ptr [ESP + 0x38]      ; 004ab508
     PUSH EAX                            ; 004ab50c
-    CALL engine_font.cpp_FUN_004aaf00   ; 004ab50d
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004ab50d
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004ab512
     JMP 0x004ab4dc                      ; 004ab515
         ;   XREF to: 004ab4dc (UNCONDITIONAL_JUMP)  ; LAB_004ab4dc

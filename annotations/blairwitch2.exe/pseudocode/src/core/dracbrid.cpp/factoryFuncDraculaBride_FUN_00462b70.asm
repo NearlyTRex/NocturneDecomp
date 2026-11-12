@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dracbrid_cpp_factoryFuncDraculaBride_FUN_00462b70(void)
+; CDraculaBride * __cdecl core_dracbrid_cpp_factoryFuncDraculaBride_FUN_00462b70(void)
 ;
 ;
 ; Called Functions:

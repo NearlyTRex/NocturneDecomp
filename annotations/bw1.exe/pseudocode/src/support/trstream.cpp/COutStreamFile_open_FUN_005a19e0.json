@@ -46,7 +46,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamFile_open_FUN_005a19e0",
-    "signature": "undefined4 __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(COutStreamFile *this_ptr,undefined4 param_2,undefined4 param_3)"
+    "signature": "undefined4 __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(COutStreamFile *this_ptr,char *param_2,char *param_3)"
   },
   "function_calls": [
     {
@@ -122,6 +122,20 @@
     },
     "pcode_op_count": 107
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057dd90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005749d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -158,7 +172,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(COutStreamFile *this_ptr,uint param_2,uint param_3)",
+      "text": "uint __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(COutStreamFile *this_ptr,char *param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -166,7 +180,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(COutStreamFile *this_ptr,uint param_2,uint param_3)",
+      "text": "uint __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(COutStreamFile *this_ptr,char *param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -190,7 +204,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "p_Var1 = (_FILE *)_fopen(param_2,param_3);",
+      "text": "p_Var1 = _fopen(param_2,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -198,7 +212,7 @@
       "line": 8,
       "match": "param_3",
       "severity": "mild",
-      "text": "p_Var1 = (_FILE *)_fopen(param_2,param_3);",
+      "text": "p_Var1 = _fopen(param_2,param_3);",
       "type": "unnamed_param"
     },
     {

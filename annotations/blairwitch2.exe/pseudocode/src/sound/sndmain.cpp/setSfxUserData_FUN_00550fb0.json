@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 127,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 61
@@ -24,9 +23,9 @@
         "00551011"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndmain.cpp_setSfxUserData_FUN_00550fb0",
-    "signature": "undefined4 sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,void *param_3)"
+    "signature": "int __cdecl sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint sfx_handle,int index,void *value)"
   },
   "function_calls": [
     {
@@ -63,9 +62,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -96,13 +95,61 @@
     },
     "pcode_op_count": 164
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005739e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00556b40",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a9ba0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00527190",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 12,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -112,78 +159,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,void *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,void *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,void *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (1 < param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 < 0) || (1 < param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4500(\"setSfxUserData - invalid user data index: %d\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = sound_sndmain_cpp_FUN_0054d3a0(param_1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(pCVar1->options).userdata[param_2] = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(pCVar1->options).userdata[param_2] = param_3;",
-      "type": "unnamed_param"
     }
   ]
 }

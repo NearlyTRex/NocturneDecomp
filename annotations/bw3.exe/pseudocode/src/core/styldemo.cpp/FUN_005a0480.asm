@@ -42,7 +42,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
 
@@ -130,7 +130,7 @@ section .text
     SUB ESP,0x4                         ; 005a0551
     FSTP float ptr [ESP]                ; 005a0554
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 ; 005a0557
-        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0()
+        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0(float angle_radians)
     MOV dword ptr [ESP + 0x70],EAX      ; 005a055c
     FLD float ptr [ESP + 0x70]          ; 005a0560
     FABS                                ; 005a0564
@@ -148,8 +148,8 @@ section .text
     PUSH 0x5da53e                       ; 005a0582 | s_Casting_d_005da53d+1
     MOV ESI,dword ptr [0x005f1690]      ; 005a0587 | g_CConsolePtr
     PUSH ESI                            ; 005a058d | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 005a058e
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 005a058e
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     MOV EAX,dword ptr [EBX + 0xdc90]    ; 005a0593
     ADD ESP,0xc                         ; 005a0599
     CMP EAX,0x3                         ; 005a059c
@@ -219,7 +219,7 @@ section .text
     SUB ESP,0x4                         ; 005a0640
     FSTP float ptr [ESP]                ; 005a0643
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 ; 005a0646
-        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0()
+        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0(float angle_radians)
     MOV dword ptr [ESP + 0x70],EAX      ; 005a064b
     FLD float ptr [ESP + 0x70]          ; 005a064f
     FABS                                ; 005a0653

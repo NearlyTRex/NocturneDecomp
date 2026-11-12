@@ -15,7 +15,7 @@ CBodyPart * __cdecl createBodyPart(CVector3f *position,UOrientationVector *orien
 
 // Original: core_bodypart.cpp_factoryFuncBodyPart_FUN_004156b0
 // Address: 004156b0
-void factoryFuncBodyPart(void);
+CBodyPart * __cdecl factoryFuncBodyPart(void);
 
 // Original: core_bodypart.cpp_CBodyPart_getActorType_FUN_004156d0
 // Address: 004156d0
@@ -29,9 +29,9 @@ CBodyPart * __cdecl CBodyPart::ctor(CBodyPart *this_ptr);
 // Address: 00415800
 CBodyPart * CBodyPart::dtor(CBodyPart *this_ptr,uint flags);
 
-// Original: core_bodypart.cpp_FUN_00415890
+// Original: core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890
 // Address: 00415890
-void FUN_00415890(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CBodyPart::setCounts(CBodyPart *this_ptr,int vertex_count,int tri_count);
 
 // Original: core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0
 // Address: 004159e0
@@ -115,7 +115,7 @@ int __cdecl CBodyPart::addTexture(CBodyPart *this_ptr,char *texture_name);
 
 // Original: core_bodypart.cpp_FUN_004178c0
 // Address: 004178c0
-void FUN_004178c0(int param_1);
+void FUN_004178c0(CBodyPart *param_1);
 
 // Original: core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417a70
 // Address: 00417a70
@@ -159,4 +159,4 @@ SBodyPartModel * __cdecl SBodyPartModel::ctor(SBodyPartModel *this_ptr);
 
 // Original: core_bodypart.cpp_FUN_00417d10
 // Address: 00417d10
-void FUN_00417d10(undefined4 param_1);
+void FUN_00417d10(void *param_1);

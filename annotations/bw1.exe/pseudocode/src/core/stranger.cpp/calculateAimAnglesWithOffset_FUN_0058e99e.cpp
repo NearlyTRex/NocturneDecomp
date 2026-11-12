@@ -42,7 +42,7 @@ float * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e99e(float *param
       else {
         fStack_30 = fStack_30 - (float)fVar5;
       }
-      fStack_30 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_30);
+      fStack_30 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_30);
     }
     fVar1 = param_2[1];
     if (((_DAT_005f6ed1 <= (double)fVar2) &&
@@ -55,7 +55,7 @@ float * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e99e(float *param
       else {
         fStack_34 = fStack_34 - (float)fVar5;
       }
-      fStack_34 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_34);
+      fStack_34 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_34);
     }
   }
   *unaff_ESI = fStack_34;

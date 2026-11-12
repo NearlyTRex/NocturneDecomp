@@ -265,7 +265,7 @@ section .text
     PUSH EAX                            ; 0040a2da
     PUSH ESI                            ; 0040a2db
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0040a2dc
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0040a2e1
     MOV EDI,EAX                         ; 0040a2e4
     TEST EAX,EAX                        ; 0040a2e6
@@ -362,7 +362,7 @@ section .text
     PUSH EDX                            ; 0040a413
     PUSH ESI                            ; 0040a414
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0040a415
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     MOV dword ptr [ESP + 0x394],EAX     ; 0040a41a
     ADD ESP,0x8                         ; 0040a421
     TEST EAX,EAX                        ; 0040a424
@@ -434,8 +434,8 @@ section .text
     PUSH 0x5b562a                       ; 0040a503 | = "%s causing %5.2f damage to %s\n"
     MOV EDX,dword ptr [0x005f1690]      ; 0040a508 | g_CConsolePtr
     PUSH EDX                            ; 0040a50e | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0040a50f
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0040a50f
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x18                        ; 0040a514
     PUSH dword ptr [ESP + 0x5c]         ; 0040a517
     PUSH ESI                            ; 0040a51b
@@ -457,7 +457,7 @@ section .text
     PUSH EDI                            ; 0040a546
     PUSH ESI                            ; 0040a547
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0040a548
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     MOV dword ptr [ESP + 0x360],EAX     ; 0040a54d
     ADD ESP,0x8                         ; 0040a554
     TEST EAX,EAX                        ; 0040a557
@@ -657,7 +657,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a7d8 | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 0040a7de
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0040a7df
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0040a7e4
     MOV dword ptr [ESP + 0x388],EAX     ; 0040a7e7
     TEST EAX,EAX                        ; 0040a7ee
@@ -679,7 +679,7 @@ section .text
     MOV EDI,dword ptr [EAX + 0x14d144]  ; 0040a81b | g_CDemonSetInstance.collision_actor
     PUSH EDI                            ; 0040a821
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0040a822
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0040a827
     MOV ESI,EAX                         ; 0040a82a
     MOV EAX,[0x02cfd894]                ; 0040a82c | g_CTriggerClassInfo.name_hash
@@ -688,7 +688,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a837 | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 0040a83d
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0040a83e
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ECX,dword ptr [0x007f8fc8]      ; 0040a843 | g_CCrateClassInfo.name_hash
     ADD ESP,0x8                         ; 0040a849
     MOV EDI,EAX                         ; 0040a84c
@@ -698,7 +698,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a85b | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 0040a861
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0040a862
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     MOV dword ptr [ESP + 0x374],EAX     ; 0040a867
     ADD ESP,0x8                         ; 0040a86e
     MOV ECX,dword ptr [0x01d0cf60]      ; 0040a871 | g_CFlameCanClassInfo.name_hash
@@ -707,7 +707,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a87d | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 0040a883
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0040a884
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0040a889
     MOV ECX,dword ptr [ESP + 0x388]     ; 0040a88c
     TEST ECX,ECX                        ; 0040a893
@@ -975,8 +975,8 @@ section .text
     PUSH 0x5b565a                       ; 0040ac09 | = "%s causing %5.2f damage to %s\n"
     MOV ECX,dword ptr [0x005f1690]      ; 0040ac0e | g_CConsolePtr
     PUSH ECX                            ; 0040ac14 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0040ac15
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0040ac15
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x18                        ; 0040ac1a
     PUSH dword ptr [ESP + 0x98]         ; 0040ac1d
     PUSH EDI                            ; 0040ac24

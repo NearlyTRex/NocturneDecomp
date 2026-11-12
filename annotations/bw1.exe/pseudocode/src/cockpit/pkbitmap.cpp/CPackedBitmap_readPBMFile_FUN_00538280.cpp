@@ -12,9 +12,10 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPacked
 
 {
   ulong size;
-  int iVar1;
-  int *piVar2;
-  ushort *puVar3;
+  SIZE_T SVar1;
+  int iVar2;
+  int *piVar3;
+  ushort *buffer;
   uint uVar4;
   int iVar5;
   byte *pbVar6;
@@ -33,11 +34,11 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPacked
   bVar10 = 0;
   cockpit_pkbitmap_cpp_FUN_00537550(this_ptr);
   do {
-    iVar1 = _fread(abStack_2c,0x1c,1,file_handle);
-    if (iVar1 != 1) goto LAB_0053830e;
+    SVar1 = _fread(abStack_2c,0x1c,1,file_handle);
+    if (SVar1 != 1) goto LAB_0053830e;
     iVar5 = 4;
     bVar8 = false;
-    iVar1 = 0;
+    iVar2 = 0;
     bVar9 = true;
     pbVar6 = abStack_2c;
     pbVar7 = (byte *)0x62281c;
@@ -50,40 +51,40 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPacked
       pbVar7 = pbVar7 + (uint)bVar10 * -2 + 1;
     } while (bVar9);
     if (!bVar9) {
-      iVar1 = (1 - (uint)bVar8) - (uint)(bVar8 != 0);
+      iVar2 = (1 - (uint)bVar8) - (uint)(bVar8 != 0);
     }
-    if (((iVar1 == 0) && (iStack_28 != 0)) && (iStack_24 != 0)) {
+    if (((iVar2 == 0) && (iStack_28 != 0)) && (iStack_24 != 0)) {
       this_ptr->width = iStack_28;
       this_ptr->height = iStack_24;
       if (((iStack_20 != 0) || (iStack_1c != 0)) ||
          ((this_ptr->width + -1 != iStack_18 || (this_ptr->height + -1 != iStack_14))))
       goto LAB_005382ca;
-      piVar2 = (int *)operator_new_array((this_ptr->height + 1) * 4);
-      this_ptr->row_offsets = piVar2;
-      if (piVar2 != (int *)0x0) {
-        iVar1 = _fread(this_ptr->row_offsets,(this_ptr->height + 1) * 4,1,file_handle);
-        if (iVar1 == 1) {
-          for (iVar1 = 0; iVar1 < this_ptr->height + 1; iVar1 = iVar1 + 1) {
+      piVar3 = (int *)operator_new_array((this_ptr->height + 1) * 4);
+      this_ptr->row_offsets = piVar3;
+      if (piVar3 != (int *)0x0) {
+        SVar1 = _fread(this_ptr->row_offsets,(this_ptr->height + 1) * 4,1,file_handle);
+        if (SVar1 == 1) {
+          for (iVar2 = 0; iVar2 < this_ptr->height + 1; iVar2 = iVar2 + 1) {
           }
-          iVar1 = 0;
+          iVar2 = 0;
           if (0 < this_ptr->height) {
-            piVar2 = this_ptr->row_offsets;
+            piVar3 = this_ptr->row_offsets;
             do {
-              if (piVar2[1] < *piVar2) goto LAB_005382ca;
-              iVar1 = iVar1 + 1;
-              piVar2 = piVar2 + 1;
-            } while (iVar1 < this_ptr->height);
+              if (piVar3[1] < *piVar3) goto LAB_005382ca;
+              iVar2 = iVar2 + 1;
+              piVar3 = piVar3 + 1;
+            } while (iVar2 < this_ptr->height);
           }
           size = this_ptr->row_offsets[this_ptr->height];
           if (skip_data_load != 0) {
             _fseek(file_handle,size,1);
             return;
           }
-          puVar3 = (ushort *)malloc(size);
-          this_ptr->packed_data = puVar3;
-          if (puVar3 == (ushort *)0x0) goto LAB_005382ed;
-          iVar1 = _fread(puVar3,size,1,file_handle);
-          if (iVar1 == 1) {
+          buffer = (ushort *)malloc(size);
+          this_ptr->packed_data = buffer;
+          if (buffer == (ushort *)0x0) goto LAB_005382ed;
+          SVar1 = _fread(buffer,size,1,file_handle);
+          if (SVar1 == 1) {
             for (uVar4 = *this_ptr->row_offsets + (int)this_ptr->packed_data;
                 uVar4 < (uint)((int)this_ptr->packed_data + this_ptr->row_offsets[this_ptr->height])
                 ; uVar4 = (*(ushort *)(uVar4 + 2) + 3 & 0xfffffffc) + uVar4 + 4) {

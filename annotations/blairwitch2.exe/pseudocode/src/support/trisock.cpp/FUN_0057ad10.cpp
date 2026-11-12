@@ -26,7 +26,7 @@ uint support_trisock_cpp_FUN_0057ad10(int param_1,char *param_2)
   char acStack_408 [648];
   uint auStack_180 [12];
   char acStack_150 [256];
-  byte auStack_50 [32];
+  char acStack_50 [32];
   int iStack_30;
   CSocket *pCStack_2c;
   uint uStack_28;
@@ -282,7 +282,8 @@ LAB_0057adfb:
     _sprintf(param_2,"Looking up %s...");
     return *(uint *)(param_1 + 0xd28);
   case 2:
-    support_trisock_cpp_formatSocketAddress_FUN_00578f50(param_1 + 0x600,auStack_50);
+    support_trisock_cpp_formatSocketAddress_FUN_00578f50
+              ((SNetworkAddr *)(param_1 + 0x600),acStack_50);
     _sprintf(param_2,"Contacting %s...");
     return *(uint *)(param_1 + 0xd28);
   case 3:

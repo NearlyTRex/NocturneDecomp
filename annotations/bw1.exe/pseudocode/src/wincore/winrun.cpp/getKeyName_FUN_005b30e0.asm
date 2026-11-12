@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005b30e0(uint param_1)
+; char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005b30e0(EInputCodeType keycode)
 ;
+; Parameters:
+; EInputCodeType   Stack[0x4]:4   keycode
 ;
 ; XREF[1]:
 ;   core_menu.cpp_getKeyDisplayName_FUN_0050d220 at 0050d45f

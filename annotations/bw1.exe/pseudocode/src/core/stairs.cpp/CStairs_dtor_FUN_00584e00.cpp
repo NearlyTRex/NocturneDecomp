@@ -15,7 +15,7 @@ CStairs * core_stairs_cpp_CStairs_dtor_FUN_00584e00(CStairs *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CStairsTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CStairsTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

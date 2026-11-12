@@ -80,7 +80,8 @@ void core_turret_cpp_FUN_0057f0b0(CCharacter *param_1,float param_2)
   bVar8 = 0;
   pCVar1 = (CDemonActor *)(param_1->model).rest_bone_scales[0x45];
   if (pCVar1 == (CDemonActor *)0x0) {
-    engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s has no guard trigger!\n",param_1);
+    engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"%s has no guard trigger!\n")
+    ;
     return;
   }
   (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,in_stack_fffffe10);

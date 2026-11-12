@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_special_cpp_addParticle_FUN_00565fbe(undefined4 param_1,undefined4 param_2)
+; int __cdecl engine_special_cpp_addParticle_FUN_00565fbe(void *particle_data,int particle_type)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   particle_data
+; int              Stack[0x8]:4   particle_type
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6cee8

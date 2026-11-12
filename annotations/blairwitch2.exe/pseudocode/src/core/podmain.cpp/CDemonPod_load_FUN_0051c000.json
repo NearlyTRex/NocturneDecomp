@@ -1,0 +1,208 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 103,
+    "complexity_score": 66,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 31,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 134
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0051c000",
+    "address_range": [
+      [
+        "0051c000",
+        "0051c102"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_podmain.cpp_CDemonPod_load_FUN_0051c000",
+    "signature": "void __cdecl core_podmain_cpp_CDemonPod_load_FUN_0051c000(CDemonPod *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b89c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
+    },
+    {
+      "addr": "005b910c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005b910c"
+    },
+    {
+      "addr": "005b8100",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005b8100"
+    },
+    {
+      "addr": "00460f50",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_closeSearch_FUN_00460f50"
+    },
+    {
+      "addr": "00460e10",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_ctor_FUN_00460e10"
+    },
+    {
+      "addr": "00460e30",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_dtor_FUN_00460e30"
+    },
+    {
+      "addr": "00460ed0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_findNext_FUN_00460ed0"
+    },
+    {
+      "addr": "00460e50",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00460e50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e2992",
+      "name": "DAT_005e2992",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e2995",
+      "name": "s_pod_ini_005e2995",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e299d",
+      "name": "s_pod_005e299d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e29a3",
+      "name": "DAT_005e29a3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e29a7",
+      "name": "DAT_005e29a7",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.421686746987952,
+    "instruction_count": 83,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CALL": 9,
+      "CALLIND": 2,
+      "CBRANCH": 5,
+      "COPY": 59,
+      "INT_ADD": 33,
+      "INT_AND": 44,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 42,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 21,
+      "INT_SUB": 38,
+      "INT_XOR": 1,
+      "LOAD": 16,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 34
+    },
+    "pcode_op_count": 367
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "005519c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9111
+    },
+    "nocturne.exe": {
+      "addr": "004f92b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonPod *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_005e2992",
+      "severity": "mild",
+      "text": "file = _fopen(\"pod.ini\",&DAT_005e2992);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005e29a3",
+      "severity": "mild",
+      "text": "_fscanf(file,&DAT_005e29a3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_005e29a7",
+      "severity": "mild",
+      "text": "_fscanf(file,&DAT_005e29a7);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonPod",
+        "offset": 4,
+        "vtable_addr": "005fadd4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

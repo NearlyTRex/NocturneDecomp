@@ -17,7 +17,7 @@ CBodyPart * core_bodypart_cpp_CBodyPart_dtor_FUN_00418c70(CBodyPart *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBodyPartTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBodyPartTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

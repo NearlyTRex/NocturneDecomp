@@ -203,7 +203,7 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 005665bf
     PUSH EAX                            ; 005665c3
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 005665c4
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005665c9
     MOV EDX,dword ptr [ESP + 0x104]     ; 005665cc
     XOR EAX,EAX                         ; 005665d3
@@ -393,7 +393,7 @@ section .text
     PUSH 0x26af600                      ; 005668cc | DAT_026af600
     MOV byte ptr [0x026b82a0],DL        ; 005668d1 | DAT_026b82a0
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 005668d7
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005668dc
     JMP 0x0056645a                      ; 005668df
         ;   XREF to: 0056645a (UNCONDITIONAL_JUMP)  ; LAB_0056645a

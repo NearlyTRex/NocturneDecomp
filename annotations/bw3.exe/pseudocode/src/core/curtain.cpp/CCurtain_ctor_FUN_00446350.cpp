@@ -11,19 +11,19 @@ CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_00446350(CCurtain *this_pt
 {
   char cVar1;
   CDemonActor *pCVar2;
-  int iVar3;
+  void *pvVar3;
   char *pcVar4;
   char *pcVar5;
   
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408600(&this_ptr->base);
-  iVar3 = __arrinit
-                    (pCVar2[1].create_event + 0x38,1000,&g_SCurtainVertexTypeInfo);
-  *(CDemonActor_vtable **)(iVar3 + -0xb4) = &g_CCurtainVTable;
+  pvVar3 = __arrinit
+                     (pCVar2[1].create_event + 0x38,1000,&g_SCurtainVertexTypeInfo);
+  *(CDemonActor_vtable **)((int)pvVar3 + -0xb4) = &g_CCurtainVTable;
   pcVar4 = "SGLASS.RAW";
-  *(uint *)(iVar3 + -0xb0) = 0x40800000;
-  *(uint *)(iVar3 + -0xac) = 0x40800000;
-  pcVar5 = (char *)(iVar3 + -0x9c);
-  *(uint *)(iVar3 + -0xa8) = 0x3dcccccd;
+  *(uint *)((int)pvVar3 + -0xb0) = 0x40800000;
+  *(uint *)((int)pvVar3 + -0xac) = 0x40800000;
+  pcVar5 = (char *)((int)pvVar3 + -0x9c);
+  *(uint *)((int)pvVar3 + -0xa8) = 0x3dcccccd;
   do {
     cVar1 = *pcVar4;
     *pcVar5 = cVar1;
@@ -33,16 +33,16 @@ CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_00446350(CCurtain *this_pt
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  *(uint *)(iVar3 + -0xa0) = 0;
-  *(uint *)(iVar3 + -0xa4) = 0xd;
-  *(uint *)(iVar3 + -0x8c) = 0x8000;
-  *(uint *)(iVar3 + -0x88) = 1;
-  *(uint *)(iVar3 + -0x7c) = 0;
-  *(uint *)(iVar3 + -0x80) = 0;
+  *(uint *)((int)pvVar3 + -0xa0) = 0;
+  *(uint *)((int)pvVar3 + -0xa4) = 0xd;
+  *(uint *)((int)pvVar3 + -0x8c) = 0x8000;
+  *(uint *)((int)pvVar3 + -0x88) = 1;
+  *(uint *)((int)pvVar3 + -0x7c) = 0;
+  *(uint *)((int)pvVar3 + -0x80) = 0;
   pcVar4 = (char *)0x5b9a3d;
-  *(uint *)(iVar3 + -0x84) = 0;
-  pcVar5 = (char *)(iVar3 + -0x74);
-  *(uint *)(iVar3 + -0x78) = 0;
+  *(uint *)((int)pvVar3 + -0x84) = 0;
+  pcVar5 = (char *)((int)pvVar3 + -0x74);
+  *(uint *)((int)pvVar3 + -0x78) = 0;
   do {
     cVar1 = *pcVar4;
     *pcVar5 = cVar1;
@@ -52,16 +52,16 @@ CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_00446350(CCurtain *this_pt
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  *(uint *)(iVar3 + 0x6590c) = 0x3f800000;
-  *(uint *)(iVar3 + 0x65910) = 0x3f733333;
-  *(uint *)(iVar3 + 0x65914) = 0;
-  *(uint *)(iVar3 + 0x65918) = 0x3f000000;
-  *(uint *)(iVar3 + 0x6591c) = 0x42000000;
-  *(uint *)(iVar3 + 0x65924) = 0;
-  *(uint *)(iVar3 + 0x65928) = 0;
-  *(uint *)(iVar3 + -0x10) = 1;
-  *(uint *)(iVar3 + -0xc) = 0x3f000000;
-  *(uint *)(iVar3 + -8) = 1;
-  *(uint *)(iVar3 + 0x6592c) = 0;
-  return (CCurtain *)(iVar3 + -0x208);
+  *(uint *)((int)pvVar3 + 0x6590c) = 0x3f800000;
+  *(uint *)((int)pvVar3 + 0x65910) = 0x3f733333;
+  *(uint *)((int)pvVar3 + 0x65914) = 0;
+  *(uint *)((int)pvVar3 + 0x65918) = 0x3f000000;
+  *(uint *)((int)pvVar3 + 0x6591c) = 0x42000000;
+  *(uint *)((int)pvVar3 + 0x65924) = 0;
+  *(uint *)((int)pvVar3 + 0x65928) = 0;
+  *(uint *)((int)pvVar3 + -0x10) = 1;
+  *(uint *)((int)pvVar3 + -0xc) = 0x3f000000;
+  *(uint *)((int)pvVar3 + -8) = 1;
+  *(uint *)((int)pvVar3 + 0x6592c) = 0;
+  return (CCurtain *)((int)pvVar3 + -0x208);
 }

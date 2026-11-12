@@ -46,7 +46,7 @@ section .text
     MOV [0x01c38b54],EAX                ; 0040407c | DAT_01c38b54
     MOV dword ptr [0x01c38b58],EDX      ; 00404081 | DAT_01c38b58
     CALL engine_3d.c_calculatePolygonLighting_FUN_00403a20 ; 00404087
-        ;   XREF to: 00403a20 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_calculatePolygonLighting_FUN_00403a20()
+        ;   XREF to: 00403a20 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a20(SMRGLHeaderPrimitive * prim)
     MOV ECX,0x70ca98                    ; 0040408c
     ADD ESP,0x4                         ; 00404091
     MOV EAX,ESI                         ; 00404094

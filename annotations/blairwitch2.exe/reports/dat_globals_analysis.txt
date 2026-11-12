@@ -13,10 +13,10 @@ Current type breakdown:
   undefined8                     19
   undefined2                     3
 
-DAT_ globals with type hints: 1381 / 3583
+DAT_ globals with type hints: 1392 / 3583
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (1133)
+HIGH CONFIDENCE INFERENCES (1142)
 --------------------------------------------------------------------------------
   DAT_005ca89a                    addr=005ca89a    current=undefined4      likely=float           refs=1
     nearby: s_core_actor_cpp_005ca89e (TerminatedCString) at offset -4
@@ -1022,6 +1022,8 @@ HIGH CONFIDENCE INFERENCES (1133)
     nearby: g_CDraculaBrideClassVersion (int) at offset +56
   DAT_0060b280                    addr=0060b280    current=undefined4      likely=int             refs=250
     nearby: g_CDraculaBrideClassVersion (int) at offset +60
+  DAT_0060b288                    addr=0060b288    current=undefined4      likely=SInputFace **   refs=2
+    nearby: g_CDraculaBrideClassVersion (int) at offset +68
   DAT_0060d1f4                    addr=0060d1f4    current=undefined4      likely=float           refs=2
     nearby: g_CDroneClassVersion (int) at offset +24
   DAT_006112c8                    addr=006112c8    current=undefined8      likely=uint            refs=3
@@ -1214,11 +1216,13 @@ HIGH CONFIDENCE INFERENCES (1133)
   DAT_00622038                    addr=00622038    current=undefined4      likely=int             refs=21
   DAT_0062203c                    addr=0062203c    current=undefined4      likely=int             refs=21
   DAT_00622040                    addr=00622040    current=undefined4      likely=int             refs=14
+  DAT_0070c5b4                    addr=0070c5b4    current=undefined4      likely=SRenderVertex *  refs=1
   DAT_0070c638                    addr=0070c638    current=undefined4      likely=float           refs=2
   DAT_0070ca88                    addr=0070ca88    current=undefined4      likely=float           refs=2
   DAT_0070ca8c                    addr=0070ca8c    current=undefined4      likely=float           refs=2
   DAT_0070ca90                    addr=0070ca90    current=undefined4      likely=float           refs=2
   DAT_0070ca98                    addr=0070ca98    current=undefined4      likely=int             refs=11
+  DAT_0070cafc                    addr=0070cafc    current=undefined4      likely=int             refs=4
   DAT_007bc048                    addr=007bc048    current=undefined4      likely=int             refs=5
     nearby: g_CDemonActorClassInfo.name_hash (undefined4) at offset +24
   DAT_007bc4dc                    addr=007bc4dc    current=undefined4      likely=float           refs=2
@@ -1244,6 +1248,10 @@ HIGH CONFIDENCE INFERENCES (1133)
   DAT_007bfd00                    addr=007bfd00    current=undefined4      likely=int             refs=3
   DAT_007bfd04                    addr=007bfd04    current=undefined4      likely=int             refs=2
   DAT_007bfd08                    addr=007bfd08    current=undefined4      likely=int             refs=2
+  DAT_007bfd0c                    addr=007bfd0c    current=undefined4      likely=SRenderVertex *  refs=3
+  DAT_007c030c                    addr=007c030c    current=undefined4      likely=SRenderVertex *  refs=2
+  DAT_007c090c                    addr=007c090c    current=undefined4      likely=SRenderVertex *  refs=2
+  DAT_007c0f0c                    addr=007c0f0c    current=undefined4      likely=SRenderVertex *  refs=2
   DAT_00a014e0                    addr=00a014e0    current=undefined4      likely=float           refs=2
   DAT_00a014e4                    addr=00a014e4    current=undefined4      likely=float           refs=2
   DAT_00a014e8                    addr=00a014e8    current=undefined4      likely=float           refs=2
@@ -1274,13 +1282,13 @@ HIGH CONFIDENCE INFERENCES (1133)
   DAT_01510864                    addr=01510864    current=undefined4      likely=float           refs=1
   DAT_01510868                    addr=01510868    current=undefined4      likely=float           refs=1
   DAT_01510870                    addr=01510870    current=undefined4      likely=float           refs=1
-  DAT_01510914                    addr=01510914    current=undefined4      likely=uint *          refs=1
+  DAT_01510914                    addr=01510914    current=undefined4      likely=CVector3f *     refs=1
   DAT_01510918                    addr=01510918    current=undefined4      likely=float           refs=1
   DAT_015109d8                    addr=015109d8    current=undefined4      likely=float           refs=1
   DAT_01510a9c                    addr=01510a9c    current=undefined4      likely=float           refs=1
-  DAT_01510b60                    addr=01510b60    current=undefined4      likely=uint *          refs=1
+  DAT_01510b60                    addr=01510b60    current=undefined4      likely=CVector3f *     refs=1
   DAT_01510b68                    addr=01510b68    current=undefined4      likely=float           refs=1
-  DAT_01510c24                    addr=01510c24    current=undefined4      likely=uint *          refs=2
+  DAT_01510c24                    addr=01510c24    current=undefined4      likely=CVector3f *     refs=2
   DAT_01510c2c                    addr=01510c2c    current=undefined4      likely=float           refs=2
   DAT_01510ce8                    addr=01510ce8    current=undefined4      likely=float           refs=1
   DAT_01510cf0                    addr=01510cf0    current=undefined4      likely=float           refs=1
@@ -1340,6 +1348,7 @@ HIGH CONFIDENCE INFERENCES (1133)
   DAT_01bd3c40                    addr=01bd3c40    current=undefined4      likely=float           refs=2
   DAT_01bd3c48                    addr=01bd3c48    current=undefined4      likely=float           refs=2
   DAT_01be74e4                    addr=01be74e4    current=undefined4      likely=CVector3f *     refs=3
+  DAT_01c21e74                    addr=01c21e74    current=undefined4      likely=CVector3f *     refs=1
   DAT_01c21e78                    addr=01c21e78    current=undefined4      likely=float           refs=1
   DAT_01c21e88                    addr=01c21e88    current=undefined4      likely=float           refs=1
   DAT_01c21e90                    addr=01c21e90    current=undefined4      likely=float           refs=1
@@ -1347,13 +1356,13 @@ HIGH CONFIDENCE INFERENCES (1133)
   DAT_01c21e9c                    addr=01c21e9c    current=undefined4      likely=float           refs=1
   DAT_01c21ea0                    addr=01c21ea0    current=undefined4      likely=float           refs=1
   DAT_01c21ea8                    addr=01c21ea8    current=undefined4      likely=float           refs=1
-  DAT_01c21f4c                    addr=01c21f4c    current=undefined4      likely=uint *          refs=1
+  DAT_01c21f4c                    addr=01c21f4c    current=undefined4      likely=CVector3f *     refs=1
   DAT_01c21f50                    addr=01c21f50    current=undefined4      likely=float           refs=1
   DAT_01c22010                    addr=01c22010    current=undefined4      likely=float           refs=1
   DAT_01c220d4                    addr=01c220d4    current=undefined4      likely=float           refs=1
-  DAT_01c22198                    addr=01c22198    current=undefined4      likely=uint *          refs=1
+  DAT_01c22198                    addr=01c22198    current=undefined4      likely=CVector3f *     refs=1
   DAT_01c221a0                    addr=01c221a0    current=undefined4      likely=float           refs=1
-  DAT_01c2225c                    addr=01c2225c    current=undefined4      likely=uint *          refs=1
+  DAT_01c2225c                    addr=01c2225c    current=undefined4      likely=CVector3f *     refs=1
   DAT_01c22264                    addr=01c22264    current=undefined4      likely=float           refs=1
   DAT_01c22320                    addr=01c22320    current=undefined4      likely=float           refs=1
   DAT_01c22328                    addr=01c22328    current=undefined4      likely=float           refs=1
@@ -1375,7 +1384,6 @@ HIGH CONFIDENCE INFERENCES (1133)
   DAT_01c3583a                    addr=01c3583a    current=undefined4      likely=byte            refs=18
   DAT_01c35e38                    addr=01c35e38    current=undefined4      likely=float           refs=25
   DAT_01c35e3c                    addr=01c35e3c    current=undefined4      likely=float           refs=26
-  DAT_01c35e60                    addr=01c35e60    current=undefined4      likely=uint            refs=52
   DAT_01c37790                    addr=01c37790    current=undefined4      likely=uint *          refs=5
   DAT_01c38b6c                    addr=01c38b6c    current=undefined4      likely=float           refs=18
   DAT_01c38b70                    addr=01c38b70    current=undefined4      likely=float           refs=16
@@ -1651,9 +1659,11 @@ HIGH CONFIDENCE INFERENCES (1133)
   DAT_01d17adc                    addr=01d17adc    current=undefined4      likely=float           refs=3
   DAT_01d17ae0                    addr=01d17ae0    current=undefined4      likely=float           refs=3
   DAT_01d17ae4                    addr=01d17ae4    current=undefined4      likely=float           refs=3
+  DAT_01d17fc0                    addr=01d17fc0    current=undefined4      likely=int *           refs=1
   DAT_01d17fc4                    addr=01d17fc4    current=undefined4      likely=float           refs=1
   DAT_01d17fc8                    addr=01d17fc8    current=undefined4      likely=float           refs=1
   DAT_01d17fcc                    addr=01d17fcc    current=undefined4      likely=float           refs=1
+  DAT_01d18144                    addr=01d18144    current=undefined4      likely=int *           refs=1
   DAT_01d18148                    addr=01d18148    current=undefined4      likely=float           refs=1
   DAT_01d1814c                    addr=01d1814c    current=undefined4      likely=float           refs=1
   DAT_01d18150                    addr=01d18150    current=undefined4      likely=float           refs=1
@@ -1807,14 +1817,14 @@ HIGH CONFIDENCE INFERENCES (1133)
   DAT_0266463c                    addr=0266463c    current=undefined4      likely=float           refs=3
   DAT_02664fa0                    addr=02664fa0    current=undefined4      likely=float           refs=4
   DAT_02664fa4                    addr=02664fa4    current=undefined4      likely=float           refs=4
-  DAT_02665a6c                    addr=02665a6c    current=undefined4      likely=longlong *      refs=1
+  DAT_02665a6c                    addr=02665a6c    current=undefined4      likely=SRenderVertex *  refs=1
   DAT_02665a70                    addr=02665a70    current=undefined4      likely=double          refs=1
   DAT_0266606c                    addr=0266606c    current=undefined4      likely=longlong *      refs=1
   DAT_02666070                    addr=02666070    current=undefined4      likely=double          refs=1
   DAT_026660a0                    addr=026660a0    current=undefined4      likely=double          refs=1
   DAT_02666670                    addr=02666670    current=undefined4      likely=double          refs=2
   DAT_026666a0                    addr=026666a0    current=undefined4      likely=double          refs=1
-  DAT_02666c6c                    addr=02666c6c    current=undefined4      likely=longlong *      refs=2
+  DAT_02666c6c                    addr=02666c6c    current=undefined4      likely=SRenderVertex *  refs=2
   DAT_02666c70                    addr=02666c70    current=undefined4      likely=double          refs=2
   DAT_026672ac                    addr=026672ac    current=undefined4      likely=int *           refs=2
   DAT_0267a38c                    addr=0267a38c    current=undefined4      likely=float           refs=1
@@ -1829,7 +1839,7 @@ HIGH CONFIDENCE INFERENCES (1133)
   DAT_026810c0                    addr=026810c0    current=undefined4      likely=int *           refs=1
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE INFERENCES (248)
+MEDIUM CONFIDENCE INFERENCES (250)
 --------------------------------------------------------------------------------
   DAT_005d79fd                    addr=005d79fd    current=undefined1      likely=byte            refs=1
     nearby: s_CBoxActor_005d7a01 (TerminatedCString) at offset -4
@@ -1962,6 +1972,7 @@ MEDIUM CONFIDENCE INFERENCES (248)
   DAT_007bdad8                    addr=007bdad8    current=undefined1      likely=byte            refs=1
     nearby: g_CBugsClassInfo (CDemonActorType) at offset +160
   DAT_00b65f98                    addr=00b65f98    current=undefined4      likely=byte            refs=1
+  DAT_013087d4                    addr=013087d4    current=undefined4      likely=array           refs=2
   DAT_01308800                    addr=01308800    current=undefined4      likely=byte            refs=10
   DAT_01326d21                    addr=01326d21    current=undefined4      likely=byte            refs=4
   DAT_01326e60                    addr=01326e60    current=undefined4      likely=byte            refs=5
@@ -1989,6 +2000,7 @@ MEDIUM CONFIDENCE INFERENCES (248)
   DAT_01c35828                    addr=01c35828    current=undefined4      likely=byte            refs=7
   DAT_01c3582c                    addr=01c3582c    current=undefined4      likely=byte            refs=34
   DAT_01c35834                    addr=01c35834    current=undefined4      likely=byte            refs=7
+  DAT_01c35e60                    addr=01c35e60    current=undefined4      likely=byte            refs=52
   DAT_01c37788                    addr=01c37788    current=undefined4      likely=float           refs=111
   DAT_01c37990                    addr=01c37990    current=undefined4      likely=byte            refs=1
   DAT_01c37991                    addr=01c37991    current=undefined4      likely=byte            refs=1
@@ -2156,7 +2168,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (2202)
+NO TYPE HINTS (2191)
 --------------------------------------------------------------------------------
   DAT_005d79ff                    addr=005d79ff    type=undefined1      refs=1  nearby: s_CBoxActor_005d7a01 at -2
   DAT_005d7a00                    addr=005d7a00    type=undefined1      refs=1  nearby: s_CBoxActor_005d7a01 at -1
@@ -2255,7 +2267,6 @@ NO TYPE HINTS (2202)
   DAT_0060b270                    addr=0060b270    type=undefined4      refs=5  nearby: g_CDraculaBrideClassVersion at +44
   DAT_0060b278                    addr=0060b278    type=undefined4      refs=1  nearby: g_CDraculaBrideClassVersion at +52
   DAT_0060b284                    addr=0060b284    type=undefined4      refs=4  nearby: g_CDraculaBrideClassVersion at +64
-  DAT_0060b288                    addr=0060b288    type=undefined4      refs=2  nearby: g_CDraculaBrideClassVersion at +68
   DAT_0060d1f0                    addr=0060d1f0    type=undefined4      refs=2  nearby: g_CDroneClassVersion at +20
   DAT_0060d238                    addr=0060d238    type=undefined4      refs=3  nearby: g_CDroneClassVersion at +92
   DAT_0060d23c                    addr=0060d23c    type=undefined4      refs=3  nearby: g_CDroneClassVersion at +96
@@ -2618,7 +2629,6 @@ NO TYPE HINTS (2202)
   DAT_00622174                    addr=00622174    type=undefined4      refs=1
   DAT_006e6f63                    addr=006e6f63    type=undefined4      refs=1
   DAT_006e6f69                    addr=006e6f69    type=undefined4      refs=1
-  DAT_0070c5b4                    addr=0070c5b4    type=undefined4      refs=1
   DAT_0070c5b8                    addr=0070c5b8    type=undefined4      refs=1
   DAT_0070c5bc                    addr=0070c5bc    type=undefined4      refs=1
   DAT_0070c5c4                    addr=0070c5c4    type=undefined4      refs=2
@@ -2651,7 +2661,6 @@ NO TYPE HINTS (2202)
   DAT_0070ca94                    addr=0070ca94    type=undefined4      refs=1
   DAT_0070ca9c                    addr=0070ca9c    type=undefined4      refs=11
   DAT_0070caf8                    addr=0070caf8    type=undefined4      refs=4
-  DAT_0070cafc                    addr=0070cafc    type=undefined4      refs=4
   DAT_0070cb00                    addr=0070cb00    type=undefined4      refs=2
   DAT_0070cb04                    addr=0070cb04    type=undefined4      refs=2
   DAT_0070cb08                    addr=0070cb08    type=undefined4      refs=2
@@ -2767,24 +2776,20 @@ NO TYPE HINTS (2202)
   DAT_007bf4f8                    addr=007bf4f8    type=undefined4      refs=1
   DAT_007bfab8                    addr=007bfab8    type=undefined4      refs=4
   DAT_007bfcf8                    addr=007bfcf8    type=undefined4      refs=4
-  DAT_007bfd0c                    addr=007bfd0c    type=undefined4      refs=3
   DAT_007bfd10                    addr=007bfd10    type=undefined1      refs=2
   DAT_007bfd14                    addr=007bfd14    type=undefined4      refs=2
   DAT_007bfd3c                    addr=007bfd3c    type=undefined4      refs=1
   DAT_007bfd44                    addr=007bfd44    type=undefined4      refs=1
-  DAT_007c030c                    addr=007c030c    type=undefined4      refs=2
   DAT_007c0310                    addr=007c0310    type=undefined1      refs=1
   DAT_007c0314                    addr=007c0314    type=undefined4      refs=2
   DAT_007c033c                    addr=007c033c    type=undefined4      refs=1
   DAT_007c0340                    addr=007c0340    type=undefined1      refs=1
   DAT_007c0344                    addr=007c0344    type=undefined4      refs=1
-  DAT_007c090c                    addr=007c090c    type=undefined4      refs=2
   DAT_007c0910                    addr=007c0910    type=undefined4      refs=2
   DAT_007c0914                    addr=007c0914    type=undefined4      refs=1
   DAT_007c093c                    addr=007c093c    type=undefined4      refs=1
   DAT_007c0940                    addr=007c0940    type=undefined4      refs=1
   DAT_007c0944                    addr=007c0944    type=undefined4      refs=1
-  DAT_007c0f0c                    addr=007c0f0c    type=undefined4      refs=2
   DAT_007c0f10                    addr=007c0f10    type=undefined1      refs=2
   DAT_007c0f14                    addr=007c0f14    type=undefined4      refs=2
   DAT_007c0f3c                    addr=007c0f3c    type=undefined4      refs=1
@@ -2880,7 +2885,6 @@ NO TYPE HINTS (2202)
   DAT_0126e7a8                    addr=0126e7a8    type=undefined4      refs=3
   DAT_013083cc                    addr=013083cc    type=undefined4      refs=4
   DAT_013083d0                    addr=013083d0    type=undefined4      refs=1
-  DAT_013087d4                    addr=013087d4    type=undefined4      refs=2
   DAT_013087dc                    addr=013087dc    type=undefined4      refs=1
   DAT_01308804                    addr=01308804    type=undefined4      refs=2
   DAT_01326d00                    addr=01326d00    type=undefined4      refs=2
@@ -3094,7 +3098,6 @@ NO TYPE HINTS (2202)
   DAT_01be74e8                    addr=01be74e8    type=undefined4      refs=2
   DAT_01be74ec                    addr=01be74ec    type=undefined4      refs=2
   DAT_01c21e64                    addr=01c21e64    type=undefined4      refs=1
-  DAT_01c21e74                    addr=01c21e74    type=undefined4      refs=1
   DAT_01c21e7c                    addr=01c21e7c    type=undefined4      refs=1
   DAT_01c21e84                    addr=01c21e84    type=undefined4      refs=1
   DAT_01c21e8c                    addr=01c21e8c    type=undefined4      refs=1
@@ -3694,11 +3697,9 @@ NO TYPE HINTS (2202)
   DAT_01d17b10                    addr=01d17b10    type=undefined4      refs=1
   DAT_01d17fb8                    addr=01d17fb8    type=undefined4      refs=5
   DAT_01d17fbc                    addr=01d17fbc    type=undefined4      refs=5
-  DAT_01d17fc0                    addr=01d17fc0    type=undefined4      refs=1
   DAT_01d17fd0                    addr=01d17fd0    type=undefined4      refs=1
   DAT_01d17fd4                    addr=01d17fd4    type=undefined4      refs=1
   DAT_01d17fd8                    addr=01d17fd8    type=undefined4      refs=1
-  DAT_01d18144                    addr=01d18144    type=undefined4      refs=1
   DAT_01d18154                    addr=01d18154    type=undefined4      refs=1
   DAT_01d18158                    addr=01d18158    type=undefined4      refs=1
   DAT_01d1815c                    addr=01d1815c    type=undefined4      refs=1

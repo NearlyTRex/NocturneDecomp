@@ -24,7 +24,7 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_0048ef40
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_005334f0
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;   crt_stdlib.c__atexit_FUN_005c1093
@@ -58,8 +58,8 @@ section .text
     PUSH 0x1fe5c1c                      ; 005350bd | g_CDemonRaytraceInstance
     XOR EBP,EBP                         ; 005350c2
     XOR EBX,EBX                         ; 005350c4
-    CALL core_dtrace.cpp_FUN_0048ef40   ; 005350c6
-        ;   XREF to: 0048ef40 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048ef40()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40 ; 005350c6
+        ;   XREF to: 0048ef40 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0x8]                 ; 005350cb
     ADD ESP,0x8                         ; 005350cf
     XOR ECX,ECX                         ; 005350d2
@@ -128,11 +128,11 @@ section .text
     PUSH 0x1d813f0                      ; 0053517b
     MOV byte ptr [0x01e6be40],DL        ; 00535180 | DAT_01e6be40
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 00535186
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0053518b
     PUSH 0x622748                       ; 0053518e | g_PathMapCacheDestructorNode
     CALL crt_stdlib.c__atexit_FUN_005c1093 ; 00535193
-        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005c1093()
+        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005c1093(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00535198
     JMP 0x00535096                      ; 0053519b
         ;   XREF to: 00535096 (UNCONDITIONAL_JUMP)  ; LAB_00535096

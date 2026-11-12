@@ -71,7 +71,7 @@ int FUN_00555ce0(undefined4 param_1,int param_2);
 
 // Original: sound_snddx.cpp_isValidSampleBuffer_FUN_00555fb0
 // Address: 00555fb0
-undefined4 isValidSampleBuffer(int param_1);
+int __cdecl isValidSampleBuffer(int buffer_id);
 
 // Original: sound_snddx.cpp_FUN_00555ff0
 // Address: 00555ff0
@@ -91,11 +91,11 @@ int FUN_00556290(undefined4 param_1,int param_2);
 
 // Original: sound_snddx.cpp_isValidSfxHandle_FUN_0055651c
 // Address: 0055651c
-undefined4 isValidSfxHandle(int param_1);
+int __cdecl isValidSfxHandle(int sfx_handle);
 
 // Original: sound_snddx.cpp_FUN_00556550
 // Address: 00556550
-int FUN_00556550(undefined4 param_1,int param_2,uint param_3);
+int FUN_00556550(undefined4 param_1,int *param_2,uint param_3);
 
 // Original: sound_snddx.cpp_FUN_00556ed0
 // Address: 00556ed0
@@ -127,8 +127,8 @@ void FUN_00557800(void);
 
 // Original: sound_snddx.cpp_enumerateDirectSoundDevice_FUN_00557860
 // Address: 00557860
-undefined4 __cdecl enumerateDirectSoundDevice(int param_1,char *param_2);
+int __cdecl enumerateDirectSoundDevice(UINT device_id,SSoundDeviceInfo *device_info);
 
 // Original: sound_snddx.cpp_getDirectSoundDevice_FUN_00557910
 // Address: 00557910
-undefined * __cdecl getDirectSoundDevice(int param_1);
+CDirectSoundDevice * __cdecl getDirectSoundDevice(UINT device_id);

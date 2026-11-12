@@ -167,7 +167,7 @@ int __cdecl CGore::save(CGore *this_ptr,_FILE *file_handle);
 
 // Original: core_gore.cpp_convertVecFloatToFixed_FUN_004e67de
 // Address: 004e67de
-void convertVecFloatToFixed(float *param_1,int *param_2);
+CVector3f * __cdecl convertVecFloatToFixed(CVector3f *src,CVector3i *dst);
 
 // Original: core_gore.cpp_CFootstep_ctor_FUN_004e6810
 // Address: 004e6810

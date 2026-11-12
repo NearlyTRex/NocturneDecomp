@@ -98,7 +98,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00467448
     PUSH EAX                            ; 0046744c
     CALL engine_special.cpp_drawPolygon2_FUN_00565c40 ; 0046744d
-        ;   XREF to: 00565c40 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon2_FUN_00565c40()
+        ;   XREF to: 00565c40 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon2_FUN_00565c40(SRenderVertex * * vertex_array, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 00467452
     MOV EBP,dword ptr [0x01bdcfd4]      ; 00467455 | DAT_01bdcfd4
         ;   Label: LAB_00467455
@@ -131,7 +131,7 @@ section .text
     ADD EAX,0x60b014                    ; 004674a7 | DAT_0060b014
     PUSH EAX                            ; 004674ac
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0 ; 004674ad
-        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0()
+        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 004674b2
     TEST EAX,EAX                        ; 004674b5
     JNZ 0x004673ee                      ; 004674b7
@@ -158,7 +158,7 @@ section .text
     ADD EBX,0x4                         ; 004674e6
     INC ESI                             ; 004674e9
     CALL engine_prim.c_prepareDepthBuffer_FUN_00515920 ; 004674ea
-        ;   XREF to: 00515920 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_prepareDepthBuffer_FUN_00515920()
+        ;   XREF to: 00515920 (UNCONDITIONAL_CALL)  ; void engine_prim.c_prepareDepthBuffer_FUN_00515920(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004674ef
     CMP ESI,EDI                         ; 004674f2
     JL 0x004674db                       ; 004674f4
@@ -368,7 +368,7 @@ section .text
     ADD EBX,0x4                         ; 00467743
     INC ESI                             ; 00467746
     CALL engine_prim.c_replaceWWithDepth_FUN_00515a80 ; 00467747
-        ;   XREF to: 00515a80 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_00515a80()
+        ;   XREF to: 00515a80 (UNCONDITIONAL_CALL)  ; void engine_prim.c_replaceWWithDepth_FUN_00515a80(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0046774c
     CMP ESI,EDI                         ; 0046774f
     JL 0x00467738                       ; 00467751

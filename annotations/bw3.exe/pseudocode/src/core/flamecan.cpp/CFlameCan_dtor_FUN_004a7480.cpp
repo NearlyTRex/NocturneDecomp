@@ -14,7 +14,7 @@ CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004a7480(CFlameCan *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFlameCanTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFlameCanTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

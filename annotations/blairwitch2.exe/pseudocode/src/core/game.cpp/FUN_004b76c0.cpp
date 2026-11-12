@@ -15,7 +15,8 @@ void __cdecl core_game_cpp_FUN_004b76c0(CGame *this_ptr,SPlayerInput *player_con
   int *piVar2;
   float fVar3;
   int iVar4;
-  byte bVar5;
+  CDemonActor *pCVar5;
+  byte bVar6;
   
   if (this_ptr->screen_clear_condition != 0) {
     (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x200);
@@ -127,12 +128,12 @@ LAB_004b77cb:
     }
   }
   if (this_ptr->always_run == 0) {
-    bVar5 = (&DAT_01c37790)[this_ptr->key_run];
+    bVar6 = (&DAT_01c37790)[this_ptr->key_run];
   }
   else {
-    bVar5 = (&DAT_01c37790)[this_ptr->key_run] == '\0';
+    bVar6 = (&DAT_01c37790)[this_ptr->key_run] == '\0';
   }
-  (player_control->action_state).run = (uint)bVar5;
+  (player_control->action_state).run = (uint)bVar6;
   if ((&DAT_01cb7528)[this_ptr->key_walk] != (&DAT_01c37790)[this_ptr->key_walk]) {
     (player_control->action_state).walk = (uint)(byte)(&DAT_01c37790)[this_ptr->key_walk];
   }
@@ -185,16 +186,18 @@ LAB_004b77cb:
   }
   iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_weapon);
   if ((iVar4 != 0) &&
-     ((iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                         (*(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash),
-      iVar4 == 0 || (*(float *)(iVar4 + 0x259b0) <= 0.0)))) {
+     ((pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                          (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
+                           g_CDocClassInfo.name_hash), pCVar5 == (CDemonActor *)0x0 ||
+      (pCVar5[0xde].particle_systems[1].position.x <= 0.0)))) {
     core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,5,1);
   }
   iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_prev_weapon);
   if ((iVar4 != 0) &&
-     ((iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                         (*(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash),
-      iVar4 == 0 || (*(float *)(iVar4 + 0x259b0) <= 0.0)))) {
+     ((pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                          (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
+                           g_CDocClassInfo.name_hash), pCVar5 == (CDemonActor *)0x0 ||
+      (pCVar5[0xde].particle_systems[1].position.x <= 0.0)))) {
     core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,5,0xffffffff);
   }
   iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_next_item);
@@ -219,23 +222,26 @@ LAB_004b77cb:
   }
   iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_1);
   if ((iVar4 != 0) &&
-     ((iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                         (*(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash),
-      iVar4 == 0 || (*(float *)(iVar4 + 0x259b0) <= 0.0)))) {
+     ((pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                          (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
+                           g_CDocClassInfo.name_hash), pCVar5 == (CDemonActor *)0x0 ||
+      (pCVar5[0xde].particle_systems[1].position.x <= 0.0)))) {
     core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,0,1);
   }
   iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_2);
   if ((iVar4 != 0) &&
-     ((iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                         (*(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash),
-      iVar4 == 0 || (*(float *)(iVar4 + 0x259b0) <= 0.0)))) {
+     ((pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                          (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
+                           g_CDocClassInfo.name_hash), pCVar5 == (CDemonActor *)0x0 ||
+      (pCVar5[0xde].particle_systems[1].position.x <= 0.0)))) {
     core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,3,1);
   }
   iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,this_ptr->key_weapon_3);
   if ((iVar4 != 0) &&
-     ((iVar4 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                         (*(uint *)(_DAT_01cedef4 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash),
-      iVar4 == 0 || (*(float *)(iVar4 + 0x259b0) <= 0.0)))) {
+     ((pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                          (*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),
+                           g_CDocClassInfo.name_hash), pCVar5 == (CDemonActor *)0x0 ||
+      (pCVar5[0xde].particle_systems[1].position.x <= 0.0)))) {
     core_inv_cpp_FUN_004db9d0(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x2437c,0,6,1);
     return;
   }

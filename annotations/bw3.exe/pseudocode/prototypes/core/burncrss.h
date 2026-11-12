@@ -51,4 +51,4 @@ CBurncross * CBurncross::dtor(CBurncross *this_ptr,uint flags);
 
 // Original: core_burncrss.cpp_FUN_00425490
 // Address: 00425490
-void FUN_00425490(undefined4 param_1);
+void FUN_00425490(void *param_1);

@@ -34,7 +34,7 @@
 ;   engine_ini.cpp_CIniFile_setString_FUN_004d8bb0
 ;   engine_ini.cpp_FUN_004d8a20
 ;   engine_ini.cpp_FUN_004d8c90
-;   sound_sndmain.cpp_FUN_00559520
+;   sound_sndmain.cpp_writeIni_FUN_00559520
 ;
 ; *****************************************************************************
 
@@ -178,8 +178,8 @@ section .text
     ADD ESP,0x8                         ; 004d9757
     MOV EAX,ESP                         ; 004d975a
     PUSH EAX                            ; 004d975c
-    CALL sound_sndmain.cpp_FUN_00559520 ; 004d975d
-        ;   XREF to: 00559520 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00559520(CIniFile * ini_file)
+    CALL sound_sndmain.cpp_writeIni_FUN_00559520 ; 004d975d
+        ;   XREF to: 00559520 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_writeIni_FUN_00559520(CIniFile * ini_file)
     ADD ESP,0x4                         ; 004d9762
     PUSH 0x6000e8                       ; 004d9765 | = "Control"
     LEA EAX,[ESP + 0x4]                 ; 004d976a

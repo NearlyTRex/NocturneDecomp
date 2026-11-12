@@ -21,6 +21,7 @@
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SDisplayListSortEntry.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
@@ -44,14 +45,14 @@ void __cdecl core_script_cpp_CScript_resetDialogState_FUN_00530500(CScript *this
 int __cdecl core_script_cpp_CScript_skipCinematic_FUN_00530530(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_dbLoad_FUN_00530610(CScript *this_ptr,char *filename);
 int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_00530990(CScript *this_ptr,char *path);
-void __cdecl core_script_cpp_readActorReference_FUN_00530a10(undefined4 param_1,undefined4 *param_2);
-void __cdecl core_script_cpp_writeActorReference_FUN_00530a90(undefined4 param_1,int *param_2);
+void __cdecl core_script_cpp_readActorReference_FUN_00530a10(_FILE *file_handle,CDemonActor *actor_out);
+void __cdecl core_script_cpp_writeActorReference_FUN_00530a90(_FILE *file_handle,CDemonActor **actor);
 void __cdecl core_script_cpp_CScript_loadState_FUN_00530ad0(CScript *this_ptr,_FILE *file_handle);
 void __cdecl core_script_cpp_CScript_saveState_FUN_00530e00(CScript *this_ptr,_FILE *file_handle);
 uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00531030(CScript *this_ptr);
 char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_00531090(CDeformableModel *model_ptr);
 void core_sentinel_cpp_staticInit_FUN_005310a0(void);
-void core_sentinel_cpp_factoryFuncSentinel_FUN_005310d0(void);
+CSentinel * __cdecl core_sentinel_cpp_factoryFuncSentinel_FUN_005310d0(void);
 CDemonActorType * core_sentinel_cpp_CSentinel_getActorType_FUN_005310f0(CSentinel *this_ptr);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00531100(CSentinel *this_ptr);
 void __cdecl core_sentinel_cpp_CSentinel_setup_FUN_00531170(CSentinel *this_ptr);
@@ -98,13 +99,13 @@ void __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_00538400(CDemonSet *this
 void core_set_cpp_FUN_005386d0(undefined4 param_1,float *param_2,float *param_3,int param_4);
 void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_005388e0(CDemonSet *this_ptr,int vertex_count);
 void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_00538ad0(CDemonSet *this_ptr,int vertex_count,CVector3i *input_vertices);
-void core_set_cpp_transformToWorldSpace_FUN_00538ba0(int *param_1);
-void core_set_cpp_transformNormalFixedPoint_FUN_00538c70(int *param_1);
+CVector3i * __stack_esi core_set_cpp_transformToWorldSpace_FUN_00538ba0(CVector3i *input,CVector3i *output);
+CVector3i * __stack_esi core_set_cpp_transformNormalFixedPoint_FUN_00538c70(CVector3i *input,CVector3i *output);
 void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_00538dd0(CDemonSet *this_ptr,int vertex_count,int tri_count,void *face_data,CVector3i *vertex_positions,int vertices_per_face,CVector3i *vertex_normals);
 void __cdecl core_set_cpp_CDemonSet_process_FUN_00539c50(CDemonSet *this_ptr);
 float core_set_cpp_FUN_00539dd0(int param_1,float *param_2);
 void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_00539ee0(CDemonSet *this_ptr);
-undefined4 __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_00539f00(int param_1,int param_2);
+int __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_00539f00(SDisplayListSortEntry *a,SDisplayListSortEntry *b);
 void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_00539f30(CDemonSet *this_ptr,uint dirty_flags_mask);
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0053a3f0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha);
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0053a420(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha);
@@ -135,13 +136,13 @@ void core_set_cpp_FUN_0053b460(int param_1);
 void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0053b660(CDemonSet *this_ptr,int *light_state_buffer);
 int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0053b6a0(CDemonSet *this_ptr,int *light_state_buffer);
 int core_set_cpp_FUN_0053b6e0(int *param_1,undefined4 param_2);
-void core_set_cpp_FUN_0053b7f0(int *param_1,undefined4 param_2);
+void core_set_cpp_FUN_0053b7f0(int *param_1,_FILE *param_2);
 int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_0053b9a0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_0053ba00(CDemonSet *this_ptr,int expire_flag);
 void __cdecl core_set_cpp_CDemonSet_renderDecals_FUN_0053ba40(CDemonSet *this_ptr);
 SRoom * core_set_cpp_SRoom_ctor_FUN_0053baf0(SRoom *this_ptr);
 SVDBox * core_set_cpp_SVDBox_ctor_FUN_0053bb00(SVDBox *this_ptr);
-void core_set_cpp_FUN_0053bb60(undefined4 param_1);
+void core_set_cpp_FUN_0053bb60(void *param_1);
 void __cdecl core_setcolid_cpp_staticInit_FUN_0053bb80(void);
 float * core_setcolid_cpp_FUN_0053bc80(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CBoundingBox3D *param_7);
 float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0(CDemonSet *this_ptr,CVector3f *position);
@@ -155,7 +156,7 @@ float core_setcolid_cpp_FUN_0053d270(CDemonSet *param_1,float param_2,CBoundingB
 int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_0053d770(CDemonSet *this_ptr,CDemonActor *actor);
 undefined4 core_setcolid_cpp_intersectXZCylinder_FUN_0053d7d0(float *param_1,float param_2,float param_3,int param_4);
 int __cdecl core_setcolid_cpp_FUN_0053da90(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
-float core_setcolid_cpp_FUN_0053de10(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,undefined4 param_8);
+float core_setcolid_cpp_FUN_0053de10(CDemonSet *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,float param_7,float param_8);
 void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_0053e870(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_0053ea20(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_skipExactCollisions_FUN_0053ebd0(CDemonSet *this_ptr);

@@ -894,8 +894,8 @@ section .text
     CALL engine_special.cpp_kill_FUN_0055f4d0 ; 004ec84f
         ;   XREF to: 0055f4d0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_kill_FUN_0055f4d0()
     PUSH 0x0                            ; 004ec854
-    CALL engine_special.cpp_FUN_0055e8c0 ; 004ec856
-        ;   XREF to: 0055e8c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_0055e8c0(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_0055e8c0 ; 004ec856
+        ;   XREF to: 0055e8c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_0055e8c0(HWND window_handle)
     MOV EDX,dword ptr [0x0264bba0]      ; 004ec85b | DAT_0264bba0
     ADD ESP,0x4                         ; 004ec861
     TEST EDX,EDX                        ; 004ec864

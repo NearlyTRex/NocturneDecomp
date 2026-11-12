@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004f9610(float *param_1,float *param_2,float *param_3,float *param_4)
+; void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004f9610(SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *out_intersection)
 ;
+; Parameters:
+; SClipPlane *     Stack[0x4]:4   clip_plane
+; CVector3f *      Stack[0x8]:4   vertex_a
+; CVector3f *      Stack[0xc]:4   vertex_b
+; CVector3f *      Stack[0x10]:4   out_intersection
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined4       Stack[-0x5c]:4  local_5c

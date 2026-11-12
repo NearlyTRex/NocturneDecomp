@@ -24,9 +24,9 @@
         "0049c11d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fire.cpp_allocateSmokeParticle_FUN_0049c0ee",
-    "signature": "undefined * core_fire_cpp_allocateSmokeParticle_FUN_0049c0ee(void)"
+    "signature": "CSmokeParticle * __cdecl core_fire_cpp_allocateSmokeParticle_FUN_0049c0ee(void)"
   },
   "function_calls": [],
   "globals": [
@@ -73,6 +73,26 @@
     },
     "pcode_op_count": 139
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b4a8e",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a13ee",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c6be0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.963
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -95,7 +115,7 @@
       "line": 14,
       "match": "DAT_01c3f8e0",
       "severity": "mild",
-      "text": "return &DAT_01c3f8e0 + iVar1;",
+      "text": "return (CSmokeParticle *)(&DAT_01c3f8e0 + iVar1);",
       "type": "undefined_data"
     }
   ]

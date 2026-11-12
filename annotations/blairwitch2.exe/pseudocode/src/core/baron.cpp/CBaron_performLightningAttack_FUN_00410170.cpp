@@ -73,7 +73,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_00410170(CBaron *t
     local_40[0] = local_58[0];
     local_40[1] = local_58[1];
   }
-  local_40[0] = (CMatrix3x4f *)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_40[0]);
+  local_40[0] = (CMatrix3x4f *)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0((float)local_40[0]);
   local_c = local_40[0];
   if (((float)local_40[0] < _DAT_005cb573) || (0x3f490fdb < (int)local_40[0])) {
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0049e6e0

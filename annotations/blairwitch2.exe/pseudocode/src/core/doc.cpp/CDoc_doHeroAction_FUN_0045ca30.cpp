@@ -28,7 +28,8 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
   float afStackY_1090 [41];
   CDoc *apCStackY_fec [958];
   CBoundingBox3D *in_stack_ffffff20;
-  CConsole *pCVar13;
+  CConsole *this_ptr_01;
+  char *in_stack_ffffff28;
   uint auStack_c8 [2];
   float fStack_c0;
   float fStack_bc;
@@ -172,7 +173,7 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
       case 1:
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                   (&(this_ptr_00->base).base.model.base,0x1b,1);
-        pCVar13 = (CConsole *)(this_ptr_00->base).object_to_pick_up;
+        this_ptr_01 = (CConsole *)(this_ptr_00->base).object_to_pick_up;
         break;
       case 2:
       case 3:
@@ -184,13 +185,15 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
           pCVar2 = &(this_ptr_00->base).base.model;
           if ((this_ptr_00->carry_object_world_center).y <= (float)_DAT_005d07c7) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0x13,1);
-            pCVar13 = g_CConsolePtr;
+            in_stack_ffffff28 = "Picking up %s off ground\n";
+            this_ptr_01 = g_CConsolePtr;
           }
           else {
             core_skeleton_cpp_FUN_005469a0();
             core_skeleton_cpp_FUN_005469a0();
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0x15,1);
-            pCVar13 = g_CConsolePtr;
+            in_stack_ffffff28 = "Picking up %s waist level\n";
+            this_ptr_01 = g_CConsolePtr;
           }
         }
         else {
@@ -204,7 +207,8 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
           this_ptr_00->pickup_facing_reversed = (uint)(0.0 < afStack_84[1]);
           if (fVar3 <= (float)_DAT_005d07bf) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0x17,1);
-            pCVar13 = g_CConsolePtr;
+            in_stack_ffffff28 = "Picking up heavy %s crate\n";
+            this_ptr_01 = g_CConsolePtr;
           }
           else {
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0x18,1);
@@ -212,13 +216,13 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
             afStack_6c[(uint)bVar12 * -2] = *(float *)(&stack0x00000000 + (uint)bVar12 * -8);
             afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
                  (float)(&this_ptr)[(uint)bVar12 * -2 + (uint)bVar12 * -2];
-            pCVar13 = g_CConsolePtr;
             if (&this_ptr_00->carry_object_world_center != (CVector3f *)&stack0xffffff90) {
               (this_ptr_00->carry_object_world_center).x = unaff_EBX;
               (this_ptr_00->carry_object_world_center).y = afStack_6c[0];
               (this_ptr_00->carry_object_world_center).z = afStack_6c[1];
-              pCVar13 = g_CConsolePtr;
             }
+            in_stack_ffffff28 = "Picking up heavy %s shelf\n";
+            this_ptr_01 = g_CConsolePtr;
           }
         }
         break;
@@ -227,7 +231,7 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
         core_hero_cpp_FUN_004cf200(this_ptr_00);
         return;
       }
-      engine_console_cpp_FUN_00436710(pCVar13);
+      engine_console_cpp_CConsole_printf_FUN_00436710(this_ptr_01,in_stack_ffffff28);
       if ((this_ptr_00->base).object_to_pick_up != (CDemonActor *)0x0) {
         this_ptr_00->action_pending = 4;
         core_hero_cpp_FUN_004cf200();
@@ -236,7 +240,8 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
     }
     break;
   case 7:
-    engine_console_cpp_FUN_00436710(g_CConsolePtr,"?CDoc::doHeroAction - pull lever\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"?CDoc::doHeroAction - pull lever\n" + 1);
     uVar5 = g_CLeverClassInfo.name_hash;
     pCVar4 = (this_ptr_00->base).hero_action_actor;
     (this_ptr_00->base).player_input.action_state.fire = 0;
@@ -247,7 +252,7 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr)
       core_hero_cpp_FUN_004cf200(this_ptr_00);
       return;
     }
-    engine_console_cpp_FUN_00436710(g_CConsolePtr,"  lever = %s\n",pCVar6);
+    engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"  lever = %s\n");
     iVar7 = core_event_cpp_CRuleList_evaluateAndRun_FUN_004925c0(&pCVar6->rule);
     if (iVar7 == 0) {
       (this_ptr_00->base).lever_to_pull = pCVar6;

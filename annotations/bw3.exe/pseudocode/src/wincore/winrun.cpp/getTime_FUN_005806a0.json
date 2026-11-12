@@ -139,7 +139,7 @@
     {
       "addr": "005039fe",
       "from_addr": "00503a0a",
-      "name": "core_netgame.cpp_FUN_005039fe",
+      "name": "core_netgame.cpp_resetGameTime_FUN_005039fe",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -179,6 +179,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004803d0",
+      "from_addr": "004803d0",
+      "name": "shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0047ed50",
       "from_addr": "0047eddc",
       "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50",
@@ -200,12 +206,6 @@
       "addr": "0047ee50",
       "from_addr": "0047eebe",
       "name": "shape_edittool.cpp_FUN_0047ee50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004803d0",
-      "from_addr": "004803d0",
-      "name": "shape_edittool.cpp_FUN_004803d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -235,10 +235,10 @@
         "0058076c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "wincore_winrun.cpp_getTime_FUN_005806a0",
-    "signature": "int wincore_winrun_cpp_getTime_FUN_005806a0(void)"
+    "signature": "int __cdecl wincore_winrun_cpp_getTime_FUN_005806a0(void)"
   },
   "function_calls": [
     {
@@ -375,6 +375,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 356
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058e9e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005b2420",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f2dc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6972
+    },
+    "nocturne.exe": {
+      "addr": "00558a30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6972
+    }
   },
   "stack_frame": {
     "frame_size": 52,

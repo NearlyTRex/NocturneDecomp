@@ -12,15 +12,15 @@ void __cdecl core_sound_cpp_CSound_configure_FUN_005607d0(CSound *this_ptr)
   float fVar1;
   int iVar2;
   
-  fVar1 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(1);
+  fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(1);
   if (0x3E800000 < fVar1) {
     sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(1,0x3E800000);
   }
-  fVar1 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(0);
+  fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(0);
   if (0x3E800000 < fVar1) {
     sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(0,0x3E800000);
   }
-  fVar1 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(2);
+  fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(2);
   if (0x3F800000 < fVar1) {
     sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(2,0x3F800000);
   }

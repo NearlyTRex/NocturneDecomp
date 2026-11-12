@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndwav_cpp_enumerateWavOutDevice_FUN_0057b370(UINT_PTR param_1,char *param_2)
+; int __cdecl sound_sndwav_cpp_enumerateWavOutDevice_FUN_0057b370(UINT device_id,SSoundDeviceInfo *device_info)
 ;
+; Parameters:
+; UINT             Stack[0x4]:4   device_id
+; SSoundDeviceInfo * Stack[0x8]:4   device_info
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ; undefined        Stack[-0x34]:1  local_34

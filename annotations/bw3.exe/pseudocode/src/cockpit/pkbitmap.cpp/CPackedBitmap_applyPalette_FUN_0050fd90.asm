@@ -7,9 +7,9 @@
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990 at 0050f9d1
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00510160 at 005101f4
-;   cockpit_pkbitmap.cpp_FUN_0050f910 at 0050f974
-;   cockpit_pkbitmap.cpp_FUN_0050f990 at 0050f9d1
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910 at 0050f974
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_0050fce0

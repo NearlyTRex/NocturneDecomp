@@ -14,7 +14,7 @@ void engine_drender_cpp_FUN_00469f9c(CDemonRenderer *param_1,int param_2)
   int iVar1;
   
   if ((param_1->plane_culling_enabled == 0) ||
-     (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(param_2 + 8), iVar1 != 0)) {
+     (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970((SClipPlane *)(param_2 + 8)), iVar1 != 0)) {
     if (param_1->shadow_pass_active == 0) {
       if (DAT_006141c0 == 0x20) {
         _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;

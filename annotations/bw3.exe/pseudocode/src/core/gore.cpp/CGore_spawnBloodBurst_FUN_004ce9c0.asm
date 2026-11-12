@@ -42,8 +42,8 @@
 ;   core_charactr.cpp_FUN_004300e0 at 00430227
 ;   core_demnfolk.cpp_FUN_00455080 at 00455b5b
 ;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 0048822d
-;   core_enemy.cpp_FUN_004893f0 at 00489476
-;   core_enemy.cpp_FUN_00489490 at 00489514
+;   core_enemy.cpp_CEnemy_testAttackLine_FUN_00489490 at 00489514
+;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 at 00489476
 ;   ... and 11 more
 ;
 ; Called Functions:

@@ -15,8 +15,8 @@
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_00449a50 at 00449c02
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 0045a1e6
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_00471af0 at 00471b75
+;   core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_00473c10 at 00473daf
 ;   core_doc.cpp_FUN_004712b0 at 00471803
-;   core_doc.cpp_FUN_004724a0 at 00472cce
 ;   ... and 31 more
 ;
 ; *****************************************************************************

@@ -12,7 +12,7 @@ int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004a9440(CBitF
   int iVar1;
   char local_1010 [4096];
   
-  _vsprintf(local_1010,format_string,args.value[0]);
+  _vsprintf(local_1010,format_string,args);
   iVar1 = engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004a93a0
                     (this_ptr,left_x,right_x,y_pos,color_mode,color_value,local_1010);
   return iVar1;

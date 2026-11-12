@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_shotgun.cpp_factoryFuncShotgun_FUN_00561590
 // Address: 00561590
-void factoryFuncShotgun(void);
+CShotgun * __cdecl factoryFuncShotgun(void);
 
 // Original: core_shotgun.cpp_CShotgun_getActorType_FUN_005615b0
 // Address: 005615b0

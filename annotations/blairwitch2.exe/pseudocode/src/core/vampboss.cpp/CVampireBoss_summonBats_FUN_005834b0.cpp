@@ -19,7 +19,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_summonBats_FUN_005834b0(CVampireBoss
   for (iVar1 = 0; iVar1 < g_CDemonSetPtr->actor_count; iVar1 = iVar1 + 1) {
     this_ptr_00 = (CTVBat *)
                   core_actor_cpp_castToClassHash_FUN_0040c8f0
-                            (*(uint *)((int)g_CDemonSetPtr->actors + iVar2),
+                            (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2),
                              g_CTVBatClassInfo.name_hash);
     if ((this_ptr_00 != (CTVBat *)0x0) && (this_ptr_00->follow_orders != 0)) {
       core_tvbat_cpp_CTVBat_orderAttack_FUN_00581260(this_ptr_00);

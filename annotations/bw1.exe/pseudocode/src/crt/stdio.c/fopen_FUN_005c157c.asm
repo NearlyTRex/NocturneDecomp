@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c_fopen_FUN_005c157c(undefined4 param_1,undefined4 param_2)
+; _FILE * __cdecl crt_stdio_c_fopen_FUN_005c157c(char *filename,char *mode)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; char *           Stack[0x8]:4   mode
 ;
 ; XREF[26]:
 ;   cockpit_pkbitmap.cpp_FUN_00538130 at 0053813f

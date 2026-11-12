@@ -136,6 +136,14 @@
     },
     "pcode_op_count": 344
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0053c4c0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -198,7 +206,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = _fopen(param_1 + 4,0x5cc802);",
+      "text": "file = _fopen((char *)(param_1 + 4),(char *)0x5cc802);",
       "type": "unnamed_param"
     },
     {
@@ -206,7 +214,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_main_c_FUN_004e4330(\"CPodFile::computeOneFileCRC - can't open %s\",param_1 + 4);",
+      "text": "core_main_c_FUN_004e4330(\"CPodFile::computeOneFileCRC - can't open %s\",(char *)(param_1 + 4));",
       "type": "unnamed_param"
     },
     {
@@ -214,7 +222,7 @@
       "line": 24,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fseek(iVar2,*(uint *)(param_2 * 0x14 + 8 + *(int *)(param_1 + 0x414)),0);",
+      "text": "_fseek(file,*(long *)(param_2 * 0x14 + 8 + *(int *)(param_1 + 0x414)),0);",
       "type": "unnamed_param"
     },
     {
@@ -222,7 +230,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fseek(iVar2,*(uint *)(param_2 * 0x14 + 8 + *(int *)(param_1 + 0x414)),0);",
+      "text": "_fseek(file,*(long *)(param_2 * 0x14 + 8 + *(int *)(param_1 + 0x414)),0);",
       "type": "unnamed_param"
     },
     {

@@ -10,6 +10,6 @@ void __cdecl core_weather_cpp_staticInit_FUN_005ae140(void)
 
 {
   core_weather_cpp_CWeather_ctor_FUN_005ae170((CWeather *)0x2c997c0);
-  __arrinit(&DAT_02c997f8,200);
+  __arrinit(&DAT_02c997f8,200,&g_CVectorTypeInfo);
   return;
 }

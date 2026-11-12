@@ -16,7 +16,7 @@ CFrankenstienMachine * core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004ad050(
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFrankenstienMachineTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFrankenstienMachineTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_drip.cpp_factoryFuncDrip_FUN_0046ea20
 // Address: 0046ea20
-void factoryFuncDrip(void);
+CDrip * __cdecl factoryFuncDrip(void);
 
 // Original: core_drip.cpp_CDrip_getActorType_FUN_0046ea40
 // Address: 0046ea40

@@ -2,18 +2,18 @@
 // Address: 00539f00
 // Address Range: [[00539f00, 00539f2c]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_00539f00(int param_1,int param_2)
+// Signature: int __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_00539f00(SDisplayListSortEntry *a,SDisplayListSortEntry *b)
 
 #include "nocturne.h"
 
-uint __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_00539f00(int param_1,int param_2)
+int __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_00539f00(SDisplayListSortEntry *a,SDisplayListSortEntry *b)
 
 {
-  if (*(float *)(param_2 + 4) < *(float *)(param_1 + 4)) {
+  if (b->distance_sq < a->distance_sq) {
     return 1;
   }
-  if (*(float *)(param_1 + 4) < *(float *)(param_2 + 4)) {
-    return 0xffffffff;
+  if (a->distance_sq < b->distance_sq) {
+    return -1;
   }
   return 0;
 }

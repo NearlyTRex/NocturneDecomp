@@ -24,7 +24,7 @@
 ;   core_dirmat.cpp_FUN_0045b800
 ;   core_hero.cpp_closestHeroToPoint_FUN_004d22c0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
 
@@ -425,8 +425,8 @@ section .text
     PUSH 0x5b88a6                       ; 004346a9
     MOV ESI,dword ptr [0x005f1690]      ; 004346ae | g_CConsolePtr
     PUSH ESI                            ; 004346b4
-    CALL engine_console.cpp_FUN_00441ff0 ; 004346b5
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004346b5
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004346ba
     MOV EAX,EBX                         ; 004346bd
     MOV dword ptr [EBX + 0x3238],0x0    ; 004346bf

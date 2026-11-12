@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_main.c_FUN_004e4e20 at 004e4e69
-;   core_mission.cpp_FUN_004fcf50 at 004fcf5a
+;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004fcf50 at 004fcf5a
 ;   core_skeleton.cpp_FUN_00549090 at 00549097
 ;
 ; Called Functions:

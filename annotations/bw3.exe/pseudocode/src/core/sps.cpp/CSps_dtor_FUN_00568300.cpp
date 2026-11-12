@@ -15,7 +15,7 @@ CSps * core_sps_cpp_CSps_dtor_FUN_00568300(CSps *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSpsTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSpsTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

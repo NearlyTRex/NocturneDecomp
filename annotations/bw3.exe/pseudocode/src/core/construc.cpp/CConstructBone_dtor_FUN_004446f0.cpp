@@ -18,7 +18,7 @@ CConstructBone * core_construc_cpp_CConstructBone_dtor_FUN_004446f0(CConstructBo
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CConstructBoneTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CConstructBoneTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

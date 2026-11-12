@@ -7,7 +7,7 @@
 ; LPCSTR           Stack[0x4]:4   lpLibFileName
 ;
 ; XREF[1]:
-;   engine_special.cpp_FUN_0055e8c0 at 0055e8fe
+;   engine_special.cpp_loadExternalRenderer_FUN_0055e8c0 at 0055e8fe
 ;
 ; Referenced Globals:
 ;   void* PTR_LoadLibraryA_005c85e4 = 001c9012

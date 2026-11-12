@@ -17,8 +17,9 @@ void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0(CDemonSet *
   CDemonSet *pCVar2;
   CVector3f local_1c;
   
-  engine_drender_cpp_FUN_00483a20(DAT_00612560,&DAT_00622c1c);
-  engine_drender_cpp_FUN_004839f0(DAT_00612560,0x3e800000);
+  engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_00483a20
+            (DAT_00612560,(CVector3i *)&DAT_00622c1c);
+  engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_004839f0(DAT_00612560,0.25);
   if ((render_mode == 0) || (iVar1 = this_ptr->selected_camera_index, iVar1 < 0)) {
 LAB_0054e5a1:
     if (render_mode == 1) {

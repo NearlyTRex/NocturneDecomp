@@ -52,7 +52,7 @@ section .text
     LEA EAX,[EBX + 0xc1e0]              ; 00424882
     PUSH EAX                            ; 00424888
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00424889
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042488e
     CMP dword ptr [0x00610ba0],0x3      ; 00424891 | g_CBrideClassVersion
         ;   Label: LAB_00424891
@@ -65,7 +65,7 @@ section .text
     LEA EAX,[EBX + 0xc1d0]              ; 004248a1
     PUSH EAX                            ; 004248a7
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004248a8
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004248ad
     JMP 0x00424859                      ; 004248b0
         ;   XREF to: 00424859 (UNCONDITIONAL_JUMP)  ; LAB_00424859

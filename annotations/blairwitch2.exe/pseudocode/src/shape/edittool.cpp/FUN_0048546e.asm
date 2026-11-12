@@ -16,7 +16,7 @@
 ;   core_main.c_FUN_004e4500
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0
-;   engine_font.cpp_FUN_004aaf00
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00485580
 ;
 ; *****************************************************************************
@@ -95,8 +95,8 @@ section .text
     MOV EBP,dword ptr [0x01c25590]      ; 0048550f | DAT_01c25590
     PUSH EBP                            ; 00485515
     ADD EDI,EAX                         ; 00485516
-    CALL engine_font.cpp_FUN_004aaf00   ; 00485518
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 00485518
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD EDI,EAX                         ; 0048551d
     ADD ESP,0x8                         ; 0048551f
     MOV dword ptr [EBX + 0x18],EDI      ; 00485522

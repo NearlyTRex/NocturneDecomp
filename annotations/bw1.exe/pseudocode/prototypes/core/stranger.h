@@ -19,7 +19,7 @@ float __cdecl getCarriedObjectVerticalOffset(CDemonActor *object);
 
 // Original: core_stranger.cpp_factoryFuncStranger_FUN_00585240
 // Address: 00585240
-void factoryFuncStranger(void);
+CStranger * __cdecl factoryFuncStranger(void);
 
 // Original: core_stranger.cpp_CStranger_getActorType_FUN_00585260
 // Address: 00585260
@@ -119,7 +119,7 @@ int __cdecl CStranger::renderTransparent(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_adjustAimAngleForOffset_FUN_0058e90e
 // Address: 0058e90e
-void adjustAimAngleForOffset(float *param_1,float param_2,float param_3);
+void __cdecl adjustAimAngleForOffset(float *angle,float distance,float offset);
 
 // Original: core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0058e99e
 // Address: 0058e99e

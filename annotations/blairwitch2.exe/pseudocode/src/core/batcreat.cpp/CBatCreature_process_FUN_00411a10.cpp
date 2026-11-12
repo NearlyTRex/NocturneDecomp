@@ -153,8 +153,8 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
           afStack_178[(uint)bVar7 * -2 + 9] = afStack_178[(uint)bVar7 * -2 + 0xf];
           afStack_178[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
                afStack_178[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10];
-          fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                       (fStack_154 - (this_ptr->base).base.base.orient.vec.y);
+          fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                                (fStack_154 - (this_ptr->base).base.base.orient.vec.y);
           if (ABS(fStack_14) < (float)_DAT_005cb8f6) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_20,3,1);
             iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handles[1]);
@@ -195,8 +195,8 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
               afStack_1c0[(uint)bVar7 * -2 + 9] = afStack_178[(uint)bVar7 * -2 + 3];
               afStack_1c0[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
                    afStack_178[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-              fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                           (fStack_19c - (this_ptr->base).base.base.orient.vec.y);
+              fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                                    (fStack_19c - (this_ptr->base).base.base.orient.vec.y);
               if ((float)_DAT_005cb8f6 <= ABS(fStack_14)) {
                 iVar5 = 1;
               }
@@ -286,8 +286,8 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
             afStack_94[(uint)bVar7 * -2] = afStack_178[(uint)bVar7 * -2 + 0x12];
             afStack_94[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
                  afStack_178[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13];
-            fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                         (afStack_94[0] - (this_ptr->base).base.base.orient.vec.y);
+            fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                                  (afStack_94[0] - (this_ptr->base).base.base.orient.vec.y);
             if ((ABS(fStack_14) < (float)_DAT_005cb8f6) &&
                (ABS((((this_ptr->base).victim)->base).location.position.y -
                     (this_ptr->base).base.base.location.position.y) < (float)_DAT_005cb8fe)) {
@@ -320,8 +320,8 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00411a10(CBatCreature *t
             afStack_178[(uint)bVar7 * -2 + 0xc] = afStack_178[(uint)bVar7 * -2 + 0x18];
             afStack_178[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd] =
                  afStack_178[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x19];
-            fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                         (fStack_148 - (this_ptr->base).base.base.orient.vec.y);
+            fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                                  (fStack_148 - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(fStack_14) < (float)_DAT_005cb8f6) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                         (&(this_ptr->base).base.model.base,3,1);
@@ -410,7 +410,8 @@ LAB_00411cc3:
     if (EVar3 != WALK_STATE_NO_PATH) goto LAB_00411cc3;
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
               (&(this_ptr->base).base.model.base,0,1);
-    engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

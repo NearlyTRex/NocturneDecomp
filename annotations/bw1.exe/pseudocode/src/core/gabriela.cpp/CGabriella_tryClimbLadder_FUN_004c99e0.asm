@@ -121,7 +121,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x14d168]  ; 004c9a65 | g_CDemonSetInstance.actors[0]
     PUSH EAX                            ; 004c9a6b
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004c9a6c
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c9a71
     MOV EBX,EAX                         ; 004c9a74
     MOV dword ptr [ESP + 0xdc],EAX      ; 004c9a76
@@ -214,7 +214,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004c9b78
     PUSH dword ptr [ESP + 0x38]         ; 004c9b79
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 004c9b7d
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cd60()
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     MOV dword ptr [ESP + 0xf4],EAX      ; 004c9b82
     FLD float ptr [ESP + 0xf4]          ; 004c9b89
     FABS                                ; 004c9b90
@@ -296,7 +296,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004c9c7c
     PUSH dword ptr [ESP + 0xbc]         ; 004c9c7d
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 004c9c84
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cd60()
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     MOV dword ptr [ESP + 0xf4],EAX      ; 004c9c89
     FLD float ptr [ESP + 0xf4]          ; 004c9c90
     FABS                                ; 004c9c97

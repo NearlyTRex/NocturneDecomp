@@ -59,11 +59,11 @@
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_00482540
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_00482cd0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
-;   engine_drender.cpp_FUN_00483ac0
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004fc9c0
 ;   engine_matrix.c_normalizeVector3DFloat_FUN_00508780
 ;
@@ -97,8 +97,8 @@ section .text
         ;   Label: LAB_00554d72
     PUSH EAX                            ; 00554d77 | DAT_01bc120c
     LEA ESI,[ESP + 0xd8]                ; 00554d78
-    CALL engine_drender.cpp_FUN_00483ac0 ; 00554d7f
-        ;   XREF to: 00483ac0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483ac0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0 ; 00554d7f
+        ;   XREF to: 00483ac0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 00554d84
     XOR EDX,EDX                         ; 00554d87
     MOV ECX,dword ptr [EBP + 0x1c]      ; 00554d89
@@ -387,7 +387,7 @@ section .text
     PUSH EAX                            ; 00555130
     PUSH 0x2036428                      ; 00555131
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_004fc9c0 ; 00555136
-        ;   XREF to: 004fc9c0 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculateSurfaceNormal_FUN_004fc9c0()
+        ;   XREF to: 004fc9c0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_004fc9c0(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     ADD ESP,0x8                         ; 0055513b
     JMP 0x00554e34                      ; 0055513e
         ;   XREF to: 00554e34 (UNCONDITIONAL_JUMP)  ; LAB_00554e34

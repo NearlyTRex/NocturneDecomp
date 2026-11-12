@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveLocation_FUN_0040b5f0(float *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveLocation_FUN_0040b5f0(CLocation *location_ptr,char *property_name)
 ;
+; Parameters:
+; CLocation *      Stack[0x4]:4   location_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x20]:8  local_20
@@ -48,7 +51,7 @@ section .text
     MOV ESI,dword ptr [0x007bc034]      ; 0040b612 | DAT_007bc034
     PUSH ESI                            ; 0040b618
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040b619
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x18                        ; 0040b61e
     CMP EAX,0x4                         ; 0040b621
     JNZ 0x0040b63c                      ; 0040b624

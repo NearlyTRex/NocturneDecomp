@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl core_setutil_cpp_C3DSLight_create_FUN_0053b6b0(int param_1)
+; CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_0053b6b0(C3DSLight *this_ptr)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -17,7 +19,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_dfilter.cpp_FUN_00447660
+;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_00449c70
 ;   core_dlight.cpp_CDemonLight_init_FUN_00449d90
@@ -107,8 +109,8 @@ section .text
     PUSH EAX                            ; 0053b784
     ADD EBX,0x4                         ; 0053b785
     INC ESI                             ; 0053b788
-    CALL core_dfilter.cpp_FUN_00447660  ; 0053b789
-        ;   XREF to: 00447660 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_FUN_00447660()
+    CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660 ; 0053b789
+        ;   XREF to: 00447660 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660(CFilterCache * this_ptr, char * filter_name, int blend_filter)
     MOV dword ptr [EBX + 0x180c],EAX    ; 0053b78e
     ADD EDI,0x28                        ; 0053b794
     MOV EDX,dword ptr [EBP + 0x11ec]    ; 0053b797

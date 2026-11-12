@@ -47,7 +47,7 @@ int __cdecl engine_special_cpp_CExternalRenderer_validate_FUN_00560310(CExternal
 void engine_special_cpp_switchRenderer_FUN_0056046e(char *param_1,undefined4 param_2);
 undefined1 * engine_special_cpp_FUN_005604be(undefined4 *param_1);
 void core_spike_cpp_staticInit_FUN_005604e0(void);
-void core_spike_cpp_factoryFuncSpike_FUN_00560510(void);
+CSpike * __cdecl core_spike_cpp_factoryFuncSpike_FUN_00560510(void);
 CDemonActorType * core_spike_cpp_CSpike_getActorType_FUN_00560530(CSpike *this_ptr);
 CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_00560540(CSpike *this_ptr);
 void __cdecl core_spike_cpp_CSpike_setup_FUN_00560680(CSpike *this_ptr);
@@ -59,10 +59,10 @@ ECollisionType __cdecl core_spike_cpp_CSpike_getCollisionType_FUN_00560ca0(CSpik
 void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0(CSpike *this_ptr);
 CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_005612c0(CSpike *this_ptr,uint flags);
 void __cdecl core_spline_cpp_FUN_00561310(float *out_basis,float t,float tension);
-float core_spline_cpp_evaluateSplineScalar_FUN_005614a0(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
-int core_spline_cpp_evaluateSplintInt_FUN_005614e0(float *param_1,int param_2,int param_3,int param_4,int param_5);
+float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_005614a0(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
+int __cdecl core_spline_cpp_evaluateSplintInt_FUN_005614e0(float *basis,int v0,int v1,int v2,int v3);
 void core_spline_cpp_FUN_00561540(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
-float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_005616e0(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_005616e0(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
 void core_spline_cpp_FUN_00561780(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
 void shape_spotview_cpp_staticInit_FUN_00561930(void);
 CSpotView * __cdecl shape_spotview_cpp_CSpotView_ctor_FUN_00561940(CSpotView *this_ptr);
@@ -71,7 +71,7 @@ void shape_spotview_cpp_FUN_005619ee(CSpotView *param_1,uint param_2);
 void __cdecl shape_spotview_cpp_CSpotView_clampValues_FUN_00561cd0(CSpotView *this_ptr);
 void shape_spotview_cpp_FUN_00561d90(int param_1);
 void core_stairs_cpp_staticInit_FUN_00561e90(void);
-void core_stairs_cpp_factoryFuncStairs_FUN_00561ec0(void);
+CStairs * __cdecl core_stairs_cpp_factoryFuncStairs_FUN_00561ec0(void);
 CDemonActorType * core_stairs_cpp_CStairs_getActorType_FUN_00561ee0(CStairs *this_ptr);
 CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_00561ef0(CStairs *this_ptr);
 void __cdecl core_stairs_cpp_CStairs_setup_FUN_00561f60(CStairs *this_ptr);
@@ -87,7 +87,7 @@ EGroundType __cdecl core_stairs_cpp_CStairs_getGroundType_FUN_00562230(CStairs *
 void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00562240(CStairs *this_ptr);
 CStairs * core_stairs_cpp_CStairs_dtor_FUN_00562380(CStairs *this_ptr,uint flags);
 void core_stone_cpp_staticInit_FUN_005623d0(void);
-void core_stone_cpp_factoryFuncTempleStone_FUN_00562400(void);
+CTempleStone * __cdecl core_stone_cpp_factoryFuncTempleStone_FUN_00562400(void);
 CDemonActorType * core_stone_cpp_CTempleStone_getActorType_FUN_00562420(CTempleStone *this_ptr);
 CTempleStone * __cdecl core_stone_cpp_CTempleStone_ctor_FUN_00562430(CTempleStone *this_ptr);
 void __cdecl core_stone_cpp_CTempleStone_archive_FUN_00562460(CTempleStone *this_ptr);
@@ -96,7 +96,7 @@ CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_005624f0(CTempleSton
 void __cdecl core_stranger_cpp_staticInit_FUN_00562560(void);
 float core_stranger_cpp_FUN_005625c0(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
 float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_005626f0(CDemonActor *object);
-void core_stranger_cpp_factoryFuncStranger_FUN_005627c0(void);
+CStranger * __cdecl core_stranger_cpp_factoryFuncStranger_FUN_005627c0(void);
 CDemonActorType * core_stranger_cpp_CStranger_getActorType_FUN_005627e0(CStranger *this_ptr);
 CStranger * core_stranger_cpp_CStranger_ctor_FUN_005627f0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_setup_FUN_00562b90(CStranger *this_ptr);
@@ -111,7 +111,7 @@ void __cdecl core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_00567840(
 void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_00567880(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_00567fd0(CStranger *this_ptr,int arm_side);
 void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005683d0(CStranger *this_ptr,int hand_index);
-undefined4 * core_stranger_cpp_FUN_00568500(CCharacter *param_1,CDemonActor *param_2,int param_3);
+float * core_stranger_cpp_FUN_00568500(CCharacter *param_1,CDemonActor *param_2,int param_3);
 int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *this_ptr,char *class_name);
 void __cdecl core_stranger_cpp_FUN_0056a160(CStranger *this_ptr);
 void core_stranger_cpp_FUN_0056a1e0(int param_1);
@@ -144,7 +144,7 @@ void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_0056f130(CStrange
 void __cdecl core_stranger_cpp_CStranger_drop_FUN_0056f190(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_0056f210(CStranger *this_ptr,uint flags);
 void core_succubus_cpp_staticInit_FUN_0056f260(void);
-void core_succubus_cpp_factoryFuncSuccubus_FUN_0056f290(void);
+CSuccubus * __cdecl core_succubus_cpp_factoryFuncSuccubus_FUN_0056f290(void);
 CDemonActorType * core_succubus_cpp_CSuccubus_getActorType_FUN_0056f2b0(CSuccubus *this_ptr);
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_0056f2c0(CSuccubus *this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_0056f3a0(CSuccubus *this_ptr);

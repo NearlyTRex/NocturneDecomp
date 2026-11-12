@@ -15,7 +15,7 @@ CRifle * core_rifle_cpp_CRifle_dtor_FUN_005409c0(CRifle *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CRifleTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CRifleTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

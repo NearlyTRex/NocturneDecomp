@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 99,
+    "complexity_score": 49,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 19,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 71
@@ -63,9 +61,9 @@
         "0048540e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "shape_edittool.cpp_calculateButtonHeight_FUN_00485380",
-    "signature": "int shape_edittool_cpp_calculateButtonHeight_FUN_00485380(char *param_1)"
+    "signature": "int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_00485380(char *button_text)"
   },
   "function_calls": [
     {
@@ -152,14 +150,10 @@
         "call_addr": "0047b94a",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
-        "estimated_params": 4,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -167,15 +161,10 @@
         "call_addr": "0047f046",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_FUN_0047eff0",
-        "estimated_params": 5,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -183,12 +172,10 @@
         "call_addr": "00482e88",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00482a00",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -196,15 +183,10 @@
         "call_addr": "0048330b",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
-        "estimated_params": 5,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -212,15 +194,10 @@
         "call_addr": "0047c2f7",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_FUN_0047c0f0",
-        "estimated_params": 5,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -228,15 +205,10 @@
         "call_addr": "0047c3e3",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_FUN_0047c0f0",
-        "estimated_params": 5,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -244,12 +216,10 @@
         "call_addr": "0047c5c2",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_FUN_0047c0f0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -276,11 +246,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.119047619047619,
@@ -316,13 +286,35 @@
     },
     "pcode_op_count": 173
   },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "004a6970",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00477100",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "button_text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -334,47 +326,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int shape_edittool_cpp_calculateButtonHeight_FUN_00485380(char *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == (char *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(_DAT_01c25590,param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 22,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "return DAT_006141bc / 0x50 + iVar1;",
       "type": "undefined_data"
-    },
-    {
-      "call_site_count": 12,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1071,
-    "complexity_score": 542,
+    "complexity_score": 541,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 74,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 377,
+    "pseudocode_lines": 376,
     "suspect_count": 14,
     "suspect_types": [
       "raw_address_constant",
@@ -16,7 +16,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1448
+    "total_lines": 1447
   },
   "cross_references": [
     {
@@ -231,14 +231,14 @@
       "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
     },
     {
+      "addr": "00436710",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
+    },
+    {
       "addr": "004368b0",
       "is_variadic": false,
       "name": "engine_console.cpp_CConsole_reset_FUN_004368b0"
-    },
-    {
-      "addr": "00436710",
-      "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00436710"
     },
     {
       "addr": "004dfee0",
@@ -826,6 +826,32 @@
     },
     "pcode_op_count": 3365
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004cf5e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3032
+    },
+    "bw3.exe": {
+      "addr": "004b7f90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2968
+    },
+    "nocedit.exe": {
+      "addr": "004daf80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2118
+    },
+    "nocturne.exe": {
+      "addr": "0049da10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1438
+    }
+  },
   "stack_frame": {
     "frame_size": 2212,
     "local_size": 2208,
@@ -895,23 +921,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_005d7738",
       "severity": "mild",
-      "text": "engine_console_cpp_FUN_00436710(g_CConsolePtr,&DAT_005d7738);",
+      "text": "engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,&DAT_005d7738);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 35,
       "match": "DAT_005d773a",
       "severity": "mild",
-      "text": "engine_console_cpp_FUN_00436710(g_CConsolePtr,&DAT_005d773a,local_11c);",
+      "text": "engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,&DAT_005d773a);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 100,
       "match": "DAT_01cb7c54",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_loadMasterLightStates_FUN_00534990(g_CDemonSetPtr,(int *)&DAT_01cb7c54);",
@@ -919,7 +945,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 143,
+      "line": 142,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x114))(iVar5), pCVar2 = g_CFieldNotesPtr,",
@@ -927,7 +953,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 175,
+      "line": 174,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar6 = (**(code **)(*(int *)(iVar6 + 0x2b0) + 0x114))(iVar6);",
@@ -935,7 +961,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 218,
+      "line": 217,
       "match": "DAT_005d7845",
       "severity": "mild",
       "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7845);",
@@ -943,7 +969,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 243,
+      "line": 242,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "if (0xf0 < DAT_006141bc) {",
@@ -951,7 +977,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 254,
+      "line": 253,
       "match": "DAT_005d7866",
       "severity": "mild",
       "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7866);",
@@ -959,7 +985,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 325,
+      "line": 324,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x114))(iVar5);",
@@ -967,7 +993,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 348,
+      "line": 347,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x2b0) + 0x114))(iVar4);",
@@ -975,7 +1001,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 353,
+      "line": 352,
       "match": "DAT_005d7875",
       "severity": "mild",
       "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d7875);",
@@ -983,7 +1009,7 @@
     },
     {
       "description": "Raw hex address 0x1d02f84 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 369,
+      "line": 368,
       "match": "0x1d02f84",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x01D02F84;",
@@ -991,7 +1017,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 84,
+      "line": 83,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

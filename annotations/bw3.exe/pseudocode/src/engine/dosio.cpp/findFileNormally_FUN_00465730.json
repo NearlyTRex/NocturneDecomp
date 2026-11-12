@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 233,
+    "complexity_score": 47,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
-    "suspect_count": 18,
+    "pseudocode_lines": 32,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "unrolled_strcpy"
     ],
-    "total_lines": 107
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -52,7 +50,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_dosio.cpp_findFileNormally_FUN_00465730",
-    "signature": "undefined4 __cdecl engine_dosio_cpp_findFileNormally_FUN_00465730(char *param_1)"
+    "signature": "int __cdecl engine_dosio_cpp_findFileNormally_FUN_00465730(SFoundFileInfo *info)"
   },
   "function_calls": [
     {
@@ -104,11 +102,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.327272727272727,
@@ -135,11 +133,37 @@
     },
     "pcode_op_count": 238
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004609e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00478ef0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004817c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00456800",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8929
+    }
+  },
   "stack_frame": {
-    "frame_size": 336,
+    "frame_size": 340,
     "local_size": 336,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -176,156 +200,24 @@
         "offset": -46,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "info",
+        "offset": 4,
+        "size": 4,
+        "type": "SFoundFileInfo *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl engine_dosio_cpp_findFileNormally_FUN_00465730(char *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 != (char *)0x0) && (*param_1 != '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 != (char *)0x0) && (*param_1 != '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFullPath_FUN_00465ff0(local_14c,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(long *)(param_1 + 0x204) = local_4c._st_size;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x200] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x201] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x202] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x203] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(time_t *)(param_1 + 0x20c) = local_4c._st_mtime;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar4 = param_1 + 0x100;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(time_t *)(param_1 + 0x210) = local_4c._st_mtime;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x208] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x209] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x20a] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x20b] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 24,
+      "line": 21,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

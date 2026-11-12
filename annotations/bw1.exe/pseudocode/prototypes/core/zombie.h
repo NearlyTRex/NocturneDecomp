@@ -27,7 +27,7 @@ int __cdecl classifyObjectShape(CVector3f *dimensions);
 
 // Original: core_zombie.cpp_factoryFuncZombie_FUN_005baae0
 // Address: 005baae0
-void factoryFuncZombie(void);
+CZombie * __cdecl factoryFuncZombie(void);
 
 // Original: core_zombie.cpp_CZombie_getActorType_FUN_005bab00
 // Address: 005bab00

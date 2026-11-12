@@ -9,7 +9,7 @@
 ; SChainVertex *   Stack[0xc]:4   vertex_b
 ;
 ; XREF[1]:
-;   core_chain.cpp_FUN_005b4d30 at 005b5086
+;   core_chain.cpp_CChain_process_FUN_005b4d30 at 005b5086
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01caf5b4

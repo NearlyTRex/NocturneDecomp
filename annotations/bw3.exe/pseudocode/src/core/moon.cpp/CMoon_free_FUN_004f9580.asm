@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_FUN_00460e10
-;   engine_alphabit.cpp_FUN_0040d400
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 ;
 ; *****************************************************************************
 
@@ -48,19 +48,19 @@ section .text
     PUSH ESI                            ; 004f95b8
         ;   Label: LAB_004f95b8
     PUSH 0x1d883a8                      ; 004f95b9
-    CALL engine_alphabit.cpp_FUN_0040d400 ; 004f95be
-        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d400(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400 ; 004f95be
+        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f95c3
     MOV EBX,0x1d883bc                   ; 004f95c6
     PUSH 0x1d88614                      ; 004f95cb
     LEA ESI,[EBX + 0x258]               ; 004f95d0
-    CALL engine_alphabit.cpp_FUN_0040d400 ; 004f95d6
-        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d400(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400 ; 004f95d6
+        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f95db
     PUSH EBX                            ; 004f95de
         ;   Label: LAB_004f95de
-    CALL engine_alphabit.cpp_FUN_0040d400 ; 004f95df
-        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d400(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400 ; 004f95df
+        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap * this_ptr)
     ADD EBX,0x14                        ; 004f95e4
     ADD ESP,0x4                         ; 004f95e7
     CMP EBX,ESI                         ; 004f95ea

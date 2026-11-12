@@ -111,6 +111,31 @@ MULTIBYTE_NOPS = [
     [0x66, 0x90],
 ]
 
+
+def _self_move_nops():
+    """Every `mov r,r` and `lea r,[r+0]` encoding, and `cs:` before a `mov r,r`.
+
+    Watcom pads with these too (`8b c9` mov ecx,ecx; `8d 54 22 00` lea edx,[edx+0]).
+    A table listing a few left the rest to start a region two to four bytes before
+    the real entry, and the function defined there kept only the padding.
+    """
+    out = []
+    for r in range(8):
+        reg = r << 3
+        if r != 4:
+            out.append([0x8D, 0x80 | reg | r, 0, 0, 0, 0])      # lea r,[r+disp32 0]
+            out.append([0x8D, 0x40 | reg | r, 0])               # lea r,[r+disp8 0]
+        out.append([0x8D, 0x84 | reg, 0x20 | r, 0, 0, 0, 0])    # lea r,[r*1+disp32 0], SIB form
+        out.append([0x8D, 0x44 | reg, 0x20 | r, 0])             # lea r,[r*1+disp8 0], SIB form
+        for opcode in (0x8B, 0x89):
+            out.append([0x2E, opcode, 0xC0 | reg | r])          # cs: mov r,r
+            out.append([opcode, 0xC0 | reg | r])                # mov r,r
+    return out
+
+
+MULTIBYTE_NOPS = sorted({tuple(p) for p in MULTIBYTE_NOPS + _self_move_nops()}, key=lambda p: (-len(p), p))
+MULTIBYTE_NOPS = [list(p) for p in MULTIBYTE_NOPS]
+
 # How many pieces of evidence to print per candidate row.
 MAX_EVIDENCE = 4
 

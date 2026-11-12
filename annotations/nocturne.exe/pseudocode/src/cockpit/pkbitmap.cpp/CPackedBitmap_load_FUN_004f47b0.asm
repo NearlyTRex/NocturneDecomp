@@ -24,7 +24,7 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_realloc_FUN_00564a70
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -42,8 +42,8 @@ section .text
     SUB ESP,0x144                       ; 004f47b4
     MOV EBP,dword ptr [ESP + 0x158]     ; 004f47ba
     PUSH EBP                            ; 004f47c1
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50 ; 004f47c2
-        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50(CPackedBitmap * this_ptr)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50 ; 004f47c2
+        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f47c7
     MOV EAX,dword ptr [ESP + 0x160]     ; 004f47ca
     MOV dword ptr [EBP + 0x18],EAX      ; 004f47d1

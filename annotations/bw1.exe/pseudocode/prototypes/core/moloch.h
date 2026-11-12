@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_moloch.cpp_factoryFuncMoloch_FUN_005202c0
 // Address: 005202c0
-void factoryFuncMoloch(void);
+CMoloch * __cdecl factoryFuncMoloch(void);
 
 // Original: core_moloch.cpp_CMoloch_getActorType_FUN_005202e0
 // Address: 005202e0

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004062b0(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004062b0(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0
@@ -33,7 +35,7 @@ section .text
     PUSH EAX                            ; 004062bc
     ADD EBP,0x18                        ; 004062bd
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 004062c0
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 004062c5
     TEST EAX,EAX                        ; 004062c8
     JZ 0x00406425                       ; 004062ca

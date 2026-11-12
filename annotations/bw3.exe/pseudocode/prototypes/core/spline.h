@@ -11,11 +11,11 @@ void __cdecl FUN_00567630(float *out_basis,float t,float tension);
 
 // Original: core_spline.cpp_evaluateSplineScalar_FUN_005677c0
 // Address: 005677c0
-float evaluateSplineScalar(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+float __cdecl evaluateSplineScalar(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
 
 // Original: core_spline.cpp_evaluateSplintInt_FUN_00567800
 // Address: 00567800
-int evaluateSplintInt(float *param_1,int param_2,int param_3,int param_4,int param_5);
+int __cdecl evaluateSplintInt(float *basis,int v0,int v1,int v2,int v3);
 
 // Original: core_spline.cpp_FUN_00567860
 // Address: 00567860
@@ -23,4 +23,4 @@ void FUN_00567860(float *param_1,float *param_2,float *param_3,float *param_4,fl
 
 // Original: core_spline.cpp_evaluateSplineTangentScalar_FUN_00567a00
 // Address: 00567a00
-float __cdecl evaluateSplineTangentScalar(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+float __cdecl evaluateSplineTangentScalar(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);

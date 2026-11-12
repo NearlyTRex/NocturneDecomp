@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_ini_cpp_FUN_004d8360(undefined4 *param_1,undefined4 param_2,char *param_3,undefined4 param_4,char *param_5 )
+; int engine_ini_cpp_FUN_004d8360(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x214]:1  local_214
@@ -47,7 +47,7 @@ section .text
     XOR EBP,EBP                         ; 004d8380
     MOV dword ptr [EAX],0x1             ; 004d8382
     CALL crt_stdio.c_fopen_FUN_005b910c ; 004d8388
-        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005b910c()
+        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005b910c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004d838d
     MOV EDI,EAX                         ; 004d8390
     TEST EAX,EAX                        ; 004d8392
@@ -85,7 +85,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004d83e1
     PUSH EAX                            ; 004d83e5
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 004d83e6
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004d83eb
     TEST EAX,EAX                        ; 004d83ee
     JZ 0x004d8490                       ; 004d83f0
@@ -201,7 +201,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004d84dc
     PUSH EAX                            ; 004d84e0
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 004d84e1
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004d84e6
     TEST EAX,EAX                        ; 004d84e9
     JZ 0x004d83c5                       ; 004d84eb

@@ -60,13 +60,13 @@
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
+;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
+;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
-;   engine_drender.cpp_FUN_0046b4b0
-;   engine_drender.cpp_FUN_0046b710
 ;   engine_drender.cpp_popViewport_FUN_0046b740
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   engine_font.cpp_FUN_004a8df0
-;   engine_font.cpp_FUN_004aaf00
 ;   engine_matrix.c_FUN_004e86b0
 ;   engine_matrix.c_FUN_004e86f0
 ;   engine_special.cpp_FUN_0055d723
@@ -144,8 +144,8 @@ section .text
     PUSH EBX                            ; 004e16b0
     MOV EDI,dword ptr [0x0060b280]      ; 004e16b1 | DAT_0060b280
     PUSH EDI                            ; 004e16b7 | DAT_01ba5c50
-    CALL engine_drender.cpp_FUN_0046b710 ; 004e16b8
-        ;   XREF to: 0046b710 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b710()
+    CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710 ; 004e16b8
+        ;   XREF to: 0046b710 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 004e16bd
     PUSH 0x265370c                      ; 004e16c0 | DAT_0265370c
         ;   Label: LAB_004e16c0
@@ -165,8 +165,8 @@ section .text
         ;   Label: LAB_004e16ef
     PUSH dword ptr [ESP + 0x54]         ; 004e16f5
     PUSH EBX                            ; 004e16f9 | DAT_01ba5c50
-    CALL engine_drender.cpp_FUN_0046b4b0 ; 004e16fa
-        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b4b0()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0 ; 004e16fa
+        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004e16ff
     PUSH 0x265370c                      ; 004e1702 | DAT_0265370c
     MOV EDI,dword ptr [0x0060b280]      ; 004e1707 | DAT_0060b280
@@ -473,8 +473,8 @@ section .text
     ADD EBP,EAX                         ; 004e1ae7
     MOV EAX,dword ptr [ESP + 0x5c]      ; 004e1ae9
     PUSH EAX                            ; 004e1aed
-    CALL engine_font.cpp_FUN_004aaf00   ; 004e1aee
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004e1aee
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004e1af3
     SAR EDX,0x1f                        ; 004e1af5
     SUB EAX,EDX                         ; 004e1af8

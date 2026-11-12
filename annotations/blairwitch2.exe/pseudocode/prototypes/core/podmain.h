@@ -9,9 +9,9 @@
 // Address: 0051bfd0
 void __cdecl staticInit(void);
 
-// Original: core_podmain.cpp_FUN_0051c000
+// Original: core_podmain.cpp_CDemonPod_load_FUN_0051c000
 // Address: 0051c000
-void FUN_0051c000(int param_1);
+void __cdecl CDemonPod::load(CDemonPod *this_ptr);
 
 // Original: core_podmain.cpp_CDemonPod_ctor_FUN_0051c110
 // Address: 0051c110

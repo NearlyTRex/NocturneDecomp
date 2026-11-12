@@ -20,7 +20,7 @@ void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_0056eed0(CStrange
     (*((this_ptr_00->base).vtable._ub)->process)(&this_ptr_00->base,delta_time);
     this_ptr_01 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040c8f0
-                            (this_ptr->weapon,g_CDynamiteClassInfo.name_hash);
+                            (&this_ptr->weapon->base,g_CDynamiteClassInfo.name_hash);
     if (this_ptr_01 != (CCharacter *)0x0) {
       iVar2 = core_dynamite_cpp_CDynamite_isFuseBurnedOut_FUN_0047a1c0((CDynamite *)this_ptr_01);
       if (iVar2 != 0) {

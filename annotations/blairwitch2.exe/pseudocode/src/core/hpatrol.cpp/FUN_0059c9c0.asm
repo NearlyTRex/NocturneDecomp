@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_hpatrol_cpp_FUN_0059c9c0(char *param_1,uint *param_2)
+; CDemonActor * core_hpatrol_cpp_FUN_0059c9c0(char *param_1,uint *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
@@ -199,7 +199,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x34]      ; 0059cb1c
     PUSH EDI                            ; 0059cb20
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 0059cb21
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0059cb26
     POP EBX                             ; 0059cb29
     POP ESI                             ; 0059cb2a

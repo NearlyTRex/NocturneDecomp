@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_fputc_FUN_005c2f00(uint param_1,int *param_2)
+; int __cdecl crt_stdio_c_fputc_FUN_005c2f00(int character,_FILE *file)
 ;
+; Parameters:
+; int              Stack[0x4]:4   character
+; _FILE *          Stack[0x8]:4   file
 ;
 ; XREF[11]:
 ;   core_game.cpp_FUN_004ce580 at 004cf379

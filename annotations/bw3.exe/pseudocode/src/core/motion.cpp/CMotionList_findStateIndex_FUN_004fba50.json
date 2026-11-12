@@ -48,19 +48,19 @@
     {
       "addr": "004d2aa0",
       "from_addr": "004d2acf",
-      "name": "core_hero.cpp_FUN_004d2aa0",
+      "name": "core_hero.cpp_CHero_canBeGrabbed_FUN_004d2aa0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d2af0",
       "from_addr": "004d2b67",
-      "name": "core_hero.cpp_FUN_004d2af0",
+      "name": "core_hero.cpp_CHero_getGrabbed_FUN_004d2af0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d2c20",
       "from_addr": "004d2c66",
-      "name": "core_hero.cpp_FUN_004d2c20",
+      "name": "core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -245,7 +245,7 @@
       {
         "call_addr": "004d2acf",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d2aa0",
+        "caller": "core_hero.cpp_CHero_canBeGrabbed_FUN_004d2aa0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -256,7 +256,7 @@
       {
         "call_addr": "004d2b67",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d2af0",
+        "caller": "core_hero.cpp_CHero_getGrabbed_FUN_004d2af0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -267,7 +267,7 @@
       {
         "call_addr": "004d2b83",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d2af0",
+        "caller": "core_hero.cpp_CHero_getGrabbed_FUN_004d2af0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -308,6 +308,32 @@
       "STORE": 10
     },
     "pcode_op_count": 198
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00502fa0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00524150",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052d4f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e10a0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

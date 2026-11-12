@@ -1,14 +1,16 @@
 // Name: crt_stdlib.c_strtoul_FUN_00573890
 // Address: 00573890
 // Address Range: [[00573890, 005738ab]]
-// Convention: unknown
-// Signature: void crt_stdlib_c_strtoul_FUN_00573890(char *param_1,char **param_2,int param_3)
+// Convention: __cdecl
+// Signature: ulong __cdecl crt_stdlib_c_strtoul_FUN_00573890(char *str,char **endptr,int base)
 
 #include "nocturne.h"
 
-void strtoul(char *param_1,char **param_2,int param_3)
+ulong __cdecl strtoul(char *str,char **endptr,int base)
 
 {
-  strtol_internal(param_1,param_2,param_3,0);
-  return;
+  ulong uVar1;
+  
+  uVar1 = strtol_internal(str,endptr,base,0);
+  return uVar1;
 }

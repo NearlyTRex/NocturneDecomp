@@ -12,10 +12,10 @@ CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_
 
 {
   int iVar1;
-  float *pfVar2;
+  CMatrix3x4f *pCVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
-  float afStack_a8 [12];
+  CMatrix3x4f CStack_a8;
   CMatrix3x4f CStack_78;
   CVector3f CStack_48;
   CVector3f CStack_3c;
@@ -50,12 +50,13 @@ CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_
   }
   core_xform_cpp_FUN_005b5760(&CStack_78,&CStack_24,&CStack_3c);
   core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
-            (&CStack_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1);
-  pfVar2 = afStack_a8;
+            (&CStack_78,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
+             &CStack_a8);
+  pCVar2 = &CStack_a8;
   pCVar3 = out_matrix;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar3->m[0].w = *pfVar2;
-    pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
+    pCVar3->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
   return out_matrix;

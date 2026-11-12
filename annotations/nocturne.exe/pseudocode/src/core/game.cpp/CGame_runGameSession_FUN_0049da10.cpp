@@ -119,7 +119,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
     core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(g_CDemonSetPtr,this_ptr->camera_view_index);
   }
   else {
-    core_setdir_cpp_CDemonSet_FUN_005125a0(g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
+    core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0
+              (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
   }
   core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(this_ptr);
   core_game_cpp_CGame_loadAssets_FUN_004a3660(this_ptr);
@@ -144,7 +145,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
       core_game_cpp_CGame_playerControls_FUN_0049e7d0(this_ptr);
       if ((((this_ptr->is_game_active != 0) && (this_ptr->cinematic_skip_in_progress == 0)) &&
           (g_CNetGamePtr->has_pending_sim_frame == 0)) && (this_ptr->goggles_active == 0)) {
-        iVar3 = core_setdir_cpp_CDemonSet_FUN_005125a0
+        iVar3 = core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0
                           (g_CDemonSetPtr,g_CScriptPtr->focus_actor,
                            g_CScriptPtr->focus_actor_changed);
         if (iVar3 != 0) {
@@ -234,7 +235,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
               core_game_cpp_CGame_promptLoadGame_FUN_004a6570(this_ptr);
             }
             if (iVar3 == 3) {
-              core_game_cpp_CGame_FUN_004a3b90(this_ptr,(char *)0x0);
+              core_game_cpp_CGame_saveGame_FUN_004a3b90(this_ptr,(char *)0x0);
             }
             if (iVar3 == 4) {
               pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
@@ -311,7 +312,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
         local_1c = 1;
         goto LAB_0049dec1;
       }
-      core_game_cpp_CGame_FUN_004a57c0(this_ptr);
+      core_game_cpp_CGame_showFullscreenBitmap_FUN_004a57c0(this_ptr);
       if (this_ptr->wait_for_keypress != 0) {
         wincore_winrun_cpp_getNextKeypress_FUN_00558b00();
       }
@@ -354,7 +355,7 @@ LAB_0049dec1:
   engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960(this_ptr);
   (*g_CKeys_PTR_005bac64->vtable->clearKeyPresses)(g_CKeys_PTR_005bac64);
-  core_set_cpp_CDemonSet_FUN_0050ad20(g_CDemonSetPtr);
+  core_set_cpp_CDemonSet_clearLights_FUN_0050ad20(g_CDemonSetPtr);
   this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_CPickList);
   core_inv_cpp_freeInventory_FUN_004bf270();

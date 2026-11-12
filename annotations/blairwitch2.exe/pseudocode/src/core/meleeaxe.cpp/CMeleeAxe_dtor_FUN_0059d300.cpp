@@ -15,7 +15,7 @@ CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMeleeAxeTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMeleeAxeTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

@@ -7,7 +7,7 @@
 
 // Original: support_newmsg.cpp_readMessageFile_FUN_004edfc0
 // Address: 004edfc0
-int readMessageFile(char *param_1);
+int __cdecl readMessageFile(char *message_file);
 
 // Original: support_newmsg.cpp_findLocalizedString_FUN_004ee2f0
 // Address: 004ee2f0

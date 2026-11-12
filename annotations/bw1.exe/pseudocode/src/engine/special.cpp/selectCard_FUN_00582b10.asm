@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_setGameRes_FUN_004cf430 at 004cf500
 ;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 at 0050b388
-;   engine_special.cpp_FUN_00581310 at 00581f02
+;   engine_special.cpp_loadExternalRenderer_FUN_00581310 at 00581f02
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c83374

@@ -7,4 +7,4 @@
 
 // Original: engine_fpoly.c_rasterizePolygonHardware_FUN_004c4d80
 // Address: 004c4d80
-void __cdecl rasterizePolygonHardware(int *param_1,int param_2);
+void __cdecl rasterizePolygonHardware(SRenderVertex **vertices,int vertex_count);

@@ -44,7 +44,7 @@ section .text
     JLE 0x00554596                      ; 0055451e
         ;   XREF to: 00554596 (CONDITIONAL_JUMP)  ; LAB_00554596
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 00554524
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
         ;   Label: LAB_00554524
     MOV EDI,dword ptr [0x02649020]      ; 00554529 | DAT_02649020
     MOV EBX,EAX                         ; 0055452f

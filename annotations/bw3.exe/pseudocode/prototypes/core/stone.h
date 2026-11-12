@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_stone.cpp_factoryFuncTempleStone_FUN_005688f0
 // Address: 005688f0
-void factoryFuncTempleStone(void);
+CTempleStone * __cdecl factoryFuncTempleStone(void);
 
 // Original: core_stone.cpp_CTempleStone_getActorType_FUN_00568910
 // Address: 00568910

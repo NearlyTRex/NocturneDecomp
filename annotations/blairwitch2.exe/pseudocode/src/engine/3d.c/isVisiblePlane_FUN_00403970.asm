@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_3d_c_isVisiblePlane_FUN_00403970(int *param_1)
+; int __cdecl engine_3d_c_isVisiblePlane_FUN_00403970(SClipPlane *plane)
 ;
+; Parameters:
+; SClipPlane *     Stack[0x4]:4   plane
 ;
 ; XREF[81]:
 ;   core_box.cpp_FUN_0041aa20 at 0041ab8c

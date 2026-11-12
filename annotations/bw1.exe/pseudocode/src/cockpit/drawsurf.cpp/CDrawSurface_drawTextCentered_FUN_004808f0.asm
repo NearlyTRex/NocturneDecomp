@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   y
 ;
 ; XREF[2]:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_00480950 at 004809aa
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_00480920 at 00480936
-;   cockpit_drawsurf.cpp_FUN_00480950 at 004809aa
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480

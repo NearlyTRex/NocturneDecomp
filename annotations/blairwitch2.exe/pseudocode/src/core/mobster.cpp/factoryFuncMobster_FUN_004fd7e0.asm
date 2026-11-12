@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mobster_cpp_factoryFuncMobster_FUN_004fd7e0(void)
+; CMobster * __cdecl core_mobster_cpp_factoryFuncMobster_FUN_004fd7e0(void)
 ;
 ;
 ; Called Functions:

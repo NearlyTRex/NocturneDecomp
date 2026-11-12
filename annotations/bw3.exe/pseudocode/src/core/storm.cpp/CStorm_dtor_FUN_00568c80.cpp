@@ -15,7 +15,7 @@ CStorm * core_storm_cpp_CStorm_dtor_FUN_00568c80(CStorm *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CStormTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CStormTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

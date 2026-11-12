@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1311,
-    "complexity_score": 935,
+    "complexity_score": 936,
     "cross_reference_count": 0,
     "function_call_count": 30,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 625,
+    "pseudocode_lines": 626,
     "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
@@ -19,7 +19,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1936
+    "total_lines": 1937
   },
   "cross_references": [],
   "function": {
@@ -179,7 +179,7 @@
     {
       "addr": "00436710",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00436710"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
     },
     {
       "addr": "00550b70",
@@ -400,6 +400,32 @@
     },
     "pcode_op_count": 6164
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004f2b80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d6a90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9626
+    },
+    "nocedit.exe": {
+      "addr": "004f9c30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6581
+    },
+    "nocturne.exe": {
+      "addr": "004bbaf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6581
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -467,9 +493,9 @@
     {
       "description": "Complex pointer cast",
       "line": 492,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->enemies + iVar9),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar9),",
       "type": "pointer_cast"
     },
     {
@@ -522,7 +548,7 @@
     },
     {
       "description": "Pointer value `&CStack_dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 612,
+      "line": 613,
       "match": "(int)&CStack_dc",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_dc + (uint)bVar11 * -8 + 4) = afStack_1f8[(uint)bVar11 * -2];",
@@ -530,7 +556,7 @@
     },
     {
       "description": "Pointer value `&CStack_dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 613,
+      "line": 614,
       "match": "(int)&CStack_dc",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_dc + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
@@ -554,7 +580,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 580,
+      "line": 581,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -562,7 +588,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 615,
+      "line": 616,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -570,7 +596,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 618,
+      "line": 619,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -626,7 +652,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 612,
+      "line": 613,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_dc + (uint)bVar11 * -8 + 4) = afStack_1f8[(uint)bVar11 * -2];",
@@ -634,7 +660,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 613,
+      "line": 614,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_dc + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",

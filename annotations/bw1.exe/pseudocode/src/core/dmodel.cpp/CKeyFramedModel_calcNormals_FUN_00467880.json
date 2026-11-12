@@ -2,21 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 217,
+    "complexity_score": 234,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 82,
-    "suspect_count": 11,
+    "pseudocode_lines": 84,
+    "suspect_count": 12,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "pointer_stride_bytecount",
       "pointer_truncation",
+      "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 245
+    "total_lines": 247
   },
   "cross_references": [
     {
@@ -138,6 +139,32 @@
     },
     "pcode_op_count": 803
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044ecb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00461530",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00477e60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00453620",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 72,
     "local_size": 68,
@@ -224,7 +251,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 13,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "int extraout_ECX;",
@@ -232,7 +259,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 16,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "int *extraout_EDX;",
@@ -240,7 +267,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 70,
+      "line": 72,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "*extraout_EDX = (int)ROUND(fVar10);",
@@ -248,7 +275,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 71,
+      "line": 73,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "extraout_EDX[1] = (int)ROUND(fVar11);",
@@ -256,7 +283,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 72,
+      "line": 74,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "extraout_EDX[2] = (int)ROUND(fVar9);",
@@ -264,39 +291,47 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
+      "line": 75,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "iVar5 = extraout_ECX;",
+      "text": "iVar6 = extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Pointer value `&this_ptr->vertex_normal_list->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
+      "line": 59,
       "match": "(int)&this_ptr->vertex_normal_list->x",
       "severity": "moderate",
-      "text": "piVar6 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar5);",
+      "text": "piVar8 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar6);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 57,
+      "line": 59,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "piVar6 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar5);",
+      "text": "piVar8 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 34,
+      "line": 36,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
-      "text": "iVar7 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base",
+      "text": "((int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).",
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 48,
+      "match": "pSVar5 = (T *)&(pSVar5->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar5 = (SMRGLPrimitiveTriangle *)&(pSVar5->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "mem* byte count hardcodes an element stride (this_ptr->vertex_count * 0xc) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 29,
+      "line": 30,
       "match": "memset",
       "severity": "moderate",
       "text": "memset(this_ptr->vertex_normal_list,0,this_ptr->vertex_count * 0xc);",

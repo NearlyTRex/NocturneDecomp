@@ -2,19 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 264,
+    "complexity_score": 96,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 20,
+    "pseudocode_lines": 56,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 168
+    "total_lines": 175
   },
   "cross_references": [],
   "function": {
@@ -27,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_keyframe.c_recomputeKeyFrameNormals_FUN_004fd120",
-    "signature": "void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLHeaderExtended *param_1)"
+    "signature": "void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLPrimitiveTriangle *primitive_list)"
   },
   "function_calls": [
     {
@@ -69,9 +68,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -105,13 +104,47 @@
     },
     "pcode_op_count": 468
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dfd50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004df440",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00502320",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c4080",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "primitive_list",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLPrimitiveTriangle *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -123,155 +156,19 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLHeaderExtended *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (param_1->base).type;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->base).type == 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar3 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (param_1->base).type;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pSVar4 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = engine_model_c_FUN_0051fee0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + (uVar2 & 0xfffffffc));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + (uVar2 & 0xfffffffc));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (param_1->base).type;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = (param_1->base).type;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0(pSVar3,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004fc800(pSVar3,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = engine_model_c_FUN_0051fee0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + (uVar2 & 0xfffffffc));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + (uVar2 & 0xfffffffc));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1->base).type == 0) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 22,
+      "line": 24,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + (uVar2 & 0xfffffffc));",
+      "text": "((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 48,
+      "line": 54,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + (uVar2 & 0xfffffffc));",
+      "text": "((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +",
       "type": "pointer_cast"
     }
   ]

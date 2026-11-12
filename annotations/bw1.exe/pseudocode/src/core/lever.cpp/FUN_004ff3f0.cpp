@@ -9,7 +9,7 @@
 void core_lever_cpp_FUN_004ff3f0(int param_1,float param_2,int param_3)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
   int iVar3;
   
@@ -35,11 +35,11 @@ void core_lever_cpp_FUN_004ff3f0(int param_1,float param_2,int param_3)
     }
     iVar3 = 0;
     for (iVar2 = 0; iVar2 < g_CDemonSetPtr->actor_count; iVar2 = iVar2 + 1) {
-      iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600
-                        (*(uint *)((int)g_CDemonSetPtr->actors + iVar3),
-                         g_CLeverClassInfo.name_hash);
-      if ((iVar1 != 0) && (param_1 == *(int *)(iVar1 + 0x410))) {
-        core_lever_cpp_FUN_004ff3f0(iVar1,param_2,param_3);
+      pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c600
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
+                          g_CLeverClassInfo.name_hash);
+      if ((pCVar1 != (CDemonActor *)0x0) && (param_1 == *(int *)(pCVar1[3].actor_name + 8))) {
+        core_lever_cpp_FUN_004ff3f0(pCVar1,param_2,param_3);
       }
       iVar3 = iVar3 + 4;
     }

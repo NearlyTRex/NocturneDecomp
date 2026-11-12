@@ -38,9 +38,9 @@
 ;   core_carved.cpp_FUN_00429090
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
+;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
-;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90
 ;   ... and 30 more
 ;
 ; *****************************************************************************
@@ -539,8 +539,8 @@ section .text
     PUSH EAX                            ; 0042631e | = "%s picked up %s using hand %d\n"
     MOV EDI,dword ptr [0x005f1690]      ; 0042631f | g_CConsolePtr
     PUSH EDI                            ; 00426325 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00426326
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00426326
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 0042632b
     JMP 0x00425e3e                      ; 0042632e
         ;   XREF to: 00425e3e (UNCONDITIONAL_JUMP)  ; LAB_00425e3e
@@ -566,8 +566,8 @@ section .text
     PUSH 0x5b7b06                       ; 00426359 | = "%s lugging %s\n"
     MOV EDI,dword ptr [0x005f1690]      ; 0042635e | g_CConsolePtr
     PUSH EDI                            ; 00426364 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00426365
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00426365
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     MOV EDX,0x40c00000                  ; 0042636a
     MOV ECX,0x41880000                  ; 0042636f
     ADD ESP,0x10                        ; 00426374
@@ -623,8 +623,8 @@ section .text
     PUSH 0x5b7b41                       ; 00426412 | = "%s tossing %s\n"
     MOV EDI,dword ptr [0x005f1690]      ; 00426417 | g_CConsolePtr
     PUSH EDI                            ; 0042641d | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0042641e
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0042641e
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     XOR EAX,EAX                         ; 00426423
     MOV ECX,0x3f800000                  ; 00426425
     MOV dword ptr [EBP + 0xfffffee6],EAX ; 0042642a
@@ -1178,8 +1178,8 @@ section .text
     ADD ESP,0x8                         ; 00426b1f
     PUSH EBX                            ; 00426b22
         ;   Label: LAB_00426b22
-    CALL core_charactr.cpp_FUN_0042cd30 ; 00426b23
-        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042cd30(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30 ; 00426b23
+        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00426b28
     LEA EAX,[EBX + 0x158]               ; 00426b2b
     PUSH EAX                            ; 00426b31
@@ -1346,8 +1346,8 @@ section .text
     PUSH EAX                            ; 00426d1e | = "%s confused while walking to scriptDe..."
     MOV EAX,[0x005f1690]                ; 00426d1f | g_CConsolePtr
     PUSH EAX                            ; 00426d24 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00426d25
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00426d25
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00426d2a
     JMP 0x004269b6                      ; 00426d2d
         ;   XREF to: 004269b6 (UNCONDITIONAL_JUMP)  ; LAB_004269b6
@@ -1472,8 +1472,8 @@ section .text
     PUSH 0x5b7c65                       ; 00426e9a | = "%s giving up attack\n"
     MOV EDI,dword ptr [0x005f1690]      ; 00426e9f | g_CConsolePtr
     PUSH EDI                            ; 00426ea5 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00426ea6
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00426ea6
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00426eab
     PUSH EBX                            ; 00426eae
     CALL core_carved.cpp_FUN_00429090   ; 00426eaf
@@ -1854,8 +1854,8 @@ section .text
     PUSH 0x5b7c26                       ; 00427340 | = "%s gave up chase - I'm confused\n"
     MOV ESI,dword ptr [0x005f1690]      ; 00427345 | g_CConsolePtr
     PUSH ESI                            ; 0042734b | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0042734c
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0042734c
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00427351
     PUSH 0x1                            ; 00427354
     PUSH 0x2                            ; 00427356
@@ -1975,8 +1975,8 @@ section .text
     PUSH 0x5b7c47                       ; 004274a7 | = "%s tossing\n"
     MOV ECX,dword ptr [0x005f1690]      ; 004274ac | g_CConsolePtr
     PUSH ECX                            ; 004274b2 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004274b3
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004274b3
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004274b8
     PUSH 0x1                            ; 004274bb
     PUSH 0x1a                           ; 004274bd
@@ -2174,8 +2174,8 @@ section .text
     PUSH 0x5b7c53                       ; 0042771f | = "%s gave up swing\n"
     MOV EDI,dword ptr [0x005f1690]      ; 00427724 | g_CConsolePtr
     PUSH EDI                            ; 0042772a | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0042772b
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0042772b
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00427730
     PUSH EBX                            ; 00427733
     CALL core_carved.cpp_FUN_00429090   ; 00427734

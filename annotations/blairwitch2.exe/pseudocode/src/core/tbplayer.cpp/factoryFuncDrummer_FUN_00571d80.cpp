@@ -1,20 +1,20 @@
 // Name: core_tbplayer.cpp_factoryFuncDrummer_FUN_00571d80
 // Address: 00571d80
 // Address Range: [[00571d80, 00571d9b]]
-// Convention: unknown
-// Signature: void core_tbplayer_cpp_factoryFuncDrummer_FUN_00571d80(void)
+// Convention: __cdecl
+// Signature: CDrummer * __cdecl core_tbplayer_cpp_factoryFuncDrummer_FUN_00571d80(void)
 
 #include "nocturne.h"
 
-void core_tbplayer_cpp_factoryFuncDrummer_FUN_00571d80(void)
+CDrummer * __cdecl core_tbplayer_cpp_factoryFuncDrummer_FUN_00571d80(void)
 
 {
-  CDrummer *this_ptr;
+  CDrummer *pCVar1;
   
-  this_ptr = (CDrummer *)operator_new(0x24350);
-  if (this_ptr == (CDrummer *)0x0) {
-    return;
+  pCVar1 = (CDrummer *)operator_new(0x24350);
+  if (pCVar1 == (CDrummer *)0x0) {
+    return (CDrummer *)0x0;
   }
-  core_tbplayer_cpp_CDrummer_ctor_FUN_00571db0(this_ptr);
-  return;
+  pCVar1 = core_tbplayer_cpp_CDrummer_ctor_FUN_00571db0(pCVar1);
+  return pCVar1;
 }

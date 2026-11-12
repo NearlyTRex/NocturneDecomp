@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_simbox_cpp_factoryFuncSimBox_FUN_00547190(void)
+; CSimBox * __cdecl core_simbox_cpp_factoryFuncSimBox_FUN_00547190(void)
 ;
 ;
 ; Called Functions:

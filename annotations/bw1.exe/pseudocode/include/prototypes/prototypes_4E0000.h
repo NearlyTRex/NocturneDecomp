@@ -33,6 +33,7 @@
 #include "types/classes/CNPC.h"
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/enums/EBloodType.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
@@ -56,7 +57,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e0870(CGhoul *this_ptr,S
 int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e0c50(CGhoul *this_ptr,CVector3f *out_points_array);
 CGhoul * core_ghoul_cpp_CGhoul_dtor_FUN_004e0f20(CGhoul *this_ptr,uint flags);
 void core_glass_cpp_staticInit_FUN_004e0fb0(void);
-void core_glass_cpp_factoryFuncGlass_FUN_004e0fe0(void);
+CGlass * __cdecl core_glass_cpp_factoryFuncGlass_FUN_004e0fe0(void);
 CDemonActorType * core_glass_cpp_CGlass_getActorType_FUN_004e1000(CGlass *this_ptr);
 CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004e1010(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_setup_FUN_004e1150(CGlass *this_ptr);
@@ -126,7 +127,7 @@ void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004e6510(CGore *this_ptr,CVe
 int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004e6590(CGore *this_ptr,CVector3f *position,int *out_blood_type);
 int __cdecl core_gore_cpp_CGore_load_FUN_004e6680(CGore *this_ptr,_FILE *file_handle);
 int __cdecl core_gore_cpp_CGore_save_FUN_004e6730(CGore *this_ptr,_FILE *file_handle);
-void core_gore_cpp_convertVecFloatToFixed_FUN_004e67de(float *param_1,int *param_2);
+CVector3f * __cdecl core_gore_cpp_convertVecFloatToFixed_FUN_004e67de(CVector3f *src,CVector3i *dst);
 CFootstep * __cdecl core_gore_cpp_CFootstep_ctor_FUN_004e6810(CFootstep *this_ptr);
 CFootstep * core_gore_cpp_CFootstep_dtor_FUN_004e6830(CFootstep *this_ptr,uint flags);
 CBloodPool * core_gore_cpp_CBloodPool_ctor_FUN_004e6840(CBloodPool *this_ptr);
@@ -137,7 +138,7 @@ CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_ctor_FUN_004e6880(CBloodPa
 CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_dtor_FUN_004e68a0(CBloodParticle *this_ptr,uint flags);
 CBloodParticle * core_gore_cpp_CBloodParticle_arrdtor256_FUN_004e68b0(CBloodParticle *this_ptr,uint flags);
 void core_grave_cpp_staticInit_FUN_004e68d0(void);
-void core_grave_cpp_factoryFuncGrave_FUN_004e6900(void);
+CGrave * __cdecl core_grave_cpp_factoryFuncGrave_FUN_004e6900(void);
 CDemonActorType * core_grave_cpp_CGrave_getActorType_FUN_004e6920(CGrave *this_ptr);
 CGrave * __cdecl core_grave_cpp_CGrave_ctor_FUN_004e6930(CGrave *this_ptr);
 void __cdecl core_grave_cpp_CGrave_setup_FUN_004e69c0(CGrave *this_ptr);
@@ -150,10 +151,10 @@ CBoundingBox3D * __cdecl core_grave_cpp_CGrave_getBoundingBox_FUN_004e6d50(CGrav
 ECollisionType __cdecl core_grave_cpp_CGrave_getCollisionType_FUN_004e6e60(CGrave *this_ptr,SCollisionInfo *collision_info);
 CGrave * __cdecl core_grave_cpp_CGrave_dtor_FUN_004e6e70(CGrave *this_ptr,uint flags);
 void __cdecl core_ground_cpp_staticInit_FUN_004e6ec0(void);
-_FILE * core_ground_cpp_openFileWithExtension_FUN_004e6eee(char *param_1,char *param_2,char *param_3,char *param_4);
+_FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004e6eee(char *directory,char *filename,char *new_extension,char *open_mode);
 char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004e7010(EGroundType type);
-char * core_ground_cpp_getGroundTypeName_FUN_004e70c0(undefined4 param_1);
-undefined4 __cdecl core_ground_cpp_getGroundTypeColor_FUN_004e7160(undefined4 param_1);
+char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004e70c0(EGroundType type);
+uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004e7160(EGroundType type);
 CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004e71c0(CGround *this_ptr,int width,int height);
 CGround * __cdecl core_ground_cpp_CGround_dtor_FUN_004e7220(CGround *this_ptr,uint flags);
 void __cdecl core_ground_cpp_CGround_init_FUN_004e7240(CGround *this_ptr);
@@ -168,16 +169,16 @@ void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004e7c80(CGround *thi
 void __cdecl core_ground_cpp_CGround_renderVisibleTerrain_FUN_004e7e60(CGround *this_ptr);
 void __cdecl core_ground_cpp_CGround_render_FUN_004e7f80(CGround *this_ptr);
 int __cdecl core_ground_cpp_CGround_getHeightAtPosition_FUN_004e8020(CGround *this_ptr,int world_x,int world_z);
-void core_ground_cpp_FUN_004e82a0(int *param_1,uint param_2,uint param_3);
+CVector3i * __stack3_esi core_ground_cpp_CGround_getNormalAtPosition_FUN_004e82a0(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal);
 void core_gun_cpp_staticInit_FUN_004e8570(void);
-void core_gun_cpp_factoryFuncGun_FUN_004e85a0(void);
+CGun * __cdecl core_gun_cpp_factoryFuncGun_FUN_004e85a0(void);
 CDemonActorType * core_gun_cpp_CGun_getActorType_FUN_004e85c0(CGun *this_ptr);
 CGun * __cdecl core_gun_cpp_CGun_ctor_FUN_004e85d0(CGun *this_ptr);
 int __cdecl core_gun_cpp_CGun_fire_FUN_004e8630(CGun *this_ptr);
 float __cdecl core_gun_cpp_CGun_getDamage_FUN_004e8ef0(CGun *this_ptr);
 CGun * __cdecl core_gun_cpp_CGun_dtor_FUN_004e8f70(CGun *this_ptr,uint flags);
 void core_haystack_cpp_staticInit_FUN_004e8fc0(void);
-void core_haystack_cpp_factoryFuncHaystack_FUN_004e8ff0(void);
+CHaystack * __cdecl core_haystack_cpp_factoryFuncHaystack_FUN_004e8ff0(void);
 CDemonActorType * core_haystack_cpp_CHaystack_getActorType_FUN_004e9010(CHaystack *this_ptr);
 CHaystack * __cdecl core_haystack_cpp_CHaystack_ctor_FUN_004e9020(CHaystack *this_ptr);
 void __cdecl core_haystack_cpp_CHaystack_setup_FUN_004e9090(CHaystack *this_ptr);
@@ -192,7 +193,7 @@ int __cdecl core_haystack_cpp_CHaystack_isWeaponDrawn_FUN_004ea260(CHaystack *th
 void __cdecl core_haystack_cpp_CHaystack_drawWeapon_FUN_004ea270(CHaystack *this_ptr,int drawn);
 CHaystack * __cdecl core_haystack_cpp_CHaystack_dtor_FUN_004ea280(CHaystack *this_ptr,uint flags);
 void core_health_cpp_staticInit_FUN_004ea2d0(void);
-void core_health_cpp_factoryFuncHealthItem_FUN_004ea300(void);
+CHealthItem * __cdecl core_health_cpp_factoryFuncHealthItem_FUN_004ea300(void);
 CDemonActorType * core_health_cpp_CHealthItem_getActorType_FUN_004ea320(CHealthItem *this_ptr);
 CHealthItem * __cdecl core_health_cpp_CHealthItem_ctor_FUN_004ea330(CHealthItem *this_ptr);
 void __cdecl core_health_cpp_CHealthItem_setup_FUN_004ea390(CHealthItem *this_ptr);
@@ -207,7 +208,7 @@ void __cdecl core_health_cpp_CHealthItem_onPickup_FUN_004ea580(CHealthItem *this
 CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004ea5a0(CHealthItem *this_ptr,uint flags);
 void core_hero_cpp_staticInit_FUN_004ea5f0(void);
 CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004ea640(CLocation *location);
-undefined4 __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(float *param_1,float param_2);
+int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(CVector3f *point,float radius);
 int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ea770(CVector3f *point,float horizontal_radius,float vertical_tolerance);
 CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004ea830(CHero *this_ptr);
 void core_hero_cpp_FUN_004ea980(int param_1);
@@ -242,7 +243,7 @@ void __cdecl core_hero_cpp_FUN_004ec280(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_removeMatchingKeys_FUN_004ec300(CHero *this_ptr,uint key_mask);
 void __cdecl core_hero_cpp_CHero_setAiTask_FUN_004ec320(CHero *this_ptr,int ai_task);
-int core_hero_cpp_FUN_004ec350(int param_1,float *param_2);
+CCharacter * core_hero_cpp_FUN_004ec350(int param_1,float *param_2);
 void __cdecl core_hero_cpp_CHero_kill_FUN_004ec540(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
 void __cdecl core_hero_cpp_CHero_reset_FUN_004ec570(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004ec640(CHero *this_ptr);
@@ -250,7 +251,7 @@ int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004ec950(CHero *this_ptr,int
 undefined4 switchD_004ec9a0::default(void);
 void __cdecl core_hero_cpp_CHero_toggleGoggles_FUN_004ec9e0(CHero *this_ptr);
 undefined4 core_hero_cpp_FUN_004eca10(CHero *param_1,undefined4 param_2);
-void core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004ecb70(void);
+CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004ecb70(void);
 CDemonActorType * __cdecl core_hero_cpp_CHeroPlaceholder_getActorType_FUN_004ecb90(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004ecba0(CHeroPlaceholder *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004ecc00(CHeroPlaceholder *this_ptr,uint flags);
@@ -261,7 +262,7 @@ undefined8 core_hero_cpp_FUN_004ecd9e(void);
 void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004ecef0(void);
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004ecf70(void);
 void core_hiram_cpp_staticInit_FUN_004ed130(void);
-void core_hiram_cpp_factoryFuncHiram_FUN_004ed160(void);
+CHiram * __cdecl core_hiram_cpp_factoryFuncHiram_FUN_004ed160(void);
 CDemonActorType * core_hiram_cpp_CHiram_getActorType_FUN_004ed180(CHiram *this_ptr);
 CHiram * __cdecl core_hiram_cpp_CHiram_ctor_FUN_004ed190(CHiram *this_ptr);
 CHiram * core_hiram_cpp_CHiram_dtor_FUN_004ed1f0(CHiram *this_ptr,uint flags);
@@ -270,7 +271,7 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004ed2b0(CHiram *this_ptr,float d
 void __cdecl core_hiram_cpp_CHiram_archive_FUN_004ed3f0(CHiram *this_ptr);
 CNPC * core_hiram_cpp_CNPC_dtor_FUN_004ed400(CNPC *this_ptr,uint flags);
 void core_hostage_cpp_staticInit_FUN_004ed4a0(void);
-void core_hostage_cpp_factoryFuncHostage_FUN_004ed4d0(void);
+CHostage * __cdecl core_hostage_cpp_factoryFuncHostage_FUN_004ed4d0(void);
 CDemonActorType * core_hostage_cpp_CHostage_getActorType_FUN_004ed4f0(CHostage *this_ptr);
 CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004ed500(CHostage *this_ptr);
 void __cdecl core_hostage_cpp_CHostage_setup_FUN_004ed630(CHostage *this_ptr);
@@ -286,7 +287,7 @@ void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004ef300(CHostage *this
 CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004ef400(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 CHostage * core_hostage_cpp_CHostage_dtor_FUN_004ef910(CHostage *this_ptr,uint flags);
 void core_hotdemon_cpp_staticInit_FUN_004ef9b0(void);
-void core_hotdemon_cpp_factoryFuncHotDemon_FUN_004ef9e0(void);
+CHotDemon * __cdecl core_hotdemon_cpp_factoryFuncHotDemon_FUN_004ef9e0(void);
 CDemonActorType * core_hotdemon_cpp_CHotDemon_getActorType_FUN_004efa00(CHotDemon *this_ptr);
 CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_ctor_FUN_004efa10(CHotDemon *this_ptr);
 void __cdecl core_hotdemon_cpp_CHotDemon_setup_FUN_004efa70(CHotDemon *this_ptr);

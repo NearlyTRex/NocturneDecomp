@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404980(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404980(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006104ec
@@ -37,7 +39,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00404991
     PUSH EAX                            ; 00404994
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 00404995
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0040499a
     TEST EAX,EAX                        ; 0040499d
     JZ 0x00404a18                       ; 0040499f

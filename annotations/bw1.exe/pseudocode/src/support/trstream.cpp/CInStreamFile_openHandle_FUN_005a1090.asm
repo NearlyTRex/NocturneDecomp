@@ -55,7 +55,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x4]       ; 005a10e7
     PUSH EDI                            ; 005a10ea
     CALL crt_stdio.c_fseek_FUN_005c170c ; 005a10eb
-        ;   XREF to: 005c170c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005c170c()
+        ;   XREF to: 005c170c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005c170c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 005a10f0
     MOV EAX,dword ptr [EBX]             ; 005a10f3
     PUSH EBX                            ; 005a10f5

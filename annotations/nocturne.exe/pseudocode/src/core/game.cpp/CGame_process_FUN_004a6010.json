@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 194,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 129,
+    "pseudocode_lines": 130,
     "suspect_count": 5,
     "suspect_types": [
       "raw_address_constant",
       "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 553
+    "total_lines": 554
   },
   "cross_references": [
     {
@@ -100,7 +100,7 @@
     {
       "addr": "005125a0",
       "is_variadic": false,
-      "name": "core_setdir.cpp_CDemonSet_FUN_005125a0"
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0"
     },
     {
       "addr": "0052ddf0",
@@ -429,6 +429,32 @@
     },
     "pcode_op_count": 1553
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004bd570",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7784
+    },
+    "bw1.exe": {
+      "addr": "004d8060",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9204
+    },
+    "bw3.exe": {
+      "addr": "004bf4b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9204
+    },
+    "nocedit.exe": {
+      "addr": "004e3190",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 44,
     "local_size": 40,
@@ -486,7 +512,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 128,
+      "line": 129,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "((double)(iVar3 - unaff_ESI) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /",
@@ -494,7 +520,7 @@
     },
     {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 108,
+      "line": 109,
       "match": "0x2ddf9f0",
       "severity": "moderate",
       "text": "core_weather_cpp_CWeather_update_FUN_00554980(0x02DDF9F0);",

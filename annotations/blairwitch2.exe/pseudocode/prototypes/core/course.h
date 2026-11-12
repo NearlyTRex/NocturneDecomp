@@ -25,9 +25,9 @@ void __cdecl CCourse::load(CCourse *this_ptr,char *filename);
 // Address: 00438c20
 void FUN_00438c20(undefined4 *param_1);
 
-// Original: core_course.cpp_FUN_00438c40
+// Original: core_course.cpp_CCourse_evaluate_FUN_00438c40
 // Address: 00438c40
-void __cdecl FUN_00438c40(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
+void __cdecl CCourse::evaluate(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
 
 // Original: core_course.cpp_FUN_00438cf0
 // Address: 00438cf0

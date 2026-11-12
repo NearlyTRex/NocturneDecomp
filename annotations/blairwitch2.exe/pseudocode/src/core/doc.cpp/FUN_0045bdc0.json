@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1079,
-    "complexity_score": 2165,
+    "complexity_score": 2589,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 575,
-    "suspect_count": 153,
+    "pseudocode_lines": 594,
+    "suspect_count": 193,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
+      "stack_param",
       "stack_ref",
       "suspect_float",
       "unnamed_field",
@@ -23,7 +24,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1654
+    "total_lines": 1673
   },
   "cross_references": [
     {
@@ -521,15 +522,31 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
-      "match": "apCStackY_1060",
+      "line": 19,
+      "match": "afStackY_1060",
       "severity": "moderate",
-      "text": "CVector3f *apCStackY_1060 [1013];",
+      "text": "float afStackY_1060 [1013];",
       "type": "stack_alignment_array"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_ffffff88",
+      "severity": "moderate",
+      "text": "CDemonActor *in_stack_ffffff88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_ffffff8c",
+      "severity": "moderate",
+      "text": "float in_stack_ffffff8c;",
+      "type": "stack_param"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->layer_action_index == 9) &&",
@@ -537,7 +554,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->carry_hands[1].carry_actor == (CDemonActor *)0x0)) {",
@@ -545,26 +562,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_t = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_index = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1[2].flames[1].on_event + 0x24) != 0) {",
+      "text": "param_1->layer_action_t = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -572,12 +573,28 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1->layer_action_index = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1[2].flames[1].on_event + 0x24) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
       "text": "pCVar3 = param_1[2].flames;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1[2].flames[1].on_event + 0x4c) == 0) goto LAB_0045be11;",
@@ -585,23 +602,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar2 = param_1->carry_hands[1].carry_actor;",
+      "text": "pCVar7 = param_1->carry_hands[1].carry_actor;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_1c = (&param_1[2].damage_decals[2].transform.m[0].y)",
+      "text": "(&param_1[2].damage_decals[2].transform.m[0].y)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "[*(int *)&param_1[2].follow_formation.slots[0xb].field_0x34];",
@@ -609,7 +626,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 56,
+      "line": 62,
       "match": "field_0x34",
       "severity": "mild",
       "text": "[*(int *)&param_1[2].follow_formation.slots[0xb].field_0x34];",
@@ -617,15 +634,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_1c = (&param_1[2].damage_decals[2].transform.m[0].y)",
+      "text": "(&param_1[2].damage_decals[2].transform.m[0].y)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "[*(int *)&param_1[2].follow_formation.slots[0xb].field_0x34];",
@@ -633,50 +650,18 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 68,
+      "line": 76,
       "match": "field_0x34",
       "severity": "mild",
       "text": "[*(int *)&param_1[2].follow_formation.slots[0xb].field_0x34];",
       "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar3 = param_1[2].flames;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = (CInventory *)(param_1[2].cloth_list.cloths + 7);",
-      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_30 = &(param_1->model).base;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_40 = &(param_1->base).location.position;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 <= 0.0) {",
+      "text": "pCVar3 = param_1[2].flames;",
       "type": "unnamed_param"
     },
     {
@@ -684,12 +669,44 @@
       "line": 89,
       "match": "param_1",
       "severity": "mild",
+      "text": "local_24 = (CInventory *)(param_1[2].cloth_list.cloths + 7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_30 = &(param_1->model).base;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_40 = &(param_1->base).location.position;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 <= 0.0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
       "text": "iVar5 = *(int *)(param_1[2].flames[1].off_event + 0x4c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "else if (*(int *)(param_1[2].flames[1].on_event + 0x28) == 0) {",
@@ -697,7 +714,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
       "text": "local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,4);",
@@ -705,31 +722,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 120,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = param_2 * (float)_DAT_005d064f + *(float *)(param_1[2].flames[1].on_event + 0x5c);",
+      "text": "fVar2 = param_2 * (float)_DAT_005d064f + *(float *)(param_1[2].flames[1].on_event + 0x5c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 120,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = param_2 * (float)_DAT_005d064f + *(float *)(param_1[2].flames[1].on_event + 0x5c);",
+      "text": "fVar2 = param_2 * (float)_DAT_005d064f + *(float *)(param_1[2].flames[1].on_event + 0x5c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 121,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1[2].flames[1].on_event + 0x5c) = fVar1;",
+      "text": "*(float *)(param_1[2].flames[1].on_event + 0x5c) = fVar2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1[2].flames[1].on_event + 0x5c) = 0x428C0000;",
@@ -737,7 +754,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 125,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1[1].base.actor_name + 0x14) != 0) {",
@@ -745,7 +762,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 133,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((pCVar6 == (CLightGun *)0x0) || (param_1[2].flames[1].globe_scalar != 0.0)) {",
@@ -753,7 +770,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 127,
+      "line": 135,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "if ((pCVar6 == (CLightGun *)0x0) || (param_1[2].flames[1].globe_scalar != 1.4013e-45)) {",
@@ -761,7 +778,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 135,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((pCVar6 == (CLightGun *)0x0) || (param_1[2].flames[1].globe_scalar != 1.4013e-45)) {",
@@ -769,7 +786,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 129,
+      "line": 137,
       "match": "2.8026e-45",
       "severity": "mild",
       "text": "if ((pCVar6 == (CLightGun *)0x0) && (param_1[2].flames[1].globe_scalar == 2.8026e-45)) {",
@@ -777,7 +794,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 129,
+      "line": 137,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((pCVar6 == (CLightGun *)0x0) && (param_1[2].flames[1].globe_scalar == 2.8026e-45)) {",
@@ -785,7 +802,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 135,
+      "line": 143,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "if ((pCVar6 == (CLightGun *)0x0) && (param_1[2].flames[1].globe_scalar == 1.4013e-45))",
@@ -793,7 +810,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 143,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((pCVar6 == (CLightGun *)0x0) && (param_1[2].flames[1].globe_scalar == 1.4013e-45))",
@@ -801,71 +818,263 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 141,
+      "line": 149,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1[2].flames[1].off_event + 0x40);",
+      "text": "pCVar1 = *(CCharacter **)(param_1[2].flames[1].off_event + 0x40);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 143,
+      "line": 151,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = *(int *)(param_1[2].flames[1].off_event + 0x40);",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 180,
-      "match": "(uint *)((int)local_1c",
-      "severity": "moderate",
-      "text": "switch(*(uint *)((int)local_1c + 0x43c)) {",
-      "type": "pointer_cast"
+      "description": "Likely misinterpreted integer as float",
+      "line": 190,
+      "match": "7.00649e-45",
+      "severity": "mild",
+      "text": "case 7.00649e-45:",
+      "type": "suspect_float"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 206,
-      "match": "(uint *)((int)fVar1",
-      "severity": "moderate",
-      "text": "switch(*(uint *)((int)fVar1 + 0x43c)) {",
-      "type": "pointer_cast"
+      "description": "Likely misinterpreted integer as float",
+      "line": 191,
+      "match": "1.68156e-44",
+      "severity": "mild",
+      "text": "case 1.68156e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 197,
+      "match": "8.40779e-45",
+      "severity": "mild",
+      "text": "case 8.40779e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 198,
+      "match": "9.80909e-45",
+      "severity": "mild",
+      "text": "case 9.80909e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 199,
+      "match": "1.12104e-44",
+      "severity": "mild",
+      "text": "case 1.12104e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 200,
+      "match": "1.26117e-44",
+      "severity": "mild",
+      "text": "case 1.26117e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 201,
+      "match": "1.82169e-44",
+      "severity": "mild",
+      "text": "case 1.82169e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 217,
+      "match": "7.00649e-45",
+      "severity": "mild",
+      "text": "case 7.00649e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 218,
+      "match": "1.68156e-44",
+      "severity": "mild",
+      "text": "case 1.68156e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 224,
+      "match": "8.40779e-45",
+      "severity": "mild",
+      "text": "case 8.40779e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 225,
+      "match": "9.80909e-45",
+      "severity": "mild",
+      "text": "case 9.80909e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 226,
+      "match": "1.12104e-44",
+      "severity": "mild",
+      "text": "case 1.12104e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 227,
+      "match": "1.26117e-44",
+      "severity": "mild",
+      "text": "case 1.26117e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 228,
+      "match": "1.82169e-44",
+      "severity": "mild",
+      "text": "case 1.82169e-44:",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 232,
+      "line": 242,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1[2].flames[1].off_event + 0x40);",
+      "text": "pCVar1 = *(CCharacter **)(param_1[2].flames[1].off_event + 0x40);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 235,
+      "line": 246,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((local_1c != 0.0) && (*(int *)(param_1[2].flames[1].on_event + 0x4c) != 0))",
+      "text": "(*(int *)(param_1[2].flames[1].on_event + 0x4c) != 0)) &&",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 237,
-      "match": "(uint *)((int)local_1c",
-      "severity": "moderate",
-      "text": "switch(*(uint *)((int)local_1c + 0x43c)) {",
-      "type": "pointer_cast"
+      "description": "Likely misinterpreted integer as float",
+      "line": 250,
+      "match": "7.00649e-45",
+      "severity": "mild",
+      "text": "case 7.00649e-45:",
+      "type": "suspect_float"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 269,
-      "match": "(uint *)((int)fVar1",
-      "severity": "moderate",
-      "text": "switch(*(uint *)((int)fVar1 + 0x43c)) {",
-      "type": "pointer_cast"
+      "description": "Likely misinterpreted integer as float",
+      "line": 251,
+      "match": "1.68156e-44",
+      "severity": "mild",
+      "text": "case 1.68156e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 257,
+      "match": "8.40779e-45",
+      "severity": "mild",
+      "text": "case 8.40779e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 258,
+      "match": "9.80909e-45",
+      "severity": "mild",
+      "text": "case 9.80909e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 259,
+      "match": "1.12104e-44",
+      "severity": "mild",
+      "text": "case 1.12104e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 260,
+      "match": "1.26117e-44",
+      "severity": "mild",
+      "text": "case 1.26117e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 261,
+      "match": "1.82169e-44",
+      "severity": "mild",
+      "text": "case 1.82169e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 283,
+      "match": "7.00649e-45",
+      "severity": "mild",
+      "text": "case 7.00649e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 284,
+      "match": "1.68156e-44",
+      "severity": "mild",
+      "text": "case 1.68156e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 290,
+      "match": "8.40779e-45",
+      "severity": "mild",
+      "text": "case 8.40779e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 291,
+      "match": "9.80909e-45",
+      "severity": "mild",
+      "text": "case 9.80909e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 292,
+      "match": "1.12104e-44",
+      "severity": "mild",
+      "text": "case 1.12104e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 293,
+      "match": "1.26117e-44",
+      "severity": "mild",
+      "text": "case 1.26117e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 294,
+      "match": "1.82169e-44",
+      "severity": "mild",
+      "text": "case 1.82169e-44:",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 308,
+      "line": 321,
       "match": "param_1",
       "severity": "mild",
       "text": "else if (param_1->carry_hands[1].carry_actor == (CDemonActor *)0x0) {",
@@ -873,7 +1082,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 309,
+      "line": 322,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1[2].flames[1].on_event + 0x4c) == 0) goto LAB_0045be77;",
@@ -881,7 +1090,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 318,
+      "line": 331,
       "match": "param_1",
       "severity": "mild",
       "text": "local_28 = param_1->layer_action_t;",
@@ -889,7 +1098,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 320,
+      "line": 333,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,&param_2,local_18);",
@@ -897,7 +1106,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 320,
+      "line": 333,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_1,&param_2,local_18);",
@@ -905,7 +1114,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 321,
+      "line": 334,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = param_1->layer_actions[param_1->layer_action_index].motion_index;",
@@ -913,74 +1122,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 321,
+      "line": 334,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = param_1->layer_actions[param_1->layer_action_index].motion_index;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 323,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "switch(param_1->layer_action_index) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 327,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)param_1->layer_action_t)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 328,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar5 = *(int *)(param_1[2].flames[1].off_event + 0x40), iVar5 != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 329,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar5 + 0x2b0) + 0x80))(iVar5,2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 331,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((int)local_28 < 0x3ecccccd) && (0x3ecccccc < (int)param_1->layer_action_t)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 332,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar5 = *(int *)(param_1[2].flames[1].off_event + 0x40), iVar5 != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 333,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar5 + 0x2b0) + 0x80))(iVar5,2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 335,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((int)local_28 < 0x3f000000) && (0x3effffff < (int)param_1->layer_action_t)) &&",
       "type": "unnamed_param"
     },
     {
@@ -988,12 +1133,28 @@
       "line": 336,
       "match": "param_1",
       "severity": "mild",
+      "text": "switch(param_1->layer_action_index) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 340,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)param_1->layer_action_t)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 341,
+      "match": "param_1",
+      "severity": "mild",
       "text": "(iVar5 = *(int *)(param_1[2].flames[1].off_event + 0x40), iVar5 != 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 337,
+      "line": 342,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar5 + 0x2b0) + 0x80))(iVar5,2);",
@@ -1001,7 +1162,55 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 341,
+      "line": 344,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((int)local_28 < 0x3ecccccd) && (0x3ecccccc < (int)param_1->layer_action_t)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 345,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar5 = *(int *)(param_1[2].flames[1].off_event + 0x40), iVar5 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 346,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar5 + 0x2b0) + 0x80))(iVar5,2);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 348,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((int)local_28 < 0x3f000000) && (0x3effffff < (int)param_1->layer_action_t)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 349,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar5 = *(int *)(param_1[2].flames[1].off_event + 0x40), iVar5 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 350,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar5 + 0x2b0) + 0x80))(iVar5,2);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 354,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((int)local_28 < 0x3f333333) && (0x3f333332 < (int)param_1->layer_action_t)) &&",
@@ -1009,7 +1218,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 342,
+      "line": 355,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar5 = *(int *)(param_1[2].flames[1].off_event + 0x40), iVar5 != 0)) {",
@@ -1017,7 +1226,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 343,
+      "line": 356,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar5 + 0x2b0) + 0x80))(iVar5,2);",
@@ -1025,7 +1234,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 345,
+      "line": 358,
       "match": "param_1",
       "severity": "mild",
       "text": "if (((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)param_1->layer_action_t)) {",
@@ -1033,7 +1242,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 347,
+      "line": 360,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x0264B290,&param_1->base,\"axeswing0?.wav\",local_40);",
@@ -1041,26 +1250,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 351,
+      "line": 364,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)param_1->layer_action_t)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 353,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(uint *)(param_1[2].flames[1].off_event + 0x40),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 361,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(uint *)(param_1[2].flames[1].off_event + 0x40),",
       "type": "unnamed_param"
     },
     {
@@ -1068,23 +1261,7 @@
       "line": 366,
       "match": "param_1",
       "severity": "mild",
-      "text": "(float)(int)local_14 <= param_1->layer_action_t)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 371,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1[2].flames[1].off_event + 0x4c) == 3) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 373,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float)(int)local_14 <= param_1->layer_action_t)) {",
+      "text": "(*(CDemonActor **)(param_1[2].flames[1].off_event + 0x40),",
       "type": "unnamed_param"
     },
     {
@@ -1092,31 +1269,15 @@
       "line": 374,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_doc_cpp_FUN_0045bba0(param_1);",
+      "text": "(*(CDemonActor **)(param_1[2].flames[1].off_event + 0x40),",
       "type": "unnamed_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 376,
-      "match": "&stack0xffffff8c",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff8c + (uint)bVar8 * 0xfffffff8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 378,
-      "match": "(uint *)((int)apCStack_50",
-      "severity": "moderate",
-      "text": "*(uint *)((int)apCStack_50 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 0xffffffe0);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 380,
+      "line": 379,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1[2].flames[1].off_event + 0x40),",
+      "text": "(float)(int)local_14 <= param_1->layer_action_t)) {",
       "type": "unnamed_param"
     },
     {
@@ -1124,36 +1285,100 @@
       "line": 384,
       "match": "param_1",
       "severity": "mild",
+      "text": "if ((*(int *)(param_1[2].flames[1].off_event + 0x4c) == 3) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 386,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(float)(int)local_14 <= param_1->layer_action_t)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 387,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_doc_cpp_FUN_0045bba0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 388,
+      "match": "in_stack_ffffff88",
+      "severity": "moderate",
+      "text": "local_60.x = (float)in_stack_ffffff88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 390,
+      "match": "&stack0xffffff8c",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffff8c + (uint)bVar10 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 392,
+      "match": "&stack0xffffff90",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffff90 + (uint)bVar10 * -8 + (uint)bVar10 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 395,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(CDemonActor **)(param_1[2].flames[1].off_event + 0x40),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 399,
+      "match": "param_1",
+      "severity": "mild",
       "text": "core_actor_cpp_FUN_00408cf0(param_1,&local_60);",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 386,
-      "match": "(CVector3f **)((int)apCStack_50",
+      "description": "Direct stack address reference",
+      "line": 401,
+      "match": "&stack0xffffff98",
       "severity": "moderate",
-      "text": "*(CVector3f **)((int)apCStack_50 + (uint)bVar8 * -8 + 0xffffffe8) =",
-      "type": "pointer_cast"
+      "text": "(&stack0xffffff98)[(uint)bVar10 * 0xfffffffe] = afStack_50[(uint)bVar10 * -2];",
+      "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 388,
-      "match": "(CVector3f **)((int)apCStack_50",
+      "description": "Direct stack address reference",
+      "line": 402,
+      "match": "&stack0xffffff98",
       "severity": "moderate",
-      "text": "*(CVector3f **)((int)apCStack_50 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 0xffffffec) =",
-      "type": "pointer_cast"
+      "text": "(&stack0xffffff98)[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =",
+      "type": "stack_ref"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 395,
-      "match": "code *",
+      "description": "Direct stack address reference",
+      "line": 405,
+      "match": "&stack0xffffff94",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(local_38 + 0x2b0) + 0xec))(local_38);",
-      "type": "unresolved_funcptr"
+      "text": "if (pCVar9 != (CVector3f *)&stack0xffffff94) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 410,
+      "match": "in_stack_ffffff88",
+      "severity": "moderate",
+      "text": "(*(((local_38->base).vtable._uc)->_uc).isGrabbable)(local_38,in_stack_ffffff88);",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 396,
+      "line": 411,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = param_1[2].flames;",
@@ -1161,7 +1386,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 402,
+      "line": 417,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->carry_hands[1].carry_actor != (CDemonActor *)0x0) {",
@@ -1169,58 +1394,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 403,
+      "line": 418,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(((param_1->base).vtable._uc)->_uc).dropCarriedObject)(param_1,1,&local_60);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 403,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(((param_1->base).vtable._uc)->_uc).dropCarriedObject)(param_1,1,&local_60);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 405,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar3 = param_1[2].flames;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 410,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1[2].flames[1].on_event + 0x5c) = 0x41200000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 412,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (1.0 <= param_1->layer_action_t) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 413,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_index = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 414,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_t = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -1228,20 +1405,116 @@
       "line": 418,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1[2].flames[1].off_event + 0x40);",
+      "text": "(*(((param_1->base).vtable._uc)->_uc).dropCarriedObject)(param_1,1,&local_60);",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 421,
-      "match": "(uint *)((int)fVar1",
-      "severity": "moderate",
-      "text": "switch(*(uint *)((int)fVar1 + 0x43c)) {",
-      "type": "pointer_cast"
+      "description": "Unnamed function parameter",
+      "line": 420,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = param_1[2].flames;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 444,
+      "line": 425,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1[2].flames[1].on_event + 0x5c) = 0x41200000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 427,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (1.0 <= param_1->layer_action_t) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 428,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->layer_action_index = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 429,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->layer_action_t = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 433,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar1 = *(CCharacter **)(param_1[2].flames[1].off_event + 0x40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 438,
+      "match": "7.00649e-45",
+      "severity": "mild",
+      "text": "case 7.00649e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 439,
+      "match": "1.68156e-44",
+      "severity": "mild",
+      "text": "case 1.68156e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 445,
+      "match": "8.40779e-45",
+      "severity": "mild",
+      "text": "case 8.40779e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 446,
+      "match": "9.80909e-45",
+      "severity": "mild",
+      "text": "case 9.80909e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 447,
+      "match": "1.12104e-44",
+      "severity": "mild",
+      "text": "case 1.12104e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 448,
+      "match": "1.26117e-44",
+      "severity": "mild",
+      "text": "case 1.26117e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 449,
+      "match": "1.82169e-44",
+      "severity": "mild",
+      "text": "case 1.82169e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 460,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = *(int *)(param_1[2].flames[1].off_event + 0x40);",
@@ -1249,7 +1522,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 445,
+      "line": 461,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar5 + 0x2b0) + 0xe4))(iVar5,1);",
@@ -1257,7 +1530,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 446,
+      "line": 462,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = param_1[2].flames;",
@@ -1265,47 +1538,95 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 453,
+      "line": 469,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1[2].flames[1].on_event + 0x4c) != 0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 459,
-      "match": "(uint *)((int)local_1c",
-      "severity": "moderate",
-      "text": "switch(*(uint *)((int)local_1c + 0x43c)) {",
-      "type": "pointer_cast"
+      "description": "Likely misinterpreted integer as float",
+      "line": 477,
+      "match": "7.00649e-45",
+      "severity": "mild",
+      "text": "case 7.00649e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 478,
+      "match": "1.68156e-44",
+      "severity": "mild",
+      "text": "case 1.68156e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 484,
+      "match": "8.40779e-45",
+      "severity": "mild",
+      "text": "case 8.40779e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 485,
+      "match": "9.80909e-45",
+      "severity": "mild",
+      "text": "case 9.80909e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 486,
+      "match": "1.12104e-44",
+      "severity": "mild",
+      "text": "case 1.12104e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 487,
+      "match": "1.26117e-44",
+      "severity": "mild",
+      "text": "case 1.26117e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 488,
+      "match": "1.82169e-44",
+      "severity": "mild",
+      "text": "case 1.82169e-44:",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 480,
+      "line": 497,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)(param_1[2].flames[1].off_event + 0x40) = local_1c, local_1c != 0.0)) {",
+      "text": "(*(CCharacter **)(param_1[2].flames[1].off_event + 0x40) = local_1c,",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 481,
-      "match": "(int *)((int)local_1c",
+      "description": "Unresolved stack parameter",
+      "line": 500,
+      "match": "in_stack_ffffff88",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)((int)local_1c + 0x2b0) + 0xe4))(local_1c,2);",
-      "type": "pointer_cast"
+      "text": "(local_1c,2,(CVector3f *)in_stack_ffffff88,in_stack_ffffff8c);",
+      "type": "stack_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 481,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 500,
+      "match": "in_stack_ffffff8c",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)((int)local_1c + 0x2b0) + 0xe4))(local_1c,2);",
-      "type": "unresolved_funcptr"
+      "text": "(local_1c,2,(CVector3f *)in_stack_ffffff88,in_stack_ffffff8c);",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 485,
+      "line": 504,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)(param_1[2].flames[1].off_event + 0x4c) == 1) && (local_20 == 5)) {",
@@ -1313,7 +1634,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 486,
+      "line": 505,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004cff90(param_1,1);",
@@ -1321,7 +1642,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 487,
+      "line": 506,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = param_1[2].flames;",
@@ -1329,7 +1650,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 493,
+      "line": 512,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = *(int *)(param_1[2].flames[1].on_event + 0x28);",
@@ -1337,74 +1658,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 499,
+      "line": 518,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x01D182F0,*(CDemonActor **)(param_1[2].flames[1].on_event + 0x28));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 501,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,1,*(uint *)(param_1[2].flames[1].on_event + 0x28),0,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 501,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,1,*(uint *)(param_1[2].flames[1].on_event + 0x28),0,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 506,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(0x01D182F0,*(CDemonActor **)(param_1[2].flames[1].on_event + 0x28));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 508,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,1,*(uint *)(param_1[2].flames[1].on_event + 0x28),0,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 508,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,1,*(uint *)(param_1[2].flames[1].on_event + 0x28),0,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 509,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar3 = param_1[2].flames;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 514,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar3 = param_1[2].flames;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 519,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_index = 2;",
       "type": "unnamed_param"
     },
     {
@@ -1412,12 +1669,44 @@
       "line": 520,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->layer_action_t = 0.0;",
+      "text": "(param_1,1,*(uint *)(param_1[2].flames[1].on_event + 0x28),0,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 524,
+      "line": 520,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,1,*(uint *)(param_1[2].flames[1].on_event + 0x28),0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 525,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01D182F0,*(CDemonActor **)(param_1[2].flames[1].on_event + 0x28));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 527,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,1,*(uint *)(param_1[2].flames[1].on_event + 0x28),0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 527,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,1,*(uint *)(param_1[2].flames[1].on_event + 0x28),0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 528,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = param_1[2].flames;",
@@ -1425,71 +1714,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 529,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar3 = param_1[2].flames;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 539,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "param_1[2].flames[1].globe_scalar = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 539,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].flames[1].globe_scalar = 1.4013e-45;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 542,
-      "match": "2.8026e-45",
-      "severity": "mild",
-      "text": "param_1[2].flames[1].globe_scalar = 2.8026e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 542,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].flames[1].globe_scalar = 2.8026e-45;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 545,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "else if ((local_20 == 3) && ((int)param_1[2].flames[1].globe_scalar < 2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 548,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2].flames[1].globe_scalar = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 550,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1[2].flames[1].off_event + 0x4c) == 7) && (local_20 == 6)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 551,
+      "line": 533,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = param_1[2].flames;",
@@ -1497,79 +1722,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 557,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((3 < param_1->layer_action_index) && (param_1->layer_action_index < 9)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 557,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((((3 < param_1->layer_action_index) && (param_1->layer_action_index < 9)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 558,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1[2].flames[1].off_event + 0x4c) == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 559,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->layer_action_t == 1.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 560,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_index = 3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 561,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->layer_action_t = 1.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 563,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((param_1->layer_action_index == 0) && (ABS(param_1->layer_action_t) == 0.0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 563,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((param_1->layer_action_index == 0) && (ABS(param_1->layer_action_t) == 0.0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 564,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1[2].flames[1].on_event + 0x4c) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 565,
+      "line": 538,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_index = 2;",
@@ -1577,7 +1730,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 566,
+      "line": 539,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->layer_action_t = 0.0;",
@@ -1585,18 +1738,66 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 568,
+      "line": 543,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((param_1->layer_action_index == 0xf) && (param_1->layer_action_t == 1.0)) {",
+      "text": "pCVar3 = param_1[2].flames;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 568,
+      "line": 548,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((param_1->layer_action_index == 0xf) && (param_1->layer_action_t == 1.0)) {",
+      "text": "pCVar3 = param_1[2].flames;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 558,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "param_1[2].flames[1].globe_scalar = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 558,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].flames[1].globe_scalar = 1.4013e-45;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 561,
+      "match": "2.8026e-45",
+      "severity": "mild",
+      "text": "param_1[2].flames[1].globe_scalar = 2.8026e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 561,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].flames[1].globe_scalar = 2.8026e-45;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 564,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "else if ((local_20 == 3) && ((int)param_1[2].flames[1].globe_scalar < 2)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 567,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].flames[1].globe_scalar = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -1604,7 +1805,7 @@
       "line": 569,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->layer_action_index = 1;",
+      "text": "if ((*(int *)(param_1[2].flames[1].off_event + 0x4c) == 7) && (local_20 == 6)) {",
       "type": "unnamed_param"
     },
     {
@@ -1612,12 +1813,132 @@
       "line": 570,
       "match": "param_1",
       "severity": "mild",
+      "text": "pCVar3 = param_1[2].flames;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 576,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((3 < param_1->layer_action_index) && (param_1->layer_action_index < 9)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 576,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((3 < param_1->layer_action_index) && (param_1->layer_action_index < 9)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 577,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)(param_1[2].flames[1].off_event + 0x4c) == 0)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 578,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->layer_action_t == 1.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 579,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->layer_action_index = 3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 580,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1->layer_action_t = 1.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 572,
+      "line": 582,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((param_1->layer_action_index == 0) && (ABS(param_1->layer_action_t) == 0.0)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 582,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((param_1->layer_action_index == 0) && (ABS(param_1->layer_action_t) == 0.0)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 583,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)(param_1[2].flames[1].on_event + 0x4c) == 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 584,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->layer_action_index = 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 585,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->layer_action_t = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 587,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->layer_action_index == 0xf) && (param_1->layer_action_t == 1.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 587,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->layer_action_index == 0xf) && (param_1->layer_action_t == 1.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 588,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->layer_action_index = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 589,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->layer_action_t = 1.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 591,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042a620(param_1,local_18);",
@@ -1625,39 +1946,39 @@
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 375,
+      "line": 389,
       "match": "(int)&local_60",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_60 + (uint)bVar8 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_60` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 377,
+      "line": 391,
       "match": "(int)&local_60",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 375,
+      "line": 389,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_60 + (uint)bVar8 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 377,
+      "line": 391,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
-      "line": 327,
+      "line": 340,
       "match": "0x3e999999 < (int)param_1->layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)param_1->layer_action_t)) &&",
@@ -1665,7 +1986,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3ecccccc is the IEEE 754 bit pattern of 0.4f. Rewrite in a .keep as a plain float compare against 0.4f.",
-      "line": 331,
+      "line": 344,
       "match": "0x3ecccccc < (int)param_1->layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3ecccccd) && (0x3ecccccc < (int)param_1->layer_action_t)) &&",
@@ -1673,7 +1994,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3effffff is the IEEE 754 bit pattern of 0.5f. Rewrite in a .keep as a plain float compare against 0.5f.",
-      "line": 335,
+      "line": 348,
       "match": "0x3effffff < (int)param_1->layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3f000000) && (0x3effffff < (int)param_1->layer_action_t)) &&",
@@ -1681,7 +2002,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f333332 is the IEEE 754 bit pattern of 0.7f. Rewrite in a .keep as a plain float compare against 0.7f.",
-      "line": 341,
+      "line": 354,
       "match": "0x3f333332 < (int)param_1->layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3f333333) && (0x3f333332 < (int)param_1->layer_action_t)) &&",
@@ -1689,7 +2010,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
-      "line": 345,
+      "line": 358,
       "match": "0x3e999999 < (int)param_1->layer_action_t))",
       "severity": "moderate",
       "text": "if (((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)param_1->layer_action_t)) {",
@@ -1697,7 +2018,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
-      "line": 351,
+      "line": 364,
       "match": "0x3e999999 < (int)param_1->layer_action_t))",
       "severity": "moderate",
       "text": "if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)param_1->layer_action_t)) &&",

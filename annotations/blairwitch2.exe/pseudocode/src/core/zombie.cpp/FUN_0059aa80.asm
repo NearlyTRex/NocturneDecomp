@@ -24,11 +24,11 @@ section .text
     PUSH 0x4                            ; 0059aa85
     PUSH 0x26677ec                      ; 0059aa87
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0059aa8c
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0059aa91
     PUSH 0x61e9ab                       ; 0059aa94
     CALL crt_stdlib.c__atexit_FUN_005b8d8c ; 0059aa99
-        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005b8d8c()
+        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005b8d8c(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0059aa9e
     PUSH 0x266783c                      ; 0059aaa1
     CALL core_zombie.cpp_FUN_0059ab30   ; 0059aaa6
@@ -38,7 +38,7 @@ section .text
     PUSH 0x61e9bb                       ; 0059aab3
     MOV dword ptr [0x0266783c],EDX      ; 0059aab8 | g_CExamplePuzzleInstance
     CALL crt_stdlib.c__atexit_FUN_005b8d8c ; 0059aabe
-        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005b8d8c()
+        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005b8d8c(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0059aac3
     PUSH 0x2667850                      ; 0059aac6
     CALL core_zombie.cpp_FUN_0059ab30   ; 0059aacb
@@ -52,7 +52,7 @@ section .text
     PUSH 0x1e                           ; 0059aae5
     PUSH 0x266789c                      ; 0059aae7
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0059aaec
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0059aaf1
     PUSH 0x2667dc4                      ; 0059aaf4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80 ; 0059aaf9
@@ -66,7 +66,7 @@ section .text
     PUSH 0x61e9cb                       ; 0059ab13
     MOV dword ptr [0x02667850],ECX      ; 0059ab18 | g_CAudioRecPuzzleInstance
     CALL crt_stdlib.c__atexit_FUN_005b8d8c ; 0059ab1e
-        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005b8d8c()
+        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005b8d8c(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0059ab23
     RET                                 ; 0059ab26
 

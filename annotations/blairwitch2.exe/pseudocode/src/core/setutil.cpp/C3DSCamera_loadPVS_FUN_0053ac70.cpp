@@ -13,10 +13,8 @@ void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_0053ac70(C3DSCamera *this_p
 {
   int *piVar1;
   int iVar2;
-  int iVar3;
-  int iVar4;
   
-  _fscanf(file_handle,&DAT_005e6145,&this_ptr->pvs_count);
+  _fscanf(file_handle,&DAT_005e6145);
   piVar1 = (int *)realloc(this_ptr->pvs_list,this_ptr->pvs_count << 2);
   this_ptr->pvs_list = piVar1;
   if (0 < this_ptr->pvs_count) {
@@ -25,15 +23,12 @@ void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_0053ac70(C3DSCamera *this_p
       _DAT_01d046a4 = 0xe4;
       core_main_c_FUN_004e4500("Out of memory for pvsList - %d",this_ptr->pvs_count);
     }
-    iVar4 = 0;
+    iVar2 = 0;
     if (0 < this_ptr->pvs_count) {
-      iVar3 = 0;
       do {
-        iVar2 = (int)this_ptr->pvs_list + iVar3;
-        iVar4 = iVar4 + 1;
-        iVar3 = iVar3 + 4;
-        _fscanf(file_handle,&DAT_005e617c,iVar2);
-      } while (iVar4 < this_ptr->pvs_count);
+        iVar2 = iVar2 + 1;
+        _fscanf(file_handle,&DAT_005e617c);
+      } while (iVar2 < this_ptr->pvs_count);
     }
   }
   return;

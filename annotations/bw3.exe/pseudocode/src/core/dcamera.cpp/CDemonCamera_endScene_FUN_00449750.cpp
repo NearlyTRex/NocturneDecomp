@@ -12,6 +12,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00449750(CDemonCamera *t
 
 {
   int iVar1;
+  int iVar2;
+  int iVar3;
   
   if (this_ptr->scene_open_flag == 0) {
     _DAT_01d71de0 = "..\\core\\dcamera.cpp";
@@ -28,12 +30,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00449750(CDemonCamera *t
     if (_DAT_01c6cee8 != 0) {
       engine_special_cpp_masterZBuffer_FUN_00566350(0);
     }
-    iVar1 = 0;
+    iVar2 = 0;
     if (0 < this_ptr->framebuffer_height) {
+      iVar3 = 0;
       do {
-        iVar1 = iVar1 + 1;
-        _memcpy(this_ptr->framebuffer_width << 2);
-      } while (iVar1 < this_ptr->framebuffer_height);
+        iVar1 = this_ptr->framebuffer_width * iVar2;
+        iVar2 = iVar2 + 1;
+        _memcpy
+                  ((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
+                   *(void **)(&DAT_01c60dac + iVar3),this_ptr->framebuffer_width << 2);
+        iVar3 = iVar3 + 4;
+      } while (iVar2 < this_ptr->framebuffer_height);
     }
   }
   engine_drender_cpp_popViewport_FUN_0046d320();

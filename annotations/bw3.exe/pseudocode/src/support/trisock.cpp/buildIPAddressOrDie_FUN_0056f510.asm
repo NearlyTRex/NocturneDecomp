@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_0056f510(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_0056f510(uchar *dest_ip,int octet1,int octet2,int octet3,int octet4)
 ;
+; Parameters:
+; uchar *          Stack[0x4]:4   dest_ip
+; int              Stack[0x8]:4   octet1
+; int              Stack[0xc]:4   octet2
+; int              Stack[0x10]:4   octet3
+; int              Stack[0x14]:4   octet4
 ;
 ; XREF[1]:
 ;   support_trisock.cpp_staticInit_FUN_0056f460 at 0056f479
@@ -35,7 +41,7 @@ section .text
     PUSH EDI                            ; 0056f52b
     PUSH EBX                            ; 0056f52c
     CALL support_trisock.cpp_buildIPAddress_FUN_0056f630 ; 0056f52d
-        ;   XREF to: 0056f630 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_buildIPAddress_FUN_0056f630()
+        ;   XREF to: 0056f630 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_buildIPAddress_FUN_0056f630(uint8_t * dest_ip, int octet1, int octet2, int octet3, ...)
     ADD ESP,0x14                        ; 0056f532
     TEST EAX,EAX                        ; 0056f535
     JZ 0x0056f540                       ; 0056f537

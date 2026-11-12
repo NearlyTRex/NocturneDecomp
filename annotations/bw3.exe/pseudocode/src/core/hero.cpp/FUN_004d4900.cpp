@@ -22,9 +22,11 @@ uint core_hero_cpp_FUN_004d4900(CHero *param_1,uint param_2)
     core_hero_cpp_FUN_004d3e20(param_1,"!CBodyPart");
     iVar4 = param_1->hero_action;
     iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,1);
-    if (((iVar3 == 0) || (iVar3 = core_hero_cpp_FUN_004d2cf0(param_1), iVar3 == 0)) &&
-       ((iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,2), iVar3 == 0
-        || (iVar3 = core_hero_cpp_FUN_004d2ea0(param_1), iVar3 == 0)))) {
+    if (((iVar3 == 0) || (iVar3 = core_hero_cpp_CHero_tryInteract_FUN_004d2cf0(param_1), iVar3 == 0)
+        ) && ((iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,2),
+              iVar3 == 0 ||
+              (iVar3 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0(param_1),
+              iVar3 == 0)))) {
       if ((((iVar4 == 5) ||
            (iVar4 = core_hero_cpp_FUN_004d3e20(param_1,"!CBodyPart"), iVar4 == 0)) &&
           ((((iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,3),

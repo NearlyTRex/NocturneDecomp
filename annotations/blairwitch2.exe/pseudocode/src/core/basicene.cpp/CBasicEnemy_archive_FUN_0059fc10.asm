@@ -81,26 +81,26 @@ section .text
     ADD EAX,0x10a60                     ; 0059fc36
     PUSH EAX                            ; 0059fc3b
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0059fc3c
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fc41
     MOV EBX,dword ptr [ESP + 0x318]     ; 0059fc44
     PUSH 0x5ef9ea                       ; 0059fc4b | = "modelName"
     ADD EBX,0x2b4                       ; 0059fc50
     PUSH EBX                            ; 0059fc56
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0 ; 0059fc57
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0()
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fc5c
     PUSH 0x5ef9f4                       ; 0059fc5f | = "MotionState"
     PUSH EBX                            ; 0059fc64
     CALL core_actor.cpp_archiveMotionState_FUN_0040bb60 ; 0059fc65
-        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveMotionState_FUN_0040bb60()
+        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040bb60(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 0059fc6a
     MOV EAX,dword ptr [ESP + 0x318]     ; 0059fc6d
     PUSH 0x5efa00                       ; 0059fc74 | = "initialPosition"
     ADD EAX,0x11360                     ; 0059fc79
     PUSH EAX                            ; 0059fc7e
     CALL core_actor.cpp_archiveVector_FUN_0040b4b0 ; 0059fc7f
-        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b4b0()
+        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b4b0(CVector3f * vector_ptr, char * property_name)
     MOV ECX,dword ptr [0x0061ead0]      ; 0059fc84 | g_CBasicEnemyClassVersion
     ADD ESP,0x8                         ; 0059fc8a
     CMP ECX,0x2                         ; 0059fc8d
@@ -116,7 +116,7 @@ section .text
     ADD EAX,0x11370                     ; 0059fcac
     PUSH EAX                            ; 0059fcb1
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0059fcb2
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fcb7
     CMP dword ptr [0x0061ead0],0x3      ; 0059fcba | g_CBasicEnemyClassVersion
         ;   Label: LAB_0059fcba
@@ -127,14 +127,14 @@ section .text
     ADD EAX,0x11374                     ; 0059fccf
     PUSH EAX                            ; 0059fcd4
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0059fcd5
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fcda
     MOV EAX,dword ptr [ESP + 0x318]     ; 0059fcdd
     PUSH 0x5efa5b                       ; 0059fce4 | = "MadTimer"
     ADD EAX,0x11378                     ; 0059fce9
     PUSH EAX                            ; 0059fcee
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0059fcef
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fcf4
     CMP dword ptr [0x0061ead0],0x4      ; 0059fcf7 | g_CBasicEnemyClassVersion
         ;   Label: LAB_0059fcf7
@@ -145,14 +145,14 @@ section .text
     ADD EAX,0x113a4                     ; 0059fd0c
     PUSH EAX                            ; 0059fd11
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 0059fd12
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fd17
     MOV EAX,dword ptr [ESP + 0x318]     ; 0059fd1a
     PUSH 0x5efa6f                       ; 0059fd21 | = "PatrolNext"
     ADD EAX,0x113a8                     ; 0059fd26
     PUSH EAX                            ; 0059fd2b
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 0059fd2c
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fd31
     MOV EAX,dword ptr [ESP + 0x318]     ; 0059fd34
     PUSH 0x5efa7a                       ; 0059fd3b | = "PatrolDirection"
@@ -211,35 +211,35 @@ section .text
     ADD EAX,0x113bc                     ; 0059fdec
     PUSH EAX                            ; 0059fdf1
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0059fdf2
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fdf7
     MOV EAX,dword ptr [ESP + 0x318]     ; 0059fdfa
     PUSH 0x5efae4                       ; 0059fe01 | = "FadeEnd"
     ADD EAX,0x113c0                     ; 0059fe06
     PUSH EAX                            ; 0059fe0b
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0059fe0c
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fe11
     MOV EAX,dword ptr [ESP + 0x318]     ; 0059fe14
     PUSH 0x5efaec                       ; 0059fe1b | = "FadeVal"
     ADD EAX,0x113c4                     ; 0059fe20
     PUSH EAX                            ; 0059fe25
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0059fe26
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fe2b
     MOV EAX,dword ptr [ESP + 0x318]     ; 0059fe2e
     PUSH 0x5efaf4                       ; 0059fe35 | = "FadeTime"
     ADD EAX,0x113c8                     ; 0059fe3a
     PUSH EAX                            ; 0059fe3f
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0059fe40
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fe45
     MOV EAX,dword ptr [ESP + 0x318]     ; 0059fe48
     PUSH 0x5efafd                       ; 0059fe4f | = "FadeTimer"
     ADD EAX,0x113cc                     ; 0059fe54
     PUSH EAX                            ; 0059fe59
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0059fe5a
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059fe5f
     CMP dword ptr [0x0061ead0],0x9      ; 0059fe62 | g_CBasicEnemyClassVersion
         ;   Label: LAB_0059fe62

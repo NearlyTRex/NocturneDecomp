@@ -31,11 +31,11 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0047b800(char *title,
   _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   iVar1 = DAT_006141bc / 0x60;
   local_18 = shape_edittool_cpp_calculateButtonWidth_FUN_004852f0("Cancel");
-  iVar2 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+  iVar2 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
   iVar2 = iVar1 * 2 + iVar2;
-  iVar1 = engine_font_cpp_FUN_004aaf00(_DAT_01c25590,title);
+  iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,title);
   local_14 = iVar1;
-  iVar3 = engine_font_cpp_FUN_004aaf00(_DAT_01c25590,message);
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,message);
   if (iVar1 < iVar3) {
     local_14 = iVar3;
   }
@@ -48,7 +48,7 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0047b800(char *title,
              0);
   local_1c = shape_edittool_cpp_calculateButtonWidth_FUN_004852f0("Cancel");
   local_24 = ((_DAT_01c35e50 + _DAT_01c35e48) - local_1c) / 2 + 1;
-  iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+  iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
   local_20 = (_DAT_01c35e54 - iVar4) + 1;
   shape_edittool_cpp_CEdButton_ctor_FUN_00484e20(&local_108);
   shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_00484ed0

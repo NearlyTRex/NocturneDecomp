@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_main_c_FUN_005030e0(undefined4 param_1)
+; void core_main_c_FUN_005030e0(char *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -29,8 +29,8 @@
 ;   crt_stdio.c_vsprintf_FUN_005bfb18
 ;   crt_watcom.c_notifyAbnormalTermination_FUN_005c3140
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_00401120
+;   wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005b3080
 ;   wincore_winrun.cpp_endPeriod_FUN_005b2410
-;   wincore_winrun.cpp_FUN_005b3080
 ;
 ; *****************************************************************************
 
@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [0x01d1d408],ECX      ; 0050310f | DAT_01d1d408
     XOR ESI,ESI                         ; 00503115
     CALL crt_stdio.c_vsprintf_FUN_005bfb18 ; 00503117
-        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005bfb18()
+        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005bfb18(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0050311c
     MOV DH,0x5c                         ; 0050311f
     MOV dword ptr [ESP + 0x4],ESI       ; 00503121
@@ -97,8 +97,8 @@ section .text
     CALL wincore_winrun.cpp_endPeriod_FUN_005b2410 ; 0050315e
         ;   XREF to: 005b2410 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_005b2410()
     PUSH 0x1d1c300                      ; 00503163
-    CALL wincore_winrun.cpp_FUN_005b3080 ; 00503168
-        ;   XREF to: 005b3080 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_005b3080(char * message)
+    CALL wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005b3080 ; 00503168
+        ;   XREF to: 005b3080 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005b3080(char * message)
     ADD ESP,0x4                         ; 0050316d
     ADD ESP,0x4                         ; 00503170
     POP EDI                             ; 00503173

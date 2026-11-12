@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 222,
+    "complexity_score": 148,
     "cross_reference_count": 32,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
-    "suspect_count": 18,
+    "pseudocode_lines": 33,
+    "suspect_count": 11,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 137
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -219,7 +218,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archiveMotionState_FUN_0040bb60",
-    "signature": "void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *param_1,char *param_2)"
+    "signature": "void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *motion_controller,char *property_name)"
   },
   "function_calls": [
     {
@@ -323,31 +322,56 @@
     },
     "pcode_op_count": 329
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040b870",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040bab0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040b9f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040cb00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "motion_controller",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 7,
@@ -357,19 +381,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 8,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,property_name);",
       "type": "undefined_data"
     },
     {
@@ -377,36 +393,28 @@
       "line": 8,
       "match": "DAT_00609590",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,property_name);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_save_FUN_00504250(param_1,DAT_007bc034,&DAT_00609590);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 11,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_save_FUN_00504250(param_1,DAT_007bc034,&DAT_00609590);",
+      "text": "(motion_controller,DAT_007bc034,&DAT_00609590);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 11,
       "match": "DAT_00609590",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_save_FUN_00504250(param_1,DAT_007bc034,&DAT_00609590);",
+      "text": "(motion_controller,DAT_007bc034,&DAT_00609590);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab9c,&DAT_00609590);",
@@ -414,7 +422,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_005cab9c",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab9c,&DAT_00609590);",
@@ -422,7 +430,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_00609590",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab9c,&DAT_00609590);",
@@ -430,51 +438,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "iVar1 = _fgetc(DAT_007bc034);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"motion state info opening brace\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_load_FUN_005041b0(param_1,DAT_007bc034);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "core_motion_cpp_CMotionController_load_FUN_005041b0(param_1,DAT_007bc034);",
+      "text": "core_motion_cpp_CMotionController_load_FUN_005041b0(motion_controller,DAT_007bc034);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 26,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "iVar1 = _fgetc(DAT_007bc034);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"motion state info closing brace\",param_2);",
-      "type": "unnamed_param"
     }
   ]
 }

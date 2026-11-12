@@ -21,7 +21,9 @@
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SInputFace.h"
 #include "types/structs/SIntersectXZCylinder.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SPose.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRenderVertex.h"
@@ -35,10 +37,10 @@ void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0058000e(ushort *destPixels
 void engine_special_cpp_FUN_00580127(void);
 void __cdecl engine_special_cpp_FUN_00580173(SProjectedVertex *output,CVector3i *input);
 void __cdecl engine_special_cpp_FUN_0058043c(SProjectedVertex *output,CVector3i *input);
-void __cdecl engine_special_cpp_FUN_00580740(void);
-int __cdecl engine_special_cpp_FUN_00581310(HWND window_handle);
+void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_00580740(void);
+int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00581310(HWND window_handle);
 int __cdecl engine_special_cpp_kill_FUN_00581f20(void);
-undefined4 engine_special_cpp_isExternalRendererActive_FUN_00581f40(void);
+int __cdecl engine_special_cpp_isExternalRendererActive_FUN_00581f40(void);
 undefined4 engine_special_cpp_FUN_00581f50(void);
 int __cdecl engine_special_cpp_unlockFrame_FUN_00581fa0(int clear_lock_flag);
 int __cdecl engine_special_cpp_FUN_00581fe0(void);
@@ -52,13 +54,13 @@ undefined4 engine_special_cpp_FUN_0058219c(undefined4 param_1);
 int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005821c0(int width,int height,int bits_per_pixel);
 int __cdecl engine_special_cpp_setColorTable16_FUN_005822e0(void);
 int __cdecl engine_special_cpp_restoreVideoMode_FUN_00582310(void);
-undefined4 __cdecl engine_special_cpp_drawPolygon_FUN_00582340(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-undefined4 __cdecl engine_special_cpp_drawPolygon2_FUN_00582370(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-undefined4 __cdecl engine_special_cpp_drawPolyList_FUN_005823a0(int param_1,int *param_2,int param_3,undefined4 param_4);
-undefined4 __cdecl engine_special_cpp_drawPolyList2_FUN_005824e0(int param_1,undefined4 *param_2,int param_3,undefined4 param_4);
+int __cdecl engine_special_cpp_drawPolygon_FUN_00582340(SRenderVertex *vertices,int vertex_count,int render_flags);
+int __cdecl engine_special_cpp_drawPolygon2_FUN_00582370(SRenderVertex **vertex_array,int vertex_count,int render_flags);
+int __cdecl engine_special_cpp_drawPolyList_FUN_005823a0(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags);
+int __cdecl engine_special_cpp_drawPolyList2_FUN_005824e0(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags );
 int __cdecl engine_special_cpp_drawPolyList3_FUN_00582620(SRenderVertex *vertex_buffer,STrianglePackedIndices *polygons,int polygon_count,int render_flags);
-undefined4 engine_special_cpp_addParticle_FUN_005826ee(undefined4 param_1,undefined4 param_2);
-undefined4 engine_special_cpp_flushParticleList_FUN_0058271e(void);
+int __cdecl engine_special_cpp_addParticle_FUN_005826ee(void *particle_data,int particle_type);
+int __cdecl engine_special_cpp_flushParticleList_FUN_0058271e(void);
 int __cdecl engine_special_cpp_add3dLine_FUN_00582740(void *start_point,void *end_point,int line_style);
 int __cdecl engine_special_cpp_flushLineList_FUN_00582770(void);
 int __cdecl engine_special_cpp_clear_FUN_00582790(void);
@@ -86,7 +88,7 @@ int __cdecl engine_special_cpp_CExternalRenderer_validate_FUN_00582d60(CExternal
 void engine_special_cpp_switchRenderer_FUN_00582ebe(char *param_1,undefined4 param_2);
 undefined1 * engine_special_cpp_FUN_00582f0e(undefined4 *param_1);
 void core_spike_cpp_staticInit_FUN_00582f30(void);
-void core_spike_cpp_factoryFuncSpike_FUN_00582f60(void);
+CSpike * __cdecl core_spike_cpp_factoryFuncSpike_FUN_00582f60(void);
 CDemonActorType * core_spike_cpp_CSpike_getActorType_FUN_00582f80(CSpike *this_ptr);
 CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_00582f90(CSpike *this_ptr);
 void __cdecl core_spike_cpp_CSpike_setup_FUN_005830d0(CSpike *this_ptr);
@@ -95,13 +97,13 @@ int __cdecl core_spike_cpp_CSpike_renderOpaque_FUN_005834e0(CSpike *this_ptr);
 CBoundingBox3D * __cdecl core_spike_cpp_CSpike_getBoundingBox_FUN_00583560(CSpike *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_spike_cpp_CSpike_archive_FUN_005835a0(CSpike *this_ptr);
 ECollisionType __cdecl core_spike_cpp_CSpike_getCollisionType_FUN_005836f0(CSpike *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_spike_cpp_FUN_00583700(CSpike *this_ptr);
+void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00583700(CSpike *this_ptr);
 CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_00583d10(CSpike *this_ptr,uint flags);
 void __cdecl core_spline_cpp_FUN_00583d60(float *out_basis,float t,float tension);
-float core_spline_cpp_evaluateSplineScalar_FUN_00583ef0(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
-int core_spline_cpp_evaluateSplintInt_FUN_00583f30(float *param_1,int param_2,int param_3,int param_4,int param_5);
+float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_00583ef0(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
+int __cdecl core_spline_cpp_evaluateSplintInt_FUN_00583f30(float *basis,int v0,int v1,int v2,int v3);
 void core_spline_cpp_FUN_00583f90(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
-float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_00584130(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_00584130(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
 void core_spline_cpp_FUN_005841d0(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
 void shape_spotview_cpp_staticInit_FUN_00584380(void);
 CSpotView * __cdecl shape_spotview_cpp_CSpotView_ctor_FUN_00584390(CSpotView *this_ptr);
@@ -110,7 +112,7 @@ void shape_spotview_cpp_FUN_0058443e(CSpotView *param_1,uint param_2);
 void __cdecl shape_spotview_cpp_CSpotView_clampValues_FUN_00584720(CSpotView *this_ptr);
 void shape_spotview_cpp_FUN_005847e0(int param_1);
 void core_stairs_cpp_staticInit_FUN_005848e0(void);
-void core_stairs_cpp_factoryFuncStairs_FUN_00584910(void);
+CStairs * __cdecl core_stairs_cpp_factoryFuncStairs_FUN_00584910(void);
 CDemonActorType * core_stairs_cpp_CStairs_getActorType_FUN_00584930(CStairs *this_ptr);
 CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_00584940(CStairs *this_ptr);
 void __cdecl core_stairs_cpp_CStairs_setup_FUN_005849b0(CStairs *this_ptr);
@@ -126,7 +128,7 @@ EGroundType __cdecl core_stairs_cpp_CStairs_getGroundType_FUN_00584cb0(CStairs *
 void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00584cc0(CStairs *this_ptr);
 CStairs * core_stairs_cpp_CStairs_dtor_FUN_00584e00(CStairs *this_ptr,uint flags);
 void core_stone_cpp_staticInit_FUN_00584e50(void);
-void core_stone_cpp_factoryFuncTempleStone_FUN_00584e80(void);
+CTempleStone * __cdecl core_stone_cpp_factoryFuncTempleStone_FUN_00584e80(void);
 CDemonActorType * core_stone_cpp_CTempleStone_getActorType_FUN_00584ea0(CTempleStone *this_ptr);
 CTempleStone * __cdecl core_stone_cpp_CTempleStone_ctor_FUN_00584eb0(CTempleStone *this_ptr);
 void __cdecl core_stone_cpp_CTempleStone_archive_FUN_00584ee0(CTempleStone *this_ptr);
@@ -135,7 +137,7 @@ CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_00584f70(CTempleSton
 void __cdecl core_stranger_cpp_staticInit_FUN_00584fe0(void);
 float core_stranger_cpp_FUN_00585040(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
 float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00585170(CDemonActor *object);
-void core_stranger_cpp_factoryFuncStranger_FUN_00585240(void);
+CStranger * __cdecl core_stranger_cpp_factoryFuncStranger_FUN_00585240(void);
 CDemonActorType * core_stranger_cpp_CStranger_getActorType_FUN_00585260(CStranger *this_ptr);
 CStranger * core_stranger_cpp_CStranger_ctor_FUN_00585270(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_setup_FUN_00585670(CStranger *this_ptr);
@@ -160,7 +162,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0058d910(CStranger *t
 void __cdecl core_stranger_cpp_CStranger_archive_FUN_0058e240(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0058e3c0(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_renderTransparent_FUN_0058e8d0(CStranger *this_ptr);
-void core_stranger_cpp_adjustAimAngleForOffset_FUN_0058e90e(float *param_1,float param_2,float param_3);
+void __cdecl core_stranger_cpp_adjustAimAngleForOffset_FUN_0058e90e(float *angle,float distance,float offset);
 float * core_stranger_cpp_calculateAimAnglesWithOffset_FUN_0058e99e(float *param_1,float *param_2);
 void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0058eb50(CStranger *this_ptr,int hand_index,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0058f660(CStranger *this_ptr);

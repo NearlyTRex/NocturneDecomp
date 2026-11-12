@@ -48,7 +48,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_00540df0(CScat *this_ptr,float delt
   float fStack_6c;
   float fStack_68;
   uint uStack_64;
-  uint uStack_60;
+  float fStack_60;
   float afStack_58 [3];
   float fStack_4c;
   float fStack_48;
@@ -193,7 +193,8 @@ LAB_005412cd:
     }
     else {
       if (EVar2 != WALK_STATE_NO_PATH) goto LAB_005412cd;
-      engine_console_cpp_FUN_00445430(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+      engine_console_cpp_CConsole_printf_FUN_00445430
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
       iVar6 = core_scat_cpp_CScat_isWeaponReady_FUN_00541de0(this_ptr);
       if (iVar6 == 0) {
         iVar6 = 0;
@@ -250,7 +251,7 @@ LAB_005412cd:
   afStack_80[(uint)bVar14 * -2 + 8] = afStack_24[(uint)bVar14 * -2];
   afStack_80[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 9] =
        afStack_24[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
-  this_ptr_00 = (CMotionController *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(uStack_60);
+  this_ptr_00 = (CMotionController *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_60);
   if ((float)this_ptr_00 < _DAT_005ede4b) {
     this_ptr_00 = (CMotionController *)((float)this_ptr_00 + _DAT_005ede4f);
   }

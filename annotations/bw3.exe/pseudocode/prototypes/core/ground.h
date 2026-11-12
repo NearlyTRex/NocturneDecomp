@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_ground.cpp_openFileWithExtension_FUN_004cf87e
 // Address: 004cf87e
-_FILE * openFileWithExtension(char *param_1,char *param_2,char *param_3,char *param_4);
+_FILE * __cdecl openFileWithExtension(char *directory,char *filename,char *new_extension,char *open_mode);
 
 // Original: core_ground.cpp_getGroundTypeCode_FUN_004cf9a0
 // Address: 004cf9a0
@@ -19,11 +19,11 @@ char * __cdecl getGroundTypeCode(EGroundType type);
 
 // Original: core_ground.cpp_getGroundTypeName_FUN_004cfa50
 // Address: 004cfa50
-char * getGroundTypeName(undefined4 param_1);
+char * __cdecl getGroundTypeName(EGroundType type);
 
 // Original: core_ground.cpp_getGroundTypeColor_FUN_004cfaf0
 // Address: 004cfaf0
-undefined4 __cdecl getGroundTypeColor(undefined4 param_1);
+uint __cdecl getGroundTypeColor(EGroundType type);
 
 // Original: core_ground.cpp_CGround_ctor_FUN_004cfb50
 // Address: 004cfb50
@@ -81,6 +81,6 @@ void __cdecl CGround::render(CGround *this_ptr);
 // Address: 004d09b0
 int __cdecl CGround::getHeightAtPosition(CGround *this_ptr,int world_x,int world_z);
 
-// Original: core_ground.cpp_FUN_004d0c30
+// Original: core_ground.cpp_CGround_getNormalAtPosition_FUN_004d0c30
 // Address: 004d0c30
-void FUN_004d0c30(int *param_1,uint param_2,uint param_3);
+CVector3i * __stack3_esi CGround::getNormalAtPosition(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal);

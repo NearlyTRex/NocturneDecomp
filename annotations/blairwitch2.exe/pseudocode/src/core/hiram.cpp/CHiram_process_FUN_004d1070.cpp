@@ -12,7 +12,7 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004d1070(CHiram *this_ptr,float d
   CDeformableModelInstance *pCVar1;
   int iVar2;
   CDemonActor *pCVar3;
-  uint uVar4;
+  uint class_name_hash;
   float afStack_18 [2];
   
   iVar2 = core_charactr_cpp_CCharacter_processCharacter_FUN_004244b0
@@ -27,12 +27,12 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004d1070(CHiram *this_ptr,float d
                       (0x01C38BC0,this_ptr->kill_event);
     if (iVar2 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar1->base,1,1);
-      uVar4 = g_CGlassClassInfo.name_hash;
+      class_name_hash = g_CGlassClassInfo.name_hash;
       pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740
                          (0x01D182F0,"GlassHiram");
-      iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar3,uVar4);
-      if (iVar2 != 0) {
-        core_glass_cpp_FUN_004c6d40(iVar2,iVar2 + 0x20);
+      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar3,class_name_hash);
+      if (pCVar3 != (CDemonActor *)0x0) {
+        core_glass_cpp_FUN_004c6d40(pCVar3,&pCVar3->location);
       }
     }
   }

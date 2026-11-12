@@ -13,7 +13,7 @@ void core_union_cpp_FUN_005a5460(CDemonActor *param_1)
 {
   void *pvVar1;
   float fVar2;
-  int iVar3;
+  EDeathState EVar3;
   byte bVar4;
   float afStackY_110c [996];
   float *pfVar5;
@@ -56,7 +56,7 @@ void core_union_cpp_FUN_005a5460(CDemonActor *param_1)
   float local_24;
   float local_20;
   float fStack_1c;
-  int iStack_18;
+  CCharacter *pCStack_18;
   int *local_14;
   
   bVar4 = 0;
@@ -142,13 +142,14 @@ void core_union_cpp_FUN_005a5460(CDemonActor *param_1)
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
     return;
   }
-  iStack_18 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                        (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
-  if (iStack_18 != 0) {
-    iVar3 = (**(code **)(*(int *)(iStack_18 + 0x2b0) + 0x114))(iStack_18);
-    if (0 < iVar3) goto LAB_005a580c;
+  pCStack_18 = (CCharacter *)
+               core_actor_cpp_castToClassHash_FUN_0040c8f0
+                         (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
+  if (pCStack_18 != (CCharacter *)0x0) {
+    EVar3 = (*(((pCStack_18->base).vtable._uc)->_uc).getDeathState)(pCStack_18);
+    if (0 < (int)EVar3) goto LAB_005a580c;
   }
-  if (iStack_18 != 0) {
+  if (pCStack_18 != (CCharacter *)0x0) {
     core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(&SStack_160);
     SStack_160.damage_amount = 0x41200000;
     SStack_160.gore_multiplier = 1.0;
@@ -173,7 +174,7 @@ void core_union_cpp_FUN_005a5460(CDemonActor *param_1)
       SStack_160.impact_point.y = afStack_120[0];
       SStack_160.impact_point.z = afStack_120[1];
     }
-    core_actor_cpp_FUN_00408de0(iStack_18,&g_CDemonSetPtr->collision_impact_position);
+    core_actor_cpp_FUN_00408de0(pCStack_18,&g_CDemonSetPtr->collision_impact_position);
     afStack_108[2] = fStack_e8;
     afStack_108[(uint)bVar4 * -2 + 3] = afStack_108[(uint)bVar4 * -2 + 9];
     afStack_108[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
@@ -185,7 +186,7 @@ void core_union_cpp_FUN_005a5460(CDemonActor *param_1)
     }
     SStack_160.wielder = param_1;
     SStack_160.damage_type = DAMAGE_TYPE_ATTACK_BULLET;
-    (**(code **)(*(int *)(iStack_18 + 0x2b0) + 0x110))(iStack_18,&SStack_160);
+    (*(((pCStack_18->base).vtable._uc)->_uc).processDamage)(pCStack_18,&SStack_160);
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
     return;
   }

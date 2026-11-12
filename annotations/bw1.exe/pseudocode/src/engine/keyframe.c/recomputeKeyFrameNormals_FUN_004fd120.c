@@ -2,58 +2,65 @@
 // Address: 004fd120
 // Address Range: [[004fd120, 004fd20f]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLHeaderExtended *param_1)
+// Signature: void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLPrimitiveTriangle *primitive_list)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLHeaderExtended *param_1)
+void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLPrimitiveTriangle *primitive_list)
 
 {
   int iVar1;
   uint uVar2;
-  SMRGLHeaderExtended *pSVar3;
-  SMRGLHeaderExtended *pSVar4;
+  CVector3i *vertex_data;
+  SMRGLPrimitiveTriangle *pSVar3;
   
-  pSVar3 = (SMRGLHeaderExtended *)0x0;
-  iVar1 = (param_1->base).type;
-  while (pSVar4 = (SMRGLHeaderExtended *)0x0, iVar1 != 0) {
-    if ((param_1->base).type == 2) {
-      pSVar3 = param_1 + 1;
+  vertex_data = (CVector3i *)0x0;
+  iVar1 = (primitive_list->base).base.type;
+  while (pSVar3 = (SMRGLPrimitiveTriangle *)0x0, iVar1 != 0) {
+    if ((primitive_list->base).base.type == 2) {
+      vertex_data = (CVector3i *)&(primitive_list->base).surface_normal.B;
     }
-    iVar1 = (param_1->base).type;
-    pSVar4 = param_1;
+    iVar1 = (primitive_list->base).base.type;
+    pSVar3 = primitive_list;
     if (((iVar1 == 0x18) || (iVar1 == 0x29)) || (iVar1 == 0x19)) break;
-    uVar2 = engine_model_c_FUN_0051fee0(param_1);
-    param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + (uVar2 & 0xfffffffc));
-    iVar1 = (param_1->base).type;
+    uVar2 = engine_model_c_FUN_0051fee0((SMRGLHeaderExtended *)primitive_list);
+    primitive_list =
+         (SMRGLPrimitiveTriangle *)
+         ((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +
+         (uVar2 & 0xfffffffc));
+    iVar1 = (primitive_list->base).base.type;
   }
-  if (pSVar3 == (SMRGLHeaderExtended *)0x0) {
+  if (vertex_data == (CVector3i *)0x0) {
     _DAT_01d1d400 = "..\\engine\\keyframe.c";
     _DAT_01d1d404 = 0x1f5;
     core_main_c_FUN_005030e0("recomputeKeyFrameNormals: Cannot find vptr");
   }
-  if (pSVar4 == (SMRGLHeaderExtended *)0x0) {
+  if (pSVar3 == (SMRGLPrimitiveTriangle *)0x0) {
     _DAT_01d1d400 = "..\\engine\\keyframe.c";
     _DAT_01d1d404 = 0x1f6;
     core_main_c_FUN_005030e0("recomputeKeyFrameNormals: Cannot find fptr");
   }
   do {
-    uVar2 = (param_1->base).type;
+    uVar2 = (primitive_list->base).base.type;
     if (uVar2 < 0x19) {
       if (uVar2 == 0x18) {
 LAB_004fd17f:
-        engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0(pSVar3,param_1);
+        engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0(vertex_data,primitive_list);
       }
     }
     else if (uVar2 < 0x1a) {
-      engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004fc800(pSVar3,param_1);
+      engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004fc800
+                (vertex_data,(SMRGLPrimitiveTriangleIndex *)primitive_list);
     }
     else if (uVar2 == 0x29) goto LAB_004fd17f;
-    uVar2 = engine_model_c_FUN_0051fee0(param_1);
-    param_1 = (SMRGLHeaderExtended *)((int)&(param_1->base).type + (uVar2 & 0xfffffffc));
-    if ((param_1->base).type == 0) {
+    uVar2 = engine_model_c_FUN_0051fee0((SMRGLHeaderExtended *)primitive_list);
+    primitive_list =
+         (SMRGLPrimitiveTriangle *)
+         ((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +
+         (uVar2 & 0xfffffffc));
+    if ((primitive_list->base).base.type == 0) {
       return;
     }
   } while( true );

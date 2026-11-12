@@ -67,7 +67,7 @@ section .text
     MOV dword ptr [0x006258dc],ECX      ; 005032cb | DAT_006258dc
     MOV dword ptr [0x006258d0],EBX      ; 005032d1 | DAT_006258d0
     CALL crt_stdio.c_fopen_FUN_005c157c ; 005032d7
-        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005c157c()
+        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
     ADD ESP,0x8                         ; 005032dc
     TEST EAX,EAX                        ; 005032df
     JNZ 0x005039b1                      ; 005032e1
@@ -77,7 +77,7 @@ section .text
     PUSH 0x5e7122                       ; 005032ec | = "wt"
     PUSH 0x5e7125                       ; 005032f1 | = "stderr.txt"
     CALL crt_stdio.c_freopen_FUN_005c1614 ; 005032f6
-        ;   XREF to: 005c1614 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_freopen_FUN_005c1614()
+        ;   XREF to: 005c1614 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_freopen_FUN_005c1614(char * filename, char * mode, _FILE * stream)
     ADD ESP,0xc                         ; 005032fb
     CALL core_flattn.cpp_FUN_004bf770   ; 005032fe
         ;   XREF to: 004bf770 (UNCONDITIONAL_CALL)  ; undefined core_flattn.cpp_FUN_004bf770()
@@ -92,11 +92,11 @@ section .text
     ADD ESP,0x4                         ; 0050331e
     PUSH 0x53d520                       ; 00503321
     CALL engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40 ; 00503326
-        ;   XREF to: 00478e40 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40()
+        ;   XREF to: 00478e40 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 0050332b
     PUSH 0x478ef0                       ; 0050332e
     CALL engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40 ; 00503333
-        ;   XREF to: 00478e40 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40()
+        ;   XREF to: 00478e40 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 00503338
     PUSH 0x5e7130                       ; 0050333b | = "msglist.txt"
     CALL support_newmsg.cpp_readMessageFile_FUN_00530bf0 ; 00503340

@@ -47,8 +47,8 @@ int __cdecl core_hostage_cpp_CHostage_processGrabberFlee_FUN_004d2c50(CHostage *
          *(uint *)((int)&stack0xfffffff0 + (uint)bVar3 * 0xfffffffe * 4);
     *(uint *)(&stack0xffffffd0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
          *(uint *)(&stack0xfffffff4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    local_8 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                               (local_34 - (this_ptr->base).base.base.orient.vec.y);
+    local_8 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                        (local_34 - (this_ptr->base).base.base.orient.vec.y);
     fVar1 = (this_ptr->base).base.turn_speed;
     (this_ptr->base).base.turn_angle_accumulator = local_8;
     if ((this_ptr->base).base.turn_angle_accumulator < -fVar1) {

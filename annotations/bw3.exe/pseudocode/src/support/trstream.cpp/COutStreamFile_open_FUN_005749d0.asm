@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005749d0(COutStreamFile *this_ptr,undefined4 param_2,undefined4 param_3)
+; undefined4 __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005749d0(COutStreamFile *this_ptr,char *param_2,char *param_3)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
@@ -32,7 +32,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 005749e3
     PUSH ECX                            ; 005749e7
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 005749e8
-        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005a43ec()
+        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005a43ec(char * filename, char * mode)
     ADD ESP,0x8                         ; 005749ed
     MOV dword ptr [EBX + 0x4],EAX       ; 005749f0
     TEST EAX,EAX                        ; 005749f3

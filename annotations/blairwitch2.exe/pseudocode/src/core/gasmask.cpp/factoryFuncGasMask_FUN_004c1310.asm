@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gasmask_cpp_factoryFuncGasMask_FUN_004c1310(void)
+; CGasMask * __cdecl core_gasmask_cpp_factoryFuncGasMask_FUN_004c1310(void)
 ;
 ;
 ; Called Functions:

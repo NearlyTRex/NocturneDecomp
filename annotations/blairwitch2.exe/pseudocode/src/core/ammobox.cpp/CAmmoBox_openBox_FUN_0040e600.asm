@@ -20,7 +20,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH 0x5cb262                       ; 0040e619 | = "Open pct : %f\n"
     MOV EDX,dword ptr [0x00609ed0]      ; 0040e61e | g_CConsolePtr
     PUSH EDX                            ; 0040e624 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0040e625
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0040e625
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     MOV ECX,dword ptr [EBX + 0x4a4]     ; 0040e62a
     ADD ESP,0x10                        ; 0040e630
     TEST ECX,ECX                        ; 0040e633

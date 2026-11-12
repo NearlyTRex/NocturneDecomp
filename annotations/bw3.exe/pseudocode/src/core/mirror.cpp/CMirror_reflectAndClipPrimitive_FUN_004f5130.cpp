@@ -36,20 +36,21 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130(CMirro
     } while (iVar4 < (primitive->base).count);
   }
   core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90
-            (this_ptr->clip_planes,&DAT_01d80d54,_DAT_01d80d50,&DAT_01d80ed8,&DAT_01d80ed4);
+            (this_ptr->clip_planes,(CVector3f *)&DAT_01d80d54,_DAT_01d80d50,
+             (CVector3f *)&DAT_01d80ed8,(int *)&DAT_01d80ed4);
   if ((((2 < _DAT_01d80ed4) &&
        (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90
-                  (this_ptr->clip_planes + 1,&DAT_01d80ed8,_DAT_01d80ed4,&DAT_01d80d54,&DAT_01d80d50
-                  ), 2 < _DAT_01d80d50)) &&
+                  (this_ptr->clip_planes + 1,(CVector3f *)&DAT_01d80ed8,_DAT_01d80ed4,
+                   (CVector3f *)&DAT_01d80d54,(int *)&DAT_01d80d50), 2 < _DAT_01d80d50)) &&
       (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90
-                 (this_ptr->clip_planes + 2,&DAT_01d80d54,_DAT_01d80d50,&DAT_01d80ed8,&DAT_01d80ed4)
-      , 2 < _DAT_01d80ed4)) &&
+                 (this_ptr->clip_planes + 2,(CVector3f *)&DAT_01d80d54,_DAT_01d80d50,
+                  (CVector3f *)&DAT_01d80ed8,(int *)&DAT_01d80ed4), 2 < _DAT_01d80ed4)) &&
      ((core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90
-                 (this_ptr->clip_planes + 3,&DAT_01d80ed8,_DAT_01d80ed4,&DAT_01d80d54,&DAT_01d80d50)
-      , 2 < _DAT_01d80d50 &&
+                 (this_ptr->clip_planes + 3,(CVector3f *)&DAT_01d80ed8,_DAT_01d80ed4,
+                  (CVector3f *)&DAT_01d80d54,(int *)&DAT_01d80d50), 2 < _DAT_01d80d50 &&
       (core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90
-                 (this_ptr->clip_planes + 4,&DAT_01d80d54,_DAT_01d80d50,&DAT_01d80ed8,&DAT_01d80ed4)
-      , 2 < _DAT_01d80ed4)))) {
+                 (this_ptr->clip_planes + 4,(CVector3f *)&DAT_01d80d54,_DAT_01d80d50,
+                  (CVector3f *)&DAT_01d80ed8,(int *)&DAT_01d80ed4), 2 < _DAT_01d80ed4)))) {
     (this_ptr->clip_primitive).base.base.count = _DAT_01d80ed4;
     (this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;
     (this_ptr->clip_primitive).base.surface_normal.B = (primitive->surface_normal).B;

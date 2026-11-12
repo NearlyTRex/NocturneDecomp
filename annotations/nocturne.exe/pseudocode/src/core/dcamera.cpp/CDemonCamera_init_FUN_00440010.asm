@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0043ff50 at 0043ff82
 ;   core_game.cpp_CGame_setGameRes_FUN_0049d870 at 0049d90d
-;   core_set.cpp_CDemonSet_FUN_005090f0 at 005090fc
+;   core_set.cpp_CDemonSet_reinitCamera_FUN_005090f0 at 005090fc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_0057b61b

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombie_cpp_factoryFuncZombie_FUN_005baae0(void)
+; CZombie * __cdecl core_zombie_cpp_factoryFuncZombie_FUN_005baae0(void)
 ;
 ;
 ; Called Functions:

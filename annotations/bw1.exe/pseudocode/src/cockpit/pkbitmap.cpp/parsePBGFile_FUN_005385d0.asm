@@ -39,7 +39,7 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 005385e4
     PUSH EAX                            ; 005385e8
     CALL crt_stdio.c_fread_FUN_005c0b10 ; 005385e9
-        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005c0b10()
+        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005c0b10(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005385ee
     CMP EAX,0x1                         ; 005385f1
     JNZ 0x0053865a                      ; 005385f4

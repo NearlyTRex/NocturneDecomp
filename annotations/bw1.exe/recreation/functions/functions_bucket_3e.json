@@ -37,29 +37,40 @@
   },
   {
     "addr":"0045103e",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":134,
     "method":"renderVolumetricLightScanline",
     "name":"core_dcamera.cpp_renderVolumetricLightScanline_FUN_0045103e",
+    "params":[
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"right",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"left",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/dcamera.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"00454cbe",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_00454cbe",
-    "name":"core_dcamera.cpp_FUN_00454cbe",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dcamera.cpp",
@@ -67,15 +78,33 @@
   },
   {
     "addr":"0047a43e",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":23,
-    "method":"FUN_0047a43e",
-    "name":"core_dpart.cpp_FUN_0047a43e",
+    "method":"findEdgeByYStart",
+    "name":"core_dpart.cpp_findEdgeByYStart_FUN_0047a43e",
+    "params":[
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"exclude_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SSoftwareEdge",
+      "ptr":1
     },
     "tu":"core/dpart.cpp",
     "variadic":false
@@ -211,21 +240,6 @@
     "variadic":false
   },
   {
-    "addr":"0053bfbe",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_0053bfbe",
-    "name":"engine_pod.cpp_FUN_0053bfbe",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/pod.cpp",
-    "variadic":false
-  },
-  {
     "addr":"00564d3e",
     "calls":[
       "00401fe0",
@@ -282,21 +296,6 @@
       "ptr":0
     },
     "tu":"shape/spotview.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"00597abe",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_00597abe",
-    "name":"engine_texture.cpp_FUN_00597abe",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/texture.cpp",
     "variadic":false
   },
   {

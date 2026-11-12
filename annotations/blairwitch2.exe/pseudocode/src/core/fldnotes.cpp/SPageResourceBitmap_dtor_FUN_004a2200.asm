@@ -20,7 +20,7 @@
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d440
-;   engine_alphabit.cpp_FUN_0040d540
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     ADD EBX,0x18                        ; 004a220c
     PUSH EBX                            ; 004a220f
     MOV dword ptr [EBX + -0x4],0x5f6ee4 ; 004a2210 | g_SPageResourceBitmapVTable
-    CALL engine_alphabit.cpp_FUN_0040d540 ; 004a2217
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d540(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540 ; 004a2217
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004a221c
     PUSH 0x0                            ; 004a221f
     PUSH EBX                            ; 004a2221
@@ -61,7 +61,7 @@ section .text
         ;   Label: LAB_004a2247
     PUSH EBX                            ; 004a224c
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 004a224d
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004a2252
     PUSH EAX                            ; 004a2255
     CALL crt_unknown.c_FUN_005b7fce     ; 004a2256

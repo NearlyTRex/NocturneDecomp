@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_ghoul.cpp_factoryFuncGhoul_FUN_004c68b0
 // Address: 004c68b0
-void factoryFuncGhoul(void);
+CGhoul * __cdecl factoryFuncGhoul(void);
 
 // Original: core_ghoul.cpp_CGhoul_getActorType_FUN_004c68d0
 // Address: 004c68d0

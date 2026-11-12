@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_trisock_cpp_FUN_0059cf00(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,CSocket *param_6,code *param_7)
+; undefined4 support_trisock_cpp_FUN_0059cf00(undefined4 param_1,undefined4 param_2,uint16_t *param_3,undefined4 param_4,undefined4 param_5,CSocket *param_6,code *param_7)
 ;
 ;
 ; Called Functions:
@@ -53,7 +53,7 @@ section .text
     LEA EAX,[ESP + 0xb90]               ; 0059cf53
     PUSH EAX                            ; 0059cf5a
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0059cf5b
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0059cf60
     PUSH EDI                            ; 0059cf63
     PUSH 0x5f83de                       ; 0059cf64
@@ -110,14 +110,14 @@ section .text
     LEA EAX,[ESP + 0xbe0]               ; 0059cfdb
     PUSH EAX                            ; 0059cfe2
     CALL support_trisock.cpp_createNetworkAddr_FUN_0059c740 ; 0059cfe3
-        ;   XREF to: 0059c740 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_createNetworkAddr_FUN_0059c740()
+        ;   XREF to: 0059c740 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_createNetworkAddr_FUN_0059c740(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
     ADD ESP,0xc                         ; 0059cfe8
     LEA EAX,[ESP + 0xbb8]               ; 0059cfeb
     PUSH EAX                            ; 0059cff2
     LEA EAX,[ESP + 0xbdc]               ; 0059cff3
     PUSH EAX                            ; 0059cffa
     CALL support_trisock.cpp_formatSocketAddress_FUN_0059c830 ; 0059cffb
-        ;   XREF to: 0059c830 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_formatSocketAddress_FUN_0059c830()
+        ;   XREF to: 0059c830 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_formatSocketAddress_FUN_0059c830(SNetworkAddr * network_addr, char * output_buffer)
     ADD ESP,0x8                         ; 0059d000
     LEA EAX,[ESP + 0xbb8]               ; 0059d003
     PUSH EAX                            ; 0059d00a

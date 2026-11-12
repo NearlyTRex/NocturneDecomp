@@ -69,7 +69,7 @@ section .text
     MOV EDI,dword ptr [0x01c35e60]      ; 0047f03e | DAT_01c35e60
     MOV ESI,EAX                         ; 0047f044
     CALL shape_edittool.cpp_calculateButtonHeight_FUN_00485380 ; 0047f046
-        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_calculateButtonHeight_FUN_00485380()
+        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_00485380(char * button_text)
     ADD ESP,0x4                         ; 0047f04b
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0047f04e
     IMUL EDX,EAX                        ; 0047f052

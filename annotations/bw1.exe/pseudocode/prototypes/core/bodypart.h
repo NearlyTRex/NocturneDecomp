@@ -15,7 +15,7 @@ CBodyPart * __cdecl createBodyPart(CVector3f *position,UOrientationVector *orien
 
 // Original: core_bodypart.cpp_factoryFuncBodyPart_FUN_00418b10
 // Address: 00418b10
-void factoryFuncBodyPart(void);
+CBodyPart * __cdecl factoryFuncBodyPart(void);
 
 // Original: core_bodypart.cpp_CBodyPart_getActorType_FUN_00418b30
 // Address: 00418b30
@@ -159,4 +159,4 @@ SBodyPartModel * __cdecl SBodyPartModel::ctor(SBodyPartModel *this_ptr);
 
 // Original: core_bodypart.cpp_FUN_0041b190
 // Address: 0041b190
-void FUN_0041b190(undefined4 param_1);
+void FUN_0041b190(void *param_1);

@@ -11,7 +11,7 @@
 ; uint             Stack[0x14]:4   sfx_handle
 ;
 ; XREF[2]:
-;   core_emitter.cpp_FUN_00487c80 at 00487e65
+;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_00487c80 at 00487e65
 ;   core_fire.cpp_CFireball_onCollision_FUN_00499eb0 at 00499ede
 ;
 ; Referenced Globals:

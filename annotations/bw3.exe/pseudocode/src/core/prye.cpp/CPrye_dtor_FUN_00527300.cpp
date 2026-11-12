@@ -15,7 +15,7 @@ CPrye * core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CPryeTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CPryeTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

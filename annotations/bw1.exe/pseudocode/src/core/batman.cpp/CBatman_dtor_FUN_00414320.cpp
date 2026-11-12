@@ -18,7 +18,7 @@ CBatman * core_batman_cpp_CBatman_dtor_FUN_00414320(CBatman *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBatmanTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBatmanTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

@@ -14,7 +14,7 @@
 ;   undefined4 DAT_02c834ac
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_00580740
+;   engine_special.cpp_shutdownExternalRenderer_FUN_00580740
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     RET                                 ; 00581f2e
     CALL dword ptr [0x02c8338c]         ; 00581f2f | DAT_02c8338c
         ;   Label: LAB_00581f2f
-    CALL engine_special.cpp_FUN_00580740 ; 00581f35
-        ;   XREF to: 00580740 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00580740()
+    CALL engine_special.cpp_shutdownExternalRenderer_FUN_00580740 ; 00581f35
+        ;   XREF to: 00580740 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_shutdownExternalRenderer_FUN_00580740()
     MOV EAX,0x1                         ; 00581f3a
     RET                                 ; 00581f3f
 

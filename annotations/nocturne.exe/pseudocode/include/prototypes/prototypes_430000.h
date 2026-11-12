@@ -90,7 +90,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(int vertex_coun
 CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_00435100(CCloth *this_ptr);
 CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_00435160(CCloth *this_ptr,uint flags);
 void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_004351b0(CCloth *this_ptr);
-void __cdecl core_cloth_cpp_CCloth_FUN_00435210(CCloth *this_ptr);
+void __cdecl core_cloth_cpp_CCloth_free_FUN_00435210(CCloth *this_ptr);
 int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(CCloth *this_ptr,char *filename);
 void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_004357b0(CCloth *this_ptr);
 void __cdecl core_cloth_cpp_CCloth_setup_FUN_004359e0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);

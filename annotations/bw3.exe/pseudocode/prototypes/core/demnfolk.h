@@ -45,9 +45,9 @@ void FUN_00454d20(CEnemy *param_1);
 // Address: 00455080
 void FUN_00455080(CEnemy *param_1,float param_2);
 
-// Original: core_demnfolk.cpp_FUN_00457300
+// Original: core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_00457300
 // Address: 00457300
-void FUN_00457300(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CDemnfolk::getCarryObjToBodyXForm(CDemnfolk *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_demnfolk.cpp_FUN_00457740
 // Address: 00457740

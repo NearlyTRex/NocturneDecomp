@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004e8eb0(int *param_1)
+; void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004e8eb0(SProjectedVertex *point)
 ;
+; Parameters:
+; SProjectedVertex * Stack[0x4]:4   point
 ;
 ; XREF[3]:
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_0049f850 at 004a006e

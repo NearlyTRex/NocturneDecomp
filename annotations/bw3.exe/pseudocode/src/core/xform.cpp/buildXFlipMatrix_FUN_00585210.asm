@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_buildXFlipMatrix_FUN_00585210(float param_1)
+; CMatrix3x4f * __stack_esi core_xform_cpp_buildXFlipMatrix_FUN_00585210(float x_offset,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; float            Stack[0x4]:4   x_offset
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d8183

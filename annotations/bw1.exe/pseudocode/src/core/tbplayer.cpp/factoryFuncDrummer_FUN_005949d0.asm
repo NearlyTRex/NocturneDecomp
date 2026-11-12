@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tbplayer_cpp_factoryFuncDrummer_FUN_005949d0(void)
+; CDrummer * __cdecl core_tbplayer_cpp_factoryFuncDrummer_FUN_005949d0(void)
 ;
 ;
 ; Called Functions:

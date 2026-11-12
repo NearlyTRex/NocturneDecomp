@@ -109,7 +109,7 @@ section .text
     ADD EAX,0x8                         ; 004831d2
     PUSH EAX                            ; 004831d5
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 004831d6
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 004831db
     TEST EAX,EAX                        ; 004831de
     JZ 0x004831c6                       ; 004831e0

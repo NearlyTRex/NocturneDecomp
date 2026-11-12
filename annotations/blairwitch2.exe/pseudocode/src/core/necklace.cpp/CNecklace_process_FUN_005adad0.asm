@@ -145,7 +145,7 @@ section .text
     PUSH EAX                            ; 005adc0e
     LEA ESI,[EBP + 0xffffff26]          ; 005adc0f
     CALL core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10 ; 005adc15
-        ;   XREF to: 00593a10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10()
+        ;   XREF to: 00593a10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10(CQuaternion4f * quat_in, CMatrix3x4f * matrix_out)
     ADD ESP,0x4                         ; 005adc1a
     LEA EAX,[EBP + 0xffffff56]          ; 005adc1d
     LEA EDI,[EBP + 0xffffff56]          ; 005adc23

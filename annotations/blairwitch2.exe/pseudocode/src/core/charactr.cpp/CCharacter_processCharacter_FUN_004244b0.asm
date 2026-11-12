@@ -228,7 +228,7 @@ section .text
     PUSH dword ptr [ESI + 0x343c]       ; 004246ac
     PUSH EAX                            ; 004246b2
     CALL core_hero.cpp_isAnyHeroWithinCylinder_FUN_004ce180 ; 004246b3
-        ;   XREF to: 004ce180 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_isAnyHeroWithinCylinder_FUN_004ce180()
+        ;   XREF to: 004ce180 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinCylinder_FUN_004ce180(CVector3f * point, float horizontal_radius, float vertical_tolerance)
     ADD ESP,0xc                         ; 004246b8
     TEST EAX,EAX                        ; 004246bb
     JNZ 0x00424663                      ; 004246bd

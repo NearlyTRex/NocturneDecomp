@@ -25,13 +25,13 @@ void __cdecl CDemonSet::setPendingCamera(CDemonSet *this_ptr,int camera_index,fl
 // Address: 0055b200
 void __cdecl CDemonSet::clearCameraSwitchCooldown(CDemonSet *this_ptr);
 
-// Original: core_setdir.cpp_FUN_0055b220
+// Original: core_setdir.cpp_CDemonSet_refreshThumbs_FUN_0055b220
 // Address: 0055b220
-void FUN_0055b220(undefined4 *param_1,char *param_2);
+void __cdecl CDemonSet::refreshThumbs(CDemonSet *this_ptr,char *filename);
 
 // Original: core_setdir.cpp_FUN_0055b280
 // Address: 0055b280
-void FUN_0055b280(undefined4 *param_1,char *param_2);
+void FUN_0055b280(SIZE_T *param_1,char *param_2);
 
 // Original: core_setdir.cpp_FUN_0055b330
 // Address: 0055b330
@@ -59,7 +59,7 @@ int __cdecl CDemonSet::isPointInVdirGroup(CDemonSet *this_ptr,int box_index,CVec
 
 // Original: core_setdir.cpp_testOBBIntersection_FUN_0055bab0
 // Address: 0055bab0
-undefined4 __cdecl testOBBIntersection(float *param_1,float *param_2);
+int __cdecl testOBBIntersection(SVDBox *obb_a,SVDBox *obb_b);
 
 // Original: core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10
 // Address: 0055bf10

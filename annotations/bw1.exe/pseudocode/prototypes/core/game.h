@@ -15,7 +15,7 @@ void __cdecl setupMovieRecording(void);
 
 // Original: core_game.cpp_captureDebugMovieFrame_FUN_004cb950
 // Address: 004cb950
-void captureDebugMovieFrame(void);
+void __cdecl captureDebugMovieFrame(void);
 
 // Original: core_game.cpp_CGame_ctor_FUN_004cbc80
 // Address: 004cbc80
@@ -47,7 +47,7 @@ void __cdecl CGame::clearOverlay(CGame *this_ptr);
 
 // Original: core_game.cpp_drawHealthBar_FUN_004cc210
 // Address: 004cc210
-void __cdecl drawHealthBar(int param_1,int param_2,int param_3,int param_4,float param_5);
+void __cdecl drawHealthBar(int x1,int y1,int x2,int y2,float fill_percent);
 
 // Original: core_game.cpp_CGame_renderOverlay_FUN_004cc2b0
 // Address: 004cc2b0
@@ -67,7 +67,7 @@ void __cdecl CGame::processFudge(CGame *this_ptr);
 
 // Original: core_game.cpp_drawCreditsLine_FUN_004ccafe
 // Address: 004ccafe
-void drawCreditsLine(undefined4 param_1);
+void __cdecl drawCreditsLine(char *text_string);
 
 // Original: core_game.cpp_drawKeyBindingEntry_FUN_004ccb80
 // Address: 004ccb80
@@ -159,7 +159,7 @@ void __cdecl giveHeroWeapon(char *class_name);
 
 // Original: core_game.cpp_giveHeroWeaponAmmo_FUN_004d25fe
 // Address: 004d25fe
-void giveHeroWeaponAmmo(char *param_1,EAmmoType param_2);
+void __cdecl giveHeroWeaponAmmo(char *class_name,EAmmoType ammo_type);
 
 // Original: core_game.cpp_checkCheatAndGiveWeapon_FUN_004d2690
 // Address: 004d2690
@@ -247,7 +247,7 @@ void __cdecl CGame::slamDT(CGame *this_ptr,float delta_time);
 
 // Original: core_game.cpp_beginProfileTimer_FUN_004d7fbc
 // Address: 004d7fbc
-void beginProfileTimer(void);
+void __cdecl beginProfileTimer(void);
 
 // Original: core_game.cpp_endProfileTimer_FUN_004d7fe0
 // Address: 004d7fe0

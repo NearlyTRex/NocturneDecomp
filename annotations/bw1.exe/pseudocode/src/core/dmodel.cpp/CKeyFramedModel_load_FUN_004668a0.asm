@@ -84,13 +84,13 @@ section .text
         ;   Label: LAB_004668f1
     PUSH EBP                            ; 004668f2
     CALL crt_stdio.c_fgetc_FUN_005c0530 ; 004668f3
-        ;   XREF to: 005c0530 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005c0530()
+        ;   XREF to: 005c0530 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005c0530(_FILE * file)
     ADD ESP,0x4                         ; 004668f8
     PUSH EBP                            ; 004668fb
     PUSH EAX                            ; 004668fc
     MOV ESI,EAX                         ; 004668fd
     CALL crt_stdio.c_ungetc_FUN_005c0700 ; 004668ff
-        ;   XREF to: 005c0700 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ungetc_FUN_005c0700()
+        ;   XREF to: 005c0700 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005c0700(int character, _FILE * stream)
     ADD ESP,0x8                         ; 00466904
     CMP ESI,0x2f                        ; 00466907
     JNZ 0x004669db                      ; 0046690a

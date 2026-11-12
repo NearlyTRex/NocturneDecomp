@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;   sound_snddx.cpp_FUN_00577500
 ;   sound_snddx.cpp_FUN_00577880
 ;   sound_sndmain.cpp_FUN_005773f0
@@ -160,8 +160,8 @@ section .text
         ;   Label: LAB_00578e33
     MOV EDI,dword ptr [0x00611100]      ; 00578e38 | g_CConsolePtr
     PUSH EDI                            ; 00578e3e | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00578e3f
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00578e3f
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00578e44
     XOR EAX,EAX                         ; 00578e47
     ADD ESP,0x320                       ; 00578e49

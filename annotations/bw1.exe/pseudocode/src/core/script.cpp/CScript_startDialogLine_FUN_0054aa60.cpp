@@ -46,8 +46,7 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_0054aa60(CScript *this
   else {
     local_28 = this_ptr->message_duration;
   }
-  pCVar3 = (CDemonActor *)
-           core_script_cpp_getActor_FUN_005433c0
+  pCVar3 = core_script_cpp_getActor_FUN_005433c0
                      (actor_specifier,g_CCharacterClassInfo.name_hash,&g_CCharacterClassInfo);
   this_ptr->who_is_speaking = pCVar3;
   if (pCVar3 == (CDemonActor *)0x0) {
@@ -77,7 +76,7 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_0054aa60(CScript *this
     }
     if (bVar2) {
       sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
-      sound_sndmain_cpp_FUN_00572980(2);
+      sound_sndmain_cpp_setNextSfxChannel_FUN_00572980(2);
       uVar5 = core_sound_cpp_CSound_playSound_FUN_0057d880(0x02C82A60,this_ptr,sound_name);
       this_ptr->current_sfx_handle = uVar5;
       sound_sndmain_cpp_popSfxOptions_FUN_00572b40();

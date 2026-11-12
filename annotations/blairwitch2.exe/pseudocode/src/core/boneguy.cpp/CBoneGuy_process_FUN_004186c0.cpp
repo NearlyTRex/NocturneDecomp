@@ -313,7 +313,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_004186c0(CBoneGuy *this_ptr,f
                              (CVector3f *)uVar17,SUB84(uVar17,4),in_stack_fffffd98);
           pCVar2 = &(this_ptr->base).base.model;
           if (iVar8 < 0) {
-            engine_console_cpp_FUN_00436710();
+            engine_console_cpp_CConsole_printf_FUN_00436710
+                      (g_CConsolePtr,"%s gave up chase - I'm confused\n");
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0,1);
           }
           else {
@@ -450,7 +451,8 @@ LAB_00418dc3:
       if (EVar5 < WALK_STATE_NO_PATH) goto LAB_00418b36;
       if (EVar5 != WALK_STATE_NO_PATH) goto LAB_00418dc3;
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0,1);
-      engine_console_cpp_FUN_00436710();
+      engine_console_cpp_CConsole_printf_FUN_00436710
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
     }
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =

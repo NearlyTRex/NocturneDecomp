@@ -28,21 +28,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004eed60",
+      "from_addr": "004efc79",
+      "name": "core_menu.cpp_FUN_004eed60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004eb490",
       "from_addr": "004eb56e",
-      "name": "core_menu.cpp_FUN_004eb490",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_004eb490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eece0",
       "from_addr": "004eed16",
-      "name": "core_menu.cpp_FUN_004eece0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004eed60",
-      "from_addr": "004efc79",
-      "name": "core_menu.cpp_FUN_004eed60",
+      "name": "core_menu.cpp_getSinglePressedKey_FUN_004eece0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -158,7 +158,7 @@
       {
         "call_addr": "004eb56e",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eb490",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_004eb490",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,7 +169,7 @@
       {
         "call_addr": "004eb696",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eb490",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_004eb490",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -213,7 +213,7 @@
       {
         "call_addr": "004eed16",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eece0",
+        "caller": "core_menu.cpp_getSinglePressedKey_FUN_004eece0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -256,6 +256,32 @@
       "STORE": 90
     },
     "pcode_op_count": 1134
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d0960",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b93e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004dbe60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0049e8b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,

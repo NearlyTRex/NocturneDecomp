@@ -36,8 +36,8 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400(CBoneGuy *this_pt
   
   bVar9 = 0;
   pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(&this_ptr->base);
-  dest = (void *)__arrinit
-                           (pCVar4[1].base.base.create_event + 0x24,0x14,&g_SBoneGuyBoxTypeInfo);
+  dest = __arrinit
+                   (pCVar4[1].base.base.create_event + 0x24,0x14,&g_SBoneGuyBoxTypeInfo);
   *(CBoneGuy_full_vtable **)((int)dest + -0xcf9c) = &g_CBoneGuyVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
             ((CDeformableModelInstance *)((int)dest + -0xcf98),(char *)0x5b6d7a);

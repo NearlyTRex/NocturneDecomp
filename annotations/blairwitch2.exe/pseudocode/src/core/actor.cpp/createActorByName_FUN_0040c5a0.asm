@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_createActorByName_FUN_0040c5a0(undefined4 param_1)
+; CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c5a0(char *class_name)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   class_name
 ;
 ; XREF[11]:
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0 at 00410b1c
@@ -42,7 +44,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 0040c5a3
     PUSH ESI                            ; 0040c5a7
     CALL core_actor.cpp_getActorClassByName_FUN_0040c530 ; 0040c5a8
-        ;   XREF to: 0040c530 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getActorClassByName_FUN_0040c530()
+        ;   XREF to: 0040c530 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_getActorClassByName_FUN_0040c530(char * className)
     ADD ESP,0x4                         ; 0040c5ad
     MOV EBX,EAX                         ; 0040c5b0
     TEST EAX,EAX                        ; 0040c5b2

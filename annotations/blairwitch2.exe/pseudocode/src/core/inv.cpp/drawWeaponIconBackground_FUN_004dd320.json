@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 372,
+    "complexity_score": 146,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 62,
-    "suspect_count": 30,
+    "pseudocode_lines": 61,
+    "suspect_count": 8,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 192
+    "total_lines": 191
   },
   "cross_references": [
     {
@@ -31,9 +30,9 @@
         "004dd4d6"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_inv.cpp_drawWeaponIconBackground_FUN_004dd320",
-    "signature": "void core_inv_cpp_drawWeaponIconBackground_FUN_004dd320(int param_1,int param_2,int param_3,int param_4,int param_5)"
+    "signature": "void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_004dd320(int x1,int y1,int x2,int y2,int alpha)"
   },
   "function_calls": [
     {
@@ -102,13 +101,10 @@
         "call_addr": "004dd954",
         "call_type": "direct",
         "caller": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd670",
-        "estimated_params": 7,
+        "estimated_params": 5,
         "instructions_analyzed": 10,
         "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       },
@@ -116,22 +112,19 @@
         "call_addr": "004dd99b",
         "call_type": "direct",
         "caller": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd670",
-        "estimated_params": 7,
+        "estimated_params": 5,
         "instructions_analyzed": 10,
         "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 7,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.747967479674797,
@@ -169,11 +162,37 @@
     },
     "pcode_op_count": 461
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004fa770",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004dd3f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00500050",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.75
+    },
+    "nocturne.exe": {
+      "addr": "004c1dd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 76,
+    "frame_size": 96,
     "local_size": 76,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -273,50 +292,45 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alpha",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_inv_cpp_drawWeaponIconBackground_FUN_004dd320(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_inv_cpp_drawWeaponIconBackground_FUN_004dd320(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void core_inv_cpp_drawWeaponIconBackground_FUN_004dd320(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void core_inv_cpp_drawWeaponIconBackground_FUN_004dd320(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void core_inv_cpp_drawWeaponIconBackground_FUN_004dd320(int param_1,int param_2,int param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 20,
@@ -358,19 +372,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,param_5);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 26,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,param_5);",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,alpha);",
       "type": "undefined_data"
     },
     {
@@ -382,140 +388,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x = param_1 * iVar1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 28,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x = param_1 * iVar1;",
+      "text": "(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x = x1 * iVar1;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = param_2 * iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_x = iVar1 * param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_y = param_2 * iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_x = iVar1 * param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_y = iVar2 * param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_x = param_1 * iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_y = iVar2 * param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_18 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_1c = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "local_14 = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&g_CDemonCameraInstance,param_1,param_3,param_2,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&g_CDemonCameraInstance,param_1,param_3,param_2,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(&g_CDemonCameraInstance,param_1,param_3,param_2,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(&g_CDemonCameraInstance,param_1,param_3,param_2,param_4);",
-      "type": "unnamed_param"
     }
   ]
 }

@@ -19,7 +19,7 @@ void FUN_00408560(int param_1);
 
 // Original: core_actor.cpp_initTransformCache_FUN_00408580
 // Address: 00408580
-void __cdecl initTransformCache(undefined4 *param_1);
+CDemonActorTransformState * __cdecl initTransformCache(CDemonActorTransformState *transform_cache);
 
 // Original: core_actor.cpp_CDemonActor_ctor_FUN_004085c0
 // Address: 004085c0
@@ -243,19 +243,19 @@ void __cdecl archiveDescription(char *property_description,char *property_name);
 
 // Original: core_actor.cpp_archiveVector_FUN_0040b1c0
 // Address: 0040b1c0
-void __cdecl archiveVector(float *param_1,char *param_2);
+void __cdecl archiveVector(CVector3f *vector_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveOrientation_FUN_0040b260
 // Address: 0040b260
-void __cdecl archiveOrientation(float *param_1,char *param_2);
+void __cdecl archiveOrientation(COrientation *orient_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveLocation_FUN_0040b300
 // Address: 0040b300
-void __cdecl archiveLocation(float *param_1,char *param_2);
+void __cdecl archiveLocation(CLocation *location_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveQuaternion_FUN_0040b3a0
 // Address: 0040b3a0
-void __cdecl archiveQuaternion(float *param_1,char *param_2);
+void __cdecl archiveQuaternion(CQuaternion4f *quat_ptr,char *property_type);
 
 // Original: core_actor.cpp_archiveString_FUN_0040b440
 // Address: 0040b440
@@ -267,7 +267,7 @@ void __cdecl archiveLocalizedString(char *string_buffer,char *localization_key);
 
 // Original: core_actor.cpp_archiveFloat_FUN_0040b5f0
 // Address: 0040b5f0
-void __cdecl archiveFloat(float *param_1,char *param_2);
+void __cdecl archiveFloat(float *float_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveInteger_FUN_0040b670
 // Address: 0040b670
@@ -275,11 +275,11 @@ void __cdecl archiveInteger(int *int_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveActor_FUN_0040b6f0
 // Address: 0040b6f0
-void __cdecl archiveActor(undefined4 *param_1,char *param_2);
+void __cdecl archiveActor(CDemonActor **actor_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770
 // Address: 0040b770
-void __cdecl archiveKeyframedModelInstance(CKeyFramedModelInstance *param_1,char *param_2);
+void __cdecl archiveKeyframedModelInstance(CKeyFramedModelInstance *model_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0
 // Address: 0040b7f0
@@ -299,11 +299,11 @@ void __cdecl archiveBox(CBox *box_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveClothList_FUN_0040bce0
 // Address: 0040bce0
-void __cdecl archiveClothList(int *param_1,char *param_2);
+void __cdecl archiveClothList(CClothList *cloth_list,char *property_name);
 
 // Original: core_actor.cpp_archiveRules_FUN_0040be80
 // Address: 0040be80
-void __cdecl archiveRules(int *param_1,char *param_2);
+void __cdecl archiveRules(CRuleList *rules,char *property_name);
 
 // Original: core_actor.cpp_CDemonActor_archive_FUN_0040c040
 // Address: 0040c040
@@ -319,19 +319,19 @@ CDemonActorType * registerActorClass(CDemonActorType *this_ptr,char *class_name,
 
 // Original: core_actor.cpp_getActorClassByName_FUN_0040c240
 // Address: 0040c240
-int __cdecl getActorClassByName(byte *param_1);
+CDemonActorType * __cdecl getActorClassByName(char *className);
 
 // Original: core_actor.cpp_createActorByName_FUN_0040c2b0
 // Address: 0040c2b0
-int __cdecl createActorByName(undefined4 param_1);
+CDemonActor * __cdecl createActorByName(char *class_name);
 
 // Original: core_actor.cpp_matchClassTerm_FUN_0040c370
 // Address: 0040c370
-uint __cdecl matchClassTerm(CDemonActorType *param_1,int *param_2);
+int __cdecl matchClassTerm(CDemonActorType *type_ptr,char **parse_pos);
 
 // Original: core_actor.cpp_matchClassExpression_FUN_0040c490
 // Address: 0040c490
-undefined4 __cdecl matchClassExpression(undefined4 param_1,undefined4 *param_2);
+int __cdecl matchClassExpression(CDemonActorType *type_ptr,char **parse_pos);
 
 // Original: core_actor.cpp_isOfClass_FUN_0040c550
 // Address: 0040c550
@@ -347,15 +347,15 @@ int __cdecl CDemonActor::shouldIgnoreForTargeting(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_matchesClassName_FUN_0040c5b0
 // Address: 0040c5b0
-bool __cdecl matchesClassName(undefined4 param_1);
+int __cdecl matchesClassName(CDemonActorType *type_ptr,char *class_name);
 
 // Original: core_actor.cpp_isOfClassHash_FUN_0040c5d0
 // Address: 0040c5d0
-void __cdecl isOfClassHash(int param_1,uint param_2);
+int __cdecl isOfClassHash(CDemonActor *actor_ptr,uint class_name_hash);
 
 // Original: core_actor.cpp_castToClassHash_FUN_0040c600
 // Address: 0040c600
-int __cdecl castToClassHash(int param_1,undefined4 param_2);
+CDemonActor * __cdecl castToClassHash(CDemonActor *actor_ptr,uint class_name_hash);
 
 // Original: core_actor.cpp_syncActorTypeIDs_FUN_0040c630
 // Address: 0040c630
@@ -399,7 +399,7 @@ int __cdecl randomChance(float probability_threshold);
 
 // Original: core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 // Address: 0040cd60
-float normalizeAngleToPi(float param_1);
+float __cdecl normalizeAngleToPi(float angle_radians);
 
 // Original: core_actor.cpp_crc32ProcessByte_FUN_0040ce20
 // Address: 0040ce20
@@ -415,7 +415,7 @@ void __cdecl crc32ProcessInt(uint *crc_state,int value);
 
 // Original: core_actor.cpp_crc32ProcessVector_FUN_0040cf60
 // Address: 0040cf60
-void __cdecl crc32ProcessVector(uint *param_1,byte *param_2);
+void __cdecl crc32ProcessVector(uint *crc_state,CVector3f *vector);
 
 // Original: core_actor.cpp_crc32ProcessString_FUN_0040cf80
 // Address: 0040cf80
@@ -437,9 +437,9 @@ void FUN_0040cff0(undefined4 *param_1,undefined4 *param_2);
 // Address: 0040d010
 float FUN_0040d010(float *param_1);
 
-// Original: core_actor.cpp_FUN_0040d060
+// Original: core_actor.cpp_CVector3f_toFixed8_FUN_0040d060
 // Address: 0040d060
-void FUN_0040d060(float *param_1,int *param_2);
+void __cdecl CVector3f::toFixed8(CVector3f *this_ptr,CVector3i *other);
 
 // Original: core_actor.cpp_CVector3f_dtor_FUN_0040d090
 // Address: 0040d090

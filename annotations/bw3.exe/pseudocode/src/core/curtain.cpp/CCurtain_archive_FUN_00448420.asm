@@ -47,7 +47,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 00448436
     PUSH EAX                            ; 0044843c
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 0044843d
-        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b400()
+        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b400(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 00448442
     PUSH 0x5b9ac5                       ; 00448445 | = "curtainTexture"
     LEA EAX,[EBX + 0x16c]               ; 0044844a
@@ -97,31 +97,31 @@ section .text
     LEA EAX,[EBX + 0x65b14]             ; 004484e5
     PUSH EAX                            ; 004484eb
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 004484ec
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004484f1
     PUSH 0x5b9aeb                       ; 004484f4 | = "dampen"
     LEA EAX,[EBX + 0x65b18]             ; 004484f9
     PUSH EAX                            ; 004484ff
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00448500
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00448505
     PUSH 0x5b9af2                       ; 00448508 | = "spring"
     LEA EAX,[EBX + 0x65b1c]             ; 0044850d
     PUSH EAX                            ; 00448513
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00448514
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00448519
     PUSH 0x5b9af9                       ; 0044851c | = "friction"
     LEA EAX,[EBX + 0x65b20]             ; 00448521
     PUSH EAX                            ; 00448527
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00448528
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0044852d
     PUSH 0x5b9b02                       ; 00448530 | = "gravity"
     LEA EAX,[EBX + 0x65b24]             ; 00448535
     PUSH EAX                            ; 0044853b
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0044853c
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00448541
     PUSH 0x5b9b0a                       ; 00448544 | = "hitFloor"
     LEA EAX,[EBX + 0x65b2c]             ; 00448549
@@ -187,7 +187,7 @@ section .text
     LEA EAX,[EBX + 0x1fc]               ; 00448604
     PUSH EAX                            ; 0044860a
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0044860b
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00448610
     CMP dword ptr [0x005f1784],0x6      ; 00448613 | g_CCurtainClassVersion
         ;   Label: LAB_00448613

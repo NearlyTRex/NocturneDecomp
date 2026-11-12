@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gun_cpp_factoryFuncGun_FUN_004d0f30(void)
+; CGun * __cdecl core_gun_cpp_factoryFuncGun_FUN_004d0f30(void)
 ;
 ;
 ; Called Functions:

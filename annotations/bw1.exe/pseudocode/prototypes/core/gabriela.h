@@ -23,7 +23,7 @@ float __cdecl aimRotationBlendWeightCallback(int current_bone_index,int target_b
 
 // Original: core_gabriela.cpp_factoryFuncGabriella_FUN_004c6240
 // Address: 004c6240
-void factoryFuncGabriella(void);
+CGabriella * __cdecl factoryFuncGabriella(void);
 
 // Original: core_gabriela.cpp_CGabriella_getActorType_FUN_004c6260
 // Address: 004c6260

@@ -69,12 +69,12 @@
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
+;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
+;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
-;   engine_drender.cpp_FUN_004839b0
-;   engine_drender.cpp_FUN_00483c10
 ;   engine_drender.cpp_popViewport_FUN_00483c40
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
 ;   engine_font.cpp_FUN_004c1dd0
@@ -115,8 +115,8 @@ section .text
     PUSH ECX                            ; 004fea1a
     MOV EBX,dword ptr [0x00612560]      ; 004fea1b | DAT_00612560
     PUSH EBX                            ; 004fea21 | DAT_01bc120c
-    CALL engine_drender.cpp_FUN_00483c10 ; 004fea22
-        ;   XREF to: 00483c10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483c10()
+    CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10 ; 004fea22
+        ;   XREF to: 00483c10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 004fea27
     PUSH 0x2c8af28                      ; 004fea2a | DAT_02c8af28
         ;   Label: LAB_004fea2a
@@ -136,8 +136,8 @@ section .text
         ;   Label: LAB_004fea59
     PUSH dword ptr [ESP + 0x78]         ; 004fea5f
     PUSH ECX                            ; 004fea63 | DAT_01bc120c
-    CALL engine_drender.cpp_FUN_004839b0 ; 004fea64
-        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_004839b0()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0 ; 004fea64
+        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004fea69
     PUSH 0x2c8af28                      ; 004fea6c | DAT_02c8af28
     MOV EBX,dword ptr [0x00612560]      ; 004fea71 | DAT_00612560

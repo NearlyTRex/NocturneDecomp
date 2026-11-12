@@ -11,17 +11,17 @@ void __cdecl core_ladder_cpp_CLadder_updatePositionFromMaster_FUN_004e0240(CLadd
 {
   UOrientationVector *pUVar1;
   int iVar2;
-  uint *puVar3;
-  uint *puVar4;
+  CMatrix3x4f *pCVar3;
+  float *pfVar4;
   byte bVar5;
   float afStackY_101c [965];
-  uint auStack_f4 [3];
+  float afStack_f4 [3];
   float fStack_e8;
   uint uStack_d8;
   uint uStack_c8;
-  byte auStack_c4 [48];
-  byte auStack_94 [48];
-  uint auStack_64 [12];
+  CMatrix3x4f CStack_c4;
+  CMatrix3x4f CStack_94;
+  CMatrix3x4f CStack_64;
   float fStack_34;
   float afStack_30 [4];
   float fStack_20;
@@ -35,16 +35,16 @@ void __cdecl core_ladder_cpp_CLadder_updatePositionFromMaster_FUN_004e0240(CLadd
     return;
   }
   core_xform_cpp_FUN_00591c10
-            (auStack_c4,&this_ptr->relative_position,&this_ptr->cached_euler_angles);
+            (&CStack_c4,&this_ptr->relative_position,&this_ptr->cached_euler_angles);
   core_xform_cpp_FUN_00591c10
-            (auStack_94,&this_ptr->master_actor->location,&this_ptr->master_actor->orient);
-  core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(auStack_c4,auStack_94);
-  puVar3 = auStack_64;
-  puVar4 = auStack_f4;
+            (&CStack_94,&this_ptr->master_actor->location,&this_ptr->master_actor->orient);
+  core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&CStack_c4,&CStack_94,&CStack_64);
+  pCVar3 = &CStack_64;
+  pfVar4 = afStack_f4;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+    *pfVar4 = pCVar3->m[0].w;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
   }
   fStack_10 = fStack_e8;
   uStack_c = uStack_d8;
@@ -56,7 +56,7 @@ void __cdecl core_ladder_cpp_CLadder_updatePositionFromMaster_FUN_004e0240(CLadd
   (this_ptr->base).location.position.x = fStack_34;
   (this_ptr->base).location.position.y = afStack_30[0];
   (this_ptr->base).location.position.z = afStack_30[1];
-  core_xform_cpp_matrixToEulerAngles_FUN_00591de0(auStack_f4);
+  core_xform_cpp_matrixToEulerAngles_FUN_00591de0(afStack_f4);
   pUVar1 = &(this_ptr->base).orient;
   afStack_30[2] = fStack_1c;
   afStack_30[(uint)bVar5 * -2 + 3] = afStack_30[(uint)bVar5 * -2 + 6];

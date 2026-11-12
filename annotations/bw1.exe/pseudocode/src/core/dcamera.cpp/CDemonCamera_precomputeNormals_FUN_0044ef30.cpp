@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044ef30(CDemonCamera *this_ptr)
@@ -24,12 +23,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044ef30(CDemon
   byte bVar10;
   int aiStackY_106c [1014];
   int local_88;
-  uint local_84;
-  uint local_78;
-  uint local_6c;
-  uint local_60;
-  int local_58;
-  uint local_54;
+  int local_84;
+  CVector3i local_78;
+  int local_6c;
+  int aiStack_68 [2];
+  CVector3i local_60;
+  CVector3i local_54;
   int local_48;
   int local_44;
   int local_40;
@@ -60,40 +59,38 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044ef30(CDemon
           local_24 = local_24 + this_ptr->scale_factor;
           core_dcamera_cpp_FUN_0044dd70
                     (this_ptr,local_28 * this_ptr->scale_factor,local_38 * this_ptr->scale_factor);
-          local_60 = local_84;
-          *(uint *)((int)&stack0xffffffa4 + (uint)bVar10 * 0xfffffffe * 4) =
+          local_60.x = local_84;
+          *(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =
                *(uint *)(&stack0xffffff80 + (uint)bVar10 * -8);
-          *(uint *)((int)&stack0xffffffa8 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
+          *(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
                *(uint *)(&stack0xffffff84 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-          if ((local_58 != 0x7fffffff) && (local_88 < local_58)) {
-            local_88 = local_58;
+          if ((local_60.z != 0x7fffffff) && (local_88 < local_60.z)) {
+            local_88 = local_60.z;
           }
-          core_dcamera_cpp_FUN_0044de40(this_ptr,&stack0xffffffa0);
-          local_6c = local_54;
-          *(uint *)(&stack0xffffff98 + (uint)bVar10 * -8) =
-               *(uint *)(&stack0xffffffb0 + (uint)bVar10 * -8);
-          *(uint *)(&stack0xffffff9c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
-               *(uint *)(&stack0xffffffb4 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+          core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044de40
+                    (this_ptr,&local_60,&local_54);
+          local_6c = local_54.x;
+          aiStack_68[(uint)bVar10 * -2] = *(int *)((int)&local_54 + (uint)bVar10 * -8 + 4);
+          aiStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+               *(int *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
           puVar8 = (uint *)(local_30 + 0x939bdc + (uint)bVar10 * -8);
-          *(uint *)(local_30 + 0x939bd8) = local_54;
-          *puVar8 = *(uint *)(&stack0xffffffb0 + (uint)bVar10 * -8);
+          *(int *)(local_30 + 0x939bd8) = local_54.x;
+          *puVar8 = *(uint *)((int)&local_54 + (uint)bVar10 * -8 + 4);
           puVar8[(uint)bVar10 * -2 + 1] =
-               *(uint *)(&stack0xffffffb4 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+               *(uint *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
           if (*local_24 >> 0x18 != 0) {
-            core_dcamera_cpp_FUN_004546d0(this_ptr,&stack0xffffffa0,*local_24 >> 0x18);
-            local_6c = local_78;
-            *(uint *)(&stack0xffffff98 + (uint)bVar10 * -8) =
-                 *(uint *)(&stack0xffffff8c + (uint)bVar10 * -8);
-            *(uint *)(&stack0xffffff9c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
-                 *(uint *)(&stack0xffffff90 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+            core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_004546d0
+                      (this_ptr,&local_60,*local_24 >> 0x18,&local_78);
+            local_6c = local_78.x;
+            aiStack_68[(uint)bVar10 * -2] = *(int *)((int)&local_78 + (uint)bVar10 * -8 + 4);
+            aiStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+                 *(int *)((int)&local_78 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
           }
-          *(uint *)(&DAT_00857cd8 + iVar7) = local_6c;
-          *(uint *)(&DAT_00857cdc + (uint)bVar10 * -8 + iVar7) =
-               *(uint *)(&stack0xffffff98 + (uint)bVar10 * -8);
-          *(uint *)
-           ((int)(&DAT_00857cdc + (uint)bVar10 * -8 + iVar7) + ((uint)bVar10 * -2 + 1) * 4) =
-               *(uint *)(&stack0xffffff9c + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-          *(int *)(local_2c + 0xb36198) = local_58;
+          *(int *)(&DAT_00857cd8 + iVar7) = local_6c;
+          *(int *)(&DAT_00857cdc + (uint)bVar10 * -8 + iVar7) = aiStack_68[(uint)bVar10 * -2];
+          *(int *)((int)(&DAT_00857cdc + (uint)bVar10 * -8 + iVar7) + ((uint)bVar10 * -2 + 1) * 4) =
+               aiStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          *(int *)(local_2c + 0xb36198) = local_60.z;
           uVar9 = *local_24;
           uVar3 = *local_24;
           fVar1 = (float)_DAT_005d771f;

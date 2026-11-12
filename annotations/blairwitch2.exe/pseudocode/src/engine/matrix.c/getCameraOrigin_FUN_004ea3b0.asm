@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_matrix_c_getCameraOrigin_FUN_004ea3b0(void)
+; void __esi engine_matrix_c_getCameraOrigin_FUN_004ea3b0(CVector3i *output)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
@@ -11,7 +11,7 @@
 ; XREF[4]:
 ;   core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00442f00 at 00442f07
 ;   core_ground.cpp_CGround_render_FUN_004cb700 at 004cb70c
-;   engine_drender.cpp_FUN_0046b5c0 at 0046b5cb
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0 at 0046b5cb
 ;   engine_drender.cpp_FUN_0046b5e0 at 0046b5ef
 ;
 ; Referenced Globals:

@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 245,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 55,
-    "suspect_count": 17,
+    "pseudocode_lines": 56,
+    "suspect_count": 5,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 164
+    "total_lines": 165
   },
   "cross_references": [
     {
@@ -36,7 +34,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dskybox.cpp_generateSkyDomeVertex_FUN_004867c0",
-    "signature": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004867c0(undefined4 *param_1,int param_2,int param_3)"
+    "signature": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004867c0(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index)"
   },
   "function_calls": [
     {
@@ -139,11 +137,11 @@
         "stack_params": 4
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
     "estimated_params": 4,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.31,
@@ -182,11 +180,37 @@
     },
     "pcode_op_count": 531
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046e2d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046f340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004900b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00463440",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 76,
+    "frame_size": 92,
     "local_size": 76,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -244,6 +268,34 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sky_texture",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLSkyTexture *"
+      },
+      {
+        "is_param": true,
+        "name": "u_coord",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "v_coord",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -274,135 +326,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004867c0(uint *param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004867c0(uint *param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004867c0(uint *param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_18 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_1c = (float)param_2 * _DAT_005db6f8 * _DAT_005db6fc * (float)_DAT_005db704;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_48 = (float)param_3 * _DAT_005db70c * _DAT_005db6fc * (float)_DAT_005db714;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_18 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = (float10)fsin((float10)local_1c + (float10)(float)param_1[7]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar6 = (float10)fcos((float10)local_1c + (float10)(float)param_1[7]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_00629034",
-      "severity": "mild",
-      "text": "(&DAT_00629034)[iVar2 * 4] = uVar1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 55,
-      "match": "DAT_00629038",
+      "match": "DAT_00629034",
       "severity": "mild",
-      "text": "(&DAT_00629038)[iVar2 * 4] = uVar1;",
+      "text": "(&DAT_00629034)[iVar2 * 4] = iVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 56,
-      "match": "DAT_0062903c",
+      "match": "DAT_00629038",
       "severity": "mild",
-      "text": "(&DAT_0062903c)[iVar2 * 4] = uVar1;",
+      "text": "(&DAT_00629038)[iVar2 * 4] = iVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 57,
+      "match": "DAT_0062903c",
+      "severity": "mild",
+      "text": "(&DAT_0062903c)[iVar2 * 4] = iVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
       "match": "DAT_00629040",
       "severity": "mild",
       "text": "(&DAT_00629040)[iVar2 * 4] = 0;",
       "type": "undefined_data"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

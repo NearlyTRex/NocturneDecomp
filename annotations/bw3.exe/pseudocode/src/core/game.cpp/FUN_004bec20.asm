@@ -143,7 +143,7 @@ section .text
     LEA EAX,[ESP + 0x40c]               ; 004bed03
     PUSH EAX                            ; 004bed0a
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004bed0b
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004bed10
     PUSH EBX                            ; 004bed13
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004bed14
@@ -196,7 +196,7 @@ section .text
     JNZ 0x004bed27                      ; 004bedd9
         ;   XREF to: 004bed27 (CONDITIONAL_JUMP)  ; LAB_004bed27
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0 ; 004beddf
-        ;   XREF to: 0057a3c0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0()
+        ;   XREF to: 0057a3c0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0()
     CALL engine_special.cpp_FUN_00565820 ; 004bede4
         ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00565820()
     CALL engine_special.cpp_clearScreen_FUN_00560d70 ; 004bede9
@@ -252,7 +252,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xa20]     ; 004bee95
     PUSH EBX                            ; 004bee9c
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004bee9d
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004beea2
     PUSH ESI                            ; 004beea5
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004beea6

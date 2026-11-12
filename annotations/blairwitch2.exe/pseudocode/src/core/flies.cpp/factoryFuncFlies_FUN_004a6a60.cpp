@@ -1,20 +1,20 @@
 // Name: core_flies.cpp_factoryFuncFlies_FUN_004a6a60
 // Address: 004a6a60
 // Address Range: [[004a6a60, 004a6a7b]]
-// Convention: unknown
-// Signature: void core_flies_cpp_factoryFuncFlies_FUN_004a6a60(void)
+// Convention: __cdecl
+// Signature: CFlies * __cdecl core_flies_cpp_factoryFuncFlies_FUN_004a6a60(void)
 
 #include "nocturne.h"
 
-void core_flies_cpp_factoryFuncFlies_FUN_004a6a60(void)
+CFlies * __cdecl core_flies_cpp_factoryFuncFlies_FUN_004a6a60(void)
 
 {
-  CFlies *this_ptr;
+  CFlies *pCVar1;
   
-  this_ptr = (CFlies *)operator_new(0x2b7c);
-  if (this_ptr == (CFlies *)0x0) {
-    return;
+  pCVar1 = (CFlies *)operator_new(0x2b7c);
+  if (pCVar1 == (CFlies *)0x0) {
+    return (CFlies *)0x0;
   }
-  core_flies_cpp_CFlies_ctor_FUN_004a6a90(this_ptr);
-  return;
+  pCVar1 = core_flies_cpp_CFlies_ctor_FUN_004a6a90(pCVar1);
+  return pCVar1;
 }

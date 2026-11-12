@@ -112,7 +112,7 @@ section .text
     MOV [0x007e4d50],EAX                ; 00439698 | DAT_007e4d50
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 0043969d
     CALL engine_clipper.c_interpolateVertexRightClip_FUN_004390c0 ; 004396a1
-        ;   XREF to: 004390c0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClip_FUN_004390c0()
+        ;   XREF to: 004390c0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_004390c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 004396a6
     JMP 0x00439634                      ; 004396a9
         ;   XREF to: 00439634 (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -143,7 +143,7 @@ section .text
     MOV [0x007e4d50],EAX                ; 004396f0 | DAT_007e4d50
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 004396f5
     CALL engine_clipper.c_interpolateVertexRightClip_FUN_004390c0 ; 004396f9
-        ;   XREF to: 004390c0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClip_FUN_004390c0()
+        ;   XREF to: 004390c0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_004390c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 004396fe
     JMP 0x00439634                      ; 00439701
         ;   XREF to: 00439634 (UNCONDITIONAL_JUMP)  ; caseD_3

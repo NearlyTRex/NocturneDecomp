@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trash_cpp_factoryFuncTrash_FUN_0059a1c0(void)
+; CTrash * __cdecl core_trash_cpp_factoryFuncTrash_FUN_0059a1c0(void)
 ;
 ;
 ; Called Functions:

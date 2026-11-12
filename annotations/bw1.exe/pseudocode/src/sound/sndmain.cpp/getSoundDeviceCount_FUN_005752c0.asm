@@ -50,7 +50,7 @@ section .text
     PUSH ESI                            ; 005752f0
     MOV dword ptr [0x006232f8],EBX      ; 005752f1 | DAT_006232f8
     CALL sound_sndwav.cpp_enumerateWavOutDevice_FUN_0057b370 ; 005752f7
-        ;   XREF to: 0057b370 (UNCONDITIONAL_CALL)  ; undefined sound_sndwav.cpp_enumerateWavOutDevice_FUN_0057b370()
+        ;   XREF to: 0057b370 (UNCONDITIONAL_CALL)  ; int sound_sndwav.cpp_enumerateWavOutDevice_FUN_0057b370(UINT device_id, SSoundDeviceInfo * device_info)
     MOV EBX,dword ptr [0x006232f8]      ; 005752fc | DAT_006232f8
     ADD ESP,0x8                         ; 00575302
     TEST EAX,EAX                        ; 00575305
@@ -73,7 +73,7 @@ section .text
     PUSH ESI                            ; 00575323
     MOV dword ptr [0x006232f8],EBX      ; 00575324 | DAT_006232f8
     CALL sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0057a290 ; 0057532a
-        ;   XREF to: 0057a290 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0057a290()
+        ;   XREF to: 0057a290 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0057a290(UINT device_id, SSoundDeviceInfo * device_info)
     MOV EBX,dword ptr [0x006232f8]      ; 0057532f | DAT_006232f8
     ADD ESP,0x8                         ; 00575335
     TEST EAX,EAX                        ; 00575338

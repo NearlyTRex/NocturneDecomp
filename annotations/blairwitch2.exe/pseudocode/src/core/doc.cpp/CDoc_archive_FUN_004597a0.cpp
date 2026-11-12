@@ -10,18 +10,19 @@ void __cdecl core_doc_cpp_CDoc_archive_FUN_004597a0(CDoc *this_ptr)
 
 {
   int iStack_10;
-  byte auStack_c [4];
-  uint uStack_8;
+  float fStack_c;
+  CDemonActor *pCStack_8;
   
   core_hero_cpp_FUN_004ce590(this_ptr);
   if ((1 < g_CDocClassVersion) && (g_CDocClassVersion < 5)) {
     core_actor_cpp_archiveActor_FUN_0040b9e0
               (&(this_ptr->base).object_to_pick_up,"@objectToPickUp" + 1);
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&(this_ptr->base).door_to_open,"doorToOpen");
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&(this_ptr->base).lever_to_pull,"leverToPull")
-    ;
     core_actor_cpp_archiveActor_FUN_0040b9e0
-              (&(this_ptr->base).ladder_to_climb,"ladderToClimb");
+              ((CDemonActor **)&(this_ptr->base).door_to_open,"doorToOpen");
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              ((CDemonActor **)&(this_ptr->base).lever_to_pull,"leverToPull");
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              ((CDemonActor **)&(this_ptr->base).ladder_to_climb,"ladderToClimb");
   }
   if (g_CDocClassVersion == 2) {
     core_actor_cpp_archiveActor_FUN_0040b9e0
@@ -31,13 +32,13 @@ void __cdecl core_doc_cpp_CDoc_archive_FUN_004597a0(CDoc *this_ptr)
   }
   if (3 < g_CDocClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b9e0
-              (&this_ptr->ladder_to_descend,"ladderToDescend");
+              ((CDemonActor **)&this_ptr->ladder_to_descend,"ladderToDescend");
   }
   if (5 < g_CDocClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->guns_drawn,"gunDrawn");
   }
   if (6 < g_CDocClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->weapon,"weapon");
+    core_actor_cpp_archiveActor_FUN_0040b9e0((CDemonActor **)&this_ptr->weapon,"weapon");
   }
   if (7 < g_CDocClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->action_pending,"actionPending");
@@ -51,10 +52,10 @@ void __cdecl core_doc_cpp_CDoc_archive_FUN_004597a0(CDoc *this_ptr)
   if (g_CDocClassVersion < 10) {
     return;
   }
-  uStack_8 = 0;
+  pCStack_8 = (CDemonActor *)0x0;
   core_actor_cpp_archiveInteger_FUN_0040b960(&iStack_10,"lanternMode");
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(auStack_c,"lanternTweenPct");
-  core_actor_cpp_archiveActor_FUN_0040b9e0(&uStack_8,"LanternPointer");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&fStack_c,"lanternTweenPct");
+  core_actor_cpp_archiveActor_FUN_0040b9e0(&pCStack_8,"LanternPointer");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->model_name,"modelName");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->cloth_name,"clothName");
   return;

@@ -13,8 +13,8 @@
 ;   cockpit_pkbitmap.cpp_FUN_00510430 at 00510491
 ;   cockpit_pkbmpset.cpp_FUN_0051080e at 00510a03
 ;   cockpit_pkbmpset.cpp_FUN_00510a90 at 00510b74
-;   core_cloth.cpp_FUN_0043c330 at 0043c7ba
-;   core_course.cpp_FUN_00444970 at 00444a61
+;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c7ba
+;   core_course.cpp_CCourse_load_FUN_00444970 at 00444a61
 ;   ... and 57 more
 ;
 ; Referenced Globals:

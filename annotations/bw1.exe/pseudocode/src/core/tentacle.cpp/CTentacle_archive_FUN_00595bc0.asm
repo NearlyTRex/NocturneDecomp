@@ -60,7 +60,7 @@ section .text
     ADD EBX,0xc270                      ; 00595c15
     PUSH EBX                            ; 00595c1b
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 00595c1c
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00595c21
     POP ESI                             ; 00595c24
     POP EBX                             ; 00595c25
@@ -70,7 +70,7 @@ section .text
     LEA ESI,[EBX + 0xc1e0]              ; 00595c2c
     PUSH ESI                            ; 00595c32
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00595c33
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00595c38
     JMP 0x00595bee                      ; 00595c3b
         ;   XREF to: 00595bee (UNCONDITIONAL_JUMP)  ; LAB_00595bee

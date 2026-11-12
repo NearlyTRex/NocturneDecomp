@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[13]:
-;   core_emitter.cpp_FUN_00487c80 at 00487d63
+;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_00487c80 at 00487d63
 ;   core_fire.cpp_FUN_00497290 at 0049737a
 ;   core_gore.cpp_CBloodSplat_initWallSplat_FUN_004cd510 at 004cd54f
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0 at 004cea9a

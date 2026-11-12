@@ -11,7 +11,7 @@
 void __cdecl core_dskybox_cpp_staticInit_FUN_0046f2d0(void)
 
 {
-  core_dskybox_cpp_initializeSkyboxTexture_FUN_0046f300(0x1c0b558);
+  core_dskybox_cpp_initializeSkyboxTexture_FUN_0046f300((SMRGLSkyTexture *)0x1c0b558);
   _DAT_01c0b798 = 0;
   _DAT_01c0b79c = 0;
   _DAT_01c0b7a0 = 0;

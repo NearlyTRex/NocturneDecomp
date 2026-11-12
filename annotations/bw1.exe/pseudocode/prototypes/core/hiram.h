@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_hiram.cpp_factoryFuncHiram_FUN_004ed160
 // Address: 004ed160
-void factoryFuncHiram(void);
+CHiram * __cdecl factoryFuncHiram(void);
 
 // Original: core_hiram.cpp_CHiram_getActorType_FUN_004ed180
 // Address: 004ed180

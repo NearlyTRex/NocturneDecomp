@@ -117,7 +117,7 @@ section .text
     LEA EAX,[ESP + 0x1010]              ; 004d8ef4
     PUSH EAX                            ; 004d8efb
     CALL crt_stdio.c_fgets_FUN_005c1180 ; 004d8efc
-        ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005c1180()
+        ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005c1180(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004d8f01
     PUSH 0x5e359e                       ; 004d8f04 | DAT_005e359e
     LEA EAX,[ESP + 0x100c]              ; 004d8f09
@@ -359,8 +359,8 @@ section .text
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
         ;   Label: LAB_004d91b4
     PUSH 0x1                            ; 004d91b9
-    CALL sound_sndmain.cpp_FUN_00572980 ; 004d91bb
-        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572980(int channel_index)
+    CALL sound_sndmain.cpp_setNextSfxChannel_FUN_00572980 ; 004d91bb
+        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_00572980(int channel_index)
     ADD ESP,0x4                         ; 004d91c0
     PUSH 0x1                            ; 004d91c3
     CALL sound_sndmain.cpp_FUN_005729f0 ; 004d91c5

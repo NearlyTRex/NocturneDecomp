@@ -15,7 +15,7 @@ CSimpleCross * core_cross_cpp_CSimpleCross_dtor_FUN_005a7a60(CSimpleCross *this_
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSimpleCrossTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSimpleCrossTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

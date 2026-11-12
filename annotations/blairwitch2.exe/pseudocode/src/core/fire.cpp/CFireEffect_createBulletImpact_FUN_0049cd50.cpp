@@ -55,7 +55,7 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_0049cd50(CFireEffe
         } while (iVar1 < _DAT_01c558e0);
       }
       if (local_18 != 0) {
-        this_ptr_00 = (CBulletHole *)core_fire_cpp_allocateBulletHole_FUN_0049c120();
+        this_ptr_00 = core_fire_cpp_allocateBulletHole_FUN_0049c120();
         core_fire_cpp_CBulletHole_init_FUN_00493a40(this_ptr_00,impact_pos,surface_normal,hit_actor)
         ;
       }

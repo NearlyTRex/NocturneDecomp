@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_path_cpp_renderGridQuad_FUN_0050c750(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,int param_7)
+; void __cdecl core_path_cpp_renderGridQuad_FUN_0050c750(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha)
 ;
+; Parameters:
+; int              Stack[0x4]:4   grid_x
+; int              Stack[0x8]:4   grid_y
+; int              Stack[0xc]:4   grid_z
+; int              Stack[0x10]:4   red
+; int              Stack[0x14]:4   green
+; int              Stack[0x18]:4   blue
+; int              Stack[0x1c]:4   alpha
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cb8ec

@@ -15,11 +15,11 @@ CKeyFramedModelInstance * __cdecl getItemModel(CDemonActor *actor_ptr);
 
 // Original: core_inv.cpp_getItemDisplayName_FUN_004d9f10
 // Address: 004d9f10
-char * __cdecl getItemDisplayName(CDemonActor *param_1);
+char * __cdecl getItemDisplayName(CDemonActor *actor_ptr);
 
 // Original: core_inv.cpp_getItemDescription_FUN_004d9f80
 // Address: 004d9f80
-char * __cdecl getItemDescription(CDemonActor *param_1);
+char * __cdecl getItemDescription(CDemonActor *actor_ptr);
 
 // Original: core_inv.cpp_FUN_004d9ff0
 // Address: 004d9ff0
@@ -31,7 +31,7 @@ void FUN_004da130(void);
 
 // Original: core_inv.cpp_loadItem_FUN_004da720
 // Address: 004da720
-bool __cdecl loadItem(int param_1,undefined4 param_2);
+int __cdecl loadItem(SInventoryItemInfo *item_info,_FILE *file_handle);
 
 // Original: core_inv.cpp_FUN_004da760
 // Address: 004da760
@@ -155,7 +155,7 @@ void __cdecl CInventory::resetInventoryDisplayTimer(CInventory *this_ptr);
 
 // Original: core_inv.cpp_drawWeaponIconBackground_FUN_004dd320
 // Address: 004dd320
-void drawWeaponIconBackground(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl drawWeaponIconBackground(int x1,int y1,int x2,int y2,int alpha);
 
 // Original: core_inv.cpp_drawItemIconBackground_FUN_004dd4e0
 // Address: 004dd4e0

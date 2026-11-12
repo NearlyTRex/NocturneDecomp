@@ -123,9 +123,8 @@ void __cdecl core_dracbrid_cpp_FUN_0047de00(CDraculaBride *this_ptr,float delta_
           puVar1[2] = (uint)local_40;
           puVar1[3] = local_3c;
         }
-        engine_console_cpp_FUN_00445430
-                  (g_CConsolePtr,"@%5.2f %5.2f %5.2f\n" + 1,(double)(float)local_24[1],
-                   (double)(float)local_24[2],(double)(float)local_24[3]);
+        engine_console_cpp_CConsole_printf_FUN_00445430
+                  (g_CConsolePtr,"@%5.2f %5.2f %5.2f\n" + 1);
         core_spline_cpp_FUN_005841d0();
         local_38 = local_74;
         (&local_40)[(uint)bVar6 * -2 + 3] = *(float *)(&stack0xffffff90 + (uint)bVar6 * -8);

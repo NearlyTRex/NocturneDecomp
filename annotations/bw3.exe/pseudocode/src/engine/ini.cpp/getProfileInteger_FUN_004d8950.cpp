@@ -16,7 +16,7 @@ int __cdecl engine_ini_cpp_getProfileInteger_FUN_004d8950(char *section,char *ke
   char acStack_10c [256];
   
   _sprintf(acStack_10c,(char *)0x5c57a5);
-  iVar1 = engine_ini_cpp_FUN_004d8290
+  iVar1 = engine_ini_cpp_CIni_getProfileString_FUN_004d8290
                     ((CIni *)0x1d5bc78,section,key,acStack_10c,acStack_20c,0xff,filename);
   if (iVar1 == 0) {
     _DAT_01d71de0 = "..\\engine\\ini.cpp";

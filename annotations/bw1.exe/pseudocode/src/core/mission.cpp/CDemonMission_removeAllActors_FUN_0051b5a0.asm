@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_mission.cpp_FUN_0051a3b0 at 0051a3b6
+;   core_mission.cpp_CDemonMission_clearMissionData_FUN_0051a3b0 at 0051a3b6
 ;   core_mission.cpp_FUN_0051ba5c at 0051ba96
 ;
 ; Referenced Globals:

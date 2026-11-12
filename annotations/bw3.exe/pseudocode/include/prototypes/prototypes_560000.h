@@ -4,6 +4,8 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdint.h"
+#include "system/winsock.h"
 #include "system/winuser.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActor.h"
@@ -32,14 +34,18 @@
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SInputFace.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SLaserInfo.h"
+#include "types/structs/SMRGLHeaderExtended.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SNetworkAddr.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSocket.h"
+#include "types/structs/SSoftwareEdge.h"
 #include "types/structs/STrainNoise.h"
 #include "types/structs/STrianglePackedIndices.h"
 
@@ -71,11 +77,11 @@ void __cdecl engine_special_cpp_clearScreenRegion_FUN_00560e37(int color);
 void __cdecl engine_special_cpp_fillDepthRegion_FUN_00560ec2(int left,int right,int top,int bottom);
 void engine_special_cpp_FUN_00560f31(void);
 void engine_special_cpp_FUN_005616a0(void);
-void engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713(void);
+void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_00561713(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void engine_special_cpp_FUN_00561fdc(void);
 void engine_special_cpp_FUN_005625a3(void);
-int * engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33(void);
-int * engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69(void);
+void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __cdecl engine_special_cpp_renderAlphaRow32_FUN_005630a3(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0056313e(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void engine_special_cpp_FUN_00563257(void);
@@ -90,10 +96,10 @@ void core_spawner_cpp_FUN_00563970(int param_1,float param_2);
 undefined4 core_spawner_cpp_FUN_00563e40(void);
 void core_spawner_cpp_FUN_00563e50(CDemonActor *param_1);
 CSpawner * core_spawner_cpp_CSpawner_dtor_FUN_00563f70(CSpawner *this_ptr,uint flags);
-void __cdecl core_spawner_cpp_FUN_00564010(void);
+void __cdecl engine_special_cpp_shutdownExternalRenderer_FUN_00564010(void);
 int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00564be0(HWND window_handle);
 int __cdecl engine_special_cpp_kill_FUN_005657f0(void);
-undefined4 engine_special_cpp_isExternalRendererActive_FUN_00565810(void);
+int __cdecl engine_special_cpp_isExternalRendererActive_FUN_00565810(void);
 undefined4 engine_special_cpp_FUN_00565820(void);
 int __cdecl engine_special_cpp_unlockFrame_FUN_00565870(int clear_lock_flag);
 int __cdecl engine_special_cpp_FUN_005658b0(void);
@@ -107,13 +113,13 @@ undefined4 engine_special_cpp_FUN_00565a6c(undefined4 param_1);
 int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_00565a90(int width,int height,int bits_per_pixel);
 int __cdecl engine_special_cpp_setColorTable16_FUN_00565bb0(void);
 int __cdecl engine_special_cpp_restoreVideoMode_FUN_00565be0(void);
-undefined4 __cdecl engine_special_cpp_drawPolygon_FUN_00565c10(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-undefined4 __cdecl engine_special_cpp_drawPolygon2_FUN_00565c40(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-undefined4 __cdecl engine_special_cpp_drawPolyList_FUN_00565c70(int param_1,int *param_2,int param_3,undefined4 param_4);
-undefined4 __cdecl engine_special_cpp_drawPolyList2_FUN_00565db0(int param_1,undefined4 *param_2,int param_3,undefined4 param_4);
+int __cdecl engine_special_cpp_drawPolygon_FUN_00565c10(SRenderVertex *vertices,int vertex_count,int render_flags);
+int __cdecl engine_special_cpp_drawPolygon2_FUN_00565c40(SRenderVertex **vertex_array,int vertex_count,int render_flags);
+int __cdecl engine_special_cpp_drawPolyList_FUN_00565c70(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags);
+int __cdecl engine_special_cpp_drawPolyList2_FUN_00565db0(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags );
 int __cdecl engine_special_cpp_drawPolyList3_FUN_00565ef0(SRenderVertex *vertex_buffer,STrianglePackedIndices *polygons,int polygon_count,int render_flags);
-undefined4 engine_special_cpp_addParticle_FUN_00565fbe(undefined4 param_1,undefined4 param_2);
-undefined4 engine_special_cpp_flushParticleList_FUN_00565fee(void);
+int __cdecl engine_special_cpp_addParticle_FUN_00565fbe(void *particle_data,int particle_type);
+int __cdecl engine_special_cpp_flushParticleList_FUN_00565fee(void);
 int __cdecl engine_special_cpp_add3dLine_FUN_00566010(void *start_point,void *end_point,int line_style);
 int __cdecl engine_special_cpp_flushLineList_FUN_00566040(void);
 int __cdecl engine_special_cpp_clear_FUN_00566060(void);
@@ -141,7 +147,7 @@ int __cdecl engine_special_cpp_CExternalRenderer_validate_FUN_00566630(CExternal
 void engine_special_cpp_switchRenderer_FUN_0056678e(char *param_1,undefined4 param_2);
 undefined1 * engine_special_cpp_FUN_005667de(undefined4 *param_1);
 void core_spike_cpp_staticInit_FUN_00566800(void);
-void core_spike_cpp_factoryFuncSpike_FUN_00566830(void);
+CSpike * __cdecl core_spike_cpp_factoryFuncSpike_FUN_00566830(void);
 CDemonActorType * core_spike_cpp_CSpike_getActorType_FUN_00566850(CSpike *this_ptr);
 CSpike * __cdecl core_spike_cpp_CSpike_ctor_FUN_00566860(CSpike *this_ptr);
 void __cdecl core_spike_cpp_CSpike_setup_FUN_005669a0(CSpike *this_ptr);
@@ -150,13 +156,13 @@ int __cdecl core_spike_cpp_CSpike_renderOpaque_FUN_00566db0(CSpike *this_ptr);
 CBoundingBox3D * __cdecl core_spike_cpp_CSpike_getBoundingBox_FUN_00566e30(CSpike *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_spike_cpp_CSpike_archive_FUN_00566e70(CSpike *this_ptr);
 ECollisionType __cdecl core_spike_cpp_CSpike_getCollisionType_FUN_00566fc0(CSpike *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_spike_cpp_FUN_00566fd0(CSpike *this_ptr);
+void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0(CSpike *this_ptr);
 CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_005675e0(CSpike *this_ptr,uint flags);
 void __cdecl core_spline_cpp_FUN_00567630(float *out_basis,float t,float tension);
-float core_spline_cpp_evaluateSplineScalar_FUN_005677c0(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
-int core_spline_cpp_evaluateSplintInt_FUN_00567800(float *param_1,int param_2,int param_3,int param_4,int param_5);
+float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_005677c0(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
+int __cdecl core_spline_cpp_evaluateSplintInt_FUN_00567800(float *basis,int v0,int v1,int v2,int v3);
 void core_spline_cpp_FUN_00567860(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
-float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_00567a00(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_00567a00(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
 void shape_spotview_cpp_staticInit_FUN_00567c50(void);
 CSpotView * __cdecl shape_spotview_cpp_CSpotView_ctor_FUN_00567c60(CSpotView *this_ptr);
 void __cdecl shape_spotview_cpp_CSpotView_reset_FUN_00567cc0(CSpotView *this_ptr,uint control_flags);
@@ -171,7 +177,7 @@ void __cdecl core_sps_cpp_CSps_renderAimBeam_FUN_00568290(CSps *this_ptr);
 int __cdecl core_sps_cpp_CSps_fire_FUN_005682f0(CSps *this_ptr);
 CSps * core_sps_cpp_CSps_dtor_FUN_00568300(CSps *this_ptr,uint flags);
 void core_stairs_cpp_staticInit_FUN_00568350(void);
-void core_stairs_cpp_factoryFuncStairs_FUN_00568380(void);
+CStairs * __cdecl core_stairs_cpp_factoryFuncStairs_FUN_00568380(void);
 CDemonActorType * core_stairs_cpp_CStairs_getActorType_FUN_005683a0(CStairs *this_ptr);
 CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005683b0(CStairs *this_ptr);
 void __cdecl core_stairs_cpp_CStairs_setup_FUN_00568420(CStairs *this_ptr);
@@ -187,7 +193,7 @@ EGroundType __cdecl core_stairs_cpp_CStairs_getGroundType_FUN_00568720(CStairs *
 void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00568730(CStairs *this_ptr);
 CStairs * core_stairs_cpp_CStairs_dtor_FUN_00568870(CStairs *this_ptr,uint flags);
 void core_stone_cpp_staticInit_FUN_005688c0(void);
-void core_stone_cpp_factoryFuncTempleStone_FUN_005688f0(void);
+CTempleStone * __cdecl core_stone_cpp_factoryFuncTempleStone_FUN_005688f0(void);
 CDemonActorType * core_stone_cpp_CTempleStone_getActorType_FUN_00568910(CTempleStone *this_ptr);
 CTempleStone * __cdecl core_stone_cpp_CTempleStone_ctor_FUN_00568920(CTempleStone *this_ptr);
 void __cdecl core_stone_cpp_CTempleStone_archive_FUN_00568950(CTempleStone *this_ptr);
@@ -202,12 +208,12 @@ void __cdecl core_storm_cpp_CStorm_setup_FUN_00568c10(CStorm *this_ptr);
 int __cdecl core_storm_cpp_CStorm_renderOpaque_FUN_00568c60(CStorm *this_ptr);
 CStorm * core_storm_cpp_CStorm_dtor_FUN_00568c80(CStorm *this_ptr,uint flags);
 void core_teleport_cpp_staticInit_FUN_00568cd0(void);
-void core_teleport_cpp_factoryFuncTeleportDest_FUN_00568d20(void);
+CTeleportDest * __cdecl core_teleport_cpp_factoryFuncTeleportDest_FUN_00568d20(void);
 CDemonActorType * core_teleport_cpp_CTeleportDest_getActorType_FUN_00568d40(CTeleportDest *this_ptr);
 CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_ctor_FUN_00568d50(CTeleportDest *this_ptr);
 CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_00568d70(CTeleportDest *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_teleport_cpp_CTeleportDest_getCollisionType_FUN_00568dc0(CTeleportDest *this_ptr,SCollisionInfo *collision_info);
-void core_teleport_cpp_factoryFuncTeleport_FUN_00568dd0(void);
+CTeleport * __cdecl core_teleport_cpp_factoryFuncTeleport_FUN_00568dd0(void);
 CDemonActorType * __cdecl core_teleport_cpp_CTeleport_getActorType_FUN_00568df0(CTeleport *this_ptr);
 CTeleport * __cdecl core_teleport_cpp_CTeleport_ctor_FUN_00568e00(CTeleport *this_ptr);
 void __cdecl core_teleport_cpp_CTeleport_process_FUN_00568e40(CTeleport *this_ptr,float delta_time);
@@ -219,7 +225,7 @@ void core_texlist_cpp_staticInit_FUN_00569080(void);
 CTextureList * __cdecl core_texlist_cpp_CTextureList_ctor_FUN_005690a0(CTextureList *this_ptr);
 CTextureList * __cdecl core_texlist_cpp_CTextureList_dtor_FUN_005690b0(CTextureList *this_ptr,uint flags);
 void __cdecl core_texlist_cpp_CTextureList_load_FUN_005690c0(CTextureList *this_ptr,char *filename);
-void core_texlist_cpp_FUN_00569380(int *param_1,char *param_2);
+void __cdecl core_texlist_cpp_CTextureList_save_FUN_00569380(CTextureList *this_ptr,char *filename);
 void __cdecl core_texlist_cpp_CTextureList_captureAllTextures_FUN_005694e0(CTextureList *this_ptr);
 void __cdecl core_texlist_cpp_CTextureList_captureTexture_FUN_00569520(CTextureList *this_ptr,uint texture_index);
 undefined4 * core_texlist_cpp_FUN_00569550(undefined4 *param_1);
@@ -241,12 +247,11 @@ void engine_texture_cpp_FUN_0056a8f0(int param_1);
 void engine_texture_cpp_FUN_0056a960(void);
 void engine_texture_cpp_freeTextureCache_FUN_0056a9c0(void);
 int engine_texture_cpp_FUN_0056aa10(int param_1);
-int __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_0056aa90(int param_1);
-void engine_texture_cpp_FUN_0056aaae(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_0056aa90(SMRGLTextureBasic *texture_info);
 void engine_texture_cpp_FUN_0056aab0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
 void engine_texture_cpp_FUN_0056ab6c(int param_1,undefined4 param_2,undefined4 param_3);
 void engine_texture_cpp_FUN_0056ac20(void);
-void engine_texture_cpp_updateTextureWithPalette_FUN_0056ac50(undefined4 param_1);
+void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_0056ac50(SMRGLTextureBasic *texture);
 void __cdecl engine_texture_cpp_FUN_0056ac80(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_0056acb0(int enabled);
 void __cdecl engine_texture_cpp_getTextureCacheStats_FUN_0056acc0(char *output_buffer);
@@ -255,7 +260,7 @@ SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_0056acf0(vo
 void engine_texture_cpp_FUN_0056ad4c(void);
 void engine_texture_cpp_FUN_0056ad5e(int param_1,char *param_2);
 void core_tommygun_cpp_staticInit_FUN_0056b310(void);
-void core_tommygun_cpp_factoryFuncTommyGun_FUN_0056b340(void);
+CTommyGun * __cdecl core_tommygun_cpp_factoryFuncTommyGun_FUN_0056b340(void);
 CDemonActorType * core_tommygun_cpp_CTommyGun_getActorType_FUN_0056b360(CTommyGun *this_ptr);
 CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_0056b370(CTommyGun *this_ptr);
 int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_0056b410(CTommyGun *this_ptr);
@@ -271,13 +276,13 @@ void __cdecl core_toxhand_cpp_CTheHand_setup_FUN_0056c0c0(CTheHand *this_ptr);
 void __cdecl core_toxhand_cpp_CTheHand_process_FUN_0056c140(CTheHand *this_ptr,float delta_time);
 int __cdecl core_toxhand_cpp_CTheHand_renderOpaque_FUN_0056c880(CTheHand *this_ptr);
 void __cdecl core_toxhand_cpp_CTheHand_archive_FUN_0056c8c0(CTheHand *this_ptr);
-undefined4 core_toxhand_cpp_FUN_0056c900(CDemonActor *param_1,char *param_2);
+int __cdecl core_toxhand_cpp_CTheHand_findNearbyTarget_FUN_0056c900(CTheHand *this_ptr,char *class_name);
 int __cdecl core_toxhand_cpp_CTheHand_attractActorToward_FUN_0056ca00(CTheHand *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 int __cdecl core_toxhand_cpp_CTheHand_shouldIgnoreForTargeting_FUN_0056cb90(CTheHand *this_ptr);
 void core_toxhand_cpp_FUN_0056cbd0(int param_1);
 CTheHand * core_toxhand_cpp_CTheHand_dtor_FUN_0056cc10(CTheHand *this_ptr,uint flags);
 void core_trap_cpp_staticInit_FUN_0056cca0(void);
-void core_trap_cpp_factoryFuncTrap_FUN_0056ccd0(void);
+CTrap * __cdecl core_trap_cpp_factoryFuncTrap_FUN_0056ccd0(void);
 CDemonActorType * core_trap_cpp_CTrap_getActorType_FUN_0056ccf0(CTrap *this_ptr);
 CTrap * __cdecl core_trap_cpp_CTrap_ctor_FUN_0056cd00(CTrap *this_ptr);
 void __cdecl core_trap_cpp_CTrap_setup_FUN_0056cd50(CTrap *this_ptr);
@@ -292,7 +297,7 @@ void __cdecl core_trap_cpp_CTrap_archive_FUN_0056d0b0(CTrap *this_ptr);
 CBoundingBox3D * __cdecl core_trap_cpp_CTrap_getBoundingBox_FUN_0056d0f0(CTrap *this_ptr,CBoundingBox3D *out_box);
 CTrap * __cdecl core_trap_cpp_CTrap_dtor_FUN_0056d130(CTrap *this_ptr,uint flags);
 void core_trash_cpp_staticInit_FUN_0056d180(void);
-void core_trash_cpp_factoryFuncTrash_FUN_0056d1b0(void);
+CTrash * __cdecl core_trash_cpp_factoryFuncTrash_FUN_0056d1b0(void);
 CDemonActorType * core_trash_cpp_CTrash_getActorType_FUN_0056d1d0(CTrash *this_ptr);
 CTrash * __cdecl core_trash_cpp_CTrash_ctor_FUN_0056d1e0(CTrash *this_ptr);
 void __cdecl core_trash_cpp_CTrash_setup_FUN_0056d230(CTrash *this_ptr);
@@ -303,7 +308,7 @@ CBoundingBox3D * __cdecl core_trash_cpp_CTrash_getBoundingBox_FUN_0056de10(CTras
 ECollisionType __cdecl core_trash_cpp_CTrash_getCollisionType_FUN_0056dee0(CTrash *this_ptr,SCollisionInfo *collision_info);
 CTrash * __cdecl core_trash_cpp_CTrash_dtor_FUN_0056def0(CTrash *this_ptr,uint flags);
 void core_trigger_cpp_staticInit_FUN_0056df40(void);
-void core_trigger_cpp_factoryFuncTrigger_FUN_0056df70(void);
+CTrigger * __cdecl core_trigger_cpp_factoryFuncTrigger_FUN_0056df70(void);
 CDemonActorType * core_trigger_cpp_CTrigger_getActorType_FUN_0056df90(CTrigger *this_ptr);
 CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_0056dfa0(CTrigger *this_ptr);
 void __cdecl core_trigger_cpp_CTrigger_setup_FUN_0056e0f0(CTrigger *this_ptr);
@@ -320,21 +325,21 @@ int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_0056ede0(CTrigger *t
 void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_0056ee20(CTrigger *this_ptr,float hit_points);
 void core_trigger_cpp_FUN_0056eed0(int param_1);
 int __cdecl core_trigger_cpp_CTrigger_getTargetPoints_FUN_0056efa0(CTrigger *this_ptr,CVector3f *out_points_array);
-undefined4 core_trigger_cpp_FUN_0056f080(int param_1,int param_2);
+undefined4 core_trigger_cpp_FUN_0056f080(int param_1,CDemonActor *param_2);
 CTrigger * __cdecl core_trigger_cpp_CTrigger_dtor_FUN_0056f410(CTrigger *this_ptr,uint flags);
 void __cdecl support_trisock_cpp_staticInit_FUN_0056f460(void);
 uint * __cdecl support_trisock_cpp_copyIPAddress_FUN_0056f4b0(uint *dest_ip,uint *src_ip);
 uint * __cdecl support_trisock_cpp_parseIPAddress_FUN_0056f4c0(uint *result_ptr,char *dotted_decimal_string);
-undefined4 __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_0056f510(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_0056f510(uchar *dest_ip,int octet1,int octet2,int octet3,int octet4);
 void __cdecl support_trisock_cpp_formatIPAddress_FUN_0056f580(uchar *ip_bytes,char *output_buffer);
 int __cdecl support_trisock_cpp_parseIPComponents_FUN_0056f5c0(uint *result_ptr,char *dotted_decimal_string);
-undefined4 __cdecl support_trisock_cpp_buildIPAddress_FUN_0056f630(undefined1 *param_1,int param_2,int param_3,int param_4,int param_5);
+int __cdecl support_trisock_cpp_buildIPAddress_FUN_0056f630(uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4);
 void __cdecl support_trisock_cpp_extractIPOctets_FUN_0056f6a0(uchar *ip_bytes,uint *octet1_ptr,uint *octet2_ptr,uint *octet3_ptr,uint *octet4_ptr);
 uint __cdecl support_trisock_cpp_getIPAddress_FUN_0056f6f0(SNetworkAddr *net_addr);
-void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0056f730(undefined4 *param_1,undefined4 param_2,undefined2 param_3);
-uint * __cdecl support_trisock_cpp_convertSockAddr_FUN_0056f750(uint *param_1,short *param_2);
+void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0056f730(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port);
+SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_0056f750(SNetworkAddr *dest_addr,SOCKADDR *src_addr);
 void support_trisock_cpp_buildSockaddrIn_FUN_0056f7c0(SNetworkAddr *param_1);
-void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0056f820(uchar *param_1,char *param_2);
+void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0056f820(SNetworkAddr *network_addr,char *output_buffer);
 SSocket * support_trisock_cpp_Socket_copy_FUN_0056f8a0(SSocket *this_ptr,SSocket *other);
 CSocket * __cdecl support_trisock_cpp_CSocket_ctor_FUN_0056f8d0(CSocket *this_ptr);
 CSocket * __cdecl support_trisock_cpp_CSocket_dtor_FUN_0056f8e0(CSocket *this_ptr,uint flags);
@@ -350,5 +355,5 @@ int __cdecl support_trisock_cpp_CSocket_closeSocket_FUN_0056fc30(CSocket *this_p
 int __cdecl support_trisock_cpp_CSocket_getSocketName_FUN_0056fd00(CSocket *this_ptr,SNetworkAddr *out_address);
 int __cdecl support_trisock_cpp_CSocket_setSocketBlocking_FUN_0056fd60(CSocket *this_ptr,int blocking_mode);
 bool support_trisock_cpp_FUN_0056fee0(int param_1);
-undefined4 support_trisock_cpp_FUN_0056fef0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,CSocket *param_6,code *param_7);
+undefined4 support_trisock_cpp_FUN_0056fef0(undefined4 param_1,undefined4 param_2,uint16_t *param_3,undefined4 param_4,undefined4 param_5,CSocket *param_6,code *param_7);
 

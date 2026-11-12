@@ -32,7 +32,7 @@ void core_inv_cpp_FUN_004da020(void)
     while (iVar10 < g_CDemonSetPtr->character_count) {
       this_ptr = (CCharacter *)
                  core_actor_cpp_castToClassHash_FUN_0040c840
-                           (*(uint *)((int)g_CDemonSetPtr->characters + iVar9),
+                           (*(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar9),
                             g_CEnemyClassInfo.name_hash);
       if (this_ptr == (CCharacter *)0x0) {
 LAB_004da0b1:

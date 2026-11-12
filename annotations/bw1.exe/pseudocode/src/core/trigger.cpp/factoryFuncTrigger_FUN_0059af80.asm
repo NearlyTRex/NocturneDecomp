@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trigger_cpp_factoryFuncTrigger_FUN_0059af80(void)
+; CTrigger * __cdecl core_trigger_cpp_factoryFuncTrigger_FUN_0059af80(void)
 ;
 ;
 ; Called Functions:

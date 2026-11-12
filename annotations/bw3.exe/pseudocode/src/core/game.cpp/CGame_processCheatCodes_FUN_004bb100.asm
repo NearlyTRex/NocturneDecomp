@@ -292,7 +292,7 @@ section .text
         ;   XREF to: 004bc221 (CONDITIONAL_JUMP)  ; LAB_004bc221
     MOV EBX,dword ptr [EBP + 0x14]      ; 004bb339
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bb33c
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV dword ptr [EBX + 0x22c],0x1     ; 004bb341
     MOV dword ptr [EBX + 0x318],EAX     ; 004bb34b
     MOV dword ptr [EBX + 0x31c],ESI     ; 004bb351
@@ -1007,7 +1007,7 @@ section .text
         ;   XREF to: 004bbbe2 (CONDITIONAL_JUMP)  ; LAB_004bbbe2
     PUSH 0x5c2cf0                       ; 004bbb4a | = "CKeyActor"
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 004bbb4f
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 004bbb54
     MOV EBX,EAX                         ; 004bbb57
     PUSH EBX                            ; 004bbb59
@@ -1624,7 +1624,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004bc221
         ;   Label: LAB_004bc221
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bc224
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDI,dword ptr [EBX + 0x318]     ; 004bc229
     SUB EAX,EDI                         ; 004bc22f
     MOV dword ptr [ESP + 0x374],EAX     ; 004bc231

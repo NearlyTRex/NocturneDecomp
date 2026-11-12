@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ghoul_cpp_factoryFuncGhoul_FUN_004c15b0(void)
+; CGhoul * __cdecl core_ghoul_cpp_factoryFuncGhoul_FUN_004c15b0(void)
 ;
 ;
 ; Called Functions:

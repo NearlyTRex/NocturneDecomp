@@ -26,13 +26,13 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 005950d0
     PUSH EAX                            ; 005950d6
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 005950d7
-        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b1c0()
+        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b1c0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 005950dc
     PUSH 0x0                            ; 005950df
     LEA EAX,[EBX + 0x164]               ; 005950e1
     PUSH EAX                            ; 005950e7
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 005950e8
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005950ed
     POP EBX                             ; 005950f0
     RET                                 ; 005950f1

@@ -13,16 +13,16 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00415fc0(CAudioRecPuzzle
   CAlphaBitmap *this_ptr_00;
   
   if (param_2 == 0) {
-    engine_alphabit_cpp_FUN_0040d1c0(&this_ptr->background);
-    engine_alphabit_cpp_FUN_0040d1c0(CAlphaBitmap_ARRAY_007c3984);
-    engine_alphabit_cpp_FUN_0040d1c0(CAlphaBitmap_ARRAY_007c3984 + 1);
-    engine_alphabit_cpp_FUN_0040d1c0(CAlphaBitmap_ARRAY_007c3984 + 2);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&this_ptr->background);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap_ARRAY_007c3984);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap_ARRAY_007c3984 + 1);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap_ARRAY_007c3984 + 2);
     iVar1 = 0;
-    engine_alphabit_cpp_FUN_0040d1c0(CAlphaBitmap_ARRAY_007c3984 + 3);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap_ARRAY_007c3984 + 3);
     if (0 < this_ptr->button_count) {
       this_ptr_00 = &this_ptr->buttons[0].bitmap;
       do {
-        engine_alphabit_cpp_FUN_0040d1c0(this_ptr_00);
+        engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(this_ptr_00);
         iVar1 = iVar1 + 1;
         this_ptr_00 = (CAlphaBitmap *)&this_ptr_00[2].opa;
       } while (iVar1 < this_ptr->button_count);

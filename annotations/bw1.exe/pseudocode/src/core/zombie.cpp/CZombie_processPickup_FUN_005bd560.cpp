@@ -178,15 +178,14 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005bd560(CZombie *this_ptr
     this_ptr->pickup_approach_progress = -40.0;
     this_ptr->object_shape_class = iVar5;
     this_ptr->pickup_seed = this_ptr->pickup_seed + 1;
-    engine_console_cpp_FUN_00445430
-              (g_CConsolePtr,"%s is going to try to pick up %s\n",this_ptr,this_ptr->pickup_target);
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,"%s is going to try to pick up %s\n");
     return 1;
   }
   pCVar3 = (*((pCVar3->vtable)._ub)->getCarrier)(pCVar3);
   if (pCVar3 != (CDemonActor *)0x0) {
-    engine_console_cpp_FUN_00445430
-              (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,this_ptr,
-               this_ptr->pickup_target);
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1);
     this_ptr->pickup_target = (CDemonActor *)0x0;
     this_ptr->pickup_approach_progress = 0.0;
     core_zombie_cpp_CZombie_resetChaseState_FUN_005bed80(this_ptr);
@@ -329,7 +328,8 @@ LAB_005bdb56:
                       ((CCharacter *)this_ptr,&CStack_d0,(CPathMap *)0x0,&CStack_ac,0.0,0.0);
   }
   if (iVar5 < 0) {
-    engine_console_cpp_FUN_00445430(g_CConsolePtr);
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,"%s can't pick up %s, giving up\n");
     this_ptr->pickup_target = (CDemonActor *)0x0;
     this_ptr->pickup_approach_progress = 20.0;
     core_zombie_cpp_CZombie_resetChaseState_FUN_005bed80(this_ptr);
@@ -338,7 +338,7 @@ LAB_005bdb56:
   if (iVar5 < 1) {
     return 1;
   }
-  engine_console_cpp_FUN_00445430(g_CConsolePtr);
+  engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"%s beginning to pickup %s\n");
   uVar1 = this_ptr->object_shape_class;
   if (uVar1 < 2) {
     if (uVar1 != 1) {

@@ -23,11 +23,11 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_FUN_0042c1e0
 ;   core_charactr.cpp_FUN_0042c230
-;   core_charactr.cpp_FUN_0042cd30
 ;   core_charactr.cpp_FUN_0042cd70
 ;   core_charactr.cpp_FUN_00432330
 ;   core_charactr.cpp_FUN_00433c60
@@ -273,8 +273,8 @@ section .text
         ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0040fd9e
     PUSH EBX                            ; 0040fda1
-    CALL core_charactr.cpp_FUN_0042cd30 ; 0040fda2
-        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042cd30(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30 ; 0040fda2
+        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0040fda7
     LEA EAX,[EBX + 0x158]               ; 0040fdaa
     PUSH EAX                            ; 0040fdb0
@@ -310,8 +310,8 @@ section .text
     PUSH 0x5b63a3                       ; 0040fdee | = "%s confused while walking to scriptDe..."
     MOV ESI,dword ptr [0x005f1690]      ; 0040fdf3 | g_CConsolePtr
     PUSH ESI                            ; 0040fdf9 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0040fdfa
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0040fdfa
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     JMP 0x0040fca2                      ; 0040fdff
         ;   XREF to: 0040fca2 (UNCONDITIONAL_JUMP)  ; LAB_0040fca2
     PUSH 0x1                            ; 0040fe04

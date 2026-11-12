@@ -111,6 +111,32 @@
     },
     "pcode_op_count": 595
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00444220",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004558d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00454c40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00448930",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -158,7 +184,7 @@
       "line": 16,
       "match": "DAT_01548788",
       "severity": "mild",
-      "text": "pfVar6 = (float *)&DAT_01548788;",
+      "text": "vertex1 = (CVector3f *)&DAT_01548788;",
       "type": "undefined_data"
     },
     {
@@ -166,7 +192,7 @@
       "line": 22,
       "match": "DAT_01548788",
       "severity": "mild",
-      "text": "pfVar1 = (float *)(&DAT_01548788 + uVar3 * 0xc);",
+      "text": "vertex2 = (CVector3f *)(&DAT_01548788 + uVar2 * 0xc);",
       "type": "undefined_data"
     },
     {
@@ -174,7 +200,7 @@
       "line": 30,
       "match": "DAT_0154884c",
       "severity": "mild",
-      "text": "if ((float *)(&DAT_0154884c + iVar4) != pfVar6) {",
+      "text": "if ((CVector3f *)(&DAT_0154884c + iVar3) != vertex1) {",
       "type": "undefined_data"
     },
     {
@@ -182,7 +208,7 @@
       "line": 31,
       "match": "DAT_0154884c",
       "severity": "mild",
-      "text": "*(float *)(&DAT_0154884c + iVar4) = *pfVar6;",
+      "text": "((CVector3f *)(&DAT_0154884c + iVar3))->x = vertex1->x;",
       "type": "undefined_data"
     },
     {
@@ -190,7 +216,7 @@
       "line": 32,
       "match": "DAT_01548850",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01548850 + iVar4) = pfVar6[1];",
+      "text": "*(float *)(&DAT_01548850 + iVar3) = vertex1->y;",
       "type": "undefined_data"
     },
     {
@@ -198,7 +224,7 @@
       "line": 33,
       "match": "DAT_01548854",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01548854 + iVar4) = pfVar6[2];",
+      "text": "*(float *)(&DAT_01548854 + iVar3) = vertex1->z;",
       "type": "undefined_data"
     },
     {
@@ -206,7 +232,7 @@
       "line": 38,
       "match": "DAT_0154884c",
       "severity": "mild",
-      "text": "(pfVar1,pfVar6,&DAT_0154884c + _DAT_01548848 * 0xc,0,0x3ff00000,0,0,0,0,",
+      "text": "(vertex2,vertex1,(CVector3f *)(&DAT_0154884c + _DAT_01548848 * 0xc),1.0,0.0,0.0,",
       "type": "undefined_data"
     },
     {
@@ -214,7 +240,7 @@
       "line": 43,
       "match": "DAT_0154884c",
       "severity": "mild",
-      "text": "if ((float *)(&DAT_0154884c + iVar4) != pfVar6) {",
+      "text": "if ((CVector3f *)(&DAT_0154884c + iVar3) != vertex1) {",
       "type": "undefined_data"
     },
     {
@@ -222,7 +248,7 @@
       "line": 44,
       "match": "DAT_0154884c",
       "severity": "mild",
-      "text": "*(float *)(&DAT_0154884c + iVar4) = *pfVar6;",
+      "text": "((CVector3f *)(&DAT_0154884c + iVar3))->x = vertex1->x;",
       "type": "undefined_data"
     },
     {
@@ -230,7 +256,7 @@
       "line": 45,
       "match": "DAT_01548850",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01548850 + iVar4) = pfVar6[1];",
+      "text": "*(float *)(&DAT_01548850 + iVar3) = vertex1->y;",
       "type": "undefined_data"
     },
     {
@@ -238,7 +264,7 @@
       "line": 46,
       "match": "DAT_01548854",
       "severity": "mild",
-      "text": "*(float *)(&DAT_01548854 + iVar4) = pfVar6[2];",
+      "text": "*(float *)(&DAT_01548854 + iVar3) = vertex1->z;",
       "type": "undefined_data"
     },
     {
@@ -246,7 +272,7 @@
       "line": 50,
       "match": "DAT_0154884c",
       "severity": "mild",
-      "text": "(pfVar6,pfVar1,&DAT_0154884c + _DAT_01548848 * 0xc,0,0x3ff00000,0,0,0,0,",
+      "text": "(vertex1,vertex2,(CVector3f *)(&DAT_0154884c + _DAT_01548848 * 0xc),1.0,0.0,0.0,",
       "type": "undefined_data"
     }
   ]

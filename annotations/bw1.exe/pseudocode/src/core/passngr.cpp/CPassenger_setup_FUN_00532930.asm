@@ -104,7 +104,7 @@ section .text
     PUSH 0x5ec869                       ; 005329f4 | = "CWerewolf"
         ;   Label: LAB_005329f4
     CALL core_actor.cpp_createActorByName_FUN_0040c2b0 ; 005329f9
-        ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c2b0()
+        ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c2b0(char * class_name)
     LEA ESI,[EBX + 0x1fb3c]             ; 005329fe
     ADD ESP,0x4                         ; 00532a04
     MOV EDI,EAX                         ; 00532a07

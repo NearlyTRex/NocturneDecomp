@@ -13,7 +13,7 @@ CTrash * __cdecl core_trash_cpp_CTrash_dtor_FUN_0059af00(CTrash *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTrashTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTrashTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

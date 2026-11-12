@@ -89,7 +89,7 @@ section .text
     MOV dword ptr [0x0149d6d0],ECX      ; 0044f771 | DAT_0149d6d0
     MOV dword ptr [0x0149d6d4],ECX      ; 0044f777 | DAT_0149d6d4
     CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_00448720 ; 0044f77d
-        ;   XREF to: 00448720 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_resetFogSamplingOffset_FUN_00448720()
+        ;   XREF to: 00448720 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_resetFogSamplingOffset_FUN_00448720(SFogGrid * fog)
     MOV EAX,[0x0149e6e8]                ; 0044f782 | DAT_0149e6e8
     MOV EDI,dword ptr [0x0149e6ec]      ; 0044f787 | DAT_0149e6ec
     MOV EBP,dword ptr [0x0149e6f0]      ; 0044f78d | DAT_0149e6f0
@@ -218,7 +218,7 @@ section .text
     PUSH EDI                            ; 0044f941
     PUSH 0x149d6dc                      ; 0044f942
     CALL core_dcamera.cpp_updateFogScrollOffset_FUN_00448b60 ; 0044f947
-        ;   XREF to: 00448b60 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_updateFogScrollOffset_FUN_00448b60()
+        ;   XREF to: 00448b60 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_updateFogScrollOffset_FUN_00448b60(SFogGrid * fog_ptr, int time_major, int time_minor)
     ADD ESP,0xc                         ; 0044f94c
     MOV EAX,dword ptr [ESP + 0x210]     ; 0044f94f
     MOV EBP,0x1                         ; 0044f956
@@ -260,7 +260,7 @@ section .text
     PUSH EAX                            ; 0044f9ea
     PUSH 0x149d6dc                      ; 0044f9eb
     CALL core_dcamera.cpp_sampleFogAlongRay_FUN_00448980 ; 0044f9f0
-        ;   XREF to: 00448980 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_sampleFogAlongRay_FUN_00448980()
+        ;   XREF to: 00448980 (UNCONDITIONAL_CALL)  ; uint core_dcamera.cpp_sampleFogAlongRay_FUN_00448980(SFogGrid * fog_ptr, CVector3i * start_pos, CVector3i * end_pos, int ray_length)
     IMUL EAX,EAX,0xff                   ; 0044f9f5
     SHR EAX,0xe                         ; 0044f9fb
     ADD ESP,0x10                        ; 0044f9fe

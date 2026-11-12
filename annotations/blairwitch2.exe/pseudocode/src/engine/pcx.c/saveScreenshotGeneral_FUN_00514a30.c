@@ -11,10 +11,10 @@
 void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_00514a30(char *filename)
 
 {
-  int *piVar1;
+  byte bVar1;
+  _FILE *file;
   int iVar2;
-  byte uVar3;
-  uint uVar4;
+  uint character;
   byte local_88;
   byte local_87;
   byte local_86;
@@ -55,58 +55,60 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_00514a30(char *filename)
     local_40 = 0x1e0;
     local_7e = 0x1df;
   }
-  piVar1 = (int *)_fopen(filename,&DAT_005e19cd);
-  if (piVar1 == (int *)0x0) {
+  file = _fopen(filename,&DAT_005e19cd);
+  if (file == (_FILE *)0x0) {
     _DAT_01d046a0 = "..\\engine\\pcx.c";
     _DAT_01d046a4 = 0xed;
     core_main_c_FUN_004e4500("Cannot write .PCX");
   }
   iVar2 = 0;
-  _fwrite(&local_88,1,0x80,piVar1);
+  _fwrite(&local_88,1,0x80,file);
   if (0 < DAT_006141bc) {
     do {
-      engine_pcx_c_writePCXScanline_FUN_005145f0(iVar2,piVar1);
+      engine_pcx_c_writePCXScanline_FUN_005145f0(iVar2,file);
       if ((DAT_006141b8 == 0x280) && (DAT_006141bc == 0xf0)) {
-        engine_pcx_c_writePCXScanline_FUN_005145f0(iVar2,piVar1);
+        engine_pcx_c_writePCXScanline_FUN_005145f0(iVar2,file);
       }
       iVar2 = iVar2 + 1;
     } while (iVar2 < DAT_006141bc);
   }
-  if (((*(byte *)((int)piVar1 + 0xd) & 4) == 0) && (1 < (uint)(piVar1[5] - piVar1[1]))) {
-    *(byte *)*piVar1 = 0xc;
-    if (*(char *)*piVar1 != '\n') {
-      piVar1[1] = piVar1[1] + 1;
-      *piVar1 = *piVar1 + 1;
-      *(byte *)((int)piVar1 + 0xd) = *(byte *)((int)piVar1 + 0xd) | 0x10;
+  if (((file->_flag & 0x400) == 0) && (1 < file->_bufsize - file->_cnt)) {
+    *file->_ptr = '\f';
+    if (*file->_ptr != '\n') {
+      bVar1 = *(byte *)((int)&file->_flag + 1);
+      file->_cnt = file->_cnt + 1;
+      file->_ptr = file->_ptr + 1;
+      *(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;
       goto LAB_00514b9e;
     }
-    uVar4 = 10;
+    iVar2 = 10;
   }
   else {
-    uVar4 = 0xc;
+    iVar2 = 0xc;
   }
-  _fputc(uVar4,piVar1);
+  _fputc(iVar2,file);
 LAB_00514b9e:
   iVar2 = 0;
   do {
-    if (((*(byte *)((int)piVar1 + 0xd) & 4) == 0) && (1 < (uint)(piVar1[5] - piVar1[1]))) {
-      *(byte *)*piVar1 = (&DAT_01c35838)[iVar2];
-      if (*(char *)*piVar1 == '\n') {
-        uVar3 = 10;
+    if (((file->_flag & 0x400) == 0) && (1 < file->_bufsize - file->_cnt)) {
+      *file->_ptr = (&DAT_01c35838)[iVar2];
+      if (*file->_ptr == '\n') {
+        character = 10;
         goto LAB_00514bb4;
       }
-      piVar1[1] = piVar1[1] + 1;
-      *piVar1 = *piVar1 + 1;
-      *(byte *)((int)piVar1 + 0xd) = *(byte *)((int)piVar1 + 0xd) | 0x10;
+      bVar1 = *(byte *)((int)&file->_flag + 1);
+      file->_cnt = file->_cnt + 1;
+      file->_ptr = file->_ptr + 1;
+      *(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;
     }
     else {
-      uVar3 = (&DAT_01c35838)[iVar2];
+      character = (uint)(byte)(&DAT_01c35838)[iVar2];
 LAB_00514bb4:
-      _fputc(uVar3,piVar1);
+      _fputc(character,file);
     }
     iVar2 = iVar2 + 1;
     if (0x2ff < iVar2) {
-      _fclose(piVar1);
+      _fclose(file);
       return;
     }
   } while( true );

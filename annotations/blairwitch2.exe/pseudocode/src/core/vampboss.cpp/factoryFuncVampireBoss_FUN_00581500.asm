@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vampboss_cpp_factoryFuncVampireBoss_FUN_00581500(void)
+; CVampireBoss * __cdecl core_vampboss_cpp_factoryFuncVampireBoss_FUN_00581500(void)
 ;
 ;
 ; Called Functions:

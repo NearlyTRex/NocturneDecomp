@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_netgame.cpp_resetGameTime_FUN_0050af1e
 // Address: 0050af1e
-void resetGameTime(void);
+void __cdecl resetGameTime(void);
 
 // Original: core_netgame.cpp_updateGameTime_FUN_0050af50
 // Address: 0050af50
@@ -23,7 +23,7 @@ float __cdecl computeTimeDelta(int start_time,int end_time);
 
 // Original: core_netgame.cpp_getElapsedSeconds_FUN_0050b000
 // Address: 0050b000
-float __cdecl getElapsedSeconds(int param_1);
+float __cdecl getElapsedSeconds(uint timestamp);
 
 // Original: core_netgame.cpp_resetChatCounts_FUN_0050b060
 // Address: 0050b060
@@ -39,7 +39,7 @@ int FUN_0050b10e(int param_1);
 
 // Original: core_netgame.cpp_allocSimFrame_FUN_0050b160
 // Address: 0050b160
-int * allocSimFrame(int param_1);
+SSimFrame * __cdecl allocSimFrame(int sequence_number);
 
 // Original: core_netgame.cpp_CNetGame_ctor_FUN_0050b290
 // Address: 0050b290
@@ -57,21 +57,17 @@ void __cdecl CNetGame::init(CNetGame *this_ptr);
 // Address: 0050b3f0
 void __cdecl CNetGame::shutdown(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_FUN_0050b41c
-// Address: 0050b41c
-undefined4 FUN_0050b41c(CNetGame *param_1);
-
 // Original: core_netgame.cpp_FUN_0050b420
 // Address: 0050b420
 int __cdecl FUN_0050b420(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_FUN_0050b4d0
+// Original: core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0
 // Address: 0050b4d0
-int __cdecl FUN_0050b4d0(CNetGame *this_ptr,uint32_t *server_ip);
+int __cdecl CNetGame::initializeNetworkToJoin(CNetGame *this_ptr,uint32_t *server_ip);
 
-// Original: core_netgame.cpp_FUN_0050b790
+// Original: core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790
 // Address: 0050b790
-int __cdecl FUN_0050b790(CNetGame *this_ptr);
+int __cdecl CNetGame::initializeNetwork(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0
 // Address: 0050b8d0
@@ -153,9 +149,9 @@ void __cdecl CNetGame::sendMyStateChanged(CNetGame *this_ptr);
 // Address: 0050ecb0
 void __cdecl CNetGame::processServerFrame(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_FUN_0050f120
+// Original: core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120
 // Address: 0050f120
-void FUN_0050f120(CNetGame *param_1);
+void __cdecl CNetGame::processClientFrame(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_0050f370
 // Address: 0050f370

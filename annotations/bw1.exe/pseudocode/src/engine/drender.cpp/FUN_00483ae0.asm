@@ -43,7 +43,7 @@ section .text
     MOV EBX,ESI                         ; 00483aeb
     MOV ESI,ESP                         ; 00483aed
     CALL engine_matrix.c_getCameraOrigin_FUN_00509050 ; 00483aef
-        ;   XREF to: 00509050 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_getCameraOrigin_FUN_00509050()
+        ;   XREF to: 00509050 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraOrigin_FUN_00509050(CVector3i * output)
     MOV EAX,dword ptr [ESP]             ; 00483af4
     MOV dword ptr [ESP + 0x18],EAX      ; 00483af7
     FILD dword ptr [ESP + 0x18]         ; 00483afb

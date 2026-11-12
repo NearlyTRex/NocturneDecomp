@@ -86,21 +86,6 @@
     "variadic":false
   },
   {
-    "addr":"004737ee",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_004737ee",
-    "name":"core_dtrace.cpp_FUN_004737ee",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/dtrace.cpp",
-    "variadic":false
-  },
-  {
     "addr":"0047b76e",
     "calls":[
       "004f3520"
@@ -165,14 +150,24 @@
     "calls":[
       "005a3d00"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":59,
     "method":"parseComparisonOp",
     "name":"core_event.cpp_parseComparisonOp_FUN_0048b86e",
+    "params":[
+      {
+        "name":"str",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/event.cpp",
@@ -180,15 +175,15 @@
   },
   {
     "addr":"004a13ee",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":14,
     "method":"allocateSmokeParticle",
     "name":"core_fire.cpp_allocateSmokeParticle_FUN_004a13ee",
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CSmokeParticle",
+      "ptr":1
     },
     "tu":"core/fire.cpp",
     "variadic":false
@@ -307,15 +302,33 @@
   },
   {
     "addr":"004cf16e",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":15,
     "method":"convertVecFloatToFixed",
     "name":"core_gore.cpp_convertVecFloatToFixed_FUN_004cf16e",
+    "params":[
+      {
+        "name":"src",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"dst",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
     },
     "tu":"core/gore.cpp",
     "variadic":false
@@ -344,51 +357,6 @@
     "instructions":4,
     "method":"FUN_004eda6e",
     "name":"engine_mini3d.cpp_FUN_004eda6e",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/mini3d.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"004ef46e",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_004ef46e",
-    "name":"engine_mini3d.cpp_FUN_004ef46e",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/mini3d.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"004f016e",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_004f016e",
-    "name":"engine_mini3d.cpp_FUN_004f016e",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/mini3d.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"004f2cee",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_004f2cee",
-    "name":"engine_mini3d.cpp_FUN_004f2cee",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -445,14 +413,14 @@
   },
   {
     "addr":"00565fee",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":7,
     "method":"flushParticleList",
     "name":"engine_special.cpp_flushParticleList_FUN_00565fee",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/special.cpp",

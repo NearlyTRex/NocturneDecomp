@@ -2,16 +2,17 @@
 // Address: 0056b360
 // Address Range: [[0056b360, 0056b51d]]
 // Convention: unknown
-// Signature: void core_skeleton_cpp_FUN_0056b360(float *param_1,float *param_2,float *param_3,float param_4,CDeformableModelInstance *param_5)
+// Signature: void core_skeleton_cpp_FUN_0056b360(SPose *param_1,float *param_2,float *param_3,float param_4,CDeformableModelInstance *param_5)
 
 #include "nocturne.h"
 
-void core_skeleton_cpp_FUN_0056b360(float *param_1,float *param_2,float *param_3,float param_4,CDeformableModelInstance *param_5)
+void core_skeleton_cpp_FUN_0056b360(SPose *param_1,float *param_2,float *param_3,float param_4,CDeformableModelInstance *param_5)
 
 {
   int iVar1;
-  float *pfVar2;
-  byte bVar3;
+  uint *puVar2;
+  uint *puVar3;
+  byte bVar4;
   float afStackY_1854 [1524];
   float fStack_78;
   float fStack_68;
@@ -35,9 +36,9 @@ void core_skeleton_cpp_FUN_0056b360(float *param_1,float *param_2,float *param_3
   float fStack_20;
   CSkeleton *pCStack_1c;
   float *pfStack_18;
-  float *pfStack_14;
+  SPose *pSStack_14;
   
-  bVar3 = 0;
+  bVar4 = 0;
   if (param_4 < 0.0) {
     param_4 = 0.0;
   }
@@ -54,10 +55,10 @@ void core_skeleton_cpp_FUN_0056b360(float *param_1,float *param_2,float *param_3
   fStack_50 = fStack_5c + fStack_68;
   fStack_4c = fStack_58 + fStack_64;
   fStack_48 = fStack_54 + fStack_60;
-  if (&fStack_38 != param_1) {
-    *param_1 = fStack_50;
-    param_1[1] = fStack_4c;
-    param_1[2] = fStack_48;
+  if ((SPose *)&fStack_38 != param_1) {
+    (param_1->pose_data).root_position.x = fStack_50;
+    (param_1->pose_data).root_position.y = fStack_4c;
+    (param_1->pose_data).root_position.z = fStack_48;
   }
   iVar1 = 0;
   fStack_44 = fStack_5c;
@@ -73,20 +74,21 @@ void core_skeleton_cpp_FUN_0056b360(float *param_1,float *param_2,float *param_3
   if (0 < pCStack_1c->bone_count) {
     param_2 = param_2 + 3;
     pfStack_18 = param_3 + 3;
-    pfStack_14 = param_1;
+    pSStack_14 = param_1;
     do {
       core_xform_cpp_slerpQuaternion_FUN_005b7940(param_2,pfStack_18,param_4);
       iVar1 = iVar1 + 1;
       param_2 = param_2 + 4;
-      pfVar2 = pfStack_14 + (uint)bVar3 * -2 + 4;
-      pfStack_14[3] = fStack_78;
-      *pfVar2 = *(float *)(&stack0xffffff8c + (uint)bVar3 * -8);
-      pfVar2[(uint)bVar3 * -2 + 1] =
-           *(float *)(&stack0xffffff90 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-      (pfVar2 + (uint)bVar3 * -2 + 1)[(uint)bVar3 * -2 + 1] =
-           *(float *)((int)(&stack0xffffff90 + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
-                     ((uint)bVar3 * -2 + 1) * 4);
-      pfStack_14 = pfStack_14 + 4;
+      puVar2 = (uint *)((int)pSStack_14 + (uint)bVar4 * -8 + 0x10);
+      (pSStack_14->pose_data).bone_rotations[0].w = fStack_78;
+      puVar3 = puVar2 + (uint)bVar4 * -2 + 1;
+      *puVar2 = *(uint *)(&stack0xffffff8c + (uint)bVar4 * -8);
+      *puVar3 = *(uint *)(&stack0xffffff90 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+      puVar3[(uint)bVar4 * -2 + 1] =
+           *(uint *)
+            ((int)(&stack0xffffff90 + (uint)bVar4 * -8 + (uint)bVar4 * -8) +
+            ((uint)bVar4 * -2 + 1) * 4);
+      pSStack_14 = (SPose *)&(pSStack_14->pose_data).bone_rotations[0].x;
       pfStack_18 = pfStack_18 + 4;
     } while (iVar1 < pCStack_1c->bone_count);
   }

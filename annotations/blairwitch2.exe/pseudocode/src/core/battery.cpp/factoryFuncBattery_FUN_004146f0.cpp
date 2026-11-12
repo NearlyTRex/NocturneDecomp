@@ -1,20 +1,20 @@
 // Name: core_battery.cpp_factoryFuncBattery_FUN_004146f0
 // Address: 004146f0
 // Address Range: [[004146f0, 0041470b]]
-// Convention: unknown
-// Signature: void core_battery_cpp_factoryFuncBattery_FUN_004146f0(void)
+// Convention: __cdecl
+// Signature: CBattery * __cdecl core_battery_cpp_factoryFuncBattery_FUN_004146f0(void)
 
 #include "nocturne.h"
 
-void core_battery_cpp_factoryFuncBattery_FUN_004146f0(void)
+CBattery * __cdecl core_battery_cpp_factoryFuncBattery_FUN_004146f0(void)
 
 {
-  CBattery *this_ptr;
+  CBattery *pCVar1;
   
-  this_ptr = (CBattery *)operator_new(0x43c);
-  if (this_ptr == (CBattery *)0x0) {
-    return;
+  pCVar1 = (CBattery *)operator_new(0x43c);
+  if (pCVar1 == (CBattery *)0x0) {
+    return (CBattery *)0x0;
   }
-  core_battery_cpp_CBattery_ctor_FUN_00414720(this_ptr);
-  return;
+  pCVar1 = core_battery_cpp_CBattery_ctor_FUN_00414720(pCVar1);
+  return pCVar1;
 }

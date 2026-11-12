@@ -54,7 +54,7 @@ section .text
     LEA EAX,[EDX + 0x1]                 ; 0050650b
     MOV [0x01dc2690],EAX                ; 0050650e | DAT_01dc2690
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00506513
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 00506518
     MOV ECX,0x12                        ; 0050651a
     SAR EDX,0x1f                        ; 0050651f

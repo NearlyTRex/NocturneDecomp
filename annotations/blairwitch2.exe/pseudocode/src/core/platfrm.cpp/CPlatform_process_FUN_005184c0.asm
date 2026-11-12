@@ -796,7 +796,7 @@ section .text
     LEA ESI,[ESP + 0x204]               ; 00518e50
     LEA EDI,[ESP + 0x1d4]               ; 00518e57
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 ; 00518e5e
-        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005916b0()
+        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005916b0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 00518e63
     ADD ESP,0x8                         ; 00518e68
     LEA EAX,[ESP + 0x10c]               ; 00518e6b
@@ -808,7 +808,7 @@ section .text
     LEA ESI,[ESP + 0x234]               ; 00518e84
     LEA EDI,[ESP + 0x174]               ; 00518e8b
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 ; 00518e92
-        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005916b0()
+        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005916b0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 00518e97
     LEA ESI,[ESP + 0x234]               ; 00518e9c
     ADD ESP,0x8                         ; 00518ea3
@@ -874,7 +874,7 @@ section .text
     SUB ESP,0x4                         ; 00518fab
     FSTP float ptr [ESP]                ; 00518fae
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 00518fb1
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x39c],EAX     ; 00518fb6
     MOV EAX,dword ptr [ESP + 0x39c]     ; 00518fbd
     MOV dword ptr [EBX + 0xf0],EAX      ; 00518fc4

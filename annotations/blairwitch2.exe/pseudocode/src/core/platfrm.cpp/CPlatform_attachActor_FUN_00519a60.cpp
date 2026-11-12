@@ -14,11 +14,11 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_00519a60(CPlatform *this
   CDemonActor *pCVar1;
   CPlatform *pCVar2;
   int iVar3;
-  float *pfVar4;
+  CMatrix3x4f *pCVar4;
   CMatrix3x4f *pCVar5;
   byte bVar6;
-  byte local_a0 [48];
-  float local_70 [12];
+  CMatrix3x4f local_a0;
+  CMatrix3x4f local_70;
   CMatrix3x4f local_40;
   
   bVar6 = 0;
@@ -34,16 +34,16 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_00519a60(CPlatform *this
         pCVar2 = this_ptr;
         while( true ) {
           if (pCVar1 == (CDemonActor *)0x0) {
-            core_xform_cpp_FUN_00591c10(local_a0,&actor->location,&actor->orient);
+            core_xform_cpp_FUN_00591c10(&local_a0,&actor->location,&actor->orient);
             core_xform_cpp_FUN_00591ad0
                       (&local_40,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
             pCVar2->attach_actors[0].actor = actor;
-            core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(local_a0,&local_40);
-            pfVar4 = local_70;
+            core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(&local_a0,&local_40,&local_70);
+            pCVar4 = &local_70;
             pCVar5 = &pCVar2->attach_actors[0].matrix;
             for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-              pCVar5->m[0].w = *pfVar4;
-              pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
+              pCVar5->m[0].w = pCVar4->m[0].w;
+              pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
               pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
             }
             return;

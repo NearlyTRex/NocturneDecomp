@@ -17,7 +17,7 @@
 ;   core_setcolid.cpp_FUN_0053d270 at 0053d3fe
 ;   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0054bb60 at 0054bc60
 ;   core_skeleton.cpp_FUN_0054fa00 at 0054fb07
-;   core_spike.cpp_FUN_00566fd0 at 00567128
+;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0 at 00567128
 ;
 ; *****************************************************************************
 

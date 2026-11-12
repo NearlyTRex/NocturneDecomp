@@ -473,7 +473,7 @@ section .text
         ;   Label: LAB_004a1e7d
     PUSH 0x5dcdb5                       ; 004a1e82 | = "events.txt"
     CALL crt_stdio.c_fopen_FUN_005c157c ; 004a1e87
-        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005c157c()
+        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004a1e8c
     MOV dword ptr [EBP + -0x76],EAX     ; 004a1e8f
     TEST EAX,EAX                        ; 004a1e92
@@ -814,7 +814,7 @@ section .text
     LEA EAX,[EBP + 0xffffdd52]          ; 004a2182
     PUSH EAX                            ; 004a2188
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a2189
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     ADD ESP,0xc                         ; 004a218e
     MOV ESI,EAX                         ; 004a2191
     TEST EAX,EAX                        ; 004a2193
@@ -1332,7 +1332,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x7a]      ; 004a2657
     PUSH EAX                            ; 004a265a
     CALL core_setutil.cpp_C3DSLight_advanceFilter_FUN_0055d360 ; 004a265b
-        ;   XREF to: 0055d360 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSLight_advanceFilter_FUN_0055d360()
+        ;   XREF to: 0055d360 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_advanceFilter_FUN_0055d360(C3DSLight * this_ptr, CDemonLight * light)
     ADD ESP,0x8                         ; 004a2660
     JMP 0x004a21fb                      ; 004a2663
         ;   XREF to: 004a21fb (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -1537,7 +1537,7 @@ section .text
     LEA EAX,[EBP + 0xffffeaea]          ; 004a2836
     PUSH EAX                            ; 004a283c
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a283d
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     MOV EBX,EAX                         ; 004a2842
     ADD ESP,0xc                         ; 004a2844
     MOV ESI,EAX                         ; 004a2847
@@ -1556,7 +1556,7 @@ section .text
     LEA EAX,[EBP + 0xffffe3e2]          ; 004a2869
     PUSH EAX                            ; 004a286f
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a2870
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     MOV EBX,EAX                         ; 004a2875
     ADD ESP,0xc                         ; 004a2877
     TEST EAX,EAX                        ; 004a287a
@@ -1954,7 +1954,7 @@ section .text
     LEA EAX,[EBP + 0xfffff1f2]          ; 004a2c23
     PUSH EAX                            ; 004a2c29
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a2c2a
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     ADD ESP,0xc                         ; 004a2c2f
     TEST EAX,EAX                        ; 004a2c32
     JZ 0x004a1d2e                       ; 004a2c34
@@ -2123,7 +2123,7 @@ section .text
     LEA EAX,[EBP + 0xffffe31a]          ; 004a2dd6
     PUSH EAX                            ; 004a2ddc
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a2ddd
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     ADD ESP,0xc                         ; 004a2de2
     MOV EBX,EAX                         ; 004a2de5
     TEST EAX,EAX                        ; 004a2de7
@@ -2145,7 +2145,7 @@ section .text
     PUSH EBX                            ; 004a2e18
     MOV dword ptr [EBX + 0x70],0x2      ; 004a2e19
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004a2e20
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004a2e25
     TEST EAX,EAX                        ; 004a2e28
     JZ 0x004a2e42                       ; 004a2e2a
@@ -2161,7 +2161,7 @@ section .text
     PUSH EDI                            ; 004a2e48
     PUSH EBX                            ; 004a2e49
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004a2e4a
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004a2e4f
     TEST EAX,EAX                        ; 004a2e52
     JZ 0x004a21fb                       ; 004a2e54
@@ -2642,7 +2642,7 @@ section .text
     LEA EAX,[EBP + 0xffffec7a]          ; 004a32b1
     PUSH EAX                            ; 004a32b7
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a32b8
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     ADD ESP,0xc                         ; 004a32bd
     MOV dword ptr [EBP + -0x32],EAX     ; 004a32c0
     TEST EAX,EAX                        ; 004a32c3
@@ -3871,7 +3871,7 @@ section .text
     LEA EAX,[EBP + 0xffffe7ca]          ; 004a3e16
     PUSH EAX                            ; 004a3e1c
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a3e1d
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     ADD ESP,0xc                         ; 004a3e22
     MOV EBX,EAX                         ; 004a3e25
     TEST EAX,EAX                        ; 004a3e27
@@ -4422,7 +4422,7 @@ section .text
     LEA EAX,[EBP + 0xfffffc1a]          ; 004a435d
     PUSH EAX                            ; 004a4363
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a4364
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     ADD ESP,0xc                         ; 004a4369
     MOV EBX,EAX                         ; 004a436c
     TEST EAX,EAX                        ; 004a436e
@@ -5170,8 +5170,8 @@ section .text
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 004a4a69
         ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH 0x1                            ; 004a4a6e
-    CALL sound_sndmain.cpp_FUN_00572980 ; 004a4a70
-        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572980(int channel_index)
+    CALL sound_sndmain.cpp_setNextSfxChannel_FUN_00572980 ; 004a4a70
+        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_00572980(int channel_index)
     ADD ESP,0x4                         ; 004a4a75
     LEA EAX,[EBP + 0xfffff8fa]          ; 004a4a78
     PUSH EAX                            ; 004a4a7e
@@ -5337,7 +5337,7 @@ section .text
     MOV ECX,dword ptr [EBX + EAX*0x1 + 0x14d168] ; 004a4c1f
     PUSH ECX                            ; 004a4c26
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004a4c27
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004a4c2c
     TEST EAX,EAX                        ; 004a4c2f
     JZ 0x004a4c40                       ; 004a4c31
@@ -5613,7 +5613,7 @@ section .text
     LEA EAX,[EBP + 0xfffffb52]          ; 004a4e86
     PUSH EAX                            ; 004a4e8c
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a4e8d
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     MOV EBX,EAX                         ; 004a4e92
     ADD ESP,0xc                         ; 004a4e94
     TEST EAX,EAX                        ; 004a4e97
@@ -6225,7 +6225,7 @@ section .text
     LEA EAX,[EBP + 0xffffeed2]          ; 004a542e
     PUSH EAX                            ; 004a5434
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a5435
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     ADD ESP,0xc                         ; 004a543a
     MOV EBX,EAX                         ; 004a543d
     TEST EAX,EAX                        ; 004a543f
@@ -6507,7 +6507,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x6e]      ; 004a570e
     PUSH ESI                            ; 004a5711
     CALL core_setutil.cpp_C3DSLight_setFilterFrame_FUN_0055d3f0 ; 004a5712
-        ;   XREF to: 0055d3f0 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSLight_setFilterFrame_FUN_0055d3f0()
+        ;   XREF to: 0055d3f0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_setFilterFrame_FUN_0055d3f0(C3DSLight * this_ptr, int frame_index, CDemonLight * light)
     ADD ESP,0xc                         ; 004a5717
     JMP 0x004a21fb                      ; 004a571a
         ;   XREF to: 004a21fb (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -6721,7 +6721,7 @@ section .text
     LEA EAX,[EBP + 0xffffe572]          ; 004a58fa
     PUSH EAX                            ; 004a5900
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a5901
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     ADD ESP,0xc                         ; 004a5906
     MOV EBX,EAX                         ; 004a5909
     TEST EAX,EAX                        ; 004a590b
@@ -6949,7 +6949,7 @@ section .text
     LEA EAX,[EBP + 0xfffffa8a]          ; 004a5b18
     PUSH EAX                            ; 004a5b1e
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a5b1f
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     MOV EBX,EAX                         ; 004a5b24
     ADD ESP,0xc                         ; 004a5b26
     TEST EAX,EAX                        ; 004a5b29
@@ -7719,7 +7719,7 @@ section .text
     LEA EAX,[EBP + 0xffffe252]          ; 004a62e1
     PUSH EAX                            ; 004a62e7
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a62e8
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     MOV EBX,EAX                         ; 004a62ed
     ADD ESP,0xc                         ; 004a62ef
     TEST EAX,EAX                        ; 004a62f2
@@ -8287,7 +8287,7 @@ section .text
     LEA EAX,[EBP + 0xffffebb2]          ; 004a684f
     PUSH EAX                            ; 004a6855
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a6856
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     ADD ESP,0xc                         ; 004a685b
     MOV EBX,EAX                         ; 004a685e
     TEST EAX,EAX                        ; 004a6860
@@ -8357,7 +8357,7 @@ section .text
     PUSH ECX                            ; 004a6934
     PUSH EBX                            ; 004a6935
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004a6936
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,EAX                         ; 004a693b
     ADD ESP,0x8                         ; 004a693d
     TEST EAX,EAX                        ; 004a6940
@@ -8483,7 +8483,7 @@ section .text
     LEA EAX,[EBP + 0xfffff44a]          ; 004a6ab6
     PUSH EAX                            ; 004a6abc
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a6abd
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     MOV ESI,EAX                         ; 004a6ac2
     ADD ESP,0xc                         ; 004a6ac4
     TEST EAX,EAX                        ; 004a6ac7

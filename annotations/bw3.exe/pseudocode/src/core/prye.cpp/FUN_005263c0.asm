@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_prye_cpp_FUN_005263c0(CCharacter *param_1)
+; void core_prye_cpp_FUN_005263c0(CPrye *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -22,7 +22,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
-;   core_prye.cpp_FUN_0051f360
+;   core_prye.cpp_CPrye_updateWeaponPosition_FUN_0051f360
 ;
 ; *****************************************************************************
 
@@ -180,7 +180,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x20c24]   ; 00526586
     PUSH EDX                            ; 0052658c
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0052658d
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EDX,dword ptr [EBX + 0x20c30]   ; 00526592
     XOR ESI,ESI                         ; 00526598
     INC EDX                             ; 0052659a
@@ -286,7 +286,7 @@ section .text
     PUSH ESI                            ; 00526695
     PUSH EAX                            ; 00526696
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00526697
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0052669c
     TEST EAX,EAX                        ; 0052669f
     JZ 0x005266c9                       ; 005266a1
@@ -306,7 +306,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x20c24]   ; 005266d0
     PUSH EBP                            ; 005266d6
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 005266d7
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 005266dc
     TEST EAX,EAX                        ; 005266df
     JZ 0x0052651b                       ; 005266e1
@@ -337,8 +337,8 @@ section .text
     ADD ESP,0x4                         ; 00526740
     PUSH 0x0                            ; 00526743
     PUSH EBX                            ; 00526745
-    CALL core_prye.cpp_FUN_0051f360     ; 00526746
-        ;   XREF to: 0051f360 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_0051f360()
+    CALL core_prye.cpp_CPrye_updateWeaponPosition_FUN_0051f360 ; 00526746
+        ;   XREF to: 0051f360 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_updateWeaponPosition_FUN_0051f360(CPrye * this_ptr, int hand_index)
     MOV EAX,dword ptr [EBX + 0x20c24]   ; 0052674b
     MOV EDX,dword ptr [EAX + 0x2dc]     ; 00526751
     ADD ESP,0x8                         ; 00526757

@@ -143,7 +143,7 @@ void __cdecl CEditorTools::showError(CEditorTools *this_ptr,char *format);
 
 // Original: shape_edittool.cpp_FUN_0047be90
 // Address: 0047be90
-void FUN_0047be90(undefined4 param_1,undefined4 param_2);
+void FUN_0047be90(undefined4 param_1,char *param_2);
 
 // Original: shape_edittool.cpp_FUN_0047bf8a
 // Address: 0047bf8a
@@ -175,11 +175,11 @@ int __cdecl CEditorTools::showDestructiveActionConfirmDialog(CEditorTools *this_
 
 // Original: shape_edittool.cpp_FUN_0047c7ee
 // Address: 0047c7ee
-bool FUN_0047c7ee(undefined4 param_1,undefined4 param_2);
+bool FUN_0047c7ee(undefined4 param_1,char *param_2);
 
 // Original: shape_edittool.cpp_FUN_0047c87e
 // Address: 0047c87e
-undefined4 FUN_0047c87e(undefined4 param_1,undefined4 param_2);
+undefined4 FUN_0047c87e(undefined4 param_1,char *param_2);
 
 // Original: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970
 // Address: 0047c970
@@ -257,13 +257,13 @@ uint __cdecl CEditorTools::getTimeCycledColorByte(CEditorTools *this_ptr);
 // Address: 0047f210
 void FUN_0047f210(CEditorTools *param_1,int param_2);
 
-// Original: shape_edittool.cpp_FUN_0047fbb0
+// Original: shape_edittool.cpp_CEditorTools_getClipboardText_FUN_0047fbb0
 // Address: 0047fbb0
-char * __cdecl FUN_0047fbb0(CEditorTools *this_ptr);
+char * __cdecl CEditorTools::getClipboardText(CEditorTools *this_ptr);
 
-// Original: shape_edittool.cpp_FUN_0047fc30
+// Original: shape_edittool.cpp_CEditorTools_setClipboardText_FUN_0047fc30
 // Address: 0047fc30
-void __cdecl FUN_0047fc30(CEditorTools *this_ptr,char *text_data);
+void __cdecl CEditorTools::setClipboardText(CEditorTools *this_ptr,char *text_data);
 
 // Original: shape_edittool.cpp_FUN_0047fd00
 // Address: 0047fd00
@@ -276,10 +276,6 @@ void FUN_0047ff4e(undefined4 param_1,undefined4 param_2,undefined4 param_3,float
 // Original: shape_edittool.cpp_FUN_00480000
 // Address: 00480000
 void FUN_00480000(float *param_1,float *param_2);
-
-// Original: shape_edittool.cpp_FUN_0048014e
-// Address: 0048014e
-void FUN_0048014e(undefined4 param_1,int *param_2,int *param_3,int param_4);
 
 // Original: shape_edittool.cpp_FUN_00480150
 // Address: 00480150
@@ -583,7 +579,7 @@ int __cdecl calculateButtonWidth(char *button_text);
 
 // Original: shape_edittool.cpp_calculateButtonHeight_FUN_00485380
 // Address: 00485380
-int calculateButtonHeight(char *param_1);
+int __cdecl calculateButtonHeight(char *button_text);
 
 // Original: shape_edittool.cpp_FUN_0048546e
 // Address: 0048546e

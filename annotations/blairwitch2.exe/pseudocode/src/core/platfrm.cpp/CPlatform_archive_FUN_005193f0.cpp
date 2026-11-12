@@ -102,7 +102,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_005193f0(CPlatform *this_ptr
       do {
         if (pCVar1->attach_actors[0].actor != (CDemonActor *)0x0) {
           core_actor_cpp_archiveActor_FUN_0040b9e0
-                    (this_ptr->attach_actors + iVar2,"attach actor");
+                    (&this_ptr->attach_actors[iVar2].actor,"attach actor");
         }
         iVar2 = iVar2 + 1;
         pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_snddx_cpp_isValidSfxHandle_FUN_0055c0bc(int param_1)
+; int __cdecl sound_snddx_cpp_isValidSfxHandle_FUN_0055c0bc(int sfx_handle)
 ;
+; Parameters:
+; int              Stack[0x4]:4   sfx_handle
 ;
 ; *****************************************************************************
 

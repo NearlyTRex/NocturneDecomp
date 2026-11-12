@@ -15,7 +15,7 @@ CCurtain * core_curtain_cpp_CCurtain_dtor_FUN_00448650(CCurtain *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CCurtainTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CCurtainTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

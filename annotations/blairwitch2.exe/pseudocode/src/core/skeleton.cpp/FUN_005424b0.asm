@@ -126,7 +126,7 @@ section .text
     MOV EDI,ESP                         ; 005425d2
     MOVSD.REP ES:EDI,ESI                ; 005425d4
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407cc0 ; 005425d6
-        ;   XREF to: 00407cc0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407cc0()
+        ;   XREF to: 00407cc0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407cc0(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 005425db
     MOV ESI,dword ptr [ESP + 0x58]      ; 005425de
         ;   Label: LAB_005425de

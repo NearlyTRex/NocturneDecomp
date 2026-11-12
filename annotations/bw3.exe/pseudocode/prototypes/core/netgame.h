@@ -9,9 +9,9 @@
 // Address: 005039b0
 void __cdecl staticInit(void);
 
-// Original: core_netgame.cpp_FUN_005039fe
+// Original: core_netgame.cpp_resetGameTime_FUN_005039fe
 // Address: 005039fe
-void FUN_005039fe(void);
+void __cdecl resetGameTime(void);
 
 // Original: core_netgame.cpp_computeTimeDelta_FUN_00503a80
 // Address: 00503a80
@@ -19,7 +19,7 @@ float __cdecl computeTimeDelta(int start_time,int end_time);
 
 // Original: core_netgame.cpp_getElapsedSeconds_FUN_00503ae0
 // Address: 00503ae0
-float __cdecl getElapsedSeconds(int param_1);
+float __cdecl getElapsedSeconds(uint timestamp);
 
 // Original: core_netgame.cpp_removeChatOut_FUN_00503b50
 // Address: 00503b50
@@ -31,7 +31,7 @@ int FUN_00503bee(int param_1);
 
 // Original: core_netgame.cpp_allocSimFrame_FUN_00503c40
 // Address: 00503c40
-int * allocSimFrame(int param_1);
+SSimFrame * __cdecl allocSimFrame(int sequence_number);
 
 // Original: core_netgame.cpp_CNetGame_ctor_FUN_00503d70
 // Address: 00503d70

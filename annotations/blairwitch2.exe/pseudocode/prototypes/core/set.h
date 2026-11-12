@@ -151,11 +151,11 @@ void __cdecl CDemonSet::rotateVerticies(CDemonSet *this_ptr,int vertex_count,CVe
 
 // Original: core_set.cpp_transformToWorldSpace_FUN_00531f60
 // Address: 00531f60
-void transformToWorldSpace(int *param_1);
+CVector3i * __stack_esi transformToWorldSpace(CVector3i *input,CVector3i *output);
 
 // Original: core_set.cpp_transformNormalFixedPoint_FUN_00532030
 // Address: 00532030
-void transformNormalFixedPoint(int *param_1);
+CVector3i * __stack_esi transformNormalFixedPoint(CVector3i *input,CVector3i *output);
 
 // Original: core_set.cpp_CDemonSet_lightVerticies_FUN_00532190
 // Address: 00532190
@@ -175,7 +175,7 @@ void __cdecl CDemonSet::loadAssets(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_qsortByDisplayListEntry_FUN_005332c0
 // Address: 005332c0
-undefined4 __cdecl qsortByDisplayListEntry(int param_1,int param_2);
+int __cdecl qsortByDisplayListEntry(SDisplayListSortEntry *a,SDisplayListSortEntry *b);
 
 // Original: core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0
 // Address: 005332f0
@@ -323,4 +323,4 @@ SVDBox * SVDBox::ctor(SVDBox *this_ptr);
 
 // Original: core_set.cpp_FUN_00534d80
 // Address: 00534d80
-void FUN_00534d80(undefined4 param_1);
+void FUN_00534d80(void *param_1);

@@ -24,7 +24,7 @@ section .text
     PUSH EDX                            ; 005a1981
         ;   Label: LAB_005a1981
     CALL crt_stdio.c_ftell_FUN_005c2e90 ; 005a1982
-        ;   XREF to: 005c2e90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005c2e90()
+        ;   XREF to: 005c2e90 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005c2e90(_FILE * file_handle)
     ADD ESP,0x4                         ; 005a1987
     RET                                 ; 005a198a
 

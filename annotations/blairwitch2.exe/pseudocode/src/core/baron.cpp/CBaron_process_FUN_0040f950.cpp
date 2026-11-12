@@ -181,7 +181,8 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_0040f950(CBaron *this_ptr,float d
   else {
     if (EVar1 == WALK_STATE_NO_PATH) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar5->base,0,1);
-      engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+      engine_console_cpp_CConsole_printf_FUN_00436710
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
       goto switchD_0040fedf_default;
     }
 LAB_0040fc5d:

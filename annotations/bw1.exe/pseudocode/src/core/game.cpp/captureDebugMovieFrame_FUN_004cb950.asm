@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_captureDebugMovieFrame_FUN_004cb950(void)
+; void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004cb950(void)
 ;
 ;
 ; Referenced Globals:
@@ -224,17 +224,17 @@ section .text
     PUSH EBX                            ; 004cbbbb
     MOV EDI,EAX                         ; 004cbbbc
     CALL crt_stdio.c_fputc_FUN_005c2f00 ; 004cbbbe
-        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005c2f00()
+        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005c2f00(int character, _FILE * file)
     ADD ESP,0x8                         ; 004cbbc3
     PUSH EBP                            ; 004cbbc6
     PUSH ESI                            ; 004cbbc7
     CALL crt_stdio.c_fputc_FUN_005c2f00 ; 004cbbc8
-        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005c2f00()
+        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005c2f00(int character, _FILE * file)
     ADD ESP,0x8                         ; 004cbbcd
     PUSH EBP                            ; 004cbbd0
     PUSH EDI                            ; 004cbbd1
     CALL crt_stdio.c_fputc_FUN_005c2f00 ; 004cbbd2
-        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005c2f00()
+        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005c2f00(int character, _FILE * file)
     ADD ESP,0x8                         ; 004cbbd7
     MOV ECX,dword ptr [ESP + 0x138]     ; 004cbbda
     INC ECX                             ; 004cbbe1

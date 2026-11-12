@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e44d0 at 004e44d0
+;   core_main.c_enterMainGameMenu_FUN_004e44d0 at 004e44d0
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004ea4b4 = 004ea733

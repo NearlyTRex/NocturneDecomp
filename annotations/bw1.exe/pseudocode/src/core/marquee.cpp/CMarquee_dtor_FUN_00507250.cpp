@@ -14,7 +14,7 @@ CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_00507250(CMarquee *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMarqueeTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMarqueeTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

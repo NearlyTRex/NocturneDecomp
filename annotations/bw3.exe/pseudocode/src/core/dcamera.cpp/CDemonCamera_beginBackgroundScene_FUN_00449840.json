@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 292,
+    "complexity_score": 293,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
+    "pseudocode_lines": 68,
     "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
@@ -16,7 +16,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 200
+    "total_lines": 201
   },
   "cross_references": [
     {
@@ -56,24 +56,24 @@
       "name": "engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0046e880"
     },
     {
+      "addr": "0046d2f0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0"
+    },
+    {
       "addr": "0046cb90",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90"
     },
     {
+      "addr": "0046d090",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090"
+    },
+    {
       "addr": "0046cc40",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40"
-    },
-    {
-      "addr": "0046d090",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046d090"
-    },
-    {
-      "addr": "0046d2f0",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046d2f0"
     }
   ],
   "globals": [
@@ -306,6 +306,32 @@
     },
     "pcode_op_count": 496
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0043c040",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0044d700",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0044cc70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9209
+    },
+    "nocturne.exe": {
+      "addr": "00440b20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5829
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -429,15 +455,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 67,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d090(DAT_005f2afc,(this_ptr->base).focal_length);",
+      "text": "(DAT_005f2afc,(this_ptr->base).focal_length);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 69,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,&(this_ptr->base).rotation_matrix);",

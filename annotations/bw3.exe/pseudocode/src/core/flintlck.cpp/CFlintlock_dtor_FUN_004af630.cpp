@@ -15,7 +15,7 @@ CFlintlock * core_flintlck_cpp_CFlintlock_dtor_FUN_004af630(CFlintlock *this_ptr
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFlintlockTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFlintlockTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

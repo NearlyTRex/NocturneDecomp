@@ -10,8 +10,8 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004fd750(CLadder 
 
 {
   int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  CMatrix3x4f *pCVar2;
+  float *pfVar3;
   byte bVar4;
   float afStackY_1024 [967];
   float local_f0;
@@ -19,7 +19,7 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004fd750(CLadder 
   uint local_d0;
   CMatrix3x4f local_cc;
   CMatrix3x4f local_9c;
-  uint local_6c [12];
+  CMatrix3x4f local_6c;
   float local_3c;
   float afStack_38 [4];
   float local_28;
@@ -37,13 +37,13 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004fd750(CLadder 
     core_xform_cpp_FUN_005b5620
               (&local_9c,&(this_ptr->master_actor->location).position,
                &(this_ptr->master_actor->orient).vec);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_cc,&local_9c);
-    puVar2 = local_6c;
-    puVar3 = (uint *)&stack0xffffff04;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_cc,&local_9c,&local_6c);
+    pCVar2 = &local_6c;
+    pfVar3 = (float *)&stack0xffffff04;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar3 = *puVar2;
-      puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-      puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+      *pfVar3 = pCVar2->m[0].w;
+      pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+      pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
     }
     local_24 = local_f0;
     local_20 = local_e0;

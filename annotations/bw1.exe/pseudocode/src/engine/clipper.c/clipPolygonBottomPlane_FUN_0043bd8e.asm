@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_clipper_c_clipPolygonBottomPlane_FUN_0043bd8e(int *param_1,int param_2,int param_3)
+; int engine_clipper_c_clipPolygonBottomPlane_FUN_0043bd8e(undefined4 *param_1,int param_2,int param_3)
 ;
 ;
 ; Referenced Globals:
@@ -112,7 +112,7 @@ section .text
     MOV [0x007c841c],EAX                ; 0043be50 | DAT_007c841c
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 0043be55
     CALL engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0 ; 0043be59
-        ;   XREF to: 0043b7b0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0()
+        ;   XREF to: 0043b7b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 0043be5e
     JMP 0x0043bdec                      ; 0043be61
         ;   XREF to: 0043bdec (UNCONDITIONAL_JUMP)  ; caseD_3
@@ -143,7 +143,7 @@ section .text
     MOV [0x007c841c],EAX                ; 0043bea8 | DAT_007c841c
     MOV dword ptr [EBP + EBX*0x4 + -0x4],EDX ; 0043bead
     CALL engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0 ; 0043beb1
-        ;   XREF to: 0043b7b0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0()
+        ;   XREF to: 0043b7b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     ADD ESP,0xc                         ; 0043beb6
     JMP 0x0043bdec                      ; 0043beb9
         ;   XREF to: 0043bdec (UNCONDITIONAL_JUMP)  ; caseD_3

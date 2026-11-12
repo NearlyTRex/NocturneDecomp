@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_winrun_cpp_getComputerAndUserName_FUN_00581a9c(char *param_1)
+; void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_00581a9c(char *buffer)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   buffer
 ;
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_005a5ec0

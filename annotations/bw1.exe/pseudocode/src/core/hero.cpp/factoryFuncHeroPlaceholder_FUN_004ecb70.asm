@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004ecb70(void)
+; CHeroPlaceholder * __cdecl core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004ecb70(void)
 ;
 ;
 ; Called Functions:

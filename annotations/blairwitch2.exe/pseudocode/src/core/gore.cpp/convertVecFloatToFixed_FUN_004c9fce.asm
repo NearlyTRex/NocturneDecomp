@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_convertVecFloatToFixed_FUN_004c9fce(float *param_1,int *param_2)
+; CVector3f * __cdecl core_gore_cpp_convertVecFloatToFixed_FUN_004c9fce(CVector3f *src,CVector3i *dst)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   src
+; CVector3i *      Stack[0x8]:4   dst
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f7bac

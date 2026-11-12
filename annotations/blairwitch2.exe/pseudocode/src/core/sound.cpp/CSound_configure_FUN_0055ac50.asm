@@ -45,7 +45,7 @@ section .text
         ;   Label: core_sound.cpp_CSound_configure_FUN_0055ac50
     PUSH 0x1                            ; 0055ac53
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00551190 ; 0055ac55
-        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00551190()
+        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00551190(int channel_index)
     MOV dword ptr [ESP + 0x4],EAX       ; 0055ac5a
     FLD float ptr [ESP + 0x4]           ; 0055ac5e
     ADD ESP,0x4                         ; 0055ac62
@@ -57,7 +57,7 @@ section .text
     PUSH 0x0                            ; 0055ac74
         ;   Label: LAB_0055ac74
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00551190 ; 0055ac76
-        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00551190()
+        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00551190(int channel_index)
     MOV dword ptr [ESP + 0x4],EAX       ; 0055ac7b
     FLD float ptr [ESP + 0x4]           ; 0055ac7f
     ADD ESP,0x4                         ; 0055ac83
@@ -69,12 +69,12 @@ section .text
     PUSH dword ptr [0x005fbdb8]         ; 0055ac91 | DAT_005fbdb8
     PUSH 0x0                            ; 0055ac97
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00551100 ; 0055ac99
-        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00551100()
+        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00551100(int channel_index, float volume)
     ADD ESP,0x8                         ; 0055ac9e
     PUSH 0x2                            ; 0055aca1
         ;   Label: LAB_0055aca1
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00551190 ; 0055aca3
-        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00551190()
+        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00551190(int channel_index)
     MOV dword ptr [ESP + 0x4],EAX       ; 0055aca8
     FLD float ptr [ESP + 0x4]           ; 0055acac
     ADD ESP,0x4                         ; 0055acb0
@@ -86,7 +86,7 @@ section .text
     PUSH dword ptr [0x005fbdbc]         ; 0055acbe | DAT_005fbdbc
     PUSH 0x2                            ; 0055acc4
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00551100 ; 0055acc6
-        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00551100()
+        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00551100(int channel_index, float volume)
     ADD ESP,0x8                         ; 0055accb
     CALL sound_sndmain.cpp_isSoundMuted_FUN_00550bc0 ; 0055acce
         ;   XREF to: 00550bc0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundMuted_FUN_00550bc0()
@@ -103,7 +103,7 @@ section .text
     PUSH 0x0                            ; 0055acea
     PUSH 0x0                            ; 0055acec
     CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_00552cc0 ; 0055acee
-        ;   XREF to: 00552cc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_set3DListenerOrientRight_FUN_00552cc0()
+        ;   XREF to: 00552cc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrientRight_FUN_00552cc0(float orient_right_x, float orient_right_y, float orient_right_z)
     ADD ESP,0xc                         ; 0055acf3
     PUSH 0x0                            ; 0055acf6
     PUSH 0x0                            ; 0055acf8
@@ -162,7 +162,7 @@ section .text
         ;   Label: LAB_0055ad7b
     PUSH 0x1                            ; 0055ad81
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00551100 ; 0055ad83
-        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00551100()
+        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00551100(int channel_index, float volume)
     ADD ESP,0x8                         ; 0055ad88
     JMP 0x0055ac74                      ; 0055ad8b
         ;   XREF to: 0055ac74 (UNCONDITIONAL_JUMP)  ; LAB_0055ac74

@@ -44,9 +44,9 @@
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_special.cpp_buildCardList_FUN_00582b30
-;   engine_special.cpp_FUN_00581310
 ;   engine_special.cpp_getVideoMemory_FUN_00582ae0
 ;   engine_special.cpp_kill_FUN_00581f20
+;   engine_special.cpp_loadExternalRenderer_FUN_00581310
 ;   engine_special.cpp_selectCard_FUN_00582b10
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
@@ -764,8 +764,8 @@ section .text
     CALL engine_special.cpp_kill_FUN_00581f20 ; 0050b2b5
         ;   XREF to: 00581f20 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_kill_FUN_00581f20()
     PUSH 0x0                            ; 0050b2ba
-    CALL engine_special.cpp_FUN_00581310 ; 0050b2bc
-        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00581310(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_00581310 ; 0050b2bc
+        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00581310(HWND window_handle)
     MOV EDI,dword ptr [0x02c83370]      ; 0050b2c1 | DAT_02c83370
     ADD ESP,0x4                         ; 0050b2c7
     TEST EDI,EDI                        ; 0050b2ca

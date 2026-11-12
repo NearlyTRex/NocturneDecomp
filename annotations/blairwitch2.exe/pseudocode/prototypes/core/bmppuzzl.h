@@ -121,9 +121,9 @@ CExamplePuzzle * CExamplePuzzle::ctor(CExamplePuzzle *this_ptr);
 // Address: 0059bf70
 CExamplePuzzle * CExamplePuzzle::dtor(CExamplePuzzle *this_ptr,uint flags);
 
-// Original: core_bmppuzzl.cpp_FUN_0059bfc0
+// Original: core_bmppuzzl.cpp_CAlphaBitmap_arrdtor30_FUN_0059bfc0
 // Address: 0059bfc0
-void FUN_0059bfc0(undefined4 param_1);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor30(CAlphaBitmap *this_ptr,uint flags);
 
 // Original: core_bmppuzzl.cpp_CAlphaBitmap_arrdtor4_FUN_0059bfe0
 // Address: 0059bfe0

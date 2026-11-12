@@ -14,7 +14,8 @@ void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,i
   int iVar1;
   int iVar2;
   uchar *bitmap_data;
-  int iVar3;
+  SIZE_T SVar3;
+  _FILE *unaff_EBP;
   ulong unaff_EDI;
   char acStack_144 [108];
   char acStack_d8 [100];
@@ -22,7 +23,7 @@ void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,i
   _FILE *p_Stack_18;
   int iStack_14;
   
-  cockpit_pkbitmap_cpp_FUN_00510670(param_1);
+  cockpit_pkbmpset_cpp_FUN_00510670(param_1);
   iVar1 = engine_dosio_cpp_getFileSize_FUN_004657f0((char *)0x5cbfe0,param_2);
   p_Stack_18 = engine_dosio_cpp_FUN_004659c0((char *)0x5cbfe7,param_2,(char *)0x5cbfe4);
   if (p_Stack_18 == (_FILE *)0x0) {
@@ -53,8 +54,8 @@ void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,i
   if (0 < param_1->bitmap_count) {
     iVar2 = 0;
     do {
-      iVar3 = _fread(bitmap_data,unaff_EDI);
-      if (iVar3 != 1) {
+      SVar3 = _fread(bitmap_data,unaff_EDI,1,unaff_EBP);
+      if (SVar3 != 1) {
         _sprintf(acStack_74,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW");
         _DAT_01d71de0 = "..\\cockpit\\pkbmpset.cpp";
         _DAT_01d71de4 = 0xe4;

@@ -32,7 +32,7 @@
 ;   core_main.c_FUN_005030e0
 ;   crt_ddraw.c_DirectDrawCreate
 ;   crt_memory.c_malloc_FUN_005c08d0
-;   engine_special.cpp_FUN_00581310
+;   engine_special.cpp_loadExternalRenderer_FUN_00581310
 ;
 ; *****************************************************************************
 
@@ -141,8 +141,8 @@ section .text
     MOV EBX,dword ptr [0x02c9be68]      ; 005ac14e | DAT_02c9be68
         ;   Label: LAB_005ac14e
     PUSH EBX                            ; 005ac154
-    CALL engine_special.cpp_FUN_00581310 ; 005ac155
-        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00581310(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_00581310 ; 005ac155
+        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00581310(HWND window_handle)
     MOV EAX,0x1                         ; 005ac15a
     ADD ESP,0x4                         ; 005ac15f
     POP EBP                             ; 005ac162

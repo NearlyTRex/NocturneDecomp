@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_boxactor.cpp_factoryFuncBoxActor_FUN_0041bd00
 // Address: 0041bd00
-void factoryFuncBoxActor(void);
+CBoxActor * __cdecl factoryFuncBoxActor(void);
 
 // Original: core_boxactor.cpp_CBoxActor_getActorType_FUN_0041bd20
 // Address: 0041bd20
@@ -99,7 +99,7 @@ int __cdecl CBoxActor::getAllowedMeleeAttackTypes(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_factoryFuncLightActor_FUN_0041cf30
 // Address: 0041cf30
-void factoryFuncLightActor(void);
+CLightActor * __cdecl factoryFuncLightActor(void);
 
 // Original: core_boxactor.cpp_CLightActor_getActorType_FUN_0041cf50
 // Address: 0041cf50

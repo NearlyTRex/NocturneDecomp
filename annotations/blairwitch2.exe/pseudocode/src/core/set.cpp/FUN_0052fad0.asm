@@ -374,8 +374,8 @@ section .text
     MOV ECX,dword ptr [0x0060b280]      ; 0052fe06 | DAT_0060b280
     PUSH 0x42000000                     ; 0052fe0c
     PUSH ECX                            ; 0052fe11 | DAT_01ba5c50
-    CALL engine_drender.cpp_FUN_0046b4b0 ; 0052fe12
-        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b4b0()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0 ; 0052fe12
+        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 0052fe17
     LEA EAX,[EBP + -0x20]               ; 0052fe1a
     PUSH EAX                            ; 0052fe1d

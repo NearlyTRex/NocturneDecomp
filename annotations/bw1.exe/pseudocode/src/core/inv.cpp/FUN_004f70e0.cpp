@@ -20,7 +20,7 @@ void core_inv_cpp_FUN_004f70e0(void)
   _DAT_01d1bc5c = DAT_0061b49c;
   p_Var2 = engine_dosio_cpp_FUN_00479180(&DAT_005e6087,"invsize.txt",&DAT_005e6078);
   if (p_Var2 != (_FILE *)0x0) {
-    _fscanf(p_Var2,"%d,%d\n",&DAT_0061f1a0,&DAT_0061f1a4);
+    _fscanf(p_Var2,"%d,%d\n");
     _fclose(p_Var2);
   }
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
@@ -119,7 +119,8 @@ void core_inv_cpp_FUN_004f70e0(void)
   p_Var2 = engine_dosio_cpp_FUN_00479180(&DAT_005e61d6,"itemlist.txt",&DAT_005e61c6);
   if (p_Var2 != (_FILE *)0x0) {
     while ((p_Var2->_flag & 0x10) == 0) {
-      iVar3 = core_inv_cpp_loadItem_FUN_004f6e90(_DAT_01d08dc8 * 0x300 + 0x1d08dd0,p_Var2);
+      iVar3 = core_inv_cpp_loadItem_FUN_004f6e90
+                        ((SInventoryItemInfo *)(_DAT_01d08dc8 * 0x300 + 0x1d08dd0),p_Var2);
       if (iVar3 == 0) break;
       _DAT_01d08dc8 = _DAT_01d08dc8 + 1;
     }

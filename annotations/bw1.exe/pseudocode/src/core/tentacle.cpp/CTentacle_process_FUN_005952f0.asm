@@ -307,7 +307,7 @@ section .text
     LEA ESI,[ESP + 0xa8]                ; 0059563a
     LEA EDI,[ESP + 0xd8]                ; 00595641
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005b5200 ; 00595648
-        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005b5200()
+        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005b5200(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0059564d
     LEA ESI,[ESP + 0xa8]                ; 00595652
     ADD ESP,0x8                         ; 00595659
@@ -316,7 +316,7 @@ section .text
     PUSH EAX                            ; 00595665
     LEA ESI,[ESP + 0x44]                ; 00595666
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005b5200 ; 0059566a
-        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005b5200()
+        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005b5200(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0059566f
     LEA ESI,[ESP + 0x44]                ; 00595674
     LEA EDI,[EBX + 0xc278]              ; 00595678
@@ -329,7 +329,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x290]     ; 00595696
     PUSH ESI                            ; 0059569d
     CALL core_xform.cpp_clearTranslation_FUN_005b5600 ; 0059569e
-        ;   XREF to: 005b5600 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clearTranslation_FUN_005b5600()
+        ;   XREF to: 005b5600 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clearTranslation_FUN_005b5600(CMatrix3x4f * matrix)
     ADD ESP,0x4                         ; 005956a3
     XOR ESI,ESI                         ; 005956a6
     PUSH 0x40e00000                     ; 005956a8
@@ -491,7 +491,7 @@ section .text
     SUB ESP,0x4                         ; 005958c5
     FSTP float ptr [ESP]                ; 005958c8
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 005958cb
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cd60()
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     MOV dword ptr [ESP + 0x2a0],EAX     ; 005958d0
     FLD float ptr [ESP + 0x2a0]         ; 005958d7
     ADD ESP,0x4                         ; 005958de
@@ -652,7 +652,7 @@ section .text
     SUB ESP,0x4                         ; 00595ae1
     FSTP float ptr [ESP]                ; 00595ae4
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 00595ae7
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cd60()
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     MOV dword ptr [ESP + 0x2a0],EAX     ; 00595aec
     FLD float ptr [ESP + 0x2a0]         ; 00595af3
     ADD ESP,0x4                         ; 00595afa

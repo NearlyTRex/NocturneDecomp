@@ -19,11 +19,11 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
   SMRGLVertex *pSVar6;
   float *out_basis;
   SRenderVertex *pSVar7;
-  SRenderVertex *pSVar8;
-  SMRGLVertex *pSVar9;
-  SRenderVertex *pSVar10;
-  byte bVar11;
-  float10 fVar12;
+  SRenderVertex *vertices;
+  SMRGLVertex *pSVar8;
+  SRenderVertex *pSVar9;
+  byte bVar10;
+  float10 fVar11;
   float afStackY_1024 [980];
   SMRGLPrimitivePoly SStack_c0;
   CVector3i CStack_48;
@@ -35,7 +35,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
   int iStack_18;
   int iStack_14;
   
-  bVar11 = 0;
+  bVar10 = 0;
   iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
   if (iVar3 != 0) {
     return 0;
@@ -44,11 +44,11 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0(&this_ptr->base);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
   pSVar6 = SStack_c0.vertices + 4;
-  pSVar9 = SStack_c0.vertices + 6;
+  pSVar8 = SStack_c0.vertices + 6;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pSVar9->vertex_index = pSVar6->vertex_index;
-    pSVar6 = (SMRGLVertex *)((int)pSVar6 + ((uint)bVar11 * -2 + 1) * 4);
-    pSVar9 = (SMRGLVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);
+    pSVar8->vertex_index = pSVar6->vertex_index;
+    pSVar6 = (SMRGLVertex *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);
+    pSVar8 = (SMRGLVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);
   }
   iStack_24 = core_box_cpp_FUN_004207b0(SStack_c0.vertices + 6);
   iVar3 = _DAT_01cc8084;
@@ -109,9 +109,9 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
     if (0 < this_ptr->fly_count) {
       pSStack_1c = this_ptr->flies;
       do {
-        fVar12 = (float10)pSStack_1c->t * (float10)_DAT_005e076a;
+        fVar11 = (float10)pSStack_1c->t * (float10)_DAT_005e076a;
         iVar3 = round();
-        iStack_18 = (int)ROUND(fVar12);
+        iStack_18 = (int)ROUND(fVar11);
         if (iStack_18 < 0) {
           iStack_18 = 0;
         }
@@ -121,42 +121,42 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr)
         core_spline_cpp_FUN_00583f90
                   (iStack_18 * 0x20 + 0x1cc80cc,iVar3 + 4,iVar3 + 0x10,iVar3 + 0x1c,iVar3 + 0x28);
         fStack_3c = afStack_38[2];
-        afStack_38[(uint)bVar11 * -2] = afStack_38[(uint)bVar11 * -2 + 3];
-        afStack_38[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-             afStack_38[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
+        afStack_38[(uint)bVar10 * -2] = afStack_38[(uint)bVar10 * -2 + 3];
+        afStack_38[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+             afStack_38[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
         CStack_48.x = (int)ROUND(fStack_3c * _DAT_00600aa0);
         CStack_48.y = (int)ROUND(afStack_38[0] * _DAT_00600aa0);
         CStack_48.z = (int)ROUND(afStack_38[1] * _DAT_00600aa0);
         engine_special_cpp_FUN_00580173
                   (&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_48);
         pCVar2 = DAT_00612560;
-        pSVar8 = DAT_00612560->vertex_buffer_ptr;
-        if ((int)((pSVar8->projected_vertex).screen_x & -0x80000000) == 0) {
-          iVar5 = (pSVar8->projected_vertex).screen_y >> 0x10;
-          iVar3 = (pSVar8->projected_vertex).screen_x >> 0x10;
+        vertices = DAT_00612560->vertex_buffer_ptr;
+        if ((int)((vertices->projected_vertex).screen_x & -0x80000000) == 0) {
+          iVar5 = (vertices->projected_vertex).screen_y >> 0x10;
+          iVar3 = (vertices->projected_vertex).screen_x >> 0x10;
           if (_DAT_01c50948 == 0) {
-            engine_prim_c_replaceWWithDepth_FUN_0053dd20(pSVar8,1);
+            engine_prim_c_replaceWWithDepth_FUN_0053dd20(vertices,1);
             if ((((-1 < iVar3) && (iVar3 < DAT_0061b498)) && (-1 < iVar5)) && (iVar5 < DAT_0061b49c)
                ) {
               core_flies_cpp_drawFlyPixel_FUN_004bffb0
-                        (iVar3,iVar5,(pSVar8->projected_vertex).transformed_z);
+                        (iVar3,iVar5,(vertices->projected_vertex).transformed_z);
             }
           }
           else if ((iVar3 < DAT_0061b498 + -1) && (iVar5 < DAT_0061b49c + -1)) {
-            *(ushort *)&(pSVar8->projected_vertex).screen_x = 0;
-            *(ushort *)&(pSVar8->projected_vertex).screen_y = 0;
-            pSVar7 = pSVar8;
-            pSVar10 = pCVar2->vertex_buffer_ptr + 1;
+            *(ushort *)&(vertices->projected_vertex).screen_x = 0;
+            *(ushort *)&(vertices->projected_vertex).screen_y = 0;
+            pSVar7 = vertices;
+            pSVar9 = pCVar2->vertex_buffer_ptr + 1;
             for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-              (pSVar10->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
-              pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar11 * -2 + 1) * 4);
-              pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar11 * -2 + 1) * 4);
+              (pSVar9->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
+              pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar10 * -8 + 4);
+              pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);
             }
             pSVar7 = pCVar2->vertex_buffer_ptr + 2;
             for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-              (pSVar7->projected_vertex).transformed_x = (pSVar8->projected_vertex).transformed_x;
-              pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);
-              pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar11 * -2 + 1) * 4);
+              (pSVar7->projected_vertex).transformed_x = (vertices->projected_vertex).transformed_x;
+              vertices = (SRenderVertex *)((int)vertices + (uint)bVar10 * -8 + 4);
+              pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);
             }
             psVar1 = (short *)((int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x + 2);
             *psVar1 = *psVar1 + 1;

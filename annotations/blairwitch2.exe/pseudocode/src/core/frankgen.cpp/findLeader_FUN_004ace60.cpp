@@ -24,9 +24,8 @@ CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_004ace60(void)
       core_main_c_FUN_004e4500("CFrankenstienMachine::findLeader - no leader found!");
       return (CDemonActor *)0x0;
     }
-    pCVar1 = (CDemonActor *)
-             core_actor_cpp_castToClassHash_FUN_0040c8f0
-                       (*(uint *)((int)g_CDemonSetPtr->actors + iVar3),
+    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
                         g_CFrankenstienMachineClassInfo.name_hash);
     if (pCVar1 != (CDemonActor *)0x0) break;
     iVar2 = iVar2 + 1;

@@ -16,23 +16,22 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_0044f750(CDemonCamer
   undefined3 extraout_var;
   int iVar3;
   CLZWCompress *this_ptr_00;
-  int iVar4;
-  uint uVar5;
-  int iVar6;
+  uint uVar4;
+  int iVar5;
   undefined3 extraout_var_00;
+  int iVar6;
   char cVar7;
   byte *puVar8;
   int *piVar9;
   int iVar10;
+  CVector3i *end_pos;
   float10 fVar11;
   float10 fVar12;
   int iVar13;
   char local_20c [256];
   char local_10c [100];
   CLZWCompress local_a8;
-  int local_68;
-  int local_64;
-  int local_60;
+  CVector3i local_68;
   COutStreamFile local_5c;
   uint local_54;
   int local_50;
@@ -55,7 +54,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_0044f750(CDemonCamer
   _DAT_0134017c = 1;
   _DAT_0149d6d0 = 0;
   _DAT_0149d6d4 = 0;
-  core_dcamera_cpp_resetFogSamplingOffset_FUN_00448720(0x149d6dc);
+  core_dcamera_cpp_resetFogSamplingOffset_FUN_00448720((SFogGrid *)0x149d6dc);
   _DAT_0149d6d8 = 0x10;
   if ((_DAT_0149e6e8 == 0 && _DAT_0149e6ec == 0) && _DAT_0149e6f0 == 0) {
     _DAT_0149d6d8 = 1;
@@ -81,15 +80,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_0044f750(CDemonCamer
     fVar11 = (float10)_DAT_005ba056;
     fVar12 = (float10)(this_ptr->base).position.f.x * fVar11;
     iVar3 = round();
-    local_68 = (int)ROUND(fVar12);
+    local_68.x = (int)ROUND(fVar12);
     fVar12 = (float10)*(float *)(iVar3 + 8) * fVar11;
     iVar13 = 6;
     iVar3 = round();
-    local_64 = (int)ROUND(fVar12);
+    local_68.y = (int)ROUND(fVar12);
     fVar11 = fVar11 * (float10)*(float *)(iVar3 + 0xc);
     iVar3 = 0x10000;
     this_ptr_00 = (CLZWCompress *)round();
-    local_60 = (int)ROUND(fVar11);
+    local_68.z = (int)ROUND(fVar11);
     support_codec_cpp_CLZWCompress_ctor_FUN_004410f0(this_ptr_00,iVar3,iVar13);
     support_codec_cpp_CLZWCompress_init_FUN_00441140(&local_a8);
     local_18 = 0;
@@ -97,14 +96,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_0044f750(CDemonCamer
       local_48 = 0;
       local_4c = -0x12c00;
       do {
-        core_dcamera_cpp_updateFogScrollOffset_FUN_00448b60(0x149d6dc,local_18,0);
+        core_dcamera_cpp_updateFogScrollOffset_FUN_00448b60((SFogGrid *)0x149d6dc,local_18,0);
         local_30 = 1;
         if (1 < this_ptr->display_height) {
           local_40 = 0x140;
           local_3c = 0xf00;
           local_44 = 0x500;
           do {
-            iVar13 = local_3c + 0x874588;
+            end_pos = (CVector3i *)(local_3c + 0x874588);
             iVar3 = 1;
             puVar8 = &DAT_0135ead0 + local_40;
             piVar9 = (int *)(local_44 + 0xb52a48);
@@ -114,15 +113,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_0044f750(CDemonCamer
                   *puVar8 = 0xff;
                 }
                 else {
-                  iVar4 = core_dcamera_cpp_sampleFogAlongRay_FUN_00448980
-                                    (0x149d6dc,&local_68,iVar13,*piVar9);
-                  uVar5 = (uint)(iVar4 * 0xff) >> 0xe;
-                  if (0xff < uVar5) {
-                    uVar5 = 0xff;
+                  uVar4 = core_dcamera_cpp_sampleFogAlongRay_FUN_00448980
+                                    ((SFogGrid *)0x149d6dc,&local_68,end_pos,*piVar9);
+                  uVar4 = uVar4 * 0xff >> 0xe;
+                  if (0xff < uVar4) {
+                    uVar4 = 0xff;
                   }
-                  *puVar8 = (char)uVar5;
+                  *puVar8 = (char)uVar4;
                 }
-                iVar13 = iVar13 + 0xc;
+                end_pos = end_pos + 1;
                 puVar8 = puVar8 + 1;
                 iVar3 = iVar3 + 1;
                 piVar9 = piVar9 + 1;
@@ -148,30 +147,30 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_0044f750(CDemonCamer
             if (0 < this_ptr->display_width) {
               local_14 = local_2c;
               local_1c = local_2c;
-              iVar4 = local_38;
+              iVar6 = local_38;
               iVar10 = local_2c;
               do {
-                uVar5 = (uint)*(byte *)(iVar13 + 0x13716d0 + local_48 + local_2c);
+                uVar4 = (uint)*(byte *)(iVar13 + 0x13716d0 + local_48 + local_2c);
                 if (0 < local_18) {
-                  uVar5 = uVar5 - *(byte *)(iVar13 + 0x13716d0 + local_4c + local_2c);
+                  uVar4 = uVar4 - *(byte *)(iVar13 + 0x13716d0 + local_4c + local_2c);
                 }
-                iVar6 = ((int)uVar5 >> 2) - iVar3;
-                if (iVar6 < -0x20) {
-                  iVar6 = -0x20;
+                iVar5 = ((int)uVar4 >> 2) - iVar3;
+                if (iVar5 < -0x20) {
+                  iVar5 = -0x20;
                 }
-                else if (0x3f < iVar6) {
-                  iVar6 = 0x3f;
+                else if (0x3f < iVar5) {
+                  iVar5 = 0x3f;
                 }
-                (&DAT_0135ead0)[iVar10] = (char)iVar6;
-                iVar3 = iVar6 + iVar3;
+                (&DAT_0135ead0)[iVar10] = (char)iVar5;
+                iVar3 = iVar5 + iVar3;
                 cVar7 = (char)iVar3 * '\x04';
                 if (0 < local_18) {
                   cVar7 = cVar7 + *(char *)(iVar13 + 0x13716d0 + local_4c + local_2c);
                 }
-                *(char *)(iVar4 + 0x13716d0) = cVar7;
+                *(char *)(iVar6 + 0x13716d0) = cVar7;
                 iVar10 = iVar10 + 1;
                 iVar13 = iVar13 + 1;
-                iVar4 = iVar4 + 1;
+                iVar6 = iVar6 + 1;
               } while (iVar13 < this_ptr->display_width);
             }
             local_2c = local_2c + 0x140;

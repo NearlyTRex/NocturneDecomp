@@ -111,7 +111,7 @@ section .text
     PUSH 0x0                            ; 0047b285
     MOV EBX,EAX                         ; 0047b287
     CALL shape_edittool.cpp_calculateButtonHeight_FUN_00485380 ; 0047b289
-        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_calculateButtonHeight_FUN_00485380()
+        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_00485380(char * button_text)
     ADD ESP,0x4                         ; 0047b28e
     MOV ECX,dword ptr [0x01c25f7c]      ; 0047b291 | DAT_01c25f7c
     ADD EBX,EBX                         ; 0047b297
@@ -157,7 +157,7 @@ section .text
     PUSH 0x0                            ; 0047b308
     MOV ESI,EAX                         ; 0047b30a
     CALL shape_edittool.cpp_calculateButtonHeight_FUN_00485380 ; 0047b30c
-        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_calculateButtonHeight_FUN_00485380()
+        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_00485380(char * button_text)
     MOV EDX,dword ptr [0x01c35e54]      ; 0047b311 | DAT_01c35e54
     SUB EDX,EAX                         ; 0047b317
     ADD ESP,0x4                         ; 0047b319

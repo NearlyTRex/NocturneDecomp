@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   CreateFileA
 ;   GetFileSize
-;   support_trstream.cpp_FUN_00573e00
+;   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     JL 0x00573fb1                       ; 00573f98
         ;   XREF to: 00573fb1 (CONDITIONAL_JUMP)  ; LAB_00573fb1
     PUSH EBX                            ; 00573f9a
-    CALL support_trstream.cpp_FUN_00573e00 ; 00573f9b
-        ;   XREF to: 00573e00 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00573e00()
+    CALL support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00 ; 00573f9b
+        ;   XREF to: 00573e00 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00573fa0
     MOV EAX,dword ptr [ESP + 0x10]      ; 00573fa3
     MOV dword ptr [EBX + 0x28],EAX      ; 00573fa7

@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_wateract.cpp_factoryFuncWaterActor_FUN_00586970
 // Address: 00586970
-void factoryFuncWaterActor(void);
+CWaterActor * __cdecl factoryFuncWaterActor(void);
 
 // Original: core_wateract.cpp_CWaterActor_getActorType_FUN_00586990
 // Address: 00586990

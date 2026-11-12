@@ -99,7 +99,7 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00518310(CPlatform 
   }
   else {
     local_14 = (this_ptr->course).len;
-    core_course_cpp_FUN_00438c40
+    core_course_cpp_CCourse_evaluate_FUN_00438c40
               (&this_ptr->course,(float)local_14 * this_ptr->param,&out_pos->position,
                &out_euler->vec);
   }

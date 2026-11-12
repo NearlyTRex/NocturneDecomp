@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gargoyle_cpp_factoryFuncGargoyle_FUN_004bfab0(void)
+; CGargoyle * __cdecl core_gargoyle_cpp_factoryFuncGargoyle_FUN_004bfab0(void)
 ;
 ;
 ; Called Functions:

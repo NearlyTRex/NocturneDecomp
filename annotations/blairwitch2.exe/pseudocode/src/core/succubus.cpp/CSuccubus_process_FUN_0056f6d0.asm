@@ -479,8 +479,8 @@ section .text
     PUSH 0x5ec0e2                       ; 0056fb81 | s_s_confused_while_walking_005ec0e1+1
     MOV EDX,dword ptr [0x00609ed0]      ; 0056fb86 | g_CConsolePtr
     PUSH EDX                            ; 0056fb8c | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0056fb8d
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0056fb8d
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     JMP 0x0056f811                      ; 0056fb92
         ;   XREF to: 0056f811 (UNCONDITIONAL_JUMP)  ; LAB_0056f811
     JBE 0x0056f801                      ; 0056fb97

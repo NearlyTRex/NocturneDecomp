@@ -20,8 +20,8 @@
 ; Called Functions:
 ;   core_menu.cpp_showCalibrationTestPattern_FUN_0050a870
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
-;   engine_alphabit.cpp_FUN_0040d1c0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
 ;
@@ -84,8 +84,8 @@ section .text
         ;   XREF to: 0050a870 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showCalibrationTestPattern_FUN_0050a870(char * message_text)
     ADD ESP,0x4                         ; 0050aa58
     PUSH 0x1d1eea0                      ; 0050aa5b
-    CALL engine_alphabit.cpp_FUN_0040d1c0 ; 0050aa60
-        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d1c0(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0 ; 0050aa60
+        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0050aa65
     JMP 0x004032b0                      ; 0050aa68
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)

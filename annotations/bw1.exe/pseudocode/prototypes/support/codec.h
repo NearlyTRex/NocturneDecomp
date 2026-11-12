@@ -39,7 +39,7 @@ void FUN_00442880(uint *param_1,byte param_2);
 
 // Original: support_codec.cpp_FUN_00442a80
 // Address: 00442a80
-undefined4 FUN_00442a80(undefined4 param_1,int param_2,int param_3);
+undefined4 FUN_00442a80(undefined4 param_1,_FILE *param_2,int param_3);
 
 // Original: support_codec.cpp_CCodec_ctor_FUN_00442ba0
 // Address: 00442ba0
@@ -65,9 +65,9 @@ undefined4 FUN_00442c80(int *param_1,undefined4 param_2,undefined4 param_3,int *
 // Address: 00442d10
 bool FUN_00442d10(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4);
 
-// Original: support_codec.cpp_FUN_00442d90
+// Original: support_codec.cpp_CCodec_processBuffer_FUN_00442d90
 // Address: 00442d90
-undefined4 FUN_00442d90(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+int __cdecl CCodec::processBuffer(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback);
 
 // Original: support_codec.cpp_FUN_00442e10
 // Address: 00442e10

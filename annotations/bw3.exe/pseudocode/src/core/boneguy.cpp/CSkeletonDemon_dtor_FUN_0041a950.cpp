@@ -18,7 +18,7 @@ CSkeletonDemon * core_boneguy_cpp_CSkeletonDemon_dtor_FUN_0041a950(CSkeletonDemo
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSkeletonDemonTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSkeletonDemonTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_main_c_FUN_004e4500(undefined4 param_1)
+; void core_main_c_FUN_004e4500(char *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [0x01d046a8],ECX      ; 004e452f | DAT_01d046a8
     XOR ESI,ESI                         ; 004e4535
     CALL crt_stdio.c_vsprintf_FUN_005b7768 ; 004e4537
-        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005b7768()
+        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005b7768(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004e453c
     MOV DH,0x5c                         ; 004e453f
     MOV dword ptr [ESP + 0x4],ESI       ; 004e4541

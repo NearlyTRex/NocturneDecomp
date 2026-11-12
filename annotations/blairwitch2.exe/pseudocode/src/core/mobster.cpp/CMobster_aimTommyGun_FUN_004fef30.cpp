@@ -14,11 +14,12 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
 {
   CCharacter *pCVar1;
   int iVar2;
-  byte bVar3;
+  CDemonActor *pCVar3;
+  byte bVar4;
   float afStackY_188c [1519];
-  uint uVar4;
-  float fVar5;
-  float *pfVar6;
+  uint uVar5;
+  float fVar6;
+  float *pfVar7;
   code *blend_callback;
   float local_b8;
   float local_b4;
@@ -44,7 +45,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
   float local_1c;
   CDeformableModelInstance *local_18;
   
-  bVar3 = 0;
+  bVar4 = 0;
   if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {
     this_ptr->firing_blend = 0.0;
   }
@@ -56,10 +57,10 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
         this_ptr->firing_blend = 0.0;
         return;
       }
-      iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                        ((this_ptr->base).base.carry_hands[1].carry_actor,
-                         g_CWeaponClassInfo.name_hash);
-      if (iVar2 == 0) {
+      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                         ((this_ptr->base).base.carry_hands[1].carry_actor,
+                          g_CWeaponClassInfo.name_hash);
+      if (pCVar3 == (CDemonActor *)0x0) {
         _DAT_01d046a0 = "..\\core\\mobster.cpp";
         _DAT_01d046a4 = 0x323;
         core_main_c_FUN_004e4500("CMobster::aimTommyGun - I'm not carrying one!");
@@ -71,51 +72,51 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
       core_xform_cpp_FUN_00591530
                 (&DAT_0265370c,
                  (this_ptr->base).base.model.bone_transform.bone_model_matrices + _DAT_01d1c718);
-      pfVar6 = afStack_9c + 0xd;
+      pfVar7 = afStack_9c + 0xd;
       local_68[0] = (float)local_44;
-      afStack_9c[(uint)bVar3 * -2 + 0xe] = afStack_9c[(uint)bVar3 * -2 + 0x17];
-      afStack_9c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xf] =
-           afStack_9c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x18];
-      core_actor_cpp_FUN_00408d70(this_ptr,pfVar6);
+      afStack_9c[(uint)bVar4 * -2 + 0xe] = afStack_9c[(uint)bVar4 * -2 + 0x17];
+      afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xf] =
+           afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x18];
+      core_actor_cpp_FUN_00408d70(this_ptr,pfVar7);
       local_80 = local_2c;
-      afStack_9c[(uint)bVar3 * -2 + 8] = afStack_9c[(uint)bVar3 * -2 + 0x1d];
-      afStack_9c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 9] =
-           afStack_9c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x1e];
+      afStack_9c[(uint)bVar4 * -2 + 8] = afStack_9c[(uint)bVar4 * -2 + 0x1d];
+      afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 9] =
+           afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x1e];
       pCVar1 = (this_ptr->base).victim;
       local_50 = (pCVar1->base).location.position.x - local_80;
       local_4c = (pCVar1->base).location.position.y - local_7c;
       local_48 = (pCVar1->base).location.position.z - local_78;
       local_5c = local_50;
-      afStack_9c[(uint)bVar3 * -2 + 0x11] = afStack_9c[(uint)bVar3 * -2 + 0x14];
-      afStack_9c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x12] =
-           afStack_9c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x15];
-      iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                        ((this_ptr->base).victim,g_CHeroClassInfo.name_hash);
-      fVar5 = _DAT_005dee11;
-      if (iVar2 != 0) {
-        fVar5 = _DAT_005dee15;
+      afStack_9c[(uint)bVar4 * -2 + 0x11] = afStack_9c[(uint)bVar4 * -2 + 0x14];
+      afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x12] =
+           afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x15];
+      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                         (&((this_ptr->base).victim)->base,g_CHeroClassInfo.name_hash);
+      fVar6 = _DAT_005dee11;
+      if (pCVar3 != (CDemonActor *)0x0) {
+        fVar6 = _DAT_005dee15;
       }
-      local_58 = local_58 + fVar5;
+      local_58 = local_58 + fVar6;
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_9c + 0x10);
       local_74 = local_38;
-      afStack_9c[(uint)bVar3 * -2 + 0xb] = afStack_9c[(uint)bVar3 * -2 + 0x1a];
-      afStack_9c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0xc] =
-           afStack_9c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x1b];
+      afStack_9c[(uint)bVar4 * -2 + 0xb] = afStack_9c[(uint)bVar4 * -2 + 0x1a];
+      afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xc] =
+           afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x1b];
       local_18 = (CDeformableModelInstance *)
                  core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
                            (local_70 - (this_ptr->base).base.base.orient.vec.y);
       local_b8 = SQRT(local_54 * local_54 + local_5c * local_5c + local_58 * local_58);
       if ((local_b4 <= ABS((float)local_18)) || (local_b8 <= (float)_DAT_005dee1d)) {
-        fVar5 = this_ptr->firing_blend - delta_time;
-        this_ptr->firing_blend = fVar5;
-        if (fVar5 < 0.0) {
+        fVar6 = this_ptr->firing_blend - delta_time;
+        this_ptr->firing_blend = fVar6;
+        if (fVar6 < 0.0) {
           this_ptr->firing_blend = 0.0;
         }
       }
       else {
-        fVar5 = this_ptr->firing_blend + delta_time;
-        this_ptr->firing_blend = fVar5;
-        if (1.0 < fVar5) {
+        fVar6 = this_ptr->firing_blend + delta_time;
+        this_ptr->firing_blend = fVar6;
+        if (1.0 < fVar6) {
           this_ptr->firing_blend = 1.0;
         }
       }
@@ -135,23 +136,23 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
         local_70 = local_b4;
       }
       if ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0) {
-        fVar5 = this_ptr->firing_blend;
-        uVar4 = 2;
+        fVar6 = this_ptr->firing_blend;
+        uVar5 = 2;
       }
       else {
-        fVar5 = this_ptr->firing_blend;
-        uVar4 = 6;
+        fVar6 = this_ptr->firing_blend;
+        uVar5 = 6;
       }
       core_skeleton_cpp_FUN_00545a60
-                (&(this_ptr->base).base.model,uVar4,0x40c00000,fVar5,_DAT_01d1c738,
+                (&(this_ptr->base).base.model,uVar5,0x40c00000,fVar6,_DAT_01d1c738,
                  core_skeleton_cpp_FUN_00544cc0);
       core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(local_74);
       local_b0.w = local_a0;
-      pfVar6 = (float *)((int)&local_b0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-      *(float *)((int)&local_b0 + (uint)bVar3 * -8 + 4) = afStack_9c[(uint)bVar3 * -2];
-      *pfVar6 = afStack_9c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-      pfVar6[(uint)bVar3 * -2 + 1] =
-           (afStack_9c + (uint)bVar3 * -2 + (uint)bVar3 * -2 + 1)[(uint)bVar3 * -2 + 1];
+      pfVar7 = (float *)((int)&local_b0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+      *(float *)((int)&local_b0 + (uint)bVar4 * -8 + 4) = afStack_9c[(uint)bVar4 * -2];
+      *pfVar7 = afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+      pfVar7[(uint)bVar4 * -2 + 1] =
+           (afStack_9c + (uint)bVar4 * -2 + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1];
       local_18 = &(this_ptr->base).base.model;
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
                 (local_18,&local_b0,this_ptr->firing_blend,_DAT_01d1c738,
@@ -159,12 +160,12 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_p
       core_xform_cpp_quaternionFromAngleY_FUN_00593fe0(local_70);
       blend_callback = core_skeleton_cpp_FUN_00544cc0;
       local_b0.w = afStack_9c[3];
-      pfVar6 = (float *)((int)&local_b0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-      *(float *)((int)&local_b0 + (uint)bVar3 * -8 + 4) = afStack_9c[(uint)bVar3 * -2 + 4];
+      pfVar7 = (float *)((int)&local_b0 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+      *(float *)((int)&local_b0 + (uint)bVar4 * -8 + 4) = afStack_9c[(uint)bVar4 * -2 + 4];
       iVar2 = _DAT_01d1c738;
-      *pfVar6 = afStack_9c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 5];
-      pfVar6[(uint)bVar3 * -2 + 1] =
-           (afStack_9c + (uint)bVar3 * -2 + (uint)bVar3 * -2 + 5)[(uint)bVar3 * -2 + 1];
+      *pfVar7 = afStack_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 5];
+      pfVar7[(uint)bVar4 * -2 + 1] =
+           (afStack_9c + (uint)bVar4 * -2 + (uint)bVar4 * -2 + 5)[(uint)bVar4 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
                 (local_18,&local_b0,this_ptr->firing_blend,iVar2,blend_callback);
       return;

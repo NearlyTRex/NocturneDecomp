@@ -25,7 +25,7 @@
 ;   core_set.cpp_CDemonSet_initScene_FUN_0052d980
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d420
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d440
-;   engine_alphabit.cpp_FUN_0040d540
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560
 ;
@@ -117,8 +117,8 @@ section .text
     ADD ESP,0x4                         ; 004fca22
     MOV EBX,ESP                         ; 004fca25
     PUSH EBX                            ; 004fca27
-    CALL engine_alphabit.cpp_FUN_0040d540 ; 004fca28
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d540(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540 ; 004fca28
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004fca2d
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 004fca30
         ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()

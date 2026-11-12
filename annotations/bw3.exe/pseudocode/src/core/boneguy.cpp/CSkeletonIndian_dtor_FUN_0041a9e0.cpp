@@ -18,7 +18,7 @@ CSkeletonIndian * core_boneguy_cpp_CSkeletonIndian_dtor_FUN_0041a9e0(CSkeletonIn
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSkeletonIndianTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSkeletonIndianTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

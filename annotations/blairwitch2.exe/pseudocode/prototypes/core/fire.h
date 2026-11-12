@@ -203,7 +203,7 @@ void __cdecl CLaserBeam::init(CLaserBeam *this_ptr,CVector3f *origin,CVector3f *
 
 // Original: core_fire.cpp_computeScreenSpaceSize_FUN_00497710
 // Address: 00497710
-float __cdecl computeScreenSpaceSize(float param_1,float param_2);
+float __cdecl computeScreenSpaceSize(float depth,float min_size);
 
 // Original: core_fire.cpp_CLaserBeam_render_FUN_00497800
 // Address: 00497800
@@ -379,11 +379,11 @@ void __cdecl CRainDrop::render(CRainDrop *this_ptr);
 
 // Original: core_fire.cpp_allocateSmokeParticle_FUN_0049c0ee
 // Address: 0049c0ee
-undefined * allocateSmokeParticle(void);
+CSmokeParticle * __cdecl allocateSmokeParticle(void);
 
 // Original: core_fire.cpp_allocateBulletHole_FUN_0049c120
 // Address: 0049c120
-undefined * __cdecl allocateBulletHole(void);
+CBulletHole * __cdecl allocateBulletHole(void);
 
 // Original: core_fire.cpp_CFireEffect_ctor_FUN_0049c170
 // Address: 0049c170

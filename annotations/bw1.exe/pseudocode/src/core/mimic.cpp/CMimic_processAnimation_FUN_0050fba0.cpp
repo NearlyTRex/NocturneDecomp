@@ -143,7 +143,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0050fba0(CMimic *this_pt
         local_1a4[(uint)bVar12 * -2] = afStack_84[(uint)bVar12 * -2];
         local_1a4[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
              afStack_84[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
-        local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_1a4[0]);
+        local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_1a4[0]);
         if (SQRT(local_c8 * local_c8 + local_d0 * local_d0 + local_cc * local_cc) <
             (1.0 - ABS(local_14) * (float)_DAT_005e89e8) * (float)_DAT_005e89f0 +
             (float)_DAT_005e89f8) {

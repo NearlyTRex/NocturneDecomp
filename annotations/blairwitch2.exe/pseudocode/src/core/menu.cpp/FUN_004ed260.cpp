@@ -129,7 +129,7 @@ void __cdecl core_menu_cpp_FUN_004ed260(void)
     else {
       pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Sound effects : ");
       _sprintf(pcVar3,pcVar9);
-      local_14 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(0);
+      local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(0);
       fVar14 = ((float10)local_14 * (float10)_DAT_005dd1f1) / (float10)_DAT_005f9e34 +
                (float10)_DAT_005dd1fd;
       round();
@@ -198,7 +198,7 @@ void __cdecl core_menu_cpp_FUN_004ed260(void)
         pcVar9[1] = cVar1;
         pcVar9 = pcVar9 + 2;
       } while (cVar1 != '\0');
-      local_14 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(2);
+      local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(2);
       fVar14 = ((float10)local_14 * (float10)_DAT_005dd1f1) / (float10)_DAT_005f9e38 +
                (float10)_DAT_005dd1fd;
       round();
@@ -268,7 +268,7 @@ void __cdecl core_menu_cpp_FUN_004ed260(void)
         pcVar9[1] = cVar1;
         pcVar9 = pcVar9 + 2;
       } while (cVar1 != '\0');
-      local_14 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(1);
+      local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(1);
       fVar14 = ((float10)local_14 * (float10)_DAT_005dd1f1) / (float10)_DAT_005f9e30 +
                (float10)_DAT_005dd1fd;
       round();
@@ -567,7 +567,7 @@ void __cdecl core_menu_cpp_FUN_004ed260(void)
       if (iVar2 == 0) goto LAB_004edb4a;
       break;
     case 1:
-      local_14 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(0);
+      local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(0);
       local_a48 = local_14 / _DAT_005f9e34;
       if (_DAT_01d0612c == 1) {
         iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(0);
@@ -605,7 +605,7 @@ LAB_004edc96:
       sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
       break;
     case 2:
-      local_14 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(2);
+      local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(2);
       local_a3c = local_14 / _DAT_005f9e38;
       if (_DAT_01d0612c == 1) {
         iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(2);
@@ -639,7 +639,7 @@ LAB_004eddbb:
       sound_sndmain_cpp_setSfxChannelVol_FUN_00551100(2,local_a3c * _DAT_005f9e38);
       break;
     case 3:
-      local_14 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(1);
+      local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(1);
       local_a40 = local_14 / _DAT_005f9e30;
       if (_DAT_01d0612c == 1) {
         iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(1);

@@ -12,8 +12,8 @@ void __cdecl core_netgame_cpp_staticInit_FUN_0050aed0(void)
 
 {
   core_netgame_cpp_CNetGame_ctor_FUN_0050b290(&g_CNetGameInstance);
-  _atexit();
-  __arrinit(0x1d34e50,400);
+  _atexit(&g_CNetGameInstanceDestructorNode);
+  __arrinit((void *)0x1d34e50,400,&g_SChatHistoryTypeInfo);
   _DAT_01d62e48 = 0x405;
   DAT_01d62e4c = 0;
   return;

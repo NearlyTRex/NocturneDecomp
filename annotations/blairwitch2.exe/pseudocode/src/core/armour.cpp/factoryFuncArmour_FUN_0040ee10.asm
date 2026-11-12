@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_armour_cpp_factoryFuncArmour_FUN_0040ee10(void)
+; CArmour * __cdecl core_armour_cpp_factoryFuncArmour_FUN_0040ee10(void)
 ;
 ;
 ; Called Functions:

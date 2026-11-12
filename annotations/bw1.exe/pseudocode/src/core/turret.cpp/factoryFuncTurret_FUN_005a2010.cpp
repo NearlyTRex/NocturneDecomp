@@ -1,20 +1,20 @@
 // Name: core_turret.cpp_factoryFuncTurret_FUN_005a2010
 // Address: 005a2010
 // Address Range: [[005a2010, 005a202b]]
-// Convention: unknown
-// Signature: void core_turret_cpp_factoryFuncTurret_FUN_005a2010(void)
+// Convention: __cdecl
+// Signature: CTurret * __cdecl core_turret_cpp_factoryFuncTurret_FUN_005a2010(void)
 
 #include "nocturne.h"
 
-void core_turret_cpp_factoryFuncTurret_FUN_005a2010(void)
+CTurret * __cdecl core_turret_cpp_factoryFuncTurret_FUN_005a2010(void)
 
 {
-  CTurret *this_ptr;
+  CTurret *pCVar1;
   
-  this_ptr = (CTurret *)operator_new(0x8bc);
-  if (this_ptr == (CTurret *)0x0) {
-    return;
+  pCVar1 = (CTurret *)operator_new(0x8bc);
+  if (pCVar1 == (CTurret *)0x0) {
+    return (CTurret *)0x0;
   }
-  core_turret_cpp_CTurret_ctor_FUN_005a2040(this_ptr);
-  return;
+  pCVar1 = core_turret_cpp_CTurret_ctor_FUN_005a2040(pCVar1);
+  return pCVar1;
 }

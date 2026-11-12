@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_icepick.cpp_factoryFuncIcePick_FUN_004f0b60
 // Address: 004f0b60
-void factoryFuncIcePick(void);
+CIcePick * __cdecl factoryFuncIcePick(void);
 
 // Original: core_icepick.cpp_CIcePick_getActorType_FUN_004f0b80
 // Address: 004f0b80
@@ -49,13 +49,13 @@ CMatrix3x4f * __stack2_esi CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr,i
 // Address: 004f1b50
 void __cdecl FUN_004f1b50(CIcePick *this_ptr,float delta_time);
 
-// Original: core_icepick.cpp_FUN_004f2340
+// Original: core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f2340
 // Address: 004f2340
-void __cdecl FUN_004f2340(CIcePick *this_ptr,float delta_time);
+void __cdecl CIcePick::processMotionEvents(CIcePick *this_ptr,float delta_time);
 
-// Original: core_icepick.cpp_FUN_004f2430
+// Original: core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004f2430
 // Address: 004f2430
-void __cdecl FUN_004f2430(CIcePick *this_ptr,int bone_index);
+void __cdecl CIcePick::performMeleeAttack(CIcePick *this_ptr,int bone_index);
 
 // Original: core_icepick.cpp_CIcePick_archive_FUN_004f2550
 // Address: 004f2550

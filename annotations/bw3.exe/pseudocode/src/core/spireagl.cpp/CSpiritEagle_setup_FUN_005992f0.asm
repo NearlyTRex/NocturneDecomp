@@ -49,7 +49,7 @@ section .text
     ADD ESP,0x4                         ; 005992fe
     PUSH 0x5d98f8                       ; 00599301 | = "CPryeMorph"
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 00599306
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 0059930b
     PUSH 0x5d9903                       ; 0059930e | = "bwp3_prye_morph.dfm"
     MOV dword ptr [EBX + 0x20870],EAX   ; 00599313

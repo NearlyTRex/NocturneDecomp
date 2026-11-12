@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_door.cpp_factoryFuncDoor_FUN_0045ed30
 // Address: 0045ed30
-void factoryFuncDoor(void);
+CDoor * __cdecl factoryFuncDoor(void);
 
 // Original: core_door.cpp_CDoor_getActorType_FUN_0045ed50
 // Address: 0045ed50

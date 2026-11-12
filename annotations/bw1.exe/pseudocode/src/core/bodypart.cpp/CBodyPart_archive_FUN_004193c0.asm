@@ -187,7 +187,7 @@ section .text
     LEA EAX,[EBX + 0xf2c]               ; 00419552
     PUSH EAX                            ; 00419558
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 00419559
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0041955e
     CMP dword ptr [0x00610acc],0x3      ; 00419561 | g_CBodyPartClassVersion
         ;   Label: LAB_00419561
@@ -270,7 +270,7 @@ section .text
     INC EBP                             ; 00419637
     ADD EDI,0xc                         ; 00419638
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0041963b
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     MOV ECX,dword ptr [EBX + 0x174]     ; 00419640
     ADD ESP,0x14                        ; 00419646
     CMP EBP,ECX                         ; 00419649
@@ -315,7 +315,7 @@ section .text
     PUSH ECX                            ; 004196a9
     INC EBP                             ; 004196aa
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 004196ab
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0x30                        ; 004196b0
     MOV dword ptr [ESI + 0x4],0x3       ; 004196b3
     MOV ESI,dword ptr [ESP]             ; 004196ba
@@ -341,7 +341,7 @@ section .text
     INC EDI                             ; 004196ef
     ADD ESI,0x18                        ; 004196f0
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 004196f3
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     MOV EAX,dword ptr [EBX + 0x18c]     ; 004196f8
     ADD ESP,0xc                         ; 004196fe
     CMP EDI,EAX                         ; 00419701

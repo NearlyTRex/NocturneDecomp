@@ -1,0 +1,251 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 86,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 56,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 185
+  },
+  "cross_references": [
+    {
+      "addr": "00542e50",
+      "from_addr": "00542ee3",
+      "name": "core_setutil.cpp_C3DSLight_addFilter_FUN_00542e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00542940",
+      "from_addr": "00542a19",
+      "name": "core_setutil.cpp_C3DSLight_create_FUN_00542940",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00459710",
+    "address_range": [
+      [
+        "00459710",
+        "00459848"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00459710",
+    "signature": "CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00459710(CFilterCache *this_ptr,char *filter_name,int blend_filter)"
+  },
+  "function_calls": [
+    {
+      "addr": "004598a0",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_CDemonFilter_ctor_FUN_004598a0"
+    },
+    {
+      "addr": "00459b80",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_CDemonFilter_init_FUN_00459b80"
+    },
+    {
+      "addr": "00459980",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_CDemonFilter_load_FUN_00459980"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3cb2",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_005a3cb2"
+    },
+    {
+      "addr": "005a3d00",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005a3d00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ba9fa",
+      "name": "s_core_dfilter_cpp_005ba9fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005baa0e",
+      "name": "s_CFilterCache_getFilter_T_005baa0e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005baa39",
+      "name": "s_core_dfilter_cpp_005baa39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005baa4d",
+      "name": "s_CFilterCache_getFilter_O_005baa4d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00542a19",
+        "call_type": "direct",
+        "caller": "core_setutil.cpp_C3DSLight_create_FUN_00542940",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00542ee3",
+        "call_type": "direct",
+        "caller": "core_setutil.cpp_C3DSLight_addFilter_FUN_00542e50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.920792079207921,
+    "instruction_count": 101,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CBRANCH": 9,
+      "COPY": 78,
+      "INT_ADD": 44,
+      "INT_AND": 80,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 57,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 31,
+      "INT_SUB": 30,
+      "INT_XOR": 3,
+      "LOAD": 25,
+      "POPCOUNT": 27,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 497
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00447660",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0045d7c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00470060",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9902
+    },
+    "nocturne.exe": {
+      "addr": "0044bd20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFilterCache *"
+      },
+      {
+        "is_param": true,
+        "name": "filter_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "blend_filter",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 35,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

@@ -29,7 +29,7 @@
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;   sound_sndmain.cpp_FUN_00556700
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
 ;
@@ -224,8 +224,8 @@ section .text
         ;   Label: LAB_004c9635
     MOV ESI,dword ptr [0x005f1690]      ; 004c963a | g_CConsolePtr
     PUSH ESI                            ; 004c9640 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004c9641
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004c9641
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004c9646
     JMP 0x004c942c                      ; 004c9649
         ;   XREF to: 004c942c (UNCONDITIONAL_JUMP)  ; LAB_004c942c

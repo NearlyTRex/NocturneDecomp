@@ -87,7 +87,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     }
   ],
   "globals": [
@@ -229,6 +229,26 @@
     },
     "pcode_op_count": 1205
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00413f40",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00417660",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9271
+    },
+    "nocturne.exe": {
+      "addr": "004145f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9271
+    }
+  },
   "stack_frame": {
     "frame_size": 76,
     "local_size": 68,
@@ -324,7 +344,7 @@
       "line": 136,
       "match": "(int)&local_40",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_40 + (uint)bVar3 * -8 + 4) = afStack_24[(uint)bVar3 * -2];",
+      "text": "*(float *)((int)&local_40 + (uint)bVar2 * -8 + 4) = afStack_24[(uint)bVar2 * -2];",
       "type": "pointer_truncation"
     },
     {
@@ -332,7 +352,7 @@
       "line": 137,
       "match": "(int)&local_40",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
+      "text": "*(float *)((int)&local_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
@@ -340,7 +360,7 @@
       "line": 136,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_40 + (uint)bVar3 * -8 + 4) = afStack_24[(uint)bVar3 * -2];",
+      "text": "*(float *)((int)&local_40 + (uint)bVar2 * -8 + 4) = afStack_24[(uint)bVar2 * -2];",
       "type": "pointer_cast"
     },
     {
@@ -348,7 +368,7 @@
       "line": 137,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&local_40 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
+      "text": "*(float *)((int)&local_40 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
       "type": "pointer_cast"
     }
   ]

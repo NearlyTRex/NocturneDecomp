@@ -37,9 +37,9 @@ int __cdecl CTheHand::renderOpaque(CTheHand *this_ptr);
 // Address: 0056c8c0
 void __cdecl CTheHand::archive(CTheHand *this_ptr);
 
-// Original: core_toxhand.cpp_FUN_0056c900
+// Original: core_toxhand.cpp_CTheHand_findNearbyTarget_FUN_0056c900
 // Address: 0056c900
-undefined4 FUN_0056c900(CDemonActor *param_1,char *param_2);
+int __cdecl CTheHand::findNearbyTarget(CTheHand *this_ptr,char *class_name);
 
 // Original: core_toxhand.cpp_CTheHand_attractActorToward_FUN_0056ca00
 // Address: 0056ca00

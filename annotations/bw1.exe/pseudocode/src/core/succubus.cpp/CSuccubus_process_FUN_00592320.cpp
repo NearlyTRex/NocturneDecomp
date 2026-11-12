@@ -205,7 +205,8 @@ LAB_005927f1:
     if (EVar4 < WALK_STATE_NO_PATH) goto LAB_00592451;
     if (EVar4 != WALK_STATE_NO_PATH) goto LAB_005927f1;
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCStack_1c,0,1);
-    engine_console_cpp_FUN_00445430(g_CConsolePtr,">%s confused while walking to scriptDest!\n" + 1,this_ptr);
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,">%s confused while walking to scriptDest!\n" + 1);
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

@@ -186,7 +186,7 @@ section .text
     CALL dword ptr [EBX + 0x2c]         ; 0055265c
     ADD ESP,0x10                        ; 0055265f
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 00552662
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV [0x02649020],EAX                ; 00552667 | DAT_02649020
     MOV EAX,[0x02648e80]                ; 0055266c | DAT_02648e80
     PUSH EAX                            ; 00552671

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tentacle_cpp_factoryFuncTentacle_FUN_005951d0(void)
+; CTentacle * __cdecl core_tentacle_cpp_factoryFuncTentacle_FUN_005951d0(void)
 ;
 ;
 ; Called Functions:

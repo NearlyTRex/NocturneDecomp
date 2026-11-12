@@ -169,6 +169,9 @@ extern _MMX_INTEGER g_TotalDitherShift;
 extern _MMX_INTEGER g_GreenBlueDitherShift;
 extern _MMX_INTEGER g_BlueBitShift;
 
+// char[100]
+extern char g_IpAddress[100];
+
 // double
 extern double g_BufferFillZeroQword;
 extern double g_BufferFillFpuPopST0;

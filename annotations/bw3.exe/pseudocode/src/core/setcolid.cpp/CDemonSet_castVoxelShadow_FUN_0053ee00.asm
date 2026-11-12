@@ -19,7 +19,7 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00477e60
+;   core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00477e60
 ;   core_path.cpp_resetAllPathMaps_FUN_0050cf60
 ;
 ; *****************************************************************************
@@ -68,8 +68,8 @@ section .text
     ADD EBX,0x20                        ; 0053ee61
     PUSH EBX                            ; 0053ee64
     PUSH 0x203b37c                      ; 0053ee65 | g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_FUN_00477e60   ; 0053ee6a
-        ;   XREF to: 00477e60 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_FUN_00477e60(CDemonRaytrace * this_ptr, CVector3f * offset, CVector3f * rotation, CVector3f * extent, ...)
+    CALL core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00477e60 ; 0053ee6a
+        ;   XREF to: 00477e60 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00477e60(CDemonRaytrace * this_ptr, CVector3f * offset, CVector3f * rotation, CVector3f * extent, ...)
     ADD ESP,0x14                        ; 0053ee6f
     CALL core_path.cpp_resetAllPathMaps_FUN_0050cf60 ; 0053ee72
         ;   XREF to: 0050cf60 (UNCONDITIONAL_CALL)  ; void core_path.cpp_resetAllPathMaps_FUN_0050cf60()

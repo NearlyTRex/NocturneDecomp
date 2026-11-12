@@ -18,7 +18,7 @@ CHotDemon * core_hotdemon_cpp_CHotDemon_dtor_FUN_004d4680(CHotDemon *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHotDemonTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHotDemonTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

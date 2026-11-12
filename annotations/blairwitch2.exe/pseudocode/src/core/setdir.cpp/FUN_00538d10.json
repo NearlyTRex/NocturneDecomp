@@ -881,7 +881,7 @@
       "line": 168,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar13 = (float10)(param_1->camera_count * 10) * (float10)g_CGamePtr->delta_time_float;",
+      "text": "fVar12 = (float10)(param_1->camera_count * 10) * (float10)g_CGamePtr->delta_time_float;",
       "type": "unnamed_param"
     },
     {
@@ -985,7 +985,7 @@
       "line": 200,
       "match": "(uint *)((int)param_2",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)param_2 + (uint)bVar12 * -8 + 0x24);",
+      "text": "puVar8 = (uint *)((int)param_2 + (uint)bVar11 * -8 + 0x24);",
       "type": "pointer_cast"
     },
     {
@@ -993,7 +993,7 @@
       "line": 200,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar9 = (uint *)((int)param_2 + (uint)bVar12 * -8 + 0x24);",
+      "text": "puVar8 = (uint *)((int)param_2 + (uint)bVar11 * -8 + 0x24);",
       "type": "unnamed_param"
     },
     {
@@ -1017,7 +1017,7 @@
       "line": 224,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408d70(param_2,pfVar14);",
+      "text": "core_actor_cpp_FUN_00408d70(param_2,pfVar13);",
       "type": "unnamed_param"
     },
     {
@@ -1065,7 +1065,7 @@
       "line": 253,
       "match": "DAT_020b0258",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_020b0258 + iVar10) = *(uint *)(&DAT_01c2b64c + iVar10);",
+      "text": "*(uint *)(&DAT_020b0258 + iVar9) = *(uint *)(&DAT_01c2b64c + iVar9);",
       "type": "undefined_data"
     },
     {
@@ -1073,7 +1073,7 @@
       "line": 253,
       "match": "DAT_01c2b64c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_020b0258 + iVar10) = *(uint *)(&DAT_01c2b64c + iVar10);",
+      "text": "*(uint *)(&DAT_020b0258 + iVar9) = *(uint *)(&DAT_01c2b64c + iVar9);",
       "type": "undefined_data"
     },
     {
@@ -1121,7 +1121,7 @@
       "line": 293,
       "match": "param_2",
       "severity": "mild",
-      "text": "pCStack_18 = &param_2->location;",
+      "text": "pCStack_18 = &(param_2->location).position;",
       "type": "unnamed_param"
     },
     {
@@ -1137,7 +1137,7 @@
       "line": 296,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "while ((iVar10 = _DAT_02093938, iVar7 = DAT_006141bc, 0 < local_5c &&",
+      "text": "while ((iVar9 = _DAT_02093938, iVar7 = DAT_006141bc, 0 < local_5c &&",
       "type": "undefined_data"
     },
     {
@@ -1161,7 +1161,7 @@
       "line": 317,
       "match": "param_2",
       "severity": "mild",
-      "text": "(this_ptr_01,param_2,aCStack_208,",
+      "text": "(this_ptr_02,param_2,aCStack_208,",
       "type": "unnamed_param"
     },
     {
@@ -1177,7 +1177,7 @@
       "line": 325,
       "match": "param_2",
       "severity": "mild",
-      "text": "(this_ptr_01,param_2,aCStack_208,",
+      "text": "(this_ptr_02,param_2,aCStack_208,",
       "type": "unnamed_param"
     },
     {
@@ -1225,7 +1225,7 @@
       "line": 367,
       "match": "DAT_01c2b64c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01c2b64c + iVar10) = *(uint *)(&DAT_020b0258 + iVar10);",
+      "text": "*(uint *)(&DAT_01c2b64c + iVar9) = *(uint *)(&DAT_020b0258 + iVar9);",
       "type": "undefined_data"
     },
     {
@@ -1233,7 +1233,7 @@
       "line": 367,
       "match": "DAT_020b0258",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01c2b64c + iVar10) = *(uint *)(&DAT_020b0258 + iVar10);",
+      "text": "*(uint *)(&DAT_01c2b64c + iVar9) = *(uint *)(&DAT_020b0258 + iVar9);",
       "type": "undefined_data"
     },
     {
@@ -1281,7 +1281,7 @@
       "line": 387,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar10 < param_1->camera_count);",
+      "text": "} while (iVar9 < param_1->camera_count);",
       "type": "unnamed_param"
     },
     {
@@ -1329,7 +1329,7 @@
       "line": 202,
       "match": "(int)&CStack_d0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + 4) = *puVar9;",
+      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar11 * -8 + 4) = *puVar8;",
       "type": "pointer_truncation"
     },
     {
@@ -1337,7 +1337,7 @@
       "line": 203,
       "match": "(int)&CStack_d0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
@@ -1345,7 +1345,7 @@
       "line": 226,
       "match": "(int)&CStack_10c",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_10c + (uint)bVar12 * -8 + 4) = afStack_c0[(uint)bVar12 * -2 + 3];",
+      "text": "*(float *)((int)&CStack_10c + (uint)bVar11 * -8 + 4) = afStack_c0[(uint)bVar11 * -2 + 3];",
       "type": "pointer_truncation"
     },
     {
@@ -1353,7 +1353,7 @@
       "line": 227,
       "match": "(int)&CStack_10c",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_10c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "text": "*(float *)((int)&CStack_10c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
@@ -1401,7 +1401,7 @@
       "line": 202,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + 4) = *puVar9;",
+      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar11 * -8 + 4) = *puVar8;",
       "type": "pointer_cast"
     },
     {
@@ -1409,7 +1409,7 @@
       "line": 203,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
@@ -1417,7 +1417,7 @@
       "line": 226,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_10c + (uint)bVar12 * -8 + 4) = afStack_c0[(uint)bVar12 * -2 + 3];",
+      "text": "*(float *)((int)&CStack_10c + (uint)bVar11 * -8 + 4) = afStack_c0[(uint)bVar11 * -2 + 3];",
       "type": "pointer_cast"
     },
     {
@@ -1425,7 +1425,7 @@
       "line": 227,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_10c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "text": "*(float *)((int)&CStack_10c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {

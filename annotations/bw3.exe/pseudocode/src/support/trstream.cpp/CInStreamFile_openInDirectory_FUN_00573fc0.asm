@@ -29,7 +29,7 @@
 ;   CreateFileA
 ;   engine_dosio.cpp_findFile_FUN_004656d0
 ;   engine_dosio.cpp_FUN_00465660
-;   support_trstream.cpp_FUN_00573e00
+;   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00
 ;
 ; *****************************************************************************
 
@@ -56,7 +56,7 @@ section .text
     MOV EAX,ESP                         ; 00573ffb
     PUSH EAX                            ; 00573ffd
     CALL engine_dosio.cpp_findFile_FUN_004656d0 ; 00573ffe
-        ;   XREF to: 004656d0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_004656d0()
+        ;   XREF to: 004656d0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_004656d0(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 00574003
     TEST EAX,EAX                        ; 00574006
     JZ 0x0057403f                       ; 00574008
@@ -84,8 +84,8 @@ section .text
     JZ 0x0057406c                       ; 0057404a
         ;   XREF to: 0057406c (CONDITIONAL_JUMP)  ; LAB_0057406c
     PUSH EBX                            ; 0057404c
-    CALL support_trstream.cpp_FUN_00573e00 ; 0057404d
-        ;   XREF to: 00573e00 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00573e00()
+    CALL support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00 ; 0057404d
+        ;   XREF to: 00573e00 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00574052
     MOV EAX,dword ptr [ESP + 0x228]     ; 00574055
     MOV dword ptr [EBX + 0x28],EAX      ; 0057405c

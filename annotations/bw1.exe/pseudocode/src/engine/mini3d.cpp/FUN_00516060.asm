@@ -670,7 +670,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005167e2
     PUSH EAX                            ; 005167e6
     CALL engine_special.cpp_drawPolygon_FUN_00582340 ; 005167e7
-        ;   XREF to: 00582340 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon_FUN_00582340()
+        ;   XREF to: 00582340 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_00582340(SRenderVertex * vertices, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 005167ec
     ADD ESP,0xb0                        ; 005167ef
     POP EBP                             ; 005167f5
@@ -746,7 +746,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xa8]      ; 00516885
     MOV EDI,EBP                         ; 0051688c
     CALL engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03 ; 0051688e
-        ;   XREF to: 0057fb03 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03()
+        ;   XREF to: 0057fb03 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x005162af                      ; 00516893
         ;   XREF to: 005162af (UNCONDITIONAL_JUMP)  ; LAB_005162af
     MOV ESI,dword ptr [ESP + 0xac]      ; 00516898
@@ -754,7 +754,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xa8]      ; 0051689f
     MOV EDI,EBP                         ; 005168a6
     CALL engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39 ; 005168a8
-        ;   XREF to: 0057fd39 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39()
+        ;   XREF to: 0057fd39 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x005162af                      ; 005168ad
         ;   XREF to: 005162af (UNCONDITIONAL_JUMP)  ; LAB_005162af
 

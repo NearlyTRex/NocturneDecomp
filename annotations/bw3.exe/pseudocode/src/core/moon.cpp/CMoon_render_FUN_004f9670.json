@@ -16,12 +16,6 @@
   },
   "cross_references": [
     {
-      "addr": "004e7dc0",
-      "from_addr": "004e7ddf",
-      "name": "core_menu.cpp_FUN_004e7dc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004e85a0",
       "from_addr": "004e869b",
       "name": "core_menu.cpp_FUN_004e85a0",
@@ -43,6 +37,12 @@
       "addr": "004ea280",
       "from_addr": "004ea30d",
       "name": "core_menu.cpp_FUN_004ea280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e7dc0",
+      "from_addr": "004e7ddf",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,14 +86,14 @@
       "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90"
     },
     {
+      "addr": "0046d090",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090"
+    },
+    {
       "addr": "0046cc40",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40"
-    },
-    {
-      "addr": "0046d090",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046d090"
     },
     {
       "addr": "00560d70",
@@ -241,7 +241,7 @@
       {
         "call_addr": "004e7ddf",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e7dc0",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -252,7 +252,7 @@
       {
         "call_addr": "004e7efe",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e7dc0",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -295,6 +295,32 @@
       "STORE": 88
     },
     "pcode_op_count": 721
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00502510",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6752
+    },
+    "bw1.exe": {
+      "addr": "00521e40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6279
+    },
+    "nocedit.exe": {
+      "addr": "00529ed0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0984
+    },
+    "nocturne.exe": {
+      "addr": "004dec50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0984
+    }
   },
   "stack_frame": {
     "frame_size": 88,
@@ -431,7 +457,7 @@
       "line": 27,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d090(DAT_005f2afc,0x422c9ce4);",
+      "text": "engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(DAT_005f2afc,43.153214);",
       "type": "undefined_data"
     },
     {

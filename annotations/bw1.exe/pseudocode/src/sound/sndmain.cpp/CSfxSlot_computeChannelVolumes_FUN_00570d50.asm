@@ -48,7 +48,7 @@ section .text
         ;   Label: LAB_00570d69
     PUSH EBP                            ; 00570d6b
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0 ; 00570d6c
-        ;   XREF to: 00573bc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0()
+        ;   XREF to: 00573bc0 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0(int channel_index)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00570d71
     FLD float ptr [ESP + 0x1c]          ; 00570d75
     FMUL float ptr [EBX + 0x38]         ; 00570d79

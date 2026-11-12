@@ -13,9 +13,9 @@ void __cdecl staticInit(void);
 // Address: 00511d80
 float __cdecl testCameraVisibility(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius);
 
-// Original: core_setdir.cpp_CDemonSet_FUN_005125a0
+// Original: core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0
 // Address: 005125a0
-int __cdecl CDemonSet(CDemonSet *this_ptr,CDemonActor *param_2,int param_3);
+int __cdecl CDemonSet::evaluateVirtualDirector(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode);
 
 // Original: core_setdir.cpp_CDemonSet_setPendingCamera_FUN_005135d0
 // Address: 005135d0

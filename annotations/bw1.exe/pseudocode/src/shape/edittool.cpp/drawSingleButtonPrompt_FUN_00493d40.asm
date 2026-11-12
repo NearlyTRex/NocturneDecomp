@@ -16,9 +16,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 at 004943ec
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_004942e0 at 0049432c
 ;   shape_edittool.cpp_FUN_00494340 at 0049438c
-;   shape_edittool.cpp_FUN_004943a0 at 004943ec
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dbc68

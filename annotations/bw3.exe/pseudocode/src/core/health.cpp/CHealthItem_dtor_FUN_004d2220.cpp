@@ -13,7 +13,7 @@ CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004d2220(CHealthItem 
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHealthItemTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHealthItemTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

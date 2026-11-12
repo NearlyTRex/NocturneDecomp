@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_imp_cpp_factoryFuncImp_FUN_004f27c0(void)
+; CImp * __cdecl core_imp_cpp_factoryFuncImp_FUN_004f27c0(void)
 ;
 ;
 ; Called Functions:

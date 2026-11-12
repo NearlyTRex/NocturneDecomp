@@ -27,7 +27,7 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_0048ef40
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40
 ;   core_path.cpp_CPathMap_reset_FUN_00535200
 ;   crt_stdlib.c_rand_FUN_005c084c
 ;
@@ -109,8 +109,8 @@ section .text
         ;   Label: LAB_005335a1
     PUSH 0x1fe5c1c                      ; 005335a2 | g_CDemonRaytraceInstance
     LEA ESI,[ESP + 0x20]                ; 005335a7
-    CALL core_dtrace.cpp_FUN_0048ef40   ; 005335ab
-        ;   XREF to: 0048ef40 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048ef40()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40 ; 005335ab
+        ;   XREF to: 0048ef40 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0x20]                ; 005335b0
     LEA EDI,[EBX + 0xc]                 ; 005335b4
     ADD ESP,0x8                         ; 005335b7

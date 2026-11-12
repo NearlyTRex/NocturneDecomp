@@ -41,6 +41,6 @@ int __cdecl core_mission_cpp_FUN_0051bdc0(CDemonMission *this_ptr)
     }
     pcVar1 = "Can't run mission - no local hero";
   }
-  shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,pcVar1);
+  shape_edittool_cpp_CEditorTools_showError_FUN_004943a0(g_CEditorToolsPtr,pcVar1);
   return 0;
 }

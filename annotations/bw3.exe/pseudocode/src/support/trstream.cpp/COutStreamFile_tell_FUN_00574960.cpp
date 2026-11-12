@@ -9,11 +9,11 @@
 uint __cdecl support_trstream_cpp_COutStreamFile_tell_FUN_00574960(COutStreamFile *this_ptr)
 
 {
-  uint uVar1;
+  long lVar1;
   
   if (this_ptr->file == (_FILE *)0x0) {
     return 0xffffffff;
   }
-  uVar1 = _ftell(this_ptr->file);
-  return uVar1;
+  lVar1 = _ftell(this_ptr->file);
+  return lVar1;
 }

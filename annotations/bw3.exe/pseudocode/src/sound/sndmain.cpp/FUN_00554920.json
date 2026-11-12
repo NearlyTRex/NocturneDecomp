@@ -2,28 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 747,
-    "complexity_score": 1476,
+    "complexity_score": 1482,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 346,
-    "suspect_count": 107,
+    "pseudocode_lines": 347,
+    "suspect_count": 108,
     "suspect_types": [
       "extra_output",
       "param_count_too_few",
       "pointer_cast",
       "pointer_stride_bytecount",
+      "pointer_truncation",
       "raw_address_pointer_store",
       "shadow_pointer_walk",
       "stack_param",
       "stack_ref",
-      "unknown_field",
       "unnamed_param",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
-    "total_lines": 1093
+    "total_lines": 1094
   },
   "cross_references": [
     {
@@ -479,16 +478,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -496,7 +487,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "void sound_sndmain_cpp_FUN_00554920(CSfxSlot *param_1)",
@@ -504,7 +495,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
+      "line": 17,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "int extraout_EDX;",
@@ -512,7 +503,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 18,
       "match": "extraout_EDX_00",
       "severity": "moderate",
       "text": "int extraout_EDX_00;",
@@ -520,7 +511,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000028",
       "severity": "moderate",
       "text": "int in_stack_00000028;",
@@ -528,7 +519,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "int in_stack_0000002c;",
@@ -536,7 +527,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000030",
       "severity": "moderate",
       "text": "int in_stack_00000030;",
@@ -571,7 +562,7 @@
       "line": 63,
       "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "(iVar8 = 0, pCVar9 = param_1, 0 < in_stack_0000002c)) {",
+      "text": "(iVar7 = 0, pCVar8 = param_1, 0 < in_stack_0000002c)) {",
       "type": "stack_param"
     },
     {
@@ -579,7 +570,7 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar8 = 0, pCVar9 = param_1, 0 < in_stack_0000002c)) {",
+      "text": "(iVar7 = 0, pCVar8 = param_1, 0 < in_stack_0000002c)) {",
       "type": "unnamed_param"
     },
     {
@@ -587,7 +578,7 @@
       "line": 71,
       "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "} while (iVar8 < in_stack_0000002c);",
+      "text": "} while (iVar7 < in_stack_0000002c);",
       "type": "stack_param"
     },
     {
@@ -595,7 +586,7 @@
       "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar9 = param_1;",
+      "text": "pCVar8 = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -611,7 +602,7 @@
       "line": 81,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(int *)(&stack0x00000008 + iVar11) =",
+      "text": "*(int *)(&stack0x00000008 + iVar10) =",
       "type": "stack_ref"
     },
     {
@@ -619,7 +610,7 @@
       "line": 82,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(int *)(&stack0x00000008 + iVar11) + pCVar9->channel_current_buffer_offsets[0] * 4;",
+      "text": "*(int *)(&stack0x00000008 + iVar10) + pCVar8->channel_current_buffer_offsets[0] * 4;",
       "type": "stack_ref"
     },
     {
@@ -627,7 +618,7 @@
       "line": 90,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "aiStack_c4[iVar8] = *(int *)(&stack0x00000008 + iVar11);",
+      "text": "aiStack_c4[iVar7] = *(int *)(&stack0x00000008 + iVar10);",
       "type": "stack_ref"
     },
     {
@@ -635,7 +626,7 @@
       "line": 91,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0x00000008 + iVar11) = *(uint *)(iVar11 + 0x2cf32a8);",
+      "text": "*(uint *)(&stack0x00000008 + iVar10) = *(uint *)(iVar10 + 0x2cf32a8);",
       "type": "stack_ref"
     },
     {
@@ -643,7 +634,7 @@
       "line": 93,
       "match": "in_stack_00000028",
       "severity": "moderate",
-      "text": "(*(void **)(&stack0x00000008 + iVar11),0,in_stack_00000028 << 2);",
+      "text": "(*(void **)(&stack0x00000008 + iVar10),0,in_stack_00000028 << 2);",
       "type": "stack_param"
     },
     {
@@ -651,7 +642,7 @@
       "line": 93,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "(*(void **)(&stack0x00000008 + iVar11),0,in_stack_00000028 << 2);",
+      "text": "(*(void **)(&stack0x00000008 + iVar10),0,in_stack_00000028 << 2);",
       "type": "stack_ref"
     },
     {
@@ -659,7 +650,7 @@
       "line": 93,
       "match": "*(void **)(&stack0x00000008",
       "severity": "moderate",
-      "text": "(*(void **)(&stack0x00000008 + iVar11),0,in_stack_00000028 << 2);",
+      "text": "(*(void **)(&stack0x00000008 + iVar10),0,in_stack_00000028 << 2);",
       "type": "raw_address_pointer_store"
     },
     {
@@ -667,7 +658,7 @@
       "line": 97,
       "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "} while (iVar8 < in_stack_0000002c);",
+      "text": "} while (iVar7 < in_stack_0000002c);",
       "type": "stack_param"
     },
     {
@@ -683,7 +674,7 @@
       "line": 103,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar9 = param_1;",
+      "text": "pCVar8 = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -699,7 +690,7 @@
       "line": 109,
       "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "} while (iVar8 < in_stack_0000002c);",
+      "text": "} while (iVar7 < in_stack_0000002c);",
       "type": "stack_param"
     },
     {
@@ -707,7 +698,7 @@
       "line": 111,
       "match": "in_stack_00000028",
       "severity": "moderate",
-      "text": "while (((iVar8 = in_stack_00000028, param_1->playback_state != 0 &&",
+      "text": "while (((iVar7 = in_stack_00000028, param_1->playback_state != 0 &&",
       "type": "stack_param"
     },
     {
@@ -715,7 +706,7 @@
       "line": 111,
       "match": "param_1",
       "severity": "mild",
-      "text": "while (((iVar8 = in_stack_00000028, param_1->playback_state != 0 &&",
+      "text": "while (((iVar7 = in_stack_00000028, param_1->playback_state != 0 &&",
       "type": "unnamed_param"
     },
     {
@@ -723,7 +714,7 @@
       "line": 112,
       "match": "param_1",
       "severity": "mild",
-      "text": "(pCVar3 = param_1->sample, pCVar3 != (CSfxSample *)0x0)) &&",
+      "text": "(pCVar2 = param_1->sample, pCVar2 != (CSfxSample *)0x0)) &&",
       "type": "unnamed_param"
     },
     {
@@ -744,23 +735,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 115,
+      "line": 116,
       "match": "in_stack_00000030",
       "severity": "moderate",
-      "text": "(dVar2 = (double)(((float)(pCVar3->sample_info).sample_rate / (float)in_stack_00000030) *",
+      "text": "(double)(((float)(pCVar2->sample_info).sample_rate / (float)in_stack_00000030) *",
       "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->effective_frequency), dVar2 <= 0.0)) goto LAB_00554a6d;",
+      "text": "param_1->effective_frequency), resample_delta <= 0.0)) goto LAB_00554a6d;",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 119,
+      "line": 120,
       "match": "in_stack_00000028",
       "severity": "moderate",
       "text": "local_c8 = in_stack_00000028;",
@@ -768,23 +759,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 122,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((double)pCVar3->loop_endpoints[param_1->loop_marker_index] -",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 123,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->options).playback_position) / dVar2);",
+      "text": "(((double)pCVar2->loop_endpoints[param_1->loop_marker_index] -",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 138,
+      "line": 124,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->options).playback_position) / resample_delta);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 139,
       "match": "param_1",
       "severity": "mild",
       "text": "local_d0 = param_1->prev_hardware_playback_pos;",
@@ -792,15 +783,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 166,
+      "line": 167,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar3 = param_1->sample;",
+      "text": "pCVar2 = param_1->sample;",
       "type": "unnamed_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 176,
+      "line": 177,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "local_84[0] = (float)(int)(*(byte *)(*(int *)(extraout_EDX + 0x120) +",
@@ -808,23 +799,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 179,
       "match": "(byte *)((int)param_1",
       "severity": "moderate",
-      "text": "local_18 = *(byte *)((int)param_1->sample->sample_data + (int)ROUND(fVar12) * 2 + 1)",
+      "text": "local_18 = *(byte *)((int)param_1->sample->sample_data + (int)ROUND(fVar11) * 2 + 1)",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 178,
+      "line": 179,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = *(byte *)((int)param_1->sample->sample_data + (int)ROUND(fVar12) * 2 + 1)",
+      "text": "local_18 = *(byte *)((int)param_1->sample->sample_data + (int)ROUND(fVar11) * 2 + 1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 182,
+      "line": 183,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "if (0 < in_stack_0000002c) {",
@@ -832,55 +823,47 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 187,
-      "match": "&stack0x00000008",
-      "severity": "moderate",
-      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar8) + local_28) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 188,
-      "match": "(float *)((int)afStack_a8",
+      "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "local_84[uVar10] * *(float *)((int)afStack_a8 + iVar8 + 4U) +",
-      "type": "pointer_cast"
+      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar7) + local_28) =",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 189,
+      "line": 190,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar8) + local_28);",
+      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar7) + local_28);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 191,
+      "line": 192,
       "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "} while ((int)uVar6 < in_stack_0000002c);",
+      "text": "} while ((int)uVar5 < in_stack_0000002c);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 204,
+      "line": 205,
       "match": "(byte *)((int)param_1",
       "severity": "moderate",
-      "text": "local_18 = *(byte *)((int)param_1->sample->sample_data + (int)ROUND(fVar12)) - 0x80;",
+      "text": "local_18 = *(byte *)((int)param_1->sample->sample_data + (int)ROUND(fVar11)) - 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 204,
+      "line": 205,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = *(byte *)((int)param_1->sample->sample_data + (int)ROUND(fVar12)) - 0x80;",
+      "text": "local_18 = *(byte *)((int)param_1->sample->sample_data + (int)ROUND(fVar11)) - 0x80;",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 207,
+      "line": 208,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "if (0 < in_stack_0000002c) {",
@@ -888,39 +871,31 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 211,
+      "line": 212,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar7) + iVar11) =",
+      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar6) + iVar10) =",
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 212,
-      "match": "(float *)((int)afStack_a8",
-      "severity": "moderate",
-      "text": "local_20 * *(float *)((int)afStack_a8 + iVar7 + 4U) +",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 213,
+      "line": 214,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar7) + iVar11);",
+      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar6) + iVar10);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 215,
+      "line": 216,
       "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "} while (iVar8 < in_stack_0000002c);",
+      "text": "} while (iVar7 < in_stack_0000002c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 223,
+      "line": 224,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "if (in_stack_0000002c == 2) {",
@@ -928,23 +903,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 225,
+      "line": 226,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "(pCVar3->sample_data,&stack0x00000008,afStack_a8 + 1,",
+      "text": "(pCVar2->sample_data,(SStereoBuffers *)&stack0x00000008,local_a4,",
       "type": "stack_ref"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 226,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "(uint)local_d0,local_d0._4_4_,dVar2);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 236,
+      "line": 237,
       "match": "extraout_EDX_00",
       "severity": "moderate",
       "text": "local_84[2] = (float)*(short *)(*(int *)(extraout_EDX_00 + 0x120) + local_18 * 4);",
@@ -952,7 +919,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 237,
+      "line": 238,
       "match": "param_1",
       "severity": "mild",
       "text": "local_84[3] = (float)param_1->sample->sample_data[local_18 * 2 + 1];",
@@ -960,7 +927,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 239,
+      "line": 240,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "if (0 < in_stack_0000002c) {",
@@ -968,39 +935,31 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 244,
+      "line": 245,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar8) + local_24) =",
+      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar7) + local_24) =",
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 245,
-      "match": "(float *)((int)afStack_a8",
-      "severity": "moderate",
-      "text": "local_84[uVar10 + 2] * *(float *)((int)afStack_a8 + iVar8 + 4U) +",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 246,
+      "line": 247,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar8) + local_24);",
+      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar7) + local_24);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 248,
+      "line": 249,
       "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "} while ((int)uVar6 < in_stack_0000002c);",
+      "text": "} while ((int)uVar5 < in_stack_0000002c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 255,
+      "line": 256,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "else if (in_stack_0000002c == 2) {",
@@ -1008,31 +967,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 257,
+      "line": 258,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "(pCVar3->sample_data,&stack0x00000008,afStack_a8 + 1,",
+      "text": "(pCVar2->sample_data,(SStereoBuffers *)&stack0x00000008,local_a4,",
       "type": "stack_ref"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 258,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "(uint)local_d0,local_d0._4_4_,dVar2);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 268,
+      "line": 269,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_1c = (float)param_1->sample->sample_data[(int)ROUND(fVar12)];",
+      "text": "local_1c = (float)param_1->sample->sample_data[(int)ROUND(fVar11)];",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 270,
+      "line": 271,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "if (0 < in_stack_0000002c) {",
@@ -1040,39 +991,31 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 274,
+      "line": 275,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar7) + iVar11) =",
+      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar6) + iVar10) =",
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 275,
-      "match": "(float *)((int)afStack_a8",
-      "severity": "moderate",
-      "text": "local_1c * *(float *)((int)afStack_a8 + iVar7 + 4U) +",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 276,
+      "line": 277,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar7) + iVar11);",
+      "text": "*(float *)(*(int *)(&stack0x00000008 + iVar6) + iVar10);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 278,
+      "line": 279,
       "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "} while (iVar8 < in_stack_0000002c);",
+      "text": "} while (iVar7 < in_stack_0000002c);",
       "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 295,
+      "line": 296,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00555530(param_1,local_d0);",
@@ -1080,26 +1023,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 297,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar11 = param_1->loop_marker_index + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 298,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar8 = param_1->sample->loop_destinations[param_1->loop_marker_index];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 298,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = param_1->sample->loop_destinations[param_1->loop_marker_index];",
+      "text": "iVar10 = param_1->loop_marker_index + 1;",
       "type": "unnamed_param"
     },
     {
@@ -1107,7 +1034,15 @@
       "line": 299,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->loop_marker_index = iVar11;",
+      "text": "iVar7 = param_1->sample->loop_destinations[param_1->loop_marker_index];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 299,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar7 = param_1->sample->loop_destinations[param_1->loop_marker_index];",
       "type": "unnamed_param"
     },
     {
@@ -1115,7 +1050,7 @@
       "line": 300,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar3 = param_1->sample;",
+      "text": "param_1->loop_marker_index = iVar10;",
       "type": "unnamed_param"
     },
     {
@@ -1123,12 +1058,20 @@
       "line": 301,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->options).playback_position = (double)iVar8;",
+      "text": "pCVar2 = param_1->sample;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 303,
+      "line": 302,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->options).playback_position = (double)iVar7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 304,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->loop_marker_index = 0;",
@@ -1136,15 +1079,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 307,
-      "match": "in_stack_00000028",
-      "severity": "moderate",
-      "text": "in_stack_00000028 = in_stack_00000028 - local_c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 307,
+      "line": 308,
       "match": "in_stack_00000028",
       "severity": "moderate",
       "text": "in_stack_00000028 = in_stack_00000028 - local_c8;",
@@ -1153,6 +1088,14 @@
     {
       "description": "Unresolved stack parameter",
       "line": 308,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "in_stack_00000028 = in_stack_00000028 - local_c8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 309,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "if (0 < in_stack_0000002c) {",
@@ -1160,31 +1103,31 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 311,
+      "line": 312,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(int *)(&stack0x00000008 + iVar11) = *(int *)(&stack0x00000008 + iVar11) + local_c8 * 4;",
+      "text": "*(int *)(&stack0x00000008 + iVar10) = *(int *)(&stack0x00000008 + iVar10) + local_c8 * 4;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 311,
+      "line": 312,
       "match": "&stack0x00000008",
       "severity": "moderate",
-      "text": "*(int *)(&stack0x00000008 + iVar11) = *(int *)(&stack0x00000008 + iVar11) + local_c8 * 4;",
+      "text": "*(int *)(&stack0x00000008 + iVar10) = *(int *)(&stack0x00000008 + iVar10) + local_c8 * 4;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 314,
+      "line": 315,
       "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "} while (iVar8 < in_stack_0000002c);",
+      "text": "} while (iVar7 < in_stack_0000002c);",
       "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 317,
+      "line": 318,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_CSfxSlot_kill_FUN_00555270(param_1);",
@@ -1192,7 +1135,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 320,
+      "line": 321,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "if (0 < in_stack_0000002c) {",
@@ -1200,7 +1143,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 323,
+      "line": 324,
       "match": "(int *)((int)aiStack_c4",
       "severity": "moderate",
       "text": "if (*(int *)((int)aiStack_c4 + local_50) != 0) {",
@@ -1208,7 +1151,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 327,
+      "line": 328,
       "match": "(int *)((int)param_1",
       "severity": "moderate",
       "text": "local_34 = (local_64 + *(int *)((int)param_1->channel_target_buffer_offsets + local_50)) -",
@@ -1216,7 +1159,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 327,
+      "line": 328,
       "match": "param_1",
       "severity": "mild",
       "text": "local_34 = (local_64 + *(int *)((int)param_1->channel_target_buffer_offsets + local_50)) -",
@@ -1224,7 +1167,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 328,
+      "line": 329,
       "match": "(int *)((int)param_1",
       "severity": "moderate",
       "text": "*(int *)((int)param_1->channel_current_buffer_offsets + local_50);",
@@ -1232,7 +1175,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 328,
+      "line": 329,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)((int)param_1->channel_current_buffer_offsets + local_50);",
@@ -1240,23 +1183,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 334,
+      "line": 335,
       "match": "(int *)((int)aiStack_c4",
       "severity": "moderate",
-      "text": "pfVar1 = (float *)(*(int *)((int)aiStack_c4 + local_50) + iVar11);",
+      "text": "pfVar1 = (float *)(*(int *)((int)aiStack_c4 + local_50) + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 336,
+      "line": 337,
       "match": "(int *)((int)aiStack_c4",
       "severity": "moderate",
-      "text": "*(float *)(*(int *)((int)aiStack_c4 + local_50) + -4 + iVar11) =",
+      "text": "*(float *)(*(int *)((int)aiStack_c4 + local_50) + -4 + iVar10) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 341,
+      "line": 342,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1->channel_current_buffer_offsets + local_50) =",
@@ -1264,7 +1207,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 341,
+      "line": 342,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)param_1->channel_current_buffer_offsets + local_50) =",
@@ -1272,7 +1215,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 342,
+      "line": 343,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1->channel_target_buffer_offsets + local_50);",
@@ -1280,7 +1223,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 342,
+      "line": 343,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)param_1->channel_target_buffer_offsets + local_50);",
@@ -1288,34 +1231,98 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 346,
+      "line": 347,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "} while (local_60 < in_stack_0000002c);",
       "type": "stack_param"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Pointer value `&local_a4[0].left_gain` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 189,
+      "match": "(int)&local_a4[0].left_gain",
+      "severity": "moderate",
+      "text": "local_84[uVar9] * *(float *)((int)&local_a4[0].left_gain + iVar7) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_a4[0].left_gain` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 213,
+      "match": "(int)&local_a4[0].left_gain",
+      "severity": "moderate",
+      "text": "local_20 * *(float *)((int)&local_a4[0].left_gain + iVar6) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_a4[0].left_gain` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 246,
+      "match": "(int)&local_a4[0].left_gain",
+      "severity": "moderate",
+      "text": "local_84[uVar9 + 2] * *(float *)((int)&local_a4[0].left_gain + iVar7) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_a4[0].left_gain` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 276,
+      "match": "(int)&local_a4[0].left_gain",
+      "severity": "moderate",
+      "text": "local_1c * *(float *)((int)&local_a4[0].left_gain + iVar6) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 189,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_84[uVar9] * *(float *)((int)&local_a4[0].left_gain + iVar7) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 213,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_20 * *(float *)((int)&local_a4[0].left_gain + iVar6) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 246,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_84[uVar9 + 2] * *(float *)((int)&local_a4[0].left_gain + iVar7) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 276,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_1c * *(float *)((int)&local_a4[0].left_gain + iVar6) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 70,
-      "match": "pCVar9 = (T *)&(pCVar9->FIELD).SUBFIELD",
+      "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CSfxSlot *)&(pCVar9->options).position;",
+      "text": "pCVar8 = (CSfxSlot *)&(pCVar8->options).position;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 96,
-      "match": "pCVar9 = (T *)&(pCVar9->FIELD).SUBFIELD",
+      "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CSfxSlot *)&(pCVar9->options).position;",
+      "text": "pCVar8 = (CSfxSlot *)&(pCVar8->options).position;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 108,
-      "match": "pCVar9 = (T *)&(pCVar9->FIELD).SUBFIELD",
+      "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CSfxSlot *)&(pCVar9->options).position;",
+      "text": "pCVar8 = (CSfxSlot *)&(pCVar8->options).position;",
       "type": "shadow_pointer_walk"
     },
     {

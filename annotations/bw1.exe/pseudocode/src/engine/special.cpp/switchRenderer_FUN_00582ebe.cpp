@@ -26,6 +26,6 @@ void engine_special_cpp_switchRenderer_FUN_00582ebe(char *param_1,uint param_2)
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  engine_special_cpp_FUN_00581310(_DAT_02c834c0);
+  engine_special_cpp_loadExternalRenderer_FUN_00581310(_DAT_02c834c0);
   return;
 }

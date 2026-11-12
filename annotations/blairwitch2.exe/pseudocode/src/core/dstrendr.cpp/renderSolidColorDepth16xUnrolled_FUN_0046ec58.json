@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 338,
+    "complexity_score": 211,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 163,
-    "suspect_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 161,
+    "suspect_count": 4,
     "suspect_types": [
-      "unaffected_reg",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 401
+    "total_lines": 399
   },
   "cross_references": [
     {
@@ -38,9 +37,9 @@
         "0046ee36"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__edi_esi_ebx",
     "name": "core_dstrendr.cpp_renderSolidColorDepth16xUnrolled_FUN_0046ec58",
-    "signature": "void core_dstrendr_cpp_renderSolidColorDepth16xUnrolled_FUN_0046ec58(void)"
+    "signature": "void __edi_esi_ebx core_dstrendr_cpp_renderSolidColorDepth16xUnrolled_FUN_0046ec58(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)"
   },
   "function_calls": [],
   "globals": [
@@ -73,9 +72,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
+    "declared_params": 3,
     "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -111,10 +110,36 @@
     },
     "pcode_op_count": 1646
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00487148",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046fcc8",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00490a58",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00463d98",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": []
@@ -129,120 +154,24 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uVar10 = *(uint *)(unaff_ESI + 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "uVar9 = *(uint *)(unaff_EDI + 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 26,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "iVar4 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "iVar4 = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "unaff_EDI = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_EDI = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "puVar6 = (uint *)(*(int *)(&DAT_01c2a38c + unaff_EBX * 4) + uVar2 * 4);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 34,
       "match": "DAT_01c2a38c",
       "severity": "mild",
-      "text": "puVar6 = (uint *)(*(int *)(&DAT_01c2a38c + unaff_EBX * 4) + uVar2 * 4);",
+      "text": "puVar6 = (uint *)(*(int *)(&DAT_01c2a38c + scanline_y * 4) + uVar2 * 4);",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "puVar8 = (uint *)(*(int *)(&DAT_01c2b64c + unaff_EBX * 4) + uVar2 * 4);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 35,
       "match": "DAT_01c2b64c",
       "severity": "mild",
-      "text": "puVar8 = (uint *)(*(int *)(&DAT_01c2b64c + unaff_EBX * 4) + uVar2 * 4);",
+      "text": "puVar8 = (uint *)(*(int *)(&DAT_01c2b64c + scanline_y * 4) + uVar2 * 4);",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 39,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "((longlong)(*(int *)(unaff_EDI + 0x28) - *(int *)(iVar4 + 0x28)) *",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 38,
       "match": "DAT_01c35e70",
       "severity": "mild",
       "text": "(longlong)*(int *)(&DAT_01c35e70 + (iVar3 + 1) * 4)) >> 0x20);",

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 43,
+    "complexity_score": 44,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 29,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 118
+    "total_lines": 119
   },
   "cross_references": [],
   "function": {
@@ -39,14 +39,14 @@
       "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
+      "addr": "004943a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0"
+    },
+    {
       "addr": "00496150",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00496150"
-    },
-    {
-      "addr": "004943a0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004943a0"
     }
   ],
   "globals": [],
@@ -85,6 +85,32 @@
       "STORE": 28
     },
     "pcode_op_count": 352
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047da10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0047ec20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a0300",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00471530",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 20,
@@ -126,7 +152,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 26,
+      "line": 27,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "result_ptr->x = CStack_18.x;",

@@ -149,14 +149,14 @@
       "name": "engine_dosio.cpp_splitPath_FUN_00479580"
     },
     {
+      "addr": "004943a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0"
+    },
+    {
       "addr": "004994d0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_004994d0"
-    },
-    {
-      "addr": "004943a0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004943a0"
     }
   ],
   "globals": [
@@ -638,6 +638,20 @@
     },
     "pcode_op_count": 4924
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a41b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9966
+    },
+    "bw3.exe": {
+      "addr": "004aa810",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8829
+    }
+  },
   "stack_frame": {
     "frame_size": 1476,
     "local_size": 1464,
@@ -1010,7 +1024,7 @@
       "line": 75,
       "match": "DAT_005df822",
       "severity": "mild",
-      "text": "pcVar13 = strstr((char *)local_5b4,&DAT_005df822);",
+      "text": "pcVar7 = strstr((char *)local_5b4,&DAT_005df822);",
       "type": "undefined_data"
     },
     {
@@ -1226,7 +1240,7 @@
       "line": 503,
       "match": "DAT_005e001c",
       "severity": "mild",
-      "text": "((char *)(iVar8 * 0x970 + 0x1cc5670 + iVar6 * 0x88),&DAT_005e001c);",
+      "text": "((char *)(iVar8 * 0x970 + 0x1cc5670 + iVar13 * 0x88),&DAT_005e001c);",
       "type": "undefined_data"
     },
     {
@@ -1290,7 +1304,7 @@
       "line": 618,
       "match": "DAT_01cc4270",
       "severity": "mild",
-      "text": "_sprintf(&DAT_01cc4270,pcVar13);",
+      "text": "_sprintf(&DAT_01cc4270,pcVar7);",
       "type": "undefined_data"
     },
     {
@@ -1306,7 +1320,7 @@
       "line": 624,
       "match": "DAT_01cc4270",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,&DAT_01cc4270);",
+      "text": "shape_edittool_cpp_CEditorTools_showError_FUN_004943a0(g_CEditorToolsPtr,&DAT_01cc4270);",
       "type": "undefined_data"
     },
     {
@@ -1314,7 +1328,7 @@
       "line": 627,
       "match": "DAT_01cc4270",
       "severity": "mild",
-      "text": "pcVar13 = &DAT_01cc4270;",
+      "text": "pcVar7 = &DAT_01cc4270;",
       "type": "undefined_data"
     },
     {
@@ -1410,7 +1424,7 @@
       "line": 503,
       "match": "0x1cc5670",
       "severity": "moderate",
-      "text": "((char *)(iVar8 * 0x970 + 0x1cc5670 + iVar6 * 0x88),&DAT_005e001c);",
+      "text": "((char *)(iVar8 * 0x970 + 0x1cc5670 + iVar13 * 0x88),&DAT_005e001c);",
       "type": "raw_address_constant"
     },
     {
@@ -1418,7 +1432,7 @@
       "line": 556,
       "match": "0x1cc5894",
       "severity": "moderate",
-      "text": "iVar12 = iVar6 * 0xd4 + iVar8 * 0x970 + 0x1cc5894;",
+      "text": "iVar12 = iVar13 * 0xd4 + iVar8 * 0x970 + 0x1cc5894;",
       "type": "raw_address_constant"
     },
     {

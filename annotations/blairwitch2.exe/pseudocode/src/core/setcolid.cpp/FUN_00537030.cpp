@@ -2,13 +2,13 @@
 // Address: 00537030
 // Address Range: [[00537030, 00537a8c]]
 // Convention: unknown
-// Signature: float core_setcolid_cpp_FUN_00537030(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,undefined4 param_8)
+// Signature: float core_setcolid_cpp_FUN_00537030(CDemonSet *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,float param_7,float param_8)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float core_setcolid_cpp_FUN_00537030(CDemonSet *param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,float param_7,uint param_8)
+float core_setcolid_cpp_FUN_00537030(CDemonSet *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,float param_7,float param_8)
 
 {
   CDemonActor *actor;
@@ -56,8 +56,8 @@ float core_setcolid_cpp_FUN_00537030(CDemonSet *param_1,uint param_2,uint param_
   float fStack_90;
   float fStack_84;
   float afStack_80 [5];
-  uint uStack_6c;
-  uint uStack_68;
+  float fStack_6c;
+  float fStack_68;
   float fStack_54;
   float afStack_50 [13];
   int local_1c;
@@ -65,8 +65,9 @@ float core_setcolid_cpp_FUN_00537030(CDemonSet *param_1,uint param_2,uint param_
   
   bVar13 = 0;
   core_dtrace_cpp_initIntersectionCylinder_FUN_00473d40
-            (auStack_1fc + 0x54,param_2,param_3,param_4,param_5,param_6,param_7,param_8);
-  if (((param_4 & 0x7fffffff) != 0) || ((param_5 & 0x7fffffff) != 0)) {
+            ((SIntersectXZCylinder *)(auStack_1fc + 0x54),param_2,param_3,param_4,param_5,param_6,
+             param_7,param_8);
+  if ((ABS(param_4) != 0.0) || (ABS(param_5) != 0.0)) {
     core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00473e10
               (&g_CDemonRaytraceInstance,(SIntersectXZCylinder *)(auStack_1fc + 0x54));
   }
@@ -217,13 +218,14 @@ LAB_005379f7:
                 afStack_50[2] = (float)uVar7;
                 afStack_50[1] = 0.0;
                 core_actor_cpp_FUN_00408d30(actor);
-                afStack_80[3] = (float)uStack_68;
+                afStack_80[3] = fStack_68;
                 afStack_80[(uint)bVar13 * -2 + 4] = afStack_80[(uint)bVar13 * -2 + 7];
                 afStack_80[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 5] =
                      afStack_80[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 8];
                 core_dtrace_cpp_initIntersectionCylinder_FUN_00473d40
-                          (auStack_258,fStack_a4,afStack_a0[1],afStack_80[3],uStack_6c,param_6,
-                           param_7 - (actor->location).position.y);
+                          ((SIntersectXZCylinder *)auStack_258,fStack_a4,afStack_a0[1],afStack_80[3]
+                           ,fStack_6c,param_6,param_7 - (actor->location).position.y,
+                           param_8 - (actor->location).position.y);
                 auStack_258._0_4_ = local_1a0;
                 (*((actor->vtable)._ub)->customIntersectCylinderXZ)
                           (actor,(SIntersectXZCylinder *)auStack_258);
@@ -254,9 +256,12 @@ LAB_005379f7:
                 core_main_c_FUN_004e4500("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision");
               }
               core_dtrace_cpp_initIntersectionCylinder_FUN_00473d40
-                        (auStack_1fc,(float)local_198._8_4_ - (actor->location).position.x,
-                         (float)local_198._12_4_ - (actor->location).position.z,local_198._16_4_,
-                         local_198._20_4_,param_6,param_7 - (actor->location).position.y);
+                        ((SIntersectXZCylinder *)auStack_1fc,
+                         (float)local_198._8_4_ - (actor->location).position.x,
+                         (float)local_198._12_4_ - (actor->location).position.z,
+                         (float)local_198._16_4_,(float)local_198._20_4_,param_6,
+                         param_7 - (actor->location).position.y,
+                         param_8 - (actor->location).position.y);
               auStack_1fc._0_4_ = local_1a0;
               core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_0044f580
                         (this_ptr,0,(SIntersectXZCylinder *)auStack_1fc,&(actor->orient).vec);

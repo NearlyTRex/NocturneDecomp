@@ -10,6 +10,6 @@ void shape_edittool_cpp_staticInit_FUN_0047a430(void)
 
 {
   shape_edittool_cpp_CEditorTools_ctor_FUN_0047b660(&g_CEditorToolsInstance);
-  _atexit();
+  _atexit(&g_CEditorToolsDestructorNode);
   return;
 }

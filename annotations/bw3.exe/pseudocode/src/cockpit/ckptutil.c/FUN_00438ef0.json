@@ -17,15 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "0050f910",
-      "from_addr": "0050f93e",
-      "name": "cockpit_pkbitmap.cpp_FUN_0050f910",
+      "addr": "0050f990",
+      "from_addr": "0050f9a1",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050f990",
-      "from_addr": "0050f9a1",
-      "name": "cockpit_pkbitmap.cpp_FUN_0050f990",
+      "addr": "0050f910",
+      "from_addr": "0050f93e",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -162,7 +162,7 @@
       {
         "call_addr": "0050f93e",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_0050f910",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +173,7 @@
       {
         "call_addr": "0050f9a1",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_0050f990",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -212,6 +212,14 @@
       "STORE": 43
     },
     "pcode_op_count": 373
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0043b2e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 156,

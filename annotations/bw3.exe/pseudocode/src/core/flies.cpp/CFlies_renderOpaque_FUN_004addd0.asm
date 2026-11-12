@@ -348,7 +348,7 @@ section .text
         ;   Label: LAB_004ae1b8
     PUSH EBX                            ; 004ae1ba
     CALL engine_prim.c_replaceWWithDepth_FUN_00515a80 ; 004ae1bb
-        ;   XREF to: 00515a80 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_00515a80()
+        ;   XREF to: 00515a80 (UNCONDITIONAL_CALL)  ; void engine_prim.c_replaceWWithDepth_FUN_00515a80(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 004ae1c0
     MOV EAX,dword ptr [EBX + 0x8]       ; 004ae1c3
     TEST ESI,ESI                        ; 004ae1c6

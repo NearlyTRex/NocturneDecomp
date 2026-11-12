@@ -43,7 +43,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0(CDem
   uint local_168;
   uint local_164;
   uint local_160;
-  int local_15c;
+  CVector3i local_15c;
   float local_150;
   float local_14c;
   float local_148;
@@ -127,11 +127,11 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0(CDem
   _DAT_01bef210 = 0;
   _DAT_01bef214 = 0;
   _DAT_01bef218 = 0;
-  engine_drender_cpp_FUN_00483ac0(0x01BC120C);
-  local_138 = local_15c;
-  local_134[(uint)bVar9 * -2] = *(int *)(&stack0xfffffea8 + (uint)bVar9 * -8);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0(0x01BC120C,&local_15c);
+  local_138 = local_15c.x;
+  local_134[(uint)bVar9 * -2] = *(int *)((int)&local_15c + (uint)bVar9 * -8 + 4);
   local_134[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
-       *(int *)(&stack0xfffffeac + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+       *(int *)((int)&local_15c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
   fVar11 = (float10)_DAT_005db9bc;
   local_150 = (float)((float10)local_138 * fVar11);
   fVar12 = ((float10)local_138 * fVar11 - (float10)(this_ptr->bbox_min).x) /

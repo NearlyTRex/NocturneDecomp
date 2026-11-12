@@ -8,8 +8,8 @@
 ; SSimFrame *      Stack[0x8]:4   sim_frame
 ;
 ; XREF[2]:
+;   core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120 at 0050f1c4
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0 at 0050eea8
-;   core_netgame.cpp_FUN_0050f120 at 0050f1c4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005e10c5

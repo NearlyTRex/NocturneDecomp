@@ -635,6 +635,20 @@
     },
     "pcode_op_count": 4924
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004bcba0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9966
+    },
+    "bw3.exe": {
+      "addr": "004aa810",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8829
+    }
+  },
   "stack_frame": {
     "frame_size": 1476,
     "local_size": 1464,
@@ -991,7 +1005,7 @@
       "line": 73,
       "match": "DAT_005d59e0",
       "severity": "mild",
-      "text": "pcVar12 = strstr((char *)local_5b4,&DAT_005d59e0);",
+      "text": "pcVar6 = strstr((char *)local_5b4,&DAT_005d59e0);",
       "type": "undefined_data"
     },
     {
@@ -1207,7 +1221,7 @@
       "line": 501,
       "match": "DAT_005d61b2",
       "severity": "mild",
-      "text": "((char *)(iVar7 * 0x970 + 0x1cacbf0 + iVar5 * 0x88),&DAT_005d61b2);",
+      "text": "((char *)(iVar7 * 0x970 + 0x1cacbf0 + iVar12 * 0x88),&DAT_005d61b2);",
       "type": "undefined_data"
     },
     {
@@ -1271,7 +1285,7 @@
       "line": 616,
       "match": "DAT_01cab7f0",
       "severity": "mild",
-      "text": "_sprintf(&DAT_01cab7f0,pcVar12);",
+      "text": "_sprintf(&DAT_01cab7f0,pcVar6);",
       "type": "undefined_data"
     },
     {
@@ -1295,7 +1309,7 @@
       "line": 625,
       "match": "DAT_01cab7f0",
       "severity": "mild",
-      "text": "pcVar12 = &DAT_01cab7f0;",
+      "text": "pcVar6 = &DAT_01cab7f0;",
       "type": "undefined_data"
     },
     {
@@ -1383,7 +1397,7 @@
       "line": 501,
       "match": "0x1cacbf0",
       "severity": "moderate",
-      "text": "((char *)(iVar7 * 0x970 + 0x1cacbf0 + iVar5 * 0x88),&DAT_005d61b2);",
+      "text": "((char *)(iVar7 * 0x970 + 0x1cacbf0 + iVar12 * 0x88),&DAT_005d61b2);",
       "type": "raw_address_constant"
     },
     {
@@ -1391,7 +1405,7 @@
       "line": 554,
       "match": "0x1cace14",
       "severity": "moderate",
-      "text": "iVar11 = iVar5 * 0xd4 + iVar7 * 0x970 + 0x1cace14;",
+      "text": "iVar11 = iVar12 * 0xd4 + iVar7 * 0x970 + 0x1cace14;",
       "type": "raw_address_constant"
     },
     {

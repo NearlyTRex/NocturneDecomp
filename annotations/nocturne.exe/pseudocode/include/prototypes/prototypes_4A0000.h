@@ -23,6 +23,7 @@
 #include "types/classes/CSlew.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/EAmmoType.h"
+#include "types/enums/EBloodType.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
@@ -50,11 +51,11 @@ uint __cdecl core_game_cpp_CGame_fadeIn_FUN_004a3a50(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetWeaponSwitchTimers_FUN_004a3a70(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame *this_ptr,char *name,float value,float duration);
-void __cdecl core_game_cpp_CGame_FUN_004a3b90(CGame *this_ptr,char *save_filename);
-void __cdecl core_game_cpp_CGame_FUN_004a4170(CGame *this_ptr,char *save_filename,int load_mode);
+void __cdecl core_game_cpp_CGame_saveGame_FUN_004a3b90(CGame *this_ptr,char *save_filename);
+void __cdecl core_game_cpp_CGame_loadGame_FUN_004a4170(CGame *this_ptr,char *save_filename,int load_mode);
 void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004a4b50(CGame *this_ptr,int select_mode);
 void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004a5740(CGame *this_ptr,char *filename,int width,int height);
-void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004a57c0(CGame *this_ptr);
 void __cdecl core_game_cpp_joinNetworkGame_FUN_004a5e40(void);
 void __cdecl core_game_cpp_CGame_slamDT_FUN_004a5f00(CGame *this_ptr,float delta_time);
 void __cdecl core_game_cpp_CGame_process_FUN_004a6010(CGame *this_ptr);
@@ -126,7 +127,7 @@ int __cdecl core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0(CGlass *t
 CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004adef0(CGlass *this_ptr,uint flags);
 CVector3f * __cdecl core_glass_cpp_CVector3f_arrdtor25_FUN_004adf70(CVector3f *this_ptr,uint flags);
 void __cdecl core_gore_cpp_staticInit_FUN_004adf90(void);
-void core_gore_cpp_getBloodColorParams_FUN_004ae020(uint param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4);
+void __cdecl core_gore_cpp_getBloodColorParams_FUN_004ae020(EBloodType blood_type,int *out_light,int *out_color,int *out_fog);
 void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004ae070(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type);
 void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodParticle *this_ptr);
 void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ae190(CBloodParticle *this_ptr);

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 186,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
+    "pseudocode_lines": 39,
     "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 108
+    "total_lines": 111
   },
   "cross_references": [
     {
@@ -91,6 +91,32 @@
     },
     "pcode_op_count": 266
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00461690",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00466470",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004824f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00457120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -110,34 +136,58 @@
   "suspects": [
     {
       "description": "Pointer value `&this_ptr->face_data->vertex_index_1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
+      "line": 23,
       "match": "(int)&this_ptr->face_data->vertex_index_1",
       "severity": "moderate",
-      "text": "uStack_30 = *(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar1);",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->face_data->vertex_index_2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 27,
+      "line": 25,
       "match": "(int)&this_ptr->face_data->vertex_index_2",
       "severity": "moderate",
-      "text": "uStack_24 = *(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar1);",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&this_ptr->face_data->vertex_index_3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 28,
+      "line": 27,
       "match": "(int)&this_ptr->face_data->vertex_index_3",
       "severity": "moderate",
-      "text": "uStack_18 = *(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar1);",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar1);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 22,
+      "line": 15,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "uStack_40 = *(uint *)((int)&(this_ptr->face_data->plane).A + iVar1);",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).A + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 17,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).B + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 19,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).C + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 21,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).D + iVar1);",
       "type": "pointer_cast"
     },
     {
@@ -145,15 +195,7 @@
       "line": 23,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "uStack_3c = *(uint *)((int)&(this_ptr->face_data->plane).B + iVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 24,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "uStack_38 = *(uint *)((int)&(this_ptr->face_data->plane).C + iVar1);",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar1);",
       "type": "pointer_cast"
     },
     {
@@ -161,15 +203,7 @@
       "line": 25,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "uStack_34 = *(uint *)((int)&(this_ptr->face_data->plane).D + iVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 26,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "uStack_30 = *(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar1);",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar1);",
       "type": "pointer_cast"
     },
     {
@@ -177,23 +211,15 @@
       "line": 27,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "uStack_24 = *(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar1);",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar1);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 28,
+      "line": 29,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "uStack_18 = *(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 30,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).A + iVar1) = uStack_40;",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).A + iVar1) =",
       "type": "pointer_cast"
     },
     {
@@ -201,15 +227,7 @@
       "line": 31,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).B + iVar1) = uStack_3c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 32,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).C + iVar1) = uStack_38;",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).B + iVar1) =",
       "type": "pointer_cast"
     },
     {
@@ -217,7 +235,15 @@
       "line": 33,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).D + iVar1) = uStack_34;",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).C + iVar1) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 35,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).D + iVar1) =",
       "type": "pointer_cast"
     }
   ]

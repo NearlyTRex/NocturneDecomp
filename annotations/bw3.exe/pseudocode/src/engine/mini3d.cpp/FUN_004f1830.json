@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 672,
-    "complexity_score": 920,
+    "complexity_score": 1001,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 27,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 230,
-    "suspect_count": 67,
+    "pseudocode_lines": 246,
+    "suspect_count": 73,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
+      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 902
+    "total_lines": 918
   },
   "cross_references": [
     {
@@ -320,6 +321,14 @@
       "STORE": 159
     },
     "pcode_op_count": 3257
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00516060",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 200,
@@ -680,7 +689,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 48,
       "match": "param_2",
       "severity": "mild",
       "text": "local_28 = param_2[6] - param_1[6];",
@@ -688,7 +697,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "local_28 = param_2[6] - param_1[6];",
@@ -696,7 +705,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 49,
       "match": "param_3",
       "severity": "mild",
       "text": "local_2c = param_3[5] - param_2[5];",
@@ -704,7 +713,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 49,
       "match": "param_2",
       "severity": "mild",
       "text": "local_2c = param_3[5] - param_2[5];",
@@ -712,7 +721,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 51,
       "match": "param_2",
       "severity": "mild",
       "text": "local_30 = param_2[5] - param_1[5];",
@@ -720,7 +729,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "local_30 = param_2[5] - param_1[5];",
@@ -728,7 +737,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 52,
       "match": "param_3",
       "severity": "mild",
       "text": "local_24 = param_3[6] - param_2[6];",
@@ -736,10 +745,50 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 52,
       "match": "param_2",
       "severity": "mild",
       "text": "local_24 = param_3[6] - param_2[6];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_mini3d_cpp_FUN_004f1810(*param_1 * _DAT_005c822d);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_mini3d_cpp_FUN_004f1810(param_1[1] * _DAT_005c822d);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_mini3d_cpp_FUN_004f1810(param_1[2] * _DAT_005c822d);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_c0.projected_vertex.inv_z = engine_mini3d_cpp_FUN_004f1810(param_1[3] * _DAT_005c8231);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_c0.projected_vertex.screen_x = engine_mini3d_cpp_FUN_004f1810(param_1[5] * _DAT_005c8235);",
       "type": "unnamed_param"
     },
     {
@@ -747,7 +796,7 @@
       "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_c0 = engine_mini3d_cpp_FUN_004f1810(*param_1 * _DAT_005c822d);",
+      "text": "local_c0.projected_vertex.screen_y = engine_mini3d_cpp_FUN_004f1810(param_1[6] * _DAT_005c8235);",
       "type": "unnamed_param"
     },
     {
@@ -755,7 +804,7 @@
       "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_bc = engine_mini3d_cpp_FUN_004f1810(param_1[1] * _DAT_005c822d);",
+      "text": "local_c0.u = engine_mini3d_cpp_FUN_004f1810(param_1[7] * _DAT_005c822d * _DAT_005c8235);",
       "type": "unnamed_param"
     },
     {
@@ -763,7 +812,7 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_b8 = engine_mini3d_cpp_FUN_004f1810(param_1[2] * _DAT_005c822d);",
+      "text": "local_c0.v = engine_mini3d_cpp_FUN_004f1810(param_1[8] * _DAT_005c822d * _DAT_005c8235);",
       "type": "unnamed_param"
     },
     {
@@ -771,7 +820,7 @@
       "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_b4 = engine_mini3d_cpp_FUN_004f1810(param_1[3] * _DAT_005c8231);",
+      "text": "local_c0.r = engine_mini3d_cpp_FUN_004f1810(param_1[0xb] * _DAT_005c8239);",
       "type": "unnamed_param"
     },
     {
@@ -779,7 +828,7 @@
       "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_b0 = engine_mini3d_cpp_FUN_004f1810(param_1[5] * _DAT_005c8235);",
+      "text": "local_c0.g = engine_mini3d_cpp_FUN_004f1810(param_1[10] * _DAT_005c8239);",
       "type": "unnamed_param"
     },
     {
@@ -787,52 +836,12 @@
       "line": 76,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_ac = engine_mini3d_cpp_FUN_004f1810(param_1[6] * _DAT_005c8235);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_a8 = engine_mini3d_cpp_FUN_004f1810(param_1[7] * _DAT_005c822d * _DAT_005c8235);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_a4 = engine_mini3d_cpp_FUN_004f1810(param_1[8] * _DAT_005c822d * _DAT_005c8235);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_a0 = engine_mini3d_cpp_FUN_004f1810(param_1[0xb] * _DAT_005c8239);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_9c = engine_mini3d_cpp_FUN_004f1810(param_1[10] * _DAT_005c8239);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_98 = engine_mini3d_cpp_FUN_004f1810(param_1[9] * _DAT_005c8239);",
+      "text": "local_c0.b = engine_mini3d_cpp_FUN_004f1810(param_1[9] * _DAT_005c8239);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 77,
       "match": "DAT_01d76c38",
       "severity": "mild",
       "text": "if ((DAT_01d76c38 & 8) == 0) {",
@@ -840,7 +849,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = param_1[0xc];",
@@ -848,7 +857,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = param_1[0xd];",
@@ -856,7 +865,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 84,
       "match": "param_2",
       "severity": "mild",
       "text": "local_90 = engine_mini3d_cpp_FUN_004f1810(*param_2 * _DAT_005c822d);",
@@ -864,7 +873,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 90,
+      "line": 85,
       "match": "param_2",
       "severity": "mild",
       "text": "local_8c = engine_mini3d_cpp_FUN_004f1810(param_2[1] * _DAT_005c822d);",
@@ -872,7 +881,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 86,
       "match": "param_2",
       "severity": "mild",
       "text": "local_88 = engine_mini3d_cpp_FUN_004f1810(param_2[2] * _DAT_005c822d);",
@@ -880,7 +889,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 87,
       "match": "param_2",
       "severity": "mild",
       "text": "local_84 = engine_mini3d_cpp_FUN_004f1810(param_2[3] * _DAT_005c8231);",
@@ -888,7 +897,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 88,
       "match": "param_2",
       "severity": "mild",
       "text": "local_80 = engine_mini3d_cpp_FUN_004f1810(param_2[5] * _DAT_005c8235);",
@@ -896,7 +905,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 89,
       "match": "param_2",
       "severity": "mild",
       "text": "local_7c = engine_mini3d_cpp_FUN_004f1810(param_2[6] * _DAT_005c8235);",
@@ -904,7 +913,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 90,
       "match": "param_2",
       "severity": "mild",
       "text": "local_78 = engine_mini3d_cpp_FUN_004f1810(param_2[7] * _DAT_005c822d * _DAT_005c8235);",
@@ -912,7 +921,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 91,
       "match": "param_2",
       "severity": "mild",
       "text": "local_74 = engine_mini3d_cpp_FUN_004f1810(param_2[8] * _DAT_005c822d * _DAT_005c8235);",
@@ -920,7 +929,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 92,
       "match": "param_2",
       "severity": "mild",
       "text": "local_70 = engine_mini3d_cpp_FUN_004f1810(param_2[0xb] * _DAT_005c8239);",
@@ -928,7 +937,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 93,
       "match": "param_2",
       "severity": "mild",
       "text": "local_6c = engine_mini3d_cpp_FUN_004f1810(param_2[10] * _DAT_005c8239);",
@@ -936,7 +945,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 94,
       "match": "param_2",
       "severity": "mild",
       "text": "local_68 = engine_mini3d_cpp_FUN_004f1810(param_2[9] * _DAT_005c8239);",
@@ -944,7 +953,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 95,
       "match": "DAT_01d76c38",
       "severity": "mild",
       "text": "if ((DAT_01d76c38 & 8) == 0) {",
@@ -952,7 +961,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 96,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = param_2[0xc];",
@@ -960,7 +969,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 99,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = param_2[0xd];",
@@ -968,7 +977,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 102,
       "match": "param_3",
       "severity": "mild",
       "text": "local_60 = engine_mini3d_cpp_FUN_004f1810(*param_3 * _DAT_005c822d);",
@@ -976,7 +985,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 103,
       "match": "param_3",
       "severity": "mild",
       "text": "local_5c = engine_mini3d_cpp_FUN_004f1810(param_3[1] * _DAT_005c822d);",
@@ -984,7 +993,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 104,
       "match": "param_3",
       "severity": "mild",
       "text": "local_58 = engine_mini3d_cpp_FUN_004f1810(param_3[2] * _DAT_005c822d);",
@@ -992,7 +1001,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 105,
       "match": "param_3",
       "severity": "mild",
       "text": "local_54 = engine_mini3d_cpp_FUN_004f1810(param_3[3] * _DAT_005c8231);",
@@ -1000,7 +1009,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 106,
       "match": "param_3",
       "severity": "mild",
       "text": "local_50 = engine_mini3d_cpp_FUN_004f1810(param_3[5] * _DAT_005c8235);",
@@ -1008,7 +1017,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 107,
       "match": "param_3",
       "severity": "mild",
       "text": "local_4c = engine_mini3d_cpp_FUN_004f1810(param_3[6] * _DAT_005c8235);",
@@ -1016,7 +1025,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 109,
       "match": "param_3",
       "severity": "mild",
       "text": "(param_3[7] * (float)_DAT_005c823d * (float)_DAT_005c8245);",
@@ -1024,7 +1033,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 111,
       "match": "param_3",
       "severity": "mild",
       "text": "(param_3[8] * (float)_DAT_005c823d * (float)_DAT_005c8245);",
@@ -1032,7 +1041,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 112,
       "match": "param_3",
       "severity": "mild",
       "text": "local_40 = engine_mini3d_cpp_FUN_004f1810(param_3[0xb] * _DAT_005c8239);",
@@ -1040,7 +1049,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 113,
       "match": "param_3",
       "severity": "mild",
       "text": "local_3c = engine_mini3d_cpp_FUN_004f1810(param_3[10] * _DAT_005c8239);",
@@ -1048,7 +1057,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 114,
       "match": "param_3",
       "severity": "mild",
       "text": "local_38 = engine_mini3d_cpp_FUN_004f1810(param_3[9] * _DAT_005c8239);",
@@ -1056,7 +1065,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 120,
+      "line": 115,
       "match": "DAT_01d76c38",
       "severity": "mild",
       "text": "if ((DAT_01d76c38 & 8) == 0) {",
@@ -1064,7 +1073,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 116,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar1 = param_3[0xc];",
@@ -1072,7 +1081,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 124,
+      "line": 119,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar1 = param_3[0xd];",
@@ -1080,7 +1089,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 128,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_mini3d_cpp_FUN_004f13a0(param_1,param_2);",
@@ -1088,7 +1097,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 128,
       "match": "param_2",
       "severity": "mild",
       "text": "engine_mini3d_cpp_FUN_004f13a0(param_1,param_2);",
@@ -1096,7 +1105,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 129,
       "match": "param_2",
       "severity": "mild",
       "text": "engine_mini3d_cpp_FUN_004f13a0(param_2,param_3);",
@@ -1104,7 +1113,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 129,
       "match": "param_3",
       "severity": "mild",
       "text": "engine_mini3d_cpp_FUN_004f13a0(param_2,param_3);",
@@ -1112,7 +1121,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 130,
       "match": "param_3",
       "severity": "mild",
       "text": "engine_mini3d_cpp_FUN_004f13a0(param_3,param_1);",
@@ -1120,7 +1129,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 130,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_mini3d_cpp_FUN_004f13a0(param_3,param_1);",
@@ -1128,39 +1137,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 131,
       "match": "DAT_01d80848",
       "severity": "mild",
-      "text": "local_14 = (int *)&DAT_01d80848;",
+      "text": "local_14 = (SSoftwareEdge *)&DAT_01d80848;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 149,
+      "line": 145,
       "match": "DAT_01d80848",
       "severity": "mild",
-      "text": "piVar2 = (int *)&DAT_01d80848;",
+      "text": "left_vertex = (SSoftwareEdge *)&DAT_01d80848;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 165,
+      "line": 162,
       "match": "DAT_01d80848",
       "severity": "mild",
-      "text": "local_14 = (int *)&DAT_01d80848;",
+      "text": "local_14 = (SSoftwareEdge *)&DAT_01d80848;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 183,
+      "line": 181,
       "match": "DAT_01d80848",
       "severity": "mild",
-      "text": "piVar2 = (int *)&DAT_01d80848;",
+      "text": "left_vertex = (SSoftwareEdge *)&DAT_01d80848;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 198,
+      "line": 197,
       "match": "DAT_005fba20",
       "severity": "mild",
       "text": "if (DAT_005fba20 == 0x20) {",
@@ -1168,11 +1177,59 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 205,
+      "line": 206,
       "match": "DAT_005fba20",
       "severity": "mild",
       "text": "else if (DAT_005fba20 == 0x20) {",
       "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 222,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(int *)&local_14->field_0x48 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 223,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(int *)&local_14->field_0x48 + *(int *)&local_14->field_0x4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 223,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "*(int *)&local_14->field_0x48 + *(int *)&local_14->field_0x4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 235,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)&left_vertex->field_0x48;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 244,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(int *)&left_vertex->field_0x48 = iVar2 + *(int *)&left_vertex->field_0x4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 244,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "*(int *)&left_vertex->field_0x48 = iVar2 + *(int *)&left_vertex->field_0x4c;",
+      "type": "unnamed_field"
     },
     {
       "call_site_count": 2,

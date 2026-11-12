@@ -22,7 +22,7 @@ void __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004995a0(CFireball *th
   float local_60;
   float local_54;
   float local_48;
-  uint local_18;
+  CVector3i local_18;
   
   bVar4 = 0;
   _DAT_01c73674 = 4;
@@ -34,12 +34,12 @@ void __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004995a0(CFireball *th
   _DAT_01c7368c = 1;
   _DAT_01c73690 = 2;
   _DAT_01c73694 = 3;
-  engine_drender_cpp_FUN_0046d230(DAT_005f2afc);
-  _DAT_01c73658 = local_18;
+  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(DAT_005f2afc,&local_18);
+  _DAT_01c73658 = local_18.x;
   *(uint *)(&DAT_01c7365c + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xffffffec + (uint)bVar4 * -8);
+       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + 4);
   *(uint *)(&DAT_01c73660 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   _DAT_01c7365c = 0;
   puVar2 = (uint *)(DAT_007e2a54 + 0x10);
   puVar3 = (uint *)&stack0xffffffc0;

@@ -24,7 +24,7 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
   char *pcVar10;
   byte bVar11;
   int aiStackY_1074 [579];
-  int *piVar12;
+  CVector3i *input_ptr;
   int iStack_728;
   CSfxSample CStack_724;
   char acStack_4d4 [256];
@@ -38,8 +38,8 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
   uint uStack_9c;
   uint uStack_98;
   uint uStack_94;
-  int iStack_8c;
-  int aiStack_88 [5];
+  CVector3i CStack_8c;
+  CVector3i CStack_80;
   float fStack_74;
   float fStack_70;
   float fStack_6c;
@@ -108,19 +108,21 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
       (**(code **)(*(int *)(iVar2 + 0x154) + 0x68))(iVar2,&uStack_a8,&uStack_9c);
       if ((DAT_01c43544 & 1) != 0) {
         core_dcamera_cpp_FUN_0044dd70(&g_CDemonCameraInstance,_DAT_01c4353c,_DAT_01c43540);
-        piVar12 = &iStack_8c;
-        iStack_8c = iStack_68;
-        aiStack_88[(uint)bVar11 * -2] = aiStack_64[(uint)bVar11 * -2];
-        aiStack_88[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+        input_ptr = &CStack_8c;
+        CStack_8c.x = iStack_68;
+        *(int *)((int)&CStack_8c + (uint)bVar11 * -8 + 4) = aiStack_64[(uint)bVar11 * -2];
+        *(int *)((int)&CStack_8c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
              aiStack_64[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
-        core_dcamera_cpp_FUN_0044de40(&g_CDemonCameraInstance,piVar12);
-        iStack_8c = aiStack_88[2];
-        aiStack_88[(uint)bVar11 * -2] = aiStack_88[(uint)bVar11 * -2 + 3];
-        aiStack_88[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-             aiStack_88[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
-        fStack_74 = (float)iStack_8c * _DAT_00600f74;
-        fStack_70 = (float)aiStack_88[0] * _DAT_00600f74;
-        fStack_6c = (float)aiStack_88[1] * _DAT_00600f74;
+        core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044de40
+                  (&g_CDemonCameraInstance,input_ptr,&CStack_80);
+        CStack_8c.x = CStack_80.x;
+        *(uint *)((int)&CStack_8c + (uint)bVar11 * -8 + 4) =
+             *(uint *)((int)&CStack_80 + (uint)bVar11 * -8 + 4);
+        *(uint *)((int)&CStack_8c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+             *(uint *)((int)&CStack_80 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+        fStack_74 = (float)CStack_8c.x * _DAT_00600f74;
+        fStack_70 = (float)CStack_8c.y * _DAT_00600f74;
+        fStack_6c = (float)CStack_8c.z * _DAT_00600f74;
         iVar2 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
         (**(code **)(*(int *)(iVar2 + 0x154) + 0x68))(iVar2,&fStack_74,iVar2 + 0x30);
         DAT_01c43544 = DAT_01c43544 & 0xfe;
@@ -136,10 +138,8 @@ void core_game_cpp_FUN_004ce580(CGame *param_1)
     if (param_1->profile_mode != 0) {
       iStack_18 = wincore_winrun_cpp_getTime_FUN_005b2420();
       iStack_18 = iStack_18 - local_48;
-      engine_console_cpp_FUN_00445430
-                (g_CConsolePtr,"screen paint : %3.2f ms\n",
-                 ((double)iStack_18 * _DAT_005e171c * _DAT_005e1724 * _DAT_005e172c) /
-                 (double)g_CGamePtr->delta_time_float);
+      engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"screen paint : %3.2f ms\n")
+      ;
     }
     if (param_1->skip_frame_render == 0) {
       engine_special_cpp_FUN_00581f50();

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[3]:
-;   core_cloth.cpp_FUN_0043c330 at 0043c400
+;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c400
 ;   core_dmodel.cpp_loadModel_FUN_00462420 at 004624aa
 ;   core_set.cpp_FUN_00532b80 at 005336f0
 ;
@@ -82,13 +82,13 @@ section .text
         ;   Label: LAB_004605a1
     PUSH EBP                            ; 004605a2
     CALL crt_stdio.c_fgetc_FUN_005a32b0 ; 004605a3
-        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005a32b0()
+        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005a32b0(_FILE * file)
     ADD ESP,0x4                         ; 004605a8
     PUSH EBP                            ; 004605ab
     PUSH EAX                            ; 004605ac
     MOV ESI,EAX                         ; 004605ad
     CALL crt_stdio.c_ungetc_FUN_005a3480 ; 004605af
-        ;   XREF to: 005a3480 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ungetc_FUN_005a3480()
+        ;   XREF to: 005a3480 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005a3480(int character, _FILE * stream)
     ADD ESP,0x8                         ; 004605b4
     CMP ESI,0x2f                        ; 004605b7
     JNZ 0x0046068b                      ; 004605ba

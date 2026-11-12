@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_scat_cpp_factoryFuncScat_FUN_0051e970(void)
+; CScat * __cdecl core_scat_cpp_factoryFuncScat_FUN_0051e970(void)
 ;
 ;
 ; Called Functions:

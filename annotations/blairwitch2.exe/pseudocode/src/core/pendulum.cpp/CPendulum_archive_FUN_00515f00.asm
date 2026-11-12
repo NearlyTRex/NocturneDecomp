@@ -46,7 +46,7 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 00515f13
     PUSH EAX                            ; 00515f19
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 00515f1a
-        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60()
+        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 00515f1f
     PUSH 0x5e1aa4                       ; 00515f22 | = "startEvent"
     LEA EAX,[EBX + 0x430]               ; 00515f27
@@ -64,13 +64,13 @@ section .text
     LEA EAX,[EBX + 0x4fc]               ; 00515f4f
     PUSH EAX                            ; 00515f55
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00515f56
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00515f5b
     PUSH 0x5e1abc                       ; 00515f5e | = "maxAngle"
     LEA EAX,[EBX + 0x504]               ; 00515f63
     PUSH EAX                            ; 00515f69
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00515f6a
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x0061b3a4]      ; 00515f6f | g_CPendulumClassVersion
     ADD ESP,0x8                         ; 00515f75
     CMP EDX,0x2                         ; 00515f78
@@ -96,7 +96,7 @@ section .text
     LEA EAX,[EBX + 0x528]               ; 00515fb7
     PUSH EAX                            ; 00515fbd
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00515fbe
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00515fc3
     CMP dword ptr [0x0061b3a4],0x4      ; 00515fc6 | g_CPendulumClassVersion
         ;   Label: LAB_00515fc6
@@ -122,13 +122,13 @@ section .text
     LEA EAX,[EBX + 0x58c]               ; 00516005
     PUSH EAX                            ; 0051600b
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0051600c
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00516011
     PUSH 0x5e1b12                       ; 00516014 | = "decayTimer"
     LEA EAX,[EBX + 0x590]               ; 00516019
     PUSH EAX                            ; 0051601f
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00516020
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00516025
     CMP dword ptr [0x0061b3a4],0x6      ; 00516028 | g_CPendulumClassVersion
         ;   Label: LAB_00516028

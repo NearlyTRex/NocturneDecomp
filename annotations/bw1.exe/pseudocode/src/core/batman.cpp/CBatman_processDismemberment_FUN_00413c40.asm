@@ -41,7 +41,7 @@
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210
 ;   core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_004352e0
 ;   crt_stdlib.c_rand_FUN_005c084c
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
 
@@ -334,8 +334,8 @@ section .text
     PUSH EDX                            ; 00413f12 | g_CConsoleInstance
     FSTP ST1                            ; 00413f13
     FSTP float ptr [ESI + 0x4]          ; 00413f15
-    CALL engine_console.cpp_FUN_00445430 ; 00413f18
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00413f18
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00413f1d
     PUSH 0x3f000000                     ; 00413f20
     CALL core_actor.cpp_randomChance_FUN_0040cd00 ; 00413f25

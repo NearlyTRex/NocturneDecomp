@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_fwrite_FUN_005a48e0(undefined4 *param_1,uint param_2,int param_3,int *param_4)
+; SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005a48e0(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   ptr
+; SIZE_T           Stack[0x8]:4   size
+; SIZE_T           Stack[0xc]:4   count
+; _FILE *          Stack[0x10]:4   file
 ;
 ; XREF[7]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0050fe90 at 0050feed
@@ -224,7 +229,7 @@ section .text
     PUSH EAX                            ; 005a4a9c
     INC EBP                             ; 005a4a9d
     CALL crt_stdio.c_fputc_FUN_005a5d70 ; 005a4a9e
-        ;   XREF to: 005a5d70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005a5d70()
+        ;   XREF to: 005a5d70 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005a5d70(int character, _FILE * file)
     MOV DL,byte ptr [EBX + 0xc]         ; 005a4aa3
     ADD ESP,0x8                         ; 005a4aa6
     TEST DL,0x30                        ; 005a4aa9

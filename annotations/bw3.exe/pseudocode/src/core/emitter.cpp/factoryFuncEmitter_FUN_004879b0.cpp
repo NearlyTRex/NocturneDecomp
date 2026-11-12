@@ -1,20 +1,20 @@
 // Name: core_emitter.cpp_factoryFuncEmitter_FUN_004879b0
 // Address: 004879b0
 // Address Range: [[004879b0, 004879cb]]
-// Convention: unknown
-// Signature: void core_emitter_cpp_factoryFuncEmitter_FUN_004879b0(void)
+// Convention: __cdecl
+// Signature: CEmitter * __cdecl core_emitter_cpp_factoryFuncEmitter_FUN_004879b0(void)
 
 #include "nocturne.h"
 
-void core_emitter_cpp_factoryFuncEmitter_FUN_004879b0(void)
+CEmitter * __cdecl core_emitter_cpp_factoryFuncEmitter_FUN_004879b0(void)
 
 {
-  CEmitter *this_ptr;
+  CEmitter *pCVar1;
   
-  this_ptr = (CEmitter *)operator_new(0x4c0);
-  if (this_ptr == (CEmitter *)0x0) {
-    return;
+  pCVar1 = (CEmitter *)operator_new(0x4c0);
+  if (pCVar1 == (CEmitter *)0x0) {
+    return (CEmitter *)0x0;
   }
-  core_emitter_cpp_CEmitter_ctor_FUN_004879e0(this_ptr);
-  return;
+  pCVar1 = core_emitter_cpp_CEmitter_ctor_FUN_004879e0(pCVar1);
+  return pCVar1;
 }

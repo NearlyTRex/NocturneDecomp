@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00538be0(CDemonActor *param_1,CVector3i *param_2,SMRGLHeaderPrimitive *param_3,int param_4,int param_5,undefined4 param_6)
+; float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00538be0(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor
+; CVector3i *      Stack[0x8]:4   bbox_vertices
+; SMRGLHeaderPrimitive * Stack[0xc]:4   primitives
+; int              Stack[0x10]:4   camera_index
+; C3DSCamera *     Stack[0x14]:4   camera
+; float            Stack[0x18]:4   radius
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fb354
@@ -72,7 +79,7 @@ section .text
     MOV EBX,EDI                         ; 00538c5a
     PUSH EBX                            ; 00538c5c
     CALL core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20 ; 00538c5d
-        ;   XREF to: 0053ae20 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20()
+        ;   XREF to: 0053ae20 (UNCONDITIONAL_CALL)  ; int core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20(C3DSCamera * this_ptr, CVector3f * world_position, float radius)
     ADD ESP,0xc                         ; 00538c62
     TEST EAX,EAX                        ; 00538c65
     JZ 0x00538cc7                       ; 00538c67

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hotdemon_cpp_factoryFuncHotDemon_FUN_004d5400(void)
+; CHotDemon * __cdecl core_hotdemon_cpp_factoryFuncHotDemon_FUN_004d5400(void)
 ;
 ;
 ; Called Functions:

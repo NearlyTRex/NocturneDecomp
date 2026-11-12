@@ -116,8 +116,8 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0057ce10(CSound *this_ptr)
   }
   else {
     sound_sndmain_cpp_enableSfxChannel_FUN_00573c50(3,1);
-    local_18 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0();
-    sound_sndmain_cpp_setSfxChannelVol_FUN_00573b30(3);
+    local_18 = sound_sndmain_cpp_getSfxChannelVol_FUN_00573bc0(0);
+    sound_sndmain_cpp_setSfxChannelVol_FUN_00573b30(3,local_18 * _DAT_02c832a8);
   }
   if (g_CDemonSetPtr->player_on_train != 0) {
     local_24 = g_CGamePtr->delta_time_float;
@@ -156,7 +156,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0057ce10(CSound *this_ptr)
     }
     sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
     sound_sndmain_cpp_FUN_005729f0(1);
-    sound_sndmain_cpp_FUN_00572980(3);
+    sound_sndmain_cpp_setNextSfxChannel_FUN_00572980(3);
     iVar3 = _stricmp(PTR_DAT_006236b0,&DAT_005f5a2b);
     if (iVar3 == 0) {
       sound_sndmain_cpp_killSfx_FUN_00573a80(_DAT_02c8336c);
@@ -264,7 +264,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0057ce10(CSound *this_ptr)
       local_28->y = 0.0;
       local_28->z = fVar4;
       sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
-      sound_sndmain_cpp_FUN_00572980(3);
+      sound_sndmain_cpp_setNextSfxChannel_FUN_00572980(3);
       sound_sndmain_cpp_FUN_00572880((CVector3f *)&DAT_02c83354);
       _sprintf(local_14c,"%s @ %g");
       fVar4 = (float)core_sound_cpp_CSound_playTrackedActorSound_FUN_0057d8d0

@@ -335,8 +335,8 @@ section .text
     PUSH 0x5d8be0                       ; 00460556 | = "%s confused while walking to scriptDe..."
     MOV EDI,dword ptr [0x00611100]      ; 0046055b | g_CConsolePtr
     PUSH EDI                            ; 00460561 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00460562
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00460562
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     JMP 0x00460317                      ; 00460567
         ;   XREF to: 00460317 (UNCONDITIONAL_JUMP)  ; LAB_00460317
     JBE 0x00460307                      ; 0046056c
@@ -396,8 +396,8 @@ section .text
     PUSH 0x5d8c0a                       ; 00460611 | = "DJIEN: reached dest - going to protect\n"
     MOV ESI,dword ptr [0x00611100]      ; 00460616 | g_CConsolePtr
     PUSH ESI                            ; 0046061c | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 0046061d
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0046061d
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00460622
     CMP EDI,0x3                         ; 00460625
         ;   Label: LAB_00460625
@@ -424,8 +424,8 @@ section .text
     MOV ESI,dword ptr [0x00611100]      ; 00460669 | g_CConsolePtr
     PUSH ESI                            ; 0046066f | g_CConsoleInstance
     MOV dword ptr [EBX + 0xc9c4],0x0    ; 00460670
-    CALL engine_console.cpp_FUN_00445430 ; 0046067a
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0046067a
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0046067f
     PUSH 0x5d8c9f                       ; 00460682 | = "DjienHome"
     PUSH EBX                            ; 00460687
@@ -546,8 +546,8 @@ section .text
     PUSH 0x5d8c46                       ; 004607d1 | = "DJIEN: protect found victim - going t..."
     MOV ECX,dword ptr [0x00611100]      ; 004607d6 | g_CConsolePtr
     PUSH ECX                            ; 004607dc | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 004607dd
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004607dd
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004607e2
     PUSH 0x1                            ; 004607e5
     PUSH 0x7                            ; 004607e7
@@ -589,8 +589,8 @@ section .text
     PUSH 0x5d8cdd                       ; 0046085d | = "DJIEN: lost victim - hesitating\n"
     MOV EAX,[0x00611100]                ; 00460862 | g_CConsolePtr
     PUSH EAX                            ; 00460867 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00460868
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00460868
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0046086d
     PUSH EBX                            ; 00460870
     CALL core_djien.cpp_FUN_00460960    ; 00460871
@@ -602,8 +602,8 @@ section .text
         ;   Label: LAB_0046087e
     MOV EAX,[0x00611100]                ; 00460883 | g_CConsolePtr
     PUSH EAX                            ; 00460888 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00460889
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00460889
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0046088e
     PUSH EBX                            ; 00460891
     CALL core_djien.cpp_FUN_00460960    ; 00460892
@@ -647,8 +647,8 @@ section .text
     PUSH 0x5d8cfe                       ; 00460907 | = "DJIEN: reached victim or got confused..."
     MOV EDI,dword ptr [0x00611100]      ; 0046090c | g_CConsolePtr
     PUSH EDI                            ; 00460912 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00460913
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00460913
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00460918
     PUSH EBX                            ; 0046091b
     CALL core_djien.cpp_FUN_00460960    ; 0046091c

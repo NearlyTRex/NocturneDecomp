@@ -17,12 +17,6 @@
   },
   "cross_references": [
     {
-      "addr": "004eb490",
-      "from_addr": "004eb4af",
-      "name": "core_menu.cpp_FUN_004eb490",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004ebf10",
       "from_addr": "004ec035",
       "name": "core_menu.cpp_FUN_004ebf10",
@@ -44,6 +38,12 @@
       "addr": "004ee1a0",
       "from_addr": "004ee246",
       "name": "core_menu.cpp_FUN_004ee1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eb490",
+      "from_addr": "004eb4af",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_004eb490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -97,14 +97,14 @@
       "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0"
     },
     {
+      "addr": "0046b4b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0"
+    },
+    {
       "addr": "0046b060",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060"
-    },
-    {
-      "addr": "0046b4b0",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046b4b0"
     },
     {
       "addr": "0055b1f0",
@@ -258,7 +258,7 @@
       {
         "call_addr": "004eb4af",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eb490",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_004eb490",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -269,7 +269,7 @@
       {
         "call_addr": "004eb5ce",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004eb490",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_004eb490",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -318,6 +318,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 514
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00521e40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8114
+    },
+    "bw3.exe": {
+      "addr": "004f9670",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6752
+    },
+    "nocedit.exe": {
+      "addr": "00529ed0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1719
+    },
+    "nocturne.exe": {
+      "addr": "004dec50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1719
+    }
   },
   "stack_frame": {
     "frame_size": 92,
@@ -469,7 +495,7 @@
       "line": 30,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046b4b0(DAT_0060b280,0x422c9ce4);",
+      "text": "engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(DAT_0060b280,43.153214);",
       "type": "undefined_data"
     },
     {

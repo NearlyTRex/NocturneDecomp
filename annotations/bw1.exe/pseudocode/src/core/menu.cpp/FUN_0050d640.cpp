@@ -746,7 +746,7 @@ LAB_0050d66e:
             pcVar36[1] = cVar1;
             pcVar36 = pcVar36 + 2;
           } while (cVar1 != '\0');
-          shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,local_2d4);
+          shape_edittool_cpp_CEditorTools_showError_FUN_004943a0(g_CEditorToolsPtr,local_2d4);
           break;
         default:
           while( true ) {
@@ -950,7 +950,8 @@ LAB_0050e940:
             iVar23 != 0) || iVar24 != 0) || iVar25 != 0) || iVar26 != 0) || iVar27 != 0) ||
         iVar28 != 0) {
       core_game_cpp_FUN_004d0400(g_CGamePtr);
-      shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"One or more keys not valid.  Restoring default controls.");
+      shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+                (g_CEditorToolsPtr,"One or more keys not valid.  Restoring default controls.");
       return;
     }
   }

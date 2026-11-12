@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_00430210(ushort *param_1,int param_2,short param_3)
+; void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_00430210(SEdge *edge_array,int edge_count,int flip_width)
 ;
+; Parameters:
+; SEdge *          Stack[0x4]:4   edge_array
+; int              Stack[0x8]:4   edge_count
+; int              Stack[0xc]:4   flip_width
 ;
 ; *****************************************************************************
 

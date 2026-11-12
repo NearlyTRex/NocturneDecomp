@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0055d3c0(int param_1,char *param_2)
+; int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0055d3c0(UINT device_id,SSoundDeviceInfo *device_info)
 ;
+; Parameters:
+; UINT             Stack[0x4]:4   device_id
+; SSoundDeviceInfo * Stack[0x8]:4   device_info
 ;
 ; XREF[2]:
 ;   sound_snddx.cpp_getDirectSoundDevice_FUN_0055d470 at 0055d4a4

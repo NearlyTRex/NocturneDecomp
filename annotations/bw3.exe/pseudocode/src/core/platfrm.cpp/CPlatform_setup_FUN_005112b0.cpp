@@ -15,7 +15,7 @@ void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_005112b0(CPlatform *this_ptr)
   
   core_actor_cpp_CDemonActor_setup_FUN_00408890(&this_ptr->base);
   if (this_ptr->course_filename[0] != '\0') {
-    core_course_cpp_FUN_00444970(&this_ptr->course,this_ptr->course_filename);
+    core_course_cpp_CCourse_load_FUN_00444970(&this_ptr->course,this_ptr->course_filename);
     (this_ptr->course).loop = 0;
   }
   core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00511340(this_ptr);

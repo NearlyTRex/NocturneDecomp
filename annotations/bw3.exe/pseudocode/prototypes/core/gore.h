@@ -51,7 +51,7 @@ void __cdecl CBloodSplat::processAge(CBloodSplat *this_ptr);
 
 // Original: core_gore.cpp_FUN_004cdb50
 // Address: 004cdb50
-void FUN_004cdb50(int param_1,undefined4 param_2);
+void FUN_004cdb50(undefined4 param_1,_FILE *param_2);
 
 // Original: core_gore.cpp_FUN_004cdbe0
 // Address: 004cdbe0
@@ -75,7 +75,7 @@ void __cdecl CBloodPool::init(CBloodPool *this_ptr,CVector3f *position,EBloodTyp
 
 // Original: core_gore.cpp_FUN_004ce090
 // Address: 004ce090
-void FUN_004ce090(int param_1,undefined4 param_2);
+void FUN_004ce090(undefined4 param_1,_FILE *param_2);
 
 // Original: core_gore.cpp_FUN_004ce0f0
 // Address: 004ce0f0
@@ -171,7 +171,7 @@ int __cdecl CGore::save(CGore *this_ptr,_FILE *file_handle);
 
 // Original: core_gore.cpp_convertVecFloatToFixed_FUN_004cf16e
 // Address: 004cf16e
-void convertVecFloatToFixed(float *param_1,int *param_2);
+CVector3f * __cdecl convertVecFloatToFixed(CVector3f *src,CVector3i *dst);
 
 // Original: core_gore.cpp_CFootstep_ctor_FUN_004cf1a0
 // Address: 004cf1a0

@@ -28,7 +28,8 @@ void __cdecl shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0047ac
     pcVar1 = this_ptr->string_data + iVar4;
     cVar2 = *pcVar1;
     *pcVar1 = '\0';
-    shape_edittool_cpp_FUN_0047fc30(this_ptr_00,this_ptr->string_data + iVar5);
+    shape_edittool_cpp_CEditorTools_setClipboardText_FUN_0047fc30
+              (this_ptr_00,this_ptr->string_data + iVar5);
     *pcVar1 = cVar2;
   }
   return;

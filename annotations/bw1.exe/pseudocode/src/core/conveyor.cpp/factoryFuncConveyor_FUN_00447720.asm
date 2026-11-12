@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_conveyor_cpp_factoryFuncConveyor_FUN_00447720(void)
+; CConveyor * __cdecl core_conveyor_cpp_factoryFuncConveyor_FUN_00447720(void)
 ;
 ;
 ; Called Functions:

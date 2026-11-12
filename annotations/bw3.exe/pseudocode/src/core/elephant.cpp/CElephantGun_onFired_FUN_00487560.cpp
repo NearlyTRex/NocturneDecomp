@@ -50,7 +50,7 @@ void __cdecl core_elephant_cpp_CElephantGun_onFired_FUN_00487560(CElephantGun *t
     CStack_50.y = CStack_2c.y;
     CStack_50.z = CStack_2c.z;
   }
-  model_ptr = (CKeyFramedModel *)core_dmodel_cpp_loadModel_FUN_00462420("shell.kfm");
+  model_ptr = core_dmodel_cpp_loadModel_FUN_00462420("shell.kfm");
   core_fire_cpp_CFireEffect_createShell_FUN_004a3e70
             (0x01C73654,&(this_ptr->base).base.location.position,&(this_ptr->base).base.orient.vec
              ,&CStack_50,model_ptr);

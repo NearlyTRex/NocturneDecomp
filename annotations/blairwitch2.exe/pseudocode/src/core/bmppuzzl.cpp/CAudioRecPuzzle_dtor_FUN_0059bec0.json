@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 36,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
-    "suspect_count": 1,
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 74
+    "total_lines": 73
   },
   "cross_references": [],
   "function": {
@@ -31,7 +31,7 @@
     {
       "addr": "0059bfc0",
       "is_variadic": false,
-      "name": "core_bmppuzzl.cpp_FUN_0059bfc0"
+      "name": "core_bmppuzzl.cpp_CAlphaBitmap_arrdtor30_FUN_0059bfc0"
     },
     {
       "addr": "0059ab50",
@@ -100,6 +100,20 @@
     },
     "pcode_op_count": 180
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00415df0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9882
+    },
+    "bw3.exe": {
+      "addr": "00411bb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9882
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -126,10 +140,18 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
-      "match": "pCVar2[-1].",
+      "line": 17,
+      "match": "pCVar1[-4].",
       "severity": "mild",
-      "text": "pCVar3 = (CAudioRecPuzzle *)core_zombie_cpp_FUN_0059ab50(&pCVar2[-1].height,1);",
+      "text": "pCVar1 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440((CAlphaBitmap *)&pCVar1[-4].act,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "pCVar1[-1].",
+      "severity": "mild",
+      "text": "pCVar2 = (CAudioRecPuzzle *)core_zombie_cpp_FUN_0059ab50(&pCVar1[-1].height,1);",
       "type": "negative_offset"
     }
   ],

@@ -30,7 +30,7 @@ section .text
         ;   Label: LAB_005523d3
     PUSH EBX                            ; 005523d8
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00551100 ; 005523d9
-        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00551100()
+        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00551100(int channel_index, float volume)
     ADD ESP,0x8                         ; 005523de
     PUSH 0x1                            ; 005523e1
     PUSH EBX                            ; 005523e3

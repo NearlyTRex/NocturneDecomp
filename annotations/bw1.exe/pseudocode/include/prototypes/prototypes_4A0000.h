@@ -23,6 +23,7 @@
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMuzzleFlash.h"
 #include "types/classes/CParticle.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRock.h"
 #include "types/classes/CRuleList.h"
 #include "types/classes/CSmokeParticle.h"
@@ -62,10 +63,10 @@ int __cdecl core_event_cpp_setEventError_FUN_004a11e0(char *source_file,int sour
 int __cdecl core_event_cpp_formatEventError_FUN_004a1210(char *format);
 char * __cdecl core_event_cpp_skipWhitespace_FUN_004a1240(char *str);
 int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_004a1260(char *expression,int *parse_position);
-undefined4 core_event_cpp_parseComparisonOp_FUN_004a128e(char *param_1);
+int __cdecl core_event_cpp_parseComparisonOp_FUN_004a128e(char *str);
 int __cdecl core_event_cpp_parseIntOrCounter_FUN_004a1330(char *str);
-CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004a1370(char *param_1,undefined4 param_2);
-undefined4 __cdecl core_event_cpp_parseVectorLocation_FUN_004a14a0(int param_1,int *param_2,undefined4 *param_3);
+CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004a1370(char *name,uint class_hash,char *class_name);
+int __cdecl core_event_cpp_parseVectorLocation_FUN_004a14a0(char *buffer,int *offset,CVector3f *out_position);
 void __cdecl core_event_cpp_trimWhitespace_FUN_004a15c0(char *str);
 char * core_event_cpp_extractParenArg_FUN_004a1630(int *param_1,char *param_2,int param_3,int param_4);
 int __cdecl core_event_cpp_parseDeathType_FUN_004a1750(char *type_name,int *out_type_id);
@@ -110,18 +111,18 @@ void core_event_cpp_FUN_004aacce(int *param_1,int param_2,char *param_3,char *pa
 void core_event_cpp_FUN_004aae0e(int *param_1,int param_2);
 int __cdecl core_event_cpp_CRuleList_findFirst_FUN_004aaee0(CRuleList *this_ptr);
 int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_004aaf30(CRuleList *this_ptr);
-void __cdecl core_event_cpp_copyQuaternion_FUN_004aafc0(undefined4 *param_1,undefined4 *param_2);
+CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_004aafc0(CQuaternion4f *dest,CQuaternion4f *src);
 undefined4 core_event_cpp_FUN_004aafe0(int param_1);
-void crt_watcom_c__memset_FUN_004ab020(uint param_1);
+void __fastcall crt_watcom_c__memset_FUN_004ab020(void *dest,int fill_byte,uint size);
 void crt_unknown_c_FUN_004ab090(void);
 void crt_unknown_c_FUN_004ab098(void);
 void crt_unknown_c_FUN_004ab0a8(void);
 void crt_unknown_c_FUN_004ab0b4(void);
 void crt_unknown_c_FUN_004ab0c0(void);
-void crt_watcom_c__memcpy_FUN_004ab0c8(uint param_1);
+void __fastcall crt_watcom_c__memcpy_FUN_004ab0c8(void *dest,void *src,uint size);
 void crt_watcom_c_FUN_004ab1ac(void);
 void __cdecl core_filmreel_cpp_staticInit_FUN_004ab250(void);
-void core_filmreel_cpp_factoryFuncFilmReel_FUN_004ab2a0(void);
+CFilmReel * __cdecl core_filmreel_cpp_factoryFuncFilmReel_FUN_004ab2a0(void);
 CDemonActorType * core_filmreel_cpp_CFilmReel_getActorType_FUN_004ab2c0(CFilmReel *this_ptr);
 CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_004ab2d0(CFilmReel *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmReel_setup_FUN_004ab340(CFilmReel *this_ptr);
@@ -135,7 +136,7 @@ void __cdecl core_filmreel_cpp_CFilmReel_renderBackground_FUN_004ab4c0(CFilmReel
 void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_004ab4e0(CFilmReel *this_ptr);
 ECollisionType __cdecl core_filmreel_cpp_CFilmReel_getCollisionType_FUN_004ab530(CFilmReel *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004ab550(CFilmReel *this_ptr,CBoundingBox3D *out_box);
-void core_filmreel_cpp_factoryFuncFilmProjector_FUN_004ab590(void);
+CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_004ab590(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_004ab5b0(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004ab5c0(CFilmProjector *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmProjector_setup_FUN_004ab680(CFilmProjector *this_ptr);

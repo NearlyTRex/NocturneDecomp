@@ -19,7 +19,7 @@ section .text
     PUSH 0x149d6dc                      ; 0044f740
         ;   Label: core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_0044f740
     CALL core_dcamera.cpp_generateFogGrid_FUN_00448750 ; 0044f745
-        ;   XREF to: 00448750 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_generateFogGrid_FUN_00448750()
+        ;   XREF to: 00448750 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_generateFogGrid_FUN_00448750(SFogGrid * fog)
     ADD ESP,0x4                         ; 0044f74a
     RET                                 ; 0044f74d
 

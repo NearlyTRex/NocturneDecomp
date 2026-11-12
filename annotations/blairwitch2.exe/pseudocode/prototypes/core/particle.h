@@ -19,7 +19,7 @@ void __cdecl CParticle::setup(CParticle *this_ptr,CVector3f *position,CVector3f 
 
 // Original: core_particle.cpp_FUN_00510ef0
 // Address: 00510ef0
-void FUN_00510ef0(float *param_1);
+void FUN_00510ef0(CVector3f *param_1);
 
 // Original: core_particle.cpp_CParticle_render_FUN_00511370
 // Address: 00511370

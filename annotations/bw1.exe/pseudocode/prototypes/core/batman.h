@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_batman.cpp_factoryFuncBatman_FUN_00412750
 // Address: 00412750
-void factoryFuncBatman(void);
+CBatman * __cdecl factoryFuncBatman(void);
 
 // Original: core_batman.cpp_CBatman_getActorType_FUN_00412770
 // Address: 00412770

@@ -78,6 +78,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0043e930(CDemonCamera *
   int local_24;
   int local_20;
   int iStack_1c;
+  int iStack_18;
   _FILE *local_14;
   
   bVar30 = 0;
@@ -164,7 +165,7 @@ LAB_0043ea43:
     } while (cVar4 != '\0');
     local_14 = engine_dosio_cpp_FUN_00460c70("backdrop",local_f4,&DAT_005ce4f3);
     if (local_14 != (_FILE *)0x0) {
-      _fread(0x146592c,0x1000,1,local_14);
+      _fread((void *)0x146592c,0x1000,1,local_14);
       p_Var5 = local_14;
       if (_DAT_01466948 == 0) {
         memset((void *)0x1339920,0,0x12c000);
@@ -203,7 +204,7 @@ LAB_0043ea43:
             core_main_c_FUN_004e4500("Error decompressing %s",local_f4);
           }
           local_a4 = 0;
-          if (0 < _DAT_01465928) {
+          if (0 < (int)_DAT_01465928) {
             local_34 = 0;
             local_30 = -0x12c00;
             local_38 = 0x12c00;
@@ -234,12 +235,12 @@ LAB_0043ea43:
               local_34 = local_34 + 0x12c00;
               local_30 = local_30 + 0x12c00;
               local_a4 = local_a4 + 1;
-            } while (local_a4 < _DAT_01465928);
+            } while (local_a4 < (int)_DAT_01465928);
           }
         }
         else {
-          _fseek(p_Var5,0xfffffffd,1);
-          _fread(0x1339920,0x12c00,_DAT_01465928,p_Var5);
+          _fseek(p_Var5,-3,1);
+          _fread((void *)0x1339920,0x12c00,_DAT_01465928,p_Var5);
         }
       }
       _fclose(local_14);
@@ -442,32 +443,32 @@ LAB_0043ea43:
       }
       engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0046cab0
                 (DAT_0060b280,(SMRGLTextureBasic *)&DAT_00609ff0,(SRGBColorPalette *)&DAT_00b65c98);
-      _memset(0x12d40);
+      _memset((void *)0xb07f58,0,0x12d40);
       if (DAT_006141bc == 0x180) {
+        iStack_18 = 0;
         iStack_1c = 0;
-        local_20 = 0;
         do {
           iVar20 = 0;
           iVar6 = 0;
           do {
             iVar16 = 0;
-            if (0 < _DAT_01465928) {
+            if (0 < (int)_DAT_01465928) {
               iVar14 = ((int)((iVar6 + (iVar6 >> 0x1f) * -0x100) - (uint)((iVar6 >> 0x1f) << 7 < 0))
-                       >> 8) + (iStack_1c / 0xc0) * 0x140;
-              iVar18 = local_20 + iVar20;
+                       >> 8) + (iStack_18 / 0xc0) * 0x140;
+              iVar18 = iStack_1c + iVar20;
               do {
                 iVar16 = iVar16 + 1;
                 *(byte *)(iVar18 + 0x1339920) = *(byte *)(iVar14 + 0x1339920);
                 iVar14 = iVar14 + 0x12c00;
                 iVar18 = iVar18 + 0x12c00;
-              } while (iVar16 < _DAT_01465928);
+              } while (iVar16 < (int)_DAT_01465928);
             }
             iVar20 = iVar20 + 1;
             iVar6 = iVar6 + 0x140;
           } while (iVar20 < 0x100);
-          iStack_1c = iStack_1c + 0xf0;
-          local_20 = local_20 + 0x140;
-        } while (iStack_1c != 0xb400);
+          iStack_18 = iStack_18 + 0xf0;
+          iStack_1c = iStack_1c + 0x140;
+        } while (iStack_18 != 0xb400);
       }
     }
   }

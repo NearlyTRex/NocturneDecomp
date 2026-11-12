@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_inv.cpp_CInventory_select_FUN_004f9bd0
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
 
@@ -50,7 +50,7 @@ section .text
     MOV EBP,dword ptr [ESI + 0x14]      ; 004fc404
     PUSH EBP                            ; 004fc407
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004fc408
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004fc40d
     TEST EAX,EAX                        ; 004fc410
     JNZ 0x004fc46b                      ; 004fc412
@@ -65,8 +65,8 @@ section .text
         ;   Label: LAB_004fc41f
     MOV EDX,dword ptr [0x00611100]      ; 004fc424 | g_CConsolePtr
     PUSH EDX                            ; 004fc42a | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 004fc42b
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004fc42b
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004fc430
         ;   Label: LAB_004fc430
     POP EBP                             ; 004fc433
@@ -79,7 +79,7 @@ section .text
     PUSH ECX                            ; 004fc43e
     PUSH EDX                            ; 004fc43f
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004fc440
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 004fc445
     ADD ESP,0x8                         ; 004fc447
     TEST EAX,EAX                        ; 004fc44a
@@ -88,8 +88,8 @@ section .text
     PUSH 0x5e696e                       ; 004fc44e | = "Auto use selected health\n"
     MOV EBP,dword ptr [0x00611100]      ; 004fc453 | g_CConsolePtr
     PUSH EBP                            ; 004fc459 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 004fc45a
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004fc45a
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004fc45f
     PUSH EBX                            ; 004fc462
     PUSH EDI                            ; 004fc463
@@ -106,8 +106,8 @@ section .text
     PUSH 0x5e6988                       ; 004fc475 | = "Auto use health\n"
     MOV EAX,[0x00611100]                ; 004fc47a | g_CConsolePtr
     PUSH EAX                            ; 004fc47f | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 004fc480
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004fc480
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 004fc485
     POP EBP                             ; 004fc488
     POP EDI                             ; 004fc489

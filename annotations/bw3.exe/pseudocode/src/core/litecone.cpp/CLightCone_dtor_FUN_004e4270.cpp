@@ -13,7 +13,7 @@ CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_004e4270(CLightCone *
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CLightConeTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CLightConeTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

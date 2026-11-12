@@ -7,7 +7,7 @@
 
 // Original: core_setutil.cpp_C3DSCamera_ctor_FUN_00541a70
 // Address: 00541a70
-void __cdecl C3DSCamera::ctor(int param_1);
+C3DSCamera * __cdecl C3DSCamera::ctor(C3DSCamera *this_ptr);
 
 // Original: core_setutil.cpp_C3DSCamera_dtor_FUN_00541aa0
 // Address: 00541aa0
@@ -15,11 +15,11 @@ C3DSCamera * __cdecl C3DSCamera::dtor(C3DSCamera *this_ptr,uint flags);
 
 // Original: core_setutil.cpp_C3DSCamera_free_FUN_00541ac0
 // Address: 00541ac0
-void __cdecl C3DSCamera::free(int param_1);
+void __cdecl C3DSCamera::free(C3DSCamera *this_ptr);
 
 // Original: core_setutil.cpp_C3DSCamera_reset_FUN_00541b00
 // Address: 00541b00
-void __cdecl C3DSCamera::reset(void *param_1);
+void __cdecl C3DSCamera::reset(C3DSCamera *this_ptr);
 
 // Original: core_setutil.cpp_C3DSCamera_load_FUN_00541b70
 // Address: 00541b70
@@ -31,11 +31,11 @@ void __cdecl C3DSCamera::loadPVS(C3DSCamera *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0
 // Address: 00541fb0
-void __cdecl C3DSCamera::apply(char *param_1,CDemonCamera *param_2);
+void __cdecl C3DSCamera::apply(C3DSCamera *this_ptr,CDemonCamera *camera);
 
-// Original: core_setutil.cpp_FUN_005420b0
+// Original: core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_005420b0
 // Address: 005420b0
-undefined4 FUN_005420b0(int param_1,float *param_2,float param_3);
+int __cdecl C3DSCamera::testSphereInFrustum(C3DSCamera *this_ptr,CVector3f *world_position,float radius);
 
 // Original: core_setutil.cpp_C3DSLight_ctor_FUN_005421a0
 // Address: 005421a0
@@ -47,11 +47,11 @@ void __cdecl C3DSLight::load(C3DSLight *this_ptr,_FILE *file_handle);
 
 // Original: core_setutil.cpp_C3DSLight_create_FUN_00542940
 // Address: 00542940
-undefined8 __cdecl C3DSLight::create(int param_1);
+CDemonLight * __cdecl C3DSLight::create(C3DSLight *this_ptr);
 
 // Original: core_setutil.cpp_C3DSLight_apply_FUN_00542aa0
 // Address: 00542aa0
-undefined4 __cdecl C3DSLight::apply(int param_1,CDemonLight *param_2);
+void __cdecl C3DSLight::apply(C3DSLight *this_ptr,CDemonLight *light);
 
 // Original: core_setutil.cpp_C3DSLight_doNothing_FUN_00542b50
 // Address: 00542b50
@@ -59,32 +59,32 @@ void __cdecl C3DSLight::doNothing(C3DSLight *this_ptr);
 
 // Original: core_setutil.cpp_C3DSLight_process_FUN_00542b60
 // Address: 00542b60
-void __cdecl C3DSLight::process(int param_1,CDemonLight *param_2,int param_3);
+void __cdecl C3DSLight::process(C3DSLight *this_ptr,CDemonLight *light,int apply_filter_flag);
 
 // Original: core_setutil.cpp_C3DSLight_advanceFilter_FUN_00542d20
 // Address: 00542d20
-void __cdecl C3DSLight::advanceFilter(int param_1,CDemonLight *param_2);
+void __cdecl C3DSLight::advanceFilter(C3DSLight *this_ptr,CDemonLight *light);
 
 // Original: core_setutil.cpp_C3DSLight_setFilterFrame_FUN_00542db0
 // Address: 00542db0
-void __cdecl C3DSLight::setFilterFrame(int param_1,int param_2,CDemonLight *param_3);
+void __cdecl C3DSLight::setFilterFrame(C3DSLight *this_ptr,int frame_index,CDemonLight *light);
 
 // Original: core_setutil.cpp_C3DSLight_addFilter_FUN_00542e50
 // Address: 00542e50
-void __cdecl C3DSLight::addFilter(int param_1,char *param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl C3DSLight::addFilter(C3DSLight *this_ptr,char *filter_name,float duration,int filter_mode);
 
 // Original: core_setutil.cpp_C3DSLight_reset_FUN_00542f40
 // Address: 00542f40
-void __cdecl C3DSLight::reset(int param_1);
+void __cdecl C3DSLight::reset(C3DSLight *this_ptr);
 
 // Original: core_setutil.cpp_generateSphereVertex_FUN_00542fd0
 // Address: 00542fd0
 void __cdecl generateSphereVertex(int longitude_index,int latitude_index,int vertex_buffer_index,float radius);
 
-// Original: core_setutil.cpp_FUN_005430dc
+// Original: core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_005430dc
 // Address: 005430dc
-void FUN_005430dc(int param_1);
+void __cdecl C3DSLight::renderVolumetricSphere(C3DSLight *this_ptr);
 
-// Original: core_setutil.cpp_FUN_00543380
+// Original: core_setutil.cpp_C3DSLight_isVisible_FUN_00543380
 // Address: 00543380
-int __cdecl FUN_00543380(C3DSLight *this_ptr);
+int __cdecl C3DSLight::isVisible(C3DSLight *this_ptr);

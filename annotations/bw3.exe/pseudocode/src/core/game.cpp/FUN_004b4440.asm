@@ -83,7 +83,7 @@ section .text
     MOV dword ptr [EBX + 0x288],0x0     ; 004b44d1
     MOV dword ptr [EBX + 0x210],0x3f800000 ; 004b44db
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004b44e5
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
         ;   Label: LAB_004b44e5
     MOV EDX,EAX                         ; 004b44ea
     MOV EDI,dword ptr [EBX + 0x30c]     ; 004b44ec

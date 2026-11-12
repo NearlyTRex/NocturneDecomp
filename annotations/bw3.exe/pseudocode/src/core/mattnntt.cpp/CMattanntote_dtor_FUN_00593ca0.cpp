@@ -18,7 +18,7 @@ CMattanntote * core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattanntote *th
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMattanntoteTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMattanntoteTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

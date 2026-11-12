@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_svetlana_cpp_factoryFuncSvetlana_FUN_00570190(void)
+; CSvetlana * __cdecl core_svetlana_cpp_factoryFuncSvetlana_FUN_00570190(void)
 ;
 ;
 ; Called Functions:

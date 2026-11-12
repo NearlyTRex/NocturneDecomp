@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndwav_cpp_enumerateWavInDevice_FUN_0055e590(UINT_PTR param_1,char *param_2)
+; int __cdecl sound_sndwav_cpp_enumerateWavInDevice_FUN_0055e590(UINT device_id,SRecordingDeviceInfo *device_info)
 ;
+; Parameters:
+; UINT             Stack[0x4]:4   device_id
+; SRecordingDeviceInfo * Stack[0x8]:4   device_info
 ; Local Variables:
 ; undefined        Stack[-0x38]:1  local_38
 ; undefined        Stack[-0x30]:1  local_30

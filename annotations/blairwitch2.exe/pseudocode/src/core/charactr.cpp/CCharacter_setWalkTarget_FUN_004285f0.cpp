@@ -17,8 +17,8 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_004285f0(CCharacter 
   CMotionList *this_ptr_00;
   int iVar4;
   CCharacter_full_vtable *pCVar5;
+  CDemonActor *pCVar6;
   char *state_name;
-  CDemonActor *error_on_not_found;
   float local_18;
   
   if (target == (CDemonActor *)0x0) {
@@ -26,11 +26,11 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_004285f0(CCharacter 
         (this_ptr->walk_to_target != (CDemonActor *)0x0)) &&
        ((this_ptr->model).model_name[0] != '\0')) {
       state_name = "?STAND" + 1;
-      error_on_not_found = target;
+      pCVar6 = target;
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
                               (&(this_ptr->model).base);
       iVar4 = core_motion_cpp_CMotionList_findStateIndex_FUN_00502fa0
-                        (this_ptr_00,state_name,(int)error_on_not_found);
+                        (this_ptr_00,state_name,(int)pCVar6);
       if (-1 < iVar4) {
         core_motion_cpp_CMotionController_setDesiredStateByName_FUN_005036b0
                   (&(this_ptr->model).base,"STAND",1);
@@ -56,9 +56,9 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_004285f0(CCharacter 
       else {
         local_18 = 5.0;
       }
-      iVar4 = (CBasicEnemy *)core_actor_cpp_castToClassHash_FUN_0040c8f0(this_ptr,g_CBasicEnemyClassInfo.name_hash)
-      ;
-      if (iVar4 != 0) {
+      pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                         (&this_ptr->base,g_CBasicEnemyClassInfo.name_hash);
+      if (pCVar6 != (CDemonActor *)0x0) {
         local_18 = local_18 * _DAT_005ccee6;
       }
       pCVar5 = (this_ptr->base).vtable._uc;

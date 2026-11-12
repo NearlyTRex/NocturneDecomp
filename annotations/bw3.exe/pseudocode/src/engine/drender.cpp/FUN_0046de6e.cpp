@@ -14,6 +14,7 @@ void engine_drender_cpp_FUN_0046de6e(int *param_1,ushort *param_2,int param_3,in
   ushort *puVar1;
   int iVar2;
   int iVar3;
+  SRenderVertex *pSVar4;
   CVector3i aCStack_68 [6];
   int iStack_18;
   int iStack_14;
@@ -42,9 +43,10 @@ void engine_drender_cpp_FUN_0046de6e(int *param_1,ushort *param_2,int param_3,in
       iStack_14 = param_4 * 2;
       do {
         while ((DAT_007303fc != 0 &&
-               (iVar3 = (uint)param_2[1] * 0x30 + *param_1,
+               (pSVar4 = (SRenderVertex *)((uint)param_2[1] * 0x30 + *param_1),
                iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0
-                                 (*param_1 + (uint)*param_2 * 0x30,iVar3,iVar3), iVar3 == 0))) {
+                                 ((SRenderVertex *)(*param_1 + (uint)*param_2 * 0x30),pSVar4,pSVar4)
+               , iVar3 == 0))) {
           param_3 = param_3 + -1;
           param_2 = (ushort *)((int)param_2 + iStack_14);
           if (param_3 < 1) {
@@ -92,9 +94,10 @@ void engine_drender_cpp_FUN_0046de6e(int *param_1,ushort *param_2,int param_3,in
       iStack_18 = param_4 * 2;
       do {
         if ((DAT_007303fc == 0) ||
-           (iVar3 = (uint)param_2[1] * 0x30 + *param_1,
+           (pSVar4 = (SRenderVertex *)((uint)param_2[1] * 0x30 + *param_1),
            iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0
-                             (*param_1 + (uint)*param_2 * 0x30,iVar3,iVar3), iVar3 != 0)) {
+                             ((SRenderVertex *)(*param_1 + (uint)*param_2 * 0x30),pSVar4,pSVar4),
+           iVar3 != 0)) {
           iVar3 = 0;
           if (0 < param_4) {
             puVar1 = param_2;

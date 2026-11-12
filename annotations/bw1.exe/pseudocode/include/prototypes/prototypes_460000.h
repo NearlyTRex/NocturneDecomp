@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CCharacter.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CDemonLight.h"
@@ -47,7 +48,7 @@ void core_djien_cpp_FUN_00462450(void);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_00462470(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height);
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00462530(CDemonLight *this_ptr,uint flags);
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_00462590(CDemonLight *this_ptr);
-void core_dlight_cpp_FUN_00462670(CDemonLight *param_1);
+void __cdecl core_dlight_cpp_CDemonLight_free_FUN_00462670(CDemonLight *this_ptr);
 void * __cdecl core_dlight_cpp_getRestoreMemory_FUN_004626f0(int pixel_count);
 void __cdecl core_dlight_cpp_resetRestoreMemoryAllocator_FUN_00462760(void);
 void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_00462770(CDemonLight *this_ptr);
@@ -93,12 +94,12 @@ void core_dmodel_cpp_FUN_00467650(int param_1,undefined4 param_2,undefined4 para
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00467880(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00467a30(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00467bc0(CKeyFramedModel *this_ptr);
-float core_dmodel_cpp_FUN_00467c00(CKeyFramedModel *param_1,int param_2,undefined4 param_3,undefined4 param_4,float *param_5);
+float core_dmodel_cpp_FUN_00467c00(CKeyFramedModel *param_1,int param_2,CVector3f *param_3,CVector3f *param_4,float *param_5);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00468160(CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder,CVector3f *transform_vector);
 int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00468250(CKeyFramedModel *this_ptr,int frame_index,CVector3f *position,float search_radius,float *out_height,CVector3f *transform_vector);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00468340(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00468420(CKeyFramedModel *this_ptr,CVector3f *transform_vector);
-CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00468780(char *param_1);
+CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00468780(char *filename);
 void __cdecl core_dmodel_cpp_freeAllModels_FUN_00468830(void);
 CKeyFramedModelInstance * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00468860(CKeyFramedModelInstance *this_ptr);
 CKeyFramedModelInstance * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_00468880(CKeyFramedModelInstance *this_ptr);
@@ -109,16 +110,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(C
 CKeyFramedModel * core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_00468990(CKeyFramedModel *this_ptr,uint flags);
 void core_doc_cpp_staticInit_FUN_004689b0(void);
 float core_doc_cpp_FUN_00468a20(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
-undefined4 core_doc_cpp_FUN_00468a90(int param_1);
-float core_doc_cpp_FUN_00468b80(undefined4 param_1);
+undefined4 core_doc_cpp_FUN_00468a90(CDemonActor *param_1);
+float core_doc_cpp_FUN_00468b80(CDemonActor *param_1);
 void core_doc_cpp_factoryFuncDoc_FUN_00468c50(void);
 CDemonActorType * core_doc_cpp_CDoc_getActorType_FUN_00468c70(CDoc *this_ptr);
 CDoc * core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_setup_FUN_00469060(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_process_FUN_004693e0(CDoc *this_ptr,float delta_time);
-void core_doc_cpp_FUN_00469550(CHero *param_1,float param_2);
+void core_doc_cpp_FUN_00469550(CDoc *param_1,float param_2);
 void core_doc_cpp_FUN_0046bde0(CHero *param_1,float param_2);
-undefined4 core_doc_cpp_FUN_0046c980(int param_1);
+float __cdecl core_doc_cpp_CDoc_getCarryLightIntensity_FUN_0046c980(CDoc *this_ptr);
 void core_doc_cpp_FUN_0046c9e0(int param_1);
 void core_doc_cpp_FUN_0046caa0(int param_1);
 void core_doc_cpp_FUN_0046e630(int param_1,SPose *param_2);
@@ -127,5 +128,5 @@ void __cdecl core_doc_cpp_CDoc_setPositionAndOrientation_FUN_0046ea40(CDoc *this
 void core_doc_cpp_FUN_0046ea80(CCharacter *param_1);
 void core_doc_cpp_FUN_0046f200(int param_1,int param_2);
 void core_doc_cpp_FUN_0046f610(int param_1,int param_2);
-float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,int param_2,int param_3);
+float * core_doc_cpp_FUN_0046f740(CCharacter *param_1,CDemonActor *param_2,int param_3);
 

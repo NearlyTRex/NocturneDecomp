@@ -29,7 +29,7 @@ void shape_edittool_cpp_FUN_0047eff0(uint param_1,int param_2)
   iVar6 = (_DAT_01c2559c + -1) * 0x1f8;
   _DAT_01c35e4c = *(uint *)(iVar6 + 0x1c255a4);
   iVar4 = DAT_006141bc / 0x60;
-  iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+  iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
   iVar4 = *(int *)(iVar6 + 0x1c255ac) - ((param_2 + 1) * iVar4 + param_2 * iVar5);
   uVar3 = _DAT_01c2638c;
   if (_DAT_01c25f84 != 0) {

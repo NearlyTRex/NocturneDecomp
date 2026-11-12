@@ -168,7 +168,7 @@ section .text
     PUSH EAX                            ; 00530f65
     PUSH EDI                            ; 00530f66
     CALL core_script.cpp_writeActorReference_FUN_00530a90 ; 00530f67
-        ;   XREF to: 00530a90 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_writeActorReference_FUN_00530a90()
+        ;   XREF to: 00530a90 (UNCONDITIONAL_CALL)  ; void core_script.cpp_writeActorReference_FUN_00530a90(_FILE * file_handle, CDemonActor * * actor)
     ADD ESP,0x8                         ; 00530f6c
     PUSH 0x5cfef4                       ; 00530f6f | = "// focusActor\n"
     PUSH EDI                            ; 00530f74
@@ -179,7 +179,7 @@ section .text
     PUSH EAX                            ; 00530f80
     PUSH EDI                            ; 00530f81
     CALL core_script.cpp_writeActorReference_FUN_00530a90 ; 00530f82
-        ;   XREF to: 00530a90 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_writeActorReference_FUN_00530a90()
+        ;   XREF to: 00530a90 (UNCONDITIONAL_CALL)  ; void core_script.cpp_writeActorReference_FUN_00530a90(_FILE * file_handle, CDemonActor * * actor)
     ADD ESP,0x8                         ; 00530f87
     PUSH 0x5cff03                       ; 00530f8a | = "// focusActorLocked\n"
     PUSH EDI                            ; 00530f8f

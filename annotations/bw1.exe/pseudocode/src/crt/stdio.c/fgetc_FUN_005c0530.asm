@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_fgetc_FUN_005c0530(undefined4 *param_1)
+; int __cdecl crt_stdio_c_fgetc_FUN_005c0530(_FILE *file)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[29]:
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a0ab

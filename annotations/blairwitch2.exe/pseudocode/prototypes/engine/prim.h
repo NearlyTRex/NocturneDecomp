@@ -19,31 +19,31 @@ SSoftwareEdge * __cdecl findEdgeInBuffer(int y_value,SSoftwareEdge *edge_ptr);
 
 // Original: engine_prim.c_prepareDepthBuffer_FUN_0051c5c0
 // Address: 0051c5c0
-void __cdecl prepareDepthBuffer(int param_1,int param_2);
+void __cdecl prepareDepthBuffer(SRenderVertex *vertices,int vertex_count);
 
 // Original: engine_prim.c_normalizeTextureCoords_FUN_0051c630
 // Address: 0051c630
-void __cdecl normalizeTextureCoords(int param_1,int param_2);
+void __cdecl normalizeTextureCoords(SRenderVertex *vertices,int vertex_count);
 
 // Original: engine_prim.c_adjustNearPlaneTextureCoords_FUN_0051c6b0
 // Address: 0051c6b0
-void __cdecl adjustNearPlaneTextureCoords(int param_1,int param_2);
+void __cdecl adjustNearPlaneTextureCoords(SRenderVertex *vertices,int vertex_count);
 
 // Original: engine_prim.c_replaceWWithDepth_FUN_0051c720
 // Address: 0051c720
-void __cdecl replaceWWithDepth(int param_1,int param_2);
+void __cdecl replaceWWithDepth(SRenderVertex *vertices,int vertex_count);
 
 // Original: engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760
 // Address: 0051c760
-bool __cdecl calculateTriangleWindingOrder(int param_1,int param_2,int param_3);
+int __cdecl calculateTriangleWindingOrder(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2);
 
-// Original: engine_prim.c_FUN_0051c820
+// Original: engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_0051c820
 // Address: 0051c820
-int __cdecl FUN_0051c820(SMRGLPrimitiveTriangle *triangle);
+int __cdecl calculateTriangleWindingOrderFromIndices(SMRGLPrimitiveTriangle *triangle);
 
 // Original: engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0051ca00
 // Address: 0051ca00
-bool __cdecl getTriangleWindingFromPackedIndices(ushort *param_1);
+int __cdecl getTriangleWindingFromPackedIndices(STrianglePackedIndices *triangle);
 
 // Original: engine_prim.c_renderPolygonSoftware_FUN_0051cb20
 // Address: 0051cb20

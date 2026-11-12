@@ -19,7 +19,7 @@ CVampireBoss * core_vampboss_cpp_CVampireBoss_dtor_FUN_005837e0(CVampireBoss *th
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CVampireBossTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CVampireBossTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

@@ -37,7 +37,7 @@ section .text
     LEA ESI,[EBX + 0xcdcc]              ; 00593c24
     PUSH ESI                            ; 00593c2a
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00593c2b
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00593c30
     PUSH 0x5d9209                       ; 00593c33 | = "modelName"
     LEA ESI,[EBX + 0x158]               ; 00593c38
@@ -49,7 +49,7 @@ section .text
     LEA EAX,[EBX + 0xcddc]              ; 00593c4c
     PUSH EAX                            ; 00593c52
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00593c53
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00593c58
     PUSH 0x5d9221                       ; 00593c5b | = "motion state"
     PUSH ESI                            ; 00593c60
@@ -60,7 +60,7 @@ section .text
     LEA EAX,[EBX + 0xd06c]              ; 00593c6e
     PUSH EAX                            ; 00593c74
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00593c75
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00593c7a
     PUSH 0x5d923a                       ; 00593c7d | = "fadeOutOpacity"
     ADD EBX,0xd070                      ; 00593c82

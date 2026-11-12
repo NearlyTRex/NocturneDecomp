@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 333,
+    "complexity_score": 459,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 188,
-    "suspect_count": 12,
+    "pseudocode_lines": 129,
+    "suspect_count": 31,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "shadow_pointer_walk",
       "undefined_data",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_unreachable"
     ],
-    "total_lines": 770
+    "total_lines": 711
   },
   "cross_references": [
     {
@@ -263,6 +262,32 @@
     },
     "pcode_op_count": 1993
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00466be0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00460890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00477110",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9955
+    },
+    "nocturne.exe": {
+      "addr": "00452990",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 84,
     "local_size": 76,
@@ -386,8 +411,208 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unreachable code block removed",
       "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e1ba) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e1c1) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e1ce) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e1d3) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e1d8) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e134) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 8,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e13b) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 9,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e148) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 10,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e14d) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 11,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e152) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 12,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e24d) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 13,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e175) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 14,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e17c) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 15,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e189) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 16,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e18e) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 17,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e193) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 18,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e4bb) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 19,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e546) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 20,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e4dc) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 21,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e4e3) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 22,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e4f0) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 23,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e4f5) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 24,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e4fa) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 25,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e50e) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 26,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044e541) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 27,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -395,91 +620,43 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 49,
       "match": "DAT_005cf66d",
       "severity": "mild",
-      "text": "_fscanf(file,&DAT_005cf66d,&local_44);",
+      "text": "_fscanf(file,&DAT_005cf66d);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 65,
       "match": "DAT_005cf709",
       "severity": "mild",
-      "text": "_fscanf(file,&DAT_005cf709,&local_48);",
+      "text": "_fscanf(file,&DAT_005cf709);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_005cf70d",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005cf70d,&this_ptr->transparent_pixel_flag);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(int *)((int)pSVar1",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(int *)((int)pSVar1",
+      "severity": "moderate",
+      "text": "} while (iVar3 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_005cf711",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005cf711,&this_ptr->disable_backface_culling);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_005cf715",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005cf715,&local_2c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 126,
+      "line": 94,
       "match": "DAT_005cf734",
       "severity": "mild",
       "text": "_fscanf(file,&DAT_005cf734);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 148,
-      "match": "DAT_005cf76a",
-      "severity": "mild",
-      "text": "_fscanf(file,&DAT_005cf76a,local_28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&this_ptr->vertex_list->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 96,
-      "match": "(int)&this_ptr->vertex_list->x",
-      "severity": "moderate",
-      "text": "iVar6 = (int)&this_ptr->vertex_list->x + iVar1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 96,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "iVar6 = (int)&this_ptr->vertex_list->x + iVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 110,
-      "match": "(int)&NAME byte-offset arithmetic split across lines",
-      "severity": "moderate",
-      "text": "local_14 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `piVar5` was initialized to the address of an array element's subfield (`piVar5 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*piVar5)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `piVar5->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 179,
-      "match": "piVar5 = piVar5 + N",
-      "severity": "moderate",
-      "text": "piVar5 = piVar5 + 2;",
-      "type": "shadow_pointer_walk"
     }
   ]
 }

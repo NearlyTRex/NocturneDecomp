@@ -38,7 +38,7 @@
 ;   core_game.cpp_CGame_resetKeyState_FUN_004b7140
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_004b6e10
 ;   core_main.c_FUN_004e4500
-;   core_menu.cpp_FUN_004eb490
+;   core_menu.cpp_calibrateGamepad_FUN_004eb490
 ;   core_menu.cpp_getKeyDisplayName_FUN_004ee960
 ;   core_menu.cpp_isKeyCodeValidForMode_FUN_004eeba0
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -1140,7 +1140,7 @@ section .text
     MOV EBP,dword ptr [EAX]             ; 004efa19 | g_CGameInstance.key_walk | g_CGameInstance.key_backup
     PUSH EBP                            ; 004efa1b
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004efa1c
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004efa21
     PUSH EAX                            ; 004efa24
     PUSH EBX                            ; 004efa25
@@ -1214,8 +1214,8 @@ section .text
     ADD ESP,0x8                         ; 004efae1
     JMP 0x004eed8e                      ; 004efae4
         ;   XREF to: 004eed8e (UNCONDITIONAL_JUMP)  ; LAB_004eed8e
-    CALL core_menu.cpp_FUN_004eb490     ; 004efae9
-        ;   XREF to: 004eb490 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_004eb490()
+    CALL core_menu.cpp_calibrateGamepad_FUN_004eb490 ; 004efae9
+        ;   XREF to: 004eb490 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_calibrateGamepad_FUN_004eb490()
         ;   Label: LAB_004efae9
     TEST EAX,EAX                        ; 004efaee
     JNZ 0x004eed83                      ; 004efaf0

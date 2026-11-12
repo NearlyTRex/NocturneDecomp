@@ -40,7 +40,7 @@ section .text
     LEA ESI,[EBX + 0xc1d0]              ; 004dd2e4
     PUSH ESI                            ; 004dd2ea
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004dd2eb
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004dd2f0
     PUSH 0x5e399a                       ; 004dd2f3 | = "modelName"
     LEA ESI,[EBX + 0x158]               ; 004dd2f8
@@ -83,7 +83,7 @@ section .text
     ADD EBX,0xc2a4                      ; 004dd364
     PUSH EBX                            ; 004dd36a
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 004dd36b
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004dd370
     POP ESI                             ; 004dd373
     POP EBX                             ; 004dd374

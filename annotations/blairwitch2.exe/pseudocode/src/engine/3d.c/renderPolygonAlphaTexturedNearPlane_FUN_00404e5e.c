@@ -13,7 +13,7 @@ int engine_3d_c_renderPolygonAlphaTexturedNearPlane_FUN_00404e5e(int param_1)
 {
   int iVar1;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(param_1 + 8);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970((SClipPlane *)(param_1 + 8));
   if (iVar1 != 0) {
     if (_DAT_01c38b40 == 0) {
       if (DAT_006141c0 == 0x20) {

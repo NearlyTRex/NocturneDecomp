@@ -42,7 +42,8 @@ void __cdecl core_lever_cpp_CLever_archive_FUN_004e22e0(CLever *this_ptr)
     core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->momentary_flag,"momentaryFlag");
   }
   if (2 < g_CLeverClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->linked_lever,"linkedLever");
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              ((CDemonActor **)&this_ptr->linked_lever,"linkedLever");
   }
   if (3 < g_CLeverClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960

@@ -7,7 +7,7 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_netgame.cpp_FUN_0050b790 at 0050b81d
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790 at 0050b81d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061e990

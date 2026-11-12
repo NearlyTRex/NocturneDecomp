@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_conveyor.cpp_factoryFuncConveyor_FUN_00438460
 // Address: 00438460
-void factoryFuncConveyor(void);
+CConveyor * __cdecl factoryFuncConveyor(void);
 
 // Original: core_conveyor.cpp_CConveyor_getActorType_FUN_00438480
 // Address: 00438480
@@ -45,9 +45,9 @@ void __cdecl CConveyor::archive(CConveyor *this_ptr);
 // Address: 00438820
 undefined4 FUN_00438820(void);
 
-// Original: core_conveyor.cpp_FUN_00438830
+// Original: core_conveyor.cpp_CConveyor_getBoundingBox_FUN_00438830
 // Address: 00438830
-void FUN_00438830(int param_1);
+CBoundingBox3D * __cdecl CConveyor::getBoundingBox(CConveyor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_conveyor.cpp_CConveyor_dtor_FUN_004388b0
 // Address: 004388b0

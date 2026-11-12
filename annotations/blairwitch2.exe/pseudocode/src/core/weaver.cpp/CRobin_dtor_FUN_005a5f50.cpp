@@ -20,7 +20,7 @@ CRobin * core_weaver_cpp_CRobin_dtor_FUN_005a5f50(CRobin *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CRobinTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CRobinTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

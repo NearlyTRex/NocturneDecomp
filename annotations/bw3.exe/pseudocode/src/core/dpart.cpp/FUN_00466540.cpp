@@ -2,13 +2,13 @@
 // Address: 00466540
 // Address Range: [[00466540, 0046678f] [004667ff, 0046682a]]
 // Convention: unknown
-// Signature: void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,undefined4 param_2,undefined4 param_3,float *param_4)
+// Signature: void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,uint param_2,uint param_3,float *param_4)
+void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,_FILE *param_2,uint param_3,float *param_4)
 
 {
   int *piVar1;
@@ -18,10 +18,10 @@ void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,uint param_2,uint param_3,f
   int iVar5;
   int iVar6;
   int iVar7;
-  char *pcVar8;
+  char *buffer;
+  float10 fVar8;
   float10 fVar9;
   float10 fVar10;
-  float10 fVar11;
   
   _fread(param_1,0x20,1,param_2);
   _fread(&param_1->vertex_count,4,1,param_2);
@@ -34,11 +34,11 @@ void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,uint param_2,uint param_3,f
   iVar7 = 0;
   _fread(&param_1->mystery_array_size,4,1,param_2);
   if (0 < param_1->mystery_array_size) {
-    pcVar8 = param_1->mystery_array + 8;
+    buffer = param_1->mystery_array + 8;
     do {
       iVar7 = iVar7 + 1;
-      _fread(pcVar8,0x10,1,param_2);
-      pcVar8 = pcVar8 + 0x18;
+      _fread(buffer,0x10,1,param_2);
+      buffer = buffer + 0x18;
     } while (iVar7 < param_1->mystery_array_size);
   }
   _fread(&param_1->vertex_group_size,4,1,param_2);
@@ -50,7 +50,7 @@ void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,uint param_2,uint param_3,f
   }
   else {
     iVar7 = 0;
-    _fread(0x1b85194,0x48,param_1->face_count,param_2);
+    _fread((void *)0x1b85194,0x48,param_1->face_count,param_2);
     if (0 < param_1->face_count) {
       iVar6 = 0;
       iVar5 = 0;
@@ -83,10 +83,10 @@ void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,uint param_2,uint param_3,f
     }
   }
   if (param_4 != (float *)0x0) {
-    fVar9 = (float10)_DAT_005bc174;
-    fVar10 = (float10)*param_4 * fVar9;
-    fVar11 = (float10)param_4[1] * fVar9;
-    fVar9 = (float10)param_4[2] * fVar9;
+    fVar8 = (float10)_DAT_005bc174;
+    fVar9 = (float10)*param_4 * fVar8;
+    fVar10 = (float10)param_4[1] * fVar8;
+    fVar8 = (float10)param_4[2] * fVar8;
     iVar7 = param_1->vertex_count;
     iVar5 = 0;
     round();
@@ -96,11 +96,11 @@ void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,uint param_2,uint param_3,f
       iVar7 = 0;
       do {
         piVar1 = (int *)((int)&param_1->vertex_positions->x + iVar7);
-        *piVar1 = *piVar1 - (int)ROUND(fVar10);
-        piVar1 = (int *)((int)&param_1->vertex_positions->y + iVar7);
-        *piVar1 = *piVar1 - (int)ROUND(fVar11);
-        piVar1 = (int *)((int)&param_1->vertex_positions->z + iVar7);
         *piVar1 = *piVar1 - (int)ROUND(fVar9);
+        piVar1 = (int *)((int)&param_1->vertex_positions->y + iVar7);
+        *piVar1 = *piVar1 - (int)ROUND(fVar10);
+        piVar1 = (int *)((int)&param_1->vertex_positions->z + iVar7);
+        *piVar1 = *piVar1 - (int)ROUND(fVar8);
         iVar5 = iVar5 + 1;
         iVar7 = iVar7 + 0xc;
       } while (iVar5 < param_1->vertex_count);

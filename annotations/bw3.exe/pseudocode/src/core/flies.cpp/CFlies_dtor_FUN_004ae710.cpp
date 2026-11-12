@@ -15,7 +15,7 @@ CFlies * core_flies_cpp_CFlies_dtor_FUN_004ae710(CFlies *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFliesTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFliesTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

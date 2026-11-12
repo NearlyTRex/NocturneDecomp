@@ -12,29 +12,30 @@ CBurncross * core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr
 
 {
   CWeapon *pCVar1;
-  int iVar2;
+  void *pvVar2;
   CBurncross *pCVar3;
   CBurncross *pCVar4;
   
   pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
-  iVar2 = __arrinit(pCVar1[1].base.actor_name + 0x14,8,&g_CFlameTypeInfo);
-  *(CWeapon_full_vtable **)(iVar2 + -0x454) = &g_CBurncrossVTable;
+  pvVar2 = __arrinit(pCVar1[1].base.actor_name + 0x14,8,&g_CFlameTypeInfo)
+  ;
+  *(CWeapon_full_vtable **)((int)pvVar2 + -0x454) = &g_CBurncrossVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            ((CKeyFramedModelInstance *)(iVar2 + -0x450),"burncross.kfm");
-  *(uint *)(iVar2 + -0x2d0) = 0;
-  *(uint *)(iVar2 + -0x2cc) = 0;
-  *(uint *)(iVar2 + -0x2c4) = 1;
-  *(uint *)(iVar2 + -0x2c0) = 0x42480000;
-  *(uint *)(iVar2 + -700) = 0;
-  *(uint *)(iVar2 + -0x3c) = 10;
-  *(uint *)(iVar2 + -0x1c) = 1;
-  *(uint *)(iVar2 + -0x34) = 2;
-  *(uint *)(iVar2 + -4) = 0;
-  *(uint *)(iVar2 + -0xc) = 0;
-  *(uint *)(iVar2 + -8) = 0;
-  *(uint *)(iVar2 + -0x14) = 0;
-  *(uint *)(iVar2 + -0x10) = 0;
-  pCVar3 = (CBurncross *)(iVar2 + -0x5a8);
+            ((CKeyFramedModelInstance *)((int)pvVar2 + -0x450),"burncross.kfm");
+  *(uint *)((int)pvVar2 + -0x2d0) = 0;
+  *(uint *)((int)pvVar2 + -0x2cc) = 0;
+  *(uint *)((int)pvVar2 + -0x2c4) = 1;
+  *(uint *)((int)pvVar2 + -0x2c0) = 0x42480000;
+  *(uint *)((int)pvVar2 + -700) = 0;
+  *(uint *)((int)pvVar2 + -0x3c) = 10;
+  *(uint *)((int)pvVar2 + -0x1c) = 1;
+  *(uint *)((int)pvVar2 + -0x34) = 2;
+  *(uint *)((int)pvVar2 + -4) = 0;
+  *(uint *)((int)pvVar2 + -0xc) = 0;
+  *(uint *)((int)pvVar2 + -8) = 0;
+  *(uint *)((int)pvVar2 + -0x14) = 0;
+  *(uint *)((int)pvVar2 + -0x10) = 0;
+  pCVar3 = (CBurncross *)((int)pvVar2 + -0x5a8);
   do {
     pCVar4 = (CBurncross *)((pCVar3->base).model.model_name + 0xd4);
     pCVar3->flames[0].flame_size.x = 0.5;
@@ -43,7 +44,7 @@ CBurncross * core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr
     pCVar3->flames[0].which_flame = FLAME_TYPE_TORCH;
     pCVar3->flames[0].globe_scalar = 0.0;
     pCVar3 = pCVar4;
-  } while (pCVar4 != (CBurncross *)(iVar2 + 0xf78));
-  *(uint *)(iVar2 + 0x1520) = 0;
-  return (CBurncross *)(iVar2 + -0x5a8);
+  } while (pCVar4 != (CBurncross *)((int)pvVar2 + 0xf78));
+  *(uint *)((int)pvVar2 + 0x1520) = 0;
+  return (CBurncross *)((int)pvVar2 + -0x5a8);
 }

@@ -369,7 +369,7 @@ LAB_0050b161:
       _DAT_02c83370 = (uint)bVar10;
       if (bVar10) {
         engine_special_cpp_kill_FUN_00581f20();
-        engine_special_cpp_FUN_00581310((HWND)0x0);
+        engine_special_cpp_loadExternalRenderer_FUN_00581310((HWND)0x0);
         uVar3 = _DAT_02c83370;
         if (_DAT_02c83370 != 0) {
           engine_special_cpp_buildCardList_FUN_00582b30

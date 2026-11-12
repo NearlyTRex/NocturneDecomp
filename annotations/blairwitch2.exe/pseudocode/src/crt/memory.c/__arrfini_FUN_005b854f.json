@@ -2,17 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 101,
+    "complexity_score": 11,
     "cross_reference_count": 36,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 8,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 27
   },
   "cross_references": [
@@ -29,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0059bfe0",
-      "from_addr": "0059bfec",
-      "name": "core_bmppuzzl.cpp_CAlphaBitmap_arrdtor4_FUN_0059bfe0",
+      "addr": "0059bfc0",
+      "from_addr": "0059bfcc",
+      "name": "core_bmppuzzl.cpp_CAlphaBitmap_arrdtor30_FUN_0059bfc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0059bfc0",
-      "from_addr": "0059bfcc",
-      "name": "core_bmppuzzl.cpp_FUN_0059bfc0",
+      "addr": "0059bfe0",
+      "from_addr": "0059bfec",
+      "name": "core_bmppuzzl.cpp_CAlphaBitmap_arrdtor4_FUN_0059bfe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -243,7 +240,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_memory.c___arrfini_FUN_005b854f",
-    "signature": "undefined4 __cdecl crt_memory_c___arrfini_FUN_005b854f(undefined4 param_1,undefined4 param_2,undefined4 param_3)"
+    "signature": "void * __cdecl crt_memory_c___arrfini_FUN_005b854f(void *obj_array,int obj_count,WatcomTypeInfo *type_info)"
   },
   "function_calls": [
     {
@@ -325,7 +322,7 @@
       {
         "call_addr": "0059bfcc",
         "call_type": "direct",
-        "caller": "core_bmppuzzl.cpp_FUN_0059bfc0",
+        "caller": "core_bmppuzzl.cpp_CAlphaBitmap_arrdtor30_FUN_0059bfc0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -368,8 +365,8 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 2,
     "matches_declared": false
   },
@@ -395,11 +392,37 @@
     },
     "pcode_op_count": 57
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c1066",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a3de6",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005feee9",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0056494f",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 28,
     "local_size": 16,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -422,76 +445,29 @@
         "offset": -4,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "obj_array",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "obj_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "type_info",
+        "offset": 12,
+        "size": 4,
+        "type": "WatcomTypeInfo *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl __arrfini(uint param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl __arrfini(uint param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl __arrfini(uint param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_c = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_8 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_4 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 36,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

@@ -18,7 +18,7 @@ CArmour * core_armour_cpp_CArmour_dtor_FUN_0040f120(CArmour *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CArmourTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CArmourTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

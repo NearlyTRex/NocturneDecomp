@@ -302,7 +302,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x3c]      ; 0059a36c
     PUSH EDX                            ; 0059a370
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760 ; 0059a371
-        ;   XREF to: 0051c760 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760()
+        ;   XREF to: 0051c760 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 0059a376
     TEST EAX,EAX                        ; 0059a379
     JNZ 0x0059a186                      ; 0059a37b
@@ -322,7 +322,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x3c]      ; 0059a39b
     PUSH EDX                            ; 0059a39f
     CALL engine_special.cpp_drawPolygon_FUN_0055f8f0 ; 0059a3a0
-        ;   XREF to: 0055f8f0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon_FUN_0055f8f0()
+        ;   XREF to: 0055f8f0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_0055f8f0(SRenderVertex * vertices, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 0059a3a5
     MOV EBP,dword ptr [0x026672a8]      ; 0059a3a8 | DAT_026672a8
     ADD ESP,0x20                        ; 0059a3ae
@@ -337,7 +337,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x38]      ; 0059a3bb
     PUSH EDX                            ; 0059a3bf
     CALL engine_prim.c_prepareDepthBuffer_FUN_0051c5c0 ; 0059a3c0
-        ;   XREF to: 0051c5c0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_prepareDepthBuffer_FUN_0051c5c0()
+        ;   XREF to: 0051c5c0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_prepareDepthBuffer_FUN_0051c5c0(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0059a3c5
     JMP 0x0059a1be                      ; 0059a3c8
         ;   XREF to: 0059a1be (UNCONDITIONAL_JUMP)  ; LAB_0059a1be
@@ -347,7 +347,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x38]      ; 0059a3d2
     PUSH EBP                            ; 0059a3d6
     CALL engine_prim.c_replaceWWithDepth_FUN_0051c720 ; 0059a3d7
-        ;   XREF to: 0051c720 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_0051c720()
+        ;   XREF to: 0051c720 (UNCONDITIONAL_CALL)  ; void engine_prim.c_replaceWWithDepth_FUN_0051c720(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0059a3dc
     JMP 0x0059a1be                      ; 0059a3df
         ;   XREF to: 0059a1be (UNCONDITIONAL_JUMP)  ; LAB_0059a1be

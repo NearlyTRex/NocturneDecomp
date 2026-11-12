@@ -29,7 +29,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
 
@@ -279,8 +279,8 @@ section .text
     PUSH 0x5d3c27                       ; 00414db9 | = "%s confused while walking to scriptDe..."
     MOV EDX,dword ptr [0x00611100]      ; 00414dbe | g_CConsolePtr
     PUSH EDX                            ; 00414dc4 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00414dc5
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00414dc5
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     JMP 0x00414be6                      ; 00414dca
         ;   XREF to: 00414be6 (UNCONDITIONAL_JUMP)  ; LAB_00414be6
     JBE 0x00414bd6                      ; 00414dcf

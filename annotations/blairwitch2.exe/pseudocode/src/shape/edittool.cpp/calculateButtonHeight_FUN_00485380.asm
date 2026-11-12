@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int shape_edittool_cpp_calculateButtonHeight_FUN_00485380(char *param_1)
+; int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_00485380(char *button_text)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   button_text
 ;
 ; XREF[6]:
 ;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00482a00 at 00482e88

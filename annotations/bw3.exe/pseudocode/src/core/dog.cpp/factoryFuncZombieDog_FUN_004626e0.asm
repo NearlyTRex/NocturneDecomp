@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dog_cpp_factoryFuncZombieDog_FUN_004626e0(void)
+; CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_004626e0(void)
 ;
 ;
 ; Called Functions:

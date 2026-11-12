@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_prim_c_prepareDepthBuffer_FUN_0051c5c0(int param_1,int param_2)
+; void __cdecl engine_prim_c_prepareDepthBuffer_FUN_0051c5c0(SRenderVertex *vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[7]:
 ;   core_dpart.cpp_FUN_004625f0 at 0046270a
 ;   core_zombie.cpp_FUN_0059a0b0 at 0059a3c0
-;   core_zombie.cpp_FUN_0059a5d0 at 0059a85b
+;   core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0 at 0059a85b
 ;   engine_3d.c_clipAndDrawLine3D_FUN_00407fc0 at 00408221
 ;   engine_prim.c_FUN_0051da80 at 0051dd99
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130 at 0051e2a2

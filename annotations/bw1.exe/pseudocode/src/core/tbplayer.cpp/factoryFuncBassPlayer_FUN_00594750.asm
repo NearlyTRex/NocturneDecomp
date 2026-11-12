@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tbplayer_cpp_factoryFuncBassPlayer_FUN_00594750(void)
+; CBassPlayer * __cdecl core_tbplayer_cpp_factoryFuncBassPlayer_FUN_00594750(void)
 ;
 ;
 ; Called Functions:

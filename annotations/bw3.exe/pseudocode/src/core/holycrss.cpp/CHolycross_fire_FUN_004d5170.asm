@@ -12,7 +12,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH 0x5c51ac                       ; 004d5175 | = "Warning: called fire() for melee weap..."
     MOV ECX,dword ptr [0x005f1690]      ; 004d517a | g_CConsolePtr
     PUSH ECX                            ; 004d5180 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004d5181
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004d5181
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004d5186
     XOR EAX,EAX                         ; 004d5189
     RET                                 ; 004d518b

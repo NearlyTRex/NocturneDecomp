@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_drawCreditsLine_FUN_004b3b0e(undefined4 param_1)
+; void __cdecl core_game_cpp_drawCreditsLine_FUN_004b3b0e(char *text_string)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   text_string
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141b8

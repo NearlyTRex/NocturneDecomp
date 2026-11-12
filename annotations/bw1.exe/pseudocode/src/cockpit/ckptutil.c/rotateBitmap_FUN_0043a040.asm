@@ -68,7 +68,7 @@ section .text
     PUSH EDI                            ; 0043a0aa
         ;   Label: LAB_0043a0aa
     CALL crt_stdio.c_fgetc_FUN_005c0530 ; 0043a0ab
-        ;   XREF to: 005c0530 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005c0530()
+        ;   XREF to: 005c0530 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005c0530(_FILE * file)
     ADD ESP,0x4                         ; 0043a0b0
     MOV dword ptr [ESP + 0x58],EAX      ; 0043a0b3
     CMP EAX,-0x1                        ; 0043a0b7

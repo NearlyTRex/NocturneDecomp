@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 336,
-    "complexity_score": 523,
+    "complexity_score": 534,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 198,
-    "suspect_count": 28,
+    "pseudocode_lines": 204,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_param",
-      "stack_ref",
       "unaffected_reg",
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 534
+    "total_lines": 540
   },
   "cross_references": [],
   "function": {
@@ -178,6 +177,26 @@
     },
     "pcode_op_count": 1628
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b22c0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d7120",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3467
+    },
+    "nocturne.exe": {
+      "addr": "00499ca0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3467
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -261,23 +280,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 67,
       "match": "DAT_007c5330",
       "severity": "mild",
-      "text": "CStack_18.z = (float)core_actor_cpp_castToClassHash_FUN_0040c600(this_ptr_00,DAT_007c5330);",
+      "text": "CStack_18.z = (float)core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,DAT_007c5330);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 69,
       "match": "in_stack_fffffe18",
       "severity": "moderate",
-      "text": "(*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_fffffe18);",
+      "text": "(*((actor_ptr->vtable)._ub)->getBoundingBox)(actor_ptr,in_stack_fffffe18);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 93,
+      "line": 96,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "iVar1 = *(int *)(unaff_EDI + 0x678);",
@@ -285,119 +304,127 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 105,
+      "line": 108,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "core_main_c_FUN_005030e0(\"Don't know how to carry light %s\",unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 111,
-      "match": "&stack0xfffffe50",
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xfffffe50;",
-      "type": "stack_ref"
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 113,
-      "match": "&stack0xfffffe80",
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(CMatrix3x4f *)((int)pCVar5",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xfffffe80;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 123,
-      "match": "&stack0xfffffe20",
-      "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xfffffe20;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 126,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "core_xform_cpp_setIdentityMatrix3x4_FUN_005b53f0(&stack0xfffffe80);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 129,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "(&stack0xfffffe80,",
-      "type": "stack_ref"
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 130,
+      "line": 134,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.bone_transform.bone_model_matrices[unaff_EBP].m,&CStack_120",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 140,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
+      "match": "(CMatrix3x4f *)((int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 183,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.bone_transform.bone_model_matrices[unaff_EBP].m);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 132,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xfffffe80;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 138,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&stack0xfffffe80);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 176,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "(&CStack_18,(this_ptr->base).base.model.bone_transform.bone_model_matrices[unaff_EBP].m)",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 198,
-      "match": "(CMatrix3x4f *)((int)pCVar2",
+      "line": 204,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
       "severity": "moderate",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
-      "match": "(CMatrix3x4f *)((int)pCVar4",
+      "line": 205,
+      "match": "(CMatrix3x4f *)((int)pCVar5",
       "severity": "moderate",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 198,
-      "match": "(int)pCVar2",
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 119,
+      "match": "(int)pCVar3",
       "severity": "moderate",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 199,
-      "match": "(int)pCVar4",
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 120,
+      "match": "(int)pCVar5",
       "severity": "moderate",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 140,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 141,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 204,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 205,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 69,
+      "line": 72,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -405,7 +432,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 114,
+      "line": 117,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -413,7 +440,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 133,
+      "line": 138,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -421,7 +448,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 196,
+      "line": 202,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -429,7 +456,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 144,
+      "line": 149,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_c0.x = CStack_78.x;",

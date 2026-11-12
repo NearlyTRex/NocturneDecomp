@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_game_cpp_checkCheatCode_FUN_004b8d90(byte *param_1)
+; int __cdecl core_game_cpp_checkCheatCode_FUN_004b8d90(char *cheat_string)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   cheat_string
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cb80f8

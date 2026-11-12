@@ -36,14 +36,14 @@ section .text
     ADD EAX,0x398                       ; 0043e5d7
     PUSH EAX                            ; 0043e5dc
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0043e5dd
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0043e5e2
     PUSH 0x5fd930                       ; 0043e5e5 | g_SClothBoneTypeInfo
     PUSH 0x32                           ; 0043e5ea
     ADD EAX,0x377b8                     ; 0043e5ec
     PUSH EAX                            ; 0043e5f1
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0043e5f2
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     MOV dword ptr [EAX + 0x2fac],0x0    ; 0043e5f7
     MOV dword ptr [EAX + -0x4],0x0      ; 0043e601
     ADD ESP,0xc                         ; 0043e608

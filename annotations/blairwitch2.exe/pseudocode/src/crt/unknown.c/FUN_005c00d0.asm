@@ -73,7 +73,7 @@ section .text
         ;   Label: LAB_005c0150
     PUSH EAX                            ; 005c0153
     CALL crt_time.c__localtime_FUN_005ba358 ; 005c0154
-        ;   XREF to: 005ba358 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__localtime_FUN_005ba358()
+        ;   XREF to: 005ba358 (UNCONDITIONAL_CALL)  ; _tm * crt_time.c__localtime_FUN_005ba358(time_t * timer)
     MOV EDX,EAX                         ; 005c0159
     MOV AX,word ptr [EAX + 0x14]        ; 005c015b
     ADD ESP,0x4                         ; 005c015f

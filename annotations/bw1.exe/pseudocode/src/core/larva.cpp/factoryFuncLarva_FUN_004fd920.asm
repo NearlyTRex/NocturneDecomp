@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_larva_cpp_factoryFuncLarva_FUN_004fd920(void)
+; CLarva * __cdecl core_larva_cpp_factoryFuncLarva_FUN_004fd920(void)
 ;
 ;
 ; Called Functions:

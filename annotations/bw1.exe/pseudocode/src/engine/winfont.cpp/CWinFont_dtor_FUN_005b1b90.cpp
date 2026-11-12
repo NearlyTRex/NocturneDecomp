@@ -13,7 +13,7 @@ CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_005b1b90(CWinFont *this_
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CWinFontTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CWinFontTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

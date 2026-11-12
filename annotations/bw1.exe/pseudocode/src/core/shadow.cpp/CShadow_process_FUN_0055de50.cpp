@@ -205,7 +205,8 @@ LAB_0055e58a:
     else {
       if (EVar1 != WALK_STATE_NO_PATH) goto LAB_0055e58a;
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar11->base,0,1);
-      engine_console_cpp_FUN_00445430(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+      engine_console_cpp_CConsole_printf_FUN_00445430
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
     }
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -339,7 +340,8 @@ LAB_0055f251:
                             (CVector3f *)in_stack_fffffd3c,fVar21,in_stack_fffffd44);
         pCVar7 = (CShadow *)&(this_ptr->base).base.model;
         if (iVar10 < 0) {
-          engine_console_cpp_FUN_00445430();
+          engine_console_cpp_CConsole_printf_FUN_00445430
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           fVar21 = 1.4013e-45;
           iVar10 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,4);
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0

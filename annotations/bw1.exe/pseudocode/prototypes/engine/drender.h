@@ -157,33 +157,33 @@ void __cdecl matrixPush(void);
 // Address: 004839a0
 void __cdecl pop(void);
 
-// Original: engine_drender.cpp_FUN_004839b0
+// Original: engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0
 // Address: 004839b0
-void FUN_004839b0(undefined4 param_1,float param_2);
+void __cdecl CDemonRenderer::setProjectionScale(CDemonRenderer *this_ptr,float field_of_view);
 
-// Original: engine_drender.cpp_FUN_004839f0
+// Original: engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_004839f0
 // Address: 004839f0
-void FUN_004839f0(undefined4 param_1,float param_2);
+void __cdecl CDemonRenderer::setLightIntensity(CDemonRenderer *this_ptr,float intensity);
 
-// Original: engine_drender.cpp_FUN_00483a20
+// Original: engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_00483a20
 // Address: 00483a20
-void FUN_00483a20(undefined4 param_1,int *param_2);
+void __cdecl CDemonRenderer::setLightDirection(CDemonRenderer *this_ptr,CVector3i *direction);
 
-// Original: engine_drender.cpp_FUN_00483a40
+// Original: engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_00483a40
 // Address: 00483a40
-void FUN_00483a40(undefined4 param_1,float *param_2);
+void __cdecl CDemonRenderer::scaleAndSetDirectionalLight(CDemonRenderer *this_ptr,CVector3f *light_direction);
 
-// Original: engine_drender.cpp_FUN_00483ac0
+// Original: engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0
 // Address: 00483ac0
-void FUN_00483ac0(void);
+CVector3i * __stack_esi CDemonRenderer::getCameraOriginFixed(CDemonRenderer *this_ptr,CVector3i *output);
 
 // Original: engine_drender.cpp_FUN_00483ae0
 // Address: 00483ae0
 void FUN_00483ae0(void);
 
-// Original: engine_drender.cpp_FUN_00483b50
+// Original: engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50
 // Address: 00483b50
-void FUN_00483b50(void);
+CVector3i * __stack_esi CDemonRenderer::getCameraRotationFixed(CDemonRenderer *this_ptr,CVector3i *output);
 
 // Original: engine_drender.cpp_FUN_00483b70
 // Address: 00483b70
@@ -193,9 +193,9 @@ void FUN_00483b70(void);
 // Address: 00483bf0
 float FUN_00483bf0(void);
 
-// Original: engine_drender.cpp_FUN_00483c10
+// Original: engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10
 // Address: 00483c10
-void FUN_00483c10(undefined4 param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CDemonRenderer::pushViewport(CDemonRenderer *this_ptr,int x,int y,int width,int height);
 
 // Original: engine_drender.cpp_popViewport_FUN_00483c40
 // Address: 00483c40
@@ -299,11 +299,11 @@ void __cdecl CDemonRenderer::captureFace(CDemonRenderer *this_ptr,STrianglePacke
 
 // Original: engine_drender.cpp_qsortByCapturedFaceDepthAscending_FUN_00484da0
 // Address: 00484da0
-undefined4 __cdecl qsortByCapturedFaceDepthAscending(int *param_1,int *param_2);
+int __cdecl qsortByCapturedFaceDepthAscending(SFace **face_ptr_a,SFace **face_ptr_b);
 
 // Original: engine_drender.cpp_qsortByCapturedFaceDepthDescending_FUN_00484dd0
 // Address: 00484dd0
-undefined4 __cdecl qsortByCapturedFaceDepthDescending(int *param_1,int *param_2);
+int __cdecl qsortByCapturedFaceDepthDescending(SFace **face_ptr_a,SFace **face_ptr_b);
 
 // Original: engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00
 // Address: 00484e00

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2335,
-    "complexity_score": 1876,
+    "complexity_score": 1877,
     "cross_reference_count": 2,
     "function_call_count": 21,
     "global_count": 234,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1021,
+    "pseudocode_lines": 1022,
     "suspect_count": 83,
     "suspect_types": [
       "undefined_data",
@@ -16,7 +16,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 3356
+    "total_lines": 3357
   },
   "cross_references": [
     {
@@ -101,6 +101,11 @@
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400"
     },
     {
+      "addr": "004943a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0"
+    },
+    {
       "addr": "0049a620",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_0049a620"
@@ -134,11 +139,6 @@
       "addr": "004994d0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_004994d0"
-    },
-    {
-      "addr": "004943a0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004943a0"
     },
     {
       "addr": "00531090",
@@ -1933,15 +1933,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1014,
-      "match": "DAT_01d2145c",
-      "severity": "mild",
-      "text": "(**(int **)(&DAT_01d2145c + iVar31) == **(int **)(&DAT_01d2145c + iVar35 * 4))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1014,
+      "line": 1015,
       "match": "DAT_01d2145c",
       "severity": "mild",
       "text": "(**(int **)(&DAT_01d2145c + iVar31) == **(int **)(&DAT_01d2145c + iVar35 * 4))) {",
@@ -1950,6 +1942,14 @@
     {
       "description": "Undefined global data reference",
       "line": 1015,
+      "match": "DAT_01d2145c",
+      "severity": "mild",
+      "text": "(**(int **)(&DAT_01d2145c + iVar31) == **(int **)(&DAT_01d2145c + iVar35 * 4))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1016,
       "match": "DAT_01d2145c",
       "severity": "mild",
       "text": "**(int **)(&DAT_01d2145c + iVar31) = 599;",
@@ -2245,7 +2245,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 978,
+      "line": 979,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2277,7 +2277,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 969,
+      "line": 970,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2309,7 +2309,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 969,
+      "line": 970,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

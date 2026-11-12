@@ -13,7 +13,7 @@ CTeleport * __cdecl core_teleport_cpp_CTeleport_dtor_FUN_00595100(CTeleport *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTeleportTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTeleportTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

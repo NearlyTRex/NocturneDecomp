@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_memory_c___arrfini_FUN_005a3de6(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void * __cdecl crt_memory_c___arrfini_FUN_005a3de6(void *obj_array,int obj_count,WatcomTypeInfo *type_info)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   obj_array
+; int              Stack[0x8]:4   obj_count
+; WatcomTypeInfo * Stack[0xc]:4   type_info
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8

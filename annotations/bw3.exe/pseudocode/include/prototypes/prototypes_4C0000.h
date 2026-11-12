@@ -24,6 +24,7 @@
 #include "types/classes/CGrave.h"
 #include "types/classes/CGround.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/enums/EBloodType.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
@@ -37,7 +38,7 @@
 // =============================================================================
 
 void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr);
-void core_game_cpp_FUN_004c07b0(float param_1,undefined4 *param_2);
+void core_game_cpp_FUN_004c07b0(int param_1,undefined4 *param_2);
 void core_game_cpp_FUN_004c4870(int param_1);
 void core_game_cpp_FUN_004c48b0(void);
 void core_game_cpp_FUN_004c49f0(void);
@@ -49,7 +50,7 @@ void core_game_cpp_FUN_004c4d10(int param_1);
 undefined4 core_game_cpp_FUN_004c4d50(int param_1);
 CAlphaBitmap * __cdecl core_game_cpp_CAlphaBitmap_arrdtor8_FUN_004c4d60(CAlphaBitmap *this_ptr,uint flags);
 void core_gargoyle_cpp_staticInit_FUN_004c4d80(void);
-void core_gargoyle_cpp_factoryFuncGargoyle_FUN_004c4db0(void);
+CGargoyle * __cdecl core_gargoyle_cpp_factoryFuncGargoyle_FUN_004c4db0(void);
 CDemonActorType * core_gargoyle_cpp_CGargoyle_getActorType_FUN_004c4dd0(CGargoyle *this_ptr);
 CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004c4de0(CGargoyle *this_ptr);
 void __cdecl core_gargoyle_cpp_CGargoyle_setup_FUN_004c4ee0(CGargoyle *this_ptr);
@@ -63,7 +64,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004c6310(CGargoyle *
 ECollisionType __cdecl core_gargoyle_cpp_CGargoyle_getCollisionType_FUN_004c6530(CGargoyle *this_ptr,SCollisionInfo *collision_info);
 CGargoyle * core_gargoyle_cpp_CGargoyle_dtor_FUN_004c6550(CGargoyle *this_ptr,uint flags);
 void core_gasmask_cpp_staticInit_FUN_004c65e0(void);
-void core_gasmask_cpp_factoryFuncGasMask_FUN_004c6610(void);
+CGasMask * __cdecl core_gasmask_cpp_factoryFuncGasMask_FUN_004c6610(void);
 CDemonActorType * core_gasmask_cpp_CGasMask_getActorType_FUN_004c6630(CGasMask *this_ptr);
 CGasMask * __cdecl core_gasmask_cpp_CGasMask_ctor_FUN_004c6640(CGasMask *this_ptr);
 void __cdecl core_gasmask_cpp_CGasMask_setup_FUN_004c6690(CGasMask *this_ptr);
@@ -75,7 +76,7 @@ ECollisionType __cdecl core_gasmask_cpp_CGasMask_getCollisionType_FUN_004c67b0(C
 CBoundingBox3D * __cdecl core_gasmask_cpp_CGasMask_getBoundingBox_FUN_004c67c0(CGasMask *this_ptr,CBoundingBox3D *out_box);
 CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004c6800(CGasMask *this_ptr,uint flags);
 void __cdecl core_ghoul_cpp_staticInit_FUN_004c6850(void);
-void core_ghoul_cpp_factoryFuncGhoul_FUN_004c68b0(void);
+CGhoul * __cdecl core_ghoul_cpp_factoryFuncGhoul_FUN_004c68b0(void);
 CDemonActorType * core_ghoul_cpp_CGhoul_getActorType_FUN_004c68d0(CGhoul *this_ptr);
 CGhoul * core_ghoul_cpp_CGhoul_ctor_FUN_004c68e0(CGhoul *this_ptr);
 void __cdecl core_ghoul_cpp_CGhoul_setup_FUN_004c6a10(CGhoul *this_ptr);
@@ -90,7 +91,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c9400(CGhoul *this_ptr,S
 int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004c97e0(CGhoul *this_ptr,CVector3f *out_points_array);
 CGhoul * core_ghoul_cpp_CGhoul_dtor_FUN_004c9ab0(CGhoul *this_ptr,uint flags);
 void core_glass_cpp_staticInit_FUN_004c9b40(void);
-void core_glass_cpp_factoryFuncGlass_FUN_004c9b70(void);
+CGlass * __cdecl core_glass_cpp_factoryFuncGlass_FUN_004c9b70(void);
 CDemonActorType * core_glass_cpp_CGlass_getActorType_FUN_004c9b90(CGlass *this_ptr);
 CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004c9ba0(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_setup_FUN_004c9ce0(CGlass *this_ptr);
@@ -131,13 +132,13 @@ void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004cd510(CBloodSplat *t
 void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004cd600(CBloodSplat *this_ptr);
 void core_gore_cpp_FUN_004cd690(undefined4 *param_1,int param_2);
 void __cdecl core_gore_cpp_CBloodSplat_processAge_FUN_004cdb20(CBloodSplat *this_ptr);
-void core_gore_cpp_FUN_004cdb50(int param_1,undefined4 param_2);
+void core_gore_cpp_FUN_004cdb50(undefined4 param_1,_FILE *param_2);
 void core_gore_cpp_FUN_004cdbe0(undefined4 *param_1,undefined4 param_2);
 int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004cdc90(CBloodPool *this_ptr);
 void core_gore_cpp_FUN_004cdd30(undefined4 *param_1,int param_2);
 void __cdecl core_gore_cpp_CBloodPool_processAge_FUN_004cdfc0(CBloodPool *this_ptr);
 void __cdecl core_gore_cpp_CBloodPool_init_FUN_004cdff0(CBloodPool *this_ptr,CVector3f *position,EBloodType blood_type);
-void core_gore_cpp_FUN_004ce090(int param_1,undefined4 param_2);
+void core_gore_cpp_FUN_004ce090(undefined4 param_1,_FILE *param_2);
 void core_gore_cpp_FUN_004ce0f0(int param_1,undefined4 param_2);
 void __cdecl core_gore_cpp_CFootstep_init_FUN_004ce170(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,EBloodType blood_type);
 void core_gore_cpp_FUN_004ce310(undefined4 *param_1,int param_2);
@@ -161,7 +162,7 @@ void core_gore_cpp_FUN_004cee70(undefined4 param_1,CVector3f *param_2,UOrientati
 int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004ceef0(CGore *this_ptr,CVector3f *position,int *out_blood_type);
 int __cdecl core_gore_cpp_CGore_load_FUN_004cf010(CGore *this_ptr,_FILE *file_handle);
 int __cdecl core_gore_cpp_CGore_save_FUN_004cf0c0(CGore *this_ptr,_FILE *file_handle);
-void core_gore_cpp_convertVecFloatToFixed_FUN_004cf16e(float *param_1,int *param_2);
+CVector3f * __cdecl core_gore_cpp_convertVecFloatToFixed_FUN_004cf16e(CVector3f *src,CVector3i *dst);
 CFootstep * __cdecl core_gore_cpp_CFootstep_ctor_FUN_004cf1a0(CFootstep *this_ptr);
 CFootstep * core_gore_cpp_CFootstep_dtor_FUN_004cf1c0(CFootstep *this_ptr,uint flags);
 CBloodPool * core_gore_cpp_CBloodPool_ctor_FUN_004cf1d0(CBloodPool *this_ptr);
@@ -172,7 +173,7 @@ CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_ctor_FUN_004cf210(CBloodPa
 CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_dtor_FUN_004cf230(CBloodParticle *this_ptr,uint flags);
 CBloodParticle * core_gore_cpp_CBloodParticle_arrdtor256_FUN_004cf240(CBloodParticle *this_ptr,uint flags);
 void core_grave_cpp_staticInit_FUN_004cf260(void);
-void core_grave_cpp_factoryFuncGrave_FUN_004cf290(void);
+CGrave * __cdecl core_grave_cpp_factoryFuncGrave_FUN_004cf290(void);
 CDemonActorType * core_grave_cpp_CGrave_getActorType_FUN_004cf2b0(CGrave *this_ptr);
 CGrave * __cdecl core_grave_cpp_CGrave_ctor_FUN_004cf2c0(CGrave *this_ptr);
 void __cdecl core_grave_cpp_CGrave_setup_FUN_004cf350(CGrave *this_ptr);
@@ -185,10 +186,10 @@ CBoundingBox3D * __cdecl core_grave_cpp_CGrave_getBoundingBox_FUN_004cf6e0(CGrav
 ECollisionType __cdecl core_grave_cpp_CGrave_getCollisionType_FUN_004cf7f0(CGrave *this_ptr,SCollisionInfo *collision_info);
 CGrave * __cdecl core_grave_cpp_CGrave_dtor_FUN_004cf800(CGrave *this_ptr,uint flags);
 void core_ground_cpp_staticInit_FUN_004cf850(void);
-_FILE * core_ground_cpp_openFileWithExtension_FUN_004cf87e(char *param_1,char *param_2,char *param_3,char *param_4);
+_FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004cf87e(char *directory,char *filename,char *new_extension,char *open_mode);
 char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004cf9a0(EGroundType type);
-char * core_ground_cpp_getGroundTypeName_FUN_004cfa50(undefined4 param_1);
-undefined4 __cdecl core_ground_cpp_getGroundTypeColor_FUN_004cfaf0(undefined4 param_1);
+char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004cfa50(EGroundType type);
+uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004cfaf0(EGroundType type);
 CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004cfb50(CGround *this_ptr,int width,int height);
 CGround * __cdecl core_ground_cpp_CGround_dtor_FUN_004cfbb0(CGround *this_ptr,uint flags);
 void __cdecl core_ground_cpp_CGround_init_FUN_004cfbd0(CGround *this_ptr);

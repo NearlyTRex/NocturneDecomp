@@ -38,7 +38,7 @@ void __cdecl core_fldnotes_cpp_STextView_appendWord_FUN_004a3160(STextView *this
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  iVar2 = engine_font_cpp_FUN_004aaf00(this_ptr->font,this_ptr->word);
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(this_ptr->font,this_ptr->word);
   this_ptr->cursor_x = this_ptr->word_x + iVar2;
   return;
 }

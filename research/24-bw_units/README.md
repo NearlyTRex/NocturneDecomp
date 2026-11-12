@@ -46,6 +46,19 @@ bw3.
   and filmreel.cpp. In the BW builds, the five blocks after `memcpy` were split off as
   functions. They are `memcpy`'s jump-table cases (`jmp [eax*4+…]`), and those
   functions are deleted. The function after them is an FPU string copy (`crt_watcom.c`).
+- **A matched twin from another unit marks a late unit start** when the function sits
+  at its unit's edge, next to that unit. Body matching found three:
+  - `pkbmpset.cpp` starts with `CPackedBitmapSet_ctor`, 2–3 functions before where nocturne
+    and the BW builds had it;
+  - `dimage.cpp` starts with `CDemonImage_dtor`, where the BW builds had dglobe;
+  - bw3's `special.cpp` starts with `shutdownExternalRenderer`, where it had spawner.
+
+  Away from an edge, a twin from another unit is that unit's function copied: a per-unit copy of
+  a free function (`rasterizePolygonCustom`), a BW class reusing another class's method (`CDoc`
+  from `CStranger`), or a method that moved class. nocedit's `CFileManager_setVersionControlDirectory`,
+  which nothing in nocedit calls, is `CDemonMission_setVersionControlDirectory` in `mission.cpp` in
+  every BW build: a script command calls it on the mission instance. The BW builds have no
+  `CFileManager`. The body never reads its receiver, so only the callers' pushes show it is a method.
 - **The `engine_matrix.c` block inside drender** is drender's. nocedit has
   `CDemonRenderer_matrixPush` there, and the real `matrix.c` sits next to
   `litecone.cpp`.

@@ -59,8 +59,8 @@
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   engine_font.cpp_FUN_004a8df0
-;   engine_font.cpp_FUN_004aaf00
 ;   engine_matrix.c_popViewport_FUN_004ea570
 ;   engine_matrix.c_pushViewport_FUN_004ea410
 ;   engine_mini3d.cpp_FUN_004f3570
@@ -377,8 +377,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x8]       ; 0047ebdc
     PUSH EBP                            ; 0047ebdf
     ADD EDI,ECX                         ; 0047ebe0
-    CALL engine_font.cpp_FUN_004aaf00   ; 0047ebe2
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 0047ebe2
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     MOV EDX,EDI                         ; 0047ebe7
     SUB EDX,EAX                         ; 0047ebe9
     MOV EAX,EDX                         ; 0047ebeb

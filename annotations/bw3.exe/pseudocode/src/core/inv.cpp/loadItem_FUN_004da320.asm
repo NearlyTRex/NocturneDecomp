@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl core_inv_cpp_loadItem_FUN_004da320(int param_1,undefined4 param_2)
+; int __cdecl core_inv_cpp_loadItem_FUN_004da320(SInventoryItemInfo *item_info,_FILE *file_handle)
 ;
+; Parameters:
+; SInventoryItemInfo * Stack[0x4]:4   item_info
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
 ;   core_inv.cpp_loadAssets_FUN_004da570 at 004da7ef
@@ -28,7 +31,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 004da338
     PUSH EDX                            ; 004da33c
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004da33d
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0x14                        ; 004da342
     CMP EAX,0x3                         ; 004da345
     SETZ AL                             ; 004da348

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_00529370(undefined4 *param_1,undefined4 *param_2,int param_3,int param_4,int *param_5)
+; void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_00529370(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame)
 ;
+; Parameters:
+; SMpegStereoSubbandSamples * Stack[0x4]:4   input_lr_samples
+; SMpegStereoSubbandSamples * Stack[0x8]:4   output_samples
+; SMpegScalefactorBandData * Stack[0xc]:4   scalefactor_data
+; SMpegLayer3GranuleInfo * Stack[0x10]:4   granule
+; SMpegFrame *     Stack[0x14]:4   frame
 ; Local Variables:
 ; undefined4       Stack[-0x100]:4  local_100
 ; undefined4       Stack[-0xfc]:4  local_fc
@@ -384,7 +390,7 @@ section .text
     SAR EAX,0x10                        ; 0052972b
     PUSH EAX                            ; 0052972e
     CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0 ; 0052972f
-        ;   XREF to: 005292d0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0()
+        ;   XREF to: 005292d0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0(int intensity_position, double ratio, int sample_index, float * ratio_buffer)
     ADD ESP,0x14                        ; 00529734
     MOV EAX,dword ptr [ESP + 0x74]      ; 00529737
         ;   Label: LAB_00529737
@@ -579,7 +585,7 @@ section .text
     SAR EAX,0x10                        ; 005299bc
     PUSH EAX                            ; 005299bf
     CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0 ; 005299c0
-        ;   XREF to: 005292d0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0()
+        ;   XREF to: 005292d0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0(int intensity_position, double ratio, int sample_index, float * ratio_buffer)
     ADD ESP,0x14                        ; 005299c5
     MOV EAX,dword ptr [ESP + 0x94]      ; 005299c8
         ;   Label: LAB_005299c8
@@ -705,7 +711,7 @@ section .text
     SAR EAX,0x10                        ; 00529b7a
     PUSH EAX                            ; 00529b7d
     CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0 ; 00529b7e
-        ;   XREF to: 005292d0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0()
+        ;   XREF to: 005292d0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0(int intensity_position, double ratio, int sample_index, float * ratio_buffer)
     ADD ESP,0x14                        ; 00529b83
     MOV EAX,dword ptr [ESP + 0xa0]      ; 00529b86
         ;   Label: LAB_00529b86
@@ -924,7 +930,7 @@ section .text
     SAR EAX,0x10                        ; 00529e5e
     PUSH EAX                            ; 00529e61
     CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0 ; 00529e62
-        ;   XREF to: 005292d0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0()
+        ;   XREF to: 005292d0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0(int intensity_position, double ratio, int sample_index, float * ratio_buffer)
     ADD ESP,0x14                        ; 00529e67
     MOV EDX,dword ptr [ESP + 0x84]      ; 00529e6a
         ;   Label: LAB_00529e6a

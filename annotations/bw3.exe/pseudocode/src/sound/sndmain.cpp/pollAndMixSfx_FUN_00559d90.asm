@@ -271,7 +271,7 @@ section .text
     ADD EAX,EDX                         ; 00559ffe
     PUSH EAX                            ; 0055a000
     CALL sound_sndmain.cpp_convertMixBufToOutput_FUN_00552d90 ; 0055a001
-        ;   XREF to: 00552d90 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_convertMixBufToOutput_FUN_00552d90()
+        ;   XREF to: 00552d90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_convertMixBufToOutput_FUN_00552d90(float * input_samples, ushort * output_buffer, int bits_per_sample, int num_samples, ...)
     ADD ESP,0x14                        ; 0055a006
     MOV EAX,dword ptr [ESP + EBX*0x1 + 0x2c] ; 0055a009
     ADD EBX,0x4                         ; 0055a00d

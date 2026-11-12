@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_factoryFuncBaron_FUN_0040f660(void)
+; CBaron * __cdecl core_baron_cpp_factoryFuncBaron_FUN_0040f660(void)
 ;
 ;
 ; Called Functions:

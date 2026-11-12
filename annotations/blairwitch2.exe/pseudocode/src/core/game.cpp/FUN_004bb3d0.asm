@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01cb8114
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004bb2c0
+;   core_game.cpp_calculateIrisFadeCenter_FUN_004bb2c0
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;
@@ -80,8 +80,8 @@ section .text
     ADD ESP,0x14                        ; 004bb439
     JMP 0x004bb3f3                      ; 004bb43c
         ;   XREF to: 004bb3f3 (UNCONDITIONAL_JUMP)  ; LAB_004bb3f3
-    CALL core_game.cpp_FUN_004bb2c0     ; 004bb43e
-        ;   XREF to: 004bb2c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004bb2c0()
+    CALL core_game.cpp_calculateIrisFadeCenter_FUN_004bb2c0 ; 004bb43e
+        ;   XREF to: 004bb2c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_calculateIrisFadeCenter_FUN_004bb2c0()
         ;   Label: LAB_004bb43e
     CMP dword ptr [0x006141c0],0x20     ; 004bb443 | DAT_006141c0
     JNZ 0x004bb40f                      ; 004bb44a

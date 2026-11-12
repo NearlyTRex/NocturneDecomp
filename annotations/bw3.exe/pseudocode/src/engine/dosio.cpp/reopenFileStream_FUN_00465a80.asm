@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,undefined4 param_2,undefined4 param_3,_FILE *param_4,undefined4 param_5,uint param_6)
+; void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   directory_path
+; char *           Stack[0x8]:4   filename
+; uint             Stack[0xc]:4   mode_flags
+; ifstream *       Stack[0x10]:4   file_stream
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e8800
@@ -78,7 +83,7 @@ section .text
         ;   Label: LAB_00465b05
     PUSH EAX                            ; 00465b07
     CALL engine_dosio.cpp_findFile_FUN_004656d0 ; 00465b08
-        ;   XREF to: 004656d0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_004656d0()
+        ;   XREF to: 004656d0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_004656d0(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 00465b0d
     TEST EAX,EAX                        ; 00465b10
     JZ 0x00465afb                       ; 00465b12

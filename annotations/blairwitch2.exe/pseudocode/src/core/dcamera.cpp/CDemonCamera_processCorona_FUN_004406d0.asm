@@ -45,7 +45,7 @@ section .text
     MOV ECX,0xaf5218                    ; 00440701
     MOV DL,byte ptr [0x00b65f98]        ; 00440706 | DAT_00b65f98
     CALL crt_watcom.c__memset_FUN_00492670 ; 0044070c
-        ;   XREF to: 00492670 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memset_FUN_00492670()
+        ;   XREF to: 00492670 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_00492670(void * dest, int fill_byte, uint size)
     CMP dword ptr [0x01465928],0x1      ; 00440711 | DAT_01465928
     JG 0x00440725                       ; 00440718
         ;   XREF to: 00440725 (CONDITIONAL_JUMP)  ; LAB_00440725
@@ -75,7 +75,7 @@ section .text
     MOV ECX,0x1326d20                   ; 0044074c
     XOR EBX,EBX                         ; 00440751
     CALL crt_watcom.c__memcpy_FUN_00492718 ; 00440753
-        ;   XREF to: 00492718 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memcpy_FUN_00492718()
+        ;   XREF to: 00492718 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_00492718(void * dest, void * src, uint size)
     MOV dword ptr [0x013083cc],EBX      ; 00440758 | DAT_013083cc
     POP EBX                             ; 0044075e
     RET                                 ; 0044075f

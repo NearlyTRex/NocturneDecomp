@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_bugs_cpp_getDeformableModelName_FUN_004220f0(int param_1)
+; char * __cdecl core_bugs_cpp_getDeformableModelName_FUN_004220f0(CDeformableModelInstance *model_ptr)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   model_ptr
 ;
 ; XREF[1]:
 ;   core_script.cpp_FUN_00522350 at 00525537

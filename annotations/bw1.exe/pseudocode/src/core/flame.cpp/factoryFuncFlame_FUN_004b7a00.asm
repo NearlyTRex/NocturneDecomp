@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flame_cpp_factoryFuncFlame_FUN_004b7a00(void)
+; CFlame * __cdecl core_flame_cpp_factoryFuncFlame_FUN_004b7a00(void)
 ;
 ;
 ; Called Functions:

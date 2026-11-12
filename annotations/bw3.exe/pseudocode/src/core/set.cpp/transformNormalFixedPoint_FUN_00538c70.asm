@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_transformNormalFixedPoint_FUN_00538c70(int *param_1)
+; CVector3i * __stack_esi core_set_cpp_transformNormalFixedPoint_FUN_00538c70(CVector3i *input,CVector3i *output)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   input
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6e2fc

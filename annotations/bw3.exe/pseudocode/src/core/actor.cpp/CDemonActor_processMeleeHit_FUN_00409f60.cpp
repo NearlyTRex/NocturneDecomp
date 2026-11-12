@@ -199,8 +199,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f60(CDemonActor 
                       core_actor_cpp_castToClassHash_FUN_0040c840
                                 (pCVar1,g_CTriggerClassInfo.name_hash);
           if (unaff_EBP == (CTrigger *)0x0) {
-            pCStack_44 = (CDemonActor *)
-                         core_actor_cpp_castToClassHash_FUN_0040c840
+            pCStack_44 = core_actor_cpp_castToClassHash_FUN_0040c840
                                    (pCVar1,g_CGlassClassInfo.name_hash);
             if (pCStack_44 != (CDemonActor *)0x0) {
               core_actor_cpp_FUN_00408bf0(pCStack_44,afStack_b0,uStack_24);
@@ -257,9 +256,8 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f60(CDemonActor 
                 ;
                 (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
                           (this_ptr,hit_type,(SDamageInfo *)(auStack_370 + 0x34),&unaff_ESI->base);
-                engine_console_cpp_FUN_00441ff0
-                          (g_CConsolePtr,"%s causing %5.2f damage to %s\n",this_ptr,
-                           (double)(float)auStack_32c._4_4_,unaff_ESI);
+                engine_console_cpp_CConsole_printf_FUN_00441ff0
+                          (g_CConsolePtr,"%s causing %5.2f damage to %s\n");
                 core_trigger_cpp_CTrigger_applyDamage_FUN_0056ee20
                           (unaff_ESI,(float)auStack_32c._4_4_);
                 (*((this_ptr->vtable)._ub)->playAttackHitEffects)
@@ -358,9 +356,8 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f60(CDemonActor 
               (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
                         (this_ptr,hit_type,(SDamageInfo *)(auStack_32c + 0x24),
                          (CDemonActor *)this_ptr_02);
-              engine_console_cpp_FUN_00441ff0
-                        (g_CConsolePtr,"%s causing %5.2f damage to %s\n",this_ptr,
-                         (double)(float)auStack_2f8._4_4_,this_ptr_02);
+              engine_console_cpp_CConsole_printf_FUN_00441ff0
+                        (g_CConsolePtr,"%s causing %5.2f damage to %s\n");
               core_trigger_cpp_CTrigger_applyDamage_FUN_0056ee20
                         (this_ptr_02,(float)auStack_2f8._4_4_);
               (*((this_ptr->vtable)._ub)->playAttackHitEffects)

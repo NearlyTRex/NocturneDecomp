@@ -31,12 +31,12 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
 ;   core_charactr.cpp_FUN_0042c230
-;   core_charactr.cpp_FUN_0042cd30
 ;   core_charactr.cpp_FUN_00434850
 ;   ... and 21 more
 ;
@@ -423,8 +423,8 @@ section .text
     ADD ESP,0x8                         ; 00594459
     PUSH EBX                            ; 0059445c
         ;   Label: LAB_0059445c
-    CALL core_charactr.cpp_FUN_0042cd30 ; 0059445d
-        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042cd30(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30 ; 0059445d
+        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00594462
     LEA EAX,[EBX + 0x158]               ; 00594465
     PUSH EAX                            ; 0059446b
@@ -464,8 +464,8 @@ section .text
     PUSH 0x5d92a2                       ; 005944c0 | = "%s confused while walking to scriptDe..."
     MOV ESI,dword ptr [0x005f1690]      ; 005944c5 | g_CConsolePtr
     PUSH ESI                            ; 005944cb | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 005944cc
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 005944cc
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     JMP 0x0059424e                      ; 005944d1
         ;   XREF to: 0059424e (UNCONDITIONAL_JUMP)  ; LAB_0059424e
     CMP ESI,0xf                         ; 005944d6
@@ -580,8 +580,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00594618
     MOVSD ES:EDI,ESI                    ; 00594619
     MOVSD ES:EDI,ESI                    ; 0059461a
-    CALL core_enemy.cpp_FUN_004893f0    ; 0059461b
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004893f0()
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 ; 0059461b
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00594620
     PUSH 0x41700000                     ; 00594623
     PUSH 0x40e00000                     ; 00594628
@@ -630,8 +630,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005946c4
     MOVSD ES:EDI,ESI                    ; 005946c5
     MOVSD ES:EDI,ESI                    ; 005946c6
-    CALL core_enemy.cpp_FUN_004893f0    ; 005946c7
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004893f0()
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 ; 005946c7
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 005946cc
     PUSH 0x41700000                     ; 005946cf
     PUSH 0x40e00000                     ; 005946d4
@@ -680,8 +680,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0059476a
     MOVSD ES:EDI,ESI                    ; 0059476b
     MOVSD ES:EDI,ESI                    ; 0059476c
-    CALL core_enemy.cpp_FUN_004893f0    ; 0059476d
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004893f0()
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 ; 0059476d
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00594772
     LEA EAX,[EBX + 0xfd8]               ; 00594775
         ;   Label: LAB_00594775
@@ -801,8 +801,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005948e8
     MOVSD ES:EDI,ESI                    ; 005948e9
     MOVSD ES:EDI,ESI                    ; 005948ea
-    CALL core_enemy.cpp_FUN_004893f0    ; 005948eb
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004893f0()
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 ; 005948eb
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 005948f0
     MOV ESI,dword ptr [EBX + 0xcde4]    ; 005948f3
         ;   Label: LAB_005948f3
@@ -876,8 +876,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005949da
     MOVSD ES:EDI,ESI                    ; 005949db
     MOVSD ES:EDI,ESI                    ; 005949dc
-    CALL core_enemy.cpp_FUN_004893f0    ; 005949dd
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004893f0()
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 ; 005949dd
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 005949e2
     LEA EAX,[EBP + 0xfffffbf2]          ; 005949e5
     MOV EDX,dword ptr [EBX + 0xd060]    ; 005949eb
@@ -914,8 +914,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00594a49
     MOVSD ES:EDI,ESI                    ; 00594a4a
     MOVSD ES:EDI,ESI                    ; 00594a4b
-    CALL core_enemy.cpp_FUN_004893f0    ; 00594a4c
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004893f0()
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 ; 00594a4c
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00594a51
     LEA EAX,[EBP + 0xfffffbf2]          ; 00594a54
     MOV EDX,dword ptr [EBX + 0xd05c]    ; 00594a5a
@@ -952,8 +952,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00594ac4
     MOVSD ES:EDI,ESI                    ; 00594ac5
     MOVSD ES:EDI,ESI                    ; 00594ac6
-    CALL core_enemy.cpp_FUN_004893f0    ; 00594ac7
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004893f0()
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 ; 00594ac7
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00594acc
     JMP 0x005947f0                      ; 00594acf
         ;   XREF to: 005947f0 (UNCONDITIONAL_JUMP)  ; LAB_005947f0
@@ -1008,8 +1008,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00594b71
     MOVSD ES:EDI,ESI                    ; 00594b72
     MOVSD ES:EDI,ESI                    ; 00594b73
-    CALL core_enemy.cpp_FUN_004893f0    ; 00594b74
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004893f0()
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 ; 00594b74
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     MOV EAX,dword ptr [EBX + 0xcde4]    ; 00594b79
     ADD ESP,0x10                        ; 00594b7f
     TEST EAX,EAX                        ; 00594b82
@@ -1150,7 +1150,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0xd080]    ; 00594d0b
     PUSH ESI                            ; 00594d11
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00594d12
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00594d17
     TEST EAX,EAX                        ; 00594d1a
     JZ 0x00594d24                       ; 00594d1c
@@ -1290,7 +1290,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0xd080]    ; 00594e80
     PUSH ECX                            ; 00594e86
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00594e87
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00594e8c
     TEST EAX,EAX                        ; 00594e8f
     JZ 0x00594e9d                       ; 00594e91
@@ -1326,8 +1326,8 @@ section .text
     PUSH 0x5d9306                       ; 00594ef8 | = "Phase: %d, Timer: %f\n"
     MOV EAX,[0x005f1690]                ; 00594efd | g_CConsolePtr
     PUSH EAX                            ; 00594f02 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00594f03
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00594f03
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     MOV EDX,dword ptr [EBX + 0xd090]    ; 00594f08
     ADD ESP,0x14                        ; 00594f0e
     CMP EDX,0x1                         ; 00594f11
@@ -1666,8 +1666,8 @@ section .text
     PUSH 0x5d931c                       ; 005952da | = "%s gave up chase - I'm confused\n"
     MOV ECX,dword ptr [0x005f1690]      ; 005952df | g_CConsolePtr
     PUSH ECX                            ; 005952e5 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 005952e6
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 005952e6
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 005952eb
     PUSH 0x1                            ; 005952ee
     PUSH 0x0                            ; 005952f0
@@ -1684,7 +1684,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0xd080]    ; 0059530d
     PUSH EAX                            ; 00595313
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00595314
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00595319
     TEST EAX,EAX                        ; 0059531c
     JNZ 0x0059511f                      ; 0059531e
@@ -1786,7 +1786,7 @@ section .text
     SUB ESP,0x4                         ; 00595446
     FSTP float ptr [ESP]                ; 00595449
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 ; 0059544c
-        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0()
+        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0(float angle_radians)
     MOV dword ptr [EBP + 0x76],EAX      ; 00595451
     FLD float ptr [EBP + 0x76]          ; 00595454
     FABS                                ; 00595457
@@ -1823,7 +1823,7 @@ section .text
     MOV EDX,dword ptr [EDI + EAX*0x1 + 0x150ff0] ; 005954a8
     PUSH EDX                            ; 005954af
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 005954b0
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 005954b5
     TEST EAX,EAX                        ; 005954b8
     JNZ 0x005954cd                      ; 005954ba
@@ -1963,8 +1963,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0059562c
     MOVSD ES:EDI,ESI                    ; 0059562d
     MOVSD ES:EDI,ESI                    ; 0059562e
-    CALL core_enemy.cpp_FUN_004893f0    ; 0059562f
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004893f0()
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 ; 0059562f
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00595634
     MOV EDI,dword ptr [EBX + 0xcde4]    ; 00595637
         ;   Label: LAB_00595637

@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_marquee.cpp_factoryFuncMarquee_FUN_005068f0
 // Address: 005068f0
-void factoryFuncMarquee(void);
+CMarquee * __cdecl factoryFuncMarquee(void);
 
 // Original: core_marquee.cpp_CMarquee_getActorType_FUN_00506910
 // Address: 00506910

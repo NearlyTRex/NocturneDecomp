@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl core_actor_cpp_matchClassTerm_FUN_0040c660(CDemonActorType *param_1,int *param_2)
+; int __cdecl core_actor_cpp_matchClassTerm_FUN_0040c660(CDemonActorType *type_ptr,char **parse_pos)
 ;
+; Parameters:
+; CDemonActorType * Stack[0x4]:4   type_ptr
+; char * *         Stack[0x8]:4   parse_pos
 ;
 ; XREF[1]:
 ;   core_actor.cpp_matchClassExpression_FUN_0040c780 at 0040c7c3
@@ -48,7 +51,7 @@ section .text
     PUSH EBP                            ; 0040c697
     MOV dword ptr [EBX],EDI             ; 0040c698
     CALL core_actor.cpp_matchClassTerm_FUN_0040c660 ; 0040c69a
-        ;   XREF to: 0040c660 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchClassTerm_FUN_0040c660()
+        ;   XREF to: 0040c660 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchClassTerm_FUN_0040c660(CDemonActorType * type_ptr, char * * parse_pos)
     ADD ESP,0x8                         ; 0040c69f
     MOV EDI,EAX                         ; 0040c6a2
     TEST EAX,EAX                        ; 0040c6a4
@@ -74,7 +77,7 @@ section .text
     PUSH EBP                            ; 0040c6bc
     MOV dword ptr [EBX],EDI             ; 0040c6bd
     CALL core_actor.cpp_matchClassExpression_FUN_0040c780 ; 0040c6bf
-        ;   XREF to: 0040c780 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchClassExpression_FUN_0040c780()
+        ;   XREF to: 0040c780 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchClassExpression_FUN_0040c780(CDemonActorType * type_ptr, char * * parse_pos)
     ADD ESP,0x8                         ; 0040c6c4
     MOV EDI,EAX                         ; 0040c6c7
     TEST EAX,EAX                        ; 0040c6c9

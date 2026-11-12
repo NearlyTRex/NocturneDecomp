@@ -11,18 +11,16 @@ void __cdecl core_skeleton_cpp_FUN_0056a220(CDeformableModelInstance *this_ptr,i
 {
   CVector3f *pCVar1;
   CSkeleton *pCVar2;
-  int iVar3;
+  int bone_index;
+  uint *puVar3;
   uint *puVar4;
   uint *puVar5;
   byte bVar6;
   float afStackY_1860 [1520];
   float fStack_88;
-  float fStack_84;
+  CQuaternion4f CStack_84;
   float fStack_74;
-  float fStack_70;
-  float fStack_6c;
-  float fStack_68;
-  float fStack_64;
+  float afStack_70 [4];
   float fStack_60;
   float fStack_5c;
   float fStack_58;
@@ -46,59 +44,55 @@ void __cdecl core_skeleton_cpp_FUN_0056a220(CDeformableModelInstance *this_ptr,i
   bVar6 = 0;
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr);
   pCStack_20 = pCVar2;
-  core_motion_cpp_FUN_00525240
-            (&this_ptr->base,motion_index,animation_time,(int *)&stack0xffffffd4,
-             (int *)&stack0xffffffd8,&stack0xffffff78);
-  iVar3 = 0;
+  core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_00525240
+            (&this_ptr->base,motion_index,animation_time,(int *)(afStack_70 + 0x11),
+             (int *)(afStack_70 + 0x12),&stack0xffffff78);
+  bone_index = 0;
   if (0 < pCVar2->bone_count) {
     pSStack_18 = output_bone_data;
     pSStack_1c = output_bone_data;
     do {
-      core_skeleton_cpp_FUN_005635a0(pCStack_20,iVar3,fStack_2c,fStack_28,fStack_88);
-      iVar3 = iVar3 + 1;
+      core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_005635a0
+                (pCStack_20,bone_index,(int)fStack_2c,(int)fStack_28,fStack_88,&CStack_84);
+      bone_index = bone_index + 1;
       puVar4 = (uint *)((int)pSStack_1c + (uint)bVar6 * -8 + 0x10);
-      (pSStack_1c->pose_data).bone_rotations[0].w = fStack_84;
+      (pSStack_1c->pose_data).bone_rotations[0].w = CStack_84.w;
       puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
-      *puVar4 = *(uint *)(&stack0xffffff80 + (uint)bVar6 * -8);
-      *puVar5 = *(uint *)(&stack0xffffff84 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-      puVar5[(uint)bVar6 * -2 + 1] =
-           *(uint *)
-            ((int)(&stack0xffffff84 + (uint)bVar6 * -8 + (uint)bVar6 * -8) +
-            ((uint)bVar6 * -2 + 1) * 4);
+      puVar3 = (uint *)((int)&CStack_84 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+      *puVar4 = *(uint *)((int)&CStack_84 + (uint)bVar6 * -8 + 4);
+      *puVar5 = *puVar3;
+      puVar5[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
       pSStack_18->bone_scales[0] = 1.0;
       pSStack_18 = (SPose *)&(pSStack_18->pose_data).root_position.y;
       pSStack_1c = (SPose *)&(pSStack_1c->pose_data).bone_rotations[0].x;
-    } while (iVar3 < pCStack_20->bone_count);
+    } while (bone_index < pCStack_20->bone_count);
   }
   pCVar1 = pCStack_20->frame_positions_1;
   fStack_74 = pCVar1[(int)fStack_28].x * fStack_88;
-  fStack_70 = pCVar1[(int)fStack_28].y * fStack_88;
-  fStack_6c = pCVar1[(int)fStack_28].z * fStack_88;
+  afStack_70[0] = pCVar1[(int)fStack_28].y * fStack_88;
+  afStack_70[1] = pCVar1[(int)fStack_28].z * fStack_88;
   fStack_5c = fStack_74;
-  *(uint *)((int)&stack0xffffffa8 + (uint)bVar6 * -8) =
-       *(uint *)((int)&stack0xffffff90 + (uint)bVar6 * -8);
-  *(uint *)((int)&stack0xffffffac + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)((int)&stack0xffffff94 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+  afStack_70[(uint)bVar6 * -2 + 6] = afStack_70[(uint)bVar6 * -2];
+  afStack_70[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
+       afStack_70[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   fStack_24 = 1.0 - fStack_88;
   fStack_38 = pCVar1[(int)fStack_2c].x * fStack_24;
   fStack_34 = pCVar1[(int)fStack_2c].y * fStack_24;
   fStack_30 = pCVar1[(int)fStack_2c].z * fStack_24;
   fStack_44 = fStack_38;
-  *(uint *)((int)&stack0xffffffc0 + (uint)bVar6 * -8) =
-       *(uint *)((int)&stack0xffffffcc + (uint)bVar6 * -8);
-  *(uint *)((int)&stack0xffffffc4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)((int)&stack0xffffffd0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+  afStack_70[(uint)bVar6 * -2 + 0xc] = afStack_70[(uint)bVar6 * -2 + 0xf];
+  afStack_70[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd] =
+       afStack_70[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x10];
   fStack_50 = fStack_44 + fStack_5c;
   fStack_4c = fStack_40 + fStack_58;
   fStack_48 = fStack_3c + fStack_54;
-  fStack_68 = fStack_44 + fStack_5c;
-  *(uint *)((int)&stack0xffffff9c + (uint)bVar6 * -8) =
-       *(uint *)((int)&stack0xffffffb4 + (uint)bVar6 * -8);
-  *(uint *)((int)&stack0xffffffa0 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)((int)&stack0xffffffb8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-  if ((SPose *)&stack0xffffff98 != output_bone_data) {
-    (output_bone_data->pose_data).root_position.x = fStack_68;
-    (output_bone_data->pose_data).root_position.y = fStack_64;
+  afStack_70[2] = fStack_44 + fStack_5c;
+  afStack_70[(uint)bVar6 * -2 + 3] = afStack_70[(uint)bVar6 * -2 + 9];
+  afStack_70[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+       afStack_70[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10];
+  if ((SPose *)(afStack_70 + 2) != output_bone_data) {
+    (output_bone_data->pose_data).root_position.x = afStack_70[2];
+    (output_bone_data->pose_data).root_position.y = afStack_70[3];
     (output_bone_data->pose_data).root_position.z = fStack_60;
   }
   (output_bone_data->pose_data).root_position.x =

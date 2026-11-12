@@ -1,14 +1,14 @@
 // Name: core_fire.cpp_allocateSmokeParticle_FUN_004a13ee
 // Address: 004a13ee
 // Address Range: [[004a13ee, 004a141d]]
-// Convention: unknown
-// Signature: undefined * core_fire_cpp_allocateSmokeParticle_FUN_004a13ee(void)
+// Convention: __cdecl
+// Signature: CSmokeParticle * __cdecl core_fire_cpp_allocateSmokeParticle_FUN_004a13ee(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-byte * core_fire_cpp_allocateSmokeParticle_FUN_004a13ee(void)
+CSmokeParticle * __cdecl core_fire_cpp_allocateSmokeParticle_FUN_004a13ee(void)
 
 {
   int iVar1;
@@ -18,5 +18,5 @@ byte * core_fire_cpp_allocateSmokeParticle_FUN_004a13ee(void)
   if (0x7ff < _DAT_01c74e9c) {
     _DAT_01c74e9c = 0;
   }
-  return &DAT_01c74ea0 + iVar1;
+  return (CSmokeParticle *)(&DAT_01c74ea0 + iVar1);
 }

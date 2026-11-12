@@ -11,11 +11,11 @@ int __cdecl support_trisock_cpp_CSocket_receiveSocketData_FUN_0059cb20(CSocket *
 {
   uint uVar1;
   int iVar2;
-  uint *puVar3;
+  SOCKADDR_IN *pSVar3;
   int iVar4;
   byte bVar5;
-  sockaddr local_2c;
-  byte auStack_1c [8];
+  SOCKADDR local_2c;
+  SNetworkAddr SStack_1c;
   int local_14;
   
   bVar5 = 0;
@@ -24,13 +24,14 @@ int __cdecl support_trisock_cpp_CSocket_receiveSocketData_FUN_0059cb20(CSocket *
   }
   else {
     local_14 = 0x10;
-    iVar2 = recvfrom(this_ptr->handle,buffer,length,0,&local_2c,&local_14);
+    iVar2 = recvfrom(this_ptr->handle,buffer,length,0,(sockaddr *)&local_2c,&local_14)
+    ;
     if (0 < iVar2) {
-      puVar3 = (uint *)support_trisock_cpp_convertSockAddr_FUN_0059c760(auStack_1c,&local_2c);
-      source_addr->ip_address = *puVar3;
-      uVar1 = puVar3[(uint)bVar5 * -2 + 1];
+      pSVar3 = support_trisock_cpp_convertSockAddr_FUN_0059c760(&SStack_1c,&local_2c);
+      source_addr->ip_address = *(uint *)pSVar3;
+      uVar1 = *(uint *)((int)pSVar3 + (uint)bVar5 * -8 + 4);
       source_addr[-(uint)bVar5].port = (short)uVar1;
-      source_addr[-(uint)bVar5].padding = (short)(uVar1 >> 0x10);
+      source_addr[-(uint)bVar5].padding = (short)((uint)uVar1 >> 0x10);
     }
   }
   if (iVar2 == 0) {

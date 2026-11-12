@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_morph.cpp_FUN_004fb1f0 at 004fb1f6
-;   core_motion.cpp_FUN_004fb280 at 004fb290
+;   core_motion.cpp_CMotionList_load_FUN_004fb280 at 004fb290
 ;   core_skeleton.cpp_FUN_00547b90 at 00547c09
 ;
 ; Called Functions:

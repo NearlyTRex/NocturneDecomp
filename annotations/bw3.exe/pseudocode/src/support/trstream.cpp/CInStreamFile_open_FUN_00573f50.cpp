@@ -22,7 +22,7 @@ uint __cdecl support_trstream_cpp_CInStreamFile_open_FUN_00573f50(CInStreamFile 
   DVar1 = GetFileSize(hFile,(LPDWORD)0x0);
   this_ptr->file_size = DVar1;
   if (-1 < (int)DVar1) {
-    support_trstream_cpp_FUN_00573e00(this_ptr);
+    support_trstream_cpp_CInStreamFile_allocBuffer_FUN_00573e00(this_ptr);
     this_ptr->binary_mode = param_3;
     return 1;
   }

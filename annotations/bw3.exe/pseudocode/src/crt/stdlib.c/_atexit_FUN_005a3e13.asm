@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdlib_c__atexit_FUN_005a3e13(undefined4 param_1)
+; void __cdecl crt_stdlib_c__atexit_FUN_005a3e13(WatcomStaticDestructorNode *exit_node)
 ;
+; Parameters:
+; WatcomStaticDestructorNode * Stack[0x4]:4   exit_node
 ;
 ; XREF[32]:
 ;   core_bmppuzzl.cpp_staticInit_FUN_004118e0 at 004118f9

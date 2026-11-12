@@ -1,20 +1,20 @@
 // Name: core_filmreel.cpp_factoryFuncFilmProjector_FUN_00492be0
 // Address: 00492be0
 // Address Range: [[00492be0, 00492bfb]]
-// Convention: unknown
-// Signature: void core_filmreel_cpp_factoryFuncFilmProjector_FUN_00492be0(void)
+// Convention: __cdecl
+// Signature: CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_00492be0(void)
 
 #include "nocturne.h"
 
-void core_filmreel_cpp_factoryFuncFilmProjector_FUN_00492be0(void)
+CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_00492be0(void)
 
 {
-  CFilmProjector *this_ptr;
+  CFilmProjector *pCVar1;
   
-  this_ptr = (CFilmProjector *)operator_new(0x540);
-  if (this_ptr == (CFilmProjector *)0x0) {
-    return;
+  pCVar1 = (CFilmProjector *)operator_new(0x540);
+  if (pCVar1 == (CFilmProjector *)0x0) {
+    return (CFilmProjector *)0x0;
   }
-  core_filmreel_cpp_CFilmProjector_ctor_FUN_00492c10(this_ptr);
-  return;
+  pCVar1 = core_filmreel_cpp_CFilmProjector_ctor_FUN_00492c10(pCVar1);
+  return pCVar1;
 }

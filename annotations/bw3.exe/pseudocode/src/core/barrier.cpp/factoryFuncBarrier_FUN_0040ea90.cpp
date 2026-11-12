@@ -1,20 +1,20 @@
 // Name: core_barrier.cpp_factoryFuncBarrier_FUN_0040ea90
 // Address: 0040ea90
 // Address Range: [[0040ea90, 0040eaab]]
-// Convention: unknown
-// Signature: void core_barrier_cpp_factoryFuncBarrier_FUN_0040ea90(void)
+// Convention: __cdecl
+// Signature: CBarrier * __cdecl core_barrier_cpp_factoryFuncBarrier_FUN_0040ea90(void)
 
 #include "nocturne.h"
 
-void core_barrier_cpp_factoryFuncBarrier_FUN_0040ea90(void)
+CBarrier * __cdecl core_barrier_cpp_factoryFuncBarrier_FUN_0040ea90(void)
 
 {
-  CBarrier *this_ptr;
+  CBarrier *pCVar1;
   
-  this_ptr = (CBarrier *)operator_new(0x230);
-  if (this_ptr == (CBarrier *)0x0) {
-    return;
+  pCVar1 = (CBarrier *)operator_new(0x230);
+  if (pCVar1 == (CBarrier *)0x0) {
+    return (CBarrier *)0x0;
   }
-  core_barrier_cpp_CBarrier_ctor_FUN_0040eac0(this_ptr);
-  return;
+  pCVar1 = core_barrier_cpp_CBarrier_ctor_FUN_0040eac0(pCVar1);
+  return pCVar1;
 }

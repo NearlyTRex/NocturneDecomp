@@ -48,7 +48,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0xa8]      ; 0052a807
     PUSH ESI                            ; 0052a80e
     CALL sound_mp3.cpp_applyPolyphaseWindow_FUN_0052a2c0 ; 0052a80f
-        ;   XREF to: 0052a2c0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_applyPolyphaseWindow_FUN_0052a2c0()
+        ;   XREF to: 0052a2c0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_applyPolyphaseWindow_FUN_0052a2c0(float * input_samples, float * output_samples, int mpeg_block_type)
     ADD ESP,0xc                         ; 0052a814
     MOV EDX,dword ptr [ESP + 0xac]      ; 0052a817
     LEA EAX,[EDX*0x8 + 0x0]             ; 0052a81e

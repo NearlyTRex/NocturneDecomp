@@ -21,10 +21,10 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820
 ;   core_main.c_FUN_004e4500
 ;   engine_special.cpp_FUN_0055f500
-;   engine_special.cpp_FUN_0055f550
 ;   engine_special.cpp_FUN_0055f590
 ;   engine_special.cpp_FUN_00560120
 ;   engine_special.cpp_FUN_00560140
+;   engine_special.cpp_unlockFrame_FUN_0055f550
 ;
 ; *****************************************************************************
 
@@ -77,8 +77,8 @@ section .text
         ;   XREF to: 00440773 (UNCONDITIONAL_JUMP)  ; LAB_00440773
     PUSH 0x0                            ; 004407d1
         ;   Label: LAB_004407d1
-    CALL engine_special.cpp_FUN_0055f550 ; 004407d3
-        ;   XREF to: 0055f550 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_0055f550(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_0055f550 ; 004407d3
+        ;   XREF to: 0055f550 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_0055f550(int clear_lock_flag)
     ADD ESP,0x4                         ; 004407d8
     CMP dword ptr [0x0264bba0],0x0      ; 004407db | DAT_0264bba0
     JNZ 0x004407e7                      ; 004407e2

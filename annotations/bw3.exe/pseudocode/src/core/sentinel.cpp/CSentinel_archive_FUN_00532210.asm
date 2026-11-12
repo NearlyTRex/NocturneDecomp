@@ -53,7 +53,7 @@ section .text
     LEA EAX,[EBX + 0xcddc]              ; 00532258
     PUSH EAX                            ; 0053225e
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0053225f
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00532264
     JMP 0x0053223d                      ; 00532267
         ;   XREF to: 0053223d (UNCONDITIONAL_JUMP)  ; LAB_0053223d

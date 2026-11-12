@@ -18,7 +18,7 @@ CMobster * core_mobster_cpp_CMobster_dtor_FUN_0051f4b0(CMobster *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMobsterTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMobsterTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

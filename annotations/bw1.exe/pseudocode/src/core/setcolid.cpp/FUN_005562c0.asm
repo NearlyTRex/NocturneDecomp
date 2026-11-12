@@ -250,7 +250,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x3a4]     ; 0055659a
     PUSH EBP                            ; 005565a1
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 005565a2
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 005565a7
     TEST EAX,EAX                        ; 005565aa
     JNZ 0x00556511                      ; 005565ac
@@ -305,7 +305,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0055665a
     PUSH EAX                            ; 0055665e
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0055665f
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00556664
     MOV EAX,dword ptr [ESP + 0x3a0]     ; 00556667
     MOV ESI,dword ptr [ESP + 0x3a0]     ; 0055666e

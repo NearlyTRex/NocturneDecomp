@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_3d_c_renderPolygonWithRenderFlags_FUN_00407470(int param_1,uint param_2,int param_3)
+; void __cdecl engine_3d_c_renderPolygonWithRenderFlags_FUN_00407470(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive
+; int              Stack[0x8]:4   render_flags
+; int              Stack[0xc]:4   render_state_flags
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0
@@ -32,7 +36,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00407478
     PUSH EAX                            ; 0040747b
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0040747c
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 00407481
     TEST EAX,EAX                        ; 00407484
     JZ 0x00407501                       ; 00407486

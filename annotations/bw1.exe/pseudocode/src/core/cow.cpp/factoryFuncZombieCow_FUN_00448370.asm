@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cow_cpp_factoryFuncZombieCow_FUN_00448370(void)
+; CZombieCow * __cdecl core_cow_cpp_factoryFuncZombieCow_FUN_00448370(void)
 ;
 ;
 ; Called Functions:

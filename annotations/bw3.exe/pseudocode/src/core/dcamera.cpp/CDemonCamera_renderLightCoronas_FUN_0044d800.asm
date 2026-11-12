@@ -43,7 +43,7 @@
 ;   undefined4 DAT_01c60dac
 ;
 ; Called Functions:
-;   core_dcamera.cpp_FUN_0044a3e0
+;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_stdlib.c_rand_FUN_005a35cc
@@ -240,8 +240,8 @@ section .text
     PUSH EAX                            ; 0044da4d
     LEA ESI,[ESP + 0x8]                 ; 0044da4e
     LEA EDI,[ESP + 0x14]                ; 0044da52
-    CALL core_dcamera.cpp_FUN_0044a3e0  ; 0044da56
-        ;   XREF to: 0044a3e0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0044a3e0()
+    CALL core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0 ; 0044da56
+        ;   XREF to: 0044a3e0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x8]                 ; 0044da5b
     ADD ESP,0x8                         ; 0044da5f
     MOVSD ES:EDI,ESI                    ; 0044da62

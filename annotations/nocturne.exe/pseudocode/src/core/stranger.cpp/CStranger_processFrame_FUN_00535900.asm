@@ -839,8 +839,8 @@ section .text
     ADD ESP,0x4                         ; 005362e9
     PUSH EBX                            ; 005362ec
         ;   Label: LAB_005362ec
-    CALL core_stranger.cpp_CStranger_FUN_005384d0 ; 005362ed
-        ;   XREF to: 005384d0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005384d0(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0 ; 005362ed
+        ;   XREF to: 005384d0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0(CStranger * this_ptr)
     MOV ECX,dword ptr [EBX + 0x1f59c]   ; 005362f2
     ADD ESP,0x4                         ; 005362f8
     CMP ECX,0x2                         ; 005362fb
@@ -868,8 +868,8 @@ section .text
         ;   XREF to: 0053e320 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053e320(CStranger * this_ptr)
     ADD ESP,0x4                         ; 00536333
     PUSH EBX                            ; 00536336
-    CALL core_stranger.cpp_CStranger_FUN_005384d0 ; 00536337
-        ;   XREF to: 005384d0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005384d0(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0 ; 00536337
+        ;   XREF to: 005384d0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0(CStranger * this_ptr)
     ADD ESP,0x4                         ; 0053633c
     PUSH EDI                            ; 0053633f
         ;   Label: LAB_0053633f

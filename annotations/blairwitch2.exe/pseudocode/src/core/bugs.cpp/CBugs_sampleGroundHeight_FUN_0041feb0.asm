@@ -85,7 +85,7 @@ section .text
     PUSH dword ptr [ESI + 0x17520]      ; 0041ff41
     PUSH dword ptr [EBX + 0x17520]      ; 0041ff47
     CALL core_bugs.cpp_maxFloat_FUN_00422120 ; 0041ff4d
-        ;   XREF to: 00422120 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_maxFloat_FUN_00422120()
+        ;   XREF to: 00422120 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_maxFloat_FUN_00422120(float a, float b)
         ;   Label: LAB_0041ff4d
     MOV dword ptr [ESP + 0x18],EAX      ; 0041ff52
     FLD float ptr [ESP + 0x18]          ; 0041ff56
@@ -119,7 +119,7 @@ section .text
     PUSH dword ptr [EDX + 0x174f4]      ; 0041ff95
     PUSH dword ptr [EBX + EAX*0x1 + 0x174f4] ; 0041ff9b
     CALL core_bugs.cpp_maxFloat_FUN_00422120 ; 0041ffa2
-        ;   XREF to: 00422120 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_maxFloat_FUN_00422120()
+        ;   XREF to: 00422120 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_maxFloat_FUN_00422120(float a, float b)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0041ffa7
     FLD float ptr [ESP + 0x1c]          ; 0041ffab
     ADD ESP,0x8                         ; 0041ffaf
@@ -127,7 +127,7 @@ section .text
     PUSH dword ptr [EBX + EDI*0x4 + 0x174f8] ; 0041ffb9
     FSTP float ptr [ESP + 0xc]          ; 0041ffc0
     CALL core_bugs.cpp_maxFloat_FUN_00422120 ; 0041ffc4
-        ;   XREF to: 00422120 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_maxFloat_FUN_00422120()
+        ;   XREF to: 00422120 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_maxFloat_FUN_00422120(float a, float b)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0041ffc9
     FLD float ptr [ESP + 0x1c]          ; 0041ffcd
     ADD ESP,0x8                         ; 0041ffd1
@@ -135,7 +135,7 @@ section .text
     FSTP float ptr [ESP]                ; 0041ffd7
     PUSH dword ptr [ESP + 0x8]          ; 0041ffda
     CALL core_bugs.cpp_maxFloat_FUN_00422120 ; 0041ffde
-        ;   XREF to: 00422120 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_maxFloat_FUN_00422120()
+        ;   XREF to: 00422120 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_maxFloat_FUN_00422120(float a, float b)
     MOV dword ptr [ESP + 0x1c],EAX      ; 0041ffe3
     FLD float ptr [ESP + 0x1c]          ; 0041ffe7
     ADD ESP,0x8                         ; 0041ffeb

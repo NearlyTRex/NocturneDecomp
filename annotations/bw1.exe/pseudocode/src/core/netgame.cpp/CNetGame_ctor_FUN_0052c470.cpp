@@ -10,13 +10,13 @@ CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_0052c470(CNetGame *this_pt
 
 {
   char cVar1;
-  int iVar2;
+  void *pvVar2;
   CSocket *pCVar3;
   char *pcVar4;
   CSocket *pCVar5;
   
-  iVar2 = __arrinit(this_ptr->players,2,&g_SNetPlayerTypeInfo);
-  pCVar3 = support_trisock_cpp_CSocket_ctor_FUN_0059c8e0((CSocket *)(iVar2 + 0x158));
+  pvVar2 = __arrinit(this_ptr->players,2,&g_SNetPlayerTypeInfo);
+  pCVar3 = support_trisock_cpp_CSocket_ctor_FUN_0059c8e0((CSocket *)((int)pvVar2 + 0x158));
   ((CNetGame *)(pCVar3 + -0x5e))->connection_type = CONNECTION_NONE;
   pCVar3[-0x5d].handle = 0;
   pcVar4 = "MyComputer";

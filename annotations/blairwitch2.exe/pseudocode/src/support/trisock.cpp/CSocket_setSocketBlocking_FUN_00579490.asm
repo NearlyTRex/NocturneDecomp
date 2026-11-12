@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[2]:
-;   core_netgame.cpp_FUN_0050b790 at 0050b7ce
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790 at 0050b7ce
 ;   support_trisock.cpp_FUN_00579890 at 005799d0
 ;
 ; Called Functions:

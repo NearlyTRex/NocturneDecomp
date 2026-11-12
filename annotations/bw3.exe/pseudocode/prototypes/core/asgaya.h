@@ -75,8 +75,8 @@ int * FUN_005a1e5e(int param_1,int *param_2);
 
 // Original: core_asgaya.cpp_FUN_005a1ea0
 // Address: 005a1ea0
-void FUN_005a1ea0(int *param_1,int param_2);
+void FUN_005a1ea0(SRenderVertex *param_1,int param_2);
 
-// Original: core_asgaya.cpp_FUN_005a23c0
+// Original: core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0
 // Address: 005a23c0
-void FUN_005a23c0(int *param_1,int param_2,code *param_3);
+void __cdecl rasterizePolygonCustom(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);

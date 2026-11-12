@@ -38,7 +38,7 @@ section .text
     ADD EAX,0x58                        ; 0054bf14
     PUSH EAX                            ; 0054bf17
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 0054bf18
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     SUB EAX,0x58                        ; 0054bf1d
     MOV dword ptr [EAX + 0x50],0x5e4784 ; 0054bf20 | g_CDeformableModelInstanceVTable
     MOV byte ptr [EAX + 0x2350],0x0     ; 0054bf27

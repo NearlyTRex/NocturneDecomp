@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_setdir_cpp_FUN_0055b280(undefined4 *param_1,char *param_2)
+; void core_setdir_cpp_FUN_0055b280(SIZE_T *param_1,char *param_2)
 ;
 ;
 ; XREF[1]:
-;   core_setdir.cpp_FUN_0055b220 at 0055b252
+;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_0055b220 at 0055b252
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f101d
@@ -60,7 +60,7 @@ section .text
     PUSH 0x3000                         ; 0055b2cd
     PUSH 0x20b28f4                      ; 0055b2d2
     CALL crt_stdio.c_fwrite_FUN_005c1a70 ; 0055b2d7
-        ;   XREF to: 005c1a70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005c1a70()
+        ;   XREF to: 005c1a70 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005c1a70(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     MOV AH,byte ptr [EBX + 0xc]         ; 0055b2dc
     ADD ESP,0x10                        ; 0055b2df
     TEST AH,0x20                        ; 0055b2e2

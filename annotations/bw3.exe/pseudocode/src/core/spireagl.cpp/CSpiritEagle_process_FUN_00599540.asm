@@ -30,11 +30,11 @@
 ;   core_actor.cpp_FUN_00408b00
 ;   core_actor.cpp_FUN_00408b80
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042cd30
 ;   core_charactr.cpp_FUN_00432330
 ;   core_charactr.cpp_FUN_00433c60
 ;   core_charactr.cpp_FUN_00434850
@@ -210,8 +210,8 @@ section .text
     MOV dword ptr [EAX + 0x24a0],EDX    ; 00599716
     MOV EDX,dword ptr [EBX + 0x24a0]    ; 0059971c
     MOV dword ptr [EAX + 0x249c],EDX    ; 00599722
-    CALL core_charactr.cpp_FUN_0042cd30 ; 00599728
-        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042cd30(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30 ; 00599728
+        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0059972d
     LEA EAX,[EBX + 0x158]               ; 00599730
     PUSH EAX                            ; 00599736
@@ -264,8 +264,8 @@ section .text
     PUSH 0x5d992e                       ; 00599795 | = "%s confused while walking to scriptDe..."
     MOV EDX,dword ptr [0x005f1690]      ; 0059979a | g_CConsolePtr
     PUSH EDX                            ; 005997a0 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 005997a1
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 005997a1
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     JMP 0x00599690                      ; 005997a6
         ;   XREF to: 00599690 (UNCONDITIONAL_JUMP)  ; LAB_00599690
     PUSH 0x1                            ; 005997ab
@@ -277,8 +277,8 @@ section .text
         ;   Label: LAB_005997b7
     MOV EDI,dword ptr [0x005f1690]      ; 005997bc | g_CConsolePtr
     PUSH EDI                            ; 005997c2 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 005997c3
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 005997c3
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 005997c8
     PUSH 0x1                            ; 005997cb
     PUSH 0x5d997b                       ; 005997cd | = "LAND_GROUND"
@@ -436,7 +436,7 @@ section .text
     MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 00599959 | g_CDemonSetInstance.actors[0]
     PUSH EBX                            ; 00599960
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00599961
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 00599966
     ADD ESP,0x8                         ; 00599968
     TEST EAX,EAX                        ; 0059996b
@@ -525,8 +525,8 @@ section .text
     PUSH 0x5d999a                       ; 00599a1b | = "%s gave up chase - I'm confused\n"
     MOV EDX,dword ptr [0x005f1690]      ; 00599a20 | g_CConsolePtr
     PUSH EDX                            ; 00599a26 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00599a27
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00599a27
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00599a2c
     JMP 0x005999e8                      ; 00599a2f
         ;   XREF to: 005999e8 (UNCONDITIONAL_JUMP)  ; LAB_005999e8

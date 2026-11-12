@@ -263,7 +263,7 @@ section .text
     PUSH EBX                            ; 0046dde3
         ;   Label: LAB_0046dde3
     CALL engine_prim.c_getTriangleWindingFromPackedIndices_FUN_00515d60 ; 0046dde4
-        ;   XREF to: 00515d60 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_getTriangleWindingFromPackedIndices_FUN_00515d60()
+        ;   XREF to: 00515d60 (UNCONDITIONAL_CALL)  ; int engine_prim.c_getTriangleWindingFromPackedIndices_FUN_00515d60(STrianglePackedIndices * triangle)
     ADD ESP,0x4                         ; 0046dde9
     TEST EAX,EAX                        ; 0046ddec
     JZ 0x0046de2d                       ; 0046ddee
@@ -304,7 +304,7 @@ section .text
     MOV ECX,dword ptr [ESI]             ; 0046de52
     PUSH ECX                            ; 0046de54
     CALL engine_special.cpp_drawPolyList2_FUN_00565db0 ; 0046de55
-        ;   XREF to: 00565db0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList2_FUN_00565db0()
+        ;   XREF to: 00565db0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList2_FUN_00565db0(SRenderVertex * vertex_buffer, SInputFace * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0046de5a
     ADD ESP,0x14                        ; 0046de5d
     POP EBP                             ; 0046de60

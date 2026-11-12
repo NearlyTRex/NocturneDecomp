@@ -84,7 +84,7 @@ section .text
     PUSH EBX                            ; 00453f2c
     PUSH 0x1480e2c                      ; 00453f2d
     CALL core_dcamera.cpp_updateFogScrollOffset_FUN_0044ca20 ; 00453f32
-        ;   XREF to: 0044ca20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_updateFogScrollOffset_FUN_0044ca20()
+        ;   XREF to: 0044ca20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_updateFogScrollOffset_FUN_0044ca20(SFogGrid * fog_ptr, int time_major, int time_minor)
     ADD ESP,0xc                         ; 00453f37
     PUSH EDI                            ; 00453f3a
         ;   Label: LAB_00453f3a
@@ -197,7 +197,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x20]      ; 00454095
     PUSH EBX                            ; 00454099
     CALL core_dstrendr.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_004895f3 ; 0045409a
-        ;   XREF to: 004895f3 (UNCONDITIONAL_CALL)  ; undefined core_dstrendr.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_004895f3()
+        ;   XREF to: 004895f3 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_004895f3(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 0045409f
     JMP 0x0045405d                      ; 004540a2
         ;   XREF to: 0045405d (UNCONDITIONAL_JUMP)  ; LAB_0045405d
@@ -214,7 +214,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x20]      ; 004540bb
     PUSH EDX                            ; 004540bf
     CALL core_dstrendr.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_0048a4b4 ; 004540c0
-        ;   XREF to: 0048a4b4 (UNCONDITIONAL_CALL)  ; undefined core_dstrendr.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_0048a4b4()
+        ;   XREF to: 0048a4b4 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_0048a4b4(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 004540c5
     CMP dword ptr [EDI + 0x14c],0x2     ; 004540c8
         ;   Label: LAB_004540c8
@@ -230,7 +230,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x20]      ; 004540e3
     PUSH EBX                            ; 004540e7
     CALL core_dstrendr.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00489b40 ; 004540e8
-        ;   XREF to: 00489b40 (UNCONDITIONAL_CALL)  ; undefined core_dstrendr.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00489b40()
+        ;   XREF to: 00489b40 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00489b40(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 004540ed
     JMP 0x0045405d                      ; 004540f0
         ;   XREF to: 0045405d (UNCONDITIONAL_JUMP)  ; LAB_0045405d
@@ -329,7 +329,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004541fb
     PUSH EBX                            ; 004541ff
     CALL core_dstrendr.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00487eac ; 00454200
-        ;   XREF to: 00487eac (UNCONDITIONAL_CALL)  ; undefined core_dstrendr.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00487eac()
+        ;   XREF to: 00487eac (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00487eac(ulonglong * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 00454205
     JMP 0x004541d4                      ; 00454208
         ;   XREF to: 004541d4 (UNCONDITIONAL_JUMP)  ; LAB_004541d4
@@ -346,7 +346,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00454221
     PUSH EDX                            ; 00454225
     CALL core_dstrendr.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_004892c5 ; 00454226
-        ;   XREF to: 004892c5 (UNCONDITIONAL_CALL)  ; undefined core_dstrendr.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_004892c5()
+        ;   XREF to: 004892c5 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_004892c5(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 0045422b
     CMP dword ptr [EDI + 0x14c],0x2     ; 0045422e
         ;   Label: LAB_0045422e
@@ -362,7 +362,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00454249
     PUSH EBX                            ; 0045424d
     CALL core_dstrendr.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_0048838a ; 0045424e
-        ;   XREF to: 0048838a (UNCONDITIONAL_CALL)  ; undefined core_dstrendr.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_0048838a()
+        ;   XREF to: 0048838a (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_0048838a(ulonglong * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 00454253
     JMP 0x004541d4                      ; 00454256
         ;   XREF to: 004541d4 (UNCONDITIONAL_JUMP)  ; LAB_004541d4

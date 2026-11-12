@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 281,
-    "complexity_score": 247,
+    "complexity_score": 234,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 122,
-    "suspect_count": 9,
+    "pseudocode_lines": 124,
+    "suspect_count": 8,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "raw_address_pointer_store",
       "undefined_data",
+      "unknown_field",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 403
+    "total_lines": 405
   },
   "cross_references": [
     {
@@ -75,7 +74,7 @@
     {
       "addr": "004943a0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004943a0"
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0"
     },
     {
       "addr": "0059c740",
@@ -212,6 +211,32 @@
     },
     "pcode_op_count": 1056
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050b4d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9465
+    },
+    "bw3.exe": {
+      "addr": "00503fb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9465
+    },
+    "nocedit.exe": {
+      "addr": "0053f900",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8034
+    },
+    "nocturne.exe": {
+      "addr": "004e9a90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8207
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -263,7 +288,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 56,
       "match": "DAT_006260e8",
       "severity": "mild",
       "text": "uStack_18 = DAT_006260e8;",
@@ -271,15 +296,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 57,
       "match": "DAT_006260e8",
       "severity": "mild",
       "text": "DAT_006260e8 = 0;",
       "type": "undefined_data"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_33._0_4_ = this_ptr->players[this_ptr->local_player_index].aim_mode;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 94,
       "match": "DAT_006260e8",
       "severity": "mild",
       "text": "DAT_006260e8 = uStack_18;",
@@ -287,7 +320,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 116,
+      "line": 118,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
@@ -295,35 +328,19 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 116,
+      "line": 118,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,1);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Pointer value `&uStack_33` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 38,
-      "match": "(int)&uStack_33",
-      "severity": "moderate",
-      "text": "((int)&uStack_33 + 3,_DAT_02c8ae4c,0x1ddf);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 79,
+      "line": 78,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 38,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((int)&uStack_33 + 3,_DAT_02c8ae4c,0x1ddf);",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 90,
+    "complexity_score": 97,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 6,
+    "pseudocode_lines": 22,
+    "suspect_count": 7,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 88
+    "total_lines": 85
   },
   "cross_references": [],
   "function": {
@@ -95,6 +95,20 @@
     },
     "pcode_op_count": 234
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0053b110",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00512e70",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -122,7 +136,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = engine_dosio_cpp_getFileSize_FUN_00460aa0((char *)0x5e2403,param_1);",
@@ -130,18 +144,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
+      "line": 12,
+      "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = iVar1 - param_2;",
+      "text": "file = _fopen(param_1,(char *)0x5e2404);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
+      "line": 13,
+      "match": "param_2",
       "severity": "mild",
-      "text": "uVar2 = _fopen(param_1,0x5e2404);",
+      "text": "_fseek(file,param_2,0);",
       "type": "unnamed_param"
     },
     {
@@ -149,7 +163,15 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fseek(uVar2,param_2,0,iVar1,uVar2);",
+      "text": "if (0 < iVar1 - param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "} while (iVar3 < iVar1 - param_2);",
       "type": "unnamed_param"
     }
   ]

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_getMixBufferCount_FUN_0055884c(void)
+; int __cdecl sound_sndmain_cpp_getMixBufferCount_FUN_0055884c(void)
 ;
 ;
 ; Referenced Globals:

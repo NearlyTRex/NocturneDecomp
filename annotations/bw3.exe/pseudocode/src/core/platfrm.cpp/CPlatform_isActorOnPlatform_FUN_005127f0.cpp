@@ -47,10 +47,10 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_005127f0(CPlatform 
     out_box = (CBoundingBox3D *)0x0;
     EVar1 = (*((actor->vtable)._ub)->getCollisionType)(actor,(SCollisionInfo *)&stack0xffffff58);
     if (EVar1 == COLLISION_TYPE_CYLINDER) {
-      fVar2 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0((this_ptr->base).orient.vec.x);
+      fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0((this_ptr->base).orient.vec.x);
       fVar4 = (this_ptr->base).orient.vec.z;
       (this_ptr->base).orient.vec.x = fVar2;
-      fVar2 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fVar4);
+      fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fVar4);
       fVar4 = (this_ptr->base).orient.vec.x;
       (this_ptr->base).orient.vec.z = fVar2;
       if ((ABS(fVar4) <= (float)_DAT_005cc483) &&

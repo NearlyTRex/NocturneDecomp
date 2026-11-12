@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_elephant.cpp_factoryFuncElephantGun_FUN_0049dfd0
 // Address: 0049dfd0
-void factoryFuncElephantGun(void);
+CElephantGun * __cdecl factoryFuncElephantGun(void);
 
 // Original: core_elephant.cpp_CElephantGun_getActorType_FUN_0049dff0
 // Address: 0049dff0

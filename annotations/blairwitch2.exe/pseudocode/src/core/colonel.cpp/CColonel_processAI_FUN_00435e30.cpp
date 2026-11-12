@@ -104,8 +104,8 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00435e30(CColonel *this_ptr
                         (this_ptr_00,&(this_ptr->base).base.base.location.position,&local_d8,
                          (this_ptr->base).base.base.direction_hint);
       if (iVar4 != 0) {
-        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                    (local_d8.y - (this_ptr->base).base.base.orient.vec.y);
+        local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                             (local_d8.y - (this_ptr->base).base.base.orient.vec.y);
         fVar2 = local_18 * _DAT_005cdc05 * (float)_DAT_005cdc0d;
         local_38 = -local_1c;
         (this_ptr->base).player_input.turn_speed = fVar2;
@@ -146,8 +146,8 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00435e30(CColonel *this_ptr
         local_a4[(uint)bVar5 * -2 + 3] = local_c8[(uint)bVar5 * -2 + 3];
         local_a4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
              local_c8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                    (local_a4[3] - (this_ptr->base).base.base.orient.vec.y);
+        local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                             (local_a4[3] - (this_ptr->base).base.base.orient.vec.y);
         fVar2 = local_18 * _DAT_005cdc05 * (float)_DAT_005cdc0d;
         local_40 = -local_1c;
         (this_ptr->base).player_input.turn_speed = fVar2;
@@ -186,8 +186,8 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_00435e30(CColonel *this_ptr
       local_80 = local_74;
       local_7c = local_70;
     }
-    local_b0 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                (local_80 - (this_ptr->base).base.base.orient.vec.y);
+    local_b0 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                         (local_80 - (this_ptr->base).base.base.orient.vec.y);
     if (local_2c < local_b0) {
       local_b0 = local_2c;
     }

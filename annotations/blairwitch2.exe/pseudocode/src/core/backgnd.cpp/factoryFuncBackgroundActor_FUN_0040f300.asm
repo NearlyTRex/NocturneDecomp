@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_backgnd_cpp_factoryFuncBackgroundActor_FUN_0040f300(void)
+; CBackgroundActor * __cdecl core_backgnd_cpp_factoryFuncBackgroundActor_FUN_0040f300(void)
 ;
 ;
 ; Called Functions:

@@ -13,9 +13,9 @@ void FUN_004f5aa0(int param_1);
 // Address: 004f5b70
 void __cdecl CDemonMission::clearMission(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_004f5b80
+// Original: core_mission.cpp_CDemonMission_clearMissionData_FUN_004f5b80
 // Address: 004f5b80
-void FUN_004f5b80(CDemonMission *param_1);
+void __cdecl CDemonMission::clearMissionData(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_load_FUN_004f5bc0
 // Address: 004f5bc0
@@ -53,9 +53,9 @@ void __cdecl CDemonMission::saveActor(CDemonMission *this_ptr,CDemonActor *actor
 // Address: 004f6930
 void __cdecl CDemonMission::addActorToList(CDemonMission *this_ptr,CDemonActor *actor);
 
-// Original: core_mission.cpp_FUN_004f69a0
+// Original: core_mission.cpp_CDemonMission_removeActorFromList_FUN_004f69a0
 // Address: 004f69a0
-void FUN_004f69a0(int param_1,int param_2);
+void __cdecl CDemonMission::removeActorFromList(CDemonMission *this_ptr,CDemonActor *actor_ptr);
 
 // Original: core_mission.cpp_CDemonMission_countActors_FUN_004f6a50
 // Address: 004f6a50
@@ -129,9 +129,9 @@ void __cdecl CDemonMission::generateActorName(CDemonMission *this_ptr,CDemonActo
 // Address: 004f7590
 int __cdecl FUN_004f7590(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_004f76f0
+// Original: core_mission.cpp_CDemonMission_freeAllAssets_FUN_004f76f0
 // Address: 004f76f0
-void FUN_004f76f0(void);
+void __cdecl CDemonMission::freeAllAssets(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_createOneHero_FUN_004f7710
 // Address: 004f7710
@@ -149,6 +149,6 @@ void __cdecl FUN_004f7a20(CDemonMission *this_ptr);
 // Address: 004f7bf0
 undefined4 FUN_004f7bf0(void);
 
-// Original: core_mission.cpp_FUN_004f7c00
+// Original: core_mission.cpp_CDemonMission_setVersionControlDirectory_FUN_004f7c00
 // Address: 004f7c00
-void FUN_004f7c00(undefined4 param_1,char *param_2);
+void __cdecl CDemonMission::setVersionControlDirectory(CDemonMission *this_ptr,char *directory);

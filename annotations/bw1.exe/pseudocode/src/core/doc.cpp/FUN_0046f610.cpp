@@ -11,12 +11,13 @@ void core_doc_cpp_FUN_0046f610(int param_1,int param_2)
 {
   int iVar1;
   int iVar2;
-  uint *puVar3;
-  uint *puVar4;
+  float *pfVar3;
+  CMatrix3x4f *pCVar4;
   byte bVar5;
-  uint auStackY_1020 [953];
+  float afStackY_1020 [953];
+  CMatrix3x4f local_c8;
   CMatrix3x4f local_98;
-  uint local_68 [12];
+  CMatrix3x4f local_68;
   uint local_38;
   uint auStack_34 [5];
   uint local_20 [3];
@@ -27,22 +28,22 @@ void core_doc_cpp_FUN_0046f610(int param_1,int param_2)
   if (((iVar2 != 0) && (iVar2 != *(int *)(param_1 + 0x25b0))) &&
      (iVar2 != *(int *)(param_1 + 0x2628))) {
     core_doc_cpp_FUN_0046f740(param_1,*(uint *)(param_1 + 0x20004),param_2 == 0);
-    puVar3 = (uint *)&stack0xfffffed8;
-    puVar4 = (uint *)&stack0xffffff38;
+    pfVar3 = (float *)&stack0xfffffed8;
+    pCVar4 = &local_c8;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = *puVar3;
-      puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-      puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+      pCVar4->m[0].w = *pfVar3;
+      pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
     }
     core_xform_cpp_FUN_005b5760
               (&local_98,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));
-    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&stack0xffffff38,&local_98);
-    puVar3 = local_68;
-    puVar4 = (uint *)&stack0xffffff08;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_c8,&local_98,&local_68);
+    pCVar4 = &local_68;
+    pfVar3 = (float *)&stack0xffffff08;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = *puVar3;
-      puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-      puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+      *pfVar3 = pCVar4->m[0].w;
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+      pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
     }
     iVar2 = *(int *)(param_1 + 0x20004);
     iVar1 = *(int *)(iVar2 + 0x154);

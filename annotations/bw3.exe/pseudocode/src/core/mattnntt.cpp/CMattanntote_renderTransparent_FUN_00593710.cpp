@@ -13,8 +13,9 @@ int __cdecl core_mattnntt_cpp_CMattanntote_renderTransparent_FUN_00593710(CMatta
 {
   CDeformableModelInstance *this_ptr_00;
   CDemonRenderer *this_ptr_01;
+  CCharacter *this_ptr_02;
   int iVar1;
-  CDemonActor *this_ptr_02;
+  CDemonActor *this_ptr_03;
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
@@ -54,17 +55,19 @@ int __cdecl core_mattnntt_cpp_CMattanntote_renderTransparent_FUN_00593710(CMatta
   }
   this_ptr->fade_done = -1;
 LAB_005937aa:
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                    ((this_ptr->base).base.carry_hands[1].carry_actor,g_CWeaponClassInfo.name_hash);
-  if (iVar1 != 0) {
-    (**(code **)(*(int *)(iVar1 + 0x154) + 0xf8))(iVar1,this_ptr->opacity);
+  this_ptr_02 = (CCharacter *)
+                core_actor_cpp_castToClassHash_FUN_0040c840
+                          ((this_ptr->base).base.carry_hands[1].carry_actor,
+                           g_CWeaponClassInfo.name_hash);
+  if (this_ptr_02 != (CCharacter *)0x0) {
+    (*(((this_ptr_02->base).vtable._uc)->_uc).releaseVictim)(this_ptr_02);
     if (this_ptr->opacity == 0x10000) {
-      *(uint *)(iVar1 + 0xf8) = 1;
-      *(uint *)(iVar1 + 0xfc) = 0;
+      (this_ptr_02->base).is_renderable = 1;
+      (this_ptr_02->base).is_transparent = 0;
     }
     else {
-      *(uint *)(iVar1 + 0xf8) = 0;
-      *(uint *)(iVar1 + 0xfc) = 1;
+      (this_ptr_02->base).is_renderable = 0;
+      (this_ptr_02->base).is_transparent = 1;
     }
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
@@ -101,11 +104,11 @@ LAB_005937aa:
     core_charactr_cpp_CCharacter_renderFlames_FUN_0042f6f0((CCharacter *)this_ptr);
   }
   if (this_ptr->opacity == 0x10000) {
-    this_ptr_02 = &this_ptr->flames[0].base;
+    this_ptr_03 = &this_ptr->flames[0].base;
     do {
-      (*((UActorVTable *)(this_ptr_02->actor_name + 0x154))->_ub->renderTransparent)(this_ptr_02);
-      this_ptr_02 = (CDemonActor *)&this_ptr_02[1].next_actor;
-    } while ((CFlame *)this_ptr_02 != this_ptr->flames + 4);
+      (*((UActorVTable *)(this_ptr_03->actor_name + 0x154))->_ub->renderTransparent)(this_ptr_03);
+      this_ptr_03 = (CDemonActor *)&this_ptr_03[1].next_actor;
+    } while ((CFlame *)this_ptr_03 != this_ptr->flames + 4);
   }
   return (this_ptr->base).base.was_rendered_opaque;
 }

@@ -36,11 +36,11 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90
 ;   core_level.cpp_FUN_004dfc50
 ;   core_main.c_FUN_004e4330
+;   core_mission.cpp_CDemonMission_clearMissionData_FUN_004f5b80
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004f7880
 ;   core_mission.cpp_CDemonMission_load_FUN_004f5bc0
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004f6ca0
-;   core_mission.cpp_FUN_004f5b80
-;   core_mission.cpp_FUN_004f69a0
+;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004f69a0
 ;   core_mission.cpp_FUN_004f6de0
 ;   core_mission.cpp_FUN_004f6f80
 ;   core_mission.cpp_FUN_004f7590
@@ -98,16 +98,16 @@ section .text
     PUSH ESI                            ; 004f732c
     PUSH EBX                            ; 004f732d
     MOV EDI,EAX                         ; 004f732e
-    CALL core_mission.cpp_FUN_004f69a0  ; 004f7330
-        ;   XREF to: 004f69a0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f69a0()
+    CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_004f69a0 ; 004f7330
+        ;   XREF to: 004f69a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004f69a0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 004f7335
     MOV EAX,dword ptr [ESI + 0x154]     ; 004f7338
     PUSH ESI                            ; 004f733e
     CALL dword ptr [EAX + 0x14c]        ; 004f733f
     ADD ESP,0x4                         ; 004f7345
     PUSH EBX                            ; 004f7348
-    CALL core_mission.cpp_FUN_004f5b80  ; 004f7349
-        ;   XREF to: 004f5b80 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f5b80()
+    CALL core_mission.cpp_CDemonMission_clearMissionData_FUN_004f5b80 ; 004f7349
+        ;   XREF to: 004f5b80 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMissionData_FUN_004f5b80(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004f734e
     TEST EDI,EDI                        ; 004f7351
     JZ 0x004f735e                       ; 004f7353

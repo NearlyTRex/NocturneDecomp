@@ -15,7 +15,7 @@ void __cdecl restoreZBufferTable(int count);
 
 // Original: core_setdir.cpp_setPixelGrayscale_FUN_005383fe
 // Address: 005383fe
-void setPixelGrayscale(int param_1,int param_2,int param_3);
+void __cdecl setPixelGrayscale(int x,int y,int grayscale_value);
 
 // Original: core_setdir.cpp_CZThumb_ctor_FUN_00538430
 // Address: 00538430
@@ -59,7 +59,7 @@ void __cdecl CZThumb::render(CZThumb *this_ptr,int screen_x,int screen_y);
 
 // Original: core_setdir.cpp_testCameraVisibility_FUN_00538be0
 // Address: 00538be0
-float __cdecl testCameraVisibility(CDemonActor *param_1,CVector3i *param_2,SMRGLHeaderPrimitive *param_3,int param_4,int param_5,undefined4 param_6);
+float __cdecl testCameraVisibility(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius);
 
 // Original: core_setdir.cpp_FUN_00538d10
 // Address: 00538d10

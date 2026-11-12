@@ -48,7 +48,7 @@ section .text
     PUSH EBX                            ; 00575760
     MOV dword ptr [0x00623318],ESI      ; 00575761 | DAT_00623318
     CALL sound_sndwav.cpp_enumerateWavInDevice_FUN_0057b460 ; 00575767
-        ;   XREF to: 0057b460 (UNCONDITIONAL_CALL)  ; undefined sound_sndwav.cpp_enumerateWavInDevice_FUN_0057b460()
+        ;   XREF to: 0057b460 (UNCONDITIONAL_CALL)  ; int sound_sndwav.cpp_enumerateWavInDevice_FUN_0057b460(UINT device_id, SRecordingDeviceInfo * device_info)
     MOV ESI,dword ptr [0x00623318]      ; 0057576c | DAT_00623318
     ADD ESP,0x8                         ; 00575772
     TEST EAX,EAX                        ; 00575775

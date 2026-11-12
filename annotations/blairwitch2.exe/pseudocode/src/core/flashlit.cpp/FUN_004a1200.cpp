@@ -34,8 +34,8 @@ void core_flashlit_cpp_FUN_004a1200(void)
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&CAlphaBitmap_01caf22c);
   _atexit(&WatcomStaticDestructorNode_00615fe0);
   core_fldnotes_cpp_STextView_ctor_FUN_004a27b0(&g_STextViewInstance);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_00615ff0);
   core_fldnotes_cpp_CFieldNotes_ctor_FUN_004a4170(&g_CFieldNotesInstance);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_00616000);
   return;
 }

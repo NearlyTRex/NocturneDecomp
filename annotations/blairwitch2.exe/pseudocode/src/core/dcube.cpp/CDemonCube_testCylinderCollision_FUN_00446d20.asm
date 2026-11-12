@@ -48,7 +48,7 @@ section .text
     ADD EAX,ESI                         ; 00446d40
     PUSH EAX                            ; 00446d42
     CALL core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00445010 ; 00446d43
-        ;   XREF to: 00445010 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00445010()
+        ;   XREF to: 00445010 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00445010(STriangleRef * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00446d48
     TEST EAX,EAX                        ; 00446d4b
     JZ 0x00446d51                       ; 00446d4d

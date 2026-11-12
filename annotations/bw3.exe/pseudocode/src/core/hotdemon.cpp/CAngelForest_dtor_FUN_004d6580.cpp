@@ -18,7 +18,7 @@ CAngelForest * core_hotdemon_cpp_CAngelForest_dtor_FUN_004d6580(CAngelForest *th
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CAngelForestTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CAngelForestTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

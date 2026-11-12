@@ -11,8 +11,8 @@
 ;
 ; XREF[3]:
 ;   core_boxactor.cpp_FUN_004232c0 at 004236b6
+;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0045d7c0 at 0045d891
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0 at 0045deeb
-;   core_dfilter.cpp_FUN_0045d7c0 at 0045d891
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d8462
@@ -157,7 +157,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x48]      ; 0045db4f
     PUSH EBP                            ; 0045db52
     CALL crt_stdio.c_fread_FUN_005c0b10 ; 0045db53
-        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005c0b10()
+        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005c0b10(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0045db58
     PUSH ESI                            ; 0045db5b
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 0045db5c

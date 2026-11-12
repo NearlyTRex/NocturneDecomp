@@ -71,7 +71,7 @@ section .text
     PUSH EBX                            ; 004219bf
     INC ESI                             ; 004219c0
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0 ; 004219c1
-        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0()
+        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004219c6
     MOV EBP,dword ptr [EDI + 0x1345c]   ; 004219c9
     ADD EBX,0x17c                       ; 004219cf
@@ -134,13 +134,13 @@ section .text
     LEA EBX,[EDI + 0x1bd34]             ; 00421a71
     PUSH EBX                            ; 00421a77
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00421a78
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00421a7d
     PUSH 0x5b77e1                       ; 00421a80 | = "max_life_timer"
     ADD EDI,0x1bd38                     ; 00421a85
     PUSH EDI                            ; 00421a8b
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00421a8c
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00421a91
     POP EBP                             ; 00421a94
     POP EDI                             ; 00421a95

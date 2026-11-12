@@ -648,7 +648,7 @@ section .text
     PUSH EDX                            ; 004576ef
     PUSH EDI                            ; 004576f0
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 004576f1
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152be10]      ; 004576f6 | DAT_0152be10
     INC EDX                             ; 004576fc
     ADD ESP,0x2c                        ; 004576fd
@@ -687,7 +687,7 @@ section .text
     PUSH EDI                            ; 0045775e
     PUSH EDX                            ; 0045775f
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 00457760
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152be10]      ; 00457765 | DAT_0152be10
     INC EDX                             ; 0045776b
     ADD ESP,0x2c                        ; 0045776c
@@ -710,7 +710,7 @@ section .text
     PUSH EDX                            ; 004577a0 | DAT_0152be14
     PUSH EDI                            ; 004577a1
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 004577a2
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152bed4]      ; 004577a7 | DAT_0152bed4
     INC EDX                             ; 004577ad
     ADD ESP,0x2c                        ; 004577ae
@@ -748,7 +748,7 @@ section .text
     PUSH EDI                            ; 0045780c
     PUSH EDX                            ; 0045780d | DAT_0152be14
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 0045780e
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152bed4]      ; 00457813 | DAT_0152bed4
     INC EDX                             ; 00457819
     ADD ESP,0x2c                        ; 0045781a
@@ -772,7 +772,7 @@ section .text
     PUSH EDX                            ; 00457851 | DAT_0152bed8
     PUSH EDI                            ; 00457852
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 00457853
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152bf98]      ; 00457858 | DAT_0152bf98
     INC EDX                             ; 0045785e
     ADD ESP,0x2c                        ; 0045785f
@@ -811,7 +811,7 @@ section .text
     PUSH EDI                            ; 004578c0
     PUSH EDX                            ; 004578c1 | DAT_0152bed8
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 004578c2
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152bf98]      ; 004578c7 | DAT_0152bf98
     INC EDX                             ; 004578cd
     ADD ESP,0x2c                        ; 004578ce
@@ -834,7 +834,7 @@ section .text
     PUSH EDX                            ; 00457903 | DAT_0152bf9c
     PUSH EDI                            ; 00457904
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 00457905
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152c05c]      ; 0045790a | DAT_0152c05c
     INC EDX                             ; 00457910
     ADD ESP,0x2c                        ; 00457911
@@ -872,7 +872,7 @@ section .text
     PUSH EDI                            ; 00457970
     PUSH EDX                            ; 00457971 | DAT_0152bf9c
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 00457972
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152c05c]      ; 00457977 | DAT_0152c05c
     INC EDX                             ; 0045797d
     ADD ESP,0x2c                        ; 0045797e
@@ -895,7 +895,7 @@ section .text
     PUSH EDX                            ; 004579b3 | DAT_0152c060
     PUSH EDI                            ; 004579b4
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 004579b5
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152c120]      ; 004579ba | DAT_0152c120
     INC EDX                             ; 004579c0
     ADD ESP,0x2c                        ; 004579c1
@@ -933,7 +933,7 @@ section .text
     PUSH EDI                            ; 00457a20
     PUSH EDX                            ; 00457a21 | DAT_0152c060
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 00457a22
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152c120]      ; 00457a27 | DAT_0152c120
     INC EDX                             ; 00457a2d
     ADD ESP,0x2c                        ; 00457a2e
@@ -956,7 +956,7 @@ section .text
     PUSH EDX                            ; 00457a63 | DAT_0152c124
     PUSH EDI                            ; 00457a64
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 00457a65
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152c1e4]      ; 00457a6a | DAT_0152c1e4
     INC EDX                             ; 00457a70
     ADD ESP,0x2c                        ; 00457a71
@@ -994,7 +994,7 @@ section .text
     PUSH EDI                            ; 00457ad0
     PUSH EDX                            ; 00457ad1 | DAT_0152c124
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_00455460 ; 00457ad2
-        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_clipEdgeToPlane_FUN_00455460()
+        ;   XREF to: 00455460 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_00455460(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
     MOV EDX,dword ptr [0x0152c1e4]      ; 00457ad7 | DAT_0152c1e4
     INC EDX                             ; 00457add
     ADD ESP,0x2c                        ; 00457ade

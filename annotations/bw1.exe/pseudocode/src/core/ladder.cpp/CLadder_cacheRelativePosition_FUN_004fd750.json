@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 118,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
       "unrolled_memcpy"
@@ -106,6 +108,32 @@
       "STORE": 32
     },
     "pcode_op_count": 386
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e0380",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004dfa70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00502b80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9259
+    },
+    "nocturne.exe": {
+      "addr": "004c46b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9259
+    }
   },
   "stack_frame": {
     "frame_size": 260,
@@ -263,8 +291,16 @@
       "line": 35,
       "match": "&stack0xffffff04",
       "severity": "moderate",
-      "text": "puVar3 = (uint *)&stack0xffffff04;",
+      "text": "pfVar3 = (float *)&stack0xffffff04;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(CMatrix3x4f *)((int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
@@ -273,6 +309,14 @@
       "severity": "moderate",
       "text": "core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&stack0xffffff04);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)pCVar2",
+      "severity": "moderate",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_0040bac4
     PUSH EBP                            ; 0040baca
     CALL crt_stdio.c_fgetc_FUN_005a32b0 ; 0040bacb
-        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005a32b0()
+        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005a32b0(_FILE * file)
     ADD ESP,0x4                         ; 0040bad0
     MOV ESI,EAX                         ; 0040bad3
     TEST EAX,EAX                        ; 0040bad5
@@ -74,7 +74,7 @@ section .text
         ;   Label: LAB_0040baf1
     PUSH ECX                            ; 0040baf7
     CALL crt_stdio.c_fgetc_FUN_005a32b0 ; 0040baf8
-        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005a32b0()
+        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005a32b0(_FILE * file)
     ADD ESP,0x4                         ; 0040bafd
     MOV ESI,EAX                         ; 0040bb00
     TEST EAX,EAX                        ; 0040bb02

@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_FUN_00434190 at 0043424d
-;   core_emitter.cpp_FUN_00487c80 at 00487c9b
+;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_00487c80 at 00487c9b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d5ba00

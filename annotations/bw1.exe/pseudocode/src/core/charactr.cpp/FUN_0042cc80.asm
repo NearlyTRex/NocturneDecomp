@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_charactr_cpp_FUN_0042cc80(undefined4 param_1,float param_2)
+; float core_charactr_cpp_FUN_0042cc80(float param_1,float param_2)
 ;
 ;
 ; Called Functions:
@@ -15,7 +15,7 @@ section .text
         ;   Label: core_charactr.cpp_FUN_0042cc80
     PUSH dword ptr [ESP + 0x10]         ; 0042cc83
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 0042cc87
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cd60()
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     MOV dword ptr [ESP + 0xc],EAX       ; 0042cc8c
     FLD float ptr [ESP + 0xc]           ; 0042cc90
     ADD ESP,0x4                         ; 0042cc94

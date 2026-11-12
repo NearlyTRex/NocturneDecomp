@@ -16,6 +16,6 @@ uint __cdecl support_trstream_cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile
   this_ptr->file_offset = 0;
   this_ptr->position = 0;
   this_ptr->file_size = 0;
-  support_trstream_cpp_FUN_0057d240(this_ptr);
+  support_trstream_cpp_CInStreamFile_freeBuffer_FUN_0057d240(this_ptr);
   return 1;
 }

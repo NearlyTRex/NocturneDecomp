@@ -15,7 +15,7 @@ CExamplePuzzle * core_bmppuzzl_cpp_CExamplePuzzle_dtor_FUN_0059bf70(CExamplePuzz
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CExamplePuzzleTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CExamplePuzzleTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

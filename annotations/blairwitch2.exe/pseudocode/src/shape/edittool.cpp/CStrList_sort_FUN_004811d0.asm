@@ -64,7 +64,7 @@ section .text
     ADD EAX,EBX                         ; 00481226
     PUSH EAX                            ; 00481228
     CALL crt_stdlib.c__qsort_FUN_005b78b8 ; 00481229
-        ;   XREF to: 005b78b8 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__qsort_FUN_005b78b8()
+        ;   XREF to: 005b78b8 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005b78b8(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 0048122e
     POP ESI                             ; 00481231
         ;   Label: LAB_00481231

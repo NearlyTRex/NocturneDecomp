@@ -9,13 +9,13 @@
 int __cdecl core_basicnpc_cpp_CBasicNPC_isGrabbable_FUN_005a4950(CBasicNPC *this_ptr,CDemonActor *grabber)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
   if (grabber == (CDemonActor *)this_ptr) {
     return (uint)grabber ^ (uint)this_ptr;
   }
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0(grabber,g_CBasicNPCClassInfo.name_hash);
-  if (iVar1 != 0) {
+  pCVar1 = (CBasicNPC *)core_actor_cpp_castToClassHash_FUN_0040c8f0(grabber,g_CBasicNPCClassInfo.name_hash);
+  if (pCVar1 != (CDemonActor *)0x0) {
     return 0;
   }
   return 1;

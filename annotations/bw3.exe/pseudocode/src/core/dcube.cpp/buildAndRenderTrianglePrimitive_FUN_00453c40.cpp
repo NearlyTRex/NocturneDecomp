@@ -2,11 +2,11 @@
 // Address: 00453c40
 // Address Range: [[00453c40, 00453cae]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_00453c40(int *param_1,int param_2)
+// Signature: void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_00453c40(CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer)
 
 #include "nocturne.h"
 
-void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_00453c40(int *param_1,int param_2)
+void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_00453c40(CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer)
 
 {
   SMRGLHeaderPrimitive local_30;
@@ -19,9 +19,9 @@ void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_00453c40(int *pa
   local_30.surface_normal.C.i = 0;
   local_30.surface_normal.B.i = 0;
   local_30.surface_normal.A.i = 0;
-  local_18 = (uint)(*param_1 - param_2) / 0xc;
-  local_14 = (uint)(param_1[1] - param_2) / 0xc;
-  local_10 = (uint)(param_1[2] - param_2) / 0xc;
+  local_18 = (uint)((int)*triangle_vertex_pointers - (int)vertex_buffer) / 0xc;
+  local_14 = (uint)((int)triangle_vertex_pointers[1] - (int)vertex_buffer) / 0xc;
+  local_10 = (uint)((int)triangle_vertex_pointers[2] - (int)vertex_buffer) / 0xc;
   core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0053acf0(g_CDemonSetPtr,&local_30,1);
   return;
 }

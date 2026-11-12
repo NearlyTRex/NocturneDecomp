@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00462420(char *param_1)
+; CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00462420(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ;
 ; XREF[5]:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580 at 00462588

@@ -173,16 +173,14 @@ uint core_carved_cpp_FUN_00427bc0(CCharacter *param_1,float param_2)
     param_1[1].model.bone_origins[0x13].x = -40.0;
     param_1[1].model.bone_origins[0x13].z = fVar11;
     param_1[1].model.bone_origins[0x12].y = (float)((int)fVar1 + 1);
-    engine_console_cpp_FUN_00441ff0
-              (g_CConsolePtr,"%s is going to try to pick up %s\n",param_1,
-               param_1[1].model.bone_origins[0x13].y);
+    engine_console_cpp_CConsole_printf_FUN_00441ff0
+              (g_CConsolePtr,"%s is going to try to pick up %s\n");
     return 1;
   }
   iVar4 = (**(code **)(*(int *)((int)fVar11 + 0x154) + 0x94))(fVar11);
   if (iVar4 != 0) {
-    engine_console_cpp_FUN_00441ff0
-              (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,param_1,
-               param_1[1].model.bone_origins[0x13].y);
+    engine_console_cpp_CConsole_printf_FUN_00441ff0
+              (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1);
     param_1[1].model.bone_origins[0x13].y = 0.0;
     param_1[1].model.bone_origins[0x13].x = 0.0;
     core_carved_cpp_FUN_00429090(param_1);
@@ -329,9 +327,8 @@ LAB_004281bf:
                       (param_1,&CStack_60,(CPathMap *)0x0,&CStack_120,0.0,0.0);
   }
   if (iVar4 < 0) {
-    engine_console_cpp_FUN_00441ff0
-              (g_CConsolePtr,"%s can't pick up %s, giving up\n",param_1,
-               param_1[1].model.bone_origins[0x13].y);
+    engine_console_cpp_CConsole_printf_FUN_00441ff0
+              (g_CConsolePtr,"%s can't pick up %s, giving up\n");
     param_1[1].model.bone_origins[0x13].y = 0.0;
     param_1[1].model.bone_origins[0x13].x = 20.0;
     core_carved_cpp_FUN_00429090(param_1);
@@ -340,9 +337,7 @@ LAB_004281bf:
   if (iVar4 < 1) {
     return 1;
   }
-  engine_console_cpp_FUN_00441ff0
-            (g_CConsolePtr,"%s beginning to pickup %s\n",param_1,
-             param_1[1].model.bone_origins[0x13].y);
+  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"%s beginning to pickup %s\n");
   fVar11 = param_1[1].model.bone_origins[0x13].z;
   if ((uint)fVar11 < 2) {
     if (fVar11 != 1.4013e-45) {

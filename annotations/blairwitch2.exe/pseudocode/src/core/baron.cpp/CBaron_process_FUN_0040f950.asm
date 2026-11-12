@@ -299,8 +299,8 @@ section .text
     PUSH 0x5cb535                       ; 0040fc37 | = "%s confused while walking to scriptDe..."
     MOV EBP,dword ptr [0x00609ed0]      ; 0040fc3c | g_CConsolePtr
     PUSH EBP                            ; 0040fc42 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0040fc43
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0040fc43
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     JMP 0x0040fabf                      ; 0040fc48
         ;   XREF to: 0040fabf (UNCONDITIONAL_JUMP)  ; LAB_0040fabf
     PUSH 0x1                            ; 0040fc4d

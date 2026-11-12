@@ -29,7 +29,7 @@ section .text
     MOV ESI,dword ptr [EDX + 0x24]      ; 00538683
     PUSH ESI                            ; 00538686
     CALL crt_stdio.c_fwrite_FUN_005b9690 ; 00538687
-        ;   XREF to: 005b9690 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005b9690()
+        ;   XREF to: 005b9690 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005b9690(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0053868c
     POP ESI                             ; 0053868f
     RET                                 ; 00538690

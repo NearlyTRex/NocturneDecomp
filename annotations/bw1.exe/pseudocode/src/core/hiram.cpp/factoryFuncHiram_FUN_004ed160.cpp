@@ -1,20 +1,20 @@
 // Name: core_hiram.cpp_factoryFuncHiram_FUN_004ed160
 // Address: 004ed160
 // Address Range: [[004ed160, 004ed17b]]
-// Convention: unknown
-// Signature: void core_hiram_cpp_factoryFuncHiram_FUN_004ed160(void)
+// Convention: __cdecl
+// Signature: CHiram * __cdecl core_hiram_cpp_factoryFuncHiram_FUN_004ed160(void)
 
 #include "nocturne.h"
 
-void core_hiram_cpp_factoryFuncHiram_FUN_004ed160(void)
+CHiram * __cdecl core_hiram_cpp_factoryFuncHiram_FUN_004ed160(void)
 
 {
-  CHiram *this_ptr;
+  CHiram *pCVar1;
   
-  this_ptr = (CHiram *)operator_new(0x1fb1c);
-  if (this_ptr == (CHiram *)0x0) {
-    return;
+  pCVar1 = (CHiram *)operator_new(0x1fb1c);
+  if (pCVar1 == (CHiram *)0x0) {
+    return (CHiram *)0x0;
   }
-  core_hiram_cpp_CHiram_ctor_FUN_004ed190(this_ptr);
-  return;
+  pCVar1 = core_hiram_cpp_CHiram_ctor_FUN_004ed190(pCVar1);
+  return pCVar1;
 }

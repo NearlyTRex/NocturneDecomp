@@ -25,7 +25,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_0051d050(int *vertex
   int iVar11;
   uint *puVar12;
   bool bVar13;
-  int local_64 [16];
+  SRenderVertex *local_64 [16];
   uint local_24;
   int *local_20;
   int local_1c;
@@ -35,8 +35,9 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_0051d050(int *vertex
   if (DAT_0070ca7c != 0) {
     if (vertex_count < 4) {
       iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760
-                        (&DAT_00622014 + *vertex_indices * 0xc,
-                         &DAT_00622014 + vertex_indices[1] * 0xc);
+                        ((SRenderVertex *)(&DAT_00622014 + *vertex_indices * 0xc),
+                         (SRenderVertex *)(&DAT_00622014 + vertex_indices[1] * 0xc),
+                         (SRenderVertex *)(&DAT_00622014 + vertex_indices[2] * 0xc));
       if (iVar3 == 0) {
         return;
       }
@@ -49,7 +50,9 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_0051d050(int *vertex
       if (0 < iVar3) {
         do {
           iVar2 = engine_prim_c_calculateTriangleWindingOrder_FUN_0051c760
-                            (&DAT_00622014 + *piVar6 * 0xc,&DAT_00622014 + piVar6[1] * 0xc);
+                            ((SRenderVertex *)(&DAT_00622014 + *piVar6 * 0xc),
+                             (SRenderVertex *)(&DAT_00622014 + piVar6[1] * 0xc),
+                             (SRenderVertex *)(&DAT_00622014 + piVar6[2] * 0xc));
           if (iVar2 == 0) {
             iVar11 = iVar11 + 1;
           }
@@ -220,12 +223,12 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_0051d050(int *vertex
         iVar9 = *vertex_indices;
         iVar11 = iVar3 + 1;
         vertex_indices = vertex_indices + 1;
-        local_64[iVar3] = (int)(&DAT_00622014 + iVar9 * 0xc);
+        local_64[iVar3] = (SRenderVertex *)(&DAT_00622014 + iVar9 * 0xc);
         iVar3 = iVar11;
       } while (iVar11 < vertex_count);
     }
     _DAT_01e61b58 = _DAT_01e61b58 + vertex_count + -2;
-    engine_special_cpp_drawPolygon2_FUN_0055f920(local_64,vertex_count);
+    engine_special_cpp_drawPolygon2_FUN_0055f920(local_64,vertex_count,_DAT_01c38b54);
   }
   return;
 }

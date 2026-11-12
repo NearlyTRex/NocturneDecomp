@@ -9,13 +9,13 @@
 void __cdecl core_armour_cpp_CArmour_archive_FUN_0040f040(CArmour *this_ptr)
 
 {
-  CDeformableModelInstance *pCVar1;
+  CDeformableModelInstance *model_ptr;
   
   core_enemy_cpp_CEnemy_archive_FUN_00487ec0(&this_ptr->base);
   core_actor_cpp_archiveFloat_FUN_0040b8e0(&(this_ptr->base).speed,"speed");
-  pCVar1 = &(this_ptr->base).base.model;
-  core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(pCVar1,"modelName");
-  core_actor_cpp_archiveMotionState_FUN_0040bb60(pCVar1,"motion state");
+  model_ptr = &(this_ptr->base).base.model;
+  core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(model_ptr,"modelName");
+  core_actor_cpp_archiveMotionState_FUN_0040bb60(&model_ptr->base,"motion state");
   core_actor_cpp_archiveString_FUN_0040b730(this_ptr->fall_apart_event,"fallApartEvent");
   return;
 }

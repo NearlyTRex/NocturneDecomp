@@ -1,20 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c_vsprintf_FUN_005a2898(int param_1,undefined4 param_2,undefined4 param_3)
+; int __cdecl crt_stdio_c_vsprintf_FUN_005a2898(char *buffer,char *format,va_list_t args)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   buffer
+; char *           Stack[0x8]:4   format
+; va_list_t        Stack[0xc]:4   args
 ;
 ; XREF[30]:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_0046a1b0 at 0046a1dc
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0046a660 at 0046a68a
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_0046a510 at 0046a53b
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_0046a360 at 0046a38d
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0046a450 at 0046a47d
-;   cockpit_drawsurf.cpp_FUN_00469e70 at 00469e9c
-;   cockpit_drawsurf.cpp_FUN_00469f40 at 00469f6c
-;   cockpit_drawsurf.cpp_FUN_0046a010 at 0046a03c
-;   cockpit_drawsurf.cpp_FUN_0046a0e0 at 0046a10c
-;   cockpit_drawsurf.cpp_FUN_0046a1b0 at 0046a1dc
-;   cockpit_drawsurf.cpp_FUN_0046a280 at 0046a2ad
-;   cockpit_drawsurf.cpp_FUN_0046a360 at 0046a38d
-;   cockpit_drawsurf.cpp_FUN_0046a510 at 0046a53b
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_0046a280 at 0046a2ad
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_0046a010 at 0046a03c
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00469e70 at 00469e9c
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0046a0e0 at 0046a10c
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00469f40 at 00469f6c
 ;   ... and 20 more
 ;
 ; Called Functions:

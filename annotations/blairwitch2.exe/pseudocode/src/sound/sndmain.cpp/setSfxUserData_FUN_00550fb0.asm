@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint param_1,int param_2,void *param_3)
+; int __cdecl sound_sndmain_cpp_setSfxUserData_FUN_00550fb0(uint sfx_handle,int index,void *value)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   sfx_handle
+; int              Stack[0x8]:4   index
+; void *           Stack[0xc]:4   value
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0

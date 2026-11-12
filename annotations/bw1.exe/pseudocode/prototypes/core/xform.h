@@ -11,27 +11,27 @@ void FUN_005b5080(float *param_1,float *param_2);
 
 // Original: core_xform.cpp_transformVector3x4InPlace_FUN_005b5100
 // Address: 005b5100
-float * __cdecl transformVector3x4InPlace(float *param_1,float *param_2);
+CVector3f * __cdecl transformVector3x4InPlace(CVector3f *input_output_vector,CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 // Address: 005b5200
-void multiplyMatrix3x4(float *param_1,float *param_2);
+CMatrix3x4f * __stack2_esi multiplyMatrix3x4(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,CMatrix3x4f *matrix_out);
 
 // Original: core_xform.cpp_multiplyMatrix3x4InPlace_FUN_005b53b0
 // Address: 005b53b0
-undefined4 * __cdecl multiplyMatrix3x4InPlace(undefined4 *param_1,undefined4 param_2);
+CMatrix3x4f * __cdecl multiplyMatrix3x4InPlace(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b);
 
 // Original: core_xform.cpp_setIdentityMatrix3x4_FUN_005b53f0
 // Address: 005b53f0
-void __cdecl setIdentityMatrix3x4(undefined4 *param_1);
+void __cdecl setIdentityMatrix3x4(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_somebodyWriteMe_FUN_005b544e
 // Address: 005b544e
-void somebodyWriteMe(void);
+void __cdecl somebodyWriteMe(void);
 
 // Original: core_xform.cpp_setRotationScaleIdentity_FUN_005b5480
 // Address: 005b5480
-void __cdecl setRotationScaleIdentity(undefined4 *param_1);
+void __cdecl setRotationScaleIdentity(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_FUN_005b54d0
 // Address: 005b54d0
@@ -39,7 +39,7 @@ void FUN_005b54d0(float *param_1);
 
 // Original: core_xform.cpp_clearTranslation_FUN_005b5600
 // Address: 005b5600
-void __cdecl clearTranslation(int param_1);
+void __cdecl clearTranslation(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_FUN_005b5620
 // Address: 005b5620
@@ -71,15 +71,15 @@ void FUN_005b62b0(undefined4 param_1);
 
 // Original: core_xform.cpp_determinant_FUN_005b6330
 // Address: 005b6330
-double __cdecl determinant(float *param_1);
+double __cdecl determinant(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_inverse_FUN_005b6380
 // Address: 005b6380
-void inverse(float *param_1);
+void inverse(CMatrix3x4f *param_1);
 
 // Original: core_xform.cpp_computeOrthogonalityError_FUN_005b65b0
 // Address: 005b65b0
-float computeOrthogonalityError(float *param_1);
+float __cdecl computeOrthogonalityError(CMatrix3x4f *matrix);
 
 // Original: core_xform.cpp_FUN_005b6920
 // Address: 005b6920
@@ -87,15 +87,15 @@ void FUN_005b6920(void);
 
 // Original: core_xform.cpp_buildRotationX_FUN_005b6d90
 // Address: 005b6d90
-void buildRotationX(float param_1);
+CMatrix3x4f * __stack_esi buildRotationX(float angle_radians,CMatrix3x4f *matrix_out);
 
 // Original: core_xform.cpp_buildRotationY_FUN_005b6e10
 // Address: 005b6e10
-void buildRotationY(float param_1);
+CMatrix3x4f * __stack_esi buildRotationY(float angle_radians,CMatrix3x4f *matrix_out);
 
 // Original: core_xform.cpp_buildXFlipMatrix_FUN_005b7030
 // Address: 005b7030
-void buildXFlipMatrix(float param_1);
+CMatrix3x4f * __stack_esi buildXFlipMatrix(float x_offset,CMatrix3x4f *matrix_out);
 
 // Original: core_xform.cpp_FUN_005b708e
 // Address: 005b708e
@@ -103,19 +103,19 @@ void FUN_005b708e(float param_1);
 
 // Original: core_xform.cpp_buildZFlipMatrix_FUN_005b70f0
 // Address: 005b70f0
-void buildZFlipMatrix(float param_1);
+CMatrix3x4f * __stack_esi buildZFlipMatrix(float z_offset,CMatrix3x4f *matrix_out);
 
 // Original: core_xform.cpp_lerpMatrix3x4_FUN_005b72c0
 // Address: 005b72c0
 void lerpMatrix3x4(undefined4 *param_1,undefined4 *param_2,float param_3);
 
-// Original: core_xform.cpp_FUN_005b7410
+// Original: core_xform.cpp_quaternionToMatrix3x3_FUN_005b7410
 // Address: 005b7410
-CQuaternion4f * __cdecl FUN_005b7410(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
+CQuaternion4f * __cdecl quaternionToMatrix3x3(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
 
 // Original: core_xform.cpp_quaternionToMatrix3x4_FUN_005b7560
 // Address: 005b7560
-void quaternionToMatrix3x4(CQuaternion4f *param_1);
+CMatrix3x4f * __stack_esi quaternionToMatrix3x4(CQuaternion4f *quat_in,CMatrix3x4f *matrix_out);
 
 // Original: core_xform.cpp_matrixToQuaternion_FUN_005b75a0
 // Address: 005b75a0
@@ -127,7 +127,7 @@ void negateFirstComponent(float *param_1);
 
 // Original: core_xform.cpp_setIdentityQuaternion_FUN_005b7790
 // Address: 005b7790
-void __cdecl setIdentityQuaternion(undefined4 *param_1);
+void __cdecl setIdentityQuaternion(CQuaternion4f *quaternion);
 
 // Original: core_xform.cpp_multiplyQuaternion_FUN_005b77b0
 // Address: 005b77b0
@@ -135,7 +135,7 @@ void multiplyQuaternion(float *param_1,float *param_2);
 
 // Original: core_xform.cpp_quaternionToAxisAngle_FUN_005b78a0
 // Address: 005b78a0
-void quaternionToAxisAngle(float *param_1,float *param_2,float *param_3);
+void __cdecl quaternionToAxisAngle(CQuaternion4f *quat_in,float *angle_out,CVector3f *axis_out);
 
 // Original: core_xform.cpp_slerpQuaternion_FUN_005b7940
 // Address: 005b7940
@@ -175,19 +175,19 @@ void FUN_005b7ff0(float *param_1);
 
 // Original: core_xform.cpp_clipInterpolateRightPlane_FUN_005b9630
 // Address: 005b9630
-void __cdecl clipInterpolateRightPlane(int *param_1,int *param_2,int *param_3);
+void __cdecl clipInterpolateRightPlane(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 
 // Original: core_xform.cpp_clipInterpolateLeftPlane_FUN_005b96f0
 // Address: 005b96f0
-void __cdecl clipInterpolateLeftPlane(int *param_1,int *param_2,int *param_3);
+void __cdecl clipInterpolateLeftPlane(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 
 // Original: core_xform.cpp_clipInterpolateTopPlane_FUN_005b97b0
 // Address: 005b97b0
-void __cdecl clipInterpolateTopPlane(int *param_1,int *param_2,int *param_3);
+void __cdecl clipInterpolateTopPlane(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 
 // Original: core_xform.cpp_clipInterpolateBottomPlane_FUN_005b9870
 // Address: 005b9870
-void __cdecl clipInterpolateBottomPlane(int *param_1,int *param_2,int *param_3);
+void __cdecl clipInterpolateBottomPlane(SRenderVertex *vertex_a,SRenderVertex *vertex_b,SRenderVertex *vertex_out);
 
 // Original: core_xform.cpp_clipPolygonStage3_FUN_005b9c30
 // Address: 005b9c30

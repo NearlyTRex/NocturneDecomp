@@ -88,7 +88,7 @@ section .text
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004e1e2f
     PUSH EDX                            ; 004e1e36
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004e1e37
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004e1e3c
     TEST EAX,EAX                        ; 004e1e3f
     JNZ 0x004e1ece                      ; 004e1e41

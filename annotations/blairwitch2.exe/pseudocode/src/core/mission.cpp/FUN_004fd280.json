@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 108,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 69,
     "suspect_count": 3,
     "suspect_types": [
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 258
+    "total_lines": 259
   },
   "cross_references": [
     {
@@ -254,18 +254,18 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 40,
+      "line": 41,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(actor->base).location.position.x = (pCVar2->location).position.x;",
+      "text": "(actor->base).location.position.x = (pCVar3->location).position.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 46,
+      "line": 47,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar3->vec).x = (pCVar2->orient).vec.x;",
+      "text": "(pUVar4->vec).x = (pCVar3->orient).vec.x;",
       "type": "unrolled_memcpy"
     }
   ]

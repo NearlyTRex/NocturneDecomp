@@ -77,7 +77,7 @@ section .text
         ;   XREF to: 0050c055 (CONDITIONAL_JUMP)  ; LAB_0050c055
     MOV dword ptr [ESI + 0x4],0x2       ; 0050bdda
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0050bde1
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EDX,EAX                         ; 0050bde6
     MOV EBX,0x12                        ; 0050bde8
     SAR EDX,0x1f                        ; 0050bded

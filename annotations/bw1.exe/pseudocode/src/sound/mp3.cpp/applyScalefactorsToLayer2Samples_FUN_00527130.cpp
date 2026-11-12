@@ -1,12 +1,12 @@
 // Name: sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_00527130
 // Address: 00527130
 // Address Range: [[00527130, 00527187]]
-// Convention: unknown
-// Signature: void sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_00527130(int param_1,int param_2,int param_3)
+// Convention: __cdecl
+// Signature: void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_00527130(float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info)
 
 #include "nocturne.h"
 
-void sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_00527130(int param_1,int param_2,int param_3)
+void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_00527130(float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info)
 
 {
   int iVar1;
@@ -17,12 +17,12 @@ void sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_00527130(int param_1,int
   int iVar6;
   
   iVar6 = 0;
-  iVar1 = *(int *)(param_3 + 0x10);
+  iVar1 = frame_info->channel_count;
   do {
     iVar5 = 0;
     if (0 < iVar1) {
-      piVar4 = (int *)(param_2 + iVar6);
-      pfVar3 = (float *)(param_1 + iVar6);
+      piVar4 = (int *)((int)scalefactor_indices + iVar6);
+      pfVar3 = (float *)((int)sample_array + iVar6);
       do {
         iVar2 = *piVar4;
         piVar4 = piVar4 + 0x60;

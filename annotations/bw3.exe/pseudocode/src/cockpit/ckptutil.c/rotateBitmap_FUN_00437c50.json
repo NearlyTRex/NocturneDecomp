@@ -120,6 +120,26 @@
     },
     "pcode_op_count": 575
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0043a040",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00434870",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4351
+    },
+    "nocturne.exe": {
+      "addr": "004303d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4413
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -230,7 +250,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_004659c0((char *)0x5b8c82,param_1,(char *)0x5b8c7f);",
+      "text": "file = engine_dosio_cpp_FUN_004659c0((char *)0x5b8c82,param_1,(char *)0x5b8c7f);",
       "type": "unnamed_param"
     },
     {
@@ -246,7 +266,7 @@
       "line": 36,
       "match": "(byte *)((int)param_2",
       "severity": "moderate",
-      "text": "puVar3 = (byte *)((int)param_2 + (param_4 - uStack_18) + -1);",
+      "text": "puVar2 = (byte *)((int)param_2 + (param_4 - uStack_18) + -1);",
       "type": "pointer_cast"
     },
     {
@@ -254,7 +274,7 @@
       "line": 36,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar3 = (byte *)((int)param_2 + (param_4 - uStack_18) + -1);",
+      "text": "puVar2 = (byte *)((int)param_2 + (param_4 - uStack_18) + -1);",
       "type": "unnamed_param"
     },
     {
@@ -262,7 +282,7 @@
       "line": 36,
       "match": "param_4",
       "severity": "mild",
-      "text": "puVar3 = (byte *)((int)param_2 + (param_4 - uStack_18) + -1);",
+      "text": "puVar2 = (byte *)((int)param_2 + (param_4 - uStack_18) + -1);",
       "type": "unnamed_param"
     },
     {
@@ -278,7 +298,7 @@
       "line": 49,
       "match": "param_4",
       "severity": "mild",
-      "text": "puVar3 = puVar3 + param_4;",
+      "text": "puVar2 = puVar2 + param_4;",
       "type": "unnamed_param"
     },
     {
@@ -286,7 +306,7 @@
       "line": 50,
       "match": "param_3",
       "severity": "mild",
-      "text": "} while (uVar2 < param_3);",
+      "text": "} while (uVar1 < param_3);",
       "type": "unnamed_param"
     },
     {

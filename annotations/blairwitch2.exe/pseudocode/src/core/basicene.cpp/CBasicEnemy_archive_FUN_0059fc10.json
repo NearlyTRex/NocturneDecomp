@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 510,
-    "complexity_score": 367,
+    "complexity_score": 368,
     "cross_reference_count": 9,
     "function_call_count": 16,
     "global_count": 42,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 167,
+    "pseudocode_lines": 168,
     "suspect_count": 19,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 677
+    "total_lines": 678
   },
   "cross_references": [
     {
@@ -641,7 +641,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "if (DAT_007bc038 != 0) {",
@@ -649,7 +649,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 26,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "if (DAT_007bc038 < 2) {",
@@ -657,18 +657,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "else if (DAT_007bc038 == 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if ((5 < g_CBasicEnemyClassVersion) && (DAT_007bc038 != 0)) {",
       "type": "undefined_data"
     },
     {
@@ -676,12 +668,20 @@
       "line": 75,
       "match": "DAT_007bc038",
       "severity": "mild",
+      "text": "if ((5 < g_CBasicEnemyClassVersion) && (DAT_007bc038 != 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_007bc038",
+      "severity": "mild",
       "text": "if (DAT_007bc038 < 2) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 79,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "else if (DAT_007bc038 == 2) {",
@@ -689,7 +689,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 80,
       "match": "DAT_005efa99",
       "severity": "mild",
       "text": "pcVar2 = &DAT_005efa99;",
@@ -697,7 +697,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 94,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "if ((6 < g_CBasicEnemyClassVersion) && (DAT_007bc038 != 0)) {",
@@ -705,7 +705,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 95,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "if (DAT_007bc038 < 2) {",
@@ -713,18 +713,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 98,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "else if (DAT_007bc038 == 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 128,
-      "match": "DAT_007bc038",
-      "severity": "mild",
-      "text": "if (DAT_007bc038 != 0) {",
       "type": "undefined_data"
     },
     {
@@ -732,12 +724,20 @@
       "line": 129,
       "match": "DAT_007bc038",
       "severity": "mild",
+      "text": "if (DAT_007bc038 != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 130,
+      "match": "DAT_007bc038",
+      "severity": "mild",
       "text": "if (DAT_007bc038 < 2) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 135,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "else if (DAT_007bc038 == 2) {",
@@ -745,7 +745,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 34,
+      "line": 35,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -753,7 +753,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 46,
+      "line": 47,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -761,7 +761,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 81,
+      "line": 82,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -769,7 +769,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 100,
+      "line": 101,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -777,7 +777,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 137,
+      "line": 138,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -785,7 +785,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 148,
+      "line": 149,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

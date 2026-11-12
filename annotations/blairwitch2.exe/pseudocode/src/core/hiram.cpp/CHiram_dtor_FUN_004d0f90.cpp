@@ -19,7 +19,7 @@ CHiram * core_hiram_cpp_CHiram_dtor_FUN_004d0f90(CHiram *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHiramTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHiramTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

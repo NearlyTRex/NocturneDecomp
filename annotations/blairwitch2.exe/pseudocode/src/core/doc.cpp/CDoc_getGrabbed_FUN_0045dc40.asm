@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004cea50
 ;   core_motion.cpp_FUN_005035c0
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     PUSH 0x5d0827                       ; 0045dc5d | s_CDoc_startGettingGrabbed_005d0826+1
     MOV ECX,dword ptr [0x00609ed0]      ; 0045dc62 | g_CConsolePtr
     PUSH ECX                            ; 0045dc68 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0045dc69
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0045dc69
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0045dc6e
     LEA EAX,[EBX + 0x2b4]               ; 0045dc71
     PUSH EAX                            ; 0045dc77
@@ -60,8 +60,8 @@ section .text
     PUSH 0x5d0851                       ; 0045dc81 | = "  current motion is %s\n"
     MOV EDI,dword ptr [0x00609ed0]      ; 0045dc86 | g_CConsolePtr
     PUSH EDI                            ; 0045dc8c | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0045dc8d
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0045dc8d
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     MOV EBP,dword ptr [EBX + 0x25608]   ; 0045dc92
     ADD ESP,0xc                         ; 0045dc98
     TEST EBP,EBP                        ; 0045dc9b

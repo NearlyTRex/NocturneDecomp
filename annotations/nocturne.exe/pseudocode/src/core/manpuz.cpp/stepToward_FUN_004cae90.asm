@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_manpuz_cpp_stepToward_FUN_004cae90(float *param_1,float param_2,float param_3)
+; int __cdecl core_manpuz_cpp_stepToward_FUN_004cae90(float *value,float target,float max_step)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   value
+; float            Stack[0x8]:4   target
+; float            Stack[0xc]:4   max_step
 ;
 ; *****************************************************************************
 

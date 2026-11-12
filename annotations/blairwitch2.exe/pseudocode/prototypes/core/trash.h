@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_trash.cpp_factoryFuncTrash_FUN_00576900
 // Address: 00576900
-void factoryFuncTrash(void);
+CTrash * __cdecl factoryFuncTrash(void);
 
 // Original: core_trash.cpp_CTrash_getActorType_FUN_00576920
 // Address: 00576920

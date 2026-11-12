@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_course.cpp_FUN_00444970 at 004449fb
+;   core_course.cpp_CCourse_load_FUN_00444970 at 004449fb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0

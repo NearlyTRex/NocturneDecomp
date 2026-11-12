@@ -44,7 +44,7 @@ section .text
     LEA EBX,[ESP + 0x8]                 ; 0049eaaf
     PUSH EBX                            ; 0049eab3
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 0049eab4
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0049eab9
     LEA EBX,[ESP + 0x100]               ; 0049eabc
     PUSH EBX                            ; 0049eac3
@@ -52,7 +52,7 @@ section .text
     PUSH EDI                            ; 0049eac9
     MOV EBX,0x1c9c4d4                   ; 0049eaca
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0049eacf
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     LEA ESI,[EBX + 0x8c0]               ; 0049ead4
     ADD ESP,0xc                         ; 0049eada
     PUSH EDI                            ; 0049eadd

@@ -18,7 +18,7 @@ CHand * core_hand_cpp_CHand_dtor_FUN_005a9d30(CHand *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHandTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHandTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

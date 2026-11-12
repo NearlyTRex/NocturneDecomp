@@ -32,7 +32,7 @@ section .text
     LEA EAX,[ESI + 0x8]                 ; 004467b1
     PUSH EAX                            ; 004467b4
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 004467b5
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004467ba
     PUSH EBP                            ; 004467bd
     PUSH 0xc                            ; 004467be
@@ -40,7 +40,7 @@ section .text
     LEA EAX,[ESI + 0x14]                ; 004467c2
     PUSH EAX                            ; 004467c5
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 004467c6
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004467cb
     PUSH EBP                            ; 004467ce
     PUSH 0x4                            ; 004467cf
@@ -48,7 +48,7 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 004467d3
     PUSH EAX                            ; 004467d6
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 004467d7
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004467dc
     PUSH EBP                            ; 004467df
     PUSH 0x4                            ; 004467e0
@@ -56,7 +56,7 @@ section .text
     LEA EAX,[ESI + 0x28]                ; 004467e4
     PUSH EAX                            ; 004467e7
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 004467e8
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     MOV EDX,dword ptr [ESI + 0x28]      ; 004467ed
     ADD ESP,0x10                        ; 004467f0
     TEST EDX,EDX                        ; 004467f3
@@ -70,7 +70,7 @@ section .text
     MOV EBX,dword ptr [ESI + 0x24]      ; 004467fe
     PUSH EBX                            ; 00446801
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 00446802
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00446807
     MOV EDI,dword ptr [ESI + 0x28]      ; 0044680a
     XOR EBX,EBX                         ; 0044680d
@@ -108,7 +108,7 @@ section .text
     MOV EDI,dword ptr [ESI + 0x30]      ; 0044684b
     PUSH EDI                            ; 0044684e
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0044684f
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00446854
     CMP dword ptr [ESI + 0x28],0x0      ; 00446857
         ;   Label: LAB_00446857
@@ -133,7 +133,7 @@ section .text
     MOV EDX,dword ptr [ESI]             ; 00446872
     PUSH EDX                            ; 00446874
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 00446875
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     MOV ECX,0x40                        ; 0044687a
     ADD ESP,0x10                        ; 0044687f
     MOV EAX,dword ptr [ESI]             ; 00446882

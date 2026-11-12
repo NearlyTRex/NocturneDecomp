@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 250,
+    "complexity_score": 30,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 15,
-    "suspect_count": 22,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 85
   },
@@ -40,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_loadCameraFog_FUN_00454ab0",
-    "signature": "void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00454ab0(int param_1,undefined4 param_2,int param_3)"
+    "signature": "void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00454ab0(SFog *fog,_FILE *file_handle,int file_version)"
   },
   "function_calls": [
     {
@@ -106,11 +104,11 @@
         "stack_params": 3
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.032786885245901,
@@ -135,11 +133,37 @@
     },
     "pcode_op_count": 246
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00443400",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00450c00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00453e50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00447d10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 268,
+    "frame_size": 280,
     "local_size": 268,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -148,188 +172,38 @@
         "offset": -264,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "fog",
+        "offset": 4,
+        "size": 4,
+        "type": "SFog *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "file_version",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00454ab0(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00454ab0(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00454ab0(int param_1,uint param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fgets(local_108,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%d,%d,%d\\n\",param_1,param_1 + 4,param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%d,%d,%d\\n\",param_1,param_1 + 4,param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%d,%d,%d\\n\",param_1,param_1 + 4,param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%d,%d,%d\\n\",param_1,param_1 + 4,param_1 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fgets(local_108,0xff,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0xc,param_1 + 0x10,param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0xc,param_1 + 0x10,param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0xc,param_1 + 0x10,param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%f,%f,%f\\n\",param_1 + 0xc,param_1 + 0x10,param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%f,%f\\n\",param_1 + 0x18,param_1 + 0x1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%f,%f\\n\",param_1 + 0x18,param_1 + 0x1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%f,%f\\n\",param_1 + 0x18,param_1 + 0x1c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 < 0x1a) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20) = 0x42480000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005d7a42,param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005d7a42,param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 16,
       "match": "DAT_005d7a42",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005d7a42,param_1 + 0x20);",
+      "text": "_fscanf(file_handle,&DAT_005d7a42);",
       "type": "undefined_data"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

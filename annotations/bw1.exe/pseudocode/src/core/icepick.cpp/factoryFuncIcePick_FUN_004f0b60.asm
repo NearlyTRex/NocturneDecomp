@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_icepick_cpp_factoryFuncIcePick_FUN_004f0b60(void)
+; CIcePick * __cdecl core_icepick_cpp_factoryFuncIcePick_FUN_004f0b60(void)
 ;
 ;
 ; Called Functions:

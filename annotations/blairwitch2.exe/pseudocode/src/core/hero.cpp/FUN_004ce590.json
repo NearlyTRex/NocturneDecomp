@@ -513,7 +513,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = &param_1->model;",
+      "text": "model_ptr = &param_1->model;",
       "type": "unnamed_param"
     },
     {
@@ -585,7 +585,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1[2].flames[1].on_event + 0x14,\"objectToPickUp\");",
+      "text": "((CDemonActor **)(param_1[2].flames[1].on_event + 0x14),\"objectToPickUp\");",
       "type": "unnamed_param"
     },
     {
@@ -593,7 +593,7 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1[2].flames[1].on_event + 0x10,\"doorToOpen\");",
+      "text": "((CDemonActor **)(param_1[2].flames[1].on_event + 0x10),\"doorToOpen\");",
       "type": "unnamed_param"
     },
     {
@@ -601,7 +601,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1[2].flames[1].on_event + 0x1c,\"leverToPull\");",
+      "text": "((CDemonActor **)(param_1[2].flames[1].on_event + 0x1c),\"leverToPull\");",
       "type": "unnamed_param"
     },
     {
@@ -609,7 +609,7 @@
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1[2].flames[1].on_event + 0x20,\"ladderToClimb\");",
+      "text": "((CDemonActor **)(param_1[2].flames[1].on_event + 0x20),\"ladderToClimb\");",
       "type": "unnamed_param"
     },
     {
@@ -617,7 +617,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1[2].flames[1].on_event + 0x18,\"pushedObject\");",
+      "text": "((CDemonActor **)(param_1[2].flames[1].on_event + 0x18),\"pushedObject\");",
       "type": "unnamed_param"
     },
     {
@@ -673,7 +673,7 @@
       "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar2 = (CInventory *)(param_1[2].cloth_list.cloths + 7);",
+      "text": "pCVar1 = (CInventory *)(param_1[2].cloth_list.cloths + 7);",
       "type": "unnamed_param"
     },
     {
@@ -689,7 +689,7 @@
       "line": 79,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "core_inv_cpp_CInventory_load_FUN_004dc4b0(pCVar2,DAT_007bc034);",
+      "text": "core_inv_cpp_CInventory_load_FUN_004dc4b0(pCVar1,DAT_007bc034);",
       "type": "undefined_data"
     },
     {
@@ -697,7 +697,7 @@
       "line": 82,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "core_inv_cpp_CInventory_save_FUN_004dc2c0(pCVar2,DAT_007bc034);",
+      "text": "core_inv_cpp_CInventory_save_FUN_004dc2c0(pCVar1,DAT_007bc034);",
       "type": "undefined_data"
     },
     {
@@ -769,7 +769,7 @@
       "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "ppSVar4 = &param_1[2].follow_formation.slots[0xb].next;",
+      "text": "ppSVar3 = &param_1[2].follow_formation.slots[0xb].next;",
       "type": "unnamed_param"
     },
     {
@@ -777,7 +777,7 @@
       "line": 104,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (ppSVar4 != (SFollowSlotStruct **)&param_1[2].damage_decals[1].transform.m[2].z);",
+      "text": "} while (ppSVar3 != (SFollowSlotStruct **)&param_1[2].damage_decals[1].transform.m[2].z);",
       "type": "unnamed_param"
     },
     {
@@ -817,7 +817,7 @@
       "line": 116,
       "match": "param_1",
       "severity": "mild",
-      "text": "ppSVar4 = &param_1[2].follow_formation.slots[0xb].next;",
+      "text": "ppSVar3 = &param_1[2].follow_formation.slots[0xb].next;",
       "type": "unnamed_param"
     },
     {
@@ -825,7 +825,7 @@
       "line": 120,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (ppSVar4 != (SFollowSlotStruct **)&param_1[2].damage_decals[1].transform.m[2].z);",
+      "text": "} while (ppSVar3 != (SFollowSlotStruct **)&param_1[2].damage_decals[1].transform.m[2].z);",
       "type": "unnamed_param"
     },
     {
@@ -857,7 +857,7 @@
       "line": 128,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar2 = (CInventory *)(param_1[2].cloth_list.cloths + 7);",
+      "text": "pCVar1 = (CInventory *)(param_1[2].cloth_list.cloths + 7);",
       "type": "unnamed_param"
     },
     {
@@ -873,7 +873,7 @@
       "line": 130,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "core_inv_cpp_CInventory_save_FUN_004dc2c0(pCVar2,DAT_007bc034);",
+      "text": "core_inv_cpp_CInventory_save_FUN_004dc2c0(pCVar1,DAT_007bc034);",
       "type": "undefined_data"
     },
     {
@@ -881,7 +881,7 @@
       "line": 133,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "core_inv_cpp_CInventory_load_FUN_004dc4b0(pCVar2,DAT_007bc034);",
+      "text": "core_inv_cpp_CInventory_load_FUN_004dc4b0(pCVar1,DAT_007bc034);",
       "type": "undefined_data"
     }
   ],

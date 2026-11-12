@@ -15,7 +15,7 @@ CHealthItemSmall * core_health_cpp_CHealthItemSmall_dtor_FUN_004d21d0(CHealthIte
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHealthItemSmallTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHealthItemSmallTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

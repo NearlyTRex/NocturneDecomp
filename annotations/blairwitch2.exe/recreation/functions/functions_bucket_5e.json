@@ -207,32 +207,52 @@
       "00460c70",
       "004e4500"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":91,
     "method":"openFileWithExtension",
     "name":"core_ground.cpp_openFileWithExtension_FUN_004ca6de",
+    "params":[
+      {
+        "name":"directory",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"new_extension",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"open_mode",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "header":"stdio",
+      "kind":"system",
+      "name":"_FILE",
+      "ptr":1
     },
     "tu":"core/ground.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"004e8e5e",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_004e8e5e",
-    "name":"engine_matrix.c_FUN_004e8e5e",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/matrix.c",
     "variadic":false
   },
   {
@@ -257,14 +277,40 @@
   },
   {
     "addr":"005155de",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":74,
     "method":"didPhaseCross",
     "name":"core_pendulum.cpp_didPhaseCross_FUN_005155de",
+    "params":[
+      {
+        "name":"threshold",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"old_phase",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"new_phase",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/pendulum.cpp",
@@ -332,32 +378,35 @@
   },
   {
     "addr":"00585d5e",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":20,
     "method":"calculateWaveHeight",
     "name":"core_water.cpp_calculateWaveHeight_FUN_00585d5e",
+    "params":[
+      {
+        "name":"x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/water.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"005b0cde",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_005b0cde",
-    "name":"core_cloth.cpp_FUN_005b0cde",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/cloth.cpp",
     "variadic":false
   }
 ]

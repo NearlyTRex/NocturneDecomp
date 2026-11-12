@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_004566c0(int *param_1,SIntersectXZCylinder *param_2)
+; uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_004566c0(STriangleRef *triangle,SIntersectXZCylinder *cylinder)
 ;
+; Parameters:
+; STriangleRef *   Stack[0x4]:4   triangle
+; SIntersectXZCylinder * Stack[0x8]:4   cylinder
 ; Local Variables:
 ; undefined4       Stack[-0x84]:4  local_84
 ; undefined4       Stack[-0x80]:4  local_80
@@ -477,7 +480,7 @@ section .text
     PUSH EBP                            ; 00456b31
     PUSH EBX                            ; 00456b32
     CALL core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00456620 ; 00456b33
-        ;   XREF to: 00456620 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00456620()
+        ;   XREF to: 00456620 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder * cylinder, CVector3f * segment_start, CVector3f * segment_end)
     ADD ESP,0xc                         ; 00456b38
     MOV EDI,dword ptr [ESP + 0x50]      ; 00456b3b
     PUSH EDI                            ; 00456b3f
@@ -485,7 +488,7 @@ section .text
     PUSH EBX                            ; 00456b41
     MOV ESI,EAX                         ; 00456b42
     CALL core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00456620 ; 00456b44
-        ;   XREF to: 00456620 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00456620()
+        ;   XREF to: 00456620 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder * cylinder, CVector3f * segment_start, CVector3f * segment_end)
     ADD ESP,0xc                         ; 00456b49
     OR EAX,ESI                          ; 00456b4c
     ADD ESP,0x74                        ; 00456b4e

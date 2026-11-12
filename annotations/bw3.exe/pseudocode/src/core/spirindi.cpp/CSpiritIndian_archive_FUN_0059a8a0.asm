@@ -59,7 +59,7 @@ section .text
     ADD EBX,0x34168                     ; 0059a8fe
     PUSH EBX                            ; 0059a904
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0059a905
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059a90a
     POP ESI                             ; 0059a90d
     POP EBX                             ; 0059a90e

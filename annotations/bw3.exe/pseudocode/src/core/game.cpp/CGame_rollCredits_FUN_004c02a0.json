@@ -323,6 +323,32 @@
     },
     "pcode_op_count": 1583
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004be430",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2797
+    },
+    "bw1.exe": {
+      "addr": "004d8e50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3038
+    },
+    "nocedit.exe": {
+      "addr": "004e4010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2079
+    },
+    "nocturne.exe": {
+      "addr": "004a6e90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3038
+    }
+  },
   "stack_frame": {
     "frame_size": 5460,
     "local_size": 5456,
@@ -479,7 +505,7 @@
       "line": 45,
       "match": "(uint *)((int)local_154c",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_154c + iVar11) = 0;",
+      "text": "*(uint *)((int)local_154c + iVar10) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -487,7 +513,7 @@
       "line": 50,
       "match": "DAT_005c3b9d",
       "severity": "mild",
-      "text": "p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e);",
+      "text": "stream = engine_dosio_cpp_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e);",
       "type": "undefined_data"
     },
     {
@@ -495,7 +521,7 @@
       "line": 50,
       "match": "DAT_005c3b8e",
       "severity": "mild",
-      "text": "p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e);",
+      "text": "stream = engine_dosio_cpp_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e);",
       "type": "undefined_data"
     },
     {
@@ -511,7 +537,7 @@
       "line": 69,
       "match": "(void **)((int)local_154c",
       "severity": "moderate",
-      "text": "*(void **)((int)local_154c + iVar11) = pvVar8;",
+      "text": "*(void **)((int)local_154c + iVar10) = pvVar7;",
       "type": "pointer_cast"
     },
     {
@@ -519,7 +545,7 @@
       "line": 76,
       "match": "(char **)((int)local_154c",
       "severity": "moderate",
-      "text": "pcVar10 = *(char **)((int)local_154c + iVar11);",
+      "text": "pcVar9 = *(char **)((int)local_154c + iVar10);",
       "type": "pointer_cast"
     },
     {
@@ -527,7 +553,7 @@
       "line": 114,
       "match": "(char **)((int)local_154c",
       "severity": "moderate",
-      "text": "pcVar12 = *(char **)((int)local_154c + local_30);",
+      "text": "pcVar11 = *(char **)((int)local_154c + local_30);",
       "type": "pointer_cast"
     },
     {
@@ -535,7 +561,7 @@
       "line": 172,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar11 = (**(code **)*0x01D70A78)(0x01D70A78,1);",
+      "text": "iVar10 = (**(code **)*0x01D70A78)(0x01D70A78,1);",
       "type": "unresolved_funcptr"
     },
     {

@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_armour.cpp_factoryFuncArmour_FUN_0040ee10
 // Address: 0040ee10
-void factoryFuncArmour(void);
+CArmour * __cdecl factoryFuncArmour(void);
 
 // Original: core_armour.cpp_CArmour_getActorType_FUN_0040ee30
 // Address: 0040ee30
@@ -59,4 +59,4 @@ CFlame * __cdecl CFlame::dtor(CFlame *this_ptr,uint flags);
 
 // Original: core_armour.cpp_FUN_0040f2b0
 // Address: 0040f2b0
-void FUN_0040f2b0(undefined4 param_1);
+void FUN_0040f2b0(void *param_1);

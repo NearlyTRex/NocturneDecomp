@@ -56,7 +56,8 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004e8180(CMarquee *t
           do {
             fStack_30 = (float)iVar2;
             iStack_c = iVar2;
-            core_course_cpp_FUN_00438c40(pCStack_20,fStack_30,&CStack_8c,&CStack_44);
+            core_course_cpp_CCourse_evaluate_FUN_00438c40
+                      (pCStack_20,fStack_30,&CStack_8c,&CStack_44);
             core_actor_cpp_FUN_00408d70(this_ptr,&CStack_8c);
             CStack_74.x = fStack_b0;
             *(float *)((int)&CStack_74 + (uint)bVar3 * -8 + 4) = afStack_ac[(uint)bVar3 * -2];
@@ -86,7 +87,8 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004e8180(CMarquee *t
             if (iVar2 % this_ptr->phase != 0) {
               iStack_c = iStack_10;
               fStack_34 = (float)iStack_10;
-              core_course_cpp_FUN_00438c40(pCStack_18,fStack_34,&CStack_80,&CStack_50);
+              core_course_cpp_CCourse_evaluate_FUN_00438c40
+                        (pCStack_18,fStack_34,&CStack_80,&CStack_50);
               core_actor_cpp_FUN_00408d70(this_ptr,&CStack_80);
               CStack_c8.x = fStack_98;
               *(float *)((int)&CStack_c8 + (uint)bVar3 * -8 + 4) = afStack_ac[(uint)bVar3 * -2 + 6];
@@ -114,7 +116,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_004e8180(CMarquee *t
           pCStack_1c = pCVar1;
           fStack_38 = (float)iVar2;
           iStack_c = iVar2;
-          core_course_cpp_FUN_00438c40(pCStack_1c,fStack_38,&CStack_68,&CStack_5c);
+          core_course_cpp_CCourse_evaluate_FUN_00438c40(pCStack_1c,fStack_38,&CStack_68,&CStack_5c);
           core_actor_cpp_FUN_00408d70(this_ptr,&CStack_68);
           CStack_bc.x = afStack_ac[2];
           *(float *)((int)&CStack_bc + (uint)bVar3 * -8 + 4) = afStack_ac[(uint)bVar3 * -2 + 3];

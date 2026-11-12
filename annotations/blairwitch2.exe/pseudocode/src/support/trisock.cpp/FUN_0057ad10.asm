@@ -113,7 +113,7 @@ section .text
     LEA EAX,[EBX + 0x600]               ; 0057b4fd
     PUSH EAX                            ; 0057b503
     CALL support_trisock.cpp_formatSocketAddress_FUN_00578f50 ; 0057b504
-        ;   XREF to: 00578f50 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_formatSocketAddress_FUN_00578f50()
+        ;   XREF to: 00578f50 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_formatSocketAddress_FUN_00578f50(SNetworkAddr * network_addr, char * output_buffer)
     ADD ESP,0x8                         ; 0057b509
     LEA EAX,[ESP + 0x7b8]               ; 0057b50c
     PUSH EAX                            ; 0057b513

@@ -203,7 +203,7 @@ void __cdecl CLaserBeam::init(CLaserBeam *this_ptr,CVector3f *origin,CVector3f *
 
 // Original: core_fire.cpp_computeScreenSpaceSize_FUN_0049b0e0
 // Address: 0049b0e0
-float __cdecl computeScreenSpaceSize(float param_1,float param_2);
+float __cdecl computeScreenSpaceSize(float depth,float min_size);
 
 // Original: core_fire.cpp_CLaserBeam_render_FUN_0049b1d0
 // Address: 0049b1d0
@@ -395,7 +395,7 @@ void __cdecl CRainDrop::render(CRainDrop *this_ptr);
 
 // Original: core_fire.cpp_allocateSmokeParticle_FUN_004a13ee
 // Address: 004a13ee
-undefined * allocateSmokeParticle(void);
+CSmokeParticle * __cdecl allocateSmokeParticle(void);
 
 // Original: core_fire.cpp_allocateBulletHole_FUN_004a1420
 // Address: 004a1420
@@ -545,21 +545,21 @@ void FUN_004a3c50(undefined4 param_1,undefined4 param_2,undefined4 param_3,int p
 // Address: 004a3cf0
 void __cdecl CFireEffect::createTrailSegment(CFireEffect *this_ptr,CVector3f *position,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr);
 
-// Original: core_fire.cpp_FUN_004a3d50
+// Original: core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004a3d50
 // Address: 004a3d50
-void FUN_004a3d50(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,float param_6,SMRGLTextureBasic *param_7);
+void __cdecl CFireEffect::createTrailFromPoints(CFireEffect *this_ptr,CVector3f *start_point,CVector3f *end_point,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr);
 
 // Original: core_fire.cpp_CFireEffect_createShell_FUN_004a3e70
 // Address: 004a3e70
 void __cdecl CFireEffect::createShell(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr);
 
-// Original: core_fire.cpp_FUN_004a3ed0
+// Original: core_fire.cpp_CFireEffect_createPopcorn_FUN_004a3ed0
 // Address: 004a3ed0
-void FUN_004a3ed0(undefined4 param_1,CVector3f *param_2,CVector3f *param_3);
+void __cdecl CFireEffect::createPopcorn(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity);
 
-// Original: core_fire.cpp_FUN_004a3f20
+// Original: core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20
 // Address: 004a3f20
-void FUN_004a3f20(undefined4 param_1,CVector3f *param_2,CVector3f *param_3);
+void __cdecl CFireEffect::createRainDrop(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity);
 
 // Original: core_fire.cpp_CFireEffect_createRing_FUN_004a3f70
 // Address: 004a3f70

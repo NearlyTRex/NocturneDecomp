@@ -15,7 +15,7 @@ CDisease * core_disease_cpp_CDisease_dtor_FUN_0045c110(CDisease *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDiseaseTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDiseaseTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

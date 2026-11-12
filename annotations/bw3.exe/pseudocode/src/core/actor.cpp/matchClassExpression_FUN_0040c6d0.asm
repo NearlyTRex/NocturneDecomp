@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_actor_cpp_matchClassExpression_FUN_0040c6d0(undefined4 param_1,undefined4 *param_2)
+; int __cdecl core_actor_cpp_matchClassExpression_FUN_0040c6d0(CDemonActorType *type_ptr,char **parse_pos)
 ;
+; Parameters:
+; CDemonActorType * Stack[0x4]:4   type_ptr
+; char * *         Stack[0x8]:4   parse_pos
 ;
 ; XREF[2]:
 ;   core_actor.cpp_matchClassTerm_FUN_0040c5b0 at 0040c60f
@@ -60,7 +63,7 @@ section .text
         ;   Label: LAB_0040c711
     PUSH EBP                            ; 0040c712
     CALL core_actor.cpp_matchClassTerm_FUN_0040c5b0 ; 0040c713
-        ;   XREF to: 0040c5b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchClassTerm_FUN_0040c5b0()
+        ;   XREF to: 0040c5b0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchClassTerm_FUN_0040c5b0(CDemonActorType * type_ptr, char * * parse_pos)
     ADD ESP,0x8                         ; 0040c718
     TEST EAX,EAX                        ; 0040c71b
     JL 0x0040c734                       ; 0040c71d
@@ -104,7 +107,7 @@ section .text
         ;   Label: LAB_0040c74d
     PUSH EBP                            ; 0040c74e
     CALL core_actor.cpp_matchClassTerm_FUN_0040c5b0 ; 0040c74f
-        ;   XREF to: 0040c5b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchClassTerm_FUN_0040c5b0()
+        ;   XREF to: 0040c5b0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchClassTerm_FUN_0040c5b0(CDemonActorType * type_ptr, char * * parse_pos)
     ADD ESP,0x8                         ; 0040c754
     TEST EAX,EAX                        ; 0040c757
     JL 0x0040c734                       ; 0040c759
@@ -118,7 +121,7 @@ section .text
         ;   Label: LAB_0040c764
     PUSH EBP                            ; 0040c765
     CALL core_actor.cpp_matchClassTerm_FUN_0040c5b0 ; 0040c766
-        ;   XREF to: 0040c5b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchClassTerm_FUN_0040c5b0()
+        ;   XREF to: 0040c5b0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchClassTerm_FUN_0040c5b0(CDemonActorType * type_ptr, char * * parse_pos)
     ADD ESP,0x8                         ; 0040c76b
     TEST EAX,EAX                        ; 0040c76e
     JL 0x0040c734                       ; 0040c770

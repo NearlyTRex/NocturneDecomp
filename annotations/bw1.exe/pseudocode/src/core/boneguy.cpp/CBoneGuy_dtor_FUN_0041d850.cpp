@@ -18,7 +18,7 @@ CBoneGuy * core_boneguy_cpp_CBoneGuy_dtor_FUN_0041d850(CBoneGuy *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBoneGuyTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBoneGuyTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

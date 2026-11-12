@@ -18,7 +18,7 @@ CSpiritShadow * core_shadow_cpp_CSpiritShadow_dtor_FUN_005460b0(CSpiritShadow *t
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSpiritShadowTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSpiritShadowTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

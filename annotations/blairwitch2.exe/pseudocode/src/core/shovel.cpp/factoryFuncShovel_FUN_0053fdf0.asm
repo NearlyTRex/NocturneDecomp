@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shovel_cpp_factoryFuncShovel_FUN_0053fdf0(void)
+; CShovel * __cdecl core_shovel_cpp_factoryFuncShovel_FUN_0053fdf0(void)
 ;
 ;
 ; Called Functions:

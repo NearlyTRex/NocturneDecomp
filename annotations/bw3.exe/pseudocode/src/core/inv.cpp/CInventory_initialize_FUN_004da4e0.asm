@@ -65,7 +65,7 @@ section .text
     PUSH 0x5c5f22                       ; 004da535 | = "CAmmo"
         ;   Label: LAB_004da535
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 004da53a
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 004da53f
     MOV dword ptr [EDI + 0x464],EAX     ; 004da542
     PUSH EAX                            ; 004da548

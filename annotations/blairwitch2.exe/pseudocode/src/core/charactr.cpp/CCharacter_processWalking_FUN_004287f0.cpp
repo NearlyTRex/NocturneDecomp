@@ -15,6 +15,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
   int iVar2;
   CPathMap *path_map;
   CDemonActor *pCVar3;
+  CDemonActor *actor_ptr;
   byte bVar4;
   float afStackY_1054 [1012];
   CVector3f *direction;
@@ -38,19 +39,19 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
     if ((this_ptr->walk_timeout < 0.0) ||
        (fVar5 = this_ptr->walk_timeout - delta_time, this_ptr->walk_timeout = fVar5, 0.0 < fVar5)) {
       if (this_ptr->door_target == (CDoor *)0x0) {
-        pCVar3 = this_ptr->walk_to_target;
+        actor_ptr = this_ptr->walk_to_target;
         if ((((0.0 <= this_ptr->walk_min_distance) && (this_ptr->is_spectral == 0)) &&
-            (iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                               (pCVar3,g_CWayPointClassInfo.name_hash), iVar2 != 0)) &&
-           (pCVar3 = (CDemonActor *)core_charactr_cpp_FUN_0042b420(this_ptr,iVar2),
-           pCVar3 == (CDemonActor *)0x0)) {
-          engine_console_cpp_FUN_00436710
-                    (g_CConsolePtr,"@%s can't figure out next waypoint trying to reach %s\n" + 1,this_ptr,
-                     this_ptr->walk_to_target);
+            (pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                                (actor_ptr,g_CWayPointClassInfo.name_hash),
+            pCVar3 != (CDemonActor *)0x0)) &&
+           (actor_ptr = (CDemonActor *)core_charactr_cpp_FUN_0042b420(this_ptr,pCVar3),
+           actor_ptr == (CDemonActor *)0x0)) {
+          engine_console_cpp_CConsole_printf_FUN_00436710
+                    (g_CConsolePtr,"@%s can't figure out next waypoint trying to reach %s\n" + 1);
           return 1;
         }
         core_charactr_cpp_FUN_00428260
-                  (this_ptr,pCVar3,this_ptr->walk_min_distance,this_ptr->walk_max_distance,
+                  (this_ptr,actor_ptr,this_ptr->walk_min_distance,this_ptr->walk_max_distance,
                    &this_ptr->walk_state);
         return 1;
       }
@@ -99,7 +100,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_004287f0(CCharacter 
       }
       fStack_18 = this_ptr->turn_angle_accumulator;
       fStack_1c = this_ptr->turn_speed;
-      fVar6 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_18);
+      fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_18);
       fVar5 = -fStack_1c;
       if ((fVar5 <= fVar6) && (fVar5 = fVar6, fStack_1c < fVar6)) {
         fVar5 = fStack_1c;

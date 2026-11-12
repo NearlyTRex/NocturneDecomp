@@ -12,7 +12,7 @@ void __cdecl shape_edittool_cpp_CInputString_pasteFromClipboard_FUN_00493150(CIn
   char character;
   char *pcVar1;
   
-  pcVar1 = shape_edittool_cpp_FUN_00498210(g_CEditorToolsPtr);
+  pcVar1 = shape_edittool_cpp_CEditorTools_getClipboardText_FUN_00498210(g_CEditorToolsPtr);
   while( true ) {
     character = *pcVar1;
     if (character == '\0') break;

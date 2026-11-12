@@ -89,7 +89,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0044d7b0
     PUSH EBX                            ; 0044d7b4
     CALL core_dstrendr.cpp_verticalBlur3TapMMXStride320_FUN_004712b2 ; 0044d7b5
-        ;   XREF to: 004712b2 (UNCONDITIONAL_CALL)  ; undefined core_dstrendr.cpp_verticalBlur3TapMMXStride320_FUN_004712b2()
+        ;   XREF to: 004712b2 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_verticalBlur3TapMMXStride320_FUN_004712b2(ulonglong * output_buffer, ulonglong * input_buffer, int pixel_count)
     ADD ESP,0xc                         ; 0044d7ba
     MOV EAX,dword ptr [ESP]             ; 0044d7bd
     INC EDI                             ; 0044d7c0

@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_npc.cpp_factoryFuncNPC_FUN_00508f10
 // Address: 00508f10
-void factoryFuncNPC(void);
+CNPC * __cdecl factoryFuncNPC(void);
 
 // Original: core_npc.cpp_CNPC_getActorType_FUN_00508f30
 // Address: 00508f30

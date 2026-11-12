@@ -27,23 +27,23 @@ void __cdecl CDemonTriangle::buildCollision(CDemonTriangle *this_ptr,CVector3f *
 
 // Original: core_dtri.cpp_rayTriangleIntersection_FUN_00478ac0
 // Address: 00478ac0
-float rayTriangleIntersection(float *param_1,float *param_2,float *param_3);
+float __cdecl rayTriangleIntersection(CDemonTriangle *triangle,CVector3f *rayOrigin,CVector3f *rayDirection);
 
 // Original: core_dtri.cpp_cylinderEdgeIntersection_FUN_00478cd0
 // Address: 00478cd0
-undefined4 __cdecl cylinderEdgeIntersection(float *param_1);
+int __cdecl cylinderEdgeIntersection(SIntersectXZCylinder *cylinder);
 
 // Original: core_dtri.cpp_cylinderEdgeTestWithHeight_FUN_00478fb0
 // Address: 00478fb0
-void __cdecl cylinderEdgeTestWithHeight(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
+void __cdecl cylinderEdgeTestWithHeight(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2);
 
 // Original: core_dtri.cpp_cylinderTriangleTest_FUN_00479050
 // Address: 00479050
-void __cdecl cylinderTriangleTest(float *param_1,undefined4 *param_2);
+void __cdecl cylinderTriangleTest(CDemonTriangle *triangle,SIntersectXZCylinder *cylinder);
 
 // Original: core_dtri.cpp_rayEdgeHeightTest_FUN_00479450
 // Address: 00479450
-undefined4 __cdecl rayEdgeHeightTest(float *param_1,float *param_2,float param_3,float *param_4);
+int __cdecl rayEdgeHeightTest(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
 
 // Original: core_dtri.cpp_FUN_004795c0
 // Address: 004795c0
@@ -51,7 +51,7 @@ int __cdecl FUN_004795c0(CDemonTriangle *triangle,CVector3f *position,float sear
 
 // Original: core_dtri.cpp_clipLineToPlane_FUN_00479970
 // Address: 00479970
-void __cdecl clipLineToPlane(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10);
+void __cdecl clipLineToPlane(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
 // Original: core_dtri.cpp_clipPolygonToRight_FUN_00479de0
 // Address: 00479de0
@@ -63,7 +63,7 @@ void __cdecl clipPolygonToFar(float z_far);
 
 // Original: core_dtri.cpp_clipTriangleToBounds_FUN_0047a3d0
 // Address: 0047a3d0
-undefined4 clipTriangleToBounds(undefined4 *param_1,float *param_2,float *param_3);
+int __cdecl clipTriangleToBounds(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max);
 
 // Original: core_dtri.cpp_getClippedTriangleCount_FUN_0047ae00
 // Address: 0047ae00

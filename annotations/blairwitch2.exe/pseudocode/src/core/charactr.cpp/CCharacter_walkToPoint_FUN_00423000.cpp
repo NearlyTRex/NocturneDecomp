@@ -108,7 +108,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000(CCharacter *th
   local_19c = ABS(fVar5);
   if (0.0 < SQRT(direction->z * direction->z +
                  direction->x * direction->x + direction->y * direction->y)) {
-    local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_b8 - local_d0);
+    local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_b8 - local_d0);
     local_1a0 = ABS(local_18);
   }
   if (((local_19c < min_distance + (float)_DAT_005ccc3e) &&
@@ -160,8 +160,8 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000(CCharacter *th
       local_154[(uint)bVar6 * -2 + 0x2a] = local_154[(uint)bVar6 * -2 + 0x12];
       local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x2b] =
            local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x13];
-      fVar3 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                               (local_ac - (this_ptr->base).orient.vec.y);
+      fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                        (local_ac - (this_ptr->base).orient.vec.y);
       fVar5 = -local_1c;
       if ((-local_1c <= fVar3) && (fVar5 = fVar3, local_1c < fVar3)) {
         fVar5 = local_1c;
@@ -200,7 +200,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000(CCharacter *th
       local_154[(uint)bVar6 * -2 + 9] = local_154[(uint)bVar6 * -2 + 0x1b];
       local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10] =
            local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x1c];
-      fVar3 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_130 - local_198);
+      fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_130 - local_198);
       fVar5 = -local_1c;
       if ((fVar5 <= fVar3) && (fVar5 = fVar3, local_1c < fVar3)) {
         fVar5 = local_1c;
@@ -225,7 +225,8 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000(CCharacter *th
                        (this_ptr->base).direction_hint);
     if (iVar4 == 0) {
       if (local_3c == 0) {
-        engine_console_cpp_FUN_00436710(g_CConsolePtr,"CCharacter::walkToPoint - go somewhere failed\n");
+        engine_console_cpp_CConsole_printf_FUN_00436710
+                  (g_CConsolePtr,"CCharacter::walkToPoint - go somewhere failed\n");
         return -1;
       }
       return 1;
@@ -239,7 +240,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000(CCharacter *th
     }
     *pfVar2 = *pfVar2 + local_2c;
     local_18 = local_164.y - (this_ptr->base).orient.vec.y;
-    fVar3 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_18);
+    fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_18);
     fVar5 = -local_1c;
     if ((fVar5 <= fVar3) && (fVar5 = fVar3, local_1c < fVar3)) {
       fVar5 = local_1c;

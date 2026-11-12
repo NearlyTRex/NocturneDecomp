@@ -39,7 +39,7 @@ section .text
     ADD EBX,0x4                         ; 004079a6
     INC ESI                             ; 004079a9
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70 ; 004079aa
-        ;   XREF to: 00405b70 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70()
+        ;   XREF to: 00405b70 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70(SMRGLHeaderPrimitive * prim)
     MOV EBP,dword ptr [0x007ba070]      ; 004079af | DAT_007ba070
     ADD ESP,0x4                         ; 004079b5
     CMP ESI,EBP                         ; 004079b8
@@ -60,7 +60,7 @@ section .text
     PUSH 0x7ba074                       ; 004079ce
     PUSH 0x622014                       ; 004079d3
     CALL engine_special.cpp_drawPolyList_FUN_0055f950 ; 004079d8
-        ;   XREF to: 0055f950 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList_FUN_0055f950()
+        ;   XREF to: 0055f950 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_0055f950(SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 004079dd
     XOR EAX,EAX                         ; 004079e0
     MOV [0x007ba070],EAX                ; 004079e2 | DAT_007ba070

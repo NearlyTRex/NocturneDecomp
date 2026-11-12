@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_somebodyWriteMe_FUN_005b544e(void)
+; void __cdecl core_xform_cpp_somebodyWriteMe_FUN_005b544e(void)
 ;
 ;
 ; Referenced Globals:

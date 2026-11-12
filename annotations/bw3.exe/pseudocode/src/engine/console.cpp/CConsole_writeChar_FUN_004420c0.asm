@@ -8,7 +8,7 @@
 ; char             Stack[0x8]:1   character
 ;
 ; XREF[1]:
-;   engine_console.cpp_FUN_00441ff0 at 00442053
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0 at 00442053
 ;
 ; Called Functions:
 ;   engine_console.cpp_CConsole_scrollUp_FUN_004421d0

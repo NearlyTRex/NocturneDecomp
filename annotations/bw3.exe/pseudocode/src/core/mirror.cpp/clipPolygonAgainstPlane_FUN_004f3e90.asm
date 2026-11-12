@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(float *param_1,float *param_2,uint param_3,int param_4,int *param_5)
+; void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count)
 ;
+; Parameters:
+; SClipPlane *     Stack[0x4]:4   clip_plane
+; CVector3f *      Stack[0x8]:4   input_vertices
+; int              Stack[0xc]:4   input_count
+; CVector3f *      Stack[0x10]:4   output_vertices
+; int *            Stack[0x14]:4   output_count
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -127,7 +133,7 @@ section .text
     PUSH EBP                            ; 004f3f6e
     PUSH ESI                            ; 004f3f6f
     CALL core_mirror.cpp_computePlaneIntersection_FUN_004f3d30 ; 004f3f70
-        ;   XREF to: 004f3d30 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_computePlaneIntersection_FUN_004f3d30()
+        ;   XREF to: 004f3d30 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_computePlaneIntersection_FUN_004f3d30(SClipPlane * clip_plane, CVector3f * vertex_a, CVector3f * vertex_b, CVector3f * out_intersection)
     MOV EDX,dword ptr [EBX]             ; 004f3f75
     INC EDX                             ; 004f3f77
     ADD ESP,0x10                        ; 004f3f78
@@ -157,7 +163,7 @@ section .text
     PUSH EDX                            ; 004f3fa8
     PUSH ESI                            ; 004f3fa9
     CALL core_mirror.cpp_computePlaneIntersection_FUN_004f3d30 ; 004f3faa
-        ;   XREF to: 004f3d30 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_computePlaneIntersection_FUN_004f3d30()
+        ;   XREF to: 004f3d30 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_computePlaneIntersection_FUN_004f3d30(SClipPlane * clip_plane, CVector3f * vertex_a, CVector3f * vertex_b, CVector3f * out_intersection)
     MOV EDX,dword ptr [EBX]             ; 004f3faf
     INC EDX                             ; 004f3fb1
     ADD ESP,0x10                        ; 004f3fb2

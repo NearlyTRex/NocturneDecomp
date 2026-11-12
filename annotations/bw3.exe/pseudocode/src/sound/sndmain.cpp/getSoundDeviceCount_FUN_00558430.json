@@ -2,29 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 152,
+    "complexity_score": 153,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 28,
     "suspect_count": 12,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 92
+    "total_lines": 93
   },
   "cross_references": [
     {
       "addr": "004e94f0",
       "from_addr": "004e9c40",
       "name": "core_menu.cpp_FUN_004e94f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00559520",
-      "from_addr": "0055954e",
-      "name": "sound_sndmain.cpp_FUN_00559520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,6 +43,12 @@
       "addr": "00558640",
       "from_addr": "00558658",
       "name": "sound_sndmain.cpp_selectSoundDevice_FUN_00558640",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559520",
+      "from_addr": "0055954e",
+      "name": "sound_sndmain.cpp_writeIni_FUN_00559520",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -122,6 +122,32 @@
     },
     "pcode_op_count": 235
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00552890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005752c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ab2e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00528230",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -160,7 +186,7 @@
       "line": 17,
       "match": "DAT_00604238",
       "severity": "mild",
-      "text": "(iVar2,DAT_00604238 * 0x118 + 0x2cf29c0);",
+      "text": "(UVar2,(SSoundDeviceInfo *)(DAT_00604238 * 0x118 + 0x2cf29c0));",
       "type": "undefined_data"
     },
     {
@@ -200,12 +226,12 @@
       "line": 25,
       "match": "DAT_00604238",
       "severity": "mild",
-      "text": "(iVar2,DAT_00604238 * 0x118 + 0x2cf29c0), iVar1 != 0))) {",
+      "text": "(UVar2,(SSoundDeviceInfo *)(DAT_00604238 * 0x118 + 0x2cf29c0)),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_00604238",
       "severity": "mild",
       "text": "DAT_00604238 = DAT_00604238 + 1;",
@@ -213,7 +239,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_00604238",
       "severity": "mild",
       "text": "DAT_00604238 = DAT_00604238 + 1;",
@@ -221,7 +247,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 30,
       "match": "DAT_00604238",
       "severity": "mild",
       "text": "return DAT_00604238;",

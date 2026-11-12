@@ -21,9 +21,9 @@ CTextureList * __cdecl CTextureList::dtor(CTextureList *this_ptr,uint flags);
 // Address: 005734b0
 void __cdecl CTextureList::load(CTextureList *this_ptr,char *filename);
 
-// Original: core_texlist.cpp_FUN_00573770
+// Original: core_texlist.cpp_CTextureList_save_FUN_00573770
 // Address: 00573770
-void FUN_00573770(int *param_1,char *param_2);
+void __cdecl CTextureList::save(CTextureList *this_ptr,char *filename);
 
 // Original: core_texlist.cpp_CTextureList_captureAllTextures_FUN_005738d0
 // Address: 005738d0

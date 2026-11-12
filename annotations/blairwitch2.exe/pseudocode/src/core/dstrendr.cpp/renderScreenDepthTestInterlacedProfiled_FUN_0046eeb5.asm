@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN_0046eeb5(void)
+; void __edi_esi_ebx core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN_0046eeb5(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 ;
 ;
 ; XREF[1]:

@@ -22,7 +22,7 @@
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90
-;   core_set.cpp_CDemonSet_FUN_0050ad20
+;   core_set.cpp_CDemonSet_clearLights_FUN_0050ad20
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0
 ;   engine_2d.c_drawText_FUN_00402600
 ;   engine_special.cpp_clearScreen_FUN_0052ee70
@@ -127,8 +127,8 @@ section .text
     ADD ESP,0x8                         ; 004d939b
     MOV EAX,[0x005be368]                ; 004d939e | g_CDemonSetPtr
     PUSH EAX                            ; 004d93a3 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0050ad20 ; 004d93a4
-        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050ad20(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_0050ad20 ; 004d93a4
+        ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_0050ad20(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004d93a9
     MOV EDX,dword ptr [0x005be368]      ; 004d93ac | g_CDemonSetPtr
     PUSH EDX                            ; 004d93b2 | g_CDemonSetInstance

@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 195,
+    "complexity_score": 201,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
+    "pseudocode_lines": 111,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 347
+    "total_lines": 353
   },
   "cross_references": [],
   "function": {
@@ -162,6 +162,32 @@
     },
     "pcode_op_count": 723
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004079f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00407820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00407aa0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00408fc0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -189,15 +215,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_0060b014",
       "severity": "mild",
-      "text": "engine_special_cpp_drawPolyList_FUN_00565c70(&DAT_0060b014,0x7dd9f4,_DAT_007dd9f0,0xcd);",
+      "text": "((SRenderVertex *)&DAT_0060b014,(SMRGLPrimitiveQuad **)0x7dd9f4,_DAT_007dd9f0,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 38,
       "match": "DAT_005fba40",
       "severity": "mild",
       "text": "DAT_005fba40 = 1;",
@@ -205,7 +231,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 46,
       "match": "DAT_005fba40",
       "severity": "mild",
       "text": "if (DAT_005fba40 != 0) {",
@@ -213,15 +239,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 79,
       "match": "DAT_0060b014",
       "severity": "mild",
-      "text": "engine_special_cpp_drawPolyList_FUN_00565c70(&DAT_0060b014,0x7dd9f4,_DAT_007dd9f0,0xcd);",
+      "text": "((SRenderVertex *)&DAT_0060b014,(SMRGLPrimitiveQuad **)0x7dd9f4,_DAT_007dd9f0,",
       "type": "undefined_data"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 96,
+      "line": 102,
       "match": "*(SMRGLHeaderExtended **)(_DAT_007dd9f0 * 4 + 0x7dd9f4",
       "severity": "moderate",
       "text": "*(SMRGLHeaderExtended **)(_DAT_007dd9f0 * 4 + 0x7dd9f4) = mrgl;",
@@ -229,10 +255,10 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 106,
+      "line": 112,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "mrgl = (SMRGLHeaderExtended *)((int)&(mrgl->base).type + iVar4);",
+      "text": "mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);",
       "type": "pointer_cast"
     }
   ]

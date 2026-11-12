@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gabriela_cpp_factoryFuncGabriella_FUN_004ad290(void)
+; CGabriella * __cdecl core_gabriela_cpp_factoryFuncGabriella_FUN_004ad290(void)
 ;
 ;
 ; Called Functions:

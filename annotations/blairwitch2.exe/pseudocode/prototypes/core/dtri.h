@@ -27,23 +27,23 @@ void __cdecl CDemonTriangle::buildCollision(CDemonTriangle *this_ptr,CVector3f *
 
 // Original: core_dtri.cpp_rayTriangleIntersection_FUN_00477a50
 // Address: 00477a50
-float rayTriangleIntersection(float *param_1,float *param_2,float *param_3);
+float __cdecl rayTriangleIntersection(CDemonTriangle *triangle,CVector3f *rayOrigin,CVector3f *rayDirection);
 
 // Original: core_dtri.cpp_cylinderEdgeIntersection_FUN_00477c60
 // Address: 00477c60
-undefined4 __cdecl cylinderEdgeIntersection(float *param_1);
+int __cdecl cylinderEdgeIntersection(SIntersectXZCylinder *cylinder);
 
 // Original: core_dtri.cpp_cylinderEdgeTestWithHeight_FUN_00477f40
 // Address: 00477f40
-void __cdecl cylinderEdgeTestWithHeight(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
+void __cdecl cylinderEdgeTestWithHeight(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2);
 
 // Original: core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0
 // Address: 00477fe0
-void __cdecl cylinderTriangleTest(float *param_1,undefined4 *param_2);
+void __cdecl cylinderTriangleTest(CDemonTriangle *triangle,SIntersectXZCylinder *cylinder);
 
 // Original: core_dtri.cpp_rayEdgeHeightTest_FUN_004783e0
 // Address: 004783e0
-undefined4 __cdecl rayEdgeHeightTest(float *param_1,float *param_2,float param_3,float *param_4);
+int __cdecl rayEdgeHeightTest(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
 
 // Original: core_dtri.cpp_FUN_00478550
 // Address: 00478550
@@ -51,7 +51,7 @@ int __cdecl FUN_00478550(CDemonTriangle *triangle,CVector3f *position,float sear
 
 // Original: core_dtri.cpp_clipLineToPlane_FUN_00478900
 // Address: 00478900
-void __cdecl clipLineToPlane(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10);
+void __cdecl clipLineToPlane(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 
 // Original: core_dtri.cpp_clipPolygonToRight_FUN_00478d70
 // Address: 00478d70

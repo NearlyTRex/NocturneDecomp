@@ -1,0 +1,541 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 475,
+    "complexity_score": 391,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 23,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 121,
+    "suspect_count": 24,
+    "suspect_types": [
+      "alloc_magic_size",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "warning_overlapping_globals",
+      "warning_unreachable"
+    ],
+    "total_lines": 596
+  },
+  "cross_references": [
+    {
+      "addr": "00547cb0",
+      "from_addr": "00547fc6",
+      "name": "core_skeleton.cpp_CSkeleton_loadStream_FUN_00547cb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fb280",
+    "address_range": [
+      [
+        "004fb280",
+        "004fb6ad"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_motion.cpp_CMotionList_load_FUN_004fb280",
+    "signature": "void __cdecl core_motion_cpp_CMotionList_load_FUN_004fb280(CMotionList *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "004fb210",
+      "is_variadic": false,
+      "name": "core_morph.cpp_FUN_004fb210"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
+    },
+    {
+      "addr": "005a32b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005a32b0"
+    },
+    {
+      "addr": "005a3230",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005a3230"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c974c",
+      "name": "DAT_005c974c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c9750",
+      "name": "s_core_motion_cpp_005c9750",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9763",
+      "name": "s_Error_reading_motion_lis_005c9763",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c977e",
+      "name": "s_core_motion_cpp_005c977e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9791",
+      "name": "s_Can_t_read_motion_list_i_005c9791",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9804",
+      "name": "DAT_005c9804",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c9808",
+      "name": "DAT_005c9808",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c980c",
+      "name": "DAT_005c980c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c9810",
+      "name": "s_f_d_d_d_005c9810",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9825",
+      "name": "s_d_d_f_005c9825",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c982f",
+      "name": "s_d_f_d_005c982f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9839",
+      "name": "s_d_f_005c9839",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9840",
+      "name": "s_d_d_005c9840",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9847",
+      "name": "DAT_005c9847",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c984b",
+      "name": "s_core_motion_cpp_005c984b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c985e",
+      "name": "s_Out_of_memory_005c985e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c986c",
+      "name": "s_d_d_d_f_f_d_005c986c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c987f",
+      "name": "DAT_005c987f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c9883",
+      "name": "s_d_d_005c9883",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c988a",
+      "name": "DAT_005c988a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c988d",
+      "name": "DAT_005c988d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00547fc6",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CSkeleton_loadStream_FUN_00547cb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.342696629213483,
+    "instruction_count": 356,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 6,
+      "BRANCH": 4,
+      "CALL": 32,
+      "CBRANCH": 40,
+      "COPY": 258,
+      "INT_ADD": 121,
+      "INT_AND": 209,
+      "INT_CARRY": 43,
+      "INT_EQUAL": 191,
+      "INT_LESS": 22,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 27,
+      "INT_SBORROW": 22,
+      "INT_SCARRY": 48,
+      "INT_SEXT": 3,
+      "INT_SLESS": 95,
+      "INT_SUB": 138,
+      "INT_XOR": 6,
+      "LOAD": 36,
+      "POPCOUNT": 95,
+      "RETURN": 1,
+      "STORE": 130,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1546
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00523980",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052cd70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5
+    },
+    "nocturne.exe": {
+      "addr": "004e0920",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5
+    }
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionList *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb44c) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb44e) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb45b) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb460) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb662) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb59d) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 8,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb59f) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 9,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb5ac) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 10,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb5b1) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 11,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb5d2) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 12,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb5d8) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 13,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb5f5) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 14,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb5f7) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 15,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004fb604) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 16,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_005c974c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005c974c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_005c9804",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005c9804);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_005c9808",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005c9808);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_005c980c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005c980c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 86,
+      "match": "DAT_005c9847",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005c9847);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 112,
+      "match": "DAT_005c987f",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005c987f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&pSVar2->cmd` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 101,
+      "match": "(int)&pSVar2->cmd",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar2->cmd + iVar1) = local_28;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 101,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar2->cmd + iVar1) = local_28;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Allocation size hardcodes 0x18 == sizeof(SMotionTransition). Replace the magic with sizeof(SMotionTransition) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 88,
+      "match": "(SMotionTransition*) alloc stride 0x18",
+      "severity": "moderate",
+      "text": "(SMotionTransition *)malloc(local_20->transition_count * 0x18)",
+      "type": "alloc_magic_size"
+    }
+  ]
+}

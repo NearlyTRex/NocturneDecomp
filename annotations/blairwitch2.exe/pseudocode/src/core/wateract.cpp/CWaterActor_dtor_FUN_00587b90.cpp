@@ -15,7 +15,7 @@ CWaterActor * core_wateract_cpp_CWaterActor_dtor_FUN_00587b90(CWaterActor *this_
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CWaterActorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CWaterActorTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

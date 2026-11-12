@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 96,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_stride_bytecount",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 82
@@ -26,9 +25,9 @@
         "0052c460"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_netgame.cpp_purgeOldSimFrames_FUN_0052c3ec",
-    "signature": "void core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int param_1)"
+    "signature": "void __cdecl core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int min_sequence)"
   },
   "function_calls": [
     {
@@ -49,9 +48,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -85,13 +84,35 @@
     },
     "pcode_op_count": 222
   },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "0053f650",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9892
+    },
+    "nocturne.exe": {
+      "addr": "004e97e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9892
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "min_sequence",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -103,28 +124,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_01d71618",
       "severity": "mild",
       "text": "src = &DAT_01d71618;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "while (*(int *)(iVar2 + 0x1d715ac) < param_1) {",
-      "type": "unnamed_param"
     },
     {
       "description": "mem* byte count hardcodes an element stride ((_DAT_01d715a8 - iVar1) * 0x6c) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",

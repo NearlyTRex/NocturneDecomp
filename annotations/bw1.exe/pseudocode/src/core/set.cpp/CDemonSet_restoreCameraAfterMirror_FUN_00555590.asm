@@ -24,8 +24,8 @@
 ;   engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_00484190
 ;   engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_00484170
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
+;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
-;   engine_drender.cpp_FUN_004839b0
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     MOV ECX,dword ptr [0x00612560]      ; 005555a7 | DAT_00612560
     PUSH dword ptr [0x020af5c4]         ; 005555ad | DAT_020af5c4
     PUSH ECX                            ; 005555b3 | DAT_01bc120c
-    CALL engine_drender.cpp_FUN_004839b0 ; 005555b4
-        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_004839b0()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0 ; 005555b4
+        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 005555b9
     PUSH 0x20af5b8                      ; 005555bc | DAT_020af5b8
     MOV EBX,dword ptr [0x00612560]      ; 005555c1 | DAT_00612560

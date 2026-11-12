@@ -13,7 +13,7 @@ CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_dtor_FUN_004df3e0(CKeyActor *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CKeyActorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CKeyActorTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

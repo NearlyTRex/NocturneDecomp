@@ -13,8 +13,8 @@ uint * core_muzzle_cpp_FUN_0059ded0(int param_1)
   uint *puVar2;
   uint *puVar3;
   
-  puVar1 = (uint *)
-           __arrinit(param_1 + 4,0x10,&g_SFollowSlotStructTypeInfo);
+  puVar1 = (uint *)__arrinit
+                     ((void *)(param_1 + 4),0x10,&g_SFollowSlotStructTypeInfo);
   puVar1[0xf0] = 0;
   puVar2 = puVar1;
   do {

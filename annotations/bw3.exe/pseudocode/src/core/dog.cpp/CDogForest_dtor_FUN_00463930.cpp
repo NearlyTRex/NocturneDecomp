@@ -18,7 +18,7 @@ CDogForest * core_dog_cpp_CDogForest_dtor_FUN_00463930(CDogForest *this_ptr,uint
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDogForestTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDogForestTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

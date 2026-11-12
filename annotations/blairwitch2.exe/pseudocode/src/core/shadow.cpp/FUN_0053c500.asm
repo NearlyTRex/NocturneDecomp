@@ -543,8 +543,8 @@ section .text
     PUSH 0x5e6594                       ; 0053cb7f | = "%s confused while walking to scriptDe..."
     MOV EDI,dword ptr [0x00609ed0]      ; 0053cb84 | g_CConsolePtr
     PUSH EDI                            ; 0053cb8a | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0053cb8b
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0053cb8b
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     JMP 0x0053c6db                      ; 0053cb90
         ;   XREF to: 0053c6db (UNCONDITIONAL_JUMP)  ; LAB_0053c6db
     PUSH EBX                            ; 0053cb95
@@ -1122,7 +1122,7 @@ section .text
     PUSH EDX                            ; 0053d334
     ADD EBX,0x2b4                       ; 0053d335
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 0053d33b
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0053d340
     TEST EAX,EAX                        ; 0053d343
     JNZ 0x0053d393                      ; 0053d345
@@ -1262,7 +1262,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x10b2c]   ; 0053d4dc
     PUSH EBX                            ; 0053d4e2
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 0053d4e3
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0053d4e8
     TEST EAX,EAX                        ; 0053d4eb
     JNZ 0x0053d9cc                      ; 0053d4ed
@@ -1296,8 +1296,8 @@ section .text
     PUSH 0x5e65f5                       ; 0053d55d | = "Phase: %d, Timer: %f\n"
     MOV EAX,[0x00609ed0]                ; 0053d562 | g_CConsolePtr
     PUSH EAX                            ; 0053d567 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0053d568
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0053d568
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     MOV EAX,dword ptr [EBP + 0x8e]      ; 0053d56d
     MOV EDX,dword ptr [EAX + 0x10b40]   ; 0053d573
     ADD ESP,0x14                        ; 0053d579
@@ -1816,8 +1816,8 @@ section .text
     PUSH 0x5e660b                       ; 0053db91 | = "%s gave up chase - I'm confused\n"
     MOV EDX,dword ptr [0x00609ed0]      ; 0053db96 | g_CConsolePtr
     PUSH EDX                            ; 0053db9c | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0053db9d
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0053db9d
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0053dba2
     LEA EBX,[EDI + 0x2b4]               ; 0053dba5
     PUSH EBX                            ; 0053dbab
@@ -1850,7 +1850,7 @@ section .text
     MOV EDX,dword ptr [EDI + 0x10b2c]   ; 0053dbec
     PUSH EDX                            ; 0053dbf2
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 0053dbf3
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0053dbf8
     TEST EAX,EAX                        ; 0053dbfb
     JNZ 0x0053d7d1                      ; 0053dbfd
@@ -1988,7 +1988,7 @@ section .text
     SUB ESP,0x4                         ; 0053dd8a
     FSTP float ptr [ESP]                ; 0053dd8d
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0053dd90
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [EBP + 0x76],EAX      ; 0053dd95
     FLD float ptr [EBP + 0x76]          ; 0053dd98
     FABS                                ; 0053dd9b
@@ -2042,7 +2042,7 @@ section .text
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x150ff0] ; 0053de11
     PUSH EDX                            ; 0053de18
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 0053de19
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0053de1e
     TEST EAX,EAX                        ; 0053de21
     JNZ 0x0053de3c                      ; 0053de23

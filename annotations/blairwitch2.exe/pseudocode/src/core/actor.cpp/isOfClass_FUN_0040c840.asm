@@ -42,7 +42,7 @@ section .text
     ADD ESP,0x4                         ; 0040c85b
     PUSH EAX                            ; 0040c85e
     CALL core_actor.cpp_matchesClassName_FUN_0040c8a0 ; 0040c85f
-        ;   XREF to: 0040c8a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchesClassName_FUN_0040c8a0()
+        ;   XREF to: 0040c8a0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchesClassName_FUN_0040c8a0(CDemonActorType * type_ptr, char * class_name)
     ADD ESP,0x8                         ; 0040c864
     RET                                 ; 0040c867
 

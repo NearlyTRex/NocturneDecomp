@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_buildZFlipMatrix_FUN_005935a0(float param_1)
+; CMatrix3x4f * __stack_esi core_xform_cpp_buildZFlipMatrix_FUN_005935a0(float z_offset,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; float            Stack[0x4]:4   z_offset
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30

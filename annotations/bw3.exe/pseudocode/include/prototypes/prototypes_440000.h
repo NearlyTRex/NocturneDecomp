@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/iostream.h"
+#include "system/stdio.h"
 #include "types/classes/CAsciiArmor.h"
 #include "types/classes/CAsciiUnarmor.h"
 #include "types/classes/CBoundingBox3D.h"
@@ -38,8 +39,10 @@
 #include "types/structs/SClothBone.h"
 #include "types/structs/SClothVertex.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SCoronaLightEntry.h"
 #include "types/structs/SCurtainVertex.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SFogGrid.h"
 #include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
@@ -57,14 +60,14 @@ int support_codec_cpp_FUN_00440260(byte *param_1,int param_2,uint param_3,int *p
 int support_codec_cpp_FUN_00440400(int *param_1,int *param_2);
 int support_codec_cpp_FUN_00440440(int *param_1,int *param_2);
 void support_codec_cpp_FUN_004404e0(uint *param_1,byte param_2);
-undefined4 support_codec_cpp_FUN_004406e0(undefined4 param_1,int param_2,int param_3);
+undefined4 support_codec_cpp_FUN_004406e0(undefined4 param_1,_FILE *param_2,int param_3);
 CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00440800(CCodec *this_ptr);
 CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00440810(CCodec *this_ptr,uint flags);
 undefined4 support_codec_cpp_FUN_00440860(undefined4 param_1,int *param_2,int *param_3);
 undefined4 support_codec_cpp_FUN_004408d0(void);
 undefined4 support_codec_cpp_FUN_004408e0(int *param_1,undefined4 param_2,undefined4 param_3,int *param_4,int param_5);
 bool support_codec_cpp_FUN_00440970(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4);
-undefined4 support_codec_cpp_FUN_004409f0(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_004409f0(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback);
 undefined4 support_codec_cpp_FUN_00440a70(int *param_1,undefined4 param_2,undefined4 param_3);
 bool support_codec_cpp_FUN_00440b60(int *param_1,undefined4 param_2,int *param_3);
 CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_ctor_FUN_00440bd0(CLZWDictionary *this_ptr);
@@ -96,8 +99,8 @@ undefined4 __cdecl support_codec_cpp_CAsciiUnarmor_decode_FUN_00441610(CAsciiUna
 CCodec * __cdecl support_codec_cpp_CCheesyCipher_ctor_FUN_00441660(CCheesyCipher *this_ptr,undefined4 param_2,undefined4 param_3);
 void __cdecl support_codec_cpp_CCheesyCipher_setMode_FUN_004416a0(CCheesyCipher *this_ptr,int param_2);
 void __cdecl support_codec_cpp_CCheesyCipher_setKey_FUN_004416b0(CCheesyCipher *this_ptr,uint param_2);
-uint support_codec_cpp_FUN_004416e0(CCheesyCipher *param_1,byte param_2);
-undefined4 support_codec_cpp_FUN_00441750(undefined4 param_1,int *param_2,int *param_3);
+uint __cdecl support_codec_cpp_CCheesyCipher_transformByte_FUN_004416e0(CCheesyCipher *this_ptr,byte param_2);
+undefined4 __cdecl support_codec_cpp_CCheesyCipher_process_FUN_00441750(CCheesyCipher *this_ptr,int *param_2,int *param_3);
 void __cdecl support_codec_cpp_CCheesyCipher_advanceKey_FUN_004417d0(CCheesyCipher *this_ptr);
 CInStreamPipe * support_codec_cpp_CInStreamPipe_ctor_FUN_004417f0(CInStreamPipe *this_ptr);
 CInStreamPipe * support_codec_cpp_CInStreamPipe_dtor_FUN_004418c0(CInStreamPipe *this_ptr,uint flags);
@@ -120,7 +123,7 @@ CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_00441ed0(CLZWComp
 void __cdecl engine_console_cpp_staticInit_FUN_00441f30(void);
 CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_00441f60(CConsole *this_ptr,int width,int height,int screen_x,int screen_y);
 CConsole * engine_console_cpp_CConsole_dtor_FUN_00441fe0(CConsole *this_ptr,uint flags);
-void engine_console_cpp_FUN_00441ff0(CConsole *param_1,undefined4 param_2);
+void __cdecl engine_console_cpp_CConsole_printf_FUN_00441ff0(CConsole *this_ptr,char *format);
 void __cdecl engine_console_cpp_CConsole_writeChar_FUN_004420c0(CConsole *this_ptr,char character);
 void __cdecl engine_console_cpp_CConsole_reset_FUN_00442190(CConsole *this_ptr);
 void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_004421d0(CConsole *this_ptr);
@@ -152,12 +155,12 @@ CConstruct * core_construc_cpp_CConstruct_dtor_FUN_00444780(CConstruct *this_ptr
 CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_004448d0(CCourse *this_ptr);
 CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_004448f0(CCourse *this_ptr,uint flags);
 void core_course_cpp_FUN_00444910(int *param_1,int param_2);
-void __cdecl core_course_cpp_FUN_00444970(CCourse *this_ptr,char *filename);
+void __cdecl core_course_cpp_CCourse_load_FUN_00444970(CCourse *this_ptr,char *filename);
 void core_course_cpp_FUN_00444aa0(undefined4 *param_1);
 void __cdecl core_course_cpp_CCourse_evaluate_FUN_00444ac0(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
 void __cdecl core_course_cpp_FUN_00444b70(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient);
 void core_cow_cpp_staticInit_FUN_00444f00(void);
-void core_cow_cpp_factoryFuncZombieCow_FUN_00444f30(void);
+CZombieCow * __cdecl core_cow_cpp_factoryFuncZombieCow_FUN_00444f30(void);
 CDemonActorType * core_cow_cpp_CZombieCow_getActorType_FUN_00444f50(CZombieCow *this_ptr);
 CZombieCow * core_cow_cpp_CZombieCow_ctor_FUN_00444f60(CZombieCow *this_ptr);
 void __cdecl core_cow_cpp_CZombieCow_setup_FUN_00444fd0(CZombieCow *this_ptr);
@@ -168,7 +171,7 @@ void __cdecl core_cow_cpp_CZombieCow_processDamage_FUN_004459b0(CZombieCow *this
 int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_00445a70(CZombieCow *this_ptr,CVector3f *out_points_array);
 CZombieCow * core_cow_cpp_CZombieCow_dtor_FUN_00445ae0(CZombieCow *this_ptr,uint flags);
 void core_crate_cpp_staticInit_FUN_00445b70(void);
-void core_crate_cpp_factoryFuncCrate_FUN_00445ba0(void);
+CCrate * __cdecl core_crate_cpp_factoryFuncCrate_FUN_00445ba0(void);
 CDemonActorType * core_crate_cpp_CCrate_getActorType_FUN_00445bc0(CCrate *this_ptr);
 CCrate * __cdecl core_crate_cpp_CCrate_ctor_FUN_00445bd0(CCrate *this_ptr);
 void __cdecl core_crate_cpp_CCrate_setup_FUN_00445c30(CCrate *this_ptr);
@@ -186,7 +189,7 @@ int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_004460f0(CCrate *this_ptr,
 void __cdecl core_crate_cpp_FUN_004461c0(CCrate *this_ptr);
 CCrate * __cdecl core_crate_cpp_CCrate_dtor_FUN_00446280(CCrate *this_ptr,uint flags);
 void core_curtain_cpp_staticInit_FUN_004462d0(void);
-void core_curtain_cpp_factoryFuncCurtain_FUN_00446320(void);
+CCurtain * __cdecl core_curtain_cpp_factoryFuncCurtain_FUN_00446320(void);
 CDemonActorType * core_curtain_cpp_CCurtain_getActorType_FUN_00446340(CCurtain *this_ptr);
 CCurtain * __cdecl core_curtain_cpp_CCurtain_ctor_FUN_00446350(CCurtain *this_ptr);
 void __cdecl core_curtain_cpp_CCurtain_setup_FUN_004464c0(CCurtain *this_ptr);
@@ -206,10 +209,10 @@ SCurtainVertex * core_curtain_cpp_SCurtainVertex_ctor_FUN_004486a0(SCurtainVerte
 SCollisionInfo * core_curtain_cpp_SCollisionInfo_dtor_FUN_004486b0(SCollisionInfo *this_ptr,uint flags);
 void __cdecl core_dcamera_cpp_staticInit_FUN_004486c0(void);
 uint __cdecl core_dcamera_cpp_getLightmapPaletteValue_FUN_00448700(int palette_index);
-void __cdecl core_dcamera_cpp_resetFogSamplingOffset_FUN_00448720(int param_1);
-void __cdecl core_dcamera_cpp_generateFogGrid_FUN_00448750(void *param_1);
-uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_00448980(int param_1,int *param_2,int *param_3,int param_4);
-void __cdecl core_dcamera_cpp_updateFogScrollOffset_FUN_00448b60(int param_1,int param_2,int param_3);
+void __cdecl core_dcamera_cpp_resetFogSamplingOffset_FUN_00448720(SFogGrid *fog);
+void __cdecl core_dcamera_cpp_generateFogGrid_FUN_00448750(SFogGrid *fog);
+uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_00448980(SFogGrid *fog_ptr,CVector3i *start_pos,CVector3i *end_pos,int ray_length);
+void __cdecl core_dcamera_cpp_updateFogScrollOffset_FUN_00448b60(SFogGrid *fog_ptr,int time_major,int time_minor);
 CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_ctor_FUN_00448be0(CDemonCamera *this_ptr);
 CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_dtor_FUN_00448c40(CDemonCamera *this_ptr,uint flags);
 void __cdecl core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_00448ca0(CDemonCamera *this_ptr);
@@ -227,11 +230,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00449a00(CDemo
 void __cdecl core_dcamera_cpp_CDemonCamera_calculateInverseTransform_FUN_00449b30(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00449dd0(CDemonCamera *this_ptr);
 void core_dcamera_cpp_FUN_00449eb0(undefined4 param_1,int param_2,int param_3);
-int * core_dcamera_cpp_FUN_00449f80(int param_1,int *param_2);
+CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr);
 float * core_dcamera_cpp_FUN_0044a090(int param_1,int param_2,int param_3);
-int * core_dcamera_cpp_FUN_0044a210(int param_1,int *param_2);
-void core_dcamera_cpp_FUN_0044a3e0(int param_1,int *param_2);
-void core_dcamera_cpp_FUN_0044a6a0(int param_1,int *param_2);
+CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044a210(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr);
+CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr);
+CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_0044a6a0(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector);
 void core_dcamera_cpp_FUN_0044a7de(int param_1,int *param_2);
 char * __cdecl core_dcamera_cpp_CDemonCamera_allocLight_FUN_0044a9f0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044aa20(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect);
@@ -244,26 +247,26 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044c060(CD
 void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044c130(CDemonCamera *this_ptr,char *filename);
 void __cdecl core_dcamera_cpp_initializeCoronaBuffers_FUN_0044d020(void);
 void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_0044d060(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left);
-void core_dcamera_cpp_renderVolumetricLightScanline_FUN_0044d17e(int param_1,int param_2,int param_3);
+void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_0044d17e(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left);
 void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_0044d320(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left);
 void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_0044d4e0(int scanline_y,int x_start,int x_end);
 void __cdecl core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_0044d6f0(CDemonCamera *this_ptr);
-double core_dcamera_cpp_log2Custom_FUN_0044d7cc(double param_1);
+double __cdecl core_dcamera_cpp_log2Custom_FUN_0044d7cc(double val);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_0044d800(CDemonCamera *this_ptr,CDemonLight *light_source);
 void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_0044db70(CDemonCamera *this_ptr,CDemonLight *light_source);
 void core_dcamera_cpp_FUN_0044dd00(int param_1);
 int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_0044dd60(CDemonCamera *this_ptr,CDemonLight *light_source);
-void core_dcamera_cpp_FUN_0044de30(int param_1,int param_2);
+CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_0044de30(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds);
 void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_0044ded0(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_0044df60(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_0044dff0(int start_x,int start_y,int depth_reciprocal);
 void core_dcamera_cpp_FUN_0044e24e(int param_1,int param_2,int param_3,int param_4);
-void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_0044e590(int param_1,int param_2,int param_3,int param_4);
+void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_0044e590(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_0044e690(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render);
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max);
 int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_0044f4d0(CDemonCamera *this_ptr,CVector3f *position,float radius);
 void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_0044f680(CDemonCamera *this_ptr,float intensity);
-void core_dcamera_cpp_FUN_0044f6a0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void core_dcamera_cpp_FUN_0044f6a0(CDemonCamera *param_1,undefined4 param_2,undefined4 param_3);
 void __cdecl core_dcamera_cpp_CDemonCamera_generateFogGrid_FUN_0044f740(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_0044f750(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_0044fdd0(CDemonCamera *this_ptr,int plane_index);

@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_icepick.cpp_factoryFuncIcePick_FUN_004d4960
 // Address: 004d4960
-void factoryFuncIcePick(void);
+CIcePick * __cdecl factoryFuncIcePick(void);
 
 // Original: core_icepick.cpp_CIcePick_getActorType_FUN_004d4980
 // Address: 004d4980

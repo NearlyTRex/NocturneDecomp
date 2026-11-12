@@ -57,10 +57,6 @@ void __cdecl CCloth::step(CCloth *this_ptr,CVector3f *position,CVector3f *euler,
 // Address: 004414ac
 void FUN_004414ac(int param_1);
 
-// Original: core_cloth.cpp_FUN_004414fe
-// Address: 004414fe
-void FUN_004414fe(int param_1,int param_2,int param_3);
-
 // Original: core_cloth.cpp_FUN_00441500
 // Address: 00441500
 void FUN_00441500(int param_1,int param_2,int param_3);

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1)
+; int __cdecl support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *message_file)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   message_file
 ; Local Variables:
 ; undefined        Stack[-0x31c]:1  local_31c
 ; undefined        Stack[-0x21c]:1  local_21c

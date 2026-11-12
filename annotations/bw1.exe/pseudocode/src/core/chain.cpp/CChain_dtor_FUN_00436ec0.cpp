@@ -15,7 +15,7 @@ CChain * core_chain_cpp_CChain_dtor_FUN_00436ec0(CChain *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CChainTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CChainTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

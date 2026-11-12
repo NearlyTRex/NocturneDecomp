@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_manpuz_cpp_factoryFuncMansionPuzzleCircle_FUN_004e4f00(void)
+; CMansionPuzzleCircle * __cdecl core_manpuz_cpp_factoryFuncMansionPuzzleCircle_FUN_004e4f00(void)
 ;
 ;
 ; Called Functions:

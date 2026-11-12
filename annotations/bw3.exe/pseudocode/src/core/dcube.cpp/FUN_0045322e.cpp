@@ -11,88 +11,89 @@
 uint core_dcube_cpp_FUN_0045322e(uint *param_1,float *param_2,float *param_3)
 
 {
-  float fVar1;
-  byte bVar2;
-  uint uVar3;
-  int iVar4;
-  byte bVar5;
-  int iVar6;
-  uint *puVar7;
-  float *pfVar8;
-  byte bVar9;
-  float *pfVar10;
+  uint *puVar1;
+  float fVar2;
+  byte bVar3;
+  uint uVar4;
+  int iVar5;
+  byte bVar6;
+  int iVar7;
+  CVector3f *pCVar8;
+  float *pfVar9;
+  byte bVar10;
+  CVector3f *pCVar11;
   
   _DAT_015485fc = 3;
-  puVar7 = (uint *)*param_1;
-  if (puVar7 != (uint *)&DAT_01548600) {
-    _DAT_01548600 = *puVar7;
-    _DAT_01548608 = puVar7[2];
-    _DAT_01548604 = puVar7[1];
+  puVar1 = (uint *)*param_1;
+  if (puVar1 != (uint *)&DAT_01548600) {
+    _DAT_01548600 = *puVar1;
+    _DAT_01548608 = puVar1[2];
+    _DAT_01548604 = puVar1[1];
   }
-  puVar7 = (uint *)param_1[1];
-  if (puVar7 != (uint *)&DAT_0154860c) {
-    _DAT_0154860c = *puVar7;
-    _DAT_01548614 = puVar7[2];
-    _DAT_01548610 = puVar7[1];
+  puVar1 = (uint *)param_1[1];
+  if (puVar1 != (uint *)&DAT_0154860c) {
+    _DAT_0154860c = *puVar1;
+    _DAT_01548614 = puVar1[2];
+    _DAT_01548610 = puVar1[1];
   }
-  puVar7 = (uint *)param_1[2];
-  if (puVar7 != (uint *)&DAT_01548618) {
-    _DAT_01548618 = *puVar7;
-    _DAT_01548620 = puVar7[2];
-    _DAT_0154861c = puVar7[1];
+  puVar1 = (uint *)param_1[2];
+  if (puVar1 != (uint *)&DAT_01548618) {
+    _DAT_01548618 = *puVar1;
+    _DAT_01548620 = puVar1[2];
+    _DAT_0154861c = puVar1[1];
   }
-  bVar9 = 0xff;
-  iVar6 = 0;
-  bVar2 = 0;
-  pfVar8 = (float *)&DAT_01548600;
+  bVar10 = 0xff;
+  iVar7 = 0;
+  bVar3 = 0;
+  pfVar9 = (float *)&DAT_01548600;
   do {
-    bVar5 = *param_3 < *pfVar8;
-    if (param_3[1] < pfVar8[1]) {
-      bVar5 = bVar5 | 2;
+    bVar6 = *param_3 < *pfVar9;
+    if (param_3[1] < pfVar9[1]) {
+      bVar6 = bVar6 | 2;
     }
-    if (param_3[2] < pfVar8[2]) {
-      bVar5 = bVar5 | 4;
+    if (param_3[2] < pfVar9[2]) {
+      bVar6 = bVar6 | 4;
     }
-    if (*pfVar8 < *param_2) {
-      bVar5 = bVar5 | 8;
+    if (*pfVar9 < *param_2) {
+      bVar6 = bVar6 | 8;
     }
-    if (pfVar8[1] < param_2[1]) {
-      bVar5 = bVar5 | 0x10;
+    if (pfVar9[1] < param_2[1]) {
+      bVar6 = bVar6 | 0x10;
     }
-    if (pfVar8[2] < param_2[2]) {
-      bVar5 = bVar5 | 0x20;
+    if (pfVar9[2] < param_2[2]) {
+      bVar6 = bVar6 | 0x20;
     }
-    pfVar8 = pfVar8 + 3;
-    iVar6 = iVar6 + 1;
-    bVar9 = bVar9 & bVar5;
-    bVar2 = bVar2 | bVar5;
-  } while (iVar6 < 3);
-  if (bVar2 == 0) {
-    puVar7 = (uint *)*param_1;
+    pfVar9 = pfVar9 + 3;
+    iVar7 = iVar7 + 1;
+    bVar10 = bVar10 & bVar6;
+    bVar3 = bVar3 | bVar6;
+  } while (iVar7 < 3);
+  if (bVar3 == 0) {
+    puVar1 = (uint *)*param_1;
     _DAT_01548a94 = 3;
-    if (puVar7 != (uint *)&DAT_01548a98) {
-      _DAT_01548a98 = *puVar7;
-      _DAT_01548aa0 = puVar7[2];
-      _DAT_01548a9c = puVar7[1];
+    if (puVar1 != (uint *)&DAT_01548a98) {
+      _DAT_01548a98 = *puVar1;
+      _DAT_01548aa0 = puVar1[2];
+      _DAT_01548a9c = puVar1[1];
     }
-    puVar7 = (uint *)param_1[1];
-    if (puVar7 != (uint *)&DAT_01548aa4) {
-      _DAT_01548aa4 = *puVar7;
-      _DAT_01548aac = puVar7[2];
-      _DAT_01548aa8 = puVar7[1];
+    puVar1 = (uint *)param_1[1];
+    if (puVar1 != (uint *)&DAT_01548aa4) {
+      _DAT_01548aa4 = *puVar1;
+      _DAT_01548aac = puVar1[2];
+      _DAT_01548aa8 = puVar1[1];
     }
-    puVar7 = (uint *)param_1[2];
-    if (puVar7 != (uint *)&DAT_01548ab0) {
-      _DAT_01548ab0 = *puVar7;
-      _DAT_01548ab8 = puVar7[2];
-      _DAT_01548ab4 = puVar7[1];
+    puVar1 = (uint *)param_1[2];
+    if (puVar1 != (uint *)&DAT_01548ab0) {
+      _DAT_01548ab0 = *puVar1;
+      _DAT_01548ab8 = puVar1[2];
+      _DAT_01548ab4 = puVar1[1];
     }
     return 1;
   }
-  if (bVar9 == 0) {
-    fVar1 = param_3[1];
-    iVar6 = 0;
-    puVar7 = (uint *)&DAT_01548600;
+  if (bVar10 == 0) {
+    fVar2 = param_3[1];
+    iVar7 = 0;
+    pCVar8 = (CVector3f *)&DAT_01548600;
     _DAT_015486c0 = 0;
     _DAT_01548784 = 0;
     _DAT_01548848 = 0;
@@ -100,284 +101,288 @@ uint core_dcube_cpp_FUN_0045322e(uint *param_1,float *param_2,float *param_3)
     _DAT_015489d0 = 0;
     _DAT_01548a94 = 0;
     do {
-      uVar3 = iVar6 + 1;
-      if (uVar3 == _DAT_015485fc) {
-        uVar3 = uVar3 ^ _DAT_015485fc;
+      uVar4 = iVar7 + 1;
+      if (uVar4 == _DAT_015485fc) {
+        uVar4 = uVar4 ^ _DAT_015485fc;
       }
-      bVar2 = fVar1 < (float)puVar7[1];
-      if (fVar1 < *(float *)(&DAT_01548604 + uVar3 * 0xc)) {
-        bVar2 = bVar2 | 2;
+      bVar3 = fVar2 < pCVar8->y;
+      if (fVar2 < *(float *)(&DAT_01548604 + uVar4 * 0xc)) {
+        bVar3 = bVar3 | 2;
       }
-      switch(bVar2) {
+      switch(bVar3) {
       case 0:
-        iVar4 = _DAT_015486c0 * 0xc;
-        if ((uint *)(&DAT_015486c4 + iVar4) != puVar7) {
-          *(uint *)(&DAT_015486c4 + iVar4) = *puVar7;
-          *(uint *)(&DAT_015486c8 + iVar4) = puVar7[1];
-          *(uint *)(&DAT_015486cc + iVar4) = puVar7[2];
+        iVar5 = _DAT_015486c0 * 0xc;
+        if ((CVector3f *)(&DAT_015486c4 + iVar5) != pCVar8) {
+          ((CVector3f *)(&DAT_015486c4 + iVar5))->x = pCVar8->x;
+          *(float *)(&DAT_015486c8 + iVar5) = pCVar8->y;
+          *(float *)(&DAT_015486cc + iVar5) = pCVar8->z;
         }
         _DAT_015486c0 = _DAT_015486c0 + 1;
         break;
       case 1:
         core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                  (&DAT_01548600 + uVar3 * 0xc,puVar7,&DAT_015486c4 + _DAT_015486c0 * 0xc,0,0,0,
-                   0x3ff00000,0,0,(double)-fVar1);
+                  ((CVector3f *)(&DAT_01548600 + uVar4 * 0xc),pCVar8,
+                   (CVector3f *)(&DAT_015486c4 + _DAT_015486c0 * 0xc),0.0,1.0,0.0,(double)-fVar2);
         _DAT_015486c0 = _DAT_015486c0 + 1;
         break;
       case 2:
-        iVar4 = _DAT_015486c0 * 0xc;
-        if ((uint *)(&DAT_015486c4 + iVar4) != puVar7) {
-          *(uint *)(&DAT_015486c4 + iVar4) = *puVar7;
-          *(uint *)(&DAT_015486c8 + iVar4) = puVar7[1];
-          *(uint *)(&DAT_015486cc + iVar4) = puVar7[2];
+        iVar5 = _DAT_015486c0 * 0xc;
+        if ((CVector3f *)(&DAT_015486c4 + iVar5) != pCVar8) {
+          ((CVector3f *)(&DAT_015486c4 + iVar5))->x = pCVar8->x;
+          *(float *)(&DAT_015486c8 + iVar5) = pCVar8->y;
+          *(float *)(&DAT_015486cc + iVar5) = pCVar8->z;
         }
         _DAT_015486c0 = _DAT_015486c0 + 1;
         core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                  (puVar7,&DAT_01548600 + uVar3 * 0xc,&DAT_015486c4 + _DAT_015486c0 * 0xc,0,0,0,
-                   0x3ff00000,0,0,(double)-fVar1);
+                  (pCVar8,(CVector3f *)(&DAT_01548600 + uVar4 * 0xc),
+                   (CVector3f *)(&DAT_015486c4 + _DAT_015486c0 * 0xc),0.0,1.0,0.0,(double)-fVar2);
         _DAT_015486c0 = _DAT_015486c0 + 1;
       }
-      iVar6 = iVar6 + 1;
-      puVar7 = puVar7 + 3;
-    } while (iVar6 < (int)_DAT_015485fc);
+      iVar7 = iVar7 + 1;
+      pCVar8 = pCVar8 + 1;
+    } while (iVar7 < (int)_DAT_015485fc);
     if (2 < (int)_DAT_015486c0) {
-      fVar1 = param_2[1];
-      iVar6 = 0;
+      fVar2 = param_2[1];
+      iVar7 = 0;
       if (0 < (int)_DAT_015486c0) {
-        puVar7 = (uint *)&DAT_015486c4;
+        pCVar8 = (CVector3f *)&DAT_015486c4;
         do {
-          uVar3 = iVar6 + 1;
-          if (uVar3 == _DAT_015486c0) {
-            uVar3 = uVar3 ^ _DAT_015486c0;
+          uVar4 = iVar7 + 1;
+          if (uVar4 == _DAT_015486c0) {
+            uVar4 = uVar4 ^ _DAT_015486c0;
           }
-          bVar2 = (float)puVar7[1] < fVar1;
-          if (*(float *)(&DAT_015486c8 + uVar3 * 0xc) < fVar1) {
-            bVar2 = bVar2 | 2;
+          bVar3 = pCVar8->y < fVar2;
+          if (*(float *)(&DAT_015486c8 + uVar4 * 0xc) < fVar2) {
+            bVar3 = bVar3 | 2;
           }
-          switch(bVar2) {
+          switch(bVar3) {
           case 0:
-            iVar4 = _DAT_01548784 * 0xc;
-            if ((uint *)(&DAT_01548788 + iVar4) != puVar7) {
-              *(uint *)(&DAT_01548788 + iVar4) = *puVar7;
-              *(uint *)(&DAT_0154878c + iVar4) = puVar7[1];
-              *(uint *)(&DAT_01548790 + iVar4) = puVar7[2];
+            iVar5 = _DAT_01548784 * 0xc;
+            if ((CVector3f *)(&DAT_01548788 + iVar5) != pCVar8) {
+              ((CVector3f *)(&DAT_01548788 + iVar5))->x = pCVar8->x;
+              *(float *)(&DAT_0154878c + iVar5) = pCVar8->y;
+              *(float *)(&DAT_01548790 + iVar5) = pCVar8->z;
             }
             _DAT_01548784 = _DAT_01548784 + 1;
             break;
           case 1:
             core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                      (&DAT_015486c4 + uVar3 * 0xc,puVar7,&DAT_01548788 + _DAT_01548784 * 0xc,0,0,0,
-                       0xbff00000,0,0,(double)fVar1);
+                      ((CVector3f *)(&DAT_015486c4 + uVar4 * 0xc),pCVar8,
+                       (CVector3f *)(&DAT_01548788 + _DAT_01548784 * 0xc),0.0,-1.0,0.0,(double)fVar2
+                      );
             _DAT_01548784 = _DAT_01548784 + 1;
             break;
           case 2:
-            iVar4 = _DAT_01548784 * 0xc;
-            if ((uint *)(&DAT_01548788 + iVar4) != puVar7) {
-              *(uint *)(&DAT_01548788 + iVar4) = *puVar7;
-              *(uint *)(&DAT_0154878c + iVar4) = puVar7[1];
-              *(uint *)(&DAT_01548790 + iVar4) = puVar7[2];
+            iVar5 = _DAT_01548784 * 0xc;
+            if ((CVector3f *)(&DAT_01548788 + iVar5) != pCVar8) {
+              ((CVector3f *)(&DAT_01548788 + iVar5))->x = pCVar8->x;
+              *(float *)(&DAT_0154878c + iVar5) = pCVar8->y;
+              *(float *)(&DAT_01548790 + iVar5) = pCVar8->z;
             }
             _DAT_01548784 = _DAT_01548784 + 1;
             core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                      (puVar7,&DAT_015486c4 + uVar3 * 0xc,&DAT_01548788 + _DAT_01548784 * 0xc,0,0,0,
-                       0xbff00000,0,0,(double)fVar1);
+                      (pCVar8,(CVector3f *)(&DAT_015486c4 + uVar4 * 0xc),
+                       (CVector3f *)(&DAT_01548788 + _DAT_01548784 * 0xc),0.0,-1.0,0.0,(double)fVar2
+                      );
             _DAT_01548784 = _DAT_01548784 + 1;
           }
-          iVar6 = iVar6 + 1;
-          puVar7 = puVar7 + 3;
-        } while (iVar6 < (int)_DAT_015486c0);
+          iVar7 = iVar7 + 1;
+          pCVar8 = pCVar8 + 1;
+        } while (iVar7 < (int)_DAT_015486c0);
       }
       if (2 < (int)_DAT_01548784) {
-        fVar1 = *param_3;
-        iVar6 = 0;
+        fVar2 = *param_3;
+        iVar7 = 0;
         if (0 < (int)_DAT_01548784) {
-          pfVar8 = (float *)&DAT_01548788;
+          pCVar8 = (CVector3f *)&DAT_01548788;
           do {
-            uVar3 = iVar6 + 1;
-            if (uVar3 == _DAT_01548784) {
-              uVar3 = uVar3 ^ _DAT_01548784;
+            uVar4 = iVar7 + 1;
+            if (uVar4 == _DAT_01548784) {
+              uVar4 = uVar4 ^ _DAT_01548784;
             }
-            pfVar10 = (float *)(&DAT_01548788 + uVar3 * 0xc);
-            bVar2 = fVar1 < *pfVar8;
-            if (fVar1 < *pfVar10) {
-              bVar2 = bVar2 | 2;
+            pCVar11 = (CVector3f *)(&DAT_01548788 + uVar4 * 0xc);
+            bVar3 = fVar2 < pCVar8->x;
+            if (fVar2 < pCVar11->x) {
+              bVar3 = bVar3 | 2;
             }
-            switch(bVar2) {
+            switch(bVar3) {
             case 0:
-              iVar4 = _DAT_01548848 * 0xc;
-              if ((float *)(&DAT_0154884c + iVar4) != pfVar8) {
-                *(float *)(&DAT_0154884c + iVar4) = *pfVar8;
-                *(float *)(&DAT_01548850 + iVar4) = pfVar8[1];
-                *(float *)(&DAT_01548854 + iVar4) = pfVar8[2];
+              iVar5 = _DAT_01548848 * 0xc;
+              if ((CVector3f *)(&DAT_0154884c + iVar5) != pCVar8) {
+                ((CVector3f *)(&DAT_0154884c + iVar5))->x = pCVar8->x;
+                *(float *)(&DAT_01548850 + iVar5) = pCVar8->y;
+                *(float *)(&DAT_01548854 + iVar5) = pCVar8->z;
               }
               _DAT_01548848 = _DAT_01548848 + 1;
               break;
             case 1:
               core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                        (pfVar10,pfVar8,&DAT_0154884c + _DAT_01548848 * 0xc,0,0x3ff00000,0,0,0,0,
-                         (double)-fVar1);
+                        (pCVar11,pCVar8,(CVector3f *)(&DAT_0154884c + _DAT_01548848 * 0xc),1.0,0.0,
+                         0.0,(double)-fVar2);
               _DAT_01548848 = _DAT_01548848 + 1;
               break;
             case 2:
-              iVar4 = _DAT_01548848 * 0xc;
-              if ((float *)(&DAT_0154884c + iVar4) != pfVar8) {
-                *(float *)(&DAT_0154884c + iVar4) = *pfVar8;
-                *(float *)(&DAT_01548850 + iVar4) = pfVar8[1];
-                *(float *)(&DAT_01548854 + iVar4) = pfVar8[2];
+              iVar5 = _DAT_01548848 * 0xc;
+              if ((CVector3f *)(&DAT_0154884c + iVar5) != pCVar8) {
+                ((CVector3f *)(&DAT_0154884c + iVar5))->x = pCVar8->x;
+                *(float *)(&DAT_01548850 + iVar5) = pCVar8->y;
+                *(float *)(&DAT_01548854 + iVar5) = pCVar8->z;
               }
               _DAT_01548848 = _DAT_01548848 + 1;
               core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                        (pfVar8,pfVar10,&DAT_0154884c + _DAT_01548848 * 0xc,0,0x3ff00000,0,0,0,0,
-                         (double)-fVar1);
+                        (pCVar8,pCVar11,(CVector3f *)(&DAT_0154884c + _DAT_01548848 * 0xc),1.0,0.0,
+                         0.0,(double)-fVar2);
               _DAT_01548848 = _DAT_01548848 + 1;
             }
-            iVar6 = iVar6 + 1;
-            pfVar8 = pfVar8 + 3;
-          } while (iVar6 < (int)_DAT_01548784);
+            iVar7 = iVar7 + 1;
+            pCVar8 = pCVar8 + 1;
+          } while (iVar7 < (int)_DAT_01548784);
         }
         if (2 < (int)_DAT_01548848) {
-          fVar1 = *param_2;
-          iVar6 = 0;
+          fVar2 = *param_2;
+          iVar7 = 0;
           if (0 < (int)_DAT_01548848) {
-            pfVar8 = (float *)&DAT_0154884c;
+            pCVar8 = (CVector3f *)&DAT_0154884c;
             do {
-              uVar3 = iVar6 + 1;
-              if (uVar3 == _DAT_01548848) {
-                uVar3 = uVar3 ^ _DAT_01548848;
+              uVar4 = iVar7 + 1;
+              if (uVar4 == _DAT_01548848) {
+                uVar4 = uVar4 ^ _DAT_01548848;
               }
-              pfVar10 = (float *)(&DAT_0154884c + uVar3 * 0xc);
-              bVar2 = *pfVar8 < fVar1;
-              if (*pfVar10 < fVar1) {
-                bVar2 = bVar2 | 2;
+              pCVar11 = (CVector3f *)(&DAT_0154884c + uVar4 * 0xc);
+              bVar3 = pCVar8->x < fVar2;
+              if (pCVar11->x < fVar2) {
+                bVar3 = bVar3 | 2;
               }
-              switch(bVar2) {
+              switch(bVar3) {
               case 0:
-                iVar4 = _DAT_0154890c * 0xc;
-                if ((float *)(&DAT_01548910 + iVar4) != pfVar8) {
-                  *(float *)(&DAT_01548910 + iVar4) = *pfVar8;
-                  *(float *)(&DAT_01548914 + iVar4) = pfVar8[1];
-                  *(float *)(&DAT_01548918 + iVar4) = pfVar8[2];
+                iVar5 = _DAT_0154890c * 0xc;
+                if ((CVector3f *)(&DAT_01548910 + iVar5) != pCVar8) {
+                  ((CVector3f *)(&DAT_01548910 + iVar5))->x = pCVar8->x;
+                  *(float *)(&DAT_01548914 + iVar5) = pCVar8->y;
+                  *(float *)(&DAT_01548918 + iVar5) = pCVar8->z;
                 }
                 _DAT_0154890c = _DAT_0154890c + 1;
                 break;
               case 1:
                 core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                          (pfVar10,pfVar8,&DAT_01548910 + _DAT_0154890c * 0xc,0,0xbff00000,0,0,0,0,
-                           (double)fVar1);
+                          (pCVar11,pCVar8,(CVector3f *)(&DAT_01548910 + _DAT_0154890c * 0xc),-1.0,
+                           0.0,0.0,(double)fVar2);
                 _DAT_0154890c = _DAT_0154890c + 1;
                 break;
               case 2:
-                iVar4 = _DAT_0154890c * 0xc;
-                if ((float *)(&DAT_01548910 + iVar4) != pfVar8) {
-                  *(float *)(&DAT_01548910 + iVar4) = *pfVar8;
-                  *(float *)(&DAT_01548914 + iVar4) = pfVar8[1];
-                  *(float *)(&DAT_01548918 + iVar4) = pfVar8[2];
+                iVar5 = _DAT_0154890c * 0xc;
+                if ((CVector3f *)(&DAT_01548910 + iVar5) != pCVar8) {
+                  ((CVector3f *)(&DAT_01548910 + iVar5))->x = pCVar8->x;
+                  *(float *)(&DAT_01548914 + iVar5) = pCVar8->y;
+                  *(float *)(&DAT_01548918 + iVar5) = pCVar8->z;
                 }
                 _DAT_0154890c = _DAT_0154890c + 1;
                 core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                          (pfVar8,pfVar10,&DAT_01548910 + _DAT_0154890c * 0xc,0,0xbff00000,0,0,0,0,
-                           (double)fVar1);
+                          (pCVar8,pCVar11,(CVector3f *)(&DAT_01548910 + _DAT_0154890c * 0xc),-1.0,
+                           0.0,0.0,(double)fVar2);
                 _DAT_0154890c = _DAT_0154890c + 1;
               }
-              iVar6 = iVar6 + 1;
-              pfVar8 = pfVar8 + 3;
-            } while (iVar6 < (int)_DAT_01548848);
+              iVar7 = iVar7 + 1;
+              pCVar8 = pCVar8 + 1;
+            } while (iVar7 < (int)_DAT_01548848);
           }
           if (2 < (int)_DAT_0154890c) {
-            fVar1 = param_2[2];
-            iVar6 = 0;
+            fVar2 = param_2[2];
+            iVar7 = 0;
             if (0 < (int)_DAT_0154890c) {
-              puVar7 = (uint *)&DAT_01548910;
+              pCVar8 = (CVector3f *)&DAT_01548910;
               do {
-                uVar3 = iVar6 + 1;
-                if (uVar3 == _DAT_0154890c) {
-                  uVar3 = uVar3 ^ _DAT_0154890c;
+                uVar4 = iVar7 + 1;
+                if (uVar4 == _DAT_0154890c) {
+                  uVar4 = uVar4 ^ _DAT_0154890c;
                 }
-                bVar2 = (float)puVar7[2] < fVar1;
-                if (*(float *)(&DAT_01548918 + uVar3 * 0xc) < fVar1) {
-                  bVar2 = bVar2 | 2;
+                bVar3 = pCVar8->z < fVar2;
+                if (*(float *)(&DAT_01548918 + uVar4 * 0xc) < fVar2) {
+                  bVar3 = bVar3 | 2;
                 }
-                switch(bVar2) {
+                switch(bVar3) {
                 case 0:
-                  iVar4 = _DAT_015489d0 * 0xc;
-                  if ((uint *)(&DAT_015489d4 + iVar4) != puVar7) {
-                    *(uint *)(&DAT_015489d4 + iVar4) = *puVar7;
-                    *(uint *)(&DAT_015489d8 + iVar4) = puVar7[1];
-                    *(uint *)(&DAT_015489dc + iVar4) = puVar7[2];
+                  iVar5 = _DAT_015489d0 * 0xc;
+                  if ((CVector3f *)(&DAT_015489d4 + iVar5) != pCVar8) {
+                    ((CVector3f *)(&DAT_015489d4 + iVar5))->x = pCVar8->x;
+                    *(float *)(&DAT_015489d8 + iVar5) = pCVar8->y;
+                    *(float *)(&DAT_015489dc + iVar5) = pCVar8->z;
                   }
                   _DAT_015489d0 = _DAT_015489d0 + 1;
                   break;
                 case 1:
                   core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                            (&DAT_01548910 + uVar3 * 0xc,puVar7,&DAT_015489d4 + _DAT_015489d0 * 0xc,
-                             0,0,0,0,0,0xbff00000,(double)fVar1);
+                            ((CVector3f *)(&DAT_01548910 + uVar4 * 0xc),pCVar8,
+                             (CVector3f *)(&DAT_015489d4 + _DAT_015489d0 * 0xc),0.0,0.0,-1.0,
+                             (double)fVar2);
                   _DAT_015489d0 = _DAT_015489d0 + 1;
                   break;
                 case 2:
-                  iVar4 = _DAT_015489d0 * 0xc;
-                  if ((uint *)(&DAT_015489d4 + iVar4) != puVar7) {
-                    *(uint *)(&DAT_015489d4 + iVar4) = *puVar7;
-                    *(uint *)(&DAT_015489d8 + iVar4) = puVar7[1];
-                    *(uint *)(&DAT_015489dc + iVar4) = puVar7[2];
+                  iVar5 = _DAT_015489d0 * 0xc;
+                  if ((CVector3f *)(&DAT_015489d4 + iVar5) != pCVar8) {
+                    ((CVector3f *)(&DAT_015489d4 + iVar5))->x = pCVar8->x;
+                    *(float *)(&DAT_015489d8 + iVar5) = pCVar8->y;
+                    *(float *)(&DAT_015489dc + iVar5) = pCVar8->z;
                   }
                   _DAT_015489d0 = _DAT_015489d0 + 1;
                   core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                            (puVar7,&DAT_01548910 + uVar3 * 0xc,&DAT_015489d4 + _DAT_015489d0 * 0xc,
-                             0,0,0,0,0,0xbff00000,(double)fVar1);
+                            (pCVar8,(CVector3f *)(&DAT_01548910 + uVar4 * 0xc),
+                             (CVector3f *)(&DAT_015489d4 + _DAT_015489d0 * 0xc),0.0,0.0,-1.0,
+                             (double)fVar2);
                   _DAT_015489d0 = _DAT_015489d0 + 1;
                 }
-                iVar6 = iVar6 + 1;
-                puVar7 = puVar7 + 3;
-              } while (iVar6 < (int)_DAT_0154890c);
+                iVar7 = iVar7 + 1;
+                pCVar8 = pCVar8 + 1;
+              } while (iVar7 < (int)_DAT_0154890c);
             }
             if (2 < (int)_DAT_015489d0) {
-              fVar1 = param_3[2];
-              iVar6 = 0;
+              fVar2 = param_3[2];
+              iVar7 = 0;
               if (0 < (int)_DAT_015489d0) {
-                puVar7 = (uint *)&DAT_015489d4;
+                pCVar8 = (CVector3f *)&DAT_015489d4;
                 do {
-                  uVar3 = iVar6 + 1;
-                  if (uVar3 == _DAT_015489d0) {
-                    uVar3 = uVar3 ^ _DAT_015489d0;
+                  uVar4 = iVar7 + 1;
+                  if (uVar4 == _DAT_015489d0) {
+                    uVar4 = uVar4 ^ _DAT_015489d0;
                   }
-                  bVar2 = fVar1 < (float)puVar7[2];
-                  if (fVar1 < *(float *)(&DAT_015489dc + uVar3 * 0xc)) {
-                    bVar2 = bVar2 | 2;
+                  bVar3 = fVar2 < pCVar8->z;
+                  if (fVar2 < *(float *)(&DAT_015489dc + uVar4 * 0xc)) {
+                    bVar3 = bVar3 | 2;
                   }
-                  switch(bVar2) {
+                  switch(bVar3) {
                   case 0:
-                    iVar4 = _DAT_01548a94 * 0xc;
-                    if ((uint *)(&DAT_01548a98 + iVar4) != puVar7) {
-                      *(uint *)(&DAT_01548a98 + iVar4) = *puVar7;
-                      *(uint *)(&DAT_01548a9c + iVar4) = puVar7[1];
-                      *(uint *)(&DAT_01548aa0 + iVar4) = puVar7[2];
+                    iVar5 = _DAT_01548a94 * 0xc;
+                    if ((CVector3f *)(&DAT_01548a98 + iVar5) != pCVar8) {
+                      ((CVector3f *)(&DAT_01548a98 + iVar5))->x = pCVar8->x;
+                      *(float *)(&DAT_01548a9c + iVar5) = pCVar8->y;
+                      *(float *)(&DAT_01548aa0 + iVar5) = pCVar8->z;
                     }
                     _DAT_01548a94 = _DAT_01548a94 + 1;
                     break;
                   case 1:
                     core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                              (&DAT_015489d4 + uVar3 * 0xc,puVar7,
-                               &DAT_01548a98 + _DAT_01548a94 * 0xc,0,0,0,0,0,0xbff00000,
-                               (double)fVar1);
+                              ((CVector3f *)(&DAT_015489d4 + uVar4 * 0xc),pCVar8,
+                               (CVector3f *)(&DAT_01548a98 + _DAT_01548a94 * 0xc),0.0,0.0,-1.0,
+                               (double)fVar2);
                     _DAT_01548a94 = _DAT_01548a94 + 1;
                     break;
                   case 2:
-                    iVar4 = _DAT_01548a94 * 0xc;
-                    if ((uint *)(&DAT_01548a98 + iVar4) != puVar7) {
-                      *(uint *)(&DAT_01548a98 + iVar4) = *puVar7;
-                      *(uint *)(&DAT_01548a9c + iVar4) = puVar7[1];
-                      *(uint *)(&DAT_01548aa0 + iVar4) = puVar7[2];
+                    iVar5 = _DAT_01548a94 * 0xc;
+                    if ((CVector3f *)(&DAT_01548a98 + iVar5) != pCVar8) {
+                      ((CVector3f *)(&DAT_01548a98 + iVar5))->x = pCVar8->x;
+                      *(float *)(&DAT_01548a9c + iVar5) = pCVar8->y;
+                      *(float *)(&DAT_01548aa0 + iVar5) = pCVar8->z;
                     }
                     _DAT_01548a94 = _DAT_01548a94 + 1;
                     core_dcube_cpp_clipEdgeToPlane_FUN_004515b0
-                              (puVar7,&DAT_015489d4 + uVar3 * 0xc,
-                               &DAT_01548a98 + _DAT_01548a94 * 0xc,0,0,0,0,0,0xbff00000,
-                               (double)fVar1);
+                              (pCVar8,(CVector3f *)(&DAT_015489d4 + uVar4 * 0xc),
+                               (CVector3f *)(&DAT_01548a98 + _DAT_01548a94 * 0xc),0.0,0.0,-1.0,
+                               (double)fVar2);
                     _DAT_01548a94 = _DAT_01548a94 + 1;
                   }
-                  iVar6 = iVar6 + 1;
-                  puVar7 = puVar7 + 3;
-                } while (iVar6 < (int)_DAT_015489d0);
+                  iVar7 = iVar7 + 1;
+                  pCVar8 = pCVar8 + 1;
+                } while (iVar7 < (int)_DAT_015489d0);
               }
               if (2 < _DAT_01548a94) {
                 return 1;

@@ -12,54 +12,55 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_00500370(CMobster *this_ptr
 
 {
   CGame *pCVar1;
-  uint uVar2;
-  int iVar3;
+  CDemonActor *pCVar2;
+  uint uVar3;
   int iVar4;
   int iVar5;
+  int iVar6;
   char local_80 [100];
   int local_1c;
   int local_18;
   float local_14;
   
   if (this_ptr->taunt_timer <= 0.0) {
-    iVar5 = 0;
+    iVar6 = 0;
     local_1c = taunt_category + 0x60;
-    iVar4 = taunt_category * 4;
+    iVar5 = taunt_category * 4;
     do {
       pCVar1 = g_CGamePtr;
-      iVar3 = *(int *)(iVar4 + 0x1d1c6fc) + 1;
-      *(int *)(iVar4 + 0x1d1c6fc) = iVar3;
-      if (((pCVar1->foul_language_flag != 0) || (taunt_category != 1)) || (iVar3 != 6)) {
+      iVar4 = *(int *)(iVar5 + 0x1d1c6fc) + 1;
+      *(int *)(iVar5 + 0x1d1c6fc) = iVar4;
+      if (((pCVar1->foul_language_flag != 0) || (taunt_category != 1)) || (iVar4 != 6)) {
         _sprintf(local_80,"mobster-cheese-%c-%c-%d.wav");
         local_14 = core_sound_cpp_CSound_getSoundDuration_FUN_0055af90(0x0264B290,local_80);
         this_ptr->taunt_timer = local_14;
         if (0.0 < this_ptr->taunt_timer) break;
-        *(uint *)(iVar4 + 0x1d1c6fc) = 0;
+        *(uint *)(iVar5 + 0x1d1c6fc) = 0;
       }
-      iVar5 = iVar5 + 1;
-    } while (iVar5 < 3);
+      iVar6 = iVar6 + 1;
+    } while (iVar6 < 3);
     if (0.0 < this_ptr->taunt_timer) {
       this_ptr->taunt_timer = this_ptr->taunt_timer + _DAT_005def35;
-      iVar4 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handle);
-      if (iVar4 == 0) {
+      iVar5 = sound_sndmain_cpp_FUN_00550b70(this_ptr->sfx_handle);
+      if (iVar5 == 0) {
+        iVar6 = 0;
         iVar5 = 0;
-        iVar4 = 0;
         local_18 = 0;
         while( true ) {
-          if (g_CDemonSetPtr->enemy_count <= iVar5) {
-            uVar2 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+          if (g_CDemonSetPtr->enemy_count <= iVar6) {
+            uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,local_80);
-            this_ptr->sfx_handles[1] = uVar2;
+            this_ptr->sfx_handles[1] = uVar3;
             return;
           }
-          iVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                            (*(uint *)((int)g_CDemonSetPtr->enemies + local_18),
-                             g_CMobsterClassInfo.name_hash);
-          if (((iVar3 != 0) &&
-              (iVar3 = sound_sndmain_cpp_FUN_00550b70(*(uint *)(iVar3 + 0x10b90)), iVar3 != 0)) &&
-             (iVar4 = iVar4 + 1, 3 < iVar4)) break;
+          pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                             (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + local_18),
+                              g_CMobsterClassInfo.name_hash);
+          if (((pCVar2 != (CDemonActor *)0x0) &&
+              (iVar4 = sound_sndmain_cpp_FUN_00550b70(*(uint *)&pCVar2[0x62].field_0x2a8),
+              iVar4 != 0)) && (iVar5 = iVar5 + 1, 3 < iVar5)) break;
           local_18 = local_18 + 4;
-          iVar5 = iVar5 + 1;
+          iVar6 = iVar6 + 1;
         }
       }
     }

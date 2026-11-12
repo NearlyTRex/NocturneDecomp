@@ -16,7 +16,7 @@ CVehicle * core_vehicle_cpp_CVehicle_dtor_FUN_00584de0(CVehicle *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CVehicleTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CVehicleTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

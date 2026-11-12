@@ -41,7 +41,7 @@
 ;   core_event.cpp_FUN_004a1d00 at 004a47c0
 ;   core_lightgun.cpp_CLightGun_process_FUN_00500d20 at 00500e70
 ;   core_lightpis.cpp_CLightPis_process_FUN_00502480 at 005025d0
-;   core_weather.cpp_FUN_005ae190 at 005ae46d
+;   core_weather.cpp_CWeather_update_FUN_005ae190 at 005ae46d
 ;
 ; Referenced Globals:
 ;   undefined4 s_BnoLightningFlash_005f996d+1

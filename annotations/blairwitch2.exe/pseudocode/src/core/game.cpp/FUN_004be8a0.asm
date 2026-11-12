@@ -36,8 +36,8 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_FUN_00408de0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
+;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
 ;   core_dcamera.cpp_FUN_0043c6b0
-;   core_dcamera.cpp_FUN_0043c780
 ;   core_door.cpp_FUN_0045fec0
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60
 ;   core_inv.cpp_CInventory_selectItem_FUN_004dbb50
@@ -206,7 +206,7 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004beaa2
     PUSH EDX                            ; 004beaa9
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004beaaa
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004beaaf
     TEST EAX,EAX                        ; 004beab2
     JZ 0x004bf61f                       ; 004beab4
@@ -236,7 +236,7 @@ section .text
     MOV ESI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004beaf5
     PUSH ESI                            ; 004beafc
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004beafd
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004beb02
     TEST EAX,EAX                        ; 004beb05
     JZ 0x004bf644                       ; 004beb07
@@ -345,7 +345,7 @@ section .text
     MOV ESI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004bec23
     PUSH ESI                            ; 004bec2a
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004bec2b
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004bec30
     TEST EAX,EAX                        ; 004bec33
     JZ 0x004bf669                       ; 004bec35
@@ -375,7 +375,7 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004bec75
     PUSH EDX                            ; 004bec7c
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004bec7d
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004bec82
     TEST EAX,EAX                        ; 004bec85
     JZ 0x004bf68e                       ; 004bec87
@@ -405,7 +405,7 @@ section .text
     MOV ESI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004becc8
     PUSH ESI                            ; 004beccf
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004becd0
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004becd5
     TEST EAX,EAX                        ; 004becd8
     JZ 0x004bf6b3                       ; 004becda
@@ -470,8 +470,8 @@ section .text
     PUSH 0x1fc7838                      ; 004bedba
     LEA ESI,[ESP + 0xd4]                ; 004bedbf
     LEA EDI,[ESP + 0xa4]                ; 004bedc6
-    CALL core_dcamera.cpp_FUN_0043c780  ; 004bedcd
-        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0043c780()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780 ; 004bedcd
+        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0xd4]                ; 004bedd2
     ADD ESP,0x8                         ; 004bedd9
     LEA EAX,[ESP + 0x9c]                ; 004beddc
@@ -567,8 +567,8 @@ section .text
     PUSH 0x1fc7838                      ; 004bef18
     LEA ESI,[ESP + 0x1b8]               ; 004bef1d
     LEA EDI,[ESP + 0x50]                ; 004bef24
-    CALL core_dcamera.cpp_FUN_0043c780  ; 004bef28
-        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0043c780()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780 ; 004bef28
+        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x1b8]               ; 004bef2d
     ADD ESP,0x8                         ; 004bef34
     LEA EBX,[ESP + 0x60]                ; 004bef37
@@ -637,7 +637,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 004bf00b | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 004bf011
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004bf012
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004bf017
     TEST EAX,EAX                        ; 004bf01a
     JZ 0x004bf023                       ; 004bf01c
@@ -675,7 +675,7 @@ section .text
     PUSH EDX                            ; 004bf091
     PUSH EAX                            ; 004bf092
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004bf093
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004bf098
     TEST EAX,EAX                        ; 004bf09b
     JZ 0x004bf70d                       ; 004bf09d
@@ -868,7 +868,7 @@ section .text
     SUB ESP,0x4                         ; 004bf337
     FSTP float ptr [ESP]                ; 004bf33a
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 004bf33d
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x208],EAX     ; 004bf342
     FLD float ptr [ESP + 0x208]         ; 004bf349
     FMUL float ptr [0x005d8ad3]         ; 004bf350 | DAT_005d8ad3
@@ -950,7 +950,7 @@ section .text
     SUB ESP,0x4                         ; 004bf457
     FSTP float ptr [ESP]                ; 004bf45a
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 004bf45d
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x208],EAX     ; 004bf462
     FLD float ptr [ESP + 0x208]         ; 004bf469
     FMUL float ptr [0x005d8ad3]         ; 004bf470 | DAT_005d8ad3
@@ -1194,8 +1194,8 @@ section .text
     PUSH 0x1fc7838                      ; 004bf760
     LEA EDI,[ESP + 0x170]               ; 004bf765
     LEA EBX,[ESP + 0x17c]               ; 004bf76c
-    CALL core_dcamera.cpp_FUN_0043c780  ; 004bf773
-        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0043c780()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780 ; 004bf773
+        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0xec]                ; 004bf778
     ADD ESP,0x8                         ; 004bf77f
     LEA EAX,[ESP + 0x168]               ; 004bf782
@@ -1337,8 +1337,8 @@ section .text
     PUSH 0x1fc7838                      ; 004bf98d
     LEA EDI,[ESP + 0x170]               ; 004bf992
     MOV EBX,0x1cb3924                   ; 004bf999
-    CALL core_dcamera.cpp_FUN_0043c780  ; 004bf99e
-        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0043c780()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780 ; 004bf99e
+        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0xb0]                ; 004bf9a3
     ADD ESP,0x8                         ; 004bf9aa
     LEA EAX,[ESP + 0x168]               ; 004bf9ad

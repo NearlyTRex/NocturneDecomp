@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_filmreel.cpp_factoryFuncFilmReel_FUN_00496140
 // Address: 00496140
-void factoryFuncFilmReel(void);
+CFilmReel * __cdecl factoryFuncFilmReel(void);
 
 // Original: core_filmreel.cpp_CFilmReel_getActorType_FUN_00496160
 // Address: 00496160
@@ -67,7 +67,7 @@ CBoundingBox3D * __cdecl CFilmReel::getBoundingBox(CFilmReel *this_ptr,CBounding
 
 // Original: core_filmreel.cpp_factoryFuncFilmProjector_FUN_00496430
 // Address: 00496430
-void factoryFuncFilmProjector(void);
+CFilmProjector * __cdecl factoryFuncFilmProjector(void);
 
 // Original: core_filmreel.cpp_CFilmProjector_getActorType_FUN_00496450
 // Address: 00496450

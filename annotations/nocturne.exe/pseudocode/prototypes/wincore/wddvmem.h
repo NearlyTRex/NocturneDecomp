@@ -19,7 +19,7 @@ void __cdecl convertPaletteToDirectColor(void);
 
 // Original: wincore_wddvmem.cpp_cleanupDirectDrawSurfaces_FUN_00552880
 // Address: 00552880
-void cleanupDirectDrawSurfaces(void);
+void __cdecl cleanupDirectDrawSurfaces(void);
 
 // Original: wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005528e0
 // Address: 005528e0

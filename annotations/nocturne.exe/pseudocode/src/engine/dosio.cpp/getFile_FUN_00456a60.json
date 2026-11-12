@@ -44,15 +44,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f5110",
-      "from_addr": "004f513a",
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f4e40",
       "from_addr": "004f4e6b",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f5110",
+      "from_addr": "004f513a",
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_004f5110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -130,13 +130,7 @@
     {
       "addr": "004a4170",
       "from_addr": "004a42f1",
-      "name": "core_game.cpp_CGame_FUN_004a4170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a57c0",
-      "from_addr": "004a5889",
-      "name": "core_game.cpp_CGame_FUN_004a57c0",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -161,6 +155,12 @@
       "addr": "004a4b50",
       "from_addr": "004a4b69",
       "name": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a57c0",
+      "from_addr": "004a5889",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -206,15 +206,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004febd0",
-      "from_addr": "004fec9c",
-      "name": "core_script.cpp_CScript_FUN_004febd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00504e70",
       "from_addr": "00504ec3",
       "name": "core_script.cpp_CScript_dbLoad_FUN_00504e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004febd0",
+      "from_addr": "004fec9c",
+      "name": "core_script.cpp_CScript_loadScript_FUN_004febd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -569,6 +569,32 @@
       "STORE": 23
     },
     "pcode_op_count": 308
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00460c70",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00479180",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004659c0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00481a50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8712
+    }
   },
   "stack_frame": {
     "frame_size": 560,

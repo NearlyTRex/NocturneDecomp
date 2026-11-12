@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004df770(int param_1)
+; void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004df770(SMRGLKeyframeModel *keyframe_model)
 ;
+; Parameters:
+; SMRGLKeyframeModel * Stack[0x4]:4   keyframe_model
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

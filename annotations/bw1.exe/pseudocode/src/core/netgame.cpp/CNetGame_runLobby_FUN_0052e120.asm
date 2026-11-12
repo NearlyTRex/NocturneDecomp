@@ -820,7 +820,7 @@ section .text
     JZ 0x0052e9ae                       ; 0052e952
         ;   XREF to: 0052e9ae (CONDITIONAL_JUMP)  ; LAB_0052e9ae
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0052e954
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005b2420()
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
     MOV EDX,EAX                         ; 0052e959
     MOV EBX,0x12                        ; 0052e95b
     SAR EDX,0x1f                        ; 0052e960

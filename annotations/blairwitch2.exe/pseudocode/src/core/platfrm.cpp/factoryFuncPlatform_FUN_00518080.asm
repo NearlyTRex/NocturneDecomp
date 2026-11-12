@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_platfrm_cpp_factoryFuncPlatform_FUN_00518080(void)
+; CPlatform * __cdecl core_platfrm_cpp_factoryFuncPlatform_FUN_00518080(void)
 ;
 ;
 ; Called Functions:

@@ -14,8 +14,8 @@ void core_bmppuzzl_cpp_staticInit_FUN_004118e0(void)
   __arrinit(CAlphaBitmap_ARRAY_007e0010,5,&g_CAlphaBitmapTypeInfo);
   _atexit(&WatcomStaticDestructorNode_005f0c77);
   core_bmppuzzl_cpp_CAudioRecPuzzle_ctor_FUN_00411b50(&g_CAudioRecPuzzleInstance);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_005f0c87);
   core_bmppuzzl_cpp_CChemPuzzle_ctor_FUN_00413200(&g_CChemPuzzleInstance);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_005f0c97);
   return;
 }

@@ -52,6 +52,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00477a10",
+      "from_addr": "00477a2d",
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_00477a10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00477ac0",
+      "from_addr": "00477add",
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00473cd0",
       "from_addr": "00473d29",
       "name": "core_dtrace.cpp_FUN_00473cd0",
@@ -61,18 +73,6 @@
       "addr": "00474400",
       "from_addr": "00474484",
       "name": "core_dtrace.cpp_FUN_00474400",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00477a10",
-      "from_addr": "00477a2d",
-      "name": "core_dtrace.cpp_FUN_00477a10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00477ac0",
-      "from_addr": "00477add",
-      "name": "core_dtrace.cpp_FUN_00477ac0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -299,7 +299,7 @@
       {
         "call_addr": "00477add",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_00477ac0",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -347,6 +347,32 @@
       "STORE": 9
     },
     "pcode_op_count": 167
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b84d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c0880",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005feb90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005648c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 36,

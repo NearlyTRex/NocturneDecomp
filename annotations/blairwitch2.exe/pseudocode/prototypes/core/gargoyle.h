@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_gargoyle.cpp_factoryFuncGargoyle_FUN_004bfab0
 // Address: 004bfab0
-void factoryFuncGargoyle(void);
+CGargoyle * __cdecl factoryFuncGargoyle(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_getActorType_FUN_004bfad0
 // Address: 004bfad0

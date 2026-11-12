@@ -547,15 +547,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045ddb0",
-      "from_addr": "0045de21",
-      "name": "core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0",
+      "addr": "0045d7c0",
+      "from_addr": "0045d874",
+      "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_0045d7c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045d7c0",
-      "from_addr": "0045d874",
-      "name": "core_dfilter.cpp_FUN_0045d7c0",
+      "addr": "0045ddb0",
+      "from_addr": "0045de21",
+      "name": "core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -567,7 +567,7 @@
     {
       "addr": "0045f0a0",
       "from_addr": "0045f0ec",
-      "name": "core_dimage.cpp_FUN_0045f0a0",
+      "name": "core_dimage.cpp_CDemonImage_allocMemory_FUN_0045f0a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -751,6 +751,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0048a960",
+      "from_addr": "0048a9a2",
+      "name": "core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_0048a960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0048aa40",
       "from_addr": "0048aaa3",
       "name": "core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_0048aa40",
@@ -784,12 +790,6 @@
       "addr": "0048f920",
       "from_addr": "0048f9fe",
       "name": "core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0048f920",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0048a960",
-      "from_addr": "0048a9a2",
-      "name": "core_dtrace.cpp_FUN_0048a960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1425,7 +1425,7 @@
     {
       "addr": "00523980",
       "from_addr": "00523d55",
-      "name": "core_motion.cpp_FUN_00523980",
+      "name": "core_motion.cpp_CMotionList_load_FUN_00523980",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -2007,7 +2007,7 @@
     {
       "addr": "00596390",
       "from_addr": "00596446",
-      "name": "core_texlist.cpp_FUN_00596390",
+      "name": "core_texlist.cpp_CTextureList_save_FUN_00596390",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -3115,18 +3115,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00572920",
-      "from_addr": "00572969",
-      "name": "sound_sndmain.cpp_FUN_00572920",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00572980",
-      "from_addr": "005729c4",
-      "name": "sound_sndmain.cpp_FUN_00572980",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00573e70",
       "from_addr": "00575f8d",
       "name": "sound_sndmain.cpp_FUN_00573e70",
@@ -3238,6 +3226,18 @@
       "addr": "00576040",
       "from_addr": "00576094",
       "name": "sound_sndmain.cpp_setMaxSwSoundLatency_FUN_00576040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572980",
+      "from_addr": "005729c4",
+      "name": "sound_sndmain.cpp_setNextSfxChannel_FUN_00572980",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572920",
+      "from_addr": "00572969",
+      "name": "sound_sndmain.cpp_setNextSfxUserData_FUN_00572920",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -3437,7 +3437,7 @@
     ],
     "convention": "unknown",
     "name": "core_main.c_FUN_005030e0",
-    "signature": "void core_main_c_FUN_005030e0(undefined4 param_1)"
+    "signature": "void core_main_c_FUN_005030e0(char *param_1)"
   },
   "function_calls": [
     {
@@ -3461,14 +3461,14 @@
       "name": "engine_2d.c_cleanupGraphicsSystem_FUN_00401120"
     },
     {
+      "addr": "005b3080",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005b3080"
+    },
+    {
       "addr": "005b2410",
       "is_variadic": false,
       "name": "wincore_winrun.cpp_endPeriod_FUN_005b2410"
-    },
-    {
-      "addr": "005b3080",
-      "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_005b3080"
     }
   ],
   "globals": [
@@ -3517,6 +3517,20 @@
     },
     "pcode_op_count": 309
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e4500",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e4330",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 16,
@@ -3547,7 +3561,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_main_c_FUN_005030e0(uint param_1)",
+      "text": "void core_main_c_FUN_005030e0(char *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -3563,7 +3577,7 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "_vsprintf(0x1d1c300,param_1,&local_c);",
+      "text": "_vsprintf((char *)0x1d1c300,param_1,(va_list_t)&local_c);",
       "type": "unnamed_param"
     },
     {

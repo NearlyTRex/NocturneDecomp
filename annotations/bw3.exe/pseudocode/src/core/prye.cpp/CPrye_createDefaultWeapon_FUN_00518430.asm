@@ -55,11 +55,11 @@ section .text
     PUSH EDX                            ; 0051844d
     PUSH 0x5ccd33                       ; 0051844e | = "CFlintlock"
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 00518453
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 00518458
     PUSH EAX                            ; 0051845b
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0051845c
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00518461
     MOV EBX,EAX                         ; 00518464
     TEST EAX,EAX                        ; 00518466
@@ -110,11 +110,11 @@ section .text
     PUSH EDI                            ; 005184d5
     PUSH 0x5ccd6f                       ; 005184d6 | = "CHolycross"
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 005184db
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 005184e0
     PUSH EAX                            ; 005184e3
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 005184e4
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 005184e9
     MOV EBX,EAX                         ; 005184ec
     TEST EAX,EAX                        ; 005184ee
@@ -150,11 +150,11 @@ section .text
     PUSH ECX                            ; 0051852f
     PUSH 0x5ccdac                       ; 00518530 | = "CLightActor"
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 00518535
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 0051853a
     PUSH EAX                            ; 0051853d
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0051853e
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00518543
     MOV EBX,EAX                         ; 00518546
     TEST EAX,EAX                        ; 00518548
@@ -203,11 +203,11 @@ section .text
     PUSH EAX                            ; 005185bd
     PUSH 0x5ccde7                       ; 005185be | = "CBoxActor"
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 005185c3
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 005185c8
     PUSH EAX                            ; 005185cb
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 005185cc
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 005185d1
     MOV EBX,EAX                         ; 005185d4
     TEST EAX,EAX                        ; 005185d6

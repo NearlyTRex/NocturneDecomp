@@ -37,7 +37,7 @@
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;   sound_sndmain.cpp_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
@@ -119,8 +119,8 @@ section .text
     MOV EAX,[0x00609ed0]                ; 0045b255 | g_CConsolePtr
     PUSH EAX                            ; 0045b25a | g_CConsoleInstance
     MOV dword ptr [EBX + 0x25a8],0x0    ; 0045b25b
-    CALL engine_console.cpp_FUN_00436710 ; 0045b265
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0045b265
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0045b26a
     LEA EAX,[EBX + 0x2437c]             ; 0045b26d
     PUSH EAX                            ; 0045b273
@@ -133,8 +133,8 @@ section .text
     PUSH 0x5d05c0                       ; 0045b288 | = "hit points: %3.2f\n"
     MOV EDX,dword ptr [0x00609ed0]      ; 0045b28d | g_CConsolePtr
     PUSH EDX                            ; 0045b293 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0045b294
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0045b294
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0045b299
     FLD float ptr [EBX + 0x25a8]        ; 0045b29c
         ;   Label: LAB_0045b29c
@@ -327,7 +327,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x34]      ; 0045b49d
     PUSH EDX                            ; 0045b4a0
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 0045b4a1
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0045b4a6
     TEST EAX,EAX                        ; 0045b4a9
     JZ 0x0045b4ff                       ; 0045b4ab

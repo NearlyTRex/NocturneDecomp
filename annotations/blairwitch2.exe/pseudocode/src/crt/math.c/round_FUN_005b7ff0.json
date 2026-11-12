@@ -434,6 +434,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004769a0",
+      "from_addr": "004769da",
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004769a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00476a50",
+      "from_addr": "00476a8a",
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00472c60",
       "from_addr": "00472ccd",
       "name": "core_dtrace.cpp_FUN_00472c60",
@@ -449,18 +461,6 @@
       "addr": "004738d0",
       "from_addr": "00473973",
       "name": "core_dtrace.cpp_FUN_004738d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004769a0",
-      "from_addr": "004769da",
-      "name": "core_dtrace.cpp_FUN_004769a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00476a50",
-      "from_addr": "00476a8a",
-      "name": "core_dtrace.cpp_FUN_00476a50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1016,9 +1016,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046b540",
+      "from_addr": "0046b55e",
+      "name": "engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0046b540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0046afb0",
       "from_addr": "0046afce",
       "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046b4f0",
+      "from_addr": "0046b4fd",
+      "name": "engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0046b4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046b4d0",
+      "from_addr": "0046b4da",
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0046b4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046b4b0",
+      "from_addr": "0046b4c0",
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1031,30 +1055,6 @@
       "addr": "0046b060",
       "from_addr": "0046b0dc",
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046b4b0",
-      "from_addr": "0046b4c0",
-      "name": "engine_drender.cpp_FUN_0046b4b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046b4d0",
-      "from_addr": "0046b4da",
-      "name": "engine_drender.cpp_FUN_0046b4d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046b4f0",
-      "from_addr": "0046b4fd",
-      "name": "engine_drender.cpp_FUN_0046b4f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046b540",
-      "from_addr": "0046b55e",
-      "name": "engine_drender.cpp_FUN_0046b540",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1331,6 +1331,32 @@
       "STORE": 4
     },
     "pcode_op_count": 24
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c03a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a3120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005fe6b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00563a30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

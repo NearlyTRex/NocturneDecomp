@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_clipper_c_getFarPlaneDistance_FUN_0043b4a0(void)
+; int __cdecl engine_clipper_c_getFarPlaneDistance_FUN_0043b4a0(void)
 ;
 ;
 ; Referenced Globals:

@@ -16,29 +16,29 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
   SMorphPoint *pSVar3;
   SMRGLPrimitiveTriangle *pSVar4;
   CSkeleton *this_ptr_00;
-  uint uVar5;
-  CDemonActor *pCVar6;
+  CDemonActor *pCVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
-  uint *puVar9;
-  byte bVar10;
+  uint *puVar8;
+  byte bVar9;
   uint auStackY_1010 [1014];
+  uint class_name_hash;
   char *model_name;
   uint uStack_28;
   uint uStack_1c;
   
-  bVar10 = 0;
+  bVar9 = 0;
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
     _DAT_01d046a0 = "..\\core\\mimic.cpp";
     _DAT_01d046a4 = 0xb6;
     core_main_c_FUN_004e4500("CMimic::setup - can't use mimic in multi-player!");
   }
-  iVar8 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-  if (iVar8 == 0) {
+  iVar7 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
+  if (iVar7 == 0) {
     model_name = "stranger.dfm";
   }
   else {
-    model_name = (char *)(iVar8 + 0x2514);
+    model_name = (char *)(iVar7 + 0x2514);
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(this_ptr->base).base.model,model_name);
@@ -84,11 +84,11 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
   core_cloth_cpp_FUN_005ae680
             (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,pCVar1);
-  uVar5 = core_actor_cpp_createActorByName_FUN_0040c5a0
-                    (this_ptr->morph_actor_type,g_CEnemyClassInfo.name_hash);
-  pCVar6 = (CDemonActor *)core_actor_cpp_castToClassHash_FUN_0040c8f0(uVar5);
-  this_ptr->morph_target_actor = pCVar6;
-  if (pCVar6 == (CDemonActor *)0x0) {
+  class_name_hash = g_CEnemyClassInfo.name_hash;
+  pCVar5 = core_actor_cpp_createActorByName_FUN_0040c5a0(this_ptr->morph_actor_type);
+  pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar5,class_name_hash);
+  this_ptr->morph_target_actor = pCVar5;
+  if (pCVar5 == (CDemonActor *)0x0) {
     _DAT_01d046a0 = "..\\core\\mimic.cpp";
     _DAT_01d046a4 = 0x101;
     core_main_c_FUN_004e4500("CMimic failed to create morph target actor!");
@@ -99,49 +99,49 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0(pCVar1);
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_005b6f80(&this_ptr->morph,0,pCVar1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00544ee0(pCVar1);
-  iVar8 = 0;
+  iVar7 = 0;
   if (0 < (this_ptr->morph).models[0].num_points) {
-    iVar7 = 0;
+    iVar6 = 0;
     do {
       pSVar3 = (this_ptr->morph).models[0].points;
-      iVar8 = iVar8 + 1;
-      *(float *)((int)&(pSVar3->position).x + iVar7) =
-           -*(float *)((int)&(pSVar3->position).x + iVar7);
-      iVar7 = iVar7 + 0x10;
-    } while (iVar8 < (this_ptr->morph).models[0].num_points);
+      iVar7 = iVar7 + 1;
+      *(float *)((int)&(pSVar3->position).x + iVar6) =
+           -*(float *)((int)&(pSVar3->position).x + iVar6);
+      iVar6 = iVar6 + 0x10;
+    } while (iVar7 < (this_ptr->morph).models[0].num_points);
   }
-  iVar8 = 0;
+  iVar7 = 0;
   if (0 < (this_ptr->morph).models[0].num_faces) {
-    iVar7 = 0;
+    iVar6 = 0;
     do {
       pSVar4 = (this_ptr->morph).models[0].faces;
-      puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar7);
-      puVar9 = puVar2 + (uint)bVar10 * -2 + 1;
+      puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);
+      puVar8 = puVar2 + (uint)bVar9 * -2 + 1;
       uStack_1c = *puVar2;
-      *(uint *)(&stack0xffffffe8 + (uint)bVar10 * -8) = *puVar9;
-      *(uint *)(&stack0xffffffec + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
-           puVar9[(uint)bVar10 * -2 + 1];
-      puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar7);
-      puVar9 = puVar2 + (uint)bVar10 * -2 + 1;
+      *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8) = *puVar8;
+      *(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
+           puVar8[(uint)bVar9 * -2 + 1];
+      puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);
+      puVar8 = puVar2 + (uint)bVar9 * -2 + 1;
       uStack_28 = *puVar2;
-      *(uint *)(&stack0xffffffdc + (uint)bVar10 * -8) = *puVar9;
-      *(uint *)(&stack0xffffffe0 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
-           puVar9[(uint)bVar10 * -2 + 1];
-      puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar7);
-      puVar9 = puVar2 + (uint)bVar10 * -2 + 1;
+      *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8) = *puVar8;
+      *(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
+           puVar8[(uint)bVar9 * -2 + 1];
+      puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);
+      puVar8 = puVar2 + (uint)bVar9 * -2 + 1;
       *puVar2 = uStack_1c;
-      *puVar9 = *(uint *)(&stack0xffffffe8 + (uint)bVar10 * -8);
-      puVar9[(uint)bVar10 * -2 + 1] =
-           *(uint *)(&stack0xffffffec + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-      puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar7);
-      puVar9 = puVar2 + (uint)bVar10 * -2 + 1;
+      *puVar8 = *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8);
+      puVar8[(uint)bVar9 * -2 + 1] =
+           *(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+      puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);
+      puVar8 = puVar2 + (uint)bVar9 * -2 + 1;
       *puVar2 = uStack_28;
-      *puVar9 = *(uint *)(&stack0xffffffdc + (uint)bVar10 * -8);
-      puVar9[(uint)bVar10 * -2 + 1] =
-           *(uint *)(&stack0xffffffe0 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-      iVar8 = iVar8 + 1;
-      iVar7 = iVar7 + 0x3c;
-    } while (iVar8 < (this_ptr->morph).models[0].num_faces);
+      *puVar8 = *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8);
+      puVar8[(uint)bVar9 * -2 + 1] =
+           *(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+      iVar7 = iVar7 + 1;
+      iVar6 = iVar6 + 0x3c;
+    } while (iVar7 < (this_ptr->morph).models[0].num_faces);
   }
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_00544e60
             ((CDeformableModelInstance *)(this_ptr->morph_target_actor + 1));

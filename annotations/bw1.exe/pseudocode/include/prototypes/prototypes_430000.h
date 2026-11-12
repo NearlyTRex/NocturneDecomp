@@ -22,6 +22,7 @@
 #include "types/structs/SClothVertex.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SEdge.h"
 #include "types/structs/SFire.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SRenderVertex.h"
@@ -87,7 +88,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_00433e50(CCharacter *th
 void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80(CCharacter *this_ptr,float delta_time);
 undefined4 core_charactr_cpp_FUN_00433f10(CCharacter *param_1,float param_2,char *param_3);
 int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_004340b0(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
-void core_charactr_cpp_FUN_004342c0(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_004342c0(CCharacter *this_ptr,float blend_weight,int blend_mode);
 void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction);
 void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_004343c0(CCharacter *this_ptr);
 float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(CCharacter *this_ptr,int state_index);
@@ -103,7 +104,7 @@ void __cdecl core_charactr_cpp_setActorXPos_FUN_00435500(CDemonActor *actor,floa
 undefined4 core_charactr_cpp_FUN_004355d0(int param_1);
 SFire * core_charactr_cpp_SFire_ctor_FUN_004355e0(SFire *this_ptr);
 void core_chain_cpp_staticInit_FUN_00435600(void);
-void core_chain_cpp_factoryFuncChain_FUN_00435630(void);
+CChain * __cdecl core_chain_cpp_factoryFuncChain_FUN_00435630(void);
 CDemonActorType * core_chain_cpp_CChain_getActorType_FUN_00435650(CChain *this_ptr);
 CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_00435660(CChain *this_ptr);
 void core_chain_cpp_FUN_004357a0(int param_1);
@@ -138,49 +139,47 @@ void cockpit_ckptutil_c_FUN_0043843c(void);
 void cockpit_ckptutil_c_blitFullScreen_FUN_0043852c(void *param_1,void *param_2);
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_00438560(void *sprite_data,void *span_data);
 void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_00438700(void *src_data,int width,int height,void *background_base,int dest_x,int dest_y);
-void cockpit_ckptutil_c_copyScreenRegion_FUN_00438790(undefined4 *param_1,int param_2,int param_3,int param_4,uint param_5,int param_6);
+void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_00438790(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height);
 void cockpit_ckptutil_c_FUN_004387f0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7);
 void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00438a10(void *bitmap_data,int width,int height,int num_iterations);
 void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00438b40(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
 void cockpit_ckptutil_c_FUN_00438bd0(char *param_1,int *param_2,int param_3);
 void cockpit_ckptutil_c_FUN_00438e40(char *param_1,int param_2,int param_3);
-void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_00438fa0(short *param_1,int param_2,int param_3,int param_4);
+void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_00438fa0(SEdge *edges,int count,int x_offset,int y_offset);
 void cockpit_ckptutil_c_FUN_0043908e(int param_1,short *param_2,int param_3,int param_4,int param_5);
 void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_00439370(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode);
 void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_00439640(int x0,int y0,int x1,int y1,int color);
-void cockpit_ckptutil_c_FUN_004398fe(int param_1,int param_2,float param_3,int param_4);
 void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00439900(int x,int y,float alpha,int color);
-void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_00439ca0(int param_1,int param_2,float param_3,int param_4);
+void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_00439ca0(int x,int y,float blend_factor,int palette_index);
 void __cdecl cockpit_ckptutil_c_putPixel_FUN_00439f70(int x,int y,int color);
 undefined4 cockpit_ckptutil_c_isLineBlendingDisabled_FUN_00439ffe(void);
-undefined4 cockpit_ckptutil_c_FUN_0043a00c(void);
 undefined4 cockpit_ckptutil_c_setLineBlendingDisabled_FUN_0043a010(void);
 void cockpit_ckptutil_c_setLineClippingDisabled_FUN_0043a01c(undefined4 param_1);
 void cockpit_ckptutil_c_FUN_0043a030(undefined4 param_1);
 void * cockpit_ckptutil_c_rotateBitmap_FUN_0043a040(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
 void cockpit_ckptutil_c_FUN_0043a200(undefined4 *param_1,int param_2,uint param_3,uint param_4);
-void cockpit_ckptutil_c_setEdgeData_FUN_0043a3c0(int param_1,int param_2,undefined2 param_3,undefined2 param_4,undefined2 param_5,ushort param_6,byte param_7);
+void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_0043a3c0(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit);
 void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a45e(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
-void cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_0043af20(ushort *param_1,int param_2,short param_3);
+void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_0043af20(SEdge *edge_array,int edge_count,int flip_width);
 void cockpit_ckptutil_c_FUN_0043b090(byte *param_1,undefined4 param_2,int *param_3,int param_4,int param_5,uint param_6);
 void * __cdecl cockpit_ckptutil_c_FUN_0043b2e0(char *filename,void *buffer,int size);
 void __cdecl engine_clipper_c_setFarPlaneDistance_FUN_0043b480(int distance);
-undefined4 engine_clipper_c_getFarPlaneDistance_FUN_0043b4a0(void);
-void __cdecl engine_clipper_c_interpolateVertexRightClip_FUN_0043b4b0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexLeftClip_FUN_0043b5b0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_0043b6b0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexBottomClip_FUN_0043b7b0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexFarClip_FUN_0043b8b0(int *param_1,int *param_2,int *param_3);
+int __cdecl engine_clipper_c_getFarPlaneDistance_FUN_0043b4a0(void);
+void __cdecl engine_clipper_c_interpolateVertexRightClip_FUN_0043b4b0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexLeftClip_FUN_0043b5b0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_0043b6b0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexBottomClip_FUN_0043b7b0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexFarClip_FUN_0043b8b0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_0043b9d0(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
 int engine_clipper_c_clipPolygonLeftPlane_FUN_0043bb0e(undefined4 *param_1,int param_2,int param_3);
-int engine_clipper_c_clipPolygonBottomPlane_FUN_0043bd8e(int *param_1,int param_2,int param_3);
+int engine_clipper_c_clipPolygonBottomPlane_FUN_0043bd8e(undefined4 *param_1,int param_2,int param_3);
 void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_0043c0d0(void);
 int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_0043c190(int vertex_count,int *vertex_indices);
 void __cdecl engine_clipper_c_clipAndRasterize_FUN_0043cbf0(int vertex_count,int *vertex_indices);
-void __cdecl engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_0043cc70(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_0043cda0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_0043ced0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_0043d000(int *param_1,int *param_2,int *param_3);
+void __cdecl engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_0043cc70(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_0043cda0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_0043ced0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_0043d000(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void engine_clipper_c_clipPolygonRightPlaneGlobal_FUN_0043d13e(void);
 void __cdecl engine_clipper_c_clipPolygonLeftPlaneGlobal_FUN_0043d280(void);
 void engine_clipper_c_FUN_0043d4fe(void);

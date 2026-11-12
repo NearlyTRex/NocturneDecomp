@@ -72,7 +72,7 @@ section .text
     ADD ESI,ECX                         ; 004e5a20
     PUSH ESI                            ; 004e5a22
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_00477a50 ; 004e5a23
-        ;   XREF to: 00477a50 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_00477a50()
+        ;   XREF to: 00477a50 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_00477a50(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0x148],EAX     ; 004e5a28
     FLD float ptr [ESP + 0x148]         ; 004e5a2f
     ADD ESP,0xc                         ; 004e5a36

@@ -18,7 +18,7 @@ CAngelSpirit * core_hotdemon_cpp_CAngelSpirit_dtor_FUN_004d64f0(CAngelSpirit *th
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CAngelSpiritTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CAngelSpiritTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

@@ -11,7 +11,7 @@ int FUN_005a3170(int param_1)
 {
   int iVar1;
   
-  iVar1 = _fgetc(*(uint *)(param_1 + 8));
+  iVar1 = _fgetc(*(_FILE **)(param_1 + 8));
   if (iVar1 == -1) {
     *(byte *)(param_1 + 0x10) = *(byte *)(param_1 + 0x10) | 2;
   }

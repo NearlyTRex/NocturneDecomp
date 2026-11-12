@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_setNextSfxTrackedVelocity2_FUN_00550240(undefined4 param_1)
+; void __cdecl sound_sndmain_cpp_setNextSfxTrackedVelocity2_FUN_00550240(CVector3d *velocity_source_ptr)
 ;
+; Parameters:
+; CVector3d *      Stack[0x4]:4   velocity_source_ptr
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0264161c

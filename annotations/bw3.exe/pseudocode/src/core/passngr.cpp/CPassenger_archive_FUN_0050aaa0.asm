@@ -52,7 +52,7 @@ section .text
     LEA ESI,[EBX + 0x21400]             ; 0050aadc
     PUSH ESI                            ; 0050aae2
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0050aae3
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x006035f4]      ; 0050aae8 | g_CPassengerClassVersion
     ADD ESP,0x8                         ; 0050aaee
     CMP EDX,0x2                         ; 0050aaf1
@@ -80,7 +80,7 @@ section .text
     LEA ESI,[EBX + 0x21404]             ; 0050ab2b
     PUSH ESI                            ; 0050ab31
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0050ab32
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0050ab37
     CMP dword ptr [0x006035f4],0x4      ; 0050ab3a | g_CPassengerClassVersion
         ;   Label: LAB_0050ab3a

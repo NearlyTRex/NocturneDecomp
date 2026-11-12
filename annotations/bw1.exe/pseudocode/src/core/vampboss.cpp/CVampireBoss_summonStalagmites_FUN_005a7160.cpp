@@ -19,7 +19,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_summonStalagmites_FUN_005a7160(CVamp
             ((CDemonActor *)this_ptr,"voicusummon.wav");
   for (iVar2 = 0; iVar2 < g_CDemonSetPtr->actor_count; iVar2 = iVar2 + 1) {
     this_ptr_00 = (CDrip *)core_actor_cpp_castToClassHash_FUN_0040c600
-                                     (*(uint *)((int)g_CDemonSetPtr->actors + iVar3),
+                                     (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
                                       g_CDripClassInfo.name_hash);
     if ((this_ptr_00 != (CDrip *)0x0) && (this_ptr_00->type == DRIP_TYPE_STALAG)) {
       iVar1 = core_actor_cpp_randomChance_FUN_0040cd00(0.5);

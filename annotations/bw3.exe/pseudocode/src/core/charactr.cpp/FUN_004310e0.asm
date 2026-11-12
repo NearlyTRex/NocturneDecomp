@@ -46,7 +46,7 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
 
@@ -178,8 +178,8 @@ section .text
     PUSH 0x5b83ec                       ; 00431214 | = "%s tried to follow NULL actor!\n"
     MOV ECX,dword ptr [0x005f1690]      ; 00431219 | g_CConsolePtr
     PUSH ECX                            ; 0043121f | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00431220
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00431220
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00431225
     MOV EAX,dword ptr [EBP + 0x24]      ; 00431228
     MOV dword ptr [EAX],0x3             ; 0043122b
@@ -238,7 +238,7 @@ section .text
     PUSH dword ptr [ESP + 0x5c]         ; 004312bd
     MOV dword ptr [ESP + 0x54],EAX      ; 004312c1
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 ; 004312c5
-        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0()
+        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0(float angle_radians)
     MOV dword ptr [ESP + 0x64],EAX      ; 004312ca
     FLD float ptr [ESP + 0x64]          ; 004312ce
     ADD ESP,0x4                         ; 004312d2
@@ -312,8 +312,8 @@ section .text
     PUSH 0x5b840c                       ; 00431389 | = "%s confused while following %s\n"
     MOV EDI,dword ptr [0x005f1690]      ; 0043138e | g_CConsolePtr
     PUSH EDI                            ; 00431394 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00431395
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00431395
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0043139a
     MOV EAX,dword ptr [EBP + 0x24]      ; 0043139d
     MOV dword ptr [EAX],0x3             ; 004313a0
@@ -388,8 +388,8 @@ section .text
     PUSH 0x5b842c                       ; 00431439 | = "%s confused after pathmap call while ..."
     MOV EBX,dword ptr [0x005f1690]      ; 0043143e | g_CConsolePtr
     PUSH EBX                            ; 00431444 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00431445
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00431445
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0043144a
     MOV EAX,dword ptr [EBP + 0x24]      ; 0043144d
     MOV dword ptr [EAX],0x3             ; 00431450

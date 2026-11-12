@@ -12,21 +12,13 @@ void engine_mini3d_cpp_FUN_004f1830(float *param_1,float *param_2,float *param_3
 
 {
   float fVar1;
-  int *piVar2;
+  int iVar2;
   int iVar3;
   int iVar4;
-  uint local_c0;
-  uint local_bc;
-  uint local_b8;
-  uint local_b4;
-  uint local_b0;
-  uint local_ac;
-  uint local_a8;
-  uint local_a4;
-  uint local_a0;
-  uint local_9c;
-  uint local_98;
-  uint local_94;
+  SSoftwareEdge *left_vertex;
+  int iVar5;
+  int iVar6;
+  SRenderVertex local_c0;
   uint local_90;
   uint local_8c;
   uint local_88;
@@ -58,7 +50,7 @@ void engine_mini3d_cpp_FUN_004f1830(float *param_1,float *param_2,float *param_3
   float local_20;
   float local_1c;
   int local_18;
-  int *local_14;
+  SSoftwareEdge *local_14;
   
   local_28 = param_2[6] - param_1[6];
   local_2c = param_3[5] - param_2[5];
@@ -75,24 +67,27 @@ void engine_mini3d_cpp_FUN_004f1830(float *param_1,float *param_2,float *param_3
     return;
   }
   if (_DAT_01c6cee8 != 0) {
-    local_c0 = engine_mini3d_cpp_FUN_004f1810(*param_1 * _DAT_005c822d);
-    local_bc = engine_mini3d_cpp_FUN_004f1810(param_1[1] * _DAT_005c822d);
-    local_b8 = engine_mini3d_cpp_FUN_004f1810(param_1[2] * _DAT_005c822d);
-    local_b4 = engine_mini3d_cpp_FUN_004f1810(param_1[3] * _DAT_005c8231);
-    local_b0 = engine_mini3d_cpp_FUN_004f1810(param_1[5] * _DAT_005c8235);
-    local_ac = engine_mini3d_cpp_FUN_004f1810(param_1[6] * _DAT_005c8235);
-    local_a8 = engine_mini3d_cpp_FUN_004f1810(param_1[7] * _DAT_005c822d * _DAT_005c8235);
-    local_a4 = engine_mini3d_cpp_FUN_004f1810(param_1[8] * _DAT_005c822d * _DAT_005c8235);
-    local_a0 = engine_mini3d_cpp_FUN_004f1810(param_1[0xb] * _DAT_005c8239);
-    local_9c = engine_mini3d_cpp_FUN_004f1810(param_1[10] * _DAT_005c8239);
-    local_98 = engine_mini3d_cpp_FUN_004f1810(param_1[9] * _DAT_005c8239);
+    local_c0.projected_vertex.transformed_x =
+         engine_mini3d_cpp_FUN_004f1810(*param_1 * _DAT_005c822d);
+    local_c0.projected_vertex.transformed_y =
+         engine_mini3d_cpp_FUN_004f1810(param_1[1] * _DAT_005c822d);
+    local_c0.projected_vertex.transformed_z =
+         engine_mini3d_cpp_FUN_004f1810(param_1[2] * _DAT_005c822d);
+    local_c0.projected_vertex.inv_z = engine_mini3d_cpp_FUN_004f1810(param_1[3] * _DAT_005c8231);
+    local_c0.projected_vertex.screen_x = engine_mini3d_cpp_FUN_004f1810(param_1[5] * _DAT_005c8235);
+    local_c0.projected_vertex.screen_y = engine_mini3d_cpp_FUN_004f1810(param_1[6] * _DAT_005c8235);
+    local_c0.u = engine_mini3d_cpp_FUN_004f1810(param_1[7] * _DAT_005c822d * _DAT_005c8235);
+    local_c0.v = engine_mini3d_cpp_FUN_004f1810(param_1[8] * _DAT_005c822d * _DAT_005c8235);
+    local_c0.r = engine_mini3d_cpp_FUN_004f1810(param_1[0xb] * _DAT_005c8239);
+    local_c0.g = engine_mini3d_cpp_FUN_004f1810(param_1[10] * _DAT_005c8239);
+    local_c0.b = engine_mini3d_cpp_FUN_004f1810(param_1[9] * _DAT_005c8239);
     if ((DAT_01d76c38 & 8) == 0) {
       fVar1 = param_1[0xc];
     }
     else {
       fVar1 = param_1[0xd];
     }
-    local_94 = engine_mini3d_cpp_FUN_004f1810(fVar1 * _DAT_005c8239);
+    local_c0.a = engine_mini3d_cpp_FUN_004f1810(fVar1 * _DAT_005c8239);
     local_90 = engine_mini3d_cpp_FUN_004f1810(*param_2 * _DAT_005c822d);
     local_8c = engine_mini3d_cpp_FUN_004f1810(param_2[1] * _DAT_005c822d);
     local_88 = engine_mini3d_cpp_FUN_004f1810(param_2[2] * _DAT_005c822d);
@@ -140,73 +135,79 @@ void engine_mini3d_cpp_FUN_004f1830(float *param_1,float *param_2,float *param_3
   engine_mini3d_cpp_FUN_004f13a0(param_1,param_2);
   engine_mini3d_cpp_FUN_004f13a0(param_2,param_3);
   engine_mini3d_cpp_FUN_004f13a0(param_3,param_1);
-  local_14 = (int *)&DAT_01d80848;
-  iVar3 = 0;
+  local_14 = (SSoftwareEdge *)&DAT_01d80848;
+  iVar5 = 0;
   if (0 < _DAT_01d80844) {
     do {
-      if ((_DAT_01d80d48 == *local_14) && (local_14 != (int *)0x0)) goto LAB_004f1950;
-      iVar3 = iVar3 + 1;
-      local_14 = local_14 + 0x14;
-    } while (iVar3 < _DAT_01d80844);
+      if ((_DAT_01d80d48 == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))
+      goto LAB_004f1950;
+      iVar5 = iVar5 + 1;
+      local_14 = local_14 + 1;
+    } while (iVar5 < _DAT_01d80844);
   }
-  local_14 = (int *)0x0;
+  local_14 = (SSoftwareEdge *)0x0;
 LAB_004f1950:
-  if (local_14 != (int *)0x0) {
-    iVar3 = 0;
-    piVar2 = (int *)&DAT_01d80848;
+  if (local_14 != (SSoftwareEdge *)0x0) {
+    iVar5 = 0;
+    left_vertex = (SSoftwareEdge *)&DAT_01d80848;
     if (0 < _DAT_01d80844) {
       do {
-        if ((_DAT_01d80d48 == *piVar2) && (piVar2 != local_14)) goto LAB_004f1992;
-        iVar3 = iVar3 + 1;
-        piVar2 = piVar2 + 0x14;
-      } while (iVar3 < _DAT_01d80844);
+        if ((_DAT_01d80d48 == (left_vertex->base).y_min) && (left_vertex != local_14))
+        goto LAB_004f1992;
+        iVar5 = iVar5 + 1;
+        left_vertex = left_vertex + 1;
+      } while (iVar5 < _DAT_01d80844);
     }
-    piVar2 = (int *)0x0;
+    left_vertex = (SSoftwareEdge *)0x0;
 LAB_004f1992:
-    if (piVar2 != (int *)0x0) {
+    if (left_vertex != (SSoftwareEdge *)0x0) {
       local_18 = _DAT_01d80d48;
       do {
-        iVar3 = _DAT_01d80844;
-        if (local_14[1] <= local_18) {
-          *local_14 = -1;
-          local_14 = (int *)&DAT_01d80848;
-          iVar4 = 0;
-          if (0 < iVar3) {
+        iVar5 = _DAT_01d80844;
+        if ((local_14->base).y_max <= local_18) {
+          (local_14->base).y_min = -1;
+          local_14 = (SSoftwareEdge *)&DAT_01d80848;
+          iVar6 = 0;
+          if (0 < iVar5) {
             do {
-              if ((local_18 == *local_14) && (local_14 != piVar2)) goto LAB_004f19f0;
-              iVar4 = iVar4 + 1;
-              local_14 = local_14 + 0x14;
-            } while (iVar4 < _DAT_01d80844);
+              if ((local_18 == (local_14->base).y_min) && (local_14 != left_vertex))
+              goto LAB_004f19f0;
+              iVar6 = iVar6 + 1;
+              local_14 = local_14 + 1;
+            } while (iVar6 < _DAT_01d80844);
           }
-          local_14 = (int *)0x0;
+          local_14 = (SSoftwareEdge *)0x0;
 LAB_004f19f0:
-          if (local_14 == (int *)0x0) {
+          if (local_14 == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        if (piVar2[1] <= local_18) {
-          *piVar2 = -1;
-          iVar3 = 0;
-          piVar2 = (int *)&DAT_01d80848;
+        if ((left_vertex->base).y_max <= local_18) {
+          (left_vertex->base).y_min = -1;
+          iVar5 = 0;
+          left_vertex = (SSoftwareEdge *)&DAT_01d80848;
           if (0 < _DAT_01d80844) {
             do {
-              if ((local_18 == *piVar2) && (piVar2 != local_14)) goto LAB_004f1a46;
-              iVar3 = iVar3 + 1;
-              piVar2 = piVar2 + 0x14;
-            } while (iVar3 < _DAT_01d80844);
+              if ((local_18 == (left_vertex->base).y_min) && (left_vertex != local_14))
+              goto LAB_004f1a46;
+              iVar5 = iVar5 + 1;
+              left_vertex = left_vertex + 1;
+            } while (iVar5 < _DAT_01d80844);
           }
-          piVar2 = (int *)0x0;
+          left_vertex = (SSoftwareEdge *)0x0;
 LAB_004f1a46:
-          if (piVar2 == (int *)0x0) {
+          if (left_vertex == (SSoftwareEdge *)0x0) {
             return;
           }
         }
         if (_DAT_01c6e2a0 == 0) {
           if (DAT_005fba20 == 0x20) {
-            engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33();
+            engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33
+                      (left_vertex,local_14,local_18);
           }
           else {
-            engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69();
+            engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00562e69
+                      (left_vertex,local_14,local_18);
           }
         }
         else if (DAT_005fba20 == 0x20) {
@@ -215,25 +216,40 @@ LAB_004f1a46:
         else {
           engine_special_cpp_FUN_005625a3();
         }
-        local_14[2] = local_14[2] + local_14[3];
-        local_14[6] = local_14[6] + local_14[7];
-        local_14[8] = local_14[8] + local_14[9];
-        local_14[10] = local_14[10] + local_14[0xb];
-        local_14[4] = local_14[4] + local_14[5];
-        local_14[0xe] = local_14[0xe] + local_14[0xf];
-        local_14[0x10] = local_14[0x10] + local_14[0x11];
-        local_14[0x12] = local_14[0x12] + local_14[0x13];
-        local_14[0xc] = local_14[0xc] + local_14[0xd];
-        piVar2[2] = piVar2[2] + piVar2[3];
-        piVar2[6] = piVar2[6] + piVar2[7];
-        piVar2[8] = piVar2[8] + piVar2[9];
-        piVar2[10] = piVar2[10] + piVar2[0xb];
-        piVar2[4] = piVar2[4] + piVar2[5];
+        (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
+        (local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;
+        (local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;
+        (local_14->base).depth_current =
+             (local_14->base).depth_current + (local_14->base).depth_gradient;
+        (local_14->base).red_current = (local_14->base).red_current + (local_14->base).red_gradient;
+        iVar5 = (local_14->base).alpha_current;
+        local_14->green_current = local_14->green_current + local_14->green_gradient;
+        local_14->blue_current = local_14->blue_current + local_14->blue_gradient;
+        iVar6 = (local_14->base).alpha_gradient;
+        *(int *)&local_14->field_0x48 =
+             *(int *)&local_14->field_0x48 + *(int *)&local_14->field_0x4c;
+        (local_14->base).alpha_current = iVar5 + iVar6;
+        (left_vertex->base).x_current =
+             (left_vertex->base).x_current + (left_vertex->base).x_gradient;
+        (left_vertex->base).u_current =
+             (left_vertex->base).u_current + (left_vertex->base).u_gradient;
+        (left_vertex->base).v_current =
+             (left_vertex->base).v_current + (left_vertex->base).v_gradient;
+        (left_vertex->base).depth_current =
+             (left_vertex->base).depth_current + (left_vertex->base).depth_gradient;
+        iVar5 = left_vertex->green_current;
+        iVar6 = left_vertex->blue_current;
+        iVar2 = *(int *)&left_vertex->field_0x48;
+        iVar3 = (left_vertex->base).alpha_current;
+        iVar4 = left_vertex->green_gradient;
+        (left_vertex->base).red_current =
+             (left_vertex->base).red_current + (left_vertex->base).red_gradient;
         local_18 = local_18 + 1;
-        piVar2[0xe] = piVar2[0xe] + piVar2[0xf];
-        piVar2[0x10] = piVar2[0x10] + piVar2[0x11];
-        piVar2[0x12] = piVar2[0x12] + piVar2[0x13];
-        piVar2[0xc] = piVar2[0xc] + piVar2[0xd];
+        left_vertex->green_current = iVar5 + iVar4;
+        left_vertex->blue_current = iVar6 + left_vertex->blue_gradient;
+        iVar5 = (left_vertex->base).alpha_gradient;
+        *(int *)&left_vertex->field_0x48 = iVar2 + *(int *)&left_vertex->field_0x4c;
+        (left_vertex->base).alpha_current = iVar3 + iVar5;
       } while( true );
     }
   }

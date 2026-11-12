@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 759,
-    "complexity_score": 575,
+    "complexity_score": 547,
     "cross_reference_count": 2,
     "function_call_count": 49,
     "global_count": 55,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 305,
-    "suspect_count": 25,
+    "pseudocode_lines": 302,
+    "suspect_count": 22,
     "suspect_types": [
+      "raw_address_pointer_store",
       "undefined_data",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1064
+    "total_lines": 1061
   },
   "cross_references": [
     {
@@ -195,6 +196,11 @@
       "name": "engine_dosio.cpp_FUN_00479180"
     },
     {
+      "addr": "004943a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0"
+    },
+    {
       "addr": "00494fd0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0"
@@ -203,11 +209,6 @@
       "addr": "004942e0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_004942e0"
-    },
-    {
-      "addr": "004943a0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004943a0"
     },
     {
       "addr": "00442bb0",
@@ -897,7 +898,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_01cd05c0",
       "severity": "mild",
       "text": "splitpath(&DAT_01cd05c0,(char *)0x0,(char *)0x0,(char *)0x0,local_368);",
@@ -905,7 +906,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_005e2faf",
       "severity": "mild",
       "text": "iVar2 = _stricmp(local_368,&DAT_005e2faf);",
@@ -913,7 +914,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 48,
       "match": "DAT_005e2fb3",
       "severity": "mild",
       "text": "(iVar2 = _stricmp(local_368,&DAT_005e2fb3), iVar2 == 0)) {",
@@ -921,7 +922,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 50,
       "match": "DAT_01cd05c0",
       "severity": "mild",
       "text": "pcVar6 = &DAT_01cd05c0;",
@@ -929,7 +930,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 80,
       "match": "DAT_005e2fbe",
       "severity": "mild",
       "text": "search_directory = &DAT_005e2fbe;",
@@ -937,7 +938,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 107,
       "match": "DAT_005e2fda",
       "severity": "mild",
       "text": "file_handle = engine_dosio_cpp_FUN_00479180(&DAT_005e2fda,local_570,&DAT_005e2fd7);",
@@ -945,7 +946,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 107,
       "match": "DAT_005e2fd7",
       "severity": "mild",
       "text": "file_handle = engine_dosio_cpp_FUN_00479180(&DAT_005e2fda,local_570,&DAT_005e2fd7);",
@@ -953,7 +954,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 110,
       "match": "DAT_01cd05c0",
       "severity": "mild",
       "text": "iVar2 = _stricmp(&DAT_01cd05c0,local_570);",
@@ -961,7 +962,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 112,
       "match": "DAT_01cd05c0",
       "severity": "mild",
       "text": "pcVar6 = &DAT_01cd05c0;",
@@ -969,15 +970,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 135,
       "match": "DAT_0061d98c",
       "severity": "mild",
-      "text": "pbVar10 = &DAT_0061d98c;",
+      "text": "pbVar9 = &DAT_0061d98c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 165,
+      "line": 164,
       "match": "DAT_005e300a",
       "severity": "mild",
       "text": "(&local_40,\"save\\\\$$SAVE$$.TMP\",&DAT_005e300a);",
@@ -985,79 +986,55 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 180,
+      "line": 179,
       "match": "DAT_005e303d",
       "severity": "mild",
-      "text": "file_handle = (_FILE *)_fopen(\"save\\\\$$SAVE$$.TMP\",&DAT_005e303d);",
+      "text": "file_handle = _fopen(\"save\\\\$$SAVE$$.TMP\",&DAT_005e303d);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 197,
+      "line": 196,
       "match": "DAT_005e2fdf",
       "severity": "mild",
-      "text": "pbVar10 = &DAT_005e2fdf;",
+      "text": "pbVar9 = &DAT_005e2fdf;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 219,
+      "line": 218,
       "match": "DAT_005e3096",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e3096,&local_34);",
+      "text": "_fscanf(file_handle,&DAT_005e3096);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 228,
-      "match": "DAT_01d06aa0",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%d, %d\\n\",&DAT_01d06aa0,&DAT_01d06ab4);",
-      "type": "undefined_data"
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 244,
+      "match": "*(CDemonActor **)(iVar2 + 0x1d06aa4",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)(iVar2 + 0x1d06aa4) = pCVar3;",
+      "type": "raw_address_pointer_store"
     },
     {
       "description": "Undefined global data reference",
-      "line": 228,
-      "match": "DAT_01d06ab4",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%d, %d\\n\",&DAT_01d06aa0,&DAT_01d06ab4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 277,
+      "line": 276,
       "match": "DAT_005e30ef",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e30ef,&DAT_01cd06c4);",
+      "text": "_fscanf(file_handle,&DAT_005e30ef);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 277,
-      "match": "DAT_01cd06c4",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e30ef,&DAT_01cd06c4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 279,
-      "match": "DAT_01cd06c8",
-      "severity": "mild",
-      "text": "puVar8 = &DAT_01cd06c8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 282,
+      "line": 280,
       "match": "DAT_005e30f3",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e30f3,puVar8);",
+      "text": "_fscanf(file_handle,&DAT_005e30f3);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 52,
+      "line": 51,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1065,7 +1042,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 96,
+      "line": 95,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1073,7 +1050,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 115,
+      "line": 114,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1081,7 +1058,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 235,
+      "line": 234,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x32; iVar5 != 0; iVar5 = iVar5 + -1) {",

@@ -7,7 +7,7 @@
 ; CCloth *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_cloth.cpp_FUN_0043c330 at 0043c58a
+;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c58a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005b8f78

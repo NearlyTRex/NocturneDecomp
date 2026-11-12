@@ -22,7 +22,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00554250(CSfxS
     _DAT_01d71de4 = 0xa9a;
     core_main_c_FUN_004e4330("SfxSlot::kill - must be locked!");
   }
-  fVar1 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20((this_ptr->options).channel_index);
+  fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20((this_ptr->options).channel_index);
   fVar1 = fVar1 * (this_ptr->options).current_volume;
   if (((this_ptr->options).flags & 1) == 0) {
     iVar2 = 0;

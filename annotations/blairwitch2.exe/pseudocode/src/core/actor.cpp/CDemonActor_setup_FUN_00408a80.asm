@@ -16,7 +16,7 @@
 ;   core_battery.cpp_CBattery_setup_FUN_00414780 at 00414786
 ;   core_bodypart.cpp_CBodyPart_setup_FUN_00415ee0 at 00415ee8
 ;   core_boxactor.cpp_CBoxActor_setup_FUN_0041be70 at 0041be7a
-;   core_chain.cpp_FUN_005b48e0 at 005b48ec
+;   core_chain.cpp_CChain_setup_FUN_005b48e0 at 005b48ec
 ;   ... and 34 more
 ;
 ; Called Functions:

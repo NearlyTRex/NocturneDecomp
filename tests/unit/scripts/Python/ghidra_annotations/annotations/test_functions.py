@@ -135,6 +135,16 @@ def test_functions_export_their_signature_variables_and_flags(tmp_path):
     assert "conv" not in records["00401100"]
 
 
+@pytest.mark.parametrize("source, recorded", [("USER_DEFINED", None), ("DEFAULT", "default"),
+                                              ("ANALYSIS", "analysis"), ("IMPORTED", "imported")])
+def test_only_an_uncommitted_signature_records_where_it_came_from(tmp_path, source, recorded):
+    program = program_with_functions()
+    program.getFunctionManager().getFunctionAt(Address(0x401000)).signature_source = source
+    fn.export_functions(program, str(tmp_path))
+    record = {r["addr"]: r for r in load_json_files(str(tmp_path), "functions")}["00401000"]
+    assert record.get("sig") == recorded
+
+
 def test_the_importable_flag_is_kept_and_storage_kinds_are_recorded(tmp_path):
     (tmp_path / "functions").mkdir()
     (tmp_path / "functions" / "functions_bucket_00.json").write_text(json.dumps([

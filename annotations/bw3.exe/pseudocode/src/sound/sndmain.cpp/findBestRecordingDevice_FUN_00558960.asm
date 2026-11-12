@@ -38,7 +38,7 @@ section .text
     PUSH EAX                            ; 00558981
     PUSH EBX                            ; 00558982
     CALL sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00558900 ; 00558983
-        ;   XREF to: 00558900 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00558900()
+        ;   XREF to: 00558900 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00558900(int index, SRecordingDeviceInfo * device_info)
     ADD ESP,0x8                         ; 00558988
     CMP dword ptr [ESP + 0x208],0x1     ; 0055898b
     JZ 0x005589bd                       ; 00558993
@@ -57,7 +57,7 @@ section .text
     PUSH EAX                            ; 005589a2
     PUSH EBX                            ; 005589a3
     CALL sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00558900 ; 005589a4
-        ;   XREF to: 00558900 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00558900()
+        ;   XREF to: 00558900 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00558900(int index, SRecordingDeviceInfo * device_info)
     ADD ESP,0x8                         ; 005589a9
     CMP dword ptr [ESP + 0x100],0x0     ; 005589ac
     JZ 0x005589bd                       ; 005589b4

@@ -16,12 +16,12 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_0043f920(CClothList *this_ptr)
   CCloth *pCVar2;
   uint uVar3;
   CClothList *pCVar4;
-  char (*pacVar5) [40];
-  int iVar6;
+  char (*filename) [40];
+  int iVar5;
   
-  iVar6 = 0;
+  iVar5 = 0;
   if (0 < this_ptr->count) {
-    pacVar5 = this_ptr->filenames;
+    filename = this_ptr->filenames;
     pCVar4 = this_ptr;
     do {
       if (pCVar4->cloths[0] != (CCloth *)0x0) {
@@ -41,10 +41,10 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_0043f920(CClothList *this_ptr)
       }
       ppCVar1 = pCVar4->cloths;
       pCVar4 = (CClothList *)pCVar4->filenames;
-      iVar6 = iVar6 + 1;
-      core_cloth_cpp_FUN_0043c330(*ppCVar1,pacVar5);
-      pacVar5 = pacVar5 + 1;
-    } while (iVar6 < this_ptr->count);
+      iVar5 = iVar5 + 1;
+      core_cloth_cpp_CCloth_load_FUN_0043c330(*ppCVar1,*filename);
+      filename = filename + 1;
+    } while (iVar5 < this_ptr->count);
   }
   return;
 }

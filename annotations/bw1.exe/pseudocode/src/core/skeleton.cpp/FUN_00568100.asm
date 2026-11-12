@@ -36,8 +36,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[17]:
+;   core_charactr.cpp_CCharacter_blendLayerActionMotion_FUN_004342c0 at 00434308
 ;   core_charactr.cpp_FUN_00432cb0 at 00432db0
-;   core_charactr.cpp_FUN_004342c0 at 00434308
 ;   core_doc.cpp_FUN_0046caa0 at 0046e621
 ;   core_doc.cpp_FUN_0046ea80 at 0046ee0f
 ;   core_doc.cpp_FUN_0046f200 at 0046f354
@@ -57,10 +57,10 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   core_motion.cpp_FUN_00525240
+;   core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00525240
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
+;   core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_005635a0
 ;   core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00563630
-;   core_skeleton.cpp_FUN_005635a0
 ;   core_xform.cpp_multiplyQuaternion_FUN_005b77b0
 ;   core_xform.cpp_negateFirstComponent_FUN_005b7750
 ;   core_xform.cpp_slerpQuaternion_FUN_005b7940
@@ -102,8 +102,8 @@ section .text
     PUSH EDX                            ; 0056813d
     MOV ECX,dword ptr [EBP + 0x14]      ; 0056813e
     PUSH ECX                            ; 00568141
-    CALL core_motion.cpp_FUN_00525240   ; 00568142
-        ;   XREF to: 00525240 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_00525240(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, ...)
+    CALL core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00525240 ; 00568142
+        ;   XREF to: 00525240 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_00525240(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, ...)
     ADD ESP,0x18                        ; 00568147
     MOV EBX,dword ptr [EBP + 0x14]      ; 0056814a
     PUSH EBX                            ; 0056814d
@@ -161,8 +161,8 @@ section .text
     PUSH EBX                            ; 005681f1
     LEA ESI,[ESP + 0x85c]               ; 005681f2
     LEA EDI,[ESP + 0x83c]               ; 005681f9
-    CALL core_skeleton.cpp_FUN_005635a0 ; 00568200
-        ;   XREF to: 005635a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005635a0()
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_005635a0 ; 00568200
+        ;   XREF to: 005635a0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_005635a0(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
     LEA ESI,[ESP + 0x85c]               ; 00568205
     ADD ESP,0x14                        ; 0056820c
     LEA EAX,[ESP + 0x828]               ; 0056820f
@@ -400,8 +400,8 @@ section .text
     PUSH EDI                            ; 005685bc
     PUSH EBX                            ; 005685bd
     LEA ESI,[ESP + 0x828]               ; 005685be
-    CALL core_skeleton.cpp_FUN_005635a0 ; 005685c5
-        ;   XREF to: 005635a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005635a0()
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_005635a0 ; 005685c5
+        ;   XREF to: 005635a0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_005635a0(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
     SHL EDI,0x4                         ; 005685ca
     ADD ESP,0x14                        ; 005685cd
     LEA ESI,[ESP + 0x814]               ; 005685d0
@@ -494,8 +494,8 @@ section .text
     PUSH EAX                            ; 0056872b
     PUSH EBX                            ; 0056872c
     LEA ESI,[ESP + 0x7f8]               ; 0056872d
-    CALL core_skeleton.cpp_FUN_005635a0 ; 00568734
-        ;   XREF to: 005635a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005635a0()
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_005635a0 ; 00568734
+        ;   XREF to: 005635a0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_005635a0(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
     ADD ESP,0x14                        ; 00568739
     MOV EDI,dword ptr [ESP + 0x940]     ; 0056873c
     LEA ESI,[ESP + 0x7e4]               ; 00568743

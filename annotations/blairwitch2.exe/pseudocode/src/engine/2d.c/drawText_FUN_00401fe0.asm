@@ -13,10 +13,10 @@
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0 at 004259e6
 ;   core_dcube.cpp_FUN_00446f4e at 00446fae
 ;   core_event.cpp_CEventList_render_FUN_0048e490 at 0048e4e0
-;   core_game.cpp_FUN_004b2a50 at 004b2d2d
 ;   core_game.cpp_FUN_004b5190 at 004b5711
+;   core_game.cpp_captureDebugMovieFrame_FUN_004b2a50 at 004b2d2d
 ;   core_main.c_FUN_004e45e0 at 004e45fc
-;   core_menu.cpp_FUN_004eb490 at 004eb55f
+;   core_menu.cpp_calibrateGamepad_FUN_004eb490 at 004eb55f
 ;   core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3ce at 004eb46e
 ;   core_motion.cpp_FUN_005042e0 at 005043c6
 ;   ... and 12 more

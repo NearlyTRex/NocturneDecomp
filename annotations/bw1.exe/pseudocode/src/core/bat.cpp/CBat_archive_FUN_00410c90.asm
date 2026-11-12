@@ -45,7 +45,7 @@ section .text
     LEA EAX,[EBX + 0x304]               ; 00410cb7
     PUSH EAX                            ; 00410cbd
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00410cbe
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x00610968]      ; 00410cc3 | g_CBatClassVersion
     ADD ESP,0x8                         ; 00410cc9
     LEA EAX,[EBX + 0x30c]               ; 00410ccc
@@ -55,13 +55,13 @@ section .text
     PUSH 0x5d35f5                       ; 00410cd7 | = "flapSpeedMult"
     PUSH EAX                            ; 00410cdc
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00410cdd
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00410ce2
     PUSH 0x5d3603                       ; 00410ce5 | = "courseSpeed"
     LEA EAX,[EBX + 0x308]               ; 00410cea
     PUSH EAX                            ; 00410cf0
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00410cf1
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00410cf6
     CMP dword ptr [0x00610968],0x2      ; 00410cf9 | g_CBatClassVersion
         ;   Label: LAB_00410cf9
@@ -71,7 +71,7 @@ section .text
     LEA EAX,[EBX + 0x188]               ; 00410d07
     PUSH EAX                            ; 00410d0d
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 00410d0e
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 00410d13
     CMP dword ptr [0x00610968],0x4      ; 00410d16 | g_CBatClassVersion
         ;   Label: LAB_00410d16
@@ -83,7 +83,7 @@ section .text
         ;   Label: LAB_00410d21
     PUSH EAX                            ; 00410d26
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00410d27
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     FLD float ptr [EBX + 0x30c]         ; 00410d2c
     FMUL double ptr [0x005d3649]        ; 00410d32 | DAT_005d3649
     ADD ESP,0x8                         ; 00410d38
@@ -101,13 +101,13 @@ section .text
     LEA EAX,[EBX + 0x378]               ; 00410d59
     PUSH EAX                            ; 00410d5f
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00410d60
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00410d65
     PUSH 0x5d362f                       ; 00410d68 | = "periodicSoundTimerMax"
     ADD EBX,0x37c                       ; 00410d6d
     PUSH EBX                            ; 00410d73
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00410d74
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00410d79
     POP EBX                             ; 00410d7c
     RET                                 ; 00410d7d

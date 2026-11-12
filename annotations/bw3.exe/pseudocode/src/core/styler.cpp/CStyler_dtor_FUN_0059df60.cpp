@@ -19,7 +19,7 @@ CStyler * core_styler_cpp_CStyler_dtor_FUN_0059df60(CStyler *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CStylerTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CStylerTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

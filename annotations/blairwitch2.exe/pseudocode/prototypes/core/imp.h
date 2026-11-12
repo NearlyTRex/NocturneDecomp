@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_imp.cpp_factoryFuncImp_FUN_004d65c0
 // Address: 004d65c0
-void factoryFuncImp(void);
+CImp * __cdecl factoryFuncImp(void);
 
 // Original: core_imp.cpp_CImp_getActorType_FUN_004d65e0
 // Address: 004d65e0

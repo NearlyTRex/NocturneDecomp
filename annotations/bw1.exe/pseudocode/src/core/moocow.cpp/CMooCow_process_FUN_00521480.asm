@@ -277,8 +277,8 @@ section .text
     PUSH 0x5ea37e                       ; 005216d0 | = "%s confused while walking to scriptDe..."
     MOV ESI,dword ptr [0x00611100]      ; 005216d5 | g_CConsolePtr
     PUSH ESI                            ; 005216db | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 005216dc
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 005216dc
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     JMP 0x0052155c                      ; 005216e1
         ;   XREF to: 0052155c (UNCONDITIONAL_JUMP)  ; LAB_0052155c
     JBE 0x0052154c                      ; 005216e6

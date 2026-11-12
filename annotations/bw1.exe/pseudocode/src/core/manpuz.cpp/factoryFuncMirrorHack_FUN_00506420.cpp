@@ -1,20 +1,20 @@
 // Name: core_manpuz.cpp_factoryFuncMirrorHack_FUN_00506420
 // Address: 00506420
 // Address Range: [[00506420, 0050643b]]
-// Convention: unknown
-// Signature: void core_manpuz_cpp_factoryFuncMirrorHack_FUN_00506420(void)
+// Convention: __cdecl
+// Signature: CMirrorHack * __cdecl core_manpuz_cpp_factoryFuncMirrorHack_FUN_00506420(void)
 
 #include "nocturne.h"
 
-void core_manpuz_cpp_factoryFuncMirrorHack_FUN_00506420(void)
+CMirrorHack * __cdecl core_manpuz_cpp_factoryFuncMirrorHack_FUN_00506420(void)
 
 {
-  CMirrorHack *this_ptr;
+  CMirrorHack *pCVar1;
   
-  this_ptr = (CMirrorHack *)operator_new(0x2d8);
-  if (this_ptr == (CMirrorHack *)0x0) {
-    return;
+  pCVar1 = (CMirrorHack *)operator_new(0x2d8);
+  if (pCVar1 == (CMirrorHack *)0x0) {
+    return (CMirrorHack *)0x0;
   }
-  core_manpuz_cpp_CMirrorHack_ctor_FUN_00506450(this_ptr);
-  return;
+  pCVar1 = core_manpuz_cpp_CMirrorHack_ctor_FUN_00506450(pCVar1);
+  return pCVar1;
 }

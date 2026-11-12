@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 128,
+    "complexity_score": 23,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 8,
-    "suspect_count": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
+      "unrolled_memcpy"
     ],
     "total_lines": 20
   },
@@ -33,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_event.cpp_copyQuaternion_FUN_00492610",
-    "signature": "void __cdecl core_event_cpp_copyQuaternion_FUN_00492610(undefined4 *param_1,undefined4 *param_2)"
+    "signature": "CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_00492610(CQuaternion4f *dest,CQuaternion4f *src)"
   },
   "function_calls": [],
   "globals": [],
@@ -52,11 +51,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.8181818181818183,
@@ -70,105 +69,57 @@
     },
     "pcode_op_count": 31
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004aafc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00495e40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00520e00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_event_cpp_copyQuaternion_FUN_00492610(uint *param_1,uint *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_event_cpp_copyQuaternion_FUN_00492610(uint *param_1,uint *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1] = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1[1] = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[2] = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1[2] = param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[3] = param_2[3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_1[3] = param_2[3];",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "dest->w = src->w;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

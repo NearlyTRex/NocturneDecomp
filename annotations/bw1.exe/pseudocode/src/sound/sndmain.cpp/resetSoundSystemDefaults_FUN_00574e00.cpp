@@ -13,7 +13,7 @@ void __cdecl sound_sndmain_cpp_resetSoundSystemDefaults_FUN_00574e00(void)
   
   iVar1 = 0;
   do {
-    sound_sndmain_cpp_setSfxChannelVol_FUN_00573b30(iVar1,0x3f800000);
+    sound_sndmain_cpp_setSfxChannelVol_FUN_00573b30(iVar1,1.0);
     sound_sndmain_cpp_enableSfxChannel_FUN_00573c50(iVar1,1);
     iVar1 = iVar1 + 1;
   } while (iVar1 < 0x20);

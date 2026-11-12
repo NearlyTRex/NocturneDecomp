@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_0055c5f0(char *param_1,CDemonCamera *param_2)
+; void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_0055c5f0(C3DSCamera *this_ptr,CDemonCamera *camera)
 ;
+; Parameters:
+; C3DSCamera *     Stack[0x4]:4   this_ptr
+; CDemonCamera *   Stack[0x8]:4   camera
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f691
@@ -24,7 +27,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00453540
 ;   core_main.c_FUN_005030e0
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
 
@@ -92,8 +95,8 @@ section .text
     PUSH 0x5f11a8                       ; 0055c683 | = "Ambient set low by script\n"
     MOV EDI,dword ptr [0x00611100]      ; 0055c688 | g_CConsolePtr
     PUSH EDI                            ; 0055c68e | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 0055c68f
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0055c68f
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0055c694
     FLD float ptr [EBX + 0x148]         ; 0055c697
         ;   Label: LAB_0055c697
@@ -123,8 +126,8 @@ section .text
         ;   Label: LAB_0055c6d6
     MOV EBP,dword ptr [0x00611100]      ; 0055c6db | g_CConsolePtr
     PUSH EBP                            ; 0055c6e1 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 0055c6e2
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0055c6e2
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0055c6e7
     POP EBP                             ; 0055c6ea
     POP EDI                             ; 0055c6eb

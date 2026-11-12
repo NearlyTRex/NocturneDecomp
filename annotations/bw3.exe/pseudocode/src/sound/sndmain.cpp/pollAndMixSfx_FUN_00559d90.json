@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 265,
-    "complexity_score": 419,
+    "complexity_score": 395,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 144,
-    "suspect_count": 24,
+    "pseudocode_lines": 140,
+    "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
       "pointer_stride_bytecount",
@@ -18,7 +18,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 409
+    "total_lines": 405
   },
   "cross_references": [
     {
@@ -268,6 +268,32 @@
     },
     "pcode_op_count": 1186
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005541f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00576c20",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005aca90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9286
+    },
+    "nocturne.exe": {
+      "addr": "005294f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 136,
     "local_size": 112,
@@ -410,7 +436,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 45,
       "match": "DAT_00604228",
       "severity": "mild",
       "text": "if (((bits_per_sample == DAT_00604228) && (num_channels == DAT_0060422c)) &&",
@@ -418,7 +444,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 45,
       "match": "DAT_0060422c",
       "severity": "mild",
       "text": "if (((bits_per_sample == DAT_00604228) && (num_channels == DAT_0060422c)) &&",
@@ -426,7 +452,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 46,
       "match": "DAT_00604230",
       "severity": "mild",
       "text": "(samples_per_sec == DAT_00604230)) {",
@@ -434,7 +460,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 57,
       "match": "DAT_02ceb91c",
       "severity": "mild",
       "text": "local_18 = &DAT_02ceb91c;",
@@ -442,7 +468,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 58,
       "match": "DAT_02ceb91c",
       "severity": "mild",
       "text": "local_1c = (CSfxSlot *)&DAT_02ceb91c;",
@@ -450,7 +476,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 73,
       "match": "DAT_0060422c",
       "severity": "mild",
       "text": "if (0 < DAT_0060422c) {",
@@ -458,7 +484,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 80,
+      "line": 77,
       "match": "*(void **)(iVar4 + 0x2cf32cc",
       "severity": "moderate",
       "text": "(*(void **)(iVar4 + 0x2cf32cc),",
@@ -466,7 +492,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 81,
+      "line": 78,
       "match": "*(void **)(iVar4 + 0x2cf32cc",
       "severity": "moderate",
       "text": "(void *)(_DAT_02cf329c * 4 + (int)*(void **)(iVar4 + 0x2cf32cc)),",
@@ -474,7 +500,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 85,
       "match": "DAT_0060422c",
       "severity": "mild",
       "text": "} while (iVar3 < DAT_0060422c);",
@@ -482,7 +508,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 88,
       "match": "DAT_0060422c",
       "severity": "mild",
       "text": "local_48 = DAT_0060422c;",
@@ -490,7 +516,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 89,
       "match": "DAT_00604230",
       "severity": "mild",
       "text": "local_44[0] = DAT_00604230;",
@@ -498,7 +524,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 90,
       "match": "DAT_0060422c",
       "severity": "mild",
       "text": "if (0 < DAT_0060422c) {",
@@ -506,7 +532,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 94,
       "match": "(uint *)((int)local_6c",
       "severity": "moderate",
       "text": "*(uint *)((int)local_6c + iVar3) = *(uint *)(iVar3 + 0x2cf32cc);",
@@ -514,7 +540,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 96,
       "match": "DAT_0060422c",
       "severity": "mild",
       "text": "} while (iVar4 < DAT_0060422c * 4);",
@@ -522,7 +548,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 99,
       "match": "DAT_00604230",
       "severity": "mild",
       "text": "local_14 = (float)_DAT_02cf329c / (float)DAT_00604230;",
@@ -530,15 +556,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
-      "match": "(uint *)((int)local_44",
+      "line": 132,
+      "match": "(ushort **)((int)local_44",
       "severity": "moderate",
-      "text": "uStack_7c = *(uint *)((int)local_44 + iVar6 + 4);",
+      "text": "*(ushort **)((int)local_44 + iVar6 + 4),bits_per_sample,iVar4,block_align);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 134,
       "match": "(int *)((int)local_44",
       "severity": "moderate",
       "text": "*(int *)((int)local_44 + iVar6 + 4) =",
@@ -546,31 +572,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 135,
       "match": "(int *)((int)local_44",
       "severity": "moderate",
       "text": "*(int *)((int)local_44 + iVar6 + 4) + block_align * iVar4;",
       "type": "pointer_cast"
     },
     {
-      "description": "Raw hex address 0x559eca assigned to bare local `uStack_7c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_7c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 78,
-      "match": "0x559eca",
-      "severity": "moderate",
-      "text": "uStack_7c = 0x559eca;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x559ef4 assigned to bare local `uStack_7c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_7c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 86,
-      "match": "0x559ef4",
-      "severity": "moderate",
-      "text": "uStack_7c = 0x559ef4;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Raw hex address 0x55a006 assigned to bare local `uStack_84`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_84` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 135,
+      "line": 129,
       "match": "0x55a006",
       "severity": "moderate",
       "text": "uStack_84 = 0x55a006;",
@@ -578,7 +588,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 113,
+      "line": 109,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -586,7 +596,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride (count = count * N) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 87,
+      "line": 83,
       "match": "memset",
       "severity": "moderate",
       "text": "memset",

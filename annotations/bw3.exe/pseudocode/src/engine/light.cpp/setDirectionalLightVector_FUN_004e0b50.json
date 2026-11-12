@@ -16,15 +16,15 @@
   },
   "cross_references": [
     {
-      "addr": "0046d100",
-      "from_addr": "0046d110",
-      "name": "engine_drender.cpp_FUN_0046d100",
+      "addr": "0046d120",
+      "from_addr": "0046d16a",
+      "name": "engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0046d120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0046d120",
-      "from_addr": "0046d16a",
-      "name": "engine_drender.cpp_FUN_0046d120",
+      "addr": "0046d100",
+      "from_addr": "0046d110",
+      "name": "engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0046d100",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -85,7 +85,7 @@
       {
         "call_addr": "0046d110",
         "call_type": "direct",
-        "caller": "engine_drender.cpp_FUN_0046d100",
+        "caller": "engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0046d100",
         "estimated_params": 3,
         "instructions_analyzed": 8,
         "method": "push_count",
@@ -96,7 +96,7 @@
       {
         "call_addr": "0046d16a",
         "call_type": "direct",
-        "caller": "engine_drender.cpp_FUN_0046d120",
+        "caller": "engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0046d120",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -121,6 +121,32 @@
       "RETURN": 1
     },
     "pcode_op_count": 18
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e2600",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004ffa90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005054d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c6a10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

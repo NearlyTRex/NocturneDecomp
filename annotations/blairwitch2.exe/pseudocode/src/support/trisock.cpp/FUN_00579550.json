@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 300,
+    "complexity_score": 304,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 75,
+    "pseudocode_lines": 74,
     "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
+      "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 275
+    "total_lines": 274
   },
   "cross_references": [
     {
@@ -127,6 +128,20 @@
     },
     "pcode_op_count": 751
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0059efd0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00571fc0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -151,6 +166,14 @@
       "severity": "mild",
       "text": "bool support_trisock_cpp_FUN_00579550(uint *param_1,char *param_2)",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
@@ -205,7 +228,7 @@
       "line": 30,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar5 = _strcmp(pcStack_8,param_2);",
+      "text": "iVar4 = _strcmp(pcStack_8,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -213,7 +236,7 @@
       "line": 36,
       "match": "param_2",
       "severity": "mild",
-      "text": "pcVar4 = param_2 + 0x84;",
+      "text": "str2 = param_2 + 0x84;",
       "type": "unnamed_param"
     },
     {
@@ -221,7 +244,7 @@
       "line": 50,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(int *)(param_2 + 0x80) = iVar6;",
+      "text": "*(int *)(param_2 + 0x80) = iVar5;",
       "type": "unnamed_param"
     },
     {
@@ -250,47 +273,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcStack_14 = param_2 + 0x288;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar1 = *(byte **)(param_1[3] + iStack_c);",
+      "text": "pbVar1 = *(byte **)(param_1[3] + iStack_c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((uint8_t *)(param_2 + 0x288),(uint)*pbVar1,(uint)pbVar1[1],(uint)pbVar1[2],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 63,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "iVar3 = in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
       "match": "param_2",
       "severity": "mild",
-      "text": "pcVar4 = param_2;",
+      "text": "*(int *)(param_2 + 0x284) = iVar5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (*(int *)(param_2 + 0x288 + iVar6 * 4) == *(int *)(pcVar4 + 0x288)) break;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 75,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(int *)(param_2 + 0x284) = iVar6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 76,
       "match": "param_2",
       "severity": "mild",
       "text": "return 0 < *(int *)(param_2 + 0x284);",

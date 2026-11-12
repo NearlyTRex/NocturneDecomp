@@ -104,7 +104,7 @@ section .text
     PUSH EDX                            ; 0043d1f4
     PUSH EBP                            ; 0043d1f5
     CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043cc70 ; 0043d1f6
-        ;   XREF to: 0043cc70 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043cc70()
+        ;   XREF to: 0043cc70 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043cc70(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ESI,dword ptr [0x007c8424]      ; 0043d1fb | DAT_007c8424
     INC ESI                             ; 0043d201
     ADD ESP,0xc                         ; 0043d202
@@ -133,7 +133,7 @@ section .text
     PUSH EBP                            ; 0043d247
     PUSH EDX                            ; 0043d248
     CALL engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043cc70 ; 0043d249
-        ;   XREF to: 0043cc70 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043cc70()
+        ;   XREF to: 0043cc70 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043cc70(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV EDI,dword ptr [0x007c8424]      ; 0043d24e | DAT_007c8424
     INC EDI                             ; 0043d254
     ADD ESP,0xc                         ; 0043d255

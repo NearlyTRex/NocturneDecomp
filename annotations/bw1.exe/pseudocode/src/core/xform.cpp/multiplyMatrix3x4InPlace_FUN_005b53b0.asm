@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_005b53b0(undefined4 *param_1,undefined4 param_2)
+; CMatrix3x4f * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_005b53b0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix_a
+; CMatrix3x4f *    Stack[0x8]:4   matrix_b
 ;
 ; Called Functions:
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
@@ -23,7 +26,7 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 005b53c0
     MOV EDI,EBX                         ; 005b53c4
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005b5200 ; 005b53c6
-        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005b5200()
+        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005b5200(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005b53cb
     LEA ESI,[ESP + 0x8]                 ; 005b53d0
     ADD ESP,0x8                         ; 005b53d4

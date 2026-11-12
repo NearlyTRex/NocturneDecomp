@@ -7,8 +7,8 @@
 ; CInStreamMemory * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   support_codec.cpp_CCodec_processBuffer_FUN_004409f0 at 00440a3a
 ;   support_codec.cpp_FUN_00440970 at 004409b0
-;   support_codec.cpp_FUN_004409f0 at 00440a3a
 ;
 ; *****************************************************************************
 

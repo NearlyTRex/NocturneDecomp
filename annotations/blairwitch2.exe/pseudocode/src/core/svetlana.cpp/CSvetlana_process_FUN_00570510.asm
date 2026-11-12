@@ -194,7 +194,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005706c3
     PUSH dword ptr [ESP + 0x54]         ; 005706c4
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 005706c8
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0xc0],EAX      ; 005706cd
     FLD float ptr [ESP + 0xc0]          ; 005706d4
     ADD ESP,0x4                         ; 005706db
@@ -374,8 +374,8 @@ section .text
     PUSH 0x5ec2cd                       ; 00570905 | = "%s confused while walking to scriptDe..."
     MOV ESI,dword ptr [0x00609ed0]      ; 0057090a | g_CConsolePtr
     PUSH ESI                            ; 00570910 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 00570911
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 00570911
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     JMP 0x00570668                      ; 00570916
         ;   XREF to: 00570668 (UNCONDITIONAL_JUMP)  ; LAB_00570668
     PUSH 0x1                            ; 0057091b

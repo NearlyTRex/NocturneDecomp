@@ -54,7 +54,7 @@ section .text
     ADD EAX,0xc1d0                      ; 00446e4b
     PUSH EAX                            ; 00446e50
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00446e51
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00446e56
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00446e59
     PUSH 0x5d6fa3                       ; 00446e5d | = "modelName"
@@ -104,13 +104,13 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 00446edd
     PUSH EAX                            ; 00446ee1
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00446ee2
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00446ee7
     PUSH 0x5d6fda                       ; 00446eea | = "newPos"
     LEA EAX,[ESP + 0x4]                 ; 00446eef
     PUSH EAX                            ; 00446ef3
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 00446ef4
-        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b1c0()
+        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b1c0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 00446ef9
     CMP dword ptr [0x00611148],0x1      ; 00446efc | g_CConstructClassVersion
     JG 0x00446f0b                       ; 00446f03
@@ -132,7 +132,7 @@ section .text
     ADD EAX,0xc38c                      ; 00446f2b
     PUSH EAX                            ; 00446f30
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00446f31
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00446f36
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00446f39
     PUSH 0x5d6ffa                       ; 00446f3d | = "blownUp"
@@ -146,7 +146,7 @@ section .text
     ADD EAX,0xca5c                      ; 00446f59
     PUSH EAX                            ; 00446f5e
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00446f5f
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00446f64
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00446f67
     PUSH 0x5d7008                       ; 00446f6b | = "boxCount"
@@ -191,29 +191,29 @@ section .text
     ADD EAX,EDX                         ; 00446ff8
     PUSH EAX                            ; 00446ffa
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 00446ffb
-        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b1c0()
+        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b1c0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 00447000
     PUSH 0x5d7027                       ; 00447003 | = "boxListOrient"
     MOV ECX,dword ptr [ESP + 0x28]      ; 00447008
     PUSH ECX                            ; 0044700c
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 0044700d
-        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b1c0()
+        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b1c0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 00447012
     PUSH 0x5d7035                       ; 00447015 | = "boxListDestOrient"
     PUSH EDI                            ; 0044701a
     CALL core_actor.cpp_archiveQuaternion_FUN_0040b3a0 ; 0044701b
-        ;   XREF to: 0040b3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveQuaternion_FUN_0040b3a0()
+        ;   XREF to: 0040b3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveQuaternion_FUN_0040b3a0(CQuaternion4f * quat_ptr, char * property_type)
     ADD ESP,0x8                         ; 00447020
     PUSH 0x5d7047                       ; 00447023 | = "boxListStartOrient"
     PUSH EBP                            ; 00447028
     CALL core_actor.cpp_archiveQuaternion_FUN_0040b3a0 ; 00447029
-        ;   XREF to: 0040b3a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveQuaternion_FUN_0040b3a0()
+        ;   XREF to: 0040b3a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveQuaternion_FUN_0040b3a0(CQuaternion4f * quat_ptr, char * property_type)
     ADD ESP,0x8                         ; 0044702e
     PUSH 0x5d705a                       ; 00447031 | = "sourcePos"
     MOV EAX,dword ptr [ESP + 0x24]      ; 00447036
     PUSH EAX                            ; 0044703a
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 0044703b
-        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b1c0()
+        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b1c0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 00447040
     PUSH 0x5d7064                       ; 00447043 | = "boxListPart"
     INC EBX                             ; 00447048
@@ -221,7 +221,7 @@ section .text
     ADD EDI,0x48                        ; 0044704a
     ADD EBP,0x48                        ; 0044704d
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 00447050
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00447055
     ADD ESI,0x48                        ; 00447058
     MOV EDX,dword ptr [ESP + 0x20]      ; 0044705b

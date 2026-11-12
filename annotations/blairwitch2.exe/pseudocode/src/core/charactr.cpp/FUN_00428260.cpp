@@ -37,7 +37,8 @@ void core_charactr_cpp_FUN_00428260(CCharacter *param_1,int param_2,float param_
   
   bVar2 = 0;
   if (param_2 == 0) {
-    engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s tried to follow NULL actor!\n",param_1);
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"%s tried to follow NULL actor!\n");
     *param_5 = 3;
     return;
   }
@@ -51,8 +52,8 @@ void core_charactr_cpp_FUN_00428260(CCharacter *param_1,int param_2,float param_
        ((((float)_DAT_005cce8e < ABS(local_44) || ((float)_DAT_005cce96 < ABS(local_6c))) ||
         ((float)_DAT_005cce96 < ABS(local_64))))) {
       local_68 = local_44;
-      engine_console_cpp_FUN_00436710
-                (g_CConsolePtr,"%s confused while following %s\n",param_1,param_2);
+      engine_console_cpp_CConsole_printf_FUN_00436710
+                (g_CConsolePtr,"%s confused while following %s\n");
       *param_5 = 3;
       return;
     }
@@ -84,8 +85,8 @@ void core_charactr_cpp_FUN_00428260(CCharacter *param_1,int param_2,float param_
       iVar1 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
                         (param_1,(CVector3f *)(param_2 + 0x20),path_map,direction,fVar3,fVar4);
       if (iVar1 < 0) {
-        engine_console_cpp_FUN_00436710
-                  (g_CConsolePtr,"%s confused after pathmap call while following %s\n",param_1,param_2);
+        engine_console_cpp_CConsole_printf_FUN_00436710
+                  (g_CConsolePtr,"%s confused after pathmap call while following %s\n");
         *param_5 = 3;
         return;
       }
@@ -129,7 +130,7 @@ LAB_00428424:
   }
   local_1c = param_1->turn_angle_accumulator;
   local_28 = param_1->turn_speed;
-  fVar4 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_1c);
+  fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_1c);
   fVar3 = -local_28;
   if ((fVar3 <= fVar4) && (fVar3 = fVar4, local_28 < fVar4)) {
     fVar3 = local_28;

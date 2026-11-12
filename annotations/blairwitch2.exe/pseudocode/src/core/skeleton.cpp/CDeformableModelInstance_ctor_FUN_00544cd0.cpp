@@ -10,20 +10,20 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_ct
 
 {
   CMotionController *pCVar1;
-  int iVar2;
+  void *pvVar2;
   
   pCVar1 = core_motion_cpp_CMotionController_ctor_FUN_00503020(&this_ptr->base);
-  iVar2 = __arrinit
-                    (&pCVar1[1].current_motion_index,100,&g_CVectorTypeInfo);
-  *(byte ***)(iVar2 + -8) = &g_CDeformableModelInstanceVTable;
-  *(byte *)(iVar2 + 0x2208) = 0;
-  *(uint *)(iVar2 + 0x2258) = 0;
-  *(uint *)(iVar2 + 0x21dc) = 0;
-  *(uint *)(iVar2 + 0x21d8) = 0xffffffff;
-  *(uint *)(iVar2 + 0x21f8) = 0;
-  *(uint *)(iVar2 + 0x2204) = 0;
-  *(uint *)(iVar2 + 0x2200) = *(uint *)(iVar2 + 0x2204);
-  *(uint *)(iVar2 + 0x21fc) = *(uint *)(iVar2 + 0x2200);
-  *(uint *)(iVar2 + -4) = 0x3f800000;
-  return (CDeformableModelInstance *)(iVar2 + -0x58);
+  pvVar2 = __arrinit
+                     (&pCVar1[1].current_motion_index,100,&g_CVectorTypeInfo);
+  *(byte ***)((int)pvVar2 + -8) = &g_CDeformableModelInstanceVTable;
+  *(byte *)((int)pvVar2 + 0x2208) = 0;
+  *(uint *)((int)pvVar2 + 0x2258) = 0;
+  *(uint *)((int)pvVar2 + 0x21dc) = 0;
+  *(uint *)((int)pvVar2 + 0x21d8) = 0xffffffff;
+  *(uint *)((int)pvVar2 + 0x21f8) = 0;
+  *(uint *)((int)pvVar2 + 0x2204) = 0;
+  *(uint *)((int)pvVar2 + 0x2200) = *(uint *)((int)pvVar2 + 0x2204);
+  *(uint *)((int)pvVar2 + 0x21fc) = *(uint *)((int)pvVar2 + 0x2200);
+  *(uint *)((int)pvVar2 + -4) = 0x3f800000;
+  return (CDeformableModelInstance *)((int)pvVar2 + -0x58);
 }

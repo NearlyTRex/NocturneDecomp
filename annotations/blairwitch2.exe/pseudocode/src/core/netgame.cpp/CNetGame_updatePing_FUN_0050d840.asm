@@ -17,10 +17,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
+;   core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120 at 0050f169
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0 at 0050ed6e
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d6e2
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_0050bdb0 at 0050c06f
-;   core_netgame.cpp_FUN_0050f120 at 0050f169
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005e0bbd
@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050d87b
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0050d87e
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
         ;   Label: LAB_0050d87e
     MOV EDX,EAX                         ; 0050d883
     MOV ECX,0x12                        ; 0050d885

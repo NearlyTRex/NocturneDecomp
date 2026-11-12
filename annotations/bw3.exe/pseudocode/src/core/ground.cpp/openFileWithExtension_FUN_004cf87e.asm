@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; _FILE * core_ground_cpp_openFileWithExtension_FUN_004cf87e(char *param_1,char *param_2,char *param_3,char *param_4)
+; _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004cf87e(char *directory,char *filename,char *new_extension,char *open_mode)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   directory
+; char *           Stack[0x8]:4   filename
+; char *           Stack[0xc]:4   new_extension
+; char *           Stack[0x10]:4   open_mode
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0

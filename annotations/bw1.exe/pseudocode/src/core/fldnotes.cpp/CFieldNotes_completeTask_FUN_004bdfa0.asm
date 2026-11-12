@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_fldnotes.cpp_SNotesSection_findEntry_FUN_004bbfd0
 ;   core_main.c_FUN_005030e0
-;   shape_edittool.cpp_FUN_004943a0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;
 ; *****************************************************************************
 
@@ -108,8 +108,8 @@ section .text
     PUSH 0x5e0227                       ; 004be045 | = "CFieldNotes::completeTask - entry '%s..."
     MOV ECX,dword ptr [0x0061abc0]      ; 004be04a | g_CEditorToolsPtr
     PUSH ECX                            ; 004be050
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004be051
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004be051
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004be056
     MOV dword ptr [0x0061d2e4],0x1      ; 004be059 | DAT_0061d2e4
     POP EBP                             ; 004be063
@@ -123,8 +123,8 @@ section .text
     PUSH 0x5e0258                       ; 004be06d | = "CFieldNotes::completeTask - entry '%s..."
     MOV ESI,dword ptr [0x0061abc0]      ; 004be072 | g_CEditorToolsPtr
     PUSH ESI                            ; 004be078
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004be079
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004be079
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004be07e
     MOV dword ptr [0x0061d2e4],0x1      ; 004be081 | DAT_0061d2e4
     POP EBP                             ; 004be08b

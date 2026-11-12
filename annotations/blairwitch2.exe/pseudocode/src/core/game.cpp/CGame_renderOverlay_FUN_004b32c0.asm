@@ -61,8 +61,8 @@
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004ab530
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   engine_font.cpp_FUN_004a8df0
-;   engine_font.cpp_FUN_004aaf00
 ;   engine_font.cpp_FUN_004ab2b0
 ;
 ; *****************************************************************************
@@ -436,8 +436,8 @@ section .text
         ;   Label: LAB_004b3799
     MOV EAX,dword ptr [ESP + 0x13c]     ; 004b379a
     PUSH EAX                            ; 004b37a1
-    CALL engine_font.cpp_FUN_004aaf00   ; 004b37a2
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004b37a2
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004b37a7
     MOV EDX,dword ptr [ESP + 0x124]     ; 004b37aa
     SUB EDX,EAX                         ; 004b37b1

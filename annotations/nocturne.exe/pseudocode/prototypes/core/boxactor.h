@@ -121,9 +121,9 @@ void __cdecl CLightActor::process(CLightActor *this_ptr,float delta_time);
 // Address: 0041f600
 void __cdecl CLightActor::archive(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_CLightActor_FUN_0041f6e0
+// Original: core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041f6e0
 // Address: 0041f6e0
-void __cdecl CLightActor(CLightActor *this_ptr);
+void __cdecl CLightActor::setupLightModel(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_isLightPartVisible_FUN_0041f9f0
 // Address: 0041f9f0

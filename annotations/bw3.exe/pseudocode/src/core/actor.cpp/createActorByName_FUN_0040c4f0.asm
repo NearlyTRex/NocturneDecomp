@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_createActorByName_FUN_0040c4f0(undefined4 param_1)
+; CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c4f0(char *class_name)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   class_name
 ;
 ; XREF[21]:
 ;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a0c97
@@ -42,7 +44,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 0040c4f3
     PUSH ESI                            ; 0040c4f7
     CALL core_actor.cpp_getActorClassByName_FUN_0040c480 ; 0040c4f8
-        ;   XREF to: 0040c480 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getActorClassByName_FUN_0040c480()
+        ;   XREF to: 0040c480 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_getActorClassByName_FUN_0040c480(char * className)
     ADD ESP,0x4                         ; 0040c4fd
     MOV EBX,EAX                         ; 0040c500
     TEST EAX,EAX                        ; 0040c502

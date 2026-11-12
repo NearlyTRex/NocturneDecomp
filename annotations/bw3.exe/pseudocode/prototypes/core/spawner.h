@@ -40,7 +40,3 @@ void FUN_00563e50(CDemonActor *param_1);
 // Original: core_spawner.cpp_CSpawner_dtor_FUN_00563f70
 // Address: 00563f70
 CSpawner * CSpawner::dtor(CSpawner *this_ptr,uint flags);
-
-// Original: core_spawner.cpp_FUN_00564010
-// Address: 00564010
-void __cdecl FUN_00564010(void);

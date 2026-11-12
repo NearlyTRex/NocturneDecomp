@@ -21,9 +21,9 @@ void __cdecl CCloth::allocMemory(CCloth *this_ptr);
 // Address: 0043c300
 void FUN_0043c300(int param_1);
 
-// Original: core_cloth.cpp_FUN_0043c330
+// Original: core_cloth.cpp_CCloth_load_FUN_0043c330
 // Address: 0043c330
-int FUN_0043c330(CCloth *param_1,char *param_2);
+int __cdecl CCloth::load(CCloth *this_ptr,char *filename);
 
 // Original: core_cloth.cpp_FUN_0043c8a0
 // Address: 0043c8a0
@@ -56,10 +56,6 @@ void __cdecl CCloth::step(CCloth *this_ptr,CVector3f *position,CVector3f *euler,
 // Original: core_cloth.cpp_FUN_0043f10c
 // Address: 0043f10c
 void FUN_0043f10c(int param_1);
-
-// Original: core_cloth.cpp_FUN_0043f15e
-// Address: 0043f15e
-void FUN_0043f15e(int param_1,int param_2,int param_3);
 
 // Original: core_cloth.cpp_FUN_0043f160
 // Address: 0043f160
@@ -113,9 +109,9 @@ void __cdecl CClothList::render(CClothList *this_ptr,CDeformableModelInstance *m
 // Address: 0043fd0e
 void FUN_0043fd0e(int *param_1,undefined4 *param_2);
 
-// Original: core_cloth.cpp_FUN_0043fd60
+// Original: core_cloth.cpp_CCloth_grabCloth_FUN_0043fd60
 // Address: 0043fd60
-void FUN_0043fd60(int param_1,char *param_2,int param_3);
+void __cdecl CCloth::grabCloth(CCloth *this_ptr,char *bone_name,int vertex_index);
 
 // Original: core_cloth.cpp_fastInvSqrt_FUN_0043ff90
 // Address: 0043ff90

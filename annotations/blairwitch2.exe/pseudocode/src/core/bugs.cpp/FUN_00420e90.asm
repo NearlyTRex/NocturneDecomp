@@ -679,7 +679,7 @@ section .text
     LEA EAX,[ESP + 0x44]                ; 004216dc
     PUSH EAX                            ; 004216e0
     CALL core_xform.cpp_transformVector3x4InPlace_FUN_005915b0 ; 004216e1
-        ;   XREF to: 005915b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_transformVector3x4InPlace_FUN_005915b0()
+        ;   XREF to: 005915b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4InPlace_FUN_005915b0(CVector3f * input_output_vector, CMatrix3x4f * matrix)
     ADD ESP,0x8                         ; 004216e6
     LEA EAX,[ESP + 0x40]                ; 004216e9
     PUSH EAX                            ; 004216ed

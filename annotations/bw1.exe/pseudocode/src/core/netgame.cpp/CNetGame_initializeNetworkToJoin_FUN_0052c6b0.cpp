@@ -27,7 +27,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0052c6b0(CNetG
   uint uStack_4f;
   char acStack_4b [20];
   EHeroType EStack_37;
-  uint uStack_33;
+  byte auStack_33 [15];
   SNetworkAddr SStack_24;
   int iStack_1c;
   uint uStack_18;
@@ -40,9 +40,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0052c6b0(CNetG
   aim_mode = pCVar2->aim_mode;
   hero_number = pCVar2->hero_number;
   pcVar6 = this_ptr->player_name;
-  addr = (SNetworkAddr *)
-         support_trisock_cpp_createNetworkAddr_FUN_0059c740
-                   ((int)&uStack_33 + 3,_DAT_02c8ae4c,0x1ddf);
+  support_trisock_cpp_createNetworkAddr_FUN_0059c740
+            ((SNetworkAddr *)(auStack_33 + 3),_DAT_02c8ae4c,0x1ddf);
   iVar3 = core_netgame_cpp_CNetGame_addPlayer_FUN_0052e040
                     (this_ptr,addr,pcVar6,hero_number,aim_mode);
   this_ptr->local_player_index = iVar3;
@@ -50,7 +49,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0052c6b0(CNetG
   if (iVar3 == 0) {
     return 0;
   }
-  support_trisock_cpp_createNetworkAddr_FUN_0059c740(&SStack_24,*server_ip,0x1ddf);
+  support_trisock_cpp_createNetworkAddr_FUN_0059c740(&SStack_24,(uint32_t *)*server_ip,0x1ddf);
   iVar4 = core_netgame_cpp_CNetGame_addPlayer_FUN_0052e040
                     (this_ptr,&SStack_24,"TheServer",0,0);
   this_ptr->connection_type = CONNECTION_CLIENT;
@@ -80,7 +79,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0052c6b0(CNetG
         uStack_53 = SStack_24.ip_address;
         (&uStack_4f)[(uint)bVar7 * -2] = *(uint *)&(&SStack_24)[-(uint)bVar7].port;
         EStack_37 = this_ptr->players[this_ptr->local_player_index].hero_number;
-        uStack_33 = this_ptr->players[this_ptr->local_player_index].aim_mode;
+        auStack_33._0_4_ = this_ptr->players[this_ptr->local_player_index].aim_mode;
         pcVar6 = acStack_4b;
         pcVar5 = pcStack_14;
         do {
@@ -104,19 +103,22 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0052c6b0(CNetG
       }
       if (_DAT_01d51da4 < 3) {
         if (_DAT_01d51da4 == 2) {
-          shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"Connection refused - computer is not a server");
+          shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+                    (g_CEditorToolsPtr,"Connection refused - computer is not a server");
           core_netgame_cpp_CNetGame_disconnect_FUN_0052cab0(this_ptr,0);
           return 0;
         }
       }
       else {
         if (_DAT_01d51da4 < 4) {
-          shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"Connection refused - game is full");
+          shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+                    (g_CEditorToolsPtr,"Connection refused - game is full");
           core_netgame_cpp_CNetGame_disconnect_FUN_0052cab0(this_ptr,0);
           return 0;
         }
         if (_DAT_01d51da4 == 4) {
-          shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"Connection refused - already in the game");
+          shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+                    (g_CEditorToolsPtr,"Connection refused - already in the game");
           goto LAB_0052c938;
         }
       }

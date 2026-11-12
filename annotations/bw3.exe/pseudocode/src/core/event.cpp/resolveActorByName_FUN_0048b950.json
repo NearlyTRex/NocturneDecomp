@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 278,
+    "complexity_score": 158,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 19,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_few",
       "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
@@ -49,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_event.cpp_resolveActorByName_FUN_0048b950",
-    "signature": "CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *param_1,undefined4 param_2)"
+    "signature": "CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *name,uint class_hash,char *class_name)"
   },
   "function_calls": [
     {
@@ -308,10 +306,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.190476190476191,
@@ -339,13 +337,61 @@
     },
     "pcode_op_count": 528
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00488d00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004a1370",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004aa400",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0047a390",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "class_hash",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "class_name",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -357,38 +403,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 15,
       "match": "DAT_01c734b0",
@@ -397,44 +411,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*param_1 == '@') {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = core_event_cpp_CEventList_getActorByVarName_FUN_00495050(0x01C6E360,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(param_1,&DAT_005bdde3);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 33,
       "match": "DAT_005bdde3",
       "severity": "mild",
-      "text": "iVar2 = _stricmp(param_1,&DAT_005bdde3);",
+      "text": "iVar2 = _stricmp(name,&DAT_005bdde3);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90(0x01D81080,param_1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -457,24 +439,8 @@
       "line": 46,
       "match": "*(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
       "severity": "moderate",
-      "text": "this_ptr = *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);",
+      "text": "actor_ptr = *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c810(this_ptr,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*param_1 == '@') {",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -491,17 +457,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "call_site_count": 32,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

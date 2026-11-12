@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_marquee_cpp_factoryFuncMarquee_FUN_005068f0(void)
+; CMarquee * __cdecl core_marquee_cpp_factoryFuncMarquee_FUN_005068f0(void)
 ;
 ;
 ; Called Functions:

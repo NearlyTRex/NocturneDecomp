@@ -39,7 +39,7 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_004fbb70(CMotionContro
     local_b0 = *delta_time;
     iVar2 = 0;
     if (this_ptr->tween_progress < 0.0) {
-      iVar2 = core_motion_cpp_FUN_004fc680
+      iVar2 = core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_004fc680
                         (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
                          &local_b0,&local_44);
       switch(local_44.cmd) {
@@ -108,11 +108,11 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_004fbb70(CMotionContro
 switchD_004fbc79_caseD_3:
     if (local_1c != 0) {
 LAB_004fbc8a:
-      iVar2 = core_motion_cpp_FUN_004fc4b0
+      iVar2 = core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004fc4b0
                         (this_ptr,local_28,local_20,local_b0,this_ptr->tween_progress);
     }
     if ((local_14 != 0) &&
-       (iVar3 = core_motion_cpp_FUN_004fc4b0
+       (iVar3 = core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004fc4b0
                           (this_ptr,local_24,local_2c,local_b0,1.0 - this_ptr->tween_progress),
        iVar2 == 0)) {
       iVar2 = iVar3;

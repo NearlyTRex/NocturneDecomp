@@ -180,14 +180,14 @@ section .text
     MOV EDX,dword ptr [EAX + 0x338]     ; 004ddbd0
     PUSH EDX                            ; 004ddbd6
     CALL core_inv.cpp_getItemDescription_FUN_004d9eb0 ; 004ddbd7
-        ;   XREF to: 004d9eb0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_getItemDescription_FUN_004d9eb0()
+        ;   XREF to: 004d9eb0 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDescription_FUN_004d9eb0(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004ddbdc
     PUSH EAX                            ; 004ddbdf
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ddbe0
     MOV ECX,dword ptr [EAX + 0x338]     ; 004ddbe3
     PUSH ECX                            ; 004ddbe9
     CALL core_inv.cpp_getItemDisplayName_FUN_004d9e40 ; 004ddbea
-        ;   XREF to: 004d9e40 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_getItemDisplayName_FUN_004d9e40()
+        ;   XREF to: 004d9e40 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDisplayName_FUN_004d9e40(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004ddbef
     PUSH EAX                            ; 004ddbf2
     PUSH 0x5c661f                       ; 004ddbf3 | = "%s\n\n%s"
@@ -288,7 +288,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x33c]     ; 004ddd35
     PUSH EDX                            ; 004ddd3b
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004ddd3c
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004ddd41
     TEST EAX,EAX                        ; 004ddd44
     JZ 0x004ddde1                       ; 004ddd46
@@ -344,14 +344,14 @@ section .text
     MOV ECX,dword ptr [EAX + 0x33c]     ; 004dddf1
     PUSH ECX                            ; 004dddf7
     CALL core_inv.cpp_getItemDescription_FUN_004d9eb0 ; 004dddf8
-        ;   XREF to: 004d9eb0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_getItemDescription_FUN_004d9eb0()
+        ;   XREF to: 004d9eb0 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDescription_FUN_004d9eb0(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004dddfd
     PUSH EAX                            ; 004dde00
     MOV EAX,dword ptr [EBP + 0x14]      ; 004dde01
     MOV EDX,dword ptr [EAX + 0x33c]     ; 004dde04
     PUSH EDX                            ; 004dde0a
     CALL core_inv.cpp_getItemDisplayName_FUN_004d9e40 ; 004dde0b
-        ;   XREF to: 004d9e40 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_getItemDisplayName_FUN_004d9e40()
+        ;   XREF to: 004d9e40 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDisplayName_FUN_004d9e40(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004dde10
     PUSH EAX                            ; 004dde13
     PUSH 0x5c6639                       ; 004dde14 | = "%s\n\n%s"
@@ -846,7 +846,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x304]     ; 004de465
     PUSH ECX                            ; 004de46b
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004de46c
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004de471
     TEST EAX,EAX                        ; 004de474
     JZ 0x004de4cc                       ; 004de476
@@ -886,14 +886,14 @@ section .text
     MOV EDX,dword ptr [EAX + 0x338]     ; 004de4d9
     PUSH EDX                            ; 004de4df
     CALL core_inv.cpp_getItemDescription_FUN_004d9eb0 ; 004de4e0
-        ;   XREF to: 004d9eb0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_getItemDescription_FUN_004d9eb0()
+        ;   XREF to: 004d9eb0 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDescription_FUN_004d9eb0(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004de4e5
     PUSH EAX                            ; 004de4e8
     MOV EAX,dword ptr [EBP + 0x14]      ; 004de4e9
     MOV ECX,dword ptr [EAX + 0x338]     ; 004de4ec
     PUSH ECX                            ; 004de4f2
     CALL core_inv.cpp_getItemDisplayName_FUN_004d9e40 ; 004de4f3
-        ;   XREF to: 004d9e40 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_getItemDisplayName_FUN_004d9e40()
+        ;   XREF to: 004d9e40 (UNCONDITIONAL_CALL)  ; char * core_inv.cpp_getItemDisplayName_FUN_004d9e40(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 004de4f8
     PUSH EAX                            ; 004de4fb
     PUSH 0x5c6626                       ; 004de4fc | = "%s\n\n%s"

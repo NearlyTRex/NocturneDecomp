@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 73,
+    "complexity_score": 63,
     "cross_reference_count": 75,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -451,7 +451,7 @@
     {
       "addr": "005ae190",
       "from_addr": "005ae31f",
-      "name": "core_weather.cpp_FUN_005ae190",
+      "name": "core_weather.cpp_CWeather_update_FUN_005ae190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -493,7 +493,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     }
   ],
   "globals": [
@@ -679,6 +679,32 @@
     },
     "pcode_op_count": 153
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0048e340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00491aa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004adca0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0047dc30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -724,15 +750,7 @@
       "line": 21,
       "match": "DAT_005de18e",
       "severity": "mild",
-      "text": "engine_console_cpp_FUN_00445430(g_CConsolePtr,&DAT_005de18e,&DAT_01c56ed0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_01c56ed0",
-      "severity": "mild",
-      "text": "engine_console_cpp_FUN_00445430(g_CConsolePtr,&DAT_005de18e,&DAT_01c56ed0);",
+      "text": "engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,&DAT_005de18e);",
       "type": "undefined_data"
     }
   ]

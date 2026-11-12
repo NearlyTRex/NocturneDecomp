@@ -18,7 +18,7 @@ CZombie * core_zombie_cpp_CZombie_dtor_FUN_00599d70(CZombie *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CZombieTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CZombieTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

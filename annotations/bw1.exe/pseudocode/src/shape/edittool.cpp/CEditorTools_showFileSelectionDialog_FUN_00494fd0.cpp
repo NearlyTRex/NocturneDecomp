@@ -11,9 +11,9 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0
 {
   int iVar1;
   int iVar2;
-  char *pcVar3;
+  char *format;
   int string_index;
-  int iVar4;
+  int iVar3;
   CPickList local_8d4;
   char local_514 [512];
   char local_314 [512];
@@ -23,14 +23,14 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0
   shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00499ed0
             (&local_8d4.base,search_directory,file_pattern);
   if (local_8d4.base.item_count < 1) {
-    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00531090("No files found");
-    shape_edittool_cpp_FUN_004943a0(this_ptr,pcVar3);
+    format = support_newmsg_cpp_getLocalizedString_FUN_00531090("No files found");
+    shape_edittool_cpp_CEditorTools_showError_FUN_004943a0(this_ptr,format);
     iVar2 = 0;
   }
   else {
     shape_edittool_cpp_CStrList_sortAll_FUN_004997f0(&local_8d4.base);
-    iVar4 = -1;
-    iVar2 = iVar4;
+    iVar3 = -1;
+    iVar2 = iVar3;
     if (((flags & 1) != 0) && (string_index = 0, 0 < local_8d4.base.item_count)) {
       do {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0
@@ -43,7 +43,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0
         iVar2 = string_index;
         if (iVar1 == 0) break;
         string_index = string_index + 1;
-        iVar2 = iVar4;
+        iVar2 = iVar3;
       } while (string_index < local_8d4.base.item_count);
     }
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0

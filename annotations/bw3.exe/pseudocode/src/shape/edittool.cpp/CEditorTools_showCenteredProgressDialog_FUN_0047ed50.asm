@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 0047f3e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     ADD ESP,0x14                        ; 0047edd9
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 0047eddc
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV ESI,EAX                         ; 0047ede1
     MOV EAX,[0x01c5b104]                ; 0047ede3 | DAT_01c5b104
     DEC EAX                             ; 0047ede8

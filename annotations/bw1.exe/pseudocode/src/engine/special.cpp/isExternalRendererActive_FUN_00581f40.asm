@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_special_cpp_isExternalRendererActive_FUN_00581f40(void)
+; int __cdecl engine_special_cpp_isExternalRendererActive_FUN_00581f40(void)
 ;
 ;
 ; Referenced Globals:

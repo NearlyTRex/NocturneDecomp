@@ -31,7 +31,7 @@ section .text
     MOV BL,byte ptr [ESP + 0x10]        ; 005748c6
     PUSH EBX                            ; 005748ca
     CALL crt_stdio.c_fputc_FUN_005a5d70 ; 005748cb
-        ;   XREF to: 005a5d70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005a5d70()
+        ;   XREF to: 005a5d70 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005a5d70(int character, _FILE * file)
     ADD ESP,0x8                         ; 005748d0
     CMP EAX,EBX                         ; 005748d3
     JNZ 0x005748bc                      ; 005748d5

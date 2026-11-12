@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_curtain_cpp_factoryFuncCurtain_FUN_00446320(void)
+; CCurtain * __cdecl core_curtain_cpp_factoryFuncCurtain_FUN_00446320(void)
 ;
 ;
 ; Called Functions:

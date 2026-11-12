@@ -23,7 +23,7 @@ section .text
     ADD ESP,0x4                         ; 0054ceca
     PUSH 0x622bd8                       ; 0054cecd
     CALL crt_stdlib.c__atexit_FUN_005c1093 ; 0054ced2
-        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005c1093()
+        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005c1093(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0054ced7
     PUSH 0x1fe37ec                      ; 0054ceda
     CALL core_dcamera.cpp_CDemonCamera_ctor_FUN_0044caa0 ; 0054cedf
@@ -31,7 +31,7 @@ section .text
     ADD ESP,0x4                         ; 0054cee4
     PUSH 0x622be8                       ; 0054cee7
     CALL crt_stdlib.c__atexit_FUN_005c1093 ; 0054ceec
-        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005c1093()
+        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005c1093(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0054cef1
     PUSH 0x1fe5c1c                      ; 0054cef4
     CALL core_dtrace.cpp_CDemonRaytrace_ctor_FUN_0048a8f0 ; 0054cef9
@@ -39,7 +39,7 @@ section .text
     ADD ESP,0x4                         ; 0054cefe
     PUSH 0x622bf8                       ; 0054cf01
     CALL crt_stdlib.c__atexit_FUN_005c1093 ; 0054cf06
-        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005c1093()
+        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005c1093(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0054cf0b
     PUSH 0x1fe5fac                      ; 0054cf0e
     CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_004667e0 ; 0054cf13
@@ -47,13 +47,13 @@ section .text
     ADD ESP,0x4                         ; 0054cf18
     PUSH 0x622c08                       ; 0054cf1b
     CALL crt_stdlib.c__atexit_FUN_005c1093 ; 0054cf20
-        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005c1093()
+        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005c1093(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0054cf25
     PUSH 0x5fb430                       ; 0054cf28
     PUSH 0xfa0                          ; 0054cf2d
     PUSH 0x202a8a8                      ; 0054cf32
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0054cf37
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0054cf3c
     RET                                 ; 0054cf3f
 

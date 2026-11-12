@@ -108,14 +108,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x28]      ; 00489d1f
     PUSH EDX                            ; 00489d23
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 00489d24
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 00489d29
     MOV ECX,dword ptr [0x007e17b4]      ; 00489d2c | g_CBoxActorClassInfo.name_hash
     PUSH ECX                            ; 00489d32
     PUSH EAX                            ; 00489d33
     MOV EBX,EAX                         ; 00489d34
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00489d36
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,EAX                         ; 00489d3b
     ADD ESP,0x8                         ; 00489d3d
     TEST EAX,EAX                        ; 00489d40
@@ -326,7 +326,7 @@ section .text
         ;   XREF to: 00489fa7 (CONDITIONAL_JUMP)  ; LAB_00489fa7
     PUSH 0x5bdcbd                       ; 00489f7f | = "CAmmo_Mana"
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 00489f84
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 00489f89
     MOV EBX,EAX                         ; 00489f8c
     JMP 0x00489d74                      ; 00489f8e
@@ -334,7 +334,7 @@ section .text
     PUSH 0x5bdcb0                       ; 00489f93 | = "CAmmo_Bullet"
         ;   Label: LAB_00489f93
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 00489f98
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 00489f9d
     MOV EBX,EAX                         ; 00489fa0
     JMP 0x00489d74                      ; 00489fa2
@@ -342,7 +342,7 @@ section .text
     PUSH 0x5bdcc8                       ; 00489fa7 | = "CHealthItemSmall"
         ;   Label: LAB_00489fa7
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 00489fac
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 00489fb1
     MOV EBX,EAX                         ; 00489fb4
     JMP 0x00489d74                      ; 00489fb6

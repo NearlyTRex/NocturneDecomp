@@ -78,7 +78,7 @@ section .text
     SUB ESP,0x4                         ; 0057a885
     FSTP float ptr [ESP]                ; 0057a888
     CALL sound_sndmain.cpp_startSoundThread_FUN_00575c00 ; 0057a88b
-        ;   XREF to: 00575c00 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSoundThread_FUN_00575c00()
+        ;   XREF to: 00575c00 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_startSoundThread_FUN_00575c00(double latency_seconds)
     ADD ESP,0x4                         ; 0057a890
     TEST EAX,EAX                        ; 0057a893
     JZ 0x0057a8a0                       ; 0057a895

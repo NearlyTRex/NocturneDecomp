@@ -24,7 +24,7 @@ section .text
     PUSH EDX                            ; 0057dd31
         ;   Label: LAB_0057dd31
     CALL crt_stdio.c_ftell_FUN_005baab0 ; 0057dd32
-        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005baab0()
+        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005baab0(_FILE * file_handle)
     ADD ESP,0x4                         ; 0057dd37
     RET                                 ; 0057dd3a
 

@@ -38,7 +38,7 @@ section .text
     PUSH 0x5f1115                       ; 0055c552 | DAT_005f1115
     PUSH EBP                            ; 0055c557
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0055c558
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     MOV EAX,dword ptr [EDI + 0x194]     ; 0055c55d
     ADD ESP,0xc                         ; 0055c563
     SHL EAX,0x2                         ; 0055c566
@@ -73,7 +73,7 @@ section .text
     INC ESI                             ; 0055c5ab
     ADD EBX,0x4                         ; 0055c5ac
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0055c5af
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     MOV EAX,dword ptr [EDI + 0x194]     ; 0055c5b4
     ADD ESP,0xc                         ; 0055c5ba
     CMP ESI,EAX                         ; 0055c5bd

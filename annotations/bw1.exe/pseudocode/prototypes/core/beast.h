@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_beast.cpp_factoryFuncBeast_FUN_004146c0
 // Address: 004146c0
-void factoryFuncBeast(void);
+CBeast * __cdecl factoryFuncBeast(void);
 
 // Original: core_beast.cpp_CBeast_getActorType_FUN_004146e0
 // Address: 004146e0

@@ -2,19 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 139,
+    "complexity_score": 205,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 7,
+    "pseudocode_lines": 55,
+    "suspect_count": 12,
     "suspect_types": [
+      "bitcast_double_pair",
+      "stack_param",
+      "stack_ref",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 181
+    "total_lines": 182
   },
   "cross_references": [],
   "function": {
@@ -180,6 +183,20 @@
     },
     "pcode_op_count": 554
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00555130",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055acd0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -206,8 +223,40 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_fffffcd0",
+      "severity": "moderate",
+      "text": "uint in_stack_fffffcd0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_fffffcd0",
+      "severity": "moderate",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(in_stack_fffffcd0,fStack_10)));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 34,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(in_stack_fffffcd0,fStack_10)));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Direct stack address reference",
       "line": 39,
+      "match": "&stack0xfffffcd0",
+      "severity": "moderate",
+      "text": "pcVar3 = &stack0xfffffcd0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 40,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar2 = (**(code **)(*_DAT_02c81d9c + 0x34))(_DAT_02c81d9c,0);",
@@ -215,15 +264,23 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 41,
+      "line": 42,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar2 = (**(code **)(*_DAT_02c81d9c + 0x30))(_DAT_02c81d9c,0,0,1);",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 52,
+      "match": "&stack0xfffffcd0",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffcd0,\"DirectSux: Unable to %s.  (%s)\");",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 56,
+      "line": 57,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*param_1 + 8))(param_1);",
@@ -231,7 +288,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 8))(param_1);",
@@ -239,7 +296,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 8))(param_1);",

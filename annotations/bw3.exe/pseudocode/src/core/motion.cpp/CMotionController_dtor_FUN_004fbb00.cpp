@@ -12,7 +12,7 @@ CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_004fbb00(
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMotionControllerTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMotionControllerTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

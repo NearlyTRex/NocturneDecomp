@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *param_1,undefined4 param_2)
+; CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *name,uint class_hash,char *class_name)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   name
+; uint             Stack[0x8]:4   class_hash
+; char *           Stack[0xc]:4   class_name
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 0049269f
@@ -120,7 +124,7 @@ section .text
     PUSH EDI                            ; 0048b9e3
     PUSH ESI                            ; 0048b9e4
     CALL core_actor.cpp_isOfClassHash_FUN_0040c810 ; 0048b9e5
-        ;   XREF to: 0040c810 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClassHash_FUN_0040c810()
+        ;   XREF to: 0040c810 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClassHash_FUN_0040c810(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0048b9ea
     TEST EAX,EAX                        ; 0048b9ed
     JNZ 0x0048ba76                      ; 0048b9ef

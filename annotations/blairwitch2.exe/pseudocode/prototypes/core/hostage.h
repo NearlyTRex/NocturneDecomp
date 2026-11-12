@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_hostage.cpp_factoryFuncHostage_FUN_004d12a0
 // Address: 004d12a0
-void factoryFuncHostage(void);
+CHostage * __cdecl factoryFuncHostage(void);
 
 // Original: core_hostage.cpp_CHostage_getActorType_FUN_004d12c0
 // Address: 004d12c0

@@ -2,20 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 231,
-    "complexity_score": 412,
+    "complexity_score": 374,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 102,
-    "suspect_count": 29,
+    "pseudocode_lines": 104,
+    "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 333
+    "total_lines": 335
   },
   "cross_references": [
     {
@@ -195,6 +195,32 @@
       "STORE": 63
     },
     "pcode_op_count": 747
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00514a30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00535d80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005490c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9861
+    },
+    "nocturne.exe": {
+      "addr": "004f2990",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 144,
@@ -389,7 +415,7 @@
       "line": 51,
       "match": "DAT_005cba90",
       "severity": "mild",
-      "text": "piVar1 = (int *)_fopen(filename,&DAT_005cba90);",
+      "text": "file = _fopen(filename,&DAT_005cba90);",
       "type": "undefined_data"
     },
     {
@@ -425,116 +451,84 @@
       "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(byte *)((int)piVar1",
-      "severity": "moderate",
-      "text": "if (((*(byte *)((int)piVar1 + 0xd) & 4) == 0) && (1 < (uint)(piVar1[5] - piVar1[1]))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(byte *)((int)piVar1",
-      "severity": "moderate",
-      "text": "*(byte *)((int)piVar1 + 0xd) = *(byte *)((int)piVar1 + 0xd) | 0x10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(byte *)((int)piVar1",
-      "severity": "moderate",
-      "text": "*(byte *)((int)piVar1 + 0xd) = *(byte *)((int)piVar1 + 0xd) | 0x10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(byte *)((int)piVar1",
-      "severity": "moderate",
-      "text": "if (((*(byte *)((int)piVar1 + 0xd) & 4) == 0) && (1 < (uint)(piVar1[5] - piVar1[1]))) {",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 87,
       "match": "DAT_01c6af98",
       "severity": "mild",
-      "text": "*(byte *)*piVar1 = (&DAT_01c6af98)[iVar2];",
+      "text": "*file->_ptr = (&DAT_01c6af98)[iVar2];",
       "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(byte *)((int)piVar1",
-      "severity": "moderate",
-      "text": "*(byte *)((int)piVar1 + 0xd) = *(byte *)((int)piVar1 + 0xd) | 0x10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(byte *)((int)piVar1",
-      "severity": "moderate",
-      "text": "*(byte *)((int)piVar1 + 0xd) = *(byte *)((int)piVar1 + 0xd) | 0x10;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 98,
       "match": "DAT_01c6af98",
       "severity": "mild",
-      "text": "uVar3 = (&DAT_01c6af98)[iVar2];",
+      "text": "character = (uint)(byte)(&DAT_01c6af98)[iVar2];",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
-      "match": "(int)piVar1",
+      "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)&file->_flag",
       "severity": "moderate",
-      "text": "if (((*(byte *)((int)piVar1 + 0xd) & 4) == 0) && (1 < (uint)(piVar1[5] - piVar1[1]))) {",
+      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 73,
-      "match": "(int)piVar1",
+      "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 74,
+      "match": "(int)&file->_flag",
       "severity": "moderate",
-      "text": "*(byte *)((int)piVar1 + 0xd) = *(byte *)((int)piVar1 + 0xd) | 0x10;",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 73,
-      "match": "(int)piVar1",
+      "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 92,
+      "match": "(int)&file->_flag",
       "severity": "moderate",
-      "text": "*(byte *)((int)piVar1 + 0xd) = *(byte *)((int)piVar1 + 0xd) | 0x10;",
+      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 85,
-      "match": "(int)piVar1",
+      "description": "Pointer value `&file->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 95,
+      "match": "(int)&file->_flag",
       "severity": "moderate",
-      "text": "if (((*(byte *)((int)piVar1 + 0xd) & 4) == 0) && (1 < (uint)(piVar1[5] - piVar1[1]))) {",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 93,
-      "match": "(int)piVar1",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 71,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(byte *)((int)piVar1 + 0xd) = *(byte *)((int)piVar1 + 0xd) | 0x10;",
-      "type": "pointer_truncation"
+      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 93,
-      "match": "(int)piVar1",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 74,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(byte *)((int)piVar1 + 0xd) = *(byte *)((int)piVar1 + 0xd) | 0x10;",
-      "type": "pointer_truncation"
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 92,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 95,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;",
+      "type": "pointer_cast"
     }
   ]
 }

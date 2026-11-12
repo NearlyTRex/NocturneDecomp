@@ -31,7 +31,7 @@ void FUN_005616a0(void);
 
 // Original: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_00561713
 // Address: 00561713
-void renderMMXPerspectiveScanline16(void);
+void __edi_esi_ebx renderMMXPerspectiveScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: engine_special.cpp_FUN_00561fdc
 // Address: 00561fdc
@@ -43,11 +43,11 @@ void FUN_005625a3(void);
 
 // Original: engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_00562c33
 // Address: 00562c33
-int * renderPerspectiveCorrectScanline32(void);
+void __edi_esi_ebx renderPerspectiveCorrectScanline32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00562e69
 // Address: 00562e69
-int * renderPerspectiveCorrectScanline16(void);
+void __edi_esi_ebx renderPerspectiveCorrectScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: engine_special.cpp_renderAlphaRow32_FUN_005630a3
 // Address: 005630a3
@@ -69,6 +69,10 @@ void __cdecl FUN_005632a3(SProjectedVertex *output,CVector3i *input);
 // Address: 0056356c
 void __cdecl FUN_0056356c(SProjectedVertex *output,CVector3i *input);
 
+// Original: engine_special.cpp_shutdownExternalRenderer_FUN_00564010
+// Address: 00564010
+void __cdecl shutdownExternalRenderer(void);
+
 // Original: engine_special.cpp_loadExternalRenderer_FUN_00564be0
 // Address: 00564be0
 int __cdecl loadExternalRenderer(HWND window_handle);
@@ -79,7 +83,7 @@ int __cdecl kill(void);
 
 // Original: engine_special.cpp_isExternalRendererActive_FUN_00565810
 // Address: 00565810
-undefined4 isExternalRendererActive(void);
+int __cdecl isExternalRendererActive(void);
 
 // Original: engine_special.cpp_FUN_00565820
 // Address: 00565820
@@ -135,19 +139,19 @@ int __cdecl restoreVideoMode(void);
 
 // Original: engine_special.cpp_drawPolygon_FUN_00565c10
 // Address: 00565c10
-undefined4 __cdecl drawPolygon(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+int __cdecl drawPolygon(SRenderVertex *vertices,int vertex_count,int render_flags);
 
 // Original: engine_special.cpp_drawPolygon2_FUN_00565c40
 // Address: 00565c40
-undefined4 __cdecl drawPolygon2(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+int __cdecl drawPolygon2(SRenderVertex **vertex_array,int vertex_count,int render_flags);
 
 // Original: engine_special.cpp_drawPolyList_FUN_00565c70
 // Address: 00565c70
-undefined4 __cdecl drawPolyList(int param_1,int *param_2,int param_3,undefined4 param_4);
+int __cdecl drawPolyList(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags);
 
 // Original: engine_special.cpp_drawPolyList2_FUN_00565db0
 // Address: 00565db0
-undefined4 __cdecl drawPolyList2(int param_1,undefined4 *param_2,int param_3,undefined4 param_4);
+int __cdecl drawPolyList2(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags);
 
 // Original: engine_special.cpp_drawPolyList3_FUN_00565ef0
 // Address: 00565ef0
@@ -155,11 +159,11 @@ int __cdecl drawPolyList3(SRenderVertex *vertex_buffer,STrianglePackedIndices *p
 
 // Original: engine_special.cpp_addParticle_FUN_00565fbe
 // Address: 00565fbe
-undefined4 addParticle(undefined4 param_1,undefined4 param_2);
+int __cdecl addParticle(void *particle_data,int particle_type);
 
 // Original: engine_special.cpp_flushParticleList_FUN_00565fee
 // Address: 00565fee
-undefined4 flushParticleList(void);
+int __cdecl flushParticleList(void);
 
 // Original: engine_special.cpp_add3dLine_FUN_00566010
 // Address: 00566010

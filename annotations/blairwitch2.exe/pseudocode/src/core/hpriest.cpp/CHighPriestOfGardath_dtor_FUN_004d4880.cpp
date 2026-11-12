@@ -19,7 +19,7 @@ CHighPriestOfGardath * core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_004d4880(C
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHighPriestOfGardathTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHighPriestOfGardathTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

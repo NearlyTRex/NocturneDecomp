@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_dfilter.cpp_FUN_0045d7c0 at 0045d8ae
+;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0045d7c0 at 0045d8ae
 ;   core_main.c_FUN_005032a0 at 0050390c
 ;
 ; Referenced Globals:

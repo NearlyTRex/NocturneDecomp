@@ -11,7 +11,7 @@
 ;   core_bat.cpp_CBat_setup_FUN_004110a0 at 004110d7
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00438c40
+;   core_course.cpp_CCourse_evaluate_FUN_00438c40
 ;   crt_math.c_floor_FUN_005b84d0
 ;
 ; *****************************************************************************
@@ -74,8 +74,8 @@ section .text
     ADD EBX,0x2d4                       ; 00411572
     PUSH dword ptr [EBX + 0x18c]        ; 00411578
     PUSH EBX                            ; 0041157e
-    CALL core_course.cpp_FUN_00438c40   ; 0041157f
-        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00438c40 ; 0041157f
+        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 00411584
     MOV ESP,EBP                         ; 00411587
     POP EBP                             ; 00411589

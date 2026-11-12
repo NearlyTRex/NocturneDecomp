@@ -2,20 +2,20 @@
 // Address: 005a3de6
 // Address Range: [[005a3de6, 005a3e12]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl crt_memory_c___arrfini_FUN_005a3de6(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+// Signature: void * __cdecl crt_memory_c___arrfini_FUN_005a3de6(void *obj_array,int obj_count,WatcomTypeInfo *type_info)
 
 #include "nocturne.h"
 
-uint __cdecl __arrfini(uint param_1,uint param_2,uint param_3)
+void * __cdecl __arrfini(void *obj_array,int obj_count,WatcomTypeInfo *type_info)
 
 {
-  uint local_c;
-  uint local_8;
-  uint local_4;
+  int local_c;
+  WatcomTypeInfo *local_8;
+  void *local_4;
   
-  local_c = param_2;
-  local_8 = param_3;
-  local_4 = param_1;
+  local_c = obj_count;
+  local_8 = type_info;
+  local_4 = obj_array;
   FUN_005a3dac(&local_c);
-  return param_1;
+  return obj_array;
 }

@@ -12,7 +12,7 @@ CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_00440810(CCodec *this_ptr,uin
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CCodecTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CCodecTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

@@ -38,18 +38,18 @@ section .text
     LEA ESI,[EBX + 0x10a60]             ; 00415264
     PUSH ESI                            ; 0041526a
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0041526b
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00415270
     PUSH 0x5cbcdc                       ; 00415273 | = "modelName"
     LEA ESI,[EBX + 0x2b4]               ; 00415278
     PUSH ESI                            ; 0041527e
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0 ; 0041527f
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0()
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 00415284
     PUSH 0x5cbce6                       ; 00415287 | = "motion state"
     PUSH ESI                            ; 0041528c
     CALL core_actor.cpp_archiveMotionState_FUN_0040bb60 ; 0041528d
-        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveMotionState_FUN_0040bb60()
+        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040bb60(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 00415292
     PUSH 0x5cbcf3                       ; 00415295 | = "morphing"
     LEA ESI,[EBX + 0x10c74]             ; 0041529a
@@ -61,7 +61,7 @@ section .text
     LEA ESI,[EBX + 0x10c78]             ; 004152ae
     PUSH ESI                            ; 004152b4
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 004152b5
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004152ba
     PUSH 0x5cbd07                       ; 004152bd | = "morphEvent"
     ADD EBX,0x118a8                     ; 004152c2

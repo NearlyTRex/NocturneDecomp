@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 159,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 74,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "raw_address_constant",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -63,14 +62,14 @@
       "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
     },
     {
+      "addr": "004aaf00",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
+    },
+    {
       "addr": "004a8df0",
       "is_variadic": false,
       "name": "engine_font.cpp_FUN_004a8df0"
-    },
-    {
-      "addr": "004aaf00",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004aaf00"
     },
     {
       "addr": "004ab2b0",
@@ -230,6 +229,32 @@
     },
     "pcode_op_count": 1005
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005439b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00528fc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00559b20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9539
+    },
+    "nocturne.exe": {
+      "addr": "004fe770",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9539
+    }
+  },
   "stack_frame": {
     "frame_size": 52,
     "local_size": 48,
@@ -309,7 +334,7 @@
       "line": 27,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "iVar9 = DAT_006141bc;",
+      "text": "iVar8 = DAT_006141bc;",
       "type": "undefined_data"
     },
     {
@@ -343,14 +368,6 @@
       "severity": "mild",
       "text": "(DAT_006141b8 * 9) / 10);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Raw hex address 0x1e620f8 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 66,
-      "match": "0x1e620f8",
-      "severity": "moderate",
-      "text": "iVar4 = 0x1e620f8;",
-      "type": "raw_address_constant"
     }
   ]
 }

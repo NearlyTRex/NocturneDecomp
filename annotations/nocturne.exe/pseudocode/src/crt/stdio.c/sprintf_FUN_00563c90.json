@@ -70,12 +70,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f5110",
-      "from_addr": "004f51d1",
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f47b0",
       "from_addr": "004f48fd",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0",
@@ -91,6 +85,12 @@
       "addr": "004f4b30",
       "from_addr": "004f4b80",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_004f4b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f5110",
+      "from_addr": "004f51d1",
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_004f5110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -132,7 +132,7 @@
     {
       "addr": "0041f6e0",
       "from_addr": "0041f9a6",
-      "name": "core_boxactor.cpp_CLightActor_FUN_0041f6e0",
+      "name": "core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041f6e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -226,18 +226,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a3b90",
-      "from_addr": "004a3eb0",
-      "name": "core_game.cpp_CGame_FUN_004a3b90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a4170",
-      "from_addr": "004a442f",
-      "name": "core_game.cpp_CGame_FUN_004a4170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004a6680",
       "from_addr": "004a683b",
       "name": "core_game.cpp_CGame_displayActStats_FUN_004a6680",
@@ -247,6 +235,12 @@
       "addr": "004a6a10",
       "from_addr": "004a6ca8",
       "name": "core_game.cpp_CGame_finishAct_FUN_004a6a10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a4170",
+      "from_addr": "004a442f",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -271,6 +265,12 @@
       "addr": "0049ab50",
       "from_addr": "0049ac43",
       "name": "core_game.cpp_CGame_renderOverlay_FUN_0049ab50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a3b90",
+      "from_addr": "004a3eb0",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004a3b90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -484,12 +484,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050aa70",
-      "from_addr": "0050ab2f",
-      "name": "core_set.cpp_CDemonSet_FUN_0050aa70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00507f80",
       "from_addr": "0050812a",
       "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
@@ -499,6 +493,12 @@
       "addr": "0050d040",
       "from_addr": "0050d0f5",
       "name": "core_set.cpp_CDemonSet_process_FUN_0050d040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050aa70",
+      "from_addr": "0050ab2f",
+      "name": "core_set.cpp_CDemonSet_renderLightDebugView_FUN_0050aa70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1017,6 +1017,32 @@
       "STORE": 6
     },
     "pcode_op_count": 60
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b7790",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005bfb40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a28c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005fdbd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 20,

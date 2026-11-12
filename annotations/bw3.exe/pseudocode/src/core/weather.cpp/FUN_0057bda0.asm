@@ -49,7 +49,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_0044f680
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_fire.cpp_FUN_004a3f20
+;   core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20
 ;   core_sound.cpp_CSound_playSound_FUN_005609b0
 ;   core_weather.cpp_CWeather_createThunder_FUN_0057c840
 ;   core_weather.cpp_FUN_0057c2e0
@@ -224,32 +224,32 @@ section .text
     PUSH EAX                            ; 0057bf88
     MOV EAX,[0x005fc5a0]                ; 0057bf89 | DAT_005fc5a0
     PUSH EAX                            ; 0057bf8e
-    CALL core_fire.cpp_FUN_004a3f20     ; 0057bf8f
-        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3f20()
+    CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20 ; 0057bf8f
+        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 0057bf94
     PUSH 0x0                            ; 0057bf97
     LEA EAX,[ESP + 0x14]                ; 0057bf99
     PUSH EAX                            ; 0057bf9d
     MOV EDX,dword ptr [0x005fc5a0]      ; 0057bf9e | DAT_005fc5a0
     PUSH EDX                            ; 0057bfa4
-    CALL core_fire.cpp_FUN_004a3f20     ; 0057bfa5
-        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3f20()
+    CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20 ; 0057bfa5
+        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 0057bfaa
     PUSH 0x0                            ; 0057bfad
     LEA EAX,[ESP + 0x14]                ; 0057bfaf
     PUSH EAX                            ; 0057bfb3
     MOV ECX,dword ptr [0x005fc5a0]      ; 0057bfb4 | DAT_005fc5a0
     PUSH ECX                            ; 0057bfba
-    CALL core_fire.cpp_FUN_004a3f20     ; 0057bfbb
-        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3f20()
+    CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20 ; 0057bfbb
+        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 0057bfc0
     PUSH 0x0                            ; 0057bfc3
     LEA EAX,[ESP + 0x14]                ; 0057bfc5
     PUSH EAX                            ; 0057bfc9
     MOV ESI,dword ptr [0x005fc5a0]      ; 0057bfca | DAT_005fc5a0
     PUSH ESI                            ; 0057bfd0
-    CALL core_fire.cpp_FUN_004a3f20     ; 0057bfd1
-        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3f20()
+    CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20 ; 0057bfd1
+        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 0057bfd6
     MOV ESI,dword ptr [ESP + 0x3c]      ; 0057bfd9
         ;   Label: LAB_0057bfd9

@@ -2,20 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 431,
+    "complexity_score": 287,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 151,
-    "suspect_count": 26,
+    "pseudocode_lines": 157,
+    "suspect_count": 11,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
-      "unnamed_param",
+      "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 512
+    "total_lines": 518
   },
   "cross_references": [],
   "function": {
@@ -29,7 +29,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_004df960",
-    "signature": "int __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004df960(int param_1)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004df960(SMRGLKeyframeModel *keyframe_model)"
   },
   "function_calls": [
     {
@@ -45,7 +45,7 @@
     {
       "addr": "004078b0",
       "is_variadic": false,
-      "name": "engine_3d.c_FUN_004078b0"
+      "name": "engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0"
     },
     {
       "addr": "004df430",
@@ -164,9 +164,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -216,13 +216,47 @@
     },
     "pcode_op_count": 2159
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004fcd30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004df050",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00501f30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c3c90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "keyframe_model",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLKeyframeModel *"
+      }
+    ]
   },
   "stack_patterns": {
     "note": "Function contains stack manipulation that may cause decompiler artifacts.",
@@ -251,16 +285,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004df960(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 18,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "int *extraout_ECX;",
@@ -268,187 +294,75 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 22,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "int extraout_EDX;",
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x14) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004df770(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar8 = *(uint *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar11 = (int)*(uint *)(param_1 + 0x10) >> 0x1f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar6 = *(uint *)(param_1 + 0x10) ^ uVar11;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x10) = _DAT_01c2a374 % (int)(*(int *)(param_1 + 8) * uVar8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x10) = _DAT_01c2a374 % (int)(*(int *)(param_1 + 8) * uVar8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 8) <= iVar14) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 8) <= iStack_1c) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar17 = *(int *)(param_1 + 8) + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)(param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piStack_18 = (int *)(*(int *)(param_1 + 0x118 + iVar14 * 4) + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar13 = (int *)(*(int *)(iVar12 * 4 + param_1 + 0x118) + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar15 = (int *)(*(int *)(iVar14 + param_1 + 0x118) + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar16 = (int *)(*(int *)(iVar17 * 4 + param_1 + 0x118) + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 93,
+      "line": 98,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "piVar9 = extraout_ECX;",
+      "text": "piVar12 = extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 94,
+      "line": 99,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "piVar10 = extraout_ECX;",
+      "text": "piVar13 = extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 95,
+      "line": 100,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "if (0 < extraout_EDX) {",
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 139,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar14 = *(int *)(param_1 + 0x14) + 0x14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 153,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_3d_c_FUN_004078b0(*(uint *)(param_1 + 0x14));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 154,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1 + 0x158;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 151,
+      "line": 156,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "header = (SMRGLHeaderExtended *)((int)&(header->base).type + (uVar8 & 0xfffffffc));",
+      "text": "((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar19` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar19->owner`). Replace `pSVar19->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 120,
+      "match": "pSVar19 = (T *)&pSVar19->FIELD",
+      "severity": "moderate",
+      "text": "pSVar19 = (SMRGLKeyframe *)&pSVar19->vertex_header;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar16` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar16->owner`). Replace `pSVar16->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 122,
+      "match": "pSVar16 = (T *)&pSVar16->FIELD",
+      "severity": "moderate",
+      "text": "pSVar16 = (SMRGLKeyframe *)&pSVar16->vertex_header;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar18->owner`). Replace `pSVar18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 124,
+      "match": "pSVar18 = (T *)&pSVar18->FIELD",
+      "severity": "moderate",
+      "text": "pSVar18 = (SMRGLKeyframe *)&pSVar18->vertex_header;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSStack_18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSStack_18->owner`). Replace `pSStack_18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 132,
+      "match": "pSStack_18 = (T *)&pSStack_18->FIELD",
+      "severity": "moderate",
+      "text": "pSStack_18 = (SMRGLKeyframe *)&pSStack_18->vertex_header;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

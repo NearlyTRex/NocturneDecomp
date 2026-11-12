@@ -183,7 +183,7 @@ section .text
     XOR EBX,EBX                         ; 005796cc
     MOV dword ptr [ESP + 0x30],ESI      ; 005796ce
     CALL support_trisock.cpp_buildIPAddress_FUN_00578d60 ; 005796d2
-        ;   XREF to: 00578d60 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_buildIPAddress_FUN_00578d60()
+        ;   XREF to: 00578d60 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_buildIPAddress_FUN_00578d60(uint8_t * dest_ip, int octet1, int octet2, int octet3, ...)
     ADD ESP,0x14                        ; 005796d7
     TEST EDI,EDI                        ; 005796da
     JLE 0x005796f3                      ; 005796dc

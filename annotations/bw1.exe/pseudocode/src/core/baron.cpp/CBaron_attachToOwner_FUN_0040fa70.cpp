@@ -13,7 +13,8 @@ void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_0040fa70(CBaron *this_ptr,C
 {
   UOrientationVector *pUVar1;
   CDemonActor *pCVar2;
-  int iVar3;
+  CCharacter *this_ptr_00;
+  EDeathState EVar3;
   byte bVar4;
   float afStackY_1028 [1012];
   uint local_4c;
@@ -33,8 +34,12 @@ void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_0040fa70(CBaron *this_ptr,C
   bVar4 = 0;
   if ((((target != (CDemonActor *)0x0) && (target != this_ptr->target_actor)) &&
       (this_ptr->target_actor == (CDemonActor *)0x0)) &&
-     ((iVar3 = core_actor_cpp_castToClassHash_FUN_0040c600(target,g_CCharacterClassInfo.name_hash),
-      iVar3 == 0 || (iVar3 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x10c))(iVar3), iVar3 < 1)))) {
+     ((this_ptr_00 = (CCharacter *)
+                     core_actor_cpp_castToClassHash_FUN_0040c600
+                               (target,g_CCharacterClassInfo.name_hash),
+      this_ptr_00 == (CCharacter *)0x0 ||
+      (EVar3 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), (int)EVar3 < 1
+      )))) {
     this_ptr->target_actor = target;
     local_4c = 0;
     local_48 = 0;

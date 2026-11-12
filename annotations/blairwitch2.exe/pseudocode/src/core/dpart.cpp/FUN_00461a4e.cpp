@@ -10,8 +10,8 @@ void core_dpart_cpp_FUN_00461a4e(int param_1)
 
 {
   int iVar1;
-  UIntegerFloat *pUVar2;
-  uint uVar3;
+  UIntegerFloat *plane;
+  uint uVar2;
   SMRGLHeaderPrimitive SStack_58;
   UIntegerFloat UStack_40;
   UIntegerFloat UStack_34;
@@ -27,34 +27,34 @@ void core_dpart_cpp_FUN_00461a4e(int param_1)
   if (DAT_0060b280->advanced_culling_enabled != 0) {
     engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);
   }
-  pUVar2 = *(UIntegerFloat **)(param_1 + 0x34);
-  uVar3 = 0;
+  plane = *(UIntegerFloat **)(param_1 + 0x34);
+  uVar2 = 0;
   if (0 < *(int *)(param_1 + 0x24)) {
     do {
-      iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(pUVar2);
+      iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970((SClipPlane *)plane);
       if (iVar1 != 0) {
         engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046b7e0
-                  (DAT_0060b280,-((uVar3 & 0x7f) + 0x80));
-        SStack_58.surface_normal.A = *pUVar2;
-        SStack_58.surface_normal.B = pUVar2[1];
-        SStack_58.surface_normal.C = pUVar2[2];
-        SStack_58.surface_normal.D = pUVar2[3];
-        UStack_40 = pUVar2[4];
-        UStack_34 = pUVar2[5];
-        UStack_28 = pUVar2[6];
-        if (pUVar2[7].i == -1) {
+                  (DAT_0060b280,-((uVar2 & 0x7f) + 0x80));
+        SStack_58.surface_normal.A = *plane;
+        SStack_58.surface_normal.B = plane[1];
+        SStack_58.surface_normal.C = plane[2];
+        SStack_58.surface_normal.D = plane[3];
+        UStack_40 = plane[4];
+        UStack_34 = plane[5];
+        UStack_28 = plane[6];
+        if (plane[7].i == -1) {
           SStack_58.base.count = 3;
         }
         else {
           SStack_58.base.count = 4;
-          iStack_1c = pUVar2[7].i;
+          iStack_1c = plane[7].i;
         }
         core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00534130
                   (g_CDemonSetPtr,&SStack_58,1);
       }
-      uVar3 = uVar3 + 1;
-      pUVar2 = pUVar2 + 8;
-    } while ((int)uVar3 < *(int *)(param_1 + 0x24));
+      uVar2 = uVar2 + 1;
+      plane = plane + 8;
+    } while ((int)uVar2 < *(int *)(param_1 + 0x24));
   }
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,1);
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);

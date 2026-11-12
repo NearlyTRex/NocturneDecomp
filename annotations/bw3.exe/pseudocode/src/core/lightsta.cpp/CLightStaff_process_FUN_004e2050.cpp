@@ -13,24 +13,25 @@ void __cdecl core_lightsta_cpp_CLightStaff_process_FUN_004e2050(CLightStaff *thi
 {
   CVector3f *position;
   CDemonSet *this_ptr_00;
-  int iVar1;
+  CDemonActor *pCVar1;
   float fVar2;
-  uint uVar3;
-  CCharacter *pCVar4;
-  EDeathState EVar5;
+  int iVar3;
+  uint uVar4;
+  CCharacter *pCVar5;
+  EDeathState EVar6;
   CSkeleton *this_ptr_01;
-  int iVar6;
-  CLightStaff *pCVar7;
-  uint *puVar8;
+  int iVar7;
+  CLightStaff *pCVar8;
+  uint *puVar9;
   CDeformableModelInstance *this_ptr_02;
   CCharacter *unaff_EDI;
-  CDemonActor **ppCVar9;
-  byte bVar10;
-  float10 fVar11;
+  CDemonActor **ppCVar10;
+  byte bVar11;
+  float10 fVar12;
   float afStackY_16f0 [965];
   CBoundingBox3D *in_stack_fffff848;
-  float *pfVar12;
-  CBoundingBox3D *pCVar13;
+  float *pfVar13;
+  CBoundingBox3D *pCVar14;
   CDemonActor *in_stack_fffff850;
   float in_stack_fffff854;
   byte auStack_774 [52];
@@ -285,11 +286,12 @@ void __cdecl core_lightsta_cpp_CLightStaff_process_FUN_004e2050(CLightStaff *thi
   int iStack_18;
   CVector3f *pCStack_14;
   
-  bVar10 = 0;
+  bVar11 = 0;
   iStack_40 = 1;
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                    ((this_ptr->base).carried_by_actor,g_CHeroClassInfo.name_hash);
-  if ((iVar1 == 0) || ((this_ptr->base).ammo_per_shot <= *(int *)(iVar1 + 0x20b80))) {
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
+                     ((this_ptr->base).carried_by_actor,g_CHeroClassInfo.name_hash);
+  if ((pCVar1 == (CDemonActor *)0x0) ||
+     ((this_ptr->base).ammo_per_shot <= *(int *)(pCVar1[0x185].create_event + 0x50))) {
     if (iStack_40 != 0) goto LAB_004e20c0;
   }
   else {
@@ -301,9 +303,9 @@ LAB_004e20c0:
   core_weapon_cpp_CWeapon_process_FUN_0057b160(&this_ptr->base,delta_time);
   if ((fStack_38 != 0.0) &&
      (((this_ptr->base).weapon_state == WEAPON_STATE_IN_HAND ||
-      (iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                         ((this_ptr->base).carried_by_actor,g_CEnemyClassInfo.name_hash), iVar1 != 0
-      )))) {
+      (pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
+                          ((this_ptr->base).carried_by_actor,g_CEnemyClassInfo.name_hash),
+      pCVar1 != (CDemonActor *)0x0)))) {
     fStack_4c = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-0.25,0.25);
     pCStack_44 = (CCharacter *)core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-0.25,0.25);
     unaff_EDI = (CCharacter *)core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-0.25,0.25);
@@ -311,23 +313,23 @@ LAB_004e20c0:
     fStack_48 = fStack_4c;
     pCStack_50 = unaff_EDI;
     (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-    pfVar12 = afStack_3c4;
+    pfVar13 = afStack_3c4;
     fStack_3c8 = (float)uStack_58c;
-    afStack_3c4[(uint)bVar10 * -2] = afStack_5ac[(uint)bVar10 * -2 + 9];
-    afStack_3c4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-         afStack_5ac[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
-    core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
+    afStack_3c4[(uint)bVar11 * -2] = afStack_5ac[(uint)bVar11 * -2 + 9];
+    afStack_3c4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+         afStack_5ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10];
+    core_actor_cpp_FUN_00408b80(this_ptr,pfVar13);
     fStack_4c0 = fStack_580;
-    afStack_4e4[(uint)bVar10 * -2 + 10] = afStack_5ac[(uint)bVar10 * -2 + 0xc];
-    afStack_4e4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xb] =
-         afStack_5ac[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
+    afStack_4e4[(uint)bVar11 * -2 + 10] = afStack_5ac[(uint)bVar11 * -2 + 0xc];
+    afStack_4e4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xb] =
+         afStack_5ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd];
     fStack_3d0 = fStack_4c0 + fStack_4c;
     fStack_3cc = fStack_4bc + fStack_38;
     fStack_3c8 = fStack_4b8 + (float)pCStack_44;
     aCStack_604[0].x = fStack_4c0 + fStack_4c;
-    *(float *)((int)aCStack_604 + (uint)bVar10 * -8 + 4) = afStack_498[(uint)bVar10 * -2 + 0x33];
-    *(float *)((int)aCStack_604 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-         afStack_3c4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + -1];
+    *(float *)((int)aCStack_604 + (uint)bVar11 * -8 + 4) = afStack_498[(uint)bVar11 * -2 + 0x33];
+    *(float *)((int)aCStack_604 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+         afStack_3c4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + -1];
     if (aCStack_634 != aCStack_604) {
       aCStack_634[0].x = aCStack_604[0].x;
       aCStack_634[0].y = aCStack_604[0].y;
@@ -340,59 +342,59 @@ LAB_004e20c0:
     core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30
               ((CDemonGlobe *)in_stack_fffff848,fVar2);
     fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(20000.0,40000.0);
-    fVar11 = (float10)fVar2;
+    fVar12 = (float10)fVar2;
     round();
-    iVar1 = (int)ROUND(fVar11);
-    (this_ptr->globe).intensity_multiplier = iVar1;
+    iVar3 = (int)ROUND(fVar12);
+    (this_ptr->globe).intensity_multiplier = iVar3;
     this_ptr_00 = g_CDemonSetPtr;
-    iVar1 = (iVar1 + (iVar1 >> 0x1f) * -0x100) - (uint)((iVar1 >> 0x1f) << 7 < 0);
-    iVar6 = iVar1 >> 0x1f;
+    iVar3 = (iVar3 + (iVar3 >> 0x1f) * -0x100) - (uint)((iVar3 >> 0x1f) << 7 < 0);
+    iVar7 = iVar3 >> 0x1f;
     (this_ptr->globe).intensity.bytes[0] =
-         (uchar)((int)(((iVar1 >> 8) + iVar6 * -4) - (uint)(iVar6 << 1 < 0)) >> 2);
+         (uchar)((int)(((iVar3 >> 8) + iVar7 * -4) - (uint)(iVar7 << 1 < 0)) >> 2);
     core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005372f0(this_ptr_00,(CDemonGlobe *)in_stack_fffff848)
     ;
     if (this_ptr->chain_active == 0) {
       in_stack_fffff848 = (CBoundingBox3D *)this_ptr->sfx_handle;
-      iVar1 = sound_sndmain_cpp_FUN_00556700((uint)in_stack_fffff848);
-      if (iVar1 == 0) {
+      iVar3 = sound_sndmain_cpp_FUN_00556700((uint)in_stack_fffff848);
+      if (iVar3 == 0) {
         in_stack_fffff848 = (CBoundingBox3D *)&(this_ptr->base).base.location;
-        uVar3 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
+        uVar4 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
                           (0x02CF5680,(CDemonActor *)this_ptr,"wp_lightningstaff_loop.wav",
                            (CVector3f *)in_stack_fffff848);
-        this_ptr->sfx_handle = uVar3;
+        this_ptr->sfx_handle = uVar4;
       }
     }
   }
   if (this_ptr->chain_active == 0) {
     if (fStack_38 != 0.0) {
       if (((this_ptr->base).weapon_state != WEAPON_STATE_IN_HAND) &&
-         (iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
-                            ((this_ptr->base).carried_by_actor,g_CEnemyClassInfo.name_hash),
-         iVar1 == 0)) {
+         (pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
+                             ((this_ptr->base).carried_by_actor,g_CEnemyClassInfo.name_hash),
+         pCVar1 == (CDemonActor *)0x0)) {
         return;
       }
       this_ptr->flicker_timer = this_ptr->flicker_timer - delta_time;
       if (this_ptr->flicker_timer <= 0.0) {
         this_ptr->flicker_timer = 0.1;
-        iVar1 = this_ptr->flicker_frame + 1;
-        this_ptr->flicker_frame = iVar1;
-        if (4 < iVar1) {
+        iVar3 = this_ptr->flicker_frame + 1;
+        this_ptr->flicker_frame = iVar3;
+        if (4 < iVar3) {
           this_ptr->flicker_frame = 1;
         }
       }
       switch(this_ptr->flicker_frame) {
       case 0:
         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-        pfVar12 = afStack_5ac + 0x14;
+        pfVar13 = afStack_5ac + 0x14;
         uStack_560 = uStack_2f8;
-        afStack_5ac[(uint)bVar10 * -2 + 0x14] = afStack_318[(uint)bVar10 * -2 + 9];
-        afStack_5ac[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x15] =
-             afStack_318[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
-        core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
+        afStack_5ac[(uint)bVar11 * -2 + 0x14] = afStack_318[(uint)bVar11 * -2 + 9];
+        afStack_5ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x15] =
+             afStack_318[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10];
+        core_actor_cpp_FUN_00408b80(this_ptr,pfVar13);
         fStack_b8 = fStack_94;
-        afStack_dc[(uint)bVar10 * -2 + 10] = afStack_dc[(uint)bVar10 * -2 + 0x13];
-        afStack_dc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xb] =
-             afStack_dc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x14];
+        afStack_dc[(uint)bVar11 * -2 + 10] = afStack_dc[(uint)bVar11 * -2 + 0x13];
+        afStack_dc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xb] =
+             afStack_dc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x14];
         if (&fStack_5bc != afStack_dc + 9) {
           fStack_5bc = fStack_b8;
           fStack_5b8 = fStack_b4;
@@ -400,21 +402,21 @@ LAB_004e20c0:
         }
         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
         fStack_10c = fStack_528;
-        afStack_150[(uint)bVar10 * -2 + 0x12] = afStack_538[(uint)bVar10 * -2 + 5];
-        afStack_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13] =
-             afStack_538[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 6];
+        afStack_150[(uint)bVar11 * -2 + 0x12] = afStack_538[(uint)bVar11 * -2 + 5];
+        afStack_150[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x13] =
+             afStack_538[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 6];
         fStack_84 = fStack_108 + _DAT_005c6a8a;
         fStack_80 = fStack_104 + _DAT_005c6a8e;
         fStack_7c = fStack_100 + _DAT_005c6a92;
         fStack_51c = fStack_108 + _DAT_005c6a8a;
-        afStack_538[(uint)bVar10 * -2 + 8] = afStack_dc[(uint)bVar10 * -2 + 0x17];
-        afStack_538[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 9] =
-             afStack_dc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x18];
+        afStack_538[(uint)bVar11 * -2 + 8] = afStack_dc[(uint)bVar11 * -2 + 0x17];
+        afStack_538[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 9] =
+             afStack_dc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x18];
         core_actor_cpp_FUN_00408b80(this_ptr);
         fStack_4ec = fStack_120;
-        (&pCStack_4e8)[(uint)bVar10 * -2] = (CCharacter *)afStack_150[(uint)bVar10 * -2 + 0xd];
-        afStack_4e4[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
-             afStack_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xe];
+        (&pCStack_4e8)[(uint)bVar11 * -2] = (CCharacter *)afStack_150[(uint)bVar11 * -2 + 0xd];
+        afStack_4e4[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
+             afStack_150[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xe];
         if (afStack_380 + 0x11 != afStack_538 + 0x13) {
           fStack_33c = fStack_4ec;
           pCStack_338 = pCStack_4e8;
@@ -423,23 +425,23 @@ LAB_004e20c0:
         break;
       case 1:
         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-        pfVar12 = afStack_dc;
+        pfVar13 = afStack_dc;
         uStack_458 = uStack_61c;
-        afStack_498[(uint)bVar10 * -2 + 0x11] = afStack_618[(uint)bVar10 * -2];
-        afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x12] =
-             afStack_618[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+        afStack_498[(uint)bVar11 * -2 + 0x11] = afStack_618[(uint)bVar11 * -2];
+        afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x12] =
+             afStack_618[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
         fStack_3e8 = fStack_454 + _DAT_005c6a8a;
         fStack_3e4 = fStack_450 + _DAT_005c6a8e;
         fStack_3e0 = fStack_44c + _DAT_005c6a92;
         afStack_dc[0] = fStack_454 + _DAT_005c6a8a;
-        afStack_dc[(uint)bVar10 * -2 + 1] = afStack_498[(uint)bVar10 * -2 + 0x2d];
-        afStack_dc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2] =
-             afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x2e];
-        core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
+        afStack_dc[(uint)bVar11 * -2 + 1] = afStack_498[(uint)bVar11 * -2 + 0x2d];
+        afStack_dc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 2] =
+             afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x2e];
+        core_actor_cpp_FUN_00408b80(this_ptr,pfVar13);
         afStack_4e4[3] = fStack_6f4;
-        afStack_4e4[(uint)bVar10 * -2 + 4] = afStack_704[(uint)bVar10 * -2 + 5];
-        afStack_4e4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5] =
-             afStack_704[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 6];
+        afStack_4e4[(uint)bVar11 * -2 + 4] = afStack_704[(uint)bVar11 * -2 + 5];
+        afStack_4e4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 5] =
+             afStack_704[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 6];
         if (&fStack_5bc != afStack_4e4 + 3) {
           fStack_5bc = afStack_4e4[3];
           fStack_5b8 = fStack_4d4;
@@ -447,21 +449,21 @@ LAB_004e20c0:
         }
         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
         uStack_118 = uStack_708;
-        afStack_150[(uint)bVar10 * -2 + 0xf] = afStack_704[(uint)bVar10 * -2];
-        afStack_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10] =
-             afStack_704[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+        afStack_150[(uint)bVar11 * -2 + 0xf] = afStack_704[(uint)bVar11 * -2];
+        afStack_150[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x10] =
+             afStack_704[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
         fStack_5d0 = fStack_114 + _DAT_005c6a9e;
         afStack_5cc[0] = fStack_110 + _DAT_005c6aa2;
         afStack_5cc[1] = fStack_10c + _DAT_005c6a92;
         fStack_a8 = fStack_114 + _DAT_005c6a9e;
-        afStack_dc[(uint)bVar10 * -2 + 0xe] = afStack_5cc[(uint)bVar10 * -2];
-        afStack_dc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xf] =
-             afStack_5cc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+        afStack_dc[(uint)bVar11 * -2 + 0xe] = afStack_5cc[(uint)bVar11 * -2];
+        afStack_dc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xf] =
+             afStack_5cc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
         core_actor_cpp_FUN_00408b80(this_ptr);
         fStack_258 = fStack_5e8;
-        (&pCStack_254)[(uint)bVar10 * -2] = (CCharacter *)afStack_5e4[(uint)bVar10 * -2];
-        afStack_250[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
-             afStack_5e4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+        (&pCStack_254)[(uint)bVar11 * -2] = (CCharacter *)afStack_5e4[(uint)bVar11 * -2];
+        afStack_250[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
+             afStack_5e4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
         if (afStack_380 + 0x11 != afStack_27c + 9) {
           fStack_33c = fStack_258;
           pCStack_338 = pCStack_254;
@@ -470,23 +472,23 @@ LAB_004e20c0:
         break;
       case 2:
         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-        pfVar12 = afStack_498 + 0xb;
+        pfVar13 = afStack_498 + 0xb;
         fStack_1ac = fStack_268;
-        afStack_1cc[(uint)bVar10 * -2 + 9] = afStack_27c[(uint)bVar10 * -2 + 6];
-        afStack_1cc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10] =
-             afStack_27c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
+        afStack_1cc[(uint)bVar11 * -2 + 9] = afStack_27c[(uint)bVar11 * -2 + 6];
+        afStack_1cc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10] =
+             afStack_27c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7];
         CStack_354.z = fStack_1a8 + _DAT_005c6a9e;
         fStack_348 = fStack_1a4 + _DAT_005c6aa2;
         afStack_344[0] = fStack_1a0 + _DAT_005c6a92;
         afStack_46c[0] = fStack_1a8 + _DAT_005c6a9e;
-        afStack_498[(uint)bVar10 * -2 + 0xc] = afStack_380[(uint)bVar10 * -2 + 0xe];
-        afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd] =
-             afStack_380[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xf];
-        core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
+        afStack_498[(uint)bVar11 * -2 + 0xc] = afStack_380[(uint)bVar11 * -2 + 0xe];
+        afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd] =
+             afStack_380[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xf];
+        core_actor_cpp_FUN_00408b80(this_ptr,pfVar13);
         fStack_460 = fStack_49c;
-        afStack_498[(uint)bVar10 * -2 + 0xf] = afStack_498[(uint)bVar10 * -2];
-        afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10] =
-             afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+        afStack_498[(uint)bVar11 * -2 + 0xf] = afStack_498[(uint)bVar11 * -2];
+        afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x10] =
+             afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
         if (&fStack_5bc != afStack_498 + 0xe) {
           fStack_5bc = fStack_460;
           fStack_5b8 = fStack_45c;
@@ -494,21 +496,21 @@ LAB_004e20c0:
         }
         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
         CStack_324.z = fStack_6d8;
-        afStack_318[(uint)bVar10 * -2] = afStack_704[(uint)bVar10 * -2 + 0xc];
-        afStack_318[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-             afStack_704[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
+        afStack_318[(uint)bVar11 * -2] = afStack_704[(uint)bVar11 * -2 + 0xc];
+        afStack_318[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+             afStack_704[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd];
         fStack_6e4 = afStack_318[0] + _DAT_005c6a96;
         fStack_6e0 = afStack_318[1] + _DAT_005c6a9a;
         fStack_6dc = afStack_318[2] + _DAT_005c6a92;
         fStack_42c = afStack_318[0] + _DAT_005c6a96;
-        afStack_498[(uint)bVar10 * -2 + 0x1c] = afStack_704[(uint)bVar10 * -2 + 9];
-        afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x1d] =
-             afStack_704[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
+        afStack_498[(uint)bVar11 * -2 + 0x1c] = afStack_704[(uint)bVar11 * -2 + 9];
+        afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x1d] =
+             afStack_704[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10];
         core_actor_cpp_FUN_00408b80(this_ptr);
         fStack_1e0 = fStack_6cc;
-        (&pCStack_1dc)[(uint)bVar10 * -2] = (CCharacter *)afStack_704[(uint)bVar10 * -2 + 0xf];
-        afStack_1d8[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
-             afStack_704[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10];
+        (&pCStack_1dc)[(uint)bVar11 * -2] = (CCharacter *)afStack_704[(uint)bVar11 * -2 + 0xf];
+        afStack_1d8[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
+             afStack_704[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x10];
         if (afStack_380 + 0x11 != afStack_250 + 0x1c) {
           fStack_33c = fStack_1e0;
           pCStack_338 = pCStack_1dc;
@@ -517,23 +519,23 @@ LAB_004e20c0:
         break;
       case 3:
         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-        pfVar12 = afStack_498 + 0x29;
+        pfVar13 = afStack_498 + 0x29;
         fStack_4b8 = fStack_6b8;
-        afStack_4e4[(uint)bVar10 * -2 + 0xc] = afStack_704[(uint)bVar10 * -2 + 0x14];
-        afStack_4e4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd] =
-             afStack_704[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x15];
+        afStack_4e4[(uint)bVar11 * -2 + 0xc] = afStack_704[(uint)bVar11 * -2 + 0x14];
+        afStack_4e4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd] =
+             afStack_704[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x15];
         fStack_400 = fStack_4b4 + _DAT_005c6a96;
         fStack_3fc = fStack_4b0 + _DAT_005c6a9a;
         fStack_3f8 = fStack_4ac + _DAT_005c6a92;
         afStack_3f4[0] = fStack_4b4 + _DAT_005c6a96;
-        afStack_498[(uint)bVar10 * -2 + 0x2a] = afStack_498[(uint)bVar10 * -2 + 0x27];
-        afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x2b] =
-             afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x28];
-        core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
+        afStack_498[(uint)bVar11 * -2 + 0x2a] = afStack_498[(uint)bVar11 * -2 + 0x27];
+        afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x2b] =
+             afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x28];
+        core_actor_cpp_FUN_00408b80(this_ptr,pfVar13);
         fStack_184 = fStack_6ac;
-        afStack_180[(uint)bVar10 * -2] = afStack_704[(uint)bVar10 * -2 + 0x17];
-        afStack_180[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-             afStack_704[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x18];
+        afStack_180[(uint)bVar11 * -2] = afStack_704[(uint)bVar11 * -2 + 0x17];
+        afStack_180[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+             afStack_704[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x18];
         if (&fStack_5bc != &fStack_184) {
           fStack_5bc = fStack_184;
           fStack_5b8 = afStack_180[0];
@@ -541,21 +543,21 @@ LAB_004e20c0:
         }
         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
         afStack_3c4[3] = (float)uStack_564;
-        afStack_3c4[(uint)bVar10 * -2 + 4] = afStack_5ac[(uint)bVar10 * -2 + 0x13];
-        afStack_3c4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5] =
-             afStack_5ac[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x14];
+        afStack_3c4[(uint)bVar11 * -2 + 4] = afStack_5ac[(uint)bVar11 * -2 + 0x13];
+        afStack_3c4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 5] =
+             afStack_5ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x14];
         fStack_240 = fStack_3b4 + _DAT_005c6a7e;
         fStack_23c = fStack_3b0 + _DAT_005c6a82;
         fStack_238 = fStack_3ac + _DAT_005c6a86;
         fStack_f0 = fStack_3b4 + _DAT_005c6a7e;
-        afStack_150[(uint)bVar10 * -2 + 0x19] = afStack_250[(uint)bVar10 * -2 + 5];
-        afStack_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x1a] =
-             afStack_250[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 6];
+        afStack_150[(uint)bVar11 * -2 + 0x19] = afStack_250[(uint)bVar11 * -2 + 5];
+        afStack_150[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x1a] =
+             afStack_250[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 6];
         core_actor_cpp_FUN_00408b80(this_ptr);
         CStack_15c.x = fStack_204;
-        afStack_150[(uint)bVar10 * -2 + -2] = afStack_250[(uint)bVar10 * -2 + 0x14];
-        afStack_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + -1] =
-             afStack_250[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x15];
+        afStack_150[(uint)bVar11 * -2 + -2] = afStack_250[(uint)bVar11 * -2 + 0x14];
+        afStack_150[(uint)bVar11 * -2 + (uint)bVar11 * -2 + -1] =
+             afStack_250[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x15];
         if (afStack_380 + 0x11 != afStack_164 + 2) {
           fStack_33c = CStack_15c.x;
           pCStack_338 = (CCharacter *)CStack_15c.y;
@@ -564,23 +566,23 @@ LAB_004e20c0:
         break;
       case 4:
         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-        pfVar12 = afStack_150 + 5;
+        pfVar13 = afStack_150 + 5;
         fStack_47c = afStack_674[1];
-        afStack_498[(uint)bVar10 * -2 + 8] = afStack_674[(uint)bVar10 * -2 + 2];
-        afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 9] =
-             afStack_674[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 3];
+        afStack_498[(uint)bVar11 * -2 + 8] = afStack_674[(uint)bVar11 * -2 + 2];
+        afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 9] =
+             afStack_674[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 3];
         fStack_43c = fStack_478 + _DAT_005c6a7e;
         fStack_438 = fStack_474 + _DAT_005c6a82;
         fStack_434 = fStack_470 + _DAT_005c6a86;
         afStack_13c[0] = fStack_478 + _DAT_005c6a7e;
-        afStack_150[(uint)bVar10 * -2 + 6] = afStack_498[(uint)bVar10 * -2 + 0x18];
-        afStack_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
-             afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x19];
-        core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
+        afStack_150[(uint)bVar11 * -2 + 6] = afStack_498[(uint)bVar11 * -2 + 0x18];
+        afStack_150[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
+             afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x19];
+        core_actor_cpp_FUN_00408b80(this_ptr,pfVar13);
         fStack_364 = fStack_664;
-        afStack_380[(uint)bVar10 * -2 + 8] = afStack_674[(uint)bVar10 * -2 + 5];
-        afStack_380[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 9] =
-             afStack_674[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 6];
+        afStack_380[(uint)bVar11 * -2 + 8] = afStack_674[(uint)bVar11 * -2 + 5];
+        afStack_380[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 9] =
+             afStack_674[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 6];
         if (&fStack_5bc != afStack_380 + 7) {
           fStack_5bc = fStack_364;
           fStack_5b8 = fStack_360;
@@ -588,21 +590,21 @@ LAB_004e20c0:
         }
         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
         uStack_a0 = uStack_648;
-        afStack_dc[(uint)bVar10 * -2 + 0x10] = afStack_644[(uint)bVar10 * -2];
-        afStack_dc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x11] =
-             afStack_644[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+        afStack_dc[(uint)bVar11 * -2 + 0x10] = afStack_644[(uint)bVar11 * -2];
+        afStack_dc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x11] =
+             afStack_644[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
         fStack_3d8 = fStack_9c + _DAT_005c6a8a;
         fStack_3d4 = fStack_98 + _DAT_005c6a8e;
         fStack_3d0 = fStack_94 + _DAT_005c6a92;
         fStack_594 = fStack_9c + _DAT_005c6a8a;
-        afStack_5ac[(uint)bVar10 * -2 + 7] = afStack_498[(uint)bVar10 * -2 + 0x31];
-        afStack_5ac[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 8] =
-             afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x32];
+        afStack_5ac[(uint)bVar11 * -2 + 7] = afStack_498[(uint)bVar11 * -2 + 0x31];
+        afStack_5ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 8] =
+             afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x32];
         core_actor_cpp_FUN_00408b80(this_ptr);
         fStack_e4 = afStack_644[2];
-        (&pCStack_e0)[(uint)bVar10 * -2] = (CCharacter *)afStack_644[(uint)bVar10 * -2 + 3];
-        afStack_dc[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
-             *(float *)((int)aCStack_634 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+        (&pCStack_e0)[(uint)bVar11 * -2] = (CCharacter *)afStack_644[(uint)bVar11 * -2 + 3];
+        afStack_dc[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
+             *(float *)((int)aCStack_634 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
         if (afStack_380 + 0x11 != afStack_150 + 0x1b) {
           fStack_33c = fStack_e4;
           pCStack_338 = pCStack_e0;
@@ -612,28 +614,28 @@ LAB_004e20c0:
       core_fire_cpp_FUN_004a3c50
                 (0x01C73654,auStack_5c0,afStack_380 + 0xf,0,0x3e800000,0x3e800000,3,0x3c23d70a,
                  0xffff);
-      iVar1 = this_ptr->flicker_frame;
-      if ((iVar1 == 1) || (iVar1 - 1U < 5)) {
-        switch(iVar1) {
+      iVar3 = this_ptr->flicker_frame;
+      if ((iVar3 == 1) || (iVar3 - 1U < 5)) {
+        switch(iVar3) {
         case 2:
           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-          pfVar12 = &fStack_5b0;
+          pfVar13 = &fStack_5b0;
           afStack_150[1] = CStack_15c.z;
-          afStack_150[(uint)bVar10 * -2 + 2] = afStack_150[(uint)bVar10 * -2];
-          afStack_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 3] =
-               afStack_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          afStack_150[(uint)bVar11 * -2 + 2] = afStack_150[(uint)bVar11 * -2];
+          afStack_150[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 3] =
+               afStack_150[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
           afStack_318[2] = afStack_150[2] + _DAT_005c6a8a;
           afStack_318[3] = afStack_150[3] + _DAT_005c6a8e;
           fStack_308 = fStack_140 + _DAT_005c6a92;
           fStack_5b0 = afStack_150[2] + _DAT_005c6a8a;
-          afStack_5ac[(uint)bVar10 * -2] = afStack_318[(uint)bVar10 * -2 + 3];
-          afStack_5ac[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-               afStack_318[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
-          core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
+          afStack_5ac[(uint)bVar11 * -2] = afStack_318[(uint)bVar11 * -2 + 3];
+          afStack_5ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+               afStack_318[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
+          core_actor_cpp_FUN_00408b80(this_ptr,pfVar13);
           fStack_22c = fStack_370;
-          afStack_250[(uint)bVar10 * -2 + 10] = afStack_380[(uint)bVar10 * -2 + 5];
-          afStack_250[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xb] =
-               afStack_380[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 6];
+          afStack_250[(uint)bVar11 * -2 + 10] = afStack_380[(uint)bVar11 * -2 + 5];
+          afStack_250[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xb] =
+               afStack_380[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 6];
           if (&fStack_5bc != afStack_250 + 9) {
             fStack_5bc = fStack_22c;
             fStack_5b8 = fStack_228;
@@ -641,21 +643,21 @@ LAB_004e20c0:
           }
           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
           uStack_220 = uStack_384;
-          afStack_250[(uint)bVar10 * -2 + 0xd] = afStack_380[(uint)bVar10 * -2];
-          afStack_250[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xe] =
-               afStack_380[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          afStack_250[(uint)bVar11 * -2 + 0xd] = afStack_380[(uint)bVar11 * -2];
+          afStack_250[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xe] =
+               afStack_380[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
           fStack_510 = fStack_21c + _DAT_005c6a9e;
           fStack_50c = fStack_218 + _DAT_005c6aa2;
           fStack_508 = fStack_214 + _DAT_005c6a92;
           fStack_570 = fStack_21c + _DAT_005c6a9e;
-          afStack_5ac[(uint)bVar10 * -2 + 0x10] = afStack_538[(uint)bVar10 * -2 + 0xb];
-          afStack_5ac[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x11] =
-               afStack_538[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xc];
+          afStack_5ac[(uint)bVar11 * -2 + 0x10] = afStack_538[(uint)bVar11 * -2 + 0xb];
+          afStack_5ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x11] =
+               afStack_538[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xc];
           core_actor_cpp_FUN_00408b80(this_ptr);
           fStack_540 = afStack_5ac[3];
-          (&pCStack_53c)[(uint)bVar10 * -2] = (CCharacter *)afStack_5ac[(uint)bVar10 * -2 + 4];
-          afStack_538[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
-               afStack_5ac[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5];
+          (&pCStack_53c)[(uint)bVar11 * -2] = (CCharacter *)afStack_5ac[(uint)bVar11 * -2 + 4];
+          afStack_538[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
+               afStack_5ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 5];
           if (afStack_380 + 0x11 != &fStack_540) {
             fStack_33c = fStack_540;
             pCStack_338 = pCStack_53c;
@@ -664,23 +666,23 @@ LAB_004e20c0:
           break;
         case 3:
           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-          pfVar12 = afStack_538;
+          pfVar13 = afStack_538;
           fStack_1b8 = fStack_334;
-          afStack_1cc[(uint)bVar10 * -2 + 6] = afStack_330[(uint)bVar10 * -2];
-          afStack_1cc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
-               afStack_330[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          afStack_1cc[(uint)bVar11 * -2 + 6] = afStack_330[(uint)bVar11 * -2];
+          afStack_1cc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
+               afStack_330[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
           fStack_1fc = fStack_1b4 + _DAT_005c6a9e;
           fStack_1f8 = fStack_1b0 + _DAT_005c6aa2;
           fStack_1f4 = fStack_1ac + _DAT_005c6a92;
           afStack_538[0] = fStack_1b4 + _DAT_005c6a9e;
-          afStack_538[(uint)bVar10 * -2 + 1] = afStack_250[(uint)bVar10 * -2 + 0x16];
-          afStack_538[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2] =
-               afStack_250[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x17];
-          core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
+          afStack_538[(uint)bVar11 * -2 + 1] = afStack_250[(uint)bVar11 * -2 + 0x16];
+          afStack_538[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 2] =
+               afStack_250[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x17];
+          core_actor_cpp_FUN_00408b80(this_ptr,pfVar13);
           fStack_508 = fStack_19c;
-          afStack_538[(uint)bVar10 * -2 + 0xd] = afStack_1cc[(uint)bVar10 * -2 + 0xd];
-          afStack_538[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xe] =
-               afStack_1cc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xe];
+          afStack_538[(uint)bVar11 * -2 + 0xd] = afStack_1cc[(uint)bVar11 * -2 + 0xd];
+          afStack_538[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xe] =
+               afStack_1cc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xe];
           if (&fStack_5bc != afStack_538 + 0xc) {
             fStack_5bc = fStack_508;
             fStack_5b8 = fStack_504;
@@ -688,21 +690,21 @@ LAB_004e20c0:
           }
           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
           afStack_64[0] = fStack_168;
-          afStack_64[(uint)bVar10 * -2 + 1] = afStack_164[(uint)bVar10 * -2];
-          afStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2] =
-               afStack_164[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          afStack_64[(uint)bVar11 * -2 + 1] = afStack_164[(uint)bVar11 * -2];
+          afStack_64[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 2] =
+               afStack_164[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
           fStack_234 = afStack_64[1] + _DAT_005c6a96;
           fStack_230 = afStack_64[2] + _DAT_005c6a9a;
           fStack_22c = afStack_64[3] + _DAT_005c6a92;
           fStack_4f8 = afStack_64[1] + _DAT_005c6a96;
-          afStack_538[(uint)bVar10 * -2 + 0x11] = afStack_250[(uint)bVar10 * -2 + 8];
-          afStack_538[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x12] =
-               afStack_250[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 9];
+          afStack_538[(uint)bVar11 * -2 + 0x11] = afStack_250[(uint)bVar11 * -2 + 8];
+          afStack_538[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x12] =
+               afStack_250[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 9];
           core_actor_cpp_FUN_00408b80(this_ptr);
           afStack_70[1] = fStack_300;
-          (&pCStack_68)[(uint)bVar10 * -2] = (CCharacter *)afStack_318[(uint)bVar10 * -2 + 7];
-          afStack_64[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
-               afStack_318[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 8];
+          (&pCStack_68)[(uint)bVar11 * -2] = (CCharacter *)afStack_318[(uint)bVar11 * -2 + 7];
+          afStack_64[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
+               afStack_318[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 8];
           if (afStack_380 + 0x11 != afStack_70 + 1) {
             fStack_33c = afStack_70[1];
             pCStack_338 = pCStack_68;
@@ -711,23 +713,23 @@ LAB_004e20c0:
           break;
         case 4:
           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-          pfVar12 = afStack_dc + 6;
+          pfVar13 = afStack_dc + 6;
           afStack_1cc[2] = (float)uStack_2ec;
-          afStack_1cc[(uint)bVar10 * -2 + 3] = afStack_318[(uint)bVar10 * -2 + 0xc];
-          afStack_1cc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
-               afStack_318[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
+          afStack_1cc[(uint)bVar11 * -2 + 3] = afStack_318[(uint)bVar11 * -2 + 0xc];
+          afStack_1cc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
+               afStack_318[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd];
           fStack_418 = afStack_1cc[3] + _DAT_005c6a96;
           fStack_414 = fStack_1bc + _DAT_005c6a9a;
           fStack_410 = fStack_1b8 + _DAT_005c6a92;
           afStack_c4[0] = afStack_1cc[3] + _DAT_005c6a96;
-          afStack_dc[(uint)bVar10 * -2 + 7] = afStack_498[(uint)bVar10 * -2 + 0x21];
-          afStack_dc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 8] =
-               afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x22];
-          core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
+          afStack_dc[(uint)bVar11 * -2 + 7] = afStack_498[(uint)bVar11 * -2 + 0x21];
+          afStack_dc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 8] =
+               afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x22];
+          core_actor_cpp_FUN_00408b80(this_ptr,pfVar13);
           afStack_498[2] = fStack_2e0;
-          afStack_498[(uint)bVar10 * -2 + 3] = afStack_318[(uint)bVar10 * -2 + 0xf];
-          afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
-               afStack_318[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10];
+          afStack_498[(uint)bVar11 * -2 + 3] = afStack_318[(uint)bVar11 * -2 + 0xf];
+          afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
+               afStack_318[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x10];
           if (&fStack_5bc != afStack_498 + 2) {
             fStack_5bc = afStack_498[2];
             fStack_5b8 = afStack_498[3];
@@ -735,21 +737,21 @@ LAB_004e20c0:
           }
           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
           fStack_3ac = fStack_2c4;
-          afStack_3c4[(uint)bVar10 * -2 + 7] = afStack_318[(uint)bVar10 * -2 + 0x16];
-          afStack_3c4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 8] =
-               afStack_318[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x17];
+          afStack_3c4[(uint)bVar11 * -2 + 7] = afStack_318[(uint)bVar11 * -2 + 0x16];
+          afStack_3c4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 8] =
+               afStack_318[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x17];
           afStack_250[1] = fStack_3a8 + _DAT_005c6a7e;
           afStack_250[2] = fStack_3a4 + _DAT_005c6a82;
           afStack_250[3] = fStack_3a0 + _DAT_005c6a86;
           fStack_12c = fStack_3a8 + _DAT_005c6a7e;
-          afStack_150[(uint)bVar10 * -2 + 10] = afStack_250[(uint)bVar10 * -2 + 2];
-          afStack_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xb] =
-               afStack_250[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 3];
+          afStack_150[(uint)bVar11 * -2 + 10] = afStack_250[(uint)bVar11 * -2 + 2];
+          afStack_150[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xb] =
+               afStack_250[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 3];
           core_actor_cpp_FUN_00408b80(this_ptr);
           fStack_78 = fStack_2b8;
-          (&pCStack_74)[(uint)bVar10 * -2] = (CCharacter *)afStack_318[(uint)bVar10 * -2 + 0x19];
-          afStack_70[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
-               afStack_318[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x1a];
+          (&pCStack_74)[(uint)bVar11 * -2] = (CCharacter *)afStack_318[(uint)bVar11 * -2 + 0x19];
+          afStack_70[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
+               afStack_318[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x1a];
           if (afStack_380 + 0x11 != afStack_dc + 0x19) {
             fStack_33c = fStack_78;
             pCStack_338 = pCStack_74;
@@ -758,24 +760,24 @@ LAB_004e20c0:
           break;
         default:
           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-          pfVar12 = afStack_498 + 0x14;
+          pfVar13 = afStack_498 + 0x14;
           CStack_294.y = fStack_100;
-          *(float *)((int)&CStack_294 + (uint)bVar10 * -8 + 8) =
-               afStack_150[(uint)bVar10 * -2 + 0x15];
-          *(float *)((int)&CStack_288 + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
-               afStack_150[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x16];
+          *(float *)((int)&CStack_294 + (uint)bVar11 * -8 + 8) =
+               afStack_150[(uint)bVar11 * -2 + 0x15];
+          *(float *)((int)&CStack_288 + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
+               afStack_150[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x16];
           CStack_288.z = CStack_294.z + _DAT_005c6a7e;
           afStack_27c[0] = CStack_288.x + _DAT_005c6a82;
           afStack_27c[1] = CStack_288.y + _DAT_005c6a86;
           afStack_448[0] = CStack_294.z + _DAT_005c6a7e;
-          afStack_498[(uint)bVar10 * -2 + 0x15] = afStack_27c[(uint)bVar10 * -2];
-          afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x16] =
-               afStack_27c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-          core_actor_cpp_FUN_00408b80(this_ptr,pfVar12);
+          afStack_498[(uint)bVar11 * -2 + 0x15] = afStack_27c[(uint)bVar11 * -2];
+          afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x16] =
+               afStack_27c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
+          core_actor_cpp_FUN_00408b80(this_ptr,pfVar13);
           fStack_424 = fStack_694;
-          afStack_498[(uint)bVar10 * -2 + 0x1e] = afStack_690[(uint)bVar10 * -2];
-          afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x1f] =
-               afStack_690[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          afStack_498[(uint)bVar11 * -2 + 0x1e] = afStack_690[(uint)bVar11 * -2];
+          afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x1f] =
+               afStack_690[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
           if (&fStack_5bc != afStack_498 + 0x1d) {
             fStack_5bc = fStack_424;
             fStack_5b8 = fStack_420;
@@ -783,21 +785,21 @@ LAB_004e20c0:
           }
           (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
           afStack_dc[3] = CStack_294.x;
-          afStack_dc[(uint)bVar10 * -2 + 4] = *(float *)((int)&CStack_294 + (uint)bVar10 * -8 + 4);
-          afStack_dc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5] =
-               *(float *)((int)&CStack_294 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+          afStack_dc[(uint)bVar11 * -2 + 4] = *(float *)((int)&CStack_294 + (uint)bVar11 * -8 + 4);
+          afStack_dc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 5] =
+               *(float *)((int)&CStack_294 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
           fStack_2d0 = fStack_cc + _DAT_005c6a8a;
           fStack_2cc = fStack_c8 + _DAT_005c6a8e;
           fStack_2c8 = afStack_c4[0] + _DAT_005c6a92;
           fStack_408 = fStack_cc + _DAT_005c6a8a;
-          afStack_498[(uint)bVar10 * -2 + 0x25] = afStack_318[(uint)bVar10 * -2 + 0x13];
-          afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x26] =
-               afStack_318[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x14];
+          afStack_498[(uint)bVar11 * -2 + 0x25] = afStack_318[(uint)bVar11 * -2 + 0x13];
+          afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x26] =
+               afStack_318[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x14];
           core_actor_cpp_FUN_00408b80(this_ptr);
           afStack_1d8[1] = afStack_704[2];
-          (&pCStack_1d0)[(uint)bVar10 * -2] = (CCharacter *)afStack_704[(uint)bVar10 * -2 + 3];
-          afStack_1cc[(uint)bVar10 * -2 + (uint)bVar10 * -2] =
-               afStack_704[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+          (&pCStack_1d0)[(uint)bVar11 * -2] = (CCharacter *)afStack_704[(uint)bVar11 * -2 + 3];
+          afStack_1cc[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
+               afStack_704[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
           if (afStack_380 + 0x11 != afStack_1d8 + 1) {
             fStack_33c = afStack_1d8[1];
             pCStack_338 = pCStack_1d0;
@@ -827,28 +829,30 @@ LAB_004e20c0:
       this_ptr->chain_count = this_ptr->chain_count + 1;
       for (; (int)pCStack_1c < g_CDemonSetPtr->actor_count;
           pCStack_1c = (CCharacter *)((pCStack_1c->base).actor_name + 1)) {
-        pCVar4 = (CCharacter *)
+        pCVar5 = (CCharacter *)
                  core_actor_cpp_castToClassHash_FUN_0040c840
-                           (*(uint *)((int)g_CDemonSetPtr->actors + iStack_18),
+                           (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_18),
                             g_CCharacterClassInfo.name_hash);
-        iVar1 = (CTVBat *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar4,g_CTVBatClassInfo.name_hash);
-        if (((iVar1 == 0) && (pCVar4 != (CCharacter *)0x0)) &&
-           (EVar5 = (*(((pCVar4->base).vtable._uc)->_uc).getDeathState)(pCVar4),
-           EVar5 == DEATH_STATE_ALIVE)) {
+        pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
+                           ((CDemonActor *)pCVar5,g_CTVBatClassInfo.name_hash);
+        if (((pCVar1 == (CDemonActor *)0x0) && (pCVar5 != (CCharacter *)0x0)) &&
+           (EVar6 = (*(((pCVar5->base).vtable._uc)->_uc).getDeathState)(pCVar5),
+           EVar6 == DEATH_STATE_ALIVE)) {
           in_stack_fffff848 = (CBoundingBox3D *)g_CEnemyClassInfo.name_hash;
-          iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar4);
-          pCVar13 = (CBoundingBox3D *)&stack0xfffff84c;
-          if (iVar1 != 0) {
+          pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
+                             ((CDemonActor *)pCVar5,g_CEnemyClassInfo.name_hash);
+          pCVar14 = (CBoundingBox3D *)&stack0xfffff84c;
+          if (pCVar1 != (CDemonActor *)0x0) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0((SDamageInfo *)&stack0xfffff84c);
-            fStack_550 = *(float *)(pCVar4->base).actor_name - (pCVar4->base).location.position.x;
-            fStack_54c = *(float *)((pCVar4->base).actor_name + 4) -
-                         (pCVar4->base).location.position.y;
-            fStack_548 = *(float *)((pCVar4->base).actor_name + 8) -
-                         (pCVar4->base).location.position.z;
+            fStack_550 = *(float *)(pCVar5->base).actor_name - (pCVar5->base).location.position.x;
+            fStack_54c = *(float *)((pCVar5->base).actor_name + 4) -
+                         (pCVar5->base).location.position.y;
+            fStack_548 = *(float *)((pCVar5->base).actor_name + 8) -
+                         (pCVar5->base).location.position.z;
             fStack_484 = fStack_550;
-            afStack_498[(uint)bVar10 * -2 + 6] = afStack_5ac[(uint)bVar10 * -2 + 0x18];
-            afStack_498[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
-                 afStack_5ac[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x19];
+            afStack_498[(uint)bVar11 * -2 + 6] = afStack_5ac[(uint)bVar11 * -2 + 0x18];
+            afStack_498[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7] =
+                 afStack_5ac[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x19];
             if (afStack_4e4 + 0xf != afStack_498 + 5) {
               fStack_4a8 = fStack_484;
               fStack_4a4 = fStack_480;
@@ -857,16 +861,16 @@ LAB_004e20c0:
             pCStack_3c = (CCharacter *)
                          SQRT(fStack_4a0 * fStack_4a0 +
                               fStack_4a8 * fStack_4a8 + fStack_4a4 * fStack_4a4);
-            iVar1 = 0;
-            pCVar7 = this_ptr;
-            in_stack_fffff848 = pCVar13;
+            iVar3 = 0;
+            pCVar8 = this_ptr;
+            in_stack_fffff848 = pCVar14;
             pCStack_2c = pCStack_3c;
             if (0 < this_ptr->chain_count) {
               do {
-                if (unaff_EDI == pCVar7->chain_targets[0]) goto LAB_004e25da;
-                iVar1 = iVar1 + 1;
-                pCVar7 = (CLightStaff *)((pCVar7->base).base.actor_name + 4);
-              } while (iVar1 < this_ptr->chain_count);
+                if (unaff_EDI == pCVar8->chain_targets[0]) goto LAB_004e25da;
+                iVar3 = iVar3 + 1;
+                pCVar8 = (CLightStaff *)((pCVar8->base).base.actor_name + 4);
+              } while (iVar3 < this_ptr->chain_count);
             }
             if ((float)pCStack_3c < (float)pCStack_28) {
               pCStack_30 = unaff_EDI;
@@ -882,27 +886,27 @@ LAB_004e25da:
       }
       else {
         (*((pCStack_34->vtable)._ub)->getBoundingBox)(pCStack_34,in_stack_fffff848);
-        puVar8 = auStack_720;
-        ppCVar9 = apCStack_740;
-        for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-          *ppCVar9 = (CDemonActor *)*puVar8;
-          puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
-          ppCVar9 = ppCVar9 + (uint)bVar10 * -2 + 1;
+        puVar9 = auStack_720;
+        ppCVar10 = apCStack_740;
+        for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+          *ppCVar10 = (CDemonActor *)*puVar9;
+          puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
+          ppCVar10 = ppCVar10 + (uint)bVar11 * -2 + 1;
         }
         afStack_27c[3] = fStack_738 + (float)pCStack_72c;
         fStack_26c = (float)pCStack_734 + fStack_728;
         fStack_268 = fStack_730 + fStack_724;
         afStack_4e4[1] = fStack_738 + (float)pCStack_72c;
-        afStack_4e4[(uint)bVar10 * -2 + 2] = afStack_27c[(uint)bVar10 * -2 + 4];
-        afStack_4e4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 3] =
-             afStack_27c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5];
+        afStack_4e4[(uint)bVar11 * -2 + 2] = afStack_27c[(uint)bVar11 * -2 + 4];
+        afStack_4e4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 3] =
+             afStack_27c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 5];
         fStack_4c8 = afStack_4e4[1] * _DAT_005c6aa2;
         fStack_4c4 = afStack_4e4[2] * _DAT_005c6aa2;
         fStack_4c0 = afStack_4e4[3] * _DAT_005c6aa2;
         afStack_380[2] = afStack_4e4[1] * _DAT_005c6aa2;
-        afStack_380[(uint)bVar10 * -2 + 3] = afStack_4e4[(uint)bVar10 * -2 + 8];
-        afStack_380[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
-             afStack_4e4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 9];
+        afStack_380[(uint)bVar11 * -2 + 3] = afStack_4e4[(uint)bVar11 * -2 + 8];
+        afStack_380[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4] =
+             afStack_4e4[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 9];
         if (afStack_674 + 8 != afStack_380 + 2) {
           fStack_654 = afStack_380[2];
           fStack_650 = afStack_380[3];
@@ -912,9 +916,9 @@ LAB_004e25da:
         afStack_1cc[2] = (pCStack_2c->base).location.position.y + fStack_650;
         afStack_1cc[3] = (pCStack_2c->base).location.position.z + fStack_64c;
         CStack_354.x = afStack_1cc[1];
-        afStack_380[(uint)bVar10 * -2 + 0xc] = afStack_1cc[(uint)bVar10 * -2 + 2];
-        afStack_380[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd] =
-             afStack_1cc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 3];
+        afStack_380[(uint)bVar11 * -2 + 0xc] = afStack_1cc[(uint)bVar11 * -2 + 2];
+        afStack_380[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd] =
+             afStack_1cc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 3];
         if (&CStack_684 != (CVector3f *)(afStack_380 + 0xb)) {
           CStack_684.x = CStack_354.x;
           CStack_684.y = CStack_354.y;
@@ -925,19 +929,19 @@ LAB_004e25da:
         if ((((pCStack_2c->model).model_name[0] != '\0') &&
             (this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
                                      (this_ptr_02), this_ptr_01 != (CSkeleton *)0x0)) &&
-           (iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
-                              (this_ptr_01,"Bip01 Head",1), -1 < iVar1)) {
+           (iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090
+                              (this_ptr_01,"Bip01 Head",1), -1 < iVar3)) {
           core_skeleton_cpp_FUN_0054dcc0(this_ptr_02);
-          pCVar4 = pCStack_2c;
+          pCVar5 = pCStack_2c;
           uStack_6c0 = uStack_1ec;
-          afStack_704[(uint)bVar10 * -2 + 0x12] = afStack_250[(uint)bVar10 * -2 + 0x1a];
-          afStack_704[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x13] =
-               afStack_250[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x1b];
-          core_actor_cpp_FUN_00408b80(pCVar4);
+          afStack_704[(uint)bVar11 * -2 + 0x12] = afStack_250[(uint)bVar11 * -2 + 0x1a];
+          afStack_704[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x13] =
+               afStack_250[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x1b];
+          core_actor_cpp_FUN_00408b80(pCVar5);
           fStack_210 = fStack_678;
-          afStack_250[(uint)bVar10 * -2 + 0x11] = afStack_674[(uint)bVar10 * -2];
-          afStack_250[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x12] =
-               afStack_674[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          afStack_250[(uint)bVar11 * -2 + 0x11] = afStack_674[(uint)bVar11 * -2];
+          afStack_250[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x12] =
+               afStack_674[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
           if (afStack_330 + 3 != afStack_250 + 0x10) {
             CStack_324.x = fStack_210;
             CStack_324.y = fStack_20c;
@@ -972,7 +976,7 @@ LAB_004e25da:
         pCStack_72c = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
         (*(((pCStack_1c->base).vtable._uc)->_uc).processDamage)
                   (pCStack_1c,(SDamageInfo *)(auStack_774 + 0x10));
-        iVar1 = 0;
+        iVar3 = 0;
         do {
           fStack_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-5.0,5.0);
           pCStack_2c = (CCharacter *)core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,10.0);
@@ -984,10 +988,10 @@ LAB_004e25da:
             CStack_288.z = fStack_24;
             CStack_288.x = CStack_15c.x;
           }
-          iVar1 = iVar1 + 1;
+          iVar3 = iVar3 + 1;
           core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
                     (0x01C73654,&CStack_294,&CStack_288,0x20000,0x10000,1,0xffff);
-        } while (iVar1 < 0x10);
+        } while (iVar3 < 0x10);
       }
     }
   }

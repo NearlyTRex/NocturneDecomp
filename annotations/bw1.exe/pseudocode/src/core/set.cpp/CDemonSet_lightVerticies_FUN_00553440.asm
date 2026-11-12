@@ -340,7 +340,7 @@ section .text
     PUSH EAX                            ; 0055369b
     LEA ESI,[ESP + 0x58]                ; 0055369c
     CALL core_set.cpp_transformToWorldSpace_FUN_00553210 ; 005536a0
-        ;   XREF to: 00553210 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_transformToWorldSpace_FUN_00553210()
+        ;   XREF to: 00553210 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_00553210(CVector3i * input, CVector3i * output)
     ADD ESP,0x4                         ; 005536a5
     PUSH 0x0                            ; 005536a8
     MOV ECX,dword ptr [ESP + 0x140]     ; 005536aa
@@ -456,7 +456,7 @@ section .text
     PUSH EAX                            ; 005537da
     LEA ESI,[ESP + 0x4]                 ; 005537db
     CALL core_set.cpp_transformToWorldSpace_FUN_00553210 ; 005537df
-        ;   XREF to: 00553210 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_transformToWorldSpace_FUN_00553210()
+        ;   XREF to: 00553210 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_00553210(CVector3i * input, CVector3i * output)
     ADD ESP,0x4                         ; 005537e4
     MOV EDI,dword ptr [ESP + 0x128]     ; 005537e7
     MOV ESI,ESP                         ; 005537ee
@@ -614,7 +614,7 @@ section .text
     LEA ESI,[ESP + 0x34]                ; 005539fa
     LEA EDI,[ESP + 0x28]                ; 005539fe
     CALL core_set.cpp_transformToWorldSpace_FUN_00553210 ; 00553a02
-        ;   XREF to: 00553210 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_transformToWorldSpace_FUN_00553210()
+        ;   XREF to: 00553210 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_00553210(CVector3i * input, CVector3i * output)
     LEA ESI,[ESP + 0x34]                ; 00553a07
     ADD ESP,0x4                         ; 00553a0b
     MOVSD ES:EDI,ESI                    ; 00553a0e
@@ -663,7 +663,7 @@ section .text
     PUSH EAX                            ; 00553a8e
     LEA ESI,[ESP + 0x4c]                ; 00553a8f
     CALL core_set.cpp_transformToWorldSpace_FUN_00553210 ; 00553a93
-        ;   XREF to: 00553210 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_transformToWorldSpace_FUN_00553210()
+        ;   XREF to: 00553210 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_00553210(CVector3i * input, CVector3i * output)
     ADD ESP,0x4                         ; 00553a98
     ADD EBX,0x30                        ; 00553a9b
     MOV EDI,dword ptr [ESP + 0x11c]     ; 00553a9e

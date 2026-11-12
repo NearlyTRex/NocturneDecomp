@@ -52,8 +52,8 @@ uint core_gargoyle_cpp_FUN_004bfea0(int param_1)
         local_50 = local_20;
         local_4c = local_1c;
       }
-      fVar4 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                               (*(float *)(*(int *)(param_1 + 0x10a78) + 0x34) - local_50);
+      fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                        (*(float *)(*(int *)(param_1 + 0x10a78) + 0x34) - local_50);
       if ((fVar4 < _DAT_005d8d62) || (_DAT_005d8d66 < fVar4)) {
         return 1;
       }

@@ -65,13 +65,13 @@ void __cdecl CMansionPuzzleCircle::initPuzzleState(CMansionPuzzleCircle *this_pt
 // Address: 004ca640
 void __cdecl CMansionPuzzleCircle::updatePanelTransform(CMansionPuzzleCircle *this_ptr,int panel_index);
 
-// Original: core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004ca710
 // Address: 004ca710
-void __cdecl CMansionPuzzleCircle(CMansionPuzzleCircle *this_ptr,int panel_index);
+void __cdecl CMansionPuzzleCircle::renderPanel(CMansionPuzzleCircle *this_ptr,int panel_index);
 
-// Original: core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004ca790
 // Address: 004ca790
-void __cdecl CMansionPuzzleCircle(CMansionPuzzleCircle *this_ptr,int gem_index);
+void __cdecl CMansionPuzzleCircle::renderGem(CMansionPuzzleCircle *this_ptr,int gem_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0
 // Address: 004cabf0
@@ -87,7 +87,7 @@ void __cdecl CMansionPuzzleCircle::getPanelColor(CMansionPuzzleCircle *this_ptr,
 
 // Original: core_manpuz.cpp_stepToward_FUN_004cae90
 // Address: 004cae90
-undefined4 stepToward(float *param_1,float param_2,float param_3);
+int __cdecl stepToward(float *value,float target,float max_step);
 
 // Original: core_manpuz.cpp_updateGemHumChannel_FUN_004caef0
 // Address: 004caef0

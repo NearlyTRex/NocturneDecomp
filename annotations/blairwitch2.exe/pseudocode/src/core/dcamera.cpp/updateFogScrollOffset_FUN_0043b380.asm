@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_updateFogScrollOffset_FUN_0043b380(int param_1,int param_2,int param_3)
+; void __cdecl core_dcamera_cpp_updateFogScrollOffset_FUN_0043b380(SFogGrid *fog_ptr,int time_major,int time_minor)
 ;
+; Parameters:
+; SFogGrid *       Stack[0x4]:4   fog_ptr
+; int              Stack[0x8]:4   time_major
+; int              Stack[0xc]:4   time_minor
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820 at 00442882

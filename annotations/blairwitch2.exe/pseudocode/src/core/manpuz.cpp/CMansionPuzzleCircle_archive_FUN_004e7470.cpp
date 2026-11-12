@@ -17,8 +17,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004e7470(CMansionP
   core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
   if (1 < g_CMansionPuzzleCircleClassVersion) {
     core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->gem_pos,"pGemPos");
-    core_actor_cpp_archiveOrientation_FUN_0040b550(&this_ptr->gem_orient,"pGemOrient");
-    core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->emitter_pos,"pEmitterPos");
+    core_actor_cpp_archiveOrientation_FUN_0040b550
+              (&(this_ptr->gem_orient).orient,"pGemOrient");
+    core_actor_cpp_archiveVector_FUN_0040b4b0(&(this_ptr->emitter_pos).f,"pEmitterPos");
   }
   if (2 < g_CMansionPuzzleCircleClassVersion) {
     int_ptr = &this_ptr->panels[0].color.b;

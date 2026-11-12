@@ -18,7 +18,7 @@ CCarved * core_carved_cpp_CCarved_dtor_FUN_0042bf50(CCarved *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CCarvedTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CCarvedTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

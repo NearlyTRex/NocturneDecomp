@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 182,
+    "complexity_score": 179,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 19,
     "suspect_count": 15,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 82
+    "total_lines": 79
   },
   "cross_references": [],
   "function": {
@@ -99,6 +99,20 @@
     },
     "pcode_op_count": 304
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004985ae",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0048114e",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -158,31 +172,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 12,
       "match": "param_4",
       "severity": "mild",
-      "text": "iStack_24 = (int)ROUND(*param_4 * _DAT_005f5cec);",
+      "text": "SStack_28.point.x = (int)ROUND(*param_4 * _DAT_005f5cec);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "SStack_28.point.y = (int)ROUND(param_4[1] * _DAT_005f5cec);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "SStack_28.point.z = (int)ROUND(param_4[2] * _DAT_005f5cec);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 16,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iStack_20 = (int)ROUND(param_4[1] * _DAT_005f5cec);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iStack_1c = (int)ROUND(param_4[2] * _DAT_005f5cec);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
       "match": "param_5",
       "severity": "mild",
       "text": "iStack_18 = (int)ROUND(*param_5 * _DAT_005f5cfc);",
@@ -190,7 +204,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 17,
       "match": "param_5",
       "severity": "mild",
       "text": "iStack_14 = (int)ROUND(param_5[2] * _DAT_005f5cfc);",
@@ -198,7 +212,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 18,
       "match": "param_5",
       "severity": "mild",
       "text": "iStack_10 = (int)ROUND(param_5[1] * _DAT_005f5cfc);",
@@ -206,7 +220,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_0047fd00(param_1,param_2,param_3);",
@@ -214,7 +228,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_0047fd00(param_1,param_2,param_3);",
@@ -222,7 +236,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 20,
       "match": "param_3",
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_0047fd00(param_1,param_2,param_3);",

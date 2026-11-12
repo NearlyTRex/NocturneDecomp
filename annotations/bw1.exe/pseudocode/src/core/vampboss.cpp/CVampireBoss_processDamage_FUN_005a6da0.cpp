@@ -11,10 +11,11 @@
 void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005a6da0(CVampireBoss *this_ptr,SDamageInfo *damage_info)
 
 {
+  float *this_ptr_00;
   float fVar1;
   int iVar2;
   uint uVar3;
-  CDemonActor *this_ptr_00;
+  CDemonActor *this_ptr_01;
   CDemonActor *pCVar4;
   byte bVar5;
   float afStackY_1018 [1011];
@@ -40,25 +41,25 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005a6da0(CVampireB
     }
     if (this_ptr->form == 0) {
       if ((damage_info->ammo_type == AMMO_TYPE_HOLY) &&
-         (this_ptr_00 = (CDemonActor *)
-                        core_actor_cpp_castToClassHash_FUN_0040c600
+         (this_ptr_01 = core_actor_cpp_castToClassHash_FUN_0040c600
                                   (damage_info->attacker,g_CMeleeClassInfo.name_hash),
-         this_ptr_00 != (CDemonActor *)0x0)) {
+         this_ptr_01 != (CDemonActor *)0x0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                   (&(this_ptr->base).base.model.base,10,1);
-        pCVar4 = (*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
+        pCVar4 = (*((this_ptr_01->vtable)._ub)->getCarrier)(this_ptr_01);
         if (pCVar4 != (CDemonActor *)0x0) {
-          (*((pCVar4->vtable)._ub)->drop)(pCVar4,this_ptr_00,(CVector3f *)0x0);
-          iVar2 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar4,g_CHeroClassInfo.name_hash);
-          if (iVar2 != 0) {
-            pCVar4 = core_inv_cpp_FUN_004f8c40((CInventory *)(iVar2 + 0x1fae8),(char *)this_ptr_00);
-            if (pCVar4 == this_ptr_00) {
-              core_inv_cpp_FUN_004f8d00((CInventory *)(iVar2 + 0x1fae8),this_ptr_00,0);
-              core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160(0x01D2C900,this_ptr_00);
+          (*((pCVar4->vtable)._ub)->drop)(pCVar4,this_ptr_01,(CVector3f *)0x0);
+          pCVar4 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar4,g_CHeroClassInfo.name_hash);
+          if (pCVar4 != (CDemonActor *)0x0) {
+            this_ptr_00 = &pCVar4[0x179].orient_matrix.m[1].z;
+            pCVar4 = core_inv_cpp_FUN_004f8c40((CInventory *)this_ptr_00,this_ptr_01->actor_name);
+            if (pCVar4 == this_ptr_01) {
+              core_inv_cpp_FUN_004f8d00((CInventory *)this_ptr_00,this_ptr_01,0);
+              core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160(0x01D2C900,this_ptr_01);
             }
           }
         }
-        core_charactr_cpp_FUN_004325b0(this_ptr,0,this_ptr_00,0x3e4ccccd,0);
+        core_charactr_cpp_FUN_004325b0(this_ptr,0,this_ptr_01,0x3e4ccccd,0);
         core_event_cpp_CEventList_executeCommands_FUN_004a1b70
                   (0x01C51D80,"VampireBossBitesIt");
         sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handle);

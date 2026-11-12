@@ -304,7 +304,7 @@ section .text
     PUSH 0x5e43c4                       ; 004e8a0b | = "gatbullet.kfm"
         ;   Label: LAB_004e8a0b
     CALL core_dmodel.cpp_loadModel_FUN_00468780 ; 004e8a10
-        ;   XREF to: 00468780 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_loadModel_FUN_00468780()
+        ;   XREF to: 00468780 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00468780(char * filename)
     ADD ESP,0x4                         ; 004e8a15
     PUSH EAX                            ; 004e8a18
     LEA EAX,[ESP + 0x190]               ; 004e8a19
@@ -364,7 +364,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0x14d144]  ; 004e8a99 | g_CDemonSetInstance.collision_actor
     PUSH ESI                            ; 004e8a9f
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004e8aa0
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004e8aa5
     MOV dword ptr [ESP + 0x1b8],EAX     ; 004e8aa8
     TEST EAX,EAX                        ; 004e8aaf
@@ -386,7 +386,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 004e8adb | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 004e8ae1
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004e8ae2
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ECX,dword ptr [0x02c8ae44]      ; 004e8ae7 | g_CTriggerClassInfo.name_hash
     ADD ESP,0x8                         ; 004e8aed
     MOV EDI,EAX                         ; 004e8af0
@@ -395,7 +395,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0x14d144]  ; 004e8af8 | g_CDemonSetInstance.collision_actor
     PUSH ESI                            ; 004e8afe
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004e8aff
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004e8b04
     MOV ESI,EAX                         ; 004e8b07
     MOV dword ptr [ESP + 0x1a8],EAX     ; 004e8b09
@@ -405,7 +405,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 004e8b1b | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 004e8b21
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004e8b22
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     MOV dword ptr [ESP + 0x1b4],EAX     ; 004e8b27
     ADD ESP,0x8                         ; 004e8b2e
     MOV ECX,dword ptr [0x01cc4184]      ; 004e8b31 | g_CFlameCanClassInfo.name_hash
@@ -414,7 +414,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 004e8b3d | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 004e8b43
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004e8b44
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004e8b49
     MOV ECX,dword ptr [ESP + 0x1b8]     ; 004e8b4c
     TEST ECX,ECX                        ; 004e8b53

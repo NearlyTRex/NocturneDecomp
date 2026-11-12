@@ -18,7 +18,7 @@ CShadowsc * core_shotgun_cpp_CShadowsc_dtor_FUN_00546f40(CShadowsc *this_ptr,uin
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CShadowscTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CShadowscTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

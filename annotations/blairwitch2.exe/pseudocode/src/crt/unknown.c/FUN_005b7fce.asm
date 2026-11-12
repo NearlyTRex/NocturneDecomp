@@ -8,7 +8,7 @@
 ;
 ; XREF[187]:
 ;   cockpit_pkbitmap.cpp_FUN_00516200 at 00516211
-;   cockpit_pkbitmap.cpp_FUN_00517640 at 00517657
+;   cockpit_pkbmpset.cpp_FUN_00517640 at 00517657
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930 at 00408990
 ;   core_ammo.cpp_CAmmo_dtor_FUN_0040de50 at 0040de8f
 ;   core_ammobox.cpp_CAmmoBox_dtor_FUN_0040e980 at 0040e9b5

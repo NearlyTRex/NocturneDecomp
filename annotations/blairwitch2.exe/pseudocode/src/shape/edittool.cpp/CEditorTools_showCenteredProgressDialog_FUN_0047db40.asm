@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
-;   engine_font.cpp_FUN_004aaf00
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
 ;   shape_edittool.cpp_FUN_0047dc40
 ;   wincore_winrun.cpp_getTime_FUN_0058e9e0
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 0047e1d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     ADD ESP,0x14                        ; 0047dbc9
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0047dbcc
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV ESI,EAX                         ; 0047dbd1
     MOV EAX,[0x01c2559c]                ; 0047dbd3 | DAT_01c2559c
     DEC EAX                             ; 0047dbd8
@@ -113,8 +113,8 @@ section .text
         ;   Label: LAB_0047dc0d
     MOV EDI,dword ptr [0x01c25590]      ; 0047dc0e | DAT_01c25590
     PUSH EDI                            ; 0047dc14
-    CALL engine_font.cpp_FUN_004aaf00   ; 0047dc15
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 0047dc15
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0047dc1a
     CMP EBX,EAX                         ; 0047dc1d
     JGE 0x0047dba9                      ; 0047dc1f
@@ -122,8 +122,8 @@ section .text
     PUSH ESI                            ; 0047dc21
     MOV EBP,dword ptr [0x01c25590]      ; 0047dc22 | DAT_01c25590
     PUSH EBP                            ; 0047dc28
-    CALL engine_font.cpp_FUN_004aaf00   ; 0047dc29
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 0047dc29
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0047dc2e
     MOV EBX,EAX                         ; 0047dc31
     JMP 0x0047dba9                      ; 0047dc33

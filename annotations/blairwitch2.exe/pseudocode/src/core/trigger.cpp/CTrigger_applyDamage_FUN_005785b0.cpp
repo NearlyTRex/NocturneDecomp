@@ -17,9 +17,8 @@ void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_005785b0(CTrigger *this_p
     if (fVar1 < 0.0) {
       this_ptr->hit_points = 0.0;
     }
-    engine_console_cpp_FUN_00436710
-              (g_CConsolePtr,"%s received %g damage, hitpoints %g\n",this_ptr,(double)hit_points,
-               (double)this_ptr->hit_points);
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"%s received %g damage, hitpoints %g\n");
     this_ptr->damage_cooldown = 1.0;
   }
   return;

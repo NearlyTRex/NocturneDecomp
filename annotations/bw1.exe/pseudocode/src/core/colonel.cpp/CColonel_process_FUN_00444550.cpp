@@ -39,7 +39,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00444550(CColonel *this_ptr,f
   float afStack_a4 [4];
   float local_94;
   uint local_90;
-  uint local_8c;
+  float local_8c;
   float local_84;
   float local_80;
   float local_7c;
@@ -78,7 +78,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00444550(CColonel *this_ptr,f
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_colonel_cpp_FUN_00445140(this_ptr,delta_time);
+  core_colonel_cpp_CColonel_processMotionEvents_FUN_00445140(this_ptr,delta_time);
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_colonel_cpp_FUN_00444b50(this_ptr,delta_time);
   }
@@ -165,8 +165,8 @@ LAB_004448bd:
       if (2 < EVar2) {
         if (EVar2 == WALK_STATE_NO_PATH) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar12->base,0,1);
-          engine_console_cpp_FUN_00445430
-                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+          engine_console_cpp_CConsole_printf_FUN_00445430
+                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
           goto switchD_00444a17_caseD_4;
         }
         goto LAB_004448bd;

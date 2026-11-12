@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_flame.cpp_factoryFuncFlame_FUN_0049f150
 // Address: 0049f150
-void factoryFuncFlame(void);
+CFlame * __cdecl factoryFuncFlame(void);
 
 // Original: core_flame.cpp_CFlame_getActorType_FUN_0049f170
 // Address: 0049f170

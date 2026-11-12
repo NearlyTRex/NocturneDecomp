@@ -1,27 +1,27 @@
 // Name: core_netgame.cpp_allocSimFrame_FUN_00503c40
 // Address: 00503c40
 // Address Range: [[00503c40, 00503ceb]]
-// Convention: unknown
-// Signature: int * core_netgame_cpp_allocSimFrame_FUN_00503c40(int param_1)
+// Convention: __cdecl
+// Signature: SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_00503c40(int sequence_number)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int * core_netgame_cpp_allocSimFrame_FUN_00503c40(int param_1)
+SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_00503c40(int sequence_number)
 
 {
   int iVar1;
   int iVar2;
-  int *dest;
+  SSimFrame *dest;
   
   iVar2 = 0;
   if (0 < _DAT_01dc5c80) {
     iVar1 = 0;
     do {
-      if (param_1 == *(int *)(iVar1 + 0x1dc5c84)) {
+      if (sequence_number == *(int *)(iVar1 + 0x1dc5c84)) {
         if (-1 < iVar2) {
-          return (int *)(iVar1 + 0x1dc5c84);
+          return (SSimFrame *)(iVar1 + 0x1dc5c84);
         }
         break;
       }
@@ -34,9 +34,9 @@ int * core_netgame_cpp_allocSimFrame_FUN_00503c40(int param_1)
     _DAT_01d71de4 = 299;
     core_main_c_FUN_004e4330("allocSimFrame - sim history list full");
   }
-  dest = (int *)(_DAT_01dc5c80 * 0x74 + 0x1dc5c84);
+  dest = (SSimFrame *)(_DAT_01dc5c80 * 0x74 + 0x1dc5c84);
   _DAT_01dc5c80 = _DAT_01dc5c80 + 1;
   memset(dest,0,0x74);
-  *dest = param_1;
+  dest->sequence_number = sequence_number;
   return dest;
 }

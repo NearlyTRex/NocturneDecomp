@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_set.cpp_CDemonSet_FUN_0050aba0 at 0050accd
+;   core_set.cpp_CDemonSet_renderCameraAimedAtHero_FUN_0050aba0 at 0050accd
 ;   core_set.cpp_CDemonSet_renderScene_FUN_00509a80 at 00509d4a
 ;
 ; Referenced Globals:

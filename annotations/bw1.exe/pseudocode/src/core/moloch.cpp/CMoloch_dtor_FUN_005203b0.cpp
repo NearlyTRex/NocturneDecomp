@@ -15,7 +15,7 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_005203b0(CMoloch *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMolochTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMolochTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

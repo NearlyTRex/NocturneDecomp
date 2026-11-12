@@ -25,7 +25,7 @@ void core_dtrace_cpp_FUN_00473940(CDemonRaytrace *param_1,_FILE *param_2)
   int local_14;
   
   bVar3 = 0;
-  core_dtrace_cpp_FUN_00473630(param_1);
+  core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_00473630(param_1);
   _DAT_01c599bc = 0;
   _fread(&local_14,4,1,param_2);
   if (local_14 < 1) {

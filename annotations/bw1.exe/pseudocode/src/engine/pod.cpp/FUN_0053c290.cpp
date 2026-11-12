@@ -11,6 +11,7 @@
 void engine_pod_cpp_FUN_0053c290(int param_1,int param_2)
 
 {
+  _FILE *file;
   int iVar1;
   uint *unaff_ESI;
   uint *puVar2;
@@ -23,20 +24,20 @@ void engine_pod_cpp_FUN_0053c290(int param_1,int param_2)
     _DAT_01d1d404 = 0x3ab;
     core_main_c_FUN_005030e0("CPodFile::getAuditRecord - invalid index.  Pod not mounted?");
   }
-  iVar1 = _fopen(param_1 + 4,0x5ed807);
-  if (iVar1 == 0) {
+  file = _fopen((char *)(param_1 + 4),(char *)0x5ed807);
+  if (file == (_FILE *)0x0) {
     _DAT_01d1d400 = "..\\engine\\pod.cpp";
     _DAT_01d1d404 = 0x3b0;
-    core_main_c_FUN_005030e0("CPodFile::getAuditRecord - can't open %s",param_1 + 4);
+    core_main_c_FUN_005030e0("CPodFile::getAuditRecord - can't open %s",(char *)(param_1 + 4));
   }
-  _fseek(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x420),0);
-  _fread(auStack_144,0x138,1,iVar1);
-  if ((*(byte *)(iVar1 + 0xc) & 0x20) != 0) {
+  _fseek(file,param_2 * 0x138 + *(int *)(param_1 + 0x420),0);
+  _fread(auStack_144,0x138,1,file);
+  if ((file->_flag & 0x20) != 0) {
     _DAT_01d1d400 = "..\\engine\\pod.cpp";
     _DAT_01d1d404 = 0x3c5;
     core_main_c_FUN_005030e0("CPodFile::getAuditRecord - error reading %s",param_1 + 4);
   }
-  _fclose(iVar1);
+  _fclose(file);
   puVar2 = auStack_144;
   for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = *puVar2;

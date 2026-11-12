@@ -10,9 +10,9 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00537db0
-;   cockpit_pkbitmap.cpp_FUN_00538990
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadStoredACTFile_FUN_005392d0
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_005392b0
+;   cockpit_pkbmpset.cpp_FUN_00538990
 ;   cockpit_pkbmpset.cpp_FUN_005389c0
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c_malloc_FUN_005c08d0
@@ -37,8 +37,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1ac]     ; 00538b3a
     MOV EBP,dword ptr [ESP + 0x1b8]     ; 00538b41
     PUSH EBX                            ; 00538b48
-    CALL cockpit_pkbitmap.cpp_FUN_00538990 ; 00538b49
-        ;   XREF to: 00538990 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_00538990()
+    CALL cockpit_pkbmpset.cpp_FUN_00538990 ; 00538b49
+        ;   XREF to: 00538990 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbmpset.cpp_FUN_00538990()
     ADD ESP,0x4                         ; 00538b4e
     MOV EDX,dword ptr [ESP + 0x1b0]     ; 00538b51
     PUSH EDX                            ; 00538b58
@@ -143,7 +143,7 @@ section .text
     PUSH EDX                            ; 00538c8c
     PUSH EBP                            ; 00538c8d
     CALL crt_stdio.c_fread_FUN_005c0b10 ; 00538c8e
-        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005c0b10()
+        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005c0b10(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00538c93
     CMP EAX,0x1                         ; 00538c96
     JZ 0x00538cdd                       ; 00538c99

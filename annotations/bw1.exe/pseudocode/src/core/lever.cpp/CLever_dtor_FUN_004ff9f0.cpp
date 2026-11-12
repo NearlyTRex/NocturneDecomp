@@ -13,7 +13,7 @@ CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_004ff9f0(CLever *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CLeverTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CLeverTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

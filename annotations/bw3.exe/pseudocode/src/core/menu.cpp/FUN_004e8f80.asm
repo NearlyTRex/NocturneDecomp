@@ -34,8 +34,8 @@
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b4430
 ;   core_game.cpp_FUN_004b4440
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0
+;   core_menu.cpp_calibrateGamepad_FUN_004e7dc0
 ;   core_menu.cpp_FUN_004e7860
-;   core_menu.cpp_FUN_004e7dc0
 ;   core_menu.cpp_FUN_004eae80
 ;   core_moon.cpp_CMoon_render_FUN_004f9670
 ;   core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100
@@ -517,12 +517,12 @@ section .text
         ;   Label: LAB_004e949a
     JNZ 0x004e92cf                      ; 004e949d
         ;   XREF to: 004e92cf (CONDITIONAL_JUMP)  ; default
-    CALL core_menu.cpp_FUN_004e7dc0     ; 004e94a3
-        ;   XREF to: 004e7dc0 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_FUN_004e7dc0()
+    CALL core_menu.cpp_calibrateGamepad_FUN_004e7dc0 ; 004e94a3
+        ;   XREF to: 004e7dc0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_calibrateGamepad_FUN_004e7dc0()
     JMP 0x004e92cf                      ; 004e94a8
         ;   XREF to: 004e92cf (UNCONDITIONAL_JUMP)  ; default
-    CALL core_menu.cpp_FUN_004e7dc0     ; 004e94ad
-        ;   XREF to: 004e7dc0 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_FUN_004e7dc0()
+    CALL core_menu.cpp_calibrateGamepad_FUN_004e7dc0 ; 004e94ad
+        ;   XREF to: 004e7dc0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_calibrateGamepad_FUN_004e7dc0()
         ;   Label: LAB_004e94ad
     TEST EAX,EAX                        ; 004e94b2
     JNZ 0x004e9302                      ; 004e94b4

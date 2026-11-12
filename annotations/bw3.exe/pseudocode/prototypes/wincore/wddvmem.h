@@ -15,7 +15,7 @@ void __cdecl convertPaletteToDirectColor(void);
 
 // Original: wincore_wddvmem.cpp_cleanupDirectDrawSurfaces_FUN_00579630
 // Address: 00579630
-void cleanupDirectDrawSurfaces(void);
+void __cdecl cleanupDirectDrawSurfaces(void);
 
 // Original: wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_00579690
 // Address: 00579690
@@ -55,7 +55,7 @@ void __cdecl reinitializeGraphicsSystem(void);
 
 // Original: wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0
 // Address: 0057a3c0
-void openScreenDevice(void);
+void __cdecl openScreenDevice(void);
 
 // Original: wincore_wddvmem.cpp_closeScreenDevice_FUN_0057a4b0
 // Address: 0057a4b0

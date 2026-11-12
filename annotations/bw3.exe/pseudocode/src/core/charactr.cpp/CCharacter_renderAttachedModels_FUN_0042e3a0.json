@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 175,
+    "complexity_score": 181,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 9,
+    "pseudocode_lines": 56,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "stack_ref",
       "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 147
+    "total_lines": 148
   },
   "cross_references": [
     {
@@ -141,6 +140,32 @@
     },
     "pcode_op_count": 411
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00425aa0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0042f3c0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0042a420",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9211
+    },
+    "nocturne.exe": {
+      "addr": "004265a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9211
+    }
+  },
   "stack_frame": {
     "frame_size": 160,
     "local_size": 156,
@@ -244,16 +269,16 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffff68",
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(CMatrix3x4f *)((int)pCVar4",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)&stack0xffffff68;",
-      "type": "stack_ref"
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 49,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,&local_38,translation);",
@@ -261,15 +286,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 51,
       "match": "DAT_007e2b34",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)&DAT_007e2b34,0.0,-1);",
       "type": "undefined_data"
     },
     {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `&local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 44,
+      "line": 45,
       "match": "(int)&local_38",
       "severity": "moderate",
       "text": "*(CMatrix3x4f **)((int)&local_38 + (uint)bVar6 * -8 + 4) = apCStack_1c[(uint)bVar6 * -2];",
@@ -277,7 +310,7 @@
     },
     {
       "description": "Pointer value `&local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 46,
       "match": "(int)&local_38",
       "severity": "moderate",
       "text": "*(CMatrix3x4f **)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
@@ -285,7 +318,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 33,
+      "line": 34,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -293,7 +326,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 44,
+      "line": 45,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(CMatrix3x4f **)((int)&local_38 + (uint)bVar6 * -8 + 4) = apCStack_1c[(uint)bVar6 * -2];",
@@ -301,7 +334,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 45,
+      "line": 46,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(CMatrix3x4f **)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",

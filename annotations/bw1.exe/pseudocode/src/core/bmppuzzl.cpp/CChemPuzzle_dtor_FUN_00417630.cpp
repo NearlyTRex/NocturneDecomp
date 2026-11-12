@@ -17,7 +17,7 @@ CChemPuzzle * core_bmppuzzl_cpp_CChemPuzzle_dtor_FUN_00417630(CChemPuzzle *this_
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CChemPuzzleTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CChemPuzzleTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

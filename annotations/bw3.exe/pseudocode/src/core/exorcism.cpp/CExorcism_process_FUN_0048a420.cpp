@@ -11,14 +11,15 @@
 void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_ptr,float delta_time)
 
 {
-  CCharacter *pCVar1;
-  float fVar2;
+  float fVar1;
+  CCharacter *pCVar2;
   uint uVar3;
   int unaff_ESI;
   uint *puVar4;
   uint *puVar5;
   byte bVar6;
   float in_stack_0000000c;
+  int in_stack_00000010;
   float in_stack_00000014;
   float in_stack_00000018;
   float afStackY_11d4 [982];
@@ -27,6 +28,7 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
   int iVar8;
   CBoundingBox3D *in_stack_fffffda4;
   CVector3f *euler_angles;
+  float flame_type;
   float flame_style;
   float fStack_230;
   float fStack_228;
@@ -62,9 +64,11 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
   float afStack_164 [4];
   float fStack_154;
   uint uStack_150;
-  CVector3f CStack_144;
-  CVector3f CStack_138;
-  float afStack_12c [6];
+  float fStack_144;
+  float fStack_140;
+  byte auStack_13c [8];
+  float afStack_134 [4];
+  float afStack_124 [4];
   float fStack_114;
   float afStack_110 [2];
   byte auStack_108 [12];
@@ -89,12 +93,10 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
   float fStack_60;
   float fStack_5c;
   float fStack_58;
-  float fStack_48;
-  float afStack_44 [2];
-  CVector3f CStack_3c;
-  float fStack_30;
-  float afStack_2c [4];
-  float fStack_1c;
+  float fStack_40;
+  float afStack_3c [2];
+  CVector3f CStack_34;
+  float afStack_28 [4];
   float fStack_18;
   float fStack_14;
   
@@ -126,16 +128,16 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
     core_actor_cpp_castToClassHash_FUN_0040c840
               ((this_ptr->base).carried_by_actor,g_CAsgayaClassInfo.name_hash);
     (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-    pfVar7 = afStack_12c + 2;
-    afStack_12c[1] = fStack_c4;
-    afStack_12c[(uint)bVar6 * -2 + 2] = afStack_c0[(uint)bVar6 * -2];
-    afStack_12c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 3] =
+    pfVar7 = afStack_124;
+    afStack_134[3] = fStack_c4;
+    afStack_124[(uint)bVar6 * -2] = afStack_c0[(uint)bVar6 * -2];
+    afStack_124[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
          afStack_c0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
     core_actor_cpp_FUN_00408b80(this_ptr,pfVar7);
-    auStack_108._8_4_ = afStack_44[1];
-    afStack_fc[(uint)bVar6 * -2] = *(float *)((int)&CStack_3c + (uint)bVar6 * -8);
+    auStack_108._8_4_ = fStack_40;
+    afStack_fc[(uint)bVar6 * -2] = afStack_3c[(uint)bVar6 * -2];
     afStack_fc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-         *(float *)((int)&CStack_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);
+         afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
     if (&CStack_19c != (CVector3f *)(auStack_108 + 8)) {
       CStack_19c.x = (float)auStack_108._8_4_;
       CStack_19c.y = afStack_fc[0];
@@ -160,21 +162,21 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
         fStack_174 = fStack_1c8;
         fStack_170 = fStack_1c4;
       }
-      pCVar1 = this_ptr->target;
-      if ((pCVar1 == (CCharacter *)0x0) || (pCVar1->hit_points <= 0.0)) {
+      pCVar2 = this_ptr->target;
+      if ((pCVar2 == (CCharacter *)0x0) || (pCVar2->hit_points <= 0.0)) {
         (*(((this_ptr->base).base.vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
-        CStack_138.z = CStack_144.x;
-        afStack_12c[(uint)bVar6 * -2] = *(float *)((int)&CStack_144 + (uint)bVar6 * -8 + 4);
-        afStack_12c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-             *(float *)((int)&CStack_144 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-        fStack_30 = afStack_12c[0];
-        afStack_2c[1] = afStack_12c[2];
+        afStack_134[1] = fStack_144;
+        afStack_134[(uint)bVar6 * -2 + 2] = (&fStack_140)[(uint)bVar6 * -2];
+        afStack_134[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 3] =
+             *(float *)(auStack_13c + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+        CStack_34.y = afStack_134[2];
+        afStack_28[0] = afStack_124[0];
         pfVar7 = &fStack_18c;
-        afStack_2c[0] = afStack_12c[1] + _DAT_005bdd4e;
-        fStack_18c = afStack_12c[0];
-        afStack_188[(uint)bVar6 * -2] = afStack_2c[(uint)bVar6 * -2];
+        CStack_34.z = afStack_134[3] + _DAT_005bdd4e;
+        fStack_18c = afStack_134[2];
+        afStack_188[(uint)bVar6 * -2] = afStack_28[(uint)bVar6 * -2 + -1];
         afStack_188[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-             afStack_2c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+             afStack_28[(uint)bVar6 * -2 + (uint)bVar6 * -2];
         core_actor_cpp_FUN_00408b80(this_ptr,pfVar7);
         afStack_188[2] = fStack_1d4;
         afStack_188[(uint)bVar6 * -2 + 3] = *(float *)(&stack0xfffffe30 + (uint)bVar6 * -8);
@@ -187,7 +189,7 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
         }
       }
       else {
-        (*((pCVar1->base).vtable._ub)->getBoundingBox)(&pCVar1->base,in_stack_fffffda4);
+        (*((pCVar2->base).vtable._ub)->getBoundingBox)(&pCVar2->base,in_stack_fffffda4);
         puVar4 = (uint *)&stack0xfffffde8;
         puVar5 = (uint *)&stack0xfffffdf8;
         for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -215,10 +217,10 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
           fStack_a0 = fStack_70;
           fStack_9c = fStack_6c;
         }
-        pCVar1 = this_ptr->target;
-        fStack_8c = (pCVar1->base).location.position.x + fStack_a4;
-        afStack_88[0] = (pCVar1->base).location.position.y + fStack_a0;
-        afStack_88[1] = (pCVar1->base).location.position.z + fStack_9c;
+        pCVar2 = this_ptr->target;
+        fStack_8c = (pCVar2->base).location.position.x + fStack_a4;
+        afStack_88[0] = (pCVar2->base).location.position.y + fStack_a0;
+        afStack_88[1] = (pCVar2->base).location.position.z + fStack_9c;
         afStack_88[2] = fStack_8c;
         afStack_88[(uint)bVar6 * -2 + 3] = afStack_88[(uint)bVar6 * -2];
         afStack_88[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
@@ -259,10 +261,10 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
       }
       fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-1.0,1.0);
       fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-1.0,1.0);
-      fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-1.0,1.0);
-      afStack_2c[3] = fStack_18;
-      auStack_108._0_4_ = (float)auStack_108._0_4_ + fVar2;
-      fStack_1c = fStack_14;
+      fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-1.0,1.0);
+      afStack_28[2] = fStack_18;
+      auStack_108._0_4_ = (float)auStack_108._0_4_ + fVar1;
+      afStack_28[3] = fStack_14;
       auStack_108._4_4_ = (float)auStack_108._4_4_ + fStack_18;
       auStack_108._8_4_ = (float)auStack_108._8_4_ + fStack_14;
       core_fire_cpp_FUN_004a3c50
@@ -286,19 +288,19 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
       fStack_1ec = fStack_174 + fStack_1bc;
       fStack_1e8 = fStack_170 + fStack_1b8;
       fStack_1e4 = fStack_16c + fStack_1b4;
-      CStack_138.x = fStack_1ec;
-      afStack_12c[(uint)bVar6 * -2 + -2] = *(float *)((int)&stack0xfffffe18 + (uint)bVar6 * -8);
-      afStack_12c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -1] =
+      auStack_13c._4_4_ = fStack_1ec;
+      afStack_134[(uint)bVar6 * -2] = *(float *)((int)&stack0xfffffe18 + (uint)bVar6 * -8);
+      afStack_134[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
            *(float *)((int)&stack0xfffffe34 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + -6) * 4);
-      if (&CStack_e4 != &CStack_138) {
-        CStack_e4.x = CStack_138.x;
-        CStack_e4.y = CStack_138.y;
-        CStack_e4.z = CStack_138.z;
+      if (&CStack_e4 != (CVector3f *)(auStack_13c + 4)) {
+        CStack_e4.x = (float)auStack_13c._4_4_;
+        CStack_e4.y = afStack_134[0];
+        CStack_e4.z = afStack_134[1];
       }
       fStack_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-1.0,1.0);
       fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-1.0,1.0);
-      fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-1.0,1.0);
-      CStack_e4.x = CStack_e4.x + fVar2;
+      fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-1.0,1.0);
+      CStack_e4.x = CStack_e4.x + fVar1;
       CStack_e4.y = CStack_e4.y + fStack_14;
       CStack_e4.z = CStack_e4.z + fStack_18;
       core_fire_cpp_FUN_004a3c50
@@ -321,38 +323,41 @@ void __cdecl core_exorcism_cpp_CExorcism_process_FUN_0048a420(CExorcism *this_pt
       (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
       (*(((this_ptr->target->base).vtable._uc)->_uc).processDamage)
                 (this_ptr->target,(SDamageInfo *)&stack0xfffffdac);
-      iVar8 = core_actor_cpp_castToClassHash_FUN_0040c840();
-      if (iVar8 != 0) {
-        (**(code **)(*(int *)(iVar8 + 0x154) + 0x108))();
+      pCVar2 = (CCharacter *)
+               core_actor_cpp_castToClassHash_FUN_0040c840
+                         ((this_ptr->base).carried_by_actor,g_CHeroClassInfo.name_hash);
+      if (pCVar2 != (CCharacter *)0x0) {
+        (*(((pCVar2->base).vtable._uc)->_uc).processDamage)(pCVar2,(SDamageInfo *)&stack0xfffffdb4);
       }
       this_ptr->target->bind_time = 0.1;
-      if (delta_time == 0.0) {
+      if (in_stack_00000010 == 0) {
         this_ptr->target->bind_type = 2;
       }
       else {
         this_ptr->target->bind_type = 1;
       }
       if (this_ptr->target->hit_points <= 0.0) {
-        if ((iVar8 != 0) && (0.0 < *(float *)(iVar8 + 0x2538))) {
-          *(float *)(iVar8 + 0x2538) = this_ptr->hero_health;
+        if ((pCVar2 != (CCharacter *)0x0) && (0.0 < pCVar2->hit_points)) {
+          pCVar2->hit_points = this_ptr->hero_health;
         }
         flame_style = 8.40779e-45;
-        pCVar1 = this_ptr->target;
-        fVar2 = 0.0;
-        fStack_48 = (pCVar1->base).location.position.x;
-        iVar8 = 1;
-        afStack_44[1] = (pCVar1->base).location.position.z;
-        euler_angles = &CStack_3c;
-        afStack_44[0] = (pCVar1->base).location.position.y + _DAT_005bdd62;
-        CStack_144.x = fStack_48;
-        *(float *)((int)&CStack_144 + (uint)bVar6 * -8 + 4) = afStack_44[(uint)bVar6 * -2];
-        *(float *)((int)&CStack_144 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-             afStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-        CStack_3c.x = 0.0;
-        CStack_3c.y = 3.0;
-        CStack_3c.z = 0.0;
+        pCVar2 = this_ptr->target;
+        flame_type = 0.0;
+        fStack_40 = (pCVar2->base).location.position.x;
+        fVar1 = 1.4013e-45;
+        afStack_3c[1] = (pCVar2->base).location.position.z;
+        euler_angles = &CStack_34;
+        afStack_3c[0] = (pCVar2->base).location.position.y + _DAT_005bdd62;
+        auStack_13c._0_4_ = fStack_40;
+        *(float *)(auStack_13c + (uint)bVar6 * -8 + 4) = afStack_3c[(uint)bVar6 * -2];
+        afStack_134[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
+             afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+        CStack_34.x = 0.0;
+        CStack_34.y = 3.0;
+        CStack_34.z = 0.0;
         core_fire_cpp_CFireEffect_createGunFlames_FUN_004a3af0
-                  (0x01C73654,&CStack_144,euler_angles,iVar8,(int)fVar2,(int)flame_style);
+                  (0x01C73654,(CVector3f *)auStack_13c,euler_angles,(int)fVar1,(int)flame_type,
+                   (int)flame_style);
         core_sound_cpp_CSound_playActorSound_FUN_005609d0
                   (0x02CF5680,(CDemonActor *)this_ptr,"wp_exorcism_success.wav",
                    &(this_ptr->base).base.location.position);

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_teleport_cpp_factoryFuncTeleport_FUN_00594ef0(void)
+; CTeleport * __cdecl core_teleport_cpp_factoryFuncTeleport_FUN_00594ef0(void)
 ;
 ;
 ; Called Functions:

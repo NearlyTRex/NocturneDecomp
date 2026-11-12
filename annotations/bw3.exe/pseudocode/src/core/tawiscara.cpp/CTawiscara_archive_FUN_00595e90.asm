@@ -44,7 +44,7 @@ section .text
     LEA ESI,[EBX + 0xcdcc]              ; 00595ea4
     PUSH ESI                            ; 00595eaa
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00595eab
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00595eb0
     PUSH 0x5d93bf                       ; 00595eb3 | = "modelName"
     LEA ESI,[EBX + 0x158]               ; 00595eb8
@@ -56,7 +56,7 @@ section .text
     LEA EAX,[EBX + 0xcddc]              ; 00595ecc
     PUSH EAX                            ; 00595ed2
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00595ed3
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00595ed8
     PUSH 0x5d93d7                       ; 00595edb | = "motion state"
     PUSH ESI                            ; 00595ee0
@@ -73,13 +73,13 @@ section .text
     LEA ESI,[EBX + 0xd080]              ; 00595f02
     PUSH ESI                            ; 00595f08
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 00595f09
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00595f0e
     PUSH 0x5d93fc                       ; 00595f11 | = "chainLength"
     LEA EAX,[EBX + 0xd084]              ; 00595f16
     PUSH EAX                            ; 00595f1c
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00595f1d
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00595f22
     PUSH 0x5d9408                       ; 00595f25 | DAT_005d9408
     LEA EAX,[EBX + 0xd054]              ; 00595f2a
@@ -97,19 +97,19 @@ section .text
     LEA EAX,[EBX + 0xd094]              ; 00595f52
     PUSH EAX                            ; 00595f58
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00595f59
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00595f5e
     PUSH 0x5d941e                       ; 00595f61 | = "alpha1"
     LEA EAX,[EBX + 0xd088]              ; 00595f66
     PUSH EAX                            ; 00595f6c
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 00595f6d
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00595f72
     PUSH 0x5d9425                       ; 00595f75 | = "alpha2"
     ADD EBX,0xd08c                      ; 00595f7a
     PUSH EBX                            ; 00595f80
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 00595f81
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00595f86
     POP ESI                             ; 00595f89
     POP EBX                             ; 00595f8a

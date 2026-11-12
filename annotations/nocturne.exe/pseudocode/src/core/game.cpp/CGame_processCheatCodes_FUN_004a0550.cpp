@@ -489,7 +489,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(CGame *this_ptr)
             iVar10 = 0xf0;
             this_ptr->screen_clear_enabled = 1;
           }
-          core_set_cpp_CDemonSet_FUN_005090f0(this_ptr_03,0,0,iVar10);
+          core_set_cpp_CDemonSet_reinitCamera_FUN_005090f0(this_ptr_03,0,0,iVar10);
           core_sound_cpp_CSound_playSound_FUN_0052ea40
                     (g_CSound_PTR_005bed68,(void *)0x0,"cheat-1.wav");
         }

@@ -30,13 +30,13 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 00576a53
     PUSH EAX                            ; 00576a59
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 00576a5a
-        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60()
+        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 00576a5f
     PUSH 0x5ecd24                       ; 00576a62 | = "homePos"
     LEA EAX,[EBX + 0x430]               ; 00576a67
     PUSH EAX                            ; 00576a6d
     CALL core_actor.cpp_archiveVector_FUN_0040b4b0 ; 00576a6e
-        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b4b0()
+        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b4b0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 00576a73
     POP EBX                             ; 00576a76
     RET                                 ; 00576a77

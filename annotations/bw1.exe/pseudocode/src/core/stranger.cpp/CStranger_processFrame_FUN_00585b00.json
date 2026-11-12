@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2938,
-    "complexity_score": 2065,
+    "complexity_score": 2068,
     "cross_reference_count": 1,
     "function_call_count": 51,
     "global_count": 64,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1330,
+    "pseudocode_lines": 1333,
     "suspect_count": 67,
     "suspect_types": [
       "bit_int_float_compare",
@@ -24,7 +24,7 @@
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 4268
+    "total_lines": 4271
   },
   "cross_references": [
     {
@@ -261,7 +261,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     },
     {
       "addr": "005728e0",
@@ -790,6 +790,26 @@
     },
     "pcode_op_count": 14854
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00563060",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9723
+    },
+    "nocedit.exe": {
+      "addr": "005bb960",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5508
+    },
+    "nocturne.exe": {
+      "addr": "00535900",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5315
+    }
+  },
   "stack_frame": {
     "frame_size": 1040,
     "local_size": 1032,
@@ -926,7 +946,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 556,
+      "line": 557,
       "match": "in_stack_fffffb70",
       "severity": "moderate",
       "text": "(&this_ptr_00->base,(CBoundingBox3D *)&in_stack_fffffb70->vec);",
@@ -934,7 +954,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 595,
+      "line": 596,
       "match": "in_stack_fffffb70",
       "severity": "moderate",
       "text": "in_stack_fffffb70 = (UOrientationVector *)0x587473;",
@@ -942,7 +962,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 596,
+      "line": 597,
       "match": "in_stack_fffffb74",
       "severity": "moderate",
       "text": "in_stack_fffffb74 = pUStack_1c8;",
@@ -950,7 +970,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 625,
+      "line": 626,
       "match": "in_stack_fffffb74",
       "severity": "moderate",
       "text": "in_stack_fffffb74 = &(this_ptr->base).base.base.orient;",
@@ -958,7 +978,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 628,
+      "line": 629,
       "match": "in_stack_fffffb70",
       "severity": "moderate",
       "text": "in_stack_fffffb70 = (UOrientationVector *)this_ptr;",
@@ -966,7 +986,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 692,
+      "line": 693,
       "match": "in_stack_fffffb70",
       "severity": "moderate",
       "text": "in_stack_fffffb70 = (UOrientationVector *)0x586cc1;",
@@ -974,7 +994,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 693,
+      "line": 694,
       "match": "in_stack_fffffb74",
       "severity": "moderate",
       "text": "in_stack_fffffb74 = pUStack_44;",
@@ -982,7 +1002,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 696,
+      "line": 697,
       "match": "in_stack_fffffb74",
       "severity": "moderate",
       "text": "in_stack_fffffb74 = (UOrientationVector *)0x5872bf;",
@@ -990,7 +1010,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 701,
+      "line": 702,
       "match": "in_stack_fffffb74",
       "severity": "moderate",
       "text": "in_stack_fffffb74 = (UOrientationVector *)0x30;",
@@ -998,7 +1018,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 702,
+      "line": 703,
       "match": "in_stack_fffffb70",
       "severity": "moderate",
       "text": "in_stack_fffffb70 = pUStack_44;",
@@ -1006,7 +1026,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 710,
+      "line": 711,
       "match": "in_stack_fffffb74",
       "severity": "moderate",
       "text": "in_stack_fffffb74 = (UOrientationVector *)0x0;",
@@ -1014,7 +1034,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 711,
+      "line": 712,
       "match": "in_stack_fffffb70",
       "severity": "moderate",
       "text": "in_stack_fffffb70 = (UOrientationVector *)&(this_ptr->base).base.model;",
@@ -1022,7 +1042,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 713,
+      "line": 714,
       "match": "in_stack_fffffb70",
       "severity": "moderate",
       "text": "((CMotionController *)in_stack_fffffb70,0,1);",
@@ -1030,7 +1050,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 720,
+      "line": 721,
       "match": "in_stack_fffffb70",
       "severity": "moderate",
       "text": "in_stack_fffffb70 = (UOrientationVector *)0x587252;",
@@ -1038,7 +1058,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 721,
+      "line": 722,
       "match": "in_stack_fffffb74",
       "severity": "moderate",
       "text": "in_stack_fffffb74 = (UOrientationVector *)this_ptr;",
@@ -1046,7 +1066,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 726,
+      "line": 727,
       "match": "(float *)((int)pCVar9",
       "severity": "moderate",
       "text": "pfVar23 = (float *)((int)pCVar9 + (uint)bVar27 * -8 + 0x34);",
@@ -1094,7 +1114,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 1099,
+      "line": 1101,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uVar30 = SUB84(__BITCAST_UINT64((double)fVar17),0);",
@@ -1102,7 +1122,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 1107,
+      "line": 1109,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "fVar19 = (float)(((float10)__BITCAST_DOUBLE(CONCAT44(uStack_47c,uVar30)) + (float10)_DAT_005f68b9) *",
@@ -1110,7 +1130,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1125,
+      "line": 1127,
       "match": "in_stack_fffffb74",
       "severity": "moderate",
       "text": "in_stack_fffffb74 = (UOrientationVector *)0x1;",
@@ -1118,7 +1138,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1126,
+      "line": 1128,
       "match": "in_stack_fffffb70",
       "severity": "moderate",
       "text": "in_stack_fffffb70 = (UOrientationVector *)0x1c;",
@@ -1126,7 +1146,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1129,
+      "line": 1131,
       "match": "in_stack_fffffb70",
       "severity": "moderate",
       "text": "(&(this_ptr->base).base.model.base,(int)in_stack_fffffb70,(int)in_stack_fffffb74",
@@ -1134,7 +1154,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1129,
+      "line": 1131,
       "match": "in_stack_fffffb74",
       "severity": "moderate",
       "text": "(&(this_ptr->base).base.model.base,(int)in_stack_fffffb70,(int)in_stack_fffffb74",
@@ -1142,7 +1162,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1133,
+      "line": 1135,
       "match": "DAT_02c8af28",
       "severity": "mild",
       "text": "((CDemonActor *)this_ptr,(CVector3f *)&DAT_02c8af28,fVar17 * _DAT_005f68d1 + 1.0);",
@@ -1166,7 +1186,7 @@
     },
     {
       "description": "Pointer value `&CStack_240` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 568,
+      "line": 569,
       "match": "(int)&CStack_240",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_240 + (uint)bVar27 * -8) = afStack_fc[(uint)bVar27 * -2 + 3];",
@@ -1174,7 +1194,7 @@
     },
     {
       "description": "Pointer value `&CStack_240` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 569,
+      "line": 570,
       "match": "(int)&CStack_240",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_240 + (uint)bVar27 * -8 + (uint)bVar27 * -8 + 4) =",
@@ -1182,7 +1202,7 @@
     },
     {
       "description": "Pointer value `pCVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 726,
+      "line": 727,
       "match": "(int)pCVar9",
       "severity": "moderate",
       "text": "pfVar23 = (float *)((int)pCVar9 + (uint)bVar27 * -8 + 0x34);",
@@ -1190,7 +1210,7 @@
     },
     {
       "description": "Pointer value `&CStack_2dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 958,
+      "line": 962,
       "match": "(int)&CStack_2dc",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_2dc + ((uint)bVar27 * -2 + -1) * 4 + 8) = afStack_29c[(uint)bVar27 * -2]",
@@ -1198,7 +1218,7 @@
     },
     {
       "description": "Pointer value `&CStack_2dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 960,
+      "line": 964,
       "match": "(int)&CStack_2dc",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_2dc + ((uint)bVar27 * -2 + (uint)bVar27 * -2) * 4 + 8) =",
@@ -1206,7 +1226,7 @@
     },
     {
       "description": "Pointer value `in_stack_fffffb70` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1129,
+      "line": 1131,
       "match": "(int)in_stack_fffffb70",
       "severity": "moderate",
       "text": "(&(this_ptr->base).base.model.base,(int)in_stack_fffffb70,(int)in_stack_fffffb74",
@@ -1214,7 +1234,7 @@
     },
     {
       "description": "Pointer value `in_stack_fffffb74` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1129,
+      "line": 1131,
       "match": "(int)in_stack_fffffb74",
       "severity": "moderate",
       "text": "(&(this_ptr->base).base.model.base,(int)in_stack_fffffb70,(int)in_stack_fffffb74",
@@ -1222,7 +1242,7 @@
     },
     {
       "description": "Pointer value `&CStack_240` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1285,
+      "line": 1288,
       "match": "(int)&CStack_240",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_240 + (uint)bVar27 * -8 + 4) = afStack_1a4[(uint)bVar27 * -2 + 4];",
@@ -1230,7 +1250,7 @@
     },
     {
       "description": "Pointer value `&CStack_240` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1286,
+      "line": 1289,
       "match": "(int)&CStack_240",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_240 + (uint)bVar27 * -8 + (uint)bVar27 * -8 + 8) =",
@@ -1246,7 +1266,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 559,
+      "line": 560,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar22 = 6; iVar22 != 0; iVar22 = iVar22 + -1) {",
@@ -1262,7 +1282,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 545,
+      "line": 546,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1270,7 +1290,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 937,
+      "line": 941,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->pending_velocity).z = 0.0;",
@@ -1278,7 +1298,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 962,
+      "line": 966,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1286,7 +1306,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 966,
+      "line": 970,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -1294,7 +1314,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 1172,
+      "line": 1174,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -1326,7 +1346,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 568,
+      "line": 569,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_240 + (uint)bVar27 * -8) = afStack_fc[(uint)bVar27 * -2 + 3];",
@@ -1334,7 +1354,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 569,
+      "line": 570,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_240 + (uint)bVar27 * -8 + (uint)bVar27 * -8 + 4) =",
@@ -1342,7 +1362,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 958,
+      "line": 962,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_2dc + ((uint)bVar27 * -2 + -1) * 4 + 8) = afStack_29c[(uint)bVar27 * -2]",
@@ -1350,7 +1370,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 960,
+      "line": 964,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_2dc + ((uint)bVar27 * -2 + (uint)bVar27 * -2) * 4 + 8) =",
@@ -1358,7 +1378,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1285,
+      "line": 1288,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_240 + (uint)bVar27 * -8 + 4) = afStack_1a4[(uint)bVar27 * -2 + 4];",
@@ -1366,7 +1386,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1286,
+      "line": 1289,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_240 + (uint)bVar27 * -8 + (uint)bVar27 * -8 + 8) =",
@@ -1374,7 +1394,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
-      "line": 1110,
+      "line": 1112,
       "match": "0x42c80000 < (int)fVar19)",
       "severity": "moderate",
       "text": "if (0x42c80000 < (int)fVar19) {",
@@ -1382,7 +1402,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
-      "line": 1116,
+      "line": 1118,
       "match": "0x42c80000 < (int)fVar19))",
       "severity": "moderate",
       "text": "if (((this_ptr->base).base.hit_points <= 0.0) || (0x42c80000 < (int)fVar19)) {",

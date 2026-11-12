@@ -1,20 +1,20 @@
 // Name: core_shovel.cpp_factoryFuncShovel_FUN_00547000
 // Address: 00547000
 // Address Range: [[00547000, 0054701b]]
-// Convention: unknown
-// Signature: void core_shovel_cpp_factoryFuncShovel_FUN_00547000(void)
+// Convention: __cdecl
+// Signature: CShovel * __cdecl core_shovel_cpp_factoryFuncShovel_FUN_00547000(void)
 
 #include "nocturne.h"
 
-void core_shovel_cpp_factoryFuncShovel_FUN_00547000(void)
+CShovel * __cdecl core_shovel_cpp_factoryFuncShovel_FUN_00547000(void)
 
 {
-  CShovel *this_ptr;
+  CShovel *pCVar1;
   
-  this_ptr = (CShovel *)operator_new(0x594);
-  if (this_ptr == (CShovel *)0x0) {
-    return;
+  pCVar1 = (CShovel *)operator_new(0x594);
+  if (pCVar1 == (CShovel *)0x0) {
+    return (CShovel *)0x0;
   }
-  core_shovel_cpp_CShovel_ctor_FUN_00547030(this_ptr);
-  return;
+  pCVar1 = core_shovel_cpp_CShovel_ctor_FUN_00547030(pCVar1);
+  return pCVar1;
 }

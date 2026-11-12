@@ -14,12 +14,13 @@ void __cdecl core_xform_cpp_clipPolygonStage3_FUN_00587940(void)
 
 {
   longlong lVar1;
-  byte bVar2;
-  uint uVar3;
-  int iVar4;
+  longlong lVar2;
+  byte bVar3;
+  uint uVar4;
   int iVar5;
-  longlong *plVar6;
-  longlong *plVar7;
+  int iVar6;
+  SRenderVertex *vertex_a;
+  SRenderVertex *pSVar7;
   longlong *plVar8;
   byte bVar9;
   int iStack_14;
@@ -27,68 +28,73 @@ void __cdecl core_xform_cpp_clipPolygonStage3_FUN_00587940(void)
   bVar9 = 0;
   iStack_14 = 0;
   if (0 < (int)_DAT_02d23000) {
-    plVar6 = (longlong *)0x2d23c08;
+    vertex_a = (SRenderVertex *)0x2d23c08;
     do {
-      uVar3 = iStack_14 + 1;
-      if (uVar3 == _DAT_02d23000) {
-        uVar3 = uVar3 ^ _DAT_02d23000;
+      uVar4 = iStack_14 + 1;
+      if (uVar4 == _DAT_02d23000) {
+        uVar4 = uVar4 ^ _DAT_02d23000;
       }
-      iVar4 = uVar3 * 0x30;
-      bVar2 = (int)plVar6[1] <= *(int *)((int)plVar6 + 4);
-      if (*(int *)(&DAT_02d23c10 + iVar4) <= *(int *)(&DAT_02d23c0c + iVar4)) {
-        bVar2 = bVar2 | 2;
+      iVar5 = uVar4 * 0x30;
+      bVar3 = (vertex_a->projected_vertex).transformed_z <=
+              (vertex_a->projected_vertex).transformed_y;
+      if (*(int *)(&DAT_02d23c10 + iVar5) <= *(int *)(&DAT_02d23c0c + iVar5)) {
+        bVar3 = bVar3 | 2;
       }
-      switch(bVar2) {
+      switch(bVar3) {
       case 0:
         plVar8 = (longlong *)(&DAT_02d24208 + _DAT_02d23004 * 0x30);
-        iVar4 = 0x30;
-        plVar7 = plVar6;
-        while (7 < iVar4) {
-          lVar1 = *plVar7;
-          plVar7 = plVar7 + 1;
+        iVar5 = 0x30;
+        pSVar7 = vertex_a;
+        while (7 < iVar5) {
+          lVar1._0_4_ = (pSVar7->projected_vertex).transformed_x;
+          lVar1._4_4_ = (pSVar7->projected_vertex).transformed_y;
+          pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
           *plVar8 = (longlong)ROUND((float10)lVar1);
           plVar8 = plVar8 + 1;
-          iVar4 = iVar4 + -8;
+          iVar5 = iVar5 + -8;
         }
-        if (iVar4 != 0 && -9 < iVar4 + -8) {
-          *(int *)plVar8 = (int)*plVar7;
-          if (4 < iVar4) {
+        if (iVar5 != 0 && -9 < iVar5 + -8) {
+          *(int *)plVar8 = (pSVar7->projected_vertex).transformed_x;
+          if (4 < iVar5) {
             *(uint *)((int)plVar8 + (uint)bVar9 * -8 + 4) =
-                 *(uint *)((int)plVar7 + (uint)bVar9 * -8 + 4);
+                 *(uint *)((int)pSVar7 + (uint)bVar9 * -8 + 4);
           }
         }
         _DAT_02d23004 = _DAT_02d23004 + 1;
         break;
       case 1:
         core_xform_cpp_clipInterpolateTopPlane_FUN_005874c0
-                  (iVar4 + 0x2d23c08,plVar6,&DAT_02d24208 + _DAT_02d23004 * 0x30);
+                  ((SRenderVertex *)(iVar5 + 0x2d23c08),vertex_a,
+                   (SRenderVertex *)(&DAT_02d24208 + _DAT_02d23004 * 0x30));
         _DAT_02d23004 = _DAT_02d23004 + 1;
         break;
       case 2:
         plVar8 = (longlong *)(&DAT_02d24208 + _DAT_02d23004 * 0x30);
-        iVar5 = 0x30;
-        plVar7 = plVar6;
-        while (7 < iVar5) {
-          lVar1 = *plVar7;
-          plVar7 = plVar7 + 1;
-          *plVar8 = (longlong)ROUND((float10)lVar1);
+        iVar6 = 0x30;
+        pSVar7 = vertex_a;
+        while (7 < iVar6) {
+          lVar2._0_4_ = (pSVar7->projected_vertex).transformed_x;
+          lVar2._4_4_ = (pSVar7->projected_vertex).transformed_y;
+          pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
+          *plVar8 = (longlong)ROUND((float10)lVar2);
           plVar8 = plVar8 + 1;
-          iVar5 = iVar5 + -8;
+          iVar6 = iVar6 + -8;
         }
-        if (iVar5 != 0 && -9 < iVar5 + -8) {
-          *(int *)plVar8 = (int)*plVar7;
-          if (4 < iVar5) {
+        if (iVar6 != 0 && -9 < iVar6 + -8) {
+          *(int *)plVar8 = (pSVar7->projected_vertex).transformed_x;
+          if (4 < iVar6) {
             *(uint *)((int)plVar8 + (uint)bVar9 * -8 + 4) =
-                 *(uint *)((int)plVar7 + (uint)bVar9 * -8 + 4);
+                 *(uint *)((int)pSVar7 + (uint)bVar9 * -8 + 4);
           }
         }
         _DAT_02d23004 = _DAT_02d23004 + 1;
         core_xform_cpp_clipInterpolateTopPlane_FUN_005874c0
-                  (plVar6,iVar4 + 0x2d23c08,&DAT_02d24208 + _DAT_02d23004 * 0x30);
+                  (vertex_a,(SRenderVertex *)(iVar5 + 0x2d23c08),
+                   (SRenderVertex *)(&DAT_02d24208 + _DAT_02d23004 * 0x30));
         _DAT_02d23004 = _DAT_02d23004 + 1;
       }
       iStack_14 = iStack_14 + 1;
-      plVar6 = plVar6 + 6;
+      vertex_a = vertex_a + 1;
     } while (iStack_14 < (int)_DAT_02d23000);
   }
   return;

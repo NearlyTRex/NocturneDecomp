@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_teleport.cpp_factoryFuncTeleportDest_FUN_00572210
 // Address: 00572210
-void factoryFuncTeleportDest(void);
+CTeleportDest * __cdecl factoryFuncTeleportDest(void);
 
 // Original: core_teleport.cpp_CTeleportDest_getActorType_FUN_00572230
 // Address: 00572230
@@ -31,7 +31,7 @@ undefined4 FUN_005722b0(void);
 
 // Original: core_teleport.cpp_factoryFuncTeleport_FUN_005722c0
 // Address: 005722c0
-void factoryFuncTeleport(void);
+CTeleport * __cdecl factoryFuncTeleport(void);
 
 // Original: core_teleport.cpp_CTeleport_getActorType_FUN_005722e0
 // Address: 005722e0

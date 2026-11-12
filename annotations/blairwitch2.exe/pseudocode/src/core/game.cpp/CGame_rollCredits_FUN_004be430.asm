@@ -126,7 +126,7 @@ section .text
     LEA EAX,[ESP + 0x100c]              ; 004be4e4
     PUSH EAX                            ; 004be4eb
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 004be4ec
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004be4f1
     PUSH 0x5d8a58                       ; 004be4f4 | DAT_005d8a58
     LEA EAX,[ESP + 0x1008]              ; 004be4f9

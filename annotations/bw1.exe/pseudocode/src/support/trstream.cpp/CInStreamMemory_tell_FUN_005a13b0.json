@@ -14,15 +14,15 @@
   },
   "cross_references": [
     {
-      "addr": "00442d10",
-      "from_addr": "00442d50",
-      "name": "support_codec.cpp_FUN_00442d10",
+      "addr": "00442d90",
+      "from_addr": "00442dda",
+      "name": "support_codec.cpp_CCodec_processBuffer_FUN_00442d90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00442d90",
-      "from_addr": "00442dda",
-      "name": "support_codec.cpp_FUN_00442d90",
+      "addr": "00442d10",
+      "from_addr": "00442d50",
+      "name": "support_codec.cpp_FUN_00442d10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -50,7 +50,7 @@
       {
         "call_addr": "00442dda",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_00442d90",
+        "caller": "support_codec.cpp_CCodec_processBuffer_FUN_00442d90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -95,6 +95,20 @@
       "RETURN": 1
     },
     "pcode_op_count": 24
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057d760",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005743a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

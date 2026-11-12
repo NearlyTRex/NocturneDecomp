@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 396,
-    "complexity_score": 726,
+    "complexity_score": 616,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 196,
-    "suspect_count": 48,
+    "pseudocode_lines": 201,
+    "suspect_count": 37,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -17,11 +17,10 @@
       "stack_alignment_array",
       "suspect_float",
       "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 592
+    "total_lines": 597
   },
   "cross_references": [
     {
@@ -584,7 +583,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 16,
       "match": "afStackY_10a8",
       "severity": "moderate",
       "text": "float afStackY_10a8 [975];",
@@ -592,7 +591,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)param_1->actor_name == 5) {",
@@ -600,18 +599,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (param_1->orient).vec.y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = (param_1->orient).vec.y;",
+      "text": "max_value = (param_1->orient).vec.y;",
       "type": "unnamed_param"
     },
     {
@@ -619,15 +610,7 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1->location).position.x = local_18;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1->location).area_id = (int)local_18;",
+      "text": "max_value = (param_1->orient).vec.y;",
       "type": "unnamed_param"
     },
     {
@@ -635,12 +618,28 @@
       "line": 66,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)param_1->actor_name;",
+      "text": "(param_1->location).position.x = local_18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->location).area_id = (int)local_18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)param_1->actor_name;",
       "type": "unnamed_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 67,
+      "line": 70,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "(param_1->location).position.y = 1.4013e-45;",
@@ -648,7 +647,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->location).position.y = 1.4013e-45;",
@@ -656,7 +655,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->location).position.z = param_2;",
@@ -664,7 +663,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 72,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_1->location).position.z = param_2;",
@@ -672,71 +671,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "line": 78,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + local_2c),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(int *)((int)fVar1",
-      "severity": "moderate",
-      "text": "(iVar2 = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x10c))(fVar1), iVar2 == 0)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar2 = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x10c))(fVar1), iVar2 == 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(int *)((int)fVar1",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)((int)fVar1 + 0x154) + 0x1c))(fVar1,0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 80,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)((int)fVar1 + 0x154) + 0x1c))(fVar1,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(float *)((int)local_24",
-      "severity": "moderate",
-      "text": "fStack_90 = *(float *)(iVar2 + 0x20) - *(float *)((int)local_24 + 0x20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(float *)((int)local_24",
-      "severity": "moderate",
-      "text": "fStack_8c = *(float *)(iVar2 + 0x24) - *(float *)((int)local_24 + 0x24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(float *)((int)local_24",
-      "severity": "moderate",
-      "text": "fStack_88 = *(float *)(iVar2 + 0x28) - *(float *)((int)local_24 + 0x28);",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_2c),",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 109,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = param_1;",
@@ -744,71 +687,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->health < 1) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 112,
-      "match": "(int *)((int)local_20",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)((int)local_20 + 0x154) + 0x108))(local_20,&SStack_154);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 112,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)((int)local_20 + 0x154) + 0x108))(local_20,&SStack_154);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 113,
-      "match": "(CVector3f *)((int)fVar1",
-      "severity": "moderate",
-      "text": "core_fire_cpp_FUN_004a3bd0(0x01C73654,(CVector3f *)((int)fVar1 + 0x20),0x41f00000,1,0)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 116,
-      "match": "(CVector3f *)((int)fVar1",
-      "severity": "moderate",
-      "text": "(0x02CF5680,param_1,\"light?.wav\",(CVector3f *)((int)fVar1 + 0x20));",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 121,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x02CF5680,param_1,\"light?.wav\",(CVector3f *)((int)fVar1 + 0x20));",
+      "text": "(0x02CF5680,param_1,\"light?.wav\",&position->position);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 122,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&(param_1->orient_matrix).m[0].x)[param_1->health] = local_20;",
+      "text": "(&(param_1->orient_matrix).m[0].x)[param_1->health] = (float)local_20;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 122,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&(param_1->orient_matrix).m[0].x)[param_1->health] = local_20;",
+      "text": "(&(param_1->orient_matrix).m[0].x)[param_1->health] = (float)local_20;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->health = param_1->health + 1;",
@@ -816,7 +727,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->health = param_1->health + 1;",
@@ -824,15 +735,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 124,
+      "line": 129,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->health <= iVar2) goto code_r0x0057c51b;",
+      "text": "if (param_1->health <= iVar4) goto code_r0x0057c51b;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 162,
       "match": "param_1",
       "severity": "mild",
       "text": "(&local_118,(CVector3f *)(param_1->actor_name + 0x14));",
@@ -840,7 +751,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 166,
+      "line": 171,
       "match": "param_1",
       "severity": "mild",
       "text": "local_48 = local_a8 + *(float *)(param_1->actor_name + 8);",
@@ -848,7 +759,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 167,
+      "line": 172,
       "match": "param_1",
       "severity": "mild",
       "text": "local_44 = local_a4 + *(float *)(param_1->actor_name + 0xc);",
@@ -856,7 +767,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 168,
+      "line": 173,
       "match": "param_1",
       "severity": "mild",
       "text": "local_40 = local_a0 + *(float *)(param_1->actor_name + 0x10);",
@@ -864,7 +775,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 178,
+      "line": 183,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != 0) {",
@@ -872,7 +783,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 181,
+      "line": 186,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x02CF5680,param_1,\"light?.wav\",&local_84);",
@@ -880,7 +791,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 187,
+      "line": 192,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->orient).vec.x = local_18;",
@@ -888,7 +799,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 188,
+      "line": 193,
       "match": "param_1",
       "severity": "mild",
       "text": "local_158 = (param_1->orient).vec.x;",
@@ -896,7 +807,7 @@
     },
     {
       "description": "Raw hex address 0x1c6e360 assigned to bare local `this_ptr`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 186,
+      "line": 191,
       "match": "0x1c6e360",
       "severity": "moderate",
       "text": "this_ptr = 0x01C6E360;",
@@ -904,15 +815,15 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 83,
+      "line": 88,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 174,
+      "line": 179,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_84.x = local_b4.x;",
@@ -920,7 +831,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on its own `actor_name` field (which decays to a pointer), `+ CONST`; `offsetof(actor_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar3`. Replace those `pCVar3->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 123,
+      "line": 128,
       "match": "pCVar3 = (T *)(pCVar3->actor_name + CONST)",
       "severity": "moderate",
       "text": "pCVar3 = (CDemonActor *)(pCVar3->actor_name + 4);",

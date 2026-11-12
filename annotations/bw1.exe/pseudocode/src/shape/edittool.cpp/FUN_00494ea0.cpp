@@ -2,11 +2,11 @@
 // Address: 00494ea0
 // Address Range: [[00494ea0, 00494fc2]]
 // Convention: unknown
-// Signature: undefined4 shape_edittool_cpp_FUN_00494ea0(undefined4 param_1,undefined4 param_2)
+// Signature: undefined4 shape_edittool_cpp_FUN_00494ea0(undefined4 param_1,char *param_2)
 
 #include "nocturne.h"
 
-uint shape_edittool_cpp_FUN_00494ea0(uint param_1,uint param_2)
+uint shape_edittool_cpp_FUN_00494ea0(uint param_1,char *param_2)
 
 {
   int iVar1;
@@ -16,7 +16,7 @@ uint shape_edittool_cpp_FUN_00494ea0(uint param_1,uint param_2)
   byte *puStack_8;
   
   puStack_8 = &stack0x0000000c;
-  _vsprintf(aCStack_418,param_2,&puStack_8);
+  _vsprintf((char *)aCStack_418,param_2,(va_list_t)&puStack_8);
   puStack_8 = (byte *)0x0;
   shape_edittool_cpp_CStrList_ctor_FUN_00499380(&CStack_18);
   shape_edittool_cpp_CStrList_add_FUN_004994d0(&CStack_18,(char *)0x5dbde8);

@@ -17,27 +17,27 @@
   },
   "cross_references": [
     {
-      "addr": "004a3b90",
-      "from_addr": "004a4015",
-      "name": "core_game.cpp_CGame_FUN_004a3b90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004a4170",
       "from_addr": "004a46be",
-      "name": "core_game.cpp_CGame_FUN_004a4170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a57c0",
-      "from_addr": "004a5bd1",
-      "name": "core_game.cpp_CGame_FUN_004a57c0",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a0550",
       "from_addr": "004a1e34",
       "name": "core_game.cpp_CGame_processCheatCodes_FUN_004a0550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a3b90",
+      "from_addr": "004a4015",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004a3b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a57c0",
+      "from_addr": "004a5bd1",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -77,15 +77,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004febd0",
-      "from_addr": "004fedde",
-      "name": "core_script.cpp_CScript_FUN_004febd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00504e70",
       "from_addr": "00505037",
       "name": "core_script.cpp_CScript_dbLoad_FUN_00504e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004febd0",
+      "from_addr": "004fedde",
+      "name": "core_script.cpp_CScript_loadScript_FUN_004febd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -331,7 +331,7 @@
       {
         "call_addr": "004a46be",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -342,7 +342,7 @@
       {
         "call_addr": "004a470a",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -353,7 +353,7 @@
       {
         "call_addr": "004a4756",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -364,7 +364,7 @@
       {
         "call_addr": "004a489d",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004a4170",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -375,7 +375,7 @@
       {
         "call_addr": "004a4015",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a3b90",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004a3b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -386,7 +386,7 @@
       {
         "call_addr": "004a40d1",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a3b90",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004a3b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -397,7 +397,7 @@
       {
         "call_addr": "004a40f2",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a3b90",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004a3b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -408,7 +408,7 @@
       {
         "call_addr": "004a412f",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a3b90",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004a3b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -419,7 +419,7 @@
       {
         "call_addr": "004a5bd1",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a57c0",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -463,6 +463,32 @@
       "STORE": 50
     },
     "pcode_op_count": 576
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047be40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2657
+    },
+    "bw1.exe": {
+      "addr": "004943a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1379
+    },
+    "bw3.exe": {
+      "addr": "0047cf40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1379
+    },
+    "nocedit.exe": {
+      "addr": "0049e740",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2657
+    }
   },
   "stack_frame": {
     "frame_size": 36,

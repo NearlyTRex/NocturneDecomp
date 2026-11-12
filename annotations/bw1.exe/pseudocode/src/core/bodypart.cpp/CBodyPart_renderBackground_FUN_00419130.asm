@@ -21,7 +21,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00418e50
 ;   core_box.cpp_FUN_004207b0
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;   engine_drender.cpp_pop_FUN_004839a0
 ;
@@ -128,8 +128,8 @@ section .text
     MOV EAX,[0x00611100]                ; 00419244 | g_CConsolePtr
     PUSH EAX                            ; 00419249 | g_CConsoleInstance
     MOV dword ptr [EBX + 0x158],0x1     ; 0041924a
-    CALL engine_console.cpp_FUN_00445430 ; 00419254
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00419254
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00419259
     JMP 0x0041916c                      ; 0041925c
         ;   XREF to: 0041916c (UNCONDITIONAL_JUMP)  ; LAB_0041916c

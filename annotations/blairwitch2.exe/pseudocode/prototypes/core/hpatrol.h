@@ -43,4 +43,4 @@ int __cdecl CPatrolPoint::renderTransparent(CPatrolPoint *this_ptr);
 
 // Original: core_hpatrol.cpp_FUN_0059c9c0
 // Address: 0059c9c0
-undefined4 FUN_0059c9c0(char *param_1,uint *param_2);
+CDemonActor * FUN_0059c9c0(char *param_1,uint *param_2);

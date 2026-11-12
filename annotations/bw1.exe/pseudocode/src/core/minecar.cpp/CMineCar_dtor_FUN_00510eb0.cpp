@@ -14,7 +14,7 @@ CMineCar * __cdecl core_minecar_cpp_CMineCar_dtor_FUN_00510eb0(CMineCar *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMineCarTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMineCarTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

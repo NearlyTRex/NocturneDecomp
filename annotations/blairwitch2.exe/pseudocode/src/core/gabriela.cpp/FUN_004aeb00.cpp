@@ -106,8 +106,8 @@ void core_gabriela_cpp_FUN_004aeb00(CDemonActor *param_1)
                         ((CPathMap *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x10a9c),
                          &(param_1->location).position,&local_114,param_1->direction_hint);
       if (iVar5 != 0) {
-        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                    (local_114.y - (param_1->orient).vec.y);
+        local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                             (local_114.y - (param_1->orient).vec.y);
         fVar9 = local_18 * _DAT_005d6fcb * (float)_DAT_005d6fc3;
         local_2c = -local_20;
         param_1[0x62].particle_systems[1].active = (int)fVar9;
@@ -175,8 +175,8 @@ void core_gabriela_cpp_FUN_004aeb00(CDemonActor *param_1)
         *(float *)((int)&stack0xfffffe90 + (uint)bVar8 * -8) = local_74[(uint)bVar8 * -2 + 3];
         *(float *)((int)&stack0xfffffe94 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4) =
              local_74[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
-        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                    (local_170 - (param_1->orient).vec.y);
+        local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                             (local_170 - (param_1->orient).vec.y);
         fVar9 = local_18 * _DAT_005d6fcb * (float)_DAT_005d6fc3;
         local_28 = -local_20;
         param_1[0x62].particle_systems[1].active = (int)fVar9;

@@ -80,7 +80,7 @@ section .text
     PUSH EAX                            ; 0052afdc
     MOV dword ptr [EBX],EAX             ; 0052afdd
     CALL crt_stdio.c_ftell_FUN_005c2e90 ; 0052afdf
-        ;   XREF to: 005c2e90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005c2e90()
+        ;   XREF to: 005c2e90 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005c2e90(_FILE * file_handle)
     ADD ESP,0x4                         ; 0052afe4
     MOV dword ptr [EBX + 0x20],EAX      ; 0052afe7
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0052afea
@@ -102,7 +102,7 @@ section .text
     MOV EBP,dword ptr [EBX]             ; 0052b012
     PUSH EBP                            ; 0052b014
     CALL crt_stdio.c_fseek_FUN_005c170c ; 0052b015
-        ;   XREF to: 005c170c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005c170c()
+        ;   XREF to: 005c170c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005c170c(_FILE * file, long offset, int whence)
     MOV dword ptr [EBX + 0x10],0x0      ; 0052b01a
     MOV dword ptr [EBX + 0x14],0x0      ; 0052b021
     MOV dword ptr [EBX + 0xc],0x0       ; 0052b028

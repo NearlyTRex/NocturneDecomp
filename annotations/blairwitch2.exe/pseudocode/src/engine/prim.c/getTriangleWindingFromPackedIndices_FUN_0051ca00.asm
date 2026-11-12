@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0051ca00(ushort *param_1)
+; int __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0051ca00(STrianglePackedIndices *triangle)
 ;
+; Parameters:
+; STrianglePackedIndices * Stack[0x4]:4   triangle
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

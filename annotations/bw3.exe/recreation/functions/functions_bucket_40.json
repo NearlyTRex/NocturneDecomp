@@ -506,11 +506,21 @@
     "instructions":68,
     "method":"renderPolygonTexturedUVLitOp30",
     "name":"engine_3d.c_renderPolygonTexturedUVLitOp30_FUN_00404fc0",
+    "params":[
+      {
+        "name":"prim",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderPrimitive",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
     },
     "tu":"engine/3d.c",
     "variadic":false
@@ -524,11 +534,21 @@
     "instructions":26,
     "method":"setVertexTextureU",
     "name":"engine_3d.c_setVertexTextureU_FUN_004050c0",
+    "params":[
+      {
+        "name":"mrgl",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderExtended",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
     },
     "tu":"engine/3d.c",
     "variadic":false
@@ -546,11 +566,21 @@
     "instructions":43,
     "method":"renderPolygonTexturedNormalizedOp50",
     "name":"engine_3d.c_renderPolygonTexturedNormalizedOp50_FUN_00406040",
+    "params":[
+      {
+        "name":"prim",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderPrimitive",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
     },
     "tu":"engine/3d.c",
     "variadic":false
@@ -570,11 +600,21 @@
     "instructions":58,
     "method":"renderPolygonGrayscaleLitOp54",
     "name":"engine_3d.c_renderPolygonGrayscaleLitOp54_FUN_00406540",
+    "params":[
+      {
+        "name":"prim",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLHeaderPrimitive",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SMRGLHeaderExtended",
+      "ptr":1
     },
     "tu":"engine/3d.c",
     "variadic":false
@@ -618,11 +658,21 @@
     "instructions":14,
     "method":"initTransformCache",
     "name":"core_actor.cpp_initTransformCache_FUN_004085c0",
+    "params":[
+      {
+        "name":"transform_cache",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActorTransformState",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CDemonActorTransformState",
+      "ptr":1
     },
     "tu":"core/actor.cpp",
     "variadic":false
@@ -1307,10 +1357,28 @@
     "instructions":55,
     "method":"archiveLocation",
     "name":"core_actor.cpp_archiveLocation_FUN_0040b540",
+    "params":[
+      {
+        "name":"location_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CLocation",
+          "ptr":1
+        }
+      },
+      {
+        "name":"property_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/actor.cpp",
@@ -1334,10 +1402,28 @@
     "instructions":147,
     "method":"archiveRules",
     "name":"core_actor.cpp_archiveRules_FUN_0040c0c0",
+    "params":[
+      {
+        "name":"rules",
+        "type":{
+          "kind":"class",
+          "name":"CRuleList",
+          "ptr":1
+        }
+      },
+      {
+        "name":"property_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/actor.cpp",
@@ -1515,11 +1601,29 @@
     "instructions":17,
     "method":"castToClassHash",
     "name":"core_actor.cpp_castToClassHash_FUN_0040c840",
+    "params":[
+      {
+        "name":"actor_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"class_name_hash",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CDemonActor",
+      "ptr":1
     },
     "tu":"core/actor.cpp",
     "variadic":false
@@ -3865,10 +3969,36 @@
     "instructions":104,
     "method":"interpolateVertexRightClip",
     "name":"engine_clipper.c_interpolateVertexRightClip_FUN_004390c0",
+    "params":[
+      {
+        "name":"v1",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"v2",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -3887,10 +4017,36 @@
     "instructions":104,
     "method":"interpolateVertexLeftClip",
     "name":"engine_clipper.c_interpolateVertexLeftClip_FUN_004391c0",
+    "params":[
+      {
+        "name":"v1",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"v2",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -3912,10 +4068,36 @@
     "instructions":104,
     "method":"interpolateVertexTopClip",
     "name":"engine_clipper.c_interpolateVertexTopClip_FUN_004392c0",
+    "params":[
+      {
+        "name":"v1",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"v2",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -3934,10 +4116,36 @@
     "instructions":109,
     "method":"interpolateVertexBottomClip",
     "name":"engine_clipper.c_interpolateVertexBottomClip_FUN_004393c0",
+    "params":[
+      {
+        "name":"v1",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"v2",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -3956,10 +4164,36 @@
     "instructions":109,
     "method":"interpolateVertexFarClip",
     "name":"engine_clipper.c_interpolateVertexFarClip_FUN_004394c0",
+    "params":[
+      {
+        "name":"v1",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"v2",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -4076,10 +4310,36 @@
     "instructions":126,
     "method":"interpolateVertexRightClipAdvanced",
     "name":"engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043a8c0",
+    "params":[
+      {
+        "name":"v1",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"v2",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/clipper.c",
@@ -4891,10 +5151,28 @@
     "instructions":39,
     "method":"buildAndRenderTrianglePrimitive",
     "name":"core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_00453c40",
+    "params":[
+      {
+        "name":"triangle_vertex_pointers",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":2
+        }
+      },
+      {
+        "name":"vertex_buffer",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dcube.cpp",
@@ -6081,14 +6359,41 @@
       "00469ee0",
       "005a2898"
     ],
-    "conv":"unknown",
+    "cls":"CDrawSurface",
+    "conv":"__cdecl",
     "instructions":31,
-    "method":"FUN_00469f40",
-    "name":"cockpit_drawsurf.cpp_FUN_00469f40",
-    "receiver":false,
+    "method":"drawTextRightAlignedVariantPrintf",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00469f40",
+    "params":[
+      {
+        "name":"x",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"format",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"cockpit/drawsurf.cpp",
@@ -6518,10 +6823,44 @@
     "instructions":100,
     "method":"generateSkyDomeVertex",
     "name":"core_dskybox.cpp_generateSkyDomeVertex_FUN_0046f340",
+    "params":[
+      {
+        "name":"sky_texture",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLSkyTexture",
+          "ptr":1
+        }
+      },
+      {
+        "name":"u_coord",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"v_coord",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"vertex_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dskybox.cpp",
@@ -6536,10 +6875,52 @@
     "instructions":179,
     "method":"blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX",
     "name":"core_dstrendr.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_004726c0",
+    "params":[
+      {
+        "name":"output_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":1
+        }
+      },
+      {
+        "name":"texture_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"ulonglong",
+          "ptr":1
+        }
+      },
+      {
+        "name":"texture_indices",
+        "type":{
+          "kind":"builtin",
+          "name":"byte",
+          "ptr":1
+        }
+      },
+      {
+        "name":"lightmap_indices",
+        "type":{
+          "kind":"builtin",
+          "name":"byte",
+          "ptr":1
+        }
+      },
+      {
+        "name":"pixel_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dstrendr.cpp",
@@ -6713,15 +7094,34 @@
       "005a3120",
       "005a3600"
     ],
-    "conv":"unknown",
+    "cls":"CDemonRaytrace",
+    "conv":"__stack2_esi",
     "instructions":52,
-    "method":"FUN_00477ac0",
-    "name":"core_dtrace.cpp_FUN_00477ac0",
-    "receiver":false,
+    "method":"worldPositionToVoxelCoords",
+    "name":"core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0",
+    "params":[
+      {
+        "name":"world_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_voxel_coords",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CVector3i",
+      "ptr":1
     },
     "tu":"core/dtrace.cpp",
     "variadic":false
@@ -6800,14 +7200,40 @@
       "00568570",
       "00578d30"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":184,
     "method":"rayTriangleIntersection",
     "name":"core_dtri.cpp_rayTriangleIntersection_FUN_00478ac0",
+    "params":[
+      {
+        "name":"triangle",
+        "type":{
+          "kind":"class",
+          "name":"CDemonTriangle",
+          "ptr":1
+        }
+      },
+      {
+        "name":"rayOrigin",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"rayDirection",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/dtri.cpp",
@@ -8261,11 +8687,29 @@
     "instructions":11,
     "method":"copyQuaternion",
     "name":"core_event.cpp_copyQuaternion_FUN_00495e40",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/event.cpp",
     "variadic":false
@@ -8278,14 +8722,40 @@
       "0045c530",
       "0045f490"
     ],
-    "conv":"unknown",
+    "conv":"__fastcall",
     "instructions":35,
     "method":"_memset",
     "name":"crt_watcom.c__memset_FUN_00495ec0",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"fill_byte",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"size",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"crt/watcom.c",
@@ -8297,15 +8767,15 @@
       "00496170",
       "005a3cb2"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":10,
     "method":"factoryFuncFilmReel",
     "name":"core_filmreel.cpp_factoryFuncFilmReel_FUN_00496140",
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CFilmReel",
+      "ptr":1
     },
     "tu":"core/filmreel.cpp",
     "variadic":false
@@ -10850,11 +11320,21 @@
     "instructions":43,
     "method":"getItemDisplayName",
     "name":"core_inv.cpp_getItemDisplayName_FUN_004d9e40",
+    "params":[
+      {
+        "name":"actor_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"char",
+      "ptr":1
     },
     "tu":"core/inv.cpp",
     "variadic":false
@@ -11118,10 +11598,20 @@
     "instructions":82,
     "method":"recomputeKeyFrameNormals",
     "name":"engine_keyframe.c_recomputeKeyFrameNormals_FUN_004df440",
+    "params":[
+      {
+        "name":"primitive_list",
+        "type":{
+          "kind":"struct",
+          "name":"SMRGLPrimitiveTriangle",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/keyframe.c",
@@ -11488,14 +11978,24 @@
       "0046d230",
       "0046d250"
     ],
-    "conv":"unknown",
+    "conv":"__esi",
     "instructions":17,
     "method":"getCameraRotation",
     "name":"engine_matrix.c_getCameraRotation_FUN_004e6ac0",
+    "params":[
+      {
+        "name":"output",
+        "type":{
+          "kind":"class",
+          "name":"CVector3i",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/matrix.c",
@@ -11556,17 +12056,17 @@
       "0057a8a0",
       "005a28c0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "data_refs":[
       "004e8f45"
     ],
     "instructions":227,
-    "method":"FUN_004e7dc0",
-    "name":"core_menu.cpp_FUN_004e7dc0",
+    "method":"calibrateGamepad",
+    "name":"core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/menu.cpp",
@@ -12596,14 +13096,40 @@
   },
   {
     "addr":"004fea40",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":33,
     "method":"applyScalefactorsToLayer2Samples",
     "name":"sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_004fea40",
+    "params":[
+      {
+        "name":"sample_array",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scalefactor_indices",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"frame_info",
+        "type":{
+          "kind":"struct",
+          "name":"SMpegFrame",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/mp3.cpp",
@@ -12764,15 +13290,25 @@
       "004e4330",
       "005a28f0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":58,
     "method":"allocSimFrame",
     "name":"core_netgame.cpp_allocSimFrame_FUN_00503c40",
+    "params":[
+      {
+        "name":"sequence_number",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SSimFrame",
+      "ptr":1
     },
     "tu":"core/netgame.cpp",
     "variadic":false
@@ -13622,10 +14158,36 @@
     "instructions":63,
     "method":"calculateTriangleWindingOrder",
     "name":"engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0",
+    "params":[
+      {
+        "name":"v0",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"v1",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"v2",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/prim.c",
@@ -14577,10 +15139,10 @@
     "instructions":15,
     "method":"free",
     "name":"core_setutil.cpp_C3DSCamera_free_FUN_00541ac0",
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/setutil.cpp",
@@ -14640,11 +15202,11 @@
     "instructions":105,
     "method":"create",
     "name":"core_setutil.cpp_C3DSLight_create_FUN_00542940",
-    "receiver":false,
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CDemonLight",
+      "ptr":1
     },
     "tu":"core/setutil.cpp",
     "variadic":false
@@ -14659,10 +15221,10 @@
     "instructions":15,
     "method":"reset",
     "name":"core_setutil.cpp_C3DSLight_reset_FUN_00542f40",
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/setutil.cpp",
@@ -14936,15 +15498,58 @@
       "00548120",
       "00585b20"
     ],
-    "conv":"unknown",
+    "cls":"CSkeleton",
+    "conv":"__stack5_esi",
     "instructions":68,
-    "method":"FUN_00548140",
-    "name":"core_skeleton.cpp_FUN_00548140",
-    "receiver":false,
+    "method":"getBoneAngleInterpolated",
+    "name":"core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00548140",
+    "params":[
+      {
+        "name":"bone_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"frame_index_1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"frame_index_2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"interpolation",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"result_out",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CQuaternion4f",
+      "ptr":1
     },
     "tu":"core/skeleton.cpp",
     "variadic":false
@@ -15453,14 +16058,32 @@
       "00583260",
       "005855f0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":134,
     "method":"computeBoneModelMatrices",
     "name":"core_skeleton.cpp_computeBoneModelMatrices_FUN_0054fcc0",
+    "params":[
+      {
+        "name":"bone_data",
+        "type":{
+          "kind":"struct",
+          "name":"SPose",
+          "ptr":1
+        }
+      },
+      {
+        "name":"instance_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDeformableModelInstance",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/skeleton.cpp",
@@ -15684,14 +16307,24 @@
   },
   {
     "addr":"00555f40",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":8,
     "method":"clearNextSfxFlagBits",
     "name":"sound_sndmain.cpp_clearNextSfxFlagBits_FUN_00555f40",
+    "params":[
+      {
+        "name":"flag_mask",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -15792,14 +16425,40 @@
       "00552f10",
       "00556fd0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":34,
     "method":"setSfxUserData",
     "name":"sound_sndmain.cpp_setSfxUserData_FUN_00556b40",
+    "params":[
+      {
+        "name":"sfx_handle",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      },
+      {
+        "name":"index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -15884,14 +16543,24 @@
       "00556fd0",
       "00558e90"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":14,
     "method":"isSampleLoaded",
     "name":"sound_sndmain.cpp_isSampleLoaded_FUN_00557540",
+    "params":[
+      {
+        "name":"sample_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -16223,10 +16892,29 @@
     "instructions":45,
     "method":"enumerateDirectSoundDevice",
     "name":"sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0055d3c0",
+    "params":[
+      {
+        "name":"device_id",
+        "type":{
+          "header":"windef",
+          "kind":"system",
+          "name":"UINT",
+          "ptr":0
+        }
+      },
+      {
+        "name":"device_info",
+        "type":{
+          "kind":"struct",
+          "name":"SSoundDeviceInfo",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"sound/snddx.cpp",
@@ -16340,11 +17028,22 @@
     "instructions":24,
     "method":"getWavOutDevice",
     "name":"sound_sndwav.cpp_getWavOutDevice_FUN_0055e540",
+    "params":[
+      {
+        "name":"device_id",
+        "type":{
+          "header":"windef",
+          "kind":"system",
+          "name":"UINT",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CWavOutDevice",
+      "ptr":1
     },
     "tu":"sound/sndwav.cpp",
     "variadic":false
@@ -16566,10 +17265,36 @@
     "instructions":17,
     "method":"drawPolygon2",
     "name":"engine_special.cpp_drawPolygon2_FUN_00565c40",
+    "params":[
+      {
+        "name":"vertex_array",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":2
+        }
+      },
+      {
+        "name":"vertex_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"render_flags",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/special.cpp",
@@ -16657,14 +17382,56 @@
   },
   {
     "addr":"005677c0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":21,
     "method":"evaluateSplineScalar",
     "name":"core_spline.cpp_evaluateSplineScalar_FUN_005677c0",
+    "params":[
+      {
+        "name":"basis",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"cp0",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"cp1",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"cp2",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"cp3",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"float",
       "ptr":0
     },
     "tu":"core/spline.cpp",
@@ -16984,15 +17751,15 @@
       "0056b370",
       "005a3cb2"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":10,
     "method":"factoryFuncTommyGun",
     "name":"core_tommygun.cpp_factoryFuncTommyGun_FUN_0056b340",
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CTommyGun",
+      "ptr":1
     },
     "tu":"core/tommygun.cpp",
     "variadic":false
@@ -17992,15 +18759,15 @@
       "00579270",
       "005a3cb2"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":10,
     "method":"factoryFuncWayPoint",
     "name":"core_waypoint.cpp_factoryFuncWayPoint_FUN_00579240",
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CWayPoint",
+      "ptr":1
     },
     "tu":"core/waypoint.cpp",
     "variadic":false
@@ -18017,14 +18784,14 @@
       "004e4330",
       "005a28f0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":77,
     "method":"openScreenDevice",
     "name":"wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"wincore/wddvmem.cpp",
@@ -18582,15 +19349,33 @@
       "005837e0",
       "005855f0"
     ],
-    "conv":"unknown",
+    "conv":"__stack_esi",
     "instructions":23,
     "method":"quaternionToMatrix3x4",
     "name":"core_xform.cpp_quaternionToMatrix3x4_FUN_00585740",
+    "params":[
+      {
+        "name":"quat_in",
+        "type":{
+          "kind":"class",
+          "name":"CQuaternion4f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"matrix_out",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"class",
+      "name":"CMatrix3x4f",
+      "ptr":1
     },
     "tu":"core/xform.cpp",
     "variadic":false
@@ -18654,10 +19439,36 @@
     "instructions":81,
     "method":"clipInterpolateRightPlane",
     "name":"core_xform.cpp_clipInterpolateRightPlane_FUN_00587340",
+    "params":[
+      {
+        "name":"vertex_a",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"vertex_b",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"vertex_out",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/xform.cpp",
@@ -18673,10 +19484,36 @@
     "instructions":81,
     "method":"clipInterpolateTopPlane",
     "name":"core_xform.cpp_clipInterpolateTopPlane_FUN_005874c0",
+    "params":[
+      {
+        "name":"vertex_a",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"vertex_b",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"vertex_out",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/xform.cpp",
@@ -19515,14 +20352,40 @@
       "00515a80",
       "00515ac0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":365,
-    "method":"FUN_005a23c0",
-    "name":"core_asgaya.cpp_FUN_005a23c0",
+    "method":"rasterizePolygonCustom",
+    "name":"core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0",
+    "params":[
+      {
+        "name":"vertex_buffer",
+        "type":{
+          "kind":"struct",
+          "name":"SRenderVertex",
+          "ptr":1
+        }
+      },
+      {
+        "name":"vertex_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"scanline_renderer",
+        "type":{
+          "kind":"funcdef",
+          "name":"CustomScanlineFunc",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/asgaya.cpp",

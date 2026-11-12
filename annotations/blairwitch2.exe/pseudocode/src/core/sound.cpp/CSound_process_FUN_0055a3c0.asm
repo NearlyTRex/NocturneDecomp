@@ -266,7 +266,7 @@ section .text
     ADD ESP,0x8                         ; 0055a626
     PUSH 0x0                            ; 0055a629
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00551190 ; 0055a62b
-        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00551190()
+        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00551190(int channel_index)
     MOV dword ptr [ESP + 0x144],EAX     ; 0055a630
     FLD float ptr [ESP + 0x144]         ; 0055a637
     ADD ESP,0x4                         ; 0055a63e
@@ -275,7 +275,7 @@ section .text
     FSTP float ptr [ESP]                ; 0055a64a
     PUSH 0x3                            ; 0055a64d
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00551100 ; 0055a64f
-        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00551100()
+        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00551100(int channel_index, float volume)
     ADD ESP,0x8                         ; 0055a654
         ;   Label: LAB_0055a654
     MOV EAX,[0x0061b5a8]                ; 0055a657 | g_CDemonSetPtr | g_CDemonSetInstance

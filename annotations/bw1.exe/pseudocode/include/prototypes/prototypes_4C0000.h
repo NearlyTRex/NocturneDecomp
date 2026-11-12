@@ -21,6 +21,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFly.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4C0000
@@ -54,8 +55,8 @@ int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004c2060(CBitFont *this
 int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004c2090(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
 int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004c20e0(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004c2150(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
-void engine_font_cpp_FUN_004c2190(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-void engine_font_cpp_FUN_004c21e0(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6 ,undefined4 param_7);
+void __cdecl engine_font_cpp_CBitFont_printF_FUN_004c2190(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format);
+void __cdecl engine_font_cpp_CBitFont_printFV_FUN_004c21e0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004c2250(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterF_FUN_004c2290(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004c22e0(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
@@ -86,9 +87,9 @@ uint engine_font_cpp_FUN_004c4b9e(int param_1,int param_2,uint param_3);
 undefined4 engine_font_cpp_FUN_004c4bf0(void);
 void engine_font_cpp_FUN_004c4c51(void);
 int * engine_font_cpp_FUN_004c4d3e(int param_1,int *param_2);
-void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004c4d80(int *param_1,int param_2);
+void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004c4d80(SRenderVertex **vertices,int vertex_count);
 void core_frankgen_cpp_staticInit_FUN_004c50f0(void);
-void core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004c5120(void);
+CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004c5120(void);
 CDemonActorType * core_frankgen_cpp_CFrankenstienMachine_getActorType_FUN_004c5140(CFrankenstienMachine *this_ptr);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_004c5150(CFrankenstienMachine *this_ptr);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004c51e0(CFrankenstienMachine *this_ptr);
@@ -108,7 +109,7 @@ void __cdecl core_gabriela_cpp_staticInit_FUN_004c6070(void);
 float core_gabriela_cpp_FUN_004c6150(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
 float __cdecl core_gabriela_cpp_flashlightBlendWeightCallback_FUN_004c6190(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 float __cdecl core_gabriela_cpp_aimRotationBlendWeightCallback_FUN_004c61e0(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *model_ptr);
-void core_gabriela_cpp_factoryFuncGabriella_FUN_004c6240(void);
+CGabriella * __cdecl core_gabriela_cpp_factoryFuncGabriella_FUN_004c6240(void);
 CDemonActorType * core_gabriela_cpp_CGabriella_getActorType_FUN_004c6260(CGabriella *this_ptr);
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004c6270(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004c6390(CGabriella *this_ptr);
@@ -140,7 +141,7 @@ void __cdecl core_gabriela_cpp_CGabriella_drawWeapon_FUN_004cb730(CGabriella *th
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004cb760(CGabriella *this_ptr,uint flags);
 void core_game_cpp_staticInit_FUN_004cb7d0(void);
 void __cdecl core_game_cpp_setupMovieRecording_FUN_004cb870(void);
-void core_game_cpp_captureDebugMovieFrame_FUN_004cb950(void);
+void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004cb950(void);
 CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004cbc80(CGame *this_ptr);
 CGame * core_game_cpp_CGame_dtor_FUN_004cbf00(CGame *this_ptr,uint flags);
 void __cdecl core_game_cpp_CGame_saveClockTime_FUN_004cbf10(CGame *this_ptr);
@@ -148,12 +149,12 @@ void core_game_cpp_FUN_004cbf20(int param_1);
 void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_004cc0c0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_displayMessage_FUN_004cc190(CGame *this_ptr,char *message,float duration);
 void __cdecl core_game_cpp_CGame_clearOverlay_FUN_004cc1f0(CGame *this_ptr);
-void __cdecl core_game_cpp_drawHealthBar_FUN_004cc210(int param_1,int param_2,int param_3,int param_4,float param_5);
+void __cdecl core_game_cpp_drawHealthBar_FUN_004cc210(int x1,int y1,int x2,int y2,float fill_percent);
 void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004cc2b0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004cc810(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setFudgeTarget_FUN_004cc9a0(CGame *this_ptr,CVector3f *fudge_target,float fudge_step);
 void __cdecl core_game_cpp_CGame_processFudge_FUN_004cc9c0(CGame *this_ptr);
-void core_game_cpp_drawCreditsLine_FUN_004ccafe(undefined4 param_1);
+void __cdecl core_game_cpp_drawCreditsLine_FUN_004ccafe(char *text_string);
 void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004ccb80(EInputCodeType key_code,char *action_name);
 void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004ccc40(CGame *this_ptr);
 void core_game_cpp_FUN_004ce580(CGame *param_1);

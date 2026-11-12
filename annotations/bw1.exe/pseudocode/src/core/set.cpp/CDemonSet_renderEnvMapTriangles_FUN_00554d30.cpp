@@ -24,6 +24,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet
   int local_50;
   int local_4c;
   int local_48;
+  CVector3i local_44;
   int local_38;
   int aiStack_34 [4];
   int local_24;
@@ -44,7 +45,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet
               (DAT_00612560,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
   }
-  engine_drender_cpp_FUN_00483ac0(DAT_00612560);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0(DAT_00612560,&local_44);
   local_20 = 0;
   if (0 < count) {
     do {
@@ -63,7 +64,8 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet
       SStack_118.vertices[1].texture_v = (uint)face_data->v_coord_1 << 8;
       SStack_118.vertices[2].texture_v = (uint)face_data->v_coord_2 << 8;
       if (this_ptr->skip_normal_normalization != 0) {
-        engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0(0x2036428,&SStack_118);
+        engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0
+                  ((CVector3i *)0x2036428,(SMRGLPrimitiveTriangle *)&SStack_118);
       }
       local_18 = 0;
       if (0 < SStack_118.base.base.count) {

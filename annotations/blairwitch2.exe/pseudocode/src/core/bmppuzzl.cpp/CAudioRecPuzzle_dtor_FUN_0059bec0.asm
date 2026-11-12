@@ -11,7 +11,7 @@
 ;   WatcomTypeInfo g_CAudioRecPuzzleTypeInfo
 ;
 ; Called Functions:
-;   core_bmppuzzl.cpp_FUN_0059bfc0
+;   core_bmppuzzl.cpp_CAlphaBitmap_arrdtor30_FUN_0059bfc0
 ;   core_zombie.cpp_FUN_0059ab50
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
@@ -31,8 +31,8 @@ section .text
     PUSH 0x0                            ; 0059becc
     ADD EBX,0x4c                        ; 0059bece
     PUSH EBX                            ; 0059bed1
-    CALL core_bmppuzzl.cpp_FUN_0059bfc0 ; 0059bed2
-        ;   XREF to: 0059bfc0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_0059bfc0()
+    CALL core_bmppuzzl.cpp_CAlphaBitmap_arrdtor30_FUN_0059bfc0 ; 0059bed2
+        ;   XREF to: 0059bfc0 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * core_bmppuzzl.cpp_CAlphaBitmap_arrdtor30_FUN_0059bfc0(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0059bed7
     PUSH 0x0                            ; 0059beda
     SUB EAX,0x48                        ; 0059bedc
@@ -58,7 +58,7 @@ section .text
         ;   Label: LAB_0059bf05
     PUSH EBX                            ; 0059bf0a
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 0059bf0b
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0059bf10
     PUSH EAX                            ; 0059bf13
     CALL crt_unknown.c_FUN_005b7fce     ; 0059bf14

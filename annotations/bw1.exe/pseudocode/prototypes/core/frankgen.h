@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_frankgen.cpp_factoryFuncFrankenstienMachine_FUN_004c5120
 // Address: 004c5120
-void factoryFuncFrankenstienMachine(void);
+CFrankenstienMachine * __cdecl factoryFuncFrankenstienMachine(void);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_getActorType_FUN_004c5140
 // Address: 004c5140

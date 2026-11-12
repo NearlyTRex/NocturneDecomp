@@ -20,18 +20,18 @@ uint core_setdir_cpp_FUN_00538d10(CDemonSet *param_1,CDemonActor *param_2,int pa
   int iVar5;
   float fVar6;
   int iVar7;
-  C3DSCamera *pCVar8;
-  CZThumb *this_ptr_01;
-  uint *puVar9;
-  int iVar10;
-  uint *puVar11;
-  byte bVar12;
-  float10 fVar13;
+  C3DSCamera *this_ptr_01;
+  CZThumb *this_ptr_02;
+  uint *puVar8;
+  int iVar9;
+  uint *puVar10;
+  byte bVar11;
+  float10 fVar12;
   float afStackY_10f4 [947];
   CBoundingBox3D *in_stack_fffffde0;
   CBoundingBox3D *in_stack_fffffde8;
   CVector3f *position;
-  float *pfVar14;
+  float *pfVar13;
   CBoundingBox3D *in_stack_fffffdf4;
   CVector3i aCStack_208 [7];
   int iStack_1b0;
@@ -88,9 +88,9 @@ uint core_setdir_cpp_FUN_00538d10(CDemonSet *param_1,CDemonActor *param_2,int pa
   CLocation *pCStack_24;
   float *pfStack_20;
   int iStack_1c;
-  CLocation *pCStack_18;
+  CVector3f *pCStack_18;
   
-  bVar12 = 0;
+  bVar11 = 0;
   local_54 = 0;
   if (param_2 == (CDemonActor *)0x0) {
     if (param_1->selected_camera_index < 0) {
@@ -123,21 +123,21 @@ LAB_00538d7f:
   local_58 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(this_ptr_00);
   engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,0);
   (*((param_2->vtable)._ub)->getBoundingBox)(param_2,in_stack_fffffde0);
-  puVar9 = auStack_18c;
-  puVar11 = &local_164;
+  puVar8 = auStack_18c;
+  puVar10 = &local_164;
   for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar11 = *puVar9;
-    puVar9 = puVar9 + (uint)bVar12 * -2 + 1;
-    puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
+    *puVar10 = *puVar8;
+    puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
+    puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
   }
   piStack_30 = (int *)&stack0xfffffdf0;
   iStack_1c = 0;
   do {
     core_box_cpp_FUN_0041a600(&fStack_15c,iStack_1c);
     fStack_90 = afStack_fc[3];
-    afStack_c0[(uint)bVar12 * -2 + 0xd] = afStack_fc[(uint)bVar12 * -2 + 4];
-    afStack_c0[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 0xe] =
-         afStack_fc[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 5];
+    afStack_c0[(uint)bVar11 * -2 + 0xd] = afStack_fc[(uint)bVar11 * -2 + 4];
+    afStack_c0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xe] =
+         afStack_fc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 5];
     *piStack_30 = (int)ROUND(fStack_90 * _DAT_005fb33c);
     piStack_30[1] = (int)ROUND(fStack_8c * _DAT_005fb33c);
     piStack_30[2] = (int)ROUND(fStack_88 * _DAT_005fb33c);
@@ -148,16 +148,16 @@ LAB_00538d7f:
   fStack_a4 = fStack_158 + fStack_14c;
   fStack_a0 = fStack_154 + fStack_148;
   afStack_fc[0] = fStack_15c + fStack_150;
-  afStack_fc[(uint)bVar12 * -2 + 1] = afStack_c0[(uint)bVar12 * -2 + 7];
-  afStack_fc[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 2] =
-       afStack_c0[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 8];
+  afStack_fc[(uint)bVar11 * -2 + 1] = afStack_c0[(uint)bVar11 * -2 + 7];
+  afStack_fc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 2] =
+       afStack_c0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 8];
   afStack_c0[3] = afStack_fc[0] * _DAT_005e5ff5;
   fStack_b0 = afStack_fc[1] * _DAT_005e5ff5;
   fStack_ac = afStack_fc[2] * _DAT_005e5ff5;
   fStack_9c = afStack_fc[0] * _DAT_005e5ff5;
-  afStack_c0[(uint)bVar12 * -2 + 10] = afStack_c0[(uint)bVar12 * -2 + 4];
-  afStack_c0[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 0xb] =
-       afStack_c0[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 5];
+  afStack_c0[(uint)bVar11 * -2 + 10] = afStack_c0[(uint)bVar11 * -2 + 4];
+  afStack_c0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xb] =
+       afStack_c0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 5];
   iStack_1b0 = (int)ROUND(fStack_9c * _DAT_005fb33c);
   iStack_1ac = (int)ROUND(fStack_98 * _DAT_005fb33c);
   iStack_1a8 = (int)ROUND(fStack_94 * _DAT_005fb33c);
@@ -172,9 +172,9 @@ LAB_00538d7f:
     puVar2 = puVar3;
   } while (puVar3 != &DAT_0061bb2c);
   if (param_3 == 0) {
-    fVar13 = (float10)(param_1->camera_count * 10) * (float10)g_CGamePtr->delta_time_float;
+    fVar12 = (float10)(param_1->camera_count * 10) * (float10)g_CGamePtr->delta_time_float;
     round();
-    iStack_64 = (int)ROUND(fVar13);
+    iStack_64 = (int)ROUND(fVar12);
     if (iStack_64 < 3) {
       iStack_64 = 3;
     }
@@ -195,20 +195,20 @@ LAB_00538d7f:
     param_1->previous_best_camera_timer = 0.0;
   }
   (*((param_2->vtable)._ub)->getBoundingBox)(param_2,in_stack_fffffde8);
-  puVar9 = auStack_19c;
-  puVar11 = auStack_12c;
+  puVar8 = auStack_19c;
+  puVar10 = auStack_12c;
   for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar11 = *puVar9;
-    puVar9 = puVar9 + (uint)bVar12 * -2 + 1;
-    puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
+    *puVar10 = *puVar8;
+    puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
+    puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
   }
   fVar4 = core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_0041b6b0(&CStack_124);
   position = &CStack_d0;
-  puVar9 = (uint *)((int)param_2 + (uint)bVar12 * -8 + 0x24);
+  puVar8 = (uint *)((int)param_2 + (uint)bVar11 * -8 + 0x24);
   CStack_d0.x = (param_2->location).position.x;
-  *(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + 4) = *puVar9;
-  *(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
-       puVar9[(uint)bVar12 * -2 + 1];
+  *(uint *)((int)&CStack_d0 + (uint)bVar11 * -8 + 4) = *puVar8;
+  *(uint *)((int)&CStack_d0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+       puVar8[(uint)bVar11 * -2 + 1];
   CStack_d0.y = CStack_d0.y + _DAT_005e6005;
   fStack_38 = fVar4 * (float)_DAT_005e5ffd + 1.0;
   iVar7 = core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_0053a760(param_1,position);
@@ -216,23 +216,23 @@ LAB_00538d7f:
   afStack_78[0] = CStack_124.min.y + CStack_124.max.y;
   afStack_78[1] = CStack_124.min.z + CStack_124.max.z;
   fStack_100 = CStack_124.min.x + CStack_124.max.x;
-  afStack_fc[(uint)bVar12 * -2] = afStack_78[(uint)bVar12 * -2];
-  afStack_fc[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
-       afStack_78[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
+  afStack_fc[(uint)bVar11 * -2] = afStack_78[(uint)bVar11 * -2];
+  afStack_fc[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+       afStack_78[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
   iStack_2c = iVar7;
-  pfVar14 = afStack_fc + 8;
+  pfVar13 = afStack_fc + 8;
   fStack_c4 = fStack_100 * _DAT_005e5ff5;
   afStack_c0[0] = afStack_fc[0] * _DAT_005e5ff5;
   afStack_c0[1] = afStack_fc[1] * _DAT_005e5ff5;
   fStack_dc = fStack_100 * _DAT_005e5ff5;
-  afStack_d8[(uint)bVar12 * -2] = afStack_c0[(uint)bVar12 * -2];
-  afStack_d8[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
-       afStack_c0[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
-  core_actor_cpp_FUN_00408d70(param_2,pfVar14);
+  afStack_d8[(uint)bVar11 * -2] = afStack_c0[(uint)bVar11 * -2];
+  afStack_d8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+       afStack_c0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
+  core_actor_cpp_FUN_00408d70(param_2,pfVar13);
   CStack_10c.x = afStack_c0[2];
-  *(float *)((int)&CStack_10c + (uint)bVar12 * -8 + 4) = afStack_c0[(uint)bVar12 * -2 + 3];
-  *(float *)((int)&CStack_10c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
-       afStack_c0[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4];
+  *(float *)((int)&CStack_10c + (uint)bVar11 * -8 + 4) = afStack_c0[(uint)bVar11 * -2 + 3];
+  *(float *)((int)&CStack_10c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
+       afStack_c0[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
   if (&CStack_d0 != &CStack_10c) {
     CStack_d0.x = CStack_10c.x;
     CStack_d0.y = CStack_10c.y;
@@ -254,11 +254,11 @@ LAB_00538d7f:
     core_main_c_FUN_004e4500("saveZBufferTable - already saved!");
   }
   if (0 < iVar7) {
-    iVar10 = 0;
+    iVar9 = 0;
     do {
-      iVar5 = iVar10 + 4;
-      *(uint *)(&DAT_020b0258 + iVar10) = *(uint *)(&DAT_01c2b64c + iVar10);
-      iVar10 = iVar5;
+      iVar5 = iVar9 + 4;
+      *(uint *)(&DAT_020b0258 + iVar9) = *(uint *)(&DAT_01c2b64c + iVar9);
+      iVar9 = iVar5;
     } while (iVar5 < iVar7 * 4);
   }
   fStack_3c = _DAT_005fb358 * _DAT_005fb358;
@@ -275,12 +275,12 @@ LAB_00538d7f:
        fVar6 * fVar6 + fVar1 * fVar1 + fVar4 * fVar4 <= fStack_38)) {
       *(CDemonActor **)(&DAT_020a2798 + _DAT_020a2794 * 4) = this_ptr;
       (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,in_stack_fffffdf4);
-      puVar9 = &uStack_130;
-      puVar11 = &uStack_168;
+      puVar8 = &uStack_130;
+      puVar10 = &uStack_168;
       for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *puVar11 = *puVar9;
-        puVar9 = puVar9 + (uint)bVar12 * -2 + 1;
-        puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
+        *puVar10 = *puVar8;
+        puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
+        puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
       }
       iVar7 = _DAT_020a2794 * 0x18;
       if ((uint *)(iVar7 + 0x20a46d8) != &uStack_160) {
@@ -297,31 +297,31 @@ LAB_00538d7f:
     }
     pfStack_20 = pfStack_20 + 1;
   }
-  pCStack_18 = &param_2->location;
+  pCStack_18 = &(param_2->location).position;
   piStack_30 = (int *)(_DAT_005fb354 * _DAT_005fb354);
   pCStack_34 = param_1->cameras;
-  while ((iVar10 = _DAT_02093938, iVar7 = DAT_006141bc, 0 < local_5c &&
+  while ((iVar9 = _DAT_02093938, iVar7 = DAT_006141bc, 0 < local_5c &&
          (_DAT_02093938 < param_1->camera_count))) {
     if (iStack_2c == param_1->cameras[_DAT_02093938].vdir_zone) {
-      pCVar8 = pCStack_34 + _DAT_02093938;
-      if (pCVar8->enabled == 0) {
+      this_ptr_01 = pCStack_34 + _DAT_02093938;
+      if (this_ptr_01->enabled == 0) {
         fVar4 = 0.0;
         fVar6 = fVar4;
       }
       else {
-        fVar4 = (pCVar8->position).x - (pCStack_18->position).x;
-        fVar1 = (pCVar8->position).y - (pCStack_18->position).y;
-        fVar6 = (pCVar8->position).z - (pCStack_18->position).z;
+        fVar4 = (this_ptr_01->position).x - pCStack_18->x;
+        fVar1 = (this_ptr_01->position).y - pCStack_18->y;
+        fVar6 = (this_ptr_01->position).z - pCStack_18->z;
         if (fVar6 * fVar6 + fVar1 * fVar1 + fVar4 * fVar4 <= (float)piStack_30) {
           iVar7 = core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20
-                            (pCVar8,pCStack_18,fStack_38);
+                            (this_ptr_01,pCStack_18,fStack_38);
           fVar4 = 0.0;
           fVar6 = fVar4;
           if (iVar7 != 0) {
-            this_ptr_01 = g_CZThumbPool + iVar10 * 6;
-            if (pCVar8->is_panning == 0) {
+            this_ptr_02 = g_CZThumbPool + iVar9 * 6;
+            if (this_ptr_01->is_panning == 0) {
               fVar4 = core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_005386e0
-                                (this_ptr_01,param_2,aCStack_208,
+                                (this_ptr_02,param_2,aCStack_208,
                                  (SMRGLHeaderPrimitive *)&DAT_0061b97c,1);
               fVar6 = fVar4;
             }
@@ -329,12 +329,12 @@ LAB_00538d7f:
               fVar4 = 0.0;
               do {
                 fVar6 = core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_005386e0
-                                  (this_ptr_01,param_2,aCStack_208,
+                                  (this_ptr_02,param_2,aCStack_208,
                                    (SMRGLHeaderPrimitive *)&DAT_0061b97c,0);
                 fVar4 = fVar6 + fVar4;
-                this_ptr_01 = this_ptr_01 + 1;
+                this_ptr_02 = this_ptr_02 + 1;
                 fVar6 = fVar4;
-              } while (this_ptr_01 != g_CZThumbPool + iVar10 * 6 + 6);
+              } while (this_ptr_02 != g_CZThumbPool + iVar9 * 6 + 6);
             }
           }
         }
@@ -368,11 +368,11 @@ LAB_00538d7f:
     core_main_c_FUN_004e4500("saveZBufferTable - not saved!");
   }
   if (0 < iVar7) {
-    iVar10 = 0;
+    iVar9 = 0;
     do {
-      iVar5 = iVar10 + 4;
-      *(uint *)(&DAT_01c2b64c + iVar10) = *(uint *)(&DAT_020b0258 + iVar10);
-      iVar10 = iVar5;
+      iVar5 = iVar9 + 4;
+      *(uint *)(&DAT_01c2b64c + iVar9) = *(uint *)(&DAT_020b0258 + iVar9);
+      iVar9 = iVar5;
     } while (iVar5 < iVar7 * 4);
   }
   _DAT_020b0258 = 0;
@@ -381,17 +381,17 @@ LAB_00538d7f:
   if (param_1->camera_count <= _DAT_02093938) {
     iVar7 = -1;
     fVar4 = -1.0;
-    iVar10 = 0;
+    iVar9 = 0;
     if (0 < param_1->camera_count) {
       iVar5 = 0;
       do {
         if (fVar4 < *(float *)(&DAT_0209394c + iVar5)) {
           fVar4 = *(float *)(&DAT_0209394c + iVar5);
-          iVar7 = iVar10;
+          iVar7 = iVar9;
         }
-        iVar10 = iVar10 + 1;
+        iVar9 = iVar9 + 1;
         iVar5 = iVar5 + 4;
-      } while (iVar10 < param_1->camera_count);
+      } while (iVar9 < param_1->camera_count);
     }
     if (-1 < iVar7) {
       if ((param_1->selected_camera_index < 0) ||

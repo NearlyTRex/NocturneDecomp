@@ -1,7 +1,7 @@
 [
   {
     "addr":"0055bb93",
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "data_refs":[
       "00403baa",
       "00403c52",
@@ -78,10 +78,36 @@
     "instructions":509,
     "method":"renderMMXPerspectiveScanline16",
     "name":"engine_special.cpp_renderMMXPerspectiveScanline16_FUN_0055bb93",
+    "params":[
+      {
+        "name":"left_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/special.cpp",

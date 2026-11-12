@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 163,
+    "complexity_score": 166,
     "cross_reference_count": 5,
     "function_call_count": 9,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 61,
     "suspect_count": 9,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 211
+    "total_lines": 214
   },
   "cross_references": [
     {
@@ -82,9 +82,19 @@
       "name": "crt_watcom.c__memset_FUN_00495ec0"
     },
     {
+      "addr": "0046d2f0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0"
+    },
+    {
       "addr": "0046cb90",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90"
+    },
+    {
+      "addr": "0046d090",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090"
     },
     {
       "addr": "0046d520",
@@ -95,16 +105,6 @@
       "addr": "0046cc40",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40"
-    },
-    {
-      "addr": "0046d090",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046d090"
-    },
-    {
-      "addr": "0046d2f0",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046d2f0"
     }
   ],
   "globals": [
@@ -291,6 +291,32 @@
     },
     "pcode_op_count": 624
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044a020",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00462820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00472a80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0044e470",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9922
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -341,15 +367,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 32,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046d090(DAT_005f2afc,(this_ptr->base).base.focal_length);",
+      "text": "(DAT_005f2afc,(this_ptr->base).base.focal_length);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,&(this_ptr->base).base.rotation_matrix);",
@@ -357,7 +383,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 50,
       "match": "DAT_01c5faec",
       "severity": "mild",
       "text": "pCVar3->saved_screen_buffer_rows[0] = *(void **)(&DAT_01c5faec + iVar2 * 4);",
@@ -365,7 +391,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 51,
       "match": "DAT_01c5faec",
       "severity": "mild",
       "text": "*(ushort **)(&DAT_01c5faec + iVar2 * 4) =",
@@ -373,7 +399,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 58,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(DAT_005f2afc,1);",
@@ -381,7 +407,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 51,
+      "line": 54,
       "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pCVar3 = (CDemonLight *)&(pCVar3->base).base.position;",

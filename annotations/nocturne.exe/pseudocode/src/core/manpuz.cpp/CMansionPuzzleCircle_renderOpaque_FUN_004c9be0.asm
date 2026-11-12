@@ -22,8 +22,8 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004ca790
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004ca710
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_004cabf0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
@@ -91,13 +91,13 @@ section .text
     PUSH EBX                            ; 004c9c6f
         ;   Label: LAB_004c9c6f
     PUSH ESI                            ; 004c9c70
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710 ; 004c9c71
-        ;   XREF to: 004ca710 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710(CMansionPuzzleCircle * this_ptr, int panel_index)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004ca710 ; 004c9c71
+        ;   XREF to: 004ca710 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004ca710(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004c9c76
     PUSH EBX                            ; 004c9c79
     PUSH ESI                            ; 004c9c7a
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790 ; 004c9c7b
-        ;   XREF to: 004ca790 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790(CMansionPuzzleCircle * this_ptr, int gem_index)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004ca790 ; 004c9c7b
+        ;   XREF to: 004ca790 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004ca790(CMansionPuzzleCircle * this_ptr, int gem_index)
     INC EBX                             ; 004c9c80
     ADD ESP,0x8                         ; 004c9c81
     CMP EBX,0xc                         ; 004c9c84

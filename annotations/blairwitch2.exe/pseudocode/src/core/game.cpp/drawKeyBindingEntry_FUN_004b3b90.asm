@@ -35,7 +35,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x118]     ; 004b3ba2
     PUSH ECX                            ; 004b3ba9
     CALL core_menu.cpp_getKeyDisplayName_FUN_004ee960 ; 004b3baa
-        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; undefined core_menu.cpp_getKeyDisplayName_FUN_004ee960()
+        ;   XREF to: 004ee960 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004b3baf
     PUSH EAX                            ; 004b3bb2
     PUSH 0x5d7333                       ; 004b3bb3

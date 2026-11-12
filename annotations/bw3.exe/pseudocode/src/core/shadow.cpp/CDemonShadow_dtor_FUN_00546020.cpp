@@ -18,7 +18,7 @@ CDemonShadow * core_shadow_cpp_CDemonShadow_dtor_FUN_00546020(CDemonShadow *this
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDemonShadowTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDemonShadowTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

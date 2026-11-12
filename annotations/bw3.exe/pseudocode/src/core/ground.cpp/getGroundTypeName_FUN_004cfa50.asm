@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * core_ground_cpp_getGroundTypeName_FUN_004cfa50(undefined4 param_1)
+; char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004cfa50(EGroundType type)
 ;
+; Parameters:
+; EGroundType      Stack[0x4]:4   type
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DEFAULT_005c4944

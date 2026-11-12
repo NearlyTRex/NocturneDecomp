@@ -12,13 +12,13 @@ uint shape_edittool_cpp_FUN_0049517e(CEditorTools *param_1,uint param_2,char *pa
   char cVar1;
   char *pcVar2;
   int iVar3;
-  uint uVar4;
-  int iVar5;
-  uint uVar6;
-  int iVar7;
-  uint *puVar8;
-  char *pcVar9;
-  byte bVar10;
+  _tm *time_ptr;
+  int iVar4;
+  uint uVar5;
+  int iVar6;
+  uint *puVar7;
+  char *pcVar8;
+  byte bVar9;
   CPickList CStack_1ee0;
   char acStack_1b20 [560];
   CFileFinder CStack_18f0;
@@ -48,23 +48,24 @@ uint shape_edittool_cpp_FUN_0049517e(CEditorTools *param_1,uint param_2,char *pa
   char acStack_2c4 [256];
   char acStack_1c4 [200];
   char acStack_fc [200];
-  byte auStack_34 [32];
+  char acStack_34 [32];
   uint uStack_14;
   char acStack_10 [4];
   char acStack_c [4];
   
-  bVar10 = 0;
+  bVar9 = 0;
   pcVar2 = _getcwd(acStack_14d0,0x104);
   if (pcVar2 == (char *)0x0) {
-    shape_edittool_cpp_FUN_004943a0(param_1,"Error getting current directory.");
+    shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+              (param_1,"Error getting current directory.");
     return 0;
   }
-  puVar8 = (uint *)0x61abd0;
+  puVar7 = (uint *)0x61abd0;
   pcVar2 = acStack_12c8;
-  for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(uint *)pcVar2 = *puVar8;
-    puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
-    pcVar2 = pcVar2 + ((uint)bVar10 * -2 + 1) * 4;
+  for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *(uint *)pcVar2 = *puVar7;
+    puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
+    pcVar2 = pcVar2 + ((uint)bVar9 * -2 + 1) * 4;
   }
   if ((param_5 & 1) != 0) {
     engine_dosio_cpp_splitPath_FUN_00479580(param_4,acStack_c,acStack_bc4,acStack_ec4,acStack_3c4);
@@ -79,11 +80,11 @@ uint shape_edittool_cpp_FUN_0049517e(CEditorTools *param_1,uint param_2,char *pa
 LAB_004951da:
   do {
     pcVar2 = "[ERROR: Can't get current directory.]";
-    pcVar9 = acStack_17dc;
-    for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *(uint *)pcVar9 = *(uint *)pcVar2;
-      pcVar2 = pcVar2 + ((uint)bVar10 * -2 + 1) * 4;
-      pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
+    pcVar8 = acStack_17dc;
+    for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *(uint *)pcVar8 = *(uint *)pcVar2;
+      pcVar2 = pcVar2 + ((uint)bVar9 * -2 + 1) * 4;
+      pcVar8 = pcVar8 + ((uint)bVar9 * -2 + 1) * 4;
     }
     _getcwd(acStack_17dc,0x104);
     _sprintf(acStack_1b20,(char *)0x5dbe35);
@@ -98,18 +99,18 @@ LAB_004951da:
         engine_dosio_cpp_splitPath_FUN_00479580
                   (CStack_18f0.filename,(char *)0x0,(char *)0x0,acStack_dc4,&cStack_4c4);
         if (cStack_4c4 == '.') {
-          uVar6 = 0xffffffff;
+          uVar5 = 0xffffffff;
           pcVar2 = &cStack_4c4;
           do {
-            if (uVar6 == 0) break;
-            uVar6 = uVar6 - 1;
+            if (uVar5 == 0) break;
+            uVar5 = uVar5 - 1;
             cVar1 = *pcVar2;
-            pcVar2 = pcVar2 + (uint)bVar10 * -2 + 1;
+            pcVar2 = pcVar2 + (uint)bVar9 * -2 + 1;
           } while (cVar1 != '\0');
-          memmove(&cStack_4c4,auStack_4c3,~uVar6 - 1);
+          memmove(&cStack_4c4,auStack_4c3,~uVar5 - 1);
         }
-        uVar4 = _localtime(&CStack_18f0.timestamp);
-        _strftime(auStack_34,0x1e,"\t%m/%d/%y %I:%M:%S %p",uVar4);
+        time_ptr = _localtime((time_t *)&CStack_18f0.timestamp);
+        _strftime(acStack_34,0x1e,"\t%m/%d/%y %I:%M:%S %p",time_ptr);
         _sprintf(acStack_fc,(char *)0x5dbe55);
         strupr(acStack_fc);
         shape_edittool_cpp_CStrList_add_FUN_004994d0(&CStack_1ee0.base,acStack_fc);
@@ -117,25 +118,25 @@ LAB_004951da:
       engine_dosio_cpp_CFileFinder_findNext_FUN_004793e0(&CStack_18f0);
     }
     shape_edittool_cpp_CStrList_sortAll_FUN_004997f0(&CStack_1ee0.base);
-    iVar5 = CStack_1ee0.base.item_count;
-    iVar7 = -1;
+    iVar4 = CStack_1ee0.base.item_count;
+    iVar6 = -1;
     if (acStack_12c8[0] != '\0') {
-      iVar7 = 0;
+      iVar6 = 0;
       if (0 < CStack_1ee0.base.item_count) {
         do {
-          shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_9c4,iVar7,0)
+          shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_9c4,iVar6,0)
           ;
-          shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_5c4,iVar7,1)
+          shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_5c4,iVar6,1)
           ;
           engine_dosio_cpp_makePath_FUN_004795b0
                     (acStack_15d4,(char *)0x0,(char *)0x0,acStack_9c4,acStack_5c4);
           iVar3 = _stricmp(acStack_15d4,acStack_12c8);
           if (iVar3 == 0) break;
-          iVar7 = iVar7 + 1;
-        } while (iVar7 < CStack_1ee0.base.item_count);
+          iVar6 = iVar6 + 1;
+        } while (iVar6 < CStack_1ee0.base.item_count);
       }
-      if (CStack_1ee0.base.item_count <= iVar7) {
-        iVar7 = -1;
+      if (CStack_1ee0.base.item_count <= iVar6) {
+        iVar6 = -1;
       }
       acStack_12c8[0] = '\0';
     }
@@ -152,15 +153,15 @@ LAB_004951da:
           engine_dosio_cpp_splitPath_FUN_00479580
                     (CStack_18f0.filename,(char *)0x0,(char *)0x0,acStack_ac4,&cStack_6c4);
           if (cStack_6c4 == '.') {
-            uVar6 = 0xffffffff;
+            uVar5 = 0xffffffff;
             pcVar2 = &cStack_6c4;
             do {
-              if (uVar6 == 0) break;
-              uVar6 = uVar6 - 1;
+              if (uVar5 == 0) break;
+              uVar5 = uVar5 - 1;
               cVar1 = *pcVar2;
-              pcVar2 = pcVar2 + (uint)bVar10 * -2 + 1;
+              pcVar2 = pcVar2 + (uint)bVar9 * -2 + 1;
             } while (cVar1 != '\0');
-            memmove(&cStack_6c4,auStack_6c3,~uVar6 - 1);
+            memmove(&cStack_6c4,auStack_6c3,~uVar5 - 1);
           }
           _sprintf(acStack_1c4,(char *)0x5dbe73);
           strupr(acStack_1c4);
@@ -171,36 +172,37 @@ LAB_004951da:
 LAB_004953ae:
       engine_dosio_cpp_CFileFinder_findNext_FUN_004793e0(&CStack_18f0);
     }
-    shape_edittool_cpp_FUN_0049c3e0(&CStack_1ee0,iVar5,CStack_1ee0.base.item_count + -1);
+    shape_edittool_cpp_FUN_0049c3e0(&CStack_1ee0,iVar4,CStack_1ee0.base.item_count + -1);
     shape_edittool_cpp_CStrList_add_FUN_004994d0(&CStack_1ee0.base,"(Change Path)");
-    iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0
-                      (&CStack_1ee0,acStack_1b20,iVar7,0);
-    if (iVar7 < 0) goto LAB_004956e3;
-    if (CStack_1ee0.base.item_count + -1 <= iVar7) {
-      puVar8 = (uint *)0x61ade0;
+    iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0
+                      (&CStack_1ee0,acStack_1b20,iVar6,0);
+    if (iVar6 < 0) goto LAB_004956e3;
+    if (CStack_1ee0.base.item_count + -1 <= iVar6) {
+      puVar7 = (uint *)0x61ade0;
       pcVar2 = acStack_16d8;
-      for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(uint *)pcVar2 = *puVar8;
-        puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
-        pcVar2 = pcVar2 + ((uint)bVar10 * -2 + 1) * 4;
+      for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
+        *(uint *)pcVar2 = *puVar7;
+        puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
+        pcVar2 = pcVar2 + ((uint)bVar9 * -2 + 1) * 4;
       }
-      while ((iVar5 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00496150
-                                (param_1,"Enter new path",acStack_16d8,0x104,1), iVar5 != 0
-             && (iVar5 = FUN_005c26c0(acStack_16d8), iVar5 != 0))) {
-        shape_edittool_cpp_FUN_004943a0(param_1,"Can't change to %s",acStack_16d8);
+      while ((iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00496150
+                                (param_1,"Enter new path",acStack_16d8,0x104,1), iVar4 != 0
+             && (iVar4 = FUN_005c26c0(acStack_16d8), iVar4 != 0))) {
+        shape_edittool_cpp_CEditorTools_showError_FUN_004943a0(param_1,"Can't change to %s")
+        ;
         FUN_005c26c0(acStack_17dc);
       }
       engine_dosio_cpp_CFileFinder_dtor_FUN_00479340(&CStack_18f0,0);
       shape_edittool_cpp_CPickList_dtor_FUN_0049a710(&CStack_1ee0,0);
       goto LAB_004951da;
     }
-    if (iVar7 < iVar5) {
+    if (iVar6 < iVar4) {
       engine_dosio_cpp_splitPath_FUN_00479580
                 (acStack_17dc,acStack_10,acStack_7c4,acStack_cc4,acStack_2c4);
       engine_dosio_cpp_makePath_FUN_004795b0
                 (acStack_8c4,(char *)0x0,acStack_7c4,acStack_cc4,acStack_2c4);
-      shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_cc4,iVar7,0);
-      shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_2c4,iVar7,1);
+      shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_cc4,iVar6,0);
+      shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_2c4,iVar6,1);
       engine_dosio_cpp_makePath_FUN_004795b0(param_4,acStack_10,acStack_8c4,acStack_cc4,acStack_2c4)
       ;
       uStack_14 = 1;
@@ -210,8 +212,8 @@ LAB_004956e3:
       FUN_005c26c0(acStack_14d0);
       return uStack_14;
     }
-    shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_10c4,iVar7,0);
-    shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_11c4,iVar7,1);
+    shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_10c4,iVar6,0);
+    shape_edittool_cpp_CStrList_getFieldAt_FUN_004998b0(&CStack_1ee0.base,acStack_11c4,iVar6,1);
     engine_dosio_cpp_makePath_FUN_004795b0
               (acStack_fc4,(char *)0x0,(char *)0x0,acStack_10c4,acStack_11c4);
     FUN_005c26c0(acStack_fc4);

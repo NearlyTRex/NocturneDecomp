@@ -14,7 +14,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_archive_FUN_0040e400(CAmmoBox *this_ptr)
   core_actor_cpp_archiveString_FUN_0040b440(this_ptr->weapon_class_name,"weaponClassName");
   core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->ammo_count,"ammoCount");
   core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->ammo_type,"ammoType");
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->open_pct,0);
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->open_pct,(char *)0x0);
   if (1 < g_CAmmoBoxClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->item,&DAT_005d3235);
   }

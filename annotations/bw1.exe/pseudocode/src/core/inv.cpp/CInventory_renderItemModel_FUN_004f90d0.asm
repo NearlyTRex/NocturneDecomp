@@ -82,12 +82,12 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00
+;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
+;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
 ;   engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
-;   engine_drender.cpp_FUN_004839b0
-;   engine_drender.cpp_FUN_00483c10
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -183,8 +183,8 @@ section .text
     MOV EDX,dword ptr [0x00622c18]      ; 004f9208 | g_CDemonSetPtr
     PUSH EDI                            ; 004f920e | DAT_01bc120c
     MOV dword ptr [EDX + 0x15ae90],EAX  ; 004f920f | g_CDemonSetInstance.light_direction.z
-    CALL engine_drender.cpp_FUN_00483c10 ; 004f9215
-        ;   XREF to: 00483c10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483c10()
+    CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10 ; 004f9215
+        ;   XREF to: 00483c10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00483c10(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 004f921a
     PUSH EBX                            ; 004f921d
     CALL core_inv.cpp_FUN_004f60c0      ; 004f921e
@@ -283,8 +283,8 @@ section .text
     MOV ESI,dword ptr [0x00612560]      ; 004f9312 | DAT_00612560
     PUSH 0x42100000                     ; 004f9318
     PUSH ESI                            ; 004f931d | DAT_01bc120c
-    CALL engine_drender.cpp_FUN_004839b0 ; 004f931e
-        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_004839b0()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0 ; 004f931e
+        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004f9323
     PUSH 0x2c8af28                      ; 004f9326 | DAT_02c8af28
     MOV EDI,dword ptr [0x00612560]      ; 004f932b | DAT_00612560
@@ -347,7 +347,7 @@ section .text
     PUSH EDI                            ; 004f93c8
     PUSH EBX                            ; 004f93c9
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004f93ca
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     LEA EDX,[EAX + 0x66c]               ; 004f93cf
     LEA EAX,[EBP + 0x3a]                ; 004f93d5
     ADD ESP,0x8                         ; 004f93d8
@@ -377,7 +377,7 @@ section .text
     PUSH EAX                            ; 004f9413
     PUSH EBX                            ; 004f9414
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004f9415
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004f941a
     MOV EBX,EAX                         ; 004f941d
     TEST EAX,EAX                        ; 004f941f

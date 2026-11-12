@@ -33,18 +33,16 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b7f90(CGame *this_ptr)
   local_14 = 0.0;
   local_1c = 0;
   engine_console_cpp_CConsole_reset_FUN_00442190(g_CConsolePtr);
-  engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"Blair Witch 3 started\n");
-  engine_console_cpp_FUN_00441ff0
-            (g_CConsolePtr,"game.cpp built on %s %s\n\n","Oct 30 2000",
-             "16:06:32");
-  engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"System RAM: %d\n",_DAT_02d21b88);
+  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"Blair Witch 3 started\n");
+  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"game.cpp built on %s %s\n\n");
+  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"System RAM: %d\n");
   local_18 = 1;
-  engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"Swap file: %d\n",_DAT_02d21b8c);
+  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"Swap file: %d\n");
   shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004819e0(g_CEditorToolsPtr,local_124)
   ;
-  engine_console_cpp_FUN_00441ff0(g_CConsolePtr,&DAT_005c2661,local_124);
+  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,&DAT_005c2661);
   local_24 = (byte *)&local_8a4;
-  engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"ESP: %08X\n",&local_8a4);
+  engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"ESP: %08X\n");
   this_ptr->camera_view_index = 0;
   this_ptr->is_paused = 0;
   this_ptr->is_game_active = 1;

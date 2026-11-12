@@ -3507,8 +3507,8 @@ section .text
     PUSH ESI                            ; 0050173c
     MOV ECX,dword ptr [0x005be368]      ; 0050173d | g_CDemonSetPtr
     PUSH ECX                            ; 00501743 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0050e550 ; 00501744
-        ;   XREF to: 0050e550 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050e550(CDemonSet * this_ptr, int param_2, undefined4 param_3)
+    CALL core_set.cpp_CDemonSet_setCameraEnabled_FUN_0050e550 ; 00501744
+        ;   XREF to: 0050e550 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraEnabled_FUN_0050e550(CDemonSet * this_ptr, int camera_index, int enabled)
     ADD ESP,0xc                         ; 00501749
     JMP 0x004ff36b                      ; 0050174c
         ;   XREF to: 004ff36b (UNCONDITIONAL_JUMP)  ; LAB_004ff36b
@@ -4611,8 +4611,8 @@ section .text
     PUSH EDI                            ; 005024de
     MOV EAX,[0x005be368]                ; 005024df | g_CDemonSetPtr
     PUSH EAX                            ; 005024e4 | g_CDemonSetInstance
-    CALL core_setdir.cpp_CDemonSet_FUN_005125a0 ; 005024e5
-        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_005125a0(CDemonSet * this_ptr, CDemonActor * param_2, int param_3)
+    CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0 ; 005024e5
+        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 005024ea
     MOV EDX,dword ptr [0x005be368]      ; 005024ed | g_CDemonSetPtr
     MOV EAX,[0x005be220]                ; 005024f3 | g_CScriptPtr

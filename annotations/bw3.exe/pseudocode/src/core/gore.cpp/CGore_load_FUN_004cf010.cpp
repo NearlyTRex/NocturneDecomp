@@ -14,11 +14,11 @@ int __cdecl core_gore_cpp_CGore_load_FUN_004cf010(CGore *this_ptr,_FILE *file_ha
   int iVar1;
   int iVar2;
   int iVar3;
-  byte local_110 [256];
+  char local_110 [256];
   
   _fgets(local_110,0xff,file_handle);
   iVar3 = 0;
-  _fscanf(file_handle,&DAT_005c4791,&DAT_01d4a940);
+  _fscanf(file_handle,&DAT_005c4791);
   if (0 < _DAT_01d4a940) {
     iVar1 = 0x1d4a944;
     do {
@@ -28,7 +28,7 @@ int __cdecl core_gore_cpp_CGore_load_FUN_004cf010(CGore *this_ptr,_FILE *file_ha
     } while (iVar3 < _DAT_01d4a940);
   }
   iVar1 = 0;
-  iVar3 = _fscanf(file_handle,&DAT_005c4795,&DAT_01d276b8);
+  iVar3 = _fscanf(file_handle,&DAT_005c4795);
   if (0 < _DAT_01d276b8) {
     iVar2 = 0x1d276bc;
     do {

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_setRelativeCoord_FUN_00404320(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_setRelativeCoord_FUN_00404320(SMRGLHeaderPrimitive *primitive)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c51d2c

@@ -57,13 +57,13 @@ float __cdecl CStranger::getCarryLightIntensity(CStranger *this_ptr);
 // Address: 00538440
 CVector3f * __cdecl CStranger::getHandsMidpoint(CStranger *this_ptr,CVector3f *out_position);
 
-// Original: core_stranger.cpp_CStranger_FUN_005384d0
+// Original: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0
 // Address: 005384d0
-void __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger::updateProceduralAnimation(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_005396d0
+// Original: core_stranger.cpp_CStranger_extractTurnPose_FUN_005396d0
 // Address: 005396d0
-void __cdecl CStranger(CStranger *this_ptr,SPose *out_pose);
+void __cdecl CStranger::extractTurnPose(CStranger *this_ptr,SPose *out_pose);
 
 // Original: core_stranger.cpp_CStranger_updateTurnBlending_FUN_005397b0
 // Address: 005397b0
@@ -225,9 +225,9 @@ float __cdecl dotProduct2(CVector3f *a,CVector3f *b);
 // Address: 005409f0
 void __cdecl setMatrixTranslation(CMatrix3x4f *matrix,CVector3f *translation);
 
-// Original: core_stranger.cpp_FUN_00540a10
+// Original: core_stranger.cpp_unusedGetPointerAt8_FUN_00540a10
 // Address: 00540a10
-void * __cdecl FUN_00540a10(void *ptr);
+void * __cdecl unusedGetPointerAt8(void *ptr);
 
 // Original: core_stranger.cpp_isProcessDisabled_FUN_00540a20
 // Address: 00540a20

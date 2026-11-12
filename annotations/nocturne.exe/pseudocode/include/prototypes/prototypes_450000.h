@@ -70,7 +70,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00452630(CKey
 void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel *this_ptr,char *filename);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0(CKeyFramedModel *this_ptr,_FILE *file);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(CKeyFramedModel *this_ptr,_FILE *file);
-void __cdecl core_dmodel_cpp_CKeyFramedModel_FUN_00452f10(CKeyFramedModel *this_ptr);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_free_FUN_00452f10(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance,int render_flags);
 CVector3i * __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00453080(CKeyFramedModel *this_ptr,int frame_index);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance);

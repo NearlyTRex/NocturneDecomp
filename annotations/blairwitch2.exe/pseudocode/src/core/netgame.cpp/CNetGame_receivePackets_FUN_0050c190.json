@@ -23,6 +23,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0050b4d0",
+      "from_addr": "0050b698",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050f120",
+      "from_addr": "0050f172",
+      "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050ecb0",
       "from_addr": "0050ed81",
       "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0",
@@ -38,18 +50,6 @@
       "addr": "0050bdb0",
       "from_addr": "0050bf47",
       "name": "core_netgame.cpp_CNetGame_syncPlayers_FUN_0050bdb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050b4d0",
-      "from_addr": "0050b698",
-      "name": "core_netgame.cpp_FUN_0050b4d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050f120",
-      "from_addr": "0050f172",
-      "name": "core_netgame.cpp_FUN_0050f120",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -173,7 +173,7 @@
       {
         "call_addr": "0050f172",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050f120",
+        "caller": "core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -184,7 +184,7 @@
       {
         "call_addr": "0050f2d1",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050f120",
+        "caller": "core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -195,7 +195,7 @@
       {
         "call_addr": "0050b698",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050b4d0",
+        "caller": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,6 +257,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 276
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0052d360",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00504c70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005405b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004ea740",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 24,

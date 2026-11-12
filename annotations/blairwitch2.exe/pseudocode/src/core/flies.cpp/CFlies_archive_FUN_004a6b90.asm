@@ -52,7 +52,7 @@ section .text
     LEA EAX,[EBX + 0x2b64]              ; 004a6bcd
     PUSH EAX                            ; 004a6bd3
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 004a6bd4
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a6bd9
     PUSH 0x5d66ba                       ; 004a6bdc | = "gatherCount"
     LEA EAX,[EBX + 0x2b68]              ; 004a6be1
@@ -64,7 +64,7 @@ section .text
     LEA EAX,[EBX + 0x2b70]              ; 004a6bf5
     PUSH EAX                            ; 004a6bfb
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 004a6bfc
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a6c01
     CMP dword ptr [0x00616374],0x3      ; 004a6c04 | g_CFliesClassVersion
     JGE 0x004a6c0f                      ; 004a6c0b
@@ -76,7 +76,7 @@ section .text
     ADD EBX,0x2b4                       ; 004a6c14
     PUSH EBX                            ; 004a6c1a
     CALL core_actor.cpp_archiveVector_FUN_0040b4b0 ; 004a6c1b
-        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b4b0()
+        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b4b0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a6c20
     POP EBX                             ; 004a6c23
     RET                                 ; 004a6c24

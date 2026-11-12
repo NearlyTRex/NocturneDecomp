@@ -381,7 +381,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 00516c31
     MOV EBX,dword ptr [ESP + 0xc]       ; 00516c35
     CALL engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03 ; 00516c39
-        ;   XREF to: 0057fb03 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03()
+        ;   XREF to: 0057fb03 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x00516ab7                      ; 00516c3e
         ;   XREF to: 00516ab7 (UNCONDITIONAL_JUMP)  ; LAB_00516ab7
     MOV EDI,dword ptr [ESP + 0x10]      ; 00516c43
@@ -389,7 +389,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 00516c47
     MOV EBX,dword ptr [ESP + 0xc]       ; 00516c4b
     CALL engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39 ; 00516c4f
-        ;   XREF to: 0057fd39 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39()
+        ;   XREF to: 0057fd39 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39(SSoftwareEdge * left_vertex, SSoftwareEdge * right_vertex, int scanline_y)
     JMP 0x00516ab7                      ; 00516c54
         ;   XREF to: 00516ab7 (UNCONDITIONAL_JUMP)  ; LAB_00516ab7
 

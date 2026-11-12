@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_gore.cpp_getBloodColorParams_FUN_004ae020
 // Address: 004ae020
-void getBloodColorParams(uint param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4);
+void __cdecl getBloodColorParams(EBloodType blood_type,int *out_light,int *out_color,int *out_fog);
 
 // Original: core_gore.cpp_CBloodParticle_setup_FUN_004ae070
 // Address: 004ae070

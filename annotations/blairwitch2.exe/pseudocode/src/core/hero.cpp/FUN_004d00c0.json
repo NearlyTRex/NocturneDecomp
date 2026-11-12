@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 242,
+    "complexity_score": 212,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
-    "suspect_count": 15,
+    "pseudocode_lines": 67,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "stack_alignment_array",
       "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 217
+    "total_lines": 222
   },
   "cross_references": [
     {
@@ -74,7 +73,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_hero.cpp_FUN_004d00c0",
-    "signature": "int core_hero_cpp_FUN_004d00c0(int param_1,float *param_2)"
+    "signature": "CCharacter * core_hero_cpp_FUN_004d00c0(int param_1,float *param_2)"
   },
   "function_calls": [
     {
@@ -343,7 +342,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_hero_cpp_FUN_004d00c0(int param_1,float *param_2)",
+      "text": "CCharacter * core_hero_cpp_FUN_004d00c0(int param_1,float *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -351,12 +350,12 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "int core_hero_cpp_FUN_004d00c0(int param_1,float *param_2)",
+      "text": "CCharacter * core_hero_cpp_FUN_004d00c0(int param_1,float *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 12,
       "match": "afStackY_1030",
       "severity": "moderate",
       "text": "float afStackY_1030 [985];",
@@ -364,7 +363,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = 9999.9;",
@@ -372,7 +371,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "local_1c = (float *)(param_1 + 0x20);",
@@ -380,39 +379,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)g_CDemonSetPtr",
+      "line": 30,
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->enemies + local_18);",
+      "text": "this_ptr = *(CCharacter **)((int)g_CDemonSetPtr->enemies + local_18);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x114))(iVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x78))(iVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x5c))(iVar1,auStack_c0);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 55,
       "match": "param_2",
       "severity": "mild",
       "text": "if (fStack_24 < *param_2) {",
@@ -420,7 +395,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 56,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = fStack_24;",
@@ -428,7 +403,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 69,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = SQRT(*param_2);",
@@ -436,7 +411,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 69,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = SQRT(*param_2);",

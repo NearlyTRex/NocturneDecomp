@@ -2,13 +2,13 @@
 // Address: 00557910
 // Address Range: [[00557910, 00557b3b]]
 // Convention: __cdecl
-// Signature: undefined * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(int param_1)
+// Signature: CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(UINT device_id)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-byte * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(int param_1)
+CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(UINT device_id)
 
 {
   int iVar1;
@@ -19,18 +19,18 @@ byte * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(int param_1)
   char acStack_5e8 [400];
   char acStack_458 [400];
   char acStack_2c8 [400];
-  byte local_138 [280];
+  SSoundDeviceInfo local_138;
   uint uStack_20;
   uint uStack_1c;
   
   iVar1 = sound_snddx_cpp_CDirectSoundDevice_close_FUN_00555060((CDirectSoundDevice *)&DAT_0264b06c)
   ;
   if (iVar1 != 0) {
-    iVar1 = sound_snddx_cpp_enumerateDirectSoundDevice_FUN_00557860(param_1,local_138);
+    iVar1 = sound_snddx_cpp_enumerateDirectSoundDevice_FUN_00557860(device_id,&local_138);
     if (iVar1 != 0) {
       lp_guid = (LPGUID)0x0;
-      if (*(int *)(param_1 * 0x11c + 0x2649874) == 0) {
-        lp_guid = (LPGUID)(param_1 * 0x11c + 0x2649878);
+      if (*(int *)(device_id * 0x11c + 0x2649874) == 0) {
+        lp_guid = (LPGUID)(device_id * 0x11c + 0x2649878);
       }
       uVar2 = DirectSoundCreate(lp_guid,(LPDIRECTSOUND *)&DAT_0264a5c4,(LPUNKNOWN)0x0);
       if (uVar2 == 0) {
@@ -54,10 +54,10 @@ byte * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(int param_1)
             }
           }
           iVar1 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_00552b40();
-          if ((1 < iVar1) && (1 < *(int *)(param_1 * 0x11c + 0x264998c))) {
+          if ((1 < iVar1) && (1 < *(int *)(device_id * 0x11c + 0x264998c))) {
             (**(code **)*_DAT_0264a5c8)(_DAT_0264a5c8,&DAT_00621060,&DAT_0264a5d0);
           }
-          return &DAT_0264b06c;
+          return (CDirectSoundDevice *)&DAT_0264b06c;
         }
         sound_snddx_cpp_FUN_00554ad0(uVar2);
         _sprintf(acStack_2c8,"DirectSux: Unable to %s.  (%s)");
@@ -71,8 +71,8 @@ byte * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(int param_1)
 LAB_005579b1:
       sound_sndmain_cpp_FUN_005549c0(pcVar3);
       sound_snddx_cpp_CDirectSoundDevice_close_FUN_00555060((CDirectSoundDevice *)&DAT_0264b06c);
-      return (byte *)0x0;
+      return (CDirectSoundDevice *)0x0;
     }
   }
-  return (byte *)0x0;
+  return (CDirectSoundDevice *)0x0;
 }

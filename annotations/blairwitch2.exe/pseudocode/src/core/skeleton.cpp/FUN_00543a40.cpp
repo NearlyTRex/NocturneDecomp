@@ -2,13 +2,13 @@
 // Address: 00543a40
 // Address Range: [[00543a40, 00543cf5]]
 // Convention: unknown
-// Signature: float core_skeleton_cpp_FUN_00543a40(int param_1,int param_2,undefined4 param_3,undefined4 param_4,int *param_5,byte *param_6)
+// Signature: float core_skeleton_cpp_FUN_00543a40(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float core_skeleton_cpp_FUN_00543a40(int param_1,int param_2,uint param_3,uint param_4,int *param_5,byte *param_6)
+float core_skeleton_cpp_FUN_00543a40(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)
 
 {
   ushort *puVar1;
@@ -33,7 +33,7 @@ float core_skeleton_cpp_FUN_00543a40(int param_1,int param_2,uint param_3,uint p
   bVar5 = 0;
   if ((DAT_020c4334 & 1) == 0) {
     DAT_020c4334 = DAT_020c4334 | 1;
-    __arrinit();
+    __arrinit(&DAT_020b58d4,5000,&g_CVectorTypeInfo);
   }
   if (5000 < *(int *)(param_2 * 4 + param_1 + 0x2c)) {
     _DAT_01d046a0 = "..\\core\\skeleton.cpp";
@@ -72,7 +72,7 @@ float core_skeleton_cpp_FUN_00543a40(int param_1,int param_2,uint param_3,uint p
                     (&local_84,(CVector3f *)(&DAT_020b58d4 + (uint)*puVar1 * 0xc),
                      (CVector3f *)(&DAT_020b58d4 + (uint)puVar1[1] * 0xc),
                      (CVector3f *)(&DAT_020b58d4 + (uint)puVar1[2] * 0xc));
-          local_18 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_00477a50();
+          local_18 = core_dtri_cpp_rayTriangleIntersection_FUN_00477a50(&local_84,param_3,param_4);
           if (((local_18 < local_20) && (0.0 <= local_18)) && (local_18 <= 1.0)) {
             local_4c = -local_84.normal.x;
             local_48[0] = -local_84.normal.y;

@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EBX      ; 005aef7d
     MOV dword ptr [ESP + 0x24],EDX      ; 005aef81
     CALL crt_time.c__mktime_FUN_005a4f20 ; 005aef85
-        ;   XREF to: 005a4f20 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__mktime_FUN_005a4f20()
+        ;   XREF to: 005a4f20 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__mktime_FUN_005a4f20(_tm * timeptr)
     ADD ESP,0x4                         ; 005aef8a
     ADD ESP,0x24                        ; 005aef8d
     POP EBX                             ; 005aef90

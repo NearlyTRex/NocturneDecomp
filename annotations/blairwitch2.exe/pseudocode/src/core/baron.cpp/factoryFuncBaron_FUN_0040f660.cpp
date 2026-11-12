@@ -1,20 +1,20 @@
 // Name: core_baron.cpp_factoryFuncBaron_FUN_0040f660
 // Address: 0040f660
 // Address Range: [[0040f660, 0040f67b]]
-// Convention: unknown
-// Signature: void core_baron_cpp_factoryFuncBaron_FUN_0040f660(void)
+// Convention: __cdecl
+// Signature: CBaron * __cdecl core_baron_cpp_factoryFuncBaron_FUN_0040f660(void)
 
 #include "nocturne.h"
 
-void core_baron_cpp_factoryFuncBaron_FUN_0040f660(void)
+CBaron * __cdecl core_baron_cpp_factoryFuncBaron_FUN_0040f660(void)
 
 {
-  CBaron *this_ptr;
+  CBaron *pCVar1;
   
-  this_ptr = (CBaron *)operator_new(0x25740);
-  if (this_ptr == (CBaron *)0x0) {
-    return;
+  pCVar1 = (CBaron *)operator_new(0x25740);
+  if (pCVar1 == (CBaron *)0x0) {
+    return (CBaron *)0x0;
   }
-  core_baron_cpp_CBaron_ctor_FUN_0040f690(this_ptr);
-  return;
+  pCVar1 = core_baron_cpp_CBaron_ctor_FUN_0040f690(pCVar1);
+  return pCVar1;
 }

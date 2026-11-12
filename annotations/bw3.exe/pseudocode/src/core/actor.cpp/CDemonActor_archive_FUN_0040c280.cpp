@@ -9,12 +9,12 @@
 void __cdecl core_actor_cpp_CDemonActor_archive_FUN_0040c280(CDemonActor *this_ptr)
 
 {
-  byte local_8 [4];
+  float local_8;
   
   core_actor_cpp_archiveLocation_FUN_0040b540(&this_ptr->location,"location");
-  core_actor_cpp_archiveOrientation_FUN_0040b4a0(&this_ptr->orient,"orient");
+  core_actor_cpp_archiveOrientation_FUN_0040b4a0(&(this_ptr->orient).orient,"orient");
   if (g_CDemonActorClassVersion < 7) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(local_8,&DAT_005b5d89);
+    core_actor_cpp_archiveFloat_FUN_0040b830(&local_8,&DAT_005b5d89);
     if (g_CDemonActorClassVersion < 6) {
       return;
     }

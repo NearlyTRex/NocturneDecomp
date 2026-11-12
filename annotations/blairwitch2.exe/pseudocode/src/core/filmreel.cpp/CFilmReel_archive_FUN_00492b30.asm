@@ -31,7 +31,7 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 00492b43
     PUSH EAX                            ; 00492b49
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 00492b4a
-        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60()
+        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60(CKeyFramedModelInstance * model_ptr, char * property_name)
     MOV EDX,dword ptr [0x00614c48]      ; 00492b4f | g_CFilmReelClassVersion
     ADD ESP,0x8                         ; 00492b55
     CMP EDX,0x2                         ; 00492b58

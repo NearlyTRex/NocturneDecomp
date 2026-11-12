@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[10]:
-;   core_box.cpp_FUN_00421670 at 004218f7
+;   core_box.cpp_CBoundingBox3D_render_FUN_00421670 at 004218f7
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_0042ea10 at 0042ec38
 ;   core_fire.cpp_CExplosion_render_FUN_004b1870 at 004b1bd5
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004b8100 at 004b8a25
@@ -78,7 +78,7 @@ section .text
         ;   Label: LAB_004821c5
     PUSH EAX                            ; 004821c8
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 004821c9
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 004821ce
     TEST EAX,EAX                        ; 004821d1
     JZ 0x004821c0                       ; 004821d3

@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 0059d94a (CONDITIONAL_JUMP)  ; LAB_0059d94a
     PUSH 0x5d9eb3                       ; 0059d826 | = "CStylerDemon"
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 0059d82b
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 0059d830
     PUSH 0x5d9ec0                       ; 0059d833 | = "bwp3_stylerdemon.dfm"
     MOV dword ptr [EBX + 0x47b94],EAX   ; 0059d838

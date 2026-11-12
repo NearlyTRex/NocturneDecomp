@@ -43,7 +43,7 @@ void core_flashlit_cpp_FUN_004a1570(char *param_1)
   if (_DAT_01caf488 < 0x10000) {
     return;
   }
-  iVar2 = engine_font_cpp_FUN_004aaf00(_DAT_01511cbc,param_1);
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01511cbc,param_1);
   iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(_DAT_01511cbc,param_1);
   _DAT_01caf48c = _DAT_01c2a380 + 0x40;
   _DAT_01caf490 = _DAT_01c2a37c + iVar2 + 8;

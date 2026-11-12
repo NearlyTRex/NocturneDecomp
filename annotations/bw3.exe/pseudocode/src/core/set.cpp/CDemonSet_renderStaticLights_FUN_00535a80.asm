@@ -52,7 +52,7 @@
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20
 ;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
 ;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
@@ -142,7 +142,7 @@ section .text
     POP EBX                             ; 00535b61
     RET                                 ; 00535b62
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00535b63
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
         ;   Label: LAB_00535b63
     MOV dword ptr [ESP + 0x8],EAX       ; 00535b68
     JMP 0x00535aa7                      ; 00535b6c
@@ -329,7 +329,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x8]       ; 00535d47
         ;   Label: LAB_00535d47
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00535d4b
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     SUB EAX,EDI                         ; 00535d50
     MOV dword ptr [ESP + 0x2c],EAX      ; 00535d52
     FILD dword ptr [ESP + 0x2c]         ; 00535d56
@@ -345,8 +345,8 @@ section .text
     PUSH 0x5d053f                       ; 00535d81 | s_renderStaticLights_3_2f_005d053e+1
     MOV EBP,dword ptr [0x005f1690]      ; 00535d86 | g_CConsolePtr
     PUSH EBP                            ; 00535d8c | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00535d8d
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00535d8d
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 00535d92
     ADD ESP,0x30                        ; 00535d95
     POP EBP                             ; 00535d98

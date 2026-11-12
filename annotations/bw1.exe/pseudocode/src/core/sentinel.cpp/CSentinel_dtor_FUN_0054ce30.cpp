@@ -18,7 +18,7 @@ CSentinel * core_sentinel_cpp_CSentinel_dtor_FUN_0054ce30(CSentinel *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSentinelTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSentinelTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

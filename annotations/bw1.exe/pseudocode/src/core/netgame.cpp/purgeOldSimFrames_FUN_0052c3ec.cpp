@@ -1,14 +1,14 @@
 // Name: core_netgame.cpp_purgeOldSimFrames_FUN_0052c3ec
 // Address: 0052c3ec
 // Address Range: [[0052c3ec, 0052c460]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int min_sequence)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int param_1)
+void __cdecl core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int min_sequence)
 
 {
   int iVar1;
@@ -20,7 +20,7 @@ void core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int param_1)
     iVar2 = 0;
     src = &DAT_01d71618;
     do {
-      while (*(int *)(iVar2 + 0x1d715ac) < param_1) {
+      while (*(int *)(iVar2 + 0x1d715ac) < min_sequence) {
         _DAT_01d715a8 = _DAT_01d715a8 + -1;
         memmove
                   ((void *)(iVar2 + 0x1d715ac),src,(_DAT_01d715a8 - iVar1) * 0x6c);

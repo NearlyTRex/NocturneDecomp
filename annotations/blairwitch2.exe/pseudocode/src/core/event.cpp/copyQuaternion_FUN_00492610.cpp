@@ -2,16 +2,16 @@
 // Address: 00492610
 // Address Range: [[00492610, 0049262e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_event_cpp_copyQuaternion_FUN_00492610(undefined4 *param_1,undefined4 *param_2)
+// Signature: CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_00492610(CQuaternion4f *dest,CQuaternion4f *src)
 
 #include "nocturne.h"
 
-void __cdecl core_event_cpp_copyQuaternion_FUN_00492610(uint *param_1,uint *param_2)
+CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_00492610(CQuaternion4f *dest,CQuaternion4f *src)
 
 {
-  *param_1 = *param_2;
-  param_1[1] = param_2[1];
-  param_1[2] = param_2[2];
-  param_1[3] = param_2[3];
-  return;
+  dest->w = src->w;
+  dest->x = src->x;
+  dest->y = src->y;
+  dest->z = src->z;
+  return dest;
 }

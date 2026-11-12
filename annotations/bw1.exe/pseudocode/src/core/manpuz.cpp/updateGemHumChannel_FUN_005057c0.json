@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 425,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 40,
-    "suspect_count": 37,
+    "pseudocode_lines": 43,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 176
+    "total_lines": 179
   },
   "cross_references": [
     {
@@ -35,7 +33,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_manpuz.cpp_updateGemHumChannel_FUN_005057c0",
-    "signature": "undefined4 __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_005057c0(float *param_1,float param_2,float param_3,uint *param_4,char *param_5,float *param_6)"
+    "signature": "int __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_005057c0(float *hum_value,float target,float max_step,uint *sfx_handle,char *wav_filename,CVector3f *world_position)"
   },
   "function_calls": [
     {
@@ -130,10 +128,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
     "estimated_params": 6,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.245614035087719,
@@ -175,13 +173,76 @@
     },
     "pcode_op_count": 712
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e6b20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050a4f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004caef0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "hum_value",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "target",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "max_step",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 16,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "wav_filename",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "world_position",
+        "offset": 24,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
   },
   "stack_patterns": {
     "note": "Function contains stack manipulation that may cause decompiler artifacts.",
@@ -208,297 +269,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_005057c0(float *param_1,float param_2,float param_3,uint *param_4,char *param_5,float *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_005057c0(float *param_1,float param_2,float param_3,uint *param_4,char *param_5,float *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_005057c0(float *param_1,float param_2,float param_3,uint *param_4,char *param_5,float *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_005057c0(float *param_1,float param_2,float param_3,uint *param_4,char *param_5,float *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uint __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_005057c0(float *param_1,float param_2,float param_3,uint *param_4,char *param_5,float *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "uint __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_005057c0(float *param_1,float param_2,float param_3,uint *param_4,char *param_5,float *param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 - *param_1 < -param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_2 - *param_1 < -param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_2 - *param_1 < -param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = *param_1 - param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3 = *param_1 - param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = *param_1 - param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 - *param_1 <= param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_2 - *param_1 <= param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_2 - *param_1 <= param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_1 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = *param_1 + param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3 = *param_1 + param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3 = *param_1 + param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*param_1 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "volume = *param_1 * (float)_DAT_005e74d5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00573a80(*param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar1 = sound_sndmain_cpp_FUN_005735a0(*param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00573760(*param_4,(double)*param_6,(double)param_6[1],(double)param_6[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00573760(*param_4,(double)*param_6,(double)param_6[1],(double)param_6[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00573760(*param_4,(double)*param_6,(double)param_6[1],(double)param_6[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00573760(*param_4,(double)*param_6,(double)param_6[1],(double)param_6[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00573950(*param_4,volume);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00572780((double)*param_6,(double)param_6[1],(double)param_6[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00572780((double)*param_6,(double)param_6[1],(double)param_6[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00572780((double)*param_6,(double)param_6[1],(double)param_6[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "uVar2 = sound_sndmain_cpp_startSfx_FUN_00572d20(param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*param_4 = uVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

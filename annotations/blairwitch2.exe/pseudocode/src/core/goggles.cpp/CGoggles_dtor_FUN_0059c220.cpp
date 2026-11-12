@@ -15,7 +15,7 @@ CGoggles * core_goggles_cpp_CGoggles_dtor_FUN_0059c220(CGoggles *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CGogglesTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CGogglesTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

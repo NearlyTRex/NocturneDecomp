@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_vehicle.cpp_factoryFuncVehicle_FUN_005a75f0
 // Address: 005a75f0
-void factoryFuncVehicle(void);
+CVehicle * __cdecl factoryFuncVehicle(void);
 
 // Original: core_vehicle.cpp_CVehicle_getActorType_FUN_005a7610
 // Address: 005a7610

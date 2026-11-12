@@ -3382,6 +3382,22 @@
    "sig_detail": "callers pop 16 == 16 stack bytes"
   },
   {
+   "a": "004093f0",
+   "b": "0040a6c0",
+   "name": "core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0",
+   "confidence": 0.925,
+   "ambiguous": false,
+   "evidence": [
+    "caller:calls 00409470",
+    "order:core_actor.cpp between 00409270 and 00409470"
+   ],
+   "shape_agreement": "same_mnemonics",
+   "conv": "__cdecl",
+   "ret": "float",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 24 (pop None, push None, store None)"
+  },
+  {
    "a": "00409470",
    "b": "0040a740",
    "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470",
@@ -3394,7 +3410,7 @@
    "conv": "__cdecl",
    "ret": "float",
    "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 28 (pop 0, push None, store None)"
+   "sig_detail": "no conclusive measurement; wants 28 (pop 0, push 8, store 44)"
   },
   {
    "a": "00409840",
@@ -18008,14 +18024,14 @@
   },
   {
    "a": "0044ef30",
-   "b": "00442d9c",
+   "b": "00442d90",
    "name": "core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30",
    "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
     "order_multi:core_dcamera.cpp between 0044edf0 and 0044f290"
    ],
-   "shape_agreement": "similar_size",
+   "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
    "ret": "void",
    "sig_verdict": "unverifiable",
@@ -19274,6 +19290,21 @@
    "ret": "CVector3f*",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
+  },
+  {
+   "a": "0045aa80",
+   "b": "00570630",
+   "name": "shape_design.c_exportModelToBIN_FUN_0045aa80",
+   "confidence": 0.75,
+   "ambiguous": false,
+   "evidence": [
+    "caller:calls 00600002"
+   ],
+   "shape_agreement": "size_mismatch",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 20 (pop None, push None, store None)"
   },
   {
    "a": "0046f890",
@@ -31743,8 +31774,8 @@
    "shape_agreement": "identical",
    "conv": "__cdecl",
    "ret": "void",
-   "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 20 (pop None, push None, store None)"
+   "sig_verdict": "agree",
+   "sig_detail": "callers pop 20 == 20 stack bytes"
   },
   {
    "a": "004c21d0",
@@ -32677,6 +32708,21 @@
    "ret": "void",
    "sig_verdict": "agree",
    "sig_detail": "callers pop 24 == 24 stack bytes"
+  },
+  {
+   "a": "004c7d60",
+   "b": "0048b220",
+   "name": "core_fire.cpp_CFireEffect_createBulletTrail_FUN_004c7d60",
+   "confidence": 0.99,
+   "ambiguous": false,
+   "evidence": [
+    "shape_strict:e963ccd3"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 20 (pop None, push None, store None)"
   },
   {
    "a": "004c7db0",
@@ -38475,6 +38521,21 @@
    "sig_detail": "no conclusive measurement; wants 0 (pop None, push None, store None)"
   },
   {
+   "a": "004eb950",
+   "b": "004ae020",
+   "name": "core_gore.cpp_getBloodColorParams_FUN_004eb950",
+   "confidence": 0.99,
+   "ambiguous": false,
+   "evidence": [
+    "shape_strict:b18933eb"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 16 (pop None, push None, store None)"
+  },
+  {
    "a": "004eb9a0",
    "b": "004ae070",
    "name": "core_gore.cpp_CBloodParticle_setup_FUN_004eb9a0",
@@ -43950,11 +44011,10 @@
    "a": "00503020",
    "b": "004c4910",
    "name": "core_larva.cpp_CLarva_setup_FUN_00503020",
-   "confidence": 0.925,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "vtable_order:00660734<->0059fa84 forced",
-    "order:core_larva.cpp between 00502f90 and 00503080"
+    "order_multi:core_larva.cpp between 00502f90 and 005039d0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -43966,10 +44026,11 @@
    "a": "00503080",
    "b": "004c4970",
    "name": "core_larva.cpp_CLarva_process_FUN_00503080",
-   "confidence": 0.75,
+   "confidence": 0.89,
    "ambiguous": false,
    "evidence": [
-    "caller:calls 004c7db0"
+    "caller:calls 004c7db0",
+    "order_multi:core_larva.cpp between 00502f90 and 005039d0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
@@ -43981,16 +44042,31 @@
    "a": "00503960",
    "b": "004c5250",
    "name": "core_larva.cpp_CLarva_archive_FUN_00503960",
-   "confidence": 0.82,
+   "confidence": 0.78,
    "ambiguous": false,
    "evidence": [
-    "vtable_order:00660734<->0059fa84 forced"
+    "order_multi:core_larva.cpp between 00502f90 and 005039d0"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
    "ret": "void",
    "sig_verdict": "agree",
    "sig_detail": "vtable slot 51 shares 4 stack bytes with verified override 004244b0"
+  },
+  {
+   "a": "005039d0",
+   "b": "004c52c0",
+   "name": "core_larva.cpp_getSizeCategory_FUN_005039d0",
+   "confidence": 0.99,
+   "ambiguous": false,
+   "evidence": [
+    "shape_strict:d4a270b1"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "char*",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 4 (pop None, push None, store None)"
   },
   {
    "a": "00503a20",
@@ -45269,6 +45345,8 @@
     "callsite:via 0059cec0",
     "callsite:via 005a75e0",
     "callsite:via 0048a740",
+    "callsite:via 0054b190",
+    "callsite:via 0054b190",
     "callsite:via 004c3ee0",
     "callsite:via 00472a80",
     "callsite:via 004a2f00",
@@ -45703,17 +45781,33 @@
    "a": "0050a420",
    "b": "004cae20",
    "name": "core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_0050a420",
-   "confidence": 0.85,
+   "confidence": 0.925,
    "ambiguous": false,
    "evidence": [
     "callsite:via 005098f0",
-    "callsite:via 0050a610"
+    "callsite:via 0050a610",
+    "order:core_manpuz.cpp between 0050a290 and 0050a490"
    ],
    "shape_agreement": "same_mnemonics",
    "conv": "__cdecl",
    "ret": "void",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 20 (pop 0, push 0, store 4)"
+  },
+  {
+   "a": "0050a490",
+   "b": "004cae90",
+   "name": "core_manpuz.cpp_stepToward_FUN_0050a490",
+   "confidence": 0.99,
+   "ambiguous": false,
+   "evidence": [
+    "shape_strict:7f9957fa"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 12 (pop None, push None, store None)"
   },
   {
    "a": "0050a4f0",
@@ -54530,6 +54624,7 @@
    "ambiguous": false,
    "evidence": [
     "callsite:via 0054a890",
+    "callsite:via 0054b190",
     "caller:calls 0054a8b0",
     "order_multi:cockpit_pkbitmap.cpp between 0054a8b0 and 0054a970"
    ],
@@ -54762,10 +54857,11 @@
    "a": "0054b3f0",
    "b": "004f4a00",
    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_0054b3f0",
-   "confidence": 0.85,
+   "confidence": 0.925,
    "ambiguous": false,
    "evidence": [
-    "callsite:via 0054b4a0"
+    "callsite:via 0054b4a0",
+    "order:cockpit_pkbitmap.cpp between 0054b190 and 0054b440"
    ],
    "shape_agreement": "identical",
    "conv": "__cdecl",
@@ -65106,6 +65202,7 @@
     "callsite:via 005ae830",
     "callsite:via 005adff0",
     "callsite:via 005adff0",
+    "callsite:via 005adf90",
     "callsite:via 005ae1c0",
     "callsite:via 005af410",
     "callsite:via 005af410",
@@ -65254,6 +65351,21 @@
    "ret": "char*",
    "sig_verdict": "agree",
    "sig_detail": "callers pop 4 == 4 stack bytes"
+  },
+  {
+   "a": "005adf90",
+   "b": "00529bb0",
+   "name": "sound_snddx.cpp_checkDirectSoundError_FUN_005adf90",
+   "confidence": 0.99,
+   "ambiguous": false,
+   "evidence": [
+    "shape_strict:c244a40f"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "int",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
    "a": "005adff0",
@@ -74219,6 +74331,21 @@
    "sig_detail": "no conclusive measurement; wants 8 (pop None, push None, store None)"
   },
   {
+   "a": "005ec920",
+   "b": "00552880",
+   "name": "wincore_wddvmem.cpp_cleanupDirectDrawSurfaces_FUN_005ec920",
+   "confidence": 0.99,
+   "ambiguous": false,
+   "evidence": [
+    "shape_strict:d90a1551"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "void",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 0 (pop None, push None, store None)"
+  },
+  {
    "a": "005ec980",
    "b": "005528e0",
    "name": "wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005ec980",
@@ -77606,6 +77733,7 @@
     "callsite:via 004fcf70",
     "callsite:via 005adff0",
     "callsite:via 005adff0",
+    "callsite:via 005adf90",
     "callsite:via 00528700",
     "callsite:via 004a37b0",
     "callsite:via 004fcf00",
@@ -77732,6 +77860,7 @@
     "callsite:via 0054bdb0",
     "callsite:via 005e2430",
     "callsite:via 005afd60",
+    "callsite:via 0054b190",
     "callsite:via 004a3270"
    ],
    "shape_agreement": "identical",
@@ -79231,6 +79360,21 @@
    "ret": "int",
    "sig_verdict": "agree",
    "sig_detail": "callers pop 4 == 4 stack bytes"
+  },
+  {
+   "a": "00600002",
+   "b": "00572809",
+   "name": "crt_math.c_ldexp_FUN_00600002",
+   "confidence": 0.75,
+   "ambiguous": false,
+   "evidence": [
+    "caller:calls 006027ac"
+   ],
+   "shape_agreement": "size_mismatch",
+   "conv": "__cdecl",
+   "ret": "double",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 12 (pop 0, push 0, store None)"
   },
   {
    "a": "006000d0",
@@ -81682,8 +81826,23 @@
    "shape_agreement": "identical",
    "conv": "__fpustack_safe",
    "ret": "float10",
-   "sig_verdict": "unverifiable",
-   "sig_detail": "no conclusive measurement; wants 0 (pop None, push None, store None)"
+   "sig_verdict": "agree",
+   "sig_detail": "callers pop 0 == 0 stack bytes (+2 in registers)"
+  },
+  {
+   "a": "00606f98",
+   "b": "0056c488",
+   "name": "crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98",
+   "confidence": 0.99,
+   "ambiguous": false,
+   "evidence": [
+    "shape_strict:b7f37d4e"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__fpustack",
+   "ret": "float10",
+   "sig_verdict": "agree",
+   "sig_detail": "RET 8 == 8 stack bytes (+1 in registers)"
   },
   {
    "a": "0060710c",
@@ -82665,6 +82824,21 @@
    "ret": "undefined1",
    "sig_verdict": "unverifiable",
    "sig_detail": "no conclusive measurement; wants 0 (pop None, push None, store None)"
+  },
+  {
+   "a": "0060b190",
+   "b": "0056fa50",
+   "name": "crt_unknown.c_FUN_0060b190",
+   "confidence": 0.99,
+   "ambiguous": false,
+   "evidence": [
+    "shape_strict:d78029a6"
+   ],
+   "shape_agreement": "identical",
+   "conv": null,
+   "ret": "undefined1",
+   "sig_verdict": "agree",
+   "sig_detail": "callers pop 0 == 0 stack bytes"
   },
   {
    "a": "0060b1c0",
@@ -83863,6 +84037,21 @@
    "sig_detail": "callers pop 16 == 16 stack bytes"
   },
   {
+   "a": "0060ede0",
+   "b": "00573890",
+   "name": "crt_stdlib.c_strtoul_FUN_0060ede0",
+   "confidence": 0.99,
+   "ambiguous": false,
+   "evidence": [
+    "shape_strict:2b81f24a"
+   ],
+   "shape_agreement": "identical",
+   "conv": "__cdecl",
+   "ret": "ulong",
+   "sig_verdict": "unverifiable",
+   "sig_detail": "no conclusive measurement; wants 12 (pop None, push None, store None)"
+  },
+  {
    "a": "0060edfc",
    "b": "005738ac",
    "name": "crt_stdlib.c_strtol_FUN_0060edfc",
@@ -84462,11 +84651,6 @@
    "a": "00409060",
    "tu": "core_actor.cpp",
    "name": "core_actor.cpp_CDemonActor_getCarrier_FUN_00409060"
-  },
-  {
-   "a": "004093f0",
-   "tu": "core_actor.cpp",
-   "name": "core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0"
   },
   {
    "a": "00409880",
@@ -85689,11 +85873,6 @@
    "name": "core_fire.cpp_allocateSmokeParticle_FUN_004c6be0"
   },
   {
-   "a": "004c7d60",
-   "tu": "core_fire.cpp",
-   "name": "core_fire.cpp_CFireEffect_createBulletTrail_FUN_004c7d60"
-  },
-  {
    "a": "004c9480",
    "tu": "core_fire.cpp",
    "name": "core_fire.cpp_CBulletTrail_deactivate_FUN_004c9480"
@@ -85849,11 +86028,6 @@
    "name": "core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690"
   },
   {
-   "a": "004eb950",
-   "tu": "core_gore.cpp",
-   "name": "core_gore.cpp_getBloodColorParams_FUN_004eb950"
-  },
-  {
    "a": "004ee340",
    "tu": "core_gore.cpp",
    "name": "core_gore.cpp_convertVecFloatToFixed_FUN_004ee340"
@@ -85979,11 +86153,6 @@
    "name": "core_keyactor.cpp_CKeyActor_addFilesToExtract_FUN_00501990"
   },
   {
-   "a": "005039d0",
-   "tu": "core_larva.cpp",
-   "name": "core_larva.cpp_getSizeCategory_FUN_005039d0"
-  },
-  {
    "a": "00503c50",
    "tu": "core_larva.cpp",
    "name": "core_larva.cpp_CLarva_getPropertyList_FUN_00503c50"
@@ -86047,11 +86216,6 @@
    "a": "00509c60",
    "tu": "core_manpuz.cpp",
    "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60"
-  },
-  {
-   "a": "0050a490",
-   "tu": "core_manpuz.cpp",
-   "name": "core_manpuz.cpp_stepToward_FUN_0050a490"
   },
   {
    "a": "0050b3e0",
@@ -86869,11 +87033,6 @@
    "name": "sound_sndmain.cpp_doNothing2_FUN_005addf0"
   },
   {
-   "a": "005adf90",
-   "tu": "sound_snddx.cpp",
-   "name": "sound_snddx.cpp_checkDirectSoundError_FUN_005adf90"
-  },
-  {
    "a": "005b0690",
    "tu": "sound_sndwav.cpp",
    "name": "sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690"
@@ -87426,7 +87585,6 @@
   "00409020",
   "00409040",
   "00409060",
-  "004093f0",
   "00409880",
   "004098a0",
   "004098e0",
@@ -87648,7 +87806,6 @@
   "0045a320",
   "0045a610",
   "0045a7b0",
-  "0045aa80",
   "0045b850",
   "0045b8b0",
   "0045b990",
@@ -88010,7 +88167,6 @@
   "004be9b0",
   "004bee30",
   "004c6be0",
-  "004c7d60",
   "004c9480",
   "004cae70",
   "004caf60",
@@ -88046,7 +88202,6 @@
   "004eb490",
   "004eb600",
   "004eb690",
-  "004eb950",
   "004ee340",
   "004ee9e0",
   "004eea70",
@@ -88082,7 +88237,6 @@
   "00502e50",
   "00502e90",
   "00502eb0",
-  "005039d0",
   "00503c50",
   "00503c90",
   "00504750",
@@ -88101,7 +88255,6 @@
   "00508860",
   "00508880",
   "00509c60",
-  "0050a490",
   "0050b3e0",
   "0050b440",
   "0050b7d0",
@@ -88687,7 +88840,6 @@
   "005addd0",
   "005adde0",
   "005addf0",
-  "005adf90",
   "005b0690",
   "005b0c90",
   "005b0cc0",
@@ -88973,7 +89125,6 @@
   "005ec700",
   "005ec7b0",
   "005ec830",
-  "005ec920",
   "005ee9f0",
   "005eea60",
   "005f2010",
@@ -89002,7 +89153,6 @@
   "005ff78e",
   "005ff7a4",
   "005fff50",
-  "00600002",
   "00600790",
   "006008f0",
   "00600940",
@@ -89047,15 +89197,12 @@
   "00606e0a",
   "00606e8f",
   "00606eae",
-  "00606f98",
   "00607080",
   "00609c80",
   "00609c90",
   "0060ad30",
   "0060b106",
   "0060b180",
-  "0060b190",
-  "0060ede0",
   "0060ffd0",
   "006101f0",
   "00610240",
@@ -89281,11 +89428,11 @@
   "00481950",
   "00481960",
   "00481970",
+  "00481b0c",
   "004940d0",
   "004e08e0",
   "004ef000",
   "004efc10",
-  "004f49d8",
   "004f5d00",
   "004f5d10",
   "004fbb70",
@@ -89368,6 +89515,7 @@
   "0056a827",
   "0056aa38",
   "0056ad3f",
+  "0056ad64",
   "0056ada0",
   "0056ade4",
   "0056adf0",
@@ -89474,8 +89622,10 @@
   "0056fdbf",
   "00570510",
   "00570554",
-  "00570630",
   "005708c0",
+  "005708f0",
+  "00570924",
+  "0057096c",
   "00570a70",
   "00570ad0",
   "00570d50",
@@ -89487,6 +89637,7 @@
   "00570f03",
   "00570f18",
   "00570f2b",
+  "00570f50",
   "00570f60",
   "0057104c",
   "005710a0",
@@ -89506,7 +89657,12 @@
   "00571858",
   "0057189c",
   "005718c4",
+  "005718e0",
+  "00572446",
+  "0057264c",
+  "005729a6",
   "00572b70",
+  "00572cb0",
   "00572d50",
   "00572d90",
   "00572e00",
@@ -89521,6 +89677,7 @@
   "00573e30",
   "00573ed0",
   "00573fc8",
+  "00573ff0",
   "00573ffb",
   "00574000",
   "00574030",

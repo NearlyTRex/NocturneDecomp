@@ -261,7 +261,8 @@ LAB_005b8bfc:
                          fVar13,max_distance);
       pCVar1 = &(param_1->base).model;
       if (iVar6 < 0) {
-        engine_console_cpp_FUN_00445430(g_CConsolePtr,"%s gave up chase - I'm confused\n",param_1);
+        engine_console_cpp_CConsole_printf_FUN_00445430
+                  (g_CConsolePtr,"%s gave up chase - I'm confused\n");
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0,1);
       }
       else if ((0 < iVar6) && (param_1->attack_cooldown <= 0.0)) {
@@ -378,7 +379,8 @@ LAB_005b87f4:
   else {
     if (EVar3 != WALK_STATE_NO_PATH) goto LAB_005b87f4;
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0,1);
-    engine_console_cpp_FUN_00445430(g_CConsolePtr,"%s confused while walking to scriptDest!\n",param_1);
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (param_1->base).model.accumulated_root_motion.z = 0.0;
   (param_1->base).model.accumulated_root_motion.y = (param_1->base).model.accumulated_root_motion.z;

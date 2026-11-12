@@ -16,12 +16,12 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
   float fVar3;
   CDemonRenderer *this_ptr_00;
   int iVar4;
-  int *piVar5;
-  uint *puVar6;
-  int iVar7;
-  uint *puVar8;
-  byte bVar9;
-  float10 fVar10;
+  SProjectedVertex *point;
+  uint *puVar5;
+  int iVar6;
+  uint *puVar7;
+  byte bVar8;
+  float10 fVar9;
   int aiStackY_10b4 [974];
   CVector3i *rotation;
   SMRGLHeaderPrimitive SStack_170;
@@ -41,14 +41,12 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
   float fStack_e8;
   CVector3i CStack_e4;
   CVector3f CStack_d8;
-  int iStack_cc;
-  int aiStack_c8 [2];
+  CVector3i CStack_cc;
   CVector3i CStack_c0;
   CVector3i CStack_b4;
   CVector3i CStack_a8;
   CVector3i CStack_9c;
-  int iStack_90;
-  int aiStack_8c [2];
+  CVector3i CStack_90;
   CVector3i CStack_84;
   CVector3i CStack_78;
   float fStack_6c;
@@ -65,19 +63,19 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
   int iStack_1c;
   float fStack_18;
   
-  bVar9 = 0;
+  bVar8 = 0;
   if (((this_ptr->flame_state != 0) || (*(int *)(0x01D81080 + 0x1008) != 0)) &&
      (iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc), iVar4 == 0)
      ) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(&this_ptr->base);
     if (this_ptr->do_visibility_check != 0) {
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
-      puVar6 = local_120;
-      puVar8 = local_108;
+      puVar5 = local_120;
+      puVar7 = local_108;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar8 = *puVar6;
-        puVar6 = puVar6 + (uint)bVar9 * -2 + 1;
-        puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
+        *puVar7 = *puVar5;
+        puVar5 = puVar5 + (uint)bVar8 * -2 + 1;
+        puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
       }
       iVar4 = core_box_cpp_FUN_0041daf0(local_108);
       this_ptr->is_visible = iVar4;
@@ -89,12 +87,14 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
       core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00537390(g_CDemonSetPtr,&this_ptr->globe);
     }
     if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != FLAME_TYPE_NONE)) {
-      engine_drender_cpp_FUN_0046d230(DAT_005f2afc);
+      engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(DAT_005f2afc,&CStack_90)
+      ;
       rotation = (CVector3i *)0x0;
-      CStack_60.x = iStack_90;
-      *(int *)((int)&CStack_60 + (uint)bVar9 * -8 + 4) = aiStack_8c[(uint)bVar9 * -2];
-      *(int *)((int)&CStack_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-           aiStack_8c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+      CStack_60.x = CStack_90.x;
+      *(uint *)((int)&CStack_60 + (uint)bVar8 * -8 + 4) =
+           *(uint *)((int)&CStack_90 + (uint)bVar8 * -8 + 4);
+      *(uint *)((int)&CStack_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+           *(uint *)((int)&CStack_90 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
       CStack_60.x = 0;
       CStack_60.y = 0;
       engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0
@@ -103,11 +103,13 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
       CStack_9c.x = 0;
       CStack_9c.y = 0;
       CStack_9c.z = 0;
-      engine_drender_cpp_FUN_0046d230(DAT_005f2afc);
-      CStack_60.x = iStack_cc;
-      *(int *)((int)&CStack_60 + (uint)bVar9 * -8 + 4) = aiStack_c8[(uint)bVar9 * -2];
-      *(int *)((int)&CStack_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-           aiStack_c8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+      engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(DAT_005f2afc,&CStack_cc)
+      ;
+      CStack_60.x = CStack_cc.x;
+      *(uint *)((int)&CStack_60 + (uint)bVar8 * -8 + 4) =
+           *(uint *)((int)&CStack_cc + (uint)bVar8 * -8 + 4);
+      *(uint *)((int)&CStack_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+           *(uint *)((int)&CStack_cc + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
       if ((0x2000 < CStack_60.x) || (CStack_60.x < -0x2000)) {
         iStack_20 = 3;
       }
@@ -182,12 +184,12 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
           DAT_0060b090 = 0x80000;
           _DAT_0060b060 = 0x80000;
           _DAT_0060b030 = 0xf80000;
-          fVar10 = (float10)this_ptr->animation_time;
+          fVar9 = (float10)this_ptr->animation_time;
           DAT_0060b070 = DAT_0060b040;
           _DAT_0060b0a0 = DAT_0060b040;
           _DAT_0060b0d0 = DAT_0060b040;
           round();
-          fStack_18 = (float)(int)ROUND(fVar10);
+          fStack_18 = (float)(int)ROUND(fVar9);
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
                     (DAT_005f2afc,
                      (SMRGLTextureBasic *)
@@ -217,9 +219,9 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
        (fStack_24 = (this_ptr->flame_size).y * (float)_DAT_005c0be4, this_ptr->is_visible != 0)) {
       engine_drender_cpp_FUN_0046d250(DAT_005f2afc);
       CStack_30.x = fStack_6c;
-      *(int *)((int)&CStack_30 + (uint)bVar9 * -8 + 4) = aiStack_68[(uint)bVar9 * -2];
-      *(int *)((int)&CStack_30 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
-           aiStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+      *(int *)((int)&CStack_30 + (uint)bVar8 * -8 + 4) = aiStack_68[(uint)bVar8 * -2];
+      *(int *)((int)&CStack_30 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+           aiStack_68[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
       CStack_d8.y = (this_ptr->flame_size).y * (float)_DAT_005c0bec;
       CStack_d8.x = 0.0;
       CStack_d8.z = 0.0;
@@ -255,15 +257,18 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
                 (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_84);
       iStack_1c = 0;
       do {
-        piVar5 = (int *)((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x +
-                        iStack_1c);
-        iVar4 = piVar5[2];
+        point = (SProjectedVertex *)
+                ((int)&(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c
+                );
+        iVar4 = point->transformed_z;
         if (0x200 < iVar4) {
-          iVar7 = iVar4 + -0x100;
-          *piVar5 = (int)(((longlong)*piVar5 * (longlong)iVar7) / (longlong)iVar4);
-          piVar5[1] = (int)(((longlong)piVar5[1] * (longlong)iVar7) / (longlong)iVar4);
-          piVar5[2] = iVar7;
-          engine_matrix_c_projectTransformedPoint_FUN_004e5590(piVar5);
+          iVar6 = iVar4 + -0x100;
+          point->transformed_x =
+               (int)(((longlong)point->transformed_x * (longlong)iVar6) / (longlong)iVar4);
+          point->transformed_y =
+               (int)(((longlong)point->transformed_y * (longlong)iVar6) / (longlong)iVar4);
+          point->transformed_z = iVar6;
+          engine_matrix_c_projectTransformedPoint_FUN_004e5590(point);
         }
         this_ptr_00 = DAT_005f2afc;
         iStack_1c = iStack_1c + 0x30;

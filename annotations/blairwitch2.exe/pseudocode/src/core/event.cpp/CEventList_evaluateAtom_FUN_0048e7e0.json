@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 3907,
-    "complexity_score": 3413,
+    "complexity_score": 3434,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 262,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1813,
-    "suspect_count": 155,
+    "pseudocode_lines": 1814,
+    "suspect_count": 157,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -21,7 +21,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 5720
+    "total_lines": 5721
   },
   "cross_references": [
     {
@@ -1831,6 +1831,32 @@
     },
     "pcode_op_count": 13984
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004a70d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00491f40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9989
+    },
+    "nocedit.exe": {
+      "addr": "004ae140",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7951
+    },
+    "nocturne.exe": {
+      "addr": "0047e0d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8188
+    }
+  },
   "stack_frame": {
     "frame_size": 4304,
     "local_size": 4292,
@@ -2918,8 +2944,16 @@
       "type": "undefined_data"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 447,
+      "match": "(CInventory *)((int)(&pCVar11->path_map + 1) +",
+      "severity": "moderate",
+      "text": "((CInventory *)((int)(&pCVar11->path_map + 1) + 4),",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 459,
+      "line": 460,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -2927,7 +2961,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 477,
+      "line": 478,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -2935,7 +2969,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 493,
+      "line": 494,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -2943,7 +2977,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 509,
+      "line": 510,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -2951,7 +2985,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 539,
+      "line": 540,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -2959,7 +2993,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 566,
+      "line": 567,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(pcVar18[-1] + 1)] & 2) == 0) break;",
@@ -2967,7 +3001,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 573,
+      "line": 574,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(acStack_9c1[1] + 1)] & 2) != 0) {",
@@ -2975,7 +3009,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 600,
+      "line": 601,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -2983,7 +3017,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 630,
+      "line": 631,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -2991,7 +3025,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 665,
+      "line": 666,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -2999,7 +3033,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 704,
+      "line": 705,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3007,7 +3041,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 728,
+      "line": 729,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3015,7 +3049,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 752,
+      "line": 753,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3023,7 +3057,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 775,
+      "line": 776,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3031,7 +3065,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 812,
+      "line": 813,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3039,7 +3073,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 839,
+      "line": 840,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(pcVar18[-1] + 1)] & 2) == 0) break;",
@@ -3047,7 +3081,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 846,
+      "line": 847,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(acStack_381[1] + 1)] & 2) != 0) {",
@@ -3055,7 +3089,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 862,
+      "line": 863,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(pcVar17[-1] + 1)] & 2) == 0) break;",
@@ -3063,7 +3097,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 869,
+      "line": 870,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(local_895[1] + 1)] & 2) != 0) {",
@@ -3071,7 +3105,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 898,
+      "line": 899,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3079,7 +3113,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 925,
+      "line": 926,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(pcVar18[-1] + 1)] & 2) == 0) break;",
@@ -3087,7 +3121,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 932,
+      "line": 933,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(acStack_2b9[1] + 1)] & 2) != 0) {",
@@ -3095,7 +3129,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 949,
+      "line": 950,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(pcVar17[-1] + 1)] & 2) == 0) break;",
@@ -3103,7 +3137,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 955,
+      "line": 956,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(*local_80 + 1)] & 2) != 0) {",
@@ -3111,7 +3145,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 978,
+      "line": 979,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3119,7 +3153,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 994,
+      "line": 995,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3127,7 +3161,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1013,
+      "line": 1014,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3135,7 +3169,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1059,
+      "line": 1060,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3143,7 +3177,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1078,
+      "line": 1079,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3151,7 +3185,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1104,
+      "line": 1105,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3159,7 +3193,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1130,
+      "line": 1131,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3167,7 +3201,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1157,
+      "line": 1158,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(pcVar18[-1] + 1)] & 2) == 0) break;",
@@ -3175,7 +3209,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1164,
+      "line": 1165,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(acStack_705[1] + 1)] & 2) != 0) {",
@@ -3183,7 +3217,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1185,
+      "line": 1186,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3191,7 +3225,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1226,
+      "line": 1227,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3199,7 +3233,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1251,
+      "line": 1252,
       "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->enemies + local_18);",
@@ -3207,7 +3241,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1253,
+      "line": 1254,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar10 = (**(code **)(*(int *)(iVar9 + 0x2b0) + 0x114)",
@@ -3215,7 +3249,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1255,
+      "line": 1256,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar10 = (**(code **)(*(int *)(iVar9 + 0x2b0) + 0x78))",
@@ -3223,7 +3257,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1284,
+      "line": 1285,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3231,7 +3265,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1323,
+      "line": 1324,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3239,7 +3273,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 1371,
+      "line": 1372,
       "match": "*(int **)(iVar9 + 0x26677b8",
       "severity": "moderate",
       "text": "pcVar17 = (char *)(**(code **)(**(int **)(iVar9 + 0x26677b8) + 4",
@@ -3247,7 +3281,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1371,
+      "line": 1372,
       "match": "code *",
       "severity": "moderate",
       "text": "pcVar17 = (char *)(**(code **)(**(int **)(iVar9 + 0x26677b8) + 4",
@@ -3255,7 +3289,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 1372,
+      "line": 1373,
       "match": "*(int **)(iVar9 + 0x26677b8",
       "severity": "moderate",
       "text": "))(*(int **)(iVar9 + 0x26677b8));",
@@ -3263,7 +3297,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1402,
+      "line": 1403,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3271,7 +3305,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1441,
+      "line": 1442,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3279,7 +3313,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1460,
+      "line": 1461,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3287,7 +3321,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1486,
+      "line": 1487,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(pcVar17[-1] + 1)] & 2) == 0)",
@@ -3295,7 +3329,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1494,
+      "line": 1495,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(acStack_aed[1] + 1)] & 2) != 0) {",
@@ -3303,7 +3337,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1512,
+      "line": 1513,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(pcVar17[-1] + 1)] & 2) == 0)",
@@ -3311,7 +3345,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1519,
+      "line": 1520,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(*local_1c + 1)] & 2) != 0) {",
@@ -3319,7 +3353,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1529,
+      "line": 1530,
       "match": "DAT_006141f4",
       "severity": "mild",
       "text": "if (*(int *)((int)&DAT_006141f4 + iVar9) == 0) {",
@@ -3327,7 +3361,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1530,
+      "line": 1531,
       "match": "DAT_006141f4",
       "severity": "mild",
       "text": "local_a0 = (int)&DAT_006141f4 + iVar9;",
@@ -3335,7 +3369,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1547,
+      "line": 1548,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3343,7 +3377,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1584,
+      "line": 1585,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3351,7 +3385,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1620,
+      "line": 1621,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3359,7 +3393,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1647,
+      "line": 1648,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(pcVar18[-1] + 1)] & 2) == 0) break;",
@@ -3367,7 +3401,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1654,
+      "line": 1655,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(acStack_1f1[1] + 1)] & 2) != 0) {",
@@ -3375,7 +3409,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1670,
+      "line": 1671,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(pcVar17[-1] + 1)] & 2) == 0) break;",
@@ -3383,7 +3417,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1677,
+      "line": 1678,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(local_5d9[1] + 1)] & 2) != 0) {",
@@ -3391,7 +3425,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1693,
+      "line": 1694,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(pcVar17[-1] + 1)] & 2) == 0) break;",
@@ -3399,7 +3433,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1700,
+      "line": 1701,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(local_8f9[1] + 1)] & 2) != 0) {",
@@ -3407,7 +3441,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1704,
+      "line": 1705,
       "match": "DAT_005d2e2b",
       "severity": "mild",
       "text": "iVar9 = _strcmp(local_8f9 + 1,&DAT_005d2e2b);",
@@ -3415,7 +3449,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1707,
+      "line": 1708,
       "match": "DAT_005d2e2d",
       "severity": "mild",
       "text": "iVar8 = _strcmp(local_8f9 + 1,&DAT_005d2e2d);",
@@ -3423,7 +3457,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1712,
+      "line": 1713,
       "match": "DAT_005d2e30",
       "severity": "mild",
       "text": "iVar8 = _strcmp(local_8f9 + 1,&DAT_005d2e30);",
@@ -3431,7 +3465,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1717,
+      "line": 1718,
       "match": "DAT_005d2e33",
       "severity": "mild",
       "text": "iVar8 = _strcmp(local_8f9 + 1,&DAT_005d2e33);",
@@ -3439,7 +3473,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1722,
+      "line": 1723,
       "match": "DAT_005d2e36",
       "severity": "mild",
       "text": "iVar8 = _strcmp(local_8f9 + 1,&DAT_005d2e36);",
@@ -3447,7 +3481,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1727,
+      "line": 1728,
       "match": "DAT_005d2e38",
       "severity": "mild",
       "text": "iVar8 = _strcmp(local_8f9 + 1,&DAT_005d2e38);",
@@ -3455,7 +3489,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1741,
+      "line": 1742,
       "match": "DAT_01c3dd10",
       "severity": "mild",
       "text": "pcVar18 = &DAT_01c3dd10;",
@@ -3463,7 +3497,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1756,
+      "line": 1757,
       "match": "DAT_005d2e3b",
       "severity": "mild",
       "text": "iVar10 = sscanf(acStack_1f1 + 1,&DAT_005d2e3b);",
@@ -3471,7 +3505,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1761,
+      "line": 1762,
       "match": "DAT_005d2e3b",
       "severity": "mild",
       "text": "iVar10 = sscanf(local_5d9 + 1,&DAT_005d2e3b);",
@@ -3479,15 +3513,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1795,
+      "line": 1796,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "while (((&DAT_0061ed94)[(byte)(expression[*parse_position] + 1)] & 2) != 0) {",
       "type": "undefined_data"
     },
     {
+      "description": "Pointer value `(&pCVar11->path_map + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 447,
+      "match": "(int)(&pCVar11->path_map + 1)",
+      "severity": "moderate",
+      "text": "((CInventory *)((int)(&pCVar11->path_map + 1) + 4),",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `pCVar11` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1207,
+      "line": 1208,
       "match": "(uint)pCVar11",
       "severity": "moderate",
       "text": "local_104 = (uint)pCVar11 ^ (uint)0x0FFFFFFF;",
@@ -3495,7 +3537,7 @@
     },
     {
       "description": "Pointer value `pCVar11` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1303,
+      "line": 1304,
       "match": "(uint)pCVar11",
       "severity": "moderate",
       "text": "local_104 = (uint)pCVar11 ^ (uint)0x0FFFFFFF;",
@@ -3503,7 +3545,7 @@
     },
     {
       "description": "Pointer value `&DAT_006141f4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1529,
+      "line": 1530,
       "match": "(int)&DAT_006141f4",
       "severity": "moderate",
       "text": "if (*(int *)((int)&DAT_006141f4 + iVar9) == 0) {",
@@ -3511,7 +3553,7 @@
     },
     {
       "description": "Pointer value `&DAT_006141f4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1530,
+      "line": 1531,
       "match": "(int)&DAT_006141f4",
       "severity": "moderate",
       "text": "local_a0 = (int)&DAT_006141f4 + iVar9;",
@@ -3583,7 +3625,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 460,
+      "line": 461,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3591,7 +3633,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 478,
+      "line": 479,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3599,7 +3641,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 494,
+      "line": 495,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3607,7 +3649,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 510,
+      "line": 511,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3615,7 +3657,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 540,
+      "line": 541,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3623,7 +3665,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 601,
+      "line": 602,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3631,7 +3673,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 631,
+      "line": 632,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3639,7 +3681,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 666,
+      "line": 667,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3647,7 +3689,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 705,
+      "line": 706,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3655,7 +3697,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 729,
+      "line": 730,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3663,7 +3705,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 753,
+      "line": 754,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3671,7 +3713,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 776,
+      "line": 777,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3679,7 +3721,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 813,
+      "line": 814,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3687,7 +3729,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 899,
+      "line": 900,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3695,7 +3737,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 979,
+      "line": 980,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3703,7 +3745,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 995,
+      "line": 996,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3711,7 +3753,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1014,
+      "line": 1015,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3719,7 +3761,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1060,
+      "line": 1061,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3727,7 +3769,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1079,
+      "line": 1080,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3735,7 +3777,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1105,
+      "line": 1106,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3743,7 +3785,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1131,
+      "line": 1132,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3751,7 +3793,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1186,
+      "line": 1187,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3759,7 +3801,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1227,
+      "line": 1228,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3767,7 +3809,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1285,
+      "line": 1286,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3775,7 +3817,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1324,
+      "line": 1325,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3783,7 +3825,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1403,
+      "line": 1404,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3791,7 +3833,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1442,
+      "line": 1443,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3799,7 +3841,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1461,
+      "line": 1462,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3807,7 +3849,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1548,
+      "line": 1549,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3815,7 +3857,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1585,
+      "line": 1586,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3823,7 +3865,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1621,
+      "line": 1622,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3831,7 +3873,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1742,
+      "line": 1743,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -3839,7 +3881,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1529,
+      "line": 1530,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if (*(int *)((int)&DAT_006141f4 + iVar9) == 0) {",
@@ -3847,7 +3889,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1530,
+      "line": 1531,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_a0 = (int)&DAT_006141f4 + iVar9;",
@@ -3887,7 +3929,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 556,
+      "line": 557,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3895,7 +3937,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 829,
+      "line": 830,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3903,7 +3945,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 852,
+      "line": 853,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3911,7 +3953,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 915,
+      "line": 916,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3919,7 +3961,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 939,
+      "line": 940,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3927,7 +3969,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1147,
+      "line": 1148,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3935,7 +3977,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1476,
+      "line": 1477,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3943,7 +3985,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1502,
+      "line": 1503,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3951,7 +3993,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1637,
+      "line": 1638,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3959,7 +4001,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1660,
+      "line": 1661,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3967,7 +4009,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1683,
+      "line": 1684,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

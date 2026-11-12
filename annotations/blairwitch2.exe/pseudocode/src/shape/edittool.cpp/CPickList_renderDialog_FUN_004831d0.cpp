@@ -134,7 +134,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004831d0(CPickList *t
         else {
           iVar8 = 1;
         }
-        iVar9 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+        iVar9 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
         if (this_ptr->scroll_mode != 2) {
           iVar6 = 0;
         }

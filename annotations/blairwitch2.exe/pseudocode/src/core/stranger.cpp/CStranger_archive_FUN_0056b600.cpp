@@ -13,11 +13,12 @@ void __cdecl core_stranger_cpp_CStranger_archive_FUN_0056b600(CStranger *this_pt
   if ((1 < g_CStrangerClassVersion) && (g_CStrangerClassVersion < 5)) {
     core_actor_cpp_archiveActor_FUN_0040b9e0
               (&(this_ptr->base).object_to_pick_up,"@objectToPickUp" + 1);
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&(this_ptr->base).door_to_open,"doorToOpen");
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&(this_ptr->base).lever_to_pull,"leverToPull")
-    ;
     core_actor_cpp_archiveActor_FUN_0040b9e0
-              (&(this_ptr->base).ladder_to_climb,"ladderToClimb");
+              ((CDemonActor **)&(this_ptr->base).door_to_open,"doorToOpen");
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              ((CDemonActor **)&(this_ptr->base).lever_to_pull,"leverToPull");
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              ((CDemonActor **)&(this_ptr->base).ladder_to_climb,"ladderToClimb");
   }
   if (g_CStrangerClassVersion == 2) {
     core_actor_cpp_archiveActor_FUN_0040b9e0
@@ -27,13 +28,13 @@ void __cdecl core_stranger_cpp_CStranger_archive_FUN_0056b600(CStranger *this_pt
   }
   if (3 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b9e0
-              (&this_ptr->ladder_to_descend,"ladderToDescend");
+              ((CDemonActor **)&this_ptr->ladder_to_descend,"ladderToDescend");
   }
   if (5 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->guns_drawn,"gunsDrawn");
   }
   if (6 < g_CStrangerClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->weapon,"weapon");
+    core_actor_cpp_archiveActor_FUN_0040b9e0((CDemonActor **)&this_ptr->weapon,"weapon");
   }
   if (7 < g_CStrangerClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->action_pending,"actionPending");

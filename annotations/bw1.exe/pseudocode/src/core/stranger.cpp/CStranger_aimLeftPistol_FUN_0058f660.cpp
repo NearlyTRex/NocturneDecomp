@@ -210,7 +210,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0058f660(CStranger *t
       else {
         fStack_8c = fStack_8c - fStack_38;
       }
-      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_8c);
+      fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_8c);
       fStack_8c = fStack_18;
     }
     if ((((float)_DAT_005f6f59 <= fVar2) &&
@@ -225,7 +225,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0058f660(CStranger *t
       else {
         fStack_90 = fStack_90 - fStack_3c;
       }
-      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_90);
+      fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_90);
       fStack_90 = fStack_18;
     }
   }

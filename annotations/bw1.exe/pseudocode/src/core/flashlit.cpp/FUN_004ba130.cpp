@@ -23,19 +23,19 @@ void core_flashlit_cpp_FUN_004ba130(void)
   int iStack_14;
   
   pCVar1 = CAlphaBitmap_ARRAY_01cc7ba8;
-  engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7b94);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7b94);
   do {
-    engine_alphabit_cpp_FUN_0040d1c0(pCVar1);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(pCVar1);
     pCVar1 = pCVar1 + 1;
   } while (pCVar1 != &CAlphaBitmap_01cc7c20);
-  engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c20);
-  engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c34);
-  engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c48);
-  engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c5c);
-  engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c84);
-  engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c98);
-  engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7cac);
-  engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7cc0);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c20);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c34);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c48);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c5c);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c84);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c98);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7cac);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7cc0);
   DAT_01cc7f38 = 0;
   DAT_0061d310 = 0xffffffff;
   DAT_0061d2e0 = 1;

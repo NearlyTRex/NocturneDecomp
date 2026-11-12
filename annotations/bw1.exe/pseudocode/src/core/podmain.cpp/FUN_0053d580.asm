@@ -42,7 +42,7 @@ section .text
     PUSH 0x5edb98                       ; 0053d591 | DAT_005edb98
     PUSH 0x5edb9b                       ; 0053d596 | = "pod.ini"
     CALL crt_stdio.c_fopen_FUN_005c157c ; 0053d59b
-        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005c157c()
+        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
     ADD ESP,0x8                         ; 0053d5a0
     MOV EDI,EAX                         ; 0053d5a3
     TEST EAX,EAX                        ; 0053d5a5
@@ -122,7 +122,7 @@ section .text
     PUSH 0x5edbd0                       ; 0053d65e | DAT_005edbd0
     PUSH EAX                            ; 0053d663
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0053d664
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0053d669
     MOV EDX,dword ptr [ESP + 0x314]     ; 0053d66c
     XOR ESI,ESI                         ; 0053d673
@@ -136,7 +136,7 @@ section .text
     PUSH 0x5edbd4                       ; 0053d686 | DAT_005edbd4
     PUSH EDI                            ; 0053d68b
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0053d68c
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0053d691
     LEA EAX,[ESP + 0x214]               ; 0053d694
     PUSH EAX                            ; 0053d69b

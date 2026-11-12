@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_boss_c_modelStructNotSupported1_FUN_0041ac30(void)
+; SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported1_FUN_0041ac30(SMRGLHeaderExtended *mrgl_data)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_boss_c_005b725a

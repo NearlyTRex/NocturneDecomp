@@ -12,9 +12,9 @@
 ;
 ; XREF[4]:
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0050e020 at 0050e67d
+;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0 at 0050b523
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_0050c280 at 0050c45a
 ;   core_netgame.cpp_FUN_0050b420 at 0050b482
-;   core_netgame.cpp_FUN_0050b4d0 at 0050b523
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005e0a9f

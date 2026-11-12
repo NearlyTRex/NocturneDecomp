@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_00574e80(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_00574e80(SMRGLTextureBasic *texture_info)
 ;
+; Parameters:
+; SMRGLTextureBasic * Stack[0x4]:4   texture_info
 ;
 ; XREF[1]:
 ;   engine_3d.c_flushPremiumRenderBuffer_FUN_004070e0 at 004071f0

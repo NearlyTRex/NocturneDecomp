@@ -2,50 +2,53 @@
 // Address: 004e6b20
 // Address Range: [[004e6b20, 004e6c3e]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20(float *param_1,float param_2,float param_3,uint *param_4,undefined4 param_5,float *param_6)
+// Signature: int __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20(float *hum_value,float target,float max_step,uint *sfx_handle,char *wav_filename,CVector3f *world_position)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20(float *param_1,float param_2,float param_3,uint *param_4,uint param_5,float *param_6)
+int __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20(float *hum_value,float target,float max_step,uint *sfx_handle,char *wav_filename,CVector3f *world_position)
 
 {
-  float volume;
-  int iVar1;
-  uint uVar2;
+  float fVar1;
+  int iVar2;
   uint uVar3;
+  int iVar4;
   
-  uVar3 = 0;
-  if (param_2 - *param_1 < -param_3) {
-    param_3 = *param_1 - param_3;
+  iVar4 = 0;
+  if (target - *hum_value < -max_step) {
+    fVar1 = *hum_value - max_step;
   }
   else {
-    if (param_2 - *param_1 <= param_3) {
-      uVar3 = 1;
-      *param_1 = param_2;
+    if (target - *hum_value <= max_step) {
+      iVar4 = 1;
+      *hum_value = target;
       goto LAB_004e6b67;
     }
-    param_3 = *param_1 + param_3;
+    fVar1 = *hum_value + max_step;
   }
-  *param_1 = param_3;
+  *hum_value = fVar1;
 LAB_004e6b67:
-  volume = *param_1 * (float)_DAT_005dc585;
-  if (volume <= 0.0) {
-    sound_sndmain_cpp_killSfx_FUN_00551050(*param_4);
-    return uVar3;
+  fVar1 = *hum_value * (float)_DAT_005dc585;
+  if (fVar1 <= 0.0) {
+    sound_sndmain_cpp_killSfx_FUN_00551050(*sfx_handle);
+    return iVar4;
   }
-  iVar1 = sound_sndmain_cpp_FUN_00550b70(*param_4);
-  if (iVar1 != 0) {
-    sound_sndmain_cpp_FUN_00550d30(*param_4,(double)*param_6,(double)param_6[1],(double)param_6[2]);
-    sound_sndmain_cpp_FUN_00550f20(*param_4,volume);
-    return uVar3;
+  iVar2 = sound_sndmain_cpp_FUN_00550b70(*sfx_handle);
+  if (iVar2 != 0) {
+    sound_sndmain_cpp_FUN_00550d30
+              (*sfx_handle,(double)world_position->x,(double)world_position->y,
+               (double)world_position->z);
+    sound_sndmain_cpp_FUN_00550f20(*sfx_handle,fVar1);
+    return iVar4;
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
-  sound_sndmain_cpp_setNextSfxVolume_FUN_00550270(volume);
-  sound_sndmain_cpp_FUN_00550110((double)*param_6,(double)param_6[1],(double)param_6[2]);
-  uVar2 = sound_sndmain_cpp_FUN_005506b0();
-  *param_4 = uVar2;
+  sound_sndmain_cpp_setNextSfxVolume_FUN_00550270(fVar1);
+  sound_sndmain_cpp_FUN_00550110
+            ((double)world_position->x,(double)world_position->y,(double)world_position->z);
+  uVar3 = sound_sndmain_cpp_FUN_005506b0();
+  *sfx_handle = uVar3;
   sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
-  return uVar3;
+  return iVar4;
 }

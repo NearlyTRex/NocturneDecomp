@@ -11,11 +11,11 @@ void __cdecl staticInit(void);
 
 // Original: core_dskybox.cpp_initializeSkyboxTexture_FUN_0046e290
 // Address: 0046e290
-int __cdecl initializeSkyboxTexture(int param_1);
+SMRGLSkyTexture * __cdecl initializeSkyboxTexture(SMRGLSkyTexture *texture);
 
 // Original: core_dskybox.cpp_generateSkyDomeVertex_FUN_0046e2d0
 // Address: 0046e2d0
-void __cdecl generateSkyDomeVertex(undefined4 *param_1,int param_2,int param_3);
+void __cdecl generateSkyDomeVertex(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index);
 
 // Original: core_dskybox.cpp_renderSkyDome_FUN_0046e410
 // Address: 0046e410

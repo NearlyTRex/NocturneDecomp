@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrendr_cpp_blur3x3MMXStride128_FUN_00471538(undefined8 *param_1,undefined8 *param_2,int param_3)
+; void __cdecl core_dstrendr_cpp_blur3x3MMXStride128_FUN_00471538(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
 ;
+; Parameters:
+; ulonglong *      Stack[0x4]:4   output_buffer
+; ulonglong *      Stack[0x8]:4   input_buffer
+; int              Stack[0xc]:4   pixel_count
 ;
 ; Referenced Globals:
 ;   undefined8 DAT_005f8b28

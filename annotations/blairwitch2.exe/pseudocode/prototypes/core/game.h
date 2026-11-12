@@ -17,9 +17,9 @@ undefined4 FUN_004b2930(void);
 // Address: 004b296e
 void FUN_004b296e(void);
 
-// Original: core_game.cpp_FUN_004b2a50
+// Original: core_game.cpp_captureDebugMovieFrame_FUN_004b2a50
 // Address: 004b2a50
-void FUN_004b2a50(void);
+void __cdecl captureDebugMovieFrame(void);
 
 // Original: core_game.cpp_CGame_ctor_FUN_004b2d80
 // Address: 004b2d80
@@ -71,7 +71,7 @@ void __cdecl CGame::processFudge(CGame *this_ptr);
 
 // Original: core_game.cpp_drawCreditsLine_FUN_004b3b0e
 // Address: 004b3b0e
-void drawCreditsLine(undefined4 param_1);
+void __cdecl drawCreditsLine(char *text_string);
 
 // Original: core_game.cpp_drawKeyBindingEntry_FUN_004b3b90
 // Address: 004b3b90
@@ -151,15 +151,15 @@ void __cdecl FUN_004b82e0(CGame *this_ptr);
 
 // Original: core_game.cpp_checkCheatCode_FUN_004b8d90
 // Address: 004b8d90
-undefined4 checkCheatCode(byte *param_1);
+int __cdecl checkCheatCode(char *cheat_string);
 
 // Original: core_game.cpp_FUN_004b8e10
 // Address: 004b8e10
-void FUN_004b8e10(undefined4 param_1,char *param_2);
+void FUN_004b8e10(char *param_1,char *param_2);
 
 // Original: core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fce
 // Address: 004b8fce
-void giveHeroWeaponAmmo(char *param_1,EAmmoType param_2);
+void __cdecl giveHeroWeaponAmmo(char *class_name,EAmmoType ammo_type);
 
 // Original: core_game.cpp_scaleBoneRecursive_FUN_004b9060
 // Address: 004b9060
@@ -185,9 +185,9 @@ void __cdecl FUN_004bb240(CGame *this_ptr);
 // Address: 004bb280
 void __cdecl CGame::beginFadeOut(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004bb2c0
+// Original: core_game.cpp_calculateIrisFadeCenter_FUN_004bb2c0
 // Address: 004bb2c0
-void __cdecl FUN_004bb2c0(void);
+void __cdecl calculateIrisFadeCenter(void);
 
 // Original: core_game.cpp_CGame_updateFadeTransition_FUN_004bb2f0
 // Address: 004bb2f0
@@ -267,7 +267,7 @@ void __cdecl CGame::slamDT(CGame *this_ptr,float delta_time);
 
 // Original: core_game.cpp_beginProfileTimer_FUN_004bd4cc
 // Address: 004bd4cc
-void beginProfileTimer(void);
+void __cdecl beginProfileTimer(void);
 
 // Original: core_game.cpp_endProfileTimer_FUN_004bd4f0
 // Address: 004bd4f0

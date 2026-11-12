@@ -12,7 +12,7 @@ uint FUN_005c8390(LPCSTR param_1,uint *param_2)
   HANDLE hFile;
   uint uVar1;
   BOOL BVar2;
-  WORD *pWVar3;
+  _tm *p_Var3;
   SYSTEMTIME SStack_54;
   SYSTEMTIME SStack_44;
   _FILETIME _Stack_34;
@@ -38,13 +38,13 @@ uint FUN_005c8390(LPCSTR param_1,uint *param_2)
       param_2 = &uStack_1c;
       uStack_18 = uStack_1c;
     }
-    pWVar3 = (WORD *)_localtime(param_2 + 1);
-    SStack_54.wYear = pWVar3[10] + 0x76c;
-    SStack_54.wMonth = pWVar3[8] + 1;
-    SStack_54.wDay = pWVar3[6];
-    SStack_54.wHour = pWVar3[4];
-    SStack_54.wMinute = pWVar3[2];
-    SStack_54.wSecond = *pWVar3;
+    p_Var3 = _localtime(param_2 + 1);
+    SStack_54.wYear = (short)p_Var3->tm_year + 0x76c;
+    SStack_54.wMonth = (short)p_Var3->tm_mon + 1;
+    SStack_54.wDay = (WORD)p_Var3->tm_mday;
+    SStack_54.wHour = (WORD)p_Var3->tm_hour;
+    SStack_54.wMinute = (WORD)p_Var3->tm_min;
+    SStack_54.wSecond = (WORD)p_Var3->tm_sec;
     SStack_44.wMilliseconds = 0;
     SStack_54.wMilliseconds = 0;
     SStack_44.wYear = SStack_54.wYear;

@@ -53,9 +53,9 @@ CScript * __cdecl CScript::ctor(CScript *this_ptr);
 // Address: 004fe4d0
 CScript * __cdecl CScript::dtor(CScript *this_ptr,uint flags);
 
-// Original: core_script.cpp_CScript_FUN_004fe500
+// Original: core_script.cpp_CScript_clear_FUN_004fe500
 // Address: 004fe500
-void __cdecl CScript(CScript *this_ptr);
+void __cdecl CScript::clear(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_freeParsedLines_FUN_004fe550
 // Address: 004fe550
@@ -77,9 +77,9 @@ void __cdecl CScript::renderSubtitles(CScript *this_ptr);
 // Address: 004fe9d0
 void __cdecl CScript::renderEditor(CScript *this_ptr,int left,int top,int right,int bottom);
 
-// Original: core_script.cpp_CScript_FUN_004febd0
+// Original: core_script.cpp_CScript_loadScript_FUN_004febd0
 // Address: 004febd0
-int __cdecl CScript(CScript *this_ptr,char *param_2,int param_3);
+int __cdecl CScript::loadScript(CScript *this_ptr,char *filename,int skip_validation);
 
 // Original: core_script.cpp_CScript_buildParsedLines_FUN_004fee30
 // Address: 004fee30

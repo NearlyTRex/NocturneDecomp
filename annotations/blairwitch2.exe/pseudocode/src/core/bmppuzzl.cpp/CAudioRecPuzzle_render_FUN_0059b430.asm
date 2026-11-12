@@ -90,7 +90,7 @@ section .text
     PUSH dword ptr [EDI + 0x48]         ; 0059b4d5
         ;   Label: LAB_0059b4d5
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0059b4d8
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0xc],EAX       ; 0059b4dd
     FLD float ptr [ESP + 0xc]           ; 0059b4e1
     ADD ESP,0x4                         ; 0059b4e5

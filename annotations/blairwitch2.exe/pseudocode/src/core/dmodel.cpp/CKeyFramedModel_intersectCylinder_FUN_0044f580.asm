@@ -91,7 +91,7 @@ section .text
     PUSH ESI                            ; 0044f61a
     INC EBX                             ; 0044f61b
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 0044f61c
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 0044f621
     MOV EAX,dword ptr [EDI + 0x354]     ; 0044f624
     ADD ESI,0x38                        ; 0044f62a

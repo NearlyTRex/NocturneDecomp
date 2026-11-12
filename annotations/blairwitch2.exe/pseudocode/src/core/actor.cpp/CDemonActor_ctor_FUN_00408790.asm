@@ -49,14 +49,14 @@ section .text
     ADD EBX,0x12c                       ; 00408797
     PUSH EBX                            ; 0040879d
     CALL core_actor.cpp_initTransformCache_FUN_00408750 ; 0040879e
-        ;   XREF to: 00408750 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_initTransformCache_FUN_00408750()
+        ;   XREF to: 00408750 (UNCONDITIONAL_CALL)  ; CDemonActorTransformState * core_actor.cpp_initTransformCache_FUN_00408750(CDemonActorTransformState * transform_cache)
     ADD ESP,0x4                         ; 004087a3
     PUSH 0x5f2270                       ; 004087a6 | g_CSimpleParticleSystemTypeInfo
     PUSH 0x5                            ; 004087ab
     ADD EAX,0x28                        ; 004087ad
     PUSH EAX                            ; 004087b0
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 004087b1
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EBX,[EAX + 0xfffffeac]          ; 004087b6
     MOV dword ptr [EBX + 0x2b0],0x5f2184 ; 004087bc | g_CDemonActorVTable
     MOV byte ptr [EBX],0x0              ; 004087c6

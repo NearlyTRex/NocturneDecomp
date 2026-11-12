@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_simbox.cpp_factoryFuncSimBox_FUN_00562570
 // Address: 00562570
-void factoryFuncSimBox(void);
+CSimBox * __cdecl factoryFuncSimBox(void);
 
 // Original: core_simbox.cpp_CSimBox_getActorType_FUN_00562590
 // Address: 00562590

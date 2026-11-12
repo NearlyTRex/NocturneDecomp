@@ -35,18 +35,18 @@ section .text
     LEA EBX,[ESI + 0x10a60]             ; 0040f054
     PUSH EBX                            ; 0040f05a
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0040f05b
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0040f060
     PUSH 0x5cb37f                       ; 0040f063 | = "modelName"
     LEA EBX,[ESI + 0x2b4]               ; 0040f068
     PUSH EBX                            ; 0040f06e
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0 ; 0040f06f
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0()
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0040f074
     PUSH 0x5cb389                       ; 0040f077 | = "motion state"
     PUSH EBX                            ; 0040f07c
     CALL core_actor.cpp_archiveMotionState_FUN_0040bb60 ; 0040f07d
-        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveMotionState_FUN_0040bb60()
+        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040bb60(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 0040f082
     PUSH 0x5cb396                       ; 0040f085 | = "fallApartEvent"
     ADD ESI,0x10af8                     ; 0040f08a

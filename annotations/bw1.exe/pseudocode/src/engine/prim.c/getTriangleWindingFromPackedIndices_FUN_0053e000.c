@@ -2,11 +2,11 @@
 // Address: 0053e000
 // Address Range: [[0053e000, 0053e0f7]]
 // Convention: __cdecl
-// Signature: bool __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000(ushort *param_1)
+// Signature: int __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000(STrianglePackedIndices *triangle)
 
 #include "nocturne.h"
 
-bool __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000(ushort *param_1)
+int __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000(STrianglePackedIndices *triangle)
 
 {
   int iVar1;
@@ -20,10 +20,10 @@ bool __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000(usho
   int local_1c;
   int local_18;
   
-  uVar2 = (uint)*param_1;
-  uVar3 = (uint)param_1[1];
+  uVar2 = (uint)triangle->vertex_index_0;
+  uVar3 = (uint)triangle->vertex_index_1;
   iVar1 = uVar3 * 0x30;
-  uVar6 = (uint)param_1[2];
+  uVar6 = (uint)triangle->vertex_index_2;
   if (DAT_00713a7c == 1) {
     local_24 = (&DAT_00629024)[uVar3 * 0xc] - (&DAT_00629024)[uVar2 * 0xc];
     local_20 = *(int *)(&DAT_00629028 + iVar1) - *(int *)(&DAT_00629028 + uVar2 * 0x30);
@@ -41,5 +41,5 @@ bool __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000(usho
   uVar2 = (uint)((uint)((longlong)local_20 * (longlong)local_1c) <
                 (uint)((longlong)local_24 * (longlong)local_18));
   iVar1 = iVar5 - iVar4;
-  return (SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0;
+  return (uint)((SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);
 }

@@ -94,8 +94,8 @@
 ;   ... and 16 more
 ;
 ; Called Functions:
+;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80
 ;   core_dcamera.cpp_FUN_00449eb0
-;   core_dcamera.cpp_FUN_00449f80
 ;   core_dirmat.cpp_FUN_0045b800
 ;   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0
 ;   crt_string.c__strnicmp_FUN_005a3f90
@@ -435,8 +435,8 @@ section .text
     PUSH 0x2038f4c                      ; 0055ed6f
     LEA ESI,[ESP + 0x19c]               ; 0055ed74
     LEA EDI,[ESP + 0xb8]                ; 0055ed7b
-    CALL core_dcamera.cpp_FUN_00449f80  ; 0055ed82
-        ;   XREF to: 00449f80 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00449f80()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80 ; 0055ed82
+        ;   XREF to: 00449f80 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x19c]               ; 0055ed87
     ADD ESP,0x8                         ; 0055ed8e
     MOVSD ES:EDI,ESI                    ; 0055ed91

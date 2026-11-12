@@ -18,7 +18,7 @@ CGhoul * core_ghoul_cpp_CGhoul_dtor_FUN_004c9ab0(CGhoul *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CGhoulTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CGhoulTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

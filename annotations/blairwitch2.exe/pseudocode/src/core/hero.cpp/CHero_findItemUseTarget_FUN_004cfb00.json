@@ -171,6 +171,26 @@
     },
     "pcode_op_count": 753
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ebeb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9959
+    },
+    "nocedit.exe": {
+      "addr": "004f35b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7121
+    },
+    "nocturne.exe": {
+      "addr": "004b5950",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7121
+    }
+  },
   "stack_frame": {
     "frame_size": 104,
     "local_size": 100,
@@ -316,9 +336,9 @@
     {
       "description": "Complex pointer cast",
       "line": 28,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + local_18),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),",
       "type": "pointer_cast"
     },
     {

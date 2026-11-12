@@ -375,7 +375,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004f10ce
     PUSH dword ptr [EBP + 0xfffffee6]   ; 004f10cf
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 004f10d5
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [EBP + 0x76],EAX      ; 004f10da
     FLD float ptr [EBP + 0x76]          ; 004f10dd
     FABS                                ; 004f10e0

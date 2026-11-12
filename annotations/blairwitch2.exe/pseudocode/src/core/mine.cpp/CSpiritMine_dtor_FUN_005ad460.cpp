@@ -17,7 +17,7 @@ CSpiritMine * core_mine_cpp_CSpiritMine_dtor_FUN_005ad460(CSpiritMine *this_ptr,
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSpiritMineTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSpiritMineTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

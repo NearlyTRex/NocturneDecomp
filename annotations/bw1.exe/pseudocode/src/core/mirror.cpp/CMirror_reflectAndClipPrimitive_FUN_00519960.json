@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 328,
+    "complexity_score": 329,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 69,
     "suspect_count": 24,
     "suspect_types": [
       "shadow_pointer_walk",
@@ -15,7 +15,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 253
+    "total_lines": 254
   },
   "cross_references": [
     {
@@ -248,6 +248,32 @@
     },
     "pcode_op_count": 763
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004faa10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f5130",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00522310",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8889
+    },
+    "nocturne.exe": {
+      "addr": "004d74a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 32,
     "local_size": 24,
@@ -308,124 +334,124 @@
       "line": 32,
       "match": "DAT_01d2c5d4",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes,&DAT_01d2c5d4,_DAT_01d2c5d0,&DAT_01d2c758,&DAT_01d2c754);",
+      "text": "(this_ptr->clip_planes,(CVector3f *)&DAT_01d2c5d4,_DAT_01d2c5d0,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_01d2c758",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes,&DAT_01d2c5d4,_DAT_01d2c5d0,&DAT_01d2c758,&DAT_01d2c754);",
+      "text": "(CVector3f *)&DAT_01d2c758,(int *)&DAT_01d2c754);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_01d2c754",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes,&DAT_01d2c5d4,_DAT_01d2c5d0,&DAT_01d2c758,&DAT_01d2c754);",
+      "text": "(CVector3f *)&DAT_01d2c758,(int *)&DAT_01d2c754);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 36,
       "match": "DAT_01d2c758",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 1,&DAT_01d2c758,_DAT_01d2c754,&DAT_01d2c5d4,&DAT_01d2c5d0",
+      "text": "(this_ptr->clip_planes + 1,(CVector3f *)&DAT_01d2c758,_DAT_01d2c754,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 37,
       "match": "DAT_01d2c5d4",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 1,&DAT_01d2c758,_DAT_01d2c754,&DAT_01d2c5d4,&DAT_01d2c5d0",
+      "text": "(CVector3f *)&DAT_01d2c5d4,(int *)&DAT_01d2c5d0), 2 < _DAT_01d2c5d0)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 37,
       "match": "DAT_01d2c5d0",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 1,&DAT_01d2c758,_DAT_01d2c754,&DAT_01d2c5d4,&DAT_01d2c5d0",
+      "text": "(CVector3f *)&DAT_01d2c5d4,(int *)&DAT_01d2c5d0), 2 < _DAT_01d2c5d0)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_01d2c5d4",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 2,&DAT_01d2c5d4,_DAT_01d2c5d0,&DAT_01d2c758,&DAT_01d2c754)",
+      "text": "(this_ptr->clip_planes + 2,(CVector3f *)&DAT_01d2c5d4,_DAT_01d2c5d0,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 40,
       "match": "DAT_01d2c758",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 2,&DAT_01d2c5d4,_DAT_01d2c5d0,&DAT_01d2c758,&DAT_01d2c754)",
+      "text": "(CVector3f *)&DAT_01d2c758,(int *)&DAT_01d2c754), 2 < _DAT_01d2c754)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 40,
       "match": "DAT_01d2c754",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 2,&DAT_01d2c5d4,_DAT_01d2c5d0,&DAT_01d2c758,&DAT_01d2c754)",
+      "text": "(CVector3f *)&DAT_01d2c758,(int *)&DAT_01d2c754), 2 < _DAT_01d2c754)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 42,
       "match": "DAT_01d2c758",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 3,&DAT_01d2c758,_DAT_01d2c754,&DAT_01d2c5d4,&DAT_01d2c5d0)",
+      "text": "(this_ptr->clip_planes + 3,(CVector3f *)&DAT_01d2c758,_DAT_01d2c754,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 43,
       "match": "DAT_01d2c5d4",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 3,&DAT_01d2c758,_DAT_01d2c754,&DAT_01d2c5d4,&DAT_01d2c5d0)",
+      "text": "(CVector3f *)&DAT_01d2c5d4,(int *)&DAT_01d2c5d0), 2 < _DAT_01d2c5d0 &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 43,
       "match": "DAT_01d2c5d0",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 3,&DAT_01d2c758,_DAT_01d2c754,&DAT_01d2c5d4,&DAT_01d2c5d0)",
+      "text": "(CVector3f *)&DAT_01d2c5d4,(int *)&DAT_01d2c5d0), 2 < _DAT_01d2c5d0 &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 45,
       "match": "DAT_01d2c5d4",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 4,&DAT_01d2c5d4,_DAT_01d2c5d0,&DAT_01d2c758,&DAT_01d2c754)",
+      "text": "(this_ptr->clip_planes + 4,(CVector3f *)&DAT_01d2c5d4,_DAT_01d2c5d0,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 46,
       "match": "DAT_01d2c758",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 4,&DAT_01d2c5d4,_DAT_01d2c5d0,&DAT_01d2c758,&DAT_01d2c754)",
+      "text": "(CVector3f *)&DAT_01d2c758,(int *)&DAT_01d2c754), 2 < _DAT_01d2c754)))) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 46,
       "match": "DAT_01d2c754",
       "severity": "mild",
-      "text": "(this_ptr->clip_planes + 4,&DAT_01d2c5d4,_DAT_01d2c5d0,&DAT_01d2c758,&DAT_01d2c754)",
+      "text": "(CVector3f *)&DAT_01d2c758,(int *)&DAT_01d2c754), 2 < _DAT_01d2c754)))) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 54,
       "match": "DAT_01d2c758",
       "severity": "mild",
       "text": "local_14 = (float *)&DAT_01d2c758;",
@@ -433,7 +459,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 57,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "piVar2 = (int *)(*DAT_00612560 + iVar6);",
@@ -441,7 +467,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "*(uint *)(iVar6 + 0x10 + *DAT_00612560) = 0xffffffff;",
@@ -449,7 +475,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 47,
+      "line": 48,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;",
@@ -465,7 +491,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 66,
+      "line": 67,
       "match": "this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "this_ptr = (CMirror *)&(this_ptr->reflection).corner1.y;",

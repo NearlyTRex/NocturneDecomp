@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 engine_special_cpp_flushParticleList_FUN_0058271e(void)
+; int __cdecl engine_special_cpp_flushParticleList_FUN_0058271e(void)
 ;
 ;
 ; Referenced Globals:

@@ -111,7 +111,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00477ac0
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0
 ;   core_main.c_FUN_004e4330
 ;   core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_0050b610
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
@@ -137,8 +137,8 @@ section .text
     PUSH EDX                            ; 0050babf
     PUSH 0x203b37c                      ; 0050bac0 | g_CDemonRaytraceInstance
     LEA ESI,[ESP + 0xec]                ; 0050bac5
-    CALL core_dtrace.cpp_FUN_00477ac0   ; 0050bacc
-        ;   XREF to: 00477ac0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00477ac0()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0 ; 0050bacc
+        ;   XREF to: 00477ac0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0xec]                ; 0050bad1
     ADD ESP,0x8                         ; 0050bad8
     LEA EDI,[EBP + 0x18]                ; 0050badb

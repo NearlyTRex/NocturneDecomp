@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sound_cpp_syncChannel3WithChannel0_FUN_0055a16e(void)
+; void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0055a16e(void)
 ;
 ;
 ; Referenced Globals:
@@ -34,7 +34,7 @@ section .text
     ADD ESP,0x8                         ; 0055a18a
     PUSH 0x0                            ; 0055a18d
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00551190 ; 0055a18f
-        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00551190()
+        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00551190(int channel_index)
     MOV dword ptr [ESP + 0x4],EAX       ; 0055a194
     FLD float ptr [ESP + 0x4]           ; 0055a198
     ADD ESP,0x4                         ; 0055a19c
@@ -43,7 +43,7 @@ section .text
     FSTP float ptr [ESP]                ; 0055a1a8
     PUSH 0x3                            ; 0055a1ab
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00551100 ; 0055a1ad
-        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00551100()
+        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00551100(int channel_index, float volume)
     ADD ESP,0x8                         ; 0055a1b2
     ADD ESP,0x4                         ; 0055a1b5
     RET                                 ; 0055a1b8

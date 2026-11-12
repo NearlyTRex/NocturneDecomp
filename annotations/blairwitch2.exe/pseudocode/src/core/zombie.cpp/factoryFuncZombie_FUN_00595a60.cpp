@@ -1,20 +1,20 @@
 // Name: core_zombie.cpp_factoryFuncZombie_FUN_00595a60
 // Address: 00595a60
 // Address Range: [[00595a60, 00595a7b]]
-// Convention: unknown
-// Signature: void core_zombie_cpp_factoryFuncZombie_FUN_00595a60(void)
+// Convention: __cdecl
+// Signature: CZombie * __cdecl core_zombie_cpp_factoryFuncZombie_FUN_00595a60(void)
 
 #include "nocturne.h"
 
-void core_zombie_cpp_factoryFuncZombie_FUN_00595a60(void)
+CZombie * __cdecl core_zombie_cpp_factoryFuncZombie_FUN_00595a60(void)
 
 {
-  CZombie *this_ptr;
+  CZombie *pCVar1;
   
-  this_ptr = (CZombie *)operator_new(0x10be8);
-  if (this_ptr == (CZombie *)0x0) {
-    return;
+  pCVar1 = (CZombie *)operator_new(0x10be8);
+  if (pCVar1 == (CZombie *)0x0) {
+    return (CZombie *)0x0;
   }
-  core_zombie_cpp_CZombie_ctor_FUN_00595a90(this_ptr);
-  return;
+  pCVar1 = core_zombie_cpp_CZombie_ctor_FUN_00595a90(pCVar1);
+  return pCVar1;
 }

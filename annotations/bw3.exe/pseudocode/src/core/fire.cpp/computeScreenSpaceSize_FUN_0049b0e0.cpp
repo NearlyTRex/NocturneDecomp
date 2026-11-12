@@ -2,13 +2,13 @@
 // Address: 0049b0e0
 // Address Range: [[0049b0e0, 0049b1c7]]
 // Convention: __cdecl
-// Signature: float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(float param_1,float param_2)
+// Signature: float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(float depth,float min_size)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(float param_1,float param_2)
+float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(float depth,float min_size)
 
 {
   float fVar1;
@@ -22,18 +22,18 @@ float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_0049b0e0(float param_1,fl
   
   local_28 = 0;
   local_24 = 0;
-  local_20 = param_1;
+  local_20 = depth;
   local_34.x = (int)ROUND(_DAT_005df8e4 * 0.0);
   local_34.y = (int)ROUND(_DAT_005df8e4 * 0.0);
-  local_34.z = (int)ROUND(param_1 * _DAT_005df8e4);
+  local_34.z = (int)ROUND(depth * _DAT_005df8e4);
   engine_special_cpp_FUN_005632a3((SProjectedVertex *)*DAT_005f2afc,&local_34);
   fVar2 = (float)_DAT_005c05f0;
   fVar1 = (((float)*(int *)(*DAT_005f2afc + 8) * (float)_DAT_005c05e8) /
           ((float)DAT_005fba44 * fVar2)) * _DAT_005c05f8;
-  local_8 = param_2;
+  local_8 = min_size;
   fVar3 = ABS(fVar1 / ((float)_DAT_01c6b598 * fVar2));
   fVar1 = ABS(fVar1 / ((float)_DAT_01c6b59c * fVar2));
-  if (param_2 < fVar3) {
+  if (min_size < fVar3) {
     local_8 = fVar3;
   }
   if (fVar1 <= local_8) {

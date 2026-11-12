@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_svetlana.cpp_factoryFuncSvetlana_FUN_00570190
 // Address: 00570190
-void factoryFuncSvetlana(void);
+CSvetlana * __cdecl factoryFuncSvetlana(void);
 
 // Original: core_svetlana.cpp_CSvetlana_getActorType_FUN_005701b0
 // Address: 005701b0

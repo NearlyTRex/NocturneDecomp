@@ -16,7 +16,8 @@ void core_stranger_cpp_FUN_0056bf00(CDemonActor *param_1,int param_2,float param
   double dVar2;
   float *pfVar3;
   uint uVar4;
-  int iVar5;
+  CCharacter *this_ptr;
+  EDeathState EVar5;
   int iVar6;
   float fVar7;
   uint uVar8;
@@ -91,10 +92,10 @@ void core_stranger_cpp_FUN_0056bf00(CDemonActor *param_1,int param_2,float param
   if (fVar7 == 0.0) {
     local_28[3] = 0.0;
     local_28[1] = 0.0;
-    iVar5 = *(int *)((int)&param_1[0xe].orient_matrix + param_2 * 0x78 + 0xc);
+    iVar6 = *(int *)((int)&param_1[0xe].orient_matrix + param_2 * 0x78 + 0xc);
     uVar4 = 0;
-    if (iVar5 != 0) {
-      uVar4 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x7c))(iVar5);
+    if (iVar6 != 0) {
+      uVar4 = (**(code **)(*(int *)(iVar6 + 0x2b0) + 0x7c))(iVar6);
     }
     if ((uVar4 & 4) == 0) {
       local_28[2] = 0.0;
@@ -217,12 +218,15 @@ void core_stranger_cpp_FUN_0056bf00(CDemonActor *param_1,int param_2,float param
     fStack_24 = 1e+30;
     iStack_40 = 0;
     for (iStack_44 = 0; iStack_44 < g_CDemonSetPtr->threat_count; iStack_44 = iStack_44 + 1) {
-      iVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                        (*(uint *)((int)g_CDemonSetPtr->threats + iStack_40),
-                         g_CCharacterClassInfo.name_hash);
-      if ((iVar5 == 0) ||
-         ((iVar6 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x114))(iVar5), iVar6 == 0 &&
-          (iVar5 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x78))(iVar5), iVar5 == 0)))) {
+      this_ptr = (CCharacter *)
+                 core_actor_cpp_castToClassHash_FUN_0040c8f0
+                           (*(CDemonActor **)((int)g_CDemonSetPtr->threats + iStack_40),
+                            g_CCharacterClassInfo.name_hash);
+      if ((this_ptr == (CCharacter *)0x0) ||
+         ((EVar5 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr),
+          EVar5 == DEATH_STATE_ALIVE &&
+          (iVar6 = (*((this_ptr->base).vtable._ub)->shouldIgnoreForTargeting)
+                             ((CDemonActor *)this_ptr), iVar6 == 0)))) {
         pCStack_20 = *(CDemonActor **)((int)g_CDemonSetPtr->threats + iStack_40);
         __arrinit(aCStack_218,10,&g_CVectorTypeInfo);
         iStack_2c = (*((pCStack_20->vtable)._ub)->getTargetPoints)(pCStack_20,aCStack_218);
@@ -275,10 +279,10 @@ void core_stranger_cpp_FUN_0056bf00(CDemonActor *param_1,int param_2,float param
                   core_setcolid_cpp_CDemonSet_setRayType_FUN_00537eb0(g_CDemonSetPtr,2);
                   core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,param_1);
                   core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,pCStack_20);
-                  iVar5 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00535e10
+                  iVar6 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00535e10
                                     (g_CDemonSetPtr,&CStack_154,&CStack_16c);
                   core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
-                  if (iVar5 == 0) {
+                  if (iVar6 == 0) {
                     fStack_38 = fStack_84;
                     fStack_3c = fStack_88;
                     local_28[7] = 1.4013e-45;
@@ -300,9 +304,9 @@ void core_stranger_cpp_FUN_0056bf00(CDemonActor *param_1,int param_2,float param
     dVar2 = _DAT_005ebc85;
   }
   fStack_48 = param_3 * _DAT_005ebc65 * (float)dVar2;
-  fStack_54 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_38 - local_28[3]);
+  fStack_54 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_38 - local_28[3]);
   fStack_18 = fStack_54;
-  fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_3c - local_28[2]);
+  fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_3c - local_28[2]);
   fStack_58 = -fStack_48;
   if (fStack_54 < fStack_58) {
     fStack_54 = fStack_58;
@@ -318,9 +322,9 @@ void core_stranger_cpp_FUN_0056bf00(CDemonActor *param_1,int param_2,float param
   if (fStack_48 < fStack_50) {
     fStack_50 = fStack_48;
   }
-  fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_28[3] + fStack_54);
+  fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_28[3] + fStack_54);
   local_28[3] = fStack_18;
-  fVar7 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_28[2] + fStack_50);
+  fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_28[2] + fStack_50);
   local_28[2] = fVar7;
   local_28[5] = 1.0;
   if (((local_28[7] == 1.4013e-45) && (ABS(local_28[3] - fStack_38) < (float)_DAT_005ebc8d)) &&

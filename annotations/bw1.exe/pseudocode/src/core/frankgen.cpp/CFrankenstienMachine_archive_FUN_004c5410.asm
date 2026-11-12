@@ -36,7 +36,7 @@ section .text
     LEA EAX,[EBX + 0x15c]               ; 004c5437
     PUSH EAX                            ; 004c543d
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004c543e
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004c5443
     POP EBX                             ; 004c5446
     RET                                 ; 004c5447

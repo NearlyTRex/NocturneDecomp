@@ -12,7 +12,7 @@ void __cdecl core_bat_cpp_CBat_setup_FUN_0040eeb0(CBat *this_ptr)
   float fVar1;
   
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580(&this_ptr->model);
-  core_course_cpp_FUN_00444970(&this_ptr->course,this_ptr->course_filename);
+  core_course_cpp_CCourse_load_FUN_00444970(&this_ptr->course,this_ptr->course_filename);
   core_actor_cpp_CDemonActor_setup_FUN_00408890(&this_ptr->base);
   core_bat_cpp_CBat_updateCoursePosition_FUN_0040f2f0(this_ptr);
   this_ptr->sfx_handle = 0;

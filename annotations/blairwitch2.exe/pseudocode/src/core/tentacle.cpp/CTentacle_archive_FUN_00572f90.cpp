@@ -9,7 +9,7 @@
 void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_00572f90(CTentacle *this_ptr)
 
 {
-  CDeformableModelInstance *pCVar1;
+  CDeformableModelInstance *model_ptr;
   
   core_enemy_cpp_CEnemy_archive_FUN_00487ec0(&this_ptr->base);
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0
@@ -18,9 +18,9 @@ void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_00572f90(CTentacle *this_pt
     core_actor_cpp_archiveFloat_FUN_0040b8e0
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
-  pCVar1 = &(this_ptr->base).base.model;
-  core_actor_cpp_archiveMotionState_FUN_0040bb60(pCVar1,"motion state");
-  core_actor_cpp_archivePartStatus_FUN_0040bc50(pCVar1,"partStatus");
+  model_ptr = &(this_ptr->base).base.model;
+  core_actor_cpp_archiveMotionState_FUN_0040bb60(&model_ptr->base,"motion state");
+  core_actor_cpp_archivePartStatus_FUN_0040bc50(model_ptr,"partStatus");
   core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->grave_actor,"graveActor");
   return;
 }

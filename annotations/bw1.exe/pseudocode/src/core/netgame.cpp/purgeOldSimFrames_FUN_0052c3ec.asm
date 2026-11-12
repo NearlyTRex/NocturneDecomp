@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int param_1)
+; void __cdecl core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int min_sequence)
 ;
+; Parameters:
+; int              Stack[0x4]:4   min_sequence
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d715a8

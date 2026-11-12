@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 99,
+    "complexity_score": 96,
     "cross_reference_count": 11,
     "function_call_count": 4,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
+    "pseudocode_lines": 51,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_truncation",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 185
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -105,7 +105,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     },
     {
       "addr": "00570020",
@@ -372,6 +372,32 @@
     },
     "pcode_op_count": 419
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0054f700",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00555270",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a7e60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9898
+    },
+    "nocturne.exe": {
+      "addr": "00525570",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9898
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -399,7 +425,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
+      "line": 20,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02c80650 + 0x50))(_DAT_02c80650,this_ptr);",
@@ -407,10 +433,10 @@
     },
     {
       "description": "Pointer value `&this_ptr[-0x28126].options.base_frequency` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 42,
       "match": "(int)&this_ptr[-0x28126].options.base_frequency",
       "severity": "moderate",
-      "text": "if ((int)&this_ptr[-0x28126].options.base_frequency / 0x11c != pCVar2->streaming_slot_index) {",
+      "text": "if ((int)&this_ptr[-0x28126].options.base_frequency / 0x11c !=",
       "type": "pointer_truncation"
     }
   ]

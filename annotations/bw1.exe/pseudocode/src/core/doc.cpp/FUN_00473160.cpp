@@ -211,7 +211,7 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
       else {
         fStack_8c = fStack_8c - fStack_38;
       }
-      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_8c);
+      fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_8c);
       fStack_8c = fStack_18;
     }
     if ((((float)_DAT_005da33c <= fVar2) &&
@@ -226,7 +226,7 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
       else {
         fStack_90 = fStack_90 - fStack_3c;
       }
-      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_90);
+      fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_90);
       fStack_90 = fStack_18;
     }
   }

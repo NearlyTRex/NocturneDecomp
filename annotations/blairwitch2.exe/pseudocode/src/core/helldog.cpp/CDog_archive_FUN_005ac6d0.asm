@@ -38,13 +38,13 @@ section .text
     LEA EAX,[EBX + 0x1185c]             ; 005ac6f0
     PUSH EAX                            ; 005ac6f6
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 005ac6f7
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ac6fc
     PUSH 0x5f0e83                       ; 005ac6ff | = "EatTime"
     LEA EAX,[EBX + 0x11864]             ; 005ac704
     PUSH EAX                            ; 005ac70a
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 005ac70b
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ac710
     POP EBX                             ; 005ac713
     RET                                 ; 005ac714

@@ -52,7 +52,7 @@ int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0044bf20(CCurtain *this_ptr
       puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
       puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
     }
-    core_box_cpp_FUN_00421670((CBoundingBox3D *)(auStack_20 + 2));
+    core_box_cpp_CBoundingBox3D_render_FUN_00421670((CBoundingBox3D *)(auStack_20 + 2));
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(&this_ptr->base);
     return 1;
   }

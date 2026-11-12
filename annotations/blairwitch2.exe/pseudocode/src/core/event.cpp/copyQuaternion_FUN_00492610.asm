@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_copyQuaternion_FUN_00492610(undefined4 *param_1,undefined4 *param_2)
+; CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_00492610(CQuaternion4f *dest,CQuaternion4f *src)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   dest
+; CQuaternion4f *  Stack[0x8]:4   src
 ;
 ; XREF[1]:
 ;   core_script.cpp_FUN_00522350 at 00526a5f

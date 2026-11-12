@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ammobox_cpp_factoryFuncAmmoBox_FUN_0040e590(void)
+; CAmmoBox * __cdecl core_ammobox_cpp_factoryFuncAmmoBox_FUN_0040e590(void)
 ;
 ;
 ; Called Functions:

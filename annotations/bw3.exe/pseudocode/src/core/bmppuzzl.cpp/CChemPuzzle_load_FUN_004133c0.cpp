@@ -16,12 +16,12 @@ void __cdecl core_bmppuzzl_cpp_CChemPuzzle_load_FUN_004133c0(CChemPuzzle *this_p
   
   piVar1 = &(this_ptr->background).width;
   if (param_2 == 0) {
-    engine_alphabit_cpp_FUN_0040d400(&this_ptr->background);
-    engine_alphabit_cpp_FUN_0040d400(CAlphaBitmap_ARRAY_007e0010);
-    engine_alphabit_cpp_FUN_0040d400(CAlphaBitmap_ARRAY_007e0010 + 1);
-    engine_alphabit_cpp_FUN_0040d400(CAlphaBitmap_ARRAY_007e0010 + 2);
-    engine_alphabit_cpp_FUN_0040d400(CAlphaBitmap_ARRAY_007e0010 + 3);
-    engine_alphabit_cpp_FUN_0040d400(CAlphaBitmap_ARRAY_007e0010 + 4);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&this_ptr->background);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap_ARRAY_007e0010);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap_ARRAY_007e0010 + 1);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap_ARRAY_007e0010 + 2);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap_ARRAY_007e0010 + 3);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap_ARRAY_007e0010 + 4);
     pCVar2 = this_ptr;
     do {
       pCVar4 = &pCVar2->background;
@@ -44,7 +44,7 @@ void __cdecl core_bmppuzzl_cpp_CChemPuzzle_load_FUN_004133c0(CChemPuzzle *this_p
     if (0 < this_ptr->button_count) {
       pCVar4 = &this_ptr->buttons[0].bitmap;
       do {
-        engine_alphabit_cpp_FUN_0040d400(pCVar4);
+        engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(pCVar4);
         iVar3 = iVar3 + 1;
         pCVar4 = (CAlphaBitmap *)&pCVar4[2].opa;
       } while (iVar3 < this_ptr->button_count);
@@ -129,7 +129,7 @@ void __cdecl core_bmppuzzl_cpp_CChemPuzzle_load_FUN_004133c0(CChemPuzzle *this_p
   if (0 < this_ptr->button_count) {
     pCVar4 = &this_ptr->buttons[0].bitmap;
     do {
-      engine_alphabit_cpp_FUN_0040d400(pCVar4);
+      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(pCVar4);
       iVar3 = iVar3 + 1;
       pCVar4 = (CAlphaBitmap *)&pCVar4[2].opa;
     } while (iVar3 < this_ptr->button_count);

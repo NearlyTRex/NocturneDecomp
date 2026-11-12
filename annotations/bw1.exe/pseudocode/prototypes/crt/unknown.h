@@ -71,7 +71,7 @@ int FUN_005c03f0(int param_1);
 
 // Original: crt_unknown.c_FUN_005c0410
 // Address: 005c0410
-void FUN_005c0410(undefined4 param_1,int param_2);
+void FUN_005c0410(int param_1,int param_2);
 
 // Original: crt_unknown.c_FUN_005c0428
 // Address: 005c0428
@@ -135,7 +135,7 @@ uint FUN_005c12d0(byte *param_1,byte *param_2);
 
 // Original: crt_unknown.c_FUN_005c140c
 // Address: 005c140c
-int FUN_005c140c(undefined4 param_1,byte param_2,uint param_3,undefined4 param_4,undefined4 param_5,int param_6);
+_FILE * FUN_005c140c(undefined4 param_1,byte param_2,uint param_3,char *param_4,undefined4 param_5,_FILE *param_6);
 
 // Original: crt_unknown.c_FUN_005c1520
 // Address: 005c1520
@@ -419,7 +419,7 @@ void FUN_005c4fb4(void);
 
 // Original: crt_unknown.c_FUN_005c4fc0
 // Address: 005c4fc0
-void FUN_005c4fc0(undefined4 *param_1,undefined4 param_2);
+void FUN_005c4fc0(undefined4 *param_1,int param_2);
 
 // Original: crt_unknown.c_FUN_005c4fe0
 // Address: 005c4fe0
@@ -1807,7 +1807,7 @@ undefined * FUN_005ce120(uint param_1);
 
 // Original: crt_unknown.c_FUN_005ce150
 // Address: 005ce150
-int FUN_005ce150(char *param_1,int param_2);
+int FUN_005ce150(byte *param_1,_FILE *param_2);
 
 // Original: crt_unknown.c_FUN_005ce203
 // Address: 005ce203

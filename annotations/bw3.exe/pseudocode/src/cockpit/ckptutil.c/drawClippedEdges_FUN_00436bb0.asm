@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_00436bb0(short *param_1,int param_2,int param_3,int param_4)
+; void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_00436bb0(SEdge *edges,int count,int x_offset,int y_offset)
 ;
+; Parameters:
+; SEdge *          Stack[0x4]:4   edges
+; int              Stack[0x8]:4   count
+; int              Stack[0xc]:4   x_offset
+; int              Stack[0x10]:4   y_offset
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6b5a8

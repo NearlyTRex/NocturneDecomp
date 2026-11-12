@@ -13,11 +13,12 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0058fcb0(CStranger *t
 {
   CDeformableModelInstance *this_ptr_00;
   CCharacter_full_vtable *pCVar1;
-  CConsole *pCVar2;
-  CGame *pCVar3;
-  int iVar4;
-  SMotion *pSVar5;
-  uint uVar6;
+  CConsole *this_ptr_01;
+  CGame *pCVar2;
+  int iVar3;
+  SMotion *pSVar4;
+  uint uVar5;
+  CDemonActor *pCVar6;
   float force_immediate;
   
   if ((this_ptr->base).base.is_invulnerable != 0) {
@@ -35,20 +36,19 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0058fcb0(CStranger *t
     return;
   }
   (this_ptr->base).invincibility_timer = _DAT_00606078;
-  iVar4 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->wielder,"CBugs");
-  if (iVar4 != 0) {
+  iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(damage_info->wielder,"CBugs");
+  if (iVar3 != 0) {
     (this_ptr->base).invincibility_timer = 0.15;
   }
-  pCVar3 = g_CGamePtr;
+  pCVar2 = g_CGamePtr;
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
-  pCVar2 = g_CConsolePtr;
-  if (((pCVar3->auto_use_health != 0) && (0xb < (int)damage_info->damage_type)) &&
+  this_ptr_01 = g_CConsolePtr;
+  if (((pCVar2->auto_use_health != 0) && (0xb < (int)damage_info->damage_type)) &&
      ((this_ptr->base).base.hit_points <= 0.0)) {
     (this_ptr->base).base.hit_points = 0.0;
-    engine_console_cpp_FUN_00445430(pCVar2);
+    engine_console_cpp_CConsole_printf_FUN_00445430(this_ptr_01,"Using auto health\n");
     core_inv_cpp_CInventory_autoUseHealthItem_FUN_004fc3e0(&(this_ptr->base).inventory);
-    engine_console_cpp_FUN_00445430
-              (g_CConsolePtr,"hit points: %3.2f\n",(double)(this_ptr->base).base.hit_points);
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"hit points: %3.2f\n");
   }
   this_ptr_00 = &(this_ptr->base).base.model;
   if (0.0 < (this_ptr->base).base.hit_points) {
@@ -56,16 +56,17 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0058fcb0(CStranger *t
       if ((((damage_info->damage_type != DAMAGE_TYPE_ATTACK_GAS) &&
            ((this_ptr->base).ladder_to_climb == (CLadder *)0x0)) &&
           ((this_ptr->ladder_to_descend == (CLadder *)0x0 && ((this_ptr->base).action_pending == 0))
-          )) && ((iVar4 = core_actor_cpp_castToClassHash_FUN_0040c600(damage_info->attacker),
-                 iVar4 == 0 || (iVar4 = core_actor_cpp_randomChance_FUN_0040cd00(0.333), iVar4 != 0)
-                 ))) {
+          )) && ((pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c600
+                                     (damage_info->attacker,g_CTommyGunClassInfo.name_hash),
+                 pCVar6 == (CDemonActor *)0x0 ||
+                 (iVar3 = core_actor_cpp_randomChance_FUN_0040cd00(0.333), iVar3 != 0)))) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,0x31,1);
       }
-      iVar4 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handle);
-      if (iVar4 == 0) {
-        uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+      iVar3 = sound_sndmain_cpp_FUN_005735a0(this_ptr->sfx_handle);
+      if (iVar3 == 0) {
+        uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"stranger_hit??.wav");
-        this_ptr->sfx_handle = uVar6;
+        this_ptr->sfx_handle = uVar5;
       }
     }
   }
@@ -73,34 +74,34 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0058fcb0(CStranger *t
     pCVar1 = (this_ptr->base).base.base.vtable._uc;
     (this_ptr->base).base.hit_points = 0.0;
     (*(pCVar1->_uc).releaseFromGrab)((CCharacter *)this_ptr);
-    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
-    if ((pSVar5->state_index != 0x36) &&
-       (pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base)
-       , pSVar5->state_index != 0x35)) {
+    pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
+    if ((pSVar4->state_index != 0x36) &&
+       (pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base)
+       , pSVar4->state_index != 0x35)) {
       if (((this_ptr->base).ladder_to_climb == (CLadder *)0x0) &&
          (this_ptr->ladder_to_descend == (CLadder *)0x0)) {
         if (damage_info->damage_type == DAMAGE_TYPE_DROWN) {
-          iVar4 = 0x34;
+          iVar3 = 0x34;
           force_immediate = 1.4013e-45;
         }
         else {
           force_immediate = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,100.0);
-          iVar4 = (force_immediate <= _DAT_005f6fb5) + 0x32;
+          iVar3 = (force_immediate <= _DAT_005f6fb5) + 0x32;
         }
       }
       else {
         force_immediate = 1.4013e-45;
         (this_ptr->base).ladder_to_climb = (CLadder *)0x0;
-        iVar4 = 0x1a;
+        iVar3 = 0x1a;
         this_ptr->ladder_to_descend = (CLadder *)0x0;
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-                (&(this_ptr->base).base.model.base,iVar4,(int)force_immediate);
+                (&(this_ptr->base).base.model.base,iVar3,(int)force_immediate);
       sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handle);
       if (damage_info->damage_type != DAMAGE_TYPE_DROWN) {
-        uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+        uVar5 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"stranger_die??.wav");
-        this_ptr->sfx_handle = uVar6;
+        this_ptr->sfx_handle = uVar5;
       }
       core_gore_cpp_CGore_spawnFliesOnActor_FUN_004e64d0
                 (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);

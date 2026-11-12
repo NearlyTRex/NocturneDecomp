@@ -878,7 +878,7 @@ section .text
     PUSH dword ptr [EAX + 0x38]         ; 00498112
     PUSH 0x0                            ; 00498115
     CALL core_fire.cpp_computeScreenSpaceSize_FUN_00497710 ; 00498117
-        ;   XREF to: 00497710 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_computeScreenSpaceSize_FUN_00497710()
+        ;   XREF to: 00497710 (UNCONDITIONAL_CALL)  ; float core_fire.cpp_computeScreenSpaceSize_FUN_00497710(float depth, float min_size)
     MOV dword ptr [ESP + 0x3a4],EAX     ; 0049811c
     FLD float ptr [ESP + 0x3a4]         ; 00498123
     ADD ESP,0x8                         ; 0049812a
@@ -886,7 +886,7 @@ section .text
     PUSH dword ptr [ESP + 0x2c]         ; 00498134
     FSTP float ptr [ESP + 0x37c]        ; 00498138
     CALL core_fire.cpp_computeScreenSpaceSize_FUN_00497710 ; 0049813f
-        ;   XREF to: 00497710 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_computeScreenSpaceSize_FUN_00497710()
+        ;   XREF to: 00497710 (UNCONDITIONAL_CALL)  ; float core_fire.cpp_computeScreenSpaceSize_FUN_00497710(float depth, float min_size)
     MOV dword ptr [ESP + 0x3a4],EAX     ; 00498144
     FLD float ptr [ESP + 0x3a4]         ; 0049814b
     ADD ESP,0x8                         ; 00498152

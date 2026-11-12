@@ -7,23 +7,23 @@
 
 // Original: crt_stdio.c_vsprintf_FUN_005a2898
 // Address: 005a2898
-void __cdecl vsprintf(int param_1,undefined4 param_2,undefined4 param_3);
+int __cdecl vsprintf(char *buffer,char *format,va_list_t args);
 
 // Original: crt_stdio.c_fscanf_FUN_005a3230
 // Address: 005a3230
-void __cdecl fscanf(undefined4 param_1,undefined4 param_2);
+int __cdecl fscanf(_FILE *file,char *format);
 
 // Original: crt_stdio.c_fgetc_FUN_005a32b0
 // Address: 005a32b0
-uint __cdecl fgetc(undefined4 *param_1);
+int __cdecl fgetc(_FILE *file);
 
 // Original: crt_stdio.c_ungetc_FUN_005a3480
 // Address: 005a3480
-uint __cdecl ungetc(uint param_1,int *param_2);
+int __cdecl ungetc(int character,_FILE *stream);
 
 // Original: crt_stdio.c_fread_FUN_005a3890
 // Address: 005a3890
-uint __cdecl fread(char *param_1,uint param_2,int param_3,int *param_4);
+SIZE_T __cdecl fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file);
 
 // Original: crt_stdio.c_fclose_FUN_005a3a90
 // Address: 005a3a90
@@ -31,27 +31,27 @@ undefined4 __cdecl fclose(int param_1);
 
 // Original: crt_stdio.c_fclose_FUN_005a3bc0
 // Address: 005a3bc0
-uint __cdecl fclose(int param_1,int param_2);
+uint __cdecl fclose(_FILE *param_1,int param_2);
 
 // Original: crt_stdio.c_fgets_FUN_005a3f00
 // Address: 005a3f00
-char * __cdecl fgets(char *param_1,int param_2,int param_3);
+char * __cdecl fgets(char *str,int num,_FILE *stream);
 
 // Original: crt_stdio.c_fopen_FUN_005a43ec
 // Address: 005a43ec
-void __cdecl fopen(undefined4 param_1,undefined4 param_2);
+_FILE * __cdecl fopen(char *filename,char *mode);
 
 // Original: crt_stdio.c_freopen_FUN_005a4484
 // Address: 005a4484
-undefined4 __cdecl freopen(undefined4 param_1,undefined1 *param_2,int param_3);
+_FILE * __cdecl freopen(char *filename,char *mode,_FILE *stream);
 
 // Original: crt_stdio.c_fseek_FUN_005a457c
 // Address: 005a457c
-undefined4 __cdecl fseek(undefined4 *param_1,int param_2,uint param_3);
+int __cdecl fseek(_FILE *file,long offset,int whence);
 
 // Original: crt_stdio.c_fwrite_FUN_005a48e0
 // Address: 005a48e0
-uint __cdecl fwrite(undefined4 *param_1,uint param_2,int param_3,int *param_4);
+SIZE_T __cdecl fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file);
 
 // Original: crt_stdio.c_sscanf_FUN_005a5b9c
 // Address: 005a5b9c
@@ -59,11 +59,11 @@ int __cdecl sscanf(char *str,char *format);
 
 // Original: crt_stdio.c_ftell_FUN_005a5d00
 // Address: 005a5d00
-int __cdecl ftell(int param_1);
+long __cdecl ftell(_FILE *file_handle);
 
 // Original: crt_stdio.c_fputc_FUN_005a5d70
 // Address: 005a5d70
-uint __cdecl fputc(uint param_1,int *param_2);
+int __cdecl fputc(int character,_FILE *file);
 
 // Original: crt_stdio.c_rename_FUN_005a5f20
 // Address: 005a5f20

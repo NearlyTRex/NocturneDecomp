@@ -13,7 +13,6 @@ CDeformableModel * core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_00549350(CDe
 {
   CDeformableModel *pCVar1;
   
-  pCVar1 = (CDeformableModel *)
-           __arrfini(this_ptr,0x40,&g_CDeformableModelTypeInfo);
+  pCVar1 = (CDeformableModel *)__arrfini(this_ptr,0x40,&g_CDeformableModelTypeInfo);
   return pCVar1;
 }

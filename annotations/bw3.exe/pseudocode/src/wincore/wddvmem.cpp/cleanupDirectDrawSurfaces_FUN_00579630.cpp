@@ -1,14 +1,14 @@
 // Name: wincore_wddvmem.cpp_cleanupDirectDrawSurfaces_FUN_00579630
 // Address: 00579630
 // Address Range: [[00579630, 00579688]]
-// Convention: unknown
-// Signature: void wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_00579630(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_00579630(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_00579630(void)
+void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_00579630(void)
 
 {
   if (_DAT_02d0bcec != (int *)0x0) {

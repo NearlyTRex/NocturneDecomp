@@ -19,11 +19,11 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_FUN_0042c1e0
 ;   core_charactr.cpp_FUN_0042c230
-;   core_charactr.cpp_FUN_0042cd30
 ;   core_charactr.cpp_FUN_00433c60
 ;   core_charactr.cpp_FUN_00434850
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
@@ -242,8 +242,8 @@ section .text
         ;   XREF to: 0042c230 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042c230(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 0059dbff
     PUSH EBX                            ; 0059dc02
-    CALL core_charactr.cpp_FUN_0042cd30 ; 0059dc03
-        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042cd30(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30 ; 0059dc03
+        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0059dc08
     LEA EAX,[EBX + 0x158]               ; 0059dc0b
     PUSH EAX                            ; 0059dc11
@@ -272,8 +272,8 @@ section .text
     PUSH 0x5d9eeb                       ; 0059dc3b | = "%s confused while walking to scriptDe..."
     MOV ESI,dword ptr [0x005f1690]      ; 0059dc40 | g_CConsolePtr
     PUSH ESI                            ; 0059dc46 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0059dc47
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0059dc47
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     JMP 0x0059db03                      ; 0059dc4c
         ;   XREF to: 0059db03 (UNCONDITIONAL_JUMP)  ; LAB_0059db03
     JBE 0x0059daf3                      ; 0059dc51

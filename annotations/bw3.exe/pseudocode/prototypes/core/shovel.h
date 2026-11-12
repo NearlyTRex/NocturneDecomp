@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_shovel.cpp_factoryFuncShovel_FUN_00547000
 // Address: 00547000
-void factoryFuncShovel(void);
+CShovel * __cdecl factoryFuncShovel(void);
 
 // Original: core_shovel.cpp_CShovel_getActorType_FUN_00547020
 // Address: 00547020

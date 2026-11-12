@@ -303,7 +303,7 @@ void FUN_004a5f60(int param_1);
 
 // Original: core_fldnotes.cpp_FUN_004a61b0
 // Address: 004a61b0
-void FUN_004a61b0(CFieldNotes *param_1,undefined4 param_2);
+void FUN_004a61b0(CFieldNotes *param_1,_FILE *param_2);
 
 // Original: core_fldnotes.cpp_FUN_004a6470
 // Address: 004a6470
@@ -315,7 +315,7 @@ SPageResourceMap * SPageResourceMap::dtor(SPageResourceMap *this_ptr,uint flags)
 
 // Original: core_fldnotes.cpp_FUN_004a66f0
 // Address: 004a66f0
-void FUN_004a66f0(undefined4 param_1);
+void FUN_004a66f0(void *param_1);
 
 // Original: core_fldnotes.cpp_CAlphaBitmap_arrdtor6_FUN_004a6710
 // Address: 004a6710

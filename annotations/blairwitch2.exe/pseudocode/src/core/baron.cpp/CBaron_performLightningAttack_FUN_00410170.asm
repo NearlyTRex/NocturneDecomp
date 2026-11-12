@@ -112,7 +112,7 @@ section .text
     PUSH dword ptr [ESP + 0x168]        ; 0041022a
         ;   Label: LAB_0041022a
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 00410231
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x1a0],EAX     ; 00410236
     FLD float ptr [ESP + 0x1a0]         ; 0041023d
     ADD ESP,0x4                         ; 00410244
@@ -180,7 +180,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0041031a
     PUSH EAX                            ; 0041031e
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0041031f
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00410324
     LEA EAX,[ESP + 0x8]                 ; 00410327
     PUSH EAX                            ; 0041032b

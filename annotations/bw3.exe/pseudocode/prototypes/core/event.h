@@ -27,7 +27,7 @@ int * __cdecl skipWhitespaceIndexed(char *expression,int *parse_position);
 
 // Original: core_event.cpp_parseComparisonOp_FUN_0048b86e
 // Address: 0048b86e
-undefined4 parseComparisonOp(char *param_1);
+int __cdecl parseComparisonOp(char *str);
 
 // Original: core_event.cpp_parseIntOrCounter_FUN_0048b910
 // Address: 0048b910
@@ -35,11 +35,11 @@ int __cdecl parseIntOrCounter(char *str);
 
 // Original: core_event.cpp_resolveActorByName_FUN_0048b950
 // Address: 0048b950
-CDemonActor * __cdecl resolveActorByName(char *param_1,undefined4 param_2);
+CDemonActor * __cdecl resolveActorByName(char *name,uint class_hash,char *class_name);
 
 // Original: core_event.cpp_parseVectorLocation_FUN_0048ba80
 // Address: 0048ba80
-undefined4 __cdecl parseVectorLocation(int param_1,int *param_2,undefined4 *param_3);
+int __cdecl parseVectorLocation(char *buffer,int *offset,CVector3f *out_position);
 
 // Original: core_event.cpp_trimWhitespace_FUN_0048bba0
 // Address: 0048bba0
@@ -219,7 +219,7 @@ int __cdecl CRuleList::evaluateAndRun(CRuleList *this_ptr);
 
 // Original: core_event.cpp_copyQuaternion_FUN_00495e40
 // Address: 00495e40
-void __cdecl copyQuaternion(undefined4 *param_1,undefined4 *param_2);
+CQuaternion4f * __cdecl copyQuaternion(CQuaternion4f *dest,CQuaternion4f *src);
 
 // Original: core_event.cpp_FUN_00495e60
 // Address: 00495e60

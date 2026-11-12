@@ -13,7 +13,7 @@
 ;   undefined4 DAT_00600530
 ;
 ; Called Functions:
-;   core_mission.cpp_FUN_004f69a0
+;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004f69a0
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH EBP                            ; 004dcaad
     ADD ESI,0x4                         ; 004dcaae
     INC EBX                             ; 004dcab1
-    CALL core_mission.cpp_FUN_004f69a0  ; 004dcab2
-        ;   XREF to: 004f69a0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f69a0()
+    CALL core_mission.cpp_CDemonMission_removeActorFromList_FUN_004f69a0 ; 004dcab2
+        ;   XREF to: 004f69a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActorFromList_FUN_004f69a0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     MOV EAX,dword ptr [EDI + 0x10]      ; 004dcab7
     ADD ESP,0x8                         ; 004dcaba
     CMP EBX,EAX                         ; 004dcabd

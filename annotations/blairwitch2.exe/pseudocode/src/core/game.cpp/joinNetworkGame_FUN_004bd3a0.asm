@@ -13,8 +13,8 @@
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_run_FUN_004fcb00
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0
+;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50
-;   core_netgame.cpp_FUN_0050b4d0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_0047dae0
 ;   support_trisock.cpp_parseIPAddress_FUN_00578bf0
 ;
@@ -60,8 +60,8 @@ section .text
     PUSH EAX                            ; 004bd3ee
     MOV ECX,dword ptr [0x0061b120]      ; 004bd3ef | g_CNetGamePtr
     PUSH ECX                            ; 004bd3f5
-    CALL core_netgame.cpp_FUN_0050b4d0  ; 004bd3f6
-        ;   XREF to: 0050b4d0 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_FUN_0050b4d0(CNetGame * this_ptr, uint32_t * server_ip)
+    CALL core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0 ; 004bd3f6
+        ;   XREF to: 0050b4d0 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0(CNetGame * this_ptr, uint32_t * server_ip)
     ADD ESP,0x8                         ; 004bd3fb
     TEST EAX,EAX                        ; 004bd3fe
     JZ 0x004bd42e                       ; 004bd400

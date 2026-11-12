@@ -66,14 +66,14 @@ section .text
     PUSH 0x61b5ac                       ; 0052d0ef | DAT_0061b5ac
     MOV EDX,dword ptr [0x0060b280]      ; 0052d0f4 | DAT_0060b280
     PUSH EDX                            ; 0052d0fa | DAT_01ba5c50
-    CALL engine_drender.cpp_FUN_0046b520 ; 0052d0fb
-        ;   XREF to: 0046b520 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b520()
+    CALL engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0046b520 ; 0052d0fb
+        ;   XREF to: 0046b520 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0046b520(CDemonRenderer * this_ptr, CVector3i * direction)
     ADD ESP,0x8                         ; 0052d100
     MOV ECX,dword ptr [0x0060b280]      ; 0052d103 | DAT_0060b280
     PUSH 0x3e800000                     ; 0052d109
     PUSH ECX                            ; 0052d10e | DAT_01ba5c50
-    CALL engine_drender.cpp_FUN_0046b4f0 ; 0052d10f
-        ;   XREF to: 0046b4f0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b4f0()
+    CALL engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0046b4f0 ; 0052d10f
+        ;   XREF to: 0046b4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0046b4f0(CDemonRenderer * this_ptr, float intensity)
     ADD ESP,0x8                         ; 0052d114
     TEST ESI,ESI                        ; 0052d117
     JZ 0x0052d2c1                       ; 0052d119

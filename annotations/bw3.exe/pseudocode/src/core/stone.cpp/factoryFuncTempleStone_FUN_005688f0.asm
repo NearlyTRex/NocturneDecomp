@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stone_cpp_factoryFuncTempleStone_FUN_005688f0(void)
+; CTempleStone * __cdecl core_stone_cpp_factoryFuncTempleStone_FUN_005688f0(void)
 ;
 ;
 ; Called Functions:

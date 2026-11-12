@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bride_cpp_factoryFuncBride_FUN_00423890(void)
+; CBride * __cdecl core_bride_cpp_factoryFuncBride_FUN_00423890(void)
 ;
 ;
 ; Called Functions:

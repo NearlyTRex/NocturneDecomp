@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 327,
-    "complexity_score": 479,
+    "complexity_score": 481,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 16,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 116,
     "suspect_count": 36,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 441
+    "total_lines": 443
   },
   "cross_references": [
     {
@@ -73,7 +73,7 @@
     {
       "addr": "00441ff0",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00441ff0"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441ff0"
     },
     {
       "addr": "0047cf40",
@@ -258,7 +258,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = param_1->hero_action_actor;",
+      "text": "pCVar2 = param_1->hero_action_actor;",
       "type": "unnamed_param"
     },
     {
@@ -303,7 +303,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3210(param_1);",
@@ -311,7 +311,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->hero_action_actor,g_CDoorClassInfo.name_hash);",
@@ -319,7 +319,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3210(param_1);",
@@ -327,7 +327,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->hero_action_data == 1) {",
@@ -335,18 +335,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3210(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->door_to_open = this_ptr;",
       "type": "unnamed_param"
     },
     {
@@ -354,7 +346,7 @@
       "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_hero_cpp_CHero_tryOpenDoor_FUN_004d3250(param_1);",
+      "text": "param_1->door_to_open = this_ptr;",
       "type": "unnamed_param"
     },
     {
@@ -362,20 +354,12 @@
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_hero_cpp_FUN_004d3210(param_1);",
+      "text": "core_hero_cpp_CHero_tryOpenDoor_FUN_004d3250(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar1 = param_1->hero_action_actor;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3210(param_1);",
@@ -383,7 +367,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 63,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = param_1->hero_action_actor;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_hero_cpp_FUN_004d3210(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->hero_action_data == 0) {",
@@ -391,18 +391,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3210(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(pCVar1,(CVector3f *)(param_1->hero_action_data + 0x20),",
       "type": "unnamed_param"
     },
     {
@@ -410,7 +402,7 @@
       "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "(CVector3f *)(param_1->hero_action_data + 0x30));",
+      "text": "(pCVar2,(CVector3f *)(param_1->hero_action_data + 0x20),",
       "type": "unnamed_param"
     },
     {
@@ -418,20 +410,28 @@
       "line": 78,
       "match": "param_1",
       "severity": "mild",
+      "text": "(CVector3f *)(param_1->hero_action_data + 0x30));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3210(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = param_1->hero_action_actor;",
+      "text": "pCVar2 = param_1->hero_action_actor;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->player_input).action_state.fire = 0;",
@@ -439,26 +439,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3210(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->lever_to_pull = pCVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_hero_cpp_FUN_004d3460(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -466,31 +450,39 @@
       "line": 96,
       "match": "param_1",
       "severity": "mild",
+      "text": "param_1->lever_to_pull = pCVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_hero_cpp_FUN_004d3460(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_1",
+      "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3210(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = param_1->hero_action_actor;",
+      "text": "pCVar2 = param_1->hero_action_actor;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3210(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 108,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = (*((pCVar1->vtable)._ub)->startInteraction)(pCVar1,(CDemonActor *)param_1);",
       "type": "unnamed_param"
     },
     {
@@ -498,12 +490,12 @@
       "line": 110,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->nearby_interactive_actor = param_1->hero_action_actor;",
+      "text": "iVar3 = (*((pCVar2->vtable)._ub)->startInteraction)(pCVar2,(CDemonActor *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->nearby_interactive_actor = param_1->hero_action_actor;",
@@ -511,7 +503,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 112,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->nearby_interactive_actor = param_1->hero_action_actor;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3210(param_1);",
@@ -519,7 +519,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3210(param_1);",

@@ -141,7 +141,7 @@ section .text
         ;   Label: LAB_004bcc4e
     PUSH ESI                            ; 004bcc55
     CALL crt_stdio.c_ftell_FUN_005c2e90 ; 004bcc56
-        ;   XREF to: 005c2e90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005c2e90()
+        ;   XREF to: 005c2e90 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005c2e90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004bcc5b
     XOR EBP,EBP                         ; 004bcc5e
     MOV EDI,dword ptr [ESP + 0x568]     ; 004bcc60
@@ -153,7 +153,7 @@ section .text
         ;   Label: LAB_004bcc7e
     PUSH ECX                            ; 004bcc85
     CALL crt_stdio.c_ftell_FUN_005c2e90 ; 004bcc86
-        ;   XREF to: 005c2e90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005c2e90()
+        ;   XREF to: 005c2e90 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005c2e90(_FILE * file_handle)
     ADD ESP,0x4                         ; 004bcc8b
     CMP EAX,dword ptr [ESP + 0x568]     ; 004bcc8e
     JGE 0x004bccbd                      ; 004bcc95
@@ -165,7 +165,7 @@ section .text
     PUSH EAX                            ; 004bcca8
     LEA EBX,[ESP + 0xc]                 ; 004bcca9
     CALL crt_stdio.c_fgets_FUN_005c1180 ; 004bccad
-        ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005c1180()
+        ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005c1180(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 004bccb2
     CMP EAX,EBX                         ; 004bccb5
     JZ 0x004bce57                       ; 004bccb7
@@ -276,8 +276,8 @@ section .text
     PUSH 0x1cc4270                      ; 004bcdda | DAT_01cc4270
     MOV ECX,dword ptr [0x0061abc0]      ; 004bcddf | g_CEditorToolsPtr
     PUSH ECX                            ; 004bcde5
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004bcde6
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004bcde6
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004bcdeb
     MOV EBX,dword ptr [ESP + 0x5b8]     ; 004bcdee
         ;   Label: LAB_004bcdee

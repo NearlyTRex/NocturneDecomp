@@ -15,3 +15,6 @@ extern TerminatedCString g_AxisLabelChars;
 // char
 extern char g_DefaultButtonText;
 
+// char[59]
+extern char g_CheatStr_SoundDebug[59];
+

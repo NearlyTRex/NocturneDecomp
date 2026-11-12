@@ -26,6 +26,7 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
   float afStackY_1124 [951];
   float fVar10;
   CZombie *in_stack_fffffdd4;
+  CVector3f *dimensions;
   float fStack_224;
   int aiStack_208 [5];
   int aiStack_1f4 [8];
@@ -62,11 +63,10 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
   CVector3f CStack_88;
   CVector3f CStack_7c;
   uint uStack_70;
-  float afStack_6c [5];
+  float afStack_6c [2];
+  CVector3f CStack_64;
   float fStack_58;
-  float fStack_54;
-  float fStack_50;
-  uint uStack_4c;
+  float afStack_54 [4];
   float fStack_44;
   uint uStack_40;
   int iStack_34;
@@ -128,15 +128,16 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
           puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
           puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
         }
+        dimensions = &CStack_64;
         fStack_dc = *unaff_EBP - fStack_154;
         fStack_d8 = unaff_EBP[1] - fStack_150;
         fStack_d4 = unaff_EBP[2] - fStack_14c;
-        afStack_6c[2] = *unaff_EBP - fStack_154;
-        afStack_6c[(uint)bVar9 * -2 + 3] = afStack_fc[(uint)bVar9 * -2 + 9];
-        afStack_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+        CStack_64.x = *unaff_EBP - fStack_154;
+        *(float *)((int)&CStack_64 + (uint)bVar9 * -8 + 4) = afStack_fc[(uint)bVar9 * -2 + 9];
+        *(float *)((int)&CStack_64 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
              afStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];
         in_stack_fffffdd4 = (CZombie *)0x598c85;
-        local_20 = core_zombie_cpp_classifyObjectShape_FUN_00595910();
+        local_20 = core_zombie_cpp_classifyObjectShape_FUN_00595910(dimensions);
         if (((local_20 != 0) &&
             (in_stack_fffffdd4 = this_ptr,
             iVar5 = core_zombie_cpp_CZombie_canPickupWithHand_FUN_00598ee0(this_ptr,local_20),
@@ -150,11 +151,12 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
           afStack_fc[3] = (this_ptr_00->base).base.base.location.position.y - local_18[1];
           fStack_ec = (this_ptr_00->base).base.base.location.position.z - local_18[2];
           fStack_58 = afStack_fc[2];
-          afStack_6c[(uint)bVar9 * -2 + 6] = afStack_fc[(uint)bVar9 * -2 + 3];
-          afStack_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
+          afStack_54[(uint)bVar9 * -2] = afStack_fc[(uint)bVar9 * -2 + 3];
+          afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
                afStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
-          fStack_54 = fStack_54 * fStack_54 * fStack_54 * fStack_54;
-          fStack_224 = SQRT(fStack_50 * fStack_50 + fStack_58 * fStack_58 + fStack_54 * fStack_54);
+          afStack_54[0] = afStack_54[0] * afStack_54[0] * afStack_54[0] * afStack_54[0];
+          fStack_224 = SQRT(afStack_54[1] * afStack_54[1] +
+                            fStack_58 * fStack_58 + afStack_54[0] * afStack_54[0]);
           if (((float)_DAT_005ef2aa <= fStack_224) &&
              (fStack_224 <= this_ptr->pickup_range_factor * _DAT_005ef2ba)) {
             *(CZombie **)(&stack0xfffffde4 + unaff_ESI) = this_ptr_00;
@@ -176,15 +178,14 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr
     this_ptr->pickup_approach_progress = -40.0;
     this_ptr->object_shape_class = iVar5;
     this_ptr->pickup_seed = this_ptr->pickup_seed + 1;
-    engine_console_cpp_FUN_00436710
-              (g_CConsolePtr,"%s is going to try to pick up %s\n",this_ptr,this_ptr->pickup_target);
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"%s is going to try to pick up %s\n");
     return 1;
   }
   pCVar3 = (*((pCVar3->vtable)._ub)->getCarrier)(pCVar3);
   if (pCVar3 != (CDemonActor *)0x0) {
-    engine_console_cpp_FUN_00436710
-              (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1,this_ptr,
-               this_ptr->pickup_target);
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"?%s can't pick up %s, sombody else beat me to it!\n" + 1);
     this_ptr->pickup_target = (CDemonActor *)0x0;
     this_ptr->pickup_approach_progress = 0.0;
     core_zombie_cpp_CZombie_resetChaseState_FUN_00599d00(this_ptr);
@@ -226,15 +227,15 @@ LAB_0059874f:
         afStack_138[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
              afStack_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
         core_bodypart_cpp_FUN_00417b20();
-        uStack_4c = uStack_40;
-        afStack_6c[(uint)bVar9 * -2 + 9] = afStack_6c[(uint)bVar9 * -2 + 0xc];
-        afStack_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10] =
-             afStack_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd];
+        afStack_54[2] = (float)uStack_40;
+        afStack_54[(uint)bVar9 * -2 + 3] = afStack_54[(uint)bVar9 * -2 + 6];
+        afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+             afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
         fStack_44 = fStack_1c4 + (float)_DAT_005ef2b2;
-        uStack_e8 = uStack_4c;
-        afStack_fc[(uint)bVar9 * -2 + 6] = afStack_6c[(uint)bVar9 * -2 + 9];
+        uStack_e8 = afStack_54[2];
+        afStack_fc[(uint)bVar9 * -2 + 6] = afStack_54[(uint)bVar9 * -2 + 3];
         afStack_fc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
-             afStack_6c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];
+             afStack_54[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
         core_actor_cpp_FUN_00408d70();
         CStack_88.x = fStack_100;
         afStack_9c[(uint)bVar9 * -2 + 6] = afStack_fc[(uint)bVar9 * -2];
@@ -327,7 +328,8 @@ LAB_00598ad6:
                       ((CCharacter *)this_ptr,&CStack_d0,(CPathMap *)0x0,&CStack_ac,0.0,0.0);
   }
   if (iVar5 < 0) {
-    engine_console_cpp_FUN_00436710(g_CConsolePtr);
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"%s can't pick up %s, giving up\n");
     this_ptr->pickup_target = (CDemonActor *)0x0;
     this_ptr->pickup_approach_progress = 20.0;
     core_zombie_cpp_CZombie_resetChaseState_FUN_00599d00(this_ptr);
@@ -336,7 +338,7 @@ LAB_00598ad6:
   if (iVar5 < 1) {
     return 1;
   }
-  engine_console_cpp_FUN_00436710(g_CConsolePtr);
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"%s beginning to pickup %s\n");
   uVar1 = this_ptr->object_shape_class;
   if (uVar1 < 2) {
     if (uVar1 != 1) {

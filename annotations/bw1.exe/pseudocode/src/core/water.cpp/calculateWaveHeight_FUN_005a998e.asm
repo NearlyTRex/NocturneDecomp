@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_water_cpp_calculateWaveHeight_FUN_005a998e(int param_1,int param_2)
+; float __cdecl core_water_cpp_calculateWaveHeight_FUN_005a998e(int x,int y)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f91e2

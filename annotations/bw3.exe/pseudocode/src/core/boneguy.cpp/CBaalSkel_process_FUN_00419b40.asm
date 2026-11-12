@@ -32,12 +32,12 @@
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
+;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
 ;   core_charactr.cpp_FUN_0042c230
-;   core_charactr.cpp_FUN_0042cd30
 ;   core_charactr.cpp_FUN_004319d0
 ;   core_charactr.cpp_FUN_00434850
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
@@ -582,8 +582,8 @@ section .text
     ADD ESP,0x8                         ; 0041a153
     PUSH EBX                            ; 0041a156
         ;   Label: LAB_0041a156
-    CALL core_charactr.cpp_FUN_0042cd30 ; 0041a157
-        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042cd30(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30 ; 0041a157
+        ;   XREF to: 0042cd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0041a15c
     LEA EAX,[EBX + 0x158]               ; 0041a15f
     PUSH EAX                            ; 0041a165
@@ -664,8 +664,8 @@ section .text
     PUSH 0x5b71b2                       ; 0041a230 | = "%s confused while walking to scriptDe..."
     MOV ECX,dword ptr [0x005f1690]      ; 0041a235 | g_CConsolePtr
     PUSH ECX                            ; 0041a23b | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0041a23c
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0041a23c
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     JMP 0x00419fff                      ; 0041a241
         ;   XREF to: 00419fff (UNCONDITIONAL_JUMP)  ; LAB_00419fff
     JBE 0x00419fef                      ; 0041a246
@@ -726,8 +726,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041a2fc
     MOVSD ES:EDI,ESI                    ; 0041a2fd
     MOVSD ES:EDI,ESI                    ; 0041a2fe
-    CALL core_enemy.cpp_FUN_004893f0    ; 0041a2ff
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004893f0()
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 ; 0041a2ff
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 0041a304
     JMP 0x0041a01a                      ; 0041a307
         ;   XREF to: 0041a01a (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -809,8 +809,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041a3f8
     MOVSD ES:EDI,ESI                    ; 0041a3f9
     MOVSD ES:EDI,ESI                    ; 0041a3fa
-    CALL core_enemy.cpp_FUN_004893f0    ; 0041a3fb
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004893f0()
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0 ; 0041a3fb
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 0041a400
     MOV dword ptr [EBX + 0xcde0],0x40200000 ; 0041a403
     JMP 0x0041a01a                      ; 0041a40d
@@ -1129,8 +1129,8 @@ section .text
     PUSH 0x5b71dc                       ; 0041a7bd | = "%s gave up chase - I'm confused\n"
     MOV ECX,dword ptr [0x005f1690]      ; 0041a7c2 | g_CConsolePtr
     PUSH ECX                            ; 0041a7c8 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0041a7c9
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0041a7c9
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0041a7ce
     PUSH 0x1                            ; 0041a7d1
     PUSH 0x0                            ; 0041a7d3

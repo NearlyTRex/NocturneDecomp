@@ -98,15 +98,33 @@
   },
   {
     "addr":"00461f2e",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":23,
-    "method":"FUN_00461f2e",
-    "name":"core_dpart.cpp_FUN_00461f2e",
+    "method":"findEdgeByYStart",
+    "name":"core_dpart.cpp_findEdgeByYStart_FUN_00461f2e",
+    "params":[
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"exclude_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "kind":"struct",
+      "name":"SSoftwareEdge",
+      "ptr":1
     },
     "tu":"core/dpart.cpp",
     "variadic":false

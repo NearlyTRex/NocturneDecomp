@@ -16,7 +16,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418d35
 ;   core_bride.cpp_CBride_processDamage_FUN_0041ead0 at 0041ecdf
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041dca2
-;   core_chain.cpp_FUN_005b4d30 at 005b55a9
+;   core_chain.cpp_CChain_process_FUN_005b4d30 at 005b55a9
 ;   ... and 55 more
 ;
 ; Called Functions:

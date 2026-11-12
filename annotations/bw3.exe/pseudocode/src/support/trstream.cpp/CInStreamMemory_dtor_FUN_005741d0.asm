@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[2]:
+;   support_codec.cpp_CCodec_processBuffer_FUN_004409f0 at 00440a4f
 ;   support_codec.cpp_FUN_00440970 at 004409cf
-;   support_codec.cpp_FUN_004409f0 at 00440a4f
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CInStreamMemoryTypeInfo
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_00574205
     PUSH EBX                            ; 0057420a
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 0057420b
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00574210
     PUSH EAX                            ; 00574213
     CALL crt_unknown.c_FUN_005a30b6     ; 00574214

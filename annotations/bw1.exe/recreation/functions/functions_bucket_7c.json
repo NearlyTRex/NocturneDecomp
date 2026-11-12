@@ -184,11 +184,30 @@
     "instructions":10,
     "method":"fopen",
     "name":"crt_stdio.c_fopen_FUN_005c157c",
+    "params":[
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"mode",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "header":"stdio",
+      "kind":"system",
+      "name":"_FILE",
+      "ptr":1
     },
     "tu":"crt/stdio.c",
     "variadic":false

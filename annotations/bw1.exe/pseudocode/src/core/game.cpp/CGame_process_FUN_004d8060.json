@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 438,
-    "complexity_score": 198,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 40,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 133,
-    "suspect_count": 5,
+    "pseudocode_lines": 107,
+    "suspect_count": 2,
     "suspect_types": [
       "raw_address_constant",
-      "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 571
+    "total_lines": 545
   },
   "cross_references": [
     {
@@ -125,7 +124,7 @@
     {
       "addr": "005ae190",
       "is_variadic": false,
-      "name": "core_weather.cpp_FUN_005ae190"
+      "name": "core_weather.cpp_CWeather_update_FUN_005ae190"
     },
     {
       "addr": "005c084c",
@@ -145,7 +144,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     },
     {
       "addr": "005b2420",
@@ -457,6 +456,32 @@
     },
     "pcode_op_count": 1586
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004bd570",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7089
+    },
+    "bw3.exe": {
+      "addr": "004bf4b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004e3190",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9351
+    },
+    "nocturne.exe": {
+      "addr": "004a6010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9351
+    }
+  },
   "stack_frame": {
     "frame_size": 44,
     "local_size": 40,
@@ -497,32 +522,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = wincore_winrun_cpp_getTime_FUN_005b2420();",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 132,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "((double)(iVar3 - unaff_ESI) * _DAT_005e346c * _DAT_005e3474 * _DAT_005e347c) /",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Raw hex address 0x2c82a60 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 49,
+      "line": 41,
       "match": "0x2c82a60",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x02C82A60;",

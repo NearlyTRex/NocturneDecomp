@@ -36,7 +36,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 004ea49c
     PUSH EAX                            ; 004ea4a2
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 004ea4a3
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ea4a8
     PUSH 0x5e45c6                       ; 004ea4ab | = "useCount"
     LEA EAX,[EBX + 0x2d4]               ; 004ea4b0
@@ -48,7 +48,7 @@ section .text
     ADD EBX,0x2d8                       ; 004ea4c4
     PUSH EBX                            ; 004ea4ca
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004ea4cb
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x0061ef08]      ; 004ea4d0 | g_CHealthItemClassVersion
     ADD ESP,0x8                         ; 004ea4d6
     CMP EDX,0x2                         ; 004ea4d9

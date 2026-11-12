@@ -89,7 +89,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_p
         puVar5 = puVar5 + (uint)bVar8 * -2 + 1;
         puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
       }
-      core_box_cpp_FUN_00421670(aCStack_98);
+      core_box_cpp_CBoundingBox3D_render_FUN_00421670(aCStack_98);
     }
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(in_stack_0000000c);

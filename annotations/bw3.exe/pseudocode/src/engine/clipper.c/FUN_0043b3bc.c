@@ -32,8 +32,8 @@ uint engine_clipper_c_FUN_0043b3bc(void)
       if (0 < iVar2) {
         do {
           iVar1 = engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0
-                            (DAT_007e448c,*(uint *)((int)&DAT_007e4490 + iVar3),
-                             *(uint *)((int)&DAT_007e4494 + iVar3));
+                            (DAT_007e448c,*(SRenderVertex **)((int)&DAT_007e4490 + iVar3),
+                             *(SRenderVertex **)((int)&DAT_007e4494 + iVar3));
           if (iVar1 == 0) {
             iVar4 = iVar4 + 1;
           }
@@ -46,6 +46,6 @@ uint engine_clipper_c_FUN_0043b3bc(void)
     }
   }
   _DAT_01ed3198 = _DAT_01ed3198 + unaff_EBP + -2;
-  engine_special_cpp_drawPolygon2_FUN_00565c40(&DAT_007e448c);
+  engine_special_cpp_drawPolygon2_FUN_00565c40(&DAT_007e448c,unaff_EBP,_DAT_01c6e2b4);
   return 1;
 }

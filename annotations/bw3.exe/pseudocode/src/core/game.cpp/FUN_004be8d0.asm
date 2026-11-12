@@ -89,7 +89,7 @@ section .text
     MOV dword ptr [EBX + 0x258],0x0     ; 004be957
     MOV [0x01c5b0e0],EAX                ; 004be961 | DAT_01c5b0e0
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 004be966
-        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005a43ec()
+        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005a43ec(char * filename, char * mode)
     ADD ESP,0x8                         ; 004be96b
     TEST EAX,EAX                        ; 004be96e
     JZ 0x004be980                       ; 004be970

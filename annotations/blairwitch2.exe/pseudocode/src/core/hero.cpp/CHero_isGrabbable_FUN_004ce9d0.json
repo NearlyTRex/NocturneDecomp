@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 9,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 32
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 34
   },
   "cross_references": [],
   "function": {
@@ -75,6 +77,26 @@
     },
     "pcode_op_count": 74
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ead90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2105
+    },
+    "nocedit.exe": {
+      "addr": "004f2880",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2105
+    },
+    "nocturne.exe": {
+      "addr": "004b4c10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2105
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -98,7 +120,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(iVar1 = *(int *)&pCVar2[0x65].particle_systems[3].field_0x20, iVar1 != 0)) && (iVar1 == 2)) {",
+      "type": "unnamed_field"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

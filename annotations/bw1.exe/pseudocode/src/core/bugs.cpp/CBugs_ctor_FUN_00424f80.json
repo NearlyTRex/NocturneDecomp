@@ -2,20 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 190,
+    "complexity_score": 219,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 100,
-    "suspect_count": 7,
+    "pseudocode_lines": 99,
+    "suspect_count": 9,
     "suspect_types": [
       "builtin_function",
       "derived_field_index_pun",
       "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 227
+    "total_lines": 226
   },
   "cross_references": [
     {
@@ -110,6 +112,32 @@
     },
     "pcode_op_count": 424
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041ef50",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00420ea0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9289
+    },
+    "nocedit.exe": {
+      "addr": "00424cb0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00421040",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -128,8 +156,16 @@
   },
   "suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(void *)((int)pvVar3",
+      "severity": "moderate",
+      "text": "((void *)((int)pvVar3 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 28,
+      "line": 27,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
       "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x3;",
@@ -137,7 +173,7 @@
     },
     {
       "description": "Ghidra builtin function",
-      "line": 89,
+      "line": 88,
       "match": "builtin_strncpy",
       "severity": "mild",
       "text": "builtin_strncpy(this_ptr_00[-0xffffffff000000a7].model_name + 0xe4,\")\\\\\\x1f@\",4);",
@@ -145,15 +181,23 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 102,
+      "line": 101,
       "match": "this_ptr_00[-199].",
       "severity": "mild",
       "text": "return (CBugs *)(this_ptr_00[-199].model_name + 0x78);",
       "type": "negative_offset"
     },
     {
+      "description": "Pointer value `pvVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)pvVar3",
+      "severity": "moderate",
+      "text": "((void *)((int)pvVar3 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 54,
+      "line": 53,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -161,7 +205,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 69,
+      "line": 68,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -169,7 +213,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 80,
+      "line": 79,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

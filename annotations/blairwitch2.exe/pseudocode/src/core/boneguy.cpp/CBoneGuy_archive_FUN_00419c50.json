@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 164,
+    "complexity_score": 113,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 9,
+    "pseudocode_lines": 58,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
       "shadow_pointer_walk"
     ],
-    "total_lines": 253
+    "total_lines": 252
   },
   "cross_references": [],
   "function": {
@@ -230,6 +228,32 @@
     },
     "pcode_op_count": 787
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0041d0d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00419070",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0041d270",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00419ce0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -248,75 +272,43 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 48,
-      "match": "(CQuaternion4f *)((int)(pCVar5 + 4) +",
+      "description": "Watcom shadow-pointer walk \u2014 `vector_ptr` was initialized to the address of an array element's subfield (`vector_ptr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*vector_ptr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `vector_ptr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 45,
+      "match": "vector_ptr = vector_ptr + N",
       "severity": "moderate",
-      "text": "pCVar5 = (CQuaternion4f *)((int)(pCVar5 + 4) + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
-      "line": 52,
-      "match": "(CQuaternion4f *)((int)(pCVar7 + 4) +",
-      "severity": "moderate",
-      "text": "pCVar7 = (CQuaternion4f *)((int)(pCVar7 + 4) + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `(pCVar5 + 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 48,
-      "match": "(int)(pCVar5 + 4)",
-      "severity": "moderate",
-      "text": "pCVar5 = (CQuaternion4f *)((int)(pCVar5 + 4) + 8);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `(pCVar7 + 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 52,
-      "match": "(int)(pCVar7 + 4)",
-      "severity": "moderate",
-      "text": "pCVar7 = (CQuaternion4f *)((int)(pCVar7 + 4) + 8);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` was initialized to the address of an array element's subfield (`pCVar3 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCVar3)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCVar3->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 47,
-      "match": "pCVar3 = pCVar3 + N",
-      "severity": "moderate",
-      "text": "pCVar3 = pCVar3 + 6;",
+      "text": "vector_ptr = vector_ptr + 6;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via element-arithmetic `(int)(pCVar5 + N) + M`, where `N*sizeof(*pCVar5) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar5->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 48,
-      "match": "pCVar5 = (T *)((int)(pCVar5 + N) + M)",
+      "description": "Watcom shadow-pointer walk \u2014 `quat_ptr` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*quat_ptr) + offsetof(subfield)` equals the real array stride. Replace `quat_ptr->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 46,
+      "match": "quat_ptr = (T *)&quat_ptr[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar5 = (CQuaternion4f *)((int)(pCVar5 + 4) + 8);",
+      "text": "quat_ptr = (CQuaternion4f *)&quat_ptr[4].y;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` was initialized to the address of an array element's subfield (`pCVar4 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `vector_ptr_00` was initialized to the address of an array element's subfield (`vector_ptr_00 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*vector_ptr_00)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `vector_ptr_00->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 49,
+      "match": "vector_ptr_00 = vector_ptr_00 + N",
+      "severity": "moderate",
+      "text": "vector_ptr_00 = vector_ptr_00 + 6;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `ppCStack_14` was initialized to the address of an array element's subfield (`ppCStack_14 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*ppCStack_14)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `ppCStack_14->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 50,
-      "match": "pCVar4 = pCVar4 + N",
+      "match": "ppCStack_14 = ppCStack_14 + N",
       "severity": "moderate",
-      "text": "pCVar4 = pCVar4 + 6;",
+      "text": "ppCStack_14 = ppCStack_14 + 0x12;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `ppCVar8` was initialized to the address of an array element's subfield (`ppCVar8 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*ppCVar8)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `ppCVar8->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_18` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCStack_18) + offsetof(subfield)` equals the real array stride. Replace `pCStack_18->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 51,
-      "match": "ppCVar8 = ppCVar8 + N",
+      "match": "pCStack_18 = (T *)&pCStack_18[N].SUBFIELD",
       "severity": "moderate",
-      "text": "ppCVar8 = ppCVar8 + 0x12;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via element-arithmetic `(int)(pCVar7 + N) + M`, where `N*sizeof(*pCVar7) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar7->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 52,
-      "match": "pCVar7 = (T *)((int)(pCVar7 + N) + M)",
-      "severity": "moderate",
-      "text": "pCVar7 = (CQuaternion4f *)((int)(pCVar7 + 4) + 8);",
+      "text": "pCStack_18 = (CQuaternion4f *)&pCStack_18[4].y;",
       "type": "shadow_pointer_walk"
     }
   ],

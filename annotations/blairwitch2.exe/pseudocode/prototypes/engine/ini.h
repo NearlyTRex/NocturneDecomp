@@ -15,7 +15,7 @@ int __cdecl CIni::getProfileString(CIni *this_ptr,char *section,char *key,char *
 
 // Original: engine_ini.cpp_FUN_004d8360
 // Address: 004d8360
-int FUN_004d8360(undefined4 *param_1,undefined4 param_2,char *param_3,undefined4 param_4,char *param_5);
+int FUN_004d8360(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5);
 
 // Original: engine_ini.cpp_CIni_writeProfileString_FUN_004d8530
 // Address: 004d8530

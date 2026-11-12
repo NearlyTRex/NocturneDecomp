@@ -28,12 +28,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004e7dc0",
-      "from_addr": "004e7e9e",
-      "name": "core_menu.cpp_FUN_004e7dc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004eadf0",
       "from_addr": "004eae26",
       "name": "core_menu.cpp_FUN_004eadf0",
@@ -43,6 +37,12 @@
       "addr": "004eae80",
       "from_addr": "004ebfa8",
       "name": "core_menu.cpp_FUN_004eae80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e7dc0",
+      "from_addr": "004e7e9e",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -147,7 +147,7 @@
       {
         "call_addr": "004e7e9e",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e7dc0",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +158,7 @@
       {
         "call_addr": "004e7fc6",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004e7dc0",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_004e7dc0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -256,6 +256,32 @@
       "STORE": 90
     },
     "pcode_op_count": 1134
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b7140",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004d0960",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004dbe60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0049e8b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,

@@ -14,7 +14,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(CPacked
   char acStack_64 [4];
   uint uStack_60;
   
-  cockpit_pkbitmap_cpp_CPackedBitmap_FUN_004f3f50(this_ptr);
+  cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_004f3f50(this_ptr);
   cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_004f3fc0(this_ptr,filename);
   file_handle = engine_dosio_cpp_getFile_FUN_00456a60
                           ("art",this_ptr->filename,"rb");

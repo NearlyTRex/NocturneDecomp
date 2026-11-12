@@ -90,14 +90,14 @@ section .text
     ADD EAX,0x1c8                       ; 0042237d
     PUSH EAX                            ; 00422382
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 00422383
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00422388
     PUSH 0x5f22b0                       ; 0042238b | g_CVectorTypeInfo
     PUSH 0xf                            ; 00422390
     ADD EAX,0xb4                        ; 00422392
     PUSH EAX                            ; 00422397
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 00422398
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0042239d
     ADD EAX,0xd0                        ; 004223a0
     PUSH EAX                            ; 004223a5
@@ -109,14 +109,14 @@ section .text
     ADD EAX,0x518                       ; 004223b5
     PUSH EAX                            ; 004223ba
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 004223bb
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004223c0
     PUSH 0x5f2820                       ; 004223c3 | g_CFlameTypeInfo
     PUSH 0x32                           ; 004223c8
     ADD EAX,0x4b0                       ; 004223ca
     PUSH EAX                            ; 004223cf
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 004223d0
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EBX,[EAX + 0xffffc5e0]          ; 004223d5
     MOV dword ptr [EBX + 0x2b0],0x5f4094 ; 004223db | g_CCharacterVTable
     ADD ESP,0xc                         ; 004223e5

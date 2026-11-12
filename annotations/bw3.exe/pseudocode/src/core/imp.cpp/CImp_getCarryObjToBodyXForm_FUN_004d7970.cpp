@@ -12,11 +12,11 @@ CMatrix3x4f * __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004d7970
 
 {
   int iVar1;
-  float *pfVar2;
+  CMatrix3x4f *pCVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
-  byte auStack_cc [48];
-  float afStack_9c [12];
+  CMatrix3x4f CStack_cc;
+  CMatrix3x4f CStack_9c;
   uint uStack_6c;
   uint uStack_68;
   uint uStack_64;
@@ -82,14 +82,15 @@ CMatrix3x4f * __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004d7970
   uStack_54 = 0xbf2ed917;
   uStack_4c = 0x3f7e353f;
 LAB_004d7a5e:
-  core_xform_cpp_FUN_00583940(auStack_cc,&uStack_18,&uStack_54);
+  core_xform_cpp_FUN_00583940(&CStack_cc,&uStack_18,&uStack_54);
   core_xform_cpp_multiplyMatrix3x4_FUN_005833e0
-            (auStack_cc,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1);
-  pfVar2 = afStack_9c;
+            (&CStack_cc,(this_ptr->base).base.model.bone_transform.bone_model_matrices + iVar1,
+             &CStack_9c);
+  pCVar2 = &CStack_9c;
   pCVar3 = out_matrix;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar3->m[0].w = *pfVar2;
-    pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
+    pCVar3->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
   return out_matrix;

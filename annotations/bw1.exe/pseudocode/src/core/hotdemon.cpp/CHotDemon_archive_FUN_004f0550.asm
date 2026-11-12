@@ -33,7 +33,7 @@ section .text
     LEA EBX,[ESI + 0xc1d0]              ; 004f0564
     PUSH EBX                            ; 004f056a
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004f056b
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f0570
     PUSH 0x5e51d0                       ; 004f0573 | = "modelName"
     LEA EBX,[ESI + 0x158]               ; 004f0578

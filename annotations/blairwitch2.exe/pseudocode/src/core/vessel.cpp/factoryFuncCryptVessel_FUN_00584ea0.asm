@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vessel_cpp_factoryFuncCryptVessel_FUN_00584ea0(void)
+; CCryptVessel * __cdecl core_vessel_cpp_factoryFuncCryptVessel_FUN_00584ea0(void)
 ;
 ;
 ; Called Functions:

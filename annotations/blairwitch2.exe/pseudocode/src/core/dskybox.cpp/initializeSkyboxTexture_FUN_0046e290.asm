@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_0046e290(int param_1)
+; SMRGLSkyTexture * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_0046e290(SMRGLSkyTexture *texture)
 ;
+; Parameters:
+; SMRGLSkyTexture * Stack[0x4]:4   texture
 ;
 ; XREF[1]:
 ;   core_dskybox.cpp_staticInit_FUN_0046e260 at 0046e265

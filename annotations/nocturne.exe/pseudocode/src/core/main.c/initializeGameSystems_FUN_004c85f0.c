@@ -62,7 +62,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
   engine_pod_cpp_CPod_init_FUN_004f8af0(&g_CDemonPodPtr->base);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00456750(engine_pod_cpp_findFileInPod_FUN_004f9250);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00456750(engine_dosio_cpp_findFileNormally_FUN_00456800);
-  support_newmsg_cpp_readMessageFile_FUN_004edfc0();
+  support_newmsg_cpp_readMessageFile_FUN_004edfc0("msglist.txt");
   core_mmx_c_detectCPUFeatures_FUN_004d9e70();
   if (g_MMXSupported == 0) {
     g_CurrentFilename = "..\\core\\main.c";

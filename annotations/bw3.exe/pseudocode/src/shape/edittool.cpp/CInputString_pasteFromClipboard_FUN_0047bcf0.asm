@@ -14,9 +14,9 @@
 ;   undefined4 DAT_006074b8
 ;
 ; Called Functions:
+;   shape_edittool.cpp_CEditorTools_getClipboardText_FUN_00480db0
 ;   shape_edittool.cpp_CInputString_insertChar_FUN_0047bb10
 ;   shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0047baf0
-;   shape_edittool.cpp_FUN_00480db0
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 0047bcf2
     MOV EDX,dword ptr [0x005fb140]      ; 0047bcf6 | g_CEditorToolsPtr
     PUSH EDX                            ; 0047bcfc
-    CALL shape_edittool.cpp_FUN_00480db0 ; 0047bcfd
-        ;   XREF to: 00480db0 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_FUN_00480db0(CEditorTools * this_ptr)
+    CALL shape_edittool.cpp_CEditorTools_getClipboardText_FUN_00480db0 ; 0047bcfd
+        ;   XREF to: 00480db0 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CEditorTools_getClipboardText_FUN_00480db0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0047bd02
     MOV EBX,EAX                         ; 0047bd05
     XOR EAX,EAX                         ; 0047bd07

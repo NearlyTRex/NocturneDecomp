@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050ebb6
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0050ebb9
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
         ;   Label: LAB_0050ebb9
     MOV EDX,EAX                         ; 0050ebbe
     MOV ESI,0x12                        ; 0050ebc0

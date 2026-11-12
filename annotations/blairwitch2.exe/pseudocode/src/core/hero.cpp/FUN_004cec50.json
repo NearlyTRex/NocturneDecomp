@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 746,
+    "complexity_score": 727,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 106,
-    "suspect_count": 59,
+    "pseudocode_lines": 107,
+    "suspect_count": 57,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -21,7 +21,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 286
+    "total_lines": 287
   },
   "cross_references": [
     {
@@ -484,54 +484,14 @@
     {
       "description": "Complex pointer cast",
       "line": 81,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "uStack_20 = *(uint *)((int)g_CDemonSetPtr->actors + iVar3);",
+      "text": "pCStack_20 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(int *)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 86,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "fStack_a8 = (float)(**(code **)(*(int *)(iVar2 + 0x2b0) + 0x68))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 87,
-      "match": "&stack0xffffffb0",
-      "severity": "moderate",
-      "text": "(iVar2,param_1,&stack0xffffffb0,&stack0xffffffe0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 87,
-      "match": "&stack0xffffffe0",
-      "severity": "moderate",
-      "text": "(iVar2,param_1,&stack0xffffffb0,&stack0xffffffe0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar2,param_1,&stack0xffffffb0,&stack0xffffffe0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
       "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);",
@@ -539,7 +499,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 94,
+      "line": 87,
       "match": "code *",
       "severity": "moderate",
       "text": "fStack_a8 = (float)(**(code **)(*(int *)(iVar2 + 0x2b0) + 0x68))",
@@ -547,31 +507,55 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 95,
+      "line": 88,
       "match": "&stack0xffffffb0",
       "severity": "moderate",
-      "text": "(iVar2,param_1,&stack0xffffffb0,&stack0xffffffe0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 95,
-      "match": "&stack0xffffffe0",
-      "severity": "moderate",
-      "text": "(iVar2,param_1,&stack0xffffffb0,&stack0xffffffe0);",
+      "text": "(iVar2,param_1,&stack0xffffffb0,&pCStack_20);",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar2,param_1,&stack0xffffffb0,&stack0xffffffe0);",
+      "text": "(iVar2,param_1,&stack0xffffffb0,&pCStack_20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 95,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "fStack_a8 = (float)(**(code **)(*(int *)(iVar2 + 0x2b0) + 0x68))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 96,
+      "match": "&stack0xffffffb0",
+      "severity": "moderate",
+      "text": "(iVar2,param_1,&stack0xffffffb0,&pCStack_20);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar2,param_1,&stack0xffffffb0,&pCStack_20);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x255f0) = 1;",
@@ -579,7 +563,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 104,
       "match": "(uint *)((int)pCVar1",
       "severity": "moderate",
       "text": "*(uint *)(param_1 + 0x255f4) = *(uint *)((int)pCVar1->actors + iVar3);",
@@ -587,7 +571,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 104,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x255f4) = *(uint *)((int)pCVar1->actors + iVar3);",
@@ -595,7 +579,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x25600) = 0;",
@@ -603,15 +587,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 106,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x255f8) = uStack_20;",
+      "text": "*(CDemonActor **)(param_1 + 0x255f8) = pCStack_20;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "return *(int *)(param_1 + 0x255f0) == 1;",
@@ -683,7 +667,7 @@
     },
     {
       "description": "Pointer value `pCVar1->actors` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 103,
+      "line": 104,
       "match": "(int)pCVar1->actors",
       "severity": "moderate",
       "text": "*(uint *)(param_1 + 0x255f4) = *(uint *)((int)pCVar1->actors + iVar3);",

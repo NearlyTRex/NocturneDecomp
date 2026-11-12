@@ -7,7 +7,7 @@
 ; XREF[7]:
 ;   core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_00453d10 at 00453d1a
 ;   core_dpart.cpp_CDemonPart_alloc_FUN_004662b0 at 004662e8
-;   core_dtrace.cpp_FUN_004734e0 at 004734f4
+;   core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_004734e0 at 004734f4
 ;   crt_unknown.c_FUN_005ad794 at 005ad7c4
 ;   crt_unknown.c_FUN_005adaac at 005adabe
 ;   crt_unknown.c_FUN_005afb18 at 005afb77

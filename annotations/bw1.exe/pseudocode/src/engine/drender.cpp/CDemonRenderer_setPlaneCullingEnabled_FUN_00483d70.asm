@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   enabled
 ;
 ; XREF[9]:
+;   core_box.cpp_CBoundingBox3D_render_FUN_00421670 at 00421714
 ;   core_box.cpp_FUN_00420990 at 00420a71
-;   core_box.cpp_FUN_00421670 at 00421714
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_004673a0 at 004674c2
 ;   core_dpart.cpp_FUN_00479f5e at 00479f85
 ;   core_inv.cpp_FUN_004f655e at 004f6acd

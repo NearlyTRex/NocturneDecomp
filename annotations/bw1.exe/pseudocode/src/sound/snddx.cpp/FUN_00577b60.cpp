@@ -15,7 +15,7 @@ uint sound_snddx_cpp_FUN_00577b60(int *param_1)
   uint uVar2;
   char *pcVar3;
   int iVar4;
-  char acStack_330 [400];
+  uint in_stack_fffffcd0;
   char acStack_1a0 [400];
   float fStack_10;
   
@@ -37,12 +37,13 @@ uint sound_snddx_cpp_FUN_00577b60(int *param_1)
       } while (iVar4 < _DAT_02c81dbc);
     }
   }
-  iVar4 = sound_sndmain_cpp_startSoundThread_FUN_00575c00(fStack_10);
+  iVar4 = sound_sndmain_cpp_startSoundThread_FUN_00575c00
+                    (__BITCAST_DOUBLE(CONCAT44(in_stack_fffffcd0,fStack_10)));
   if (iVar4 != 0) {
     if (_DAT_02c81d9c == (int *)0x0) {
       return 1;
     }
-    pcVar3 = acStack_330;
+    pcVar3 = &stack0xfffffcd0;
     uVar2 = (**(code **)(*_DAT_02c81d9c + 0x34))(_DAT_02c81d9c,0);
     if (uVar2 == 0) {
       uVar2 = (**(code **)(*_DAT_02c81d9c + 0x30))(_DAT_02c81d9c,0,0,1);
@@ -55,7 +56,7 @@ uint sound_snddx_cpp_FUN_00577b60(int *param_1)
     }
     else {
       sound_snddx_cpp_FUN_00577500(uVar2);
-      _sprintf(acStack_330,"DirectSux: Unable to %s.  (%s)");
+      _sprintf(&stack0xfffffcd0,"DirectSux: Unable to %s.  (%s)");
     }
     sound_sndmain_cpp_FUN_005773f0(pcVar3);
   }

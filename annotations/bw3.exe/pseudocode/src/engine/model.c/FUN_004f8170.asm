@@ -13,7 +13,7 @@
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_boss.c_FUN_0041acc0
-;   engine_model.c_FUN_004f80f0
+;   engine_model.c_freeMRGLData_FUN_004f80f0
 ;   engine_model.c_loadModelFile_FUN_004f7f20
 ;
 ; *****************************************************************************
@@ -329,8 +329,8 @@ section .text
     LEA ESI,[ESP + 0xec]                ; 004f85aa
     PUSH EBX                            ; 004f85b1
     MOVSD.REP ES:EDI,ESI                ; 004f85b2
-    CALL engine_model.c_FUN_004f80f0    ; 004f85b4
-        ;   XREF to: 004f80f0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_FUN_004f80f0()
+    CALL engine_model.c_freeMRGLData_FUN_004f80f0 ; 004f85b4
+        ;   XREF to: 004f80f0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_freeMRGLData_FUN_004f80f0()
     MOV ECX,0xd                         ; 004f85b9
     LEA EDI,[ESP + 0x54]                ; 004f85be
     LEA ESI,[ESP + 0xbc]                ; 004f85c2

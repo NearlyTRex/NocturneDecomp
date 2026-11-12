@@ -41,14 +41,14 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047b1f0(char *dialog_tit
   iVar2 = (int)((DAT_006141b8 + (DAT_006141b8 >> 0x1f) * -0x80) -
                (uint)((DAT_006141b8 >> 0x1f) << 6 < 0)) >> 7;
   iVar3 = DAT_006141bc / 0x60;
-  iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+  iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
             (g_CEditorToolsPtr,(DAT_006141b8 << 2) / 5,iVar4 + iVar3 * 2 + _DAT_01c25f7c,
              dialog_title,0);
   iVar3 = shape_edittool_cpp_calculateButtonWidth_FUN_004852f0("Cancel");
   iVar4 = ((_DAT_01c35e48 + _DAT_01c35e50) - iVar2) / 2 - iVar3;
   iVar2 = (_DAT_01c35e48 + _DAT_01c35e50 + iVar2) / 2;
-  iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+  iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
   local_18 = (_DAT_01c35e54 - iVar5) + 1;
   shape_edittool_cpp_CEdButton_ctor_FUN_00484e20(&local_fc);
   shape_edittool_cpp_CEdButton_ctor_FUN_00484e20(&local_1e0);

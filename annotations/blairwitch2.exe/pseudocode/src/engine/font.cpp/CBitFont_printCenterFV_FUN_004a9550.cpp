@@ -12,7 +12,7 @@ int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004a9550(CBitFont *this_p
   int iVar1;
   char acStack_1010 [4096];
   
-  _vsprintf(acStack_1010,format_string,args.value[0]);
+  _vsprintf(acStack_1010,format_string,args);
   iVar1 = engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004a94b0
                     (this_ptr,y,color_mode,color_value,acStack_1010);
   return iVar1;

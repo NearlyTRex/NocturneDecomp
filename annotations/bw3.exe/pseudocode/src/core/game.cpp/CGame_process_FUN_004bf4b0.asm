@@ -85,7 +85,7 @@ section .text
     JNZ 0x004bf511                      ; 004bf505
         ;   XREF to: 004bf511 (CONDITIONAL_JUMP)  ; LAB_004bf511
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf507
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV [0x01d22c98],EAX                ; 004bf50c | DAT_01d22c98
     MOV EAX,[0x005f1910]                ; 004bf511 | g_CFilterFXPtr
         ;   Label: LAB_004bf511
@@ -99,7 +99,7 @@ section .text
     JNZ 0x004bf584                      ; 004bf52d
         ;   XREF to: 004bf584 (CONDITIONAL_JUMP)  ; LAB_004bf584
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf52f
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV ECX,dword ptr [0x01d22c98]      ; 004bf534 | DAT_01d22c98
     SUB EAX,ECX                         ; 004bf53a
     MOV dword ptr [ESP + 0x8],EAX       ; 004bf53c
@@ -117,8 +117,8 @@ section .text
     PUSH 0x5c39b0                       ; 004bf570 | s_G_s_3_2f_ms_005c39af+1
     MOV EDI,dword ptr [0x005f1690]      ; 004bf575 | g_CConsolePtr
     PUSH EDI                            ; 004bf57b | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004bf57c
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004bf57c
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004bf581
     MOV EAX,[0x005fe9dc]                ; 004bf584 | g_CGamePtr
         ;   Label: LAB_004bf584
@@ -126,7 +126,7 @@ section .text
     JNZ 0x004bf59c                      ; 004bf590
         ;   XREF to: 004bf59c (CONDITIONAL_JUMP)  ; LAB_004bf59c
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf592
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV [0x01d22c98],EAX                ; 004bf597 | DAT_01d22c98
     MOV EAX,[0x006039e0]                ; 004bf59c | g_CScriptPtr
         ;   Label: LAB_004bf59c
@@ -140,7 +140,7 @@ section .text
     JNZ 0x004bf60f                      ; 004bf5b8
         ;   XREF to: 004bf60f (CONDITIONAL_JUMP)  ; LAB_004bf60f
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf5ba
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV ECX,dword ptr [0x01d22c98]      ; 004bf5bf | DAT_01d22c98
     SUB EAX,ECX                         ; 004bf5c5
     MOV dword ptr [ESP + 0x8],EAX       ; 004bf5c7
@@ -158,8 +158,8 @@ section .text
     PUSH 0x5c39b0                       ; 004bf5fb | s_G_s_3_2f_ms_005c39af+1
     MOV EDI,dword ptr [0x005f1690]      ; 004bf600 | g_CConsolePtr
     PUSH EDI                            ; 004bf606 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004bf607
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004bf607
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004bf60c
     CMP dword ptr [EBX + 0xe8],0x0      ; 004bf60f
         ;   Label: LAB_004bf60f
@@ -177,7 +177,7 @@ section .text
     JNZ 0x004bf643                      ; 004bf637
         ;   XREF to: 004bf643 (CONDITIONAL_JUMP)  ; LAB_004bf643
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf639
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV [0x01d22c98],EAX                ; 004bf63e | DAT_01d22c98
     MOV EAX,[0x00603b28]                ; 004bf643 | g_CDemonSetPtr
         ;   Label: LAB_004bf643
@@ -191,7 +191,7 @@ section .text
     JNZ 0x004bf6b6                      ; 004bf65f
         ;   XREF to: 004bf6b6 (CONDITIONAL_JUMP)  ; LAB_004bf6b6
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf661
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV ECX,dword ptr [0x01d22c98]      ; 004bf666 | DAT_01d22c98
     SUB EAX,ECX                         ; 004bf66c
     MOV dword ptr [ESP + 0x8],EAX       ; 004bf66e
@@ -209,8 +209,8 @@ section .text
     PUSH 0x5c39b0                       ; 004bf6a2 | s_G_s_3_2f_ms_005c39af+1
     MOV EDI,dword ptr [0x005f1690]      ; 004bf6a7 | g_CConsolePtr
     PUSH EDI                            ; 004bf6ad | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004bf6ae
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004bf6ae
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004bf6b3
     MOV EAX,[0x005fe9dc]                ; 004bf6b6 | g_CGamePtr
         ;   Label: LAB_004bf6b6
@@ -218,7 +218,7 @@ section .text
     JNZ 0x004bf6ce                      ; 004bf6c2
         ;   XREF to: 004bf6ce (CONDITIONAL_JUMP)  ; LAB_004bf6ce
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf6c4
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV [0x01d22c98],EAX                ; 004bf6c9 | DAT_01d22c98
     MOV EAX,[0x005fed24]                ; 004bf6ce | g_CGorePtr
         ;   Label: LAB_004bf6ce
@@ -232,7 +232,7 @@ section .text
     JNZ 0x004bf741                      ; 004bf6ea
         ;   XREF to: 004bf741 (CONDITIONAL_JUMP)  ; LAB_004bf741
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf6ec
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV ECX,dword ptr [0x01d22c98]      ; 004bf6f1 | DAT_01d22c98
     SUB EAX,ECX                         ; 004bf6f7
     MOV dword ptr [ESP + 0x8],EAX       ; 004bf6f9
@@ -250,8 +250,8 @@ section .text
     PUSH 0x5c39b0                       ; 004bf72d | s_G_s_3_2f_ms_005c39af+1
     MOV EDI,dword ptr [0x005f1690]      ; 004bf732 | g_CConsolePtr
     PUSH EDI                            ; 004bf738 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004bf739
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004bf739
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004bf73e
     MOV EBP,dword ptr [0x00606b20]      ; 004bf741 | g_CWaterPtr
         ;   Label: LAB_004bf741
@@ -265,7 +265,7 @@ section .text
     JNZ 0x004bf76a                      ; 004bf75e
         ;   XREF to: 004bf76a (CONDITIONAL_JUMP)  ; LAB_004bf76a
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf760
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV [0x01d22c98],EAX                ; 004bf765 | DAT_01d22c98
     MOV ECX,dword ptr [0x005fc5a0]      ; 004bf76a | DAT_005fc5a0
         ;   Label: LAB_004bf76a
@@ -279,7 +279,7 @@ section .text
     JNZ 0x004bf7dd                      ; 004bf787
         ;   XREF to: 004bf7dd (CONDITIONAL_JUMP)  ; LAB_004bf7dd
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf789
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EBP,dword ptr [0x01d22c98]      ; 004bf78e | DAT_01d22c98
     SUB EAX,EBP                         ; 004bf794
     MOV dword ptr [ESP + 0x8],EAX       ; 004bf796
@@ -297,8 +297,8 @@ section .text
     PUSH 0x5c39b0                       ; 004bf7ca | s_G_s_3_2f_ms_005c39af+1
     MOV EAX,[0x005f1690]                ; 004bf7cf | g_CConsolePtr
     PUSH EAX                            ; 004bf7d4 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004bf7d5
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004bf7d5
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004bf7da
     MOV EAX,[0x005fe9dc]                ; 004bf7dd | g_CGamePtr
         ;   Label: LAB_004bf7dd
@@ -306,7 +306,7 @@ section .text
     JNZ 0x004bf7f5                      ; 004bf7e9
         ;   XREF to: 004bf7f5 (CONDITIONAL_JUMP)  ; LAB_004bf7f5
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf7eb
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV [0x01d22c98],EAX                ; 004bf7f0 | DAT_01d22c98
     MOV ECX,dword ptr [0x005fba60]      ; 004bf7f5 | DAT_005fba60
         ;   Label: LAB_004bf7f5
@@ -320,7 +320,7 @@ section .text
     JNZ 0x004bf868                      ; 004bf812
         ;   XREF to: 004bf868 (CONDITIONAL_JUMP)  ; LAB_004bf868
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf814
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EBP,dword ptr [0x01d22c98]      ; 004bf819 | DAT_01d22c98
     SUB EAX,EBP                         ; 004bf81f
     MOV dword ptr [ESP + 0x8],EAX       ; 004bf821
@@ -338,8 +338,8 @@ section .text
     PUSH 0x5c39b0                       ; 004bf855 | s_G_s_3_2f_ms_005c39af+1
     MOV EAX,[0x005f1690]                ; 004bf85a | g_CConsolePtr
     PUSH EAX                            ; 004bf85f | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004bf860
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004bf860
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004bf865
     MOV EDX,dword ptr [0x00606aa0]      ; 004bf868 | DAT_00606aa0
         ;   Label: LAB_004bf868
@@ -373,7 +373,7 @@ section .text
     JNZ 0x004bf8ca                      ; 004bf8be
         ;   XREF to: 004bf8ca (CONDITIONAL_JUMP)  ; LAB_004bf8ca
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf8c0
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV [0x01d22c98],EAX                ; 004bf8c5 | DAT_01d22c98
     MOV ECX,dword ptr [0x00600530]      ; 004bf8ca | DAT_00600530
         ;   Label: LAB_004bf8ca
@@ -387,7 +387,7 @@ section .text
     JNZ 0x004bf93d                      ; 004bf8e7
         ;   XREF to: 004bf93d (CONDITIONAL_JUMP)  ; LAB_004bf93d
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf8e9
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EBP,dword ptr [0x01d22c98]      ; 004bf8ee | DAT_01d22c98
     SUB EAX,EBP                         ; 004bf8f4
     MOV dword ptr [ESP + 0x8],EAX       ; 004bf8f6
@@ -405,8 +405,8 @@ section .text
     PUSH 0x5c39b0                       ; 004bf92a | s_G_s_3_2f_ms_005c39af+1
     MOV EAX,[0x005f1690]                ; 004bf92f | g_CConsolePtr
     PUSH EAX                            ; 004bf934 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004bf935
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004bf935
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004bf93a
     MOV EAX,[0x005fe9dc]                ; 004bf93d | g_CGamePtr | g_CGameInstance
         ;   Label: LAB_004bf93d
@@ -425,7 +425,7 @@ section .text
     POP EBX                             ; 004bf971
     RET                                 ; 004bf972
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf973
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
         ;   Label: LAB_004bf973
     MOV ESI,EAX                         ; 004bf978
     JMP 0x004bf4c8                      ; 004bf97a
@@ -468,7 +468,7 @@ section .text
     JMP 0x004bf8b2                      ; 004bf9e2
         ;   XREF to: 004bf8b2 (UNCONDITIONAL_JUMP)  ; LAB_004bf8b2
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf9e7
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
         ;   Label: LAB_004bf9e7
     SUB EAX,ESI                         ; 004bf9ec
     MOV dword ptr [ESP + 0x8],EAX       ; 004bf9ee
@@ -485,8 +485,8 @@ section .text
     PUSH 0x5c3a58                       ; 004bfa1d | = "simulate : %3.2f ms\n"
     MOV ECX,dword ptr [0x005f1690]      ; 004bfa22 | g_CConsolePtr
     PUSH ECX                            ; 004bfa28 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004bfa29
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004bfa29
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 004bfa2e
     JMP 0x004bf959                      ; 004bfa31
         ;   XREF to: 004bf959 (UNCONDITIONAL_JUMP)  ; LAB_004bf959

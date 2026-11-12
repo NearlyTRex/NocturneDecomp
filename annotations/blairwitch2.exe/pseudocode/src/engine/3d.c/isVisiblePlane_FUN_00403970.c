@@ -2,33 +2,33 @@
 // Address: 00403970
 // Address Range: [[00403970, 004039da]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_3d_c_isVisiblePlane_FUN_00403970(int *param_1)
+// Signature: int __cdecl engine_3d_c_isVisiblePlane_FUN_00403970(SClipPlane *plane)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl engine_3d_c_isVisiblePlane_FUN_00403970(int *param_1)
+int __cdecl engine_3d_c_isVisiblePlane_FUN_00403970(SClipPlane *plane)
 
 {
   uint uVar1;
   int iVar2;
   longlong lVar3;
-  uint uVar4;
+  int iVar4;
   int iVar5;
   int iVar6;
   
   DAT_0070ca68 = DAT_0070ca68 + 1;
-  uVar4 = 1;
+  iVar4 = 1;
   if (((DAT_0070ca7c == 0) &&
-      (((*param_1 != 0 || param_1[1] != 0) || param_1[2] != 0) || param_1[3] != 0)) &&
-     (lVar3 = (longlong)param_1[1] * (longlong)_DAT_01c38b70 +
-              (longlong)*param_1 * (longlong)_DAT_01c38b6c +
-              (longlong)param_1[2] * (longlong)_DAT_01c38b74,
-     iVar5 = (int)((ulonglong)lVar3 >> 0x20), iVar6 = param_1[3] >> 0x1f,
-     uVar1 = (uint)((uint)param_1[3] < (uint)lVar3), iVar2 = iVar6 - iVar5, uVar4 = 1,
+      ((((plane->A).i != 0 || (plane->B).i != 0) || (plane->C).i != 0) || (plane->D).i != 0)) &&
+     (lVar3 = (longlong)(plane->B).i * (longlong)_DAT_01c38b70 +
+              (longlong)(plane->A).i * (longlong)_DAT_01c38b6c +
+              (longlong)(plane->C).i * (longlong)_DAT_01c38b74,
+     iVar5 = (int)((ulonglong)lVar3 >> 0x20), iVar6 = (plane->D).i >> 0x1f,
+     uVar1 = (uint)((uint)(plane->D).i < (uint)lVar3), iVar2 = iVar6 - iVar5, iVar4 = 1,
      (SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) == (int)(iVar2 - uVar1) < 0)) {
-    uVar4 = 0;
+    iVar4 = 0;
   }
-  return uVar4;
+  return iVar4;
 }

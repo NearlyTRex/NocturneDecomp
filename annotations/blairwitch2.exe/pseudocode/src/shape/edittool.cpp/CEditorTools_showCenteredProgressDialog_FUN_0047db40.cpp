@@ -12,8 +12,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_0047
 
 {
   int iVar1;
-  uint uVar2;
-  int iVar3;
+  int iVar2;
   
   if (_DAT_01c25590 == (CBitFont *)0x0) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
@@ -24,16 +23,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_0047
   _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   iVar1 = DAT_006141b8 / 2;
   if (message_text != (char *)0x0) {
-    iVar3 = engine_font_cpp_FUN_004aaf00(_DAT_01c25590,message_text);
-    if (iVar1 < iVar3) {
-      iVar1 = engine_font_cpp_FUN_004aaf00(_DAT_01c25590,message_text);
+    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,message_text);
+    if (iVar1 < iVar2) {
+      iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,message_text);
     }
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
             (this_ptr,iVar1,_DAT_01c25f7c * 6,message_text,0);
-  uVar2 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
+  iVar2 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   iVar1 = (_DAT_01c2559c + -1) * 0x1f8;
-  *(uint *)(iVar1 + 0x1c2578c) = uVar2;
+  *(int *)(iVar1 + 0x1c2578c) = iVar2;
   *(uint *)(iVar1 + 0x1c25790) = 0xffffffff;
   shape_edittool_cpp_FUN_0047dc40(this_ptr,0,0x3f800000);
   return;

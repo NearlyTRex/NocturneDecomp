@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_0047d09e(undefined4 param_1,undefined4 param_2)
+; void shape_edittool_cpp_FUN_0047d09e(undefined4 param_1,char *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -57,7 +57,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0047d0f6
     PUSH EAX                            ; 0047d0fa
     CALL crt_stdio.c_vsprintf_FUN_005a2898 ; 0047d0fb
-        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005a2898()
+        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005a2898(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047d100
     MOV EBP,dword ptr [ESP + 0x418]     ; 0047d103
     XOR EDI,EDI                         ; 0047d10a

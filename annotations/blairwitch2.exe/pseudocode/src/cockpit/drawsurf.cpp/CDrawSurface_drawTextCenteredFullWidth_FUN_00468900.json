@@ -16,15 +16,15 @@
   },
   "cross_references": [
     {
-      "addr": "00468920",
-      "from_addr": "00468930",
-      "name": "cockpit_drawsurf.cpp_FUN_00468920",
+      "addr": "00468940",
+      "from_addr": "00468991",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00468940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00468940",
-      "from_addr": "00468991",
-      "name": "cockpit_drawsurf.cpp_FUN_00468940",
+      "addr": "00468920",
+      "from_addr": "00468930",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00468920",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,7 +54,7 @@
       {
         "call_addr": "00468930",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00468920",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00468920",
         "estimated_params": 3,
         "instructions_analyzed": 7,
         "method": "push_count",
@@ -65,7 +65,7 @@
       {
         "call_addr": "00468991",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00468940",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00468940",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,6 +100,32 @@
       "STORE": 7
     },
     "pcode_op_count": 56
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00480e10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046a4d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00489ab0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045e0f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

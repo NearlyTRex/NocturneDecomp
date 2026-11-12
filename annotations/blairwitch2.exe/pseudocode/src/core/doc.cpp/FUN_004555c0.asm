@@ -272,7 +272,7 @@ section .text
     PUSH EAX                            ; 004557d0
     FSTP float ptr [EBP + 0x5a]         ; 004557d1
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004557d4
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004557d9
     MOV EDX,dword ptr [0x01d0557c]      ; 004557dc | g_CMeleeClassInfo.name_hash
     MOV EAX,dword ptr [ESI + 0x468]     ; 004557e2
@@ -280,7 +280,7 @@ section .text
     MOV EAX,dword ptr [ESI + EAX*0x4 + 0x610] ; 004557e9
     PUSH EAX                            ; 004557f0
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004557f1
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,dword ptr [0x01b4d29c]      ; 004557f6 | DAT_01b4d29c
     MOV ECX,dword ptr [EBX + 0x2d04]    ; 004557fc
     ADD ESP,0x8                         ; 00455802

@@ -20,8 +20,8 @@ void core_prye_cpp_FUN_0051b550(CHero *param_1,float param_2)
   EGroundType EVar5;
   int iVar6;
   int iVar7;
-  UActorVTable UVar8;
-  float *pfVar9;
+  float *pfVar8;
+  CVector3f *pCVar9;
   float *pfVar10;
   byte bVar11;
   float10 fVar12;
@@ -29,23 +29,24 @@ void core_prye_cpp_FUN_0051b550(CHero *param_1,float param_2)
   CHero *this_ptr_00;
   CVector3f *in_stack_fffffe7c;
   EGroundType in_stack_fffffe80;
-  CGore *in_stack_fffffe84;
+  float in_stack_fffffe84;
   uint *puVar13;
   SDamageInfo *this_ptr_01;
+  float fStack_154;
   float local_144;
   float local_140;
   float local_13c;
   CHero *local_12c;
   CHero *local_128;
   SDamageInfo local_124;
-  byte local_e8 [12];
-  float local_dc;
-  float local_d8 [7];
+  uint local_e8;
+  float fStack_e4;
+  CVector3f CStack_e0;
+  float local_d4 [6];
   byte auStack_bc [8];
-  float afStack_b4 [2];
-  CVector3f local_ac;
-  float local_a0;
-  float afStack_9c [8];
+  byte auStack_b4 [12];
+  float afStack_a8 [5];
+  uint local_94;
   uint local_7c;
   float afStack_78 [4];
   float local_68;
@@ -57,8 +58,8 @@ void core_prye_cpp_FUN_0051b550(CHero *param_1,float param_2)
   float afStack_3c [2];
   CVector3f *local_34;
   CVector3f *local_30;
-  int local_2c;
-  int local_28;
+  CCharacter *local_2c;
+  CCharacter *local_28;
   CMotionController *local_24;
   int local_20;
   int local_1c;
@@ -81,10 +82,10 @@ LAB_0051b5c3:
               uVar4 = _DAT_01ed36fc;
             }
             core_skeleton_cpp_FUN_0054dbd0(local_24,uVar4);
-            local_ac.x = local_a0;
-            *(float *)((int)&local_ac + (uint)bVar11 * -8 + 4) = afStack_9c[(uint)bVar11 * -2];
-            *(float *)((int)&local_ac + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-                 afStack_9c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
+            auStack_b4._8_4_ = afStack_a8[2];
+            afStack_a8[(uint)bVar11 * -2] = afStack_a8[(uint)bVar11 * -2 + 3];
+            afStack_a8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+                 afStack_a8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
             this_ptr = param_1->ladder_to_climb;
             if (this_ptr == (CLadder *)0x0) {
               if (param_1[1].base.base.orient_matrix.m[2].x == 0.0) {
@@ -93,7 +94,7 @@ LAB_0051b5c3:
                   pCVar3 = local_24;
                   if ((float)_DAT_005cd307 < (float)local_14) {
                     (*((param_1->base).base.vtable._ub)->processFootstepAtOffset)
-                              ((CDemonActor *)param_1,&local_ac,1.7);
+                              ((CDemonActor *)param_1,(CVector3f *)(auStack_b4 + 8),1.7);
                   }
                   else {
                     local_14._ub = (CDemonActor_vtable *)core_motion_cpp_FUN_004fc350(local_24,1);
@@ -101,13 +102,13 @@ LAB_0051b5c3:
                        (local_14._ub = (CDemonActor_vtable *)core_motion_cpp_FUN_004fc350(pCVar3,2),
                        (float)_DAT_005cd307 < (float)local_14)) {
                       (*((param_1->base).base.vtable._ub)->processFootstepAtOffset)
-                                ((CDemonActor *)param_1,&local_ac,1.0);
+                                ((CDemonActor *)param_1,(CVector3f *)(auStack_b4 + 8),1.0);
                     }
                     else {
                       local_14._ub = (CDemonActor_vtable *)core_motion_cpp_FUN_004fc350(pCVar3,3);
                       if ((float)_DAT_005cd307 < (float)local_14) {
                         (*((param_1->base).base.vtable._ub)->processFootstepAtOffset)
-                                  ((CDemonActor *)param_1,&local_ac,1.7);
+                                  ((CDemonActor *)param_1,(CVector3f *)(auStack_b4 + 8),1.7);
                       }
                       else {
                         local_14._ub = (CDemonActor_vtable *)core_motion_cpp_FUN_004fc350(pCVar3,5);
@@ -129,7 +130,7 @@ LAB_0051b5c3:
                              (float)_DAT_005cd307 < (float)local_14)) {
 LAB_0051bbd6:
                             (*((param_1->base).base.vtable._ub)->processFootstepAtOffset)
-                                      ((CDemonActor *)param_1,&local_ac,1.0);
+                                      ((CDemonActor *)param_1,(CVector3f *)(auStack_b4 + 8),1.0);
                             goto LAB_0051b667;
                           }
                           local_14._ub = (CDemonActor_vtable *)
@@ -151,14 +152,15 @@ LAB_0051bbd6:
                                              core_motion_cpp_FUN_004fc350(pCVar3,0x10);
                               if ((float)_DAT_005cd307 < (float)local_14) {
                                 (*((param_1->base).base.vtable._ub)->processFootstepAtOffset)
-                                          ((CDemonActor *)param_1,&local_ac,1.0);
+                                          ((CDemonActor *)param_1,(CVector3f *)(auStack_b4 + 8),1.0)
+                                ;
                               }
                               goto LAB_0051b667;
                             }
                           }
                         }
                         (*((param_1->base).base.vtable._ub)->processFootstepAtOffset)
-                                  ((CDemonActor *)param_1,&local_ac,1.0);
+                                  ((CDemonActor *)param_1,(CVector3f *)(auStack_b4 + 8),1.0);
                       }
                     }
                   }
@@ -170,25 +172,26 @@ LAB_0051bbd6:
               in_stack_fffffe80 =
                    (**(code **)(*(int *)((int)fVar2 + 0x154) + 0x44))(fVar2,0x3f800000);
               core_actor_cpp_FUN_00408b80(param_1,auStack_bc);
-              in_stack_fffffe7c = (CVector3f *)(local_e8 + 8);
-              pfVar10 = (float *)(local_e8 + 8);
-              pfVar9 = local_d8 + 1;
+              in_stack_fffffe7c = &CStack_e0;
+              pCVar9 = &CStack_e0;
+              pfVar8 = local_d4;
             }
             else {
               local_14 = (param_1->base).base.vtable;
               EVar5 = (*((this_ptr->base).vtable._ub)->getGroundType)(&this_ptr->base);
-              core_actor_cpp_FUN_00408b80(param_1,&local_ac.y,EVar5);
-              pfVar10 = afStack_b4;
-              pfVar9 = afStack_78 + 0xf;
+              core_actor_cpp_FUN_00408b80(param_1,afStack_a8,EVar5);
+              pCVar9 = (CVector3f *)auStack_b4;
+              pfVar8 = afStack_78 + 0xf;
             }
-            *pfVar10 = *pfVar9;
+            pfVar10 = (float *)((int)pCVar9 + ((uint)bVar11 * -2 + 1) * 4);
+            pCVar9->x = *pfVar8;
             this_ptr_00 = param_1;
-            pfVar10[(uint)bVar11 * -2 + 1] = pfVar9[(uint)bVar11 * -2 + 1];
-            (pfVar10 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1] =
-                 (pfVar9 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1];
+            *pfVar10 = pfVar8[(uint)bVar11 * -2 + 1];
+            pfVar10[(uint)bVar11 * -2 + 1] = (pfVar8 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1]
+            ;
             (*(code *)local_24->state_index)
                       ((CDemonActor *)this_ptr_00,in_stack_fffffe7c,in_stack_fffffe80,
-                       (float)in_stack_fffffe84);
+                       in_stack_fffffe84);
           }
           else {
 LAB_0051c08c:
@@ -200,7 +203,7 @@ LAB_0051c08c:
             param_1->action_pending = 0;
           }
           else {
-            in_stack_fffffe84 = (CGore *)0x51b782;
+            in_stack_fffffe84 = 7.504505e-39;
             shape_edittool_cpp_FUN_0047cee0
                       (g_CEditorToolsPtr,"actionPending = %d\nprye.cpp line %d",param_1->action_pending
                        ,0xa56);
@@ -225,7 +228,8 @@ LAB_0051c08c:
               }
               if (iVar6 == 2) {
                 if (param_1->action_pending != 0) {
-                  shape_edittool_cpp_FUN_0047cee0(g_CEditorToolsPtr);
+                  shape_edittool_cpp_FUN_0047cee0
+                            (g_CEditorToolsPtr,"actionPending = %d\nprye.cpp line %d");
                 }
                 param_1->action_pending = 1;
               }
@@ -247,7 +251,7 @@ LAB_0051b6b9:
           }
           else {
             if (iVar6 == 6) goto LAB_0051b6b9;
-            in_stack_fffffe84 = (CGore *)0x51b724;
+            in_stack_fffffe84 = 7.504374e-39;
             shape_edittool_cpp_FUN_0047cee0
                       (g_CEditorToolsPtr,"?actionPending = %d\nprye.cpp line %d" + 1,iVar6,0xa38);
           }
@@ -263,10 +267,11 @@ LAB_0051b6b9:
         }
       }
       else if (bone_index < 7) {
-        local_28 = core_actor_cpp_castToClassHash_FUN_0040c840
+        local_28 = (CCharacter *)
+                   core_actor_cpp_castToClassHash_FUN_0040c840
                              ((param_1->base).grabbed_by,g_CEnemyClassInfo.name_hash);
         local_2c = local_28;
-        if (local_28 != 0) {
+        if (local_28 != (CCharacter *)0x0) {
           core_skeleton_cpp_FUN_0054dbd0(local_24,_DAT_01ed370c);
           puVar13 = &local_7c;
           local_7c = local_58;
@@ -275,35 +280,32 @@ LAB_0051b6b9:
                afStack_78[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10];
           core_actor_cpp_FUN_00408b80(param_1,puVar13);
           this_ptr_01 = (SDamageInfo *)&stack0xfffffea0;
-          local_e8._0_4_ = afStack_9c[2];
-          *(float *)(local_e8 + (uint)bVar11 * -8 + 4) = afStack_9c[(uint)bVar11 * -2 + 3];
-          *(float *)(local_e8 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-               afStack_9c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
+          local_e8 = local_94;
+          (&fStack_e4)[(uint)bVar11 * -2] = afStack_a8[(uint)bVar11 * -2 + 6];
+          *(float *)((int)&CStack_e0 + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
+               afStack_a8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7];
           core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(this_ptr_01);
-          UVar8 = (UActorVTable)core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(1.0,3.0);
-          local_14 = UVar8;
-          core_actor_cpp_FUN_00408bf0(local_28,local_e8);
-          local_dc = local_64;
-          local_d8[(uint)bVar11 * -2] = afStack_78[(uint)bVar11 * -2 + 6];
-          local_d8[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+          local_14 = (UActorVTable)core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(1.0,3.0);
+          core_actor_cpp_FUN_00408bf0(local_28,&local_e8);
+          CStack_e0.y = local_64;
+          local_d4[(uint)bVar11 * -2 + -1] = afStack_78[(uint)bVar11 * -2 + 6];
+          local_d4[(uint)bVar11 * -2 + (uint)bVar11 * -2] =
                afStack_78[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7];
-          if (&stack0xfffffebc != &local_dc) {
-            local_144 = local_dc;
-            local_140 = local_d8[0];
-            local_13c = local_d8[1];
+          if (&local_144 != &CStack_e0.y) {
+            local_144 = CStack_e0.y;
+            local_140 = CStack_e0.z;
+            local_13c = local_d4[0];
           }
           local_12c = param_1;
           local_128 = param_1;
-          (**(code **)(*(int *)(local_2c + 0x154) + 0x108))(local_2c,&stack0xfffffea0);
-          if (0.0 < (float)UVar8) {
-            fVar12 = (float10)(float)UVar8 * (float10)_DAT_005cd2ff;
+          (*(((local_2c->base).vtable._uc)->_uc).processDamage)
+                    (local_2c,(SDamageInfo *)&stack0xfffffea0);
+          if (0.0 < fStack_154) {
+            fVar12 = (float10)fStack_154 * (float10)_DAT_005cd2ff;
             round();
-            local_14 = (UActorVTable)(int)ROUND(fVar12);
-            in_stack_fffffe80 = 0x51bea5;
-            in_stack_fffffe84 = g_CGorePtr;
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004ce9c0
-                      (g_CGorePtr,(CVector3f *)local_e8,(CVector3f *)0x0,
-                       (int)((int)&(local_14._ub)->setup + 1),BLOOD_TYPE_RED);
+                      (g_CGorePtr,&CStack_e0,(CVector3f *)0x0,(int)ROUND(fVar12) + 1,BLOOD_TYPE_RED)
+            ;
           }
         }
         local_20 = 0;
@@ -362,7 +364,7 @@ LAB_0051b6b9:
             param_1->action_pending = 0;
           }
           else {
-            in_stack_fffffe84 = (CGore *)0x51b87a;
+            in_stack_fffffe84 = 7.504853e-39;
             shape_edittool_cpp_FUN_0047cee0
                       (g_CEditorToolsPtr,"actionPending = %d\nprye.cpp line %d",param_1->action_pending
                        ,0xa9a);
@@ -373,7 +375,7 @@ LAB_0051b6b9:
             param_1->action_pending = 0;
           }
           else {
-            in_stack_fffffe84 = (CGore *)0x51bf5d;
+            in_stack_fffffe84 = 7.507323e-39;
             shape_edittool_cpp_FUN_0047cee0
                       (g_CEditorToolsPtr,"actionPending = %d\nprye.cpp line %d",param_1->action_pending
                        ,0xb13);

@@ -14,15 +14,14 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004a0cd0(CPopcorn *this_ptr)
   SRenderVertex *vertex_ptr;
   int iVar1;
   byte bVar2;
-  int aiStackY_1060 [1002];
+  uint auStackY_1060 [1002];
   CVector3i *rotation;
   SMRGLHeaderPrimitive SStack_a0;
   uint uStack_88;
   uint uStack_84;
   uint uStack_80;
   uint uStack_7c;
-  int iStack_78;
-  int aiStack_74 [2];
+  CVector3i CStack_78;
   CVector3i CStack_6c;
   CVector3i CStack_60;
   CVector3i CStack_54;
@@ -46,12 +45,13 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004a0cd0(CPopcorn *this_ptr)
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
             (DAT_005f2afc,(CVector3f *)this_ptr);
-  engine_drender_cpp_FUN_0046d230(DAT_005f2afc);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(DAT_005f2afc,&CStack_78);
   rotation = (CVector3i *)0x0;
-  CStack_60.x = iStack_78;
-  *(int *)((int)&CStack_60 + (uint)bVar2 * -8 + 4) = aiStack_74[(uint)bVar2 * -2];
-  *(int *)((int)&CStack_60 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       aiStack_74[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+  CStack_60.x = CStack_78.x;
+  *(uint *)((int)&CStack_60 + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&CStack_78 + (uint)bVar2 * -8 + 4);
+  *(uint *)((int)&CStack_60 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&CStack_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0
             (DAT_005f2afc,&CStack_60,rotation);
   uStack_30 = 0xbe000000;

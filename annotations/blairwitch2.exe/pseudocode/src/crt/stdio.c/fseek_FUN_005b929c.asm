@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_stdio_c_fseek_FUN_005b929c(undefined4 *param_1,int param_2,uint param_3)
+; int __cdecl crt_stdio_c_fseek_FUN_005b929c(_FILE *file,long offset,int whence)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file
+; long             Stack[0x8]:4   offset
+; int              Stack[0xc]:4   whence
 ;
 ; XREF[18]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30 at 0051711c

@@ -33,7 +33,7 @@
     ],
     "convention": "unknown",
     "name": "core_doc.cpp_FUN_0044febe",
-    "signature": "undefined4 core_doc_cpp_FUN_0044febe(int param_1)"
+    "signature": "undefined4 core_doc_cpp_FUN_0044febe(CDemonActor *param_1)"
   },
   "function_calls": [],
   "globals": [],
@@ -84,7 +84,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_doc_cpp_FUN_0044febe(int param_1)",
+      "text": "uint core_doc_cpp_FUN_0044febe(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -92,7 +92,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 == 0) {",
+      "text": "if (param_1 == (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -100,7 +100,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "switch(*(uint *)(param_1 + 0x43c)) {",
+      "text": "switch(param_1[1].particle_systems[0].stop_after_fade) {",
       "type": "unnamed_param"
     },
     {
@@ -108,7 +108,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1,g_CMeleeClassInfo.name_hash);",
+      "text": "pCVar1 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1,g_CMeleeClassInfo.name_hash);",
       "type": "unnamed_param"
     }
   ]

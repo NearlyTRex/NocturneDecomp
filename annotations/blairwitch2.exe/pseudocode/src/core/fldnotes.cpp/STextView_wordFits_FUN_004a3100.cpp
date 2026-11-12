@@ -17,7 +17,7 @@ uint __cdecl core_fldnotes_cpp_STextView_wordFits_FUN_004a3100(STextView *this_p
   byte bVar6;
   
   bVar6 = 0;
-  iVar2 = engine_font_cpp_FUN_004aaf00(this_ptr->font,param_2);
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(this_ptr->font,param_2);
   if (iVar2 + this_ptr->cursor_x < this_ptr->margin_right) {
     uVar3 = 0xffffffff;
     pcVar5 = this_ptr->word;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flies_cpp_factoryFuncFlies_FUN_004bfa30(void)
+; CFlies * __cdecl core_flies_cpp_factoryFuncFlies_FUN_004bfa30(void)
 ;
 ;
 ; Called Functions:

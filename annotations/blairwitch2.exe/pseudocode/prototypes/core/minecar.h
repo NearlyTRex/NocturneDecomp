@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_minecar.cpp_factoryFuncMineCar_FUN_004f2030
 // Address: 004f2030
-void factoryFuncMineCar(void);
+CMineCar * __cdecl factoryFuncMineCar(void);
 
 // Original: core_minecar.cpp_CMineCar_getActorType_FUN_004f2060
 // Address: 004f2060

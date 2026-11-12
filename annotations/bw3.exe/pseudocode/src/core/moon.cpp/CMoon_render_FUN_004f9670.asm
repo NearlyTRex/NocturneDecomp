@@ -23,11 +23,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_menu.cpp_FUN_004e7dc0 at 004e7ddf
 ;   core_menu.cpp_FUN_004e85a0 at 004e869b
 ;   core_menu.cpp_FUN_004e8f80 at 004e9007
 ;   core_menu.cpp_FUN_004e94f0 at 004e957c
 ;   core_menu.cpp_FUN_004ea280 at 004ea30d
+;   core_menu.cpp_calibrateGamepad_FUN_004e7dc0 at 004e7ddf
 ;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea60a
 ;
 ; Referenced Globals:
@@ -49,8 +49,8 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
+;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40
-;   engine_drender.cpp_FUN_0046d090
 ;   engine_special.cpp_clearScreen_FUN_00560d70
 ;   sound_sndmain.cpp_processAudio_FUN_00559120
 ;
@@ -103,8 +103,8 @@ section .text
     MOV ECX,dword ptr [0x005f2afc]      ; 004f9704 | DAT_005f2afc
     PUSH 0x422c9ce4                     ; 004f970a
     PUSH ECX                            ; 004f970f | DAT_01bdd7e4
-    CALL engine_drender.cpp_FUN_0046d090 ; 004f9710
-        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d090()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090 ; 004f9710
+        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004f9715
     MOV EAX,ESP                         ; 004f9718
     PUSH EAX                            ; 004f971a

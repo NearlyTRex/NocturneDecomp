@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_glass.cpp_factoryFuncGlass_FUN_004e0fe0
 // Address: 004e0fe0
-void factoryFuncGlass(void);
+CGlass * __cdecl factoryFuncGlass(void);
 
 // Original: core_glass.cpp_CGlass_getActorType_FUN_004e1000
 // Address: 004e1000

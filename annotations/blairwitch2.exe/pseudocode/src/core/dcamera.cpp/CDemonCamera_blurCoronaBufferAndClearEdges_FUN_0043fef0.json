@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 61,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
-    "total_lines": 113
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 37,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 114
   },
   "cross_references": [
     {
@@ -93,6 +91,32 @@
     },
     "pcode_op_count": 307
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004515b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0044d6f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004509b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00444810",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 28,
     "local_size": 24,
@@ -116,22 +140,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex address 0xb07f58 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 9,
-      "match": "0xb07f58",
-      "severity": "moderate",
-      "text": "iVar1 = 0xb07f58;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xaf5218 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 10,
-      "match": "0xaf5218",
-      "severity": "moderate",
-      "text": "iVar2 = 0xaf5218;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

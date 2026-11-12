@@ -12,7 +12,7 @@
 ;   core_moon.cpp_CMoon_dtor_FUN_00502390 at 00502396
 ;
 ; Called Functions:
-;   engine_alphabit.cpp_FUN_0040d540
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540
 ;
 ; *****************************************************************************
 
@@ -29,19 +29,19 @@ section .text
     PUSH ESI                            ; 0050245c
         ;   Label: LAB_0050245c
     PUSH 0x1d1c7b8                      ; 0050245d
-    CALL engine_alphabit.cpp_FUN_0040d540 ; 00502462
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d540(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540 ; 00502462
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 00502467
     MOV EBX,0x1d1c7cc                   ; 0050246a
     PUSH 0x1d1cda8                      ; 0050246f
     LEA ESI,[EBX + 0x5dc]               ; 00502474
-    CALL engine_alphabit.cpp_FUN_0040d540 ; 0050247a
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d540(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540 ; 0050247a
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0050247f
     PUSH EBX                            ; 00502482
         ;   Label: LAB_00502482
-    CALL engine_alphabit.cpp_FUN_0040d540 ; 00502483
-        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d540(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540 ; 00502483
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540(CAlphaBitmap * this_ptr)
     ADD EBX,0x14                        ; 00502488
     ADD ESP,0x4                         ; 0050248b
     CMP EBX,ESI                         ; 0050248e

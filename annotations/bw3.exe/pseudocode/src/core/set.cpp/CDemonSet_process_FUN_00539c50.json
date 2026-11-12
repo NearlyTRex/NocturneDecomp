@@ -168,6 +168,32 @@
     },
     "pcode_op_count": 442
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00533010",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005542c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0056f940",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0050d040",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 288,
     "local_size": 284,
@@ -219,7 +245,7 @@
       "line": 21,
       "match": "DAT_0203a418",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_0203a418 + local_14);",
+      "text": "light = *(CDemonLight **)(&DAT_0203a418 + local_14);",
       "type": "undefined_data"
     },
     {
@@ -227,7 +253,7 @@
       "line": 29,
       "match": "DAT_0203a59c",
       "severity": "mild",
-      "text": "if (iVar1 == *(int *)(&DAT_0203a59c + iVar2)) {",
+      "text": "if (light == *(CDemonLight **)(&DAT_0203a59c + iVar1)) {",
       "type": "undefined_data"
     },
     {
@@ -243,7 +269,7 @@
       "line": 47,
       "match": "DAT_005d080e",
       "severity": "mild",
-      "text": "iVar2 = _strnicmp(pCVar4->name,&DAT_005d080e,4);",
+      "text": "iVar1 = _strnicmp(this_ptr_00->name,&DAT_005d080e,4);",
       "type": "undefined_data"
     }
   ]

@@ -2,46 +2,46 @@
 // Address: 00543540
 // Address Range: [[00543540, 0054360d]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_getActionState_FUN_00543540(int param_1,char *param_2)
+// Signature: int * __cdecl core_script_cpp_getActionState_FUN_00543540(SPlayerActionState *action_state,char *action_name)
 
 #include "nocturne.h"
 
-int __cdecl core_script_cpp_getActionState_FUN_00543540(int param_1,char *param_2)
+int * __cdecl core_script_cpp_getActionState_FUN_00543540(SPlayerActionState *action_state,char *action_name)
 
 {
   int iVar1;
   
-  iVar1 = _stricmp(param_2,&DAT_005ee0da);
+  iVar1 = _stricmp(action_name,&DAT_005ee0da);
   if (iVar1 == 0) {
-    return param_1;
+    return &action_state->walk;
   }
-  iVar1 = _stricmp(param_2,"backup");
+  iVar1 = _stricmp(action_name,"backup");
   if (iVar1 == 0) {
-    return param_1 + 4;
+    return &action_state->backup;
   }
-  iVar1 = _stricmp(param_2,&DAT_005ee0e6);
+  iVar1 = _stricmp(action_name,&DAT_005ee0e6);
   if (iVar1 == 0) {
-    return param_1 + 8;
+    return &action_state->run;
   }
-  iVar1 = _stricmp(param_2,&DAT_005ee0ea);
+  iVar1 = _stricmp(action_name,&DAT_005ee0ea);
   if (iVar1 == 0) {
-    return param_1 + 0xc;
+    return &action_state->fire;
   }
-  iVar1 = _stricmp(param_2,"useItem");
+  iVar1 = _stricmp(action_name,"useItem");
   if (iVar1 == 0) {
-    return param_1 + 0x10;
+    return &action_state->use_item;
   }
-  iVar1 = _stricmp(param_2,"light");
+  iVar1 = _stricmp(action_name,"light");
   if (iVar1 == 0) {
-    return param_1 + 0x14;
+    return &action_state->light;
   }
-  iVar1 = _stricmp(param_2,&DAT_005ee0fd);
+  iVar1 = _stricmp(action_name,&DAT_005ee0fd);
   if (iVar1 == 0) {
-    return param_1 + 0x18;
+    return &action_state->draw;
   }
-  iVar1 = _stricmp(param_2,&DAT_005ee102);
+  iVar1 = _stricmp(action_name,&DAT_005ee102);
   if (iVar1 == 0) {
-    return param_1 + 0x1c;
+    return &action_state->jump;
   }
-  return 0;
+  return (int *)0x0;
 }

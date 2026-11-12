@@ -100,7 +100,7 @@ section .text
     PUSH EAX                            ; 00553712
     PUSH EBX                            ; 00553713
     CALL sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00552d60 ; 00553714
-        ;   XREF to: 00552d60 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00552d60()
+        ;   XREF to: 00552d60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00552d60(int index, SRecordingDeviceInfo * device_info)
     ADD ESP,0x8                         ; 00553719
     LEA EAX,[ESP + 0x220]               ; 0055371c
     PUSH EAX                            ; 00553723
@@ -164,7 +164,7 @@ section .text
         ;   XREF to: 00552b50 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00552b50()
     ADD ESP,0x4                         ; 005537a9
     CALL sound_sndmain.cpp_getMaxSwLatency_FUN_00553600 ; 005537ac
-        ;   XREF to: 00553600 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getMaxSwLatency_FUN_00553600()
+        ;   XREF to: 00553600 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_00553600()
     MOV dword ptr [ESP + 0x3a0],EAX     ; 005537b1
     LEA EAX,[ESP + 0x388]               ; 005537b8
     PUSH EAX                            ; 005537bf
@@ -274,7 +274,7 @@ section .text
     ADD ESP,0xc                         ; 00553911
     PUSH EBX                            ; 00553914
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00551190 ; 00553915
-        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00551190()
+        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00551190(int channel_index)
     MOV dword ptr [ESP + 0x3a4],EAX     ; 0055391a
     FLD float ptr [ESP + 0x3a4]         ; 00553921
     ADD ESP,0x4                         ; 00553928
@@ -290,7 +290,7 @@ section .text
     PUSH dword ptr [ESP + 0x39c]        ; 0055394b
     PUSH EBX                            ; 00553952
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00551100 ; 00553953
-        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00551100()
+        ;   XREF to: 00551100 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00551100(int channel_index, float volume)
     MOV ECX,dword ptr [0x0061bc94]      ; 00553958 | DAT_0061bc94
     INC EBX                             ; 0055395e
     ADD ESP,0x8                         ; 0055395f

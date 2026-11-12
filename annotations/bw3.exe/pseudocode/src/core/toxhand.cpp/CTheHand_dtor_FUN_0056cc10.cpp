@@ -18,7 +18,7 @@ CTheHand * core_toxhand_cpp_CTheHand_dtor_FUN_0056cc10(CTheHand *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTheHandTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTheHandTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

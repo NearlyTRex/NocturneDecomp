@@ -11,7 +11,7 @@ void __cdecl calculateMpegFrame(SMpegFrame *frame);
 
 // Original: sound_mp3.cpp_FUN_00525ab0
 // Address: 00525ab0
-void FUN_00525ab0(int *param_1,int param_2,ulong param_3,int param_4);
+void FUN_00525ab0(int *param_1,_FILE *param_2,ulong param_3,int param_4);
 
 // Original: sound_mp3.cpp_CFileBitStream_readBit_FUN_00525be0
 // Address: 00525be0
@@ -83,23 +83,23 @@ void __cdecl CFileBitStream::readQuantizedSamplesGrouped(CFileBitStream *this_pt
 
 // Original: sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_00526c70
 // Address: 00526c70
-void __cdecl requantizeLayer3SamplesSimple(int param_1,int param_2,int param_3,int param_4);
+void __cdecl requantizeLayer3SamplesSimple(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame);
 
 // Original: sound_mp3.cpp_requantizeSamples_FUN_00526f40
 // Address: 00526f40
-void __cdecl requantizeSamples(int param_1,int param_2,int param_3,int param_4);
+void __cdecl requantizeSamples(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame);
 
 // Original: sound_mp3.cpp_applyScalefactorsToSubbands_FUN_00527080
 // Address: 00527080
-void __cdecl applyScalefactorsToSubbands(int param_1,int param_2,int param_3,int param_4);
+void __cdecl applyScalefactorsToSubbands(float *spectral_samples,int *scalefactor_band_indices,SMpegFrame *frame_info,int channel_or_granule_index);
 
 // Original: sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_00527130
 // Address: 00527130
-void applyScalefactorsToLayer2Samples(int param_1,int param_2,int param_3);
+void __cdecl applyScalefactorsToLayer2Samples(float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info);
 
 // Original: sound_mp3.cpp_initializeSynthesisDctTable_FUN_0052718e
 // Address: 0052718e
-double initializeSynthesisDctTable(float *param_1);
+void __cdecl initializeSynthesisDctTable(float *output_dct_table);
 
 // Original: sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_00527280
 // Address: 00527280
@@ -127,27 +127,27 @@ void __cdecl CMP3Decoder::huffmanDecodeLayer3Samples(CMP3Decoder *this_ptr,SMpeg
 
 // Original: sound_mp3.cpp_requantizeLayer3Samples_FUN_00528ae0
 // Address: 00528ae0
-void __cdecl requantizeLayer3Samples(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6);
+void __cdecl requantizeLayer3Samples(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3GranuleInfo *granule,int channel_index,SMpegFrame *frame);
 
 // Original: sound_mp3.cpp_reorderShortBlockSamples_FUN_00528f90
 // Address: 00528f90
-void __cdecl reorderShortBlockSamples(undefined4 *param_1,undefined4 *param_2,int param_3,int *param_4);
+void __cdecl reorderShortBlockSamples(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame);
 
 // Original: sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0
 // Address: 005292d0
-void __cdecl calculateIntensityStereoRatio(int param_1,double param_2,int param_3,int param_4);
+void __cdecl calculateIntensityStereoRatio(int intensity_position,double ratio,int sample_index,float *ratio_buffer);
 
 // Original: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_00529370
 // Address: 00529370
-void __cdecl mpegLayer3StereoProcess(undefined4 *param_1,undefined4 *param_2,int param_3,int param_4,int *param_5);
+void __cdecl mpegLayer3StereoProcess(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame);
 
 // Original: sound_mp3.cpp_antiAliasingButterfly_FUN_0052a0e0
 // Address: 0052a0e0
-void __cdecl antiAliasingButterfly(float *param_1,float *param_2,int param_3);
+void __cdecl antiAliasingButterfly(float *input_samples,float *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header);
 
 // Original: sound_mp3.cpp_applyPolyphaseWindow_FUN_0052a2c0
 // Address: 0052a2c0
-void __cdecl applyPolyphaseWindow(float *param_1,void *param_2,int param_3);
+void __cdecl applyPolyphaseWindow(float *input_samples,float *output_samples,int mpeg_block_type);
 
 // Original: sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_0052a7d0
 // Address: 0052a7d0
@@ -155,7 +155,7 @@ void __cdecl CMP3Decoder::synthesisPoly(CMP3Decoder *this_ptr,float *input_sampl
 
 // Original: sound_mp3.cpp_calculateMainDataSize_FUN_0052a880
 // Address: 0052a880
-int __cdecl calculateMainDataSize(int *param_1);
+int __cdecl calculateMainDataSize(SMpegFrame frame_info);
 
 // Original: sound_mp3.cpp_CMP3Decoder_ctor_FUN_0052ae40
 // Address: 0052ae40

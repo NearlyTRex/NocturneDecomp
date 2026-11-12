@@ -11,11 +11,12 @@
 void __cdecl core_union_cpp_CUnion_processDamage_FUN_005a59f0(CUnion *this_ptr,SDamageInfo *damage_info)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                    (damage_info->wielder,g_CUnionClassInfo.name_hash);
-  if ((iVar1 == 0) && (damage_info->wielder != *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4))) {
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                     (damage_info->wielder,g_CUnionClassInfo.name_hash);
+  if ((pCVar1 == (CDemonActor *)0x0) &&
+     (damage_info->wielder != *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4))) {
     core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800((CBasicEnemy *)this_ptr,damage_info);
     return;
   }

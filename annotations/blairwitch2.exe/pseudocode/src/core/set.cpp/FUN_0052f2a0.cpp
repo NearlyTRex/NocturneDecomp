@@ -12,10 +12,10 @@ void __cdecl core_set_cpp_FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender)
 
 {
   UOrientationVector *pUVar1;
+  float fVar2;
   CDemonLight *light_source;
   CDemonGlobe *globe;
-  CDemonActor *pCVar2;
-  double dVar3;
+  CDemonActor *pCVar3;
   CDemonSet *pCVar4;
   int iVar5;
   uint *puVar6;
@@ -23,10 +23,8 @@ void __cdecl core_set_cpp_FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender)
   int iVar8;
   byte bVar9;
   float afStackY_106c [1010];
-  CDemonCamera *pCVar10;
-  CVector3f *pCVar11;
-  SProjectedVertex *pSVar12;
-  float local_84;
+  CVector3f *pCVar10;
+  SProjectedVertex *pSVar11;
   CVector3f local_78;
   float local_6c;
   float afStack_68 [2];
@@ -210,20 +208,20 @@ void __cdecl core_set_cpp_FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender)
     do {
       local_20 = *(CDemonLight **)(local_44 + 0x1fc960c);
       if (local_20->light_enabled_flag != 0) {
-        pSVar12 = (SProjectedVertex *)0x0;
-        pCVar11 = &local_60;
+        pSVar11 = (SProjectedVertex *)0x0;
+        pCVar10 = &local_60;
         puVar6 = (uint *)((int)local_20 + (uint)bVar9 * -8 + 8);
-        local_84 = (local_20->base).base.position.f.x;
+        fVar2 = (local_20->base).base.position.f.x;
         *(uint *)(&stack0xffffff80 + (uint)bVar9 * -8) = *puVar6;
         *(uint *)(&stack0xffffff84 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
              puVar6[(uint)bVar9 * -2 + 1];
-        pCVar10 = &g_CDemonCameraInstance;
-        local_60.x = local_84;
+        local_60.x = fVar2;
         *(uint *)((int)&local_60 + (uint)bVar9 * -8 + 4) =
              *(uint *)(&stack0xffffff80 + (uint)bVar9 * -8);
         *(uint *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
              *(uint *)(&stack0xffffff84 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-        core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80(pCVar10,pCVar11,pSVar12);
+        core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80
+                  (&g_CDemonCameraInstance,pCVar10,pSVar11);
         core_dlight_cpp_FUN_0044b020(local_20);
         iVar5 = 0;
         if (0 < this_ptr->mirror_glass_actor_count) {
@@ -249,9 +247,10 @@ void __cdecl core_set_cpp_FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender)
   pCVar4 = this_ptr;
   if (0 < this_ptr->actor_count) {
     do {
-      iVar8 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar4->actors[0]);
-      if (iVar8 != 0) {
-        (**(code **)(*(int *)(iVar8 + 0x2b0) + 0x20))(iVar8);
+      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                         (pCVar4->actors[0],g_CGlassClassInfo.name_hash);
+      if (pCVar3 != (CDemonActor *)0x0) {
+        (*((pCVar3->vtable)._ub)->renderBackground)(pCVar3,0);
       }
       iVar5 = iVar5 + 1;
       pCVar4 = (CDemonSet *)pCVar4->cameras;
@@ -264,18 +263,18 @@ void __cdecl core_set_cpp_FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender)
     do {
       local_1c = *(int *)(local_40 + 0x1fc960c);
       if (*(int *)(local_1c + 0x1cb4) != 0) {
-        pSVar12 = (SProjectedVertex *)0x0;
-        pCVar11 = &local_78;
+        pSVar11 = (SProjectedVertex *)0x0;
+        pCVar10 = &local_78;
         pfVar7 = (float *)(local_1c + 8 + (uint)bVar9 * -8);
         local_6c = *(float *)(local_1c + 4);
         afStack_68[(uint)bVar9 * -2] = *pfVar7;
         afStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] = pfVar7[(uint)bVar9 * -2 + 1];
-        pCVar10 = &g_CDemonCameraInstance;
         local_78.x = local_6c;
         *(float *)((int)&local_78 + (uint)bVar9 * -8 + 4) = afStack_68[(uint)bVar9 * -2];
         *(float *)((int)&local_78 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
              afStack_68[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-        core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80(pCVar10,pCVar11,pSVar12);
+        core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80
+                  (&g_CDemonCameraInstance,pCVar10,pSVar11);
         core_dlight_cpp_FUN_0044b050();
         iVar5 = 0;
         if (0 < this_ptr->mirror_glass_actor_count) {
@@ -297,16 +296,11 @@ void __cdecl core_set_cpp_FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender)
     core_inv_cpp_CInventory_renderSelectedItems_FUN_004dd670((CInventory *)(iVar5 + 0x2437c));
   }
   core_dcamera_cpp_CDemonCamera_endScene_FUN_0043bf50(&g_CDemonCameraInstance,0);
-  iVar5 = local_48;
   if (g_CGamePtr->profile_mode != 0) {
-    iVar8 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
+    wincore_winrun_cpp_getTime_FUN_0058e9e0();
     local_14 = local_4c - local_18;
-    dVar3 = 1.0 / (double)g_CGamePtr->delta_time_float;
-    engine_console_cpp_FUN_00436710
-              (g_CConsolePtr,"@comp: %3.2f/%3.2f actren : %3.2f\n" + 1,
-               (double)local_14 * _DAT_005e58e2 * _DAT_005e58ea * _DAT_005e58f2 * dVar3,
-               (double)(iVar5 - local_18) * _DAT_005e58e2 * _DAT_005e58ea * _DAT_005e58f2 * dVar3,
-               (double)(iVar8 - iVar5) * _DAT_005e58e2 * _DAT_005e58ea * _DAT_005e58f2 * dVar3);
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"@comp: %3.2f/%3.2f actren : %3.2f\n" + 1);
   }
   if (g_CGamePtr->debug_toggle_flag != 0) {
     core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00539d60(this_ptr);
@@ -315,17 +309,17 @@ void __cdecl core_set_cpp_FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender)
   pCVar4 = this_ptr;
   if (0 < this_ptr->actor_count) {
     do {
-      pCVar2 = pCVar4->actors[0];
-      if (&pCVar2->previous_transform_state != (CDemonActorTransformState *)&pCVar2->location) {
-        (pCVar2->previous_transform_state).position.x = (pCVar2->location).position.x;
-        (pCVar2->previous_transform_state).position.y = (pCVar2->location).position.y;
-        (pCVar2->previous_transform_state).position.z = (pCVar2->location).position.z;
+      pCVar3 = pCVar4->actors[0];
+      if (&pCVar3->previous_transform_state != (CDemonActorTransformState *)&pCVar3->location) {
+        (pCVar3->previous_transform_state).position.x = (pCVar3->location).position.x;
+        (pCVar3->previous_transform_state).position.y = (pCVar3->location).position.y;
+        (pCVar3->previous_transform_state).position.z = (pCVar3->location).position.z;
       }
-      pUVar1 = &(pCVar2->previous_transform_state).orientation;
-      if (pUVar1 != &pCVar2->orient) {
-        (pUVar1->vec).x = (pCVar2->orient).vec.x;
-        (pCVar2->previous_transform_state).orientation.vec.y = (pCVar2->orient).vec.y;
-        (pCVar2->previous_transform_state).orientation.vec.z = (pCVar2->orient).vec.z;
+      pUVar1 = &(pCVar3->previous_transform_state).orientation;
+      if (pUVar1 != &pCVar3->orient) {
+        (pUVar1->vec).x = (pCVar3->orient).vec.x;
+        (pCVar3->previous_transform_state).orientation.vec.y = (pCVar3->orient).vec.y;
+        (pCVar3->previous_transform_state).orientation.vec.z = (pCVar3->orient).vec.z;
       }
       iVar5 = iVar5 + 1;
       pCVar4 = (CDemonSet *)pCVar4->cameras;

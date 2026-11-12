@@ -9,10 +9,10 @@
 void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_005098d0(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(victim,g_CCharacterClassInfo.name_hash);
-  if (iVar1 == 0) {
+  pCVar1 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c600(victim,g_CCharacterClassInfo.name_hash);
+  if (pCVar1 == (CDemonActor *)0x0) {
     if (victim == (CDemonActor *)0x0) {
       return;
     }
@@ -20,7 +20,8 @@ void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_005098d0(CMelee *thi
               ((CDemonActor *)this_ptr,this_ptr->hit_other_sound);
     return;
   }
-  core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_00509970(this_ptr,0x14,*(int *)(iVar1 + 0x27a0));
+  core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_00509970
+            (this_ptr,0x14,*(int *)(pCVar1[0x1d].create_event + 0x30));
   if ((attack_flags != 1) && (attack_flags != 8)) {
     (*((this_ptr->base).base.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,this_ptr->swing_hit_character_sound);

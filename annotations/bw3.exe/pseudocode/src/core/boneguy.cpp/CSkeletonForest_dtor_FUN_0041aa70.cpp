@@ -18,7 +18,7 @@ CSkeletonForest * core_boneguy_cpp_CSkeletonForest_dtor_FUN_0041aa70(CSkeletonFo
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSkeletonForestTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSkeletonForestTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

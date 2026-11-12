@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trap_cpp_factoryFuncTrap_FUN_00576420(void)
+; CTrap * __cdecl core_trap_cpp_factoryFuncTrap_FUN_00576420(void)
 ;
 ;
 ; Called Functions:

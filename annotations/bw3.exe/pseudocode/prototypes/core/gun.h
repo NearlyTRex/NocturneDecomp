@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_gun.cpp_factoryFuncGun_FUN_004d0f30
 // Address: 004d0f30
-void factoryFuncGun(void);
+CGun * __cdecl factoryFuncGun(void);
 
 // Original: core_gun.cpp_CGun_getActorType_FUN_004d0f50
 // Address: 004d0f50

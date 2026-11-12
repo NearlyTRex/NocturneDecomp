@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateExpression_FUN_00491b80
 ;   crt_string.c__stricmp_FUN_005a3260
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     PUSH 0x5bf4ca                       ; 00491ae3 | DAT_005bf4ca
     MOV EBX,dword ptr [0x005f1690]      ; 00491ae8 | g_CConsolePtr
     PUSH EBX                            ; 00491aee | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00491aef
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00491aef
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00491af4
     XOR EAX,EAX                         ; 00491af7
     POP EBX                             ; 00491af9

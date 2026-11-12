@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,undefined4 param_2)
+; void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,char *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -27,7 +27,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x78]      ; 0053813a
     PUSH EDX                            ; 0053813e
     CALL crt_stdio.c_fopen_FUN_005c157c ; 0053813f
-        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005c157c()
+        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
     ADD ESP,0x8                         ; 00538144
     MOV EBX,EAX                         ; 00538147
     TEST EAX,EAX                        ; 00538149

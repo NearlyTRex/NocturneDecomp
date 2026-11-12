@@ -114,7 +114,7 @@ section .text
         ;   Label: LAB_0050db2f
     PUSH EBX                            ; 0050db34
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 0050db35
-        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005a43ec()
+        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005a43ec(char * filename, char * mode)
     ADD ESP,0x8                         ; 0050db3a
     MOV EBX,EAX                         ; 0050db3d
     TEST EAX,EAX                        ; 0050db3f
@@ -136,7 +136,7 @@ section .text
     PUSH EAX                            ; 0050db71
     XOR ESI,ESI                         ; 0050db72
     CALL crt_stdio.c_fwrite_FUN_005a48e0 ; 0050db74
-        ;   XREF to: 005a48e0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005a48e0()
+        ;   XREF to: 005a48e0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005a48e0(void * ptr, SIZE_T size, SIZE_T count, _FILE * file)
     MOV EDX,dword ptr [0x005fba1c]      ; 0050db79 | DAT_005fba1c
     ADD ESP,0x10                        ; 0050db7f
     TEST EDX,EDX                        ; 0050db82
@@ -146,7 +146,7 @@ section .text
         ;   Label: LAB_0050db86
     PUSH ESI                            ; 0050db87
     CALL engine_pcx.c_writePCXScanline_FUN_0050d620 ; 0050db88
-        ;   XREF to: 0050d620 (UNCONDITIONAL_CALL)  ; undefined engine_pcx.c_writePCXScanline_FUN_0050d620()
+        ;   XREF to: 0050d620 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_writePCXScanline_FUN_0050d620(int row_index, _FILE * pcx_file)
     MOV EAX,[0x005fba18]                ; 0050db8d | DAT_005fba18
     ADD ESP,0x8                         ; 0050db92
     CMP EAX,0x280                       ; 0050db95
@@ -158,7 +158,7 @@ section .text
     PUSH EBX                            ; 0050dba8
     PUSH ESI                            ; 0050dba9
     CALL engine_pcx.c_writePCXScanline_FUN_0050d620 ; 0050dbaa
-        ;   XREF to: 0050d620 (UNCONDITIONAL_CALL)  ; undefined engine_pcx.c_writePCXScanline_FUN_0050d620()
+        ;   XREF to: 0050d620 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_writePCXScanline_FUN_0050d620(int row_index, _FILE * pcx_file)
     ADD ESP,0x8                         ; 0050dbaf
     MOV ECX,dword ptr [0x005fba1c]      ; 0050dbb2 | DAT_005fba1c
         ;   Label: LAB_0050dbb2
@@ -174,7 +174,7 @@ section .text
         ;   Label: LAB_0050dbc3
     PUSH 0xc                            ; 0050dbc4
     CALL crt_stdio.c_fputc_FUN_005a5d70 ; 0050dbc6
-        ;   XREF to: 005a5d70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005a5d70()
+        ;   XREF to: 005a5d70 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005a5d70(int character, _FILE * file)
         ;   Label: LAB_0050dbc6
     ADD ESP,0x8                         ; 0050dbcb
     XOR ESI,ESI                         ; 0050dbce
@@ -189,7 +189,7 @@ section .text
     MOV AL,byte ptr [ESI + 0x1c6af98]   ; 0050dbdd | DAT_01c6af98 | DAT_01c6af99
     PUSH EAX                            ; 0050dbe3
     CALL crt_stdio.c_fputc_FUN_005a5d70 ; 0050dbe4
-        ;   XREF to: 005a5d70 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005a5d70()
+        ;   XREF to: 005a5d70 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005a5d70(int character, _FILE * file)
         ;   Label: LAB_0050dbe4
     ADD ESP,0x8                         ; 0050dbe9
     INC ESI                             ; 0050dbec

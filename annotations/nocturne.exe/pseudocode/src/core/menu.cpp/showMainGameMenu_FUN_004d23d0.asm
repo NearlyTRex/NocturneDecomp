@@ -30,7 +30,7 @@
 ;   ... and 22 more
 ;
 ; Called Functions:
-;   core_game.cpp_CGame_FUN_004a4170
+;   core_game.cpp_CGame_loadGame_FUN_004a4170
 ;   core_game.cpp_CGame_saveClockTime_FUN_0049a890
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004a4b50
 ;   core_game.cpp_CGame_updateDT_FUN_0049a8a0
@@ -488,8 +488,8 @@ section .text
     PUSH 0x0                            ; 004d280c
     MOV EDI,dword ptr [0x005b9354]      ; 004d280e | g_CGamePtr
     PUSH EDI                            ; 004d2814 | g_CGameInstance
-    CALL core_game.cpp_CGame_FUN_004a4170 ; 004d2815
-        ;   XREF to: 004a4170 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004a4170(CGame * this_ptr, char * save_filename, int load_mode)
+    CALL core_game.cpp_CGame_loadGame_FUN_004a4170 ; 004d2815
+        ;   XREF to: 004a4170 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004a4170(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 004d281a
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004d281d
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()

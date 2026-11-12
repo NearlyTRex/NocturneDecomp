@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_FUN_005ce150(char *param_1,int param_2)
+; int crt_unknown_c_FUN_005ce150(byte *param_1,_FILE *param_2)
 ;
 ;
 ; XREF[1]:
@@ -68,7 +68,7 @@ section .text
     PUSH EAX                            ; 005ce1ac
     INC EBX                             ; 005ce1ad
     CALL crt_stdio.c_fputc_FUN_005c2f00 ; 005ce1ae
-        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005c2f00()
+        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005c2f00(int character, _FILE * file)
     ADD ESP,0x8                         ; 005ce1b3
     CMP EAX,-0x1                        ; 005ce1b6
     JNZ 0x005ce1a3                      ; 005ce1b9

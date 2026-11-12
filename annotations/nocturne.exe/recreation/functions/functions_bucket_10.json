@@ -5129,21 +5129,12 @@
     "calls":[
       "00564486"
     ],
+    "cls":"CCloth",
     "conv":"__cdecl",
     "instructions":13,
-    "method":"CCloth",
-    "name":"core_cloth.cpp_CCloth_FUN_00435210",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CCloth",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"free",
+    "name":"core_cloth.cpp_CCloth_free_FUN_00435210",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -7167,21 +7158,12 @@
     "calls":[
       "00564486"
     ],
+    "cls":"CKeyFramedModel",
     "conv":"__cdecl",
     "instructions":61,
-    "method":"CKeyFramedModel",
-    "name":"core_dmodel.cpp_CKeyFramedModel_FUN_00452f10",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CKeyFramedModel",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"free",
+    "name":"core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -12305,19 +12287,12 @@
       "00565eb5",
       "00566498"
     ],
+    "cls":"CGame",
     "conv":"__cdecl",
     "instructions":436,
-    "method":"CGame",
-    "name":"core_game.cpp_CGame_FUN_004a3b90",
+    "method":"saveGame",
+    "name":"core_game.cpp_CGame_saveGame_FUN_004a3b90",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CGame",
-          "ptr":1
-        }
-      },
       {
         "name":"save_filename",
         "type":{
@@ -12327,7 +12302,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -14486,19 +14461,12 @@
       "00460aa0",
       "00460bf0"
     ],
+    "cls":"CMansionPuzzleCircle",
     "conv":"__cdecl",
     "instructions":36,
-    "method":"CMansionPuzzleCircle",
-    "name":"core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710",
+    "method":"renderPanel",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004ca710",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMansionPuzzleCircle",
-          "ptr":1
-        }
-      },
       {
         "name":"panel_index",
         "type":{
@@ -14508,7 +14476,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -14535,19 +14503,12 @@
       "0053075c",
       "00563a30"
     ],
+    "cls":"CMansionPuzzleCircle",
     "conv":"__cdecl",
     "instructions":292,
-    "method":"CMansionPuzzleCircle",
-    "name":"core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790",
+    "method":"renderGem",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004ca790",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CMansionPuzzleCircle",
-          "ptr":1
-        }
-      },
       {
         "name":"gem_index",
         "type":{
@@ -14557,7 +14518,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -14609,14 +14570,40 @@
   },
   {
     "addr":"004cae90",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":32,
     "method":"stepToward",
     "name":"core_manpuz.cpp_stepToward_FUN_004cae90",
+    "params":[
+      {
+        "name":"value",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"target",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"max_step",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/manpuz.cpp",
@@ -16918,8 +16905,8 @@
     ],
     "conv":"__cdecl",
     "instructions":122,
-    "method":"CPackedBitmapSet",
-    "name":"cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90",
+    "method":"parsePBGFile",
+    "name":"cockpit_pkbitmap.cpp_parsePBGFile_FUN_004f4f90",
     "params":[
       {
         "name":"bitmap_set_ptr",
@@ -16989,8 +16976,8 @@
     ],
     "conv":"__cdecl",
     "instructions":102,
-    "method":"CPackedBitmapSet",
-    "name":"cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110",
+    "method":"loadPBGFile",
+    "name":"cockpit_pkbitmap.cpp_loadPBGFile_FUN_004f5110",
     "params":[
       {
         "name":"bitmap_set_ptr",
@@ -17059,27 +17046,18 @@
     "calls":[
       "00563cc0"
     ],
+    "cls":"CPackedBitmapSet",
     "conv":"__cdecl",
     "instructions":12,
-    "method":"CPackedBitmapSet",
-    "name":"cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5290",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CPackedBitmapSet",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"ctor",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_004f5290",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
       "ptr":0
     },
-    "tu":"cockpit/pkbitmap.cpp",
+    "tu":"cockpit/pkbmpset.cpp",
     "variadic":false
   },
   {
@@ -21452,8 +21430,8 @@
     "addr":"00540a10",
     "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_00540a10",
-    "name":"core_stranger.cpp_FUN_00540a10",
+    "method":"unusedGetPointerAt8",
+    "name":"core_stranger.cpp_unusedGetPointerAt8_FUN_00540a10",
     "params":[
       {
         "name":"ptr",
@@ -24942,14 +24920,40 @@
     "calls":[
       "00573720"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":12,
     "method":"strtoul",
     "name":"crt_stdlib.c_strtoul_FUN_00573890",
+    "params":[
+      {
+        "name":"str",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"endptr",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":2
+        }
+      },
+      {
+        "name":"base",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"ulong",
       "ptr":0
     },
     "tu":"crt/stdlib.c",

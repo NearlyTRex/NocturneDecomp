@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 42,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 28,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 108
+    "total_lines": 109
   },
   "cross_references": [],
   "function": {
@@ -139,6 +139,32 @@
     },
     "pcode_op_count": 292
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004231e0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004207f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00422c80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0041f600",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -158,7 +184,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 14,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "if (DAT_007bc038 == 1) {",

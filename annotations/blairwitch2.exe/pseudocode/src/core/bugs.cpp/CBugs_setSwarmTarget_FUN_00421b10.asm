@@ -29,7 +29,7 @@
 ;   core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_0041f940
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005471f0
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -49,7 +49,7 @@ section .text
     PUSH EBX                            ; 00421b30
     MOV dword ptr [EAX + 0x17734],0x0   ; 00421b31
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 00421b3b
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00421b40
     TEST EAX,EAX                        ; 00421b43
     JZ 0x00421b56                       ; 00421b45
@@ -62,7 +62,7 @@ section .text
     PUSH ECX                            ; 00421b5c
     PUSH EBX                            ; 00421b5d
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 00421b5e
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00421b63
     TEST EAX,EAX                        ; 00421b66
     JZ 0x00421b84                       ; 00421b68
@@ -108,8 +108,8 @@ section .text
     PUSH 0x5cca89                       ; 00421bf6 | s_s_swarming_on_s_at_LOD_d_005cca88+1
     MOV EAX,[0x00609ed0]                ; 00421bfb | g_CConsolePtr
     PUSH EAX                            ; 00421c00 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 00421c01
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 00421c01
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 00421c06
     MOV EDX,dword ptr [EBP + 0x17738]   ; 00421c09
     PUSH EDX                            ; 00421c0f

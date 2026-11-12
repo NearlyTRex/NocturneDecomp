@@ -22,7 +22,7 @@
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
 
@@ -94,7 +94,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x14d168]  ; 00520ead
     PUSH EAX                            ; 00520eb3
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00520eb4
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00520eb9
     MOV EBX,EAX                         ; 00520ebc
     MOV dword ptr [ESP + 0x140],EAX     ; 00520ebe
@@ -399,8 +399,8 @@ section .text
     MOV EDX,dword ptr [0x005f1690]      ; 00521307 | g_CConsolePtr
     PUSH EDX                            ; 0052130d
     MOV dword ptr [EBX + 0x20cdc],0x3f800000 ; 0052130e
-    CALL engine_console.cpp_FUN_00441ff0 ; 00521318
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00521318
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     MOV EAX,0x1                         ; 0052131d
     ADD ESP,0xc                         ; 00521322
     MOV ESP,EBP                         ; 00521325

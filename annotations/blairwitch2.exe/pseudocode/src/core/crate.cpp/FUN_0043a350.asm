@@ -28,7 +28,7 @@
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_0049e360
 ;   core_mission.cpp_FUN_004fc7b0
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     PUSH 0x5ce1f7                       ; 0043a366 | s_s_exploding_005ce1f6+1
     MOV ECX,dword ptr [0x00609ed0]      ; 0043a36b | g_CConsolePtr
     PUSH ECX                            ; 0043a371 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0043a372
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0043a372
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0043a377
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 0043a37a
     PUSH EBX                            ; 0043a380

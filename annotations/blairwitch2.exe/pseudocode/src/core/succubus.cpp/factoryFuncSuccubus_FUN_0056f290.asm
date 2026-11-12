@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_succubus_cpp_factoryFuncSuccubus_FUN_0056f290(void)
+; CSuccubus * __cdecl core_succubus_cpp_factoryFuncSuccubus_FUN_0056f290(void)
 ;
 ;
 ; Called Functions:

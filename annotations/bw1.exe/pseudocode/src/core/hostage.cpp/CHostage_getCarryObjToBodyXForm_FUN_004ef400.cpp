@@ -59,7 +59,7 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
               (&CStack_228,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               (this_ptr->base).base.carry_hands[hand_index].bone_index);
+               (this_ptr->base).base.carry_hands[hand_index].bone_index,&CStack_138);
     pCVar2 = &CStack_138;
   }
   else if (this_ptr->hostage_type == 3) {
@@ -87,7 +87,7 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
               (aCStack_2b8,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               (this_ptr->base).base.carry_hands[hand_index].bone_index);
+               (this_ptr->base).base.carry_hands[hand_index].bone_index,&CStack_198);
     pCVar2 = &CStack_198;
   }
   else if (this_ptr->hostage_type == 5) {
@@ -115,7 +115,7 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
     core_xform_cpp_multiplyMatrix3x4_FUN_005b5200
               (&CStack_168,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               (this_ptr->base).base.carry_hands[hand_index].bone_index);
+               (this_ptr->base).base.carry_hands[hand_index].bone_index,&CStack_1c8);
     pCVar2 = &CStack_1c8;
   }
   else {

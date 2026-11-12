@@ -9,8 +9,8 @@
 int support_trisock_cpp_FUN_00572310(int param_1)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrinit(param_1 + 0x288,0xc,&g_IpAddrTypeInfo);
-  return iVar1 + -0x288;
+  pvVar1 = __arrinit((void *)(param_1 + 0x288),0xc,&g_IpAddrTypeInfo);
+  return (int)pvVar1 + -0x288;
 }

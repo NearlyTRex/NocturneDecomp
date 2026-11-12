@@ -10,11 +10,11 @@ int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004d8180(CIni *this_ptr,cha
 
 {
   char cVar1;
+  _FILE *stream;
   int iVar2;
-  int iVar3;
-  uint uVar4;
+  uint uVar3;
   char *unaff_EBP;
-  char *src;
+  char *pcVar4;
   char *pcVar5;
   byte bVar6;
   char local_214 [256];
@@ -23,22 +23,22 @@ int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004d8180(CIni *this_ptr,cha
   
   bVar6 = 0;
   local_14 = 0;
-  iVar2 = _fopen(filename,&DAT_005dab81);
-  if (iVar2 != 0) {
+  stream = _fopen(filename,&DAT_005dab81);
+  if (stream != (_FILE *)0x0) {
     _sprintf(local_114,"[%s]\n");
     do {
-      if (((*(byte *)(iVar2 + 0xc) & 0x10) != 0) ||
-         (iVar3 = _fgets(local_214,0xff,iVar2), iVar3 == 0)) {
+      if (((stream->_flag & 0x10) != 0) ||
+         (pcVar5 = _fgets(local_214,0xff,stream), pcVar5 == (char *)0x0)) {
         if (local_14 == 0) goto LAB_004d8289;
         break;
       }
-      iVar3 = _strcmp(local_214,local_114);
-    } while (iVar3 != 0);
+      iVar2 = _strcmp(local_214,local_114);
+    } while (iVar2 != 0);
     local_14 = 0;
     do {
       pcVar5 = local_214;
-      if (((*(byte *)(iVar2 + 0xc) & 0x10) != 0) ||
-         (iVar3 = _fgets(local_214,0xff,iVar2), iVar3 == 0))
+      if (((stream->_flag & 0x10) != 0) ||
+         (pcVar4 = _fgets(local_214,0xff,stream), pcVar4 == (char *)0x0))
       goto LAB_004d8289;
       do {
         unaff_EBP = pcVar5;
@@ -53,36 +53,36 @@ LAB_004d8263:
       if (unaff_EBP != (char *)0x0) {
         *unaff_EBP = '\0';
       }
-      iVar3 = _strcmp(local_214,key);
-    } while (iVar3 != 0);
+      iVar2 = _strcmp(local_214,key);
+    } while (iVar2 != 0);
     local_14 = 1;
 LAB_004d8289:
-    _fclose(iVar2);
+    _fclose(stream);
   }
   if (local_14 != 0) {
-    src = unaff_EBP + 1;
-    uVar4 = 0xffffffff;
-    pcVar5 = src;
+    pcVar4 = unaff_EBP + 1;
+    uVar3 = 0xffffffff;
+    pcVar5 = pcVar4;
     do {
-      if (uVar4 == 0) break;
-      uVar4 = uVar4 - 1;
+      if (uVar3 == 0) break;
+      uVar3 = uVar3 - 1;
       cVar1 = *pcVar5;
       pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
     } while (cVar1 != '\0');
-    src[~uVar4 - 2] = '\0';
+    pcVar4[~uVar3 - 2] = '\0';
     memset(output_buffer,0,buffer_size);
-    _strncpy(output_buffer,src,buffer_size - 1);
+    _strncpy(output_buffer,pcVar4,buffer_size - 1);
     return 1;
   }
-  uVar4 = 0xffffffff;
+  uVar3 = 0xffffffff;
   pcVar5 = default_value;
   do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
+    if (uVar3 == 0) break;
+    uVar3 = uVar3 - 1;
     cVar1 = *pcVar5;
     pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  if (buffer_size <= (int)(~uVar4 - 1)) {
+  if (buffer_size <= (int)(~uVar3 - 1)) {
     return 0;
   }
   do {

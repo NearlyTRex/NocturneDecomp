@@ -9,9 +9,9 @@
 ;
 ; XREF[4]:
 ;   core_menu.cpp_FUN_004e94f0 at 004e9c56
-;   sound_sndmain.cpp_FUN_00559520 at 00559561
 ;   sound_sndmain.cpp_findBestSoundDevice_FUN_00558520 at 00558542
 ;   sound_sndmain.cpp_readIni_FUN_00559220 at 005592e2
+;   sound_sndmain.cpp_writeIni_FUN_00559520 at 00559561
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3af6

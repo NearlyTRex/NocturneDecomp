@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_event_cpp_parseComparisonOp_FUN_004a128e(char *param_1)
+; int __cdecl core_event_cpp_parseComparisonOp_FUN_004a128e(char *str)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
 ;
 ; Called Functions:
 ;   crt_string.c__strcmp_FUN_005c0f80

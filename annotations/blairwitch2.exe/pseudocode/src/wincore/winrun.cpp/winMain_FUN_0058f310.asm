@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_winrun_cpp_winMain_FUN_0058f310(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4)
+; int __stdcall wincore_winrun_cpp_winMain_FUN_0058f310(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 ;
+; Parameters:
+; HINSTANCE        Stack[0x4]:4   hInstance
+; HINSTANCE        Stack[0x8]:4   hPrevInstance
+; LPSTR            Stack[0xc]:4   lpCmdLine
+; int              Stack[0x10]:4   nCmdShow
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  local_54
@@ -41,7 +46,7 @@
 ;
 ; Called Functions:
 ;   BringWindowToTop
-;   core_main.c_FUN_004e46b0
+;   core_main.c_enterMainGameMenu_FUN_004e46b0
 ;   core_main.c_FUN_004e4e20
 ;   core_main.c_initializeGameSystems_FUN_004e46c0
 ;   CreateWindowExA
@@ -279,8 +284,8 @@ section .text
     CALL core_main.c_initializeGameSystems_FUN_004e46c0 ; 0058f58a
         ;   XREF to: 004e46c0 (UNCONDITIONAL_CALL)  ; void core_main.c_initializeGameSystems_FUN_004e46c0(int argc, char * * argv)
     ADD ESP,0x8                         ; 0058f58f
-    CALL core_main.c_FUN_004e46b0       ; 0058f592
-        ;   XREF to: 004e46b0 (UNCONDITIONAL_CALL)  ; int core_main.c_FUN_004e46b0()
+    CALL core_main.c_enterMainGameMenu_FUN_004e46b0 ; 0058f592
+        ;   XREF to: 004e46b0 (UNCONDITIONAL_CALL)  ; int core_main.c_enterMainGameMenu_FUN_004e46b0()
     CALL core_main.c_FUN_004e4e20       ; 0058f597
         ;   XREF to: 004e4e20 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4e20()
     PUSH 0x0                            ; 0058f59c

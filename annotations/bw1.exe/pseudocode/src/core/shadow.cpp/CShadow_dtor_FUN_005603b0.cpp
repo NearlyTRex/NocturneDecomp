@@ -18,7 +18,7 @@ CShadow * core_shadow_cpp_CShadow_dtor_FUN_005603b0(CShadow *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CShadowTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CShadowTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

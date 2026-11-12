@@ -24,8 +24,8 @@
     ],
     "conv":"unknown",
     "instructions":101,
-    "method":"FUN_0043269e",
-    "name":"engine_clipper.c_FUN_0043269e",
+    "method":"clipPolygonBottomPlaneGlobal",
+    "name":"engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043269e",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -114,14 +114,24 @@
     "calls":[
       "005b8c30"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":59,
     "method":"parseComparisonOp",
     "name":"core_event.cpp_parseComparisonOp_FUN_00488c1e",
+    "params":[
+      {
+        "name":"str",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/event.cpp",
@@ -260,14 +270,14 @@
     "calls":[
       "0058e9e0"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":9,
     "method":"resetGameTime",
     "name":"core_netgame.cpp_resetGameTime_FUN_0050af1e",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/netgame.cpp",
@@ -275,14 +285,48 @@
   },
   {
     "addr":"0055301e",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":27,
     "method":"getRecordingFormat",
     "name":"sound_sndmain.cpp_getRecordingFormat_FUN_0055301e",
+    "params":[
+      {
+        "name":"out_bits_per_sample",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_channels",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_sample_rate",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_signed",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"sound/sndmain.cpp",
@@ -290,47 +334,35 @@
   },
   {
     "addr":"0055fc9e",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":14,
     "method":"addParticle",
     "name":"engine_special.cpp_addParticle_FUN_0055fc9e",
+    "params":[
+      {
+        "name":"particle_data",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"particle_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"engine/special.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"00574e9e",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_00574e9e",
-    "name":"engine_texture.cpp_FUN_00574e9e",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/texture.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0057a81e",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_0057a81e",
-    "name":"support_trisock.cpp_FUN_0057a81e",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"support/trisock.cpp",
     "variadic":false
   },
   {

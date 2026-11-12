@@ -106,11 +106,11 @@
   },
   "suspects": [
     {
-      "description": "Watcom shadow-pointer walk \u2014 `this_ptr_00` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*this_ptr_00) + offsetof(subfield)` equals the real array stride. Replace `this_ptr_00->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar2) + offsetof(subfield)` equals the real array stride. Replace `pCVar2->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 23,
-      "match": "this_ptr_00 = (T *)&this_ptr_00[N].SUBFIELD",
+      "match": "pCVar2 = (T *)&pCVar2[N].SUBFIELD",
       "severity": "moderate",
-      "text": "this_ptr_00 = (CDemonActor *)&this_ptr_00[1].next_actor;",
+      "text": "pCVar2 = (CDemonActor *)&pCVar2[1].next_actor;",
       "type": "shadow_pointer_walk"
     }
   ],

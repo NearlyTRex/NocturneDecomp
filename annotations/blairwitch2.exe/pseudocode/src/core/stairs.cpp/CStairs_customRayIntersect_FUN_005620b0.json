@@ -88,6 +88,32 @@
     },
     "pcode_op_count": 540
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00584b00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9375
+    },
+    "bw3.exe": {
+      "addr": "00568570",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9375
+    },
+    "nocedit.exe": {
+      "addr": "005ba590",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8434
+    },
+    "nocturne.exe": {
+      "addr": "00534960",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8434
+    }
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -156,7 +182,7 @@
       "line": 27,
       "match": "&stack0xffffffd0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar1 * -8);",
       "type": "stack_ref"
     },
     {
@@ -164,7 +190,7 @@
       "line": 29,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
       "type": "stack_ref"
     },
     {
@@ -172,7 +198,7 @@
       "line": 26,
       "match": "(int)&CStack_28",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_28 + (uint)bVar2 * -8 + 4) =",
+      "text": "*(uint *)((int)&CStack_28 + (uint)bVar1 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -180,7 +206,7 @@
       "line": 27,
       "match": "(int)&stack0xffffffd0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar1 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -188,7 +214,7 @@
       "line": 28,
       "match": "(int)&CStack_28",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_28 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
@@ -196,7 +222,7 @@
       "line": 29,
       "match": "(int)&stack0xffffffd4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
       "type": "pointer_truncation"
     },
     {
@@ -212,7 +238,7 @@
       "line": 26,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_28 + (uint)bVar2 * -8 + 4) =",
+      "text": "*(uint *)((int)&CStack_28 + (uint)bVar1 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -220,7 +246,7 @@
       "line": 27,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar1 * -8);",
       "type": "pointer_cast"
     },
     {
@@ -228,7 +254,7 @@
       "line": 28,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_28 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
@@ -236,7 +262,7 @@
       "line": 29,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
       "type": "pointer_cast"
     }
   ],

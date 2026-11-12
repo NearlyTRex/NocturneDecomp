@@ -214,7 +214,9 @@ extern char* g_CurrentDebugFilename;
 
 // char[100]
 extern char g_EventCommandBuffer[100];
+extern char g_IpAddress[100];
 extern char g_DefaultInventoryValue[100];
+extern char g_DefaultActorTypeClass[100];
 
 // char[104]
 extern char g_DefaultAuditPath[104];
@@ -231,11 +233,16 @@ extern char g_DefaultAuditRecordPath[116];
 
 // char[200]
 extern char g_DefaultSfxHandleName[200];
+extern char g_LoadSavefileStatus[200];
+
+// char[20]
+extern char g_DefaultMissionIdentifier[20];
 
 // char[256]
 extern char g_MeshLodIdentifier[256];
 
 // char[260]
+extern char g_NetworkModelFilename[260];
 extern char g_FilePathBuffer[260];
 
 // char[264]
@@ -245,6 +252,9 @@ extern char g_DefaultCheckOutPath[264];
 extern char g_DefaultPodDirectoryPath[264];
 extern char g_DirectoryBufferTemplate[264];
 extern char g_FilenameBufferTemplate[264];
+
+// char[28]
+extern char g_ReplayLodFilename[28];
 
 // char[512]
 extern char g_Field1ParseBuffer[512];

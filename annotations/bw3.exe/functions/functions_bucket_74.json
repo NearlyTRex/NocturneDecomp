@@ -13,13 +13,58 @@
         "start":"0046fa50"
       }
     ],
+    "conv":"__edi_esi_ebx",
     "importable":true,
     "name":"core_dstrendr.cpp_renderDepth16BitConditional_FUN_0046f9f4",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"left_edge",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"right_edge",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"scanline_y",
+          "storage":{
+            "reg":"EBX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -34,6 +79,7 @@
     "importable":true,
     "name":"crt_math.c_acos_FUN_005a4b74",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -52,7 +98,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_time.c__strftime_FUN_005a5674",
-    "ret":"undefined1",
+    "ret":"uint",
     "vars":{
       "locals":[
         {
@@ -136,8 +182,81 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"dest_buffer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"buffer_size",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"format_string",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"time_ptr",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"_tm*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -153,6 +272,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005a7274",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -189,6 +309,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005b1d74",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -208,6 +329,7 @@
     "importable":true,
     "name":"crt_user32.c_RegisterClassA",
     "ret":"ATOM",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000040",
     "thunk":true,
     "vars":{
@@ -254,6 +376,7 @@
     "importable":true,
     "name":"crt_winmm.c_waveOutOpen",
     "ret":"MMRESULT",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000027",
     "thunk":true,
     "vars":{

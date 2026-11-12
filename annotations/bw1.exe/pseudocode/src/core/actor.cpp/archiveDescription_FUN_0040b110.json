@@ -157,6 +157,32 @@
     },
     "pcode_op_count": 288
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040b400",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040b350",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040b290",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040c3a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -202,7 +228,7 @@
       "line": 15,
       "match": "DAT_007c3034",
       "severity": "mild",
-      "text": "if ((*(byte *)(DAT_007c3034 + 0xc) & 0x20) == 0) {",
+      "text": "if ((DAT_007c3034->_flag & 0x20) == 0) {",
       "type": "undefined_data"
     },
     {
@@ -226,7 +252,7 @@
       "line": 21,
       "match": "DAT_007c3034",
       "severity": "mild",
-      "text": "if ((*(byte *)(DAT_007c3034 + 0xc) & 0x20) == 0) {",
+      "text": "if ((DAT_007c3034->_flag & 0x20) == 0) {",
       "type": "undefined_data"
     },
     {
@@ -250,7 +276,7 @@
       "line": 27,
       "match": "DAT_007c3034",
       "severity": "mild",
-      "text": "if ((*(byte *)(DAT_007c3034 + 0xc) & 0x20) == 0) {",
+      "text": "if ((DAT_007c3034->_flag & 0x20) == 0) {",
       "type": "undefined_data"
     }
   ]

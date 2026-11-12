@@ -58,7 +58,7 @@ void core_menu_cpp_FUN_004eae80(void)
   
   bVar36 = 0;
   if (((g_CGamePtr->game_control != CONTROL_MODE_GAMEPAD) || (g_CGamePtr->x_center != 0)) ||
-     (iVar31 = core_menu_cpp_FUN_004e7dc0(), iVar31 != 0)) {
+     (iVar31 = core_menu_cpp_calibrateGamepad_FUN_004e7dc0(), iVar31 != 0)) {
     local_c = 0;
 LAB_004eaeae:
     _DAT_01d75c98 = 0;

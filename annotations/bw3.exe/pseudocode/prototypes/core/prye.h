@@ -19,11 +19,11 @@ float FUN_00517ce0(undefined4 param_1,undefined4 param_2,float param_3,int param
 
 // Original: core_prye.cpp_FUN_00517d50
 // Address: 00517d50
-undefined4 FUN_00517d50(int param_1);
+undefined4 FUN_00517d50(CDemonActor *param_1);
 
 // Original: core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80
 // Address: 00517e80
-float __cdecl getCarriedObjectVerticalOffset(undefined4 param_1);
+float __cdecl getCarriedObjectVerticalOffset(CDemonActor *object);
 
 // Original: core_prye.cpp_factoryFuncPrye_FUN_00517f50
 // Address: 00517f50
@@ -57,9 +57,9 @@ void FUN_00518cd0(UOrientationVector *param_1,float param_2);
 // Address: 0051b550
 void FUN_0051b550(CHero *param_1,float param_2);
 
-// Original: core_prye.cpp_FUN_0051c0a0
+// Original: core_prye.cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0
 // Address: 0051c0a0
-undefined4 FUN_0051c0a0(int param_1);
+float __cdecl CPrye::getFlashlightMinAngle(CPrye *this_ptr);
 
 // Original: core_prye.cpp_FUN_0051c0f0
 // Address: 0051c0f0
@@ -71,15 +71,15 @@ void FUN_0051c100(int param_1);
 
 // Original: core_prye.cpp_FUN_0051c1c0
 // Address: 0051c1c0
-void FUN_0051c1c0(int param_1);
+void FUN_0051c1c0(CPrye *param_1);
 
 // Original: core_prye.cpp_FUN_0051e280
 // Address: 0051e280
 void FUN_0051e280(int param_1,SPose *param_2);
 
-// Original: core_prye.cpp_FUN_0051e380
+// Original: core_prye.cpp_CPrye_updateTurnBlending_FUN_0051e380
 // Address: 0051e380
-void FUN_0051e380(int param_1,float param_2);
+void __cdecl CPrye::updateTurnBlending(CPrye *this_ptr,float delta_time);
 
 // Original: core_prye.cpp_CPrye_setPositionAndOrientation_FUN_0051e690
 // Address: 0051e690
@@ -93,13 +93,13 @@ void FUN_0051e6d0(CCharacter *param_1);
 // Address: 0051ee10
 void FUN_0051ee10(int param_1,int param_2);
 
-// Original: core_prye.cpp_FUN_0051f360
+// Original: core_prye.cpp_CPrye_updateWeaponPosition_FUN_0051f360
 // Address: 0051f360
-void FUN_0051f360(int param_1,int param_2);
+void __cdecl CPrye::updateWeaponPosition(CPrye *this_ptr,int hand_index);
 
 // Original: core_prye.cpp_FUN_0051f490
 // Address: 0051f490
-float * FUN_0051f490(CCharacter *param_1,int param_2,float param_3);
+float * FUN_0051f490(CCharacter *param_1,CDemonActor *param_2,float param_3);
 
 // Original: core_prye.cpp_FUN_00520d20
 // Address: 00520d20
@@ -183,7 +183,7 @@ undefined4 FUN_005262f0(int param_1);
 
 // Original: core_prye.cpp_FUN_005263c0
 // Address: 005263c0
-void FUN_005263c0(CCharacter *param_1);
+void FUN_005263c0(CPrye *param_1);
 
 // Original: core_prye.cpp_CPrye_canReachPickup_FUN_005267c0
 // Address: 005267c0

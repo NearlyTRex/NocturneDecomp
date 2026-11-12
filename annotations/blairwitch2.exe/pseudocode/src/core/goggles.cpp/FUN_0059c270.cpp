@@ -10,6 +10,6 @@ void core_goggles_cpp_FUN_0059c270(void)
 
 {
   core_gmehook_cpp_CGameHook_ctor_FUN_0059c290(&g_CGameHookInstance);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_0061ea4c);
   return;
 }

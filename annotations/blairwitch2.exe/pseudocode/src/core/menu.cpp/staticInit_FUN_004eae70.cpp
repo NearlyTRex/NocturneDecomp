@@ -12,14 +12,14 @@ void __cdecl core_menu_cpp_staticInit_FUN_004eae70(void)
   __arrinit(g_MenuBitmaps,8,&g_CAlphaBitmapTypeInfo);
   _atexit(&WatcomStaticDestructorNode_00617f68);
   core_moon_cpp_CMoon_ctor_FUN_00502350(&g_CMoonInstance);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_00617f78);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&g_MenuBlurLeft);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_00617f88);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&g_MenuBlurMiddle);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_00617f98);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&g_MenuBlurRight);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_00617fa8);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&g_CalibrationBitmap);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_00617fb8);
   return;
 }

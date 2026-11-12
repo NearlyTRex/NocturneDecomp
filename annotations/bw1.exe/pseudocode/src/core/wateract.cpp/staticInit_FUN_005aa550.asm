@@ -17,13 +17,13 @@ section .text
     PUSH 0x64                           ; 005aa555
     PUSH 0x2c93018                      ; 005aa557
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 005aa55c
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005aa561
     PUSH 0x5fe590                       ; 005aa564
     PUSH 0x64                           ; 005aa569
     PUSH 0x2c934c8                      ; 005aa56b
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 005aa570
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005aa575
     PUSH 0x7c2ff8                       ; 005aa578
     PUSH 0x6                            ; 005aa57d

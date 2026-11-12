@@ -11,6 +11,7 @@
     "importable":true,
     "name":"core_boneguy.cpp_rgbToHsv_FUN_00417f4c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -26,30 +27,43 @@
         "start":"0043ffcc"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_dcamera.cpp_log2Custom_FUN_0043ffcc",
-    "ret":"undefined1",
+    "ret":"double",
     "vars":{
+      "params":[
+        {
+          "name":"val",
+          "storage":{
+            "offset":4,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"00448fcc",
-    "body":[
-      {
-        "end":"00448fcf",
-        "size":4,
-        "start":"00448fcc"
-      }
-    ],
-    "importable":true,
-    "name":"core_dimage.cpp_FUN_00448fcc",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
+        "compound":true,
+        "size":8,
+        "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -65,6 +79,7 @@
     "importable":true,
     "name":"core_flashlit.cpp_FUN_004a1dcc",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -80,14 +95,10 @@
         "start":"004bd4cc"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_game.cpp_beginProfileTimer_FUN_004bd4cc",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"004fd4cc",
@@ -112,13 +123,29 @@
         "start":"0053be4c"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"C3DSLight*"
+        }
+      ]
     }
   },
   {
@@ -133,6 +160,7 @@
     "importable":true,
     "name":"engine_special.cpp_FUN_0055f74c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -361,6 +389,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bb64c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -379,6 +408,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bd44c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -397,6 +427,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bd84c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -415,6 +446,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bf54c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -433,6 +465,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c274c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -451,6 +484,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c28cc",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -469,6 +503,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c2bcc",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -487,6 +522,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c49cc",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -505,6 +541,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c4bcc",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -523,6 +560,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c4d4c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -541,6 +579,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c4dcc",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -560,6 +599,7 @@
     "importable":true,
     "name":"crt_kernel32.c_CreateMutexA",
     "ret":"HANDLE",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000004e",
     "thunk":true,
     "vars":{
@@ -638,6 +678,7 @@
     "importable":true,
     "name":"crt_winmm.c_waveInClose",
     "ret":"MMRESULT",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000001e",
     "thunk":true,
     "vars":{

@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_cloth.cpp_FUN_0043c330 at 0043c5e1
+;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c5e1
 ;   core_cloth.cpp_FUN_0043cb00 at 0043cdbb
 ;
 ; Referenced Globals:

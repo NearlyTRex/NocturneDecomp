@@ -140,7 +140,7 @@ section .text
     PUSH EAX                            ; 004d3f50
     PUSH EBX                            ; 004d3f51
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004d3f52
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d3f57
     MOV EDX,dword ptr [0x01d5b9b4]      ; 004d3f5a | g_CHealthItemClassInfo.name_hash
     PUSH EDX                            ; 004d3f60
@@ -148,7 +148,7 @@ section .text
     MOV EDI,EAX                         ; 004d3f62
     MOV dword ptr [ESP + 0x110],EAX     ; 004d3f64
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004d3f6b
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EDX,0x1                         ; 004d3f70
     ADD ESP,0x8                         ; 004d3f75
     TEST EDI,EDI                        ; 004d3f78

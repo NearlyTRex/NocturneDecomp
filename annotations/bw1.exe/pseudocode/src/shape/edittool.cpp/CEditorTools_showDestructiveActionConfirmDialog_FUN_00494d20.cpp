@@ -15,7 +15,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_F
   byte *local_8;
   
   local_8 = &stack0x0000000c;
-  _vsprintf(local_418,format_string,&local_8);
+  _vsprintf((char *)local_418,format_string,(va_list_t)&local_8);
   local_8 = (byte *)0x0;
   shape_edittool_cpp_CStrList_ctor_FUN_00499380(&local_18);
   shape_edittool_cpp_CStrList_add_FUN_004994d0(&local_18,&DAT_005dbdd6);

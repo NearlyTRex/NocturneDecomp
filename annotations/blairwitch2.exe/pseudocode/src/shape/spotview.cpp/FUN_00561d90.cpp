@@ -29,7 +29,7 @@ void shape_spotview_cpp_FUN_00561d90(int param_1)
   uint uStack_10;
   
   bVar1 = 0;
-  engine_drender_cpp_FUN_0046b4b0(DAT_0060b280,0x41e00000);
+  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(DAT_0060b280,28.0);
   CStack_54.x = *(float *)(param_1 + 0x24);
   CStack_54.z = 0.0;
   CStack_54.y = *(float *)(param_1 + 0x28);

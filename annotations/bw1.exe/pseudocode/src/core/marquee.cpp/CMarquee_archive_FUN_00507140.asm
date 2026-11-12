@@ -40,13 +40,13 @@ section .text
     LEA EAX,[EBX + 0x178]               ; 00507167
     PUSH EAX                            ; 0050716d
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 0050716e
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00507173
     PUSH 0x5e76bd                       ; 00507176 | = "param"
     LEA EAX,[EBX + 0x17c]               ; 0050717b
     PUSH EAX                            ; 00507181
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00507182
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00507187
     PUSH 0x5e76c3                       ; 0050718a | = "phase"
     LEA EAX,[EBX + 0x180]               ; 0050718f

@@ -19,17 +19,18 @@
 #include "types/classes/CPickList.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SIntersectXZCylinder.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x490000
 // =============================================================================
 
-undefined4 __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_00490150(float *param_1);
-void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_00490430(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
-void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_004904d0(float *param_1,undefined4 *param_2);
-undefined4 __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_004908d0(float *param_1,float *param_2,float param_3,float *param_4);
+int __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_00490150(SIntersectXZCylinder *cylinder);
+void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_00490430(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2);
+void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_004904d0(CDemonTriangle *triangle,SIntersectXZCylinder *cylinder);
+int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_004908d0(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
 int __cdecl core_dtri_cpp_FUN_00490a40(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
-void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00490df0(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10);
+void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00490df0(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 void __cdecl core_dtri_cpp_clipPolygonToRight_FUN_00491260(float x_max);
 void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_00491690(float z_far);
 int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_00491850(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max);
@@ -39,7 +40,7 @@ void core_dtri_cpp_FUN_004922fc(float *param_1);
 CDemonTriangle * core_dtri_cpp_CDemonTriangle_ctor_FUN_00492450(CDemonTriangle *this_ptr);
 CDemonTriangle * core_dtri_cpp_CDemonTriangle_dtor_FUN_00492460(CDemonTriangle *this_ptr,uint flags);
 void __cdecl core_dynamite_cpp_staticInit_FUN_00492470(void);
-void core_dynamite_cpp_factoryFuncDynamite_FUN_004924b0(void);
+CDynamite * __cdecl core_dynamite_cpp_factoryFuncDynamite_FUN_004924b0(void);
 CDemonActorType * core_dynamite_cpp_CDynamite_getActorType_FUN_004924d0(CDynamite *this_ptr);
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_004924e0(CDynamite *this_ptr);
 int __cdecl core_dynamite_cpp_CDynamite_fire_FUN_00492590(CDynamite *this_ptr);
@@ -81,15 +82,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_backupScreen_FUN_00494030(CEditorTo
 void shape_edittool_cpp_FUN_00494110(void);
 void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_004941e0(void);
 void __cdecl shape_edittool_cpp_CEditorTools_showMessage_FUN_004942e0(CEditorTools *this_ptr,char *format);
-void shape_edittool_cpp_FUN_00494340(undefined4 param_1,undefined4 param_2);
-void shape_edittool_cpp_FUN_004943a0(undefined4 param_1,undefined4 param_2);
+void shape_edittool_cpp_FUN_00494340(undefined4 param_1,char *param_2);
+void __cdecl shape_edittool_cpp_CEditorTools_showError_FUN_004943a0(CEditorTools *this_ptr,char *format);
 void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400(CEditorTools *this_ptr,char *format);
-void shape_edittool_cpp_FUN_004944fe(undefined4 param_1,undefined4 param_2);
+void shape_edittool_cpp_FUN_004944fe(undefined4 param_1,char *param_2);
 void shape_edittool_cpp_FUN_004945fe(CEditorTools *param_1,char *param_2);
 int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_00494690(CStrList *str_list,char *dialog_title,int dialog_mode);
 int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00494d20(CEditorTools *this_ptr,char *format_string);
-bool shape_edittool_cpp_FUN_00494de0(undefined4 param_1,undefined4 param_2);
-undefined4 shape_edittool_cpp_FUN_00494ea0(undefined4 param_1,undefined4 param_2);
+bool shape_edittool_cpp_FUN_00494de0(undefined4 param_1,char *param_2);
+undefined4 shape_edittool_cpp_FUN_00494ea0(undefined4 param_1,char *param_2);
 int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags);
 undefined4 shape_edittool_cpp_FUN_0049517e(CEditorTools *param_1,undefined4 param_2,char *param_3,char *param_4,byte param_5);
 int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags);
@@ -109,9 +110,8 @@ void shape_edittool_cpp_FUN_00496ee0(void);
 void shape_edittool_cpp_FUN_00497660(undefined4 param_1,int param_2);
 uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_00497830(CEditorTools *this_ptr);
 void shape_edittool_cpp_FUN_00497870(CEditorTools *param_1,int param_2);
-char * __cdecl shape_edittool_cpp_FUN_00498210(CEditorTools *this_ptr);
-void __cdecl shape_edittool_cpp_FUN_00498290(CEditorTools *this_ptr,char *text_data);
-void shape_edittool_cpp_FUN_0049835e(undefined4 param_1,float param_2,undefined4 param_3);
+char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_00498210(CEditorTools *this_ptr);
+void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00498290(CEditorTools *this_ptr,char *text_data);
 void __cdecl shape_edittool_cpp_FUN_00498360(CEditorTools *this_ptr,float scale_factor,int text_color);
 void shape_edittool_cpp_FUN_004985ae(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5);
 void shape_edittool_cpp_FUN_00498660(float *param_1,float *param_2);
@@ -199,7 +199,7 @@ void shape_edittool_cpp_FUN_0049dc70(CEdCheck *param_1);
 int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_0049dea0(char *pattern,char *target_string,int case_sensitive);
 int __cdecl shape_edittool_cpp_FUN_0049df50(CStrList *this_ptr);
 void core_elephant_cpp_staticInit_FUN_0049dfa0(void);
-void core_elephant_cpp_factoryFuncElephantGun_FUN_0049dfd0(void);
+CElephantGun * __cdecl core_elephant_cpp_factoryFuncElephantGun_FUN_0049dfd0(void);
 CDemonActorType * core_elephant_cpp_CElephantGun_getActorType_FUN_0049dff0(CElephantGun *this_ptr);
 CElephantGun * __cdecl core_elephant_cpp_CElephantGun_ctor_FUN_0049e000(CElephantGun *this_ptr);
 void __cdecl core_elephant_cpp_CElephantGun_process_FUN_0049e090(CElephantGun *this_ptr,float delta_time);
@@ -209,7 +209,7 @@ float __cdecl core_elephant_cpp_CElephantGun_getDamage_FUN_0049eaf0(CElephantGun
 void __cdecl core_elephant_cpp_CElephantGun_renderAimBeam_FUN_0049eb30(CElephantGun *this_ptr);
 CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_0049ed90(CElephantGun *this_ptr,uint flags);
 void core_emitter_cpp_staticInit_FUN_0049ede0(void);
-void core_emitter_cpp_factoryFuncEmitter_FUN_0049ee10(void);
+CEmitter * __cdecl core_emitter_cpp_factoryFuncEmitter_FUN_0049ee10(void);
 CDemonActorType * core_emitter_cpp_CEmitter_getActorType_FUN_0049ee30(CEmitter *this_ptr);
 CEmitter * core_emitter_cpp_CEmitter_ctor_FUN_0049ee40(CEmitter *this_ptr);
 void __cdecl core_emitter_cpp_CEmitter_setup_FUN_0049f010(CEmitter *this_ptr);

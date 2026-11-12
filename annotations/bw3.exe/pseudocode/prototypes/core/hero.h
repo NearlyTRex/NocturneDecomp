@@ -15,7 +15,7 @@ CHero * __cdecl closestHeroToPoint(CLocation *location);
 
 // Original: core_hero.cpp_isAnyHeroWithinRadius_FUN_004d2370
 // Address: 004d2370
-undefined4 __cdecl isAnyHeroWithinRadius(float *param_1,float param_2);
+int __cdecl isAnyHeroWithinRadius(CVector3f *point,float radius);
 
 // Original: core_hero.cpp_isAnyHeroWithinCylinder_FUN_004d23f0
 // Address: 004d23f0
@@ -53,33 +53,33 @@ CPathMap * __cdecl CHero::getPathMap(CHero *this_ptr);
 // Address: 004d2a80
 bool FUN_004d2a80(undefined4 param_1,CDemonActor *param_2);
 
-// Original: core_hero.cpp_FUN_004d2aa0
+// Original: core_hero.cpp_CHero_canBeGrabbed_FUN_004d2aa0
 // Address: 004d2aa0
-undefined4 FUN_004d2aa0(int param_1,undefined4 param_2,int param_3);
+int __cdecl CHero::canBeGrabbed(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 
 // Original: core_hero.cpp_FUN_004d2ae0
 // Address: 004d2ae0
 undefined4 FUN_004d2ae0(void);
 
-// Original: core_hero.cpp_FUN_004d2af0
+// Original: core_hero.cpp_CHero_getGrabbed_FUN_004d2af0
 // Address: 004d2af0
-undefined4 FUN_004d2af0(int param_1,int param_2,int param_3);
+int __cdecl CHero::getGrabbed(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_hero.cpp_FUN_004d2c20
+// Original: core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20
 // Address: 004d2c20
-void FUN_004d2c20(CCharacter *param_1);
+void __cdecl CHero::releaseFromGrab(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004d2cd0
 // Address: 004d2cd0
 void FUN_004d2cd0(int param_1);
 
-// Original: core_hero.cpp_FUN_004d2cf0
+// Original: core_hero.cpp_CHero_tryInteract_FUN_004d2cf0
 // Address: 004d2cf0
-bool FUN_004d2cf0(int param_1);
+int __cdecl CHero::tryInteract(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004d2ea0
+// Original: core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0
 // Address: 004d2ea0
-int __cdecl FUN_004d2ea0(CHero *this_ptr);
+int __cdecl CHero::tryTalkToNearbyCharacter(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004d3040
 // Address: 004d3040
@@ -129,9 +129,9 @@ int FUN_004d3c90(CHero *param_1);
 // Address: 004d3e20
 bool FUN_004d3e20(CHero *param_1,char *param_2);
 
-// Original: core_hero.cpp_FUN_004d4090
+// Original: core_hero.cpp_CHero_canLookAt_FUN_004d4090
 // Address: 004d4090
-undefined4 FUN_004d4090(int param_1);
+int __cdecl CHero::canLookAt(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004d4160
 // Address: 004d4160
@@ -169,9 +169,9 @@ void FUN_004d4520(CHero *param_1);
 // Address: 004d4840
 undefined4 FUN_004d4840(CCharacter *param_1,undefined4 param_2);
 
-// Original: core_hero.cpp_FUN_004d48d0
+// Original: core_hero.cpp_CHero_toggleGoggles_FUN_004d48d0
 // Address: 004d48d0
-void FUN_004d48d0(void);
+void __cdecl CHero::toggleGoggles(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004d4900
 // Address: 004d4900
@@ -179,7 +179,7 @@ undefined4 FUN_004d4900(CHero *param_1,undefined4 param_2);
 
 // Original: core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004d4ab0
 // Address: 004d4ab0
-void factoryFuncHeroPlaceholder(void);
+CHeroPlaceholder * __cdecl factoryFuncHeroPlaceholder(void);
 
 // Original: core_hero.cpp_CHeroPlaceholder_getActorType_FUN_004d4ad0
 // Address: 004d4ad0

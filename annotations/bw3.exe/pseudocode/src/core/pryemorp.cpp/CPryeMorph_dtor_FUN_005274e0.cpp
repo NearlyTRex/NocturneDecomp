@@ -21,7 +21,7 @@ CPryeMorph * core_pryemorp_cpp_CPryeMorph_dtor_FUN_005274e0(CPryeMorph *this_ptr
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CPryeMorphTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CPryeMorphTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

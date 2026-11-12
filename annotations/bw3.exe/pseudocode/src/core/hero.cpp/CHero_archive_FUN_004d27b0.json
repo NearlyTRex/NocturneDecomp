@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 249,
-    "complexity_score": 135,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 24,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 80,
+    "pseudocode_lines": 84,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 329
+    "total_lines": 333
   },
   "cross_references": [
     {
@@ -285,6 +285,26 @@
     },
     "pcode_op_count": 823
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004eab00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.927
+    },
+    "nocedit.exe": {
+      "addr": "004f2610",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9054
+    },
+    "nocturne.exe": {
+      "addr": "004b49a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9054
+    }
+  },
   "stack_frame": {
     "frame_size": 220,
     "local_size": 216,
@@ -325,7 +345,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 48,
       "match": "DAT_005c4bbf",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0(&local_c,&DAT_005c4bbf);",
@@ -333,7 +353,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 70,
       "match": "DAT_007df9b8",
       "severity": "mild",
       "text": "if (DAT_007df9b8 == 1) {",
@@ -341,7 +361,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 71,
       "match": "DAT_007df9b4",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_load_FUN_004dc750(&this_ptr->inventory,DAT_007df9b4);",
@@ -349,7 +369,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 74,
       "match": "DAT_007df9b4",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_save_FUN_004dc560(&this_ptr->inventory,DAT_007df9b4);",
@@ -357,7 +377,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 78,
       "match": "DAT_005c4bfd",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->mana,&DAT_005c4bfd);",

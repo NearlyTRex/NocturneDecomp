@@ -46,8 +46,7 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_00529750(CScript *this
   else {
     local_28 = this_ptr->message_duration;
   }
-  pCVar3 = (CDemonActor *)
-           core_script_cpp_getActor_FUN_00521290
+  pCVar3 = core_script_cpp_getActor_FUN_00521290
                      (actor_specifier,g_CCharacterClassInfo.name_hash,&g_CCharacterClassInfo);
   this_ptr->who_is_speaking = pCVar3;
   if (pCVar3 == (CDemonActor *)0x0) {

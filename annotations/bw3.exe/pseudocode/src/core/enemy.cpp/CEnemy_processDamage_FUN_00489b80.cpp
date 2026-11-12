@@ -9,8 +9,8 @@
 void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(CEnemy *this_ptr,SDamageInfo *damage_info)
 
 {
-  CCharacter *pCVar1;
-  int iVar2;
+  CCharacter *actor_ptr;
+  CDemonActor *pCVar1;
   
   if ((this_ptr->base).is_invulnerable != 0) {
     core_event_cpp_CEventList_executeCommands_FUN_0048c150
@@ -20,20 +20,21 @@ void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_00489b80(CEnemy *this_ptr,S
   (*(((this_ptr->base).base.vtable._uc)->_uc).releaseVictim)(&this_ptr->base);
   core_charactr_cpp_CCharacter_processDamage_FUN_00430d60(&this_ptr->base,damage_info);
   if (0.0 < damage_info->damage_amount) {
-    pCVar1 = (CCharacter *)
-             core_actor_cpp_castToClassHash_FUN_0040c840
-                       (damage_info->wielder,g_CCharacterClassInfo.name_hash);
-    if (pCVar1 == (CCharacter *)0x0) {
-      pCVar1 = (CCharacter *)
-               core_actor_cpp_castToClassHash_FUN_0040c840
-                         (damage_info->attacker,g_CCharacterClassInfo.name_hash);
+    actor_ptr = (CCharacter *)
+                core_actor_cpp_castToClassHash_FUN_0040c840
+                          (damage_info->wielder,g_CCharacterClassInfo.name_hash);
+    if (actor_ptr == (CCharacter *)0x0) {
+      actor_ptr = (CCharacter *)
+                  core_actor_cpp_castToClassHash_FUN_0040c840
+                            (damage_info->attacker,g_CCharacterClassInfo.name_hash);
     }
-    if (pCVar1 != (CCharacter *)0x0) {
-      iVar2 = (CBugs *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar1,g_CBugsClassInfo.name_hash);
-      if (iVar2 == 0) {
+    if (actor_ptr != (CCharacter *)0x0) {
+      pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840
+                         (&actor_ptr->base,g_CBugsClassInfo.name_hash);
+      if (pCVar1 == (CDemonActor *)0x0) {
         this_ptr->victim_search_timer = 15.0;
         this_ptr->is_in_combat = 1;
-        this_ptr->victim = pCVar1;
+        this_ptr->victim = actor_ptr;
       }
     }
   }

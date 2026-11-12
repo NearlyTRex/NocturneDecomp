@@ -53,9 +53,9 @@ void __cdecl CDemonSet::setCameraView(CDemonSet *this_ptr,int index);
 // Address: 005090a0
 int __cdecl CDemonSet::findCameraByName(CDemonSet *this_ptr,char *name);
 
-// Original: core_set.cpp_CDemonSet_FUN_005090f0
+// Original: core_set.cpp_CDemonSet_reinitCamera_FUN_005090f0
 // Address: 005090f0
-void __cdecl CDemonSet(CDemonSet *this_ptr,undefined4 param_2,undefined4 param_3,int param_4);
+void __cdecl CDemonSet::reinitCamera(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height);
 
 // Original: core_set.cpp_CDemonSet_processActors_FUN_00509140
 // Address: 00509140
@@ -93,17 +93,17 @@ void __cdecl CDemonSet::addCoronaGlobe(CDemonSet *this_ptr,CDemonGlobe *globe);
 // Address: 0050aa20
 void __cdecl CDemonSet::addQueuedCoronaGlobe(CDemonSet *this_ptr,CDemonGlobe *globe);
 
-// Original: core_set.cpp_CDemonSet_FUN_0050aa70
+// Original: core_set.cpp_CDemonSet_renderLightDebugView_FUN_0050aa70
 // Address: 0050aa70
-void __cdecl CDemonSet(CDemonSet *this_ptr);
+void __cdecl CDemonSet::renderLightDebugView(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_CDemonSet_FUN_0050aba0
+// Original: core_set.cpp_CDemonSet_renderCameraAimedAtHero_FUN_0050aba0
 // Address: 0050aba0
-void __cdecl CDemonSet(CDemonSet *this_ptr);
+void __cdecl CDemonSet::renderCameraAimedAtHero(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_CDemonSet_FUN_0050ad20
+// Original: core_set.cpp_CDemonSet_clearLights_FUN_0050ad20
 // Address: 0050ad20
-void __cdecl CDemonSet(CDemonSet *this_ptr);
+void __cdecl CDemonSet::clearLights(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0
 // Address: 0050adc0
@@ -249,9 +249,9 @@ void __cdecl CDemonSet::setCameraAmbientValue(CDemonSet *this_ptr,int index,floa
 // Address: 0050e510
 void __cdecl CDemonSet::setCameraAmbientValueByGroup(CDemonSet *this_ptr,int group_id,float value);
 
-// Original: core_set.cpp_CDemonSet_FUN_0050e550
+// Original: core_set.cpp_CDemonSet_setCameraEnabled_FUN_0050e550
 // Address: 0050e550
-void __cdecl CDemonSet(CDemonSet *this_ptr,int param_2,int param_3);
+void __cdecl CDemonSet::setCameraEnabled(CDemonSet *this_ptr,int camera_index,int enabled);
 
 // Original: core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_0050e580
 // Address: 0050e580

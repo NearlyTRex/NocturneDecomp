@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_health.cpp_factoryFuncHealthItem_FUN_004cda40
 // Address: 004cda40
-void factoryFuncHealthItem(void);
+CHealthItem * __cdecl factoryFuncHealthItem(void);
 
 // Original: core_health.cpp_CHealthItem_getActorType_FUN_004cda60
 // Address: 004cda60

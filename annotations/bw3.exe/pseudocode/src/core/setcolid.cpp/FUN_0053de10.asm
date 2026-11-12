@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_FUN_0053de10(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,undefined4 param_8)
+; float core_setcolid_cpp_FUN_0053de10(CDemonSet *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,float param_7,float param_8)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1a8]:4  local_1a8
@@ -89,7 +89,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 0053de38
     PUSH EAX                            ; 0053de3b
     CALL core_dtrace.cpp_initIntersectionCylinder_FUN_00474db0 ; 0053de3c
-        ;   XREF to: 00474db0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_initIntersectionCylinder_FUN_00474db0()
+        ;   XREF to: 00474db0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_initIntersectionCylinder_FUN_00474db0(SIntersectXZCylinder * this_ptr, float start_x, float start_z, float dir_x, ...)
     ADD ESP,0x20                        ; 0053de41
     TEST dword ptr [EBP + 0x20],0x7fffffff ; 0053de44
     JNZ 0x0053de56                      ; 0053de4b
@@ -351,7 +351,7 @@ section .text
     FSTP float ptr [ESP]                ; 0053e210
     PUSH EAX                            ; 0053e213
     CALL core_dtrace.cpp_initIntersectionCylinder_FUN_00474db0 ; 0053e214
-        ;   XREF to: 00474db0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_initIntersectionCylinder_FUN_00474db0()
+        ;   XREF to: 00474db0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_initIntersectionCylinder_FUN_00474db0(SIntersectXZCylinder * this_ptr, float start_x, float start_z, float dir_x, ...)
     ADD ESP,0x20                        ; 0053e219
     MOV EAX,dword ptr [ESP + 0x158]     ; 0053e21c
     MOV dword ptr [ESP + 0xfc],EAX      ; 0053e223
@@ -674,7 +674,7 @@ section .text
     PUSH dword ptr [ESP + 0x26c]        ; 0053e6e3
     PUSH EAX                            ; 0053e6ea
     CALL core_dtrace.cpp_initIntersectionCylinder_FUN_00474db0 ; 0053e6eb
-        ;   XREF to: 00474db0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_initIntersectionCylinder_FUN_00474db0()
+        ;   XREF to: 00474db0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_initIntersectionCylinder_FUN_00474db0(SIntersectXZCylinder * this_ptr, float start_x, float start_z, float dir_x, ...)
     ADD ESP,0x20                        ; 0053e6f0
     MOV EAX,dword ptr [ESP + 0x158]     ; 0053e6f3
     MOV dword ptr [ESP + 0xa0],EAX      ; 0053e6fa

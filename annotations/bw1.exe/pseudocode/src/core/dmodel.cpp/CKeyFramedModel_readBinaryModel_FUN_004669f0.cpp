@@ -11,7 +11,7 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0(CKeyFramedModel *this_ptr,_FILE *file)
 
 {
-  int iVar1;
+  SIZE_T SVar1;
   int iVar2;
   int local_2c;
   uint local_28;
@@ -21,8 +21,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0(CKeyFr
   uint local_18;
   int local_14;
   
-  iVar1 = _fread(&local_2c,0x18,1,file);
-  if (iVar1 != 1) goto LAB_00466a69;
+  SVar1 = _fread(&local_2c,0x18,1,file);
+  if (SVar1 != 1) goto LAB_00466a69;
   do {
     if ((local_2c < 3) || (4 < local_2c)) {
       _DAT_01d1d400 = "..\\core\\dmodel.cpp";
@@ -30,27 +30,27 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0(CKeyFr
       core_main_c_FUN_005030e0("KFM file is invalid version %d",local_2c);
     }
     local_14 = 0;
-    if ((local_2c < 4) || (iVar1 = _fread(&local_14,4,1,file), iVar1 == 1))
+    if ((local_2c < 4) || (SVar1 = _fread(&local_14,4,1,file), SVar1 == 1))
     {
       core_dmodel_cpp_FUN_00467650(this_ptr,local_28,local_24,local_20,local_1c,local_18);
-      iVar1 = _fread(this_ptr->vertex_list,this_ptr->vertex_count * this_ptr->frame_count * 0xc,
+      SVar1 = _fread(this_ptr->vertex_list,this_ptr->vertex_count * this_ptr->frame_count * 0xc,
                          1,file);
-      if ((iVar1 == 1) &&
+      if ((SVar1 == 1) &&
          ((this_ptr->poly_count < 1 ||
-          ((iVar1 = _fread(this_ptr->poly_vert_list,this_ptr->poly_count * 0x48,1,file),
-           iVar1 == 1 &&
-           (iVar1 = _fread(this_ptr->poly_texture_index_list,this_ptr->poly_count << 2,1,file),
-           iVar1 == 1)))))) {
+          ((SVar1 = _fread(this_ptr->poly_vert_list,this_ptr->poly_count * 0x48,1,file),
+           SVar1 == 1 &&
+           (SVar1 = _fread(this_ptr->poly_texture_index_list,this_ptr->poly_count << 2,1,file),
+           SVar1 == 1)))))) {
         if (0 < this_ptr->texture_count) {
           memset(this_ptr->texture_list,0,0x120);
-          for (iVar1 = 0; iVar1 < this_ptr->texture_count; iVar1 = iVar1 + 1) {
-            iVar2 = _fread(this_ptr->texture_list + iVar1,0x18,1,file);
-            if (iVar2 != 1) goto LAB_00466a69;
+          for (iVar2 = 0; iVar2 < this_ptr->texture_count; iVar2 = iVar2 + 1) {
+            SVar1 = _fread(this_ptr->texture_list + iVar2,0x18,1,file);
+            if (SVar1 != 1) goto LAB_00466a69;
           }
         }
-        iVar1 = _fread(this_ptr->part_list,this_ptr->part_count << 3,1,file)
+        SVar1 = _fread(this_ptr->part_list,this_ptr->part_count << 3,1,file)
         ;
-        if (iVar1 == 1) {
+        if (SVar1 == 1) {
           if (local_14 != 0) {
             core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00468340(this_ptr);
             return;

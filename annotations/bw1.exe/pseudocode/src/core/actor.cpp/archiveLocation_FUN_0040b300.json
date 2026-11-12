@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 152,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
-    "suspect_count": 12,
+    "pseudocode_lines": 19,
+    "suspect_count": 4,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 84
+    "total_lines": 86
   },
   "cross_references": [
     {
@@ -34,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archiveLocation_FUN_0040b300",
-    "signature": "void __cdecl core_actor_cpp_archiveLocation_FUN_0040b300(float *param_1,char *param_2)"
+    "signature": "void __cdecl core_actor_cpp_archiveLocation_FUN_0040b300(CLocation *location_ptr,char *property_name)"
   },
   "function_calls": [
     {
@@ -111,11 +109,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.890909090909091,
@@ -143,11 +141,37 @@
     },
     "pcode_op_count": 269
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040b5f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040b540",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040b480",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040c590",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 52,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -170,26 +194,24 @@
         "offset": -24,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "location_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLocation *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveLocation_FUN_0040b300(float *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveLocation_FUN_0040b300(float *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 7,
@@ -199,79 +221,28 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_handleActorPropertyParseError_FUN_0040b090(\"4D location\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_007c3034,\"%s%d,%g,%g,%g\",&DAT_006106c0,param_1[3],(double)*param_1,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_007c3034,\"%s%d,%g,%g,%g\",&DAT_006106c0,param_1[3],(double)*param_1,",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 8,
       "match": "DAT_007c3034",
       "severity": "mild",
-      "text": "(DAT_007c3034,\"%s%d,%g,%g,%g\",&DAT_006106c0,param_1[3],(double)*param_1,",
+      "text": "iVar1 = _fscanf(DAT_007c3034,\"%d,%f,%f,%f\");",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_006106c0",
+      "line": 16,
+      "match": "DAT_007c3034",
       "severity": "mild",
-      "text": "(DAT_007c3034,\"%s%d,%g,%g,%g\",&DAT_006106c0,param_1[3],(double)*param_1,",
+      "text": "(DAT_007c3034,\"%s%d,%g,%g,%g\",&DAT_006106c0,location_ptr->area_id,",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Undefined global data reference",
       "line": 16,
-      "match": "param_1",
+      "match": "DAT_006106c0",
       "severity": "mild",
-      "text": "(double)param_1[1],(double)param_1[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)param_1[1],(double)param_1[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveDescription_FUN_0040b110(\"4D location\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "text": "(DAT_007c3034,\"%s%d,%g,%g,%g\",&DAT_006106c0,location_ptr->area_id,",
+      "type": "undefined_data"
     }
   ]
 }

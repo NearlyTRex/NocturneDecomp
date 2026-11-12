@@ -125,7 +125,7 @@ section .text
         ;   XREF to: 00521d25 (CONDITIONAL_JUMP)  ; LAB_00521d25
     PUSH EAX                            ; 00521dbd
     CALL crt_stdio.c_ftell_FUN_005baab0 ; 00521dbe
-        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005baab0()
+        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005baab0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00521dc3
     LEA EDI,[EBX + EAX*0x1]             ; 00521dc6
     MOV EAX,dword ptr [ESP + 0x31c]     ; 00521dc9
@@ -137,7 +137,7 @@ section .text
     PUSH ESI                            ; 00521de1
         ;   Label: LAB_00521de1
     CALL crt_stdio.c_ftell_FUN_005baab0 ; 00521de2
-        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005baab0()
+        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005baab0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00521de7
     CMP EAX,EDI                         ; 00521dea
     JL 0x00521e3e                       ; 00521dec
@@ -179,7 +179,7 @@ section .text
     PUSH ESI                            ; 00521e3e
         ;   Label: LAB_00521e3e
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 00521e3f
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 00521e44
     MOV EDX,EAX                         ; 00521e47
     CMP EAX,-0x1                        ; 00521e49

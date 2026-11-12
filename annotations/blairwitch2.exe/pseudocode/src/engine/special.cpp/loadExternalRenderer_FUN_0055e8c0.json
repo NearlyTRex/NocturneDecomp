@@ -1,0 +1,1501 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 900,
+    "complexity_score": 734,
+    "cross_reference_count": 4,
+    "function_call_count": 7,
+    "global_count": 181,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 409,
+    "suspect_count": 31,
+    "suspect_types": [
+      "raw_address_constant",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 1309
+  },
+  "cross_references": [
+    {
+      "addr": "004ebf10",
+      "from_addr": "004ec856",
+      "name": "core_menu.cpp_FUN_004ebf10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055f770",
+      "from_addr": "0055f79a",
+      "name": "engine_special.cpp_setResolutionAndColorTable_FUN_0055f770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056046e",
+      "from_addr": "005604aa",
+      "name": "engine_special.cpp_switchRenderer_FUN_0056046e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588790",
+      "from_addr": "005888a5",
+      "name": "wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00588790",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0055e8c0",
+    "address_range": [
+      [
+        "0055e8c0",
+        "0055f4c9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_special.cpp_loadExternalRenderer_FUN_0055e8c0",
+    "signature": "int __cdecl engine_special_cpp_loadExternalRenderer_FUN_0055e8c0(HWND window_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    },
+    {
+      "addr": "005602c0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_CExternalRenderer_ctor_FUN_005602c0"
+    },
+    {
+      "addr": "00560310",
+      "is_variadic": false,
+      "name": "engine_special.cpp_CExternalRenderer_validate_FUN_00560310"
+    },
+    {
+      "addr": "005600c0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_selectCard_FUN_005600c0"
+    },
+    {
+      "addr": "0055dcf0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0"
+    },
+    {
+      "addr": "00589980",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_getProcAddress_FUN_00589980"
+    },
+    {
+      "addr": "00589970",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_loadLibrary_FUN_00589970"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eaa4b",
+      "name": "s_APIDLLInformation_005eaa4b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaa5d",
+      "name": "s_APIDLLinit_005eaa5d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaa68",
+      "name": "s_APIDLLkill_005eaa68",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaa73",
+      "name": "s_APIDLLtoggle_005eaa73",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaa80",
+      "name": "s_APIDLLsetVideoMode_005eaa80",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaa93",
+      "name": "s_APIDLLsetVideoMode2_005eaa93",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaaa7",
+      "name": "s_APIDLLrestoreVideoMode_005eaaa7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaabe",
+      "name": "s_APIDLLbeginScene_005eaabe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaacf",
+      "name": "s_APIDLLendScene_005eaacf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaade",
+      "name": "s_APIDLLlockFrame_005eaade",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaaee",
+      "name": "s_APIDLLunlockFrame_005eaaee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eab00",
+      "name": "s_APIDLLselectTexture_005eab00",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eab14",
+      "name": "s_APIDLLupdateTexture_005eab14",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eab28",
+      "name": "s_APIDLLselectTextureBGRA_005eab28",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eab40",
+      "name": "s_APIDLLupdateTextureBGRA_005eab40",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eab58",
+      "name": "s_APIDLLsetMipMapLevel_005eab58",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eab6d",
+      "name": "s_APIDLLdrawPolygon_005eab6d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eab7f",
+      "name": "s_APIDLLdrawPolygon2_005eab7f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eab92",
+      "name": "s_APIDLLdrawPolyList_005eab92",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaba5",
+      "name": "s_APIDLLdrawPolyList2_005eaba5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eabb9",
+      "name": "s_APIDLLdrawPolyList3_005eabb9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eabcd",
+      "name": "s_APIDLLaddParticle_005eabcd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eabdf",
+      "name": "s_APIDLLflushParticleList_005eabdf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eabf7",
+      "name": "s_APIDLLadd3dLine_005eabf7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eac07",
+      "name": "s_APIDLLflushLineList_005eac07",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eac1b",
+      "name": "s_APIDLLclear_005eac1b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eac27",
+      "name": "s_APIDLLsetFogColor_005eac27",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eac39",
+      "name": "s_APIDLLsync_005eac39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eac44",
+      "name": "s_APIDLLclearZBuffer_005eac44",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eac57",
+      "name": "s_APIDLLclearZBox_005eac57",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eac67",
+      "name": "s_APIDLLsetColorTable16_005eac67",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eac7d",
+      "name": "s_APIDLLGetDisplayContext_005eac7d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eac95",
+      "name": "s_APIDLLReleaseDisplayCont_005eac95",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eacb1",
+      "name": "s_APIDLLmasterZBuffer_005eacb1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eacc5",
+      "name": "s_APIDLLrestoreZBuffer_005eacc5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eacda",
+      "name": "s_APIDLLgetVideoMemory_005eacda",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eacef",
+      "name": "s_APIDLLselectCard_005eacef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ead00",
+      "name": "s_APIDLLbuildCardList_005ead00",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ead14",
+      "name": "s_APIDLLlockHoldBuffer_005ead14",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ead29",
+      "name": "s_APIDLLunlockHoldBuffer_005ead29",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ead40",
+      "name": "s_APIDLLlockTexture_005ead40",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ead52",
+      "name": "s_APIDLLunlockTexture_005ead52",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ead66",
+      "name": "s_APIDLLgetTextureInfo_005ead66",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ead7b",
+      "name": "s_APIDLLsetVideoModeX_005ead7b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ead8f",
+      "name": "s_APIDLLrestoreVideoModeX_005ead8f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eada7",
+      "name": "s_APIDLLlockFrameX_005eada7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eadb8",
+      "name": "s_APIDLLunlockFrameX_005eadb8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eadcb",
+      "name": "s_APIDLLtoggleX_005eadcb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eadd9",
+      "name": "s_APIDLLsetViewport_005eadd9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eadeb",
+      "name": "s_APIDLLsetLightConstants_005eadeb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eae03",
+      "name": "s_APIDLLsetLightVector_005eae03",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eae18",
+      "name": "s_APIDLLsetAmbientLight_005eae18",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eae2e",
+      "name": "s_APIDLLsetTransform_005eae2e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eae41",
+      "name": "s_APIDLLpolyList_005eae41",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eae50",
+      "name": "s_APIDLLpolyList2_005eae50",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eae60",
+      "name": "s_APIDLLpolyListL_005eae60",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eae70",
+      "name": "s_APIDLLpolyListD3DL_005eae70",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eae83",
+      "name": "s_APIDLLpolyListD3DL2_005eae83",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eae97",
+      "name": "s_APIDLLpolyListD3DTL_005eae97",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaeab",
+      "name": "s_APIDLLpolyListTL_005eaeab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaebc",
+      "name": "s_APIDLLdotListD3DL_005eaebc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaece",
+      "name": "s_APIDLLdotListD3DTL_005eaece",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaee1",
+      "name": "s_APIDLLlineListD3DL_005eaee1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaef4",
+      "name": "s_APIDLLlineListD3DTL_005eaef4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaf08",
+      "name": "s_APIDLLgetTextureHandle_005eaf08",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaf1f",
+      "name": "s_APIDLLselectTextureByHan_005eaf1f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaf3b",
+      "name": "s_APIDLLresetTextureCache_005eaf3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaf53",
+      "name": "s_APIDLLenableCulling_005eaf53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaf67",
+      "name": "s_APIDLLenableClipping_005eaf67",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaf7c",
+      "name": "s_APIDLLsetTextureClamp_005eaf7c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaf92",
+      "name": "s_APIDLLsetFog_005eaf92",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eaf9f",
+      "name": "s_APIDLLresetDynamicLight_005eaf9f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eafb7",
+      "name": "s_APIDLLaddDynamicLight_005eafb7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eafcd",
+      "name": "s_APIDLLdynamicLightHint_005eafcd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006141c4",
+      "name": "DAT_006141c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141c8",
+      "name": "DAT_006141c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141d8",
+      "name": "DAT_006141d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141dc",
+      "name": "DAT_006141dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061e180",
+      "name": "DAT_0061e180",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "0061e280",
+      "name": "DAT_0061e280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061e284",
+      "name": "DAT_0061e284",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061e288",
+      "name": "DAT_0061e288",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061e28c",
+      "name": "DAT_0061e28c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061e290",
+      "name": "DAT_0061e290",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35814",
+      "name": "DAT_01c35814",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35818",
+      "name": "DAT_01c35818",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3581c",
+      "name": "DAT_01c3581c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35820",
+      "name": "DAT_01c35820",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35824",
+      "name": "DAT_01c35824",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35828",
+      "name": "DAT_01c35828",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3582c",
+      "name": "DAT_01c3582c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35830",
+      "name": "DAT_01c35830",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35834",
+      "name": "DAT_01c35834",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e48",
+      "name": "DAT_01c35e48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e4c",
+      "name": "DAT_01c35e4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e50",
+      "name": "DAT_01c35e50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e54",
+      "name": "DAT_01c35e54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e60",
+      "name": "DAT_01c35e60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c37780",
+      "name": "DAT_01c37780",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b4c",
+      "name": "DAT_01c38b4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b50",
+      "name": "DAT_01c38b50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bba0",
+      "name": "DAT_0264bba0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bba4",
+      "name": "DAT_0264bba4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbac",
+      "name": "DAT_0264bbac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbb8",
+      "name": "DAT_0264bbb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbbc",
+      "name": "DAT_0264bbbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbc0",
+      "name": "DAT_0264bbc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbc4",
+      "name": "DAT_0264bbc4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbc8",
+      "name": "DAT_0264bbc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbcc",
+      "name": "DAT_0264bbcc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbd0",
+      "name": "DAT_0264bbd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbd4",
+      "name": "DAT_0264bbd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbd8",
+      "name": "DAT_0264bbd8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbdc",
+      "name": "DAT_0264bbdc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbe0",
+      "name": "DAT_0264bbe0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbe4",
+      "name": "DAT_0264bbe4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbe8",
+      "name": "DAT_0264bbe8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbec",
+      "name": "DAT_0264bbec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbf0",
+      "name": "DAT_0264bbf0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbf4",
+      "name": "DAT_0264bbf4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbf8",
+      "name": "DAT_0264bbf8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbfc",
+      "name": "DAT_0264bbfc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc00",
+      "name": "DAT_0264bc00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc04",
+      "name": "DAT_0264bc04",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc08",
+      "name": "DAT_0264bc08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc0c",
+      "name": "DAT_0264bc0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc10",
+      "name": "DAT_0264bc10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc14",
+      "name": "DAT_0264bc14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc18",
+      "name": "DAT_0264bc18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc1c",
+      "name": "DAT_0264bc1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc20",
+      "name": "DAT_0264bc20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc24",
+      "name": "DAT_0264bc24",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc28",
+      "name": "DAT_0264bc28",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc2c",
+      "name": "DAT_0264bc2c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc30",
+      "name": "DAT_0264bc30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc34",
+      "name": "DAT_0264bc34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc38",
+      "name": "DAT_0264bc38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc3c",
+      "name": "DAT_0264bc3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc40",
+      "name": "DAT_0264bc40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc44",
+      "name": "DAT_0264bc44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc48",
+      "name": "DAT_0264bc48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc4c",
+      "name": "DAT_0264bc4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc50",
+      "name": "DAT_0264bc50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc54",
+      "name": "DAT_0264bc54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc58",
+      "name": "DAT_0264bc58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc5c",
+      "name": "DAT_0264bc5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc60",
+      "name": "DAT_0264bc60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc64",
+      "name": "DAT_0264bc64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc68",
+      "name": "DAT_0264bc68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc6c",
+      "name": "DAT_0264bc6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc70",
+      "name": "DAT_0264bc70",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc74",
+      "name": "DAT_0264bc74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc78",
+      "name": "DAT_0264bc78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc7c",
+      "name": "DAT_0264bc7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc80",
+      "name": "DAT_0264bc80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc84",
+      "name": "DAT_0264bc84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc88",
+      "name": "DAT_0264bc88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc8c",
+      "name": "DAT_0264bc8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc90",
+      "name": "DAT_0264bc90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc94",
+      "name": "DAT_0264bc94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc98",
+      "name": "DAT_0264bc98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc9c",
+      "name": "DAT_0264bc9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bca0",
+      "name": "DAT_0264bca0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bca4",
+      "name": "DAT_0264bca4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bca8",
+      "name": "DAT_0264bca8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcac",
+      "name": "DAT_0264bcac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcb0",
+      "name": "DAT_0264bcb0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcb4",
+      "name": "DAT_0264bcb4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcb8",
+      "name": "DAT_0264bcb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcbc",
+      "name": "DAT_0264bcbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcc0",
+      "name": "DAT_0264bcc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcc4",
+      "name": "DAT_0264bcc4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcc8",
+      "name": "DAT_0264bcc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bccc",
+      "name": "DAT_0264bccc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcd0",
+      "name": "DAT_0264bcd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcd4",
+      "name": "DAT_0264bcd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcd8",
+      "name": "DAT_0264bcd8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcdc",
+      "name": "DAT_0264bcdc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bce0",
+      "name": "DAT_0264bce0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcf0",
+      "name": "DAT_0264bcf0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcf8",
+      "name": "DAT_0264bcf8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.472108843537415,
+    "instruction_count": 735,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 37,
+      "BRANCH": 1,
+      "CALL": 82,
+      "CALLIND": 2,
+      "CBRANCH": 40,
+      "COPY": 592,
+      "INT_ADD": 165,
+      "INT_AND": 315,
+      "INT_CARRY": 88,
+      "INT_EQUAL": 276,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 88,
+      "INT_SLESS": 138,
+      "INT_SUB": 250,
+      "INT_XOR": 9,
+      "LOAD": 36,
+      "POPCOUNT": 138,
+      "RETURN": 7,
+      "STORE": 284
+    },
+    "pcode_op_count": 2552
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00581310",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00564be0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b6750",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7613
+    },
+    "nocturne.exe": {
+      "addr": "00531780",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1007
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "window_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "HWND"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_0061e180",
+      "severity": "mild",
+      "text": "_DAT_0264bce0 = wincore_wddvmem_cpp_loadLibrary_FUN_00589970(&DAT_0061e180);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 366,
+      "match": "DAT_01c35814",
+      "severity": "mild",
+      "text": "puStack_a0 = &DAT_01c35814;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 367,
+      "match": "DAT_01c35818",
+      "severity": "mild",
+      "text": "puStack_9c = &DAT_01c35818;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 368,
+      "match": "DAT_01c3581c",
+      "severity": "mild",
+      "text": "puStack_98 = &DAT_01c3581c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 369,
+      "match": "DAT_01c35820",
+      "severity": "mild",
+      "text": "puStack_94 = &DAT_01c35820;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 370,
+      "match": "DAT_01c35824",
+      "severity": "mild",
+      "text": "puStack_90 = &DAT_01c35824;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 371,
+      "match": "DAT_01c35828",
+      "severity": "mild",
+      "text": "puStack_8c = &DAT_01c35828;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 372,
+      "match": "DAT_01c3582c",
+      "severity": "mild",
+      "text": "puStack_88 = &DAT_01c3582c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 373,
+      "match": "DAT_01c35830",
+      "severity": "mild",
+      "text": "puStack_84 = &DAT_01c35830;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 374,
+      "match": "DAT_01c35834",
+      "severity": "mild",
+      "text": "puStack_80 = &DAT_01c35834;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 375,
+      "match": "DAT_01c38b4c",
+      "severity": "mild",
+      "text": "puStack_7c = &DAT_01c38b4c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 376,
+      "match": "DAT_01c35e64",
+      "severity": "mild",
+      "text": "puStack_78 = &DAT_01c35e64;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 377,
+      "match": "DAT_006141d8",
+      "severity": "mild",
+      "text": "puStack_74 = &DAT_006141d8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 378,
+      "match": "DAT_01c35e60",
+      "severity": "mild",
+      "text": "puStack_70 = &DAT_01c35e60;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 379,
+      "match": "DAT_01c35e48",
+      "severity": "mild",
+      "text": "puStack_6c = &DAT_01c35e48;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 380,
+      "match": "DAT_01c35e4c",
+      "severity": "mild",
+      "text": "puStack_68 = &DAT_01c35e4c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 381,
+      "match": "DAT_01c35e50",
+      "severity": "mild",
+      "text": "puStack_64 = &DAT_01c35e50;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 382,
+      "match": "DAT_01c35e54",
+      "severity": "mild",
+      "text": "puStack_60 = &DAT_01c35e54;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 383,
+      "match": "DAT_006141c4",
+      "severity": "mild",
+      "text": "puStack_5c = &DAT_006141c4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 384,
+      "match": "DAT_006141c8",
+      "severity": "mild",
+      "text": "puStack_58 = &DAT_006141c8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 385,
+      "match": "DAT_01c37780",
+      "severity": "mild",
+      "text": "puStack_54 = &DAT_01c37780;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 386,
+      "match": "DAT_0061e28c",
+      "severity": "mild",
+      "text": "puStack_50 = &DAT_0061e28c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 387,
+      "match": "DAT_0061e284",
+      "severity": "mild",
+      "text": "puStack_4c = &DAT_0061e284;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 388,
+      "match": "DAT_0061e288",
+      "severity": "mild",
+      "text": "puStack_48 = &DAT_0061e288;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 390,
+      "match": "DAT_0061e280",
+      "severity": "mild",
+      "text": "puStack_40 = &DAT_0061e280;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 391,
+      "match": "DAT_0264bbac",
+      "severity": "mild",
+      "text": "puStack_3c = &DAT_0264bbac;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 392,
+      "match": "DAT_01c38b50",
+      "severity": "mild",
+      "text": "puStack_38 = &DAT_01c38b50;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 393,
+      "match": "DAT_006141dc",
+      "severity": "mild",
+      "text": "puStack_34 = &DAT_006141dc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Raw hex address 0x264bba8 assigned to bare local `uStack_44`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_44` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 389,
+      "match": "0x264bba8",
+      "severity": "moderate",
+      "text": "uStack_44 = 0x264bba8;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x264bbb4 assigned to bare local `uStack_14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 398,
+      "match": "0x264bbb4",
+      "severity": "moderate",
+      "text": "uStack_14 = 0x0264BBB4;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

@@ -1,14 +1,14 @@
 // Name: sound_mp3.cpp_initializeSynthesisDctTable_FUN_0052718e
 // Address: 0052718e
 // Address Range: [[0052718e, 00527278]]
-// Convention: unknown
-// Signature: double sound_mp3_cpp_initializeSynthesisDctTable_FUN_0052718e(float *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_0052718e(float *output_dct_table)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-double sound_mp3_cpp_initializeSynthesisDctTable_FUN_0052718e(float *param_1)
+void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_0052718e(float *output_dct_table)
 
 {
   double dVar1;
@@ -16,7 +16,6 @@ double sound_mp3_cpp_initializeSynthesisDctTable_FUN_0052718e(float *param_1)
   int iVar3;
   float *pfVar4;
   float10 fVar5;
-  double dVar6;
   double dStack_38;
   double dStack_30;
   int iStack_28;
@@ -24,7 +23,7 @@ double sound_mp3_cpp_initializeSynthesisDctTable_FUN_0052718e(float *param_1)
   int iStack_18;
   
   iStack_28 = 0;
-  pfStack_1c = param_1;
+  pfStack_1c = output_dct_table;
   do {
     iVar3 = 1;
     pfVar2 = pfStack_1c;
@@ -36,12 +35,12 @@ double sound_mp3_cpp_initializeSynthesisDctTable_FUN_0052718e(float *param_1)
       iStack_18 = iVar3;
       if (0.0 <= *pfVar2) {
         dStack_30 = (double)*pfVar2;
-        dVar6 = modf((double)(*pfVar2 + (float)_DAT_005eb27e),&dStack_30);
+        modf((double)(*pfVar2 + (float)_DAT_005eb27e),&dStack_30);
         dVar1 = dStack_30;
       }
       else {
         dStack_38 = (double)*pfVar2;
-        dVar6 = modf((double)(*pfVar2 + (float)_DAT_005eb276),&dStack_38);
+        modf((double)(*pfVar2 + (float)_DAT_005eb276),&dStack_38);
         dVar1 = dStack_38;
       }
       *pfVar2 = (float)dVar1;
@@ -53,5 +52,5 @@ double sound_mp3_cpp_initializeSynthesisDctTable_FUN_0052718e(float *param_1)
     iStack_28 = iStack_28 + 1;
     pfStack_1c = pfStack_1c + 0x20;
   } while (iStack_28 < 0x40);
-  return dVar6;
+  return;
 }

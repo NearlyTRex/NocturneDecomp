@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 303,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 93,
-    "suspect_count": 19,
+    "pseudocode_lines": 94,
+    "suspect_count": 20,
     "suspect_types": [
       "param_count_too_few",
       "stack_ref",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 250
+    "total_lines": 251
   },
   "cross_references": [
     {
@@ -150,6 +150,32 @@
     },
     "pcode_op_count": 553
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005385d0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005102b0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054b9b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9837
+    },
+    "nocturne.exe": {
+      "addr": "004f4f90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9672
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -217,47 +243,55 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uVar2 = uStack_1c / param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iVar3 = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((-1 < param_5) && (iVar1 != param_5)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((-1 < param_5) && (iVar1 != param_5)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
-      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00516f30(pCStack_14,param_2,iVar3);",
+      "text": "SVar1 = _fread(abStack_20,8,1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 48,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uVar3 = uStack_1c / param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar4 = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if ((-1 < param_5) && (iVar2 != param_5)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if ((-1 < param_5) && (iVar2 != param_5)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00516f30(pCStack_14,param_2,iVar4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
       "match": "param_6",
       "severity": "mild",
       "text": "if (1 < param_6) {",
@@ -265,7 +299,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 64,
+      "line": 65,
       "match": "&stack0xffffffa4",
       "severity": "moderate",
       "text": "((CPackedBitmap *)&stack0xffffffa4);",
@@ -273,7 +307,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 67,
       "match": "param_2",
       "severity": "mild",
       "text": "((CPackedBitmap *)acStack_58,param_2,1);",
@@ -281,7 +315,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 72,
+      "line": 73,
       "match": "&stack0xffffffb4",
       "severity": "moderate",
       "text": "((CPackedBitmap *)&stack0xffffffb4,0);",
@@ -289,18 +323,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 75,
       "match": "param_3",
       "severity": "mild",
-      "text": "} while (iVar3 < (int)param_3);",
+      "text": "} while (iVar4 < (int)param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = uVar2;",
+      "text": "*param_1 = uVar3;",
       "type": "unnamed_param"
     },
     {

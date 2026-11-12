@@ -56,7 +56,7 @@ section .text
     PUSH EBX                            ; 0040712d
     PUSH 0x7b7960                       ; 0040712e
     CALL crt_stdlib.c__qsort_FUN_005b78b8 ; 00407133
-        ;   XREF to: 005b78b8 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__qsort_FUN_005b78b8()
+        ;   XREF to: 005b78b8 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005b78b8(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     MOV ESI,dword ptr [0x01c38b40]      ; 00407138 | DAT_01c38b40
     ADD ESP,0x10                        ; 0040713e
     TEST ESI,ESI                        ; 00407141
@@ -113,7 +113,7 @@ section .text
     ADD EAX,0xc4                        ; 004071ea
     PUSH EAX                            ; 004071ef
     CALL engine_texture.cpp_loadTextureAndGetData_FUN_00574e80 ; 004071f0
-        ;   XREF to: 00574e80 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_loadTextureAndGetData_FUN_00574e80()
+        ;   XREF to: 00574e80 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_loadTextureAndGetData_FUN_00574e80(SMRGLTextureBasic * texture_info)
     ADD ESP,0x4                         ; 004071f5
     MOV EAX,dword ptr [ESP + 0x14]      ; 004071f8
     MOV EAX,dword ptr [EAX + 0x110]     ; 004071fc

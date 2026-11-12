@@ -15,7 +15,7 @@
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0043e930 at 0043eb32
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0043d220 at 0043d24a
 ;   core_dfilter.cpp_CFilterCache_findFilter_FUN_004477a0 at 004477b9
-;   core_dfilter.cpp_FUN_00447660 at 00447679
+;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660 at 00447679
 ;   core_doc.cpp_CDoc_setup_FUN_00450620 at 00450941
 ;   core_doc.cpp_FUN_004568e0 at 00457adc
 ;   ... and 40 more

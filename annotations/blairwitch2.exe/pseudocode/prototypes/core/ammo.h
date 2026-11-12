@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_ammo.cpp_factoryFuncAmmo_FUN_0040dd80
 // Address: 0040dd80
-void factoryFuncAmmo(void);
+CAmmo * __cdecl factoryFuncAmmo(void);
 
 // Original: core_ammo.cpp_CAmmo_getActorType_FUN_0040dda0
 // Address: 0040dda0

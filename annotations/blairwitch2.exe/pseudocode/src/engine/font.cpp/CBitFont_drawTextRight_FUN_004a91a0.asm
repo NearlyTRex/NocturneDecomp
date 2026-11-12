@@ -13,11 +13,11 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70 at 00468089
-;   engine_font.cpp_FUN_004a9230 at 004a9282
+;   engine_font.cpp_CBitFont_printFV_FUN_004a9230 at 004a9282
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0
-;   engine_font.cpp_FUN_004aaf00
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH EAX                            ; 004a91b6
     MOV ESI,dword ptr [ESP + 0x20]      ; 004a91b7
     PUSH ESI                            ; 004a91bb
-    CALL engine_font.cpp_FUN_004aaf00   ; 004a91bc
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004a91bc
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a91c1
     MOV EDX,dword ptr [ESP + 0x20]      ; 004a91c4
     SUB EDX,EAX                         ; 004a91c8

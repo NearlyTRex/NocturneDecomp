@@ -36,13 +36,13 @@ section .text
     LEA EAX,[EBX + 0x728]               ; 00447a53
     PUSH EAX                            ; 00447a59
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 00447a5a
-        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b1c0()
+        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b1c0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 00447a5f
     PUSH 0x5d7107                       ; 00447a62 | = "direction"
     LEA EAX,[EBX + 0x734]               ; 00447a67
     PUSH EAX                            ; 00447a6d
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 00447a6e
-        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b1c0()
+        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b1c0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 00447a73
     PUSH 0x5d7111                       ; 00447a76 | = "startEvent"
     LEA EAX,[EBX + 0x740]               ; 00447a7b

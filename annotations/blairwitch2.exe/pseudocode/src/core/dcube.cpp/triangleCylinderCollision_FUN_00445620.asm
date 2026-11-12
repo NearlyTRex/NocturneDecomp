@@ -221,7 +221,7 @@ section .text
     LEA EAX,[ESP + 0x54]                ; 004457da
     PUSH EAX                            ; 004457de
     CALL core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004454b0 ; 004457df
-        ;   XREF to: 004454b0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004454b0()
+        ;   XREF to: 004454b0 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004454b0(CVector3f * segment_start, CVector3f * segment_end, float radius, float * out_height)
     ADD ESP,0x10                        ; 004457e4
     MOV ECX,dword ptr [EBP + 0x20]      ; 004457e7
     PUSH ECX                            ; 004457ea
@@ -232,7 +232,7 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 004457f5
     PUSH EAX                            ; 004457f9
     CALL core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004454b0 ; 004457fa
-        ;   XREF to: 004454b0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004454b0()
+        ;   XREF to: 004454b0 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004454b0(CVector3f * segment_start, CVector3f * segment_end, float radius, float * out_height)
     ADD ESP,0x10                        ; 004457ff
     MOV EDI,dword ptr [EBP + 0x20]      ; 00445802
     PUSH EDI                            ; 00445805
@@ -243,7 +243,7 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 00445810
     PUSH EAX                            ; 00445814
     CALL core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004454b0 ; 00445815
-        ;   XREF to: 004454b0 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004454b0()
+        ;   XREF to: 004454b0 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004454b0(CVector3f * segment_start, CVector3f * segment_end, float radius, float * out_height)
     FLD float ptr [EBX + 0xc]           ; 0044581a
     FMUL ST0                            ; 0044581d
     FLD float ptr [EBX + 0x14]          ; 0044581f

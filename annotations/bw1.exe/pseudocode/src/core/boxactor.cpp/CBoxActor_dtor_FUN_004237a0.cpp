@@ -14,7 +14,7 @@ CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_004237a0(CBoxActor *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBoxActorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBoxActorTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

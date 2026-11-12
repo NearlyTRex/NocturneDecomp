@@ -320,7 +320,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x152f34]  ; 0045a3e5
     PUSH ECX                            ; 0045a3eb
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 0045a3ec
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 0045a3f1
     ADD ESP,0x8                         ; 0045a3f3
     TEST EAX,EAX                        ; 0045a3f6
@@ -466,7 +466,7 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 0045a5e8
     PUSH EAX                            ; 0045a5ec
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0045a5ed
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0045a5f2
     LEA EAX,[ESP + 0x18]                ; 0045a5f5
     PUSH EAX                            ; 0045a5f9
@@ -714,7 +714,7 @@ section .text
     SUB ESP,0x4                         ; 0045a970
     FSTP float ptr [ESP]                ; 0045a973
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0045a976
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x22c],EAX     ; 0045a97b
     FLD float ptr [ESP + 0x22c]         ; 0045a982
     ADD ESP,0x4                         ; 0045a989
@@ -726,7 +726,7 @@ section .text
     SUB ESP,0x4                         ; 0045a9a6
     FSTP float ptr [ESP]                ; 0045a9a9
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0045a9ac
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x22c],EAX     ; 0045a9b1
     FLD float ptr [ESP + 0x22c]         ; 0045a9b8
     ADD ESP,0x4                         ; 0045a9bf
@@ -780,7 +780,7 @@ section .text
     SUB ESP,0x4                         ; 0045aa80
     FSTP float ptr [ESP]                ; 0045aa83
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0045aa86
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x22c],EAX     ; 0045aa8b
     FLD float ptr [ESP + 0x22c]         ; 0045aa92
     ADD ESP,0x4                         ; 0045aa99
@@ -792,7 +792,7 @@ section .text
     FSTP float ptr [EAX + 0xc]          ; 0045aab2
     FSTP float ptr [ESP]                ; 0045aab5
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0045aab8
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x22c],EAX     ; 0045aabd
     FLD float ptr [ESP + 0x22c]         ; 0045aac4
     ADD ESP,0x4                         ; 0045aacb

@@ -35,16 +35,16 @@ void core_game_cpp_FUN_004bc840(CGame *param_1,int param_2)
   param_1->total_play_time = 0.0;
   _DAT_01c25590 = _DAT_01511cc0;
   param_1->is_loading = 0;
-  iVar4 = _fopen("pod.ini",&DAT_005d8691);
-  if (iVar4 != 0) {
-    _fclose(iVar4);
+  p_Var3 = _fopen("pod.ini",&DAT_005d8691);
+  if (p_Var3 != (_FILE *)0x0) {
+    _fclose(p_Var3);
   }
   engine_ini_cpp_FUN_004d8910(&local_324,"system\\nocturne.ini",&DAT_005d869c);
   local_1c = 0;
   engine_ini_cpp_FUN_004d8b20(&local_324,"Act1Code",&local_1c);
   local_18 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Coffin Rock");
   local_14 = 0xffffffff;
-  if (param_2 == 1 || iVar4 != 0) {
+  if (param_2 == 1 || p_Var3 != (_FILE *)0x0) {
     iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970
                       (g_CEditorToolsPtr,"Select mission to play","world",
                        "*.msn",local_120,0);

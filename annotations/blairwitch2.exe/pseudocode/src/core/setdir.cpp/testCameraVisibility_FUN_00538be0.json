@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 306,
+    "complexity_score": 51,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 36,
-    "suspect_count": 26,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 164
@@ -26,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setdir.cpp_testCameraVisibility_FUN_00538be0",
-    "signature": "float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00538be0(CDemonActor *param_1,CVector3i *param_2,SMRGLHeaderPrimitive *param_3,int param_4,int param_5,undefined4 param_6)"
+    "signature": "float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00538be0(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius)"
   },
   "function_calls": [
     {
@@ -52,9 +51,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -95,13 +94,70 @@
     },
     "pcode_op_count": 641
   },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "005750a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00511d80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1726
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 24,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "bbox_vertices",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "primitives",
+        "offset": 12,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      },
+      {
+        "is_param": true,
+        "name": "camera_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "camera",
+        "offset": 20,
+        "size": 4,
+        "type": "C3DSCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "radius",
+        "offset": 24,
+        "size": 4,
+        "type": "float"
+      }
+    ]
   },
   "suspects": [
     {
@@ -111,206 +167,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00538be0(CDemonActor *param_1,CVector3i *param_2,SMRGLHeaderPrimitive *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00538be0(CDemonActor *param_1,CVector3i *param_2,SMRGLHeaderPrimitive *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00538be0(CDemonActor *param_1,CVector3i *param_2,SMRGLHeaderPrimitive *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00538be0(CDemonActor *param_1,CVector3i *param_2,SMRGLHeaderPrimitive *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00538be0(CDemonActor *param_1,CVector3i *param_2,SMRGLHeaderPrimitive *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00538be0(CDemonActor *param_1,CVector3i *param_2,SMRGLHeaderPrimitive *param_3,int param_4,int param_5,uint param_6)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_5 + 0x1a0) != 0) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(fVar4 = *(float *)(param_5 + 0x100) - (param_1->location).position.x,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(fVar4 = *(float *)(param_5 + 0x100) - (param_1->location).position.x,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)(param_5 + 0x104) - (param_1->location).position.y,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)(param_5 + 0x104) - (param_1->location).position.y,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(param_5 + 0x108) - (param_1->location).position.z,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(param_5 + 0x108) - (param_1->location).position.z,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(param_5,&param_1->location,param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_5,&param_1->location,param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "(param_5,&param_1->location,param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "this_ptr = g_CZThumbPool + param_4 * 6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (*(int *)(param_5 + 0x140) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(this_ptr,param_1,param_2,param_3,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(this_ptr,param_1,param_2,param_3,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(this_ptr,param_1,param_2,param_3,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(this_ptr,param_1,param_2,param_3,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(this_ptr,param_1,param_2,param_3,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(this_ptr,param_1,param_2,param_3,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "} while (this_ptr != g_CZThumbPool + param_4 * 6 + 6);",
-      "type": "unnamed_param"
     }
   ]
 }

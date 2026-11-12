@@ -141,8 +141,8 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
           afStack_b8[(uint)bVar9 * -2 + 0xc] = afStack_b8[(uint)bVar9 * -2 + 0xf];
           afStack_b8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd] =
                afStack_b8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x10];
-          fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                       (fStack_88 - (this_ptr->base).base.base.orient.vec.y);
+          fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                (fStack_88 - (this_ptr->base).base.base.orient.vec.y);
           if (ABS(fStack_14) < (float)_DAT_005e51c2) {
             if (iStack_1c == 0) {
               iVar5 = 2;
@@ -247,8 +247,8 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004efc90(CHotDemon *this_pt
             afStack_b8[(uint)bVar9 * -2 + 0x15] = afStack_b8[(uint)bVar9 * -2 + 0x1e];
             afStack_b8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x16] =
                  afStack_b8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x1f];
-            fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                         (fStack_64 - (this_ptr->base).base.base.orient.vec.y);
+            fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                  (fStack_64 - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(fStack_14) < (float)_DAT_005e51c2) {
               if (iStack_1c == 7) {
                 iVar5 = 8;
@@ -347,7 +347,8 @@ LAB_004eff1b:
     if (EVar3 < WALK_STATE_NO_PATH) goto LAB_004efd5e;
     if (EVar3 != WALK_STATE_NO_PATH) goto LAB_004eff1b;
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,0,1);
-    engine_console_cpp_FUN_00445430(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

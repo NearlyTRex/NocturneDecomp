@@ -18,7 +18,7 @@ CUnion * core_union_cpp_CUnion_dtor_FUN_005a5a40(CUnion *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CUnionTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CUnionTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

@@ -12,11 +12,11 @@ void __cdecl core_moon_cpp_CMoon_free_FUN_004f9580(CMoon *this_ptr)
   CAlphaBitmap *this_ptr_00;
   
   if (this_ptr->is_loaded != 0) {
-    engine_alphabit_cpp_FUN_0040d400(&CAlphaBitmap_01d883a8);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d883a8);
     this_ptr_00 = g_MoonAnimTextures;
-    engine_alphabit_cpp_FUN_0040d400(&CAlphaBitmap_01d88614);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d88614);
     do {
-      engine_alphabit_cpp_FUN_0040d400(this_ptr_00);
+      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(this_ptr_00);
       this_ptr_00 = this_ptr_00 + 1;
     } while (this_ptr_00 != &CAlphaBitmap_01d88614);
     this_ptr->is_loaded = 0;

@@ -47,7 +47,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00516f4d
     PUSH EAX                            ; 00516f51
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 00516f52
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00516f57
     CMP EAX,0x1                         ; 00516f5a
     JNZ 0x00516fbe                      ; 00516f5d
@@ -144,7 +144,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x20]      ; 00517058
     PUSH EDI                            ; 0051705b
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0051705c
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00517061
     CMP EAX,0x1                         ; 00517064
     JNZ 0x00516fbe                      ; 00517067
@@ -198,7 +198,7 @@ section .text
     PUSH ESI                            ; 005170c4
     PUSH EAX                            ; 005170c5
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 005170c6
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005170cb
     CMP EAX,0x1                         ; 005170ce
     JNZ 0x00516fbe                      ; 005170d1
@@ -237,7 +237,7 @@ section .text
     PUSH ESI                            ; 0051711a
     PUSH EBP                            ; 0051711b
     CALL crt_stdio.c_fseek_FUN_005b929c ; 0051711c
-        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005b929c()
+        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005b929c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00517121
     ADD ESP,0x1c                        ; 00517124
     POP EBP                             ; 00517127

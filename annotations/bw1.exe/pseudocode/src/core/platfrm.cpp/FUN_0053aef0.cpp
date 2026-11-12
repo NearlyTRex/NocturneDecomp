@@ -11,14 +11,14 @@ void __cdecl core_platfrm_cpp_FUN_0053aef0(CPlatform *this_ptr)
 {
   int iVar1;
   int iVar2;
-  uint *puVar3;
-  uint *puVar4;
+  CMatrix3x4f *pCVar3;
+  float *pfVar4;
   byte bVar5;
   float afStackY_1034 [979];
   CVector3f *new_orientation;
   CMatrix3x4f local_dc;
-  uint local_ac [12];
-  uint local_7c [12];
+  CMatrix3x4f local_ac;
+  float local_7c [12];
   float local_4c;
   float afStack_48 [5];
   CVector3f local_34;
@@ -34,13 +34,13 @@ void __cdecl core_platfrm_cpp_FUN_0053aef0(CPlatform *this_ptr)
   iVar2 = 0;
   do {
     if (this_ptr->attach_actors[0].actor != (CDemonActor *)0x0) {
-      core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_14[iVar2].matrix,&local_dc);
-      puVar3 = local_ac;
-      puVar4 = local_7c;
+      core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_14[iVar2].matrix,&local_dc,&local_ac);
+      pCVar3 = &local_ac;
+      pfVar4 = local_7c;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *puVar4 = *puVar3;
-        puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-        puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+        *pfVar4 = pCVar3->m[0].w;
+        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+        pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
       }
       local_1c = this_ptr->attach_actors[0].actor;
       local_18 = (local_1c->vtable)._ub;

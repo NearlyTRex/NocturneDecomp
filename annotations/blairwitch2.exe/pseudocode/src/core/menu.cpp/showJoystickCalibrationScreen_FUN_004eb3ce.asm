@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3ce(undefined4 param_1)
+; void core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3ce(char *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -14,8 +14,8 @@
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   engine_font.cpp_FUN_004a8df0
-;   engine_font.cpp_FUN_004aaf00
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH EDX                            ; 004eb3e1
     MOV ECX,dword ptr [0x01511cb8]      ; 004eb3e2 | DAT_01511cb8
     PUSH ECX                            ; 004eb3e8
-    CALL engine_font.cpp_FUN_004aaf00   ; 004eb3e9
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004eb3e9
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004eb3ee
     SAR EDX,0x1f                        ; 004eb3f0
     SUB EAX,EDX                         ; 004eb3f3

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_netgame_cpp_findSimFrame_FUN_0052c2de(int param_1)
+; int __cdecl core_netgame_cpp_findSimFrame_FUN_0052c2de(int sequence_number)
 ;
+; Parameters:
+; int              Stack[0x4]:4   sequence_number
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d715a8

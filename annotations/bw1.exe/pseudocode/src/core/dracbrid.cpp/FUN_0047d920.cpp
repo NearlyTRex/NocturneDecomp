@@ -174,7 +174,7 @@ void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_
         sound_sndmain_cpp_FUN_005727e0((CVector3f *)(puVar5 + 1));
         sound_sndmain_cpp_FUN_00572880((CVector3f *)(puVar5 + 4));
         sound_sndmain_cpp_FUN_005728e0(volume);
-        core_sound_cpp_FUN_0057be00(0x02C82A60,local_1ac,sound_name);
+        core_sound_cpp_CSound_findRandomSoundFile_FUN_0057be00(0x02C82A60,local_1ac,sound_name);
         uVar4 = sound_sndmain_cpp_startSfx_FUN_00572d20(local_1ac);
         *puVar5 = uVar4;
         sound_sndmain_cpp_popSfxOptions_FUN_00572b40();

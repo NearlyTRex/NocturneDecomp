@@ -20,7 +20,7 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dt
     return this_ptr;
   }
   (this_ptr->base).vtable = &g_CDeformableModelInstanceVTable;
-  core_skeleton_cpp_CDeformableModelInstance_FUN_0051b7d0(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_free_FUN_0051b7d0(this_ptr);
   pCVar1 = core_curtain_cpp_CVector3f_arrdtor100_FUN_0043f9a0(this_ptr->bone_origins,0);
   ptr = (CDeformableModelInstance *)
         core_motion_cpp_CMotionController_dtor_FUN_004e1150((CMotionController *)&pCVar1[-8].z,1);

@@ -77,11 +77,58 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_dstrendr.cpp_blur3x3MMXStride128_FUN_004889b8",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"output_buffer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"ulonglong*"
+        },
+        {
+          "name":"input_buffer",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"ulonglong*"
+        },
+        {
+          "name":"pixel_count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -212,10 +259,35 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_time.c__localtime_FUN_005c2738",
-    "ret":"undefined1",
+    "ret":"_tm*",
     "vars":{
+      "params":[
+        {
+          "name":"timer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"time_t*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -231,6 +303,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c8b38",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -249,6 +322,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c8db8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -267,6 +341,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c9db8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -285,6 +360,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005cc138",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -303,6 +379,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005cd2b8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -365,6 +442,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005cd438",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -384,6 +462,7 @@
     "importable":true,
     "name":"crt_user32.c_DestroyWindow",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000031",
     "thunk":true,
     "vars":{
@@ -430,6 +509,7 @@
     "importable":true,
     "name":"crt_user32.c_GetClipboardData",
     "ret":"HANDLE",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000035",
     "thunk":true,
     "vars":{

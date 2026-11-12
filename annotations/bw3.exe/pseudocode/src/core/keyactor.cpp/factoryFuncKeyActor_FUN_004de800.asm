@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_keyactor_cpp_factoryFuncKeyActor_FUN_004de800(void)
+; CKeyActor * __cdecl core_keyactor_cpp_factoryFuncKeyActor_FUN_004de800(void)
 ;
 ;
 ; Called Functions:

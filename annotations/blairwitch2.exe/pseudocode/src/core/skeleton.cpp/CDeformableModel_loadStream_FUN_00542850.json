@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 903,
-    "complexity_score": 358,
+    "complexity_score": 334,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 263,
+    "pseudocode_lines": 239,
     "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1166
+    "total_lines": 1142
   },
   "cross_references": [
     {
@@ -303,6 +303,32 @@
     },
     "pcode_op_count": 3659
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00564ed0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00549a60",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059b970",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9666
+    },
+    "nocturne.exe": {
+      "addr": "00519280",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 152,
     "local_size": 144,
@@ -554,55 +580,55 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 42,
       "match": "DAT_005e6e5d",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,&DAT_005e6e5d,&local_64);",
+      "text": "iVar2 = _fscanf(file_handle,&DAT_005e6e5d);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 123,
+      "line": 110,
       "match": "DAT_005e6f79",
       "severity": "mild",
-      "text": "iVar4 = _fscanf(file_handle,&DAT_005e6f79,this_ptr->parts[iVar1].adj_part_list + iVar2)",
+      "text": "iVar4 = _fscanf(file_handle,&DAT_005e6f79);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 124,
       "match": "DAT_005e6f5c",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e6f5c,this_ptr->parts[iVar1].adj_part_list + iVar2);",
+      "text": "_fscanf(file_handle,&DAT_005e6f5c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 155,
+      "line": 138,
       "match": "DAT_005e6f7d",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,&DAT_005e6f7d,local_30);",
+      "text": "iVar2 = _fscanf(file_handle,&DAT_005e6f7d);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 198,
+      "line": 178,
       "match": "DAT_005e6fb0",
       "severity": "mild",
-      "text": "iVar4 = _fscanf(file_handle,&DAT_005e6fb0,this_ptr->cap_index_ptr[iVar1] + iVar2);",
+      "text": "iVar4 = _fscanf(file_handle,&DAT_005e6fb0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 254,
+      "line": 230,
       "match": "DAT_005e6fd9",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e6fd9,this_ptr->bone_to_part_map + iVar1);",
+      "text": "_fscanf(file_handle,&DAT_005e6fd9);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 236,
+      "line": 213,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->bias_used).z = 0.0;",

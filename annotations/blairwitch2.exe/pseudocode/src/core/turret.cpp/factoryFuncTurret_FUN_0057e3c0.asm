@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_turret_cpp_factoryFuncTurret_FUN_0057e3c0(void)
+; CTurret * __cdecl core_turret_cpp_factoryFuncTurret_FUN_0057e3c0(void)
 ;
 ;
 ; Called Functions:

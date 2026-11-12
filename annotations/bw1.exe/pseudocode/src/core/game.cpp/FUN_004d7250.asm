@@ -88,7 +88,7 @@ section .text
     XOR EBX,EBX                         ; 004d72d2
     MOV [0x01c3eb50],EAX                ; 004d72d4 | DAT_01c3eb50
     CALL crt_stdio.c_fopen_FUN_005c157c ; 004d72d9
-        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005c157c()
+        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004d72de
     TEST EAX,EAX                        ; 004d72e1
     JZ 0x004d72f3                       ; 004d72e3

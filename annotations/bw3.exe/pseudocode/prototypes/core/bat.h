@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_bat.cpp_factoryFuncBat_FUN_0040edb0
 // Address: 0040edb0
-void factoryFuncBat(void);
+CBat * __cdecl factoryFuncBat(void);
 
 // Original: core_bat.cpp_CBat_getActorType_FUN_0040edd0
 // Address: 0040edd0

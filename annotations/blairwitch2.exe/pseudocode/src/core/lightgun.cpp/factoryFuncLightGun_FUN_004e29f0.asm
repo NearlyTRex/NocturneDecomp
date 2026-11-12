@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lightgun_cpp_factoryFuncLightGun_FUN_004e29f0(void)
+; CLightGun * __cdecl core_lightgun_cpp_factoryFuncLightGun_FUN_004e29f0(void)
 ;
 ;
 ; Called Functions:

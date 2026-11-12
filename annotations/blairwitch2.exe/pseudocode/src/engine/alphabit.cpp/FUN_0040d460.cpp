@@ -14,7 +14,7 @@ void engine_alphabit_cpp_FUN_0040d460(CAlphaBitmap *param_1,int param_2,int para
   char *pcVar1;
   uint *puVar2;
   
-  engine_alphabit_cpp_FUN_0040d540(param_1);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(param_1);
   param_1->width = param_2;
   param_1->height = param_3;
   pcVar1 = (char *)malloc(param_2 * param_3);

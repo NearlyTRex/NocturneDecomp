@@ -21,7 +21,7 @@
     {
       "addr": "00537c30",
       "from_addr": "00537c76",
-      "name": "cockpit_pkbitmap.cpp_FUN_00537c30",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -90,7 +90,7 @@
       {
         "call_addr": "00537c76",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_00537c30",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -147,6 +147,32 @@
       "STORE": 42
     },
     "pcode_op_count": 737
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00516a60",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050fa90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054b190",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9103
+    },
+    "nocturne.exe": {
+      "addr": "004f47b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9608
+    }
   },
   "stack_frame": {
     "frame_size": 28,

@@ -27,13 +27,13 @@
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;   engine_dosio.cpp_makePath_FUN_004795b0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_0049a620
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0
 ;   shape_edittool.cpp_CPickList_dtor_FUN_0049a710
 ;   shape_edittool.cpp_CStrList_getFieldAt_FUN_004998b0
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00499ed0
 ;   shape_edittool.cpp_CStrList_sortAll_FUN_004997f0
-;   shape_edittool.cpp_FUN_004943a0
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
 ;
 ; *****************************************************************************
@@ -184,8 +184,8 @@ section .text
     PUSH EAX                            ; 00495144
     MOV EAX,dword ptr [ESP + 0x8dc]     ; 00495145
     PUSH EAX                            ; 0049514c
-    CALL shape_edittool.cpp_FUN_004943a0 ; 0049514d
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 0049514d
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00495152
     XOR EBX,EBX                         ; 00495155
     PUSH EBX                            ; 00495157

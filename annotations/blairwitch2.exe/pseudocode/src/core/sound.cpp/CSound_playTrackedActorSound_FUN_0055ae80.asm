@@ -11,7 +11,7 @@
 ;
 ; XREF[6]:
 ;   core_actor.cpp_CDemonActor_playAmbientSound_FUN_00408e70 at 00408e86
-;   core_chain.cpp_FUN_005b4d30 at 005b5614
+;   core_chain.cpp_CChain_process_FUN_005b4d30 at 005b5614
 ;   core_pendulum.cpp_CPendulum_updateSwing_FUN_005156d0 at 00515c01
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055ab7b
 ;   core_sound.cpp_FUN_00559b4e at 00559fd1

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 170,
+    "complexity_score": 151,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 35,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 70,
-    "suspect_count": 9,
+    "pseudocode_lines": 71,
+    "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 308
+    "total_lines": 309
   },
   "cross_references": [
     {
@@ -321,6 +321,26 @@
     },
     "pcode_op_count": 791
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004da990",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3341
+    },
+    "nocedit.exe": {
+      "addr": "004fd220",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3358
+    },
+    "nocturne.exe": {
+      "addr": "004befa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3544
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -360,22 +380,6 @@
       "match": "DAT_005c5f3f",
       "severity": "mild",
       "text": "p_Var1 = engine_dosio_cpp_FUN_004659c0(&DAT_005c5f4e,\"invsize.txt\",&DAT_005c5f3f);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00600180",
-      "severity": "mild",
-      "text": "_fscanf(p_Var1,\"%d,%d\\n\",&DAT_00600180,&DAT_00600184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00600184",
-      "severity": "mild",
-      "text": "_fscanf(p_Var1,\"%d,%d\\n\",&DAT_00600180,&DAT_00600184);",
       "type": "undefined_data"
     },
     {

@@ -102,8 +102,8 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_00520c10(CMoloch *this_ptr,fl
                         (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_b0,
                          (this_ptr->base).base.base.direction_hint);
       if (iVar6 != 0) {
-        fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                     (CStack_b0.y - (this_ptr->base).base.base.orient.vec.y);
+        fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                              (CStack_b0.y - (this_ptr->base).base.base.orient.vec.y);
         fVar2 = fStack_14 * _DAT_005ea29e * (float)_DAT_005ea2a6;
         fStack_34 = -local_24;
         (this_ptr->base).player_input.turn_speed = fVar2;
@@ -150,8 +150,8 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_00520c10(CMoloch *this_ptr,fl
       afStack_a0[3] = fStack_7c;
       local_90 = fStack_78;
     }
-    fStack_40 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                 (afStack_a0[3] - (this_ptr->base).base.base.orient.vec.y);
+    fStack_40 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                          (afStack_a0[3] - (this_ptr->base).base.base.orient.vec.y);
     if (local_28 < fStack_40) {
       fStack_40 = local_28;
     }

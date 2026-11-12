@@ -16,7 +16,7 @@ CNecklace * core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CNecklaceTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CNecklaceTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

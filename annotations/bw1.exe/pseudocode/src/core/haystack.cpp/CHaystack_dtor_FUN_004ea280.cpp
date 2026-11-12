@@ -13,7 +13,7 @@ CHaystack * __cdecl core_haystack_cpp_CHaystack_dtor_FUN_004ea280(CHaystack *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHaystackTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHaystackTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

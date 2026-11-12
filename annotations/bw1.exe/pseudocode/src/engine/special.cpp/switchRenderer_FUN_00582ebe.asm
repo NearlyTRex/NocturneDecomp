@@ -9,8 +9,8 @@
 ;   undefined4 DAT_02c834c0
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_00581310
 ;   engine_special.cpp_kill_FUN_00581f20
+;   engine_special.cpp_loadExternalRenderer_FUN_00581310
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
         ;   Label: LAB_00582ef2
     MOV EDX,dword ptr [0x02c834c0]      ; 00582ef3 | DAT_02c834c0
     PUSH EDX                            ; 00582ef9
-    CALL engine_special.cpp_FUN_00581310 ; 00582efa
-        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00581310(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_00581310 ; 00582efa
+        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00581310(HWND window_handle)
     ADD ESP,0x4                         ; 00582eff
     POP EDI                             ; 00582f02
     POP ESI                             ; 00582f03

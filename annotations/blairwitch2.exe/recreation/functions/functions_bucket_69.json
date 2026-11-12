@@ -1,14 +1,40 @@
 [
   {
     "addr":"004722e9",
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "instructions":60,
     "method":"renderPerspectiveTexturedScanline",
     "name":"core_dstrendr.cpp_renderPerspectiveTexturedScanline_FUN_004722e9",
+    "params":[
+      {
+        "name":"left_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dstrendr.cpp",
@@ -20,7 +46,7 @@
       "004f7280",
       "004f7a50"
     ],
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "data_refs":[
       "00403b89",
       "00403c31",
@@ -87,10 +113,36 @@
     "instructions":145,
     "method":"renderPerspectiveCorrectScanline16",
     "name":"engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0055d2e9",
+    "params":[
+      {
+        "name":"left_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/special.cpp",

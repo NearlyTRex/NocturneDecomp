@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
-;   core_dcamera.cpp_FUN_0044a3e0
+;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0
 ;   core_game.cpp_calculateIrisFadeCenter_FUN_004bd6a0
 ;
 ; *****************************************************************************
@@ -106,8 +106,8 @@ section .text
     PUSH 0x2038f4c                      ; 004bd567
     LEA ESI,[ESP + 0x8c]                ; 004bd56c
     LEA EDI,[ESP + 0x50]                ; 004bd573
-    CALL core_dcamera.cpp_FUN_0044a3e0  ; 004bd577
-        ;   XREF to: 0044a3e0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0044a3e0()
+    CALL core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0 ; 004bd577
+        ;   XREF to: 0044a3e0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x8c]                ; 004bd57c
     ADD ESP,0x8                         ; 004bd583
     MOVSD ES:EDI,ESI                    ; 004bd586

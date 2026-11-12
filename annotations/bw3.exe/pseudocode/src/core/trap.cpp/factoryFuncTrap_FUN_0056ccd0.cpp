@@ -1,20 +1,20 @@
 // Name: core_trap.cpp_factoryFuncTrap_FUN_0056ccd0
 // Address: 0056ccd0
 // Address Range: [[0056ccd0, 0056cceb]]
-// Convention: unknown
-// Signature: void core_trap_cpp_factoryFuncTrap_FUN_0056ccd0(void)
+// Convention: __cdecl
+// Signature: CTrap * __cdecl core_trap_cpp_factoryFuncTrap_FUN_0056ccd0(void)
 
 #include "nocturne.h"
 
-void core_trap_cpp_factoryFuncTrap_FUN_0056ccd0(void)
+CTrap * __cdecl core_trap_cpp_factoryFuncTrap_FUN_0056ccd0(void)
 
 {
-  CTrap *this_ptr;
+  CTrap *pCVar1;
   
-  this_ptr = (CTrap *)operator_new(0x2dc);
-  if (this_ptr == (CTrap *)0x0) {
-    return;
+  pCVar1 = (CTrap *)operator_new(0x2dc);
+  if (pCVar1 == (CTrap *)0x0) {
+    return (CTrap *)0x0;
   }
-  core_trap_cpp_CTrap_ctor_FUN_0056cd00(this_ptr);
-  return;
+  pCVar1 = core_trap_cpp_CTrap_ctor_FUN_0056cd00(pCVar1);
+  return pCVar1;
 }

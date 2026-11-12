@@ -14,56 +14,57 @@ int __cdecl core_hino_cpp_CHino_renderTransparent_FUN_0059d120(CHino *this_ptr)
   CDeformableModelInstance *this_ptr_00;
   double dVar1;
   CDemonRenderer *this_ptr_01;
+  CCharacter *this_ptr_02;
   int iVar2;
-  int iVar3;
+  uint *puVar3;
   uint *puVar4;
-  uint *puVar5;
-  byte bVar6;
-  float10 fVar7;
+  byte bVar5;
+  float10 fVar6;
   uint auStack_50 [6];
   uint auStack_38 [6];
   double dStack_20;
   int iStack_18;
   
-  bVar6 = 0;
+  bVar5 = 0;
   if (0.0 < (double)this_ptr->vanish_timer) {
     dVar1 = (double)this_ptr->vanish_timer * _DAT_005d9e74;
     if (this_ptr->vanishing == 0) {
       iStack_18 = core_hino_cpp_FUN_0059b740(100);
-      fVar7 = (float10)iStack_18 * (float10)dVar1;
+      fVar6 = (float10)iStack_18 * (float10)dVar1;
     }
     else {
       dStack_20 = 1.0 - dVar1;
       iStack_18 = core_hino_cpp_FUN_0059b740(100);
-      fVar7 = (float10)iStack_18 * (float10)dStack_20;
+      fVar6 = (float10)iStack_18 * (float10)dStack_20;
     }
     round();
-    this_ptr->render_alpha = (int)ROUND(fVar7);
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840
-                      ((this_ptr->base).base.carry_hands[0].carry_actor,g_CWeaponClassInfo.name_hash
-                      );
-    if (iVar2 != 0) {
-      (**(code **)(*(int *)(iVar2 + 0x154) + 0xf8))(iVar2,this_ptr->render_alpha);
-      iVar3 = core_hino_cpp_FUN_0059b740(100);
-      if (iVar3 == this_ptr->render_alpha) {
-        *(uint *)(iVar2 + 0xf8) = 1;
-        *(uint *)(iVar2 + 0xfc) = 0;
+    this_ptr->render_alpha = (int)ROUND(fVar6);
+    this_ptr_02 = (CCharacter *)
+                  core_actor_cpp_castToClassHash_FUN_0040c840
+                            ((this_ptr->base).base.carry_hands[0].carry_actor,
+                             g_CWeaponClassInfo.name_hash);
+    if (this_ptr_02 != (CCharacter *)0x0) {
+      (*(((this_ptr_02->base).vtable._uc)->_uc).releaseVictim)(this_ptr_02);
+      iVar2 = core_hino_cpp_FUN_0059b740(100);
+      if (iVar2 == this_ptr->render_alpha) {
+        (this_ptr_02->base).is_renderable = 1;
+        (this_ptr_02->base).is_transparent = 0;
       }
       else {
-        *(uint *)(iVar2 + 0xf8) = 0;
-        *(uint *)(iVar2 + 0xfc) = 1;
+        (this_ptr_02->base).is_renderable = 0;
+        (this_ptr_02->base).is_transparent = 1;
       }
     }
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
             ((CDemonActor *)this_ptr,(CBoundingBox3D *)0x0);
-  puVar4 = auStack_50;
-  puVar5 = auStack_38;
+  puVar3 = auStack_50;
+  puVar4 = auStack_38;
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
   iVar2 = core_box_cpp_FUN_0041daf0(auStack_38);
   this_ptr_01 = DAT_005f2afc;

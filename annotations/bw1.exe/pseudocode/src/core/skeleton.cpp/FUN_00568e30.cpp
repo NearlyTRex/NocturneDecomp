@@ -60,7 +60,7 @@ void core_skeleton_cpp_FUN_00568e30(CDeformableModelInstance *param_1,int param_
       local_88.m[1].z = local_24[0];
       local_88.m[2].z = local_24[1];
     }
-    core_xform_cpp_FUN_005b7410
+    core_xform_cpp_quaternionToMatrix3x3_FUN_005b7410
               (&local_88,(param_1->bone_transform).pose_data.bone_rotations + param_2);
     if ((param_1->bone_transform).bone_scales[param_2] != 1.0) {
       local_88.m[0].w = local_88.m[0].w * (param_1->bone_transform).bone_scales[param_2];

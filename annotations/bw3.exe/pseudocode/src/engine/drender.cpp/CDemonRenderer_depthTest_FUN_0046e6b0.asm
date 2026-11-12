@@ -64,7 +64,7 @@ section .text
         ;   Label: LAB_0046e6f6
     PUSH EBX                            ; 0046e6f8
     CALL engine_prim.c_replaceWWithDepth_FUN_00515a80 ; 0046e6f9
-        ;   XREF to: 00515a80 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_00515a80()
+        ;   XREF to: 00515a80 (UNCONDITIONAL_CALL)  ; void engine_prim.c_replaceWWithDepth_FUN_00515a80(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0046e6fe
     JMP 0x0046e6c6                      ; 0046e701
         ;   XREF to: 0046e6c6 (UNCONDITIONAL_JUMP)  ; LAB_0046e6c6

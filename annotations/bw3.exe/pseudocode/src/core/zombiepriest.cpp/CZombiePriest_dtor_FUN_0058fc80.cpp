@@ -18,7 +18,7 @@ CZombiePriest * core_zombiepriest_cpp_CZombiePriest_dtor_FUN_0058fc80(CZombiePri
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CZombiePriestTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CZombiePriestTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

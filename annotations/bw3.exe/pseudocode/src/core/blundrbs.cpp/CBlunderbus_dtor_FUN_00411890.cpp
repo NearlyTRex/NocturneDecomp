@@ -15,7 +15,7 @@ CBlunderbus * core_blundrbs_cpp_CBlunderbus_dtor_FUN_00411890(CBlunderbus *this_
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBlunderbusTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBlunderbusTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

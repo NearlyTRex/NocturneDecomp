@@ -1,14 +1,14 @@
 // Name: core_netgame.cpp_resetGameTime_FUN_0050af1e
 // Address: 0050af1e
 // Address Range: [[0050af1e, 0050af40]]
-// Convention: unknown
-// Signature: void core_netgame_cpp_resetGameTime_FUN_0050af1e(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_resetGameTime_FUN_0050af1e(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_netgame_cpp_resetGameTime_FUN_0050af1e(void)
+void __cdecl core_netgame_cpp_resetGameTime_FUN_0050af1e(void)
 
 {
   int iVar1;

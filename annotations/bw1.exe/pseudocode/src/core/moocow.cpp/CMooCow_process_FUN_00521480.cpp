@@ -110,7 +110,8 @@ LAB_005216f1:
       iVar7 = 1;
       iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,4);
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar1->base,iVar5,iVar7);
-      engine_console_cpp_FUN_00445430(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+      engine_console_cpp_CConsole_printf_FUN_00445430
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
     }
   }
 LAB_0052155f:

@@ -18,7 +18,7 @@ CSteuben * core_villain_cpp_CSteuben_dtor_FUN_005a5d70(CSteuben *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSteubenTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSteubenTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

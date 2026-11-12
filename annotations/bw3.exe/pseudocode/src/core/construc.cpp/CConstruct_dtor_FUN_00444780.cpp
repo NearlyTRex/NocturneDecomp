@@ -18,7 +18,7 @@ CConstruct * core_construc_cpp_CConstruct_dtor_FUN_00444780(CConstruct *this_ptr
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CConstructTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CConstructTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

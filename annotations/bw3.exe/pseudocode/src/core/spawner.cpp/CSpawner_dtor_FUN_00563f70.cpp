@@ -16,7 +16,7 @@ CSpawner * core_spawner_cpp_CSpawner_dtor_FUN_00563f70(CSpawner *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSpawnerTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSpawnerTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

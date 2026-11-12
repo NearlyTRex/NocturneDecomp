@@ -11,7 +11,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0
 {
   CKeyFramedModel *pCVar1;
   
-  pCVar1 = (CKeyFramedModel *)core_dmodel_cpp_loadModel_FUN_00468780(this_ptr->model_name);
+  pCVar1 = core_dmodel_cpp_loadModel_FUN_00468780(this_ptr->model_name);
   this_ptr->model_ptr = pCVar1;
   return pCVar1;
 }

@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_getSoundMemoryStats_FUN_00551cb0(int *param_1,int *param_2,int *param_3,int *param_4,int *param_5,int *param_6)
+; void __cdecl sound_sndmain_cpp_getSoundMemoryStats_FUN_00551cb0(int *out_referenced_count,int *out_total_bytes_referenced,int *out_unreferenced_count,int *out_total_bytes_unreferenced,int *out_free_slots,int *out_available_memory)
 ;
+; Parameters:
+; int *            Stack[0x4]:4   out_referenced_count
+; int *            Stack[0x8]:4   out_total_bytes_referenced
+; int *            Stack[0xc]:4   out_unreferenced_count
+; int *            Stack[0x10]:4   out_total_bytes_unreferenced
+; int *            Stack[0x14]:4   out_free_slots
+; int *            Stack[0x18]:4   out_available_memory
 ;
 ; XREF[1]:
 ;   core_game.cpp_FUN_004b5190 at 004b58d7

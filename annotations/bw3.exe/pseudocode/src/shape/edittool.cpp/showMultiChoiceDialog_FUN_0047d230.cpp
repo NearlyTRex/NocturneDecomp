@@ -251,7 +251,7 @@ LAB_0047d33f:
     shape_edittool_cpp_FUN_00480410(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
   } while (iVar9 == -2);
-  ptr = (void *)__vec_delete(local_44,&g_CEdButtonTypeInfo);
+  ptr = __vec_delete(local_44,&g_CEdButtonTypeInfo);
   FUN_005a30b6(ptr);
   DAT_005fba2c = local_50;
   engine_2d_c_clearInputAndWait_FUN_004032b0();

@@ -15,7 +15,7 @@ CInStreamFile * support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(CInStreamFi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CInStreamFileTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CInStreamFileTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

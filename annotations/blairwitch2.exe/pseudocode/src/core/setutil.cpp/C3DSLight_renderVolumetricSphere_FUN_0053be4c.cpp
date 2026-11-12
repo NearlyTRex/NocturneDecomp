@@ -1,21 +1,21 @@
 // Name: core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c
 // Address: 0053be4c
 // Address Range: [[0053be4c, 0053c0e0]]
-// Convention: unknown
-// Signature: void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c(C3DSLight *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c(int param_1)
+void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c(C3DSLight *this_ptr)
 
 {
   SRenderVertex *pSVar1;
   CDemonRenderer *pCVar2;
   int *extraout_EDX;
   int *extraout_EDX_00;
-  CDemonRenderer *this_ptr;
+  CDemonRenderer *this_ptr_00;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -39,11 +39,11 @@ void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c(int param_1)
   int iStack_c;
   int iStack_8;
   
-  if ((*(uint *)(param_1 + 0x11d4) & 0x7fffffff) == 0) {
+  if (ABS(this_ptr->atten_end) == 0.0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (DAT_0060b280,(CVector3f *)(param_1 + 0x104));
+            (DAT_0060b280,&this_ptr->pos);
   iStack_c = 0;
   iStack_18 = 0;
   do {
@@ -54,7 +54,7 @@ void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c(int param_1)
               (float10)_DAT_005e64e1;
       fVar7 = (float10)fsin(fVar6);
       fVar6 = (float10)fcos(fVar6);
-      fVar8 = (float10)*(float *)(param_1 + 0x11d4) * (float10)_DAT_005e64d1;
+      fVar8 = (float10)this_ptr->atten_end * (float10)_DAT_005e64d1;
       fVar9 = (float10)iVar5 * (float10)_DAT_005e64e9 * (float10)_DAT_005e64dd *
               (float10)_DAT_005e64f1;
       fVar10 = (float10)fcos(fVar9);
@@ -73,17 +73,17 @@ void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c(int param_1)
       pCVar2 = DAT_0060b280;
       *(uint *)((int)&DAT_0060b280->vertex_buffer_ptr->u + iVar3) = 0x800000;
       *(uint *)((int)&pCVar2->vertex_buffer_ptr->v + iVar3) = 0x800000;
-      fVar6 = (float10)*(float *)(param_1 + 0x11c4) * (float10)_DAT_005e64f9;
+      fVar6 = (float10)(this_ptr->color).r * (float10)_DAT_005e64f9;
       pSVar1 = pCVar2->vertex_buffer_ptr;
       round();
       iStack_8 = (int)ROUND(fVar6);
       *(int *)((int)&pSVar1->r + iVar3) = iStack_8;
       iVar4 = *extraout_EDX;
-      fVar6 = (float10)*(float *)(param_1 + 0x11c8) * (float10)_DAT_005e64f9;
+      fVar6 = (float10)(this_ptr->color).g * (float10)_DAT_005e64f9;
       round();
       iStack_8 = (int)ROUND(fVar6);
       *(int *)(iVar4 + iVar3 + 0x24) = iStack_8;
-      fVar6 = (float10)*(float *)(param_1 + 0x11cc) * (float10)_DAT_005e64f9;
+      fVar6 = (float10)(this_ptr->color).b * (float10)_DAT_005e64f9;
       iVar4 = *extraout_EDX_00;
       round();
       iStack_8 = (int)ROUND(fVar6);
@@ -95,7 +95,7 @@ void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c(int param_1)
     iStack_18 = iStack_18 + 0x1e0;
   } while (iStack_c < 0x11);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-            (this_ptr,(SMRGLTextureBasic *)0x61bb54);
+            (this_ptr_00,(SMRGLTextureBasic *)0x61bb54);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0x4000);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
   SStack_78.base.count = 4;

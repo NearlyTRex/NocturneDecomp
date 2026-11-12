@@ -193,9 +193,9 @@ void __cdecl CCheesyCipher::setKey(CCheesyCipher *this_ptr,uint param_2);
 // Address: 00434d60
 uint FUN_00434d60(CCheesyCipher *param_1,byte param_2);
 
-// Original: support_codec.cpp_FUN_00434dd0
+// Original: support_codec.cpp_CCheesyCipher_process_FUN_00434dd0
 // Address: 00434dd0
-undefined4 FUN_00434dd0(undefined4 param_1,int *param_2,int *param_3);
+undefined4 __cdecl CCheesyCipher::process(CCheesyCipher *this_ptr,int *param_2,int *param_3);
 
 // Original: support_codec.cpp_CCheesyCipher_advanceKey_FUN_00434e50
 // Address: 00434e50

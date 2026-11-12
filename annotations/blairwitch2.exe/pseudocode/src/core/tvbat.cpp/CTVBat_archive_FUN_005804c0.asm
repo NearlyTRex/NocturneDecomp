@@ -48,13 +48,13 @@ section .text
     LEA EAX,[EBX + 0x10c80]             ; 005804e0
     PUSH EAX                            ; 005804e6
     CALL core_actor.cpp_archiveVector_FUN_0040b4b0 ; 005804e7
-        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b4b0()
+        ;   XREF to: 0040b4b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b4b0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 005804ec
     PUSH 0x5ed854                       ; 005804ef | = "modelName"
     LEA EAX,[EBX + 0x10afc]             ; 005804f4
     PUSH EAX                            ; 005804fa
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 005804fb
-        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60()
+        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60(CKeyFramedModelInstance * model_ptr, char * property_name)
     MOV ECX,dword ptr [0x0061e4a8]      ; 00580500 | g_CTVBatClassVersion
     ADD ESP,0x8                         ; 00580506
     CMP ECX,0x2                         ; 00580509
@@ -64,31 +64,31 @@ section .text
     LEA EAX,[EBX + 0x10c78]             ; 00580513
     PUSH EAX                            ; 00580519
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0058051a
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0058051f
     PUSH 0x5ed864                       ; 00580522 | = "maxDistance"
     LEA EAX,[EBX + 0x10c8c]             ; 00580527
     PUSH EAX                            ; 0058052d
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0058052e
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00580533
     PUSH 0x5ed870                       ; 00580536 | = "maxHeight"
     LEA EAX,[EBX + 0x10c90]             ; 0058053b
     PUSH EAX                            ; 00580541
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00580542
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00580547
     PUSH 0x5ed87a                       ; 0058054a | = "rotSpeed"
     LEA EAX,[EBX + 0x10c94]             ; 0058054f
     PUSH EAX                            ; 00580555
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00580556
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0058055b
     PUSH 0x5ed883                       ; 0058055e | = "moveSpeed"
     LEA EAX,[EBX + 0x10c98]             ; 00580563
     PUSH EAX                            ; 00580569
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0058056a
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0058056f
     PUSH 0x5ed88d                       ; 00580572 | = "followOrders"
     LEA EAX,[EBX + 0x10ca0]             ; 00580577
@@ -135,13 +135,13 @@ section .text
     LEA EAX,[EBX + 0x10d1c]             ; 005805e4
     PUSH EAX                            ; 005805ea
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 005805eb
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005805f0
     PUSH 0x5ed8b6                       ; 005805f3 | = "periodicSoundTimerMax"
     ADD EBX,0x10d20                     ; 005805f8
     PUSH EBX                            ; 005805fe
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 005805ff
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00580604
     POP EBX                             ; 00580607
     RET                                 ; 00580608

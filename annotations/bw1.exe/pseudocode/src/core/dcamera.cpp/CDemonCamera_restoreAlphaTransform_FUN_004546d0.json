@@ -1,0 +1,206 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 110,
+    "complexity_score": 43,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 43,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 153
+  },
+  "cross_references": [
+    {
+      "addr": "0044ef30",
+      "from_addr": "0044f05e",
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044ef30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004546d0",
+    "address_range": [
+      [
+        "004546d0",
+        "0045482f"
+      ]
+    ],
+    "convention": "__stack3_esi",
+    "name": "core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_004546d0",
+    "signature": "CVector3i * __stack3_esi core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_004546d0(CDemonCamera *this_ptr,CVector3i *screen_pos,int alpha_index,CVector3i *world_pos)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0044f05e",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044ef30",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 4,
+    "declared_stack_bytes": 12,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.743119266055047,
+    "instruction_count": 109,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 60,
+      "COPY": 99,
+      "INT_ADD": 67,
+      "INT_AND": 197,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 68,
+      "INT_LEFT": 17,
+      "INT_LESS": 4,
+      "INT_MULT": 17,
+      "INT_NOTEQUAL": 44,
+      "INT_OR": 71,
+      "INT_RIGHT": 18,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 12,
+      "INT_SDIV": 2,
+      "INT_SEXT": 35,
+      "INT_SLESS": 52,
+      "INT_SREM": 2,
+      "INT_SUB": 34,
+      "INT_XOR": 12,
+      "INT_ZEXT": 10,
+      "LOAD": 43,
+      "POPCOUNT": 28,
+      "RETURN": 1,
+      "STORE": 18,
+      "SUBPIECE": 26
+    },
+    "pcode_op_count": 953
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00443020",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00450820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00453a70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00447910",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "screen_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "alpha_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

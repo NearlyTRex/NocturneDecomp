@@ -17,9 +17,9 @@ CCourse * __cdecl CCourse::dtor(CCourse *this_ptr,uint flags);
 // Address: 00444910
 void FUN_00444910(int *param_1,int param_2);
 
-// Original: core_course.cpp_FUN_00444970
+// Original: core_course.cpp_CCourse_load_FUN_00444970
 // Address: 00444970
-void __cdecl FUN_00444970(CCourse *this_ptr,char *filename);
+void __cdecl CCourse::load(CCourse *this_ptr,char *filename);
 
 // Original: core_course.cpp_FUN_00444aa0
 // Address: 00444aa0

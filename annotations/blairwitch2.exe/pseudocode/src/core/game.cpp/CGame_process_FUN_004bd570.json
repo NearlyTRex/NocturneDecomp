@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 444,
-    "complexity_score": 199,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 134,
-    "suspect_count": 5,
+    "pseudocode_lines": 108,
+    "suspect_count": 2,
     "suspect_types": [
       "raw_address_constant",
-      "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 578
+    "total_lines": 552
   },
   "cross_references": [
     {
@@ -155,7 +154,7 @@
     {
       "addr": "00436710",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00436710"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
     },
     {
       "addr": "0058e9e0",
@@ -473,6 +472,32 @@
     },
     "pcode_op_count": 1618
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d8060",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6945
+    },
+    "bw3.exe": {
+      "addr": "004bf4b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6945
+    },
+    "nocedit.exe": {
+      "addr": "004e3190",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7784
+    },
+    "nocturne.exe": {
+      "addr": "004a6010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7784
+    }
+  },
   "stack_frame": {
     "frame_size": 44,
     "local_size": 40,
@@ -513,32 +538,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = wincore_winrun_cpp_getTime_FUN_0058e9e0();",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 133,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "((double)(iVar3 - unaff_ESI) * _DAT_005d8913 * _DAT_005d891b * _DAT_005d8923) /",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Raw hex address 0x264b290 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 50,
+      "line": 42,
       "match": "0x264b290",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x0264B290;",

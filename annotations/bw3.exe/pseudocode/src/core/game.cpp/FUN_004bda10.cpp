@@ -79,7 +79,7 @@ void __cdecl core_game_cpp_FUN_004bda10(CGame *this_ptr,char *save_filename)
   _mkdir(&DAT_005c357b);
   local_14 = 1;
   DAT_007df9c0 = (_FILE *)0x1;
-  file_handle = (_FILE *)_fopen("save\\$$SAVE$$.TMP",&DAT_005c3580);
+  file_handle = _fopen("save\\$$SAVE$$.TMP",&DAT_005c3580);
   if (file_handle == (_FILE *)0x0) {
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Warning!  Your game didn't save.")
     ;

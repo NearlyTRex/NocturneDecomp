@@ -2,17 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 46,
+    "complexity_score": 83,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 38,
+    "suspect_count": 3,
     "suspect_types": [
+      "pointer_cast",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 116
+    "total_lines": 123
   },
   "cross_references": [
     {
@@ -238,6 +240,32 @@
     },
     "pcode_op_count": 345
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0043bf50",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00449750",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0044cb80",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00440a20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8548
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -269,6 +297,22 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(void *)(iVar1 * 4 + (int)this_ptr",
+      "severity": "moderate",
+      "text": "((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_01c4480c",
+      "severity": "mild",
+      "text": "*(void **)(&DAT_01c4480c + iVar3),this_ptr->framebuffer_width << 2);",
+      "type": "undefined_data"
     }
   ]
 }

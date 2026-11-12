@@ -28,7 +28,8 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
   float afStackY_1090 [41];
   CDoc *apCStackY_fec [958];
   CBoundingBox3D *in_stack_ffffff20;
-  CConsole *pCVar13;
+  CConsole *this_ptr_01;
+  char *in_stack_ffffff28;
   uint auStack_c8 [2];
   float fStack_c0;
   float fStack_bc;
@@ -69,7 +70,8 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
     pCVar8 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar4,uVar5);
     (this_ptr_00->base).door_to_open = pCVar8;
     if (pCVar8 == (CDoor *)0x0) {
-      shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"CHero::doHeroAction - type=eHeroActionOpenDoor, but actor is NULL or isn't a door");
+      shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+                (g_CEditorToolsPtr,"CHero::doHeroAction - type=eHeroActionOpenDoor, but actor is NULL or isn't a door");
       core_hero_cpp_FUN_004eb5b0(this_ptr_00);
       return;
     }
@@ -171,7 +173,7 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
       case 1:
         core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                   (&(this_ptr_00->base).base.model.base,0x1e,1);
-        pCVar13 = (CConsole *)(this_ptr_00->base).object_to_pick_up;
+        this_ptr_01 = (CConsole *)(this_ptr_00->base).object_to_pick_up;
         break;
       case 2:
       case 3:
@@ -183,13 +185,15 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
           pCVar2 = &(this_ptr_00->base).base.model;
           if ((this_ptr_00->carry_object_world_center).y <= (float)_DAT_005da5ac) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0x16,1);
-            pCVar13 = g_CConsolePtr;
+            in_stack_ffffff28 = "Picking up %s off ground\n";
+            this_ptr_01 = g_CConsolePtr;
           }
           else {
             core_skeleton_cpp_FUN_00569040();
             core_skeleton_cpp_FUN_00569040();
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0x18,1);
-            pCVar13 = g_CConsolePtr;
+            in_stack_ffffff28 = "Picking up %s waist level\n";
+            this_ptr_01 = g_CConsolePtr;
           }
         }
         else {
@@ -203,7 +207,8 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
           this_ptr_00->pickup_facing_reversed = (uint)(0.0 < afStack_84[1]);
           if (fVar3 <= (float)_DAT_005da5a4) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0x1a,1);
-            pCVar13 = g_CConsolePtr;
+            in_stack_ffffff28 = "Picking up heavy %s crate\n";
+            this_ptr_01 = g_CConsolePtr;
           }
           else {
             core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0x1b,1);
@@ -211,13 +216,13 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
             afStack_6c[(uint)bVar12 * -2] = *(float *)(&stack0x00000000 + (uint)bVar12 * -8);
             afStack_6c[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
                  (float)(&this_ptr)[(uint)bVar12 * -2 + (uint)bVar12 * -2];
-            pCVar13 = g_CConsolePtr;
             if (&this_ptr_00->carry_object_world_center != (CVector3f *)&stack0xffffff90) {
               (this_ptr_00->carry_object_world_center).x = unaff_EBX;
               (this_ptr_00->carry_object_world_center).y = afStack_6c[0];
               (this_ptr_00->carry_object_world_center).z = afStack_6c[1];
-              pCVar13 = g_CConsolePtr;
             }
+            in_stack_ffffff28 = "Picking up heavy %s shelf\n";
+            this_ptr_01 = g_CConsolePtr;
           }
         }
         break;
@@ -226,7 +231,7 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
         core_hero_cpp_FUN_004eb5b0(this_ptr_00);
         return;
       }
-      engine_console_cpp_FUN_00445430(pCVar13);
+      engine_console_cpp_CConsole_printf_FUN_00445430(this_ptr_01,in_stack_ffffff28);
       if ((this_ptr_00->base).object_to_pick_up != (CDemonActor *)0x0) {
         (this_ptr_00->base).action_pending = 4;
         core_hero_cpp_FUN_004eb5b0();
@@ -235,17 +240,19 @@ void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_00474fc0(CDoc *this_ptr)
     }
     break;
   case 7:
-    engine_console_cpp_FUN_00445430(g_CConsolePtr,"?CDoc::doHeroAction - pull lever\n" + 1);
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,"?CDoc::doHeroAction - pull lever\n" + 1);
     uVar5 = g_CLeverClassInfo.name_hash;
     pCVar4 = (this_ptr_00->base).hero_action_actor;
     (this_ptr_00->base).player_input.action_state.fire = 0;
     pCVar6 = (CLever *)core_actor_cpp_castToClassHash_FUN_0040c600(pCVar4,uVar5);
     if (pCVar6 == (CLever *)0x0) {
-      shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"CDoc::doHeroAction - type=eHeroActionPullLever, but actor is NULL or isn't a lever");
+      shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+                (g_CEditorToolsPtr,"CDoc::doHeroAction - type=eHeroActionPullLever, but actor is NULL or isn't a lever");
       core_hero_cpp_FUN_004eb5b0(this_ptr_00);
       return;
     }
-    engine_console_cpp_FUN_00445430(g_CConsolePtr,"  lever = %s\n",pCVar6);
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"  lever = %s\n");
     iVar7 = core_event_cpp_CRuleList_evaluateAndRun_FUN_004aaf30(&pCVar6->rule);
     if (iVar7 == 0) {
       (this_ptr_00->base).lever_to_pull = pCVar6;

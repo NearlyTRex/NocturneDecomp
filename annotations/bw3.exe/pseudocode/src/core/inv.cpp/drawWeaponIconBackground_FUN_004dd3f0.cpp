@@ -1,12 +1,12 @@
 // Name: core_inv.cpp_drawWeaponIconBackground_FUN_004dd3f0
 // Address: 004dd3f0
 // Address Range: [[004dd3f0, 004dd5a6]]
-// Convention: unknown
-// Signature: void core_inv_cpp_drawWeaponIconBackground_FUN_004dd3f0(int param_1,int param_2,int param_3,int param_4,int param_5)
+// Convention: __cdecl
+// Signature: void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_004dd3f0(int x1,int y1,int x2,int y2,int alpha)
 
 #include "nocturne.h"
 
-void core_inv_cpp_drawWeaponIconBackground_FUN_004dd3f0(int param_1,int param_2,int param_3,int param_4,int param_5)
+void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_004dd3f0(int x1,int y1,int x2,int y2,int alpha)
 
 {
   CDemonRenderer *this_ptr;
@@ -30,25 +30,25 @@ void core_inv_cpp_drawWeaponIconBackground_FUN_004dd3f0(int param_1,int param_2,
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
             (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_00600254);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,param_5);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,alpha);
   this_ptr = DAT_005f2afc;
-  (DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x = param_1 * iVar1;
-  (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = param_2 * iVar2;
+  (DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x = x1 * iVar1;
+  (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = y1 * iVar2;
   (this_ptr->vertex_buffer_ptr->projected_vertex).transformed_z = 0x1000;
   this_ptr->vertex_buffer_ptr->u = 0;
   this_ptr->vertex_buffer_ptr->v = 0xa00000;
-  this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_x = iVar1 * param_3;
-  this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_y = param_2 * iVar2;
+  this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_x = iVar1 * x2;
+  this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_y = y1 * iVar2;
   this_ptr->vertex_buffer_ptr[1].projected_vertex.transformed_z = 0x1000;
   this_ptr->vertex_buffer_ptr[1].u = 0x600000;
   this_ptr->vertex_buffer_ptr[1].v = 0xa00000;
-  this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_x = iVar1 * param_3;
-  this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_y = iVar2 * param_4;
+  this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_x = iVar1 * x2;
+  this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_y = iVar2 * y2;
   this_ptr->vertex_buffer_ptr[2].projected_vertex.transformed_z = 0x1000;
   this_ptr->vertex_buffer_ptr[2].u = 0x600000;
   this_ptr->vertex_buffer_ptr[2].v = 0x1000000;
-  this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_x = param_1 * iVar1;
-  this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_y = iVar2 * param_4;
+  this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_x = x1 * iVar1;
+  this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_y = iVar2 * y2;
   this_ptr->vertex_buffer_ptr[3].projected_vertex.transformed_z = 0x1000;
   this_ptr->vertex_buffer_ptr[3].u = 0;
   this_ptr->vertex_buffer_ptr[3].v = 0x1000000;
@@ -62,11 +62,10 @@ void core_inv_cpp_drawWeaponIconBackground_FUN_004dd3f0(int param_1,int param_2,
   local_24 = 3;
   local_28 = 2;
   engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850(this_ptr,&local_48,0xa3);
-  local_20 = param_1;
-  local_18 = param_2;
-  local_1c = param_3;
-  local_14 = param_4;
-  core_dcamera_cpp_CDemonCamera_pushRect_FUN_00449310
-            (&g_CDemonCameraInstance,param_1,param_3,param_2,param_4);
+  local_20 = x1;
+  local_18 = y1;
+  local_1c = x2;
+  local_14 = y2;
+  core_dcamera_cpp_CDemonCamera_pushRect_FUN_00449310(&g_CDemonCameraInstance,x1,x2,y1,y2);
   return;
 }

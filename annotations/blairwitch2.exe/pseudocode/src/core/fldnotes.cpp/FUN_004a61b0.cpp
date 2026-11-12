@@ -2,13 +2,13 @@
 // Address: 004a61b0
 // Address Range: [[004a61b0, 004a6437]]
 // Convention: unknown
-// Signature: void core_fldnotes_cpp_FUN_004a61b0(CFieldNotes *param_1,undefined4 param_2)
+// Signature: void core_fldnotes_cpp_FUN_004a61b0(CFieldNotes *param_1,_FILE *param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_fldnotes_cpp_FUN_004a61b0(CFieldNotes *param_1,uint param_2)
+void core_fldnotes_cpp_FUN_004a61b0(CFieldNotes *param_1,_FILE *param_2)
 
 {
   int iVar1;
@@ -31,7 +31,7 @@ void core_fldnotes_cpp_FUN_004a61b0(CFieldNotes *param_1,uint param_2)
   local_20 = 0;
   _fscanf(param_2,"%*[^\n]\n");
   _fscanf(param_2,"%*[^\n]\n");
-  _fscanf(param_2,&DAT_005d6470,&local_20);
+  _fscanf(param_2,&DAT_005d6470);
   if ((local_20 < 1) || (1 < local_20)) {
     _DAT_01d046a0 = "..\\core\\fldnotes.cpp";
     _DAT_01d046a4 = 0xb30;
@@ -45,13 +45,13 @@ void core_fldnotes_cpp_FUN_004a61b0(CFieldNotes *param_1,uint param_2)
     pcVar5 = pcVar5 + ((uint)bVar7 * -2 + 1) * 4;
   }
   _fscanf(param_2,"%*[^\n]\n");
-  _fscanf(param_2," \"%[^\"]",local_120);
+  _fscanf(param_2," \"%[^\"]");
   _fscanf(param_2,&DAT_005d64df);
   if (local_120[0] != '\0') {
     core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004a41b0(param_1,local_120,(char *)0x0);
     local_1c = 0;
     _fscanf(param_2,"%*[^\n]\n");
-    _fscanf(param_2,&DAT_005d64ea,&local_1c);
+    _fscanf(param_2,&DAT_005d64ea);
     iVar2 = 0;
     if (0 < local_1c) {
       do {
@@ -63,7 +63,7 @@ void core_fldnotes_cpp_FUN_004a61b0(CFieldNotes *param_1,uint param_2)
           pcVar6 = (char *)((int)pcVar6 + ((uint)bVar7 * -2 + 1) * 4);
         }
         iVar3 = 0;
-        _fscanf(param_2,"\"%[^\"]\", %d\n",local_220,&local_18);
+        _fscanf(param_2,"\"%[^\"]\", %d\n");
         local_14 = (int *)0x0;
         if (0 < _DAT_01cab9f0) {
           this_ptr = SNotesSection_ARRAY_01cab9f4;

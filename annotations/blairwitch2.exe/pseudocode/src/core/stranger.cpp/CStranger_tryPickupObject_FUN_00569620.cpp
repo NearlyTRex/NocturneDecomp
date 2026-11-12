@@ -25,9 +25,10 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *
   CLocation *apCStackY_1028 [870];
   CStranger *in_stack_fffffd78;
   float *pfVar10;
-  CConsole *pCVar11;
+  CConsole *this_ptr_00;
+  char *in_stack_fffffd80;
   CDemonActor *in_stack_fffffd84;
-  uint uVar12;
+  uint uVar11;
   float fStack_268;
   float fStack_264;
   float fStack_260;
@@ -92,8 +93,8 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *
   float fStack_40;
   CLocation *apCStack_3c [4];
   int iStack_2c;
-  int iStack_28;
-  int local_24;
+  char *pcStack_28;
+  char *local_24;
   uint *local_20;
   int local_1c;
   float local_18;
@@ -112,9 +113,9 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *
   local_20 = auStack_234;
   apCStack_3c[3] = &(this_ptr->base).base.base.location;
   apCStack_3c[2] = (CLocation *)0x40800000;
-  local_24 = 0;
+  local_24 = (char *)0x0;
   for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
-    pCVar4 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_24);
+    pCVar4 = *(CDemonActor **)((int)(g_CDemonSetPtr->cameras + 0xcb0) + (int)(local_24 + 0xa4));
     pCVar5 = (*((pCVar4->vtable)._ub)->getCarrier)(pCVar4);
     if (pCVar5 == (CDemonActor *)0x0) {
       in_stack_fffffd78 = this_ptr;
@@ -123,7 +124,8 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_00569620(CStranger *
       case 1:
         if ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0) {
           in_stack_fffffd78 = (CStranger *)0x569aab;
-          core_actor_cpp_FUN_00408de0(pCVar4,local_24);
+          in_stack_fffffd80 = local_24;
+          core_actor_cpp_FUN_00408de0(pCVar4);
           afStack_b4[0] = fStack_1d4;
           afStack_b4[(uint)bVar9 * -2 + 1] = afStack_1ec[(uint)bVar9 * -2 + 7];
           afStack_b4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 2] =
@@ -195,6 +197,7 @@ LAB_0056979e:
           apCStack_3c[(uint)bVar9 * -2] = (CLocation *)afStack_9c[(uint)bVar9 * -2 + 3];
           apCStack_3c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
                (CLocation *)afStack_9c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+          in_stack_fffffd80 = (char *)0x56989a;
           in_stack_fffffd84 = pCVar4;
           core_actor_cpp_FUN_00408d70(pCVar4,pfVar10);
           afStack_180[5] = fStack_a0;
@@ -208,15 +211,17 @@ LAB_0056979e:
           afStack_110[(uint)bVar9 * -2 + -1] = afStack_154[(uint)bVar9 * -2 + 7];
           afStack_110[(uint)bVar9 * -2 + (uint)bVar9 * -2] =
                afStack_154[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 8];
-          if (((ABS(fStack_114) <= (float)_DAT_005eba75) &&
-              (puStack_14 = (uint *)
-                            (fStack_118 * fStack_118 + afStack_110[0] * afStack_110[0]),
-              (float)puStack_14 <= (float)local_20)) &&
-             (in_stack_fffffd84 = pCVar4,
-             iVar6 = core_actor_cpp_isOfClass_FUN_0040c840(pCVar4,class_name), iVar6 != 0)) {
-            (this_ptr->base).object_to_pick_up = pCVar4;
-            local_20 = puStack_14;
-            iStack_28 = local_24;
+          if ((ABS(fStack_114) <= (float)_DAT_005eba75) &&
+             (puStack_14 = (uint *)(fStack_118 * fStack_118 + afStack_110[0] * afStack_110[0])
+             , (float)puStack_14 <= (float)local_20)) {
+            in_stack_fffffd80 = (char *)0x56994e;
+            in_stack_fffffd84 = pCVar4;
+            iVar6 = core_actor_cpp_isOfClass_FUN_0040c840(pCVar4,class_name);
+            if (iVar6 != 0) {
+              (this_ptr->base).object_to_pick_up = pCVar4;
+              local_20 = puStack_14;
+              pcStack_28 = local_24;
+            }
           }
         }
         break;
@@ -237,6 +242,7 @@ LAB_00569a2a:
             }
             goto LAB_0056979e;
           }
+          in_stack_fffffd80 = (char *)0x5699cd;
           in_stack_fffffd84 = pCVar4;
           core_actor_cpp_FUN_00408de0(pCVar4,local_1c);
           afStack_210[2] = fStack_b8;
@@ -314,7 +320,7 @@ LAB_00569a2a:
   case (CLocation *)0x1:
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
               (&(this_ptr->base).base.model.base,0x1b,1);
-    pCVar11 = (CConsole *)(this_ptr->base).object_to_pick_up;
+    this_ptr_00 = (CConsole *)(this_ptr->base).object_to_pick_up;
     break;
   case (CLocation *)0x2:
   case (CLocation *)0x3:
@@ -325,16 +331,17 @@ LAB_00569a2a:
       pCVar2 = &(this_ptr->base).base.model;
       if ((this_ptr->carry_object_world_center).y <= (float)_DAT_005eba65) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0x13,1);
-        pCVar11 = g_CConsolePtr;
+        in_stack_fffffd80 = "Picking up %s off ground\n";
+        this_ptr_00 = g_CConsolePtr;
       }
       else {
         core_skeleton_cpp_FUN_005469a0(pCVar2,_DAT_0264be68);
         fStack_74 = afStack_110[3];
         afStack_9c[(uint)bVar9 * -2 + 0xb] = afStack_100[(uint)bVar9 * -2];
-        uVar12 = _DAT_0264be40;
+        uVar11 = _DAT_0264be40;
         afStack_9c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xc] =
              afStack_100[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-        core_skeleton_cpp_FUN_005469a0(pCVar2,uVar12);
+        core_skeleton_cpp_FUN_005469a0(pCVar2,uVar11);
         fVar3 = fStack_74;
         afStack_1ec[1] = fStack_1b8;
         afStack_1ec[(uint)bVar9 * -2 + 2] = afStack_1b4[(uint)bVar9 * -2];
@@ -359,14 +366,14 @@ LAB_00569a2a:
             ABS(SQRT(fStack_78 * fStack_78 + fVar3 + fStack_7c * fStack_7c) -
                 SQRT(fStack_f0 * fStack_f0 +
                      afStack_100[2] * afStack_100[2] + afStack_100[3] * afStack_100[3]))) {
-          engine_console_cpp_FUN_00436710
-                    (g_CConsolePtr,"%s out of reach - canceling pickup\n",
-                     (this_ptr->base).object_to_pick_up);
+          engine_console_cpp_CConsole_printf_FUN_00436710
+                    (g_CConsolePtr,"%s out of reach - canceling pickup\n");
           (this_ptr->base).object_to_pick_up = (CDemonActor *)0x0;
           return 0;
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0x15,1);
-        pCVar11 = g_CConsolePtr;
+        in_stack_fffffd80 = "Picking up %s waist level\n";
+        this_ptr_00 = g_CConsolePtr;
       }
     }
     else {
@@ -381,7 +388,8 @@ LAB_00569a2a:
       this_ptr->pickup_facing_reversed = (uint)(0.0 < afStack_154[1]);
       if (fVar3 <= (float)_DAT_005eba5d) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0x17,1);
-        pCVar11 = g_CConsolePtr;
+        in_stack_fffffd80 = "Picking up heavy %s crate\n";
+        this_ptr_00 = g_CConsolePtr;
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar2->base,0x18,1);
@@ -390,13 +398,13 @@ LAB_00569a2a:
         afStack_9c[(uint)bVar9 * -2 + 0xe] = afStack_154[(uint)bVar9 * -2 + 0xc];
         afStack_9c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xf] =
              afStack_154[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd];
-        pCVar11 = g_CConsolePtr;
         if (&this_ptr->carry_object_world_center != (CVector3f *)(afStack_9c + 0xd)) {
           (this_ptr->carry_object_world_center).x = fStack_68;
           (this_ptr->carry_object_world_center).y = fStack_64;
           (this_ptr->carry_object_world_center).z = afStack_60[0];
-          pCVar11 = g_CConsolePtr;
         }
+        in_stack_fffffd80 = ">Picking up heavy %s shelf\n" + 1;
+        this_ptr_00 = g_CConsolePtr;
       }
     }
     break;
@@ -406,7 +414,7 @@ LAB_00569a2a:
     core_main_c_FUN_004e4500("Hell froze - invalid pickUpType: %d",apCStack_3c[2]);
     goto LAB_00569dc5;
   }
-  engine_console_cpp_FUN_00436710(pCVar11);
+  engine_console_cpp_CConsole_printf_FUN_00436710(this_ptr_00,in_stack_fffffd80);
 LAB_00569dc5:
   this_ptr->action_timer = 4.0;
   this_ptr->action_pending = 4;

@@ -2,16 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1712,
-    "complexity_score": 2035,
+    "complexity_score": 2060,
     "cross_reference_count": 8,
     "function_call_count": 22,
     "global_count": 58,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 840,
-    "suspect_count": 114,
+    "suspect_count": 116,
     "suspect_types": [
       "derived_field_index_pun",
       "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "raw_address_pointer_store",
       "shadow_pointer_walk",
@@ -150,7 +151,7 @@
     {
       "addr": "004f69a0",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f69a0"
+      "name": "core_mission.cpp_CDemonMission_removeActorFromList_FUN_004f69a0"
     },
     {
       "addr": "004f6f10",
@@ -185,7 +186,7 @@
     {
       "addr": "00441ff0",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00441ff0"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441ff0"
     },
     {
       "addr": "004b2a80",
@@ -1145,7 +1146,7 @@
       "line": 179,
       "match": "DAT_005c601c",
       "severity": "mild",
-      "text": "pcVar11 = &DAT_005c601c;",
+      "text": "pcVar10 = &DAT_005c601c;",
       "type": "undefined_data"
     },
     {
@@ -1153,8 +1154,16 @@
       "line": 716,
       "match": "DAT_005c6195",
       "severity": "mild",
-      "text": "pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c6195);",
+      "text": "pcVar15 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c6195);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 752,
+      "match": "(int)local_14",
+      "severity": "moderate",
+      "text": "this_ptr->message_display_timer = (float)(int)local_14 * (float)_DAT_005c627f;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0x1d81080 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
@@ -1422,10 +1431,10 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 787,
+      "line": 786,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
-      "text": "(*(int *)(pCVar8[4].actor_name + 0xc) == *(int *)(pCVar7[4].actor_name + 0xc))) {",
+      "text": "(*(int *)(pCVar5[4].actor_name + 0xc) == *(int *)(pCVar4[4].actor_name + 0xc))) {",
       "type": "pointer_cast"
     },
     {
@@ -1433,15 +1442,15 @@
       "line": 815,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
-      "text": "*(uint *)(pCVar8[4].actor_name + 0xc) = *(uint *)(iVar4 + 0x318);",
+      "text": "*(uintptr_t *)(actor[4].actor_name + 0xc) = pCVar5[2].validation_magic;",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 795,
-      "match": "pCVar10 = (T *)&pCVar10->FIELD",
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
       "severity": "moderate",
-      "text": "pCVar10 = (CInventory *)&pCVar10->owner;",
+      "text": "pCVar9 = (CInventory *)&pCVar9->owner;",
       "type": "shadow_pointer_walk"
     },
     {
@@ -1837,17 +1846,24 @@
       "type": "unrolled_strcat"
     },
     {
-      "description": "'pCVar8[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar8)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[11], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 787,
+      "description": "'pCVar5[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar5)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[11], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 786,
       "severity": "moderate",
-      "text": "(*(int *)(pCVar8[4].actor_name + 0xc) == *(int *)(pCVar7[4].actor_name + 0xc))) {",
+      "text": "(*(int *)(pCVar5[4].actor_name + 0xc) == *(int *)(pCVar4[4].actor_name + 0xc))) {",
       "type": "derived_field_index_pun"
     },
     {
-      "description": "'pCVar7[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar7)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[11], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 787,
+      "description": "'pCVar4[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar4)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[11], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 786,
       "severity": "moderate",
-      "text": "(*(int *)(pCVar8[4].actor_name + 0xc) == *(int *)(pCVar7[4].actor_name + 0xc))) {",
+      "text": "(*(int *)(pCVar5[4].actor_name + 0xc) == *(int *)(pCVar4[4].actor_name + 0xc))) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'(char *)&pCVar5[2].location.position.y' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.y) (0x24) + 0x0 = 0x2d4, which is exactly offsetof(CAmmo, weapon_class_name). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar5)->weapon_class_name (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name, CBattery::carrier, CBoxActor::loop_wav_name also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 808,
+      "severity": "moderate",
+      "text": "iVar7 = _strcmp((char *)&pCVar5[2].location.position.y,pcVar16);",
       "type": "derived_field_index_pun"
     }
   ]

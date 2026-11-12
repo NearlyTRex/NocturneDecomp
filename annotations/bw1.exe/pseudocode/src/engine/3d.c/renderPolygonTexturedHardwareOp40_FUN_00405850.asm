@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * __cdecl engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00405850(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00405850(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0
@@ -48,7 +50,7 @@ section .text
     PUSH ECX                            ; 00405897
     PUSH EAX                            ; 00405898
     CALL engine_fpoly.c_rasterizePolygonHardware_FUN_004c4d80 ; 00405899
-        ;   XREF to: 004c4d80 (UNCONDITIONAL_CALL)  ; undefined engine_fpoly.c_rasterizePolygonHardware_FUN_004c4d80()
+        ;   XREF to: 004c4d80 (UNCONDITIONAL_CALL)  ; void engine_fpoly.c_rasterizePolygonHardware_FUN_004c4d80(SRenderVertex * * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0040589e
     MOV EAX,0x713a84                    ; 004058a1 | DAT_00713a84
     POP EBP                             ; 004058a6

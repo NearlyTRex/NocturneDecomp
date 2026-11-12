@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 168,
+    "complexity_score": 149,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 48,
-    "suspect_count": 10,
+    "pseudocode_lines": 49,
+    "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 157
+    "total_lines": 158
   },
   "cross_references": [
     {
@@ -51,7 +51,7 @@
     {
       "addr": "004943a0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004943a0"
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0"
     }
   ],
   "globals": [
@@ -167,6 +167,20 @@
     },
     "pcode_op_count": 329
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a55b0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004abcb0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -224,14 +238,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,\"CFieldNotes::completeTask - entry '%s' was not a task\",param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 30,
       "match": "DAT_0061d2e4",
@@ -256,16 +262,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,\"CFieldNotes::completeTask - entry '%s' not found\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 51,
       "match": "DAT_0061d2e4",
       "severity": "mild",
       "text": "DAT_0061d2e4 = 1;",

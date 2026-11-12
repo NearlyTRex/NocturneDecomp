@@ -2,16 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 431,
+    "complexity_score": 461,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 36,
+    "suspect_count": 38,
     "suspect_types": [
       "concat_reconstruction",
       "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
       "unnamed_param"
     ],
     "total_lines": 181
@@ -40,7 +42,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005c140c",
-    "signature": "int crt_unknown_c_FUN_005c140c(undefined4 param_1,byte param_2,uint param_3,undefined4 param_4,undefined4 param_5,int param_6)"
+    "signature": "_FILE * crt_unknown_c_FUN_005c140c(undefined4 param_1,byte param_2,uint param_3,char *param_4,undefined4 param_5,_FILE *param_6)"
   },
   "function_calls": [
     {
@@ -136,6 +138,32 @@
     },
     "pcode_op_count": 443
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b8f9c",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a427c",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0060190c",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0056551c",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -150,7 +178,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_005c140c(uint param_1,byte param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "_FILE * FUN_005c140c(uint param_1,byte param_2,uint param_3,char *param_4,uint param_5,_FILE *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -158,7 +186,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "int FUN_005c140c(uint param_1,byte param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "_FILE * FUN_005c140c(uint param_1,byte param_2,uint param_3,char *param_4,uint param_5,_FILE *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -166,7 +194,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "int FUN_005c140c(uint param_1,byte param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "_FILE * FUN_005c140c(uint param_1,byte param_2,uint param_3,char *param_4,uint param_5,_FILE *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -174,7 +202,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "int FUN_005c140c(uint param_1,byte param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "_FILE * FUN_005c140c(uint param_1,byte param_2,uint param_3,char *param_4,uint param_5,_FILE *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -182,7 +210,7 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "int FUN_005c140c(uint param_1,byte param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "_FILE * FUN_005c140c(uint param_1,byte param_2,uint param_3,char *param_4,uint param_5,_FILE *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -190,7 +218,7 @@
       "line": 2,
       "match": "param_6",
       "severity": "mild",
-      "text": "int FUN_005c140c(uint param_1,byte param_2,uint param_3,uint param_4,uint param_5,int param_6)",
+      "text": "_FILE * FUN_005c140c(uint param_1,byte param_2,uint param_3,char *param_4,uint param_5,_FILE *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -198,7 +226,7 @@
       "line": 10,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(byte *)(param_6 + 0xc) = *(byte *)(param_6 + 0xc) & 0xfc;",
+      "text": "*(byte *)&param_6->_flag = (byte)param_6->_flag & 0xfc;",
       "type": "unnamed_param"
     },
     {
@@ -206,7 +234,7 @@
       "line": 10,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(byte *)(param_6 + 0xc) = *(byte *)(param_6 + 0xc) & 0xfc;",
+      "text": "*(byte *)&param_6->_flag = (byte)param_6->_flag & 0xfc;",
       "type": "unnamed_param"
     },
     {
@@ -214,7 +242,7 @@
       "line": 11,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(uint *)(param_6 + 0xc) = *(uint *)(param_6 + 0xc) | param_3;",
+      "text": "param_6->_flag = param_6->_flag | param_3;",
       "type": "unnamed_param"
     },
     {
@@ -222,7 +250,7 @@
       "line": 11,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(uint *)(param_6 + 0xc) = *(uint *)(param_6 + 0xc) | param_3;",
+      "text": "param_6->_flag = param_6->_flag | param_3;",
       "type": "unnamed_param"
     },
     {
@@ -230,7 +258,7 @@
       "line": 11,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(uint *)(param_6 + 0xc) = *(uint *)(param_6 + 0xc) | param_3;",
+      "text": "param_6->_flag = param_6->_flag | param_3;",
       "type": "unnamed_param"
     },
     {
@@ -286,7 +314,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar4 = FUN_005c7254(param_1,uVar2,param_5,uVar4);",
+      "text": "iVar3 = FUN_005c7254(param_1,uVar2,param_5,uVar4);",
       "type": "unnamed_param"
     },
     {
@@ -294,7 +322,7 @@
       "line": 42,
       "match": "param_5",
       "severity": "mild",
-      "text": "uVar4 = FUN_005c7254(param_1,uVar2,param_5,uVar4);",
+      "text": "iVar3 = FUN_005c7254(param_1,uVar2,param_5,uVar4);",
       "type": "unnamed_param"
     },
     {
@@ -302,7 +330,7 @@
       "line": 43,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(uint *)(param_6 + 0x10) = uVar4;",
+      "text": "param_6->_handle = iVar3;",
       "type": "unnamed_param"
     },
     {
@@ -310,7 +338,7 @@
       "line": 44,
       "match": "param_6",
       "severity": "mild",
-      "text": "if (*(int *)(param_6 + 0x10) == -1) {",
+      "text": "if (param_6->_handle == -1) {",
       "type": "unnamed_param"
     },
     {
@@ -326,7 +354,7 @@
       "line": 48,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(uint *)(param_6 + 4) = 0;",
+      "text": "param_6->_cnt = 0;",
       "type": "unnamed_param"
     },
     {
@@ -334,7 +362,7 @@
       "line": 49,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(uint *)(param_6 + 0x14) = 0;",
+      "text": "param_6->_bufsize = 0;",
       "type": "unnamed_param"
     },
     {
@@ -342,7 +370,7 @@
       "line": 50,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_6 + 8) + 0xc) = 0;",
+      "text": "param_6->_link->__get_base = (char *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -350,7 +378,7 @@
       "line": 51,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_6 + 8) + 0x10) = param_4;",
+      "text": "param_6->_link->__get_end = param_4;",
       "type": "unnamed_param"
     },
     {
@@ -358,7 +386,7 @@
       "line": 51,
       "match": "param_4",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_6 + 8) + 0x10) = param_4;",
+      "text": "param_6->_link->__get_end = param_4;",
       "type": "unnamed_param"
     },
     {
@@ -366,7 +394,7 @@
       "line": 52,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_6 + 8) + 0x15) = 0;",
+      "text": "*(uint *)((int)&param_6->_link->__get_ptr + 1) = 0;",
       "type": "unnamed_param"
     },
     {
@@ -374,7 +402,7 @@
       "line": 53,
       "match": "param_6",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_6 + 8) + 8) = 0;",
+      "text": "param_6->_link->__reserve_end = (char *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -410,6 +438,14 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Pointer value `&param_6->_link->__get_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)&param_6->_link->__get_ptr",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&param_6->_link->__get_ptr + 1) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
       "line": 35,
       "match": "CONCAT11",
@@ -424,6 +460,14 @@
       "severity": "moderate",
       "text": "uVar2 = CONCAT11(2,bVar1);",
       "type": "concat_reconstruction"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 52,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&param_6->_link->__get_ptr + 1) = 0;",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,

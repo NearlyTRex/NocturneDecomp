@@ -17,12 +17,12 @@ CBodyPart * core_bodypart_cpp_CBodyPart_dtor_FUN_00415800(CBodyPart *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBodyPartTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBodyPartTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }
   (this_ptr->base).vtable._ub = &g_CBodyPartVTable;
-  core_bodypart_cpp_FUN_00415890(this_ptr,0,0);
+  core_bodypart_cpp_CBodyPart_setCounts_FUN_00415890(this_ptr,0,0);
   pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70(&this_ptr->physics_box,0);
   iVar2 = core_bodypart_cpp_FUN_00417d10(&pCVar1[-4].scrape_points[2].transformed_position.y,0);
   pCVar3 = (CBodyPart *)

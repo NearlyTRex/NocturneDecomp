@@ -40,7 +40,7 @@
 ;   core_platfrm.cpp_CPlatform_setup_FUN_00518280 at 0051829b
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00438c40
+;   core_course.cpp_CCourse_evaluate_FUN_00438c40
 ;   core_xform.cpp_FUN_005940b0
 ;   core_xform.cpp_slerpQuaternion_FUN_00593df0
 ;
@@ -195,8 +195,8 @@ section .text
     SUB ESP,0x4                         ; 00518481
     FSTP float ptr [ESP]                ; 00518484
     PUSH EAX                            ; 00518487
-    CALL core_course.cpp_FUN_00438c40   ; 00518488
-        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00438c40 ; 00518488
+        ;   XREF to: 00438c40 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00438c40(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 0051848d
     JMP 0x00518454                      ; 00518490
         ;   XREF to: 00518454 (UNCONDITIONAL_JUMP)  ; LAB_00518454

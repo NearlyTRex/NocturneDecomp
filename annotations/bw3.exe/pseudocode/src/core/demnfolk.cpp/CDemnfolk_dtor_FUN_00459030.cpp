@@ -18,7 +18,7 @@ CDemnfolk * core_demnfolk_cpp_CDemnfolk_dtor_FUN_00459030(CDemnfolk *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDemnfolkTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDemnfolkTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

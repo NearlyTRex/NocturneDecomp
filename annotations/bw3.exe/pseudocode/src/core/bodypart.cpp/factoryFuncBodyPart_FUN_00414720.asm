@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bodypart_cpp_factoryFuncBodyPart_FUN_00414720(void)
+; CBodyPart * __cdecl core_bodypart_cpp_factoryFuncBodyPart_FUN_00414720(void)
 ;
 ;
 ; Called Functions:

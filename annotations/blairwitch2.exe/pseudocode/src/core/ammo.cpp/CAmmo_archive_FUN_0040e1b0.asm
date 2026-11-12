@@ -33,7 +33,7 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 0040e1c3
     PUSH EAX                            ; 0040e1c9
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 0040e1ca
-        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60()
+        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0040e1cf
     PUSH 0x5cb0e8                       ; 0040e1d2 | = "weaponClassName"
     LEA EAX,[EBX + 0x430]               ; 0040e1d7

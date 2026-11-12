@@ -59,7 +59,7 @@ int __cdecl FUN_0053da90(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBou
 
 // Original: core_setcolid.cpp_FUN_0053de10
 // Address: 0053de10
-float FUN_0053de10(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,undefined4 param_8);
+float FUN_0053de10(CDemonSet *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,float param_7,float param_8);
 
 // Original: core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_0053e870
 // Address: 0053e870

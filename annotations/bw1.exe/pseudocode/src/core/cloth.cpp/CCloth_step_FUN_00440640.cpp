@@ -374,7 +374,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00440640(CCloth *this_ptr,CVector3f 
     (this_ptr->last_euler).y = euler->y;
     (this_ptr->last_euler).z = euler->z;
   }
-  fVar7 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_148[3]);
+  fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_148[3]);
   local_30 = fVar7 * (1.0 / delta_time) * (1.0 / delta_time);
   iVar11 = 0;
   if (0 < (this_ptr->model).vertex_count) {

@@ -30,7 +30,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
   float local_28;
   float local_24;
   CVector3f local_20;
-  uint local_14;
+  float local_14;
   int local_10;
   CBitFont *local_c;
   
@@ -40,17 +40,17 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
     }
     if (DAT_0061b49c == 0x1e0) {
       if (this_ptr->use_custom_viewport != 0) {
-        engine_drender_cpp_FUN_00483c10
+        engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00483c10
                   (DAT_00612560,this_ptr->viewport_x,this_ptr->viewport_y,this_ptr->viewport_width,
                    this_ptr->viewport_height);
       }
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
                 (DAT_00612560,(CVector3f *)&DAT_02c8af28);
-      local_14 = 0x42600000;
+      local_14 = 56.0;
       if (this_ptr->use_custom_viewport != 0) {
-        local_14 = 0x42a80000;
+        local_14 = 84.0;
       }
-      engine_drender_cpp_FUN_004839b0(DAT_00612560,local_14);
+      engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_004839b0(DAT_00612560,local_14);
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
                 (DAT_00612560,(CVector3f *)&DAT_02c8af28);
       local_20.z = 36.0;

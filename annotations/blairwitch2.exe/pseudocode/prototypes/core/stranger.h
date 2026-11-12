@@ -19,7 +19,7 @@ float __cdecl getCarriedObjectVerticalOffset(CDemonActor *object);
 
 // Original: core_stranger.cpp_factoryFuncStranger_FUN_005627c0
 // Address: 005627c0
-void factoryFuncStranger(void);
+CStranger * __cdecl factoryFuncStranger(void);
 
 // Original: core_stranger.cpp_CStranger_getActorType_FUN_005627e0
 // Address: 005627e0
@@ -79,7 +79,7 @@ void __cdecl CStranger::updateWeaponPosition(CStranger *this_ptr,int hand_index)
 
 // Original: core_stranger.cpp_FUN_00568500
 // Address: 00568500
-undefined4 * FUN_00568500(CCharacter *param_1,CDemonActor *param_2,int param_3);
+float * FUN_00568500(CCharacter *param_1,CDemonActor *param_2,int param_3);
 
 // Original: core_stranger.cpp_CStranger_tryPickupObject_FUN_00569620
 // Address: 00569620

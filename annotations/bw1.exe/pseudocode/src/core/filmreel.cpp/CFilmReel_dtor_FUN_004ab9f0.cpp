@@ -13,7 +13,7 @@ CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_004ab9f0(CFilmReel *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFilmReelTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFilmReelTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

@@ -28,7 +28,7 @@
 ;   core_charactr.cpp_FUN_004355d0
 ;   core_game.cpp_FUN_004d19d0
 ;   core_script.cpp_CScript_step_FUN_00544460
-;   shape_edittool.cpp_FUN_004943a0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -140,8 +140,8 @@ section .text
     MOV ESI,dword ptr [0x0061abc0]      ; 005438da | g_CEditorToolsPtr
     PUSH ESI                            ; 005438e0
     MOV EDI,0x1                         ; 005438e1
-    CALL shape_edittool.cpp_FUN_004943a0 ; 005438e6
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 005438e6
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005438eb
     MOV dword ptr [0x01e818b8],EDI      ; 005438ee | DAT_01e818b8
     JMP 0x00543863                      ; 005438f4
@@ -156,8 +156,8 @@ section .text
     PUSH 0x5ee143                       ; 0054390a | = "Error processing script.\nLine: %d\nT..."
     MOV EAX,[0x0061abc0]                ; 0054390f | g_CEditorToolsPtr
     PUSH EAX                            ; 00543914
-    CALL shape_edittool.cpp_FUN_004943a0 ; 00543915
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 00543915
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 0054391a
     JMP 0x005438b5                      ; 0054391d
         ;   XREF to: 005438b5 (UNCONDITIONAL_JUMP)  ; LAB_005438b5

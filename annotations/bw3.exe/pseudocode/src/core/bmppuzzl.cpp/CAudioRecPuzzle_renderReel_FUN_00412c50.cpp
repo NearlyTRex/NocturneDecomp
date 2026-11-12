@@ -14,10 +14,10 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRec
   CDemonSet *pCVar1;
   CKeyFramedModel *pCVar2;
   int iVar3;
-  int iVar4;
-  CBoundingBox3D *pCVar5;
-  float *pfVar6;
-  byte bVar7;
+  int width;
+  CBoundingBox3D *pCVar4;
+  float *pfVar5;
+  byte bVar6;
   float afStackY_1040 [1007];
   CDemonRenderer *this_ptr_00;
   CKeyFramedModelInstance *this_ptr_01;
@@ -40,12 +40,12 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRec
   CVector3f CStack_1c;
   
   pCVar1 = g_CDemonSetPtr;
-  bVar7 = 0;
-  iVar4 = 0xfc;
+  bVar6 = 0;
+  width = 0xfc;
   if (0x280 < DAT_005fba18) {
     param_2 = (param_2 * 0x280) / DAT_005fba18;
     param_3 = (param_3 * 0x1e0) / DAT_005fba1c;
-    iVar4 = (int)(0x27600 / (longlong)DAT_005fba18);
+    width = (int)(0x27600 / (longlong)DAT_005fba18);
   }
   g_CDemonSetPtr->rendering_mode = 1;
   (pCVar1->light_direction).x = -0x482b;
@@ -53,23 +53,24 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRec
   (pCVar1->light_direction).z = 0x482b;
   pCVar1->ambient_base_quick = 32000;
   engine_special_cpp_fillDepthRegion_FUN_00560ec2
-            (param_2,param_2 + iVar4 + -1,param_3,param_3 + iVar4 + -1);
+            (param_2,param_2 + width + -1,param_3,param_3 + width + -1);
   this_ptr_01 = &this_ptr->reel_model;
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr_01);
-  pCVar5 = pCVar2->frame_bounds;
-  pfVar6 = &stack0xffffff90;
+  pCVar4 = pCVar2->frame_bounds;
+  pfVar5 = &stack0xffffff90;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *pfVar6 = (pCVar5->min).x;
-    pCVar5 = (CBoundingBox3D *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
-    pfVar6 = pfVar6 + (uint)bVar7 * -2 + 1;
+    *pfVar5 = (pCVar4->min).x;
+    pCVar4 = (CBoundingBox3D *)((int)pCVar4 + (uint)bVar6 * -8 + 4);
+    pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
   }
-  engine_drender_cpp_FUN_0046d2f0(DAT_005f2afc,param_2,param_3,iVar4,iVar4);
+  engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046d2f0
+            (DAT_005f2afc,param_2,param_3,width,width);
   CStack_4c.z = -2.0;
   CStack_4c.x = 0.0;
   CStack_4c.y = 0.0;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
             (DAT_005f2afc,&CStack_4c);
-  engine_drender_cpp_FUN_0046d090(DAT_005f2afc,0x42100000);
+  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(DAT_005f2afc,36.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10
             (DAT_005f2afc,(CVector3f *)&DAT_02cfd900);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
@@ -78,9 +79,9 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRec
   afStack_3c[3] = fStack_6c + fStack_60;
   fStack_2c = fStack_68 + fStack_5c;
   fStack_28 = fStack_70 + fStack_64;
-  afStack_3c[(uint)bVar7 * -2 + 6] = afStack_3c[(uint)bVar7 * -2 + 3];
-  afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-       afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+  afStack_3c[(uint)bVar6 * -2 + 6] = afStack_3c[(uint)bVar6 * -2 + 3];
+  afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
+       afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
   translation = (CVector3f *)0x0;
   CStack_1c.z = param_4;
   euler_angles = &CStack_1c;
@@ -89,10 +90,10 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRec
   afStack_3c[0] = fStack_24 * _DAT_005b67c6;
   afStack_3c[1] = fStack_20 * _DAT_005b67c6;
   CStack_58.x = fStack_28 * _DAT_005b67c6;
-  *(float *)((int)&CStack_58 + (uint)bVar7 * -8 + 4) = afStack_3c[(uint)bVar7 * -2];
+  *(float *)((int)&CStack_58 + (uint)bVar6 * -8 + 4) = afStack_3c[(uint)bVar6 * -2];
   this_ptr_00 = DAT_005f2afc;
-  *(float *)((int)&CStack_58 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-       afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+  *(float *)((int)&CStack_58 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+       afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
             (this_ptr_00,euler_angles,translation);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30

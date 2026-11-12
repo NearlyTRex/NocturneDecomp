@@ -205,7 +205,7 @@ CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_00529a50(CSfxOption
 CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_arrdtor64_FUN_00529a60(CSfxSample *this_ptr,uint flags);
 void __cdecl sound_snddx_cpp_staticInit_FUN_00529a80(void);
 char * __cdecl sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code);
-undefined4 sound_snddx_cpp_checkDirectSoundError_FUN_00529bb0(uint param_1,undefined4 param_2);
+int __cdecl sound_snddx_cpp_checkDirectSoundError_FUN_00529bb0(HRESULT error_code,char *operation_description);
 int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void);
 int __cdecl sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_00529de0(int sfx_handle);
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(CDirectSoundDevice *this_ptr);

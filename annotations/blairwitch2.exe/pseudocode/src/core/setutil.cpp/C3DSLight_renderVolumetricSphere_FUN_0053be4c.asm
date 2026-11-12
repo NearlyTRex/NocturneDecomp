@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c(int param_1)
+; void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0053be4c(C3DSLight *this_ptr)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e64d1

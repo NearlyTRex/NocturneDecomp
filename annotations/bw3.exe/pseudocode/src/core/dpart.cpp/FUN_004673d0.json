@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 465,
-    "complexity_score": 480,
+    "complexity_score": 461,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 210,
-    "suspect_count": 25,
+    "pseudocode_lines": 206,
+    "suspect_count": 24,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
-    "total_lines": 675
+    "total_lines": 671
   },
   "cross_references": [
     {
@@ -225,6 +224,20 @@
     },
     "pcode_op_count": 2098
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004625f0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0047ab00",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 128,
     "local_size": 120,
@@ -320,16 +333,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -337,10 +342,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 28,
       "match": "DAT_007303fc",
       "severity": "mild",
-      "text": "if (DAT_007303fc != 0) {",
+      "text": "if ((DAT_007303fc != 0) &&",
       "type": "undefined_data"
     },
     {
@@ -348,7 +353,15 @@
       "line": 30,
       "match": "DAT_0060b014",
       "severity": "mild",
-      "text": "apuStack_78[0] = &DAT_0060b014 + vertex_indices->z * 0xc;",
+      "text": "((SRenderVertex *)(&DAT_0060b014 + vertex_indices->x * 0xc),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_0060b014",
+      "severity": "mild",
+      "text": "(SRenderVertex *)(&DAT_0060b014 + vertex_indices->y * 0xc),",
       "type": "undefined_data"
     },
     {
@@ -356,20 +369,12 @@
       "line": 32,
       "match": "DAT_0060b014",
       "severity": "mild",
-      "text": "(&DAT_0060b014 + vertex_indices->x * 0xc,",
+      "text": "(SRenderVertex *)(&DAT_0060b014 + vertex_indices->z * 0xc)), iVar3 == 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_0060b014",
-      "severity": "mild",
-      "text": "&DAT_0060b014 + vertex_indices->y * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
+      "line": 36,
       "match": "DAT_007303f4",
       "severity": "mild",
       "text": "if ((_DAT_01c6cee8 == 0) || (DAT_007303f4 != 0)) {",
@@ -377,31 +382,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 45,
       "match": "DAT_0060b014",
       "severity": "mild",
-      "text": "engine_prim_c_prepareDepthBuffer_FUN_00515920(&DAT_0060b014 + pCVar8->x * 0xc);",
+      "text": "((SRenderVertex *)(&DAT_0060b014 + pCVar8->x * 0xc),1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 54,
       "match": "DAT_0060b014",
       "severity": "mild",
-      "text": "engine_prim_c_replaceWWithDepth_FUN_00515a80(&DAT_0060b014 + pCVar8->x * 0xc);",
+      "text": "((SRenderVertex *)(&DAT_0060b014 + pCVar8->x * 0xc),1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 71,
       "match": "DAT_0060b014",
       "severity": "mild",
-      "text": "local_20 = &DAT_0060b014 + (&vertex_indices->x)[iVar9] * 0xc;",
+      "text": "local_20 = &DAT_0060b014 + (&vertex_indices->x)[iVar3] * 0xc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 73,
       "match": "DAT_0060b014",
       "severity": "mild",
       "text": "local_24 = &DAT_0060b014 + local_30->x * 0xc;",
@@ -409,7 +414,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 74,
       "match": "DAT_0060b028",
       "severity": "mild",
       "text": "iVar5 = *(int *)(&DAT_0060b028 + iVar4) >> 0x10;",
@@ -417,31 +422,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 75,
       "match": "DAT_0060b028",
       "severity": "mild",
-      "text": "iVar9 = *(int *)(&DAT_0060b028 + iVar3) >> 0x10;",
+      "text": "iVar3 = *(int *)(&DAT_0060b028 + iVar9) >> 0x10;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 80,
       "match": "DAT_0060b028",
       "severity": "mild",
-      "text": "if (*(int *)(&DAT_0060b028 + iVar3) < *(int *)(&DAT_0060b028 + iVar4)) {",
+      "text": "if (*(int *)(&DAT_0060b028 + iVar9) < *(int *)(&DAT_0060b028 + iVar4)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 80,
       "match": "DAT_0060b028",
       "severity": "mild",
-      "text": "if (*(int *)(&DAT_0060b028 + iVar3) < *(int *)(&DAT_0060b028 + iVar4)) {",
+      "text": "if (*(int *)(&DAT_0060b028 + iVar9) < *(int *)(&DAT_0060b028 + iVar4)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 87,
       "match": "DAT_01bdcfd8",
       "severity": "mild",
       "text": "*(int *)(&DAT_01bdcfd8 + iVar4) = iVar6;",
@@ -449,7 +454,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 124,
       "match": "DAT_01bdcfd8",
       "severity": "mild",
       "text": "local_14 = (int *)&DAT_01bdcfd8;",
@@ -457,7 +462,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 135,
       "match": "DAT_01bdcfd8",
       "severity": "mild",
       "text": "local_18 = (int *)&DAT_01bdcfd8;",
@@ -465,7 +470,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 154,
+      "line": 151,
       "match": "DAT_01bdcfd8",
       "severity": "mild",
       "text": "local_14 = (int *)&DAT_01bdcfd8;",
@@ -473,7 +478,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 171,
+      "line": 168,
       "match": "DAT_01bdcfd8",
       "severity": "mild",
       "text": "local_18 = (int *)&DAT_01bdcfd8;",
@@ -481,15 +486,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 207,
+      "line": 203,
       "match": "DAT_0060b014",
       "severity": "mild",
-      "text": "apuStack_78[iVar9] = &DAT_0060b014 + *piVar2 * 0xc;",
+      "text": "local_74[iVar3] = (SRenderVertex *)(&DAT_0060b014 + *piVar2 * 0xc);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar8->owner`). Replace `pCVar8->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 49,
+      "line": 46,
       "match": "pCVar8 = (T *)&pCVar8->FIELD",
       "severity": "moderate",
       "text": "pCVar8 = (CVector3i *)&pCVar8->y;",
@@ -497,7 +502,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar8->owner`). Replace `pCVar8->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 58,
+      "line": 55,
       "match": "pCVar8 = (T *)&pCVar8->FIELD",
       "severity": "moderate",
       "text": "pCVar8 = (CVector3i *)&pCVar8->y;",
@@ -505,7 +510,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_30->owner`). Replace `local_30->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 121,
+      "line": 118,
       "match": "local_30 = (T *)&local_30->FIELD",
       "severity": "moderate",
       "text": "local_30 = (CVector3i *)&local_30->y;",
@@ -513,7 +518,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `vertex_indices` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&vertex_indices->owner`). Replace `vertex_indices->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 206,
+      "line": 202,
       "match": "vertex_indices = (T *)&vertex_indices->FIELD",
       "severity": "moderate",
       "text": "vertex_indices = (CVector3i *)&vertex_indices->y;",

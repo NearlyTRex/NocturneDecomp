@@ -21,10 +21,6 @@ void __cdecl invertTransformMatrix(void);
 // Address: 004e50f0
 void __cdecl buildRotationMatrix(int pitch,int yaw,int roll);
 
-// Original: engine_matrix.c_FUN_004e553e
-// Address: 004e553e
-void FUN_004e553e(int param_1,CVector3i *param_2);
-
 // Original: engine_matrix.c_transformToCache_FUN_004e5540
 // Address: 004e5540
 void __cdecl transformToCache(int cacheIndex,CVector3i *inputPoint);
@@ -35,7 +31,7 @@ void __cdecl projectCachedPoint(int cacheIndex);
 
 // Original: engine_matrix.c_projectTransformedPoint_FUN_004e5590
 // Address: 004e5590
-void __cdecl projectTransformedPoint(int *param_1);
+void __cdecl projectTransformedPoint(SProjectedVertex *point);
 
 // Original: engine_matrix.c_projectCachedPointUnchecked_FUN_004e5630
 // Address: 004e5630
@@ -79,11 +75,11 @@ void __cdecl setCameraOrigin(int x,int y,int z);
 
 // Original: engine_matrix.c_getCameraOrigin_FUN_004e6a90
 // Address: 004e6a90
-void getCameraOrigin(void);
+void __esi getCameraOrigin(CVector3i *output);
 
 // Original: engine_matrix.c_getCameraRotation_FUN_004e6ac0
 // Address: 004e6ac0
-void getCameraRotation(void);
+void __esi getCameraRotation(CVector3i *output);
 
 // Original: engine_matrix.c_pushViewport_FUN_004e6af0
 // Address: 004e6af0

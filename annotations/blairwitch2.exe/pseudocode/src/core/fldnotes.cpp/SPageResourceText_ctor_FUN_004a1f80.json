@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 234,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 28,
     "suspect_count": 19,
     "suspect_types": [
       "extra_output",
       "unnamed_param",
       "unrolled_strcpy"
     ],
-    "total_lines": 81
+    "total_lines": 80
   },
   "cross_references": [
     {
@@ -50,7 +50,7 @@
     {
       "addr": "004aaf00",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004aaf00"
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
     }
   ],
   "globals": [
@@ -105,6 +105,20 @@
       "STORE": 19
     },
     "pcode_op_count": 166
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ba850",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a8490",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,
@@ -163,7 +177,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 11,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "*(byte ***)(extraout_EAX + 0x14) = &g_SPageResourceTextVTable;",
@@ -171,7 +185,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
+      "line": 12,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "*(uint *)(extraout_EAX + 0x11c) = param_3;",
@@ -179,7 +193,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 12,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(extraout_EAX + 0x11c) = param_3;",
@@ -187,15 +201,15 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 13,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "pcVar4 = (char *)(extraout_EAX + 0x1c);",
+      "text": "pcVar3 = (char *)(extraout_EAX + 0x1c);",
       "type": "extra_output"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "cVar1 = *param_2;",
@@ -203,7 +217,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "cVar1 = param_2[1];",
@@ -211,7 +225,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 2;",
@@ -219,7 +233,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 2;",
@@ -227,7 +241,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
+      "line": 23,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "*(uint *)(extraout_EAX + 0x18) = 0;",
@@ -235,10 +249,18 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
+      "line": 25,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "(*(uint *)(extraout_EAX + 0x11c),(char *)(extraout_EAX + 0x1c));",
+      "text": "(*(CBitFont **)(extraout_EAX + 0x11c),(char *)(extraout_EAX + 0x1c));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "(*(CBitFont **)(extraout_EAX + 0x11c),(char *)(extraout_EAX + 0x1c));",
       "type": "extra_output"
     },
     {
@@ -246,20 +268,12 @@
       "line": 26,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "(*(uint *)(extraout_EAX + 0x11c),(char *)(extraout_EAX + 0x1c));",
+      "text": "*(int *)(extraout_EAX + 8) = iVar2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "*(uint *)(extraout_EAX + 8) = uVar2;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
+      "line": 28,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "(*(CBitFont **)(extraout_EAX + 0x11c),0x6a);",
@@ -267,15 +281,15 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 30,
+      "line": 29,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "*(int *)(extraout_EAX + 0xc) = iVar3;",
+      "text": "*(int *)(extraout_EAX + 0xc) = iVar2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
+      "line": 30,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "return extraout_EAX;",
@@ -283,7 +297,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 15,
+      "line": 14,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

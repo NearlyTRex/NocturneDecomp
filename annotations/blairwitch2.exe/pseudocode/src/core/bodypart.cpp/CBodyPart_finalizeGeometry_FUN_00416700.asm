@@ -66,7 +66,7 @@
 ;   core_actor.cpp_FUN_00408d70
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417270
-;   core_bodypart.cpp_FUN_00415890
+;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890
 ;   core_bodypart.cpp_FUN_004178c0
 ;   core_dirmat.cpp_FUN_004495a0
 ;   crt_math.c_round_FUN_005b7ff0
@@ -97,8 +97,8 @@ section .text
     PUSH 0x0                            ; 00416726
     PUSH EBX                            ; 00416728
     MOV dword ptr [EBX + 0x70],0x2      ; 00416729
-    CALL core_bodypart.cpp_FUN_00415890 ; 00416730
-        ;   XREF to: 00415890 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00415890()
+    CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890 ; 00416730
+        ;   XREF to: 00415890 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890(CBodyPart * this_ptr, int vertex_count, int tri_count)
     LEA EAX,[EBX + 0x2c4]               ; 00416735
     ADD ESP,0xc                         ; 0041673b
     MOV EDX,EAX                         ; 0041673e
@@ -405,7 +405,7 @@ section .text
     PUSH EDX                            ; 00416b5f
     XOR EDI,EDI                         ; 00416b60
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0 ; 00416b62
-        ;   XREF to: 004df5f0 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0()
+        ;   XREF to: 004df5f0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     MOV ECX,dword ptr [ESI + 0x4]       ; 00416b67
     ADD ESP,0x8                         ; 00416b6a
     TEST ECX,ECX                        ; 00416b6d

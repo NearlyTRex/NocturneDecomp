@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
-;   engine_font.cpp_FUN_004aaf00
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
         ;   Label: LAB_0048534e
     MOV EDI,dword ptr [0x01c25590]      ; 0048534f | DAT_01c25590
     PUSH EDI                            ; 00485355
-    CALL engine_font.cpp_FUN_004aaf00   ; 00485356
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 00485356
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     MOV ECX,EAX                         ; 0048535b
     MOV EAX,[0x006141b8]                ; 0048535d | DAT_006141b8
     MOV EDX,EAX                         ; 00485362

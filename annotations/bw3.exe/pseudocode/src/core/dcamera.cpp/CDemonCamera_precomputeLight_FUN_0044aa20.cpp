@@ -27,7 +27,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044aa20(CDemonCa
   int local_7c;
   int local_78;
   int local_74;
-  int local_70;
+  CVector3i local_70;
   CVector3i local_64;
   int local_58;
   int local_54;
@@ -39,7 +39,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044aa20(CDemonCa
   int local_3c;
   int local_38;
   int local_34;
-  int local_30;
+  CVector3i *local_30;
   int local_2c;
   float *local_28;
   int *local_24;
@@ -131,7 +131,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044aa20(CDemonCa
     local_54 = local_78 * 0xf00 + 0xa38388;
     local_48 = (int)(light_source->base).base.rotation_matrix.m + local_78 * 4 + -0x10;
     do {
-      local_30 = local_50 + local_58;
+      local_30 = (CVector3i *)(local_50 + local_58);
       local_34 = 999;
       local_28 = (float *)(local_54 + local_58);
       local_20 = (int *)((int)light_source->corona_visibility_buffers + local_4c + local_44);
@@ -157,12 +157,13 @@ LAB_0044ac97:
             *local_24 = 0;
           }
           else {
-            core_dcamera_cpp_FUN_0044a3e0(light_source,local_30);
-            local_64.x = local_70;
+            core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0
+                      (&light_source->base,local_30,&local_70);
+            local_64.x = local_70.x;
             *(uint *)((int)&local_64 + (uint)bVar11 * -8 + 4) =
-                 *(uint *)(&stack0xffffff94 + (uint)bVar11 * -8);
+                 *(uint *)((int)&local_70 + (uint)bVar11 * -8 + 4);
             *(uint *)((int)&local_64 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-                 *(uint *)(&stack0xffffff98 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
+                 *(uint *)((int)&local_70 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
             if (local_64.z < 1) goto LAB_0044ac7f;
             *local_20 = local_64.z - local_40;
             puVar5 = core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0045cd20
@@ -186,7 +187,7 @@ LAB_0044ac97:
             }
           }
           local_28 = local_28 + 3;
-          local_30 = local_30 + 0xc;
+          local_30 = local_30 + 1;
           local_20 = local_20 + 1;
           local_1c = local_1c + 1;
           local_24 = local_24 + 1;

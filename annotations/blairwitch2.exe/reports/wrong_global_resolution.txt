@@ -11,16 +11,16 @@ suspicious, since the reference list uses exact address resolution.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions checked: 6259
-  Functions with suspicious globals: 815
-  Total suspicious global references: 1402
+  Functions checked: 6237
+  Functions with suspicious globals: 806
+  Total suspicious global references: 1439
 
   Most commonly misresolved globals:
     g_CDemonActorClassInfo                             46 functions
     g_CEnemyClassInfo                                  31 functions
-    DAT_01c2a38c                                       21 functions
-    g_CDemonCameraInstance                             17 functions
-    g_CVectorTypeInfo                                  16 functions
+    DAT_01c2a38c                                       20 functions
+    g_CVectorTypeInfo                                  20 functions
+    g_CDemonCameraInstance                             19 functions
     g_CWeaponClassInfo                                 15 functions
     DAT_0061ed94                                       14 functions
     DAT_01c34910                                       12 functions
@@ -28,20 +28,208 @@ SUMMARY
     g_CHeroClassInfo                                   11 functions
     g_CBasicEnemyClassInfo                             11 functions
     g_CAlphaBitmapTypeInfo                             11 functions
-    DAT_00622014                                       11 functions
     DAT_01c35838                                       9 functions
     DAT_0265370c                                       9 functions
+    DAT_00622014                                       9 functions
     g_CBasicNPCClassInfo                               8 functions
     DAT_01c37790                                       8 functions
     g_CNPCClassInfo                                    8 functions
     DAT_01d09920                                       8 functions
     DAT_01c2b64c                                       7 functions
 
-  Raw .cpp files with issues: 815
+  Raw .cpp files with issues: 806
 
 ====================================================================================================
 DETAILED FINDINGS
 ====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+core_fire.cpp_staticInit_FUN_004930e0  [.cpp]  (46 suspicious globals)
+  File: core/fire.cpp
+
+  DAT_01c3f8e0
+    Used at lines: 20
+    NOT found in function reference list
+
+  DAT_01c558e8
+    Used at lines: 21
+    NOT found in function reference list
+
+  DAT_01c85ffc
+    Used at lines: 28
+    NOT found in function reference list
+
+  DAT_01c86730
+    Used at lines: 29
+    NOT found in function reference list
+
+  DAT_01c9cd98
+    Used at lines: 44
+    NOT found in function reference list
+
+  g_CBulletHoleTypeInfo
+    Used at lines: 21
+    NOT found in function reference list
+
+  g_CBulletTrailTypeInfo
+    Used at lines: 32
+    NOT found in function reference list
+
+  g_CCraterTypeInfo
+    Used at lines: 43
+    NOT found in function reference list
+
+  g_CExplosionTypeInfo
+    Used at lines: 40
+    NOT found in function reference list
+
+  g_CFireEffectFireballsDestructorNode
+    Used at lines: 34
+    NOT found in function reference list
+
+  g_CFireEffectGlassParticlesDestructorNode
+    Used at lines: 31
+    NOT found in function reference list
+
+  g_CFireEffectPopcornsDestructorNode
+    Used at lines: 50
+    NOT found in function reference list
+
+  g_CFireEffectRainDropsDestructorNode
+    Used at lines: 52
+    NOT found in function reference list
+
+  g_CFireEffectRocksDestructorNode
+    Used at lines: 36
+    NOT found in function reference list
+
+  g_CFireEffectShellsDestructorNode
+    Used at lines: 48
+    NOT found in function reference list
+
+  g_CFireEffectSparksDestructorNode
+    Used at lines: 25
+    NOT found in function reference list
+
+  g_CFireEffectStakesDestructorNode
+    Used at lines: 23
+    NOT found in function reference list
+
+  g_CFireEffectTossesDestructorNodes
+    Used at lines: 42
+    NOT found in function reference list
+
+  g_CFireballTypeInfo
+    Used at lines: 33
+    NOT found in function reference list
+
+  g_CFireflyTypeInfo
+    Used at lines: 26
+    NOT found in function reference list
+
+  g_CGlassParticleTypeInfo
+    Used at lines: 30
+    NOT found in function reference list
+
+  g_CGunFlameTypeInfo
+    Used at lines: 44
+    NOT found in function reference list
+
+  g_CKeyFramedModelInstanceTypeInfo
+    Used at lines: 17, 19
+    NOT found in function reference list
+
+  g_CLaserBeamTypeInfo
+    Used at lines: 39
+    NOT found in function reference list
+
+  g_CLeafTypeInfo
+    Used at lines: 37
+    NOT found in function reference list
+
+  g_CLightningBoltTypeInfo
+    Used at lines: 45
+    NOT found in function reference list
+
+  g_CMuzzleEffectTypeInfo
+    Used at lines: 29
+    NOT found in function reference list
+
+  g_CMuzzleFlashTypeInfo
+    Used at lines: 28
+    NOT found in function reference list
+
+  g_CPopcornTypeInfo
+    Used at lines: 49
+    NOT found in function reference list
+
+  g_CRainDropTypeInfo
+    Used at lines: 51
+    NOT found in function reference list
+
+  g_CRockTypeInfo
+    Used at lines: 35
+    NOT found in function reference list
+
+  g_CShellTypeInfo
+    Used at lines: 47
+    NOT found in function reference list
+
+  g_CSmokeParticleTypeInfo
+    Used at lines: 20
+    NOT found in function reference list
+
+  g_CSparkTypeInfo
+    Used at lines: 24
+    NOT found in function reference list
+
+  g_CStakeTypeInfo
+    Used at lines: 22
+    NOT found in function reference list
+
+  g_CTossTypeInfo
+    Used at lines: 41
+    NOT found in function reference list
+
+  g_CTrailTypeInfo
+    Used at lines: 46
+    NOT found in function reference list
+
+  g_FireballPool
+    Used at lines: 33
+    NOT found in function reference list
+
+  g_GlassParticlePool
+    Used at lines: 30
+    NOT found in function reference list
+
+  g_PopcornPool
+    Used at lines: 49
+    NOT found in function reference list
+
+  g_RainDropPool
+    Used at lines: 51
+    NOT found in function reference list
+
+  g_RockPool
+    Used at lines: 35
+    NOT found in function reference list
+
+  g_ShellPool
+    Used at lines: 47
+    NOT found in function reference list
+
+  g_SparkPool
+    Used at lines: 24
+    NOT found in function reference list
+
+  g_StakePool
+    Used at lines: 22
+    NOT found in function reference list
+
+  g_TossPool
+    Used at lines: 41
+    NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
 core_fire.cpp_CFireEffect_process_FUN_0049c430  [.cpp]  (17 suspicious globals)
@@ -188,66 +376,6 @@ core_fire.cpp_CFireEffect_render_FUN_0049c780  [.cpp]  (17 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_fire.cpp_staticInit_FUN_004930e0  [.cpp]  (14 suspicious globals)
-  File: core/fire.cpp
-
-  DAT_01c3f8e0
-    Used at lines: 20
-    NOT found in function reference list
-
-  DAT_01c558e8
-    Used at lines: 21
-    NOT found in function reference list
-
-  DAT_01c85ffc
-    Used at lines: 28
-    NOT found in function reference list
-
-  DAT_01c86730
-    Used at lines: 29
-    NOT found in function reference list
-
-  DAT_01c9cd98
-    Used at lines: 44
-    NOT found in function reference list
-
-  g_FireballPool
-    Used at lines: 33
-    NOT found in function reference list
-
-  g_GlassParticlePool
-    Used at lines: 30
-    NOT found in function reference list
-
-  g_PopcornPool
-    Used at lines: 49
-    NOT found in function reference list
-
-  g_RainDropPool
-    Used at lines: 51
-    NOT found in function reference list
-
-  g_RockPool
-    Used at lines: 35
-    NOT found in function reference list
-
-  g_ShellPool
-    Used at lines: 47
-    NOT found in function reference list
-
-  g_SparkPool
-    Used at lines: 24
-    NOT found in function reference list
-
-  g_StakePool
-    Used at lines: 22
-    NOT found in function reference list
-
-  g_TossPool
-    Used at lines: 41
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_00448b00  [.cpp]  (12 suspicious globals)
   File: core/dglobe.cpp
 
@@ -300,43 +428,47 @@ core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_00448b00  [.cpp]  (12 suspi
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-cockpit_ckptutil.c_FUN_0042ebee  [.cpp]  (9 suspicious globals)
-  File: cockpit/ckptutil.c
+core_set.cpp_staticInit_FUN_0052bbe0  [.cpp]  (10 suspicious globals)
+  File: core/set.cpp
 
-  DAT_006141c0
-    Used at lines: 36, 37, 49, 69
+  DAT_0200e8f4
+    Used at lines: 20
     NOT found in function reference list
 
-  DAT_01c2a38c
-    Used at lines: 38, 44, 79, 93
+  g_CDemonCameraDestructorNode
+    Used at lines: 15
     NOT found in function reference list
 
-  DAT_01c35214
-    Used at lines: 57, 58, 59
+  g_CDemonCameraInstance
+    Used at lines: 14
     NOT found in function reference list
 
-  DAT_01c35814
-    Used at lines: 39, 45, 51, 57, 95
+  g_CDemonRaytraceDestructorNode
+    Used at lines: 17
     NOT found in function reference list
 
-  DAT_01c3581c
-    Used at lines: 39, 51
+  g_CDemonRaytraceInstance
+    Used at lines: 16
     NOT found in function reference list
 
-  DAT_01c35820
-    Used at lines: 40, 46, 52, 58, 80, ...
+  g_CDemonSetDestructorNode
+    Used at lines: 13
     NOT found in function reference list
 
-  DAT_01c35828
-    Used at lines: 40, 52, 94
+  g_CDemonSetInstance
+    Used at lines: 12
     NOT found in function reference list
 
-  DAT_01c3582c
-    Used at lines: 41, 47, 53, 59, 81, ...
+  g_CKeyFramedModelDestructorNode
+    Used at lines: 19
     NOT found in function reference list
 
-  DAT_01c35834
-    Used at lines: 41, 53, 96
+  g_CKeyFramedModelInstance
+    Used at lines: 18
+    NOT found in function reference list
+
+  g_CVectorTypeInfo
+    Used at lines: 20
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -572,6 +704,38 @@ core_fire.cpp_CFireEffect_init_FUN_0049c190  [.cpp]  (8 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_gore.cpp_staticInit_FUN_004c7360  [.cpp]  (7 suspicious globals)
+  File: core/gore.cpp
+
+  g_BloodParticles
+    Used at lines: 14
+    NOT found in function reference list
+
+  g_CBloodParticleTypeInfo
+    Used at lines: 14
+    NOT found in function reference list
+
+  g_CBloodPoolTypeInfo
+    Used at lines: 17
+    NOT found in function reference list
+
+  g_CBloodSplatTypeInfo
+    Used at lines: 16
+    NOT found in function reference list
+
+  g_CFootstepTypeInfo
+    Used at lines: 18
+    NOT found in function reference list
+
+  g_CGoreDestructorNode
+    Used at lines: 13
+    NOT found in function reference list
+
+  g_CGoreInstance
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_menu.cpp_staticInit_FUN_004eae70  [.cpp]  (7 suspicious globals)
   File: core/menu.cpp
 
@@ -660,6 +824,34 @@ core_event.cpp_parseComparisonOp_FUN_00488c1e  [.cpp]  (6 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_game.cpp_staticInit_FUN_004b28b0  [.cpp]  (6 suspicious globals)
+  File: core/game.cpp
+
+  g_CDemonLightDestructorNode
+    Used at lines: 13
+    NOT found in function reference list
+
+  g_CDemonLightInstance
+    Used at lines: 12
+    NOT found in function reference list
+
+  g_CGameDestructorNode
+    Used at lines: 15
+    NOT found in function reference list
+
+  g_CGameInstance
+    Used at lines: 14
+    NOT found in function reference list
+
+  g_CPickList
+    Used at lines: 16
+    NOT found in function reference list
+
+  g_CPickListDestructorNode
+    Used at lines: 17
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_staticInit_FUN_00540580  [.cpp]  (6 suspicious globals)
   File: core/skeleton.cpp
 
@@ -712,6 +904,30 @@ core_boxactor.cpp_staticInit_FUN_0041bc90  [.cpp]  (5 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_dfilter.cpp_staticInit_FUN_00447560  [.cpp]  (5 suspicious globals)
+  File: core/dfilter.cpp
+
+  g_CDemonFilterTypeInfo
+    Used at lines: 12, 14
+    NOT found in function reference list
+
+  g_CFilterCacheDestructorNode
+    Used at lines: 17
+    NOT found in function reference list
+
+  g_CFilterCacheInstance
+    Used at lines: 16
+    NOT found in function reference list
+
+  g_CFilterFXDestructorNode
+    Used at lines: 19
+    NOT found in function reference list
+
+  g_CFilterFXInstance
+    Used at lines: 18
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_dracbrid.cpp_staticInit_FUN_00462af0  [.cpp]  (5 suspicious globals)
   File: core/dracbrid.cpp
 
@@ -748,7 +964,7 @@ core_dtri.cpp_clipPolygonToFar_FUN_004791a0  [.cpp]  (5 suspicious globals)
     NOT found in function reference list
 
   DAT_01c22320
-    Used at lines: 35, 36, 43, 48, 49, ...
+    Used at lines: 35, 36, 44, 48, 49, ...
     NOT found in function reference list
 
   DAT_01c22324
@@ -853,30 +1069,6 @@ core_menu.cpp_showMainGameMenu_FUN_004ee3f0  [.cpp]  (5 suspicious globals)
 
   g_MenuBlurRight
     Used at lines: 47
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_set.cpp_staticInit_FUN_0052bbe0  [.cpp]  (5 suspicious globals)
-  File: core/set.cpp
-
-  DAT_0200e8f4
-    Used at lines: 20
-    NOT found in function reference list
-
-  g_CDemonCameraInstance
-    Used at lines: 14
-    NOT found in function reference list
-
-  g_CDemonRaytraceInstance
-    Used at lines: 16
-    NOT found in function reference list
-
-  g_CDemonSetInstance
-    Used at lines: 12
-    NOT found in function reference list
-
-  g_CKeyFramedModelInstance
-    Used at lines: 18
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -1008,26 +1200,6 @@ core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00444220  [.cpp]  (4 suspicious global
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dfilter.cpp_staticInit_FUN_00447560  [.cpp]  (4 suspicious globals)
-  File: core/dfilter.cpp
-
-  g_CDemonFilterTypeInfo
-    Used at lines: 14, 16
-    NOT found in function reference list
-
-  g_CFilterCacheInstance
-    Used at lines: 18
-    NOT found in function reference list
-
-  g_CFilterFXDestructorNode
-    Used at lines: 21
-    NOT found in function reference list
-
-  g_CFilterFXInstance
-    Used at lines: 20
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_dtri.cpp_clipPolygonToRight_FUN_00478d70  [.cpp]  (4 suspicious globals)
   File: core/dtri.cpp
 
@@ -1068,26 +1240,6 @@ core_game.cpp_FUN_004b296e  [.cpp]  (4 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_staticInit_FUN_004b28b0  [.cpp]  (4 suspicious globals)
-  File: core/game.cpp
-
-  g_CDemonLightDestructorNode
-    Used at lines: 13
-    NOT found in function reference list
-
-  g_CDemonLightInstance
-    Used at lines: 12
-    NOT found in function reference list
-
-  g_CGameInstance
-    Used at lines: 14
-    NOT found in function reference list
-
-  g_CPickList
-    Used at lines: 16
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_hero.cpp_FUN_004d0b3e  [.cpp]  (4 suspicious globals)
   File: core/hero.cpp
 
@@ -1112,7 +1264,7 @@ core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_004e4f30  [.cpp]  (4 suspicious gl
   File: core/manpuz.cpp
 
   g_CMansionPuzzleCircleVTable
-    Used at lines: 28
+    Used at lines: 29
     NOT found in function reference list
 
   g_SGemTypeInfo
@@ -1124,7 +1276,7 @@ core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_004e4f30  [.cpp]  (4 suspicious gl
     NOT found in function reference list
 
   g_SReflectorTypeInfo
-    Used at lines: 27
+    Used at lines: 28
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -1156,15 +1308,15 @@ core_set.cpp_CDemonSet_ctor_FUN_0052bd20  [.cpp]  (4 suspicious globals)
     NOT found in function reference list
 
   g_C3DSLightTypeInfo
-    Used at lines: 23
-    NOT found in function reference list
-
-  g_SRoomTypeInfo
     Used at lines: 24
     NOT found in function reference list
 
+  g_SRoomTypeInfo
+    Used at lines: 26
+    NOT found in function reference list
+
   g_SVDBoxTypeInfo
-    Used at lines: 25
+    Used at lines: 27
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -1216,7 +1368,7 @@ core_zombie.cpp_FUN_0059aa80  [.cpp]  (4 suspicious globals)
     NOT found in function reference list
 
   g_CAudioRecPuzzleVTable
-    Used at lines: 23
+    Used at lines: 24
     NOT found in function reference list
 
   g_CExamplePuzzleVTable
@@ -1224,7 +1376,7 @@ core_zombie.cpp_FUN_0059aa80  [.cpp]  (4 suspicious globals)
     NOT found in function reference list
 
   g___1hlg6hbuttonStructTypeInfo
-    Used at lines: 19
+    Used at lines: 20
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -1232,19 +1384,19 @@ engine_3d.c_flushPremiumRenderBuffer_FUN_004070e0  [.cpp]  (4 suspicious globals
   File: engine/3d.c
 
   DAT_00622014
-    Used at lines: 66
+    Used at lines: 64
     NOT found in function reference list
 
   DAT_00622040
-    Used at lines: 72, 73
+    Used at lines: 70, 71
     NOT found in function reference list
 
   DAT_0070ca98
-    Used at lines: 74, 83
+    Used at lines: 72, 81
     NOT found in function reference list
 
   DAT_0070cb00
-    Used at lines: 29
+    Used at lines: 28
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -1252,19 +1404,19 @@ shape_edittool.cpp_FUN_0047fd00  [.cpp]  (4 suspicious globals)
   File: shape/edittool.cpp
 
   DAT_00622014
-    Used at lines: 62, 78, 96
+    Used at lines: 87, 130, 174
     NOT found in function reference list
 
   DAT_00622044
-    Used at lines: 55, 95
+    Used at lines: 80, 173
     NOT found in function reference list
 
   DAT_00622074
-    Used at lines: 71
+    Used at lines: 123
     NOT found in function reference list
 
   DAT_006220a4
-    Used at lines: 88
+    Used at lines: 166
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -1544,11 +1696,11 @@ core_bugs.cpp_CBugs_ctor_FUN_0041ef50  [.cpp]  (3 suspicious globals)
   File: core/bugs.cpp
 
   g_CBugsVTable
-    Used at lines: 25
+    Used at lines: 24
     NOT found in function reference list
 
   g_CKeyFramedModelInstanceTypeInfo
-    Used at lines: 24
+    Used at lines: 23
     NOT found in function reference list
 
   g_SBugTypeInfo
@@ -1784,15 +1936,15 @@ core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00444650  [.cpp]  (3 suspicious global
   File: core/dcube.cpp
 
   DAT_01510ce8
-    Used at lines: 35, 36, 43, 48, 49, ...
+    Used at lines: 35, 36, 44, 49, 50, ...
     NOT found in function reference list
 
   DAT_01510cec
-    Used at lines: 37, 50
+    Used at lines: 37, 51
     NOT found in function reference list
 
   DAT_01510cf0
-    Used at lines: 38, 51
+    Used at lines: 38, 52
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -1809,22 +1961,6 @@ core_dest.cpp_staticInit_FUN_00447030  [.cpp]  (3 suspicious globals)
 
   g_CDemonActorClassInfo
     Used at lines: 15
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_dimage.cpp_FUN_00448fcc  [.cpp]  (3 suspicious globals)
-  File: core/dimage.cpp
-
-  DAT_01c35814
-    Used at lines: 16
-    NOT found in function reference list
-
-  DAT_01c35820
-    Used at lines: 15
-    NOT found in function reference list
-
-  DAT_01c3582c
-    Used at lines: 14
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -2120,15 +2256,31 @@ core_game.cpp_FUN_004be8a0  [.cpp]  (3 suspicious globals)
   File: core/game.cpp
 
   DAT_01c37790
-    Used at lines: 146, 150, 152, 156, 158, ...
+    Used at lines: 151, 155, 157, 161, 163, ...
     NOT found in function reference list
 
   DAT_01cb7528
-    Used at lines: 146, 152, 158, 164
+    Used at lines: 151, 157, 163, 169
     NOT found in function reference list
 
   g_CDemonLightInstance
-    Used at lines: 360, 392
+    Used at lines: 387, 421
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_calculateIrisFadeCenter_FUN_004bb2c0  [.cpp]  (3 suspicious globals)
+  File: core/game.cpp
+
+  DAT_006141b8
+    Used at lines: 94
+    NOT found in function reference list
+
+  DAT_006141bc
+    Used at lines: 93, 95
+    NOT found in function reference list
+
+  g_CDemonCameraInstance
+    Used at lines: 81
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -2788,6 +2940,22 @@ core_netgame.cpp_CNetGame_removePlayer_FUN_0050e6c0  [.cpp]  (3 suspicious globa
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_netgame.cpp_staticInit_FUN_0050aed0  [.cpp]  (3 suspicious globals)
+  File: core/netgame.cpp
+
+  g_CNetGameInstance
+    Used at lines: 14
+    NOT found in function reference list
+
+  g_CNetGameInstanceDestructorNode
+    Used at lines: 15
+    NOT found in function reference list
+
+  g_SChatHistoryTypeInfo
+    Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_npc.cpp_staticInit_FUN_00510400  [.cpp]  (3 suspicious globals)
   File: core/npc.cpp
 
@@ -2952,15 +3120,15 @@ core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00533810  [.cpp]  (3 suspiciou
   File: core/set.cpp
 
   DAT_02054df4
-    Used at lines: 63, 67
+    Used at lines: 64, 68
     NOT found in function reference list
 
   DAT_02054df8
-    Used at lines: 64
+    Used at lines: 65
     NOT found in function reference list
 
   DAT_02054dfc
-    Used at lines: 66
+    Used at lines: 67
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3041,6 +3209,22 @@ core_smiley.cpp_staticInit_FUN_00549770  [.cpp]  (3 suspicious globals)
 
   g_CSmileyClassVersion
     Used at lines: 14
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_sound.cpp_staticInit_FUN_00558c40  [.cpp]  (3 suspicious globals)
+  File: core/sound.cpp
+
+  DAT_0264bae4
+    Used at lines: 15
+    NOT found in function reference list
+
+  g_CStrListInstance
+    Used at lines: 13
+    NOT found in function reference list
+
+  g_STrainNoiseTypeInfo
+    Used at lines: 15
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3544,15 +3728,15 @@ engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00407740  [.cpp]  (3 suspicious g
   File: engine/3d.c
 
   DAT_0062202c
-    Used at lines: 57
+    Used at lines: 58
     NOT found in function reference list
 
   DAT_00622030
-    Used at lines: 59
+    Used at lines: 60
     NOT found in function reference list
 
   DAT_0070ca98
-    Used at lines: 56, 65, 68
+    Used at lines: 57, 66, 69
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3601,6 +3785,22 @@ shape_edittool.cpp_FUN_0047a890  [.cpp]  (3 suspicious globals)
 
   DAT_01c3583a
     Used at lines: 23
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_FUN_00480150  [.cpp]  (3 suspicious globals)
+  File: shape/edittool.cpp
+
+  DAT_00622014
+    Used at lines: 156, 232, 307
+    NOT found in function reference list
+
+  DAT_00622044
+    Used at lines: 149, 225, 300
+    NOT found in function reference list
+
+  g_CVectorTypeInfo
+    Used at lines: 82
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3672,11 +3872,11 @@ core_ammo.cpp_CAmmo_process_FUN_0040ded0  [.cpp]  (2 suspicious globals)
   File: core/ammo.cpp
 
   DAT_02653710
-    Used at lines: 158
+    Used at lines: 148
     NOT found in function reference list
 
   DAT_02653714
-    Used at lines: 160
+    Used at lines: 150
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3696,11 +3896,11 @@ core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_0059be60  [.cpp]  (2 suspicious globa
   File: core/bmppuzzl.cpp
 
   g_CAudioRecPuzzleVTable
-    Used at lines: 25
+    Used at lines: 26
     NOT found in function reference list
 
   g___1hlg6hbuttonStructTypeInfo
-    Used at lines: 20
+    Used at lines: 22
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3728,18 +3928,6 @@ core_chain.cpp_CChain_ctor_FUN_005b4720  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_cloth.cpp_FUN_005b0cde  [.cpp]  (2 suspicious globals)
-  File: core/cloth.cpp
-
-  DAT_0060b280
-    Used at lines: 49, 64, 69, 73, 75, ...
-    NOT found in function reference list
-
-  g_CEditorToolsPtr
-    Used at lines: 87, 89
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_construc.cpp_CConstruct_ctor_FUN_00436b00  [.cpp]  (2 suspicious globals)
   File: core/construc.cpp
 
@@ -3756,11 +3944,11 @@ core_cross.cpp_CCross_process_FUN_005a6ed0  [.cpp]  (2 suspicious globals)
   File: core/cross.cpp
 
   DAT_02653710
-    Used at lines: 212, 461
+    Used at lines: 192, 425
     NOT found in function reference list
 
   DAT_02653714
-    Used at lines: 214, 463
+    Used at lines: 194, 427
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3768,11 +3956,11 @@ core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820  [.cpp
   File: core/dcamera.cpp
 
   DAT_00b6639c
-    Used at lines: 37, 38, 39, 43, 44, ...
+    Used at lines: 39, 40, 41, 45, 46, ...
     NOT found in function reference list
 
   DAT_01326d20
-    Used at lines: 54, 103
+    Used at lines: 56, 107
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3780,11 +3968,11 @@ core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0043d870  [.cpp]  (2 suspici
   File: core/dcamera.cpp
 
   DAT_0083c7d4
-    Used at lines: 90
+    Used at lines: 89
     NOT found in function reference list
 
   DAT_0083c7d8
-    Used at lines: 91, 94
+    Used at lines: 90, 91
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3828,11 +4016,11 @@ core_doc.cpp_FUN_004568e0  [.cpp]  (2 suspicious globals)
   File: core/doc.cpp
 
   DAT_01b4d23c
-    Used at lines: 612
+    Used at lines: 658
     NOT found in function reference list
 
   DAT_01b4d248
-    Used at lines: 575
+    Used at lines: 618
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3864,11 +4052,11 @@ core_dstrendr.cpp_renderPerspectiveTexturedScanline_FUN_004722e9  [.cpp]  (2 sus
   File: core/dstrendr.cpp
 
   DAT_01c2a38c
-    Used at lines: 38
+    Used at lines: 33
     NOT found in function reference list
 
   DAT_01c35e74
-    Used at lines: 44, 47
+    Used at lines: 39, 44
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3893,6 +4081,18 @@ core_fire.cpp_CFireEffect_renderDecals_FUN_0049cb50  [.cpp]  (2 suspicious globa
 
   DAT_01c9cd94
     Used at lines: 81
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_fire.cpp_CGlassParticle_ctor_FUN_0049edc0  [.cpp]  (2 suspicious globals)
+  File: core/fire.cpp
+
+  g_CGlassParticleVTable
+    Used at lines: 17
+    NOT found in function reference list
+
+  g_CVectorTypeInfo
+    Used at lines: 16
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3932,15 +4132,15 @@ core_flies.cpp_drawFlyPixel_FUN_004a6fe0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_FUN_004b2a50  [.cpp]  (2 suspicious globals)
+core_game.cpp_CGame_beginFadeOut_FUN_004bb280  [.cpp]  (2 suspicious globals)
   File: core/game.cpp
 
-  DAT_005d72e4
-    Used at lines: 56
+  g_CDemonCameraInstance
+    Used at lines: 85
     NOT found in function reference list
 
-  DAT_01c2a38c
-    Used at lines: 79
+  g_CScriptPtr
+    Used at lines: 52
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3956,15 +4156,15 @@ core_game.cpp_FUN_004b757e  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_FUN_004bb2c0  [.cpp]  (2 suspicious globals)
+core_game.cpp_captureDebugMovieFrame_FUN_004b2a50  [.cpp]  (2 suspicious globals)
   File: core/game.cpp
 
-  DAT_006141b8
-    Used at lines: 92
+  DAT_005d72e4
+    Used at lines: 56
     NOT found in function reference list
 
-  DAT_006141bc
-    Used at lines: 91, 93
+  DAT_01c2a38c
+    Used at lines: 79
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4004,18 +4204,6 @@ core_glass.cpp_CGlass_ctor_FUN_004c48a0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_gore.cpp_staticInit_FUN_004c7360  [.cpp]  (2 suspicious globals)
-  File: core/gore.cpp
-
-  g_BloodParticles
-    Used at lines: 14
-    NOT found in function reference list
-
-  g_CGoreInstance
-    Used at lines: 12
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_ground.cpp_staticInit_FUN_004ca6b0  [.cpp]  (2 suspicious globals)
   File: core/ground.cpp
 
@@ -4024,7 +4212,7 @@ core_ground.cpp_staticInit_FUN_004ca6b0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
   g_CGroundInstance
-    Used at lines: 15
+    Used at lines: 14
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4032,11 +4220,11 @@ core_health.cpp_CHealthItem_process_FUN_004cdb60  [.cpp]  (2 suspicious globals)
   File: core/health.cpp
 
   DAT_02653710
-    Used at lines: 148
+    Used at lines: 131
     NOT found in function reference list
 
   DAT_02653714
-    Used at lines: 150
+    Used at lines: 133
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4044,11 +4232,11 @@ core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680  [.cpp]  (2 suspicious global
   File: core/hpatrol.cpp
 
   DAT_02653710
-    Used at lines: 78
+    Used at lines: 74
     NOT found in function reference list
 
   DAT_02653714
-    Used at lines: 80
+    Used at lines: 76
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4064,27 +4252,39 @@ core_lantern.cpp_CLantern_ctor_FUN_0059cbd0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_level.cpp_staticInit_FUN_004e1440  [.cpp]  (2 suspicious globals)
+  File: core/level.cpp
+
+  g_LoadingMoonModel
+    Used at lines: 13
+    NOT found in function reference list
+
+  g_LoadingMoonModelDestructorNode
+    Used at lines: 14
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_necklace.cpp_CNecklace_process_FUN_005adad0  [.cpp]  (2 suspicious globals)
   File: core/necklace.cpp
 
   DAT_02653710
-    Used at lines: 150
+    Used at lines: 133
     NOT found in function reference list
 
   DAT_02653714
-    Used at lines: 152
+    Used at lines: 135
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_netgame.cpp_FUN_0050b41c  [.cpp]  (2 suspicious globals)
-  File: core/netgame.cpp
+core_podmain.cpp_staticInit_FUN_0051bfd0  [.cpp]  (2 suspicious globals)
+  File: core/podmain.cpp
 
-  g_CEditorToolsPtr
-    Used at lines: 22
+  g_CDemonPodMainDestructorNode
+    Used at lines: 14
     NOT found in function reference list
 
-  g_CGamePtr
-    Used at lines: 24
+  g_CDemonPodVTable
+    Used at lines: 13
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4132,7 +4332,7 @@ core_set.cpp_FUN_0052d3be  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
   g_CDemonCameraInstance
-    Used at lines: 77, 80, 81, 141, 143, ...
+    Used at lines: 76, 77, 80, 81, 141, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4140,11 +4340,11 @@ core_set.cpp_FUN_0052f2a0  [.cpp]  (2 suspicious globals)
   File: core/set.cpp
 
   g_CDemonCameraInstance
-    Used at lines: 64, 69, 73, 79, 93, ...
+    Used at lines: 62, 67, 71, 77, 91, ...
     NOT found in function reference list
 
   g_CDemonLightInstance
-    Used at lines: 61
+    Used at lines: 59
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4176,7 +4376,7 @@ core_skeleton.cpp_CDeformableModel_ctor_FUN_00541020  [.cpp]  (2 suspicious glob
   File: core/skeleton.cpp
 
   g_CBoundingBox3DTypeInfo
-    Used at lines: 20
+    Used at lines: 21
     NOT found in function reference list
 
   g_CVectorTypeInfo
@@ -4220,18 +4420,6 @@ core_skeleton.cpp_FUN_00549180  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_sound.cpp_staticInit_FUN_00558c40  [.cpp]  (2 suspicious globals)
-  File: core/sound.cpp
-
-  DAT_0264bae4
-    Used at lines: 15
-    NOT found in function reference list
-
-  g_CStrListInstance
-    Used at lines: 13
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_stairs.cpp_CStairs_ctor_FUN_00561ef0  [.cpp]  (2 suspicious globals)
   File: core/stairs.cpp
 
@@ -4248,11 +4436,11 @@ core_stranger.cpp_FUN_00568500  [.cpp]  (2 suspicious globals)
   File: core/stranger.cpp
 
   DAT_0264be14
-    Used at lines: 387
+    Used at lines: 408
     NOT found in function reference list
 
   DAT_0264be20
-    Used at lines: 350
+    Used at lines: 369
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4268,6 +4456,18 @@ core_texlist.cpp_staticInit_FUN_00573470  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_water.cpp_staticInit_FUN_00585d40  [.cpp]  (2 suspicious globals)
+  File: core/water.cpp
+
+  g_CWaterDestructorNode
+    Used at lines: 13
+    NOT found in function reference list
+
+  g_CWaterInstance
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_wateract.cpp_CWaterActor_ctor_FUN_005869a0  [.cpp]  (2 suspicious globals)
   File: core/wateract.cpp
 
@@ -4277,6 +4477,18 @@ core_wateract.cpp_CWaterActor_ctor_FUN_005869a0  [.cpp]  (2 suspicious globals)
 
   g_SWaterVertexTypeInfo
     Used at lines: 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_weather.cpp_staticInit_FUN_0058a610  [.cpp]  (2 suspicious globals)
+  File: core/weather.cpp
+
+  DAT_02661fb8
+    Used at lines: 13
+    NOT found in function reference list
+
+  g_CVectorTypeInfo
+    Used at lines: 13
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4308,11 +4520,11 @@ engine_3d.c_clipAndDrawLine3D_FUN_00407fc0  [.cpp]  (2 suspicious globals)
   File: engine/3d.c
 
   DAT_0070c5b4
-    Used at lines: 132, 147
+    Used at lines: 128, 143
     NOT found in function reference list
 
   DAT_0070c5e4
-    Used at lines: 139
+    Used at lines: 135
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4320,11 +4532,35 @@ engine_console.cpp_staticInit_FUN_00436650  [.cpp]  (2 suspicious globals)
   File: engine/console.cpp
 
   g_CConsoleInstance
-    Used at lines: 15
+    Used at lines: 14
     NOT found in function reference list
 
   g_ConsoleDestructorNode
     Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_mini3d.cpp_staticInit_FUN_004f2190  [.cpp]  (2 suspicious globals)
+  File: engine/mini3d.cpp
+
+  g_CMini3DInstance
+    Used at lines: 14
+    NOT found in function reference list
+
+  g_SDynamicLightTypeInfo
+    Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_ncursfx.cpp_staticInit_FUN_0050fff0  [.cpp]  (2 suspicious globals)
+  File: engine/ncursfx.cpp
+
+  g_CMouseDestructorNode
+    Used at lines: 13
+    NOT found in function reference list
+
+  g_CMouseInstance
+    Used at lines: 12
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4356,11 +4592,11 @@ entry  [.cpp]  (2 suspicious globals)
   File: entry
 
   DAT_0061f244
-    Used at lines: 61
+    Used at lines: 60
     NOT found in function reference list
 
   DAT_0061f268
-    Used at lines: 43, 50, 57
+    Used at lines: 42, 49, 56
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4368,35 +4604,23 @@ shape_edittool.cpp_FUN_00480000  [.cpp]  (2 suspicious globals)
   File: shape/edittool.cpp
 
   DAT_00622014
-    Used at lines: 72
+    Used at lines: 86
     NOT found in function reference list
 
   DAT_00622044
-    Used at lines: 65
+    Used at lines: 79
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_FUN_0048014e  [.cpp]  (2 suspicious globals)
+shape_edittool.cpp_staticInit_FUN_0047a430  [.cpp]  (2 suspicious globals)
   File: shape/edittool.cpp
 
-  DAT_00622014
-    Used at lines: 129, 176, 222
+  g_CEditorToolsDestructorNode
+    Used at lines: 13
     NOT found in function reference list
 
-  DAT_00622044
-    Used at lines: 122, 169, 215
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_FUN_00480150  [.cpp]  (2 suspicious globals)
-  File: shape/edittool.cpp
-
-  DAT_00622014
-    Used at lines: 129, 176, 222
-    NOT found in function reference list
-
-  DAT_00622044
-    Used at lines: 122, 169, 215
+  g_CEditorToolsInstance
+    Used at lines: 12
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4528,8 +4752,8 @@ cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_00516410  [.cpp]  (1 
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-cockpit_pkbitmap.cpp_FUN_00517640  [.cpp]  (1 suspicious globals)
-  File: cockpit/pkbitmap.cpp
+cockpit_pkbmpset.cpp_FUN_00517640  [.cpp]  (1 suspicious globals)
+  File: cockpit/pkbmpset.cpp
 
   g_CPackedBitmapTypeInfo
     Used at lines: 14
@@ -4756,7 +4980,7 @@ core_boxactor.cpp_CLightActor_process_FUN_0041d020  [.cpp]  (1 suspicious global
   File: core/boxactor.cpp
 
   DAT_0265370c
-    Used at lines: 64, 65
+    Used at lines: 66, 67
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4948,7 +5172,15 @@ core_dcamera.cpp_CDemonCamera_loadImage_FUN_0043e930  [.cpp]  (1 suspicious glob
   File: core/dcamera.cpp
 
   g_CLZWDecompressInstance
-    Used at lines: 195, 198
+    Used at lines: 196, 199
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_processCorona_FUN_004406d0  [.cpp]  (1 suspicious globals)
+  File: core/dcamera.cpp
+
+  DAT_01326d20
+    Used at lines: 29
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4960,11 +5192,11 @@ core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80  [.cpp]  (1 su
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_FUN_0043cea0  [.cpp]  (1 suspicious globals)
+core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_0043cea0  [.cpp]  (1 suspicious globals)
   File: core/dcamera.cpp
 
   DAT_01468540
-    Used at lines: 54
+    Used at lines: 53
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4996,7 +5228,7 @@ core_dcamera.cpp_renderVolumetricLightScanline_FUN_0043f97e  [.cpp]  (1 suspicio
   File: core/dcamera.cpp
 
   DAT_01326d20
-    Used at lines: 57
+    Used at lines: 59
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5052,7 +5284,7 @@ core_dmodel.cpp_CKeyFramedModel_arrdtor256_FUN_0044fdb0  [.cpp]  (1 suspicious g
   File: core/dmodel.cpp
 
   g_CKeyFramedModelTypeInfo
-    Used at lines: 17
+    Used at lines: 16
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5128,19 +5360,19 @@ core_door.cpp_CDoor_getActorType_FUN_0045ed50  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dpart.cpp_FUN_00461e10  [.cpp]  (1 suspicious globals)
-  File: core/dpart.cpp
-
-  DAT_01ba51cc
-    Used at lines: 34
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_dpart.cpp_FUN_00461f2e  [.cpp]  (1 suspicious globals)
+core_dpart.cpp_findEdgeByYStart_FUN_00461f2e  [.cpp]  (1 suspicious globals)
   File: core/dpart.cpp
 
   DAT_01ba51cc
     Used at lines: 17
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_00461e10  [.cpp]  (1 suspicious globals)
+  File: core/dpart.cpp
+
+  DAT_01ba51cc
+    Used at lines: 34
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5221,14 +5453,6 @@ core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00476300  [.cpp]  (1
 
   DAT_00613888
     Used at lines: 63
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_dtrace.cpp_FUN_0047401c  [.cpp]  (1 suspicious globals)
-  File: core/dtrace.cpp
-
-  DAT_0060b280
-    Used at lines: 46, 54, 61, 68, 75, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5532,15 +5756,7 @@ core_fire.cpp_CGlassParticle_arrdtor256_FUN_0049f0a0  [.cpp]  (1 suspicious glob
   File: core/fire.cpp
 
   g_CGlassParticleTypeInfo
-    Used at lines: 17
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_fire.cpp_CGlassParticle_ctor_FUN_0049edc0  [.cpp]  (1 suspicious globals)
-  File: core/fire.cpp
-
-  g_CGlassParticleVTable
-    Used at lines: 17
+    Used at lines: 16
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5888,14 +6104,6 @@ core_gabriela.cpp_CGabriella_getActorType_FUN_004ad2b0  [.cpp]  (1 suspicious gl
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_beginFadeOut_FUN_004bb280  [.cpp]  (1 suspicious globals)
-  File: core/game.cpp
-
-  g_CScriptPtr
-    Used at lines: 51
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_setGameRes_FUN_004b5fd0  [.cpp]  (1 suspicious globals)
   File: core/game.cpp
 
@@ -5908,7 +6116,7 @@ core_game.cpp_FUN_004b5190  [.cpp]  (1 suspicious globals)
   File: core/game.cpp
 
   g_CDemonCameraInstance
-    Used at lines: 114, 120
+    Used at lines: 112, 119
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5916,7 +6124,7 @@ core_game.cpp_FUN_004b90d0  [.cpp]  (1 suspicious globals)
   File: core/game.cpp
 
   g_CDemonCameraInstance
-    Used at lines: 1076, 1107
+    Used at lines: 1072, 1103
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6020,7 +6228,7 @@ core_gore.cpp_CBloodParticle_arrdtor256_FUN_004ca0a0  [.cpp]  (1 suspicious glob
   File: core/gore.cpp
 
   g_CBloodParticleTypeInfo
-    Used at lines: 17
+    Used at lines: 16
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6316,7 +6524,7 @@ core_inv.cpp_drawWeaponIconBackground_FUN_004dd320  [.cpp]  (1 suspicious global
   File: core/inv.cpp
 
   g_CDemonCameraInstance
-    Used at lines: 70
+    Used at lines: 69
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6388,7 +6596,7 @@ core_level.cpp_CLevelLoader_cleanup_FUN_004e1b80  [.cpp]  (1 suspicious globals)
   File: core/level.cpp
 
   g_LoadingMoonModel
-    Used at lines: 18
+    Used at lines: 17
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6397,14 +6605,6 @@ core_level.cpp_FUN_004e1480  [.cpp]  (1 suspicious globals)
 
   g_LoadingMoonModel
     Used at lines: 35
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_level.cpp_staticInit_FUN_004e1440  [.cpp]  (1 suspicious globals)
-  File: core/level.cpp
-
-  g_LoadingMoonModel
-    Used at lines: 13
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6436,7 +6636,7 @@ core_lightgun.cpp_CLightGun_fire_FUN_004e2e70  [.cpp]  (1 suspicious globals)
   File: core/lightgun.cpp
 
   g_CDemonLightInstance
-    Used at lines: 237
+    Used at lines: 238
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6476,7 +6676,7 @@ core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004e5080  [.cpp]  (1 suspicious g
   File: core/manpuz.cpp
 
   g_CVectorTypeInfo
-    Used at lines: 188
+    Used at lines: 186
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6560,14 +6760,6 @@ core_menu.cpp_CAlphaBitmap_arrdtor8_FUN_004f0230  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_menu.cpp_FUN_004eb490  [.cpp]  (1 suspicious globals)
-  File: core/menu.cpp
-
-  g_CMoonInstance
-    Used at lines: 34, 57
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_menu.cpp_FUN_004ebf10  [.cpp]  (1 suspicious globals)
   File: core/menu.cpp
 
@@ -6605,6 +6797,14 @@ core_menu.cpp_addCustomKeyBinding_FUN_004ee8e0  [.cpp]  (1 suspicious globals)
 
   DAT_01d086f4
     Used at lines: 24
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_menu.cpp_calibrateGamepad_FUN_004eb490  [.cpp]  (1 suspicious globals)
+  File: core/menu.cpp
+
+  g_CMoonInstance
+    Used at lines: 34, 57
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6676,7 +6876,7 @@ core_minecar.cpp_factoryFuncMineCar_FUN_004f2030  [.cpp]  (1 suspicious globals)
   File: core/minecar.cpp
 
   g_CMineCarVTable
-    Used at lines: 19
+    Used at lines: 20
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6716,7 +6916,7 @@ core_moon.cpp_CAlphaBitmap_arrdtor75_FUN_00502720  [.cpp]  (1 suspicious globals
   File: core/moon.cpp
 
   g_CAlphaBitmapTypeInfo
-    Used at lines: 17
+    Used at lines: 16
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6800,14 +7000,6 @@ core_netgame.cpp_removeChatOut_FUN_0050b070  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_netgame.cpp_staticInit_FUN_0050aed0  [.cpp]  (1 suspicious globals)
-  File: core/netgame.cpp
-
-  g_CNetGameInstance
-    Used at lines: 14
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_npc.cpp_CNPC_ctor_FUN_00510460  [.cpp]  (1 suspicious globals)
   File: core/npc.cpp
 
@@ -6860,7 +7052,7 @@ core_path.cpp_getOrCreatePathMap_FUN_00513d30  [.cpp]  (1 suspicious globals)
   File: core/path.cpp
 
   g_PathMapCache
-    Used at lines: 30, 53, 55, 58, 82, ...
+    Used at lines: 30, 54, 56, 59, 83, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6868,7 +7060,7 @@ core_path.cpp_renderPathMapsAtPosition_FUN_00514020  [.cpp]  (1 suspicious globa
   File: core/path.cpp
 
   g_CDemonRaytraceInstance
-    Used at lines: 25
+    Used at lines: 26
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6909,14 +7101,6 @@ core_podmain.cpp_CDemonPod_ctor_FUN_0051c110  [.cpp]  (1 suspicious globals)
 
   g_CDemonPodVTable
     Used at lines: 15
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_podmain.cpp_staticInit_FUN_0051bfd0  [.cpp]  (1 suspicious globals)
-  File: core/podmain.cpp
-
-  g_CDemonPodVTable
-    Used at lines: 13
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6980,7 +7164,7 @@ core_script.cpp_FUN_00522350  [.cpp]  (1 suspicious globals)
   File: core/script.cpp
 
   g_ScriptPickList
-    Used at lines: 820, 880
+    Used at lines: 823, 883
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7044,7 +7228,7 @@ core_set.cpp_CDemonSet_initScene_FUN_0052d980  [.cpp]  (1 suspicious globals)
   File: core/set.cpp
 
   g_CDemonCameraInstance
-    Used at lines: 31, 33, 49
+    Used at lines: 30, 32, 48
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7052,7 +7236,7 @@ core_set.cpp_CDemonSet_load_FUN_0052c0e0  [.cpp]  (1 suspicious globals)
   File: core/set.cpp
 
   g_CKeyFramedModelInstance
-    Used at lines: 462
+    Used at lines: 451
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7068,7 +7252,7 @@ core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0  [.cpp]  (1 suspicious g
   File: core/set.cpp
 
   g_CKeyFramedModelInstance
-    Used at lines: 63
+    Used at lines: 64
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7260,7 +7444,7 @@ core_skeleton.cpp_CDeformableModel_arrdtor64_FUN_00549350  [.cpp]  (1 suspicious
   File: core/skeleton.cpp
 
   g_CDeformableModelTypeInfo
-    Used at lines: 17
+    Used at lines: 16
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7269,14 +7453,6 @@ core_skeleton.cpp_CSkeleton_arrdtor40_FUN_00549330  [.cpp]  (1 suspicious global
 
   g_CSkeletonTypeInfo
     Used at lines: 16
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_FUN_005424ac  [.cpp]  (1 suspicious globals)
-  File: core/skeleton.cpp
-
-  DAT_0060b280
-    Used at lines: 60, 74, 109
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7564,7 +7740,7 @@ core_trash.cpp_CTrash_process_FUN_00576ab0  [.cpp]  (1 suspicious globals)
   File: core/trash.cpp
 
   DAT_0265370c
-    Used at lines: 345, 346
+    Used at lines: 344, 345
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7596,7 +7772,7 @@ core_trigger.cpp_CTrigger_process_FUN_005779d0  [.cpp]  (1 suspicious globals)
   File: core/trigger.cpp
 
   g_CDemonSetPtr
-    Used at lines: 140, 185, 186, 205, 206
+    Used at lines: 140, 186, 187, 207, 208
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7612,7 +7788,7 @@ core_turret.cpp_CTurret_fire_FUN_0057fc20  [.cpp]  (1 suspicious globals)
   File: core/turret.cpp
 
   DAT_00000065
-    Used at lines: 199
+    Used at lines: 189
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7728,14 +7904,6 @@ core_villain.cpp_CSteuben_getActorType_FUN_005a5b30  [.cpp]  (1 suspicious globa
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_water.cpp_staticInit_FUN_00585d40  [.cpp]  (1 suspicious globals)
-  File: core/water.cpp
-
-  g_CWaterInstance
-    Used at lines: 12
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_wateract.cpp_CWaterActor_getActorType_FUN_00586990  [.cpp]  (1 suspicious globals)
   File: core/wateract.cpp
 
@@ -7768,14 +7936,6 @@ core_waypoint.cpp_CWayPoint_getActorType_FUN_00587d60  [.cpp]  (1 suspicious glo
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_weather.cpp_staticInit_FUN_0058a610  [.cpp]  (1 suspicious globals)
-  File: core/weather.cpp
-
-  DAT_02661fb8
-    Used at lines: 13
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_weaver.cpp_CRobin_ctor_FUN_005a5e70  [.cpp]  (1 suspicious globals)
   File: core/weaver.cpp
 
@@ -7796,7 +7956,7 @@ core_weaver.cpp_FUN_005a61f0  [.cpp]  (1 suspicious globals)
   File: core/weaver.cpp
 
   g_CCryptVesselClassInfo
-    Used at lines: 275
+    Used at lines: 248
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -7984,7 +8144,15 @@ engine_2d.c_wrapTextToWidth_FUN_00401d8e  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_3d.c_FUN_00407f40  [.cpp]  (1 suspicious globals)
+engine_3d.c_dispatchMRGLToRenderer_FUN_004079f0  [.cpp]  (1 suspicious globals)
+  File: engine/3d.c
+
+  DAT_00622014
+    Used at lines: 41, 88
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_3d.c_drawLine3DFromIndices_FUN_00407f40  [.cpp]  (1 suspicious globals)
   File: engine/3d.c
 
   DAT_00622014
@@ -7992,27 +8160,11 @@ engine_3d.c_FUN_00407f40  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_3d.c_dispatchMRGLToRenderer_FUN_004079f0  [.cpp]  (1 suspicious globals)
-  File: engine/3d.c
-
-  DAT_00622014
-    Used at lines: 39, 83
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 engine_3d.c_flushRenderQueue_FUN_00407980  [.cpp]  (1 suspicious globals)
   File: engine/3d.c
 
   DAT_00622014
-    Used at lines: 20
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_clipper.c_FUN_004327d0  [.cpp]  (1 suspicious globals)
-  File: engine/clipper.c
-
-  DAT_007bee34
-    Used at lines: 18
+    Used at lines: 21
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8021,6 +8173,14 @@ engine_clipper.c_normalizeClippedVertices_FUN_00431270  [.cpp]  (1 suspicious gl
 
   DAT_007bee34
     Used at lines: 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_clipper.c_perspectiveDivideVertices_FUN_004327d0  [.cpp]  (1 suspicious globals)
+  File: engine/clipper.c
+
+  DAT_007bee34
+    Used at lines: 18
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8060,7 +8220,7 @@ engine_drender.cpp_FUN_0046c28e  [.cpp]  (1 suspicious globals)
   File: engine/drender.cpp
 
   DAT_007bee34
-    Used at lines: 70, 116
+    Used at lines: 72, 119
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8124,14 +8284,6 @@ engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004dfec0  [.cpp]  (1 suspicious global
   File: engine/keys.cpp
 
   DAT_01c37790
-    Used at lines: 12
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_matrix.c_FUN_004e8e5e  [.cpp]  (1 suspicious globals)
-  File: engine/matrix.c
-
-  DAT_00622014
     Used at lines: 12
     NOT found in function reference list
 
@@ -8288,14 +8440,6 @@ engine_mini3d.cpp_FUN_004f9330  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_mini3d.cpp_staticInit_FUN_004f2190  [.cpp]  (1 suspicious globals)
-  File: engine/mini3d.cpp
-
-  g_CMini3DInstance
-    Used at lines: 14
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 engine_ncursfx.cpp_CAlphaBitmap_arrdtor15_FUN_005103e0  [.cpp]  (1 suspicious globals)
   File: engine/ncursfx.cpp
 
@@ -8316,23 +8460,7 @@ engine_ncursfx.cpp_CMouse_ctor_FUN_00510010  [.cpp]  (1 suspicious globals)
   File: engine/ncursfx.cpp
 
   g_CAlphaBitmapTypeInfo
-    Used at lines: 14, 15, 16
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_ncursfx.cpp_staticInit_FUN_0050fff0  [.cpp]  (1 suspicious globals)
-  File: engine/ncursfx.cpp
-
-  g_CMouseInstance
-    Used at lines: 12
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_pod.cpp_FUN_0051aa7e  [.cpp]  (1 suspicious globals)
-  File: engine/pod.cpp
-
-  g_CEditorToolsPtr
-    Used at lines: 32, 42, 55, 81
+    Used at lines: 14, 16, 18
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8348,7 +8476,7 @@ engine_prim.c_renderIndexedPolygonSoftware_FUN_0051d050  [.cpp]  (1 suspicious g
   File: engine/prim.c
 
   DAT_01e6164c
-    Used at lines: 93
+    Used at lines: 96
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8365,14 +8493,6 @@ engine_prim.c_setupColoredSoftwareEdge_FUN_0051d7a0  [.cpp]  (1 suspicious globa
 
   DAT_01e61b60
     Used at lines: 36
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_special.cpp_FUN_0055e8c0  [.cpp]  (1 suspicious globals)
-  File: engine/special.cpp
-
-  DAT_01c35e64
-    Used at lines: 383
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8408,6 +8528,14 @@ engine_special.cpp_clearScreenRegion_FUN_0055b2b7  [.cpp]  (1 suspicious globals
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+engine_special.cpp_loadExternalRenderer_FUN_0055e8c0  [.cpp]  (1 suspicious globals)
+  File: engine/special.cpp
+
+  DAT_01c35e64
+    Used at lines: 383
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 engine_special.cpp_setResolutionAndColorTable_FUN_0055f770  [.cpp]  (1 suspicious globals)
   File: engine/special.cpp
 
@@ -8424,26 +8552,10 @@ engine_special.cpp_switchRenderer_FUN_0056046e  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_texture.cpp_FUN_00574e9e  [.cpp]  (1 suspicious globals)
-  File: engine/texture.cpp
-
-  DAT_0070ca74
-    Used at lines: 16
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CStrList_copy_FUN_00480d90  [.cpp]  (1 suspicious globals)
   File: shape/edittool.cpp
 
   g_CStrListVTable
-    Used at lines: 12
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_staticInit_FUN_0047a430  [.cpp]  (1 suspicious globals)
-  File: shape/edittool.cpp
-
-  g_CEditorToolsInstance
     Used at lines: 12
     NOT found in function reference list
 
@@ -8492,7 +8604,7 @@ sound_mp3.cpp_FUN_00509db0  [.cpp]  (1 suspicious globals)
   File: sound/mp3.cpp
 
   DAT_01d23558
-    Used at lines: 48
+    Used at lines: 49
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8508,7 +8620,7 @@ sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005081a0  [.cpp]  (1 suspicious global
   File: sound/mp3.cpp
 
   DAT_00619398
-    Used at lines: 188, 206, 271, 291
+    Used at lines: 187, 205, 270, 290
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

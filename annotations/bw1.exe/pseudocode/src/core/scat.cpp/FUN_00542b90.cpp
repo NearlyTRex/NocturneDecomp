@@ -12,28 +12,29 @@
 uint core_scat_cpp_FUN_00542b90(CDemonActor *param_1,CDemonActor *param_2,int param_3)
 
 {
+  CCharacter *this_ptr;
   int iVar1;
-  int iVar2;
-  uint unaff_EBP;
-  uint *puVar3;
+  EDeathState EVar2;
+  float fVar3;
   uint *puVar4;
-  byte bVar5;
-  float afStackY_108c [966];
-  CDemonSet *this_ptr;
-  double in_stack_fffffea0;
-  float ray_type;
-  float fStack_158;
-  float fStack_d4;
+  uint unaff_EDI;
+  uint *puVar5;
+  byte bVar6;
+  float afStackY_1088 [965];
+  uint uStack_168;
+  CDemonSet *this_ptr_00;
+  double in_stack_fffffea4;
+  float fStack_154;
   float fStack_d0;
   float fStack_cc;
   float fStack_c8;
   float fStack_c4;
   float fStack_c0;
-  float fStack_a4;
+  float fStack_bc;
   float fStack_a0;
   float fStack_9c;
   float fStack_98;
-  float fStack_8c;
+  float fStack_94;
   float fStack_88;
   float fStack_84;
   float fStack_80;
@@ -42,109 +43,117 @@ uint core_scat_cpp_FUN_00542b90(CDemonActor *param_1,CDemonActor *param_2,int pa
   float fStack_74;
   float fStack_70;
   float fStack_6c;
-  uint uStack_68;
+  float fStack_68;
   uint uStack_64;
-  uint uStack_58;
-  float fStack_54;
-  float fStack_44;
+  uint uStack_60;
+  uint uStack_54;
+  float fStack_50;
   float fStack_40;
   float fStack_3c;
-  uint uStack_38;
-  float fStack_2c;
+  float fStack_38;
+  uint uStack_34;
   float fStack_28;
   float fStack_24;
-  float fStack_18;
+  float fStack_20;
   float fStack_14;
   
-  bVar5 = 0;
-  iVar1 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c600(param_2,g_CEnemyClassInfo.name_hash);
+  bVar6 = 0;
+  this_ptr = (CCharacter *)
+             core_actor_cpp_castToClassHash_FUN_0040c600(param_2,g_CEnemyClassInfo.name_hash);
   __arrinit(&stack0xfffffea4,10,&g_CVectorTypeInfo);
-  iVar2 = (*((param_2->vtable)._ub)->getTargetPoints)(param_2,(CVector3f *)&stack0xfffffea4);
-  if ((iVar2 != 0) &&
-     ((iVar1 == 0 || (iVar1 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x10c))(iVar1), iVar1 < 1)))) {
+  iVar1 = (*((param_2->vtable)._ub)->getTargetPoints)(param_2,(CVector3f *)&stack0xfffffea4);
+  if (iVar1 != 0) {
+    if (this_ptr != (CCharacter *)0x0) {
+      uStack_168 = 0x542bf5;
+      EVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+      if (0 < (int)EVar2) {
+        return 0xbf800000;
+      }
+    }
+    uStack_168 = 0x542c33;
     core_actor_cpp_FUN_00408bb0(param_1,&param_2->location);
-    fStack_a0 = fStack_28;
-    *(uint *)((int)&stack0xffffff64 + (uint)bVar5 * -8) =
-         *(uint *)((int)&stack0xffffffdc + (uint)bVar5 * -8);
-    *(uint *)((int)&stack0xffffff68 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-         *(uint *)(&stack0xffffffe0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-    if (0.0 < fStack_98) {
-      fStack_158 = SQRT(fStack_98 * fStack_98 + fStack_a0 * fStack_a0 + fStack_9c * fStack_9c);
-      fStack_18 = fStack_158;
-      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff60);
-      uStack_58 = uStack_64;
-      *(uint *)((int)&stack0xffffffac + (uint)bVar5 * -8) =
-           *(uint *)(&stack0xffffffa0 + (uint)bVar5 * -8);
-      *(uint *)(&stack0xffffffb0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-           *(uint *)(&stack0xffffffa4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+    fStack_9c = fStack_24;
+    *(uint *)((int)&stack0xffffff68 + (uint)bVar6 * -8) =
+         *(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8);
+    *(uint *)((int)&stack0xffffff6c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+         *(uint *)(&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+    if (0.0 < fStack_94) {
+      fStack_154 = SQRT(fStack_94 * fStack_94 + fStack_9c * fStack_9c + fStack_98 * fStack_98);
+      fStack_14 = fStack_154;
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff64);
+      uStack_54 = uStack_60;
+      *(uint *)((int)&stack0xffffffb0 + (uint)bVar6 * -8) =
+           *(uint *)(&stack0xffffffa4 + (uint)bVar6 * -8);
+      *(uint *)(&stack0xffffffb4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+           *(uint *)(&stack0xffffffa8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
       if (param_3 == 0) {
-        if ((float)_DAT_005edeef < fStack_158) {
+        if ((float)_DAT_005edeef < fStack_154) {
           return 0xbf800000;
         }
-        in_stack_fffffea0 = (double)fStack_54;
-        if (fStack_54 < (float)_DAT_005edef7) {
+        in_stack_fffffea4 = (double)fStack_50;
+        if (fStack_50 < (float)_DAT_005edef7) {
           return 0xbf800000;
         }
-        if (_DAT_005edeff < in_stack_fffffea0) {
+        if (_DAT_005edeff < in_stack_fffffea4) {
           return 0xbf800000;
         }
       }
       else {
-        if ((float)_DAT_005edf07 < fStack_158) {
+        if ((float)_DAT_005edf07 < fStack_154) {
           return 0xbf800000;
         }
-        if (fStack_54 < _DAT_005edf0f) {
+        if (fStack_50 < _DAT_005edf0f) {
           return 0xbf800000;
         }
-        if (0x3fc90fdb < (int)fStack_54) {
+        if (0x3fc90fdb < (int)fStack_50) {
           return 0xbf800000;
         }
       }
-      (*((param_1->vtable)._ub)->getBoundingBox)(param_1,SUB84(in_stack_fffffea0,0));
-      puVar3 = (uint *)&stack0xffffff44;
-      puVar4 = (uint *)&stack0xffffff24;
+      (*((param_1->vtable)._ub)->getBoundingBox)(param_1,SUB84(in_stack_fffffea4,0));
+      puVar4 = (uint *)&stack0xffffff48;
+      puVar5 = (uint *)&stack0xffffff28;
       for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *puVar4 = *puVar3;
-        puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-        puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+        *puVar5 = *puVar4;
+        puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+        puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
       }
-      fStack_74 = fStack_d4 + fStack_c8;
       fStack_70 = fStack_d0 + fStack_c4;
       fStack_6c = fStack_cc + fStack_c0;
-      fStack_80 = fStack_d4 + fStack_c8;
-      *(uint *)((int)&stack0xffffff84 + (uint)bVar5 * -8) =
-           *(uint *)((int)&stack0xffffff90 + (uint)bVar5 * -8);
-      *(uint *)((int)&stack0xffffff88 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-           *(uint *)((int)&stack0xffffff94 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      fStack_2c = fStack_80 * _DAT_005edf13;
+      fStack_68 = fStack_c8 + fStack_bc;
+      fStack_7c = fStack_d0 + fStack_c4;
+      *(uint *)((int)&stack0xffffff88 + (uint)bVar6 * -8) =
+           *(uint *)((int)&stack0xffffff94 + (uint)bVar6 * -8);
+      *(uint *)((int)&stack0xffffff8c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+           *(uint *)((int)&stack0xffffff98 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
       fStack_28 = fStack_7c * _DAT_005edf13;
       fStack_24 = fStack_78 * _DAT_005edf13;
-      fStack_44 = fStack_80 * _DAT_005edf13;
-      (&stack0xffffffc0)[(uint)bVar5 * 0xfffffffe] =
-           (float)*(uint *)((int)&stack0xffffffd8 + (uint)bVar5 * -8);
-      *(uint *)((int)&stack0xffffffc4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-           *(uint *)((int)&stack0xffffffdc + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      fStack_8c = (param_1->location).position.x + fStack_44;
-      fStack_88 = (param_1->location).position.y + fStack_40;
-      fStack_84 = (param_1->location).position.z + fStack_3c;
-      fStack_a4 = fStack_8c;
-      (&stack0xffffff60)[(uint)bVar5 * 0xfffffffe] = (&stack0xffffff78)[(uint)bVar5 * 0xfffffffe];
-      *(uint *)((int)&stack0xffffff64 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-           *(uint *)((int)&stack0xffffff7c + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      core_actor_cpp_FUN_00408b40(param_2);
-      ray_type = 1.4013e-45;
-      uStack_68 = uStack_38;
-      *(uint *)((int)&stack0xffffff9c + (uint)bVar5 * -8) =
-           *(uint *)(&stack0xffffffcc + (uint)bVar5 * -8);
-      this_ptr = g_CDemonSetPtr;
-      *(uint *)(&stack0xffffffa0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-           *(uint *)(&stack0xffffffd0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      core_setcolid_cpp_CDemonSet_setRayType_FUN_005592d0(this_ptr,(int)ray_type);
+      fStack_20 = fStack_74 * _DAT_005edf13;
+      fStack_40 = fStack_7c * _DAT_005edf13;
+      (&stack0xffffffc4)[(uint)bVar6 * 0xfffffffe] =
+           (float)*(uint *)((int)&stack0xffffffdc + (uint)bVar6 * -8);
+      *(uint *)((int)&stack0xffffffc8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+           *(uint *)((int)&stack0xffffffe0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+      fStack_88 = (param_1->location).position.x + fStack_40;
+      fStack_84 = (param_1->location).position.y + fStack_3c;
+      fStack_80 = (param_1->location).position.z + fStack_38;
+      fStack_a0 = fStack_88;
+      (&stack0xffffff64)[(uint)bVar6 * 0xfffffffe] = (&stack0xffffff7c)[(uint)bVar6 * 0xfffffffe];
+      *(uint *)((int)&stack0xffffff68 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+           *(uint *)((int)&stack0xffffff80 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+      core_actor_cpp_FUN_00408b40();
+      fVar3 = 1.4013e-45;
+      uStack_64 = uStack_34;
+      *(uint *)((int)&stack0xffffffa0 + (uint)bVar6 * -8) =
+           *(uint *)(&stack0xffffffd0 + (uint)bVar6 * -8);
+      this_ptr_00 = g_CDemonSetPtr;
+      *(uint *)(&stack0xffffffa4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+           *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+      core_setcolid_cpp_CDemonSet_setRayType_FUN_005592d0(this_ptr_00,(int)fVar3);
       core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,param_1);
-      fStack_14 = (float)core_setcolid_cpp_FUN_00557300(g_CDemonSetPtr,&stack0xffffff5c);
+      fVar3 = (float)core_setcolid_cpp_FUN_00557300(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
-      if ((fStack_14 <= 1.0) && (param_2 == g_CDemonSetPtr->collision_actor)) {
-        return unaff_EBP;
+      if ((fVar3 <= 1.0) && (param_2 == g_CDemonSetPtr->collision_actor)) {
+        return unaff_EDI;
       }
     }
   }

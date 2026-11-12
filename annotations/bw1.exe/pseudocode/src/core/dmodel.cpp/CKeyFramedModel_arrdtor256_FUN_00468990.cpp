@@ -13,7 +13,6 @@ CKeyFramedModel * core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_00468990(CKeyFr
 {
   CKeyFramedModel *pCVar1;
   
-  pCVar1 = (CKeyFramedModel *)
-           __arrfini(this_ptr,0x100,&g_CKeyFramedModelTypeInfo);
+  pCVar1 = (CKeyFramedModel *)__arrfini(this_ptr,0x100,&g_CKeyFramedModelTypeInfo);
   return pCVar1;
 }

@@ -63,7 +63,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_blendCoronaTextureSpan_FUN_00452450
-;   core_dcamera.cpp_FUN_0044e2a0
+;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0045ea60
 ;
 ; *****************************************************************************
@@ -95,8 +95,8 @@ section .text
     PUSH EDI                            ; 00452594
     LEA ESI,[ESP + 0x8]                 ; 00452595
     MOV [0x0152bc18],EAX                ; 00452599 | DAT_0152bc18
-    CALL core_dcamera.cpp_FUN_0044e2a0  ; 0045259e
-        ;   XREF to: 0044e2a0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0044e2a0()
+    CALL core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0 ; 0045259e
+        ;   XREF to: 0044e2a0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x8]                 ; 004525a3
     ADD ESP,0x8                         ; 004525a7
     MOV EDI,0x152bc20                   ; 004525aa
@@ -278,7 +278,7 @@ section .text
     PUSH EAX                            ; 004527f6
     PUSH ESI                            ; 004527f7
     CALL core_dcamera.cpp_blendCoronaTextureSpan_FUN_00452450 ; 004527f8
-        ;   XREF to: 00452450 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_blendCoronaTextureSpan_FUN_00452450()
+        ;   XREF to: 00452450 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_blendCoronaTextureSpan_FUN_00452450(int scanline_y, int x_start, int x_end, SCoronaLightEntry * source_entry)
     ADD ESP,0x10                        ; 004527fd
     JMP 0x004526df                      ; 00452800
         ;   XREF to: 004526df (UNCONDITIONAL_JUMP)  ; LAB_004526df
@@ -505,7 +505,7 @@ section .text
     PUSH ECX                            ; 00452acb
     PUSH EAX                            ; 00452acc
     CALL core_dcamera.cpp_blendCoronaTextureSpan_FUN_00452450 ; 00452acd
-        ;   XREF to: 00452450 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_blendCoronaTextureSpan_FUN_00452450()
+        ;   XREF to: 00452450 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_blendCoronaTextureSpan_FUN_00452450(int scanline_y, int x_start, int x_end, SCoronaLightEntry * source_entry)
     ADD ESP,0x10                        ; 00452ad2
     MOV ESI,dword ptr [ESP + 0x28]      ; 00452ad5
         ;   Label: LAB_00452ad5

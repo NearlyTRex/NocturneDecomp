@@ -16,7 +16,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004b46e0(CRainDrop *this_ptr)
   uint extraout_EDX;
   byte bVar2;
   float10 fVar3;
-  int aiStackY_1020 [984];
+  uint auStackY_1020 [984];
   CVector3i *rotation;
   SMRGLHeaderPrimitive SStack_a8;
   uint uStack_90;
@@ -33,8 +33,9 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004b46e0(CRainDrop *this_ptr)
   CVector3i CStack_44;
   CVector3i CStack_38;
   CVector3i CStack_2c;
-  int iStack_20;
-  int aiStack_1c [4];
+  CVector3i CStack_20;
+  int iStack_14;
+  int iStack_10;
   
   bVar2 = 0;
   vertex_ptr = DAT_00612560->vertex_buffer_ptr;
@@ -48,12 +49,13 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004b46e0(CRainDrop *this_ptr)
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
             (DAT_00612560,(CVector3f *)this_ptr);
-  engine_drender_cpp_FUN_00483b50(DAT_00612560);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50(DAT_00612560,&CStack_20);
   rotation = (CVector3i *)0x0;
-  CStack_38.x = iStack_20;
-  *(int *)((int)&CStack_38 + (uint)bVar2 * -8 + 4) = aiStack_1c[(uint)bVar2 * -2];
-  *(int *)((int)&CStack_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       aiStack_1c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+  CStack_38.x = CStack_20.x;
+  *(uint *)((int)&CStack_38 + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&CStack_20 + (uint)bVar2 * -8 + 4);
+  *(uint *)((int)&CStack_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&CStack_20 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00483800
             (DAT_00612560,&CStack_38,rotation);
   uStack_5c = 0xbe000000;
@@ -87,9 +89,9 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004b46e0(CRainDrop *this_ptr)
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
             (DAT_00612560,(SMRGLTextureBasic *)&DAT_0061cb54);
   (**(code **)(*(int *)(DAT_007c6120 + 0x3c) + 4))(DAT_007c6120,this_ptr,0);
-  aiStack_1c[2] = 0xffff - _DAT_01c51cac;
-  fVar3 = (float10)aiStack_1c[2] *
-          (float10)(this_ptr->base).lifetime_remaining * (float10)_DAT_005df5ac;
+  iStack_14 = 0xffff - _DAT_01c51cac;
+  fVar3 = (float10)iStack_14 * (float10)(this_ptr->base).lifetime_remaining * (float10)_DAT_005df5ac
+  ;
   _DAT_0062905c = 0xd00000;
   DAT_0062902c = 0x800000;
   _DAT_00629030 = 0xdc0000;
@@ -97,7 +99,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004b46e0(CRainDrop *this_ptr)
   _DAT_0062908c = 0x800000;
   _DAT_006290bc = 0x800000;
   DAT_00629090 = 0x900000;
-  aiStack_1c[3] = aiStack_1c[2];
+  iStack_10 = iStack_14;
   round();
   DAT_00629040 = (int)ROUND(fVar3);
   CStack_2c.x = (int)ROUND((this_ptr->base).position.x * _DAT_005fff94);
@@ -107,7 +109,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004b46e0(CRainDrop *this_ptr)
   _DAT_006290a0 = DAT_00629040;
   _DAT_006290c0 = extraout_EDX;
   _DAT_006290d0 = DAT_00629040;
-  aiStack_1c[2] = DAT_00629040;
+  iStack_14 = DAT_00629040;
   core_set_cpp_CDemonSet_computeLighting_FUN_00552a70
             (g_CDemonSetPtr,&CStack_2c,(CVector3i *)&DAT_01c57084,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);

@@ -13,15 +13,15 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042c7f0(CCharacter *this_
   int iVar2;
   CCharacter *pCVar3;
   byte bVar4;
-  uint auStackY_1050 [1015];
-  uint *puVar5;
-  char *pcVar6;
-  uint local_68;
-  uint local_5c;
+  float afStackY_1050 [1015];
+  CVector3f *vector_ptr;
+  char *property_name;
+  float local_68;
+  float local_5c;
   CVector3f local_50;
-  CVector3f local_44;
-  uint local_38;
-  uint auStack_34 [5];
+  COrientation local_44;
+  COrientation local_38;
+  CVector3f local_2c;
   int local_20;
   int local_1c;
   int local_18;
@@ -32,11 +32,11 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042c7f0(CCharacter *this_
   core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->hit_points,"hitPoints");
   if (1 < g_CCharacterClassVersion) {
     if (DAT_007c3038 == 1) {
-      core_actor_cpp_archiveInteger_FUN_0040b670(auStack_34 + 5,"numCarryHands");
+      core_actor_cpp_archiveInteger_FUN_0040b670(&local_20,"numCarryHands");
       local_14 = 0;
       if (0 < local_20) {
         do {
-          core_actor_cpp_archiveInteger_FUN_0040b670(auStack_34 + 6,"carry hand");
+          core_actor_cpp_archiveInteger_FUN_0040b670(&local_1c,"carry hand");
           core_actor_cpp_archiveActor_FUN_0040b6f0
                     (&this_ptr->carry_hands[local_1c].carry_actor,"carry actor");
           core_xform_cpp_setIdentityMatrix3x4_FUN_005b53f0
@@ -47,8 +47,8 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042c7f0(CCharacter *this_
             core_actor_cpp_archiveVector_FUN_0040b1c0(&local_50,"carry pos");
             core_actor_cpp_archiveOrientation_FUN_0040b260(&local_44,"carry orient");
             core_xform_cpp_FUN_005b5760
-                      (&this_ptr->carry_hands[local_1c].initial_carry_transform,&local_50,&local_44)
-            ;
+                      (&this_ptr->carry_hands[local_1c].initial_carry_transform,&local_50,
+                       (CVector3f *)&local_44);
           }
           local_14 = local_14 + 1;
         } while (local_14 < local_20);
@@ -64,27 +64,29 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042c7f0(CCharacter *this_
         pCVar3 = (CCharacter *)(pCVar3->base).create_event;
       } while (pCVar3 != (CCharacter *)&(this_ptr->base).platform_orientation_delta.y);
       local_14 = 2;
-      core_actor_cpp_archiveInteger_FUN_0040b670(auStack_34 + 7,"numCarryHands");
+      core_actor_cpp_archiveInteger_FUN_0040b670(&local_18,"numCarryHands");
       local_14 = 0;
       do {
         if (this_ptr->carry_hands[local_14].carry_actor != (CDemonActor *)0x0) {
-          core_actor_cpp_archiveInteger_FUN_0040b670(auStack_34 + 8,"carry hand");
+          core_actor_cpp_archiveInteger_FUN_0040b670(&local_14,"carry hand");
           core_actor_cpp_archiveActor_FUN_0040b6f0
                     (&this_ptr->carry_hands[local_14].carry_actor,"carry actor");
           core_xform_cpp_FUN_005b6270(&this_ptr->carry_hands[local_14].initial_carry_transform);
           pSVar1 = this_ptr->carry_hands + local_14;
-          auStack_34[2] = local_68;
-          auStack_34[(uint)bVar4 * -2 + 3] = *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8);
-          auStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+          local_2c.x = local_68;
+          *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4) =
+               *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8);
+          *(uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                *(uint *)(&stack0xffffffa0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
           core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&pSVar1->initial_carry_transform);
-          pcVar6 = "carry pos";
-          puVar5 = auStack_34 + 2;
-          local_38 = local_5c;
-          auStack_34[(uint)bVar4 * -2] = *(uint *)(&stack0xffffffa8 + (uint)bVar4 * -8);
-          auStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+          property_name = "carry pos";
+          vector_ptr = &local_2c;
+          local_38.pitch = local_5c;
+          *(uint *)((int)&local_38 + (uint)bVar4 * -8 + 4) =
+               *(uint *)(&stack0xffffffa8 + (uint)bVar4 * -8);
+          *(uint *)((int)&local_38 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
                *(uint *)(&stack0xffffffac + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-          core_actor_cpp_archiveVector_FUN_0040b1c0(puVar5,pcVar6);
+          core_actor_cpp_archiveVector_FUN_0040b1c0(vector_ptr,property_name);
           core_actor_cpp_archiveOrientation_FUN_0040b260(&local_38,"carry orient");
         }
         local_14 = local_14 + 1;
@@ -131,6 +133,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042c7f0(CCharacter *this_
   core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->walk_timeout,"scriptWalkTimer");
   core_actor_cpp_archiveInteger_FUN_0040b670
             ((int *)&this_ptr->walk_state,"scriptWalkState");
-  core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->door_target,"scriptDoorToOpen");
+  core_actor_cpp_archiveActor_FUN_0040b6f0
+            ((CDemonActor **)&this_ptr->door_target,"scriptDoorToOpen");
   return;
 }

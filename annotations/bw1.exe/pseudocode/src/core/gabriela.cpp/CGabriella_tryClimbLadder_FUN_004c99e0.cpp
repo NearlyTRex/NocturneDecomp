@@ -24,7 +24,7 @@ int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004c99e0(CGabriella 
   float local_e4;
   uint local_e0;
   uint local_d4;
-  uint local_d0;
+  float local_d0;
   uint local_c8;
   uint local_c4;
   uint local_c0;
@@ -47,7 +47,7 @@ int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004c99e0(CGabriella 
   float local_64;
   float local_5c;
   uint local_50;
-  uint local_4c;
+  float local_4c;
   uint local_44;
   uint local_38;
   CLadder *local_2c;
@@ -68,7 +68,7 @@ int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004c99e0(CGabriella 
     }
     pCVar2 = (CLadder *)
              core_actor_cpp_castToClassHash_FUN_0040c600
-                       (*(uint *)((int)g_CDemonSetPtr->actors + local_20),
+                       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20),
                         g_CLadderClassInfo.name_hash);
     local_2c = pCVar2;
     if (pCVar2 != (CLadder *)0x0) {
@@ -98,7 +98,7 @@ int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004c99e0(CGabriella 
                *(uint *)(&stack0xffffffcc + (uint)bVar3 * -8);
           *(uint *)(&stack0xffffff34 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
                *(uint *)(&stack0xffffffd0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-          local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_d0);
+          local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_d0);
           if (ABS(local_18) <= (float)_DAT_005e115c) {
             local_28 = 0;
             core_actor_cpp_FUN_00408bb0(pCVar2,local_1c);
@@ -124,7 +124,7 @@ int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004c99e0(CGabriella 
                    *(uint *)(&stack0xffffffc0 + (uint)bVar3 * -8);
               *(uint *)(&stack0xffffffb8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
                    *(uint *)(&stack0xffffffc4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-              local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_4c);
+              local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_4c);
               if (ABS(local_18) <= (float)_DAT_005e115c) {
                 (this_ptr->base).ladder_to_climb = local_2c;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0

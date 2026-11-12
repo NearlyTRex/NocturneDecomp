@@ -30,7 +30,7 @@
 ;   core_actor.cpp_archiveInteger_FUN_0040b960
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c330
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700
-;   core_bodypart.cpp_FUN_00415890
+;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;   crt_unknown.c_FUN_005b8010
 ;
@@ -182,13 +182,13 @@ section .text
     LEA EAX,[EBX + 0x10e0]              ; 004160ce
     PUSH EAX                            ; 004160d4
     CALL core_actor.cpp_archiveBox_FUN_0040bee0 ; 004160d5
-        ;   XREF to: 0040bee0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveBox_FUN_0040bee0()
+        ;   XREF to: 0040bee0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveBox_FUN_0040bee0(CBox * box_ptr, char * property_name)
     ADD ESP,0x8                         ; 004160da
     PUSH 0x5cbeb8                       ; 004160dd | = "carriedByActor"
     LEA EAX,[EBX + 0x133c]              ; 004160e2
     PUSH EAX                            ; 004160e8
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 004160e9
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004160ee
     CMP dword ptr [0x006098dc],0x3      ; 004160f1 | g_CBodyPartClassVersion
         ;   Label: LAB_004160f1
@@ -238,8 +238,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0x2d0]     ; 0041616f
     PUSH EDI                            ; 00416175
     PUSH EBX                            ; 00416176
-    CALL core_bodypart.cpp_FUN_00415890 ; 00416177
-        ;   XREF to: 00415890 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00415890()
+    CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890 ; 00416177
+        ;   XREF to: 00415890 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890(CBodyPart * this_ptr, int vertex_count, int tri_count)
     XOR EDI,EDI                         ; 0041617c
     MOV EBP,dword ptr [EBX + 0x2d0]     ; 0041617e
     ADD ESP,0xc                         ; 00416184
@@ -261,7 +261,7 @@ section .text
     INC EDI                             ; 004161aa
     ADD EBP,0xc                         ; 004161ab
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004161ae
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     MOV EAX,dword ptr [EBX + 0x2d0]     ; 004161b3
     ADD ESP,0x14                        ; 004161b9
     CMP EDI,EAX                         ; 004161bc
@@ -305,7 +305,7 @@ section .text
     PUSH EAX                            ; 00416217
     ADD EBP,0x3c                        ; 00416218
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0041621b
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x30                        ; 00416220
     ADD EDI,0x4                         ; 00416223
     MOV EDX,dword ptr [ESP + 0x4]       ; 00416226
@@ -331,7 +331,7 @@ section .text
     INC EDI                             ; 0041625f
     ADD ESI,0x18                        ; 00416260
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 00416263
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     MOV EAX,dword ptr [EBX + 0x2e8]     ; 00416268
     ADD ESP,0xc                         ; 0041626e
     CMP EDI,EAX                         ; 00416271

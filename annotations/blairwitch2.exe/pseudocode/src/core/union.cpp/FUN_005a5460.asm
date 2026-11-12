@@ -324,7 +324,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0x14d144]  ; 005a57de | g_CDemonSetInstance.collision_actor
     PUSH ESI                            ; 005a57e4
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 005a57e5
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 005a57ea
     MOV dword ptr [ESP + 0x150],EAX     ; 005a57ed
     TEST EAX,EAX                        ; 005a57f4

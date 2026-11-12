@@ -574,7 +574,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x114]     ; 00494c32
     PUSH ECX                            ; 00494c39
     CALL crt_memory.c___vec_delete_FUN_005c030f ; 00494c3a
-        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005c030f()
+        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00494c3f
     PUSH EAX                            ; 00494c42
     CALL crt_unknown.c_FUN_005c0336     ; 00494c43

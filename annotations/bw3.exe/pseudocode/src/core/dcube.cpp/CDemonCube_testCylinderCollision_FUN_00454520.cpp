@@ -12,7 +12,7 @@ void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00454520(CDemon
 
 {
   CVector3f *pCVar1;
-  int iVar2;
+  uint uVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -22,9 +22,10 @@ void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00454520(CDemon
   if (0 < this_ptr->triangle_count) {
     iVar5 = 0;
     do {
-      iVar2 = core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00452810
-                        ((int)(this_ptr->triangle_buffer->triangle).vertices + iVar5,cylinder);
-      if (iVar2 != 0) {
+      uVar2 = core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00452810
+                        ((STriangleRef *)
+                         ((int)(this_ptr->triangle_buffer->triangle).vertices + iVar5),cylinder);
+      if (uVar2 != 0) {
         iVar4 = iVar3;
       }
       iVar3 = iVar3 + 1;

@@ -13,7 +13,7 @@
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_005558f0 at 0055591d
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_0055c5f0 at 0055c665
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580 at 005ae7fd
-;   core_weather.cpp_FUN_005ae190 at 005ae407
+;   core_weather.cpp_CWeather_update_FUN_005ae190 at 005ae407
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d78ff

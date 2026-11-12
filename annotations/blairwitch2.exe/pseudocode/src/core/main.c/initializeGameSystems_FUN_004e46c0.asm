@@ -67,7 +67,7 @@ section .text
     MOV dword ptr [0x0061e28c],ECX      ; 004e46eb | DAT_0061e28c
     MOV dword ptr [0x0061e280],EBX      ; 004e46f1 | DAT_0061e280
     CALL crt_stdio.c_fopen_FUN_005b910c ; 004e46f7
-        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005b910c()
+        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005b910c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004e46fc
     TEST EAX,EAX                        ; 004e46ff
     JNZ 0x004e4da1                      ; 004e4701
@@ -77,7 +77,7 @@ section .text
     PUSH 0x5dc1da                       ; 004e470c | DAT_005dc1da
     PUSH 0x5dc1dd                       ; 004e4711 | = "stderr.txt"
     CALL crt_stdio.c_freopen_FUN_005b91a4 ; 004e4716
-        ;   XREF to: 005b91a4 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_freopen_FUN_005b91a4()
+        ;   XREF to: 005b91a4 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_freopen_FUN_005b91a4(char * filename, char * mode, _FILE * stream)
     ADD ESP,0xc                         ; 004e471b
     CALL core_flattn.cpp_FUN_004a67a0   ; 004e471e
         ;   XREF to: 004a67a0 (UNCONDITIONAL_CALL)  ; undefined core_flattn.cpp_FUN_004a67a0()
@@ -92,11 +92,11 @@ section .text
     ADD ESP,0x4                         ; 004e473e
     PUSH 0x51bfa0                       ; 004e4741
     CALL engine_dosio.cpp_addGetFileInfoHook_FUN_00460930 ; 004e4746
-        ;   XREF to: 00460930 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_addGetFileInfoHook_FUN_00460930()
+        ;   XREF to: 00460930 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_addGetFileInfoHook_FUN_00460930(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 004e474b
     PUSH 0x4609e0                       ; 004e474e
     CALL engine_dosio.cpp_addGetFileInfoHook_FUN_00460930 ; 004e4753
-        ;   XREF to: 00460930 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_addGetFileInfoHook_FUN_00460930()
+        ;   XREF to: 00460930 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_addGetFileInfoHook_FUN_00460930(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 004e4758
     PUSH 0x5dc1e8                       ; 004e475b | = "msglist.txt"
     CALL support_newmsg.cpp_readMessageFile_FUN_0050f9e0 ; 004e4760
@@ -651,8 +651,8 @@ section .text
     PUSH EAX                            ; 004e4c2d
     MOV ECX,dword ptr [0x01511cc0]      ; 004e4c2e | DAT_01511cc0
     PUSH ECX                            ; 004e4c34
-    CALL engine_font.cpp_FUN_004aaf00   ; 004e4c35
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004e4c35
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004e4c3a
     PUSH 0x58                           ; 004e4c3d
     MOV EBX,dword ptr [0x01511cc0]      ; 004e4c3f | DAT_01511cc0

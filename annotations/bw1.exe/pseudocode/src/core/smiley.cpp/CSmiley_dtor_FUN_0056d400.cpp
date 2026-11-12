@@ -18,7 +18,7 @@ CSmiley * core_smiley_cpp_CSmiley_dtor_FUN_0056d400(CSmiley *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSmileyTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSmileyTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

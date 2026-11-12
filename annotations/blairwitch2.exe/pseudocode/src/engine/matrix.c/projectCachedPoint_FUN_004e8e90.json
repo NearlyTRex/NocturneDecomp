@@ -2,17 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 20,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
+    "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 16
+    "total_lines": 17
   },
   "cross_references": [
     {
@@ -98,6 +98,32 @@
     },
     "pcode_op_count": 79
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00507b30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e5570",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050cda0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cd240",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -117,10 +143,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 5,
+      "line": 6,
       "match": "DAT_00622014",
       "severity": "mild",
-      "text": "engine_matrix_c_projectTransformedPoint_FUN_004e8eb0(&DAT_00622014 + cacheIndex * 0xc);",
+      "text": "((SProjectedVertex *)(&DAT_00622014 + cacheIndex * 0xc));",
       "type": "undefined_data"
     }
   ]

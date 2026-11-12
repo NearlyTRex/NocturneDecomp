@@ -1,20 +1,20 @@
 // Name: core_vehicle.cpp_factoryFuncVehicle_FUN_005a75f0
 // Address: 005a75f0
 // Address Range: [[005a75f0, 005a760b]]
-// Convention: unknown
-// Signature: void core_vehicle_cpp_factoryFuncVehicle_FUN_005a75f0(void)
+// Convention: __cdecl
+// Signature: CVehicle * __cdecl core_vehicle_cpp_factoryFuncVehicle_FUN_005a75f0(void)
 
 #include "nocturne.h"
 
-void core_vehicle_cpp_factoryFuncVehicle_FUN_005a75f0(void)
+CVehicle * __cdecl core_vehicle_cpp_factoryFuncVehicle_FUN_005a75f0(void)
 
 {
-  CVehicle *this_ptr;
+  CVehicle *pCVar1;
   
-  this_ptr = (CVehicle *)operator_new(0x1078);
-  if (this_ptr == (CVehicle *)0x0) {
-    return;
+  pCVar1 = (CVehicle *)operator_new(0x1078);
+  if (pCVar1 == (CVehicle *)0x0) {
+    return (CVehicle *)0x0;
   }
-  core_vehicle_cpp_CVehicle_ctor_FUN_005a7620(this_ptr);
-  return;
+  pCVar1 = core_vehicle_cpp_CVehicle_ctor_FUN_005a7620(pCVar1);
+  return pCVar1;
 }

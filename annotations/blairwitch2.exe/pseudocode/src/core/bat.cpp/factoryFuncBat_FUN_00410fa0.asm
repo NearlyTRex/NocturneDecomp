@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bat_cpp_factoryFuncBat_FUN_00410fa0(void)
+; CBat * __cdecl core_bat_cpp_factoryFuncBat_FUN_00410fa0(void)
 ;
 ;
 ; Called Functions:

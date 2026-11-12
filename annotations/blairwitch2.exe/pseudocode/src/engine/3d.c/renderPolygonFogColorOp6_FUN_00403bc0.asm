@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonFogColorOp6_FUN_00403bc0(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogColorOp6_FUN_00403bc0(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0
@@ -30,7 +32,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00403bca
     PUSH EAX                            ; 00403bcd
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 00403bce
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 00403bd3
     TEST EAX,EAX                        ; 00403bd6
     JZ 0x00403c22                       ; 00403bd8

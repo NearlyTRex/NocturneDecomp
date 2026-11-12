@@ -287,7 +287,7 @@ section .text
     SUB EAX,ECX                         ; 004fadb5
     PUSH EAX                            ; 004fadb7
     CALL core_inv.cpp_drawWeaponIconBackground_FUN_004fa770 ; 004fadb8
-        ;   XREF to: 004fa770 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_drawWeaponIconBackground_FUN_004fa770()
+        ;   XREF to: 004fa770 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_drawWeaponIconBackground_FUN_004fa770(int x1, int y1, int x2, int y2, ...)
     JMP 0x004fac29                      ; 004fadbd
         ;   XREF to: 004fac29 (UNCONDITIONAL_JUMP)  ; LAB_004fac29
     MOV EDX,ESI                         ; 004fadc2
@@ -318,7 +318,7 @@ section .text
     SUB EAX,ECX                         ; 004fadfc
     PUSH EAX                            ; 004fadfe
     CALL core_inv.cpp_drawWeaponIconBackground_FUN_004fa770 ; 004fadff
-        ;   XREF to: 004fa770 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_drawWeaponIconBackground_FUN_004fa770()
+        ;   XREF to: 004fa770 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_drawWeaponIconBackground_FUN_004fa770(int x1, int y1, int x2, int y2, ...)
     JMP 0x004fad44                      ; 004fae04
         ;   XREF to: 004fad44 (UNCONDITIONAL_JUMP)  ; LAB_004fad44
 

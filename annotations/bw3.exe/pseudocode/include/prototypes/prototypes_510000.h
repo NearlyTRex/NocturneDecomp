@@ -27,6 +27,7 @@
 #include "types/structs/SPose.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
+#include "types/structs/STrianglePackedIndices.h"
 #include "types/unions/UOrientationVector.h"
 
 // =============================================================================
@@ -38,11 +39,11 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_00510210(CPacked
 void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_00510230(int total_entries,_FILE *file_header);
 CPackedBitmap * cockpit_pkbitmap_cpp_parsePBGFile_FUN_005102b0(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6);
 CPackedBitmap * cockpit_pkbitmap_cpp_FUN_00510430(int *param_1,char *param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6);
-void cockpit_pkbitmap_cpp_FUN_005105e0(undefined4 *param_1);
-void cockpit_pkbitmap_cpp_FUN_00510610(int *param_1);
-void cockpit_pkbitmap_cpp_FUN_00510670(undefined4 *param_1);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_005105e0(CPackedBitmapSet *this_ptr);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_00510610(CPackedBitmapSet *this_ptr);
+void cockpit_pkbmpset_cpp_FUN_00510670(undefined4 *param_1);
 void __cdecl cockpit_pkbmpset_cpp_FUN_005106a0(CPackedBitmapSet *this_ptr,int bitmap_count);
-void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740(CPackedBitmapSet *this_ptr,undefined4 param_2,undefined4 param_3,char *param_4,int param_5,int param_6,undefined4 param_7,undefined4 param_8,int param_9,int param_10);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740(CPackedBitmapSet *this_ptr,undefined4 param_2,undefined4 param_3,char *param_4,int param_5,int param_6,int param_7,undefined4 param_8,int param_9,int param_10);
 void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,undefined4 param_6,int param_7,undefined4 param_8,undefined4 param_9,int param_10);
 void cockpit_pkbmpset_cpp_FUN_00510a90(CPackedBitmapSet *param_1,int param_2,int param_3);
 void cockpit_pkbmpset_cpp_FUN_00510de0(void);
@@ -52,7 +53,7 @@ int __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_00510f
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_00510f90(CPackedBitmapSet *this_ptr,char *filename);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_00510fb0(CPackedBitmapSet *this_ptr);
 void core_platfrm_cpp_staticInit_FUN_00511080(void);
-void core_platfrm_cpp_factoryFuncPlatform_FUN_005110b0(void);
+CPlatform * __cdecl core_platfrm_cpp_factoryFuncPlatform_FUN_005110b0(void);
 CDemonActorType * core_platfrm_cpp_CPlatform_getActorType_FUN_005110d0(CPlatform *this_ptr);
 CPlatform * core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_005112b0(CPlatform *this_ptr);
@@ -80,7 +81,6 @@ undefined4 engine_pod_cpp_FUN_00512fb0(CPodFile *param_1,char *param_2,char *par
 void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_00513b90(CPodFile *this_ptr);
 int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_00513c30(CPodFile *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_00513ca0(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
-bool engine_pod_cpp_FUN_00513d1e(int *param_1);
 bool engine_pod_cpp_FUN_00513d20(int *param_1);
 void engine_pod_cpp_FUN_00513ff0(int param_1,int param_2);
 void engine_pod_cpp_FUN_00514110(int param_1,int param_2);
@@ -92,7 +92,7 @@ void engine_pod_cpp_FUN_005144b0(int *param_1);
 void __cdecl engine_pod_cpp_CPod_dismount_FUN_00514560(CPod *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPod_init_FUN_00514600(CPod *this_ptr);
 void __cdecl engine_pod_cpp_CPod_cleanup_FUN_00514650(CPod *this_ptr);
-int __cdecl engine_pod_cpp_findFilesByExtension_FUN_005146a0(int *param_1,byte *param_2,int param_3,int param_4,int param_5);
+int __cdecl engine_pod_cpp_findFilesByExtension_FUN_005146a0(CPod *pod,char *extension,char *output_buffer,int max_results,int result_string_length);
 void __cdecl engine_pod_cpp_CPod_initSearch_FUN_00514860(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context);
 int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_005148b0(CPod *this_ptr,CPodSearchContext *search_context);
 void engine_pod_cpp_FUN_005149bc(undefined4 param_1,char *param_2);
@@ -111,13 +111,13 @@ void core_podmain_cpp_FUN_005154ee(undefined4 param_1);
 void __cdecl engine_prim_c_FUN_00515500(int culling_mode);
 void engine_prim_c_FUN_00515510(int param_1,int param_2);
 SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_005158e0(int y_value,SSoftwareEdge *edge_ptr);
-void __cdecl engine_prim_c_prepareDepthBuffer_FUN_00515920(int param_1,int param_2);
-void __cdecl engine_prim_c_normalizeTextureCoords_FUN_00515990(int param_1,int param_2);
-void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_00515a10(int param_1,int param_2);
-void __cdecl engine_prim_c_replaceWWithDepth_FUN_00515a80(int param_1,int param_2);
-bool __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0(int param_1,int param_2,int param_3);
-int __cdecl engine_prim_c_FUN_00515b80(SMRGLPrimitiveTriangle *triangle);
-bool __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_00515d60(ushort *param_1);
+void __cdecl engine_prim_c_prepareDepthBuffer_FUN_00515920(SRenderVertex *vertices,int vertex_count);
+void __cdecl engine_prim_c_normalizeTextureCoords_FUN_00515990(SRenderVertex *vertices,int vertex_count);
+void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_00515a10(SRenderVertex *vertices,int vertex_count);
+void __cdecl engine_prim_c_replaceWWithDepth_FUN_00515a80(SRenderVertex *vertices,int vertex_count);
+int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2);
+int __cdecl engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_00515b80(SMRGLPrimitiveTriangle *triangle);
+int __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_00515d60(STrianglePackedIndices *triangle);
 void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00515e80(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_005163b0(int *vertex_indices,int vertex_count);
 void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_00516b00(SRenderVertex *vertex0,SRenderVertex *vertex1);
@@ -126,8 +126,8 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00517480(int *vertex
 void core_prye_cpp_staticInit_FUN_00517c20(void);
 float core_prye_cpp_FUN_00517c90(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
 float core_prye_cpp_FUN_00517ce0(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
-undefined4 core_prye_cpp_FUN_00517d50(int param_1);
-float __cdecl core_prye_cpp_getCarriedObjectVerticalOffset_FUN_00517e80(undefined4 param_1);
+undefined4 core_prye_cpp_FUN_00517d50(CDemonActor *param_1);
+float __cdecl core_prye_cpp_getCarriedObjectVerticalOffset_FUN_00517e80(CDemonActor *object);
 void core_prye_cpp_factoryFuncPrye_FUN_00517f50(void);
 CDemonActorType * core_prye_cpp_CPrye_getActorType_FUN_00517f70(CPrye *this_ptr);
 CPrye * core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr);
@@ -136,15 +136,15 @@ void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr);
 void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delta_time);
 void core_prye_cpp_FUN_00518cd0(UOrientationVector *param_1,float param_2);
 void core_prye_cpp_FUN_0051b550(CHero *param_1,float param_2);
-undefined4 core_prye_cpp_FUN_0051c0a0(int param_1);
+float __cdecl core_prye_cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0(CPrye *this_ptr);
 undefined4 core_prye_cpp_FUN_0051c0f0(void);
 void core_prye_cpp_FUN_0051c100(int param_1);
-void core_prye_cpp_FUN_0051c1c0(int param_1);
+void core_prye_cpp_FUN_0051c1c0(CPrye *param_1);
 void core_prye_cpp_FUN_0051e280(int param_1,SPose *param_2);
-void core_prye_cpp_FUN_0051e380(int param_1,float param_2);
+void __cdecl core_prye_cpp_CPrye_updateTurnBlending_FUN_0051e380(CPrye *this_ptr,float delta_time);
 void __cdecl core_prye_cpp_CPrye_setPositionAndOrientation_FUN_0051e690(CPrye *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 void core_prye_cpp_FUN_0051e6d0(CCharacter *param_1);
 void core_prye_cpp_FUN_0051ee10(int param_1,int param_2);
-void core_prye_cpp_FUN_0051f360(int param_1,int param_2);
-float * core_prye_cpp_FUN_0051f490(CCharacter *param_1,int param_2,float param_3);
+void __cdecl core_prye_cpp_CPrye_updateWeaponPosition_FUN_0051f360(CPrye *this_ptr,int hand_index);
+float * core_prye_cpp_FUN_0051f490(CCharacter *param_1,CDemonActor *param_2,float param_3);
 

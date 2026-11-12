@@ -235,6 +235,32 @@
     },
     "pcode_op_count": 697
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00535bd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050d8b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00548f00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9822
+    },
+    "nocturne.exe": {
+      "addr": "004f27e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 116,
     "local_size": 112,
@@ -331,7 +357,7 @@
       "line": 46,
       "match": "DAT_005e198d",
       "severity": "mild",
-      "text": "pcVar5 = &DAT_005e198d;",
+      "text": "pcVar4 = &DAT_005e198d;",
       "type": "undefined_data"
     },
     {
@@ -339,7 +365,7 @@
       "line": 56,
       "match": "DAT_005e1992",
       "severity": "mild",
-      "text": "iVar2 = _fopen(local_6c,&DAT_005e1992);",
+      "text": "file = _fopen(local_6c,&DAT_005e1992);",
       "type": "undefined_data"
     },
     {
@@ -355,7 +381,7 @@
       "line": 67,
       "match": "DAT_01c2a38c",
       "severity": "mild",
-      "text": "puVar3 = *(uint **)(&DAT_01c2a38c + local_18);",
+      "text": "puVar2 = *(uint **)(&DAT_01c2a38c + local_18);",
       "type": "undefined_data"
     },
     {
@@ -371,7 +397,7 @@
       "line": 70,
       "match": "DAT_01c35820",
       "severity": "mild",
-      "text": "uVar4 = (*puVar3 >> (DAT_01c35820 & 0x1f)) * _DAT_01c35824;",
+      "text": "uVar3 = (*puVar2 >> (DAT_01c35820 & 0x1f)) * _DAT_01c35824;",
       "type": "undefined_data"
     },
     {
@@ -379,7 +405,7 @@
       "line": 71,
       "match": "DAT_01c3582c",
       "severity": "mild",
-      "text": "local_1c = (*puVar3 >> (DAT_01c3582c & 0x1f)) * _DAT_01c35830 & 0xff;",
+      "text": "local_1c = (*puVar2 >> (DAT_01c3582c & 0x1f)) * _DAT_01c35830 & 0xff;",
       "type": "undefined_data"
     },
     {
@@ -387,7 +413,7 @@
       "line": 72,
       "match": "DAT_01c35814",
       "severity": "mild",
-      "text": "_fputc(_DAT_01c35818 * (*puVar3 >> (DAT_01c35814 & 0x1f)) & 0xff,iVar2);",
+      "text": "_fputc(_DAT_01c35818 * (*puVar2 >> (DAT_01c35814 & 0x1f)) & 0xff,file);",
       "type": "undefined_data"
     },
     {
@@ -395,7 +421,7 @@
       "line": 77,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "} while (iVar6 < DAT_006141b8);",
+      "text": "} while (iVar5 < DAT_006141b8);",
       "type": "undefined_data"
     },
     {

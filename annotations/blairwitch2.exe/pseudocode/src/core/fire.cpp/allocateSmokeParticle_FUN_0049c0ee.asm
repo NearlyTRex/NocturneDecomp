@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * core_fire_cpp_allocateSmokeParticle_FUN_0049c0ee(void)
+; CSmokeParticle * __cdecl core_fire_cpp_allocateSmokeParticle_FUN_0049c0ee(void)
 ;
 ;
 ; Referenced Globals:

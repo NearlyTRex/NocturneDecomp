@@ -14,7 +14,7 @@ CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_005689e0(CTempleSton
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTempleStoneTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTempleStoneTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

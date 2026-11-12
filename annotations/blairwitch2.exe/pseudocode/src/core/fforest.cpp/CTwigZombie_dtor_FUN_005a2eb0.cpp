@@ -18,7 +18,7 @@ CTwigZombie * core_fforest_cpp_CTwigZombie_dtor_FUN_005a2eb0(CTwigZombie *this_p
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTwigZombieTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTwigZombieTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

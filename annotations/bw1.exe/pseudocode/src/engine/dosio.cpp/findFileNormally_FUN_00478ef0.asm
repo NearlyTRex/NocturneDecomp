@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_dosio_cpp_findFileNormally_FUN_00478ef0(char *param_1)
+; int __cdecl engine_dosio_cpp_findFileNormally_FUN_00478ef0(SFoundFileInfo *info)
 ;
+; Parameters:
+; SFoundFileInfo * Stack[0x4]:4   info
 ; Local Variables:
 ; undefined        Stack[-0x14c]:1  local_14c
 ; undefined1       Stack[-0x14b]:1  local_14b

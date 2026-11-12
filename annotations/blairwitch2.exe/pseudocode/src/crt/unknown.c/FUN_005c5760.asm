@@ -50,7 +50,7 @@ section .text
     PUSH EBX                            ; 005c579f
     PUSH 0xa                            ; 005c57a0
     CALL crt_stdio.c_fputc_FUN_005bab40 ; 005c57a2
-        ;   XREF to: 005bab40 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005bab40()
+        ;   XREF to: 005bab40 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005bab40(int character, _FILE * file)
     ADD ESP,0x8                         ; 005c57a7
     POP EBX                             ; 005c57aa
     POP EBP                             ; 005c57ab

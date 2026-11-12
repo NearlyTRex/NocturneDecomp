@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 192,
-    "complexity_score": 181,
+    "complexity_score": 182,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 67,
     "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
@@ -16,7 +16,7 @@
       "unrolled_strchr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 258
+    "total_lines": 259
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_model.c_loadModelFile_FUN_0051f6d0",
-    "signature": "int * __cdecl engine_model_c_loadModelFile_FUN_0051f6d0(char *param_1)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_0051f6d0(char *param_1)"
   },
   "function_calls": [
     {
@@ -240,6 +240,32 @@
     },
     "pcode_op_count": 599
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00500720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f7f20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00527ec0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.974
+    },
+    "nocturne.exe": {
+      "addr": "004dcd10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9868
+    }
+  },
   "stack_frame": {
     "frame_size": 96,
     "local_size": 96,
@@ -270,7 +296,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int * __cdecl engine_model_c_loadModelFile_FUN_0051f6d0(char *param_1)",
+      "text": "SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_0051f6d0(char *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -278,7 +304,7 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar6 = param_1;",
+      "text": "pcVar5 = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -286,7 +312,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar2 = (int *)engine_boss_c_modelStructNotSupported2_FUN_0041d920(param_1);",
+      "text": "pSVar1 = engine_boss_c_modelStructNotSupported2_FUN_0041d920(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -302,7 +328,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_00479180(\"models\",param_1,&DAT_005e9fe2);",
+      "text": "file = engine_dosio_cpp_FUN_00479180(\"models\",param_1,&DAT_005e9fe2);",
       "type": "unnamed_param"
     },
     {
@@ -310,7 +336,7 @@
       "line": 41,
       "match": "DAT_005e9fe2",
       "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_00479180(\"models\",param_1,&DAT_005e9fe2);",
+      "text": "file = engine_dosio_cpp_FUN_00479180(\"models\",param_1,&DAT_005e9fe2);",
       "type": "undefined_data"
     },
     {

@@ -12,9 +12,9 @@
 ;   core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_00427780 at 00427849
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 004271ea
 ;   core_carved.cpp_FUN_004256e0 at 00425716
+;   core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_00457300 at 004573c9
 ;   core_demnfolk.cpp_FUN_004548e0 at 00454916
 ;   core_demnfolk.cpp_FUN_00455080 at 004568fe
-;   core_demnfolk.cpp_FUN_00457300 at 004573c9
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052c1fd
 ;   core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_0058af90 at 0058b2af
 ;   ... and 3 more

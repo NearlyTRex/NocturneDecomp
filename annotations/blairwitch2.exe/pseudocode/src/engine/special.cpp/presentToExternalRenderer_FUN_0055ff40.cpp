@@ -61,7 +61,7 @@ void __cdecl engine_special_cpp_presentToExternalRenderer_FUN_0055ff40(int skip_
         iVar4 = iVar4 + 4;
       } while (iVar2 < DAT_006141bc);
     }
-    engine_special_cpp_FUN_0055f550(0);
+    engine_special_cpp_unlockFrame_FUN_0055f550(0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_00589170();
   }
   _DAT_0264bd00 = 0;

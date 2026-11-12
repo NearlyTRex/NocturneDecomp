@@ -462,7 +462,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x2698]    ; 004fe355
     PUSH EDX                            ; 004fe35b
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004fe35c
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004fe361
     TEST EAX,EAX                        ; 004fe364
     JZ 0x004fe37b                       ; 004fe366
@@ -478,7 +478,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x2620]    ; 004fe382
     PUSH ESI                            ; 004fe388
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004fe389
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004fe38e
     TEST EAX,EAX                        ; 004fe391
     JZ 0x004fe3a8                       ; 004fe393
@@ -534,8 +534,8 @@ section .text
     PUSH 0x5ded85                       ; 004fe40b | = "%s confused while walking to scriptDe..."
     MOV EAX,[0x00609ed0]                ; 004fe410 | g_CConsolePtr
     PUSH EAX                            ; 004fe415 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 004fe416
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 004fe416
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     JMP 0x004fe1c6                      ; 004fe41b
         ;   XREF to: 004fe1c6 (UNCONDITIONAL_JUMP)  ; LAB_004fe1c6
     JBE 0x004fe1b6                      ; 004fe420
@@ -733,7 +733,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x2698]    ; 004fe666
     PUSH ESI                            ; 004fe66c
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004fe66d
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,EAX                         ; 004fe672
     ADD ESP,0x8                         ; 004fe674
     MOV EDI,EAX                         ; 004fe677
@@ -768,7 +768,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x2620]    ; 004fe6d2
     PUSH ECX                            ; 004fe6d8
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004fe6d9
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,EAX                         ; 004fe6de
     ADD ESP,0x8                         ; 004fe6e0
     MOV dword ptr [EBP + 0x72],EAX      ; 004fe6e3
@@ -1046,7 +1046,7 @@ section .text
     SUB ESP,0x4                         ; 004fe9fd
     FSTP float ptr [ESP]                ; 004fea00
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 004fea03
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [EBP + 0x76],EAX      ; 004fea08
     FLD float ptr [EBP + 0x76]          ; 004fea0b
     FABS                                ; 004fea0e
@@ -1360,7 +1360,7 @@ section .text
     SUB ESP,0x4                         ; 004fed6d
     FSTP float ptr [ESP]                ; 004fed70
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 004fed73
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [EBP + 0x76],EAX      ; 004fed78
     FLD float ptr [EBP + 0x76]          ; 004fed7b
     FABS                                ; 004fed7e
@@ -1503,7 +1503,7 @@ section .text
     SUB ESP,0x4                         ; 004feece
     FSTP float ptr [ESP]                ; 004feed1
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 004feed4
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [EBP + 0x76],EAX      ; 004feed9
     FLD float ptr [EBP + 0x76]          ; 004feedc
     FABS                                ; 004feedf

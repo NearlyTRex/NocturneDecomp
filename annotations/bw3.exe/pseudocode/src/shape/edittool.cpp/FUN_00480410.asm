@@ -39,7 +39,7 @@
 ;   engine_2d.c_plotPixel_FUN_00401130
 ;   engine_mini3d.cpp_FUN_004f3520
 ;   engine_mini3d.cpp_FUN_004f36e0
-;   shape_edittool.cpp_FUN_004803d0
+;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 00480417
     MOV EDX,dword ptr [ESP + 0x24]      ; 0048041b
     PUSH EDX                            ; 0048041f
-    CALL shape_edittool.cpp_FUN_004803d0 ; 00480420
-        ;   XREF to: 004803d0 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_FUN_004803d0(CEditorTools * this_ptr)
+    CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0 ; 00480420
+        ;   XREF to: 004803d0 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0(CEditorTools * this_ptr)
     MOV ECX,dword ptr [0x01c5baec]      ; 00480425 | DAT_01c5baec
     ADD ESP,0x4                         ; 0048042b
     TEST ECX,ECX                        ; 0048042e

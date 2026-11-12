@@ -18,7 +18,7 @@ CBaalSkel * core_boneguy_cpp_CBaalSkel_dtor_FUN_0041a8c0(CBaalSkel *this_ptr,uin
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBaalSkelTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBaalSkelTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

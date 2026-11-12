@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 232,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 20,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 90
@@ -24,10 +23,10 @@
         "0058e99a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_stranger.cpp_adjustAimAngleForOffset_FUN_0058e90e",
-    "signature": "void core_stranger_cpp_adjustAimAngleForOffset_FUN_0058e90e(float *param_1,float param_2,float param_3)"
+    "signature": "void __cdecl core_stranger_cpp_adjustAimAngleForOffset_FUN_0058e90e(float *angle,float distance,float offset)"
   },
   "function_calls": [
     {
@@ -53,9 +52,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -98,13 +97,55 @@
     },
     "pcode_op_count": 416
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00459db0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9912
+    },
+    "nocedit.exe": {
+      "addr": "005c3750",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9912
+    },
+    "nocturne.exe": {
+      "addr": "0053d700",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9912
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "angle",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "distance",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "offset",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
   },
   "stack_patterns": {
     "note": "Function contains stack manipulation that may cause decompiler artifacts.",
@@ -131,158 +172,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_stranger_cpp_adjustAimAngleForOffset_FUN_0058e90e(float *param_1,float param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void core_stranger_cpp_adjustAimAngleForOffset_FUN_0058e90e(float *param_1,float param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void core_stranger_cpp_adjustAimAngleForOffset_FUN_0058e90e(float *param_1,float param_2,float param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((float)_DAT_005f6ec9 <= param_2) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = SQRT(param_2 * param_2 - param_3 * param_3) / param_2, param_2 < 1.0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = SQRT(param_2 * param_2 - param_3 * param_3) / param_2, param_2 < 1.0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = SQRT(param_2 * param_2 - param_3 * param_3) / param_2, param_2 < 1.0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_2 = SQRT(param_2 * param_2 - param_3 * param_3) / param_2, param_2 < 1.0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(param_2 = SQRT(param_2 * param_2 - param_3 * param_3) / param_2, param_2 < 1.0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = SQRT(param_2 * param_2 - param_3 * param_3) / param_2, param_2 < 1.0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2 = SQRT(param_2 * param_2 - param_3 * param_3) / param_2, param_2 < 1.0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(0.0 <= param_2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = (float10)param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 < 0.0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = *param_1 - (float)fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = *param_1 + (float)fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = fVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(*param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = fVar1;",
-      "type": "unnamed_param"
     }
   ]
 }

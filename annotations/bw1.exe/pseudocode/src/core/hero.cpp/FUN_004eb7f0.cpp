@@ -9,19 +9,16 @@
 uint core_hero_cpp_FUN_004eb7f0(int param_1)
 
 {
-  SMotion *pSVar1;
-  
-  engine_console_cpp_FUN_00445430(g_CConsolePtr,"CHero::toggleLeverNow\n");
-  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                     ((CMotionController *)(param_1 + 0x158));
-  engine_console_cpp_FUN_00445430(g_CConsolePtr,"  current motion is %s\n",pSVar1);
+  engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"CHero::toggleLeverNow\n");
+  core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
+            ((CMotionController *)(param_1 + 0x158));
+  engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"  current motion is %s\n");
   if (*(int *)(param_1 + 0x1ff80) != 0) {
-    engine_console_cpp_FUN_00445430
-              (g_CConsolePtr,"  toggling lever %s\n",*(int *)(param_1 + 0x1ff80));
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"  toggling lever %s\n");
     core_lever_cpp_CLever_activate_FUN_004ff570(*(CLever **)(param_1 + 0x1ff80));
     *(uint *)(param_1 + 0x1ff80) = 0;
     return 1;
   }
-  engine_console_cpp_FUN_00445430(g_CConsolePtr,"  but no lever set!\n");
+  engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"  but no lever set!\n");
   return 0;
 }

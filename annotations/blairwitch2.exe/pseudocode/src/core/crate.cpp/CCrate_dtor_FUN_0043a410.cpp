@@ -13,7 +13,7 @@ CCrate * __cdecl core_crate_cpp_CCrate_dtor_FUN_0043a410(CCrate *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CCrateTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CCrateTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

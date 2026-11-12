@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   light_level
 ;
 ; XREF[1]:
-;   engine_drender.cpp_FUN_0046d0d0 at 0046d0e9
+;   engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0046d0d0 at 0046d0e9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006002c4

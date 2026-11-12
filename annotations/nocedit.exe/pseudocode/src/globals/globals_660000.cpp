@@ -7796,6 +7796,9 @@ char g_CourseLastBonPath[256] = "";
 char g_CourseLastPthPath[264] = "";
 char g_CourseLastCrsPath[264] = "";
 
+// char[28]
+char g_ConsoleLogFilename[28] = "console.txt";
+
 // char[2]
 char g_PropertyNamePrefixMinusTwo[2] = "";
 

@@ -14,59 +14,59 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423cd0(CBugs *this_ptr,CDe
   CDeformableModelInstance *this_ptr_00;
   CVector3i *pCVar1;
   uint uVar2;
-  uint uVar3;
-  int iVar4;
-  CDeformableModel *pCVar5;
+  uint class_name_hash;
+  CDemonActor *pCVar3;
+  CDeformableModel *pCVar4;
+  int iVar5;
   int iVar6;
   int iVar7;
   int iVar8;
   CBugs *pCVar9;
   
-  uVar3 = g_CHeroClassInfo.name_hash;
+  class_name_hash = g_CHeroClassInfo.name_hash;
   this_ptr->deformable_model_ptr = (CDeformableModelInstance *)0x0;
   this_ptr->swarm_target = (CDemonActor *)0x0;
-  iVar4 = core_actor_cpp_castToClassHash_FUN_0040c840(target,uVar3);
-  if (iVar4 != 0) {
-    this_ptr->deformable_model_ptr = (CDeformableModelInstance *)(iVar4 + 0x158);
+  pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c840(target,class_name_hash);
+  if (pCVar3 != (CDemonActor *)0x0) {
+    this_ptr->deformable_model_ptr = (CDeformableModelInstance *)(pCVar3 + 1);
   }
-  iVar4 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c840(target,g_CEnemyClassInfo.name_hash);
-  if ((iVar4 != 0) && (*(char *)(iVar4 + 0x24a8) != '\0')) {
-    this_ptr->deformable_model_ptr = (CDeformableModelInstance *)(iVar4 + 0x158);
+  pCVar3 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c840(target,g_CEnemyClassInfo.name_hash);
+  if ((pCVar3 != (CDemonActor *)0x0) && ((char)pCVar3[0x1b].runtime_state != '\0')) {
+    this_ptr->deformable_model_ptr = (CDeformableModelInstance *)(pCVar3 + 1);
   }
   if (this_ptr->deformable_model_ptr != (CDeformableModelInstance *)0x0) {
     this_ptr->state = BUGS_STATE_ATTACK;
     this_ptr->swarm_target = target;
-    iVar4 = this_ptr->swarm_target->health;
+    iVar5 = this_ptr->swarm_target->health;
     this_ptr_00 = this_ptr->deformable_model_ptr;
     this_ptr->lod_index = 0;
-    (this_ptr->base).base.base.health = iVar4 + 1;
+    (this_ptr->base).base.base.health = iVar5 + 1;
     core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr_00);
     do {
-      pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
+      pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
                          (this_ptr->deformable_model_ptr);
-      iVar4 = this_ptr->lod_index;
-      if (pCVar5->vertex_count[iVar4] < 0x353) {
-        engine_console_cpp_FUN_00441ff0
-                  (g_CConsolePtr,">%s swarming on %s at LOD %d\n" + 1,this_ptr,target,iVar4);
-        pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
+      if (pCVar4->vertex_count[this_ptr->lod_index] < 0x353) {
+        engine_console_cpp_CConsole_printf_FUN_00441ff0
+                  (g_CConsolePtr,">%s swarming on %s at LOD %d\n" + 1);
+        pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
                            (this_ptr->deformable_model_ptr);
         core_bugs_cpp_CBugs_initializeSwarmGraph_FUN_00421b00
-                  (this_ptr,pCVar5->tri_count[this_ptr->lod_index],
-                   pCVar5->tri_data_ptr[this_ptr->lod_index]);
+                  (this_ptr,pCVar4->tri_count[this_ptr->lod_index],
+                   pCVar4->tri_data_ptr[this_ptr->lod_index]);
         core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420
                   (this_ptr->deformable_model_ptr,this_ptr->lod_index);
-        iVar4 = 0;
+        iVar5 = 0;
         pCVar1 = this_ptr->deformable_model_ptr->skinned_vertices_buffer;
         if (0 < this_ptr->swarm_vertex_count) {
           iVar7 = 0;
           do {
-            *(int *)((int)&DAT_007e1c94 + iVar7) = iVar4;
-            iVar4 = iVar4 + 1;
+            *(int *)((int)&DAT_007e1c94 + iVar7) = iVar5;
+            iVar5 = iVar5 + 1;
             iVar7 = iVar7 + 4;
-          } while (iVar4 < this_ptr->swarm_vertex_count);
+          } while (iVar5 < this_ptr->swarm_vertex_count);
         }
-        for (iVar4 = this_ptr->swarm_vertex_count + -2; -1 < iVar4; iVar4 = iVar4 + -1) {
-          if (-1 < iVar4) {
+        for (iVar5 = this_ptr->swarm_vertex_count + -2; -1 < iVar5; iVar5 = iVar5 + -1) {
+          if (-1 < iVar5) {
             iVar7 = 0;
             do {
               if (pCVar1[*(int *)((int)&DAT_007e1c98 + iVar7)].y <
@@ -77,10 +77,10 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423cd0(CBugs *this_ptr,CDe
                 *(uint *)((int)&DAT_007e1c98 + iVar7) = uVar2;
               }
               iVar7 = iVar7 + 4;
-            } while (iVar7 <= iVar4 * 4);
+            } while (iVar7 <= iVar5 * 4);
           }
         }
-        iVar4 = pCVar1[DAT_007e1c94].y;
+        iVar5 = pCVar1[DAT_007e1c94].y;
         iVar8 = 0;
         iVar7 = 0;
         pCVar9 = this_ptr;
@@ -96,7 +96,7 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423cd0(CBugs *this_ptr,CDe
           pCVar9->bugs[0].downward_bias = iVar6;
           iVar8 = iVar8 + 1;
           if ((this_ptr->swarm_vertex_count <= iVar8) ||
-             (iVar4 + 0x2a < pCVar1[(&DAT_007e1c94)[iVar8]].y)) {
+             (iVar5 + 0x2a < pCVar1[(&DAT_007e1c94)[iVar8]].y)) {
             iVar8 = 0;
           }
           iVar7 = iVar7 + 1;
@@ -104,10 +104,10 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00423cd0(CBugs *this_ptr,CDe
         } while (iVar7 < this_ptr->count);
         return;
       }
-      this_ptr->lod_index = iVar4 + 1;
-      pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
+      this_ptr->lod_index = this_ptr->lod_index + 1;
+      pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
                          (this_ptr->deformable_model_ptr);
-    } while (this_ptr->lod_index < pCVar5->num_lods);
+    } while (this_ptr->lod_index < pCVar4->num_lods);
     this_ptr->deformable_model_ptr = (CDeformableModelInstance *)0x0;
   }
   return;

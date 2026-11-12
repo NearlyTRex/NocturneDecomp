@@ -18,8 +18,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
+;   core_box.cpp_CBoundingBox3D_render_FUN_00421670
 ;   core_box.cpp_FUN_004207b0
-;   core_box.cpp_FUN_00421670
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_00553440
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_00553140
@@ -203,8 +203,8 @@ section .text
     LEA ESI,[ESP + 0x30]                ; 0044c10d
     PUSH EAX                            ; 0044c111
     MOVSD.REP ES:EDI,ESI                ; 0044c112
-    CALL core_box.cpp_FUN_00421670      ; 0044c114
-        ;   XREF to: 00421670 (UNCONDITIONAL_CALL)  ; void core_box.cpp_FUN_00421670(CBoundingBox3D * this_ptr)
+    CALL core_box.cpp_CBoundingBox3D_render_FUN_00421670 ; 0044c114
+        ;   XREF to: 00421670 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_render_FUN_00421670(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 0044c119
     PUSH EBP                            ; 0044c11c
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0 ; 0044c11d

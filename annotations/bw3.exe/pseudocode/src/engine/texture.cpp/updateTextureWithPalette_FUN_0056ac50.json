@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 57,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 23
@@ -24,9 +23,9 @@
         "0056ac73"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_texture.cpp_updateTextureWithPalette_FUN_0056ac50",
-    "signature": "void engine_texture_cpp_updateTextureWithPalette_FUN_0056ac50(undefined4 param_1)"
+    "signature": "void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_0056ac50(SMRGLTextureBasic *texture)"
   },
   "function_calls": [
     {
@@ -52,9 +51,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -77,13 +76,47 @@
     },
     "pcode_op_count": 50
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00575040",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00597c60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005dd900",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00545a10",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "texture",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -93,30 +126,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void engine_texture_cpp_updateTextureWithPalette_FUN_0056ac50(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_texture_cpp_FUN_0056aa10(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_texture_cpp_FUN_0056a690(_DAT_02cfd0d0,param_1);",
-      "type": "unnamed_param"
     }
   ]
 }

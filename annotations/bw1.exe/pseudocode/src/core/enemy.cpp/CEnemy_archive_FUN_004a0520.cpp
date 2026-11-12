@@ -28,7 +28,8 @@ void __cdecl core_enemy_cpp_CEnemy_archive_FUN_004a0520(CEnemy *this_ptr)
       core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->randomize_me,"randomizeMe");
     }
     if (5 < g_CEnemyClassVersion) {
-      core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->script_victim,"scriptVictim");
+      core_actor_cpp_archiveActor_FUN_0040b6f0
+                ((CDemonActor **)&this_ptr->script_victim,"scriptVictim");
     }
     if (6 < g_CEnemyClassVersion) {
       core_actor_cpp_archiveString_FUN_0040b440
@@ -41,7 +42,7 @@ void __cdecl core_enemy_cpp_CEnemy_archive_FUN_004a0520(CEnemy *this_ptr)
       core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->victim_height,"victimHeight");
     }
     if (9 < g_CEnemyClassVersion) {
-      core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->victim,"victim");
+      core_actor_cpp_archiveActor_FUN_0040b6f0((CDemonActor **)&this_ptr->victim,"victim");
       return;
     }
   }

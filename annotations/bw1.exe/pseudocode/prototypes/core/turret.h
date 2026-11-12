@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_turret.cpp_factoryFuncTurret_FUN_005a2010
 // Address: 005a2010
-void factoryFuncTurret(void);
+CTurret * __cdecl factoryFuncTurret(void);
 
 // Original: core_turret.cpp_CTurret_getActorType_FUN_005a2030
 // Address: 005a2030

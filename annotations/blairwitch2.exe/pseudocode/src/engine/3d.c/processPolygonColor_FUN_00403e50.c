@@ -2,28 +2,30 @@
 // Address: 00403e50
 // Address Range: [[00403e50, 00403ed9]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_3d_c_processPolygonColor_FUN_00403e50(int param_1)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_processPolygonColor_FUN_00403e50(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-int __cdecl engine_3d_c_processPolygonColor_FUN_00403e50(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_processPolygonColor_FUN_00403e50(SMRGLHeaderPrimitive *prim)
 
 {
-  uint uVar1;
+  int iVar1;
   uint uVar2;
   uint uVar3;
+  uint uVar4;
   
-  DAT_0070ca5c = *(uint *)(param_1 + 4);
-  if (((*(byte *)(param_1 + 7) & 0x80) != 0) && ((*(byte *)(param_1 + 7) & 0x40) == 0)) {
-    uVar3 = *(uint *)(param_1 + 4) & 0xff;
-    uVar1 = *(int *)(param_1 + 4) >> 8 & 0xff;
-    uVar2 = *(int *)(param_1 + 4) >> 0x10 & 0xff;
+  DAT_0070ca5c = (prim->base).count;
+  iVar1 = (prim->base).count;
+  if (((int)(iVar1 & -0x80000000) != 0) && ((iVar1 & 0x40000000) == 0)) {
+    uVar4 = (prim->base).count & 0xff;
+    uVar2 = (prim->base).count >> 8 & 0xff;
+    uVar3 = (prim->base).count >> 0x10 & 0xff;
     if (DAT_006141c0 != 0x20) {
-      DAT_0070ca5c = uVar3 << 0x10 | uVar1 << 8 | uVar2;
-      return param_1 + 8;
+      DAT_0070ca5c = uVar4 << 0x10 | uVar2 << 8 | uVar3;
+      return (SMRGLHeaderExtended *)&prim->surface_normal;
     }
-    DAT_0070ca5c = uVar2 << (DAT_01c3582c & 0x1f) |
-                   uVar1 << (DAT_01c35820 & 0x1f) | uVar3 << (DAT_01c35814 & 0x1f);
+    DAT_0070ca5c = uVar3 << (DAT_01c3582c & 0x1f) |
+                   uVar2 << (DAT_01c35820 & 0x1f) | uVar4 << (DAT_01c35814 & 0x1f);
   }
-  return param_1 + 8;
+  return (SMRGLHeaderExtended *)&prim->surface_normal;
 }

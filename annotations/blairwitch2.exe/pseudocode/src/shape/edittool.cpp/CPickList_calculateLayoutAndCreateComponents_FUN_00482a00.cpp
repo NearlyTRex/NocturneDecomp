@@ -63,7 +63,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
           pcVar2 = pcVar3;
         }
         *pcVar7 = '\0';
-        iVar4 = engine_font_cpp_FUN_004aaf00(_DAT_01c25590,local_160);
+        iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,local_160);
         if (pCVar8->tab_column_widths[0] < iVar4) {
           pCVar8->tab_column_widths[0] = iVar4;
         }
@@ -167,7 +167,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     if (iVar5 < iVar9) {
       iVar5 = iVar9;
     }
-    local_1c = shape_edittool_cpp_calculateButtonHeight_FUN_00485380(0);
+    local_1c = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
     iVar9 = local_28 + local_1c;
     local_20 = local_18 * iVar5 + (local_18 - 1) * local_34;
     if (this_ptr->scroll_mode == 2) {

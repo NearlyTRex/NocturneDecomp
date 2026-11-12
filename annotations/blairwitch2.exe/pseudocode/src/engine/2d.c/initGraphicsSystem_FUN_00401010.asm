@@ -29,8 +29,8 @@
 ;   support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0
 ;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390
 ;   support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0
-;   wincore_wddvmem.cpp_FUN_00588790
 ;   wincore_wddvmem.cpp_FUN_00588a50
+;   wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00588790
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_00589430
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
     MOV EDX,0x20                        ; 00401019
     PUSH 0x280                          ; 0040101e
     MOV dword ptr [0x006141c0],EDX      ; 00401023 | DAT_006141c0
-    CALL wincore_wddvmem.cpp_FUN_00588790 ; 00401029
-        ;   XREF to: 00588790 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_FUN_00588790(int width, int height)
+    CALL wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00588790 ; 00401029
+        ;   XREF to: 00588790 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00588790(int width, int height)
     ADD ESP,0x8                         ; 0040102e
     PUSH 0x20                           ; 00401031
     PUSH 0x1e0                          ; 00401033

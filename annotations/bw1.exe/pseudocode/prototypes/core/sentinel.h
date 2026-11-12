@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_sentinel.cpp_factoryFuncSentinel_FUN_0054b9e0
 // Address: 0054b9e0
-void factoryFuncSentinel(void);
+CSentinel * __cdecl factoryFuncSentinel(void);
 
 // Original: core_sentinel.cpp_CSentinel_getActorType_FUN_0054ba00
 // Address: 0054ba00

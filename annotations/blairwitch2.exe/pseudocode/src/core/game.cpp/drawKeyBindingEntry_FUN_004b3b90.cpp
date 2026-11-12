@@ -13,7 +13,7 @@ void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004b3b90(EInputCodeType key_c
 {
   char acStack_110 [256];
   
-  core_menu_cpp_getKeyDisplayName_FUN_004ee960(key_code,action_name);
+  core_menu_cpp_getKeyDisplayName_FUN_004ee960(key_code);
   _sprintf(acStack_110,"?%s = %s" + 1);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc0,acStack_110,_DAT_01cb80e8,_DAT_01cb80ec,7,0xffffffff);
   _DAT_01cb80ec = _DAT_01cb80ec + _DAT_01cb80f0;

@@ -15,7 +15,7 @@ void __cdecl staticInit(void);
 
 // Original: core_chain.cpp_factoryFuncChain_FUN_005b46f0
 // Address: 005b46f0
-void factoryFuncChain(void);
+CChain * __cdecl factoryFuncChain(void);
 
 // Original: core_chain.cpp_CChain_getActorType_FUN_005b4710
 // Address: 005b4710
@@ -29,25 +29,25 @@ CChain * __cdecl CChain::ctor(CChain *this_ptr);
 // Address: 005b4860
 void FUN_005b4860(int param_1);
 
-// Original: core_chain.cpp_FUN_005b48e0
+// Original: core_chain.cpp_CChain_setup_FUN_005b48e0
 // Address: 005b48e0
-void FUN_005b48e0(CDemonActor *param_1);
+void __cdecl CChain::setup(CChain *this_ptr);
 
 // Original: core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0
 // Address: 005b4aa0
 void __cdecl CChain::constrainSegmentDistance(CChain *this_ptr,SChainVertex *vertex_a,SChainVertex *vertex_b);
 
-// Original: core_chain.cpp_FUN_005b4d30
+// Original: core_chain.cpp_CChain_process_FUN_005b4d30
 // Address: 005b4d30
-void FUN_005b4d30(CChain *param_1,float param_2);
+void __cdecl CChain::process(CChain *this_ptr,float delta_time);
 
-// Original: core_chain.cpp_FUN_005b56c0
+// Original: core_chain.cpp_CChain_renderTransparent_FUN_005b56c0
 // Address: 005b56c0
-undefined4 FUN_005b56c0(CDemonActor *param_1);
+int __cdecl CChain::renderTransparent(CChain *this_ptr);
 
-// Original: core_chain.cpp_FUN_005b5ca0
+// Original: core_chain.cpp_CChain_getBoundingBox_FUN_005b5ca0
 // Address: 005b5ca0
-void FUN_005b5ca0(int param_1);
+CBoundingBox3D * __cdecl CChain::getBoundingBox(CChain *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_chain.cpp_CChain_archive_FUN_005b5e10
 // Address: 005b5e10

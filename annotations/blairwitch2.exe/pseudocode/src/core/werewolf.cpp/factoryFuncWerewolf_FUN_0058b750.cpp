@@ -1,20 +1,20 @@
 // Name: core_werewolf.cpp_factoryFuncWerewolf_FUN_0058b750
 // Address: 0058b750
 // Address Range: [[0058b750, 0058b76b]]
-// Convention: unknown
-// Signature: void core_werewolf_cpp_factoryFuncWerewolf_FUN_0058b750(void)
+// Convention: __cdecl
+// Signature: CWerewolf * __cdecl core_werewolf_cpp_factoryFuncWerewolf_FUN_0058b750(void)
 
 #include "nocturne.h"
 
-void core_werewolf_cpp_factoryFuncWerewolf_FUN_0058b750(void)
+CWerewolf * __cdecl core_werewolf_cpp_factoryFuncWerewolf_FUN_0058b750(void)
 
 {
-  CWerewolf *this_ptr;
+  CWerewolf *pCVar1;
   
-  this_ptr = (CWerewolf *)operator_new(0x10b40);
-  if (this_ptr == (CWerewolf *)0x0) {
-    return;
+  pCVar1 = (CWerewolf *)operator_new(0x10b40);
+  if (pCVar1 == (CWerewolf *)0x0) {
+    return (CWerewolf *)0x0;
   }
-  core_werewolf_cpp_CWerewolf_ctor_FUN_0058b780(this_ptr);
-  return;
+  pCVar1 = core_werewolf_cpp_CWerewolf_ctor_FUN_0058b780(pCVar1);
+  return pCVar1;
 }

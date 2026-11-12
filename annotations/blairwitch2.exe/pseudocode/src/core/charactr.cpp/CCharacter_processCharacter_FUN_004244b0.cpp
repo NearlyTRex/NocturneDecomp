@@ -72,7 +72,7 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_004244b0(CCharacte
     this_ptr->turn_angle_accumulator = 0.0;
     if (((pCVar2 == (CPlatform *)0x0) && (this_ptr->walk_to_target == (CDemonActor *)0x0)) &&
        (iVar4 = core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ce180
-                          (&(this_ptr->base).location,this_ptr->ai_detection_range_max,
+                          (&(this_ptr->base).location.position,this_ptr->ai_detection_range_max,
                            this_ptr->ai_detection_range_min), iVar4 == 0)) {
       sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handle);
       return 0;

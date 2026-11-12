@@ -30,7 +30,7 @@ void __cdecl core_marquee_cpp_CMarquee_computeBoundingBox_FUN_004e7d50(CMarquee 
   do {
     fStack_14 = (float)iVar1;
     iStack_10 = iVar1;
-    core_course_cpp_FUN_00438c40(this_ptr_00,fStack_14,&CStack_20,&CStack_2c);
+    core_course_cpp_CCourse_evaluate_FUN_00438c40(this_ptr_00,fStack_14,&CStack_20,&CStack_2c);
     if (CStack_20.x < (this_ptr->bounding_box).min.x) {
       (this_ptr->bounding_box).min.x = CStack_20.x;
     }

@@ -11,15 +11,15 @@ void __cdecl staticInit(void);
 
 // Original: core_main.c_FUN_005030e0
 // Address: 005030e0
-void FUN_005030e0(undefined4 param_1);
+void FUN_005030e0(char *param_1);
 
 // Original: core_main.c_FUN_005031c0
 // Address: 005031c0
 void FUN_005031c0(void);
 
-// Original: core_main.c_FUN_00503290
+// Original: core_main.c_enterMainGameMenu_FUN_00503290
 // Address: 00503290
-int __cdecl FUN_00503290(void);
+int __cdecl enterMainGameMenu(void);
 
 // Original: core_main.c_FUN_005032a0
 // Address: 005032a0

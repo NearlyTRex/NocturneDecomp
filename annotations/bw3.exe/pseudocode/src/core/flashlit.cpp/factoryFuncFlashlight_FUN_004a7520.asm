@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flashlit_cpp_factoryFuncFlashlight_FUN_004a7520(void)
+; CFlashlight * __cdecl core_flashlit_cpp_factoryFuncFlashlight_FUN_004a7520(void)
 ;
 ;
 ; Called Functions:

@@ -11,7 +11,7 @@ void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041d480(CBox *this_ptr,_FILE *f
 {
   byte bVar1;
   float afStackY_1038 [949];
-  byte local_150 [256];
+  char local_150 [256];
   float local_50;
   float afStack_4c [2];
   CVector3f local_44;
@@ -19,23 +19,20 @@ void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041d480(CBox *this_ptr,_FILE *f
   float local_2c;
   float local_28 [2];
   CVector3f local_20;
-  byte local_14 [4];
   float local_10;
   
   bVar1 = 0;
   _fgets(local_150,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005b73e9,local_14);
+  _fscanf(file_handle,&DAT_005b73e9);
   _fgets(local_150,0xff,file_handle);
-  _fscanf(file_handle," %f,%f,%f\n",&local_20,&local_20.y,&local_20.z);
-  _fscanf(file_handle," %f,%f,%f\n",&local_44,&local_44.z,&local_44.y);
-  _fscanf(file_handle," %f,%f,%f\n",&local_38,&local_38.y,&local_38.z);
-  _fscanf(file_handle,&DAT_005b740f,&local_10);
+  _fscanf(file_handle," %f,%f,%f\n");
+  _fscanf(file_handle," %f,%f,%f\n");
+  _fscanf(file_handle," %f,%f,%f\n");
+  _fscanf(file_handle,&DAT_005b740f);
   core_box_cpp_CBox_setupCorners_FUN_0041ae00(this_ptr,&local_20,&local_44,&local_38,local_10);
-  _fscanf(file_handle," %f,%f,%f\n",&this_ptr->linear_velocity_local,
-             &(this_ptr->linear_velocity_local).y,&(this_ptr->linear_velocity_local).z);
-  _fscanf(file_handle," %f,%f,%f\n",&this_ptr->angular_velocity,
-             &(this_ptr->angular_velocity).y,&(this_ptr->angular_velocity).z);
-  _fscanf(file_handle,&DAT_005b742a,&this_ptr->is_valid);
+  _fscanf(file_handle," %f,%f,%f\n");
+  _fscanf(file_handle," %f,%f,%f\n");
+  _fscanf(file_handle,&DAT_005b742a);
   core_dirmat_cpp_FUN_0045b800(&this_ptr->rotation_matrix,&this_ptr->linear_velocity_local);
   local_2c = local_50;
   local_28[(uint)bVar1 * -2] = afStack_4c[(uint)bVar1 * -2];

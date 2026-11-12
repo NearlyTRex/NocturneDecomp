@@ -100,7 +100,7 @@ section .text
     PUSH 0x5d2b6e                       ; 0048643f | = "shell.kfm"
         ;   Label: LAB_0048643f
     CALL core_dmodel.cpp_loadModel_FUN_0044fba0 ; 00486444
-        ;   XREF to: 0044fba0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_loadModel_FUN_0044fba0()
+        ;   XREF to: 0044fba0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_0044fba0(char * filename)
     ADD ESP,0x4                         ; 00486449
     PUSH EAX                            ; 0048644c
     LEA EAX,[ESP + 0x38]                ; 0048644d

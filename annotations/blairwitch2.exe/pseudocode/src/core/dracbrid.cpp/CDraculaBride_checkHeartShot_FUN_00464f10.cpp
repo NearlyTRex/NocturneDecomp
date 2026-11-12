@@ -11,14 +11,14 @@
 void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_00464f10(CDraculaBride *this_ptr,SDamageInfo *damage_info)
 
 {
-  CConsole *pCVar1;
+  CConsole *this_ptr_00;
   
-  pCVar1 = g_CConsolePtr;
+  this_ptr_00 = g_CConsolePtr;
   if (((damage_info->damage_type != DAMAGE_TYPE_BURN) &&
       (damage_info->hit_part_index == this_ptr->part_indices[6])) &&
      (damage_info->damage_type == DAMAGE_TYPE_ATTACK_STAKE)) {
     damage_info->damage_amount = damage_info->damage_amount * (float)_DAT_005d119c;
-    engine_console_cpp_FUN_00436710(pCVar1,"Shot thru the heart\n");
+    engine_console_cpp_CConsole_printf_FUN_00436710(this_ptr_00,"Shot thru the heart\n");
     return;
   }
   return;

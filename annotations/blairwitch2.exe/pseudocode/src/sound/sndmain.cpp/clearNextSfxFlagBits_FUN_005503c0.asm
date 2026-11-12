@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_clearNextSfxFlagBits_FUN_005503c0(uint param_1)
+; void __cdecl sound_sndmain_cpp_clearNextSfxFlagBits_FUN_005503c0(uint flag_mask)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   flag_mask
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0264161c

@@ -14,6 +14,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_0055d920(CWavOutDevice *thi
   int iVar1;
   int iVar2;
   int iVar3;
+  uint unaff_EDI;
   
   iVar3 = 0;
   if (0 < _DAT_02cf5500) {
@@ -33,7 +34,9 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_0055d920(CWavOutDevice *thi
     } while (iVar3 < _DAT_02cf5500);
   }
   iVar3 = sound_sndmain_cpp_startSoundThread_FUN_00558d70
-                    (((float)_DAT_02cf54fc / (float)_DAT_02cf54f8) * (float)_DAT_005d4fc8);
+                    (__BITCAST_DOUBLE(CONCAT44(unaff_EDI,
+                                      ((float)_DAT_02cf54fc / (float)_DAT_02cf54f8) *
+                                      (float)_DAT_005d4fc8)));
   if (iVar3 != 0) {
     return 1;
   }

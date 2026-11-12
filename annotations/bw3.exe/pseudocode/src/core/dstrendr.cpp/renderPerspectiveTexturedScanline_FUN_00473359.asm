@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_00473359(void)
+; void __edi_esi_ebx core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_00473359(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 ;
 ;
 ; Referenced Globals:

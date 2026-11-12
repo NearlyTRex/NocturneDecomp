@@ -7,7 +7,7 @@
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   support_trstream.cpp_FUN_00573b90
+;   support_trstream.cpp_CInStreamFile_readByteAt_FUN_00573b90
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x10]      ; 00573b65
     PUSH EDX                            ; 00573b68
     PUSH EBX                            ; 00573b69
-    CALL support_trstream.cpp_FUN_00573b90 ; 00573b6a
-        ;   XREF to: 00573b90 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00573b90()
+    CALL support_trstream.cpp_CInStreamFile_readByteAt_FUN_00573b90 ; 00573b6a
+        ;   XREF to: 00573b90 (UNCONDITIONAL_CALL)  ; uint support_trstream.cpp_CInStreamFile_readByteAt_FUN_00573b90(CInStreamFile * this_ptr, int param_2)
     ADD ESP,0x8                         ; 00573b6f
     MOV EDX,EAX                         ; 00573b72
     TEST EAX,EAX                        ; 00573b74

@@ -42,10 +42,14 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004d27b0(CHero *this_ptr)
     if (6 < g_CHeroClassVersion) {
       core_actor_cpp_archiveActor_FUN_0040b930
                 (&this_ptr->object_to_pick_up,"objectToPickUp");
-      core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->door_to_open,"doorToOpen");
-      core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->lever_to_pull,"leverToPull");
-      core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->ladder_to_climb,"ladderToClimb");
-      core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->pushed_object,"pushedObject");
+      core_actor_cpp_archiveActor_FUN_0040b930
+                ((CDemonActor **)&this_ptr->door_to_open,"doorToOpen");
+      core_actor_cpp_archiveActor_FUN_0040b930
+                ((CDemonActor **)&this_ptr->lever_to_pull,"leverToPull");
+      core_actor_cpp_archiveActor_FUN_0040b930
+                ((CDemonActor **)&this_ptr->ladder_to_climb,"ladderToClimb");
+      core_actor_cpp_archiveActor_FUN_0040b930
+                ((CDemonActor **)&this_ptr->pushed_object,"pushedObject");
     }
     if (g_CHeroClassVersion == 10) {
       core_actor_cpp_archiveInteger_FUN_0040b8b0(&local_c,&DAT_005c4bbf);

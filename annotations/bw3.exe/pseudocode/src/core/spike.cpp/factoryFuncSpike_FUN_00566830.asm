@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spike_cpp_factoryFuncSpike_FUN_00566830(void)
+; CSpike * __cdecl core_spike_cpp_factoryFuncSpike_FUN_00566830(void)
 ;
 ;
 ; Called Functions:

@@ -18,7 +18,7 @@ CSearchParty * core_bwsearch_cpp_CSearchParty_dtor_FUN_005a8e80(CSearchParty *th
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSearchPartyTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSearchPartyTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

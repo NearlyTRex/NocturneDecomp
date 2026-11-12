@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drip_cpp_factoryFuncDrip_FUN_00485340(void)
+; CDrip * __cdecl core_drip_cpp_factoryFuncDrip_FUN_00485340(void)
 ;
 ;
 ; Called Functions:

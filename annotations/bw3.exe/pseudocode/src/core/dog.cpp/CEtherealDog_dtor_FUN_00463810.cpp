@@ -18,7 +18,7 @@ CEtherealDog * core_dog_cpp_CEtherealDog_dtor_FUN_00463810(CEtherealDog *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CEtherealDogTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CEtherealDogTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

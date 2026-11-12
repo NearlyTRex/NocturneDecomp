@@ -26,6 +26,7 @@
 #include "types/classes/CMotionList.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/SCPUInfo.h"
 #include "types/structs/SClipPlane.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SDynamicLight.h"
@@ -50,7 +51,6 @@
 // FUNCTION PROTOTYPES - Range 0x4F0000
 // =============================================================================
 
-void engine_mini3d_cpp_FUN_004f016e(undefined4 *param_1,undefined4 *param_2);
 void engine_mini3d_cpp_FUN_004f0170(undefined4 *param_1,undefined4 *param_2);
 void engine_mini3d_cpp_FUN_004f0270(undefined4 *param_1,undefined4 *param_2);
 void engine_mini3d_cpp_FUN_004f02b0(void);
@@ -90,9 +90,7 @@ void engine_mini3d_cpp_FUN_004f2750(int param_1,int param_2,int param_3);
 void engine_mini3d_cpp_FUN_004f27a0(int param_1,int param_2,int param_3);
 void engine_mini3d_cpp_FUN_004f2a10(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
 void engine_mini3d_cpp_FUN_004f2bb0(float *param_1,float *param_2,float *param_3);
-void engine_mini3d_cpp_FUN_004f2cee(float *param_1,uint param_2,int param_3,int *param_4);
 void engine_mini3d_cpp_FUN_004f2cf0(float *param_1,uint param_2,int param_3,int *param_4);
-int engine_mini3d_cpp_FUN_004f2e2e(float *param_1,int param_2,int param_3,int param_4);
 int engine_mini3d_cpp_FUN_004f2e30(float *param_1,int param_2,int param_3,int param_4);
 void engine_mini3d_cpp_FUN_004f33a0(float param_1,float param_2,float param_3);
 void engine_mini3d_cpp_FUN_004f3440(float param_1,float param_2,float param_3,float param_4);
@@ -112,8 +110,8 @@ SDynamicLight * engine_mini3d_cpp_SDynamicLight_ctor_FUN_004f3b30(SDynamicLight 
 SDynamicLight * engine_mini3d_cpp_SDynamicLight_dtor_FUN_004f3b40(SDynamicLight *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_staticInit_FUN_004f3b50(void);
 void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_004f3b80(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c);
-void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004f3d30(float *param_1,float *param_2,float *param_3,float *param_4);
-void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(float *param_1,float *param_2,uint param_3,int param_4,int *param_5);
+void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004f3d30(SClipPlane *clip_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *out_intersection);
+void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f3e90(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count);
 CMirror * __cdecl core_mirror_cpp_CMirror_ctor_FUN_004f3fc0(CMirror *this_ptr);
 CMirror * __cdecl core_mirror_cpp_FUN_004f3fe0(CMirror *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_004f3ff0(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4);
@@ -132,7 +130,7 @@ SClipPlane * core_mirror_cpp_SClipPlane_ctor_FUN_004f5a60(SClipPlane *this_ptr);
 void core_mirror_cpp_FUN_004f5a70(void);
 void core_mission_cpp_FUN_004f5aa0(int param_1);
 void __cdecl core_mission_cpp_CDemonMission_clearMission_FUN_004f5b70(CDemonMission *this_ptr);
-void core_mission_cpp_FUN_004f5b80(CDemonMission *param_1);
+void __cdecl core_mission_cpp_CDemonMission_clearMissionData_FUN_004f5b80(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_004f5bc0(CDemonMission *this_ptr,char *mission_filename,int load_flags);
 void core_mission_cpp_FUN_004f5c60(CDemonMission *param_1,char *param_2);
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004f5cc0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags);
@@ -142,7 +140,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004f6410(CDemonMission
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004f6770(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description );
 void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_004f68d0(CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor,char *description);
 void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission *this_ptr,CDemonActor *actor);
-void core_mission_cpp_FUN_004f69a0(int param_1,int param_2);
+void __cdecl core_mission_cpp_CDemonMission_removeActorFromList_FUN_004f69a0(CDemonMission *this_ptr,CDemonActor *actor_ptr);
 int __cdecl core_mission_cpp_CDemonMission_countActors_FUN_004f6a50(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(CDemonMission *this_ptr);
@@ -161,18 +159,18 @@ void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_004f7460(CDemonMi
 void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004f7490(CDemonMission *this_ptr,char *out_buf,char *base_name);
 void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_004f7530(CDemonMission *this_ptr,CDemonActor *actor);
 int __cdecl core_mission_cpp_FUN_004f7590(CDemonMission *this_ptr);
-void core_mission_cpp_FUN_004f76f0(void);
+void __cdecl core_mission_cpp_CDemonMission_freeAllAssets_FUN_004f76f0(CDemonMission *this_ptr);
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004f7710(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor);
 int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004f7880(CDemonMission *this_ptr,CCharacter *existing_hero);
 void __cdecl core_mission_cpp_FUN_004f7a20(CDemonMission *this_ptr);
 undefined4 core_mission_cpp_FUN_004f7bf0(void);
-void core_mission_cpp_FUN_004f7c00(undefined4 param_1,char *param_2);
+void __cdecl core_mission_cpp_CDemonMission_setVersionControlDirectory_FUN_004f7c00(CDemonMission *this_ptr,char *directory);
 void __cdecl core_mmx_c_detectCPUFeatures_FUN_004f7c30(void);
 void __cdecl core_mmx_c_detectIntelProcessor_FUN_004f7c6c(void);
 void __cdecl core_mmx_c_detectMMXSupport_FUN_004f7d19(void);
-bool __cdecl core_mmx_c_getCPUInfo_FUN_004f7d2f(uint *param_1);
-int * __cdecl engine_model_c_loadModelFile_FUN_004f7f20(char *param_1);
-void engine_model_c_FUN_004f80f0(SMRGLHeaderExtended *param_1);
+int __cdecl core_mmx_c_getCPUInfo_FUN_004f7d2f(SCPUInfo *cpu_info);
+SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_004f7f20(char *param_1);
+void engine_model_c_freeMRGLData_FUN_004f80f0(SMRGLHeaderExtended *param_1);
 uint * engine_model_c_FUN_004f8170(int *param_1);
 int __cdecl engine_model_c_FUN_004f8730(SMRGLHeaderExtended *header);
 SMRGLHeaderExtended * __cdecl engine_model_c_FUN_004f89a0(char *filename,int model_size);
@@ -227,7 +225,7 @@ CMorphModel * __cdecl core_morph_cpp_FUN_004fb180(CMorphModel *this_ptr,uint fla
 undefined4 * core_morph_cpp_FUN_004fb1c0(undefined4 *param_1);
 undefined4 core_morph_cpp_FUN_004fb1f0(undefined4 param_1);
 void core_morph_cpp_FUN_004fb210(undefined4 *param_1);
-void __cdecl core_motion_cpp_FUN_004fb280(CMotionList *this_ptr,_FILE *file_handle);
+void __cdecl core_motion_cpp_CMotionList_load_FUN_004fb280(CMotionList *this_ptr,_FILE *file_handle);
 void core_motion_cpp_FUN_004fb6b0(int *param_1,undefined4 param_2);
 void core_motion_cpp_FUN_004fb72e(void);
 int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0(CMotionList *this_ptr,char *motion_name,int error_on_not_found);
@@ -252,17 +250,17 @@ float core_motion_cpp_FUN_004fc350(int *param_1,int param_2);
 void __cdecl core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004fc3f0(CMotionController *this_ptr,char *motion_name,float frame_number);
 void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_004fc420(CMotionController *this_ptr,int target_motion_index,float target_frame_number);
 void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_004fc480(CMotionController *this_ptr);
-int __cdecl core_motion_cpp_FUN_004fc4b0(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor);
-int __cdecl core_motion_cpp_FUN_004fc680(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
+int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_004fc4b0(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor);
+int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_004fc680(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
 void core_motion_cpp_FUN_004fc850(int *param_1,int param_2,float param_3,float *param_4);
 float __cdecl core_motion_cpp_FUN_004fc930(CMotionController *this_ptr);
 float core_motion_cpp_FUN_004fca20(int *param_1,int param_2,float param_3);
-void __cdecl core_motion_cpp_FUN_004fcb50(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
+void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004fcb50(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
 void __cdecl core_motion_cpp_CMotionController_load_FUN_004fcc90(CMotionController *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionController_save_FUN_004fcd30(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_motion_cpp_FUN_004fcdc0(CMotionController *this_ptr,CDemonActor *actor);
 void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_004fd150(SMpegFrame *frame);
-void sound_mp3_cpp_FUN_004fd3c0(int *param_1,int param_2,ulong param_3,int param_4);
+void sound_mp3_cpp_FUN_004fd3c0(int *param_1,_FILE *param_2,ulong param_3,int param_4);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_004fd4f0(CFileBitStream *this_ptr);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(CFileBitStream *this_ptr,int num_bits);
 int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_004fd780(CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits);
@@ -280,11 +278,11 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_004fdef0(CFileBit
 void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004fdf80(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_004fe1f0(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_004fe2f0(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SMpegFrame *frame);
-void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_004fe580(int param_1,int param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004fe850(int param_1,int param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_004fe990(int param_1,int param_2,int param_3,int param_4);
-void sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_004fea40(int param_1,int param_2,int param_3);
-double sound_mp3_cpp_initializeSynthesisDctTable_FUN_004fea9e(float *param_1);
+void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_004fe580(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_requantizeSamples_FUN_004fe850(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_004fe990(float *spectral_samples,int *scalefactor_band_indices,SMpegFrame *frame_info,int channel_or_granule_index);
+void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_004fea40(float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info);
+void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_004fea9e(float *output_dct_table);
 void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004feb90(CMP3Decoder *this_ptr,float *subband_samples,int channel_index,short *pcm_output);
 void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_004fee40(CMP3Decoder *this_ptr,CFileBitStream *bit_stream,SMpegLayer3SideInfo *side_info_array,SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004ff3c0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule_index,SMpegFrame *frame);

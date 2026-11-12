@@ -20,7 +20,7 @@ CHag * core_hellhag_cpp_CHag_dtor_FUN_005aa7e0(CHag *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHagTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHagTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

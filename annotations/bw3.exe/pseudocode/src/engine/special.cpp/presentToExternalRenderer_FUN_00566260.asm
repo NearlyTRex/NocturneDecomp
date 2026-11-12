@@ -71,7 +71,7 @@ section .text
     SAR EAX,0x3                         ; 005662ca
     MOV EBP,EAX                         ; 005662cd
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0 ; 005662cf
-        ;   XREF to: 0057a3c0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0()
+        ;   XREF to: 0057a3c0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0()
     CALL engine_special.cpp_FUN_00565820 ; 005662d4
         ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00565820()
     CMP dword ptr [0x005fba1c],0x0      ; 005662d9 | DAT_005fba1c

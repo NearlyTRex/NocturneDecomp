@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 355,
+    "complexity_score": 454,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 95,
-    "suspect_count": 24,
+    "pseudocode_lines": 79,
+    "suspect_count": 35,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_ref",
       "suspect_float",
-      "unknown_field",
-      "unnamed_param",
-      "warning_type_propagation"
+      "unnamed_param"
     ],
-    "total_lines": 256
+    "total_lines": 240
   },
   "cross_references": [],
   "function": {
@@ -28,7 +29,7 @@
     ],
     "convention": "unknown",
     "name": "core_skeleton.cpp_FUN_0054eb40",
-    "signature": "int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,undefined4 param_6,undefined4 param_7,int param_8,float param_9)"
+    "signature": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,undefined4 param_5,undefined4 param_6,CDeformableModelInstance *param_7,undefined4 param_8,undefined4 param_9,int param_10,CDeformableModelInstance *param_11)"
   },
   "function_calls": [
     {
@@ -102,6 +103,14 @@
     },
     "pcode_op_count": 752
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00569fb0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -112,196 +121,284 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
+      "text": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,uint param_5,uint param_6,CDeformableModelInstance *param_7,uint param_8,uint param_9,int param_10,CDeformableModelInstance *param_11)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
+      "text": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,uint param_5,uint param_6,CDeformableModelInstance *param_7,uint param_8,uint param_9,int param_10,CDeformableModelInstance *param_11)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
+      "text": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,uint param_5,uint param_6,CDeformableModelInstance *param_7,uint param_8,uint param_9,int param_10,CDeformableModelInstance *param_11)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
+      "text": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,uint param_5,uint param_6,CDeformableModelInstance *param_7,uint param_8,uint param_9,int param_10,CDeformableModelInstance *param_11)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
+      "text": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,uint param_5,uint param_6,CDeformableModelInstance *param_7,uint param_8,uint param_9,int param_10,CDeformableModelInstance *param_11)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_6",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
+      "text": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,uint param_5,uint param_6,CDeformableModelInstance *param_7,uint param_8,uint param_9,int param_10,CDeformableModelInstance *param_11)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_7",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
+      "text": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,uint param_5,uint param_6,CDeformableModelInstance *param_7,uint param_8,uint param_9,int param_10,CDeformableModelInstance *param_11)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_8",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
+      "text": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,uint param_5,uint param_6,CDeformableModelInstance *param_7,uint param_8,uint param_9,int param_10,CDeformableModelInstance *param_11)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_9",
       "severity": "mild",
-      "text": "int core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,uint param_6,uint param_7,int param_8,float param_9)",
+      "text": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,uint param_5,uint param_6,CDeformableModelInstance *param_7,uint param_8,uint param_9,int param_10,CDeformableModelInstance *param_11)",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_10",
+      "severity": "mild",
+      "text": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,uint param_5,uint param_6,CDeformableModelInstance *param_7,uint param_8,uint param_9,int param_10,CDeformableModelInstance *param_11)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_11",
+      "severity": "mild",
+      "text": "float core_skeleton_cpp_FUN_0054eb40(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,uint param_5,uint param_6,CDeformableModelInstance *param_7,uint param_8,uint param_9,int param_10,CDeformableModelInstance *param_11)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(&param_1->base);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "fStack_2c = (float)pCVar3->motions[(int)param_4].frame_count;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_0054edb0(param_1,param_2,param_3,(SPose *)(auStack_3588 + 0x1a74));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_0054edb0(param_1,param_2,param_3,(SPose *)(auStack_3588 + 0x1a74));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_0054edb0(param_1,param_2,param_3,(SPose *)(auStack_3588 + 0x1a74));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_computeBoneModelMatrices_FUN_0054fcc0(&SStack_1b04,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 39,
+      "match": "&stack0xffffca68",
+      "severity": "moderate",
+      "text": "core_skeleton_cpp_FUN_0054edb0(param_7,param_10,(float)iVar8,(SPose *)&stack0xffffca68);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_0054edb0(param_7,param_10,(float)iVar8,(SPose *)&stack0xffffca68);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_10",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_0054edb0(param_7,param_10,(float)iVar8,(SPose *)&stack0xffffca68);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 40,
+      "match": "7.79892e-39",
+      "severity": "mild",
+      "text": "fStack_3594 = 7.79892e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 41,
-      "match": "param_1",
+      "match": "param_11",
       "severity": "mild",
-      "text": "pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(&param_1->base);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "iStack_2c = pCVar2->motions[param_4].frame_count;",
+      "text": "core_skeleton_cpp_computeBoneModelMatrices_FUN_0054fcc0((SPose *)auStack_3588,param_11);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 43,
-      "match": "param_1",
+      "match": "param_4",
       "severity": "mild",
-      "text": "pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(param_1);",
+      "text": "param_4 = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 45,
-      "match": "param_1",
+      "match": "param_4",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054edb0(param_1,param_2,param_3,(SPose *)(auStack_35a0 + 0x1a8c));",
+      "text": "param_4 = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 60,
+      "match": "(float *)((int)(pCVar5 + 1) +",
+      "severity": "moderate",
+      "text": "afStack_44[0] = *(float *)((int)(pCVar5 + 1) + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 61,
+      "match": "(uint *)((int)(pCVar5 + 2) +",
+      "severity": "moderate",
+      "text": "afStack_44[1] = (float)*(uint *)((int)(pCVar5 + 2) + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4 = (fStack_28 - fStack_34) * (fStack_28 - fStack_34) +",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
+      "line": 71,
+      "match": "param_4",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054edb0(param_1,param_2,param_3,(SPose *)(auStack_35a0 + 0x1a8c));",
+      "text": "(fStack_30 - afStack_44[2]) * (fStack_30 - afStack_44[2]) + param_4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 74,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (param_4 < param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
       "match": "param_3",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054edb0(param_1,param_2,param_3,(SPose *)(auStack_35a0 + 0x1a8c));",
+      "text": "if (param_4 < param_3) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
+      "line": 75,
+      "match": "param_3",
       "severity": "mild",
-      "text": "core_skeleton_cpp_computeBoneModelMatrices_FUN_0054fcc0(auStack_1b04,param_1);",
+      "text": "param_3 = param_4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_5",
+      "line": 75,
+      "match": "param_4",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054edb0(param_5,param_8,(float)iVar7,(SPose *)auStack_35a0);",
+      "text": "param_3 = param_4;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054edb0(param_5,param_8,(float)iVar7,(SPose *)auStack_35a0);",
-      "type": "unnamed_param"
+      "description": "Pointer value `(pCVar5 + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 60,
+      "match": "(int)(pCVar5 + 1)",
+      "severity": "moderate",
+      "text": "afStack_44[0] = *(float *)((int)(pCVar5 + 1) + 0xc);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "auStack_35a0._8_4_ = auStack_35a0 + 0x10;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 54,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "auStack_35a0._12_4_ = param_9;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_9",
-      "severity": "mild",
-      "text": "auStack_35a0._12_4_ = param_9;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 55,
-      "match": "7.79892e-39",
-      "severity": "mild",
-      "text": "auStack_35a0._4_4_ = 7.79892e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 55,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_35a0._4_4_ = 7.79892e-39;",
-      "type": "unknown_field"
+      "description": "Pointer value `(pCVar5 + 2)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 61,
+      "match": "(int)(pCVar5 + 2)",
+      "severity": "moderate",
+      "text": "afStack_44[1] = (float)*(uint *)((int)(pCVar5 + 2) + 0xc);",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {

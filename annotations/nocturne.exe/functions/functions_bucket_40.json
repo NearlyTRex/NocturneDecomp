@@ -26172,7 +26172,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_CGame_FUN_004a57c0",
+    "name":"core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -30558,12 +30558,38 @@
         "start":"004c52c0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_larva.cpp_getSizeCategory_FUN_004c52c0",
-    "ret":"undefined1",
+    "ret":"char*",
     "vars":{
+      "params":[
+        {
+          "name":"scale",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -36267,9 +36293,10 @@
         "start":"004edfc0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"support_newmsg.cpp_readMessageFile_FUN_004edfc0",
-    "ret":"undefined1",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -36401,8 +36428,33 @@
           "type":"undefined1"
         }
       ],
+      "params":[
+        {
+          "name":"message_file",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -38107,7 +38159,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f52c0",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_004f52c0",
     "ret":"void",
     "vars":{
       "params":[
@@ -53869,7 +53921,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_vessel.cpp_CCryptVessel_FUN_0054fc40",
+    "name":"core_vessel.cpp_isStartLocTriggered_FUN_0054fc40",
     "ret":"int",
     "vars":{
       "params":[
@@ -57878,6 +57930,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00564fc0",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -58168,6 +58221,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00567540",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -58186,6 +58240,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00567bc0",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -58280,6 +58335,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00569040",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -58380,6 +58436,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056a0c0",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -58442,6 +58499,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056bfc0",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -58697,6 +58755,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056dfc0",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -58715,6 +58774,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056e940",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -58897,6 +58957,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056fa40",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -59035,6 +59096,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005708c0",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -59071,6 +59133,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00571440",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -59151,6 +59214,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00574540",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -59170,6 +59234,7 @@
     "importable":true,
     "name":"crt_winmm.c_joyGetPos",
     "ret":"MMRESULT",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000015",
     "thunk":true,
     "vars":{
@@ -59232,6 +59297,7 @@
     "importable":true,
     "name":"crt_winmm.c_waveOutGetDevCapsA",
     "ret":"MMRESULT",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000001c",
     "thunk":true,
     "vars":{

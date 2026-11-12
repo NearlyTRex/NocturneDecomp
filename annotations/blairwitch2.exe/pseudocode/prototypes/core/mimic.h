@@ -15,7 +15,7 @@ void __cdecl mirrorXTransform(void);
 
 // Original: core_mimic.cpp_factoryFuncMimic_FUN_004f02e0
 // Address: 004f02e0
-void factoryFuncMimic(void);
+CMimic * __cdecl factoryFuncMimic(void);
 
 // Original: core_mimic.cpp_CMimic_getActorType_FUN_004f0300
 // Address: 004f0300

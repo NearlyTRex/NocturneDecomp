@@ -159,7 +159,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00540f3b
     PUSH dword ptr [ESP + 0x48]         ; 00540f3c
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 00540f40
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cd60()
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     MOV dword ptr [ESP + 0xac],EAX      ; 00540f45
     FLD float ptr [ESP + 0xac]          ; 00540f4c
     ADD ESP,0x4                         ; 00540f53
@@ -432,8 +432,8 @@ section .text
     PUSH 0x5ede21                       ; 00541268 | = "%s confused while walking to scriptDe..."
     MOV EDI,dword ptr [0x00611100]      ; 0054126d | g_CConsolePtr
     PUSH EDI                            ; 00541273 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00541274
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00541274
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00541279
     PUSH EBX                            ; 0054127c
     CALL core_scat.cpp_CScat_isWeaponReady_FUN_00541de0 ; 0054127d

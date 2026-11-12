@@ -2,13 +2,13 @@
 // Address: 005030e0
 // Address Range: [[005030e0, 005031a6]]
 // Convention: unknown
-// Signature: void core_main_c_FUN_005030e0(undefined4 param_1)
+// Signature: void core_main_c_FUN_005030e0(char *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_main_c_FUN_005030e0(uint param_1)
+void core_main_c_FUN_005030e0(char *param_1)
 
 {
   char *pcVar1;
@@ -20,7 +20,7 @@ void core_main_c_FUN_005030e0(uint param_1)
   }
   local_c = &stack0x00000008;
   _DAT_01d1d408 = 1;
-  _vsprintf(0x1d1c300,param_1,&local_c);
+  _vsprintf((char *)0x1d1c300,param_1,(va_list_t)&local_c);
   local_c = (byte *)0x0;
   pcVar2 = _DAT_01d1d400;
   do {
@@ -38,7 +38,7 @@ LAB_00503146:
         core_sound_cpp_shutdownSoundSystem_FUN_0057cb90();
         engine_2d_c_cleanupGraphicsSystem_FUN_00401120();
         wincore_winrun_cpp_endPeriod_FUN_005b2410();
-        wincore_winrun_cpp_FUN_005b3080((char *)0x1d1c300);
+        wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005b3080((char *)0x1d1c300);
         return;
       }
       do {

@@ -101,7 +101,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Filename: ");
     engine_font_cpp_FUN_004a8df0(_DAT_01c25590,pcVar9,iVar4,iVar3,uVar6,uVar11);
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Filename: ");
-    iVar4 = engine_font_cpp_FUN_004aaf00(_DAT_01c25590,pcVar9);
+    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,pcVar9);
     shape_edittool_cpp_FUN_0047afb0(&local_158,iVar4 + _DAT_01c35e48,_DAT_01c35e4c + _DAT_01c25f7c);
     wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     if (local_14 != 0) break;

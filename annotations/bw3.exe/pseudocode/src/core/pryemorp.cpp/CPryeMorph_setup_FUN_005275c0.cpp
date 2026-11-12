@@ -21,7 +21,7 @@ void __cdecl core_pryemorp_cpp_CPryeMorph_setup_FUN_005275c0(CPryeMorph *this_pt
   int iVar5;
   
   core_npc_cpp_CNPC_setup_FUN_00509020(&this_ptr->base);
-  pCVar3 = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c4f0(this_ptr->target_class);
+  pCVar3 = core_actor_cpp_createActorByName_FUN_0040c4f0(this_ptr->target_class);
   pcVar4 = this_ptr->name_of_target;
   this_ptr->target_actor = pCVar3;
   do {

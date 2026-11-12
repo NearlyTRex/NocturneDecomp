@@ -20,26 +20,25 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004dc750(CInventory *this_ptr,_FIL
   int iVar7;
   uint *puVar8;
   char *pcVar9;
-  uint *puVar10;
-  byte bVar11;
-  byte local_1dc [256];
-  uint local_dc [25];
+  byte bVar10;
+  char local_1dc [256];
+  char local_dc [100];
   char local_78 [100];
   int local_14;
   
-  bVar11 = 0;
+  bVar10 = 0;
   core_inv_cpp_CInventory_clear_FUN_004da440(this_ptr);
   core_inv_cpp_CInventory_initialize_FUN_004da4e0(this_ptr);
   _fgets(local_1dc,0xff,file_handle);
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005c6497,&this_ptr->save_version);
+  _fscanf(file_handle,&DAT_005c6497);
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005c649b,&this_ptr->item_count);
+  _fscanf(file_handle,&DAT_005c649b);
   _fgets(local_1dc,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005c649f,&local_14);
+  _fscanf(file_handle,&DAT_005c649f);
   if (0 < this_ptr->save_version) {
     _fgets(local_1dc,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005c64a3,this_ptr);
+    _fscanf(file_handle,&DAT_005c64a3);
   }
   _fgets(local_1dc,0xff,file_handle);
   iVar7 = 0;
@@ -47,23 +46,23 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004dc750(CInventory *this_ptr,_FIL
   if (0 < this_ptr->item_count) {
     do {
       puVar8 = &DAT_00600188;
-      puVar10 = local_dc;
+      pcVar9 = local_dc;
       for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar10 = *puVar8;
-        puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
-        puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
+        *(uint *)pcVar9 = *puVar8;
+        puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+        pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
       }
       puVar8 = &DAT_006001f0;
       pcVar9 = local_78;
       for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
         *(uint *)pcVar9 = *puVar8;
-        puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
-        pcVar9 = pcVar9 + ((uint)bVar11 * -2 + 1) * 4;
+        puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+        pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
       }
-      _fscanf(file_handle," %s \"%[^\"]\"\n",local_dc,local_78);
+      _fscanf(file_handle," %s \"%[^\"]\"\n");
       if (0x01D81080->has_inventory_actors == 0) {
         pcVar9 = local_78;
-        pCVar3 = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c4f0(local_dc);
+        pCVar3 = core_actor_cpp_createActorByName_FUN_0040c4f0(local_dc);
         pCVar2 = pCVar3;
         do {
           cVar1 = *pcVar9;

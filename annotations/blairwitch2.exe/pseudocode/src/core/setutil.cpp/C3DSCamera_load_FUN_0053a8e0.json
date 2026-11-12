@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 305,
-    "complexity_score": 179,
+    "complexity_score": 172,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 77,
     "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 389
+    "total_lines": 382
   },
   "cross_references": [
     {
@@ -279,6 +279,32 @@
     },
     "pcode_op_count": 947
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0055c1b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00541b70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00585420",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005144e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9256
+    }
+  },
   "stack_frame": {
     "frame_size": 284,
     "local_size": 276,
@@ -328,39 +354,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 29,
       "match": "DAT_005e60c9",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e60c9,&this_ptr->projection_scale);",
+      "text": "_fscanf(file_handle,&DAT_005e60c9);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 52,
       "match": "DAT_005e60eb",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e60eb,&this_ptr->use_global_fog);",
+      "text": "_fscanf(file_handle,&DAT_005e60eb);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 65,
       "match": "DAT_005e6103",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e6103,&this_ptr->reverb_preset);",
+      "text": "_fscanf(file_handle,&DAT_005e6103);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 69,
       "match": "DAT_005e6107",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e6107,&this_ptr->is_panning);",
+      "text": "_fscanf(file_handle,&DAT_005e6107);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 48,
+      "line": 43,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar3->x = pCVar2->x;",
@@ -368,7 +394,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 52,
+      "line": 47,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->fog).height_threshold = (pCVar1->scene_fog).height_threshold;",

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_prye_cpp_getCarriedObjectVerticalOffset_FUN_00517e80(undefined4 param_1)
+; float __cdecl core_prye_cpp_getCarriedObjectVerticalOffset_FUN_00517e80(CDemonActor *object)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   object
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -36,7 +38,7 @@ section .text
     PUSH ESI                            ; 00517e91
     XOR EBX,EBX                         ; 00517e92
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00517e94
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00517e99
     TEST EAX,EAX                        ; 00517e9c
     JNZ 0x00517f03                      ; 00517e9e
@@ -46,7 +48,7 @@ section .text
     PUSH ECX                            ; 00517ea6
     PUSH ESI                            ; 00517ea7
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00517ea8
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00517ead
     TEST EAX,EAX                        ; 00517eb0
     JZ 0x00517ec4                       ; 00517eb2

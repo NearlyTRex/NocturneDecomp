@@ -1,20 +1,20 @@
 // Name: core_scat.cpp_factoryFuncScat_FUN_00540aa0
 // Address: 00540aa0
 // Address Range: [[00540aa0, 00540abb]]
-// Convention: unknown
-// Signature: void core_scat_cpp_factoryFuncScat_FUN_00540aa0(void)
+// Convention: __cdecl
+// Signature: CScat * __cdecl core_scat_cpp_factoryFuncScat_FUN_00540aa0(void)
 
 #include "nocturne.h"
 
-void core_scat_cpp_factoryFuncScat_FUN_00540aa0(void)
+CScat * __cdecl core_scat_cpp_factoryFuncScat_FUN_00540aa0(void)
 
 {
-  CScat *this_ptr;
+  CScat *pCVar1;
   
-  this_ptr = (CScat *)operator_new(0x1ffd8);
-  if (this_ptr == (CScat *)0x0) {
-    return;
+  pCVar1 = (CScat *)operator_new(0x1ffd8);
+  if (pCVar1 == (CScat *)0x0) {
+    return (CScat *)0x0;
   }
-  core_scat_cpp_CScat_ctor_FUN_00540ad0(this_ptr);
-  return;
+  pCVar1 = core_scat_cpp_CScat_ctor_FUN_00540ad0(pCVar1);
+  return pCVar1;
 }

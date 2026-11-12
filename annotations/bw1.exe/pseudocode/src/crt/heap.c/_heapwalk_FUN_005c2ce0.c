@@ -2,13 +2,15 @@
 // Address: 005c2ce0
 // Address Range: [[005c2ce0, 005c2ced]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_heap_c__heapwalk_FUN_005c2ce0(undefined4 param_1)
+// Signature: int __cdecl crt_heap_c__heapwalk_FUN_005c2ce0(WatcomHeapInfo *heap_info)
 
 #include "nocturne.h"
 
-void __cdecl _heapwalk(uint param_1)
+int __cdecl _heapwalk(WatcomHeapInfo *heap_info)
 
 {
-  FUN_005c2d94(param_1);
-  return;
+  int iVar1;
+  
+  iVar1 = FUN_005c2d94(heap_info);
+  return iVar1;
 }

@@ -204,7 +204,7 @@ section .text
     PUSH EAX                            ; 0050a39d
     XOR ESI,ESI                         ; 0050a39e
     CALL sound_mp3.cpp_requantizeSamples_FUN_00505d70 ; 0050a3a0
-        ;   XREF to: 00505d70 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_requantizeSamples_FUN_00505d70()
+        ;   XREF to: 00505d70 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeSamples_FUN_00505d70(SMpegSubbandScalefactors * quantized_samples, SMpegSubbandScalefactors * dequantized_samples, SMpegSubbandAllocation * allocation, SMpegFrame * frame)
     ADD ESP,0x10                        ; 0050a3a5
     LEA EAX,[ESP + 0x5708]              ; 0050a3a8
     MOV EDI,dword ptr [ESP + 0x6000]    ; 0050a3af
@@ -407,7 +407,7 @@ section .text
     LEA EAX,[ESP + 0x5114]              ; 0050a66e
     PUSH EAX                            ; 0050a675
     CALL sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_00505aa0 ; 0050a676
-        ;   XREF to: 00505aa0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_00505aa0()
+        ;   XREF to: 00505aa0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_00505aa0(int * scalefactor_indices, uint * quantized_samples, float * dequantized_output, SMpegFrame * frame)
     ADD ESP,0x10                        ; 0050a67b
     MOV EAX,dword ptr [ESP + 0x6014]    ; 0050a67e
     SAR EAX,0x2                         ; 0050a685
@@ -419,7 +419,7 @@ section .text
     LEA EAX,[ESP + 0x5714]              ; 0050a699
     PUSH EAX                            ; 0050a6a0
     CALL sound_mp3.cpp_applyScalefactorsToSubbands_FUN_00505eb0 ; 0050a6a1
-        ;   XREF to: 00505eb0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_applyScalefactorsToSubbands_FUN_00505eb0()
+        ;   XREF to: 00505eb0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_applyScalefactorsToSubbands_FUN_00505eb0(float * spectral_samples, int * scalefactor_band_indices, SMpegFrame * frame_info, int channel_or_granule_index)
     ADD ESP,0x10                        ; 0050a6a6
     TEST EBX,EBX                        ; 0050a6a9
     JNZ 0x0050a6ca                      ; 0050a6ab
@@ -544,7 +544,7 @@ section .text
     MOV EDI,ESP                         ; 0050a847
     MOVSD.REP ES:EDI,ESI                ; 0050a849
     CALL sound_mp3.cpp_calculateMainDataSize_FUN_005096b0 ; 0050a84b
-        ;   XREF to: 005096b0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateMainDataSize_FUN_005096b0()
+        ;   XREF to: 005096b0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_calculateMainDataSize_FUN_005096b0(SMpegFrame frame_info)
     ADD ESP,0x1c                        ; 0050a850
     MOV ESI,EAX                         ; 0050a853
     TEST EAX,EAX                        ; 0050a855
@@ -622,7 +622,7 @@ section .text
     MOV EDI,ESP                         ; 0050a90d
     MOVSD.REP ES:EDI,ESI                ; 0050a90f
     CALL sound_mp3.cpp_calculateMainDataSize_FUN_005096b0 ; 0050a911
-        ;   XREF to: 005096b0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateMainDataSize_FUN_005096b0()
+        ;   XREF to: 005096b0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_calculateMainDataSize_FUN_005096b0(SMpegFrame frame_info)
     ADD ESP,0x1c                        ; 0050a916
     MOV EDX,dword ptr [EBP + 0x14]      ; 0050a919
     MOV EDI,dword ptr [EDX + 0x534c]    ; 0050a91c
@@ -743,7 +743,7 @@ section .text
     LEA EAX,[ESP + 0x481c]              ; 0050aa97
     PUSH EAX                            ; 0050aa9e
     CALL sound_mp3.cpp_requantizeLayer3Samples_FUN_00507910 ; 0050aa9f
-        ;   XREF to: 00507910 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_requantizeLayer3Samples_FUN_00507910()
+        ;   XREF to: 00507910 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeLayer3Samples_FUN_00507910(SMpegSubbandQuantizedSamples * quantized_samples, SMpegSubbandSamples * output_samples, int * scalefactor_data, SMpegLayer3GranuleInfo * granule, ...)
     ADD ESP,0x18                        ; 0050aaa4
     INC ESI                             ; 0050aaa7
     MOV EDX,dword ptr [ESP + 0x6054]    ; 0050aaa8
@@ -766,7 +766,7 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 0050aaf1
     PUSH EAX                            ; 0050aaf5
     CALL sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005081a0 ; 0050aaf6
-        ;   XREF to: 005081a0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005081a0()
+        ;   XREF to: 005081a0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005081a0(SMpegStereoSubbandSamples * input_lr_samples, SMpegStereoSubbandSamples * output_samples, SMpegScalefactorBandData * scalefactor_data, SMpegLayer3GranuleInfo * granule, ...)
     ADD ESP,0x14                        ; 0050aafb
     XOR EDI,EDI                         ; 0050aafe
     MOV EAX,dword ptr [ESP + 0x6018]    ; 0050ab00
@@ -794,7 +794,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x6074]    ; 0050ab6b
     PUSH EDI                            ; 0050ab72
     CALL sound_mp3.cpp_reorderShortBlockSamples_FUN_00507dc0 ; 0050ab73
-        ;   XREF to: 00507dc0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_reorderShortBlockSamples_FUN_00507dc0()
+        ;   XREF to: 00507dc0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_reorderShortBlockSamples_FUN_00507dc0(SMpegSubbandSamples * input_samples, SMpegSubbandSamples * output_samples, SMpegLayer3GranuleInfo * granule, SMpegFrame * frame)
     ADD ESP,0x10                        ; 0050ab78
     LEA EAX,[ESP + 0x5ff0]              ; 0050ab7b
     PUSH EAX                            ; 0050ab82
@@ -804,7 +804,7 @@ section .text
     LEA EAX,[ESP + 0x2d14]              ; 0050ab8c
     PUSH EAX                            ; 0050ab93
     CALL sound_mp3.cpp_antiAliasingButterfly_FUN_00508f10 ; 0050ab94
-        ;   XREF to: 00508f10 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_antiAliasingButterfly_FUN_00508f10()
+        ;   XREF to: 00508f10 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_antiAliasingButterfly_FUN_00508f10(float * input_samples, float * output_samples, SMpegLayer3GranuleInfo * granule, SMpegFrameHeader * header)
     ADD ESP,0x10                        ; 0050ab99
     MOV EAX,dword ptr [ESP + 0x6064]    ; 0050ab9c
     LEA EDI,[ESP + 0x3608]              ; 0050aba3

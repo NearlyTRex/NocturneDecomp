@@ -93,7 +93,7 @@ section .text
     SUB ESP,0x4                         ; 004d2cf7
     FSTP float ptr [ESP]                ; 004d2cfa
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 004d2cfd
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     FLD float ptr [EBX + 0x2598]        ; 004d2d02
     MOV dword ptr [ESP + 0x3c],EAX      ; 004d2d08
     FCHS                                ; 004d2d0c

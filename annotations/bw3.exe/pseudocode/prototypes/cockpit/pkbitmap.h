@@ -49,13 +49,13 @@ void __cdecl CPackedBitmap::renderWithGlobalClipping(CPackedBitmap *this_ptr,int
 // Address: 0050f6be
 void FUN_0050f6be(CPackedBitmap *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7);
 
-// Original: cockpit_pkbitmap.cpp_FUN_0050f910
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910
 // Address: 0050f910
-void __cdecl FUN_0050f910(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag);
+void __cdecl CPackedBitmap::reloadFromBitmapFile(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag);
 
-// Original: cockpit_pkbitmap.cpp_FUN_0050f990
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990
 // Address: 0050f990
-void __cdecl FUN_0050f990(CPackedBitmap *this_ptr,int apply_palette_flag);
+void __cdecl CPackedBitmap::loadAndCompressBitmap(CPackedBitmap *this_ptr,int apply_palette_flag);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0050f9e0
 // Address: 0050f9e0
@@ -87,7 +87,7 @@ void __cdecl CPackedBitmap::loadByFileExtension(CPackedBitmap *this_ptr,int appl
 
 // Original: cockpit_pkbitmap.cpp_FUN_0050fe10
 // Address: 0050fe10
-void FUN_0050fe10(CPackedBitmap *param_1,undefined4 param_2);
+void FUN_0050fe10(CPackedBitmap *param_1,char *param_2);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0050fe90
 // Address: 0050fe90
@@ -116,15 +116,3 @@ CPackedBitmap * parsePBGFile(uint *param_1,_FILE *param_2,uint param_3,int param
 // Original: cockpit_pkbitmap.cpp_FUN_00510430
 // Address: 00510430
 CPackedBitmap * FUN_00510430(int *param_1,char *param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6);
-
-// Original: cockpit_pkbitmap.cpp_FUN_005105e0
-// Address: 005105e0
-void FUN_005105e0(undefined4 *param_1);
-
-// Original: cockpit_pkbitmap.cpp_FUN_00510610
-// Address: 00510610
-void FUN_00510610(int *param_1);
-
-// Original: cockpit_pkbitmap.cpp_FUN_00510670
-// Address: 00510670
-void FUN_00510670(undefined4 *param_1);

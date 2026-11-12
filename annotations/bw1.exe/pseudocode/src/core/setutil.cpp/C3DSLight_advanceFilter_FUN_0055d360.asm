@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSLight_advanceFilter_FUN_0055d360(int param_1,CDemonLight *param_2)
+; void __cdecl core_setutil_cpp_C3DSLight_advanceFilter_FUN_0055d360(C3DSLight *this_ptr,CDemonLight *light)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light
 ;
 ; XREF[1]:
 ;   core_event.cpp_FUN_004a1d00 at 004a265b

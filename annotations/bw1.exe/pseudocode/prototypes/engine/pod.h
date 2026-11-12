@@ -41,10 +41,6 @@ int __cdecl CPodFile::findFileIndex(CPodFile *this_ptr,char *filename);
 // Address: 0053bf40
 void __cdecl CPodFile::populateFileInfo(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
 
-// Original: engine_pod.cpp_FUN_0053bfbe
-// Address: 0053bfbe
-bool FUN_0053bfbe(int *param_1);
-
 // Original: engine_pod.cpp_FUN_0053bfc0
 // Address: 0053bfc0
 bool FUN_0053bfc0(int *param_1);
@@ -91,7 +87,7 @@ void __cdecl CPod::cleanup(CPod *this_ptr);
 
 // Original: engine_pod.cpp_findFilesByExtension_FUN_0053c940
 // Address: 0053c940
-int __cdecl findFilesByExtension(int *param_1,byte *param_2,int param_3,int param_4,int param_5);
+int __cdecl findFilesByExtension(CPod *pod,char *extension,char *output_buffer,int max_results,int result_string_length);
 
 // Original: engine_pod.cpp_CPod_initSearch_FUN_0053cb00
 // Address: 0053cb00

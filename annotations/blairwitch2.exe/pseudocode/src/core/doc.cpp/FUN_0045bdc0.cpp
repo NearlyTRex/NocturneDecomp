@@ -12,42 +12,47 @@
 void core_doc_cpp_FUN_0045bdc0(CCharacter *param_1,float param_2)
 
 {
-  float fVar1;
-  CDemonActor *pCVar2;
+  CCharacter *pCVar1;
+  float fVar2;
   CFlame *pCVar3;
   CMotionList *pCVar4;
   int iVar5;
   CLightGun *pCVar6;
+  CDemonActor *pCVar7;
   CDynamite *this_ptr;
-  int iVar7;
-  byte bVar8;
-  CVector3f *apCStackY_1060 [1013];
-  uint local_6c;
-  uint local_68 [2];
+  int iVar8;
+  CVector3f *pCVar9;
+  byte bVar10;
+  float afStackY_1060 [1013];
+  CDemonActor *in_stack_ffffff88;
+  float in_stack_ffffff8c;
+  float local_6c;
+  float local_68;
+  float local_64;
   CVector3f local_60;
-  uint local_54;
-  CVector3f *apCStack_50 [4];
+  float local_54;
+  float afStack_50 [4];
   CVector3f *local_40;
   int local_3c;
-  int local_38;
+  CCharacter *local_38;
   int local_34;
   CMotionController *local_30;
-  int local_2c;
+  CCharacter *local_2c;
   float local_28;
   CInventory *local_24;
   int local_20;
-  float local_1c;
+  CCharacter *local_1c;
   int local_18;
   float local_14;
   
-  bVar8 = 0;
+  bVar10 = 0;
   if ((param_1->layer_action_index == 9) &&
      (param_1->carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
     param_1->layer_action_t = 0.0;
     param_1->layer_action_index = 0;
   }
   local_3c = -1;
-  local_1c = 0.0;
+  local_1c = (CCharacter *)0x0;
   if (*(int *)(param_1[2].flames[1].on_event + 0x24) != 0) {
     pCVar3 = param_1[2].flames;
     pCVar3[1].on_event[0x4c] = '\0';
@@ -57,25 +62,28 @@ void core_doc_cpp_FUN_0045bdc0(CCharacter *param_1,float param_2)
     goto LAB_0045be11;
   }
   if (*(int *)(param_1[2].flames[1].on_event + 0x4c) == 0) goto LAB_0045be11;
-  pCVar2 = param_1->carry_hands[1].carry_actor;
-  if (pCVar2 == (CDemonActor *)0x0) {
-    local_1c = (&param_1[2].damage_decals[2].transform.m[0].y)
+  pCVar7 = param_1->carry_hands[1].carry_actor;
+  if (pCVar7 == (CDemonActor *)0x0) {
+    local_1c = (CCharacter *)
+               (&param_1[2].damage_decals[2].transform.m[0].y)
                [*(int *)&param_1[2].follow_formation.slots[0xb].field_0x34];
-    iVar5 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c8f0(local_1c,g_CMeleeClassInfo.name_hash);
-    if (iVar5 != 0) {
+    pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                       ((CDemonActor *)local_1c,g_CMeleeClassInfo.name_hash);
+    if (pCVar7 != (CDemonActor *)0x0) {
       local_3c = 6;
     }
 LAB_0045c19d:
-    if (local_1c != 0.0) goto LAB_0045be11;
+    if (local_1c != (CCharacter *)0x0) goto LAB_0045be11;
   }
   else {
-    iVar5 = (CLantern *)core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar2,g_CLanternClassInfo.name_hash);
-    if (iVar5 != 0) {
-      local_1c = (&param_1[2].damage_decals[2].transform.m[0].y)
+    pCVar7 = (CLantern *)core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar7,g_CLanternClassInfo.name_hash);
+    if (pCVar7 != (CDemonActor *)0x0) {
+      local_1c = (CCharacter *)
+                 (&param_1[2].damage_decals[2].transform.m[0].y)
                  [*(int *)&param_1[2].follow_formation.slots[0xb].field_0x34];
       goto LAB_0045c19d;
     }
-    local_1c = 0.0;
+    local_1c = (CCharacter *)0x0;
   }
   if (local_3c < 0) {
     pCVar3 = param_1[2].flames;
@@ -116,9 +124,9 @@ LAB_0045be77:
         local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,4);
         iVar5 = local_18;
         if ((float)_DAT_005d0657 < local_14) {
-          fVar1 = param_2 * (float)_DAT_005d064f + *(float *)(param_1[2].flames[1].on_event + 0x5c);
-          *(float *)(param_1[2].flames[1].on_event + 0x5c) = fVar1;
-          if (0x428C0000 < fVar1) {
+          fVar2 = param_2 * (float)_DAT_005d064f + *(float *)(param_1[2].flames[1].on_event + 0x5c);
+          *(float *)(param_1[2].flames[1].on_event + 0x5c) = fVar2;
+          if (0x428C0000 < fVar2) {
             *(float *)(param_1[2].flames[1].on_event + 0x5c) = 0x428C0000;
           }
           if (*(int *)(param_1[1].base.actor_name + 0x14) != 0) {
@@ -145,8 +153,8 @@ LAB_0045be77:
                 iVar5 = local_18;
               }
               else if (local_3c < 0) {
-                fVar1 = *(float *)(param_1[2].flames[1].off_event + 0x40);
-                if (fVar1 == local_1c) {
+                pCVar1 = *(CCharacter **)(param_1[2].flames[1].off_event + 0x40);
+                if (pCVar1 == local_1c) {
                   iVar5 = *(int *)(param_1[2].flames[1].off_event + 0x40);
                   if (iVar5 == 0) {
 switchD_0045c465_caseD_3:
@@ -181,26 +189,27 @@ switchD_0045c465_caseD_3:
                     }
                   }
                 }
-                else if (fVar1 == 0.0) {
+                else if (pCVar1 == (CCharacter *)0x0) {
                   iVar5 = 0;
-                  if (local_1c != 0.0) {
-                    switch(*(uint *)((int)local_1c + 0x43c)) {
-                    case 0:
-                    case 5:
-                    case 0xc:
+                  if (local_1c != (CCharacter *)0x0) {
+                    switch((local_1c->model).bone_origins[0x19].y) {
+                    case 0.0:
+                    case 7.00649e-45:
+                    case 1.68156e-44:
                       iVar5 = 1;
                       break;
                     default:
                       iVar5 = 3;
                       break;
-                    case 6:
-                    case 7:
-                    case 8:
-                    case 9:
-                    case 0xd:
-                      iVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                                        (local_1c,g_CMeleeClassInfo.name_hash);
-                      if ((iVar5 == 0) || (*(int *)(iVar5 + 0x6e4) == 0)) {
+                    case 8.40779e-45:
+                    case 9.80909e-45:
+                    case 1.12104e-44:
+                    case 1.26117e-44:
+                    case 1.82169e-44:
+                      pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                                         (&local_1c->base,g_CMeleeClassInfo.name_hash);
+                      if ((pCVar7 == (CDemonActor *)0x0) ||
+                         (pCVar7[2].particle_systems[0].fade_end == 0.0)) {
                         iVar5 = 0;
                       }
                       else {
@@ -210,23 +219,24 @@ switchD_0045c465_caseD_3:
                   }
                 }
                 else {
-                  switch(*(uint *)((int)fVar1 + 0x43c)) {
-                  case 0:
-                  case 5:
-                  case 0xc:
+                  switch((pCVar1->model).bone_origins[0x19].y) {
+                  case 0.0:
+                  case 7.00649e-45:
+                  case 1.68156e-44:
                     iVar5 = 1;
                     break;
                   default:
                     iVar5 = 3;
                     break;
-                  case 6:
-                  case 7:
-                  case 8:
-                  case 9:
-                  case 0xd:
-                    iVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                                      (fVar1,g_CMeleeClassInfo.name_hash);
-                    if ((iVar5 == 0) || (*(int *)(iVar5 + 0x6e4) == 0)) {
+                  case 8.40779e-45:
+                  case 9.80909e-45:
+                  case 1.12104e-44:
+                  case 1.26117e-44:
+                  case 1.82169e-44:
+                    pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                                       (&pCVar1->base,g_CMeleeClassInfo.name_hash);
+                    if ((pCVar7 == (CDemonActor *)0x0) ||
+                       (pCVar7[2].particle_systems[0].fade_end == 0.0)) {
                       iVar5 = 0;
                     }
                     else {
@@ -236,28 +246,30 @@ switchD_0045c465_caseD_3:
                 }
               }
               else {
-                fVar1 = *(float *)(param_1[2].flames[1].off_event + 0x40);
-                if (fVar1 == 0.0) {
+                pCVar1 = *(CCharacter **)(param_1[2].flames[1].off_event + 0x40);
+                if (pCVar1 == (CCharacter *)0x0) {
                   iVar5 = local_18;
-                  if (((local_1c != 0.0) && (*(int *)(param_1[2].flames[1].on_event + 0x4c) != 0))
-                     && (iVar5 = 0, local_1c != 0.0)) {
-                    switch(*(uint *)((int)local_1c + 0x43c)) {
-                    case 0:
-                    case 5:
-                    case 0xc:
+                  if (((local_1c != (CCharacter *)0x0) &&
+                      (*(int *)(param_1[2].flames[1].on_event + 0x4c) != 0)) &&
+                     (iVar5 = 0, local_1c != (CCharacter *)0x0)) {
+                    switch((local_1c->model).bone_origins[0x19].y) {
+                    case 0.0:
+                    case 7.00649e-45:
+                    case 1.68156e-44:
                       iVar5 = 1;
                       break;
                     default:
                       iVar5 = 3;
                       break;
-                    case 6:
-                    case 7:
-                    case 8:
-                    case 9:
-                    case 0xd:
-                      iVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                                        (local_1c,g_CMeleeClassInfo.name_hash);
-                      if ((iVar5 == 0) || (*(int *)(iVar5 + 0x6e4) == 0)) {
+                    case 8.40779e-45:
+                    case 9.80909e-45:
+                    case 1.12104e-44:
+                    case 1.26117e-44:
+                    case 1.82169e-44:
+                      pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                                         (&local_1c->base,g_CMeleeClassInfo.name_hash);
+                      if ((pCVar7 == (CDemonActor *)0x0) ||
+                         (pCVar7[2].particle_systems[0].fade_end == 0.0)) {
                         iVar5 = 0;
                       }
                       else {
@@ -266,30 +278,31 @@ switchD_0045c465_caseD_3:
                     }
                   }
                 }
-                else if (fVar1 == local_1c) {
+                else if (pCVar1 == local_1c) {
                   local_18 = local_3c;
                   iVar5 = local_18;
                 }
                 else {
                   iVar5 = 0;
-                  if (fVar1 != 0.0) {
-                    switch(*(uint *)((int)fVar1 + 0x43c)) {
-                    case 0:
-                    case 5:
-                    case 0xc:
+                  if (pCVar1 != (CCharacter *)0x0) {
+                    switch((pCVar1->model).bone_origins[0x19].y) {
+                    case 0.0:
+                    case 7.00649e-45:
+                    case 1.68156e-44:
                       iVar5 = 1;
                       break;
                     default:
                       iVar5 = 3;
                       break;
-                    case 6:
-                    case 7:
-                    case 8:
-                    case 9:
-                    case 0xd:
-                      iVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                                        (fVar1,g_CMeleeClassInfo.name_hash);
-                      if ((iVar5 == 0) || (*(int *)(iVar5 + 0x6e4) == 0)) {
+                    case 8.40779e-45:
+                    case 9.80909e-45:
+                    case 1.12104e-44:
+                    case 1.26117e-44:
+                    case 1.82169e-44:
+                      pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                                         (&pCVar1->base,g_CMeleeClassInfo.name_hash);
+                      if ((pCVar7 == (CDemonActor *)0x0) ||
+                         (pCVar7[2].particle_systems[0].fade_end == 0.0)) {
                         iVar5 = 0;
                       }
                       else {
@@ -356,19 +369,19 @@ switchD_0045c465_caseD_3:
       break;
     case 8:
       if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)param_1->layer_action_t)) &&
-         (iVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                            (*(uint *)(param_1[2].flames[1].off_event + 0x40),
-                             g_CCrossClassInfo.name_hash), iVar5 != 0)) {
-        core_cross_cpp_FUN_005a6cf0(iVar5);
+         (pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                             (*(CDemonActor **)(param_1[2].flames[1].off_event + 0x40),
+                              g_CCrossClassInfo.name_hash), pCVar7 != (CDemonActor *)0x0)) {
+        core_cross_cpp_FUN_005a6cf0(pCVar7);
       }
       break;
     case 0xc:
       this_ptr = (CDynamite *)
                  core_actor_cpp_castToClassHash_FUN_0040c8f0
-                           (*(uint *)(param_1[2].flames[1].off_event + 0x40),
+                           (*(CDemonActor **)(param_1[2].flames[1].off_event + 0x40),
                             g_CDynamiteClassInfo.name_hash);
       if (((this_ptr != (CDynamite *)0x0) &&
-          (iVar7 = core_dynamite_cpp_CDynamite_isFuseLit_FUN_0047a1a0(this_ptr), iVar7 == 0)) &&
+          (iVar8 = core_dynamite_cpp_CDynamite_isFuseLit_FUN_0047a1a0(this_ptr), iVar8 == 0)) &&
          (local_14 = (float)(0xb / (longlong)pCVar4->motions[iVar5].frame_count),
          (float)(int)local_14 <= param_1->layer_action_t)) {
         core_dynamite_cpp_CDynamite_lightFuse_FUN_0047a150(this_ptr);
@@ -379,27 +392,29 @@ switchD_0045c465_caseD_3:
          (local_14 = (float)(0xb / (longlong)pCVar4->motions[iVar5].frame_count),
          (float)(int)local_14 <= param_1->layer_action_t)) {
         core_doc_cpp_FUN_0045bba0(param_1);
-        *(uint *)((int)&local_60 + (uint)bVar8 * -8 + 4) =
-             *(uint *)(&stack0xffffff8c + (uint)bVar8 * 0xfffffff8);
-        *(uint *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
-             *(uint *)((int)apCStack_50 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 0xffffffe0);
-        local_38 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                             (*(uint *)(param_1[2].flames[1].off_event + 0x40),
+        local_60.x = (float)in_stack_ffffff88;
+        *(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =
+             *(uint *)(&stack0xffffff8c + (uint)bVar10 * -8);
+        *(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+             *(uint *)(&stack0xffffff90 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+        local_38 = (CCharacter *)
+                   core_actor_cpp_castToClassHash_FUN_0040c8f0
+                             (*(CDemonActor **)(param_1[2].flames[1].off_event + 0x40),
                               g_CDynamiteClassInfo.name_hash);
         local_2c = local_38;
-        if (local_38 != 0) {
+        if (local_38 != (CCharacter *)0x0) {
           core_actor_cpp_FUN_00408cf0(param_1,&local_60);
           local_6c = local_54;
-          *(CVector3f **)((int)apCStack_50 + (uint)bVar8 * -8 + 0xffffffe8) =
-               apCStack_50[(uint)bVar8 * -2];
-          *(CVector3f **)((int)apCStack_50 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 0xffffffec) =
-               apCStack_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-          if ((uint *)(local_2c + 0x6d8) != &local_6c) {
-            *(uint *)(local_2c + 0x6d8) = local_6c;
-            *(uint *)(local_2c + 0x6dc) = local_68[0];
-            *(uint *)(local_2c + 0x6e0) = local_68[1];
+          (&stack0xffffff98)[(uint)bVar10 * 0xfffffffe] = afStack_50[(uint)bVar10 * -2];
+          (&stack0xffffff98)[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+               afStack_50[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          pCVar9 = (local_2c->model).bone_origins + 0x51;
+          if (pCVar9 != (CVector3f *)&stack0xffffff94) {
+            pCVar9->x = local_6c;
+            (local_2c->model).bone_origins[0x51].y = local_68;
+            (local_2c->model).bone_origins[0x51].z = local_64;
           }
-          (**(code **)(*(int *)(local_38 + 0x2b0) + 0xec))(local_38);
+          (*(((local_38->base).vtable._uc)->_uc).isGrabbable)(local_38,in_stack_ffffff88);
           pCVar3 = param_1[2].flames;
           pCVar3[1].off_event[0x40] = '\0';
           pCVar3[1].off_event[0x41] = '\0';
@@ -422,25 +437,26 @@ switchD_0045c465_caseD_3:
       }
     }
     if (-1 < local_20) {
-      fVar1 = *(float *)(param_1[2].flames[1].off_event + 0x40);
-      if (fVar1 != local_1c) {
-        if (fVar1 != 0.0) {
-          switch(*(uint *)((int)fVar1 + 0x43c)) {
-          case 0:
-          case 5:
-          case 0xc:
+      pCVar1 = *(CCharacter **)(param_1[2].flames[1].off_event + 0x40);
+      if (pCVar1 != local_1c) {
+        if (pCVar1 != (CCharacter *)0x0) {
+          switch((pCVar1->model).bone_origins[0x19].y) {
+          case 0.0:
+          case 7.00649e-45:
+          case 1.68156e-44:
             iVar5 = 1;
             break;
           default:
             iVar5 = 3;
             break;
-          case 6:
-          case 7:
-          case 8:
-          case 9:
-          case 0xd:
-            iVar5 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c8f0(fVar1,g_CMeleeClassInfo.name_hash);
-            if ((iVar5 == 0) || (*(int *)(iVar5 + 0x6e4) == 0)) {
+          case 8.40779e-45:
+          case 9.80909e-45:
+          case 1.12104e-44:
+          case 1.26117e-44:
+          case 1.82169e-44:
+            pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                               (&pCVar1->base,g_CMeleeClassInfo.name_hash);
+            if ((pCVar7 == (CDemonActor *)0x0) || (pCVar7[2].particle_systems[0].fade_end == 0.0)) {
               iVar5 = 0;
             }
             else {
@@ -458,34 +474,37 @@ switchD_0045c465_caseD_3:
           }
         }
         if (*(int *)(param_1[2].flames[1].on_event + 0x4c) != 0) {
-          if (local_1c == 0.0) {
+          if (local_1c == (CCharacter *)0x0) {
 LAB_0045bfdc:
             iVar5 = 0;
           }
           else {
-            switch(*(uint *)((int)local_1c + 0x43c)) {
-            case 0:
-            case 5:
-            case 0xc:
+            switch((local_1c->model).bone_origins[0x19].y) {
+            case 0.0:
+            case 7.00649e-45:
+            case 1.68156e-44:
               iVar5 = 1;
               break;
             default:
               iVar5 = 3;
               break;
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 0xd:
-              iVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                                (local_1c,g_CMeleeClassInfo.name_hash);
-              if ((iVar5 == 0) || (*(int *)(iVar5 + 0x6e4) == 0)) goto LAB_0045bfdc;
+            case 8.40779e-45:
+            case 9.80909e-45:
+            case 1.12104e-44:
+            case 1.26117e-44:
+            case 1.82169e-44:
+              pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                                 (&local_1c->base,g_CMeleeClassInfo.name_hash);
+              if ((pCVar7 == (CDemonActor *)0x0) || (pCVar7[2].particle_systems[0].fade_end == 0.0))
+              goto LAB_0045bfdc;
               iVar5 = 5;
             }
           }
           if ((iVar5 == local_20) &&
-             (*(float *)(param_1[2].flames[1].off_event + 0x40) = local_1c, local_1c != 0.0)) {
-            (**(code **)(*(int *)((int)local_1c + 0x2b0) + 0xe4))(local_1c,2);
+             (*(CCharacter **)(param_1[2].flames[1].off_event + 0x40) = local_1c,
+             local_1c != (CCharacter *)0x0)) {
+            (*(((local_1c->base).vtable._uc)->_uc).kill)
+                      (local_1c,2,(CVector3f *)in_stack_ffffff88,in_stack_ffffff8c);
           }
         }
       }

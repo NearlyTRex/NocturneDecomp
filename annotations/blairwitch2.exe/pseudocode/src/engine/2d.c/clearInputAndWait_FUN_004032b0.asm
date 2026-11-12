@@ -44,11 +44,11 @@ section .text
         ;   XREF to: 004032bc (CONDITIONAL_JUMP)  ; LAB_004032bc
     PUSH EBX                            ; 004032cc
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 004032cd
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EBX,EAX                         ; 004032d2
     SAR EBX,0x10                        ; 004032d4
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 004032d7
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
         ;   Label: LAB_004032d7
     SAR EAX,0x10                        ; 004032dc
     CMP EBX,EAX                         ; 004032df

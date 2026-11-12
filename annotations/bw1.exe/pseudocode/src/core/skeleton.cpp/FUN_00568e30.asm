@@ -36,7 +36,7 @@
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
 ;   core_xform.cpp_FUN_005b5080
-;   core_xform.cpp_FUN_005b7410
+;   core_xform.cpp_quaternionToMatrix3x3_FUN_005b7410
 ;   core_xform.cpp_setRotationScaleIdentity_FUN_005b5480
 ;
 ; *****************************************************************************
@@ -108,8 +108,8 @@ section .text
     PUSH EAX                            ; 00568f0f
     LEA EAX,[ESP + 0x34]                ; 00568f10
     PUSH EAX                            ; 00568f14
-    CALL core_xform.cpp_FUN_005b7410    ; 00568f15
-        ;   XREF to: 005b7410 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_FUN_005b7410(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005b7410 ; 00568f15
+        ;   XREF to: 005b7410 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005b7410(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 00568f1a
     MOV EAX,dword ptr [ESP + 0xc0]      ; 00568f1d
     SHL EAX,0x2                         ; 00568f24
@@ -132,7 +132,7 @@ section .text
         ;   Label: LAB_00568f4e
     PUSH EAX                            ; 00568f52
     CALL core_xform.cpp_setRotationScaleIdentity_FUN_005b5480 ; 00568f53
-        ;   XREF to: 005b5480 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setRotationScaleIdentity_FUN_005b5480()
+        ;   XREF to: 005b5480 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setRotationScaleIdentity_FUN_005b5480(CMatrix3x4f * matrix)
     ADD ESP,0x4                         ; 00568f58
     MOV EAX,dword ptr [EBX + 0x6a4]     ; 00568f5b
     MOV dword ptr [ESP + 0x3c],EAX      ; 00568f61

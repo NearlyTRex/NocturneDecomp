@@ -225,13 +225,13 @@ LAB_004e922e:
         g_CGamePtr->invert_mouse_y_axis = (uint)(g_CGamePtr->invert_mouse_y_axis == 0);
       }
       else if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
-        core_menu_cpp_FUN_004e7dc0();
+        core_menu_cpp_calibrateGamepad_FUN_004e7dc0();
       }
     }
     iVar4 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);
     if ((iVar4 != 0) &&
        (((g_CGamePtr->game_control != CONTROL_MODE_GAMEPAD || (g_CGamePtr->x_center != 0)) ||
-        (iVar4 = core_menu_cpp_FUN_004e7dc0(), iVar4 != 0)))) {
+        (iVar4 = core_menu_cpp_calibrateGamepad_FUN_004e7dc0(), iVar4 != 0)))) {
       return;
     }
   } while( true );

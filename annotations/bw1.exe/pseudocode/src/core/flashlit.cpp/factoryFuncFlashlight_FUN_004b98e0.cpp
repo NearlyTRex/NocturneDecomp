@@ -1,20 +1,20 @@
 // Name: core_flashlit.cpp_factoryFuncFlashlight_FUN_004b98e0
 // Address: 004b98e0
 // Address Range: [[004b98e0, 004b98fb]]
-// Convention: unknown
-// Signature: void core_flashlit_cpp_factoryFuncFlashlight_FUN_004b98e0(void)
+// Convention: __cdecl
+// Signature: CFlashlight * __cdecl core_flashlit_cpp_factoryFuncFlashlight_FUN_004b98e0(void)
 
 #include "nocturne.h"
 
-void core_flashlit_cpp_factoryFuncFlashlight_FUN_004b98e0(void)
+CFlashlight * __cdecl core_flashlit_cpp_factoryFuncFlashlight_FUN_004b98e0(void)
 
 {
-  CFlashlight *this_ptr;
+  CFlashlight *pCVar1;
   
-  this_ptr = (CFlashlight *)operator_new(0x578);
-  if (this_ptr == (CFlashlight *)0x0) {
-    return;
+  pCVar1 = (CFlashlight *)operator_new(0x578);
+  if (pCVar1 == (CFlashlight *)0x0) {
+    return (CFlashlight *)0x0;
   }
-  core_flashlit_cpp_CFlashlight_ctor_FUN_004b9910(this_ptr);
-  return;
+  pCVar1 = core_flashlit_cpp_CFlashlight_ctor_FUN_004b9910(pCVar1);
+  return pCVar1;
 }

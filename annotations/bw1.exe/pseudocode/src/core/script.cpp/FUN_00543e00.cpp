@@ -12,8 +12,9 @@ uint core_script_cpp_FUN_00543e00(CScript *param_1,char *param_2)
   char cVar1;
   bool bVar2;
   int iVar3;
-  _FILE *p_Var4;
-  int iVar5;
+  _FILE *file_handle;
+  long lVar4;
+  long lVar5;
   int iVar6;
   int iVar7;
   char *pcVar8;
@@ -30,12 +31,12 @@ uint core_script_cpp_FUN_00543e00(CScript *param_1,char *param_2)
   if (0 < iVar3) {
     splitpath(param_2,(char *)0x0,(char *)0x0,local_118,(char *)0x0);
     pcVar8 = &DAT_005ee1d8;
-    iVar6 = -1;
+    iVar7 = -1;
     pcVar10 = local_118;
     do {
       pcVar9 = pcVar10;
-      if (iVar6 == 0) break;
-      iVar6 = iVar6 + -1;
+      if (iVar7 == 0) break;
+      iVar7 = iVar7 + -1;
       pcVar9 = pcVar10 + (uint)bVar11 * -2 + 1;
       cVar1 = *pcVar10;
       pcVar10 = pcVar9;
@@ -51,29 +52,29 @@ uint core_script_cpp_FUN_00543e00(CScript *param_1,char *param_2)
       pcVar9 = pcVar9 + 2;
     } while (cVar1 != '\0');
     core_script_cpp_CScript_dbLoad_FUN_0054af20(param_1,local_118);
-    p_Var4 = engine_dosio_cpp_FUN_00479180("world",param_2,&DAT_005ee1dd);
-    if (p_Var4 != (_FILE *)0x0) {
-      iVar6 = _ftell(p_Var4);
+    file_handle = engine_dosio_cpp_FUN_00479180("world",param_2,&DAT_005ee1dd);
+    if (file_handle != (_FILE *)0x0) {
+      lVar4 = _ftell(file_handle);
       local_14 = &param_1->script_text;
       bVar2 = true;
       do {
         iVar7 = 0;
         while( true ) {
-          iVar5 = _ftell(p_Var4);
-          if (iVar3 + iVar6 <= iVar5) break;
-          iVar5 = _fgetc(p_Var4);
-          if (iVar5 == -1) goto LAB_00543f00;
-          if (iVar5 != 0xd) {
-            if (iVar5 == 10) goto LAB_00543f00;
-            if (iVar5 == 0) {
-              _fclose(p_Var4);
-              iVar3 = shape_edittool_cpp_FUN_0049df50(&param_1->script_text);
-              shape_edittool_cpp_FUN_004943a0
-                        (g_CEditorToolsPtr,"Probable non-text file %s detected near line %d.  Cannot use script.",param_2,iVar3 + 1);
+          lVar5 = _ftell(file_handle);
+          if (iVar3 + lVar4 <= lVar5) break;
+          iVar6 = _fgetc(file_handle);
+          if (iVar6 == -1) goto LAB_00543f00;
+          if (iVar6 != 0xd) {
+            if (iVar6 == 10) goto LAB_00543f00;
+            if (iVar6 == 0) {
+              _fclose(file_handle);
+              shape_edittool_cpp_FUN_0049df50(&param_1->script_text);
+              shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+                        (g_CEditorToolsPtr,"Probable non-text file %s detected near line %d.  Cannot use script.");
               core_script_cpp_FUN_00543740(param_1);
               return 0;
             }
-            local_318[iVar7] = (char)iVar5;
+            local_318[iVar7] = (char)iVar6;
             iVar7 = iVar7 + 1;
           }
         }
@@ -82,7 +83,7 @@ LAB_00543f00:
         local_318[iVar7] = '\0';
         shape_edittool_cpp_CStrList_add_FUN_004994d0(local_14,local_318);
         if (!bVar2) {
-          _fclose(p_Var4);
+          _fclose(file_handle);
           core_script_cpp_CScript_buildParsedLines_FUN_00543fd0(param_1);
           core_script_cpp_CScript_initRuntime_FUN_00544190(param_1);
           return 1;

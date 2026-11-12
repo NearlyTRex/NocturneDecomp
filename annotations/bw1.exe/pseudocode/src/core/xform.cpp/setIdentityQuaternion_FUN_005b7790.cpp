@@ -2,16 +2,16 @@
 // Address: 005b7790
 // Address Range: [[005b7790, 005b77af]]
 // Convention: __cdecl
-// Signature: void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_005b7790(undefined4 *param_1)
+// Signature: void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_005b7790(CQuaternion4f *quaternion)
 
 #include "nocturne.h"
 
-void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_005b7790(uint *param_1)
+void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_005b7790(CQuaternion4f *quaternion)
 
 {
-  param_1[1] = 0;
-  param_1[2] = 0;
-  param_1[3] = 0;
-  *param_1 = 0x3f800000;
+  quaternion->x = 0.0;
+  quaternion->y = 0.0;
+  quaternion->z = 0.0;
+  quaternion->w = 1.0;
   return;
 }

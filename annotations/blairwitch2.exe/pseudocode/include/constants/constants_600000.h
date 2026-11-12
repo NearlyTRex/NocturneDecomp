@@ -108,7 +108,7 @@ static TerminatedCString s_CDrip_0060d1d0 = "$CDrip$$";
 static TerminatedCString s_CDrone_0060d1e4 = "$CDrone$$";
 
 // undefined1* constants
-static undefined1* DAT_006012A0 = (undefined1*)core_chain_cpp_FUN_005b5ca0;
+static undefined1* DAT_006012A0 = (undefined1*)core_chain_cpp_CChain_getBoundingBox_FUN_005b5ca0;
 static undefined1* DAT_006012A4 = (undefined1*)core_actor_cpp_CDemonActor_processFootstep_FUN_0040c990;
 static undefined1* DAT_006012A8 = (undefined1*)core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40;
 static undefined1* DAT_006012AC = (undefined1*)core_actor_cpp_CDemonActor_handleFootstep_FUN_0040cb60;

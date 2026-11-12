@@ -20,7 +20,7 @@
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004eadf0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_FUN_00525020
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH 0x5da606                       ; 00476284 | = "CDoc::startGettingGrabbed by %s, type..."
     MOV ECX,dword ptr [0x00611100]      ; 00476289 | g_CConsolePtr
     PUSH ECX                            ; 0047628f | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00476290
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00476290
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 00476295
     LEA ESI,[EBX + 0x158]               ; 00476298
     PUSH ESI                            ; 0047629e
@@ -66,8 +66,8 @@ section .text
     PUSH 0x5da630                       ; 004762a8 | = "  current motion is %s\n"
     MOV EAX,[0x00611100]                ; 004762ad | g_CConsolePtr
     PUSH EAX                            ; 004762b2 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 004762b3
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004762b3
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     MOV EDX,dword ptr [EBX + 0x1ff78]   ; 004762b8
     ADD ESP,0xc                         ; 004762be
     TEST EDX,EDX                        ; 004762c1

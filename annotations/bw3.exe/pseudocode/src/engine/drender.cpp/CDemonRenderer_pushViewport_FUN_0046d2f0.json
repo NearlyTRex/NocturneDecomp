@@ -1,0 +1,257 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 5,
+    "cross_reference_count": 7,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "00412c50",
+      "from_addr": "00412d52",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00449840",
+      "from_addr": "0044994b",
+      "name": "core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_00449840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00448ff0",
+      "from_addr": "0044915a",
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_00448ff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045c530",
+      "from_addr": "0045c578",
+      "name": "core_dlight.cpp_CDemonLight_beginScene_FUN_0045c530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dbe70",
+      "from_addr": "004dbfbf",
+      "name": "core_inv.cpp_FUN_004dbe70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f940",
+      "from_addr": "0053fa06",
+      "name": "core_setdir.cpp_FUN_0053f940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00540cf0",
+      "from_addr": "00540d2a",
+      "name": "core_setdir.cpp_FUN_00540cf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0046d2f0",
+    "address_range": [
+      [
+        "0046d2f0",
+        "0046d310"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046d2f0(CDemonRenderer *this_ptr,int x,int y,int width,int height)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e6af0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_pushViewport_FUN_004e6af0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "0045c578",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_CDemonLight_beginScene_FUN_0045c530",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0044915a",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_00448ff0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0044994b",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_00449840",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004dbfbf",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dbe70",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0053fa06",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_0053f940",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00540d2a",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_00540cf0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00412d52",
+        "call_type": "direct",
+        "caller": "core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.533333333333333,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 14,
+      "INT_ADD": 8,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 7,
+      "LOAD": 7,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 53
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046b710",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00483c10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048c890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00460e40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

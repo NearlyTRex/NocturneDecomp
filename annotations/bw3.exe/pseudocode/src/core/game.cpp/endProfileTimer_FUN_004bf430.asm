@@ -15,7 +15,7 @@
 ;   undefined4 DAT_01d22c98
 ;
 ; Called Functions:
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
 ; *****************************************************************************
@@ -34,7 +34,7 @@ section .text
         ;   Label: LAB_004bf445
     PUSH EBX                            ; 004bf446
     CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004bf447
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV ECX,dword ptr [0x01d22c98]      ; 004bf44c | DAT_01d22c98
     SUB EAX,ECX                         ; 004bf452
     MOV dword ptr [ESP + 0x10],EAX      ; 004bf454
@@ -53,8 +53,8 @@ section .text
     PUSH 0x5c39b0                       ; 004bf488
     MOV ESI,dword ptr [0x005f1690]      ; 004bf48d | g_CConsolePtr
     PUSH ESI                            ; 004bf493
-    CALL engine_console.cpp_FUN_00441ff0 ; 004bf494
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004bf494
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x14                        ; 004bf499
     POP EBX                             ; 004bf49c
     POP ESI                             ; 004bf49d

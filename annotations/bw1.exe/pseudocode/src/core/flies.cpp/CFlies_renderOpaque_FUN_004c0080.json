@@ -223,6 +223,32 @@
     },
     "pcode_op_count": 1418
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a70b0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004addd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cc300",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8893
+    },
+    "nocturne.exe": {
+      "addr": "0048f490",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8913
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -286,15 +312,15 @@
       "line": 43,
       "match": "(SMRGLVertex *)((int)pSVar6",
       "severity": "moderate",
-      "text": "pSVar6 = (SMRGLVertex *)((int)pSVar6 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar6 = (SMRGLVertex *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 44,
-      "match": "(SMRGLVertex *)((int)pSVar9",
+      "match": "(SMRGLVertex *)((int)pSVar8",
       "severity": "moderate",
-      "text": "pSVar9 = (SMRGLVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar8 = (SMRGLVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -342,7 +368,7 @@
       "line": 126,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "pSVar8 = DAT_00612560->vertex_buffer_ptr;",
+      "text": "vertices = DAT_00612560->vertex_buffer_ptr;",
       "type": "undefined_data"
     },
     {
@@ -382,23 +408,23 @@
       "line": 145,
       "match": "(SRenderVertex *)((int)pSVar7",
       "severity": "moderate",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 146,
-      "match": "(SRenderVertex *)((int)pSVar10",
+      "match": "(SRenderVertex *)((int)pSVar9",
       "severity": "moderate",
-      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 151,
-      "match": "(SRenderVertex *)((int)pSVar8",
+      "match": "(SRenderVertex *)((int)vertices",
       "severity": "moderate",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -406,7 +432,7 @@
       "line": 152,
       "match": "(SRenderVertex *)((int)pSVar7",
       "severity": "moderate",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -414,15 +440,15 @@
       "line": 43,
       "match": "(int)pSVar6",
       "severity": "moderate",
-      "text": "pSVar6 = (SMRGLVertex *)((int)pSVar6 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar6 = (SMRGLVertex *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 44,
-      "match": "(int)pSVar9",
+      "match": "(int)pSVar8",
       "severity": "moderate",
-      "text": "pSVar9 = (SMRGLVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar8 = (SMRGLVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
@@ -430,23 +456,23 @@
       "line": 145,
       "match": "(int)pSVar7",
       "severity": "moderate",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pSVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 146,
-      "match": "(int)pSVar10",
+      "match": "(int)pSVar9",
       "severity": "moderate",
-      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `vertices` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 151,
-      "match": "(int)pSVar8",
+      "match": "(int)vertices",
       "severity": "moderate",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar10 * -8 + 4);",
       "type": "pointer_truncation"
     },
     {
@@ -454,7 +480,7 @@
       "line": 152,
       "match": "(int)pSVar7",
       "severity": "moderate",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {

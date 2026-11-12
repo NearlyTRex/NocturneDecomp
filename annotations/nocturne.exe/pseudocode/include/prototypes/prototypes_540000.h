@@ -65,7 +65,7 @@ float __cdecl core_stranger_cpp_dotProduct1_FUN_00540970(CVector3f *a,CVector3f 
 void __cdecl core_stranger_cpp_divideVectorByScalar_FUN_005409a0(CVector3f *vector,float *divisor);
 float __cdecl core_stranger_cpp_dotProduct2_FUN_005409c0(CVector3f *a,CVector3f *b);
 void __cdecl core_stranger_cpp_setMatrixTranslation_FUN_005409f0(CMatrix3x4f *matrix,CVector3f *translation);
-void * __cdecl core_stranger_cpp_FUN_00540a10(void *ptr);
+void * __cdecl core_stranger_cpp_unusedGetPointerAt8_FUN_00540a10(void *ptr);
 int __cdecl core_stranger_cpp_isProcessDisabled_FUN_00540a20(CDemonActor *actor);
 int __cdecl core_stranger_cpp_getScaleY_FUN_00540a30(CDemonActor *actor);
 void __cdecl core_stranger_cpp_setWindVelocity_FUN_00540a40(CCloth *cloth_ptr,CVector3f *velocity);
@@ -345,6 +345,6 @@ int __cdecl core_vessel_cpp_CCryptVessel_canPickup_FUN_0054fbc0(CCryptVessel *th
 void __cdecl core_vessel_cpp_CCryptVessel_pickup_FUN_0054fc00(CCryptVessel *this_ptr,CDemonActor *carrier);
 void __cdecl core_vessel_cpp_CCryptVessel_onDropped_FUN_0054fc10(CCryptVessel *this_ptr,CVector3f *drop_position);
 CDemonActor * __cdecl core_vessel_cpp_CCryptVessel_getCarrier_FUN_0054fc30(CCryptVessel *this_ptr);
-int __cdecl core_vessel_cpp_CCryptVessel_FUN_0054fc40(CCryptVessel *actor);
+int __cdecl core_vessel_cpp_isStartLocTriggered_FUN_0054fc40(CCryptVessel *actor);
 void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(CCryptVessel *this_ptr,float delta_time);
 

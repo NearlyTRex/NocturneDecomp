@@ -15,7 +15,7 @@ CLightPis * core_lightpis_cpp_CLightPis_dtor_FUN_00502cc0(CLightPis *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CLightPisTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CLightPisTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

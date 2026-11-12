@@ -1,0 +1,212 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 73,
+    "complexity_score": 44,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 29,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 102
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d2c20",
+    "address_range": [
+      [
+        "004d2c20",
+        "004d2cce"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20",
+    "signature": "void __cdecl core_hero_cpp_CHero_releaseFromGrab_FUN_004d2c20(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004307c0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004307c0"
+    },
+    {
+      "addr": "004fc310",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_004fc310"
+    },
+    {
+      "addr": "004fc160",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004fc160"
+    },
+    {
+      "addr": "004fba50",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50"
+    },
+    {
+      "addr": "004fc350",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_004fc350"
+    },
+    {
+      "addr": "00441ff0",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441ff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c4cc5",
+      "name": "s_CHero_stopGettingGrabbed_005c4cc5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4cef",
+      "name": "s_GETGRABBED_005c4cef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4cfa",
+      "name": "s_STAND_005c4cfa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1690",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007f7ea4"
+    },
+    {
+      "addr": "0078a123",
+      "name": "DAT_0078a123",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007f7ea4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.140350877192983,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 5,
+      "COPY": 72,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 20,
+      "INT_AND": 31,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 24,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 12,
+      "INT_SUB": 26,
+      "INT_ZEXT": 4,
+      "LOAD": 10,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 24
+    },
+    "pcode_op_count": 293
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ceb80",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004eaf20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f29b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.86
+    },
+    "nocturne.exe": {
+      "addr": "004b4d50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.86
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_0078a123",
+      "severity": "mild",
+      "text": "if (((byte *)(this_ptr->base).base.validation_magic == &DAT_0078a123) &&",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 240,
+        "vtable_addr": "005e1534"
+      },
+      {
+        "class_name": "CPrye",
+        "offset": 240,
+        "vtable_addr": "005e3534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

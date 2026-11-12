@@ -11,15 +11,15 @@ void * __cdecl memset(void *dest,int value,ulong count);
 
 // Original: crt_memory.c___arrinit_FUN_005b7f5f
 // Address: 005b7f5f
-int __cdecl ::_arrinit(int param_1,uint param_2,int param_3);
+void * __cdecl ::_arrinit(void *array_start,int element_count,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c___vec_delete_FUN_005b7fa7
 // Address: 005b7fa7
-undefined4 * __cdecl ::_vec_delete(int param_1,undefined4 param_2);
+void * __cdecl ::_vec_delete(void *object_ptr,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c___arrfini_FUN_005b854f
 // Address: 005b854f
-undefined4 __cdecl ::_arrfini(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void * __cdecl ::_arrfini(void *obj_array,int obj_count,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c_malloc_FUN_005b8580
 // Address: 005b8580

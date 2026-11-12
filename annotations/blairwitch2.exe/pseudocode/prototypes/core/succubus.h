@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_succubus.cpp_factoryFuncSuccubus_FUN_0056f290
 // Address: 0056f290
-void factoryFuncSuccubus(void);
+CSuccubus * __cdecl factoryFuncSuccubus(void);
 
 // Original: core_succubus.cpp_CSuccubus_getActorType_FUN_0056f2b0
 // Address: 0056f2b0

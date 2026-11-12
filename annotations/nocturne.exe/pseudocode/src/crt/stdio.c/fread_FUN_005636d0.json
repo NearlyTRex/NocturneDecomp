@@ -38,15 +38,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f4f90",
-      "from_addr": "004f4faa",
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f4c80",
       "from_addr": "004f4ca2",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f4f90",
+      "from_addr": "004f4faa",
+      "name": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_004f4f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -124,13 +124,13 @@
     {
       "addr": "004a4170",
       "from_addr": "004a436d",
-      "name": "core_game.cpp_CGame_FUN_004a4170",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a57c0",
       "from_addr": "004a58ab",
-      "name": "core_game.cpp_CGame_FUN_004a57c0",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -359,7 +359,7 @@
       {
         "call_addr": "004a436d",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004a4170",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -488,6 +488,32 @@
       "SUBPIECE": 4
     },
     "pcode_op_count": 970
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b87c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c0b10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a3890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005fd990",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 20,

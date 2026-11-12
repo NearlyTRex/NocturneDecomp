@@ -15,7 +15,7 @@ void __watcallRegister endPeriod(void);
 
 // Original: wincore_winrun.cpp_getTime_FUN_005806a0
 // Address: 005806a0
-int getTime(void);
+int __cdecl getTime(void);
 
 // Original: wincore_winrun.cpp_clearKeypresses_FUN_00580770
 // Address: 00580770
@@ -31,7 +31,7 @@ int __cdecl wasKeyPressed(void);
 
 // Original: wincore_winrun.cpp_getValue_FUN_0058081c
 // Address: 0058081c
-undefined1 getValue(void);
+char __cdecl getValue(void);
 
 // Original: wincore_winrun.cpp_enqueueInput_FUN_00580830
 // Address: 00580830
@@ -75,11 +75,11 @@ void FUN_0058105e(void);
 
 // Original: wincore_winrun.cpp_winMain_FUN_00581080
 // Address: 00581080
-void winMain(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
+int __stdcall winMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 
-// Original: wincore_winrun.cpp_FUN_00581300
+// Original: wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_00581300
 // Address: 00581300
-void __cdecl FUN_00581300(char *message);
+void __cdecl displayMessageBoxAndQuit(char *message);
 
 // Original: wincore_winrun.cpp_FUN_00581360
 // Address: 00581360
@@ -119,7 +119,7 @@ void __cdecl sleep(double seconds);
 
 // Original: wincore_winrun.cpp_getComputerAndUserName_FUN_00581a9c
 // Address: 00581a9c
-void getComputerAndUserName(char *param_1);
+void __cdecl getComputerAndUserName(char *buffer);
 
 // Original: wincore_winrun.cpp_getRegistryStringValue_FUN_00581b70
 // Address: 00581b70

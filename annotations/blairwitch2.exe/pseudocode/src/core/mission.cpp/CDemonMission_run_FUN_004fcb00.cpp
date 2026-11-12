@@ -33,9 +33,10 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004fcb00(CDemonMission *this
     core_mission_cpp_FUN_004fc820(this_ptr);
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_004b6170(g_CGamePtr);
     this_ptr_00 = *(CHero **)(_DAT_01cedef4 * 4 + 0x1cedee4);
-    core_mission_cpp_FUN_004fc270(this_ptr,this_ptr_00);
+    core_mission_cpp_CDemonMission_removeActorFromList_FUN_004fc270
+              (this_ptr,(CDemonActor *)this_ptr_00);
     (*(((this_ptr_00->base).base.vtable._uh)->_uh).reset)(this_ptr_00);
-    core_mission_cpp_FUN_004fb450(this_ptr);
+    core_mission_cpp_CDemonMission_clearMissionData_FUN_004fb450(this_ptr);
     if ((iVar1 == 0) || (DAT_01d1c630 == '\0')) break;
     iVar1 = _stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
     bVar2 = iVar1 != 0;

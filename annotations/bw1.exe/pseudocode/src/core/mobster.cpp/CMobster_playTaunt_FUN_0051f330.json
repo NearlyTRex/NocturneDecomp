@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 87,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 58,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "warning_overlapping_globals"
     ],
-    "total_lines": 216
+    "total_lines": 217
   },
   "cross_references": [
     {
@@ -190,6 +190,26 @@
     },
     "pcode_op_count": 749
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00500370",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005279f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004dc940",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 140,
     "local_size": 132,
@@ -269,10 +289,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "line": 50,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->enemies + local_18),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + local_18),",
       "type": "pointer_cast"
     }
   ]

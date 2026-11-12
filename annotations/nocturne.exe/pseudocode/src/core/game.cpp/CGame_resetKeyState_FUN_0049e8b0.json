@@ -16,15 +16,15 @@
   },
   "cross_references": [
     {
-      "addr": "004a57c0",
-      "from_addr": "004a5b86",
-      "name": "core_game.cpp_CGame_FUN_004a57c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0049ec80",
       "from_addr": "0049ec86",
       "name": "core_game.cpp_CGame_processJoystickControls_FUN_0049ec80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a57c0",
+      "from_addr": "004a5b86",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -136,7 +136,7 @@
       {
         "call_addr": "004a5b86",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a57c0",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -147,7 +147,7 @@
       {
         "call_addr": "004a5d76",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a57c0",
+        "caller": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -256,6 +256,32 @@
       "STORE": 90
     },
     "pcode_op_count": 1134
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b7140",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004d0960",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b93e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004dbe60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,

@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 10,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 29
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
+    "suspect_types": [
+      "derived_field_index_pun"
+    ],
+    "total_lines": 32
   },
   "cross_references": [],
   "function": {
@@ -74,6 +76,20 @@
     },
     "pcode_op_count": 57
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dad80",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004fd5d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -90,5 +106,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "'pCVar1[4].actor_name + 8' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x8 = 0x568, which is exactly offsetof(CChain, dampen). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar1)->dampen (\u00a7de-pun/\u00a712). Ambiguous: CWeapon::ammo_count also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 8,
+      "severity": "moderate",
+      "text": "if ((pCVar1 != (CDemonActor *)0x0) && (200 < *(int *)(pCVar1[4].actor_name + 8))) {",
+      "type": "derived_field_index_pun"
+    }
+  ]
 }

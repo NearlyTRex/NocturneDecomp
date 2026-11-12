@@ -15,7 +15,7 @@ CExorcism * core_exorcism_cpp_CExorcism_dtor_FUN_0048b730(CExorcism *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CExorcismTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CExorcismTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

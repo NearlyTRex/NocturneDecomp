@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_emitter.cpp_factoryFuncEmitter_FUN_004879b0
 // Address: 004879b0
-void factoryFuncEmitter(void);
+CEmitter * __cdecl factoryFuncEmitter(void);
 
 // Original: core_emitter.cpp_CEmitter_getActorType_FUN_004879d0
 // Address: 004879d0
@@ -25,9 +25,9 @@ CEmitter * CEmitter::ctor(CEmitter *this_ptr);
 // Address: 00487bb0
 void __cdecl CEmitter::setup(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_FUN_00487c80
+// Original: core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_00487c80
 // Address: 00487c80
-void FUN_00487c80(int param_1);
+void __cdecl CEmitter::launchFireballAtHero(CEmitter *this_ptr);
 
 // Original: core_emitter.cpp_CEmitter_process_FUN_00487eb0
 // Address: 00487eb0

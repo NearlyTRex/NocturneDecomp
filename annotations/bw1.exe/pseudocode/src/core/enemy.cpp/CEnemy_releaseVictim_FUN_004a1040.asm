@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_FUN_0042d750
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH 0x5dcbab                       ; 004a105a | = "CEnemy::stopGrabbing %s\n"
     MOV ESI,dword ptr [0x00611100]      ; 004a105f | g_CConsolePtr
     PUSH ESI                            ; 004a1065 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 004a1066
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004a1066
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004a106b
     MOV EAX,dword ptr [EBX + 0xc1e8]    ; 004a106e
     PUSH EAX                            ; 004a1074

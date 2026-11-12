@@ -12,8 +12,8 @@
 ; undefined        Stack[-0x3c]:1  local_3c
 ;
 ; XREF[3]:
-;   cockpit_pkbitmap.cpp_FUN_0050f910 at 0050f93e
-;   cockpit_pkbitmap.cpp_FUN_0050f990 at 0050f9a1
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990 at 0050f9a1
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910 at 0050f93e
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004af920 at 004afa49
 ;
 ; Referenced Globals:

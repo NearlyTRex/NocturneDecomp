@@ -35,7 +35,7 @@ void shape_edittool_cpp_FUN_00484f20(int param_1,int param_2)
              *(uint *)(param_1 + 0x14),*(uint *)(param_1 + 0x18));
   pcVar8 = (char *)(param_1 + 0x1c);
   _DAT_01c35e4c = uVar2;
-  iVar3 = engine_font_cpp_FUN_004aaf00(_DAT_01c25590,pcVar8);
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,pcVar8);
   iVar4 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(_DAT_01c25590,pcVar8);
   iVar5 = engine_font_cpp_CBitFont_getCharYOffset_FUN_004ab590(_DAT_01c25590,0x41);
   iVar3 = *(int *)(param_1 + 0x18) +
@@ -111,7 +111,7 @@ LAB_004850e7:
     pbVar12 = pbVar12 + 2;
   } while (cVar1 != '\0');
   *pcVar8 = '\0';
-  iVar4 = engine_font_cpp_FUN_004aaf00(_DAT_01c25590,local_dc);
+  iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,(char *)local_dc);
   uVar6 = iVar4 + _DAT_01c25590->char_spacing;
   bVar13 = *(byte *)(param_1 + 0x1c);
   uVar7 = toupper((uint)*(byte *)(param_1 + 4));

@@ -18,7 +18,7 @@ void core_melee_cpp_FUN_004e7540(uint param_1)
   
   uStack_1c = 0;
   uStack_20 = 0;
-  while (iVar1 = _heapwalk(&uStack_20), iVar1 == 0) {
+  while (iVar1 = _heapwalk((WatcomHeapInfo *)&uStack_20), iVar1 == 0) {
     if (iStack_16 == 0) {
       uVar2 = 0x5c716f;
     }

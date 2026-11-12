@@ -56,7 +56,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0x26486c4] ; 00552bd0 | DAT_026485ac
     PUSH ESI                            ; 00552bd6
     CALL sound_sndwav.cpp_getWavOutDevice_FUN_005589e0 ; 00552bd7
-        ;   XREF to: 005589e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndwav.cpp_getWavOutDevice_FUN_005589e0()
+        ;   XREF to: 005589e0 (UNCONDITIONAL_CALL)  ; CWavOutDevice * sound_sndwav.cpp_getWavOutDevice_FUN_005589e0(UINT device_id)
     ADD ESP,0x4                         ; 00552bdc
     MOV [0x02648e80],EAX                ; 00552bdf | DAT_02648e80
     POP ESI                             ; 00552be4
@@ -73,7 +73,7 @@ section .text
     MOV EBP,dword ptr [EAX + 0x26486c4] ; 00552c05 | DAT_026485ac
     PUSH EBP                            ; 00552c0b
     CALL sound_snddx.cpp_getDirectSoundDevice_FUN_00557910 ; 00552c0c
-        ;   XREF to: 00557910 (UNCONDITIONAL_CALL)  ; undefined sound_snddx.cpp_getDirectSoundDevice_FUN_00557910()
+        ;   XREF to: 00557910 (UNCONDITIONAL_CALL)  ; CDirectSoundDevice * sound_snddx.cpp_getDirectSoundDevice_FUN_00557910(UINT device_id)
     ADD ESP,0x4                         ; 00552c11
     MOV [0x02648e80],EAX                ; 00552c14 | DAT_02648e80
     MOV EAX,[0x02648e80]                ; 00552c19 | DAT_02648e80

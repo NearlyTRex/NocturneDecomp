@@ -39,7 +39,7 @@
 ;   core_dpart.cpp_FUN_004673d0
 ;   core_main.c_FUN_004e4330
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0046b8f0
-;   engine_prim.c_FUN_00515b80
+;   engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_00515b80
 ;   engine_special.cpp_drawPolyList_FUN_00565c70
 ;
 ; *****************************************************************************
@@ -235,8 +235,8 @@ section .text
     MOV dword ptr [ESP + 0x10],EBP      ; 0046db39
     PUSH EBX                            ; 0046db3d
         ;   Label: LAB_0046db3d
-    CALL engine_prim.c_FUN_00515b80     ; 0046db3e
-        ;   XREF to: 00515b80 (UNCONDITIONAL_CALL)  ; int engine_prim.c_FUN_00515b80(SMRGLPrimitiveTriangle * triangle)
+    CALL engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_00515b80 ; 0046db3e
+        ;   XREF to: 00515b80 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_00515b80(SMRGLPrimitiveTriangle * triangle)
     ADD ESP,0x4                         ; 0046db43
     TEST EAX,EAX                        ; 0046db46
     JZ 0x0046db87                       ; 0046db48
@@ -278,7 +278,7 @@ section .text
     MOV EDI,dword ptr [ESI]             ; 0046dbaf
     PUSH EDI                            ; 0046dbb1
     CALL engine_special.cpp_drawPolyList_FUN_00565c70 ; 0046dbb2
-        ;   XREF to: 00565c70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList_FUN_00565c70()
+        ;   XREF to: 00565c70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00565c70(SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0046dbb7
     ADD ESP,0x18                        ; 0046dbba
     POP EBP                             ; 0046dbbd

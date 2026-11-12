@@ -11,7 +11,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_0047d1e0(CDraculaBride 
 {
   int iVar1;
   char (*string_buffer) [40];
-  CBodyPart **ppCVar2;
+  CBodyPart **actor_ptr;
   char *motion_name;
   int iStack_14;
   
@@ -66,11 +66,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_0047d1e0(CDraculaBride 
     iVar1 = 0;
     core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->fade_timer,"fadeTimer");
     if (0 < this_ptr->part_count) {
-      ppCVar2 = this_ptr->part_list;
+      actor_ptr = this_ptr->part_list;
       do {
         iVar1 = iVar1 + 1;
-        core_actor_cpp_archiveActor_FUN_0040b6f0(ppCVar2,"partList");
-        ppCVar2 = ppCVar2 + 1;
+        core_actor_cpp_archiveActor_FUN_0040b6f0((CDemonActor **)actor_ptr,"partList");
+        actor_ptr = actor_ptr + 1;
       } while (iVar1 < this_ptr->part_count);
     }
   }

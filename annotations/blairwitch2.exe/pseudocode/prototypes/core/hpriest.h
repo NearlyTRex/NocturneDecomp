@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_hpriest.cpp_factoryFuncHighPriestOfGardath_FUN_004d4750
 // Address: 004d4750
-void factoryFuncHighPriestOfGardath(void);
+CHighPriestOfGardath * __cdecl factoryFuncHighPriestOfGardath(void);
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_getActorType_FUN_004d4770
 // Address: 004d4770

@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   height
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_00480ca0 at 00480d03
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00480ca0 at 00480d03
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480

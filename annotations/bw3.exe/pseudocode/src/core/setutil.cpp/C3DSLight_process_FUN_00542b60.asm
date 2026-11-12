@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00542b60(int param_1,CDemonLight *param_2,int param_3)
+; void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00542b60(C3DSLight *this_ptr,CDemonLight *light,int apply_filter_flag)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light
+; int              Stack[0xc]:4   apply_filter_flag
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_process_FUN_00539c50 at 00539cef

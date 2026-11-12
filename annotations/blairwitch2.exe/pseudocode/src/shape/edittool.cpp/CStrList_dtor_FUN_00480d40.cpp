@@ -12,7 +12,7 @@ CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_00480d40(CStrList *this_
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CStrListTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CStrListTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

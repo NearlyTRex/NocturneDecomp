@@ -21,8 +21,8 @@
 ;   core_level.cpp_FUN_004e0000 at 004e005b
 ;   core_main.c_FUN_004e4400 at 004e4442
 ;   core_main.c_FUN_004e44e0 at 004e4ae6
-;   core_menu.cpp_FUN_004e7dc0 at 004e7ea6
 ;   core_menu.cpp_FUN_004e85a0 at 004e89f8
+;   core_menu.cpp_FUN_004e8f80 at 004e926d
 ;   ... and 28 more
 ;
 ; Referenced Globals:
@@ -80,7 +80,7 @@ section .text
     MOV ESI,dword ptr [0x0060b010]      ; 0057a8df | DAT_0060b010
     MOV dword ptr [0x02d0bcfc],ECX      ; 0057a8e5 | DAT_02d0bcfc
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0 ; 0057a8eb
-        ;   XREF to: 0057a3c0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0()
+        ;   XREF to: 0057a3c0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0()
     MOV EBX,dword ptr [0x005fba1c]      ; 0057a8f0 | DAT_005fba1c
     XOR ECX,ECX                         ; 0057a8f6
     TEST EBX,EBX                        ; 0057a8f8

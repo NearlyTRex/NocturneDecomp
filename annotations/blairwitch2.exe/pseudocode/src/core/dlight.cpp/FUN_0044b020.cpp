@@ -43,7 +43,8 @@ void __cdecl core_dlight_cpp_FUN_0044b020(CDemonLight *this_ptr)
   float local_74;
   CVector3f local_70;
   float local_64;
-  int aiStack_60 [5];
+  int aiStack_60 [2];
+  CVector3i local_58;
   CVector3i local_4c;
   CVector3i local_40;
   int local_34;
@@ -68,11 +69,11 @@ void __cdecl core_dlight_cpp_FUN_0044b020(CDemonLight *this_ptr)
        aiStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (DAT_0060b280,&local_70,translation);
-  engine_drender_cpp_FUN_0046b5c0(DAT_0060b280);
-  local_34 = aiStack_60[2];
-  local_30[(uint)bVar4 * -2] = aiStack_60[(uint)bVar4 * -2 + 3];
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0(DAT_0060b280,&local_58);
+  local_34 = local_58.x;
+  local_30[(uint)bVar4 * -2] = *(int *)((int)&local_58 + (uint)bVar4 * -8 + 4);
   local_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       aiStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+       *(int *)((int)&local_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   fVar2 = (float)_DAT_005cf467;
   local_18 = local_30[1];
   local_7c = (float)local_34 * fVar2;

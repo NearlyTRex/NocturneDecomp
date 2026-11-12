@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hero_cpp_FUN_004ec350(int param_1,float *param_2)
+; CCharacter * core_hero_cpp_FUN_004ec350(int param_1,float *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
@@ -75,7 +75,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x150ff0]  ; 004ec3cc
     PUSH EBX                            ; 004ec3d2
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004ec3d3
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004ec3d8
     TEST EAX,EAX                        ; 004ec3db
     JNZ 0x004ec4f7                      ; 004ec3dd
@@ -84,7 +84,7 @@ section .text
     PUSH ESI                            ; 004ec3e9
     PUSH EBX                            ; 004ec3ea
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004ec3eb
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004ec3f0
     TEST EAX,EAX                        ; 004ec3f3
     JZ 0x004ec404                       ; 004ec3f5
@@ -112,7 +112,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004ec438
     PUSH EAX                            ; 004ec43c
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 004ec43d
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004ec442
     MOV EDX,ESP                         ; 004ec445
     PUSH EDX                            ; 004ec447

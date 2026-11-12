@@ -45,7 +45,7 @@ section .text
     MOV EBX,ESI                         ; 0046d25b
     MOV ESI,ESP                         ; 0046d25d
     CALL engine_matrix.c_getCameraRotation_FUN_004e6ac0 ; 0046d25f
-        ;   XREF to: 004e6ac0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_getCameraRotation_FUN_004e6ac0()
+        ;   XREF to: 004e6ac0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraRotation_FUN_004e6ac0(CVector3i * output)
     MOV EAX,dword ptr [ESP]             ; 0046d264
     MOV dword ptr [ESP + 0x18],EAX      ; 0046d267
     FLD double ptr [0x005bc563]         ; 0046d26b | DAT_005bc563

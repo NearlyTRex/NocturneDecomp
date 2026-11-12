@@ -31,19 +31,18 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b6170(CGame *this_ptr)
   local_18 = 0;
   local_14 = 1;
   engine_console_cpp_CConsole_reset_FUN_004368b0(g_CConsolePtr);
-  engine_console_cpp_FUN_00436710(g_CConsolePtr,"Nocturne is alive and kicking\n");
-  engine_console_cpp_FUN_00436710
-            (g_CConsolePtr,"game.cpp built on %s %s\n\n","Oct 16 2000",
-             "23:00:23");
-  engine_console_cpp_FUN_00436710(g_CConsolePtr,"System RAM: %d\n",_DAT_02664638);
-  engine_console_cpp_FUN_00436710(g_CConsolePtr,"Swap file: %d\n",_DAT_0266463c);
-  engine_console_cpp_FUN_00436710(g_CConsolePtr,&DAT_005d7738);
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"Nocturne is alive and kicking\n")
+  ;
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"game.cpp built on %s %s\n\n");
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"System RAM: %d\n");
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"Swap file: %d\n");
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,&DAT_005d7738);
   shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004807e0(g_CEditorToolsPtr,local_11c)
   ;
-  engine_console_cpp_FUN_00436710(g_CConsolePtr,&DAT_005d773a,local_11c);
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,&DAT_005d773a);
   core_gmehook_cpp_CGameHook_printBanner_FUN_0059c2c0(g_CGameHookPtr);
   local_1c = (byte *)&local_89c;
-  engine_console_cpp_FUN_00436710(g_CConsolePtr,"ESP: %08X\n",&local_89c);
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"ESP: %08X\n");
   this_ptr->camera_view_index = 0;
   this_ptr->is_paused = 0;
   this_ptr->is_game_active = 1;

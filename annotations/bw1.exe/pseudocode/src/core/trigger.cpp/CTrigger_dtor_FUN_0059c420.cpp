@@ -13,7 +13,7 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_dtor_FUN_0059c420(CTrigger *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTriggerTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTriggerTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

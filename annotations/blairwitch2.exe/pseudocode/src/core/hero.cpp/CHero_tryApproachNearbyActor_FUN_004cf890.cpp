@@ -62,8 +62,8 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004cf890(CHero *this_
       local_94[(uint)bVar3 * -2 + 0xf] = local_94[(uint)bVar3 * -2 + 0x12];
       local_94[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x10] =
            local_94[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x13];
-      local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                  (local_58 - (this_ptr->base).base.orient.vec.y);
+      local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                           (local_58 - (this_ptr->base).base.orient.vec.y);
       if (ABS(local_18) <= (float)_DAT_005d9d24) {
         core_actor_cpp_FUN_00408de0(this_ptr_00,local_1c);
         local_44 = local_94[2];

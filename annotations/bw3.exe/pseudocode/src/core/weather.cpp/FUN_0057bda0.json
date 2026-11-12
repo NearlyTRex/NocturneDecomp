@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 461,
-    "complexity_score": 1048,
+    "complexity_score": 951,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 178,
-    "suspect_count": 82,
+    "pseudocode_lines": 176,
+    "suspect_count": 73,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -18,10 +18,9 @@
       "stack_ref",
       "undefined_data",
       "unnamed_param",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
-    "total_lines": 639
+    "total_lines": 637
   },
   "cross_references": [
     {
@@ -68,7 +67,7 @@
     {
       "addr": "004a3f20",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004a3f20"
+      "name": "core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20"
     },
     {
       "addr": "005609b0",
@@ -477,16 +476,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -494,7 +485,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "void core_weather_cpp_FUN_0057bda0(CWeather *param_1)",
@@ -502,7 +493,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 13,
       "match": "afStackY_103c",
       "severity": "moderate",
       "text": "float afStackY_103c [1014];",
@@ -510,7 +501,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->lightning_active != 0) {",
@@ -518,15 +509,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = param_1->flash_timer - local_30;",
+      "text": "fVar2 = param_1->flash_timer - local_38[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->flash_timer = fVar2;",
@@ -534,7 +525,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "(&g_CDemonCameraInstance,param_1->base_ambient);",
@@ -542,7 +533,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->lightning_active = 0;",
@@ -550,7 +541,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->flash_timer = 0.0;",
@@ -558,23 +549,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (local_2c < param_1->base_ambient) {",
+      "text": "if (local_38[3] < param_1->base_ambient) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = param_1->base_ambient;",
+      "text": "local_38[3] = param_1->base_ambient;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->lightning_active = 0;",
@@ -582,7 +573,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->flash_timer = 0.0;",
@@ -590,7 +581,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->weather_type != WEATHER_TYPE_RAIN) && (param_1->weather_type != 5)) {",
@@ -598,7 +589,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->weather_type != WEATHER_TYPE_RAIN) && (param_1->weather_type != 5)) {",
@@ -606,7 +597,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->weather_type != WEATHER_TYPE_NONE) {",
@@ -614,7 +605,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < (int)param_1[1].weather_type) {",
@@ -622,7 +613,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 63,
       "match": "DAT_02d0c208",
       "severity": "mild",
       "text": "local_1c = (float *)&DAT_02d0c208;",
@@ -630,7 +621,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 64,
       "match": "DAT_02d17d88",
       "severity": "mild",
       "text": "local_18 = (float *)&DAT_02d17d88;",
@@ -638,7 +629,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 67,
       "match": "DAT_02d0c20c",
       "severity": "mild",
       "text": "*(float *)(&DAT_02d0c20c + iVar4) =",
@@ -646,7 +637,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(&DAT_02d0c20c + iVar4) - param_1->particle_speed * local_20;",
@@ -654,7 +645,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 68,
       "match": "DAT_02d0c20c",
       "severity": "mild",
       "text": "*(float *)(&DAT_02d0c20c + iVar4) - param_1->particle_speed * local_20;",
@@ -662,7 +653,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "EVar1 = param_1->weather_type;",
@@ -670,7 +661,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 73,
       "match": "DAT_02d17d88",
       "severity": "mild",
       "text": "*(float *)(&DAT_02d17d88 + iVar4) =",
@@ -678,7 +669,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 74,
       "match": "DAT_02d17d88",
       "severity": "mild",
       "text": "local_14 * local_20 + *(float *)(&DAT_02d17d88 + iVar4);",
@@ -686,7 +677,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 77,
       "match": "DAT_02d17d90",
       "severity": "mild",
       "text": "*(float *)(&DAT_02d17d90 + iVar4) =",
@@ -694,7 +685,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 78,
       "match": "DAT_02d17d90",
       "severity": "mild",
       "text": "local_14 * local_20 + *(float *)(&DAT_02d17d90 + iVar4);",
@@ -702,39 +693,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 88,
+      "line": 83,
       "match": "&stack0xffffffb0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar5 * -8) =",
+      "text": "*(float *)((int)&stack0xffffffb0 + (uint)bVar5 * -8) = local_38[(uint)bVar5 * -2];",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 89,
-      "match": "&stack0xffffffc8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar5 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 90,
+      "line": 84,
       "match": "&stack0xffffffb4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 91,
-      "match": "&stack0xffffffcc",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "text": "*(float *)((int)&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 90,
       "match": "DAT_02d0c20c",
       "severity": "mild",
       "text": "if (*(float *)(&DAT_02d0c20c + iVar4) < *(float *)(local_24 + 0x2d1db48)) {",
@@ -742,7 +717,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 91,
       "match": "DAT_02d0c208",
       "severity": "mild",
       "text": "if (&DAT_02d0c208 + iVar4 != &DAT_02d11fc8 + iVar4) {",
@@ -750,7 +725,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 91,
       "match": "DAT_02d11fc8",
       "severity": "mild",
       "text": "if (&DAT_02d0c208 + iVar4 != &DAT_02d11fc8 + iVar4) {",
@@ -758,7 +733,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 92,
       "match": "DAT_02d0c208",
       "severity": "mild",
       "text": "*(uint *)(&DAT_02d0c208 + iVar4) = *(uint *)(&DAT_02d11fc8 + iVar4);",
@@ -766,7 +741,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 92,
       "match": "DAT_02d11fc8",
       "severity": "mild",
       "text": "*(uint *)(&DAT_02d0c208 + iVar4) = *(uint *)(&DAT_02d11fc8 + iVar4);",
@@ -774,7 +749,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 93,
       "match": "DAT_02d0c20c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_02d0c20c + iVar4) = *(uint *)(&DAT_02d11fcc + iVar4);",
@@ -782,7 +757,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 93,
       "match": "DAT_02d11fcc",
       "severity": "mild",
       "text": "*(uint *)(&DAT_02d0c20c + iVar4) = *(uint *)(&DAT_02d11fcc + iVar4);",
@@ -790,7 +765,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 94,
       "match": "DAT_02d0c210",
       "severity": "mild",
       "text": "*(uint *)(&DAT_02d0c210 + iVar4) = *(uint *)(&DAT_02d11fd0 + iVar4);",
@@ -798,7 +773,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 94,
       "match": "DAT_02d11fd0",
       "severity": "mild",
       "text": "*(uint *)(&DAT_02d0c210 + iVar4) = *(uint *)(&DAT_02d11fd0 + iVar4);",
@@ -806,7 +781,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 96,
       "match": "DAT_02cfd900",
       "severity": "mild",
       "text": "if (local_18 != (float *)&DAT_02cfd900) {",
@@ -814,7 +789,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->weather_type == WEATHER_TYPE_RAIN) || (param_1->weather_type == 5)) {",
@@ -822,7 +797,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->weather_type == WEATHER_TYPE_RAIN) || (param_1->weather_type == 5)) {",
@@ -830,79 +805,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 103,
       "match": "DAT_02d0c208",
       "severity": "mild",
-      "text": "local_48 = *(uint *)(&DAT_02d0c208 + iVar4);",
+      "text": "local_48.x = *(float *)(&DAT_02d0c208 + iVar4);",
       "type": "undefined_data"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 110,
-      "match": "&stack0xffffffbc",
-      "severity": "moderate",
-      "text": "(&stack0xffffffbc)[(uint)bVar5 * 0xfffffffe] =",
-      "type": "stack_ref"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 105,
       "match": "DAT_02d0c20c",
       "severity": "mild",
-      "text": "(float)*(uint *)(&DAT_02d0c20c + (uint)bVar5 * -8 + iVar4);",
+      "text": "*(uint *)(&DAT_02d0c20c + (uint)bVar5 * -8 + iVar4);",
       "type": "undefined_data"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 112,
-      "match": "&stack0xffffffc0",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
-      "type": "stack_ref"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 108,
       "match": "DAT_02d0c20c",
       "severity": "mild",
       "text": "((int)(&DAT_02d0c20c + (uint)bVar5 * -8 + iVar4) + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "undefined_data"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 116,
-      "match": "&stack0xffffffb8",
-      "severity": "moderate",
-      "text": "core_fire_cpp_FUN_004a3f20(0x01C73654,&stack0xffffffb8,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 117,
-      "match": "&stack0xffffffb8",
-      "severity": "moderate",
-      "text": "core_fire_cpp_FUN_004a3f20(0x01C73654,&stack0xffffffb8,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 118,
-      "match": "&stack0xffffffb8",
-      "severity": "moderate",
-      "text": "core_fire_cpp_FUN_004a3f20(0x01C73654,&stack0xffffffb8,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 119,
-      "match": "&stack0xffffffb8",
-      "severity": "moderate",
-      "text": "core_fire_cpp_FUN_004a3f20(0x01C73654,&stack0xffffffb8,0);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 125,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_28 < (int)param_1[1].weather_type);",
@@ -910,7 +837,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 129,
+      "line": 127,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->weather_type != WEATHER_TYPE_RAIN) && (param_1->weather_type != 5)) {",
@@ -918,7 +845,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 129,
+      "line": 127,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->weather_type != WEATHER_TYPE_RAIN) && (param_1->weather_type != 5)) {",
@@ -926,7 +853,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 130,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = param_1->lightning_countdown - local_20;",
@@ -934,7 +861,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 131,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->lightning_countdown = fVar2;",
@@ -942,7 +869,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 133,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = param_1->sub_flash_interval - local_20;",
@@ -950,7 +877,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 136,
+      "line": 134,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->sub_flash_interval = fVar2;",
@@ -958,7 +885,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 139,
+      "line": 137,
       "match": "param_1",
       "severity": "mild",
       "text": "(0.1,param_1->max_flash_interval);",
@@ -966,7 +893,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 141,
+      "line": 139,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->sub_flash_interval = local_14;",
@@ -974,7 +901,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 145,
+      "line": 143,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->lightning_active = 1;",
@@ -982,7 +909,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 148,
+      "line": 146,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->base_ambient = local_58;",
@@ -990,7 +917,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 156,
+      "line": 154,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->flash_timer = local_14;",
@@ -998,7 +925,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 160,
       "match": "param_1",
       "severity": "mild",
       "text": "else if ((param_1->weather_type == 5) ||",
@@ -1006,7 +933,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 162,
       "match": "param_1",
       "severity": "mild",
       "text": "core_weather_cpp_FUN_0057c2e0(param_1,0x3dcccccd,1);",
@@ -1014,7 +941,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 167,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
       "text": "core_weather_cpp_CWeather_createThunder_FUN_0057c840(param_1);",
@@ -1022,7 +949,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 171,
+      "line": 169,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->weather_type != 5) {",
@@ -1030,7 +957,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 172,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x02CF5680,param_1,\"rain.wav @ .1\");",
@@ -1038,7 +965,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 178,
+      "line": 176,
       "match": "param_1",
       "severity": "mild",
       "text": "core_sound_cpp_CSound_playSound_FUN_005609b0(0x02CF5680,param_1,\"rain.wav @ .5\");",
@@ -1046,39 +973,39 @@
     },
     {
       "description": "Pointer value `&stack0xffffffb0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 88,
+      "line": 83,
       "match": "(int)&stack0xffffffb0",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar5 * -8) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&stack0xffffffc8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 89,
-      "match": "(int)&stack0xffffffc8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar5 * -8);",
+      "text": "*(float *)((int)&stack0xffffffb0 + (uint)bVar5 * -8) = local_38[(uint)bVar5 * -2];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffffb4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 90,
+      "line": 84,
       "match": "(int)&stack0xffffffb4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
+      "text": "*(float *)((int)&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&stack0xffffffcc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 91,
-      "match": "(int)&stack0xffffffcc",
+      "description": "Pointer value `&local_48` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 104,
+      "match": "(int)&local_48",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "text": "*(uint *)((int)&local_48 + (uint)bVar5 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_48` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)&local_48",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_48 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `(&DAT_02d0c20c + (uint)bVar5 * -8 + iVar4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 114,
+      "line": 108,
       "match": "(int)(&DAT_02d0c20c + (uint)bVar5 * -8 + iVar4)",
       "severity": "moderate",
       "text": "((int)(&DAT_02d0c20c + (uint)bVar5 * -8 + iVar4) + ((uint)bVar5 * -2 + 1) * 4);",
@@ -1086,7 +1013,7 @@
     },
     {
       "description": "Raw hex address 0x1c6e360 assigned to bare local `this_ptr`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 140,
+      "line": 138,
       "match": "0x1c6e360",
       "severity": "moderate",
       "text": "this_ptr = 0x01C6E360;",
@@ -1094,34 +1021,34 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 88,
+      "line": 83,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar5 * -8) =",
+      "text": "*(float *)((int)&stack0xffffffb0 + (uint)bVar5 * -8) = local_38[(uint)bVar5 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 89,
+      "line": 84,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar5 * -8);",
+      "text": "*(float *)((int)&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 90,
+      "line": 104,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
+      "text": "*(uint *)((int)&local_48 + (uint)bVar5 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 91,
+      "line": 106,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "text": "*(uint *)((int)&local_48 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {

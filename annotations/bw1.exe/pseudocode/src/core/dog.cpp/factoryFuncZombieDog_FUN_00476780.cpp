@@ -1,20 +1,20 @@
 // Name: core_dog.cpp_factoryFuncZombieDog_FUN_00476780
 // Address: 00476780
 // Address Range: [[00476780, 0047679b]]
-// Convention: unknown
-// Signature: void core_dog_cpp_factoryFuncZombieDog_FUN_00476780(void)
+// Convention: __cdecl
+// Signature: CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_00476780(void)
 
 #include "nocturne.h"
 
-void core_dog_cpp_factoryFuncZombieDog_FUN_00476780(void)
+CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_00476780(void)
 
 {
-  CZombieDog *this_ptr;
+  CZombieDog *pCVar1;
   
-  this_ptr = (CZombieDog *)operator_new(0xc274);
-  if (this_ptr == (CZombieDog *)0x0) {
-    return;
+  pCVar1 = (CZombieDog *)operator_new(0xc274);
+  if (pCVar1 == (CZombieDog *)0x0) {
+    return (CZombieDog *)0x0;
   }
-  core_dog_cpp_CZombieDog_ctor_FUN_004767b0(this_ptr);
-  return;
+  pCVar1 = core_dog_cpp_CZombieDog_ctor_FUN_004767b0(pCVar1);
+  return pCVar1;
 }

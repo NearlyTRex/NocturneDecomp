@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 290,
+    "complexity_score": 108,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 85,
-    "suspect_count": 19,
+    "pseudocode_lines": 83,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "unnamed_param"
+      "pointer_truncation"
     ],
-    "total_lines": 280
+    "total_lines": 278
   },
   "cross_references": [
     {
@@ -34,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_generateFogGrid_FUN_0043af70",
-    "signature": "void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0043af70(void *param_1)"
+    "signature": "void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0043af70(SFogGrid *fog)"
   },
   "function_calls": [
     {
@@ -69,11 +67,11 @@
         "stack_params": 0
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "low",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 0,
-    "matches_declared": true
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.184357541899441,
@@ -108,11 +106,37 @@
     },
     "pcode_op_count": 1107
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0044c610",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00448750",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0044bba0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0043fa50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 80,
+    "frame_size": 84,
     "local_size": 80,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -219,160 +243,31 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "fog",
+        "offset": 4,
+        "size": 4,
+        "type": "SFogGrid *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0043af70(void *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "memset(param_1,0,0x1000);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(byte *)((int)param_1",
+      "description": "Pointer value `pcVar4` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(uint)pcVar4",
       "severity": "moderate",
-      "text": "puVar9 = (byte *)((int)param_1 + iVar11 * 0x10 + local_3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar9 = (byte *)((int)param_1 + iVar11 * 0x10 + local_3c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(byte *)(iVar11 * 0x10 + iVar7 + (int)param_1",
-      "severity": "moderate",
-      "text": "puVar5 = (byte *)(iVar11 * 0x10 + iVar7 + (int)param_1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar5 = (byte *)(iVar11 * 0x10 + iVar7 + (int)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_40 = (byte *)((local_14 + 1 & 0xf) + local_1c + (int)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pbVar8 = (byte *)((local_30 & 0xf) + local_1c + (int)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_4c = (byte *)(local_14 + (local_20 + 1U & 0xf) * 0x10 + (int)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_48 = (byte *)(local_14 + (local_24 & 0xf) * 0x10 + (int)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(byte *)(local_14 + local_1c + (int)param_1",
-      "severity": "moderate",
-      "text": "pbVar6 = (byte *)(local_14 + local_1c + (int)param_1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pbVar6 = (byte *)(local_14 + local_1c + (int)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(byte *)((int)param_1",
-      "severity": "moderate",
-      "text": "(uint)*(byte *)((int)param_1 + local_14 + local_1c + uVar3 * 0x100) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(uint)*(byte *)((int)param_1 + local_14 + local_1c + uVar3 * 0x100) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(byte *)((int)param_1",
-      "severity": "moderate",
-      "text": "(uint)*(byte *)((int)param_1 + local_14 + local_1c + (uVar10 & 0xf) * 0x100",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(uint)*(byte *)((int)param_1 + local_14 + local_1c + (uVar10 & 0xf) * 0x100",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 86,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dcamera_cpp_resetFogSamplingOffset_FUN_0043af40(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `puVar4` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
-      "match": "(uint)puVar4",
-      "severity": "moderate",
-      "text": "local_14 = (uint)puVar4 ^ (uint)puVar9;",
+      "text": "local_14 = (uint)pcVar4 ^ (uint)pcVar7;",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `puVar9` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
-      "match": "(uint)puVar9",
+      "description": "Pointer value `pcVar7` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(uint)pcVar7",
       "severity": "moderate",
-      "text": "local_14 = (uint)puVar4 ^ (uint)puVar9;",
+      "text": "local_14 = (uint)pcVar4 ^ (uint)pcVar7;",
       "type": "pointer_truncation"
     }
   ]

@@ -11,7 +11,7 @@ void __cdecl staticInit(void);
 
 // Original: core_baron.cpp_factoryFuncBaron_FUN_0040f660
 // Address: 0040f660
-void factoryFuncBaron(void);
+CBaron * __cdecl factoryFuncBaron(void);
 
 // Original: core_baron.cpp_CBaron_getActorType_FUN_0040f680
 // Address: 0040f680
@@ -71,7 +71,7 @@ void __cdecl CBaron::drawWeapon(CBaron *this_ptr,int drawn);
 
 // Original: core_baron.cpp_factoryFuncBaronWeapon_FUN_004108b0
 // Address: 004108b0
-void factoryFuncBaronWeapon(void);
+CBaronWeapon * __cdecl factoryFuncBaronWeapon(void);
 
 // Original: core_baron.cpp_CBaronWeapon_getActorType_FUN_004108d0
 // Address: 004108d0

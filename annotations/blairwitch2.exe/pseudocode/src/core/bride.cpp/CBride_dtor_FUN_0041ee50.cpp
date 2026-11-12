@@ -18,7 +18,7 @@ CBride * core_bride_cpp_CBride_dtor_FUN_0041ee50(CBride *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBrideTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBrideTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

@@ -10,6 +10,6 @@ void core_terrain_cpp_FUN_0057b9a0(void)
 
 {
   support_trstream_cpp_COutStreamDebug_ctor_FUN_0057e1c0(&g_COutStreamDebugInstance);
-  _atexit();
+  _atexit(&WatcomStaticDestructorNode_0061e46c);
   return;
 }

@@ -18,7 +18,7 @@ CKedward * core_kedward_cpp_CKedward_dtor_FUN_00591ab0(CKedward *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CKedwardTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CKedwardTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

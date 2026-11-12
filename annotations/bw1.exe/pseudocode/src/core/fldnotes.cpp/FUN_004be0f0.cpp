@@ -32,19 +32,19 @@ void core_fldnotes_cpp_FUN_004be0f0(int param_1)
   local_18 = 0;
   if (*(int *)(param_1 + 0x40) == 0) {
     pCVar7 = CAlphaBitmap_ARRAY_01cc7ba8;
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7b94);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7b94);
     do {
-      engine_alphabit_cpp_FUN_0040d1c0(pCVar7);
+      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(pCVar7);
       pCVar7 = pCVar7 + 1;
     } while (pCVar7 != &CAlphaBitmap_01cc7c20);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c20);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c34);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c48);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c5c);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c84);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c98);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7cac);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7cc0);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c20);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c34);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c48);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c5c);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c84);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c98);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7cac);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7cc0);
     DAT_0061d2e0 = 1;
     _DAT_01cc7f1c = 0;
     DAT_0061d310 = 0xffffffff;
@@ -54,19 +54,19 @@ void core_fldnotes_cpp_FUN_004be0f0(int param_1)
   }
   if (DAT_0061d2e0 != 0) {
     pCVar7 = CAlphaBitmap_ARRAY_01cc7ba8;
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7b94);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7b94);
     do {
-      engine_alphabit_cpp_FUN_0040d1c0(pCVar7);
+      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(pCVar7);
       pCVar7 = pCVar7 + 1;
     } while (pCVar7 != &CAlphaBitmap_01cc7c20);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c20);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c34);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c48);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c5c);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c84);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7c98);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7cac);
-    engine_alphabit_cpp_FUN_0040d1c0(&CAlphaBitmap_01cc7cc0);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c20);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c34);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c48);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c5c);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c84);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7c98);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7cac);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(&CAlphaBitmap_01cc7cc0);
     DAT_0061d310 = -1;
     DAT_0061d2e0 = 1;
     _DAT_01cc7f1c = 0;

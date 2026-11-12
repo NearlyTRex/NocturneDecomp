@@ -8,7 +8,7 @@
 ; undefined        Stack[-0x68]:1  local_68
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_00559520 at 0055963b
+;   sound_sndmain.cpp_writeIni_FUN_00559520 at 0055963b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c58bd

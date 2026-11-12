@@ -134,7 +134,7 @@ section .text
     PUSH EBX                            ; 0046c84e
         ;   Label: LAB_0046c84e
     CALL engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0051ca00 ; 0046c84f
-        ;   XREF to: 0051ca00 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0051ca00()
+        ;   XREF to: 0051ca00 (UNCONDITIONAL_CALL)  ; int engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0051ca00(STrianglePackedIndices * triangle)
     ADD ESP,0x4                         ; 0046c854
     TEST EAX,EAX                        ; 0046c857
     JNZ 0x0046c790                      ; 0046c859

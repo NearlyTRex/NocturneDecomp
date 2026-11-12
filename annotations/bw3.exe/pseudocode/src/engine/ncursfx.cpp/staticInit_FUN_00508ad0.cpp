@@ -10,6 +10,6 @@ void engine_ncursfx_cpp_staticInit_FUN_00508ad0(void)
 
 {
   engine_ncursfx_cpp_CMouse_ctor_FUN_00508af0(&g_CMouseInstance);
-  _atexit();
+  _atexit(&g_CMouseDestructorNode);
   return;
 }

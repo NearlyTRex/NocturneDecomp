@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00463e30
-;   core_dlight.cpp_FUN_00462670
+;   core_dlight.cpp_CDemonLight_free_FUN_00462670
 ;   core_main.c_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_memory.c_malloc_FUN_005c08d0
@@ -38,8 +38,8 @@ section .text
     SUB ESP,0x4                         ; 00462592
     MOV EBX,dword ptr [ESP + 0x10]      ; 00462595
     PUSH EBX                            ; 00462599
-    CALL core_dlight.cpp_FUN_00462670   ; 0046259a
-        ;   XREF to: 00462670 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_00462670()
+    CALL core_dlight.cpp_CDemonLight_free_FUN_00462670 ; 0046259a
+        ;   XREF to: 00462670 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_free_FUN_00462670(CDemonLight * this_ptr)
     MOV EDX,dword ptr [EBX + 0x1cc0]    ; 0046259f
     IMUL EDX,dword ptr [EBX + 0x1cc4]   ; 004625a5
     ADD EDX,EDX                         ; 004625ac

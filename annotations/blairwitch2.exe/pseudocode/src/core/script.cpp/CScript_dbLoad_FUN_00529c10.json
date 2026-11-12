@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 319,
-    "complexity_score": 258,
+    "complexity_score": 259,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 123,
+    "pseudocode_lines": 124,
     "suspect_count": 10,
     "suspect_types": [
       "alloc_magic_size",
@@ -18,7 +18,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 442
+    "total_lines": 443
   },
   "cross_references": [
     {
@@ -318,6 +318,32 @@
     },
     "pcode_op_count": 1040
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0054af20",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00530610",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005603c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7175
+    },
+    "nocturne.exe": {
+      "addr": "00504e70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7235
+    }
+  },
   "stack_frame": {
     "frame_size": 832,
     "local_size": 824,
@@ -415,23 +441,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 28,
       "match": "DAT_005e4ea3",
       "severity": "mild",
-      "text": "p_Var2 = engine_dosio_cpp_FUN_00460c70(\"world\",filename,&DAT_005e4ea3);",
+      "text": "file_handle = engine_dosio_cpp_FUN_00460c70(\"world\",filename,&DAT_005e4ea3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 37,
       "match": "DAT_005e4ed3",
       "severity": "mild",
-      "text": "_fscanf(p_Var2,&DAT_005e4ed3);",
+      "text": "_fscanf(file_handle,&DAT_005e4ed3);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 124,
       "match": "(SDialogEntry *)((int)pSVar4",
       "severity": "moderate",
       "text": "pSVar4 = (SDialogEntry *)((int)pSVar4 + (uint)bVar7 * -8 + 4);",
@@ -439,7 +465,7 @@
     },
     {
       "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 123,
+      "line": 124,
       "match": "(int)pSVar4",
       "severity": "moderate",
       "text": "pSVar4 = (SDialogEntry *)((int)pSVar4 + (uint)bVar7 * -8 + 4);",
@@ -447,7 +473,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 76,
+      "line": 77,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -455,7 +481,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 98,
+      "line": 99,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -463,7 +489,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 120,
+      "line": 121,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x89; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -471,7 +497,7 @@
     },
     {
       "description": "Allocation size hardcodes 0x226 == sizeof(SDialogEntry). Replace the magic with sizeof(SDialogEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 111,
+      "line": 112,
       "match": "(SDialogEntry*) alloc stride 0x226",
       "severity": "moderate",
       "text": "(SDialogEntry *)realloc(this_ptr->dialog_entries,iVar3 * 0x226)",

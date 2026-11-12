@@ -1,7 +1,7 @@
 [
   {
     "addr":"00561713",
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "data_refs":[
       "00403b5a",
       "00403c02",
@@ -77,10 +77,36 @@
     "instructions":509,
     "method":"renderMMXPerspectiveScanline16",
     "name":"engine_special.cpp_renderMMXPerspectiveScanline16_FUN_00561713",
+    "params":[
+      {
+        "name":"left_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_vertex",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"engine/special.cpp",
@@ -129,10 +155,21 @@
     "instructions":5,
     "method":"_atexit",
     "name":"crt_stdlib.c__atexit_FUN_005a3e13",
+    "params":[
+      {
+        "name":"exit_node",
+        "type":{
+          "header":"watcom",
+          "kind":"system",
+          "name":"WatcomStaticDestructorNode",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"crt/stdlib.c",

@@ -17,7 +17,7 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_00449d90(CDemonLight *this_ptr
   int iVar4;
   float10 fVar5;
   
-  core_dlight_cpp_FUN_00449e70(this_ptr);
+  core_dlight_cpp_CDemonLight_free_FUN_00449e70(this_ptr);
   pvVar1 = malloc
                      (this_ptr->shadow_map_width * this_ptr->shadow_map_height * 2 + 0x210);
   this_ptr->shadow_buffer_raw = pvVar1;

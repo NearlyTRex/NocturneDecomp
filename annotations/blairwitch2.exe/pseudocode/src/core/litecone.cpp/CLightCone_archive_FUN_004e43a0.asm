@@ -35,13 +35,13 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 004e43b3
     PUSH EAX                            ; 004e43b9
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 004e43ba
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e43bf
     PUSH 0x5dc11e                       ; 004e43c2 | = "falloff"
     LEA EAX,[EBX + 0x2b8]               ; 004e43c7
     PUSH EAX                            ; 004e43cd
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 004e43ce
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x00617e68]      ; 004e43d3 | g_CLightConeClassVersion
     ADD ESP,0x8                         ; 004e43d9
     CMP EDX,0x2                         ; 004e43dc

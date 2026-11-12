@@ -29,7 +29,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(CPacked
   int iStack_14;
   
   bVar9 = 0;
-  cockpit_pkbitmap_cpp_CPackedBitmap_FUN_004f3f50(this_ptr);
+  cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_004f3f50(this_ptr);
   do {
     SVar1 = _fread(abStack_2c,0x1c,1,file_handle);
     if (SVar1 != 1) goto LAB_004f4d0f;

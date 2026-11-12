@@ -18,7 +18,7 @@ CBeast * core_beast_cpp_CBeast_dtor_FUN_00414900(CBeast *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBeastTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBeastTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

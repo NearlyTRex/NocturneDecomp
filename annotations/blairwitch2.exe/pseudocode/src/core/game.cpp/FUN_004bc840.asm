@@ -85,7 +85,7 @@ section .text
     XOR ESI,ESI                         ; 004bc8bc
     MOV [0x01c25590],EAX                ; 004bc8be | DAT_01c25590
     CALL crt_stdio.c_fopen_FUN_005b910c ; 004bc8c3
-        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005b910c()
+        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005b910c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004bc8c8
     TEST EAX,EAX                        ; 004bc8cb
     JZ 0x004bc8dd                       ; 004bc8cd

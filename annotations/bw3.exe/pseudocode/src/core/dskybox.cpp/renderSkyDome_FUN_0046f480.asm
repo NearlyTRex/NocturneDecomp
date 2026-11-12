@@ -346,7 +346,7 @@ section .text
     INC ESI                             ; 0046f7c7
     INC EBX                             ; 0046f7c8
     CALL core_dskybox.cpp_generateSkyDomeVertex_FUN_0046f340 ; 0046f7c9
-        ;   XREF to: 0046f340 (UNCONDITIONAL_CALL)  ; undefined core_dskybox.cpp_generateSkyDomeVertex_FUN_0046f340()
+        ;   XREF to: 0046f340 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_generateSkyDomeVertex_FUN_0046f340(SMRGLSkyTexture * sky_texture, int u_coord, int v_coord, int vertex_index)
     ADD ESP,0x10                        ; 0046f7ce
     CMP EBX,0x4                         ; 0046f7d1
     JL 0x0046f7c3                       ; 0046f7d4

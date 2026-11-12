@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 66,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 51,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 52,
+    "suspect_count": 2,
     "suspect_types": [
+      "derived_field_index_pun",
       "warning_overlapping_globals"
     ],
-    "total_lines": 184
+    "total_lines": 185
   },
   "cross_references": [],
   "function": {
@@ -140,6 +141,32 @@
     },
     "pcode_op_count": 460
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00492d10",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004ab6c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004beb40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9677
+    },
+    "nocturne.exe": {
+      "addr": "00482010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9677
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -171,6 +198,13 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "'(char *)&pCVar3[2].location.position.z' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.z) (0x28) + 0x0 = 0x2d8, which is exactly offsetof(CAmmo, weapon_class_name[4]). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar3)->weapon_class_name[4] (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name[4], CBattery::recharge_time, CBoxActor::loop_wav_name[4] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 35,
+      "severity": "moderate",
+      "text": "(g_CFilterFXPtr,(char *)&pCVar3[2].location.position.z);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

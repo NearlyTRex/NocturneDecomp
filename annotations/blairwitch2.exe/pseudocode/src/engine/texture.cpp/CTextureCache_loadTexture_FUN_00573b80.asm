@@ -110,7 +110,7 @@ section .text
     ADD ESP,0xc                         ; 00573c0e
     PUSH 0x2652eb8                      ; 00573c11
     CALL engine_dosio.cpp_findFile_FUN_00460980 ; 00573c16
-        ;   XREF to: 00460980 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_00460980()
+        ;   XREF to: 00460980 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_00460980(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 00573c1b
     TEST EAX,EAX                        ; 00573c1e
     JNZ 0x00573c45                      ; 00573c20
@@ -187,7 +187,7 @@ section .text
     ADD ESP,0xc                         ; 00573cd7
     PUSH 0x26530cc                      ; 00573cda
     CALL engine_dosio.cpp_findFile_FUN_00460980 ; 00573cdf
-        ;   XREF to: 00460980 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_00460980()
+        ;   XREF to: 00460980 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_00460980(SFoundFileInfo * context)
     MOV dword ptr [ESP + 0x1ac],EAX     ; 00573ce4
     ADD ESP,0x4                         ; 00573ceb
     LEA EDI,[ESP + 0x80]                ; 00573cee
@@ -223,7 +223,7 @@ section .text
     ADD ESP,0xc                         ; 00573d42
     PUSH 0x26532e0                      ; 00573d45
     CALL engine_dosio.cpp_findFile_FUN_00460980 ; 00573d4a
-        ;   XREF to: 00460980 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_00460980()
+        ;   XREF to: 00460980 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_00460980(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 00573d4f
     MOV ECX,dword ptr [ESP + 0x1a8]     ; 00573d52
     MOV ESI,EAX                         ; 00573d59

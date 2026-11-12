@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 91,
+    "complexity_score": 71,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 31,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -147,6 +147,32 @@
     },
     "pcode_op_count": 260
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004e6680",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004cf010",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ee1e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004b0820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 284,
     "local_size": 276,
@@ -191,15 +217,7 @@
       "line": 15,
       "match": "DAT_005d958a",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005d958a,&DAT_01cdde40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01cdde40",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005d958a,&DAT_01cdde40);",
+      "text": "_fscanf(file_handle,&DAT_005d958a);",
       "type": "undefined_data"
     },
     {
@@ -207,15 +225,7 @@
       "line": 25,
       "match": "DAT_005d958e",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,&DAT_005d958e,&DAT_01cbcaf8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_01cbcaf8",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,&DAT_005d958e,&DAT_01cbcaf8);",
+      "text": "iVar1 = _fscanf(file_handle,&DAT_005d958e);",
       "type": "undefined_data"
     }
   ]

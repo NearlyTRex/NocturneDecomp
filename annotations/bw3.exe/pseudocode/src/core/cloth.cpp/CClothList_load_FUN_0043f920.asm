@@ -20,8 +20,8 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_0043c220
+;   core_cloth.cpp_CCloth_load_FUN_0043c330
 ;   core_cloth.cpp_FUN_0043c280
-;   core_cloth.cpp_FUN_0043c330
 ;   core_main.c_FUN_004e4330
 ;   crt_memory.c_operator_new_FUN_005a3cb2
 ;   crt_unknown.c_FUN_005a30c4
@@ -79,8 +79,8 @@ section .text
     PUSH ECX                            ; 0043f991
     ADD EBX,0x4                         ; 0043f992
     INC EDI                             ; 0043f995
-    CALL core_cloth.cpp_FUN_0043c330    ; 0043f996
-        ;   XREF to: 0043c330 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c330()
+    CALL core_cloth.cpp_CCloth_load_FUN_0043c330 ; 0043f996
+        ;   XREF to: 0043c330 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_CCloth_load_FUN_0043c330(CCloth * this_ptr, char * filename)
     ADD ESI,0x28                        ; 0043f99b
     MOV EAX,dword ptr [EBP]             ; 0043f99e
     ADD ESP,0x8                         ; 0043f9a1

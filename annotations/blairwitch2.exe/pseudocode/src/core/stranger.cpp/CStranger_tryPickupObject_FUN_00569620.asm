@@ -46,7 +46,7 @@
 ;   core_motion.cpp_FUN_005038a0
 ;   core_skeleton.cpp_FUN_005469a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -596,8 +596,8 @@ section .text
     PUSH 0x5eba00                       ; 00569db1 | = "Rummaging %s\n"
     MOV ECX,dword ptr [0x00609ed0]      ; 00569db6 | g_CConsolePtr
     PUSH ECX                            ; 00569dbc | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 00569dbd
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 00569dbd
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
         ;   Label: LAB_00569dbd
     ADD ESP,0xc                         ; 00569dc2
     MOV EAX,dword ptr [EBP + 0x14]      ; 00569dc5
@@ -839,8 +839,8 @@ section .text
     PUSH 0x5eb9a7                       ; 0056a0da | = "%s out of reach - canceling pickup\n"
     MOV EDI,dword ptr [0x00609ed0]      ; 0056a0df | g_CConsolePtr
     PUSH EDI                            ; 0056a0e5 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0056a0e6
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0056a0e6
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0056a0eb
     MOV EAX,dword ptr [EBP + 0x14]      ; 0056a0ee
     MOV dword ptr [EAX + 0x25608],0x0   ; 0056a0f1

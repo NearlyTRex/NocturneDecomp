@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0
-;   engine_font.cpp_FUN_004aaf00
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH EAX                            ; 004a92b6
     MOV ESI,dword ptr [ESP + 0x20]      ; 004a92b7
     PUSH ESI                            ; 004a92bb
-    CALL engine_font.cpp_FUN_004aaf00   ; 004a92bc
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004a92bc
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004a92c1
     SAR EDX,0x1f                        ; 004a92c3
     SUB EAX,EDX                         ; 004a92c6

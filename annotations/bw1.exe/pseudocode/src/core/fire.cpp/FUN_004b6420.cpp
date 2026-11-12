@@ -13,6 +13,7 @@ void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param
 
 {
   float fVar1;
+  CCharacter *this_ptr;
   int iVar2;
   int iVar3;
   uint *puVar4;
@@ -21,7 +22,7 @@ void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param
   float10 fVar7;
   float afStackY_1148 [987];
   uint uStack_1a4;
-  CDemonSet *this_ptr;
+  CDemonSet *this_ptr_00;
   float local_168;
   float fStack_160;
   float fStack_15c;
@@ -191,9 +192,11 @@ void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param
           param_20 = local_104;
         }
         if ((param_25 == 0) && (param_10 != 0)) {
-          iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600();
-          if (iVar2 != 0) {
-            iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0xe0))();
+          this_ptr = (CCharacter *)
+                     core_actor_cpp_castToClassHash_FUN_0040c600
+                               (local_20,g_CCharacterClassInfo.name_hash);
+          if (this_ptr != (CCharacter *)0x0) {
+            iVar2 = (*(((this_ptr->base).vtable._uc)->_uc).isInvulnerable)(this_ptr);
             if (iVar2 != 0) {
               param_9 = iVar3;
               param_8 = 0xff;
@@ -287,10 +290,10 @@ void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param
     }
     afStack_94[0] = *param_3;
     local_f0[(uint)bVar6 * -2 + 0x18] = param_3[(uint)bVar6 * -2 + 1];
-    this_ptr = g_CDemonSetPtr;
+    this_ptr_00 = g_CDemonSetPtr;
     local_f0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x19] =
          (param_3 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
-    core_setcolid_cpp_CDemonSet_init_FUN_00559220(this_ptr);
+    core_setcolid_cpp_CDemonSet_init_FUN_00559220(this_ptr_00);
     core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,local_20);
     puVar4 = &param_4;
     puVar5 = (uint *)&stack0xfffffe30;

@@ -15,10 +15,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
   CVector3i *pCVar4;
   SMRGLPrimitiveTriangle *pSVar5;
   int iVar6;
-  int iVar7;
-  char *pcVar8;
-  int iVar9;
-  int iStack_18;
+  char *pcVar7;
+  int iVar8;
   int iStack_14;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
@@ -26,53 +24,36 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
   core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->tri_count,"triCount");
   core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->texture_count,"textureCount");
   if (DAT_007c3038 == 1) {
-    iVar9 = 0;
+    iVar8 = 0;
     core_bodypart_cpp_FUN_00418d00(this_ptr,this_ptr->vertex_count,this_ptr->tri_count);
     if (0 < this_ptr->vertex_count) {
-      iVar6 = 0;
       do {
-        iVar7 = (int)&this_ptr->vertices->x + iVar6;
-        iVar9 = iVar9 + 1;
-        iVar6 = iVar6 + 0xc;
-        _fscanf(DAT_007c3034,"%d,%d,%d\n",iVar7,iVar7 + 4,iVar7 + 8);
-      } while (iVar9 < this_ptr->vertex_count);
+        iVar8 = iVar8 + 1;
+        _fscanf(DAT_007c3034,"%d,%d,%d\n");
+      } while (iVar8 < this_ptr->vertex_count);
     }
-    iVar9 = 0;
+    iVar8 = 0;
     if (0 < this_ptr->tri_count) {
-      iStack_18 = 0;
       iVar6 = 0;
       do {
         pSVar5 = this_ptr->faces;
-        iVar9 = iVar9 + 1;
-        _fscanf(DAT_007c3034,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
-                   (int)this_ptr->face_texture_indices + iStack_18,
-                   (int)&pSVar5->vertices[0].vertex_index + iVar6,
-                   (int)&pSVar5->vertices[0].texture_u + iVar6,
-                   (int)&pSVar5->vertices[0].texture_v + iVar6,
-                   (int)&pSVar5->vertices[1].vertex_index + iVar6,
-                   (int)&pSVar5->vertices[1].texture_u + iVar6,
-                   (int)&pSVar5->vertices[1].texture_v + iVar6,
-                   (int)&pSVar5->vertices[2].vertex_index + iVar6,
-                   (int)&pSVar5->vertices[2].texture_u + iVar6,
-                   (int)&pSVar5->vertices[2].texture_v + iVar6);
+        iVar8 = iVar8 + 1;
+        _fscanf(DAT_007c3034,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n");
         *(uint *)((int)pSVar5->vertices + iVar6 + -0x14) = 3;
         iVar6 = iVar6 + 0x3c;
-        iStack_18 = iStack_18 + 4;
-      } while (iVar9 < this_ptr->tri_count);
+      } while (iVar8 < this_ptr->tri_count);
     }
-    iVar9 = 0;
+    iVar8 = 0;
     if (0 < this_ptr->texture_count) {
-      pcVar8 = this_ptr->textures[0].texture_name;
       do {
-        iVar9 = iVar9 + 1;
-        _fscanf(DAT_007c3034," \"%[^\"]\"\n",pcVar8);
-        pcVar8 = pcVar8 + 0x18;
-      } while (iVar9 < this_ptr->texture_count);
+        iVar8 = iVar8 + 1;
+        _fscanf(DAT_007c3034," \"%[^\"]\"\n");
+      } while (iVar8 < this_ptr->texture_count);
     }
     core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00419b90(this_ptr);
   }
   else {
-    iVar9 = 0;
+    iVar8 = 0;
     if (0 < this_ptr->vertex_count) {
       iVar6 = 0;
       do {
@@ -81,11 +62,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
         puVar3 = (uint *)((int)&pCVar4->y + iVar6);
         puVar1 = (uint *)((int)&pCVar4->x + iVar6);
         iVar6 = iVar6 + 0xc;
-        iVar9 = iVar9 + 1;
+        iVar8 = iVar8 + 1;
         FUN_005c03c0(DAT_007c3034,"\t%d,%d,%d\n",*puVar1,*puVar3,*puVar2);
-      } while (iVar9 < this_ptr->vertex_count);
+      } while (iVar8 < this_ptr->vertex_count);
     }
-    iVar9 = 0;
+    iVar8 = 0;
     if (0 < this_ptr->tri_count) {
       iStack_14 = 0;
       iVar6 = 0;
@@ -104,18 +85,18 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
                    *(uint *)((int)&pSVar5->vertices[2].texture_u + iStack_14),
                    *(uint *)((int)&pSVar5->vertices[2].texture_v + iStack_14));
         iVar6 = iVar6 + 4;
-        iVar9 = iVar9 + 1;
+        iVar8 = iVar8 + 1;
         iStack_14 = iStack_14 + 0x3c;
-      } while (iVar9 < this_ptr->tri_count);
+      } while (iVar8 < this_ptr->tri_count);
     }
-    iVar9 = 0;
+    iVar8 = 0;
     if (0 < this_ptr->texture_count) {
-      pcVar8 = this_ptr->textures[0].texture_name;
+      pcVar7 = this_ptr->textures[0].texture_name;
       do {
-        iVar9 = iVar9 + 1;
-        FUN_005c03c0(DAT_007c3034,"\t\"%s\"\n",pcVar8);
-        pcVar8 = pcVar8 + 0x18;
-      } while (iVar9 < this_ptr->texture_count);
+        iVar8 = iVar8 + 1;
+        FUN_005c03c0(DAT_007c3034,"\t\"%s\"\n",pcVar7);
+        pcVar7 = pcVar7 + 0x18;
+      } while (iVar8 < this_ptr->texture_count);
     }
   }
   if (1 < g_CBodyPartClassVersion) {

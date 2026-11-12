@@ -25,16 +25,16 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
   int iVar10;
   float *pfVar11;
   uint *puVar12;
-  C3DSCamera *pCVar13;
+  C3DSCamera *this_ptr_01;
   CRect *rect;
-  uint *puVar14;
-  byte bVar15;
+  uint *puVar13;
+  byte bVar14;
   float afStackY_10a8 [937];
   CBoundingBox3D *in_stack_fffffe08;
   int aiStack_1f0 [22];
   char local_198 [80];
   float local_148 [10];
-  float local_120 [12];
+  uint local_120 [12];
   uint auStack_f0 [4];
   uint local_e0 [2];
   byte auStack_d8 [24];
@@ -62,9 +62,9 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
   CDemonSet *local_20;
   int local_1c;
   CDemonActor *local_18;
-  int *piVar16;
+  int *piVar15;
   
-  bVar15 = 0;
+  bVar14 = 0;
   if ((index < 0) || (this_ptr->camera_count <= index)) {
     _DAT_01d71de0 = "..\\core\\set.cpp";
     _DAT_01d71de4 = 0x484;
@@ -120,22 +120,22 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
     } while (iVar3 < this_ptr->actor_count);
   }
   if (this_ptr->cameras[index].is_panning == 0) {
-    pCVar13 = this_ptr->cameras + index;
-    core_setutil_cpp_C3DSCamera_apply_FUN_00541fb0(pCVar13,&g_CDemonCameraInstance);
+    this_ptr_01 = this_ptr->cameras + index;
+    core_setutil_cpp_C3DSCamera_apply_FUN_00541fb0(this_ptr_01,&g_CDemonCameraInstance);
     pCVar2 = &(this_ptr->active_fog).scroll;
     if (this_ptr->cameras[index].use_global_fog == 0) {
-      (this_ptr->active_fog).color_index.r = (pCVar13->fog).color_index.r;
-      (this_ptr->active_fog).color_index.g = (pCVar13->fog).color_index.g;
-      pCVar9 = &(pCVar13->fog).scroll;
-      (this_ptr->active_fog).color_index.b = (pCVar13->fog).color_index.b;
+      (this_ptr->active_fog).color_index.r = (this_ptr_01->fog).color_index.r;
+      (this_ptr->active_fog).color_index.g = (this_ptr_01->fog).color_index.g;
+      pCVar9 = &(this_ptr_01->fog).scroll;
+      (this_ptr->active_fog).color_index.b = (this_ptr_01->fog).color_index.b;
       if (pCVar2 != pCVar9) {
         pCVar2->x = pCVar9->x;
-        (this_ptr->active_fog).scroll.y = (pCVar13->fog).scroll.y;
-        (this_ptr->active_fog).scroll.z = (pCVar13->fog).scroll.z;
+        (this_ptr->active_fog).scroll.y = (this_ptr_01->fog).scroll.y;
+        (this_ptr->active_fog).scroll.z = (this_ptr_01->fog).scroll.z;
       }
-      (this_ptr->active_fog).height_threshold = (pCVar13->fog).height_threshold;
-      (this_ptr->active_fog).density_multiplier = (pCVar13->fog).density_multiplier;
-      (this_ptr->active_fog).temperature = (pCVar13->fog).temperature;
+      (this_ptr->active_fog).height_threshold = (this_ptr_01->fog).height_threshold;
+      (this_ptr->active_fog).density_multiplier = (this_ptr_01->fog).density_multiplier;
+      (this_ptr->active_fog).temperature = (this_ptr_01->fog).temperature;
     }
     else {
       (this_ptr->active_fog).color_index.r = (this_ptr->scene_fog).color_index.r;
@@ -202,13 +202,13 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
           *(uint *)(&DAT_0203a59c + _DAT_0203a598 * 4) =
                *(uint *)(&DAT_0203a418 + iVar5 * 4);
           puVar8 = (uint *)((int)&pCVar4->lights[0].camera_light_bounds[0].x_min + local_2c);
-          puVar14 = (uint *)(iVar1 * 0x10 + 0x203a720 + (uint)bVar15 * -8);
-          puVar12 = puVar8 + (uint)bVar15 * -2 + 1;
+          puVar13 = (uint *)(iVar1 * 0x10 + 0x203a720 + (uint)bVar14 * -8);
+          puVar12 = puVar8 + (uint)bVar14 * -2 + 1;
           *(uint *)(iVar1 * 0x10 + 0x203a71c) = *puVar8;
-          puVar8 = puVar14 + (uint)bVar15 * -2 + 1;
-          *puVar14 = *puVar12;
-          *puVar8 = puVar12[(uint)bVar15 * -2 + 1];
-          puVar8[(uint)bVar15 * -2 + 1] = (puVar12 + (uint)bVar15 * -2 + 1)[(uint)bVar15 * -2 + 1];
+          puVar8 = puVar13 + (uint)bVar14 * -2 + 1;
+          *puVar13 = *puVar12;
+          *puVar8 = puVar12[(uint)bVar14 * -2 + 1];
+          puVar8[(uint)bVar14 * -2 + 1] = (puVar12 + (uint)bVar14 * -2 + 1)[(uint)bVar14 * -2 + 1];
           _DAT_0203a598 = _DAT_0203a598 + 1;
         }
         iVar3 = iVar3 + 1;
@@ -273,14 +273,14 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
   }
   core_sound_cpp_CSound_setReverbPreset_FUN_00560c30(0x02CF5680,iVar3);
   local_98 = g_CDemonCameraInstance.base.position.f.x;
-  afStack_bc[(uint)bVar15 * -2 + 10] =
-       *(float *)((int)&g_CDemonCameraInstance + (uint)bVar15 * -8 + 8);
-  afStack_bc[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0xb] =
-       *(float *)((uint)bVar15 * -8 + 0x2038f58 + (uint)bVar15 * -8);
+  afStack_bc[(uint)bVar14 * -2 + 10] =
+       *(float *)((int)&g_CDemonCameraInstance + (uint)bVar14 * -8 + 8);
+  afStack_bc[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 0xb] =
+       *(float *)((uint)bVar14 * -8 + 0x2038f58 + (uint)bVar14 * -8);
   local_4c[2] = local_98;
-  local_4c[(uint)bVar15 * -2 + 3] = afStack_bc[(uint)bVar15 * -2 + 10];
-  local_4c[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4] =
-       afStack_bc[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0xb];
+  local_4c[(uint)bVar14 * -2 + 3] = afStack_bc[(uint)bVar14 * -2 + 10];
+  local_4c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4] =
+       afStack_bc[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 0xb];
   if (local_68 + 3 != local_4c + 2) {
     local_68[3] = local_4c[2];
     local_58 = local_4c[3];
@@ -290,21 +290,21 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
   pfVar7 = local_148;
   for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
     *pfVar7 = pCVar6->m[0].x;
-    pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar15 * -2 + 1) * 4);
-    pfVar7 = pfVar7 + (uint)bVar15 * -2 + 1;
+    pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar14 * -2 + 1) * 4);
+    pfVar7 = pfVar7 + (uint)bVar14 * -2 + 1;
   }
   pfVar7 = local_148;
-  pfVar11 = local_120;
+  pfVar11 = (float *)local_120;
   for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
     *pfVar11 = *pfVar7;
-    pfVar7 = pfVar7 + (uint)bVar15 * -2 + 1;
-    pfVar11 = pfVar11 + (uint)bVar15 * -2 + 1;
+    pfVar7 = pfVar7 + (uint)bVar14 * -2 + 1;
+    pfVar11 = pfVar11 + (uint)bVar14 * -2 + 1;
   }
   core_dirmat_cpp_FUN_0045b9b0(local_120);
   local_50 = local_a4;
-  local_4c[(uint)bVar15 * -2] = afStack_bc[(uint)bVar15 * -2 + 7];
-  local_4c[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1] =
-       afStack_bc[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 8];
+  local_4c[(uint)bVar14 * -2] = afStack_bc[(uint)bVar14 * -2 + 7];
+  local_4c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
+       afStack_bc[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 8];
   if (afStack_bc + 3 != &local_50) {
     afStack_bc[3] = local_50;
     local_ac = local_4c[0];
@@ -327,31 +327,31 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
       local_18 = local_20->actors[0];
       if ((local_18->is_transparent != 0) || (local_18->is_renderable != 0)) {
         (*((local_18->vtable)._ub)->getBoundingBox)(local_18,in_stack_fffffe08);
-        piVar16 = aiStack_1f0;
+        piVar15 = aiStack_1f0;
         iVar5 = 0;
         puVar8 = auStack_f0;
         puVar12 = local_e0;
         for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
           *puVar12 = *puVar8;
-          puVar8 = puVar8 + (uint)bVar15 * -2 + 1;
-          puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
+          puVar8 = puVar8 + (uint)bVar14 * -2 + 1;
+          puVar12 = puVar12 + (uint)bVar14 * -2 + 1;
         }
         do {
           core_box_cpp_FUN_0041d8b0(auStack_d8,iVar5);
           uStack_c0 = uStack_6c;
-          afStack_bc[(uint)bVar15 * -2] = local_68[(uint)bVar15 * -2];
-          afStack_bc[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1] =
-               local_68[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
+          afStack_bc[(uint)bVar14 * -2] = local_68[(uint)bVar14 * -2];
+          afStack_bc[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
+               local_68[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
           in_stack_fffffe08 = unaff_EBP;
           core_actor_cpp_FUN_00408b80(unaff_EBP,&uStack_c0);
           fStack_84 = afStack_bc[2];
-          local_80[(uint)bVar15 * -2] = afStack_bc[(uint)bVar15 * -2 + 3];
-          local_80[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1] =
-               afStack_bc[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 4];
-          *piVar16 = (int)ROUND(fStack_84 * _DAT_005e3bc0);
-          piVar16[1] = (int)ROUND(local_80[0] * _DAT_005e3bc0);
-          piVar16[2] = (int)ROUND(local_80[1] * _DAT_005e3bc0);
-          piVar16 = piVar16 + 3;
+          local_80[(uint)bVar14 * -2] = afStack_bc[(uint)bVar14 * -2 + 3];
+          local_80[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
+               afStack_bc[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 4];
+          *piVar15 = (int)ROUND(fStack_84 * _DAT_005e3bc0);
+          piVar15[1] = (int)ROUND(local_80[0] * _DAT_005e3bc0);
+          piVar15[2] = (int)ROUND(local_80[1] * _DAT_005e3bc0);
+          piVar15 = piVar15 + 3;
           iVar5 = iVar5 + 1;
         } while (iVar5 < 8);
       }
@@ -364,9 +364,9 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_p
   local_68[1] = (this_ptr->directional_light_dir).y * this_ptr->directional_light_intensity;
   local_68[2] = (this_ptr->directional_light_dir).z * this_ptr->directional_light_intensity;
   local_38 = local_68[0];
-  local_4c[(uint)bVar15 * -2 + 6] = local_68[(uint)bVar15 * -2 + 1];
-  local_4c[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 7] =
-       local_68[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 2];
+  local_4c[(uint)bVar14 * -2 + 6] = local_68[(uint)bVar14 * -2 + 1];
+  local_4c[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 7] =
+       local_68[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 2];
   if (local_80 != local_4c + 5) {
     local_80[0] = local_38;
     local_80[1] = fStack_34;

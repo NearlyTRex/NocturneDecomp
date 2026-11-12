@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_00591930(undefined4 *param_1)
+; void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_00591930(CMatrix3x4f *matrix)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_FUN_00546790 at 005468b3

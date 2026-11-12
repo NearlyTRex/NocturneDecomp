@@ -2,13 +2,13 @@
 // Address: 0044902e
 // Address Range: [[0044902e, 00449272]]
 // Convention: unknown
-// Signature: void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,int param_3,int param_4,undefined4 param_5 )
+// Signature: void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,SIZE_T param_3,int param_4,SIZE_T param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,int param_3,int param_4,uint param_5 )
+void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,SIZE_T param_3,int param_4,SIZE_T param_5)
 
 {
   uchar uVar1;
@@ -48,8 +48,8 @@ void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,int 
   }
   param_1->width = param_3;
   param_1->height = param_4;
-  core_dimage_cpp_FUN_00448f40(param_1);
-  _fread(param_1->data,param_3,param_5);
+  core_dimage_cpp_CDemonImage_allocMemory_FUN_00448f40(param_1);
+  _fread(param_1->data,param_3,param_5,p_Var5);
   _fclose();
   pcVar8 = acStack_118;
   do {
@@ -83,7 +83,7 @@ LAB_004490ed:
     _DAT_01d046a4 = 0x7f;
     core_main_c_FUN_004e4500();
   }
-  _fread(&param_2->palette,0x100,3);
+  _fread(&param_2->palette,0x100,3,p_Var5);
   _fclose();
   pCVar6 = param_2;
   pCVar9 = param_2;

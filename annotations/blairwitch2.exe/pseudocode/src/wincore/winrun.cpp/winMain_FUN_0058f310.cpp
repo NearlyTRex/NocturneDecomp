@@ -1,14 +1,14 @@
 // Name: wincore_winrun.cpp_winMain_FUN_0058f310
 // Address: 0058f310
 // Address Range: [[0058f310, 0058f3e1] [0058f3e7, 0058f5a4] [0058f5b1, 0058f5c7]]
-// Convention: unknown
-// Signature: void wincore_winrun_cpp_winMain_FUN_0058f310(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4)
+// Convention: __stdcall
+// Signature: int __stdcall wincore_winrun_cpp_winMain_FUN_0058f310(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void wincore_winrun_cpp_winMain_FUN_0058f310(HMODULE param_1,uint param_2,uint param_3,int param_4)
+int __stdcall wincore_winrun_cpp_winMain_FUN_0058f310(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 
 {
   byte *pbVar1;
@@ -87,7 +87,7 @@ void wincore_winrun_cpp_winMain_FUN_0058f310(HMODULE param_1,uint param_2,uint p
     } while (*pcVar11 != 0);
   }
   GetCurrentDirectoryA(0x100,&DAT_026650b8);
-  GetModuleFileNameA(param_1,&DAT_02664fb8,0x100);
+  GetModuleFileNameA(hInstance,&DAT_02664fb8,0x100);
   uVar9 = 0xffffffff;
   pcVar11 = &DAT_02664fb8;
   do {
@@ -107,9 +107,9 @@ LAB_0058f46b:
   local_58.lpfnWndProc = wincore_winrun_cpp_FUN_0058ed90;
   local_58.cbClsExtra = 0;
   local_58.cbWndExtra = 0;
-  local_58.hInstance = param_1;
+  local_58.hInstance = hInstance;
   local_58.style = 3;
-  local_58.hIcon = LoadIconA(param_1,&DAT_00000065);
+  local_58.hIcon = LoadIconA(hInstance,&DAT_00000065);
   local_58.hCursor = LoadCursorA((HINSTANCE)0x0,&DAT_00007f00);
   local_58.hbrBackground = GetStockObject(4);
   local_58.lpszClassName = PTR_s_Coffin_Rock_0061e984;
@@ -117,10 +117,10 @@ LAB_0058f46b:
   RegisterClassA(&local_58);
   _DAT_02664628 =
        CreateWindowExA(0x40000,PTR_s_Coffin_Rock_0061e984,PTR_s_Coffin_Rock_0061e988,0x80000000,0,0,
-                       0,0,(HWND)0x0,(HMENU)0x0,param_1,(LPVOID)0x0);
+                       0,0,(HWND)0x0,(HMENU)0x0,hInstance,(LPVOID)0x0);
   if (_DAT_02664628 != (HWND)0x0) {
-    _DAT_0266462c = param_1;
-    ShowWindow(_DAT_02664628,param_4);
+    _DAT_0266462c = hInstance;
+    ShowWindow(_DAT_02664628,nCmdShow);
     UpdateWindow(_DAT_02664628);
     hThread = GetCurrentProcess();
     SetThreadPriority(hThread,1);
@@ -130,7 +130,7 @@ LAB_0058f46b:
     _DAT_02664638 = local_30.dwTotalPhys;
     _DAT_0266463c = local_30.dwAvailPageFile;
     core_main_c_initializeGameSystems_FUN_004e46c0(_DAT_026652b8,(char **)0x26652bc);
-    core_main_c_FUN_004e46b0();
+    core_main_c_enterMainGameMenu_FUN_004e46b0();
     core_main_c_FUN_004e4e20();
                     /* WARNING: Subroutine does not return */
     ExitProcess(0);

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_00551100(int param_1,undefined4 param_2)
+; void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_00551100(int channel_index,float volume)
 ;
+; Parameters:
+; int              Stack[0x4]:4   channel_index
+; float            Stack[0x8]:4   volume
 ;
 ; XREF[7]:
 ;   core_menu.cpp_FUN_004ed260 at 004edcb0

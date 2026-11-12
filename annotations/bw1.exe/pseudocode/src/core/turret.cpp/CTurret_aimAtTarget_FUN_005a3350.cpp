@@ -50,11 +50,11 @@ int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_005a3350(CTurret *this_ptr,C
   if (0x3F9C61AA < local_38) {
     local_38 = 0x3F9C61AA;
   }
-  local_54 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                              (local_34 - (this_ptr->base).base.orient.vec.y);
+  local_54 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                       (local_34 - (this_ptr->base).base.orient.vec.y);
   local_14 = local_54;
-  local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                              (local_38 - (this_ptr->base).base.orient.vec.x);
+  local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                       (local_38 - (this_ptr->base).base.orient.vec.x);
   local_18 = this_ptr->rotate_deg_per_sec * _DAT_005f8b6c * delta_time;
   local_1c = -local_18;
   if (local_54 < local_1c) {

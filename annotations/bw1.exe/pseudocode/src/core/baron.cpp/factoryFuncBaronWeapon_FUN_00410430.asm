@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baron_cpp_factoryFuncBaronWeapon_FUN_00410430(void)
+; CBaronWeapon * __cdecl core_baron_cpp_factoryFuncBaronWeapon_FUN_00410430(void)
 ;
 ;
 ; Called Functions:

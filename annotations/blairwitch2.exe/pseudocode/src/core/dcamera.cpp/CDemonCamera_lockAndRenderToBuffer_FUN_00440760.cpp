@@ -26,7 +26,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00440760(CDe
   }
   core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820(this_ptr);
   if (DAT_006141bc < 0x1e1) {
-    iVar1 = engine_special_cpp_FUN_0055f550(0);
+    iVar1 = engine_special_cpp_unlockFrame_FUN_0055f550(0);
     if (_DAT_0264bba0 == 0) {
       return iVar1;
     }

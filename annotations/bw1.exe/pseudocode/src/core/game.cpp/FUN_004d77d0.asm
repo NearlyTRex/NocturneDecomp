@@ -143,7 +143,7 @@ section .text
     LEA EAX,[ESP + 0x40c]               ; 004d78b3
     PUSH EAX                            ; 004d78ba
     CALL crt_stdio.c_fread_FUN_005c0b10 ; 004d78bb
-        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005c0b10()
+        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005c0b10(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004d78c0
     PUSH EBX                            ; 004d78c3
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004d78c4
@@ -196,7 +196,7 @@ section .text
     JNZ 0x004d78d7                      ; 004d7989
         ;   XREF to: 004d78d7 (CONDITIONAL_JUMP)  ; LAB_004d78d7
     CALL wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10 ; 004d798f
-        ;   XREF to: 005acb10 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10()
+        ;   XREF to: 005acb10 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10()
     CALL engine_special.cpp_FUN_00581f50 ; 004d7994
         ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00581f50()
     CALL engine_special.cpp_clearScreen_FUN_0057dc40 ; 004d7999
@@ -252,7 +252,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xa20]     ; 004d7a45
     PUSH EBX                            ; 004d7a4c
     CALL crt_stdio.c_fread_FUN_005c0b10 ; 004d7a4d
-        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005c0b10()
+        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005c0b10(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004d7a52
     PUSH ESI                            ; 004d7a55
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004d7a56
@@ -372,8 +372,8 @@ section .text
     PUSH 0x5e32a8                       ; 004d7bd9 | = "Can't open %s"
     MOV EBX,dword ptr [0x0061abc0]      ; 004d7bde | g_CEditorToolsPtr
     PUSH EBX                            ; 004d7be4
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004d7be5
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004d7be5
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004d7bea
     MOV EAX,dword ptr [ESP + 0xa30]     ; 004d7bed
     MOV byte ptr [EAX + 0x8e8],0x0      ; 004d7bf4
@@ -392,8 +392,8 @@ section .text
     PUSH 0x5e32b6                       ; 004d7c10 | = "%s is %d bytes, but expected %dx%d=%d..."
     MOV ECX,dword ptr [0x0061abc0]      ; 004d7c15 | g_CEditorToolsPtr
     PUSH ECX                            ; 004d7c1b
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004d7c1c
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004d7c1c
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 004d7c21
     MOV EAX,dword ptr [ESP + 0xa30]     ; 004d7c24
     MOV byte ptr [EAX + 0x8e8],0x0      ; 004d7c2b
@@ -409,8 +409,8 @@ section .text
     PUSH 0x5e32f2                       ; 004d7c45 | = "Can't open %s"
     MOV EDI,dword ptr [0x0061abc0]      ; 004d7c4a | g_CEditorToolsPtr
     PUSH EDI                            ; 004d7c50
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004d7c51
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004d7c51
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004d7c56
     MOV EAX,dword ptr [ESP + 0xa30]     ; 004d7c59
         ;   Label: LAB_004d7c59

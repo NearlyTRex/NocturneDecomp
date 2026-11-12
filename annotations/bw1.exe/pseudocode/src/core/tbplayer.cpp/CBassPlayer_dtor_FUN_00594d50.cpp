@@ -19,7 +19,7 @@ CBassPlayer * core_tbplayer_cpp_CBassPlayer_dtor_FUN_00594d50(CBassPlayer *this_
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBassPlayerTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBassPlayerTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

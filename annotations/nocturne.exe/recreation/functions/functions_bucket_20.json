@@ -5814,19 +5814,12 @@
       "004411b0",
       "0044daa0"
     ],
+    "cls":"CDemonCamera",
     "conv":"__cdecl",
     "instructions":242,
-    "method":"CDemonCamera",
-    "name":"core_dcamera.cpp_CDemonCamera_FUN_00447f20",
+    "method":"computeVisibleFrustumBounds",
+    "name":"core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00447f20",
     "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonCamera",
-          "ptr":1
-        }
-      },
       {
         "name":"output_bounds",
         "type":{
@@ -5836,7 +5829,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"class",
       "name":"CVector3f",
@@ -11563,14 +11556,48 @@
   },
   {
     "addr":"004ae020",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":22,
     "method":"getBloodColorParams",
     "name":"core_gore.cpp_getBloodColorParams_FUN_004ae020",
+    "params":[
+      {
+        "name":"blood_type",
+        "type":{
+          "kind":"enum",
+          "name":"EBloodType",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_light",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_color",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_fog",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/gore.cpp",
@@ -16128,27 +16155,18 @@
       "0056445f",
       "00564486"
     ],
+    "cls":"CPackedBitmapSet",
     "conv":"__cdecl",
     "instructions":14,
-    "method":"CPackedBitmapSet",
-    "name":"cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CPackedBitmapSet",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"reset",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_004f5320",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
       "ptr":0
     },
-    "tu":"cockpit/pkbitmap.cpp",
+    "tu":"cockpit/pkbmpset.cpp",
     "variadic":false
   },
   {
@@ -16875,21 +16893,12 @@
       "0050d2d0",
       "00566c81"
     ],
+    "cls":"CDemonSet",
     "conv":"__cdecl",
     "instructions":113,
-    "method":"CDemonSet",
-    "name":"core_set.cpp_CDemonSet_FUN_0050aba0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonSet",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"renderCameraAimedAtHero",
+    "name":"core_set.cpp_CDemonSet_renderCameraAimedAtHero_FUN_0050aba0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -16912,21 +16921,12 @@
       "00515410",
       "00564494"
     ],
+    "cls":"CDemonSet",
     "conv":"__cdecl",
     "instructions":54,
-    "method":"CDemonSet",
-    "name":"core_set.cpp_CDemonSet_FUN_0050ad20",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonSet",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"clearLights",
+    "name":"core_set.cpp_CDemonSet_clearLights_FUN_0050ad20",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -17474,21 +17474,14 @@
       "0053075c",
       "00563a30"
     ],
+    "cls":"CDemonSet",
     "conv":"__cdecl",
     "instructions":1031,
-    "method":"CDemonSet",
-    "name":"core_setdir.cpp_CDemonSet_FUN_005125a0",
+    "method":"evaluateVirtualDirector",
+    "name":"core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0",
     "params":[
       {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CDemonSet",
-          "ptr":1
-        }
-      },
-      {
-        "name":"param_2",
+        "name":"actor",
         "type":{
           "kind":"class",
           "name":"CDemonActor",
@@ -17496,7 +17489,7 @@
         }
       },
       {
-        "name":"param_3",
+        "name":"force_evaluation_mode",
         "type":{
           "kind":"builtin",
           "name":"int",
@@ -17504,7 +17497,7 @@
         }
       }
     ],
-    "receiver":false,
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",

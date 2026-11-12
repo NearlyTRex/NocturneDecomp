@@ -21,7 +21,6 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   byte bVar7;
   float afStackY_110c [968];
   float local_1b8;
-  uint local_164 [10];
   float local_13c;
   float local_138;
   float local_134;
@@ -29,7 +28,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   uint local_12c;
   uint local_128;
   uint local_124;
-  float local_120 [2];
+  float local_120;
   int local_118;
   float local_114;
   int local_110;
@@ -46,7 +45,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   float local_dc;
   float local_d8;
   float local_d4;
-  uint local_d0;
+  int local_d0;
   float afStack_cc [5];
   uint local_b8;
   uint local_b4;
@@ -56,9 +55,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   float fStack_9c;
   float fStack_98;
   uint local_94;
-  float afStack_90 [6];
-  float fStack_78;
-  int local_74;
+  float afStack_90 [5];
+  CVector3i local_7c;
   float local_70;
   float local_6c;
   float local_68;
@@ -70,8 +68,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   float local_44;
   float local_40;
   float local_3c [2];
-  int local_34;
-  float afStack_30 [4];
+  CVector3i local_34;
   int local_20;
   int local_1c;
   float local_18;
@@ -108,7 +105,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
     }
     iVar2 = 10;
     puVar4 = (uint *)&stack0xfffffe4c;
-    puVar6 = local_164;
+    puVar6 = (uint *)&stack0xfffffe9c;
   }
   else {
     local_a0 = g_CDemonLightInstance.base.base.position.f.x;
@@ -117,7 +114,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
     local_13c = g_CDemonLightInstance.base.base.position.f.x;
     local_138 = g_CDemonLightInstance.base.base.position.f.y;
     local_134 = g_CDemonLightInstance.base.base.position.f.z;
-    if (local_60 + 2 != &local_13c) {
+    if (local_60 + 2 != &stack0xfffffec4) {
       local_60[2] = g_CDemonLightInstance.base.base.position.f.x;
       local_60[3] = g_CDemonLightInstance.base.base.position.f.y;
       local_50 = g_CDemonLightInstance.base.base.position.f.z;
@@ -130,7 +127,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
       pfVar5 = pfVar5 + 1;
     }
     iVar2 = 10;
-    puVar6 = local_164;
+    puVar6 = (uint *)&stack0xfffffe9c;
     puVar4 = (uint *)&stack0xfffffe74;
   }
   for (; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -142,7 +139,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   local_e8 = 0x3f800000;
   local_e4 = 0;
   local_e0 = 0;
-  core_dirmat_cpp_FUN_00449530(local_164);
+  core_dirmat_cpp_FUN_00449530(&stack0xfffffe9c);
   afStack_90[2] = 0.0;
   afStack_90[3] = 1.0;
   afStack_90[4] = 0.0;
@@ -150,7 +147,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   afStack_cc[(uint)bVar7 * -2 + 6] = (&local_114)[(uint)bVar7 * -2 + 6];
   afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
        (&local_114)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
-  core_dirmat_cpp_FUN_00449530(local_164);
+  core_dirmat_cpp_FUN_00449530(&stack0xfffffe9c);
   local_130 = 0;
   local_12c = 0;
   local_10c = local_94;
@@ -158,13 +155,13 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
   (&local_114)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
        afStack_90[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
   local_128 = 0x3f800000;
-  core_dirmat_cpp_FUN_00449530(local_164);
+  core_dirmat_cpp_FUN_00449530(&stack0xfffffe9c);
   local_124 = afStack_cc[2];
-  *(float *)((int)local_120 + (uint)bVar7 * 0xfffffff8) = afStack_cc[(uint)bVar7 * -2 + 3];
+  (&stack0xfffffee0)[(uint)bVar7 * 0xfffffffe] = afStack_cc[(uint)bVar7 * -2 + 3];
   (&local_114)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + -2] =
        afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
   sound_sndmain_cpp_FUN_005514f0
-            (local_b8,local_b4,local_b0,local_10c,local_108,local_104,local_124,local_120[0]);
+            (local_b8,local_b4,local_b0,local_10c,local_108,local_104,local_124,local_120);
   _DAT_0264b2a8 = 0.0;
   if (g_CGamePtr->goggles_active == 0) {
     iVar2 = _strnicmp
@@ -176,21 +173,22 @@ void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void)
         local_1c = local_20;
         do {
           core_dcamera_cpp_FUN_0043c6b0();
-          afStack_90[5] = (float)local_d0;
-          (&fStack_78)[(uint)bVar7 * -2] = afStack_cc[(uint)bVar7 * -2];
-          (&fStack_78)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+          local_7c.x = local_d0;
+          *(float *)((int)&local_7c + (uint)bVar7 * -8 + 4) = afStack_cc[(uint)bVar7 * -2];
+          *(float *)((int)&local_7c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
                afStack_cc[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
           local_1b8 = 0.0;
-          if (local_74 < 0x7fffffff) {
-            local_74 = local_74 + -0x300;
-            if (local_74 < 1) {
-              local_74 = 1;
+          if (local_7c.z < 0x7fffffff) {
+            local_7c.z = local_7c.z + -0x300;
+            if (local_7c.z < 1) {
+              local_7c.z = 1;
             }
-            core_dcamera_cpp_FUN_0043c780(&g_CDemonCameraInstance);
-            local_118 = local_34;
-            (&local_114)[(uint)bVar7 * -2] = afStack_30[(uint)bVar7 * -2];
+            core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
+                      (&g_CDemonCameraInstance,&local_7c,&local_34);
+            local_118 = local_34.x;
+            (&local_114)[(uint)bVar7 * -2] = *(float *)((int)&local_34 + (uint)bVar7 * -8 + 4);
             (&local_114)[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-                 afStack_30[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+                 *(float *)((int)&local_34 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
             fVar1 = (float)_DAT_005ea704;
             local_18 = (float)local_110;
             local_ac.x = (float)local_118 * fVar1;

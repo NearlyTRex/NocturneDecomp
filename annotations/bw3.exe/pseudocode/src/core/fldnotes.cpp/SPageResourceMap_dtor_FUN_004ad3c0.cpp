@@ -15,7 +15,7 @@ SPageResourceMap * core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004ad3c0(SPageRes
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_PageResource_MapTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_PageResource_MapTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

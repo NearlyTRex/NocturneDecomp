@@ -39,7 +39,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 004cad93
     PUSH EAX                            ; 004cad99
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 004cad9a
-        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b400()
+        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b400(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cad9f
     PUSH 0x5c4552                       ; 004cada2 | = "glassTexture"
     LEA EAX,[EBX + 0x16c]               ; 004cada7

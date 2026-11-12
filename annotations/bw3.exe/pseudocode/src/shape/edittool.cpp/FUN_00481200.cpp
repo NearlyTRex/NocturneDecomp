@@ -11,14 +11,23 @@
 void shape_edittool_cpp_FUN_00481200(float *param_1,float *param_2)
 
 {
+  SRenderVertex vertex2;
   int iVar1;
   float unaff_EBP;
   uint *puVar2;
   float unaff_EDI;
-  float *pfVar3;
+  uint *puVar3;
   byte bVar4;
-  float afStackY_1044 [1014];
-  float fStack_58;
+  float afStackY_1044 [996];
+  SRenderVertex in_stack_ffffff4c;
+  byte in_stack_ffffff7c [20];
+  uint uVar5;
+  uint uVar6;
+  uint uVar7;
+  uint uVar8;
+  CVector3i *inputPoint;
+  float fVar9;
+  float fVar10;
   float fStack_54;
   float fStack_50;
   byte auStack_4c [12];
@@ -36,7 +45,8 @@ void shape_edittool_cpp_FUN_00481200(float *param_1,float *param_2)
   auStack_4c._0_4_ = (uint)ROUND(*param_1 * _DAT_005deffc);
   auStack_4c._4_4_ = (uint)ROUND(param_1[1] * _DAT_005deffc);
   auStack_4c._8_4_ = (uint)ROUND(param_1[2] * _DAT_005deffc);
-  afStackY_1044[0x3f5] = 6.618707e-39;
+  uVar6 = 0;
+  uVar5 = 0x481243;
   engine_matrix_c_transformToCache_FUN_004e5540(0,(CVector3i *)auStack_4c);
   afStack_34[2] = *param_2 * _DAT_005bd33d;
   afStack_34[3] = param_2[1] * _DAT_005bd33d;
@@ -52,30 +62,46 @@ void shape_edittool_cpp_FUN_00481200(float *param_1,float *param_2)
   *(float *)(auStack_4c + (uint)bVar4 * -8) = afStack_34[(uint)bVar4 * -2 + 6];
   *(float *)(auStack_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4) =
        afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-  fStack_58 = (float)auStack_4c._0_4_ + unaff_EBP;
+  fVar9 = fStack_50 + fStack_14;
+  fVar10 = (float)auStack_4c._0_4_ + unaff_EBP;
   fStack_54 = (float)auStack_4c._4_4_ + unaff_EDI;
-  fStack_38 = fStack_50 + fStack_14;
-  afStack_34[(uint)bVar4 * -2] = *(float *)((int)&stack0xffffffa8 + (uint)bVar4 * -8);
+  fStack_38 = fVar9;
+  afStack_34[(uint)bVar4 * -2] = *(float *)(&stack0xffffffa8 + (uint)bVar4 * -8);
   afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
        *(float *)((int)&stack0xffffffac + (uint)bVar4 * -8 + (uint)bVar4 * -8);
   auStack_4c._8_4_ = (uint)ROUND(fStack_38 * _DAT_005deffc);
   iStack_40 = (int)ROUND(afStack_34[0] * _DAT_005deffc);
   iStack_3c = (int)ROUND(afStack_34[1] * _DAT_005deffc);
-  engine_matrix_c_transformToCache_FUN_004e5540(1,(CVector3i *)(auStack_4c + 8));
+  inputPoint = (CVector3i *)(auStack_4c + 8);
+  uVar8 = 1;
+  uVar7 = 0x48130d;
+  engine_matrix_c_transformToCache_FUN_004e5540(1,inputPoint);
   puVar2 = &DAT_0060b044;
-  pfVar3 = afStackY_1044 + 0x3f0;
+  puVar3 = (uint *)&stack0xffffff7c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *pfVar3 = (float)*puVar2;
+    *puVar3 = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
+    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
   puVar2 = &DAT_0060b014;
-  pfVar3 = afStackY_1044 + 0x3e4;
+  puVar3 = (uint *)&stack0xffffff4c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *pfVar3 = (float)*puVar2;
+    *puVar3 = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
+    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  engine_3d_c_clipAndDrawLine2D_FUN_00407b30();
+  vertex2.projected_vertex.screen_y = uVar5;
+  vertex2.projected_vertex.transformed_x = in_stack_ffffff7c._0_4_;
+  vertex2.projected_vertex.transformed_y = in_stack_ffffff7c._4_4_;
+  vertex2.projected_vertex.transformed_z = in_stack_ffffff7c._8_4_;
+  vertex2.projected_vertex.inv_z = in_stack_ffffff7c._12_4_;
+  vertex2.projected_vertex.screen_x = in_stack_ffffff7c._16_4_;
+  vertex2.u = uVar6;
+  vertex2.v = uVar7;
+  vertex2.r = uVar8;
+  vertex2.g = (int)inputPoint;
+  vertex2.b = (int)fVar9;
+  vertex2.a = (int)fVar10;
+  engine_3d_c_clipAndDrawLine2D_FUN_00407b30(in_stack_ffffff4c,vertex2);
   return;
 }

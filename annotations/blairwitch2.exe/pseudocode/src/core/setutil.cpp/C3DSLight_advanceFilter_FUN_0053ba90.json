@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 186,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 21,
-    "suspect_count": 15,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 72
@@ -34,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setutil.cpp_C3DSLight_advanceFilter_FUN_0053ba90",
-    "signature": "void __cdecl core_setutil_cpp_C3DSLight_advanceFilter_FUN_0053ba90(int param_1,CDemonLight *param_2)"
+    "signature": "void __cdecl core_setutil_cpp_C3DSLight_advanceFilter_FUN_0053ba90(C3DSLight *this_ptr,CDemonLight *light)"
   },
   "function_calls": [
     {
@@ -89,11 +87,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.925,
@@ -122,13 +120,54 @@
     },
     "pcode_op_count": 157
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0055d360",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00542d20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00586e70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005155e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "C3DSLight *"
+      },
+      {
+        "is_param": true,
+        "name": "light",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonLight *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -138,121 +177,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_setutil_cpp_C3DSLight_advanceFilter_FUN_0053ba90(int param_1,CDemonLight *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_setutil_cpp_C3DSLight_advanceFilter_FUN_0053ba90(int param_1,CDemonLight *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == (CDemonLight *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x11ec)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1 + 0x1890) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1890) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x11ec) <= iVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1890) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2,*(CDemonFilter **)(param_1 + 0x1810 + *(int *)(param_1 + 0x1890) * 4),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2,*(CDemonFilter **)(param_1 + 0x1810 + *(int *)(param_1 + 0x1890) * 4),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2,*(CDemonFilter **)(param_1 + 0x1810 + *(int *)(param_1 + 0x1890) * 4),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1774 + *(int *)(param_1 + 0x1890) * 4),0,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1774 + *(int *)(param_1 + 0x1890) * 4),0,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

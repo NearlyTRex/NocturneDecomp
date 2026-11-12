@@ -9,7 +9,7 @@
 float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004dcfb0(CInventory *this_ptr,float max_charge)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
   CInventory *pCVar3;
   float fStack_20;
@@ -19,10 +19,10 @@ float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004dcfb0(C
   pCVar3 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                        (pCVar3->items[0],g_CBatteryClassInfo.name_hash);
-      if (iVar1 != 0) {
-        fStack_20 = 1.0 / *(float *)(iVar1 + 0x434) + fStack_20;
+      pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                         (pCVar3->items[0],g_CBatteryClassInfo.name_hash);
+      if (pCVar1 != (CDemonActor *)0x0) {
+        fStack_20 = 1.0 / pCVar1[1].particle_systems[0].fade_duration + fStack_20;
       }
       iVar2 = iVar2 + 1;
       pCVar3 = (CInventory *)&pCVar3->owner;

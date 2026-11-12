@@ -16,6 +16,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SIntersectXZCylinder.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x470000
@@ -23,43 +24,41 @@
 
 void __cdecl core_dstrendr_cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_00470190(uint *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index);
 void __cdecl core_dstrendr_cpp_memcpyMMX_FUN_00470201(void *dest,void *src,int byte_count);
-void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride320_FUN_00470242(undefined8 *param_1,undefined8 *param_2,int param_3);
-void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride256_FUN_00470385(undefined8 *param_1,undefined8 *param_2,int param_3);
-void __cdecl core_dstrendr_cpp_blur3x3MMXStride128_FUN_004704c8(undefined8 *param_1,undefined8 *param_2,int param_3);
+void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride320_FUN_00470242(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count);
+void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride256_FUN_00470385(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count);
+void __cdecl core_dstrendr_cpp_blur3x3MMXStride128_FUN_004704c8(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count);
 void __cdecl core_dstrendr_cpp_spatialFilter9TapMMX_FUN_004705ff(uint *output_buffer,uint *input_buffer,int pixel_count);
 void __cdecl core_dstrendr_cpp_blendLightmapShared4U64toU64pBB12Px4MMX_FUN_004706a9(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrendr_cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_004707c5(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrendr_cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004708e1(uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
-void __cdecl core_dstrendr_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00470dd5(undefined4 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl core_dstrendr_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00470dd5(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrendr_cpp_alphaBlendPixelsMMX_FUN_0047108a(uint *output_buffer,uint *source1_buffer,uint *source2_buffer,uint alpha1,uint alpha2,int pixel_count);
-void __cdecl core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00471103(uint *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
-void __cdecl core_dstrendr_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00471650(uint *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00471103(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
+void __cdecl core_dstrendr_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00471650(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrendr_cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_004719b6(ushort *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index);
 void __cdecl core_dstrendr_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00471a60(uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
-void __cdecl core_dstrendr_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00471fc4(uint *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
-uint core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_004722e9(void);
+void __cdecl core_dstrendr_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00471fc4(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
+void __edi_esi_ebx core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_004722e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __cdecl core_dtrace_cpp_staticInit_FUN_004723e0(void);
 CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_ctor_FUN_00472400(CDemonRaytrace *this_ptr);
 CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_dtor_FUN_00472440(CDemonRaytrace *this_ptr,uint flags);
-void core_dtrace_cpp_FUN_00472470(int param_1);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00472470(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_freeCubeList_FUN_004724c0(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00472550(CDemonRaytrace *this_ptr);
-void core_dtrace_cpp_FUN_004725c0(int param_1);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_004725c0(CDemonRaytrace *this_ptr);
 void core_dtrace_cpp_FUN_004725fe(int param_1);
-void core_dtrace_cpp_FUN_0047277e(int param_1);
 void core_dtrace_cpp_FUN_00472780(int param_1);
 void core_dtrace_cpp_FUN_004727f0(int param_1);
 void core_dtrace_cpp_FUN_004728d0(CDemonRaytrace *param_1,_FILE *param_2);
-undefined4 core_dtrace_cpp_FUN_00472ab0(undefined4 param_1,char *param_2);
+int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00472ab0(CDemonRaytrace *this_ptr,char *filename);
 CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_00472af0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z);
 void core_dtrace_cpp_FUN_00472b50(undefined4 param_1,float *param_2,float *param_3);
 float core_dtrace_cpp_FUN_00472c60(CDemonRaytrace *param_1,float *param_2,float *param_3,undefined4 *param_4,undefined4 *param_5);
 int __cdecl core_dtrace_cpp_FUN_00473390(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 float core_dtrace_cpp_FUN_004738d0(CDemonRaytrace *param_1,float *param_2,undefined4 *param_3,undefined4 *param_4);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00473b20(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out);
-void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_00473d40(undefined4 *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,undefined4 param_7,undefined4 param_8);
+void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_00473d40(SIntersectXZCylinder *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00473e10(CDemonRaytrace *this_ptr,SIntersectXZCylinder *cylinder);
-void core_dtrace_cpp_FUN_0047401c(int param_1,float *param_2);
 void __cdecl core_dtrace_cpp_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *world_pos);
 void core_dtrace_cpp_FUN_00474550(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode);
@@ -69,8 +68,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00476150(CDemonRaytrace 
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_00476280(CDemonRaytrace *this_ptr);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00476300(CDemonRaytrace *this_ptr,CVector3f *world_position);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_004764c0(CDemonRaytrace *this_ptr,CVector3f *start_position,CVector3f *end_position);
-void core_dtrace_cpp_FUN_004769a0(int param_1,float *param_2);
-void core_dtrace_cpp_FUN_00476a50(int param_1,float *param_2);
+void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004769a0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords);
+CVector3i * __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00476b50(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00476c30(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 void core_dtrace_cpp_FUN_00476d20(int param_1);
@@ -86,13 +85,13 @@ void __cdecl core_dtri_cpp_CDemonTriangle_readDataCSV_FUN_00477730(CDemonTriangl
 void __cdecl core_dtri_cpp_CDemonTriangle_writeDataCSV_FUN_00477780(CDemonTriangle *this_ptr,_FILE *file_handle);
 void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_00477890(CDemonTriangle *this_ptr);
 void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_004779e0(CDemonTriangle *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3);
-float core_dtri_cpp_rayTriangleIntersection_FUN_00477a50(float *param_1,float *param_2,float *param_3);
-undefined4 __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_00477c60(float *param_1);
-void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_00477f40(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
-void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_00477fe0(float *param_1,undefined4 *param_2);
-undefined4 __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_004783e0(float *param_1,float *param_2,float param_3,float *param_4);
+float __cdecl core_dtri_cpp_rayTriangleIntersection_FUN_00477a50(CDemonTriangle *triangle,CVector3f *rayOrigin,CVector3f *rayDirection);
+int __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_00477c60(SIntersectXZCylinder *cylinder);
+void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_00477f40(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2);
+void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle *triangle,SIntersectXZCylinder *cylinder);
+int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_004783e0(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
 int __cdecl core_dtri_cpp_FUN_00478550(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
-void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10);
+void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d);
 void __cdecl core_dtri_cpp_clipPolygonToRight_FUN_00478d70(float x_max);
 void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_004791a0(float z_far);
 int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_00479360(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max);
@@ -102,7 +101,7 @@ void core_dtri_cpp_FUN_00479e0c(float *param_1);
 CDemonTriangle * core_dtri_cpp_CDemonTriangle_ctor_FUN_00479f60(CDemonTriangle *this_ptr);
 CDemonTriangle * core_dtri_cpp_CDemonTriangle_dtor_FUN_00479f70(CDemonTriangle *this_ptr,uint flags);
 void __cdecl core_dynamite_cpp_staticInit_FUN_00479f80(void);
-void core_dynamite_cpp_factoryFuncDynamite_FUN_00479fc0(void);
+CDynamite * __cdecl core_dynamite_cpp_factoryFuncDynamite_FUN_00479fc0(void);
 CDemonActorType * core_dynamite_cpp_CDynamite_getActorType_FUN_00479fe0(CDynamite *this_ptr);
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_00479ff0(CDynamite *this_ptr);
 int __cdecl core_dynamite_cpp_CDynamite_fire_FUN_0047a0a0(CDynamite *this_ptr);
@@ -147,7 +146,7 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0047bca0(void);
 void __cdecl shape_edittool_cpp_CEditorTools_showMessage_FUN_0047bda0(CEditorTools *this_ptr,char *format);
 void __cdecl shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools *this_ptr,char *format);
 void __cdecl shape_edittool_cpp_CEditorTools_showError_FUN_0047be40(CEditorTools *this_ptr,char *format);
-void shape_edittool_cpp_FUN_0047be90(undefined4 param_1,undefined4 param_2);
+void shape_edittool_cpp_FUN_0047be90(undefined4 param_1,char *param_2);
 void shape_edittool_cpp_FUN_0047bf8a(void);
 void shape_edittool_cpp_FUN_0047bf96(void);
 void shape_edittool_cpp_FUN_0047c01c(void);
@@ -155,8 +154,8 @@ void shape_edittool_cpp_FUN_0047c065(void);
 void shape_edittool_cpp_FUN_0047c06d(void);
 int __cdecl shape_edittool_cpp_FUN_0047c0f0(CStrList *str_list,char *dialog_title,int dialog_mode);
 int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760(CEditorTools *this_ptr,char *format_string);
-bool shape_edittool_cpp_FUN_0047c7ee(undefined4 param_1,undefined4 param_2);
-undefined4 shape_edittool_cpp_FUN_0047c87e(undefined4 param_1,undefined4 param_2);
+bool shape_edittool_cpp_FUN_0047c7ee(undefined4 param_1,char *param_2);
+undefined4 shape_edittool_cpp_FUN_0047c87e(undefined4 param_1,char *param_2);
 int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags);
 undefined4 shape_edittool_cpp_FUN_0047cb1e(CEditorTools *param_1,undefined4 param_2,char *param_3,char *param_4,byte param_5);
 int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags);
@@ -176,8 +175,8 @@ void shape_edittool_cpp_FUN_0047e870(void);
 void shape_edittool_cpp_FUN_0047eff0(undefined4 param_1,int param_2);
 uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_0047f1c0(CEditorTools *this_ptr);
 void shape_edittool_cpp_FUN_0047f210(CEditorTools *param_1,int param_2);
-char * __cdecl shape_edittool_cpp_FUN_0047fbb0(CEditorTools *this_ptr);
-void __cdecl shape_edittool_cpp_FUN_0047fc30(CEditorTools *this_ptr,char *text_data);
+char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_0047fbb0(CEditorTools *this_ptr);
+void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_0047fc30(CEditorTools *this_ptr,char *text_data);
 void shape_edittool_cpp_FUN_0047fd00(undefined4 param_1,float param_2,undefined4 param_3);
 void shape_edittool_cpp_FUN_0047ff4e(undefined4 param_1,undefined4 param_2,undefined4 param_3,float *param_4,float *param_5);
 

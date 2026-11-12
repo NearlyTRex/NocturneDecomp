@@ -35,8 +35,8 @@
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   engine_font.cpp_FUN_004a8df0
-;   engine_font.cpp_FUN_004aaf00
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
         ;   Label: LAB_004eb10f
     PUSH EAX                            ; 004eb111
     PUSH EDI                            ; 004eb112
-    CALL engine_font.cpp_FUN_004aaf00   ; 004eb113
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004eb113
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     MOV dword ptr [ESP + 0x8],EAX       ; 004eb118
     ADD ESP,0x8                         ; 004eb11c
     PUSH 0x58                           ; 004eb11f
@@ -141,8 +141,8 @@ section .text
     PUSH 0x5dcacd                       ; 004eb1ca | DAT_005dcacd
     MOV EBX,dword ptr [0x01511cc4]      ; 004eb1cf | DAT_01511cc4
     PUSH EBX                            ; 004eb1d5
-    CALL engine_font.cpp_FUN_004aaf00   ; 004eb1d6
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004eb1d6
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004eb1db
     PUSH 0x5dcacd                       ; 004eb1de | DAT_005dcacd
     MOV ESI,dword ptr [0x01511cc4]      ; 004eb1e3 | DAT_01511cc4
@@ -291,8 +291,8 @@ section .text
     PUSH EDX                            ; 004eb336
         ;   Label: LAB_004eb336
     PUSH EDI                            ; 004eb337
-    CALL engine_font.cpp_FUN_004aaf00   ; 004eb338
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 004eb338
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     MOV EDX,0x280                       ; 004eb33d
     SUB EDX,EAX                         ; 004eb342
     MOV EAX,EDX                         ; 004eb344

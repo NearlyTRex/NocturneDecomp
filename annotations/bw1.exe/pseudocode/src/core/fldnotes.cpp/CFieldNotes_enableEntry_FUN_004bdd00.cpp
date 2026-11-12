@@ -57,7 +57,8 @@ switchD_004bdd4a_caseD_1:
       return;
     }
   }
-  shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"CFieldNotes::enableEntry - entry '%s' not found",param_2);
+  shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+            (g_CEditorToolsPtr,"CFieldNotes::enableEntry - entry '%s' not found");
   DAT_0061d2e4 = 1;
   return;
 }

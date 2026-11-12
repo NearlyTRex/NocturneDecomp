@@ -13,50 +13,48 @@ float __cdecl core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425ee0(CBugs *this_pt
 {
   int iVar1;
   float fVar2;
-  uint uVar3;
-  uint uVar4;
-  int iVar5;
+  float fVar3;
+  int iVar4;
+  float10 fVar5;
   float10 fVar6;
-  float10 fVar7;
-  float fVar8;
   int local_10;
   
-  fVar7 = ((float10)z - (float10)this_ptr->grid_origin_z) * ((float10)1 / (float10)_DAT_005fd228);
-  fVar6 = (float10)(float)(((float10)x - (float10)this_ptr->grid_origin_x) *
+  fVar6 = ((float10)z - (float10)this_ptr->grid_origin_z) * ((float10)1 / (float10)_DAT_005fd228);
+  fVar5 = (float10)(float)(((float10)x - (float10)this_ptr->grid_origin_x) *
                           ((float10)1 / (float10)_DAT_005fd228));
   round();
   round();
-  local_10 = (int)ROUND(fVar6);
-  iVar1 = (int)ROUND(fVar7);
+  local_10 = (int)ROUND(fVar5);
+  iVar1 = (int)ROUND(fVar6);
   if (local_10 < 0) {
-    iVar5 = 0;
+    iVar4 = 0;
     local_10 = 0;
   }
   else if (local_10 < 0xb) {
-    iVar5 = local_10 + 1;
+    iVar4 = local_10 + 1;
   }
   else {
-    iVar5 = 0xb;
+    iVar4 = 0xb;
     local_10 = 0xb;
   }
   if (iVar1 < 0) {
-    fVar2 = this_ptr->ground_heights[iVar5][0];
-    fVar8 = this_ptr->ground_heights[local_10][0];
+    fVar2 = this_ptr->ground_heights[iVar4][0];
+    fVar3 = this_ptr->ground_heights[local_10][0];
   }
   else {
     if (iVar1 < 0xb) {
-      uVar3 = core_bugs_cpp_maxFloat_FUN_00428150
+      fVar2 = core_bugs_cpp_maxFloat_FUN_00428150
                         (this_ptr->ground_heights[local_10][iVar1],
-                         this_ptr->ground_heights[iVar5][iVar1]);
-      uVar4 = core_bugs_cpp_maxFloat_FUN_00428150
+                         this_ptr->ground_heights[iVar4][iVar1]);
+      fVar3 = core_bugs_cpp_maxFloat_FUN_00428150
                         (this_ptr->ground_heights[local_10][iVar1 + 1],
-                         this_ptr->ground_heights[iVar5][iVar1 + 1]);
-      fVar2 = (float)core_bugs_cpp_maxFloat_FUN_00428150(uVar3,uVar4);
+                         this_ptr->ground_heights[iVar4][iVar1 + 1]);
+      fVar2 = core_bugs_cpp_maxFloat_FUN_00428150(fVar2,fVar3);
       return fVar2;
     }
-    fVar2 = this_ptr->ground_heights[iVar5][0xb];
-    fVar8 = this_ptr->ground_heights[local_10][0xb];
+    fVar2 = this_ptr->ground_heights[iVar4][0xb];
+    fVar3 = this_ptr->ground_heights[local_10][0xb];
   }
-  fVar2 = (float)core_bugs_cpp_maxFloat_FUN_00428150(fVar8,fVar2);
+  fVar2 = core_bugs_cpp_maxFloat_FUN_00428150(fVar3,fVar2);
   return fVar2;
 }

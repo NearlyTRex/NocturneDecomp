@@ -14,7 +14,7 @@ CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_00447be0(CPlatform *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CPlatformTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CPlatformTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

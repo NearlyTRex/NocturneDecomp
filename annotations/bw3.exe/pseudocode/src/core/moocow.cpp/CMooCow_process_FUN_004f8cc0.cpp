@@ -110,7 +110,8 @@ LAB_004f8f31:
       iVar7 = 1;
       iVar5 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,4);
       core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&pCVar1->base,iVar5,iVar7);
-      engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+      engine_console_cpp_CConsole_printf_FUN_00441ff0
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
     }
   }
 LAB_004f8d9f:
@@ -157,7 +158,7 @@ switchD_004f9003_caseD_5:
     pCVar3->x = (this_ptr->base).model.accumulated_root_motion.y;
     core_charactr_cpp_FUN_0042c230(&this_ptr->base,&CStack_2c);
   }
-  core_charactr_cpp_FUN_0042cd30(&this_ptr->base);
+  core_charactr_cpp_CCharacter_preProcess_FUN_0042cd30(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(&(this_ptr->base).model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350(&this_ptr->base,delta_time);
   return;

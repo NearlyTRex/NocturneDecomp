@@ -13,7 +13,7 @@ CGrave * __cdecl core_grave_cpp_CGrave_dtor_FUN_004cf800(CGrave *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CGraveTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CGraveTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

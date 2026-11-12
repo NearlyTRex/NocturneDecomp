@@ -261,10 +261,6 @@ void FUN_004ef360(undefined4 param_1);
 // Address: 004ef38e
 void FUN_004ef38e(float *param_1,float param_2);
 
-// Original: engine_mini3d.cpp_FUN_004ef46e
-// Address: 004ef46e
-void FUN_004ef46e(float *param_1,float *param_2);
-
 // Original: engine_mini3d.cpp_FUN_004ef470
 // Address: 004ef470
 void FUN_004ef470(float *param_1,float *param_2);
@@ -285,10 +281,6 @@ void FUN_004ef920(undefined4 *param_1,CVector3f *param_2,float param_3,float par
 // Address: 004efa90
 void FUN_004efa90(float *param_1,float *param_2,float *param_3,float *param_4);
 
-// Original: engine_mini3d.cpp_FUN_004efd7c
-// Address: 004efd7c
-void FUN_004efd7c(float *param_1);
-
 // Original: engine_mini3d.cpp_FUN_004efd80
 // Address: 004efd80
 void FUN_004efd80(float *param_1);
@@ -296,10 +288,6 @@ void FUN_004efd80(float *param_1);
 // Original: engine_mini3d.cpp_FUN_004efe20
 // Address: 004efe20
 void FUN_004efe20(void);
-
-// Original: engine_mini3d.cpp_FUN_004f016e
-// Address: 004f016e
-void FUN_004f016e(undefined4 *param_1,undefined4 *param_2);
 
 // Original: engine_mini3d.cpp_FUN_004f0170
 // Address: 004f0170
@@ -457,17 +445,9 @@ void FUN_004f2a10(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
 // Address: 004f2bb0
 void FUN_004f2bb0(float *param_1,float *param_2,float *param_3);
 
-// Original: engine_mini3d.cpp_FUN_004f2cee
-// Address: 004f2cee
-void FUN_004f2cee(float *param_1,uint param_2,int param_3,int *param_4);
-
 // Original: engine_mini3d.cpp_FUN_004f2cf0
 // Address: 004f2cf0
 void FUN_004f2cf0(float *param_1,uint param_2,int param_3,int *param_4);
-
-// Original: engine_mini3d.cpp_FUN_004f2e2e
-// Address: 004f2e2e
-int FUN_004f2e2e(float *param_1,int param_2,int param_3,int param_4);
 
 // Original: engine_mini3d.cpp_FUN_004f2e30
 // Address: 004f2e30

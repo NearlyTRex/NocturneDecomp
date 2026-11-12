@@ -25,13 +25,18 @@
 #include "types/classes/CLightGun.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EDeathState.h"
 #include "types/enums/EGroundType.h"
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SInventoryItemInfo.h"
 #include "types/structs/SMRGLHeaderExtended.h"
+#include "types/structs/SMRGLKeyframeModel.h"
+#include "types/structs/SMRGLPrimitiveTriangle.h"
+#include "types/structs/SMRGLPrimitiveTriangleIndex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4F0000
@@ -44,7 +49,7 @@ int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004f0780(CHotDemon *
 ECollisionType __cdecl core_hotdemon_cpp_CHotDemon_getCollisionType_FUN_004f0880(CHotDemon *this_ptr,SCollisionInfo *collision_info);
 CHotDemon * core_hotdemon_cpp_CHotDemon_dtor_FUN_004f08a0(CHotDemon *this_ptr,uint flags);
 void core_hpriest_cpp_staticInit_FUN_004f0930(void);
-void core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004f0960(void);
+CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004f0960(void);
 CDemonActorType * core_hpriest_cpp_CHighPriestOfGardath_getActorType_FUN_004f0980(CHighPriestOfGardath *this_ptr);
 CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_ctor_FUN_004f0990(CHighPriestOfGardath *this_ptr);
 void __cdecl core_hpriest_cpp_CHighPriestOfGardath_archive_FUN_004f09f0(CHighPriestOfGardath *this_ptr);
@@ -52,7 +57,7 @@ void __cdecl core_hpriest_cpp_CHighPriestOfGardath_process_FUN_004f0a20(CHighPri
 void __cdecl core_hpriest_cpp_CHighPriestOfGardath_processDamage_FUN_004f0a70(CHighPriestOfGardath *this_ptr,SDamageInfo *damage_info);
 CHighPriestOfGardath * core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_004f0a90(CHighPriestOfGardath *this_ptr,uint flags);
 void core_icepick_cpp_staticInit_FUN_004f0b30(void);
-void core_icepick_cpp_factoryFuncIcePick_FUN_004f0b60(void);
+CIcePick * __cdecl core_icepick_cpp_factoryFuncIcePick_FUN_004f0b60(void);
 CDemonActorType * core_icepick_cpp_CIcePick_getActorType_FUN_004f0b80(CIcePick *this_ptr);
 CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004f0b90(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004f0c20(CIcePick *this_ptr);
@@ -62,8 +67,8 @@ int __cdecl core_icepick_cpp_FUN_004f17e0(CIcePick *this_ptr);
 int __cdecl core_icepick_cpp_CIcePick_startThrowAttack_FUN_004f1980(CIcePick *this_ptr);
 CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f19e0(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time);
-void __cdecl core_icepick_cpp_FUN_004f2340(CIcePick *this_ptr,float delta_time);
-void __cdecl core_icepick_cpp_FUN_004f2430(CIcePick *this_ptr,int bone_index);
+void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004f2340(CIcePick *this_ptr,float delta_time);
+void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004f2430(CIcePick *this_ptr,int bone_index);
 void __cdecl core_icepick_cpp_CIcePick_archive_FUN_004f2550(CIcePick *this_ptr);
 int __cdecl core_icepick_cpp_CIcePick_renderOpaque_FUN_004f2560(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004f2570(CIcePick *this_ptr,SDamageInfo *damage_info);
@@ -71,7 +76,7 @@ int __cdecl core_icepick_cpp_CIcePick_isWeaponDrawn_FUN_004f2720(CIcePick *this_
 void __cdecl core_icepick_cpp_CIcePick_drawWeapon_FUN_004f2730(CIcePick *this_ptr,int drawn);
 CIcePick * __cdecl core_icepick_cpp_CIcePick_dtor_FUN_004f2740(CIcePick *this_ptr,uint flags);
 void core_imp_cpp_staticInit_FUN_004f2790(void);
-void core_imp_cpp_factoryFuncImp_FUN_004f27c0(void);
+CImp * __cdecl core_imp_cpp_factoryFuncImp_FUN_004f27c0(void);
 CDemonActorType * core_imp_cpp_CImp_getActorType_FUN_004f27e0(CImp *this_ptr);
 CImp * __cdecl core_imp_cpp_CImp_ctor_FUN_004f27f0(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_setup_FUN_004f2860(CImp *this_ptr);
@@ -86,7 +91,7 @@ ECollisionType __cdecl core_imp_cpp_CImp_getCollisionType_FUN_004f42b0(CImp *thi
 CImp * core_imp_cpp_CImp_dtor_FUN_004f42d0(CImp *this_ptr,uint flags);
 void engine_ini_cpp_staticInit_FUN_004f4360(void);
 int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004f4370(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
-int engine_ini_cpp_FUN_004f4550(undefined4 *param_1,undefined4 param_2,char *param_3,undefined4 param_4,char *param_5 );
+int engine_ini_cpp_FUN_004f4550(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5);
 int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004f4720(CIni *this_ptr,char *section,char *key,char *value,char *filename);
 void __cdecl engine_ini_cpp_getProfileString_FUN_004f49f0(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 int __cdecl engine_ini_cpp_getProfileInteger_FUN_004f4a30(char *section,char *key,int default_value,char *filename);
@@ -108,15 +113,15 @@ CIni * engine_ini_cpp_CIni_dtor_FUN_004f4f40(CIni *this_ptr,uint flags);
 void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void);
 void __cdecl core_inivar_cpp_writeIniData_FUN_004f5760(void);
 void core_inv_cpp_staticInit_FUN_004f5ef0(void);
-int core_inv_cpp_FUN_004f60c0(CDemonActor *param_1);
-char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004f62e0(undefined4 param_1);
-char * __cdecl core_inv_cpp_getItemDescription_FUN_004f6350(undefined4 param_1);
+CDemonActor * core_inv_cpp_FUN_004f60c0(CDemonActor *param_1);
+char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004f62e0(CDemonActor *actor_ptr);
+char * __cdecl core_inv_cpp_getItemDescription_FUN_004f6350(CDemonActor *actor_ptr);
 void core_inv_cpp_FUN_004f63c0(float param_1,float param_2);
 void core_inv_cpp_FUN_004f64f0(void);
 void core_inv_cpp_FUN_004f655e(void);
 undefined4 core_inv_cpp_FUN_004f6b50(int param_1,char *param_2);
 void core_inv_cpp_FUN_004f6bb0(void);
-bool __cdecl core_inv_cpp_loadItem_FUN_004f6e90(int param_1,undefined4 param_2);
+int __cdecl core_inv_cpp_loadItem_FUN_004f6e90(SInventoryItemInfo *item_info,_FILE *file_handle);
 CInventory * __cdecl core_inv_cpp_CInventory_ctor_FUN_004f6ed0(CInventory *this_ptr);
 CInventory * __cdecl core_inv_cpp_CInventory_dtor_FUN_004f6f80(CInventory *this_ptr,uint flags);
 void __cdecl core_inv_cpp_CInventory_clear_FUN_004f6fa0(CInventory *this_ptr);
@@ -149,7 +154,7 @@ undefined4 core_inv_cpp_FUN_004fa540(undefined4 param_1,CDemonActor *param_2,int
 void __cdecl core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0(CInventory *this_ptr,int reset_both);
 void __cdecl core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004fa710(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_resetInventoryDisplayTimer_FUN_004fa740(CInventory *this_ptr);
-void core_inv_cpp_drawWeaponIconBackground_FUN_004fa770(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_004fa770(int x1,int y1,int x2,int y2,int alpha);
 void __cdecl core_inv_cpp_drawItemIconBackground_FUN_004fa930(int x1,int y1,int x2,int y2,int alpha);
 void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004faaf0(CInventory *this_ptr);
 void core_inv_cpp_FUN_004fae10(int param_1);
@@ -159,7 +164,7 @@ void __cdecl core_inv_cpp_CInventory_toggleDetailView_FUN_004fc370(CInventory *t
 void __cdecl core_inv_cpp_CInventory_autoUseHealthItem_FUN_004fc3e0(CInventory *this_ptr);
 CVector3f * __cdecl core_dcube_cpp_CVector3f_arrdtor16_FUN_004fc490(CVector3f *this_ptr,uint flags);
 void core_keyactor_cpp_staticInit_FUN_004fc4b0(void);
-void core_keyactor_cpp_factoryFuncKeyActor_FUN_004fc4e0(void);
+CKeyActor * __cdecl core_keyactor_cpp_factoryFuncKeyActor_FUN_004fc4e0(void);
 CDemonActorType * core_keyactor_cpp_CKeyActor_getActorType_FUN_004fc500(CKeyActor *this_ptr);
 CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_ctor_FUN_004fc510(CKeyActor *this_ptr);
 void __cdecl core_keyactor_cpp_CKeyActor_setup_FUN_004fc570(CKeyActor *this_ptr);
@@ -171,11 +176,11 @@ ECollisionType __cdecl core_keyactor_cpp_CKeyActor_getCollisionType_FUN_004fc760
 int __cdecl core_keyactor_cpp_CKeyActor_canPickup_FUN_004fc770(CKeyActor *this_ptr,CDemonActor *picker);
 void __cdecl core_keyactor_cpp_CKeyActor_onPickup_FUN_004fc790(CKeyActor *this_ptr,CDemonActor *owner);
 CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_dtor_FUN_004fc7b0(CKeyActor *this_ptr,uint flags);
-void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004fc800(int param_1,int param_2);
-void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0(int param_1,int param_2);
-void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004fcb40(int param_1);
-int __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004fcd30(int param_1);
-void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLHeaderExtended *param_1);
+void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004fc800(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture);
+void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0(CVector3i *vertex_data,SMRGLPrimitiveTriangle *texture);
+void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004fcb40(SMRGLKeyframeModel *keyframe_model);
+SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004fcd30(SMRGLKeyframeModel *keyframe_model);
+void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004fd120(SMRGLPrimitiveTriangle *primitive_list);
 void engine_keys_cpp_staticInit_FUN_004fd210(void);
 int __cdecl engine_keys_cpp_CKeys_getKeyState_FUN_004fd220(CKeys *this_ptr,EInputCodeType key_code);
 int __cdecl engine_keys_cpp_CKeys_getAndClearKeyState_FUN_004fd230(CKeys *this_ptr,EInputCodeType key_code);
@@ -186,7 +191,7 @@ void __cdecl engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004fd290(CKeys *this_ptr,
 void __cdecl engine_keys_cpp_CKeys_clearKeyPressState_FUN_004fd2a0(CKeys *this_ptr,EInputCodeType key_code);
 void __cdecl engine_keys_cpp_CKeys_toggleInputMask_FUN_004fd2b0(CKeys *this_ptr,int enable_extended);
 void core_ladder_cpp_staticInit_FUN_004fd2d0(void);
-void core_ladder_cpp_factoryFuncLadder_FUN_004fd300(void);
+CLadder * __cdecl core_ladder_cpp_factoryFuncLadder_FUN_004fd300(void);
 CDemonActorType * core_ladder_cpp_CLadder_getActorType_FUN_004fd320(CLadder *this_ptr);
 CLadder * __cdecl core_ladder_cpp_CLadder_ctor_FUN_004fd330(CLadder *this_ptr);
 void __cdecl core_ladder_cpp_CLadder_setup_FUN_004fd3e0(CLadder *this_ptr);
@@ -200,7 +205,7 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004fd750(CLadder 
 EGroundType __cdecl core_ladder_cpp_CLadder_getGroundType_FUN_004fd890(CLadder *this_ptr);
 CLadder * __cdecl core_ladder_cpp_CLadder_dtor_FUN_004fd8a0(CLadder *this_ptr,uint flags);
 void core_larva_cpp_staticInit_FUN_004fd8f0(void);
-void core_larva_cpp_factoryFuncLarva_FUN_004fd920(void);
+CLarva * __cdecl core_larva_cpp_factoryFuncLarva_FUN_004fd920(void);
 CDemonActorType * core_larva_cpp_CLarva_getActorType_FUN_004fd940(CLarva *this_ptr);
 CLarva * core_larva_cpp_CLarva_ctor_FUN_004fd950(CLarva *this_ptr);
 void __cdecl core_larva_cpp_CLarva_setup_FUN_004fd9e0(CLarva *this_ptr);
@@ -216,7 +221,7 @@ void core_level_cpp_FUN_004fe840(undefined4 *param_1,undefined4 param_2,int para
 void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_ptr,char *text,int clear_screen);
 void __cdecl core_level_cpp_CLevelLoader_cleanup_FUN_004fefa0(CLevelLoader *this_ptr);
 void core_lever_cpp_staticInit_FUN_004fefe0(void);
-void core_lever_cpp_factoryFuncLever_FUN_004ff010(void);
+CLever * __cdecl core_lever_cpp_factoryFuncLever_FUN_004ff010(void);
 CDemonActorType * core_lever_cpp_CLever_getActorType_FUN_004ff030(CLever *this_ptr);
 CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_004ff040(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_setup_FUN_004ff110(CLever *this_ptr);
@@ -231,15 +236,15 @@ ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_004ff950(CLeve
 undefined4 core_lever_cpp_FUN_004ff970(int param_1,undefined4 param_2);
 CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_004ff9f0(CLever *this_ptr,uint flags);
 void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004ffa50(int light_level);
-undefined4 engine_light_cpp_getAmbientLightLevel_FUN_004ffa7e(void);
+int __cdecl engine_light_cpp_getAmbientLightLevel_FUN_004ffa7e(void);
 void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004ffa90(int dir_x,int dir_y,int dir_z);
 void __cdecl engine_light_cpp_setSpecularEnabled_FUN_004ffac0(int enabled);
 void __cdecl engine_light_cpp_setLightingMultipliers_FUN_004ffad0(int diffuse_multiplier,int specular_multiplier);
 int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004ffaf0(int world_x,int world_y,int world_z);
 int __cdecl engine_light_cpp_calculateLighting_FUN_004ffd40(int normal_x,int normal_y,int normal_z);
-void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_004ffe10(int param_1,int *param_2);
+void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_004ffe10(int vertex_index,CVector3i *vertex_position);
 void core_lightgun_cpp_staticInit_FUN_004ffe50(void);
-void core_lightgun_cpp_factoryFuncLightGun_FUN_004ffe80(void);
+CLightGun * __cdecl core_lightgun_cpp_factoryFuncLightGun_FUN_004ffe80(void);
 CDemonActorType * core_lightgun_cpp_CLightGun_getActorType_FUN_004ffea0(CLightGun *this_ptr);
 CLightGun * core_lightgun_cpp_CLightGun_ctor_FUN_004ffeb0(CLightGun *this_ptr);
 undefined4 core_lightgun_cpp_FUN_004fff70(CDemonActor *param_1);

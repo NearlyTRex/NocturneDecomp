@@ -64,10 +64,10 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   core_set.cpp_FUN_00539dd0
-;   core_sound.cpp_FUN_0055ef30
+;   core_sound.cpp_CSound_findRandomSoundFile_FUN_0055ef30
 ;   crt_stdio.c_sscanf_FUN_005a5b9c
 ;   crt_unknown.c_sprintf_FUN_005a28c0
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;   sound_sndmain.cpp_FUN_00555c90
 ;   sound_sndmain.cpp_FUN_00555cf0
 ;   sound_sndmain.cpp_FUN_00555df0
@@ -470,8 +470,8 @@ section .text
     MOV EAX,[0x006045f8]                ; 0055f419 | DAT_006045f8
     PUSH EAX                            ; 0055f41e
     MOV byte ptr [EDX],0x0              ; 0055f41f
-    CALL core_sound.cpp_FUN_0055ef30    ; 0055f422
-        ;   XREF to: 0055ef30 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0055ef30(CSound * this_ptr, char * out_result, char * wildcard_pattern)
+    CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_0055ef30 ; 0055f422
+        ;   XREF to: 0055ef30 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findRandomSoundFile_FUN_0055ef30(CSound * this_ptr, char * out_result, char * wildcard_pattern)
     ADD ESP,0xc                         ; 0055f427
     CMP byte ptr [ESP + 0xd0],0x0       ; 0055f42a
     JNZ 0x0055f198                      ; 0055f432
@@ -485,8 +485,8 @@ section .text
     PUSH EAX                            ; 0055f449
     MOV ECX,dword ptr [0x006045f8]      ; 0055f44a | DAT_006045f8
     PUSH ECX                            ; 0055f450
-    CALL core_sound.cpp_FUN_0055ef30    ; 0055f451
-        ;   XREF to: 0055ef30 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0055ef30(CSound * this_ptr, char * out_result, char * wildcard_pattern)
+    CALL core_sound.cpp_CSound_findRandomSoundFile_FUN_0055ef30 ; 0055f451
+        ;   XREF to: 0055ef30 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_findRandomSoundFile_FUN_0055ef30(CSound * this_ptr, char * out_result, char * wildcard_pattern)
     ADD ESP,0xc                         ; 0055f456
     JMP 0x0055f1a6                      ; 0055f459
         ;   XREF to: 0055f1a6 (UNCONDITIONAL_JUMP)  ; LAB_0055f1a6
@@ -496,8 +496,8 @@ section .text
     PUSH 0x5d51d7                       ; 0055f463 | = "Can't find wav: %s\n"
     MOV EDX,dword ptr [0x005f1690]      ; 0055f468 | g_CConsolePtr
     PUSH EDX                            ; 0055f46e | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0055f46f
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0055f46f
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0055f474
     XOR EAX,EAX                         ; 0055f477
     MOV ESP,EBP                         ; 0055f479

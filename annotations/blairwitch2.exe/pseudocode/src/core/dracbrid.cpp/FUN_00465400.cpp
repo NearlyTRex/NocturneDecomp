@@ -174,7 +174,7 @@ void __cdecl core_dracbrid_cpp_FUN_00465400(CDraculaBride *this_ptr,char *sound_
         sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00550170((CVector3f *)(puVar5 + 1));
         sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00550210((CVector3f *)(puVar5 + 4));
         sound_sndmain_cpp_setNextSfxVolume_FUN_00550270(volume);
-        core_sound_cpp_FUN_005593d0(0x0264B290,local_1ac,sound_name);
+        core_sound_cpp_CSound_findRandomSoundFile_FUN_005593d0(0x0264B290,local_1ac,sound_name);
         uVar4 = sound_sndmain_cpp_FUN_005506b0(local_1ac);
         *puVar5 = uVar4;
         sound_sndmain_cpp_popSfxOptions_FUN_005504d0();

@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_dest.cpp_factoryFuncActorDestination_FUN_0045d1c0
 // Address: 0045d1c0
-void factoryFuncActorDestination(void);
+CActorDestination * __cdecl factoryFuncActorDestination(void);
 
 // Original: core_dest.cpp_CActorDestination_getActorType_FUN_0045d1e0
 // Address: 0045d1e0

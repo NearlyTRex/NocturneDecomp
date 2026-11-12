@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_snddx_cpp_checkDirectSoundError_FUN_00529bb0(uint param_1,undefined4 param_2)
+; int __cdecl sound_snddx_cpp_checkDirectSoundError_FUN_00529bb0(HRESULT error_code,char *operation_description)
 ;
+; Parameters:
+; HRESULT          Stack[0x4]:4   error_code
+; char *           Stack[0x8]:4   operation_description
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90

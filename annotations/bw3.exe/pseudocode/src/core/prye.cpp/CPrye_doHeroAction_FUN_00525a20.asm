@@ -34,7 +34,7 @@
 ;   core_hero.cpp_FUN_004d4520
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   core_skeleton.cpp_FUN_0054dbd0
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 ;
 ; *****************************************************************************
@@ -69,8 +69,8 @@ section .text
         ;   Label: caseD_8
     MOV EDX,dword ptr [0x005f1690]      ; 00525a5c | g_CConsolePtr
     PUSH EDX                            ; 00525a62 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00525a63
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00525a63
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 00525a68
     MOV ECX,dword ptr [0x01d70c34]      ; 00525a6b | g_CLeverClassInfo.name_hash
     PUSH ECX                            ; 00525a71
@@ -78,7 +78,7 @@ section .text
     PUSH ESI                            ; 00525a78
     MOV dword ptr [EBX + 0xcde0],0x0    ; 00525a79
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00525a83
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,EAX                         ; 00525a88
     ADD ESP,0x8                         ; 00525a8a
     TEST EAX,EAX                        ; 00525a8d
@@ -88,8 +88,8 @@ section .text
     PUSH 0x5cd86d                       ; 00525a92 | = "  lever = %s\n"
     MOV EDI,dword ptr [0x005f1690]      ; 00525a97 | g_CConsolePtr
     PUSH EDI                            ; 00525a9d | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00525a9e
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00525a9e
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00525aa3
     LEA EAX,[ESI + 0x420]               ; 00525aa6
     PUSH EAX                            ; 00525aac
@@ -141,7 +141,7 @@ section .text
     PUSH EAX                            ; 00525b1b
     MOV dword ptr [EBX + 0xcde0],0x0    ; 00525b1c
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00525b26
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00525b2b
     MOV dword ptr [EBX + 0x20b94],EAX   ; 00525b2e
     TEST EAX,EAX                        ; 00525b34
@@ -430,8 +430,8 @@ section .text
     PUSH 0x5cd938                       ; 00525e55 | = "Rummaging %s\n"
     MOV ESI,dword ptr [0x005f1690]      ; 00525e5a | g_CConsolePtr
     PUSH ESI                            ; 00525e60 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00525e61
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00525e61
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
         ;   Label: LAB_00525e61
     ADD ESP,0xc                         ; 00525e66
     CMP dword ptr [EBX + 0x20b98],0x0   ; 00525e69

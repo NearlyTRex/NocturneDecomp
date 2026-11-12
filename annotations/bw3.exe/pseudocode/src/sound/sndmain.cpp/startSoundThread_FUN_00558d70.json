@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 95,
+    "complexity_score": 70,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 30,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
+      "unknown_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 102
@@ -38,10 +37,10 @@
         "00558e0d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_startSoundThread_FUN_00558d70",
-    "signature": "int sound_sndmain_cpp_startSoundThread_FUN_00558d70(float param_1)"
+    "signature": "int __cdecl sound_sndmain_cpp_startSoundThread_FUN_00558d70(double latency_seconds)"
   },
   "function_calls": [
     {
@@ -98,12 +97,10 @@
         "call_addr": "0055ad59",
         "call_type": "direct",
         "caller": "sound_snddx.cpp_FUN_0055acd0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -111,21 +108,19 @@
         "call_addr": "0055d9bb",
         "call_type": "direct",
         "caller": "sound_sndwav.cpp_CWavOutDevice_start_FUN_0055d920",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 2,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 8,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.763636363636364,
@@ -161,13 +156,47 @@
     },
     "pcode_op_count": 262
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005531d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00575c00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005abc00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8727
+    },
+    "nocturne.exe": {
+      "addr": "005286d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8727
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "latency_seconds",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      }
+    ]
   },
   "stack_patterns": {
     "note": "Function contains stack manipulation that may cause decompiler artifacts.",
@@ -196,39 +225,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int sound_sndmain_cpp_startSoundThread_FUN_00558d70(float param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unknown/mangled field access",
       "line": 12,
-      "match": "param_1",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "_DAT_02cf340c = param_1;",
-      "type": "unnamed_param"
+      "text": "_DAT_02cf340c = latency_seconds._0_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unknown/mangled field access",
       "line": 13,
-      "match": "param_1",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "if (param_1 < (float)_DAT_005d3c92) {",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "text": "if (latency_seconds._0_4_ < (float)_DAT_005d3c92) {",
+      "type": "unknown_field"
     }
   ]
 }

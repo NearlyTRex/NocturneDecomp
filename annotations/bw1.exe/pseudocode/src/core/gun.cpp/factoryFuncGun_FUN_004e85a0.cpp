@@ -1,20 +1,20 @@
 // Name: core_gun.cpp_factoryFuncGun_FUN_004e85a0
 // Address: 004e85a0
 // Address Range: [[004e85a0, 004e85bb]]
-// Convention: unknown
-// Signature: void core_gun_cpp_factoryFuncGun_FUN_004e85a0(void)
+// Convention: __cdecl
+// Signature: CGun * __cdecl core_gun_cpp_factoryFuncGun_FUN_004e85a0(void)
 
 #include "nocturne.h"
 
-void core_gun_cpp_factoryFuncGun_FUN_004e85a0(void)
+CGun * __cdecl core_gun_cpp_factoryFuncGun_FUN_004e85a0(void)
 
 {
-  CGun *this_ptr;
+  CGun *pCVar1;
   
-  this_ptr = (CGun *)operator_new(0x578);
-  if (this_ptr == (CGun *)0x0) {
-    return;
+  pCVar1 = (CGun *)operator_new(0x578);
+  if (pCVar1 == (CGun *)0x0) {
+    return (CGun *)0x0;
   }
-  core_gun_cpp_CGun_ctor_FUN_004e85d0(this_ptr);
-  return;
+  pCVar1 = core_gun_cpp_CGun_ctor_FUN_004e85d0(pCVar1);
+  return pCVar1;
 }

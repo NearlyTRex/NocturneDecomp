@@ -13,7 +13,7 @@ CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_dtor_FUN_004e7a70(CMirrorHack 
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMirrorHackTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMirrorHackTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

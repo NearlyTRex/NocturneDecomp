@@ -84,14 +84,14 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 005adef7
     PUSH EAX                            ; 005adefe
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 005adeff
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 005adf04
     LEA EAX,[ESI + 0x3ab20]             ; 005adf07
     PUSH EAX                            ; 005adf0d
     PUSH 0x5f0fb3                       ; 005adf0e | DAT_005f0fb3
     PUSH EDI                            ; 005adf13
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005adf14
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     MOV EAX,dword ptr [ESI + 0x3ab20]   ; 005adf19
     ADD ESP,0xc                         ; 005adf1f
     CMP EAX,0x3                         ; 005adf22
@@ -115,14 +115,14 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 005adf5b
     PUSH EAX                            ; 005adf62
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 005adf63
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 005adf68
     MOV EAX,ESP                         ; 005adf6b
     PUSH EAX                            ; 005adf6d
     PUSH 0x5f1011                       ; 005adf6e | DAT_005f1011
     PUSH EBP                            ; 005adf73
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005adf74
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005adf79
     MOV EAX,ESP                         ; 005adf7c
     PUSH EAX                            ; 005adf7e
@@ -140,7 +140,7 @@ section .text
     PUSH EAX                            ; 005adf9e
     LEA EBP,[ESI + 0x37b18]             ; 005adf9f
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 005adfa5
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     LEA EAX,[ESI + 0x37b1c]             ; 005adfaa
     LEA EBX,[ESI + 0x37b20]             ; 005adfb0
     LEA EDX,[ESI + 0x37b24]             ; 005adfb6
@@ -162,7 +162,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x224]     ; 005adff1
     PUSH EBX                            ; 005adff8
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005adff9
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     FLD float ptr [0x006011b8]          ; 005adffe | DAT_006011b8
     FLD float ptr [0x006011bc]          ; 005ae004 | DAT_006011bc
     FLD float ptr [0x006011c0]          ; 005ae00a | DAT_006011c0
@@ -192,14 +192,14 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 005ae078
     PUSH EAX                            ; 005ae07f
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 005ae080
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 005ae085
     LEA EAX,[ESI + 0x37b48]             ; 005ae088
     PUSH EAX                            ; 005ae08e
     PUSH 0x5f1041                       ; 005ae08f | DAT_005f1041
     PUSH EDI                            ; 005ae094
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005ae095
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     MOV EAX,dword ptr [ESI + 0x3ab20]   ; 005ae09a
     ADD ESP,0xc                         ; 005ae0a0
     CMP EAX,0x2                         ; 005ae0a3
@@ -210,14 +210,14 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 005ae0b2
     PUSH EAX                            ; 005ae0b9
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 005ae0ba
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 005ae0bf
     LEA EAX,[ESI + 0x37b44]             ; 005ae0c2
     PUSH EAX                            ; 005ae0c8
     PUSH 0x5f1045                       ; 005ae0c9 | DAT_005f1045
     PUSH EDI                            ; 005ae0ce
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005ae0cf
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005ae0d4
     MOV EBX,dword ptr [ESP + 0x208]     ; 005ae0d7
         ;   Label: LAB_005ae0d7
@@ -226,14 +226,14 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 005ae0e4
     PUSH EAX                            ; 005ae0eb
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 005ae0ec
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 005ae0f1
     LEA EAX,[ESI + 0x39ce8]             ; 005ae0f4
     PUSH EAX                            ; 005ae0fa
     PUSH 0x5f1049                       ; 005ae0fb | DAT_005f1049
     PUSH EBX                            ; 005ae100
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005ae101
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005ae106
     PUSH ESI                            ; 005ae109
     CALL core_cloth.cpp_CCloth_allocMemory_FUN_005ade20 ; 005ae10a
@@ -245,7 +245,7 @@ section .text
     PUSH EAX                            ; 005ae11f
     XOR EBX,EBX                         ; 005ae120
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 005ae122
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     MOV EAX,dword ptr [ESI + 0x39ce8]   ; 005ae127
     ADD ESP,0xc                         ; 005ae12d
     TEST EAX,EAX                        ; 005ae130
@@ -260,7 +260,7 @@ section .text
     INC EBX                             ; 005ae148
     ADD EDI,0x4                         ; 005ae149
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005ae14c
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     MOV ECX,dword ptr [ESI + 0x39ce8]   ; 005ae151
     ADD ESP,0xc                         ; 005ae157
     CMP EBX,ECX                         ; 005ae15a
@@ -278,14 +278,14 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 005ae176
     PUSH EAX                            ; 005ae17d
     CALL crt_stdio.c_fgets_FUN_005b9600 ; 005ae17e
-        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005b9600()
+        ;   XREF to: 005b9600 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005b9600(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 005ae183
     LEA EAX,[ESI + 0x37b4c]             ; 005ae186
     PUSH EAX                            ; 005ae18c
     PUSH 0x5f1051                       ; 005ae18d | DAT_005f1051
     PUSH EBX                            ; 005ae192
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005ae193
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005ae198
     MOV EBP,dword ptr [ESI + 0x37b4c]   ; 005ae19b
     XOR EBX,EBX                         ; 005ae1a1
@@ -337,7 +337,7 @@ section .text
     ADD EDI,0xac                        ; 005ae276
     INC EBX                             ; 005ae27c
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005ae27d
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x30                        ; 005ae282
     ADD EBP,0xac                        ; 005ae285
     MOV EDX,dword ptr [ESP + 0x224]     ; 005ae28b
@@ -438,7 +438,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x22c]     ; 005ae3f4
     PUSH EBX                            ; 005ae3fb
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005ae3fc
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x28                        ; 005ae401
     JMP 0x005ae06b                      ; 005ae404
         ;   XREF to: 005ae06b (UNCONDITIONAL_JUMP)  ; LAB_005ae06b

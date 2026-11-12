@@ -18,7 +18,7 @@ CDraculaBride * core_dracbrid_cpp_CDraculaBride_dtor_FUN_00465c60(CDraculaBride 
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDraculaBrideTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDraculaBrideTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

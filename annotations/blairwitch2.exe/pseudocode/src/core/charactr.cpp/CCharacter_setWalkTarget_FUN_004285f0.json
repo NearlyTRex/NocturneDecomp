@@ -189,6 +189,32 @@
     },
     "pcode_op_count": 516
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00432050",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9082
+    },
+    "bw3.exe": {
+      "addr": "00431470",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9082
+    },
+    "nocedit.exe": {
+      "addr": "0042c920",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3673
+    },
+    "nocturne.exe": {
+      "addr": "00428ab0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3673
+    }
+  },
   "stack_frame": {
     "frame_size": 44,
     "local_size": 28,
@@ -243,11 +269,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Pointer value `error_on_not_found` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 26,
-      "match": "(int)error_on_not_found",
+      "match": "(int)pCVar6",
       "severity": "moderate",
-      "text": "(this_ptr_00,state_name,(int)error_on_not_found);",
+      "text": "(this_ptr_00,state_name,(int)pCVar6);",
       "type": "pointer_truncation"
     }
   ],

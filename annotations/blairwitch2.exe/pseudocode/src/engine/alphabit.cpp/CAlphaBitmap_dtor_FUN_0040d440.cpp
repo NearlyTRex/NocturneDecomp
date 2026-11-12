@@ -9,6 +9,6 @@
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440(CAlphaBitmap *this_ptr,uint flags)
 
 {
-  engine_alphabit_cpp_FUN_0040d540(this_ptr);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(this_ptr);
   return this_ptr;
 }

@@ -15,7 +15,7 @@ CLava * core_wateract_cpp_CLava_dtor_FUN_00579050(CLava *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CLavaTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CLavaTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

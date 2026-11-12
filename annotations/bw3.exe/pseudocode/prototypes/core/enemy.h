@@ -29,13 +29,13 @@ void __cdecl CEnemy::archive(CEnemy *this_ptr);
 // Address: 00489300
 int __cdecl CEnemy::getTargetPoints(CEnemy *this_ptr,CVector3f *out_points_array);
 
-// Original: core_enemy.cpp_FUN_004893f0
+// Original: core_enemy.cpp_CEnemy_testAttackRadius_FUN_004893f0
 // Address: 004893f0
-undefined4 FUN_004893f0(int param_1,float *param_2,undefined4 param_3,int param_4);
+int __cdecl CEnemy::testAttackRadius(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info);
 
-// Original: core_enemy.cpp_FUN_00489490
+// Original: core_enemy.cpp_CEnemy_testAttackLine_FUN_00489490
 // Address: 00489490
-undefined4 FUN_00489490(int param_1,undefined4 param_2,undefined4 param_3,int param_4);
+int __cdecl CEnemy::testAttackLine(CEnemy *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info);
 
 // Original: core_enemy.cpp_CEnemy_getTargetPoint_FUN_00489530
 // Address: 00489530

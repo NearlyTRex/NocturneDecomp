@@ -1088,14 +1088,14 @@ LAB_00536144:
   if (bVar12) {
     core_stranger_cpp_CStranger_handleActionButton_FUN_0053fc60(this_ptr);
   }
-  core_stranger_cpp_CStranger_FUN_005384d0(this_ptr);
+  core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005384d0(this_ptr);
   if ((((this_ptr->base).aim_mode == AIM_MODE_MANUAL) && (this_ptr->weapon != (CWeapon *)0x0)) &&
      (this_ptr->weapon->weapon_type == WEAPON_TYPE_GUN)) {
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0
               (&(this_ptr->base).base.model);
     core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660(this_ptr,0);
     core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(this_ptr);
-    core_stranger_cpp_CStranger_FUN_005384d0(this_ptr);
+    core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005384d0(this_ptr);
   }
   core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0(this_ptr,delta_time,iVar26);
   core_stranger_cpp_CStranger_updateClothSimulation_FUN_005402f0(this_ptr);

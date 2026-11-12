@@ -72,7 +72,7 @@ LAB_00573500:
     _DAT_01d046a4 = 0x6a;
     core_main_c_FUN_004e4500("CTextureList::load - Bad filename!");
   }
-  _fscanf(local_2c,&DAT_005ec5c7,this_ptr);
+  _fscanf(local_2c,&DAT_005ec5c7);
   local_1c = 0;
   if (this_ptr->texture_count < 1) {
 LAB_0057370c:
@@ -94,7 +94,7 @@ LAB_0057370c:
   local_20 = this_ptr->texture_entries[0].texture_name;
   local_24 = this_ptr;
 LAB_005735c3:
-  _fscanf(local_2c,&DAT_005ec5cb,local_12c);
+  _fscanf(local_2c,&DAT_005ec5cb);
   pcVar7 = local_12c;
   do {
     pcVar6 = pcVar7;

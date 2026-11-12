@@ -42,7 +42,7 @@ float * core_prye_cpp_FUN_0052294e(float *param_1,float *param_2)
       else {
         fStack_30 = fStack_30 - (float)fVar5;
       }
-      fStack_30 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fStack_30);
+      fStack_30 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fStack_30);
     }
     fVar1 = param_2[1];
     if (((_DAT_005cd69f <= (double)fVar2) &&
@@ -55,7 +55,7 @@ float * core_prye_cpp_FUN_0052294e(float *param_1,float *param_2)
       else {
         fStack_34 = fStack_34 - (float)fVar5;
       }
-      fStack_34 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fStack_34);
+      fStack_34 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(fStack_34);
     }
   }
   *unaff_ESI = fStack_34;

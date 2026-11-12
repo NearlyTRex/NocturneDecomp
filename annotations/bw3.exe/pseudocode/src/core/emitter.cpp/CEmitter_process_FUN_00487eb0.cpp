@@ -209,10 +209,14 @@ LAB_00487f67:
     break;
   case EMITTER_TYPE_POPCORN:
     pCVar1 = &(this_ptr->base).location;
-    core_fire_cpp_FUN_004a3ed0(0x01C73654,pCVar1,0);
-    core_fire_cpp_FUN_004a3ed0(0x01C73654,pCVar1,0);
-    core_fire_cpp_FUN_004a3ed0(0x01C73654,pCVar1,0);
-    core_fire_cpp_FUN_004a3ed0(0x01C73654,pCVar1,0);
+    core_fire_cpp_CFireEffect_createPopcorn_FUN_004a3ed0
+              (0x01C73654,&pCVar1->position,(CVector3f *)0x0);
+    core_fire_cpp_CFireEffect_createPopcorn_FUN_004a3ed0
+              (0x01C73654,&pCVar1->position,(CVector3f *)0x0);
+    core_fire_cpp_CFireEffect_createPopcorn_FUN_004a3ed0
+              (0x01C73654,&pCVar1->position,(CVector3f *)0x0);
+    core_fire_cpp_CFireEffect_createPopcorn_FUN_004a3ed0
+              (0x01C73654,&pCVar1->position,(CVector3f *)0x0);
     break;
   case EMITTER_TYPE_LIGHTNING:
     pCVar1 = &(this_ptr->base).location;

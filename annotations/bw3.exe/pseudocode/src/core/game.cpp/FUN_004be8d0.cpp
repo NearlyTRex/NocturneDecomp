@@ -36,16 +36,16 @@ void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2)
   uVar2 = _DAT_01c5b0e0;
   _DAT_01c5b0e0 = _DAT_01549aa8;
   param_1->is_loading = 0;
-  iVar4 = _fopen("pod.ini",&DAT_005c37df);
-  if (iVar4 != 0) {
-    _fclose(iVar4);
+  p_Var3 = _fopen("pod.ini",&DAT_005c37df);
+  if (p_Var3 != (_FILE *)0x0) {
+    _fclose(p_Var3);
   }
   engine_ini_cpp_FUN_004d8a20(&local_320,"system\\bw3.ini",&DAT_005c37ea);
   local_18 = 0;
   engine_ini_cpp_FUN_004d8c30(&local_320,"Act1Code",&local_18);
   support_newmsg_cpp_getLocalizedString_FUN_00508960("The Rustin Parr Investigation");
   local_14 = 0xffffffff;
-  if (param_2 == 1 || iVar4 != 0) {
+  if (param_2 == 1 || p_Var3 != (_FILE *)0x0) {
     iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70
                       (g_CEditorToolsPtr,"Select mission to play","world",
                        "*.msn",local_11c,0);

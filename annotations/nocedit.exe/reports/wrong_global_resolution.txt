@@ -12,15 +12,15 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6911
-  Functions with suspicious globals: 96
-  Total suspicious global references: 152
+  Functions with suspicious globals: 93
+  Total suspicious global references: 149
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
-    g_WindowWidth                                      8 functions
     g_CKeysPtr                                         6 functions
     g_WindowHeight                                     5 functions
+    g_WindowWidth                                      5 functions
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_UseDirect3D                                      4 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CommandTemplates                                 2 functions
     g_MirrorSceneCameraState                           2 functions
 
-  .keep files with issues: 63 (these need manual review)
+  .keep files with issues: 60 (these need manual review)
   Raw .cpp files with issues: 33
 
 ====================================================================================================
@@ -113,27 +113,27 @@ core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840  [.keep]  (6 suspicious glob
   File: core/menu.cpp
 
   g_CKeysPtr
-    Used at lines: 52, 52, 55, 55, 74, ...
+    Used at lines: 50, 50, 53, 53, 72, ...
     NOT found in function reference list
 
   g_CMoonInstance
-    Used at lines: 39, 61
+    Used at lines: 37, 59
     NOT found in function reference list
 
   g_JoyButtons
-    Used at lines: 47, 69
+    Used at lines: 45, 67
     NOT found in function reference list
 
   g_JoyXPos
-    Used at lines: 47, 57, 69, 87, 88, ...
+    Used at lines: 45, 55, 67, 85, 86, ...
     NOT found in function reference list
 
   g_JoyYPos
-    Used at lines: 47, 58, 69, 93, 94, ...
+    Used at lines: 45, 56, 67, 91, 92, ...
     NOT found in function reference list
 
   g_MediumFont
-    Used at lines: 42, 44, 46, 64, 66, ...
+    Used at lines: 40, 42, 44, 62, 64, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -393,27 +393,11 @@ core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70  [.keep]  (1 suspicio
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_rollCredits_FUN_004e4010  [.keep]  (1 suspicious globals)
-  File: core/game.cpp
-
-  g_WindowWidth
-    Used at lines: 35, 36
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_saveGame_FUN_004e0cd0  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_CKeysPtr
     Used at lines: 53, 53
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0  [.keep]  (1 suspicious globals)
-  File: core/game.cpp
-
-  g_WindowWidth
-    Used at lines: 23
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -454,14 +438,6 @@ core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30  [.keep]  (1 suspic
 
   g_VisibleCoronaGlobeCount
     Used at lines: 15
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_moon.cpp_CMoon_render_FUN_00529ed0  [.keep]  (1 suspicious globals)
-  File: core/moon.cpp
-
-  g_WindowWidth
-    Used at lines: 49
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

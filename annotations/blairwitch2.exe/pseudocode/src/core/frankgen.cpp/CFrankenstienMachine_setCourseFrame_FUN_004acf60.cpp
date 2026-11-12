@@ -27,7 +27,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60(
   if ((float)(iVar1 + -1) < local_20) {
     local_20 = (float)(iVar1 + -1);
   }
-  core_course_cpp_FUN_00438c40
+  core_course_cpp_CCourse_evaluate_FUN_00438c40
             (&this_ptr->course,local_20,&(this_ptr->base).location.position,
              &(this_ptr->base).orient.vec);
   return;

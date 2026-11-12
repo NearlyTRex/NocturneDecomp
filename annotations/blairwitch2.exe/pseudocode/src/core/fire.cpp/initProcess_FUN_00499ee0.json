@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 120,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 41,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 132
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -163,6 +163,32 @@
     },
     "pcode_op_count": 305
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b2880",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0049de60",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c4b00",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00487fd0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -182,42 +208,42 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 16,
       "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar3);",
+      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 17,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x114))(iVar2);",
+      "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x114))(iVar1);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 26,
       "match": "DAT_01c3f5ac",
       "severity": "mild",
-      "text": "*(int *)(&DAT_01c3f5ac + _DAT_01c3f5a8 * 4) = iVar2;",
+      "text": "*(int *)(&DAT_01c3f5ac + _DAT_01c3f5a8 * 4) = iVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "line": 36,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + iVar4),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_01c3f678",
       "severity": "mild",
-      "text": "*(int *)(&DAT_01c3f678 + _DAT_01c3f674 * 4) = iVar2;",
+      "text": "*(CDemonActor **)(&DAT_01c3f678 + _DAT_01c3f674 * 4) = pCVar3;",
       "type": "undefined_data"
     }
   ]

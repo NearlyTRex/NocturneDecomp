@@ -46,7 +46,7 @@
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_004177e0
-;   core_bodypart.cpp_FUN_00415890
+;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890
 ;   core_main.c_FUN_004e4500
 ;   crt_memory.c_memset_FUN_005b77c0
 ;
@@ -257,8 +257,8 @@ section .text
     PUSH EAX                            ; 005436eb
     PUSH ECX                            ; 005436ec
     PUSH EBP                            ; 005436ed
-    CALL core_bodypart.cpp_FUN_00415890 ; 005436ee
-        ;   XREF to: 00415890 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00415890()
+    CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890 ; 005436ee
+        ;   XREF to: 00415890 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890(CBodyPart * this_ptr, int vertex_count, int tri_count)
     ADD ESP,0xc                         ; 005436f3
     MOV EAX,dword ptr [ESP + 0x5c]      ; 005436f6
     MOV EDX,dword ptr [ESP + 0x58]      ; 005436fa

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 122,
+    "complexity_score": 123,
     "cross_reference_count": 4,
     "function_call_count": 16,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 58,
     "suspect_count": 5,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 231
+    "total_lines": 232
   },
   "cross_references": [
     {
@@ -81,6 +81,11 @@
       "name": "core_main.c_FUN_004e4500"
     },
     {
+      "addr": "004fb450",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_clearMissionData_FUN_004fb450"
+    },
+    {
       "addr": "004fd0e0",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_createHeros_FUN_004fd0e0"
@@ -101,14 +106,9 @@
       "name": "core_mission.cpp_CDemonMission_removeActor_FUN_004fc570"
     },
     {
-      "addr": "004fb450",
-      "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fb450"
-    },
-    {
       "addr": "004fc270",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fc270"
+      "name": "core_mission.cpp_CDemonMission_removeActorFromList_FUN_004fc270"
     },
     {
       "addr": "004fc820",
@@ -311,6 +311,32 @@
     },
     "pcode_op_count": 535
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0051bad0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9278
+    },
+    "bw3.exe": {
+      "addr": "004f72a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9278
+    },
+    "nocedit.exe": {
+      "addr": "00524420",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8834
+    },
+    "nocturne.exe": {
+      "addr": "004d9440",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8834
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -354,7 +380,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_01d1c630",
       "severity": "mild",
       "text": "if ((iVar1 == 0) || (DAT_01d1c630 == '\\0')) break;",
@@ -362,7 +388,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 43,
       "match": "DAT_01d1c630",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_load_FUN_004fb490(this_ptr,&DAT_01d1c630,0);",

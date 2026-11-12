@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_ladder.cpp_factoryFuncLadder_FUN_004df620
 // Address: 004df620
-void factoryFuncLadder(void);
+CLadder * __cdecl factoryFuncLadder(void);
 
 // Original: core_ladder.cpp_CLadder_getActorType_FUN_004df640
 // Address: 004df640

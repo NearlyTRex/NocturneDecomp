@@ -2,11 +2,11 @@
 // Address: 0052a010
 // Address Range: [[0052a010, 0052a08f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_script_cpp_readActorReference_FUN_0052a010(undefined4 param_1,undefined4 *param_2)
+// Signature: void __cdecl core_script_cpp_readActorReference_FUN_0052a010(_FILE *file_handle,CDemonActor *actor_out)
 
 #include "nocturne.h"
 
-void __cdecl core_script_cpp_readActorReference_FUN_0052a010(uint param_1,uint *param_2)
+void __cdecl core_script_cpp_readActorReference_FUN_0052a010(_FILE *file_handle,CDemonActor *actor_out)
 
 {
   char *pcVar1;
@@ -22,13 +22,16 @@ void __cdecl core_script_cpp_readActorReference_FUN_0052a010(uint param_1,uint *
     puVar4 = puVar4 + 1;
     pcVar1 = (char *)((int)pcVar1 + 4);
   }
-  _fscanf(param_1,"\"%[^\"]\"\n",local_d0);
+  _fscanf(file_handle,"\"%[^\"]\"\n");
   iVar3 = _stricmp(local_d0,"(none)");
   if (iVar3 == 0) {
-    *param_2 = 0;
+    actor_out->actor_name[0] = '\0';
+    actor_out->actor_name[1] = '\0';
+    actor_out->actor_name[2] = '\0';
+    actor_out->actor_name[3] = '\0';
     return;
   }
   pCVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740(0x01D182F0,local_d0);
-  *param_2 = pCVar2;
+  *(CDemonActor **)actor_out->actor_name = pCVar2;
   return;
 }

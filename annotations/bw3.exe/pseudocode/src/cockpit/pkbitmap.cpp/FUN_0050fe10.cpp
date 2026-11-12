@@ -2,20 +2,20 @@
 // Address: 0050fe10
 // Address Range: [[0050fe10, 0050fe89]]
 // Convention: unknown
-// Signature: void cockpit_pkbitmap_cpp_FUN_0050fe10(CPackedBitmap *param_1,undefined4 param_2)
+// Signature: void cockpit_pkbitmap_cpp_FUN_0050fe10(CPackedBitmap *param_1,char *param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void cockpit_pkbitmap_cpp_FUN_0050fe10(CPackedBitmap *param_1,uint param_2)
+void cockpit_pkbitmap_cpp_FUN_0050fe10(CPackedBitmap *param_1,char *param_2)
 
 {
   _FILE *file_handle;
   char acStack_6c [4];
   _FILE *p_Stack_68;
   
-  file_handle = (_FILE *)_fopen(param_2,0x5cbd0e);
+  file_handle = _fopen(param_2,(char *)0x5cbd0e);
   if (file_handle == (_FILE *)0x0) {
     _sprintf(acStack_6c,"Unable to create PBM file %s");
     _DAT_01d71de0 = "..\\cockpit\\pkbitmap.cpp";

@@ -28,11 +28,3 @@ int __cdecl CDemonGlobe::intersectAABB(CDemonGlobe *this_ptr,CVector3f *referenc
 // Original: core_dglobe.cpp_FUN_00448da0
 // Address: 00448da0
 int FUN_00448da0(int param_1,int *param_2,int *param_3);
-
-// Original: core_dglobe.cpp_FUN_00448f20
-// Address: 00448f20
-CDemonImage * FUN_00448f20(CDemonImage *param_1);
-
-// Original: core_dglobe.cpp_FUN_00448f3e
-// Address: 00448f3e
-void FUN_00448f3e(CDemonImage *param_1);

@@ -27,7 +27,7 @@ section .text
     ADD EAX,0x629014                    ; 00507b40 | DAT_00629014
     PUSH EAX                            ; 00507b45
     CALL engine_matrix.c_projectTransformedPoint_FUN_00507b50 ; 00507b46
-        ;   XREF to: 00507b50 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectTransformedPoint_FUN_00507b50()
+        ;   XREF to: 00507b50 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectTransformedPoint_FUN_00507b50(SProjectedVertex * point)
     ADD ESP,0x4                         ; 00507b4b
     RET                                 ; 00507b4e
 

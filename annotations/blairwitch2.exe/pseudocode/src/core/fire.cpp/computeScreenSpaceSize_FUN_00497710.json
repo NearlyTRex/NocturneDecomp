@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 162,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 32,
-    "suspect_count": 11,
+    "suspect_count": 4,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 114
@@ -35,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_computeScreenSpaceSize_FUN_00497710",
-    "signature": "float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_00497710(float param_1,float param_2)"
+    "signature": "float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_00497710(float depth,float min_size)"
   },
   "function_calls": [
     {
@@ -126,11 +124,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.108108108108108,
@@ -172,11 +170,37 @@
     },
     "pcode_op_count": 452
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b00b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0049b0e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c24d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004859a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 56,
+    "frame_size": 64,
     "local_size": 56,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -241,6 +265,20 @@
         "offset": -8,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "depth",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "min_size",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -252,38 +290,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_00497710(float param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float __cdecl core_fire_cpp_computeScreenSpaceSize_FUN_00497710(float param_1,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_34.z = (int)ROUND(param_1 * _DAT_005f64e4);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -308,33 +314,6 @@
       "severity": "mild",
       "text": "((float)DAT_006141e4 * fVar2)) * _DAT_005d5482;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_8 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 < fVar3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

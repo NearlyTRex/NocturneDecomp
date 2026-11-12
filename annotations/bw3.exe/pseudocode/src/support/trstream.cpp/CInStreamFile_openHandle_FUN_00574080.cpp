@@ -24,7 +24,7 @@ uint __cdecl support_trstream_cpp_CInStreamFile_openHandle_FUN_00574080(CInStrea
   _fseek(this_ptr->file_handle,param_4 + this_ptr->position,0);
   iVar1 = (**(code **)((int)this_ptr->vtable + 0x1c))(this_ptr);
   if (iVar1 != 0) {
-    support_trstream_cpp_FUN_00573e00(this_ptr);
+    support_trstream_cpp_CInStreamFile_allocBuffer_FUN_00573e00(this_ptr);
     return 1;
   }
   (**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);

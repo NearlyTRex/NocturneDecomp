@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(float param_1)
+; float __cdecl core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(float angle_radians)
 ;
+; Parameters:
+; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; undefined8       Stack[-0x14]:8  local_14
 ; undefined8       Stack[-0xc]:8  local_c

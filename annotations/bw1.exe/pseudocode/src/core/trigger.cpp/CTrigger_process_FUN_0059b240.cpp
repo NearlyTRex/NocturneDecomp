@@ -58,7 +58,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_0059b240(CTrigger *this_ptr,f
   switch(this_ptr->trigger_cause) {
   case TRIGGER_CAUSE_HERO:
     iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0
-                      (&(this_ptr->base).location,this_ptr->test_radius);
+                      (&(this_ptr->base).location.position,this_ptr->test_radius);
     if (iVar6 != 0) {
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff10);
       iVar6 = 0;
@@ -99,7 +99,7 @@ LAB_0059b2e5:
     break;
   case TRIGGER_CAUSE_LIGHT:
     iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0
-                      (&(this_ptr->base).location,this_ptr->test_radius);
+                      (&(this_ptr->base).location.position,this_ptr->test_radius);
     if (iVar6 != 0) {
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff10);
       puVar8 = (uint *)&stack0xffffff50;
@@ -152,7 +152,8 @@ LAB_0059b2e5:
     break;
   case TRIGGER_CAUSE_EXPLOSION:
     pCVar1 = &(this_ptr->base).location;
-    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(pCVar1,this_ptr->test_radius);
+    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0
+                      (&pCVar1->position,this_ptr->test_radius);
     if (iVar6 != 0) {
       fVar2 = (this_ptr->trigger_size).x;
       fVar3 = (this_ptr->trigger_size).y;
@@ -179,7 +180,7 @@ LAB_0059b2e5:
     break;
   case TRIGGER_CAUSE_MOTION:
     iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0
-                      (&(this_ptr->base).location,this_ptr->test_radius);
+                      (&(this_ptr->base).location.position,this_ptr->test_radius);
     if (iVar6 != 0) {
       iVar10 = 0;
       for (iVar6 = 0; iVar6 < g_CDemonSetPtr->actor_count; iVar6 = iVar6 + 1) {
@@ -196,7 +197,8 @@ LAB_0059b2e5:
     break;
   case TRIGGER_CAUSE_MATCHED_ACTORS:
     pCVar1 = &(this_ptr->base).location;
-    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(pCVar1,this_ptr->test_radius);
+    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0
+                      (&pCVar1->position,this_ptr->test_radius);
     if (iVar6 != 0) {
       pcStack_1c = this_ptr->actor_name;
       iVar10 = 0;

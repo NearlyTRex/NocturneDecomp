@@ -19,7 +19,7 @@ section .text
     ADD ESP,0x4                         ; 0047b4ca
     PUSH 0x5fb130                       ; 0047b4cd
     CALL crt_stdlib.c__atexit_FUN_005a3e13 ; 0047b4d2
-        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005a3e13()
+        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005a3e13(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0047b4d7
     RET                                 ; 0047b4da
 

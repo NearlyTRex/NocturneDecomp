@@ -14,15 +14,15 @@
   },
   "cross_references": [
     {
-      "addr": "004f3f50",
-      "from_addr": "004f3f6a",
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f3e90",
       "from_addr": "004f3e96",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_004f3e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f3f50",
+      "from_addr": "004f3f6a",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -63,7 +63,7 @@
       {
         "call_addr": "004f3f6a",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -100,6 +100,32 @@
       "STORE": 4
     },
     "pcode_op_count": 18
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005161d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00537520",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050f200",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054a8b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

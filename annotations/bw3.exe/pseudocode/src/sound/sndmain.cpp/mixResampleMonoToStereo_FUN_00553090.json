@@ -2,23 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 464,
+    "complexity_score": 147,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 37,
+    "pseudocode_lines": 57,
+    "suspect_count": 7,
     "suspect_types": [
-      "bitcast_double_pair",
       "carry_arith_idiom",
-      "param_count_too_few",
       "unknown_field",
-      "unnamed_param",
       "warning_deadcode_restart",
       "warning_overlapping_globals"
     ],
-    "total_lines": 174
+    "total_lines": 172
   },
   "cross_references": [
     {
@@ -39,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_mixResampleMonoToStereo_FUN_00553090",
-    "signature": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00553090(int param_1,int *param_2,float *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,int param_8)"
+    "signature": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00553090(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)"
   },
   "function_calls": [
     {
@@ -76,11 +73,11 @@
         "stack_params": 8
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 6,
+    "declared_stack_bytes": 32,
     "estimated_params": 8,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.5588235294117645,
@@ -119,11 +116,37 @@
     },
     "pcode_op_count": 567
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0054d520",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0056fb90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a5e70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00523610",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 64,
+    "frame_size": 96,
     "local_size": 64,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 32,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -195,6 +218,48 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sample_data",
+        "offset": 4,
+        "size": 4,
+        "type": "short *"
+      },
+      {
+        "is_param": true,
+        "name": "channel_buffers",
+        "offset": 8,
+        "size": 4,
+        "type": "SStereoBuffers *"
+      },
+      {
+        "is_param": true,
+        "name": "channel_gains",
+        "offset": 12,
+        "size": 4,
+        "type": "SStereoGains *"
+      },
+      {
+        "is_param": true,
+        "name": "resample_position",
+        "offset": 16,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "resample_delta",
+        "offset": 24,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "samples_to_process",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -216,102 +281,6 @@
       "type": "warning_deadcode_restart"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00553090(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00553090(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00553090(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00553090(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00553090(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00553090(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00553090(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00553090(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "if (0 < param_8) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "dVar13 = floor(__BITCAST_DOUBLE(CONCAT44(param_5,param_4)));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "dVar13 = floor(__BITCAST_DOUBLE(CONCAT44(param_5,param_4)));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 24,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar13 = floor(__BITCAST_DOUBLE(CONCAT44(param_5,param_4)));",
-      "type": "bitcast_double_pair"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 27,
       "match": "._0_4_",
@@ -328,30 +297,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "dVar13 = floor(__BITCAST_DOUBLE(CONCAT44(param_7,param_6)));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "dVar13 = floor(__BITCAST_DOUBLE(CONCAT44(param_7,param_6)));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 34,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar13 = floor(__BITCAST_DOUBLE(CONCAT44(param_7,param_6)));",
-      "type": "bitcast_double_pair"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 37,
       "match": "._0_4_",
@@ -360,143 +305,20 @@
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "fVar12 = ((float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) - (float10)local_34) *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "fVar12 = ((float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) - (float10)local_34) *",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 40,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "fVar12 = ((float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) - (float10)local_34) *",
-      "type": "bitcast_double_pair"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 43,
+      "line": 42,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(fVar12);",
       "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar3 = *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "fVar4 = param_3[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar5 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar6 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "sVar2 = *(short *)(param_1 + iVar10 * 2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 52,
+      "line": 51,
       "match": "CARRY4(uVar8,(uint)",
       "severity": "moderate",
       "text": "bVar11 = CARRY4(uVar8,(uint)local_34);",
       "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float)*(short *)(param_1 + iVar1) * fVar3 + *(float *)(iVar6 + iVar9 * 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "} while (iVar9 < param_8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "_param_4 = (double)param_8 * __BITCAST_DOUBLE(CONCAT44(param_7,param_6)) + _param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "_param_4 = (double)param_8 * __BITCAST_DOUBLE(CONCAT44(param_7,param_6)) + _param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "_param_4 = (double)param_8 * __BITCAST_DOUBLE(CONCAT44(param_7,param_6)) + _param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 60,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "_param_4 = (double)param_8 * __BITCAST_DOUBLE(CONCAT44(param_7,param_6)) + _param_4;",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 8,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:8",
-      "param_delta": 8,
-      "text": "Function declares 0 params but call sites push 8 (8 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

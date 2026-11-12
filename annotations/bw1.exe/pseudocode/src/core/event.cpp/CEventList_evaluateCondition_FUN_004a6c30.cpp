@@ -25,7 +25,7 @@ int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList 
       iVar1 = core_event_cpp_CEventList_evaluateExpression_FUN_004a6d10
                         (this_ptr,condition_expression);
       if (iVar1 < 0) {
-        engine_console_cpp_FUN_00445430(g_CConsolePtr,&DAT_005de18e,&DAT_01c56ed0);
+        engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,&DAT_005de18e);
         return 0;
       }
     }

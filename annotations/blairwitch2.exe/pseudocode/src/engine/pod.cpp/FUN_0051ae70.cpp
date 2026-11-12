@@ -11,6 +11,7 @@
 void engine_pod_cpp_FUN_0051ae70(int param_1,int param_2)
 
 {
+  _FILE *file;
   int iVar1;
   uint *unaff_ESI;
   uint *puVar2;
@@ -23,20 +24,20 @@ void engine_pod_cpp_FUN_0051ae70(int param_1,int param_2)
     _DAT_01d046a4 = 0x37c;
     core_main_c_FUN_004e4500("CPodFile::getDependencyRecord - invalid index.  Pod not mounted?");
   }
-  iVar1 = _fopen(param_1 + 4,0x5e268f);
-  if (iVar1 == 0) {
+  file = _fopen((char *)(param_1 + 4),(char *)0x5e268f);
+  if (file == (_FILE *)0x0) {
     _DAT_01d046a0 = "..\\engine\\pod.cpp";
     _DAT_01d046a4 = 0x381;
-    core_main_c_FUN_004e4500("CPodFile::getDependencyRecord - can't open %s",param_1 + 4);
+    core_main_c_FUN_004e4500("CPodFile::getDependencyRecord - can't open %s",(char *)(param_1 + 4));
   }
-  _fseek(iVar1,param_2 * 0x108 + *(int *)(param_1 + 0x428),0);
-  _fread(auStack_114,0x108,1,iVar1);
-  if ((*(byte *)(iVar1 + 0xc) & 0x20) != 0) {
+  _fseek(file,param_2 * 0x108 + *(int *)(param_1 + 0x428),0);
+  _fread(auStack_114,0x108,1,file);
+  if ((file->_flag & 0x20) != 0) {
     _DAT_01d046a0 = "..\\engine\\pod.cpp";
     _DAT_01d046a4 = 0x392;
     core_main_c_FUN_004e4500("CPodFile::getDependencyRecord - error reading %s",param_1 + 4);
   }
-  _fclose(iVar1);
+  _fclose(file);
   puVar2 = auStack_114;
   for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = *puVar2;

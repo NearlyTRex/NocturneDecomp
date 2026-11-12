@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 26,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 26,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 89
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 90
   },
   "cross_references": [],
   "function": {
@@ -104,7 +106,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)&pCVar2[0x65].particle_systems[3].field_0x20;",
+      "type": "unnamed_field"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

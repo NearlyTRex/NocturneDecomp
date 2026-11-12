@@ -21,7 +21,7 @@ CFlies * __cdecl core_flies_cpp_findFliesByFollowActor_FUN_004ae6c0(CDemonActor 
     }
     pCVar1 = (CFlies *)
              core_actor_cpp_castToClassHash_FUN_0040c840
-                       (*(uint *)((int)g_CDemonSetPtr->actors + iVar3),
+                       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
                         g_CFliesClassInfo.name_hash);
     if ((pCVar1 != (CFlies *)0x0) && (actor == pCVar1->follow_actor)) break;
     iVar2 = iVar2 + 1;

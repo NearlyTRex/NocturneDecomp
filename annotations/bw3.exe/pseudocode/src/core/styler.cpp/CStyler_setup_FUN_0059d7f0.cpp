@@ -25,7 +25,7 @@ void __cdecl core_styler_cpp_CStyler_setup_FUN_0059d7f0(CStyler *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(pCVar2);
   core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(pCVar2);
   if (this_ptr->is_morph_partner == 0) {
-    pCVar4 = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c4f0("CStylerDemon");
+    pCVar4 = core_actor_cpp_createActorByName_FUN_0040c4f0("CStylerDemon");
     this_ptr->demon = pCVar4;
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
               ((CDeformableModelInstance *)(pCVar4 + 1),"bwp3_stylerdemon.dfm");

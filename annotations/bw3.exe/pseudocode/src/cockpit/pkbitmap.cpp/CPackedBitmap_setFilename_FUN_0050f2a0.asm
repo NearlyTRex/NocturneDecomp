@@ -9,7 +9,7 @@
 ;
 ; XREF[3]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00510160 at 00510178
-;   cockpit_pkbitmap.cpp_FUN_0050f910 at 0050f92b
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910 at 0050f92b
 ;   cockpit_pkbitmap.cpp_FUN_00510430 at 005104ab
 ;
 ; Called Functions:

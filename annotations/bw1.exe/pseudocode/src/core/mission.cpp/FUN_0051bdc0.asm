@@ -36,7 +36,7 @@
 ;   core_script.cpp_CScript_executeInitSection_FUN_00544310
 ;   core_script.cpp_CScript_initRuntime_FUN_00544190
 ;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_0055b200
-;   shape_edittool.cpp_FUN_004943a0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     PUSH 0x5e995d                       ; 0051bddf | = "Can't run mission - no local hero"
     MOV EBX,dword ptr [0x0061abc0]      ; 0051bde4 | g_CEditorToolsPtr
     PUSH EBX                            ; 0051bdea
-    CALL shape_edittool.cpp_FUN_004943a0 ; 0051bdeb
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 0051bdeb
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
         ;   Label: LAB_0051bdeb
     ADD ESP,0x8                         ; 0051bdf0
     XOR EAX,EAX                         ; 0051bdf3

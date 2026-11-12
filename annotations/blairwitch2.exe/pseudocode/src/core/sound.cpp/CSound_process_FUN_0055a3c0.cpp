@@ -116,8 +116,8 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0055a3c0(CSound *this_ptr)
   }
   else {
     sound_sndmain_cpp_enableSfxChannel_FUN_00551220(3,1);
-    local_18 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00551190();
-    sound_sndmain_cpp_setSfxChannelVol_FUN_00551100(3);
+    local_18 = sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(0);
+    sound_sndmain_cpp_setSfxChannelVol_FUN_00551100(3,local_18 * _DAT_0264bad8);
   }
   if (g_CDemonSetPtr->player_on_train != 0) {
     local_24 = g_CGamePtr->delta_time_float;

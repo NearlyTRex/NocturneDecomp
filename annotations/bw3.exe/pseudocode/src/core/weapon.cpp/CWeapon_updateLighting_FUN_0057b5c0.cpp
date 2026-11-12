@@ -11,12 +11,14 @@
 void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_0057b5c0(CWeapon *this_ptr)
 
 {
-  int iVar1;
-  uint *puVar2;
+  float fVar1;
+  CDemonActor *pCVar2;
+  uint *puVar3;
   float unaff_EDI;
-  byte bVar3;
+  byte bVar4;
   float afStackY_1060 [1007];
   CVector3f *euler_angles;
+  float in_stack_ffffff64;
   float fStack_78;
   float fStack_68;
   CVector3f CStack_64;
@@ -29,25 +31,25 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_0057b5c0(CWeapon *this_p
   uint uStack_1c;
   uint uStack_18;
   
-  bVar3 = 0;
+  bVar4 = 0;
   (*(((this_ptr->base).vtable._uc)->_uc).isInvulnerable)((CCharacter *)this_ptr);
   fStack_78 = CStack_64.z;
-  *(float *)(&stack0xffffff8c + (uint)bVar3 * -8) = afStack_58[(uint)bVar3 * -2];
-  *(float *)(&stack0xffffff90 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-       afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+  *(float *)(&stack0xffffff8c + (uint)bVar4 * -8) = afStack_58[(uint)bVar4 * -2];
+  *(float *)(&stack0xffffff90 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
+       afStack_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   core_actor_cpp_FUN_00408b80();
   euler_angles = &CStack_44;
   g_CDemonLightInstance.light_enabled_flag = 1;
   fStack_68 = afStack_58[2];
-  *(float *)((int)&CStack_64 + (uint)bVar3 * -8) = afStack_58[(uint)bVar3 * -2 + 3];
-  afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + -2] =
-       afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
+  *(float *)((int)&CStack_64 + (uint)bVar4 * -8) = afStack_58[(uint)bVar4 * -2 + 3];
+  afStack_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -2] =
+       afStack_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
   g_CDemonLightInstance.volumetric_enabled = 1;
-  puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 0x34);
+  puVar3 = (uint *)((int)this_ptr + (uint)bVar4 * -8 + 0x34);
   CStack_44.x = (this_ptr->base).orient.vec.x;
-  *(uint *)((int)&CStack_44 + (uint)bVar3 * -8 + 4) = *puVar2;
-  *(uint *)((int)&CStack_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-       puVar2[(uint)bVar3 * -2 + 1];
+  *(uint *)((int)&CStack_44 + (uint)bVar4 * -8 + 4) = *puVar3;
+  *(uint *)((int)&CStack_44 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       puVar3[(uint)bVar4 * -2 + 1];
   CStack_44.x = CStack_44.x + _DAT_005d78d3;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
             ((CMatrix3x3f *)&stack0xffffff64,euler_angles);
@@ -56,9 +58,9 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_0057b5c0(CWeapon *this_p
   uStack_18 = 0x3f800000;
   core_dirmat_cpp_FUN_0045b800();
   afStack_34[2] = fStack_38;
-  afStack_34[(uint)bVar3 * -2 + 3] = afStack_34[(uint)bVar3 * -2];
-  afStack_34[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
-       afStack_34[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+  afStack_34[(uint)bVar4 * -2 + 3] = afStack_34[(uint)bVar4 * -2];
+  afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+       afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   fStack_68 = fStack_68 + afStack_34[2];
   CStack_64.x = CStack_64.x + afStack_34[3];
   CStack_64.y = CStack_64.y + fStack_24;
@@ -72,10 +74,11 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_0057b5c0(CWeapon *this_p
   g_CDemonLightInstance.base.max_distance = 32.0;
   g_CDemonLightInstance.base.base.focal_length = 32.0;
   g_CDemonLightInstance.antialiasing_enabled = 1;
-  (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840();
-  if ((iVar1 != 0) && (*(float *)(iVar1 + 0x206e8) < _DAT_005d78d7)) {
-    unaff_EDI = *(float *)(iVar1 + 0x206e8) * _DAT_005d78db;
+  pCVar2 = (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
+  pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar2,(uint)in_stack_ffffff64);
+  if ((pCVar2 != (CDemonActor *)0x0) && (fVar1 = pCVar2[0x182].orient.vec.z, fVar1 < _DAT_005d78d7))
+  {
+    unaff_EDI = fVar1 * _DAT_005d78db;
   }
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_0045fab0(&g_CDemonLightInstance,unaff_EDI);
   if (g_CGamePtr->flashlight_active == 0) {

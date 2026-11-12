@@ -42,7 +42,7 @@ section .text
     ADD ECX,EAX                         ; 00451287
     INC EBX                             ; 00451289
     CALL crt_watcom.c__memcpy_FUN_00495f68 ; 0045128a
-        ;   XREF to: 00495f68 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memcpy_FUN_00495f68()
+        ;   XREF to: 00495f68 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_00495f68(void * dest, void * src, uint size)
     MOV ECX,dword ptr [ESI + 0x148]     ; 0045128f
     ADD EDI,0x4                         ; 00451295
     CMP EBX,ECX                         ; 00451298

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_skeleton_cpp_FUN_005660c0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,int *param_5,byte *param_6)
+; float core_skeleton_cpp_FUN_005660c0(int param_1,int param_2,CVector3f *param_3,CVector3f *param_4,int *param_5,byte *param_6)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x90]:8  local_90
@@ -185,7 +185,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 00566233
     PUSH EAX                            ; 00566237
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_0048ff40 ; 00566238
-        ;   XREF to: 0048ff40 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_0048ff40()
+        ;   XREF to: 0048ff40 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_0048ff40(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0x84],EAX      ; 0056623d
     FLD float ptr [ESP + 0x84]          ; 00566244
     ADD ESP,0xc                         ; 0056624b
@@ -288,7 +288,7 @@ section .text
     PUSH 0x26a0b9c                      ; 0056635e | DAT_026a0b9c
     MOV byte ptr [0x026af5fc],DL        ; 00566363 | DAT_026af5fc
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 00566369
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0056636e
     JMP 0x005660db                      ; 00566371
         ;   XREF to: 005660db (UNCONDITIONAL_JUMP)  ; LAB_005660db

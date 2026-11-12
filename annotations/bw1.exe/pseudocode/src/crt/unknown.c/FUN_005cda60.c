@@ -9,12 +9,12 @@
 void FUN_005cda60(int param_1,uint param_2)
 
 {
-  uint uVar1;
+  _FILE *file;
   
-  uVar1 = FUN_005ce120(2);
-  FUN_005ce150(*(uint *)(&DAT_00626b50 + param_1 * 4),uVar1);
-  FUN_005ce150(&DAT_005fb299,uVar1);
-  FUN_005ce150(param_2,uVar1);
-  _fputc(10,uVar1);
+  file = (_FILE *)FUN_005ce120(2);
+  FUN_005ce150(*(uint *)(&DAT_00626b50 + param_1 * 4),file);
+  FUN_005ce150(&DAT_005fb299,file);
+  FUN_005ce150(param_2,file);
+  _fputc(10,file);
   return;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_batman_cpp_factoryFuncBatman_FUN_00412af0(void)
+; CBatman * __cdecl core_batman_cpp_factoryFuncBatman_FUN_00412af0(void)
 ;
 ;
 ; Called Functions:

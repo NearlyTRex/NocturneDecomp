@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_crate.cpp_factoryFuncCrate_FUN_00439d30
 // Address: 00439d30
-void factoryFuncCrate(void);
+CCrate * __cdecl factoryFuncCrate(void);
 
 // Original: core_crate.cpp_CCrate_getActorType_FUN_00439d50
 // Address: 00439d50
@@ -21,9 +21,9 @@ CDemonActorType * CCrate::getActorType(CCrate *this_ptr);
 // Address: 00439d60
 CCrate * __cdecl CCrate::ctor(CCrate *this_ptr);
 
-// Original: core_crate.cpp_FUN_00439dc0
+// Original: core_crate.cpp_CCrate_setup_FUN_00439dc0
 // Address: 00439dc0
-void FUN_00439dc0(CDemonActor *param_1);
+void __cdecl CCrate::setup(CCrate *this_ptr);
 
 // Original: core_crate.cpp_CCrate_canPickup_FUN_00439ea0
 // Address: 00439ea0
@@ -41,9 +41,9 @@ void __cdecl CCrate::onDropped(CCrate *this_ptr,CVector3f *drop_position);
 // Address: 00439ef0
 CDemonActor * __cdecl CCrate::getCarrier(CCrate *this_ptr);
 
-// Original: core_crate.cpp_FUN_00439f00
+// Original: core_crate.cpp_CCrate_process_FUN_00439f00
 // Address: 00439f00
-void FUN_00439f00(CDemonActor *param_1);
+void __cdecl CCrate::process(CCrate *this_ptr,float delta_time);
 
 // Original: core_crate.cpp_FUN_0043a130
 // Address: 0043a130
@@ -65,9 +65,9 @@ ECollisionType __cdecl CCrate::getCollisionType(CCrate *this_ptr,SCollisionInfo 
 // Address: 0043a240
 void FUN_0043a240(int param_1);
 
-// Original: core_crate.cpp_FUN_0043a280
+// Original: core_crate.cpp_CCrate_getTargetPoints_FUN_0043a280
 // Address: 0043a280
-undefined4 FUN_0043a280(int param_1,float *param_2);
+int __cdecl CCrate::getTargetPoints(CCrate *this_ptr,CVector3f *out_points_array);
 
 // Original: core_crate.cpp_FUN_0043a350
 // Address: 0043a350

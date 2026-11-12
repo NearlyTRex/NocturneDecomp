@@ -77,7 +77,7 @@ section .text
     LEA EAX,[EBX + 0x2538]              ; 0042b469
     PUSH EAX                            ; 0042b46f
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0042b470
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x005f0f48]      ; 0042b475 | g_CCharacterClassVersion
     ADD ESP,0x8                         ; 0042b47b
     CMP EDX,0x2                         ; 0042b47e
@@ -142,7 +142,7 @@ section .text
     LEA EAX,[EBX + 0x26fc]              ; 0042b52d
     PUSH EAX                            ; 0042b533
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 0042b534
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b539
     PUSH 0x5b80ba                       ; 0042b53c | = "grabbedType"
     LEA EAX,[EBX + 0x2700]              ; 0042b541
@@ -154,7 +154,7 @@ section .text
     LEA EAX,[EBX + 0x2f08]              ; 0042b555
     PUSH EAX                            ; 0042b55b
     CALL core_actor.cpp_archiveClothList_FUN_0040bf20 ; 0042b55c
-        ;   XREF to: 0040bf20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveClothList_FUN_0040bf20()
+        ;   XREF to: 0040bf20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveClothList_FUN_0040bf20(CClothList * cloth_list, char * property_name)
     ADD ESP,0x8                         ; 0042b561
     CMP dword ptr [0x005f0f48],0x5      ; 0042b564 | g_CCharacterClassVersion
         ;   Label: LAB_0042b564
@@ -164,7 +164,7 @@ section .text
     LEA EAX,[EBX + 0x27b8]              ; 0042b572
     PUSH EAX                            ; 0042b578
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0042b579
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b57e
     CMP dword ptr [0x005f0f48],0x6      ; 0042b581 | g_CCharacterClassVersion
         ;   Label: LAB_0042b581
@@ -186,7 +186,7 @@ section .text
     LEA EAX,[EBX + 0x253c]              ; 0042b5bb
     PUSH EAX                            ; 0042b5c1
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0042b5c2
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b5c7
     CMP dword ptr [0x005f0f48],0x7      ; 0042b5ca | g_CCharacterClassVersion
         ;   Label: LAB_0042b5ca
@@ -226,13 +226,13 @@ section .text
     LEA EAX,[EBX + 0x3254]              ; 0042b62f
     PUSH EAX                            ; 0042b635
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0042b636
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b63b
     PUSH 0x5b8139                       ; 0042b63e | = "on_fire_time"
     LEA EAX,[EBX + 0x3260]              ; 0042b643
     PUSH EAX                            ; 0042b649
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0042b64a
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b64f
     CMP dword ptr [0x005f0f48],0xb      ; 0042b652 | g_CCharacterClassVersion
         ;   Label: LAB_0042b652
@@ -262,25 +262,25 @@ section .text
     LEA EAX,[EBX + 0x2704]              ; 0042b69a
     PUSH EAX                            ; 0042b6a0
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 0042b6a1
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b6a6
     PUSH 0x5b8168                       ; 0042b6a9 | = "scriptWalkDist"
     LEA EAX,[EBX + 0x2708]              ; 0042b6ae
     PUSH EAX                            ; 0042b6b4
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0042b6b5
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b6ba
     PUSH 0x5b8177                       ; 0042b6bd | = "scriptRunDist"
     LEA EAX,[EBX + 0x270c]              ; 0042b6c2
     PUSH EAX                            ; 0042b6c8
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0042b6c9
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b6ce
     PUSH 0x5b8185                       ; 0042b6d1 | = "scriptWalkTimer"
     LEA EAX,[EBX + 0x2710]              ; 0042b6d6
     PUSH EAX                            ; 0042b6dc
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0042b6dd
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b6e2
     PUSH 0x5b8195                       ; 0042b6e5 | = "scriptWalkState"
     LEA EAX,[EBX + 0x273c]              ; 0042b6ea
@@ -292,7 +292,7 @@ section .text
     LEA EAX,[EBX + 0x2740]              ; 0042b6fe
     PUSH EAX                            ; 0042b704
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 0042b705
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b70a
     CMP dword ptr [0x005f0f48],0xe      ; 0042b70d | g_CCharacterClassVersion
         ;   Label: LAB_0042b70d
@@ -331,14 +331,14 @@ section .text
     ADD EAX,0x8                         ; 0042b76a
     PUSH EAX                            ; 0042b76d
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 0042b76e
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b773
     IMUL EAX,dword ptr [ESP + 0x4c],0x78 ; 0042b776
     ADD EAX,EBP                         ; 0042b77b
     ADD EAX,0xc                         ; 0042b77d
     PUSH EAX                            ; 0042b780
     CALL core_xform.cpp_setIdentityMatrix3x4_FUN_005835d0 ; 0042b781
-        ;   XREF to: 005835d0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityMatrix3x4_FUN_005835d0()
+        ;   XREF to: 005835d0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityMatrix3x4_FUN_005835d0(CMatrix3x4f * matrix)
     ADD ESP,0x4                         ; 0042b786
     IMUL EAX,dword ptr [ESP + 0x4c],0x78 ; 0042b789
     MOV dword ptr [EBX + EAX*0x1 + 0x25e8],0x3f800000 ; 0042b78e
@@ -349,13 +349,13 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 0042b7a7
     PUSH EAX                            ; 0042b7ab
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 0042b7ac
-        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b400()
+        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b400(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b7b1
     PUSH 0x5b8059                       ; 0042b7b4 | = "carry orient"
     LEA EAX,[ESP + 0x1c]                ; 0042b7b9
     PUSH EAX                            ; 0042b7bd
     CALL core_actor.cpp_archiveOrientation_FUN_0040b4a0 ; 0042b7be
-        ;   XREF to: 0040b4a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveOrientation_FUN_0040b4a0()
+        ;   XREF to: 0040b4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveOrientation_FUN_0040b4a0(COrientation * orient_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b7c3
     LEA EAX,[ESP + 0x18]                ; 0042b7c6
     PUSH EAX                            ; 0042b7ca
@@ -392,7 +392,7 @@ section .text
     ADD EAX,0x8                         ; 0042b81d
     PUSH EAX                            ; 0042b820
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 0042b821
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     MOV EDI,dword ptr [0x005f0f48]      ; 0042b826 | g_CCharacterClassVersion
     ADD ESP,0x8                         ; 0042b82c
     CMP EDI,0xd                         ; 0042b82f
@@ -428,13 +428,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0042b882
     MOVSD ES:EDI,ESI                    ; 0042b883
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 0042b884
-        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b400()
+        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b400(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b889
     PUSH 0x5b8095                       ; 0042b88c | = "carry orient"
     LEA EAX,[ESP + 0x28]                ; 0042b891
     PUSH EAX                            ; 0042b895
     CALL core_actor.cpp_archiveOrientation_FUN_0040b4a0 ; 0042b896
-        ;   XREF to: 0040b4a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveOrientation_FUN_0040b4a0()
+        ;   XREF to: 0040b4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveOrientation_FUN_0040b4a0(COrientation * orient_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042b89b
     JMP 0x0042b4f4                      ; 0042b89e
         ;   XREF to: 0042b4f4 (UNCONDITIONAL_JUMP)  ; LAB_0042b4f4

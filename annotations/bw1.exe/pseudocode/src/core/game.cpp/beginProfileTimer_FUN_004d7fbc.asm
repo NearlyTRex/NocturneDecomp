@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_beginProfileTimer_FUN_004d7fbc(void)
+; void __cdecl core_game_cpp_beginProfileTimer_FUN_004d7fbc(void)
 ;
 ;
 ; Referenced Globals:
@@ -23,7 +23,7 @@ section .text
         ;   XREF to: 004d7fcf (CONDITIONAL_JUMP)  ; LAB_004d7fcf
     RET                                 ; 004d7fce
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004d7fcf
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005b2420()
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
         ;   Label: LAB_004d7fcf
     MOV [0x01cd0c90],EAX                ; 004d7fd4 | DAT_01cd0c90
     RET                                 ; 004d7fd9

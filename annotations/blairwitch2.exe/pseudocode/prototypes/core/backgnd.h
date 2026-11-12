@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_backgnd.cpp_factoryFuncBackgroundActor_FUN_0040f300
 // Address: 0040f300
-void factoryFuncBackgroundActor(void);
+CBackgroundActor * __cdecl factoryFuncBackgroundActor(void);
 
 // Original: core_backgnd.cpp_CBackgroundActor_getActorType_FUN_0040f320
 // Address: 0040f320

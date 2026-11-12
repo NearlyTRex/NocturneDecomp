@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_chain.cpp_factoryFuncChain_FUN_00435630
 // Address: 00435630
-void factoryFuncChain(void);
+CChain * __cdecl factoryFuncChain(void);
 
 // Original: core_chain.cpp_CChain_getActorType_FUN_00435650
 // Address: 00435650

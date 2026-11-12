@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_water.cpp_calculateWaveHeight_FUN_005a998e
 // Address: 005a998e
-float calculateWaveHeight(int param_1,int param_2);
+float __cdecl calculateWaveHeight(int x,int y);
 
 // Original: core_water.cpp_CWater_ctor_FUN_005a99e0
 // Address: 005a99e0

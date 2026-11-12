@@ -15,7 +15,7 @@ COutStreamFile * support_trstream_cpp_COutStreamFile_dtor_FUN_0057dc10(COutStrea
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_COutStreamFileTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_COutStreamFileTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

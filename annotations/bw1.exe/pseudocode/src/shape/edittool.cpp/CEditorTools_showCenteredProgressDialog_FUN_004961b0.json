@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 59,
+    "complexity_score": 58,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 28,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 122
+    "total_lines": 121
   },
   "cross_references": [
     {
@@ -220,6 +220,32 @@
     },
     "pcode_op_count": 388
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047db40",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0047ed50",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a0430",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9427
+    },
+    "nocturne.exe": {
+      "addr": "00471660",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9682
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -254,7 +280,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 17,
       "match": "DAT_0061b498",
       "severity": "mild",
       "text": "iVar1 = DAT_0061b498 / 2;",

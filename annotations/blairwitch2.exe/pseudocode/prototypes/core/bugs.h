@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_bugs.cpp_factoryFuncBugs_FUN_0041ef20
 // Address: 0041ef20
-void factoryFuncBugs(void);
+CBugs * __cdecl factoryFuncBugs(void);
 
 // Original: core_bugs.cpp_CBugs_getActorType_FUN_0041ef40
 // Address: 0041ef40
@@ -119,11 +119,11 @@ CVector3i * __cdecl convertVector(CVector3f *dest,CVector3i *src);
 
 // Original: core_bugs.cpp_getDeformableModelName_FUN_004220f0
 // Address: 004220f0
-int __cdecl getDeformableModelName(int param_1);
+char * __cdecl getDeformableModelName(CDeformableModelInstance *model_ptr);
 
 // Original: core_bugs.cpp_maxFloat_FUN_00422120
 // Address: 00422120
-float __cdecl maxFloat(float param_1,float param_2);
+float __cdecl maxFloat(float a,float b);
 
 // Original: core_bugs.cpp_CBugs_dtor_FUN_00422150
 // Address: 00422150

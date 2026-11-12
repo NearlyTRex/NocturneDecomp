@@ -18,7 +18,7 @@ CZombieCow * core_cow_cpp_CZombieCow_dtor_FUN_00445ae0(CZombieCow *this_ptr,uint
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CZombieCowTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CZombieCowTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

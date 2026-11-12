@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_particle_cpp_FUN_00532250(float *param_1)
+; void core_particle_cpp_FUN_00532250(CVector3f *param_1)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x130]:8  local_130
@@ -69,8 +69,8 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0048f040
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40
 ;   core_dtrace.cpp_FUN_0048b150
-;   core_dtrace.cpp_FUN_0048ef40
 ;
 ; *****************************************************************************
 
@@ -167,8 +167,8 @@ section .text
     FXCH                                ; 00532374
     FSTP float ptr [EBX + 0x4]          ; 00532376
     FSTP float ptr [EBX + 0x8]          ; 00532379
-    CALL core_dtrace.cpp_FUN_0048ef40   ; 0053237c
-        ;   XREF to: 0048ef40 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048ef40()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40 ; 0053237c
+        ;   XREF to: 0048ef40 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     ADD ESP,0x8                         ; 00532381
     LEA EAX,[ESP + 0xc]                 ; 00532384
     PUSH EAX                            ; 00532388

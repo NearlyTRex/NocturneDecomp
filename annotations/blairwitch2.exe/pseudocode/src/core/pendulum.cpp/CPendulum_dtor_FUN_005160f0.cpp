@@ -13,7 +13,7 @@ CPendulum * __cdecl core_pendulum_cpp_CPendulum_dtor_FUN_005160f0(CPendulum *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CPendulumTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CPendulumTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

@@ -9,8 +9,8 @@
 ; XREF[9]:
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_00413c70 at 00413c86
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0 at 004254c6
-;   core_dcamera.cpp_FUN_0043ca10 at 0043ca3c
-;   core_dcamera.cpp_FUN_0043cbe0 at 0043cbf7
+;   core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0043ca10 at 0043ca3c
+;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0043cbe0 at 0043cbf7
 ;   core_dcamera.cpp_FUN_0043cfde at 0043d075
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0 at 00464ad6
 ;   core_moloch.cpp_CMoloch_renderOpaque_FUN_005020c0 at 005020cf

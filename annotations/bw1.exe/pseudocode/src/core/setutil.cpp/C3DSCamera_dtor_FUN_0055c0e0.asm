@@ -19,7 +19,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0055c0e1
     PUSH EBX                            ; 0055c0e5
     CALL core_setutil.cpp_C3DSCamera_free_FUN_0055c100 ; 0055c0e6
-        ;   XREF to: 0055c100 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSCamera_free_FUN_0055c100()
+        ;   XREF to: 0055c100 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_free_FUN_0055c100(C3DSCamera * this_ptr)
     ADD ESP,0x4                         ; 0055c0eb
     MOV EAX,EBX                         ; 0055c0ee
     POP EBX                             ; 0055c0f0

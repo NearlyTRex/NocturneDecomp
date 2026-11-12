@@ -268,6 +268,32 @@
     },
     "pcode_op_count": 359
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046c900",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046e4e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048da80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00461db0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -298,7 +324,7 @@
       "line": 13,
       "match": "code *",
       "severity": "moderate",
-      "text": "code *pcVar7;",
+      "text": "code *compar;",
       "type": "unresolved_funcptr"
     },
     {
@@ -330,7 +356,7 @@
       "line": 32,
       "match": "_qsort",
       "severity": "moderate",
-      "text": "_qsort(0x1be8388,_DAT_01bc1280,4,pcVar7);",
+      "text": "_qsort((void *)0x1be8388,_DAT_01bc1280,4,compar);",
       "type": "pointer_stride_bytecount"
     }
   ]

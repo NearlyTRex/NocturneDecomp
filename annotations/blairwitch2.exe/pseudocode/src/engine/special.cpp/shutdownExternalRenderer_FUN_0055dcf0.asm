@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   engine_special.cpp_FUN_0055e8c0 at 0055f26d
 ;   engine_special.cpp_kill_FUN_0055f4d0 at 0055f4e5
+;   engine_special.cpp_loadExternalRenderer_FUN_0055e8c0 at 0055f26d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c37788

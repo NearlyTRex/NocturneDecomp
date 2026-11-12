@@ -1,30 +1,28 @@
 // Name: crt_watcom.c__memset_FUN_00495ec0
 // Address: 00495ec0
 // Address Range: [[00495ec0, 00495f19] [00495f1c, 00495f26] [00495f28, 00495f2e]]
-// Convention: unknown
-// Signature: void crt_watcom_c__memset_FUN_00495ec0(uint param_1)
+// Convention: __fastcall
+// Signature: void __fastcall crt_watcom_c__memset_FUN_00495ec0(void *dest,int fill_byte,uint size)
 
 #include "nocturne.h"
 
-void _memset(uint param_1)
+void __fastcall _memset(void *dest,int fill_byte,uint size)
 
 {
   longlong lVar1;
   uint uVar2;
   uint uVar3;
-  int in_ECX;
   longlong *plVar4;
   byte uVar5;
-  uint in_EDX;
   uint uVar6;
   bool bVar7;
   
-  lVar1 = *(longlong *)(&DAT_005fbc30 + (in_EDX & 0xff) * 8);
-  uVar2 = *(uint *)(&DAT_005fbc30 + (in_EDX & 0xff) * 8);
-  uVar3 = param_1 - 8;
-  if (param_1 < 8 || uVar3 == 0) goto LAB_00495f08;
-  uVar6 = -in_ECX & 7;
-  plVar4 = (longlong *)(in_ECX + uVar6);
+  lVar1 = *(longlong *)(&DAT_005fbc30 + (fill_byte & 0xffU) * 8);
+  uVar2 = *(uint *)(&DAT_005fbc30 + (fill_byte & 0xffU) * 8);
+  uVar3 = size - 8;
+  if (size < 8 || uVar3 == 0) goto LAB_00495f08;
+  uVar6 = -(int)dest & 7;
+  plVar4 = (longlong *)((int)dest + uVar6);
   bVar7 = uVar3 < uVar6;
   uVar3 = uVar3 - uVar6;
   uVar5 = (byte)uVar2;

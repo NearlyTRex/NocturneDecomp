@@ -21,7 +21,7 @@
     {
       "addr": "0050f120",
       "from_addr": "0050f1cd",
-      "name": "core_netgame.cpp_FUN_0050f120",
+      "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -129,7 +129,7 @@
       {
         "call_addr": "0050f1cd",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050f120",
+        "caller": "core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -140,7 +140,7 @@
       {
         "call_addr": "0050f334",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050f120",
+        "caller": "core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -185,6 +185,32 @@
       "STORE": 20
     },
     "pcode_op_count": 331
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00530710",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9419
+    },
+    "bw3.exe": {
+      "addr": "00507fd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00543970",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9419
+    },
+    "nocturne.exe": {
+      "addr": "004edaf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9419
+    }
   },
   "stack_frame": {
     "frame_size": 88,

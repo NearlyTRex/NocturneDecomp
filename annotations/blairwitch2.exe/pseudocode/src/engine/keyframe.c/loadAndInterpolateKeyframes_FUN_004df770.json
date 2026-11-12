@@ -2,19 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 312,
+    "complexity_score": 177,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 97,
-    "suspect_count": 20,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 102,
+    "suspect_count": 6,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
+      "pointer_cast",
+      "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 298
+    "total_lines": 303
   },
   "cross_references": [
     {
@@ -34,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004df770",
-    "signature": "void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004df770(int param_1)"
+    "signature": "void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004df770(SMRGLKeyframeModel *keyframe_model)"
   },
   "function_calls": [
     {
@@ -111,11 +111,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.52760736196319,
@@ -154,11 +154,37 @@
     },
     "pcode_op_count": 901
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004fcb40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004dee60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00501d40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c3aa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 32,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -174,6 +200,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "keyframe_model",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLKeyframeModel *"
       }
     ]
   },
@@ -187,159 +220,44 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004df770(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x14) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar5 = engine_model_c_loadModelFile_FUN_00500720(param_1 + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14) = uVar5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = engine_model_c_FUN_00500f30(*(SMRGLHeaderExtended **)(param_1 + 0x14));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = engine_model_c_FUN_00500f30((SMRGLHeaderExtended *)(*(int *)(param_1 + 0x14) + iVar2));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 8)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "filename = (char *)(param_1 + 0x18);",
-      "type": "unnamed_param"
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(keyframe_model->base_keyframes->header).base.type + iVar4));",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar10 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar11` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar11 < *(int *)(param_1 + 8));",
-      "type": "unnamed_param"
+      "match": "pSVar11 = (T *)&(pSVar11->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar11 = (SMRGLKeyframeModel *)&(pSVar11->header).base.count;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 8)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar11 < *(int *)(param_1 + 8));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar11` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0x14);",
-      "type": "unnamed_param"
+      "match": "pSVar11 = (T *)&(pSVar11->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar11 = (SMRGLKeyframeModel *)&(pSVar11->header).base.count;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = param_1;",
-      "type": "unnamed_param"
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar9->owner`). Replace `pSVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 97,
+      "match": "pSVar9 = (T *)&pSVar9->FIELD",
+      "severity": "moderate",
+      "text": "pSVar9 = (SMRGLKeyframe *)&pSVar9->vertex_header;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 8)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_14 < *(int *)(param_1 + 8));",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar11` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 102,
+      "match": "pSVar11 = (T *)&(pSVar11->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar11 = (SMRGLKeyframeModel *)&(pSVar11->header).base.count;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

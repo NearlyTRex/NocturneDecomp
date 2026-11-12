@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_filmreel_cpp_factoryFuncFilmProjector_FUN_004ab590(void)
+; CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_004ab590(void)
 ;
 ;
 ; Called Functions:

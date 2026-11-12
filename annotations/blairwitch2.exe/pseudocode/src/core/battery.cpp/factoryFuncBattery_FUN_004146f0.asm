@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_battery_cpp_factoryFuncBattery_FUN_004146f0(void)
+; CBattery * __cdecl core_battery_cpp_factoryFuncBattery_FUN_004146f0(void)
 ;
 ;
 ; Called Functions:

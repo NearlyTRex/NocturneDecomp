@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_stdio.c_fseek_FUN_005a457c
-;   support_trstream.cpp_FUN_00573e00
+;   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00
 ;
 ; *****************************************************************************
 
@@ -55,7 +55,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x4]       ; 005740d7
     PUSH EDI                            ; 005740da
     CALL crt_stdio.c_fseek_FUN_005a457c ; 005740db
-        ;   XREF to: 005a457c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005a457c()
+        ;   XREF to: 005a457c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005a457c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 005740e0
     MOV EAX,dword ptr [EBX]             ; 005740e3
     PUSH EBX                            ; 005740e5
@@ -65,8 +65,8 @@ section .text
     JZ 0x00574102                       ; 005740ee
         ;   XREF to: 00574102 (CONDITIONAL_JUMP)  ; LAB_00574102
     PUSH EBX                            ; 005740f0
-    CALL support_trstream.cpp_FUN_00573e00 ; 005740f1
-        ;   XREF to: 00573e00 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00573e00()
+    CALL support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00 ; 005740f1
+        ;   XREF to: 00573e00 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00(CInStreamFile * this_ptr)
     MOV EAX,0x1                         ; 005740f6
     ADD ESP,0x4                         ; 005740fb
     POP EDI                             ; 005740fe

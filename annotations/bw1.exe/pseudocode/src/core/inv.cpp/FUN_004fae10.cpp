@@ -14,9 +14,9 @@ void core_inv_cpp_FUN_004fae10(int param_1)
   float fVar1;
   char cVar2;
   CBitFont *pCVar3;
-  int iVar4;
+  CDemonActor *pCVar4;
   int iVar5;
-  uint uVar6;
+  int iVar6;
   char *pcVar7;
   int iVar8;
   CAlphaBitmap *this_ptr;
@@ -147,33 +147,35 @@ void core_inv_cpp_FUN_004fae10(int param_1)
     round();
     local_64 = (int)ROUND(fVar12);
   }
-  iVar4 = core_actor_cpp_castToClassHash_FUN_0040c600(*(uint *)(param_1 + 0x338));
-  if (iVar4 != 0) {
-    fVar12 = (float10)*(float *)(iVar4 + 0x584) * (float10)_DAT_005e6918;
+  pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c600
+                     (*(CDemonActor **)(param_1 + 0x338),g_CLightGunClassInfo.name_hash);
+  if (pCVar4 != (CDemonActor *)0x0) {
+    fVar12 = (float10)pCVar4[4].location.position.y * (float10)_DAT_005e6918;
     round();
     local_14 = (float)(int)ROUND(fVar12);
     _sprintf(local_6e0,&DAT_005e6894);
-    iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_1c,0x58);
-    iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_1c,local_6e0);
+    iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_1c,0x58);
+    iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_1c,local_6e0);
     engine_font_cpp_FUN_004c1dd0
-              (local_1c,local_6e0,(DAT_0061b498 - iVar9) - iVar5,(DAT_0061b49c - local_48) - iVar4,
+              (local_1c,local_6e0,(DAT_0061b498 - iVar9) - iVar6,(DAT_0061b49c - local_48) - iVar5,
                0xf8);
   }
-  iVar4 = core_actor_cpp_castToClassHash_FUN_0040c600(*(uint *)(param_1 + 0x338));
-  if (iVar4 != 0) {
-    fVar12 = (float10)*(float *)(iVar4 + 0x584) * (float10)_DAT_005e6918;
+  pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c600
+                     (*(CDemonActor **)(param_1 + 0x338),g_CLightPisClassInfo.name_hash);
+  if (pCVar4 != (CDemonActor *)0x0) {
+    fVar12 = (float10)pCVar4[4].location.position.y * (float10)_DAT_005e6918;
     round();
     local_14 = (float)(int)ROUND(fVar12);
     _sprintf(local_8e0,&DAT_005e6899);
-    iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_1c,0x58);
-    iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_1c,local_8e0);
+    iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_1c,0x58);
+    iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_1c,local_8e0);
     engine_font_cpp_FUN_004c1dd0
-              (local_1c,local_8e0,(DAT_0061b498 - iVar9) - iVar5,(DAT_0061b49c - local_48) - iVar4,
+              (local_1c,local_8e0,(DAT_0061b498 - iVar9) - iVar6,(DAT_0061b49c - local_48) - iVar5,
                0xf8);
   }
   iVar9 = core_inv_cpp_FUN_004fa540(param_1,*(uint *)(param_1 + 0x338));
   if (iVar9 == 0) {
-    iVar4 = DAT_0061b498 - iVar8;
+    iVar5 = DAT_0061b498 - iVar8;
     iVar8 = DAT_0061b49c - iVar8;
     iVar9 = core_actor_cpp_isOfClass_FUN_0040c550
                       (*(CDemonActor **)(param_1 + 0x338),"CTommyGun");
@@ -210,7 +212,7 @@ void core_inv_cpp_FUN_004fae10(int param_1)
       }
     }
     if (this_ptr != (CAlphaBitmap *)0x0) {
-      engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(this_ptr,iVar4,iVar8,local_64);
+      engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(this_ptr,iVar5,iVar8,local_64);
     }
     iVar8 = core_actor_cpp_isOfClass_FUN_0040c550
                       (*(CDemonActor **)(param_1 + 0x338),"CFlashlight");
@@ -219,7 +221,7 @@ void core_inv_cpp_FUN_004fae10(int param_1)
         _sprintf(local_5e0,&DAT_005e68cf);
       }
       else {
-        core_inv_cpp_getItemDisplayName_FUN_004f62e0(*(uint *)(param_1 + 0x464));
+        core_inv_cpp_getItemDisplayName_FUN_004f62e0(*(CDemonActor **)(param_1 + 0x464));
         _sprintf(local_5e0,"%s %d");
       }
       iVar8 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_1c,0x58);
@@ -236,14 +238,14 @@ void core_inv_cpp_FUN_004fae10(int param_1)
     iVar8 = core_inv_cpp_FUN_004fa540(param_1,*(uint *)(param_1 + 0x338));
     if ((iVar8 == 0) &&
        (iVar8 = core_inv_cpp_FUN_004fa540(param_1,*(uint *)(param_1 + 0x338)), iVar8 == 0)) {
-      core_inv_cpp_getItemDescription_FUN_004f6350();
-      core_inv_cpp_getItemDisplayName_FUN_004f62e0(*(uint *)(param_1 + 0x338));
+      core_inv_cpp_getItemDescription_FUN_004f6350(*(CDemonActor **)(param_1 + 0x338));
+      core_inv_cpp_getItemDisplayName_FUN_004f62e0(*(CDemonActor **)(param_1 + 0x338));
       pcVar13 = "%s\n\n%s";
       goto LAB_004fb13d;
     }
-    core_inv_cpp_getItemDisplayName_FUN_004f62e0();
-    uVar6 = core_inv_cpp_getItemDescription_FUN_004f6350(*(uint *)(param_1 + 0x338));
-    core_inv_cpp_getItemDisplayName_FUN_004f62e0(*(uint *)(param_1 + 0x338),uVar6);
+    core_inv_cpp_getItemDisplayName_FUN_004f62e0(*(CDemonActor **)(param_1 + 0x464));
+    core_inv_cpp_getItemDescription_FUN_004f6350(*(CDemonActor **)(param_1 + 0x338));
+    core_inv_cpp_getItemDisplayName_FUN_004f62e0(*(CDemonActor **)(param_1 + 0x338));
     _sprintf(local_2e0,"%s\n\n%s %s");
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00531090(" are loaded.");
     iVar8 = -1;
@@ -268,8 +270,8 @@ void core_inv_cpp_FUN_004fae10(int param_1)
     } while (cVar2 != '\0');
   }
   else {
-    core_inv_cpp_getItemDescription_FUN_004f6350();
-    core_inv_cpp_getItemDisplayName_FUN_004f62e0(*(uint *)(param_1 + 0x338));
+    core_inv_cpp_getItemDescription_FUN_004f6350(*(CDemonActor **)(param_1 + 0x338));
+    core_inv_cpp_getItemDisplayName_FUN_004f62e0(*(CDemonActor **)(param_1 + 0x338));
     pcVar13 = "%s\n\n%s";
 LAB_004fb13d:
     _sprintf(local_2e0,pcVar13);
@@ -281,64 +283,66 @@ LAB_004fb13d:
   local_3c = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(pCVar3,0x58);
   iVar9 = (DAT_0061b49c - local_60) + local_48;
   local_30 = local_48 + (DAT_0061b498 - local_54);
-  iVar4 = 0;
+  iVar5 = 0;
   if (0 < iVar8) {
     iVar8 = 0x1d06f78;
     do {
-      iVar4 = iVar4 + 1;
+      iVar5 = iVar5 + 1;
       engine_font_cpp_FUN_004c1dd0(local_2c,iVar8,local_30,iVar9,0xf8);
       iVar8 = iVar8 + 0x100;
       iVar9 = iVar9 + local_3c;
-    } while (iVar4 < local_34);
+    } while (iVar5 < local_34);
   }
 LAB_004fb230:
   if ((*(int *)(param_1 + 0x33c) != 0) && (0.0 < *(float *)(param_1 + 0x344))) {
-    iVar4 = 0x10;
+    iVar5 = 0x10;
     local_6c = 0x70;
     iVar8 = 0x00000060;
     iVar9 = 0x000000D0;
     if ((DAT_0061b49c < 0x180) && (*(int *)(param_1 + 0x454) == 0)) {
       iVar9 = 0x000000D0 / 2;
       iVar8 = 0x00000060 / 2;
-      iVar4 = 8;
+      iVar5 = 8;
       local_6c = 0x28;
     }
-    iVar5 = core_actor_cpp_castToClassHash_FUN_0040c600(*(uint *)(param_1 + 0x33c));
-    if (iVar5 != 0) {
+    pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c600
+                       (*(CDemonActor **)(param_1 + 0x33c),g_CHealthItemClassInfo.name_hash);
+    if (pCVar4 != (CDemonActor *)0x0) {
       _sprintf(local_4e0,"%d x%3.0f%%");
       local_14 = (float)engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_1c,0x58);
-      iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_1c,local_4e0);
+      iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_1c,local_4e0);
       engine_font_cpp_FUN_004c1dd0
-                (local_1c,local_4e0,(DAT_0061b498 - iVar4) - iVar5,
-                 (DAT_0061b49c - iVar4) - (int)local_14,0xf8);
+                (local_1c,local_4e0,(DAT_0061b498 - iVar5) - iVar6,
+                 (DAT_0061b49c - iVar5) - (int)local_14,0xf8);
     }
-    iVar5 = core_actor_cpp_castToClassHash_FUN_0040c600(*(uint *)(param_1 + 0x33c));
-    if (iVar5 != 0) {
-      core_inv_cpp_getItemDisplayName_FUN_004f62e0();
+    pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c600
+                       (*(CDemonActor **)(param_1 + 0x33c),g_CFilmReelClassInfo.name_hash);
+    if (pCVar4 != (CDemonActor *)0x0) {
+      core_inv_cpp_getItemDisplayName_FUN_004f62e0(pCVar4);
       _sprintf(local_7e0,&DAT_005e6909);
       local_14 = (float)engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_1c,0x58);
-      iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_1c,local_7e0);
+      iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(local_1c,local_7e0);
       engine_font_cpp_FUN_004c1dd0
-                (local_1c,local_7e0,(DAT_0061b498 - iVar4) - iVar5,
-                 (DAT_0061b49c - iVar4) - (int)local_14,0xf8);
+                (local_1c,local_7e0,(DAT_0061b498 - iVar5) - iVar6,
+                 (DAT_0061b49c - iVar5) - (int)local_14,0xf8);
     }
     if (*(int *)(param_1 + 0x454) != 0) {
-      core_inv_cpp_getItemDescription_FUN_004f6350();
-      core_inv_cpp_getItemDisplayName_FUN_004f62e0(*(uint *)(param_1 + 0x33c));
+      core_inv_cpp_getItemDescription_FUN_004f6350(*(CDemonActor **)(param_1 + 0x33c));
+      core_inv_cpp_getItemDisplayName_FUN_004f62e0(*(CDemonActor **)(param_1 + 0x33c));
       _sprintf(local_3e0,"%s\n\n%s");
       local_40 = local_1c;
       local_24 = engine_font_cpp_FUN_004c4260(local_1c,local_3e0,0x1d07978,10,0x100);
       local_14 = (float)local_24;
       local_38 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_1c,0x58);
-      iVar8 = (DAT_0061b49c - iVar8) + iVar4;
-      local_28 = (DAT_0061b498 - iVar9) + iVar4;
+      iVar8 = (DAT_0061b49c - iVar8) + iVar5;
+      local_28 = (DAT_0061b498 - iVar9) + iVar5;
       iVar9 = 0;
       if (0 < (int)local_14) {
-        iVar4 = 0x1d07978;
+        iVar5 = 0x1d07978;
         do {
           iVar9 = iVar9 + 1;
-          engine_font_cpp_FUN_004c1dd0(local_40,iVar4,local_28,iVar8,0xf8);
-          iVar4 = iVar4 + 0x100;
+          engine_font_cpp_FUN_004c1dd0(local_40,iVar5,local_28,iVar8,0xf8);
+          iVar5 = iVar5 + 0x100;
           iVar8 = iVar8 + local_38;
         } while (iVar9 < local_24);
       }
@@ -394,11 +398,11 @@ LAB_004fb230:
     local_44 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(local_18,0x58);
     iVar8 = (DAT_0061b49c + -4) - local_44 * iVar8;
     if (((_DAT_0152d250 != local_18) || (_DAT_01d7f1b8 == 0)) && (iVar9 = 0, 0 < local_20)) {
-      iVar4 = 0x1d08378;
+      iVar5 = 0x1d08378;
       do {
         iVar9 = iVar9 + 1;
-        engine_font_cpp_FUN_004c1dd0(local_18,iVar4,4,iVar8,0xf8);
-        iVar4 = iVar4 + 0x100;
+        engine_font_cpp_FUN_004c1dd0(local_18,iVar5,4,iVar8,0xf8);
+        iVar5 = iVar5 + 0x100;
         iVar8 = iVar8 + local_44;
       } while (iVar9 < local_20);
     }
@@ -407,16 +411,16 @@ LAB_004fb230:
      (engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&CAlphaBitmap_01d1baf4,2,2,0xffff),
      iVar8 = _DAT_01d1bc48, _DAT_01d1bc48 != -1)) {
     alpha = 0xffff;
-    iVar5 = 7;
-    iVar4 = 0x20;
+    iVar6 = 7;
+    iVar5 = 0x20;
     iVar9 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3);
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0
-              (CAlphaBitmap_ARRAY_01d1bb08 + iVar8 * 4 + iVar9,iVar4,iVar5,alpha);
+              (CAlphaBitmap_ARRAY_01d1bb08 + iVar8 * 4 + iVar9,iVar5,iVar6,alpha);
   }
   iVar8 = CAlphaBitmap_01d1ba98.width;
   if (*(int *)(param_1 + 8) != 0) {
-    iVar4 = DAT_0061b49c + -2;
-    iVar9 = iVar4 - CAlphaBitmap_01d1ba98.height;
+    iVar5 = DAT_0061b49c + -2;
+    iVar9 = iVar5 - CAlphaBitmap_01d1ba98.height;
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&CAlphaBitmap_01d1ba98,2,iVar9,0xffff);
     fVar1 = (float)_DAT_005e6930;
     _DAT_01c50948 = 0;
@@ -428,9 +432,9 @@ LAB_004fb230:
     local_5c = (float)(iVar8 + 4) * fVar1;
     local_f0 = local_14;
     euler_angles = &local_140;
-    local_58 = (float)(iVar4 - iVar9) * fVar1;
+    local_58 = (float)(iVar5 - iVar9) * fVar1;
     this_ptr_00 = (CMatrix3x3f *)(local_1e0 + 0x48);
-    local_4c = (float)(iVar9 + iVar4) * fVar1;
+    local_4c = (float)(iVar9 + iVar5) * fVar1;
     local_140.x = 0.0;
     *(float *)((int)&local_140 + (uint)bVar11 * -8 + 4) = afStack_118[(uint)bVar11 * -2 + 9];
     *(float *)((int)&local_140 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =

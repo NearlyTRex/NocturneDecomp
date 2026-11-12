@@ -64,7 +64,7 @@ section .text
     LEA ESI,[EBX + 0x1fe70]             ; 004ef05c
     PUSH ESI                            ; 004ef062
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 004ef063
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     MOV EDX,dword ptr [0x0061ef8c]      ; 004ef068 | g_CHostageClassVersion
     ADD ESP,0x8                         ; 004ef06e
     CMP EDX,0xa                         ; 004ef071
@@ -81,7 +81,7 @@ section .text
     LEA ESI,[EBX + 0x1fab8]             ; 004ef093
     PUSH ESI                            ; 004ef099
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004ef09a
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ef09f
     PUSH 0x5e4f71                       ; 004ef0a2 | = "rescueCondition"
     LEA ESI,[EBX + 0x1fabc]             ; 004ef0a7
@@ -100,7 +100,7 @@ section .text
     LEA ESI,[EBX + 0x2ca0]              ; 004ef0cb
     PUSH ESI                            ; 004ef0d1
     CALL core_actor.cpp_archiveClothList_FUN_0040bce0 ; 004ef0d2
-        ;   XREF to: 0040bce0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveClothList_FUN_0040bce0()
+        ;   XREF to: 0040bce0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveClothList_FUN_0040bce0(CClothList * cloth_list, char * property_name)
     ADD ESP,0x8                         ; 004ef0d7
     CMP dword ptr [0x0061ef8c],0x3      ; 004ef0da | g_CHostageClassVersion
         ;   Label: LAB_004ef0da
@@ -188,7 +188,7 @@ section .text
     LEA ESI,[EBX + 0x1fe74]             ; 004ef1d0
     PUSH ESI                            ; 004ef1d6
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 004ef1d7
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ef1dc
     CMP dword ptr [0x0061ef8c],0xb      ; 004ef1df | g_CHostageClassVersion
         ;   Label: LAB_004ef1df

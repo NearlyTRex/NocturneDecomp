@@ -471,7 +471,8 @@ LAB_0044650c:
                            &(((this_ptr->base).victim)->base).location.position,path_map,pCVar19,
                            fVar17,in_stack_fffffd30);
         if (iVar8 < 0) {
-          engine_console_cpp_FUN_00445430();
+          engine_console_cpp_CConsole_printf_FUN_00445430
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(pCStack_48,0,1);
         }
         else {
@@ -505,7 +506,8 @@ LAB_0044650c:
             afStack_268[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4] =
                  afStack_e8[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 7];
             pCStack_14 = (CDeformableModelInstance *)
-                         core_actor_cpp_normalizeAngleToPi_FUN_0040cd60();
+                         core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                   (afStack_268[3] - (this_ptr->base).base.base.orient.vec.y);
             if (ABS((float)pCStack_14) < (float)_DAT_005d6f8d) {
               fVar17 = 1.4013e-45;
               iVar8 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,1);
@@ -634,7 +636,8 @@ LAB_00446804:
     if (EVar6 < WALK_STATE_NO_PATH) goto LAB_004465bf;
     if (EVar6 != WALK_STATE_NO_PATH) goto LAB_00446804;
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&pCVar2->base,0,1);
-    engine_console_cpp_FUN_00445430(g_CConsolePtr);
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_stdlib_c_strtoul_FUN_00573890(char *param_1,char **param_2,int param_3)
+; ulong __cdecl crt_stdlib_c_strtoul_FUN_00573890(char *str,char **endptr,int base)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
+; char * *         Stack[0x8]:4   endptr
+; int              Stack[0xc]:4   base
 ;
 ; Called Functions:
 ;   crt_stdlib.c_strtol_internal_FUN_00573720

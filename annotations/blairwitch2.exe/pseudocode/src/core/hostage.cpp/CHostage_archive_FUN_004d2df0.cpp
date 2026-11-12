@@ -9,16 +9,16 @@
 void __cdecl core_hostage_cpp_CHostage_archive_FUN_004d2df0(CHostage *this_ptr)
 
 {
-  CDeformableModelInstance *pCVar1;
+  CDeformableModelInstance *model_ptr;
   
   core_npc_cpp_CNPC_archive_FUN_005109e0(&this_ptr->base);
   core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->follow_state,"followState");
   core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->hostage_state,"hostageState");
   core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->goal_way_point,"goalWayPoint");
   if (g_CHostageClassVersion < 10) {
-    pCVar1 = &(this_ptr->base).base.model;
-    core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(pCVar1,"modelName");
-    core_actor_cpp_archiveMotionState_FUN_0040bb60(pCVar1,"motion state");
+    model_ptr = &(this_ptr->base).base.model;
+    core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(model_ptr,"modelName");
+    core_actor_cpp_archiveMotionState_FUN_0040bb60(&model_ptr->base,"motion state");
   }
   core_actor_cpp_archivePartStatus_FUN_0040bc50(&(this_ptr->base).base.model,"partStatus");
   core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->rescue_distance,"rescueDistance");

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 107,
+    "complexity_score": 111,
     "cross_reference_count": 10,
     "function_call_count": 11,
     "global_count": 21,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 72,
+    "pseudocode_lines": 76,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 295
+    "total_lines": 299
   },
   "cross_references": [
     {
@@ -420,6 +420,26 @@
     },
     "pcode_op_count": 744
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "004d27b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.927
+    },
+    "nocedit.exe": {
+      "addr": "004f2610",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9789
+    },
+    "nocturne.exe": {
+      "addr": "004b49a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9789
+    }
+  },
   "stack_frame": {
     "frame_size": 220,
     "local_size": 216,
@@ -460,7 +480,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 70,
       "match": "DAT_007c3038",
       "severity": "mild",
       "text": "if (DAT_007c3038 != 1) {",
@@ -468,7 +488,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 71,
       "match": "DAT_007c3034",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_save_FUN_004f95b0(&this_ptr->inventory,DAT_007c3034);",
@@ -476,7 +496,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 74,
       "match": "DAT_007c3034",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_load_FUN_004f97a0(&this_ptr->inventory,DAT_007c3034);",

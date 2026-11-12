@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_stairs.cpp_factoryFuncStairs_FUN_00584910
 // Address: 00584910
-void factoryFuncStairs(void);
+CStairs * __cdecl factoryFuncStairs(void);
 
 // Original: core_stairs.cpp_CStairs_getActorType_FUN_00584930
 // Address: 00584930

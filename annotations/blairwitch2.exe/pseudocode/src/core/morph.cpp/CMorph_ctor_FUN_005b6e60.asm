@@ -27,7 +27,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 005b6e67
     PUSH EDX                            ; 005b6e6b
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 005b6e6c
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005b6e71
     MOV dword ptr [EAX + 0xc28],0x1     ; 005b6e74
     RET                                 ; 005b6e7e

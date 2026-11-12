@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 427,
+    "complexity_score": 224,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 14,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 62,
-    "suspect_count": 35,
+    "pseudocode_lines": 59,
+    "suspect_count": 16,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 249
+    "total_lines": 246
   },
   "cross_references": [
     {
@@ -40,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archiveRules_FUN_0040c170",
-    "signature": "void __cdecl core_actor_cpp_archiveRules_FUN_0040c170(int *param_1,char *param_2)"
+    "signature": "void __cdecl core_actor_cpp_archiveRules_FUN_0040c170(CRuleList *rules,char *property_name)"
   },
   "function_calls": [
     {
@@ -186,11 +184,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.224489795918367,
@@ -220,31 +218,56 @@
     },
     "pcode_op_count": 621
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040be80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040c0c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040c000",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040d110",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "rules",
+        "offset": 4,
+        "size": 4,
+        "type": "CRuleList *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveRules_FUN_0040c170(int *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveRules_FUN_0040c170(int *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 10,
@@ -254,19 +277,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,property_name);",
       "type": "undefined_data"
     },
     {
@@ -274,23 +289,15 @@
       "line": 11,
       "match": "DAT_00609590",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,property_name);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s%d // ruleCount\\n\",&DAT_00609590,*param_1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 13,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s%d // ruleCount\\n\",&DAT_00609590,*param_1);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s%d // ruleCount\\n\",&DAT_00609590,rules->list_size)",
       "type": "undefined_data"
     },
     {
@@ -298,60 +305,28 @@
       "line": 13,
       "match": "DAT_00609590",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s%d // ruleCount\\n\",&DAT_00609590,*param_1);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s%d // ruleCount\\n\",&DAT_00609590,rules->list_size)",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar3 = param_1 + 0x7e;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar4 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 20,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s\\\"%s\\\" => \\\"%s\\\"\\n\",&DAT_00609590,piVar4,piVar3);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s\\\"%s\\\" => \\\"%s\\\"\\n\",&DAT_00609590,pacVar4,pacVar3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 20,
       "match": "DAT_00609590",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s\\\"%s\\\" => \\\"%s\\\"\\n\",&DAT_00609590,piVar4,piVar3);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s\\\"%s\\\" => \\\"%s\\\"\\n\",&DAT_00609590,pacVar4,pacVar3);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar1 < *param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cadc5,&DAT_00609590);",
@@ -359,7 +334,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_005cadc5",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cadc5,&DAT_00609590);",
@@ -367,7 +342,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 27,
       "match": "DAT_00609590",
       "severity": "mild",
       "text": "FUN_005b8010(DAT_007bc034,&DAT_005cadc5,&DAT_00609590);",
@@ -375,142 +350,51 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 31,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "iVar1 = _fgetc(DAT_007bc034);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"Rule list opening brace\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007bc034,&DAT_005cad4d,param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 37,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007bc034,&DAT_005cad4d,param_1);",
+      "text": "iVar1 = _fscanf(DAT_007bc034,&DAT_005cad4d);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 37,
       "match": "DAT_005cad4d",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007bc034,&DAT_005cad4d,param_1);",
+      "text": "iVar1 = _fscanf(DAT_007bc034,&DAT_005cad4d);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_handleActorPropertyParseError_FUN_0040b380(\"rule count\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveDescription_FUN_0040b400(\"ruleCount\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *param_1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar3 = param_1 + 0x7e;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar4 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_007bc034,\" \\\"%[^\\\"]\\\" => \\\"%[^\\\"]\\\"\\n\",piVar4,piVar3);",
+      "text": "iVar2 = _fscanf(DAT_007bc034,\" \\\"%[^\\\"]\\\" => \\\"%[^\\\"]\\\"\\n\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_handleActorPropertyParseError_FUN_0040b380(&DAT_005cad7a,param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 47,
       "match": "DAT_005cad7a",
       "severity": "mild",
-      "text": "core_actor_cpp_handleActorPropertyParseError_FUN_0040b380(&DAT_005cad7a,param_2);",
+      "text": "core_actor_cpp_handleActorPropertyParseError_FUN_0040b380(&DAT_005cad7a,property_name);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar1 < *param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 53,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "while (iVar1 = _fgetc(DAT_007bc034), -1 < iVar1) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"Rule list closing brace\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

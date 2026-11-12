@@ -64,7 +64,7 @@ section .text
     SUB ESP,0x90                        ; 0050ecb4
     MOV EBX,dword ptr [ESP + 0xa4]      ; 0050ecba
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0050ecc1
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EDX,EAX                         ; 0050ecc6
     MOV ECX,0x12                        ; 0050ecc8
     SAR EDX,0x1f                        ; 0050eccd

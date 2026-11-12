@@ -9,7 +9,7 @@
 ; XREF[16]:
 ;   core_actor.cpp_CDemonActor_testCylinderCollision_FUN_00408cd0 at 00408cdb
 ;   core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408d60 at 00408d7a
-;   core_doc.cpp_FUN_00473c10 at 00473d3f
+;   core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_00473c10 at 00473d3f
 ;   core_door.cpp_CDoor_process_FUN_00477ab0 at 00477e67
 ;   core_flame.cpp_CFlame_process_FUN_004b7b90 at 004b7d51
 ;   core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_00536290 at 005362a5

@@ -14,7 +14,7 @@ CBat * __cdecl core_bat_cpp_CBat_dtor_FUN_0040f3d0(CBat *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBatTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBatTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

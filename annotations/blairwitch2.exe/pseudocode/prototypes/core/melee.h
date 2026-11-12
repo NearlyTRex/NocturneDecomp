@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_melee.cpp_factoryFuncMelee_FUN_004ea880
 // Address: 004ea880
-void factoryFuncMelee(void);
+CMelee * __cdecl factoryFuncMelee(void);
 
 // Original: core_melee.cpp_CMelee_getActorType_FUN_004ea8a0
 // Address: 004ea8a0

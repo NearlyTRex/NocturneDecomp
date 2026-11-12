@@ -85,7 +85,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280(CDem
         }
         if (0 < iVar3) {
           engine_special_cpp_drawPolyList_FUN_005823a0
-                    (this_ptr->vertex_buffer_ptr,&DAT_00612568,iVar3,_DAT_01c51d14);
+                    (this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveQuad **)&DAT_00612568,iVar3,
+                     _DAT_01c51d14);
           return;
         }
       }

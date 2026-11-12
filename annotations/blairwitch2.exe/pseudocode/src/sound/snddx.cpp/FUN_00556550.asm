@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int sound_snddx_cpp_FUN_00556550(undefined4 param_1,int param_2,uint param_3)
+; int sound_snddx_cpp_FUN_00556550(undefined4 param_1,int *param_2,uint param_3)
 ;
 ;
 ; Referenced Globals:
@@ -467,7 +467,7 @@ section .text
     PUSH EDX                            ; 00556a40
     MOV dword ptr [ESP + 0x12dc],EAX    ; 00556a41
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00551190 ; 00556a48
-        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00551190()
+        ;   XREF to: 00551190 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00551190(int channel_index)
     MOV dword ptr [ESP + 0x12f8],EAX    ; 00556a4d
     FLD float ptr [ESP + 0x12f8]        ; 00556a54
     ADD ESP,0x4                         ; 00556a5b

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004c5120(void)
+; CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004c5120(void)
 ;
 ;
 ; Called Functions:

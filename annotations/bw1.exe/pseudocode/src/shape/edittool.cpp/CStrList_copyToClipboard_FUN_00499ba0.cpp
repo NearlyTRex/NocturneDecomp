@@ -55,7 +55,7 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00499ba0(CStrList *
   }
   this_ptr_00 = g_CEditorToolsPtr;
   *buffer = '\0';
-  shape_edittool_cpp_FUN_00498290(this_ptr_00,pcVar2);
+  shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00498290(this_ptr_00,pcVar2);
   FUN_005c0336(pcVar2);
   return;
 }

@@ -14,7 +14,8 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00530bf0(char *message_file)
   char cVar1;
   uint uVar2;
   int iVar3;
-  _FILE *p_Var4;
+  _FILE *file_handle;
+  long lVar4;
   int iVar5;
   int iVar7;
   void *pvVar8;
@@ -24,7 +25,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00530bf0(char *message_file)
   char *pcVar12;
   byte bVar13;
   char local_31c [256];
-  byte local_21c [256];
+  char local_21c [256];
   char local_11c [256];
   int local_1c;
   int local_18;
@@ -35,28 +36,28 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00530bf0(char *message_file)
   local_1c = 0;
   iVar3 = engine_dosio_cpp_getFileSize_FUN_00478fb0(&DAT_005ec4f8,message_file);
   if ((iVar3 < 1) ||
-     (p_Var4 = engine_dosio_cpp_FUN_00479180(&DAT_005ec4fc,message_file,&DAT_005ec4f9),
-     p_Var4 == (_FILE *)0x0)) {
+     (file_handle = engine_dosio_cpp_FUN_00479180(&DAT_005ec4fc,message_file,&DAT_005ec4f9),
+     file_handle == (_FILE *)0x0)) {
     return;
   }
-  local_18 = _ftell(p_Var4);
-  local_18 = iVar3 + local_18;
-  _fgets(local_21c,0xff,p_Var4);
-  _fscanf(p_Var4,&DAT_005ec4fd,&local_1c);
-  _fgets(local_21c,0xff,p_Var4);
-  _fscanf(p_Var4,&DAT_005ec501,&DAT_01d7f1b8);
+  lVar4 = _ftell(file_handle);
+  local_18 = iVar3 + lVar4;
+  _fgets(local_21c,0xff,file_handle);
+  _fscanf(file_handle,&DAT_005ec4fd);
+  _fgets(local_21c,0xff,file_handle);
+  _fscanf(file_handle,&DAT_005ec501);
   if (local_1c != 0) {
     _DAT_01d1d400 = "..\\support\\newmsg.cpp";
     _DAT_01d1d404 = 0x5b;
     core_main_c_FUN_005030e0("Unknown message file version");
   }
-  _fgets(local_21c,0xff,p_Var4);
-  _fscanf(p_Var4,"\"%[^\"]\"\n",&DAT_006225f0);
+  _fgets(local_21c,0xff,file_handle);
+  _fscanf(file_handle,"\"%[^\"]\"\n");
   do {
-    _fscanf(p_Var4,&DAT_005ec541);
-    iVar3 = _ftell(p_Var4);
-    if (local_18 <= iVar3) {
-      _fclose(p_Var4);
+    _fscanf(file_handle,&DAT_005ec541);
+    lVar4 = _ftell(file_handle);
+    if (local_18 <= lVar4) {
+      _fclose(file_handle);
       if (0 < _DAT_01d7f1c0) {
         iVar3 = _DAT_01d7f1c0 * 4;
         iVar6 = 0;
@@ -92,7 +93,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00530bf0(char *message_file)
       _DAT_01d7f1bc = 1;
       return;
     }
-    iVar3 = _fscanf(p_Var4,"\"%[^\"]\", \"%[^\"]\"\n",local_11c,local_31c);
+    iVar3 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\"\n");
     if (iVar3 != 2) {
       _DAT_01d1d400 = "..\\support\\newmsg.cpp";
       _DAT_01d1d404 = 0x6f;

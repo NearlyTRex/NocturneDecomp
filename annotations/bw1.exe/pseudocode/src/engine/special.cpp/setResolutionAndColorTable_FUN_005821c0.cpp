@@ -19,8 +19,8 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005821c0(int width
   if (bits_per_pixel < 0x10) {
     bits_per_pixel = 0x10;
   }
-  if ((_DAT_02c834ac == 0) && (iVar2 = engine_special_cpp_FUN_00581310(_DAT_02c834c0), iVar2 == 0))
-  {
+  if ((_DAT_02c834ac == 0) &&
+     (iVar2 = engine_special_cpp_loadExternalRenderer_FUN_00581310(_DAT_02c834c0), iVar2 == 0)) {
     return 0;
   }
   iVar2 = (*_DAT_02c83398)(width,height,bits_per_pixel,&DAT_01c4354c);

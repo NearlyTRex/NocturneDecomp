@@ -704,8 +704,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004d27b0(CGame *this_ptr)
                             ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),
                              "Skeleton_key");
         if (pCVar12 == (CDemonActor *)0x0) {
-          this_ptr_02 = (CDemonActor *)
-                        core_actor_cpp_createActorByName_FUN_0040c2b0("CKeyActor");
+          this_ptr_02 = core_actor_cpp_createActorByName_FUN_0040c2b0("CKeyActor");
           pcVar8 = "Skeleton_key";
           (*((this_ptr_02->vtable)._ub)->setup)(this_ptr_02);
           this_ptr_02[2].location.position.y = -NAN;
@@ -1279,7 +1278,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004d27b0(CGame *this_ptr)
             core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,&DAT_0061d8f0);
             break;
           }
-          shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,pcVar8);
+          shape_edittool_cpp_CEditorTools_showError_FUN_004943a0(g_CEditorToolsPtr,pcVar8);
         }
       }
 LAB_004d42bf:
@@ -1835,10 +1834,10 @@ LAB_004d42bf:
           }
           iStack_54 = iStack_54 + 4;
         }
-        iVar7 = core_actor_cpp_castToClassHash_FUN_0040c600
-                          (*(uint *)(_DAT_01d06ab4 * 4 + 0x1d06aa4),
-                           g_CStrangerClassInfo.name_hash);
-        if (iVar7 != 0) {
+        pCVar12 = core_actor_cpp_castToClassHash_FUN_0040c600
+                            (*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4),
+                             g_CStrangerClassInfo.name_hash);
+        if (pCVar12 != (CDemonActor *)0x0) {
           if (this_ptr->big_hat_cheat == 0) {
             pcVar8 = "stranger-hat.kfm";
           }
@@ -1846,9 +1845,9 @@ LAB_004d42bf:
             pcVar8 = "big-hat.kfm";
           }
           core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-                    ((CKeyFramedModelInstance *)(iVar7 + 0x200ac),pcVar8);
+                    ((CKeyFramedModelInstance *)(pCVar12[0x17d].create_event + 0x3c),pcVar8);
           core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-                    ((CKeyFramedModelInstance *)(iVar7 + 0x200ac));
+                    ((CKeyFramedModelInstance *)(pCVar12[0x17d].create_event + 0x3c));
         }
       }
       if (this_ptr->developer_mode_enabled != 0) {
@@ -2188,14 +2187,15 @@ LAB_004d42bf:
       }
       if (iStack_108 == iStack_10c) {
         DAT_01cd0c68 = 0;
-        iVar7 = core_actor_cpp_castToClassHash_FUN_0040c600
-                          (*(uint *)(_DAT_01d06ab4 * 4 + 0x1d06aa4),
-                           g_CStrangerClassInfo.name_hash);
-        if (iVar7 != 0) {
+        pCVar12 = core_actor_cpp_castToClassHash_FUN_0040c600
+                            (*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4),
+                             g_CStrangerClassInfo.name_hash);
+        if (pCVar12 != (CDemonActor *)0x0) {
           core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-                    ((CKeyFramedModelInstance *)(iVar7 + 0x200ac),"oldhat.kfm");
+                    ((CKeyFramedModelInstance *)(pCVar12[0x17d].create_event + 0x3c),
+                     "oldhat.kfm");
           core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-                    ((CKeyFramedModelInstance *)(iVar7 + 0x200ac));
+                    ((CKeyFramedModelInstance *)(pCVar12[0x17d].create_event + 0x3c));
           core_sound_cpp_CSound_playSound_FUN_0057d880
                     (0x02C82A60,(void *)0x0,"cheat-1.wav");
         }

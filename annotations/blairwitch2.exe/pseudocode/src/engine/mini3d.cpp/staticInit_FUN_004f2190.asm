@@ -24,13 +24,13 @@ section .text
     ADD ESP,0x4                         ; 004f219a
     PUSH 0x6180e0                       ; 004f219d
     CALL crt_stdlib.c__atexit_FUN_005b8d8c ; 004f21a2
-        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005b8d8c()
+        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005b8d8c(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004f21a7
     PUSH 0x5fa190                       ; 004f21aa
     PUSH 0x32                           ; 004f21af
     PUSH 0x1d0c3a4                      ; 004f21b1
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 004f21b6
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     FLD float ptr [0x005fa164]          ; 004f21bb | DAT_005fa164
     ADD ESP,0xc                         ; 004f21c1
     FSTP float ptr [0x01d0d2d4]         ; 004f21c4 | DAT_01d0d2d4

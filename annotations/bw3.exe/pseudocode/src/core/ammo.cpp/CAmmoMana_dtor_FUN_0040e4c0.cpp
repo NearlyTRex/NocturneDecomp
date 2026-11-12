@@ -15,7 +15,7 @@ CAmmoMana * core_ammo_cpp_CAmmoMana_dtor_FUN_0040e4c0(CAmmoMana *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CAmmoManaTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CAmmoManaTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

@@ -11,12 +11,13 @@
 void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_00589fd0(CWeapon *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   uint *puVar2;
   float unaff_EDI;
   byte bVar3;
   float afStackY_1060 [1007];
   CVector3f *euler_angles;
+  float in_stack_ffffff64;
   float fStack_78;
   float fStack_68;
   CVector3f CStack_64;
@@ -72,10 +73,10 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_00589fd0(CWeapon *this_p
   g_CDemonLightInstance.base.max_distance = 32.0;
   g_CDemonLightInstance.base.base.focal_length = 32.0;
   g_CDemonLightInstance.antialiasing_enabled = 1;
-  (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0();
-  if ((iVar1 != 0) && (*(float *)(iVar1 + 0x2437c) < _DAT_005ee536)) {
-    unaff_EDI = *(float *)(iVar1 + 0x2437c) * _DAT_005ee53a;
+  pCVar1 = (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar1,(uint)in_stack_ffffff64);
+  if ((pCVar1 != (CDemonActor *)0x0) && ((float)pCVar1[0xd6].process_disabled < _DAT_005ee536)) {
+    unaff_EDI = (float)pCVar1[0xd6].process_disabled * _DAT_005ee53a;
   }
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_0044d570(&g_CDemonLightInstance,unaff_EDI);
   if (g_CGamePtr->flashlight_active == 0) {

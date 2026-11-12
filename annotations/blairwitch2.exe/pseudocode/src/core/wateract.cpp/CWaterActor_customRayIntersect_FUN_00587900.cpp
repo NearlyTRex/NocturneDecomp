@@ -51,8 +51,8 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_00587900(CWat
                   (&CStack_b0,&pSStack_18[pSVar3->vertices[0].vertex_index].local_position,
                    &pSStack_18[pSVar3->vertices[1].vertex_index].local_position,
                    &pSStack_18[pSVar3->vertices[2].vertex_index].local_position);
-        fVar1 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_00477a50
-                                 (&CStack_b0,ray_origin,ray_direction);
+        fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_00477a50
+                          (&CStack_b0,ray_origin,ray_direction);
         fStack_14 = fVar1;
         if (((fVar1 < fStack_b4) && (0.0 <= fVar1)) && (fVar1 <= 1.0)) {
           fStack_3c = -CStack_b0.normal.x;

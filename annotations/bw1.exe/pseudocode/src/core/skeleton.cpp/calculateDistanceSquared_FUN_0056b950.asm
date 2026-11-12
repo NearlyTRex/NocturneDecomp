@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_skeleton_cpp_calculateDistanceSquared_FUN_0056b950(float *param_1,float *param_2)
+; float __cdecl core_skeleton_cpp_calculateDistanceSquared_FUN_0056b950(CVector3f *point1,CVector3f *point2)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   point1
+; CVector3f *      Stack[0x8]:4   point2
 ;
 ; *****************************************************************************
 

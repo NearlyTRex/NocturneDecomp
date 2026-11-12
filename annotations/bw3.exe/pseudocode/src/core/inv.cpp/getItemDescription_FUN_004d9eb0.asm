@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9eb0(undefined4 param_1)
+; char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9eb0(CDemonActor *actor_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor_ptr
 ;
 ; XREF[2]:
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90 at 004ddbd7

@@ -31,25 +31,25 @@ section .text
     LEA EAX,[EBX + 0x7dc]               ; 005ada03
     PUSH EAX                            ; 005ada09
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 005ada0a
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ada0f
     PUSH 0x5f0f05                       ; 005ada12 | = "effectTime"
     LEA EAX,[EBX + 0x7e0]               ; 005ada17
     PUSH EAX                            ; 005ada1d
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 005ada1e
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ada23
     PUSH 0x5f0f10                       ; 005ada26 | = "effectDamage"
     LEA EAX,[EBX + 0x7e4]               ; 005ada2b
     PUSH EAX                            ; 005ada31
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 005ada32
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ada37
     PUSH 0x5f0f1d                       ; 005ada3a | = "triggerRadius"
     ADD EBX,0x7d4                       ; 005ada3f
     PUSH EBX                            ; 005ada45
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 005ada46
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ada4b
     POP EBX                             ; 005ada4e
     RET                                 ; 005ada4f

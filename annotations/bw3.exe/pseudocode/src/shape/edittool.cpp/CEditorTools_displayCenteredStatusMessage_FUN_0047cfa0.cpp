@@ -22,7 +22,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_00
   _DAT_01c5bae0 = _DAT_01c5b0e0->max_char_width;
   _DAT_01c5bae4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(_DAT_01c5b0e0,0x6a);
   local_14 = &stack0x0000000c;
-  _vsprintf(local_414,format,&local_14);
+  _vsprintf(local_414,format,(va_list_t)&local_14);
   local_14 = (byte *)0x0;
   engine_special_cpp_clearScreen_FUN_00560d70();
   engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);

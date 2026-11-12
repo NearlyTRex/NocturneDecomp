@@ -13,7 +13,7 @@ CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00543070(CScat *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CScatTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CScatTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

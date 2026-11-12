@@ -11,9 +11,8 @@
 void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0054ec60(CDemonSet *this_ptr)
 
 {
-  CDemonLight *this_ptr_00;
   char *text;
-  uint uVar1;
+  CDemonLight *pCVar1;
   int iVar2;
   CVector3f *pCVar3;
   CVector3f *pCVar4;
@@ -60,9 +59,9 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0054ec60(CDemonSet *this_ptr)
   if (0 < this_ptr->light_count) {
     do {
       if (pCVar5->lights[0].light_type == 0) {
-        uVar1 = core_setutil_cpp_C3DSLight_create_FUN_0055cf80(this_ptr->lights + iVar6);
-        *(uint *)(&DAT_01fe4cb8 + _DAT_01fe4cb4 * 4) = uVar1;
-        core_setutil_cpp_C3DSLight_apply_FUN_0055d0e0(this_ptr->lights + iVar6,uVar1);
+        pCVar1 = core_setutil_cpp_C3DSLight_create_FUN_0055cf80(this_ptr->lights + iVar6);
+        *(CDemonLight **)(&DAT_01fe4cb8 + _DAT_01fe4cb4 * 4) = pCVar1;
+        core_setutil_cpp_C3DSLight_apply_FUN_0055d0e0(this_ptr->lights + iVar6,pCVar1);
         _DAT_01fe4cb4 = _DAT_01fe4cb4 + 1;
         if (0x60 < _DAT_01fe4cb4) {
           _DAT_01d1d400 = "..\\core\\set.cpp";
@@ -78,13 +77,13 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0054ec60(CDemonSet *this_ptr)
   if (0 < _DAT_01fe4cb4) {
     iVar2 = 0;
     do {
-      this_ptr_00 = *(CDemonLight **)(&DAT_01fe4cb8 + iVar2);
-      core_dlight_cpp_CDemonLight_beginScene_FUN_00462820(this_ptr_00,0);
-      core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_00463360(this_ptr_00);
+      pCVar1 = *(CDemonLight **)(&DAT_01fe4cb8 + iVar2);
+      core_dlight_cpp_CDemonLight_beginScene_FUN_00462820(pCVar1,0);
+      core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_00463360(pCVar1);
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0(this_ptr,9999.9,0);
       iVar2 = iVar2 + 4;
       iVar6 = iVar6 + 1;
-      core_dlight_cpp_CDemonLight_endScene_FUN_00462ad0(this_ptr_00,0);
+      core_dlight_cpp_CDemonLight_endScene_FUN_00462ad0(pCVar1,0);
     } while (iVar6 < _DAT_01fe4cb4);
   }
   this_ptr->selected_camera_index = -1;

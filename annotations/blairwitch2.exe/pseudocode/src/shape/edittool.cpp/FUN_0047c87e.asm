@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 shape_edittool_cpp_FUN_0047c87e(undefined4 param_1,undefined4 param_2)
+; undefined4 shape_edittool_cpp_FUN_0047c87e(undefined4 param_1,char *param_2)
 ;
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
     PUSH EDX                            ; 0047c895
     PUSH 0x1c241f0                      ; 0047c896
     CALL crt_stdio.c_vsprintf_FUN_005b7768 ; 0047c89b
-        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005b7768()
+        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005b7768(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047c8a0
     MOV EAX,ESP                         ; 0047c8a3
     XOR ECX,ECX                         ; 0047c8a5

@@ -55,7 +55,7 @@
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
 ;   engine_special.cpp_FUN_0055f500
-;   engine_special.cpp_FUN_0055f550
+;   engine_special.cpp_unlockFrame_FUN_0055f550
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -149,7 +149,7 @@ section .text
     LEA EAX,[ESP + 0x40c]               ; 004bccdd
     PUSH EAX                            ; 004bcce4
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 004bcce5
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004bccea
     PUSH EBX                            ; 004bcced
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004bccee
@@ -215,8 +215,8 @@ section .text
     CALL engine_special.cpp_clearScreen_FUN_0055b1f0 ; 004bcde7
         ;   XREF to: 0055b1f0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0055b1f0()
     PUSH 0x0                            ; 004bcdec
-    CALL engine_special.cpp_FUN_0055f550 ; 004bcdee
-        ;   XREF to: 0055f550 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_0055f550(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_0055f550 ; 004bcdee
+        ;   XREF to: 0055f550 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_0055f550(int clear_lock_flag)
     ADD ESP,0x4                         ; 004bcdf3
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170 ; 004bcdf6
         ;   XREF to: 00589170 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170()
@@ -265,7 +265,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0xa38]     ; 004bce92
     PUSH ESI                            ; 004bce99
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 004bce9a
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004bce9f
     PUSH EBX                            ; 004bcea2
     XOR EDI,EDI                         ; 004bcea3

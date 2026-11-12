@@ -105,7 +105,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     },
     {
       "addr": "00494340",
@@ -268,6 +268,26 @@
       "STORE": 212
     },
     "pcode_op_count": 3677
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0056acd0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005c2850",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6406
+    },
+    "nocturne.exe": {
+      "addr": "0053c800",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6406
+    }
   },
   "stack_frame": {
     "frame_size": 408,
@@ -701,9 +721,9 @@
     {
       "description": "Complex pointer cast",
       "line": 119,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + local_18),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),",
       "type": "pointer_cast"
     },
     {
@@ -805,9 +825,9 @@
     {
       "description": "Complex pointer cast",
       "line": 183,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + iStack_34),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_34),",
       "type": "pointer_cast"
     },
     {
@@ -957,9 +977,9 @@
     {
       "description": "Complex pointer cast",
       "line": 264,
-      "match": "(uint *)((int)pCVar5",
+      "match": "(uint *)((int)pCVar8",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x24);",
+      "text": "puVar10 = (uint *)((int)pCVar8 + (uint)bVar11 * -8 + 0x24);",
       "type": "pointer_cast"
     },
     {
@@ -1093,9 +1113,9 @@
     {
       "description": "Complex pointer cast",
       "line": 332,
-      "match": "(uint *)((int)g_CDemonSetPtr",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + local_20),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20),",
       "type": "pointer_cast"
     },
     {
@@ -1267,11 +1287,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pCVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 264,
-      "match": "(int)pCVar5",
+      "match": "(int)pCVar8",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x24);",
+      "text": "puVar10 = (uint *)((int)pCVar8 + (uint)bVar11 * -8 + 0x24);",
       "type": "pointer_truncation"
     },
     {
@@ -1375,7 +1395,7 @@
       "line": 166,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar7->vec).x = (pUVar9->vec).x;",
+      "text": "(pUVar6->vec).x = (pUVar9->vec).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -1383,7 +1403,7 @@
       "line": 242,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar1->x = (pCVar6->position).x;",
+      "text": "pCVar1->x = (pCVar5->position).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -1391,7 +1411,7 @@
       "line": 249,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar9->vec).x = (pUVar7->vec).x;",
+      "text": "(pUVar9->vec).x = (pUVar6->vec).x;",
       "type": "unrolled_memcpy"
     },
     {

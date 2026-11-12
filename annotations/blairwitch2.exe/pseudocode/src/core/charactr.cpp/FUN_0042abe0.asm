@@ -51,7 +51,7 @@
 ;   core_dirmat.cpp_FUN_00449530
 ;   core_hero.cpp_closestHeroToPoint_FUN_004ce050
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -452,8 +452,8 @@ section .text
     PUSH 0x5cd2aa                       ; 0042b0f9 | = "%s was in the way, but couldn't figur..."
     MOV ESI,dword ptr [0x00609ed0]      ; 0042b0fe | g_CConsolePtr
     PUSH ESI                            ; 0042b104 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0042b105
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0042b105
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0042b10a
     MOV EAX,EBX                         ; 0042b10d
     MOV dword ptr [EBX + 0x303c],0x0    ; 0042b10f

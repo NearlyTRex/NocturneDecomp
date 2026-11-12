@@ -51,7 +51,7 @@ section .text
     LEA ESI,[EBX + 0x2538]              ; 00599bf6
     PUSH ESI                            ; 00599bfc
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00599bfd
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00599c02
     PUSH 0x5d99e6                       ; 00599c05 | = "shootMe"
     LEA ESI,[EBX + 0x20864]             ; 00599c0a
@@ -69,7 +69,7 @@ section .text
     LEA ESI,[EBX + 0x2086c]             ; 00599c32
     PUSH ESI                            ; 00599c38
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00599c39
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x00607418]      ; 00599c3e | g_CSpiritEagleClassVersion
     ADD ESP,0x8                         ; 00599c44
     CMP EDX,0x1                         ; 00599c47
@@ -87,7 +87,7 @@ section .text
     LEA ESI,[EBX + 0x214a0]             ; 00599c5d
     PUSH ESI                            ; 00599c63
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00599c64
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00599c69
     PUSH EBX                            ; 00599c6c
     CALL core_charactr.cpp_CCharacter_archive_FUN_0042b450 ; 00599c6d

@@ -11,6 +11,7 @@
     "importable":true,
     "name":"crt_cpp.c_pureVirtualStub_FUN_005bfae6",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -29,7 +30,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_memory.c___arrfini_FUN_005c1066",
-    "ret":"undefined1",
+    "ret":"void*",
     "vars":{
       "locals":[
         {
@@ -81,8 +82,65 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"obj_array",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"obj_count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"type_info",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"WatcomTypeInfo*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -182,6 +240,7 @@
     "importable":true,
     "name":"crt_user32.c_MoveWindow",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000003d",
     "thunk":true,
     "vars":{
@@ -308,6 +367,7 @@
     "importable":true,
     "name":"crt_gdi32.c_TextOutA",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000014",
     "thunk":true,
     "vars":{
@@ -418,6 +478,7 @@
     "importable":true,
     "name":"crt_kernel32.c_VirtualQuery",
     "ret":"SIZE_T",
+    "sig":"imported",
     "thtarget":"EXTERNAL:000000a3",
     "thunk":true,
     "vars":{

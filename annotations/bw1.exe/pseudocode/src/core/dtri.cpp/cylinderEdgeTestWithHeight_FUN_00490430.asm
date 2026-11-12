@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_00490430(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
+; void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_00490430(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2)
 ;
+; Parameters:
+; SIntersectXZCylinder * Stack[0x4]:4   cylinder
+; CVector3f *      Stack[0x8]:4   vertex1
+; CVector3f *      Stack[0xc]:4   vertex2
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;
@@ -34,7 +38,7 @@ section .text
     MOV EAX,dword ptr [EDI + 0x8]       ; 00490453
     MOV dword ptr [EBX + 0x48],EAX      ; 00490456
     CALL core_dtri.cpp_cylinderEdgeIntersection_FUN_00490150 ; 00490459
-        ;   XREF to: 00490150 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderEdgeIntersection_FUN_00490150()
+        ;   XREF to: 00490150 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_cylinderEdgeIntersection_FUN_00490150(SIntersectXZCylinder * cylinder)
     ADD ESP,0x4                         ; 0049045e
     TEST EAX,EAX                        ; 00490461
     JZ 0x00490487                       ; 00490463

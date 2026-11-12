@@ -27,7 +27,8 @@ LAB_0050fdc2:
   if (str1 != (CPackedBitmap *)0x0) {
     iVar1 = _stricmp(str1->filename,(char *)0x5cbd04);
     if (iVar1 == 0) {
-      cockpit_pkbitmap_cpp_FUN_0050f990(this_ptr,apply_palette_flag);
+      cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990
+                (this_ptr,apply_palette_flag);
       return;
     }
     iVar1 = _stricmp(str1->filename,(char *)0x5cbd09);

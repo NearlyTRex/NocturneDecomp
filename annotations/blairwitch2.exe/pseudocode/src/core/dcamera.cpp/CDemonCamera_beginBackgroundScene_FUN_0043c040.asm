@@ -31,10 +31,10 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0046cca0
+;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
+;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060
-;   engine_drender.cpp_FUN_0046b4b0
-;   engine_drender.cpp_FUN_0046b710
 ;
 ; *****************************************************************************
 
@@ -119,8 +119,8 @@ section .text
     PUSH 0x0                            ; 0043c142
     MOV ESI,dword ptr [0x0060b280]      ; 0043c144 | DAT_0060b280
     PUSH ESI                            ; 0043c14a | DAT_01ba5c50
-    CALL engine_drender.cpp_FUN_0046b710 ; 0043c14b
-        ;   XREF to: 0046b710 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b710()
+    CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710 ; 0043c14b
+        ;   XREF to: 0046b710 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     MOV EAX,[0x01c35e38]                ; 0043c150 | DAT_01c35e38
     MOV EDI,dword ptr [0x0060b280]      ; 0043c155 | DAT_0060b280
     MOV dword ptr [EBX + 0x1c0],EAX     ; 0043c15b
@@ -146,8 +146,8 @@ section .text
     MOV EAX,[0x0060b280]                ; 0043c1a6 | DAT_0060b280
     PUSH dword ptr [EBX + 0x38]         ; 0043c1ab
     PUSH EAX                            ; 0043c1ae | DAT_01ba5c50
-    CALL engine_drender.cpp_FUN_0046b4b0 ; 0043c1af
-        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b4b0()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0 ; 0043c1af
+        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 0043c1b4
     ADD EBX,0x10                        ; 0043c1b7
     PUSH EBX                            ; 0043c1ba

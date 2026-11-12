@@ -88,7 +88,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 005792a3
     PUSH EAX                            ; 005792a7
     CALL support_trisock.cpp_convertSockAddr_FUN_00578e80 ; 005792a8
-        ;   XREF to: 00578e80 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_convertSockAddr_FUN_00578e80()
+        ;   XREF to: 00578e80 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_00578e80(SNetworkAddr * dest_addr, SOCKADDR * src_addr)
     MOV ESI,EAX                         ; 005792ad
     ADD ESP,0x8                         ; 005792af
     MOVSD ES:EDI,ESI                    ; 005792b2

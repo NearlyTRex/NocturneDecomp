@@ -166,7 +166,7 @@ section .text
     PUSH ECX                            ; 0053880f
     MOV dword ptr [ECX + 0x8],ESI       ; 00538810
     CALL engine_matrix.c_projectTransformedPoint_FUN_004e8eb0 ; 00538813
-        ;   XREF to: 004e8eb0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectTransformedPoint_FUN_004e8eb0()
+        ;   XREF to: 004e8eb0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectTransformedPoint_FUN_004e8eb0(SProjectedVertex * point)
     ADD ESP,0x4                         ; 00538818
     ADD EDI,0x30                        ; 0053881b
         ;   Label: LAB_0053881b

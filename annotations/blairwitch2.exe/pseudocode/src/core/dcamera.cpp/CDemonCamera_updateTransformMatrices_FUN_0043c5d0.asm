@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0043c330
-;   engine_drender.cpp_FUN_0046b5c0
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     PUSH EDX                            ; 0043c646 | DAT_01ba5c50
     MOV dword ptr [EBX + 0x198],ESI     ; 0043c647
     LEA ESI,[ESP + 0x4]                 ; 0043c64d
-    CALL engine_drender.cpp_FUN_0046b5c0 ; 0043c651
-        ;   XREF to: 0046b5c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b5c0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0 ; 0043c651
+        ;   XREF to: 0046b5c0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x4]                 ; 0043c656
     LEA EDI,[EBX + 0x16c]               ; 0043c65a
     ADD ESP,0x4                         ; 0043c660

@@ -23,7 +23,7 @@
 ;   core_fldnotes.cpp_SNotesSection_layout_FUN_004bc130
 ;   core_fldnotes.cpp_STextView_reset_FUN_004bb1c0
 ;   core_fldnotes.cpp_STextView_setRect_FUN_004bb270
-;   shape_edittool.cpp_FUN_004943a0
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;
 ; *****************************************************************************
 
@@ -127,8 +127,8 @@ section .text
     PUSH 0x5e01f7                       ; 004bdf6a | = "CFieldNotes::turnToEntry - entry '%s'..."
     MOV EDX,dword ptr [0x0061abc0]      ; 004bdf6f | g_CEditorToolsPtr
     PUSH EDX                            ; 004bdf75
-    CALL shape_edittool.cpp_FUN_004943a0 ; 004bdf76
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 004bdf76
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004bdf7b
     POP EBP                             ; 004bdf7e
     POP EDI                             ; 004bdf7f

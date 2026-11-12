@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_time_c__strftime_FUN_005c2784(int param_1,uint param_2,char *param_3,undefined4 *param_4)
+; uint __cdecl crt_time_c__strftime_FUN_005c2784(char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   dest_buffer
+; uint             Stack[0x8]:4   buffer_size
+; char *           Stack[0xc]:4   format_string
+; _tm *            Stack[0x10]:4   time_ptr
 ; Local Variables:
 ; undefined1       Stack[-0xa0]:1  local_a0
 ; undefined1       Stack[-0x9f]:1  local_9f

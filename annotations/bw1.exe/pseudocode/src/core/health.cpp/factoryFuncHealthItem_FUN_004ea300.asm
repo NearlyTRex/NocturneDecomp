@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_health_cpp_factoryFuncHealthItem_FUN_004ea300(void)
+; CHealthItem * __cdecl core_health_cpp_factoryFuncHealthItem_FUN_004ea300(void)
 ;
 ;
 ; Called Functions:

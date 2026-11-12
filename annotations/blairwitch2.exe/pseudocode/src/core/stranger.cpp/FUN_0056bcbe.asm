@@ -68,7 +68,7 @@ section .text
         ;   Label: LAB_0056bd28
     PUSH dword ptr [EBX]                ; 0056bd2a
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0056bd2c
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x18],EAX      ; 0056bd31
     MOV EAX,dword ptr [ESP + 0x18]      ; 0056bd35
     MOV dword ptr [EBX],EAX             ; 0056bd39

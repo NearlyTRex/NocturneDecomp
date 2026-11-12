@@ -480,6 +480,32 @@
     },
     "pcode_op_count": 923
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040d5a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.777
+    },
+    "bw3.exe": {
+      "addr": "0040d460",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004105d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6667
+    },
+    "nocturne.exe": {
+      "addr": "0040e3c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.686
+    }
+  },
   "stack_frame": {
     "frame_size": 296,
     "local_size": 280,
@@ -585,7 +611,7 @@
       "line": 39,
       "match": "DAT_01c4e9d4",
       "severity": "mild",
-      "text": "uVar6 = iVar1 << (DAT_01c4e9d4 & 0x1f) | iVar2 << (DAT_01c4e9e0 & 0x1f);",
+      "text": "uVar5 = iVar1 << (DAT_01c4e9d4 & 0x1f) | iVar2 << (DAT_01c4e9e0 & 0x1f);",
       "type": "undefined_data"
     },
     {
@@ -593,7 +619,7 @@
       "line": 39,
       "match": "DAT_01c4e9e0",
       "severity": "mild",
-      "text": "uVar6 = iVar1 << (DAT_01c4e9d4 & 0x1f) | iVar2 << (DAT_01c4e9e0 & 0x1f);",
+      "text": "uVar5 = iVar1 << (DAT_01c4e9d4 & 0x1f) | iVar2 << (DAT_01c4e9e0 & 0x1f);",
       "type": "undefined_data"
     },
     {
@@ -607,9 +633,9 @@
     {
       "description": "Complex pointer cast",
       "line": 46,
-      "match": "(uint *)(iVar5 + (int)this_ptr",
+      "match": "(uint *)(iVar4 + (int)this_ptr",
       "severity": "moderate",
-      "text": "*(uint *)(iVar5 + (int)this_ptr->act) = uVar6 | uVar3;",
+      "text": "*(uint *)(iVar4 + (int)this_ptr->act) = uVar5 | uVar3;",
       "type": "pointer_cast"
     },
     {
@@ -617,7 +643,7 @@
       "line": 51,
       "match": "DAT_005d3035",
       "severity": "mild",
-      "text": "p_Var4 = engine_dosio_cpp_FUN_00479180(&DAT_005d3035,local_114,&DAT_005d3032);",
+      "text": "file = engine_dosio_cpp_FUN_00479180(&DAT_005d3035,local_114,&DAT_005d3032);",
       "type": "undefined_data"
     },
     {
@@ -625,7 +651,7 @@
       "line": 51,
       "match": "DAT_005d3032",
       "severity": "mild",
-      "text": "p_Var4 = engine_dosio_cpp_FUN_00479180(&DAT_005d3035,local_114,&DAT_005d3032);",
+      "text": "file = engine_dosio_cpp_FUN_00479180(&DAT_005d3035,local_114,&DAT_005d3032);",
       "type": "undefined_data"
     }
   ]

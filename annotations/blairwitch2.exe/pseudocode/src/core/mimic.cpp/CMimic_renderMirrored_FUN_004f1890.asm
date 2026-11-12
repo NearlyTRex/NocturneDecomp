@@ -186,7 +186,7 @@ section .text
     MOV EDI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004f19cd
     PUSH EDI                            ; 004f19d4
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004f19d5
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     MOV dword ptr [EBP + 0x7a],EAX      ; 004f19da
     ADD ESP,0x8                         ; 004f19dd
     TEST EAX,EAX                        ; 004f19e0
@@ -229,7 +229,7 @@ section .text
     LEA ESI,[EBP + -0x72]               ; 004f1a49
     LEA EDI,[EBP + 0xffffff5e]          ; 004f1a4c
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 ; 004f1a52
-        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005916b0()
+        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005916b0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 004f1a57
     LEA ESI,[EBP + -0x72]               ; 004f1a5c
     LEA EAX,[EBP + 0xffffff5e]          ; 004f1a5f

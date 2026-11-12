@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_vampboss.cpp_factoryFuncVampireBoss_FUN_00581500
 // Address: 00581500
-void factoryFuncVampireBoss(void);
+CVampireBoss * __cdecl factoryFuncVampireBoss(void);
 
 // Original: core_vampboss.cpp_CVampireBoss_getActorType_FUN_00581520
 // Address: 00581520

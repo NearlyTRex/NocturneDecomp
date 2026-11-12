@@ -15,7 +15,7 @@ CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_00423720(CLightActo
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CLightActorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CLightActorTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

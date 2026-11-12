@@ -325,7 +325,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     }
   ],
   "globals": [
@@ -520,6 +520,32 @@
     },
     "pcode_op_count": 1272
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004287f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9348
+    },
+    "bw3.exe": {
+      "addr": "00431660",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8917
+    },
+    "nocedit.exe": {
+      "addr": "0042ca70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7176
+    },
+    "nocturne.exe": {
+      "addr": "00428c00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7176
+    }
+  },
   "stack_frame": {
     "frame_size": 84,
     "local_size": 76,
@@ -568,7 +594,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 14,
       "match": "afStackY_1054",
       "severity": "moderate",
       "text": "float afStackY_1054 [1012];",
@@ -579,7 +605,7 @@
       "line": 76,
       "match": "&stack0xffffffbc",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffbc + (uint)bVar5 * -8);",
+      "text": "*(uint *)(&stack0xffffffbc + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
@@ -587,7 +613,7 @@
       "line": 78,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "text": "*(uint *)(&stack0xffffffc0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
@@ -603,7 +629,7 @@
       "line": 94,
       "match": "&stack0xffffff98",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar5 * 0xfffffffe * 4) =",
+      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar6 * 0xfffffffe * 4) =",
       "type": "stack_ref"
     },
     {
@@ -611,7 +637,7 @@
       "line": 95,
       "match": "&stack0xffffffb0",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffb0 + (uint)bVar5 * -8);",
+      "text": "*(uint *)(&stack0xffffffb0 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
@@ -619,7 +645,7 @@
       "line": 96,
       "match": "&stack0xffffff9c",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff9c + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
+      "text": "*(uint *)(&stack0xffffff9c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -627,7 +653,7 @@
       "line": 97,
       "match": "&stack0xffffffb4",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "text": "*(uint *)(&stack0xffffffb4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
@@ -643,7 +669,7 @@
       "line": 100,
       "match": "&stack0xffffffa4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar5 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -651,7 +677,7 @@
       "line": 101,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar5 * -8);",
+      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
@@ -659,7 +685,7 @@
       "line": 102,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffa8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
+      "text": "*(uint *)(&stack0xffffffa8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -667,7 +693,7 @@
       "line": 103,
       "match": "&stack0xffffffcc",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffcc + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "text": "*(uint *)(&stack0xffffffcc + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
@@ -675,7 +701,7 @@
       "line": 75,
       "match": "(int)&local_30",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_30 + (uint)bVar5 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_30 + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -683,7 +709,7 @@
       "line": 77,
       "match": "(int)&local_30",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
@@ -691,7 +717,7 @@
       "line": 94,
       "match": "(int)&stack0xffffff98",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar5 * 0xfffffffe * 4) =",
+      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar6 * 0xfffffffe * 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -699,23 +725,23 @@
       "line": 100,
       "match": "(int)&stack0xffffffa4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar5 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar6 * -8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 36,
+      "line": 37,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->base).location.position.x = (pCVar4->location).position.x;",
+      "text": "(this_ptr->base).location.position.x = (pCVar5->location).position.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 43,
+      "line": 44,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pUVar1->vec).x = (pCVar4->orient).vec.x;",
+      "text": "(pUVar1->vec).x = (pCVar5->orient).vec.x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -723,7 +749,7 @@
       "line": 75,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_30 + (uint)bVar5 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_30 + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -731,7 +757,7 @@
       "line": 77,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
@@ -739,7 +765,7 @@
       "line": 94,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar5 * 0xfffffffe * 4) =",
+      "text": "*(uint *)((int)&stack0xffffff98 + (uint)bVar6 * 0xfffffffe * 4) =",
       "type": "pointer_cast"
     },
     {
@@ -747,7 +773,7 @@
       "line": 100,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar5 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffa4 + (uint)bVar6 * -8) =",
       "type": "pointer_cast"
     },
     {

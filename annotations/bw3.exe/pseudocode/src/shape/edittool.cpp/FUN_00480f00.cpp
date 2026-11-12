@@ -11,107 +11,209 @@
 void __cdecl shape_edittool_cpp_FUN_00480f00(CEditorTools *this_ptr,float scale_factor,int text_color)
 
 {
+  SRenderVertex vertex1;
+  SRenderVertex vertex1_00;
+  SRenderVertex vertex1_01;
+  SRenderVertex vertex2;
+  SRenderVertex vertex2_00;
+  SRenderVertex vertex2_01;
   int iVar1;
-  int iVar2;
+  uint *puVar2;
   uint *puVar3;
+  int unaff_EDI;
   uint *puVar4;
-  uint *puVar5;
-  byte bVar6;
-  float10 fVar7;
-  uint uStackY_84;
-  uint uStackY_80;
-  uint uStackY_7c;
-  uint uStackY_78;
-  uint auStackY_74 [8];
-  uint auStackY_54 [2];
-  uint auStackY_4c [2];
-  uint uStackY_44;
-  uint uStackY_40;
+  byte bVar5;
+  float10 fVar6;
+  uint in_stack_ffffff7c;
+  uint in_stack_ffffff80;
+  uint in_stack_ffffff84;
+  uint in_stack_ffffff88;
+  byte auVar7 [24];
+  byte in_stack_ffffff8c [32];
+  ulonglong in_stack_ffffffac;
+  ulonglong in_stack_ffffffb4;
+  uint in_stack_ffffffbc;
+  uint uVar8;
+  uint uVar9;
+  uint uVar10;
+  uint uVar11;
+  CVector3i *pCVar12;
+  uint uVar13;
+  uint in_stack_ffffffd4;
+  uint uVar14;
+  int in_stack_ffffffd8;
+  uint uVar15;
+  uint in_stack_ffffffdc;
+  uint uVar16;
+  int iVar17;
+  int iVar18;
   int iStack_14;
   
-  bVar6 = 0;
+  bVar5 = 0;
   if (_DAT_01c5b0e0 == (CBitFont *)0x0) {
     _DAT_01d71de0 = "..\\shape\\edittool.cpp";
     _DAT_01d71de4 = 0xa7;
     core_main_c_FUN_004e4330();
   }
   _DAT_01c5bae0 = _DAT_01c5b0e0->max_char_width;
-  uStackY_40 = 0x480f31;
   _DAT_01c5bae4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(_DAT_01c5b0e0,0x6a);
-  iVar2 = _DAT_01c5baec;
-  fVar7 = (float10)scale_factor * (float10)_DAT_005bd335;
+  iVar1 = _DAT_01c5baec;
+  fVar6 = (float10)scale_factor * (float10)_DAT_005bd335;
   round();
-  iStack_14 = (int)ROUND(fVar7);
-  iVar1 = text_color;
-  if (iVar2 != 0) {
+  iStack_14 = (int)ROUND(fVar6);
+  iVar17 = text_color;
+  if (iVar1 != 0) {
     engine_mini3d_cpp_FUN_004f3520();
-    iVar1 = _DAT_01c6b5c0;
+    iVar17 = _DAT_01c6b5c0;
   }
-  _DAT_01c6b5c0 = iVar1;
-  uStackY_40 = 0x480fb4;
+  _DAT_01c6b5c0 = iVar17;
+  iVar17 = 0;
+  uVar9 = 0;
+  iVar18 = 0;
+  uVar8 = 0x480fb4;
   engine_matrix_c_transformToCache_FUN_004e5540(0,(CVector3i *)&stack0xffffffe0);
+  pCVar12 = (CVector3i *)&stack0xffffffe8;
+  uVar11 = 1;
   iStack_14 = 0;
-  engine_matrix_c_transformToCache_FUN_004e5540(1,(CVector3i *)&stack0xffffffe8);
-  puVar4 = &DAT_0060b044;
-  puVar5 = auStackY_54;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
-  }
-  puVar4 = &DAT_0060b014;
-  puVar5 = &uStackY_84;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
-  }
-  engine_3d_c_clipAndDrawLine2D_FUN_00407b30();
-  engine_matrix_c_transformToCache_FUN_004e5540(2,(CVector3i *)&stack0xfffffff0);
-  puVar4 = (uint *)&DAT_0060b074;
-  puVar5 = auStackY_4c;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
-  }
-  puVar4 = &DAT_0060b014;
-  puVar5 = &uStackY_7c;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
-  }
-  uStackY_80 = 0x481046;
-  engine_3d_c_clipAndDrawLine2D_FUN_00407b30();
-  engine_matrix_c_transformToCache_FUN_004e5540(3,(CVector3i *)&stack0xfffffff8);
-  puVar4 = (uint *)&DAT_0060b0a4;
-  puVar5 = &uStackY_44;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
-  }
+  uVar10 = 0x480fd3;
+  engine_matrix_c_transformToCache_FUN_004e5540(1,pCVar12);
   puVar3 = &DAT_0060b044;
-  puVar4 = &DAT_0060b014;
-  puVar5 = auStackY_74;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+  puVar4 = (uint *)&stack0xffffffac;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  uStackY_78 = 0x481097;
-  engine_3d_c_clipAndDrawLine2D_FUN_00407b30();
-  iVar2 = 0;
+  puVar3 = &DAT_0060b014;
+  puVar4 = (uint *)&stack0xffffff7c;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+  }
+  vertex1.projected_vertex.transformed_y = in_stack_ffffff80;
+  vertex1.projected_vertex.transformed_x = in_stack_ffffff7c;
+  vertex1.projected_vertex.transformed_z = in_stack_ffffff84;
+  vertex1.projected_vertex.inv_z = in_stack_ffffff88;
+  vertex1.projected_vertex.screen_x = in_stack_ffffff8c._0_4_;
+  vertex1.projected_vertex.screen_y = in_stack_ffffff8c._4_4_;
+  vertex1.u = in_stack_ffffff8c._8_4_;
+  vertex1.v = in_stack_ffffff8c._12_4_;
+  vertex1.r = in_stack_ffffff8c._16_4_;
+  vertex1.g = in_stack_ffffff8c._20_4_;
+  vertex1.b = in_stack_ffffff8c._24_4_;
+  vertex1.a = in_stack_ffffff8c._28_4_;
+  vertex2.projected_vertex.transformed_z = (int)in_stack_ffffffb4;
+  vertex2.projected_vertex.inv_z = (int)((ulonglong)in_stack_ffffffb4 >> 0x20);
+  vertex2.projected_vertex.transformed_x = (int)in_stack_ffffffac;
+  vertex2.projected_vertex.transformed_y = (int)((ulonglong)in_stack_ffffffac >> 0x20);
+  vertex2.projected_vertex.screen_x = in_stack_ffffffbc;
+  vertex2.projected_vertex.screen_y = uVar8;
+  vertex2.u = uVar9;
+  vertex2.v = uVar10;
+  vertex2.r = uVar11;
+  vertex2.g = (int)pCVar12;
+  vertex2.b = in_stack_ffffffd4;
+  vertex2.a = in_stack_ffffffd8;
+  engine_3d_c_clipAndDrawLine2D_FUN_00407b30(vertex1,vertex2);
+  pCVar12 = (CVector3i *)&stack0xfffffff0;
+  uVar14 = 2;
+  uVar13 = 0x48101c;
+  engine_matrix_c_transformToCache_FUN_004e5540(2,pCVar12);
+  puVar3 = (uint *)&DAT_0060b074;
+  puVar4 = (uint *)&stack0xffffffb4;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+  }
+  puVar3 = &DAT_0060b014;
+  puVar4 = (uint *)&stack0xffffff84;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+  }
+  vertex1_00.projected_vertex.transformed_y = in_stack_ffffff88;
+  vertex1_00.projected_vertex.transformed_x = in_stack_ffffff84;
+  vertex1_00.projected_vertex.transformed_z = in_stack_ffffff8c._0_4_;
+  vertex1_00.projected_vertex.inv_z = in_stack_ffffff8c._4_4_;
+  vertex1_00.projected_vertex.screen_x = in_stack_ffffff8c._8_4_;
+  vertex1_00.projected_vertex.screen_y = in_stack_ffffff8c._12_4_;
+  vertex1_00.u = in_stack_ffffff8c._16_4_;
+  vertex1_00.v = in_stack_ffffff8c._20_4_;
+  vertex1_00.r = in_stack_ffffff8c._24_4_;
+  vertex1_00.g = in_stack_ffffff8c._28_4_;
+  vertex1_00.b = (int)in_stack_ffffffac;
+  vertex1_00.a = (int)((ulonglong)in_stack_ffffffac >> 0x20);
+  vertex2_00.projected_vertex.transformed_z = in_stack_ffffffbc;
+  vertex2_00.projected_vertex.transformed_x = (int)in_stack_ffffffb4;
+  vertex2_00.projected_vertex.transformed_y = (int)((ulonglong)in_stack_ffffffb4 >> 0x20);
+  vertex2_00.projected_vertex.inv_z = uVar8;
+  vertex2_00.projected_vertex.screen_x = uVar9;
+  vertex2_00.projected_vertex.screen_y = uVar10;
+  vertex2_00.u = uVar11;
+  vertex2_00.v = uVar13;
+  vertex2_00.r = uVar14;
+  vertex2_00.g = (int)pCVar12;
+  vertex2_00.b = in_stack_ffffffdc;
+  vertex2_00.a = iVar17;
+  engine_3d_c_clipAndDrawLine2D_FUN_00407b30(vertex1_00,vertex2_00);
+  pCVar12 = (CVector3i *)&stack0xfffffff8;
+  uVar16 = 3;
+  uVar15 = 0x481065;
+  engine_matrix_c_transformToCache_FUN_004e5540(3,pCVar12);
+  puVar3 = (uint *)&DAT_0060b0a4;
+  puVar4 = (uint *)&stack0xffffffbc;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+  }
+  puVar2 = &DAT_0060b044;
+  puVar3 = &DAT_0060b014;
+  puVar4 = (uint *)&stack0xffffff8c;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+  }
+  vertex1_01.r = (int)in_stack_ffffffac;
+  vertex1_01.g = (int)((ulonglong)in_stack_ffffffac >> 0x20);
+  auVar7 = in_stack_ffffff8c._0_24_;
+  vertex1_01.projected_vertex.transformed_x = auVar7._0_4_;
+  vertex1_01.projected_vertex.transformed_y = auVar7._4_4_;
+  vertex1_01.projected_vertex.transformed_z = auVar7._8_4_;
+  vertex1_01.projected_vertex.inv_z = auVar7._12_4_;
+  vertex1_01.projected_vertex.screen_x = auVar7._16_4_;
+  vertex1_01.projected_vertex.screen_y = auVar7._20_4_;
+  vertex1_01.u = in_stack_ffffff8c._24_4_;
+  vertex1_01.v = in_stack_ffffff8c._28_4_;
+  vertex1_01.b = (int)in_stack_ffffffb4;
+  vertex1_01.a = (int)((ulonglong)in_stack_ffffffb4 >> 0x20);
+  vertex2_01.projected_vertex.transformed_y = uVar8;
+  vertex2_01.projected_vertex.transformed_x = in_stack_ffffffbc;
+  vertex2_01.projected_vertex.transformed_z = uVar9;
+  vertex2_01.projected_vertex.inv_z = uVar10;
+  vertex2_01.projected_vertex.screen_x = uVar11;
+  vertex2_01.projected_vertex.screen_y = uVar13;
+  vertex2_01.u = uVar14;
+  vertex2_01.v = uVar15;
+  vertex2_01.r = uVar16;
+  vertex2_01.g = (int)pCVar12;
+  vertex2_01.b = iVar18;
+  vertex2_01.a = unaff_EDI;
+  engine_3d_c_clipAndDrawLine2D_FUN_00407b30(vertex1_01,vertex2_01);
+  iVar1 = 0;
   do {
-    if ((*(byte *)((int)puVar3 + 0x13) & 0x80) == 0) {
+    if ((*(byte *)((int)puVar2 + 0x13) & 0x80) == 0) {
       _sprintf((char *)&iStack_14,(char *)0x5bd32b);
       engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
       engine_mini3d_cpp_FUN_004edaf0();
       engine_font_cpp_FUN_004b0a20();
     }
-    iVar2 = iVar2 + 1;
-    puVar3 = puVar3 + 0xc;
-  } while (iVar2 < 3);
+    iVar1 = iVar1 + 1;
+    puVar2 = puVar2 + 0xc;
+  } while (iVar1 < 3);
   return;
 }

@@ -46,7 +46,7 @@ section .text
     PUSH 0x42c80000                     ; 0059a385
     PUSH ESI                            ; 0059a38a
     CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0 ; 0059a38b
-        ;   XREF to: 004ea6f0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0()
+        ;   XREF to: 004ea6f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 0059a390
     TEST EAX,EAX                        ; 0059a393
     JZ 0x0059acf7                       ; 0059a395
@@ -650,7 +650,7 @@ section .text
     LEA ESI,[ESP + 0xa8]                ; 0059ac72
     LEA EDI,[ESP + 0x48]                ; 0059ac79
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005b5200 ; 0059ac7d
-        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005b5200()
+        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005b5200(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0059ac82
     LEA ESI,[ESP + 0xa8]                ; 0059ac87
     ADD ESP,0x8                         ; 0059ac8e
@@ -694,7 +694,7 @@ section .text
     PUSH 0x42c80000                     ; 0059acfd
     PUSH EBX                            ; 0059ad02
     CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0 ; 0059ad03
-        ;   XREF to: 004ea6f0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0()
+        ;   XREF to: 004ea6f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 0059ad08
     TEST EAX,EAX                        ; 0059ad0b
     JNZ 0x0059acf0                      ; 0059ad0d

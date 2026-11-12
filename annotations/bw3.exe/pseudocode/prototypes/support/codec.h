@@ -39,7 +39,7 @@ void FUN_004404e0(uint *param_1,byte param_2);
 
 // Original: support_codec.cpp_FUN_004406e0
 // Address: 004406e0
-undefined4 FUN_004406e0(undefined4 param_1,int param_2,int param_3);
+undefined4 FUN_004406e0(undefined4 param_1,_FILE *param_2,int param_3);
 
 // Original: support_codec.cpp_CCodec_ctor_FUN_00440800
 // Address: 00440800
@@ -65,9 +65,9 @@ undefined4 FUN_004408e0(int *param_1,undefined4 param_2,undefined4 param_3,int *
 // Address: 00440970
 bool FUN_00440970(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4);
 
-// Original: support_codec.cpp_FUN_004409f0
+// Original: support_codec.cpp_CCodec_processBuffer_FUN_004409f0
 // Address: 004409f0
-undefined4 FUN_004409f0(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+int __cdecl CCodec::processBuffer(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback);
 
 // Original: support_codec.cpp_FUN_00440a70
 // Address: 00440a70
@@ -193,13 +193,13 @@ void __cdecl CCheesyCipher::setMode(CCheesyCipher *this_ptr,int param_2);
 // Address: 004416b0
 void __cdecl CCheesyCipher::setKey(CCheesyCipher *this_ptr,uint param_2);
 
-// Original: support_codec.cpp_FUN_004416e0
+// Original: support_codec.cpp_CCheesyCipher_transformByte_FUN_004416e0
 // Address: 004416e0
-uint FUN_004416e0(CCheesyCipher *param_1,byte param_2);
+uint __cdecl CCheesyCipher::transformByte(CCheesyCipher *this_ptr,byte param_2);
 
-// Original: support_codec.cpp_FUN_00441750
+// Original: support_codec.cpp_CCheesyCipher_process_FUN_00441750
 // Address: 00441750
-undefined4 FUN_00441750(undefined4 param_1,int *param_2,int *param_3);
+undefined4 __cdecl CCheesyCipher::process(CCheesyCipher *this_ptr,int *param_2,int *param_3);
 
 // Original: support_codec.cpp_CCheesyCipher_advanceKey_FUN_004417d0
 // Address: 004417d0

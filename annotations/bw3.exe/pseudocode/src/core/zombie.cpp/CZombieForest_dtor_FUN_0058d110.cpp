@@ -18,7 +18,7 @@ CZombieForest * core_zombie_cpp_CZombieForest_dtor_FUN_0058d110(CZombieForest *t
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CZombieForestTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CZombieForestTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

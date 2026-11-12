@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 78,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 18,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 66
   },
@@ -24,9 +23,9 @@
         "0054c7eb"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndmain.cpp_isStreamableFile_FUN_0054c76e",
-    "signature": "undefined4 sound_sndmain_cpp_isStreamableFile_FUN_0054c76e(char *param_1)"
+    "signature": "int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_0054c76e(char *filename)"
   },
   "function_calls": [
     {
@@ -50,9 +49,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -81,39 +80,49 @@
     },
     "pcode_op_count": 168
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0056edde",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005522ce",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a5180",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9867
+    },
+    "nocturne.exe": {
+      "addr": "00522970",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9867
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint sound_sndmain_cpp_isStreamableFile_FUN_0054c76e(char *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = engine_dosio_cpp_getFileSize_FUN_00460aa0(\"sound\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_splitPath_FUN_00461070(param_1,(char *)0x0,(char *)0x0,(char *)0x0,acStack_100)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 12,

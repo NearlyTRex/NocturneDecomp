@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_prye_cpp_FUN_0051c1c0(int param_1)
+; void core_prye_cpp_FUN_0051c1c0(CPrye *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x249c]:4  local_249c
@@ -292,7 +292,7 @@
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0
 ;   core_motion.cpp_FUN_004fc350
 ;   core_motion.cpp_FUN_004fca20
-;   core_prye.cpp_FUN_0051c0a0
+;   core_prye.cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0
 ;   core_prye.cpp_FUN_0051c0f0
 ;   core_prye.cpp_FUN_0051e280
 ;   core_prye.cpp_FUN_0051e6d0
@@ -1013,7 +1013,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x25b0]    ; 0051cbf9
     PUSH ECX                            ; 0051cbff
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0051cc00
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0051cc05
     TEST EAX,EAX                        ; 0051cc08
     JZ 0x0051cc19                       ; 0051cc0a
@@ -1027,7 +1027,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x20c24]   ; 0051cc20
     PUSH EDI                            ; 0051cc26
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0051cc27
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0051cc2c
     LEA EDX,[EBX + 0x808]               ; 0051cc2f
     MOV dword ptr [ESP + 0x246c],EDX    ; 0051cc35
@@ -1039,7 +1039,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x20c24]   ; 0051cc4a
     PUSH EDX                            ; 0051cc50
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0051cc51
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0051cc56
     TEST EAX,EAX                        ; 0051cc59
     JNZ 0x0051e0c7                      ; 0051cc5b
@@ -1049,7 +1049,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x20c24]   ; 0051cc68
     PUSH ESI                            ; 0051cc6e
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0051cc6f
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0051cc74
     TEST EAX,EAX                        ; 0051cc77
     JNZ 0x0051e19f                      ; 0051cc79
@@ -1953,7 +1953,7 @@ section .text
         ;   XREF to: 0051d945 (CONDITIONAL_JUMP)  ; LAB_0051d945
     PUSH ECX                            ; 0051d929
     CALL core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80 ; 0051d92a
-        ;   XREF to: 00517e80 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80()
+        ;   XREF to: 00517e80 (UNCONDITIONAL_CALL)  ; float core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80(CDemonActor * object)
     MOV dword ptr [ESP + 0x2488],EAX    ; 0051d92f
     MOV EAX,dword ptr [ESP + 0x2488]    ; 0051d936
     MOV [0x01ed3784],EAX                ; 0051d93d | DAT_01ed3784
@@ -2294,8 +2294,8 @@ section .text
         ;   XREF to: 0051dc1f (UNCONDITIONAL_JUMP)  ; LAB_0051dc1f
     PUSH EBX                            ; 0051ddf6
         ;   Label: LAB_0051ddf6
-    CALL core_prye.cpp_FUN_0051c0a0     ; 0051ddf7
-        ;   XREF to: 0051c0a0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_0051c0a0()
+    CALL core_prye.cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0 ; 0051ddf7
+        ;   XREF to: 0051c0a0 (UNCONDITIONAL_CALL)  ; float core_prye.cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0(CPrye * this_ptr)
     MOV dword ptr [ESP + 0x2488],EAX    ; 0051ddfc
     FLD float ptr [ESP + 0x2488]        ; 0051de03
     ADD ESP,0x4                         ; 0051de0a

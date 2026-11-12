@@ -28,7 +28,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     PUSH 0x5d6762                       ; 0056ee77 | = "%s received %g damage, hitpoints %g\n"
     MOV ECX,dword ptr [0x005f1690]      ; 0056ee7c | g_CConsolePtr
     PUSH ECX                            ; 0056ee82 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 0056ee83
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 0056ee83
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0x1c                        ; 0056ee88
     MOV dword ptr [EBX + 0x370],0x3f800000 ; 0056ee8b
     POP EBX                             ; 0056ee95

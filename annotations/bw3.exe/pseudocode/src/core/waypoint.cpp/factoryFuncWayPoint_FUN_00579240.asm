@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_waypoint_cpp_factoryFuncWayPoint_FUN_00579240(void)
+; CWayPoint * __cdecl core_waypoint_cpp_factoryFuncWayPoint_FUN_00579240(void)
 ;
 ;
 ; Called Functions:

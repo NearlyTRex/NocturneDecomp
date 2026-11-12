@@ -5,13 +5,13 @@
 // Function prototypes for engine/ini.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_ini.cpp_FUN_004d8290
+// Original: engine_ini.cpp_CIni_getProfileString_FUN_004d8290
 // Address: 004d8290
-int __cdecl FUN_004d8290(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
+int __cdecl CIni::getProfileString(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 
 // Original: engine_ini.cpp_FUN_004d8470
 // Address: 004d8470
-int FUN_004d8470(undefined4 *param_1,undefined4 param_2,char *param_3,undefined4 param_4,char *param_5);
+int FUN_004d8470(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5);
 
 // Original: engine_ini.cpp_CIni_writeProfileString_FUN_004d8640
 // Address: 004d8640

@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004ca450(CGabriella *this_ptr,float delta_time,int is_holstering)
@@ -15,13 +16,12 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004ca450(CGabrie
   float fVar1;
   SMotion *pSVar2;
   int iVar3;
-  float *pfVar4;
-  float *pfVar5;
+  uint *puVar4;
+  uint *puVar5;
   byte bVar6;
   float afStackY_10cc [968];
   float local_1a0;
   CBoundingBox3D *in_stack_fffffe68;
-  float *pfStack_194;
   uint uStack_190;
   float fStack_114;
   float fStack_110;
@@ -29,13 +29,13 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004ca450(CGabrie
   float fStack_108;
   float fStack_104;
   float fStack_100;
-  float afStack_fc [6];
   float fStack_e4;
-  float afStack_e0 [4];
+  float fStack_d8;
+  float fStack_d4;
   float fStack_d0;
   float fStack_cc;
   float fStack_c8;
-  float afStack_c0 [3];
+  uint uStack_c0;
   float fStack_b4;
   float fStack_a8;
   float fStack_a4;
@@ -45,13 +45,15 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004ca450(CGabrie
   float fStack_94;
   uint uStack_90;
   float fStack_84;
-  float afStack_78 [3];
+  float fStack_78;
   float fStack_6c;
-  float *pfStack_68;
   uint uStack_64;
-  float afStack_60 [3];
+  float fStack_60;
   float fStack_54;
-  float afStack_50 [4];
+  float fStack_50;
+  float fStack_4c;
+  float fStack_48;
+  float fStack_44;
   float fStack_40;
   float fStack_3c;
   float local_38;
@@ -111,68 +113,70 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004ca450(CGabrie
         local_1a0 = 7.039997e-39;
         (*((this_ptr->aim_target->vtable)._ub)->getBoundingBox)
                   (this_ptr->aim_target,in_stack_fffffe68);
-        pfVar4 = afStack_fc;
-        pfVar5 = &fStack_114;
+        puVar4 = (uint *)&stack0xffffff04;
+        puVar5 = &stack0xfffffeec;
         for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *pfVar5 = *pfVar4;
-          pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
-          pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
+          *puVar5 = *puVar4;
+          puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+          puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
         }
-        afStack_50[2] = fStack_114 + fStack_108;
-        afStack_50[3] = fStack_110 + fStack_104;
+        fStack_48 = fStack_114 + fStack_108;
+        fStack_44 = fStack_110 + fStack_104;
         fStack_40 = fStack_10c + fStack_100;
         fStack_9c = fStack_114 + fStack_108;
-        afStack_e0[(uint)bVar6 * -2 + 0x12] = afStack_50[(uint)bVar6 * -2 + 3];
-        afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x13] =
-             afStack_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+        *(float *)((int)&stack0xffffff68 + (uint)bVar6 * -8) =
+             (&stack0xffffffb0)[(uint)bVar6 * -2 + 3];
+        *(float *)((int)&stack0xffffff6c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+             (&stack0xffffffb0)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
         fStack_3c = fStack_9c * _DAT_005e11f8;
         local_38 = fStack_98 * _DAT_005e11f8;
         local_34 = fStack_94 * _DAT_005e11f8;
         fStack_6c = fStack_9c * _DAT_005e11f8;
-        afStack_e0[(uint)bVar6 * -2 + 0x1e] = afStack_50[(uint)bVar6 * -2 + 6];
-        afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x1f] =
-             afStack_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
-        if (afStack_e0 + 0x20 != afStack_e0 + 0x1d) {
-          afStack_60[0] = fStack_6c;
+        *(float *)((int)&stack0xffffff98 + (uint)bVar6 * 0xfffffffe * 4) =
+             (&stack0xffffffb0)[(uint)bVar6 * -2 + 6];
+        *(float *)((int)&stack0xffffff98 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =
+             (&stack0xffffffb0)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
+        if (&stack0xffffffa0 != &stack0xffffff94) {
+          fStack_60 = fStack_6c;
         }
       }
-      else if ((float **)(afStack_e0 + 0x1e) != &pfStack_194) {
-        pfStack_68 = pfStack_194;
+      else if (&stack0xffffff98 != &stack0xfffffe6c) {
         uStack_64 = uStack_190;
       }
-      pfStack_194 = afStack_e0 + 0x20;
       core_actor_cpp_FUN_00408b40();
-      pfStack_194 = afStack_e0 + 8;
-      afStack_c0[0] = (float)uStack_90;
-      afStack_e0[(uint)bVar6 * -2 + 9] = afStack_e0[(uint)bVar6 * -2 + 0x15];
-      afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10] =
-           afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x16];
+      uStack_c0 = uStack_90;
+      *(uint *)(&stack0xffffff44 + (uint)bVar6 * -8) =
+           *(uint *)(&stack0xffffff74 + (uint)bVar6 * -8);
+      *(uint *)(&stack0xffffff48 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+           *(uint *)(&stack0xffffff78 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
       core_actor_cpp_FUN_00408bb0();
-      pfStack_194 = _DAT_01cc9120;
       fStack_54 = fStack_84;
-      afStack_50[(uint)bVar6 * -2] = afStack_e0[(uint)bVar6 * -2 + 0x18];
-      afStack_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-           afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x19];
+      (&stack0xffffffb0)[(uint)bVar6 * 0xfffffffe] =
+           (float)*(uint *)(&stack0xffffff80 + (uint)bVar6 * -8);
+      (&stack0xffffffb0)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+           (float)*(uint *)(&stack0xffffff84 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
       core_skeleton_cpp_FUN_00569040();
       fVar1 = fStack_54;
-      afStack_e0[2] = fStack_b4;
-      afStack_e0[(uint)bVar6 * -2 + 3] = afStack_e0[(uint)bVar6 * -2 + 0xc];
-      afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
-           afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd];
-      fStack_a8 = fVar1 - afStack_e0[2];
-      fStack_a4 = afStack_50[0] - afStack_e0[3];
-      fStack_a0 = afStack_50[1] - fStack_d0;
-      afStack_78[0] = fVar1 - afStack_e0[2];
-      afStack_e0[(uint)bVar6 * -2 + 0x1b] = afStack_e0[(uint)bVar6 * -2 + 0xf];
-      afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x1c] =
-           afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x10];
-      pfStack_194 = afStack_e0 + 0x1a;
+      fStack_d8 = fStack_b4;
+      *(uint *)((int)&stack0xffffff2c + (uint)bVar6 * -8) =
+           *(uint *)(&stack0xffffff50 + (uint)bVar6 * -8);
+      *(uint *)((int)&stack0xffffff30 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+           *(uint *)(&stack0xffffff54 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+      fStack_a8 = fVar1 - fStack_d8;
+      fStack_a4 = fStack_50 - fStack_d4;
+      fStack_a0 = fStack_4c - fStack_d0;
+      fStack_78 = fVar1 - fStack_d8;
+      *(uint *)(&stack0xffffff8c + (uint)bVar6 * -8) =
+           *(uint *)((int)&stack0xffffff5c + (uint)bVar6 * -8);
+      *(uint *)(&stack0xffffff90 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+           *(uint *)((int)&stack0xffffff60 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520();
       fVar1 = delta_time / _DAT_00600d60;
       fStack_cc = fStack_e4;
-      afStack_e0[(uint)bVar6 * -2 + 6] = afStack_e0[(uint)bVar6 * -2];
-      afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
-           afStack_e0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+      *(uint *)((int)&stack0xffffff38 + (uint)bVar6 * -8) =
+           *(uint *)(&stack0xffffff20 + (uint)bVar6 * -8);
+      *(uint *)(&stack0xffffff3c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+           *(uint *)(&stack0xffffff24 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
       this_ptr->target_aim_pitch = fStack_cc;
       fVar1 = fVar1 + this_ptr->aim_weight;
       this_ptr->target_aim_yaw = fStack_c8;
@@ -203,10 +207,10 @@ LAB_004ca4ed:
     this_ptr->aim_weight = 0.0;
   }
   if (0.0 < this_ptr->aim_weight) {
-    pfStack_194 = (float *)(this_ptr->target_aim_yaw - this_ptr->aim_yaw);
-    local_20 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60();
-    pfStack_194 = (float *)(this_ptr->target_aim_pitch - this_ptr->aim_pitch);
-    local_24 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60();
+    local_20 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                         (this_ptr->target_aim_yaw - this_ptr->aim_yaw);
+    local_24 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                         (this_ptr->target_aim_pitch - this_ptr->aim_pitch);
     fVar1 = delta_time * _DAT_005e11e4 * (float)_DAT_005e1204;
     if (local_20 < -fVar1) {
       local_20 = -fVar1;

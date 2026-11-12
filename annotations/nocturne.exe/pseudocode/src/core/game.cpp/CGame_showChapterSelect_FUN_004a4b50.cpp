@@ -398,7 +398,7 @@ LAB_004a50dc:
     core_mission_cpp_CDemonMission_run_FUN_004d9440(g_CDemonMission_PTR_005baf90);
     if (this_ptr->need_chapter_reload != 0) {
       this_ptr->need_chapter_reload = 0;
-      core_game_cpp_CGame_FUN_004a4170(this_ptr,this_ptr->chapter_reload_filename,1);
+      core_game_cpp_CGame_loadGame_FUN_004a4170(this_ptr,this_ptr->chapter_reload_filename,1);
     }
   }
   _DAT_01bcd070 = (CBitFont *)local_1c;

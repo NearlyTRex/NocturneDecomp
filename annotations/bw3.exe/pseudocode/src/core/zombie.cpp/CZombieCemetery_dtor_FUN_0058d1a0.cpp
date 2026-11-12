@@ -18,7 +18,7 @@ CZombieCemetery * core_zombie_cpp_CZombieCemetery_dtor_FUN_0058d1a0(CZombieCemet
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CZombieCemeteryTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CZombieCemeteryTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 44,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 18,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 89
+    "total_lines": 88
   },
   "cross_references": [
     {
@@ -126,6 +126,32 @@
     },
     "pcode_op_count": 343
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004cb700",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d0910",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004efc90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004b2110",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 32,
     "local_size": 28,
@@ -176,7 +202,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 17,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,1);",
@@ -184,7 +210,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 19,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);",

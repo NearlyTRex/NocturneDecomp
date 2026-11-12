@@ -38,12 +38,16 @@
 #include "types/structs/SMpegFrameHeader.h"
 #include "types/structs/SMpegLayer3GranuleInfo.h"
 #include "types/structs/SMpegLayer3SideInfo.h"
+#include "types/structs/SMpegScalefactorBandData.h"
+#include "types/structs/SMpegStereoSubbandSamples.h"
 #include "types/structs/SMpegSubbandAllocation.h"
 #include "types/structs/SMpegSubbandQuantizedSamples.h"
 #include "types/structs/SMpegSubbandSCFSI.h"
+#include "types/structs/SMpegSubbandSamples.h"
 #include "types/structs/SMpegSubbandScalefactors.h"
 #include "types/structs/SNetPacketHeader.h"
 #include "types/structs/SNetworkAddr.h"
+#include "types/structs/SSimFrame.h"
 #include "types/structs/STextureSet.h"
 #include "types/unions/UNetPacket.h"
 
@@ -53,7 +57,7 @@
 
 SMRGLHeaderExtended * __cdecl engine_model_c_FUN_00520150(char *filename,int model_size);
 void core_moloch_cpp_staticInit_FUN_00520290(void);
-void core_moloch_cpp_factoryFuncMoloch_FUN_005202c0(void);
+CMoloch * __cdecl core_moloch_cpp_factoryFuncMoloch_FUN_005202c0(void);
 CDemonActorType * core_moloch_cpp_CMoloch_getActorType_FUN_005202e0(CMoloch *this_ptr);
 CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_005202f0(CMoloch *this_ptr);
 CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_005203b0(CMoloch *this_ptr,uint flags);
@@ -121,7 +125,7 @@ CMorphModel * __cdecl core_morph_cpp_FUN_00523880(CMorphModel *this_ptr,uint fla
 undefined4 * core_morph_cpp_FUN_005238c0(undefined4 *param_1);
 undefined4 core_morph_cpp_FUN_005238f0(undefined4 param_1);
 void core_morph_cpp_FUN_00523910(undefined4 *param_1);
-void core_motion_cpp_FUN_00523980(int *param_1,undefined4 param_2);
+void __cdecl core_motion_cpp_CMotionList_load_FUN_00523980(CMotionList *this_ptr,_FILE *file_handle);
 void core_motion_cpp_FUN_00523db0(int *param_1,undefined4 param_2);
 void core_motion_cpp_FUN_00523e2e(void);
 int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(CMotionList *this_ptr,char *motion_name,int error_on_not_found);
@@ -145,17 +149,17 @@ float core_motion_cpp_FUN_00524a40(int *param_1,int param_2);
 void __cdecl core_motion_cpp_CMotionController_jumpToMotionByName_FUN_00524ae0(CMotionController *this_ptr,char *motion_name,float frame_number);
 void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_00524b10(CMotionController *this_ptr,int target_motion_index,float target_frame_number);
 void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_00524b70(CMotionController *this_ptr);
-int __cdecl core_motion_cpp_FUN_00524ba0(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor);
-int __cdecl core_motion_cpp_FUN_00524d70(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
+int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00524ba0(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor);
+int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_00524d70(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition);
 void core_motion_cpp_FUN_00524f40(int *param_1,int param_2,float param_3,float *param_4);
 float __cdecl core_motion_cpp_FUN_00525020(CMotionController *this_ptr);
 float core_motion_cpp_FUN_00525110(int *param_1,int param_2,float param_3);
-void __cdecl core_motion_cpp_FUN_00525240(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
+void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_00525240(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight);
 void __cdecl core_motion_cpp_CMotionController_load_FUN_00525380(CMotionController *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionController_save_FUN_00525420(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_motion_cpp_FUN_005254b0(CMotionController *this_ptr,CDemonActor *actor);
 void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_00525840(SMpegFrame *frame);
-void sound_mp3_cpp_FUN_00525ab0(int *param_1,int param_2,ulong param_3,int param_4);
+void sound_mp3_cpp_FUN_00525ab0(int *param_1,_FILE *param_2,ulong param_3,int param_4);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_00525be0(CFileBitStream *this_ptr);
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_00525cd0(CFileBitStream *this_ptr,int num_bits);
 int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_00525e70(CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits);
@@ -173,25 +177,25 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_005265e0(CFileBit
 void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_00526670(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_005268e0(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_005269e0(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SMpegFrame *frame);
-void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_00526c70(int param_1,int param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_requantizeSamples_FUN_00526f40(int param_1,int param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_00527080(int param_1,int param_2,int param_3,int param_4);
-void sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_00527130(int param_1,int param_2,int param_3);
-double sound_mp3_cpp_initializeSynthesisDctTable_FUN_0052718e(float *param_1);
+void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_00526c70(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_requantizeSamples_FUN_00526f40(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_00527080(float *spectral_samples,int *scalefactor_band_indices,SMpegFrame *frame_info,int channel_or_granule_index);
+void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_00527130(float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info);
+void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_0052718e(float *output_dct_table);
 void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_00527280(CMP3Decoder *this_ptr,float *subband_samples,int channel_index,short *pcm_output);
 void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_00527530(CMP3Decoder *this_ptr,CFileBitStream *bit_stream,SMpegLayer3SideInfo *side_info_array,SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule_index,SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_00527e80(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00528210(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410(CMP3Decoder *this_ptr,SMpegSubbandQuantizedSamples *quantized_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,int frame_bit_offset,SMpegFrame *frame);
-void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00528ae0(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6);
-void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00528f90(undefined4 *param_1,undefined4 *param_2,int param_3,int *param_4);
-void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_005292d0(int param_1,double param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_00529370(undefined4 *param_1,undefined4 *param_2,int param_3,int param_4,int *param_5);
-void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_0052a0e0(float *param_1,float *param_2,int param_3);
-void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_0052a2c0(float *param_1,void *param_2,int param_3);
+void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00528ae0(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3GranuleInfo *granule,int channel_index,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00528f90(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_005292d0(int intensity_position,double ratio,int sample_index,float *ratio_buffer);
+void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_00529370(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_0052a0e0(float *input_samples,float *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header);
+void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_0052a2c0(float *input_samples,float *output_samples,int mpeg_block_type);
 void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_0052a7d0(CMP3Decoder *this_ptr,float *input_samples,float *output_buffer,int subband_index,int channel,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header);
-int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_0052a880(int *param_1);
+int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_0052a880(SMpegFrame frame_info);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_ctor_FUN_0052ae40(CMP3Decoder *this_ptr);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_dtor_FUN_0052ae80(CMP3Decoder *this_ptr,uint flags);
 void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_0052aea0(CMP3Decoder *this_ptr,char *filename);
@@ -201,15 +205,15 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_0052b170(CMP3Decoder *this_ptr,sh
 int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_0052b2b0(CMP3Decoder *this_ptr,int sample_offset);
 int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_0052b450(CMP3Decoder *this_ptr,short *pcm_output);
 void __cdecl core_netgame_cpp_staticInit_FUN_0052c0a0(void);
-void core_netgame_cpp_resetGameTime_FUN_0052c0ee(void);
+void __cdecl core_netgame_cpp_resetGameTime_FUN_0052c0ee(void);
 void __cdecl core_netgame_cpp_updateGameTime_FUN_0052c120(void);
 float __cdecl core_netgame_cpp_computeTimeDelta_FUN_0052c170(int start_time,int end_time);
-float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_0052c1d0(int param_1);
+float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_0052c1d0(uint timestamp);
 void core_netgame_cpp_resetChatCounts_FUN_0052c230(void);
 void __cdecl core_netgame_cpp_removeChatOut_FUN_0052c240(int index);
-int core_netgame_cpp_findSimFrame_FUN_0052c2de(int param_1);
-int * core_netgame_cpp_allocSimFrame_FUN_0052c32e(int param_1);
-void core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int param_1);
+int __cdecl core_netgame_cpp_findSimFrame_FUN_0052c2de(int sequence_number);
+SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_0052c32e(int sequence_number);
+void __cdecl core_netgame_cpp_purgeOldSimFrames_FUN_0052c3ec(int min_sequence);
 CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_0052c470(CNetGame *this_ptr);
 CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0052c500(CNetGame *this_ptr,uint flags);
 void __cdecl core_netgame_cpp_CNetGame_init_FUN_0052c520(CNetGame *this_ptr);

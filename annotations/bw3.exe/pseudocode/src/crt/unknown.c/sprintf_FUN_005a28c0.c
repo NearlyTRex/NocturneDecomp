@@ -13,6 +13,6 @@ int __cdecl _sprintf(char *buffer,char *format)
   byte *local_8;
   
   local_8 = &stack0x0000000c;
-  iVar1 = _vsprintf(buffer,format,&local_8);
+  iVar1 = _vsprintf(buffer,format,(va_list_t)&local_8);
   return iVar1;
 }

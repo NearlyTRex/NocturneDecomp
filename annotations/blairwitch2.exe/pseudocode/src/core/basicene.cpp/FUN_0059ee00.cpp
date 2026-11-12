@@ -12,10 +12,9 @@ void core_basicene_cpp_FUN_0059ee00(CEnemy *param_1,float param_2)
   CDeformableModelInstance *this_ptr;
   CEnemy_full_vtable *pCVar1;
   int iVar2;
-  uint uVar3;
+  CDemonActor *pCVar3;
   float fVar4;
-  CDemonActor *pCVar5;
-  uint uVar6;
+  uint class_name_hash;
   
   pCVar1 = (param_1->base).base.vtable._ue;
   (param_1->base).follow_leader = (CCharacter *)0x0;
@@ -26,12 +25,12 @@ void core_basicene_cpp_FUN_0059ee00(CEnemy *param_1,float param_2)
   }
   fVar4 = param_1[1].base.model.rest_bone_scales[0x39];
   if (fVar4 == 0.0) {
-    uVar6 = g_CPatrolPointClassInfo.name_hash;
-    pCVar5 = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740
+    class_name_hash = g_CPatrolPointClassInfo.name_hash;
+    pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740
                        (0x01D182F0,param_1->patrol_name_pattern);
-    fVar4 = (float)core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar5,uVar6);
-    param_1[1].base.model.rest_bone_scales[0x39] = fVar4;
-    if (fVar4 == 0.0) {
+    pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar3,class_name_hash);
+    param_1[1].base.model.rest_bone_scales[0x39] = (float)pCVar3;
+    if (pCVar3 == (CDemonActor *)0x0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                 (&(param_1->base).model.base,(int)param_1[1].base.model.rest_bone_scales[0x30],1);
       return;
@@ -39,10 +38,11 @@ void core_basicene_cpp_FUN_0059ee00(CEnemy *param_1,float param_2)
   }
   else {
     if (param_1[1].base.model.rest_bone_scales[0x3a] == 0.0) {
-      uVar3 = core_waypoint_cpp_FUN_005882d0(&(param_1->base).base.location,fVar4,0);
-      fVar4 = (float)core_actor_cpp_castToClassHash_FUN_0040c8f0
-                               (uVar3,g_CPatrolPointClassInfo.name_hash);
-      param_1[1].base.model.rest_bone_scales[0x3a] = fVar4;
+      pCVar3 = (CDemonActor *)core_waypoint_cpp_FUN_005882d0(&(param_1->base).base.location,fVar4,0)
+      ;
+      pCVar3 = (CPatrolPoint *)core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar3,g_CPatrolPointClassInfo.name_hash)
+      ;
+      param_1[1].base.model.rest_bone_scales[0x3a] = (float)pCVar3;
     }
     fVar4 = param_1[1].base.model.rest_bone_scales[0x3a];
     this_ptr = &(param_1->base).model;

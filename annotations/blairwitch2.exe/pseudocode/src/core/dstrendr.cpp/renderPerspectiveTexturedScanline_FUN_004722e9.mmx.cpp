@@ -1,14 +1,14 @@
 // Name: core_dstrendr.cpp_renderPerspectiveTexturedScanline_FUN_004722e9
 // Address: 004722e9
 // Address Range: [[004722e9, 004723c2] [004723d0, 004723d5]]
-// Convention: unknown
-// Signature: uint core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_004722e9(void)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_004722e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_004722e9(void)
+void __edi_esi_ebx core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_004722e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 {
 __asm {
         mov EAX,dword ptr [ESI + 0x8]

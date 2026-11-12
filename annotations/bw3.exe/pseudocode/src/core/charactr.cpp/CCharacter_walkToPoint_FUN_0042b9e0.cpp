@@ -94,7 +94,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0(CCharacter *th
   local_13c = ABS(fVar6);
   if (0.0 < SQRT(direction->z * direction->z +
                  direction->x * direction->x + direction->y * direction->y)) {
-    local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(local_12c - local_b4);
+    local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(local_12c - local_b4);
     local_138 = ABS(local_14);
   }
   if (((local_13c < min_distance + (float)_DAT_005b81f6) &&
@@ -148,8 +148,8 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0(CCharacter *th
     local_e4[(uint)bVar7 * -2 + 0x12] = *(float *)(&stack0xfffffee0 + (uint)bVar7 * -8);
     local_e4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13] =
          *(float *)(&stack0xfffffee4 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-    fVar4 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
-                             (local_9c - (this_ptr->base).orient.vec.y);
+    fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(local_9c - (this_ptr->base).orient.vec.y)
+    ;
     fVar6 = -local_20;
     if ((fVar6 <= fVar4) && (fVar6 = fVar4, local_20 < fVar4)) {
       fVar6 = local_20;
@@ -173,7 +173,8 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0(CCharacter *th
                        (this_ptr->base).direction_hint);
     if (iVar5 == 0) {
       if (local_50 == 0) {
-        engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"CCharacter::walkToPoint - go somewhere failed\n");
+        engine_console_cpp_CConsole_printf_FUN_00441ff0
+                  (g_CConsolePtr,"CCharacter::walkToPoint - go somewhere failed\n");
         return -1;
       }
       return 1;
@@ -187,7 +188,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042b9e0(CCharacter *th
     }
     *pfVar1 = *pfVar1 + local_44;
     local_14 = local_f4.y - (this_ptr->base).orient.vec.y;
-    fVar4 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(local_14);
+    fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(local_14);
     fVar6 = -local_20;
     if ((fVar6 <= fVar4) && (fVar6 = fVar4, local_20 < fVar4)) {
       fVar6 = local_20;

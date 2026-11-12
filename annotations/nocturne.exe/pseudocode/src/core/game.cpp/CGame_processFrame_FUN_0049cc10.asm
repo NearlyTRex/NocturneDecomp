@@ -206,8 +206,8 @@ section .text
         ;   XREF to: 0049d5d9 (CONDITIONAL_JUMP)  ; LAB_0049d5d9
     LEA EAX,[EBP + -0x22]               ; 0049cd4b
     PUSH EAX                            ; 0049cd4e
-    CALL core_slew.cpp_CSlew_FUN_0051f930 ; 0049cd4f
-        ;   XREF to: 0051f930 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_FUN_0051f930(CSlew * this_ptr)
+    CALL core_slew.cpp_CSlew_init_FUN_0051f930 ; 0049cd4f
+        ;   XREF to: 0051f930 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_init_FUN_0051f930(CSlew * this_ptr)
     MOV EAX,[0x01cae0e8]                ; 0049cd54 | g_LocalHeroIndex
     MOV EDX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 0049cd59
     LEA EAX,[EBP + -0x22]               ; 0049cd60
@@ -419,8 +419,8 @@ section .text
         ;   XREF to: 0049cfea (CONDITIONAL_JUMP)  ; LAB_0049cfea
     MOV EDI,dword ptr [0x005be368]      ; 0049cfdb | g_CDemonSetPtr
     PUSH EDI                            ; 0049cfe1 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0050aa70 ; 0049cfe2
-        ;   XREF to: 0050aa70 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050aa70(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderLightDebugView_FUN_0050aa70 ; 0049cfe2
+        ;   XREF to: 0050aa70 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderLightDebugView_FUN_0050aa70(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0049cfe7
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049cfea
         ;   Label: LAB_0049cfea

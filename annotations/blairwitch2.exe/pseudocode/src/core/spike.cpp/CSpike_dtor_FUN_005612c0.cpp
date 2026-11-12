@@ -13,7 +13,7 @@ CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_005612c0(CSpike *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSpikeTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSpikeTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

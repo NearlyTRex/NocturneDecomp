@@ -30,19 +30,19 @@ void core_fldnotes_cpp_FUN_004a5700(int param_1)
   local_18 = 0;
   if (*(int *)(param_1 + 0x40) == 0) {
     pCVar6 = CAlphaBitmap_ARRAY_01caf128;
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf114);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf114);
     do {
-      engine_alphabit_cpp_FUN_0040d540(pCVar6);
+      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(pCVar6);
       pCVar6 = pCVar6 + 1;
     } while (pCVar6 != &CAlphaBitmap_01caf1a0);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf1a0);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf1b4);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf1c8);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf1dc);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf1f0);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf204);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf218);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf22c);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1a0);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1b4);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1c8);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1dc);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1f0);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf204);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf218);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf22c);
     DAT_00616010 = 1;
     _DAT_01caf488 = 0;
     DAT_00616040 = 0xffffffff;
@@ -52,19 +52,19 @@ void core_fldnotes_cpp_FUN_004a5700(int param_1)
   }
   if (DAT_00616010 != 0) {
     pCVar6 = CAlphaBitmap_ARRAY_01caf128;
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf114);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf114);
     do {
-      engine_alphabit_cpp_FUN_0040d540(pCVar6);
+      engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(pCVar6);
       pCVar6 = pCVar6 + 1;
     } while (pCVar6 != &CAlphaBitmap_01caf1a0);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf1a0);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf1b4);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf1c8);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf1dc);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf1f0);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf204);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf218);
-    engine_alphabit_cpp_FUN_0040d540(&CAlphaBitmap_01caf22c);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1a0);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1b4);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1c8);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1dc);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf1f0);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf204);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf218);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d540(&CAlphaBitmap_01caf22c);
     DAT_00616040 = -1;
     DAT_00616010 = 1;
     _DAT_01caf488 = 0;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_passngr_cpp_factoryFuncPassenger_FUN_0050a420(void)
+; CPassenger * __cdecl core_passngr_cpp_factoryFuncPassenger_FUN_0050a420(void)
 ;
 ;
 ; Called Functions:

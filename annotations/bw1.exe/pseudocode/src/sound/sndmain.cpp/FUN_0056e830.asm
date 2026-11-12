@@ -121,7 +121,7 @@ section .text
     ADD ESP,0x4                         ; 0056e8cf
     PUSH 0x6232c0                       ; 0056e8d2 | g_CMP3DecoderDestructorNode1
     CALL crt_stdlib.c__atexit_FUN_005c1093 ; 0056e8d7
-        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005c1093()
+        ;   XREF to: 005c1093 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005c1093(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0056e8dc
     MOV EAX,dword ptr [ESP + 0x240]     ; 0056e8df
         ;   Label: LAB_0056e8df

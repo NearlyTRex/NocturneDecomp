@@ -33,7 +33,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005aefa0",
-    "signature": "undefined4 crt_unknown_c_FUN_005aefa0(undefined4 *param_1)"
+    "signature": "time_t crt_unknown_c_FUN_005aefa0(time_t *param_1)"
   },
   "function_calls": [
     {
@@ -93,6 +93,32 @@
     },
     "pcode_op_count": 102
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005c4030",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005cc330",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "006001f0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00570a30",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -107,7 +133,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_005aefa0(uint *param_1)",
+      "text": "time_t FUN_005aefa0(time_t *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -115,7 +141,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 != (uint *)0x0) {",
+      "text": "if (param_1 != (time_t *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -123,7 +149,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = uVar2;",
+      "text": "*param_1 = tVar2;",
       "type": "unnamed_param"
     },
     {

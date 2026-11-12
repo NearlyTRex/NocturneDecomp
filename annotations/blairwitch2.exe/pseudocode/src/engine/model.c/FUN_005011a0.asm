@@ -88,7 +88,7 @@ section .text
     PUSH 0x1                            ; 00501213
     PUSH EBX                            ; 00501215
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 00501216
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0050121b
     CMP EAX,EDI                         ; 0050121e
     JZ 0x00501245                       ; 00501220

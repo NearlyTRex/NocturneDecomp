@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_FUN_005b8f9c(undefined4 param_1,byte param_2,uint param_3,undefined4 param_4,undefined4 param_5,int param_6)
+; _FILE * crt_unknown_c_FUN_005b8f9c(undefined4 param_1,byte param_2,uint param_3,char *param_4,undefined4 param_5,_FILE *param_6)
 ;
 ;
 ; XREF[2]:
@@ -131,7 +131,7 @@ section .text
     PUSH 0x0                            ; 005b9093
     PUSH EBX                            ; 005b9095
     CALL crt_stdio.c_fseek_FUN_005b929c ; 005b9096
-        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005b929c()
+        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005b929c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 005b909b
     PUSH EBX                            ; 005b909e
         ;   Label: LAB_005b909e

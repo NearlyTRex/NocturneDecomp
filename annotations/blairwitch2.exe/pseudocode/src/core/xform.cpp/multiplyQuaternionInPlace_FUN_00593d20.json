@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 174,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 13,
+    "pseudocode_lines": 20,
+    "suspect_count": 6,
     "suspect_types": [
-      "param_count_too_few",
+      "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "stack_ref",
-      "unnamed_param"
+      "stack_ref"
     ],
-    "total_lines": 44
+    "total_lines": 45
   },
   "cross_references": [
     {
@@ -36,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_xform.cpp_multiplyQuaternionInPlace_FUN_00593d20",
-    "signature": "undefined4 * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(undefined4 *param_1,undefined4 param_2)"
+    "signature": "CQuaternion4f * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(CQuaternion4f *quat1_inout,CQuaternion4f *quat2_ptr)"
   },
   "function_calls": [
     {
@@ -61,11 +60,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.391304347826087,
@@ -91,11 +90,25 @@
     },
     "pcode_op_count": 124
   },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "005f7700",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.807
+    },
+    "nocturne.exe": {
+      "addr": "0055d1f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 40,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -104,116 +117,71 @@
         "offset": -28,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "quat1_inout",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "quat2_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CQuaternion4f *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(uint *param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(uint *param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 7,
-      "match": "auStackY_17f8",
+      "line": 8,
+      "match": "afStackY_17f8",
       "severity": "moderate",
-      "text": "uint auStackY_17f8 [1525];",
+      "text": "float afStackY_17f8 [1525];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_xform_cpp_multiplyQuaternion_FUN_00593c60(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_xform_cpp_multiplyQuaternion_FUN_00593c60(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar1 = param_1 + (uint)bVar2 * -2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast",
       "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = local_1c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xffffffe8",
+      "match": "(uint *)((int)quat1_inout",
       "severity": "moderate",
-      "text": "*puVar1 = *(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);",
-      "type": "stack_ref"
+      "text": "puVar1 = (uint *)((int)quat1_inout + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 16,
-      "match": "&stack0xffffffec",
+      "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "text": "*puVar1 = *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 19,
+      "line": 17,
       "match": "&stack0xffffffec",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)",
+      "text": "*puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 19,
-      "match": "(int)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8)",
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffffec",
       "severity": "moderate",
-      "text": "((int)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)",
-      "type": "pointer_truncation"
+      "text": "((int)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4)",
+      "type": "stack_ref"
     },
     {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
+      "description": "Pointer value `(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8)",
+      "severity": "moderate",
+      "text": "((int)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4)",
+      "type": "pointer_truncation"
     }
   ]
 }

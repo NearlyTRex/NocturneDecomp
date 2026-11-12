@@ -47,25 +47,25 @@ section .text
     LEA EAX,[EBX + 0xc3b88]             ; 005830a7
     PUSH EAX                            ; 005830ad
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 005830ae
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005830b3
     PUSH 0x5edb06                       ; 005830b6 | = "wayPoint1"
     LEA EAX,[EBX + 0xc3b8c]             ; 005830bb
     PUSH EAX                            ; 005830c1
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 005830c2
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005830c7
     PUSH 0x5edb10                       ; 005830ca | = "wayPoint2"
     LEA EAX,[EBX + 0xc3b90]             ; 005830cf
     PUSH EAX                            ; 005830d5
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 005830d6
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005830db
     PUSH 0x5edb1a                       ; 005830de | = "wayPoint3"
     LEA EAX,[EBX + 0xc3b94]             ; 005830e3
     PUSH EAX                            ; 005830e9
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 005830ea
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005830ef
     CMP dword ptr [0x0061e4bc],0x4      ; 005830f2 | g_CVampireBossClassVersion
         ;   Label: LAB_005830f2
@@ -78,13 +78,13 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 00583102
     PUSH EAX                            ; 00583108
     CALL core_actor.cpp_archiveMotionState_FUN_0040bb60 ; 00583109
-        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveMotionState_FUN_0040bb60()
+        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040bb60(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 0058310e
     PUSH 0x5edae5                       ; 00583111 | = "bat model motion state"
     LEA EAX,[EBX + 0x10af8]             ; 00583116
     PUSH EAX                            ; 0058311c
     CALL core_actor.cpp_archiveMotionState_FUN_0040bb60 ; 0058311d
-        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveMotionState_FUN_0040bb60()
+        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040bb60(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 00583122
     JMP 0x00583099                      ; 00583125
         ;   XREF to: 00583099 (UNCONDITIONAL_JUMP)  ; LAB_00583099
@@ -99,7 +99,7 @@ section .text
     ADD EBX,0xc3b6c                     ; 00583143
     PUSH EBX                            ; 00583149
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 0058314a
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0058314f
     POP EBX                             ; 00583152
     RET                                 ; 00583153

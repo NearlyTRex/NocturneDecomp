@@ -9,14 +9,14 @@
 int __cdecl support_trstream_cpp_CInStreamFile_peekChar_FUN_00573b60(CInStreamFile *this_ptr)
 
 {
-  int iVar1;
+  uint uVar1;
   
-  iVar1 = support_trstream_cpp_FUN_00573b90(this_ptr,this_ptr->position);
-  if (-1 < iVar1) {
-    if ((this_ptr->binary_mode != 0) || (iVar1 != 0xd)) {
-      return iVar1;
+  uVar1 = support_trstream_cpp_CInStreamFile_readByteAt_FUN_00573b90(this_ptr,this_ptr->position);
+  if (-1 < (int)uVar1) {
+    if ((this_ptr->binary_mode != 0) || (uVar1 != 0xd)) {
+      return uVar1;
     }
-    iVar1 = 10;
+    uVar1 = 10;
   }
-  return iVar1;
+  return uVar1;
 }

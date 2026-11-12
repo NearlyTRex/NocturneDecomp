@@ -24,7 +24,7 @@ int engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_00407100(int param_1)
   int iStack_14;
   
   bVar10 = 0;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(param_1 + 8);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920((SClipPlane *)(param_1 + 8));
   if (iVar2 != 0) {
     if (_DAT_01c6e2a0 == 0) {
       if (DAT_005fba20 == 0x20) {

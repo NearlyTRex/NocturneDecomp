@@ -188,6 +188,21 @@ def test_falling_through_into_another_functions_entry_is_a_split():
 ])
 def test_a_call_padding_or_a_fall_back_to_the_own_entry_is_no_split(head):
     program, func = split_program(head)
+    assert "FALLTHROUGH_INTO_FUNCTION" not in [kind for kind, _, _ in kinds(scan(program, func))]
+
+
+def test_a_body_of_nothing_but_padding_is_a_phantom_function():
+    program, func = split_program(Instruction("MOV", "ECX", "ECX", length = 2, fallthrough = at(BASE + 2)))
+    program.getListing().add_instruction(BASE + 2, Instruction("LEA", "EDX", "[EDX + 0x0]", length = 2,
+                                                               fallthrough = at(BASE + 4)))
+    found = scan(program, func)
+    assert kinds(found) == [("PADDING_FUNCTION", 0, 0)]
+    assert (found[0]["severity"], found[0]["note"]) == ("HIGH", "body is only alignment padding (2 instruction(s))")
+
+
+def test_padding_followed_by_real_code_is_not_a_phantom():
+    program, func = split_program(Instruction("MOV", "EAX", "EAX", length = 2, fallthrough = at(BASE + 2)))
+    program.getListing().add_instruction(BASE + 2, Instruction("ret", length = 2))
     assert scan(program, func) == []
 
 
@@ -456,6 +471,22 @@ def test_splits_are_listed_by_address_once_each_with_one_delete_command(tmp_path
         "      delete_function.py <ABS>/projects <project> program.exe --addr 00001008 --addr 00001020"
         " --apply --force"]) in printed
     assert "FALLTHROUGH_INTO_FUNCTION" in (tmp_path / "r.txt").read_text()
+
+
+def test_padding_functions_are_listed_once_each_with_one_delete_command(tmp_path, capsys):
+    program = program_with(0x10)
+    listing, fm = program.getListing(), program.getFunctionManager()
+    for offset, register in ((0, "ECX"), (8, "EAX")):
+        fm.add(f"FUN_{BASE + offset:08x}", BASE + offset, size = 2)
+        listing.add_instruction(BASE + offset, Instruction("MOV", register, register, length = 2))
+    assert not vfr.run(program, str(tmp_path / "r.txt"), False, 1, False)
+    assert "\n".join([
+        "!! 2 function(s) are only alignment padding. Delete them:",
+        "   00001000 FUN_00001000",
+        "   00001008 FUN_00001008",
+        "      delete_function.py <ABS>/projects <project> program.exe --addr 00001000 --addr 00001008"
+        " --apply"]) in capsys.readouterr().out
+    assert "PADDING_FUNCTION" in (tmp_path / "r.txt").read_text()
 
 
 def test_an_error_while_fixing_rolls_the_pass_back(tmp_path, capsys, monkeypatch):

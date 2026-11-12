@@ -15,18 +15,18 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00448ff0
+;   core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_0044de30
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00449750
 ;   core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_0044dd60
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044aa20
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044b070
-;   core_dcamera.cpp_FUN_0044de30
 ;   core_dcamera.cpp_FUN_00450e10
 ;   core_main.c_FUN_004e4330
 ;   core_set.cpp_CDemonSet_clearLights_FUN_00537520
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0
-;   core_setutil.cpp_FUN_00543380
+;   core_setutil.cpp_C3DSLight_isVisible_FUN_00543380
 ;   crt_string.c__strcmp_FUN_005a3d00
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   ... and 2 more
@@ -228,7 +228,7 @@ section .text
     ADD EBX,EAX                         ; 0053414c
     PUSH EBX                            ; 0053414e
     CALL core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0 ; 0053414f
-        ;   XREF to: 00541fb0 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0()
+        ;   XREF to: 00541fb0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0(C3DSCamera * this_ptr, CDemonCamera * camera)
     ADD ESP,0x8                         ; 00534154
     PUSH EBP                            ; 00534157
     PUSH 0x2038f4c                      ; 00534158
@@ -347,8 +347,8 @@ section .text
     PUSH 0x2038f4c                      ; 005342c7
     MOV byte ptr [ESI + 0x19b58],AL     ; 005342cc
     LEA ESI,[ESP + 0x138]               ; 005342d2
-    CALL core_dcamera.cpp_FUN_0044de30  ; 005342d9
-        ;   XREF to: 0044de30 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0044de30()
+    CALL core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_0044de30 ; 005342d9
+        ;   XREF to: 0044de30 (UNCONDITIONAL_CALL)  ; CRect * core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_0044de30(CDemonCamera * this_ptr, CDemonLight * light, CRect * out_bounds)
     LEA ESI,[ESP + 0x138]               ; 005342de
     ADD ESP,0x8                         ; 005342e5
     LEA EDI,[EBP + 0x19c54]             ; 005342e8
@@ -407,8 +407,8 @@ section .text
     ADD ESP,0x8                         ; 00534394
     ADD ESI,dword ptr [ESP + 0x154]     ; 00534397
     PUSH ESI                            ; 0053439e
-    CALL core_setutil.cpp_FUN_00543380  ; 0053439f
-        ;   XREF to: 00543380 (UNCONDITIONAL_CALL)  ; int core_setutil.cpp_FUN_00543380(C3DSLight * this_ptr)
+    CALL core_setutil.cpp_C3DSLight_isVisible_FUN_00543380 ; 0053439f
+        ;   XREF to: 00543380 (UNCONDITIONAL_CALL)  ; int core_setutil.cpp_C3DSLight_isVisible_FUN_00543380(C3DSLight * this_ptr)
     ADD ESP,0x4                         ; 005343a4
     PUSH 0x0                            ; 005343a7
     PUSH 0x2038f4c                      ; 005343a9

@@ -14,7 +14,7 @@
 ;   undefined4 DAT_005c1144
 ;
 ; Called Functions:
-;   core_dmodel.cpp_CKeyFramedModel_FUN_00452f10
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10
 ;   core_setutil.cpp_C3DSCamera_free_FUN_00514430
 ;   core_terrain.cpp_CTerrain_free_FUN_005492f0
 ;
@@ -26,8 +26,8 @@ section .text
         ;   Label: core_set.cpp_CDemonSet_clear_FUN_00506ec0
     PUSH ESI                            ; 00506ec1
     PUSH 0x1fbacc8                      ; 00506ec2
-    CALL core_dmodel.cpp_CKeyFramedModel_FUN_00452f10 ; 00506ec7
-        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_FUN_00452f10(CKeyFramedModel * this_ptr)
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10 ; 00506ec7
+        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 00506ecc
     MOV ESI,dword ptr [ESP + 0xc]       ; 00506ecf
     ADD ESI,0x4                         ; 00506ed3

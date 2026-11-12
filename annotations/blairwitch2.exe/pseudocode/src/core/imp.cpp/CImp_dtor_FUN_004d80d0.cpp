@@ -18,7 +18,7 @@ CImp * core_imp_cpp_CImp_dtor_FUN_004d80d0(CImp *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CImpTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CImpTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

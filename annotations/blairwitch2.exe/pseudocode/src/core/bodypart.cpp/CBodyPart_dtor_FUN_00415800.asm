@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
-;   core_bodypart.cpp_FUN_00415890
+;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890
 ;   core_bodypart.cpp_FUN_00417d10
 ;   core_box.cpp_CBox_dtor_FUN_005b1c70
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
@@ -34,8 +34,8 @@ section .text
     PUSH 0x0                            ; 0041580e
     PUSH EBX                            ; 00415810
     MOV dword ptr [EBX + 0x2b0],0x5f36c4 ; 00415811 | g_CBodyPartVTable
-    CALL core_bodypart.cpp_FUN_00415890 ; 0041581b
-        ;   XREF to: 00415890 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00415890()
+    CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890 ; 0041581b
+        ;   XREF to: 00415890 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890(CBodyPart * this_ptr, int vertex_count, int tri_count)
     ADD ESP,0xc                         ; 00415820
     PUSH 0x0                            ; 00415823
     ADD EBX,0x10e0                      ; 00415825
@@ -67,7 +67,7 @@ section .text
         ;   Label: LAB_00415864
     PUSH EBX                            ; 00415869
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 0041586a
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0041586f
     PUSH EAX                            ; 00415872
     CALL crt_unknown.c_FUN_005b7fce     ; 00415873

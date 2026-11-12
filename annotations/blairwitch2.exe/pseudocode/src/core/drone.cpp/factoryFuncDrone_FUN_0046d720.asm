@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drone_cpp_factoryFuncDrone_FUN_0046d720(void)
+; CDrone * __cdecl core_drone_cpp_factoryFuncDrone_FUN_0046d720(void)
 ;
 ;
 ; Called Functions:

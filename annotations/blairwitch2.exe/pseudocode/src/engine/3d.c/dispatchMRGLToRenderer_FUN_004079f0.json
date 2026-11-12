@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 195,
+    "complexity_score": 203,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
+    "pseudocode_lines": 113,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 347
+    "total_lines": 355
   },
   "cross_references": [],
   "function": {
@@ -44,7 +44,7 @@
     {
       "addr": "004078b0",
       "is_variadic": false,
-      "name": "engine_3d.c_FUN_004078b0"
+      "name": "engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0"
     },
     {
       "addr": "00403970",
@@ -162,6 +162,32 @@
     },
     "pcode_op_count": 723
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00407820",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00407860",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00407aa0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00408fc0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -189,15 +215,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 34,
       "match": "DAT_00622014",
       "severity": "mild",
-      "text": "engine_special_cpp_drawPolyList_FUN_0055f950(&DAT_00622014,0x7ba074,_DAT_007ba070,0xcd);",
+      "text": "((SRenderVertex *)&DAT_00622014,(SMRGLPrimitiveQuad **)0x7ba074,_DAT_007ba070,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 39,
       "match": "DAT_006141e0",
       "severity": "mild",
       "text": "DAT_006141e0 = 1;",
@@ -205,7 +231,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 47,
       "match": "DAT_006141e0",
       "severity": "mild",
       "text": "if (DAT_006141e0 != 0) {",
@@ -213,15 +239,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 81,
       "match": "DAT_00622014",
       "severity": "mild",
-      "text": "engine_special_cpp_drawPolyList_FUN_0055f950(&DAT_00622014,0x7ba074,_DAT_007ba070,0xcd);",
+      "text": "((SRenderVertex *)&DAT_00622014,(SMRGLPrimitiveQuad **)0x7ba074,_DAT_007ba070,",
       "type": "undefined_data"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 96,
+      "line": 104,
       "match": "*(SMRGLHeaderExtended **)(_DAT_007ba070 * 4 + 0x7ba074",
       "severity": "moderate",
       "text": "*(SMRGLHeaderExtended **)(_DAT_007ba070 * 4 + 0x7ba074) = mrgl;",
@@ -229,10 +255,10 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 106,
+      "line": 114,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "mrgl = (SMRGLHeaderExtended *)((int)&(mrgl->base).type + iVar4);",
+      "text": "mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);",
       "type": "pointer_cast"
     }
   ]

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_skeleton_cpp_FUN_00547910(CDeformableModelInstance *param_1,int param_2,float param_3,int param_4,CDeformableModelInstance *param_5,undefined4 param_6,undefined4 param_7,int param_8,float param_9)
+; float core_skeleton_cpp_FUN_00547910(CDeformableModelInstance *param_1,int param_2,float param_3,float param_4,undefined4 param_5,undefined4 param_6,CDeformableModelInstance *param_7,undefined4 param_8,undefined4 param_9,int param_10,CDeformableModelInstance *param_11)
 ;
 ;
 ; Called Functions:
@@ -55,7 +55,7 @@ section .text
     PUSH EAX                            ; 00547996
     XOR EBP,EDI                         ; 00547997
     CALL core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90 ; 00547999
-        ;   XREF to: 00548a90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90()
+        ;   XREF to: 00548a90 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90(SPose * bone_data, CDeformableModelInstance * instance_ptr)
     MOV EAX,0xffffffff                  ; 0054799e
     ADD ESP,0x8                         ; 005479a3
     MOV EDX,0x7149f2ca                  ; 005479a6
@@ -84,7 +84,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005479ff
     PUSH EAX                            ; 00547a03
     CALL core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90 ; 00547a04
-        ;   XREF to: 00548a90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90()
+        ;   XREF to: 00548a90 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90(SPose * bone_data, CDeformableModelInstance * instance_ptr)
     ADD ESP,0x8                         ; 00547a09
     XOR ECX,ECX                         ; 00547a0c
     MOV dword ptr [ESP + 0x3590],ECX    ; 00547a0e

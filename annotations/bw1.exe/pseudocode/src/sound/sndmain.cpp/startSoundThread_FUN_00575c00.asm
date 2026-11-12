@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int sound_sndmain_cpp_startSoundThread_FUN_00575c00(float param_1)
+; int __cdecl sound_sndmain_cpp_startSoundThread_FUN_00575c00(double latency_seconds)
 ;
+; Parameters:
+; double           Stack[0x4]:8   latency_seconds
 ;
 ; XREF[2]:
 ;   sound_snddx.cpp_FUN_00577b60 at 00577be9

@@ -347,12 +347,12 @@ LAB_005a437b:
   fStack_34 = (float)-fVar20;
   pCStack_20 = (CLocation *)(float)(fVar22 * fVar19);
   fStack_1c = (float)(fVar21 * fVar19);
-  fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                               (fStack_18 - (this_ptr->base).base.base.orient.vec.y);
+  fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                        (fStack_18 - (this_ptr->base).base.base.orient.vec.y);
   fVar14 = (this_ptr->base).base.base.orient.vec.x;
   (this_ptr->base).base.base.orient.vec.y =
        fStack_18 * delta_time * this_ptr->rot_speed + (this_ptr->base).base.base.orient.vec.y;
-  fVar11 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(unaff_EDI - fVar14);
+  fVar11 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(unaff_EDI - fVar14);
   fVar14 = this_ptr->move_speed;
   fVar2 = this_ptr->move_speed;
   fVar3 = this_ptr->move_speed;

@@ -18,7 +18,7 @@ CBaal * core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBaalTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBaalTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

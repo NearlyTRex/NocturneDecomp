@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_haystack.cpp_factoryFuncHaystack_FUN_004cc730
 // Address: 004cc730
-void factoryFuncHaystack(void);
+CHaystack * __cdecl factoryFuncHaystack(void);
 
 // Original: core_haystack.cpp_CHaystack_getActorType_FUN_004cc750
 // Address: 004cc750

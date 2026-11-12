@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double core_dcamera_cpp_log2Custom_FUN_0043ffcc(double param_1)
+; double __cdecl core_dcamera_cpp_log2Custom_FUN_0043ffcc(double val)
 ;
+; Parameters:
+; double           Stack[0x4]:8   val
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ce5b6

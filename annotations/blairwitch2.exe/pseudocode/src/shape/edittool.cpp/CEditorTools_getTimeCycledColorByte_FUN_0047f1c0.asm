@@ -24,7 +24,7 @@
 section .text
 
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0047f1c0
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
         ;   Label: shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_0047f1c0
     AND EAX,0x30000                     ; 0047f1c5
     CMP EAX,0x10000                     ; 0047f1ca

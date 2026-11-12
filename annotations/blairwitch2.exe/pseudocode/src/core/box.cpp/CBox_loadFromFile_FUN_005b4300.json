@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 91,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 38,
     "suspect_count": 4,
     "suspect_types": [
       "stack_alignment_array",
       "undefined_data"
     ],
-    "total_lines": 183
+    "total_lines": 180
   },
   "cross_references": [
     {
@@ -153,6 +153,32 @@
       "STORE": 68
     },
     "pcode_op_count": 492
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00420140",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0041d480",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0041fe90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9639
+    },
+    "nocturne.exe": {
+      "addr": "0041c850",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9639
+    }
   },
   "stack_frame": {
     "frame_size": 348,
@@ -300,26 +326,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 19,
       "match": "DAT_005f1340",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005f1340,local_14);",
+      "text": "_fscanf(file_handle,&DAT_005f1340);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 24,
       "match": "DAT_005f1366",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005f1366,&local_10);",
+      "text": "_fscanf(file_handle,&DAT_005f1366);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 28,
       "match": "DAT_005f1381",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005f1381,&this_ptr->is_valid);",
+      "text": "_fscanf(file_handle,&DAT_005f1381);",
       "type": "undefined_data"
     }
   ]

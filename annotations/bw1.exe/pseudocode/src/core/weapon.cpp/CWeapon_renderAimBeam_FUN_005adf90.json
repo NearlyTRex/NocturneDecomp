@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 247,
+    "complexity_score": 249,
     "cross_reference_count": 3,
     "function_call_count": 8,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 72,
+    "pseudocode_lines": 74,
     "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
@@ -18,7 +18,7 @@
       "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 206
+    "total_lines": 208
   },
   "cross_references": [
     {
@@ -208,6 +208,32 @@
     },
     "pcode_op_count": 546
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058a440",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0057bb60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7206
+    },
+    "nocedit.exe": {
+      "addr": "005ee830",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6067
+    },
+    "nocturne.exe": {
+      "addr": "00554750",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6067
+    }
+  },
   "stack_frame": {
     "frame_size": 88,
     "local_size": 84,
@@ -258,7 +284,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 9,
+      "line": 10,
       "match": "afStackY_1040",
       "severity": "moderate",
       "text": "float afStackY_1040 [970];",
@@ -266,7 +292,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
@@ -274,39 +300,39 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 38,
+      "line": 39,
       "match": "&stack0xfffffff8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xfffffff8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
+      "text": "*(uint *)(&stack0xfffffff8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 66,
+      "line": 68,
       "match": "&stack0xfffffef4",
       "severity": "moderate",
-      "text": "pfVar3 = (float *)&stack0xfffffef4;",
+      "text": "pfVar4 = (float *)&stack0xfffffef4;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(SLaserInfo *)((int)pSVar2",
+      "line": 71,
+      "match": "(SLaserInfo *)((int)pSVar3",
       "severity": "moderate",
-      "text": "pSVar2 = (SLaserInfo *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pSVar3 = (SLaserInfo *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `pSVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 69,
-      "match": "(int)pSVar2",
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)pSVar3",
       "severity": "moderate",
-      "text": "pSVar2 = (SLaserInfo *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pSVar3 = (SLaserInfo *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0x5adfdb assigned to bare local `uStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 27,
+      "line": 28,
       "match": "0x5adfdb",
       "severity": "moderate",
       "text": "uStack_c0 = 0x5adfdb;",
@@ -314,7 +340,7 @@
     },
     {
       "description": "Raw hex address 0x5adffe assigned to bare local `uStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 33,
+      "line": 34,
       "match": "0x5adffe",
       "severity": "moderate",
       "text": "uStack_c0 = 0x5adffe;",
@@ -322,7 +348,7 @@
     },
     {
       "description": "Raw hex address 0x5ae041 assigned to bare local `uStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 42,
+      "line": 43,
       "match": "0x5ae041",
       "severity": "moderate",
       "text": "uStack_c0 = 0x5ae041;",
@@ -330,7 +356,7 @@
     },
     {
       "description": "Raw hex address 0x5ae06a assigned to bare local `uStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 49,
+      "line": 50,
       "match": "0x5ae06a",
       "severity": "moderate",
       "text": "uStack_c0 = 0x5ae06a;",
@@ -338,7 +364,7 @@
     },
     {
       "description": "Raw hex address 0x5ae084 assigned to bare local `uStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 52,
+      "line": 53,
       "match": "0x5ae084",
       "severity": "moderate",
       "text": "uStack_c0 = 0x5ae084;",
@@ -346,7 +372,7 @@
     },
     {
       "description": "Raw hex address 0x5ae0d7 assigned to bare local `uStack_c0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_c0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 61,
+      "line": 62,
       "match": "0x5ae0d7",
       "severity": "moderate",
       "text": "uStack_c0 = 0x5ae0d7;",
@@ -354,7 +380,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 67,
+      "line": 69,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x15; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -362,7 +388,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 57,
+      "line": 58,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "SStack_ac.color.r = (this_ptr->muzzle_flash_color).r;",

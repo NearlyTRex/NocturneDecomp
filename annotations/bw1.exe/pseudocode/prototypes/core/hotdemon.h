@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_hotdemon.cpp_factoryFuncHotDemon_FUN_004ef9e0
 // Address: 004ef9e0
-void factoryFuncHotDemon(void);
+CHotDemon * __cdecl factoryFuncHotDemon(void);
 
 // Original: core_hotdemon.cpp_CHotDemon_getActorType_FUN_004efa00
 // Address: 004efa00

@@ -11,8 +11,8 @@
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_0051bf30(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor)
 
 {
+  CDemonActor *actor_ptr;
   CDemonActor *pCVar1;
-  int iVar2;
   CCharacter *local_14;
   
   if (_DAT_01d06aa0 <= index) {
@@ -25,30 +25,30 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_0051bf30(CDemonMiss
     _DAT_01d1d404 = 0x650;
     core_main_c_FUN_005030e0("CDemonMission::createOneHero - hero already created!");
   }
-  pCVar1 = this_ptr->first_actor;
+  actor_ptr = this_ptr->first_actor;
   local_14 = (CCharacter *)0x0;
   do {
-    if (pCVar1 == (CDemonActor *)0x0) {
+    if (actor_ptr == (CDemonActor *)0x0) {
 LAB_0051bfaa:
       if (local_14 == (CCharacter *)0x0) {
-        shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,"Can't find hero placeholder for hero %d",index)
-        ;
+        shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+                  (g_CEditorToolsPtr,"Can't find hero placeholder for hero %d");
         return 0;
       }
       *(CCharacter **)(index * 4 + 0x1d06aa4) = local_14;
       return 1;
     }
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600(pCVar1,_DAT_01d06b4c);
-    if ((iVar2 != 0) && (index == *(int *)(iVar2 + 0x158))) {
+    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,_DAT_01d06b4c);
+    if ((pCVar1 != (CDemonActor *)0x0) && (index == *(int *)pCVar1[1].actor_name)) {
       if (existing_actor == (CCharacter *)0x0) {
         local_14 = (CCharacter *)
-                   core_hero_cpp_FUN_004ecca0(iVar2,(&PTR_s_CGabriella_0061ef2c)[hero_type]);
+                   core_hero_cpp_FUN_004ecca0(pCVar1,(&PTR_s_CGabriella_0061ef2c)[hero_type]);
       }
       else {
         local_14 = existing_actor;
         (*((existing_actor->base).vtable._ub)->setPositionAndOrientation)
-                  (&existing_actor->base,(CVector3f *)(iVar2 + 0x20),(CVector3f *)(iVar2 + 0x30));
-        (existing_actor->base).location.area_id = *(int *)(iVar2 + 0x2c);
+                  (&existing_actor->base,&(pCVar1->location).position,(CVector3f *)&pCVar1->orient);
+        (existing_actor->base).location.area_id = (pCVar1->location).area_id;
         core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(&existing_actor->model);
         core_motion_cpp_CMotionController_jumpToMotion_FUN_00524b10
                   (&(existing_actor->model).base,0,0.0);
@@ -58,6 +58,6 @@ LAB_0051bfaa:
       core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160(0x01D2C900,&local_14->base);
       goto LAB_0051bfaa;
     }
-    pCVar1 = pCVar1->next_actor;
+    actor_ptr = actor_ptr->next_actor;
   } while( true );
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_armour_cpp_FUN_00410370(undefined4 param_1)
+; void core_armour_cpp_FUN_00410370(void *param_1)
 ;
 ;
 ; XREF[62]:
@@ -33,7 +33,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00410377
     PUSH EDX                            ; 0041037b
     CALL crt_memory.c___arrfini_FUN_005a3de6 ; 0041037c
-        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005a3de6()
+        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005a3de6(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00410381
     RET                                 ; 00410384
 

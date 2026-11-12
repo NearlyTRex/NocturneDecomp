@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_barrier_cpp_factoryFuncBarrier_FUN_00410800(void)
+; CBarrier * __cdecl core_barrier_cpp_factoryFuncBarrier_FUN_00410800(void)
 ;
 ;
 ; Called Functions:

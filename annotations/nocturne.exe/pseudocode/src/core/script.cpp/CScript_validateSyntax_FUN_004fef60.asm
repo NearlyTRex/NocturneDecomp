@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_script.cpp_CScript_FUN_004febd0 at 004fed20
+;   core_script.cpp_CScript_loadScript_FUN_004febd0 at 004fed20
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01e56418

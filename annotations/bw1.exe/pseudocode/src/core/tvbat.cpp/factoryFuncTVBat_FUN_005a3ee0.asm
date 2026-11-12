@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tvbat_cpp_factoryFuncTVBat_FUN_005a3ee0(void)
+; CTVBat * __cdecl core_tvbat_cpp_factoryFuncTVBat_FUN_005a3ee0(void)
 ;
 ;
 ; Called Functions:

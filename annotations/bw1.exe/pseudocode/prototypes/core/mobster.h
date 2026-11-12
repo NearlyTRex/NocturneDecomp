@@ -19,7 +19,7 @@ void getObjectGrabPointWorld(int param_1);
 
 // Original: core_mobster.cpp_factoryFuncMobster_FUN_0051c7a0
 // Address: 0051c7a0
-void factoryFuncMobster(void);
+CMobster * __cdecl factoryFuncMobster(void);
 
 // Original: core_mobster.cpp_CMobster_getActorType_FUN_0051c7c0
 // Address: 0051c7c0

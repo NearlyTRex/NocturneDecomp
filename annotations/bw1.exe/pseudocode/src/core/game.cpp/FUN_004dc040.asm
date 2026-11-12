@@ -26,8 +26,8 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
-;   engine_alphabit.cpp_FUN_0040d1c0
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     LEA ESI,[EBX + 0xa0]                ; 004dc048
     PUSH EBX                            ; 004dc04e
         ;   Label: LAB_004dc04e
-    CALL engine_alphabit.cpp_FUN_0040d1c0 ; 004dc04f
-        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d1c0(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0 ; 004dc04f
+        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0(CAlphaBitmap * this_ptr)
     ADD EBX,0x14                        ; 004dc054
     ADD ESP,0x4                         ; 004dc057
     CMP EBX,ESI                         ; 004dc05a

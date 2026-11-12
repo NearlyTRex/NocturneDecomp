@@ -21,7 +21,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
   int iVar7;
   EDeathState EVar8;
   uint uVar9;
-  int iVar10;
+  CDemonActor *pCVar10;
   CLocation *pCVar11;
   CPathMap *path_map;
   byte bVar12;
@@ -164,10 +164,10 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
           iVar7 = 0;
           iVar6 = 0;
           while ((iVar6 < g_CDemonSetPtr->enemy_count &&
-                 ((iVar10 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                                      (*(uint *)((int)g_CDemonSetPtr->enemies + iVar7),
-                                       g_CBatmanClassInfo.name_hash), iVar10 == 0 ||
-                  (*(int *)(iVar10 + 0x10b94) == 0))))) {
+                 ((pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                                       (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar7),
+                                        g_CBatmanClassInfo.name_hash), pCVar10 == (CDemonActor *)0x0
+                  || (pCVar10[0x62].footstep_effects_enabled == 0))))) {
             iVar6 = iVar6 + 1;
             iVar7 = iVar7 + 4;
           }
@@ -207,8 +207,8 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
           afStack_140[(uint)bVar12 * -2 + 9] = afStack_f8[(uint)bVar12 * -2];
           afStack_140[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 10] =
                afStack_f8[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
-          fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                       (fStack_11c - (this_ptr->base).base.base.orient.vec.y);
+          fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                                (fStack_11c - (this_ptr->base).base.base.orient.vec.y);
           if (ABS(fStack_14) < (float)_DAT_005cbb4e) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                       (&(this_ptr->base).base.model.base,3,1);
@@ -280,8 +280,8 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00412f40(CBatman *this_ptr,floa
             afStack_1e8[(uint)bVar12 * -2 + 3] = afStack_68[(uint)bVar12 * -2 + 3];
             afStack_1e8[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4] =
                  afStack_68[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4];
-            fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                         (afStack_1e8[3] - (this_ptr->base).base.base.orient.vec.y);
+            fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                                  (afStack_1e8[3] - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(fStack_14) < (float)_DAT_005cbb4e) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(pCStack_44,3,1);
               uVar9 = this_ptr->sfx_handles[1];
@@ -535,7 +535,8 @@ LAB_00413214:
     if (EVar2 != WALK_STATE_NO_PATH) goto LAB_00413214;
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
               (&(this_ptr->base).base.model.base,0,1);
-    engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

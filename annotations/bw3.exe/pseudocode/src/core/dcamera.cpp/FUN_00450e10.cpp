@@ -2,13 +2,13 @@
 // Address: 00450e10
 // Address Range: [[00450e10, 00451242]]
 // Convention: unknown
-// Signature: undefined4 * core_dcamera_cpp_FUN_00450e10(int param_1)
+// Signature: undefined4 * core_dcamera_cpp_FUN_00450e10(CDemonCamera *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint * core_dcamera_cpp_FUN_00450e10(int param_1)
+uint * core_dcamera_cpp_FUN_00450e10(CDemonCamera *param_1)
 
 {
   int iVar1;
@@ -17,7 +17,10 @@ uint * core_dcamera_cpp_FUN_00450e10(int param_1)
   CBoundingBox3D *pCVar3;
   uint *puVar4;
   byte bVar5;
-  float afStackY_10ec [1009];
+  float afStackY_10ec [24];
+  int aiStackY_108c [3];
+  float afStackY_1080 [21];
+  int aiStackY_102c [961];
   float *pfVar6;
   CVector3f *point;
   CBoundingBox3D CStack_11c;
@@ -25,15 +28,17 @@ uint * core_dcamera_cpp_FUN_00450e10(int param_1)
   float afStack_100 [2];
   CVector3f CStack_f8;
   float fStack_ec;
-  float afStack_e8 [5];
+  float afStack_e8 [2];
+  int iStack_e0;
   uint uStack_d4;
   int iStack_cc;
   float fStack_c8;
   float afStack_c4 [4];
   int iStack_b4;
   uint uStack_b0;
-  int iStack_a4;
+  CVector3i CStack_a4;
   uint uStack_98;
+  float fStack_94;
   int iStack_90;
   uint uStack_8c;
   int iStack_84;
@@ -43,13 +48,9 @@ uint * core_dcamera_cpp_FUN_00450e10(int param_1)
   float fStack_5c;
   float fStack_58;
   float fStack_54;
-  uint uStack_50;
-  float fStack_4c;
-  int iStack_48;
+  CVector3i CStack_50;
   int iStack_44;
-  int iStack_40;
-  int iStack_3c;
-  int iStack_38;
+  int aiStack_40 [3];
   int iStack_18;
   int iStack_14;
   int iStack_10;
@@ -65,11 +66,11 @@ uint * core_dcamera_cpp_FUN_00450e10(int param_1)
     CStack_11c.min.y = CStack_11c.max.y;
     CStack_11c.min.z = CStack_11c.max.z;
   }
-  iStack_38 = 0;
+  aiStack_40[2] = 0;
   iStack_14 = 1;
   do {
-    iVar1 = iStack_38;
-    if (*(int *)(param_1 + 0x148) + -1 <= iStack_14) {
+    iVar1 = aiStack_40[2];
+    if (param_1->framebuffer_height + -1 <= iStack_14) {
       pCVar3 = &CStack_11c;
       puVar4 = unaff_ESI;
       for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -80,31 +81,32 @@ uint * core_dcamera_cpp_FUN_00450e10(int param_1)
       return unaff_ESI;
     }
     iStack_18 = 0;
-    for (iStack_10 = 1; iStack_10 < *(int *)(param_1 + 0x144) + -1; iStack_10 = iStack_10 + 1) {
+    for (iStack_10 = 1; iStack_10 < param_1->framebuffer_width + -1; iStack_10 = iStack_10 + 1) {
       core_dcamera_cpp_FUN_00449eb0(param_1,iStack_10,iStack_14);
-      uStack_50 = afStack_e8[2];
-      (&fStack_4c)[(uint)bVar5 * -2] = afStack_e8[(uint)bVar5 * -2 + 3];
-      (&fStack_4c)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+      CStack_50.x = iStack_e0;
+      *(float *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) = afStack_e8[(uint)bVar5 * -2 + 3];
+      *(float *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
            afStack_e8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-      if (iStack_48 < 0x1f401) {
+      if (CStack_50.z < 0x1f401) {
 LAB_00450fda:
-        core_dcamera_cpp_FUN_00449f80(param_1,&uStack_50);
-        iStack_44 = iStack_a4;
-        (&fStack_4c)[(uint)bVar5 * -2 + 3] = afStack_c4[(uint)bVar5 * -2 + 9];
-        (&fStack_4c)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-             afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
+        core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80
+                  (param_1,&CStack_50,&CStack_a4);
+        iStack_44 = CStack_a4.x;
+        aiStack_40[(uint)bVar5 * -2] = *(int *)((int)&CStack_a4 + (uint)bVar5 * -8 + 4);
+        aiStack_40[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+             *(int *)((int)&CStack_a4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
         fStack_5c = (float)iStack_44 * _DAT_005ddfc4;
-        fStack_58 = (float)iStack_40 * _DAT_005ddfc4;
-        fStack_54 = (float)iStack_3c * _DAT_005ddfc4;
-        fStack_80 = (float)iStack_44 * _DAT_005ddfc4 - *(float *)(param_1 + 4);
-        afStack_7c[0] = (float)iStack_40 * _DAT_005ddfc4 - *(float *)(param_1 + 8);
+        fStack_58 = (float)aiStack_40[0] * _DAT_005ddfc4;
+        fStack_54 = (float)aiStack_40[1] * _DAT_005ddfc4;
+        fStack_80 = (float)iStack_44 * _DAT_005ddfc4 - (param_1->base).position.f.x;
+        afStack_7c[0] = (float)aiStack_40[0] * _DAT_005ddfc4 - (param_1->base).position.f.y;
         pfVar6 = &fStack_ec;
-        afStack_7c[1] = (float)iStack_3c * _DAT_005ddfc4 - *(float *)(param_1 + 0xc);
+        afStack_7c[1] = (float)aiStack_40[1] * _DAT_005ddfc4 - (param_1->base).position.f.z;
         fStack_ec = fStack_80;
         afStack_e8[(uint)bVar5 * -2] = afStack_7c[(uint)bVar5 * -2];
         afStack_e8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
              afStack_7c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-        core_dirmat_cpp_FUN_0045b870(param_1 + 0x10,pfVar6);
+        core_dirmat_cpp_FUN_0045b870(&(param_1->base).rotation_matrix,pfVar6);
         point = &CStack_f8;
         CStack_f8.x = fStack_c8;
         *(float *)((int)&CStack_f8 + (uint)bVar5 * -8 + 4) = afStack_c4[(uint)bVar5 * -2];
@@ -127,7 +129,7 @@ LAB_00450f84:
                afStack_7c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
           if (0x1f400 < iStack_cc) goto LAB_00450f84;
         }
-        if ((iStack_10 < 2) || (*(int *)(param_1 + 0x148) + -2 <= iStack_14)) {
+        if ((iStack_10 < 2) || (param_1->framebuffer_height + -2 <= iStack_14)) {
 LAB_00450f93:
           uVar2 = uVar2 + 1;
         }
@@ -139,11 +141,11 @@ LAB_00450f93:
                afStack_100[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
           if (0x1f400 < iStack_b4) goto LAB_00450f93;
         }
-        if ((iStack_10 < *(int *)(param_1 + 0x144) + -2) && (1 < iStack_14)) {
+        if ((iStack_10 < param_1->framebuffer_width + -2) && (1 < iStack_14)) {
           core_dcamera_cpp_FUN_00449eb0(param_1,iStack_10 + 1,iVar1);
           uStack_98 = uStack_68;
-          afStack_c4[(uint)bVar5 * -2 + 0xc] = afStack_7c[(uint)bVar5 * -2 + 6];
-          afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd] =
+          (&fStack_94)[(uint)bVar5 * -2] = afStack_7c[(uint)bVar5 * -2 + 6];
+          (&fStack_94)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
                afStack_7c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
           if (0x1f400 < iStack_90) goto LAB_00450fac;
         }
@@ -151,12 +153,12 @@ LAB_00450f93:
 LAB_00450fac:
           uVar2 = uVar2 + 1;
         }
-        if ((iStack_10 < *(int *)(param_1 + 0x144) + -2) &&
-           (iStack_14 < *(int *)(param_1 + 0x148) + -2)) {
+        if ((iStack_10 < param_1->framebuffer_width + -2) &&
+           (iStack_14 < param_1->framebuffer_height + -2)) {
           core_dcamera_cpp_FUN_00449eb0(param_1,iStack_10 + 1,iStack_14 + 1);
           uStack_8c = uStack_b0;
-          afStack_c4[(uint)bVar5 * -2 + 0xf] = afStack_c4[(uint)bVar5 * -2 + 6];
-          afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x10] =
+          (&fStack_94)[(uint)bVar5 * -2 + 3] = afStack_c4[(uint)bVar5 * -2 + 6];
+          (&fStack_94)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
                afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
           if (0x1f400 < iStack_84) goto LAB_00450fc5;
         }
@@ -165,13 +167,13 @@ LAB_00450fc5:
           uVar2 = uVar2 + 1;
         }
         if (3 < uVar2) {
-          iStack_48 = 0x1f400;
+          CStack_50.z = 0x1f400;
           goto LAB_00450fda;
         }
       }
       iStack_18 = iStack_18 + 1;
     }
     iStack_14 = iStack_14 + 1;
-    iStack_38 = iStack_38 + 1;
+    aiStack_40[2] = aiStack_40[2] + 1;
   } while( true );
 }

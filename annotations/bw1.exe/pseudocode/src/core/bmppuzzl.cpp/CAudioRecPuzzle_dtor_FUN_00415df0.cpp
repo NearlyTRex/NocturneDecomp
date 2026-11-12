@@ -17,7 +17,7 @@ CAudioRecPuzzle * core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0(CAudioRecP
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CAudioRecPuzzleTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CAudioRecPuzzleTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

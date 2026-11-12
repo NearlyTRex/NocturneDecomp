@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_flies.cpp_factoryFuncFlies_FUN_004a6a60
 // Address: 004a6a60
-void factoryFuncFlies(void);
+CFlies * __cdecl factoryFuncFlies(void);
 
 // Original: core_flies.cpp_CFlies_getActorType_FUN_004a6a80
 // Address: 004a6a80

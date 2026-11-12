@@ -13,9 +13,9 @@
 ;   core_skeleton.cpp_FUN_0054eb40 at 0054ebb2
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_004fcb50
+;   core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_004fcb50
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-;   core_skeleton.cpp_FUN_00548140
+;   core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00548140
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     PUSH ECX                            ; 0054ede1
     MOV EBX,dword ptr [EBP + 0x14]      ; 0054ede2
     PUSH EBX                            ; 0054ede5
-    CALL core_motion.cpp_FUN_004fcb50   ; 0054ede6
-        ;   XREF to: 004fcb50 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_004fcb50(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, ...)
+    CALL core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_004fcb50 ; 0054ede6
+        ;   XREF to: 004fcb50 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_004fcb50(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, ...)
     ADD ESP,0x18                        ; 0054edeb
     MOV EDI,dword ptr [ESI + 0x1de78]   ; 0054edee
     XOR EBX,EBX                         ; 0054edf4
@@ -68,8 +68,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x78]      ; 0054ee13
     PUSH ECX                            ; 0054ee17
     LEA ESI,[ESP + 0x18]                ; 0054ee18
-    CALL core_skeleton.cpp_FUN_00548140 ; 0054ee1c
-        ;   XREF to: 00548140 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00548140()
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00548140 ; 0054ee1c
+        ;   XREF to: 00548140 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00548140(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
     ADD ESP,0x14                        ; 0054ee21
     MOV EDI,dword ptr [ESP + 0x6c]      ; 0054ee24
     LEA ESI,[ESP + 0x4]                 ; 0054ee28

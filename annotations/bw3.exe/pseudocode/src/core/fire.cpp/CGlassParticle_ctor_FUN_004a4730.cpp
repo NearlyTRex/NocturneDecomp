@@ -10,10 +10,10 @@ CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_ctor_FUN_004a4730(CGlassPa
 
 {
   CParticle *pCVar1;
-  int iVar2;
+  void *pvVar2;
   
   pCVar1 = core_particle_cpp_CParticle_ctor_FUN_00509e10(&this_ptr->base);
-  iVar2 = __arrinit(&pCVar1[2].previous_position.y,3);
-  *(byte ***)(iVar2 + -0x74) = &g_CGlassParticleVTable;
-  return (CGlassParticle *)(iVar2 + -0xb0);
+  pvVar2 = __arrinit(&pCVar1[2].previous_position.y,3,&g_CVectorTypeInfo);
+  *(byte ***)((int)pvVar2 + -0x74) = &g_CGlassParticleVTable;
+  return (CGlassParticle *)((int)pvVar2 + -0xb0);
 }

@@ -16,7 +16,7 @@ void core_helldog_cpp_FUN_005ac2f0(int param_1,float param_2)
   int iVar3;
   uint uVar4;
   int iVar5;
-  int iStack_14;
+  CDemonActor *pCStack_14;
   
   iVar3 = core_motion_cpp_FUN_005035c0(param_1 + 0x2b4);
   if (*(int *)(iVar3 + 0x24) == 1) {
@@ -55,21 +55,21 @@ void core_helldog_cpp_FUN_005ac2f0(int param_1,float param_2)
       *(uint *)(param_1 + 0x11860) = 0x3f800000;
       iVar5 = 0;
       for (iVar3 = 0; iVar3 < g_CDemonSetPtr->actor_count; iVar3 = iVar3 + 1) {
-        iStack_14 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                              (*(uint *)((int)g_CDemonSetPtr->actors + iVar5),
-                               g_CBoxActorClassInfo.name_hash);
-        if (iStack_14 != 0) {
-          _strcmp((char *)(iStack_14 + 0x32c),"meat1.kfm");
+        pCStack_14 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                               (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),
+                                g_CBoxActorClassInfo.name_hash);
+        if (pCStack_14 != (CDemonActor *)0x0) {
+          _strcmp(pCStack_14[1].create_event,"meat1.kfm");
         }
         iVar5 = iVar5 + 4;
       }
-      if ((iStack_14 != 0) &&
-         (fVar1 = *(float *)(param_1 + 0x20) - *(float *)(iStack_14 + 0x20),
-         fVar2 = *(float *)(param_1 + 0x28) - *(float *)(iStack_14 + 0x28),
+      if ((pCStack_14 != (CDemonActor *)0x0) &&
+         (fVar1 = *(float *)(param_1 + 0x20) - (pCStack_14->location).position.x,
+         fVar2 = *(float *)(param_1 + 0x28) - (pCStack_14->location).position.z,
          SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= _DAT_00600c54)) {
         iVar3 = param_1 + 0x10af8;
         *(uint *)(param_1 + 0x11868) = *(uint *)(param_1 + 0x11864);
-        *(int *)(param_1 + 0x1185c) = iStack_14;
+        *(CDemonActor **)(param_1 + 0x1185c) = pCStack_14;
         uVar4 = core_muzzle_cpp_FUN_0059db70(iVar3);
         core_muzzle_cpp_FUN_0059d7f0(iVar3,"ChaseFoodComplete",uVar4);
         core_muzzle_cpp_FUN_0059d8e0(iVar3,"ChaseFood");

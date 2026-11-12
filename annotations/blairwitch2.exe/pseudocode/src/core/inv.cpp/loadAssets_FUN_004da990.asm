@@ -290,7 +290,7 @@ section .text
     ADD EAX,0x1cf0208                   ; 004dac6b
     PUSH EAX                            ; 004dac70
     CALL core_inv.cpp_loadItem_FUN_004da720 ; 004dac71
-        ;   XREF to: 004da720 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_loadItem_FUN_004da720()
+        ;   XREF to: 004da720 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_loadItem_FUN_004da720(SInventoryItemInfo * item_info, _FILE * file_handle)
     ADD ESP,0x8                         ; 004dac76
     TEST EAX,EAX                        ; 004dac79
     JZ 0x004dacab                       ; 004dac7b
@@ -304,7 +304,7 @@ section .text
     PUSH 0x5db446                       ; 004dac8f | = "%d,%d\n"
     PUSH EAX                            ; 004dac94
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004dac95
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004dac9a
     PUSH EBX                            ; 004dac9d
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004dac9e

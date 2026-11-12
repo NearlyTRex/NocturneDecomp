@@ -20,7 +20,7 @@ CSpiritIndian * core_spirindi_cpp_CSpiritIndian_dtor_FUN_0059a970(CSpiritIndian 
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSpiritIndianTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSpiritIndianTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

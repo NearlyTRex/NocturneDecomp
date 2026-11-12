@@ -35,7 +35,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_004123c0(CAudioRecPuzz
          this_ptr->reel_angle -
          (float)(this_ptr->speed_setting + 1) * g_CGamePtr->delta_time_float * (float)_DAT_005b678e;
   }
-  fVar1 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(this_ptr->reel_angle);
+  fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(this_ptr->reel_angle);
   this_ptr->reel_angle = fVar1;
   (**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,1,0x10,this_ptr->reel_angle,0);
   (**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,4,4,this_ptr->reel_angle,1);

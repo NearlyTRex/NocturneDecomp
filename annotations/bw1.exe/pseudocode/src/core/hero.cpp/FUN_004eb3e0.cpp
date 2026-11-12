@@ -33,7 +33,7 @@ bool core_hero_cpp_FUN_004eb3e0(CDemonActor *param_1)
   local_18 = 0;
   for (local_14 = 0; local_14 < g_CDemonSetPtr->actor_count; local_14 = local_14 + 1) {
     this_ptr = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c600
-                                  (*(uint *)((int)g_CDemonSetPtr->actors + local_18),
+                                  (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),
                                    g_CDoorClassInfo.name_hash);
     if ((((this_ptr != (CDoor *)0x0) &&
          (ABS((this_ptr->base).location.position.x - (param_1->location).position.x) <=

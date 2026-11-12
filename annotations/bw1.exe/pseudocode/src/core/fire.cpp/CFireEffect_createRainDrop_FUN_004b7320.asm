@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   velocity
 ;
 ; XREF[1]:
-;   core_weather.cpp_FUN_005ae190 at 005ae24c
+;   core_weather.cpp_CWeather_update_FUN_005ae190 at 005ae24c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cc010c

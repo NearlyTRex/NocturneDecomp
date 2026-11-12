@@ -16,6 +16,6 @@ void __cdecl core_dtri_cpp_staticInit_FUN_004786f0(void)
   __arrinit(&DAT_01c59cf0,0x10,&g_CVectorTypeInfo);
   __arrinit(&DAT_01c59db4,0x10,&g_CVectorTypeInfo);
   __arrinit(&DAT_01c59e78,0x10,&g_CVectorTypeInfo);
-  __arrinit(0x1c59f38,8,&g_CDemonTriangleTypeInfo);
+  __arrinit((void *)0x1c59f38,8,&g_CDemonTriangleTypeInfo);
   return;
 }

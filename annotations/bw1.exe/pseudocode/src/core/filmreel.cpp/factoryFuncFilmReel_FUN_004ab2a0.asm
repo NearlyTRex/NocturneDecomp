@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_filmreel_cpp_factoryFuncFilmReel_FUN_004ab2a0(void)
+; CFilmReel * __cdecl core_filmreel_cpp_factoryFuncFilmReel_FUN_004ab2a0(void)
 ;
 ;
 ; Called Functions:

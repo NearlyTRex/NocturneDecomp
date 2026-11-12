@@ -34,7 +34,7 @@
     {
       "addr": "00415890",
       "from_addr": "004158c6",
-      "name": "core_bodypart.cpp_FUN_00415890",
+      "name": "core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -134,6 +134,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0047fbb0",
+      "from_addr": "0047fbfc",
+      "name": "shape_edittool.cpp_CEditorTools_getClipboardText_FUN_0047fbb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047fc30",
+      "from_addr": "0047fcbe",
+      "name": "shape_edittool.cpp_CEditorTools_setClipboardText_FUN_0047fc30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004839d0",
       "from_addr": "00483a2b",
       "name": "shape_edittool.cpp_CPickList_enableItem_FUN_004839d0",
@@ -155,18 +167,6 @@
       "addr": "004813f0",
       "from_addr": "0048144e",
       "name": "shape_edittool.cpp_CStrList_setStringAt_FUN_004813f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047fbb0",
-      "from_addr": "0047fbfc",
-      "name": "shape_edittool.cpp_FUN_0047fbb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047fc30",
-      "from_addr": "0047fcbe",
-      "name": "shape_edittool.cpp_FUN_0047fc30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -281,7 +281,7 @@
       {
         "call_addr": "0047fbfc",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047fbb0",
+        "caller": "shape_edittool.cpp_CEditorTools_getClipboardText_FUN_0047fbb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -292,7 +292,7 @@
       {
         "call_addr": "0047fcbe",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047fc30",
+        "caller": "shape_edittool.cpp_CEditorTools_setClipboardText_FUN_0047fc30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -314,7 +314,7 @@
       {
         "call_addr": "004158c6",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_00415890",
+        "caller": "core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -325,7 +325,7 @@
       {
         "call_addr": "004158ee",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_00415890",
+        "caller": "core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -359,6 +359,32 @@
       "STORE": 4
     },
     "pcode_op_count": 34
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c10d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a3e50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00601df0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00564a70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

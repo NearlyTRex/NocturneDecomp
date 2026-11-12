@@ -31,7 +31,7 @@ section .text
     ADD EAX,0x78                        ; 004688e4
     PUSH EAX                            ; 004688e7
     CALL core_dmodel.cpp_loadModel_FUN_00468780 ; 004688e8
-        ;   XREF to: 00468780 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_loadModel_FUN_00468780()
+        ;   XREF to: 00468780 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00468780(char * filename)
     ADD ESP,0x4                         ; 004688ed
     MOV EDX,dword ptr [ESP + 0x4]       ; 004688f0
     MOV dword ptr [EDX + 0x178],EAX     ; 004688f4

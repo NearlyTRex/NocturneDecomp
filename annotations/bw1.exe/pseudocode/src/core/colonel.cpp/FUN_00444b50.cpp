@@ -101,8 +101,8 @@ void core_colonel_cpp_FUN_00444b50(int param_1,float param_2)
       iVar2 = core_path_cpp_CPathMap_findPathWithRetry_FUN_005349a0
                         (this_ptr,(CVector3f *)(param_1 + 0x20),&local_d8,*(int *)(param_1 + 0x6c));
       if (iVar2 != 0) {
-        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                    (local_d8.y - *(float *)(param_1 + 0x34));
+        local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                             (local_d8.y - *(float *)(param_1 + 0x34));
         fVar1 = local_18 * _DAT_005d6cc7 * (float)_DAT_005d6ccf;
         local_38 = -local_1c;
         *(float *)(param_1 + 0xc200) = fVar1;
@@ -144,8 +144,8 @@ void core_colonel_cpp_FUN_00444b50(int param_1,float param_2)
         local_a4[(uint)bVar4 * -2 + 3] = local_c8[(uint)bVar4 * -2 + 3];
         local_a4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
              local_c8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                    (local_a4[3] - *(float *)(param_1 + 0x34));
+        local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                             (local_a4[3] - *(float *)(param_1 + 0x34));
         fVar1 = local_18 * _DAT_005d6cc7 * (float)_DAT_005d6ccf;
         local_40 = -local_1c;
         *(float *)(param_1 + 0xc200) = fVar1;
@@ -184,8 +184,8 @@ void core_colonel_cpp_FUN_00444b50(int param_1,float param_2)
       local_80 = local_74;
       local_7c = local_70;
     }
-    local_b0 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
-                                (local_80 - *(float *)(param_1 + 0x34));
+    local_b0 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(local_80 - *(float *)(param_1 + 0x34))
+    ;
     if (local_2c < local_b0) {
       local_b0 = local_2c;
     }

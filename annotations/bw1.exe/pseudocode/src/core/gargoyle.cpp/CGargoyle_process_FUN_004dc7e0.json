@@ -158,7 +158,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     },
     {
       "addr": "005735a0",
@@ -299,6 +299,32 @@
     },
     "pcode_op_count": 4572
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004c0050",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004c5350",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9969
+    },
+    "nocedit.exe": {
+      "addr": "004e4a00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7124
+    },
+    "nocturne.exe": {
+      "addr": "004a7870",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7124
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -349,7 +375,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 311,
+      "line": 310,
       "match": "DAT_02c8af28",
       "severity": "mild",
       "text": "(&DAT_02c8af28,",
@@ -357,7 +383,7 @@
     },
     {
       "description": "Pointer value `&CStack_128` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 321,
+      "line": 320,
       "match": "(int)&CStack_128",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_128 + (uint)bVar9 * -8 + 4) = afStack_f4[(uint)bVar9 * -2 + 6];",
@@ -365,7 +391,7 @@
     },
     {
       "description": "Pointer value `&CStack_128` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 323,
+      "line": 322,
       "match": "(int)&CStack_128",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_128 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",
@@ -429,7 +455,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 321,
+      "line": 320,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_128 + (uint)bVar9 * -8 + 4) = afStack_f4[(uint)bVar9 * -2 + 6];",
@@ -437,7 +463,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 323,
+      "line": 322,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_128 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =",

@@ -2,23 +2,23 @@
 // Address: 0059c830
 // Address Range: [[0059c830, 0059c87b]]
 // Convention: __cdecl
-// Signature: void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0059c830(uchar *param_1,char *param_2)
+// Signature: void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0059c830(SNetworkAddr *network_addr,char *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0059c830(uchar *param_1,char *param_2)
+void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0059c830(SNetworkAddr *network_addr,char *output_buffer)
 
 {
   char *buffer;
   
-  support_trisock_cpp_formatIPAddress_FUN_0059c590(param_1,param_2);
+  support_trisock_cpp_formatIPAddress_FUN_0059c590((uchar *)network_addr,output_buffer);
   do {
-    buffer = param_2;
-    if (*param_2 == '\0') goto LAB_0059c870;
-    if (*param_2 == '\0') break;
-    buffer = param_2 + 1;
+    buffer = output_buffer;
+    if (*output_buffer == '\0') goto LAB_0059c870;
+    if (*output_buffer == '\0') break;
+    buffer = output_buffer + 1;
     if (*buffer == '\0') goto LAB_0059c870;
-    param_2 = param_2 + 2;
+    output_buffer = output_buffer + 2;
   } while (*buffer != '\0');
   buffer = (char *)0x0;
 LAB_0059c870:

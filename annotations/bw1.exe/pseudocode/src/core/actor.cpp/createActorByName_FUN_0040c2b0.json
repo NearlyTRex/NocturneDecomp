@@ -2,20 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 124,
+    "complexity_score": 40,
     "cross_reference_count": 12,
     "function_call_count": 2,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 88
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -101,7 +98,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_createActorByName_FUN_0040c2b0",
-    "signature": "int __cdecl core_actor_cpp_createActorByName_FUN_0040c2b0(undefined4 param_1)"
+    "signature": "CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c2b0(char *class_name)"
   },
   "function_calls": [
     {
@@ -280,10 +277,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.2941176470588234,
@@ -311,13 +308,47 @@
     },
     "pcode_op_count": 168
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040c5a0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040c4f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040c430",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040d540",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "class_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -327,65 +358,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl core_actor_cpp_createActorByName_FUN_0040c2b0(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_getActorClassByName_FUN_0040c240(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"Can't create actor of unknown class type: %s\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"Can't create instance of abstract type %s\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(iVar1 + 0x2c))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"Not enough memory to create %s\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 15,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

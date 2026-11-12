@@ -660,6 +660,32 @@
     },
     "pcode_op_count": 3212
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0052ddf0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0054f0d0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0056ae50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7127
+    },
+    "nocturne.exe": {
+      "addr": "005088f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1566
+    }
+  },
   "stack_frame": {
     "frame_size": 420,
     "local_size": 412,
@@ -979,7 +1005,7 @@
       "line": 286,
       "match": "(CMatrix3x3f *)((int)pCVar6",
       "severity": "moderate",
-      "text": "pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar15 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -1027,7 +1053,7 @@
       "line": 270,
       "match": "(int)&g_CDemonCameraInstance",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CDemonCameraInstance + (uint)bVar15 * -8 + 8);",
+      "text": "*(float *)((int)&g_CDemonCameraInstance + (uint)bVar14 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
@@ -1035,7 +1061,7 @@
       "line": 286,
       "match": "(int)pCVar6",
       "severity": "moderate",
-      "text": "pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar15 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
@@ -1075,7 +1101,7 @@
       "line": 129,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->active_fog).height_threshold = (pCVar13->fog).height_threshold;",
+      "text": "(this_ptr->active_fog).height_threshold = (this_ptr_01->fog).height_threshold;",
       "type": "unrolled_memcpy"
     },
     {
@@ -1107,7 +1133,7 @@
       "line": 270,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CDemonCameraInstance + (uint)bVar15 * -8 + 8);",
+      "text": "*(float *)((int)&g_CDemonCameraInstance + (uint)bVar14 * -8 + 8);",
       "type": "pointer_cast"
     },
     {

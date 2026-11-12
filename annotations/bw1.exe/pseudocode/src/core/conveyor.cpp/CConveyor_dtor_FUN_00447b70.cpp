@@ -14,7 +14,7 @@ CConveyor * __cdecl core_conveyor_cpp_CConveyor_dtor_FUN_00447b70(CConveyor *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CConveyorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CConveyorTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

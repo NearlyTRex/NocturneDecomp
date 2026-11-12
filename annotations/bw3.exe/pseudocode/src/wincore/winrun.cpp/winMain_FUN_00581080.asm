@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void wincore_winrun_cpp_winMain_FUN_00581080(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4)
+; int __stdcall wincore_winrun_cpp_winMain_FUN_00581080(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 ;
+; Parameters:
+; HINSTANCE        Stack[0x4]:4   hInstance
+; HINSTANCE        Stack[0x8]:4   hPrevInstance
+; LPSTR            Stack[0xc]:4   lpCmdLine
+; int              Stack[0x10]:4   nCmdShow
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  local_54
@@ -41,7 +46,7 @@
 ;
 ; Called Functions:
 ;   BringWindowToTop
-;   core_main.c_FUN_004e44d0
+;   core_main.c_enterMainGameMenu_FUN_004e44d0
 ;   core_main.c_FUN_004e44e0
 ;   core_main.c_FUN_004e4c70
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -265,8 +270,8 @@ section .text
     CALL core_main.c_FUN_004e44e0       ; 005812ca
         ;   XREF to: 004e44e0 (UNCONDITIONAL_CALL)  ; void core_main.c_FUN_004e44e0(int argc, char * * argv)
     ADD ESP,0x8                         ; 005812cf
-    CALL core_main.c_FUN_004e44d0       ; 005812d2
-        ;   XREF to: 004e44d0 (UNCONDITIONAL_CALL)  ; int core_main.c_FUN_004e44d0()
+    CALL core_main.c_enterMainGameMenu_FUN_004e44d0 ; 005812d2
+        ;   XREF to: 004e44d0 (UNCONDITIONAL_CALL)  ; int core_main.c_enterMainGameMenu_FUN_004e44d0()
     CALL core_main.c_FUN_004e4c70       ; 005812d7
         ;   XREF to: 004e4c70 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4c70()
     PUSH 0x0                            ; 005812dc

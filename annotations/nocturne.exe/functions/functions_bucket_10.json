@@ -14408,7 +14408,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_cloth.cpp_CCloth_FUN_00435210",
+    "name":"core_cloth.cpp_CCloth_free_FUN_00435210",
     "ret":"void",
     "vars":{
       "params":[
@@ -22418,7 +22418,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dmodel.cpp_CKeyFramedModel_FUN_00452f10",
+    "name":"core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10",
     "ret":"void",
     "vars":{
       "params":[
@@ -41141,7 +41141,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_CGame_FUN_004a3b90",
+    "name":"core_game.cpp_CGame_saveGame_FUN_004a3b90",
     "ret":"void",
     "vars":{
       "locals":[
@@ -48107,7 +48107,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca710",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_004ca710",
     "ret":"void",
     "vars":{
       "params":[
@@ -48157,7 +48157,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_CMansionPuzzleCircle_FUN_004ca790",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004ca790",
     "ret":"void",
     "vars":{
       "locals":[
@@ -48801,12 +48801,70 @@
         "start":"004cae90"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_manpuz.cpp_stepToward_FUN_004cae90",
-    "ret":"undefined1",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"value",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        },
+        {
+          "name":"target",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"max_step",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -54980,7 +55038,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90",
+    "name":"cockpit_pkbitmap.cpp_parsePBGFile_FUN_004f4f90",
     "ret":"CPackedBitmap*",
     "vars":{
       "locals":[
@@ -55154,7 +55212,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110",
+    "name":"cockpit_pkbitmap.cpp_loadPBGFile_FUN_004f5110",
     "ret":"CPackedBitmap*",
     "vars":{
       "locals":[
@@ -55312,7 +55370,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5290",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_004f5290",
     "ret":"void",
     "vars":{
       "params":[
@@ -68528,7 +68586,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_00540a10",
+    "name":"core_stranger.cpp_unusedGetPointerAt8_FUN_00540a10",
     "ret":"void*",
     "vars":{
       "params":[
@@ -76648,6 +76706,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00568690",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -76666,6 +76725,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00568890",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -76698,6 +76758,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056ae10",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -76946,6 +77007,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056de90",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -76998,6 +77060,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056e010",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -77016,6 +77079,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056e390",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -77034,6 +77098,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056e890",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -77052,6 +77117,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056e990",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -77180,6 +77246,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00570510",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -77198,6 +77265,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00571410",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -77336,6 +77404,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00572d90",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -77354,6 +77423,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00572e90",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -77369,12 +77439,70 @@
         "start":"00573890"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdlib.c_strtoul_FUN_00573890",
-    "ret":"undefined1",
+    "ret":"ulong",
     "vars":{
+      "params":[
+        {
+          "name":"str",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"endptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char**"
+        },
+        {
+          "name":"base",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -77435,6 +77563,7 @@
     "importable":true,
     "name":"crt_kernel32.c_SetFileAttributesA",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000084",
     "thunk":true,
     "vars":{
@@ -77497,6 +77626,7 @@
     "importable":true,
     "name":"crt_gdi32.c_TextOutA",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000013",
     "thunk":true,
     "vars":{
@@ -77607,6 +77737,7 @@
     "importable":true,
     "name":"crt_kernel32.c_InitializeCriticalSection",
     "ret":"void",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000073",
     "thunk":true,
     "vars":{

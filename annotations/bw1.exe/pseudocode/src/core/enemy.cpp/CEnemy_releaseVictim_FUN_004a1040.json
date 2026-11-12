@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 38,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 85
+    "total_lines": 84
   },
   "cross_references": [],
   "function": {
@@ -36,7 +36,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     }
   ],
   "globals": [
@@ -100,6 +100,32 @@
     },
     "pcode_op_count": 233
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004889d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0048a050",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004aa030",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.766
+    },
+    "nocturne.exe": {
+      "addr": "0047a090",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.766
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -119,7 +145,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 13,
       "match": "DAT_0078a123",
       "severity": "mild",
       "text": "if (((byte *)(this_ptr->base).base.validation_magic == &DAT_0078a123) &&",

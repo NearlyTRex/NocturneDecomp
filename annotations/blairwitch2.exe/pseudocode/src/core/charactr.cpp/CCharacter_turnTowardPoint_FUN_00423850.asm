@@ -72,7 +72,7 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 00423893
     MOV ESI,dword ptr [EBX + 0x2598]    ; 00423897
     CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0042389d
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x44],EAX      ; 004238a2
     MOV dword ptr [ESP + 0x3c],ESI      ; 004238a6
     FLD float ptr [ESP + 0x44]          ; 004238aa

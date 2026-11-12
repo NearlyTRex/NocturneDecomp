@@ -163,7 +163,7 @@ section .text
     MOV EAX,ESP                         ; 00465e2f
     PUSH EAX                            ; 00465e31
     CALL crt_time.c__mktime_FUN_005a4f20 ; 00465e32
-        ;   XREF to: 005a4f20 (UNCONDITIONAL_CALL)  ; undefined crt_time.c__mktime_FUN_005a4f20()
+        ;   XREF to: 005a4f20 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__mktime_FUN_005a4f20(_tm * timeptr)
     ADD ESP,0x4                         ; 00465e37
     MOV dword ptr [EBX + 0x108],EAX     ; 00465e3a
     ADD ESP,0x3c                        ; 00465e40

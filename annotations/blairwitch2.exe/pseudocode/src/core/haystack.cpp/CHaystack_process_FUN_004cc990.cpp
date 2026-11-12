@@ -168,8 +168,8 @@ LAB_004cccfd:
       if (2 < EVar2) {
         if (EVar2 == WALK_STATE_NO_PATH) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar11->base,0,1);
-          engine_console_cpp_FUN_00436710
-                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+          engine_console_cpp_CConsole_printf_FUN_00436710
+                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
           goto switchD_004cce93_caseD_4;
         }
         goto LAB_004cccfd;

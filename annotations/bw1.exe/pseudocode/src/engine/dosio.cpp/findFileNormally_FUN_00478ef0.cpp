@@ -2,11 +2,11 @@
 // Address: 00478ef0
 // Address Range: [[00478ef0, 00478fa4]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl engine_dosio_cpp_findFileNormally_FUN_00478ef0(char *param_1)
+// Signature: int __cdecl engine_dosio_cpp_findFileNormally_FUN_00478ef0(SFoundFileInfo *info)
 
 #include "nocturne.h"
 
-uint __cdecl engine_dosio_cpp_findFileNormally_FUN_00478ef0(char *param_1)
+int __cdecl engine_dosio_cpp_findFileNormally_FUN_00478ef0(SFoundFileInfo *info)
 
 {
   char cVar1;
@@ -16,18 +16,15 @@ uint __cdecl engine_dosio_cpp_findFileNormally_FUN_00478ef0(char *param_1)
   char local_14c [256];
   WatcomStat local_4c;
   
-  if ((param_1 != (char *)0x0) && (*param_1 != '\0')) {
-    iVar2 = engine_dosio_cpp_getFullPath_FUN_00479720(local_14c,param_1);
+  if ((info != (SFoundFileInfo *)0x0) && (info->found_path[0] != '\0')) {
+    iVar2 = engine_dosio_cpp_getFullPath_FUN_00479720(local_14c,info->found_path);
     if ((iVar2 != 0) && (iVar2 = FUN_005c1da8(local_14c,&local_4c), iVar2 == 0)) {
-      *(long *)(param_1 + 0x204) = local_4c._st_size;
-      param_1[0x200] = '\0';
-      param_1[0x201] = '\0';
-      param_1[0x202] = '\0';
-      param_1[0x203] = '\0';
+      info->file_size = local_4c._st_size;
+      info->file_offset = 0;
       pcVar3 = local_14c;
-      *(time_t *)(param_1 + 0x20c) = local_4c._st_mtime;
-      pcVar4 = param_1 + 0x100;
-      *(time_t *)(param_1 + 0x210) = local_4c._st_mtime;
+      info->timestamp = local_4c._st_mtime;
+      pcVar4 = info->target_path;
+      info->container_timestamp = local_4c._st_mtime;
       do {
         cVar1 = *pcVar3;
         *pcVar4 = cVar1;
@@ -37,10 +34,7 @@ uint __cdecl engine_dosio_cpp_findFileNormally_FUN_00478ef0(char *param_1)
         pcVar4[1] = cVar1;
         pcVar4 = pcVar4 + 2;
       } while (cVar1 != '\0');
-      param_1[0x208] = '\0';
-      param_1[0x209] = '\0';
-      param_1[0x20a] = '\0';
-      param_1[0x20b] = '\0';
+      info->is_archive = 0;
       return 1;
     }
   }

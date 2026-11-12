@@ -11,27 +11,27 @@ void __cdecl setFarPlaneDistance(int distance);
 
 // Original: engine_clipper.c_getFarPlaneDistance_FUN_00430640
 // Address: 00430640
-undefined4 getFarPlaneDistance(void);
+int __cdecl getFarPlaneDistance(void);
 
 // Original: engine_clipper.c_interpolateVertexRightClip_FUN_00430650
 // Address: 00430650
-void __cdecl interpolateVertexRightClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexRightClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexLeftClip_FUN_00430750
 // Address: 00430750
-void __cdecl interpolateVertexLeftClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexLeftClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexTopClip_FUN_00430850
 // Address: 00430850
-void __cdecl interpolateVertexTopClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexTopClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexBottomClip_FUN_00430950
 // Address: 00430950
-void __cdecl interpolateVertexBottomClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexBottomClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexFarClip_FUN_00430a50
 // Address: 00430a50
-void __cdecl interpolateVertexFarClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexFarClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_clipPolygonRightPlane_FUN_00430b70
 // Address: 00430b70
@@ -43,7 +43,7 @@ int clipPolygonLeftPlane(undefined4 *param_1,int param_2,int param_3);
 
 // Original: engine_clipper.c_clipPolygonBottomPlane_FUN_00430f2e
 // Address: 00430f2e
-int clipPolygonBottomPlane(int *param_1,int param_2,int param_3);
+int clipPolygonBottomPlane(undefined4 *param_1,int param_2,int param_3);
 
 // Original: engine_clipper.c_normalizeClippedVertices_FUN_00431270
 // Address: 00431270
@@ -59,19 +59,19 @@ void __cdecl clipAndRasterize(int vertex_count,int *vertex_indices);
 
 // Original: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00431e10
 // Address: 00431e10
-void __cdecl interpolateVertexRightClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexRightClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00431f40
 // Address: 00431f40
-void __cdecl interpolateVertexLeftClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexLeftClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00432070
 // Address: 00432070
-void __cdecl interpolateVertexTopClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexTopClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_004321a0
 // Address: 004321a0
-void __cdecl interpolateVertexBottomClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexBottomClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_004322de
 // Address: 004322de
@@ -81,13 +81,13 @@ void clipPolygonRightPlaneGlobal(void);
 // Address: 00432420
 void __cdecl clipPolygonLeftPlaneGlobal(void);
 
-// Original: engine_clipper.c_FUN_0043269e
+// Original: engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043269e
 // Address: 0043269e
-void FUN_0043269e(void);
+void clipPolygonBottomPlaneGlobal(void);
 
-// Original: engine_clipper.c_FUN_004327d0
+// Original: engine_clipper.c_perspectiveDivideVertices_FUN_004327d0
 // Address: 004327d0
-void FUN_004327d0(void);
+void __cdecl perspectiveDivideVertices(void);
 
 // Original: engine_clipper.c_FUN_00432a20
 // Address: 00432a20

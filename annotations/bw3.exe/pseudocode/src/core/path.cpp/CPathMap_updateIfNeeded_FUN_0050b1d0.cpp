@@ -17,7 +17,7 @@ void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_0050b1d0(CPathMap *this_p
   uint *puVar4;
   byte bVar5;
   int aiStackY_1008 [1010];
-  int local_20;
+  CVector3i local_20;
   
   bVar5 = 0;
   if (force_update == 0) {
@@ -43,12 +43,13 @@ void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_0050b1d0(CPathMap *this_p
     (this_ptr->current_position).y = source_position->y;
     (this_ptr->current_position).z = source_position->z;
   }
-  core_dtrace_cpp_FUN_00477ac0(&g_CDemonRaytraceInstance,this_ptr);
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0
+            (&g_CDemonRaytraceInstance,&this_ptr->current_position,&local_20);
   puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);
-  (this_ptr->voxel_coords).x = local_20;
-  *puVar3 = *(uint *)(&stack0xffffffe4 + (uint)bVar5 * -8);
+  (this_ptr->voxel_coords).x = local_20.x;
+  *puVar3 = *(uint *)((int)&local_20 + (uint)bVar5 * -8 + 4);
   puVar3[(uint)bVar5 * -2 + 1] =
-       *(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+       *(uint *)((int)&local_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   if ((((this_ptr->voxel_coords).x == (this_ptr->cached_voxel_coords).x) &&
       ((this_ptr->cached_voxel_coords).y == (this_ptr->voxel_coords).y)) &&
      ((this_ptr->cached_voxel_coords).z == (this_ptr->voxel_coords).z)) {

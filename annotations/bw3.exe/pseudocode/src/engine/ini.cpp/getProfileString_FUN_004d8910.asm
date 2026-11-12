@@ -15,7 +15,7 @@
 ;   engine_ini.cpp_CIniFile_getString_FUN_004d8b20 at 004d8b4c
 ;
 ; Called Functions:
-;   engine_ini.cpp_FUN_004d8290
+;   engine_ini.cpp_CIni_getProfileString_FUN_004d8290
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x28]      ; 004d892d
     PUSH EBP                            ; 004d8931
     PUSH 0x1d5bc78                      ; 004d8932
-    CALL engine_ini.cpp_FUN_004d8290    ; 004d8937
-        ;   XREF to: 004d8290 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_FUN_004d8290(CIni * this_ptr, char * section, char * key, char * default_value, ...)
+    CALL engine_ini.cpp_CIni_getProfileString_FUN_004d8290 ; 004d8937
+        ;   XREF to: 004d8290 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_CIni_getProfileString_FUN_004d8290(CIni * this_ptr, char * section, char * key, char * default_value, ...)
     ADD ESP,0x1c                        ; 004d893c
     POP EBP                             ; 004d893f
     POP EDI                             ; 004d8940

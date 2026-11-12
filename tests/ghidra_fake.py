@@ -119,7 +119,11 @@ class AddressSet(JavaObject):
         if start is not None:
             self.add(start, end)
 
+    # Ghidra's overloads: one address, start..end, or every range of another set
     def add(self, start, end = None):
+        if isinstance(start, AddressSet):
+            self.ranges += start.ranges
+            return
         self.ranges.append((start.getOffset(), (end or start).getOffset()))
 
     def isEmpty(self):

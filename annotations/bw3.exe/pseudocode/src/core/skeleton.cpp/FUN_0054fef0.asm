@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_FUN_0054fef0(float *param_1,float *param_2,float *param_3,float param_4,CDeformableModelInstance *param_5)
+; void core_skeleton_cpp_FUN_0054fef0(SPose *param_1,float *param_2,float *param_3,float param_4,CDeformableModelInstance *param_5)
 ;
 ;
 ; Called Functions:
@@ -157,7 +157,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x80]      ; 00550088
     PUSH EBX                            ; 0055008f
     CALL core_skeleton.cpp_computeBoneModelMatrices_FUN_0054fcc0 ; 00550090
-        ;   XREF to: 0054fcc0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_computeBoneModelMatrices_FUN_0054fcc0()
+        ;   XREF to: 0054fcc0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneModelMatrices_FUN_0054fcc0(SPose * bone_data, CDeformableModelInstance * instance_ptr)
     ADD ESP,0x8                         ; 00550095
     ADD ESP,0x68                        ; 00550098
     POP EBP                             ; 0055009b

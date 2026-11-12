@@ -28,7 +28,7 @@ section .text
     ADD EAX,0x158                       ; 004e3c86
     PUSH EAX                            ; 004e3c8b
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 004e3c8c
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e3c91
     RET                                 ; 004e3c94
 

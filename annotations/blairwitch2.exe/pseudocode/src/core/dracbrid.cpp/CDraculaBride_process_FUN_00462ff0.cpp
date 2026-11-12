@@ -22,7 +22,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00462ff0(CDraculaBride 
   int iVar8;
   CDraculaBride *pCVar9;
   EDeathState EVar10;
-  int iVar11;
+  CDemonActor *pCVar11;
   CPathMap *pCVar12;
   CLocation *pCVar13;
   uint *puVar14;
@@ -255,7 +255,8 @@ LAB_0046350f:
       if (EVar4 != WALK_STATE_NO_PATH) goto LAB_0046350f;
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
                 (&(this_ptr->base).base.model.base,0,1);
-      engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+      engine_console_cpp_CConsole_printf_FUN_00436710
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
     }
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -282,10 +283,11 @@ LAB_0046350f:
       iVar8 = 0;
       iVar7 = 0;
       while ((iVar8 < g_CDemonSetPtr->enemy_count &&
-             ((iVar11 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                                  (*(uint *)((int)g_CDemonSetPtr->enemies + iVar7),
-                                   g_CDraculaBrideClassInfo.name_hash), iVar11 == 0 ||
-              (*(int *)(iVar11 + 0x10b84) == 0))))) {
+             ((pCVar11 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                                   (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar7),
+                                    g_CDraculaBrideClassInfo.name_hash),
+              pCVar11 == (CDemonActor *)0x0 || (pCVar11[0x62].particle_systems[4].standalone == 0)))
+             )) {
         iVar8 = iVar8 + 1;
         iVar7 = iVar7 + 4;
       }
@@ -453,8 +455,8 @@ LAB_0046350f:
                            &(((this_ptr->base).victim)->base).location.position,pCVar12,pCVar22,
                            fVar23,fVar25);
         if (iVar7 < 0) {
-          engine_console_cpp_FUN_00436710
-                    (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
+          engine_console_cpp_CConsole_printf_FUN_00436710
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar6->base,8,1);
         }
         else if (iVar7 < 1) {
@@ -481,8 +483,8 @@ LAB_0046350f:
             afStack_1b8[(uint)bVar15 * -2 + 0x18] = afStack_8c[(uint)bVar15 * -2];
             afStack_1b8[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 0x19] =
                  afStack_8c[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
-            fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
-                                         (fStack_158 - (this_ptr->base).base.base.orient.vec.y);
+            fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                                  (fStack_158 - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(fStack_14) < (float)_DAT_005d109c) {
               fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(-0.7853982,0.7853982);
               (this_ptr->base).base.base.orient.vec.y =
@@ -559,7 +561,8 @@ LAB_004640b3:
                         ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->base).location.position
                          ,pCVar12,pCVar22,fVar23,fVar25);
       if (iVar7 < 0) {
-        engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
+        engine_console_cpp_CConsole_printf_FUN_00436710
+                  (g_CConsolePtr,"%s gave up chase - I'm confused\n");
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&pCVar6->base,0,1);
       }
       else if ((0 < iVar7) && ((this_ptr->base).attack_cooldown <= 0.0)) {

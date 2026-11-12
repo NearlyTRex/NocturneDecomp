@@ -716,8 +716,8 @@ section .text
         ;   XREF to: 00509aa1 (UNCONDITIONAL_JUMP)  ; LAB_00509aa1
     PUSH EBX                            ; 0050a0fa
         ;   Label: LAB_0050a0fa
-    CALL core_set.cpp_CDemonSet_FUN_0050aba0 ; 0050a0fb
-        ;   XREF to: 0050aba0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050aba0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderCameraAimedAtHero_FUN_0050aba0 ; 0050a0fb
+        ;   XREF to: 0050aba0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderCameraAimedAtHero_FUN_0050aba0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0050a100
     MOV ESP,EBP                         ; 0050a103
     POP EBP                             ; 0050a105

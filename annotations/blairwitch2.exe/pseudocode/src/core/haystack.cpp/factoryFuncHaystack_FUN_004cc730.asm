@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_haystack_cpp_factoryFuncHaystack_FUN_004cc730(void)
+; CHaystack * __cdecl core_haystack_cpp_factoryFuncHaystack_FUN_004cc730(void)
 ;
 ;
 ; Called Functions:

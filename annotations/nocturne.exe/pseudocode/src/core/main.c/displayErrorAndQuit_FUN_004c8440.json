@@ -127,18 +127,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f4f90",
-      "from_addr": "004f4feb",
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f5110",
-      "from_addr": "004f51f6",
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f47b0",
       "from_addr": "004f491e",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0",
@@ -166,6 +154,18 @@
       "addr": "004f4bb0",
       "from_addr": "004f4c6d",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f5110",
+      "from_addr": "004f51f6",
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_004f5110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f4f90",
+      "from_addr": "004f4feb",
+      "name": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_004f4f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -895,21 +895,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a4170",
-      "from_addr": "004a456f",
-      "name": "core_game.cpp_CGame_FUN_004a4170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a57c0",
-      "from_addr": "004a5a11",
-      "name": "core_game.cpp_CGame_FUN_004a57c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004a5740",
       "from_addr": "004a57af",
       "name": "core_game.cpp_CGame_displayBitmap_FUN_004a5740",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a4170",
+      "from_addr": "004a456f",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -928,6 +922,12 @@
       "addr": "0049d870",
       "from_addr": "0049d8f4",
       "name": "core_game.cpp_CGame_setGameRes_FUN_0049d870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a57c0",
+      "from_addr": "004a5a11",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1477,12 +1477,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004febd0",
-      "from_addr": "004fed6b",
-      "name": "core_script.cpp_CScript_FUN_004febd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004fee30",
       "from_addr": "004feec7",
       "name": "core_script.cpp_CScript_buildParsedLines_FUN_004fee30",
@@ -1498,6 +1492,12 @@
       "addr": "004ff170",
       "from_addr": "004ff244",
       "name": "core_script.cpp_CScript_executeInitSection_FUN_004ff170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004febd0",
+      "from_addr": "004fed6b",
+      "name": "core_script.cpp_CScript_loadScript_FUN_004febd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -3309,6 +3309,14 @@
       "STORE": 16
     },
     "pcode_op_count": 280
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "00506f10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4717
+    }
   },
   "stack_frame": {
     "frame_size": 20,

@@ -13,11 +13,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_004aa610(CEventList *this_pt
 {
   int iVar1;
   int iVar2;
-  float *pfVar3;
-  char (*pacVar4) [32];
-  int *piVar5;
-  char (*pacVar6) [30];
-  byte local_120 [256];
+  char local_120 [256];
   int local_20;
   char (*local_1c) [30];
   char (*local_18) [32];
@@ -25,7 +21,7 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_004aa610(CEventList *this_pt
   
   core_event_cpp_CEventList_reset_FUN_004a19f0(this_ptr);
   _fgets(local_120,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005dedd5,&local_20);
+  _fscanf(file_handle,&DAT_005dedd5);
   if (5 < local_20) {
     _DAT_01d1d400 = "..\\core\\event.cpp";
     _DAT_01d1d404 = 0xf83;
@@ -33,49 +29,39 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_004aa610(CEventList *this_pt
   }
   _fgets(local_120,0xff,file_handle);
   iVar1 = 0;
-  _fscanf(file_handle,&DAT_005dee4e,this_ptr);
+  _fscanf(file_handle,&DAT_005dee4e);
   if (0 < (this_ptr->events).count) {
-    pacVar4 = (this_ptr->events).names;
     do {
       iVar1 = iVar1 + 1;
-      _fscanf(file_handle,"%[^\n]\n",pacVar4);
-      pacVar4 = pacVar4 + 1;
+      _fscanf(file_handle,"%[^\n]\n");
     } while (iVar1 < (this_ptr->events).count);
   }
   _fgets(local_120,0xff,file_handle);
   iVar1 = 0;
-  _fscanf(file_handle,&DAT_005dee59,&this_ptr->current_events);
+  _fscanf(file_handle,&DAT_005dee59);
   if (0 < (this_ptr->current_events).count) {
-    pacVar4 = (this_ptr->current_events).names;
     do {
       iVar1 = iVar1 + 1;
-      _fscanf(file_handle,"%[^\n]\n",pacVar4);
-      pacVar4 = pacVar4 + 1;
+      _fscanf(file_handle,"%[^\n]\n");
     } while (iVar1 < (this_ptr->current_events).count);
   }
   _fgets(local_120,0xff,file_handle);
   iVar2 = 0;
-  iVar1 = _fscanf(file_handle,&DAT_005dee64,&this_ptr->persistent_events);
+  iVar1 = _fscanf(file_handle,&DAT_005dee64);
   if (0 < (this_ptr->persistent_events).count) {
-    pacVar4 = (this_ptr->persistent_events).names;
     do {
       iVar2 = iVar2 + 1;
-      iVar1 = _fscanf(file_handle,"%[^\n]\n",pacVar4);
-      pacVar4 = pacVar4 + 1;
+      iVar1 = _fscanf(file_handle,"%[^\n]\n");
     } while (iVar2 < (this_ptr->persistent_events).count);
   }
   if (1 < local_20) {
     _fgets(local_120,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005dee6f,&this_ptr->timers);
+    _fscanf(file_handle,&DAT_005dee6f);
     iVar1 = (this_ptr->timers).count;
     local_14 = 0;
     if (0 < iVar1) {
-      pacVar4 = (this_ptr->timers).names;
-      pfVar3 = (this_ptr->timers).durations;
       do {
-        iVar1 = _fscanf(file_handle,"%f, %[^\n]\n",pfVar3,pacVar4);
-        pacVar4 = pacVar4 + 1;
-        pfVar3 = pfVar3 + 1;
+        iVar1 = _fscanf(file_handle,"%f, %[^\n]\n");
         local_14 = local_14 + 1;
       } while (local_14 < (this_ptr->timers).count);
     }
@@ -83,15 +69,13 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_004aa610(CEventList *this_pt
   if (2 < local_20) {
     _fgets(local_120,0xff,file_handle);
     iVar2 = 0;
-    _fscanf(file_handle,&DAT_005dee7e,&this_ptr->counters);
+    _fscanf(file_handle,&DAT_005dee7e);
     iVar1 = (this_ptr->counters).count;
     if (0 < iVar1) {
       local_18 = (this_ptr->counters).names;
-      piVar5 = (this_ptr->counters).values;
       do {
-        _fscanf(file_handle,"%d, %[^\n]\n",piVar5,local_18);
+        _fscanf(file_handle,"%d, %[^\n]\n");
         iVar2 = iVar2 + 1;
-        piVar5 = piVar5 + 1;
         local_18 = local_18 + 1;
         iVar1 = (this_ptr->counters).count;
       } while (iVar2 < iVar1);
@@ -100,14 +84,12 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_004aa610(CEventList *this_pt
   if (3 < local_20) {
     _fgets(local_120,0xff,file_handle);
     iVar2 = 0;
-    iVar1 = _fscanf(file_handle,&DAT_005dee8d,&this_ptr->actor_vars);
+    iVar1 = _fscanf(file_handle,&DAT_005dee8d);
     if (0 < (this_ptr->actor_vars).count) {
       local_1c = (this_ptr->actor_vars).actor_names;
-      pacVar6 = (this_ptr->actor_vars).var_names;
       do {
-        iVar1 = _fscanf(file_handle,"\"%[^\"]\" , \"%[^\"]\"\n",pacVar6,local_1c);
+        iVar1 = _fscanf(file_handle,"\"%[^\"]\" , \"%[^\"]\"\n");
         iVar2 = iVar2 + 1;
-        pacVar6 = pacVar6 + 1;
         local_1c = local_1c + 1;
       } while (iVar2 < (this_ptr->actor_vars).count);
     }
@@ -115,14 +97,12 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_004aa610(CEventList *this_pt
   if (4 < local_20) {
     _fgets(local_120,0xff,file_handle);
     iVar2 = 0;
-    iVar1 = _fscanf(file_handle,&DAT_005deea4,&this_ptr->game_flags);
+    iVar1 = _fscanf(file_handle,&DAT_005deea4);
     if (0 < (this_ptr->game_flags).count) {
-      pacVar4 = (this_ptr->game_flags).names;
       do {
         iVar2 = iVar2 + 1;
-        _fscanf(file_handle,"%[^\n]\n",pacVar4);
+        _fscanf(file_handle,"%[^\n]\n");
         iVar1 = (this_ptr->game_flags).count;
-        pacVar4 = pacVar4 + 1;
       } while (iVar2 < iVar1);
       return iVar1;
     }

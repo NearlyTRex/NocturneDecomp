@@ -33,7 +33,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 00410953
     PUSH EAX                            ; 00410959
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 0041095a
-        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b1c0()
+        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b1c0(CVector3f * vector_ptr, char * property_name)
     MOV EDX,dword ptr [0x00610954]      ; 0041095f | g_CBarrierClassVersion
     ADD ESP,0x8                         ; 00410965
     CMP EDX,0x2                         ; 00410968

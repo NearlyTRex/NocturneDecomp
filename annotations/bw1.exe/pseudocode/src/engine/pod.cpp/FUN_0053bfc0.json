@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 274,
-    "complexity_score": 311,
+    "complexity_score": 310,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 96,
+    "pseudocode_lines": 95,
     "suspect_count": 20,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 370
+    "total_lines": 369
   },
   "cross_references": [
     {
@@ -200,6 +200,14 @@
     },
     "pcode_op_count": 999
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "00513d20",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -227,7 +235,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*param_1 == 0) || ((char)param_1[1] == '\\0')) {",
@@ -235,7 +243,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*param_1 == 0) || ((char)param_1[1] == '\\0')) {",
@@ -243,7 +251,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 == 200) {",
@@ -251,7 +259,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1[0x104]) {",
@@ -259,18 +267,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = (param_1[0x104] + -1) * 0x14;",
+      "text": "iVar3 = (param_1[0x104] + -1) * 0x14;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = param_1[0x105];",
+      "text": "iVar2 = param_1[0x105];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = param_1[0x105];",
       "type": "unnamed_param"
     },
     {
@@ -278,52 +294,44 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = param_1[0x105];",
+      "text": "iVar3 = engine_pod_cpp_FUN_0053c4c0(param_1,iVar5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = engine_pod_cpp_FUN_0053c4c0(param_1,iVar2);",
+      "text": "(&CStack_3e0.base,*(char **)(iVar4 + param_1[0x105]));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&CStack_3e0.base,*(char **)(iVar5 + param_1[0x105]));",
+      "text": "} while (iVar5 < param_1[0x104]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar2 < param_1[0x104]);",
+      "text": "iVar5 = *param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *param_1;",
+      "text": "core_main_c_FUN_005030e0(\"Invalid pod version for %s: %d\",param_1 + 1,iVar5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_005030e0(\"Invalid pod version for %s: %d\",param_1 + 1,iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + 1;",
@@ -331,7 +339,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 72,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + 1;",
@@ -339,15 +347,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = _fopen(param_1,0x5ed7b6);",
+      "text": "p_Var1 = _fopen((char *)param_1,(char *)0x5ed7b6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "iStack_1c = engine_dosio_cpp_getFileSize_FUN_00478fb0((char *)0x5ed65e,(char *)param_1);",
@@ -355,10 +363,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar3 = _fopen(param_1,0x5ed65f);",
+      "text": "p_Var1 = _fopen((char *)param_1,(char *)0x5ed65f);",
       "type": "unnamed_param"
     },
     {

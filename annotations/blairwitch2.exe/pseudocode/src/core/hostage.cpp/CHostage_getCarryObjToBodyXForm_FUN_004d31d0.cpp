@@ -21,12 +21,12 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
   float *pfVar3;
   byte bVar4;
   uint auStackY_10b4 [892];
-  byte auStack_2b8 [144];
-  byte auStack_228 [48];
+  CMatrix3x4f aCStack_2b8 [3];
+  CMatrix3x4f CStack_228;
   CMatrix3x4f CStack_1f8;
   CMatrix3x4f CStack_1c8;
   CMatrix3x4f CStack_198;
-  byte auStack_168 [48];
+  CMatrix3x4f CStack_168;
   CMatrix3x4f CStack_138;
   float afStack_108 [12];
   uint uStack_d8;
@@ -58,11 +58,11 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
     auStack_5c[7] = 0x3dbc6a7f;
     uStack_a8 = 0xbe92f1aa;
     uStack_a0 = 0x3f9ac083;
-    core_xform_cpp_FUN_00591c10(auStack_228,auStack_5c + 5,&uStack_a8);
+    core_xform_cpp_FUN_00591c10(&CStack_228,auStack_5c + 5,&uStack_a8);
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-              (auStack_228,
+              (&CStack_228,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               (this_ptr->base).base.carry_hands[hand_index].bone_index);
+               (this_ptr->base).base.carry_hands[hand_index].bone_index,&CStack_138);
     pCVar2 = &CStack_138;
   }
   else if (this_ptr->hostage_type == 3) {
@@ -86,11 +86,11 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
       uStack_b0 = auStack_5c[0];
       uStack_ac = auStack_5c[1];
     }
-    core_xform_cpp_FUN_00591c10(auStack_2b8,auStack_c8 + 2,auStack_c8 + 5);
+    core_xform_cpp_FUN_00591c10(aCStack_2b8,auStack_c8 + 2,auStack_c8 + 5);
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-              (auStack_2b8,
+              (aCStack_2b8,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               (this_ptr->base).base.carry_hands[hand_index].bone_index);
+               (this_ptr->base).base.carry_hands[hand_index].bone_index,&CStack_198);
     pCVar2 = &CStack_198;
   }
   else if (this_ptr->hostage_type == 5) {
@@ -114,11 +114,11 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
       uStack_8c = auStack_80[0];
       uStack_88 = auStack_80[1];
     }
-    core_xform_cpp_FUN_00591c10(auStack_168,auStack_5c + 2,&uStack_90);
+    core_xform_cpp_FUN_00591c10(&CStack_168,auStack_5c + 2,&uStack_90);
     core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
-              (auStack_168,
+              (&CStack_168,
                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-               (this_ptr->base).base.carry_hands[hand_index].bone_index);
+               (this_ptr->base).base.carry_hands[hand_index].bone_index,&CStack_1c8);
     pCVar2 = &CStack_1c8;
   }
   else {

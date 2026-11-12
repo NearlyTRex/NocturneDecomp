@@ -20,7 +20,7 @@ section .text
     ADD EAX,0xec                        ; 005b1bab
     PUSH EAX                            ; 005b1bb0
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 005b1bb1
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005b1bb6
     SUB EAX,0xec                        ; 005b1bb9
     RET                                 ; 005b1bbe

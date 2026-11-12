@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   engine_special.cpp_FUN_0055f500
-;   engine_special.cpp_FUN_0055f550
+;   engine_special.cpp_unlockFrame_FUN_0055f550
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170
 ;   wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0
 ;
@@ -99,8 +99,8 @@ section .text
     LEA EAX,[EAX]                       ; 0055ffed
     PUSH 0x0                            ; 0055fff0
         ;   Label: LAB_0055fff0
-    CALL engine_special.cpp_FUN_0055f550 ; 0055fff2
-        ;   XREF to: 0055f550 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_0055f550(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_0055f550 ; 0055fff2
+        ;   XREF to: 0055f550 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_0055f550(int clear_lock_flag)
     ADD ESP,0x4                         ; 0055fff7
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170 ; 0055fffa
         ;   XREF to: 00589170 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170()

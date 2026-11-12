@@ -37,7 +37,7 @@ section .text
     LEA EAX,[EBX + 0x2076c]             ; 005275d0
     PUSH EAX                            ; 005275d6
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 005275d7
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     LEA ESI,[EBX + 0x2074c]             ; 005275dc
     ADD ESP,0x4                         ; 005275e2
     MOV EDI,EAX                         ; 005275e5

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_moloch_cpp_factoryFuncMoloch_FUN_00501310(void)
+; CMoloch * __cdecl core_moloch_cpp_factoryFuncMoloch_FUN_00501310(void)
 ;
 ;
 ; Called Functions:

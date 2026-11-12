@@ -34,13 +34,13 @@ section .text
     LEA EAX,[EBX + 0x10a60]             ; 004e1093
     PUSH EAX                            ; 004e1099
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 004e109a
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e109f
     PUSH 0x5dbe5c                       ; 004e10a2 | = "modelName"
     LEA EAX,[EBX + 0x2b4]               ; 004e10a7
     PUSH EAX                            ; 004e10ad
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0 ; 004e10ae
-        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0()
+        ;   XREF to: 0040bae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeformableModelInstance * model_ptr, char * property_name)
     MOV EDX,dword ptr [0x00617dec]      ; 004e10b3 | g_CLarvaClassVersion
     ADD ESP,0x8                         ; 004e10b9
     CMP EDX,0x2                         ; 004e10bc
@@ -51,7 +51,7 @@ section .text
     ADD EBX,0x2b4                       ; 004e10c6
     PUSH EBX                            ; 004e10cc
     CALL core_actor.cpp_archiveMotionState_FUN_0040bb60 ; 004e10cd
-        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveMotionState_FUN_0040bb60()
+        ;   XREF to: 0040bb60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040bb60(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 004e10d2
     POP EBX                             ; 004e10d5
     RET                                 ; 004e10d6
@@ -60,7 +60,7 @@ section .text
     LEA EAX,[EBX + 0x10a70]             ; 004e10dc
     PUSH EAX                            ; 004e10e2
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 004e10e3
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e10e8
     JMP 0x004e10c1                      ; 004e10eb
         ;   XREF to: 004e10c1 (UNCONDITIONAL_JUMP)  ; LAB_004e10c1

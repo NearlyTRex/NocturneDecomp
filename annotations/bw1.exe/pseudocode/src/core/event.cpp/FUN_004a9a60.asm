@@ -132,7 +132,7 @@ section .text
         ;   Label: LAB_004a9b3a
     PUSH 0x5deb51                       ; 004a9b3f | = "events.txt"
     CALL crt_stdio.c_fopen_FUN_005c157c ; 004a9b44
-        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005c157c()
+        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004a9b49
     MOV EDI,EAX                         ; 004a9b4c
     TEST EAX,EAX                        ; 004a9b4e

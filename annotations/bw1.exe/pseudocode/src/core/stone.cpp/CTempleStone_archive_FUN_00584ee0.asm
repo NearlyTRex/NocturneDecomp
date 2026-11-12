@@ -28,7 +28,7 @@ section .text
     ADD EAX,0x678                       ; 00584ef6
     PUSH EAX                            ; 00584efb
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 00584efc
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00584f01
     RET                                 ; 00584f04
 

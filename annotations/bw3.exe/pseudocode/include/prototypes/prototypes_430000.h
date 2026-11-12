@@ -20,6 +20,7 @@
 #include "types/structs/SClothVertex.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SEdge.h"
 #include "types/structs/SFire.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SRenderVertex.h"
@@ -110,53 +111,51 @@ void cockpit_ckptutil_c_FUN_0043604c(void);
 void cockpit_ckptutil_c_blitFullScreen_FUN_0043613c(void *param_1,void *param_2);
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_00436170(void *sprite_data,void *span_data);
 void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_00436310(void *src_data,int width,int height,void *background_base,int dest_x,int dest_y);
-void cockpit_ckptutil_c_copyScreenRegion_FUN_004363a0(undefined4 *param_1,int param_2,int param_3,int param_4,uint param_5,int param_6);
+void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_004363a0(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height);
 void cockpit_ckptutil_c_FUN_00436400(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7);
 void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00436620(void *bitmap_data,int width,int height,int num_iterations);
 void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00436750(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
 void cockpit_ckptutil_c_FUN_004367e0(char *param_1,int *param_2,int param_3);
 void cockpit_ckptutil_c_FUN_00436a50(char *param_1,int param_2,int param_3);
-void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_00436bb0(short *param_1,int param_2,int param_3,int param_4);
+void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_00436bb0(SEdge *edges,int count,int x_offset,int y_offset);
 void cockpit_ckptutil_c_FUN_00436c9e(int param_1,short *param_2,int param_3,int param_4,int param_5);
 void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_00436f80(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode);
 void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_00437250(int x0,int y0,int x1,int y1,int color);
-void cockpit_ckptutil_c_FUN_0043750e(int param_1,int param_2,float param_3,int param_4);
 void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00437510(int x,int y,float alpha,int color);
-void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004378b0(int param_1,int param_2,float param_3,int param_4);
+void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004378b0(int x,int y,float blend_factor,int palette_index);
 void __cdecl cockpit_ckptutil_c_putPixel_FUN_00437b80(int x,int y,int color);
 undefined4 cockpit_ckptutil_c_isLineBlendingDisabled_FUN_00437c0e(void);
-undefined4 cockpit_ckptutil_c_FUN_00437c1c(void);
 undefined4 cockpit_ckptutil_c_setLineBlendingDisabled_FUN_00437c20(void);
 void cockpit_ckptutil_c_setLineClippingDisabled_FUN_00437c2c(undefined4 param_1);
 void cockpit_ckptutil_c_FUN_00437c40(undefined4 param_1);
 void * cockpit_ckptutil_c_rotateBitmap_FUN_00437c50(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
 void cockpit_ckptutil_c_FUN_00437e10(undefined4 *param_1,int param_2,uint param_3,uint param_4);
-void cockpit_ckptutil_c_setEdgeData_FUN_00437fd0(int param_1,int param_2,undefined2 param_3,undefined2 param_4,undefined2 param_5,ushort param_6,byte param_7);
+void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00437fd0(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit);
 void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0043806e(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
-void cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_00438b30(ushort *param_1,int param_2,short param_3);
+void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_00438b30(SEdge *edge_array,int edge_count,int flip_width);
 void cockpit_ckptutil_c_FUN_00438ca0(byte *param_1,undefined4 param_2,int *param_3,int param_4,int param_5,uint param_6);
 void * __cdecl cockpit_ckptutil_c_FUN_00438ef0(char *filename,void *buffer,int size);
 void __cdecl engine_clipper_c_setFarPlaneDistance_FUN_00439090(int distance);
-undefined4 engine_clipper_c_getFarPlaneDistance_FUN_004390b0(void);
-void __cdecl engine_clipper_c_interpolateVertexRightClip_FUN_004390c0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexLeftClip_FUN_004391c0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexBottomClip_FUN_004393c0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexFarClip_FUN_004394c0(int *param_1,int *param_2,int *param_3);
+int __cdecl engine_clipper_c_getFarPlaneDistance_FUN_004390b0(void);
+void __cdecl engine_clipper_c_interpolateVertexRightClip_FUN_004390c0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexLeftClip_FUN_004391c0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexBottomClip_FUN_004393c0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexFarClip_FUN_004394c0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_004395e0(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
 int engine_clipper_c_clipPolygonLeftPlane_FUN_0043971e(undefined4 *param_1,int param_2,int param_3);
-int engine_clipper_c_clipPolygonBottomPlane_FUN_0043999e(int *param_1,int param_2,int param_3);
+int engine_clipper_c_clipPolygonBottomPlane_FUN_0043999e(undefined4 *param_1,int param_2,int param_3);
 void __cdecl engine_clipper_c_normalizeClippedVertices_FUN_00439ce0(void);
 int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_00439da0(int vertex_count,int *vertex_indices);
 void __cdecl engine_clipper_c_clipAndRasterize_FUN_0043a840(int vertex_count,int *vertex_indices);
-void __cdecl engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_0043a8c0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_0043a9f0(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_0043ab20(int *param_1,int *param_2,int *param_3);
-void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_0043ac50(int *param_1,int *param_2,int *param_3);
+void __cdecl engine_clipper_c_interpolateVertexRightClipAdvanced_FUN_0043a8c0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexLeftClipAdvanced_FUN_0043a9f0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_0043ab20(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
+void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_0043ac50(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 void engine_clipper_c_FUN_0043ad8e(void);
 void engine_clipper_c_FUN_0043aed0(void);
 void engine_clipper_c_clipPolygonBottomPlaneGlobal_FUN_0043b14e(void);
-void engine_clipper_c_FUN_0043b280(void);
+void __cdecl engine_clipper_c_perspectiveDivideVertices_FUN_0043b280(void);
 undefined4 engine_clipper_c_FUN_0043b3bc(void);
 undefined4 engine_clipper_c_FUN_0043b4e0(void);
 void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_0043bac0(int vertex_count,int *vertex_indices);
@@ -164,7 +163,7 @@ CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_0043c220(CCloth *this_ptr);
 void core_cloth_cpp_FUN_0043c280(CKeyFramedModel *param_1);
 void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_0043c2a0(CCloth *this_ptr);
 void core_cloth_cpp_FUN_0043c300(int param_1);
-int core_cloth_cpp_FUN_0043c330(CCloth *param_1,char *param_2);
+int __cdecl core_cloth_cpp_CCloth_load_FUN_0043c330(CCloth *this_ptr,char *filename);
 void __cdecl core_cloth_cpp_FUN_0043c8a0(CCloth *this_ptr);
 void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,float *param_2,float *param_3,CDeformableModelInstance *param_4);
 void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043d680(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);
@@ -173,7 +172,6 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043d9b0(CCloth *this_pt
 void __cdecl core_cloth_cpp_CCloth_process_FUN_0043e270(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_step_FUN_0043e2a0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 void core_cloth_cpp_FUN_0043f10c(int param_1);
-void core_cloth_cpp_FUN_0043f15e(int param_1,int param_2,int param_3);
 void core_cloth_cpp_FUN_0043f160(int param_1,int param_2,int param_3);
 int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043f370(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_render_FUN_0043f460(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
@@ -187,7 +185,7 @@ void __cdecl core_cloth_cpp_CClothList_setup_FUN_0043fbc0(CClothList *this_ptr,C
 void __cdecl core_cloth_cpp_CClothList_process_FUN_0043fc00(CClothList *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_render_FUN_0043fc50(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
 void core_cloth_cpp_FUN_0043fd0e(int *param_1,undefined4 *param_2);
-void core_cloth_cpp_FUN_0043fd60(int param_1,char *param_2,int param_3);
+void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043fd60(CCloth *this_ptr,char *bone_name,int vertex_index);
 float __cdecl core_cloth_cpp_fastInvSqrt_FUN_0043ff90(float dist_sq);
 float __cdecl core_cloth_cpp_vectorLengthFast_FUN_0043ffe0(CVector3f *v);
 

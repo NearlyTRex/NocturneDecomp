@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_flamecan.cpp_factoryFuncFlameCan_FUN_004a6ed0
 // Address: 004a6ed0
-void factoryFuncFlameCan(void);
+CFlameCan * __cdecl factoryFuncFlameCan(void);
 
 // Original: core_flamecan.cpp_CFlameCan_getActorType_FUN_004a6ef0
 // Address: 004a6ef0

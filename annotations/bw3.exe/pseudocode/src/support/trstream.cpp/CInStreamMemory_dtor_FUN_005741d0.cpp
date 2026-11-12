@@ -15,7 +15,7 @@ CInStreamMemory * support_trstream_cpp_CInStreamMemory_dtor_FUN_005741d0(CInStre
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CInStreamMemoryTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CInStreamMemoryTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

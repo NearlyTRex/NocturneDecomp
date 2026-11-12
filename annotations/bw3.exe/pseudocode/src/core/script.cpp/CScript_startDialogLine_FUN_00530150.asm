@@ -69,7 +69,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x18]      ; 0053018a
     PUSH EDI                            ; 0053018d
     CALL core_script.cpp_getActor_FUN_005289b0 ; 0053018e
-        ;   XREF to: 005289b0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_getActor_FUN_005289b0()
+        ;   XREF to: 005289b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_script.cpp_getActor_FUN_005289b0(char * actor_specifier, uint expected_class_hash, CDemonActorType * expected_class)
     ADD ESP,0xc                         ; 00530193
     MOV dword ptr [EBX + 0x4],EAX       ; 00530196
     TEST EAX,EAX                        ; 00530199

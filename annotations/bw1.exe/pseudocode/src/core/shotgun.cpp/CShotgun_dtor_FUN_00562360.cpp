@@ -13,7 +13,7 @@ CShotgun * __cdecl core_shotgun_cpp_CShotgun_dtor_FUN_00562360(CShotgun *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CShotgunTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CShotgunTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

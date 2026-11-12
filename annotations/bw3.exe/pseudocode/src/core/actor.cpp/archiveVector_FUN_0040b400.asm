@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveVector_FUN_0040b400(float *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveVector_FUN_0040b400(CVector3f *vector_ptr,char *property_name)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   vector_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined8       Stack[-0x18]:8  local_18
@@ -55,7 +58,7 @@ section .text
     MOV EBX,dword ptr [0x007df9b4]      ; 0040b41d | DAT_007df9b4
     PUSH EBX                            ; 0040b423
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 0040b424
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040b429
     CMP EAX,0x3                         ; 0040b42c
     JNZ 0x0040b446                      ; 0040b42f

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double sound_mp3_cpp_initializeSynthesisDctTable_FUN_004fea9e(float *param_1)
+; void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_004fea9e(float *output_dct_table)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   output_dct_table
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ca067

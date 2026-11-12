@@ -12,14 +12,15 @@ void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_0040fc00(CBaron *th
 
 {
   CDemonActor_vtable *pCVar1;
-  int iVar2;
+  CCharacter *this_ptr_00;
+  EDeathState EVar2;
   byte bVar3;
   float afStackY_1038 [1015];
-  CBaron *this_ptr_00;
+  CBaron *this_ptr_01;
   CVector3f *new_position;
   CVector3f *new_orientation;
   float local_50;
-  float local_44;
+  float in_stack_ffffffbc;
   uint local_38;
   uint local_34;
   uint local_30;
@@ -35,7 +36,7 @@ void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_0040fc00(CBaron *th
     local_34 = 0;
     local_30 = 0xc0000000;
     core_actor_cpp_FUN_00408ac0(this_ptr->target_actor,&stack0xffffffc8);
-    local_2c = local_44;
+    local_2c = in_stack_ffffffbc;
     *(uint *)((int)&stack0xffffffd8 + (uint)bVar3 * 0xfffffffe * 4) =
          *(uint *)(&stack0xffffffc0 + (uint)bVar3 * -8);
     pCVar1 = local_14;
@@ -46,16 +47,17 @@ void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_0040fc00(CBaron *th
     local_20.x = local_50;
     *(uint *)((int)&local_20 + (uint)bVar3 * -8 + 4) =
          *(uint *)(&stack0xffffffb4 + (uint)bVar3 * -8);
-    this_ptr_00 = this_ptr;
+    this_ptr_01 = this_ptr;
     *(uint *)((int)&local_20 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
          *(uint *)((int)&stack0xffffffd8 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + -8) * 4);
-    (*pCVar1->setPositionAndOrientation)((CDemonActor *)this_ptr_00,new_position,new_orientation);
+    (*pCVar1->setPositionAndOrientation)((CDemonActor *)this_ptr_01,new_position,new_orientation);
     local_50 = 5.96811e-39;
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600();
-    if (iVar2 != 0) {
-      iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x10c))();
-      if (iVar2 == 2) {
-        local_50 = 5.968179e-39;
+    this_ptr_00 = (CCharacter *)
+                  core_actor_cpp_castToClassHash_FUN_0040c600
+                            (this_ptr->target_actor,g_CCharacterClassInfo.name_hash);
+    if (this_ptr_00 != (CCharacter *)0x0) {
+      EVar2 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
+      if (EVar2 == DEATH_STATE_DEAD) {
         core_baron_cpp_CBaron_detachFromOwner_FUN_0040fbc0(this_ptr,this_ptr->target_actor);
         return;
       }

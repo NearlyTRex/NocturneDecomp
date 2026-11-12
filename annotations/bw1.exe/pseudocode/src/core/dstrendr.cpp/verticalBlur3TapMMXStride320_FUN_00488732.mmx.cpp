@@ -2,11 +2,11 @@
 // Address: 00488732
 // Address Range: [[00488732, 00488874]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride320_FUN_00488732(undefined8 *param_1,undefined8 *param_2,int param_3)
+// Signature: void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride320_FUN_00488732(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride320_FUN_00488732(ulonglong *param_1,ulonglong *param_2,int param_3)
+void __cdecl core_dstrendr_cpp_verticalBlur3TapMMXStride320_FUN_00488732(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
 {
 __asm {
         mov ESI,dword ptr [EBP + 0xc]

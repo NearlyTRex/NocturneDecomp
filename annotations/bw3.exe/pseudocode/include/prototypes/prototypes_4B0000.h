@@ -11,6 +11,7 @@
 #include "types/classes/CSkeleton.h"
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SPlayerInput.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4B0000
@@ -28,8 +29,8 @@ int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004b0cb0(CBitFont *this
 int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004b0ce0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
 int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004b0d30(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004b0da0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
-void engine_font_cpp_FUN_004b0de0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-void engine_font_cpp_FUN_004b0e30(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6 ,undefined4 param_7);
+void __cdecl engine_font_cpp_CBitFont_printF_FUN_004b0de0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format);
+void __cdecl engine_font_cpp_CBitFont_printFV_FUN_004b0e30(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004b0ea0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterF_FUN_004b0ee0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004b0f30(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
@@ -59,10 +60,10 @@ int engine_font_cpp_FUN_004b33d0(int param_1,byte *param_2,int param_3,int param
 uint engine_font_cpp_FUN_004b377e(int param_1,int param_2,uint param_3);
 undefined4 engine_font_cpp_FUN_004b37d0(void);
 int * engine_font_cpp_FUN_004b391e(int param_1,int *param_2);
-void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004b3960(int *param_1,int param_2);
+void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004b3960(SRenderVertex **vertices,int vertex_count);
 void core_game_cpp_staticInit_FUN_004b3cd0(void);
 void __cdecl core_game_cpp_setupMovieRecording_FUN_004b3d70(void);
-void core_game_cpp_captureDebugMovieFrame_FUN_004b3e50(void);
+void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004b3e50(void);
 CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004b4180(CGame *this_ptr);
 CGame * core_game_cpp_CGame_dtor_FUN_004b4420(CGame *this_ptr,uint flags);
 void __cdecl core_game_cpp_CGame_saveClockTime_FUN_004b4430(CGame *this_ptr);
@@ -70,7 +71,7 @@ void core_game_cpp_FUN_004b4440(int param_1);
 void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_004b45e0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_displayMessage_FUN_004b46b0(CGame *this_ptr,char *message,float duration);
 void __cdecl core_game_cpp_CGame_clearOverlay_FUN_004b4710(CGame *this_ptr);
-void __cdecl core_game_cpp_drawHealthBar_FUN_004b4730(int param_1,int param_2,int param_3,int param_4,float param_5);
+void __cdecl core_game_cpp_drawHealthBar_FUN_004b4730(int x1,int y1,int x2,int y2,float fill_percent);
 void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004b4d50(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_processFudge_FUN_004b4f00(CGame *this_ptr);
@@ -117,7 +118,7 @@ void core_game_cpp_FUN_004beb80(int param_1,char *param_2,undefined4 param_3,und
 void core_game_cpp_FUN_004bec20(CGame *param_1);
 void __cdecl core_game_cpp_joinNetworkGame_FUN_004bf2e0(void);
 void __cdecl core_game_cpp_CGame_slamDT_FUN_004bf3a0(CGame *this_ptr,float delta_time);
-void core_game_cpp_beginProfileTimer_FUN_004bf40c(void);
+void __cdecl core_game_cpp_beginProfileTimer_FUN_004bf40c(void);
 void __cdecl core_game_cpp_endProfileTimer_FUN_004bf430(char *timer_name);
 void __cdecl core_game_cpp_CGame_process_FUN_004bf4b0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004bfa40(CGame *this_ptr);

@@ -29,7 +29,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(CPackedBitmap 
   uchar *puStack_14;
   
   bVar10 = 0;
-  cockpit_pkbitmap_cpp_CPackedBitmap_FUN_004f3f50(this_ptr);
+  cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_004f3f50(this_ptr);
   this_ptr->width = width;
   this_ptr->height = height;
   if (row_stride == 0) {

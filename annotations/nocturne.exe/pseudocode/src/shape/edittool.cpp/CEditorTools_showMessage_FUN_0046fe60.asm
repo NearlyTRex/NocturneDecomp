@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_game.cpp_CGame_FUN_004a4170 at 004a4611
+;   core_game.cpp_CGame_loadGame_FUN_004a4170 at 004a4611
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a0f80
 ;   core_game.cpp_setupMovieRecording_FUN_0049a240 at 0049a305
 ;   core_main.c_showDeveloperToolsMenu_FUN_004c8510 at 004c85bd

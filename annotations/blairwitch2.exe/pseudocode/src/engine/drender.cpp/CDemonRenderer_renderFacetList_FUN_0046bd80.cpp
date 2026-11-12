@@ -63,7 +63,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046bd80(CDem
         if (0 < primitive_count) {
           local_18 = 0;
           do {
-            iVar2 = engine_prim_c_FUN_0051c820((SMRGLPrimitiveTriangle *)primitive_array);
+            iVar2 = engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_0051c820
+                              ((SMRGLPrimitiveTriangle *)primitive_array);
             if (iVar2 != 0) {
               iVar3 = iVar3 + 1;
               iVar2 = local_18 + 4;
@@ -84,7 +85,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046bd80(CDem
         }
         if (0 < iVar3) {
           engine_special_cpp_drawPolyList_FUN_0055f950
-                    (this_ptr->vertex_buffer_ptr,&DAT_0060b288,iVar3,_DAT_01c38b54);
+                    (this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveQuad **)&DAT_0060b288,iVar3,
+                     _DAT_01c38b54);
           return;
         }
       }

@@ -15,11 +15,11 @@ float FUN_0044fe40(undefined4 param_1,undefined4 param_2,float param_3,int param
 
 // Original: core_doc.cpp_FUN_0044febe
 // Address: 0044febe
-undefined4 FUN_0044febe(int param_1);
+undefined4 FUN_0044febe(CDemonActor *param_1);
 
 // Original: core_doc.cpp_FUN_0044ffd0
 // Address: 0044ffd0
-float FUN_0044ffd0(undefined4 param_1);
+float FUN_0044ffd0(CDemonActor *param_1);
 
 // Original: core_doc.cpp_factoryFuncDoc_FUN_004500a0
 // Address: 004500a0
@@ -99,7 +99,7 @@ void FUN_004567c0(int param_1,int param_2);
 
 // Original: core_doc.cpp_FUN_004568e0
 // Address: 004568e0
-float * FUN_004568e0(CCharacter *param_1,int param_2,float param_3);
+float * FUN_004568e0(CCharacter *param_1,CDemonActor *param_2,float param_3);
 
 // Original: core_doc.cpp_FUN_00458320
 // Address: 00458320
@@ -247,7 +247,7 @@ void FUN_0045e040(float *param_1,float *param_2);
 
 // Original: core_doc.cpp_getVectorDistance_FUN_0045e070
 // Address: 0045e070
-float __cdecl getVectorDistance(float *param_1,float *param_2);
+float __cdecl getVectorDistance(CVector3f *a,CVector3f *b);
 
 // Original: core_doc.cpp_FUN_0045e1b0
 // Address: 0045e1b0

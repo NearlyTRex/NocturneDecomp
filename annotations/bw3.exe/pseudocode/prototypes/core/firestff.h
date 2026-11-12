@@ -51,4 +51,4 @@ CFirestaff * CFirestaff::dtor(CFirestaff *this_ptr,uint flags);
 
 // Original: core_firestff.cpp_FUN_004a5930
 // Address: 004a5930
-void FUN_004a5930(undefined4 param_1);
+void FUN_004a5930(void *param_1);

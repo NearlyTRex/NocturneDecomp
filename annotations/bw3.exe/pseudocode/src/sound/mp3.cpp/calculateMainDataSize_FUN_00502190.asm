@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00502190(int *param_1)
+; int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00502190(SMpegFrame frame_info)
 ;
+; Parameters:
+; SMpegFrame       Stack[0x4]:28   frame_info
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

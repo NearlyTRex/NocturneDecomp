@@ -19,15 +19,15 @@ void FUN_00478e20(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 
 // Original: engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40
 // Address: 00478e40
-void __cdecl addGetFileInfoHook(undefined4 param_1);
+void __cdecl addGetFileInfoHook(FileSearchHandlerFunc *handler);
 
 // Original: engine_dosio.cpp_findFile_FUN_00478e90
 // Address: 00478e90
-undefined4 __cdecl findFile(undefined4 param_1);
+int __cdecl findFile(SFoundFileInfo *context);
 
 // Original: engine_dosio.cpp_findFileNormally_FUN_00478ef0
 // Address: 00478ef0
-undefined4 __cdecl findFileNormally(char *param_1);
+int __cdecl findFileNormally(SFoundFileInfo *info);
 
 // Original: engine_dosio.cpp_getFileSize_FUN_00478fb0
 // Address: 00478fb0
@@ -39,7 +39,7 @@ _FILE * __cdecl FUN_00479180(char *directory,char *filename,char *mode);
 
 // Original: engine_dosio.cpp_reopenFileStream_FUN_00479240
 // Address: 00479240
-void __cdecl reopenFileStream(char *param_1,undefined4 param_2,undefined4 param_3,_FILE *param_4,undefined4 param_5,uint param_6);
+void __cdecl reopenFileStream(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream);
 
 // Original: engine_dosio.cpp_CFileFinder_ctor_FUN_00479320
 // Address: 00479320

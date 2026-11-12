@@ -78,7 +78,7 @@ void core_werewolf_cpp_FUN_0057fad0(CCharacter *param_1)
          local_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -8];
     local_20 = local_44[0] * local_44[0];
     local_28 = SQRT(local_44[1] * local_44[1] + local_48 * local_48 + local_20);
-    engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"Chain stretched to %f\n",(double)local_28);
+    engine_console_cpp_CConsole_printf_FUN_00441ff0(g_CConsolePtr,"Chain stretched to %f\n");
     if ((param_1[1].model.bone_origins[0x16].x < local_28) &&
        (fVar1 = param_1[1].model.bone_origins[0x16].x, fVar1 = fVar1 * fVar1 - local_20,
        local_30 = (double)fVar1, 0.0 <= local_30)) {

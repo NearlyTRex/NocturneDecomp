@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a3770
-;   engine_alphabit.cpp_FUN_0040d400
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 ;
 ; *****************************************************************************
 
@@ -26,13 +26,13 @@ section .text
     MOV dword ptr [EBX],0x0             ; 004a9eb8
     PUSH EAX                            ; 004a9ebe
     MOV dword ptr [EBX + 0x9c],0x0      ; 004a9ebf
-    CALL engine_alphabit.cpp_FUN_0040d400 ; 004a9ec9
-        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d400(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400 ; 004a9ec9
+        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004a9ece
     LEA EAX,[EBX + 0x88]                ; 004a9ed1
     PUSH EAX                            ; 004a9ed7
-    CALL engine_alphabit.cpp_FUN_0040d400 ; 004a9ed8
-        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d400(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400 ; 004a9ed8
+        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap * this_ptr)
     MOV dword ptr [EBX + 0x1260],0xffffffff ; 004a9edd
     MOV dword ptr [EBX + 0x1264],0xffffffff ; 004a9ee7
     MOV dword ptr [EBX + 0x1268],0x1    ; 004a9ef1

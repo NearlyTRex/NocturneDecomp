@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 wincore_winrun_cpp_getValue_FUN_005b259c(void)
+; char __cdecl wincore_winrun_cpp_getValue_FUN_005b259c(void)
 ;
 ;
 ; Referenced Globals:

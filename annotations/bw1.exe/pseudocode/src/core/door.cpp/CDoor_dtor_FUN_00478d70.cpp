@@ -13,7 +13,7 @@ CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00478d70(CDoor *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDoorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDoorTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

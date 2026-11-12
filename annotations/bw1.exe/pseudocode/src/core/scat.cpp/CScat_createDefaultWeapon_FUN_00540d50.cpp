@@ -18,8 +18,7 @@ void __cdecl core_scat_cpp_CScat_createDefaultWeapon_FUN_00540d50(CScat *this_pt
   this_ptr_00 = &(this_ptr->base).inventory;
   core_inv_cpp_CInventory_initialize_FUN_004f7050(this_ptr_00);
   pcVar2 = "BaronProxy";
-  item_actor = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c2b0("CBaronWeapon")
-  ;
+  item_actor = core_actor_cpp_createActorByName_FUN_0040c2b0("CBaronWeapon");
   pCVar3 = item_actor;
   do {
     cVar1 = *pcVar2;

@@ -49,7 +49,7 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_00478220(CDoor *this_ptr)
           puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
           puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
         }
-        core_box_cpp_FUN_00421670(&CStack_28);
+        core_box_cpp_CBoundingBox3D_render_FUN_00421670(&CStack_28);
         goto LAB_004782c3;
       }
     }

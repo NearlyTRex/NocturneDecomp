@@ -35,7 +35,7 @@ void __cdecl CDemonPart::calculateFaceNormals(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_FUN_00479c70
 // Address: 00479c70
-void FUN_00479c70(CDemonPart *param_1,undefined4 param_2,undefined4 param_3,float *param_4);
+void FUN_00479c70(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4);
 
 // Original: core_dpart.cpp_FUN_00479ec0
 // Address: 00479ec0
@@ -45,13 +45,13 @@ void FUN_00479ec0(void);
 // Address: 00479f5e
 void FUN_00479f5e(int param_1);
 
-// Original: core_dpart.cpp_FUN_0047a320
+// Original: core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_0047a320
 // Address: 0047a320
-void FUN_0047a320(int param_1,int param_2);
+void __cdecl setupDepthOnlyEdgeInterpolation(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 
-// Original: core_dpart.cpp_FUN_0047a43e
+// Original: core_dpart.cpp_findEdgeByYStart_FUN_0047a43e
 // Address: 0047a43e
-int * FUN_0047a43e(int param_1,int *param_2);
+SSoftwareEdge * __cdecl findEdgeByYStart(int scanline_y,SSoftwareEdge *exclude_edge);
 
 // Original: core_dpart.cpp_FUN_0047a480
 // Address: 0047a480

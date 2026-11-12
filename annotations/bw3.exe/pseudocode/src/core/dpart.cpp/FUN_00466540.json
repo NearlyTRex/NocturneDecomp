@@ -32,7 +32,7 @@
     ],
     "convention": "unknown",
     "name": "core_dpart.cpp_FUN_00466540",
-    "signature": "void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,undefined4 param_2,undefined4 param_3,float *param_4)"
+    "signature": "void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4)"
   },
   "function_calls": [
     {
@@ -105,6 +105,20 @@
     },
     "pcode_op_count": 978
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00461760",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00479c70",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -127,7 +141,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,uint param_2,uint param_3,float *param_4)",
+      "text": "void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,_FILE *param_2,uint param_3,float *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -135,7 +149,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,uint param_2,uint param_3,float *param_4)",
+      "text": "void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,_FILE *param_2,uint param_3,float *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -143,7 +157,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,uint param_2,uint param_3,float *param_4)",
+      "text": "void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,_FILE *param_2,uint param_3,float *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -151,7 +165,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,uint param_2,uint param_3,float *param_4)",
+      "text": "void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,_FILE *param_2,uint param_3,float *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -303,7 +317,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar8 = param_1->mystery_array + 8;",
+      "text": "buffer = param_1->mystery_array + 8;",
       "type": "unnamed_param"
     },
     {
@@ -311,7 +325,7 @@
       "line": 33,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fread(pcVar8,0x10,1,param_2);",
+      "text": "_fread(buffer,0x10,1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -423,7 +437,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fread(0x1b85194,0x48,param_1->face_count,param_2);",
+      "text": "_fread((void *)0x1b85194,0x48,param_1->face_count,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -431,7 +445,7 @@
       "line": 46,
       "match": "param_2",
       "severity": "mild",
-      "text": "_fread(0x1b85194,0x48,param_1->face_count,param_2);",
+      "text": "_fread((void *)0x1b85194,0x48,param_1->face_count,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -535,7 +549,7 @@
       "line": 80,
       "match": "param_4",
       "severity": "mild",
-      "text": "fVar10 = (float10)*param_4 * fVar9;",
+      "text": "fVar9 = (float10)*param_4 * fVar8;",
       "type": "unnamed_param"
     },
     {
@@ -543,7 +557,7 @@
       "line": 81,
       "match": "param_4",
       "severity": "mild",
-      "text": "fVar11 = (float10)param_4[1] * fVar9;",
+      "text": "fVar10 = (float10)param_4[1] * fVar8;",
       "type": "unnamed_param"
     },
     {
@@ -551,7 +565,7 @@
       "line": 82,
       "match": "param_4",
       "severity": "mild",
-      "text": "fVar9 = (float10)param_4[2] * fVar9;",
+      "text": "fVar8 = (float10)param_4[2] * fVar8;",
       "type": "unnamed_param"
     },
     {

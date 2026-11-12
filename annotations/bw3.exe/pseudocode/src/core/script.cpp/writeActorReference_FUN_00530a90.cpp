@@ -2,17 +2,17 @@
 // Address: 00530a90
 // Address Range: [[00530a90, 00530ac1]]
 // Convention: __cdecl
-// Signature: void __cdecl core_script_cpp_writeActorReference_FUN_00530a90(undefined4 param_1,int *param_2)
+// Signature: void __cdecl core_script_cpp_writeActorReference_FUN_00530a90(_FILE *file_handle,CDemonActor **actor)
 
 #include "nocturne.h"
 
-void __cdecl core_script_cpp_writeActorReference_FUN_00530a90(uint param_1,int *param_2)
+void __cdecl core_script_cpp_writeActorReference_FUN_00530a90(_FILE *file_handle,CDemonActor **actor)
 
 {
-  if (*param_2 == 0) {
-    FUN_005a3140(param_1,"\"%s\"\n","(none)");
+  if (*actor == (CDemonActor *)0x0) {
+    FUN_005a3140(file_handle,"\"%s\"\n","(none)");
     return;
   }
-  FUN_005a3140(param_1,"\"%s\"\n",*param_2);
+  FUN_005a3140(file_handle,"\"%s\"\n",*actor);
   return;
 }

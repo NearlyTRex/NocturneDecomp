@@ -41,7 +41,8 @@ int sound_snddx_cpp_FUN_00556290(uint param_1,int param_2)
     iVar3 = iVar3 + 0x24;
   }
   if (0x1e < iVar6) {
-    engine_console_cpp_FUN_00436710();
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"DirectSoundDevice::allocateSfx - no free buffers\n");
     return 0;
   }
   iVar3 = param_2 * 0x18;

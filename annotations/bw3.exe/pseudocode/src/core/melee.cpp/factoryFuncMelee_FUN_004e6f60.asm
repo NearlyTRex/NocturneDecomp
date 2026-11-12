@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_factoryFuncMelee_FUN_004e6f60(void)
+; CMelee * __cdecl core_melee_cpp_factoryFuncMelee_FUN_004e6f60(void)
 ;
 ;
 ; Called Functions:

@@ -19,7 +19,7 @@
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_004303d0 at 004304cc
 ;   cockpit_ckptutil.c_saveEdgeListFile_FUN_0042ee00 at 0042ee3e
 ;   cockpit_ckptutil.c_traceConnectedEdges_FUN_00430630 at 0043073b
-;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110 at 004f51d1
+;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0 at 004f48fd
 ;   ... and 150 more
 ;
 ; Called Functions:

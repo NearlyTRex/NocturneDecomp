@@ -18,7 +18,7 @@ CGrandma * core_bwgrndma_cpp_CGrandma_dtor_FUN_005a7e10(CGrandma *this_ptr,uint 
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CGrandmaTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CGrandmaTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }

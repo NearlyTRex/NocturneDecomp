@@ -52,11 +52,11 @@
 ;   core_box.cpp_CBox_process_FUN_0041b410
 ;   core_dirmat.cpp_FUN_0045b800
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
+;   core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20
 ;   core_fire.cpp_CFireEffect_createRing_FUN_004a3f70
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_fire.cpp_FUN_0049cca0
 ;   core_fire.cpp_FUN_004a36e0
-;   core_fire.cpp_FUN_004a3f20
 ;   core_fire.cpp_FUN_004a3fd0
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
@@ -202,8 +202,8 @@ section .text
     MOV EDX,dword ptr [0x005fc5a0]      ; 0049d1f3 | DAT_005fc5a0
     PUSH EDX                            ; 0049d1f9
     INC ESI                             ; 0049d1fa
-    CALL core_fire.cpp_FUN_004a3f20     ; 0049d1fb
-        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3f20()
+    CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20 ; 0049d1fb
+        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 0049d200
     CMP ESI,0x10                        ; 0049d203
     JL 0x0049d1f0                       ; 0049d206
@@ -440,8 +440,8 @@ section .text
     MOV EDI,dword ptr [0x005fc5a0]      ; 0049d485 | DAT_005fc5a0
     PUSH EDI                            ; 0049d48b
     INC EBX                             ; 0049d48c
-    CALL core_fire.cpp_FUN_004a3f20     ; 0049d48d
-        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a3f20()
+    CALL core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20 ; 0049d48d
+        ;   XREF to: 004a3f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRainDrop_FUN_004a3f20(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 0049d492
     CMP EBX,0x10                        ; 0049d495
     JL 0x0049d482                       ; 0049d498

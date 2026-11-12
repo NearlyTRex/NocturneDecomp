@@ -1,20 +1,20 @@
 // Name: core_haystack.cpp_factoryFuncHaystack_FUN_004cc730
 // Address: 004cc730
 // Address Range: [[004cc730, 004cc74b]]
-// Convention: unknown
-// Signature: void core_haystack_cpp_factoryFuncHaystack_FUN_004cc730(void)
+// Convention: __cdecl
+// Signature: CHaystack * __cdecl core_haystack_cpp_factoryFuncHaystack_FUN_004cc730(void)
 
 #include "nocturne.h"
 
-void core_haystack_cpp_factoryFuncHaystack_FUN_004cc730(void)
+CHaystack * __cdecl core_haystack_cpp_factoryFuncHaystack_FUN_004cc730(void)
 
 {
-  CHaystack *this_ptr;
+  CHaystack *pCVar1;
   
-  this_ptr = (CHaystack *)operator_new(0x25658);
-  if (this_ptr == (CHaystack *)0x0) {
-    return;
+  pCVar1 = (CHaystack *)operator_new(0x25658);
+  if (pCVar1 == (CHaystack *)0x0) {
+    return (CHaystack *)0x0;
   }
-  core_haystack_cpp_CHaystack_ctor_FUN_004cc760(this_ptr);
-  return;
+  pCVar1 = core_haystack_cpp_CHaystack_ctor_FUN_004cc760(pCVar1);
+  return pCVar1;
 }

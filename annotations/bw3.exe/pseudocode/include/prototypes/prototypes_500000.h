@@ -28,8 +28,13 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SIpAddr.h"
+#include "types/structs/SMpegFrame.h"
 #include "types/structs/SMpegFrameHeader.h"
 #include "types/structs/SMpegLayer3GranuleInfo.h"
+#include "types/structs/SMpegScalefactorBandData.h"
+#include "types/structs/SMpegStereoSubbandSamples.h"
+#include "types/structs/SMpegSubbandQuantizedSamples.h"
+#include "types/structs/SMpegSubbandSamples.h"
 #include "types/structs/SNetPacketHeader.h"
 #include "types/structs/SNetPlayer.h"
 #include "types/structs/SNetworkAddr.h"
@@ -42,14 +47,14 @@
 // FUNCTION PROTOTYPES - Range 0x500000
 // =============================================================================
 
-void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_005003f0(uint *param_1,float *param_2,int param_3,int param_4,int param_5,int *param_6);
-void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_005008a0(undefined4 *param_1,undefined4 *param_2,int param_3,int *param_4);
-void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00500be0(int param_1,double param_2,int param_3,int param_4);
-void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_00500c80(undefined4 *param_1,undefined4 *param_2,int param_3,int param_4,int *param_5);
-void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005019f0(float *param_1,float *param_2,int param_3);
-void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_00501bd0(float *param_1,void *param_2,int param_3);
+void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_005003f0(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3GranuleInfo *granule,int channel_index,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_005008a0(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00500be0(int intensity_position,double ratio,int sample_index,float *ratio_buffer);
+void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_00500c80(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame);
+void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005019f0(float *input_samples,float *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header);
+void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_00501bd0(float *input_samples,float *output_samples,int mpeg_block_type);
 void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_005020e0(CMP3Decoder *this_ptr,float *input_samples,float *output_buffer,int subband_index,int channel,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header);
-int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00502190(int *param_1);
+int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00502190(SMpegFrame frame_info);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_ctor_FUN_00502750(CMP3Decoder *this_ptr);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_dtor_FUN_00502790(CMP3Decoder *this_ptr,uint flags);
 void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_005027b0(CMP3Decoder *this_ptr,char *filename);
@@ -59,12 +64,12 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00502a80(CMP3Decoder *this_ptr,sh
 int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_00502bc0(CMP3Decoder *this_ptr,int sample_offset);
 int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this_ptr,short *pcm_output);
 void __cdecl core_netgame_cpp_staticInit_FUN_005039b0(void);
-void core_netgame_cpp_FUN_005039fe(void);
+void __cdecl core_netgame_cpp_resetGameTime_FUN_005039fe(void);
 float __cdecl core_netgame_cpp_computeTimeDelta_FUN_00503a80(int start_time,int end_time);
-float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_00503ae0(int param_1);
+float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_00503ae0(uint timestamp);
 void __cdecl core_netgame_cpp_removeChatOut_FUN_00503b50(int index);
 int core_netgame_cpp_FUN_00503bee(int param_1);
-int * core_netgame_cpp_allocSimFrame_FUN_00503c40(int param_1);
+SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_00503c40(int sequence_number);
 CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_00503d70(CNetGame *this_ptr);
 CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_00503e00(CNetGame *this_ptr,uint flags);
 void __cdecl core_netgame_cpp_CNetGame_init_FUN_00503e20(CNetGame *this_ptr);
@@ -119,7 +124,7 @@ void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_00508d30(CMouse *this_ptr);
 CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor7_FUN_00508ea0(CAlphaBitmap *this_ptr,uint flags);
 CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor15_FUN_00508ec0(CAlphaBitmap *this_ptr,uint flags);
 void core_npc_cpp_staticInit_FUN_00508ee0(void);
-void core_npc_cpp_factoryFuncNPC_FUN_00508f10(void);
+CNPC * __cdecl core_npc_cpp_factoryFuncNPC_FUN_00508f10(void);
 CDemonActorType * core_npc_cpp_CNPC_getActorType_FUN_00508f30(CNPC *this_ptr);
 CNPC * core_npc_cpp_CNPC_ctor_FUN_00508f40(CNPC *this_ptr);
 void __cdecl core_npc_cpp_CNPC_setup_FUN_00509020(CNPC *this_ptr);
@@ -141,11 +146,11 @@ undefined4 engine_palette_cpp_FUN_00509e00(void);
 CParticle * __cdecl core_particle_cpp_CParticle_ctor_FUN_00509e10(CParticle *this_ptr);
 CParticle * __cdecl core_particle_cpp_CParticle_dtor_FUN_00509e30(CParticle *this_ptr,uint flags);
 void __cdecl core_particle_cpp_CParticle_setup_FUN_00509e40(CParticle *this_ptr,CVector3f *position,CVector3f *velocity);
-void core_particle_cpp_FUN_00509f30(float *param_1);
+void core_particle_cpp_FUN_00509f30(CVector3f *param_1);
 void __cdecl core_particle_cpp_CParticle_render_FUN_0050a3b0(CParticle *this_ptr);
 undefined4 core_particle_cpp_FUN_0050a3e0(void);
 void core_passngr_cpp_staticInit_FUN_0050a3f0(void);
-void core_passngr_cpp_factoryFuncPassenger_FUN_0050a420(void);
+CPassenger * __cdecl core_passngr_cpp_factoryFuncPassenger_FUN_0050a420(void);
 CDemonActorType * core_passngr_cpp_CPassenger_getActorType_FUN_0050a440(CPassenger *this_ptr);
 CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_0050a450(CPassenger *this_ptr);
 CPassenger * core_passngr_cpp_CPassenger_dtor_FUN_0050a530(CPassenger *this_ptr,uint flags);
@@ -167,7 +172,7 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_0050b610(CPathMap *t
 int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
 void core_path_cpp_FUN_0050c57e(void);
 int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_0050c680(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
-void core_path_cpp_renderGridQuad_FUN_0050c750(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,int param_7);
+void __cdecl core_path_cpp_renderGridQuad_FUN_0050c750(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha);
 void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_0050c980(CPathMap *this_ptr,int depth,int red,int green,int fog);
 CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_0050cd60(CLocation *location);
 CPathMap * __cdecl core_path_cpp_getPathMap_FUN_0050ced0(CLocation *location);
@@ -178,17 +183,17 @@ void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_0050d050(CVector3f *posi
 void core_path_cpp_FUN_0050d11e(CPathMap *param_1);
 uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_0050d170(CPathMap *this_ptr,int start_height);
 CPathMap * core_path_cpp_CPathMap_arrdtor12_FUN_0050d600(CPathMap *this_ptr,uint flags);
-void __cdecl engine_pcx_c_writePCXScanline_FUN_0050d620(int param_1,int *param_2);
+void __cdecl engine_pcx_c_writePCXScanline_FUN_0050d620(int row_index,_FILE *pcx_file);
 void __cdecl engine_pcx_c_saveScreenRaw16_FUN_0050d6f0(char *filename);
 void __cdecl engine_pcx_c_saveScreenRaw32_FUN_0050d8b0(char *filename);
 void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_0050da60(char *filename);
 void core_pendulum_cpp_staticInit_FUN_0050dca0(void);
-void core_pendulum_cpp_factoryFuncPendulum_FUN_0050dcd0(void);
+CPendulum * __cdecl core_pendulum_cpp_factoryFuncPendulum_FUN_0050dcd0(void);
 CDemonActorType * core_pendulum_cpp_CPendulum_getActorType_FUN_0050dcf0(CPendulum *this_ptr);
 CPendulum * __cdecl core_pendulum_cpp_CPendulum_ctor_FUN_0050dd00(CPendulum *this_ptr);
 void __cdecl core_pendulum_cpp_CPendulum_setup_FUN_0050de10(CPendulum *this_ptr);
 void __cdecl core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_0050df70(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor);
-bool core_pendulum_cpp_didPhaseCross_FUN_0050e60e(float param_1,float param_2,float param_3);
+int __cdecl core_pendulum_cpp_didPhaseCross_FUN_0050e60e(float threshold,float old_phase,float new_phase);
 void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_0050e700(CPendulum *this_ptr,float delta_time);
 void __cdecl core_pendulum_cpp_CPendulum_process_FUN_0050ed00(CPendulum *this_ptr,float delta_time);
 int __cdecl core_pendulum_cpp_CPendulum_renderOpaque_FUN_0050ee70(CPendulum *this_ptr);
@@ -208,8 +213,8 @@ int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getPixelValue_FUN_0050f2c0(CPacke
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0050f440(CPackedBitmap *this_ptr,int dest_x,int dest_y,int clip_left,int start_row,int clip_right,int end_row);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0050f5c0(CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,int height);
 void cockpit_pkbitmap_cpp_FUN_0050f6be(CPackedBitmap *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7);
-void __cdecl cockpit_pkbitmap_cpp_FUN_0050f910(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag);
-void __cdecl cockpit_pkbitmap_cpp_FUN_0050f990(CPackedBitmap *this_ptr,int apply_palette_flag);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990(CPackedBitmap *this_ptr,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0050f9e0(CPackedBitmap *this_ptr,uchar *raw_bitmap_data,int row_stride);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0050fa90(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride);
 void cockpit_pkbitmap_cpp_FUN_0050fcb8(void);
@@ -217,7 +222,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyACTPalette_FUN_0050fce0(CPa
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0050fd30(CPackedBitmap *this_ptr,uchar *palette_buffer);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_0050fd90(CPackedBitmap *this_ptr);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_0050fda0(CPackedBitmap *this_ptr,int apply_palette_flag);
-void cockpit_pkbitmap_cpp_FUN_0050fe10(CPackedBitmap *param_1,undefined4 param_2);
+void cockpit_pkbitmap_cpp_FUN_0050fe10(CPackedBitmap *param_1,char *param_2);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0050fe90(CPackedBitmap *this_ptr,_FILE *file_handle);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0050ff60(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
 

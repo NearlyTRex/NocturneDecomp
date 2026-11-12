@@ -8,7 +8,7 @@
 ; CExternalRenderer * Stack[0x8]:4   capabilities
 ;
 ; XREF[1]:
-;   engine_special.cpp_FUN_00581310 at 005813b5
+;   engine_special.cpp_loadExternalRenderer_FUN_00581310 at 005813b5
 ;
 ; Called Functions:
 ;   crt_string.c__strcmp_FUN_005c0f80

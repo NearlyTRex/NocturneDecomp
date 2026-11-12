@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_conveyor.cpp_factoryFuncConveyor_FUN_00447720
 // Address: 00447720
-void factoryFuncConveyor(void);
+CConveyor * __cdecl factoryFuncConveyor(void);
 
 // Original: core_conveyor.cpp_CConveyor_getActorType_FUN_00447740
 // Address: 00447740

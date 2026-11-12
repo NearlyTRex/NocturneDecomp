@@ -152,7 +152,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x14d168]  ; 0052193f | g_CDemonSetInstance.actors[0]
     PUSH EBX                            ; 00521945
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00521946
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0052194b
     MOV EBX,EAX                         ; 0052194e
     MOV dword ptr [ESP + 0xf0],EAX      ; 00521950
@@ -385,7 +385,7 @@ section .text
     PUSH EBX                            ; 00521bdf
     FSTP float ptr [ESP + 0x104]        ; 00521be0
     CALL core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80 ; 00521be7
-        ;   XREF to: 00517e80 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80()
+        ;   XREF to: 00517e80 (UNCONDITIONAL_CALL)  ; float core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80(CDemonActor * object)
     MOV dword ptr [ESP + 0x108],EAX     ; 00521bec
     FLD float ptr [ESP + 0x108]         ; 00521bf3
     ADD ESP,0x4                         ; 00521bfa
@@ -593,7 +593,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0x14d168]  ; 00521e85 | g_CDemonSetInstance.actors[0]
     PUSH ESI                            ; 00521e8b
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00521e8c
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00521e91
     TEST EAX,EAX                        ; 00521e94
     JZ 0x00521e61                       ; 00521e96

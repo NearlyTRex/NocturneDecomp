@@ -112,7 +112,7 @@ section .text
         ;   Label: LAB_0047b073
     ADD ESP,0x18                        ; 0047b078
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0047b07b
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     TEST EAX,0x40000                    ; 0047b080
     JZ 0x0047b0c1                       ; 0047b085
         ;   XREF to: 0047b0c1 (CONDITIONAL_JUMP)  ; LAB_0047b0c1

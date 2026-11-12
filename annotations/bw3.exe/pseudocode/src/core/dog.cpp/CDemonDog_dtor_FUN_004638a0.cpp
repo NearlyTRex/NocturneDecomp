@@ -18,7 +18,7 @@ CDemonDog * core_dog_cpp_CDemonDog_dtor_FUN_004638a0(CDemonDog *this_ptr,uint fl
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDemonDogTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDemonDogTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

@@ -78,7 +78,7 @@ section .text
     PUSH EAX                            ; 0052fbef
     MOV dword ptr [ESP + 0xc],ECX       ; 0052fbf0
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0052fbf4
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052fbf9
     MOV EAX,dword ptr [ESP + 0xcc]      ; 0052fbfc
     MOV EAX,dword ptr [EAX + 0x174]     ; 0052fc03
@@ -171,7 +171,7 @@ section .text
         ;   XREF to: 0052df50 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_0052df50(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 0052fd08
     CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0052fd0b
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005b2420()
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
     MOV EDX,EAX                         ; 0052fd10
     MOV ECX,0x12                        ; 0052fd12
     SAR EDX,0x1f                        ; 0052fd17

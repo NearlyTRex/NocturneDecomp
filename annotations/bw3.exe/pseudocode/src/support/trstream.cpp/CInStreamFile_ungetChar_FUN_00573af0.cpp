@@ -10,16 +10,18 @@ uint __cdecl support_trstream_cpp_CInStreamFile_ungetChar_FUN_00573af0(CInStream
 
 {
   int iVar1;
+  uint uVar2;
   
   if ((((-1 < param_2) && (param_2 < 0x100)) && (this_ptr->file_handle != (HANDLE)0x0)) &&
      (0 < this_ptr->position)) {
     iVar1 = this_ptr->position + -1;
     this_ptr->position = iVar1;
     if (((param_2 == 10) && (this_ptr->binary_mode == 0)) && (0 < iVar1)) {
-      iVar1 = support_trstream_cpp_FUN_00573b90(this_ptr,iVar1);
-      if (iVar1 == 10) {
-        iVar1 = support_trstream_cpp_FUN_00573b90(this_ptr,this_ptr->position + -1);
-        if (iVar1 == 0xd) {
+      uVar2 = support_trstream_cpp_CInStreamFile_readByteAt_FUN_00573b90(this_ptr,iVar1);
+      if (uVar2 == 10) {
+        uVar2 = support_trstream_cpp_CInStreamFile_readByteAt_FUN_00573b90
+                          (this_ptr,this_ptr->position + -1);
+        if (uVar2 == 0xd) {
           this_ptr->position = this_ptr->position + -1;
           return 1;
         }

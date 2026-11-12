@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl crt_stdio_c_fgets_FUN_005b9600(char *param_1,int param_2,int param_3)
+; char * __cdecl crt_stdio_c_fgets_FUN_005b9600(char *str,int num,_FILE *stream)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
+; int              Stack[0x8]:4   num
+; _FILE *          Stack[0xc]:4   stream
 ;
 ; XREF[20]:
 ;   core_box.cpp_CBox_loadFromFile_FUN_005b4300 at 005b4322
@@ -56,7 +60,7 @@ section .text
         ;   XREF to: 005b9656 (CONDITIONAL_JUMP)  ; LAB_005b9656
     PUSH EDI                            ; 005b963a
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 005b963b
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 005b9640
     MOV dword ptr [ESP],EAX             ; 005b9643
     CMP EAX,-0x1                        ; 005b9646

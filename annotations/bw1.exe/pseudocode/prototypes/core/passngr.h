@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_passngr.cpp_factoryFuncPassenger_FUN_00532740
 // Address: 00532740
-void factoryFuncPassenger(void);
+CPassenger * __cdecl factoryFuncPassenger(void);
 
 // Original: core_passngr.cpp_CPassenger_getActorType_FUN_00532760
 // Address: 00532760

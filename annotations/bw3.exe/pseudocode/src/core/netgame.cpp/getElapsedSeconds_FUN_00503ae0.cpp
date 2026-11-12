@@ -2,18 +2,18 @@
 // Address: 00503ae0
 // Address Range: [[00503ae0, 00503b36]]
 // Convention: __cdecl
-// Signature: float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_00503ae0(int param_1)
+// Signature: float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_00503ae0(uint timestamp)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_00503ae0(int param_1)
+float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_00503ae0(uint timestamp)
 
 {
   uint uStack_10;
   
-  uStack_10 = (float)(_DAT_01da6478 - param_1) * (float)_DAT_005ca3f9;
+  uStack_10 = (float)(int)(_DAT_01da6478 - timestamp) * (float)_DAT_005ca3f9;
   if (uStack_10 < 0.0) {
     uStack_10 = 0.0;
   }

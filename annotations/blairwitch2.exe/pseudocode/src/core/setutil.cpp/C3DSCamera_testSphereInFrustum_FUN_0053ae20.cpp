@@ -1,12 +1,12 @@
 // Name: core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20
 // Address: 0053ae20
 // Address Range: [[0053ae20, 0053af07]]
-// Convention: unknown
-// Signature: undefined4 core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20(int param_1,float *param_2,float param_3)
+// Convention: __cdecl
+// Signature: int __cdecl core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20(C3DSCamera *this_ptr,CVector3f *world_position,float radius)
 
 #include "nocturne.h"
 
-uint core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20(int param_1,float *param_2,float param_3)
+int __cdecl core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20(C3DSCamera *this_ptr,CVector3f *world_position,float radius)
 
 {
   byte bVar1;
@@ -23,24 +23,22 @@ uint core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20(int param_1,fl
   float fStack_10;
   
   bVar1 = 0;
-  local_3c = *param_2 - *(float *)(param_1 + 0x100);
-  local_38 = param_2[1] - *(float *)(param_1 + 0x104);
-  local_34 = param_2[2] - *(float *)(param_1 + 0x108);
+  local_3c = world_position->x - (this_ptr->position).x;
+  local_38 = world_position->y - (this_ptr->position).y;
+  local_34 = world_position->z - (this_ptr->position).z;
   local_18 = local_3c;
   fStack_14 = local_38;
   fStack_10 = local_34;
-  core_dirmat_cpp_FUN_004495a0(param_1 + 0x118,&stack0xffffffe8);
+  core_dirmat_cpp_FUN_004495a0(&this_ptr->rotation_matrix,&local_18);
   local_30 = local_24;
   *(uint *)((int)&stack0xffffffd4 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8);
   *(uint *)((int)&stack0xffffffd8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffe4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if ((((*(float *)(param_1 + 0x17c) <= local_30 + param_3) &&
-       (*(float *)(param_1 + 0x180) <= local_2c + param_3)) &&
-      (*(float *)(param_1 + 0x184) <= local_28 + param_3)) &&
-     (((local_30 - param_3 <= *(float *)(param_1 + 0x188) &&
-       (local_2c - param_3 <= *(float *)(param_1 + 0x18c))) &&
-      (local_28 - param_3 <= *(float *)(param_1 + 400))))) {
+  if (((((this_ptr->box).min.x <= local_30 + radius) && ((this_ptr->box).min.y <= local_2c + radius)
+       ) && ((this_ptr->box).min.z <= local_28 + radius)) &&
+     (((local_30 - radius <= (this_ptr->box).max.x && (local_2c - radius <= (this_ptr->box).max.y))
+      && (local_28 - radius <= (this_ptr->box).max.z)))) {
     return 1;
   }
   return 0;

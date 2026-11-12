@@ -78,8 +78,7 @@ void core_shadow_cpp_FUN_005601bc(CCharacter *param_1)
          afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -8];
     fStack_20 = afStack_44[0] * afStack_44[0];
     fStack_28 = SQRT(afStack_44[1] * afStack_44[1] + fStack_48 * fStack_48 + fStack_20);
-    engine_console_cpp_FUN_00445430(g_CConsolePtr,"Chain stretched to %f\n",(double)fStack_28)
-    ;
+    engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"Chain stretched to %f\n");
     if ((param_1[1].base.platform_orientation_delta.x < fStack_28) &&
        (fVar1 = param_1[1].base.platform_orientation_delta.x, fVar1 = fVar1 * fVar1 - fStack_20,
        dStack_30 = (double)fVar1, 0.0 <= dStack_30)) {

@@ -195,8 +195,8 @@ SButtonStruct * SButtonStruct::dtor(SButtonStruct *this_ptr,uint flags);
 
 // Original: core_bmppuzzl.cpp_FUN_004144a0
 // Address: 004144a0
-void FUN_004144a0(undefined4 param_1);
+void FUN_004144a0(void *param_1);
 
 // Original: core_bmppuzzl.cpp_FUN_004144c0
 // Address: 004144c0
-void FUN_004144c0(undefined4 param_1);
+void FUN_004144c0(void *param_1);

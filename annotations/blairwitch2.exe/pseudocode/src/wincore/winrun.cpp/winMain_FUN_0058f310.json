@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 234,
-    "complexity_score": 484,
+    "complexity_score": 379,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 40,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 129,
-    "suspect_count": 31,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_param",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_noreturn",
@@ -46,9 +45,9 @@
         "0058f5c7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stdcall",
     "name": "wincore_winrun.cpp_winMain_FUN_0058f310",
-    "signature": "void wincore_winrun_cpp_winMain_FUN_0058f310(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4)"
+    "signature": "int __stdcall wincore_winrun_cpp_winMain_FUN_0058f310(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)"
   },
   "function_calls": [
     {
@@ -59,7 +58,7 @@
     {
       "addr": "004e46b0",
       "is_variadic": false,
-      "name": "core_main.c_FUN_004e46b0"
+      "name": "core_main.c_enterMainGameMenu_FUN_004e46b0"
     },
     {
       "addr": "004e4e20",
@@ -440,8 +439,8 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
     "estimated_params": 1,
     "matches_declared": false
   },
@@ -479,11 +478,37 @@
     },
     "pcode_op_count": 772
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005b2e00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8503
+    },
+    "bw3.exe": {
+      "addr": "00581080",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8503
+    },
+    "nocedit.exe": {
+      "addr": "005f3680",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6782
+    },
+    "nocturne.exe": {
+      "addr": "00559260",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6765
+    }
+  },
   "stack_frame": {
-    "frame_size": 92,
+    "frame_size": 108,
     "local_size": 92,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -576,6 +601,34 @@
         "offset": -28,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "hInstance",
+        "offset": 4,
+        "size": 4,
+        "type": "HINSTANCE"
+      },
+      {
+        "is_param": true,
+        "name": "hPrevInstance",
+        "offset": 8,
+        "size": 4,
+        "type": "HINSTANCE"
+      },
+      {
+        "is_param": true,
+        "name": "lpCmdLine",
+        "offset": 12,
+        "size": 4,
+        "type": "LPSTR"
+      },
+      {
+        "is_param": true,
+        "name": "nCmdShow",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -587,38 +640,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void wincore_winrun_cpp_winMain_FUN_0058f310(HMODULE param_1,uint param_2,uint param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void wincore_winrun_cpp_winMain_FUN_0058f310(HMODULE param_1,uint param_2,uint param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void wincore_winrun_cpp_winMain_FUN_0058f310(HMODULE param_1,uint param_2,uint param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void wincore_winrun_cpp_winMain_FUN_0058f310(HMODULE param_1,uint param_2,uint param_3,int param_4)",
-      "type": "unnamed_param"
     },
     {
       "description": "Subroutine marked as non-returning",
@@ -677,19 +698,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "GetModuleFileNameA(param_1,&DAT_02664fb8,0x100);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 83,
       "match": "DAT_02664fb8",
       "severity": "mild",
-      "text": "GetModuleFileNameA(param_1,&DAT_02664fb8,0x100);",
+      "text": "GetModuleFileNameA(hInstance,&DAT_02664fb8,0x100);",
       "type": "undefined_data"
     },
     {
@@ -725,27 +738,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_58.hInstance = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 105,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_58.hIcon = LoadIconA(param_1,&DAT_00000065);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 105,
       "match": "DAT_00000065",
       "severity": "mild",
-      "text": "local_58.hIcon = LoadIconA(param_1,&DAT_00000065);",
+      "text": "local_58.hIcon = LoadIconA(hInstance,&DAT_00000065);",
       "type": "undefined_data"
     },
     {
@@ -755,30 +752,6 @@
       "severity": "mild",
       "text": "local_58.hCursor = LoadCursorA((HINSTANCE)0x0,&DAT_00007f00);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 113,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "0,0,(HWND)0x0,(HMENU)0x0,param_1,(LPVOID)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 115,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_0266462c = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "ShowWindow(_DAT_02664628,param_4);",
-      "type": "unnamed_param"
     },
     {
       "description": "Subroutine marked as non-returning",

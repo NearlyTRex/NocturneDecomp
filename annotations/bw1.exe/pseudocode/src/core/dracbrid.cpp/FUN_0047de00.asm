@@ -60,7 +60,7 @@
 ;   core_spline.cpp_FUN_00583d60
 ;   core_spline.cpp_FUN_00583f90
 ;   core_spline.cpp_FUN_005841d0
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;   sound_sndmain.cpp_FUN_005735a0
 ;
 ; *****************************************************************************
@@ -309,8 +309,8 @@ section .text
     PUSH 0x5dafd5                       ; 0047e0c3 | s_s_5_2f_5_2f_5_2f_005dafd4+1
     MOV EDI,dword ptr [0x00611100]      ; 0047e0c8 | g_CConsolePtr
     PUSH EDI                            ; 0047e0ce | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 0047e0cf
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0047e0cf
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x20                        ; 0047e0d4
     MOV EAX,dword ptr [ESP + 0x7c]      ; 0047e0d7
     ADD EAX,0x44                        ; 0047e0db

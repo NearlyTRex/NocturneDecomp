@@ -23,7 +23,7 @@ void __cdecl core_crate_cpp_FUN_00449600(CCrate *this_ptr)
   if ((this_ptr->base).lifecycle_state != ACTOR_CREATED) {
     return;
   }
-  engine_console_cpp_FUN_00445430(g_CConsolePtr,"?%s exploding!\n" + 1,this_ptr);
+  engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"?%s exploding!\n" + 1);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,unaff_ESI);
   pCVar1 = &(this_ptr->base).location;
   puVar3 = auStack_38;

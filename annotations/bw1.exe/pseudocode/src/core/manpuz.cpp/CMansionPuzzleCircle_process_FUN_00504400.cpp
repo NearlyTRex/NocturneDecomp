@@ -13,7 +13,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_00504400(CMansionP
   CVector3f *pCVar2;
   int iVar3;
   
-  iVar3 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(&(this_ptr->base).location,0x41f00000);
+  iVar3 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(&(this_ptr->base).location.position,30.0)
+  ;
   if (iVar3 != 0) {
     iVar3 = 0;
     do {

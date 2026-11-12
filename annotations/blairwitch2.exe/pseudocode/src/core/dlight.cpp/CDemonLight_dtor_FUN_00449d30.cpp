@@ -13,13 +13,13 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00449d30(CDemonLight 
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDemonLightTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDemonLightTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }
   (this_ptr->base).base.vtable =
        (CCameraView_vtable *)&PTR_core_dlight_cpp_CDemonLight_dtor_FUN_00449d30_005f5074;
-  core_dlight_cpp_FUN_00449e70(this_ptr);
+  core_dlight_cpp_CDemonLight_free_FUN_00449e70(this_ptr);
   pCVar1 = (CDemonLight *)core_dcamera_cpp_CDemonCamera_dtor_FUN_0043b460(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;

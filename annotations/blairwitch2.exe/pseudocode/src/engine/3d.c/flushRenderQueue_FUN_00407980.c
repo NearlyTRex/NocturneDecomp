@@ -17,7 +17,8 @@ void __cdecl engine_3d_c_flushRenderQueue_FUN_00407980(void)
   
   if (_DAT_007ba070 != 0) {
     if (_DAT_01c37788 != 0) {
-      engine_special_cpp_drawPolyList_FUN_0055f950(&DAT_00622014,0x7ba074,_DAT_007ba070,0xcd);
+      engine_special_cpp_drawPolyList_FUN_0055f950
+                ((SRenderVertex *)&DAT_00622014,(SMRGLPrimitiveQuad **)0x7ba074,_DAT_007ba070,0xcd);
       _DAT_007ba070 = 0;
       return;
     }
@@ -28,7 +29,8 @@ void __cdecl engine_3d_c_flushRenderQueue_FUN_00407980(void)
         puVar1 = (uint *)(iVar2 + 0x7ba074);
         iVar2 = iVar2 + 4;
         iVar3 = iVar3 + 1;
-        engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70(*puVar1);
+        engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70
+                  ((SMRGLHeaderPrimitive *)*puVar1);
       } while (iVar3 < _DAT_007ba070);
     }
     _DAT_007ba070 = 0;

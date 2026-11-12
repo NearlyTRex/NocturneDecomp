@@ -205,13 +205,13 @@ void __cdecl CGame::resetInventoryDisplayTimer(CGame *this_ptr);
 // Address: 004a3ab0
 void __cdecl CGame::setStatusDisplay(CGame *this_ptr,char *name,float value,float duration);
 
-// Original: core_game.cpp_CGame_FUN_004a3b90
+// Original: core_game.cpp_CGame_saveGame_FUN_004a3b90
 // Address: 004a3b90
-void __cdecl CGame(CGame *this_ptr,char *save_filename);
+void __cdecl CGame::saveGame(CGame *this_ptr,char *save_filename);
 
-// Original: core_game.cpp_CGame_FUN_004a4170
+// Original: core_game.cpp_CGame_loadGame_FUN_004a4170
 // Address: 004a4170
-void __cdecl CGame(CGame *this_ptr,char *save_filename,int load_mode);
+void __cdecl CGame::loadGame(CGame *this_ptr,char *save_filename,int load_mode);
 
 // Original: core_game.cpp_CGame_showChapterSelect_FUN_004a4b50
 // Address: 004a4b50
@@ -221,9 +221,9 @@ void __cdecl CGame::showChapterSelect(CGame *this_ptr,int select_mode);
 // Address: 004a5740
 void __cdecl CGame::displayBitmap(CGame *this_ptr,char *filename,int width,int height);
 
-// Original: core_game.cpp_CGame_FUN_004a57c0
+// Original: core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0
 // Address: 004a57c0
-void __cdecl CGame(CGame *this_ptr);
+void __cdecl CGame::showFullscreenBitmap(CGame *this_ptr);
 
 // Original: core_game.cpp_joinNetworkGame_FUN_004a5e40
 // Address: 004a5e40

@@ -26,7 +26,7 @@
 section .text
 
     CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 004b3000
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
         ;   Label: core_game.cpp_CGame_saveClockTime_FUN_004b3000
     MOV EDX,dword ptr [ESP + 0x4]       ; 004b3005
     MOV dword ptr [EDX + 0x27c],EAX     ; 004b3009

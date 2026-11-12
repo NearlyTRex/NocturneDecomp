@@ -18,7 +18,7 @@ void __cdecl core_mobster_cpp_CMobster_archive_FUN_004ffb70(CMobster *this_ptr)
               (&(this_ptr->base).guard_distance,"guardDistance");
   }
   core_actor_cpp_archiveMotionState_FUN_0040bb60
-            (&(this_ptr->base).base.model,"motion state");
+            (&(this_ptr->base).base.model.base,"motion state");
   if (g_CMobsterClassVersion == 2) {
     core_actor_cpp_archiveClothList_FUN_0040bfd0
               (&(this_ptr->base).base.cloth_list,"clothList");

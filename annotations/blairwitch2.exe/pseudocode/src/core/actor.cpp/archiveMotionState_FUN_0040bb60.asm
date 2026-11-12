@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *motion_controller,char *property_name)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   motion_controller
+; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[32]:
 ;   core_armour.cpp_CArmour_archive_FUN_0040f040 at 0040f07d
@@ -50,7 +53,7 @@ section .text
         ;   Label: LAB_0040bb74
     PUSH EBP                            ; 0040bb7a
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0040bb7b
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 0040bb80
     MOV ESI,EAX                         ; 0040bb83
     TEST EAX,EAX                        ; 0040bb85
@@ -71,7 +74,7 @@ section .text
         ;   Label: LAB_0040bba1
     PUSH ECX                            ; 0040bba7
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0040bba8
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 0040bbad
     MOV ESI,EAX                         ; 0040bbb0
     TEST EAX,EAX                        ; 0040bbb2

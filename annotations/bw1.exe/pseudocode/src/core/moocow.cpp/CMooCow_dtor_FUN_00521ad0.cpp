@@ -18,7 +18,7 @@ CMooCow * core_moocow_cpp_CMooCow_dtor_FUN_00521ad0(CMooCow *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMooCowTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMooCowTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

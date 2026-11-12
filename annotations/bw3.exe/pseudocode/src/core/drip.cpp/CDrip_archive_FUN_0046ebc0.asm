@@ -43,7 +43,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 0046ebd7
     PUSH EAX                            ; 0046ebdd
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0 ; 0046ebde
-        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0()
+        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0046ebe3
     PUSH 0x5bc730                       ; 0046ebe6 | DAT_005bc730
     LEA EAX,[EBX + 0x2d4]               ; 0046ebeb
@@ -61,13 +61,13 @@ section .text
     LEA EAX,[EBX + 0x2f8]               ; 0046ec13
     PUSH EAX                            ; 0046ec19
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 0046ec1a
-        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b400()
+        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b400(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 0046ec1f
     PUSH 0x5bc746                       ; 0046ec22 | DAT_005bc746
     LEA EAX,[EBX + 0x304]               ; 0046ec27
     PUSH EAX                            ; 0046ec2d
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 0046ec2e
-        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b400()
+        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b400(CVector3f * vector_ptr, char * property_name)
     MOV ECX,dword ptr [0x005f4a44]      ; 0046ec33 | g_CDripClassVersion
     ADD ESP,0x8                         ; 0046ec39
     CMP ECX,0x3                         ; 0046ec3c
@@ -77,19 +77,19 @@ section .text
     LEA EAX,[EBX + 0x2e0]               ; 0046ec46
     PUSH EAX                            ; 0046ec4c
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0046ec4d
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0046ec52
     PUSH 0x5bc75a                       ; 0046ec55 | = "maxAutoDripTime"
     LEA EAX,[EBX + 0x2e4]               ; 0046ec5a
     PUSH EAX                            ; 0046ec60
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0046ec61
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0046ec66
     PUSH 0x5bc76a                       ; 0046ec69 | = "dripRadius"
     LEA EAX,[EBX + 0x2e8]               ; 0046ec6e
     PUSH EAX                            ; 0046ec74
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0046ec75
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0046ec7a
     CMP dword ptr [0x005f4a44],0x4      ; 0046ec7d | g_CDripClassVersion
         ;   Label: LAB_0046ec7d
@@ -99,7 +99,7 @@ section .text
     LEA EAX,[EBX + 0x310]               ; 0046ec8b
     PUSH EAX                            ; 0046ec91
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0046ec92
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 0046ec97
     CMP dword ptr [0x005f4a44],0x5      ; 0046ec9a | g_CDripClassVersion
         ;   Label: LAB_0046ec9a

@@ -15,7 +15,7 @@ CAmmoManaLarge * core_ammo_cpp_CAmmoManaLarge_dtor_FUN_0040e470(CAmmoManaLarge *
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CAmmoManaLargeTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CAmmoManaLargeTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

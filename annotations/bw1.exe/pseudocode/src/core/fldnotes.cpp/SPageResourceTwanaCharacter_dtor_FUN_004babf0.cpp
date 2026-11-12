@@ -15,8 +15,7 @@ SPageResourceTwanaCharacter * core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete
-                            (this_ptr,&g_PageResource_TwanaCharacterTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_PageResource_TwanaCharacterTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

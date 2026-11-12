@@ -128,7 +128,7 @@ LAB_00559542:
     pcVar5 = (char *)0x0;
 LAB_005595a2:
     if (pcVar5 == (char *)0x0) {
-      core_sound_cpp_FUN_005593d0(0x0264B290,local_a8,local_170);
+      core_sound_cpp_CSound_findRandomSoundFile_FUN_005593d0(0x0264B290,local_a8,local_170);
     }
     else {
       local_44 = x;
@@ -167,7 +167,7 @@ LAB_005595a2:
               cVar4 = *pcVar9;
             }
             *pcVar5 = '\0';
-            core_sound_cpp_FUN_005593d0(0x0264B290,local_a8,local_10c);
+            core_sound_cpp_CSound_findRandomSoundFile_FUN_005593d0(0x0264B290,local_a8,local_10c);
             if (local_a8[0] != '\0') break;
           }
           iVar8 = iVar8 + 1;
@@ -178,7 +178,7 @@ LAB_005595a2:
       } while (local_1c < local_18);
     }
     if (local_a8[0] == '\0') {
-      engine_console_cpp_FUN_00436710();
+      engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"Can't find wav: %s\n");
       return 0;
     }
     cVar4 = *local_14;

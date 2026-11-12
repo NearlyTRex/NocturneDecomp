@@ -124,11 +124,13 @@ LAB_00455742:
     local_34 = core_motion_cpp_FUN_00503f50(&param_1->model,local_3c,param_1->layer_action_t);
     local_14 = (float)local_34;
     core_actor_cpp_castToClassHash_FUN_0040c8f0
-              ((&param_1[2].damage_decals[2].transform.m[0].y)
+              ((CDemonActor *)
+               (&param_1[2].damage_decals[2].transform.m[0].y)
                [*(int *)&param_1[2].follow_formation.slots[0xb].field_0x34],
                g_CGunClassInfo.name_hash);
     core_actor_cpp_castToClassHash_FUN_0040c8f0
-              ((&param_1[2].damage_decals[2].transform.m[0].y)
+              ((CDemonActor *)
+               (&param_1[2].damage_decals[2].transform.m[0].y)
                [*(int *)&param_1[2].follow_formation.slots[0xb].field_0x34],
                g_CMeleeClassInfo.name_hash);
     iVar2 = _DAT_01b4d29c;

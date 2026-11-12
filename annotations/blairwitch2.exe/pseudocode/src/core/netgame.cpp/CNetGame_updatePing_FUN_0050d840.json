@@ -16,6 +16,12 @@
   },
   "cross_references": [
     {
+      "addr": "0050f120",
+      "from_addr": "0050f169",
+      "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050ecb0",
       "from_addr": "0050ed6e",
       "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0",
@@ -31,12 +37,6 @@
       "addr": "0050bdb0",
       "from_addr": "0050c06f",
       "name": "core_netgame.cpp_CNetGame_syncPlayers_FUN_0050bdb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050f120",
-      "from_addr": "0050f169",
-      "name": "core_netgame.cpp_FUN_0050f120",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -160,7 +160,7 @@
       {
         "call_addr": "0050f169",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050f120",
+        "caller": "core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -227,6 +227,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 883
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0052ea10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9783
+    },
+    "bw3.exe": {
+      "addr": "00506320",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00541c80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9783
+    },
+    "nocturne.exe": {
+      "addr": "004ebe10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9783
+    }
   },
   "stack_frame": {
     "frame_size": 64,

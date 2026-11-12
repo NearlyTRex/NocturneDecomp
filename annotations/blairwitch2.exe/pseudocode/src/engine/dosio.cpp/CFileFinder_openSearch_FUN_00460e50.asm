@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   search_pattern
 ;
 ; XREF[6]:
-;   core_podmain.cpp_FUN_0051c000 at 0051c040
+;   core_podmain.cpp_CDemonPod_load_FUN_0051c000 at 0051c040
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00481870 at 004819c1
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70 at 00481bb4
 ;   shape_edittool.cpp_FUN_0047cb1e at 0047cc09

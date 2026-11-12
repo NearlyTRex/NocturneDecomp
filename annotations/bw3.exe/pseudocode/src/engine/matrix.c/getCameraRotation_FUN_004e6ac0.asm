@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_matrix_c_getCameraRotation_FUN_004e6ac0(void)
+; void __esi engine_matrix_c_getCameraRotation_FUN_004e6ac0(CVector3i *output)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   engine_drender.cpp_FUN_0046d230 at 0046d23b
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230 at 0046d23b
 ;   engine_drender.cpp_FUN_0046d250 at 0046d25f
 ;
 ; Referenced Globals:

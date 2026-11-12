@@ -2,15 +2,15 @@
 // Address: 0055c0b0
 // Address Range: [[0055c0b0, 0055c0d2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_0055c0b0(int param_1)
+// Signature: C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_0055c0b0(C3DSCamera *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_0055c0b0(int param_1)
+C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_0055c0b0(C3DSCamera *this_ptr)
 
 {
-  *(uint *)(param_1 + 0x194) = 0;
-  *(uint *)(param_1 + 0x198) = 0;
-  *(uint *)(param_1 + 0x150) = 1;
-  return;
+  this_ptr->pvs_count = 0;
+  this_ptr->pvs_list = (int *)0x0;
+  this_ptr->use_global_fog = 1;
+  return this_ptr;
 }

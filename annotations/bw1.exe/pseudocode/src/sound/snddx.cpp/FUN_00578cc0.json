@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 260,
+    "complexity_score": 261,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 85,
+    "pseudocode_lines": 86,
     "suspect_count": 15,
     "suspect_types": [
       "stack_ref",
@@ -16,7 +16,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 323
+    "total_lines": 324
   },
   "cross_references": [],
   "function": {
@@ -45,7 +45,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     },
     {
       "addr": "00577500",
@@ -264,6 +264,14 @@
     },
     "pcode_op_count": 944
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00556290",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -339,7 +347,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 41,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar3 = param_2 * 0x18;",
@@ -347,7 +355,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
       "text": "*(int *)(iVar4 + 0x2c823e8) = param_2;",
@@ -355,7 +363,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 55,
+      "line": 56,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (**(code **)(*_DAT_02c81d94 + 0x14))();",
@@ -363,7 +371,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 67,
       "match": "param_2",
       "severity": "mild",
       "text": "*(int *)(iVar4 + 0x2c823e8) = param_2;",
@@ -371,7 +379,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 73,
+      "line": 74,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar5 = (*(code *)**(uint **)*piVar7)();",
@@ -379,7 +387,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 76,
+      "line": 77,
       "match": "&stack0xfffffcc4",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffffcc4,\"DirectSux: Unable to %s.  (%s)\");",
@@ -387,7 +395,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 77,
+      "line": 78,
       "match": "&stack0xfffffcc4",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_FUN_005773f0(&stack0xfffffcc4);",

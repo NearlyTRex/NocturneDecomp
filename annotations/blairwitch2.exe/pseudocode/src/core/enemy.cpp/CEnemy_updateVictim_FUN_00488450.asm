@@ -29,7 +29,7 @@
 ;   core_enemy.cpp_FUN_00488320
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00513650
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -367,8 +367,8 @@ section .text
     MOV dword ptr [EAX + 0x10a78],ESI   ; 0048880e
     MOV ESI,dword ptr [0x00609ed0]      ; 00488814 | g_CConsolePtr
     PUSH ESI                            ; 0048881a | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0048881b
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0048881b
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00488820
     MOV ESP,EBP                         ; 00488823
     POP EBP                             ; 00488825

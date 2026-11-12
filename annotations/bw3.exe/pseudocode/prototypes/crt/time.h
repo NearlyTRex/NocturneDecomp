@@ -7,12 +7,12 @@
 
 // Original: crt_time.c__mktime_FUN_005a4f20
 // Address: 005a4f20
-int __cdecl ::mktime(int *param_1);
+time_t __cdecl ::mktime(_tm *timeptr);
 
 // Original: crt_time.c__localtime_FUN_005a5628
 // Address: 005a5628
-void __cdecl ::localtime(undefined4 param_1);
+_tm * __cdecl ::localtime(time_t *timer);
 
 // Original: crt_time.c__strftime_FUN_005a5674
 // Address: 005a5674
-uint __cdecl ::strftime(int param_1,uint param_2,char *param_3,undefined4 *param_4);
+uint __cdecl ::strftime(char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr);

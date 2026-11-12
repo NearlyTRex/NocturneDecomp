@@ -21,9 +21,9 @@ CPackedBitmap * __cdecl CPackedBitmap::dtor(CPackedBitmap *this_ptr,uint flags);
 // Address: 004f3f20
 void __cdecl CPackedBitmap::reset(CPackedBitmap *this_ptr);
 
-// Original: cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50
 // Address: 004f3f50
-void __cdecl CPackedBitmap(CPackedBitmap *this_ptr);
+void __cdecl CPackedBitmap::free(CPackedBitmap *this_ptr);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80
 // Address: 004f3f80
@@ -121,25 +121,13 @@ void __cdecl CPackedBitmap::loadPBMFile(CPackedBitmap *this_ptr,int apply_palett
 // Address: 004f4f10
 void __cdecl writePBGHeader(int total_entries,_FILE *file_header);
 
-// Original: cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90
+// Original: cockpit_pkbitmap.cpp_parsePBGFile_FUN_004f4f90
 // Address: 004f4f90
-CPackedBitmap * __cdecl CPackedBitmapSet(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
+CPackedBitmap * __cdecl parsePBGFile(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
 
-// Original: cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5110
+// Original: cockpit_pkbitmap.cpp_loadPBGFile_FUN_004f5110
 // Address: 004f5110
-CPackedBitmap * __cdecl CPackedBitmapSet(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
-
-// Original: cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5290
-// Address: 004f5290
-void __cdecl CPackedBitmapSet(CPackedBitmapSet *this_ptr);
-
-// Original: cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f52c0
-// Address: 004f52c0
-void __cdecl CPackedBitmapSet(CPackedBitmapSet *this_ptr);
-
-// Original: cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320
-// Address: 004f5320
-void __cdecl CPackedBitmapSet(CPackedBitmapSet *this_ptr);
+CPackedBitmap * __cdecl loadPBGFile(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_getWidth_FUN_004f5cf0
 // Address: 004f5cf0

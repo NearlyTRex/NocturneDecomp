@@ -1,20 +1,20 @@
 // Name: core_teleport.cpp_factoryFuncTeleport_FUN_00568dd0
 // Address: 00568dd0
 // Address Range: [[00568dd0, 00568deb]]
-// Convention: unknown
-// Signature: void core_teleport_cpp_factoryFuncTeleport_FUN_00568dd0(void)
+// Convention: __cdecl
+// Signature: CTeleport * __cdecl core_teleport_cpp_factoryFuncTeleport_FUN_00568dd0(void)
 
 #include "nocturne.h"
 
-void core_teleport_cpp_factoryFuncTeleport_FUN_00568dd0(void)
+CTeleport * __cdecl core_teleport_cpp_factoryFuncTeleport_FUN_00568dd0(void)
 
 {
-  CTeleport *this_ptr;
+  CTeleport *pCVar1;
   
-  this_ptr = (CTeleport *)operator_new(0x168);
-  if (this_ptr == (CTeleport *)0x0) {
-    return;
+  pCVar1 = (CTeleport *)operator_new(0x168);
+  if (pCVar1 == (CTeleport *)0x0) {
+    return (CTeleport *)0x0;
   }
-  core_teleport_cpp_CTeleport_ctor_FUN_00568e00(this_ptr);
-  return;
+  pCVar1 = core_teleport_cpp_CTeleport_ctor_FUN_00568e00(pCVar1);
+  return pCVar1;
 }

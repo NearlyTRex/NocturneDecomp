@@ -11,7 +11,7 @@ void staticInit(void);
 
 // Original: core_platfrm.cpp_factoryFuncPlatform_FUN_005110b0
 // Address: 005110b0
-void factoryFuncPlatform(void);
+CPlatform * __cdecl factoryFuncPlatform(void);
 
 // Original: core_platfrm.cpp_CPlatform_getActorType_FUN_005110d0
 // Address: 005110d0

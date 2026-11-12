@@ -18,7 +18,7 @@ CDjien * core_djien_cpp_CDjien_dtor_FUN_004623b0(CDjien *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CDjienTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDjienTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

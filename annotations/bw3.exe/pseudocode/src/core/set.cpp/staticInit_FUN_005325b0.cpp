@@ -10,13 +10,13 @@ void __cdecl core_set_cpp_staticInit_FUN_005325b0(void)
 
 {
   core_set_cpp_CDemonSet_ctor_FUN_005327c0(&g_CDemonSetInstance);
-  _atexit();
+  _atexit(&g_CDemonSetDestructorNode);
   core_dcamera_cpp_CDemonCamera_ctor_FUN_00448be0(&g_CDemonCameraInstance);
-  _atexit();
+  _atexit(&g_CDemonCameraDestructorNode);
   core_dtrace_cpp_CDemonRaytrace_ctor_FUN_00473470(&g_CDemonRaytraceInstance);
-  _atexit();
+  _atexit(&g_CDemonRaytraceDestructorNode);
   core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00460490(&g_CKeyFramedModelInstance);
-  _atexit();
-  __arrinit(&DAT_02080010);
+  _atexit(&g_CKeyFramedModelDestructorNode);
+  __arrinit(&DAT_02080010,4000,&g_CVectorTypeInfo);
   return;
 }

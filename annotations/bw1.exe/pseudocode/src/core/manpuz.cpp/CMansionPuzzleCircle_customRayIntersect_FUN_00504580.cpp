@@ -17,6 +17,7 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_005045
   CKeyFramedModel *pCVar4;
   int iVar5;
   CBoundingBox3D *pCVar6;
+  CDemonTriangle *triangle;
   float *pfVar7;
   byte bVar8;
   float afStackY_115c [1005];
@@ -144,17 +145,17 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_005045
     iStack_20 = (int)&(pSStack_38->color).r + iStack_2c;
     iStack_18 = 0;
     do {
-      iVar5 = iStack_20 + 0x3c + iStack_18;
-      fStack_14 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_0048ff40
-                                   (iVar5,ray_origin,ray_direction);
+      triangle = (CDemonTriangle *)(iStack_20 + 0x3c + iStack_18);
+      fStack_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0048ff40
+                            (triangle,ray_origin,ray_direction);
       fStack_198 = fStack_14;
       if ((0.0 <= fStack_14) && (fStack_14 < fStack_1c)) {
         fStack_1c = fStack_14;
+        fStack_6c = -(triangle->normal).x;
         pfVar7 = &stack0xfffffe8c;
-        fStack_6c = -*(float *)(iVar5 + 0x24);
-        fStack_68 = -*(float *)(iVar5 + 0x28);
-        fStack_64 = -*(float *)(iVar5 + 0x2c);
-        fStack_174 = -*(float *)(iVar5 + 0x24);
+        fStack_68 = -(triangle->normal).y;
+        fStack_64 = -(triangle->normal).z;
+        fStack_174 = fStack_6c;
         *(float *)((int)&stack0xfffffe90 + (uint)bVar8 * 0xfffffffe * 4) =
              afStack_98[(uint)bVar8 * -2 + 0xc];
         *(float *)(&stack0xfffffe94 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =

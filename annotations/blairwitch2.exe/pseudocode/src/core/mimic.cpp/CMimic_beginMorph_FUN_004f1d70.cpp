@@ -14,7 +14,7 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_004f1d70(CMimic *this_ptr)
 {
   UOrientationVector *pUVar1;
   CDemonActor *pCVar2;
-  CConsole *pCVar3;
+  CConsole *this_ptr_00;
   
   if (this_ptr->morph_target_actor == (CDemonActor *)0x0) {
     _DAT_01d046a0 = "..\\core\\mimic.cpp";
@@ -41,9 +41,8 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_004f1d70(CMimic *this_ptr)
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
             (&(this_ptr->base).base.model.base,0,1);
   core_mimic_cpp_CMimic_processMorph_FUN_004f1e90(this_ptr,0.0);
-  pCVar3 = g_CConsolePtr;
+  this_ptr_00 = g_CConsolePtr;
   (this_ptr->base).base.base.is_transparent = 1;
-  engine_console_cpp_FUN_00436710
-            (pCVar3,"%s morphing into type %s\n",this_ptr,this_ptr->morph_actor_type);
+  engine_console_cpp_CConsole_printf_FUN_00436710(this_ptr_00,"%s morphing into type %s\n");
   return;
 }

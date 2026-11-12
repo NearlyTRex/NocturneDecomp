@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_0050ce70
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0
-;   core_netgame.cpp_FUN_0050b790
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790
 ;   shape_edittool.cpp_FUN_0047be90
 ;   support_trisock.cpp_createNetworkAddr_FUN_00578e60
 ;
@@ -56,7 +56,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0050b473
     PUSH EAX                            ; 0050b477
     CALL support_trisock.cpp_createNetworkAddr_FUN_00578e60 ; 0050b478
-        ;   XREF to: 00578e60 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_createNetworkAddr_FUN_00578e60()
+        ;   XREF to: 00578e60 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_createNetworkAddr_FUN_00578e60(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)
     ADD ESP,0xc                         ; 0050b47d
     PUSH EAX                            ; 0050b480
     PUSH EBX                            ; 0050b481
@@ -66,8 +66,8 @@ section .text
     MOV dword ptr [EBX + 0x124],EAX     ; 0050b48a
     PUSH EBX                            ; 0050b490
     MOV dword ptr [EBX + 0x120],EAX     ; 0050b491
-    CALL core_netgame.cpp_FUN_0050b790  ; 0050b497
-        ;   XREF to: 0050b790 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_FUN_0050b790(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790 ; 0050b497
+        ;   XREF to: 0050b790 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0050b49c
     TEST EAX,EAX                        ; 0050b49f
     JNZ 0x0050b4aa                      ; 0050b4a1

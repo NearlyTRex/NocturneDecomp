@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 004837e2
     FISTP dword ptr [ESP + 0x10]        ; 004837e3
     CALL engine_3d.c_processCameraRelativePoint_FUN_004037e0 ; 004837e7
-        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_processCameraRelativePoint_FUN_004037e0()
+        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(SMRGLPoint * block)
     ADD ESP,0x4                         ; 004837ec
     ADD ESP,0x10                        ; 004837ef
     RET                                 ; 004837f2

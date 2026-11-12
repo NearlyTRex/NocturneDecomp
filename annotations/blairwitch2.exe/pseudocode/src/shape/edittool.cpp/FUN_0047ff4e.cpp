@@ -11,18 +11,15 @@
 void shape_edittool_cpp_FUN_0047ff4e(uint param_1,uint param_2,uint param_3,float *param_4,float *param_5)
 
 {
-  byte auStack_28 [4];
-  int iStack_24;
-  int iStack_20;
-  int iStack_1c;
+  SMRGLPoint SStack_28;
   int iStack_18;
   int iStack_14;
   int iStack_10;
   
-  iStack_24 = (int)ROUND(*param_4 * _DAT_005f5cec);
-  iStack_20 = (int)ROUND(param_4[1] * _DAT_005f5cec);
-  iStack_1c = (int)ROUND(param_4[2] * _DAT_005f5cec);
-  engine_3d_c_processCameraRelativePoint_FUN_00403830(auStack_28);
+  SStack_28.point.x = (int)ROUND(*param_4 * _DAT_005f5cec);
+  SStack_28.point.y = (int)ROUND(param_4[1] * _DAT_005f5cec);
+  SStack_28.point.z = (int)ROUND(param_4[2] * _DAT_005f5cec);
+  engine_3d_c_processCameraRelativePoint_FUN_00403830(&SStack_28);
   iStack_18 = (int)ROUND(*param_5 * _DAT_005f5cfc);
   iStack_14 = (int)ROUND(param_5[2] * _DAT_005f5cfc);
   iStack_10 = (int)ROUND(param_5[1] * _DAT_005f5cfc);

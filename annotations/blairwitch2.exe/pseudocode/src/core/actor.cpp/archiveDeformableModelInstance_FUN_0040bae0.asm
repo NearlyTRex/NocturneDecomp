@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeformableModelInstance *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeformableModelInstance *model_ptr,char *property_name)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   model_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined        Stack[-0xd0]:1  local_d0
 ; undefined1       Stack[-0xcf]:1  local_cf

@@ -18,7 +18,7 @@ CYow * core_yow_cpp_CYow_dtor_FUN_005b95a0(CYow *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CYowTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CYowTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

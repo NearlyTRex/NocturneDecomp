@@ -540,8 +540,8 @@ section .text
     PUSH 0x5f158d                       ; 0055e4c8 | = "%s confused while walking to scriptDe..."
     MOV EAX,[0x00611100]                ; 0055e4cd | g_CConsolePtr
     PUSH EAX                            ; 0055e4d2 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 0055e4d3
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0055e4d3
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     JMP 0x0055e030                      ; 0055e4d8
         ;   XREF to: 0055e030 (UNCONDITIONAL_JUMP)  ; LAB_0055e030
     PUSH 0x1                            ; 0055e4dd
@@ -1683,8 +1683,8 @@ section .text
     PUSH 0x5f15b9                       ; 0055f331 | = "%s gave up chase - I'm confused\n"
     MOV EAX,[0x00611100]                ; 0055f336 | g_CConsolePtr
     PUSH EAX                            ; 0055f33b | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 0055f33c
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0055f33c
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0055f341
     PUSH 0x1                            ; 0055f344
     PUSH 0x4                            ; 0055f346

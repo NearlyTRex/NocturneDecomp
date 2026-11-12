@@ -50,8 +50,8 @@ void __cdecl core_lightpis_cpp_CLightPis_process_FUN_00502480(CLightPis *this_pt
     core_lightpis_cpp_FUN_005017f0(this_ptr);
     if (this_ptr->fire_flash_pending != 0) {
       g_CDemonLightInstance.antialiasing_enabled = 1;
-      filter_ptr = (CDemonFilter *)
-                   core_dfilter_cpp_FUN_0045d7c0(g_CFilterCachePtr,"spark2.raw",0);
+      filter_ptr = core_dfilter_cpp_CFilterCache_getFilter_FUN_0045d7c0
+                             (g_CFilterCachePtr,"spark2.raw",0);
       core_dlight_cpp_CDemonLight_applyFilter_FUN_00463e30(&g_CDemonLightInstance,filter_ptr,0,0,0);
       core_weather_cpp_CWeather_createLightningStrike_FUN_005ae580(0x02C997C0,0.1,0);
     }

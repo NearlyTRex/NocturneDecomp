@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 685,
-    "complexity_score": 2064,
+    "complexity_score": 2043,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 309,
-    "suspect_count": 170,
+    "pseudocode_lines": 313,
+    "suspect_count": 168,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -18,11 +18,10 @@
       "stack_ref",
       "tautological_addr_guard",
       "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 994
+    "total_lines": 998
   },
   "cross_references": [
     {
@@ -1454,16 +1453,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 189,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0xe0))(), iVar2 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 190,
+      "line": 193,
       "match": "param_9",
       "severity": "mild",
       "text": "param_9 = iVar4;",
@@ -1471,7 +1462,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 191,
+      "line": 194,
       "match": "param_8",
       "severity": "mild",
       "text": "param_8 = 0xff;",
@@ -1479,23 +1470,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 192,
+      "line": 195,
       "match": "param_7",
       "severity": "mild",
       "text": "param_7 = 0xff;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 196,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar3 = (**(code **)(*(int *)(iVar4 + 0x154) + 0xe0))(), iVar2 = _DAT_01d5ba14,",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 206,
+      "line": 210,
       "match": "param_3",
       "severity": "mild",
       "text": "fStack_148 = *param_3;",
@@ -1503,7 +1486,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 207,
+      "line": 211,
       "match": "&stack0xfffffebc",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffebc + (uint)bVar7 * -8) = param_3[(uint)bVar7 * -2 + 1];",
@@ -1511,7 +1494,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 207,
+      "line": 211,
       "match": "param_3",
       "severity": "mild",
       "text": "*(float *)((int)&stack0xfffffebc + (uint)bVar7 * -8) = param_3[(uint)bVar7 * -2 + 1];",
@@ -1519,7 +1502,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 208,
+      "line": 212,
       "match": "&stack0xfffffec0",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffec0 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
@@ -1527,7 +1510,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 209,
+      "line": 213,
       "match": "param_3",
       "severity": "mild",
       "text": "(param_3 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];",
@@ -1535,7 +1518,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 223,
+      "line": 227,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar1 = fStack_140 * param_3[2] + fStack_148 * *param_3 + fStack_144 * param_3[1];",
@@ -1543,7 +1526,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 223,
+      "line": 227,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar1 = fStack_140 * param_3[2] + fStack_148 * *param_3 + fStack_144 * param_3[1];",
@@ -1551,7 +1534,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 223,
+      "line": 227,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar1 = fStack_140 * param_3[2] + fStack_148 * *param_3 + fStack_144 * param_3[1];",
@@ -1559,7 +1542,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 237,
+      "line": 241,
       "match": "param_21",
       "severity": "mild",
       "text": "param_21 = fStack_1c;",
@@ -1567,7 +1550,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 238,
+      "line": 242,
       "match": "param_4",
       "severity": "mild",
       "text": "(*((local_18->vtable)._ub)->onLaserHit)(local_18,(SLaserInfo *)&param_4);",
@@ -1575,7 +1558,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 241,
+      "line": 245,
       "match": "param_11",
       "severity": "mild",
       "text": "if (param_11 != 0) {",
@@ -1583,7 +1566,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 242,
+      "line": 246,
       "match": "param_4",
       "severity": "mild",
       "text": "local_168 = param_4;",
@@ -1591,7 +1574,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 244,
+      "line": 248,
       "match": "param_24",
       "severity": "mild",
       "text": "if (0.0 < param_24) {",
@@ -1599,7 +1582,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 245,
+      "line": 249,
       "match": "param_3",
       "severity": "mild",
       "text": "local_20 = (local_f4.z * param_3[2] + local_f4.x * *param_3 + local_f4.y * param_3[1]) *",
@@ -1607,7 +1590,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 245,
+      "line": 249,
       "match": "param_3",
       "severity": "mild",
       "text": "local_20 = (local_f4.z * param_3[2] + local_f4.x * *param_3 + local_f4.y * param_3[1]) *",
@@ -1615,7 +1598,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 245,
+      "line": 249,
       "match": "param_3",
       "severity": "mild",
       "text": "local_20 = (local_f4.z * param_3[2] + local_f4.x * *param_3 + local_f4.y * param_3[1]) *",
@@ -1623,7 +1606,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 251,
+      "line": 255,
       "match": "&stack0xfffffea4",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffea4 + (uint)bVar7 * -8) = local_b4[(uint)bVar7 * -2];",
@@ -1631,7 +1614,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 252,
+      "line": 256,
       "match": "&stack0xfffffea8",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffea8 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
@@ -1639,7 +1622,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 254,
+      "line": 258,
       "match": "param_3",
       "severity": "mild",
       "text": "local_b4[2] = fVar1 - *param_3;",
@@ -1647,7 +1630,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 255,
+      "line": 259,
       "match": "param_3",
       "severity": "mild",
       "text": "local_b4[3] = local_15c - param_3[1];",
@@ -1655,7 +1638,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 256,
+      "line": 260,
       "match": "param_3",
       "severity": "mild",
       "text": "local_a4 = local_158 - param_3[2];",
@@ -1663,7 +1646,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 275,
+      "line": 279,
       "match": "param_4",
       "severity": "mild",
       "text": "puVar5 = &param_4;",
@@ -1671,7 +1654,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 276,
+      "line": 280,
       "match": "&stack0xfffffe30",
       "severity": "moderate",
       "text": "puVar6 = (uint *)&stack0xfffffe30;",
@@ -1679,7 +1662,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 282,
+      "line": 286,
       "match": "param_1",
       "severity": "mild",
       "text": "core_fire_cpp_FUN_004a2e20(param_1,&local_c4,&local_dc);",
@@ -1687,7 +1670,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 284,
+      "line": 288,
       "match": "param_24",
       "severity": "mild",
       "text": "local_168 = (1.0 - param_24) * (float)_DAT_005c09e8 * local_168;",
@@ -1695,7 +1678,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 286,
+      "line": 290,
       "match": "param_22",
       "severity": "mild",
       "text": "if (param_22 <= 0.0) goto LAB_004a32cf;",
@@ -1703,7 +1686,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 287,
+      "line": 291,
       "match": "param_22",
       "severity": "mild",
       "text": "if ((param_22 != 1.0) || (param_23 != param_21)) break;",
@@ -1711,7 +1694,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 287,
+      "line": 291,
       "match": "param_23",
       "severity": "mild",
       "text": "if ((param_22 != 1.0) || (param_23 != param_21)) break;",
@@ -1719,7 +1702,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 287,
+      "line": 291,
       "match": "param_21",
       "severity": "mild",
       "text": "if ((param_22 != 1.0) || (param_23 != param_21)) break;",
@@ -1727,7 +1710,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 290,
+      "line": 294,
       "match": "param_3",
       "severity": "mild",
       "text": "local_88[0] = *param_3;",
@@ -1735,7 +1718,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 291,
+      "line": 295,
       "match": "param_3",
       "severity": "mild",
       "text": "local_b4[(uint)bVar7 * -2 + 0xc] = param_3[(uint)bVar7 * -2 + 1];",
@@ -1743,7 +1726,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 294,
+      "line": 298,
       "match": "param_3",
       "severity": "mild",
       "text": "(param_3 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];",
@@ -1751,7 +1734,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 297,
+      "line": 301,
       "match": "param_4",
       "severity": "mild",
       "text": "puVar5 = &param_4;",
@@ -1759,7 +1742,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 298,
+      "line": 302,
       "match": "&stack0xfffffe30",
       "severity": "moderate",
       "text": "puVar6 = (uint *)&stack0xfffffe30;",
@@ -1767,7 +1750,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 304,
+      "line": 308,
       "match": "param_1",
       "severity": "mild",
       "text": "core_fire_cpp_FUN_004a2e20(param_1,&local_c4,local_b4 + 0xb);",
@@ -1775,7 +1758,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 305,
+      "line": 309,
       "match": "param_22",
       "severity": "mild",
       "text": "local_168 = (1.0 - param_22) * (float)_DAT_005c09e8 * local_168;",
@@ -1783,7 +1766,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 309,
+      "line": 313,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,&local_e8,&local_c4,param_4,local_168,&local_f4,param_7,param_8,param_9,",
@@ -1791,7 +1774,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 309,
+      "line": 313,
       "match": "param_4",
       "severity": "mild",
       "text": "(param_1,&local_e8,&local_c4,param_4,local_168,&local_f4,param_7,param_8,param_9,",
@@ -1799,7 +1782,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 309,
+      "line": 313,
       "match": "param_7",
       "severity": "mild",
       "text": "(param_1,&local_e8,&local_c4,param_4,local_168,&local_f4,param_7,param_8,param_9,",
@@ -1807,7 +1790,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 309,
+      "line": 313,
       "match": "param_8",
       "severity": "mild",
       "text": "(param_1,&local_e8,&local_c4,param_4,local_168,&local_f4,param_7,param_8,param_9,",
@@ -1815,7 +1798,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 309,
+      "line": 313,
       "match": "param_9",
       "severity": "mild",
       "text": "(param_1,&local_e8,&local_c4,param_4,local_168,&local_f4,param_7,param_8,param_9,",
@@ -1823,7 +1806,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 310,
+      "line": 314,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5);",
@@ -1927,7 +1910,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffebc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 207,
+      "line": 211,
       "match": "(int)&stack0xfffffebc",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffebc + (uint)bVar7 * -8) = param_3[(uint)bVar7 * -2 + 1];",
@@ -1935,7 +1918,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffec0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 208,
+      "line": 212,
       "match": "(int)&stack0xfffffec0",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffec0 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
@@ -1943,7 +1926,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffea4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 251,
+      "line": 255,
       "match": "(int)&stack0xfffffea4",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffea4 + (uint)bVar7 * -8) = local_b4[(uint)bVar7 * -2];",
@@ -1951,7 +1934,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffea8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 252,
+      "line": 256,
       "match": "(int)&stack0xfffffea8",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffea8 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
@@ -1959,7 +1942,7 @@
     },
     {
       "description": "Raw hex address 0x4a3306 assigned to bare local `uStack_1a4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_1a4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 307,
+      "line": 311,
       "match": "0x4a3306",
       "severity": "moderate",
       "text": "uStack_1a4 = 0x4a3306;",
@@ -1967,7 +1950,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 277,
+      "line": 281,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x15; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -1975,7 +1958,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 299,
+      "line": 303,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0x15; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -2127,7 +2110,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 207,
+      "line": 211,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffebc + (uint)bVar7 * -8) = param_3[(uint)bVar7 * -2 + 1];",
@@ -2135,7 +2118,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 208,
+      "line": 212,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffec0 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
@@ -2143,7 +2126,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 251,
+      "line": 255,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffea4 + (uint)bVar7 * -8) = local_b4[(uint)bVar7 * -2];",
@@ -2151,7 +2134,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 252,
+      "line": 256,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xfffffea8 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",

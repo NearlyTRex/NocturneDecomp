@@ -11,6 +11,7 @@
     "importable":true,
     "name":"engine_2d.c_drawCharacterMasked_FUN_0040190e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -29,6 +30,7 @@
     "importable":true,
     "name":"engine_2d.c_wrapTextToWidth_FUN_00401d8e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -47,24 +49,7 @@
     "importable":true,
     "name":"engine_2d.c_getInputWithPrompt_FUN_0040330e",
     "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"0044360e",
-    "body":[
-      {
-        "end":"0044360f",
-        "size":2,
-        "start":"0044360e"
-      }
-    ],
-    "importable":true,
-    "name":"core_dcamera.cpp_FUN_0044360e",
-    "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -88,6 +73,7 @@
     "importable":true,
     "name":"engine_drender.cpp_FUN_0046a18e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -106,6 +92,7 @@
     "importable":true,
     "name":"engine_drender.cpp_FUN_0046c28e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -124,6 +111,7 @@
     "importable":true,
     "name":"core_fire.cpp_FUN_0049eb8e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -142,6 +130,7 @@
     "importable":true,
     "name":"engine_font.cpp_FUN_004abd8e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -157,13 +146,29 @@
         "start":"004b3b0e"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_game.cpp_drawCreditsLine_FUN_004b3b0e",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"text_string",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
     }
   },
   {
@@ -178,6 +183,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_004f240e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -196,24 +202,7 @@
     "importable":true,
     "name":"engine_mini3d.cpp_FUN_004f4d0e",
     "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"004f860e",
-    "body":[
-      {
-        "end":"004f860f",
-        "size":2,
-        "start":"004f860e"
-      }
-    ],
-    "importable":true,
-    "name":"engine_mini3d.cpp_FUN_004f860e",
-    "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -232,6 +221,7 @@
     "importable":true,
     "name":"core_netgame.cpp_FUN_0050b10e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -250,6 +240,7 @@
     "importable":true,
     "name":"cockpit_pkbitmap.cpp_FUN_0051668e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -268,6 +259,7 @@
     "importable":true,
     "name":"core_podmain.cpp_FUN_0051c18e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -283,12 +275,86 @@
         "start":"0054cd8e"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"sound_sndmain.cpp_calculateDistanceGain_FUN_0054cd8e",
-    "ret":"undefined1",
+    "ret":"float",
     "vars":{
+      "params":[
+        {
+          "name":"distance",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"reference_distance",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"min_distance",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"max_distance",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -304,6 +370,7 @@
     "importable":true,
     "name":"engine_special.cpp_FUN_0055f60e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -322,6 +389,7 @@
     "importable":true,
     "name":"core_zombie.cpp_FUN_00599e0e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -340,6 +408,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bf50e",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -359,6 +428,7 @@
     "importable":true,
     "name":"crt_kernel32.c_GetCurrentDirectoryA",
     "ret":"DWORD",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000064",
     "thunk":true,
     "vars":{
@@ -421,6 +491,7 @@
     "importable":true,
     "name":"crt_user32.c_SetClipboardData",
     "ret":"HANDLE",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000041",
     "thunk":true,
     "vars":{

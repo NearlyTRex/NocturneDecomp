@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_minecar_cpp_factoryFuncMineCar_FUN_004f2030(void)
+; CMineCar * __cdecl core_minecar_cpp_factoryFuncMineCar_FUN_004f2030(void)
 ;
 ;
 ; Called Functions:

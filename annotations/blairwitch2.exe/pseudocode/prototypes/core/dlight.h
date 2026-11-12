@@ -21,9 +21,9 @@ CDemonLight * __cdecl CDemonLight::dtor(CDemonLight *this_ptr,uint flags);
 // Address: 00449d90
 void __cdecl CDemonLight::init(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_FUN_00449e70
+// Original: core_dlight.cpp_CDemonLight_free_FUN_00449e70
 // Address: 00449e70
-void FUN_00449e70(CDemonLight *param_1);
+void __cdecl CDemonLight::free(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_getRestoreMemory_FUN_00449ef0
 // Address: 00449ef0

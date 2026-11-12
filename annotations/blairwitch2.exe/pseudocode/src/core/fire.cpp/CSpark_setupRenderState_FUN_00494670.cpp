@@ -22,7 +22,7 @@ void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_00494670(CSpark *this_ptr
   float local_60;
   float local_54;
   float local_48;
-  uint local_18;
+  CVector3i local_18;
   
   bVar4 = 0;
   _DAT_01c3ded4 = 4;
@@ -42,12 +42,12 @@ void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_00494670(CSpark *this_ptr
   _DAT_006220c0 = 0x80000;
   _DAT_01c3def0 = 2;
   _DAT_01c3def4 = 3;
-  engine_drender_cpp_FUN_0046b650(DAT_0060b280);
-  _DAT_01c3deb8 = local_18;
+  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650(DAT_0060b280,&local_18);
+  _DAT_01c3deb8 = local_18.x;
   *(uint *)(&DAT_01c3debc + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xffffffec + (uint)bVar4 * -8);
+       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + 4);
   *(uint *)(&DAT_01c3dec0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)(&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   _DAT_01c3debc = 0;
   puVar2 = (uint *)(DAT_007bda74 + 0x10);
   puVar3 = (uint *)&stack0xffffffc0;

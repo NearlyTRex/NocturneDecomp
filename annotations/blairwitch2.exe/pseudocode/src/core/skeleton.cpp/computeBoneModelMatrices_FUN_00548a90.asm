@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_computeBoneModelMatrices_FUN_00548a90(float *param_1,CDeformableModelInstance *param_2)
+; void __cdecl core_skeleton_cpp_computeBoneModelMatrices_FUN_00548a90(SPose *bone_data,CDeformableModelInstance *instance_ptr)
 ;
+; Parameters:
+; SPose *          Stack[0x4]:4   bone_data
+; CDeformableModelInstance * Stack[0x8]:4   instance_ptr
 ;
 ; XREF[2]:
 ;   core_skeleton.cpp_FUN_00547910 at 00547999
@@ -11,7 +14,7 @@
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_xform.cpp_FUN_00591530
-;   core_xform.cpp_FUN_005938c0
+;   core_xform.cpp_quaternionToMatrix3x3_FUN_005938c0
 ;
 ; *****************************************************************************
 
@@ -56,8 +59,8 @@ section .text
     PUSH ECX                            ; 00548aff
     MOV EAX,dword ptr [ESP + 0x38]      ; 00548b00
     PUSH EAX                            ; 00548b04
-    CALL core_xform.cpp_FUN_005938c0    ; 00548b05
-        ;   XREF to: 005938c0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_FUN_005938c0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005938c0 ; 00548b05
+        ;   XREF to: 005938c0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005938c0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     MOV EDX,dword ptr [EBX + 0x64c]     ; 00548b0a
     ADD ESP,0x8                         ; 00548b10
     CMP EDX,0x3f800000                  ; 00548b13

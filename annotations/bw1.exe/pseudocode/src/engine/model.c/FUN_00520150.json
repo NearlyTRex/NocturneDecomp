@@ -190,6 +190,20 @@
     },
     "pcode_op_count": 363
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005011a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f89a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 108,
     "local_size": 100,
@@ -234,7 +248,7 @@
       "line": 13,
       "match": "DAT_005ea11a",
       "severity": "mild",
-      "text": "p_Var2 = engine_dosio_cpp_FUN_00479180(\"models\",filename,&DAT_005ea11a);",
+      "text": "file = engine_dosio_cpp_FUN_00479180(\"models\",filename,&DAT_005ea11a);",
       "type": "undefined_data"
     },
     {
@@ -242,7 +256,7 @@
       "line": 39,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&(pSVar3->base).type + model_size) = 0;",
+      "text": "*(uint *)((int)&(buffer->base).type + model_size) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -250,7 +264,7 @@
       "line": 42,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&(pSVar3->base).type + model_size) = 0;",
+      "text": "*(uint *)((int)&(buffer->base).type + model_size) = 0;",
       "type": "pointer_cast"
     }
   ]

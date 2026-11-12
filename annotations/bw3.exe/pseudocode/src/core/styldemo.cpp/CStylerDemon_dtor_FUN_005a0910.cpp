@@ -19,7 +19,7 @@ CStylerDemon * core_styldemo_cpp_CStylerDemon_dtor_FUN_005a0910(CStylerDemon *th
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CStylerDemonTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CStylerDemonTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }

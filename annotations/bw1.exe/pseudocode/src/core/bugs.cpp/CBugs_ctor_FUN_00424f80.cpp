@@ -11,17 +11,16 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424f80(CBugs *this_ptr)
 {
   char cVar1;
   CEnemy *pCVar2;
-  int iVar3;
+  void *pvVar3;
   CKeyFramedModelInstance *this_ptr_00;
   char *pcVar4;
   char *pcVar5;
   
   pCVar2 = core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
-  iVar3 = __arrinit
-                    (pCVar2[1].base.base.actor_name + 8,400,&g_SBugTypeInfo);
-  this_ptr_00 = (CKeyFramedModelInstance *)
-                __arrinit
-                          (iVar3 + 0x6404,4,&g_CKeyFramedModelInstanceTypeInfo);
+  pvVar3 = __arrinit
+                     (pCVar2[1].base.base.actor_name + 8,400,&g_SBugTypeInfo);
+  this_ptr_00 = (CKeyFramedModelInstance *)__arrinit
+                          ((void *)((int)pvVar3 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);
   *(CEnemy_full_vtable **)(this_ptr_00[-0xc6].model_name + 0x50) = &g_CBugsVTable;
   this_ptr_00[-0xffffffff00000044].model_name[0x6c] = '\0';
   this_ptr_00[-0xffffffff00000044].model_name[0x6d] = '\0';

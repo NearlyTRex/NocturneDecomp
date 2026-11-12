@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_crate_cpp_factoryFuncCrate_FUN_00445ba0(void)
+; CCrate * __cdecl core_crate_cpp_factoryFuncCrate_FUN_00445ba0(void)
 ;
 ;
 ; Called Functions:

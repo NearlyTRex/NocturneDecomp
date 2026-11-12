@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance *model_ptr,char *property_name)
 ;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   model_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -61,7 +64,7 @@ section .text
         ;   Label: LAB_0040bc6c
     PUSH EBX                            ; 0040bc72
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0040bc73
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 0040bc78
     MOV EBX,EAX                         ; 0040bc7b
     TEST EAX,EAX                        ; 0040bc7d
@@ -77,7 +80,7 @@ section .text
     MOV ESI,dword ptr [0x007bc034]      ; 0040bc92 | DAT_007bc034
     PUSH ESI                            ; 0040bc98
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040bc99
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040bc9e
     PUSH EBP                            ; 0040bca1
     CALL core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_00547440 ; 0040bca2
@@ -95,7 +98,7 @@ section .text
     MOV EDX,dword ptr [0x007bc034]      ; 0040bcbf | DAT_007bc034
     PUSH EDX                            ; 0040bcc5
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040bcc6
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040bccb
     CMP EAX,0x1                         ; 0040bcce
     JZ 0x0040bce5                       ; 0040bcd1
@@ -117,7 +120,7 @@ section .text
     MOV EBX,dword ptr [0x007bc034]      ; 0040bcf5 | DAT_007bc034
     PUSH EBX                            ; 0040bcfb
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040bcfc
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0040bd01
     PUSH EBP                            ; 0040bd04
     CALL core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00547460 ; 0040bd05
@@ -135,7 +138,7 @@ section .text
     MOV EBP,dword ptr [0x007bc034]      ; 0040bd22 | DAT_007bc034
     PUSH EBP                            ; 0040bd28
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040bd29
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040bd2e
     CMP EAX,0x1                         ; 0040bd31
     JZ 0x0040bd48                       ; 0040bd34
@@ -157,13 +160,13 @@ section .text
     MOV EDX,dword ptr [0x007bc034]      ; 0040bd58 | DAT_007bc034
     PUSH EDX                            ; 0040bd5e
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040bd5f
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0040bd64
     MOV ECX,dword ptr [0x007bc034]      ; 0040bd67 | DAT_007bc034
         ;   Label: LAB_0040bd67
     PUSH ECX                            ; 0040bd6d
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0040bd6e
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 0040bd73
     MOV EBX,EAX                         ; 0040bd76
     TEST EAX,EAX                        ; 0040bd78

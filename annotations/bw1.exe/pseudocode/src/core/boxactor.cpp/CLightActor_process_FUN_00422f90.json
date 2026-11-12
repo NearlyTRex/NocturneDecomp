@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 192,
-    "complexity_score": 262,
+    "complexity_score": 254,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
-    "suspect_count": 14,
+    "pseudocode_lines": 89,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -18,7 +18,7 @@
       "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 279
+    "total_lines": 281
   },
   "cross_references": [],
   "function": {
@@ -162,6 +162,32 @@
     },
     "pcode_op_count": 1080
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041d020",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00420420",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7225
+    },
+    "nocedit.exe": {
+      "addr": "00422a50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9379
+    },
+    "nocturne.exe": {
+      "addr": "0041f3d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9379
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -204,7 +230,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 32,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "(fVar2 = this_ptr->flicker_timer - in_stack_00000010, this_ptr->flicker_timer = fVar2,",
@@ -212,7 +238,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 51,
+      "line": 53,
       "match": "&stack0xfffffff8",
       "severity": "moderate",
       "text": "*(float *)(&stack0xfffffff8 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
@@ -220,7 +246,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 59,
       "match": "DAT_02c8af28",
       "severity": "mild",
       "text": "core_xform_cpp_FUN_005b5760(&CStack_94,(CVector3f *)&DAT_02c8af28,&(this_ptr->light_orient).vec)",
@@ -228,39 +254,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 62,
       "match": "DAT_02c8af28",
       "severity": "mild",
       "text": "(&CStack_64,(CVector3f *)&DAT_02c8af28,&(this_ptr->base).base.orient.vec);",
       "type": "undefined_data"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xffffff0c",
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(CMatrix3x4f *)((int)pCVar5",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)&stack0xffffff0c;",
-      "type": "stack_ref"
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xffffff3c",
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)pCVar5",
       "severity": "moderate",
-      "text": "puVar6 = (uint *)&stack0xffffff3c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 69,
-      "match": "&stack0xffffff3c",
-      "severity": "moderate",
-      "text": "core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&stack0xffffff3c);",
-      "type": "stack_ref"
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&CStack_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 71,
+      "line": 73,
       "match": "(int)&CStack_28",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_28 + (uint)bVar7 * -8 + 4) = afStack_30[(uint)bVar7 * -2];",
@@ -268,7 +286,7 @@
     },
     {
       "description": "Pointer value `&CStack_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 74,
       "match": "(int)&CStack_28",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_28 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
@@ -276,7 +294,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 64,
+      "line": 66,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -284,7 +302,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 71,
+      "line": 73,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_28 + (uint)bVar7 * -8 + 4) = afStack_30[(uint)bVar7 * -2];",
@@ -292,7 +310,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 72,
+      "line": 74,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&CStack_28 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",

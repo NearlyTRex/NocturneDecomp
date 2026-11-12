@@ -14,8 +14,8 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
   CSimpleParticleSystem *this_ptr_00;
   int iVar1;
   int iVar2;
-  uint *puVar3;
-  uint *puVar4;
+  CMatrix3x4f *pCVar3;
+  float *pfVar4;
   byte bVar5;
   float10 fVar6;
   float10 fVar7;
@@ -27,21 +27,15 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
   float *pfVar12;
   float fVar13;
   SDamageInfo SStack_16c;
-  uint auStack_130 [12];
-  uint auStack_100 [12];
-  uint uStack_d0;
-  float afStack_cc [7];
-  float afStack_b0 [3];
-  uint uStack_a4;
-  uint uStack_a0;
-  uint uStack_9c;
-  uint uStack_98;
-  uint uStack_94;
-  uint uStack_90;
-  float fStack_8c;
+  CMatrix3x4f CStack_130;
+  float afStack_100 [12];
+  float fStack_d0;
+  float afStack_cc [3];
+  CQuaternion4f CStack_c0;
+  float afStack_b0 [10];
   float afStack_88 [4];
   uint uStack_78;
-  float fStack_74;
+  uint uStack_74;
   float afStack_70 [5];
   float fStack_5c;
   float fStack_58;
@@ -90,7 +84,7 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
           fStack_14 = afStack_88[3];
           core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                     (this_ptr_00,0x40400000,0x3f000000,0,0x3f000000,0,0x3df5c28f,0x3f28f5c3,
-                     0x3f2147ae,afStack_cc + 7,afStack_88 + 2,(uint *)0x0,0);
+                     0x3f2147ae,afStack_b0,afStack_88 + 2,(uint *)0x0,0);
         }
         iVar2 = iVar2 + 1;
       } while (iVar2 < 100);
@@ -120,46 +114,46 @@ void __cdecl core_mine_cpp_CSpiritMine_process_FUN_005ad530(CSpiritMine *this_pt
       fStack_3c = fStack_54;
       fStack_14 = fStack_54;
       core_xform_cpp_FUN_00594380();
-      afStack_cc[3] = (float)uStack_d0;
-      afStack_cc[(uint)bVar5 * -2 + 4] = afStack_cc[(uint)bVar5 * -2];
-      afStack_cc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 5] =
+      CStack_c0.w = fStack_d0;
+      afStack_b0[(uint)bVar5 * -2 + -3] = afStack_cc[(uint)bVar5 * -2];
+      afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -2] =
            afStack_cc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-      (afStack_cc + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 5)[(uint)bVar5 * -2 + 1] =
+      (afStack_b0 + (uint)bVar5 * -2 + (uint)bVar5 * -2 + -2)[(uint)bVar5 * -2 + 1] =
            (afStack_cc + (uint)bVar5 * -2 + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1];
-      core_xform_cpp_quaternionToMatrix3x4_FUN_00593a10();
-      puVar3 = auStack_130;
-      puVar4 = auStack_100;
+      core_xform_cpp_quaternionToMatrix3x4_FUN_00593a10(&CStack_c0,&CStack_130);
+      pCVar3 = &CStack_130;
+      pfVar4 = afStack_100;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar4 = *puVar3;
-        puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-        puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+        *pfVar4 = pCVar3->m[0].w;
+        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+        pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
       }
-      uStack_a4 = 0;
-      uStack_a0 = 0;
-      uStack_9c = 0x3f800000;
+      afStack_b0[3] = 0.0;
+      afStack_b0[4] = 0.0;
+      afStack_b0[5] = 1.0;
       core_xform_cpp_FUN_00591530();
       fVar13 = 4.2039e-45;
-      uStack_98 = 0;
-      uStack_90 = 0;
-      puVar3 = &uStack_98;
-      pfVar12 = &fStack_8c;
+      afStack_b0[6] = 0.0;
+      afStack_b0[8] = 0.0;
+      pfVar4 = afStack_b0 + 6;
+      pfVar12 = afStack_b0 + 9;
       pfVar11 = afStack_70 + 2;
-      uStack_94 = 0x3f800000;
-      afStack_70[2] = fStack_74;
+      afStack_b0[7] = 1.0;
+      afStack_70[2] = (float)uStack_74;
       afStack_70[(uint)bVar5 * -2 + 3] = afStack_70[(uint)bVar5 * -2];
       afStack_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
            afStack_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
       uVar10 = 0x3f266666;
       fVar9 = 0.9;
       fVar8 = 0.7;
-      fStack_8c = fStack_74;
+      afStack_b0[9] = (float)uStack_74;
       afStack_88[(uint)bVar5 * -2] = afStack_70[(uint)bVar5 * -2];
       afStack_88[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
            afStack_70[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
       fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar8,fVar9);
       core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                 (pCStack_18,0x40000000,this_ptr->effect_timer / this_ptr->effect_time,0,0x3f000000,
-                 0x40000000,0x3f051eb8,fStack_14,uVar10,pfVar11,pfVar12,puVar3,fVar13);
+                 0x40000000,0x3f051eb8,fStack_14,uVar10,pfVar11,pfVar12,pfVar4,fVar13);
     }
     if (fStack_20 <= this_ptr->trigger_radius) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0((SDamageInfo *)&stack0xfffffe58);

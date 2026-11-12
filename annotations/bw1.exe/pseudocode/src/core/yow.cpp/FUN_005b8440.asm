@@ -351,8 +351,8 @@ section .text
     PUSH 0x5fa27c                       ; 005b87a3
     MOV ESI,dword ptr [0x00611100]      ; 005b87a8 | g_CConsolePtr
     PUSH ESI                            ; 005b87ae
-    CALL engine_console.cpp_FUN_00445430 ; 005b87af
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 005b87af
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     JMP 0x005b860b                      ; 005b87b4
         ;   XREF to: 005b860b (UNCONDITIONAL_JUMP)  ; LAB_005b860b
     PUSH ESI                            ; 005b87b9

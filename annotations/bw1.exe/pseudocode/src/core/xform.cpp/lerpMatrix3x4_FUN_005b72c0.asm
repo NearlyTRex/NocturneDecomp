@@ -25,8 +25,8 @@
 ;   core_thehand.cpp_CTheHand_attractActorToward_FUN_00599a10 at 00599a54
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_005b7410
 ;   core_xform.cpp_matrixToQuaternion_FUN_005b75a0
+;   core_xform.cpp_quaternionToMatrix3x3_FUN_005b7410
 ;   core_xform.cpp_slerpQuaternion_FUN_005b7940
 ;
 ; *****************************************************************************
@@ -113,8 +113,8 @@ section .text
     PUSH ESI                            ; 005b73a3
     LEA ESI,[ESP + 0x4]                 ; 005b73a4
     PUSH ESI                            ; 005b73a8
-    CALL core_xform.cpp_FUN_005b7410    ; 005b73a9
-        ;   XREF to: 005b7410 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_FUN_005b7410(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005b7410 ; 005b73a9
+        ;   XREF to: 005b7410 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005b7410(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 005b73ae
     FLD1                                ; 005b73b1
     MOV ESI,dword ptr [ESP + 0xd4]      ; 005b73b3

@@ -129,8 +129,8 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00448570(CZombieCow *this_ptr,f
                            &(((this_ptr->base).victim)->base).location.position,path_map,pCVar11,
                            fVar12,max_distance);
         if (iVar4 < 0) {
-          engine_console_cpp_FUN_00445430
-                    (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
+          engine_console_cpp_CConsole_printf_FUN_00445430
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,0,1);
         }
         else if ((0 < iVar4) && ((this_ptr->base).attack_cooldown <= 0.0)) {
@@ -203,7 +203,8 @@ LAB_00448820:
     if (EVar2 < WALK_STATE_NO_PATH) goto LAB_0044863b;
     if (EVar2 != WALK_STATE_NO_PATH) goto LAB_00448820;
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(&this_ptr_00->base,0,1);
-    engine_console_cpp_FUN_00445430(g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+    engine_console_cpp_CConsole_printf_FUN_00445430
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

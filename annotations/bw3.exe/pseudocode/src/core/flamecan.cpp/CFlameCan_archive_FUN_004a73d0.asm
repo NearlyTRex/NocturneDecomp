@@ -34,7 +34,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 004a73e3
     PUSH EAX                            ; 004a73e9
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0 ; 004a73ea
-        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0()
+        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a73ef
     PUSH 0x5c0cc2                       ; 004a73f2 | = "onFire"
     LEA EAX,[EBX + 0x2d4]               ; 004a73f7
@@ -46,7 +46,7 @@ section .text
     LEA EAX,[EBX + 0x2d8]               ; 004a740b
     PUSH EAX                            ; 004a7411
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 004a7412
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a7417
     PUSH 0x5c0cd7                       ; 004a741a | = "onFireCondition"
     ADD EBX,0x2dc                       ; 004a741f

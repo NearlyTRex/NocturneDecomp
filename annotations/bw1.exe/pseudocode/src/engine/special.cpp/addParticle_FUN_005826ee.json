@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 70,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 10,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 27
@@ -24,9 +23,9 @@
         "00582711"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_special.cpp_addParticle_FUN_005826ee",
-    "signature": "undefined4 engine_special_cpp_addParticle_FUN_005826ee(undefined4 param_1,undefined4 param_2)"
+    "signature": "int __cdecl engine_special_cpp_addParticle_FUN_005826ee(void *particle_data,int particle_type)"
   },
   "function_calls": [],
   "globals": [
@@ -47,9 +46,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -77,13 +76,54 @@
     },
     "pcode_op_count": 60
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055fc9e",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00565fbe",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b7990",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.963
+    },
+    "nocturne.exe": {
+      "addr": "00532900",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.963
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "particle_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "particle_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -93,38 +133,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint engine_special_cpp_addParticle_FUN_005826ee(uint param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint engine_special_cpp_addParticle_FUN_005826ee(uint param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = (*_DAT_02c833d8)(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar1 = (*_DAT_02c833d8)(param_1,param_2);",
-      "type": "unnamed_param"
     }
   ]
 }

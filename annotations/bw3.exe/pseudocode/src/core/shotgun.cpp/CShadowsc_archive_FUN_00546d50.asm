@@ -34,7 +34,7 @@ section .text
     LEA EBX,[ESI + 0xcdcc]              ; 00546d64
     PUSH EBX                            ; 00546d6a
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00546d6b
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00546d70
     PUSH 0x5d14f4                       ; 00546d73 | = "modelName"
     LEA EBX,[ESI + 0x158]               ; 00546d78
@@ -46,7 +46,7 @@ section .text
     ADD ESI,0xcddc                      ; 00546d8c
     PUSH ESI                            ; 00546d92
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00546d93
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00546d98
     PUSH 0x5d150c                       ; 00546d9b | = "motion state"
     PUSH EBX                            ; 00546da0

@@ -30,7 +30,7 @@
 ;
 ; XREF[2]:
 ;   core_setcolid.cpp_FUN_005578b0 at 00557ba7
-;   core_spike.cpp_FUN_00583700 at 00583b70
+;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00583700 at 00583b70
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005d2520
