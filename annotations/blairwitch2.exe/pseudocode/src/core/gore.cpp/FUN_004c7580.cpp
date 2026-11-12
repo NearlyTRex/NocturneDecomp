@@ -150,7 +150,7 @@ LAB_004c787c:
   ;
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
             (DAT_0060b280,(SMRGLHeaderPrimitive *)0x1cb8288);
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   fStack_114 = 1.0;
   puVar5 = (uint *)((int)param_1 + (uint)bVar7 * -8 + 4);
   CStack_d4.x = param_1->x;
@@ -249,7 +249,7 @@ LAB_004c787c:
               (DAT_0060b280,0xffff - _DAT_01c38aec);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
               (DAT_0060b280,(SMRGLHeaderPrimitive *)0x1cb8288);
-    engine_matrix_c_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
     iStack_18 = iStack_18 + 1;
   } while (iStack_18 < 3);
   return;

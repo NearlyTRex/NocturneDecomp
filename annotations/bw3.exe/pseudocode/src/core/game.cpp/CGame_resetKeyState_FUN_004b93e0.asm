@@ -8,10 +8,11 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[4]:
+; XREF[5]:
 ;   core_game.cpp_CGame_processJoystickControls_FUN_004b97b0 at 004b97b6
 ;   core_game.cpp_FUN_004bec20 at 004befea
 ;   core_menu.cpp_FUN_004e7dc0 at 004e7e9e
+;   core_menu.cpp_FUN_004eadf0 at 004eae26
 ;   core_menu.cpp_FUN_004eae80 at 004ebfa8
 ;
 ; Referenced Globals:

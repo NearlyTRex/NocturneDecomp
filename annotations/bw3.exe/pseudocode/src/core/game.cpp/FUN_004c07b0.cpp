@@ -379,7 +379,7 @@ void core_game_cpp_FUN_004c07b0(float param_1,uint *param_2)
   local_50 = core_actor_cpp_castToClassHash_FUN_0040c840();
   iVar7 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
   if (((iVar7 != 0) && (iVar7 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x10c))(), 0 < iVar7)) ||
-     ((local_50 != 0 && (iVar7 = unkafter_stranger_cpp_FUN_00527110(), iVar7 != 0)))) {
+     ((local_50 != 0 && (iVar7 = core_prye_cpp_FUN_00527110(), iVar7 != 0)))) {
     return;
   }
   local_88 = _DAT_01c5fadc;

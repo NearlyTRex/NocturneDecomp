@@ -26,8 +26,8 @@ void core_union_cpp_FUN_005a4fe0(CCharacter *param_1)
     fVar1 = *(float *)(iVar3 + 0x28) - (param_1->base).location.position.z;
     if (_DAT_005ff8f4 < SQRT(fVar1 * fVar1 + fVar4 * fVar4)) {
       pcVar5 = param_1[1].base.create_event + 0x20;
-      unkaddr_0059d350_cpp_FUN_0059dcb0(pcVar5,0x3f800000);
-      unkaddr_0059d350_cpp_FUN_0059d8e0(pcVar5,"BChasing" + 1);
+      core_muzzle_cpp_FUN_0059dcb0(pcVar5,0x3f800000);
+      core_muzzle_cpp_FUN_0059d8e0(pcVar5,"BChasing" + 1);
     }
     else {
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850(param_1,(CVector3f *)(iVar3 + 0x20))

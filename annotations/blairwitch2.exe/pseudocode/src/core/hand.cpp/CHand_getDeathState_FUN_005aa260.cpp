@@ -13,10 +13,10 @@ EDeathState __cdecl core_hand_cpp_CHand_getDeathState_FUN_005aa260(CHand *this_p
   SStateMachine *pSVar2;
   
   pSVar2 = &(this_ptr->base).state_machine;
-  iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar2,"Death");
+  iVar1 = core_muzzle_cpp_FUN_0059daa0(pSVar2,"Death");
   if (((iVar1 == 0) &&
-      (iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar2,"Animation"), iVar1 == 0)) &&
-     (iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar2,"Sleeping"), iVar1 == 0)) {
+      (iVar1 = core_muzzle_cpp_FUN_0059daa0(pSVar2,"Animation"), iVar1 == 0)) &&
+     (iVar1 = core_muzzle_cpp_FUN_0059daa0(pSVar2,"Sleeping"), iVar1 == 0)) {
     return DEATH_STATE_ALIVE;
   }
   iVar1 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.base.model);

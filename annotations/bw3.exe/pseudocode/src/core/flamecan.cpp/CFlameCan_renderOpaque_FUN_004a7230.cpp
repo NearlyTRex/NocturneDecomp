@@ -35,6 +35,6 @@ int __cdecl core_flamecan_cpp_CFlameCan_renderOpaque_FUN_004a7230(CFlameCan *thi
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
               (&this_ptr->model,0.0,-1);
   }
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   return iVar1;
 }

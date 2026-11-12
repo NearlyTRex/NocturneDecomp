@@ -1,6 +1,6 @@
 // Name: core_haystack.cpp_CHaystack_ctor_FUN_004cc760
 // Address: 004cc760
-// Address Range: [[004cc760, 004cc78b]]
+// Address Range: [[004cc760, 004cc7c3]]
 // Convention: unknown
 // Signature: CHaystack * core_haystack_cpp_CHaystack_ctor_FUN_004cc760(CHaystack *this_ptr)
 

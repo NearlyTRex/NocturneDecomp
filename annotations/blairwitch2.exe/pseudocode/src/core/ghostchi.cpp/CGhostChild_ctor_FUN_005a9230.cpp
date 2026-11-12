@@ -14,7 +14,7 @@ CGhostChild * core_ghostchi_cpp_CGhostChild_ctor_FUN_005a9230(CGhostChild *this_
   SStateMachine *pSVar1;
   CGhostChild *this_ptr_00;
   
-  this_ptr_00 = (CGhostChild *)unkafter_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
+  this_ptr_00 = (CGhostChild *)core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
   (this_ptr_00->base).base.base.base.vtable._ub = &g_CGhostChildVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(this_ptr_00->base).base.base.model,"SHChild1.dfm");
@@ -34,10 +34,10 @@ CGhostChild * core_ghostchi_cpp_CGhostChild_ctor_FUN_005a9230(CGhostChild *this_
   this_ptr_00->sleep_phase = 0;
   core_ghostchi_cpp_CGhostChild_processStates_FUN_005a94c0(this_ptr_00,0.0,0);
   pSVar1 = &(this_ptr_00->base).state_machine;
-  unkaddr_0059d350_cpp_FUN_0059d6f0(pSVar1);
-  unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1);
-  unkaddr_0059d350_cpp_FUN_0059d990();
-  unkaddr_0059d350_cpp_FUN_0059dc80();
+  core_muzzle_cpp_FUN_0059d6f0(pSVar1);
+  core_muzzle_cpp_FUN_0059d7f0(pSVar1);
+  core_muzzle_cpp_FUN_0059d990();
+  core_muzzle_cpp_FUN_0059dc80();
   (this_ptr_00->base).base.base.eye_glow_enabled = 1;
   (this_ptr_00->base).base.base.blood_type = BLOOD_TYPE_ICHOR;
   (this_ptr_00->base).can_burn = 1;

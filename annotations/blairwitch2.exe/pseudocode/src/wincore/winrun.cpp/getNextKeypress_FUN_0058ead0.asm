@@ -5,6 +5,7 @@
 ;
 ;
 ; XREF[10]:
+;   core_dcube.cpp_FUN_00446f4e at 00446fcc
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be40a
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6dc3
 ;   core_main.c_FUN_004e45e0 at 004e4631
@@ -13,7 +14,6 @@
 ;   engine_2d.c_getInputWithPrompt_FUN_0040330e at 00403368
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004dfe90 at 004dfe90
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004dfea0 at 004dfea0
-;   unkafter_dcube.cpp_FUN_00446f4e at 00446fcc
 ;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00588de0 at 00588fc8
 ;
 ; Referenced Globals:

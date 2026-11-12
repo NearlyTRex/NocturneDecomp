@@ -59,8 +59,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[3]:
+; XREF[4]:
 ;   engine_pod.cpp_CPod_remount_FUN_0051b1e0 at 0051b224
+;   engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0 at 0051b8ef
 ;   engine_pod.cpp_FUN_0051b110 at 0051b173
 ;   engine_pod.cpp_FUN_0051b6dc at 0051b71e
 ;

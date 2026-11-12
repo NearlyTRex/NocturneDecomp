@@ -13,7 +13,7 @@ int * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170(SP
   CAlphaBitmap *this_ptr_00;
   char local_108 [256];
   
-  unkaddr_004a1200_cpp_SPageResource_ctor_FUN_004a1e60(&this_ptr->base);
+  core_fldnotes_cpp_SPageResource_ctor_FUN_004a1e60(&this_ptr->base);
   this_ptr_00 = engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420
                           ((CAlphaBitmap *)(extraout_EAX + 0x18));
   this_ptr_00[-1].height = (int)&g_SPageResourceBitmapVTable;

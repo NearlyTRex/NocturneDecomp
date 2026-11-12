@@ -47,7 +47,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
     local_c = (int)ROUND(fVar5);
     engine_2d_c_fillRectColor_FUN_004031c0(2,2,local_c,iVar6,iVar7);
     if (this_ptr->use_custom_viewport != 0) {
-      engine_matrix_c_FUN_0046b710
+      engine_drender_cpp_FUN_0046b710
                 (DAT_0060b280,this_ptr->viewport_x,this_ptr->viewport_y,this_ptr->viewport_width,
                  this_ptr->viewport_height);
     }
@@ -57,7 +57,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
     if (this_ptr->use_custom_viewport != 0) {
       local_18 = 0x42a80000;
     }
-    engine_matrix_c_FUN_0046b4b0(DAT_0060b280,local_18);
+    engine_drender_cpp_FUN_0046b4b0(DAT_0060b280,local_18);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
               (DAT_0060b280,(CVector3f *)&DAT_0265370c);
     local_40.x = 0.0;
@@ -131,7 +131,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader *this_
       iVar6 = iVar7;
     } while (iVar7 != 0xc0);
     if (this_ptr->use_custom_viewport != 0) {
-      engine_matrix_c_popViewport_FUN_0046b740();
+      engine_drender_cpp_popViewport_FUN_0046b740();
     }
     g_CDemonSetPtr->rendering_mode = 0;
     local_14 = _DAT_01511cc0;

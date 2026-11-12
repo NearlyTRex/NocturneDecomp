@@ -128,6 +128,7 @@ CDemonActorType * core_wateract_cpp_CWaterActor_getActorType_FUN_00586990(CWater
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_005869a0(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_00586af0(CWaterActor *this_ptr);
 void core_wateract_cpp_FUN_005870a0(int param_1);
+void core_wateract_cpp_FUN_00587180(int param_1);
 void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00587280(CWaterActor *this_ptr,float delta_time);
 int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00587400(CWaterActor *this_ptr);
 CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_00587650(CWaterActor *this_ptr,CBoundingBox3D *out_box);
@@ -225,7 +226,7 @@ int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_0058e450(CWinFo
 void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_0058e640(CWinFont *this_ptr);
 int __cdecl engine_winfont_cpp_CWinFont_getStringWidth_FUN_0058e6c0(CWinFont *this_ptr,char *text_string);
 int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_0058e720(CWinFont *this_ptr,char *text_string);
-undefined4 unkafter_winfont_cpp_FUN_0058e790(void);
+undefined4 engine_winfont_cpp_FUN_0058e790(void);
 void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_0058e7a0(void);
 void __watcallRegister wincore_winrun_cpp_endPeriod_FUN_0058e9d0(void);
 int wincore_winrun_cpp_getTime_FUN_0058e9e0(void);

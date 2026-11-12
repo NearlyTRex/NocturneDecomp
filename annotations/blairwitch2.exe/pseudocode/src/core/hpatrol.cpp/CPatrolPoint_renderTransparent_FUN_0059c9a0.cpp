@@ -1,0 +1,15 @@
+// Name: core_hpatrol.cpp_CPatrolPoint_renderTransparent_FUN_0059c9a0
+// Address: 0059c9a0
+// Address Range: [[0059c9a0, 0059c9b4]]
+// Convention: __cdecl
+// Signature: int __cdecl core_hpatrol_cpp_CPatrolPoint_renderTransparent_FUN_0059c9a0(CPatrolPoint *this_ptr)
+
+#include "nocturne.h"
+
+int __cdecl core_hpatrol_cpp_CPatrolPoint_renderTransparent_FUN_0059c9a0(CPatrolPoint *this_ptr)
+
+{
+  core_bwspart_cpp_CSimpleParticleSystem_render_FUN_005a8290
+            ((this_ptr->base).base.base.particle_systems);
+  return 0;
+}

@@ -13,8 +13,10 @@
 ; SMRGLTextureModel * Stack[0x1c]:4   texture_list
 ; int *            Stack[0x20]:4   texture_index_list
 ;
-; XREF[2]:
+; XREF[4]:
 ;   core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_005224f0 at 0052252e
+;   core_morph.cpp_CMorph_addQuadPartToModel_FUN_00523190 at 005231d0
+;   core_morph.cpp_CMorph_addTriPartToModel_FUN_00523140 at 00523180
 ;   core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_00523000 at 00523049
 ;
 ; Referenced Globals:

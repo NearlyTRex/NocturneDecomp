@@ -15,6 +15,6 @@ void core_spawner_cpp_factoryFuncSpawner_FUN_00563870(void)
   if (this_ptr == (CSpawner *)0x0) {
     return;
   }
-  engine_special_cpp_CSpawner_ctor_FUN_005638a0(this_ptr);
+  core_spawner_cpp_CSpawner_ctor_FUN_005638a0(this_ptr);
   return;
 }

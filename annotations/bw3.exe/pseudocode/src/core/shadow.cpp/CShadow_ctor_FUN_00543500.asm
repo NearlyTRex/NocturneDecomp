@@ -7,10 +7,10 @@
 ; CShadow *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_setedit.cpp_factoryFuncShadow_FUN_005434d0 at 005434e3
 ;   core_shadow.cpp_CDemonShadow_ctor_FUN_00545fc0 at 00545fc6
 ;   core_shadow.cpp_CShadowForest_ctor_FUN_00545ea0 at 00545ea6
 ;   core_shadow.cpp_CSpiritShadow_ctor_FUN_00545f30 at 00545f36
+;   core_shadow.cpp_factoryFuncShadow_FUN_005434d0 at 005434e3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e3d54

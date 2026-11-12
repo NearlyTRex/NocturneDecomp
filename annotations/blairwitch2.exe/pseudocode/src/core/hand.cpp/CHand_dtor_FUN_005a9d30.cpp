@@ -24,7 +24,7 @@ CHand * core_hand_cpp_CHand_dtor_FUN_005a9d30(CHand *this_ptr,uint flags)
   }
   (this_ptr->base).base.base.base.vtable._ub = &g_CHandVTable._ub;
   iVar1 = core_armour_cpp_FUN_0040f2b0((this_ptr->base).base.base.flames,0);
-  iVar1 = unkaddr_0059d350_cpp_FUN_0059df70(iVar1 + -0x9c8,0);
+  iVar1 = core_muzzle_cpp_FUN_0059df70(iVar1 + -0x9c8,0);
   pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar1 + -0x34c),0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar2[-0x19].filenames[6] + 0x10),0);

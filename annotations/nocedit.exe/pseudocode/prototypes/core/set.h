@@ -347,8 +347,8 @@ C3DSLight * __cdecl C3DSLight::arrdtor200(C3DSLight *objs,uint flags);
 
 // Original: core_set.cpp_SRoom_arrdtor20_FUN_00571570
 // Address: 00571570
-SRoom * __cdecl SRoom::arrdtor20(SRoom *objs,uint flags);
+SRoom * __cdecl SRoom::arrdtor20(SRoom *this_ptr,uint flags);
 
 // Original: core_set.cpp_SVDBox_arrdtor250_FUN_00571590
 // Address: 00571590
-SVDBox * __cdecl SVDBox::arrdtor250(SVDBox *objs,uint flags);
+SVDBox * __cdecl SVDBox::arrdtor250(SVDBox *this_ptr,uint flags);

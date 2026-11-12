@@ -1,5 +1,5 @@
 mapping: /home/aryie/Repositories/NocturneDecomp/annotations/nocturne.exe/reports/sibling_verified_mapping.json
-  nocedit.exe 7100 functions, nocturne.exe 5709 functions, 5268 pairs
+  nocedit.exe 7100 functions, nocturne.exe 5731 functions, 5280 pairs
 
 ==============================================================================
 A. TRANSLATION-UNIT RESIDUE
@@ -29,14 +29,13 @@ A. TRANSLATION-UNIT RESIDUE
   core_sound.cpp                      1         4         1  PAIRABLE
   core_dlight.cpp                     1         3         0  PAIRABLE
   core_slew.cpp                       2         1         0  PAIRABLE
-  cockpit_pkbitmap.cpp                1         1         0  PAIRABLE
   core_path.cpp                       1         1         0  PAIRABLE
   shape_superopt.cpp                186         0         0  EDITOR-ONLY
-  shape_design.c                    163         0         0  EDITOR-ONLY
+  shape_design.c                    162         0         0  EDITOR-ONLY
   shape_meshlod.cpp                 121         0         0  EDITOR-ONLY
   engine_fileio.cpp                  73         0         0  EDITOR-ONLY
   core_skeledit.cpp                  70         0         0  EDITOR-ONLY
-  core_actor.cpp                     64         0        64  EDITOR-ONLY
+  core_actor.cpp                     63         0        63  EDITOR-ONLY
   core_msnedit.cpp                   63         0         0  EDITOR-ONLY
   core_setedit.cpp                   58         0         0  EDITOR-ONLY
   core_dmodel.cpp                    34         0        32  EDITOR-ONLY
@@ -61,12 +60,12 @@ A. TRANSLATION-UNIT RESIDUE
   core_texlist.cpp                    7         0         0  EDITOR-ONLY
   engine_dosio.cpp                    7         0         1  EDITOR-ONLY
   core_camview.cpp                    6         0         0  EDITOR-ONLY
-  core_manpuz.cpp                     6         0         6  EDITOR-ONLY
   core_zombie.cpp                     6         0         6  EDITOR-ONLY
   core_door.cpp                       5         0         5  EDITOR-ONLY
   core_drip.cpp                       5         0         5  EDITOR-ONLY
   core_frankgen.cpp                   5         0         5  EDITOR-ONLY
   core_ladder.cpp                     5         0         0  EDITOR-ONLY
+  core_manpuz.cpp                     5         0         5  EDITOR-ONLY
   core_pendulum.cpp                   5         0         0  EDITOR-ONLY
   core_set.cpp                        5         0         5  EDITOR-ONLY
   core_werewolf.cpp                   5         0         5  EDITOR-ONLY
@@ -102,12 +101,10 @@ A. TRANSLATION-UNIT RESIDUE
   core_dracbrid.cpp                   3         0         3  EDITOR-ONLY
   core_drone.cpp                      3         0         3  EDITOR-ONLY
   core_filmreel.cpp                   3         0         3  EDITOR-ONLY
-  core_fire.cpp                       3         0         3  EDITOR-ONLY
   core_gabriela.cpp                   3         0         3  EDITOR-ONLY
   core_ghoul.cpp                      3         0         3  EDITOR-ONLY
   core_haystack.cpp                   3         0         3  EDITOR-ONLY
   core_hero.cpp                       3         0         0  EDITOR-ONLY
-  core_larva.cpp                      3         0         3  EDITOR-ONLY
   core_mobster.cpp                    3         0         3  EDITOR-ONLY
   core_skeleton.cpp                   3         0         1  EDITOR-ONLY
   core_spike.cpp                      3         0         3  EDITOR-ONLY
@@ -131,16 +128,17 @@ A. TRANSLATION-UNIT RESIDUE
   core_crate.cpp                      2         0         2  EDITOR-ONLY
   core_dest.cpp                       2         0         2  EDITOR-ONLY
   core_enemy.cpp                      2         0         0  EDITOR-ONLY
+  core_fire.cpp                       2         0         2  EDITOR-ONLY
   core_flamecan.cpp                   2         0         2  EDITOR-ONLY
   core_gargoyle.cpp                   2         0         2  EDITOR-ONLY
   core_gasmask.cpp                    2         0         2  EDITOR-ONLY
-  core_gore.cpp                       2         0         2  EDITOR-ONLY
   core_health.cpp                     2         0         2  EDITOR-ONLY
   core_hiram.cpp                      2         0         0  EDITOR-ONLY
   core_hostage.cpp                    2         0         2  EDITOR-ONLY
   core_hotdemon.cpp                   2         0         2  EDITOR-ONLY
   core_imp.cpp                        2         0         2  EDITOR-ONLY
   core_keyactor.cpp                   2         0         2  EDITOR-ONLY
+  core_larva.cpp                      2         0         2  EDITOR-ONLY
   core_main.c                         2         0         1  EDITOR-ONLY
   core_marquee.cpp                    2         0         2  EDITOR-ONLY
   core_menu.cpp                       2         0         2  EDITOR-ONLY
@@ -156,8 +154,10 @@ A. TRANSLATION-UNIT RESIDUE
   core_weapon.cpp                     2         0         2  EDITOR-ONLY
   sound_mp3.cpp                       2         0         2  EDITOR-ONLY
   cockpit_ckptutil.c                  1         0         1  EDITOR-ONLY
+  cockpit_pkbitmap.cpp                1         0         0  EDITOR-ONLY
   core_dfilter.cpp                    1         0         1  EDITOR-ONLY
   core_flamegun.cpp                   1         0         1  EDITOR-ONLY
+  core_gore.cpp                       1         0         1  EDITOR-ONLY
   core_ground.cpp                     1         0         1  EDITOR-ONLY
   core_hpriest.cpp                    1         0         1  EDITOR-ONLY
   core_inv.cpp                        1         0         1  EDITOR-ONLY
@@ -176,12 +176,10 @@ A. TRANSLATION-UNIT RESIDUE
   engine_light.cpp                    1         0         0  EDITOR-ONLY
   engine_zraster.c                    1         0         0  EDITOR-ONLY
   shape_spotview.cpp                  1         0         0  EDITOR-ONLY
-  sound_snddx.cpp                     1         0         1  EDITOR-ONLY
   support_trisock.cpp                 1         0         1  EDITOR-ONLY
-  wincore_wddvmem.cpp                 1         0         0  EDITOR-ONLY
 
-  1587 nocedit / 62 nocturne functions unmatched across 169 units
-  units: 21 pairable, 146 editor-only, 2 game-only
+  1579 nocedit / 61 nocturne functions unmatched across 167 units
+  units: 20 pairable, 145 editor-only, 2 game-only
   (crt_* units excluded; they are archive members, not source-ordered -- --include-crt)
   families absent from the target entirely: 34 class(es), 16 method categor(ies)
 
@@ -201,10 +199,14 @@ shape_edittool.cpp   between 0049e940->004701a0 and 0049f270->00470550
       0049f0f0   139b   46i  shape_edittool.cpp_CEditorTools_showYesNoDialog
       0049f180   235b   79i  shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog
   nocturne residue (3):
-      00470230   224b   70i  shape_edittool.cpp
-      00470310   224b   70i  shape_edittool.cpp
-      004703f0   346b  114i  shape_edittool.cpp
-  UNSURE -- no proposal: 4 nocedit / 3 nocturne left over
+      00470230   224b   70i  shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog
+      00470310   224b   70i  shape_edittool.cpp_CEditorTools_showYesNoDialog
+      004703f0   346b  114i  shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog
+  suggested alignment:
+      0049f060 -> 00470230   (name core)   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog
+      0049f0f0 -> 00470310   (name core)   shape_edittool.cpp_CEditorTools_showYesNoDialog
+      0049f180 -> 004703f0   (name core)   shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog
+  UNSURE -- no proposal: 1 nocedit / 0 nocturne left over
 ------------------------------------------------------------------------------
 core_stranger.cpp   between 005c6850->00540920 and 005c6930->005409f0
   refused: count mismatch 3 vs 2 -- something was added AND removed here
@@ -213,8 +215,8 @@ core_stranger.cpp   between 005c6850->00540920 and 005c6930->005409f0
       005c68f0    19b    7i  core_stranger.cpp_CStranger_getPropertyList
       005c6910    19b    7i  core_stranger.cpp_CStranger_addFilesToExtract
   nocturne residue (2):
-      00540970    41b   15i  core_stranger.cpp
-      005409c0    41b   15i  core_stranger.cpp
+      00540970    41b   15i  core_stranger.cpp_dotProduct1
+      005409c0    41b   15i  core_stranger.cpp_dotProduct2
   UNSURE -- no proposal: 3 nocedit / 2 nocturne left over
 ------------------------------------------------------------------------------
 core_dcube.cpp   between 004569b0->0044adf0 and 00457530->0044aed0
@@ -226,8 +228,10 @@ core_dcube.cpp   between 004569b0->0044adf0 and 00457530->0044aed0
       004570a0   904b  230i  core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList
       00457430   242b  110i  core_dcube.cpp_CDemonCube_save
   nocturne residue (1):
-      0044ae80    78b   31i  core_dcube.cpp
-  UNSURE -- no proposal: 5 nocedit / 1 nocturne left over
+      0044ae80    78b   31i  core_dcube.cpp_CDemonCube_setBounds
+  suggested alignment:
+      00456a90 -> 0044ae80   (name core)   core_dcube.cpp_CDemonCube_setBounds
+  UNSURE -- no proposal: 4 nocedit / 0 nocturne left over
 ------------------------------------------------------------------------------
 core_slew.cpp   between 005a2050->0051f920 and 005a20b0->0051f980
   refused: count mismatch 2 vs 1 -- something was added AND removed here
@@ -240,9 +244,9 @@ core_slew.cpp   between 005a2050->0051f920 and 005a20b0->0051f980
 ------------------------------------------------------------------------------
 
   4 pairable brackets covering 14 nocedit / 7 nocturne functions
-  225 one-sided brackets (646 editor-only, 24 game-only) -- not pairable by construction
-  927 nocedit functions in 51 regions with no bracket at all:
-        713  fewer than 2 anchors in the unit
+  218 one-sided brackets (639 editor-only, 23 game-only) -- not pairable by construction
+  926 nocedit functions in 51 regions with no bracket at all:
+        712  fewer than 2 anchors in the unit
         134  before the unit's first anchor
          80  after the unit's last anchor
       (a unit with no anchors is usually absent from the game build entirely)
@@ -253,21 +257,31 @@ D. UNMATCHED ON BOTH SIDES UNDER THE SAME NAME
   The mapper matches on bytes and layout only -- it never reads a name, so
   these are invisible to it. Unit and name core both agree on each row.
 
-  candidate pairs   : 1
+  candidate pairs   : 11
   ambiguous cores   : 0   (core repeats on one side -- overloads; excluded)
-  by shape agreement: {'unshaped': 1}
+  by shape agreement: {'identical': 4, 'size_mismatch': 3, 'unshaped': 2, 'similar_size': 1, 'same_mnemonics': 1}
     identical/same_mnemonics -- the body did not change either; the mapper
     missed these on layout alone, so they are as safe as a matched pair.
     size_mismatch -- the body WAS edited between the builds. That is the
     case no automatic signal can reach, and the reason to record it by hand.
 
+    0049f060 -> 00470230  [size_mismatch]  shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog
+    0049f180 -> 004703f0  [size_mismatch]  shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog
+    0049f0f0 -> 00470310  [size_mismatch]  shape_edittool.cpp_CEditorTools_showYesNoDialog
+    00456a90 -> 0044ae80  [similar_size]  core_dcube.cpp_CDemonCube_setBounds
+    0054c7c0 -> 004f5d10  [unshaped]  cockpit_pkbmpset.cpp_CPackedBitmapSet_doNothing1
     00544f00 -> 004ef000  [unshaped]  engine_palette.cpp_CFont_getLineSpacing
+    004b1980 -> 00481930  [same_mnemonics]  core_event.cpp_isCharacterSpeaking
+    0042fae0 -> 0042b6c0  [identical]  core_charactr.cpp_copyFloat1
+    0042faf0 -> 0042b6d0  [identical]  core_charactr.cpp_copyFloat2
+    0042fb00 -> 0042b6e0  [identical]  core_charactr.cpp_copyFloat3
+    00546310 -> 004efc10  [identical]  core_path.cpp_resetPathfindingQueue
 
 ==============================================================================
 C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
 ==============================================================================
-  pairs compared        : 5268
-  never transferred     : 6   (nocturne side has no signature at all -- transfer work, not drift)
+  pairs compared        : 5280
+  never transferred     : 14   (nocturne side has no signature at all -- transfer work, not drift)
   genuine divergence    : 53   (both sides typed, and they disagree -- investigate)
   name core differs     : 59   (mapped as the same function under two different names)
 
@@ -639,5 +653,5 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
       nocedit  debugMalloc
       nocturne malloc
 
-  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2995, 'unverifiable': 2243, 'conflict': 30}
+  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2999, 'unverifiable': 2251, 'conflict': 30}
   those measure ARGUMENT SIZE from nocturne's own bytes and are a different axis

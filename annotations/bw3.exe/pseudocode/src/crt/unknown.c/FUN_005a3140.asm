@@ -6,7 +6,7 @@
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[45]:
+; XREF[46]:
 ;   cockpit_ckptutil.c_FUN_00436a50 at 00436abd
 ;   core_actor.cpp_CDemonActor_save_FUN_0040aff0 at 0040b046
 ;   core_actor.cpp_archiveActor_FUN_0040b930 at 0040b97a
@@ -17,7 +17,7 @@
 ;   core_actor.cpp_archiveInteger_FUN_0040b8b0 at 0040b919
 ;   core_actor.cpp_archiveLocation_FUN_0040b540 at 0040b5d0
 ;   core_actor.cpp_archiveMotionState_FUN_0040bab0 at 0040bb49
-;   ... and 35 more
+;   ... and 36 more
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a7e50

@@ -137,7 +137,7 @@ RuntimeHandlerEntry g_InitHandlers[160] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_console_cpp_staticInit_FUN_0043abb0
+        .func = (RUNTIME_HANDLER_FUNC *)engine_console_cpp_staticInit_FUN_0043abb0
     },
     {
         .status = 0x00,

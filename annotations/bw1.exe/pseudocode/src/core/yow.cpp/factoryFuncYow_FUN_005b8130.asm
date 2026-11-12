@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_xform.cpp_CYow_ctor_FUN_005b8160
+;   core_yow.cpp_CYow_ctor_FUN_005b8160
 ;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 005b8141
     PUSH EAX                            ; 005b8142
         ;   Label: LAB_005b8142
-    CALL core_xform.cpp_CYow_ctor_FUN_005b8160 ; 005b8143
-        ;   XREF to: 005b8160 (UNCONDITIONAL_CALL)  ; CYow * core_xform.cpp_CYow_ctor_FUN_005b8160(CYow * this_ptr)
+    CALL core_yow.cpp_CYow_ctor_FUN_005b8160 ; 005b8143
+        ;   XREF to: 005b8160 (UNCONDITIONAL_CALL)  ; CYow * core_yow.cpp_CYow_ctor_FUN_005b8160(CYow * this_ptr)
     ADD ESP,0x4                         ; 005b8148
     RET                                 ; 005b814b
 

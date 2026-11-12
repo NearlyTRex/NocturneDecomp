@@ -21,7 +21,7 @@ void __cdecl core_prye_cpp_CPrye_process_FUN_00518ab0(CPrye *this_ptr,float delt
   iVar2 = core_charactr_cpp_FUN_0042cd70(this_ptr,delta_time);
   if (iVar2 == 0) {
     if (0.0 < (this_ptr->base).base.bind_time) {
-      unkafter_prye_cpp_FUN_00526dc0(this_ptr,delta_time);
+      core_prye_cpp_FUN_00526dc0(this_ptr,delta_time);
       return;
     }
   }

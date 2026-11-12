@@ -10,9 +10,9 @@
 ; Called Functions:
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_00419550
 ;   core_enemy.cpp_FUN_00489c90
+;   core_enemy.cpp_FUN_0048a1b0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
-;   unkafter_enemy.cpp_FUN_0048a1b0
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
         ;   XREF to: 0041a85c (CONDITIONAL_JUMP)  ; LAB_0041a85c
     PUSH dword ptr [ESI + 0x4]          ; 0041a849
     PUSH EBX                            ; 0041a84c
-    CALL unkafter_enemy.cpp_FUN_0048a1b0 ; 0041a84d
-        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_enemy.cpp_FUN_0048a1b0()
+    CALL core_enemy.cpp_FUN_0048a1b0    ; 0041a84d
+        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0048a1b0()
     ADD ESP,0x8                         ; 0041a852
     TEST EAX,EAX                        ; 0041a855
     JNZ 0x0041a87b                      ; 0041a857

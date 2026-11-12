@@ -36,7 +36,7 @@ section .text
     ADD EBX,0xbec4                      ; 00427be2
     PUSH EBX                            ; 00427be8
     CALL core_bugs.cpp_SBug_arrdtor400_FUN_00427cc0 ; 00427be9
-        ;   XREF to: 00427cc0 (UNCONDITIONAL_CALL)  ; SBug * core_bugs.cpp_SBug_arrdtor400_FUN_00427cc0(SBug * objs, uint flags)
+        ;   XREF to: 00427cc0 (UNCONDITIONAL_CALL)  ; SBug * core_bugs.cpp_SBug_arrdtor400_FUN_00427cc0(SBug * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00427bee
     PUSH 0x0                            ; 00427bf1
     SUB EAX,0x8af8                      ; 00427bf3
@@ -48,7 +48,7 @@ section .text
     SUB EAX,0x4b0                       ; 00427c03
     PUSH EAX                            ; 00427c08
     CALL core_armour.cpp_SFire_arrdtor50_FUN_00412700 ; 00427c09
-        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_SFire_arrdtor50_FUN_00412700(SFire * objs, uint flags)
+        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_SFire_arrdtor50_FUN_00412700(SFire * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00427c0e
     PUSH 0x0                            ; 00427c11
     SUB EAX,0x20c                       ; 00427c13

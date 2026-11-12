@@ -3966,8 +3966,8 @@ section .text
     SUB ESP,0x4                         ; 0052c38a
     LEA ESI,[ESP + 0x47d4]              ; 0052c38d
     FSTP float ptr [ESP]                ; 0052c394
-    CALL unkafter_stranger.cpp_FUN_00527200 ; 0052c397
-        ;   XREF to: 00527200 (UNCONDITIONAL_CALL)  ; undefined unkafter_stranger.cpp_FUN_00527200()
+    CALL core_prye.cpp_FUN_00527200     ; 0052c397
+        ;   XREF to: 00527200 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00527200()
     ADD ESP,0xc                         ; 0052c39c
     LEA EAX,[ESP + 0x4798]              ; 0052c39f
     LEA EDI,[ESP + 0x4798]              ; 0052c3a6
@@ -5406,8 +5406,8 @@ section .text
     ADD ESP,0x8                         ; 0052d51f
     MOV EAX,[0x00603b28]                ; 0052d522 | g_CDemonSetPtr
     PUSH EAX                            ; 0052d527 | g_CDemonSetInstance
-    CALL unkafter_mimic.cpp_FUN_00495e60 ; 0052d528
-        ;   XREF to: 00495e60 (UNCONDITIONAL_CALL)  ; undefined unkafter_mimic.cpp_FUN_00495e60()
+    CALL core_event.cpp_FUN_00495e60    ; 0052d528
+        ;   XREF to: 00495e60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_00495e60()
     ADD ESP,0x4                         ; 0052d52d
     MOV ESI,EAX                         ; 0052d530
     MOV EAX,[0x006039e0]                ; 0052d532 | g_CScriptPtr
@@ -5423,8 +5423,8 @@ section .text
     MOV EAX,[0x006039e0]                ; 0052d552 | g_CScriptPtr
     PUSH EDI                            ; 0052d557 | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x10],0x0      ; 0052d558 | g_CScriptInstance.focus_actor_changed
-    CALL unkafter_mimic.cpp_FUN_00495e60 ; 0052d55f
-        ;   XREF to: 00495e60 (UNCONDITIONAL_CALL)  ; undefined unkafter_mimic.cpp_FUN_00495e60()
+    CALL core_event.cpp_FUN_00495e60    ; 0052d55f
+        ;   XREF to: 00495e60 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_00495e60()
     ADD ESP,0x4                         ; 0052d564
     CMP ESI,EAX                         ; 0052d567
     JNZ 0x00529b1b                      ; 0052d569
@@ -6412,8 +6412,8 @@ section .text
     PUSH EAX                            ; 0052e16a
     LEA EAX,[ESI + 0x20]                ; 0052e16b
     PUSH EAX                            ; 0052e16e
-    CALL core_mimic.cpp_copyQuaternion_FUN_00495e40 ; 0052e16f
-        ;   XREF to: 00495e40 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_copyQuaternion_FUN_00495e40()
+    CALL core_event.cpp_copyQuaternion_FUN_00495e40 ; 0052e16f
+        ;   XREF to: 00495e40 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_copyQuaternion_FUN_00495e40()
     ADD ESP,0x8                         ; 0052e174
     PUSH ESI                            ; 0052e177
     MOV ESI,dword ptr [0x00600530]      ; 0052e178 | DAT_00600530
@@ -7302,8 +7302,8 @@ section .text
     PUSH EAX                            ; 0052ec27
     MOV EDI,dword ptr [0x00600530]      ; 0052ec28 | DAT_00600530
     PUSH EDI                            ; 0052ec2e
-    CALL unkafter_mission.cpp_FUN_004f7c00 ; 0052ec2f
-        ;   XREF to: 004f7c00 (UNCONDITIONAL_CALL)  ; undefined unkafter_mission.cpp_FUN_004f7c00()
+    CALL core_mission.cpp_FUN_004f7c00  ; 0052ec2f
+        ;   XREF to: 004f7c00 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f7c00()
     ADD ESP,0x8                         ; 0052ec34
     JMP 0x00529b1b                      ; 0052ec37
         ;   XREF to: 00529b1b (UNCONDITIONAL_JUMP)  ; LAB_00529b1b

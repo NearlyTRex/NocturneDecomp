@@ -11,7 +11,7 @@ void __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004aa780(SPageResourceM
 {
   int extraout_EAX;
   
-  unkaddr_004a76f0_cpp_SPageResource_ctor_FUN_004a8370(&this_ptr->base);
+  core_fldnotes_cpp_SPageResource_ctor_FUN_004a8370(&this_ptr->base);
   *(byte ***)(extraout_EAX + 0x14) = &g_SPageResourceMapVTable;
   *(int *)(extraout_EAX + 0x18) = param_2;
   *(uint *)(extraout_EAX + 8) = *(uint *)(param_2 + 0x68);

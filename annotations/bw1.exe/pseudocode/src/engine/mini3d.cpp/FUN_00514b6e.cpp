@@ -15,7 +15,7 @@ void engine_mini3d_cpp_FUN_00514b6e(int param_1,int param_2,int param_3,int para
   int iVar2;
   
   _DAT_01d25f14 = (param_4 != 0) + 1;
-  unkafter_minecar_cpp_FUN_00511850(0,0,(float)(param_1 + -1),(float)(param_2 + -1));
+  engine_mini3d_cpp_FUN_00511850(0,0,(float)(param_1 + -1),(float)(param_2 + -1));
   _DAT_01d2ae00 = param_2;
   if (0 < param_2) {
     iVar2 = 0;

@@ -85,6 +85,10 @@ void FUN_0043aed0(void);
 // Address: 0043b14e
 void clipPolygonBottomPlaneGlobal(void);
 
+// Original: engine_clipper.c_FUN_0043b280
+// Address: 0043b280
+void FUN_0043b280(void);
+
 // Original: engine_clipper.c_FUN_0043b3bc
 // Address: 0043b3bc
 undefined4 FUN_0043b3bc(void);

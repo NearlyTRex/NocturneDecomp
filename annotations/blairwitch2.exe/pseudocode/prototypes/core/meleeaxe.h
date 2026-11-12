@@ -24,3 +24,7 @@ CMeleeAxe * CMeleeAxe::ctor(CMeleeAxe *this_ptr);
 // Original: core_meleeaxe.cpp_CMeleeAxe_dtor_FUN_0059d300
 // Address: 0059d300
 CMeleeAxe * CMeleeAxe::dtor(CMeleeAxe *this_ptr,uint flags);
+
+// Original: core_meleeaxe.cpp_FUN_0059d350
+// Address: 0059d350
+void FUN_0059d350(void);

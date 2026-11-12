@@ -133,7 +133,7 @@ switchD_00494ea5_default:
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930
             (DAT_0060b280,(SMRGLHeaderPrimitive *)0x1c3ded0);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   puVar3 = (uint *)((int)param_1 + (uint)bVar5 * -8 + 4);
   CStack_e4.x = param_1->x;
   *(uint *)((int)&CStack_e4 + (uint)bVar5 * -8 + 4) = *puVar3;
@@ -230,7 +230,7 @@ switchD_00494ea5_default:
     engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930
               (DAT_0060b280,(SMRGLHeaderPrimitive *)0x1c3ded0);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
-    engine_matrix_c_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
     iStack_18 = iStack_18 + 1;
   } while (iStack_18 < 3);
   return;

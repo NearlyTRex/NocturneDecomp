@@ -54,7 +54,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060
-;   engine_matrix.c_FUN_0046b4b0
+;   engine_drender.cpp_FUN_0046b4b0
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
 ;   sound_sndmain.cpp_processAudio_FUN_00553580
 ;
@@ -106,8 +106,8 @@ section .text
     MOV EAX,[0x0060b280]                ; 005025a0 | DAT_0060b280
     PUSH 0x422c9ce4                     ; 005025a5
     PUSH EAX                            ; 005025aa | DAT_01ba5c50
-    CALL engine_matrix.c_FUN_0046b4b0   ; 005025ab
-        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046b4b0()
+    CALL engine_drender.cpp_FUN_0046b4b0 ; 005025ab
+        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b4b0()
     ADD ESP,0x8                         ; 005025b0
     MOV EAX,ESP                         ; 005025b3
     PUSH EAX                            ; 005025b5

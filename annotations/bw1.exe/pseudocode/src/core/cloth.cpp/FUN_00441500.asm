@@ -18,7 +18,7 @@
 ;   core_dirmat.cpp_FUN_0045f840
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;   engine_special.cpp_FUN_00580173
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00497830
 ;   shape_edittool.cpp_FUN_00498360
@@ -155,8 +155,8 @@ section .text
     MOV ESI,dword ptr [0x00612560]      ; 0044167c | DAT_00612560
         ;   Label: LAB_0044167c
     PUSH ESI                            ; 00441682
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 00441683
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 00441683
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 00441688
     ADD ESP,0x60                        ; 0044168b
     POP EBP                             ; 0044168e

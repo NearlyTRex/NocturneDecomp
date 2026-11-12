@@ -6,8 +6,9 @@
 ; Local Variables:
 ; undefined        Stack[-0xc]:1  local_c
 ;
-; XREF[1]:
+; XREF[2]:
 ;   crt_unknown.c_FUN_005bfdd4 at 005bff88
+;   crt_unknown.c_FUN_005c3f24 at 005c3f3a
 ;
 ; Referenced Globals:
 ;   void* PTR_FileTimeToDosDateTime_005c853c = 001c8d04

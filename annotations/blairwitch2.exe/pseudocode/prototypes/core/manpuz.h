@@ -85,6 +85,10 @@ void __cdecl CMansionPuzzleCircle::processPanel(CMansionPuzzleCircle *this_ptr,i
 // Address: 004e6a50
 void __cdecl CMansionPuzzleCircle::getPanelColor(CMansionPuzzleCircle *this_ptr,int panel_index,float *out_r,float *out_g,float *out_b);
 
+// Original: core_manpuz.cpp_stepToward_FUN_004e6ac0
+// Address: 004e6ac0
+undefined4 stepToward(float *param_1,float param_2,float param_3);
+
 // Original: core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20
 // Address: 004e6b20
 undefined4 __cdecl updateGemHumChannel(float *param_1,float param_2,float param_3,uint *param_4,undefined4 param_5,float *param_6);

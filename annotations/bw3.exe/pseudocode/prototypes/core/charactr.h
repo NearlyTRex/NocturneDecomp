@@ -41,6 +41,14 @@ void __cdecl CCharacter::archive(CCharacter *this_ptr);
 // Address: 0042b8d0
 void __cdecl CCharacter::setPositionAndOrientation(CCharacter *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 
+// Original: core_charactr.cpp_clampFloat_FUN_0042b920
+// Address: 0042b920
+float clampFloat(float param_1,float param_2);
+
+// Original: core_charactr.cpp_FUN_0042b970
+// Address: 0042b970
+float FUN_0042b970(undefined4 param_1,float param_2);
+
 // Original: core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 // Address: 0042b9e0
 int __cdecl CCharacter::walkToPoint(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance);
@@ -412,3 +420,7 @@ undefined4 FUN_00434b00(int param_1);
 // Original: core_charactr.cpp_SFire_ctor_FUN_00434b10
 // Address: 00434b10
 SFire * SFire::ctor(SFire *this_ptr);
+
+// Original: core_charactr.cpp_FUN_00434b2e
+// Address: 00434b2e
+undefined4 FUN_00434b2e(undefined4 *param_1,byte *param_2,int param_3);

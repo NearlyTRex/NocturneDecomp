@@ -21,10 +21,6 @@ CDemonActorType * CIcePick::getActorType(CIcePick *this_ptr);
 // Address: 004d4990
 CIcePick * CIcePick::ctor(CIcePick *this_ptr);
 
-// Original: core_icepick.cpp_FUN_004d49bf
-// Address: 004d49bf
-void FUN_004d49bf(void);
-
 // Original: core_icepick.cpp_CIcePick_setup_FUN_004d4a20
 // Address: 004d4a20
 void __cdecl CIcePick::setup(CIcePick *this_ptr);

@@ -8,11 +8,11 @@
 ;
 ; XREF[6]:
 ;   core_belling.cpp_CBelling_archive_FUN_005a9120 at 005a9125
-;   core_grandma.cpp_CGrandma_archive_FUN_005a7ce0 at 005a7ce5
-;   core_robin.cpp_CRobin_archive_FUN_005a6750 at 005a6755
-;   core_searpart.cpp_CSearchParty_archive_FUN_005a8e70 at 005a8e75
-;   core_steuben.cpp_CSteuben_archive_FUN_005a5d60 at 005a5d65
+;   core_bwgrndma.cpp_CGrandma_archive_FUN_005a7ce0 at 005a7ce5
+;   core_bwsearch.cpp_CSearchParty_archive_FUN_005a8e70 at 005a8e75
 ;   core_union.cpp_CUnion_archive_FUN_005a5450 at 005a5455
+;   core_villain.cpp_CSteuben_archive_FUN_005a5d60 at 005a5d65
+;   core_weaver.cpp_CRobin_archive_FUN_005a6750 at 005a6755
 ;
 ; Called Functions:
 ;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10

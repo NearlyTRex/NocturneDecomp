@@ -15,7 +15,7 @@ void cockpit_pkbmpset_cpp_FUN_00517670(int *param_1,int param_2)
   int iVar2;
   char acStack_d0 [200];
   
-  unkafter_pkbitmap_cpp_FUN_00517640(param_1);
+  cockpit_pkbitmap_cpp_FUN_00517640(param_1);
   if (param_2 < 1) {
     return;
   }

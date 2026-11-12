@@ -9,15 +9,15 @@
 ;
 ; XREF[38]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870 at 0040c921
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00416790 at 004167a7
+;   core_bmppuzzl.cpp_CChemPuzzle_process_FUN_00418220 at 00418234
 ;   core_carved.cpp_CCarved_processDamage_FUN_0042b850 at 0042b970
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429b2d
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_004319e0 at 00431ba3
-;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 004461bf
+;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 004461bf
 ;   core_demnfolk.cpp_CDemnfolk_processDamage_FUN_0045c7b0 at 0045c8e8
 ;   core_dest.cpp_CActorDestination_process_FUN_0045d2a0 at 0045d437
 ;   core_djien.cpp_CDjien_damageSack_FUN_00460f90 at 0046107a
-;   core_djien.cpp_CDjien_processDamage_FUN_004613b0 at 00461409
-;   core_djien.cpp_CDjien_process_FUN_00460230 at 00460350
 ;   ... and 28 more
 ;
 ; Referenced Globals:

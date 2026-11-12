@@ -8,6 +8,7 @@
 ;
 ; XREF[37]:
 ;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a10ba
+;   core_bird.cpp_FUN_00410030 at 0041004b
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_00433880 at 004338d1
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_004331a0 at 004331e5
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_00432090 at 004320ad
@@ -16,7 +17,6 @@
 ;   core_charactr.cpp_FUN_00432220 at 00432243
 ;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 005988fc
 ;   core_event.cpp_FUN_0048c2e0 at 0049047c
-;   core_ghoul.cpp_CGhoul_processDamage_FUN_004c9400 at 004c979c
 ;   ... and 27 more
 ;
 ; *****************************************************************************

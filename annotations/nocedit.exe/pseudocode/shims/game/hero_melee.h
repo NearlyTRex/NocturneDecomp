@@ -44,7 +44,7 @@ float nocturne_hero_melee_edge_distance(struct CDemonActor *self, struct CCharac
 int nocturne_hero_bone_world(struct CCharacter *self, const char *bone_name,
                              struct CVector3f *world);
 
-// Deals `amount` of DAMAGE_TYPE_MELEE from `self` to `target` through the
+// Deals `amount` of DAMAGE_TYPE_ATTACK_BLADE from `self` to `target` through the
 // target's processDamage, with `from` as the impact point. Returns the damage
 // processDamage let through.
 float nocturne_hero_melee_hit(struct CCharacter *self, struct CCharacter *target,

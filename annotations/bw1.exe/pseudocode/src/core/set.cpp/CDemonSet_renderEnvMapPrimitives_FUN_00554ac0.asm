@@ -38,7 +38,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_00482cd0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
-;   engine_matrix.c_FUN_00483ac0
+;   engine_drender.cpp_FUN_00483ac0
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
         ;   Label: LAB_00554b08
     PUSH EAX                            ; 00554b0d | DAT_01bc120c
     LEA ESI,[ESP + 0xd8]                ; 00554b0e
-    CALL engine_matrix.c_FUN_00483ac0   ; 00554b15
-        ;   XREF to: 00483ac0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00483ac0()
+    CALL engine_drender.cpp_FUN_00483ac0 ; 00554b15
+        ;   XREF to: 00483ac0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483ac0()
     ADD ESP,0x4                         ; 00554b1a
     XOR EDX,EDX                         ; 00554b1d
     MOV ECX,dword ptr [ESP + 0x100]     ; 00554b1f

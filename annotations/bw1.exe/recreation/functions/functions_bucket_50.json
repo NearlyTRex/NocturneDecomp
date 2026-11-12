@@ -936,8 +936,10 @@
       "004fae10",
       "004fc770",
       "004fff70",
+      "004ffff0",
       "00500310",
       "005016d0",
+      "00501750",
       "00501a70",
       "00509830",
       "0051c0a0",
@@ -1815,14 +1817,14 @@
     ],
     "instructions":1,
     "method":"FUN_00415bd0",
-    "name":"unkafter_alphabit.cpp_FUN_00415bd0",
+    "name":"engine_alphabit.cpp_FUN_00415bd0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/alphabit.cpp",
+    "tu":"engine/alphabit.cpp",
     "variadic":false
   },
   {
@@ -1830,14 +1832,14 @@
     "conv":"unknown",
     "instructions":20,
     "method":"FUN_00415c50",
-    "name":"unkafter_alphabit.cpp_FUN_00415c50",
+    "name":"engine_alphabit.cpp_FUN_00415c50",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/alphabit.cpp",
+    "tu":"engine/alphabit.cpp",
     "variadic":false
   },
   {
@@ -1848,14 +1850,14 @@
     "conv":"unknown",
     "instructions":63,
     "method":"FUN_00415cd0",
-    "name":"unkafter_alphabit.cpp_FUN_00415cd0",
+    "name":"engine_alphabit.cpp_FUN_00415cd0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/alphabit.cpp",
+    "tu":"engine/alphabit.cpp",
     "variadic":false
   },
   {
@@ -1866,14 +1868,14 @@
     ],
     "instructions":1,
     "method":"FUN_00416d50",
-    "name":"unkafter_bmppuzzl.cpp_FUN_00416d50",
+    "name":"core_bmppuzzl.cpp_FUN_00416d50",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/bmppuzzl.cpp",
+    "tu":"core/bmppuzzl.cpp",
     "variadic":false
   },
   {
@@ -1885,14 +1887,14 @@
     ],
     "instructions":3,
     "method":"getSpeedSetting",
-    "name":"shape_superopt.cpp_CAudioRecPuzzle_getSpeedSetting_FUN_004175d0",
+    "name":"core_bmppuzzl.cpp_CAudioRecPuzzle_getSpeedSetting_FUN_004175d0",
     "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"int",
       "ptr":0
     },
-    "tu":"shape/superopt.cpp",
+    "tu":"core/bmppuzzl.cpp",
     "variadic":false
   },
   {
@@ -1903,14 +1905,14 @@
     "conv":"unknown",
     "instructions":5,
     "method":"FUN_00418850",
-    "name":"unkafter_superopt.cpp_FUN_00418850",
+    "name":"core_bmppuzzl.cpp_FUN_00418850",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/superopt.cpp",
+    "tu":"core/bmppuzzl.cpp",
     "variadic":false
   },
   {
@@ -2851,6 +2853,7 @@
       "00426030",
       "004263d0",
       "00428ae0",
+      "00444550",
       "00445cb0",
       "00448570",
       "00459100",
@@ -2886,6 +2889,7 @@
       "005a5550",
       "005af4a0",
       "005b1850",
+      "005b8440",
       "005bafb0"
     ],
     "calls":[
@@ -2898,10 +2902,6 @@
       "005c1210"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "00444b38",
-      "005b875e"
-    ],
     "instructions":640,
     "method":"FUN_0042d750",
     "name":"core_charactr.cpp_FUN_0042d750",
@@ -3876,12 +3876,40 @@
   },
   {
     "addr":"00444550",
+    "calls":[
+      "004088b0",
+      "00408bb0",
+      "0040cd60",
+      "0042d700",
+      "0042d750",
+      "0042e160",
+      "0042e1a0",
+      "00432240",
+      "00433e80",
+      "00435320",
+      "00444b50",
+      "00445140",
+      "00445430",
+      "004eb090",
+      "004eb240",
+      "004eb3e0",
+      "004eb5e0",
+      "004eb660",
+      "004eb7f0",
+      "00524770",
+      "005247c0",
+      "005675a0",
+      "00568d60",
+      "00569130",
+      "005a7520",
+      "005b7ed0"
+    ],
     "cls":"CColonel",
     "conv":"__cdecl",
     "data_refs":[
       "005fdbf0"
     ],
-    "instructions":0,
+    "instructions":407,
     "method":"process",
     "name":"core_colonel.cpp_CColonel_process_FUN_00444550",
     "params":[
@@ -3898,6 +3926,33 @@
     "ret":{
       "kind":"builtin",
       "name":"void",
+      "ptr":0
+    },
+    "tu":"core/colonel.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00444b50",
+    "callers":[
+      "00444550"
+    ],
+    "calls":[
+      "0040cd60",
+      "004ec350",
+      "00524770",
+      "005349a0",
+      "005351f0",
+      "005a7520",
+      "005bfb70"
+    ],
+    "conv":"unknown",
+    "instructions":386,
+    "method":"FUN_00444b50",
+    "name":"core_colonel.cpp_FUN_00444b50",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
       "ptr":0
     },
     "tu":"core/colonel.cpp",
@@ -4719,14 +4774,14 @@
     ],
     "instructions":5,
     "method":"FUN_00462450",
-    "name":"unkaddr_00462450.cpp_FUN_00462450",
+    "name":"core_djien.cpp_FUN_00462450",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkaddr/00462450.cpp",
+    "tu":"core/djien.cpp",
     "variadic":false
   },
   {
@@ -5404,14 +5459,14 @@
     "conv":"unknown",
     "instructions":8,
     "method":"FUN_00479950",
-    "name":"unkafter_dosio.cpp_FUN_00479950",
+    "name":"engine_dosio.cpp_FUN_00479950",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/dosio.cpp",
+    "tu":"engine/dosio.cpp",
     "variadic":false
   },
   {
@@ -5699,6 +5754,25 @@
     "variadic":false
   },
   {
+    "addr":"00480e50",
+    "calls":[
+      "00480e10",
+      "005bfb18"
+    ],
+    "conv":"unknown",
+    "instructions":27,
+    "method":"FUN_00480e50",
+    "name":"cockpit_drawsurf.cpp_FUN_00480e50",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"cockpit/drawsurf.cpp",
+    "variadic":false
+  },
+  {
     "addr":"00482cd0",
     "callers":[
       "00554ac0",
@@ -5825,7 +5899,7 @@
       "005054c0",
       "00510620",
       "00559f80",
-      "00564b1c",
+      "00564b20",
       "0058e3c0",
       "0059a010",
       "0059ad40",
@@ -5890,14 +5964,14 @@
     "conv":"unknown",
     "instructions":16,
     "method":"FUN_00483b50",
-    "name":"engine_matrix.c_FUN_00483b50",
+    "name":"engine_drender.cpp_FUN_00483b50",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"engine/matrix.c",
+    "tu":"engine/drender.cpp",
     "variadic":false
   },
   {
@@ -6274,6 +6348,21 @@
     "instructions":480,
     "method":"FUN_0048b150",
     "name":"core_dtrace.cpp_FUN_0048b150",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"core/dtrace.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"0048f250",
+    "conv":"unknown",
+    "instructions":57,
+    "method":"FUN_0048f250",
+    "name":"core_dtrace.cpp_FUN_0048f250",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -6928,7 +7017,7 @@
       "004cf5e0",
       "0050a5e0",
       "0052cab0",
-      "0053bfbe"
+      "0053bfc0"
     ],
     "calls":[
       "00494110",
@@ -7025,7 +7114,7 @@
       "0050ba70",
       "0050d640",
       "0051c240",
-      "0053bfbe",
+      "0053bfc0",
       "00543e00",
       "00544460",
       "0054aa60",
@@ -8832,14 +8921,14 @@
     "conv":"unknown",
     "instructions":66,
     "method":"FUN_004b9c50",
-    "name":"unkaddr_004b9ab0.cpp_FUN_004b9c50",
+    "name":"core_flashlit.cpp_FUN_004b9c50",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkaddr/004b9ab0.cpp",
+    "tu":"core/flashlit.cpp",
     "variadic":false
   },
   {
@@ -9320,7 +9409,8 @@
   {
     "addr":"004c2150",
     "callers":[
-      "00480480"
+      "00480480",
+      "004c21e0"
     ],
     "calls":[
       "004c2060",
@@ -10770,7 +10860,7 @@
     "addr":"004ec350",
     "callers":[
       "0040fcf0",
-      "00444b4e",
+      "00444b50",
       "004c7aa0",
       "004e98b0",
       "004f1b50",
@@ -11874,6 +11964,24 @@
     "variadic":false
   },
   {
+    "addr":"00501750",
+    "calls":[
+      "0040c550"
+    ],
+    "conv":"unknown",
+    "instructions":56,
+    "method":"FUN_00501750",
+    "name":"core_lightpis.cpp_FUN_00501750",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"core/lightpis.cpp",
+    "variadic":false
+  },
+  {
     "addr":"00506450",
     "callers":[
       "00506420"
@@ -12197,14 +12305,14 @@
     "conv":"unknown",
     "instructions":80,
     "method":"FUN_00511850",
-    "name":"unkafter_minecar.cpp_FUN_00511850",
+    "name":"engine_mini3d.cpp_FUN_00511850",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/minecar.cpp",
+    "tu":"engine/mini3d.cpp",
     "variadic":false
   },
   {
@@ -13079,7 +13187,7 @@
     ],
     "instructions":7,
     "method":"arrdtor30",
-    "name":"unkafter_moon.cpp_CAlphaBitmap_arrdtor30_FUN_005220d0",
+    "name":"core_moon.cpp_CAlphaBitmap_arrdtor30_FUN_005220d0",
     "params":[
       {
         "name":"flags",
@@ -13096,7 +13204,7 @@
       "name":"CAlphaBitmap",
       "ptr":1
     },
-    "tu":"unkafter/moon.cpp",
+    "tu":"core/moon.cpp",
     "variadic":false
   },
   {
@@ -13135,7 +13243,9 @@
     "addr":"005221d0",
     "callers":[
       "005224f0",
-      "00523000"
+      "00523000",
+      "00523140",
+      "00523190"
     ],
     "calls":[
       "005030e0",
@@ -14353,6 +14463,7 @@
     "addr":"00538050",
     "callers":[
       "00538000",
+      "00538750",
       "005391e0"
     ],
     "cls":"CPackedBitmap",
@@ -14419,6 +14530,9 @@
   },
   {
     "addr":"005385d0",
+    "callers":[
+      "00538750"
+    ],
     "calls":[
       "005030e0",
       "00537490",
@@ -14432,6 +14546,31 @@
     "instructions":122,
     "method":"parsePBGFile",
     "name":"cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"cockpit/pkbitmap.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00538750",
+    "calls":[
+      "00437400",
+      "00479180",
+      "005030e0",
+      "005375c0",
+      "00538050",
+      "005385d0",
+      "005bfb40",
+      "005c0d10"
+    ],
+    "conv":"unknown",
+    "instructions":102,
+    "method":"FUN_00538750",
+    "name":"cockpit_pkbitmap.cpp_FUN_00538750",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -14579,7 +14718,8 @@
     "callers":[
       "0053c650",
       "0053c750",
-      "0053cc5c"
+      "0053cc5c",
+      "0053ce50"
     ],
     "calls":[
       "00478e20",
@@ -14619,6 +14759,7 @@
     "addr":"0053bed0",
     "callers":[
       "0053c940",
+      "0053cec0",
       "0053cf50"
     ],
     "calls":[
@@ -14728,6 +14869,27 @@
     "ret":{
       "kind":"builtin",
       "name":"int",
+      "ptr":0
+    },
+    "tu":"engine/pod.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"0053ce50",
+    "calls":[
+      "0053b1a0",
+      "0053b210",
+      "0053b250",
+      "0053bfc0"
+    ],
+    "conv":"unknown",
+    "instructions":39,
+    "method":"FUN_0053ce50",
+    "name":"engine_pod.cpp_FUN_0053ce50",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
       "ptr":0
     },
     "tu":"engine/pod.cpp",
@@ -15499,6 +15661,7 @@
       "005a3870",
       "005adf90",
       "005af4a0",
+      "005b8440",
       "005bafb0"
     ],
     "calls":[
@@ -15506,9 +15669,6 @@
     ],
     "cls":"CDemonSet",
     "conv":"__cdecl",
-    "data_refs":[
-      "005b8684"
-    ],
     "instructions":27,
     "method":"ignore",
     "name":"core_setcolid.cpp_CDemonSet_ignore_FUN_00559250",
@@ -16232,6 +16392,25 @@
     "variadic":false
   },
   {
+    "addr":"005698d0",
+    "calls":[
+      "00563e90",
+      "00569eb0"
+    ],
+    "conv":"unknown",
+    "instructions":28,
+    "method":"FUN_005698d0",
+    "name":"core_skeleton.cpp_FUN_005698d0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"core/skeleton.cpp",
+    "variadic":false
+  },
+  {
     "addr":"00569b50",
     "callers":[
       "00565830",
@@ -16435,14 +16614,14 @@
     "conv":"__cdecl",
     "instructions":19,
     "method":"calculateDistanceSquared",
-    "name":"shape_meshlod.cpp_calculateDistanceSquared_FUN_0056b950",
+    "name":"core_skeleton.cpp_calculateDistanceSquared_FUN_0056b950",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"shape/meshlod.cpp",
+    "tu":"core/skeleton.cpp",
     "variadic":false
   },
   {
@@ -18563,6 +18742,9 @@
   },
   {
     "addr":"0059c9d0",
+    "callers":[
+      "0059cf00"
+    ],
     "calls":[
       "0059c7d0",
       "005cf82c",
@@ -18607,6 +18789,7 @@
   {
     "addr":"0059d9d0",
     "callers":[
+      "0059cf00",
       "0059e26e"
     ],
     "calls":[
@@ -18661,14 +18844,14 @@
     "conv":"unknown",
     "instructions":154,
     "method":"FUN_0059efd0",
-    "name":"unkafter_trisock.cpp_FUN_0059efd0",
+    "name":"support_trisock.cpp_FUN_0059efd0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/trisock.cpp",
+    "tu":"support/trisock.cpp",
     "variadic":false
   },
   {
@@ -18684,14 +18867,14 @@
     ],
     "instructions":3,
     "method":"FUN_0059f550",
-    "name":"unkaddr_0059f520.cpp_FUN_0059f550",
+    "name":"support_trstream.cpp_FUN_0059f550",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkaddr/0059f520.cpp",
+    "tu":"support/trstream.cpp",
     "variadic":false
   },
   {
@@ -18725,14 +18908,14 @@
     ],
     "instructions":15,
     "method":"ctor",
-    "name":"unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0",
+    "name":"support_trstream.cpp_CInStreamFile_ctor_FUN_005a08d0",
     "receiver":true,
     "ret":{
       "kind":"class",
       "name":"CInStreamFile",
       "ptr":1
     },
-    "tu":"unkclass/instream.cpp",
+    "tu":"support/trstream.cpp",
     "variadic":false
   },
   {
@@ -18772,7 +18955,7 @@
     ],
     "instructions":35,
     "method":"dtor",
-    "name":"unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50",
+    "name":"support_trstream.cpp_CInStreamFile_dtor_FUN_005a0a50",
     "params":[
       {
         "name":"flags",
@@ -18789,7 +18972,7 @@
       "name":"CInStreamFile",
       "ptr":1
     },
-    "tu":"unkclass/instream.cpp",
+    "tu":"support/trstream.cpp",
     "variadic":false
   },
   {
@@ -18806,14 +18989,14 @@
     ],
     "instructions":7,
     "method":"tell",
-    "name":"unkaddr_0059f520.cpp_CInStreamFile_tell_FUN_005a0d50",
+    "name":"support_trstream.cpp_CInStreamFile_tell_FUN_005a0d50",
     "receiver":true,
     "ret":{
       "kind":"undefined",
       "name":"undefined4",
       "ptr":0
     },
-    "tu":"unkaddr/0059f520.cpp",
+    "tu":"support/trstream.cpp",
     "variadic":false
   },
   {
@@ -18832,7 +19015,8 @@
       "00572d20",
       "00574410",
       "005967a0",
-      "00597d6e"
+      "00597d6e",
+      "005a09a0"
     ],
     "calls":[
       "00478e20",
@@ -19838,14 +20022,14 @@
     ],
     "instructions":2,
     "method":"FUN_005b21d0",
-    "name":"unkafter_winfont.cpp_FUN_005b21d0",
+    "name":"engine_winfont.cpp_FUN_005b21d0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/winfont.cpp",
+    "tu":"engine/winfont.cpp",
     "variadic":false
   },
   {
@@ -20069,14 +20253,14 @@
     "conv":"unknown",
     "instructions":8,
     "method":"FUN_005b42d0",
-    "name":"unkafter_winrun.cpp_FUN_005b42d0",
+    "name":"wincore_winrun.cpp_FUN_005b42d0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/winrun.cpp",
+    "tu":"wincore/winrun.cpp",
     "variadic":false
   },
   {
@@ -20090,14 +20274,14 @@
     "conv":"unknown",
     "instructions":5,
     "method":"FUN_005b4450",
-    "name":"unkafter_winrun.cpp_FUN_005b4450",
+    "name":"wincore_winrun.cpp_FUN_005b4450",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/winrun.cpp",
+    "tu":"wincore/winrun.cpp",
     "variadic":false
   },
   {
@@ -20261,6 +20445,7 @@
       "0040f4d0",
       "0041d540",
       "0041d760",
+      "00444550",
       "004472a0",
       "00447560",
       "00447810",
@@ -20279,7 +20464,6 @@
     ],
     "conv":"unknown",
     "data_refs":[
-      "0044484c",
       "005a2712",
       "005a272e"
     ],
@@ -20304,14 +20488,14 @@
     ],
     "instructions":2,
     "method":"getActorType",
-    "name":"core_xform.cpp_CYow_getActorType_FUN_005b8150",
+    "name":"core_yow.cpp_CYow_getActorType_FUN_005b8150",
     "receiver":true,
     "ret":{
       "kind":"class",
       "name":"CDemonActorType",
       "ptr":1
     },
-    "tu":"core/xform.cpp",
+    "tu":"core/yow.cpp",
     "variadic":false
   },
   {
@@ -20331,14 +20515,14 @@
     ],
     "instructions":143,
     "method":"FUN_005b81d0",
-    "name":"core_xform.cpp_FUN_005b81d0",
+    "name":"core_yow.cpp_FUN_005b81d0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"core/xform.cpp",
+    "tu":"core/yow.cpp",
     "variadic":false
   },
   {
@@ -20663,6 +20847,7 @@
       "00579f6e",
       "0059efd0",
       "005c8094",
+      "005cc224",
       "005cdce0"
     ],
     "conv":"__cdecl",

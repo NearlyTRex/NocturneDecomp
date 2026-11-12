@@ -5,15 +5,15 @@
 ;
 ;
 ; Called Functions:
+;   core_terrain.cpp_FUN_0057ba20
+;   core_terrain.cpp_FUN_0057cc20
 ;   crt_string.c_strupr_FUN_005ba840
 ;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004a8560
 ;   engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0
+;   support_trstream.cpp_CInStreamFile_close_FUN_0057d180
+;   support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50
+;   support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0
 ;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390
-;   unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180
-;   unkaddr_0057b9a0.cpp_FUN_0057ba20
-;   unkaddr_0057b9a0.cpp_FUN_0057cc20
-;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50
-;   unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x260]     ; 004a85b1
     LEA EAX,[ESP + 0x200]               ; 004a85b8
     PUSH EAX                            ; 004a85bf
-    CALL unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50 ; 004a85c0
-        ;   XREF to: 0057cd50 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50 ; 004a85c0
+        ;   XREF to: 0057cd50 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004a85c5
     LEA EDX,[EBX + 0x144]               ; 004a85c8
     MOV ESI,EBP                         ; 004a85ce
@@ -70,8 +70,8 @@ section .text
         ;   Label: LAB_004a860f
     LEA EAX,[ESP + 0x204]               ; 004a8611
     PUSH EAX                            ; 004a8618
-    CALL unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0 ; 004a8619
-        ;   XREF to: 0057cec0 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0(CInStreamFile * this_ptr, uint flags)
+    CALL support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0 ; 004a8619
+        ;   XREF to: 0057cec0 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004a861e
     ADD ESP,0x248                       ; 004a8621
     POP EBP                             ; 004a8627
@@ -85,24 +85,24 @@ section .text
     PUSH EAX                            ; 004a8638
     LEA EAX,[ESP + 0x208]               ; 004a8639
     PUSH EAX                            ; 004a8640
-    CALL unkaddr_0057b9a0.cpp_FUN_0057cc20 ; 004a8641
-        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057cc20()
+    CALL core_terrain.cpp_FUN_0057cc20  ; 004a8641
+        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057cc20()
     ADD ESP,0xc                         ; 004a8646
     MOV EAX,ESP                         ; 004a8649
     PUSH EAX                            ; 004a864b
     PUSH 0x5d691f                       ; 004a864c
     LEA EAX,[ESP + 0x208]               ; 004a8651
     PUSH EAX                            ; 004a8658
-    CALL unkaddr_0057b9a0.cpp_FUN_0057ba20 ; 004a8659
-        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057ba20()
+    CALL core_terrain.cpp_FUN_0057ba20  ; 004a8659
+        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057ba20()
     ADD ESP,0xc                         ; 004a865e
     PUSH 0xff                           ; 004a8661
     LEA EAX,[ESP + 0x104]               ; 004a8666
     PUSH EAX                            ; 004a866d
     LEA EAX,[ESP + 0x208]               ; 004a866e
     PUSH EAX                            ; 004a8675
-    CALL unkaddr_0057b9a0.cpp_FUN_0057cc20 ; 004a8676
-        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057cc20()
+    CALL core_terrain.cpp_FUN_0057cc20  ; 004a8676
+        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057cc20()
     ADD ESP,0xc                         ; 004a867b
     LEA EAX,[ESP + 0x22c]               ; 004a867e
     PUSH EAX                            ; 004a8685
@@ -111,16 +111,16 @@ section .text
     PUSH 0x5d6923                       ; 004a868e
     LEA EAX,[ESP + 0x20c]               ; 004a8693
     PUSH EAX                            ; 004a869a
-    CALL unkaddr_0057b9a0.cpp_FUN_0057ba20 ; 004a869b
-        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057ba20()
+    CALL core_terrain.cpp_FUN_0057ba20  ; 004a869b
+        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057ba20()
     ADD ESP,0x10                        ; 004a86a0
     PUSH 0xff                           ; 004a86a3
     LEA EAX,[ESP + 0x104]               ; 004a86a8
     PUSH EAX                            ; 004a86af
     LEA EAX,[ESP + 0x208]               ; 004a86b0
     PUSH EAX                            ; 004a86b7
-    CALL unkaddr_0057b9a0.cpp_FUN_0057cc20 ; 004a86b8
-        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057cc20()
+    CALL core_terrain.cpp_FUN_0057cc20  ; 004a86b8
+        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057cc20()
     ADD ESP,0xc                         ; 004a86bd
     LEA EAX,[ESP + 0x234]               ; 004a86c0
     PUSH EAX                            ; 004a86c7
@@ -129,48 +129,48 @@ section .text
     PUSH 0x5d692a                       ; 004a86d0
     LEA EAX,[ESP + 0x20c]               ; 004a86d5
     PUSH EAX                            ; 004a86dc
-    CALL unkaddr_0057b9a0.cpp_FUN_0057ba20 ; 004a86dd
-        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057ba20()
+    CALL core_terrain.cpp_FUN_0057ba20  ; 004a86dd
+        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057ba20()
     ADD ESP,0x10                        ; 004a86e2
     PUSH 0xff                           ; 004a86e5
     LEA EAX,[ESP + 0x104]               ; 004a86ea
     PUSH EAX                            ; 004a86f1
     LEA EAX,[ESP + 0x208]               ; 004a86f2
     PUSH EAX                            ; 004a86f9
-    CALL unkaddr_0057b9a0.cpp_FUN_0057cc20 ; 004a86fa
-        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057cc20()
+    CALL core_terrain.cpp_FUN_0057cc20  ; 004a86fa
+        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057cc20()
     ADD ESP,0xc                         ; 004a86ff
     LEA EAX,[ESP + 0x238]               ; 004a8702
     PUSH EAX                            ; 004a8709
     PUSH 0x5d6931                       ; 004a870a
     LEA EAX,[ESP + 0x208]               ; 004a870f
     PUSH EAX                            ; 004a8716
-    CALL unkaddr_0057b9a0.cpp_FUN_0057ba20 ; 004a8717
-        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057ba20()
+    CALL core_terrain.cpp_FUN_0057ba20  ; 004a8717
+        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057ba20()
     ADD ESP,0xc                         ; 004a871c
     PUSH 0xff                           ; 004a871f
     LEA EAX,[ESP + 0x104]               ; 004a8724
     PUSH EAX                            ; 004a872b
     LEA EAX,[ESP + 0x208]               ; 004a872c
     PUSH EAX                            ; 004a8733
-    CALL unkaddr_0057b9a0.cpp_FUN_0057cc20 ; 004a8734
-        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057cc20()
+    CALL core_terrain.cpp_FUN_0057cc20  ; 004a8734
+        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057cc20()
     ADD ESP,0xc                         ; 004a8739
     LEA EAX,[ESP + 0x23c]               ; 004a873c
     PUSH EAX                            ; 004a8743
     PUSH 0x5d6935                       ; 004a8744
     LEA EAX,[ESP + 0x208]               ; 004a8749
     PUSH EAX                            ; 004a8750
-    CALL unkaddr_0057b9a0.cpp_FUN_0057ba20 ; 004a8751
-        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057ba20()
+    CALL core_terrain.cpp_FUN_0057ba20  ; 004a8751
+        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057ba20()
     ADD ESP,0xc                         ; 004a8756
     PUSH 0xff                           ; 004a8759
     LEA EAX,[ESP + 0x104]               ; 004a875e
     PUSH EAX                            ; 004a8765
     LEA EAX,[ESP + 0x208]               ; 004a8766
     PUSH EAX                            ; 004a876d
-    CALL unkaddr_0057b9a0.cpp_FUN_0057cc20 ; 004a876e
-        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057cc20()
+    CALL core_terrain.cpp_FUN_0057cc20  ; 004a876e
+        ;   XREF to: 0057cc20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057cc20()
     ADD ESP,0xc                         ; 004a8773
     LEA EAX,[ESP + 0x244]               ; 004a8776
     PUSH EAX                            ; 004a877d
@@ -179,13 +179,13 @@ section .text
     PUSH 0x5d6939                       ; 004a8786
     LEA EAX,[ESP + 0x20c]               ; 004a878b
     PUSH EAX                            ; 004a8792
-    CALL unkaddr_0057b9a0.cpp_FUN_0057ba20 ; 004a8793
-        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057ba20()
+    CALL core_terrain.cpp_FUN_0057ba20  ; 004a8793
+        ;   XREF to: 0057ba20 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057ba20()
     ADD ESP,0x10                        ; 004a8798
     LEA EAX,[ESP + 0x200]               ; 004a879b
     PUSH EAX                            ; 004a87a2
-    CALL unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180 ; 004a87a3
-        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_close_FUN_0057d180 ; 004a87a3
+        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004a87a8
     CMP dword ptr [ESP + 0x230],0x20    ; 004a87ab
     JZ 0x004a8817                       ; 004a87b3

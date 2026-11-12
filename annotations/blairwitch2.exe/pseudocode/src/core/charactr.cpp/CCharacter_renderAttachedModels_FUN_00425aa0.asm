@@ -33,7 +33,7 @@
 ;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;
 ; *****************************************************************************
 
@@ -126,8 +126,8 @@ section .text
     ADD ESP,0xc                         ; 00425b93
     MOV EDI,dword ptr [0x0060b280]      ; 00425b96 | DAT_0060b280
     PUSH EDI                            ; 00425b9c | DAT_01ba5c50
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 00425b9d
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 00425b9d
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 00425ba2
     JMP 0x00425aed                      ; 00425ba5
         ;   XREF to: 00425aed (UNCONDITIONAL_JUMP)  ; LAB_00425aed

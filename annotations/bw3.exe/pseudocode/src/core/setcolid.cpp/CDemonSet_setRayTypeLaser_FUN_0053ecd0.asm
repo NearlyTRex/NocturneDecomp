@@ -12,7 +12,7 @@
 ;
 ; XREF[3]:
 ;   core_fire.cpp_FUN_004a2e20 at 004a2e66
-;   core_lightgun.cpp_FUN_004e1070 at 004e1f28
+;   core_lightsta.cpp_FUN_004e1070 at 004e1f28
 ;   core_prye.cpp_FUN_00523800 at 0052394c
 ;
 ; *****************************************************************************

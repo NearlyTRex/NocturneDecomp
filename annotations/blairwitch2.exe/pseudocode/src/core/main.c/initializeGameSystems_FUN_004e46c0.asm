@@ -31,19 +31,19 @@
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_00447ad0
 ;   core_dfont.cpp_FUN_00447ea0
+;   core_flattn.cpp_FUN_004a67a0
 ;   core_inivar.cpp_readIniData_FUN_004d8d60
 ;   core_main.c_FUN_004e4500
+;   core_marquee.cpp_FUN_004e8620
 ;   core_menu.cpp_showCalibrationTest_FUN_004ebe30
 ;   core_mission.cpp_FUN_004fb380
 ;   core_mmx.c_detectCPUFeatures_FUN_004fd490
 ;   core_netgame.cpp_CNetGame_init_FUN_0050b340
 ;   core_sound.cpp_FUN_0055a100
+;   core_zombie.cpp_FUN_0059abb0
 ;   crt_io.c__chmod_FUN_005b99e0
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fopen_FUN_005b910c
-;   crt_stdio.c_freopen_FUN_005b91a4
-;   crt_unknown.c_sprintf_FUN_005b7790
-;   engine_2d.c_initGraphicsSystem_FUN_00401010
 ;   ... and 23 more
 ;
 ; *****************************************************************************
@@ -79,8 +79,8 @@ section .text
     CALL crt_stdio.c_freopen_FUN_005b91a4 ; 004e4716
         ;   XREF to: 005b91a4 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_freopen_FUN_005b91a4()
     ADD ESP,0xc                         ; 004e471b
-    CALL unkafter_flattn.cpp_FUN_004a67a0 ; 004e471e
-        ;   XREF to: 004a67a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_flattn.cpp_FUN_004a67a0()
+    CALL core_flattn.cpp_FUN_004a67a0   ; 004e471e
+        ;   XREF to: 004a67a0 (UNCONDITIONAL_CALL)  ; undefined core_flattn.cpp_FUN_004a67a0()
     CALL core_inivar.cpp_readIniData_FUN_004d8d60 ; 004e4723
         ;   XREF to: 004d8d60 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_readIniData_FUN_004d8d60()
     MOV EDX,dword ptr [0x0061b40c]      ; 004e4728 | g_CDemonPodPtr
@@ -119,8 +119,8 @@ section .text
     CALL core_main.c_FUN_004e4500       ; 004e479a
         ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004e479f
-    CALL unkafter_marquee.cpp_FUN_004e8620 ; 004e47a2
-        ;   XREF to: 004e8620 (UNCONDITIONAL_CALL)  ; undefined unkafter_marquee.cpp_FUN_004e8620()
+    CALL core_marquee.cpp_FUN_004e8620  ; 004e47a2
+        ;   XREF to: 004e8620 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_004e8620()
         ;   Label: LAB_004e47a2
     CALL engine_3d.c_initTextureCache_FUN_004037e0 ; 004e47a7
         ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_3d.c_initTextureCache_FUN_004037e0()
@@ -753,8 +753,8 @@ section .text
     CALL core_netgame.cpp_CNetGame_init_FUN_0050b340 ; 004e4d76
         ;   XREF to: 0050b340 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_init_FUN_0050b340(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004e4d7b
-    CALL unkaddr_0059aa80.cpp_FUN_0059abb0 ; 004e4d7e
-        ;   XREF to: 0059abb0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059aa80.cpp_FUN_0059abb0()
+    CALL core_zombie.cpp_FUN_0059abb0   ; 004e4d7e
+        ;   XREF to: 0059abb0 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059abb0()
     PUSH 0x5dc445                       ; 004e4d83 | DAT_005dc445
     PUSH 0x5dc447                       ; 004e4d88 | = "Flip on VBlank"
     PUSH 0x5dc456                       ; 004e4d8d | = "SOFTWARE\\Matrox\\PowerDesk\\Current ..."

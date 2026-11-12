@@ -101,11 +101,11 @@ section .text
     LEA EBX,[EBP + -0x28]               ; 0050f4db
     PUSH EBX                            ; 0050f4de
     CALL shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020 ; 0050f4df
-        ;   XREF to: 0050f020 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead * header, char * filename, int line_number)
+        ;   XREF to: 0050f020 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead * this_ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 0050f4e4
     PUSH EBX                            ; 0050f4e7
     CALL shape_memdbg.cpp_SMemHead_remove_FUN_0050ef20 ; 0050f4e8
-        ;   XREF to: 0050ef20 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_remove_FUN_0050ef20(SMemHead * header)
+        ;   XREF to: 0050ef20 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_remove_FUN_0050ef20(SMemHead * this_ptr)
     ADD ESP,0x4                         ; 0050f4ed
     PUSH EBX                            ; 0050f4f0
     CALL crt_memory.c_free_FUN_00601cd0 ; 0050f4f1

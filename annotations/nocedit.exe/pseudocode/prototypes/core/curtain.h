@@ -103,7 +103,7 @@ SCollisionInfo * __cdecl SCollisionInfo::dtor(SCollisionInfo *this_ptr,uint flag
 
 // Original: core_curtain.cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0
 // Address: 0044bad0
-SCurtainVertex * __cdecl SCurtainVertex::arrdtor1000(SCurtainVertex *objs,uint flags);
+SCurtainVertex * __cdecl SCurtainVertex::arrdtor1000(SCurtainVertex *this_ptr,uint flags);
 
 // Original: core_curtain.cpp_CVector3f_arrdtor100_FUN_0044baf0
 // Address: 0044baf0

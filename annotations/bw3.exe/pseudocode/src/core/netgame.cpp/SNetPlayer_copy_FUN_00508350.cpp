@@ -1,6 +1,6 @@
 // Name: core_netgame.cpp_SNetPlayer_copy_FUN_00508350
 // Address: 00508350
-// Address Range: [[00508350, 00508350]]
+// Address Range: [[00508350, 00508419]]
 // Convention: unknown
 // Signature: SNetPlayer * core_netgame_cpp_SNetPlayer_copy_FUN_00508350(SNetPlayer *this_ptr,SNetPlayer *other)
 

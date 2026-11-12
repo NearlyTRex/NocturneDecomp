@@ -5,6 +5,14 @@
 // Function prototypes for core/fldnotes.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_fldnotes.cpp_SPageResource_ctor_FUN_004ba730
+// Address: 004ba730
+void __cdecl SPageResource::ctor(SPageResource *this_ptr);
+
+// Original: core_fldnotes.cpp_SPageResource_dtor_FUN_004ba760
+// Address: 004ba760
+int __cdecl SPageResource::dtor(SPageResource *this_ptr);
+
 // Original: core_fldnotes.cpp_SPageResource_setLink_FUN_004ba78e
 // Address: 004ba78e
 void __cdecl SPageResource::setLink(SPageResource *this_ptr,char *param_2);
@@ -304,3 +312,23 @@ void __cdecl CFieldNotes::loadState(CFieldNotes *this_ptr,undefined4 param_2);
 // Original: core_fldnotes.cpp_FUN_004bf1c0
 // Address: 004bf1c0
 void FUN_004bf1c0(undefined4 param_1,undefined4 param_2);
+
+// Original: core_fldnotes.cpp_SPageResourceMap_dtor_FUN_004bf670
+// Address: 004bf670
+SPageResourceMap * SPageResourceMap::dtor(SPageResourceMap *this_ptr,uint flags);
+
+// Original: core_fldnotes.cpp_FUN_004bf6c0
+// Address: 004bf6c0
+void FUN_004bf6c0(undefined4 param_1);
+
+// Original: core_fldnotes.cpp_CAlphaBitmap_arrdtor6_FUN_004bf6e0
+// Address: 004bf6e0
+CAlphaBitmap * CAlphaBitmap::arrdtor6(CAlphaBitmap *this_ptr,uint flags);
+
+// Original: core_fldnotes.cpp_SNotesMap_arrdtor4_FUN_004bf700
+// Address: 004bf700
+SNotesMap * SNotesMap::arrdtor4(SNotesMap *this_ptr,uint flags);
+
+// Original: core_fldnotes.cpp_SNotesSection_arrdtor6_FUN_004bf720
+// Address: 004bf720
+SNotesSection * SNotesSection::arrdtor6(SNotesSection *this_ptr,uint flags);

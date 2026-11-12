@@ -16,7 +16,7 @@
 ;   core_bat.cpp_CBat_getBoundingBox_FUN_0040f290 at 0040f2b0
 ;   core_bat.cpp_CBat_process_FUN_0040f010 at 0040f100
 ;   core_battery.cpp_CBattery_getBoundingBox_FUN_0040f690 at 0040f6a5
-;   core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_0041fb30 at 0041fb50
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50 at 00412d22
 ;   ... and 58 more
 ;
 ; Referenced Globals:

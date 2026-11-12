@@ -4,7 +4,8 @@
 ; undefined4 core_hero_cpp_FUN_004eb7f0(int param_1)
 ;
 ;
-; XREF[7]:
+; XREF[8]:
+;   core_colonel.cpp_CColonel_process_FUN_00444550 at 004449f5
 ;   core_doc.cpp_FUN_0046bde0 at 0046c83f
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c7901
 ;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e9727

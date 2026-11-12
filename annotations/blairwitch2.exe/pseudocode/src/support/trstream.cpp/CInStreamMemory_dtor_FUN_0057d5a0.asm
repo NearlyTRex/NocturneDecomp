@@ -16,11 +16,11 @@
 ;   undefined1* g_CInStreamMemoryVTable = 0057d5a0
 ;
 ; Called Functions:
+;   core_terrain.cpp_FUN_0057b9d0
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
 ;   support_trstream.cpp_CInStreamMemory_close_FUN_0057d7b0
-;   unkaddr_0057b9a0.cpp_FUN_0057b9d0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     ADD ESP,0x4                         ; 0057d5b8
     PUSH 0x1                            ; 0057d5bb
     PUSH EBX                            ; 0057d5bd
-    CALL unkaddr_0057b9a0.cpp_FUN_0057b9d0 ; 0057d5be
-        ;   XREF to: 0057b9d0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057b9d0()
+    CALL core_terrain.cpp_FUN_0057b9d0  ; 0057d5be
+        ;   XREF to: 0057b9d0 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057b9d0()
     ADD ESP,0x8                         ; 0057d5c3
     MOV DL,byte ptr [ESP + 0xc]         ; 0057d5c6
     MOV EBX,EAX                         ; 0057d5ca

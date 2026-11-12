@@ -7,11 +7,11 @@
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
+;   core_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0 at 00419ac6
 ;   core_boneguy.cpp_CSkeletonDemon_ctor_FUN_00419a20 at 00419a26
 ;   core_boneguy.cpp_CSkeletonForest_ctor_FUN_004198e0 at 004198e6
 ;   core_boneguy.cpp_CSkeletonIndian_ctor_FUN_00419980 at 00419986
 ;   core_boneguy.cpp_factoryFuncBoneGuy_FUN_00417050 at 00417063
-;   unkafter_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0 at 00419ac6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b6d92

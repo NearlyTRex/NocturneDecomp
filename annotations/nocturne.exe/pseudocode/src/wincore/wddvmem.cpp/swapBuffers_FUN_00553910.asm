@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[44]:
-;   core_dcube.cpp_FUN_0044b660 at 0044b6d7
+;   core_dcube.cpp_showHelpFile_FUN_0044b660 at 0044b6d7
 ;   core_game.cpp_CGame_FUN_004a57c0 at 004a5998
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6ab2
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7103

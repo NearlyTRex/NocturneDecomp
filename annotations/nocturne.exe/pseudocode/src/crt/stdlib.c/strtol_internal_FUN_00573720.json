@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 205,
     "complexity_score": 119,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -20,6 +20,12 @@
       "addr": "005738ac",
       "from_addr": "005738be",
       "name": "crt_stdlib.c_strtol_FUN_005738ac",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573890",
+      "from_addr": "005738a2",
+      "name": "crt_stdlib.c_strtoul_FUN_00573890",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -49,7 +55,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "005738be",
@@ -61,9 +67,20 @@
         "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
+      },
+      {
+        "call_addr": "005738a2",
+        "call_type": "direct",
+        "caller": "crt_stdlib.c_strtoul_FUN_00573890",
+        "estimated_params": 4,
+        "instructions_analyzed": 8,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 4,
     "declared_stack_bytes": 16,
     "estimated_params": 4,

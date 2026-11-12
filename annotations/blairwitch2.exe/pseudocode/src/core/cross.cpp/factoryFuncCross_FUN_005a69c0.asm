@@ -5,8 +5,8 @@
 ;
 ;
 ; Called Functions:
+;   core_cross.cpp_CCross_ctor_FUN_005a69f0
 ;   crt_memory.c_operator_new_FUN_005b8be2
-;   unkafter_cross.cpp_CCross_ctor_FUN_005a69f0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 005a69d1
     PUSH EAX                            ; 005a69d2
         ;   Label: LAB_005a69d2
-    CALL unkafter_cross.cpp_CCross_ctor_FUN_005a69f0 ; 005a69d3
-        ;   XREF to: 005a69f0 (UNCONDITIONAL_CALL)  ; CCross * unkafter_cross.cpp_CCross_ctor_FUN_005a69f0(CCross * this_ptr)
+    CALL core_cross.cpp_CCross_ctor_FUN_005a69f0 ; 005a69d3
+        ;   XREF to: 005a69f0 (UNCONDITIONAL_CALL)  ; CCross * core_cross.cpp_CCross_ctor_FUN_005a69f0(CCross * this_ptr)
     ADD ESP,0x4                         ; 005a69d8
     RET                                 ; 005a69db
 

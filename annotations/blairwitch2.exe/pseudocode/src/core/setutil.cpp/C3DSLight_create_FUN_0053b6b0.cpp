@@ -36,10 +36,10 @@ ulonglong __cdecl core_setutil_cpp_C3DSLight_create_FUN_0053b6b0(int param_1)
   }
   core_dlight_cpp_CDemonLight_init_FUN_00449d90(this_ptr_00);
   if (*(int *)(param_1 + 0x11ec) < 1) {
-    this_ptr_00->shadow_bounds_mode = 1;
+    this_ptr_00->shadow_bounds_mode = SHADOW_BOUNDS_CIRCULAR;
   }
   else {
-    this_ptr_00->shadow_bounds_mode = *(int *)(param_1 + 0x11f0);
+    this_ptr_00->shadow_bounds_mode = *(EShadowBoundsMode *)(param_1 + 0x11f0);
   }
   pUVar4 = &(this_ptr_00->base).base.position;
   if (pUVar4 != (UVector3 *)(param_1 + 0x104)) {

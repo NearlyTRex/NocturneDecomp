@@ -88,6 +88,6 @@ void core_cloth_cpp_FUN_0043f15e(int param_1,int param_2,int param_3)
     shape_edittool_cpp_FUN_00480f00
               (g_CEditorToolsPtr,*(float *)(iVar1 + 0x14) + *(float *)(iVar1 + 0x18),text_color);
   }
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   return;
 }

@@ -11,6 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00412ee0 at 00413198
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004953d0 at 00495429
 ;   core_fire.cpp_CFireball_onCollision_FUN_00499eb0 at 00499f56
 ;   core_menu.cpp_FUN_004e94f0 at 004e9e47
@@ -18,7 +19,6 @@
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 0056056a
 ;   core_sound.cpp_FUN_0055f6ae at 0055f9e4
 ;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f257
-;   unkafter_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00412ee0 at 00413198
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d2507

@@ -10,7 +10,7 @@ void core_confedrt_cpp_staticInit_FUN_005a07e0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450
-            (&g_CConfederateClassInfo,"?CConfederate" + 1,
+            (&g_CConfederateClassInfo,"CConfederate",
              core_confedrt_cpp_factoryFuncConfederate_FUN_005a0810,&g_CConfederateClassVersion,1,
              &g_CBasicEnemyClassInfo);
   return;

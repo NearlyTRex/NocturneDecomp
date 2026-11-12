@@ -79,7 +79,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbd80(CInventory *th
     (g_CDemonSetPtr->light_direction).z =
          (uint)((longlong)iVar3 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 0x482b) >> 0x20) << 0x10;
-    engine_matrix_c_FUN_0046b710(DAT_0060b280,viewport_x,viewport_y,viewport_size,viewport_size);
+    engine_drender_cpp_FUN_0046b710(DAT_0060b280,viewport_x,viewport_y,viewport_size,viewport_size);
     local_1c = core_inv_cpp_getItemModel_FUN_004d9db0(item);
     pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(local_1c);
     pCVar5 = pCVar4->frame_bounds;
@@ -120,7 +120,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbd80(CInventory *th
     local_18 = local_54.z;
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
               (DAT_0060b280,&local_54);
-    engine_matrix_c_FUN_0046b4b0(DAT_0060b280,0x42100000);
+    engine_drender_cpp_FUN_0046b4b0(DAT_0060b280,0x42100000);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
               (DAT_0060b280,(CVector3f *)&DAT_0265370c);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
@@ -196,9 +196,9 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004dbd80(CInventory *th
     else {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0(local_1c,0.0,-1);
     }
-    engine_matrix_c_pop_FUN_0046b4a0();
-    engine_matrix_c_pop_FUN_0046b4a0();
-    engine_matrix_c_popViewport_FUN_0046b740();
+    engine_drender_cpp_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
+    engine_drender_cpp_popViewport_FUN_0046b740();
     g_CDemonSetPtr->rendering_mode = 0;
   }
   return;

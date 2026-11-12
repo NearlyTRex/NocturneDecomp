@@ -5,8 +5,8 @@
 ;
 ;
 ; Called Functions:
+;   core_bird.cpp_CBird_ctor_FUN_004151f0
 ;   crt_memory.c_operator_new_FUN_005c0f32
-;   unkafter_bird.cpp_CBird_ctor_FUN_004151f0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 004151d1
     PUSH EAX                            ; 004151d2
         ;   Label: LAB_004151d2
-    CALL unkafter_bird.cpp_CBird_ctor_FUN_004151f0 ; 004151d3
-        ;   XREF to: 004151f0 (UNCONDITIONAL_CALL)  ; CBird * unkafter_bird.cpp_CBird_ctor_FUN_004151f0(CBird * this_ptr)
+    CALL core_bird.cpp_CBird_ctor_FUN_004151f0 ; 004151d3
+        ;   XREF to: 004151f0 (UNCONDITIONAL_CALL)  ; CBird * core_bird.cpp_CBird_ctor_FUN_004151f0(CBird * this_ptr)
     ADD ESP,0x4                         ; 004151d8
     RET                                 ; 004151db
 

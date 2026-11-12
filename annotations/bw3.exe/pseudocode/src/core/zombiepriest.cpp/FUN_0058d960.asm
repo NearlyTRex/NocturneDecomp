@@ -808,8 +808,8 @@ section .text
     JBE 0x0058dc68                      ; 0058e256
         ;   XREF to: 0058dc68 (CONDITIONAL_JUMP)  ; caseD_7
     PUSH EBX                            ; 0058e25c
-    CALL core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0 ; 0058e25d
-        ;   XREF to: 0058f4a0 (UNCONDITIONAL_CALL)  ; void core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(CZombiePriest * this_ptr)
+    CALL core_zombiepriest.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0 ; 0058e25d
+        ;   XREF to: 0058f4a0 (UNCONDITIONAL_CALL)  ; void core_zombiepriest.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(CZombiePriest * this_ptr)
     ADD ESP,0x4                         ; 0058e262
     JMP 0x0058dc68                      ; 0058e265
         ;   XREF to: 0058dc68 (UNCONDITIONAL_JUMP)  ; caseD_7
@@ -1110,8 +1110,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0058e5b9
         ;   Label: LAB_0058e5b9
     PUSH EBX                            ; 0058e5bf
-    CALL unkafter_zombiepr.cpp_FUN_0058efb0 ; 0058e5c0
-        ;   XREF to: 0058efb0 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombiepr.cpp_FUN_0058efb0()
+    CALL core_zombiepriest.cpp_FUN_0058efb0 ; 0058e5c0
+        ;   XREF to: 0058efb0 (UNCONDITIONAL_CALL)  ; undefined core_zombiepriest.cpp_FUN_0058efb0()
     ADD ESP,0x8                         ; 0058e5c5
     TEST EAX,EAX                        ; 0058e5c8
     JNZ 0x0058dc68                      ; 0058e5ca
@@ -1319,8 +1319,8 @@ section .text
     JC 0x0058e7a9                       ; 0058e80d
         ;   XREF to: 0058e7a9 (CONDITIONAL_JUMP)  ; LAB_0058e7a9
     PUSH EBX                            ; 0058e80f
-    CALL core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0 ; 0058e810
-        ;   XREF to: 0058f4a0 (UNCONDITIONAL_CALL)  ; void core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(CZombiePriest * this_ptr)
+    CALL core_zombiepriest.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0 ; 0058e810
+        ;   XREF to: 0058f4a0 (UNCONDITIONAL_CALL)  ; void core_zombiepriest.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(CZombiePriest * this_ptr)
     ADD ESP,0x4                         ; 0058e815
     JMP 0x0058e7a9                      ; 0058e818
         ;   XREF to: 0058e7a9 (UNCONDITIONAL_JUMP)  ; LAB_0058e7a9

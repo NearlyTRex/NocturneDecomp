@@ -21,7 +21,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_processDamage_FUN_0045c7b0(CDemnfolk *t
               (0x01C51D80,"@ShotInvulnerable" + 1);
     return;
   }
-  unkafter_demnfolk_cpp_FUN_0045c4a0(this_ptr,damage_info);
+  core_demnfolk_cpp_FUN_0045c4a0(this_ptr,damage_info);
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).releaseVictim)((CCharacter *)this_ptr);
   iVar3 = this_ptr->part_indices[6];
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
@@ -63,7 +63,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_processDamage_FUN_0045c7b0(CDemnfolk *t
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                        (&(this_ptr->base).base.model.base);
     if ((pSVar2->state_index != 0x1a) && (pSVar2->state_index != 0x19)) {
-      unkafter_demnfolk_cpp_FUN_0045bfa0(this_ptr);
+      core_demnfolk_cpp_FUN_0045bfa0(this_ptr);
       iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,4);
       iVar3 = iVar3 + 0x14;
       if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] == 0)

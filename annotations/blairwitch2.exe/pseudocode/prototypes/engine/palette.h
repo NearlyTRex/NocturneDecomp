@@ -8,3 +8,15 @@
 // Original: engine_palette.cpp_FUN_00510cc0
 // Address: 00510cc0
 CFont * __cdecl FUN_00510cc0(CFont *this_ptr,uint flags);
+
+// Original: engine_palette.cpp_FUN_00510cd0
+// Address: 00510cd0
+undefined4 FUN_00510cd0(int *param_1,char *param_2,int param_3,int param_4,int param_5,int param_6);
+
+// Original: engine_palette.cpp_FUN_00510d50
+// Address: 00510d50
+void FUN_00510d50(int *param_1);
+
+// Original: engine_palette.cpp_FUN_00510dc0
+// Address: 00510dc0
+undefined4 FUN_00510dc0(void);

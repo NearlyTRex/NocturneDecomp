@@ -14,7 +14,7 @@ int __cdecl core_unionzom_cpp_CUnionZombie_renderTransparent_FUN_005a4710(CUnion
   int iVar1;
   
   iVar1 = core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980(&this_ptr->base);
-  unkafter_superopt_cpp_CSimpleParticleSystem_render_FUN_005a8290
+  core_bwspart_cpp_CSimpleParticleSystem_render_FUN_005a8290
             ((this_ptr->base).base.base.base.particle_systems + 4);
   return iVar1;
 }

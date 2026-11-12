@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_shutdownSoundSystem_FUN_0055fcc0 at 0055fcc0
+;   core_sound.cpp_shutdownSoundSystem_FUN_0055fcc0 at 0055fcc0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02ce71ec

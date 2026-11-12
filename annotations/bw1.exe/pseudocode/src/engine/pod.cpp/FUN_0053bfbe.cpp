@@ -1,6 +1,6 @@
 // Name: engine_pod.cpp_FUN_0053bfbe
 // Address: 0053bfbe
-// Address Range: [[0053bfbe, 0053c288]]
+// Address Range: [[0053bfbe, 0053bfbf]]
 // Convention: unknown
 // Signature: bool engine_pod_cpp_FUN_0053bfbe(int *param_1)
 

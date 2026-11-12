@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_dtrace.cpp_FUN_0047366e at 00473687
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_005043b0 at 00504431
-;   engine_pod.cpp_FUN_00513d1e at 00513e75
+;   engine_pod.cpp_FUN_00513d20 at 00513e75
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bcd25

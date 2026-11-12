@@ -300,8 +300,8 @@ section .text
     ADD ESP,0x4                         ; 004be230
     LEA EAX,[ESP + 0x504]               ; 004be233
     PUSH EAX                            ; 004be23a
-    CALL unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0 ; 004be23b
-        ;   XREF to: 005738c0 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0 ; 004be23b
+        ;   XREF to: 005738c0 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004be240
     LEA EAX,[ESP + 0x530]               ; 004be243
     PUSH EAX                            ; 004be24a
@@ -332,8 +332,8 @@ section .text
     PUSH 0x4                            ; 004be294
     LEA EAX,[ESP + 0x50c]               ; 004be296
     PUSH EAX                            ; 004be29d
-    CALL unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0 ; 004be29e
-        ;   XREF to: 00573cf0 (UNCONDITIONAL_CALL)  ; undefined4 unkafter_turret.cpp_CInStreamFile_seek_FUN_00573cf0(CInStreamFile * this_ptr, int param_2, uint param_3)
+    CALL support_trstream.cpp_CInStreamFile_seek_FUN_00573cf0 ; 004be29e
+        ;   XREF to: 00573cf0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_seek_FUN_00573cf0(CInStreamFile * this_ptr, int param_2, uint param_3)
     ADD ESP,0xc                         ; 004be2a3
     PUSH 0x5c36bd                       ; 004be2a6 | DAT_005c36bd
     PUSH 0x5fe9f8                       ; 004be2ab | = "save\\$$SAVE$$.TMP"
@@ -375,8 +375,8 @@ section .text
     ADD ESP,0x8                         ; 004be324
     LEA EAX,[ESP + 0x504]               ; 004be327
     PUSH EAX                            ; 004be32e
-    CALL unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0 ; 004be32f
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_close_FUN_00573db0 ; 004be32f
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004be334
     LEA EAX,[ESP + 0x530]               ; 004be337
     PUSH EAX                            ; 004be33e
@@ -423,8 +423,8 @@ section .text
     PUSH 0x0                            ; 004be3bd
     LEA EAX,[ESP + 0x508]               ; 004be3bf
     PUSH EAX                            ; 004be3c6
-    CALL unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40 ; 004be3c7
-        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile * this_ptr, uint flags)
+    CALL support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40 ; 004be3c7
+        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004be3cc
     PUSH EBX                            ; 004be3cf
         ;   Label: LAB_004be3cf
@@ -528,8 +528,8 @@ section .text
     PUSH 0x0                            ; 004be4eb
     LEA EAX,[ESP + 0x508]               ; 004be4ed
     PUSH EAX                            ; 004be4f4
-    CALL unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40 ; 004be4f5
-        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile * this_ptr, uint flags)
+    CALL support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40 ; 004be4f5
+        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004be4fa
     ADD ESP,0x568                       ; 004be4fd
     POP EBP                             ; 004be503
@@ -557,8 +557,8 @@ section .text
     PUSH 0x0                            ; 004be537
     LEA EAX,[ESP + 0x508]               ; 004be539
     PUSH EAX                            ; 004be540
-    CALL unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40 ; 004be541
-        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile * this_ptr, uint flags)
+    CALL support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40 ; 004be541
+        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004be546
     ADD ESP,0x568                       ; 004be549
     POP EBP                             ; 004be54f

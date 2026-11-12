@@ -46,6 +46,7 @@ int crt_unknown_c_FUN_005b0ee0(char *param_1,int param_2);
 uint crt_unknown_c_FUN_005b0f93(int *param_1);
 uint crt_unknown_c_FUN_005b0ff9(int *param_1);
 undefined * crt_unknown_c_FUN_005b1090(char *param_1,undefined4 *param_2,int param_3,int param_4);
+void crt_unknown_c_FUN_005b1200(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 void crt_unknown_c_FUN_005b121c(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 int crt_unknown_c_FUN_005b1238(byte param_1);
 undefined4 crt_unknown_c_FUN_005b12a0(CHAR *param_1);

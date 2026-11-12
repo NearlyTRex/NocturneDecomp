@@ -13,7 +13,7 @@
 ;   core_biggs.cpp_CBiggs_archive_FUN_00415250 at 0041528d
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50 at 00419cb1
 ;   core_bride.cpp_CBride_archive_FUN_0041e800 at 0041e87e
-;   core_conveyor.cpp_CConstruct_archive_FUN_00437b80 at 00437bc7
+;   core_construc.cpp_CConstruct_archive_FUN_00437b80 at 00437bc7
 ;   core_cow.cpp_CZombieCow_archive_FUN_00439830 at 0043987d
 ;   ... and 22 more
 ;

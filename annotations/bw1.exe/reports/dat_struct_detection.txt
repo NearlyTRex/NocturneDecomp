@@ -2,19 +2,19 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 3728
-Filtered out (inside named data): 2739
+Total DAT_ globals found: 3729
+Filtered out (inside named data): 2746
 Immediate constants (not real globals): 96
-Real globals remaining: 3632
+Real globals remaining: 3633
 Clusters detected: 326
-DAT_ globals in clusters: 3540
+DAT_ globals in clusters: 3541
 
 Classification summary:
-  unknown              87 clusters
+  unknown              86 clusters
   vector_groups        83 clusters
   struct               72 clusters
   array                54 clusters
-  struct_array         15 clusters
+  struct_array         16 clusters
   char_array           9 clusters
   byte_blob            6 clusters
 
@@ -207,6 +207,10 @@ Consider removing the Ghidra label and leaving the raw number.
     CBaronWeapon_getActorType
       MOV EAX,0x7c3698                    ; 00410450 | DAT_007c3698
 
+  DAT_005fca90  value=0x5FCA90 (6277776)  refs=1
+    FUN_00418890
+      PUSH 0x5fca90                       ; 00418890 | DAT_005fca90
+
   DAT_005d4b00  value=0x5D4B00 (6114048)  refs=1
     CBox_loadFromFile
       PUSH 0x5d4b00                       ; 00420172 | DAT_005d4b00
@@ -242,6 +246,10 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_00629044  value=0x629044 (6459460)  refs=1
     CCrater_render
       PUSH 0x629044                       ; 004b2446 | DAT_00629044
+
+  DAT_00612258  value=0x612258 (6365784)  refs=1
+    FUN_004615b0
+      PUSH 0x612258                       ; 00462140 | DAT_00612258
 
   DAT_006122a8  value=0x6122A8 (6365864)  refs=1
     renderConeLightGeometry
@@ -435,14 +443,6 @@ Consider removing the Ghidra label and leaving the raw number.
     getDirectSoundDevice
       PUSH 0x627880                       ; 0057a494 | DAT_00627880
 
-  DAT_00612258  value=0x612258 (6365784)  refs=1
-    FUN_004615b0
-      PUSH 0x612258                       ; 00462140 | DAT_00612258
-
-  DAT_005fca90  value=0x5FCA90 (6277776)  refs=1
-    FUN_00418890
-      PUSH 0x5fca90                       ; 00418890 | DAT_005fca90
-
   DAT_02c9a630  value=0x2C9A630  refs=1
     FUN_005b3080
       PUSH 0x2c9a630                      ; 005b30b1 | DAT_02c9a630
@@ -549,7 +549,7 @@ HIGH CONFIDENCE (31 clusters)
     Classification: array
     Likely type: int[17]
     Reason: 17 elements at stride 4
-    Referenced by: 1 functions
+    Referenced by: 2 functions
      near: g_CColonelClassInfo (CDemonActorType) at -68
       0x007db570  DAT_007db570  undefined4
       0x007db574  DAT_007db574  undefined4
@@ -603,7 +603,7 @@ HIGH CONFIDENCE (31 clusters)
     Classification: array
     Likely type: int[13]
     Reason: 13 elements at stride 4
-    Referenced by: 17 functions
+    Referenced by: 18 functions
      near: g_CFieldNotesPtr (CFieldNotes*) at -312
       0x0061d2e0  DAT_0061d2e0  undefined4
       0x0061d2e4  DAT_0061d2e4  undefined4
@@ -631,7 +631,7 @@ HIGH CONFIDENCE (31 clusters)
     Classification: array
     Likely type: int[13]
     Reason: 13 elements at stride 4
-    Referenced by: 15 functions
+    Referenced by: 16 functions
      near: g_CWayPointClassInfo.name_hash (undefined4) at +4
       0x02c99300  DAT_02c99300  undefined4
       0x02c99304  DAT_02c99304  undefined4
@@ -851,14 +851,14 @@ HIGH CONFIDENCE (31 clusters)
       0x013424a1  DAT_013424a1  undefined4
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE (135 clusters)
+MEDIUM CONFIDENCE (136 clusters)
 --------------------------------------------------------------------------------
 
   0x02c83278 - 0x02c83750  (175 items, 1240 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 53 groups of 3 consecutive ints found
-    Referenced by: 119 functions
+    Referenced by: 120 functions
      near: g_CSpikeClassInfo.name_hash (undefined4) at -664
       0x02c83278  DAT_02c83278  undefined4 [byte]
       0x02c83279  DAT_02c83279  undefined4 [byte]
@@ -912,7 +912,7 @@ MEDIUM CONFIDENCE (135 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 18 groups of 3 consecutive ints found
-    Referenced by: 15 functions
+    Referenced by: 16 functions
       0x0152bd2c  DAT_0152bd2c  undefined4
       0x0152bd30  DAT_0152bd30  undefined4 [float]
       0x0152bd34  DAT_0152bd34  undefined4
@@ -1021,7 +1021,7 @@ MEDIUM CONFIDENCE (135 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 10 groups of 3 consecutive ints found
-    Referenced by: 68 functions
+    Referenced by: 69 functions
      near: PTR_crt_unknown.c_FUN_005cc0d0_00628cdc (undefined1*) at +820
       0x00629010  DAT_00629010  undefined4
       0x00629014  DAT_00629014  undefined4 [double]
@@ -1129,7 +1129,7 @@ MEDIUM CONFIDENCE (135 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 6 groups of 3 consecutive ints found
-    Referenced by: 51 functions
+    Referenced by: 52 functions
       0x02c80650  DAT_02c80650  undefined4
       0x02c80654  DAT_02c80654  undefined4
       0x02c80658  DAT_02c80658  undefined4
@@ -1404,7 +1404,7 @@ MEDIUM CONFIDENCE (135 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 3 groups of 3 consecutive ints found
-    Referenced by: 18 functions
+    Referenced by: 19 functions
      near: g_CMP3DecoderInstanceOther.synthesis_history[1][28][14] (undefined4) at +232
       0x02c745b8  DAT_02c745b8  undefined4 [byte]
       0x02c745bc  DAT_02c745bc  undefined4
@@ -1418,7 +1418,7 @@ MEDIUM CONFIDENCE (135 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 3 groups of 3 consecutive ints found
-    Referenced by: 9 functions
+    Referenced by: 10 functions
       0x02c9d294  DAT_02c9d294  undefined4
       0x02c9d298  DAT_02c9d298  undefined4
       0x02c9d29c  DAT_02c9d29c  undefined4
@@ -1431,7 +1431,7 @@ MEDIUM CONFIDENCE (135 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 4 groups of 3 consecutive ints found
-    Referenced by: 394 functions
+    Referenced by: 396 functions
      near: g_CEnemyClassVersion (int) at +24
       0x0061b498  DAT_0061b498  undefined4 [float]
       0x0061b49c  DAT_0061b49c  undefined4 [float]
@@ -1539,7 +1539,7 @@ MEDIUM CONFIDENCE (135 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 53 functions
+    Referenced by: 54 functions
      near: g_CKeyActorClassVersion (int) at -236
       0x0061f1a0  DAT_0061f1a0  undefined4
       0x0061f1a4  DAT_0061f1a4  undefined4
@@ -1607,7 +1607,7 @@ MEDIUM CONFIDENCE (135 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 3 groups of 3 consecutive ints found
-    Referenced by: 53 functions
+    Referenced by: 54 functions
       0x01c4e9d4  DAT_01c4e9d4  undefined4 [byte]
       0x01c4e9d8  DAT_01c4e9d8  undefined4
       0x01c4e9dc  DAT_01c4e9dc  undefined4 [byte]
@@ -1983,7 +1983,7 @@ MEDIUM CONFIDENCE (135 clusters)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 4 functions
+    Referenced by: 5 functions
       0x02c9c7e0  DAT_02c9c7e0  undefined4 [float]
       0x02c9c7e4  DAT_02c9c7e4  undefined4 [float]
       0x02c9c7e8  DAT_02c9c7e8  undefined4
@@ -2583,6 +2583,16 @@ MEDIUM CONFIDENCE (135 clusters)
       0x005ed42b  DAT_005ed42b  undefined4 [double]
       0x005ed433  DAT_005ed433  undefined4 [double]
 
+  0x01ca9cf0 - 0x01ca9d38  (3 items, 72 bytes span)
+    Classification: struct_array
+    Likely type: struct_36bytes[3]
+    Reason: 3 elements at stride 36
+    Referenced by: 4 functions
+     near: g_FireballPool[0].base.lifetime_remaining (undefined4) at -404
+      0x01ca9cf0  DAT_01ca9cf0  undefined4
+      0x01ca9d14  DAT_01ca9d14  undefined4
+      0x01ca9d38  DAT_01ca9d38  undefined4
+
   0x00859ad8 - 0x00859ae4  (2 items, 12 bytes span)
     Classification: struct_array
     Likely type: CVector3f[2] or CVector3i[2]
@@ -2592,7 +2602,7 @@ MEDIUM CONFIDENCE (135 clusters)
       0x00859ae4  DAT_00859ae4  undefined4
 
 --------------------------------------------------------------------------------
-LOW CONFIDENCE (160 clusters)
+LOW CONFIDENCE (159 clusters)
 --------------------------------------------------------------------------------
 
   0x00619b60 - 0x0061a358  (65 items, 2040 bytes span)
@@ -2978,8 +2988,8 @@ LOW CONFIDENCE (160 clusters)
   0x01c50930 - 0x01c50954  (7 items, 36 bytes span)
     Classification: struct
     Likely type: struct (36 bytes span, 7 fields)
-    Reason: mixed strides, shared by 132 functions
-    Referenced by: 132 functions
+    Reason: mixed strides, shared by 133 functions
+    Referenced by: 133 functions
       0x01c50930  DAT_01c50930  undefined4
       0x01c50934  DAT_01c50934  undefined4
       0x01c50940  DAT_01c50940  undefined4
@@ -3833,7 +3843,7 @@ LOW CONFIDENCE (160 clusters)
     Classification: unknown
     Likely type: unknown grouping
     Reason: 3 items, span=8 bytes
-    Referenced by: 567 functions
+    Referenced by: 570 functions
       0x01d1d400  DAT_01d1d400  undefined4
       0x01d1d404  DAT_01d1d404  undefined4
       0x01d1d408  DAT_01d1d408  undefined4
@@ -4166,15 +4176,6 @@ LOW CONFIDENCE (160 clusters)
       0x01c726a8  DAT_01c726a8  undefined4
       0x01c726ac  DAT_01c726ac  undefined4
 
-  0x01ca9d14 - 0x01ca9d38  (2 items, 36 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=36 bytes
-    Referenced by: 3 functions
-     near: g_FireballPool[0].base.lifetime_remaining (undefined4) at -368
-      0x01ca9d14  DAT_01ca9d14  undefined4
-      0x01ca9d38  DAT_01ca9d38  undefined4
-
   0x01ccff98 - 0x01ccff9c  (2 items, 4 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -4287,11 +4288,11 @@ ISOLATED DAT_ GLOBALS (92 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_02c78cec                    addr=02c78cec    type=undefined4      refs=20
   DAT_01cc4470                    addr=01cc4470    type=undefined4      refs=16
+  DAT_02c78ff0                    addr=02c78ff0    type=undefined4      refs=7
   DAT_006247d0                    addr=006247d0    type=undefined8      refs=6 [likely short]
   DAT_00624fc8                    addr=00624fc8    type=undefined8      refs=6 [likely short]
-  DAT_02c78ff0                    addr=02c78ff0    type=undefined4      refs=6
-  DAT_01cc55cc                    addr=01cc55cc    type=undefined4      refs=5  near: SNotesMap_ARRAY_01cc55d0(-4)
   DAT_01cc7b90                    addr=01cc7b90    type=undefined4      refs=5  near: CAlphaBitmap_ARRAY_01cc7ba8[1].width(-56)
+  DAT_01cc55cc                    addr=01cc55cc    type=undefined4      refs=5  near: SNotesMap_ARRAY_01cc55d0(-4)
   DAT_027902bc                    addr=027902bc    type=undefined4      refs=5
   DAT_00800000                    addr=00800000    type=undefined4      refs=4
   DAT_01354f60                    addr=01354f60    type=undefined4      refs=4 [likely byte]
@@ -4304,8 +4305,8 @@ ISOLATED DAT_ GLOBALS (92 - not part of any cluster)
   DAT_01cb9e74                    addr=01cb9e74    type=undefined4      refs=3
   DAT_01d08dc8                    addr=01d08dc8    type=undefined4      refs=3
   DAT_00622584                    addr=00622584    type=undefined4      refs=3  near: g_CNetGamePtr(+4)
-  DAT_01c45ad0                    addr=01c45ad0    type=undefined4      refs=3 [likely byte]
   DAT_00622a84                    addr=00622a84    type=undefined4      refs=3  near: g_CDemonPodPtr(+24)
+  DAT_01c45ad0                    addr=01c45ad0    type=undefined4      refs=3 [likely byte]
   DAT_005fb310                    addr=005fb310    type=undefined4      refs=2 [likely float]  near: g_COutStreamFileTypeInfo(+32)
   DAT_007c3368                    addr=007c3368    type=undefined4      refs=2  near: g_CAmmoClassInfo(-4)
   DAT_007dc718                    addr=007dc718    type=undefined4      refs=2  near: g_CCrossbowClassInfo(+60)
@@ -4338,7 +4339,7 @@ ISOLATED DAT_ GLOBALS (92 - not part of any cluster)
   ... +42 more
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (2739)
+FILTERED OUT - INSIDE NAMED DATA (2746)
 --------------------------------------------------------------------------------
   DAT_005d2030                    inside s_default_act_005d2024
   DAT_005d2034                    inside s_default_act_005d2024
@@ -4684,18 +4685,22 @@ FILTERED OUT - INSIDE NAMED DATA (2739)
   DAT_005d68d8                    inside s_Can_t_orient_bone_with_n_005d688b
   DAT_005d6968                    inside s_CCloth_saveJoinedLight_M_005d693a
   DAT_005d6a55                    inside s_CCloth_grabCloth_Can_t_f_005d6a2e
-  DAT_005d6cb3                    inside s_Bip01_Spine_005d6c6a
-  DAT_005d6cb7                    inside s_Bip01_Spine_005d6c6a
-  DAT_005d6cbf                    inside s_Bip01_Spine_005d6c6a
-  DAT_005d6cc7                    inside s_Bip01_Spine_005d6c6a
-  DAT_005d6ccf                    inside s_Bip01_Spine_005d6c6a
-  DAT_005d6cd7                    inside s_Bip01_Spine_005d6c6a
-  DAT_005d6cdf                    inside s_Bip01_Spine_005d6c6a
-  DAT_005d6ce7                    inside s_Bip01_Spine_005d6c6a
-  DAT_005d6cef                    inside s_Bip01_Spine_005d6c6a
-  DAT_005d6cf3                    inside s_Bip01_Spine_005d6c6a
-  DAT_005d6cf7                    inside s_Bip01_Spine_005d6c6a
-  DAT_005d6cfa                    inside s_Bip01_Spine_005d6c6a
+  DAT_005d6ca3                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6ca7                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6cab                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6caf                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6cb3                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6cb7                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6cbf                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6cc7                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6ccf                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6cd7                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6cdf                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6ce7                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6cef                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6cf3                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6cf7                    inside s_s_confused_while_walking_005d6c76
+  DAT_005d6cfa                    inside s_s_confused_while_walking_005d6c76
   DAT_005d6dff                    inside s_Bip01_Spine1_005d6df2
   DAT_005d6e13                    inside s_lforearm_005d6e0a
   DAT_005d6e21                    inside s_rforearm_005d6e18
@@ -6331,6 +6336,7 @@ FILTERED OUT - INSIDE NAMED DATA (2739)
   DAT_005f0e21                    inside s_Invalid_collision_type_005f0dfb
   DAT_005f0e25                    inside s_Invalid_collision_type_005f0dfb
   DAT_005f0e29                    inside s_Invalid_collision_type_005f0dfb
+  DAT_005f0e2d                    inside s_Invalid_collision_type_005f0dfb
   DAT_005f0ec5                    inside s_Invalid_collision_type_005f0eab
   DAT_005f0fc9                    inside s_CDemonSet_setRayType_use_005f0f9d
   DAT_005f0fdd                    inside s_CDemonSet_setRayType_use_005f0f9d
@@ -6979,6 +6985,8 @@ FILTERED OUT - INSIDE NAMED DATA (2739)
   DAT_005fa23b                    inside s_Bip01_Head_005fa230
   DAT_005fa240                    inside s_Bip01_Head_005fa230
   DAT_005fa25d                    inside s_torso_005fa257
+  DAT_005fa324                    inside s_lthigh_005fa275
+  DAT_005fa334                    inside s_lthigh_005fa275
   DAT_005fa354                    inside s_limb_wav_005fa344
   DAT_005fa3ac                    inside s_dog_damage_wav_005fa397
   DAT_005fa3b4                    inside s_dog_damage_wav_005fa397

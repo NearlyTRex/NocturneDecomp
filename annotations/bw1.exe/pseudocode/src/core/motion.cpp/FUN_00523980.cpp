@@ -23,7 +23,7 @@ void core_motion_cpp_FUN_00523980(int *param_1,uint param_2)
   int *local_18;
   int local_14;
   
-  unkafter_morph_cpp_FUN_00523910(param_1);
+  core_morph_cpp_FUN_00523910(param_1);
   local_24 = -1;
   do {
     iVar1 = _fgetc(param_2);

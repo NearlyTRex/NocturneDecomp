@@ -69,6 +69,10 @@ void __cdecl CDrawSurface::drawLineBresenham(CDrawSurface *this_ptr,int x1,int y
 // Address: 0047ef60
 void FUN_0047ef60(CDrawSurface *param_1,int param_2,int param_3,int param_4);
 
+// Original: cockpit_drawsurf.cpp_FUN_0047f170
+// Address: 0047f170
+byte FUN_0047f170(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
+
 // Original: cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0047f1b0
 // Address: 0047f1b0
 int __cdecl CDrawSurface::clipLine(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom);
@@ -208,6 +212,18 @@ void __cdecl CDrawSurface::drawTextCenteredInAreaWithWidth(CDrawSurface *this_pt
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00480d90
 // Address: 00480d90
 void __cdecl CDrawSurface::drawTextCenteredInAreaWithWidthPrintf(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format);
+
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00480e10
+// Address: 00480e10
+void __cdecl CDrawSurface::drawTextCenteredFullWidth(CDrawSurface *this_ptr,char *param_2,int param_3);
+
+// Original: cockpit_drawsurf.cpp_FUN_00480e30
+// Address: 00480e30
+void FUN_00480e30(CDrawSurface *param_1,int param_2,char *param_3);
+
+// Original: cockpit_drawsurf.cpp_FUN_00480e50
+// Address: 00480e50
+void FUN_00480e50(CDrawSurface *param_1,int param_2,undefined4 param_3);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00480f80
 // Address: 00480f80

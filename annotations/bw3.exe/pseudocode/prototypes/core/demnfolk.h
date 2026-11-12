@@ -5,6 +5,34 @@
 // Function prototypes for core/demnfolk.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_demnfolk.cpp_staticInit_FUN_00454750
+// Address: 00454750
+void __cdecl staticInit(void);
+
+// Original: core_demnfolk.cpp_FUN_00454780
+// Address: 00454780
+float FUN_00454780(int param_1);
+
+// Original: core_demnfolk.cpp_FUN_00454820
+// Address: 00454820
+void FUN_00454820(int param_1);
+
+// Original: core_demnfolk.cpp_FUN_004548e0
+// Address: 004548e0
+void FUN_004548e0(int param_1);
+
+// Original: core_demnfolk.cpp_FUN_004549e0
+// Address: 004549e0
+undefined4 FUN_004549e0(float *param_1);
+
+// Original: core_demnfolk.cpp_FUN_00454b30
+// Address: 00454b30
+void FUN_00454b30(void);
+
+// Original: core_demnfolk.cpp_CDemnfolk_getActorType_FUN_00454b50
+// Address: 00454b50
+CDemonActorType * CDemnfolk::getActorType(CDemnfolk *this_ptr);
+
 // Original: core_demnfolk.cpp_CDemnfolk_ctor_FUN_00454b60
 // Address: 00454b60
 CDemnfolk * CDemnfolk::ctor(CDemnfolk *this_ptr);
@@ -24,3 +52,67 @@ void FUN_00457300(int param_1,int param_2);
 // Original: core_demnfolk.cpp_FUN_00457740
 // Address: 00457740
 undefined4 FUN_00457740(CCharacter *param_1,float param_2);
+
+// Original: core_demnfolk.cpp_FUN_004580a0
+// Address: 004580a0
+undefined4 FUN_004580a0(int param_1,uint param_2);
+
+// Original: core_demnfolk.cpp_FUN_00458140
+// Address: 00458140
+undefined4 FUN_00458140(int param_1,undefined4 param_2);
+
+// Original: core_demnfolk.cpp_FUN_00458180
+// Address: 00458180
+void FUN_00458180(int param_1);
+
+// Original: core_demnfolk.cpp_CDemnfolk_renderOpaque_FUN_004581c0
+// Address: 004581c0
+int __cdecl CDemnfolk::renderOpaque(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_CDemnfolk_renderTransparent_FUN_00458200
+// Address: 00458200
+int __cdecl CDemnfolk::renderTransparent(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_CDemnfolk_archive_FUN_004583c0
+// Address: 004583c0
+void __cdecl CDemnfolk::archive(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_CDemnfolk_canBeAttracted_FUN_00458530
+// Address: 00458530
+int __cdecl CDemnfolk::canBeAttracted(CDemnfolk *this_ptr,CDemonActor *grabber);
+
+// Original: core_demnfolk.cpp_FUN_00458680
+// Address: 00458680
+void __cdecl FUN_00458680(CZombie *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_demnfolk.cpp_CDemnfolk_processDamage_FUN_00458950
+// Address: 00458950
+void __cdecl CDemnfolk::processDamage(CDemnfolk *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_demnfolk.cpp_CDemnfolk_getTargetPoints_FUN_00458bb0
+// Address: 00458bb0
+int __cdecl CDemnfolk::getTargetPoints(CDemnfolk *this_ptr,CVector3f *out_points_array);
+
+// Original: core_demnfolk.cpp_CDemnfolk_isGrabbable_FUN_00458ec0
+// Address: 00458ec0
+int __cdecl CDemnfolk::isGrabbable(CDemnfolk *this_ptr,CDemonActor *grabber);
+
+// Original: core_demnfolk.cpp_CDemnfolk_canBeGrabbed_FUN_00458f00
+// Address: 00458f00
+int __cdecl CDemnfolk::canBeGrabbed(CDemnfolk *this_ptr,CDemonActor *grabber,int grab_type);
+
+// Original: core_demnfolk.cpp_CDemnfolk_getGrabbed_FUN_00458f10
+// Address: 00458f10
+int __cdecl CDemnfolk::getGrabbed(CDemnfolk *this_ptr,CDemonActor *grabber,int grab_type);
+
+// Original: core_demnfolk.cpp_CDemnfolk_shouldIgnoreForTargeting_FUN_00458f80
+// Address: 00458f80
+int __cdecl CDemnfolk::shouldIgnoreForTargeting(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_FUN_00458fb0
+// Address: 00458fb0
+void FUN_00458fb0(int param_1);
+
+// Original: core_demnfolk.cpp_CDemnfolk_dtor_FUN_00459030
+// Address: 00459030
+CDemnfolk * CDemnfolk::dtor(CDemnfolk *this_ptr,uint flags);

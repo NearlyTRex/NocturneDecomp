@@ -11,6 +11,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[13]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60 at 0059bc89
 ;   core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0043c040 at 0043c19e
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0043b7f0 at 0043b9d7
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_0044a020 at 0044a0b8
@@ -20,7 +21,6 @@
 ;   core_moon.cpp_CMoon_render_FUN_00502510 at 00502598
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_005342e0 at 005342ef
 ;   core_set.cpp_FUN_0052fad0 at 0052fdfe
-;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_005389b0 at 005389fe
 ;   ... and 3 more
 ;
 ; Referenced Globals:

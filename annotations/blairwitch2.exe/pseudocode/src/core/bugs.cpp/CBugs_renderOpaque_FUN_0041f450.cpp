@@ -70,7 +70,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_0041f450(CBugs *this_ptr)
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
                       (pCStack_18 + pSStack_10->model_index,0.0,0x2e7);
-            engine_matrix_c_pop_FUN_0046b4a0();
+            engine_drender_cpp_pop_FUN_0046b4a0();
             pCStack_c = (CVector3f *)&pCStack_c[5].y;
             iVar1 = iVar1 + 1;
             translation = (CVector3f *)&translation[5].y;

@@ -10,8 +10,8 @@
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0c0 at 0041a0cc
 ;   core_charactr.cpp_CCharacter_kill_FUN_00423900 at 0042399b
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0 at 004281c0
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 00437254
 ;   core_construc.cpp_FUN_00438060 at 0043806c
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 00437254
 ;   core_npc.cpp_CNPC_processDamage_FUN_00510b90 at 00510c39
 ;
 ; *****************************************************************************

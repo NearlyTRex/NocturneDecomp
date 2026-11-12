@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 490,
     "complexity_score": 313,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 26,
     "max_suspect_severity": "moderate",
@@ -23,6 +23,12 @@
       "addr": "005506b0",
       "from_addr": "00550a0d",
       "name": "sound_sndmain.cpp_FUN_005506b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005519b0",
+      "from_addr": "005519bd",
+      "name": "sound_sndmain.cpp_isSampleLoaded_FUN_005519b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -135,34 +141,34 @@
       "name": "sound_sndmain.cpp_FUN_005549c0"
     },
     {
+      "addr": "0057d180",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_close_FUN_0057d180"
+    },
+    {
+      "addr": "0057cd50",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50"
+    },
+    {
+      "addr": "0057cec0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0"
+    },
+    {
       "addr": "0057d390",
       "is_variadic": false,
       "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390"
     },
     {
-      "addr": "0057d180",
-      "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180"
-    },
-    {
       "addr": "0057cfe0",
       "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_CInStreamFile_read_FUN_0057cfe0"
+      "name": "support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0"
     },
     {
       "addr": "0057d0c0",
       "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_CInStreamFile_seek_FUN_0057d0c0"
-    },
-    {
-      "addr": "0057cd50",
-      "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50"
-    },
-    {
-      "addr": "0057cec0",
-      "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0"
+      "name": "support_trstream.cpp_CInStreamFile_seek_FUN_0057d0c0"
     },
     {
       "addr": "0058ffc0",
@@ -329,7 +335,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "00550a0d",
@@ -341,9 +347,20 @@
         "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
+      },
+      {
+        "call_addr": "005519bd",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_isSampleLoaded_FUN_005519b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
     "estimated_params": 1,

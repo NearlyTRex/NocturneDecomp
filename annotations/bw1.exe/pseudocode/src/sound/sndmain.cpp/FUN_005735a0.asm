@@ -12,11 +12,11 @@
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411ccb
 ;   core_batman.cpp_CBatman_processDamage_FUN_00413f90 at 004140b9
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00413391
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00416790 at 00416c0b
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c1b5
 ;   core_bride.cpp_CBride_processDamage_FUN_00424b10 at 00424d1f
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423c32
 ;   core_carved.cpp_CCarved_processDamage_FUN_0042b850 at 0042b9f1
-;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429c85
 ;   ... and 68 more
 ;
 ; Called Functions:

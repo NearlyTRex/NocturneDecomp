@@ -76,7 +76,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004cf5e0(CGame *this_ptr)
   this_ptr->collision_render_enabled = 0;
   _DAT_01cd01f8 = 0;
   g_CFieldNotesPtr->is_displayed = 0;
-  unkafter_alphabit_cpp_FUN_00415c80();
+  engine_alphabit_cpp_FUN_00415c80();
   _DAT_01cd0c24 = 0;
   this_ptr->developer_mode_enabled = 0;
   core_game_cpp_CGame_setGameRes_FUN_004cf430(this_ptr);
@@ -171,7 +171,7 @@ LAB_004cf9e0:
         pCVar2->is_displayed = 0;
       }
       if (DAT_007c3978 != 0) {
-        unkafter_alphabit_cpp_FUN_00415be0(DAT_007c3978,0);
+        engine_alphabit_cpp_FUN_00415be0(DAT_007c3978,0);
       }
     }
     if (g_CDemonSetPtr->selected_camera_index < 0) {
@@ -299,7 +299,7 @@ LAB_004cfb22:
           }
         }
         else {
-          unkafter_alphabit_cpp_FUN_00415be0(DAT_007c3978,0);
+          engine_alphabit_cpp_FUN_00415be0(DAT_007c3978,0);
         }
       }
       else {
@@ -412,12 +412,12 @@ LAB_004cfbd7:
     } while (iVar4 != 1);
     shape_edittool_cpp_CPickList_dtor_FUN_0049a710(&local_4e0,0);
   }
-  iVar4 = unkafter_mission_cpp_FUN_0051c410(0x01D2C900);
+  iVar4 = core_mission_cpp_FUN_0051c410(0x01D2C900);
   this_ptr_00 = 0x01D1BCA0;
   this_ptr->damageable_enemy_count = iVar4;
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004fd2b0(this_ptr_00,0);
   core_sound_cpp_CSound_shutdown_FUN_0057cdb0(0x02C82A60);
-  unkafter_alphabit_cpp_FUN_00415c80();
+  engine_alphabit_cpp_FUN_00415c80();
   core_game_cpp_FUN_004dc180(this_ptr);
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530(this_ptr);
   (*0x01D1BCA0->vtable->clearKeyPresses)(0x01D1BCA0);

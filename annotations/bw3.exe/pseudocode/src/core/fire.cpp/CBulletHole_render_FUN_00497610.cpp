@@ -146,10 +146,10 @@ LAB_0049766e:
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
             (DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1c73670);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
-    engine_matrix_c_pop_FUN_0046d080();
+    engine_drender_cpp_pop_FUN_0046d080();
     return;
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(this_ptr->actor_ptr);
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   return;
 }

@@ -11,13 +11,13 @@
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30 at 0040ba61
 ;   core_asgaya.cpp_CAsgaya_ctor_FUN_005a0a10 at 005a0a93
 ;   core_baal.cpp_CBaal_ctor_FUN_00596660 at 00596685
+;   core_bird.cpp_CBird_ctor_FUN_0040f9f0 at 0040fa87
+;   core_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0 at 00419ae2
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400 at 00417444
 ;   core_boneguy.cpp_CSkeletonDemon_ctor_FUN_00419a20 at 00419a42
 ;   core_boneguy.cpp_CSkeletonForest_ctor_FUN_004198e0 at 00419902
 ;   core_boneguy.cpp_CSkeletonIndian_ctor_FUN_00419980 at 004199a2
 ;   core_bugs.cpp_CBugs_ctor_FUN_00420ea0 at 00420f49
-;   core_carved.cpp_CCarved_ctor_FUN_00425960 at 00425988
-;   core_constrct.cpp_CConstruct_ctor_FUN_00442420 at 00442466
 ;   ... and 61 more
 ;
 ; Called Functions:

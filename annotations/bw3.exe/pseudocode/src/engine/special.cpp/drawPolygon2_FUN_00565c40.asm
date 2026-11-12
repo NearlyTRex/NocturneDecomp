@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
+;   core_dpart.cpp_FUN_00466d50 at 00466dd1
+;   core_dpart.cpp_FUN_004673d0 at 0046744d
 ;   engine_clipper.c_FUN_0043b3bc at 0043b47e
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00439da0 at 00439f10
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043bac0 at 0043bc04
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480 at 00517540
 ;   engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0 at 00516486
-;   unkafter_dpart.cpp_FUN_00466d50 at 00466dd1
-;   unkafter_dpart.cpp_FUN_004673d0 at 0046744d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6cee8

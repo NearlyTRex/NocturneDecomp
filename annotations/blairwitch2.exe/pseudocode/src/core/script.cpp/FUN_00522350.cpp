@@ -1803,15 +1803,13 @@ LAB_00525afd:
                                                     if ((pCVar4->goggles_active != 0) &&
                                                        (pCVar4->letterbox_mode != 0)) {
                                                       pCVar4->goggles_active = 0;
-                                                      iVar6 = unkafter_mimic_cpp_FUN_00492630
-                                                                        (pCVar5);
+                                                      iVar6 = core_event_cpp_FUN_00492630(pCVar5);
                                                       core_setdir_cpp_FUN_00538d10
                                                                 (g_CDemonSetPtr,
                                                                  g_CScriptPtr->focus_actor,1);
                                                       pCVar5 = g_CDemonSetPtr;
                                                       g_CScriptPtr->focus_actor_changed = 0;
-                                                      iVar16 = unkafter_mimic_cpp_FUN_00492630
-                                                                         (pCVar5);
+                                                      iVar16 = core_event_cpp_FUN_00492630(pCVar5);
                                                       if (iVar6 == iVar16) {
                                                                                                                 
                                                   core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0
@@ -2325,7 +2323,7 @@ joined_r0x0052419d:
                                                   (core_inv_cpp_FUN_004db8e0
                                                              (local_178 + 0x2437c,pCVar14,iVar6),
                                                   iVar6 == 0)) {
-                                                    core_mimic_cpp_copyQuaternion_FUN_00492610
+                                                    core_event_cpp_copyQuaternion_FUN_00492610
                                                               (&pCVar14->location,local_178 + 0x20);
                                                                                                         
                                                   core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
@@ -2506,8 +2504,7 @@ LAB_00526d4a:
                                                     iVar6 = iVar6 + 0x2437c;
                                                     local_20 = _DAT_01e650f8;
                                                     pCVar14 = (CDemonActor *)
-                                                              unkafter_event_cpp_FUN_0045e1b0(iVar6)
-                                                    ;
+                                                              core_doc_cpp_FUN_0045e1b0(iVar6);
                                                     local_15c = pCVar14;
                                                     if (pCVar14 != (CDemonActor *)0x0) {
                                                       do {
@@ -2524,7 +2521,7 @@ LAB_00526d4a:
                                                   if (iVar16 != 0) goto LAB_005223fb;
                                                   core_inv_cpp_FUN_004db9d0(iVar6,0,5,1);
                                                   pCVar14 = (CDemonActor *)
-                                                            unkafter_event_cpp_FUN_0045e1b0(iVar6);
+                                                            core_doc_cpp_FUN_0045e1b0(iVar6);
                                                   } while (pCVar14 != local_15c);
                                                   }
                                                   if (local_20 == 0) {
@@ -2710,8 +2707,7 @@ LAB_00526d4a:
                                                                      &g_CBasicEnemyClassInfo);
                                                   if (iVar6 == 0) goto joined_r0x0052419d;
                                                   if (_DAT_01e650f8 == 0) {
-                                                    unkafter_basicene_cpp_FUN_0059e7a0
-                                                              (iVar6,local_444);
+                                                    core_basicene_cpp_FUN_0059e7a0(iVar6,local_444);
                                                   }
                                                   }
                                                   else {
@@ -2749,7 +2745,7 @@ LAB_00526d4a:
                                                   iVar16 = 
                                                   core_motion_cpp_CMotionList_findStateIndex_FUN_00502fa0
                                                             (pCVar12,pcVar19,uVar17);
-                                                  unkafter_basicene_cpp_FUN_0059e7c0(iVar6,iVar16);
+                                                  core_basicene_cpp_FUN_0059e7c0(iVar6,iVar16);
                                                   }
                                                   }
                                                   else {
@@ -2872,7 +2868,7 @@ LAB_00526d4a:
                                                                      &g_CBasicEnemyClassInfo);
                                                   if (iVar6 == 0) goto joined_r0x0052419d;
                                                   if (_DAT_01e650f8 == 0) {
-                                                    unkafter_basicene_cpp_FUN_005a0240(iVar6);
+                                                    core_basicene_cpp_FUN_005a0240(iVar6);
                                                   }
                                                   }
                                                   else {
@@ -2905,7 +2901,7 @@ LAB_00526d4a:
                                                                      &g_CBasicEnemyClassInfo);
                                                   if (iVar6 == 0) goto joined_r0x0052419d;
                                                   if (_DAT_01e650f8 == 0) {
-                                                    unkafter_basicene_cpp_FUN_005a01a0
+                                                    core_basicene_cpp_FUN_005a01a0
                                                               (iVar6,local_104,local_100,local_fc);
                                                   }
                                                   }
@@ -2936,7 +2932,7 @@ LAB_00526d4a:
                                                                      &g_CBasicEnemyClassInfo);
                                                   if (iVar6 == 0) goto joined_r0x0052419d;
                                                   if (_DAT_01e650f8 == 0) {
-                                                    unkafter_basicene_cpp_FUN_0059f570(iVar6);
+                                                    core_basicene_cpp_FUN_0059f570(iVar6);
                                                   }
                                                   }
                                                   else {
@@ -3110,8 +3106,8 @@ LAB_00526d4a:
                                                     core_inv_cpp_CInventory_selectItem_FUN_004dbb50
                                                               (this_ptr,1);
                                                     pCVar13 = (CDemonActor *)
-                                                              unkafter_script_cpp_FUN_0052a6a0
-                                                                        (this_ptr);
+                                                              core_script_cpp_FUN_0052a6a0(this_ptr)
+                                                    ;
                                                   } while (pCVar13 != pCVar14);
                                                   }
                                                   }
@@ -3211,7 +3207,7 @@ LAB_005281fe:
                                                   core_script_cpp_trimString_FUN_00521110
                                                             (local_17ec);
                                                   if (_DAT_01e650f8 == 0) {
-                                                    unkafter_mission_cpp_FUN_004fd460
+                                                    core_mission_cpp_FUN_004fd460
                                                               (0x01D182F0,local_17ec);
                                                   }
                                                   }

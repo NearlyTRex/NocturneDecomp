@@ -39,6 +39,29 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
     CBattery_ctor_FUN_0040f4a0:
       CKeyFramedModelInstance_ctor @ this+0x158 (344) -> CBattery_ptr_344
 
+  [core/bird.cpp]
+    CBird_ctor_FUN_0040f9f0:
+      CPathMap_ctor @ this+0xcdcc (52684) -> CBird_ptr_52684
+    CBird_dtor_FUN_004101f0:
+      CPathMap_dtor @ this+0xcdcc (52684) -> CBird_ptr_52684
+      CDemonActor_dtor @ this+0xcdcc (52684) -> CBird_ptr_52684
+      CClothList_dtor @ ??? (UNKNOWN)
+      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
+
+  [core/bmppuzzl.cpp]
+    CAudioRecPuzzle_ctor_FUN_00411b50:
+      CAlphaBitmap_ctor @ ??? (UNKNOWN)
+      _arrinit @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+    CAudioRecPuzzle_dtor_FUN_00411bb0:
+      CAlphaBitmap_dtor @ ??? (UNKNOWN)
+    CChemPuzzle_ctor_FUN_00413200:
+      CAlphaBitmap_ctor @ ??? (UNKNOWN)
+      _arrinit @ ??? (UNKNOWN)
+    CChemPuzzle_dtor_FUN_00413240:
+      CAlphaBitmap_dtor @ ??? (UNKNOWN)
+
   [core/bodypart.cpp]
     CBodyPart_ctor_FUN_00414750:
       _arrinit @ this+0x290 (656) -> CBodyPart_ptr_656
@@ -55,6 +78,10 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
       CKeyFramedModelInstance_ctor @ this+0x18 (24) -> SBodyPartModel_ptr_24
 
   [core/boneguy.cpp]
+    CBaalSkel_dtor_FUN_0041a8c0:
+      CDemonActor_dtor @ this+0x385c (14428) -> CBaalSkel_ptr_14428
+      CClothList_dtor @ ??? (UNKNOWN)
+      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
     CBoneGuy_ctor_FUN_00417400:
       _arrinit @ this+0xd0f0 (53488) -> CBoneGuy_ptr_53488
     CBoneGuy_dtor_FUN_0041ab00:
@@ -135,10 +162,6 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
     SClothVertex_ctor_FUN_004400b0:
       _arrinit @ this+0xec (236) -> SClothVertex_ptr_236
 
-  [core/constrct.cpp]
-    CConstruct_ctor_FUN_00442420:
-      _arrinit @ this+0xd184 (53636) -> CConstruct_ptr_53636
-
   [core/construc.cpp]
     CConstructBone_dtor_FUN_004446f0:
       CDemonActor_dtor @ this+0x385c (14428) -> CConstructBone_ptr_14428
@@ -148,14 +171,12 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
       CDemonActor_dtor @ this+0x385c (14428) -> CConstructRed_ptr_14428
       CClothList_dtor @ ??? (UNKNOWN)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
+    CConstruct_ctor_FUN_00442420:
+      _arrinit @ this+0xd184 (53636) -> CConstruct_ptr_53636
     CConstruct_dtor_FUN_00444780:
       CDemonActor_dtor @ this+0x385c (14428) -> CConstruct_ptr_14428
       CClothList_dtor @ ??? (UNKNOWN)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
-
-  [core/conveyor.cpp]
-    CPlatform_dtor_FUN_00512cf0:
-      CCourse_dtor @ this+0x310 (784) -> CPlatform_ptr_784
 
   [core/cow.cpp]
     CZombieCow_dtor_FUN_00445ae0:
@@ -170,6 +191,26 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
   [core/curtain.cpp]
     CCurtain_ctor_FUN_00446350:
       _arrinit @ this+0x208 (520) -> CCurtain_ptr_520
+
+  [core/darkwolf.cpp]
+    CDarkwolf_ctor_FUN_00598780:
+      CMorph_ctor @ this+0xd064 (53348) -> CDarkwolf_ptr_53348
+    CDarkwolf_dtor_FUN_005990d0:
+      CMorph_dtor @ this+0xd064 (53348) -> CDarkwolf_ptr_53348
+      CDemonActor_dtor @ this+0xd064 (53348) -> CDarkwolf_ptr_53348
+      CClothList_dtor @ ??? (UNKNOWN)
+      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
+    CWhitewolf_dtor_FUN_00599030:
+      CMorph_dtor @ this+0xd064 (53348) -> CWhitewolf_ptr_53348
+      CDemonActor_dtor @ this+0xd064 (53348) -> CWhitewolf_ptr_53348
+      CClothList_dtor @ ??? (UNKNOWN)
+      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
+
+  [core/demnfolk.cpp]
+    CDemnfolk_dtor_FUN_00459030:
+      CDemonActor_dtor @ this+0x385c (14428) -> CDemnfolk_ptr_14428
+      CClothList_dtor @ ??? (UNKNOWN)
+      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
 
   [core/dog.cpp]
     CDemonDog_dtor_FUN_004638a0:
@@ -433,6 +474,8 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
     CPlatform_ctor_FUN_005110e0:
       CKeyFramedModelInstance_ctor @ this+0x158 (344) -> CPlatform_ptr_344
       CCourse_ctor @ this+0x310 (784) -> CPlatform_ptr_784
+    CPlatform_dtor_FUN_00512cf0:
+      CCourse_dtor @ this+0x310 (784) -> CPlatform_ptr_784
 
   [core/pryemorp.cpp]
     CPryeMorph_ctor_FUN_005273b0:
@@ -502,6 +545,12 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
       _arrinit @ this+0x274c (10060) -> CDeformableModel_ptr_10060
     SVert_ctor_FUN_00550520:
       _arrinit @ this+0x10 (16) -> SVert_ptr_16
+
+  [core/spawner.cpp]
+    CSpawner_ctor_FUN_005638a0:
+      CDeformableModelInstance_ctor @ this+0x1d0 (464) -> CSpawner_ptr_464
+    CSpawner_dtor_FUN_00563f70:
+      CDeformableModelInstance_dtor @ this+0x1d0 (464) -> CSpawner_ptr_464
 
   [core/spike.cpp]
     CSpike_ctor_FUN_00566860:
@@ -575,7 +624,13 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
       CClothList_dtor @ ??? (UNKNOWN)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
 
-  [core/thehand.cpp]
+  [core/tawiscara.cpp]
+    CTawiscara_dtor_FUN_00596570:
+      CDemonActor_dtor @ this+0x385c (14428) -> CTawiscara_ptr_14428
+      CClothList_dtor @ ??? (UNKNOWN)
+      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
+
+  [core/toxhand.cpp]
     CTheHand_dtor_FUN_0056cc10:
       CDemonActor_dtor @ this+0x385c (14428) -> CTheHand_ptr_14428
       CClothList_dtor @ ??? (UNKNOWN)
@@ -622,7 +677,7 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
       CClothList_dtor @ ??? (UNKNOWN)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
 
-  [core/xform.cpp]
+  [core/yow.cpp]
     CYow_dtor_FUN_005872b0:
       CDemonActor_dtor @ this+0x385c (14428) -> CYow_ptr_14428
       CClothList_dtor @ ??? (UNKNOWN)
@@ -654,16 +709,16 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
       CClothList_dtor @ ??? (UNKNOWN)
       CDeformableModelInstance_dtor @ ??? (UNKNOWN)
 
+  [core/zombiepriest.cpp]
+    CZombiePriest_dtor_FUN_0058fc80:
+      CDemonActor_dtor @ this+0x385c (14428) -> CZombiePriest_ptr_14428
+      CClothList_dtor @ ??? (UNKNOWN)
+      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
+
   [engine/ncursfx.cpp]
     CMouse_ctor_FUN_00508af0:
       _arrinit @ this+0xa0 (160) -> CMouse_ptr_160
       _arrinit @ this+0x12c (300) -> CMouse_ptr_300
-
-  [engine/special.cpp]
-    CSpawner_ctor_FUN_005638a0:
-      CDeformableModelInstance_ctor @ this+0x1d0 (464) -> CSpawner_ptr_464
-    CSpawner_dtor_FUN_00563f70:
-      CDeformableModelInstance_dtor @ this+0x1d0 (464) -> CSpawner_ptr_464
 
   [shape/edittool.cpp]
     CPickList_ctor_FUN_004831c0:
@@ -692,69 +747,6 @@ UNFINISHED CTORS/DTORS (179 files still need ADJ)
     CLZWDecompress_dtor_FUN_00441e70:
       CLZWDictionary_dtor @ this+0x4 (4) -> CLZWDecompress_ptr_4
       CCodec_dtor @ this+0x4 (4) -> CLZWDecompress_ptr_4
-
-  [unkafter/alphabit.cpp]
-    CAudioRecPuzzle_ctor_FUN_00411b50:
-      CAlphaBitmap_ctor @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
-    CAudioRecPuzzle_dtor_FUN_00411bb0:
-      CAlphaBitmap_dtor @ ??? (UNKNOWN)
-
-  [unkafter/bird.cpp]
-    CBird_ctor_FUN_0040f9f0:
-      CPathMap_ctor @ this+0xcdcc (52684) -> CBird_ptr_52684
-    CBird_dtor_FUN_004101f0:
-      CPathMap_dtor @ this+0xcdcc (52684) -> CBird_ptr_52684
-      CDemonActor_dtor @ this+0xcdcc (52684) -> CBird_ptr_52684
-      CClothList_dtor @ ??? (UNKNOWN)
-      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
-
-  [unkafter/boneguy.cpp]
-    CBaalSkel_dtor_FUN_0041a8c0:
-      CDemonActor_dtor @ this+0x385c (14428) -> CBaalSkel_ptr_14428
-      CClothList_dtor @ ??? (UNKNOWN)
-      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
-
-  [unkafter/darkwolf.cpp]
-    CDarkwolf_ctor_FUN_00598780:
-      CMorph_ctor @ this+0xd064 (53348) -> CDarkwolf_ptr_53348
-    CDarkwolf_dtor_FUN_005990d0:
-      CMorph_dtor @ this+0xd064 (53348) -> CDarkwolf_ptr_53348
-      CDemonActor_dtor @ this+0xd064 (53348) -> CDarkwolf_ptr_53348
-      CClothList_dtor @ ??? (UNKNOWN)
-      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
-    CWhitewolf_dtor_FUN_00599030:
-      CMorph_dtor @ this+0xd064 (53348) -> CWhitewolf_ptr_53348
-      CDemonActor_dtor @ this+0xd064 (53348) -> CWhitewolf_ptr_53348
-      CClothList_dtor @ ??? (UNKNOWN)
-      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
-
-  [unkafter/demnfolk.cpp]
-    CDemnfolk_dtor_FUN_00459030:
-      CDemonActor_dtor @ this+0x385c (14428) -> CDemnfolk_ptr_14428
-      CClothList_dtor @ ??? (UNKNOWN)
-      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
-
-  [unkafter/superopt.cpp]
-    CChemPuzzle_ctor_FUN_00413200:
-      CAlphaBitmap_ctor @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
-    CChemPuzzle_dtor_FUN_00413240:
-      CAlphaBitmap_dtor @ ??? (UNKNOWN)
-
-  [unkafter/tawiscar.cpp]
-    CTawiscara_dtor_FUN_00596570:
-      CDemonActor_dtor @ this+0x385c (14428) -> CTawiscara_ptr_14428
-      CClothList_dtor @ ??? (UNKNOWN)
-      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
-
-  [unkafter/zombiepr.cpp]
-    CZombiePriest_dtor_FUN_0058fc80:
-      CDemonActor_dtor @ this+0x385c (14428) -> CZombiePriest_ptr_14428
-      CClothList_dtor @ ??? (UNKNOWN)
-      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
 ======================================================================
 NEEDED ADJ POINTER TYPES
 ======================================================================
@@ -948,6 +940,18 @@ MANUAL REVIEW NEEDED (131 calls with unknown offset)
   CAsgaya_dtor_FUN_005a1b50.asm: CDeformableModelInstance_dtor
   CBaal_dtor_FUN_00597d00.asm: CClothList_dtor
   CBaal_dtor_FUN_00597d00.asm: CDeformableModelInstance_dtor
+  CBird_dtor_FUN_004101f0.asm: CClothList_dtor
+  CBird_dtor_FUN_004101f0.asm: CDeformableModelInstance_dtor
+  CAudioRecPuzzle_ctor_FUN_00411b50.asm: CAlphaBitmap_ctor
+  CAudioRecPuzzle_ctor_FUN_00411b50.asm: _arrinit
+  CAudioRecPuzzle_ctor_FUN_00411b50.asm: CKeyFramedModelInstance_ctor
+  CAudioRecPuzzle_ctor_FUN_00411b50.asm: CKeyFramedModelInstance_ctor
+  CAudioRecPuzzle_dtor_FUN_00411bb0.asm: CAlphaBitmap_dtor
+  CChemPuzzle_ctor_FUN_00413200.asm: CAlphaBitmap_ctor
+  CChemPuzzle_ctor_FUN_00413200.asm: _arrinit
+  CChemPuzzle_dtor_FUN_00413240.asm: CAlphaBitmap_dtor
+  CBaalSkel_dtor_FUN_0041a8c0.asm: CClothList_dtor
+  CBaalSkel_dtor_FUN_0041a8c0.asm: CDeformableModelInstance_dtor
   CBoneGuy_dtor_FUN_0041ab00.asm: CClothList_dtor
   CBoneGuy_dtor_FUN_0041ab00.asm: CDeformableModelInstance_dtor
   CSkeletonDemon_dtor_FUN_0041a950.asm: CClothList_dtor
@@ -970,6 +974,12 @@ MANUAL REVIEW NEEDED (131 calls with unknown offset)
   CConstruct_dtor_FUN_00444780.asm: CDeformableModelInstance_dtor
   CZombieCow_dtor_FUN_00445ae0.asm: CClothList_dtor
   CZombieCow_dtor_FUN_00445ae0.asm: CDeformableModelInstance_dtor
+  CDarkwolf_dtor_FUN_005990d0.asm: CClothList_dtor
+  CDarkwolf_dtor_FUN_005990d0.asm: CDeformableModelInstance_dtor
+  CWhitewolf_dtor_FUN_00599030.asm: CClothList_dtor
+  CWhitewolf_dtor_FUN_00599030.asm: CDeformableModelInstance_dtor
+  CDemnfolk_dtor_FUN_00459030.asm: CClothList_dtor
+  CDemnfolk_dtor_FUN_00459030.asm: CDeformableModelInstance_dtor
   CDemonDog_dtor_FUN_004638a0.asm: CClothList_dtor
   CDemonDog_dtor_FUN_004638a0.asm: CDeformableModelInstance_dtor
   CDogForest_dtor_FUN_00463930.asm: CClothList_dtor
@@ -1032,6 +1042,8 @@ MANUAL REVIEW NEEDED (131 calls with unknown offset)
   CStylerDemon_dtor_FUN_005a0910.asm: CDeformableModelInstance_dtor
   CStyler_dtor_FUN_0059df60.asm: CClothList_dtor
   CStyler_dtor_FUN_0059df60.asm: CDeformableModelInstance_dtor
+  CTawiscara_dtor_FUN_00596570.asm: CClothList_dtor
+  CTawiscara_dtor_FUN_00596570.asm: CDeformableModelInstance_dtor
   CTheHand_dtor_FUN_0056cc10.asm: CClothList_dtor
   CTheHand_dtor_FUN_0056cc10.asm: CDeformableModelInstance_dtor
   CTVBat_dtor_FUN_005761a0.asm: CClothList_dtor
@@ -1052,26 +1064,6 @@ MANUAL REVIEW NEEDED (131 calls with unknown offset)
   CZombieSpirit_dtor_FUN_0058d080.asm: CDeformableModelInstance_dtor
   CZombie_dtor_FUN_0058d230.asm: CClothList_dtor
   CZombie_dtor_FUN_0058d230.asm: CDeformableModelInstance_dtor
-  CSfxSample_ctor_FUN_00553310.asm: CInStreamFile_ctor
-  CAudioRecPuzzle_ctor_FUN_00411b50.asm: CAlphaBitmap_ctor
-  CAudioRecPuzzle_ctor_FUN_00411b50.asm: _arrinit
-  CAudioRecPuzzle_ctor_FUN_00411b50.asm: CKeyFramedModelInstance_ctor
-  CAudioRecPuzzle_ctor_FUN_00411b50.asm: CKeyFramedModelInstance_ctor
-  CAudioRecPuzzle_dtor_FUN_00411bb0.asm: CAlphaBitmap_dtor
-  CBird_dtor_FUN_004101f0.asm: CClothList_dtor
-  CBird_dtor_FUN_004101f0.asm: CDeformableModelInstance_dtor
-  CBaalSkel_dtor_FUN_0041a8c0.asm: CClothList_dtor
-  CBaalSkel_dtor_FUN_0041a8c0.asm: CDeformableModelInstance_dtor
-  CDarkwolf_dtor_FUN_005990d0.asm: CClothList_dtor
-  CDarkwolf_dtor_FUN_005990d0.asm: CDeformableModelInstance_dtor
-  CWhitewolf_dtor_FUN_00599030.asm: CClothList_dtor
-  CWhitewolf_dtor_FUN_00599030.asm: CDeformableModelInstance_dtor
-  CDemnfolk_dtor_FUN_00459030.asm: CClothList_dtor
-  CDemnfolk_dtor_FUN_00459030.asm: CDeformableModelInstance_dtor
-  CChemPuzzle_ctor_FUN_00413200.asm: CAlphaBitmap_ctor
-  CChemPuzzle_ctor_FUN_00413200.asm: _arrinit
-  CChemPuzzle_dtor_FUN_00413240.asm: CAlphaBitmap_dtor
-  CTawiscara_dtor_FUN_00596570.asm: CClothList_dtor
-  CTawiscara_dtor_FUN_00596570.asm: CDeformableModelInstance_dtor
   CZombiePriest_dtor_FUN_0058fc80.asm: CClothList_dtor
   CZombiePriest_dtor_FUN_0058fc80.asm: CDeformableModelInstance_dtor
+  CSfxSample_ctor_FUN_00553310.asm: CInStreamFile_ctor

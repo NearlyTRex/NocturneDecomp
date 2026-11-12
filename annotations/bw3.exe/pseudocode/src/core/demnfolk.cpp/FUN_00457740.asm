@@ -42,13 +42,13 @@
 ;   core_bodypart.cpp_FUN_00416bd0
 ;   core_bodypart.cpp_FUN_00416c50
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
+;   core_demnfolk.cpp_FUN_004549e0
+;   core_demnfolk.cpp_FUN_004580a0
+;   core_demnfolk.cpp_FUN_00458140
+;   core_demnfolk.cpp_FUN_00458fb0
 ;   core_main.c_FUN_004e4330
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   engine_console.cpp_FUN_00441ff0
-;   unkafter_demnfolk.cpp_FUN_004580a0
-;   unkafter_demnfolk.cpp_FUN_00458140
-;   unkafter_demnfolk.cpp_FUN_00458fb0
-;   unkafter_hostage.cpp_FUN_004549e0
 ;
 ; *****************************************************************************
 
@@ -205,8 +205,8 @@ section .text
     FADD float ptr [EAX + 0xd060]       ; 00457914
     PUSH EAX                            ; 0045791a
     FSTP float ptr [EAX + 0xd060]       ; 0045791b
-    CALL unkafter_demnfolk.cpp_FUN_004580a0 ; 00457921
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_demnfolk.cpp_FUN_004580a0()
+    CALL core_demnfolk.cpp_FUN_004580a0 ; 00457921
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_004580a0()
     ADD ESP,0x8                         ; 00457926
     MOV ESI,0xffffffff                  ; 00457929
     MOV dword ptr [ESP + 0x200],EAX     ; 0045792e
@@ -236,8 +236,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0xd068]    ; 0045797c
     PUSH ECX                            ; 00457982
     PUSH EAX                            ; 00457983
-    CALL unkafter_demnfolk.cpp_FUN_00458140 ; 00457984
-        ;   XREF to: 00458140 (UNCONDITIONAL_CALL)  ; undefined unkafter_demnfolk.cpp_FUN_00458140()
+    CALL core_demnfolk.cpp_FUN_00458140 ; 00457984
+        ;   XREF to: 00458140 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458140()
     ADD ESP,0x8                         ; 00457989
     TEST EAX,EAX                        ; 0045798c
     JZ 0x00457b9b                       ; 0045798e
@@ -405,8 +405,8 @@ section .text
     MOV dword ptr [EAX + 0xd064],0x0    ; 00457bd7
     PUSH EAX                            ; 00457be1
     MOV dword ptr [EAX + 0xd060],0x0    ; 00457be2
-    CALL unkafter_demnfolk.cpp_FUN_00458fb0 ; 00457bec
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined unkafter_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_FUN_00458fb0 ; 00457bec
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
     ADD ESP,0x4                         ; 00457bf1
     XOR EAX,EAX                         ; 00457bf4
     MOV ESP,EBP                         ; 00457bf6
@@ -524,8 +524,8 @@ section .text
     MOV dword ptr [EAX + 0xd064],0x0    ; 00457d8f
     PUSH EAX                            ; 00457d99
     MOV dword ptr [EAX + 0xd060],0x41a00000 ; 00457d9a
-    CALL unkafter_demnfolk.cpp_FUN_00458fb0 ; 00457da4
-        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined unkafter_demnfolk.cpp_FUN_00458fb0()
+    CALL core_demnfolk.cpp_FUN_00458fb0 ; 00457da4
+        ;   XREF to: 00458fb0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458fb0()
     ADD ESP,0x4                         ; 00457da9
     XOR EAX,EAX                         ; 00457dac
     MOV ESP,EBP                         ; 00457dae
@@ -640,8 +640,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00457edd
     MOVSD ES:EDI,ESI                    ; 00457ede
     MOVSD ES:EDI,ESI                    ; 00457edf
-    CALL unkafter_hostage.cpp_FUN_004549e0 ; 00457ee0
-        ;   XREF to: 004549e0 (UNCONDITIONAL_CALL)  ; undefined unkafter_hostage.cpp_FUN_004549e0()
+    CALL core_demnfolk.cpp_FUN_004549e0 ; 00457ee0
+        ;   XREF to: 004549e0 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_004549e0()
     ADD ESP,0x4                         ; 00457ee5
     MOV dword ptr [ESP + 0x204],EAX     ; 00457ee8
     TEST EAX,EAX                        ; 00457eef
@@ -650,8 +650,8 @@ section .text
     PUSH EAX                            ; 00457ef7
     MOV ESI,dword ptr [EBP + 0x14]      ; 00457ef8
     PUSH ESI                            ; 00457efb
-    CALL unkafter_demnfolk.cpp_FUN_00458140 ; 00457efc
-        ;   XREF to: 00458140 (UNCONDITIONAL_CALL)  ; undefined unkafter_demnfolk.cpp_FUN_00458140()
+    CALL core_demnfolk.cpp_FUN_00458140 ; 00457efc
+        ;   XREF to: 00458140 (UNCONDITIONAL_CALL)  ; undefined core_demnfolk.cpp_FUN_00458140()
     ADD ESP,0x8                         ; 00457f01
     TEST EAX,EAX                        ; 00457f04
     JZ 0x0045788c                       ; 00457f06

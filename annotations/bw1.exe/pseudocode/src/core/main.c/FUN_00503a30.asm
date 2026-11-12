@@ -19,17 +19,17 @@
 ;   core_dfont.cpp_FUN_0045e7a0
 ;   core_dmodel.cpp_freeAllModels_FUN_00468830
 ;   core_inivar.cpp_writeIniData_FUN_004f5760
+;   core_marquee.cpp_FUN_00507340
 ;   core_mission.cpp_CDemonMission_clearMission_FUN_0051a3a0
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_0052c5d0
 ;   core_skeleton.cpp_FUN_0056b610
 ;   core_skeleton.cpp_FUN_0056b740
+;   core_sound.cpp_shutdownSoundSystem_FUN_0057cb90
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_00401120
 ;   engine_3d.c_freeTextureCache_FUN_004037a0
+;   engine_alphabit.cpp_FUN_00415c20
 ;   engine_ncursfx.cpp_CMouse_reset_FUN_005313a0
 ;   engine_pod.cpp_CPod_cleanup_FUN_0053c8f0
-;   sound_sndmain.cpp_shutdownSoundSystem_FUN_0057cb90
-;   unkafter_alphabit.cpp_FUN_00415c20
-;   unkafter_marquee.cpp_FUN_00507340
 ;   wincore_winrun.cpp_doNothing2_FUN_005b3b10
 ;   ... and 1 more
 ;
@@ -41,8 +41,8 @@ section .text
         ;   Label: core_main.c_FUN_00503a30
     PUSH ESI                            ; 00503a31
     PUSH EDI                            ; 00503a32
-    CALL unkafter_alphabit.cpp_FUN_00415c20 ; 00503a33
-        ;   XREF to: 00415c20 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_00415c20()
+    CALL engine_alphabit.cpp_FUN_00415c20 ; 00503a33
+        ;   XREF to: 00415c20 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415c20()
     MOV EDX,dword ptr [0x00622580]      ; 00503a38 | g_CNetGamePtr
     PUSH EDX                            ; 00503a3e
     CALL core_netgame.cpp_CNetGame_shutdown_FUN_0052c5d0 ; 00503a3f
@@ -60,8 +60,8 @@ section .text
     ADD ESP,0x4                         ; 00503a62
     MOV ESI,dword ptr [0x006236b8]      ; 00503a65 | DAT_006236b8
     PUSH ESI                            ; 00503a6b
-    CALL sound_sndmain.cpp_shutdownSoundSystem_FUN_0057cb90 ; 00503a6c
-        ;   XREF to: 0057cb90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_shutdownSoundSystem_FUN_0057cb90()
+    CALL core_sound.cpp_shutdownSoundSystem_FUN_0057cb90 ; 00503a6c
+        ;   XREF to: 0057cb90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_shutdownSoundSystem_FUN_0057cb90()
     ADD ESP,0x4                         ; 00503a71
     CALL core_dmodel.cpp_freeAllModels_FUN_00468830 ; 00503a74
         ;   XREF to: 00468830 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_freeAllModels_FUN_00468830()
@@ -69,8 +69,8 @@ section .text
         ;   XREF to: 0056b610 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0056b610()
     CALL core_skeleton.cpp_FUN_0056b740 ; 00503a7e
         ;   XREF to: 0056b740 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0056b740()
-    CALL unkafter_marquee.cpp_FUN_00507340 ; 00503a83
-        ;   XREF to: 00507340 (UNCONDITIONAL_CALL)  ; undefined unkafter_marquee.cpp_FUN_00507340()
+    CALL core_marquee.cpp_FUN_00507340  ; 00503a83
+        ;   XREF to: 00507340 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_00507340()
     CALL wincore_winrun.cpp_endPeriod_FUN_005b2410 ; 00503a88
         ;   XREF to: 005b2410 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_005b2410()
     CALL engine_2d.c_cleanupGraphicsSystem_FUN_00401120 ; 00503a8d

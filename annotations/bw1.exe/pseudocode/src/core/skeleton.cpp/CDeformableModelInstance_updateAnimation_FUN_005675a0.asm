@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
-; XREF[48]:
+; XREF[50]:
 ;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040eb59
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f67a
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 0041181b
@@ -17,7 +17,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c15b
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 00424754
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429875
-;   ... and 38 more
+;   ... and 40 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f24c9

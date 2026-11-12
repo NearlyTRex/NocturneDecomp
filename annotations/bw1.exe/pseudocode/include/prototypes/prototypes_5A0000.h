@@ -46,22 +46,23 @@
 // FUNCTION PROTOTYPES - Range 0x5A0000
 // =============================================================================
 
-int unkaddr_0059f520_cpp_FUN_005a07a0(int *param_1,undefined1 *param_2,int param_3);
-int unkaddr_0059f520_cpp_FUN_005a0840(int *param_1);
-CInStreamFile * unkclass_instream_cpp_CInStreamFile_ctor_FUN_005a08d0(CInStreamFile *this_ptr);
-undefined4 * __cdecl unkaddr_0059f520_cpp_CInStreamFile_ctorOpen_FUN_005a0930(CInStreamFile *this_ptr,LPCSTR param_2,int param_3);
-CInStreamFile * unkclass_instream_cpp_CInStreamFile_copy_FUN_005a0a20(CInStreamFile *this_ptr,CInStreamFile *other);
-CInStreamFile * unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(CInStreamFile *this_ptr,uint flags);
-int __cdecl unkaddr_0059f520_cpp_CInStreamFile_getChar_FUN_005a0ab0(CInStreamFile *this_ptr);
-undefined4 __cdecl unkaddr_0059f520_cpp_CInStreamFile_ungetChar_FUN_005a0b00(CInStreamFile *this_ptr,int param_2);
-int __cdecl unkaddr_0059f520_cpp_CInStreamFile_peekChar_FUN_005a0b70(CInStreamFile *this_ptr);
-uint __cdecl unkaddr_0059f520_cpp_CInStreamFile_readByteAt_FUN_005a0ba0(CInStreamFile *this_ptr,int param_2);
-int __cdecl unkaddr_0059f520_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,undefined4 *param_2,uint param_3);
-undefined4 __cdecl unkaddr_0059f520_cpp_CInStreamFile_seek_FUN_005a0d00(CInStreamFile *this_ptr,int param_2,uint param_3);
-undefined4 __cdecl unkaddr_0059f520_cpp_CInStreamFile_tell_FUN_005a0d50(CInStreamFile *this_ptr);
-bool __cdecl unkaddr_0059f520_cpp_CInStreamFile_isOpen_FUN_005a0d70(CInStreamFile *this_ptr);
-undefined4 __cdecl unkaddr_0059f520_cpp_CInStreamFile_isEof_FUN_005a0d90(CInStreamFile *this_ptr);
-undefined4 __cdecl unkaddr_0059f520_cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile *this_ptr);
+int support_trstream_cpp_FUN_005a07a0(int *param_1,undefined1 *param_2,int param_3);
+int support_trstream_cpp_FUN_005a0840(int *param_1);
+CInStreamFile * support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(CInStreamFile *this_ptr);
+undefined4 * __cdecl support_trstream_cpp_CInStreamFile_ctorOpen_FUN_005a0930(CInStreamFile *this_ptr,LPCSTR param_2,int param_3);
+CInStreamFile * support_trstream_cpp_FUN_005a09a0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4);
+CInStreamFile * support_trstream_cpp_CInStreamFile_copy_FUN_005a0a20(CInStreamFile *this_ptr,CInStreamFile *other);
+CInStreamFile * support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(CInStreamFile *this_ptr,uint flags);
+int __cdecl support_trstream_cpp_CInStreamFile_getChar_FUN_005a0ab0(CInStreamFile *this_ptr);
+undefined4 __cdecl support_trstream_cpp_CInStreamFile_ungetChar_FUN_005a0b00(CInStreamFile *this_ptr,int param_2);
+int __cdecl support_trstream_cpp_CInStreamFile_peekChar_FUN_005a0b70(CInStreamFile *this_ptr);
+uint __cdecl support_trstream_cpp_CInStreamFile_readByteAt_FUN_005a0ba0(CInStreamFile *this_ptr,int param_2);
+int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,undefined4 *param_2,uint param_3);
+undefined4 __cdecl support_trstream_cpp_CInStreamFile_seek_FUN_005a0d00(CInStreamFile *this_ptr,int param_2,uint param_3);
+undefined4 __cdecl support_trstream_cpp_CInStreamFile_tell_FUN_005a0d50(CInStreamFile *this_ptr);
+bool __cdecl support_trstream_cpp_CInStreamFile_isOpen_FUN_005a0d70(CInStreamFile *this_ptr);
+undefined4 __cdecl support_trstream_cpp_CInStreamFile_isEof_FUN_005a0d90(CInStreamFile *this_ptr);
+undefined4 __cdecl support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile *this_ptr);
 void __cdecl support_trstream_cpp_CInStreamFile_allocBuffer_FUN_005a0e10(CInStreamFile *this_ptr);
 void __cdecl support_trstream_cpp_CInStreamFile_freeBuffer_FUN_005a0e80(CInStreamFile *this_ptr);
 undefined4 __cdecl support_trstream_cpp_CInStreamFile_fillBuffer_FUN_005a0ec0(CInStreamFile *this_ptr,int param_2);
@@ -224,6 +225,7 @@ CDemonActorType * core_wateract_cpp_CWaterActor_getActorType_FUN_005aa5c0(CWater
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_005aa5d0(CWaterActor *this_ptr);
 void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005aa720(CWaterActor *this_ptr);
 void core_wateract_cpp_FUN_005aacd0(int param_1);
+void core_wateract_cpp_FUN_005aadb0(int param_1);
 void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005aaeb0(CWaterActor *this_ptr,float delta_time);
 int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005ab030(CWaterActor *this_ptr);
 CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_005ab280(CWaterActor *this_ptr,CBoundingBox3D *out_box);
@@ -244,6 +246,7 @@ int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005abad0(CWayPoint *thi
 void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_005abae0(CWayPoint *this_ptr);
 int core_waypoint_cpp_FUN_005abb80(undefined4 param_1,int param_2,undefined4 param_3);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005abd30(CWayPoint *this_ptr,uint flags);
+void wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_005abd80(void);
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005abde0(void);
 void wincore_wddvmem_cpp_FUN_005abf1e(void);
 void wincore_wddvmem_cpp_FUN_005abfec(void);

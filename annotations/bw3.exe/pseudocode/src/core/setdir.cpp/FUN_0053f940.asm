@@ -131,8 +131,8 @@ section .text
     PUSH 0x0                            ; 0053f9fd
     MOV ESI,dword ptr [0x005f2afc]      ; 0053f9ff | DAT_005f2afc
     PUSH ESI                            ; 0053fa05 | DAT_01bdd7e4
-    CALL engine_matrix.c_FUN_0046d2f0   ; 0053fa06
-        ;   XREF to: 0046d2f0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d2f0()
+    CALL engine_drender.cpp_FUN_0046d2f0 ; 0053fa06
+        ;   XREF to: 0046d2f0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d2f0()
     ADD ESP,0x14                        ; 0053fa0b
     MOV EDI,dword ptr [EBP + 0x18]      ; 0053fa0e
     MOV EAX,dword ptr [EBP + 0x18]      ; 0053fa11
@@ -431,8 +431,8 @@ section .text
         ;   XREF to: 0053fea6 (CONDITIONAL_JUMP)  ; LAB_0053fea6
     MOV EAX,[0x005f2afc]                ; 0053feba | DAT_005f2afc
     PUSH EAX                            ; 0053febf | DAT_01bdd7e4
-    CALL engine_matrix.c_popViewport_FUN_0046d320 ; 0053fec0
-        ;   XREF to: 0046d320 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0046d320()
+    CALL engine_drender.cpp_popViewport_FUN_0046d320 ; 0053fec0
+        ;   XREF to: 0046d320 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_0046d320()
     ADD ESP,0x4                         ; 0053fec5
     MOV EDX,dword ptr [ESP + 0x33c]     ; 0053fec8
     PUSH EDX                            ; 0053fecf
@@ -800,8 +800,8 @@ section .text
     MOV EDI,dword ptr [0x005f2afc]      ; 00540338 | DAT_005f2afc
     PUSH dword ptr [EBX + 0x144]        ; 0054033e
     PUSH EDI                            ; 00540344 | DAT_01bdd7e4
-    CALL engine_matrix.c_FUN_0046d090   ; 00540345
-        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d090()
+    CALL engine_drender.cpp_FUN_0046d090 ; 00540345
+        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d090()
     ADD ESP,0x8                         ; 0054034a
     LEA EAX,[EBX + 0x10c]               ; 0054034d
     PUSH EAX                            ; 00540353

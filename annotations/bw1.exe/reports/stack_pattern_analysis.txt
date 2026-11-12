@@ -7,11 +7,11 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 705 / 5947
+Functions with stack patterns: 715 / 6010
 
 Pattern type counts:
-  stack_alignment                  453
-  alt_frame_pointer                416
+  stack_alignment                  457
+  alt_frame_pointer                425
   dynamic_alloca                     4
   pushf                              3
   pop_esp                            1
@@ -71,8 +71,9 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00407ac1: MOV EDI,ESP
     - [alt_frame_pointer] at 00407ad1: MOV EDI,ESP
 
-  engine_3d.c_drawLine3DFromIndices_FUN_00407d90
-    File: engine/3d.c, Suspects: 23
+  engine_3d.c_FUN_00407d70
+    File: engine/3d.c, Suspects: 10
+    - [alt_frame_pointer] at 00407d8a: MOV EDI,ESP
     - [alt_frame_pointer] at 00407dc1: MOV EDI,ESP
     - [alt_frame_pointer] at 00407dd1: MOV EDI,ESP
 
@@ -141,6 +142,10 @@ MEDIUM SEVERITY - May cause decompiler artifacts
   core_actor.cpp_getRandomInt_FUN_0040cc60
     File: core/actor.cpp, Suspects: 1
     - [stack_alignment] at 0040cc68: AND ESP,0xfffffff8
+
+  core_actor.cpp_FUN_0040d010
+    File: core/actor.cpp, Suspects: 7
+    - [stack_alignment] at 0040d016: AND ESP,0xfffffff8
 
   core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040dd00
     File: core/ammo.cpp, Suspects: 10
@@ -211,16 +216,16 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/bird.cpp, Suspects: 28
     - [stack_alignment] at 0041534c: AND ESP,0xfffffff8
 
-  unkafter_bird.cpp_FUN_00415830
-    File: unkafter/bird.cpp, Suspects: 10
+  core_bird.cpp_FUN_00415830
+    File: core/bird.cpp, Suspects: 10
     - [alt_frame_pointer] at 004158c8: MOV EDI,ESP
 
-  unkafter_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0
-    File: unkafter/bmppuzzl.cpp, Suspects: 40
+  core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0
+    File: core/bmppuzzl.cpp, Suspects: 40
     - [alt_frame_pointer] at 0041707a: MOV EDI,ESP
 
-  unkafter_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00417230
-    File: unkafter/bmppuzzl.cpp, Suspects: 38
+  core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00417230
+    File: core/bmppuzzl.cpp, Suspects: 38
     - [stack_alignment] at 0041723c: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_process_FUN_00419740
@@ -260,12 +265,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/boneguy.cpp, Suspects: 39
     - [stack_alignment] at 0041b1e8: AND ESP,0xfffffff8
 
-  core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_0041b2a0
-    File: core/boneguy.cpp, Suspects: 22
-    - [stack_alignment] at 0041b2a8: AND ESP,0xfffffff8
-    - [alt_frame_pointer] at 0041b2d1: MOV ESI,ESP
-
-  ... and 650 more functions
+  ... and 660 more functions
 
 ====================================================================================================
 CORRELATION: Stack patterns vs suspect counts
@@ -273,5 +273,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 29.7 suspects/function
+  With stack patterns:    avg 29.6 suspects/function
   Without stack patterns: avg 8.0 suspects/function

@@ -8,6 +8,8 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[11]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_dtor_FUN_0059bec0 at 0059bee0
+;   core_bmppuzzl.cpp_SButtonStruct_dtor_FUN_0059bf40 at 0059bf47
 ;   core_fldnotes.cpp_SNotesMap_dtor_FUN_004a3820 at 004a3837
 ;   core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004a2200 at 004a2222
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be41e
@@ -16,8 +18,6 @@
 ;   core_game.cpp_FUN_004bdc1e at 004bdf9b
 ;   core_level.cpp_FUN_004e1480 at 004e15b5
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4ca5
-;   core_mission.cpp_CDemonMission_process_FUN_004fc940 at 004fca76
-;   unkafter_superopt.cpp_CAudioRecPuzzle_dtor_FUN_0059bec0 at 0059bee0
 ;   ... and 1 more
 ;
 ; Called Functions:

@@ -161,7 +161,7 @@ void __cdecl core_ammo_cpp_CAmmo_process_FUN_0040ded0(CAmmo *this_ptr,float delt
   fStack_68 = fStack_68 + (this_ptr->base).location.position.x;
   fStack_64 = fStack_64 + (this_ptr->base).location.position.y;
   fStack_60 = fStack_60 + (this_ptr->base).location.position.z;
-  unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+  core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
             (g_CSimpleParticleSystemPtr,0x3f000000,0x3f800000,0,0x3e4ccccd,uVar6,uVar7,uVar8,uVar9,
              pfVar10,puVar4,puVar11,uVar12);
   return;

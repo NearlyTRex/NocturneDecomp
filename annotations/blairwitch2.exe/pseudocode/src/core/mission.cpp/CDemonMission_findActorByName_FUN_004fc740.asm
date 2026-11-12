@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   name
 ;
 ; XREF[10]:
+;   core_basicene.cpp_FUN_0059ee00 at 0059ef52
 ;   core_event.cpp_resolveActorByName_FUN_00488d00 at 00488dd5
 ;   core_game.cpp_FUN_004bbf70 at 004bc5ac
 ;   core_hiram.cpp_CHiram_process_FUN_004d1070 at 004d1146
+;   core_hpatrol.cpp_FUN_0059c9c0 at 0059cb01
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004fcd00 at 004fcd64
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_004fc040 at 004fc13f
 ;   core_mission.cpp_FUN_004fd280 at 004fd320
-;   core_patrpoin.cpp_FUN_0059c9c0 at 0059cb01
 ;   core_script.cpp_getActor_FUN_00521290 at 005213b9
 ;   core_script.cpp_readActorReference_FUN_0052a010 at 0052a076
-;   unkafter_basicene.cpp_FUN_0059ee00 at 0059ef52
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130

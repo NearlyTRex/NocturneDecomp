@@ -208,3 +208,7 @@ CDemonActor * FUN_004d0a40(int param_1);
 // Original: core_hero.cpp_CHeroPlaceholder_archive_FUN_004d0af0
 // Address: 004d0af0
 void __cdecl CHeroPlaceholder::archive(CHeroPlaceholder *this_ptr);
+
+// Original: core_hero.cpp_FUN_004d0b3e
+// Address: 004d0b3e
+undefined8 FUN_004d0b3e(void);

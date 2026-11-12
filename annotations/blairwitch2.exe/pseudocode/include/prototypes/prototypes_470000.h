@@ -75,6 +75,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00476b50(CDemon
 int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00476c30(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 void core_dtrace_cpp_FUN_00476d20(int param_1);
 void core_dtrace_cpp_FUN_00476d40(int param_1);
+void core_dtrace_cpp_FUN_00476d60(int param_1,int param_2);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_markShadowVoxels_FUN_00476df0(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent,CVector3f *light_position);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_commitShadowBuffer_FUN_004770c0(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_transferShadowVoxels_FUN_00477160(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *start,CVector3f *end);
@@ -178,8 +179,5 @@ void shape_edittool_cpp_FUN_0047f210(CEditorTools *param_1,int param_2);
 char * __cdecl shape_edittool_cpp_FUN_0047fbb0(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_FUN_0047fc30(CEditorTools *this_ptr,char *text_data);
 void shape_edittool_cpp_FUN_0047fd00(undefined4 param_1,float param_2,undefined4 param_3);
-void shape_edittool_cpp_FUN_0047fd0e(void);
-void shape_edittool_cpp_FUN_0047fd1a(void);
-void shape_edittool_cpp_FUN_0047ff3a(void);
 void shape_edittool_cpp_FUN_0047ff4e(undefined4 param_1,undefined4 param_2,undefined4 param_3,float *param_4,float *param_5);
 

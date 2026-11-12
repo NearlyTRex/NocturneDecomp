@@ -26,11 +26,11 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
+;   core_flashlit.cpp_FUN_004ba490
+;   core_flashlit.cpp_FUN_004ba540
 ;   core_fldnotes.cpp_SNotesMap_revealAtHero_FUN_004bc450
 ;   core_fldnotes.cpp_STextPage_findResourceAt_FUN_004bb110
 ;   engine_alphabit.cpp_FUN_0040d1c0
-;   unkaddr_004b9ab0.cpp_FUN_004ba490
-;   unkaddr_004b9ab0.cpp_FUN_004ba540
 ;
 ; *****************************************************************************
 
@@ -150,8 +150,8 @@ section .text
     PUSH EDI                            ; 004beaa7
     MOV EBP,dword ptr [0x01c4353c]      ; 004beaa8 | DAT_01c4353c
     PUSH EBP                            ; 004beaae
-    CALL unkaddr_004b9ab0.cpp_FUN_004ba490 ; 004beaaf
-        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; undefined unkaddr_004b9ab0.cpp_FUN_004ba490()
+    CALL core_flashlit.cpp_FUN_004ba490 ; 004beaaf
+        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004ba490()
     ADD ESP,0x8                         ; 004beab4
     TEST EAX,EAX                        ; 004beab7
     JL 0x004beada                       ; 004beab9
@@ -169,8 +169,8 @@ section .text
     PUSH EAX                            ; 004beadf
     MOV EDX,dword ptr [0x01c4353c]      ; 004beae0 | DAT_01c4353c
     PUSH EDX                            ; 004beae6
-    CALL unkaddr_004b9ab0.cpp_FUN_004ba540 ; 004beae7
-        ;   XREF to: 004ba540 (UNCONDITIONAL_CALL)  ; undefined unkaddr_004b9ab0.cpp_FUN_004ba540()
+    CALL core_flashlit.cpp_FUN_004ba540 ; 004beae7
+        ;   XREF to: 004ba540 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004ba540()
     MOV ECX,dword ptr [0x01cc7b90]      ; 004beaec | DAT_01cc7b90
     MOV EBX,dword ptr [0x01c4353c]      ; 004beaf2 | DAT_01c4353c
     MOV ESI,dword ptr [0x01c43540]      ; 004beaf8 | DAT_01c43540

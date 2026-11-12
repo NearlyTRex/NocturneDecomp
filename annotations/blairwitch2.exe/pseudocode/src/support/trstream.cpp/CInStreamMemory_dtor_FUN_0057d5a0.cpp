@@ -21,7 +21,7 @@ CInStreamMemory * support_trstream_cpp_CInStreamMemory_dtor_FUN_0057d5a0(CInStre
   }
   this_ptr->vtable = &g_CInStreamMemoryVTable;
   support_trstream_cpp_CInStreamMemory_close_FUN_0057d7b0(this_ptr);
-  pCVar1 = (CInStreamMemory *)unkaddr_0057b9a0_cpp_FUN_0057b9d0(this_ptr,1);
+  pCVar1 = (CInStreamMemory *)core_terrain_cpp_FUN_0057b9d0(this_ptr,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

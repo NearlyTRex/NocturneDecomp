@@ -7,7 +7,7 @@
 ; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   shape_meshlod.cpp_factoryFuncMimic_FUN_0050f090 at 0050f0a3
+;   core_mimic.cpp_factoryFuncMimic_FUN_0050f090 at 0050f0a3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006039cc

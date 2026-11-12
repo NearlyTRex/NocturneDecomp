@@ -24,7 +24,7 @@ void * __cdecl cockpit_ckptutil_c_FUN_00438ef0(char *filename,void *buffer,int s
       core_main_c_FUN_004e4330(local_8c);
     }
   }
-  unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_3c);
+  support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_3c);
   iVar1 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
                     (&local_3c,&DAT_005b8ed8,filename,1);
   if (iVar1 == 0) {
@@ -33,15 +33,15 @@ void * __cdecl cockpit_ckptutil_c_FUN_00438ef0(char *filename,void *buffer,int s
     _DAT_01d71de0 = "..\\cockpit\\ckptutil.c";
     core_main_c_FUN_004e4330(local_8c);
   }
-  iVar1 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00(&local_3c,buffer,size);
+  iVar1 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_3c,buffer,size);
   if (iVar1 != size) {
     _sprintf(local_8c,"Unable to read bitmap file (%s).");
-    unkafter_turret_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);
+    support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);
     _DAT_01d71de0 = "..\\cockpit\\ckptutil.c";
     _DAT_01d71de4 = 0x99c;
     core_main_c_FUN_004e4330(local_8c);
   }
-  unkafter_turret_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);
-  unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_3c,0);
+  support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_3c,0);
   return buffer;
 }

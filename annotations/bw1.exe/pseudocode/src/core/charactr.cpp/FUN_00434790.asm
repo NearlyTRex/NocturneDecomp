@@ -26,7 +26,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined        Stack[-0x10]:1  local_10
 ;
-; XREF[8]:
+; XREF[9]:
 ;   core_bird.cpp_CBird_process_FUN_00415340 at 0041536d
 ;   core_doc.cpp_FUN_00469550 at 00469744
 ;   core_dog.cpp_CZombieDog_process_FUN_004768a0 at 004768d7
@@ -35,6 +35,7 @@
 ;   core_shadowsc.cpp_CShadowsc_process_FUN_00560630 at 00560691
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 00585ce2
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 005931ca
+;   core_yow.cpp_FUN_005b8440 at 005b849b
 ;
 ; Referenced Globals:
 ;   undefined4 s_CZombieDog_005d5ef6+1

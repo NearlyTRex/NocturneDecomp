@@ -15,6 +15,6 @@ void core_cross_cpp_factoryFuncCross_FUN_005a69c0(void)
   if (this_ptr == (CCross *)0x0) {
     return;
   }
-  unkafter_cross_cpp_CCross_ctor_FUN_005a69f0(this_ptr);
+  core_cross_cpp_CCross_ctor_FUN_005a69f0(this_ptr);
   return;
 }

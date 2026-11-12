@@ -164,7 +164,7 @@ uint core_inv_cpp_FUN_004dc8c0(int param_1,CDemonActor *param_2)
   iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                     (*(uint *)(iVar2 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash);
   if (iVar2 != 0) {
-    unkafter_stranger_cpp_FUN_0045d260(iVar2);
+    core_doc_cpp_FUN_0045d260(iVar2);
   }
   if (*(int *)(local_14 + 0x470) != 0) {
     return 0;

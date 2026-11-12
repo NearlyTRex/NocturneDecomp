@@ -42,6 +42,7 @@ from ghidra_annotations.annotations.pseudocode.output import (
 )
 from ghidra_annotations.annotations.pseudocode.actor_cast_report import generate_actor_cast_report
 from ghidra_annotations.annotations.pseudocode.adj_report import generate_adj_pointer_report
+from ghidra_annotations.annotations.pseudocode.keep_drift_report import generate_keep_drift_report
 from ghidra_annotations.annotations.pseudocode.keep_sync_report import generate_keep_sync_report
 from ghidra_annotations.annotations.pseudocode.analysis import generate_analysis_report
 from ghidra_annotations.annotations.pseudocode.dat_report import generate_dat_report, generate_struct_detection_report, generate_globals_gap_report
@@ -1778,6 +1779,12 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False,
     timer.start_phase("Generate keep-sync report")
     log_info("Generating keep-sync report...")
     generate_keep_sync_report(pseudocode_src_dir, reports_dir)
+    timer.end_phase()
+
+    # .keep files the export has caught up with: identical code, or a few lines off.
+    timer.start_phase("Generate keep-drift report")
+    log_info("Generating keep-drift report...")
+    generate_keep_drift_report(pseudocode_src_dir, reports_dir)
     timer.end_phase()
 
     # Log every adjacency-sentinel rewrite applied during this export.

@@ -24,7 +24,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047f990(CEditor
     FUN_005a3770(*(int *)(iVar1 + 0x1c5b2e0));
     *(uint *)(iVar1 + 0x1c5b2e0) = 0;
   }
-  unkafter_minecar_cpp_FUN_004ed020
+  engine_mini3d_cpp_FUN_004ed020
             (*(uint *)(iVar1 + 0x1c5b128),*(uint *)(iVar1 + 0x1c5b12c),
              *(uint *)(iVar1 + 0x1c5b130),*(uint *)(iVar1 + 0x1c5b134));
   _DAT_01c6b5a8 = *(uint *)(iVar1 + 0x1c5b118);

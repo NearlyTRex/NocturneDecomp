@@ -11,7 +11,7 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_004f4070(CM
 {
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
             (DAT_005f2afc,&this_ptr->camera_origin);
-  engine_matrix_c_FUN_0046d090(DAT_005f2afc,this_ptr->projection_scale);
+  engine_drender_cpp_FUN_0046d090(DAT_005f2afc,this_ptr->projection_scale);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40
             (DAT_005f2afc,&this_ptr->reflection_matrix);
   return;

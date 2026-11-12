@@ -11,13 +11,13 @@
 ;   undefined1* switchdataD_0059f410 = 0059f48a
 ;
 ; Called Functions:
+;   core_basicene.cpp_FUN_0059f5b0
+;   core_basicene.cpp_FUN_0059f660
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
 ;   core_charactr.cpp_FUN_0042b5e0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   unkaddr_0059d350.cpp_FUN_0059da20
-;   unkafter_basicene.cpp_FUN_0059f5b0
-;   unkafter_basicene.cpp_FUN_0059f660
+;   core_muzzle.cpp_FUN_0059da20
 ;
 ; *****************************************************************************
 
@@ -84,14 +84,14 @@ section .text
         ;   XREF to: 0059f4cd (CONDITIONAL_JUMP)  ; LAB_0059f4cd
     PUSH dword ptr [ESP + 0x14]         ; 0059f4c0
     PUSH EBX                            ; 0059f4c4
-    CALL unkafter_basicene.cpp_FUN_0059f5b0 ; 0059f4c5
-        ;   XREF to: 0059f5b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059f5b0()
+    CALL core_basicene.cpp_FUN_0059f5b0 ; 0059f4c5
+        ;   XREF to: 0059f5b0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f5b0()
     ADD ESP,0x8                         ; 0059f4ca
     PUSH dword ptr [ESP + 0x14]         ; 0059f4cd
         ;   Label: LAB_0059f4cd
     PUSH EBX                            ; 0059f4d1
-    CALL unkafter_basicene.cpp_FUN_0059f660 ; 0059f4d2
-        ;   XREF to: 0059f660 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059f660()
+    CALL core_basicene.cpp_FUN_0059f660 ; 0059f4d2
+        ;   XREF to: 0059f660 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f660()
     ADD ESP,0x8                         ; 0059f4d7
     PUSH dword ptr [ESP + 0x14]         ; 0059f4da
     PUSH EBX                            ; 0059f4de
@@ -142,8 +142,8 @@ section .text
         ;   Label: LAB_0059f545
     PUSH dword ptr [ESP + 0x14]         ; 0059f54b
     PUSH EAX                            ; 0059f54f
-    CALL unkaddr_0059d350.cpp_FUN_0059da20 ; 0059f550
-        ;   XREF to: 0059da20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059da20()
+    CALL core_muzzle.cpp_FUN_0059da20   ; 0059f550
+        ;   XREF to: 0059da20 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059da20()
     ADD ESP,0x8                         ; 0059f555
     PUSH 0x1                            ; 0059f558
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 0059f55a

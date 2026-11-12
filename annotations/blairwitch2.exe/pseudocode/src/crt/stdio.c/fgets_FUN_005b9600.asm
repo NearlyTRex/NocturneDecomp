@@ -8,13 +8,13 @@
 ;   core_box.cpp_CBox_loadFromFile_FUN_005b4300 at 005b4322
 ;   core_cloth.cpp_CCloth_load_FUN_005adeb0 at 005adeff
 ;   core_dcamera.cpp_loadCameraFog_FUN_00443400 at 00443421
+;   core_dcube.cpp_FUN_00446f4e at 00446f98
 ;   core_event.cpp_CEventList_loadState_FUN_00491ca0 at 00491ccc
 ;   core_fire.cpp_CFireEffect_load_FUN_0049ea80 at 0049eab4
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a42bd
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be4ec
 ;   core_game.cpp_FUN_004bbf70 at 004bc37a
 ;   core_gore.cpp_CGore_load_FUN_004c9e70 at 004c9e8c
-;   core_inv.cpp_CInventory_load_FUN_004dc4b0 at 004dc4ec
 ;   ... and 10 more
 ;
 ; Referenced Globals:

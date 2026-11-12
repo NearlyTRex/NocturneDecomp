@@ -32,6 +32,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_setRandomSeed_FUN_0040cee0
+;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;   core_dfilter.cpp_CFilterFX_process_FUN_00447de0
 ;   core_event.cpp_CEventList_process_FUN_004893d0
 ;   core_fire.cpp_CFireEffect_process_FUN_0049c430
@@ -45,7 +46,6 @@
 ;   core_script.cpp_CScript_process_FUN_005216e0
 ;   core_set.cpp_CDemonSet_process_FUN_00533010
 ;   core_set.cpp_CDemonSet_processActors_FUN_0052e940
-;   core_setdir.cpp_FUN_00538d10
 ;   ... and 10 more
 ;
 ; *****************************************************************************
@@ -283,8 +283,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x284]     ; 004bd850 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP],EDX             ; 004bd856
     PUSH EDI                            ; 004bd859
-    CALL unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 004bd85a
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 004bd85a
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
     MOV EAX,[0x00616494]                ; 004bd85f | g_CGamePtr
     MOV EBP,dword ptr [EAX + 0x228]     ; 004bd864 | g_CGameInstance.profile_mode
     ADD ESP,0x8                         ; 004bd86a
@@ -374,8 +374,8 @@ section .text
     CALL core_fldnotes.cpp_FUN_004a5f60 ; 004bd980
         ;   XREF to: 004a5f60 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a5f60()
     ADD ESP,0x4                         ; 004bd985
-    CALL unkaddr_0059aa80.cpp_FUN_0059ac60 ; 004bd988
-        ;   XREF to: 0059ac60 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059aa80.cpp_FUN_0059ac60()
+    CALL core_zombie.cpp_FUN_0059ac60   ; 004bd988
+        ;   XREF to: 0059ac60 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059ac60()
     MOV ECX,dword ptr [0x0061b5a8]      ; 004bd98d | g_CDemonSetPtr
     PUSH ECX                            ; 004bd993 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_processActors_FUN_0052e940 ; 004bd994

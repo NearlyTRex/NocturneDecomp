@@ -25,8 +25,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[4]:
+;   core_demnfolk.cpp_CDemnfolk_renderTransparent_FUN_00458200 at 00458249
 ;   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004c90b0 at 004c90d1
-;   core_hostage.cpp_CDemnfolk_renderTransparent_FUN_00458200 at 00458249
 ;   core_skeleton.cpp_FUN_0054dbd0 at 0054dc88
 ;   core_zombie.cpp_CZombie_renderTransparent_FUN_0058beb0 at 0058bef9
 ;

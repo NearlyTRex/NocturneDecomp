@@ -144,3 +144,59 @@ void __cdecl doNothing2(void);
 // Original: wincore_winrun.cpp_getJoystickState_FUN_00581d10
 // Address: 00581d10
 void __cdecl getJoystickState(void);
+
+// Original: wincore_winrun.cpp_FUN_00581e70
+// Address: 00581e70
+float FUN_00581e70(int param_1,int *param_2,float param_3,float param_4);
+
+// Original: wincore_winrun.cpp_FUN_00581f50
+// Address: 00581f50
+void FUN_00581f50(int param_1);
+
+// Original: wincore_winrun.cpp_FUN_0058236e
+// Address: 0058236e
+void FUN_0058236e(void);
+
+// Original: wincore_winrun.cpp_FUN_005823a0
+// Address: 005823a0
+void FUN_005823a0(int param_1,int param_2,UINT_PTR param_3);
+
+// Original: wincore_winrun.cpp_FUN_005824b0
+// Address: 005824b0
+void FUN_005824b0(int param_1);
+
+// Original: wincore_winrun.cpp_FUN_005824d0
+// Address: 005824d0
+void FUN_005824d0(void);
+
+// Original: wincore_winrun.cpp_FUN_00582500
+// Address: 00582500
+void FUN_00582500(float param_1);
+
+// Original: wincore_winrun.cpp_FUN_0058257c
+// Address: 0058257c
+float FUN_0058257c(void);
+
+// Original: wincore_winrun.cpp_FUN_005825e0
+// Address: 005825e0
+void FUN_005825e0(int param_1);
+
+// Original: wincore_winrun.cpp_FUN_00582630
+// Address: 00582630
+void FUN_00582630(undefined4 param_1);
+
+// Original: wincore_winrun.cpp_FUN_00582640
+// Address: 00582640
+undefined4 FUN_00582640(undefined4 param_1);
+
+// Original: wincore_winrun.cpp_FUN_00582680
+// Address: 00582680
+void FUN_00582680(undefined4 param_1);
+
+// Original: wincore_winrun.cpp_FUN_0058282c
+// Address: 0058282c
+void FUN_0058282c(undefined4 param_1);
+
+// Original: wincore_winrun.cpp_FUN_00582aa0
+// Address: 00582aa0
+void FUN_00582aa0(void);

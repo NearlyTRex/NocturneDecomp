@@ -13,6 +13,14 @@ void staticInit(void);
 // Address: 004151c0
 void factoryFuncBird(void);
 
+// Original: core_bird.cpp_CBird_getActorType_FUN_004151e0
+// Address: 004151e0
+CDemonActorType * CBird::getActorType(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_ctor_FUN_004151f0
+// Address: 004151f0
+CBird * CBird::ctor(CBird *this_ptr);
+
 // Original: core_bird.cpp_CBird_setup_FUN_004152c0
 // Address: 004152c0
 void __cdecl CBird::setup(CBird *this_ptr);
@@ -37,6 +45,10 @@ int __cdecl CBird::renderTransparent(CBird *this_ptr);
 // Address: 00415780
 void __cdecl CBird::archive(CBird *this_ptr);
 
+// Original: core_bird.cpp_FUN_00415830
+// Address: 00415830
+undefined4 FUN_00415830(CMotionController *param_1,char *param_2);
+
 // Original: core_bird.cpp_CBird_processDamage_FUN_00415910
 // Address: 00415910
 void __cdecl CBird::processDamage(CBird *this_ptr,SDamageInfo *damage_info);
@@ -48,3 +60,7 @@ int __cdecl CBird::isInvulnerable(CBird *this_ptr);
 // Original: core_bird.cpp_CBird_getPathMap_FUN_004159e0
 // Address: 004159e0
 CPathMap * __cdecl CBird::getPathMap(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_dtor_FUN_004159f0
+// Address: 004159f0
+CBird * CBird::dtor(CBird *this_ptr,uint flags);

@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_prye.cpp_FUN_0051b550 at 0051b841
-;   unkafter_prye.cpp_FUN_00524940 at 00524bd6
+;   core_prye.cpp_FUN_00524940 at 00524bd6
 ;
 ; Called Functions:
 ;   core_inv.cpp_FUN_004da880

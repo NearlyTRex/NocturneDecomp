@@ -17,7 +17,7 @@
 ;   core_bride.cpp_CBride_processDamage_FUN_00424b10 at 00424c79
 ;   core_bugs.cpp_CBugs_processDamage_FUN_00425940 at 00425958
 ;   core_carved.cpp_CCarved_processDamage_FUN_0042b850 at 0042b9a5
-;   core_constrct.cpp_CConstruct_processDamage_FUN_00447090 at 00447147
+;   core_construc.cpp_CConstruct_processDamage_FUN_00447090 at 00447147
 ;   ... and 20 more
 ;
 ; Referenced Globals:

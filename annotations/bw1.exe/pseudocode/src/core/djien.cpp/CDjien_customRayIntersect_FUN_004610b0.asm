@@ -15,8 +15,8 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_FUN_00420ee0
+;   core_djien.cpp_FUN_004615b0
 ;   crt_memory.c___arrinit_FUN_005c0357
-;   unkafter_djien.cpp_FUN_004615b0
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     PUSH EAX                            ; 00461168
     MOV ESI,dword ptr [EBP + 0x14]      ; 00461169
     PUSH ESI                            ; 0046116c
-    CALL unkafter_djien.cpp_FUN_004615b0 ; 0046116d
-        ;   XREF to: 004615b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_djien.cpp_FUN_004615b0()
+    CALL core_djien.cpp_FUN_004615b0    ; 0046116d
+        ;   XREF to: 004615b0 (UNCONDITIONAL_CALL)  ; undefined core_djien.cpp_FUN_004615b0()
     ADD ESP,0xc                         ; 00461172
     MOV EDI,0xffffffff                  ; 00461175
     MOV ESI,dword ptr [EBP + 0x1c]      ; 0046117a

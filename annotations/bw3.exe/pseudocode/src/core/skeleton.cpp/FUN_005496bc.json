@@ -1,11 +1,11 @@
 {
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 182,
+    "assembly_lines": 2,
     "complexity_score": 566,
     "cross_reference_count": 0,
-    "function_call_count": 8,
-    "global_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 116,
     "suspect_count": 40,
@@ -21,7 +21,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 298
+    "total_lines": 118
   },
   "cross_references": [],
   "function": {
@@ -29,81 +29,15 @@
     "address_range": [
       [
         "005496bc",
-        "005498c7"
+        "005496bf"
       ]
     ],
     "convention": "unknown",
     "name": "core_skeleton.cpp_FUN_005496bc",
     "signature": "CSkeleton * core_skeleton_cpp_FUN_005496bc(CDeformableModel *param_1,undefined4 param_2,int param_3,byte param_4)"
   },
-  "function_calls": [
-    {
-      "addr": "005487e0",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0"
-    },
-    {
-      "addr": "00584450",
-      "is_variadic": false,
-      "name": "core_xform.cpp_FUN_00584450"
-    },
-    {
-      "addr": "00583b10",
-      "is_variadic": false,
-      "name": "core_xform.cpp_matrixToEulerAngles_FUN_00583b10"
-    },
-    {
-      "addr": "00407b30",
-      "is_variadic": false,
-      "name": "engine_3d.c_clipAndDrawLine2D_FUN_00407b30"
-    },
-    {
-      "addr": "0046cf30",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30"
-    },
-    {
-      "addr": "0046d080",
-      "is_variadic": false,
-      "name": "engine_matrix.c_pop_FUN_0046d080"
-    },
-    {
-      "addr": "005632a3",
-      "is_variadic": false,
-      "name": "engine_special.cpp_FUN_005632a3"
-    },
-    {
-      "addr": "00480f00",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00480f00"
-    }
-  ],
-  "globals": [
-    {
-      "addr": "005e4758",
-      "name": "DAT_005e4758",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "005f2afc",
-      "name": "DAT_005f2afc",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "005fb140",
-      "name": "g_CEditorToolsPtr",
-      "type": "CEditorTools*",
-      "value": "01c5b0e4"
-    },
-    {
-      "addr": "01c6b5c0",
-      "name": "DAT_01c6b5c0",
-      "type": "undefined4",
-      "value": null
-    }
-  ],
+  "function_calls": [],
+  "globals": [],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
@@ -114,39 +48,12 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.211538461538462,
-    "instruction_count": 156,
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 1,
     "opcode_distribution": {
-      "BOOL_OR": 3,
-      "BRANCH": 2,
-      "CALL": 9,
-      "CBRANCH": 11,
-      "COPY": 196,
-      "FLOAT2FLOAT": 6,
-      "FLOAT_MULT": 3,
-      "INT_ADD": 93,
-      "INT_AND": 76,
-      "INT_CARRY": 17,
-      "INT_EQUAL": 72,
-      "INT_LESS": 6,
-      "INT_MULT": 24,
-      "INT_NOTEQUAL": 9,
-      "INT_SBORROW": 6,
-      "INT_SCARRY": 20,
-      "INT_SEXT": 6,
-      "INT_SLESS": 35,
-      "INT_SUB": 56,
-      "INT_XOR": 3,
-      "INT_ZEXT": 22,
-      "LOAD": 46,
-      "POPCOUNT": 35,
-      "RETURN": 1,
-      "ROUND": 3,
-      "STORE": 46,
-      "SUBPIECE": 4,
-      "TRUNC": 3
+      "COPY": 1
     },
-    "pcode_op_count": 813
+    "pcode_op_count": 1
   },
   "stack_frame": {
     "frame_size": 4,
@@ -155,30 +62,6 @@
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": []
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 2,
-    "pattern_types": [
-      "alt_frame_pointer"
-    ],
-    "patterns": [
-      {
-        "address": "005497cb",
-        "description": "Alternative frame pointer (EDI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV EDI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      },
-      {
-        "address": "005497e2",
-        "description": "Alternative frame pointer (EDI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV EDI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      }
-    ],
-    "severity": "medium"
   },
   "suspects": [
     {

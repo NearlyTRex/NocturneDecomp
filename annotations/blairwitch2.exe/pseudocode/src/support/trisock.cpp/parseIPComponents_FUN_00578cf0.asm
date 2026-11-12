@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   dotted_decimal_string
 ;
 ; XREF[2]:
+;   support_trisock.cpp_FUN_00579720 at 00579733
 ;   support_trisock.cpp_parseIPAddress_FUN_00578bf0 at 00578bfb
-;   unkafter_trisock.cpp_FUN_00579720 at 00579733
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005ba8cc

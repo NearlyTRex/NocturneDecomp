@@ -8,18 +8,18 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[39]:
+; XREF[40]:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0 at 004088fb
 ;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00597084
 ;   core_baal.cpp_FUN_00597700 at 00597788
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_004123c0 at 0041247b
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f513
 ;   core_bugs.cpp_FUN_00422a00 at 00422db4
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 00431845
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0 at 0042bcd4
+;   core_charactr.cpp_FUN_0042b970 at 0042b977
 ;   core_charactr.cpp_FUN_004310e0 at 004312c5
-;   core_charactr.cpp_FUN_00432330 at 00432f8d
-;   core_cloth.cpp_CCloth_step_FUN_0043e2a0 at 0043ea22
-;   ... and 29 more
+;   ... and 30 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b5f09

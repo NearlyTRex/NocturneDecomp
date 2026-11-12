@@ -12,11 +12,11 @@
 ;   WatcomTypeInfo g_CInStreamPipeTypeInfo
 ;
 ; Called Functions:
+;   core_terrain.cpp_FUN_0057b9d0
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
 ;   support_codec.cpp_CInStreamPipe_close_FUN_004351e0
-;   unkaddr_0057b9a0.cpp_FUN_0057b9d0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     ADD ESP,0x4                         ; 00434f58
     PUSH 0x1                            ; 00434f5b
     PUSH EBX                            ; 00434f5d
-    CALL unkaddr_0057b9a0.cpp_FUN_0057b9d0 ; 00434f5e
-        ;   XREF to: 0057b9d0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057b9d0()
+    CALL core_terrain.cpp_FUN_0057b9d0  ; 00434f5e
+        ;   XREF to: 0057b9d0 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057b9d0()
     ADD ESP,0x8                         ; 00434f63
     MOV DL,byte ptr [ESP + 0xc]         ; 00434f66
     MOV EBX,EAX                         ; 00434f6a

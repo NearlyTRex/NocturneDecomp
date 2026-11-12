@@ -103,4 +103,4 @@ CVector3f * __cdecl CVector3f::arrdtor4(CVector3f *this_ptr,uint flags);
 
 // Original: core_dracbrid.cpp_SFreaky_arrdtor6_FUN_00486e50
 // Address: 00486e50
-SFreaky * __cdecl SFreaky::arrdtor6(SFreaky *objs,uint flags);
+SFreaky * __cdecl SFreaky::arrdtor6(SFreaky *this_ptr,uint flags);

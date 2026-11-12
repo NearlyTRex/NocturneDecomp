@@ -112,3 +112,19 @@ void __cdecl writePBGHeader(int total_entries,_FILE *file_header);
 // Original: cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0
 // Address: 005385d0
 CPackedBitmap * parsePBGFile(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6);
+
+// Original: cockpit_pkbitmap.cpp_FUN_00538750
+// Address: 00538750
+CPackedBitmap * FUN_00538750(int *param_1,char *param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6);
+
+// Original: cockpit_pkbitmap.cpp_FUN_00538900
+// Address: 00538900
+void FUN_00538900(undefined4 *param_1);
+
+// Original: cockpit_pkbitmap.cpp_FUN_00538930
+// Address: 00538930
+void FUN_00538930(int *param_1);
+
+// Original: cockpit_pkbitmap.cpp_FUN_00538990
+// Address: 00538990
+void FUN_00538990(undefined4 *param_1);

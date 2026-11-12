@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 382,
-    "complexity_score": 506,
+    "complexity_score": 516,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 50,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 181,
-    "suspect_count": 30,
+    "suspect_count": 31,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -108,7 +108,7 @@
     {
       "addr": "0059d420",
       "is_variadic": false,
-      "name": "unkaddr_0059d350.cpp_CMuzzleEffect_process_FUN_0059d420"
+      "name": "core_muzzle.cpp_CMuzzleEffect_process_FUN_0059d420"
     }
   ],
   "globals": [
@@ -567,6 +567,14 @@
       "match": "DAT_01c86e60",
       "severity": "mild",
       "text": "} while (this_ptr_01 != (CMuzzleEffect *)&DAT_01c86e60);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 83,
+      "match": "DAT_01c91264",
+      "severity": "mild",
+      "text": "} while (this_ptr_03 != (CGlassParticle *)&DAT_01c91264);",
       "type": "undefined_data"
     },
     {

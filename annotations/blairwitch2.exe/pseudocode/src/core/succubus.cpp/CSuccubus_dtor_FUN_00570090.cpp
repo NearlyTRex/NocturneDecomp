@@ -29,7 +29,7 @@ CSuccubus * core_succubus_cpp_CSuccubus_dtor_FUN_00570090(CSuccubus *this_ptr,ui
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar2[-0x15].cloths + 9),0);
   iVar4 = core_armour_cpp_FUN_0040f2b0(pCVar3[-7].part_data.texture_set_indices + 0x17,0);
-  iVar4 = unkaddr_0059d350_cpp_FUN_0059df70(iVar4 + -0x9c8,0);
+  iVar4 = core_muzzle_cpp_FUN_0059df70(iVar4 + -0x9c8,0);
   pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar4 + -0x34c),0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar2[-0x19].filenames[6] + 0x10),0);

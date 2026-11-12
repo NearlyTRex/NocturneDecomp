@@ -55,6 +55,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
 void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_00442bf0(CDemonCamera *this_ptr,SFog *fog_config);
 int core_dcamera_cpp_FUN_00442cb0(int param_1,int *param_2);
 void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80(CDemonCamera *this_ptr,CVector3f *position,SProjectedVertex *projected_vertex);
+void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_00442e70(CDemonCamera *this_ptr,int param_2);
 void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00442f00(CDemonCamera *this_ptr,int alpha_index);
 void core_dcamera_cpp_FUN_00443020(int param_1,int *param_2,int param_3);
 void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00443180(CDemonCamera *this_ptr,int gamma_value);
@@ -74,6 +75,7 @@ void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_00443db0(float *param_1,float *p
 void __cdecl core_dcube_cpp_clipPolygonAgainstMaxX_FUN_00444220(float max_x_plane);
 void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00444650(float max_z_plane);
 void __cdecl core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004447b0(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
+void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00444830(CDemonCubeTriangle *this_ptr,undefined4 param_2,int param_3);
 float core_dcube_cpp_FUN_00444a40(undefined4 *param_1,float *param_2,float *param_3);
 int __cdecl core_dcube_cpp_intersectXZCylinder_FUN_00444c90(SIntersectXZCylinder *cylinder);
 undefined4 __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00444f70(SIntersectXZCylinder *param_1,float *param_2,float *param_3);
@@ -92,7 +94,7 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_004468c0(CDemonCube *t
 float core_dcube_cpp_FUN_00446b60(int param_1,undefined4 param_2,undefined4 param_3,float *param_4,uint *param_5);
 void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00446d20(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_dcube_cpp_FUN_00446df0(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
-void unkafter_dcube_cpp_FUN_00446f4e(char *param_1);
+void core_dcube_cpp_FUN_00446f4e(char *param_1);
 void core_dest_cpp_staticInit_FUN_00447030(void);
 void core_dest_cpp_factoryFuncActorDestination_FUN_00447060(void);
 CDemonActorType * core_dest_cpp_CActorDestination_getActorType_FUN_00447080(CActorDestination *this_ptr);
@@ -131,8 +133,8 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00448900(CDemonGlobe *
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_00448b00(CDemonGlobe *this_ptr);
 int __cdecl core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_00448c90(CDemonGlobe *this_ptr,CVector3f *reference_position,CMatrix3x3f *rotation_matrix,CVector3f *aabb_min,CVector3f *aabb_max);
 int core_dglobe_cpp_FUN_00448da0(int param_1,int *param_2,int *param_3);
-CDemonImage * unkafter_dglobe_cpp_FUN_00448f20(CDemonImage *param_1);
-void unkafter_dglobe_cpp_FUN_00448f3e(CDemonImage *param_1);
+CDemonImage * core_dglobe_cpp_FUN_00448f20(CDemonImage *param_1);
+void core_dglobe_cpp_FUN_00448f3e(CDemonImage *param_1);
 void __cdecl core_dimage_cpp_FUN_00448f40(CDemonImage *this_ptr);
 void __cdecl core_dimage_cpp_FUN_00448fa0(CDemonImage *this_ptr);
 uint core_dimage_cpp_FUN_00448fcc(undefined4 param_1,uint param_2,uint param_3,uint param_4);

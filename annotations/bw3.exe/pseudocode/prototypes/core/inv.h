@@ -5,6 +5,10 @@
 // Function prototypes for core/inv.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_inv.cpp_staticInit_FUN_004d9c90
+// Address: 004d9c90
+void staticInit(void);
+
 // Original: core_inv.cpp_FUN_004d9d20
 // Address: 004d9d20
 int FUN_004d9d20(CDemonActor *param_1);

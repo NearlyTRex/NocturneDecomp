@@ -116,3 +116,55 @@ void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 // Original: core_zombie.cpp_CZombie_dtor_FUN_00599d70
 // Address: 00599d70
 CZombie * CZombie::dtor(CZombie *this_ptr,uint flags);
+
+// Original: core_zombie.cpp_FUN_00599e0e
+// Address: 00599e0e
+void FUN_00599e0e(int param_1,int param_2);
+
+// Original: core_zombie.cpp_FUN_0059a06e
+// Address: 0059a06e
+int * FUN_0059a06e(int param_1,int *param_2);
+
+// Original: core_zombie.cpp_FUN_0059a0b0
+// Address: 0059a0b0
+void __cdecl FUN_0059a0b0(SRenderVertex *vertex_buffer,int vertex_count);
+
+// Original: core_zombie.cpp_FUN_0059a5d0
+// Address: 0059a5d0
+void __cdecl FUN_0059a5d0(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
+
+// Original: core_zombie.cpp_FUN_0059aa80
+// Address: 0059aa80
+void FUN_0059aa80(void);
+
+// Original: core_zombie.cpp_FUN_0059ab30
+// Address: 0059ab30
+void FUN_0059ab30(undefined4 *param_1);
+
+// Original: core_zombie.cpp_FUN_0059ab50
+// Address: 0059ab50
+undefined4 * FUN_0059ab50(undefined4 *param_1);
+
+// Original: core_zombie.cpp_FUN_0059ab60
+// Address: 0059ab60
+void FUN_0059ab60(void);
+
+// Original: core_zombie.cpp_FUN_0059ab70
+// Address: 0059ab70
+void FUN_0059ab70(int *param_1,int *param_2);
+
+// Original: core_zombie.cpp_FUN_0059abb0
+// Address: 0059abb0
+void FUN_0059abb0(void);
+
+// Original: core_zombie.cpp_FUN_0059abe0
+// Address: 0059abe0
+void FUN_0059abe0(void);
+
+// Original: core_zombie.cpp_FUN_0059ac10
+// Address: 0059ac10
+void FUN_0059ac10(void);
+
+// Original: core_zombie.cpp_FUN_0059ac60
+// Address: 0059ac60
+void FUN_0059ac60(void);

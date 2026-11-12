@@ -10,7 +10,7 @@
 ;   core_inivar.cpp_writeIniData_FUN_004d94d0 at 004d9512
 ;   core_script.cpp_FUN_00522350 at 005285d0
 ;   sound_sndmain.cpp_writeIni_FUN_00553980 at 00553a34
-;   unkafter_winrun.cpp_FUN_00590960 at 005909af
+;   wincore_winrun.cpp_FUN_00590960 at 005909af
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005dad8d

@@ -6,8 +6,9 @@
 ; Parameters:
 ; CSocket *        Stack[0x4]:4   this_ptr
 ;
-; XREF[2]:
+; XREF[3]:
 ;   core_netgame.cpp_CNetGame_ctor_FUN_0052c470 at 0052c48f
+;   support_trisock.cpp_FUN_0059cf00 at 0059cfc4
 ;   support_trisock.cpp_FUN_0059e040 at 0059e04c
 ;
 ; *****************************************************************************

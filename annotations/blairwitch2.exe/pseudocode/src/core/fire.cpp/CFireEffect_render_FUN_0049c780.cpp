@@ -111,7 +111,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0049c780(CFireEffect *this_ptr
         core_fire_cpp_CMuzzleFlash_render_FUN_00496a90(this_ptr_16);
       }
       if (this_ptr_05->frames_remaining != 0) {
-        unkaddr_0059d350_cpp_CMuzzleEffect_render_FUN_0059d440(this_ptr_05);
+        core_muzzle_cpp_CMuzzleEffect_render_FUN_0059d440(this_ptr_05);
       }
       this_ptr_05 = this_ptr_05 + 1;
       this_ptr_16 = this_ptr_16 + 1;
@@ -147,7 +147,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0049c780(CFireEffect *this_ptr
         (*((this_ptr_08->base).vtable)->render)(&this_ptr_08->base);
       }
       this_ptr_08 = this_ptr_08 + 1;
-    } while (this_ptr_08 != (CGlassParticle *)0x1c91264);
+    } while (this_ptr_08 != (CGlassParticle *)&DAT_01c91264);
     this_ptr_09 = (CBulletTrail *)0x1c91268;
     do {
       if (this_ptr_09->frames_remaining != 0) {
@@ -195,7 +195,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0049c780(CFireEffect *this_ptr
       pCVar3 = (CRainDrop *)(((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4);
     } while (pCVar3 != g_RainDropPool + sizeof(g_RainDropPool) / sizeof(g_RainDropPool[0]));
     engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);
-    unkafter_superopt_cpp_CSimpleParticleSystem_render_FUN_005a8290(g_CSimpleParticleSystemPtr);
+    core_bwspart_cpp_CSimpleParticleSystem_render_FUN_005a8290(g_CSimpleParticleSystemPtr);
   }
   return;
 }

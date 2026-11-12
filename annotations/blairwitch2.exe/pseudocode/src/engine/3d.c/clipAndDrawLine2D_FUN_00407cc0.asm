@@ -6,10 +6,11 @@
 ; Local Variables:
 ; undefined        Stack[-0x40]:1  local_40
 ;
-; XREF[5]:
-;   core_skeleton.cpp_FUN_005424ac at 005425d6
+; XREF[6]:
+;   core_skeleton.cpp_FUN_005424b0 at 005425d6
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407c40 at 00407ca5
 ;   engine_3d.c_drawLineStrip2D_FUN_00404590 at 00404616
+;   shape_edittool.cpp_FUN_0047fd00 at 0047fdf8
 ;   shape_edittool.cpp_FUN_00480000 at 00480132
 ;   shape_edittool.cpp_FUN_00480150 at 004803cc
 ;

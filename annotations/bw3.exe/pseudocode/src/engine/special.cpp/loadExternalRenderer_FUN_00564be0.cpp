@@ -70,7 +70,7 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00564be0(HWND window_han
   pFVar2 = wincore_wddvmem_cpp_getProcAddress_FUN_0057ad20
                      (_DAT_02cf610c,"APIDLLInformation");
   if (pFVar2 == (FARPROC)0x0) {
-    engine_special_cpp_FUN_00564010();
+    core_spawner_cpp_FUN_00564010();
     _DAT_02cf5fcc = (HMODULE)0x0;
     return 0;
   }
@@ -78,7 +78,7 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00564be0(HWND window_han
   engine_special_cpp_CExternalRenderer_ctor_FUN_005665e0(&CStack_1e68);
   iVar3 = engine_special_cpp_CExternalRenderer_validate_FUN_00566630(&CStack_3c30,&CStack_1e68);
   if (iVar3 == 0) {
-    engine_special_cpp_FUN_00564010();
+    core_spawner_cpp_FUN_00564010();
     _DAT_02cf5fcc = (HMODULE)0x0;
     return 0;
   }
@@ -414,7 +414,7 @@ int __cdecl engine_special_cpp_loadExternalRenderer_FUN_00564be0(HWND window_han
     _DAT_02cf5fcc = (HMODULE)iVar3;
     return 0;
   }
-  engine_special_cpp_FUN_00564010();
+  core_spawner_cpp_FUN_00564010();
   _DAT_02cf5fcc = (HMODULE)0x0;
   return 0;
 }

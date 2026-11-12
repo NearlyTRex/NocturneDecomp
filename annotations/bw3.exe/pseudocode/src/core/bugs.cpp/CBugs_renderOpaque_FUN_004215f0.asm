@@ -21,7 +21,7 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_pop_FUN_0046d080
 ;
 ; *****************************************************************************
 
@@ -158,8 +158,8 @@ section .text
     ADD ESP,0xc                         ; 00421762
     MOV EDI,dword ptr [0x005f2afc]      ; 00421765 | DAT_005f2afc
     PUSH EDI                            ; 0042176b | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0042176c
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0042176c
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 00421771
     ADD dword ptr [ESP + 0x70],0x40     ; 00421774
     MOV EAX,dword ptr [ESP + 0x80]      ; 00421779

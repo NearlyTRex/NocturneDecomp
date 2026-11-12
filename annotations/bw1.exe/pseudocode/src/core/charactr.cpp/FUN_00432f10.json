@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 904,
     "complexity_score": 1845,
-    "cross_reference_count": 7,
+    "cross_reference_count": 8,
     "function_call_count": 15,
     "global_count": 25,
     "max_suspect_severity": "moderate",
@@ -65,6 +65,12 @@
       "addr": "00560630",
       "from_addr": "005606ae",
       "name": "core_shadowsc.cpp_CShadowsc_process_FUN_00560630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b8440",
+      "from_addr": "005b84bc",
+      "name": "core_yow.cpp_FUN_005b8440",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -311,7 +317,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 7,
+    "call_site_count": 8,
     "call_sites": [
       {
         "call_addr": "004edf4e",
@@ -398,6 +404,19 @@
         "reg_params": [
           "EAX",
           "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005b84bc",
+        "call_type": "direct",
+        "caller": "core_yow.cpp_FUN_005b8440",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
         ],
         "stack_bytes": 12,
         "stack_params": 3
@@ -1561,7 +1580,7 @@
       "type": "bit_int_float_compare"
     },
     {
-      "call_site_count": 7,
+      "call_site_count": 8,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 4,

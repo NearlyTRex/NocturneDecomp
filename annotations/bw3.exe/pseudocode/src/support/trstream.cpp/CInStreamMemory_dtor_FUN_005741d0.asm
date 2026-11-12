@@ -20,7 +20,7 @@
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
 ;   support_trstream.cpp_CInStreamMemory_close_FUN_005743f0
-;   unkafter_turret.cpp_FUN_00572540
+;   support_trstream.cpp_FUN_00572540
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     ADD ESP,0x4                         ; 005741e8
     PUSH 0x1                            ; 005741eb
     PUSH EBX                            ; 005741ed
-    CALL unkafter_turret.cpp_FUN_00572540 ; 005741ee
-        ;   XREF to: 00572540 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00572540()
+    CALL support_trstream.cpp_FUN_00572540 ; 005741ee
+        ;   XREF to: 00572540 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00572540()
     ADD ESP,0x8                         ; 005741f3
     MOV DL,byte ptr [ESP + 0xc]         ; 005741f6
     MOV EBX,EAX                         ; 005741fa

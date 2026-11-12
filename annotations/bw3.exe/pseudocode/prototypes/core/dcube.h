@@ -25,6 +25,10 @@ void __cdecl clipPolygonAgainstMaxZ(float max_z_plane);
 // Address: 00451fb0
 void __cdecl CDemonCubeTriangle::readFromFile(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 
+// Original: core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00452030
+// Address: 00452030
+void __cdecl CDemonCubeTriangle::writeToFile(CDemonCubeTriangle *this_ptr,undefined4 param_2,int param_3);
+
 // Original: core_dcube.cpp_FUN_00452240
 // Address: 00452240
 float FUN_00452240(undefined4 *param_1,float *param_2,float *param_3);

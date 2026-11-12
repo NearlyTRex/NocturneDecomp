@@ -19,7 +19,7 @@
 ;   core_biggs.cpp_CBiggs_process_FUN_00414e50 at 00414ed2
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418b0e
 ;   core_colonel.cpp_CColonel_process_FUN_00435830 at 004358e6
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 00437375
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 00437375
 ;   core_cow.cpp_CZombieCow_process_FUN_004392b0 at 00439353
 ;   ... and 25 more
 ;

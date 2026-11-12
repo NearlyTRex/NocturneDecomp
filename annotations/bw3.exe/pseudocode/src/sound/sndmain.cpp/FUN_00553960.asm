@@ -52,7 +52,7 @@
 ;   sound_sndmain.cpp_FUN_00555900
 ;   sound_sndmain.cpp_FUN_00555b80
 ;   sound_sndmain.cpp_FUN_0055a560
-;   unkafter_turret.cpp_CInStreamFile_isOpen_FUN_00573d60
+;   support_trstream.cpp_CInStreamFile_isOpen_FUN_00573d60
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -526,8 +526,8 @@ section .text
         ;   XREF to: 00553f0f (CONDITIONAL_JUMP)  ; LAB_00553f0f
     MOV EDI,dword ptr [ESP + 0x10]      ; 00553e70
     PUSH EDI                            ; 00553e74
-    CALL unkafter_turret.cpp_CInStreamFile_isOpen_FUN_00573d60 ; 00553e75
-        ;   XREF to: 00573d60 (UNCONDITIONAL_CALL)  ; bool unkafter_turret.cpp_CInStreamFile_isOpen_FUN_00573d60(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_isOpen_FUN_00573d60 ; 00553e75
+        ;   XREF to: 00573d60 (UNCONDITIONAL_CALL)  ; bool support_trstream.cpp_CInStreamFile_isOpen_FUN_00573d60(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00553e7a
     TEST EAX,EAX                        ; 00553e7d
     JZ 0x00553ed7                       ; 00553e7f
@@ -543,8 +543,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 00553e8d
     PUSH ECX                            ; 00553e91
     MOV EDI,EAX                         ; 00553e92
-    CALL unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00 ; 00553e94
-        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
+    CALL support_trstream.cpp_CInStreamFile_read_FUN_00573c00 ; 00553e94
+        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
     ADD ESP,0xc                         ; 00553e99
     CMP EAX,EDI                         ; 00553e9c
     JNZ 0x00553efb                      ; 00553e9e

@@ -13,9 +13,9 @@
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;   support_trisock.cpp_formatIPAddress_FUN_00578cb0
+;   support_trisock.cpp_FUN_00579720
+;   support_trisock.cpp_FUN_005797b0
 ;   support_trisock.cpp_FUN_0057a980
-;   unkafter_trisock.cpp_FUN_00579720
-;   unkafter_trisock.cpp_FUN_005797b0
 ;   wincore_winrun.cpp_FUN_0058ffc0
 ;   wincore_winrun.cpp_releaseMutex_FUN_0058fd00
 ;   wincore_winrun.cpp_sleep_FUN_0058fd90
@@ -111,8 +111,8 @@ section .text
     MOV EAX,ESP                         ; 0057a560
     PUSH EAX                            ; 0057a562
     PUSH ESI                            ; 0057a563
-    CALL unkafter_trisock.cpp_FUN_005797b0 ; 0057a564
-        ;   XREF to: 005797b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_trisock.cpp_FUN_005797b0()
+    CALL support_trisock.cpp_FUN_005797b0 ; 0057a564
+        ;   XREF to: 005797b0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_FUN_005797b0()
     ADD ESP,0x8                         ; 0057a569
     MOV ESI,EAX                         ; 0057a56c
     MOV ECX,dword ptr [0x0265363c]      ; 0057a56e | DAT_0265363c
@@ -191,8 +191,8 @@ section .text
     PUSH EAX                            ; 0057a637
     LEA EAX,[ESP + 0x2bc]               ; 0057a638
     PUSH EAX                            ; 0057a63f
-    CALL unkafter_trisock.cpp_FUN_00579720 ; 0057a640
-        ;   XREF to: 00579720 (UNCONDITIONAL_CALL)  ; undefined unkafter_trisock.cpp_FUN_00579720()
+    CALL support_trisock.cpp_FUN_00579720 ; 0057a640
+        ;   XREF to: 00579720 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_FUN_00579720()
     ADD ESP,0x8                         ; 0057a645
     PUSH 0x5ed304                       ; 0057a648
     MOV EBX,EAX                         ; 0057a64d

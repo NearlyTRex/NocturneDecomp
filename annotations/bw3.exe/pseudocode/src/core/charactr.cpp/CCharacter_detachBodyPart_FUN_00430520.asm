@@ -13,13 +13,13 @@
 ;   core_carved.cpp_FUN_00428810 at 004289cf
 ;   core_charactr.cpp_FUN_004300e0 at 004302bf
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00445730 at 0044580d
+;   core_demnfolk.cpp_FUN_00458680 at 004587bc
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004c5f10 at 004c6041
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004c9140 at 004c927c
 ;   core_imp.cpp_CImp_processDismemberment_FUN_004d7bd0 at 004d7d11
 ;   core_moocow.cpp_FUN_004f9050 at 004f90fb
 ;   core_zombie.cpp_CZombie_processDismemberment_FUN_0058c330 at 0058c4ef
-;   unkafter_demnfolk.cpp_FUN_00458680 at 004587bc
-;   unkafter_zombiepr.cpp_FUN_0058f630 at 0058f852
+;   core_zombiepriest.cpp_FUN_0058f630 at 0058f852
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0

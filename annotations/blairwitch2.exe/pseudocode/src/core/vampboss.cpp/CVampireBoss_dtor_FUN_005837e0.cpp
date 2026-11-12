@@ -31,7 +31,7 @@ CVampireBoss * core_vampboss_cpp_CVampireBoss_dtor_FUN_005837e0(CVampireBoss *th
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(iVar2 + -0x22b4),0);
   iVar2 = core_armour_cpp_FUN_0040f2b0(pCVar3[-7].part_data.texture_set_indices + 0x17,0);
-  iVar2 = unkaddr_0059d350_cpp_FUN_0059df70(iVar2 + -0x9c8,0);
+  iVar2 = core_muzzle_cpp_FUN_0059df70(iVar2 + -0x9c8,0);
   pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar2 + -0x34c),0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar4[-0x19].filenames[6] + 0x10),0);

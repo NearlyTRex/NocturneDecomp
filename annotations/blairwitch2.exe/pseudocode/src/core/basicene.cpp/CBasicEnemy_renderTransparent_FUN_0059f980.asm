@@ -12,12 +12,12 @@
 ; XREF[8]:
 ;   core_confedrt.cpp_CConfederate_renderTransparent_FUN_005a14a0 at 005a14a5
 ;   core_confzomb.cpp_CConfederateZombie_renderTransparent_FUN_005a2630 at 005a2636
-;   core_dog1.cpp_CDog_renderTransparent_FUN_005ac720 at 005ac725
 ;   core_ghostchi.cpp_CGhostChild_renderTransparent_FUN_005a9b70 at 005a9b76
-;   core_hag.cpp_CHag_renderTransparent_FUN_005ab790 at 005ab797
 ;   core_hand.cpp_CHand_renderTransparent_FUN_005aa4a0 at 005aa54c
-;   core_robin.cpp_CRobin_renderTransparent_FUN_005a6760 at 005a6767
+;   core_helldog.cpp_CDog_renderTransparent_FUN_005ac720 at 005ac725
+;   core_hellhag.cpp_CHag_renderTransparent_FUN_005ab790 at 005ab797
 ;   core_unionzom.cpp_CUnionZombie_renderTransparent_FUN_005a4710 at 005a4716
+;   core_weaver.cpp_CRobin_renderTransparent_FUN_005a6760 at 005a6767
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ef9c7

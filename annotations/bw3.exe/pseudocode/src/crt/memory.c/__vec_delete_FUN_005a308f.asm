@@ -5,6 +5,7 @@
 ;
 ;
 ; XREF[167]:
+;   cockpit_pkbitmap.cpp_FUN_00510670 at 0051067e
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770 at 004087a7
 ;   core_ammo.cpp_CAmmoBullet_dtor_FUN_0040e420 at 0040e44c
 ;   core_ammo.cpp_CAmmoManaLarge_dtor_FUN_0040e470 at 0040e49c
@@ -14,7 +15,6 @@
 ;   core_armour.cpp_CFlame_dtor_FUN_00410320 at 0041034c
 ;   core_asgaya.cpp_CAsgaya_dtor_FUN_005a1b50 at 005a1bd3
 ;   core_baal.cpp_CBaal_dtor_FUN_00597d00 at 00597d63
-;   core_barrier.cpp_CBarrier_dtor_FUN_0040ec90 at 0040ecbc
 ;   ... and 157 more
 ;
 ; Called Functions:

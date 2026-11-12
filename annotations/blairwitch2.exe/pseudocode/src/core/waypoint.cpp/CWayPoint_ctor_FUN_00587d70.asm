@@ -7,7 +7,7 @@
 ; CWayPoint *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_patrpoin.cpp_CPatrolPoint_ctor_FUN_0059c5e0 at 0059c5e5
+;   core_hpatrol.cpp_CPatrolPoint_ctor_FUN_0059c5e0 at 0059c5e5
 ;   core_waypoint.cpp_factoryFuncWayPoint_FUN_00587d40 at 00587d53
 ;
 ; Called Functions:

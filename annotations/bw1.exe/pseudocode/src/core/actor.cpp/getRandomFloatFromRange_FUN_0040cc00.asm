@@ -12,18 +12,18 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[155]:
+; XREF[156]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870 at 0040c9fe
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f6df
 ;   core_bat.cpp_CBat_process_FUN_00410d80 at 00410f52
 ;   core_bat.cpp_CBat_setup_FUN_00410c20 at 00410c75
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 004119c6
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00413458
+;   core_bird.cpp_CBird_ctor_FUN_004151f0 at 00415251
 ;   core_bodypart.cpp_CBodyPart_addFire_FUN_0041ab20 at 0041ac3a
 ;   core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041af50 at 0041af7b
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90 at 0041a178
-;   core_bodypart.cpp_CBodyPart_process_FUN_00419740 at 004198f1
-;   ... and 145 more
+;   ... and 146 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d2e95

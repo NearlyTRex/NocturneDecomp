@@ -25,7 +25,7 @@
 ;   engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0046d850
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10
-;   engine_matrix.c_FUN_0046d090
+;   engine_drender.cpp_FUN_0046d090
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     MOV ECX,dword ptr [0x005f2afc]      ; 0053af37 | DAT_005f2afc
     PUSH dword ptr [0x021221ec]         ; 0053af3d | DAT_021221ec
     PUSH ECX                            ; 0053af43 | DAT_01bdd7e4
-    CALL engine_matrix.c_FUN_0046d090   ; 0053af44
-        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d090()
+    CALL engine_drender.cpp_FUN_0046d090 ; 0053af44
+        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d090()
     ADD ESP,0x8                         ; 0053af49
     PUSH 0x21221e0                      ; 0053af4c | DAT_021221e0
     MOV EBX,dword ptr [0x005f2afc]      ; 0053af51 | DAT_005f2afc

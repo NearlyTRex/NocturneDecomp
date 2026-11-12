@@ -16,7 +16,7 @@
 ;   core_platfrm.cpp_CPlatform_process_FUN_00539810 at 00539dd2
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_0057d810 at 0057d81e
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d454
-;   core_xform.cpp_FUN_005b9170 at 005b9205
+;   core_yow.cpp_FUN_005b9170 at 005b9205
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80

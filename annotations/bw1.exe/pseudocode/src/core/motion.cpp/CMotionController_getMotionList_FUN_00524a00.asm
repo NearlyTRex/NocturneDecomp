@@ -7,6 +7,7 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[30]:
+;   core_bird.cpp_FUN_00415830 at 0041584b
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_004343c0 at 0043440a
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_00433cd0 at 00433d15
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_00432c70 at 00432c8d
@@ -16,7 +17,6 @@
 ;   core_doc.cpp_CDoc_setup_FUN_00469060 at 00469247
 ;   core_doc.cpp_FUN_00474400 at 00474587
 ;   core_event.cpp_FUN_004a1d00 at 004a5b4d
-;   core_gabriela.cpp_CGabriella_setup_FUN_004c6390 at 004c655b
 ;   ... and 20 more
 ;
 ; *****************************************************************************

@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   crt_unknown.c_FUN_005c09f0
-;   unkafter_minecar.cpp_FUN_00511850
+;   engine_mini3d.cpp_FUN_00511850
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
     PUSH dword ptr [EBX + 0x28]         ; 00496e32
     PUSH dword ptr [EBX + 0x24]         ; 00496e35
     PUSH dword ptr [EBX + 0x20]         ; 00496e38
-    CALL unkafter_minecar.cpp_FUN_00511850 ; 00496e3b
-        ;   XREF to: 00511850 (UNCONDITIONAL_CALL)  ; undefined unkafter_minecar.cpp_FUN_00511850()
+    CALL engine_mini3d.cpp_FUN_00511850 ; 00496e3b
+        ;   XREF to: 00511850 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00511850()
     MOV EAX,dword ptr [EBX + 0x10]      ; 00496e40
     MOV [0x01c4f008],EAX                ; 00496e43 | DAT_01c4f008
     MOV EAX,dword ptr [EBX + 0x14]      ; 00496e48

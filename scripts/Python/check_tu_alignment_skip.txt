@@ -6,6 +6,8 @@
 #   contiguity:<tu>   exempt from the contiguity check only
 #   order:<tu>        exempt from the link-order check only
 #   dos83:<tu>        exempt from the DOS 8.3 name check only
+#   folder:<tu>       exempt from the placeholder-folder check only
+#   appended:<program>:<tu>   in <program>, no order check after <tu>'s span
 #
 # Use the underscore form the exporter uses (`core_chain.cpp`, not
 # `core/chain.cpp`). Blanks and '#' comments are ignored. `crt/*` is skipped
@@ -56,3 +58,31 @@ order:core_terrain.cpp
 # accessor into the object file that took its address. The name is right by
 # class and wrong only by object file. Left visible on purpose: if a second TU
 # ever shows the same shape it should be looked at, not pre-silenced.
+
+# ---------------------------------------------------------------------------
+# Names longer than 8.3 that are right
+# ---------------------------------------------------------------------------
+# bw3 asserts two files past the 8-character stem, so these are its real names:
+#   "..\core\tawiscara.cpp"   "@..\core\zombiepriest.cpp"
+dos83:core_tawiscara.cpp
+dos83:core_zombiepriest.cpp
+# The CRT's units are this project's names for Watcom's runtime pieces
+# (research/10-tridx7_crt_identification), not files a build asserts.
+dos83:crt_exception.c
+dos83:crt_strstream.cpp
+
+# ---------------------------------------------------------------------------
+# Blair Witch link order
+# ---------------------------------------------------------------------------
+# bw2 and bw3 link nocturne's units in basename order, then append their own
+# files unsorted. `appended:<program>:<tu>` stops the order check after <tu>,
+# the last unit of the sorted list (research/24-bw_units).
+appended:blairwitch2.exe:core_zombie.cpp
+appended:bw3.exe:core_zombiepriest.cpp
+# BW inserted two new files out of place, in every build that has them:
+#   fldnotes.cpp (asserted) sits before flattn.cpp, whose staticInit is nocedit's
+#   (the fast-sqrt seeds, between flashlit and flies). The LCS flags the smaller run.
+#   thehand.cpp holds CTheHand (factoryFuncTheHand, thehand.dfm) and sits after
+#   tommygun.cpp.
+order:core_flattn.cpp
+order:core_thehand.cpp

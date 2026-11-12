@@ -18,6 +18,6 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processLeapAttackState_FUN_005a33b0
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,5,1);
     return;
   }
-  unkaddr_0059d350_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"Chasing");
+  core_muzzle_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"Chasing");
   return;
 }

@@ -84,7 +84,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190
   
   bVar5 = 0;
   if ((this_ptr->volumetric_enabled != 0) && (g_CGamePtr->halo_mode == 2)) {
-    engine_matrix_c_FUN_00483ae0(DAT_00612560);
+    engine_drender_cpp_FUN_00483ae0(DAT_00612560);
     local_f4[2] = local_4c[2];
     local_f4[(uint)bVar5 * -2 + 3] = local_4c[(uint)bVar5 * -2 + 3];
     local_f4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
@@ -109,7 +109,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190
     local_2c = local_28 * local_28;
     if (local_24 <= local_2c) {
       local_194 = 1.0 - local_24 / local_2c;
-      engine_matrix_c_FUN_00483ac0(DAT_00612560);
+      engine_drender_cpp_FUN_00483ac0(DAT_00612560);
       local_110 = local_68;
       local_10c[(uint)bVar5 * -2] = aiStack_64[(uint)bVar5 * -2];
       local_10c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
@@ -175,7 +175,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190
             local_20 = (fVar3 * (float)_DAT_005d91d4) / fVar1;
             engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
                       (DAT_00612560,&local_158);
-            engine_matrix_c_FUN_00483b70(DAT_00612560);
+            engine_drender_cpp_FUN_00483b70(DAT_00612560);
             translation = (CVector3f *)0x0;
             euler_angles = &local_14c;
             local_14c.x = local_a4;
@@ -254,7 +254,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190
             this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
             engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
                       (this_ptr_00,&local_18c);
-            engine_matrix_c_pop_FUN_004839a0();
+            engine_drender_cpp_pop_FUN_004839a0();
             local_18 = local_18 + 1;
           } while (local_18 < 0x19);
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);

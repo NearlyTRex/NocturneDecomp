@@ -25,7 +25,7 @@ void engine_font_cpp_FUN_004a859e(CBitFont *param_1,char *param_2)
   int iStack_18;
   int iStack_14;
   
-  unkclass_instream_cpp_CInStreamFile_ctor_FUN_0057cd50(&CStack_58);
+  support_trstream_cpp_CInStreamFile_ctor_FUN_0057cd50(&CStack_58);
   pcVar3 = param_2;
   pcVar4 = param_1->font_filename;
   do {
@@ -41,19 +41,19 @@ void engine_font_cpp_FUN_004a859e(CBitFont *param_1,char *param_2)
   iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
                     (&CStack_58,0x5d691b,param_2);
   if (iVar2 != 0) {
-    unkaddr_0057b9a0_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
-    unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d691f,acStack_258);
-    unkaddr_0057b9a0_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
-    unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d6923,&iStack_30,&iStack_2c);
-    unkaddr_0057b9a0_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
-    unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d692a,&iStack_28,&iStack_24);
-    unkaddr_0057b9a0_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
-    unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d6931,&iStack_20);
-    unkaddr_0057b9a0_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
-    unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d6935,&iStack_1c);
-    unkaddr_0057b9a0_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
-    unkaddr_0057b9a0_cpp_FUN_0057ba20(&CStack_58,0x5d6939,&iStack_18,&iStack_14);
-    unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&CStack_58);
+    core_terrain_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
+    core_terrain_cpp_FUN_0057ba20(&CStack_58,0x5d691f,acStack_258);
+    core_terrain_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
+    core_terrain_cpp_FUN_0057ba20(&CStack_58,0x5d6923,&iStack_30,&iStack_2c);
+    core_terrain_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
+    core_terrain_cpp_FUN_0057ba20(&CStack_58,0x5d692a,&iStack_28,&iStack_24);
+    core_terrain_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
+    core_terrain_cpp_FUN_0057ba20(&CStack_58,0x5d6931,&iStack_20);
+    core_terrain_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
+    core_terrain_cpp_FUN_0057ba20(&CStack_58,0x5d6935,&iStack_1c);
+    core_terrain_cpp_FUN_0057cc20(&CStack_58,auStack_158,0xff);
+    core_terrain_cpp_FUN_0057ba20(&CStack_58,0x5d6939,&iStack_18,&iStack_14);
+    support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&CStack_58);
     if ((iStack_28 == 0x20) && (iStack_24 == 0xff)) {
       engine_font_cpp_CBitFont_openFontFile_FUN_004a7cd0
                 (param_1,acStack_258,iStack_30,iStack_2c,iStack_20);
@@ -66,6 +66,6 @@ void engine_font_cpp_FUN_004a859e(CBitFont *param_1,char *param_2)
     param_1->shadow_offset_x = iStack_18;
     param_1->shadow_offset_y = iStack_14;
   }
-  unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&CStack_58,0);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(&CStack_58,0);
   return;
 }

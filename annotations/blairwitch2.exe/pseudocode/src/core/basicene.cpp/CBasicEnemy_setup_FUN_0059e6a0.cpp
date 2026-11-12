@@ -31,9 +31,9 @@ void __cdecl core_basicene_cpp_CBasicEnemy_setup_FUN_0059e6a0(CBasicEnemy *this_
     this_ptr->flinch_bone = iVar2;
   }
   if ((this_ptr->can_flinch != 0) && (*(int *)(0x01D182F0 + 0x1008) == 0)) {
-    unkafter_basicene_cpp_FUN_005a01d0(this_ptr,&this_ptr->flinch_active);
+    core_basicene_cpp_FUN_005a01d0(this_ptr,&this_ptr->flinch_active);
   }
-  unkaddr_0059d350_cpp_FUN_0059da70(&this_ptr->state_machine);
+  core_muzzle_cpp_FUN_0059da70(&this_ptr->state_machine);
   core_cloth_cpp_CClothList_process_FUN_005b1780
             (&(this_ptr->base).base.cloth_list,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,10.0,

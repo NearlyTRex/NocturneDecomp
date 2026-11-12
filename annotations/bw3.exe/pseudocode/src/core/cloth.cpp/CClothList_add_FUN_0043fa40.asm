@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[2]:
+;   core_prye.cpp_CPrye_ctor_FUN_00517f80 at 00518417
 ;   core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0 at 005274d2
-;   core_stranger.cpp_CPrye_ctor_FUN_00517f80 at 00518417
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0

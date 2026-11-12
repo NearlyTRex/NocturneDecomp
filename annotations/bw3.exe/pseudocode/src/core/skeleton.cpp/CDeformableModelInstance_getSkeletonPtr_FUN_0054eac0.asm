@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
-; XREF[74]:
+; XREF[75]:
 ;   core_asgaya.cpp_CAsgaya_setup_FUN_005a0b00 at 005a0b16
 ;   core_baal.cpp_CBaal_setup_FUN_00596730 at 0059676e
 ;   core_bird.cpp_CBird_setup_FUN_0040fac0 at 0040fad6
@@ -17,7 +17,7 @@
 ;   core_charactr.cpp_CCharacter_setup_FUN_0042b0e0 at 0042b17e
 ;   core_charactr.cpp_FUN_0042cd70 at 0042ce17
 ;   core_charactr.cpp_FUN_0042e8c0 at 0042e8d9
-;   ... and 64 more
+;   ... and 65 more
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0

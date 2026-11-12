@@ -6,7 +6,8 @@
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
-; XREF[10]:
+; XREF[11]:
+;   core_colonel.cpp_CColonel_process_FUN_00444550 at 004449ea
 ;   core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0 at 0047520b
 ;   core_doc.cpp_FUN_0046bde0 at 0046c8ed
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c78c5
@@ -16,7 +17,7 @@
 ;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f1441
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_00591120 at 005912a9
 ;   core_stranger.cpp_FUN_005881d0 at 00588925
-;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 00593706
+;   ... and 1 more
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_onLocked_FUN_00478d10

@@ -18,8 +18,8 @@
 ;   undefined1* PTR_engine_winfont.cpp_CWinFont_dtor_FUN_005b1b90_00608164 = 005b1b90
 ;
 ; Called Functions:
+;   core_npc.cpp_FUN_00531eb0
 ;   CreateFontA
-;   unkafter_npc.cpp_FUN_00531eb0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
         ;   Label: engine_winfont.cpp_CWinFont_ctor_FUN_005b1ad0
     MOV EDX,dword ptr [ESP + 0x8]       ; 005b1ad1
     PUSH EDX                            ; 005b1ad5
-    CALL unkafter_npc.cpp_FUN_00531eb0  ; 005b1ad6
-        ;   XREF to: 00531eb0 (UNCONDITIONAL_CALL)  ; CFont * unkafter_npc.cpp_FUN_00531eb0(CFont * this_ptr)
+    CALL core_npc.cpp_FUN_00531eb0      ; 005b1ad6
+        ;   XREF to: 00531eb0 (UNCONDITIONAL_CALL)  ; CFont * core_npc.cpp_FUN_00531eb0(CFont * this_ptr)
     ADD ESP,0x4                         ; 005b1adb
     MOV ECX,dword ptr [ESP + 0xc]       ; 005b1ade
     PUSH ECX                            ; 005b1ae2

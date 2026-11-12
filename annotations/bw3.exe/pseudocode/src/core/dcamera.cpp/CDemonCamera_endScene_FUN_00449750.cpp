@@ -36,7 +36,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_00449750(CDemonCamera *t
       } while (iVar1 < this_ptr->framebuffer_height);
     }
   }
-  engine_matrix_c_popViewport_FUN_0046d320();
+  engine_drender_cpp_popViewport_FUN_0046d320();
   core_dcamera_cpp_CDemonCamera_resetSceneCamera_FUN_00448fd0(this_ptr);
   return;
 }

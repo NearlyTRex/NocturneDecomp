@@ -7,13 +7,13 @@
 ; STextView *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
+;   core_flashlit.cpp_FUN_004a826e at 004a8295
+;   core_flashlit.cpp_FUN_004a82ee at 004a8322
 ;   core_fldnotes.cpp_CFieldNotes_dtor_FUN_004aa7e0 at 004aa7fa
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aa9be
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90 at 004abc01
 ;   core_fldnotes.cpp_FUN_004abe00 at 004abe72
 ;   core_fldnotes.cpp_STextView_dtor_FUN_004a8de0 at 004a8de6
-;   unkaddr_004a76f0.cpp_FUN_004a826e at 004a8295
-;   unkaddr_004a76f0.cpp_FUN_004a82ee at 004a8322
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01549ac0

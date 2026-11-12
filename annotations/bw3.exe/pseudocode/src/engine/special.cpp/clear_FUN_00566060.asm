@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00448ff0 at 00449228
+;   engine_mini3d.cpp_FUN_004ec94e at 004ec957
 ;   engine_special.cpp_clearScreen_FUN_00560d70 at 00560d7b
-;   unkafter_minecar.cpp_FUN_004ec94e at 004ec957
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6cee8

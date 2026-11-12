@@ -15,6 +15,6 @@ void core_darkwolf_cpp_factoryFuncDarkwolf_FUN_00598750(void)
   if (this_ptr == (CDarkwolf *)0x0) {
     return;
   }
-  unkafter_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(this_ptr);
+  core_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(this_ptr);
   return;
 }

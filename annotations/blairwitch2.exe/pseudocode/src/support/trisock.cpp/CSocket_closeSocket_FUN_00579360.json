@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 24,
     "complexity_score": 11,
-    "cross_reference_count": 6,
+    "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -44,6 +44,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00579890",
+      "from_addr": "005799bc",
+      "name": "support_trisock.cpp_FUN_00579890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0057ad10",
       "from_addr": "0057ae17",
       "name": "support_trisock.cpp_FUN_0057ad10",
@@ -76,7 +82,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 6,
+    "call_site_count": 7,
     "call_sites": [
       {
         "call_addr": "0050b409",
@@ -137,6 +143,17 @@
         "call_addr": "00579016",
         "call_type": "direct",
         "caller": "support_trisock.cpp_CSocket_dtor_FUN_00579010",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005799bc",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_00579890",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

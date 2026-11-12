@@ -65,7 +65,7 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_0049c430(CFireEffect *this_pt
       core_fire_cpp_CMuzzleFlash_process_FUN_00496a60(this_ptr_16);
     }
     if (this_ptr_01->frames_remaining != 0) {
-      unkaddr_0059d350_cpp_CMuzzleEffect_process_FUN_0059d420(this_ptr_01);
+      core_muzzle_cpp_CMuzzleEffect_process_FUN_0059d420(this_ptr_01);
     }
     this_ptr_01 = this_ptr_01 + 1;
     this_ptr_16 = this_ptr_16 + 1;
@@ -87,7 +87,7 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_0049c430(CFireEffect *this_pt
       (*((this_ptr_03->base).vtable)->process)(&this_ptr_03->base);
     }
     this_ptr_03 = this_ptr_03 + 1;
-  } while (this_ptr_03 != (CGlassParticle *)0x1c91264);
+  } while (this_ptr_03 != (CGlassParticle *)&DAT_01c91264);
   this_ptr_04 = (CBulletTrail *)0x1c91268;
   do {
     if (this_ptr_04->frames_remaining != 0) {

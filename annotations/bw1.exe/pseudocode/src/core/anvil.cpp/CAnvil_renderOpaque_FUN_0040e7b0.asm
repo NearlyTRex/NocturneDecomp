@@ -14,7 +14,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
     MOV EDI,dword ptr [0x00612560]      ; 0040e83a | DAT_00612560
         ;   Label: LAB_0040e83a
     PUSH EDI                            ; 0040e840
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 0040e841
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 0040e841
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 0040e846
     MOV EAX,ESI                         ; 0040e849
     POP ESI                             ; 0040e84b

@@ -133,11 +133,11 @@ void __cdecl core_npc_cpp_CNPC_processDamage_FUN_005099e0(CNPC *this_ptr,SDamage
 int __cdecl core_npc_cpp_CNPC_isInvulnerable_FUN_00509ac0(CNPC *this_ptr);
 CPathMap * __cdecl core_npc_cpp_CNPC_getPathMap_FUN_00509ae0(CNPC *this_ptr);
 CNPC * core_npc_cpp_CNPC_dtor_FUN_00509af0(CNPC *this_ptr,uint flags);
-CFont * __cdecl unkafter_npc_cpp_FUN_00509b90(CFont *this_ptr);
+CFont * __cdecl core_npc_cpp_FUN_00509b90(CFont *this_ptr);
 CFont * __cdecl engine_palette_cpp_FUN_00509bb0(CFont *this_ptr,uint flags);
-undefined4 unkafter_palette_cpp_FUN_00509bc0(int *param_1,char *param_2,int param_3,int param_4,int param_5,int param_6);
-void unkafter_palette_cpp_FUN_00509d90(int *param_1);
-undefined4 unkafter_palette_cpp_FUN_00509e00(void);
+undefined4 engine_palette_cpp_FUN_00509bc0(int *param_1,char *param_2,int param_3,int param_4,int param_5,int param_6);
+void engine_palette_cpp_FUN_00509d90(int *param_1);
+undefined4 engine_palette_cpp_FUN_00509e00(void);
 CParticle * __cdecl core_particle_cpp_CParticle_ctor_FUN_00509e10(CParticle *this_ptr);
 CParticle * __cdecl core_particle_cpp_CParticle_dtor_FUN_00509e30(CParticle *this_ptr,uint flags);
 void __cdecl core_particle_cpp_CParticle_setup_FUN_00509e40(CParticle *this_ptr,CVector3f *position,CVector3f *velocity);
@@ -153,9 +153,9 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_0050a610(CPassenger *this_ptr
 void __cdecl core_passngr_cpp_CPassenger_process_FUN_0050a7d0(CPassenger *this_ptr,float delta_time);
 int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_0050a9b0(CPassenger *this_ptr);
 void __cdecl core_passngr_cpp_CPassenger_archive_FUN_0050aaa0(CPassenger *this_ptr);
-void unkafter_passngr_cpp_FUN_0050ab80(void);
-bool unkafter_passngr_cpp_FUN_0050ab9e(void);
-void unkafter_passngr_cpp_FUN_0050abbc(int param_1,undefined4 param_2,int param_3,undefined1 param_4);
+void core_passngr_cpp_FUN_0050ab80(void);
+bool core_passngr_cpp_FUN_0050ab9e(void);
+void core_passngr_cpp_FUN_0050abbc(int param_1,undefined4 param_2,int param_3,undefined1 param_4);
 void core_path_cpp_FUN_0050ac3c(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
 CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_0050acc0(CPathMap *this_ptr);
 CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_0050ad40(CPathMap *this_ptr,uint flags);

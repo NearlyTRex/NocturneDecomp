@@ -44,7 +44,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
     }
   }
   _freopen("stderr.txt",&DAT_005dc1da);
-  unkafter_flattn_cpp_FUN_004a67a0();
+  core_flattn_cpp_FUN_004a67a0();
   core_inivar_cpp_readIniData_FUN_004d8d60();
   _DAT_0264bbac = 2;
   engine_pod_cpp_CPod_init_FUN_0051b320(&g_CDemonPodPtr->base);
@@ -59,7 +59,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
     core_main_c_FUN_004e4500();
   }
   pcVar11 = &stack0xfffff8d8;
-  unkafter_marquee_cpp_FUN_004e8620();
+  core_marquee_cpp_FUN_004e8620();
   engine_3d_c_initTextureCache_FUN_004037e0();
   engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_0058e7a0();
@@ -487,7 +487,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004e46c0(int argc,char **argv
   } while (iVar8 < 4);
   engine_ncursfx_cpp_CMouse_load_FUN_005100b0(g_CMousePtr);
   core_netgame_cpp_CNetGame_init_FUN_0050b340(g_CNetGamePtr);
-  unkaddr_0059aa80_cpp_FUN_0059abb0();
+  core_zombie_cpp_FUN_0059abb0();
   wincore_winrun_cpp_setRegistryStringValue_FUN_0058ff40
             ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank",&DAT_005dc445);
   return;

@@ -52,7 +52,7 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00534360(CDemonSet *this
             core_main_c_FUN_004e4500("CDemonSet::buildMirrorList - Too many mirrors");
           }
         }
-        engine_matrix_c_pop_FUN_0046b4a0();
+        engine_drender_cpp_pop_FUN_0046b4a0();
       }
       local_18 = (CDemonSet *)local_18->cameras;
       local_14 = local_14 + 1;

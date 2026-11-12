@@ -8,7 +8,7 @@
 ;   core_bat.cpp_CBat_process_FUN_0040f010 at 0040f1b0
 ;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a1a9
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00418057
-;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 004435ea
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 004435ea
 ;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 00487f3e
 ;   core_tvbat.cpp_CTVBat_process_FUN_00575380 at 00575f79
 ;

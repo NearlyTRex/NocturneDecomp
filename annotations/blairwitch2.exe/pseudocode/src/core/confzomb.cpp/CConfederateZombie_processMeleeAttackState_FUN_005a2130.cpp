@@ -28,14 +28,14 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processMeleeAttackState_FUN_00
   pSVar1 = &(this_ptr->base).state_machine;
   if (_DAT_005fef90 < fVar3) {
     (this_ptr->base).attack_range = _DAT_005fef90;
-    unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete","BRangeAttack" + 1);
-    unkaddr_0059d350_cpp_FUN_0059dcb0(pSVar1,0x3dcccccd);
-    unkaddr_0059d350_cpp_FUN_0059d8e0(pSVar1,"Chasing");
+    core_muzzle_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete","BRangeAttack" + 1);
+    core_muzzle_cpp_FUN_0059dcb0(pSVar1,0x3dcccccd);
+    core_muzzle_cpp_FUN_0059d8e0(pSVar1,"Chasing");
   }
   else if (_DAT_005fef94 + _DAT_005efe93 < fVar3) {
     (this_ptr->base).attack_range = _DAT_005fef94;
-    unkaddr_0059d350_cpp_FUN_0059dcb0(pSVar1,0x3dcccccd);
-    unkaddr_0059d350_cpp_FUN_0059d8e0(pSVar1,"Chasing");
+    core_muzzle_cpp_FUN_0059dcb0(pSVar1,0x3dcccccd);
+    core_muzzle_cpp_FUN_0059d8e0(pSVar1,"Chasing");
     return;
   }
   return;

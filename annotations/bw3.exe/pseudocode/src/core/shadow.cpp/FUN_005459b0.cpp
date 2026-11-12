@@ -58,7 +58,7 @@ void core_shadow_cpp_FUN_005459b0(CEnemy *param_1,SDamageInfo *param_2)
   }
   else {
     if ((*(int *)param_1[1].base.base.actor_name != 2) &&
-       (iVar2 = unkafter_enemy_cpp_FUN_0048a1b0(param_1,param_2->damage_amount), iVar2 != 0)) {
+       (iVar2 = core_enemy_cpp_FUN_0048a1b0(param_1,param_2->damage_amount), iVar2 != 0)) {
       pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(pCStack_18);
       iVar2 = pSVar3->state_index;
       if ((((iVar2 == 0) || ((iVar2 == 5 || (iVar2 == 0xc)))) || (iVar2 == 6)) || (iVar2 == 7)) {

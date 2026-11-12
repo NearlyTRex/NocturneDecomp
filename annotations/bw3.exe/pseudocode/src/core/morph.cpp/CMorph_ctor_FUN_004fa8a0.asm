@@ -7,6 +7,7 @@
 ; CMorph *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[8]:
+;   core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780 at 00598794
 ;   core_passngr.cpp_CPassenger_ctor_FUN_0050a450 at 0050a46b
 ;   core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0 at 005273cb
 ;   core_spirbear.cpp_CSpiritBear_ctor_FUN_0059aaa0 at 0059aad5
@@ -14,7 +15,6 @@
 ;   core_spirindi.cpp_CSpiritIndian_ctor_FUN_00599f60 at 00599f95
 ;   core_styldemo.cpp_CStylerDemon_ctor_FUN_0059e070 at 0059e084
 ;   core_styler.cpp_CStyler_ctor_FUN_0059d750 at 0059d772
-;   unkafter_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780 at 00598794
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005a30d7

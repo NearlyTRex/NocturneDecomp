@@ -13,6 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[39]:
+;   core_dcube.cpp_FUN_00446f4e at 00446fc7
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be04f
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be702
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6d7a
@@ -22,7 +23,6 @@
 ;   core_main.c_FUN_004e45e0 at 004e4627
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4c96
 ;   core_menu.cpp_FUN_004eb490 at 004eb576
-;   core_menu.cpp_FUN_004ebf10 at 004ec3e2
 ;   ... and 29 more
 ;
 ; Referenced Globals:

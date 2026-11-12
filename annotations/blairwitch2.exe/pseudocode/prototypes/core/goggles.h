@@ -52,3 +52,7 @@ CBoundingBox3D * __cdecl CGoggles::getBoundingBox(CGoggles *this_ptr,CBoundingBo
 // Original: core_goggles.cpp_CGoggles_dtor_FUN_0059c220
 // Address: 0059c220
 CGoggles * CGoggles::dtor(CGoggles *this_ptr,uint flags);
+
+// Original: core_goggles.cpp_FUN_0059c270
+// Address: 0059c270
+void FUN_0059c270(void);

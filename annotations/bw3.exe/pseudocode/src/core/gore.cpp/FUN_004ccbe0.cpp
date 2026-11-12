@@ -133,7 +133,7 @@ void core_gore_cpp_FUN_004ccbe0(CVector3f *param_1)
               (DAT_005f2afc,0xffff - _DAT_01c6e24c);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
               (DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1d22e48);
-    engine_matrix_c_pop_FUN_0046d080();
+    engine_drender_cpp_pop_FUN_0046d080();
     fStack_110 = 1.0;
     puVar4 = (uint *)((int)param_1 + (uint)bVar6 * -8 + 4);
     CStack_90.x = param_1->x;
@@ -233,7 +233,7 @@ void core_gore_cpp_FUN_004ccbe0(CVector3f *param_1)
                 (DAT_005f2afc,0xffff - _DAT_01c6e24c);
       engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
                 (DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1d22e48);
-      engine_matrix_c_pop_FUN_0046d080();
+      engine_drender_cpp_pop_FUN_0046d080();
       iStack_18 = iStack_18 + 1;
     } while (iStack_18 < 3);
   }

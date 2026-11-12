@@ -282,7 +282,7 @@ void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr)
         core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00534640(g_CDemonSetPtr,iVar7,fStack_228);
       }
     }
-    unkaddr_0059c270_cpp_CGameHook_showDebugMenu_FUN_0059c3d0(g_CGameHookPtr);
+    core_gmehook_cpp_CGameHook_showDebugMenu_FUN_0059c3d0(g_CGameHookPtr);
   }
   return;
 }

@@ -24,7 +24,7 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_00555460(CDemonSet 
   float local_14;
   
   bVar1 = 0;
-  engine_matrix_c_FUN_00483ae0();
+  engine_drender_cpp_FUN_00483ae0();
   local_20 = local_44;
   *(uint *)((int)&stack0xffffffe4 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffc0 + (uint)bVar1 * -8);
@@ -35,7 +35,7 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_00555460(CDemonSet 
     _DAT_020af5b0 = local_1c;
     _DAT_020af5b4 = local_18;
   }
-  engine_matrix_c_FUN_00483b70();
+  engine_drender_cpp_FUN_00483b70();
   local_2c = local_38;
   *(uint *)((int)&stack0xffffffd8 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffcc + (uint)bVar1 * -8);
@@ -46,7 +46,7 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_00555460(CDemonSet 
     _DAT_020af5bc = local_28;
     _DAT_020af5c0 = local_24;
   }
-  _DAT_020af5c4 = (float)engine_matrix_c_FUN_00483bf0();
+  _DAT_020af5c4 = (float)engine_drender_cpp_FUN_00483bf0();
   local_14 = _DAT_020af5c4;
   core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005188e0
             (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection,

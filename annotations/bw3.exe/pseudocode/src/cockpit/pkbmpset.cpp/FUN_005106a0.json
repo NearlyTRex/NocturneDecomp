@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 61,
     "complexity_score": 38,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "mild",
@@ -15,6 +15,12 @@
     "total_lines": 84
   },
   "cross_references": [
+    {
+      "addr": "00510740",
+      "from_addr": "00510772",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0051080e",
       "from_addr": "005108e6",
@@ -36,6 +42,11 @@
   },
   "function_calls": [
     {
+      "addr": "00510670",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_FUN_00510670"
+    },
+    {
       "addr": "004e4330",
       "is_variadic": false,
       "name": "core_main.c_FUN_004e4330"
@@ -54,11 +65,6 @@
       "addr": "005a28c0",
       "is_variadic": false,
       "name": "crt_unknown.c_sprintf_FUN_005a28c0"
-    },
-    {
-      "addr": "00510670",
-      "is_variadic": false,
-      "name": "unkafter_pkbitmap.cpp_FUN_00510670"
     }
   ],
   "globals": [
@@ -76,7 +82,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "005108e6",
@@ -88,9 +94,20 @@
         "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
+      },
+      {
+        "call_addr": "00510772",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 8,
     "estimated_params": 2,

@@ -17,7 +17,7 @@
 ; XREF[3]:
 ;   core_prye.cpp_CPrye_renderOpaque_FUN_005220d0 at 0052237a
 ;   core_prye.cpp_FUN_00518cd0 at 00519c68
-;   unkafter_prye.cpp_FUN_005263c0 at 00526746
+;   core_prye.cpp_FUN_005263c0 at 00526746
 ;
 ; Called Functions:
 ;   core_prye.cpp_FUN_0051f490

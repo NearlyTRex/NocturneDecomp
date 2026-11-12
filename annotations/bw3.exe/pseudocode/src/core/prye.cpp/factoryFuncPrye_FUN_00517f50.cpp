@@ -15,6 +15,6 @@ void core_prye_cpp_factoryFuncPrye_FUN_00517f50(void)
   if (this_ptr == (CPrye *)0x0) {
     return;
   }
-  core_stranger_cpp_CPrye_ctor_FUN_00517f80(this_ptr);
+  core_prye_cpp_CPrye_ctor_FUN_00517f80(this_ptr);
   return;
 }

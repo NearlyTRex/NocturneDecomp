@@ -1,0 +1,273 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 243,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 21,
+    "suspect_types": [
+      "unaffected_reg",
+      "unnamed_param"
+    ],
+    "total_lines": 81
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0048f250",
+    "address_range": [
+      [
+        "0048f250",
+        "0048f2de"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_dtrace.cpp_FUN_0048f250",
+    "signature": "void core_dtrace_cpp_FUN_0048f250(int param_1,int param_2)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.56140350877193,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "COPY": 122,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 3,
+      "FLOAT_MULT": 3,
+      "INT2FLOAT": 3,
+      "INT_ADD": 31,
+      "INT_AND": 34,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 14,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 1,
+      "INT_SDIV": 2,
+      "INT_SEXT": 14,
+      "INT_SLESS": 6,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 14,
+      "INT_ZEXT": 10,
+      "LOAD": 22,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 12,
+      "SUBPIECE": 12
+    },
+    "pcode_op_count": 374
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0048f2bb",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_dtrace_cpp_FUN_0048f250(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_dtrace_cpp_FUN_0048f250(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "float *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar6 = param_2 / (*(int *)(param_1 + 0x44) * *(int *)(param_1 + 0x48));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar6 = param_2 / (*(int *)(param_1 + 0x44) * *(int *)(param_1 + 0x48));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar6 = param_2 / (*(int *)(param_1 + 0x44) * *(int *)(param_1 + 0x48));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)(param_1 + 0x48);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 - *(int *)(param_1 + 0x44) * iVar6 * iVar5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 - *(int *)(param_1 + 0x44) * iVar6 * iVar5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_2 = param_2 - *(int *)(param_1 + 0x44) * iVar6 * iVar5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar7 = param_2 / iVar5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)(param_1 + 0x2c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = *(float *)(param_1 + 0x30);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = *(float *)(param_1 + 0x14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)(param_1 + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = (float)iVar6 * *(float *)(param_1 + 0x28) + *(float *)(param_1 + 0x10);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*unaff_ESI = (float)iVar6 * *(float *)(param_1 + 0x28) + *(float *)(param_1 + 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*unaff_ESI = (float)iVar6 * *(float *)(param_1 + 0x28) + *(float *)(param_1 + 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[1] = (float)iVar7 * fVar1 + fVar3;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[2] = (float)(param_2 - iVar5 * iVar7) * fVar2 + fVar4;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "unaff_ESI[2] = (float)(param_2 - iVar5 * iVar7) * fVar2 + fVar4;",
+      "type": "unnamed_param"
+    }
+  ]
+}

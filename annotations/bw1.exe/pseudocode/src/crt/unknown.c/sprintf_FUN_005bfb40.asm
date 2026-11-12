@@ -9,7 +9,7 @@
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[172]:
+; XREF[176]:
 ;   cockpit_ckptutil.c_FUN_00438bd0 at 00438c0e
 ;   cockpit_ckptutil.c_FUN_00438e40 at 00438e7e
 ;   cockpit_ckptutil.c_FUN_0043908e at 00439108
@@ -20,7 +20,7 @@
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a0cb
 ;   cockpit_ckptutil.c_traceConnectedEdges_FUN_0043a45e at 0043a56b
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00537db0 at 00537efd
-;   ... and 162 more
+;   ... and 166 more
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005bfb18

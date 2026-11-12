@@ -15,6 +15,6 @@ void core_bird_cpp_factoryFuncBird_FUN_004151c0(void)
   if (this_ptr == (CBird *)0x0) {
     return;
   }
-  unkafter_bird_cpp_CBird_ctor_FUN_004151f0(this_ptr);
+  core_bird_cpp_CBird_ctor_FUN_004151f0(this_ptr);
   return;
 }

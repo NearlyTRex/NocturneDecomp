@@ -13,10 +13,10 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
+;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
-;   unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;
 ; *****************************************************************************
 
@@ -213,8 +213,8 @@ section .text
     FADD float ptr [EBX + 0x28]         ; 0040e0d4
     PUSH EDI                            ; 0040e0d7
     FSTP float ptr [EBP + 0x2a]         ; 0040e0d8
-    CALL unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 0040e0db
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 0040e0db
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
     ADD ESP,0x34                        ; 0040e0e0
     LEA ESP,[EBP + 0x7a]                ; 0040e0e3
     POP EBP                             ; 0040e0e6

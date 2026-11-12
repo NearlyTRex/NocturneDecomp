@@ -16,8 +16,8 @@
 ;   core_prye.cpp_FUN_0051f490 at 0051f77a
 ;   core_prye.cpp_FUN_00520dec at 00520e0f
 ;   core_prye.cpp_FUN_00521880 at 005218b8
-;   unkafter_prye.cpp_FUN_00524940 at 00524dca
-;   unkafter_prye.cpp_FUN_005263c0 at 0052645c
+;   core_prye.cpp_FUN_00524940 at 00524dca
+;   core_prye.cpp_FUN_005263c0 at 0052645c
 ;
 ; *****************************************************************************
 

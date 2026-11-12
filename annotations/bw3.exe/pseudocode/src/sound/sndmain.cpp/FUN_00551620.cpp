@@ -67,7 +67,7 @@ void sound_sndmain_cpp_FUN_00551620(char *param_1)
     *(uint *)(param_1 + 0x128) = uVar2;
   }
   engine_dosio_cpp_makePath_FUN_00465e80(local_358,(char *)0x0,(char *)0x0,local_158,&DAT_005d2549);
-  unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_58);
+  support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_58);
   iVar6 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
                     (&local_58,"sound",local_358,1);
   if (iVar6 != 0) {
@@ -77,7 +77,7 @@ void sound_sndmain_cpp_FUN_00551620(char *param_1)
     local_1c = 0;
     local_24 = param_1 + 0x114;
     local_14 = 0;
-    while (iVar6 = unkafter_turret_cpp_FUN_00573790(), -1 < iVar6) {
+    while (iVar6 = support_trstream_cpp_FUN_00573790(), -1 < iVar6) {
       local_14 = local_14 + 1;
       pcVar8 = strstr(local_484,&DAT_005d253c);
       pcVar7 = local_484;
@@ -230,6 +230,6 @@ joined_r0x00551849:
       } while (iVar6 < *(int *)(param_1 + 0x124));
     }
   }
-  unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_58,0);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_58,0);
   return;
 }

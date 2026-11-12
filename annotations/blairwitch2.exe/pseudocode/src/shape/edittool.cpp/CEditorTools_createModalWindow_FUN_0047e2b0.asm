@@ -53,9 +53,9 @@
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0
 ;   engine_font.cpp_FUN_004ab2b0
+;   engine_mini3d.cpp_getRenderViewport_FUN_004f2ba0
+;   engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0
 ;   shape_edittool.cpp_CEditorTools_backupScreen_FUN_0047baf0
-;   unkafter_minecar.cpp_getRenderViewport_FUN_004f2ba0
-;   unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0
 ;
 ; *****************************************************************************
 
@@ -359,8 +359,8 @@ section .text
     PUSH EAX                            ; 0047e64b
     LEA EAX,[EBX + 0x20]                ; 0047e64c
     PUSH EAX                            ; 0047e64f
-    CALL unkafter_minecar.cpp_getRenderViewport_FUN_004f2ba0 ; 0047e650
-        ;   XREF to: 004f2ba0 (UNCONDITIONAL_CALL)  ; void unkafter_minecar.cpp_getRenderViewport_FUN_004f2ba0(float * left, float * top, float * right, float * bottom)
+    CALL engine_mini3d.cpp_getRenderViewport_FUN_004f2ba0 ; 0047e650
+        ;   XREF to: 004f2ba0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_getRenderViewport_FUN_004f2ba0(float * left, float * top, float * right, float * bottom)
     ADD ESP,0x10                        ; 0047e655
     MOV EAX,dword ptr [ESP + 0x40]      ; 0047e658
     MOV dword ptr [ESP + 0x18],EAX      ; 0047e65c
@@ -382,8 +382,8 @@ section .text
     FILD dword ptr [ESP + 0x24]         ; 0047e696
     SUB ESP,0x4                         ; 0047e69a
     FSTP float ptr [ESP]                ; 0047e69d
-    CALL unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0 ; 0047e6a0
-        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; void unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0(float left, float top, float right, float bottom)
+    CALL engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0 ; 0047e6a0
+        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0(float left, float top, float right, float bottom)
     ADD ESP,0x10                        ; 0047e6a5
     MOV EAX,dword ptr [ESP + 0x34]      ; 0047e6a8
     MOV dword ptr [EBX],EAX             ; 0047e6ac

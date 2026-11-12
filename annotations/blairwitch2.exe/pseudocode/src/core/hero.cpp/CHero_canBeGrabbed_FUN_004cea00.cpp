@@ -1,6 +1,6 @@
 // Name: core_hero.cpp_CHero_canBeGrabbed_FUN_004cea00
 // Address: 004cea00
-// Address Range: [[004cea00, 004cea0f] [004cea16, 004cea3f]]
+// Address Range: [[004cea00, 004cea3f]]
 // Convention: __cdecl
 // Signature: int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004cea00(CHero *this_ptr,CDemonActor *grabber,int grab_type)
 

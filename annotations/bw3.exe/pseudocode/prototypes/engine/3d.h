@@ -345,6 +345,10 @@ void drawLine2DFromIndices(int param_1,int param_2);
 // Address: 00407b30
 void clipAndDrawLine2D(int param_1,int param_2,int param_3,undefined4 param_4,uint param_5);
 
+// Original: engine_3d.c_FUN_00407db0
+// Address: 00407db0
+void FUN_00407db0(int param_1,int param_2);
+
 // Original: engine_3d.c_clipAndDrawLine3D_FUN_00407e30
 // Address: 00407e30
 uint clipAndDrawLine3D(uint param_1,uint param_2,int param_3,undefined4 param_4,uint param_5);

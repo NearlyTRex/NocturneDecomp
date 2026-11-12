@@ -205,6 +205,7 @@ CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_00529a50(CSfxOption
 CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_arrdtor64_FUN_00529a60(CSfxSample *this_ptr,uint flags);
 void __cdecl sound_snddx_cpp_staticInit_FUN_00529a80(void);
 char * __cdecl sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(uint error_code);
+undefined4 sound_snddx_cpp_checkDirectSoundError_FUN_00529bb0(uint param_1,undefined4 param_2);
 int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00529c10(void);
 int __cdecl sound_snddx_cpp_releaseSfxHardwareBuffers_FUN_00529de0(int sfx_handle);
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(CDirectSoundDevice *this_ptr);
@@ -295,9 +296,9 @@ int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_0052ed40(CSound *this_p
 void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_0052ede0(CSound *this_ptr,float target_volume,float fade_time);
 STrainNoise * __cdecl core_sound_cpp_STrainNoise_ctor_FUN_0052ee00(STrainNoise *this_ptr);
 STrainNoise * __cdecl core_sound_cpp_STrainNoise_dtor_FUN_0052ee10(STrainNoise *this_ptr,uint flags);
-undefined4 * core_sound_cpp_FUN_0052ee20(void);
-undefined4 * core_sound_cpp_FUN_0052ee30(void);
-undefined4 * core_sound_cpp_FUN_0052ee40(void);
+int * __cdecl core_sound_cpp_assignInt_FUN_0052ee20(int *dest,int *src);
+int * __cdecl core_sound_cpp_assignInt1_FUN_0052ee30(int *dest,int *src);
+int * __cdecl core_sound_cpp_assignInt2_FUN_0052ee40(int *dest,int *src);
 STrainNoise * __cdecl core_sound_cpp_STrainNoise_arrdtor10_FUN_0052ee50(STrainNoise *this_ptr,uint flags);
 void __cdecl engine_special_cpp_clearScreen_FUN_0052ee70(void);
 void __cdecl engine_special_cpp_clearZBufferNative_FUN_0052eed4(void);

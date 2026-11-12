@@ -15,7 +15,7 @@
 ;   core_mission.cpp_FUN_0051c240 at 0051c253
 ;   core_script.cpp_staticInit_FUN_005430c0 at 005430c5
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_0057db60 at 0057db6c
-;   engine_pod.cpp_FUN_0053bfbe at 0053c122
+;   engine_pod.cpp_FUN_0053bfc0 at 0053c122
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0 at 00494fe4
 ;   ... and 1 more
 ;

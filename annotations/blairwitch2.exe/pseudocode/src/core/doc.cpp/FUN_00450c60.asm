@@ -277,11 +277,11 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_ammobox.cpp_CAmmoBox_openBox_FUN_0040e600
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041cb40
+;   core_bwgrndma.cpp_FUN_005a7ed0
+;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
+;   core_bwspart.cpp_CSimpleParticleSystem_isActive_FUN_005a8130
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420
-;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
-;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0
-;   core_charactr.cpp_FUN_00423a60
 ;   ... and 49 more
 ;
 ; *****************************************************************************
@@ -300,8 +300,8 @@ section .text
     LEA EAX,[EBX + 0x3058]              ; 00450c75
     PUSH dword ptr [EBP + 0x92]         ; 00450c7b
     PUSH EAX                            ; 00450c81
-    CALL unkafter_special.cpp_FUN_0059e110 ; 00450c82
-        ;   XREF to: 0059e110 (UNCONDITIONAL_CALL)  ; undefined unkafter_special.cpp_FUN_0059e110()
+    CALL core_muzzle.cpp_FUN_0059e110   ; 00450c82
+        ;   XREF to: 0059e110 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059e110()
     ADD ESP,0x8                         ; 00450c87
     PUSH 0x5cfe3f                       ; 00450c8a | s_DebugActionPending_005cfe3e+1
     MOV EDX,dword ptr [0x006141f0]      ; 00450c8f | DAT_006141f0
@@ -1034,8 +1034,8 @@ section .text
     JZ 0x00451501                       ; 004514ee
         ;   XREF to: 00451501 (CONDITIONAL_JUMP)  ; LAB_00451501
     PUSH EBX                            ; 004514f0
-    CALL unkafter_stranger.cpp_FUN_0045df30 ; 004514f1
-        ;   XREF to: 0045df30 (UNCONDITIONAL_CALL)  ; undefined unkafter_stranger.cpp_FUN_0045df30()
+    CALL core_doc.cpp_FUN_0045df30      ; 004514f1
+        ;   XREF to: 0045df30 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045df30()
     ADD ESP,0x4                         ; 004514f6
     TEST EAX,EAX                        ; 004514f9
     JZ 0x004530d5                       ; 004514fb
@@ -1046,8 +1046,8 @@ section .text
         ;   XREF to: 00451516 (CONDITIONAL_JUMP)  ; LAB_00451516
     PUSH dword ptr [EBP + 0x92]         ; 00451507
     PUSH EBX                            ; 0045150d
-    CALL unkafter_stranger.cpp_FUN_0045bdc0 ; 0045150e
-        ;   XREF to: 0045bdc0 (UNCONDITIONAL_CALL)  ; undefined unkafter_stranger.cpp_FUN_0045bdc0()
+    CALL core_doc.cpp_FUN_0045bdc0      ; 0045150e
+        ;   XREF to: 0045bdc0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045bdc0()
     ADD ESP,0x8                         ; 00451513
     MOV EDI,dword ptr [EBX + 0x25640]   ; 00451516
         ;   Label: LAB_00451516
@@ -1094,8 +1094,8 @@ section .text
     JZ 0x004515b4                       ; 004515a9
         ;   XREF to: 004515b4 (CONDITIONAL_JUMP)  ; LAB_004515b4
     PUSH EBX                            ; 004515ab
-    CALL unkafter_stranger.cpp_FUN_0045c960 ; 004515ac
-        ;   XREF to: 0045c960 (UNCONDITIONAL_CALL)  ; undefined unkafter_stranger.cpp_FUN_0045c960()
+    CALL core_doc.cpp_FUN_0045c960      ; 004515ac
+        ;   XREF to: 0045c960 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045c960()
     ADD ESP,0x4                         ; 004515b1
     PUSH EBX                            ; 004515b4
         ;   Label: LAB_004515b4
@@ -1106,12 +1106,12 @@ section .text
     PUSH EDX                            ; 004515c0
     PUSH dword ptr [EBP + 0x92]         ; 004515c1
     PUSH EBX                            ; 004515c7
-    CALL unkafter_stranger.cpp_FUN_0045b510 ; 004515c8
-        ;   XREF to: 0045b510 (UNCONDITIONAL_CALL)  ; undefined unkafter_stranger.cpp_FUN_0045b510()
+    CALL core_doc.cpp_FUN_0045b510      ; 004515c8
+        ;   XREF to: 0045b510 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045b510()
     ADD ESP,0xc                         ; 004515cd
     PUSH EBX                            ; 004515d0
-    CALL unkafter_stranger.cpp_FUN_0045db40 ; 004515d1
-        ;   XREF to: 0045db40 (UNCONDITIONAL_CALL)  ; undefined unkafter_stranger.cpp_FUN_0045db40()
+    CALL core_doc.cpp_FUN_0045db40      ; 004515d1
+        ;   XREF to: 0045db40 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045db40()
     ADD ESP,0x4                         ; 004515d6
     PUSH 0x0                            ; 004515d9
     PUSH dword ptr [EBP + 0x92]         ; 004515db
@@ -1141,8 +1141,8 @@ section .text
     LEA EAX,[EBX + 0x154]               ; 00451627
     PUSH EAX                            ; 0045162d
     MOV dword ptr [EBP + -0x2],EAX      ; 0045162e
-    CALL unkafter_superopt.cpp_CSimpleParticleSystem_isActive_FUN_005a8130 ; 00451631
-        ;   XREF to: 005a8130 (UNCONDITIONAL_CALL)  ; int unkafter_superopt.cpp_CSimpleParticleSystem_isActive_FUN_005a8130(CSimpleParticleSystem * this_ptr)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_isActive_FUN_005a8130 ; 00451631
+        ;   XREF to: 005a8130 (UNCONDITIONAL_CALL)  ; int core_bwspart.cpp_CSimpleParticleSystem_isActive_FUN_005a8130(CSimpleParticleSystem * this_ptr)
     ADD ESP,0x4                         ; 00451636
     TEST EAX,EAX                        ; 00451639
     JZ 0x00451961                       ; 0045163b
@@ -1170,8 +1170,8 @@ section .text
     XOR ESI,ESI                         ; 00451686
     MOV dword ptr [EBX + 0x2a8],0x3dcccccd ; 00451688
     MOV dword ptr [EBP + 0x5e],ESI      ; 00451692
-    CALL unkaddr_005a7eb0.cpp_FUN_005a7ed0 ; 00451695
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_005a7eb0.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 00451695
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
         ;   Label: LAB_00451695
     TEST EAX,EAX                        ; 0045169a
     JZ 0x00451951                       ; 0045169c
@@ -1373,8 +1373,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x5a]      ; 00451940
     PUSH 0x3f19999a                     ; 00451943
     PUSH EDI                            ; 00451948
-    CALL unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 00451949
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 00451949
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
     ADD ESP,0x34                        ; 0045194e
     MOV EAX,dword ptr [EBP + 0x5e]      ; 00451951
         ;   Label: LAB_00451951
@@ -1496,13 +1496,13 @@ section .text
         ;   Label: LAB_00451aaa
     PUSH 0x0                            ; 00451ab0
     PUSH EBX                            ; 00451ab2
-    CALL unkafter_stranger.cpp_FUN_00459ff0 ; 00451ab3
-        ;   XREF to: 00459ff0 (UNCONDITIONAL_CALL)  ; undefined unkafter_stranger.cpp_FUN_00459ff0()
+    CALL core_doc.cpp_FUN_00459ff0      ; 00451ab3
+        ;   XREF to: 00459ff0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00459ff0()
     ADD ESP,0xc                         ; 00451ab8
     PUSH dword ptr [EBP + 0x92]         ; 00451abb
     PUSH EBX                            ; 00451ac1
-    CALL unkafter_stranger.cpp_FUN_0045d2c0 ; 00451ac2
-        ;   XREF to: 0045d2c0 (UNCONDITIONAL_CALL)  ; undefined unkafter_stranger.cpp_FUN_0045d2c0()
+    CALL core_doc.cpp_FUN_0045d2c0      ; 00451ac2
+        ;   XREF to: 0045d2c0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045d2c0()
     ADD ESP,0x8                         ; 00451ac7
     LEA EAX,[EBX + 0x2437c]             ; 00451aca
     PUSH EAX                            ; 00451ad0
@@ -1511,8 +1511,8 @@ section .text
     ADD ESP,0x4                         ; 00451ad6
     PUSH dword ptr [EBP + 0x92]         ; 00451ad9
     PUSH EBX                            ; 00451adf
-    CALL unkafter_stranger.cpp_FUN_0045dbf0 ; 00451ae0
-        ;   XREF to: 0045dbf0 (UNCONDITIONAL_CALL)  ; undefined unkafter_stranger.cpp_FUN_0045dbf0()
+    CALL core_doc.cpp_FUN_0045dbf0      ; 00451ae0
+        ;   XREF to: 0045dbf0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045dbf0()
     MOV ECX,dword ptr [EBP + 0x56]      ; 00451ae5
     ADD ESP,0x8                         ; 00451ae8
     TEST ECX,ECX                        ; 00451aeb

@@ -9,6 +9,7 @@
 ; int              Stack[0xc]:4   error_on_not_found
 ;
 ; XREF[23]:
+;   core_basicene.cpp_FUN_005a01d0 at 005a01f1
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a3d0 at 0042a458
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_004291b0 at 004291d6
 ;   core_doc.cpp_CDoc_setup_FUN_00450620 at 00450814
@@ -18,7 +19,6 @@
 ;   core_event.cpp_FUN_00489670 at 0048da60
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004ad3e0 at 004ad5b4
 ;   core_ghoul.cpp_CGhoul_processDamage_FUN_004c40f0 at 004c4495
-;   core_hostage.cpp_CHostage_setup_FUN_004d1400 at 004d15ba
 ;   ... and 13 more
 ;
 ; Referenced Globals:

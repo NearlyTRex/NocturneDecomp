@@ -11,7 +11,7 @@
 ; uint *           Stack[0x14]:4   octet4_ptr
 ;
 ; XREF[1]:
-;   unkafter_trisock.cpp_FUN_005797b0 at 005797cc
+;   support_trisock.cpp_FUN_005797b0 at 005797cc
 ;
 ; *****************************************************************************
 

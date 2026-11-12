@@ -24,8 +24,8 @@ void __cdecl core_ghostchi_cpp_CGhostChild_setup_FUN_005a9440(CGhostChild *this_
   this_ptr->hand_bone = iVar1;
   this_ptr_00 = (this_ptr->base).base.base.base.particle_systems + 4;
   (this_ptr->base).base.base.eye_glow_bone = this_ptr->head_bone;
-  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(this_ptr_00,0x100);
-  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_attach_FUN_005a8050(this_ptr_00,this_ptr);
-  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_start_FUN_005a80d0(this_ptr_00,0);
+  core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(this_ptr_00,0x100);
+  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(this_ptr_00,this_ptr);
+  core_bwspart_cpp_CSimpleParticleSystem_start_FUN_005a80d0(this_ptr_00,0);
   return;
 }

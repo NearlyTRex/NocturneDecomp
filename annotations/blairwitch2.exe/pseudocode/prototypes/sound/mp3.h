@@ -93,6 +93,10 @@ void __cdecl requantizeSamples(int param_1,int param_2,int param_3,int param_4);
 // Address: 00505eb0
 void __cdecl applyScalefactorsToSubbands(int param_1,int param_2,int param_3,int param_4);
 
+// Original: sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_00505f60
+// Address: 00505f60
+void applyScalefactorsToLayer2Samples(int param_1,int param_2,int param_3);
+
 // Original: sound_mp3.cpp_initializeSynthesisDctTable_FUN_00505fbe
 // Address: 00505fbe
 double initializeSynthesisDctTable(float *param_1);

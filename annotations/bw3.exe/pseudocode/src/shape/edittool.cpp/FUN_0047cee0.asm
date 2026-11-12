@@ -13,9 +13,9 @@
 ;   core_prye.cpp_FUN_0051b550 at 0051c00b
 ;   core_prye.cpp_FUN_00520d20 at 00520d8e
 ;   core_prye.cpp_FUN_00521880 at 00521ad3
+;   core_prye.cpp_FUN_00524940 at 00525909
 ;   core_script.cpp_CScript_loadState_FUN_00530ad0 at 00530de4
 ;   core_set.cpp_FUN_0053b7f0 at 0053b888
-;   unkafter_prye.cpp_FUN_00524940 at 00525909
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Warning_005bce77

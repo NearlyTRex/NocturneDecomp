@@ -6,7 +6,7 @@
 ; Parameters:
 ; ulong            Stack[0x4]:4   size
 ;
-; XREF[49]:
+; XREF[51]:
 ;   cockpit_ckptutil.c_loadBitmapWithPalette_FUN_0042d180 at 0042d1e2
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042ed04
 ;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00430210 at 00430312
@@ -17,7 +17,7 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_004f5740 at 004f577e
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010 at 004400fa
 ;   core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_0044acb0 at 0044ad40
-;   ... and 39 more
+;   ... and 41 more
 ;
 ; Called Functions:
 ;   crt_unknown.c_InternalHeapAlloc_FUN_005635c0

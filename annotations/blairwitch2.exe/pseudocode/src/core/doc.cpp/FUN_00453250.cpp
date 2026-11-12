@@ -232,7 +232,7 @@ LAB_004533c6:
             if (iVar5 == 6) goto LAB_004533c6;
             in_stack_fffffe74 = 6.355372e-39;
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"<actionPending = %d\ndoc.cpp line %d" + 1);
+                      (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d");
           }
           iVar5 = (param_1->base).layer_action_index;
           param_1->target_actor = (CDemonActor *)0x0;

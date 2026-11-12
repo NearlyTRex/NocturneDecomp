@@ -9,6 +9,10 @@
 // Address: 00523980
 void FUN_00523980(int *param_1,undefined4 param_2);
 
+// Original: core_motion.cpp_FUN_00523db0
+// Address: 00523db0
+void FUN_00523db0(int *param_1,undefined4 param_2);
+
 // Original: core_motion.cpp_FUN_00523e2e
 // Address: 00523e2e
 void FUN_00523e2e(void);

@@ -45,42 +45,42 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
       else {
         iVar5 = iVar3 + 1;
       }
-      switch(*(int *)(pcVar8 + 0x100)) {
-      case 0:
+      switch(*(EScriptXRefType *)(pcVar8 + 0x100)) {
+      case XREF_EVENT_TESTED:
         pcVar6 = "Event tested";
         break;
-      case 1:
+      case XREF_EVENT_RAISED:
         pcVar6 = "Event raised";
         break;
-      case 2:
+      case XREF_PERSISTENT_EVENT:
         pcVar6 = "Persistent event";
         break;
-      case 3:
+      case XREF_GAME_FLAG:
         pcVar6 = "Game flag";
         break;
-      case 4:
+      case XREF_TIMER:
         pcVar6 = "Timer";
         break;
-      case 5:
-      case 6:
+      case XREF_COUNTER_SET:
+      case XREF_COUNTER_USED:
         pcVar6 = "Counter";
         break;
-      case 7:
+      case XREF_ACTOR_REFERENCED:
         pcVar6 = "Actor referenced";
         break;
-      case 8:
+      case XREF_SFX_SET:
         pcVar6 = "Sfx set";
         break;
-      case 9:
+      case XREF_SFX_USED:
         pcVar6 = "Sfx referenced";
         break;
-      case 10:
+      case XREF_ACTOR_VARIABLE_SET:
         pcVar6 = "Actor variable set";
         break;
-      case 0xb:
+      case XREF_ACTOR_VARIABLE_USED:
         pcVar6 = "Actor variable referenced";
         break;
-      case 0xc:
+      case XREF_INI_VARIABLE:
         pcVar6 = "Ini file variable";
         break;
       default:

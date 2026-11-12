@@ -18,7 +18,7 @@
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_00503e60
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_FUN_0059d8e0
 ;
 ; *****************************************************************************
 
@@ -130,8 +130,8 @@ section .text
         ;   Label: LAB_005a9fb9
     ADD EBX,0x10af8                     ; 005a9fbe
     PUSH EBX                            ; 005a9fc4
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005a9fc5
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a9fc5
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005a9fca
     MOV ESP,EBP                         ; 005a9fcd
     POP EBP                             ; 005a9fcf

@@ -55,10 +55,10 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408790
 ;   core_cloth.cpp_CClothList_ctor_FUN_005b1440
+;   core_muzzle.cpp_FUN_0059ded0
+;   core_muzzle.cpp_FUN_0059df80
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00544cd0
 ;   crt_memory.c___arrinit_FUN_005b7f5f
-;   engine_special.cpp_bindDllFunction_FUN_0059df80
-;   unkaddr_0059d350.cpp_FUN_0059ded0
 ;
 ; *****************************************************************************
 
@@ -101,8 +101,8 @@ section .text
     ADD ESP,0xc                         ; 0042239d
     ADD EAX,0xd0                        ; 004223a0
     PUSH EAX                            ; 004223a5
-    CALL unkaddr_0059d350.cpp_FUN_0059ded0 ; 004223a6
-        ;   XREF to: 0059ded0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059ded0()
+    CALL core_muzzle.cpp_FUN_0059ded0   ; 004223a6
+        ;   XREF to: 0059ded0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059ded0()
     ADD ESP,0x4                         ; 004223ab
     PUSH 0x5f41e0                       ; 004223ae | g_SFireTypeInfo
     PUSH 0x32                           ; 004223b3
@@ -268,8 +268,8 @@ section .text
     MOV dword ptr [EBX + 0x109d8],0xfffffffe ; 0042277c
     PUSH EAX                            ; 00422786
     FSTP float ptr [EBX + 0x109d0]      ; 00422787
-    CALL engine_special.cpp_bindDllFunction_FUN_0059df80 ; 0042278d
-        ;   XREF to: 0059df80 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_bindDllFunction_FUN_0059df80(void * * slot, void * proc)
+    CALL core_muzzle.cpp_FUN_0059df80   ; 0042278d
+        ;   XREF to: 0059df80 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_FUN_0059df80()
     MOV EDX,0xbdc6a7f0                  ; 00422792
     MOV ECX,0x3ea7ef9e                  ; 00422797
     ADD ESP,0x8                         ; 0042279c

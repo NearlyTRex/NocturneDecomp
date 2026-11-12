@@ -9,7 +9,7 @@
 ;   undefined4 DAT_01d167f0
 ;
 ; Called Functions:
-;   unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0
+;   engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     FSTP float ptr [ESP]                ; 004f5e2d
     PUSH 0x0                            ; 004f5e30
     PUSH 0x0                            ; 004f5e32
-    CALL unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0 ; 004f5e34
-        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; void unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0(float left, float top, float right, float bottom)
+    CALL engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0 ; 004f5e34
+        ;   XREF to: 004f2ac0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0(float left, float top, float right, float bottom)
     ADD ESP,0x10                        ; 004f5e39
     MOV dword ptr [0x01d167f0],EBX      ; 004f5e3c | DAT_01d167f0
     TEST EBX,EBX                        ; 004f5e42

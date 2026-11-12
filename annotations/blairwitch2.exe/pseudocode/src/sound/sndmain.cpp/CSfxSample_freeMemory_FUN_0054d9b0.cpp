@@ -26,7 +26,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_0054d9b0(CSfxSample *th
     FUN_005b7fdc(pCVar1);
   }
   this_ptr->mp3_data = (CMP3Decoder *)0x0;
-  unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&this_ptr->file_stream);
+  support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&this_ptr->file_stream);
   (this_ptr->sample_info).name[0] = '\0';
   this_ptr->taken = 0;
   this_ptr->is_user_sample = 0;

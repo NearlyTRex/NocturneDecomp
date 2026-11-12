@@ -48,7 +48,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
-;   core_hostage.cpp_CDemnfolk_renderTransparent_FUN_00458200 at 00458389
+;   core_demnfolk.cpp_CDemnfolk_renderTransparent_FUN_00458200 at 00458389
 ;   core_litecone.cpp_CLightCone_renderTransparent_FUN_004e40d0 at 004e415a
 ;   core_zombie.cpp_CZombie_renderTransparent_FUN_0058beb0 at 0058c039
 ;
@@ -72,7 +72,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_pop_FUN_0046d080
 ;   engine_special.cpp_FUN_005632a3
 ;
 ; *****************************************************************************
@@ -418,8 +418,8 @@ section .text
         ;   XREF to: 0045f62d (CONDITIONAL_JUMP)  ; LAB_0045f62d
     MOV EDX,dword ptr [0x005f2afc]      ; 0045fa7d | DAT_005f2afc
     PUSH EDX                            ; 0045fa83 | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0045fa84
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0045fa84
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0045fa89
     PUSH 0x0                            ; 0045fa8c
     MOV ECX,dword ptr [0x005f2afc]      ; 0045fa8e | DAT_005f2afc

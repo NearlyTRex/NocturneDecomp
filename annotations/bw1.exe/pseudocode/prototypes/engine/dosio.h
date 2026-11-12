@@ -88,3 +88,15 @@ void __cdecl changeFileExtension(char *path,char *new_extension);
 // Original: engine_dosio.cpp_getFullPath_FUN_00479720
 // Address: 00479720
 int __cdecl getFullPath(char *output_path,char *input_path);
+
+// Original: engine_dosio.cpp_FUN_00479770
+// Address: 00479770
+void FUN_00479770(char *param_1,char *param_2,char *param_3);
+
+// Original: engine_dosio.cpp_FUN_004798c0
+// Address: 004798c0
+bool FUN_004798c0(char *param_1);
+
+// Original: engine_dosio.cpp_FUN_00479950
+// Address: 00479950
+bool FUN_00479950(char *param_1);

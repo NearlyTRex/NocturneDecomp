@@ -1,0 +1,312 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 73,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 5,
+    "suspect_types": [
+      "param_count_too_few",
+      "unaffected_reg"
+    ],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "0044dc90",
+      "from_addr": "0044dd11",
+      "name": "core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044dc90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00465060",
+      "from_addr": "004650b4",
+      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00465060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00464190",
+      "from_addr": "0046431d",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00463820",
+      "from_addr": "004638b2",
+      "name": "core_dlight.cpp_FUN_00463820",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048d4f0",
+      "from_addr": "0048d544",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005545a0",
+      "from_addr": "005545cf",
+      "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00554ac0",
+      "from_addr": "00554b15",
+      "name": "core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00554ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00554d30",
+      "from_addr": "00554d7f",
+      "name": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00483ac0",
+    "address_range": [
+      [
+        "00483ac0",
+        "00483adc"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_drender.cpp_FUN_00483ac0",
+    "signature": "void engine_drender_cpp_FUN_00483ac0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00509050",
+      "is_variadic": false,
+      "name": "engine_matrix.c_getCameraOrigin_FUN_00509050"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0044dd11",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044dc90",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048d544",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004638b2",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_FUN_00463820",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0046431d",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004650b4",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00465060",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005545cf",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00554b15",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00554ac0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00554d7f",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.125,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 20,
+      "INT_ADD": 10,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 10,
+      "INT_ZEXT": 6,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 82
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00483ac7",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00483ad0",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = auStack_ffc[0x3fa];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = auStack_ffc[(uint)bVar1 * -2 + 0x3fb];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "type": "unaffected_reg"
+    },
+    {
+      "call_site_count": 8,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

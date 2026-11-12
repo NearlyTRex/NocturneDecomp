@@ -159,7 +159,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
         SStack_f4.impact_direction.z = pCVar6->z;
       }
       SStack_f4.ammo_type = (this_ptr->base).ammo_type;
-      SStack_f4.damage_type = DAMAGE_TYPE_LAUNCH;
+      SStack_f4.damage_type = DAMAGE_TYPE_ATTACK_STAKE;
       SStack_f4.attacker = (CDemonActor *)this_ptr;
       SStack_f4.dismember_prob = 0.15;
       SStack_f4.wielder = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr)

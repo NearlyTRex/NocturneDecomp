@@ -15,7 +15,7 @@
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_FUN_0059d8e0
 ;
 ; *****************************************************************************
 
@@ -149,8 +149,8 @@ section .text
     PUSH 0x5f0a5b                       ; 005aa12d | s_MeleeAttack_005f0a5a+1
     ADD EBX,0x10af8                     ; 005aa132
     PUSH EBX                            ; 005aa138
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005aa139
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005aa139
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005aa13e
     ADD ESP,0x8                         ; 005aa141
     POP EDI                             ; 005aa144

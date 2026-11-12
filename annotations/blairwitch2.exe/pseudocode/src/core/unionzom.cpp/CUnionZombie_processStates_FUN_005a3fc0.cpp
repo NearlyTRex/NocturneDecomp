@@ -13,12 +13,12 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processStates_FUN_005a3fc0(CUnionZom
   int iVar2;
   
   if (mode == 0) {
-    unkaddr_0059d350_cpp_FUN_0059d650(&(this_ptr->base).state_machine,"VanishAttack");
+    core_muzzle_cpp_FUN_0059d650(&(this_ptr->base).state_machine,"VanishAttack");
   }
   else {
-    unkafter_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
+    core_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
     if ((mode == 1) &&
-       (iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0
+       (iVar2 = core_muzzle_cpp_FUN_0059daa0
                           (&(this_ptr->base).state_machine,"VanishAttack"), iVar2 != 0)) {
       (*(this_ptr->base).base.base.base.vtable._ub[1].getInteractionInfo)
                 ((CDemonActor *)this_ptr,(SInteractionInfo *)delta_time);
@@ -27,11 +27,11 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processStates_FUN_005a3fc0(CUnionZom
   }
   pSVar1 = &(this_ptr->base).state_machine;
   if (mode == 0) {
-    unkaddr_0059d350_cpp_FUN_0059d650(pSVar1,"MeleeAttack");
+    core_muzzle_cpp_FUN_0059d650(pSVar1,"MeleeAttack");
     return;
   }
   if ((mode == 1) &&
-     (iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar1,"MeleeAttack"), iVar2 != 0)) {
+     (iVar2 = core_muzzle_cpp_FUN_0059daa0(pSVar1,"MeleeAttack"), iVar2 != 0)) {
     (*(this_ptr->base).base.base.base.vtable._ub[1].startInteraction)
               ((CDemonActor *)this_ptr,(CDemonActor *)delta_time);
     return;

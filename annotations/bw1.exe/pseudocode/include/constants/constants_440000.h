@@ -10,12 +10,11 @@
 // =============================================================================
 
 // undefined1* constants
-static undefined1* DAT_00444534 = (undefined1*)0x004448CC; // DAT_004448cc
-static undefined1* DAT_00444538 = (undefined1*)0x004448CC; // DAT_004448cc
-static undefined1* DAT_0044453C = (undefined1*)0x004448CC; // DAT_004448cc
-static undefined1* DAT_00444540 = (undefined1*)0x004448CC; // DAT_004448cc
-static undefined1* DAT_00444544 = (undefined1*)0x00444641; // DAT_00444641
-static undefined1* DAT_00444548 = (undefined1*)0x00444641; // DAT_00444641
+static undefined1* DAT_00444538 = (undefined1*)0x004448CC; // caseD_0
+static undefined1* DAT_0044453C = (undefined1*)0x004448CC; // caseD_0
+static undefined1* DAT_00444540 = (undefined1*)0x004448CC; // caseD_0
+static undefined1* DAT_00444544 = (undefined1*)0x00444641; // caseD_4
+static undefined1* DAT_00444548 = (undefined1*)0x00444641; // caseD_4
 static undefined1* DAT_00445C68 = (undefined1*)0x0044697A; // caseD_0
 static undefined1* DAT_00445C6C = (undefined1*)0x0044697A; // caseD_0
 static undefined1* DAT_00445C70 = (undefined1*)0x004469DB; // caseD_3
@@ -41,6 +40,7 @@ static undefined1* DAT_00448B68 = (undefined1*)0x00448D6E; // caseD_2
 static undefined1* DAT_00448B6C = (undefined1*)0x00448D79; // caseD_3
 
 // void* constants
+static void* DAT_0044454C = (void*)0x0044487E; // caseD_6
 static void* DAT_0044CEA4 = (void*)0x0044D100; // caseD_1
 static void* DAT_0044CEA8 = (void*)0x0044D14A; // caseD_2
 

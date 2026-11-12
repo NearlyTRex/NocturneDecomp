@@ -77,6 +77,10 @@ char * __cdecl getKeyDisplayName(int param_1);
 // Address: 004eeba0
 int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description);
 
+// Original: core_menu.cpp_FUN_004eece0
+// Address: 004eece0
+int FUN_004eece0(void);
+
 // Original: core_menu.cpp_FUN_004eed60
 // Address: 004eed60
 void FUN_004eed60(void);

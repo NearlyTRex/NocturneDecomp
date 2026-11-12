@@ -13,7 +13,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     MOV EBX,dword ptr [0x0060b280]      ; 0043a197 | DAT_0060b280
         ;   Label: LAB_0043a197
     PUSH EBX                            ; 0043a19d | DAT_01ba5c50
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 0043a19e
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 0043a19e
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 0043a1a3
     MOV EAX,ESI                         ; 0043a1a6
     ADD ESP,0x30                        ; 0043a1a8

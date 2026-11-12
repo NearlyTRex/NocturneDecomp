@@ -73,7 +73,7 @@ void engine_font_cpp_FUN_004afbf0(int param_1,int param_2)
                 ((char *)(param_1 + 4),(char *)0x0,(char *)0x0,acStack_158,(char *)0x0);
       engine_dosio_cpp_makePath_FUN_00465e80
                 (acStack_258,(char *)0x0,(char *)0x0,acStack_158,(char *)0x5c1ee1);
-      unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&CStack_58);
+      support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&CStack_58);
       iVar5 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
                         (&CStack_58,0x5c1ee5,acStack_258,1);
       if (iVar5 == 0) {
@@ -88,7 +88,8 @@ void engine_font_cpp_FUN_004afbf0(int param_1,int param_2)
           puVar3 = puStack_20;
           if (0 < (int)uStack_14) {
             do {
-              unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00(&CStack_58,auStack_458,uStack_14);
+              support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&CStack_58,auStack_458,uStack_14)
+              ;
               iVar12 = 0;
               puVar9 = puVar3;
               if (0 < iVar8) {
@@ -115,9 +116,9 @@ void engine_font_cpp_FUN_004afbf0(int param_1,int param_2)
           }
         }
         else {
-          unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00(&CStack_58,puStack_20,iVar8 * iVar8);
+          support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&CStack_58,puStack_20,iVar8 * iVar8);
         }
-        unkafter_turret_cpp_CInStreamFile_close_FUN_00573db0(&CStack_58);
+        support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&CStack_58);
       }
       pvVar4 = pvStack_28;
       memset(pvStack_28,0xff,uStack_1c);
@@ -185,7 +186,7 @@ void engine_font_cpp_FUN_004afbf0(int param_1,int param_2)
         iVar8 = iVar8 + 4;
         iVar5 = iVar5 + 0x10;
       } while (iVar8 != iStack_18);
-      unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&CStack_58,0);
+      support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&CStack_58,0);
     }
     *(int *)(param_1 + 0x420c) = param_2;
     engine_font_cpp_FUN_004b0170(param_1,0x3f8ccccd);

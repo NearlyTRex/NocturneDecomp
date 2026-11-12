@@ -4,7 +4,8 @@
 ; void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0059c830(uchar *param_1,char *param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   support_trisock.cpp_FUN_0059cf00 at 0059cffb
 ;   support_trisock.cpp_FUN_0059e350 at 0059ec20
 ;
 ; Referenced Globals:

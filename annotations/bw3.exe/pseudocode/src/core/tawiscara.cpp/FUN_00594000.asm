@@ -437,8 +437,8 @@ section .text
         ;   XREF to: 00433350 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00594480
     PUSH EBX                            ; 00594483
-    CALL unkafter_tawiscar.cpp_FUN_00596380 ; 00594484
-        ;   XREF to: 00596380 (UNCONDITIONAL_CALL)  ; undefined unkafter_tawiscar.cpp_FUN_00596380()
+    CALL core_tawiscara.cpp_FUN_00596380 ; 00594484
+        ;   XREF to: 00596380 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00596380()
     FLD float ptr [EBP + 0x92]          ; 00594489
     FMUL double ptr [0x005d9399]        ; 0059448f | DAT_005d9399
     FLD float ptr [EBX + 0xd098]        ; 00594495
@@ -1195,8 +1195,8 @@ section .text
         ;   XREF to: 00594269 (UNCONDITIONAL_JUMP)  ; LAB_00594269
     PUSH EBX                            ; 00594d7e
         ;   Label: LAB_00594d7e
-    CALL unkafter_tawiscar.cpp_FUN_00595710 ; 00594d7f
-        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined unkafter_tawiscar.cpp_FUN_00595710()
+    CALL core_tawiscara.cpp_FUN_00595710 ; 00594d7f
+        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595710()
     ADD ESP,0x4                         ; 00594d84
     JMP 0x00594d42                      ; 00594d87
         ;   XREF to: 00594d42 (UNCONDITIONAL_JUMP)  ; LAB_00594d42
@@ -1511,8 +1511,8 @@ section .text
     JZ 0x0059511f                       ; 00595114
         ;   XREF to: 0059511f (CONDITIONAL_JUMP)  ; LAB_0059511f
     PUSH EBX                            ; 00595116
-    CALL unkafter_tawiscar.cpp_FUN_00595710 ; 00595117
-        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined unkafter_tawiscar.cpp_FUN_00595710()
+    CALL core_tawiscara.cpp_FUN_00595710 ; 00595117
+        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595710()
     ADD ESP,0x4                         ; 0059511c
     FLD float ptr [EBX + 0xd074]        ; 0059511f
         ;   Label: LAB_0059511f
@@ -1525,8 +1525,8 @@ section .text
     JBE 0x00594269                      ; 00595138
         ;   XREF to: 00594269 (CONDITIONAL_JUMP)  ; LAB_00594269
     PUSH EBX                            ; 0059513e
-    CALL unkafter_tawiscar.cpp_FUN_00595710 ; 0059513f
-        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined unkafter_tawiscar.cpp_FUN_00595710()
+    CALL core_tawiscara.cpp_FUN_00595710 ; 0059513f
+        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595710()
     ADD ESP,0x4                         ; 00595144
     JMP 0x00594269                      ; 00595147
         ;   XREF to: 00594269 (UNCONDITIONAL_JUMP)  ; LAB_00594269
@@ -1835,8 +1835,8 @@ section .text
         ;   XREF to: 00595490 (UNCONDITIONAL_JUMP)  ; LAB_00595490
     PUSH EBX                            ; 005954c2
         ;   Label: LAB_005954c2
-    CALL unkafter_tawiscar.cpp_FUN_00595710 ; 005954c3
-        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined unkafter_tawiscar.cpp_FUN_00595710()
+    CALL core_tawiscara.cpp_FUN_00595710 ; 005954c3
+        ;   XREF to: 00595710 (UNCONDITIONAL_CALL)  ; undefined core_tawiscara.cpp_FUN_00595710()
     ADD ESP,0x4                         ; 005954c8
     JMP 0x0059548c                      ; 005954cb
         ;   XREF to: 0059548c (UNCONDITIONAL_JUMP)  ; LAB_0059548c

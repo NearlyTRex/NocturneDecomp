@@ -164,27 +164,27 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_conveyor_cpp_staticInit_FUN_00436aa0
+        .func = (RUNTIME_HANDLER_FUNC *)core_construc_cpp_staticInit_FUN_00436aa0
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_cow_cpp_staticInit_FUN_00438430
+        .func = (RUNTIME_HANDLER_FUNC *)core_conveyor_cpp_staticInit_FUN_00438430
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_crate_cpp_staticInit_FUN_00439080
+        .func = (RUNTIME_HANDLER_FUNC *)core_cow_cpp_staticInit_FUN_00439080
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_crossbow_cpp_staticInit_FUN_00439d00
+        .func = (RUNTIME_HANDLER_FUNC *)core_crate_cpp_staticInit_FUN_00439d00
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_curtain_cpp_staticInit_FUN_0043a460
+        .func = (RUNTIME_HANDLER_FUNC *)core_crossbow_cpp_staticInit_FUN_0043a460
     },
     {
         .status = 0x00,
@@ -329,7 +329,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_004a1200_cpp_FUN_004a1200
+        .func = (RUNTIME_HANDLER_FUNC *)core_flashlit_cpp_FUN_004a1200
     },
     {
         .status = 0x00,
@@ -494,7 +494,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_script_cpp_staticInit_FUN_004e4490
+        .func = (RUNTIME_HANDLER_FUNC *)core_main_c_staticInit_FUN_004e4490
     },
     {
         .status = 0x00,
@@ -519,17 +519,17 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)shape_meshlod_cpp_staticInit_FUN_004f0250
+        .func = (RUNTIME_HANDLER_FUNC *)core_mimic_cpp_staticInit_FUN_004f0250
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_mimic_cpp_staticInit_FUN_004f2000
+        .func = (RUNTIME_HANDLER_FUNC *)core_minecar_cpp_staticInit_FUN_004f2000
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_minecar_cpp_staticInit_FUN_004f2190
+        .func = (RUNTIME_HANDLER_FUNC *)engine_mini3d_cpp_staticInit_FUN_004f2190
     },
     {
         .status = 0x00,
@@ -624,7 +624,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_setedit_cpp_staticInit_FUN_0053c170
+        .func = (RUNTIME_HANDLER_FUNC *)core_shadow_cpp_staticInit_FUN_0053c170
     },
     {
         .status = 0x00,
@@ -664,7 +664,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_00554ac0_cpp_FUN_00554ac0
+        .func = (RUNTIME_HANDLER_FUNC *)sound_sndmain_cpp_FUN_00554ac0
     },
     {
         .status = 0x00,
@@ -759,7 +759,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_0057b9a0_cpp_FUN_0057b9a0
+        .func = (RUNTIME_HANDLER_FUNC *)core_terrain_cpp_FUN_0057b9a0
     },
     {
         .status = 0x00,
@@ -829,7 +829,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_0059aa80_cpp_FUN_0059aa80
+        .func = (RUNTIME_HANDLER_FUNC *)core_zombie_cpp_FUN_0059aa80
     },
     {
         .status = 0x00,
@@ -839,12 +839,12 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_0059c270_cpp_FUN_0059c270
+        .func = (RUNTIME_HANDLER_FUNC *)core_goggles_cpp_FUN_0059c270
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_patrpoin_cpp_staticInit_FUN_0059c580
+        .func = (RUNTIME_HANDLER_FUNC *)core_hpatrol_cpp_staticInit_FUN_0059c580
     },
     {
         .status = 0x00,
@@ -859,7 +859,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_0059d350_cpp_FUN_0059d350
+        .func = (RUNTIME_HANDLER_FUNC *)core_meleeaxe_cpp_FUN_0059d350
     },
     {
         .status = 0x00,
@@ -879,7 +879,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_twigzomb_cpp_staticInit_FUN_005a2670
+        .func = (RUNTIME_HANDLER_FUNC *)core_fforest_cpp_staticInit_FUN_005a2670
     },
     {
         .status = 0x00,
@@ -904,12 +904,12 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_steuben_cpp_staticInit_FUN_005a5ae0
+        .func = (RUNTIME_HANDLER_FUNC *)core_villain_cpp_staticInit_FUN_005a5ae0
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_robin_cpp_staticInit_FUN_005a5e10
+        .func = (RUNTIME_HANDLER_FUNC *)core_weaver_cpp_staticInit_FUN_005a5e10
     },
     {
         .status = 0x00,
@@ -919,17 +919,17 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_grandma_cpp_staticInit_FUN_005a7ab0
+        .func = (RUNTIME_HANDLER_FUNC *)core_bwgrndma_cpp_staticInit_FUN_005a7ab0
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_005a7eb0_cpp_FUN_005a7eb0
+        .func = (RUNTIME_HANDLER_FUNC *)core_bwgrndma_cpp_FUN_005a7eb0
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_searpart_cpp_staticInit_FUN_005a8c90
+        .func = (RUNTIME_HANDLER_FUNC *)core_bwsearch_cpp_staticInit_FUN_005a8c90
     },
     {
         .status = 0x00,
@@ -949,22 +949,22 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_hag_cpp_staticInit_FUN_005aa5a0
+        .func = (RUNTIME_HANDLER_FUNC *)core_hellhag_cpp_staticInit_FUN_005aa5a0
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_dog1_cpp_staticInit_FUN_005ab9e0
+        .func = (RUNTIME_HANDLER_FUNC *)core_helldog_cpp_staticInit_FUN_005ab9e0
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_partibox_cpp_staticInit_FUN_005ac740
+        .func = (RUNTIME_HANDLER_FUNC *)core_hpbox_cpp_staticInit_FUN_005ac740
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_spirmine_cpp_staticInit_FUN_005ad360
+        .func = (RUNTIME_HANDLER_FUNC *)core_mine_cpp_staticInit_FUN_005ad360
     },
     {
         .status = 0x00,

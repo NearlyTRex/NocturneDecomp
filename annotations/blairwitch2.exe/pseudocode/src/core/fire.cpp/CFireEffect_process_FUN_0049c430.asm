@@ -41,7 +41,7 @@
 ;   core_fire.cpp_FUN_00493cf0
 ;   core_fire.cpp_initProcess_FUN_00499ee0
 ;   core_fire.cpp_updateTextureAnimCounts_FUN_00498c30
-;   unkaddr_0059d350.cpp_CMuzzleEffect_process_FUN_0059d420
+;   core_muzzle.cpp_CMuzzleEffect_process_FUN_0059d420
 ;
 ; *****************************************************************************
 
@@ -126,8 +126,8 @@ section .text
     JZ 0x0049c4e0                       ; 0049c4d5
         ;   XREF to: 0049c4e0 (CONDITIONAL_JUMP)  ; LAB_0049c4e0
     PUSH EBX                            ; 0049c4d7 | DAT_01c86730 | DAT_01c8678c
-    CALL unkaddr_0059d350.cpp_CMuzzleEffect_process_FUN_0059d420 ; 0049c4d8
-        ;   XREF to: 0059d420 (UNCONDITIONAL_CALL)  ; void unkaddr_0059d350.cpp_CMuzzleEffect_process_FUN_0059d420(CMuzzleEffect * this_ptr)
+    CALL core_muzzle.cpp_CMuzzleEffect_process_FUN_0059d420 ; 0049c4d8
+        ;   XREF to: 0059d420 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_CMuzzleEffect_process_FUN_0059d420(CMuzzleEffect * this_ptr)
     ADD ESP,0x4                         ; 0049c4dd
     ADD EBX,0x5c                        ; 0049c4e0
         ;   Label: LAB_0049c4e0

@@ -34,6 +34,6 @@ int __cdecl core_battery_cpp_CBattery_renderOpaque_FUN_00414500(CBattery *this_p
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
               (&this_ptr->model,0.0,-1);
   }
-  engine_matrix_c_pop_FUN_004839a0();
+  engine_drender_cpp_pop_FUN_004839a0();
   return iVar1;
 }

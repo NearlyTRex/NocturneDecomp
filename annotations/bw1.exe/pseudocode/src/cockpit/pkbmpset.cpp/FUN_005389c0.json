@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 61,
     "complexity_score": 148,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "mild",
@@ -17,6 +17,12 @@
     "total_lines": 84
   },
   "cross_references": [
+    {
+      "addr": "00538a60",
+      "from_addr": "00538a92",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00538b2e",
       "from_addr": "00538c06",
@@ -38,6 +44,11 @@
   },
   "function_calls": [
     {
+      "addr": "00538990",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_FUN_00538990"
+    },
+    {
       "addr": "005030e0",
       "is_variadic": false,
       "name": "core_main.c_FUN_005030e0"
@@ -56,11 +67,6 @@
       "addr": "005bfb40",
       "is_variadic": false,
       "name": "crt_unknown.c_sprintf_FUN_005bfb40"
-    },
-    {
-      "addr": "00538990",
-      "is_variadic": false,
-      "name": "unkafter_pkbitmap.cpp_FUN_00538990"
     }
   ],
   "globals": [
@@ -78,7 +84,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "00538c06",
@@ -88,6 +94,19 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00538a92",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00538a60",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       }
@@ -166,7 +185,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "unkafter_pkbitmap_cpp_FUN_00538990(param_1);",
+      "text": "cockpit_pkbitmap_cpp_FUN_00538990(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -218,7 +237,7 @@
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 1,
+      "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 2,

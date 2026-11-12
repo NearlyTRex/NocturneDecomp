@@ -112,7 +112,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_00510620(CMimic *this_ptr)
                     (this_ptr_01,pCVar5,pCVar6);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
                     ((CKeyFramedModelInstance *)(local_14 + 0x200ac),0.0,-1);
-          engine_matrix_c_pop_FUN_004839a0();
+          engine_drender_cpp_pop_FUN_004839a0();
         }
         core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042f3c0((CCharacter *)this_ptr);
         if ((_DAT_01d39d34 != 0) &&
@@ -122,7 +122,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_00510620(CMimic *this_ptr)
           core_motion_cpp_FUN_005254b0(&this_ptr_00->base,(CDemonActor *)this_ptr);
           core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(&this_ptr_00->base);
         }
-        engine_matrix_c_pop_FUN_004839a0();
+        engine_drender_cpp_pop_FUN_004839a0();
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_00484190(DAT_00612560,local_1c);
       }
       else {

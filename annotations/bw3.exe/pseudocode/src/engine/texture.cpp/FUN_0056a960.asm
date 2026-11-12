@@ -16,8 +16,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
+;   core_texlist.cpp_FUN_00569550
 ;   crt_memory.c_operator_new_FUN_005a3cb2
-;   unkafter_texlist.cpp_FUN_00569550
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     RET                                 ; 0056a97a
     PUSH EAX                            ; 0056a97b
         ;   Label: LAB_0056a97b
-    CALL unkafter_texlist.cpp_FUN_00569550 ; 0056a97c
-        ;   XREF to: 00569550 (UNCONDITIONAL_CALL)  ; undefined unkafter_texlist.cpp_FUN_00569550()
+    CALL core_texlist.cpp_FUN_00569550  ; 0056a97c
+        ;   XREF to: 00569550 (UNCONDITIONAL_CALL)  ; undefined core_texlist.cpp_FUN_00569550()
     ADD ESP,0x4                         ; 0056a981
     MOV [0x02cfd0d0],EAX                ; 0056a984 | DAT_02cfd0d0
     TEST EAX,EAX                        ; 0056a989

@@ -8,7 +8,7 @@
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[37]:
+; XREF[38]:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004085c0 at 00408634
 ;   core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409cc0 at 00409cf9
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408850 at 0040886a
@@ -19,7 +19,7 @@
 ;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422e00 at 00422e3a
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 0042466a
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0 at 00432ad9
-;   ... and 27 more
+;   ... and 28 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60

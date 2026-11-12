@@ -15,7 +15,7 @@ CConstructBone * core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBo
   CConstructBone *pCVar2;
   float10 fVar3;
   
-  pCVar1 = core_constrct_cpp_CConstruct_ctor_FUN_00442420(&this_ptr->base);
+  pCVar1 = core_construc_cpp_CConstruct_ctor_FUN_00442420(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CConstructBoneVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
             (&(pCVar1->base).base.model,"bonestruct.dfm");

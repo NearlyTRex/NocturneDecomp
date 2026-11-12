@@ -10,6 +10,7 @@
 ; XREF[41]:
 ;   core_armour.cpp_CArmour_process_FUN_0040ef00 at 0040efc5
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fb4a
+;   core_basicene.cpp_FUN_0059f0e0 at 0059f35f
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411c61
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 004131b2
 ;   core_beast.cpp_CBeast_process_FUN_00414a80 at 00414af8
@@ -17,7 +18,6 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418cea
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041e724
 ;   core_colonel.cpp_CColonel_process_FUN_00435830 at 00435b56
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 0043751e
 ;   ... and 31 more
 ;
 ; Called Functions:

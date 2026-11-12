@@ -94,7 +94,7 @@ void __cdecl core_set_cpp_FUN_00550da0(CDemonSet *this_ptr)
     _DAT_01c50948 = 0;
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
               (DAT_00612560,&local_24);
-    engine_matrix_c_FUN_004839b0(DAT_00612560,0x42000000);
+    engine_drender_cpp_FUN_004839b0(DAT_00612560,0x42000000);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530(DAT_00612560,&local_30);
     g_CDemonRaytraceInstance.rendering_mode = 1;
     engine_special_cpp_clearZBufferNative_FUN_0057dca4();

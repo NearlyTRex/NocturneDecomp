@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
+;   core_melee.cpp_FUN_004e7540 at 004e755b
 ;   shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004819e0 at 004819ff
-;   unkafter_melee.cpp_FUN_004e7540 at 004e755b
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a5c84

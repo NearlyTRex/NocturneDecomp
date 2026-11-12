@@ -27,7 +27,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046aa00
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;   engine_special.cpp_FUN_0055d723
 ;
 ; *****************************************************************************
@@ -333,8 +333,8 @@ section .text
     MOV ECX,dword ptr [0x0060b280]      ; 004e67d4 | DAT_0060b280
         ;   Label: LAB_004e67d4
     PUSH ECX                            ; 004e67da
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 004e67db
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 004e67db
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 004e67e0
     ADD ESP,0x98                        ; 004e67e3
     POP EBP                             ; 004e67e9

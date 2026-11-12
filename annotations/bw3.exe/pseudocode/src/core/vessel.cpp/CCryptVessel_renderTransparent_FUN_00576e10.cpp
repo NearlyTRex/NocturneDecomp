@@ -70,7 +70,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00576e10(CCryptVe
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
             (&this_ptr->orb_model,0.0,0x267);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
-  engine_matrix_c_pop_FUN_0046d080();
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   return 1;
 }

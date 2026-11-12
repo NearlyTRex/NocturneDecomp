@@ -31,6 +31,7 @@
 ;   ... and 38 more
 ;
 ; Called Functions:
+;   core_bwspart.cpp_CSimpleParticleSystem_render_FUN_005a8290
 ;   core_fire.cpp_CBulletHole_render_FUN_00493dd0
 ;   core_fire.cpp_CBulletHole_setupRenderState_FUN_00493d50
 ;   core_fire.cpp_CBulletTrail_render_FUN_00497350
@@ -45,7 +46,6 @@
 ;   core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00493410
 ;   core_fire.cpp_CSpark_setupRenderState_FUN_00494670
 ;   core_fire.cpp_CStake_render_FUN_004944c0
-;   core_fire.cpp_CToss_render_FUN_00499570
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -252,8 +252,8 @@ section .text
     JZ 0x0049c949                       ; 0049c93e
         ;   XREF to: 0049c949 (CONDITIONAL_JUMP)  ; LAB_0049c949
     PUSH EBX                            ; 0049c940 | DAT_01c86730 | DAT_01c8678c
-    CALL unkaddr_0059d350.cpp_CMuzzleEffect_render_FUN_0059d440 ; 0049c941
-        ;   XREF to: 0059d440 (UNCONDITIONAL_CALL)  ; void unkaddr_0059d350.cpp_CMuzzleEffect_render_FUN_0059d440(CMuzzleEffect * this_ptr)
+    CALL core_muzzle.cpp_CMuzzleEffect_render_FUN_0059d440 ; 0049c941
+        ;   XREF to: 0059d440 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_CMuzzleEffect_render_FUN_0059d440(CMuzzleEffect * this_ptr)
     ADD ESP,0x4                         ; 0049c946
     ADD EBX,0x5c                        ; 0049c949
         ;   Label: LAB_0049c949
@@ -463,8 +463,8 @@ section .text
     ADD ESP,0x8                         ; 0049cb1f
     MOV ESI,dword ptr [0x0061ebfc]      ; 0049cb22 | g_CSimpleParticleSystemPtr
     PUSH ESI                            ; 0049cb28
-    CALL unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290 ; 0049cb29
-        ;   XREF to: 005a8290 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_render_FUN_005a8290(CSimpleParticleSystem * this_ptr)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_render_FUN_005a8290 ; 0049cb29
+        ;   XREF to: 005a8290 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_render_FUN_005a8290(CSimpleParticleSystem * this_ptr)
     ADD ESP,0x4                         ; 0049cb2e
     MOV ESP,EBP                         ; 0049cb31
         ;   Label: LAB_0049cb31

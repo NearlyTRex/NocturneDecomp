@@ -11,11 +11,11 @@
 ;   TerminatedCString s_SleepComplete_005f0956
 ;
 ; Called Functions:
+;   core_basicene.cpp_FUN_0059f570
+;   core_basicene.cpp_FUN_005a01a0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   unkaddr_0059d350.cpp_FUN_0059d880
-;   unkaddr_0059d350.cpp_FUN_0059dcb0
-;   unkafter_basicene.cpp_FUN_0059f570
-;   unkafter_basicene.cpp_FUN_005a01a0
+;   core_muzzle.cpp_FUN_0059d880
+;   core_muzzle.cpp_FUN_0059dcb0
 ;
 ; *****************************************************************************
 
@@ -51,12 +51,12 @@ section .text
     PUSH dword ptr [EBX + 0x113c4]      ; 005a97b4
     PUSH EBX                            ; 005a97ba
     MOV dword ptr [EBX + 0x2814],0x1    ; 005a97bb
-    CALL unkafter_basicene.cpp_FUN_005a01a0 ; 005a97c5
-        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_005a01a0()
+    CALL core_basicene.cpp_FUN_005a01a0 ; 005a97c5
+        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_005a01a0()
     ADD ESP,0x10                        ; 005a97ca
     PUSH EBX                            ; 005a97cd
-    CALL unkafter_basicene.cpp_FUN_0059f570 ; 005a97ce
-        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059f570()
+    CALL core_basicene.cpp_FUN_0059f570 ; 005a97ce
+        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f570()
     FLD float ptr [EBX + 0x11860]       ; 005a97d3
     MOV dword ptr [EBX + 0x11858],0x1   ; 005a97d9
     ADD ESP,0x4                         ; 005a97e3
@@ -79,12 +79,12 @@ section .text
     PUSH dword ptr [EBX + 0x113c4]      ; 005a981b
     PUSH EBX                            ; 005a9821
     MOV dword ptr [EBX + 0x11864],0x0   ; 005a9822
-    CALL unkafter_basicene.cpp_FUN_005a01a0 ; 005a982c
-        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_005a01a0()
+    CALL core_basicene.cpp_FUN_005a01a0 ; 005a982c
+        ;   XREF to: 005a01a0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_005a01a0()
     ADD ESP,0x10                        ; 005a9831
     PUSH EBX                            ; 005a9834
-    CALL unkafter_basicene.cpp_FUN_0059f570 ; 005a9835
-        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059f570()
+    CALL core_basicene.cpp_FUN_0059f570 ; 005a9835
+        ;   XREF to: 0059f570 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f570()
     ADD ESP,0x4                         ; 005a983a
     MOV dword ptr [EBX + 0x11858],0x2   ; 005a983d
     POP EBX                             ; 005a9847
@@ -95,13 +95,13 @@ section .text
     PUSH 0x0                            ; 005a9850
     PUSH ESI                            ; 005a9852
     MOV dword ptr [EBX + 0x2814],0x0    ; 005a9853
-    CALL unkaddr_0059d350.cpp_FUN_0059dcb0 ; 005a985d
-        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059dcb0()
+    CALL core_muzzle.cpp_FUN_0059dcb0   ; 005a985d
+        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dcb0()
     ADD ESP,0x8                         ; 005a9862
     PUSH 0x5f0956                       ; 005a9865 | = "SleepComplete"
     PUSH ESI                            ; 005a986a
-    CALL unkaddr_0059d350.cpp_FUN_0059d880 ; 005a986b
-        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d880()
+    CALL core_muzzle.cpp_FUN_0059d880   ; 005a986b
+        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d880()
     ADD ESP,0x8                         ; 005a9870
     MOV dword ptr [EBX + 0x11858],0x3   ; 005a9873
     POP ESI                             ; 005a987d

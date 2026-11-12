@@ -19,7 +19,7 @@
 ;   core_doc.cpp_FUN_00455d10 at 00455dc3
 ;   core_doc.cpp_FUN_004562a0 at 004562e1
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afbdf
-;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004fef30 at 004ff244
+;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c76d
 ;   ... and 8 more
 ;
 ; Referenced Globals:

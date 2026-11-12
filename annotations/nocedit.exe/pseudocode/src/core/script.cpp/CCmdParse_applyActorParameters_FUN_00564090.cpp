@@ -44,10 +44,10 @@ void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdPar
           pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
         } while (cVar2 != '\0');
         if (pCVar3->parsed_value[0] == '@') {
-          local_124.type = 0xb;
+          local_124.type = XREF_ACTOR_VARIABLE_USED;
         }
         else {
-          local_124.type = 7;
+          local_124.type = XREF_ACTOR_REFERENCED;
         }
         core_script_cpp_CScript_addEventXRef_FUN_00567510(g_CScriptPtr,&local_124);
         break;
@@ -67,7 +67,7 @@ void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdPar
           *(char *)((int)pSVar6 + 1) = cVar2;
           pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
         } while (cVar2 != '\0');
-        local_124.type = 10;
+        local_124.type = XREF_ACTOR_VARIABLE_SET;
         core_script_cpp_CScript_addEventXRef_FUN_00567510(g_CScriptPtr,&local_124);
         break;
       case PARM_TYPE_SFX_SET:
@@ -82,7 +82,7 @@ void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdPar
           *(char *)((int)pSVar6 + 1) = cVar2;
           pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
         } while (cVar2 != '\0');
-        local_124.type = 8;
+        local_124.type = XREF_SFX_SET;
         core_script_cpp_CScript_addEventXRef_FUN_00567510(g_CScriptPtr,&local_124);
         break;
       case PARM_TYPE_SFX_USED:
@@ -97,7 +97,7 @@ void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdPar
           *(char *)((int)pSVar6 + 1) = cVar2;
           pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
         } while (cVar2 != '\0');
-        local_124.type = 9;
+        local_124.type = XREF_SFX_USED;
         core_script_cpp_CScript_addEventXRef_FUN_00567510(g_CScriptPtr,&local_124);
         break;
       case PARM_TYPE_COUNTER_SET:
@@ -112,7 +112,7 @@ void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdPar
           *(char *)((int)pSVar6 + 1) = cVar2;
           pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
         } while (cVar2 != '\0');
-        local_124.type = 5;
+        local_124.type = XREF_COUNTER_SET;
         core_script_cpp_CScript_addEventXRef_FUN_00567510(g_CScriptPtr,&local_124);
         break;
       case PARM_TYPE_COUNTER_USED:
@@ -127,7 +127,7 @@ void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdPar
           *(char *)((int)pSVar6 + 1) = cVar2;
           pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
         } while (cVar2 != '\0');
-        local_124.type = 6;
+        local_124.type = XREF_COUNTER_USED;
         core_script_cpp_CScript_addEventXRef_FUN_00567510(g_CScriptPtr,&local_124);
         break;
       case PARM_TYPE_EVENT_COMMAND:
@@ -146,7 +146,7 @@ void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdPar
           *(char *)((int)pSVar6 + 1) = cVar2;
           pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
         } while (cVar2 != '\0');
-        local_124.type = 2;
+        local_124.type = XREF_PERSISTENT_EVENT;
         core_script_cpp_CScript_addEventXRef_FUN_00567510(g_CScriptPtr,&local_124);
         break;
       case PARM_TYPE_GAME_FLAG_NAME:
@@ -161,7 +161,7 @@ void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdPar
           *(char *)((int)pSVar6 + 1) = cVar2;
           pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
         } while (cVar2 != '\0');
-        local_124.type = 3;
+        local_124.type = XREF_GAME_FLAG;
         core_script_cpp_CScript_addEventXRef_FUN_00567510(g_CScriptPtr,&local_124);
         break;
       case PARM_TYPE_TIMER:
@@ -176,7 +176,7 @@ void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdPar
           *(char *)((int)pSVar6 + 1) = cVar2;
           pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
         } while (cVar2 != '\0');
-        local_124.type = 4;
+        local_124.type = XREF_TIMER;
         core_script_cpp_CScript_addEventXRef_FUN_00567510(g_CScriptPtr,&local_124);
         break;
       case PARM_TYPE_INI_VARIABLE:
@@ -191,7 +191,7 @@ void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdPar
           pSVar5->name[1] = cVar2;
           pSVar5 = (SScriptXRef *)(pSVar5->name + 2);
         } while (cVar2 != '\0');
-        local_124.type = 0xc;
+        local_124.type = XREF_INI_VARIABLE;
         core_script_cpp_CScript_addEventXRef_FUN_00567510(g_CScriptPtr,&local_124);
       }
       iVar3 = iVar3 + 1;

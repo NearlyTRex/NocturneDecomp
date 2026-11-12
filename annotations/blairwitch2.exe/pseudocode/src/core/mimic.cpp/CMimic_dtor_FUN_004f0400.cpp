@@ -34,7 +34,7 @@ CMimic * core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint flags)
   iVar2 = core_necklace_cpp_FUN_005ade00
                     (pCVar1[-0x4e].models[1].textures[0xc].texture_name + 0x30,0);
   iVar2 = core_armour_cpp_FUN_0040f2b0(iVar2 + -0xd1a0,0);
-  iVar2 = unkaddr_0059d350_cpp_FUN_0059df70(iVar2 + -0x9c8,0);
+  iVar2 = core_muzzle_cpp_FUN_0059df70(iVar2 + -0x9c8,0);
   pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar2 + -0x34c),0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[6] + 0x10),0);

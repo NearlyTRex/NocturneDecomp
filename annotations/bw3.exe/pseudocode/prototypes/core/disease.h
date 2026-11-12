@@ -32,3 +32,7 @@ void __cdecl CDisease::setup(CDisease *this_ptr);
 // Original: core_disease.cpp_CDisease_dtor_FUN_0045c110
 // Address: 0045c110
 CDisease * CDisease::dtor(CDisease *this_ptr,uint flags);
+
+// Original: core_disease.cpp_FUN_0045c160
+// Address: 0045c160
+void FUN_0045c160(void);

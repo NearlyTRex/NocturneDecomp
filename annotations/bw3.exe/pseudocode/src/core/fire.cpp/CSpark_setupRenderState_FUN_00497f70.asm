@@ -35,7 +35,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
-;   engine_matrix.c_FUN_0046d230
+;   engine_drender.cpp_FUN_0046d230
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
     PUSH ESI                            ; 00498000 | DAT_01bdd7e4
     LEA ESI,[ESP + 0x54]                ; 00498001
     MOV dword ptr [0x01c73694],ECX      ; 00498005 | DAT_01c73694
-    CALL engine_matrix.c_FUN_0046d230   ; 0049800b
-        ;   XREF to: 0046d230 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d230()
+    CALL engine_drender.cpp_FUN_0046d230 ; 0049800b
+        ;   XREF to: 0046d230 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d230()
     LEA ESI,[ESP + 0x54]                ; 00498010
     ADD ESP,0x4                         ; 00498014
     MOVSD ES:EDI,ESI                    ; 00498017 | DAT_01c73658

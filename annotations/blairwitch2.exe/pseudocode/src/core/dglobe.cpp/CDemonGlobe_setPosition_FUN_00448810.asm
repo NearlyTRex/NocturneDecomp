@@ -15,9 +15,9 @@
 ;   core_fire.cpp_FUN_004969a0 at 004969b4
 ;   core_flame.cpp_FUN_004a0590 at 004a05cb
 ;   core_keyactor.cpp_CKeyActor_process_FUN_004df1c0 at 004df1ea
+;   core_mine.cpp_FUN_005ad940 at 005ad99a
+;   core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360 at 0059d374
 ;   core_shadow.cpp_FUN_0053c500 at 0053cfe3
-;   core_spirmine.cpp_FUN_005ad940 at 005ad99a
-;   core_weapon.cpp_CWeapon_updateLighting_FUN_00589fd0 at 0058a1ad
 ;   ... and 1 more
 ;
 ; Referenced Globals:

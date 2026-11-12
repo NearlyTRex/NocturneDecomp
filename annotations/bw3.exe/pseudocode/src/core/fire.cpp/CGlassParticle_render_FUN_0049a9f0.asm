@@ -27,7 +27,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_pop_FUN_0046d080
 ;   engine_special.cpp_FUN_005632a3
 ;
 ; *****************************************************************************
@@ -188,8 +188,8 @@ section .text
     ADD ESP,0x8                         ; 0049abea
     MOV EDI,dword ptr [0x005f2afc]      ; 0049abed | DAT_005f2afc
     PUSH EDI                            ; 0049abf3 | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0049abf4
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0049abf4
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0049abf9
     ADD ESP,0x58                        ; 0049abfc
     POP EBP                             ; 0049abff

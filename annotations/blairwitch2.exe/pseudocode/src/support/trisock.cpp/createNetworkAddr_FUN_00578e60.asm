@@ -4,10 +4,11 @@
 ; void __cdecl support_trisock_cpp_createNetworkAddr_FUN_00578e60(undefined4 *param_1,undefined4 param_2,undefined2 param_3)
 ;
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_0050c280 at 0050cb2c
 ;   core_netgame.cpp_FUN_0050b420 at 0050b478
 ;   core_netgame.cpp_FUN_0050b4d0 at 0050b519
+;   support_trisock.cpp_FUN_00579890 at 00579973
 ;
 ; *****************************************************************************
 

@@ -60,9 +60,9 @@ int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00451aa0(CDemonL
 void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_00451b70(CVector3f *position,CVector3f *rotation,float fov,float falloff);
 void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(CDemonLight *this_ptr,float intensity);
 void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
-undefined4 * core_dlight_cpp_FUN_00452500(void);
-undefined4 * core_dlight_cpp_FUN_00452510(void);
-undefined4 * core_dlight_cpp_FUN_00452520(void);
+int * __cdecl core_dlight_cpp_assignInt_FUN_00452500(int *dest,int *src);
+int * __cdecl core_dlight_cpp_assignInt1_FUN_00452510(int *dest,int *src);
+int * __cdecl core_dlight_cpp_assignInt2_FUN_00452520(int *dest,int *src);
 void __cdecl core_dmodel_cpp_staticInit_FUN_00452530(void);
 void __cdecl core_dmodel_cpp_skipLines_FUN_00452560(_FILE *file_handle,int line_count);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(CKeyFramedModel *this_ptr);
@@ -161,7 +161,7 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004571f0(CDemonPart *thi
 void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004574e0(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00457640(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_004578a0(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
-int * engine_drender_cpp_FUN_004579c0(int param_1,int *param_2);
+SSoftwareEdge * __cdecl engine_drender_cpp_findEdgeByYStart_FUN_004579c0(int scanline_y,SSoftwareEdge *exclude_edge);
 void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00457a00(int *vertex_indices,int vertex_count);
 void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_00458080(CVector3i *vertex_indices,int vertex_count);
 void __cdecl core_dracbrid_cpp_staticInit_FUN_00458580(void);

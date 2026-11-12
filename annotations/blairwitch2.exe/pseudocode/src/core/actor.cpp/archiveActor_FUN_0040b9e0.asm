@@ -12,7 +12,7 @@
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0 at 0041c8af
 ;   core_chain.cpp_CChain_archive_FUN_005b5e10 at 005b5e52
 ;   core_charactr.cpp_CCharacter_archive_FUN_00422c30 at 00422d12
-;   core_conveyor.cpp_CConstruct_archive_FUN_00437b80 at 00437da0
+;   core_construc.cpp_CConstruct_archive_FUN_00437b80 at 00437da0
 ;   core_crate.cpp_CCrate_archive_FUN_0043a1d0 at 0043a20b
 ;   core_dest.cpp_CActorDestination_archive_FUN_00447450 at 0044749d
 ;   ... and 31 more

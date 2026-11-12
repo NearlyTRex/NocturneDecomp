@@ -31,15 +31,15 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
     *(int *)(&DAT_01c6b5d0 + iVar2) = (int)(0xffffffff / uVar1);
     iVar2 = iVar2 + 4;
   } while (uVar3 < 0x640);
-  unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_30);
+  support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_30);
   iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
                     (&local_30,&DAT_005b5030,"default.act",1);
   if (iVar2 == 0) {
-    unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_30,0);
+    support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_30,0);
     return;
   }
-  unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00(&local_30,(uint *)0x1c6b298,0x300);
-  unkafter_turret_cpp_CInStreamFile_close_FUN_00573db0(&local_30);
-  unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_30,0);
+  support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_30,(uint *)0x1c6b298,0x300);
+  support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_30);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_30,0);
   return;
 }

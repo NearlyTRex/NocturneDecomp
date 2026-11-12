@@ -8,7 +8,7 @@
 ;   core_actor.cpp_archivePartStatus_FUN_0040bba0 at 0040bbf2
 ;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 00419e79
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417d06
-;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 004432a0
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 004432a0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 at 0054eb16
 ;
 ; *****************************************************************************

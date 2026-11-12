@@ -6,7 +6,7 @@
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[14]:
+; XREF[15]:
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 004832c9
 ;   shape_edittool.cpp_FUN_0047a71e at 0047a767
 ;   shape_edittool.cpp_FUN_0047a770 at 0047a802
@@ -16,8 +16,8 @@
 ;   shape_edittool.cpp_FUN_0047e870 at 0047e9a3
 ;   shape_edittool.cpp_FUN_0047eff0 at 0047f0ab
 ;   shape_edittool.cpp_FUN_0047f210 at 0047f327
-;   shape_edittool.cpp_FUN_00480150 at 00480233
-;   ... and 4 more
+;   shape_edittool.cpp_FUN_0047fd00 at 0047fd93
+;   ... and 5 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ddfec

@@ -27,7 +27,7 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005723d0(CTerrain *this_ptr,in
   if (_DAT_02cfd8bc == 0) {
     return;
   }
-  engine_matrix_c_FUN_0046d1c0(DAT_005f2afc);
+  engine_drender_cpp_FUN_0046d1c0(DAT_005f2afc);
   local_38.x = local_2c;
   *(int *)((int)&local_38 + (uint)bVar2 * -8 + 4) = aiStack_28[(uint)bVar2 * -2];
   *(int *)((int)&local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =

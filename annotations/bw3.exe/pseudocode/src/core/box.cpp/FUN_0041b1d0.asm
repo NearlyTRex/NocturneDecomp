@@ -23,8 +23,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
 ;   core_box.cpp_CBox_setupCorners_FUN_0041ae00 at 0041b025
+;   core_box.cpp_FUN_0041b030 at 0041b189
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7371

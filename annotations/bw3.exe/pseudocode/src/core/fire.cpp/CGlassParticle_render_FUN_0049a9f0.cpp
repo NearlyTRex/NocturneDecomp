@@ -60,6 +60,6 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_0049a9f0(CGlassParticle *th
   DAT_0060b090 = (this_ptr->uv_v_per_vertex).z;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730(DAT_005f2afc,&SStack_68);
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   return;
 }

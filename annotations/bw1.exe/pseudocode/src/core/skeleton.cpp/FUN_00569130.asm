@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[60]:
+; XREF[61]:
 ;   core_batcreat.cpp_CBatCreature_getTargetPoints_FUN_00412600 at 00412629
 ;   core_batcreat.cpp_CBatCreature_processDamage_FUN_004123d0 at 0041242b
 ;   core_batman.cpp_CBatman_getTargetPoints_FUN_004141c0 at 004141e6
@@ -19,7 +19,7 @@
 ;   core_boneguy.cpp_CBoneGuy_getTargetPoints_FUN_0041d3b0 at 0041d3ec
 ;   core_bride.cpp_CBride_getTargetPoints_FUN_00424d60 at 00424d98
 ;   core_bride.cpp_CBride_processDamage_FUN_00424b10 at 00424b5a
-;   ... and 50 more
+;   ... and 51 more
 ;
 ; *****************************************************************************
 

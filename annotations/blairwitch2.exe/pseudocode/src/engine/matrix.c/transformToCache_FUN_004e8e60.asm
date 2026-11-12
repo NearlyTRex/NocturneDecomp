@@ -7,7 +7,8 @@
 ; int              Stack[0x4]:4   cacheIndex
 ; CVector3i *      Stack[0x8]:4   inputPoint
 ;
-; XREF[2]:
+; XREF[3]:
+;   shape_edittool.cpp_FUN_0047fd00 at 0047fdaf
 ;   shape_edittool.cpp_FUN_00480000 at 0048003e
 ;   shape_edittool.cpp_FUN_00480150 at 0048028d
 ;

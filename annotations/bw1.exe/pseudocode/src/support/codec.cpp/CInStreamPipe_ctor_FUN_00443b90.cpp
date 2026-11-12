@@ -13,7 +13,7 @@ CInStreamPipe * support_codec_cpp_CInStreamPipe_ctor_FUN_00443b90(CInStreamPipe 
 {
   CInStreamPipe *pCVar1;
   
-  pCVar1 = (CInStreamPipe *)unkaddr_0059f520_cpp_FUN_0059f540(this_ptr);
+  pCVar1 = (CInStreamPipe *)support_trstream_cpp_FUN_0059f540(this_ptr);
   pCVar1->vtable = &g_CInStreamPipeVTable;
   pCVar1->codec = (CCodec *)0x0;
   pCVar1->source = (void *)0x0;

@@ -31,12 +31,12 @@ void __cdecl core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy *thi
       pSVar5 = &this_ptr->state_machine;
       if (DAT_007bc038 < 2) {
         core_actor_cpp_archiveString_FUN_0040b730(local_214,"AIState");
-        unkaddr_0059d350_cpp_FUN_0059d8e0(pSVar5,local_214);
+        core_muzzle_cpp_FUN_0059d8e0(pSVar5,local_214);
         core_actor_cpp_archiveString_FUN_0040b730(local_214,"InitialAIState");
-        unkaddr_0059d350_cpp_FUN_0059d990(pSVar5,local_214);
+        core_muzzle_cpp_FUN_0059d990(pSVar5,local_214);
       }
       else if (DAT_007bc038 == 2) {
-        pcVar2 = (char *)unkaddr_0059d350_cpp_FUN_0059db70(pSVar5);
+        pcVar2 = (char *)core_muzzle_cpp_FUN_0059db70(pSVar5);
         pcVar6 = local_214;
         do {
           cVar1 = *pcVar2;
@@ -48,7 +48,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy *thi
           pcVar6 = pcVar6 + 2;
         } while (cVar1 != '\0');
         core_actor_cpp_archiveString_FUN_0040b730(local_214,"AIState");
-        pcVar2 = (char *)unkaddr_0059d350_cpp_FUN_0059db90(pSVar5);
+        pcVar2 = (char *)core_muzzle_cpp_FUN_0059db90(pSVar5);
         pcVar6 = local_214;
         do {
           cVar1 = *pcVar2;
@@ -127,7 +127,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy *thi
   }
   if (8 < g_CBasicEnemyClassVersion) {
     pSVar5 = &this_ptr->state_machine;
-    local_14 = unkaddr_0059d350_cpp_FUN_0059dc70(pSVar5);
+    local_14 = core_muzzle_cpp_FUN_0059dc70(pSVar5);
     core_actor_cpp_archiveInteger_FUN_0040b960(&local_14,"RefStateCount");
     iVar4 = 0;
     if (0 < local_14) {
@@ -136,10 +136,10 @@ void __cdecl core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy *thi
           if (DAT_007bc038 < 2) {
             core_actor_cpp_archiveString_FUN_0040b730(local_114,"RefStateIdentifier");
             core_actor_cpp_archiveString_FUN_0040b730(local_314,"RefState");
-            unkaddr_0059d350_cpp_FUN_0059d6f0(pSVar5,local_114,local_314);
+            core_muzzle_cpp_FUN_0059d6f0(pSVar5,local_114,local_314);
           }
           else if (DAT_007bc038 == 2) {
-            pcVar2 = (char *)unkaddr_0059d350_cpp_FUN_0059dc00(pSVar5,iVar4);
+            pcVar2 = (char *)core_muzzle_cpp_FUN_0059dc00(pSVar5,iVar4);
             pcVar6 = local_114;
             do {
               cVar1 = *pcVar2;
@@ -150,7 +150,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_archive_FUN_0059fc10(CBasicEnemy *thi
               pcVar6[1] = cVar1;
               pcVar6 = pcVar6 + 2;
             } while (cVar1 != '\0');
-            pcVar2 = (char *)unkaddr_0059d350_cpp_FUN_0059dbe0(pSVar5,iVar4);
+            pcVar2 = (char *)core_muzzle_cpp_FUN_0059dbe0(pSVar5,iVar4);
             pcVar6 = local_314;
             do {
               cVar1 = *pcVar2;

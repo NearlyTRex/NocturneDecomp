@@ -374,8 +374,8 @@ section .text
     MOV ECX,dword ptr [0x005f2afc]      ; 005368f6 | DAT_005f2afc
     PUSH 0x42000000                     ; 005368fc
     PUSH ECX                            ; 00536901 | DAT_01bdd7e4
-    CALL engine_matrix.c_FUN_0046d090   ; 00536902
-        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d090()
+    CALL engine_drender.cpp_FUN_0046d090 ; 00536902
+        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d090()
     ADD ESP,0x8                         ; 00536907
     LEA EAX,[EBP + -0x20]               ; 0053690a
     PUSH EAX                            ; 0053690d

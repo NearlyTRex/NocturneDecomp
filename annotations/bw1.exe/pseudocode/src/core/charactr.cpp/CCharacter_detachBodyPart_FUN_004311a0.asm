@@ -15,11 +15,11 @@
 ;   core_carved.cpp_FUN_0042b580 at 0042b6bc
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00430d90 at 00430e2e
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00448b70 at 00448c4d
+;   core_demnfolk.cpp_FUN_0045c4a0 at 0045c5dc
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004dd390 at 004dd4c1
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e05b0 at 004e06ec
 ;   core_imp.cpp_CImp_processDismemberment_FUN_004f3cb0 at 004f3df1
 ;   core_mobster.cpp_CMobster_processDismemberment_FUN_0051ec80 at 0051ee04
-;   core_moocow.cpp_FUN_00521810 at 005218bb
 ;   ... and 4 more
 ;
 ; Called Functions:

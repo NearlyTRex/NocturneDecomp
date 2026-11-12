@@ -14,7 +14,7 @@ void core_doc_cpp_FUN_00458320(int param_1)
   if (*(int *)(param_1 + 0x25608) != 0) {
     if (*(int *)(param_1 + 0x256a4) != 4) {
       shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                (g_CEditorToolsPtr,"?actionPending = %d\ndoc.cpp line %d" + 1);
+                (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d");
     }
     this_ptr = (CAmmoBox *)
                core_actor_cpp_castToClassHash_FUN_0040c8f0

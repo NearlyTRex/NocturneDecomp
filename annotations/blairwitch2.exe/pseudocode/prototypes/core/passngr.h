@@ -40,3 +40,15 @@ int __cdecl CPassenger::renderOpaque(CPassenger *this_ptr);
 // Original: core_passngr.cpp_CPassenger_archive_FUN_00511a70
 // Address: 00511a70
 void __cdecl CPassenger::archive(CPassenger *this_ptr);
+
+// Original: core_passngr.cpp_FUN_00511b50
+// Address: 00511b50
+void FUN_00511b50(void);
+
+// Original: core_passngr.cpp_FUN_00511b6e
+// Address: 00511b6e
+bool FUN_00511b6e(void);
+
+// Original: core_passngr.cpp_FUN_00511b8c
+// Address: 00511b8c
+void FUN_00511b8c(int param_1,undefined4 param_2,int param_3,undefined1 param_4);

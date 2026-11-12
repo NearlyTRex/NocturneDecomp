@@ -24,7 +24,7 @@ void __cdecl core_confedrt_cpp_CConfederate_setup_FUN_005a0a90(CConfederate *thi
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(pCVar1,"Bip01 Spine",1);
   this_ptr_00 = (this_ptr->base).base.base.base.particle_systems;
   this_ptr->spine_bone = iVar2;
-  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(this_ptr_00,0x100);
-  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_attach_FUN_005a8050(this_ptr_00,this_ptr);
+  core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(this_ptr_00,0x100);
+  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(this_ptr_00,this_ptr);
   return;
 }

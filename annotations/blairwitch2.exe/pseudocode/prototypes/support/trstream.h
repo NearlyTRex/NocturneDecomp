@@ -5,6 +5,62 @@
 // Function prototypes for support/trstream.cpp
 // Generated from Ghidra function signatures
 
+// Original: support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50
+// Address: 0057cd50
+CInStreamFile * CInStreamFile::ctor(CInStreamFile *this_ptr);
+
+// Original: support_trstream.cpp_CInStreamFile_ctorOpen_FUN_0057cdb0
+// Address: 0057cdb0
+undefined4 * __cdecl CInStreamFile::ctorOpen(CInStreamFile *this_ptr,LPCSTR param_2);
+
+// Original: support_trstream.cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20
+// Address: 0057ce20
+undefined4 * __cdecl CInStreamFile::ctorOpenInDirectory(CInStreamFile *this_ptr,undefined4 param_2,undefined4 param_3);
+
+// Original: support_trstream.cpp_CInStreamFile_copy_FUN_0057ce90
+// Address: 0057ce90
+CInStreamFile * CInStreamFile::copy(CInStreamFile *this_ptr,CInStreamFile *other);
+
+// Original: support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0
+// Address: 0057cec0
+CInStreamFile * CInStreamFile::dtor(CInStreamFile *this_ptr,uint flags);
+
+// Original: support_trstream.cpp_CInStreamFile_getChar_FUN_0057cf20
+// Address: 0057cf20
+int __cdecl CInStreamFile::getChar(CInStreamFile *this_ptr);
+
+// Original: support_trstream.cpp_CInStreamFile_ungetChar_FUN_0057cf40
+// Address: 0057cf40
+undefined4 __cdecl CInStreamFile::ungetChar(CInStreamFile *this_ptr,int param_2);
+
+// Original: support_trstream.cpp_CInStreamFile_peekChar_FUN_0057cf80
+// Address: 0057cf80
+uint __cdecl CInStreamFile::peekChar(CInStreamFile *this_ptr);
+
+// Original: support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0
+// Address: 0057cfe0
+int __cdecl CInStreamFile::read(CInStreamFile *this_ptr,undefined4 *param_2,uint param_3);
+
+// Original: support_trstream.cpp_CInStreamFile_seek_FUN_0057d0c0
+// Address: 0057d0c0
+undefined4 __cdecl CInStreamFile::seek(CInStreamFile *this_ptr,int param_2,uint param_3);
+
+// Original: support_trstream.cpp_CInStreamFile_tell_FUN_0057d110
+// Address: 0057d110
+undefined4 __cdecl CInStreamFile::tell(CInStreamFile *this_ptr);
+
+// Original: support_trstream.cpp_CInStreamFile_isOpen_FUN_0057d130
+// Address: 0057d130
+bool __cdecl CInStreamFile::isOpen(CInStreamFile *this_ptr);
+
+// Original: support_trstream.cpp_CInStreamFile_isEof_FUN_0057d150
+// Address: 0057d150
+undefined4 __cdecl CInStreamFile::isEof(CInStreamFile *this_ptr);
+
+// Original: support_trstream.cpp_CInStreamFile_close_FUN_0057d180
+// Address: 0057d180
+undefined4 __cdecl CInStreamFile::close(CInStreamFile *this_ptr);
+
 // Original: support_trstream.cpp_FUN_0057d1d0
 // Address: 0057d1d0
 void FUN_0057d1d0(int param_1);

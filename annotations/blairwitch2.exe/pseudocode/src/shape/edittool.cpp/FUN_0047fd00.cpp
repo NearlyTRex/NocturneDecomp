@@ -1,6 +1,6 @@
 // Name: shape_edittool.cpp_FUN_0047fd00
 // Address: 0047fd00
-// Address Range: [[0047fd00, 0047fd0a]]
+// Address Range: [[0047fd00, 0047ff4a]]
 // Convention: unknown
 // Signature: void shape_edittool_cpp_FUN_0047fd00(undefined4 param_1,float param_2,undefined4 param_3)
 
@@ -19,14 +19,14 @@ void shape_edittool_cpp_FUN_0047fd00(uint param_1,float param_2,uint param_3)
   byte bVar6;
   float10 fVar7;
   uint uStackY_84;
-  byte *puStackY_80;
+  uint uStackY_80;
   uint uStackY_7c;
-  byte *puStackY_78;
+  uint uStackY_78;
   uint auStackY_74 [8];
   uint auStackY_54 [2];
   uint auStackY_4c [2];
   uint uStackY_44;
-  byte *puStackY_40;
+  uint uStackY_40;
   int iStack_14;
   
   bVar6 = 0;
@@ -36,10 +36,10 @@ void shape_edittool_cpp_FUN_0047fd00(uint param_1,float param_2,uint param_3)
     core_main_c_FUN_004e4500();
   }
   _DAT_01c25f78 = _DAT_01c25590->max_char_width;
-  puStackY_40 = &UNK_0047fd31;
+  uStackY_40 = 0x47fd31;
   _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   iVar2 = _DAT_01c25f84;
-  fVar7 = (float10)param_2 * (float10)dRam005d24df;
+  fVar7 = (float10)param_2 * (float10)_DAT_005d24df;
   round();
   iStack_14 = (int)ROUND(fVar7);
   uVar1 = param_3;
@@ -48,7 +48,7 @@ void shape_edittool_cpp_FUN_0047fd00(uint param_1,float param_2,uint param_3)
     uVar1 = _DAT_01c35e60;
   }
   _DAT_01c35e60 = uVar1;
-  puStackY_40 = &UNK_0047fdb4;
+  uStackY_40 = 0x47fdb4;
   engine_matrix_c_transformToCache_FUN_004e8e60(0,(CVector3i *)&stack0xffffffe0);
   iStack_14 = 0;
   engine_matrix_c_transformToCache_FUN_004e8e60(1,(CVector3i *)&stack0xffffffe8);
@@ -82,7 +82,7 @@ void shape_edittool_cpp_FUN_0047fd00(uint param_1,float param_2,uint param_3)
     puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
     puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
-  puStackY_80 = &UNK_0047fe46;
+  uStackY_80 = 0x47fe46;
   engine_3d_c_clipAndDrawLine2D_FUN_00407cc0();
   engine_matrix_c_transformToCache_FUN_004e8e60(3,(CVector3i *)&stack0xfffffff8);
   puVar4 = (uint *)&DAT_006220a4;
@@ -100,7 +100,7 @@ void shape_edittool_cpp_FUN_0047fd00(uint param_1,float param_2,uint param_3)
     puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
     puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
-  puStackY_78 = &UNK_0047fe97;
+  uStackY_78 = 0x47fe97;
   engine_3d_c_clipAndDrawLine2D_FUN_00407cc0();
   iVar2 = 0;
   do {

@@ -6,6 +6,7 @@
 ;
 ; XREF[10]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418ac7
+;   core_doc.cpp_FUN_0045bdc0 at 0045c889
 ;   core_event.cpp_FUN_00489670 at 0048a20d
 ;   core_hero.cpp_FUN_004cff50 at 004cff70
 ;   core_icepick.cpp_CIcePick_processMotionEvents_FUN_004d6140 at 004d61fe
@@ -14,7 +15,6 @@
 ;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160 at 00583369
 ;   core_vehicle.cpp_CVehicle_process_FUN_00583f20 at 0058470b
 ;   core_zombie.cpp_CZombie_process_FUN_00595f30 at 0059646d
-;   unkafter_stranger.cpp_FUN_0045bdc0 at 0045c889
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005ccf20

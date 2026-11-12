@@ -53,10 +53,6 @@ void FUN_00461c02(void);
 // Address: 00461e10
 void FUN_00461e10(int param_1,int param_2);
 
-// Original: core_dpart.cpp_FUN_00461e62
-// Address: 00461e62
-void FUN_00461e62(void);
-
 // Original: core_dpart.cpp_FUN_00461f2e
 // Address: 00461f2e
 int * FUN_00461f2e(int param_1,int *param_2);

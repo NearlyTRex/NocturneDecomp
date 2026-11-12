@@ -25,8 +25,8 @@
 ;   core_fire.cpp_loadLightningBoltAssets_FUN_0049aab0
 ;   core_fire.cpp_loadRockAssets_FUN_00496610
 ;   core_fire.cpp_loadStakeAssets_FUN_00494130
+;   core_muzzle.cpp_FUN_0059d5f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-;   unkaddr_0059d350.cpp_FUN_0059d5f0
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
         ;   XREF to: 0049aab0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_loadLightningBoltAssets_FUN_0049aab0()
     CALL core_fire.cpp_loadDebrisAssets_FUN_00498c90 ; 0049d220
         ;   XREF to: 00498c90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_loadDebrisAssets_FUN_00498c90()
-    CALL unkaddr_0059d350.cpp_FUN_0059d5f0 ; 0049d225
-        ;   XREF to: 0059d5f0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d5f0()
+    CALL core_muzzle.cpp_FUN_0059d5f0   ; 0049d225
+        ;   XREF to: 0059d5f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d5f0()
     POP EBX                             ; 0049d22a
     RET                                 ; 0049d22b
 

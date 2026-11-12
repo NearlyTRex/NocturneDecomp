@@ -5,6 +5,7 @@
 ;
 ;
 ; XREF[26]:
+;   core_dcube.cpp_FUN_00446f4e at 00446f63
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be074
 ;   core_game.cpp_CGame_process_FUN_004bd570 at 004bd6ef
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be454
@@ -14,7 +15,6 @@
 ;   core_menu.cpp_FUN_004ebf10 at 004ec9b8
 ;   core_menu.cpp_FUN_004eed60 at 004efdd9
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb82d
-;   core_menu.cpp_showCalibrationTestPattern_FUN_004ebce0 at 004ebe11
 ;   ... and 16 more
 ;
 ; Referenced Globals:

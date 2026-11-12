@@ -18,7 +18,7 @@
 ;   core_bride.cpp_CBride_ctor_FUN_004238c0 at 004238c6
 ;   core_bugs.cpp_CBugs_ctor_FUN_00424f80 at 00424f88
 ;   core_carved.cpp_CCarved_ctor_FUN_004286d0 at 004286d9
-;   core_constrct.cpp_CConstruct_ctor_FUN_00445820 at 00445828
+;   core_construc.cpp_CConstruct_ctor_FUN_00445820 at 00445828
 ;   ... and 25 more
 ;
 ; Referenced Globals:

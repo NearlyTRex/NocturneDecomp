@@ -15,11 +15,11 @@
 ;   core_doc.cpp_FUN_004555c0 at 004559c6
 ;   core_doc.cpp_FUN_004568e0 at 00456be5
 ;   core_doc.cpp_FUN_004583ec at 0045840f
+;   core_doc.cpp_FUN_0045bdc0 at 0045c253
+;   core_doc.cpp_FUN_0045d2c0 at 0045d3ca
+;   core_doc.cpp_FUN_0045df30 at 0045df89
 ;   core_scat.cpp_CScat_renderOpaque_FUN_0051fa90 at 0051faed
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_0056e4d0 at 0056e708
-;   core_stranger.cpp_CStranger_handleFireButton_FUN_0056e850 at 0056e94b
-;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00567880 at 00567cdd
-;   core_stranger.cpp_CStranger_renderOpaque_FUN_0056b770 at 0056b95d
 ;   ... and 9 more
 ;
 ; *****************************************************************************

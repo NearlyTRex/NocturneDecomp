@@ -238,7 +238,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(CGame *this_ptr)
             }
             if (iVar3 == 4) {
               pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
-              iVar5 = shape_edittool_cpp_FUN_00470230(g_CEditorToolsPtr,pcVar2);
+              iVar5 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00470230
+                                (g_CEditorToolsPtr,pcVar2);
               if (iVar5 != 0) {
                 shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(&local_290,0);
                 goto LAB_0049dec1;

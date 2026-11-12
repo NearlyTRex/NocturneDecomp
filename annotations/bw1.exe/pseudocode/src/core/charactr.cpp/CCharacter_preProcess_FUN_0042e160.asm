@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[43]:
+; XREF[45]:
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f66b
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 0041180c
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00412e09
@@ -18,9 +18,9 @@
 ;   core_bird.cpp_CBird_process_FUN_00415340 at 004155a2
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c14c
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429866
-;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 00446728
-;   core_cow.cpp_CZombieCow_process_FUN_00448570 at 004487a7
-;   ... and 33 more
+;   core_colonel.cpp_CColonel_process_FUN_00444550 at 00444804
+;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 00446728
+;   ... and 35 more
 ;
 ; Called Functions:
 ;   core_charactr.cpp_FUN_00433d50

@@ -21,7 +21,7 @@ CConfederateZombie * core_confzomb_cpp_CConfederateZombie_ctor_FUN_005a1b40(CCon
   char *pcVar6;
   
   this_ptr_00 = (CConfederateZombie *)
-                unkafter_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
+                core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
   (this_ptr_00->base).base.base.base.vtable._ub = &g_CConfederateZombieVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(this_ptr_00->base).base.base.model,"conzombie_david.dfm");
@@ -52,10 +52,10 @@ CConfederateZombie * core_confzomb_cpp_CConfederateZombie_ctor_FUN_005a1b40(CCon
   } while (cVar2 != '\0');
   core_confzomb_cpp_CConfederateZombie_processStates_FUN_005a1e10(this_ptr_00,0.0,0);
   pSVar1 = &(this_ptr_00->base).state_machine;
-  unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete");
-  unkaddr_0059d350_cpp_FUN_0059d990(pSVar1);
+  core_muzzle_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete");
+  core_muzzle_cpp_FUN_0059d990(pSVar1);
   pcVar6 = (this_ptr_00->base).hit_sound;
-  unkaddr_0059d350_cpp_FUN_0059dc80();
+  core_muzzle_cpp_FUN_0059dc80();
   (this_ptr_00->base).burn_timer = 0.0;
   (this_ptr_00->base).base.base.blood_type = BLOOD_TYPE_ICHOR;
   pcVar5 = "confedhit0?.wav";

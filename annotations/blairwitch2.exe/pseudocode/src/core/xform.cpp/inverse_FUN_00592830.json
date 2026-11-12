@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 196,
     "complexity_score": 639,
-    "cross_reference_count": 6,
+    "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
@@ -53,6 +53,12 @@
       "addr": "005726c0",
       "from_addr": "005729df",
       "name": "core_tentacle.cpp_CTentacle_process_FUN_005726c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00592760",
+      "from_addr": "00592774",
+      "name": "core_xform.cpp_FUN_00592760",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -107,7 +113,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "00428cb3",
@@ -217,6 +223,20 @@
         "method": "add_esp",
         "reg_params": [
           "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00592774",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_FUN_00592760",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
           "EDX"
         ],
         "stack_bytes": 4,
@@ -869,7 +889,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "call_site_count": 8,
+      "call_site_count": 9,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 3,

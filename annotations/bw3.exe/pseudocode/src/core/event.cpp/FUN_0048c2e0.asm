@@ -308,6 +308,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
+;   core_bmppuzzl.cpp_FUN_004119a0
 ;   core_charactr.cpp_FUN_004319d0
 ;   core_door.cpp_FUN_00463d30
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
@@ -320,7 +321,6 @@
 ;   core_event.cpp_CEventList_validateCondition_FUN_00491b00
 ;   core_event.cpp_extractParenArg_FUN_0048bc10
 ;   core_event.cpp_formatEventError_FUN_0048b7f0
-;   core_event.cpp_FUN_004946f0
 ;   ... and 58 more
 ;
 ; *****************************************************************************
@@ -1085,14 +1085,14 @@ section .text
         ;   XREF to: 0048c9a2 (CONDITIONAL_JUMP)  ; LAB_0048c9a2
     PUSH 0x0                            ; 0048c997
     PUSH EBX                            ; 0048c999
-    CALL unkafter_alphabit.cpp_FUN_004119a0 ; 0048c99a
-        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_004119a0()
+    CALL core_bmppuzzl.cpp_FUN_004119a0 ; 0048c99a
+        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_004119a0()
     ADD ESP,0x8                         ; 0048c99f
     PUSH 0x1                            ; 0048c9a2
         ;   Label: LAB_0048c9a2
     PUSH EDI                            ; 0048c9a4
-    CALL unkafter_alphabit.cpp_FUN_004119a0 ; 0048c9a5
-        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_004119a0()
+    CALL core_bmppuzzl.cpp_FUN_004119a0 ; 0048c9a5
+        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_004119a0()
     ADD ESP,0x8                         ; 0048c9aa
     JMP 0x0048c7d2                      ; 0048c9ad
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6

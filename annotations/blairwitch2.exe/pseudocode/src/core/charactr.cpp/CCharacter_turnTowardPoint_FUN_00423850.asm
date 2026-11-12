@@ -23,12 +23,12 @@
 ;   core_confedrt.cpp_FUN_005a1180 at 005a11d2
 ;   core_confzomb.cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130 at 005a215c
 ;   core_confzomb.cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40 at 005a2026
-;   core_dog1.cpp_CDog_processLeapAttackState_FUN_005ac200 at 005ac272
-;   core_dog1.cpp_CDog_processMeleeAttackState_FUN_005abfa0 at 005abfd0
+;   core_fforest.cpp_FUN_005a2ac0 at 005a2af8
 ;   core_ghostchi.cpp_CGhostChild_processMeleeAttackState_FUN_005a9580 at 005a95d4
-;   core_hag.cpp_CHag_processMeleeAttackState_FUN_005aab50 at 005aaba3
 ;   core_hand.cpp_CHand_processMeleeAttackState_FUN_005a9ed0 at 005a9f05
 ;   core_hand.cpp_CHand_processSleepingState_FUN_005a9ff0 at 005aa0fa
+;   core_helldog.cpp_CDog_processLeapAttackState_FUN_005ac200 at 005ac272
+;   core_helldog.cpp_CDog_processMeleeAttackState_FUN_005abfa0 at 005abfd0
 ;   ... and 9 more
 ;
 ; Called Functions:

@@ -15,12 +15,12 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
+;   core_enemy.cpp_FUN_0048a1b0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   core_event.cpp_FUN_004946f0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
-;   unkafter_enemy.cpp_FUN_0048a1b0
 ;
 ; *****************************************************************************
 
@@ -137,8 +137,8 @@ section .text
         ;   XREF to: 005a0450 (CONDITIONAL_JUMP)  ; LAB_005a0450
     PUSH dword ptr [EBP + 0x4]          ; 005a0426
     PUSH EBX                            ; 005a0429
-    CALL unkafter_enemy.cpp_FUN_0048a1b0 ; 005a042a
-        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_enemy.cpp_FUN_0048a1b0()
+    CALL core_enemy.cpp_FUN_0048a1b0    ; 005a042a
+        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0048a1b0()
     ADD ESP,0x8                         ; 005a042f
     TEST EAX,EAX                        ; 005a0432
     JZ 0x005a03d3                       ; 005a0434

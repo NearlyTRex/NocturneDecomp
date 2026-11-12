@@ -21,10 +21,10 @@ int engine_font_cpp_FUN_004b0a20(CBitFont *param_1,byte *param_2,int param_3,int
   
   if ((param_1->use_3d_rendering != 0) && (_DAT_01c6cee8 != 0)) {
     if (param_1->win_font_enabled == 0) {
-      iVar1 = unkafter_font_cpp_FUN_004b33d0(param_1,param_2,param_3,param_4,param_5);
+      iVar1 = engine_font_cpp_FUN_004b33d0(param_1,param_2,param_3,param_4,param_5);
     }
     else {
-      iVar1 = unkafter_palette_cpp_FUN_00509bc0
+      iVar1 = engine_palette_cpp_FUN_00509bc0
                         (param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);
     }
     return iVar1;
@@ -68,9 +68,9 @@ LAB_004b0ac4:
       if (pbVar4 != (byte *)0x0) {
         *pbVar4 = 0;
       }
-      unkafter_palette_cpp_FUN_00509bc0
+      engine_palette_cpp_FUN_00509bc0
                 (param_1->win_font_helper,pbVar3,param_3,param_4,param_5,param_6);
-      unkafter_palette_cpp_FUN_00509d90(param_1->win_font_helper);
+      engine_palette_cpp_FUN_00509d90(param_1->win_font_helper);
       if (pbVar4 == (byte *)0x0) {
         return 0;
       }

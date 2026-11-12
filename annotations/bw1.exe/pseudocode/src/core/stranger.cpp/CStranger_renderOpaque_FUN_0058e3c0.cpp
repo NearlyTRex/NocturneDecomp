@@ -215,7 +215,7 @@ LAB_0058e657:
               (DAT_00612560,&CStack_c0,pCVar8);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
               (&(apCStack_38[5]->base).model,0.0,-1);
-    engine_matrix_c_pop_FUN_004839a0();
+    engine_drender_cpp_pop_FUN_004839a0();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
   }
   if ((((this_ptr->base).base.model.part_data.visibility_flags[_DAT_02c83658] == 0) &&

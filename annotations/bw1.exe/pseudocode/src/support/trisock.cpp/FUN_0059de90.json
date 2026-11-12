@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 10,
     "complexity_score": 56,
-    "cross_reference_count": 2,
+    "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -20,6 +20,18 @@
       "addr": "0059ddc0",
       "from_addr": "0059ddc8",
       "name": "support_trisock.cpp_FUN_0059ddc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059de00",
+      "from_addr": "0059de06",
+      "name": "support_trisock.cpp_FUN_0059de00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059ed20",
+      "from_addr": "0059ed81",
+      "name": "support_trisock.cpp_FUN_0059ed20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,7 +62,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 4,
     "call_sites": [
       {
         "call_addr": "0059ef6f",
@@ -75,6 +87,30 @@
         "reg_params": [
           "EBX"
         ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0059de06",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0059de00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0059ed81",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0059ed20",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
@@ -139,7 +175,7 @@
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 2,
+      "call_site_count": 4,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 2,

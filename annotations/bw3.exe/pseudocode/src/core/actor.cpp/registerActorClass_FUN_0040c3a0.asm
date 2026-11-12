@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   version
 ; CDemonActorType * Stack[0x18]:4   parent_class_info
 ;
-; XREF[104]:
+; XREF[105]:
 ;   core_actor.cpp_staticInit_FUN_004080e0 at 004080f5
 ;   core_ammo.cpp_staticInit_FUN_0040dda0 at 0040ddbb
 ;   core_ammobox.cpp_staticInit_FUN_0040e560 at 0040e57b
@@ -22,7 +22,7 @@
 ;   core_battery.cpp_staticInit_FUN_0040f440 at 0040f45b
 ;   core_bindevil.cpp_staticInit_FUN_0040f720 at 0040f73b
 ;   core_bird.cpp_staticInit_FUN_0040f990 at 0040f9ab
-;   ... and 94 more
+;   ... and 95 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005b5daf

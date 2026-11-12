@@ -127,7 +127,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00476070(CDem
   _DAT_01c0b7ac = 0;
   _DAT_01c0b7b0 = 0;
   _DAT_01c0b7b4 = 0;
-  engine_matrix_c_FUN_0046d1a0(0x01BDD7E4);
+  engine_drender_cpp_FUN_0046d1a0(0x01BDD7E4);
   local_138 = local_15c;
   local_134[(uint)bVar9 * -2] = *(int *)(&stack0xfffffea8 + (uint)bVar9 * -8);
   local_134[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =

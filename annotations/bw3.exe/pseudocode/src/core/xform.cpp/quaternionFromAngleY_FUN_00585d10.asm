@@ -17,7 +17,7 @@
 ;   core_prye.cpp_FUN_0051e6d0 at 0051ebd9
 ;   core_prye.cpp_FUN_0051ee10 at 0051ee54
 ;   core_skeleton.cpp_FUN_0054dfd0 at 0054e0e0
-;   core_thehand.cpp_CTheHand_process_FUN_0056c140 at 0056c813
+;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c813
 ;   core_zombiepriest.cpp_FUN_0058e8d0 at 0058ebde
 ;
 ; Referenced Globals:

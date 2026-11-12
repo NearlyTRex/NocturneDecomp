@@ -25,7 +25,7 @@ CBiggs * core_biggs_cpp_CBiggs_dtor_FUN_00415410(CBiggs *this_ptr,uint flags)
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_005b6e80(&this_ptr->morph,0);
   iVar2 = core_armour_cpp_FUN_0040f2b0(pCVar1[-0x12].models[1].textures[8].texture_name + 4,0);
-  iVar2 = unkaddr_0059d350_cpp_FUN_0059df70(iVar2 + -0x9c8,0);
+  iVar2 = core_muzzle_cpp_FUN_0059df70(iVar2 + -0x9c8,0);
   pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar2 + -0x34c),0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[6] + 0x10),0);

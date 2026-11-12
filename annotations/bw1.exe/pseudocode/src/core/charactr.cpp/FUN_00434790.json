@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 271,
     "complexity_score": 921,
-    "cross_reference_count": 8,
+    "cross_reference_count": 9,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "moderate",
@@ -68,6 +68,12 @@
       "addr": "00593150",
       "from_addr": "005931ca",
       "name": "core_svetlana.cpp_CSvetlana_process_FUN_00593150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b8440",
+      "from_addr": "005b849b",
+      "name": "core_yow.cpp_FUN_005b8440",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -200,7 +206,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "00469744",
@@ -294,9 +300,22 @@
         "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
+      },
+      {
+        "call_addr": "005b849b",
+        "call_type": "direct",
+        "caller": "core_yow.cpp_FUN_005b8440",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 2,
@@ -1083,7 +1102,7 @@
       "type": "pointer_cast"
     },
     {
-      "call_site_count": 8,
+      "call_site_count": 9,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 2,

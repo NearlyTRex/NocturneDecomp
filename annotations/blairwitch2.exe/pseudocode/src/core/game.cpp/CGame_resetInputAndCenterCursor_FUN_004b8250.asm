@@ -13,7 +13,7 @@
 ;   core_script.cpp_CScript_executeInitSection_FUN_00522200 at 0052229d
 ;   core_script.cpp_CScript_process_FUN_005216e0 at 00521763
 ;   core_script.cpp_FUN_00522350 at 005265ff
-;   unkaddr_0059aa80.cpp_FUN_0059ab70 at 0059ab9e
+;   core_zombie.cpp_FUN_0059ab70 at 0059ab9e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141b8

@@ -158,7 +158,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_0044d060(CVector3f *pos
     } while (iVar2 < 8);
     iVar1 = iVar1 + 1;
   } while (iVar1 < 8);
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
   return;
 }

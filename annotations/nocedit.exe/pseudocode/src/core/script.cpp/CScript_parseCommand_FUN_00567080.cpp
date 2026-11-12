@@ -69,7 +69,7 @@ void __cdecl core_script_cpp_CScript_parseCommand_FUN_00567080(CScript *this_ptr
     pSVar5->name[1] = bVar2;
     pSVar5 = (SScriptXRef *)(pSVar5->name + 2);
   } while (bVar2 != 0);
-  local_120.type = 1;
+  local_120.type = XREF_EVENT_RAISED;
   core_script_cpp_CScript_addEventXRef_FUN_00567510(this_ptr,&local_120);
   return;
 }

@@ -4,7 +4,7 @@
 ; undefined4 __cdecl engine_3d_c_isVisiblePlane_FUN_00403920(int *param_1)
 ;
 ;
-; XREF[80]:
+; XREF[81]:
 ;   core_box.cpp_FUN_0041dcd0 at 0041de3c
 ;   core_dpart.cpp_FUN_0046682e at 004668b5
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407860 at 004079a0
@@ -15,7 +15,7 @@
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406c50 at 00406c6a
 ;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0 at 004054ee
 ;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00405600 at 0040560e
-;   ... and 70 more
+;   ... and 71 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007303e8

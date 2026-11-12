@@ -29,7 +29,7 @@ void shape_spotview_cpp_FUN_005847e0(int param_1)
   uint uStack_10;
   
   bVar1 = 0;
-  engine_matrix_c_FUN_004839b0(DAT_00612560,0x41e00000);
+  engine_drender_cpp_FUN_004839b0(DAT_00612560,0x41e00000);
   CStack_54.x = *(float *)(param_1 + 0x24);
   CStack_54.z = 0.0;
   CStack_54.y = *(float *)(param_1 + 0x28);

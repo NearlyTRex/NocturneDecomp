@@ -1,10 +1,30 @@
 {
+ "bw1.exe": {
+  "delete": [
+   {"name": "COptimize", "basis": "no RTTI ($COptimize$$ is nocedit's only), vtable or method; the five getters named for it are CAudioRecPuzzle's vtable slots 0x40-0x50 (004175a0-004175e0)."},
+   {"name": "CLeakChecker", "basis": "no RTTI ($CLeakChecker$$ is nocedit's only), vtable or method; memdbg.cpp is not compiled in."},
+   {"name": "CActorProperty", "basis": "editor type: no RTTI, method or string (nocedit's CActorPropertyList::snag message is absent); no BW struct holds one."},
+   {"name": "SScriptXRef", "basis": "editor type: BW's CScript has no cross-reference fields and no code reads one."}
+  ]
+ },
+ "blairwitch2.exe": {
+  "delete": [
+   {"name": "COptimize", "basis": "no RTTI ($COptimize$$ is nocedit's only), vtable or method; the getters named for it are CAudioRecPuzzle's vtable slots 0x40-0x50 (0059bdf0-0059be30)."},
+   {"name": "CComplexPolygon", "basis": "no method: 0059be30 is CAudioRecPuzzle_getTransportState and 005a8130 CSimpleParticleSystem_isActive, both body-matched to its getters."},
+   {"name": "SExpandedEdge", "basis": "only CComplexPolygon_getExpandedEdges returned one, and that function is CAudioRecPuzzle_getTransportState."},
+   {"name": "CActorProperty", "basis": "editor type: no RTTI, method or string (nocedit's CActorPropertyList::snag message is absent); no BW struct holds one."},
+   {"name": "SScriptXRef", "basis": "editor type: BW's CScript has no cross-reference fields and no code reads one."}
+  ]
+ },
  "bw3.exe": {
   "delete": [
    {"name": "CMobster", "basis": "no RTTI, vtable, factory or method; only mobster-die/hit wav names remain. The one function named for it is CZombiePriest_startFiringAttack 0058f4a0."},
    {"name": "CStranger", "basis": "no RTTI, vtable, factory or method; the name remains only in the hero-name string table at file offset 0x1c2f4d. CPrye replaces it; the one function typed for it is CPrye_updateArmRecoilBlend 00524170."},
    {"name": "CSuccubus", "basis": "no RTTI, vtable, factory, method or string."},
-   {"name": "CTentacle", "basis": "no RTTI, vtable, factory or method; the name remains only as the isOfClass argument in CCarved, CDemnfolk and CZombie isGrabbable."}
+   {"name": "CTentacle", "basis": "no RTTI, vtable, factory or method; the name remains only as the isOfClass argument in CCarved, CDemnfolk and CZombie isGrabbable."},
+   {"name": "COptimize", "basis": "no RTTI ($COptimize$$ is nocedit's only), vtable or method; the five getters named for it are CAudioRecPuzzle's vtable slots 0x40-0x50 (004131b0-004131f0)."},
+   {"name": "CActorProperty", "basis": "editor type: no RTTI, method or string (nocedit's CActorPropertyList::snag message is absent); no BW struct holds one."},
+   {"name": "SScriptXRef", "basis": "editor type: BW's CScript has no cross-reference fields and no code reads one."}
   ]
  }
 }

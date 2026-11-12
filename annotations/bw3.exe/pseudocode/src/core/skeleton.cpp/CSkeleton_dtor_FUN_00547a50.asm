@@ -8,9 +8,9 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
+;   core_morph.cpp_FUN_004fb1f0
 ;   core_skeleton.cpp_FUN_00547b90
 ;   crt_unknown.c_FUN_005a5ff7
-;   unkafter_morph.cpp_FUN_004fb1f0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH 0x1                            ; 00547a69
     MOV ECX,dword ptr [ESP + 0x8]       ; 00547a6b
     PUSH ECX                            ; 00547a6f
-    CALL unkafter_morph.cpp_FUN_004fb1f0 ; 00547a70
-        ;   XREF to: 004fb1f0 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_004fb1f0()
+    CALL core_morph.cpp_FUN_004fb1f0    ; 00547a70
+        ;   XREF to: 004fb1f0 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_004fb1f0()
     ADD ESP,0x8                         ; 00547a75
     RET                                 ; 00547a78
 

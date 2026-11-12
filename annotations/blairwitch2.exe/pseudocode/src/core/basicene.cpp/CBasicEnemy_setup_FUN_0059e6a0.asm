@@ -10,12 +10,12 @@
 ;   core_basicnpc.cpp_CBasicNPC_setup_FUN_005a4870 at 005a4875
 ;   core_confedrt.cpp_CConfederate_setup_FUN_005a0a90 at 005a0a97
 ;   core_confzomb.cpp_CConfederateZombie_setup_FUN_005a1d90 at 005a1d97
-;   core_dog1.cpp_CDog_setup_FUN_005abdd0 at 005abddd
+;   core_fforest.cpp_CTwigZombie_setup_FUN_005a2820 at 005a2829
 ;   core_ghostchi.cpp_CGhostChild_setup_FUN_005a9440 at 005a9447
-;   core_hag.cpp_CHag_setup_FUN_005aa8c0 at 005aa8c7
 ;   core_hand.cpp_CHand_setup_FUN_005a9dd0 at 005a9dd6
+;   core_helldog.cpp_CDog_setup_FUN_005abdd0 at 005abddd
+;   core_hellhag.cpp_CHag_setup_FUN_005aa8c0 at 005aa8c7
 ;   core_schngeis.cpp_CSchnellGeist_setup_FUN_005a3140 at 005a3147
-;   core_twigzomb.cpp_CTwigZombie_setup_FUN_005a2820 at 005a2829
 ;   core_unionzom.cpp_CUnionZombie_setup_FUN_005a3f40 at 005a3f47
 ;
 ; Referenced Globals:
@@ -25,13 +25,13 @@
 ;   undefined4 DAT_01d192f8
 ;
 ; Called Functions:
+;   core_basicene.cpp_FUN_005a01d0
 ;   core_cloth.cpp_CClothList_process_FUN_005b1780
 ;   core_enemy.cpp_CEnemy_setup_FUN_00487eb0
+;   core_muzzle.cpp_FUN_0059da70
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
-;   unkaddr_0059d350.cpp_FUN_0059da70
-;   unkafter_basicene.cpp_FUN_005a01d0
 ;
 ; *****************************************************************************
 
@@ -89,8 +89,8 @@ section .text
     LEA EAX,[EBX + 0x10af8]             ; 0059e735
         ;   Label: LAB_0059e735
     PUSH EAX                            ; 0059e73b
-    CALL unkaddr_0059d350.cpp_FUN_0059da70 ; 0059e73c
-        ;   XREF to: 0059da70 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059da70()
+    CALL core_muzzle.cpp_FUN_0059da70   ; 0059e73c
+        ;   XREF to: 0059da70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059da70()
     ADD ESP,0x4                         ; 0059e741
     LEA EAX,[EBX + 0x2b4]               ; 0059e744
     PUSH EAX                            ; 0059e74a
@@ -122,8 +122,8 @@ section .text
         ;   Label: LAB_0059e78b
     PUSH EAX                            ; 0059e791
     PUSH EBX                            ; 0059e792
-    CALL unkafter_basicene.cpp_FUN_005a01d0 ; 0059e793
-        ;   XREF to: 005a01d0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_005a01d0()
+    CALL core_basicene.cpp_FUN_005a01d0 ; 0059e793
+        ;   XREF to: 005a01d0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_005a01d0()
     ADD ESP,0x8                         ; 0059e798
     JMP 0x0059e735                      ; 0059e79b
         ;   XREF to: 0059e735 (UNCONDITIONAL_JUMP)  ; LAB_0059e735

@@ -50,7 +50,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004b1870(CExplosion *this_ptr)
             (DAT_00612560,(SMRGLTextureBasic *)(&DAT_0061c524 + local_18 * 0x30));
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
             (DAT_00612560,&this_ptr->position);
-  engine_matrix_c_FUN_00483b70(DAT_00612560);
+  engine_drender_cpp_FUN_00483b70(DAT_00612560);
   translation = (CVector3f *)0x0;
   local_60.x = local_30;
   *(int *)((int)&local_60 + (uint)bVar2 * -8 + 4) = aiStack_2c[(uint)bVar2 * -2];
@@ -118,6 +118,6 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004b1870(CExplosion *this_ptr)
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(this_ptr_00,1);
   engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170(DAT_00612560,&local_94,0x123);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
-  engine_matrix_c_pop_FUN_004839a0();
+  engine_drender_cpp_pop_FUN_004839a0();
   return;
 }

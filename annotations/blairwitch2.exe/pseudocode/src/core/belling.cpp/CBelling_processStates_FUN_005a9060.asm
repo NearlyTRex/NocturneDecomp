@@ -12,7 +12,7 @@
 ;   core_belling.cpp_CBelling_ctor_FUN_005a8f80 at 005a9018
 ;
 ; Called Functions:
-;   unkafter_basicene.cpp_FUN_0059e8c0
+;   core_basicene.cpp_FUN_0059e8c0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 005a906a
     PUSH dword ptr [ESP + 0xc]          ; 005a906e
     PUSH EDX                            ; 005a9072
-    CALL unkafter_basicene.cpp_FUN_0059e8c0 ; 005a9073
-        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e8c0()
+    CALL core_basicene.cpp_FUN_0059e8c0 ; 005a9073
+        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059e8c0()
     ADD ESP,0xc                         ; 005a9078
     RET                                 ; 005a907b
 

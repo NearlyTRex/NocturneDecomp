@@ -9,6 +9,7 @@
 ; CVector3i *      Stack[0xc]:4   rotation
 ;
 ; XREF[11]:
+;   core_bwspart.cpp_FUN_005a86a0 at 005a8765
 ;   core_fire.cpp_CFirefly_render_FUN_00495150 at 0049542b
 ;   core_fire.cpp_CLeaf_render_FUN_004968d0 at 004968fc
 ;   core_fire.cpp_CPopcorn_render_FUN_0049b9d0 at 0049ba85
@@ -18,7 +19,6 @@
 ;   core_fire.cpp_FUN_00495ca0 at 00495d00
 ;   core_fire.cpp_FUN_004966a0 at 004966cc
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_0049f850 at 0049f9a1
-;   core_gore.cpp_FUN_004c7580 at 004c7603
 ;   ... and 1 more
 ;
 ; Called Functions:

@@ -18,10 +18,10 @@
 ;   void* g_SPageResourceBitmapVTable = 004a8710
 ;
 ; Called Functions:
+;   core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d2e0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
 ;   engine_dosio.cpp_splitPath_FUN_00465e50
-;   unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     SUB ESP,0x100                       ; 004a8682
     MOV EBX,dword ptr [ESP + 0x10c]     ; 004a8688
     PUSH EBX                            ; 004a868f
-    CALL unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370 ; 004a8690
-        ;   XREF to: 004a8370 (UNCONDITIONAL_CALL)  ; void unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370(SPageResource * this_ptr)
+    CALL core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370 ; 004a8690
+        ;   XREF to: 004a8370 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370(SPageResource * this_ptr)
     ADD ESP,0x4                         ; 004a8695
     ADD EAX,0x18                        ; 004a8698
     PUSH EAX                            ; 004a869b

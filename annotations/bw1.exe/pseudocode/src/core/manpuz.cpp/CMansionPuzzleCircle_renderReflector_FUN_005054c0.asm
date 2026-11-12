@@ -18,7 +18,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;
 ; *****************************************************************************
 
@@ -82,8 +82,8 @@ section .text
     ADD ESP,0xc                         ; 00505546
     MOV EBX,dword ptr [0x00612560]      ; 00505549 | DAT_00612560
     PUSH EBX                            ; 0050554f
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 00505550
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 00505550
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 00505555
     MOV ESP,EBP                         ; 00505558
     POP EBP                             ; 0050555a

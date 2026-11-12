@@ -12,7 +12,7 @@
 ; undefined        Stack[-0x24]:1  local_24
 ; undefined        Stack[-0x18]:1  local_18
 ;
-; XREF[42]:
+; XREF[43]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411cf2
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413601
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041dda7
@@ -23,7 +23,7 @@
 ;   core_doc.cpp_FUN_00453250 at 004532f5
 ;   core_doc.cpp_FUN_00453cc0 at 00453ce2
 ;   core_doc.cpp_FUN_00453d80 at 00453ece
-;   ... and 32 more
+;   ... and 33 more
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890

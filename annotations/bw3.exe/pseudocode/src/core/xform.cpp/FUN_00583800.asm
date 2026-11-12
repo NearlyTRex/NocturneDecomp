@@ -25,7 +25,7 @@
 ;   core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004dfa70 at 004dfabb
 ;   core_platfrm.cpp_CPlatform_attachActor_FUN_00512aa0 at 00512b28
 ;   core_platfrm.cpp_CPlatform_process_FUN_005114f0 at 00511701
-;   core_thehand.cpp_CTheHand_process_FUN_0056c140 at 0056c3a4
+;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c3a4
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_0045bef0

@@ -1,0 +1,252 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 45,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 3,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "004417f0",
+      "from_addr": "004417f5",
+      "name": "support_codec.cpp_CInStreamPipe_ctor_FUN_004417f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573a10",
+      "from_addr": "00573a15",
+      "name": "support_trstream.cpp_CInStreamFile_copy_FUN_00573a10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573920",
+      "from_addr": "00573927",
+      "name": "support_trstream.cpp_CInStreamFile_ctorOpen_FUN_00573920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005738c0",
+      "from_addr": "005738c5",
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005741a0",
+      "from_addr": "005741a5",
+      "name": "support_trstream.cpp_CInStreamMemory_copy_FUN_005741a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00574150",
+      "from_addr": "00574157",
+      "name": "support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_00574150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00574120",
+      "from_addr": "00574125",
+      "name": "support_trstream.cpp_CInStreamMemory_ctor_FUN_00574120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573990",
+      "from_addr": "00573998",
+      "name": "support_trstream.cpp_FUN_00573990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00572530",
+    "address_range": [
+      [
+        "00572530",
+        "0057253a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "support_trstream.cpp_FUN_00572530",
+    "signature": "void support_trstream_cpp_FUN_00572530(undefined4 *param_1)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005e5a54",
+      "name": "PTR_support_trstream.cpp_FUN_00572540_005e5a54",
+      "type": "undefined1*",
+      "value": "00572540"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "005738c5",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00574157",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_00574150",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00573927",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_CInStreamFile_ctorOpen_FUN_00573920",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004417f5",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_CInStreamPipe_ctor_FUN_004417f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00573a15",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_CInStreamFile_copy_FUN_00573a10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00574125",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_CInStreamMemory_ctor_FUN_00574120",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005741a5",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_CInStreamMemory_copy_FUN_005741a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00573998",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_FUN_00573990",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.6666666666666665,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 2,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 8
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void support_trstream_cpp_FUN_00572530(uint *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = &PTR_support_trstream_cpp_FUN_00572540_005e5a54;",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 8,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

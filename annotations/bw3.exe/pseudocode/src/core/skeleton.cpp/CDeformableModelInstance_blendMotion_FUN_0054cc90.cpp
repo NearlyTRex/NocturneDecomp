@@ -15,8 +15,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
   CVector3f *pCVar2;
   float fVar3;
   CQuaternion4f *pCVar4;
+  EBoneUpdateMode current_bone_index;
   CSkeleton *this_ptr_00;
-  int hierarchy_distance;
   int iVar5;
   float *pfVar6;
   float *pfVar7;
@@ -89,7 +89,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
   int local_28;
   int local_24;
   int local_20;
-  int local_1c;
+  EBoneUpdateMode local_1c;
   float local_18;
   
   bVar8 = 0;
@@ -99,18 +99,18 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
                &stack0xfffff680);
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr);
     local_1c = this_ptr->bone_update_mode;
-    if (local_1c == 0) {
+    if (local_1c == BONE_UPDATE_SIMPLE_FLAT) {
       if (0 < this_ptr_00->bone_count) {
         local_3c = (this_ptr->bone_transform).pose_data.bone_rotations;
         local_44 = this_ptr;
         do {
-          iVar5 = local_1c;
-          hierarchy_distance =
-               core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_005481d0
-                         (this_ptr_00,local_1c,bone_index);
-          if (-1 < hierarchy_distance) {
-            local_18 = (*callback_func)(iVar5,bone_index,blend_weight,hierarchy_distance,this_ptr);
-            core_skeleton_cpp_FUN_00548140(this_ptr_00,iVar5,local_5c,local_54,local_980,local_18);
+          current_bone_index = local_1c;
+          iVar5 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_005481d0
+                            (this_ptr_00,local_1c,bone_index);
+          if (-1 < iVar5) {
+            local_18 = (*callback_func)(current_bone_index,bone_index,blend_weight,iVar5,this_ptr);
+            core_skeleton_cpp_FUN_00548140
+                      (this_ptr_00,current_bone_index,local_5c,local_54,local_980,local_18);
             pCVar4 = local_3c;
             pfVar6 = afStack_1a8 + 0x13;
             afStack_15c[0] = (float)uStack_13c;
@@ -128,13 +128,13 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
             pfVar7[(uint)bVar8 * -2 + 1] =
                  (afStack_1a8 + (uint)bVar8 * -2 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1];
           }
-          local_1c = local_1c + 1;
+          local_1c = local_1c + BONE_UPDATE_HIERARCHICAL_ACCUM;
           local_44 = (CDeformableModelInstance *)&(local_44->base).tween_speed;
           local_3c = local_3c + 1;
-        } while (local_1c < this_ptr_00->bone_count);
+        } while ((int)local_1c < this_ptr_00->bone_count);
       }
     }
-    else if (local_1c == 1) {
+    else if (local_1c == BONE_UPDATE_HIERARCHICAL_ACCUM) {
       local_20 = 0;
       if (0 < this_ptr_00->bone_count) {
         local_40 = 0;

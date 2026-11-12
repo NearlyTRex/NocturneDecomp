@@ -12,3 +12,35 @@ void staticInit(void);
 // Original: core_spawner.cpp_factoryFuncSpawner_FUN_00563870
 // Address: 00563870
 void factoryFuncSpawner(void);
+
+// Original: core_spawner.cpp_CSpawner_getActorType_FUN_00563890
+// Address: 00563890
+CDemonActorType * CSpawner::getActorType(CSpawner *this_ptr);
+
+// Original: core_spawner.cpp_CSpawner_ctor_FUN_005638a0
+// Address: 005638a0
+CSpawner * CSpawner::ctor(CSpawner *this_ptr);
+
+// Original: core_spawner.cpp_FUN_00563910
+// Address: 00563910
+void FUN_00563910(CDemonActor *param_1);
+
+// Original: core_spawner.cpp_FUN_00563970
+// Address: 00563970
+void FUN_00563970(int param_1,float param_2);
+
+// Original: core_spawner.cpp_FUN_00563e40
+// Address: 00563e40
+undefined4 FUN_00563e40(void);
+
+// Original: core_spawner.cpp_FUN_00563e50
+// Address: 00563e50
+void FUN_00563e50(CDemonActor *param_1);
+
+// Original: core_spawner.cpp_CSpawner_dtor_FUN_00563f70
+// Address: 00563f70
+CSpawner * CSpawner::dtor(CSpawner *this_ptr,uint flags);
+
+// Original: core_spawner.cpp_FUN_00564010
+// Address: 00564010
+void __cdecl FUN_00564010(void);

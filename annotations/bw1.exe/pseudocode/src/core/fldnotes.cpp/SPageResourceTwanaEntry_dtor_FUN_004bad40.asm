@@ -13,11 +13,11 @@
 ;   undefined4 DAT_01cc4200
 ;
 ; Called Functions:
+;   core_fldnotes.cpp_FUN_004bf6c0
+;   core_fldnotes.cpp_SPageResource_dtor_FUN_004ba760
 ;   crt_memory.c___vec_delete_FUN_005c030f
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c0344
-;   unkaddr_004b9ab0.cpp_SPageResource_dtor_FUN_004ba760
-;   unkafter_fldnotes.cpp_FUN_004bf6c0
 ;
 ; *****************************************************************************
 
@@ -40,14 +40,14 @@ section .text
         ;   Label: LAB_004bad65
     ADD EBX,0xdc                        ; 004bad67
     PUSH EBX                            ; 004bad6d
-    CALL unkafter_fldnotes.cpp_FUN_004bf6c0 ; 004bad6e
-        ;   XREF to: 004bf6c0 (UNCONDITIONAL_CALL)  ; undefined unkafter_fldnotes.cpp_FUN_004bf6c0()
+    CALL core_fldnotes.cpp_FUN_004bf6c0 ; 004bad6e
+        ;   XREF to: 004bf6c0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bf6c0()
     ADD ESP,0x8                         ; 004bad73
     PUSH 0x1                            ; 004bad76
     LEA EBX,[EAX + 0xffffff24]          ; 004bad78
     PUSH EBX                            ; 004bad7e
-    CALL unkaddr_004b9ab0.cpp_SPageResource_dtor_FUN_004ba760 ; 004bad7f
-        ;   XREF to: 004ba760 (UNCONDITIONAL_CALL)  ; int unkaddr_004b9ab0.cpp_SPageResource_dtor_FUN_004ba760(SPageResource * this_ptr)
+    CALL core_fldnotes.cpp_SPageResource_dtor_FUN_004ba760 ; 004bad7f
+        ;   XREF to: 004ba760 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SPageResource_dtor_FUN_004ba760(SPageResource * this_ptr)
     ADD ESP,0x8                         ; 004bad84
     MOV DL,byte ptr [ESP + 0xc]         ; 004bad87
     MOV EBX,EAX                         ; 004bad8b

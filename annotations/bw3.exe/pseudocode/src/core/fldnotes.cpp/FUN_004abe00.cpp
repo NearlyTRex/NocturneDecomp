@@ -178,12 +178,12 @@ LAB_004abf0c:
     _DAT_01d19f78 = 0;
     return;
   }
-  iVar5 = unkaddr_004a76f0_cpp_FUN_004a80d0(_DAT_01c5fadc,_DAT_01c5fae0);
+  iVar5 = core_flashlit_cpp_FUN_004a80d0(_DAT_01c5fadc,_DAT_01c5fae0);
   if (-1 < iVar5) {
-    unkaddr_004a76f0_cpp_FUN_004a7a70(iVar5 * 0x2e4 + 0x1d0d254);
+    core_flashlit_cpp_FUN_004a7a70(iVar5 * 0x2e4 + 0x1d0d254);
     local_18 = 1;
   }
-  iVar5 = unkaddr_004a76f0_cpp_FUN_004a8180(_DAT_01c5fadc,_DAT_01c5fae0);
+  iVar5 = core_flashlit_cpp_FUN_004a8180(_DAT_01c5fadc,_DAT_01c5fae0);
   if (iVar5 != 0) {
     local_18 = 1;
   }
@@ -212,7 +212,7 @@ LAB_004abf0c:
       (_DAT_01c5fadc < 0x00000262 + CAlphaBitmap_01d19cc4.width)) &&
      (_DAT_01c5fae0 < 0x000001C0 + CAlphaBitmap_01d19cc4.height)) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c17b4);
-    unkaddr_004a76f0_cpp_FUN_004a7a70(pcVar3);
+    core_flashlit_cpp_FUN_004a7a70(pcVar3);
     local_18 = 1;
   }
   if (-1 < DAT_005fe3a8) {

@@ -14,7 +14,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418af0
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041dce1
 ;   core_colonel.cpp_CColonel_process_FUN_00435830 at 004358d6
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 00437357
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 00437357
 ;   ... and 26 more
 ;
 ; Referenced Globals:

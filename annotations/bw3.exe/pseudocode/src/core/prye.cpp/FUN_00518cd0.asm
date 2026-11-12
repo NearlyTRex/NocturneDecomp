@@ -1171,8 +1171,8 @@ section .text
         ;   XREF to: 00519b92 (CONDITIONAL_JUMP)  ; LAB_00519b92
     PUSH dword ptr [EBP + 0x18]         ; 00519b86
     PUSH EBX                            ; 00519b89
-    CALL unkafter_prye.cpp_FUN_00524940 ; 00519b8a
-        ;   XREF to: 00524940 (UNCONDITIONAL_CALL)  ; undefined unkafter_prye.cpp_FUN_00524940()
+    CALL core_prye.cpp_FUN_00524940     ; 00519b8a
+        ;   XREF to: 00524940 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00524940()
     ADD ESP,0x8                         ; 00519b8f
     CMP dword ptr [EBX + 0x20bcc],0x0   ; 00519b92
         ;   Label: LAB_00519b92
@@ -1218,8 +1218,8 @@ section .text
     JZ 0x00519c2a                       ; 00519c1f
         ;   XREF to: 00519c2a (CONDITIONAL_JUMP)  ; LAB_00519c2a
     PUSH EBX                            ; 00519c21
-    CALL unkafter_prye.cpp_FUN_00525930 ; 00519c22
-        ;   XREF to: 00525930 (UNCONDITIONAL_CALL)  ; undefined unkafter_prye.cpp_FUN_00525930()
+    CALL core_prye.cpp_FUN_00525930     ; 00519c22
+        ;   XREF to: 00525930 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00525930()
     ADD ESP,0x4                         ; 00519c27
     PUSH EBX                            ; 00519c2a
         ;   Label: LAB_00519c2a
@@ -1266,8 +1266,8 @@ section .text
         ;   XREF to: 00524170 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye * this_ptr, float delta_time, int is_weapon_active)
     ADD ESP,0xc                         ; 00519c93
     PUSH EBX                            ; 00519c96
-    CALL unkafter_prye.cpp_FUN_00526cf0 ; 00519c97
-        ;   XREF to: 00526cf0 (UNCONDITIONAL_CALL)  ; undefined unkafter_prye.cpp_FUN_00526cf0()
+    CALL core_prye.cpp_FUN_00526cf0     ; 00519c97
+        ;   XREF to: 00526cf0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00526cf0()
     ADD ESP,0x4                         ; 00519c9c
     PUSH dword ptr [EBP + 0x18]         ; 00519c9f
     PUSH EBX                            ; 00519ca2
@@ -1402,8 +1402,8 @@ section .text
     ADD ESP,0xc                         ; 00519e4a
     PUSH dword ptr [EBP + 0x18]         ; 00519e4d
     PUSH EBX                            ; 00519e50
-    CALL unkafter_prye.cpp_FUN_005263c0 ; 00519e51
-        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; undefined unkafter_prye.cpp_FUN_005263c0()
+    CALL core_prye.cpp_FUN_005263c0     ; 00519e51
+        ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_005263c0()
     ADD ESP,0x8                         ; 00519e56
     LEA EAX,[EBX + 0x206e8]             ; 00519e59
     PUSH EAX                            ; 00519e5f
@@ -1412,8 +1412,8 @@ section .text
     ADD ESP,0x4                         ; 00519e65
     PUSH dword ptr [EBP + 0x18]         ; 00519e68
     PUSH EBX                            ; 00519e6b
-    CALL unkafter_prye.cpp_FUN_00526dc0 ; 00519e6c
-        ;   XREF to: 00526dc0 (UNCONDITIONAL_CALL)  ; undefined unkafter_prye.cpp_FUN_00526dc0()
+    CALL core_prye.cpp_FUN_00526dc0     ; 00519e6c
+        ;   XREF to: 00526dc0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00526dc0()
     ADD ESP,0x8                         ; 00519e71
     MOV EDX,dword ptr [0x007e1a50]      ; 00519e74 | DAT_007e1a50
     PUSH EDX                            ; 00519e7a

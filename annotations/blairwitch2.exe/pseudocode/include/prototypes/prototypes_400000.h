@@ -63,6 +63,7 @@ void __cdecl engine_2d_c_drawTextMultilineColor_FUN_00401f50(char *text,int x_st
 void __cdecl engine_2d_c_drawText_FUN_00401fe0(char *text,int x,int y);
 void __cdecl engine_2d_c_drawString_FUN_00402090(char *text,int x_pos,int y_pos,int color);
 void __cdecl engine_2d_c_drawTextXY_FUN_00402140(int x,int y,char *text);
+void engine_2d_c_FUN_00402160(int param_1,int param_2,undefined4 param_3);
 void __cdecl engine_2d_c_drawTextColor_FUN_00402440(char *text,int x,int y);
 void __cdecl engine_2d_c_drawTextRightAlignedColor_FUN_00402540(char *text,int x,int y);
 void __cdecl engine_2d_c_drawTextCenteredAtColor_FUN_00402600(char *text,int x,int y);
@@ -184,6 +185,7 @@ void __cdecl engine_3d_c_flushRenderQueue_FUN_00407980(void);
 void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_004079f0(SMRGLHeaderExtended *mrgl);
 void __cdecl engine_3d_c_drawLine2DFromIndices_FUN_00407c40(int vertex_index1,int vertex_index2);
 void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407cc0(int param_1,int param_2,int param_3,undefined4 param_4,uint param_5);
+void engine_3d_c_FUN_00407f40(int param_1,int param_2);
 uint __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00407fc0(uint param_1,uint param_2,int param_3,undefined4 param_4,uint param_5);
 void __cdecl core_actor_cpp_staticInit_FUN_00408270(void);
 float core_actor_cpp_FUN_00408290(int param_1,float *param_2,float *param_3,float *param_4);
@@ -300,9 +302,10 @@ void __cdecl core_actor_cpp_crc32ProcessString_FUN_0040d2e0(uint *crc_state,char
 float core_actor_cpp_FUN_0040d320(float *param_1);
 CVector3f * core_actor_cpp_CVector3f_ctor_FUN_0040d340(CVector3f *this_ptr);
 void core_actor_cpp_FUN_0040d350(undefined4 *param_1,undefined4 *param_2);
+float core_actor_cpp_FUN_0040d370(float *param_1);
 void core_actor_cpp_FUN_0040d3c0(float *param_1,int *param_2);
 CVector3f * core_actor_cpp_CVector3f_dtor_FUN_0040d3f0(CVector3f *this_ptr,uint flags);
-void unkafter_actor_cpp_FUN_0040d400(undefined4 param_1);
+void core_actor_cpp_FUN_0040d400(undefined4 param_1);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(CAlphaBitmap *this_ptr);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440(CAlphaBitmap *this_ptr,uint flags);
 void engine_alphabit_cpp_FUN_0040d460(CAlphaBitmap *param_1,int param_2,int param_3);

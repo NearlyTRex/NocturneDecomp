@@ -13,7 +13,7 @@ void core_cross_cpp_staticInit_FUN_005a6970(void)
             (&g_CCrossClassInfo,"CCross",core_cross_cpp_factoryFuncCross_FUN_005a69c0,
              &g_CCrossClassVersion,1,&g_CMeleeClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c450
-            ((CDemonActorType *)0x2668738,"CSimpleCross",unkafter_cross_cpp_FUN_005a7950,
+            ((CDemonActorType *)0x2668738,"CSimpleCross",core_cross_cpp_FUN_005a7950,
              (int *)0x61ebb0,1,&g_CMeleeClassInfo);
   return;
 }

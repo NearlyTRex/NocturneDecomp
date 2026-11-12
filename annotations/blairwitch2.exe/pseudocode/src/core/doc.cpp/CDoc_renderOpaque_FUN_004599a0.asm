@@ -31,10 +31,10 @@
 ;   core_charactr.cpp_FUN_0042b620
 ;   core_cloth.cpp_CClothList_reset_FUN_005b1550
 ;   core_doc.cpp_FUN_004567c0
+;   core_doc.cpp_FUN_0045bba0
 ;   core_fire.cpp_CFireEffect_createLaserPath_FUN_0049d840
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
-;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -134,8 +134,8 @@ section .text
     PUSH EBX                            ; 00459a7a
     LEA ESI,[ESP + 0x3c]                ; 00459a7b
     LEA EDI,[ESP + 0x60]                ; 00459a7f
-    CALL unkafter_stranger.cpp_FUN_0045bba0 ; 00459a83
-        ;   XREF to: 0045bba0 (UNCONDITIONAL_CALL)  ; undefined unkafter_stranger.cpp_FUN_0045bba0()
+    CALL core_doc.cpp_FUN_0045bba0      ; 00459a83
+        ;   XREF to: 0045bba0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045bba0()
     ADD ESP,0x4                         ; 00459a88
     LEA EAX,[ESP + 0x5c]                ; 00459a8b
     LEA ESI,[ESP + 0x38]                ; 00459a8f

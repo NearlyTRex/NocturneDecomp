@@ -389,8 +389,8 @@ section .text
     ADD ESP,0xc                         ; 00471ebd
     MOV EDX,dword ptr [0x00612560]      ; 00471ec0 | DAT_00612560
     PUSH EDX                            ; 00471ec6 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 00471ec7
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 00471ec7
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 00471ecc
     PUSH EBX                            ; 00471ecf
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0 ; 00471ed0
@@ -515,8 +515,8 @@ section .text
     ADD ESP,0xc                         ; 00472048
     MOV EDX,dword ptr [0x00612560]      ; 0047204b | DAT_00612560
     PUSH EDX                            ; 00472051 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 00472052
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 00472052
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 00472057
     PUSH EBX                            ; 0047205a
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0 ; 0047205b

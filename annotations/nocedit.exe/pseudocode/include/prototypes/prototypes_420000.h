@@ -52,7 +52,7 @@ void __cdecl core_box_cpp_CBox_saveToFile_FUN_00420020(CBox *this_ptr,_FILE *fil
 void __cdecl core_box_cpp_CBox_setupVelocities_FUN_00420180(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity);
 SScrape * __cdecl core_box_cpp_SScrape_ctor_FUN_00420200(SScrape *this_ptr);
 SScrape * __cdecl core_box_cpp_SScrape_dtor_FUN_00420210(SScrape *this_ptr,uint flags);
-SScrape * __cdecl core_box_cpp_SScrape_arrdtor8_FUN_00420220(SScrape *objs,uint flags);
+SScrape * __cdecl core_box_cpp_SScrape_arrdtor8_FUN_00420220(SScrape *this_ptr,uint flags);
 void __cdecl core_box_cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D *this_ptr,CVector3f *point);
 CVector3f * __cdecl core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(CBoundingBox3D *this_ptr,CVector3f *out_point,uint corner_index);
 int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_00420320(CBoundingBox3D *this_ptr);
@@ -173,7 +173,7 @@ float __cdecl core_bugs_cpp_maxFloat_FUN_00427ba0(float a,float b);
 CBugs * __cdecl core_bugs_cpp_CBugs_dtor_FUN_00427bd0(CBugs *this_ptr,uint flags);
 SBug * __cdecl core_bugs_cpp_SBug_ctor_FUN_00427ca0(SBug *this_ptr);
 SBug * __cdecl core_bugs_cpp_SBug_dtor_FUN_00427cb0(SBug *this_ptr,uint flags);
-SBug * __cdecl core_bugs_cpp_SBug_arrdtor400_FUN_00427cc0(SBug *objs,uint flags);
+SBug * __cdecl core_bugs_cpp_SBug_arrdtor400_FUN_00427cc0(SBug *this_ptr,uint flags);
 CCameraView * __cdecl core_camview_cpp_CCameraView_ctor_FUN_00427ce0(CCameraView *this_ptr);
 CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_00427d00(CCameraView *this_ptr,uint flags);
 void __cdecl core_camview_cpp_CCameraView_setupPerspectiveAndFog_FUN_00427d20(CCameraView *this_ptr,CVector3f *position,SProjectedVertex *projected_vertex);

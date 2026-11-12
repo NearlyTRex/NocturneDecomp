@@ -14,10 +14,10 @@
 ;   core_batman.cpp_CBatman_dtor_FUN_00414320 at 00414345
 ;   core_beast.cpp_CBeast_dtor_FUN_00414900 at 00414925
 ;   core_biggs.cpp_CBiggs_dtor_FUN_004150f0 at 00415125
+;   core_bird.cpp_CBird_dtor_FUN_004159f0 at 00415a25
 ;   core_boneguy.cpp_CBoneGuy_dtor_FUN_0041d850 at 0041d875
 ;   core_bride.cpp_CBride_dtor_FUN_00424e90 at 00424eb5
 ;   core_bugs.cpp_CBugs_dtor_FUN_00428180 at 004281a5
-;   core_carved.cpp_CCarved_dtor_FUN_0042bf50 at 0042bf75
 ;   ... and 37 more
 ;
 ; Called Functions:

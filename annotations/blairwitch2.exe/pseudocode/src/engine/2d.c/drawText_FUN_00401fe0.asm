@@ -8,8 +8,10 @@
 ; int              Stack[0x8]:4   x
 ; int              Stack[0xc]:4   y
 ;
-; XREF[21]:
+; XREF[22]:
+;   core_basicene.cpp_FUN_0059fae0 at 0059fbe8
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0 at 004259e6
+;   core_dcube.cpp_FUN_00446f4e at 00446fae
 ;   core_event.cpp_CEventList_render_FUN_0048e490 at 0048e4e0
 ;   core_game.cpp_FUN_004b2a50 at 004b2d2d
 ;   core_game.cpp_FUN_004b5190 at 004b5711
@@ -17,9 +19,7 @@
 ;   core_menu.cpp_FUN_004eb490 at 004eb55f
 ;   core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3ce at 004eb46e
 ;   core_motion.cpp_FUN_005042e0 at 005043c6
-;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d003
-;   core_netgame.cpp_CNetGame_syncPlayers_FUN_0050bdb0 at 0050be7a
-;   ... and 11 more
+;   ... and 12 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060936c

@@ -19,8 +19,7 @@ CUnionZombie * core_unionzom_cpp_CUnionZombie_ctor_FUN_005a3d30(CUnionZombie *th
   char *pcVar4;
   char *pcVar5;
   
-  this_ptr_00 = (CUnionZombie *)unkafter_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base)
-  ;
+  this_ptr_00 = (CUnionZombie *)core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
   (this_ptr_00->base).base.base.base.vtable._ub = &g_CUnionZombieVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(this_ptr_00->base).base.base.model,"unzombie_brett.dfm");
@@ -51,9 +50,9 @@ CUnionZombie * core_unionzom_cpp_CUnionZombie_ctor_FUN_005a3d30(CUnionZombie *th
   core_unionzom_cpp_CUnionZombie_processStates_FUN_005a3fc0(this_ptr_00,0.0,0);
   pSVar1 = &(this_ptr_00->base).state_machine;
   (this_ptr_00->base).attack_range = _DAT_005ff540;
-  unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete");
-  unkaddr_0059d350_cpp_FUN_0059d990(pSVar1);
-  unkaddr_0059d350_cpp_FUN_0059dc80();
+  core_muzzle_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete");
+  core_muzzle_cpp_FUN_0059d990(pSVar1);
+  core_muzzle_cpp_FUN_0059dc80();
   (this_ptr_00->base).burn_timer = 0.0;
   (this_ptr_00->base).base.base.blood_type = BLOOD_TYPE_ICHOR;
   (this_ptr_00->base).can_burn = 1;

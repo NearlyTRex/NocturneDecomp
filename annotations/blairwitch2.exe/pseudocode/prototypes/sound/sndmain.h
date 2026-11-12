@@ -17,9 +17,13 @@ void FUN_0054b15e(undefined4 *param_1,int param_2,int param_3,int param_4);
 // Address: 0054b4a0
 undefined4 FUN_0054b4a0(int *param_1,int *param_2,int param_3);
 
-// Original: sound_sndmain.cpp_FUN_0054b940
-// Address: 0054b940
-void FUN_0054b940(void);
+// Original: sound_sndmain.cpp_FUN_0054b890
+// Address: 0054b890
+int FUN_0054b890(void);
+
+// Original: sound_sndmain.cpp_FUN_0054b8f0
+// Address: 0054b8f0
+CSfxSample * FUN_0054b8f0(void);
 
 // Original: sound_sndmain.cpp_FUN_0054b960
 // Address: 0054b960
@@ -425,6 +429,10 @@ undefined4 FUN_005516ce(char *param_1);
 // Address: 00551800
 int FUN_00551800(char *param_1,undefined4 param_2,undefined4 param_3);
 
+// Original: sound_sndmain.cpp_FUN_00551890
+// Address: 00551890
+void FUN_00551890(char *param_1);
+
 // Original: sound_sndmain.cpp_killSfxByName_FUN_005518e0
 // Address: 005518e0
 void __cdecl killSfxByName(char *sample_name);
@@ -436,6 +444,10 @@ void __cdecl setMemoryBudget(int min_bytes,int max_bytes);
 // Original: sound_sndmain.cpp_freeSampleByName_FUN_00551950
 // Address: 00551950
 void __cdecl freeSampleByName(char *sample_name,int kill_active_slots);
+
+// Original: sound_sndmain.cpp_isSampleLoaded_FUN_005519b0
+// Address: 005519b0
+bool isSampleLoaded(char *param_1);
 
 // Original: sound_sndmain.cpp_FUN_005519e0
 // Address: 005519e0
@@ -709,6 +721,6 @@ CSfxOptions * CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
 // Address: 00554aa0
 CSfxSample * CSfxSample::arrdtor64(CSfxSample *this_ptr,uint flags);
 
-// Original: sound_sndmain.cpp_shutdownSoundSystem_FUN_0055a160
-// Address: 0055a160
-void __cdecl shutdownSoundSystem(void);
+// Original: sound_sndmain.cpp_FUN_00554ac0
+// Address: 00554ac0
+void FUN_00554ac0(void);

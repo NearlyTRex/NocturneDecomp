@@ -97,6 +97,14 @@ void __cdecl CMorph::setupModelFromDeformable(CMorph *this_ptr,int model_index,C
 // Address: 00523100
 void __cdecl CMorph::setupModelFromKeyframed(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
 
+// Original: core_morph.cpp_CMorph_addTriPartToModel_FUN_00523140
+// Address: 00523140
+void __cdecl CMorph::addTriPartToModel(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8);
+
+// Original: core_morph.cpp_CMorph_addQuadPartToModel_FUN_00523190
+// Address: 00523190
+void __cdecl CMorph::addQuadPartToModel(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8);
+
 // Original: core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_00523210
 // Address: 00523210
 void __cdecl CMorph::addPartFromKeyframedModel(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
@@ -120,3 +128,15 @@ void __cdecl CMorph::render(CMorph *this_ptr,float morph_t);
 // Original: core_morph.cpp_FUN_00523880
 // Address: 00523880
 CMorphModel * __cdecl FUN_00523880(CMorphModel *this_ptr,uint flags);
+
+// Original: core_morph.cpp_FUN_005238c0
+// Address: 005238c0
+undefined4 * FUN_005238c0(undefined4 *param_1);
+
+// Original: core_morph.cpp_FUN_005238f0
+// Address: 005238f0
+undefined4 FUN_005238f0(undefined4 param_1);
+
+// Original: core_morph.cpp_FUN_00523910
+// Address: 00523910
+void FUN_00523910(undefined4 *param_1);

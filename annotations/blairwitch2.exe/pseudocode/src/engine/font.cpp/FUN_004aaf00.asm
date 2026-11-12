@@ -4,8 +4,9 @@
 ; int engine_font_cpp_FUN_004aaf00(int param_1,byte *param_2)
 ;
 ;
-; XREF[32]:
+; XREF[33]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00468b50 at 00468b60
+;   core_flashlit.cpp_FUN_004a1570 at 004a15ff
 ;   core_fldnotes.cpp_SPageResourceText_ctor_FUN_004a1f80 at 004a1fd5
 ;   core_fldnotes.cpp_STextView_appendWord_FUN_004a3160 at 004a31a9
 ;   core_fldnotes.cpp_STextView_wordFits_FUN_004a3100 at 004a3110
@@ -14,8 +15,7 @@
 ;   core_inv.cpp_FUN_004dadb0 at 004db236
 ;   core_inv.cpp_FUN_004dd9b0 at 004ddb5b
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e1aee
-;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4c35
-;   ... and 22 more
+;   ... and 23 more
 ;
 ; *****************************************************************************
 

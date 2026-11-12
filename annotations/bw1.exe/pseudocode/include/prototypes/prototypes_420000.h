@@ -168,6 +168,8 @@ void __cdecl core_charactr_cpp_CCharacter_markResourcesInUse_FUN_0042c7a0(CChara
 void core_charactr_cpp_FUN_0042c7d0(int param_1);
 void __cdecl core_charactr_cpp_CCharacter_archive_FUN_0042c7f0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_0042cbe0(CCharacter *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
+float core_charactr_cpp_clampFloat_FUN_0042cc30(float param_1,float param_2);
+float core_charactr_cpp_FUN_0042cc80(undefined4 param_1,float param_2);
 int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_0042ccf0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance);
 void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_0042d540(CCharacter *this_ptr,CVector3f *target);
 void __cdecl core_charactr_cpp_CCharacter_kill_FUN_0042d5f0(CCharacter *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);

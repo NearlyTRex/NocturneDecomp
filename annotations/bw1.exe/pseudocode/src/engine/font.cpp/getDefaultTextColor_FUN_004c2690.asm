@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480 at 00480514
-;   unkafter_palette.cpp_FUN_00531ee0 at 0053203b
+;   engine_palette.cpp_FUN_00531ee0 at 0053203b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0

@@ -12,18 +12,18 @@
 ; undefined        Stack[-0x120]:1  local_120
 ; undefined4       Stack[-0x20]:4  local_20
 ;
-; XREF[43]:
+; XREF[44]:
 ;   cockpit_ckptutil.c_FUN_00438bd0 at 00438bea
 ;   cockpit_ckptutil.c_FUN_00438e40 at 00438e65
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a071
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00538480 at 005384ab
+;   cockpit_pkbitmap.cpp_FUN_00538750 at 0053877a
 ;   cockpit_pkbmpset.cpp_FUN_00538b2e at 00538b7a
 ;   cockpit_pkbmpset.cpp_FUN_00538db0 at 00538dcf
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0 at 0043e6f3
 ;   core_course.cpp_CCourse_load_FUN_00447db0 at 00447dd3
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044fff0 at 00450090
-;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610 at 00453698
-;   ... and 33 more
+;   ... and 34 more
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005c12b0
@@ -31,7 +31,7 @@
 ;   crt_stdio.c_fseek_FUN_005c170c
 ;   engine_dosio.cpp_findFile_FUN_00478e90
 ;   engine_dosio.cpp_FUN_00478e20
-;   unkafter_dosio.cpp_FUN_004798c0
+;   engine_dosio.cpp_FUN_004798c0
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     JZ 0x004791d4                       ; 004791c9
         ;   XREF to: 004791d4 (CONDITIONAL_JUMP)  ; LAB_004791d4
     PUSH EDI                            ; 004791cb
-    CALL unkafter_dosio.cpp_FUN_004798c0 ; 004791cc
-        ;   XREF to: 004798c0 (UNCONDITIONAL_CALL)  ; undefined unkafter_dosio.cpp_FUN_004798c0()
+    CALL engine_dosio.cpp_FUN_004798c0  ; 004791cc
+        ;   XREF to: 004798c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_004798c0()
     ADD ESP,0x4                         ; 004791d1
     PUSH ESI                            ; 004791d4
         ;   Label: LAB_004791d4

@@ -45,8 +45,8 @@ int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_00492ef0(CFilmProj
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (DAT_0060b280,&CStack_1c,(CVector3f *)&DAT_0265370c);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0(&this_ptr->model,0.0,-1);
-  engine_matrix_c_pop_FUN_0046b4a0();
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
   return iVar1;
 }

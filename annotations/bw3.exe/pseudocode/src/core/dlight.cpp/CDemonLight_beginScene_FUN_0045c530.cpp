@@ -23,7 +23,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0045c530(CDemonLight *th
   }
   (this_ptr->base).scene_open_flag = 1;
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00448fa0(&this_ptr->base,skip_clear_buffers);
-  engine_matrix_c_FUN_0046d2f0
+  engine_drender_cpp_FUN_0046d2f0
             (DAT_005f2afc,0,0,this_ptr->shadow_map_width + -1,this_ptr->shadow_map_height + -1);
   (this_ptr->base).viewport_rect.y_min = this_ptr->shadow_map_width + -1;
   iVar2 = this_ptr->shadow_map_height;
@@ -35,7 +35,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0045c530(CDemonLight *th
   (this_ptr->base).skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
             (this_ptr_00,&(this_ptr->base).base.position.f);
-  engine_matrix_c_FUN_0046d090(DAT_005f2afc,(this_ptr->base).base.focal_length);
+  engine_drender_cpp_FUN_0046d090(DAT_005f2afc,(this_ptr->base).base.focal_length);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40
             (DAT_005f2afc,&(this_ptr->base).base.rotation_matrix);
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)(int)_DAT_01c6e300;

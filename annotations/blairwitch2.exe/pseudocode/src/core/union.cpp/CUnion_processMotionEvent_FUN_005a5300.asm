@@ -18,10 +18,10 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
+;   core_basicene.cpp_FUN_0059f740
 ;   core_basicnpc.cpp_CBasicNPC_processMotionEvent_FUN_005a48f0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;   core_union.cpp_FUN_005a5460
-;   unkafter_basicene.cpp_FUN_0059f740
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
     PUSH ESI                            ; 005a5342
     PUSH dword ptr [0x005ff8fc]         ; 005a5343 | DAT_005ff8fc
     PUSH EBX                            ; 005a5349
-    CALL unkafter_basicene.cpp_FUN_0059f740 ; 005a534a
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_FUN_0059f740 ; 005a534a
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
     ADD ESP,0x10                        ; 005a534f
     TEST EAX,EAX                        ; 005a5352
     JZ 0x005a5325                       ; 005a5354
@@ -94,8 +94,8 @@ section .text
     PUSH EDX                            ; 005a538e
     PUSH dword ptr [0x005ff8fc]         ; 005a538f | DAT_005ff8fc
     PUSH EBX                            ; 005a5395
-    CALL unkafter_basicene.cpp_FUN_0059f740 ; 005a5396
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_FUN_0059f740 ; 005a5396
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
     ADD ESP,0x10                        ; 005a539b
     TEST EAX,EAX                        ; 005a539e
     JZ 0x005a5325                       ; 005a53a0

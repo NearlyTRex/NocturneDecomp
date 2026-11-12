@@ -2,22 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 300,
-    "cross_reference_count": 0,
+    "complexity_score": 315,
+    "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 19,
+    "suspect_count": 20,
     "suspect_types": [
       "builtin_function",
+      "param_count_too_few",
       "stack_ref",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 247
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "00510430",
+      "from_addr": "0051047f",
+      "name": "cockpit_pkbitmap.cpp_FUN_00510430",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "005102b0",
     "address_range": [
@@ -82,13 +90,29 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0051047f",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_FUN_00510430",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 0,
-    "matches_declared": true
+    "estimated_params": 8,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.532786885245901,
@@ -287,6 +311,17 @@
       "severity": "mild",
       "text": "*param_1 = uVar2;",
       "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 8,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:8",
+      "param_delta": 8,
+      "text": "Function declares 0 params but call sites push 8 (8 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

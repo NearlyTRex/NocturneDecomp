@@ -53,7 +53,7 @@ int __cdecl core_trash_cpp_CTrash_renderOpaque_FUN_0056dd30(CTrash *this_ptr)
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
             (DAT_005f2afc,(CVector3f *)&DAT_02cfd900,translation);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540(&this_ptr->model,0.0,-1);
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
   return iVar1;
 }

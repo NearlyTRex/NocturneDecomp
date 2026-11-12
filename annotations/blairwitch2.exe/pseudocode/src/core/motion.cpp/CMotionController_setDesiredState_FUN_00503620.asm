@@ -15,10 +15,10 @@
 ;   core_basicene.cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0 at 0059ebf8
 ;   core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90 at 0059f0c7
 ;   core_basicene.cpp_CBasicEnemy_process_FUN_0059f420 at 0059f49a
+;   core_basicene.cpp_FUN_0059ebc0 at 0059ebce
+;   core_basicene.cpp_FUN_0059ec10 at 0059ed1a
+;   core_basicene.cpp_FUN_0059ee00 at 0059ef19
 ;   core_basicnpc.cpp_CBasicNPC_processDeathState_FUN_005a48a0 at 005a48b8
-;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00412760 at 0041284b
-;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00412055
-;   core_batman.cpp_CBatman_pickRandomMovementState_FUN_00412ec0 at 00412ee0
 ;   ... and 152 more
 ;
 ; Referenced Globals:

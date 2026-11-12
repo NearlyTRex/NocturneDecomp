@@ -134,6 +134,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_005058
 void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_00505aa0(int param_1,int param_2,int param_3,int param_4);
 void __cdecl sound_mp3_cpp_requantizeSamples_FUN_00505d70(int param_1,int param_2,int param_3,int param_4);
 void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_00505eb0(int param_1,int param_2,int param_3,int param_4);
+void sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_00505f60(int param_1,int param_2,int param_3);
 double sound_mp3_cpp_initializeSynthesisDctTable_FUN_00505fbe(float *param_1);
 void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005060b0(CMP3Decoder *this_ptr,float *subband_samples,int channel_index,short *pcm_output);
 void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_00506360(CMP3Decoder *this_ptr,CFileBitStream *bit_stream,SMpegLayer3SideInfo *side_info_array,SMpegFrame *frame);

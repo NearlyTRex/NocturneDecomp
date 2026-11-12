@@ -34,7 +34,7 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004c7490(CBloodPa
   _DAT_01cb82a4 = 1;
   _DAT_01cb82a8 = 2;
   _DAT_01cb82ac = 3;
-  engine_matrix_c_FUN_0046b650(DAT_0060b280);
+  engine_drender_cpp_FUN_0046b650(DAT_0060b280);
   _DAT_01cb82b0 = local_18;
   *(uint *)(&DAT_01cb82b4 + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffffec + (uint)bVar4 * -8);

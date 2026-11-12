@@ -11,8 +11,8 @@
 ; XREF[4]:
 ;   core_boxactor.cpp_CLightActor_setup_FUN_0041cff0 at 0041cfff
 ;   core_doc.cpp_CDoc_setup_FUN_00450620 at 00450a16
-;   core_partibox.cpp_CParticleBox_setup_FUN_005ac8d0 at 005ac8d7
-;   core_spirmine.cpp_CSpiritMine_setup_FUN_005ad4f0 at 005ad4f7
+;   core_hpbox.cpp_CParticleBox_setup_FUN_005ac8d0 at 005ac8d7
+;   core_mine.cpp_CSpiritMine_setup_FUN_005ad4f0 at 005ad4f7
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408a80

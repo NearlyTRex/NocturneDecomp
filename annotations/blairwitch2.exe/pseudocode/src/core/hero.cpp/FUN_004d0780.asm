@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_doc.cpp_FUN_00450c60 at 00451b13
-;   unkafter_stranger.cpp_FUN_0045c960 at 0045c9a3
+;   core_doc.cpp_FUN_0045c960 at 0045c9a3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBodyPart_005da022

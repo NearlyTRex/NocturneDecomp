@@ -123,7 +123,7 @@ void __cdecl core_game_cpp_FUN_004bda10(CGame *this_ptr,char *save_filename)
   _fclose(file_handle);
   DAT_007df9c0 = (_FILE *)0x0;
   if (local_14 != 0) {
-    unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_48);
+    support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_48);
     support_trstream_cpp_COutStreamFile_ctor_FUN_005747c0(&local_1c);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Warning!  Your game didn't save.")
     ;
@@ -132,7 +132,7 @@ void __cdecl core_game_cpp_FUN_004bda10(CGame *this_ptr,char *save_filename)
     if (iVar2 == 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40(g_CEditorToolsPtr,pcVar3);
       support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(&local_1c,0);
-      unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_48,0);
+      support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_48,0);
       return;
     }
     _sprintf(local_28c,"%s\\%s");
@@ -141,7 +141,7 @@ void __cdecl core_game_cpp_FUN_004bda10(CGame *this_ptr,char *save_filename)
     if (iVar2 == 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40(g_CEditorToolsPtr,pcVar3);
       support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(&local_1c,0);
-      unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_48,0);
+      support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_48,0);
       return;
     }
     support_trstream_cpp_COutStreamFile_write_FUN_005748e0(&local_1c,&DAT_005fea0c,4);
@@ -149,12 +149,12 @@ void __cdecl core_game_cpp_FUN_004bda10(CGame *this_ptr,char *save_filename)
     support_codec_cpp_CLZWCompress_init_FUN_00441140(&local_88);
     support_codec_cpp_FUN_00441190();
     support_codec_cpp_FUN_00441290(&local_88,&local_1c);
-    unkafter_turret_cpp_CInStreamFile_close_FUN_00573db0(&local_48);
+    support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_48);
     support_trstream_cpp_COutStreamFile_close_FUN_005749a0(&local_1c);
     support_codec_cpp_CLZWDictionary_dtor_FUN_00440bf0(&local_88.dictionary,0);
     support_codec_cpp_CCodec_dtor_FUN_00440810(&local_88.base,1);
     support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(&local_1c,0);
-    unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_48,0);
+    support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_48,0);
   }
   FUN_005a54b0("save\\$$SAVE$$.TMP");
   pcVar3 = &DAT_01d225c8;

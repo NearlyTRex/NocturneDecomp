@@ -54,9 +54,9 @@ CUnion * core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr)
   } while (cVar2 != '\0');
   core_union_cpp_CUnion_processStates_FUN_005a4c50(this_ptr_00,0.0,0);
   pSVar1 = &(this_ptr_00->base).base.state_machine;
-  unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete");
-  unkaddr_0059d350_cpp_FUN_0059d990(pSVar1);
-  unkaddr_0059d350_cpp_FUN_0059dc80();
+  core_muzzle_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete");
+  core_muzzle_cpp_FUN_0059d990(pSVar1);
+  core_muzzle_cpp_FUN_0059dc80();
   pcVar6 = (this_ptr_00->base).base.hit_sound;
   pcVar5 = "unionhit0?.wav";
   do {

@@ -12,7 +12,7 @@
 ;   core_game.cpp_FUN_004d6420 at 004d6706
 ;   core_game.cpp_FUN_004d6990 at 004d6c3c
 ;   engine_pod.cpp_FUN_0053b250 at 0053b383
-;   unkaddr_0059f520.cpp_CInStreamFile_ctorOpen_FUN_005a0930 at 005a0991
+;   support_trstream.cpp_CInStreamFile_ctorOpen_FUN_005a0930 at 005a0991
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateFileA_005d0528 = 001d0c8c

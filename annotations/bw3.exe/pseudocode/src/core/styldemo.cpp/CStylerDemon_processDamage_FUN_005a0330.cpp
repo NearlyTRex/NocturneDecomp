@@ -38,7 +38,7 @@ void __cdecl core_styldemo_cpp_CStylerDemon_processDamage_FUN_005a0330(CStylerDe
         iVar2 = 0xd;
       }
       else {
-        iVar4 = unkafter_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
+        iVar4 = core_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
         if (iVar4 == 0) goto LAB_005a03d3;
         if ((iVar2 < 7) || (iVar2 == 8)) {
           iVar2 = 4;

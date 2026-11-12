@@ -149,6 +149,10 @@ void __cdecl CGame::resetInputAndCenterCursor(CGame *this_ptr);
 // Address: 004b82e0
 void __cdecl FUN_004b82e0(CGame *this_ptr);
 
+// Original: core_game.cpp_checkCheatCode_FUN_004b8d90
+// Address: 004b8d90
+undefined4 checkCheatCode(byte *param_1);
+
 // Original: core_game.cpp_FUN_004b8e10
 // Address: 004b8e10
 void FUN_004b8e10(undefined4 param_1,char *param_2);

@@ -27,9 +27,9 @@ SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004
   if (this_ptr == pSVar2) {
     _DAT_01d0cfa0 = (SPageResourceTwanaEntry *)0x0;
   }
-  iVar1 = unkafter_fldnotes_cpp_FUN_004ad410(this_ptr->slot_bitmaps,0);
+  iVar1 = core_fldnotes_cpp_FUN_004ad410(this_ptr->slot_bitmaps,0);
   pSVar2 = (SPageResourceTwanaEntry *)
-           unkaddr_004a76f0_cpp_SPageResource_dtor_FUN_004a83a0((SPageResource *)(iVar1 + -0xdc));
+           core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0((SPageResource *)(iVar1 + -0xdc));
   if ((flags & 2) == 0) {
     return pSVar2;
   }

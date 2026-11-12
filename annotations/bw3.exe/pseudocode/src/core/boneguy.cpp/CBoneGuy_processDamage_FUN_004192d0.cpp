@@ -20,7 +20,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_processDamage_FUN_004192d0(CBoneGuy *this
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
-    iVar3 = unkafter_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
+    iVar3 = core_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
     if (iVar3 == 0) goto LAB_0041934a;
     iVar3 = 3;
   }

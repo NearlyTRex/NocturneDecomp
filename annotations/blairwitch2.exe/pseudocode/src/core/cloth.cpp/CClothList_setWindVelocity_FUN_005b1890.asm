@@ -9,9 +9,9 @@
 ;
 ; XREF[4]:
 ;   core_confzomb.cpp_FUN_005a2240 at 005a2336
-;   core_steuben.cpp_FUN_005a5c40 at 005a5cdf
-;   core_twigzomb.cpp_FUN_005a2910 at 005a29f6
+;   core_fforest.cpp_FUN_005a2910 at 005a29f6
 ;   core_unionzom.cpp_FUN_005a4330 at 005a44c2
+;   core_villain.cpp_FUN_005a5c40 at 005a5cdf
 ;
 ; *****************************************************************************
 

@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 00436f44
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 00436f44
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_boneguy_comeback_wav_005cdf6d

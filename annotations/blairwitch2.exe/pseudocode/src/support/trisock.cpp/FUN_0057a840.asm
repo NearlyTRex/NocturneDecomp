@@ -4,8 +4,9 @@
 ; void support_trisock_cpp_FUN_0057a840(int param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   support_trisock.cpp_FUN_0057a750 at 0057a781
+;   support_trisock.cpp_FUN_0057a790 at 0057a7ac
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0

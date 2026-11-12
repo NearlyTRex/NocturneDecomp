@@ -54,7 +54,7 @@ void core_fire_cpp_FUN_0049c8e0(CVector3f *param_1)
               (DAT_005f2afc,(SMRGLTextureBasic *)(puVar1 + local_14 * 0x30));
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(DAT_005f2afc,param_1)
     ;
-    engine_matrix_c_FUN_0046d250(DAT_005f2afc);
+    engine_drender_cpp_FUN_0046d250(DAT_005f2afc);
     translation = (CVector3f *)0x0;
     euler_angles = &local_6c;
     local_6c.x = local_30;
@@ -125,7 +125,7 @@ void core_fire_cpp_FUN_0049c8e0(CVector3f *param_1)
     engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850
               (DAT_005f2afc,&local_94,0x123);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
-    engine_matrix_c_pop_FUN_0046d080();
+    engine_drender_cpp_pop_FUN_0046d080();
   }
   return;
 }

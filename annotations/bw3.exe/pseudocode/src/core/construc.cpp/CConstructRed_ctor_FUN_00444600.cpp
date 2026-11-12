@@ -15,7 +15,7 @@ CConstructRed * core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConstructRed 
   CConstructRed *pCVar2;
   float10 fVar3;
   
-  pCVar1 = core_constrct_cpp_CConstruct_ctor_FUN_00442420(&this_ptr->base);
+  pCVar1 = core_construc_cpp_CConstruct_ctor_FUN_00442420(&this_ptr->base);
   (pCVar1->base).base.base.vtable._ub = &g_CConstructRedVTable._ub;
   (pCVar1->base).base.hit_points = 65.0;
   (pCVar1->base).attack_damage = 20.0;

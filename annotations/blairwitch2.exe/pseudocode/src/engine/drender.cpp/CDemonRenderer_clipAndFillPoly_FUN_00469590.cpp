@@ -37,7 +37,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590(CDem
     }
     core_xform_cpp_transformAndClipGeometry_FUN_00594f40(vertex_count,vertex_indices);
     if (2 < DAT_007bee30) {
-      unkafter_zombie_cpp_FUN_0059a0b0((SRenderVertex *)&DAT_007bee34,DAT_007bee30);
+      core_zombie_cpp_FUN_0059a0b0((SRenderVertex *)&DAT_007bee34,DAT_007bee30);
       return;
     }
   }

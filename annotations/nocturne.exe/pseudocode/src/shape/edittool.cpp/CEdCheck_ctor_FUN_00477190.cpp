@@ -17,7 +17,7 @@ CEdCheck * __cdecl shape_edittool_cpp_CEdCheck_ctor_FUN_00477190(CEdCheck *this_
   this_ptr->right_boundary = 0;
   this_ptr->border_style_flag = 0;
   this_ptr->text_color_mode = 0;
-  this_ptr->checkbox_mode = 0;
+  this_ptr->checkbox_mode = CHECKBOX_MODE_BINARY;
   iVar1 = this_ptr->right_boundary;
   this_ptr->total_width = iVar1;
   this_ptr->y_position = iVar1;

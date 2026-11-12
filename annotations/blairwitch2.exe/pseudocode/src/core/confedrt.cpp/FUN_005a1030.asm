@@ -23,8 +23,8 @@
 ;   core_confedrt.cpp_FUN_005a14e0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
-;   unkaddr_0059d350.cpp_FUN_0059d7f0
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_FUN_0059d7f0
+;   core_muzzle.cpp_FUN_0059d8e0
 ;
 ; *****************************************************************************
 
@@ -86,13 +86,13 @@ section .text
     PUSH ESI                            ; 005a10ba
     FSTP float ptr [EBX + 0x11394]      ; 005a10bb
     MOV dword ptr [EBX + 0x11398],EDX   ; 005a10c1
-    CALL unkaddr_0059d350.cpp_FUN_0059d7f0 ; 005a10c7
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a10c7
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
     ADD ESP,0xc                         ; 005a10cc
     PUSH 0x5efc91                       ; 005a10cf | = "Chasing"
     PUSH ESI                            ; 005a10d4
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005a10d5
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a10d5
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005a10da
     POP EDI                             ; 005a10dd
     POP ESI                             ; 005a10de
@@ -130,13 +130,13 @@ section .text
     MOV dword ptr [EBX + 0x11398],0x40a00000 ; 005a1130
     PUSH ESI                            ; 005a113a
     FSTP float ptr [EBX + 0x11394]      ; 005a113b
-    CALL unkaddr_0059d350.cpp_FUN_0059d7f0 ; 005a1141
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a1141
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
     ADD ESP,0xc                         ; 005a1146
     PUSH 0x5efcb3                       ; 005a1149 | = "Chasing"
     PUSH ESI                            ; 005a114e
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005a114f
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a114f
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005a1154
     POP EDI                             ; 005a1157
     POP ESI                             ; 005a1158

@@ -15,6 +15,6 @@ void core_djien_cpp_factoryFuncDjien_FUN_0045fde0(void)
   if (this_ptr == (CDjien *)0x0) {
     return;
   }
-  unkafter_djien_cpp_CDjien_ctor_FUN_0045fe10(this_ptr);
+  core_djien_cpp_CDjien_ctor_FUN_0045fe10(this_ptr);
   return;
 }

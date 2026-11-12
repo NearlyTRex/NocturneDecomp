@@ -11,8 +11,8 @@
 ; XREF[4]:
 ;   core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00442f00 at 00442f07
 ;   core_ground.cpp_CGround_render_FUN_004cb700 at 004cb70c
-;   engine_matrix.c_FUN_0046b5c0 at 0046b5cb
-;   engine_matrix.c_FUN_0046b5e0 at 0046b5ef
+;   engine_drender.cpp_FUN_0046b5c0 at 0046b5cb
+;   engine_drender.cpp_FUN_0046b5e0 at 0046b5ef
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c38b78

@@ -5,6 +5,10 @@
 // Function prototypes for engine/console.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_console.cpp_staticInit_FUN_0043abb0
+// Address: 0043abb0
+void __cdecl staticInit(void);
+
 // Original: engine_console.cpp_CConsole_ctor_FUN_0043abe0
 // Address: 0043abe0
 CConsole * __cdecl CConsole::ctor(CConsole *this_ptr,int width,int height,int screen_x,int screen_y);

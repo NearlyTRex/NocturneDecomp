@@ -13,9 +13,9 @@
 ;   CDemonActorType g_CBirdClassInfo
 ;
 ; Called Functions:
+;   core_bird.cpp_FUN_00410030
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60
-;   unkafter_bird.cpp_FUN_00410030
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     PUSH 0x5b6456                       ; 00410165 | DAT_005b6456
     PUSH ESI                            ; 0041016a
         ;   Label: LAB_0041016a
-    CALL unkafter_bird.cpp_FUN_00410030 ; 0041016b
-        ;   XREF to: 00410030 (UNCONDITIONAL_CALL)  ; undefined unkafter_bird.cpp_FUN_00410030()
+    CALL core_bird.cpp_FUN_00410030     ; 0041016b
+        ;   XREF to: 00410030 (UNCONDITIONAL_CALL)  ; undefined core_bird.cpp_FUN_00410030()
     ADD ESP,0x8                         ; 00410170
     PUSH EDI                            ; 00410173
         ;   Label: LAB_00410173

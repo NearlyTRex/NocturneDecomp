@@ -109,6 +109,7 @@ undefined4 core_setcolid_cpp_FUN_005574c0(int param_1);
 float core_setcolid_cpp_FUN_00557630(undefined4 param_1,float *param_2,float *param_3);
 float core_setcolid_cpp_FUN_005578b0(CDemonSet *param_1,float param_2,CBoundingBox3D *param_3,float *param_4,float param_5);
 int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00557db0(CDemonSet *this_ptr,CDemonActor *actor);
+undefined4 core_setcolid_cpp_intersectXZCylinder_FUN_00557e10(float *param_1,float param_2,float param_3,int param_4);
 int __cdecl core_setcolid_cpp_FUN_005580d0(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
 float core_setcolid_cpp_FUN_00558450(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,undefined4 param_8);
 void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00558eb0(CDemonSet *this_ptr);

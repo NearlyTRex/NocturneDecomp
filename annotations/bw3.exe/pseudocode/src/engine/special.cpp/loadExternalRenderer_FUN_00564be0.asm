@@ -31,10 +31,10 @@
 ;   ... and 166 more
 ;
 ; Called Functions:
+;   core_spawner.cpp_FUN_00564010
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   engine_special.cpp_CExternalRenderer_ctor_FUN_005665e0
 ;   engine_special.cpp_CExternalRenderer_validate_FUN_00566630
-;   engine_special.cpp_FUN_00564010
 ;   engine_special.cpp_selectCard_FUN_005663e0
 ;   wincore_wddvmem.cpp_getProcAddress_FUN_0057ad20
 ;   wincore_wddvmem.cpp_loadLibrary_FUN_0057ad10
@@ -800,8 +800,8 @@ section .text
     JZ 0x005655d9                       ; 00565589
         ;   XREF to: 005655d9 (CONDITIONAL_JUMP)  ; LAB_005655d9
     XOR EDI,EDI                         ; 0056558b
-    CALL engine_special.cpp_FUN_00564010 ; 0056558d
-        ;   XREF to: 00564010 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00564010()
+    CALL core_spawner.cpp_FUN_00564010  ; 0056558d
+        ;   XREF to: 00564010 (UNCONDITIONAL_CALL)  ; void core_spawner.cpp_FUN_00564010()
     MOV dword ptr [0x02cf5fcc],EDI      ; 00565592 | DAT_02cf5fcc
     XOR EAX,EAX                         ; 00565598
     ADD ESP,0x3c20                      ; 0056559a
@@ -812,8 +812,8 @@ section .text
     RET                                 ; 005655a4
     XOR EBP,EBP                         ; 005655a5
         ;   Label: LAB_005655a5
-    CALL engine_special.cpp_FUN_00564010 ; 005655a7
-        ;   XREF to: 00564010 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00564010()
+    CALL core_spawner.cpp_FUN_00564010  ; 005655a7
+        ;   XREF to: 00564010 (UNCONDITIONAL_CALL)  ; void core_spawner.cpp_FUN_00564010()
     MOV dword ptr [0x02cf5fcc],EBP      ; 005655ac | DAT_02cf5fcc
     XOR EAX,EAX                         ; 005655b2
     ADD ESP,0x3c20                      ; 005655b4
@@ -824,8 +824,8 @@ section .text
     RET                                 ; 005655be
     XOR EBX,EBX                         ; 005655bf
         ;   Label: LAB_005655bf
-    CALL engine_special.cpp_FUN_00564010 ; 005655c1
-        ;   XREF to: 00564010 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_00564010()
+    CALL core_spawner.cpp_FUN_00564010  ; 005655c1
+        ;   XREF to: 00564010 (UNCONDITIONAL_CALL)  ; void core_spawner.cpp_FUN_00564010()
     MOV dword ptr [0x02cf5fcc],EBX      ; 005655c6 | DAT_02cf5fcc
     XOR EAX,EAX                         ; 005655cc
     ADD ESP,0x3c20                      ; 005655ce

@@ -19,7 +19,7 @@ void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402940(char *filename)
   CInStreamFile local_3c;
   COutStreamFile local_10;
   
-  unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_3c);
+  support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_3c);
   pcVar4 = local_8c;
   do {
     cVar1 = *filename;
@@ -65,10 +65,10 @@ LAB_00402994:
     support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(&local_10,0);
   }
   else {
-    unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00
+    support_trstream_cpp_CInStreamFile_read_FUN_00573c00
               (&local_3c,(uint *)&DAT_01c62070,0x8000);
-    unkafter_turret_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);
+    support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);
   }
-  unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_3c,0);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_3c,0);
   return;
 }

@@ -15,7 +15,7 @@ void __cdecl cockpit_pkbmpset_cpp_FUN_005106a0(CPackedBitmapSet *this_ptr,int bi
   CPackedBitmap *pCVar2;
   char acStack_d0 [200];
   
-  unkafter_pkbitmap_cpp_FUN_00510670(this_ptr);
+  cockpit_pkbitmap_cpp_FUN_00510670(this_ptr);
   if (bitmap_count < 1) {
     return;
   }

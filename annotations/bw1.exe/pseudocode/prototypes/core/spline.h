@@ -9,6 +9,14 @@
 // Address: 00583d60
 void __cdecl FUN_00583d60(float *out_basis,float t,float tension);
 
+// Original: core_spline.cpp_evaluateSplineScalar_FUN_00583ef0
+// Address: 00583ef0
+float evaluateSplineScalar(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+
+// Original: core_spline.cpp_evaluateSplintInt_FUN_00583f30
+// Address: 00583f30
+int evaluateSplintInt(float *param_1,int param_2,int param_3,int param_4,int param_5);
+
 // Original: core_spline.cpp_FUN_00583f90
 // Address: 00583f90
 void FUN_00583f90(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);

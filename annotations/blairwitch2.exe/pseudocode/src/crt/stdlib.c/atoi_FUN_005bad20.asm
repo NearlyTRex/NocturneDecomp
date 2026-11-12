@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   string_ptr
 ;
 ; XREF[5]:
-;   core_patrpoin.cpp_FUN_0059c9c0 at 0059ca44
+;   core_hpatrol.cpp_FUN_0059c9c0 at 0059ca44
 ;   core_texlist.cpp_CTextureList_load_FUN_005734b0 at 00573604
 ;   engine_ini.cpp_getProfileInteger_FUN_004d8840 at 004d88a4
 ;   wincore_winvideo.cpp_openMovie_FUN_00590e90 at 00590f11

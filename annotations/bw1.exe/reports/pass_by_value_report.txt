@@ -2,14 +2,14 @@
 PASS-BY-VALUE STRUCT ARGUMENTS REPORT
 ====================================================================================================
 
-7 functions with pass-by-value parameters (827 MOVSD.REP scanned, 33 are pass-by-value)
+7 functions with pass-by-value parameters (829 MOVSD.REP scanned, 33 are pass-by-value)
 
 ====================================================================================================
 
 engine_3d.c_clipAndDrawLine2D_FUN_00407af0
   Params: arg1=SRenderVertex (0x30), arg2=SRenderVertex (0x30)
   Call sites (10):
-    core_skeleton.cpp_FUN_00564b1c           @ 0x00564c4d   2x SRenderVertex
+    core_skeleton.cpp_FUN_00564b20           @ 0x00564c4d   2x SRenderVertex
     engine_3d.c_drawLine2DFromIndices_FUN_00407a70 @ 0x00407ad5   2x SRenderVertex
     engine_3d.c_drawLineStrip2D_FUN_00404440 @ 0x004044c6   2x SRenderVertex
     shape_edittool.cpp_FUN_00498360          @ 0x00498458   2x SRenderVertex
@@ -59,7 +59,7 @@ sound_sndmain.cpp_FUN_00571420
 engine_3d.c_clipAndDrawLine3D_FUN_00407df0
   Params: arg1=SRenderVertex (0x30), arg2=SRenderVertex (0x30)
   Call sites (1):
-    engine_3d.c_drawLine3DFromIndices_FUN_00407d90 @ 0x00407dd5   2x SRenderVertex
+    engine_3d.c_FUN_00407d70                 @ 0x00407dd5   2x SRenderVertex
 
 --------------------------------------------------------------------------------
 
@@ -78,9 +78,9 @@ These callers need their local frame size (SUB ESP) increased to cover
 the dynamic stack allocations for pass-by-value arguments.
 
   core_actor.cpp_archiveLocalizedString_FUN_0040b560 current: 0x12c  required: 0x258  (+0x12c for by-value args)
-  core_skeleton.cpp_FUN_00564b1c                     current: 0x64  required: 0xc4  (+0x60 for by-value args)
+  core_skeleton.cpp_FUN_00564b20                     current: 0x64  required: 0xc4  (+0x60 for by-value args)
+  engine_3d.c_FUN_00407d70                           current: 0x60  required: 0xc0  (+0x60 for by-value args)
   engine_3d.c_drawLine2DFromIndices_FUN_00407a70     current: 0x60  required: 0xc0  (+0x60 for by-value args)
-  engine_3d.c_drawLine3DFromIndices_FUN_00407d90     current: 0x30  required: 0x90  (+0x60 for by-value args)
   engine_3d.c_drawLineStrip2D_FUN_00404440           current: 0x60  required: 0xc0  (+0x60 for by-value args)
   shape_edittool.cpp_FUN_00498360                    current: 0x24  required: 0x84  (+0x60 for by-value args)
   shape_edittool.cpp_FUN_00498660                    current: 0x54  required: 0xb4  (+0x60 for by-value args)

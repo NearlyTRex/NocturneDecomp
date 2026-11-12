@@ -23,6 +23,6 @@ uint core_fire_cpp_FUN_0049d500(int param_1)
             (DAT_005f2afc,(CVector3f *)(param_1 + 0x18c),(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
             ((CKeyFramedModelInstance *)(param_1 + 4),0.0,-1);
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   return extraout_EAX;
 }

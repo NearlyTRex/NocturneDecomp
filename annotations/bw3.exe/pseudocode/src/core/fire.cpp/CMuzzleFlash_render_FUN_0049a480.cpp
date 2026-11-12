@@ -44,7 +44,7 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_0049a480(CMuzzleFlash *this_p
             (DAT_005f2afc,&local_1c,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
             ((CKeyFramedModelInstance *)0x1c74278,0.0,99);
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   local_34.x = 0.0;
   local_34.y = 0.0;
   local_34.z = 0.7853982;
@@ -52,10 +52,10 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_0049a480(CMuzzleFlash *this_p
             (DAT_005f2afc,&local_34,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
             ((CKeyFramedModelInstance *)0x1c74278,0.0,99);
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   g_CDemonSetPtr->lighting_quality_mode = 0;
-  engine_matrix_c_pop_FUN_0046d080();
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
   return;
 }

@@ -257,7 +257,7 @@ CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004ecc00(CHer
 CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004ecc60(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
 CDemonActor * core_hero_cpp_FUN_004ecca0(int param_1);
 void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004ecd50(CHeroPlaceholder *this_ptr);
-undefined8 unkafter_hero_cpp_FUN_004ecd9e(void);
+undefined8 core_hero_cpp_FUN_004ecd9e(void);
 void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004ecef0(void);
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004ecf70(void);
 void core_hiram_cpp_staticInit_FUN_004ed130(void);

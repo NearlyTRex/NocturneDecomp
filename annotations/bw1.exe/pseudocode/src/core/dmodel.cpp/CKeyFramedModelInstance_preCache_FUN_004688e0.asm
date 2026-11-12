@@ -16,7 +16,7 @@
 ;   core_bat.cpp_CBat_setup_FUN_00410c20 at 00410c2f
 ;   core_battery.cpp_CBattery_setup_FUN_00414470 at 00414485
 ;   core_biggs.cpp_CBiggs_setup_FUN_00414ab0 at 00414ad6
-;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041aaa0 at 0041aafe
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00415fc0 at 00415fde
 ;   ... and 41 more
 ;
 ; Called Functions:

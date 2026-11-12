@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   vertex_count
 ; int *            Stack[0xc]:4   vertex_indices
 ;
-; XREF[24]:
+; XREF[25]:
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470 at 0046b51f
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046bc20 at 0046bca0
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730 at 0046c7a4
@@ -18,8 +18,8 @@
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046c3b0 at 0046c45e
 ;   engine_drender.cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0046c090 at 0046c109
 ;   engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ca20 at 0046cabe
-;   engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240 at 0046b279
-;   ... and 14 more
+;   engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0046b7d0 at 0046b809
+;   ... and 15 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005bc460
@@ -33,12 +33,12 @@
 ;
 ; Called Functions:
 ;   core_asgaya.cpp_FUN_005a1ea0
+;   core_dpart.cpp_FUN_00466d50
+;   core_dpart.cpp_FUN_004673d0
 ;   core_main.c_FUN_004e4330
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00587cd0
 ;   engine_clipper.c_clipAndRasterize_FUN_0043a840
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043bac0
-;   unkafter_dpart.cpp_FUN_00466d50
-;   unkafter_dpart.cpp_FUN_004673d0
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     PUSH EBX                            ; 0046b194
         ;   Label: LAB_0046b194
     PUSH ESI                            ; 0046b195
-    CALL unkafter_dpart.cpp_FUN_004673d0 ; 0046b196
-        ;   XREF to: 004673d0 (UNCONDITIONAL_CALL)  ; void unkafter_dpart.cpp_FUN_004673d0(CVector3i * vertex_indices, int vertex_count)
+    CALL core_dpart.cpp_FUN_004673d0    ; 0046b196
+        ;   XREF to: 004673d0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_004673d0(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0046b19b
         ;   Label: LAB_0046b19b
     POP EBP                             ; 0046b19e
@@ -96,8 +96,8 @@ section .text
     PUSH EBX                            ; 0046b1c8
         ;   Label: LAB_0046b1c8
     PUSH ESI                            ; 0046b1c9
-    CALL unkafter_dpart.cpp_FUN_00466d50 ; 0046b1ca
-        ;   XREF to: 00466d50 (UNCONDITIONAL_CALL)  ; void unkafter_dpart.cpp_FUN_00466d50(int * vertex_indices, int vertex_count)
+    CALL core_dpart.cpp_FUN_00466d50    ; 0046b1ca
+        ;   XREF to: 00466d50 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_00466d50(int * vertex_indices, int vertex_count)
     JMP 0x0046b19b                      ; 0046b1cf
         ;   XREF to: 0046b19b (UNCONDITIONAL_JUMP)  ; LAB_0046b19b
     CMP dword ptr [EDI + 0x4],0x0       ; 0046b1d1

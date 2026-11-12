@@ -1,0 +1,336 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 358,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 31,
+    "suspect_types": [
+      "pointer_truncation",
+      "register_param",
+      "stack_param",
+      "unaffected_reg",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 75
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00582aa0",
+    "address_range": [
+      [
+        "00582aa0",
+        "00582b3d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "wincore_winrun.cpp_FUN_00582aa0",
+    "signature": "void wincore_winrun_cpp_FUN_00582aa0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d22fa8",
+      "name": "DAT_02d22fa8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.294117647058824,
+    "instruction_count": 51,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "CALLIND": 1,
+      "COPY": 41,
+      "INT_ADD": 23,
+      "INT_AND": 95,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 50,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 16,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 23,
+      "INT_SRIGHT": 12,
+      "INT_SUB": 17,
+      "LOAD": 43,
+      "POPCOUNT": 23,
+      "RETURN": 1,
+      "STORE": 14
+    },
+    "pcode_op_count": 423
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "int *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_CL",
+      "severity": "mild",
+      "text": "char in_CL;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "char *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000094",
+      "severity": "moderate",
+      "text": "int in_stack_00000094;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000098",
+      "severity": "moderate",
+      "text": "int in_stack_00000098;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*in_EAX = (int)(*in_EAX + (int)in_EAX);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*in_EAX = (int)(*in_EAX + (int)in_EAX);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*in_EAX = (int)(*in_EAX + (int)in_EAX);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 18,
+      "match": "in_CL",
+      "severity": "mild",
+      "text": "*unaff_EDI = *unaff_EDI + in_CL;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "*unaff_EDI = *unaff_EDI + in_CL;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "*unaff_EDI = *unaff_EDI + in_CL;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)in_EAX = (char)*in_EAX + (char)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)in_EAX = (char)*in_EAX + (char)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)in_EAX = (char)*in_EAX + (char)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 20,
+      "match": "in_CL",
+      "severity": "mild",
+      "text": "*(char *)(unaff_EBX + 0xa824ac) = *(char *)(unaff_EBX + 0xa824ac) + in_CL;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(char *)(unaff_EBX + 0xa824ac) = *(char *)(unaff_EBX + 0xa824ac) + in_CL;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(char *)(unaff_EBX + 0xa824ac) = *(char *)(unaff_EBX + 0xa824ac) + in_CL;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 21,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)in_EAX = (char)*in_EAX + (char)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 21,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)in_EAX = (char)*in_EAX + (char)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 21,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)in_EAX = (char)*in_EAX + (char)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 22,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "iStack000000a4 = (int)in_EAX * 2;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iStack000000a8 = unaff_EBP * 2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000094",
+      "severity": "moderate",
+      "text": "MoveWindow(_DAT_02d22fa8,in_stack_00000094 / 2 - iStack000000a4 / 2,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000098",
+      "severity": "moderate",
+      "text": "in_stack_00000098 / 2 - iStack000000a8 / 2,iStack000000a4,iStack000000a8,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)in_EAX",
+      "severity": "moderate",
+      "text": "*in_EAX = (int)(*in_EAX + (int)in_EAX);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(char)in_EAX",
+      "severity": "moderate",
+      "text": "*(char *)in_EAX = (char)*in_EAX + (char)in_EAX;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(char)in_EAX",
+      "severity": "moderate",
+      "text": "*(char *)in_EAX = (char)*in_EAX + (char)in_EAX;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)in_EAX",
+      "severity": "moderate",
+      "text": "iStack000000a4 = (int)in_EAX * 2;",
+      "type": "pointer_truncation"
+    }
+  ]
+}

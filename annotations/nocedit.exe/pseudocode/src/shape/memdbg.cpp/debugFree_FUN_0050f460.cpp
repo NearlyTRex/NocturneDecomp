@@ -9,7 +9,7 @@
 void __cdecl shape_memdbg_cpp_debugFree_FUN_0050f460(void *ptr,char *filename,int line_number)
 
 {
-  SMemHead *header;
+  SMemHead *this_ptr;
   
   if (g_RecursiveCallFlag == 0) {
     if (g_FileMutex == (HANDLE)0x0) {
@@ -27,10 +27,10 @@ void __cdecl shape_memdbg_cpp_debugFree_FUN_0050f460(void *ptr,char *filename,in
     g_CurrentLineNumber = 153;
     core_main_c_displayErrorAndQuit_FUN_00506f10("headFromPtr - NULL ptr");
   }
-  header = (SMemHead *)((int)ptr + -0x28);
-  shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(header,filename,line_number);
-  shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(header);
-  free(header);
+  this_ptr = (SMemHead *)((int)ptr + -0x28);
+  shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(this_ptr,filename,line_number);
+  shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(this_ptr);
+  free(this_ptr);
   wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
   return;
 }

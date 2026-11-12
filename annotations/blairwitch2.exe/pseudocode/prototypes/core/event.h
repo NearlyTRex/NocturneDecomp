@@ -5,10 +5,6 @@
 // Function prototypes for core/event.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_event.cpp_getVectorDistance_FUN_0045e070
-// Address: 0045e070
-float __cdecl getVectorDistance(float *param_1,float *param_2);
-
 // Original: core_event.cpp_staticInit_FUN_00488b30
 // Address: 00488b30
 void staticInit(void);
@@ -224,3 +220,11 @@ int __cdecl CRuleList::findFirst(CRuleList *this_ptr);
 // Original: core_event.cpp_CRuleList_evaluateAndRun_FUN_004925c0
 // Address: 004925c0
 int __cdecl CRuleList::evaluateAndRun(CRuleList *this_ptr);
+
+// Original: core_event.cpp_copyQuaternion_FUN_00492610
+// Address: 00492610
+void __cdecl copyQuaternion(undefined4 *param_1,undefined4 *param_2);
+
+// Original: core_event.cpp_FUN_00492630
+// Address: 00492630
+undefined4 FUN_00492630(int param_1);

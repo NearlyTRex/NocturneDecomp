@@ -68,7 +68,7 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_0052a0d0(CScript *this_ptr,_F
 void __cdecl core_script_cpp_CScript_saveState_FUN_0052a400(CScript *this_ptr,_FILE *file_handle);
 uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_0052a630(CScript *this_ptr);
 char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_0052a690(CDeformableModel *model_ptr);
-undefined4 unkafter_script_cpp_FUN_0052a6a0(int param_1);
+undefined4 core_script_cpp_FUN_0052a6a0(int param_1);
 void core_sentinel_cpp_staticInit_FUN_0052a6c0(void);
 void core_sentinel_cpp_factoryFuncSentinel_FUN_0052a6f0(void);
 CDemonActorType * core_sentinel_cpp_CSentinel_getActorType_FUN_0052a710(CSentinel *this_ptr);

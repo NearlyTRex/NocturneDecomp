@@ -25,6 +25,10 @@ CLightGun * CLightGun::ctor(CLightGun *this_ptr);
 // Address: 004fff70
 undefined4 FUN_004fff70(CDemonActor *param_1);
 
+// Original: core_lightgun.cpp_FUN_004ffff0
+// Address: 004ffff0
+undefined4 FUN_004ffff0(CCharacter *param_1);
+
 // Original: core_lightgun.cpp_FUN_00500090
 // Address: 00500090
 void FUN_00500090(int param_1);

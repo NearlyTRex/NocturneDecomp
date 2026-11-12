@@ -215,9 +215,20 @@ the build added or ones whose new offset is not yet known.
   `0058f4a0` is `CZombiePriest_startFiringAttack` (only zombie-priest code calls it; its timer at
   `+0xd110` is the last field of the 0xd114-byte class) and `00524170` is
   `CPrye_updateArmRecoilBlend` (nocedit `CStranger`'s body; reaches `+0x20c80` of the 0x20d04-byte
-  CPrye). The four placeholders are deleted. The other 40 Nocturne classes bw3's `type_info.json`
-  lists without a record (CBaron, CMoloch, ...) are not types in bw3 at all: the exporter adds them
-  from its own Nocturne class tables.
+  CPrye). The four placeholders are deleted.
+- **Nocturne types with no BW record or code are deleted** (`bw_absent_classes.json`): `COptimize`
+  (`$COptimize$$` is nocedit's only), bw2's `CComplexPolygon` and `SExpandedEdge`, bw1's
+  `CLeakChecker` (`memdbg.cpp` is not compiled in) and the editor's `CActorProperty` and
+  `SScriptXRef`. The functions body-matched to their getters are BW's own:
+  - `CAudioRecPuzzle`'s vtable slots `0x40`–`0x50` (bw1 `004175a0`–`004175e0`, bw2
+    `0059bdf0`–`0059be30`, bw3 `004131b0`–`004131f0`) return `knob_positions[0..2]`,
+    `speed_setting` and `transport_state`.
+  - bw2 `005a8130` returns `CSimpleParticleSystem.active` and is now named
+    `CSimpleParticleSystem_isActive`.
+- **`type_info.json` lists a type only if the build has it.** The exporter used to add every class
+  and struct in its Nocturne file tables. Now it adds a table name only when the program defines
+  that type. That dropped about 40 phantoms from bw3 (CBaron, CMoloch, ...), 14 editor types from
+  retail and `CGroundTypeList` from nocedit.
 - **Unchanged in every BW build, by identical code:** the Watcom CRT's `_FILE`, `_tm`, `Heap`,
   `HeapBlock`, `HeapState`, `ThreadData`, `WatcomStat`, `WatcomTypeArrayInfo`, `dst_rule`,
   `FileEmbeddedData`, `MathErrorContext`, `SignalHandlerEntry`, `va_list_t`,
@@ -226,8 +237,12 @@ the build added or ones whose new offset is not yet known.
   `CFireEffect`, `CGore`, `IUnknown`, `SOCKADDR_IN`, `SGroundCell`, `CLZWDictionaryNode`,
   `COrientation`, `SCoronaLightEntry` (its 78,724-byte stride, 0x13384, is in each build's
   `renderGlobeCoronas`), `SLineStrip`, `SMRGLSkyTexture`, `SStereoBuffers`, `SStereoGains`,
-  `SVoxelGrid`, `SMpegSubbandAllocation`, `SMpegSubbandScalefactors` and its union; bw2's
-  `CEdCheck`. The vtable structs of `CKeys` (3 slots), `CCameraView` (5), `CMotionController` (3),
+  `SVoxelGrid`, `SMpegSubbandAllocation`, `SMpegSubbandScalefactors` and its union; `SPlayer`
+  (`PGameSettingsChanged`'s nested record, RTTI 40 in every build). `CEdCheck` has no RTTI, ctor or
+  vtable in BW, only its uncalled width helpers, which read `+0x14`/`+0x1c` as nocedit's do. bw2's
+  `004f2ba0`, which the sibling transfer gave a `CEdCheck` receiver, is `getRenderViewport(float *
+  ×4)`; `createModalWindow` saves the viewport with it before calling `setRenderViewport`
+  (`004f2ac0`). The vtable structs of `CKeys` (3 slots), `CCameraView` (5), `CMotionController` (3),
   `CParticle` (4), `CPod` (6) and `IUnknown` have nocedit's slot counts in every build.
 - **Read from the code, every build** (`known_layout_changes.json`, `bw_rebuilt_structs.json`,
   `bw_own_structs.json`; each entry's basis names its functions and offsets):
@@ -268,25 +283,57 @@ the build added or ones whose new offset is not yet known.
   11,511 / 11,454 / 8,882 agree with the layout in bw1 / bw2 / bw3. The 2 / 6 / 2 that do not are
   single sightings through a variable nocedit types as the wrong object.
 
-## Unverified
+## Enums
 
-- **Enum values.** `EAmmoType`, `EDamageType`, `EHeroControlType`, `EAimMode`, `EGasMaskState` and
-  `EHeroTask` were imported into the BW programs from nocedit so the structs holding them could
-  be laid out. Their names and values are nocedit's. BW may have added members (bw3 has new ammo
-  classes).
+`bw_enums.json` lists the members of each game enum in each BW build, checked against
+`apply_type_spec.py`. Each value was compared with nocedit's by the code that switches on it,
+compares it or stores it.
+
+- **Same as nocedit's in every build:** `EEmitterSoundType`, `EAimMode`, `EGasMaskState`, `EHeroTask`.
+  bw3 has no companion AI or gas-mask animation left, but the values it does use agree.
+- **`EDamageType` is two lists** (`nocturne_enums.json` for nocedit and retail). The script
+  editor offers death types 0–10 (generic, drown, fall, explode, shatter, fallApart, electrocute,
+  chopped, crushed, impale, fire). `parseDamageType` reads attack kinds 100–106 (generic, bullet,
+  Fire, Blade, Stake, Gas, electrocute). The attack kinds are named `DAMAGE_TYPE_ATTACK_*`.
+  nocedit's guessed names were `IMMUNE` (100, the `SDamageInfo` default), `MELEE` (103),
+  `LAUNCH` (104, the crossbow's stake: a heart hit does ×20 to vampires), `NO_FLINCH` (105, gas:
+  the hero does not flinch) and `DECAL` (106, electrocute: a 2.0 stagger). 101 (every gun's
+  `fire`) and 102 were missing. 107 `PIERCING` and 108 `BURN` are on neither list.
+- **`HERO_CONTROL_NETWORK` = 1** was missing in every build: `createHeros` stores it for remote
+  netplay heroes.
+- **Added in BW:**
+  - `EEmitterType`, every build: 11 `LEAF` (spawns a `CLeaf` with a model), 12 `FIREFLY` (a
+    `CFirefly` and a corona globe), 13 `BLOOD` (`CGore_spawnBloodBurst`). Cases 0–10 do what
+    nocedit's do.
+  - `EControlMode`, every build: 3 `POINT_AND_CLICK` ("Control : Point & Click"; bw2's menu calls
+    it "Mouse"). The controls menu cycles 0–3.
+  - `EAmmoType`, bw1 and bw3: 9 `STAGGER`. A hit with it sets `stagger_amount` 0.5, and melee
+    calls `processMeleeHit(8)` with it. No code stores it, so it comes from level data, and the
+    name is from its effect.
+  - `EAmmoType`, bw3: 10 `MANA` (the mana ammo items and the six spells; fire draws on the hero's
+    mana) and 11 `BULLET` (the ammo pouch, flintlock and blunderbuss; fire draws on the hero's
+    bullet count).
+  - `EDamageType`, bw1 and bw3: 109 `SHADOW` (`CShadow_process`; `CDoc_processDamage` branches on
+    it).
+  - `EDamageType`, bw3: 110 `GUN_FLAME` (the `CGunFlame` particles, with mana ammo), 111
+    `EXORCISM` (`CStylerDemon` plays `exorcism_death`), 112 `BODY_PART` (`CBodyPart_process`;
+    the skeletons ignore it), 113 `HOLY_CROSS` (`CHolycross_fillAttackDamageInfo`; kills a
+    `CEnemy` at 0 hp).
+- **Fields whose comments listed values are enums now** (`field_enums.json`, every program):
+  - `CDeformableModelInstance.bone_update_mode` is `EBoneUpdateMode` (simple flat,
+    hierarchical accumulate, hierarchical rest pose).
+  - `CDemonLight.shadow_bounds_mode` is `EShadowBoundsMode`. `clearCircularShadowMapEdges` runs
+    only for 1, circular.
+  - `CEdCheck.checkbox_mode` is `ECheckboxMode` (binary, tri-state).
+  - In nocedit and retail, `SScriptXRef.type` is `EScriptXRefType`. Its 13 values are the labels
+    `browseEventXRefs` prints, with the counter and sfx pairs named SET/USED as `ECmdParmType` names them.
 
 ## Not yet placed
 
-Of 445 / 465 / 446 game structs in bw1 / bw2 / bw3, 423 / 439 / 417 are complete, 16 / 19 / 24
-have undefined spans and 6 / 7 / 5 are placeholders. Every span left is one no BW code reads or
-writes, or one only a constructor sets:
+Of 441 / 460 / 443 game structs in bw1 / bw2 / bw3, 425 / 441 / 419 are complete and 16 / 19 / 24
+have undefined spans; none is a placeholder (`CMini3D` is BW's empty RTTI-1 class). Every span
+left is one no BW code reads or writes, or one only a constructor sets:
 
-- **Placeholders with no BW code:** `CActorProperty`, `SScriptXRef`, `SPlayer` (editor and
-  unused network types), `COptimize`, bw2's `CComplexPolygon` and `SExpandedEdge`, bw1's
-  `CLeakChecker` (a name record only; `memdbg.cpp` is not in any BW build). The BW functions named
-  `COptimize_getMaxPolygonSides`, `CComplexPolygon_getExpandedEdges` and
-  `CComplexPolygon_getMaterialId` (bw1 `004175a0`–`004175e0`, bw2 `0059bdf0`–`0059be30`,
-  `005a8130`) are trivial getters of BW classes, name-matched to nocedit's by body.
 - **Spans:** `CCharacter`'s 40-byte block after `walk_timeout` and one dword after
   `sound_cooldown` (only the ctor writes them); `CMoon` `+4` (nocedit's `rotation_phase`, a global
   in BW); `STextView` `0x148`–`0x248`; `SVoxelCubeMetadata` `0x8`–`0x54` but for `+0xc`;
@@ -331,8 +378,10 @@ The structs read whole from the code, and the receivers of class methods:
 ```sh
 python3 scripts/Python/define_structs.py research/23-game_structs/bw_own_structs.json --program bw1.exe
 python3 scripts/Python/define_structs.py research/23-game_structs/bw_rebuilt_structs.json --program bw1.exe
-python3 scripts/Python/define_structs.py research/23-game_structs/bw_absent_classes.json --program bw3.exe
+python3 scripts/Python/define_structs.py research/23-game_structs/bw_absent_classes.json --program bw1.exe
 python3 scripts/Python/fix_this_ptr.py /abs/projects NocturneEdit bw1.exe blairwitch2.exe bw3.exe
+python3 scripts/Python/apply_type_spec.py /abs/projects NocturneEdit bw1.exe \
+    research/23-game_structs/bw_enums.json
 ```
 
 Each is a dry run until `--apply` (`define_structs.py` also takes `--project`).

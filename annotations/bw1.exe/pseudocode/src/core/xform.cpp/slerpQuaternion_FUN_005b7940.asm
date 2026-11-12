@@ -18,10 +18,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[16]:
+; XREF[17]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bd33
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433b30 at 00433be9
-;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 00446073
+;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 00446073
 ;   core_course.cpp_FUN_00447fb0 at 0044814a
 ;   core_doc.cpp_FUN_0046ea80 at 0046ee55
 ;   core_doc.cpp_FUN_0046f200 at 0046f3ef
@@ -29,7 +29,7 @@
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00539660 at 00539776
 ;   core_scat.cpp_CScat_blendAimBones_FUN_00542270 at 005423e9
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_00568d60 at 00568e12
-;   ... and 6 more
+;   ... and 7 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fa178

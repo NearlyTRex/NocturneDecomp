@@ -9,10 +9,6 @@
 // Address: 0056cca0
 void staticInit(void);
 
-// Original: core_trap.cpp_FUN_0056ccaf
-// Address: 0056ccaf
-undefined1 FUN_0056ccaf(void);
-
 // Original: core_trap.cpp_factoryFuncTrap_FUN_0056ccd0
 // Address: 0056ccd0
 void factoryFuncTrap(void);

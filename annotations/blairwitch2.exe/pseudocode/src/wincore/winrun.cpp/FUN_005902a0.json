@@ -1,0 +1,362 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 349,
+    "complexity_score": 385,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 150,
+    "suspect_count": 20,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 499
+  },
+  "cross_references": [
+    {
+      "addr": "0059064e",
+      "from_addr": "00590654",
+      "name": "wincore_winrun.cpp_FUN_0059064e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00590910",
+      "from_addr": "00590915",
+      "name": "wincore_winrun.cpp_FUN_00590910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00590920",
+      "from_addr": "00590933",
+      "name": "wincore_winrun.cpp_FUN_00590920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005902a0",
+    "address_range": [
+      [
+        "005902a0",
+        "00590631"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "wincore_winrun.cpp_FUN_005902a0",
+    "signature": "void wincore_winrun_cpp_FUN_005902a0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    },
+    {
+      "addr": "005901c0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_005901c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eeafd",
+      "name": "DAT_005eeafd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "026656bc",
+      "name": "DAT_026656bc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00590654",
+        "call_type": "direct",
+        "caller": "wincore_winrun.cpp_FUN_0059064e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00590915",
+        "call_type": "direct",
+        "caller": "wincore_winrun.cpp_FUN_00590910",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00590933",
+        "call_type": "direct",
+        "caller": "wincore_winrun.cpp_FUN_00590920",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.366548042704626,
+    "instruction_count": 281,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 43,
+      "BOOL_OR": 2,
+      "BRANCH": 9,
+      "CALL": 9,
+      "CALLIND": 2,
+      "CBRANCH": 26,
+      "COPY": 309,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ABS": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 130,
+      "INT_AND": 225,
+      "INT_CARRY": 21,
+      "INT_EQUAL": 148,
+      "INT_LEFT": 14,
+      "INT_LESS": 20,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 23,
+      "INT_OR": 37,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 25,
+      "INT_SEXT": 3,
+      "INT_SLESS": 81,
+      "INT_SUB": 86,
+      "INT_XOR": 9,
+      "INT_ZEXT": 8,
+      "LOAD": 70,
+      "POPCOUNT": 70,
+      "RETURN": 3,
+      "STORE": 88,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1508
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005902a9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void wincore_winrun_cpp_FUN_005902a0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar7 = param_1 * 0xac;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)puVar9",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)((int)puVar9 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (uint *)((int)puVar10 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 44,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (_DAT_026656bc == (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "MVar4 = joyGetPos(*(UINT *)(param_1 * 4 + 0x2665974),&jStack_24);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 * 0x30;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 * 0x30;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(jStack_24.wXpos,param_1 + 0x2665984,0xbf800000,0x3f800000);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(jStack_24.wYpos,param_1 + 0x2665990,0xbf800000,0x3f800000);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar3 = wincore_winrun_cpp_FUN_005901c0(jStack_24.wZpos,param_1 + 0x266599c,0,0x3f800000);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = (*_DAT_026656bc)(*(uint *)(param_1 * 4 + 0x2665974),&uStack_58);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = param_1 * 0x30;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(uStack_4c,param_1 * 0x30 + 0x26659a8,0xbf800000,0x3f800000);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)puVar9",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)((int)puVar9 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (uint *)((int)puVar10 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 34,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005902f1, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 37,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005902f1: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

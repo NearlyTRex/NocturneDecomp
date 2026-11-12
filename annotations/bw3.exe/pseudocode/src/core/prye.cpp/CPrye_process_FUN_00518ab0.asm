@@ -28,7 +28,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   core_prye.cpp_FUN_00518cd0
-;   unkafter_prye.cpp_FUN_00526dc0
+;   core_prye.cpp_FUN_00526dc0
 ;
 ; *****************************************************************************
 
@@ -190,8 +190,8 @@ section .text
         ;   XREF to: 00518c60 (CONDITIONAL_JUMP)  ; LAB_00518c60
     PUSH dword ptr [ESP + 0x54]         ; 00518c73
     PUSH EBX                            ; 00518c77
-    CALL unkafter_prye.cpp_FUN_00526dc0 ; 00518c78
-        ;   XREF to: 00526dc0 (UNCONDITIONAL_CALL)  ; undefined unkafter_prye.cpp_FUN_00526dc0()
+    CALL core_prye.cpp_FUN_00526dc0     ; 00518c78
+        ;   XREF to: 00526dc0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00526dc0()
     ADD ESP,0x8                         ; 00518c7d
     ADD ESP,0x44                        ; 00518c80
     POP EBP                             ; 00518c83

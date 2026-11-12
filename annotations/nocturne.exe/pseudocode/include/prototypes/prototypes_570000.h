@@ -12,6 +12,7 @@
 #include "system/strstream.h"
 #include "system/time.h"
 #include "system/watcom.h"
+#include "system/winbase.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 
@@ -41,6 +42,9 @@ double __cdecl crt_math_c_process_math_error_FUN_005706dd(int errorFlags,double 
 double __mathinternal crt_math_c_handle_math_error_FUN_005707db(void);
 char * __cdecl crt_string_c_strpbrk_FUN_00570870(char *str,char *char_set);
 void crt_unknown_c_FUN_005708c0(FILETIME *param_1,LPWORD param_2,LPWORD param_3);
+void crt_unknown_c_FUN_005708f0(WORD param_1,WORD param_2,LPFILETIME param_3);
+void crt_unknown_c_FUN_00570924(int param_1,undefined1 *param_2);
+undefined4 crt_unknown_c_FUN_0057096c(HANDLE param_1,uint param_2,LPWIN32_FIND_DATAA param_3);
 time_t __cdecl crt_time_c_dos_datetime_to_time_t_FUN_005709b0(WORD dos_date,WORD dos_time);
 time_t __cdecl crt_time_c__time_FUN_00570a30(time_t *time);
 int crt_unknown_c_FUN_00570a70(uint param_1);
@@ -57,6 +61,7 @@ undefined8 crt_unknown_c_FUN_00570ef0(void);
 undefined8 crt_unknown_c_FUN_00570f03(void);
 undefined8 crt_unknown_c_FUN_00570f18(void);
 undefined8 crt_unknown_c_FUN_00570f2b(void);
+void crt_unknown_c_FUN_00570f50(ulong param_1);
 void crt_unknown_c_FUN_00570f60(void);
 void crt_unknown_c_FUN_0057104c(void);
 void crt_unknown_c_FUN_005710a0(char *param_1,char *param_2);
@@ -90,6 +95,7 @@ int __watcallStack crt_signal_c_processSignal_FUN_005717d8(int signal_number);
 undefined2 crt_unknown_c_FUN_00571858(void);
 void crt_unknown_c_FUN_0057189c(void);
 void crt_unknown_c_FUN_005718c4(void);
+undefined4 crt_unknown_c_FUN_005718e0(UINT param_1);
 ulonglong __watcallRegister crt_math_c_udivmod64_FUN_00571a9d(ulonglong dividend,ulonglong divisor);
 void __cdecl crt_unknown_c_None_FUN_00571b2c(byte *param_1,undefined8 *param_2);
 void crt_unknown_c_FUN_00571b8e(void);
@@ -110,11 +116,16 @@ int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_005721d7(filebuf *this_
 streambuf * __watcallStack crt_fstream_cpp_filebuf_setbuf_FUN_005722dc(filebuf *this_ptr,char *buffer_ptr,int buffer_size);
 int __watcallStack crt_fstream_cpp_filebuf_seekoff_FUN_00572338(filebuf *this_ptr,long offset,int direction,int mode);
 int __watcallStack crt_fstream_cpp_filebuf_sync_FUN_005723ae(filebuf *this_ptr);
+double crt_fstream_cpp_FUN_00572446(void);
+double crt_fstream_cpp_FUN_0057264c(void);
+double crt_fstream_cpp_FUN_00572809(void);
+int crt_fstream_cpp_FUN_005729a6(void);
 void __cdecl crt_math_c_print_error_message_FUN_005729e8(int errorType,char *errorData);
 double __cdecl crt_math_c_report_math_error_FUN_00572a35(MathErrorContext *errorCtx);
 char * __cdecl crt_string_c_char_in_set_FUN_00572a90(char *charset,wchar_t wc);
 int __watcallStack crt_time_c_get_local_time_FUN_00572b00(_tm *tm_output);
 void crt_unknown_c_FUN_00572b70(void);
+undefined4 crt_unknown_c_FUN_00572cb0(void);
 void crt_unknown_c_FUN_00572d50(byte *param_1,byte *param_2);
 char * crt_unknown_c_FUN_00572d90(char *param_1);
 int crt_unknown_c_FUN_00572e00(byte *param_1,byte *param_2);
@@ -130,6 +141,7 @@ uint __cdecl crt_unknown_c_ReadFileBytesMaybe_FUN_005733e0(uint param_1,char *pa
 undefined4 crt_unknown_c_FUN_00573650(void);
 int __cdecl crt_stdio_c_fputs_FUN_00573660(char *str,_FILE *file);
 long __cdecl crt_stdlib_c_strtol_internal_FUN_00573720(char *str,char **endptr,int base,int is_signed);
+void crt_stdlib_c_strtoul_FUN_00573890(char *param_1,char **param_2,int param_3);
 long __cdecl crt_stdlib_c_strtol_FUN_005738ac(char *str,char **endptr,int base);
 int __cdecl crt_stdlib_c_charToDigit_FUN_005738c8(char ch);
 int __cdecl crt_env_c_putenv_internal_FUN_00573930(char *envstr);
@@ -139,6 +151,7 @@ void crt_unknown_c_FUN_00573db0(wchar_t param_1);
 void crt_unknown_c_FUN_00573e30(undefined4 *param_1);
 HANDLE crt_unknown_c_FUN_00573ed0(undefined4 param_1,int param_2,undefined4 param_3);
 void crt_unknown_c_FUN_00573fc8(void);
+void crt_unknown_c_FUN_00573ff0(void);
 undefined4 crt_unknown_c_FUN_00573ffb(void);
 int crt_unknown_c_FUN_00574000(char *param_1);
 int crt_unknown_c_FUN_00574030(wchar_t *param_1,char *param_2,int param_3);

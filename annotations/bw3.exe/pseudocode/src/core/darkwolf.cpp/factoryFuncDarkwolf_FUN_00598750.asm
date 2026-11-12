@@ -5,8 +5,8 @@
 ;
 ;
 ; Called Functions:
+;   core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780
 ;   crt_memory.c_operator_new_FUN_005a3cb2
-;   unkafter_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00598761
     PUSH EAX                            ; 00598762
         ;   Label: LAB_00598762
-    CALL unkafter_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780 ; 00598763
-        ;   XREF to: 00598780 (UNCONDITIONAL_CALL)  ; CDarkwolf * unkafter_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780(CDarkwolf * this_ptr)
+    CALL core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780 ; 00598763
+        ;   XREF to: 00598780 (UNCONDITIONAL_CALL)  ; CDarkwolf * core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780(CDarkwolf * this_ptr)
     ADD ESP,0x4                         ; 00598768
     RET                                 ; 0059876b
 

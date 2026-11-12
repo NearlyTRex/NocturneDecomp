@@ -1,0 +1,812 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 306,
+    "complexity_score": 869,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 114,
+    "suspect_count": 74,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 420
+  },
+  "cross_references": [
+    {
+      "addr": "0045c7b0",
+      "from_addr": "0045c7cb",
+      "name": "core_demnfolk.cpp_CDemnfolk_processDamage_FUN_0045c7b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045c4a0",
+    "address_range": [
+      [
+        "0045c4a0",
+        "0045c7af"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_demnfolk.cpp_FUN_0045c4a0",
+    "signature": "void core_demnfolk_cpp_FUN_0045c4a0(CCharacter *param_1,float *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd00"
+    },
+    {
+      "addr": "00419b90",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90"
+    },
+    {
+      "addr": "00418940",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418940"
+    },
+    {
+      "addr": "004311a0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_detachBodyPart_FUN_004311a0"
+    },
+    {
+      "addr": "00431210",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210"
+    },
+    {
+      "addr": "004352e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_004352e0"
+    },
+    {
+      "addr": "005c084c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005c084c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0045c484",
+      "name": "switchdataD_0045c484",
+      "type": "undefined1*",
+      "value": "0045c4dd"
+    },
+    {
+      "addr": "005d8263",
+      "name": "s_limb_wav_005d8263",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8273",
+      "name": "DAT_005d8273",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d827b",
+      "name": "DAT_005d827b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d8283",
+      "name": "DAT_005d8283",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "01ccf3a4",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf58c",
+      "name": "g_CGameInstance.gratuitous_dismemberment",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf610",
+      "name": "g_CGameInstance.slow_motion_mode",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0045c7cb",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_processDamage_FUN_0045c7b0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.786026200873362,
+    "instruction_count": 229,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 2,
+      "BRANCH": 9,
+      "BRANCHIND": 1,
+      "CALL": 14,
+      "CBRANCH": 25,
+      "COPY": 302,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 92,
+      "INT_AND": 104,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 85,
+      "INT_LEFT": 5,
+      "INT_LESS": 21,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 10,
+      "INT_SBORROW": 21,
+      "INT_SCARRY": 16,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 42,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 84,
+      "INT_ZEXT": 6,
+      "LOAD": 69,
+      "POPCOUNT": 42,
+      "RETURN": 3,
+      "STORE": 75,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1096
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_demnfolk_cpp_FUN_0045c4a0(CCharacter *param_1,float *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_demnfolk_cpp_FUN_0045c4a0(CCharacter *param_1,float *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((0.0 < param_2[0xb]) && (*param_2 == -NAN)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((0.0 < param_2[0xb]) && (*param_2 == -NAN)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = param_1[1].model.base.motion_list_ptr;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = (CMotionList *)param_1[1].model.base.current_motion_index;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = (CMotionList *)param_1[1].model.base.current_frame_number;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = (CMotionList *)param_1[1].model.base.tween_type;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = (CMotionList *)param_1[1].model.base.tween_target_motion;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = (CMotionList *)param_1[1].model.base.tween_progress;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = (float)pCVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pCVar3 = (CMotionList *)*param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((((pCVar3 == param_1[1].model.base.motion_list_ptr) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(pCVar3 == (CMotionList *)param_1[1].model.base.current_motion_index)) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(pCVar3 == (CMotionList *)param_1[1].model.base.current_frame_number)) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((pCVar3 == (CMotionList *)param_1[1].model.base.tween_type ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(pCVar3 == (CMotionList *)param_1[1].model.base.tween_progress)))) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(pCVar3 == (CMotionList *)param_1[1].model.base.tween_target_motion)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_14 = param_2[0xb];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((float)param_1[1].model.base.tween_target_motion == *param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((float)param_1[1].model.base.tween_target_motion == *param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1].model.base.tween_progress == *param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_1[1].model.base.tween_progress == *param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).location.position,&(param_1->base).orient,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).location.position,&(param_1->base).orient,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(CVector3f *)(param_2 + 3),&param_1->base,0,0,BLOOD_TYPE_RED);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CVector3f *)(param_2 + 3),&param_1->base,0,0,BLOOD_TYPE_RED);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,body_part,(int)*param_2,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1,body_part,(int)*param_2,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((CMotionList *)*param_2 == param_1[1].model.base.motion_list_ptr) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((CMotionList *)*param_2 == param_1[1].model.base.motion_list_ptr) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,body_part,param_1[1].model.base.current_motion_index,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,body_part,param_1[1].model.base.current_motion_index,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1].model.base.current_frame_number == *param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_1[1].model.base.current_frame_number == *param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,body_part,param_1[1].model.base.tween_type,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,body_part,param_1[1].model.base.tween_type,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1].model.base.tween_progress == *param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_1[1].model.base.tween_progress == *param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "initial_velocity = (CVector3f *)(param_2 + 3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,(int)param_1[1].model.base.current_frame_number,initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,(int)param_1[1].model.base.current_frame_number,initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_1[1].model.base.tween_type,initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_1[1].model.base.tween_type,initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,(int)param_1[1].model.base.motion_list_ptr,initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,(int)param_1[1].model.base.motion_list_ptr,initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_1[1].model.base.current_motion_index,initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_1[1].model.base.current_motion_index,initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_1[1].model.base.tween_target_motion,initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,param_1[1].model.base.tween_target_motion,initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_004352e0(param_1,\"limb?.wav\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->model).part_data.visibility_flags[param_1[1].model.base.tween_target_motion] ==",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->model).part_data.visibility_flags[param_1[1].model.base.tween_target_motion] ==",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 93,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = 9999.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[2] = param_2[2] * (float)_DAT_005d8273;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[2] = param_2[2] * (float)_DAT_005d8273;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (((iVar2 != 0) || (*param_2 == (float)param_1[1].model.base.tween_target_motion)) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((iVar2 != 0) || (*param_2 == (float)param_1[1].model.base.tween_target_motion)) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*param_2 == param_1[1].model.base.tween_progress)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*param_2 == param_1[1].model.base.tween_progress)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 101,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((int)param_1[1].model.base.tween_speed < 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = 999.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar1 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (fVar1 == (float)param_1[1].model.base.tween_target_motion) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = param_2[1] * (float)_DAT_005d8283;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = param_2[1] * (float)_DAT_005d8283;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 111,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((fVar1 != param_1[1].model.base.tween_speed) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 112,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(fVar1 != param_1[1].model.base.tween_progress)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = param_2[1] * (float)_DAT_005d827b;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = param_2[1] * (float)_DAT_005d827b;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 116,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 116,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

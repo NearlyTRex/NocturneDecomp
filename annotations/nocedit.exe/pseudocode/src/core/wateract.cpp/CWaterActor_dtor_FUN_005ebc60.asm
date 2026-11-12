@@ -31,7 +31,7 @@ section .text
     ADD EBX,0x29c                       ; 005ebc6e
     PUSH EBX                            ; 005ebc74
     CALL core_wateract.cpp_SWaterVertex_arrdtor1000_FUN_005ebcf0 ; 005ebc75
-        ;   XREF to: 005ebcf0 (UNCONDITIONAL_CALL)  ; SWaterVertex * core_wateract.cpp_SWaterVertex_arrdtor1000_FUN_005ebcf0(SWaterVertex * objs, uint flags)
+        ;   XREF to: 005ebcf0 (UNCONDITIONAL_CALL)  ; SWaterVertex * core_wateract.cpp_SWaterVertex_arrdtor1000_FUN_005ebcf0(SWaterVertex * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ebc7a
     PUSH 0x1                            ; 005ebc7d
     LEA EBX,[EAX + 0xfffffd64]          ; 005ebc7f

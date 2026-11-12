@@ -16,7 +16,7 @@
 ;   core_imp.cpp_CImp_getCollisionType_FUN_004d81d0 at 004d81da
 ;   core_sentinel.cpp_CSentinel_getCollisionType_FUN_00532500 at 0053250a
 ;   core_styldemo.cpp_CStylerDemon_getCollisionType_FUN_005a08f0 at 005a08fa
-;   core_zombprie.cpp_CZombiePriest_getCollisionType_FUN_0058fc60 at 0058fc6a
+;   core_zombiepriest.cpp_CZombiePriest_getCollisionType_FUN_0058fc60 at 0058fc6a
 ;
 ; *****************************************************************************
 

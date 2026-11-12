@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor
 ;
-; XREF[43]:
+; XREF[44]:
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30 at 00408c56
 ;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40 at 0040cabb
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c990 at 0040c9ee
@@ -18,7 +18,7 @@
 ;   core_cow.cpp_CZombieCow_process_FUN_004392b0 at 00439404
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0 at 0043a972
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 00459a46
-;   ... and 33 more
+;   ... and 34 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005e5edb

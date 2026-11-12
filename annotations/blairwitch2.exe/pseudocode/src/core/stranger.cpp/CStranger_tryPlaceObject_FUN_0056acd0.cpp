@@ -240,7 +240,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0056acd0(CStranger *t
                (fStack_4c - local_14) + (this_ptr->carry_object_world_center).y;
           if (iVar8 != 0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"?actionPending = %d\nstranger.cpp line %d" + 1);
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d");
           }
           pCVar1 = &(this_ptr->base).target_position;
           pCVar6 = &(pCStack_40->base).location;

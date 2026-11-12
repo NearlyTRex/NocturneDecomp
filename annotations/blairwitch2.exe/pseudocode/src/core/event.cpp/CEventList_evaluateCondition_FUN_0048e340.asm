@@ -16,7 +16,7 @@
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004162b0 at 0041643c
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 004186e3
 ;   core_bugs.cpp_CBugs_process_FUN_0041f390 at 0041f3e9
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 00437ae3
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 00437ae3
 ;   core_conveyor.cpp_CConveyor_process_FUN_004385e0 at 004385f9
 ;   ... and 46 more
 ;

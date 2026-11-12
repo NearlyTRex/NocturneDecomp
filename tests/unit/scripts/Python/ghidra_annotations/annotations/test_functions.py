@@ -169,6 +169,16 @@ def test_a_misnamed_function_or_receiver_fails_the_export_after_writing_it(tmp_p
     fn.export_functions(program, str(tmp_path), allow_name_address_mismatch = True, allow_this_ptr_mismatch = True)
 
 
+def test_a_placeholder_unit_fails_the_export_after_writing_it(tmp_path):
+    program = program_with_functions()
+    program.getFunctionManager().add("unkafter_game.cpp_FUN_00401200", 0x401200)
+    out = tmp_path / "bw1.exe"
+    with pytest.raises(fn.TUNameError, match = "unkafter_game.cpp: folder unkafter is a placeholder"):
+        fn.export_functions(program, str(out), allow_this_ptr_mismatch = True)
+    assert "00401200" in {r["addr"] for r in load_json_files(str(out), "functions")}
+    fn.export_functions(program, str(out), allow_this_ptr_mismatch = True, allow_tu_name_violations = True)
+
+
 # --- import ---------------------------------------------------------------------------------------
 
 @pytest.mark.parametrize("storage, data_type, made", [

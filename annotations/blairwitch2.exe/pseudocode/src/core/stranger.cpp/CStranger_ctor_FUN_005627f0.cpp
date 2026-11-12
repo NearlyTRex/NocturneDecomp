@@ -1,6 +1,6 @@
 // Name: core_stranger.cpp_CStranger_ctor_FUN_005627f0
 // Address: 005627f0
-// Address Range: [[005627f0, 005628b0]]
+// Address Range: [[005627f0, 00562b84]]
 // Convention: unknown
 // Signature: CStranger * core_stranger_cpp_CStranger_ctor_FUN_005627f0(CStranger *this_ptr)
 

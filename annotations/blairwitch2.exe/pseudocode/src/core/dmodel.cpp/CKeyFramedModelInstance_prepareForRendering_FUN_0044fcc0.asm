@@ -18,9 +18,9 @@
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 00410750
 ;   core_bat.cpp_CBat_renderOpaque_FUN_004113f0 at 00411459
 ;   core_battery.cpp_CBattery_renderOpaque_FUN_00414810 at 0041489a
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60 at 0059bd8e
 ;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00415b60 at 00415c47
 ;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041c580 at 0041c641
-;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690 at 0041c756
 ;   ... and 46 more
 ;
 ; Called Functions:

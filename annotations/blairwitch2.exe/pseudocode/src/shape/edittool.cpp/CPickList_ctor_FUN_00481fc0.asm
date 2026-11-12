@@ -9,14 +9,14 @@
 ; XREF[11]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6720
 ;   core_game.cpp_staticInit_FUN_004b28b0 at 004b28f3
+;   core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c3d0 at 0059c3e4
 ;   core_menu.cpp_FUN_004ed260 at 004ee0a1
 ;   core_menu.cpp_FUN_004eed60 at 004ef9dd
 ;   core_mission.cpp_FUN_004fd280 at 004fd293
 ;   core_script.cpp_staticInit_FUN_00520f90 at 00520f95
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_0055b110 at 0055b11c
-;   engine_pod.cpp_FUN_0051aa7e at 0051abe2
+;   engine_pod.cpp_FUN_0051aa80 at 0051abe2
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970 at 0047c984
-;   shape_edittool.cpp_FUN_0047cb1e at 0047cbcc
 ;   ... and 1 more
 ;
 ; Referenced Globals:

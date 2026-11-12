@@ -123,9 +123,9 @@ void __cdecl engine_dosio_cpp_makePath_FUN_004795b0(char *full_path,char *drive,
 void __cdecl engine_dosio_cpp_FUN_004795e0(char *input_path,char *drive,char *output_path);
 void __cdecl engine_dosio_cpp_changeFileExtension_FUN_004796b0(char *path,char *new_extension);
 int __cdecl engine_dosio_cpp_getFullPath_FUN_00479720(char *output_path,char *input_path);
-void unkafter_dosio_cpp_FUN_00479770(char *param_1,char *param_2,char *param_3);
-bool unkafter_dosio_cpp_FUN_004798c0(char *param_1);
-bool unkafter_dosio_cpp_FUN_00479950(char *param_1);
+void engine_dosio_cpp_FUN_00479770(char *param_1,char *param_2,char *param_3);
+bool engine_dosio_cpp_FUN_004798c0(char *param_1);
+bool engine_dosio_cpp_FUN_00479950(char *param_1);
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_004799c0(CDemonPart *this_ptr,uint flags);
 void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004799e0(CDemonPart *this_ptr);
 void core_dpart_cpp_FUN_00479ae0(int param_1);
@@ -155,12 +155,13 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_0047d430(CDracul
 void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0047d480(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 EDeathState __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_0047d750(CDraculaBride *this_ptr);
 int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_0047d790(CDraculaBride *this_ptr,CVector3f *out_points_array);
+void core_dracbrid_cpp_FUN_0047d890(float param_1,float param_2,float param_3);
 void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_name,float volume);
 void __cdecl core_dracbrid_cpp_FUN_0047de00(CDraculaBride *this_ptr,float delta_time);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_ctor_FUN_0047e150(SFreaky *this_ptr);
 SFreaky * core_dracbrid_cpp_SFreaky_dtor_FUN_0047e170(SFreaky *this_ptr,uint flags);
 CDraculaBride * core_dracbrid_cpp_CDraculaBride_dtor_FUN_0047e180(CDraculaBride *this_ptr,uint flags);
-CDrawSurface * unkafter_dracbrid_cpp_FUN_0047e20e(CDrawSurface *param_1);
+CDrawSurface * core_dracbrid_cpp_FUN_0047e20e(CDrawSurface *param_1);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0047e240(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_0047e280(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface );
 void __cdecl cockpit_drawsurf_cpp_setColor_FUN_0047e3b0(int color_value);
@@ -177,6 +178,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_004
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_0047ed30(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_0047ee70(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void cockpit_drawsurf_cpp_FUN_0047ef60(CDrawSurface *param_1,int param_2,int param_3,int param_4);
+byte cockpit_drawsurf_cpp_FUN_0047f170(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_0047f1b0(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0047f4a0(CDrawSurface *this_ptr,int start_x,int y,int end_x);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_0047f5c0(CDrawSurface *this_ptr,int x,int start_y,int end_y);

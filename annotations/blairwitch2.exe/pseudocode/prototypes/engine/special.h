@@ -113,6 +113,10 @@ undefined4 FUN_0055f60e(undefined4 param_1);
 // Address: 0055f64e
 undefined4 FUN_0055f64e(undefined4 param_1,undefined4 param_2);
 
+// Original: engine_special.cpp_FUN_0055f690
+// Address: 0055f690
+undefined4 FUN_0055f690(undefined4 param_1,undefined4 param_2);
+
 // Original: engine_special.cpp_FUN_0055f70c
 // Address: 0055f70c
 undefined4 FUN_0055f70c(undefined4 param_1,undefined4 param_2);
@@ -264,7 +268,3 @@ void switchRenderer(char *param_1,undefined4 param_2);
 // Original: engine_special.cpp_FUN_005604be
 // Address: 005604be
 undefined1 * FUN_005604be(undefined4 *param_1);
-
-// Original: engine_special.cpp_bindDllFunction_FUN_0059df80
-// Address: 0059df80
-void __cdecl bindDllFunction(void **slot,void *proc);

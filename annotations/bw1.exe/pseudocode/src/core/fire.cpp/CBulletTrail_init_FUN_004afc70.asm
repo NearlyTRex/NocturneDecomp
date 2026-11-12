@@ -10,6 +10,9 @@
 ; CKeyFramedModel * Stack[0x10]:4   model_ptr
 ; float            Stack[0x14]:4   segment_length
 ;
+; XREF[1]:
+;   core_fire.cpp_CFireEffect_createBulletTrail_FUN_004b5db0 at 004b5df4
+;
 ; *****************************************************************************
 
 section .text

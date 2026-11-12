@@ -8,6 +8,7 @@
 ; char *           Stack[0x8]:4   param_2
 ;
 ; XREF[8]:
+;   core_flashlit.cpp_FUN_004b9db0 at 004b9dca
 ;   core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004bdfa0 at 004bdfc1
 ;   core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004bdd00 at 004bdd21
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 at 004bd1ba
@@ -15,7 +16,6 @@
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004bde80 at 004bdea1
 ;   core_fldnotes.cpp_FUN_004bdbf0 at 004bdc11
 ;   core_fldnotes.cpp_FUN_004bde20 at 004bde3d
-;   unkaddr_004b9ab0.cpp_FUN_004b9db0 at 004b9dca
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005c04e0

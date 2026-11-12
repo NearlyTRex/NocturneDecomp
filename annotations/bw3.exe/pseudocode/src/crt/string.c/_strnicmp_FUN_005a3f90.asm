@@ -15,10 +15,10 @@
 ;   core_charactr.cpp_FUN_0042c230 at 0042c7f3
 ;   core_charactr.cpp_FUN_00434850 at 00434882
 ;   core_demnfolk.cpp_FUN_00457300 at 0045735f
+;   core_demnfolk.cpp_FUN_004580a0 at 004580d6
 ;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 0048811e
 ;   core_event.cpp_FUN_0048c2e0 at 0048c538
 ;   core_fldnotes.cpp_STextView_handleTag_FUN_004a9330 at 004a9404
-;   core_game.cpp_FUN_004bdfb0 at 004be3f4
 ;   ... and 12 more
 ;
 ; *****************************************************************************

@@ -92,9 +92,9 @@ int __cdecl core_setdir_cpp_testOBBIntersection_FUN_00513e80(SVDBox *obb_a,SVDBo
 int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0(CDemonSet *this_ptr);
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(CDemonSet *this_ptr,int box_index);
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(CDemonSet *this_ptr,CVector3f *position);
-undefined4 * core_setdir_cpp_FUN_00514390(void);
-undefined4 * core_setdir_cpp_FUN_005143a0(void);
-undefined4 * core_setdir_cpp_FUN_005143b0(void);
+int * __cdecl core_setdir_cpp_assignInt_FUN_00514390(int *dest,int *src);
+int * __cdecl core_setdir_cpp_assignInt1_FUN_005143a0(int *dest,int *src);
+int * __cdecl core_setdir_cpp_assignInt2_FUN_005143b0(int *dest,int *src);
 CBoundingBox3D * __cdecl core_setdir_cpp_CBoundingBox3D_arrdtor2000_FUN_005143c0(CBoundingBox3D *this_ptr,uint flags);
 C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_005143e0(C3DSCamera *this_ptr);
 C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_dtor_FUN_00514410(C3DSCamera *this_ptr,uint flags);

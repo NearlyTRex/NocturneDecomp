@@ -19,9 +19,9 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   unkaddr_0059d350.cpp_FUN_0059d7f0
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
-;   unkaddr_0059d350.cpp_FUN_0059dcb0
+;   core_muzzle.cpp_FUN_0059d7f0
+;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_FUN_0059dcb0
 ;
 ; *****************************************************************************
 
@@ -94,18 +94,18 @@ section .text
     FLD float ptr [0x005ff540]          ; 005a42ca | DAT_005ff540
     PUSH ESI                            ; 005a42d0
     FSTP float ptr [EBX + 0x11394]      ; 005a42d1
-    CALL unkaddr_0059d350.cpp_FUN_0059d7f0 ; 005a42d7
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a42d7
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
     ADD ESP,0xc                         ; 005a42dc
     PUSH 0x3dcccccd                     ; 005a42df
     PUSH ESI                            ; 005a42e4
-    CALL unkaddr_0059d350.cpp_FUN_0059dcb0 ; 005a42e5
-        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059dcb0()
+    CALL core_muzzle.cpp_FUN_0059dcb0   ; 005a42e5
+        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dcb0()
     ADD ESP,0x8                         ; 005a42ea
     PUSH 0x5f02fd                       ; 005a42ed | = "Chasing"
     PUSH ESI                            ; 005a42f2
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005a42f3
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a42f3
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005a42f8
     JMP 0x005a42ba                      ; 005a42fb
         ;   XREF to: 005a42ba (UNCONDITIONAL_JUMP)  ; LAB_005a42ba
@@ -114,13 +114,13 @@ section .text
     FLD float ptr [0x005ff544]          ; 005a4302 | DAT_005ff544
     PUSH ESI                            ; 005a4308
     FSTP float ptr [EBX + 0x11394]      ; 005a4309
-    CALL unkaddr_0059d350.cpp_FUN_0059dcb0 ; 005a430f
-        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059dcb0()
+    CALL core_muzzle.cpp_FUN_0059dcb0   ; 005a430f
+        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dcb0()
     ADD ESP,0x8                         ; 005a4314
     PUSH 0x5f0305                       ; 005a4317 | = "Chasing"
     PUSH ESI                            ; 005a431c
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005a431d
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a431d
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005a4322
     MOV ESP,EBP                         ; 005a4325
     POP EBP                             ; 005a4327

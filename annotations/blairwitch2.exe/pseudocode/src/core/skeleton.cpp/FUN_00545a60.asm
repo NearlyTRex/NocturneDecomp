@@ -35,8 +35,10 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[17]:
+; XREF[18]:
+;   core_basicene.cpp_FUN_0059f390 at 0059f400
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_004291f0 at 004292e3
+;   core_charactr.cpp_FUN_0042a2d0 at 0042a318
 ;   core_doc.cpp_FUN_00453d80 at 0045515a
 ;   core_doc.cpp_FUN_004555c0 at 004558e7
 ;   core_doc.cpp_FUN_004562a0 at 00456450
@@ -44,9 +46,7 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afda9
 ;   core_gabriela.cpp_FUN_004b20d0 at 004b21c0
 ;   core_ghoul.cpp_CGhoul_process_FUN_004c1bb0 at 004c1f06
-;   core_hostage.cpp_CHostage_process_FUN_004d1660 at 004d2b71
-;   core_icepick.cpp_FUN_004d5470 at 004d54ef
-;   ... and 7 more
+;   ... and 8 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005e72d7

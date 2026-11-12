@@ -18,11 +18,11 @@
 ;   TerminatedCString s_MeleeAttack_005efc39
 ;
 ; Called Functions:
+;   core_basicene.cpp_FUN_0059e8c0
 ;   core_confedrt.cpp_FUN_005a1030
 ;   core_confedrt.cpp_FUN_005a1180
-;   unkaddr_0059d350.cpp_FUN_0059d650
-;   unkaddr_0059d350.cpp_FUN_0059daa0
-;   unkafter_basicene.cpp_FUN_0059e8c0
+;   core_muzzle.cpp_FUN_0059d650
+;   core_muzzle.cpp_FUN_0059daa0
 ;
 ; *****************************************************************************
 
@@ -60,24 +60,24 @@ section .text
         ;   Label: LAB_005a0b4f
     PUSH dword ptr [ESP + 0x14]         ; 005a0b50
     PUSH ESI                            ; 005a0b54
-    CALL unkafter_basicene.cpp_FUN_0059e8c0 ; 005a0b55
-        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e8c0()
+    CALL core_basicene.cpp_FUN_0059e8c0 ; 005a0b55
+        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059e8c0()
     ADD ESP,0xc                         ; 005a0b5a
     JMP 0x005a0b2e                      ; 005a0b5d
         ;   XREF to: 005a0b2e (UNCONDITIONAL_JUMP)  ; LAB_005a0b2e
     PUSH 0x5efc15                       ; 005a0b5f | = "RangeAttack"
         ;   Label: LAB_005a0b5f
     PUSH EAX                            ; 005a0b64
-    CALL unkaddr_0059d350.cpp_FUN_0059d650 ; 005a0b65
-        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d650()
+    CALL core_muzzle.cpp_FUN_0059d650   ; 005a0b65
+        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d650()
     ADD ESP,0x8                         ; 005a0b6a
     JMP 0x005a0b3d                      ; 005a0b6d
         ;   XREF to: 005a0b3d (UNCONDITIONAL_JUMP)  ; LAB_005a0b3d
     PUSH 0x5efc21                       ; 005a0b6f | = "RangeAttack"
         ;   Label: LAB_005a0b6f
     PUSH EAX                            ; 005a0b74
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a0b75
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a0b75
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a0b7a
     TEST EAX,EAX                        ; 005a0b7d
     JZ 0x005a0b3d                       ; 005a0b7f
@@ -93,8 +93,8 @@ section .text
     PUSH 0x5efc2d                       ; 005a0b91 | = "MeleeAttack"
         ;   Label: LAB_005a0b91
     PUSH EAX                            ; 005a0b96
-    CALL unkaddr_0059d350.cpp_FUN_0059d650 ; 005a0b97
-        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d650()
+    CALL core_muzzle.cpp_FUN_0059d650   ; 005a0b97
+        ;   XREF to: 0059d650 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d650()
     ADD ESP,0x8                         ; 005a0b9c
     POP ESI                             ; 005a0b9f
     POP EBX                             ; 005a0ba0
@@ -102,8 +102,8 @@ section .text
     PUSH 0x5efc39                       ; 005a0ba2 | = "MeleeAttack"
         ;   Label: LAB_005a0ba2
     PUSH EAX                            ; 005a0ba7
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a0ba8
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a0ba8
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a0bad
     TEST EAX,EAX                        ; 005a0bb0
     JZ 0x005a0b4c                       ; 005a0bb2

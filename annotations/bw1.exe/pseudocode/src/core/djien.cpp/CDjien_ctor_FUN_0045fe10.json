@@ -1,0 +1,168 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 84,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 3,
+    "suspect_types": [
+      "derived_field_index_pun",
+      "shadow_pointer_walk",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 88
+  },
+  "cross_references": [
+    {
+      "addr": "0045fde0",
+      "from_addr": "0045fdf3",
+      "name": "core_djien.cpp_factoryFuncDjien_FUN_0045fde0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045fe10",
+    "address_range": [
+      [
+        "0045fe10",
+        "0045fef8"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_djien.cpp_CDjien_ctor_FUN_0045fe10",
+    "signature": "CDjien * core_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a0410",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a0410"
+    },
+    {
+      "addr": "00569f50",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
+    },
+    {
+      "addr": "005c0357",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005c0357"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fea20",
+      "name": "DAT_005fea20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fea24",
+      "name": "DAT_005fea24",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0045fdf3",
+        "call_type": "direct",
+        "caller": "core_djien.cpp_factoryFuncDjien_FUN_0045fde0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.465116279069767,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 69,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 26,
+      "INT_AND": 12,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 6,
+      "INT_SUB": 11,
+      "LOAD": 3,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 25
+    },
+    "pcode_op_count": 192
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDjien *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar5` is advanced into scratch `pCVar6`, then rebound via a later `pCVar5 = pCVar6;`. Functionally identical to the single-line self-update; replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
+      "line": 38,
+      "match": "pCVar6 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar5 = pCVar6",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDjien *)((pCVar5->base).base.base.actor_name + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "'pCVar3[1].base.base.create_event + 0x1c' walks 1 x sizeof(CEnemy) (0xc268) + offsetof(base.base.create_event) (0x78) + 0x1c = 0xc2fc, which is exactly offsetof(CBatman, part_indices[11]). Ghidra had no CBatman type here and reached the field by index arithmetic; write it as ((CBatman *)pCVar3)->part_indices[11] (\u00a7de-pun/\u00a712). Ambiguous: CDemnfolk::bone_indices, CDjien::boxes, CDraculaBride::freaky_timer also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 17,
+      "severity": "moderate",
+      "text": "(pCVar3[1].base.base.create_event + 0x1c,0x18,&g_SDjienBoxTypeInfo);",
+      "type": "derived_field_index_pun"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDjien",
+        "offset": 0,
+        "vtable_addr": "005febb4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

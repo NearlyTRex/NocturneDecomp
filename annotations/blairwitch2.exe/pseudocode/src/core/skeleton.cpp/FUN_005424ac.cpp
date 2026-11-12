@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_FUN_005424ac
 // Address: 005424ac
-// Address Range: [[005424ac, 005426b7]]
+// Address Range: [[005424ac, 005424af]]
 // Convention: unknown
 // Signature: CSkeleton * core_skeleton_cpp_FUN_005424ac(CDeformableModel *param_1,undefined4 param_2,int param_3,byte param_4)
 
@@ -114,7 +114,7 @@ CSkeleton * core_skeleton_cpp_FUN_005424ac(CDeformableModel *param_1,uint param_
                 (this_ptr,euler_angles,translation);
       afStackY_105c[0x3f6] = 7.727994e-39;
       shape_edittool_cpp_FUN_0047fd00();
-      engine_matrix_c_pop_FUN_0046b4a0();
+      engine_drender_cpp_pop_FUN_0046b4a0();
       iVar4 = iVar4 + 1;
     } while (iVar4 < pCStack_14->bone_count);
   }

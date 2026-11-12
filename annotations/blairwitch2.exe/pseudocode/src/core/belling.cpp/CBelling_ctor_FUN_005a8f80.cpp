@@ -28,7 +28,7 @@ CBelling * core_belling_cpp_CBelling_ctor_FUN_005a8f80(CBelling *this_ptr)
   core_cloth_cpp_CClothList_add_FUN_005b15c0
             (&(this_ptr_00->base).base.base.cloth_list,"Bellingcloth.cth");
   core_belling_cpp_CBelling_processStates_FUN_005a9060((CBelling *)this_ptr_00,0.0,0);
-  unkaddr_0059d350_cpp_FUN_0059d990();
-  unkaddr_0059d350_cpp_FUN_0059dc80();
+  core_muzzle_cpp_FUN_0059d990();
+  core_muzzle_cpp_FUN_0059dc80();
   return (CBelling *)this_ptr_00;
 }

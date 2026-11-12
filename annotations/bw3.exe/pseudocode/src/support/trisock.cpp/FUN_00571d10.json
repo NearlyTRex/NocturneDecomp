@@ -1,0 +1,162 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 118,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 10,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 35
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00571d10",
+    "address_range": [
+      [
+        "00571d10",
+        "00571d7a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "support_trisock.cpp_FUN_00571d10",
+    "signature": "void support_trisock_cpp_FUN_00571d10(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056fc30",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_closeSocket_FUN_0056fc30"
+    },
+    {
+      "addr": "00570e80",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_00570e80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9473684210526314,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 14,
+      "INT_ADD": 14,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 5,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 75
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void support_trisock_cpp_FUN_00571d10(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x608) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x60c) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0xa10) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0xa14) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0xd20) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0xd24) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0xd28) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "support_trisock_cpp_CSocket_closeSocket_FUN_0056fc30((CSocket *)(param_1 + 0xd2c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "support_trisock_cpp_FUN_00570e80(param_1 + 0xd30);",
+      "type": "unnamed_param"
+    }
+  ]
+}

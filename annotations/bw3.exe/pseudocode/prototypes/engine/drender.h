@@ -41,6 +41,10 @@ int __cdecl CDemonRenderer::renderDepthProfiledDirect(CDemonRenderer *this_ptr,S
 // Address: 0046b670
 void FUN_0046b670(CDemonRenderer *param_1,int param_2);
 
+// Original: engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0046b7d0
+// Address: 0046b7d0
+void __cdecl CDemonRenderer::renderPerspectiveTextured(CDemonRenderer *this_ptr,int param_2);
+
 // Original: engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850
 // Address: 0046b850
 void __cdecl CDemonRenderer::renderTexturedDirect(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags);
@@ -144,6 +148,58 @@ void __cdecl CDemonRenderer::applyDirectTransform(CDemonRenderer *this_ptr,CVect
 // Original: engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 // Address: 0046cf30
 void __cdecl CDemonRenderer::applyScaledTransform(CDemonRenderer *this_ptr,CVector3f *euler_angles,CVector3f *translation);
+
+// Original: engine_drender.cpp_matrixPush_FUN_0046d070
+// Address: 0046d070
+void __cdecl matrixPush(void);
+
+// Original: engine_drender.cpp_pop_FUN_0046d080
+// Address: 0046d080
+void __cdecl pop(void);
+
+// Original: engine_drender.cpp_FUN_0046d090
+// Address: 0046d090
+void FUN_0046d090(undefined4 param_1,float param_2);
+
+// Original: engine_drender.cpp_FUN_0046d0d0
+// Address: 0046d0d0
+void FUN_0046d0d0(undefined4 param_1,float param_2);
+
+// Original: engine_drender.cpp_FUN_0046d100
+// Address: 0046d100
+void FUN_0046d100(undefined4 param_1,int *param_2);
+
+// Original: engine_drender.cpp_FUN_0046d120
+// Address: 0046d120
+void FUN_0046d120(undefined4 param_1,float *param_2);
+
+// Original: engine_drender.cpp_FUN_0046d1a0
+// Address: 0046d1a0
+void FUN_0046d1a0(void);
+
+// Original: engine_drender.cpp_FUN_0046d1c0
+// Address: 0046d1c0
+void FUN_0046d1c0(void);
+
+// Original: engine_drender.cpp_FUN_0046d230
+// Address: 0046d230
+void FUN_0046d230(void);
+
+// Original: engine_drender.cpp_FUN_0046d250
+// Address: 0046d250
+void FUN_0046d250(void);
+
+// Original: engine_drender.cpp_FUN_0046d2d0
+// Address: 0046d2d0
+float FUN_0046d2d0(void);
+
+// Original: engine_drender.cpp_FUN_0046d2f0
+// Address: 0046d2f0
+void FUN_0046d2f0(undefined4 param_1,int param_2,int param_3,int param_4,int param_5);
+
+// Original: engine_drender.cpp_popViewport_FUN_0046d320
+// Address: 0046d320
+void __cdecl popViewport(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0046d330
 // Address: 0046d330

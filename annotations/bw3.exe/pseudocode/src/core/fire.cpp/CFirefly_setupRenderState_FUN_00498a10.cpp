@@ -42,7 +42,7 @@ void __cdecl core_fire_cpp_CFirefly_setupRenderState_FUN_00498a10(CFirefly *this
   _DAT_0060b0c0 = 0x80000;
   _DAT_01c73690 = 2;
   _DAT_01c73694 = 3;
-  engine_matrix_c_FUN_0046d230(DAT_005f2afc);
+  engine_drender_cpp_FUN_0046d230(DAT_005f2afc);
   _DAT_01c73658 = local_18;
   *(uint *)(&DAT_01c7365c + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffffec + (uint)bVar4 * -8);

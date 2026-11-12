@@ -49,11 +49,11 @@ void core_fldnotes_cpp_FUN_004ac6b0(int param_1)
   }
   if ((g_CGamePtr->letterbox_mode == 0) &&
      ((**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x200), (DAT_01c5fae4 & 1) != 0)) {
-    iVar2 = unkaddr_004a76f0_cpp_FUN_004a80d0(_DAT_01c5fadc,_DAT_01c5fae0);
+    iVar2 = core_flashlit_cpp_FUN_004a80d0(_DAT_01c5fadc,_DAT_01c5fae0);
     if (-1 < iVar2) {
       _DAT_01d19ba8 = SNotesSection_ARRAY_01d0d214[iVar2].first_page;
     }
-    iVar2 = unkaddr_004a76f0_cpp_FUN_004a8180(_DAT_01c5fadc,_DAT_01c5fae0);
+    iVar2 = core_flashlit_cpp_FUN_004a8180(_DAT_01c5fadc,_DAT_01c5fae0);
     _DAT_01d19ba8 = _DAT_01d19ba8 + iVar2;
     if ((((0x00000262 <= _DAT_01c5fadc) && (0x000001C0 <= _DAT_01c5fae0)) &&
         (_DAT_01c5fadc < 0x00000262 + CAlphaBitmap_01d19cc4.width)) &&

@@ -45,6 +45,7 @@ void __cdecl shape_edittool_cpp_CStrList_clear_FUN_00480e10(CStrList *this_ptr);
 void __cdecl shape_edittool_cpp_CStrList_add_FUN_00480e70(CStrList *this_ptr,char *string_data);
 void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00480eb0(CStrList *this_ptr,int insert_index,char *string_data);
 void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00480fa0(CStrList *this_ptr,int new_capacity);
+void __cdecl shape_edittool_cpp_CStrList_insertRange_FUN_00481050(CStrList *this_ptr,int param_2,CStrList *param_3);
 void __cdecl shape_edittool_cpp_CStrList_remove_FUN_004810d0(CStrList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CStrList_sortAll_FUN_00481190(CStrList *this_ptr);
 int __cdecl shape_edittool_cpp_qsortByString_FUN_004811b0(char *a,char *b);
@@ -105,10 +106,6 @@ int __cdecl shape_edittool_cpp_CEdButton_wasClicked_FUN_00485240(CEdButton *this
 int __cdecl shape_edittool_cpp_calculateButtonWidth_FUN_004852f0(char *button_text);
 int shape_edittool_cpp_calculateButtonHeight_FUN_00485380(char *param_1);
 void shape_edittool_cpp_FUN_0048546e(CEdCheck *param_1,int param_2,int param_3,char *param_4);
-void shape_edittool_cpp_FUN_004854b3(void);
-void shape_edittool_cpp_FUN_004854bb(void);
-void shape_edittool_cpp_FUN_004854dc(void);
-void shape_edittool_cpp_FUN_00485512(void);
 void shape_edittool_cpp_FUN_0048555e(int param_1);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00485580(CEdCheck *this_ptr);
 int __cdecl shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004855c0(CEdCheck *this_ptr);

@@ -115,7 +115,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bf4b0(CGame *this_ptr)
   core_weather_cpp_FUN_0057bda0();
   core_game_cpp_CGame_processCheatCodes_FUN_004bb100(this_ptr);
   core_fldnotes_cpp_FUN_004ac6b0();
-  unkafter_alphabit_cpp_FUN_00411a90();
+  core_bmppuzzl_cpp_FUN_00411a90();
   if (g_CFieldNotesPtr->is_displayed == 0) {
     core_set_cpp_CDemonSet_processActors_FUN_005353e0(g_CDemonSetPtr);
   }

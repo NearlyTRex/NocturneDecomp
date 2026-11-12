@@ -1177,6 +1177,10 @@ void FUN_005ca4f0(void);
 // Address: 005ca500
 char * FUN_005ca500(longlong *param_1,char *param_2,int param_3);
 
+// Original: crt_unknown.c_FUN_005ca5a0
+// Address: 005ca5a0
+undefined1 * FUN_005ca5a0(uint *param_1,undefined1 *param_2,int param_3);
+
 // Original: crt_unknown.c_FUN_005ca610
 // Address: 005ca610
 char * FUN_005ca610(uint param_1,char *param_2,uint param_3);
@@ -1501,6 +1505,18 @@ undefined4 FUN_005cc170(undefined4 param_1,undefined4 param_2);
 // Address: 005cc1c0
 void FUN_005cc1c0(FILETIME *param_1,LPWORD param_2,LPWORD param_3);
 
+// Original: crt_unknown.c_FUN_005cc1f0
+// Address: 005cc1f0
+void FUN_005cc1f0(WORD param_1,WORD param_2,LPFILETIME param_3);
+
+// Original: crt_unknown.c_FUN_005cc224
+// Address: 005cc224
+void FUN_005cc224(int param_1,undefined1 *param_2);
+
+// Original: crt_unknown.c_FUN_005cc26c
+// Address: 005cc26c
+undefined4 FUN_005cc26c(HANDLE param_1,uint param_2,LPWIN32_FIND_DATAA param_3);
+
 // Original: crt_unknown.c_FUN_005cc2b0
 // Address: 005cc2b0
 void FUN_005cc2b0(uint param_1,uint param_2);
@@ -1804,6 +1820,10 @@ uint FUN_005ce269(int *param_1);
 // Original: crt_unknown.c_FUN_005ce300
 // Address: 005ce300
 undefined * FUN_005ce300(char *param_1,undefined4 *param_2,int param_3,int param_4);
+
+// Original: crt_unknown.c_FUN_005ce470
+// Address: 005ce470
+void FUN_005ce470(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 
 // Original: crt_unknown.c_FUN_005ce48c
 // Address: 005ce48c

@@ -19,7 +19,7 @@
     {
       "addr": "00527300",
       "from_addr": "0052730f",
-      "name": "unkafter_stranger.cpp_CPrye_dtor_FUN_00527300",
+      "name": "core_prye.cpp_CPrye_dtor_FUN_00527300",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -42,6 +42,11 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408770"
     },
     {
+      "addr": "00410370",
+      "is_variadic": false,
+      "name": "core_armour.cpp_FUN_00410370"
+    },
+    {
       "addr": "0043f900",
       "is_variadic": false,
       "name": "core_cloth.cpp_CClothList_dtor_FUN_0043f900"
@@ -60,11 +65,6 @@
       "addr": "0054bf80",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80"
-    },
-    {
-      "addr": "00410370",
-      "is_variadic": false,
-      "name": "unkafter_armour.cpp_FUN_00410370"
     }
   ],
   "globals": [
@@ -81,7 +81,7 @@
       {
         "call_addr": "0052730f",
         "call_type": "direct",
-        "caller": "unkafter_stranger.cpp_CPrye_dtor_FUN_00527300",
+        "caller": "core_prye.cpp_CPrye_dtor_FUN_00527300",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -170,7 +170,7 @@
       "line": 22,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "iVar1 = unkafter_armour_cpp_FUN_00410370(pCVar3[-1].height_cache_tags[4] + 0x20,0);",
+      "text": "iVar1 = core_armour_cpp_FUN_00410370(pCVar3[-1].height_cache_tags[4] + 0x20,0);",
       "type": "negative_offset"
     },
     {

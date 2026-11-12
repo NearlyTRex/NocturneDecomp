@@ -193,9 +193,9 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042b5d0(CCharacter *
 SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_0042b690(SFire *this_ptr);
 SPose * __cdecl core_charactr_cpp_SPose_ctor_FUN_0042b6a0(SPose *this_ptr);
 SPose * __cdecl core_charactr_cpp_SPose_dtor_FUN_0042b6b0(SPose *this_ptr,uint flags);
-undefined4 * core_charactr_cpp_FUN_0042b6c0(void);
-undefined4 * core_charactr_cpp_FUN_0042b6d0(void);
-undefined4 * core_charactr_cpp_FUN_0042b6e0(void);
+float * __cdecl core_charactr_cpp_copyFloat1_FUN_0042b6c0(float *dst,float *src);
+float * __cdecl core_charactr_cpp_copyFloat2_FUN_0042b6d0(float *dst,float *src);
+float * __cdecl core_charactr_cpp_copyFloat3_FUN_0042b6e0(float *dst,float *src);
 void __cdecl core_chain_cpp_staticInit_FUN_0042b6f0(void);
 CChain * __cdecl core_chain_cpp_factoryFuncChain_FUN_0042b720(void);
 CDemonActorType * __cdecl core_chain_cpp_CChain_getActorType_FUN_0042b740(CChain *this_ptr);

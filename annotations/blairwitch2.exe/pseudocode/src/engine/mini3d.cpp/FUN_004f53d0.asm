@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   unkafter_minecar.cpp_setRenderViewport_FUN_004f2ac0 at 004f2b8d
+;   engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0 at 004f2b8d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c37788

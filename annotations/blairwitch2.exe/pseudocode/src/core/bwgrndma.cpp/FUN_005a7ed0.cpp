@@ -1,0 +1,16 @@
+// Name: core_bwgrndma.cpp_FUN_005a7ed0
+// Address: 005a7ed0
+// Address Range: [[005a7ed0, 005a7eef]]
+// Convention: unknown
+// Signature: bool core_bwgrndma_cpp_FUN_005a7ed0(void)
+
+#include "nocturne.h"
+
+bool core_bwgrndma_cpp_FUN_005a7ed0(void)
+
+{
+  int iVar1;
+  
+  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,0xffff);
+  return iVar1 < DAT_0061ec60;
+}

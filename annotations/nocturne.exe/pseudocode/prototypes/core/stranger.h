@@ -209,17 +209,17 @@ void __cdecl CStranger::dropCarriedObject(CStranger *this_ptr,int hand_index,CVe
 // Address: 00540920
 void __cdecl CStranger::drop(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 
-// Original: core_stranger.cpp_FUN_00540970
+// Original: core_stranger.cpp_dotProduct1_FUN_00540970
 // Address: 00540970
-float FUN_00540970(void);
+float __cdecl dotProduct1(CVector3f *a,CVector3f *b);
 
 // Original: core_stranger.cpp_divideVectorByScalar_FUN_005409a0
 // Address: 005409a0
 void __cdecl divideVectorByScalar(CVector3f *vector,float *divisor);
 
-// Original: core_stranger.cpp_FUN_005409c0
+// Original: core_stranger.cpp_dotProduct2_FUN_005409c0
 // Address: 005409c0
-float FUN_005409c0(float *param_1,float *param_2);
+float __cdecl dotProduct2(CVector3f *a,CVector3f *b);
 
 // Original: core_stranger.cpp_setMatrixTranslation_FUN_005409f0
 // Address: 005409f0

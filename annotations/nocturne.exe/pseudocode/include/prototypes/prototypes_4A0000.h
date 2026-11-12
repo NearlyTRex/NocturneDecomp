@@ -126,6 +126,7 @@ int __cdecl core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0(CGlass *t
 CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004adef0(CGlass *this_ptr,uint flags);
 CVector3f * __cdecl core_glass_cpp_CVector3f_arrdtor25_FUN_004adf70(CVector3f *this_ptr,uint flags);
 void __cdecl core_gore_cpp_staticInit_FUN_004adf90(void);
+void core_gore_cpp_getBloodColorParams_FUN_004ae020(uint param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4);
 void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004ae070(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type);
 void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodParticle *this_ptr);
 void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ae190(CBloodParticle *this_ptr);

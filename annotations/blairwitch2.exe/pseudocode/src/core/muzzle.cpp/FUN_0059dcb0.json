@@ -1,0 +1,316 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 15,
+    "complexity_score": 80,
+    "cross_reference_count": 12,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 6,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "005a1180",
+      "from_addr": "005a126d",
+      "name": "core_confedrt.cpp_FUN_005a1180",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a2130",
+      "from_addr": "005a21f5",
+      "name": "core_confzomb.cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a1f40",
+      "from_addr": "005a1ffe",
+      "name": "core_confzomb.cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a2ac0",
+      "from_addr": "005a2d88",
+      "name": "core_fforest.cpp_FUN_005a2ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a9580",
+      "from_addr": "005a966d",
+      "name": "core_ghostchi.cpp_CGhostChild_processMeleeAttackState_FUN_005a9580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a9770",
+      "from_addr": "005a985d",
+      "name": "core_ghostchi.cpp_CGhostChild_processSleepState_FUN_005a9770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaa80",
+      "from_addr": "005aab11",
+      "name": "core_hellhag.cpp_CHag_processHagAlertState_FUN_005aaa80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aab50",
+      "from_addr": "005aac08",
+      "name": "core_hellhag.cpp_CHag_processMeleeAttackState_FUN_005aab50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a3280",
+      "from_addr": "005a333b",
+      "name": "core_schngeis.cpp_CSchnellGeist_processMeleeAttackState_FUN_005a3280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a4fe0",
+      "from_addr": "005a50cd",
+      "name": "core_union.cpp_FUN_005a4fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a4220",
+      "from_addr": "005a42e5",
+      "name": "core_unionzom.cpp_CUnionZombie_processMeleeAttackState_FUN_005a4220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a6140",
+      "from_addr": "005a61c5",
+      "name": "core_weaver.cpp_CRobin_processMeleeAttackState_FUN_005a6140",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059dcb0",
+    "address_range": [
+      [
+        "0059dcb0",
+        "0059dcd0"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_muzzle.cpp_FUN_0059dcb0",
+    "signature": "void core_muzzle_cpp_FUN_0059dcb0(int param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059dce0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059dce0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 14,
+    "call_sites": [
+      {
+        "call_addr": "005a126d",
+        "call_type": "direct",
+        "caller": "core_confedrt.cpp_FUN_005a1180",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a1ffe",
+        "call_type": "direct",
+        "caller": "core_confzomb.cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a21f5",
+        "call_type": "direct",
+        "caller": "core_confzomb.cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a221f",
+        "call_type": "direct",
+        "caller": "core_confzomb.cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a2d88",
+        "call_type": "direct",
+        "caller": "core_fforest.cpp_FUN_005a2ac0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a333b",
+        "call_type": "direct",
+        "caller": "core_schngeis.cpp_CSchnellGeist_processMeleeAttackState_FUN_005a3280",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a42e5",
+        "call_type": "direct",
+        "caller": "core_unionzom.cpp_CUnionZombie_processMeleeAttackState_FUN_005a4220",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a430f",
+        "call_type": "direct",
+        "caller": "core_unionzom.cpp_CUnionZombie_processMeleeAttackState_FUN_005a4220",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a50cd",
+        "call_type": "direct",
+        "caller": "core_union.cpp_FUN_005a4fe0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a61c5",
+        "call_type": "direct",
+        "caller": "core_weaver.cpp_CRobin_processMeleeAttackState_FUN_005a6140",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.909090909090909,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 7,
+      "INT_ADD": 7,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 2,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 43
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_muzzle_cpp_FUN_0059dcb0(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_muzzle_cpp_FUN_0059dcb0(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = core_muzzle_cpp_FUN_0059dce0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x848) = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x848) = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 14,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

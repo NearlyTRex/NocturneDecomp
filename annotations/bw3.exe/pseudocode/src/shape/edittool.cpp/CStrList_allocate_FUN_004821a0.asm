@@ -7,8 +7,9 @@
 ; CStrList *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   new_capacity
 ;
-; XREF[2]:
+; XREF[3]:
 ;   shape_edittool.cpp_CStrList_copyFrom_FUN_00481fc0 at 00481fe5
+;   shape_edittool.cpp_CStrList_insertRange_FUN_00482250 at 00482264
 ;   shape_edittool.cpp_CStrList_insert_FUN_004820b0 at 004820f8
 ;
 ; Referenced Globals:

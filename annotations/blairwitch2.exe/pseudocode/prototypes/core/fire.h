@@ -441,6 +441,10 @@ void __cdecl CFireEffect::createStake(CFireEffect *this_ptr,CVector3f *impact_po
 // Address: 0049d450
 void __cdecl CFireEffect::createGlassParticle(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
 
+// Original: core_fire.cpp_CFireEffect_createBulletTrail_FUN_0049d4b0
+// Address: 0049d4b0
+void __cdecl CFireEffect::createBulletTrail(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
+
 // Original: core_fire.cpp_CFireEffect_createFireball_FUN_0049d500
 // Address: 0049d500
 void __cdecl CFireEffect::createFireball(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);

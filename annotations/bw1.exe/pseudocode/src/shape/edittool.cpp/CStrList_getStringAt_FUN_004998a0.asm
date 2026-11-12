@@ -7,7 +7,7 @@
 ; CStrList *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   index
 ;
-; XREF[17]:
+; XREF[18]:
 ;   core_fldnotes.cpp_SNotesEntry_layout_FUN_004bbd10 at 004bbe2d
 ;   core_mission.cpp_FUN_0051c240 at 0051c2d6
 ;   core_script.cpp_CScript_buildParsedLines_FUN_00543fd0 at 0054400f
@@ -18,7 +18,7 @@
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_0049a9b0 at 0049ab38
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830 at 0049bc60
 ;   shape_edittool.cpp_CStrList_copyFrom_FUN_00499420 at 00499455
-;   ... and 7 more
+;   ... and 8 more
 ;
 ; *****************************************************************************
 

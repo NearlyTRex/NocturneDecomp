@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 00445ee0
+;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 00445ee0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_stick_growl_distant_wav_005d70d6

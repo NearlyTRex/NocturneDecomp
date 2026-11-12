@@ -60,13 +60,13 @@ uint support_trisock_cpp_FUN_0057a47c(void)
     wincore_winrun_cpp_releaseMutex_FUN_0058fd00(_DAT_0265363c);
     __arrinit(auStack_268,0xc,&g_IpAddrTypeInfo);
     if (acStack_238[0] == '\0') {
-      iVar3 = unkafter_trisock_cpp_FUN_005797b0(uVar2,auStack_4f0);
+      iVar3 = support_trisock_cpp_FUN_005797b0(uVar2,auStack_4f0);
     }
     else {
       wincore_winrun_cpp_FUN_0058ffc0(0x5ed2fc);
       wincore_winrun_cpp_FUN_0058ffc0(acStack_238);
       wincore_winrun_cpp_FUN_0058ffc0(0x5ed302);
-      iVar3 = unkafter_trisock_cpp_FUN_00579720(acStack_238,auStack_4f0);
+      iVar3 = support_trisock_cpp_FUN_00579720(acStack_238,auStack_4f0);
       wincore_winrun_cpp_FUN_0058ffc0(0x5ed304);
       wincore_winrun_cpp_FUN_0058ffc0(acStack_238);
       wincore_winrun_cpp_FUN_0058ffc0(0x5ed30a);

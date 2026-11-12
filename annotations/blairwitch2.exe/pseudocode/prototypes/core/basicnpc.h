@@ -5,10 +5,6 @@
 // Function prototypes for core/basicnpc.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_basicnpc.cpp_CBasicNPC_getDeathState_FUN_0059f930
-// Address: 0059f930
-EDeathState __cdecl CBasicNPC::getDeathState(CBasicNPC *this_ptr);
-
 // Original: core_basicnpc.cpp_staticInit_FUN_005a4750
 // Address: 005a4750
 void staticInit(void);

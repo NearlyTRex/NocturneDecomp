@@ -21,9 +21,9 @@
 ;   undefined4 DAT_0061c068
 ;
 ; Called Functions:
+;   core_basicene.cpp_FUN_0059e880
+;   core_basicene.cpp_FUN_0059f740
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
-;   unkafter_basicene.cpp_FUN_0059e880
-;   unkafter_basicene.cpp_FUN_0059f740
 ;
 ; *****************************************************************************
 
@@ -49,16 +49,16 @@ section .text
     PUSH dword ptr [0x005ff358]         ; 005a3449 | DAT_005ff358
     PUSH EBX                            ; 005a344f
         ;   Label: LAB_005a344f
-    CALL unkafter_basicene.cpp_FUN_0059f740 ; 005a3450
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_FUN_0059f740 ; 005a3450
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
     ADD ESP,0x10                        ; 005a3455
         ;   Label: LAB_005a3455
     MOV EDI,dword ptr [ESP + 0x18]      ; 005a3458
         ;   Label: default
     PUSH EDI                            ; 005a345c
     PUSH EBX                            ; 005a345d
-    CALL unkafter_basicene.cpp_FUN_0059e880 ; 005a345e
-        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e880()
+    CALL core_basicene.cpp_FUN_0059e880 ; 005a345e
+        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059e880()
     ADD ESP,0x8                         ; 005a3463
     POP EBP                             ; 005a3466
     POP EDI                             ; 005a3467
@@ -82,8 +82,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 005a3497
     PUSH EDI                            ; 005a349b
     PUSH EBX                            ; 005a349c
-    CALL unkafter_basicene.cpp_FUN_0059e880 ; 005a349d
-        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059e880()
+    CALL core_basicene.cpp_FUN_0059e880 ; 005a349d
+        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059e880()
     ADD ESP,0x8                         ; 005a34a2
     POP EBP                             ; 005a34a5
     POP EDI                             ; 005a34a6

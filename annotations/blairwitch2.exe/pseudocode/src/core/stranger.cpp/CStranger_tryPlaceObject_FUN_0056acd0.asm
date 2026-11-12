@@ -64,7 +64,7 @@
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_0056e4d0 at 0056e579
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_d_stranger_005ebb34+1
+;   TerminatedCString s_actionPending_d_stranger_005ebb35
 ;   TerminatedCString s_Delta_to_dest_3_2f_3_2f_005ebb5d
 ;   undefined4 DAT_005ebb85
 ;   undefined4 DAT_005ebb8d
@@ -367,7 +367,7 @@ section .text
         ;   XREF to: 0056b063 (CONDITIONAL_JUMP)  ; LAB_0056b063
     PUSH 0xe6b                          ; 0056b049
     PUSH EAX                            ; 0056b04e
-    PUSH 0x5ebb35                       ; 0056b04f | s_actionPending_d_stranger_005ebb34+1
+    PUSH 0x5ebb35                       ; 0056b04f | = "actionPending = %d\nstranger.cpp line %d"
     MOV ECX,dword ptr [0x006138e0]      ; 0056b054 | g_CEditorToolsPtr
     PUSH ECX                            ; 0056b05a
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 0056b05b

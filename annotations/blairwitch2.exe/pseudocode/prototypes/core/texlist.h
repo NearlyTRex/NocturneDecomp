@@ -32,3 +32,7 @@ void __cdecl CTextureList::captureAllTextures(CTextureList *this_ptr);
 // Original: core_texlist.cpp_CTextureList_captureTexture_FUN_00573910
 // Address: 00573910
 void __cdecl CTextureList::captureTexture(CTextureList *this_ptr,uint texture_index);
+
+// Original: core_texlist.cpp_FUN_00573940
+// Address: 00573940
+undefined4 * FUN_00573940(undefined4 *param_1);

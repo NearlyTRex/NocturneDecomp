@@ -67,7 +67,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
     local_28 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr);
     local_18 = local_28;
     local_30 = (this_ptr->bone_transform).pose_data.bone_rotations;
-    if (this_ptr->bone_update_mode == 0) {
+    if (this_ptr->bone_update_mode == BONE_UPDATE_SIMPLE_FLAT) {
       iVar3 = 0;
       if (0 < local_28->bone_count) {
         local_2c = this_ptr;
@@ -95,7 +95,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
         } while (iVar3 < local_18->bone_count);
       }
     }
-    else if (this_ptr->bone_update_mode == 1) {
+    else if (this_ptr->bone_update_mode == BONE_UPDATE_HIERARCHICAL_ACCUM) {
       iVar3 = 0;
       if (0 < local_28->bone_count) {
         local_1c = this_ptr;

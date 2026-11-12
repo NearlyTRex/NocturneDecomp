@@ -23,6 +23,7 @@
 #include "types/classes/CScat.h"
 #include "types/classes/CScript.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
@@ -94,7 +95,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f463
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0(CPackedBitmap *this_ptr,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700(CPackedBitmap *this_ptr,uchar *raw_bitmap_data,int row_stride);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride);
-void cockpit_pkbitmap_cpp_FUN_004f49d8(void);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyACTPalette_FUN_004f4a00(CPackedBitmap *this_ptr,char *act_filename);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50(CPackedBitmap *this_ptr,uchar *palette_buffer);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_004f4ab0(CPackedBitmap *this_ptr);
@@ -126,8 +126,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_004f5c40(CPac
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_004f5c60(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_004f5c80(CPackedBitmapSet *this_ptr,int bitmap_index);
 int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getWidth_FUN_004f5cf0(CPackedBitmap *this_ptr);
-undefined4 cockpit_pkbmpset_cpp_FUN_004f5d00(void);
-void cockpit_pkbmpset_cpp_FUN_004f5d10(void);
+int __cdecl cockpit_pkbmpset_cpp_CPackedBitmap_getHeight_FUN_004f5d00(CPackedBitmap *this_ptr);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_doNothing1_FUN_004f5d10(CPackedBitmapSet *this_ptr);
 void __cdecl core_platfrm_cpp_staticInit_FUN_004f5d30(void);
 CPlatform * __cdecl core_platfrm_cpp_factoryFuncPlatform_FUN_004f5d60(void);
 CDemonActorType * __cdecl core_platfrm_cpp_CPlatform_getActorType_FUN_004f5d80(CPlatform *this_ptr);
@@ -203,8 +203,8 @@ SSoftwareEdge * __cdecl engine_prim_c_findEdgeInTable_FUN_004faca0(int scanline,
 void __cdecl engine_prim_c_renderScanlinePolygon_FUN_004fad00(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(int *vertex_indices,int vertex_count);
 void __cdecl core_scat_cpp_staticInit_FUN_004fbb40(void);
-undefined4 core_scat_cpp_FUN_004fbb70(void);
-undefined4 core_scat_cpp_FUN_004fbbb0(int param_1);
+int __cdecl core_scat_cpp_getWeaponInteractionType_FUN_004fbb70(CWeapon *weapon);
+int __cdecl core_scat_cpp_getWeaponHoldType_FUN_004fbbb0(CWeapon *weapon);
 CScat * __cdecl core_scat_cpp_factoryFuncScat_FUN_004fbbd0(void);
 CDemonActorType * __cdecl core_scat_cpp_CScat_getActorType_FUN_004fbbf0(CScat *this_ptr);
 CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_004fbc00(CScat *this_ptr);

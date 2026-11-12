@@ -37,6 +37,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_ammo.cpp_FUN_0040e450
+;   core_doc.cpp_FUN_0045d260
 ;   core_event.cpp_FUN_00490f80
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
 ;   core_health.cpp_CHealthItem_useItem_FUN_004cdf90
@@ -45,7 +46,6 @@
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9f10
 ;   core_main.c_FUN_004e4500
 ;   support_newmsg.cpp_getLocalizedString_FUN_0050fe80
-;   unkafter_stranger.cpp_FUN_0045d260
 ;
 ; *****************************************************************************
 
@@ -190,8 +190,8 @@ section .text
     JZ 0x004dca4e                       ; 004dca43
         ;   XREF to: 004dca4e (CONDITIONAL_JUMP)  ; LAB_004dca4e
     PUSH EAX                            ; 004dca45
-    CALL unkafter_stranger.cpp_FUN_0045d260 ; 004dca46
-        ;   XREF to: 0045d260 (UNCONDITIONAL_CALL)  ; undefined unkafter_stranger.cpp_FUN_0045d260()
+    CALL core_doc.cpp_FUN_0045d260      ; 004dca46
+        ;   XREF to: 0045d260 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0045d260()
     ADD ESP,0x4                         ; 004dca4b
     MOV EAX,dword ptr [EBP + -0x4]      ; 004dca4e
         ;   Label: LAB_004dca4e

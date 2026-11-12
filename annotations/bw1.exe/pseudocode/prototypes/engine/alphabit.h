@@ -53,6 +53,38 @@ void FUN_0040d9a0(CAlphaBitmap *param_1);
 // Address: 00415b20
 void staticInit(void);
 
+// Original: engine_alphabit.cpp_FUN_00415ba0
+// Address: 00415ba0
+void FUN_00415ba0(undefined4 *param_1);
+
+// Original: engine_alphabit.cpp_FUN_00415bc0
+// Address: 00415bc0
+undefined4 * FUN_00415bc0(undefined4 *param_1);
+
+// Original: engine_alphabit.cpp_FUN_00415bd0
+// Address: 00415bd0
+void FUN_00415bd0(void);
+
+// Original: engine_alphabit.cpp_FUN_00415be0
+// Address: 00415be0
+void FUN_00415be0(int *param_1,int *param_2);
+
+// Original: engine_alphabit.cpp_FUN_00415c20
+// Address: 00415c20
+void FUN_00415c20(void);
+
+// Original: engine_alphabit.cpp_FUN_00415c50
+// Address: 00415c50
+void FUN_00415c50(void);
+
+// Original: engine_alphabit.cpp_FUN_00415c80
+// Address: 00415c80
+void FUN_00415c80(void);
+
+// Original: engine_alphabit.cpp_FUN_00415cd0
+// Address: 00415cd0
+void FUN_00415cd0(void);
+
 // Original: engine_alphabit.cpp_CAlphaBitmap_arrdtor5_FUN_004188d0
 // Address: 004188d0
 CAlphaBitmap * CAlphaBitmap::arrdtor5(CAlphaBitmap *this_ptr,uint flags);

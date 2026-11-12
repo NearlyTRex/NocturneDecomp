@@ -224,7 +224,7 @@ joined_r0x00573430:
             (pCVar13->sample_info).name[1] = cVar1;
             pCVar13 = (CSfxSample *)((pCVar13->sample_info).name + 2);
           } while (cVar1 != '\0');
-          iVar7 = unkaddr_0059f520_cpp_CInStreamFile_tell_FUN_005a0d50(local_20);
+          iVar7 = support_trstream_cpp_CInStreamFile_tell_FUN_005a0d50(local_20);
           pCVar11->file_offset = iVar7;
           iVar7 = sound_sndmain_cpp_FUN_0056db10(local_20,&pCVar11->file_offset,pCVar11);
           if (iVar7 != 0) {

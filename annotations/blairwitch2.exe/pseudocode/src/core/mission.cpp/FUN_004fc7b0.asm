@@ -6,10 +6,10 @@
 ;
 ; XREF[10]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 004189ec
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 004372b3
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 004372b3
 ;   core_crate.cpp_FUN_0043a350 at 0043a3f6
-;   core_dog1.cpp_CDog_processChaseFoodState_FUN_005ac0c0 at 005ac1d5
 ;   core_flamecan.cpp_CFlameCan_process_FUN_004a0920 at 004a099f
+;   core_helldog.cpp_CDog_processChaseFoodState_FUN_005ac0c0 at 005ac1d5
 ;   core_hiram.cpp_CHiram_process_FUN_004d1070 at 004d1102
 ;   core_inv.cpp_FUN_004dadb0 at 004db4cb
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004f1e90 at 004f1f54

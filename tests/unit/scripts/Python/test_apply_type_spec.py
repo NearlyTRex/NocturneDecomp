@@ -94,6 +94,28 @@ def test_an_unsigned_enum_takes_minus_one_as_all_ones():
     assert enum.values["AMMO_TYPE_NONE"] == 0xFFFFFFFF
 
 
+def test_a_new_enum_is_created_empty_where_the_program_lacks_it():
+    have = fire_mode()
+    dtm = program_with(have).getDataTypeManager()
+    sizes = {"EFireMode": 4, "ECheckboxMode": 4, "EUnlisted": 1}
+    changes = apply_type_spec.create_enums(dtm, sizes, {"EFireMode": {}, "ECheckboxMode": {}})
+    assert changes == ["enum ECheckboxMode created (4 bytes)"]
+    created = apply_type_spec.find_named(dtm, "ECheckboxMode", EnumDataType)
+    assert [(e.getCategoryPath().getPath(), e.getLength(), e.values) for e in created] == [
+        ("/Nocturne/Enum/Game", 4, {})]
+    assert apply_type_spec.find_named(dtm, "EFireMode", EnumDataType) == [have]
+    assert apply_type_spec.find_named(dtm, "EUnlisted", EnumDataType) == []
+
+
+def test_apply_creates_a_new_enum_then_names_its_values(capsys):
+    program = program_with()
+    spec = {"enums": {"*": {"ECheckboxMode": {"CHECKBOX_MODE_BINARY": 0}}}, "new_enums": {"ECheckboxMode": 4}}
+    assert apply_type_spec.run(program, spec, "nocedit.exe", True) == []
+    out = capsys.readouterr().out
+    assert "fixed  enum ECheckboxMode created (4 bytes)" in out
+    assert "saved 2 change(s) to nocedit.exe" in out
+
+
 def door(*fields):
     return StructureDataType("CDoor", fields or [(INT, "door_side"), (INT, "door_swing")])
 

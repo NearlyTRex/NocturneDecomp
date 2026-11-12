@@ -10,7 +10,7 @@
 ;   core_stranger.cpp_FUN_005656f0 at 00565d6a
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_d_stranger_005eba7c+1
+;   TerminatedCString s_actionPending_d_stranger_005eba7d
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;   undefined4 g_CAmmoBoxClassInfo.name_hash
 ;
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_0056a1bb
     PUSH 0xd45                          ; 0056a1bc
     PUSH ECX                            ; 0056a1c1
-    PUSH 0x5eba7d                       ; 0056a1c2 | s_actionPending_d_stranger_005eba7c+1
+    PUSH 0x5eba7d                       ; 0056a1c2 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDI,dword ptr [0x006138e0]      ; 0056a1c7 | g_CEditorToolsPtr
     PUSH EDI                            ; 0056a1cd
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 0056a1ce

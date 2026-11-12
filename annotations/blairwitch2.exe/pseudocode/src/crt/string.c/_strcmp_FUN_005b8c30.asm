@@ -9,6 +9,7 @@
 ;
 ; XREF[50]:
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240 at 0040e25f
+;   core_bwgrndma.cpp_CGrandma_getCarryObjToBodyXForm_FUN_005a7cf0 at 005a7d44
 ;   core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440 at 0042b45a
 ;   core_cloth.cpp_CCloth_grabCloth_FUN_005b18e0 at 005b1900
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0043e930 at 0043eb32
@@ -17,7 +18,6 @@
 ;   core_dfilter.cpp_FUN_00447660 at 00447679
 ;   core_doc.cpp_CDoc_setup_FUN_00450620 at 00450941
 ;   core_doc.cpp_FUN_004568e0 at 00457adc
-;   core_dog1.cpp_CDog_setup_FUN_005abdd0 at 005abe28
 ;   ... and 40 more
 ;
 ; *****************************************************************************

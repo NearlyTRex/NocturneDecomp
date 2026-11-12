@@ -46,7 +46,6 @@ void __cdecl core_hero_cpp_CHero_kill_FUN_004d02b0(CHero *this_ptr,int damage_ty
 void __cdecl core_hero_cpp_CHero_reset_FUN_004d02e0(CHero *this_ptr);
 void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d03b0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_canDoHeroAction_FUN_004d06c0(CHero *this_ptr,int action_type);
-undefined4 switchD_004d0710::default(void);
 void core_hero_cpp_FUN_004d0750(void);
 undefined4 core_hero_cpp_FUN_004d0780(CHero *param_1,undefined4 param_2);
 void core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004d0910(void);
@@ -56,7 +55,7 @@ CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004d09a0(CHer
 CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004d0a00(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
 CDemonActor * core_hero_cpp_FUN_004d0a40(int param_1);
 void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004d0af0(CHeroPlaceholder *this_ptr);
-undefined8 unkafter_hero_cpp_FUN_004d0b3e(void);
+undefined8 core_hero_cpp_FUN_004d0b3e(void);
 void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004d0c90(void);
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d0d10(void);
 void core_hiram_cpp_staticInit_FUN_004d0ed0(void);
@@ -108,7 +107,6 @@ void core_icepick_cpp_staticInit_FUN_004d4930(void);
 void core_icepick_cpp_factoryFuncIcePick_FUN_004d4960(void);
 CDemonActorType * core_icepick_cpp_CIcePick_getActorType_FUN_004d4980(CIcePick *this_ptr);
 CIcePick * core_icepick_cpp_CIcePick_ctor_FUN_004d4990(CIcePick *this_ptr);
-void core_icepick_cpp_FUN_004d49bf(void);
 void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004d4a20(CIcePick *this_ptr);
 void __cdecl core_icepick_cpp_CIcePick_process_FUN_004d4c50(CIcePick *this_ptr,float delta_time);
 void __cdecl core_icepick_cpp_FUN_004d5470(CIcePick *this_ptr,float delta_time);

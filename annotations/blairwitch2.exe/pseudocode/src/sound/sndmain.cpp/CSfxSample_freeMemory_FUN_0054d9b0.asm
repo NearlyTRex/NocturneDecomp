@@ -32,7 +32,7 @@
 ;   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_0054dac0
 ;   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_0054da70
 ;   sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_0054dbf0
-;   unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180
+;   support_trstream.cpp_CInStreamFile_close_FUN_0057d180
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
         ;   Label: LAB_0054da08
     PUSH EAX                            ; 0054da0e
     MOV dword ptr [EBX + 0x174],0x0     ; 0054da0f
-    CALL unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180 ; 0054da19
-        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_close_FUN_0057d180 ; 0054da19
+        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
     MOV byte ptr [EBX],0x0              ; 0054da1e
     MOV dword ptr [EBX + 0x150],0x0     ; 0054da21
     MOV dword ptr [EBX + 0x15c],0x0     ; 0054da2b

@@ -45,6 +45,10 @@ void __cdecl CPodFile::populateFileInfo(CPodFile *this_ptr,int file_index,SFound
 // Address: 00513d1e
 bool FUN_00513d1e(int *param_1);
 
+// Original: engine_pod.cpp_FUN_00513d20
+// Address: 00513d20
+bool FUN_00513d20(int *param_1);
+
 // Original: engine_pod.cpp_FUN_00513ff0
 // Address: 00513ff0
 void FUN_00513ff0(int param_1,int param_2);
@@ -100,6 +104,14 @@ int __cdecl CPod::getNextSearchResult(CPod *this_ptr,CPodSearchContext *search_c
 // Original: engine_pod.cpp_FUN_005149bc
 // Address: 005149bc
 void FUN_005149bc(undefined4 param_1,char *param_2);
+
+// Original: engine_pod.cpp_FUN_00514bb0
+// Address: 00514bb0
+undefined4 FUN_00514bb0(undefined4 param_1,undefined4 param_2);
+
+// Original: engine_pod.cpp_CPod_locateFile_FUN_00514c20
+// Address: 00514c20
+int __cdecl CPod::locateFile(CPod *this_ptr,undefined4 param_2,undefined4 param_3,int *param_4);
 
 // Original: engine_pod.cpp_CPod_findFile_FUN_00514cb0
 // Address: 00514cb0

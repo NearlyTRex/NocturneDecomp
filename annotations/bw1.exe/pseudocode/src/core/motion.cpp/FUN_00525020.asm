@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[17]:
+; XREF[18]:
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 004240b9
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 0042a44a
 ;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 0045a588
@@ -21,7 +21,7 @@
 ;   core_doc.cpp_FUN_0046ea80 at 0046ec55
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c6cd3
 ;   core_ghoul.cpp_CGhoul_process_FUN_004de330 at 004dfb99
-;   ... and 7 more
+;   ... and 8 more
 ;
 ; *****************************************************************************
 

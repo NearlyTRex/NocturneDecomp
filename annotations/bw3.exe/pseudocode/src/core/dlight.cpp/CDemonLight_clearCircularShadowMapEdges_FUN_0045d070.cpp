@@ -16,7 +16,7 @@ void __cdecl core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0045d07
   int iVar5;
   int iVar6;
   
-  if (this_ptr->shadow_bounds_mode != 0) {
+  if (this_ptr->shadow_bounds_mode != SHADOW_BOUNDS_RECTANGULAR) {
     for (iVar6 = 0; iVar6 < this_ptr->shadow_map_height / 2; iVar6 = iVar6 + 1) {
       for (iVar4 = 0; iVar1 = this_ptr->shadow_map_width / 2, iVar4 < iVar1; iVar4 = iVar4 + 1) {
         iVar2 = this_ptr->shadow_map_width * this_ptr->shadow_map_height;

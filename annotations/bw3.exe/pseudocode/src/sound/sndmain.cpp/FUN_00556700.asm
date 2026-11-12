@@ -9,6 +9,7 @@
 ; XREF[59]:
 ;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00596eb8
 ;   core_bat.cpp_CBat_process_FUN_0040f010 at 0040f184
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00412530 at 0041290c
 ;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a1c0
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 0041806e
 ;   core_bugs.cpp_CBugs_process_FUN_00421300 at 004213b0
@@ -16,7 +17,6 @@
 ;   core_carved.cpp_CCarved_processDamage_FUN_00428a80 at 00428c36
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426f41
 ;   core_chain.cpp_CChain_process_FUN_004298f0 at 0042a169
-;   core_charactr.cpp_FUN_0042cd70 at 0042cdc4
 ;   ... and 49 more
 ;
 ; Called Functions:

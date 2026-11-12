@@ -52,11 +52,11 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_00415b60(CBodyPart *thi
           iVar2 = iVar2 + 1;
           euler_angles = (CVector3f *)&euler_angles[0x21].z;
           pSVar1 = (SBodyPartModel *)(&pSVar1->model + 1);
-          engine_matrix_c_pop_FUN_0046b4a0();
+          engine_drender_cpp_pop_FUN_0046b4a0();
         } while (iVar2 < this_ptr->attached_model_count);
       }
     }
-    engine_matrix_c_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
     g_CDemonSetPtr->disable_directional_lighting = 0;
     return this_ptr->is_visible;
   }

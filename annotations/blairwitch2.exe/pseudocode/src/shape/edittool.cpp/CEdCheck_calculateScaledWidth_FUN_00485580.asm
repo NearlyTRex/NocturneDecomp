@@ -6,6 +6,9 @@
 ; Parameters:
 ; CEdCheck *       Stack[0x4]:4   this_ptr
 ;
+; XREF[1]:
+;   shape_edittool.cpp_FUN_0048546e at 004854f8
+;
 ; Referenced Globals:
 ;   undefined4 DAT_006141b8
 ;   undefined4 DAT_006141bc

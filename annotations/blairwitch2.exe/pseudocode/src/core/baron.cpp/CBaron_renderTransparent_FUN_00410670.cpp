@@ -64,7 +64,7 @@ LAB_004106e9:
               (DAT_0060b280,&CStack_28,(CVector3f *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
               ((CKeyFramedModelInstance *)&DAT_007bc51c,0.0,0x23);
-    engine_matrix_c_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
   (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)

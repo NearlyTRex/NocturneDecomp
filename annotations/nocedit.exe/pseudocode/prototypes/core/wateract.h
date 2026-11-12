@@ -95,4 +95,4 @@ SWaterVertex * __cdecl SWaterVertex::dtor(SWaterVertex *this_ptr,uint flags);
 
 // Original: core_wateract.cpp_SWaterVertex_arrdtor1000_FUN_005ebcf0
 // Address: 005ebcf0
-SWaterVertex * __cdecl SWaterVertex::arrdtor1000(SWaterVertex *objs,uint flags);
+SWaterVertex * __cdecl SWaterVertex::arrdtor1000(SWaterVertex *this_ptr,uint flags);

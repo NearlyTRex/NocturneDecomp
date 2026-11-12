@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 12,
     "complexity_score": 6,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -23,6 +23,12 @@
       "addr": "00537c30",
       "from_addr": "00537c4b",
       "name": "cockpit_pkbitmap.cpp_FUN_00537c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538750",
+      "from_addr": "005387cb",
+      "name": "cockpit_pkbitmap.cpp_FUN_00538750",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -47,7 +53,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "00537c4b",
@@ -64,6 +70,17 @@
         "call_addr": "00538498",
         "call_type": "direct",
         "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00538480",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005387cb",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_FUN_00538750",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -26,6 +26,8 @@
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CBoxActor_setup_FUN_0041be70
+;   core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050
+;   core_bwspart.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030
 ;   core_cloth.cpp_CClothList_process_FUN_005b1780
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
@@ -38,8 +40,6 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_00544f50
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
-;   core_skeleton.cpp_FUN_005469a0
-;   crt_string.c__strcmp_FUN_005b8c30
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -357,13 +357,13 @@ section .text
     PUSH 0x100                          ; 004509b1
     LEA ESI,[EBX + 0x154]               ; 004509b6
     PUSH ESI                            ; 004509bc
-    CALL unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030 ; 004509bd
-        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; void unkaddr_005a7eb0.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem * this_ptr, undefined4 param_2)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030 ; 004509bd
+        ;   XREF to: 005a8030 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(CSimpleParticleSystem * this_ptr, undefined4 param_2)
     ADD ESP,0x8                         ; 004509c2
     PUSH EBX                            ; 004509c5
     PUSH ESI                            ; 004509c6
-    CALL unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050 ; 004509c7
-        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; void unkaddr_005a7eb0.cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem * this_ptr, undefined4 param_2)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050 ; 004509c7
+        ;   XREF to: 005a8050 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050(CSimpleParticleSystem * this_ptr, undefined4 param_2)
     MOV ESI,0x5cfe23                    ; 004509cc | = "LANTERN"
     LEA EAX,[EBX + 0x259b4]             ; 004509d1
     ADD ESP,0x8                         ; 004509d7

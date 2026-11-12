@@ -14,9 +14,9 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30 at 005170ae
 ;   cockpit_pkbmpset.cpp_FUN_005177de at 005178d3
 ;   cockpit_pkbmpset.cpp_FUN_00517a60 at 00517a9e
+;   core_bwspart.cpp_CSimpleParticleSystem_attach_FUN_005a8050 at 005a8079
+;   core_bwspart.cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50 at 005a7fc3
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0043b570 at 0043b676
-;   core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00446590 at 004465f6
-;   core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00447860 at 00447875
 ;   ... and 48 more
 ;
 ; Called Functions:

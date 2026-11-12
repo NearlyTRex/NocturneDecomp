@@ -14,10 +14,10 @@
 ;   core_doc.cpp_CDoc_dtor_FUN_00450580 at 004505ba
 ;   core_fire.cpp_CStake_dtor_FUN_0049ef30 at 0049ef3a
 ;   core_fire.cpp_CToss_dtor_FUN_0049ed50 at 0049ed5c
+;   core_hpbox.cpp_CParticleBox_dtor_FUN_005ac7f0 at 005ac87c
+;   core_mine.cpp_CSpiritMine_dtor_FUN_005ad460 at 005ad49a
 ;   core_necklace.cpp_CNecklace_dtor_FUN_005add30 at 005add45
-;   core_partibox.cpp_CParticleBox_dtor_FUN_005ac7f0 at 005ac87c
 ;   core_simbox.cpp_CSimBox_dtor_FUN_00540510 at 00540525
-;   core_spirmine.cpp_CSpiritMine_dtor_FUN_005ad460 at 005ad49a
 ;   ... and 2 more
 ;
 ; *****************************************************************************

@@ -16,6 +16,11 @@ Discovery tiers (highest precision first):
   3. PROLOGUE_SCAN     - classic prologue byte patterns, but ONLY at gap boundaries
                          (kills the off-by-one dupes the legacy scanner produced).
 
+Tiers 2 and 3 read Watcom's own shapes. Its alignment nops (lea eax,[eax+0], mov
+eax,eax) are padding, so a gap's function starts after them. Its register saves
+push in one order, ecx edx ebx esi edi ebp ("QRSVWU"), and any run of two or more
+in that order (SVWU, SVW, VWU) is a prologue.
+
 Each candidate is scored by whether PseudoDisassembler.isValidSubroutine() agrees.
 
 Report-first by design: a run only writes a report. Pass --apply to actually
@@ -85,6 +90,23 @@ PROLOGUE_PATTERNS = [
 
 PADDING_BYTES = {0x90, 0xCC}  # NOP, INT3
 
+# Watcom aligns a function with a multi-byte nop rather than 0x90/0xCC: lea eax,[eax+0]
+# (both displacement widths), mov eax,eax and cs: mov eax,eax. A gap that starts with
+# one starts its function after it. Longest first.
+ALIGNMENT_NOPS = [
+    [0x8D, 0x80, 0x00, 0x00, 0x00, 0x00],
+    [0x2E, 0x8B, 0xC0],
+    [0x8D, 0x40, 0x00],
+    [0x8B, 0xC0],
+]
+
+# Watcom saves the registers a function uses in one order: ecx, edx, ebx, esi, edi,
+# ebp - "QRSVWU" as ASCII. A run of two or more of them in that order, a subset
+# such as SVWU, SVW or VWU, opens a function.
+WATCOM_SAVE_ORDER = [0x51, 0x52, 0x53, 0x56, 0x57, 0x55]
+SAVE_LETTERS = {0x51: "Q", 0x52: "R", 0x53: "S", 0x56: "V", 0x57: "W", 0x55: "U"}
+MIN_SAVE_RUN = 2
+
 
 def matches(program, addr, pattern):
     for i, want in enumerate(pattern):
@@ -153,8 +175,31 @@ def find_call_targets(program, exec_set, fm):
     return candidates
 
 
+def alignment_nop_length(program, addr):
+    """Length of the Watcom alignment nop at addr, or 0."""
+    for pattern in ALIGNMENT_NOPS:
+        if matches(program, addr, pattern):
+            return len(pattern)
+    return 0
+
+
+def save_run(program, addr):
+    """The registers a Watcom save-order push run at addr pushes, as letters ("SVWU")."""
+    run, last = "", -1
+    while True:
+        b = read_byte(program, addr.add(len(run)))
+        if b not in WATCOM_SAVE_ORDER or WATCOM_SAVE_ORDER.index(b) <= last:
+            return run
+        last = WATCOM_SAVE_ORDER.index(b)
+        run += SAVE_LETTERS[b]
+
+
 def match_prologue(program, addr):
-    """Return the (pattern, desc) of the longest prologue matching at addr, or None."""
+    """Return the (pattern, desc) of the longest prologue matching at addr, or None.
+    A Watcom save-order push run outranks the fixed patterns."""
+    run = save_run(program, addr)
+    if len(run) >= MIN_SAVE_RUN:
+        return [], "push run %s" % run
     for pattern, desc in PROLOGUE_PATTERNS:
         if matches(program, addr, pattern):
             return pattern, desc
@@ -169,7 +214,6 @@ def find_gap_and_prologue(program, exec_set, fm):
     chunk - which is what collapses the interior-byte noise the old scan produced.
     """
     candidates = {}
-    listing = program.getListing()
     for block in program.getMemory().getBlocks():
         if not (block.isExecute() and block.isInitialized()):
             continue
@@ -195,8 +239,16 @@ def find_gap_and_prologue(program, exec_set, fm):
                     break
                 continue
 
-            # addr starts an undefined, non-padding chunk -> the only candidate site
+            # addr starts an undefined, non-padding chunk -> the only candidate site.
+            # An alignment nop is padding: the function starts after it.
             kind = boundary_kind(program, addr)
+            nop = alignment_nop_length(program, addr)
+            if nop:
+                after = addr.add(nop)
+                if fm.getFunctionContaining(after) is not None or not is_undefined(program, after):
+                    addr = after
+                    continue
+                addr, kind = after, "PADDING"
             match = match_prologue(program, addr)
             if match is not None:
                 _, desc = match

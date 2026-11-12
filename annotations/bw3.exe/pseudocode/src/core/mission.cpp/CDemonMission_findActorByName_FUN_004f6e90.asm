@@ -15,7 +15,7 @@
 ;   core_mission.cpp_FUN_004f7a20 at 004f7ac0
 ;   core_script.cpp_getActor_FUN_005289b0 at 00528ad9
 ;   core_script.cpp_readActorReference_FUN_00530a10 at 00530a76
-;   engine_special.cpp_FUN_00563970 at 00563a0a
+;   core_spawner.cpp_FUN_00563970 at 00563a0a
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005a3260

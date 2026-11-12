@@ -7,6 +7,7 @@
 ; uint             Stack[0x4]:4   sfx_handle
 ;
 ; XREF[58]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00412530 at 004128aa
 ;   core_boneguy.cpp_CBaalSkel_processDamage_FUN_0041a810 at 0041a821
 ;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a7fa
 ;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_004192d0 at 004192e1
@@ -16,7 +17,6 @@
 ;   core_burncrss.cpp_CBurncross_setWeaponState_FUN_00425300 at 0042531e
 ;   core_carved.cpp_CCarved_processDamage_FUN_00428a80 at 00428b54
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00425e8e
-;   core_chain.cpp_CChain_process_FUN_004298f0 at 0042a15a
 ;   ... and 48 more
 ;
 ; Called Functions:

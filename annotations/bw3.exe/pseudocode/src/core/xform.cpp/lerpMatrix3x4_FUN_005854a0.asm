@@ -19,7 +19,7 @@
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00431d10 at 00431fae
 ;   core_prye.cpp_FUN_0051f490 at 0051f7ac
-;   core_thehand.cpp_CTheHand_attractActorToward_FUN_0056ca00 at 0056ca44
+;   core_toxhand.cpp_CTheHand_attractActorToward_FUN_0056ca00 at 0056ca44
 ;
 ; Called Functions:
 ;   core_xform.cpp_matrixToQuaternion_FUN_00585780

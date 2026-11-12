@@ -9,7 +9,7 @@
 ;
 ; XREF[3]:
 ;   core_carved.cpp_CCarved_isGrabbable_FUN_00428fc0 at 00428fe7
-;   core_hostage.cpp_CDemnfolk_isGrabbable_FUN_00458ec0 at 00458ee7
+;   core_demnfolk.cpp_CDemnfolk_isGrabbable_FUN_00458ec0 at 00458ee7
 ;   core_zombie.cpp_CZombie_isGrabbable_FUN_0058caf0 at 0058cb17
 ;
 ; Referenced Globals:

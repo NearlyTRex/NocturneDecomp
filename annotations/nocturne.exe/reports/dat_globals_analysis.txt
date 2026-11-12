@@ -2,21 +2,21 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 2492
-Filtered out (inside named data): 106
+Total DAT_ globals found: 2499
+Filtered out (inside named data): 111
 Immediate constants (not real globals): 72
-Real globals remaining: 2314
+Real globals remaining: 2316
 
 Current type breakdown:
-  undefined4                     2255
+  undefined4                     2257
   undefined1                     36
   undefined8                     12
   undefined2                     11
 
-DAT_ globals with type hints: 682 / 2314
+DAT_ globals with type hints: 683 / 2316
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (483)
+HIGH CONFIDENCE INFERENCES (484)
 --------------------------------------------------------------------------------
   DAT_0057919e                    addr=0057919e    current=undefined4      likely=float           refs=1
     nearby: s_Bip01_Head_005791a2 (TerminatedCString) at offset -4
@@ -501,7 +501,7 @@ HIGH CONFIDENCE INFERENCES (483)
   DAT_014b8a08                    addr=014b8a08    current=undefined4      likely=float           refs=6
     nearby: g_CVector3f_ARRAY_014b8928[14].z (undefined4) at offset +48
   DAT_01ab99f4                    addr=01ab99f4    current=undefined4      likely=uint *          refs=2
-  DAT_01b4cd34                    addr=01b4cd34    current=undefined4      likely=int *           refs=5
+  DAT_01b4cd34                    addr=01b4cd34    current=undefined4      likely=SSoftwareEdge *  refs=5
   DAT_01b4d478                    addr=01b4d478    current=undefined4      likely=float           refs=1
   DAT_01b4d47c                    addr=01b4d47c    current=undefined4      likely=float           refs=1
   DAT_01b4d484                    addr=01b4d484    current=undefined4      likely=float           refs=1
@@ -545,6 +545,8 @@ HIGH CONFIDENCE INFERENCES (483)
     nearby: g_CMuzzleFlash_ARRAY_01c4e958 (CMuzzleFlash[20]) at offset -4
   DAT_01c4f088                    addr=01c4f088    current=undefined4      likely=CMuzzleFlash *  refs=2
     nearby: g_GlassParticlePool[0].base.lifetime_remaining (undefined4) at offset -28
+  DAT_01c58c8c                    addr=01c58c8c    current=undefined4      likely=CGlassParticle *  refs=1
+    nearby: g_CBulletTrail_ARRAY_01c58c90[0].frames_remaining (undefined4) at offset -36
   DAT_01c58df8                    addr=01c58df8    current=undefined4      likely=CBulletTrail *  refs=2
     nearby: g_FireballPool[0].base.lifetime_remaining (undefined4) at offset -28
   DAT_01c5b4fc                    addr=01c5b4fc    current=undefined4      likely=CFireball *     refs=2
@@ -857,7 +859,7 @@ MEDIUM CONFIDENCE INFERENCES (199)
     nearby: PTR_crt_unknown.c_FUN_0056ad3f_005c1cc0 (undefined1*) at offset +68
   DAT_005c1d0f                    addr=005c1d0f    current=undefined1      likely=byte            refs=3
     nearby: PTR_crt_unknown.c_FUN_0056ad3f_005c1cc0 (undefined1*) at offset +79
-  DAT_005c1d98                    addr=005c1d98    current=undefined4      likely=byte            refs=4
+  DAT_005c1d98                    addr=005c1d98    current=undefined4      likely=byte            refs=5
     nearby: PTR_crt_unknown.c_FUN_0056ad3f_005c1cc0 (undefined1*) at offset +216
   DAT_005c1e08                    addr=005c1e08    current=undefined4      likely=byte            refs=2
   DAT_005c1e88                    addr=005c1e88    current=undefined4      likely=byte            refs=1
@@ -1092,7 +1094,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (1632)
+NO TYPE HINTS (1633)
 --------------------------------------------------------------------------------
   DAT_0057c8be                    addr=0057c8be    type=undefined4      refs=1  nearby: DOUBLE_0057c8c6 at -8
   DAT_0059cda8                    addr=0059cda8    type=undefined4      refs=1  nearby: g_CEnemyVTable at -12
@@ -1406,6 +1408,7 @@ NO TYPE HINTS (1632)
   DAT_005c1d17                    addr=005c1d17    type=undefined4      refs=1  nearby: PTR_crt_unknown.c_FUN_0056ad3f_005c1cc0 at +87
   DAT_005c1d1b                    addr=005c1d1b    type=undefined4      refs=1  nearby: PTR_crt_unknown.c_FUN_0056ad3f_005c1cc0 at +91
   DAT_005c1d1f                    addr=005c1d1f    type=undefined4      refs=1  nearby: PTR_crt_unknown.c_FUN_0056ad3f_005c1cc0 at +95
+  DAT_005c1d23                    addr=005c1d23    type=undefined4      refs=1  nearby: PTR_crt_unknown.c_FUN_0056ad3f_005c1cc0 at +99
   DAT_005c1d50                    addr=005c1d50    type=undefined4      refs=1  nearby: PTR_crt_unknown.c_FUN_0056ad3f_005c1cc0 at +144
   DAT_005c1da9                    addr=005c1da9    type=undefined4      refs=1  nearby: PTR_crt_unknown.c_FUN_0056ad3f_005c1cc0 at +233
   DAT_005c1dbc                    addr=005c1dbc    type=undefined4      refs=1  nearby: PTR_crt_unknown.c_FUN_0056ad3f_005c1cc0 at +252
@@ -1436,7 +1439,7 @@ NO TYPE HINTS (1632)
   DAT_005c20e4                    addr=005c20e4    type=undefined4      refs=1  nearby: PTR_crt_unknown.c_FUN_00573650_005c2164 at -128
   DAT_005c20e8                    addr=005c20e8    type=undefined4      refs=1  nearby: PTR_crt_unknown.c_FUN_00573650_005c2164 at -124
   DAT_005c20ec                    addr=005c20ec    type=undefined4      refs=1  nearby: PTR_crt_unknown.c_FUN_00573650_005c2164 at -120
-  DAT_005c2144                    addr=005c2144    type=undefined4      refs=4  nearby: PTR_crt_unknown.c_FUN_00573650_005c2164 at -32
+  DAT_005c2144                    addr=005c2144    type=undefined4      refs=5  nearby: PTR_crt_unknown.c_FUN_00573650_005c2164 at -32
   DAT_005c2148                    addr=005c2148    type=undefined4      refs=1  nearby: PTR_crt_unknown.c_FUN_00573650_005c2164 at -28
   DAT_005c5020                    addr=005c5020    type=undefined4      refs=7  nearby: g_BackBuffer at +16
   DAT_005c5024                    addr=005c5024    type=undefined4      refs=16  nearby: g_BackBuffer at +20
@@ -2711,15 +2714,15 @@ NO TYPE HINTS (1632)
   DAT_02de4e3c                    addr=02de4e3c    type=undefined4      refs=3
   DAT_02de5488                    addr=02de5488    type=undefined4      refs=1
   DAT_02de548c                    addr=02de548c    type=undefined4      refs=1
-  DAT_02de54a0                    addr=02de54a0    type=undefined4      refs=5
-  DAT_02de54a4                    addr=02de54a4    type=undefined4      refs=7
+  DAT_02de54a0                    addr=02de54a0    type=undefined4      refs=6
+  DAT_02de54a4                    addr=02de54a4    type=undefined4      refs=8
   DAT_02de54a8                    addr=02de54a8    type=undefined4      refs=4
   DAT_02de5be0                    addr=02de5be0    type=undefined4      refs=2
   DAT_02de5be4                    addr=02de5be4    type=undefined4      refs=1
   DAT_02de5c10                    addr=02de5c10    type=undefined4      refs=2
   DAT_02de5c14                    addr=02de5c14    type=undefined4      refs=2
   DAT_02de5c18                    addr=02de5c18    type=undefined4      refs=2
-  DAT_02de5c30                    addr=02de5c30    type=undefined4      refs=16
+  DAT_02de5c30                    addr=02de5c30    type=undefined4      refs=17
   DAT_02de5d50                    addr=02de5d50    type=undefined4      refs=1
   DAT_02de5d54                    addr=02de5d54    type=undefined4      refs=1
   DAT_02de5d58                    addr=02de5d58    type=undefined4      refs=1
@@ -2753,8 +2756,8 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_01bcd9b8                    addr=01bcd9b8    refs=18    type=undefined4      nearby: g_MouseCursorType(-8)
   DAT_005acc90                    addr=005acc90    refs=17    type=undefined1      likely=byte  nearby: g_INT_005acc88(+8)
   DAT_01cc9450                    addr=01cc9450    refs=17    type=undefined4    
+  DAT_02de5c30                    addr=02de5c30    refs=17    type=undefined4    
   DAT_005c5024                    addr=005c5024    refs=16    type=undefined4      nearby: g_BackBuffer(+20)
-  DAT_02de5c30                    addr=02de5c30    refs=16    type=undefined4    
   DAT_02dc84bc                    addr=02dc84bc    refs=16    type=undefined4    
   DAT_005c505c                    addr=005c505c    refs=15    type=undefined4      nearby: g_BackBuffer(+76)
   DAT_005c5060                    addr=005c5060    refs=15    type=undefined4      nearby: g_BackBuffer(+80)
@@ -2861,7 +2864,7 @@ They appear only as inline constant values.
   DAT_80000002                    value=0x80000002      refs=1
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (106)
+FILTERED OUT - INSIDE NAMED DATA (111)
 --------------------------------------------------------------------------------
 These DAT_ globals fall within the address range of a named
 string, array, or struct and are not standalone globals.
@@ -2897,6 +2900,8 @@ string, array, or struct and are not standalone globals.
   DAT_00581ac5                    inside s_Here_is_a_newline_Next_l_00581a77
   DAT_00581ae0                    inside s_maxCharHght_d_00581ad0
   DAT_00586e60                    inside s_itemlist_txt_00586e53
+  DAT_0058786c                    inside s_big_00587867
+  DAT_00587874                    inside s_big_00587867
   DAT_005882b3                    inside s_Matrix_unbalance_0058829e
   DAT_005882bb                    inside s_Matrix_unbalance_0058829e
   DAT_0058a161                    inside s_CMobster_0058a151
@@ -2970,6 +2975,9 @@ string, array, or struct and are not standalone globals.
   DAT_005c1f54                    inside s_s_0123456789abcdefghijkl_005c1f24
   DAT_005c1f58                    inside s_s_0123456789abcdefghijkl_005c1f24
   DAT_005c1f5c                    inside s_s_0123456789abcdefghijkl_005c1f24
+  DAT_005c2040                    inside s_s_0123456789abcdefghijkl_005c2018
+  DAT_005c2044                    inside s_s_0123456789abcdefghijkl_005c2018
+  DAT_005c2048                    inside s_s_0123456789abcdefghijkl_005c2018
   DAT_005c204c                    inside s_s_0123456789abcdefghijkl_005c2018
   DAT_005c2050                    inside s_s_0123456789abcdefghijkl_005c2018
 

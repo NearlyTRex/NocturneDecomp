@@ -13,11 +13,11 @@
 ;   core_bride.cpp_CBride_processDismemberment_FUN_004248e0 at 00424a05
 ;   core_carved.cpp_FUN_0042b580 at 0042b716
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00448b70 at 00448cf3
+;   core_demnfolk.cpp_FUN_0045c4a0 at 0045c636
 ;   core_djien.cpp_CDjien_damageSack_FUN_00460f90 at 0046103c
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e05b0 at 004e0746
 ;   core_imp.cpp_CImp_processDismemberment_FUN_004f3cb0 at 004f3e4b
 ;   core_mobster.cpp_CMobster_processDismemberment_FUN_0051ec80 at 0051ee86
-;   core_moocow.cpp_FUN_00521810 at 00521915
 ;   ... and 4 more
 ;
 ; *****************************************************************************

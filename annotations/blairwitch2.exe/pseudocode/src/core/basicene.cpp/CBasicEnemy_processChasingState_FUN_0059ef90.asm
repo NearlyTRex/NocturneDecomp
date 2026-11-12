@@ -13,9 +13,9 @@
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   unkaddr_0059d350.cpp_FUN_0059d880
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
-;   unkaddr_0059d350.cpp_FUN_0059db90
+;   core_muzzle.cpp_FUN_0059d880
+;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_FUN_0059db90
 ;
 ; *****************************************************************************
 
@@ -116,13 +116,13 @@ section .text
         ;   Label: LAB_0059f083
     PUSH EBX                            ; 0059f089
     MOV dword ptr [EBX + -0x80],ECX     ; 0059f08a
-    CALL unkaddr_0059d350.cpp_FUN_0059db90 ; 0059f08d
-        ;   XREF to: 0059db90 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059db90()
+    CALL core_muzzle.cpp_FUN_0059db90   ; 0059f08d
+        ;   XREF to: 0059db90 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059db90()
     ADD ESP,0x4                         ; 0059f092
     PUSH EAX                            ; 0059f095
     PUSH EBX                            ; 0059f096
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 0059f097
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 0059f097
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 0059f09c
     MOV ESP,EBP                         ; 0059f09f
     POP EBP                             ; 0059f0a1
@@ -132,8 +132,8 @@ section .text
         ;   Label: LAB_0059f0a4
     ADD EBX,0x10af8                     ; 0059f0a9
     PUSH EBX                            ; 0059f0af
-    CALL unkaddr_0059d350.cpp_FUN_0059d880 ; 0059f0b0
-        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d880()
+    CALL core_muzzle.cpp_FUN_0059d880   ; 0059f0b0
+        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d880()
     ADD ESP,0x8                         ; 0059f0b5
     MOV ESP,EBP                         ; 0059f0b8
     POP EBP                             ; 0059f0ba

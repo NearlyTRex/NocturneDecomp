@@ -28,6 +28,8 @@ int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004b0cb0(CBitFont *this
 int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004b0ce0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
 int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004b0d30(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004b0da0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
+void engine_font_cpp_FUN_004b0de0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void engine_font_cpp_FUN_004b0e30(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6 ,undefined4 param_7);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004b0ea0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterF_FUN_004b0ee0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004b0f30(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
@@ -53,10 +55,10 @@ int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_004b3120(CBitFont *this_
 void __cdecl engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004b3150(CBitFont *this_ptr,int offset_value,int start_char,int end_char);
 void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004b31b0(CBitFont *this_ptr,int value);
 void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004b31c0(CBitFont *this_ptr);
-int unkafter_font_cpp_FUN_004b33d0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
-uint unkafter_font_cpp_FUN_004b377e(int param_1,int param_2,uint param_3);
-undefined4 unkafter_font_cpp_FUN_004b37d0(void);
-int * unkafter_font_cpp_FUN_004b391e(int param_1,int *param_2);
+int engine_font_cpp_FUN_004b33d0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
+uint engine_font_cpp_FUN_004b377e(int param_1,int param_2,uint param_3);
+undefined4 engine_font_cpp_FUN_004b37d0(void);
+int * engine_font_cpp_FUN_004b391e(int param_1,int *param_2);
 void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004b3960(int *param_1,int param_2);
 void core_game_cpp_staticInit_FUN_004b3cd0(void);
 void __cdecl core_game_cpp_setupMovieRecording_FUN_004b3d70(void);

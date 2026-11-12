@@ -1,0 +1,452 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 367,
+    "complexity_score": 608,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 188,
+    "suspect_count": 40,
+    "suspect_types": [
+      "stack_alignment_array",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 555
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00545140",
+    "address_range": [
+      [
+        "00545140",
+        "005456ff"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_shadow.cpp_FUN_00545140",
+    "signature": "void core_shadow_cpp_FUN_00545140(int param_1,float *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0046e5e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0"
+    },
+    {
+      "addr": "0046c510",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510"
+    },
+    {
+      "addr": "0046d4b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0"
+    },
+    {
+      "addr": "005632a3",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_005632a3"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e3d30",
+      "name": "DAT_005e3d30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e3d64",
+      "name": "DAT_005e3d64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e3d68",
+      "name": "DAT_005e3d68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.617142857142857,
+    "instruction_count": 350,
+    "opcode_distribution": {
+      "CALL": 8,
+      "CBRANCH": 4,
+      "COPY": 980,
+      "FLOAT2FLOAT": 84,
+      "FLOAT_ADD": 8,
+      "FLOAT_MULT": 24,
+      "FLOAT_NEG": 4,
+      "INT_ADD": 241,
+      "INT_AND": 38,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 38,
+      "INT_LESS": 5,
+      "INT_MULT": 48,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 19,
+      "INT_SUB": 81,
+      "INT_XOR": 2,
+      "INT_ZEXT": 48,
+      "LOAD": 125,
+      "POPCOUNT": 19,
+      "RETURN": 1,
+      "ROUND": 12,
+      "STORE": 136,
+      "TRUNC": 12
+    },
+    "pcode_op_count": 1966
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_shadow_cpp_FUN_00545140(int param_1,float *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_shadow_cpp_FUN_00545140(int param_1,float *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 9,
+      "match": "afStackY_1104",
+      "severity": "moderate",
+      "text": "float afStackY_1104 [1006];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_50 = *param_2 + _DAT_005e3d64;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_48 = param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_4c = param_2[1] + _DAT_005e3d68;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "afStack_dc[2] = fStack_50 * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "afStack_dc[3] = fStack_4c * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_cc = fStack_48 * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 81,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&CStack_110);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_11c = -_DAT_005e3d64 + *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "afStack_118[1] = param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "afStack_118[0] = param_2[1] + _DAT_005e3d68;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_104 = -_DAT_005e3d64 + *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_8c = fStack_104 * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "afStack_88[0] = afStack_100[0] * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "afStack_88[1] = afStack_100[1] * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&CStack_2c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_a8 = param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "afStack_b8[2] = -_DAT_005e3d64 + *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "afStack_b8[3] = param_2[1] + -_DAT_005e3d68;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "afStack_88[2] = -_DAT_005e3d64 + *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_68 = afStack_88[2] * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 114,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_64 = afStack_88[3] * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_60 = fStack_78 * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 128,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&CStack_ec);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 129,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "afStack_dc[1] = param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 130,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_e0 = _DAT_005e3d64 + *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 131,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "afStack_dc[0] = param_2[1] + -_DAT_005e3d68;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 132,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_bc = _DAT_005e3d64 + *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 136,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_74 = fStack_bc * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 137,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_70 = afStack_b8[0] * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 138,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_6c = afStack_b8[1] * *(float *)(param_1 + 0x27b8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 151,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&CStack_98);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 152,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "this_ptr = DAT_005f2afc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 153,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "DAT_005f2afc->vertex_buffer_ptr->r = 0xffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 188,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 189,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510(DAT_005f2afc,&SStack_144);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 190,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",
+      "type": "undefined_data"
+    }
+  ]
+}

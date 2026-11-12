@@ -71,6 +71,13 @@ class Address:
     def add(self, displacement):
         return Address(self.offset + displacement, self.size)
 
+    def subtract(self, displacement):
+        return Address(self.offset - displacement, self.size)
+
+    # Negative, zero or positive, as Java's Comparable
+    def compareTo(self, other):
+        return (self.offset > other.getOffset()) - (self.offset < other.getOffset())
+
     def toString(self):
         return f"{self.offset:0{self.size}x}"
 
@@ -117,6 +124,12 @@ class AddressSet(JavaObject):
 
     def isEmpty(self):
         return not self.ranges
+
+    def getMinAddress(self):
+        return Address(min(lo for lo, _ in self.ranges))
+
+    def getMaxAddress(self):
+        return Address(max(hi for _, hi in self.ranges))
 
     def getAddressRanges(self):
         return [AddressRange(Address(lo), Address(hi)) for lo, hi in self.ranges]

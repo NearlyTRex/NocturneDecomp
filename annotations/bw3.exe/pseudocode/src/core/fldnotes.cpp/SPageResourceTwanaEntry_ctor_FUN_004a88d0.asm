@@ -19,10 +19,10 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
+;   core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370
 ;   core_main.c_FUN_004e4330
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;   crt_memory.c_memset_FUN_005a28f0
-;   unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
         ;   Label: core_fldnotes.cpp_SPageResourceTwanaEntry_ctor_FUN_004a88d0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004a88d1
     PUSH EBX                            ; 004a88d5
-    CALL unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370 ; 004a88d6
-        ;   XREF to: 004a8370 (UNCONDITIONAL_CALL)  ; void unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370(SPageResource * this_ptr)
+    CALL core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370 ; 004a88d6
+        ;   XREF to: 004a8370 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370(SPageResource * this_ptr)
     ADD ESP,0x4                         ; 004a88db
     PUSH 0x5dbf20                       ; 004a88de | g_CAlphaBitmapTypeInfo
     PUSH 0x3                            ; 004a88e3

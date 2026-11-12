@@ -60,6 +60,9 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInArea_FUN_00480c
 void cockpit_drawsurf_cpp_FUN_00480ca0(CDrawSurface *param_1,int param_2,int param_3,int param_4,undefined4 param_5);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_00480d20(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00480d90(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00480e10(CDrawSurface *this_ptr,char *param_2,int param_3);
+void cockpit_drawsurf_cpp_FUN_00480e30(CDrawSurface *param_1,int param_2,char *param_3);
+void cockpit_drawsurf_cpp_FUN_00480e50(CDrawSurface *param_1,int param_2,undefined4 param_3);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00480f80(CDrawSurface *this_ptr,char *text);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00480fa0(CDrawSurface *this_ptr,char *format);
 int cockpit_drawsurf_cpp_FUN_00480ffc(undefined4 param_1,int param_2);
@@ -102,19 +105,19 @@ void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_00483
 void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0(CDemonRenderer *this_ptr,CVector3f *world_position);
 void __cdecl engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_00483800(CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation);
 void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850(CDemonRenderer *this_ptr,CVector3f *euler_angles,CVector3f *translation);
-void __cdecl engine_matrix_c_matrixPush_FUN_00483990(void);
-void __cdecl engine_matrix_c_pop_FUN_004839a0(void);
-void engine_matrix_c_FUN_004839b0(undefined4 param_1,float param_2);
-void engine_matrix_c_FUN_004839f0(undefined4 param_1,float param_2);
-void engine_matrix_c_FUN_00483a20(undefined4 param_1,int *param_2);
-void engine_matrix_c_FUN_00483a40(undefined4 param_1,float *param_2);
-void engine_matrix_c_FUN_00483ac0(void);
-void engine_matrix_c_FUN_00483ae0(void);
-void engine_matrix_c_FUN_00483b50(void);
-void engine_matrix_c_FUN_00483b70(void);
-float engine_matrix_c_FUN_00483bf0(void);
-void engine_matrix_c_FUN_00483c10(undefined4 param_1,int param_2,int param_3,int param_4,int param_5);
-void __cdecl engine_matrix_c_popViewport_FUN_00483c40(void);
+void __cdecl engine_drender_cpp_matrixPush_FUN_00483990(void);
+void __cdecl engine_drender_cpp_pop_FUN_004839a0(void);
+void engine_drender_cpp_FUN_004839b0(undefined4 param_1,float param_2);
+void engine_drender_cpp_FUN_004839f0(undefined4 param_1,float param_2);
+void engine_drender_cpp_FUN_00483a20(undefined4 param_1,int *param_2);
+void engine_drender_cpp_FUN_00483a40(undefined4 param_1,float *param_2);
+void engine_drender_cpp_FUN_00483ac0(void);
+void engine_drender_cpp_FUN_00483ae0(void);
+void engine_drender_cpp_FUN_00483b50(void);
+void engine_drender_cpp_FUN_00483b70(void);
+float engine_drender_cpp_FUN_00483bf0(void);
+void engine_drender_cpp_FUN_00483c10(undefined4 param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl engine_drender_cpp_popViewport_FUN_00483c40(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00483c50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>
 inline void engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00483c50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,T_func0 scanline_renderer) {
@@ -242,6 +245,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0048f040(CDemon
 int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0048f120(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 void core_dtrace_cpp_FUN_0048f210(int param_1);
 void core_dtrace_cpp_FUN_0048f230(int param_1);
+void core_dtrace_cpp_FUN_0048f250(int param_1,int param_2);
 void __cdecl core_dtrace_cpp_FUN_0048f2e0(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent,CVector3f *light_position);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_commitShadowBuffer_FUN_0048f5b0(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_transferShadowVoxels_FUN_0048f650(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *start,CVector3f *end);

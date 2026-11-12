@@ -80,7 +80,7 @@ uint engine_pod_cpp_FUN_00512fb0(CPodFile *param_1,char *param_2,char *param_3)
     pcVar2 = pcVar2 + 4;
     pcVar12 = pcVar12 + 4;
   }
-  unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_84);
+  support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_84);
   engine_pod_cpp_CPodFile_cleanup_FUN_00513b90(param_1);
   engine_dosio_cpp_FUN_00465660(local_8cc,0,param_2);
   iVar6 = engine_dosio_cpp_findFileNormally_FUN_00465730(local_8cc);
@@ -112,7 +112,7 @@ uint engine_pod_cpp_FUN_00512fb0(CPodFile *param_1,char *param_2,char *param_3)
       iVar6 = _stricmp(local_288,&DAT_005cc4f2);
       if ((iVar6 == 0) ||
          (iVar6 = _stricmp(local_288,&DAT_005cc4f6), iVar6 == 0)) {
-        iVar6 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00(&local_84,&local_398,0x110);
+        iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_84,&local_398,0x110);
         if (iVar6 == 0x110) {
           pcVar12 = local_394;
           pcVar2 = param_1->description;
@@ -137,7 +137,7 @@ uint engine_pod_cpp_FUN_00512fb0(CPodFile *param_1,char *param_2,char *param_3)
           if (0 < param_1->file_count) {
             local_2c = 0;
             do {
-              iVar6 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00
+              iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00
                                 (&local_84,(uint *)local_d4,0x50);
               if (iVar6 != 0x50) goto LAB_0051316b;
               *(ulong *)((int)&param_1->directory_entries->name + local_2c) = uVar9;
@@ -185,9 +185,9 @@ LAB_005133b0:
             local_1c = 1;
           }
 LAB_005133bd:
-          bVar14 = unkafter_turret_cpp_CInStreamFile_isOpen_FUN_00573d60(&local_84);
+          bVar14 = support_trstream_cpp_CInStreamFile_isOpen_FUN_00573d60(&local_84);
           if (CONCAT31(extraout_var,bVar14) != 0) {
-            unkafter_turret_cpp_CInStreamFile_close_FUN_00573db0(&local_84);
+            support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_84);
             if (local_1c != 0) {
               pcVar2 = (char *)realloc(param_1->file_data_buffer,uVar9);
               param_1->file_data_buffer = pcVar2;
@@ -217,13 +217,13 @@ LAB_005133bd:
         }
       }
       else {
-        iVar6 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00
+        iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00
                           (&local_84,(uint *)&local_30,4);
         if (iVar6 == 4) {
-          unkafter_turret_cpp_CInStreamFile_seek_FUN_00573cf0(&local_84,0,0);
+          support_trstream_cpp_CInStreamFile_seek_FUN_00573cf0(&local_84,0,0);
           if ((((local_30 == 'P') && (local_2f == 'O')) && (local_2e == 'D')) && (local_2d == '3'))
           {
-            iVar6 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00(&local_84,local_4b8,0x120);
+            iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_84,local_4b8,0x120);
             if (iVar6 == 0x120) {
               pcVar12 = local_4b0;
               pcVar2 = param_1->description;
@@ -283,9 +283,9 @@ LAB_00513493:
                 } while (cVar1 != '\0');
                 goto LAB_0051303e;
               }
-              unkafter_turret_cpp_CInStreamFile_seek_FUN_00573cf0(&local_84,local_3b0,0);
+              support_trstream_cpp_CInStreamFile_seek_FUN_00573cf0(&local_84,local_3b0,0);
               uVar11 = param_1->file_count * 0x14;
-              uVar7 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00
+              uVar7 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00
                                 (&local_84,&param_1->directory_entries->name,uVar11);
               if (uVar7 == uVar11) {
                 uVar7 = uVar7 ^ uVar11;
@@ -299,10 +299,10 @@ LAB_00513493:
                 pcVar2 = (char *)malloc(local_3a8);
                 param_1->file_data_buffer = pcVar2;
                 if (pcVar2 == (char *)0x0) goto LAB_00513493;
-                uVar9 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00
+                uVar9 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00
                                   (&local_84,(uint *)pcVar2,local_3a8);
                 if (uVar9 == local_3a8) {
-                  uVar7 = unkafter_turret_cpp_CInStreamFile_tell_FUN_00573d40(&local_84);
+                  uVar7 = support_trstream_cpp_CInStreamFile_tell_FUN_00573d40(&local_84);
                   param_1->dependency_records_offset = uVar7;
                   param_1->total_file_size =
                        param_1->dependency_records_offset + param_1->dependency_count * 0x108;
@@ -314,7 +314,7 @@ LAB_00513493:
           }
           else if ((((local_30 == 'P') && (local_2f == 'O')) && (local_2e == 'D')) &&
                   (local_2d == '2')) {
-            iVar6 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00(&local_84,local_188,0x60);
+            iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_84,local_188,0x60);
             if (iVar6 == 0x60) {
               pcVar12 = local_180;
               pcVar2 = param_1->description;
@@ -336,7 +336,7 @@ LAB_00513493:
               param_1->directory_entries = pCVar3;
               if (pCVar3 == (CPodDirectoryEntry *)0x0) goto LAB_00513493;
               uVar11 = param_1->file_count * 0x14;
-              uVar7 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00
+              uVar7 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00
                                 (&local_84,&pCVar3->name,uVar11);
               if (uVar7 == uVar11) {
                 uVar7 = uVar7 ^ uVar11;
@@ -351,7 +351,7 @@ LAB_00513493:
                 pcVar2 = (char *)malloc(uVar9);
                 param_1->file_data_buffer = pcVar2;
                 if (pcVar2 == (char *)0x0) goto LAB_00513493;
-                uVar5 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00
+                uVar5 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00
                                   (&local_84,(uint *)pcVar2,uVar9);
                 if (uVar5 == uVar9) {
                   iVar6 = param_1->file_count + -1;
@@ -365,7 +365,7 @@ LAB_00513493:
           }
           else {
             param_1->pod_format_version = 1;
-            iVar6 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00(&local_84,&local_128,0x54);
+            iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_84,&local_128,0x54);
             if (iVar6 == 4) {
               pcVar12 = local_124;
               pcVar2 = param_1->description;
@@ -390,7 +390,7 @@ LAB_00513493:
                   if (0 < param_1->file_count) {
                     local_14 = 0;
                     do {
-                      iVar6 = unkafter_turret_cpp_CInStreamFile_read_FUN_00573c00
+                      iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00
                                         (&local_84,(uint *)local_58,0x28);
                       if (iVar6 != 0x28) goto LAB_0051316b;
                       *(ulong *)((int)&param_1->directory_entries->name + local_14) = uVar9;
@@ -476,7 +476,7 @@ LAB_0051316b:
     }
   }
 LAB_0051303e:
-  unkafter_turret_cpp_CInStreamFile_close_FUN_00573db0(&local_84);
+  support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_84);
   engine_pod_cpp_CPodFile_cleanup_FUN_00513b90(param_1);
   if (param_3 != (char *)0x0) {
     pcVar2 = local_6b8;
@@ -492,6 +492,6 @@ LAB_0051303e:
   }
   uVar10 = 0;
 LAB_00513090:
-  unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_84,0);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_84,0);
   return uVar10;
 }

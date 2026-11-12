@@ -1,6 +1,6 @@
 // Name: cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0
 // Address: 004f47b0
-// Address Range: [[004f47b0, 004f49d7]]
+// Address Range: [[004f47b0, 004f49f2]]
 // Convention: __cdecl
 // Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride)
 

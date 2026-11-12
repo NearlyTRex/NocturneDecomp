@@ -117,6 +117,10 @@ int __cdecl CSocket::setSocketBlocking(CSocket *this_ptr,int blocking_mode);
 // Address: 0059cef0
 bool FUN_0059cef0(int param_1);
 
+// Original: support_trisock.cpp_FUN_0059cf00
+// Address: 0059cf00
+undefined4 FUN_0059cf00(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,CSocket *param_6,code *param_7);
+
 // Original: support_trisock.cpp_FUN_0059d330
 // Address: 0059d330
 void FUN_0059d330(undefined4 *param_1,undefined4 param_2);
@@ -161,6 +165,10 @@ undefined1 * FUN_0059dd40(int param_1);
 // Address: 0059ddc0
 void FUN_0059ddc0(char *param_1,char *param_2);
 
+// Original: support_trisock.cpp_FUN_0059de00
+// Address: 0059de00
+void FUN_0059de00(undefined1 *param_1,undefined4 param_2);
+
 // Original: support_trisock.cpp_FUN_0059de30
 // Address: 0059de30
 undefined4 FUN_0059de30(int param_1,undefined4 *param_2);
@@ -193,6 +201,10 @@ void FUN_0059e26e(int param_1,char *param_2);
 // Address: 0059e350
 undefined4 FUN_0059e350(int param_1,char *param_2);
 
+// Original: support_trisock.cpp_FUN_0059ed20
+// Address: 0059ed20
+void FUN_0059ed20(int param_1);
+
 // Original: support_trisock.cpp_FUN_0059ed90
 // Address: 0059ed90
 undefined4 FUN_0059ed90(int param_1,int param_2);
@@ -208,3 +220,31 @@ void FUN_0059eeb0(void);
 // Original: support_trisock.cpp_FUN_0059ef20
 // Address: 0059ef20
 int __cdecl FUN_0059ef20(void);
+
+// Original: support_trisock.cpp_FUN_0059efd0
+// Address: 0059efd0
+bool FUN_0059efd0(undefined4 *param_1,char *param_2);
+
+// Original: support_trisock.cpp_FUN_0059f1a0
+// Address: 0059f1a0
+undefined4 FUN_0059f1a0(char *param_1,char *param_2);
+
+// Original: support_trisock.cpp_FUN_0059f230
+// Address: 0059f230
+void FUN_0059f230(uchar param_1,undefined1 param_2,undefined1 param_3,undefined1 param_4,undefined4 param_5,undefined4 param_6,uint param_7);
+
+// Original: support_trisock.cpp_FUN_0059f2a0
+// Address: 0059f2a0
+undefined4 FUN_0059f2a0(void *param_1);
+
+// Original: support_trisock.cpp_IpAddr_ctor_FUN_0059f300
+// Address: 0059f300
+SIpAddr * IpAddr::ctor(SIpAddr *this_ptr);
+
+// Original: support_trisock.cpp_FUN_0059f320
+// Address: 0059f320
+int FUN_0059f320(int param_1);
+
+// Original: support_trisock.cpp_FUN_0059f340
+// Address: 0059f340
+void FUN_0059f340(undefined4 *param_1,undefined4 *param_2);

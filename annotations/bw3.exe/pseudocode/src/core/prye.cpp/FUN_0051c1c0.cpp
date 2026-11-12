@@ -943,8 +943,7 @@ void core_prye_cpp_FUN_0051c1c0(int param_1)
     if (*(int *)(param_1 + 0x20b98) != 0) {
       _DAT_01ed3784 =
            (CDeformableModelInstance *)
-           core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00517e80
-                     (*(int *)(param_1 + 0x20b98));
+           core_prye_cpp_getCarriedObjectVerticalOffset_FUN_00517e80(*(int *)(param_1 + 0x20b98));
       local_14 = _DAT_01ed3784;
     }
     local_34 = local_34 - (float)_DAT_01ed3784;
@@ -1128,7 +1127,7 @@ LAB_0051cae3:
     if (1.0 < _DAT_01ed36d8) {
       _DAT_01ed36d8 = 1.0;
     }
-    pcVar10 = unkafter_prye_cpp_FUN_00517c90;
+    pcVar10 = core_prye_cpp_FUN_00517c90;
     fVar9 = *(float *)(param_1 + 0x20bd4);
     iVar11 = _DAT_01ed36e0;
     core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(*(uint *)(param_1 + 0x20bd8));

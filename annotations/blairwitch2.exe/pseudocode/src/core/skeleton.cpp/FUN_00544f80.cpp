@@ -178,7 +178,7 @@ void core_skeleton_cpp_FUN_00544f80(CDeformableModelInstance *param_1,int param_
     (param_1->bone_transform).pose_data.root_position.x = fVar1 * fVar2;
     return;
   }
-  if (param_1->bone_update_mode == 1) {
+  if (param_1->bone_update_mode == BONE_UPDATE_HIERARCHICAL_ACCUM) {
     local_18 = 0;
     if (0 < this_ptr->bone_count) {
       local_60 = 0;
@@ -264,7 +264,7 @@ void core_skeleton_cpp_FUN_00544f80(CDeformableModelInstance *param_1,int param_
       } while (local_28 < this_ptr->bone_count);
     }
   }
-  else if (param_1->bone_update_mode == 2) {
+  else if (param_1->bone_update_mode == BONE_UPDATE_HIERARCHICAL_RESTPOSE) {
     pCVar9 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(param_1);
     local_14 = 0;
     local_6c = (pCVar9->motion_list).motions[param_2].frame_start;

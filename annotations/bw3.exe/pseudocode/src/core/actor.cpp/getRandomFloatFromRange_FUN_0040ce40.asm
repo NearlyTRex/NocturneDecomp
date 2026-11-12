@@ -20,9 +20,9 @@
 ;   core_bat.cpp_CBat_process_FUN_0040f010 at 0040f1e2
 ;   core_bat.cpp_CBat_setup_FUN_0040eeb0 at 0040ef05
 ;   core_bindevil.cpp_CBindEvil_getDamage_FUN_0040f8d0 at 0040f8dd
+;   core_bird.cpp_CBird_ctor_FUN_0040f9f0 at 0040fa51
 ;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 00410550
 ;   core_blundrbs.cpp_CBlunderbus_getDamage_FUN_00411750 at 00411776
-;   core_bodypart.cpp_CBodyPart_addFire_FUN_00416750 at 0041686a
 ;   ... and 144 more
 ;
 ; Referenced Globals:

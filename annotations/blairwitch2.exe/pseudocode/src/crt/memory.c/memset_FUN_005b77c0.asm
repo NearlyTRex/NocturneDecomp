@@ -8,18 +8,18 @@
 ; int              Stack[0x8]:4   value
 ; ulong            Stack[0xc]:4   count
 ;
-; XREF[131]:
+; XREF[132]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00466f90 at 0046700c
 ;   cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00467920 at 004679ca
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_00516140 at 00516153
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_00516160 at 00516176
+;   cockpit_pkbitmap.cpp_FUN_005175b0 at 005175d7
 ;   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040adf0 at 0040ae67
 ;   core_actor.cpp_copyToActorDebugBuffer_FUN_0040ada0 at 0040adae
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fef0 at 0040ffe8
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_004177e0 at 00417868
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700 at 00416b1e
-;   core_boneguy.cpp_CBoneGuy_ctor_FUN_004182d0 at 004183af
-;   ... and 121 more
+;   ... and 122 more
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005bbfc0

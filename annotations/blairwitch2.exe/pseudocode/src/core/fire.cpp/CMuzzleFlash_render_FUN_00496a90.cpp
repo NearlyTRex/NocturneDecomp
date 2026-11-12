@@ -44,7 +44,7 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00496a90(CMuzzleFlash *this_p
             (DAT_0060b280,&local_1c,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
             ((CKeyFramedModelInstance *)0x1c3ead8,0.0,99);
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   local_34.x = 0.0;
   local_34.y = 0.0;
   local_34.z = 0.7853982;
@@ -52,10 +52,10 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00496a90(CMuzzleFlash *this_p
             (DAT_0060b280,&local_34,(CVector3f *)0x0);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
             ((CKeyFramedModelInstance *)0x1c3ead8,0.0,99);
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   g_CDemonSetPtr->lighting_quality_mode = 0;
-  engine_matrix_c_pop_FUN_0046b4a0();
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
   return;
 }

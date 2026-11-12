@@ -78,6 +78,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00477bc0(CDemon
 int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00477ca0(CDemonRaytrace *this_ptr,CVector3i *voxel_coords);
 void core_dtrace_cpp_FUN_00477d90(int param_1);
 void core_dtrace_cpp_FUN_00477db0(int param_1);
+void core_dtrace_cpp_FUN_00477dd0(int param_1,int param_2);
 void __cdecl core_dtrace_cpp_FUN_00477e60(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent,CVector3f *light_position);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_commitShadowBuffer_FUN_00478130(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_transferShadowVoxels_FUN_004781d0(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *start,CVector3f *end);

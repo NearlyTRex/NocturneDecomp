@@ -1,6 +1,6 @@
 // Name: core_trap.cpp_factoryFuncTrap_FUN_0056ccd0
 // Address: 0056ccd0
-// Address Range: [[0056ccd0, 0056ccd0]]
+// Address Range: [[0056ccd0, 0056cceb]]
 // Convention: unknown
 // Signature: void core_trap_cpp_factoryFuncTrap_FUN_0056ccd0(void)
 

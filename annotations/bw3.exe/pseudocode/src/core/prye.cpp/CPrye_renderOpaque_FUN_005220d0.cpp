@@ -96,7 +96,7 @@ int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr)
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10(g_CDemonSetPtr,&this_ptr->weapon->base);
       core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10
                 (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
-      unkafter_prye_cpp_FUN_00524800(this_ptr);
+      core_prye_cpp_FUN_00524800(this_ptr);
       puVar5 = &uStack_a4;
       uStack_a4 = afStack_dc[2];
       afStack_a0[(uint)bVar7 * -2] = afStack_dc[(uint)bVar7 * -2 + 3];
@@ -249,7 +249,7 @@ LAB_00522382:
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30(pCVar8,pCVar9,pCVar10);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
                 ((CKeyFramedModelInstance *)(iStack_2c + 0x158),0.0,-1);
-      engine_matrix_c_pop_FUN_0046d080();
+      engine_drender_cpp_pop_FUN_0046d080();
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
     }
   }
@@ -315,7 +315,7 @@ LAB_00522382:
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30(pCVar8,pCVar9,pCVar10);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
                 ((CKeyFramedModelInstance *)(iStack_28 + 0x158),0.0,-1);
-      engine_matrix_c_pop_FUN_0046d080();
+      engine_drender_cpp_pop_FUN_0046d080();
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830((CDemonActor *)this_ptr);
     }
   }

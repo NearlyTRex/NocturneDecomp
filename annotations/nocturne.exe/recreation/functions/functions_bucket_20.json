@@ -5994,14 +5994,14 @@
   },
   {
     "addr":"0044b720",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_0044b720",
-    "name":"core_dcube.cpp_FUN_0044b720",
+    "method":"doNothing",
+    "name":"core_dcube.cpp_doNothing_FUN_0044b720",
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dcube.cpp",
@@ -6290,7 +6290,7 @@
       "00436e80",
       "00438780",
       "0043e1e0",
-      "00442d9c",
+      "00442d90",
       "00447f20",
       "0044d1f0",
       "0044f0b0",
@@ -6467,15 +6467,33 @@
   },
   {
     "addr":"00452520",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_00452520",
-    "name":"core_dlight.cpp_FUN_00452520",
+    "method":"assignInt2",
+    "name":"core_dlight.cpp_assignInt2_FUN_00452520",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"int",
+      "ptr":1
     },
     "tu":"core/dlight.cpp",
     "variadic":false
@@ -9746,6 +9764,59 @@
     "variadic":false
   },
   {
+    "addr":"0048b220",
+    "calls":[
+      "00485640"
+    ],
+    "cls":"CFireEffect",
+    "conv":"__cdecl",
+    "instructions":30,
+    "method":"createBulletTrail",
+    "name":"core_fire.cpp_CFireEffect_createBulletTrail_FUN_0048b220",
+    "params":[
+      {
+        "name":"param_2",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"param_3",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"param_4",
+        "type":{
+          "kind":"class",
+          "name":"CKeyFramedModel",
+          "ptr":1
+        }
+      },
+      {
+        "name":"param_5",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "receiver":true,
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "tu":"core/fire.cpp",
+    "variadic":false
+  },
+  {
     "addr":"0048b320",
     "callers":[
       "00462300",
@@ -11488,6 +11559,21 @@
       "ptr":0
     },
     "tu":"core/glass.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"004ae020",
+    "conv":"unknown",
+    "instructions":22,
+    "method":"getBloodColorParams",
+    "name":"core_gore.cpp_getBloodColorParams_FUN_004ae020",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"core/gore.cpp",
     "variadic":false
   },
   {
@@ -17498,15 +17584,33 @@
   },
   {
     "addr":"005143a0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_005143a0",
-    "name":"core_setdir.cpp_FUN_005143a0",
+    "method":"assignInt1",
+    "name":"core_setdir.cpp_assignInt1_FUN_005143a0",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"int",
+      "ptr":1
     },
     "tu":"core/setdir.cpp",
     "variadic":false
@@ -19547,15 +19651,33 @@
   },
   {
     "addr":"0052ee20",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_0052ee20",
-    "name":"core_sound.cpp_FUN_0052ee20",
+    "method":"assignInt",
+    "name":"core_sound.cpp_assignInt_FUN_0052ee20",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"int",
+      "ptr":1
     },
     "tu":"core/sound.cpp",
     "variadic":false
@@ -22822,6 +22944,9 @@
   },
   {
     "addr":"0056ada0",
+    "calls":[
+      "0056ad64"
+    ],
     "conv":"unknown",
     "data_refs":[
       "005c26a0"
@@ -23151,6 +23276,7 @@
   {
     "addr":"00573720",
     "callers":[
+      "00573890",
       "005738ac"
     ],
     "calls":[

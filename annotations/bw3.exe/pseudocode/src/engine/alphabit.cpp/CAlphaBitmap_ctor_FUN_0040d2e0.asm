@@ -7,16 +7,16 @@
 ; CAlphaBitmap *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[20]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00411b50 at 00411b61
+;   core_bmppuzzl.cpp_CChemPuzzle_ctor_FUN_00413200 at 00413211
+;   core_bmppuzzl.cpp_FUN_00414460 at 00414465
+;   core_bmppuzzl.cpp_SButtonStruct_ctor_FUN_00414480 at 00414485
+;   core_flashlit.cpp_FUN_004a76f0 at 004a7737
 ;   core_fldnotes.cpp_SNotesMap_ctor_FUN_004a9e10 at 004a9e19
 ;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a8680 at 004a869c
 ;   core_fldnotes.cpp_SPageResourceBitmap_ctor_FUN_004a8650 at 004a8661
 ;   core_game.cpp_CGame_displayActStats_FUN_004bfb50 at 004bfb62
 ;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004bff2c
-;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c02dc
-;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0 at 004b7f29
-;   core_level.cpp_FUN_004dfc50 at 004dfccc
-;   core_level.cpp_staticInit_FUN_004dfc10 at 004dfc22
-;   core_main.c_FUN_004e44e0 at 004e4aa6
 ;   ... and 10 more
 ;
 ; *****************************************************************************

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[19]:
+; XREF[20]:
 ;   core_charactr.cpp_CCharacter_archive_FUN_0042c7f0 at 0042caee
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0 at 00432a4c
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_00471af0 at 00471e84
@@ -21,7 +21,7 @@
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_00510620 at 00510801
 ;   core_platfrm.cpp_FUN_0053aef0 at 0053afca
 ;   core_scat.cpp_FUN_00542f20 at 00543044
-;   ... and 9 more
+;   ... and 10 more
 ;
 ; *****************************************************************************
 

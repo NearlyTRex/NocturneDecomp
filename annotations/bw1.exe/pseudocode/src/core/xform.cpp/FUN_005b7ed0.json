@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 98,
     "complexity_score": 293,
-    "cross_reference_count": 15,
+    "cross_reference_count": 16,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
@@ -41,6 +41,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00444550",
+      "from_addr": "0044484c",
+      "name": "core_colonel.cpp_CColonel_process_FUN_00444550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004472a0",
       "from_addr": "0044743a",
       "name": "core_construc.cpp_FUN_004472a0",
@@ -56,6 +62,12 @@
       "addr": "00447810",
       "from_addr": "0044784b",
       "name": "core_conveyor.cpp_CConveyor_setup_FUN_00447810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00460cb0",
+      "from_addr": "00460e11",
+      "name": "core_djien.cpp_FUN_00460cb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -105,12 +117,6 @@
       "from_addr": "005934b0",
       "name": "core_svetlana.cpp_CSvetlana_process_FUN_00593150",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00460cb0",
-      "from_addr": "00460e11",
-      "name": "unkafter_djien.cpp_FUN_00460cb0",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -141,7 +147,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 17,
+    "call_site_count": 18,
     "call_sites": [
       {
         "call_addr": "0040f69e",
@@ -601,7 +607,7 @@
       "type": "pointer_cast"
     },
     {
-      "call_site_count": 17,
+      "call_site_count": 18,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 3,

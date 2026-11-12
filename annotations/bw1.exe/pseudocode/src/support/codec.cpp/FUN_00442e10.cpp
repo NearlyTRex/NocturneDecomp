@@ -17,8 +17,8 @@ uint support_codec_cpp_FUN_00442e10(int *param_1,uint param_2,uint param_3)
   CInStreamFile CStack_38;
   COutStreamFile CStack_c;
   
-  unkaddr_0059f520_cpp_CInStreamFile_ctorOpen_FUN_005a0930(&CStack_38,param_2,1);
-  bVar1 = unkaddr_0059f520_cpp_CInStreamFile_isOpen_FUN_005a0d70(&CStack_38);
+  support_trstream_cpp_CInStreamFile_ctorOpen_FUN_005a0930(&CStack_38,param_2,1);
+  bVar1 = support_trstream_cpp_CInStreamFile_isOpen_FUN_005a0d70(&CStack_38);
   if (CONCAT31(extraout_var,bVar1) == 0) {
     uVar3 = 0;
     goto LAB_00442eb5;
@@ -27,7 +27,7 @@ uint support_codec_cpp_FUN_00442e10(int *param_1,uint param_2,uint param_3)
   bVar1 = support_trstream_cpp_COutStreamFile_isOpen_FUN_005a1990(&CStack_c);
   if (CONCAT31(extraout_var_00,bVar1) == 0) {
     support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860(&CStack_c,0);
-    unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(&CStack_38,0);
+    support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&CStack_38,0);
     return 0;
   }
   (**(code **)(*param_1 + 4))(param_1);
@@ -43,6 +43,6 @@ LAB_00442e9b:
   }
   support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860(&CStack_c,0);
 LAB_00442eb5:
-  unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(&CStack_38,0);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&CStack_38,0);
   return uVar3;
 }

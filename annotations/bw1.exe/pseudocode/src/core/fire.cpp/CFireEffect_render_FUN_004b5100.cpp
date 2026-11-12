@@ -141,7 +141,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004b5100(CFireEffect *this_ptr
         (*((this_ptr_08->base).vtable)->render)(&this_ptr_08->base);
       }
       this_ptr_08 = this_ptr_08 + 1;
-    } while (this_ptr_08 != (CGlassParticle *)0x1ca9cf0);
+    } while (this_ptr_08 != (CGlassParticle *)&DAT_01ca9cf0);
     this_ptr_09 = (CBulletTrail *)0x1ca9cf4;
     do {
       if (this_ptr_09->frames_remaining != 0) {

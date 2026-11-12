@@ -133,7 +133,7 @@ LAB_0049e569:
   iVar1 = this_ptr->flame_style;
   if ((((iVar1 == 2) || (iVar1 == 4)) || (iVar1 == 3)) ||
      ((iVar1 == 6 || (world_position = this_ptr, iVar1 == 7)))) {
-    engine_matrix_c_FUN_0046d1c0(DAT_005f2afc);
+    engine_drender_cpp_FUN_0046d1c0(DAT_005f2afc);
     local_dc[2] = local_bc;
     local_dc[(uint)bVar2 * -2 + 3] = afStack_b8[(uint)bVar2 * -2];
     local_dc[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
@@ -176,7 +176,7 @@ LAB_0049e569:
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
             (DAT_005f2afc,&world_position->position);
-  engine_matrix_c_FUN_0046d250(DAT_005f2afc);
+  engine_drender_cpp_FUN_0046d250(DAT_005f2afc);
   translation = (CVector3f *)0x0;
   euler_angles = &local_140;
   local_140.x = (float)local_a4._24_4_;
@@ -216,7 +216,7 @@ LAB_0049e569:
   local_194 = local_20;
   if ((this_ptr->flame_style == 0) && (dVar10 = (double)local_188, local_188 < (float)_DAT_005c0890)
      ) {
-    engine_matrix_c_FUN_0046d1c0(DAT_005f2afc,dVar10);
+    engine_drender_cpp_FUN_0046d1c0(DAT_005f2afc,dVar10);
     local_e0 = local_68;
     local_dc[(uint)bVar2 * -2] = afStack_64[(uint)bVar2 * -2];
     local_dc[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
@@ -422,6 +422,6 @@ LAB_0049ec97:
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(pCVar8,1);
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510(DAT_005f2afc,&local_180);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   return;
 }

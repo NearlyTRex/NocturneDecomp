@@ -1,6 +1,6 @@
 // Name: shape_edittool.cpp_FUN_0048546e
 // Address: 0048546e
-// Address Range: [[0048546e, 004854af]]
+// Address Range: [[0048546e, 00485551]]
 // Convention: unknown
 // Signature: void shape_edittool_cpp_FUN_0048546e(CEdCheck *param_1,int param_2,int param_3,char *param_4)
 

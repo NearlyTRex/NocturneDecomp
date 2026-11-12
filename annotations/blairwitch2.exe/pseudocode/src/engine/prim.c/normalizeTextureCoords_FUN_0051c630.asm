@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
+;   core_zombie.cpp_FUN_0059a5d0 at 0059a872
 ;   engine_prim.c_FUN_0051da80 at 0051ddb0
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130 at 0051e2d0
 ;   engine_prim.c_renderPolygonSoftware_FUN_0051cb20 at 0051cd3f
-;   unkafter_zombie.cpp_FUN_0059a5d0 at 0059a872
 ;
 ; *****************************************************************************
 

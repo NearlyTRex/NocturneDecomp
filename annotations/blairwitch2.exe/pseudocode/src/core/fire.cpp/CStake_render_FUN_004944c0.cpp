@@ -41,6 +41,6 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004944c0(CStake *this_ptr)
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
               ((CKeyFramedModelInstance *)0x1c3def8,0.0,-1);
   }
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   return;
 }

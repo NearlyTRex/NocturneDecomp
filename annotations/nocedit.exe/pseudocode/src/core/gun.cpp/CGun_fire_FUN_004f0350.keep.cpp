@@ -170,7 +170,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
       SStack_148.ammo_type = (this_ptr->base).ammo_type;
       SStack_148.dismember_prob = 0.15;
       SStack_148.attacker = (CDemonActor *)this_ptr;
-      SStack_148.damage_type = DAMAGE_TYPE_IMMUNE|DAMAGE_TYPE_DROWN;
+      SStack_148.damage_type = DAMAGE_TYPE_ATTACK_BULLET;
       SStack_148.wielder =
            (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
       (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)(this_ptr_01,&SStack_148);

@@ -18,8 +18,8 @@
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_00503e60
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
-;   unkaddr_0059d350.cpp_FUN_0059dcb0
+;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_FUN_0059dcb0
 ;
 ; *****************************************************************************
 
@@ -120,13 +120,13 @@ section .text
         ;   Label: LAB_005a1261
     PUSH 0x3f800000                     ; 005a1267
     PUSH EBX                            ; 005a126c
-    CALL unkaddr_0059d350.cpp_FUN_0059dcb0 ; 005a126d
-        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059dcb0()
+    CALL core_muzzle.cpp_FUN_0059dcb0   ; 005a126d
+        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dcb0()
     ADD ESP,0x8                         ; 005a1272
     PUSH 0x5efcc3                       ; 005a1275 | s_BChasing_005efcc2+1
     PUSH EBX                            ; 005a127a
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005a127b
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a127b
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005a1280
     JMP 0x005a125a                      ; 005a1283
         ;   XREF to: 005a125a (UNCONDITIONAL_JUMP)  ; LAB_005a125a

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 880,
-    "complexity_score": 369,
+    "complexity_score": 370,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 35,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 279,
+    "pseudocode_lines": 280,
     "suspect_count": 7,
     "suspect_types": [
       "stack_param",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1159
+    "total_lines": 1160
   },
   "cross_references": [
     {
@@ -121,8 +121,8 @@
     },
     {
       "addr": "00470230",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00470230"
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00470230"
     },
     {
       "addr": "00526ca0",
@@ -469,7 +469,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 237,
+      "line": 238,
       "match": "&stack0xfffffe4c",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffffe4c,\"Gamma : %f\",(double)this_ptr->gamma * 1.52587890625e-05);",
@@ -477,7 +477,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 238,
+      "line": 239,
       "match": "&stack0xfffffe4c",
       "severity": "moderate",
       "text": "core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,&stack0xfffffe4c,1.0);",
@@ -485,7 +485,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 267,
+      "line": 268,
       "match": "in_stack_00000080",
       "severity": "moderate",
       "text": "in_stack_00000080 = -0.02;",
@@ -493,7 +493,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 271,
+      "line": 272,
       "match": "in_stack_00000080",
       "severity": "moderate",
       "text": "in_stack_00000080;",
@@ -501,7 +501,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 173,
+      "line": 174,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

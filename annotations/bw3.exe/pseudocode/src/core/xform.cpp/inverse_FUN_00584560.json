@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 196,
     "complexity_score": 639,
-    "cross_reference_count": 6,
+    "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
@@ -52,7 +52,13 @@
     {
       "addr": "0056c140",
       "from_addr": "0056c3bf",
-      "name": "core_thehand.cpp_CTheHand_process_FUN_0056c140",
+      "name": "core_toxhand.cpp_CTheHand_process_FUN_0056c140",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00584490",
+      "from_addr": "005844a4",
+      "name": "core_xform.cpp_FUN_00584490",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -107,7 +113,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "00431b93",
@@ -211,12 +217,26 @@
       {
         "call_addr": "0056c3bf",
         "call_type": "direct",
-        "caller": "core_thehand.cpp_CTheHand_process_FUN_0056c140",
+        "caller": "core_toxhand.cpp_CTheHand_process_FUN_0056c140",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
           "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005844a4",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_FUN_00584490",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
           "EDX"
         ],
         "stack_bytes": 4,
@@ -869,7 +889,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "call_site_count": 8,
+      "call_site_count": 9,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 3,

@@ -4,6 +4,9 @@
 ; uint __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00407fc0(uint param_1,uint param_2,int param_3,undefined4 param_4,uint param_5)
 ;
 ;
+; XREF[1]:
+;   engine_3d.c_FUN_00407f40 at 00407fa5
+;
 ; Referenced Globals:
 ;   undefined4 DAT_0070c5bc
 ;   undefined4 DAT_0070c5c4

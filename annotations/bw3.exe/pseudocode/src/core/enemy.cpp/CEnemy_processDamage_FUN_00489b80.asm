@@ -12,12 +12,12 @@
 ;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_004192d0 at 0041934c
 ;   core_bugs.cpp_CBugs_processDamage_FUN_00421ad0 at 00421ae8
 ;   core_carved.cpp_CCarved_processDamage_FUN_00428a80 at 00428be1
-;   core_constrct.cpp_CConstruct_processDamage_FUN_00443f00 at 00443fc3
+;   core_construc.cpp_CConstruct_processDamage_FUN_00443f00 at 00443fc3
 ;   core_cow.cpp_CZombieCow_processDamage_FUN_004459b0 at 00445a0c
+;   core_demnfolk.cpp_CDemnfolk_processDamage_FUN_00458950 at 00458a7b
 ;   core_dog.cpp_CZombieDog_processDamage_FUN_004634d0 at 0046354b
 ;   core_gargoyle.cpp_CGargoyle_processDamage_FUN_004c61b0 at 004c62b4
 ;   core_ghoul.cpp_CGhoul_processDamage_FUN_004c9400 at 004c95cb
-;   core_hino.cpp_CHino_processDamage_FUN_0059d360 at 0059d3da
 ;   ... and 15 more
 ;
 ; Referenced Globals:

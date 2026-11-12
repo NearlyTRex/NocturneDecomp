@@ -6,7 +6,8 @@
 ; Parameters:
 ; CPodFile *       Stack[0x4]:4   this_ptr
 ;
-; XREF[2]:
+; XREF[3]:
+;   engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0 at 0051b8da
 ;   engine_pod.cpp_FUN_0051b110 at 0051b12e
 ;   engine_pod.cpp_FUN_0051b6dc at 0051b709
 ;

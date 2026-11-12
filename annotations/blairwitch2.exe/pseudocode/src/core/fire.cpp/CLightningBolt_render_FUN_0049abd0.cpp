@@ -101,7 +101,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_0049abd0(CLightningBolt *th
   if (this_ptr->mode == 0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
               (DAT_0060b280,world_position);
-    engine_matrix_c_FUN_0046b670(DAT_0060b280);
+    engine_drender_cpp_FUN_0046b670(DAT_0060b280);
     local_24.x = local_54;
     *(int *)((int)&local_24 + (uint)bVar5 * -8 + 4) = aiStack_50[(uint)bVar5 * -2];
     *(int *)((int)&local_24 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
@@ -137,7 +137,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_0049abd0(CLightningBolt *th
     local_18.z = (int)ROUND(local_28 * _DAT_005f64e4);
     engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_18);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,&local_e8);
-    engine_matrix_c_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
   }
   else {
     local_9c.x = (int)ROUND(world_position->x * _DAT_005f64e4);

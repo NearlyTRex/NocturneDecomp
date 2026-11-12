@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   x
 ; int              Stack[0xc]:4   y
 ;
-; XREF[18]:
+; XREF[19]:
 ;   core_event.cpp_CEventList_render_FUN_004a6d80 at 004a6dd0
 ;   core_game.cpp_FUN_004ce580 at 004ceaa6
 ;   core_game.cpp_captureDebugMovieFrame_FUN_004cb950 at 004cbc2d
@@ -19,7 +19,7 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e1e1
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_0052cf90 at 0052d061
 ;   core_path.cpp_FUN_0053489e at 00534947
-;   ... and 8 more
+;   ... and 9 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061049c

@@ -73,7 +73,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;   engine_special.cpp_FUN_00580173
 ;
 ; *****************************************************************************
@@ -419,8 +419,8 @@ section .text
         ;   XREF to: 0046591d (CONDITIONAL_JUMP)  ; LAB_0046591d
     MOV EDX,dword ptr [0x00612560]      ; 00465d6d | DAT_00612560
     PUSH EDX                            ; 00465d73 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 00465d74
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 00465d74
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 00465d79
     PUSH 0x0                            ; 00465d7c
     MOV ECX,dword ptr [0x00612560]      ; 00465d7e | DAT_00612560

@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   direction
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CPrye_ctor_FUN_00517f80 at 00518183
+;   core_prye.cpp_CPrye_ctor_FUN_00517f80 at 00518183
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0

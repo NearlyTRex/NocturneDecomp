@@ -69,38 +69,6 @@ void __cdecl FUN_005632a3(SProjectedVertex *output,CVector3i *input);
 // Address: 0056356c
 void __cdecl FUN_0056356c(SProjectedVertex *output,CVector3i *input);
 
-// Original: engine_special.cpp_CSpawner_getActorType_FUN_00563890
-// Address: 00563890
-CDemonActorType * CSpawner::getActorType(CSpawner *this_ptr);
-
-// Original: engine_special.cpp_CSpawner_ctor_FUN_005638a0
-// Address: 005638a0
-CSpawner * CSpawner::ctor(CSpawner *this_ptr);
-
-// Original: engine_special.cpp_FUN_00563910
-// Address: 00563910
-void FUN_00563910(CDemonActor *param_1);
-
-// Original: engine_special.cpp_FUN_00563970
-// Address: 00563970
-void FUN_00563970(int param_1,float param_2);
-
-// Original: engine_special.cpp_FUN_00563e40
-// Address: 00563e40
-undefined4 FUN_00563e40(void);
-
-// Original: engine_special.cpp_FUN_00563e50
-// Address: 00563e50
-void FUN_00563e50(CDemonActor *param_1);
-
-// Original: engine_special.cpp_CSpawner_dtor_FUN_00563f70
-// Address: 00563f70
-CSpawner * CSpawner::dtor(CSpawner *this_ptr,uint flags);
-
-// Original: engine_special.cpp_FUN_00564010
-// Address: 00564010
-void __cdecl FUN_00564010(void);
-
 // Original: engine_special.cpp_loadExternalRenderer_FUN_00564be0
 // Address: 00564be0
 int __cdecl loadExternalRenderer(HWND window_handle);
@@ -140,6 +108,10 @@ undefined4 FUN_0056592e(undefined4 param_1);
 // Original: engine_special.cpp_FUN_0056596e
 // Address: 0056596e
 undefined4 FUN_0056596e(undefined4 param_1,undefined4 param_2);
+
+// Original: engine_special.cpp_FUN_005659b0
+// Address: 005659b0
+undefined4 FUN_005659b0(undefined4 param_1,undefined4 param_2);
 
 // Original: engine_special.cpp_FUN_00565a2c
 // Address: 00565a2c

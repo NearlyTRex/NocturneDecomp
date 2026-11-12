@@ -41,6 +41,6 @@ int __cdecl core_trap_cpp_CTrap_renderOpaque_FUN_00576750(CTrap *this_ptr)
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
               (&this_ptr->model,animation_frame,-1);
   }
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   return iVar1;
 }

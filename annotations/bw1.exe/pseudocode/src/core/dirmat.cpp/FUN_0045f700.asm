@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[25]:
+; XREF[26]:
 ;   core_actor.cpp_FUN_00408b00 at 00408b1a
 ;   core_actor.cpp_FUN_00408bb0 at 00408bfa
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200 at 0041a51f
@@ -19,7 +19,7 @@
 ;   core_cloth.cpp_FUN_004421d0 at 00442282
 ;   core_curtain.cpp_FUN_0044ab20 at 0044abba
 ;   core_dcamera.cpp_FUN_00454cc0 at 00454f42
-;   ... and 15 more
+;   ... and 16 more
 ;
 ; *****************************************************************************
 

@@ -14,7 +14,7 @@
 ;   void* g_SPageResourceMapVTable = 004ad3c0
 ;
 ; Called Functions:
-;   unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370
+;   core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004aa780
         ;   Label: core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004aa780
     PUSH EDX                            ; 004aa784
-    CALL unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370 ; 004aa785
-        ;   XREF to: 004a8370 (UNCONDITIONAL_CALL)  ; void unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370(SPageResource * this_ptr)
+    CALL core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370 ; 004aa785
+        ;   XREF to: 004a8370 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370(SPageResource * this_ptr)
     ADD ESP,0x4                         ; 004aa78a
     MOV dword ptr [EAX + 0x14],0x5e02d4 ; 004aa78d | g_SPageResourceMapVTable
     MOV EDX,dword ptr [ESP + 0x8]       ; 004aa794

@@ -6,7 +6,7 @@
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
 ;
-; XREF[62]:
+; XREF[63]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a25f
 ;   core_actor.cpp_FUN_004090f0 at 00409186
 ;   core_actor.cpp_FUN_004093a0 at 004095ef
@@ -17,7 +17,7 @@
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700 at 0041699b
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090 at 0041c481
 ;   core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00428d60 at 00428d98
-;   ... and 52 more
+;   ... and 53 more
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_00449530

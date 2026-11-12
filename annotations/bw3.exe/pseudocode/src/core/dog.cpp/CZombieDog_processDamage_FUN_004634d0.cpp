@@ -34,7 +34,7 @@ void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_004634d0(CZombieDog *this
     }
   }
   else {
-    iVar2 = unkafter_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
+    iVar2 = core_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
     if (iVar2 == 0) goto LAB_0046352b;
     iVar2 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
     if (iVar2 < 0x21) {

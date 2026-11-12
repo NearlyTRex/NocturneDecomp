@@ -7,7 +7,7 @@
 ; CShadow *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_setedit.cpp_factoryFuncShadow_FUN_0053c1d0 at 0053c1e3
+;   core_shadow.cpp_factoryFuncShadow_FUN_0053c1d0 at 0053c1e3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fb400

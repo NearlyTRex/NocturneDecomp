@@ -57,6 +57,7 @@
 ;   ... and 52 more
 ;
 ; Called Functions:
+;   core_flashlit.cpp_FUN_004a1390
 ;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0
 ;   core_fldnotes.cpp_SNotesMap_load_FUN_004a38e0
 ;   core_fldnotes.cpp_SNotesSection_addEntry_FUN_004a3630
@@ -71,7 +72,6 @@
 ;   crt_stdio.c_ftell_FUN_005baab0
 ;   crt_stdio.c_sscanf_FUN_005ba8cc
 ;   crt_string.c_strstr_FUN_005ba9e0
-;   crt_unknown.c_sprintf_FUN_005b7790
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -338,8 +338,8 @@ section .text
     MOV byte ptr [EAX],0x0              ; 004a4479
     PUSH EBX                            ; 004a447c
         ;   Label: LAB_004a447c
-    CALL unkaddr_004a1200.cpp_FUN_004a1390 ; 004a447d
-        ;   XREF to: 004a1390 (UNCONDITIONAL_CALL)  ; undefined unkaddr_004a1200.cpp_FUN_004a1390()
+    CALL core_flashlit.cpp_FUN_004a1390 ; 004a447d
+        ;   XREF to: 004a1390 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004a1390()
     ADD ESP,0x4                         ; 004a4482
     MOV AH,byte ptr [ESP]               ; 004a4485
     INC EBP                             ; 004a4488
@@ -1493,12 +1493,12 @@ section .text
     JNZ 0x004a4fbd                      ; 004a4f6f
         ;   XREF to: 004a4fbd (CONDITIONAL_JUMP)  ; LAB_004a4fbd
     PUSH EBX                            ; 004a4f71
-    CALL unkaddr_004a1200.cpp_FUN_004a1390 ; 004a4f72
-        ;   XREF to: 004a1390 (UNCONDITIONAL_CALL)  ; undefined unkaddr_004a1200.cpp_FUN_004a1390()
+    CALL core_flashlit.cpp_FUN_004a1390 ; 004a4f72
+        ;   XREF to: 004a1390 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004a1390()
     ADD ESP,0x4                         ; 004a4f77
     PUSH ESI                            ; 004a4f7a
-    CALL unkaddr_004a1200.cpp_FUN_004a1390 ; 004a4f7b
-        ;   XREF to: 004a1390 (UNCONDITIONAL_CALL)  ; undefined unkaddr_004a1200.cpp_FUN_004a1390()
+    CALL core_flashlit.cpp_FUN_004a1390 ; 004a4f7b
+        ;   XREF to: 004a1390 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004a1390()
     ADD ESP,0x4                         ; 004a4f80
     MOV dword ptr [EBX + 0xd0],0x0      ; 004a4f83
     JMP 0x004a428e                      ; 004a4f8d

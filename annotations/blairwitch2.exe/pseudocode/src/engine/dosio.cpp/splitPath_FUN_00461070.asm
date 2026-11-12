@@ -10,8 +10,10 @@
 ; char *           Stack[0x10]:4   filename
 ; char *           Stack[0x14]:4   extension
 ;
-; XREF[27]:
+; XREF[28]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0 at 0048f7e8
+;   core_flashlit.cpp_FUN_004a17f0 at 004a180b
+;   core_flashlit.cpp_FUN_004a1870 at 004a1940
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a4c49
 ;   core_fldnotes.cpp_FUN_004a5700 at 004a5c36
 ;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170 at 004a21b1
@@ -19,9 +21,7 @@
 ;   core_script.cpp_FUN_00522350 at 0052457d
 ;   core_set.cpp_CDemonSet_load_FUN_0052c0e0 at 0052c50e
 ;   engine_dosio.cpp_FUN_004610d0 at 00461102
-;   engine_dosio.cpp_changeFileExtension_FUN_004611a0 at 004611c6
-;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7e46
-;   ... and 17 more
+;   ... and 18 more
 ;
 ; Called Functions:
 ;   crt_string.c_splitpath_FUN_005b9e58

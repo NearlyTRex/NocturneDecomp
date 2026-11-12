@@ -26,7 +26,10 @@ def program_with_rtti():
     program.getDataTypeManager().add(StructureDataType("CGame", length = 8), StructureDataType("CMenu", length = 16),
                                      StructureDataType("CMenu", length = 12, category = "/Other"),
                                      StructureDataType("CVector3f", length = 12),
-                                     StructureDataType("CBigOne", length = 16), StructureDataType("SZero", length = 0))
+                                     StructureDataType("CBigOne", length = 16), StructureDataType("SZero", length = 0),
+                                     StructureDataType("CDemonActor", length = 0),
+                                     StructureDataType("CWeapon", length = 0),
+                                     StructureDataType("SMemHead", length = 0))
     for address, text in [(0x500100, "$CGame$$"), (0x500120, "$CVector$$"), (0x500140, "$CMenu$$"),
                           (0x500160, "$CNone$$"), (0x500180, "$ios$$"), (0x5001a0, "$CEmpty$$"),
                           (0x5001c0, "$CGame$$ again"), (0x5001e0, "$MOT$$"), (0x500200, ""),
@@ -58,6 +61,8 @@ def test_rtti_sizes_are_checked_against_the_ghidra_types(tmp_path, capsys):
     assert (found["CLonely"]["addr"], found["SBat"]["addr"]) == ("00500220", "00500240")
     assert "typeinfo_size" not in found["CLonely"]
     assert found["CWeapon"]["parents"] == ["CDemonActor"]
+    assert found["SMemHead"] == {"name": "SMemHead"}
+    assert "CBaron" not in found and "SBat" in found
     assert "MOT" not in found
     log = capsys.readouterr().out
     assert "3 checked and matching" in log

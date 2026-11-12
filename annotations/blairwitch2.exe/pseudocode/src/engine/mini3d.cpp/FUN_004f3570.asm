@@ -6,7 +6,7 @@
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[8]:
+; XREF[9]:
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270 at 0047d3ea
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 0048369b
 ;   shape_edittool.cpp_FUN_0047a990 at 0047a9b6
@@ -14,6 +14,7 @@
 ;   shape_edittool.cpp_FUN_0047be90 at 0047befd
 ;   shape_edittool.cpp_FUN_0047dc40 at 0047dd05
 ;   shape_edittool.cpp_FUN_0047e870 at 0047ebae
+;   shape_edittool.cpp_FUN_0047fd00 at 0047ff19
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047ba00
 ;
 ; Referenced Globals:

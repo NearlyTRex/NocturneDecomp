@@ -11,10 +11,10 @@
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fef0 at 0040ff21
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_00410080 at 00410125
 ;   core_basicene.cpp_CBasicEnemy_isGrabbable_FUN_0059fa70 at 0059fa8b
+;   core_basicene.cpp_FUN_0059ee00 at 0059eed1
 ;   core_basicnpc.cpp_CBasicNPC_isGrabbable_FUN_005a4950 at 005a4967
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413960
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0 at 00420436
-;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10 at 00421b3b
 ;   ... and 138 more
 ;
 ; Called Functions:

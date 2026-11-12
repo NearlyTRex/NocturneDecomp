@@ -8,16 +8,16 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[13]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_dtor_FUN_00411bb0 at 00411bd6
+;   core_bmppuzzl.cpp_CChemPuzzle_dtor_FUN_00413240 at 00413266
+;   core_bmppuzzl.cpp_FUN_00414470 at 00414477
+;   core_bmppuzzl.cpp_SButtonStruct_dtor_FUN_00414490 at 00414497
 ;   core_fldnotes.cpp_SNotesMap_dtor_FUN_004a9e70 at 004a9e87
 ;   core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004a8710 at 004a8732
 ;   core_game.cpp_CGame_displayActStats_FUN_004bfb50 at 004bfecb
 ;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004c027e
 ;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c05fa
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0 at 004b7f6f
-;   core_level.cpp_FUN_004dfc50 at 004dfd76
-;   core_main.c_FUN_004e44e0 at 004e4af5
-;   core_mission.cpp_CDemonMission_process_FUN_004f70a0 at 004f7219
-;   unkafter_alphabit.cpp_CAudioRecPuzzle_dtor_FUN_00411bb0 at 00411bd6
 ;   ... and 3 more
 ;
 ; Called Functions:

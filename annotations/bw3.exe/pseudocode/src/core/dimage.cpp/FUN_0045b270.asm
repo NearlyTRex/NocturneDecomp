@@ -7,8 +7,8 @@
 ; CDemonImage *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_dglobe.cpp_FUN_0045b1f0 at 0045b1f6
 ;   core_dimage.cpp_FUN_0045b210 at 0045b216
-;   unkafter_dglobe.cpp_FUN_0045b1f0 at 0045b1f6
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a3770

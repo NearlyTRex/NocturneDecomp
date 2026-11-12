@@ -502,7 +502,7 @@ LAB_00594f64:
                 core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_40,8,1);
                 iVar7 = core_actor_cpp_randomChance_FUN_0040cf40(0.85);
                 if (iVar7 != 0) {
-                  unkafter_tawiscar_cpp_FUN_00595710();
+                  core_tawiscara_cpp_FUN_00595710();
                 }
                 for (iVar7 = 0; iVar7 < g_CDemonSetPtr->enemy_count; iVar7 = iVar7 + 1) {
                   pCVar10 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c840();
@@ -549,14 +549,14 @@ LAB_00594f64:
             param_1->attack_cooldown = 1.0;
             iVar7 = core_actor_cpp_randomChance_FUN_0040cf40(0.6);
             if (iVar7 != 0) {
-              unkafter_tawiscar_cpp_FUN_00595710();
+              core_tawiscara_cpp_FUN_00595710();
             }
           }
         }
         fVar14 = param_1[1].base.base.location.position.x - param_2;
         param_1[1].base.base.location.position.x = fVar14;
         if (fVar14 < 0.0) {
-          unkafter_tawiscar_cpp_FUN_00595710();
+          core_tawiscara_cpp_FUN_00595710();
         }
         goto LAB_00594269;
       }
@@ -744,7 +744,7 @@ LAB_005947a3:
         if (param_1->victim == (CCharacter *)0x0) goto LAB_00594269;
         iVar7 = core_actor_cpp_randomChance_FUN_0040cf40(0.4);
         if (iVar7 != 0) {
-          unkafter_tawiscar_cpp_FUN_00595710();
+          core_tawiscara_cpp_FUN_00595710();
         }
         if (uStack_1c == 0xe) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -872,7 +872,7 @@ LAB_00594269:
   core_charactr_cpp_FUN_0042cd30(&param_1->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130(&(param_1->base).model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350(&param_1->base,param_2);
-  unkafter_tawiscar_cpp_FUN_00596380();
+  core_tawiscara_cpp_FUN_00596380();
   param_1[1].base.base.orient_matrix.m[0].z =
        param_2 * (float)_DAT_005d9399 + param_1[1].base.base.orient_matrix.m[0].z;
   return;

@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00411d70 at 004122d7
 ;   core_game.cpp_FUN_004c07b0 at 004c0ca3
 ;   core_mission.cpp_FUN_004f6de0 at 004f6e67
 ;   sound_sndmain.cpp_freeAllSamples_FUN_00557800 at 0055780c
 ;   sound_sndmain.cpp_resetSoundDevice_FUN_00558250 at 00558250
-;   unkafter_alphabit.cpp_CAudioRecPuzzle_load_FUN_00411d70 at 004122d7
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00555270

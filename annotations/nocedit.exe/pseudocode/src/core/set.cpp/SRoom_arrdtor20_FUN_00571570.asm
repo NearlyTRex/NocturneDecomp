@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SRoom * __cdecl core_set_cpp_SRoom_arrdtor20_FUN_00571570(SRoom *objs,uint flags)
+; SRoom * __cdecl core_set_cpp_SRoom_arrdtor20_FUN_00571570(SRoom *this_ptr,uint flags)
 ;
 ; Parameters:
-; SRoom *          Stack[0x4]:4   objs
+; SRoom *          Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

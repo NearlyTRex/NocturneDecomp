@@ -15,7 +15,7 @@ int __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004a1f80(SPageResourceT
   int iVar3;
   char *pcVar4;
   
-  unkaddr_004a1200_cpp_SPageResource_ctor_FUN_004a1e60(&this_ptr->base);
+  core_fldnotes_cpp_SPageResource_ctor_FUN_004a1e60(&this_ptr->base);
   *(byte ***)(extraout_EAX + 0x14) = &g_SPageResourceTextVTable;
   *(uint *)(extraout_EAX + 0x11c) = param_3;
   pcVar4 = (char *)(extraout_EAX + 0x1c);

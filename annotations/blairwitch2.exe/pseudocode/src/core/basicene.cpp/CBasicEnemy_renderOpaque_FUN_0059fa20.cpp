@@ -18,7 +18,7 @@ int __cdecl core_basicene_cpp_CBasicEnemy_renderOpaque_FUN_0059fa20(CBasicEnemy 
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
   if ((iVar1 == 0) && (g_CGameHookPtr->debug_state_display != 0)) {
-    unkafter_basicene_cpp_FUN_0059fae0(this_ptr);
+    core_basicene_cpp_FUN_0059fae0(this_ptr);
     return iVar2;
   }
   return iVar2;

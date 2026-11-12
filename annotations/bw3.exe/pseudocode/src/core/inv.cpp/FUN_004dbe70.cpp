@@ -74,7 +74,7 @@ void core_inv_cpp_FUN_004dbe70(uint param_1,CDemonActor *param_2,int param_3,int
     (g_CDemonSetPtr->light_direction).z =
          (uint)((longlong)iVar3 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 0x482b) >> 0x20) << 0x10;
-    engine_matrix_c_FUN_0046d2f0(DAT_005f2afc,param_3,param_4,param_5,param_5);
+    engine_drender_cpp_FUN_0046d2f0(DAT_005f2afc,param_3,param_4,param_5,param_5);
     local_18 = (CKeyFramedModelInstance *)core_inv_cpp_FUN_004d9d20(param_2);
     pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(local_18);
     pCVar5 = pCVar4->frame_bounds;
@@ -122,7 +122,7 @@ void core_inv_cpp_FUN_004dbe70(uint param_1,CDemonActor *param_2,int param_3,int
     local_1c = local_9c.z;
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
               (DAT_005f2afc,&local_9c);
-    engine_matrix_c_FUN_0046d090(DAT_005f2afc,0x42100000);
+    engine_drender_cpp_FUN_0046d090(DAT_005f2afc,0x42100000);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10
               (DAT_005f2afc,(CVector3f *)&DAT_02cfd900);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
@@ -220,9 +220,9 @@ void core_inv_cpp_FUN_004dbe70(uint param_1,CDemonActor *param_2,int param_3,int
     else {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540(local_18,0.0,-1);
     }
-    engine_matrix_c_pop_FUN_0046d080();
-    engine_matrix_c_pop_FUN_0046d080();
-    engine_matrix_c_popViewport_FUN_0046d320();
+    engine_drender_cpp_pop_FUN_0046d080();
+    engine_drender_cpp_pop_FUN_0046d080();
+    engine_drender_cpp_popViewport_FUN_0046d320();
     g_CDemonSetPtr->rendering_mode = 0;
   }
   return;

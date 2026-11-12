@@ -26,13 +26,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[6]:
+; XREF[7]:
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042f770 at 0042fb0b
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00431d10 at 00431f56
 ;   core_charactr.cpp_FUN_00431ab0 at 00431b93
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043d830 at 0043d880
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0 at 004f44d1
-;   core_thehand.cpp_CTheHand_process_FUN_0056c140 at 0056c3bf
+;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c3bf
+;   core_xform.cpp_FUN_00584490 at 005844a4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_xform_cpp_005d8147

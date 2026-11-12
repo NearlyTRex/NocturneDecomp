@@ -20,12 +20,12 @@ void __cdecl core_basicene_cpp_CBasicEnemy_startBurn_FUN_005a0270(CBasicEnemy *t
     return;
   }
   pSVar1 = &this_ptr->state_machine;
-  iVar5 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar1,&DAT_005efb55);
+  iVar5 = core_muzzle_cpp_FUN_0059daa0(pSVar1,&DAT_005efb55);
   if (iVar5 == 0) {
-    uVar6 = unkaddr_0059d350_cpp_FUN_0059db70(pSVar1);
-    unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1,"BurnComplete",uVar6);
+    uVar6 = core_muzzle_cpp_FUN_0059db70(pSVar1);
+    core_muzzle_cpp_FUN_0059d7f0(pSVar1,"BurnComplete",uVar6);
   }
-  unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->state_machine,&DAT_005efb67);
+  core_muzzle_cpp_FUN_0059d8e0(&this_ptr->state_machine,&DAT_005efb67);
   this_ptr->burn_timer = strength;
   if (&this_ptr->burn_direction != direction) {
     (this_ptr->burn_direction).x = direction->x;

@@ -59,7 +59,7 @@
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 0042294d
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0 at 004223c8
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426b1a
-;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 0044358f
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 0044358f
 ;   core_cow.cpp_CZombieCow_process_FUN_00445130 at 00445365
 ;   ... and 30 more
 ;

@@ -19,10 +19,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160(CDem
   if (this_ptr->face_capture_enabled == 0) {
     if (((this_ptr->shadow_pass_active == 0) || ((DAT_01c6e2b4 & 1) != 0)) &&
        ((DAT_01c6e2b4 & 5) != 0)) {
-      unkafter_dpart_cpp_FUN_00466d50(vertex_indices,vertex_count);
+      core_dpart_cpp_FUN_00466d50(vertex_indices,vertex_count);
     }
     else {
-      unkafter_dpart_cpp_FUN_004673d0((CVector3i *)vertex_indices,vertex_count);
+      core_dpart_cpp_FUN_004673d0((CVector3i *)vertex_indices,vertex_count);
     }
   }
   else {

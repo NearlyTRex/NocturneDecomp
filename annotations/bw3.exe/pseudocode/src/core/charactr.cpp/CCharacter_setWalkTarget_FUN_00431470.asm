@@ -13,7 +13,7 @@
 ;
 ; XREF[3]:
 ;   core_shadow.cpp_FUN_00544fd0 at 00544ff4
-;   core_tawiscar.cpp_CTawiscara_setWalkTarget_FUN_005956d0 at 005956fd
+;   core_tawiscara.cpp_CTawiscara_setWalkTarget_FUN_005956d0 at 005956fd
 ;   core_werewolf.cpp_CWerewolf_setWalkTarget_FUN_0057edf0 at 0057ee1d
 ;
 ; Referenced Globals:

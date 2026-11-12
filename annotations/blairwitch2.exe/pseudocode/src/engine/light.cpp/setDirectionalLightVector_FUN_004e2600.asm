@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   dir_z
 ;
 ; XREF[2]:
-;   engine_matrix.c_FUN_0046b520 at 0046b530
-;   engine_matrix.c_FUN_0046b540 at 0046b58a
+;   engine_drender.cpp_FUN_0046b520 at 0046b530
+;   engine_drender.cpp_FUN_0046b540 at 0046b58a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c38b90

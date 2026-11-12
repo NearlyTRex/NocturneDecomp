@@ -206,7 +206,7 @@ LAB_0056ba07:
               (DAT_0060b280,&CStack_c0,pCVar10);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
               (&(pCStack_24->base).model,0.0,-1);
-    engine_matrix_c_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10((CDemonActor *)this_ptr);
   }
   if ((((this_ptr->base).base.model.part_data.visibility_flags[_DAT_0264be88] == 0) &&

@@ -4,6 +4,9 @@
 ; CPackedBitmap * cockpit_pkbitmap_cpp_parsePBGFile_FUN_005385d0(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6)
 ;
 ;
+; XREF[1]:
+;   cockpit_pkbitmap.cpp_FUN_00538750 at 0053879f
+;
 ; Referenced Globals:
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404

@@ -1,11 +1,11 @@
 {
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 275,
+    "assembly_lines": 2,
     "complexity_score": 296,
     "cross_reference_count": 0,
-    "function_call_count": 17,
-    "global_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 96,
     "suspect_count": 19,
@@ -13,7 +13,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 371
+    "total_lines": 98
   },
   "cross_references": [],
   "function": {
@@ -21,120 +21,15 @@
     "address_range": [
       [
         "00513d1e",
-        "00513fe8"
+        "00513d1f"
       ]
     ],
     "convention": "unknown",
     "name": "engine_pod.cpp_FUN_00513d1e",
     "signature": "bool engine_pod_cpp_FUN_00513d1e(int *param_1)"
   },
-  "function_calls": [
-    {
-      "addr": "004e4330",
-      "is_variadic": false,
-      "name": "core_main.c_FUN_004e4330"
-    },
-    {
-      "addr": "005a3a90",
-      "is_variadic": false,
-      "name": "crt_stdio.c_fclose_FUN_005a3a90"
-    },
-    {
-      "addr": "005a32b0",
-      "is_variadic": false,
-      "name": "crt_stdio.c_fgetc_FUN_005a32b0"
-    },
-    {
-      "addr": "005a43ec",
-      "is_variadic": false,
-      "name": "crt_stdio.c_fopen_FUN_005a43ec"
-    },
-    {
-      "addr": "005a3890",
-      "is_variadic": false,
-      "name": "crt_stdio.c_fread_FUN_005a3890"
-    },
-    {
-      "addr": "005a457c",
-      "is_variadic": false,
-      "name": "crt_stdio.c_fseek_FUN_005a457c"
-    },
-    {
-      "addr": "004657f0",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_getFileSize_FUN_004657f0"
-    },
-    {
-      "addr": "00512d60",
-      "is_variadic": false,
-      "name": "engine_pod.cpp_crc32UpdateByte_FUN_00512d60"
-    },
-    {
-      "addr": "00514220",
-      "is_variadic": false,
-      "name": "engine_pod.cpp_FUN_00514220"
-    },
-    {
-      "addr": "0047cfa0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0"
-    },
-    {
-      "addr": "0047ed50",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50"
-    },
-    {
-      "addr": "004831c0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004831c0"
-    },
-    {
-      "addr": "00483450",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450"
-    },
-    {
-      "addr": "004832b0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004832b0"
-    },
-    {
-      "addr": "00482070",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_CStrList_add_FUN_00482070"
-    },
-    {
-      "addr": "0047ee50",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047ee50"
-    },
-    {
-      "addr": "0047f970",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047f970"
-    }
-  ],
-  "globals": [
-    {
-      "addr": "005fb140",
-      "name": "g_CEditorToolsPtr",
-      "type": "CEditorTools*",
-      "value": "01c5b0e4"
-    },
-    {
-      "addr": "01d71de0",
-      "name": "DAT_01d71de0",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "01d71de4",
-      "name": "DAT_01d71de4",
-      "type": "undefined4",
-      "value": null
-    }
-  ],
+  "function_calls": [],
+  "globals": [],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
@@ -145,38 +40,12 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.484304932735426,
-    "instruction_count": 223,
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 1,
     "opcode_distribution": {
-      "BOOL_NEGATE": 4,
-      "BOOL_OR": 2,
-      "BRANCH": 3,
-      "CALL": 21,
-      "CBRANCH": 13,
-      "COPY": 205,
-      "FLOAT2FLOAT": 2,
-      "INT2FLOAT": 2,
-      "INT_ADD": 84,
-      "INT_AND": 120,
-      "INT_CARRY": 27,
-      "INT_EQUAL": 114,
-      "INT_LESS": 15,
-      "INT_MULT": 6,
-      "INT_NOTEQUAL": 5,
-      "INT_SBORROW": 16,
-      "INT_SCARRY": 29,
-      "INT_SEXT": 3,
-      "INT_SLESS": 57,
-      "INT_SUB": 85,
-      "INT_XOR": 6,
-      "INT_ZEXT": 1,
-      "LOAD": 42,
-      "POPCOUNT": 57,
-      "RETURN": 4,
-      "STORE": 75,
-      "SUBPIECE": 2
+      "COPY": 1
     },
-    "pcode_op_count": 1000
+    "pcode_op_count": 1
   },
   "stack_frame": {
     "frame_size": 4,

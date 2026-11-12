@@ -5,6 +5,90 @@
 // Function prototypes for engine/mini3d.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_mini3d.cpp_staticInit_FUN_004f2190
+// Address: 004f2190
+void staticInit(void);
+
+// Original: engine_mini3d.cpp_CMini3D_ctor_FUN_004f21d0
+// Address: 004f21d0
+CMini3D * CMini3D::ctor(CMini3D *this_ptr);
+
+// Original: engine_mini3d.cpp_CMini3D_dtor_FUN_004f2290
+// Address: 004f2290
+CMini3D * CMini3D::dtor(CMini3D *this_ptr,uint flags);
+
+// Original: engine_mini3d.cpp_FUN_004f229e
+// Address: 004f229e
+undefined4 FUN_004f229e(void);
+
+// Original: engine_mini3d.cpp_FUN_004f22be
+// Address: 004f22be
+undefined4 FUN_004f22be(void);
+
+// Original: engine_mini3d.cpp_FUN_004f236e
+// Address: 004f236e
+void FUN_004f236e(void);
+
+// Original: engine_mini3d.cpp_FUN_004f23d0
+// Address: 004f23d0
+void FUN_004f23d0(void);
+
+// Original: engine_mini3d.cpp_FUN_004f23e0
+// Address: 004f23e0
+void FUN_004f23e0(void);
+
+// Original: engine_mini3d.cpp_FUN_004f23ee
+// Address: 004f23ee
+undefined4 FUN_004f23ee(void);
+
+// Original: engine_mini3d.cpp_FUN_004f240e
+// Address: 004f240e
+undefined4 FUN_004f240e(void);
+
+// Original: engine_mini3d.cpp_FUN_004f242e
+// Address: 004f242e
+void FUN_004f242e(undefined4 *param_1);
+
+// Original: engine_mini3d.cpp_FUN_004f2450
+// Address: 004f2450
+void FUN_004f2450(undefined4 param_1);
+
+// Original: engine_mini3d.cpp_FUN_004f2460
+// Address: 004f2460
+void FUN_004f2460(float param_1);
+
+// Original: engine_mini3d.cpp_FUN_004f24b0
+// Address: 004f24b0
+void FUN_004f24b0(float *param_1);
+
+// Original: engine_mini3d.cpp_FUN_004f2950
+// Address: 004f2950
+void FUN_004f2950(float *param_1);
+
+// Original: engine_mini3d.cpp_FUN_004f29b0
+// Address: 004f29b0
+void FUN_004f29b0(void);
+
+// Original: engine_mini3d.cpp_FUN_004f2a00
+// Address: 004f2a00
+void FUN_004f2a00(void);
+
+// Original: engine_mini3d.cpp_FUN_004f2a30
+// Address: 004f2a30
+float FUN_004f2a30(void);
+
+// Original: engine_mini3d.cpp_FUN_004f2a50
+// Address: 004f2a50
+void FUN_004f2a50(float *param_1);
+
+// Original: engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0
+// Address: 004f2ac0
+void __cdecl setRenderViewport(float left,float top,float right,float bottom);
+
+// Original: engine_mini3d.cpp_getRenderViewport_FUN_004f2ba0
+// Address: 004f2ba0
+void __cdecl getRenderViewport(float *left,float *top,float *right,float *bottom);
+
 // Original: engine_mini3d.cpp_FUN_004f2be0
 // Address: 004f2be0
 void FUN_004f2be0(int param_1,float *param_2);

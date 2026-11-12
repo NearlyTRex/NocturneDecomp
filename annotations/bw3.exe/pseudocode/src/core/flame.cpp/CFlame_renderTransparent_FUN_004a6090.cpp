@@ -89,7 +89,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
       core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00537390(g_CDemonSetPtr,&this_ptr->globe);
     }
     if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != FLAME_TYPE_NONE)) {
-      engine_matrix_c_FUN_0046d230(DAT_005f2afc);
+      engine_drender_cpp_FUN_0046d230(DAT_005f2afc);
       rotation = (CVector3i *)0x0;
       CStack_60.x = iStack_90;
       *(int *)((int)&CStack_60 + (uint)bVar9 * -8 + 4) = aiStack_8c[(uint)bVar9 * -2];
@@ -103,7 +103,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
       CStack_9c.x = 0;
       CStack_9c.y = 0;
       CStack_9c.z = 0;
-      engine_matrix_c_FUN_0046d230(DAT_005f2afc);
+      engine_drender_cpp_FUN_0046d230(DAT_005f2afc);
       CStack_60.x = iStack_cc;
       *(int *)((int)&CStack_60 + (uint)bVar9 * -8 + 4) = aiStack_c8[(uint)bVar9 * -2];
       *(int *)((int)&CStack_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
@@ -205,17 +205,17 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
           engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510
                     (DAT_005f2afc,&SStack_148);
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
-          engine_matrix_c_pop_FUN_0046d080();
+          engine_drender_cpp_pop_FUN_0046d080();
           iVar4 = iVar4 + 1;
           CStack_9c.z = CStack_9c.z + 0x2aaa;
         } while (iVar4 < iStack_20);
       }
-      engine_matrix_c_pop_FUN_0046d080();
+      engine_drender_cpp_pop_FUN_0046d080();
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(&this_ptr->base);
     if ((this_ptr->which_flame == FLAME_TYPE_CANDLE) &&
        (fStack_24 = (this_ptr->flame_size).y * (float)_DAT_005c0be4, this_ptr->is_visible != 0)) {
-      engine_matrix_c_FUN_0046d250(DAT_005f2afc);
+      engine_drender_cpp_FUN_0046d250(DAT_005f2afc);
       CStack_30.x = fStack_6c;
       *(int *)((int)&CStack_30 + (uint)bVar9 * -8 + 4) = aiStack_68[(uint)bVar9 * -2];
       *(int *)((int)&CStack_30 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
@@ -295,7 +295,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_pt
       engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850
                 (DAT_005f2afc,&SStack_170,0x163);
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
-      engine_matrix_c_pop_FUN_0046d080();
+      engine_drender_cpp_pop_FUN_0046d080();
     }
     return this_ptr->is_visible;
   }

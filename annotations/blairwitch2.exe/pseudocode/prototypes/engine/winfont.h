@@ -36,3 +36,7 @@ int __cdecl CWinFont::getStringWidth(CWinFont *this_ptr,char *text_string);
 // Original: engine_winfont.cpp_CWinFont_getStringHeight_FUN_0058e720
 // Address: 0058e720
 int __cdecl CWinFont::getStringHeight(CWinFont *this_ptr,char *text_string);
+
+// Original: engine_winfont.cpp_FUN_0058e790
+// Address: 0058e790
+undefined4 FUN_0058e790(void);

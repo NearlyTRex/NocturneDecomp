@@ -713,8 +713,8 @@ section .text
     PUSH EAX                            ; 004a001d
     MOV EDX,dword ptr [0x005b6d50]      ; 004a001e | g_CEditorToolsPtr
     PUSH EDX                            ; 004a0024
-    CALL shape_edittool.cpp_FUN_00470230 ; 004a0025
-        ;   XREF to: 00470230 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00470230()
+    CALL shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00470230 ; 004a0025
+        ;   XREF to: 00470230 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00470230(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 004a002a
     TEST EAX,EAX                        ; 004a002d
     JZ 0x0049fbc4                       ; 004a002f

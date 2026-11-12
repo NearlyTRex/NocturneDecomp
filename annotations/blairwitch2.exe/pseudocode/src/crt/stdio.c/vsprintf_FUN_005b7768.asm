@@ -4,7 +4,7 @@
 ; void __cdecl crt_stdio_c_vsprintf_FUN_005b7768(int param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[26]:
+; XREF[29]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00468a90 at 00468aba
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00468880 at 004688ad
 ;   cockpit_drawsurf.cpp_FUN_004682a0 at 004682cc
@@ -14,8 +14,8 @@
 ;   cockpit_drawsurf.cpp_FUN_004685e0 at 0046860c
 ;   cockpit_drawsurf.cpp_FUN_004686b0 at 004686dd
 ;   cockpit_drawsurf.cpp_FUN_00468790 at 004687bd
-;   core_event.cpp_formatEventError_FUN_00488ba0 at 00488bb7
-;   ... and 16 more
+;   cockpit_drawsurf.cpp_FUN_00468940 at 0046896b
+;   ... and 19 more
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005bb050

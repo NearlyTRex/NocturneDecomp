@@ -116,3 +116,15 @@ void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 // Original: core_zombie.cpp_CZombie_dtor_FUN_005bedf0
 // Address: 005bedf0
 CZombie * CZombie::dtor(CZombie *this_ptr,uint flags);
+
+// Original: core_zombie.cpp_FUN_005bee7e
+// Address: 005bee7e
+void FUN_005bee7e(int param_1,int param_2);
+
+// Original: core_zombie.cpp_FUN_005bf0de
+// Address: 005bf0de
+int * FUN_005bf0de(int param_1,int *param_2);
+
+// Original: core_zombie.cpp_FUN_005bf120
+// Address: 005bf120
+void __cdecl FUN_005bf120(SRenderVertex *vertex_buffer,int vertex_count);

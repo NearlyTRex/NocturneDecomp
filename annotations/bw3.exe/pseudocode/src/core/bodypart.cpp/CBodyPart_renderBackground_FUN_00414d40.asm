@@ -23,7 +23,7 @@
 ;   core_box.cpp_FUN_0041daf0
 ;   engine_console.cpp_FUN_00441ff0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_pop_FUN_0046d080
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     MOV EAX,[0x005f2afc]                ; 00414e0e | DAT_005f2afc
         ;   Label: LAB_00414e0e
     PUSH EAX                            ; 00414e13 | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 00414e14
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 00414e14
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     MOV EAX,[0x00603b28]                ; 00414e19 | g_CDemonSetPtr | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x15ac98],0x0  ; 00414e1e | g_CDemonSetInstance.disable_directional_lighting
     ADD ESP,0x4                         ; 00414e28

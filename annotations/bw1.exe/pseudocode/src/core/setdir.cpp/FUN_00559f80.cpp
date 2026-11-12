@@ -159,7 +159,7 @@ LAB_00559fef:
   _DAT_01c50948 = 0;
   local_6c = (float)engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(this_ptr_00);
   engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00483e40(DAT_00612560,0);
-  engine_matrix_c_FUN_00483c10(DAT_00612560,0,0,0x40,0x30);
+  engine_drender_cpp_FUN_00483c10(DAT_00612560,0,0,0x40,0x30);
   (*((param_2->vtable)._ub)->getBoundingBox)(param_2,in_stack_fffffc58);
   iVar23 = 0;
   piStack_2c = aiStack_2d4;
@@ -355,7 +355,7 @@ LAB_00559fef:
         else {
           engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
                     (DAT_00612560,&pCVar12->position);
-          engine_matrix_c_FUN_004839b0(DAT_00612560,pCVar12->projection_scale);
+          engine_drender_cpp_FUN_004839b0(DAT_00612560,pCVar12->projection_scale);
           engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
                     (DAT_00612560,&pCVar12->orientation);
           uStack_80 = 0x800000ff;
@@ -625,7 +625,7 @@ LAB_00559fef:
     *(uint *)(&DAT_01c4480c + iVar8) = *(uint *)(&stack0xfffffc74 + iVar8);
     iVar8 = iVar23;
   } while (iVar23 != 0xc0);
-  engine_matrix_c_popViewport_FUN_00483c40();
+  engine_drender_cpp_popViewport_FUN_00483c40();
   engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00483e40(DAT_00612560,iStack_5c);
   _DAT_01c50948 = uStack_b0;
   if (param_1->camera_count <= _DAT_020b28ec) {

@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   value
 ; ulong            Stack[0xc]:4   count
 ;
-; XREF[96]:
+; XREF[97]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730 at 0045c7ac
 ;   cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_0045d110 at 0045d1ba
 ;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5290 at 004f52b7
@@ -19,7 +19,7 @@
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_00410a80 at 00410b58
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_00417c90 at 00417d18
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40 at 004170ee
-;   ... and 86 more
+;   ... and 87 more
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_0056a0c0

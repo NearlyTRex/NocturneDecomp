@@ -159,7 +159,7 @@ LAB_004be478:
     if (iVar2 == 0) {
 LAB_004be22a:
       _fclose(file_handle);
-      unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_74);
+      support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_74);
       support_trstream_cpp_COutStreamFile_ctor_FUN_005747c0(&local_48);
       _sprintf(local_474,"%s\\%s");
       iVar2 = support_trstream_cpp_CInStreamFile_open_FUN_00573f50(&local_74,local_474,1);
@@ -168,10 +168,10 @@ LAB_004be22a:
                            ("Can't open saved game file.");
         shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40(g_CEditorToolsPtr,pcVar9);
         support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(&local_48,0);
-        unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_74,0);
+        support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_74,0);
         return;
       }
-      unkafter_turret_cpp_CInStreamFile_seek_FUN_00573cf0(&local_74,4,0);
+      support_trstream_cpp_CInStreamFile_seek_FUN_00573cf0(&local_74,4,0);
       iVar2 = support_trstream_cpp_COutStreamFile_open_FUN_005749d0
                         (&local_48,"save\\$$SAVE$$.TMP",&DAT_005c36bd);
       if (iVar2 == 0) {
@@ -179,14 +179,14 @@ LAB_004be22a:
                            ("Can't create temp file to load saved game file.");
         shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40(g_CEditorToolsPtr,pcVar9);
         support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(&local_48,0);
-        unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_74,0);
+        support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_74,0);
         return;
       }
       support_codec_cpp_CLZWDecompress_ctor_FUN_00441310(&local_a8,0x8000,8);
       support_codec_cpp_CLZWDecompress_init_FUN_00441350(&local_a8);
       support_codec_cpp_FUN_00441390(&local_a8,&local_74,&local_48);
       support_codec_cpp_FUN_004413f0(&local_a8,&local_48);
-      unkafter_turret_cpp_CInStreamFile_close_FUN_00573db0(&local_74);
+      support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_74);
       support_trstream_cpp_COutStreamFile_close_FUN_005749a0(&local_48);
       file_handle = (_FILE *)_fopen("save\\$$SAVE$$.TMP",&DAT_005c36f0);
       if (file_handle == (_FILE *)0x0) {
@@ -197,7 +197,7 @@ LAB_004be22a:
       support_codec_cpp_CLZWDictionary_dtor_FUN_00440bf0(&local_a8.lzw_dict,0);
       support_codec_cpp_CCodec_dtor_FUN_00440810(&local_a8.base,1);
       support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(&local_48,0);
-      unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_74,0);
+      support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_74,0);
     }
     else {
       iVar4 = 3;

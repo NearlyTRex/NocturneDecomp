@@ -13,7 +13,7 @@
 ; XREF[10]:
 ;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 00410f33
 ;   core_charactr.cpp_FUN_00433c60 at 00433f6a
-;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 00442cf5
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00442cf5
 ;   core_drip.cpp_CDrip_process_FUN_0046ecf0 at 0046ef9e
 ;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 004882f8
 ;   core_fire.cpp_CCrater_process_FUN_0049d8b0 at 0049d931

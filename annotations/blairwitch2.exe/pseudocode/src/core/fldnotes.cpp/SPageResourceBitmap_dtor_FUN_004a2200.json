@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 38,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 75
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -35,6 +35,11 @@
     "signature": "SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004a2200(SPageResourceBitmap *this_ptr,uint flags)"
   },
   "function_calls": [
+    {
+      "addr": "004a1e90",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SPageResource_dtor_FUN_004a1e90"
+    },
     {
       "addr": "005b7fa7",
       "is_variadic": false,
@@ -59,11 +64,6 @@
       "addr": "0040d540",
       "is_variadic": false,
       "name": "engine_alphabit.cpp_FUN_0040d540"
-    },
-    {
-      "addr": "004a1e90",
-      "is_variadic": false,
-      "name": "unkaddr_004a1200.cpp_SPageResource_dtor_FUN_004a1e90"
     }
   ],
   "globals": [
@@ -154,7 +154,7 @@
       "line": 20,
       "match": "pCVar1[-2].",
       "severity": "mild",
-      "text": "unkaddr_004a1200_cpp_SPageResource_dtor_FUN_004a1e90((SPageResource *)&pCVar1[-2].height)",
+      "text": "core_fldnotes_cpp_SPageResource_dtor_FUN_004a1e90((SPageResource *)&pCVar1[-2].height);",
       "type": "negative_offset"
     }
   ],

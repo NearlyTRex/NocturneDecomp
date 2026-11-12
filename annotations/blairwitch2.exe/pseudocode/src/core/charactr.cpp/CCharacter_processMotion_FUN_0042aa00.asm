@@ -24,7 +24,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418a92
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041dd88
 ;   core_colonel.cpp_CColonel_processMotionEvents_FUN_00436420 at 00436463
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 0043732e
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 0043732e
 ;   core_cow.cpp_CZombieCow_process_FUN_004392b0 at 00439524
 ;   core_doc.cpp_FUN_00453250 at 00453c12
 ;   ... and 25 more

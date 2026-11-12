@@ -12,10 +12,10 @@
 ;   WatcomTypeInfo g_PageResource_TextTypeInfo
 ;
 ; Called Functions:
+;   core_fldnotes.cpp_SPageResource_dtor_FUN_004a1e90
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
-;   unkaddr_004a1200.cpp_SPageResource_dtor_FUN_004a1e90
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH 0x1                            ; 004a200c
     PUSH EBX                            ; 004a200e
     MOV dword ptr [EBX + 0x14],0x5f6ed4 ; 004a200f | g_SPageResourceTextVTable
-    CALL unkaddr_004a1200.cpp_SPageResource_dtor_FUN_004a1e90 ; 004a2016
-        ;   XREF to: 004a1e90 (UNCONDITIONAL_CALL)  ; int unkaddr_004a1200.cpp_SPageResource_dtor_FUN_004a1e90(SPageResource * this_ptr)
+    CALL core_fldnotes.cpp_SPageResource_dtor_FUN_004a1e90 ; 004a2016
+        ;   XREF to: 004a1e90 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SPageResource_dtor_FUN_004a1e90(SPageResource * this_ptr)
     ADD ESP,0x8                         ; 004a201b
     MOV DL,byte ptr [ESP + 0xc]         ; 004a201e
     MOV EBX,EAX                         ; 004a2022

@@ -40,3 +40,43 @@ void FUN_0058d960(CZombiePriest *param_1,float param_2);
 // Original: core_zombiepriest.cpp_FUN_0058e8d0
 // Address: 0058e8d0
 void FUN_0058e8d0(int param_1,float param_2);
+
+// Original: core_zombiepriest.cpp_CZombiePriest_getCarryObjToBodyXForm_FUN_0058ecd0
+// Address: 0058ecd0
+CMatrix3x4f * __stack2_esi CZombiePriest::getCarryObjToBodyXForm(CZombiePriest *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+
+// Original: core_zombiepriest.cpp_FUN_0058efb0
+// Address: 0058efb0
+undefined4 FUN_0058efb0(CCharacter *param_1,float param_2);
+
+// Original: core_zombiepriest.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0
+// Address: 0058f4a0
+void __cdecl CZombiePriest::startFiringAttack(CZombiePriest *this_ptr);
+
+// Original: core_zombiepriest.cpp_CZombiePriest_archive_FUN_0058f510
+// Address: 0058f510
+void __cdecl CZombiePriest::archive(CZombiePriest *this_ptr);
+
+// Original: core_zombiepriest.cpp_FUN_0058f610
+// Address: 0058f610
+undefined4 FUN_0058f610(void);
+
+// Original: core_zombiepriest.cpp_FUN_0058f630
+// Address: 0058f630
+void FUN_0058f630(CCharacter *param_1,float *param_2);
+
+// Original: core_zombiepriest.cpp_CZombiePriest_processDamage_FUN_0058f990
+// Address: 0058f990
+void __cdecl CZombiePriest::processDamage(CZombiePriest *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_zombiepriest.cpp_CZombiePriest_getTargetPoints_FUN_0058fb20
+// Address: 0058fb20
+int __cdecl CZombiePriest::getTargetPoints(CZombiePriest *this_ptr,CVector3f *out_points_array);
+
+// Original: core_zombiepriest.cpp_CZombiePriest_getCollisionType_FUN_0058fc60
+// Address: 0058fc60
+ECollisionType __cdecl CZombiePriest::getCollisionType(CZombiePriest *this_ptr,SCollisionInfo *collision_info);
+
+// Original: core_zombiepriest.cpp_CZombiePriest_dtor_FUN_0058fc80
+// Address: 0058fc80
+CZombiePriest * CZombiePriest::dtor(CZombiePriest *this_ptr,uint flags);

@@ -1,6 +1,6 @@
 // Name: core_dpart.cpp_FUN_00461e10
 // Address: 00461e10
-// Address Range: [[00461e10, 00461e5e]]
+// Address Range: [[00461e10, 00461f21]]
 // Convention: unknown
 // Signature: void core_dpart_cpp_FUN_00461e10(int param_1,int param_2)
 

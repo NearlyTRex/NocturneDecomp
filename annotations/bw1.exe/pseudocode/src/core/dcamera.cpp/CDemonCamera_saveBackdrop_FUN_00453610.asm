@@ -36,6 +36,7 @@
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044ef30 at 0044f177
 ;
 ; Referenced Globals:
+;   undefined4 caseD_4+4
 ;   TerminatedCString s_s_fog_005d790f
 ;   undefined4 DAT_005d7916
 ;   TerminatedCString s_backdrop_005d7919
@@ -50,8 +51,7 @@
 ;   TerminatedCString s_core_dcamera_cpp_005d79b8
 ;   TerminatedCString s_Error_writing_compressed_005d79cc
 ;   undefined4 DAT_005d79ef
-;   undefined4 DAT_00611298
-;   ... and 20 more
+;   ... and 21 more
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90
@@ -168,7 +168,7 @@ section .text
         ;   XREF to: 00453c0d (CONDITIONAL_JUMP)  ; LAB_00453c0d
     MOV EAX,[0x00611298]                ; 00453744 | DAT_00611298
     PUSH 0x3                            ; 00453749
-    MOV dword ptr [ESP + 0x1bc],EAX     ; 0045374b | LAB_00444645
+    MOV dword ptr [ESP + 0x1bc],EAX     ; 0045374b | caseD_4+4
     LEA EAX,[ESP + 0x1bc]               ; 00453752
     PUSH EAX                            ; 00453759
     LEA EAX,[ESP + 0x1b8]               ; 0045375a

@@ -65,7 +65,7 @@ void engine_font_cpp_FUN_004a7fe2(void)
                  (char *)0x0);
       engine_dosio_cpp_makePath_FUN_004610a0
                 (&stack0x00000200,(char *)0x0,(char *)0x0,&stack0x00000300,(char *)0x5d684a);
-      unkclass_instream_cpp_CInStreamFile_ctor_FUN_0057cd50((CInStreamFile *)&stack0x00000400);
+      support_trstream_cpp_CInStreamFile_ctor_FUN_0057cd50((CInStreamFile *)&stack0x00000400);
       iVar6 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
                         ((CInStreamFile *)&stack0x00000400,0x5d684e,&stack0x00000200);
       if (iVar6 == 0) {
@@ -79,7 +79,7 @@ void engine_font_cpp_FUN_004a7fe2(void)
           iVar6 = 0;
           if (0 < (int)uVar7) {
             do {
-              unkaddr_0057b9a0_cpp_CInStreamFile_read_FUN_0057cfe0
+              support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
                         ((CInStreamFile *)&stack0x00000400,(uint *)&stack0x00000000,uVar7);
               iVar15 = 0;
               puVar12 = puVar5;
@@ -107,10 +107,10 @@ void engine_font_cpp_FUN_004a7fe2(void)
           }
         }
         else {
-          unkaddr_0057b9a0_cpp_CInStreamFile_read_FUN_0057cfe0
+          support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
                     ((CInStreamFile *)&stack0x00000400,puVar5,iVar9 * iVar9);
         }
-        unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180((CInStreamFile *)&stack0x00000400);
+        support_trstream_cpp_CInStreamFile_close_FUN_0057d180((CInStreamFile *)&stack0x00000400);
       }
       memset(pvVar4,0xff,size);
       puVar5 = (uint *)(in_stack_00000458 + 0x1b4);
@@ -175,7 +175,7 @@ void engine_font_cpp_FUN_004a7fe2(void)
         iVar9 = iVar9 + 4;
         iVar6 = iVar6 + 0x10;
       } while (iVar9 != in_stack_00000458 + 0x400);
-      unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0((CInStreamFile *)&stack0x00000400,0);
+      support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0((CInStreamFile *)&stack0x00000400,0);
     }
     *(int *)(in_stack_00000458 + 0x420c) = in_stack_0000045c;
     engine_font_cpp_FUN_004a8540();

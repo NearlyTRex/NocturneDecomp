@@ -1,0 +1,27 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int __cdecl core_event_cpp_isCharacterSpeaking_FUN_00481930(CCharacter *char_ptr)
+;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   char_ptr
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 00481930
+        ;   Label: core_event.cpp_isCharacterSpeaking_FUN_00481930
+    FLD float ptr [EAX + 0x2610]        ; 00481934
+    FLDZ                                ; 0048193a
+    FCOMPP                              ; 0048193c
+    FNSTSW AX                           ; 0048193e
+    SAHF                                ; 00481940
+    JNC 0x00481949                      ; 00481941
+        ;   XREF to: 00481949 (CONDITIONAL_JUMP)  ; LAB_00481949
+    MOV EAX,0x1                         ; 00481943
+    RET                                 ; 00481948
+    XOR EAX,EAX                         ; 00481949
+        ;   Label: LAB_00481949
+    RET                                 ; 0048194b
+

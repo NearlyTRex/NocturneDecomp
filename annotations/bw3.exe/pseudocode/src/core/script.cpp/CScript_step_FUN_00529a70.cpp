@@ -1007,8 +1007,7 @@ joined_r0x0052f950:
                                                   local_14 = 
                                                   core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40
                                                             (-fVar1,fVar1);
-                                                  unkafter_stranger_cpp_FUN_00527200
-                                                            (local_14,uVar8,fVar7);
+                                                  core_prye_cpp_FUN_00527200(local_14,uVar8,fVar7);
                                                   local_1c0.x = local_198[2];
                                                   *(float *)((int)&local_1c0 + (uint)bVar21 * -8 + 4
                                                             ) = local_198[(uint)bVar21 * -2 + 3];
@@ -1817,15 +1816,14 @@ LAB_0052d1de:
                                                       (**(code **)(*(int *)(iVar6 + 0x154) + 0x150))
                                                                 (iVar6);
                                                       (**(code **)g_CGamePtr->vtable)(g_CGamePtr,0);
-                                                      iVar6 = unkafter_mimic_cpp_FUN_00495e60
+                                                      iVar6 = core_event_cpp_FUN_00495e60
                                                                         (g_CDemonSetPtr);
                                                       core_setdir_cpp_FUN_0053f940
                                                                 (g_CDemonSetPtr,
                                                                  g_CScriptPtr->focus_actor,1);
                                                       pCVar5 = g_CDemonSetPtr;
                                                       g_CScriptPtr->focus_actor_changed = 0;
-                                                      iVar14 = unkafter_mimic_cpp_FUN_00495e60
-                                                                         (pCVar5);
+                                                      iVar14 = core_event_cpp_FUN_00495e60(pCVar5);
                                                       if (iVar6 == iVar14) {
                                                                                                                 
                                                   core_set_cpp_CDemonSet_setCameraView_FUN_00534890
@@ -2335,7 +2333,7 @@ joined_r0x0052b739:
                                                   (core_inv_cpp_CInventory_removeItem_FUN_004dbaa0
                                                              ((CInventory *)(local_c4 + 0x206e8),
                                                               pCVar13,iVar6), iVar6 == 0)) {
-                                                    core_mimic_cpp_copyQuaternion_FUN_00495e40
+                                                    core_event_cpp_copyQuaternion_FUN_00495e40
                                                               (&pCVar13->location,local_c4 + 0x20);
                                                                                                         
                                                   core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
@@ -2755,7 +2753,7 @@ LAB_0052ebdc:
                                                   core_script_cpp_trimString_FUN_00528830
                                                             (local_278c);
                                                   if (_DAT_01ed6808 == 0) {
-                                                    unkafter_mission_cpp_FUN_004f7c00
+                                                    core_mission_cpp_FUN_004f7c00
                                                               (0x01D81080,local_278c);
                                                   }
                                                   }

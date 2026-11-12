@@ -196,7 +196,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
         SStack_148.impact_direction.z = pCVar7->z;
       }
       SStack_148.ammo_type = (this_ptr->base).ammo_type;
-      SStack_148.damage_type = DAMAGE_TYPE_IMMUNE|DAMAGE_TYPE_DROWN;
+      SStack_148.damage_type = DAMAGE_TYPE_ATTACK_BULLET;
       SStack_148.dismember_prob = 0.15;
       SStack_148.attacker = (CDemonActor *)this_ptr;
       SStack_148.wielder =

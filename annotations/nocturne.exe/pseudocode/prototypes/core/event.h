@@ -225,18 +225,18 @@ float __cdecl getVectorDistance(CVector3f *a,CVector3f *b);
 // Address: 00481920
 int __cdecl getSelectedCameraIndex(CDemonSet *set_ptr);
 
-// Original: core_event.cpp_FUN_00481930
+// Original: core_event.cpp_isCharacterSpeaking_FUN_00481930
 // Address: 00481930
-undefined4 FUN_00481930(void);
+int __cdecl isCharacterSpeaking(CCharacter *char_ptr);
 
-// Original: core_event.cpp_FUN_00481950
+// Original: core_event.cpp_assignInt_FUN_00481950
 // Address: 00481950
-undefined4 * FUN_00481950(undefined4 *param_1,undefined4 *param_2);
+int * __cdecl assignInt(int *dest,int *src);
 
-// Original: core_event.cpp_FUN_00481960
+// Original: core_event.cpp_assignInt1_FUN_00481960
 // Address: 00481960
-undefined4 * FUN_00481960(void);
+int * __cdecl assignInt1(int *dest,int *src);
 
-// Original: core_event.cpp_FUN_00481970
+// Original: core_event.cpp_assignInt2_FUN_00481970
 // Address: 00481970
-undefined4 * FUN_00481970(void);
+int * __cdecl assignInt2(int *dest,int *src);

@@ -7,16 +7,16 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[20]:
+;   core_basicene.cpp_FUN_0059f0e0 at 0059f121
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411b34
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413062
 ;   core_biggs.cpp_CBiggs_process_FUN_00414e50 at 00414f40
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418b83
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041e61c
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 004373ea
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 004373ea
 ;   core_cow.cpp_CZombieCow_process_FUN_004392b0 at 004393c8
 ;   core_dog.cpp_CZombieDog_process_FUN_0045e360 at 0045e4cf
 ;   core_drone.cpp_CDrone_process_FUN_0046d870 at 0046d9e4
-;   core_gargoyle.cpp_CGargoyle_process_FUN_004c0050 at 004c01a9
 ;   ... and 10 more
 ;
 ; *****************************************************************************

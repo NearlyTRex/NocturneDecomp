@@ -24,8 +24,8 @@
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_004311a0 at 004311de
 ;   core_construc.cpp_FUN_004472a0 at 004473ae
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00448b70 at 00448c19
+;   core_demnfolk.cpp_FUN_0045c4a0 at 0045c56d
 ;   core_djien.cpp_CDjien_damageSack_FUN_00460f90 at 00461013
-;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0047cf20 at 0047cf5d
 ;   ... and 11 more
 ;
 ; Referenced Globals:

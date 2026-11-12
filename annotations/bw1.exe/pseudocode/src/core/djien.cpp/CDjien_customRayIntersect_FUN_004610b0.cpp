@@ -52,7 +52,7 @@ float __cdecl core_djien_cpp_CDjien_customRayIntersect_FUN_004610b0(CDjien *this
   fStack_18 = (float)core_box_cpp_FUN_00420ee0(auStack_74);
   if ((0.0 <= fStack_18) && (fStack_18 <= 1.0)) {
     __arrinit(afStack_12c,10,&g_CVectorTypeInfo);
-    iVar3 = unkafter_djien_cpp_FUN_004615b0(this_ptr,afStack_12c,afStack_b4);
+    iVar3 = core_djien_cpp_FUN_004615b0(this_ptr,afStack_12c,afStack_b4);
     iStack_28 = -1;
     puVar6 = (uint *)((int)ray_direction + (uint)bVar8 * -8 + 4);
     fStack_5c = ray_direction->x;

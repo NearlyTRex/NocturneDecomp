@@ -219,8 +219,8 @@ CVector3f * __cdecl CVector3f::arrdtor3(CVector3f *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_SClothVertex_arrdtor800_FUN_0043e480
 // Address: 0043e480
-SClothVertex * __cdecl SClothVertex::arrdtor800(SClothVertex *objs,uint flags);
+SClothVertex * __cdecl SClothVertex::arrdtor800(SClothVertex *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_SClothBone_arrdtor50_FUN_0043e4a0
 // Address: 0043e4a0
-SClothBone * __cdecl SClothBone::arrdtor50(SClothBone *objs,uint flags);
+SClothBone * __cdecl SClothBone::arrdtor50(SClothBone *this_ptr,uint flags);

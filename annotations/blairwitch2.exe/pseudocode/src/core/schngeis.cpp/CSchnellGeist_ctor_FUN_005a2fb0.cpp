@@ -19,8 +19,7 @@ CSchnellGeist * core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchnellGeist 
   char *pcVar4;
   char *pcVar5;
   
-  this_ptr_00 = (CSchnellGeist *)
-                unkafter_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
+  this_ptr_00 = (CSchnellGeist *)core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
   (this_ptr_00->base).base.base.base.vtable._ub = &g_CSchnellGeistVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(this_ptr_00->base).base.base.model,"schnell.dfm");
@@ -54,9 +53,9 @@ CSchnellGeist * core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchnellGeist 
   pSVar1 = &(this_ptr_00->base).state_machine;
   this_ptr_00->attack_variant = 0;
   (this_ptr_00->base).attack_range = fVar3;
-  unkaddr_0059d350_cpp_FUN_0059d990(pSVar1);
-  unkaddr_0059d350_cpp_FUN_0059dc80();
-  unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete");
+  core_muzzle_cpp_FUN_0059d990(pSVar1);
+  core_muzzle_cpp_FUN_0059dc80();
+  core_muzzle_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete");
   pcVar5 = (this_ptr_00->base).hit_sound;
   pcVar4 = "schnellhit0?.wav";
   do {

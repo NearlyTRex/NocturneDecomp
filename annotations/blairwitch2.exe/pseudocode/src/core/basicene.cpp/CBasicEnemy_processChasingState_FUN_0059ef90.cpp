@@ -31,8 +31,8 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processChasingState_FUN_0059ef90(CBas
        fVar6 = (pCVar1->base).location.position.z - (this_ptr->base).base.base.location.position.z,
        this_ptr->giveup_distance <= SQRT(fVar6 * fVar6 + fVar5 * fVar5))) {
       (this_ptr->base).victim = (CCharacter *)0x0;
-      uVar4 = unkaddr_0059d350_cpp_FUN_0059db90(&this_ptr->state_machine);
-      unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->state_machine,uVar4);
+      uVar4 = core_muzzle_cpp_FUN_0059db90(&this_ptr->state_machine);
+      core_muzzle_cpp_FUN_0059d8e0(&this_ptr->state_machine,uVar4);
       return;
     }
     fVar6 = 0.17453292;
@@ -44,7 +44,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processChasingState_FUN_0059ef90(CBas
                       ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->base).location.position,
                        path_map,direction,fVar5,fVar6);
     if (iVar3 != 0) {
-      unkaddr_0059d350_cpp_FUN_0059d880(&this_ptr->state_machine,"ChaseComplete");
+      core_muzzle_cpp_FUN_0059d880(&this_ptr->state_machine,"ChaseComplete");
       return;
     }
     pCVar1 = (this_ptr->base).victim;

@@ -7,7 +7,7 @@
 ; CDemnfolk *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   unkafter_hostage.cpp_FUN_00454b30 at 00454b43
+;   core_demnfolk.cpp_FUN_00454b30 at 00454b43
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005de05c

@@ -31,16 +31,16 @@
 ;   core_main.c_FUN_004e4330
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_2d.c_buildColorLookupTable_FUN_00402880
+;   support_trstream.cpp_CInStreamFile_close_FUN_00573db0
+;   support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0
+;   support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40
 ;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0
+;   support_trstream.cpp_CInStreamFile_read_FUN_00573c00
 ;   support_trstream.cpp_COutStreamFile_close_FUN_005749a0
 ;   support_trstream.cpp_COutStreamFile_ctor_FUN_005747c0
 ;   support_trstream.cpp_COutStreamFile_dtor_FUN_00574850
 ;   support_trstream.cpp_COutStreamFile_openInDirectory_FUN_00574a10
 ;   support_trstream.cpp_COutStreamFile_write_FUN_005748e0
-;   unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0
-;   unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0
-;   unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40
-;   unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x90]      ; 00402948
     LEA EAX,[ESP + 0x50]                ; 0040294f
     PUSH EAX                            ; 00402953
-    CALL unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0 ; 00402954
-        ;   XREF to: 005738c0 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0 ; 00402954
+        ;   XREF to: 005738c0 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00402959
     MOV EDI,ESP                         ; 0040295c
     MOV DL,0x2e                         ; 0040295e
@@ -177,8 +177,8 @@ section .text
         ;   Label: LAB_00402a7f
     LEA EAX,[ESP + 0x54]                ; 00402a81
     PUSH EAX                            ; 00402a85
-    CALL unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40 ; 00402a86
-        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile * this_ptr, uint flags)
+    CALL support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40 ; 00402a86
+        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00402a8b
     ADD ESP,0x84                        ; 00402a8e
     POP EDI                             ; 00402a94
@@ -189,13 +189,13 @@ section .text
     PUSH 0x1c62070                      ; 00402a9c | DAT_01c62070
     LEA EAX,[ESP + 0x58]                ; 00402aa1
     PUSH EAX                            ; 00402aa5
-    CALL unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00 ; 00402aa6
-        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int unkafter_turret.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
+    CALL support_trstream.cpp_CInStreamFile_read_FUN_00573c00 ; 00402aa6
+        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
     ADD ESP,0xc                         ; 00402aab
     LEA EAX,[ESP + 0x50]                ; 00402aae
     PUSH EAX                            ; 00402ab2
-    CALL unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0 ; 00402ab3
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 unkafter_turret.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_close_FUN_00573db0 ; 00402ab3
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00402ab8
     JMP 0x00402a7f                      ; 00402abb
         ;   XREF to: 00402a7f (UNCONDITIONAL_JUMP)  ; LAB_00402a7f

@@ -11,8 +11,9 @@
 ; int              Stack[0x14]:4   color_value
 ; char *           Stack[0x18]:4   text
 ;
-; XREF[1]:
+; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480 at 00480599
+;   engine_font.cpp_FUN_004c21e0 at 004c2232
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004c2060

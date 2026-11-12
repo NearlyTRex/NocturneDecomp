@@ -22,7 +22,7 @@ void cockpit_pkbmpset_cpp_FUN_005177de(CPackedBitmapSet *param_1,char *param_2,i
   _FILE *p_Stack_18;
   ulong uStack_14;
   
-  unkafter_pkbitmap_cpp_FUN_00517640(param_1);
+  cockpit_pkbitmap_cpp_FUN_00517640(param_1);
   iVar1 = engine_dosio_cpp_getFileSize_FUN_00460aa0((char *)0x5e1f1d,param_2);
   p_Stack_18 = engine_dosio_cpp_FUN_00460c70((char *)0x5e1f24,param_2,(char *)0x5e1f21);
   if (p_Stack_18 == (_FILE *)0x0) {

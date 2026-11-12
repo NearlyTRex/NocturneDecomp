@@ -84,9 +84,9 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
   
   bVar8 = 0;
   piVar1 = &param_1[0x62].particle_systems[2].stop_after_fade;
-  iVar5 = unkaddr_0059d350_cpp_FUN_0059daa0(piVar1,"Death");
+  iVar5 = core_muzzle_cpp_FUN_0059daa0(piVar1,"Death");
   if ((iVar5 == 0) ||
-     (iVar5 = unkaddr_0059d350_cpp_FUN_0059daa0(piVar1,"Animation"), iVar5 == 0)) {
+     (iVar5 = core_muzzle_cpp_FUN_0059daa0(piVar1,"Animation"), iVar5 == 0)) {
     (*(param_1->vtable)._ub[1].getCarrier)(param_1);
   }
   pCStack_14 = param_1 + 1;
@@ -244,7 +244,7 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
   }
   if (param_1[0x62].particle_systems[0].particles != (void *)0x0) {
     piStack_20 = &param_1[0x62].particle_systems[2].stop_after_fade;
-    iVar5 = unkaddr_0059d350_cpp_FUN_0059daa0(piStack_20,"Chasing");
+    iVar5 = core_muzzle_cpp_FUN_0059daa0(piStack_20,"Chasing");
     if ((((iVar5 != 0) &&
          (pvVar3 = param_1[0x62].particle_systems[0].particles,
          fVar7 = (param_1->location).position.x - *(float *)((int)pvVar3 + 0x20),
@@ -265,7 +265,7 @@ void core_schngeis_cpp_FUN_005a3560(CDemonActor *param_1,float param_2)
       afStack_64[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =
            afStack_124[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0x22];
       if (ABS(afStack_64[3]) < (float)_DAT_005f01d6) {
-        unkaddr_0059d350_cpp_FUN_0059d8e0(piStack_20,"LeapAttack");
+        core_muzzle_cpp_FUN_0059d8e0(piStack_20,"LeapAttack");
         return;
       }
     }

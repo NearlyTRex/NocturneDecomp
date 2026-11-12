@@ -11,11 +11,11 @@
 ; undefined4       Stack[0x14]:4   param_5
 ;
 ; XREF[5]:
+;   core_flashlit.cpp_FUN_004a826e at 004a8286
+;   core_flashlit.cpp_FUN_004a82ee at 004a8313
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aa9af
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90 at 004abbf2
 ;   core_fldnotes.cpp_FUN_004abe00 at 004abe5f
-;   unkaddr_004a76f0.cpp_FUN_004a826e at 004a8286
-;   unkaddr_004a76f0.cpp_FUN_004a82ee at 004a8313
 ;
 ; *****************************************************************************
 

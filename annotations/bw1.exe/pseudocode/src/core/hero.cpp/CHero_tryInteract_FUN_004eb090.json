@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 132,
     "complexity_score": 264,
-    "cross_reference_count": 6,
+    "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
@@ -21,6 +21,12 @@
     "total_lines": 221
   },
   "cross_references": [
+    {
+      "addr": "00444550",
+      "from_addr": "0044499f",
+      "name": "core_colonel.cpp_CColonel_process_FUN_00444550",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004c65f0",
       "from_addr": "004c7887",
@@ -105,7 +111,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 6,
+    "call_site_count": 7,
     "call_sites": [
       {
         "call_addr": "004eca40",
@@ -166,6 +172,17 @@
         "call_addr": "004f13ee",
         "call_type": "direct",
         "caller": "core_icepick.cpp_CIcePick_process_FUN_004f0e50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0044499f",
+        "call_type": "direct",
+        "caller": "core_colonel.cpp_CColonel_process_FUN_00444550",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

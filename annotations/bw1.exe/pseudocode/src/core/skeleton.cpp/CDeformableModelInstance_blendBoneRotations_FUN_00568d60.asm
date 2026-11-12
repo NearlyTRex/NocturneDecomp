@@ -13,8 +13,9 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[11]:
+; XREF[12]:
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f6b8
+;   core_colonel.cpp_CColonel_process_FUN_00444550 at 00444866
 ;   core_doc.cpp_FUN_0046caa0 at 0046d457
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8ad7
 ;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e9551
@@ -23,8 +24,7 @@
 ;   core_scat.cpp_CScat_process_FUN_00540df0 at 0054123b
 ;   core_skeleton.cpp_FUN_00569440 at 005695bf
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0058aab0 at 0058ad8d
-;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0 at 00588e0f
-;   ... and 1 more
+;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2521

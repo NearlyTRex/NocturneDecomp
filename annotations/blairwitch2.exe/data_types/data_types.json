@@ -549,10 +549,6 @@
       "type":"struct"
     },
     {
-      "name":"CEdCheck",
-      "type":"struct"
-    },
-    {
       "name":"CEdScrollBar",
       "type":"struct"
     },
@@ -1513,12 +1509,24 @@
       "type":"struct"
     },
     {
+      "name":"EBoneUpdateMode",
+      "type":"enum"
+    },
+    {
       "name":"EBoxActorPickupType",
       "type":"enum"
     },
     {
       "name":"EBugsState",
       "type":"enum"
+    },
+    {
+      "name":"ECheckboxMode",
+      "type":"enum"
+    },
+    {
+      "name":"CEdCheck",
+      "type":"struct"
     },
     {
       "name":"ECollisionType",
@@ -1682,6 +1690,10 @@
     },
     {
       "name":"EPlatformStateType",
+      "type":"enum"
+    },
+    {
+      "name":"EShadowBoundsMode",
       "type":"enum"
     },
     {
@@ -4814,6 +4826,27 @@
     {
       "cat":"/Nocturne/Enum/Game",
       "importable":true,
+      "name":"EBoneUpdateMode",
+      "size":4,
+      "type":"enum",
+      "values":[
+        {
+          "name":"BONE_UPDATE_SIMPLE_FLAT",
+          "val":0
+        },
+        {
+          "name":"BONE_UPDATE_HIERARCHICAL_ACCUM",
+          "val":1
+        },
+        {
+          "name":"BONE_UPDATE_HIERARCHICAL_RESTPOSE",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
       "name":"EBoxActorPickupType",
       "size":4,
       "type":"enum",
@@ -4862,6 +4895,23 @@
         {
           "name":"BUGS_STATE_DEAD",
           "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ECheckboxMode",
+      "size":4,
+      "type":"enum",
+      "values":[
+        {
+          "name":"CHECKBOX_MODE_BINARY",
+          "val":0
+        },
+        {
+          "name":"CHECKBOX_MODE_TRI_STATE",
+          "val":1
         }
       ]
     },
@@ -6347,6 +6397,23 @@
         {
           "name":"PLATFORM_STATE_TYPE_MOVING_TO_START",
           "val":4
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EShadowBoundsMode",
+      "size":4,
+      "type":"enum",
+      "values":[
+        {
+          "name":"SHADOW_BOUNDS_RECTANGULAR",
+          "val":0
+        },
+        {
+          "name":"SHADOW_BOUNDS_CIRCULAR",
+          "val":1
         }
       ]
     },
@@ -19702,7 +19769,7 @@
           "len":4,
           "name":"bone_update_mode",
           "offset":8784,
-          "type":"int"
+          "type":"EBoneUpdateMode"
         },
         {
           "len":12,
@@ -20888,7 +20955,7 @@
           "len":4,
           "name":"shadow_bounds_mode",
           "offset":7352,
-          "type":"int"
+          "type":"EShadowBoundsMode"
         },
         {
           "len":4,
@@ -23125,7 +23192,7 @@
           "len":4,
           "name":"checkbox_mode",
           "offset":0,
-          "type":"int"
+          "type":"ECheckboxMode"
         },
         {
           "len":4,

@@ -25,6 +25,10 @@ CLightPis * CLightPis::ctor(CLightPis *this_ptr);
 // Address: 005016d0
 undefined4 FUN_005016d0(CDemonActor *param_1);
 
+// Original: core_lightpis.cpp_FUN_00501750
+// Address: 00501750
+undefined4 FUN_00501750(CCharacter *param_1);
+
 // Original: core_lightpis.cpp_FUN_005017f0
 // Address: 005017f0
 void FUN_005017f0(int param_1);

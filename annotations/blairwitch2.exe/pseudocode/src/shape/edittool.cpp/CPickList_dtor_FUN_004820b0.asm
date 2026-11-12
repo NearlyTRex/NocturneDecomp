@@ -9,14 +9,14 @@
 ;
 ; XREF[9]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6c4e
+;   core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c3d0 at 0059c406
 ;   core_menu.cpp_FUN_004ed260 at 004ee13e
 ;   core_menu.cpp_FUN_004eed60 at 004efadc
 ;   core_mission.cpp_FUN_004fd280 at 004fd3e8
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_0055b110 at 0055b17d
-;   engine_pod.cpp_FUN_0051aa7e at 0051acb6
+;   engine_pod.cpp_FUN_0051aa80 at 0051acb6
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970 at 0047cac2
 ;   shape_edittool.cpp_FUN_0047cb1e at 0047ce0e
-;   unkaddr_0059c270.cpp_CGameHook_showDebugMenu_FUN_0059c3d0 at 0059c406
 ;
 ; Referenced Globals:
 ;   undefined1* g_CPickListVTable = 004820b0

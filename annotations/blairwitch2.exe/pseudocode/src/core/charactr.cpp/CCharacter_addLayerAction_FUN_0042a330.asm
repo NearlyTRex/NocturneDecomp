@@ -11,9 +11,9 @@
 ; int              Stack[0x14]:4   direction
 ;
 ; XREF[3]:
-;   core_doc.cpp_FUN_004501a2 at 004502eb
+;   core_doc.cpp_CDoc_ctor_FUN_004500d0 at 004502eb
 ;   core_scat.cpp_CScat_ctor_FUN_0051e9a0 at 0051ea3f
-;   core_stranger.cpp_FUN_005628b4 at 00562a1a
+;   core_stranger.cpp_CStranger_ctor_FUN_005627f0 at 00562a1a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0

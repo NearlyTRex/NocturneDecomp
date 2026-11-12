@@ -15,12 +15,12 @@
 ;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
+;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_FUN_0042b5e0
 ;   core_doc.cpp_FUN_00450c60
 ;   core_game.cpp_CGame_slamDT_FUN_004bd460
 ;   core_motion.cpp_FUN_005035c0
-;   unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;
 ; *****************************************************************************
 
@@ -81,8 +81,8 @@ section .text
     ADD EBX,0x154                       ; 00450ba9
     PUSH dword ptr [ESP + 0x18]         ; 00450baf
     PUSH EBX                            ; 00450bb3
-    CALL unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 00450bb4
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 00450bb4
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
     ADD ESP,0x8                         ; 00450bb9
     POP ESI                             ; 00450bbc
     ADD ESP,0x8                         ; 00450bbd

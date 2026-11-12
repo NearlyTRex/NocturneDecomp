@@ -54,6 +54,8 @@ int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004c2060(CBitFont *this
 int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004c2090(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
 int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004c20e0(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004c2150(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
+void engine_font_cpp_FUN_004c2190(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void engine_font_cpp_FUN_004c21e0(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6 ,undefined4 param_7);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004c2250(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterF_FUN_004c2290(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004c22e0(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
@@ -79,11 +81,11 @@ int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_004c4540(CBitFont *this_
 void __cdecl engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004c4570(CBitFont *this_ptr,int offset_value,int start_char,int end_char);
 void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004c45d0(CBitFont *this_ptr,int value);
 void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004c45e0(CBitFont *this_ptr);
-int unkafter_font_cpp_FUN_004c47f0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
-uint unkafter_font_cpp_FUN_004c4b9e(int param_1,int param_2,uint param_3);
-undefined4 unkafter_font_cpp_FUN_004c4bf0(void);
-void unkafter_font_cpp_FUN_004c4c51(void);
-int * unkafter_font_cpp_FUN_004c4d3e(int param_1,int *param_2);
+int engine_font_cpp_FUN_004c47f0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
+uint engine_font_cpp_FUN_004c4b9e(int param_1,int param_2,uint param_3);
+undefined4 engine_font_cpp_FUN_004c4bf0(void);
+void engine_font_cpp_FUN_004c4c51(void);
+int * engine_font_cpp_FUN_004c4d3e(int param_1,int *param_2);
 void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004c4d80(int *param_1,int param_2);
 void core_frankgen_cpp_staticInit_FUN_004c50f0(void);
 void core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004c5120(void);

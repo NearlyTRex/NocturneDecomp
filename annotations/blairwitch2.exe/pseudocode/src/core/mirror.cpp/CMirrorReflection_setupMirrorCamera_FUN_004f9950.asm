@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060
-;   engine_matrix.c_FUN_0046b4b0
+;   engine_drender.cpp_FUN_0046b4b0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     MOV ECX,dword ptr [0x0060b280]      ; 004f9968 | DAT_0060b280
     PUSH dword ptr [EBX + 0x6c]         ; 004f996e
     PUSH ECX                            ; 004f9971 | DAT_01ba5c50
-    CALL engine_matrix.c_FUN_0046b4b0   ; 004f9972
-        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046b4b0()
+    CALL engine_drender.cpp_FUN_0046b4b0 ; 004f9972
+        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b4b0()
     ADD ESP,0x8                         ; 004f9977
     LEA EAX,[EBX + 0x70]                ; 004f997a
     PUSH EAX                            ; 004f997d

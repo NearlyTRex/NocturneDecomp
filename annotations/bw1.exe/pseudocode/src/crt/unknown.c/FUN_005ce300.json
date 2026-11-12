@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 205,
     "complexity_score": 369,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -18,6 +18,12 @@
     "total_lines": 284
   },
   "cross_references": [
+    {
+      "addr": "005ce470",
+      "from_addr": "005ce482",
+      "name": "crt_unknown.c_FUN_005ce470",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "005ce48c",
       "from_addr": "005ce49e",
@@ -51,7 +57,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "005ce49e",
@@ -67,9 +73,24 @@
         ],
         "stack_bytes": 16,
         "stack_params": 4
+      },
+      {
+        "call_addr": "005ce482",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005ce470",
+        "estimated_params": 7,
+        "instructions_analyzed": 8,
+        "method": "push_count",
+        "reg_params": [
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 16,
+        "stack_params": 4
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 7,

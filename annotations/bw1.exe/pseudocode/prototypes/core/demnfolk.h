@@ -53,6 +53,18 @@ CMatrix3x4f * __stack2_esi CDemnfolk::getCarryObjToBodyXForm(CDemnfolk *this_ptr
 // Address: 0045b560
 undefined4 FUN_0045b560(CCharacter *param_1,float param_2);
 
+// Original: core_demnfolk.cpp_FUN_0045bec0
+// Address: 0045bec0
+undefined4 FUN_0045bec0(int param_1,uint param_2);
+
+// Original: core_demnfolk.cpp_FUN_0045bf60
+// Address: 0045bf60
+undefined4 FUN_0045bf60(int param_1,undefined4 param_2);
+
+// Original: core_demnfolk.cpp_FUN_0045bfa0
+// Address: 0045bfa0
+void FUN_0045bfa0(int param_1);
+
 // Original: core_demnfolk.cpp_CDemnfolk_renderOpaque_FUN_0045bfe0
 // Address: 0045bfe0
 int __cdecl CDemnfolk::renderOpaque(CDemnfolk *this_ptr);
@@ -68,6 +80,10 @@ void __cdecl CDemnfolk::archive(CDemnfolk *this_ptr);
 // Original: core_demnfolk.cpp_CDemnfolk_canBeAttracted_FUN_0045c350
 // Address: 0045c350
 int __cdecl CDemnfolk::canBeAttracted(CDemnfolk *this_ptr,CDemonActor *grabber);
+
+// Original: core_demnfolk.cpp_FUN_0045c4a0
+// Address: 0045c4a0
+void FUN_0045c4a0(CCharacter *param_1,float *param_2);
 
 // Original: core_demnfolk.cpp_CDemnfolk_processDamage_FUN_0045c7b0
 // Address: 0045c7b0
@@ -108,3 +124,11 @@ void __cdecl CDemnfolk::playDeathSound(CDemnfolk *this_ptr);
 // Original: core_demnfolk.cpp_CDemnfolk_playFeedingSound_FUN_0045d020
 // Address: 0045d020
 void __cdecl CDemnfolk::playFeedingSound(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_FUN_0045d060
+// Address: 0045d060
+void FUN_0045d060(int param_1);
+
+// Original: core_demnfolk.cpp_CDemnfolk_dtor_FUN_0045d0e0
+// Address: 0045d0e0
+CDemnfolk * CDemnfolk::dtor(CDemnfolk *this_ptr,uint flags);

@@ -6,10 +6,11 @@
 ; Parameters:
 ; CSfxSample *     Stack[0x4]:4   this_ptr
 ;
-; XREF[3]:
+; XREF[4]:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020 at 00570054
 ;   sound_sndmain.cpp_FUN_0056e830 at 0056ebd1
 ;   sound_sndmain.cpp_FUN_00570460 at 005709fc
+;   sound_sndmain.cpp_FUN_005742c0 at 005742fd
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c80650

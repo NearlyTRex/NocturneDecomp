@@ -73,7 +73,7 @@ void engine_font_cpp_FUN_004c0fa0(int param_1,int param_2)
                 ((char *)(param_1 + 4),(char *)0x0,(char *)0x0,acStack_158,(char *)0x0);
       engine_dosio_cpp_makePath_FUN_004795b0
                 (acStack_258,(char *)0x0,(char *)0x0,acStack_158,(char *)0x5e08c3);
-      unkclass_instream_cpp_CInStreamFile_ctor_FUN_005a08d0(&CStack_58);
+      support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(&CStack_58);
       iVar5 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
                         (&CStack_58,0x5e08c7,acStack_258,1);
       if (iVar5 == 0) {
@@ -88,7 +88,7 @@ void engine_font_cpp_FUN_004c0fa0(int param_1,int param_2)
           puVar3 = puStack_20;
           if (0 < (int)uStack_14) {
             do {
-              unkaddr_0059f520_cpp_CInStreamFile_read_FUN_005a0c10(&CStack_58,auStack_458,uStack_14)
+              support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&CStack_58,auStack_458,uStack_14)
               ;
               iVar12 = 0;
               puVar9 = puVar3;
@@ -116,9 +116,9 @@ void engine_font_cpp_FUN_004c0fa0(int param_1,int param_2)
           }
         }
         else {
-          unkaddr_0059f520_cpp_CInStreamFile_read_FUN_005a0c10(&CStack_58,puStack_20,iVar8 * iVar8);
+          support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&CStack_58,puStack_20,iVar8 * iVar8);
         }
-        unkaddr_0059f520_cpp_CInStreamFile_close_FUN_005a0dc0(&CStack_58);
+        support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&CStack_58);
       }
       pvVar4 = pvStack_28;
       memset(pvStack_28,0xff,uStack_1c);
@@ -186,7 +186,7 @@ void engine_font_cpp_FUN_004c0fa0(int param_1,int param_2)
         iVar8 = iVar8 + 4;
         iVar5 = iVar5 + 0x10;
       } while (iVar8 != iStack_18);
-      unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(&CStack_58,0);
+      support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&CStack_58,0);
     }
     *(int *)(param_1 + 0x420c) = param_2;
     engine_font_cpp_FUN_004c1520(param_1,0x3f8ccccd);

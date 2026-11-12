@@ -353,6 +353,10 @@ undefined4 FUN_00429f20(CCharacter *param_1,float param_2,char *param_3);
 // Address: 0042a0c0
 int __cdecl CCharacter::advanceLayerAction(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
 
+// Original: core_charactr.cpp_FUN_0042a2d0
+// Address: 0042a2d0
+void FUN_0042a2d0(int param_1,undefined4 param_2,undefined4 param_3);
+
 // Original: core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330
 // Address: 0042a330
 void __cdecl CCharacter::addLayerAction(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction);
@@ -436,3 +440,7 @@ CCharacter * CCharacter::dtor(CCharacter *this_ptr,uint flags);
 // Original: core_charactr.cpp_SFire_ctor_FUN_0042c0a0
 // Address: 0042c0a0
 SFire * SFire::ctor(SFire *this_ptr);
+
+// Original: core_charactr.cpp_FUN_0042c0be
+// Address: 0042c0be
+undefined4 FUN_0042c0be(undefined4 *param_1,byte *param_2,int param_3);

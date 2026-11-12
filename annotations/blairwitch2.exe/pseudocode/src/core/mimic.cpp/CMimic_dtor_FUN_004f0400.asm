@@ -16,12 +16,12 @@
 ;   core_armour.cpp_FUN_0040f2b0
 ;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
 ;   core_morph.cpp_CMorph_dtor_FUN_005b6e80
+;   core_muzzle.cpp_FUN_0059df70
 ;   core_necklace.cpp_FUN_005ade00
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
-;   unkaddr_0059d350.cpp_FUN_0059df70
 ;
 ; *****************************************************************************
 
@@ -66,8 +66,8 @@ section .text
     PUSH 0x0                            ; 004f0471
     SUB EAX,0x9c8                       ; 004f0473
     PUSH EAX                            ; 004f0478
-    CALL unkaddr_0059d350.cpp_FUN_0059df70 ; 004f0479
-        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059df70()
+    CALL core_muzzle.cpp_FUN_0059df70   ; 004f0479
+        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059df70()
     ADD ESP,0x8                         ; 004f047e
     PUSH 0x0                            ; 004f0481
     SUB EAX,0x34c                       ; 004f0483

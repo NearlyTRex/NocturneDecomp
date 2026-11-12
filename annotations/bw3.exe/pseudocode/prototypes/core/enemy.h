@@ -33,6 +33,10 @@ int __cdecl CEnemy::getTargetPoints(CEnemy *this_ptr,CVector3f *out_points_array
 // Address: 004893f0
 undefined4 FUN_004893f0(int param_1,float *param_2,undefined4 param_3,int param_4);
 
+// Original: core_enemy.cpp_FUN_00489490
+// Address: 00489490
+undefined4 FUN_00489490(int param_1,undefined4 param_2,undefined4 param_3,int param_4);
+
 // Original: core_enemy.cpp_CEnemy_getTargetPoint_FUN_00489530
 // Address: 00489530
 CVector3f * __cdecl CEnemy::getTargetPoint(CEnemy *this_ptr,CVector3f *out_point);
@@ -76,6 +80,10 @@ void __cdecl CEnemy::onVictimLost(CEnemy *this_ptr,CDemonActor *lost_actor);
 // Original: core_enemy.cpp_FUN_0048a12e
 // Address: 0048a12e
 int FUN_0048a12e(CDemonActor *param_1);
+
+// Original: core_enemy.cpp_FUN_0048a1b0
+// Address: 0048a1b0
+undefined4 FUN_0048a1b0(int param_1,float param_2);
 
 // Original: core_enemy.cpp_CEnemy_isGrabbable_FUN_0048a200
 // Address: 0048a200

@@ -12,18 +12,18 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[64]:
+; XREF[65]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870 at 0040cb5f
 ;   core_batcreat.cpp_CBatCreature_processDamage_FUN_004123d0 at 004124a8
 ;   core_batman.cpp_CBatman_processDamage_FUN_00413f90 at 00414068
 ;   core_biggs.cpp_CBiggs_processDamage_FUN_00414fc0 at 00414ffa
 ;   core_bird.cpp_CBird_renderOpaque_FUN_00415690 at 00415709
+;   core_bird.cpp_FUN_00415830 at 0041588b
+;   core_bmppuzzl.cpp_CChemPuzzle_load_FUN_004177b0 at 00417f52
+;   core_bmppuzzl.cpp_CChemPuzzle_reset_FUN_004176b0 at 0041774a
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_0041b750 at 0041b83e
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041c9a0 at 0041cf6d
-;   core_boxactor.cpp_CLightActor_process_FUN_00422f90 at 00423003
-;   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00427830 at 00427a0b
-;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427b40 at 00427d7b
-;   ... and 54 more
+;   ... and 55 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d2ea1

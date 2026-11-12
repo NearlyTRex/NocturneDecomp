@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[49]:
+; XREF[51]:
 ;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040eb92
 ;   core_baron.cpp_CBaron_advanceMotion_FUN_00410110 at 00410126
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 0041183f
@@ -36,7 +36,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bf03
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423d30
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00428b8f
-;   ... and 39 more
+;   ... and 41 more
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00524244 = 00524380

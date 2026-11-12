@@ -16,18 +16,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[19]:
+; XREF[20]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_addButton_FUN_0059b3c0 at 0059b3f0
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_0059af30 at 0059af89
+;   core_flashlit.cpp_FUN_004a17f0 at 004a1852
+;   core_flashlit.cpp_FUN_004a1870 at 004a197e
 ;   core_fldnotes.cpp_FUN_004a5700 at 004a5c77
 ;   core_fldnotes.cpp_SNotesMap_load_FUN_004a38e0 at 004a38fb
 ;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170 at 004a21d2
 ;   core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004a2290 at 004a230a
 ;   core_fldnotes.cpp_SPageResourceTwanaEntry_draw_FUN_004a24f0 at 004a25cf
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be0d9
-;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be491
-;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0 at 004b6125
-;   core_game.cpp_FUN_004bdc1e at 004bdc51
-;   core_inv.cpp_loadAssets_FUN_004da990 at 004da9d7
-;   ... and 9 more
+;   ... and 10 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_raw_005cb020

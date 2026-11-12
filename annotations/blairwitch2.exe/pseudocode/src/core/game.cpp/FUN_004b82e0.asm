@@ -32,6 +32,7 @@
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004bdb10
 ;   core_game.cpp_FUN_004bb9b0
+;   core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c3d0
 ;   core_script.cpp_CScript_resetDialogState_FUN_00529b00
 ;   core_set.cpp_CDemonSet_reinitCamera_FUN_0052e910
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00534640
@@ -42,7 +43,6 @@
 ;   core_sound.cpp_FUN_0055a1d0
 ;   crt_env.c_getenv_FUN_005bac90
 ;   crt_stdio.c_fclose_FUN_005b89c0
-;   crt_unknown.c_sprintf_FUN_005b7790
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -1050,8 +1050,8 @@ section .text
     PUSH EDI                            ; 004b8d78
     MOV EAX,[0x0061ea5c]                ; 004b8d79 | g_CGameHookPtr
     PUSH EAX                            ; 004b8d7e
-    CALL unkaddr_0059c270.cpp_CGameHook_showDebugMenu_FUN_0059c3d0 ; 004b8d7f
-        ;   XREF to: 0059c3d0 (UNCONDITIONAL_CALL)  ; void unkaddr_0059c270.cpp_CGameHook_showDebugMenu_FUN_0059c3d0(CGameHook * this_ptr)
+    CALL core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c3d0 ; 004b8d7f
+        ;   XREF to: 0059c3d0 (UNCONDITIONAL_CALL)  ; void core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c3d0(CGameHook * this_ptr)
     ADD ESP,0x8                         ; 004b8d84
     MOV ESP,EBP                         ; 004b8d87
         ;   Label: LAB_004b8d87

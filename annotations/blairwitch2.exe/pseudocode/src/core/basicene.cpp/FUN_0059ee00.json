@@ -1,0 +1,385 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 156,
+    "complexity_score": 385,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 65,
+    "suspect_count": 31,
+    "suspect_types": [
+      "pointer_cast",
+      "unnamed_param"
+    ],
+    "total_lines": 221
+  },
+  "cross_references": [
+    {
+      "addr": "0059e8c0",
+      "from_addr": "0059ea7c",
+      "name": "core_basicene.cpp_FUN_0059e8c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059ee00",
+    "address_range": [
+      [
+        "0059ee00",
+        "0059ef8d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_basicene.cpp_FUN_0059ee00",
+    "signature": "void core_basicene_cpp_FUN_0059ee00(CEnemy *param_1,float param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "00423000",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000"
+    },
+    {
+      "addr": "0059c9c0",
+      "is_variadic": false,
+      "name": "core_hpatrol.cpp_FUN_0059c9c0"
+    },
+    {
+      "addr": "004fc740",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740"
+    },
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    },
+    {
+      "addr": "0059d8e0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059d8e0"
+    },
+    {
+      "addr": "005882d0",
+      "is_variadic": false,
+      "name": "core_waypoint.cpp_FUN_005882d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ef968",
+      "name": "s_Chasing_005ef968",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618170",
+      "name": "DAT_00618170",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d182f0",
+      "name": "DAT_01d182f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02668164",
+      "name": "g_CPatrolPointClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.992248062015504,
+    "instruction_count": 129,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 10,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 122,
+      "INT_ADD": 70,
+      "INT_AND": 46,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 40,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 20,
+      "INT_SUB": 46,
+      "LOAD": 45,
+      "POPCOUNT": 20,
+      "RETURN": 6,
+      "STORE": 51
+    },
+    "pcode_op_count": 515
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_basicene_cpp_FUN_0059ee00(CEnemy *param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_basicene_cpp_FUN_0059ee00(CEnemy *param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar1 = (param_1->base).base.vtable._ue;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->base).follow_leader = (CCharacter *)0x0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(pCVar1->_ue).updateVictim)(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*(pCVar1->_ue).updateVictim)(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->victim != (CCharacter *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_muzzle_cpp_FUN_0059d8e0(param_1 + 1,\"Chasing\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar4 = param_1[1].base.model.rest_bone_scales[0x39];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01D182F0,param_1->patrol_name_pattern);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.rest_bone_scales[0x39] = fVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).model.base,(int)param_1[1].base.model.rest_bone_scales[0x30],1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).model.base,(int)param_1[1].base.model.rest_bone_scales[0x30],1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1].base.model.rest_bone_scales[0x3a] == 0.0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar3 = core_waypoint_cpp_FUN_005882d0(&(param_1->base).base.location,fVar4,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.rest_bone_scales[0x3a] = fVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar4 = param_1[1].base.model.rest_bone_scales[0x3a];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = &(param_1->base).model;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&this_ptr->base,(int)param_1[1].base.model.rest_bone_scales[0x30],1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(CVector3f *)((int)fVar4",
+      "severity": "moderate",
+      "text": "(&param_1->base,(CVector3f *)((int)fVar4 + 0x20),(CPathMap *)0x0,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1->base,(CVector3f *)((int)fVar4 + 0x20),(CPathMap *)0x0,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CVector3f *)(param_1[1].base.model.rest_bone_scales + 0x59),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.rest_bone_scales[0x5b],0.7853982);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&this_ptr->base,(int)param_1[1].base.model.rest_bone_scales[0x32],1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1].base.model.rest_bone_scales[0x39] == param_1[1].base.model.rest_bone_scales[0x3a]",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1].base.model.rest_bone_scales[0x39] == param_1[1].base.model.rest_bone_scales[0x3a]",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1[1].base.model.rest_bone_scales[0x3a],",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.rest_bone_scales + 0x3b);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.rest_bone_scales[0x3a] = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.rest_bone_scales[0x39] = fVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].base.model.rest_bone_scales[0x3a] = 0.0;",
+      "type": "unnamed_param"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_stranger.cpp_CPrye_ctor_FUN_00517f80
+;   core_prye.cpp_CPrye_ctor_FUN_00517f80
 ;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00517f61
     PUSH EAX                            ; 00517f62
         ;   Label: LAB_00517f62
-    CALL core_stranger.cpp_CPrye_ctor_FUN_00517f80 ; 00517f63
-        ;   XREF to: 00517f80 (UNCONDITIONAL_CALL)  ; CPrye * core_stranger.cpp_CPrye_ctor_FUN_00517f80(CPrye * this_ptr)
+    CALL core_prye.cpp_CPrye_ctor_FUN_00517f80 ; 00517f63
+        ;   XREF to: 00517f80 (UNCONDITIONAL_CALL)  ; CPrye * core_prye.cpp_CPrye_ctor_FUN_00517f80(CPrye * this_ptr)
     ADD ESP,0x4                         ; 00517f68
     RET                                 ; 00517f6b
 

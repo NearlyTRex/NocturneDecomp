@@ -15,9 +15,9 @@
 ;   core_doc.cpp_FUN_00453d80 at 00453d9b
 ;   core_doc.cpp_FUN_00455270 at 004552a0
 ;   core_doc.cpp_FUN_004555c0 at 00455665
+;   core_doc.cpp_FUN_0045bdc0 at 0045be58
 ;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004add01
 ;   core_gabriela.cpp_FUN_004af410 at 004af5bc
-;   core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004c3ac0 at 004c3adf
 ;   ... and 16 more
 ;
 ; *****************************************************************************

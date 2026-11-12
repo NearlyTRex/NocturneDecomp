@@ -8,9 +8,10 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[4]:
+; XREF[5]:
 ;   core_game.cpp_CGame_processJoystickControls_FUN_004d0d30 at 004d0d36
 ;   core_game.cpp_FUN_004d77d0 at 004d7b9a
+;   core_menu.cpp_FUN_0050d5b0 at 0050d5e6
 ;   core_menu.cpp_FUN_0050d640 at 0050e86a
 ;   core_menu.cpp_calibrateGamepad_FUN_0050a2b0 at 0050a38e
 ;

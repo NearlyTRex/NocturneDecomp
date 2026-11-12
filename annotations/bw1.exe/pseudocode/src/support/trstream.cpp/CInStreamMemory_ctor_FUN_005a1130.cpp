@@ -13,7 +13,7 @@ CInStreamMemory * support_trstream_cpp_CInStreamMemory_ctor_FUN_005a1130(CInStre
 {
   CInStreamMemory *pCVar1;
   
-  pCVar1 = (CInStreamMemory *)unkaddr_0059f520_cpp_FUN_0059f540(this_ptr);
+  pCVar1 = (CInStreamMemory *)support_trstream_cpp_FUN_0059f540(this_ptr);
   pCVar1->vtable = &g_CInStreamMemoryVTable;
   pCVar1->data = (char *)0x0;
   pCVar1->size = 0;

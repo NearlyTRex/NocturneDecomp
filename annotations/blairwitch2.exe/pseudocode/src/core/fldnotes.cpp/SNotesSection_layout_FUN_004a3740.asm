@@ -8,11 +8,11 @@
 ; int              Stack[0x8]:4   param_2
 ;
 ; XREF[5]:
+;   core_flashlit.cpp_FUN_004a1d4e at 004a1d99
+;   core_flashlit.cpp_FUN_004a1dcc at 004a1e29
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a4383
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490 at 004a5526
 ;   core_fldnotes.cpp_FUN_004a5700 at 004a578a
-;   unkaddr_004a1200.cpp_FUN_004a1d4e at 004a1d99
-;   unkaddr_004a1200.cpp_FUN_004a1dcc at 004a1e29
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d5dc8

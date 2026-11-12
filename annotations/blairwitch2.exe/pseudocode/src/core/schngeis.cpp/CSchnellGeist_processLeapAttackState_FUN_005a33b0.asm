@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_FUN_0059d8e0
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     PUSH 0x5f0121                       ; 005a33df | = "Chasing"
     ADD EAX,0x10af8                     ; 005a33e4
     PUSH EAX                            ; 005a33e9
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005a33ea
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a33ea
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005a33ef
     POP EBX                             ; 005a33f2
     RET                                 ; 005a33f3

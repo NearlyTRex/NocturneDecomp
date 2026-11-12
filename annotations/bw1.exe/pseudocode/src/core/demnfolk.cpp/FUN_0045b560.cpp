@@ -142,12 +142,12 @@ uint core_demnfolk_cpp_FUN_0045b560(CCharacter *param_1,float param_2)
         in_stack_fffffdd4 = (CCharacter *)0x45bd05;
         local_20 = core_demnfolk_cpp_FUN_00458890();
         if (((local_20 != 0) &&
-            (in_stack_fffffdd4 = param_1, iVar8 = unkafter_demnfolk_cpp_FUN_0045bf60(), iVar8 != 0))
-           && ((in_stack_fffffdd4 = pCVar1,
-               iVar8 = core_actor_cpp_isOfClass_FUN_0040c550(&pCVar1->base,"CBodyPart"),
-               iVar8 == 0 ||
-               (((pCVar1->base).direction_hint & 3U) ==
-                (*(uint *)(param_1[1].base.create_event + 0x24) & 3))))) {
+            (in_stack_fffffdd4 = param_1, iVar8 = core_demnfolk_cpp_FUN_0045bf60(), iVar8 != 0)) &&
+           ((in_stack_fffffdd4 = pCVar1,
+            iVar8 = core_actor_cpp_isOfClass_FUN_0040c550(&pCVar1->base,"CBodyPart"),
+            iVar8 == 0 ||
+            (((pCVar1->base).direction_hint & 3U) ==
+             (*(uint *)(param_1[1].base.create_event + 0x24) & 3))))) {
           afStack_f8[1] = (pCVar1->base).location.position.x - *local_18;
           afStack_f8[2] = (pCVar1->base).location.position.y - local_18[1];
           afStack_f8[3] = (pCVar1->base).location.position.z - local_18[2];
@@ -205,7 +205,7 @@ uint core_demnfolk_cpp_FUN_0045b560(CCharacter *param_1,float param_2)
     (pCVar1->base).create_event[0x2d] = '\0';
     (pCVar1->base).create_event[0x2e] = '\0';
     (pCVar1->base).create_event[0x2f] = '\0';
-    unkafter_demnfolk_cpp_FUN_0045d060(param_1);
+    core_demnfolk_cpp_FUN_0045d060(param_1);
     return 0;
   }
   iVar8 = *(int *)(param_1[1].base.create_event + 0x30);
@@ -218,12 +218,12 @@ uint core_demnfolk_cpp_FUN_0045b560(CCharacter *param_1,float param_2)
   uVar3 = *(uint *)(param_1[1].base.create_event + 0x34);
   *(float *)(param_1[1].base.create_event + 0x2c) =
        param_2 * fStack_234 + *(float *)(param_1[1].base.create_event + 0x2c);
-  iStack_38 = unkafter_demnfolk_cpp_FUN_0045bec0(param_1,uVar3);
+  iStack_38 = core_demnfolk_cpp_FUN_0045bec0(param_1,uVar3);
   iVar8 = -1;
   if ((((-1 < iStack_38) && (*(float *)(param_1[1].base.create_event + 0x2c) < 0.0)) &&
       (iVar7 = *(int *)(param_1[1].base.create_event + 0x30),
       iVar7 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x84))(iVar7,param_1), iVar7 == 3)) &&
-     (iVar7 = unkafter_demnfolk_cpp_FUN_0045bf60
+     (iVar7 = core_demnfolk_cpp_FUN_0045bf60
                         (param_1,*(uint *)(param_1[1].base.create_event + 0x34)), iVar7 != 0))
   {
     uVar2 = *(uint *)(param_1[1].base.create_event + 0x34);
@@ -362,7 +362,7 @@ LAB_0045bb56:
     (pCVar1->base).create_event[0x2d] = '\0';
     (pCVar1->base).create_event[0x2e] = -0x60;
     (pCVar1->base).create_event[0x2f] = 'A';
-    unkafter_demnfolk_cpp_FUN_0045d060(param_1);
+    core_demnfolk_cpp_FUN_0045d060(param_1);
     return 0;
   }
   if (iVar8 < 1) {

@@ -35,7 +35,7 @@
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 00563306
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_d_stranger_005eb660+1
+;   TerminatedCString s_actionPending_d_stranger_005eb661
 ;   TerminatedCString s_actionPending_d_stranger_005eb689
 ;   TerminatedCString s_Object_to_pick_up_is_now_005eb6b1
 ;   TerminatedCString s_actionPending_d_stranger_005eb6e4
@@ -218,8 +218,8 @@ section .text
         ;   XREF to: 00565858 (CONDITIONAL_JUMP)  ; LAB_00565858
     PUSH 0x75a                          ; 005658ab
     PUSH EDX                            ; 005658b0
-    MOV EAX,0x5eb661                    ; 005658b1 | s_actionPending_d_stranger_005eb660+1
-    PUSH EAX                            ; 005658b6 | s_actionPending_d_stranger_005eb660+1
+    MOV EAX,0x5eb661                    ; 005658b1 | = "actionPending = %d\nstranger.cpp line %d"
+    PUSH EAX                            ; 005658b6 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EAX,[0x006138e0]                ; 005658b7 | g_CEditorToolsPtr
     PUSH EAX                            ; 005658bc
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 005658bd

@@ -1,6 +1,6 @@
 // Name: core_hero.cpp_FUN_004d4840
 // Address: 004d4840
-// Address Range: [[004d4840, 004d48af] [004d48b3, 004d48c5]]
+// Address Range: [[004d4840, 004d48c5]]
 // Convention: unknown
 // Signature: undefined4 core_hero_cpp_FUN_004d4840(CCharacter *param_1,undefined4 param_2)
 

@@ -1,0 +1,190 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 148,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 9,
+    "suspect_types": [
+      "concat_reconstruction",
+      "extra_output",
+      "raw_address_constant",
+      "undefined_data",
+      "undefined_type",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a82ee",
+    "address_range": [
+      [
+        "004a82ee",
+        "004a836f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_flashlit.cpp_FUN_004a82ee",
+    "signature": "void core_flashlit_cpp_FUN_004a82ee(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9d90",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesSection_layout_FUN_004a9d90"
+    },
+    {
+      "addr": "004a8e00",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_reset_FUN_004a8e00"
+    },
+    {
+      "addr": "004a8eb0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_setRect_FUN_004a8eb0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fe374",
+      "name": "DAT_005fe374",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0d010",
+      "name": "DAT_01d0d010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0d210",
+      "name": "DAT_01d0d210",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.431818181818182,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 41,
+      "INT_ADD": 13,
+      "INT_AND": 26,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 24,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 12,
+      "INT_SUB": 16,
+      "INT_XOR": 3,
+      "LOAD": 8,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 14
+    },
+    "pcode_op_count": 195
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 8,
+      "match": "undefined3 extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005fe374",
+      "severity": "mild",
+      "text": "if (DAT_005fe374 != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005fe374",
+      "severity": "mild",
+      "text": "DAT_005fe374 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_01d0d010",
+      "severity": "mild",
+      "text": "DAT_01d0d010 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 22,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar1) == 0) break;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Raw hex literal 0x1d19d30 matches address of g_STextViewInstance (type STextView). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 21,
+      "match": "0x1d19d30",
+      "severity": "moderate",
+      "text": "bVar1 = core_fldnotes_cpp_SNotesSection_layout_FUN_004a9d90(this_ptr,0x1d19d30);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 22,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar1) == 0) break;",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

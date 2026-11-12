@@ -11,7 +11,7 @@
 ;
 ; XREF[5]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bd52
-;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 00446098
+;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 00446098
 ;   core_doc.cpp_FUN_0046e630 at 0046e695
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00539660 at 0053978f
 ;   core_stranger.cpp_FUN_00589f10 at 00589f75

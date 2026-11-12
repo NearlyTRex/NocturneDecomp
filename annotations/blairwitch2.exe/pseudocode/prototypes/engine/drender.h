@@ -149,6 +149,62 @@ void __cdecl CDemonRenderer::applyDirectTransform(CDemonRenderer *this_ptr,CVect
 // Address: 0046b350
 void __cdecl CDemonRenderer::applyScaledTransform(CDemonRenderer *this_ptr,CVector3f *euler_angles,CVector3f *translation);
 
+// Original: engine_drender.cpp_matrixPush_FUN_0046b490
+// Address: 0046b490
+void __cdecl matrixPush(void);
+
+// Original: engine_drender.cpp_pop_FUN_0046b4a0
+// Address: 0046b4a0
+void __cdecl pop(void);
+
+// Original: engine_drender.cpp_FUN_0046b4b0
+// Address: 0046b4b0
+void FUN_0046b4b0(undefined4 param_1,float param_2);
+
+// Original: engine_drender.cpp_FUN_0046b4d0
+// Address: 0046b4d0
+void FUN_0046b4d0(undefined4 param_1,float param_2);
+
+// Original: engine_drender.cpp_FUN_0046b4f0
+// Address: 0046b4f0
+void FUN_0046b4f0(undefined4 param_1,float param_2);
+
+// Original: engine_drender.cpp_FUN_0046b520
+// Address: 0046b520
+void FUN_0046b520(undefined4 param_1,int *param_2);
+
+// Original: engine_drender.cpp_FUN_0046b540
+// Address: 0046b540
+void FUN_0046b540(undefined4 param_1,float *param_2);
+
+// Original: engine_drender.cpp_FUN_0046b5c0
+// Address: 0046b5c0
+void FUN_0046b5c0(void);
+
+// Original: engine_drender.cpp_FUN_0046b5e0
+// Address: 0046b5e0
+void FUN_0046b5e0(void);
+
+// Original: engine_drender.cpp_FUN_0046b650
+// Address: 0046b650
+void FUN_0046b650(void);
+
+// Original: engine_drender.cpp_FUN_0046b670
+// Address: 0046b670
+void FUN_0046b670(void);
+
+// Original: engine_drender.cpp_FUN_0046b6f0
+// Address: 0046b6f0
+float FUN_0046b6f0(void);
+
+// Original: engine_drender.cpp_FUN_0046b710
+// Address: 0046b710
+void FUN_0046b710(undefined4 param_1,int param_2,int param_3,int param_4,int param_5);
+
+// Original: engine_drender.cpp_popViewport_FUN_0046b740
+// Address: 0046b740
+void __cdecl popViewport(void);
+
 // Original: engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0046b750
 // Address: 0046b750
 void __cdecl CDemonRenderer::renderCustomScanline(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,CustomScanlineFunc *scanline_renderer);

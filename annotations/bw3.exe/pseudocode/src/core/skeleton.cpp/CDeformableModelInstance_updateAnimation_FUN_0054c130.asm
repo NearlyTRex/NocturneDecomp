@@ -14,7 +14,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00418014
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426b32
 ;   core_charactr.cpp_FUN_0042cd70 at 0042cdec
-;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 004435a7
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 004435a7
 ;   core_cow.cpp_CZombieCow_process_FUN_00445130 at 0044537d
 ;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598c15
 ;   ... and 30 more

@@ -26,7 +26,7 @@ CHiram * core_hiram_cpp_CHiram_dtor_FUN_004d0f90(CHiram *this_ptr,uint flags)
   (this_ptr->base).base.base.vtable._ub = &g_CHiramVTable._ub;
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_00511d10(&(this_ptr->base).path_map,0);
   iVar2 = core_armour_cpp_FUN_0040f2b0(pCVar1[-1].height_cache[0x42] + 0x53,0);
-  iVar2 = unkaddr_0059d350_cpp_FUN_0059df70(iVar2 + -0x9c8,0);
+  iVar2 = core_muzzle_cpp_FUN_0059df70(iVar2 + -0x9c8,0);
   pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar2 + -0x34c),0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
                      ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[6] + 0x10),0);

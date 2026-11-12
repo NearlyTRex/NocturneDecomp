@@ -7,7 +7,7 @@
 ; CFieldNotes *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   unkaddr_004a1200.cpp_FUN_004a1200 at 004a136c
+;   core_flashlit.cpp_FUN_004a1200 at 004a136c
 ;
 ; *****************************************************************************
 

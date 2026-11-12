@@ -108,7 +108,7 @@ LAB_00552392:
       (pCVar4->sample_info).name[1] = cVar1;
       pCVar4 = (CSfxSample *)((pCVar4->sample_info).name + 2);
     } while (cVar1 != '\0');
-    iVar3 = unkafter_turret_cpp_CInStreamFile_tell_FUN_00573d40(local_18);
+    iVar3 = support_trstream_cpp_CInStreamFile_tell_FUN_00573d40(local_18);
     this_ptr->file_offset = iVar3;
     iVar3 = sound_sndmain_cpp_FUN_00551000(local_18,&this_ptr->file_offset,this_ptr);
     if (iVar3 == 0) goto LAB_005526aa;

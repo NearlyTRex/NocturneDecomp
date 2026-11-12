@@ -38,9 +38,9 @@
 ;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c7d05
 ;   core_kedward.cpp_CKedward_process_FUN_00590010 at 00590a42
 ;   core_prye.cpp_FUN_00521880 at 00521d33
+;   core_spawner.cpp_FUN_00563970 at 00563b14
 ;   core_trash.cpp_CTrash_process_FUN_0056d360 at 0056da02
 ;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 0058a08e
-;   engine_special.cpp_FUN_00563970 at 00563b14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005d0ade

@@ -15,8 +15,8 @@
 ;   core_bat.cpp_CBat_ctor_FUN_00410b50 at 00410b72
 ;   core_battery.cpp_CBattery_ctor_FUN_00414410 at 00414424
 ;   core_biggs.cpp_CBiggs_ctor_FUN_004149f0 at 00414a06
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00415d90 at 00415dc2
 ;   core_bodypart.cpp_SBodyPartModel_ctor_FUN_0041b170 at 0041b178
-;   core_boxactor.cpp_CBoxActor_ctor_FUN_00421ca0 at 00421cb4
 ;   ... and 35 more
 ;
 ; Called Functions:

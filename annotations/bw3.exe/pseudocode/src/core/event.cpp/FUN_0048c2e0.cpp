@@ -480,9 +480,9 @@ LAB_0048c367:
         }
         if (local_170 != 0) {
           if (DAT_007dffb4 != 0) {
-            unkafter_alphabit_cpp_FUN_004119a0();
+            core_bmppuzzl_cpp_FUN_004119a0();
           }
-          unkafter_alphabit_cpp_FUN_004119a0();
+          core_bmppuzzl_cpp_FUN_004119a0();
         }
       }
       else {

@@ -24,8 +24,8 @@ CDoc * core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)
   }
   this_ptr_00 = (this_ptr->base).base.base.particle_systems;
   (this_ptr->base).base.base.vtable._ub = &g_CDocVTable._ub;
-  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_stop_FUN_005a8100(this_ptr_00,0);
-  unkafter_superopt_cpp_CSimpleParticleSystem_release_FUN_005a8220(this_ptr_00);
+  core_bwspart_cpp_CSimpleParticleSystem_stop_FUN_005a8100(this_ptr_00,0);
+  core_bwspart_cpp_CSimpleParticleSystem_release_FUN_005a8220(this_ptr_00);
   pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70(&(this_ptr->lantern_box).physics_box,0);
   pCVar2 = core_actor_cpp_CDemonActor_dtor_FUN_00408930
                      ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal.y,1);

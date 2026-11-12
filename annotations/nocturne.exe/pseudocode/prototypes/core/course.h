@@ -5,17 +5,17 @@
 // Function prototypes for core/course.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_course.cpp_FUN_0043b500
+// Original: core_course.cpp_assignInt_FUN_0043b500
 // Address: 0043b500
-undefined4 * FUN_0043b500(void);
+int * __cdecl assignInt(int *dest,int *src);
 
 // Original: core_course.cpp_fmodfPositive_FUN_0043b510
 // Address: 0043b510
 float __cdecl fmodfPositive(float value,float modulus);
 
-// Original: core_course.cpp_FUN_0043b5b0
+// Original: core_course.cpp_skipLine_FUN_0043b5b0
 // Address: 0043b5b0
-void FUN_0043b5b0(void);
+void __cdecl skipLine(_FILE *file_handle);
 
 // Original: core_course.cpp_CCourse_ctor_FUN_0043b5d0
 // Address: 0043b5d0

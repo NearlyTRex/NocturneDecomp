@@ -9,7 +9,8 @@
 ; undefined        Stack[-0xa4]:1  local_a4
 ; undefined        Stack[-0x8c]:1  local_8c
 ;
-; XREF[6]:
+; XREF[7]:
+;   core_colonel.cpp_CColonel_process_FUN_00444550 at 0044499f
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c7887
 ;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e96cd
 ;   core_hero.cpp_FUN_004eca10 at 004eca40

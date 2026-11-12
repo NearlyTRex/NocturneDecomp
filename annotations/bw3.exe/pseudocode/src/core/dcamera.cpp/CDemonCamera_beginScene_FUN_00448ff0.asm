@@ -37,8 +37,8 @@
 ;   engine_console.cpp_FUN_00441ff0
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40
-;   engine_matrix.c_FUN_0046d090
-;   engine_matrix.c_FUN_0046d2f0
+;   engine_drender.cpp_FUN_0046d090
+;   engine_drender.cpp_FUN_0046d2f0
 ;   engine_special.cpp_clear_FUN_00566060
 ;   engine_special.cpp_clearScreen_FUN_00560d70
 ;   engine_special.cpp_clearZBuffer_FUN_00566210
@@ -164,8 +164,8 @@ section .text
     PUSH 0x0                            ; 00449151
     MOV EBP,dword ptr [0x005f2afc]      ; 00449153 | DAT_005f2afc
     PUSH EBP                            ; 00449159 | DAT_01bdd7e4
-    CALL engine_matrix.c_FUN_0046d2f0   ; 0044915a
-        ;   XREF to: 0046d2f0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d2f0()
+    CALL engine_drender.cpp_FUN_0046d2f0 ; 0044915a
+        ;   XREF to: 0046d2f0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d2f0()
     MOV EAX,[0x0135eac8]                ; 0044915f | DAT_0135eac8
     MOV EDX,dword ptr [0x01c6b5a0]      ; 00449164 | DAT_01c6b5a0
     MOV dword ptr [ESI + 0x11d4],0x0    ; 0044916a
@@ -197,8 +197,8 @@ section .text
     MOV EBP,dword ptr [0x005f2afc]      ; 004491df | DAT_005f2afc
     PUSH dword ptr [ESI + 0x38]         ; 004491e5
     PUSH EBP                            ; 004491e8 | DAT_01bdd7e4
-    CALL engine_matrix.c_FUN_0046d090   ; 004491e9
-        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d090()
+    CALL engine_drender.cpp_FUN_0046d090 ; 004491e9
+        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d090()
     ADD ESP,0x8                         ; 004491ee
     LEA EAX,[ESI + 0x10]                ; 004491f1
     PUSH EAX                            ; 004491f4

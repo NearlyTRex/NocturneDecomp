@@ -28,7 +28,7 @@
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044ce90
 ;   core_main.c_FUN_005030e0
 ;   crt_watcom.c__memcpy_FUN_004ab0c8
-;   engine_matrix.c_popViewport_FUN_00483c40
+;   engine_drender.cpp_popViewport_FUN_00483c40
 ;   engine_special.cpp_FUN_00582000
 ;   engine_special.cpp_masterZBuffer_FUN_00582a80
 ;
@@ -92,8 +92,8 @@ section .text
     MOV EAX,[0x00612560]                ; 0044d6a1 | DAT_00612560
         ;   Label: LAB_0044d6a1
     PUSH EAX                            ; 0044d6a6 | DAT_01bc120c
-    CALL engine_matrix.c_popViewport_FUN_00483c40 ; 0044d6a7
-        ;   XREF to: 00483c40 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_00483c40()
+    CALL engine_drender.cpp_popViewport_FUN_00483c40 ; 0044d6a7
+        ;   XREF to: 00483c40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_00483c40()
     ADD ESP,0x4                         ; 0044d6ac
     PUSH EBX                            ; 0044d6af
     CALL core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044ce90 ; 0044d6b0

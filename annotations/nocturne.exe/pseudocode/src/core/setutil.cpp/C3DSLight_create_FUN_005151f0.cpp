@@ -32,7 +32,7 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(C3DSLight *
   }
   core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(this_ptr_00);
   if (this_ptr->filter_count < 1) {
-    this_ptr_00->shadow_bounds_mode = 1;
+    this_ptr_00->shadow_bounds_mode = SHADOW_BOUNDS_CIRCULAR;
   }
   else {
     this_ptr_00->shadow_bounds_mode = this_ptr->blend_filter;

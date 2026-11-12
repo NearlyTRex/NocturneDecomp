@@ -127,6 +127,23 @@ class Image:
             buf.pop()
         return bytes(buf)
 
+    def range_bytes(self, start, end):
+        """Raw bytes [start,end) with reloc dwords zeroed and nothing trimmed, or None.
+
+        For a range whose end is known, such as a body range Ghidra exported:
+        trimming would cut a masked address off its last instruction
+        (`jmp [import]` ends in four zeroed bytes).
+        """
+        limit = self.section_end(start)
+        if limit is None or end <= start or end > limit:
+            return None
+        a = self.off(start)
+        buf = bytearray(self.data[a:a + end - start])
+        for va in range(start, end):
+            if va in self.reloc:
+                buf[va - start:va - start + 4] = b"\0\0\0\0"
+        return bytes(buf[:end - start])
+
 
 # ------------------------------------------------------------- tokenisation
 
@@ -169,8 +186,13 @@ def tokens(md, buf, va):
 
 
 def classify(a_buf, b_buf, md, va_a, va_b):
-    oa, da, ia, ra = tokens(md, a_buf, va_a)
-    ob, db, ib, rb = tokens(md, b_buf, va_b)
+    return classify_tokens(tokens(md, a_buf, va_a), tokens(md, b_buf, va_b))
+
+
+def classify_tokens(ta, tb):
+    """classify() over two tokens() results, for callers that compare one body many times."""
+    oa, da, ia, ra = ta
+    ob, db, ib, rb = tb
     if not oa or not ob:
         return "undecodable", 1.0, ""
 

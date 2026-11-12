@@ -4,7 +4,7 @@
 ; void core_charactr_cpp_FUN_00432f10(CCharacter *param_1,float param_2,int param_3)
 ;
 ;
-; XREF[7]:
+; XREF[8]:
 ;   core_bird.cpp_CBird_process_FUN_00415340 at 004155c2
 ;   core_doc.cpp_CDoc_process_FUN_004693e0 at 0046942b
 ;   core_dog.cpp_CZombieDog_process_FUN_004768a0 at 004768e8
@@ -12,6 +12,7 @@
 ;   core_moocow.cpp_CMooCow_process_FUN_00521480 at 005214ac
 ;   core_npc.cpp_CNPC_process_FUN_005317c0 at 00531a52
 ;   core_shadowsc.cpp_CShadowsc_process_FUN_00560630 at 005606ae
+;   core_yow.cpp_FUN_005b8440 at 005b84bc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_head_005d5cff

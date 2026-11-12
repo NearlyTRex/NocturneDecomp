@@ -87,7 +87,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
   if (((this_ptr->volumetric_enabled != 0) &&
       ((float)_DAT_005bb544 <= (g_CDemonSetPtr->active_fog).density_multiplier)) &&
      (g_CGamePtr->halo_mode != 0)) {
-    engine_matrix_c_FUN_0046d1a0(DAT_005f2afc);
+    engine_drender_cpp_FUN_0046d1a0(DAT_005f2afc);
     local_a4 = local_bc;
     (&local_a0)[(uint)bVar4 * -2] = afStack_b8[(uint)bVar4 * -2];
     (&local_a0)[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
@@ -108,7 +108,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
       local_18 = &(this_ptr->base).base.rotation_matrix;
       local_f4 = 0;
       core_dirmat_cpp_FUN_0045b800(local_18,&local_f8);
-      engine_matrix_c_FUN_0046d1c0(DAT_005f2afc);
+      engine_drender_cpp_FUN_0046d1c0(DAT_005f2afc);
       local_124[2] = local_140;
       local_124[(uint)bVar4 * -2 + 3] = afStack_13c[(uint)bVar4 * -2];
       local_124[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
@@ -259,7 +259,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
           } while (local_50 < 0x10);
           local_58 = local_58 + 1;
         } while (local_58 < 0x10);
-        engine_matrix_c_pop_FUN_0046d080();
+        engine_drender_cpp_pop_FUN_0046d080();
         return;
       }
     }

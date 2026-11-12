@@ -13,11 +13,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
+;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
+;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
-;   unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300
-;   unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     LEA EAX,[EBX + 0x154]               ; 004cdb75
     PUSH dword ptr [EBP + 0x92]         ; 004cdb7b
     PUSH EAX                            ; 004cdb81
-    CALL unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 004cdb82
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 004cdb82
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
     FLD float ptr [EBX + 0x438]         ; 004cdb87
     FSUB float ptr [EBP + 0x92]         ; 004cdb8d
     ADD ESP,0x8                         ; 004cdb93
@@ -227,8 +227,8 @@ section .text
     MOV ECX,dword ptr [0x0061ebfc]      ; 004cdd81 | g_CSimpleParticleSystemPtr
     PUSH 0x3f800000                     ; 004cdd87
     PUSH ECX                            ; 004cdd8c
-    CALL unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 004cdd8d
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 004cdd8d
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
     ADD ESP,0x34                        ; 004cdd92
     LEA ESP,[EBP + 0x7a]                ; 004cdd95
     POP EBP                             ; 004cdd98

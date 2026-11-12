@@ -10,13 +10,13 @@
 ; undefined        Stack[-0x28]:1  local_28
 ;
 ; XREF[7]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50 at 00412da1
 ;   core_inv.cpp_FUN_004dbe70 at 004dc102
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20 at 0053af58
 ;   core_set.cpp_FUN_005365c0 at 0053691a
 ;   core_setdir.cpp_FUN_0053f940 at 0054035a
 ;   core_setdir.cpp_FUN_00540cf0 at 00540dac
 ;   shape_spotview.cpp_FUN_005680b0 at 00568199
-;   unkafter_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50 at 00412da1
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550

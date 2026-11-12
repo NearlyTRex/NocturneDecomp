@@ -60,7 +60,7 @@
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00483c50
-;   engine_matrix.c_FUN_00483ae0
+;   engine_drender.cpp_FUN_00483ae0
 ;   engine_special.cpp_FUN_00580173
 ;
 ; *****************************************************************************
@@ -85,8 +85,8 @@ section .text
     PUSH ECX                            ; 0045ea87 | DAT_01bc120c
     LEA ESI,[ESP + 0x38]                ; 0045ea88
     LEA EDI,[ESP + 0x2c]                ; 0045ea8c
-    CALL engine_matrix.c_FUN_00483ae0   ; 0045ea90
-        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00483ae0()
+    CALL engine_drender.cpp_FUN_00483ae0 ; 0045ea90
+        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483ae0()
     LEA ESI,[ESP + 0x38]                ; 0045ea95
     ADD ESP,0x4                         ; 0045ea99
     LEA EAX,[ESP + 0x58]                ; 0045ea9c

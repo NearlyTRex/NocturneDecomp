@@ -13,24 +13,24 @@ void __cdecl core_confedrt_cpp_CConfederate_processStates_FUN_005a0b20(CConfeder
   int iVar2;
   
   if (mode == 0) {
-    unkaddr_0059d350_cpp_FUN_0059d650(&(this_ptr->base).state_machine,"RangeAttack");
+    core_muzzle_cpp_FUN_0059d650(&(this_ptr->base).state_machine,"RangeAttack");
   }
   else {
-    unkafter_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
+    core_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
     if ((mode == 1) &&
-       (iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0
-                          (&(this_ptr->base).state_machine,"RangeAttack"), iVar2 != 0)) {
+       (iVar2 = core_muzzle_cpp_FUN_0059daa0(&(this_ptr->base).state_machine,"RangeAttack")
+       , iVar2 != 0)) {
       core_confedrt_cpp_FUN_005a1030(this_ptr,delta_time);
       return;
     }
   }
   pSVar1 = &(this_ptr->base).state_machine;
   if (mode == 0) {
-    unkaddr_0059d350_cpp_FUN_0059d650(pSVar1,"MeleeAttack");
+    core_muzzle_cpp_FUN_0059d650(pSVar1,"MeleeAttack");
     return;
   }
   if ((mode == 1) &&
-     (iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar1,"MeleeAttack"), iVar2 != 0)) {
+     (iVar2 = core_muzzle_cpp_FUN_0059daa0(pSVar1,"MeleeAttack"), iVar2 != 0)) {
     core_confedrt_cpp_FUN_005a1180(this_ptr,delta_time);
     return;
   }

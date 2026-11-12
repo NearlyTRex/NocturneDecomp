@@ -56,7 +56,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
   if (this_ptr->weather_type == WEATHER_TYPE_NONE) {
     return;
   }
-  engine_matrix_c_FUN_0046b670(DAT_0060b280);
+  engine_drender_cpp_FUN_0046b670(DAT_0060b280);
   local_d4.x = local_74;
   *(int *)((int)&local_d4 + (uint)bVar7 * -8 + 4) = aiStack_70[(uint)bVar7 * -2];
   *(int *)((int)&local_d4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
@@ -163,7 +163,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
       engine_special_cpp_FUN_0055d723
                 (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_68);
       engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,&local_fc);
-      engine_matrix_c_pop_FUN_0046b4a0();
+      engine_drender_cpp_pop_FUN_0046b4a0();
     }
     uVar6 = uVar6 + 1;
     world_position = world_position + 1;
@@ -224,7 +224,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_0058ad40(CWeather *th
         engine_special_cpp_FUN_0055d723
                   (&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_98);
         engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,&local_fc);
-        engine_matrix_c_pop_FUN_0046b4a0();
+        engine_drender_cpp_pop_FUN_0046b4a0();
       }
       iVar3 = iVar3 + 1;
       local_14 = local_14 + 0xc;

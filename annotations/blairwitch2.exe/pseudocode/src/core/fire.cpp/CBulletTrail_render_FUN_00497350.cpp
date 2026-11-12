@@ -130,7 +130,7 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_00497350(CBulletTrail *this_p
           local_18 = (int)ROUND(fVar5);
           core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_0044e6a0
                     (this_ptr->model_ptr,0,(CKeyFramedModelInstance *)0x0,local_18);
-          engine_matrix_c_pop_FUN_0046b4a0();
+          engine_drender_cpp_pop_FUN_0046b4a0();
         }
         local_20 = local_20 + 1;
       } while (local_20 < local_28);

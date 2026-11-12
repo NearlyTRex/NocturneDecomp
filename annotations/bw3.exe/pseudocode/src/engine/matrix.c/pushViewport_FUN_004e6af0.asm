@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   height
 ;
 ; XREF[2]:
-;   engine_matrix.c_FUN_0046d2f0 at 0046d306
+;   engine_drender.cpp_FUN_0046d2f0 at 0046d306
 ;   shape_edittool.cpp_FUN_0047fa80 at 0047ffb5
 ;
 ; Referenced Globals:

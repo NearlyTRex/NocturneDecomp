@@ -60,3 +60,11 @@ CBoundingBox3D * __cdecl CMarquee::getBoundingBox(CMarquee *this_ptr,CBoundingBo
 // Original: core_marquee.cpp_CMarquee_dtor_FUN_004e85b0
 // Address: 004e85b0
 CMarquee * CMarquee::dtor(CMarquee *this_ptr,uint flags);
+
+// Original: core_marquee.cpp_FUN_004e8620
+// Address: 004e8620
+undefined8 FUN_004e8620(void);
+
+// Original: core_marquee.cpp_FUN_004e86a0
+// Address: 004e86a0
+void FUN_004e86a0(void);

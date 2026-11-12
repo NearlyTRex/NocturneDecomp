@@ -16,7 +16,7 @@
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
-; XREF[39]:
+; XREF[41]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411849
 ;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00412e46
 ;   core_biggs.cpp_CBiggs_process_FUN_00414b30 at 00414d9e
@@ -24,10 +24,10 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bf12
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423d3f
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00428bb6
-;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 004464ef
+;   core_colonel.cpp_FUN_00445140 at 00445183
+;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 004464ef
 ;   core_cow.cpp_CZombieCow_process_FUN_00448570 at 004487e4
-;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 00459224
-;   ... and 29 more
+;   ... and 31 more
 ;
 ; Referenced Globals:
 ;   undefined4 s_Bip01_L_Foot_005d5f2e+1

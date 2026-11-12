@@ -5,6 +5,10 @@
 // Function prototypes for core/main.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_main.c_staticInit_FUN_004e42c0
+// Address: 004e42c0
+void __cdecl staticInit(void);
+
 // Original: core_main.c_FUN_004e4330
 // Address: 004e4330
 void FUN_004e4330(undefined4 param_1);
@@ -24,3 +28,11 @@ void __cdecl FUN_004e44e0(int argc,char **argv);
 // Original: core_main.c_FUN_004e4c70
 // Address: 004e4c70
 void FUN_004e4c70(void);
+
+// Original: core_main.c_FUN_004e4d00
+// Address: 004e4d00
+undefined8 FUN_004e4d00(void);
+
+// Original: core_main.c_FUN_004e4d80
+// Address: 004e4d80
+void FUN_004e4d80(void);

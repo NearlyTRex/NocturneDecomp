@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x24]:1  local_24
 ;
 ; XREF[1]:
-;   core_patrpoin.cpp_FUN_0059c9c0 at 0059c9d9
+;   core_hpatrol.cpp_FUN_0059c9c0 at 0059c9d9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00601428

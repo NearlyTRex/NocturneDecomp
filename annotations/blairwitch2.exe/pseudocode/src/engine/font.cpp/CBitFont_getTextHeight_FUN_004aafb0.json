@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 123,
     "complexity_score": 75,
-    "cross_reference_count": 7,
+    "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -15,6 +15,12 @@
     "total_lines": 183
   },
   "cross_references": [
+    {
+      "addr": "004a1570",
+      "from_addr": "004a1618",
+      "name": "core_flashlit.cpp_FUN_004a1570",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004eb0e0",
       "from_addr": "004eb1ec",
@@ -40,6 +46,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0048546e",
+      "from_addr": "004854e5",
+      "name": "shape_edittool.cpp_FUN_0048546e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00485380",
       "from_addr": "00485403",
       "name": "shape_edittool.cpp_calculateButtonHeight_FUN_00485380",
@@ -49,12 +61,6 @@
       "addr": "0047b800",
       "from_addr": "0047b8cc",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a1570",
-      "from_addr": "004a1618",
-      "name": "unkaddr_004a1200.cpp_FUN_004a1570",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -79,7 +85,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 9,
+    "call_site_count": 10,
     "call_sites": [
       {
         "call_addr": "0047b8cc",
@@ -172,7 +178,18 @@
       {
         "call_addr": "004a1618",
         "call_type": "direct",
-        "caller": "unkaddr_004a1200.cpp_FUN_004a1570",
+        "caller": "core_flashlit.cpp_FUN_004a1570",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004854e5",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0048546e",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

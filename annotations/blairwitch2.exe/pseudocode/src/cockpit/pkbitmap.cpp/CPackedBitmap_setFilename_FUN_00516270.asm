@@ -7,9 +7,10 @@
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ;
-; XREF[2]:
+; XREF[3]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00517130 at 00517148
 ;   cockpit_pkbitmap.cpp_FUN_005168e0 at 005168fb
+;   cockpit_pkbitmap.cpp_FUN_00517400 at 0051747b
 ;
 ; Called Functions:
 ;   crt_string.c__strncpy_FUN_005b9cf0

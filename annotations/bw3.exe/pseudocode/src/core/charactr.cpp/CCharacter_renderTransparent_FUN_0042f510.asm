@@ -22,9 +22,9 @@
 ;
 ; XREF[6]:
 ;   core_bird.cpp_CBird_renderTransparent_FUN_0040ff30 at 0040ff64
-;   core_hostage.cpp_CDemnfolk_renderTransparent_FUN_00458200 at 004583a9
+;   core_demnfolk.cpp_CDemnfolk_renderTransparent_FUN_00458200 at 004583a9
 ;   core_prye.cpp_CPrye_renderTransparent_FUN_00522880 at 00522886
-;   core_tawiscar.cpp_CTawiscara_renderTransparent_FUN_00595d20 at 00595e48
+;   core_tawiscara.cpp_CTawiscara_renderTransparent_FUN_00595d20 at 00595e48
 ;   core_werewolf.cpp_CWerewolf_renderTransparent_FUN_0057f440 at 0057f568
 ;   core_zombie.cpp_CZombie_renderTransparent_FUN_0058beb0 at 0058c042
 ;

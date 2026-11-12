@@ -50,8 +50,8 @@
 ;   core_set.cpp_CDemonSet_isCameraPanning_FUN_0053b9a0
 ;   crt_stdlib.c__qsort_FUN_005a29e8
 ;   engine_console.cpp_FUN_00441ff0
-;   engine_matrix.c_FUN_0046d1a0
-;   engine_matrix.c_FUN_0046d1c0
+;   engine_drender.cpp_FUN_0046d1a0
+;   engine_drender.cpp_FUN_0046d1c0
 ;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
 ; *****************************************************************************
@@ -74,15 +74,15 @@ section .text
     PUSH EBX                            ; 00539f54 | DAT_01bdd7e4
     LEA ESI,[ESP + 0x64]                ; 00539f55
     MOV dword ptr [0x0211e350],ECX      ; 00539f59 | DAT_0211e350
-    CALL engine_matrix.c_FUN_0046d1a0   ; 00539f5f
-        ;   XREF to: 0046d1a0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d1a0()
+    CALL engine_drender.cpp_FUN_0046d1a0 ; 00539f5f
+        ;   XREF to: 0046d1a0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d1a0()
     ADD ESP,0x4                         ; 00539f64
     MOV ESI,dword ptr [0x005f2afc]      ; 00539f67 | DAT_005f2afc
     PUSH ESI                            ; 00539f6d | DAT_01bdd7e4
     LEA ESI,[ESP + 0x70]                ; 00539f6e
     LEA EDI,[ESP + 0x34]                ; 00539f72
-    CALL engine_matrix.c_FUN_0046d1c0   ; 00539f76
-        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d1c0()
+    CALL engine_drender.cpp_FUN_0046d1c0 ; 00539f76
+        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d1c0()
     LEA ESI,[ESP + 0x70]                ; 00539f7b
     ADD ESP,0x4                         ; 00539f7f
     MOVSD ES:EDI,ESI                    ; 00539f82

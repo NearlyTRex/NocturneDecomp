@@ -26,7 +26,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_process_FUN_0059f420(CBasicEnemy *thi
   iVar2 = core_charactr_cpp_CCharacter_processWalking_FUN_004287f0
                     ((CCharacter *)this_ptr,(float)in_stack_0000000c);
   if (iVar2 == 0) {
-    unkaddr_0059d350_cpp_FUN_0059da20(&this_ptr->state_machine,in_stack_0000000c);
+    core_muzzle_cpp_FUN_0059da20(&this_ptr->state_machine,in_stack_0000000c);
     (*(((this_ptr->base).base.base.vtable._uh)->_uh).canReachPickup)
               ((CHero *)this_ptr,in_stack_0000000c,1,unaff_EBP);
   }
@@ -54,9 +54,9 @@ void __cdecl core_basicene_cpp_CBasicEnemy_process_FUN_0059f420(CBasicEnemy *thi
 LAB_0059f4a2:
   (*(((this_ptr->base).base.base.vtable._uh)->_uh).doHeroAction)((CHero *)this_ptr);
   if (this_ptr->fade_state != 0) {
-    unkafter_basicene_cpp_FUN_0059f5b0();
+    core_basicene_cpp_FUN_0059f5b0();
   }
-  unkafter_basicene_cpp_FUN_0059f660();
+  core_basicene_cpp_FUN_0059f660();
   core_charactr_cpp_FUN_0042b5e0();
   (*(((this_ptr->base).base.base.vtable._uh)->_uh).isWeaponDrawn)((CHero *)this_ptr);
   return;

@@ -11,7 +11,7 @@
 ; XREF[12]:
 ;   core_carved.cpp_CCarved_setup_FUN_00425ab0 at 00425bd8
 ;   core_charactr.cpp_FUN_0042d500 at 0042d6ce
-;   core_constrct.cpp_CConstruct_setup_FUN_004425f0 at 0044278a
+;   core_construc.cpp_CConstruct_setup_FUN_004425f0 at 0044278a
 ;   core_cow.cpp_CZombieCow_setup_FUN_00444fd0 at 00445039
 ;   core_demnfolk.cpp_FUN_00454d20 at 00454e4b
 ;   core_gargoyle.cpp_CGargoyle_setup_FUN_004c4ee0 at 004c5082

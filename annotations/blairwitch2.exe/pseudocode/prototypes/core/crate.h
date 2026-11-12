@@ -5,13 +5,13 @@
 // Function prototypes for core/crate.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_crate.cpp_staticInit_FUN_00439080
-// Address: 00439080
+// Original: core_crate.cpp_staticInit_FUN_00439d00
+// Address: 00439d00
 void staticInit(void);
 
-// Original: core_crate.cpp_factoryFuncZombieCow_FUN_004390b0
-// Address: 004390b0
-void factoryFuncZombieCow(void);
+// Original: core_crate.cpp_factoryFuncCrate_FUN_00439d30
+// Address: 00439d30
+void factoryFuncCrate(void);
 
 // Original: core_crate.cpp_CCrate_getActorType_FUN_00439d50
 // Address: 00439d50

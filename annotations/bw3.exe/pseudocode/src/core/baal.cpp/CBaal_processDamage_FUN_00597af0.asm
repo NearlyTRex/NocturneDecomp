@@ -11,9 +11,9 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_baal.cpp_FUN_00597be0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
+;   core_enemy.cpp_FUN_0048a1b0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   unkafter_enemy.cpp_FUN_0048a1b0
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
         ;   XREF to: 00597b66 (CONDITIONAL_JUMP)  ; LAB_00597b66
     PUSH dword ptr [EDI + 0x4]          ; 00597b1f
     PUSH EBX                            ; 00597b22
-    CALL unkafter_enemy.cpp_FUN_0048a1b0 ; 00597b23
-        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_enemy.cpp_FUN_0048a1b0()
+    CALL core_enemy.cpp_FUN_0048a1b0    ; 00597b23
+        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0048a1b0()
     ADD ESP,0x8                         ; 00597b28
     TEST EAX,EAX                        ; 00597b2b
     JZ 0x00597b3c                       ; 00597b2d

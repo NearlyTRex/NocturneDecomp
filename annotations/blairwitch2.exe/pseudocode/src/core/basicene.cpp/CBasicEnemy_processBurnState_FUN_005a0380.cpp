@@ -75,7 +75,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
     this_ptr->flinch_active = 0;
     pfVar4 = &this_ptr->burn_timer;
     for (; iStack_20 < this_ptr->skeleton->bone_count; iStack_20 = iStack_20 + 1) {
-      iVar2 = unkaddr_005a7eb0_cpp_FUN_005a7ed0();
+      iVar2 = core_bwgrndma_cpp_FUN_005a7ed0();
       if (iVar2 != 0) {
         pcVar3 = strstr
                            (this_ptr->skeleton->bone_list[0].bone_name + iStack_24,"Bip01")
@@ -131,7 +131,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
             uVar6 = 0x3f000000;
             fStack_14 = fVar7;
             fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.8,1.0);
-            unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+            core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                       (pCStack_28,fStack_14,uVar6,uVar8,fVar7,uVar9,uVar10,uVar11,uVar12,pfVar13,
                        pfVar14,puVar15,uVar16);
             iVar2 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,0x32);
@@ -162,6 +162,6 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processBurnState_FUN_005a0380(CBasicE
     return;
   }
   this_ptr->burn_timer = 0.0;
-  unkaddr_0059d350_cpp_FUN_0059d880(&this_ptr->state_machine,"BurnComplete");
+  core_muzzle_cpp_FUN_0059d880(&this_ptr->state_machine,"BurnComplete");
   return;
 }

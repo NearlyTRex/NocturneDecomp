@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[2]:
-;   core_patrpoin.cpp_CPatrolPoint_dtor_FUN_0059c610 at 0059c629
+;   core_hpatrol.cpp_CPatrolPoint_dtor_FUN_0059c610 at 0059c629
 ;   core_waypoint.cpp_CWayPoint_dtor_FUN_00588480 at 0058848f
 ;
 ; Referenced Globals:

@@ -1093,7 +1093,7 @@ CDemonActor_vtable g_CHeroPlaceholderVTable = {
     .vfunc2 = (CDemonActor_vfunc2 *)core_actor_cpp_FUN_004088d0,
     .process = (CDemonActor_process *)core_actor_cpp_CDemonActor_process_FUN_004087a0,
     .renderOpaque = (CDemonActor_renderOpaque *)core_actor_cpp_FUN_004087d0,
-    .renderTransparent = (CDemonActor_renderTransparent *)caseD_5,
+    .renderTransparent = (CDemonActor_renderTransparent *)0x004D48B0,
     .renderBackground = (CDemonActor_renderBackground *)core_actor_cpp_CDemonActor_renderBackground_FUN_004087e0,
     .getBoundingBox = (CDemonActor_getBoundingBox *)core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004d4ba0,
     .processFootstep = (CDemonActor_processFootstep *)core_actor_cpp_CDemonActor_processFootstep_FUN_0040c8e0,
@@ -1476,7 +1476,7 @@ CDemonActor_vtable g_CPlatformVTable = {
     .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_00408a30,
     .calculateChecksum = (CDemonActor_calculateChecksum *)core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409c80,
     .getActorType = (CDemonActor_getActorType *)core_platfrm_cpp_CPlatform_getActorType_FUN_005110d0,
-    .dtor = (CDemonActor_dtor *)core_conveyor_cpp_CPlatform_dtor_FUN_00512cf0,
+    .dtor = (CDemonActor_dtor *)core_platfrm_cpp_CPlatform_dtor_FUN_00512cf0,
     .archive = (CDemonActor_archive *)core_platfrm_cpp_CPlatform_archive_FUN_00512420
 };
 CDemonActor_vtable g_CSimBoxVTable = {
@@ -1536,11 +1536,11 @@ CDemonActor_vtable g_CSimBoxVTable = {
     .archive = (CDemonActor_archive *)core_simbox_cpp_CSimBox_archive_FUN_00547660
 };
 CDemonActor_vtable g_CSpawnerVTable = {
-    .setup = (CDemonActor_setup *)engine_special_cpp_FUN_00563910,
+    .setup = (CDemonActor_setup *)core_spawner_cpp_FUN_00563910,
     .markResourcesInUse = (CDemonActor_markResourcesInUse *)core_actor_cpp_FUN_004088d0,
     .vfunc2 = (CDemonActor_vfunc2 *)core_actor_cpp_FUN_004088d0,
-    .process = (CDemonActor_process *)engine_special_cpp_FUN_00563970,
-    .renderOpaque = (CDemonActor_renderOpaque *)engine_special_cpp_FUN_00563e40,
+    .process = (CDemonActor_process *)core_spawner_cpp_FUN_00563970,
+    .renderOpaque = (CDemonActor_renderOpaque *)core_spawner_cpp_FUN_00563e40,
     .renderTransparent = (CDemonActor_renderTransparent *)core_actor_cpp_FUN_004087d0,
     .renderBackground = (CDemonActor_renderBackground *)core_actor_cpp_CDemonActor_renderBackground_FUN_004087e0,
     .getBoundingBox = (CDemonActor_getBoundingBox *)core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408950,
@@ -1587,9 +1587,9 @@ CDemonActor_vtable g_CSpawnerVTable = {
     .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408a00,
     .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_00408a30,
     .calculateChecksum = (CDemonActor_calculateChecksum *)core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409c80,
-    .getActorType = (CDemonActor_getActorType *)engine_special_cpp_CSpawner_getActorType_FUN_00563890,
-    .dtor = (CDemonActor_dtor *)engine_special_cpp_CSpawner_dtor_FUN_00563f70,
-    .archive = (CDemonActor_archive *)engine_special_cpp_FUN_00563e50
+    .getActorType = (CDemonActor_getActorType *)core_spawner_cpp_CSpawner_getActorType_FUN_00563890,
+    .dtor = (CDemonActor_dtor *)core_spawner_cpp_CSpawner_dtor_FUN_00563f70,
+    .archive = (CDemonActor_archive *)core_spawner_cpp_FUN_00563e50
 };
 CDemonActor_vtable g_CSpikeVTable = {
     .setup = (CDemonActor_setup *)core_spike_cpp_CSpike_setup_FUN_005669a0,
@@ -3046,7 +3046,7 @@ CEnemy_full_vtable g_CShadowVTable = {
         .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408a00,
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_00408a30,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130,
-        .getActorType = (CDemonActor_getActorType *)unkafter_setedit_cpp_CShadow_getActorType_FUN_005434f0,
+        .getActorType = (CDemonActor_getActorType *)core_shadow_cpp_CShadow_getActorType_FUN_005434f0,
         .dtor = (CDemonActor_dtor *)core_shadow_cpp_CShadow_dtor_FUN_005461d0,
         .archive = (CDemonActor_archive *)core_shadow_cpp_FUN_00545910
     },
@@ -3450,11 +3450,11 @@ CEnemy_full_vtable g_CShadowscVTable = {
 };
 CEnemy_full_vtable g_CTheHandVTable = {
     ._ub = {
-        .setup = (CDemonActor_setup *)core_thehand_cpp_CTheHand_setup_FUN_0056c0c0,
+        .setup = (CDemonActor_setup *)core_toxhand_cpp_CTheHand_setup_FUN_0056c0c0,
         .markResourcesInUse = (CDemonActor_markResourcesInUse *)core_charactr_cpp_CCharacter_markResourcesInUse_FUN_0042b400,
         .vfunc2 = (CDemonActor_vfunc2 *)core_charactr_cpp_FUN_0042b430,
-        .process = (CDemonActor_process *)core_thehand_cpp_CTheHand_process_FUN_0056c140,
-        .renderOpaque = (CDemonActor_renderOpaque *)core_thehand_cpp_CTheHand_renderOpaque_FUN_0056c880,
+        .process = (CDemonActor_process *)core_toxhand_cpp_CTheHand_process_FUN_0056c140,
+        .renderOpaque = (CDemonActor_renderOpaque *)core_toxhand_cpp_CTheHand_renderOpaque_FUN_0056c880,
         .renderTransparent = (CDemonActor_renderTransparent *)core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510,
         .renderBackground = (CDemonActor_renderBackground *)core_enemy_cpp_CEnemy_renderBackground_FUN_00489fc0,
         .getBoundingBox = (CDemonActor_getBoundingBox *)core_charactr_cpp_CCharacter_getBoundingBox_FUN_0042ff40,
@@ -3478,7 +3478,7 @@ CEnemy_full_vtable g_CTheHandVTable = {
         .processActionButton = (CDemonActor_processActionButton *)core_actor_cpp_CDemonActor_processActionButton_FUN_00409cd0,
         .setPositionAndOrientation = (CDemonActor_setPositionAndOrientation *)core_charactr_cpp_CCharacter_setPositionAndOrientation_FUN_0042b8d0,
         .onPickup = (CDemonActor_onPickup *)core_actor_cpp_CDemonActor_onPickup_FUN_00409d50,
-        .shouldIgnoreForTargeting = (CDemonActor_shouldIgnoreForTargeting *)core_thehand_cpp_CTheHand_shouldIgnoreForTargeting_FUN_0056cb90,
+        .shouldIgnoreForTargeting = (CDemonActor_shouldIgnoreForTargeting *)core_toxhand_cpp_CTheHand_shouldIgnoreForTargeting_FUN_0056cb90,
         .getAllowedMeleeAttackTypes = (CDemonActor_getAllowedMeleeAttackTypes *)core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409db0,
         .processMeleeHit = (CDemonActor_processMeleeHit *)core_actor_cpp_CDemonActor_processMeleeHit_FUN_00409f60,
         .fillAttackDamageInfo = (CDemonActor_fillAttackDamageInfo *)core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040aca0,
@@ -3501,9 +3501,9 @@ CEnemy_full_vtable g_CTheHandVTable = {
         .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408a00,
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_00408a30,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130,
-        .getActorType = (CDemonActor_getActorType *)core_thehand_cpp_CTheHand_getActorType_FUN_0056c050,
-        .dtor = (CDemonActor_dtor *)core_thehand_cpp_CTheHand_dtor_FUN_0056cc10,
-        .archive = (CDemonActor_archive *)core_thehand_cpp_CTheHand_archive_FUN_0056c8c0
+        .getActorType = (CDemonActor_getActorType *)core_toxhand_cpp_CTheHand_getActorType_FUN_0056c050,
+        .dtor = (CDemonActor_dtor *)core_toxhand_cpp_CTheHand_dtor_FUN_0056cc10,
+        .archive = (CDemonActor_archive *)core_toxhand_cpp_CTheHand_archive_FUN_0056c8c0
     },
     ._uc = {
         .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_0042c180,
@@ -3520,7 +3520,7 @@ CEnemy_full_vtable g_CTheHandVTable = {
         .testDamageLine = (CCharacter_testDamageLine *)core_charactr_cpp_CCharacter_testDamageLine_FUN_00430a30,
         .processDamage = (CCharacter_processDamage *)core_enemy_cpp_CEnemy_processDamage_FUN_00489b80,
         .getDeathState = (CCharacter_getDeathState *)core_charactr_cpp_CCharacter_getDeathState_FUN_00431000,
-        .attractActorToward = (CCharacter_attractActorToward *)core_thehand_cpp_CTheHand_attractActorToward_FUN_0056ca00,
+        .attractActorToward = (CCharacter_attractActorToward *)core_toxhand_cpp_CTheHand_attractActorToward_FUN_0056ca00,
         .canBeAttracted = (CCharacter_canBeAttracted *)core_charactr_cpp_FUN_004307b0,
         .getPartDominantBone = (CCharacter_getPartDominantBone *)core_charactr_cpp_CCharacter_getPartDominantBone_FUN_0042e370,
         .setDoorTarget = (CCharacter_setDoorTarget *)core_charactr_cpp_CCharacter_setDoorTarget_FUN_00431970,
@@ -3723,10 +3723,10 @@ CEnemy_full_vtable g_CWerewolfVTable = {
 };
 CEnemy_full_vtable g_CYowVTable = {
     ._ub = {
-        .setup = (CDemonActor_setup *)core_xform_cpp_FUN_005863e0,
+        .setup = (CDemonActor_setup *)core_yow_cpp_FUN_005863e0,
         .markResourcesInUse = (CDemonActor_markResourcesInUse *)core_charactr_cpp_CCharacter_markResourcesInUse_FUN_0042b400,
         .vfunc2 = (CDemonActor_vfunc2 *)core_charactr_cpp_FUN_0042b430,
-        .process = (CDemonActor_process *)core_xform_cpp_FUN_00586500,
+        .process = (CDemonActor_process *)core_yow_cpp_FUN_00586500,
         .renderOpaque = (CDemonActor_renderOpaque *)core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220,
         .renderTransparent = (CDemonActor_renderTransparent *)core_charactr_cpp_CCharacter_renderTransparent_FUN_0042f510,
         .renderBackground = (CDemonActor_renderBackground *)core_enemy_cpp_CEnemy_renderBackground_FUN_00489fc0,
@@ -3744,7 +3744,7 @@ CEnemy_full_vtable g_CYowVTable = {
         .getBlockVirtualDirectorFlag = (CDemonActor_getBlockVirtualDirectorFlag *)core_actor_cpp_FUN_00408a30,
         .allowBulletHoles = (CDemonActor_allowBulletHoles *)core_actor_cpp_FUN_00408a30,
         .updateCollisionData = (CDemonActor_updateCollisionData *)core_actor_cpp_CDemonActor_updateCollisionData_FUN_004096e0,
-        .getTargetPoints = (CDemonActor_getTargetPoints *)core_xform_cpp_FUN_00586fa0,
+        .getTargetPoints = (CDemonActor_getTargetPoints *)core_yow_cpp_FUN_00586fa0,
         .renderTargetPoints = (CDemonActor_renderTargetPoints *)core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409980,
         .canLookAt = (CDemonActor_canLookAt *)core_charactr_cpp_CCharacter_canLookAt_FUN_004331a0,
         .evaluateTriggerCondition = (CDemonActor_evaluateTriggerCondition *)core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409cc0,
@@ -3774,9 +3774,9 @@ CEnemy_full_vtable g_CYowVTable = {
         .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408a00,
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_00408a30,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130,
-        .getActorType = (CDemonActor_getActorType *)core_xform_cpp_CYow_getActorType_FUN_00586330,
-        .dtor = (CDemonActor_dtor *)core_xform_cpp_CYow_dtor_FUN_005872b0,
-        .archive = (CDemonActor_archive *)core_xform_cpp_FUN_00586e50
+        .getActorType = (CDemonActor_getActorType *)core_yow_cpp_CYow_getActorType_FUN_00586330,
+        .dtor = (CDemonActor_dtor *)core_yow_cpp_CYow_dtor_FUN_005872b0,
+        .archive = (CDemonActor_archive *)core_yow_cpp_FUN_00586e50
     },
     ._uc = {
         .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_0042c180,
@@ -3791,7 +3791,7 @@ CEnemy_full_vtable g_CYowVTable = {
         .onVictimLost = (CCharacter_onVictimLost *)core_enemy_cpp_CEnemy_onVictimLost_FUN_0048a100,
         .checkCylinderCollisionWorld = (CCharacter_checkCylinderCollisionWorld *)core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_004309a0,
         .testDamageLine = (CCharacter_testDamageLine *)core_charactr_cpp_CCharacter_testDamageLine_FUN_00430a30,
-        .processDamage = (CCharacter_processDamage *)core_xform_cpp_FUN_00586eb0,
+        .processDamage = (CCharacter_processDamage *)core_yow_cpp_FUN_00586eb0,
         .getDeathState = (CCharacter_getDeathState *)core_charactr_cpp_CCharacter_getDeathState_FUN_00431000,
         .attractActorToward = (CCharacter_attractActorToward *)core_charactr_cpp_CCharacter_attractActorToward_FUN_00430870,
         .canBeAttracted = (CCharacter_canBeAttracted *)core_charactr_cpp_FUN_004307b0,
@@ -4547,7 +4547,7 @@ CEnemy_full_vtable g_CTawiscaraVTable = {
         .vfunc2 = (CDemonActor_vfunc2 *)core_charactr_cpp_FUN_0042b430,
         .process = (CDemonActor_process *)core_tawiscara_cpp_FUN_00594000,
         .renderOpaque = (CDemonActor_renderOpaque *)core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220,
-        .renderTransparent = (CDemonActor_renderTransparent *)core_tawiscar_cpp_CTawiscara_renderTransparent_FUN_00595d20,
+        .renderTransparent = (CDemonActor_renderTransparent *)core_tawiscara_cpp_CTawiscara_renderTransparent_FUN_00595d20,
         .renderBackground = (CDemonActor_renderBackground *)core_enemy_cpp_CEnemy_renderBackground_FUN_00489fc0,
         .getBoundingBox = (CDemonActor_getBoundingBox *)core_charactr_cpp_CCharacter_getBoundingBox_FUN_0042ff40,
         .processFootstep = (CDemonActor_processFootstep *)core_actor_cpp_CDemonActor_processFootstep_FUN_0040c8e0,
@@ -4563,7 +4563,7 @@ CEnemy_full_vtable g_CTawiscaraVTable = {
         .getBlockVirtualDirectorFlag = (CDemonActor_getBlockVirtualDirectorFlag *)core_actor_cpp_FUN_00408a30,
         .allowBulletHoles = (CDemonActor_allowBulletHoles *)core_actor_cpp_FUN_00408a30,
         .updateCollisionData = (CDemonActor_updateCollisionData *)core_actor_cpp_CDemonActor_updateCollisionData_FUN_004096e0,
-        .getTargetPoints = (CDemonActor_getTargetPoints *)core_tawiscar_cpp_CTawiscara_getTargetPoints_FUN_00596310,
+        .getTargetPoints = (CDemonActor_getTargetPoints *)core_tawiscara_cpp_CTawiscara_getTargetPoints_FUN_00596310,
         .renderTargetPoints = (CDemonActor_renderTargetPoints *)core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409980,
         .canLookAt = (CDemonActor_canLookAt *)core_charactr_cpp_CCharacter_canLookAt_FUN_004331a0,
         .evaluateTriggerCondition = (CDemonActor_evaluateTriggerCondition *)core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409cc0,
@@ -4594,8 +4594,8 @@ CEnemy_full_vtable g_CTawiscaraVTable = {
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_00408a30,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130,
         .getActorType = (CDemonActor_getActorType *)core_tawiscara_cpp_CTawiscara_getActorType_FUN_00593dc0,
-        .dtor = (CDemonActor_dtor *)unkafter_tawiscar_cpp_CTawiscara_dtor_FUN_00596570,
-        .archive = (CDemonActor_archive *)core_tawiscar_cpp_CTawiscara_archive_FUN_00595e90
+        .dtor = (CDemonActor_dtor *)core_tawiscara_cpp_CTawiscara_dtor_FUN_00596570,
+        .archive = (CDemonActor_archive *)core_tawiscara_cpp_CTawiscara_archive_FUN_00595e90
     },
     ._uc = {
         .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_0042c180,
@@ -4610,8 +4610,8 @@ CEnemy_full_vtable g_CTawiscaraVTable = {
         .onVictimLost = (CCharacter_onVictimLost *)core_enemy_cpp_CEnemy_onVictimLost_FUN_0048a100,
         .checkCylinderCollisionWorld = (CCharacter_checkCylinderCollisionWorld *)core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_004309a0,
         .testDamageLine = (CCharacter_testDamageLine *)core_charactr_cpp_CCharacter_testDamageLine_FUN_00430a30,
-        .processDamage = (CCharacter_processDamage *)core_tawiscar_cpp_CTawiscara_processDamage_FUN_00595f90,
-        .getDeathState = (CCharacter_getDeathState *)core_tawiscar_cpp_CTawiscara_getDeathState_FUN_005962d0,
+        .processDamage = (CCharacter_processDamage *)core_tawiscara_cpp_CTawiscara_processDamage_FUN_00595f90,
+        .getDeathState = (CCharacter_getDeathState *)core_tawiscara_cpp_CTawiscara_getDeathState_FUN_005962d0,
         .attractActorToward = (CCharacter_attractActorToward *)core_charactr_cpp_CCharacter_attractActorToward_FUN_00430870,
         .canBeAttracted = (CCharacter_canBeAttracted *)core_charactr_cpp_FUN_004307b0,
         .getPartDominantBone = (CCharacter_getPartDominantBone *)core_charactr_cpp_CCharacter_getPartDominantBone_FUN_0042e370,
@@ -4620,7 +4620,7 @@ CEnemy_full_vtable g_CTawiscaraVTable = {
         .hasDoorTarget = (CCharacter_hasDoorTarget *)core_charactr_cpp_CCharacter_hasDoorTarget_FUN_004319b0,
         .dropCarriedObject = (CCharacter_dropCarriedObject *)core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00431c40,
         .getCarryObjToBodyXForm = (CCharacter_getCarryObjToBodyXForm *)core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00432000,
-        .setWalkTarget = (CCharacter_setWalkTarget *)core_tawiscar_cpp_CTawiscara_setWalkTarget_FUN_005956d0,
+        .setWalkTarget = (CCharacter_setWalkTarget *)core_tawiscara_cpp_CTawiscara_setWalkTarget_FUN_005956d0,
         .setWalkTargetImmediate = (CCharacter_setWalkTargetImmediate *)core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_004315c0,
         .setWalkTimeout = (CCharacter_setWalkTimeout *)core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00431610,
         .isWalkComplete = (CCharacter_isWalkComplete *)core_charactr_cpp_CCharacter_isWalkComplete_FUN_00431620
@@ -4866,8 +4866,8 @@ CEnemy_full_vtable g_CDarkwolfVTable = {
         .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408a00,
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_00408a30,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130,
-        .getActorType = (CDemonActor_getActorType *)unkafter_darkwolf_cpp_CDarkwolf_getActorType_FUN_00598770,
-        .dtor = (CDemonActor_dtor *)unkafter_darkwolf_cpp_CDarkwolf_dtor_FUN_005990d0,
+        .getActorType = (CDemonActor_getActorType *)core_darkwolf_cpp_CDarkwolf_getActorType_FUN_00598770,
+        .dtor = (CDemonActor_dtor *)core_darkwolf_cpp_CDarkwolf_dtor_FUN_005990d0,
         .archive = (CDemonActor_archive *)core_darkwolf_cpp_CDarkwolf_archive_FUN_00598f30
     },
     ._uc = {
@@ -4958,7 +4958,7 @@ CEnemy_full_vtable g_CWhitewolfVTable = {
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_00408a30,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130,
         .getActorType = (CDemonActor_getActorType *)core_darkwolf_cpp_CWhitewolf_getActorType_FUN_00598fd0,
-        .dtor = (CDemonActor_dtor *)unkafter_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030,
+        .dtor = (CDemonActor_dtor *)core_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030,
         .archive = (CDemonActor_archive *)core_darkwolf_cpp_CDarkwolf_archive_FUN_00598f30
     },
     ._uc = {
@@ -5323,8 +5323,8 @@ CHero_full_vtable g_CPryeVTable = {
         .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408a00,
         .getPathMap = (CDemonActor_getPathMap *)core_hero_cpp_CHero_getPathMap_FUN_004d2a70,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130,
-        .getActorType = (CDemonActor_getActorType *)core_stranger_cpp_CPrye_getActorType_FUN_00517f70,
-        .dtor = (CDemonActor_dtor *)unkafter_stranger_cpp_CPrye_dtor_FUN_00527300,
+        .getActorType = (CDemonActor_getActorType *)core_prye_cpp_CPrye_getActorType_FUN_00517f70,
+        .dtor = (CDemonActor_dtor *)core_prye_cpp_CPrye_dtor_FUN_00527300,
         .archive = (CDemonActor_archive *)core_prye_cpp_CPrye_archive_FUN_00521f40
     },
     ._uc = {
@@ -5767,14 +5767,14 @@ CWeapon_full_vtable g_CLightStaffVTable = {
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_00408a30,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409c80,
         .getActorType = (CDemonActor_getActorType *)core_lightsta_cpp_CLightStaff_getActorType_FUN_004e0f60,
-        .dtor = (CDemonActor_dtor *)unkafter_lightgun_cpp_CLightStaff_dtor_FUN_004e3f10,
+        .dtor = (CDemonActor_dtor *)core_lightsta_cpp_CLightStaff_dtor_FUN_004e3f10,
         .archive = (CDemonActor_archive *)core_weapon_cpp_CWeapon_archive_FUN_0057b2a0
     },
     ._uw = {
         .onFired = (CWeapon_onFired *)core_weapon_cpp_CWeapon_onFired_FUN_0057bba0,
         .setWeaponState = (CWeapon_setWeaponState *)core_lightsta_cpp_CLightStaff_setWeaponState_FUN_004e3e60,
         .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_lightsta_cpp_CLightStaff_getMuzzlePoint_FUN_004e3de0,
-        .fire = (CWeapon_fire *)core_lightgun_cpp_FUN_004e1070,
+        .fire = (CWeapon_fire *)core_lightsta_cpp_FUN_004e1070,
         .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_0057b930,
         .getDamage = (CWeapon_getDamage *)core_lightsta_cpp_CLightStaff_getDamage_FUN_004e3db0,
         .renderAimBeam = (CWeapon_renderAimBeam *)core_weapon_cpp_CWeapon_renderAimBeam_FUN_0057bb60,
@@ -6284,13 +6284,13 @@ CZombiePriest_full_vtable g_CZombiePriestVTable = {
         .playAmbientSound = (CDemonActor_playAmbientSound *)core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408c80,
         .playSoundWithDelay = (CDemonActor_playSoundWithDelay *)core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408ca0,
         .playAmbientSoundWithDelay = (CDemonActor_playAmbientSoundWithDelay *)core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408cd0,
-        .getCollisionType = (CDemonActor_getCollisionType *)core_zombprie_cpp_CZombiePriest_getCollisionType_FUN_0058fc60,
+        .getCollisionType = (CDemonActor_getCollisionType *)core_zombiepriest_cpp_CZombiePriest_getCollisionType_FUN_0058fc60,
         .cylinderGroundCheck = (CDemonActor_cylinderGroundCheck *)core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408a40,
         .getGroundType = (CDemonActor_getGroundType *)core_actor_cpp_FUN_00408a30,
         .getBlockVirtualDirectorFlag = (CDemonActor_getBlockVirtualDirectorFlag *)core_actor_cpp_FUN_00408a30,
         .allowBulletHoles = (CDemonActor_allowBulletHoles *)core_actor_cpp_FUN_00408a30,
         .updateCollisionData = (CDemonActor_updateCollisionData *)core_actor_cpp_CDemonActor_updateCollisionData_FUN_004096e0,
-        .getTargetPoints = (CDemonActor_getTargetPoints *)core_zombprie_cpp_CZombiePriest_getTargetPoints_FUN_0058fb20,
+        .getTargetPoints = (CDemonActor_getTargetPoints *)core_zombiepriest_cpp_CZombiePriest_getTargetPoints_FUN_0058fb20,
         .renderTargetPoints = (CDemonActor_renderTargetPoints *)core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409980,
         .canLookAt = (CDemonActor_canLookAt *)core_charactr_cpp_CCharacter_canLookAt_FUN_004331a0,
         .evaluateTriggerCondition = (CDemonActor_evaluateTriggerCondition *)core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409cc0,
@@ -6321,8 +6321,8 @@ CZombiePriest_full_vtable g_CZombiePriestVTable = {
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_00408a30,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433130,
         .getActorType = (CDemonActor_getActorType *)core_zombiepriest_cpp_CZombiePriest_getActorType_FUN_0058d4d0,
-        .dtor = (CDemonActor_dtor *)unkafter_zombiepr_cpp_CZombiePriest_dtor_FUN_0058fc80,
-        .archive = (CDemonActor_archive *)core_zombprie_cpp_CZombiePriest_archive_FUN_0058f510
+        .dtor = (CDemonActor_dtor *)core_zombiepriest_cpp_CZombiePriest_dtor_FUN_0058fc80,
+        .archive = (CDemonActor_archive *)core_zombiepriest_cpp_CZombiePriest_archive_FUN_0058f510
     },
     ._uc = {
         .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_0042c180,
@@ -6337,7 +6337,7 @@ CZombiePriest_full_vtable g_CZombiePriestVTable = {
         .onVictimLost = (CCharacter_onVictimLost *)core_enemy_cpp_CEnemy_onVictimLost_FUN_0048a100,
         .checkCylinderCollisionWorld = (CCharacter_checkCylinderCollisionWorld *)core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_004309a0,
         .testDamageLine = (CCharacter_testDamageLine *)core_charactr_cpp_CCharacter_testDamageLine_FUN_00430a30,
-        .processDamage = (CCharacter_processDamage *)core_zombprie_cpp_CZombiePriest_processDamage_FUN_0058f990,
+        .processDamage = (CCharacter_processDamage *)core_zombiepriest_cpp_CZombiePriest_processDamage_FUN_0058f990,
         .getDeathState = (CCharacter_getDeathState *)core_charactr_cpp_CCharacter_getDeathState_FUN_00431000,
         .attractActorToward = (CCharacter_attractActorToward *)core_charactr_cpp_CCharacter_attractActorToward_FUN_00430870,
         .canBeAttracted = (CCharacter_canBeAttracted *)core_charactr_cpp_FUN_004307b0,
@@ -6346,7 +6346,7 @@ CZombiePriest_full_vtable g_CZombiePriestVTable = {
         .clearDoorTarget = (CCharacter_clearDoorTarget *)core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00431980,
         .hasDoorTarget = (CCharacter_hasDoorTarget *)core_charactr_cpp_CCharacter_hasDoorTarget_FUN_004319b0,
         .dropCarriedObject = (CCharacter_dropCarriedObject *)core_charactr_cpp_CCharacter_dropCarriedObject_FUN_00431c40,
-        .getCarryObjToBodyXForm = (CCharacter_getCarryObjToBodyXForm *)core_zombprie_cpp_CZombiePriest_getCarryObjToBodyXForm_FUN_0058ecd0,
+        .getCarryObjToBodyXForm = (CCharacter_getCarryObjToBodyXForm *)core_zombiepriest_cpp_CZombiePriest_getCarryObjToBodyXForm_FUN_0058ecd0,
         .setWalkTarget = (CCharacter_setWalkTarget *)core_charactr_cpp_CCharacter_setWalkTarget_FUN_00431470,
         .setWalkTargetImmediate = (CCharacter_setWalkTargetImmediate *)core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_004315c0,
         .setWalkTimeout = (CCharacter_setWalkTimeout *)core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00431610,
@@ -6357,18 +6357,18 @@ CZombiePriest_full_vtable g_CZombiePriestVTable = {
         .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_00489730,
         .randomize = (CEnemy_randomize *)core_enemy_cpp_CEnemy_randomize_FUN_0048a220
     },
-    ._uzombiepriest = {.vfunc83 = (CZombiePriest_vfunc83 *)unkafter_zombiepr_cpp_FUN_0058f610}
+    ._uzombiepriest = {.vfunc83 = (CZombiePriest_vfunc83 *)core_zombiepriest_cpp_FUN_0058f610}
 };
 
 // WatcomDestructorCall
 WatcomDestructorCall DAT_005E01B0 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)unkaddr_004a76f0_cpp_SNotesSection_arrdtor6_FUN_004ad470,
+    .destructor_func = (void *)core_fldnotes_cpp_SNotesSection_arrdtor6_FUN_004ad470,
     .object_instance = (void *)&SNotesSection_ARRAY_01d0d214
 };
 WatcomDestructorCall DAT_005E01BC = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)unkaddr_004a76f0_cpp_SNotesMap_arrdtor10_FUN_004ad450,
+    .destructor_func = (void *)core_fldnotes_cpp_SNotesMap_arrdtor10_FUN_004ad450,
     .object_instance = (void *)&SNotesMap_ARRAY_01d0e370
 };
 WatcomDestructorCall DAT_005E01C8 = {
@@ -6378,7 +6378,7 @@ WatcomDestructorCall DAT_005E01C8 = {
 };
 WatcomDestructorCall DAT_005E01D4 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)unkaddr_004a76f0_cpp_CAlphaBitmap_arrdtor6_FUN_004ad430,
+    .destructor_func = (void *)core_fldnotes_cpp_CAlphaBitmap_arrdtor6_FUN_004ad430,
     .object_instance = (void *)&CAlphaBitmap_ARRAY_01d19bc0
 };
 WatcomDestructorCall DAT_005E01E0 = {
@@ -6558,7 +6558,7 @@ WatcomDestructorCall DAT_005E28FC = {
 };
 WatcomDestructorCall DAT_005E2950 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)unkafter_minecar_cpp_CMini3D_dtor_FUN_004ec7f0,
+    .destructor_func = (void *)engine_mini3d_cpp_CMini3D_dtor_FUN_004ec7f0,
     .object_instance = (void *)&g_CMini3DInstance
 };
 WatcomDestructorCall DAT_005E2BB0 = {
@@ -6762,7 +6762,7 @@ WatcomTypeInfo g_PageResource_MapTypeInfo = {
     .type_flags = 0x00020100,
     .ctor = nullptr,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_fldnotes_cpp_SPageResourceMap_dtor_FUN_004ad3c0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004ad3c0,
     .instance_size = (int)sizeof(SPageResourceMap),
     .class_name = (char *)s_PageResource_Map_005fe7c4
 };
@@ -7026,7 +7026,7 @@ WatcomTypeInfo g_CLightStaffTypeInfo = {
     .type_flags = 0x00020100,
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_lightgun_cpp_CLightStaff_dtor_FUN_004e3f10,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_lightsta_cpp_CLightStaff_dtor_FUN_004e3f10,
     .instance_size = (int)sizeof(CLightStaff),
     .class_name = (char *)s_CLightStaff_006002dc
 };
@@ -7056,9 +7056,9 @@ WatcomTypeInfo g_CMoonTypeInfo = {
 };
 WatcomTypeInfo g_CMini3DTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_minecar_cpp_CMini3D_ctor_FUN_004ec730,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)engine_mini3d_cpp_CMini3D_ctor_FUN_004ec730,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_minecar_cpp_CMini3D_dtor_FUN_004ec7f0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)engine_mini3d_cpp_CMini3D_dtor_FUN_004ec7f0,
     .instance_size = (int)sizeof(CMini3D),
     .class_name = (char *)s_CMini3D_00600510
 };
@@ -7194,7 +7194,7 @@ WatcomTypeInfo g_CPlatformTypeInfo = {
     .type_flags = 0x00020100,
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_platfrm_cpp_CPlatform_ctor_FUN_005110e0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_conveyor_cpp_CPlatform_dtor_FUN_00512cf0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_platfrm_cpp_CPlatform_dtor_FUN_00512cf0,
     .instance_size = (int)sizeof(CPlatform),
     .class_name = (char *)s_CPlatform_00603720
 };
@@ -7224,9 +7224,9 @@ WatcomTypeInfo g_CDemonPodTypeInfo = {
 };
 WatcomTypeInfo g_CPryeTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_stranger_cpp_CPrye_ctor_FUN_00517f80,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_prye_cpp_CPrye_ctor_FUN_00517f80,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_stranger_cpp_CPrye_dtor_FUN_00527300,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_prye_cpp_CPrye_dtor_FUN_00527300,
     .instance_size = (int)sizeof(CPrye),
     .class_name = (char *)s_CPrye_00603980
 };
@@ -7440,9 +7440,9 @@ WatcomTypeInfo g_STrainNoiseTypeInfo = {
 };
 WatcomTypeInfo g_CSpawnerTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)engine_special_cpp_CSpawner_ctor_FUN_005638a0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_spawner_cpp_CSpawner_ctor_FUN_005638a0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)engine_special_cpp_CSpawner_dtor_FUN_00563f70,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_spawner_cpp_CSpawner_dtor_FUN_00563f70,
     .instance_size = (int)sizeof(CSpawner),
     .class_name = (char *)s_CSpawner_00606718
 };
@@ -7520,9 +7520,9 @@ WatcomTypeInfo g_CTommyGunTypeInfo = {
 };
 WatcomTypeInfo g_CTheHandTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_thehand_cpp_CTheHand_ctor_FUN_0056c060,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_toxhand_cpp_CTheHand_ctor_FUN_0056c060,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_thehand_cpp_CTheHand_dtor_FUN_0056cc10,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_toxhand_cpp_CTheHand_dtor_FUN_0056cc10,
     .instance_size = (int)sizeof(CTheHand),
     .class_name = (char *)s_CTheHand_00606930
 };
@@ -7560,7 +7560,7 @@ WatcomTypeInfo g_SocketTypeInfo = {
 };
 WatcomTypeInfo g_IpAddrTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_trisock_cpp_IpAddr_ctor_FUN_005722f0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)support_trisock_cpp_IpAddr_ctor_FUN_005722f0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)core_netgame_cpp_IpAddr_copy_FUN_005084a0,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
     .instance_size = 0x00000004 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
@@ -7656,9 +7656,9 @@ WatcomTypeInfo g_CWinFontTypeInfo = {
 };
 WatcomTypeInfo g_CYowTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_xform_cpp_CYow_ctor_FUN_00586340,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_yow_cpp_CYow_ctor_FUN_00586340,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_xform_cpp_CYow_dtor_FUN_005872b0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_yow_cpp_CYow_dtor_FUN_005872b0,
     .instance_size = (int)sizeof(CYow),
     .class_name = (char *)s_CYow_0060729c
 };
@@ -7714,7 +7714,7 @@ WatcomTypeInfo g_CZombiePriestTypeInfo = {
     .type_flags = 0x00020100,
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_zombiepriest_cpp_CZombiePriest_ctor_FUN_0058d4e0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_zombiepr_cpp_CZombiePriest_dtor_FUN_0058fc80,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_zombiepriest_cpp_CZombiePriest_dtor_FUN_0058fc80,
     .instance_size = (int)sizeof(CZombiePriest),
     .class_name = (char *)s_CZombiePriest_0060734c
 };
@@ -7738,7 +7738,7 @@ WatcomTypeInfo g_CTawiscaraTypeInfo = {
     .type_flags = 0x00020100,
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_tawiscar_cpp_CTawiscara_dtor_FUN_00596570,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_tawiscara_cpp_CTawiscara_dtor_FUN_00596570,
     .instance_size = (int)sizeof(CTawiscara),
     .class_name = (char *)s_CTawiscara_006073ac
 };
@@ -7760,17 +7760,17 @@ WatcomTypeInfo g_CHecaitomixTypeInfo = {
 };
 WatcomTypeInfo g_CWhitewolfTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_darkwolf_cpp_CWhitewolf_ctor_FUN_00598fe0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_darkwolf_cpp_CWhitewolf_ctor_FUN_00598fe0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030,
     .instance_size = (int)sizeof(CWhitewolf),
     .class_name = (char *)s_CWhitewolf_00607408
 };
 WatcomTypeInfo g_CDarkwolfTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005a2870,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_darkwolf_cpp_CDarkwolf_dtor_FUN_005990d0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_darkwolf_cpp_CDarkwolf_dtor_FUN_005990d0,
     .instance_size = (int)sizeof(CDarkwolf),
     .class_name = (char *)s_CDarkwolf_006073f4
 };
@@ -7834,7 +7834,7 @@ WatcomTypeInfo g_CAsgayaTypeInfo = {
 // undefined1*
 undefined1* g_CBloodParticleVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00509e40;
 undefined1* g_CDemonPodVTable = (undefined1*)core_podmain_cpp_CDemonPod_dtor_FUN_00515490;
-undefined1* g_CInStreamFileVTable = (undefined1*)unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40;
+undefined1* g_CInStreamFileVTable = (undefined1*)support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40;
 undefined1* g_CInStreamMemoryVTable = (undefined1*)support_trstream_cpp_CInStreamMemory_dtor_FUN_005741d0;
 undefined1* g_COutStreamFileVTable = (undefined1*)support_trstream_cpp_COutStreamFile_dtor_FUN_00574850;
 undefined1* g_COutStreamMemoryVTable = (undefined1*)support_trstream_cpp_COutStreamMemory_dtor_FUN_00574b50;
@@ -7844,11 +7844,11 @@ undefined1* g_COutStreamDebugVTable = (undefined1*)support_trstream_cpp_COutStre
 undefined4 DAT_005e8838 = 0x00000000;
 
 // void*
-void* g_SPageResourceVTable = (void*)unkaddr_004a76f0_cpp_SPageResource_dtor_FUN_004a83a0;
+void* g_SPageResourceVTable = (void*)core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0;
 void* g_SPageResourceTextVTable = (void*)core_fldnotes_cpp_SPageResourceText_dtor_FUN_004a8510;
 void* g_SPageResourceBitmapVTable = (void*)core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004a8710;
 void* g_SPageResourceTwanaCharacterVTable = (void*)core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004a8830;
 void* g_SPageResourceTwanaEntryVTable = (void*)core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980;
-void* g_SPageResourceMapVTable = (void*)unkafter_fldnotes_cpp_SPageResourceMap_dtor_FUN_004ad3c0;
+void* g_SPageResourceMapVTable = (void*)core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004ad3c0;
 void* g_CDeformableModelInstanceVTable = (void*)core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80;
 

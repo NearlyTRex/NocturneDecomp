@@ -21,6 +21,10 @@ CDemonActorType * CLightStaff::getActorType(CLightStaff *this_ptr);
 // Address: 004e0f70
 CLightStaff * CLightStaff::ctor(CLightStaff *this_ptr);
 
+// Original: core_lightsta.cpp_FUN_004e1070
+// Address: 004e1070
+undefined4 FUN_004e1070(CCharacter *param_1);
+
 // Original: core_lightsta.cpp_CLightStaff_process_FUN_004e2050
 // Address: 004e2050
 void __cdecl CLightStaff::process(CLightStaff *this_ptr,float delta_time);
@@ -40,3 +44,7 @@ void __cdecl CLightStaff::setWeaponState(CLightStaff *this_ptr,int weapon_state)
 // Original: core_lightsta.cpp_CLightStaff_setup_FUN_004e3eb0
 // Address: 004e3eb0
 void __cdecl CLightStaff::setup(CLightStaff *this_ptr);
+
+// Original: core_lightsta.cpp_CLightStaff_dtor_FUN_004e3f10
+// Address: 004e3f10
+CLightStaff * CLightStaff::dtor(CLightStaff *this_ptr,uint flags);

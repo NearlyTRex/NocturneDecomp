@@ -14,9 +14,9 @@
 ;   engine_dosio.cpp_CFileFinder_dtor_FUN_00479340
 ;   engine_dosio.cpp_CFileFinder_findNext_FUN_004793e0
 ;   engine_dosio.cpp_CFileFinder_openSearch_FUN_00479360
+;   engine_dosio.cpp_FUN_00479770
 ;   shape_edittool.cpp_CStrList_add_FUN_004994d0
 ;   shape_edittool.cpp_wildcardStringMatch_FUN_0049dea0
-;   unkafter_dosio.cpp_FUN_00479770
 ;
 ; *****************************************************************************
 
@@ -36,16 +36,16 @@ section .text
     PUSH EAX                            ; 0049a32d
     PUSH 0x5dc5fd                       ; 0049a32e
     PUSH EBX                            ; 0049a333
-    CALL unkafter_dosio.cpp_FUN_00479770 ; 0049a334
-        ;   XREF to: 00479770 (UNCONDITIONAL_CALL)  ; undefined unkafter_dosio.cpp_FUN_00479770()
+    CALL engine_dosio.cpp_FUN_00479770  ; 0049a334
+        ;   XREF to: 00479770 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00479770()
     ADD ESP,0xc                         ; 0049a339
     LEA EAX,[ESP + 0x420]               ; 0049a33c
     PUSH EAX                            ; 0049a343
     LEA EAX,[ESP + 0x320]               ; 0049a344
     PUSH EAX                            ; 0049a34b
     PUSH EBP                            ; 0049a34c
-    CALL unkafter_dosio.cpp_FUN_00479770 ; 0049a34d
-        ;   XREF to: 00479770 (UNCONDITIONAL_CALL)  ; undefined unkafter_dosio.cpp_FUN_00479770()
+    CALL engine_dosio.cpp_FUN_00479770  ; 0049a34d
+        ;   XREF to: 00479770 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00479770()
     ADD ESP,0xc                         ; 0049a352
     MOV EAX,ESP                         ; 0049a355
     PUSH EAX                            ; 0049a357
@@ -117,8 +117,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0049a3ef
     PUSH EAX                            ; 0049a3f3
     PUSH EBX                            ; 0049a3f4
-    CALL unkafter_dosio.cpp_FUN_00479770 ; 0049a3f5
-        ;   XREF to: 00479770 (UNCONDITIONAL_CALL)  ; undefined unkafter_dosio.cpp_FUN_00479770()
+    CALL engine_dosio.cpp_FUN_00479770  ; 0049a3f5
+        ;   XREF to: 00479770 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00479770()
     ADD ESP,0xc                         ; 0049a3fa
     PUSH EDI                            ; 0049a3fd
     LEA EAX,[ESP + 0x118]               ; 0049a3fe
@@ -146,8 +146,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0049a435
     PUSH EAX                            ; 0049a439
     PUSH EBX                            ; 0049a43a
-    CALL unkafter_dosio.cpp_FUN_00479770 ; 0049a43b
-        ;   XREF to: 00479770 (UNCONDITIONAL_CALL)  ; undefined unkafter_dosio.cpp_FUN_00479770()
+    CALL engine_dosio.cpp_FUN_00479770  ; 0049a43b
+        ;   XREF to: 00479770 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00479770()
     ADD ESP,0xc                         ; 0049a440
     LEA EAX,[ESP + 0x218]               ; 0049a443
     PUSH EAX                            ; 0049a44a

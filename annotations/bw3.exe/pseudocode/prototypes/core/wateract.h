@@ -29,6 +29,10 @@ void __cdecl CWaterActor::setup(CWaterActor *this_ptr);
 // Address: 00578490
 void FUN_00578490(int param_1);
 
+// Original: core_wateract.cpp_FUN_00578570
+// Address: 00578570
+void FUN_00578570(int param_1);
+
 // Original: core_wateract.cpp_CWaterActor_process_FUN_00578670
 // Address: 00578670
 void __cdecl CWaterActor::process(CWaterActor *this_ptr,float delta_time);

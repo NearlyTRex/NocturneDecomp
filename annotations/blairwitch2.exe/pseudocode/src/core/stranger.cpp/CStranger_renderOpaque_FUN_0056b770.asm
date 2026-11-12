@@ -392,8 +392,8 @@ section .text
     ADD ESP,0xc                         ; 0056bb4b
     MOV EAX,[0x0060b280]                ; 0056bb4e | DAT_0060b280
     PUSH EAX                            ; 0056bb53 | DAT_01ba5c50
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 0056bb54
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 0056bb54
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 0056bb59
     PUSH EBX                            ; 0056bb5c
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10 ; 0056bb5d

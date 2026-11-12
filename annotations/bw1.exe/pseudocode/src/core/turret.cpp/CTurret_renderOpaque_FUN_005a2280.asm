@@ -18,7 +18,7 @@
 ;   core_turret.cpp_CTurret_getCurFrame_FUN_005a2ae0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;
 ; *****************************************************************************
 
@@ -127,8 +127,8 @@ section .text
     ADD ESP,0xc                         ; 005a2376
     MOV EBP,dword ptr [0x00612560]      ; 005a2379 | DAT_00612560
     PUSH EBP                            ; 005a237f
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 005a2380
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 005a2380
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 005a2385
     MOV EAX,ESI                         ; 005a2388
     ADD ESP,0x34                        ; 005a238a

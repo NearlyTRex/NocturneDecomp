@@ -35,7 +35,7 @@
 ;   core_fire.cpp_FUN_004af340 at 004af3b1
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f3a4
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560 at 00483578
-;   unkafter_minecar.cpp_FUN_00511240 at 0051124f
+;   engine_mini3d.cpp_FUN_00511240 at 0051124f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d8a90

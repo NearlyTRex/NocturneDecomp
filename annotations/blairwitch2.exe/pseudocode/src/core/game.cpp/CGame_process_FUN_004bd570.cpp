@@ -94,7 +94,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)
     _DAT_01cb8118 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   }
   core_fire_cpp_CFireEffect_process_FUN_0049c430(0x01C3DEB4);
-  unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180
+  core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180
             (g_CSimpleParticleSystemPtr,g_CGamePtr->delta_time_float);
   if (g_CGamePtr->profile_mode == 1) {
     iVar3 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
@@ -118,7 +118,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)
   core_weather_cpp_CWeather_update_FUN_0058a660(0x02661F80);
   core_game_cpp_FUN_004b90d0();
   core_fldnotes_cpp_FUN_004a5f60();
-  unkaddr_0059aa80_cpp_FUN_0059ac60();
+  core_zombie_cpp_FUN_0059ac60();
   core_set_cpp_CDemonSet_processActors_FUN_0052e940(g_CDemonSetPtr);
   if (g_CGamePtr->profile_mode == 1) {
     _DAT_01cb8118 = wincore_winrun_cpp_getTime_FUN_0058e9e0();

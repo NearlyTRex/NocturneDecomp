@@ -1807,15 +1807,14 @@ LAB_00547aee:
                                                       (**(code **)(*(int *)(iVar7 + 0x154) + 0x150))
                                                                 (iVar7);
                                                       (**(code **)g_CGamePtr->vtable)(g_CGamePtr,0);
-                                                      iVar7 = unkafter_mimic_cpp_FUN_004aafe0
+                                                      iVar7 = core_event_cpp_FUN_004aafe0
                                                                         (g_CDemonSetPtr);
                                                       core_setdir_cpp_FUN_00559f80
                                                                 (g_CDemonSetPtr,
                                                                  g_CScriptPtr->focus_actor,1);
                                                       pCVar6 = g_CDemonSetPtr;
                                                       g_CScriptPtr->focus_actor_changed = 0;
-                                                      iVar15 = unkafter_mimic_cpp_FUN_004aafe0
-                                                                         (pCVar6);
+                                                      iVar15 = core_event_cpp_FUN_004aafe0(pCVar6);
                                                       if (iVar7 == iVar15) {
                                                                                                                 
                                                   core_set_cpp_CDemonSet_setCameraView_FUN_0054f0d0
@@ -2325,7 +2324,7 @@ joined_r0x00546052:
                                                   (core_inv_cpp_FUN_004f8d00
                                                              ((CInventory *)(local_cc + 0x1fae8),
                                                               pCVar14,iVar7), iVar7 == 0)) {
-                                                    core_mimic_cpp_copyQuaternion_FUN_004aafc0
+                                                    core_event_cpp_copyQuaternion_FUN_004aafc0
                                                               (&pCVar14->location,local_cc + 0x20);
                                                                                                         
                                                   core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
@@ -2745,7 +2744,7 @@ LAB_005494ec:
                                                   core_script_cpp_trimString_FUN_00543240
                                                             (local_2e94);
                                                   if (_DAT_01e810a8 == 0) {
-                                                    unkafter_mission_cpp_FUN_0051c420
+                                                    core_mission_cpp_FUN_0051c420
                                                               (0x01D2C900,local_2e94);
                                                   }
                                                   }

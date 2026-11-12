@@ -269,18 +269,6 @@ void __cdecl FUN_0047fc30(CEditorTools *this_ptr,char *text_data);
 // Address: 0047fd00
 void FUN_0047fd00(undefined4 param_1,float param_2,undefined4 param_3);
 
-// Original: shape_edittool.cpp_FUN_0047fd0e
-// Address: 0047fd0e
-void FUN_0047fd0e(void);
-
-// Original: shape_edittool.cpp_FUN_0047fd1a
-// Address: 0047fd1a
-void FUN_0047fd1a(void);
-
-// Original: shape_edittool.cpp_FUN_0047ff3a
-// Address: 0047ff3a
-void FUN_0047ff3a(void);
-
 // Original: shape_edittool.cpp_FUN_0047ff4e
 // Address: 0047ff4e
 void FUN_0047ff4e(undefined4 param_1,undefined4 param_2,undefined4 param_3,float *param_4,float *param_5);
@@ -356,6 +344,10 @@ void __cdecl CStrList::insert(CStrList *this_ptr,int insert_index,char *string_d
 // Original: shape_edittool.cpp_CStrList_allocate_FUN_00480fa0
 // Address: 00480fa0
 void __cdecl CStrList::allocate(CStrList *this_ptr,int new_capacity);
+
+// Original: shape_edittool.cpp_CStrList_insertRange_FUN_00481050
+// Address: 00481050
+void __cdecl CStrList::insertRange(CStrList *this_ptr,int param_2,CStrList *param_3);
 
 // Original: shape_edittool.cpp_CStrList_remove_FUN_004810d0
 // Address: 004810d0
@@ -596,22 +588,6 @@ int calculateButtonHeight(char *param_1);
 // Original: shape_edittool.cpp_FUN_0048546e
 // Address: 0048546e
 void FUN_0048546e(CEdCheck *param_1,int param_2,int param_3,char *param_4);
-
-// Original: shape_edittool.cpp_FUN_004854b3
-// Address: 004854b3
-void FUN_004854b3(void);
-
-// Original: shape_edittool.cpp_FUN_004854bb
-// Address: 004854bb
-void FUN_004854bb(void);
-
-// Original: shape_edittool.cpp_FUN_004854dc
-// Address: 004854dc
-void FUN_004854dc(void);
-
-// Original: shape_edittool.cpp_FUN_00485512
-// Address: 00485512
-void FUN_00485512(void);
 
 // Original: shape_edittool.cpp_FUN_0048555e
 // Address: 0048555e

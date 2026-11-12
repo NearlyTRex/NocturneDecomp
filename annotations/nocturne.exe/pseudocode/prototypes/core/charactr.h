@@ -413,14 +413,14 @@ SPose * __cdecl SPose::ctor(SPose *this_ptr);
 // Address: 0042b6b0
 SPose * __cdecl SPose::dtor(SPose *this_ptr,uint flags);
 
-// Original: core_charactr.cpp_FUN_0042b6c0
+// Original: core_charactr.cpp_copyFloat1_FUN_0042b6c0
 // Address: 0042b6c0
-undefined4 * FUN_0042b6c0(void);
+float * __cdecl copyFloat1(float *dst,float *src);
 
-// Original: core_charactr.cpp_FUN_0042b6d0
+// Original: core_charactr.cpp_copyFloat2_FUN_0042b6d0
 // Address: 0042b6d0
-undefined4 * FUN_0042b6d0(void);
+float * __cdecl copyFloat2(float *dst,float *src);
 
-// Original: core_charactr.cpp_FUN_0042b6e0
+// Original: core_charactr.cpp_copyFloat3_FUN_0042b6e0
 // Address: 0042b6e0
-undefined4 * FUN_0042b6e0(void);
+float * __cdecl copyFloat3(float *dst,float *src);

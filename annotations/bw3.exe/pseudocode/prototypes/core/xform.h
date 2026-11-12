@@ -65,6 +65,10 @@ float * matrixToEulerAnglesZYX(float *param_1);
 // Address: 00584450
 void FUN_00584450(int param_1);
 
+// Original: core_xform.cpp_FUN_00584490
+// Address: 00584490
+void FUN_00584490(undefined4 param_1);
+
 // Original: core_xform.cpp_determinant_FUN_00584510
 // Address: 00584510
 double __cdecl determinant(float *param_1);
@@ -72,6 +76,10 @@ double __cdecl determinant(float *param_1);
 // Original: core_xform.cpp_inverse_FUN_00584560
 // Address: 00584560
 void inverse(float *param_1);
+
+// Original: core_xform.cpp_computeOrthogonalityError_FUN_00584790
+// Address: 00584790
+float computeOrthogonalityError(float *param_1);
 
 // Original: core_xform.cpp_FUN_00584b00
 // Address: 00584b00
@@ -164,38 +172,6 @@ void FUN_005860b0(float *param_1);
 // Original: core_xform.cpp_FUN_005861d0
 // Address: 005861d0
 void FUN_005861d0(float *param_1);
-
-// Original: core_xform.cpp_CYow_getActorType_FUN_00586330
-// Address: 00586330
-CDemonActorType * CYow::getActorType(CYow *this_ptr);
-
-// Original: core_xform.cpp_CYow_ctor_FUN_00586340
-// Address: 00586340
-CYow * CYow::ctor(CYow *this_ptr);
-
-// Original: core_xform.cpp_FUN_005863e0
-// Address: 005863e0
-void FUN_005863e0(CEnemy *param_1);
-
-// Original: core_xform.cpp_FUN_00586500
-// Address: 00586500
-void FUN_00586500(CEnemy *param_1,float param_2);
-
-// Original: core_xform.cpp_FUN_00586e50
-// Address: 00586e50
-void FUN_00586e50(CEnemy *param_1);
-
-// Original: core_xform.cpp_FUN_00586eb0
-// Address: 00586eb0
-void FUN_00586eb0(CEnemy *param_1,SDamageInfo *param_2);
-
-// Original: core_xform.cpp_FUN_00586fa0
-// Address: 00586fa0
-int FUN_00586fa0(int param_1,float *param_2);
-
-// Original: core_xform.cpp_CYow_dtor_FUN_005872b0
-// Address: 005872b0
-CYow * CYow::dtor(CYow *this_ptr,uint flags);
 
 // Original: core_xform.cpp_clipInterpolateRightPlane_FUN_00587340
 // Address: 00587340

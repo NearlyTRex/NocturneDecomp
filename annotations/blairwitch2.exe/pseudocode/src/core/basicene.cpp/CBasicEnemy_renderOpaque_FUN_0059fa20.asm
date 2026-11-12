@@ -18,9 +18,9 @@
 ;   CGameHook g_CGameHookInstance
 ;
 ; Called Functions:
+;   core_basicene.cpp_FUN_0059fae0
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
-;   unkafter_basicene.cpp_FUN_0059fae0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     RET                                 ; 0059fa5e
     PUSH ESI                            ; 0059fa5f
         ;   Label: LAB_0059fa5f
-    CALL unkafter_basicene.cpp_FUN_0059fae0 ; 0059fa60
-        ;   XREF to: 0059fae0 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059fae0()
+    CALL core_basicene.cpp_FUN_0059fae0 ; 0059fa60
+        ;   XREF to: 0059fae0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059fae0()
     ADD ESP,0x4                         ; 0059fa65
     MOV EAX,EBX                         ; 0059fa68
     POP ESI                             ; 0059fa6a

@@ -83,7 +83,7 @@ uint __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes *th
       if (pcVar13 != (char *)0x0) {
         *pcVar13 = '\0';
       }
-      unkaddr_004b9ab0_cpp_FUN_004b9c50(local_5b4);
+      core_flashlit_cpp_FUN_004b9c50(local_5b4);
       if (local_5b4[0] != 0) {
         pcVar13 = "section";
         local_40 = local_1b4;
@@ -567,8 +567,8 @@ LAB_004bd681:
                           pcVar13 = "Syntax error in \\annotation parms on line %d";
                           goto LAB_004bcdae;
                         }
-                        unkaddr_004b9ab0_cpp_FUN_004b9c50(iVar12);
-                        unkaddr_004b9ab0_cpp_FUN_004b9c50(iVar12 + 100);
+                        core_flashlit_cpp_FUN_004b9c50(iVar12);
+                        core_flashlit_cpp_FUN_004b9c50(iVar12 + 100);
                         *(uint *)(iVar12 + 0xd0) = 0;
                       }
                       else {

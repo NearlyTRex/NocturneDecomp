@@ -49,11 +49,11 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005537c0(CSfxSample *this_ptr
               ("Error seeking %s to %d",this_ptr,this_ptr->stream_read_position);
     return;
   }
-  bVar1 = unkafter_turret_cpp_CInStreamFile_isOpen_FUN_00573d60(&this_ptr->file_stream);
+  bVar1 = support_trstream_cpp_CInStreamFile_isOpen_FUN_00573d60(&this_ptr->file_stream);
   if (CONCAT31(extraout_var,bVar1) != 0) {
     uVar5 = 0;
     iVar2 = sound_sndmain_cpp_FUN_00555900(this_ptr);
-    unkafter_turret_cpp_CInStreamFile_seek_FUN_00573cf0
+    support_trstream_cpp_CInStreamFile_seek_FUN_00573cf0
               (&this_ptr->file_stream,iVar2 + this_ptr->file_offset,uVar5);
     return;
   }

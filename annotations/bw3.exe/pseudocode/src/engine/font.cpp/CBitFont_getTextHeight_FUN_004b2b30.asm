@@ -8,6 +8,7 @@
 ; char *           Stack[0x8]:4   text_string
 ;
 ; XREF[9]:
+;   core_flashlit.cpp_FUN_004a7a70 at 004a7b18
 ;   core_menu.cpp_FUN_004e7860 at 004e7a76
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047f4c0 at 0047f657
 ;   shape_edittool.cpp_FUN_0047fa80 at 0047fe1f
@@ -16,7 +17,6 @@
 ;   shape_edittool.cpp_FUN_0048666e at 004866e5
 ;   shape_edittool.cpp_FUN_00486810 at 0048686a
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0 at 0047c9ac
-;   unkaddr_004a76f0.cpp_FUN_004a7a70 at 004a7b18
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0

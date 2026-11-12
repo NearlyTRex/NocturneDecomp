@@ -4,9 +4,10 @@
 ; uint __cdecl crt_stdio_c_fwrite_FUN_005a48e0(undefined4 *param_1,uint param_2,int param_3,int *param_4)
 ;
 ;
-; XREF[6]:
+; XREF[7]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0050fe90 at 0050feed
 ;   cockpit_pkbitmap.cpp_writePBGHeader_FUN_00510230 at 00510267
+;   core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00452030 at 00452076
 ;   core_setdir.cpp_FUN_00540c40 at 00540c97
 ;   engine_pcx.c_saveScreenshotGeneral_FUN_0050da60 at 0050db74
 ;   engine_pod.cpp_FUN_005149bc at 00514b31

@@ -31,11 +31,11 @@
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004c9730
 ;   core_motion.cpp_FUN_005035c0
+;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_FUN_0059daa0
 ;   core_skeleton.cpp_FUN_00546a90
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   core_xform.cpp_FUN_00591530
-;   sound_sndmain.cpp_killSfx_FUN_00551050
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH 0x5f0196                       ; 005a3578 | = "Death"
     LEA ESI,[EBX + 0x10af8]             ; 005a357d
     PUSH ESI                            ; 005a3583
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a3584
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a3584
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a3589
     TEST EAX,EAX                        ; 005a358c
     JNZ 0x005a38c9                      ; 005a358e
@@ -353,8 +353,8 @@ section .text
     PUSH 0x5f019c                       ; 005a38c9 | = "Animation"
         ;   Label: LAB_005a38c9
     PUSH ESI                            ; 005a38ce
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a38cf
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a38cf
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a38d4
     TEST EAX,EAX                        ; 005a38d7
     JNZ 0x005a35a4                      ; 005a38d9
@@ -469,8 +469,8 @@ section .text
     LEA EAX,[EBX + 0x10af8]             ; 005a3a03
     PUSH EAX                            ; 005a3a09
     MOV dword ptr [EBP + 0xd2],EAX      ; 005a3a0a
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a3a10
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a3a10
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a3a15
     TEST EAX,EAX                        ; 005a3a18
     JZ 0x005a38be                       ; 005a3a1a
@@ -545,8 +545,8 @@ section .text
     PUSH 0x5f01ae                       ; 005a3aec | = "LeapAttack"
     MOV EDX,dword ptr [EBP + 0xd2]      ; 005a3af1
     PUSH EDX                            ; 005a3af7
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005a3af8
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a3af8
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005a3afd
     LEA ESP,[EBP + 0xe2]                ; 005a3b00
     POP EBP                             ; 005a3b06

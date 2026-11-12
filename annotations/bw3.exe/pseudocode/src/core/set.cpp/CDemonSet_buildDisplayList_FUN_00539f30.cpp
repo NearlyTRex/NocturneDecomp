@@ -60,8 +60,8 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_00539f30(CDemonSet *thi
     local_20 = wincore_winrun_cpp_getTime_FUN_005806a0();
   }
   _DAT_0211e350 = 0;
-  engine_matrix_c_FUN_0046d1a0();
-  engine_matrix_c_FUN_0046d1c0();
+  engine_drender_cpp_FUN_0046d1a0();
+  engine_drender_cpp_FUN_0046d1c0();
   local_a4 = local_68;
   *(uint *)((int)&stack0xffffff60 + (uint)bVar11 * 0xfffffffe * 4) =
        *(uint *)(&stack0xffffff9c + (uint)bVar11 * -8);

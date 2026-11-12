@@ -91,6 +91,8 @@
 ;
 ; XREF[33]:
 ;   core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90 at 0059f037
+;   core_basicene.cpp_FUN_0059ec10 at 0059ecd5
+;   core_basicene.cpp_FUN_0059ee00 at 0059ee75
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 004121d8
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413ab8
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 004191c0
@@ -98,8 +100,6 @@
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041df4b
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 at 004288d5
 ;   core_charactr.cpp_FUN_00428260 at 0042858c
-;   core_charactr.cpp_FUN_00429f20 at 0042a07f
-;   core_charactr.cpp_FUN_0042abe0 at 0042ac62
 ;   ... and 23 more
 ;
 ; Referenced Globals:

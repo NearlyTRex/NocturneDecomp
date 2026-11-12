@@ -369,6 +369,10 @@ void __cdecl drawLine2DFromIndices(int vertex_index1,int vertex_index2);
 // Address: 00407cc0
 void __cdecl clipAndDrawLine2D(int param_1,int param_2,int param_3,undefined4 param_4,uint param_5);
 
+// Original: engine_3d.c_FUN_00407f40
+// Address: 00407f40
+void FUN_00407f40(int param_1,int param_2);
+
 // Original: engine_3d.c_clipAndDrawLine3D_FUN_00407fc0
 // Address: 00407fc0
 uint __cdecl clipAndDrawLine3D(uint param_1,uint param_2,int param_3,undefined4 param_4,uint param_5);

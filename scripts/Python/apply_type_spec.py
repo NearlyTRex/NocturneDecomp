@@ -11,14 +11,16 @@ The spec is JSON:
       },
       "fields": {
         "nocedit.exe": [["CWeapon", "0x2dc", "EFireMode", "fire_mode"]]
-      }
+      },
+      "new_enums": {"EFireMode": 4}
     }
 
-"*" holds the enums every program has. Without --apply the program is only read, and each
+"*" holds the enums every program has. "new_enums" gives the size of each enum that is new
+to the game: --apply creates it in /Nocturne/Enum/Game where the program lacks it. Without --apply the program is only read, and each
 enum and field that differs is listed. With --apply the renames are made, each listed number
 gets the spec's name for it, and each field takes the spec's type and name, before the
-program is checked again and saved. An enum the program lacks is reported and never created:
-import_datatypes.py copies it from a program that has it. A field is only retyped to an
+program is checked again and saved. Any other enum the program lacks is reported and not
+created: import_datatypes.py copies it from a program that has it. A field is only retyped to an
 enum of its own size. Exits non-zero while anything still differs.
 
     python3 scripts/Python/apply_type_spec.py <project_dir> <project_name> <program> <spec.json>
@@ -76,6 +78,21 @@ def check_enums(dtm, expected):
         else:
             print(f"  ok  enum {name}")
     return problems
+
+
+GAME_ENUM_CATEGORY = "/Nocturne/Enum/Game"
+
+
+# Creates, empty, each new enum the program lacks; returns the changes made
+def create_enums(dtm, sizes, expected):
+    from ghidra.program.model.data import CategoryPath, DataTypeConflictHandler, Enum, EnumDataType
+    changes = []
+    for name, size in sizes.items():
+        if name in expected and not find_named(dtm, name, Enum):
+            enum = EnumDataType(CategoryPath(GAME_ENUM_CATEGORY), name, size)
+            dtm.addDataType(enum, DataTypeConflictHandler.DEFAULT_HANDLER)
+            changes.append(f"enum {name} created ({size} bytes)")
+    return changes
 
 
 # Renames enums, then gives each listed number the spec's name; returns the changes made
@@ -174,7 +191,8 @@ def run(program, spec, program_name, apply):
     changes = []
     if apply:
         transaction = program.startTransaction("apply_type_spec")
-        changes = fix_enums(dtm, spec.get("enum_renames", {}), enums)
+        changes = create_enums(dtm, spec.get("new_enums", {}), enums)
+        changes += fix_enums(dtm, spec.get("enum_renames", {}), enums)
         changes += check_fields(dtm, fields, True)[1]
         program.endTransaction(transaction, True)
         report("fixed", changes)

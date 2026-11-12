@@ -116,9 +116,9 @@ void shape_edittool_cpp_FUN_0047e870(void)
     }
   }
   else {
-    unkafter_minecar_cpp_getRenderViewport_FUN_004f2ba0(&local_44,&local_40,&local_3c,&local_38);
+    engine_mini3d_cpp_getRenderViewport_FUN_004f2ba0(&local_44,&local_40,&local_3c,&local_38);
     local_14 = *(int *)(iVar4 + 0x1c255a8) + 1;
-    unkafter_minecar_cpp_setRenderViewport_FUN_004f2ac0
+    engine_mini3d_cpp_setRenderViewport_FUN_004f2ac0
               ((float)*piVar5,(float)*(int *)(iVar4 + 0x1c255a4),(float)local_14,
                (float)(*(int *)(iVar4 + 0x1c255ac) + 1));
     uVar7 = _DAT_01c2638c;
@@ -162,7 +162,7 @@ void shape_edittool_cpp_FUN_0047e870(void)
     engine_mini3d_cpp_FUN_004f93b0
               (*(int *)(iVar4 + 0x1c255a8) + -1,*(uint *)(iVar4 + 0x1c255a4),
                *(int *)(iVar4 + 0x1c255ac) + -1);
-    unkafter_minecar_cpp_setRenderViewport_FUN_004f2ac0(local_44,local_40,local_3c,local_38);
+    engine_mini3d_cpp_setRenderViewport_FUN_004f2ac0(local_44,local_40,local_3c,local_38);
   }
   if (*(char *)(iVar4 + 0x1c255e8) != '\0') {
     local_30 = _DAT_01c35e4c;

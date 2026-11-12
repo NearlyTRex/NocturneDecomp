@@ -61,7 +61,7 @@ int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr)
       core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,&this_ptr->weapon->base);
       core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30
                 (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
-      unkafter_stranger_cpp_FUN_0045bba0(this_ptr);
+      core_doc_cpp_FUN_0045bba0(this_ptr);
       pfVar9 = afStack_3c + 8;
       afStack_1c[0] = (float)uStack_40;
       afStack_3c[(uint)bVar5 * -2 + 9] = afStack_3c[(uint)bVar5 * -2];

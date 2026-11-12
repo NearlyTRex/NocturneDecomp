@@ -46,6 +46,6 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041c580(CBoxActor *thi
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
               (&this_ptr->model,this_ptr->anim_frame,-1);
   }
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   return iVar2;
 }

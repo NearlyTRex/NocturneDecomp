@@ -8,6 +8,7 @@
 ; CVector3i *      Stack[0x8]:4   input
 ;
 ; XREF[19]:
+;   core_bwspart.cpp_FUN_005a86a0 at 005a870d
 ;   core_chain.cpp_FUN_005b56c0 at 005b5843
 ;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_00443af0 at 00443b2f
 ;   core_fire.cpp_CCrater_render_FUN_00499a00 at 00499a70
@@ -17,7 +18,6 @@
 ;   core_fire.cpp_CRainDrop_render_FUN_0049bd40 at 0049bd86
 ;   core_fire.cpp_CShell_render_FUN_0049b6f0 at 0049b741
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00493710 at 00493752
-;   core_fire.cpp_FUN_004947a0 at 004947f2
 ;   ... and 9 more
 ;
 ; Referenced Globals:

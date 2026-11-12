@@ -38,7 +38,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00448900(CDemonGlobe *
   bVar3 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
             (0x01BA5C50,&this_ptr->position);
-  engine_matrix_c_FUN_0046b5e0(DAT_0060b280);
+  engine_drender_cpp_FUN_0046b5e0(DAT_0060b280);
   local_5c = local_58[2];
   local_58[(uint)bVar3 * -2] = local_58[(uint)bVar3 * -2 + 3];
   local_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =

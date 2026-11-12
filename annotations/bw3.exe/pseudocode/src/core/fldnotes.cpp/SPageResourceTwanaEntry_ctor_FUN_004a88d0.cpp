@@ -17,7 +17,7 @@ SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004
   int extraout_EAX;
   int iVar3;
   
-  unkaddr_004a76f0_cpp_SPageResource_ctor_FUN_004a8370(&this_ptr->base);
+  core_fldnotes_cpp_SPageResource_ctor_FUN_004a8370(&this_ptr->base);
   iVar3 = __arrinit(extraout_EAX + 0xdc,3,&g_CAlphaBitmapTypeInfo);
   pSVar1 = (SPageResourceTwanaEntry *)(iVar3 + -0xdc);
   *(byte ***)(iVar3 + -200) = &g_SPageResourceTwanaEntryVTable;

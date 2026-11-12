@@ -9,7 +9,7 @@
 ; Local Variables:
 ; undefined4       Stack[-0x4c]:4  local_4c
 ;
-; XREF[47]:
+; XREF[49]:
 ;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040eab3
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f57a
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 004115cc
@@ -20,7 +20,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bbba
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423b8c
 ;   core_bugs.cpp_CBugs_process_FUN_004253c0 at 004253cb
-;   ... and 37 more
+;   ... and 39 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d592f

@@ -261,7 +261,7 @@ void core_zombiepriest_cpp_FUN_0058d960(CZombiePriest *param_1,float param_2)
         fVar19 = param_1->firing_blend;
         (param_1->base).victim = *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
         if ((float)_DAT_005d8ba0 < fVar19) {
-          core_zombprie_cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(param_1);
+          core_zombiepriest_cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(param_1);
         }
       }
       break;
@@ -279,7 +279,7 @@ void core_zombiepriest_cpp_FUN_0058d960(CZombiePriest *param_1,float param_2)
         }
       }
       else if (param_1->post_mode == 0) {
-        iVar7 = unkafter_zombiepr_cpp_FUN_0058efb0(param_1,param_2);
+        iVar7 = core_zombiepriest_cpp_FUN_0058efb0(param_1,param_2);
         if (iVar7 == 0) {
           fStack_30 = 0x40400000 + 1.0;
           if (((param_1->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) ||
@@ -347,7 +347,7 @@ void core_zombiepriest_cpp_FUN_0058d960(CZombiePriest *param_1,float param_2)
               else if (fStack_2c + 1.0 <= fStack_20) {
                 if (((float)_DAT_005d8ba0 < param_1->firing_blend) &&
                    (param_1->firing_cooldown <= 0.0)) {
-                  core_zombprie_cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(param_1);
+                  core_zombiepriest_cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0(param_1);
                 }
               }
               else {

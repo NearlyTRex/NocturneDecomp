@@ -26,6 +26,6 @@ void engine_font_cpp_FUN_004c2750(int param_1)
     *(uint *)(param_1 + 0x1dd8) = 0;
     return;
   }
-  unkafter_palette_cpp_FUN_005320b0(*(uint *)(param_1 + 0x4214));
+  engine_palette_cpp_FUN_005320b0(*(uint *)(param_1 + 0x4214));
   return;
 }

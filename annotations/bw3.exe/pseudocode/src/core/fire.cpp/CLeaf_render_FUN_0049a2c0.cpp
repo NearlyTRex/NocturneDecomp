@@ -37,6 +37,6 @@ void __cdecl core_fire_cpp_CLeaf_render_FUN_0049a2c0(CLeaf *this_ptr)
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00460f20
               (this_ptr->model,0,(CKeyFramedModelInstance *)0x0,0x2e7);
   }
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   return;
 }

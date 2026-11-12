@@ -408,6 +408,7 @@ void crt_unknown_c_FUN_005ad2f0(void);
 int crt_unknown_c_FUN_005ad320(LPSTR param_1);
 void crt_unknown_c_FUN_005ad360(void);
 char * crt_unknown_c_FUN_005ad370(longlong *param_1,char *param_2,int param_3);
+undefined1 * crt_unknown_c_FUN_005ad410(uint *param_1,undefined1 *param_2,int param_3);
 char * crt_unknown_c_FUN_005ad480(uint param_1,char *param_2,uint param_3);
 undefined1 * crt_unknown_c_FUN_005ad4d4(int param_1,undefined1 *param_2,int param_3);
 void crt_unknown_c_FUN_005ad524(void);
@@ -480,6 +481,9 @@ undefined8 crt_unknown_c_FUN_005aec4d(uint param_1,undefined4 *param_2,undefined
 undefined8 crt_unknown_c_FUN_005aed4b(double param_1,byte param_2);
 undefined4 crt_unknown_c_FUN_005aede0(undefined4 param_1,undefined4 param_2);
 void crt_unknown_c_FUN_005aee30(FILETIME *param_1,LPWORD param_2,LPWORD param_3);
+void crt_unknown_c_FUN_005aee60(WORD param_1,WORD param_2,LPFILETIME param_3);
+void crt_unknown_c_FUN_005aee94(int param_1,undefined1 *param_2);
+undefined4 crt_unknown_c_FUN_005aeedc(HANDLE param_1,uint param_2,LPWIN32_FIND_DATAA param_3);
 void crt_unknown_c_FUN_005aef20(uint param_1,uint param_2);
 undefined4 crt_unknown_c_FUN_005aefa0(undefined4 *param_1);
 undefined1 * crt_unknown_c_FUN_005aefe0(void);

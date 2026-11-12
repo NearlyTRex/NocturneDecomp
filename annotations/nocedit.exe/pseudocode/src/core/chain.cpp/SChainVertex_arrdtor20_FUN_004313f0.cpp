@@ -2,15 +2,15 @@
 // Address: 004313f0
 // Address Range: [[004313f0, 00431404]]
 // Convention: __cdecl
-// Signature: SChainVertex * __cdecl core_chain_cpp_SChainVertex_arrdtor20_FUN_004313f0(SChainVertex *objs,uint flags)
+// Signature: SChainVertex * __cdecl core_chain_cpp_SChainVertex_arrdtor20_FUN_004313f0(SChainVertex *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-SChainVertex * __cdecl core_chain_cpp_SChainVertex_arrdtor20_FUN_004313f0(SChainVertex *objs,uint flags)
+SChainVertex * __cdecl core_chain_cpp_SChainVertex_arrdtor20_FUN_004313f0(SChainVertex *this_ptr,uint flags)
 
 {
   SChainVertex *pSVar1;
   
-  pSVar1 = (SChainVertex *)__arrfini(objs,0x14,&g_SChainVertexTypeInfo);
+  pSVar1 = (SChainVertex *)__arrfini(this_ptr,0x14,&g_SChainVertexTypeInfo);
   return pSVar1;
 }

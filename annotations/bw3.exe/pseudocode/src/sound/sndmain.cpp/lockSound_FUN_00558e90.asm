@@ -4,7 +4,7 @@
 ; void __cdecl sound_sndmain_cpp_lockSound_FUN_00558e90(void)
 ;
 ;
-; XREF[25]:
+; XREF[27]:
 ;   core_tommygun.cpp_CTommyGun_process_FUN_0056bd40 at 0056be4d
 ;   sound_sndmain.cpp_FUN_00552f10 at 00552f62
 ;   sound_sndmain.cpp_FUN_00556240 at 005562e6
@@ -15,7 +15,7 @@
 ;   sound_sndmain.cpp_FUN_00557100 at 00557100
 ;   sound_sndmain.cpp_FUN_0055725e at 0055726e
 ;   sound_sndmain.cpp_FUN_00557390 at 00557398
-;   ... and 15 more
+;   ... and 17 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3cb5

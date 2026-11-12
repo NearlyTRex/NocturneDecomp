@@ -12,9 +12,9 @@
 ;   core_demnfolk.cpp_FUN_00455080 at 004555fe
 ;   core_event.cpp_FUN_0048c2e0 at 0048cefc
 ;   core_hero.cpp_FUN_004d4160 at 004d4180
+;   core_prye.cpp_FUN_00524940 at 00524c38
 ;   core_styldemo.cpp_CStylerDemon_process_FUN_0059e600 at 0059e766
 ;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 0058943a
-;   core_zombiepriest.cpp_FUN_0058d960 at 0058dbcb
 ;   ... and 1 more
 ;
 ; Referenced Globals:

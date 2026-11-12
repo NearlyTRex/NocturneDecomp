@@ -36,9 +36,8 @@ modes need different repairs.
              `Class *this_ptr` alone.
 
   NO_PARAMS  a member with no parameters whose receiver could not be derived
-             needs its assembly read, so it lives in the curated table below
-             with the evidence that resolved it. A curated entry wins over
-             DERIVE.
+             needs its assembly read. Its repair goes in a --fixes file with
+             the evidence that resolved it. A curated entry wins over DERIVE.
 
 WHY PARAMETER RENAMES ARE DONE IN PLACE
 ---------------------------------------
@@ -54,10 +53,11 @@ Report-first. --apply mutates and saves; it takes a .gar snapshot first unless
 Usage:
     GHIDRA_INSTALL_DIR=$HOME/Tools/Ghidra/lib \
     python3 -u fix_this_ptr.py <ABS_project_path> <project_name> \
-            [program ...] [--show N] [--apply] [--no-snapshot]
+            [program ...] [--show N] [--apply] [--no-snapshot] [--fixes FILE]
 """
 
 import argparse
+import json
 import os
 import re
 import subprocess
@@ -79,276 +79,35 @@ MAX_VTABLE_SLOTS = 256
 
 
 # ---------------------------------------------------------------------------
-# NO_PARAMS: curated, because each one needed its assembly read
+# Curated repairs: a JSON file passed with --fixes
 # ---------------------------------------------------------------------------
-# Keyed (program, entry address). `expect` is the staleness guard: if the
-# function is no longer called that, somebody has moved since the analysis and
-# the entry is skipped rather than applied over.
+# {"prototypes": [{"program", "addr", "expect", "name", "ret", "conv",
+#                  "params": [[name, type], ...], "note"}, ...],
+#  "local_renames": [{"program", "addr", "func", "renames": [[old, new], ...],
+#                     "note"}, ...]}
 #
-# Seven of these carried the name `handlePureVirtualCall`, which is wrong in
-# every instance. There is exactly ONE real pure-virtual handler in either
-# binary - nocedit's crt_cpp.c_handlePureVirtualCall_FUN_006015f1, the CRT's
-# __purecall. The seven are unrelated one-line weapon-state accessors that a
-# bulk rename landed on. Each is resolved three ways: byte-identical body shape
-# against an accessor already named in nocturne itself, the nocedit
-# counterpart's prototype, and position (every build emits the pair in the
-# order drawWeapon, isWeaponDrawn at a 0x10 stride).
-#
-# The field they touch is already named: guns_drawn at 0x1fa3c, and these
-# classes really are ~0x1fa54 bytes, so `this_ptr` typing is sound.
+# A prototype entry is for a member whose receiver needed its assembly read.
+# It is keyed (program, entry address); `expect` is the staleness guard: a
+# function no longer called that (or `name`) is reported, not written over.
+# A local entry moves a local off `this_ptr` first, since Parameter.setName()
+# throws DuplicateNameException while a local holds the name.
 
-NO_PARAM_FIXES = [
-    # A wrong-CLASS receiver. The body is `xor eax,eax; ret` and never touches
-    # `this`, so the assembly cannot settle the type on its own. nocedit's
-    # counterpart 005da7c0 is byte-identical and typed CTeleportDest *this_ptr;
-    # both sit in core/teleport.cpp between CTeleportDest_getBoundingBox and
-    # factoryFuncTeleport; CTeleportDest derives from CDemonActor, so this
-    # narrows the receiver rather than contradicting it.
-    dict(program="nocturne.exe", addr="00543890",
-         expect="core_teleport.cpp_CTeleportDest_getCollisionType_FUN_00543890",
-         name="core_teleport.cpp_CTeleportDest_getCollisionType_FUN_00543890",
-         ret="ECollisionType", conv="__cdecl",
-         params=[("this_ptr", "CTeleportDest *"),
-                 ("collision_info", "SCollisionInfo *")],
-         note="receiver narrowed CDemonActor* -> CTeleportDest* to match the "
-              "transferred name and nocedit's prototype; body is a 3-byte stub "
-              "that never dereferences this."),
-    dict(program="nocturne.exe", addr="00411310",
-         expect="core_baron.cpp_CBaron_handlePureVirtualCall_FUN_00411310",
-         name="core_baron.cpp_CBaron_drawWeapon_FUN_00411310",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CBaron *"), ("drawn", "int")],
-         note="bare RET, identical to nocedit CBaron_drawWeapon_FUN_00413cf0. "
-              "drawWeapon is the only game-side method nocturne's baron.cpp "
-              "lacks, and the processDamage->this 0x20 stride matches nocedit "
-              "exactly (00413cd0->00413cf0 vs 004112f0->00411310)."),
-    dict(program="nocturne.exe", addr="0049a110",
-         expect="core_gabriela.cpp_CGabriella_handlePureVirtualCall_FUN_0049a110",
-         name="core_gabriela.cpp_CGabriella_isWeaponDrawn_FUN_0049a110",
-         ret="int", conv="__cdecl",
-         params=[("this_ptr", "CGabriella *")],
-         note="CMP [this+0x1fa3c],0 / SETNZ AL - reads weapon_state_flags. "
-              "nocedit CGabriella_isWeaponDrawn_FUN_004d7590 is int(CGabriella*). "
-              "Body diverges (nocturne normalises to 0/1, nocedit returns the "
-              "raw field) - a real build difference, same method."),
-    dict(program="nocturne.exe", addr="004d6010",
-         expect="core_minecar.cpp_CMineCar_getActorType_FUN_004d6010",
-         name="core_minecar.cpp_CMineCar_getActorType_FUN_004d6010",
-         ret="CDemonActorType *", conv="__cdecl",
-         params=[("this_ptr", "CMineCar *")],
-         note="MOV EAX,0x1cc90e4 = &g_CMineCarActorType_01cc90e4, already "
-              "declared as CDemonActorType and referenced by minecar.cpp "
-              "staticInit. Name was right; return type and receiver were not."),
-    dict(program="nocturne.exe", addr="004fcd20",
-         expect="core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20",
-         name="core_scat.cpp_CScat_isWeaponDrawn_FUN_004fcd20",
-         ret="int", conv="__cdecl",
-         params=[("this_ptr", "CScat *")],
-         note="MOV EAX,[this+0x1fa3c] - byte-identical to nocturne's own "
-              "CHaystack_isWeaponDrawn_FUN_004b4120. nocedit "
-              "CScat_isWeaponDrawn_FUN_00557ff0 is int(CScat*)."),
-    dict(program="nocturne.exe", addr="004fcd30",
-         expect="core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd30",
-         name="core_scat.cpp_CScat_drawWeapon_FUN_004fcd30",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CScat *"), ("drawn", "int")],
-         note="MOV [this+0x1fa3c],arg2 - byte-identical to nocturne's own "
-              "CHaystack_drawWeapon_FUN_004b4130. nocedit "
-              "CScat_drawWeapon_FUN_00558000 is void(CScat*,int)."),
-    dict(program="nocturne.exe", addr="00540720",
-         expect="core_stranger.cpp_CStranger_handlePureVirtualCall_FUN_00540720",
-         name="core_stranger.cpp_CStranger_isWeaponDrawn_FUN_00540720",
-         ret="int", conv="__cdecl",
-         params=[("this_ptr", "CStranger *")],
-         note="MOV EAX,[this+0x1fa3c]. Decisive: CStranger_drawWeapon already "
-              "exists at the adjacent 00540730, so this is the getter half of "
-              "the pair. nocedit CStranger_isWeaponDrawn_FUN_005c6650."),
-    dict(program="nocturne.exe", addr="00428bb0",
-         expect="core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0",
-         name="core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CCharacter *"), ("timeout", "float")],
-         note="MOV [this+0x25a4],arg2. Name already right; transferred from "
-              "nocedit CCharacter_setWalkTimeout_FUN_0042ca20."),
-    dict(program="nocturne.exe", addr="004c41b0",
-         expect="engine_keys.cpp_CKeys_clearKeypresses_FUN_004c41b0",
-         name="engine_keys.cpp_clearKeypresses_FUN_004c41b0",
-         ret="void", conv="__cdecl", params=[],
-         note="NOT a class method - a bare JMP thunk to "
-              "wincore_winrun.cpp_clearKeypresses_FUN_00558ae0, and Ghidra "
-              "already records it as thunk=True. nocedit's counterpart is the "
-              "free function engine_keys.cpp_clearKeypresses_FUN_00502450. "
-              "There is no CKeys class; dropping the class component takes it "
-              "out of the schema entirely, which is the correct repair."),
-    dict(program="nocturne.exe", addr="004c47c0",
-         expect="core_ladder.cpp_CLadder_getGroundType_FUN_004c47c0",
-         name="core_ladder.cpp_CLadder_getGroundType_FUN_004c47c0",
-         ret="EGroundType", conv="__cdecl",
-         params=[("this_ptr", "CLadder *")],
-         note="MOV EAX,[this+0x2f4]. Name already right; transferred from "
-              "nocedit CLadder_getGroundType_FUN_00502c90."),
-    dict(program="nocturne.exe", addr="004de750",
-         expect="core_moloch.cpp_CMoloch_handlePureVirtualCall_FUN_004de750",
-         name="core_moloch.cpp_CMoloch_drawWeapon_FUN_004de750",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CMoloch *"), ("drawn", "int")],
-         note="bare RET, identical to nocedit CMoloch_drawWeapon_FUN_005299d0. "
-              "Moloch never draws a weapon, so both halves are stubs - which is "
-              "exactly why the pair carried no evidence in isolation."),
-    dict(program="nocturne.exe", addr="004de760",
-         expect="core_moloch.cpp_CMoloch_handlePureVirtualCall_FUN_004de760",
-         name="core_moloch.cpp_CMoloch_isWeaponDrawn_FUN_004de760",
-         ret="int", conv="__cdecl",
-         params=[("this_ptr", "CMoloch *")],
-         note="XOR EAX,EAX / RET, identical to nocedit "
-              "CMoloch_isWeaponDrawn_FUN_005299e0, and the 0x10 stride after "
-              "drawWeapon matches nocedit's 005299d0/005299e0 pair."),
-    dict(program="nocturne.exe", addr="005525d0",
-         expect="core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005525d0",
-         name="core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005525d0",
-         ret="int", conv="__cdecl",
-         params=[("this_ptr", "CWayPoint *")],
-         note="XOR EAX,EAX / RET - waypoints are invisible at runtime. Name "
-              "already right; transferred from nocedit "
-              "CWayPoint_renderOpaque_FUN_005ebf70."),
-    # bw3's gun flames, unmatched to nocedit because the class was re-laid out
-    # (research/23-game_structs/known_layout_changes.json). The pool of 500 at
-    # 0x1cfb8bc steps by 0x2c.
-    dict(program="bw3.exe", addr="0049e1a0",
-         expect="core_fire.cpp_FUN_0049e1a0",
-         name="core_fire.cpp_CGunFlame_activate_FUN_0049e1a0",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CGunFlame *"), ("position", "CVector3f *"),
-                 ("euler_angles", "CVector3f *"), ("flame_type", "int"),
-                 ("flame_style", "int")],
-         note="createGunFlames calls it per pool slot; copies position to +0, "
-              "sets lifetime, velocity from euler_angles, flame_type at +0x20 "
-              "and flame_style at +0x24, as nocedit's activate plus the style."),
-    dict(program="bw3.exe", addr="0049e390",
-         expect="core_fire.cpp_FUN_0049e390",
-         name="core_fire.cpp_CGunFlame_process_FUN_0049e390",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CGunFlame *")],
-         note="nocedit CGunFlame_process: lifetime countdown, position += "
-              "velocity * dt, velocity damped by 0.97, smoke, anim_frame wrap."),
-    dict(program="bw3.exe", addr="0049e500",
-         expect="core_fire.cpp_FUN_0049e500",
-         name="core_fire.cpp_CGunFlame_render_FUN_0049e500",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CGunFlame *")],
-         note="CFireEffect_render calls it over the pool at the 0x2c stride; "
-              "returns at lifetime <= 0, picks the frame from anim_frame and "
-              "the texture from flame_style."),
-    dict(program="bw3.exe", addr="0049df60",
-         expect="core_fire.cpp_FUN_0049df60",
-         name="core_fire.cpp_CGunFlame_burnNearby_FUN_0049df60",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CGunFlame *")],
-         note="process calls it at random while flame_type is set: damages the "
-              "characters initProcess listed near a hero (SDamageInfo, 10-20) "
-              "and ignites the listed CFlameCans in reach. New in bw3."),
-    dict(program="bw3.exe", addr="004a3af0",
-         expect="core_fire.cpp_FUN_004a3af0",
-         name="core_fire.cpp_CFireEffect_createGunFlames_FUN_004a3af0",
-         ret="int", conv="__cdecl",
-         params=[("this_ptr", "CFireEffect *"), ("position", "CVector3f *"),
-                 ("euler_angles", "CVector3f *"), ("flame_count", "int"),
-                 ("flame_type", "int"), ("flame_style", "int")],
-         note="nocedit's createGunFlames plus the style: activates flame_count "
-              "pool slots round-robin and returns the last slot's index. "
-              "Called with g_CFireEffect (0x1c73654) from CExorcism_process."),
-    dict(program="bw3.exe", addr="004a3b60",
-         expect="core_fire.cpp_FUN_004a3b60",
-         name="core_fire.cpp_CFireEffect_setGunFlamePosition_FUN_004a3b60",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CFireEffect *"), ("flame_index", "int"),
-                 ("position", "CVector3f *")],
-         note="copies position into pool slot flame_index (0..499)."),
-    dict(program="blairwitch2.exe", addr="00502510",
-         expect="core_moon.cpp_FUN_00502510",
-         name="core_moon.cpp_CMoon_render_FUN_00502510",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CMoon *")],
-         note="the title menus call it with &g_CMoonInstance after update, as "
-              "bw1 and bw3 call their CMoon_render; this build's draws only "
-              "the title bitmaps, so the body never reads this and the "
-              "decompiler infers no parameter."),
-    # Members whose bodies never read `this`, so neither the decompiler nor a
-    # vtable slot shows the receiver; the callers push the object.
-    *[dict(program=prog, addr=addr,
-           expect="core_fire.cpp_CFirefly_setupRenderState_FUN_" + addr,
-           name="core_fire.cpp_CFirefly_setupRenderState_FUN_" + addr,
-           ret="void", conv="__cdecl", params=[("this_ptr", "CFirefly *")],
-           note="CFireEffect_render calls it with the firefly pool before "
-                "drawing it; the body sets renderer state only.")
-      for prog, addr in (("bw1.exe", "004ad9c0"), ("blairwitch2.exe", "00495020"),
-                         ("bw3.exe", "00498a10"))],
-    dict(program="blairwitch2.exe", addr="0059be40",
-         expect="unkafter_superopt.cpp_CExamplePuzzle_getName_FUN_0059be40",
-         name="unkafter_superopt.cpp_CExamplePuzzle_getName_FUN_0059be40",
-         ret="char *", conv="__cdecl", params=[("this_ptr", "CExamplePuzzle *")],
-         note="a slot of g_CExamplePuzzleVTable; returns \"example\"."),
-    dict(program="blairwitch2.exe", addr="0059c2c0",
-         expect="unkaddr_0059c270.cpp_CGameHook_printBanner_FUN_0059c2c0",
-         name="unkaddr_0059c270.cpp_CGameHook_printBanner_FUN_0059c2c0",
-         ret="void", conv="__cdecl", params=[("this_ptr", "CGameHook *")],
-         note="CGame_runGameSession calls it with g_CGameHookPtr; prints the "
-              "Coffin Rock banner and 'GameHook enabled.' to the console."),
-    # bw3 has no CMobster or CStranger: the sibling transfer named these after
-    # nocedit's bodies, but their callers and offsets are another class's.
-    dict(program="bw3.exe", addr="0058f4a0",
-         expect="core_mobster.cpp_CMobster_startFiringAttack_FUN_0058f4a0",
-         name="core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0",
-         ret="void", conv="__cdecl", params=[("this_ptr", "CZombiePriest *")],
-         note="called only from core_zombiepriest.cpp_FUN_0058d960; its timer "
-              "at +0xd110 is the last field of the 0xd114-byte CZombiePriest."),
-    dict(program="blairwitch2.exe", addr="0059fc10",
-         expect="core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10",
-         name="core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10",
-         ret="void", conv="__cdecl", params=[("this_ptr", "CBasicEnemy *")],
-         note="the archive slot of g_CBasicEnemyVTable (005fec04), whose setup slot is "
-              "0059e6a0 and process slot 0059f420; CTwigZombie's table is 005ff184."),
-    dict(program="bw3.exe", addr="00524170",
-         expect="unkafter_prye.cpp_FUN_00524170",
-         name="core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CPrye *"), ("delta_time", "float"),
-                 ("is_weapon_active", "int")],
-         note="nocedit CStranger_updateArmRecoilBlend's body; called only from "
-              "core_prye.cpp_FUN_00518cd0, and reaches +0x20c80 of the "
-              "0x20d04-byte CPrye."),
-    # Blocked on a type that does not exist in nocturne yet. Left in the table
-    # so it is reported every run rather than quietly forgotten.
-    dict(program="nocturne.exe", addr="004f8570",
-         expect="engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570",
-         name="engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570",
-         ret="CPodAuditRecord *", conv="__stack2_esi",
-         params=[("this_ptr", "CPodFile *"), ("record_index", "int"),
-                 ("out_record", "CPodAuditRecord *")],
-         note="Assert string 'CPodFile::getAuditRecord - invalid in...' names "
-              "it outright. SUB ESP,0x138 matches sizeof(CPodAuditRecord)=312 "
-              "exactly. Two stack args plus an incoming ESI (MOV EBX,ESI before "
-              "any write) = __stack2_esi, as nocedit has it. Needs "
-              "CPodAuditRecord created in nocturne's type database first."),
-]
+NO_FIXES = {"prototypes": [], "local_renames": []}
 
 
-# ---------------------------------------------------------------------------
-# Locals squatting on the receiver's name
-# ---------------------------------------------------------------------------
-# Parameter.setName() throws DuplicateNameException if a LOCAL already holds
-# `this_ptr`, so the local has to move first.
-LOCAL_RENAMES = [
-    dict(program="nocedit.exe", addr="00478010",
-         func="core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010",
-         renames=[("this_ptr", "bounds_ptr_bits"),
-                  ("this_ptr_00", "frame_bounds_ptr")],
-         note="`float this_ptr` has unassigned HASH storage and holds "
-              "local_28.max.z, which line 21 loaded with (float)&model_ptr->"
-              "bounds - a pointer punned through a float field, so the name is "
-              "wrong twice over. `this_ptr_00` is a CBoundingBox3D* that only "
-              "carries the _00 suffix because of that collision."),
-]
+def load_fixes(path):
+    """The curated repairs in `path` (see above), or none when `path` is None."""
+    if path is None:
+        return NO_FIXES
+    with open(path, encoding="utf-8") as fh:
+        data = json.load(fh)
+    return {
+        "prototypes": [dict(f, params=[tuple(p) for p in f["params"]])
+                       for f in data.get("prototypes", [])],
+        "local_renames": [dict(r, renames=[tuple(p) for p in r["renames"]])
+                          for r in data.get("local_renames", [])],
+    }
+
 
 ROW_KINDS = ("local_rename", "param_rename", "func_rename", "derive", "proto", "blocked")
 
@@ -474,11 +233,11 @@ def derive(f, cls, inferred, resolve, in_vtable=False):
     return [(RECEIVER, receiver)] + [(n, t) for n, t, _o in params[1:]], ret
 
 
-def plan_locals(program, prog_name):
+def plan_locals(program, prog_name, local_renames):
     rows = []
     fm = program.getFunctionManager()
     af = program.getAddressFactory()
-    for lr in LOCAL_RENAMES:
+    for lr in local_renames:
         if lr["program"] != prog_name:
             continue
         f = fm.getFunctionAt(af.getAddress(lr["addr"]))
@@ -492,8 +251,8 @@ def plan_locals(program, prog_name):
 
 
 def plan_curated(f, fix, resolve):
-    """(row kind, row) for a function the curated table names, or None when it
-    already says what the table wants."""
+    """(row kind, row) for a function a curated entry names, or None when it
+    already says what the entry wants."""
     addr, name = fix["addr"], f.getName()
     if name not in (fix["expect"], fix["name"]):
         return "blocked", {"addr": addr, "name": name,
@@ -548,13 +307,15 @@ def plan_method(f, cls, resolve, infer, owners=None):
                               % (cls, have_type, have_name)}
 
 
-def plan(program, prog_name, skip, infer=None):
+def plan(program, prog_name, skip, infer=None, fixes=None):
     """Build the change list. Pure analysis - no mutation. `infer(function)` is
-    the decompiler's prototype for a parameterless member (see derive)."""
+    the decompiler's prototype for a parameterless member (see derive); `fixes`
+    is load_fixes'."""
+    fixes = fixes or NO_FIXES
     resolve = make_resolver(program)
     rows = {k: [] for k in ROW_KINDS}
-    rows["local_rename"] = plan_locals(program, prog_name)
-    curated = {(f["program"], f["addr"].lower()): f for f in NO_PARAM_FIXES}
+    rows["local_rename"] = plan_locals(program, prog_name, fixes["local_renames"])
+    curated = {(f["program"], f["addr"].lower()): f for f in fixes["prototypes"]}
     owners = vtable_owners(program)
     total = 0
 
@@ -744,10 +505,10 @@ def snapshot(args):
     return subprocess.call(cmd) == 0
 
 
-def run_program(program, prog_name, args, skip):
+def run_program(program, prog_name, args, skip, fixes=None):
     infer, dispose = decompiler_inference(program)
     try:
-        total, rows = plan(program, prog_name, skip, infer)
+        total, rows = plan(program, prog_name, skip, infer, fixes)
     finally:
         dispose()
     report(prog_name, total, rows, args.show)
@@ -774,11 +535,13 @@ def main():
     ap.add_argument("--no-snapshot", action="store_true")
     ap.add_argument("--skip-file", default=os.path.join(
         os.path.dirname(os.path.abspath(__file__)), "check_this_ptr_skip.txt"))
+    ap.add_argument("--fixes", help="JSON file of curated repairs (prototypes, local renames)")
     args = ap.parse_args()
 
     skip = load_skip(args.skip_file)
     if skip:
         print("%s: %d exemption(s)\n" % (os.path.basename(args.skip_file), len(skip)))
+    fixes = load_fixes(args.fixes)
 
     if args.apply and not args.no_snapshot and not snapshot(args):
         print("Snapshot failed - refusing to mutate.", flush=True)
@@ -792,7 +555,7 @@ def main():
     try:
         for prog_name in args.programs:
             with pyghidra.program_context(project, "/" + prog_name) as program:
-                run_program(program, prog_name, args, skip)
+                run_program(program, prog_name, args, skip, fixes)
         project.close()
     except Exception as e:  # pylint: disable=broad-except
         print("ERROR: %s" % e)

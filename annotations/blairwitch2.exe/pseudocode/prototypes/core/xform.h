@@ -65,6 +65,10 @@ float * matrixToEulerAnglesZYX(float *param_1);
 // Address: 00592720
 void FUN_00592720(int param_1);
 
+// Original: core_xform.cpp_FUN_00592760
+// Address: 00592760
+void FUN_00592760(undefined4 param_1);
+
 // Original: core_xform.cpp_determinant_FUN_005927e0
 // Address: 005927e0
 double __cdecl determinant(float *param_1);
@@ -72,6 +76,10 @@ double __cdecl determinant(float *param_1);
 // Original: core_xform.cpp_inverse_FUN_00592830
 // Address: 00592830
 void inverse(float *param_1);
+
+// Original: core_xform.cpp_computeOrthogonalityError_FUN_00592a60
+// Address: 00592a60
+float computeOrthogonalityError(float *param_1);
 
 // Original: core_xform.cpp_FUN_00592dd0
 // Address: 00592dd0

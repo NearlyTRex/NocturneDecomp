@@ -38,7 +38,7 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00573b80(CTextureCa
   uint local_14;
   
   bVar10 = 0;
-  unkclass_instream_cpp_CInStreamFile_ctor_FUN_0057cd50(&local_58);
+  support_trstream_cpp_CInStreamFile_ctor_FUN_0057cd50(&local_58);
   uVar4 = 0xffffffff;
   pcVar8 = texture_name;
   do {
@@ -146,9 +146,9 @@ LAB_005741ee:
     }
     support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
               (&local_58,&DAT_005ec8cf,texture_name);
-    unkaddr_0057b9a0_cpp_CInStreamFile_read_FUN_0057cfe0
+    support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
               (&local_58,(uint *)pSVar5->true_color_data,uVar4);
-    unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&local_58);
+    support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&local_58);
     goto LAB_00573fe1;
   }
   puVar3 = (uchar *)malloc(0x300);
@@ -207,21 +207,21 @@ LAB_00573db1:
   }
   support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390(&local_58,&DAT_005ec842,local_1d8)
   ;
-  unkaddr_0057b9a0_cpp_CInStreamFile_read_FUN_0057cfe0
+  support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
             (&local_58,(uint *)pSVar5->palette_data,0x300);
-  unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&local_58);
+  support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&local_58);
   if (iVar2 != 0) {
     support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
               (&local_58,&DAT_005ec846,local_158);
-    unkaddr_0057b9a0_cpp_CInStreamFile_read_FUN_0057cfe0
+    support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
               (&local_58,(uint *)pSVar5->opacity_data,local_18 * local_18);
-    unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&local_58);
+    support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&local_58);
   }
   support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
             (&local_58,&DAT_005ec84a,texture_name);
-  unkaddr_0057b9a0_cpp_CInStreamFile_read_FUN_0057cfe0
+  support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
             (&local_58,(uint *)pSVar5->texture_data,local_18 * local_18);
-  unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&local_58);
+  support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&local_58);
   if (_DAT_02652ea8 != 0) {
     iVar2 = 0;
     fVar11 = (float10)_DAT_005ec8de;
@@ -241,6 +241,6 @@ LAB_00573db1:
     } while (iVar2 != 0x300);
   }
 LAB_00573fe1:
-  unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&local_58,0);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(&local_58,0);
   return local_1c;
 }

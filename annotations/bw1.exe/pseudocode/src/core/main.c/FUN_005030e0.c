@@ -35,7 +35,7 @@ LAB_00503144:
       pcVar1 = (char *)0x0;
 LAB_00503146:
       if (pcVar1 == (char *)0x0) {
-        sound_sndmain_cpp_shutdownSoundSystem_FUN_0057cb90();
+        core_sound_cpp_shutdownSoundSystem_FUN_0057cb90();
         engine_2d_c_cleanupGraphicsSystem_FUN_00401120();
         wincore_winrun_cpp_endPeriod_FUN_005b2410();
         wincore_winrun_cpp_FUN_005b3080((char *)0x1d1c300);

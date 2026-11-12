@@ -9,11 +9,11 @@
 ; int              Stack[0xc]:4   disable_search
 ;
 ; XREF[5]:
+;   core_basicene.cpp_FUN_0059f0e0 at 0059f34f
 ;   core_doc.cpp_FUN_00450c60 at 004515e2
 ;   core_dog.cpp_CZombieDog_process_FUN_0045e360 at 0045e3a8
 ;   core_hostage.cpp_CHostage_process_FUN_004d1660 at 004d1d20
 ;   core_npc.cpp_CNPC_process_FUN_005105b0 at 00510842
-;   unkafter_basicene.cpp_FUN_0059f0e0 at 0059f34f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_head_005cd072

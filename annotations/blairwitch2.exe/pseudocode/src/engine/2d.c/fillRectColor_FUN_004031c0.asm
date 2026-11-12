@@ -13,6 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[17]:
+;   core_flashlit.cpp_FUN_004a16b0 at 004a16fb
 ;   core_fldnotes.cpp_FUN_004a5700 at 004a5a35
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b32c0 at 004b35f8
 ;   core_game.cpp_FUN_004bb3d0 at 004bb42e
@@ -22,7 +23,6 @@
 ;   core_menu.cpp_FUN_004ebf10 at 004ecadc
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb935
 ;   core_script.cpp_CScript_renderSubtitles_FUN_005218a0 at 0052194c
-;   engine_2d.c_fillRectWithBorder_FUN_00403250 at 0040326c
 ;   ... and 7 more
 ;
 ; Referenced Globals:

@@ -34,7 +34,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00502510(CMoon *this_ptr)
   local_2c.z = -7.03622;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
             (DAT_0060b280,&local_2c);
-  engine_matrix_c_FUN_0046b4b0(DAT_0060b280,0x422c9ce4);
+  engine_drender_cpp_FUN_0046b4b0(DAT_0060b280,0x422c9ce4);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060(DAT_0060b280,&local_54);
   local_20.x = 0.0;
   local_20.y = 0.0;

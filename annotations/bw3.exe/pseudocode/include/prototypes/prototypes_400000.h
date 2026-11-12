@@ -65,6 +65,7 @@ void __cdecl engine_2d_c_drawTextMultilineColor_FUN_00401f50(char *text,int x_st
 void __cdecl engine_2d_c_drawText_FUN_00401fe0(char *text,int x,int y);
 void __cdecl engine_2d_c_drawString_FUN_00402090(char *text,int x_pos,int y_pos,int color);
 void __cdecl engine_2d_c_drawTextXY_FUN_00402140(int x,int y,char *text);
+void engine_2d_c_FUN_00402160(int param_1,int param_2,undefined4 param_3);
 void __cdecl engine_2d_c_drawTextColor_FUN_00402440(char *text,int x,int y);
 void __cdecl engine_2d_c_drawTextRightAlignedColor_FUN_00402540(char *text,int x,int y);
 void __cdecl engine_2d_c_drawTextCenteredAtColor_FUN_00402600(char *text,int x,int y);
@@ -181,6 +182,7 @@ void __cdecl engine_3d_c_flushRenderQueue_FUN_004077f0(void);
 void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407860(SMRGLHeaderExtended *mrgl);
 void engine_3d_c_drawLine2DFromIndices_FUN_00407ab0(int param_1,int param_2);
 void engine_3d_c_clipAndDrawLine2D_FUN_00407b30(int param_1,int param_2,int param_3,undefined4 param_4,uint param_5);
+void engine_3d_c_FUN_00407db0(int param_1,int param_2);
 uint engine_3d_c_clipAndDrawLine3D_FUN_00407e30(uint param_1,uint param_2,int param_3,undefined4 param_4,uint param_5);
 void __cdecl core_actor_cpp_staticInit_FUN_004080e0(void);
 float core_actor_cpp_FUN_00408100(int param_1,float *param_2,float *param_3,float *param_4);
@@ -293,6 +295,7 @@ void __cdecl core_actor_cpp_crc32ProcessString_FUN_0040d1c0(uint *crc_state,char
 float core_actor_cpp_FUN_0040d200(float *param_1);
 CVector3f * core_actor_cpp_CVector3f_ctor_FUN_0040d220(CVector3f *this_ptr);
 void core_actor_cpp_FUN_0040d230(undefined4 *param_1,undefined4 *param_2);
+float core_actor_cpp_FUN_0040d250(float *param_1);
 void core_actor_cpp_FUN_0040d2a0(float *param_1,int *param_2);
 CVector3f * core_actor_cpp_CVector3f_dtor_FUN_0040d2d0(CVector3f *this_ptr,uint flags);
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d2e0(CAlphaBitmap *this_ptr);
@@ -394,8 +397,8 @@ void __cdecl core_bindevil_cpp_CBindEvil_setup_FUN_0040f900(CBindEvil *this_ptr)
 CBindEvil * core_bindevil_cpp_CBindEvil_dtor_FUN_0040f940(CBindEvil *this_ptr,uint flags);
 void core_bird_cpp_staticInit_FUN_0040f990(void);
 void core_bird_cpp_factoryFuncBird_FUN_0040f9c0(void);
-CDemonActorType * unkafter_bird_cpp_CBird_getActorType_FUN_0040f9e0(CBird *this_ptr);
-CBird * unkafter_bird_cpp_CBird_ctor_FUN_0040f9f0(CBird *this_ptr);
+CDemonActorType * core_bird_cpp_CBird_getActorType_FUN_0040f9e0(CBird *this_ptr);
+CBird * core_bird_cpp_CBird_ctor_FUN_0040f9f0(CBird *this_ptr);
 void __cdecl core_bird_cpp_CBird_setup_FUN_0040fac0(CBird *this_ptr);
 void __cdecl core_bird_cpp_CBird_process_FUN_0040fb40(CBird *this_ptr,float delta_time);
 void __cdecl core_bird_cpp_CBird_renderBackground_FUN_0040fe60(CBird *this_ptr,int layer_flag);

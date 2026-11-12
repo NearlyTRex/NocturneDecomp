@@ -62,7 +62,7 @@
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_pop_FUN_0046d080
 ;
 ; *****************************************************************************
 
@@ -307,8 +307,8 @@ section .text
     ADD ESP,0x10                        ; 0049b010
     MOV ECX,dword ptr [0x005f2afc]      ; 0049b013 | DAT_005f2afc
     PUSH ECX                            ; 0049b019 | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0049b01a
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0049b01a
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0049b01f
     JMP 0x0049aeef                      ; 0049b022
         ;   XREF to: 0049aeef (UNCONDITIONAL_JUMP)  ; LAB_0049aeef

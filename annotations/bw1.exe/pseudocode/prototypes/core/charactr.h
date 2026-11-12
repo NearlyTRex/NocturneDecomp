@@ -41,6 +41,14 @@ void __cdecl CCharacter::archive(CCharacter *this_ptr);
 // Address: 0042cbe0
 void __cdecl CCharacter::setPositionAndOrientation(CCharacter *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 
+// Original: core_charactr.cpp_clampFloat_FUN_0042cc30
+// Address: 0042cc30
+float clampFloat(float param_1,float param_2);
+
+// Original: core_charactr.cpp_FUN_0042cc80
+// Address: 0042cc80
+float FUN_0042cc80(undefined4 param_1,float param_2);
+
 // Original: core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 // Address: 0042ccf0
 int __cdecl CCharacter::walkToPoint(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance);
@@ -356,6 +364,10 @@ undefined4 FUN_00433f10(CCharacter *param_1,float param_2,char *param_3);
 // Original: core_charactr.cpp_CCharacter_advanceLayerAction_FUN_004340b0
 // Address: 004340b0
 int __cdecl CCharacter::advanceLayerAction(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
+
+// Original: core_charactr.cpp_FUN_004342c0
+// Address: 004342c0
+void FUN_004342c0(int param_1,undefined4 param_2,undefined4 param_3);
 
 // Original: core_charactr.cpp_CCharacter_addLayerAction_FUN_00434320
 // Address: 00434320

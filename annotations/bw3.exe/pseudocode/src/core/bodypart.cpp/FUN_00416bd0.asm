@@ -13,7 +13,7 @@
 ;   core_carved.cpp_FUN_00427bc0 at 00427eb8
 ;   core_demnfolk.cpp_FUN_00457740 at 00457a32
 ;   core_zombie.cpp_CZombie_processPickup_FUN_0058b3f0 at 0058b6e2
-;   unkafter_zombiepr.cpp_FUN_0058efb0 at 0058f240
+;   core_zombiepriest.cpp_FUN_0058efb0 at 0058f240
 ;
 ; *****************************************************************************
 

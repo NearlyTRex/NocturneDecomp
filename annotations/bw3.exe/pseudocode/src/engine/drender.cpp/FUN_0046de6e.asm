@@ -17,12 +17,12 @@
 ;
 ; Called Functions:
 ;   core_asgaya.cpp_FUN_005a1ea0
+;   core_dpart.cpp_FUN_004673d0
 ;   core_main.c_FUN_004e4330
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00587cd0
 ;   engine_clipper.c_clipAndRasterize_FUN_0043a840
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043bac0
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0
-;   unkafter_dpart.cpp_FUN_004673d0
 ;
 ; *****************************************************************************
 
@@ -160,8 +160,8 @@ section .text
         ;   Label: LAB_0046df9e
     LEA EAX,[ESP + 0x4]                 ; 0046df9f
     PUSH EAX                            ; 0046dfa3
-    CALL unkafter_dpart.cpp_FUN_004673d0 ; 0046dfa4
-        ;   XREF to: 004673d0 (UNCONDITIONAL_CALL)  ; void unkafter_dpart.cpp_FUN_004673d0(CVector3i * vertex_indices, int vertex_count)
+    CALL core_dpart.cpp_FUN_004673d0    ; 0046dfa4
+        ;   XREF to: 004673d0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_004673d0(CVector3i * vertex_indices, int vertex_count)
     JMP 0x0046df51                      ; 0046dfa9
         ;   XREF to: 0046df51 (UNCONDITIONAL_JUMP)  ; LAB_0046df51
     CMP EDI,0xc0                        ; 0046dfab

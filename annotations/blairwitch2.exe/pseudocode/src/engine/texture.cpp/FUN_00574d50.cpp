@@ -19,7 +19,7 @@ void engine_texture_cpp_FUN_00574d50(void)
     _DAT_02652eb0 = 0;
   }
   else {
-    _DAT_02652eb0 = unkafter_texlist_cpp_FUN_00573940(iVar1);
+    _DAT_02652eb0 = core_texlist_cpp_FUN_00573940(iVar1);
     if (_DAT_02652eb0 != 0) {
       return;
     }

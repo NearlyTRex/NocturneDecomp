@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_dstrendr.cpp_memcpyMMX_FUN_00471271
-;   engine_matrix.c_popViewport_FUN_0046d320
+;   engine_drender.cpp_popViewport_FUN_0046d320
 ;   engine_special.cpp_masterZBuffer_FUN_00566350
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     MOV EBX,dword ptr [0x005f2afc]      ; 00449a1c | DAT_005f2afc
         ;   Label: LAB_00449a1c
     PUSH EBX                            ; 00449a22 | DAT_01bdd7e4
-    CALL engine_matrix.c_popViewport_FUN_0046d320 ; 00449a23
-        ;   XREF to: 0046d320 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0046d320()
+    CALL engine_drender.cpp_popViewport_FUN_0046d320 ; 00449a23
+        ;   XREF to: 0046d320 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_0046d320()
     MOV EAX,[0x01c6b598]                ; 00449a28 | DAT_01c6b598
     MOV dword ptr [EBP + 0x1c0],EAX     ; 00449a2d
     MOV EAX,[0x01c6b59c]                ; 00449a33 | DAT_01c6b59c

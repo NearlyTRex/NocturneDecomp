@@ -80,3 +80,7 @@ void FUN_004f5870(undefined4 param_1,int *param_2,int *param_3);
 // Original: core_mirror.cpp_SClipPlane_ctor_FUN_004f5a60
 // Address: 004f5a60
 SClipPlane * SClipPlane::ctor(SClipPlane *this_ptr);
+
+// Original: core_mirror.cpp_FUN_004f5a70
+// Address: 004f5a70
+void FUN_004f5a70(void);

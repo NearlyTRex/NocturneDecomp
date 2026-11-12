@@ -43,7 +43,7 @@ void __cdecl core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(CBasicEnem
                    &(this_ptr->base).base.base.location.position);
       }
       (this_ptr->base).base.hit_points = 0.0;
-      unkaddr_0059d350_cpp_FUN_0059d8e0(&this_ptr->state_machine,"Death");
+      core_muzzle_cpp_FUN_0059d8e0(&this_ptr->state_machine,"Death");
     }
   }
   else {

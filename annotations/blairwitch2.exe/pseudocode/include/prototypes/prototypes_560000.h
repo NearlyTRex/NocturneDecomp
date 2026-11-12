@@ -59,6 +59,8 @@ ECollisionType __cdecl core_spike_cpp_CSpike_getCollisionType_FUN_00560ca0(CSpik
 void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0(CSpike *this_ptr);
 CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_005612c0(CSpike *this_ptr,uint flags);
 void __cdecl core_spline_cpp_FUN_00561310(float *out_basis,float t,float tension);
+float core_spline_cpp_evaluateSplineScalar_FUN_005614a0(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+int core_spline_cpp_evaluateSplintInt_FUN_005614e0(float *param_1,int param_2,int param_3,int param_4,int param_5);
 void core_spline_cpp_FUN_00561540(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
 float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_005616e0(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
 void core_spline_cpp_FUN_00561780(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
@@ -97,7 +99,6 @@ float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_005626f0(CDem
 void core_stranger_cpp_factoryFuncStranger_FUN_005627c0(void);
 CDemonActorType * core_stranger_cpp_CStranger_getActorType_FUN_005627e0(CStranger *this_ptr);
 CStranger * core_stranger_cpp_CStranger_ctor_FUN_005627f0(CStranger *this_ptr);
-void core_stranger_cpp_FUN_005628b4(void);
 void __cdecl core_stranger_cpp_CStranger_setup_FUN_00562b90(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_process_FUN_00562f30(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00563060(CStranger *this_ptr,float delta_time);

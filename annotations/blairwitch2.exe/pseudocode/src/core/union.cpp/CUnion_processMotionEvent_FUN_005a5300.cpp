@@ -34,8 +34,7 @@ void __cdecl core_union_cpp_CUnion_processMotionEvent_FUN_005a5300(CUnion *this_
     core_basicnpc_cpp_CBasicNPC_processMotionEvent_FUN_005a48f0(&this_ptr->base,event_id);
     return;
   case 0x206f:
-    iVar1 = unkafter_basicene_cpp_FUN_0059f740(this_ptr,0x40200000,this_ptr->gun2_bone,0x3f800000)
-    ;
+    iVar1 = core_basicene_cpp_FUN_0059f740(this_ptr,0x40200000,this_ptr->gun2_bone,0x3f800000);
     if (iVar1 != 0) {
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
                 (0x0264B290,(CDemonActor *)this_ptr,"swordimpactflesh0?.wav",
@@ -45,7 +44,7 @@ void __cdecl core_union_cpp_CUnion_processMotionEvent_FUN_005a5300(CUnion *this_
     }
     break;
   case 0x2070:
-    iVar1 = unkafter_basicene_cpp_FUN_0059f740(this_ptr,0x40200000,this_ptr->gun_bone,0x3f800000);
+    iVar1 = core_basicene_cpp_FUN_0059f740(this_ptr,0x40200000,this_ptr->gun_bone,0x3f800000);
     if (iVar1 != 0) {
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
                 (0x0264B290,(CDemonActor *)this_ptr,"riflebutt01",

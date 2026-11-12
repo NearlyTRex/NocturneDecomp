@@ -449,9 +449,9 @@ LAB_004896f7:
         }
         if (local_148 != 0) {
           if (_DAT_026677e0 != 0) {
-            unkaddr_0059aa80_cpp_FUN_0059ab70();
+            core_zombie_cpp_FUN_0059ab70();
           }
-          unkaddr_0059aa80_cpp_FUN_0059ab70();
+          core_zombie_cpp_FUN_0059ab70();
         }
       }
       else {

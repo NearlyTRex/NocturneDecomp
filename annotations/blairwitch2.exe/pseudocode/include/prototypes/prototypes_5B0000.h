@@ -59,6 +59,7 @@ SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_005b1ba0(SClothVerte
 CBox * __cdecl core_box_cpp_CBox_ctor_FUN_005b1bc0(CBox *this_ptr);
 CBox * __cdecl core_box_cpp_CBox_dtor_FUN_005b1c70(CBox *this_ptr,uint flags);
 void __cdecl core_box_cpp_CBox_setupCorners_FUN_005b1c80(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);
+void core_box_cpp_FUN_005b1eb0(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
 void __cdecl core_box_cpp_FUN_005b2050(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
 void __cdecl core_box_cpp_CBox_process_FUN_005b2290(CBox *this_ptr,float delta_time);
 void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float delta_time);
@@ -103,6 +104,8 @@ void __cdecl core_morph_cpp_CMorph_free_FUN_005b6ea0(CMorph *this_ptr);
 void __cdecl core_morph_cpp_CMorph_setupModelFromTriPolygons_FUN_005b6ec0(CMorph *this_ptr,int model_index,int vertex_count,CVector3i *vertices,int face_count ,SMRGLHeaderPrimitive *faces,SMRGLTextureModel *texture_list,int *texture_index_list);
 void __cdecl core_morph_cpp_CMorph_setupModelFromDeformable_FUN_005b6f80(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr);
 void __cdecl core_morph_cpp_CMorph_setupModelFromKeyframed_FUN_005b6fc0(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
+void __cdecl core_morph_cpp_CMorph_addTriPartToModel_FUN_005b7000(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8);
+void __cdecl core_morph_cpp_CMorph_addQuadPartToModel_FUN_005b7050(CMorph *this_ptr,int param_2,int param_3,CVector3i *param_4,int param_5,SMRGLHeaderPrimitive *param_6,SMRGLTextureModel *param_7,int *param_8);
 void __cdecl core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_005b70d0(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
 void __cdecl core_morph_cpp_CMorph_updateModelFromDeformable_FUN_005b7150(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr,int part_index);
 void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_005b7190(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index,int part_index);

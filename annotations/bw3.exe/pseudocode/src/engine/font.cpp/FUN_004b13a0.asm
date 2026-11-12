@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   unkafter_font.cpp_FUN_004b33d0 at 004b34d5
+;   engine_font.cpp_FUN_004b33d0 at 004b34d5
 ;
 ; Called Functions:
 ;   engine_mini3d.cpp_FUN_004ed980
@@ -15,7 +15,7 @@
 ;   engine_mini3d.cpp_FUN_004edcb0
 ;   engine_mini3d.cpp_FUN_004ee5b0
 ;   engine_mini3d.cpp_FUN_004f02b0
-;   unkafter_palette.cpp_FUN_00509d90
+;   engine_palette.cpp_FUN_00509d90
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x4214]    ; 004b13d8
         ;   Label: LAB_004b13d8
     PUSH EDX                            ; 004b13de
-    CALL unkafter_palette.cpp_FUN_00509d90 ; 004b13df
-        ;   XREF to: 00509d90 (UNCONDITIONAL_CALL)  ; undefined unkafter_palette.cpp_FUN_00509d90()
+    CALL engine_palette.cpp_FUN_00509d90 ; 004b13df
+        ;   XREF to: 00509d90 (UNCONDITIONAL_CALL)  ; undefined engine_palette.cpp_FUN_00509d90()
     ADD ESP,0x4                         ; 004b13e4
     POP EBP                             ; 004b13e7
     POP EBX                             ; 004b13e8

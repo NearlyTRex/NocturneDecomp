@@ -9,13 +9,13 @@
 ; float            Stack[0xc]:4   frame_number
 ;
 ; XREF[7]:
+;   core_doc.cpp_FUN_0045dd30 at 0045dd7e
 ;   core_dracbrid.cpp_CDraculaBride_archive_FUN_00464cc0 at 00464d79
 ;   core_mimic.cpp_CMimic_setupCloth_FUN_004f17a0 at 004f181e
 ;   core_moloch.cpp_CMoloch_process_FUN_00501530 at 00501af6
 ;   core_stranger.cpp_CStranger_reset_FUN_0056f090 at 0056f0de
 ;   core_succubus.cpp_CSuccubus_process_FUN_0056f6d0 at 0056f977
 ;   core_vampboss.cpp_CVampireBoss_transformToHuman_FUN_00583650 at 0058366d
-;   unkafter_stranger.cpp_FUN_0045dd30 at 0045dd7e
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_00503980

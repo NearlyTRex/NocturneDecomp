@@ -449,6 +449,10 @@ CVector3f * CVector3f::ctor(CVector3f *this_ptr);
 // Address: 0040d350
 void FUN_0040d350(undefined4 *param_1,undefined4 *param_2);
 
+// Original: core_actor.cpp_FUN_0040d370
+// Address: 0040d370
+float FUN_0040d370(float *param_1);
+
 // Original: core_actor.cpp_FUN_0040d3c0
 // Address: 0040d3c0
 void FUN_0040d3c0(float *param_1,int *param_2);
@@ -456,3 +460,7 @@ void FUN_0040d3c0(float *param_1,int *param_2);
 // Original: core_actor.cpp_CVector3f_dtor_FUN_0040d3f0
 // Address: 0040d3f0
 CVector3f * CVector3f::dtor(CVector3f *this_ptr,uint flags);
+
+// Original: core_actor.cpp_FUN_0040d400
+// Address: 0040d400
+void FUN_0040d400(undefined4 param_1);

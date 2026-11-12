@@ -34,11 +34,11 @@
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_00430520 at 00430574
 ;   core_construc.cpp_FUN_00444110 at 00444249
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00445730 at 004457ea
+;   core_demnfolk.cpp_FUN_00458680 at 00458760
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004c5f10 at 004c5fe5
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004c9140 at 004c9220
 ;   core_imp.cpp_CImp_processDismemberment_FUN_004d7bd0 at 004d7cb5
 ;   core_moocow.cpp_FUN_004f9050 at 004f90dc
-;   core_script.cpp_CScript_step_FUN_00529a70 at 0052c28d
 ;   ... and 3 more
 ;
 ; Referenced Globals:

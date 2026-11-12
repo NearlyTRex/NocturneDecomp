@@ -6,7 +6,7 @@
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[566]:
+; XREF[572]:
 ;   cockpit_ckptutil.c_FUN_0042c520 at 0042c593
 ;   cockpit_ckptutil.c_FUN_0042dae0 at 0042dc9f
 ;   cockpit_ckptutil.c_FUN_0042dec0 at 0042df1a
@@ -17,7 +17,7 @@
 ;   cockpit_ckptutil.c_FUN_0042f74e at 0042f87b
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780 at 0042c88f
 ;   cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00466ca0 at 00466f6d
-;   ... and 556 more
+;   ... and 562 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061c068
@@ -25,10 +25,10 @@
 ;   undefined4 DAT_01d046a8
 ;
 ; Called Functions:
+;   core_sound.cpp_shutdownSoundSystem_FUN_0055a160
 ;   crt_stdio.c_vsprintf_FUN_005b7768
 ;   crt_watcom.c_notifyAbnormalTermination_FUN_005bad80
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_00401120
-;   sound_sndmain.cpp_shutdownSoundSystem_FUN_0055a160
 ;   wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_0058f5d0
 ;   wincore_winrun.cpp_endPeriod_FUN_0058e9d0
 ;
@@ -89,8 +89,8 @@ section .text
         ;   XREF to: 004e45a0 (CONDITIONAL_JUMP)  ; LAB_004e45a0
     MOV EDI,dword ptr [0x0061c068]      ; 004e456a | DAT_0061c068
     PUSH EDI                            ; 004e4570
-    CALL sound_sndmain.cpp_shutdownSoundSystem_FUN_0055a160 ; 004e4571
-        ;   XREF to: 0055a160 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_shutdownSoundSystem_FUN_0055a160()
+    CALL core_sound.cpp_shutdownSoundSystem_FUN_0055a160 ; 004e4571
+        ;   XREF to: 0055a160 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_shutdownSoundSystem_FUN_0055a160()
     ADD ESP,0x4                         ; 004e4576
     CALL engine_2d.c_cleanupGraphicsSystem_FUN_00401120 ; 004e4579
         ;   XREF to: 00401120 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_00401120()

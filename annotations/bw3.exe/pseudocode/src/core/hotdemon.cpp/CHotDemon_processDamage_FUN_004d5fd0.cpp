@@ -62,7 +62,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004d5fd0(CHotDemon *t
     }
   }
   else {
-    iVar2 = unkafter_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
+    iVar2 = core_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
     if (iVar2 != 0) {
       pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&this_ptr_00->base);
       if ((pSVar3->state_index < 6) || (pSVar3->state_index == 0xf)) {

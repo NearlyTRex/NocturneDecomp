@@ -24,18 +24,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[20]:
+; XREF[21]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a892
 ;   core_confedrt.cpp_FUN_005a14e0 at 005a1823
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0 at 0043a9a7
+;   core_doc.cpp_FUN_0045ab40 at 0045acd0
+;   core_doc.cpp_FUN_0045b510 at 0045b87c
 ;   core_elephant.cpp_CElephantGun_fire_FUN_00485b40 at 00485e3e
 ;   core_fire.cpp_FUN_0049db20 at 0049dbc6
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0 at 004b14b9
 ;   core_gabriela.cpp_FUN_004aeb00 at 004af18b
 ;   core_game.cpp_FUN_004be8a0 at 004bee6b
-;   core_gun.cpp_CGun_fire_FUN_004cbdc0 at 004cbfef
-;   core_lightgun.cpp_CLightGun_fire_FUN_004e2e70 at 004e305d
-;   ... and 10 more
+;   ... and 11 more
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance

@@ -28,7 +28,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00449dd0(
   uVar1 = DAT_005f2afc;
   (this_ptr->source_matrix).m[2].y = _DAT_01c6e318;
   (this_ptr->source_matrix).m[2].z = _DAT_01c6e31c;
-  engine_matrix_c_FUN_0046d1a0(uVar1);
+  engine_drender_cpp_FUN_0046d1a0(uVar1);
   puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 0x170);
   (this_ptr->camera_origin).x = local_18;
   *puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);

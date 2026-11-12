@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   str1
 ; char *           Stack[0x8]:4   str2
 ;
-; XREF[111]:
+; XREF[112]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_005380c0 at 005380ef
 ;   core_actor.cpp_CDemonActor_load_FUN_0040aed0 at 0040af1a
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_0041ac60 at 0041ac80
@@ -16,9 +16,9 @@
 ;   core_charactr.cpp_CCharacter_setup_FUN_0042c510 at 0042c60d
 ;   core_demnfolk.cpp_CDemnfolk_processDamage_FUN_0045c7b0 at 0045c88b
 ;   core_demnfolk.cpp_CDemnfolk_setup_FUN_00458bc0 at 00458e68
+;   core_demnfolk.cpp_FUN_0045bec0 at 0045beda
 ;   core_dmodel.cpp_loadModel_FUN_00468780 at 0046879c
-;   core_dracbrid.cpp_CDraculaBride_setup_FUN_0047b1b0 at 0047b1df
-;   ... and 101 more
+;   ... and 102 more
 ;
 ; *****************************************************************************
 

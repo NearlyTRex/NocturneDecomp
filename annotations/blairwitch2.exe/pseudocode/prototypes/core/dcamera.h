@@ -277,6 +277,10 @@ int FUN_00442cb0(int param_1,int *param_2);
 // Address: 00442d80
 void __cdecl CDemonCamera::setupPerspectiveAndFog(CDemonCamera *this_ptr,CVector3f *position,SProjectedVertex *projected_vertex);
 
+// Original: core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_00442e70
+// Address: 00442e70
+void __cdecl CDemonCamera::sampleFramebufferPixel(CDemonCamera *this_ptr,int param_2);
+
 // Original: core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00442f00
 // Address: 00442f00
 void __cdecl CDemonCamera::saveAlphaTransform(CDemonCamera *this_ptr,int alpha_index);

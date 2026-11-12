@@ -465,9 +465,9 @@ LAB_004a1d87:
         }
         if (local_15c != 0) {
           if (DAT_007c3978 != 0) {
-            unkafter_alphabit_cpp_FUN_00415be0();
+            engine_alphabit_cpp_FUN_00415be0();
           }
-          unkafter_alphabit_cpp_FUN_00415be0();
+          engine_alphabit_cpp_FUN_00415be0();
         }
       }
       else {

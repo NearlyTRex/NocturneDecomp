@@ -7,7 +7,7 @@
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   unkaddr_0059f520.cpp_FUN_0059f540
+;   support_trstream.cpp_FUN_0059f540
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00443b90
         ;   Label: support_codec.cpp_CInStreamPipe_ctor_FUN_00443b90
     PUSH EDX                            ; 00443b94
-    CALL unkaddr_0059f520.cpp_FUN_0059f540 ; 00443b95
-        ;   XREF to: 0059f540 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_0059f540()
+    CALL support_trstream.cpp_FUN_0059f540 ; 00443b95
+        ;   XREF to: 0059f540 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0059f540()
     MOV dword ptr [EAX],0x5fda74        ; 00443b9a
     MOV dword ptr [EAX + 0x4],0x0       ; 00443ba0
     MOV dword ptr [EAX + 0x8],0x0       ; 00443ba7

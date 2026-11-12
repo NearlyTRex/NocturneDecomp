@@ -41,7 +41,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b6170(CGame *this_ptr)
   shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004807e0(g_CEditorToolsPtr,local_11c)
   ;
   engine_console_cpp_FUN_00436710(g_CConsolePtr,&DAT_005d773a,local_11c);
-  unkaddr_0059c270_cpp_CGameHook_printBanner_FUN_0059c2c0(g_CGameHookPtr);
+  core_gmehook_cpp_CGameHook_printBanner_FUN_0059c2c0(g_CGameHookPtr);
   local_1c = (byte *)&local_89c;
   engine_console_cpp_FUN_00436710(g_CConsolePtr,"ESP: %08X\n",&local_89c);
   this_ptr->camera_view_index = 0;
@@ -78,7 +78,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b6170(CGame *this_ptr)
   this_ptr->collision_render_enabled = 0;
   _DAT_01cb7788 = 0;
   g_CFieldNotesPtr->is_displayed = 0;
-  unkaddr_0059aa80_cpp_FUN_0059ac10();
+  core_zombie_cpp_FUN_0059ac10();
   this_ptr->developer_mode_enabled = 0;
   core_game_cpp_CGame_setGameRes_FUN_004b5fd0(this_ptr);
   pcVar3 = getenv("VELOCITY");
@@ -152,7 +152,7 @@ LAB_004b6569:
       this_ptr->goggles_active = 0;
       pCVar2->is_displayed = 0;
       if (_DAT_026677e0 != 0) {
-        unkaddr_0059aa80_cpp_FUN_0059ab70(_DAT_026677e0,0);
+        core_zombie_cpp_FUN_0059ab70(_DAT_026677e0,0);
       }
     }
     if (g_CDemonSetPtr->selected_camera_index < 0) {
@@ -281,7 +281,7 @@ LAB_004b6635:
             }
           }
           else {
-            unkaddr_0059aa80_cpp_FUN_0059ab70(_DAT_026677e0,0);
+            core_zombie_cpp_FUN_0059ab70(_DAT_026677e0,0);
           }
         }
         else {
@@ -372,12 +372,12 @@ LAB_004b66e4:
     } while (iVar4 != 1);
     shape_edittool_cpp_CPickList_dtor_FUN_004820b0(&local_4dc,0);
   }
-  iVar4 = unkafter_mission_cpp_FUN_004fd450(0x01D182F0);
+  iVar4 = core_mission_cpp_FUN_004fd450(0x01D182F0);
   this_ptr_00 = 0x01D02F84;
   this_ptr->damageable_enemy_count = iVar4;
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004dfee0(this_ptr_00,0);
   core_sound_cpp_CSound_shutdown_FUN_0055a360(0x0264B290);
-  unkaddr_0059aa80_cpp_FUN_0059ac10();
+  core_zombie_cpp_FUN_0059ac10();
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0(this_ptr);
   (*0x01D02F84->vtable->clearKeyPresses)(0x01D02F84);
   core_set_cpp_CDemonSet_clearLights_FUN_005308e0(g_CDemonSetPtr);

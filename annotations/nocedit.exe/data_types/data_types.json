@@ -705,10 +705,6 @@
       "type":"struct"
     },
     {
-      "name":"CEdCheck",
-      "type":"struct"
-    },
-    {
       "name":"CEdScrollBar",
       "type":"struct"
     },
@@ -2097,12 +2093,24 @@
       "type":"typedef"
     },
     {
+      "name":"EBoneUpdateMode",
+      "type":"enum"
+    },
+    {
       "name":"EBoxActorPickupType",
       "type":"enum"
     },
     {
       "name":"EBugsState",
       "type":"enum"
+    },
+    {
+      "name":"ECheckboxMode",
+      "type":"enum"
+    },
+    {
+      "name":"CEdCheck",
+      "type":"struct"
     },
     {
       "name":"ECmdParmType",
@@ -2310,6 +2318,14 @@
     },
     {
       "name":"ERenderStateFlagBits",
+      "type":"enum"
+    },
+    {
+      "name":"EScriptXRefType",
+      "type":"enum"
+    },
+    {
+      "name":"EShadowBoundsMode",
       "type":"enum"
     },
     {
@@ -8682,6 +8698,27 @@
     {
       "cat":"/Nocturne/Enum/Game",
       "importable":true,
+      "name":"EBoneUpdateMode",
+      "size":4,
+      "type":"enum",
+      "values":[
+        {
+          "name":"BONE_UPDATE_SIMPLE_FLAT",
+          "val":0
+        },
+        {
+          "name":"BONE_UPDATE_HIERARCHICAL_ACCUM",
+          "val":1
+        },
+        {
+          "name":"BONE_UPDATE_HIERARCHICAL_RESTPOSE",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
       "name":"EBoxActorPickupType",
       "size":4,
       "type":"enum",
@@ -8730,6 +8767,23 @@
         {
           "name":"BUGS_STATE_DEAD",
           "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ECheckboxMode",
+      "size":4,
+      "type":"enum",
+      "values":[
+        {
+          "name":"CHECKBOX_MODE_BINARY",
+          "val":0
+        },
+        {
+          "name":"CHECKBOX_MODE_TRI_STATE",
+          "val":1
         }
       ]
     },
@@ -9043,23 +9097,31 @@
           "val":11
         },
         {
-          "name":"DAMAGE_TYPE_IMMUNE",
+          "name":"DAMAGE_TYPE_ATTACK_GENERIC",
           "val":100
         },
         {
-          "name":"DAMAGE_TYPE_MELEE",
+          "name":"DAMAGE_TYPE_ATTACK_BULLET",
+          "val":101
+        },
+        {
+          "name":"DAMAGE_TYPE_ATTACK_FIRE",
+          "val":102
+        },
+        {
+          "name":"DAMAGE_TYPE_ATTACK_BLADE",
           "val":103
         },
         {
-          "name":"DAMAGE_TYPE_LAUNCH",
+          "name":"DAMAGE_TYPE_ATTACK_STAKE",
           "val":104
         },
         {
-          "name":"DAMAGE_TYPE_NO_FLINCH",
+          "name":"DAMAGE_TYPE_ATTACK_GAS",
           "val":105
         },
         {
-          "name":"DAMAGE_TYPE_DECAL",
+          "name":"DAMAGE_TYPE_ATTACK_ELECTROCUTE",
           "val":106
         },
         {
@@ -9582,6 +9644,10 @@
         {
           "name":"HERO_CONTROL_PLAYER",
           "val":0
+        },
+        {
+          "name":"HERO_CONTROL_NETWORK",
+          "val":1
         },
         {
           "name":"HERO_CONTROL_AI",
@@ -10594,6 +10660,84 @@
         {
           "name":"RENDER_COLOR_FROM_VERTEX",
           "val":512
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EScriptXRefType",
+      "size":4,
+      "type":"enum",
+      "values":[
+        {
+          "name":"XREF_EVENT_TESTED",
+          "val":0
+        },
+        {
+          "name":"XREF_EVENT_RAISED",
+          "val":1
+        },
+        {
+          "name":"XREF_PERSISTENT_EVENT",
+          "val":2
+        },
+        {
+          "name":"XREF_GAME_FLAG",
+          "val":3
+        },
+        {
+          "name":"XREF_TIMER",
+          "val":4
+        },
+        {
+          "name":"XREF_COUNTER_SET",
+          "val":5
+        },
+        {
+          "name":"XREF_COUNTER_USED",
+          "val":6
+        },
+        {
+          "name":"XREF_ACTOR_REFERENCED",
+          "val":7
+        },
+        {
+          "name":"XREF_SFX_SET",
+          "val":8
+        },
+        {
+          "name":"XREF_SFX_USED",
+          "val":9
+        },
+        {
+          "name":"XREF_ACTOR_VARIABLE_SET",
+          "val":10
+        },
+        {
+          "name":"XREF_ACTOR_VARIABLE_USED",
+          "val":11
+        },
+        {
+          "name":"XREF_INI_VARIABLE",
+          "val":12
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EShadowBoundsMode",
+      "size":4,
+      "type":"enum",
+      "values":[
+        {
+          "name":"SHADOW_BOUNDS_RECTANGULAR",
+          "val":0
+        },
+        {
+          "name":"SHADOW_BOUNDS_CIRCULAR",
+          "val":1
         }
       ]
     },
@@ -31923,7 +32067,7 @@
           "len":4,
           "name":"bone_update_mode",
           "offset":8784,
-          "type":"int"
+          "type":"EBoneUpdateMode"
         },
         {
           "len":12,
@@ -33142,7 +33286,7 @@
           "len":4,
           "name":"shadow_bounds_mode",
           "offset":7352,
-          "type":"int"
+          "type":"EShadowBoundsMode"
         },
         {
           "len":4,
@@ -35029,7 +35173,7 @@
           "len":4,
           "name":"checkbox_mode",
           "offset":0,
-          "type":"int"
+          "type":"ECheckboxMode"
         },
         {
           "len":4,
@@ -62173,7 +62317,7 @@
           "len":4,
           "name":"type",
           "offset":256,
-          "type":"int"
+          "type":"EScriptXRefType"
         },
         {
           "len":4,

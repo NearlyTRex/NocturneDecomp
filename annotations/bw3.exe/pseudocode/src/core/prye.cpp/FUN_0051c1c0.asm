@@ -1952,8 +1952,8 @@ section .text
     JZ 0x0051d945                       ; 0051d927
         ;   XREF to: 0051d945 (CONDITIONAL_JUMP)  ; LAB_0051d945
     PUSH ECX                            ; 0051d929
-    CALL core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00517e80 ; 0051d92a
-        ;   XREF to: 00517e80 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00517e80()
+    CALL core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80 ; 0051d92a
+        ;   XREF to: 00517e80 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80()
     MOV dword ptr [ESP + 0x2488],EAX    ; 0051d92f
     MOV EAX,dword ptr [ESP + 0x2488]    ; 0051d936
     MOV [0x01ed3784],EAX                ; 0051d93d | DAT_01ed3784

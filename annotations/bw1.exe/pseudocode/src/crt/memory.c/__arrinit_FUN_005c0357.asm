@@ -8,18 +8,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[91]:
+; XREF[92]:
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409940 at 0040995d
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0 at 0040fe9f
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00415d90 at 00415db4
+;   core_bmppuzzl.cpp_CChemPuzzle_ctor_FUN_004175f0 at 00417614
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_00418b40 at 00418b5a
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_0041b750 at 0041b770
 ;   core_box.cpp_CBox_ctor_FUN_0041da00 at 0041da11
 ;   core_boxactor.cpp_staticInit_FUN_00421c00 at 00421c2f
 ;   core_bugs.cpp_CBugs_ctor_FUN_00424f80 at 00424fa0
 ;   core_chain.cpp_CChain_ctor_FUN_00435660 at 0043567c
-;   core_charactr.cpp_CCharacter_ctor_FUN_0042c080 at 0042c0bd
-;   core_cloth.cpp_CCloth_ctor_FUN_0043e5c0 at 0043e5dd
-;   ... and 81 more
+;   ... and 82 more
 ;
 ; *****************************************************************************
 

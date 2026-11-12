@@ -61,9 +61,9 @@ void __cdecl core_stranger_cpp_CStranger_reset_FUN_00540820(CStranger *this_ptr)
 EDeathState __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_00540890(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CStranger *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_stranger_cpp_CStranger_drop_FUN_00540920(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
-float core_stranger_cpp_FUN_00540970(void);
+float __cdecl core_stranger_cpp_dotProduct1_FUN_00540970(CVector3f *a,CVector3f *b);
 void __cdecl core_stranger_cpp_divideVectorByScalar_FUN_005409a0(CVector3f *vector,float *divisor);
-float core_stranger_cpp_FUN_005409c0(float *param_1,float *param_2);
+float __cdecl core_stranger_cpp_dotProduct2_FUN_005409c0(CVector3f *a,CVector3f *b);
 void __cdecl core_stranger_cpp_setMatrixTranslation_FUN_005409f0(CMatrix3x4f *matrix,CVector3f *translation);
 void * __cdecl core_stranger_cpp_FUN_00540a10(void *ptr);
 int __cdecl core_stranger_cpp_isProcessDisabled_FUN_00540a20(CDemonActor *actor);

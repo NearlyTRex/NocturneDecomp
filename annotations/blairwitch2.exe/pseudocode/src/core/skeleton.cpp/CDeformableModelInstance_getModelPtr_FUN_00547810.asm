@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
-; XREF[50]:
+; XREF[52]:
 ;   core_actor.cpp_FUN_004093a0 at 004097dc
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_004116f0 at 00411880
 ;   core_batman.cpp_CBatman_setup_FUN_00412be0 at 00412d70
@@ -17,7 +17,7 @@
 ;   core_bugs.cpp_FUN_00420e90 at 0042119b
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360 at 004273a4
 ;   core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00425a70 at 00425a7f
-;   ... and 40 more
+;   ... and 42 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005e73f7

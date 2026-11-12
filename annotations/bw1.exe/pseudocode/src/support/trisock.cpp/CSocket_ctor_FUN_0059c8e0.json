@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 4,
     "complexity_score": 5,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -17,6 +17,12 @@
       "addr": "0052c470",
       "from_addr": "0052c48f",
       "name": "core_netgame.cpp_CNetGame_ctor_FUN_0052c470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059cf00",
+      "from_addr": "0059cfc4",
+      "name": "support_trisock.cpp_FUN_0059cf00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,7 +47,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "0059e04c",
@@ -58,6 +64,17 @@
         "call_addr": "0052c48f",
         "call_type": "direct",
         "caller": "core_netgame.cpp_CNetGame_ctor_FUN_0052c470",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0059cfc4",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0059cf00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

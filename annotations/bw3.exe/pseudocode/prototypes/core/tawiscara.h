@@ -28,3 +28,43 @@ void FUN_00593e80(CEnemy *param_1);
 // Original: core_tawiscara.cpp_FUN_00594000
 // Address: 00594000
 void FUN_00594000(CEnemy *param_1,float param_2);
+
+// Original: core_tawiscara.cpp_CTawiscara_setWalkTarget_FUN_005956d0
+// Address: 005956d0
+void __cdecl CTawiscara::setWalkTarget(CTawiscara *this_ptr,CDemonActor *target,float min_distance,float max_distance);
+
+// Original: core_tawiscara.cpp_FUN_00595710
+// Address: 00595710
+void FUN_00595710(int param_1);
+
+// Original: core_tawiscara.cpp_FUN_00595760
+// Address: 00595760
+void FUN_00595760(int param_1,float *param_2);
+
+// Original: core_tawiscara.cpp_CTawiscara_renderTransparent_FUN_00595d20
+// Address: 00595d20
+int __cdecl CTawiscara::renderTransparent(CTawiscara *this_ptr);
+
+// Original: core_tawiscara.cpp_CTawiscara_archive_FUN_00595e90
+// Address: 00595e90
+void __cdecl CTawiscara::archive(CTawiscara *this_ptr);
+
+// Original: core_tawiscara.cpp_CTawiscara_processDamage_FUN_00595f90
+// Address: 00595f90
+void __cdecl CTawiscara::processDamage(CTawiscara *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_tawiscara.cpp_CTawiscara_getDeathState_FUN_005962d0
+// Address: 005962d0
+EDeathState __cdecl CTawiscara::getDeathState(CTawiscara *this_ptr);
+
+// Original: core_tawiscara.cpp_CTawiscara_getTargetPoints_FUN_00596310
+// Address: 00596310
+int __cdecl CTawiscara::getTargetPoints(CTawiscara *this_ptr,CVector3f *out_points_array);
+
+// Original: core_tawiscara.cpp_FUN_00596380
+// Address: 00596380
+void FUN_00596380(CCharacter *param_1);
+
+// Original: core_tawiscara.cpp_CTawiscara_dtor_FUN_00596570
+// Address: 00596570
+CTawiscara * CTawiscara::dtor(CTawiscara *this_ptr,uint flags);

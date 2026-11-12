@@ -18,7 +18,7 @@ void __cdecl core_fire_cpp_CFireEffect_createMuzzleEffect_FUN_0049d170(CFireEffe
   if (0x13 < _DAT_01c8672c) {
     _DAT_01c8672c = 0;
   }
-  unkaddr_0059d350_cpp_CMuzzleEffect_init_FUN_0059d360
+  core_muzzle_cpp_CMuzzleEffect_init_FUN_0059d360
             ((CMuzzleEffect *)(&DAT_01c86730 + iVar1),param_2,param_3);
   return;
 }

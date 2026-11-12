@@ -8,6 +8,8 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[9]:
+;   core_darkwolf.cpp_CDarkwolf_dtor_FUN_005990d0 at 005990e5
+;   core_darkwolf.cpp_CWhitewolf_dtor_FUN_00599030 at 00599045
 ;   core_passngr.cpp_CPassenger_dtor_FUN_0050a530 at 0050a573
 ;   core_pryemorp.cpp_CPryeMorph_dtor_FUN_005274e0 at 00527523
 ;   core_spirbear.cpp_CSpiritBear_dtor_FUN_0059b540 at 0059b559
@@ -15,8 +17,6 @@
 ;   core_spirindi.cpp_CSpiritIndian_dtor_FUN_0059a970 at 0059a989
 ;   core_styldemo.cpp_CStylerDemon_dtor_FUN_005a0910 at 005a0925
 ;   core_styler.cpp_CStyler_dtor_FUN_0059df60 at 0059df75
-;   unkafter_darkwolf.cpp_CDarkwolf_dtor_FUN_005990d0 at 005990e5
-;   unkafter_darkwolf.cpp_CWhitewolf_dtor_FUN_00599030 at 00599045
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorph_free_FUN_004fa8e0

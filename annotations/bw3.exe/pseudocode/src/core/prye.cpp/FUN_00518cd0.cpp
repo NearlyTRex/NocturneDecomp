@@ -1218,7 +1218,7 @@ LAB_005199e6:
     g_CGamePtr->flashlight_active = 0;
   }
   if (fStack_38 != 0.0) {
-    unkafter_prye_cpp_FUN_00524940(param_1);
+    core_prye_cpp_FUN_00524940(param_1);
   }
   if (*(int *)((int)param_1 + 0x20bcc) == 0) {
     fVar8 = *(float *)((int)param_1 + 0x20bd0) - param_2 / _DAT_005e34f0;
@@ -1245,7 +1245,7 @@ LAB_005199e6:
     param_1[0x2bac].vec.x = 0.0;
   }
   if (iStack_24 != 0) {
-    unkafter_prye_cpp_FUN_00525930();
+    core_prye_cpp_FUN_00525930();
   }
   core_prye_cpp_FUN_0051c1c0();
   iVar10 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1[0x324].vec.x);
@@ -1257,7 +1257,7 @@ LAB_005199e6:
     core_prye_cpp_FUN_0051c1c0();
   }
   core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170((CPrye *)&param_1->vec,param_2,iStack_28);
-  unkafter_prye_cpp_FUN_00526cf0();
+  core_prye_cpp_FUN_00526cf0();
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433350((CCharacter *)&param_1->vec,param_2);
   fVar8 = (float)core_motion_cpp_FUN_004fc350((CMotionController *)((int)param_1 + 0x158));
   if (fVar8 <= 0.0) {
@@ -1301,9 +1301,9 @@ LAB_005199e6:
   core_prye_cpp_FUN_0051f360(param_1);
   core_prye_cpp_FUN_00522b00(param_1,0);
   core_prye_cpp_FUN_00522b00(param_1,1);
-  unkafter_prye_cpp_FUN_005263c0(param_1);
+  core_prye_cpp_FUN_005263c0(param_1);
   core_inv_cpp_FUN_004dcdb0();
-  unkafter_prye_cpp_FUN_00526dc0(param_1);
+  core_prye_cpp_FUN_00526dc0(param_1);
   iVar10 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1[0x324].vec.x);
   if (iVar10 != 0) {
     *(uint *)(iVar10 + 0x23a0) = 1;

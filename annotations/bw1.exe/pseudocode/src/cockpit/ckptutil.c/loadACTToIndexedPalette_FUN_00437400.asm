@@ -7,9 +7,10 @@
 ; char *           Stack[0x4]:4   filename
 ; uchar *          Stack[0x8]:4   output_palette
 ;
-; XREF[3]:
+; XREF[4]:
 ;   cockpit_ckptutil.c_applyActPalette_FUN_00437380 at 00437399
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00538000 at 00538011
+;   cockpit_pkbitmap.cpp_FUN_00538750 at 00538850
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00539190 at 005391a1
 ;
 ; Called Functions:

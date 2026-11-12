@@ -12,3 +12,39 @@ void staticInit(void);
 // Original: core_yow.cpp_factoryFuncYow_FUN_005b8130
 // Address: 005b8130
 void factoryFuncYow(void);
+
+// Original: core_yow.cpp_CYow_getActorType_FUN_005b8150
+// Address: 005b8150
+CDemonActorType * CYow::getActorType(CYow *this_ptr);
+
+// Original: core_yow.cpp_CYow_ctor_FUN_005b8160
+// Address: 005b8160
+CYow * CYow::ctor(CYow *this_ptr);
+
+// Original: core_yow.cpp_FUN_005b81d0
+// Address: 005b81d0
+void FUN_005b81d0(CEnemy *param_1);
+
+// Original: core_yow.cpp_FUN_005b8440
+// Address: 005b8440
+void FUN_005b8440(CEnemy *param_1,float param_2);
+
+// Original: core_yow.cpp_FUN_005b8eb0
+// Address: 005b8eb0
+void FUN_005b8eb0(CCharacter *param_1,int *param_2);
+
+// Original: core_yow.cpp_FUN_005b9110
+// Address: 005b9110
+void FUN_005b9110(CEnemy *param_1);
+
+// Original: core_yow.cpp_FUN_005b9170
+// Address: 005b9170
+void FUN_005b9170(CEnemy *param_1,SDamageInfo *param_2);
+
+// Original: core_yow.cpp_FUN_005b9290
+// Address: 005b9290
+int FUN_005b9290(int param_1,float *param_2);
+
+// Original: core_yow.cpp_CYow_dtor_FUN_005b95a0
+// Address: 005b95a0
+CYow * CYow::dtor(CYow *this_ptr,uint flags);

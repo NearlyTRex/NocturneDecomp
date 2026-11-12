@@ -178,14 +178,14 @@ LAB_0054e1a0:
             }
           }
           else if (param_1->mp3_data == (CMP3Decoder *)0x0) {
-            bVar4 = unkaddr_0057b9a0_cpp_CInStreamFile_isOpen_FUN_0057d130(&param_1->file_stream);
+            bVar4 = support_trstream_cpp_CInStreamFile_isOpen_FUN_0057d130(&param_1->file_stream);
             if (CONCAT31(extraout_var,bVar4) == 0) {
               _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
               _DAT_01d046a4 = 0x9c0;
               core_main_c_FUN_004e4500("Can't stream unless we have mp3 decoder or open wav file!");
             }
             uVar8 = sound_sndmain_cpp_FUN_0054fd90(param_1,iVar5);
-            uVar9 = unkaddr_0057b9a0_cpp_CInStreamFile_read_FUN_0057cfe0
+            uVar9 = support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
                               (&param_1->file_stream,(uint *)output_buffer,uVar8);
             if (uVar9 != uVar8) {
               sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_0054dbf0(param_1);

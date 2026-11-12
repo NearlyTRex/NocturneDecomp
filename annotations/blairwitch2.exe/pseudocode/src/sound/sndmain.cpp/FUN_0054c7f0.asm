@@ -283,8 +283,8 @@ section .text
     POP EDI                             ; 0054ca88
         ;   Label: LAB_0054ca88
     PUSH ECX                            ; 0054ca89
-    CALL unkaddr_0057b9a0.cpp_CInStreamFile_tell_FUN_0057d110 ; 0054ca8a
-        ;   XREF to: 0057d110 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0057b9a0.cpp_CInStreamFile_tell_FUN_0057d110(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_tell_FUN_0057d110 ; 0054ca8a
+        ;   XREF to: 0057d110 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_tell_FUN_0057d110(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0054ca8f
     PUSH EBP                            ; 0054ca92
     MOV dword ptr [EBP + 0x178],EAX     ; 0054ca93

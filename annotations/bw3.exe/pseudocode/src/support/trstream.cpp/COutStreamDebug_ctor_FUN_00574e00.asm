@@ -7,7 +7,7 @@
 ; COutStreamDebug * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_turret.cpp_staticInit_FUN_00572510 at 00572515
+;   support_trstream.cpp_staticInit_FUN_00572510 at 00572515
 ;
 ; Called Functions:
 ;   support_trstream.cpp_FUN_005744a0

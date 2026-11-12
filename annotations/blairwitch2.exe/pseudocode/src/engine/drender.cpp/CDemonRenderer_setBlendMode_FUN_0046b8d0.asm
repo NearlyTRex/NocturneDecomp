@@ -10,6 +10,7 @@
 ; XREF[38]:
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 004107b1
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_00413c70 at 00413db5
+;   core_bwspart.cpp_FUN_005a86a0 at 005a8c19
 ;   core_chain.cpp_FUN_005b56c0 at 005b57ce
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730 at 00426749
 ;   core_charactr.cpp_FUN_0042b760 at 0042be34
@@ -17,7 +18,6 @@
 ;   core_dlight.cpp_FUN_0044b020 at 0044b516
 ;   core_dlight.cpp_FUN_0044c15e at 0044c1e6
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_0044d060 at 0044d0d4
-;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0 at 00464c14
 ;   ... and 28 more
 ;
 ; Called Functions:

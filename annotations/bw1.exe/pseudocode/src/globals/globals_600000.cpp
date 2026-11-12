@@ -3852,10 +3852,10 @@ CEnemy_full_vtable g_CWerewolfVTable = {
 };
 CEnemy_full_vtable g_CYowVTable = {
     ._ub = {
-        .setup = (CDemonActor_setup *)core_xform_cpp_FUN_005b81d0,
+        .setup = (CDemonActor_setup *)core_yow_cpp_FUN_005b81d0,
         .markResourcesInUse = (CDemonActor_markResourcesInUse *)core_charactr_cpp_CCharacter_markResourcesInUse_FUN_0042c7a0,
         .vfunc2 = (CDemonActor_vfunc2 *)core_charactr_cpp_FUN_0042c7d0,
-        .process = (CDemonActor_process *)core_xform_cpp_FUN_005b8440,
+        .process = (CDemonActor_process *)core_yow_cpp_FUN_005b8440,
         .renderOpaque = (CDemonActor_renderOpaque *)core_charactr_cpp_CCharacter_renderOpaque_FUN_0042f240,
         .renderTransparent = (CDemonActor_renderTransparent *)core_charactr_cpp_CCharacter_renderTransparent_FUN_004301e0,
         .renderBackground = (CDemonActor_renderBackground *)core_enemy_cpp_CEnemy_renderBackground_FUN_004a0fb0,
@@ -3873,7 +3873,7 @@ CEnemy_full_vtable g_CYowVTable = {
         .getBlockVirtualDirectorFlag = (CDemonActor_getBlockVirtualDirectorFlag *)core_actor_cpp_FUN_004089f0,
         .allowBulletHoles = (CDemonActor_allowBulletHoles *)core_actor_cpp_FUN_004089f0,
         .updateCollisionData = (CDemonActor_updateCollisionData *)core_actor_cpp_CDemonActor_updateCollisionData_FUN_004096a0,
-        .getTargetPoints = (CDemonActor_getTargetPoints *)core_xform_cpp_FUN_005b9290,
+        .getTargetPoints = (CDemonActor_getTargetPoints *)core_yow_cpp_FUN_005b9290,
         .renderTargetPoints = (CDemonActor_renderTargetPoints *)core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409940,
         .canLookAt = (CDemonActor_canLookAt *)core_charactr_cpp_CCharacter_canLookAt_FUN_00433cd0,
         .evaluateTriggerCondition = (CDemonActor_evaluateTriggerCondition *)core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409c80,
@@ -3903,9 +3903,9 @@ CEnemy_full_vtable g_CYowVTable = {
         .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_004089c0,
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_004089f0,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433c60,
-        .getActorType = (CDemonActor_getActorType *)core_xform_cpp_CYow_getActorType_FUN_005b8150,
-        .dtor = (CDemonActor_dtor *)core_xform_cpp_CYow_dtor_FUN_005b95a0,
-        .archive = (CDemonActor_archive *)core_xform_cpp_FUN_005b9110
+        .getActorType = (CDemonActor_getActorType *)core_yow_cpp_CYow_getActorType_FUN_005b8150,
+        .dtor = (CDemonActor_dtor *)core_yow_cpp_CYow_dtor_FUN_005b95a0,
+        .archive = (CDemonActor_archive *)core_yow_cpp_FUN_005b9110
     },
     ._uc = {
         .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_0042d6a0,
@@ -3920,7 +3920,7 @@ CEnemy_full_vtable g_CYowVTable = {
         .onVictimLost = (CCharacter_onVictimLost *)core_enemy_cpp_CEnemy_onVictimLost_FUN_004a10f0,
         .checkCylinderCollisionWorld = (CCharacter_checkCylinderCollisionWorld *)core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00431620,
         .testDamageLine = (CCharacter_testDamageLine *)core_charactr_cpp_CCharacter_testDamageLine_FUN_004316b0,
-        .processDamage = (CCharacter_processDamage *)core_xform_cpp_FUN_005b9170,
+        .processDamage = (CCharacter_processDamage *)core_yow_cpp_FUN_005b9170,
         .getDeathState = (CCharacter_getDeathState *)core_charactr_cpp_CCharacter_getDeathState_FUN_00431c30,
         .attractActorToward = (CCharacter_attractActorToward *)core_charactr_cpp_CCharacter_attractActorToward_FUN_004314f0,
         .canBeAttracted = (CCharacter_canBeAttracted *)core_charactr_cpp_CCharacter_isGrabbable_FUN_00431430,
@@ -5700,12 +5700,12 @@ CWeapon_full_vtable g_CWeaponVTable = {
 // WatcomDestructorCall
 WatcomDestructorCall DAT_00600850 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)unkaddr_004b9ab0_cpp_SNotesSection_arrdtor6_FUN_004bf720,
+    .destructor_func = (void *)core_fldnotes_cpp_SNotesSection_arrdtor6_FUN_004bf720,
     .object_instance = (void *)&SNotesSection_ARRAY_01cc4474
 };
 WatcomDestructorCall DAT_0060085C = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)unkaddr_004b9ab0_cpp_SNotesMap_arrdtor4_FUN_004bf700,
+    .destructor_func = (void *)core_fldnotes_cpp_SNotesMap_arrdtor4_FUN_004bf700,
     .object_instance = (void *)&SNotesMap_ARRAY_01cc55d0
 };
 WatcomDestructorCall DAT_00600868 = {
@@ -5715,7 +5715,7 @@ WatcomDestructorCall DAT_00600868 = {
 };
 WatcomDestructorCall DAT_00600874 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)unkaddr_004b9ab0_cpp_CAlphaBitmap_arrdtor6_FUN_004bf6e0,
+    .destructor_func = (void *)core_fldnotes_cpp_CAlphaBitmap_arrdtor6_FUN_004bf6e0,
     .object_instance = (void *)&CAlphaBitmap_ARRAY_01cc7ba8
 };
 WatcomDestructorCall DAT_00600880 = {
@@ -5955,7 +5955,7 @@ WatcomDestructorCall DAT_0060394C = {
 };
 WatcomDestructorCall DAT_00603C70 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)unkafter_minecar_cpp_CMini3D_dtor_FUN_00511020,
+    .destructor_func = (void *)engine_mini3d_cpp_CMini3D_dtor_FUN_00511020,
     .object_instance = (void *)&g_CMini3DInstance
 };
 WatcomDestructorCall DAT_00604220 = {
@@ -5965,7 +5965,7 @@ WatcomDestructorCall DAT_00604220 = {
 };
 WatcomDestructorCall DAT_0060422C = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)unkafter_moon_cpp_CAlphaBitmap_arrdtor30_FUN_005220d0,
+    .destructor_func = (void *)core_moon_cpp_CAlphaBitmap_arrdtor30_FUN_005220d0,
     .object_instance = (void *)&g_MoonAnimTextures
 };
 WatcomDestructorCall DAT_00604238 = {
@@ -6338,7 +6338,7 @@ WatcomTypeInfo g_PageResource_MapTypeInfo = {
     .type_flags = 0x00020100,
     .ctor = nullptr,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_fldnotes_cpp_SPageResourceMap_dtor_FUN_004bf670,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004bf670,
     .instance_size = (int)sizeof(SPageResourceMap),
     .class_name = (char *)s_PageResource_Map_0061d724
 };
@@ -6720,9 +6720,9 @@ WatcomTypeInfo g_CMineCarTypeInfo = {
 };
 WatcomTypeInfo g_CMini3DTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_minecar_cpp_CMini3D_ctor_FUN_00510f60,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)engine_mini3d_cpp_CMini3D_ctor_FUN_00510f60,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_minecar_cpp_CMini3D_dtor_FUN_00511020,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)engine_mini3d_cpp_CMini3D_dtor_FUN_00511020,
     .instance_size = (int)sizeof(CMini3D),
     .class_name = (char *)s_CMini3D_0061f630
 };
@@ -7232,7 +7232,7 @@ WatcomTypeInfo g_SocketTypeInfo = {
 };
 WatcomTypeInfo g_IpAddrTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_trisock_cpp_IpAddr_ctor_FUN_0059f300,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)support_trisock_cpp_IpAddr_ctor_FUN_0059f300,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)core_netgame_cpp_IpAddr_copy_FUN_00530bd0,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
     .instance_size = 0x00000004 /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */,
@@ -7352,9 +7352,9 @@ WatcomTypeInfo g_CWinFontTypeInfo = {
 };
 WatcomTypeInfo g_CYowTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_xform_cpp_CYow_ctor_FUN_005b8160,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_yow_cpp_CYow_ctor_FUN_005b8160,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_xform_cpp_CYow_dtor_FUN_005b95a0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_yow_cpp_CYow_dtor_FUN_005b95a0,
     .instance_size = (int)sizeof(CYow),
     .class_name = (char *)s_CYow_006260f8
 };
@@ -7377,7 +7377,7 @@ undefined1* g_CFireflyVTable = (undefined1*)core_particle_cpp_CParticle_setup_FU
 undefined1* g_CSparkVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
 undefined1* g_CBloodParticleVTable = (undefined1*)core_particle_cpp_CParticle_setup_FUN_00532160;
 undefined1* g_CDemonPodVTable = (undefined1*)core_podmain_cpp_CDemonPod_dtor_FUN_0053d730;
-undefined1* g_CInStreamFileVTable = (undefined1*)unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50;
+undefined1* g_CInStreamFileVTable = (undefined1*)support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50;
 undefined1* g_CInStreamMemoryVTable = (undefined1*)support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0;
 undefined1* g_COutStreamFileVTable = (undefined1*)support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860;
 undefined1* g_COutStreamMemoryVTable = (undefined1*)support_trstream_cpp_COutStreamMemory_dtor_FUN_005a1b60;
@@ -7387,11 +7387,11 @@ undefined1* g_COutStreamDebugVTable = (undefined1*)support_trstream_cpp_COutStre
 undefined4 DAT_00608560 = 0x00000000;
 
 // void*
-void* g_SPageResourceVTable = (void*)unkaddr_004b9ab0_cpp_SPageResource_dtor_FUN_004ba760;
+void* g_SPageResourceVTable = (void*)core_fldnotes_cpp_SPageResource_dtor_FUN_004ba760;
 void* g_SPageResourceTextVTable = (void*)core_fldnotes_cpp_SPageResourceText_dtor_FUN_004ba8d0;
 void* g_SPageResourceBitmapVTable = (void*)core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004baad0;
 void* g_SPageResourceTwanaCharacterVTable = (void*)core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004babf0;
 void* g_SPageResourceTwanaEntryVTable = (void*)core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004bad40;
-void* g_SPageResourceMapVTable = (void*)unkafter_fldnotes_cpp_SPageResourceMap_dtor_FUN_004bf670;
+void* g_SPageResourceMapVTable = (void*)core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004bf670;
 void* g_CDeformableModelInstanceVTable = (void*)core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0;
 

@@ -15,10 +15,10 @@
 ;   core_batman.cpp_CBatman_setup_FUN_00412be0 at 00412c12
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_004184c0 at 004184e9
 ;   core_bride.cpp_CBride_setup_FUN_0041d9c0 at 0041d9ec
+;   core_bwgrndma.cpp_CGrandma_setup_FUN_005a7be0 at 005a7bfc
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_004291f0 at 0042922c
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420 at 0042946c
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00 at 0042aa45
-;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042a7a0 at 0042a899
 ;   ... and 49 more
 ;
 ; Referenced Globals:

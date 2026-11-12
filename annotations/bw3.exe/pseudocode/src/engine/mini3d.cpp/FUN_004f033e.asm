@@ -9,7 +9,7 @@
 ;   undefined4 DAT_01d7f580
 ;
 ; Called Functions:
-;   unkafter_minecar.cpp_FUN_004ed020
+;   engine_mini3d.cpp_FUN_004ed020
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     FSTP float ptr [ESP]                ; 004f037d
     PUSH 0x0                            ; 004f0380
     PUSH 0x0                            ; 004f0382
-    CALL unkafter_minecar.cpp_FUN_004ed020 ; 004f0384
-        ;   XREF to: 004ed020 (UNCONDITIONAL_CALL)  ; undefined unkafter_minecar.cpp_FUN_004ed020()
+    CALL engine_mini3d.cpp_FUN_004ed020 ; 004f0384
+        ;   XREF to: 004ed020 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004ed020()
     ADD ESP,0x10                        ; 004f0389
     MOV dword ptr [0x01d7f580],EBX      ; 004f038c | DAT_01d7f580
     TEST EBX,EBX                        ; 004f0392

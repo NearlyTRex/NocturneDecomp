@@ -132,7 +132,6 @@ void __cdecl core_hero_cpp_CHero_kill_FUN_004d43e0(CHero *this_ptr,int damage_ty
 void core_hero_cpp_FUN_004d4410(int param_1);
 void core_hero_cpp_FUN_004d4520(CHero *param_1);
 undefined4 core_hero_cpp_FUN_004d4840(CCharacter *param_1,undefined4 param_2);
-undefined4 switchD_004d4890::caseD_5(void);
 void core_hero_cpp_FUN_004d48d0(void);
 undefined4 core_hero_cpp_FUN_004d4900(CHero *param_1,undefined4 param_2);
 void core_hero_cpp_factoryFuncHeroPlaceholder_FUN_004d4ab0(void);
@@ -142,7 +141,7 @@ CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004d4b40(CHer
 CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004d4ba0(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
 CDemonActor * core_hero_cpp_FUN_004d4be0(int param_1);
 void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004d4c90(CHeroPlaceholder *this_ptr);
-undefined8 unkafter_hero_cpp_FUN_004d4cde(void);
+undefined8 core_hero_cpp_FUN_004d4cde(void);
 void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004d4e30(void);
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d4eb0(void);
 void core_holycrss_cpp_staticInit_FUN_004d5070(void);
@@ -194,7 +193,7 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004d7e70(CImp *this_ptr,SDamage
 int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004d7fb0(CImp *this_ptr,CVector3f *out_points_array);
 ECollisionType __cdecl core_imp_cpp_CImp_getCollisionType_FUN_004d81d0(CImp *this_ptr,SCollisionInfo *collision_info);
 CImp * core_imp_cpp_CImp_dtor_FUN_004d81f0(CImp *this_ptr,uint flags);
-void unkaddr_004d8280_cpp_FUN_004d8280(void);
+void core_imp_cpp_FUN_004d8280(void);
 int __cdecl engine_ini_cpp_FUN_004d8290(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 int engine_ini_cpp_FUN_004d8470(undefined4 *param_1,undefined4 param_2,char *param_3,undefined4 param_4,char *param_5 );
 int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004d8640(CIni *this_ptr,char *section,char *key,char *value,char *filename);
@@ -217,7 +216,7 @@ CIni * engine_ini_cpp_CIni_ctor_FUN_004d8e50(CIni *this_ptr);
 CIni * engine_ini_cpp_CIni_dtor_FUN_004d8e60(CIni *this_ptr,uint flags);
 void __cdecl core_inivar_cpp_readIniData_FUN_004d8e70(void);
 void __cdecl core_inivar_cpp_writeIniData_FUN_004d95c0(void);
-void engine_alphabit_cpp_staticInit_FUN_004d9c90(void);
+void core_inv_cpp_staticInit_FUN_004d9c90(void);
 int core_inv_cpp_FUN_004d9d20(CDemonActor *param_1);
 char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004d9e40(undefined4 param_1);
 char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9eb0(undefined4 param_1);

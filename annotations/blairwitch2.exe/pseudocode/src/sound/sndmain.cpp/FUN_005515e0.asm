@@ -7,7 +7,7 @@
 ; XREF[7]:
 ;   core_bat.cpp_CBat_process_FUN_00411200 at 004113a0
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418d1e
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 0043754f
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 0043754f
 ;   core_drone.cpp_CDrone_process_FUN_0046d870 at 0046d9bc
 ;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 00486d3e
 ;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660 at 004cd707

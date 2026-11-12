@@ -113,6 +113,10 @@ undefined4 FUN_0058205e(undefined4 param_1);
 // Address: 0058209e
 undefined4 FUN_0058209e(undefined4 param_1,undefined4 param_2);
 
+// Original: engine_special.cpp_FUN_005820e0
+// Address: 005820e0
+undefined4 FUN_005820e0(undefined4 param_1,undefined4 param_2);
+
 // Original: engine_special.cpp_FUN_0058215c
 // Address: 0058215c
 undefined4 FUN_0058215c(undefined4 param_1,undefined4 param_2);

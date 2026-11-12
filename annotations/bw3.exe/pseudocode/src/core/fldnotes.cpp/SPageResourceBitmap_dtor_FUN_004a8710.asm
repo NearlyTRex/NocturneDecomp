@@ -15,12 +15,12 @@
 ;   WatcomTypeInfo g_PageResource_BitmapTypeInfo
 ;
 ; Called Functions:
+;   core_fldnotes.cpp_SPageResource_dtor_FUN_004a83a0
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d300
 ;   engine_alphabit.cpp_FUN_0040d400
-;   unkaddr_004a76f0.cpp_SPageResource_dtor_FUN_004a83a0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH 0x1                            ; 004a873a
     LEA EBX,[EAX + -0x18]               ; 004a873c
     PUSH EBX                            ; 004a873f
-    CALL unkaddr_004a76f0.cpp_SPageResource_dtor_FUN_004a83a0 ; 004a8740
-        ;   XREF to: 004a83a0 (UNCONDITIONAL_CALL)  ; int unkaddr_004a76f0.cpp_SPageResource_dtor_FUN_004a83a0(SPageResource * this_ptr)
+    CALL core_fldnotes.cpp_SPageResource_dtor_FUN_004a83a0 ; 004a8740
+        ;   XREF to: 004a83a0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SPageResource_dtor_FUN_004a83a0(SPageResource * this_ptr)
     ADD ESP,0x8                         ; 004a8745
     MOV DL,byte ptr [ESP + 0xc]         ; 004a8748
     MOV EBX,EAX                         ; 004a874c

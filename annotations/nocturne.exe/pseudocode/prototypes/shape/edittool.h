@@ -105,17 +105,17 @@ void __cdecl CEditorTools::drawWindowStatusMessage(CEditorTools *this_ptr,char *
 // Address: 004701a0
 void __cdecl CEditorTools::createCenteredDialog(CEditorTools *this_ptr,char *dialog_text);
 
-// Original: shape_edittool.cpp_FUN_00470230
+// Original: shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00470230
 // Address: 00470230
-bool FUN_00470230(undefined4 param_1,char *param_2);
+int __cdecl CEditorTools::showDestructiveActionConfirmDialog(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
-// Original: shape_edittool.cpp_FUN_00470310
+// Original: shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_00470310
 // Address: 00470310
-bool FUN_00470310(undefined4 param_1,char *param_2);
+int __cdecl CEditorTools::showYesNoDialog(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
-// Original: shape_edittool.cpp_FUN_004703f0
+// Original: shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_004703f0
 // Address: 004703f0
-undefined4 FUN_004703f0(undefined4 param_1,char *param_2);
+int __cdecl CEditorTools::showYesAllNoCancelDialog(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550
 // Address: 00470550
@@ -529,9 +529,9 @@ int __cdecl CStrList::getItemCount(CStrList *this_ptr);
 // Address: 00477670
 int __cdecl getFontMaxCharHeight(CBitFont *font_ptr);
 
-// Original: shape_edittool.cpp_FUN_00477680
+// Original: shape_edittool.cpp_assignInt_FUN_00477680
 // Address: 00477680
-undefined4 * __cdecl FUN_00477680(undefined4 *param_1,undefined4 *param_2);
+int * __cdecl assignInt(int *dest,int *src);
 
 // Original: shape_edittool.cpp_CVector3f_arrdtor8_FUN_00477690
 // Address: 00477690

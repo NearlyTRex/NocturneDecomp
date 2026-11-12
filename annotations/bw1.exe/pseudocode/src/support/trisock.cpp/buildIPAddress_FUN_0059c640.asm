@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
+;   support_trisock.cpp_FUN_0059efd0 at 0059f152
 ;   support_trisock.cpp_buildIPAddressOrDie_FUN_0059c520 at 0059c53d
 ;   support_trisock.cpp_parseIPComponents_FUN_0059c5d0 at 0059c622
-;   unkafter_trisock.cpp_FUN_0059efd0 at 0059f152
 ;
 ; *****************************************************************************
 

@@ -15,9 +15,9 @@
 ;   void* g_SPageResourceTextVTable = 004a8510
 ;
 ; Called Functions:
+;   core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
-;   unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH EDI                            ; 004a8492
     MOV EDX,dword ptr [ESP + 0x10]      ; 004a8493
     PUSH EDX                            ; 004a8497
-    CALL unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370 ; 004a8498
-        ;   XREF to: 004a8370 (UNCONDITIONAL_CALL)  ; void unkaddr_004a76f0.cpp_SPageResource_ctor_FUN_004a8370(SPageResource * this_ptr)
+    CALL core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370 ; 004a8498
+        ;   XREF to: 004a8370 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SPageResource_ctor_FUN_004a8370(SPageResource * this_ptr)
     MOV EBX,EAX                         ; 004a849d
     ADD ESP,0x4                         ; 004a849f
     MOV dword ptr [EAX + 0x14],0x5e0294 ; 004a84a2 | g_SPageResourceTextVTable

@@ -20,7 +20,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
 ;   engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
     MOV EDI,dword ptr [0x00612560]      ; 005a94aa | DAT_00612560
     PUSH EDI                            ; 005a94b0 | DAT_01bc120c
     MOV dword ptr [EBX + 0x7e8],EAX     ; 005a94b1
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 005a94b7
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 005a94b7
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     MOV EAX,dword ptr [EBX + 0x7e8]     ; 005a94bc
     ADD ESP,0x4                         ; 005a94c2
     TEST EAX,EAX                        ; 005a94c5
@@ -145,8 +145,8 @@ section .text
     MOV EDI,dword ptr [0x00612560]      ; 005a9582 | DAT_00612560
         ;   Label: LAB_005a9582
     PUSH EDI                            ; 005a9588 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 005a9589
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 005a9589
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 005a958e
     MOV EAX,dword ptr [EBX + 0x7e8]     ; 005a9591
     MOV ESP,EBP                         ; 005a9597

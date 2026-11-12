@@ -10,14 +10,14 @@
 ; XREF[25]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60 at 0040cc05
 ;   core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800 at 0059f88e
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_0059b5a0 at 0059b70d
+;   core_bmppuzzl.cpp_CExamplePuzzle_onMouse_FUN_0059adf0 at 0059ae1e
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0 at 0042814f
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 004371c6
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 004371c6
 ;   core_dest.cpp_CActorDestination_process_FUN_00447140 at 004472d7
 ;   core_door.cpp_CDoor_process_FUN_0045f5a0 at 0045f66f
 ;   core_door.cpp_FUN_0045efc0 at 0045efd1
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890 at 004888dc
-;   core_event.cpp_CRuleList_evaluateAndRun_FUN_004925c0 at 004925f7
-;   core_filmreel.cpp_CFilmProjector_process_FUN_00492d10 at 00492db0
 ;   ... and 15 more
 ;
 ; Referenced Globals:

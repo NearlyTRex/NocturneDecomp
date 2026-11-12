@@ -12,11 +12,11 @@
 ;   undefined4 DAT_005f0987
 ;
 ; Called Functions:
+;   core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
-;   unkaddr_0059d350.cpp_FUN_0059d7f0
-;   unkaddr_0059d350.cpp_FUN_0059daa0
-;   unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180
+;   core_muzzle.cpp_FUN_0059d7f0
+;   core_muzzle.cpp_FUN_0059daa0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     LEA EAX,[EBX + 0x264]               ; 005a9896
     PUSH dword ptr [ESP + 0x10]         ; 005a989c
     PUSH EAX                            ; 005a98a0
-    CALL unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005a98a1
-        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180 ; 005a98a1
+        ;   XREF to: 005a8180 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180(CSimpleParticleSystem * this_ptr, float param_2)
     FLD float ptr [EBX + 0x11430]       ; 005a98a6
     FLDZ                                ; 005a98ac
     ADD ESP,0x8                         ; 005a98ae
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_005a98d9
     LEA ESI,[EBX + 0x10af8]             ; 005a98de
     PUSH ESI                            ; 005a98e4
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a98e5
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a98e5
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a98ea
     TEST EAX,EAX                        ; 005a98ed
     JZ 0x005a9945                       ; 005a98ef
@@ -86,8 +86,8 @@ section .text
     PUSH 0x5f096a                       ; 005a9921 | = "BurnComplete"
     ADD EBX,0x10af8                     ; 005a9926
     PUSH EBX                            ; 005a992c
-    CALL unkaddr_0059d350.cpp_FUN_0059d7f0 ; 005a992d
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a992d
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
     ADD ESP,0xc                         ; 005a9932
     PUSH 0x1                            ; 005a9935
     PUSH 0xc                            ; 005a9937
@@ -101,16 +101,16 @@ section .text
     PUSH 0x5f097d                       ; 005a9945 | = "Animation"
         ;   Label: LAB_005a9945
     PUSH ESI                            ; 005a994a
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a994b
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a994b
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a9950
     TEST EAX,EAX                        ; 005a9953
     JNZ 0x005a98f1                      ; 005a9955
         ;   XREF to: 005a98f1 (CONDITIONAL_JUMP)  ; LAB_005a98f1
     PUSH 0x5f0987                       ; 005a9957 | DAT_005f0987
     PUSH ESI                            ; 005a995c
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a995d
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a995d
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a9962
     TEST EAX,EAX                        ; 005a9965
     JNZ 0x005a98f1                      ; 005a9967

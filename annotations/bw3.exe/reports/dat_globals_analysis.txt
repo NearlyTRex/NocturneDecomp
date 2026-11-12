@@ -2,21 +2,21 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 5908
-Filtered out (inside named data): 2568
+Total DAT_ globals found: 5912
+Filtered out (inside named data): 2571
 Immediate constants (not real globals): 114
-Real globals remaining: 3226
+Real globals remaining: 3227
 
 Current type breakdown:
-  undefined4                     3161
+  undefined4                     3162
   undefined1                     42
   undefined8                     19
   undefined2                     4
 
-DAT_ globals with type hints: 1273 / 3226
+DAT_ globals with type hints: 1275 / 3227
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (1025)
+HIGH CONFIDENCE INFERENCES (1027)
 --------------------------------------------------------------------------------
   DAT_005b5849                    addr=005b5849    current=undefined4      likely=float           refs=1
     nearby: s_core_actor_cpp_005b584d (TerminatedCString) at offset -4
@@ -635,6 +635,8 @@ HIGH CONFIDENCE INFERENCES (1025)
   DAT_005e3d58                    addr=005e3d58    current=undefined4      likely=float           refs=1
   DAT_005e3d5c                    addr=005e3d5c    current=undefined4      likely=float           refs=1
   DAT_005e3d60                    addr=005e3d60    current=undefined4      likely=float           refs=1
+  DAT_005e3d64                    addr=005e3d64    current=undefined4      likely=float           refs=1
+  DAT_005e3d68                    addr=005e3d68    current=undefined4      likely=float           refs=1
   DAT_005e4350                    addr=005e4350    current=undefined4      likely=float           refs=1
     nearby: g_CShadowTypeInfo (WatcomTypeInfo) at offset +64
   DAT_005e4354                    addr=005e4354    current=undefined4      likely=float           refs=1
@@ -803,13 +805,13 @@ HIGH CONFIDENCE INFERENCES (1025)
   DAT_005f8b28                    addr=005f8b28    current=undefined8      likely=uint            refs=3
   DAT_005f8b68                    addr=005f8b68    current=undefined8      likely=short           refs=4
   DAT_005f8b88                    addr=005f8b88    current=undefined8      likely=short           refs=1
-  DAT_005fba18                    addr=005fba18    current=undefined4      likely=float           refs=88
+  DAT_005fba18                    addr=005fba18    current=undefined4      likely=float           refs=89
     nearby: g_CEnemyClassVersion (int) at offset +24
   DAT_005fba1c                    addr=005fba1c    current=undefined4      likely=float           refs=95
     nearby: g_CEnemyClassVersion (int) at offset +28
   DAT_005fba20                    addr=005fba20    current=undefined4      likely=WORD            refs=164
     nearby: g_CEnemyClassVersion (int) at offset +32
-  DAT_005fba28                    addr=005fba28    current=undefined4      likely=float           refs=11
+  DAT_005fba28                    addr=005fba28    current=undefined4      likely=float           refs=12
     nearby: g_CEnemyClassVersion (int) at offset +40
   DAT_005fba38                    addr=005fba38    current=undefined4      likely=float           refs=15
     nearby: s_spectralFlag_005fba68 (TerminatedCString) at offset -48
@@ -903,7 +905,9 @@ HIGH CONFIDENCE INFERENCES (1025)
   DAT_00604de8                    addr=00604de8    current=undefined8      likely=int             refs=2
   DAT_00604df0                    addr=00604df0    current=undefined8      likely=short           refs=2
   DAT_0060685c                    addr=0060685c    current=undefined4      likely=float           refs=1
+    nearby: g_CTrapClassVersion (int) at offset -224
   DAT_00606860                    addr=00606860    current=undefined4      likely=float           refs=1
+    nearby: g_CTrapClassVersion (int) at offset -220
   DAT_00606b24                    addr=00606b24    current=undefined4      likely=float           refs=3
     nearby: g_CWaterPtr (CWater*) at offset +4
   DAT_00606b28                    addr=00606b28    current=undefined4      likely=longlong        refs=2
@@ -1012,7 +1016,7 @@ HIGH CONFIDENCE INFERENCES (1025)
     nearby: g_CCharacterClassInfo (CDemonActorType) at offset -4
   DAT_007e2cf4                    addr=007e2cf4    current=undefined4      likely=float           refs=2
     nearby: g_CCharacterClassInfo.name_hash (undefined4) at offset +8
-  DAT_007e3e88                    addr=007e3e88    current=undefined4      likely=int             refs=10
+  DAT_007e3e88                    addr=007e3e88    current=undefined4      likely=int             refs=11
   DAT_007e3e8c                    addr=007e3e8c    current=undefined4      likely=double          refs=7
   DAT_007e3e90                    addr=007e3e90    current=undefined4      likely=double          refs=4
   DAT_007e3e94                    addr=007e3e94    current=undefined4      likely=int             refs=3
@@ -1520,7 +1524,7 @@ HIGH CONFIDENCE INFERENCES (1025)
   DAT_02cf5f7c                    addr=02cf5f7c    current=undefined4      likely=float           refs=4
   DAT_02cf5f80                    addr=02cf5f80    current=undefined4      likely=float           refs=2
   DAT_02cf61ac                    addr=02cf61ac    current=undefined4      likely=float           refs=1
-    nearby: g_CSpikeClassInfo.name_hash (undefined4) at offset +64
+    nearby: g_CSpsClassInfo.name_hash (undefined4) at offset -64
   DAT_02cf61b0                    addr=02cf61b0    current=undefined4      likely=float           refs=1
     nearby: g_CSpsClassInfo.name_hash (undefined4) at offset -60
   DAT_02cfd714                    addr=02cfd714    current=undefined4      likely=SMRGLTextureBasic *  refs=1
@@ -1578,8 +1582,8 @@ HIGH CONFIDENCE INFERENCES (1025)
     nearby: g_CWerewolfClassInfo.name_hash (undefined4) at offset +28
   DAT_02d21b88                    addr=02d21b88    current=undefined4      likely=float           refs=3
   DAT_02d21b8c                    addr=02d21b8c    current=undefined4      likely=float           refs=3
-  DAT_02d224f0                    addr=02d224f0    current=undefined4      likely=float           refs=3
-  DAT_02d224f4                    addr=02d224f4    current=undefined4      likely=float           refs=3
+  DAT_02d224f0                    addr=02d224f0    current=undefined4      likely=float           refs=4
+  DAT_02d224f4                    addr=02d224f4    current=undefined4      likely=float           refs=4
   DAT_02d23008                    addr=02d23008    current=undefined4      likely=double          refs=1
   DAT_02d23608                    addr=02d23608    current=undefined4      likely=double          refs=1
   DAT_02d23638                    addr=02d23638    current=undefined4      likely=double          refs=1
@@ -1740,13 +1744,13 @@ MEDIUM CONFIDENCE INFERENCES (248)
   DAT_01c6a070                    addr=01c6a070    current=undefined4      likely=short           refs=1
   DAT_01c6a074                    addr=01c6a074    current=undefined4      likely=short           refs=1
   DAT_01c6a26e                    addr=01c6a26e    current=undefined4      likely=short           refs=1
-  DAT_01c6af74                    addr=01c6af74    current=undefined4      likely=byte            refs=35
+  DAT_01c6af74                    addr=01c6af74    current=undefined4      likely=byte            refs=36
   DAT_01c6af7c                    addr=01c6af7c    current=undefined4      likely=byte            refs=7
-  DAT_01c6af80                    addr=01c6af80    current=undefined4      likely=byte            refs=35
+  DAT_01c6af80                    addr=01c6af80    current=undefined4      likely=byte            refs=36
   DAT_01c6af88                    addr=01c6af88    current=undefined4      likely=byte            refs=7
-  DAT_01c6af8c                    addr=01c6af8c    current=undefined4      likely=byte            refs=35
+  DAT_01c6af8c                    addr=01c6af8c    current=undefined4      likely=byte            refs=36
   DAT_01c6af94                    addr=01c6af94    current=undefined4      likely=byte            refs=7
-  DAT_01c6cee8                    addr=01c6cee8    current=undefined4      likely=float           refs=109
+  DAT_01c6cee8                    addr=01c6cee8    current=undefined4      likely=float           refs=110
   DAT_01c6d0f0                    addr=01c6d0f0    current=undefined4      likely=byte            refs=1
   DAT_01c6d0f1                    addr=01c6d0f1    current=undefined4      likely=byte            refs=1
   DAT_01c6d0fc                    addr=01c6d0fc    current=undefined4      likely=byte            refs=1
@@ -1754,11 +1758,11 @@ MEDIUM CONFIDENCE INFERENCES (248)
     nearby: g_CExorcismClassInfo.name_hash (undefined4) at offset -248
   DAT_01c6e261                    addr=01c6e261    current=undefined4      likely=byte            refs=1
     nearby: g_CExorcismClassInfo.name_hash (undefined4) at offset -247
-  DAT_01c6e2b4                    addr=01c6e2b4    current=undefined4      likely=byte            refs=116
+  DAT_01c6e2b4                    addr=01c6e2b4    current=undefined4      likely=byte            refs=117
     nearby: g_CExorcismClassInfo.name_hash (undefined4) at offset -164
   DAT_01c6e2b5                    addr=01c6e2b5    current=undefined4      likely=byte            refs=3
     nearby: g_CExorcismClassInfo.name_hash (undefined4) at offset -163
-  DAT_01c6e2b8                    addr=01c6e2b8    current=undefined4      likely=byte            refs=97
+  DAT_01c6e2b8                    addr=01c6e2b8    current=undefined4      likely=byte            refs=98
     nearby: g_CExorcismClassInfo.name_hash (undefined4) at offset -160
   DAT_01c6e2bc                    addr=01c6e2bc    current=undefined4      likely=short           refs=20
     nearby: g_CExorcismClassInfo.name_hash (undefined4) at offset -156
@@ -1918,9 +1922,8 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (1953)
+NO TYPE HINTS (1952)
 --------------------------------------------------------------------------------
-  DAT_004cf860                    addr=004cf860    type=undefined4      refs=1  nearby: switchdataD_004cf960 at -256
   DAT_005c601d                    addr=005c601d    type=undefined1      refs=1  nearby: s_You_ve_received_d_health_005c6021 at -4
   DAT_005c6b1f                    addr=005c6b1f    type=undefined4      refs=1  nearby: s_falloff_005c6b2b at -12
   DAT_005dcf48                    addr=005dcf48    type=undefined4      refs=1  nearby: g_CCameraViewTypeInfo at +56
@@ -2110,8 +2113,8 @@ NO TYPE HINTS (1953)
   DAT_005fe384                    addr=005fe384    type=undefined4      refs=2
   DAT_005fe388                    addr=005fe388    type=undefined4      refs=1
   DAT_005fe38c                    addr=005fe38c    type=undefined4      refs=1
-  DAT_005fe390                    addr=005fe390    type=undefined4      refs=2
-  DAT_005fe394                    addr=005fe394    type=undefined4      refs=2
+  DAT_005fe390                    addr=005fe390    type=undefined4      refs=3
+  DAT_005fe394                    addr=005fe394    type=undefined4      refs=3
   DAT_005fe398                    addr=005fe398    type=undefined4      refs=1
   DAT_005fe39c                    addr=005fe39c    type=undefined4      refs=1
   DAT_005fe3a0                    addr=005fe3a0    type=undefined4      refs=1
@@ -2128,7 +2131,7 @@ NO TYPE HINTS (1953)
   DAT_005ff3c4                    addr=005ff3c4    type=undefined4      refs=1
   DAT_005ffe90                    addr=005ffe90    type=undefined4      refs=1  nearby: g_CGraveClassVersion at -152
   DAT_005fffbc                    addr=005fffbc    type=undefined4      refs=1  nearby: g_CHeroClassVersion at +4
-  DAT_00600284                    addr=00600284    type=undefined4      refs=34  nearby: g_CLadderClassVersion at -4
+  DAT_00600284                    addr=00600284    type=undefined4      refs=35  nearby: g_CLadderClassVersion at -4
   DAT_006002ac                    addr=006002ac    type=undefined4      refs=9  nearby: g_CLeverClassVersion at -4
   DAT_006002c4                    addr=006002c4    type=undefined4      refs=4  nearby: g_CLeverClassVersion at +20
   DAT_006002c8                    addr=006002c8    type=undefined4      refs=2  nearby: g_CLeverClassVersion at +24
@@ -2261,8 +2264,8 @@ NO TYPE HINTS (1953)
   DAT_00606732                    addr=00606732    type=undefined1      refs=1  nearby: s_d3d_dll_00606733 at -1
   DAT_00606834                    addr=00606834    type=undefined4      refs=1
   DAT_00606838                    addr=00606838    type=undefined4      refs=1
-  DAT_0060683c                    addr=0060683c    type=undefined4      refs=3
-  DAT_00606840                    addr=00606840    type=undefined4      refs=1
+  DAT_0060683c                    addr=0060683c    type=undefined4      refs=3  nearby: g_CTrapClassVersion at -256
+  DAT_00606840                    addr=00606840    type=undefined4      refs=1  nearby: g_CTrapClassVersion at -252
   DAT_00606aa0                    addr=00606aa0    type=undefined4      refs=5  nearby: g_CTVBatClassVersion at -68
   DAT_00606cc4                    addr=00606cc4    type=undefined4      refs=1
   DAT_00606e48                    addr=00606e48    type=undefined4      refs=1
@@ -2635,9 +2638,9 @@ NO TYPE HINTS (1953)
   DAT_01548b5c                    addr=01548b5c    type=undefined4      refs=6  nearby: g_CActorDestinationClassInfo.name_hash at -160
   DAT_01548b68                    addr=01548b68    type=undefined4      refs=6  nearby: g_CActorDestinationClassInfo.name_hash at -148
   DAT_01548b74                    addr=01548b74    type=undefined4      refs=6  nearby: g_CActorDestinationClassInfo.name_hash at -136
-  DAT_01548b7c                    addr=01548b7c    type=undefined4      refs=1  nearby: g_CActorDestinationClassInfo.name_hash at -128
-  DAT_01548b80                    addr=01548b80    type=undefined4      refs=1  nearby: g_CActorDestinationClassInfo.name_hash at -124
-  DAT_01548b84                    addr=01548b84    type=undefined4      refs=1  nearby: g_CActorDestinationClassInfo.name_hash at -120
+  DAT_01548b7c                    addr=01548b7c    type=undefined4      refs=2  nearby: g_CActorDestinationClassInfo.name_hash at -128
+  DAT_01548b80                    addr=01548b80    type=undefined4      refs=2  nearby: g_CActorDestinationClassInfo.name_hash at -124
+  DAT_01548b84                    addr=01548b84    type=undefined4      refs=2  nearby: g_CActorDestinationClassInfo.name_hash at -120
   DAT_01549aa0                    addr=01549aa0    type=undefined4      refs=6  nearby: g_CDiseaseClassInfo.name_hash at -108
   DAT_01549aa4                    addr=01549aa4    type=undefined4      refs=7  nearby: g_CDiseaseClassInfo.name_hash at -104
   DAT_01549aa8                    addr=01549aa8    type=undefined4      refs=14  nearby: g_CDiseaseClassInfo.name_hash at -100
@@ -2807,12 +2810,12 @@ NO TYPE HINTS (1953)
   DAT_01c6b5bc                    addr=01c6b5bc    type=undefined4      refs=3
   DAT_01c6b5c4                    addr=01c6b5c4    type=undefined4      refs=10
   DAT_01c6b5c8                    addr=01c6b5c8    type=undefined4      refs=8
-  DAT_01c6b5cc                    addr=01c6b5cc    type=undefined4      refs=84
+  DAT_01c6b5cc                    addr=01c6b5cc    type=undefined4      refs=85
   DAT_01c6b5d0                    addr=01c6b5d0    type=undefined4      refs=6
   DAT_01c6b5d4                    addr=01c6b5d4    type=undefined4      refs=8
   DAT_01c6b5d8                    addr=01c6b5d8    type=undefined4      refs=1
-  DAT_01c6ced0                    addr=01c6ced0    type=undefined4      refs=18
-  DAT_01c6ced4                    addr=01c6ced4    type=undefined4      refs=12
+  DAT_01c6ced0                    addr=01c6ced0    type=undefined4      refs=19
+  DAT_01c6ced4                    addr=01c6ced4    type=undefined4      refs=13
   DAT_01c6cee0                    addr=01c6cee0    type=undefined4      refs=2
   DAT_01c6cee4                    addr=01c6cee4    type=undefined4      refs=3
   DAT_01c6cef4                    addr=01c6cef4    type=undefined4      refs=1
@@ -3074,8 +3077,8 @@ NO TYPE HINTS (1953)
   DAT_01d70c50                    addr=01d70c50    type=undefined4      refs=1  nearby: g_CLeverClassInfo.name_hash at +28
   DAT_01d70c54                    addr=01d70c54    type=undefined4      refs=1  nearby: g_CLeverClassInfo.name_hash at +32
   DAT_01d70c58                    addr=01d70c58    type=undefined4      refs=1  nearby: g_CLeverClassInfo.name_hash at +36
-  DAT_01d71de0                    addr=01d71de0    type=undefined4      refs=543
-  DAT_01d71de4                    addr=01d71de4    type=undefined4      refs=542
+  DAT_01d71de0                    addr=01d71de0    type=undefined4      refs=546
+  DAT_01d71de4                    addr=01d71de4    type=undefined4      refs=545
   DAT_01d71de8                    addr=01d71de8    type=undefined4      refs=1
   DAT_01d7266c                    addr=01d7266c    type=undefined4      refs=1
   DAT_01d72670                    addr=01d72670    type=undefined4      refs=1
@@ -3535,13 +3538,13 @@ NO TYPE HINTS (1953)
   DAT_02ce7214                    addr=02ce7214    type=undefined4      refs=2
   DAT_02ce7218                    addr=02ce7218    type=undefined4      refs=2
   DAT_02ce727c                    addr=02ce727c    type=undefined4      refs=1
-  DAT_02ce7280                    addr=02ce7280    type=undefined4      refs=7
+  DAT_02ce7280                    addr=02ce7280    type=undefined4      refs=8
   DAT_02ce7284                    addr=02ce7284    type=undefined4      refs=1
   DAT_02ce7338                    addr=02ce7338    type=undefined4      refs=6
   DAT_02ce7398                    addr=02ce7398    type=undefined4      refs=3
   DAT_02ce739c                    addr=02ce739c    type=undefined4      refs=5
   DAT_02ce73a0                    addr=02ce73a0    type=undefined4      refs=2
-  DAT_02cebc20                    addr=02cebc20    type=undefined4      refs=6
+  DAT_02cebc20                    addr=02cebc20    type=undefined4      refs=7
   DAT_02cf28b8                    addr=02cf28b8    type=undefined4      refs=11
   DAT_02cf28bc                    addr=02cf28bc    type=undefined4      refs=4
   DAT_02cf29a8                    addr=02cf29a8    type=undefined4      refs=1
@@ -3565,7 +3568,7 @@ NO TYPE HINTS (1953)
   DAT_02cf3410                    addr=02cf3410    type=undefined4      refs=3
   DAT_02cf3414                    addr=02cf3414    type=undefined4      refs=3
   DAT_02cf3418                    addr=02cf3418    type=undefined4      refs=3
-  DAT_02cf341c                    addr=02cf341c    type=undefined4      refs=14
+  DAT_02cf341c                    addr=02cf341c    type=undefined4      refs=15
   DAT_02cf3420                    addr=02cf3420    type=undefined4      refs=2
   DAT_02cf3b58                    addr=02cf3b58    type=undefined4      refs=1
   DAT_02cf3b5c                    addr=02cf3b5c    type=undefined4      refs=1
@@ -3643,7 +3646,7 @@ NO TYPE HINTS (1953)
   DAT_02cf6004                    addr=02cf6004    type=undefined4      refs=3
   DAT_02cf6008                    addr=02cf6008    type=undefined4      refs=3
   DAT_02cf600c                    addr=02cf600c    type=undefined4      refs=5
-  DAT_02cf6010                    addr=02cf6010    type=undefined4      refs=5
+  DAT_02cf6010                    addr=02cf6010    type=undefined4      refs=6
   DAT_02cf6014                    addr=02cf6014    type=undefined4      refs=2
   DAT_02cf6018                    addr=02cf6018    type=undefined4      refs=4
   DAT_02cf601c                    addr=02cf601c    type=undefined4      refs=3
@@ -3744,9 +3747,9 @@ NO TYPE HINTS (1953)
   DAT_02d059af                    addr=02d059af    type=undefined4      refs=1
   DAT_02d059b3                    addr=02d059b3    type=undefined4      refs=1
   DAT_02d09d60                    addr=02d09d60    type=undefined4      refs=1  nearby: g_CWaterActorClassInfo.name_hash at +64
-  DAT_02d0bce4                    addr=02d0bce4    type=undefined4      refs=9  nearby: g_CWayPointClassInfo.name_hash at +12
-  DAT_02d0bce8                    addr=02d0bce8    type=undefined4      refs=10  nearby: g_CWayPointClassInfo.name_hash at +16
-  DAT_02d0bcec                    addr=02d0bcec    type=undefined4      refs=8  nearby: g_CWayPointClassInfo.name_hash at +20
+  DAT_02d0bce4                    addr=02d0bce4    type=undefined4      refs=10  nearby: g_CWayPointClassInfo.name_hash at +12
+  DAT_02d0bce8                    addr=02d0bce8    type=undefined4      refs=11  nearby: g_CWayPointClassInfo.name_hash at +16
+  DAT_02d0bcec                    addr=02d0bcec    type=undefined4      refs=9  nearby: g_CWayPointClassInfo.name_hash at +20
   DAT_02d0bcf0                    addr=02d0bcf0    type=undefined4      refs=5  nearby: g_CWayPointClassInfo.name_hash at +24
   DAT_02d0bcf4                    addr=02d0bcf4    type=undefined4      refs=3  nearby: g_CWayPointClassInfo.name_hash at +28
   DAT_02d0bcf8                    addr=02d0bcf8    type=undefined4      refs=4  nearby: g_CWayPointClassInfo.name_hash at +32
@@ -3796,7 +3799,7 @@ NO TYPE HINTS (1953)
   DAT_02d22818                    addr=02d22818    type=undefined4      refs=1
   DAT_02d22c1c                    addr=02d22c1c    type=undefined4      refs=3
   DAT_02d22c20                    addr=02d22c20    type=undefined4      refs=1
-  DAT_02d22fa4                    addr=02d22fa4    type=undefined4      refs=2
+  DAT_02d22fa4                    addr=02d22fa4    type=undefined4      refs=3
   DAT_02d22fa8                    addr=02d22fa8    type=undefined4      refs=3
   DAT_02d22fac                    addr=02d22fac    type=undefined4      refs=3
   DAT_02d22fb0                    addr=02d22fb0    type=undefined4      refs=3
@@ -3877,20 +3880,20 @@ NO TYPE HINTS (1953)
 --------------------------------------------------------------------------------
 MOST REFERENCED DAT_ GLOBALS (top 50)
 --------------------------------------------------------------------------------
-  DAT_01d71de0                    addr=01d71de0    refs=543   type=undefined4    
-  DAT_01d71de4                    addr=01d71de4    refs=542   type=undefined4    
+  DAT_01d71de0                    addr=01d71de0    refs=546   type=undefined4    
+  DAT_01d71de4                    addr=01d71de4    refs=545   type=undefined4    
   DAT_005f2afc                    addr=005f2afc    refs=227   type=undefined4      likely=int  nearby: PTR_engine_dosio.cpp_getRelativeFilePath_FUN_00465600_005f2ad0(+44)
   DAT_01bdd7e4                    addr=01bdd7e4    refs=181   type=undefined4      likely=CDemonRenderer *
   DAT_005fba20                    addr=005fba20    refs=164   type=undefined4      likely=WORD  nearby: g_CEnemyClassVersion(+32)
-  DAT_01c6e2b4                    addr=01c6e2b4    refs=116   type=undefined4      likely=byte  nearby: g_CExorcismClassInfo.name_hash(-164)
-  DAT_01c6cee8                    addr=01c6cee8    refs=109   type=undefined4      likely=float
-  DAT_01c6e2b8                    addr=01c6e2b8    refs=97    type=undefined4      likely=byte  nearby: g_CExorcismClassInfo.name_hash(-160)
+  DAT_01c6e2b4                    addr=01c6e2b4    refs=117   type=undefined4      likely=byte  nearby: g_CExorcismClassInfo.name_hash(-164)
+  DAT_01c6cee8                    addr=01c6cee8    refs=110   type=undefined4      likely=float
+  DAT_01c6e2b8                    addr=01c6e2b8    refs=98    type=undefined4      likely=byte  nearby: g_CExorcismClassInfo.name_hash(-160)
   DAT_005fba1c                    addr=005fba1c    refs=95    type=undefined4      likely=float  nearby: g_CEnemyClassVersion(+28)
   DAT_005fba60                    addr=005fba60    refs=95    type=undefined4      nearby: s_spectralFlag_005fba68(-8)
-  DAT_005fba18                    addr=005fba18    refs=88    type=undefined4      likely=float  nearby: g_CEnemyClassVersion(+24)
+  DAT_005fba18                    addr=005fba18    refs=89    type=undefined4      likely=float  nearby: g_CEnemyClassVersion(+24)
   DAT_005fc5a0                    addr=005fc5a0    refs=85    type=undefined4      nearby: g_CFilmReelClassVersion(+232)
+  DAT_01c6b5cc                    addr=01c6b5cc    refs=85    type=undefined4    
   DAT_01d5ba14                    addr=01d5ba14    refs=84    type=undefined4      nearby: g_CHeroClassInfo.name_hash(-92)
-  DAT_01c6b5cc                    addr=01c6b5cc    refs=84    type=undefined4    
   DAT_006045f8                    addr=006045f8    refs=74    type=undefined4      nearby: PTR_DAT_006045f4(+4)
   DAT_01c5faec                    addr=01c5faec    refs=66    type=undefined4      likely=uint *
   DAT_01c6e2a0                    addr=01c6e2a0    refs=64    type=undefined4      nearby: g_CExorcismClassInfo.name_hash(-184)
@@ -3902,17 +3905,17 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_01c6b5c0                    addr=01c6b5c0    refs=50    type=undefined4      likely=byte
   DAT_01c6b5b4                    addr=01c6b5b4    refs=49    type=undefined4    
   DAT_006074b8                    addr=006074b8    refs=39    type=undefined4      likely=byte  nearby: g_CStylerClassVersion(+64)
-  DAT_01c6af74                    addr=01c6af74    refs=35    type=undefined4      likely=byte
-  DAT_01c6af80                    addr=01c6af80    refs=35    type=undefined4      likely=byte
-  DAT_01c6af8c                    addr=01c6af8c    refs=35    type=undefined4      likely=byte
-  DAT_00600284                    addr=00600284    refs=34    type=undefined4      nearby: g_CLadderClassVersion(-4)
+  DAT_01c6af74                    addr=01c6af74    refs=36    type=undefined4      likely=byte
+  DAT_01c6af80                    addr=01c6af80    refs=36    type=undefined4      likely=byte
+  DAT_01c6af8c                    addr=01c6af8c    refs=36    type=undefined4      likely=byte
+  DAT_00600284                    addr=00600284    refs=35    type=undefined4      nearby: g_CLadderClassVersion(-4)
   DAT_01c5faf0                    addr=01c5faf0    refs=33    type=undefined4    
   DAT_01d81080                    addr=01d81080    refs=33    type=undefined4    
   DAT_01c5b0e0                    addr=01c5b0e0    refs=33    type=undefined4    
   DAT_0060b02c                    addr=0060b02c    refs=33    type=undefined4    
   DAT_0060b030                    addr=0060b030    refs=32    type=undefined4    
-  DAT_01c60dac                    addr=01c60dac    refs=30    type=undefined4    
   DAT_01d70a78                    addr=01d70a78    refs=30    type=undefined4      nearby: g_CKeyActorClassInfo.name_hash(+4)
+  DAT_01c60dac                    addr=01c60dac    refs=30    type=undefined4    
   DAT_01c6e24c                    addr=01c6e24c    refs=29    type=undefined4    
   DAT_01c5fad0                    addr=01c5fad0    refs=27    type=undefined4      likely=float
   DAT_007df9b8                    addr=007df9b8    refs=26    type=undefined4      nearby: g_CDemonActorClassInfo.name_hash(+8)
@@ -3979,6 +3982,7 @@ They appear only as inline constant values.
   DAT_005f0b58                    value=0x5F0B58        refs=1
   DAT_005f0b5c                    value=0x5F0B5C        refs=1
   DAT_005f0b60                    value=0x5F0B60        refs=1
+  DAT_005dbfa0                    value=0x5DBFA0        refs=1
   DAT_007e173c                    value=0x7E173C        refs=1
   DAT_007e1700                    value=0x7E1700        refs=1
   DAT_007e1688                    value=0x7E1688        refs=1
@@ -4026,6 +4030,7 @@ They appear only as inline constant values.
   DAT_00603b2c                    value=0x603B2C        refs=1
   DAT_005d08bd                    value=0x5D08BD        refs=1
   DAT_005d52f4                    value=0x5D52F4        refs=1
+  DAT_00607390                    value=0x607390        refs=1
   DAT_005d7293                    value=0x5D7293        refs=1
   DAT_006071f4                    value=0x6071F4        refs=1
   DAT_0060720c                    value=0x60720C        refs=1
@@ -4042,15 +4047,13 @@ They appear only as inline constant values.
   DAT_006044e0                    value=0x6044E0        refs=1
   DAT_006044f0                    value=0x6044F0        refs=1
   DAT_00608bc8                    value=0x608BC8        refs=1
-  DAT_005dbfa0                    value=0x5DBFA0        refs=1
-  DAT_00607390                    value=0x607390        refs=1
   DAT_02d20340                    value=0x2D20340       refs=1
   DAT_00000065                    value=0x65            refs=1
   DAT_00007f00                    value=0x7F00          refs=1
   DAT_02d22618                    value=0x2D22618       refs=1
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (2568)
+FILTERED OUT - INSIDE NAMED DATA (2571)
 --------------------------------------------------------------------------------
 These DAT_ globals fall within the address range of a named
 string, array, or struct and are not standalone globals.
@@ -4726,6 +4729,8 @@ string, array, or struct and are not standalone globals.
   DAT_005bdc47                    inside s_spawnmodelName_005bdc34
   DAT_005bdc4f                    inside s_spawnmodelName_005bdc34
   DAT_005bdc57                    inside s_spawnmodelName_005bdc34
+  DAT_005bdc5f                    inside s_spawnmodelName_005bdc34
+  DAT_005bdc67                    inside s_spawnmodelName_005bdc34
   DAT_005bdc6f                    inside s_spawnmodelName_005bdc34
   DAT_005bdc77                    inside s_spawnmodelName_005bdc34
   DAT_005bdc9b                    inside s_s_can_see_hero_005bdc87
@@ -5893,6 +5898,7 @@ string, array, or struct and are not standalone globals.
   DAT_005d0aca                    inside s_Invalid_collision_type_005d0aa4
   DAT_005d0ace                    inside s_Invalid_collision_type_005d0aa4
   DAT_005d0ad2                    inside s_Invalid_collision_type_005d0aa4
+  DAT_005d0ad6                    inside s_Invalid_collision_type_005d0aa4
   DAT_005d0b6e                    inside s_Invalid_collision_type_005d0b54
   DAT_005d0c72                    inside s_CDemonSet_setRayType_use_005d0c46
   DAT_005d0c86                    inside s_CDemonSet_setRayType_use_005d0c46

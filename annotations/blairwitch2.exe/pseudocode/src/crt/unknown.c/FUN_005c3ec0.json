@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 18,
     "complexity_score": 87,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
@@ -20,6 +20,12 @@
       "addr": "005bfdd4",
       "from_addr": "005bff88",
       "name": "crt_unknown.c_FUN_005bfdd4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c3f24",
+      "from_addr": "005c3f3a",
+      "name": "crt_unknown.c_FUN_005c3f24",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -62,7 +68,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 3,
+    "call_site_count": 4,
     "call_sites": [
       {
         "call_addr": "005bff88",
@@ -102,9 +108,23 @@
         ],
         "stack_bytes": 12,
         "stack_params": 3
+      },
+      {
+        "call_addr": "005c3f3a",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c3f24",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 4,
@@ -198,7 +218,7 @@
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 3,
+      "call_site_count": 4,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 4,

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(SMemHead *header)
+; void __cdecl shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(SMemHead *this_ptr)
 ;
 ; Parameters:
-; SMemHead *       Stack[0x4]:4   header
+; SMemHead *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   shape_memdbg.cpp_debugCalloc_FUN_0050f350 at 0050f428

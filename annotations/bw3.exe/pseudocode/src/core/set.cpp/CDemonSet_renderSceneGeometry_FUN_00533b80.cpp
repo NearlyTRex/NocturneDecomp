@@ -17,8 +17,8 @@ void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00533b80(CDemonSet *
   CDemonSet *pCVar2;
   CVector3f local_1c;
   
-  engine_matrix_c_FUN_0046d100(DAT_005f2afc,&DAT_00603b2c);
-  engine_matrix_c_FUN_0046d0d0(DAT_005f2afc,0x3e800000);
+  engine_drender_cpp_FUN_0046d100(DAT_005f2afc,&DAT_00603b2c);
+  engine_drender_cpp_FUN_0046d0d0(DAT_005f2afc,0x3e800000);
   if ((render_mode == 0) || (iVar1 = this_ptr->selected_camera_index, iVar1 < 0)) {
 LAB_00533d61:
     if (render_mode == 1) {

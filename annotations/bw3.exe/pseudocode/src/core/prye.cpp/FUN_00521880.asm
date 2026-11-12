@@ -54,7 +54,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   unkafter_prye.cpp_FUN_00525930 at 0052597a
+;   core_prye.cpp_FUN_00525930 at 0052597a
 ;
 ; Referenced Globals:
 ;   undefined4 s_actionPending_d_prye_cpp_005cd58e+1
@@ -78,11 +78,11 @@
 ;   core_dest.cpp_CActorDestination_acceptsActor_FUN_004594a0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   core_motion.cpp_FUN_004fc350
+;   core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
 ;   core_setcolid.cpp_FUN_0053bc80
 ;   core_setcolid.cpp_FUN_0053de10
-;   core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00517e80
 ;   shape_edittool.cpp_FUN_0047cee0
 ;
 ; *****************************************************************************
@@ -384,8 +384,8 @@ section .text
     FSUB float ptr [EAX + 0x20c9c]      ; 00521bd9
     PUSH EBX                            ; 00521bdf
     FSTP float ptr [ESP + 0x104]        ; 00521be0
-    CALL core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00517e80 ; 00521be7
-        ;   XREF to: 00517e80 (UNCONDITIONAL_CALL)  ; undefined core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00517e80()
+    CALL core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80 ; 00521be7
+        ;   XREF to: 00517e80 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80()
     MOV dword ptr [ESP + 0x108],EAX     ; 00521bec
     FLD float ptr [ESP + 0x108]         ; 00521bf3
     ADD ESP,0x4                         ; 00521bfa

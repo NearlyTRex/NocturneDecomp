@@ -954,7 +954,7 @@
 //
 //   The landing handler in CStranger::processFrame latches a fall as fatal
 //   before dealing it (see NOCTURNE_AUTHENTIC_GOD_MODE_FALL for the latch), and
-//   the damage it deals carries the DAMAGE_TYPE_IMMUNE that SDamageInfo::ctor
+//   the damage it deals carries the DAMAGE_TYPE_ATTACK_GENERIC that SDamageInfo::ctor
 //   leaves in place — 0x64, which clears that `0xb <` test. So the rescue fires
 //   on a landing it cannot rescue: the item is consumed, hit_points comes back
 //   above zero, and the latch then takes the death branch regardless. The hero
@@ -1427,7 +1427,7 @@
 //      land its damage on the first call and then stop. Three details in the
 //      hero damage paths decide whether it does:
 //
-//      - The damage carries DAMAGE_TYPE_FALL rather than the DAMAGE_TYPE_IMMUNE
+//      - The damage carries DAMAGE_TYPE_FALL rather than the DAMAGE_TYPE_ATTACK_GENERIC
 //        that SDamageInfo::ctor leaves in place. CStranger::processDamage gates
 //        two things on `0xb < damage_type` -- the invincibility early-return,
 //        and the auto-health rescue that puts hit_points back above zero after

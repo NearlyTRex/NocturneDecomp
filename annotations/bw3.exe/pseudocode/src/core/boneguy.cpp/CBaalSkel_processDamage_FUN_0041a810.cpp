@@ -22,7 +22,7 @@ void __cdecl core_boneguy_cpp_CBaalSkel_processDamage_FUN_0041a810(CBaalSkel *th
       core_boneguy_cpp_CBoneGuy_explode_FUN_00419550(&this_ptr->base);
       return;
     }
-    iVar2 = unkafter_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
+    iVar2 = core_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
     if (iVar2 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0
                 (&(this_ptr->base).base.base.model.base,3,1);

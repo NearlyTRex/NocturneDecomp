@@ -30,7 +30,7 @@ void __cdecl core_bird_cpp_CBird_processDamage_FUN_00415910(CBird *this_ptr,SDam
          ) goto LAB_00415973;
       puVar4 = &DAT_005d3d6e;
     }
-    unkafter_bird_cpp_FUN_00415830(&(this_ptr->base).model,puVar4);
+    core_bird_cpp_FUN_00415830(&(this_ptr->base).model,puVar4);
   }
 LAB_00415973:
   core_charactr_cpp_CCharacter_processDamage_FUN_004319e0(&this_ptr->base,damage_info);

@@ -87,6 +87,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_00433e50(CCharacter *th
 void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80(CCharacter *this_ptr,float delta_time);
 undefined4 core_charactr_cpp_FUN_00433f10(CCharacter *param_1,float param_2,char *param_3);
 int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_004340b0(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
+void core_charactr_cpp_FUN_004342c0(int param_1,undefined4 param_2,undefined4 param_3);
 void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction);
 void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_004343c0(CCharacter *this_ptr);
 float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(CCharacter *this_ptr,int state_index);
@@ -137,6 +138,7 @@ void cockpit_ckptutil_c_FUN_0043843c(void);
 void cockpit_ckptutil_c_blitFullScreen_FUN_0043852c(void *param_1,void *param_2);
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_00438560(void *sprite_data,void *span_data);
 void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_00438700(void *src_data,int width,int height,void *background_base,int dest_x,int dest_y);
+void cockpit_ckptutil_c_copyScreenRegion_FUN_00438790(undefined4 *param_1,int param_2,int param_3,int param_4,uint param_5,int param_6);
 void cockpit_ckptutil_c_FUN_004387f0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7);
 void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00438a10(void *bitmap_data,int width,int height,int num_iterations);
 void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00438b40(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
@@ -157,7 +159,9 @@ void cockpit_ckptutil_c_setLineClippingDisabled_FUN_0043a01c(undefined4 param_1)
 void cockpit_ckptutil_c_FUN_0043a030(undefined4 param_1);
 void * cockpit_ckptutil_c_rotateBitmap_FUN_0043a040(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
 void cockpit_ckptutil_c_FUN_0043a200(undefined4 *param_1,int param_2,uint param_3,uint param_4);
+void cockpit_ckptutil_c_setEdgeData_FUN_0043a3c0(int param_1,int param_2,undefined2 param_3,undefined2 param_4,undefined2 param_5,ushort param_6,byte param_7);
 void * cockpit_ckptutil_c_traceConnectedEdges_FUN_0043a45e(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
+void cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_0043af20(ushort *param_1,int param_2,short param_3);
 void cockpit_ckptutil_c_FUN_0043b090(byte *param_1,undefined4 param_2,int *param_3,int param_4,int param_5,uint param_6);
 void * __cdecl cockpit_ckptutil_c_FUN_0043b2e0(char *filename,void *buffer,int size);
 void __cdecl engine_clipper_c_setFarPlaneDistance_FUN_0043b480(int distance);

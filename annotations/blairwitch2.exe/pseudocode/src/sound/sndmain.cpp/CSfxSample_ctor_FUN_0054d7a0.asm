@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_0054fcd0
-;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50
+;   support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     ADD ESP,0x4                         ; 0054d7aa
     ADD EAX,0x17c                       ; 0054d7ad
     PUSH EAX                            ; 0054d7b2
-    CALL unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50 ; 0054d7b3
-        ;   XREF to: 0057cd50 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50 ; 0054d7b3
+        ;   XREF to: 0057cd50 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50(CInStreamFile * this_ptr)
     MOV dword ptr [EAX + -0x5c],0x0     ; 0054d7b8
     MOV dword ptr [EAX + -0x28],0x0     ; 0054d7bf
     MOV dword ptr [EAX + -0x24],0x0     ; 0054d7c6

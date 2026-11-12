@@ -1,18 +1,19 @@
 {
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 7,
-    "complexity_score": 601,
+    "assembly_lines": 198,
+    "complexity_score": 646,
     "cross_reference_count": 3,
-    "function_call_count": 0,
-    "global_count": 0,
+    "function_call_count": 10,
+    "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 106,
-    "suspect_count": 45,
+    "suspect_count": 49,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
+      "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
@@ -20,7 +21,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 113
+    "total_lines": 304
   },
   "cross_references": [
     {
@@ -30,9 +31,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005424ac",
+      "addr": "005424b0",
       "from_addr": "0054267c",
-      "name": "core_skeleton.cpp_FUN_005424ac",
+      "name": "core_skeleton.cpp_FUN_005424b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,15 +48,121 @@
     "address_range": [
       [
         "0047fd00",
-        "0047fd0a"
+        "0047ff4a"
       ]
     ],
     "convention": "unknown",
     "name": "shape_edittool.cpp_FUN_0047fd00",
     "signature": "void shape_edittool_cpp_FUN_0047fd00(undefined4 param_1,float param_2,undefined4 param_3)"
   },
-  "function_calls": [],
-  "globals": [],
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00407cc0",
+      "is_variadic": false,
+      "name": "engine_3d.c_clipAndDrawLine2D_FUN_00407cc0"
+    },
+    {
+      "addr": "00406da0",
+      "is_variadic": false,
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406da0"
+    },
+    {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "004a8df0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004a8df0"
+    },
+    {
+      "addr": "004e8e60",
+      "is_variadic": false,
+      "name": "engine_matrix.c_transformToCache_FUN_004e8e60"
+    },
+    {
+      "addr": "004f3570",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_FUN_004f3570"
+    },
+    {
+      "addr": "004f8e20",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_FUN_004f8e20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d24df",
+      "name": "DAT_005d24df",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25590",
+      "name": "DAT_01c25590",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25f78",
+      "name": "DAT_01c25f78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25f7c",
+      "name": "DAT_01c25f7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25f84",
+      "name": "DAT_01c25f84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c263d4",
+      "name": "DAT_01c263d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e60",
+      "name": "DAT_01c35e60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 3,
     "call_sites": [
@@ -75,7 +182,7 @@
       {
         "call_addr": "0054267c",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_005424ac",
+        "caller": "core_skeleton.cpp_FUN_005424b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -104,22 +211,40 @@
     "matches_declared": false
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.0,
-    "instruction_count": 6,
+    "avg_pcode_per_instr": 5.3273809523809526,
+    "instruction_count": 168,
     "opcode_distribution": {
-      "COPY": 5,
-      "INT_ADD": 1,
-      "INT_AND": 2,
-      "INT_EQUAL": 2,
-      "INT_LESS": 1,
-      "INT_SBORROW": 1,
-      "INT_SLESS": 1,
-      "INT_SUB": 5,
-      "LOAD": 1,
-      "POPCOUNT": 1,
-      "STORE": 4
+      "BOOL_NEGATE": 20,
+      "BRANCH": 9,
+      "CALL": 15,
+      "CBRANCH": 10,
+      "COPY": 162,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 68,
+      "INT_AND": 134,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 96,
+      "INT_LEFT": 4,
+      "INT_LESS": 10,
+      "INT_MULT": 13,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 20,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 47,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 74,
+      "INT_XOR": 7,
+      "INT_ZEXT": 12,
+      "LOAD": 24,
+      "POPCOUNT": 43,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 61,
+      "TRUNC": 1
     },
-    "pcode_op_count": 24
+    "pcode_op_count": 895
   },
   "stack_frame": {
     "frame_size": 4,
@@ -128,6 +253,58 @@
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 6,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0047fde3",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0047fdf4",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0047fe2c",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0047fe3d",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0047fe75",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0047fe8b",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
   },
   "suspects": [
     {
@@ -173,9 +350,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 15,
-      "match": "puStackY_80",
+      "match": "uStackY_80",
       "severity": "moderate",
-      "text": "byte *puStackY_80;",
+      "text": "uint uStackY_80;",
       "type": "stack_alignment_array"
     },
     {
@@ -189,9 +366,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 17,
-      "match": "puStackY_78",
+      "match": "uStackY_78",
       "severity": "moderate",
-      "text": "byte *puStackY_78;",
+      "text": "uint uStackY_78;",
       "type": "stack_alignment_array"
     },
     {
@@ -229,17 +406,17 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 22,
-      "match": "puStackY_40",
+      "match": "uStackY_40",
       "severity": "moderate",
-      "text": "byte *puStackY_40;",
+      "text": "uint uStackY_40;",
       "type": "stack_alignment_array"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 32,
-      "match": "puStackY_40",
+      "match": "uStackY_40",
       "severity": "moderate",
-      "text": "puStackY_40 = &UNK_0047fd31;",
+      "text": "uStackY_40 = 0x47fd31;",
       "type": "stack_alignment_array"
     },
     {
@@ -247,7 +424,7 @@
       "line": 35,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar7 = (float10)param_2 * (float10)dRam005d24df;",
+      "text": "fVar7 = (float10)param_2 * (float10)_DAT_005d24df;",
       "type": "unnamed_param"
     },
     {
@@ -261,9 +438,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 44,
-      "match": "puStackY_40",
+      "match": "uStackY_40",
       "severity": "moderate",
-      "text": "puStackY_40 = &UNK_0047fdb4;",
+      "text": "uStackY_40 = 0x47fdb4;",
       "type": "stack_alignment_array"
     },
     {
@@ -357,9 +534,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 78,
-      "match": "puStackY_80",
+      "match": "uStackY_80",
       "severity": "moderate",
-      "text": "puStackY_80 = &UNK_0047fe46;",
+      "text": "uStackY_80 = 0x47fe46;",
       "type": "stack_alignment_array"
     },
     {
@@ -413,9 +590,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 96,
-      "match": "puStackY_78",
+      "match": "uStackY_78",
       "severity": "moderate",
-      "text": "puStackY_78 = &UNK_0047fe97;",
+      "text": "uStackY_78 = 0x47fe97;",
       "type": "stack_alignment_array"
     },
     {
@@ -433,6 +610,38 @@
       "severity": "moderate",
       "text": "if ((*(byte *)((int)puVar3 + 0x13) & 0x80) == 0) {",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x47fd31 assigned to bare local `uStackY_40`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStackY_40` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 32,
+      "match": "0x47fd31",
+      "severity": "moderate",
+      "text": "uStackY_40 = 0x47fd31;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x47fdb4 assigned to bare local `uStackY_40`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStackY_40` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 44,
+      "match": "0x47fdb4",
+      "severity": "moderate",
+      "text": "uStackY_40 = 0x47fdb4;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x47fe46 assigned to bare local `uStackY_80`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStackY_80` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 78,
+      "match": "0x47fe46",
+      "severity": "moderate",
+      "text": "uStackY_80 = 0x47fe46;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x47fe97 assigned to bare local `uStackY_78`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStackY_78` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 96,
+      "match": "0x47fe97",
+      "severity": "moderate",
+      "text": "uStackY_78 = 0x47fe97;",
+      "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

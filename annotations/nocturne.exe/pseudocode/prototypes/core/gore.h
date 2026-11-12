@@ -9,6 +9,10 @@
 // Address: 004adf90
 void __cdecl staticInit(void);
 
+// Original: core_gore.cpp_getBloodColorParams_FUN_004ae020
+// Address: 004ae020
+void getBloodColorParams(uint param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4);
+
 // Original: core_gore.cpp_CBloodParticle_setup_FUN_004ae070
 // Address: 004ae070
 void __cdecl CBloodParticle::setup(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type);

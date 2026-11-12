@@ -13,11 +13,11 @@
 ;   core_bird.cpp_CBird_archive_FUN_0040ff80 at 0040ffbd
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419070 at 004190d1
 ;   core_carved.cpp_CCarved_archive_FUN_00428650 at 0042868d
-;   core_constrct.cpp_CConstruct_archive_FUN_00443ca0 at 00443ce7
+;   core_construc.cpp_CConstruct_archive_FUN_00443ca0 at 00443ce7
 ;   core_cow.cpp_CZombieCow_archive_FUN_004456b0 at 004456fd
 ;   core_darkwolf.cpp_CDarkwolf_archive_FUN_00598f30 at 00598f81
+;   core_demnfolk.cpp_CDemnfolk_archive_FUN_004583c0 at 00458427
 ;   core_dog.cpp_CZombieDog_archive_FUN_00463460 at 004634ad
-;   core_gargoyle.cpp_CGargoyle_archive_FUN_004c5e50 at 004c5e8d
 ;   ... and 27 more
 ;
 ; Referenced Globals:

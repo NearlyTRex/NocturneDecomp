@@ -189,11 +189,11 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89
       if (0.0 < this_ptr->fire_cooldown_timer) {
         fVar8 = this_ptr->fire_cooldown_timer;
         pCVar5 = &(this_ptr->base).base.model;
-        (this_ptr->base).base.model.bone_update_mode = 2;
+        (this_ptr->base).base.model.bone_update_mode = BONE_UPDATE_HIERARCHICAL_RESTPOSE;
         local_40 = (CDeformableModelInstance *)core_motion_cpp_FUN_00525110(pCVar5,uVar2,fVar8);
         local_14 = local_40;
         core_skeleton_cpp_FUN_00567620(pCVar5,_DAT_01cc9140,local_40,0);
-        (this_ptr->base).base.model.bone_update_mode = 0;
+        (this_ptr->base).base.model.bone_update_mode = BONE_UPDATE_SIMPLE_FLAT;
       }
     }
     else {
@@ -283,13 +283,13 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89
       if (0.0 < this_ptr->fire_cooldown_timer) {
         fVar8 = this_ptr->fire_cooldown_timer;
         fVar1 = (float)_DAT_005e10c4;
-        (this_ptr->base).base.model.bone_update_mode = 2;
+        (this_ptr->base).base.model.bone_update_mode = BONE_UPDATE_HIERARCHICAL_RESTPOSE;
         pCVar5 = &(this_ptr->base).base.model;
         local_18 = (CDeformableModelInstance *)
                    core_motion_cpp_FUN_00525110(pCVar5,_DAT_01cc9144,1.0 - fVar8 * fVar1);
         local_14 = local_18;
         core_skeleton_cpp_FUN_00567620(pCVar5,_DAT_01cc9144,local_18,_DAT_01cc9120);
-        (this_ptr->base).base.model.bone_update_mode = 0;
+        (this_ptr->base).base.model.bone_update_mode = BONE_UPDATE_SIMPLE_FLAT;
       }
     }
   }

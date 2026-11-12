@@ -125,8 +125,8 @@ section .text
     ADD ESP,0xc                         ; 004b6240
     MOV EDX,dword ptr [0x0061ea5c]      ; 004b6243 | g_CGameHookPtr
     PUSH EDX                            ; 004b6249
-    CALL unkaddr_0059c270.cpp_CGameHook_printBanner_FUN_0059c2c0 ; 004b624a
-        ;   XREF to: 0059c2c0 (UNCONDITIONAL_CALL)  ; void unkaddr_0059c270.cpp_CGameHook_printBanner_FUN_0059c2c0(CGameHook * this_ptr)
+    CALL core_gmehook.cpp_CGameHook_printBanner_FUN_0059c2c0 ; 004b624a
+        ;   XREF to: 0059c2c0 (UNCONDITIONAL_CALL)  ; void core_gmehook.cpp_CGameHook_printBanner_FUN_0059c2c0(CGameHook * this_ptr)
     ADD ESP,0x4                         ; 004b624f
     MOV dword ptr [EBP + 0xfffffff4],ESP ; 004b6252
     MOV EAX,dword ptr [EBP + -0xc]      ; 004b6258
@@ -174,8 +174,8 @@ section .text
     MOV EAX,[0x00616044]                ; 004b638a | g_CFieldNotesPtr
     MOV dword ptr [0x01cb7788],EBX      ; 004b638f | DAT_01cb7788
     MOV dword ptr [EAX + 0x40],EBX      ; 004b6395 | g_CFieldNotesInstance.is_displayed
-    CALL unkaddr_0059aa80.cpp_FUN_0059ac10 ; 004b6398
-        ;   XREF to: 0059ac10 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059aa80.cpp_FUN_0059ac10()
+    CALL core_zombie.cpp_FUN_0059ac10   ; 004b6398
+        ;   XREF to: 0059ac10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059ac10()
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b639d
     PUSH EAX                            ; 004b63a0
     MOV dword ptr [EAX + 0x22c],EBX     ; 004b63a1
@@ -383,8 +383,8 @@ section .text
         ;   XREF to: 004b6603 (CONDITIONAL_JUMP)  ; LAB_004b6603
     PUSH EDI                            ; 004b65f9
     PUSH EAX                            ; 004b65fa
-    CALL unkaddr_0059aa80.cpp_FUN_0059ab70 ; 004b65fb
-        ;   XREF to: 0059ab70 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059aa80.cpp_FUN_0059ab70()
+    CALL core_zombie.cpp_FUN_0059ab70   ; 004b65fb
+        ;   XREF to: 0059ab70 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059ab70()
     ADD ESP,0x8                         ; 004b6600
     MOV EAX,[0x0061b5a8]                ; 004b6603 | g_CDemonSetPtr
         ;   Label: LAB_004b6603
@@ -544,8 +544,8 @@ section .text
     MOV EDX,dword ptr [0x00618170]      ; 004b67a9 | DAT_00618170
         ;   Label: LAB_004b67a9
     PUSH EDX                            ; 004b67af
-    CALL unkafter_mission.cpp_FUN_004fd450 ; 004b67b0
-        ;   XREF to: 004fd450 (UNCONDITIONAL_CALL)  ; undefined unkafter_mission.cpp_FUN_004fd450()
+    CALL core_mission.cpp_FUN_004fd450  ; 004b67b0
+        ;   XREF to: 004fd450 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fd450()
     ADD ESP,0x4                         ; 004b67b5
     PUSH 0x0                            ; 004b67b8
     MOV ECX,dword ptr [0x00617dd4]      ; 004b67ba | DAT_00617dd4
@@ -561,8 +561,8 @@ section .text
         ;   XREF to: 0055a360 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_shutdown_FUN_0055a360(CSound * this_ptr)
     ADD ESP,0x4                         ; 004b67de
     MOV ESI,dword ptr [EBP + 0x14]      ; 004b67e1
-    CALL unkaddr_0059aa80.cpp_FUN_0059ac10 ; 004b67e4
-        ;   XREF to: 0059ac10 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059aa80.cpp_FUN_0059ac10()
+    CALL core_zombie.cpp_FUN_0059ac10   ; 004b67e4
+        ;   XREF to: 0059ac10 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059ac10()
     PUSH ESI                            ; 004b67e9
     CALL core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0 ; 004b67ea
         ;   XREF to: 004b60c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0(CGame * this_ptr)
@@ -712,8 +712,8 @@ section .text
         ;   XREF to: 004b69a5 (CONDITIONAL_JUMP)  ; LAB_004b69a5
     PUSH EDX                            ; 004b6996
     PUSH ECX                            ; 004b6997
-    CALL unkaddr_0059aa80.cpp_FUN_0059ab70 ; 004b6998
-        ;   XREF to: 0059ab70 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059aa80.cpp_FUN_0059ab70()
+    CALL core_zombie.cpp_FUN_0059ab70   ; 004b6998
+        ;   XREF to: 0059ab70 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059ab70()
     ADD ESP,0x8                         ; 004b699d
     JMP 0x004b68d3                      ; 004b69a0
         ;   XREF to: 004b68d3 (UNCONDITIONAL_JUMP)  ; LAB_004b68d3

@@ -14,6 +14,7 @@ section .text
     MOV EDX,EDX                         ; 00523e2e
         ;   Label: core_motion.cpp_FUN_00523e2e
     PUSH 0x5eaab2                       ; 00523e30
+        ;   Label: LAB_00523e30
     PUSH EDI                            ; 00523e35
     CALL crt_unknown.c_FUN_005c03c0     ; 00523e36
         ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_arrdtor20_FUN_0052ccb0(SMorphControlPoint *objs,uint flags)
+; SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_arrdtor20_FUN_0052ccb0(SMorphControlPoint *this_ptr,uint flags)
 ;
 ; Parameters:
-; SMorphControlPoint * Stack[0x4]:4   objs
+; SMorphControlPoint * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

@@ -27,9 +27,9 @@
 ;   core_armour.cpp_FUN_0040f2b0
 ;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
 ;   core_inv.cpp_CInventory_dtor_FUN_004da840
+;   core_muzzle.cpp_FUN_0059df70
 ;   core_path.cpp_CPathMap_dtor_FUN_00511d10
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50
-;   unkaddr_0059d350.cpp_FUN_0059df70
 ;
 ; *****************************************************************************
 
@@ -82,8 +82,8 @@ section .text
     PUSH 0x0                            ; 004ce446
     SUB EAX,0x9c8                       ; 004ce448
     PUSH EAX                            ; 004ce44d
-    CALL unkaddr_0059d350.cpp_FUN_0059df70 ; 004ce44e
-        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059df70()
+    CALL core_muzzle.cpp_FUN_0059df70   ; 004ce44e
+        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059df70()
     ADD ESP,0x8                         ; 004ce453
     PUSH 0x0                            ; 004ce456
     SUB EAX,0x34c                       ; 004ce458

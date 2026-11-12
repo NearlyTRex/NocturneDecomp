@@ -65,7 +65,7 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   float fStack_14;
   
   bVar6 = 0;
-  unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180
+  core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180
             ((this_ptr->base).particle_systems,delta_time);
   fVar2 = this_ptr->check_timer - delta_time;
   this_ptr->check_timer = fVar2;
@@ -154,7 +154,7 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004cdb60(CHealthItem *this_
   fStack_74 = fStack_74 + (this_ptr->base).location.position.x;
   fStack_70 = fStack_70 + (this_ptr->base).location.position.y;
   fStack_6c = fStack_6c + (this_ptr->base).location.position.z;
-  unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+  core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
             (g_CSimpleParticleSystemPtr,0x3f800000,0x3f800000,0,0x3ecccccd,0,0x3f800000,0,0,
              &stack0xffffff8c,&stack0xffffffa4,&stack0xffffff50,0);
   return;

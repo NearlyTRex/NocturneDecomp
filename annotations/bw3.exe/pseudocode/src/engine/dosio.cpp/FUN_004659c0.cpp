@@ -25,7 +25,7 @@ _FILE * __cdecl engine_dosio_cpp_FUN_004659c0(char *directory,char *filename,cha
     iVar3 = toupper((uint)*pbVar5);
     if (iVar3 == 0x57) {
       if (directory != (char *)0x0) {
-        unkafter_dosio_cpp_FUN_00466190(directory);
+        engine_dosio_cpp_FUN_00466190(directory);
       }
       p_Var4 = (_FILE *)_fopen(local_220,mode);
       return p_Var4;

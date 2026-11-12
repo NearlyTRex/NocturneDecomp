@@ -148,8 +148,8 @@ CCharacter_full_vtable g_CBirdVTable = {
         .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_004089c0,
         .getPathMap = (CDemonActor_getPathMap *)core_bird_cpp_CBird_getPathMap_FUN_004159e0,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433c60,
-        .getActorType = (CDemonActor_getActorType *)unkafter_bird_cpp_CBird_getActorType_FUN_004151e0,
-        .dtor = (CDemonActor_dtor *)unkafter_bird_cpp_CBird_dtor_FUN_004159f0,
+        .getActorType = (CDemonActor_getActorType *)core_bird_cpp_CBird_getActorType_FUN_004151e0,
+        .dtor = (CDemonActor_dtor *)core_bird_cpp_CBird_dtor_FUN_004159f0,
         .archive = (CDemonActor_archive *)core_bird_cpp_CBird_archive_FUN_00415780
     },
     ._uc = {
@@ -271,11 +271,11 @@ CCharacter_full_vtable g_CCharacterVTable = {
 // CConstruct_full_vtable
 CConstruct_full_vtable g_CConstructVTable = {
     ._ub = {
-        .setup = (CDemonActor_setup *)core_constrct_cpp_CConstruct_setup_FUN_004459c0,
+        .setup = (CDemonActor_setup *)core_construc_cpp_CConstruct_setup_FUN_004459c0,
         .markResourcesInUse = (CDemonActor_markResourcesInUse *)core_charactr_cpp_CCharacter_markResourcesInUse_FUN_0042c7a0,
         .vfunc2 = (CDemonActor_vfunc2 *)core_charactr_cpp_FUN_0042c7d0,
-        .process = (CDemonActor_process *)core_constrct_cpp_CConstruct_process_FUN_00445cb0,
-        .renderOpaque = (CDemonActor_renderOpaque *)core_constrct_cpp_CConstruct_renderOpaque_FUN_00446e20,
+        .process = (CDemonActor_process *)core_construc_cpp_CConstruct_process_FUN_00445cb0,
+        .renderOpaque = (CDemonActor_renderOpaque *)core_construc_cpp_CConstruct_renderOpaque_FUN_00446e20,
         .renderTransparent = (CDemonActor_renderTransparent *)core_charactr_cpp_CCharacter_renderTransparent_FUN_004301e0,
         .renderBackground = (CDemonActor_renderBackground *)core_enemy_cpp_CEnemy_renderBackground_FUN_004a0fb0,
         .getBoundingBox = (CDemonActor_getBoundingBox *)core_charactr_cpp_CCharacter_getBoundingBox_FUN_00430c10,
@@ -292,7 +292,7 @@ CConstruct_full_vtable g_CConstructVTable = {
         .getBlockVirtualDirectorFlag = (CDemonActor_getBlockVirtualDirectorFlag *)core_actor_cpp_FUN_004089f0,
         .allowBulletHoles = (CDemonActor_allowBulletHoles *)core_actor_cpp_FUN_004089f0,
         .updateCollisionData = (CDemonActor_updateCollisionData *)core_actor_cpp_CDemonActor_updateCollisionData_FUN_004096a0,
-        .getTargetPoints = (CDemonActor_getTargetPoints *)core_constrct_cpp_CConstruct_getTargetPoints_FUN_004471a0,
+        .getTargetPoints = (CDemonActor_getTargetPoints *)core_construc_cpp_CConstruct_getTargetPoints_FUN_004471a0,
         .renderTargetPoints = (CDemonActor_renderTargetPoints *)core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409940,
         .canLookAt = (CDemonActor_canLookAt *)core_charactr_cpp_CCharacter_canLookAt_FUN_00433cd0,
         .evaluateTriggerCondition = (CDemonActor_evaluateTriggerCondition *)core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409c80,
@@ -322,9 +322,9 @@ CConstruct_full_vtable g_CConstructVTable = {
         .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_004089c0,
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_004089f0,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433c60,
-        .getActorType = (CDemonActor_getActorType *)core_constrct_cpp_CConstruct_getActorType_FUN_00445810,
+        .getActorType = (CDemonActor_getActorType *)core_construc_cpp_CConstruct_getActorType_FUN_00445810,
         .dtor = (CDemonActor_dtor *)core_construc_cpp_CConstruct_dtor_FUN_00447660,
-        .archive = (CDemonActor_archive *)core_constrct_cpp_CConstruct_archive_FUN_00446e30
+        .archive = (CDemonActor_archive *)core_construc_cpp_CConstruct_archive_FUN_00446e30
     },
     ._uc = {
         .applyDamage = (CCharacter_applyDamage *)core_charactr_cpp_CCharacter_applyDamage_FUN_0042d6a0,
@@ -339,7 +339,7 @@ CConstruct_full_vtable g_CConstructVTable = {
         .onVictimLost = (CCharacter_onVictimLost *)core_enemy_cpp_CEnemy_onVictimLost_FUN_004a10f0,
         .checkCylinderCollisionWorld = (CCharacter_checkCylinderCollisionWorld *)core_charactr_cpp_CCharacter_checkCylinderCollisionWorld_FUN_00431620,
         .testDamageLine = (CCharacter_testDamageLine *)core_charactr_cpp_CCharacter_testDamageLine_FUN_004316b0,
-        .processDamage = (CCharacter_processDamage *)core_constrct_cpp_CConstruct_processDamage_FUN_00447090,
+        .processDamage = (CCharacter_processDamage *)core_construc_cpp_CConstruct_processDamage_FUN_00447090,
         .getDeathState = (CCharacter_getDeathState *)core_charactr_cpp_CCharacter_getDeathState_FUN_00431c30,
         .attractActorToward = (CCharacter_attractActorToward *)core_charactr_cpp_CCharacter_attractActorToward_FUN_004314f0,
         .canBeAttracted = (CCharacter_canBeAttracted *)core_charactr_cpp_CCharacter_isGrabbable_FUN_00431430,
@@ -413,7 +413,7 @@ CDemnfolk_full_vtable g_CDemnfolkVTable = {
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_004089f0,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433c60,
         .getActorType = (CDemonActor_getActorType *)core_demnfolk_cpp_CDemnfolk_getActorType_FUN_00458a00,
-        .dtor = (CDemonActor_dtor *)unkafter_demnfolk_cpp_CDemnfolk_dtor_FUN_0045d0e0,
+        .dtor = (CDemonActor_dtor *)core_demnfolk_cpp_CDemnfolk_dtor_FUN_0045d0e0,
         .archive = (CDemonActor_archive *)core_demnfolk_cpp_CDemnfolk_archive_FUN_0045c1e0
     },
     ._uc = {
@@ -1685,8 +1685,8 @@ CDjien_full_vtable g_CDjienVTable = {
         .customGetFloorHeight = (CDemonActor_customGetFloorHeight *)core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_004089c0,
         .getPathMap = (CDemonActor_getPathMap *)core_actor_cpp_FUN_004089f0,
         .calculateChecksum = (CDemonActor_calculateChecksum *)core_charactr_cpp_CCharacter_calculateChecksum_FUN_00433c60,
-        .getActorType = (CDemonActor_getActorType *)unkafter_djien_cpp_CDjien_getActorType_FUN_0045fe00,
-        .dtor = (CDemonActor_dtor *)unkafter_djien_cpp_CDjien_dtor_FUN_004623b0,
+        .getActorType = (CDemonActor_getActorType *)core_djien_cpp_CDjien_getActorType_FUN_0045fe00,
+        .dtor = (CDemonActor_dtor *)core_djien_cpp_CDjien_dtor_FUN_004623b0,
         .archive = (CDemonActor_archive *)core_djien_cpp_CDjien_archive_FUN_00460e80
     },
     ._uc = {
@@ -1721,7 +1721,7 @@ CDjien_full_vtable g_CDjienVTable = {
     ._udjien = {
         .damageSack = (CDjien_damageSack *)core_djien_cpp_CDjien_damageSack_FUN_00460f90,
         .getSackIndex = (CDjien_getSackIndex *)core_djien_cpp_CDjien_getSackIndex_FUN_00461530,
-        .vfunc84 = (CDjien_vfunc84 *)unkafter_djien_cpp_FUN_004609c0
+        .vfunc84 = (CDjien_vfunc84 *)core_djien_cpp_FUN_004609c0
     }
 };
 
@@ -3435,12 +3435,12 @@ WatcomDestructorCall DAT_005FC8FC = {
 };
 WatcomDestructorCall DAT_005FC908 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)unkafter_alphabit_cpp_CAudioRecPuzzle_dtor_FUN_00415df0,
+    .destructor_func = (void *)core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0,
     .object_instance = (void *)&g_CAudioRecPuzzleInstance
 };
 WatcomDestructorCall DAT_005FC914 = {
     .delete_flags = 0x00000004,
-    .destructor_func = (void *)unkafter_superopt_cpp_CChemPuzzle_dtor_FUN_00417630,
+    .destructor_func = (void *)core_bmppuzzl_cpp_CChemPuzzle_dtor_FUN_00417630,
     .object_instance = (void *)&g_CChemPuzzleInstance
 };
 WatcomDestructorCall DAT_005FCE20 = {
@@ -3547,9 +3547,9 @@ WatcomDestructorCall DAT_005FFF88 = {
 // WatcomTypeInfo
 WatcomTypeInfo g_CInStreamFileTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkclass_instream_cpp_CInStreamFile_ctor_FUN_005a08d0,
-    .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)unkclass_instream_cpp_CInStreamFile_copy_FUN_005a0a20,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0,
+    .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)support_trstream_cpp_CInStreamFile_copy_FUN_005a0a20,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50,
     .instance_size = (int)sizeof(CInStreamFile),
     .class_name = (char *)s_CInStreamFile_006104d4
 };
@@ -3707,9 +3707,9 @@ WatcomTypeInfo g_CBiggsTypeInfo = {
 };
 WatcomTypeInfo g_CBirdTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_bird_cpp_CBird_ctor_FUN_004151f0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_bird_cpp_CBird_ctor_FUN_004151f0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_bird_cpp_CBird_dtor_FUN_004159f0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_bird_cpp_CBird_dtor_FUN_004159f0,
     .instance_size = (int)sizeof(CBird),
     .class_name = (char *)s_CBird_006109fc
 };
@@ -3731,25 +3731,25 @@ WatcomTypeInfo g_CAlphaBitmapTypeInfo = {
 };
 WatcomTypeInfo g_CAudioRecPuzzleTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_alphabit_cpp_CAudioRecPuzzle_ctor_FUN_00415d90,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_bmppuzzl_cpp_CAudioRecPuzzle_ctor_FUN_00415d90,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_alphabit_cpp_CAudioRecPuzzle_dtor_FUN_00415df0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0,
     .instance_size = (int)sizeof(CAudioRecPuzzle),
     .class_name = (char *)s_CAudioRecPuzzle_00610aa2
 };
 WatcomTypeInfo g_buttonStructTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_superopt_cpp_SButtonStruct_ctor_FUN_00418870,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_bmppuzzl_cpp_SButtonStruct_ctor_FUN_00418870,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_superopt_cpp_SButtonStruct_dtor_FUN_00418880,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_bmppuzzl_cpp_SButtonStruct_dtor_FUN_00418880,
     .instance_size = (int)sizeof(SButtonStruct),
     .class_name = (char *)s_buttonStruct_CAudioRecPu_00610a7d
 };
 WatcomTypeInfo g_CChemPuzzleTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_superopt_cpp_CChemPuzzle_ctor_FUN_004175f0,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_bmppuzzl_cpp_CChemPuzzle_ctor_FUN_004175f0,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_superopt_cpp_CChemPuzzle_dtor_FUN_00417630,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_bmppuzzl_cpp_CChemPuzzle_dtor_FUN_00417630,
     .instance_size = (int)sizeof(CChemPuzzle),
     .class_name = (char *)s_CChemPuzzle_00610a6a
 };
@@ -4003,7 +4003,7 @@ WatcomTypeInfo g_CConsoleTypeInfo = {
 };
 WatcomTypeInfo g_CConstructTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_constrct_cpp_CConstruct_ctor_FUN_00445820,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_construc_cpp_CConstruct_ctor_FUN_00445820,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_construc_cpp_CConstruct_dtor_FUN_00447660,
     .instance_size = (int)sizeof(CConstruct),
@@ -4085,7 +4085,7 @@ WatcomTypeInfo g_CDemnfolkTypeInfo = {
     .type_flags = 0x00020100,
     .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_demnfolk_cpp_CDemnfolk_ctor_FUN_00458a10,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_demnfolk_cpp_CDemnfolk_dtor_FUN_0045d0e0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_demnfolk_cpp_CDemnfolk_dtor_FUN_0045d0e0,
     .instance_size = (int)sizeof(CDemnfolk),
     .class_name = (char *)s_CDemnfolk_006112b8
 };
@@ -4115,7 +4115,7 @@ WatcomTypeInfo g_CFilterFXTypeInfo = {
 };
 WatcomTypeInfo g_SDjienBoxTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_djien_cpp_SDjienBox_ctor_FUN_00462440,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_djien_cpp_SDjienBox_ctor_FUN_00462440,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
     .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
     .instance_size = (int)sizeof(SDjienBox),
@@ -4123,9 +4123,9 @@ WatcomTypeInfo g_SDjienBoxTypeInfo = {
 };
 WatcomTypeInfo g_CDjienTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)unkafter_djien_cpp_CDjien_ctor_FUN_0045fe10,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)core_djien_cpp_CDjien_ctor_FUN_0045fe10,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005bfae6,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)unkafter_djien_cpp_CDjien_dtor_FUN_004623b0,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)core_djien_cpp_CDjien_dtor_FUN_004623b0,
     .instance_size = (int)sizeof(CDjien),
     .class_name = (char *)s_CDjien_0061227c
 };
@@ -4302,8 +4302,8 @@ WatcomTypeInfo g_CFilmProjectorTypeInfo = {
 undefined1 DAT_005fb2c4 = 0x00;
 
 // undefined1*
-undefined1* g_CAudioRecPuzzleVTable = (undefined1*)unkafter_alphabit_cpp_CAudioRecPuzzle_dtor_FUN_00415df0;
-undefined1* g_CChemPuzzleVTable = (undefined1*)unkafter_superopt_cpp_CChemPuzzle_dtor_FUN_00417630;
+undefined1* g_CAudioRecPuzzleVTable = (undefined1*)core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0;
+undefined1* g_CChemPuzzleVTable = (undefined1*)core_bmppuzzl_cpp_CChemPuzzle_dtor_FUN_00417630;
 undefined1* g_CAsciiArmorVTable = (undefined1*)support_codec_cpp_CAsciiArmor_dtor_FUN_004441c0;
 undefined1* g_CAsciiUnarmorVTable = (undefined1*)support_codec_cpp_CAsciiUnarmor_dtor_FUN_00444170;
 undefined1* g_CInStreamPipeVTable = (undefined1*)support_codec_cpp_CInStreamPipe_dtor_FUN_00443c60;

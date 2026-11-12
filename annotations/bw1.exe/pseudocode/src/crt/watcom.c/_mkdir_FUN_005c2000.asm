@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_FUN_004d6420 at 004d64db
+;   engine_dosio.cpp_FUN_004798c0 at 0047990e
 ;   engine_dosio.cpp_reopenFileStream_FUN_00479240 at 00479297
-;   unkafter_dosio.cpp_FUN_004798c0 at 0047990e
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateDirectoryA_005d0520 = 001d0c68

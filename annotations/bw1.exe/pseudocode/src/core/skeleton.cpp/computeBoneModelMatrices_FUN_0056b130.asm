@@ -4,8 +4,9 @@
 ; void core_skeleton_cpp_computeBoneModelMatrices_FUN_0056b130(float *param_1,CDeformableModelInstance *param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   core_skeleton.cpp_FUN_00569fb0 at 0056a037
+;   core_skeleton.cpp_FUN_0056b360 at 0056b500
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30

@@ -13,7 +13,7 @@
 ;   core_rifle.cpp_CRifle_getMuzzlePoint_FUN_00527ca0 at 00527cb4
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a3c0 at 0054a40e
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0054b5b0 at 0054b62b
-;   engine_special.cpp_CSpawner_ctor_FUN_005638a0 at 005638b3
+;   core_spawner.cpp_CSpawner_ctor_FUN_005638a0 at 005638b3
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo

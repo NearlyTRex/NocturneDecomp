@@ -6,7 +6,7 @@
 ;
 ; XREF[28]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 004404dc
-;   core_dcube.cpp_FUN_0044b660 at 0044b699
+;   core_dcube.cpp_showHelpFile_FUN_0044b660 at 0044b699
 ;   core_game.cpp_CGame_FUN_004a57c0 at 004a5989
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a66b9
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6a74

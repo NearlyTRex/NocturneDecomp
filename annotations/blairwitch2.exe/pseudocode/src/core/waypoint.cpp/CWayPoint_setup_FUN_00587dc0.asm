@@ -7,7 +7,7 @@
 ; CWayPoint *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_patrpoin.cpp_CPatrolPoint_setup_FUN_0059c670 at 0059c675
+;   core_hpatrol.cpp_CPatrolPoint_setup_FUN_0059c670 at 0059c675
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0

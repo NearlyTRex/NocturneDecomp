@@ -10,7 +10,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[18]:
+; XREF[19]:
+;   core_basicene.cpp_FUN_0059fae0 at 0059fb2f
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00428e30 at 00428f8c
 ;   core_charactr.cpp_FUN_0042b620 at 0042b685
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 00459b9f
@@ -20,8 +21,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004e5080 at 004e5394
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004f1890 at 004f1a71
 ;   core_platfrm.cpp_FUN_00519ba0 at 00519c7a
-;   core_scat.cpp_FUN_00520df0 at 00520f14
-;   ... and 8 more
+;   ... and 9 more
 ;
 ; *****************************************************************************
 

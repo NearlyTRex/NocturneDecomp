@@ -11,7 +11,7 @@ uint * __cdecl support_trstream_cpp_CInStreamMemory_ctorOpen_FUN_00574150(CInStr
 {
   CInStreamMemory *this_ptr_00;
   
-  this_ptr_00 = (CInStreamMemory *)unkafter_turret_cpp_FUN_00572530(this_ptr);
+  this_ptr_00 = (CInStreamMemory *)support_trstream_cpp_FUN_00572530(this_ptr);
   this_ptr_00->vtable = &g_CInStreamMemoryVTable;
   this_ptr_00->data = (char *)0x0;
   this_ptr_00->size = 0;

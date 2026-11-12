@@ -32,6 +32,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_setRandomSeed_FUN_0040cdc0
+;   core_bmppuzzl.cpp_FUN_00411a90
 ;   core_dfilter.cpp_CFilterFX_process_FUN_00459e90
 ;   core_event.cpp_CEventList_process_FUN_0048c020
 ;   core_fire.cpp_FUN_004a1760
@@ -45,7 +46,6 @@
 ;   core_set.cpp_CDemonSet_process_FUN_00539c50
 ;   core_set.cpp_CDemonSet_processActors_FUN_005353e0
 ;   core_setdir.cpp_FUN_0053f940
-;   core_sound.cpp_FUN_0055fd30
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -361,8 +361,8 @@ section .text
     CALL core_fldnotes.cpp_FUN_004ac6b0 ; 004bf896
         ;   XREF to: 004ac6b0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004ac6b0()
     ADD ESP,0x4                         ; 004bf89b
-    CALL unkafter_alphabit.cpp_FUN_00411a90 ; 004bf89e
-        ;   XREF to: 00411a90 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_00411a90()
+    CALL core_bmppuzzl.cpp_FUN_00411a90 ; 004bf89e
+        ;   XREF to: 00411a90 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_00411a90()
     MOV EAX,[0x005fe4b0]                ; 004bf8a3 | g_CFieldNotesPtr
     CMP dword ptr [EAX + 0x40],0x0      ; 004bf8a8 | g_CFieldNotesInstance.is_displayed
     JZ 0x004bf9d4                       ; 004bf8ac

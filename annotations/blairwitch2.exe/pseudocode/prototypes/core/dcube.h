@@ -25,6 +25,10 @@ void __cdecl clipPolygonAgainstMaxZ(float max_z_plane);
 // Address: 004447b0
 void __cdecl CDemonCubeTriangle::readFromFile(CDemonCubeTriangle *this_ptr,_FILE *file_handle,CVector3f *vertex_buffer_base);
 
+// Original: core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00444830
+// Address: 00444830
+void __cdecl CDemonCubeTriangle::writeToFile(CDemonCubeTriangle *this_ptr,undefined4 param_2,int param_3);
+
 // Original: core_dcube.cpp_FUN_00444a40
 // Address: 00444a40
 float FUN_00444a40(undefined4 *param_1,float *param_2,float *param_3);
@@ -96,3 +100,7 @@ void __cdecl CDemonCube::testCylinderCollision(CDemonCube *this_ptr,SIntersectXZ
 // Original: core_dcube.cpp_FUN_00446df0
 // Address: 00446df0
 int __cdecl FUN_00446df0(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material);
+
+// Original: core_dcube.cpp_FUN_00446f4e
+// Address: 00446f4e
+void FUN_00446f4e(char *param_1);

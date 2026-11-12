@@ -108,13 +108,14 @@ def test_every_category_has_its_export_function():
 
 def test_each_category_takes_only_its_own_options():
     options = dict(ea.DEFAULT_OPTIONS, strict = True, deep_analysis = True, allow_size_mismatch = True,
-        allow_name_address_mismatch = True, allow_this_ptr_mismatch = False,
+        allow_name_address_mismatch = True, allow_this_ptr_mismatch = False, allow_tu_name_violations = True,
         allow_duplicate_data_types = True, pseudocode_options = {"static_analysis": False})
     assert ea.category_arguments("pseudocode", options) == {
         "strict": True, "deep_analysis": True, "static_analysis": False}
     assert ea.category_arguments("type_info", options) == {"strict": True, "allow_size_mismatch": True}
     assert ea.category_arguments("functions", options) == {
-        "allow_name_address_mismatch": True, "allow_this_ptr_mismatch": False}
+        "allow_name_address_mismatch": True, "allow_this_ptr_mismatch": False,
+        "allow_tu_name_violations": True}
     assert ea.category_arguments("data_types", options) == {"allow_duplicates": True}
     assert ea.category_arguments("comments", options) == {}
 
@@ -177,11 +178,12 @@ def test_the_compile_passes_run_for_every_program_unless_limited():
 
 def test_export_options_come_from_the_command_line():
     assert ea.export_options(args_for("--strict", "--deep-analysis", "--allow-struct-size-mismatch",
-            "--allow-name-address-mismatch", "--allow-this-ptr-mismatch", "--allow-duplicate-data-types",
+            "--allow-name-address-mismatch", "--allow-this-ptr-mismatch", "--allow-tu-name-violations",
+            "--allow-duplicate-data-types",
             "--no-static-analysis"), "game.exe") == {
         "strict": True, "deep_analysis": True, "allow_size_mismatch": True,
         "allow_name_address_mismatch": True, "allow_this_ptr_mismatch": True,
-        "allow_duplicate_data_types": True,
+        "allow_tu_name_violations": True, "allow_duplicate_data_types": True,
         "pseudocode_options": {"header_compile": True, "function_compile": True, "static_analysis": False}}
 
 

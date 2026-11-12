@@ -16,12 +16,12 @@
 ;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004192a0 at 004192fc
 ;   core_boxactor.cpp_CLightActor_process_FUN_0041d020 at 0041d1be
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0 at 0042049c
+;   core_bwgrndma.cpp_CGrandma_getCarryObjToBodyXForm_FUN_005a7cf0 at 005a7dbd
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00426a10 at 00426c6e
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00428e30 at 00428f3a
 ;   core_charactr.cpp_FUN_00428bd0 at 00428c34
 ;   core_cross.cpp_CCross_process_FUN_005a6ed0 at 005a7065
 ;   core_doc.cpp_FUN_00455d10 at 004560a8
-;   core_doc.cpp_FUN_004567c0 at 00456837
 ;   ... and 31 more
 ;
 ; Called Functions:

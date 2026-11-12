@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_3d.c_drawLine3DFromIndices_FUN_00407d90 at 00407dd5
+;   engine_3d.c_FUN_00407d70 at 00407dd5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007135bc

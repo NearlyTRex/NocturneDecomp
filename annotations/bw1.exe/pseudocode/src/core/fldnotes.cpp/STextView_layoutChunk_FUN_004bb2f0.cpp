@@ -50,7 +50,7 @@ int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this
         cVar1 = *pcVar5;
       }
       local_114[uVar3] = '\0';
-      unkaddr_004b9ab0_cpp_FUN_004b9c50(local_114);
+      core_flashlit_cpp_FUN_004b9c50(local_114);
       iVar2 = core_fldnotes_cpp_STextView_handleTag_FUN_004bb6f0(this_ptr,local_114);
       if (iVar2 < 0) {
         return -1;

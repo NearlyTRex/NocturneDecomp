@@ -55,7 +55,7 @@ void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_t
   }
   core_doc_cpp_FUN_00450c60(this_ptr,fVar3);
   core_game_cpp_CGame_slamDT_FUN_004bd460(g_CGamePtr,delta_time_00);
-  unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180
+  core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180
             ((this_ptr->base).base.base.particle_systems,delta_time);
   return;
 }

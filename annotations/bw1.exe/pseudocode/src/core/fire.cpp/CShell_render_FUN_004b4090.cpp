@@ -36,7 +36,7 @@ void __cdecl core_fire_cpp_CShell_render_FUN_004b4090(CShell *this_ptr)
                 (DAT_00612560,&this_ptr->euler_angles,(CVector3f *)0x0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00467270
                 (this_ptr->model_ptr,0,(CKeyFramedModelInstance *)0x0,-1);
-      engine_matrix_c_pop_FUN_004839a0();
+      engine_drender_cpp_pop_FUN_004839a0();
       return;
     }
   }

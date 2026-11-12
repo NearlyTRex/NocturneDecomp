@@ -36,9 +36,9 @@
 ;   core_dpart.cpp_FUN_0047ab00
 ;   core_main.c_FUN_005030e0
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
+;   core_zombie.cpp_FUN_005bf120
 ;   engine_clipper.c_clipAndRasterize_FUN_0043cbf0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043de60
-;   unkafter_zombie.cpp_FUN_005bf120
 ;
 ; *****************************************************************************
 
@@ -136,8 +136,8 @@ section .text
         ;   XREF to: 00481ade (CONDITIONAL_JUMP)  ; LAB_00481ade
     PUSH ECX                            ; 00481b56
     PUSH 0x7c7558                       ; 00481b57 | DAT_007c7558
-    CALL unkafter_zombie.cpp_FUN_005bf120 ; 00481b5c
-        ;   XREF to: 005bf120 (UNCONDITIONAL_CALL)  ; void unkafter_zombie.cpp_FUN_005bf120(SRenderVertex * vertex_buffer, int vertex_count)
+    CALL core_zombie.cpp_FUN_005bf120   ; 00481b5c
+        ;   XREF to: 005bf120 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_FUN_005bf120(SRenderVertex * vertex_buffer, int vertex_count)
     ADD ESP,0x8                         ; 00481b61
     POP EBP                             ; 00481b64
     POP EDI                             ; 00481b65

@@ -5,6 +5,18 @@
 // Function prototypes for core/shadow.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_shadow.cpp_staticInit_FUN_0053c170
+// Address: 0053c170
+void staticInit(void);
+
+// Original: core_shadow.cpp_factoryFuncShadow_FUN_0053c1d0
+// Address: 0053c1d0
+void factoryFuncShadow(void);
+
+// Original: core_shadow.cpp_CShadow_getActorType_FUN_0053c1f0
+// Address: 0053c1f0
+CDemonActorType * CShadow::getActorType(CShadow *this_ptr);
+
 // Original: core_shadow.cpp_CShadow_ctor_FUN_0053c200
 // Address: 0053c200
 CShadow * CShadow::ctor(CShadow *this_ptr);
@@ -41,9 +53,9 @@ void FUN_0053e000(int param_1);
 // Address: 0053e040
 void FUN_0053e040(int param_1);
 
-// Original: core_shadow.cpp_FUN_0053e410
-// Address: 0053e410
-void FUN_0053e410(void);
+// Original: core_shadow.cpp_FUN_0053e080
+// Address: 0053e080
+void FUN_0053e080(int param_1,float *param_2);
 
 // Original: core_shadow.cpp_FUN_0053e640
 // Address: 0053e640

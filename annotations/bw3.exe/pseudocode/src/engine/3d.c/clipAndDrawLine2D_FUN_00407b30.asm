@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x40]:1  local_40
 ;
 ; XREF[6]:
-;   core_skeleton.cpp_FUN_005496bc at 005497e6
+;   core_skeleton.cpp_FUN_005496c0 at 005497e6
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407ab0 at 00407b15
 ;   engine_3d.c_drawLineStrip2D_FUN_00404440 at 004044c6
 ;   shape_edittool.cpp_FUN_00480f00 at 00480ff8

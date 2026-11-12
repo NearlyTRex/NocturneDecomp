@@ -34,6 +34,6 @@ int core_crate_cpp_FUN_0043a130(int param_1)
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
               ((CKeyFramedModelInstance *)(param_1 + 0x2b4),0.0,-1);
   }
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   return iVar1;
 }

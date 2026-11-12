@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x68]:1  local_68
 ;
 ; XREF[1]:
-;   unkafter_prye.cpp_FUN_00524940 at 00525231
+;   core_prye.cpp_FUN_00524940 at 00525231
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fuse_wav_005bcd0d

@@ -60,7 +60,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(CBitFont *this_ptr
   cockpit_ckptutil_c_FUN_00438ef0(filename,this_ptr->bitmap_data[this_ptr->bitmap_count],iVar5);
   engine_dosio_cpp_splitPath_FUN_00465e50(filename,(char *)0x0,local_23c,local_13c,(char *)0x0);
   engine_dosio_cpp_makePath_FUN_00465e80(local_33c,(char *)0x0,local_23c,local_13c,&DAT_005c1e5f);
-  unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_3c);
+  support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_3c);
   iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
                     (&local_3c,&DAT_005c1e63,local_33c,1);
   if (iVar2 == 0) {
@@ -71,19 +71,19 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(CBitFont *this_ptr
   else {
     iVar2 = 0;
     do {
-      iVar5 = unkafter_turret_cpp_CInStreamFile_getChar_FUN_00573aa0(&local_3c);
+      iVar5 = support_trstream_cpp_CInStreamFile_getChar_FUN_00573aa0(&local_3c);
       this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300] = (char)iVar5;
-      iVar5 = unkafter_turret_cpp_CInStreamFile_getChar_FUN_00573aa0(&local_3c);
+      iVar5 = support_trstream_cpp_CInStreamFile_getChar_FUN_00573aa0(&local_3c);
       this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300 + 1] = (char)iVar5;
-      iVar5 = unkafter_turret_cpp_CInStreamFile_getChar_FUN_00573aa0(&local_3c);
+      iVar5 = support_trstream_cpp_CInStreamFile_getChar_FUN_00573aa0(&local_3c);
       iVar2 = iVar2 + 3;
       this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300 + -1] = (char)iVar5;
     } while (iVar2 != 0x300);
-    unkafter_turret_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);
+    support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);
   }
   engine_font_cpp_FUN_004b0510(this_ptr,this_ptr->bitmap_count,width,height,first_char);
   this_ptr->bitmap_count = this_ptr->bitmap_count + 1;
   engine_font_cpp_CBitFont_remapPalette_FUN_004b31c0(this_ptr);
-  unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_3c,0);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_3c,0);
   return;
 }

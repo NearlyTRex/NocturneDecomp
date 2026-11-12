@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   engine_matrix.c_FUN_0046d230 at 0046d23b
-;   engine_matrix.c_FUN_0046d250 at 0046d25f
+;   engine_drender.cpp_FUN_0046d230 at 0046d23b
+;   engine_drender.cpp_FUN_0046d250 at 0046d25f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6e2e4

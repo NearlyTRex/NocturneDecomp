@@ -77,6 +77,7 @@ void core_game_cpp_FUN_004b8030(int param_1,int param_2);
 void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004b80a0(CGame *this_ptr,SPlayerInput *player_control);
 void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250(CGame *this_ptr);
 void __cdecl core_game_cpp_FUN_004b82e0(CGame *this_ptr);
+undefined4 core_game_cpp_checkCheatCode_FUN_004b8d90(byte *param_1);
 void core_game_cpp_FUN_004b8e10(undefined4 param_1,char *param_2);
 void core_game_cpp_giveHeroWeaponAmmo_FUN_004b8fce(char *param_1,EAmmoType param_2);
 void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004b9060(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index);

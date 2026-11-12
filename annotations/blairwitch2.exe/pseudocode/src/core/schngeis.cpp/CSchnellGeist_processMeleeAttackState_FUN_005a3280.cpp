@@ -33,8 +33,8 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processMeleeAttackState_FUN_005a328
     if (_DAT_005ff350 < SQRT(fVar3 * fVar3 + fVar2 * fVar2)) {
       pSVar6 = &(this_ptr->base).state_machine;
       (this_ptr->base).attack_range = _DAT_005ff350;
-      unkaddr_0059d350_cpp_FUN_0059dcb0(pSVar6,0x3f000000);
-      unkaddr_0059d350_cpp_FUN_0059d8e0(pSVar6,"Chasing");
+      core_muzzle_cpp_FUN_0059dcb0(pSVar6,0x3f000000);
+      core_muzzle_cpp_FUN_0059d8e0(pSVar6,"Chasing");
       if (iVar5 == 10) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(&this_ptr_00->base,0,1);
         return;

@@ -9,7 +9,6 @@
 ;   core_mission.cpp_FUN_004f76f0 at 004f76ff
 ;
 ; Referenced Globals:
-;   undefined4 DAT_004cf860
 ;   undefined4 DAT_02cd28bc
 ;
 ; Called Functions:
@@ -27,7 +26,7 @@ section .text
     MOV EBX,0x280305c                   ; 005502d2
     CALL core_skeleton.cpp_FUN_005501a0 ; 005502d7
         ;   XREF to: 005501a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_005501a0()
-    LEA ESI,[EBX + 0x4cf860]            ; 005502dc | DAT_004cf860
+    LEA ESI,[EBX + 0x4cf860]            ; 005502dc | LAB_004cf85f+1
     PUSH 0x1                            ; 005502e2
         ;   Label: LAB_005502e2
     PUSH EBX                            ; 005502e4

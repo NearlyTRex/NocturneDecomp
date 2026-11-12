@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
-; XREF[46]:
+; XREF[48]:
 ;   core_actor.cpp_FUN_004091b0 at 0040966c
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_00419550 at 004195a3
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_00417630 at 004177a5
@@ -17,7 +17,7 @@
 ;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0 at 0042e689
 ;   core_charactr.cpp_FUN_0042d500 at 0042d536
 ;   core_charactr.cpp_FUN_0042e8c0 at 0042e916
-;   ... and 36 more
+;   ... and 38 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d20f4

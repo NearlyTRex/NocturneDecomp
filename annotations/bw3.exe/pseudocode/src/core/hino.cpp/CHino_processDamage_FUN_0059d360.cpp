@@ -22,7 +22,7 @@ void __cdecl core_hino_cpp_CHino_processDamage_FUN_0059d360(CHino *this_ptr,SDam
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
-    iVar3 = unkafter_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
+    iVar3 = core_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
     if (iVar3 == 0) goto LAB_0059d3d8;
     core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&this_ptr_00->base);
     iVar3 = 6;

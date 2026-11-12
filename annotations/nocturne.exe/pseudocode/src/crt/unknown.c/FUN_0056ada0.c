@@ -13,7 +13,7 @@ void FUN_0056ada0(void)
   
   if (DAT_005c1794 == '\0') {
     DAT_005c1795 = DAT_005c1794;
-    cVar1 = func_0x0056ad64();
+    cVar1 = FUN_0056ad64();
     if (DAT_005c1d04 == '\0') {
       DAT_005c1794 = cVar1;
       DAT_005c1795 = cVar1;

@@ -190,7 +190,7 @@ LAB_004e4c80:
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050
             (DAT_00612560,(SMRGLHeaderPrimitive *)0x1cd0e40);
   if (this_ptr->is_wall_splat == 1) {
-    engine_matrix_c_pop_FUN_004839a0();
+    engine_drender_cpp_pop_FUN_004839a0();
     return;
   }
   return;

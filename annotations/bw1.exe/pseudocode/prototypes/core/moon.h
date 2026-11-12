@@ -36,3 +36,7 @@ void __cdecl CMoon::render(CMoon *this_ptr);
 // Original: core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_005220b0
 // Address: 005220b0
 int __cdecl CMoon::isAnimationFirstHalf(CMoon *this_ptr);
+
+// Original: core_moon.cpp_CAlphaBitmap_arrdtor30_FUN_005220d0
+// Address: 005220d0
+CAlphaBitmap * CAlphaBitmap::arrdtor30(CAlphaBitmap *this_ptr,uint flags);

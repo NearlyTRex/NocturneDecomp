@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[28]:
-;   core_dcube.cpp_FUN_0044b660 at 0044b673
+;   core_dcube.cpp_showHelpFile_FUN_0044b660 at 0044b673
 ;   core_game.cpp_CGame_FUN_004a57c0 at 004a5b60
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6ad7
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a6186

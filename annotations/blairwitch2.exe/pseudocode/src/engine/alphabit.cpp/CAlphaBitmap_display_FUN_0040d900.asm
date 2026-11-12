@@ -18,6 +18,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[17]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_0059b430 at 0059b44f
 ;   core_fldnotes.cpp_FUN_004a5700 at 004a57be
 ;   core_fldnotes.cpp_SNotesMap_draw_FUN_004a3e40 at 004a3e6b
 ;   core_fldnotes.cpp_SPageResourceBitmap_draw_FUN_004a2270 at 004a2284
@@ -27,7 +28,6 @@
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be5e6
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0 at 004b613b
 ;   core_game.cpp_FUN_004bdc1e at 004bdc6f
-;   core_inv.cpp_FUN_004da130 at 004da163
 ;   ... and 7 more
 ;
 ; Referenced Globals:

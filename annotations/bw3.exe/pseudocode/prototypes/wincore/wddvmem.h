@@ -13,6 +13,10 @@ void __cdecl populateColorTable(void);
 // Address: 004d4eb0
 void __cdecl convertPaletteToDirectColor(void);
 
+// Original: wincore_wddvmem.cpp_cleanupDirectDrawSurfaces_FUN_00579630
+// Address: 00579630
+void cleanupDirectDrawSurfaces(void);
+
 // Original: wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_00579690
 // Address: 00579690
 int __cdecl reinitializeDirectDraw(void);

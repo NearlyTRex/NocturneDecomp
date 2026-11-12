@@ -5,9 +5,9 @@
 // Function prototypes for core/motion.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_motion.cpp_FUN_004e08e0
+// Original: core_motion.cpp_skipLine_FUN_004e08e0
 // Address: 004e08e0
-void FUN_004e08e0(_FILE *param_1);
+void __cdecl skipLine(_FILE *file_handle);
 
 // Original: core_motion.cpp_CMotionList_ctor_FUN_004e0900
 // Address: 004e0900

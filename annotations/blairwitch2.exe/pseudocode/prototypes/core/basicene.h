@@ -9,33 +9,101 @@
 // Address: 0059e380
 void staticInit(void);
 
+// Original: core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
+// Address: 0059e3b0
+int __cdecl CBasicEnemy::ctor(CBasicEnemy *this_ptr);
+
 // Original: core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0
 // Address: 0059e6a0
 void __cdecl CBasicEnemy::setup(CBasicEnemy *this_ptr);
+
+// Original: core_basicene.cpp_FUN_0059e7a0
+// Address: 0059e7a0
+void FUN_0059e7a0(int param_1,undefined4 param_2);
+
+// Original: core_basicene.cpp_FUN_0059e7c0
+// Address: 0059e7c0
+void FUN_0059e7c0(int param_1,undefined4 param_2);
 
 // Original: core_basicene.cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0
 // Address: 0059e7d0
 void __cdecl CBasicEnemy::advanceMotion(CBasicEnemy *this_ptr,float delta_time);
 
+// Original: core_basicene.cpp_FUN_0059e880
+// Address: 0059e880
+void FUN_0059e880(CDemonActor *param_1,int param_2);
+
+// Original: core_basicene.cpp_FUN_0059e8c0
+// Address: 0059e8c0
+void FUN_0059e8c0(int param_1,undefined4 param_2,int param_3);
+
+// Original: core_basicene.cpp_FUN_0059ebc0
+// Address: 0059ebc0
+void FUN_0059ebc0(int param_1);
+
 // Original: core_basicene.cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0
 // Address: 0059ebe0
 void __cdecl CBasicEnemy::processAnimationState(CBasicEnemy *this_ptr,float delta_time);
+
+// Original: core_basicene.cpp_FUN_0059ec10
+// Address: 0059ec10
+void FUN_0059ec10(CEnemy *param_1,float param_2);
+
+// Original: core_basicene.cpp_FUN_0059ed50
+// Address: 0059ed50
+void FUN_0059ed50(int param_1,undefined4 param_2);
+
+// Original: core_basicene.cpp_FUN_0059ee00
+// Address: 0059ee00
+void FUN_0059ee00(CEnemy *param_1,float param_2);
 
 // Original: core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90
 // Address: 0059ef90
 void __cdecl CBasicEnemy::processChasingState(CBasicEnemy *this_ptr,float delta_time);
 
+// Original: core_basicene.cpp_FUN_0059f0e0
+// Address: 0059f0e0
+void FUN_0059f0e0(CCharacter *param_1,float param_2);
+
+// Original: core_basicene.cpp_FUN_0059f390
+// Address: 0059f390
+void FUN_0059f390(int param_1);
+
 // Original: core_basicene.cpp_CBasicEnemy_process_FUN_0059f420
 // Address: 0059f420
 void __cdecl CBasicEnemy::process(CBasicEnemy *this_ptr,float delta_time);
+
+// Original: core_basicene.cpp_FUN_0059f570
+// Address: 0059f570
+void FUN_0059f570(int param_1);
+
+// Original: core_basicene.cpp_FUN_0059f5b0
+// Address: 0059f5b0
+void FUN_0059f5b0(int param_1,float param_2);
+
+// Original: core_basicene.cpp_FUN_0059f660
+// Address: 0059f660
+ushort FUN_0059f660(int param_1,float param_2);
+
+// Original: core_basicene.cpp_FUN_0059f6a0
+// Address: 0059f6a0
+void FUN_0059f6a0(void);
 
 // Original: core_basicene.cpp_CBasicEnemy_checkVictim_FUN_0059f6b0
 // Address: 0059f6b0
 int __cdecl CBasicEnemy::checkVictim(CBasicEnemy *this_ptr);
 
+// Original: core_basicene.cpp_FUN_0059f740
+// Address: 0059f740
+int FUN_0059f740(CEnemy *param_1,float param_2,int param_3,float param_4);
+
 // Original: core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800
 // Address: 0059f800
 void __cdecl CBasicEnemy::processDamage(CBasicEnemy *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_basicene.cpp_CBasicNPC_getDeathState_FUN_0059f930
+// Address: 0059f930
+EDeathState __cdecl CBasicNPC::getDeathState(CBasicNPC *this_ptr);
 
 // Original: core_basicene.cpp_CBasicEnemy_getCollisionType_FUN_0059f960
 // Address: 0059f960
@@ -53,9 +121,25 @@ int __cdecl CBasicEnemy::renderOpaque(CBasicEnemy *this_ptr);
 // Address: 0059fa70
 int __cdecl CBasicEnemy::isGrabbable(CBasicEnemy *this_ptr,CDemonActor *grabber);
 
+// Original: core_basicene.cpp_FUN_0059fae0
+// Address: 0059fae0
+void FUN_0059fae0(CDemonActor *param_1);
+
 // Original: core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10
 // Address: 0059fc10
 void __cdecl CBasicEnemy::archive(CBasicEnemy *this_ptr);
+
+// Original: core_basicene.cpp_FUN_005a01a0
+// Address: 005a01a0
+void FUN_005a01a0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+
+// Original: core_basicene.cpp_FUN_005a01d0
+// Address: 005a01d0
+void FUN_005a01d0(int param_1,undefined4 *param_2);
+
+// Original: core_basicene.cpp_FUN_005a0240
+// Address: 005a0240
+void FUN_005a0240(int param_1);
 
 // Original: core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270
 // Address: 005a0270
@@ -64,3 +148,7 @@ void __cdecl CBasicEnemy::startBurn(CBasicEnemy *this_ptr,CVector3f *direction,f
 // Original: core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380
 // Address: 005a0380
 void __cdecl CBasicEnemy::processBurnState(CBasicEnemy *this_ptr,float delta_time);
+
+// Original: core_basicene.cpp_FUN_005a0780
+// Address: 005a0780
+void FUN_005a0780(int param_1);

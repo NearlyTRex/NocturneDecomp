@@ -11,12 +11,12 @@
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400 at 0041740b
 ;   core_bugs.cpp_CBugs_ctor_FUN_00420ea0 at 00420ea8
 ;   core_carved.cpp_CCarved_ctor_FUN_00425960 at 0042596a
-;   core_constrct.cpp_CConstruct_ctor_FUN_00442420 at 00442428
+;   core_construc.cpp_CConstruct_ctor_FUN_00442420 at 00442428
 ;   core_cow.cpp_CZombieCow_ctor_FUN_00444f60 at 00444f66
+;   core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780 at 00598786
 ;   core_demnfolk.cpp_CDemnfolk_ctor_FUN_00454b60 at 00454b6c
 ;   core_dog.cpp_CZombieDog_ctor_FUN_00462710 at 00462716
 ;   core_gargoyle.cpp_CGargoyle_ctor_FUN_004c4de0 at 004c4de6
-;   core_ghoul.cpp_CGhoul_ctor_FUN_004c68e0 at 004c68e9
 ;   ... and 19 more
 ;
 ; Called Functions:

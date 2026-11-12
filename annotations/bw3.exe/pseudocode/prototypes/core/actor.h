@@ -433,6 +433,10 @@ CVector3f * CVector3f::ctor(CVector3f *this_ptr);
 // Address: 0040d230
 void FUN_0040d230(undefined4 *param_1,undefined4 *param_2);
 
+// Original: core_actor.cpp_FUN_0040d250
+// Address: 0040d250
+float FUN_0040d250(float *param_1);
+
 // Original: core_actor.cpp_FUN_0040d2a0
 // Address: 0040d2a0
 void FUN_0040d2a0(float *param_1,int *param_2);

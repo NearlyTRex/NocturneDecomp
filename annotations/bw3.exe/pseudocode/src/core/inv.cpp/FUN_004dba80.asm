@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 00492ad8
 ;   core_prye.cpp_FUN_00518cd0 at 0051b4b3
-;   unkafter_prye.cpp_FUN_00524940 at 005257dc
+;   core_prye.cpp_FUN_00524940 at 005257dc
 ;
 ; Called Functions:
 ;   core_inv.cpp_FUN_004db9e0

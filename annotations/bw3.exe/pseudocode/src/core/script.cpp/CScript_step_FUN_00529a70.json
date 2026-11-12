@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8811,
-    "complexity_score": 7025,
+    "complexity_score": 7023,
     "cross_reference_count": 4,
     "function_call_count": 95,
     "global_count": 391,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 3700,
+    "pseudocode_lines": 3698,
     "suspect_count": 327,
     "suspect_types": [
       "pointer_cast",
@@ -22,7 +22,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 12511
+    "total_lines": 12509
   },
   "cross_references": [
     {
@@ -190,6 +190,16 @@
       "name": "core_event.cpp_CEventList_validateCondition_FUN_00491b00"
     },
     {
+      "addr": "00495e40",
+      "is_variadic": false,
+      "name": "core_event.cpp_copyQuaternion_FUN_00495e40"
+    },
+    {
+      "addr": "00495e60",
+      "is_variadic": false,
+      "name": "core_event.cpp_FUN_00495e60"
+    },
+    {
       "addr": "004aa810",
       "is_variadic": false,
       "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810"
@@ -270,11 +280,6 @@
       "name": "core_main.c_FUN_004e4330"
     },
     {
-      "addr": "00495e40",
-      "is_variadic": false,
-      "name": "core_mimic.cpp_copyQuaternion_FUN_00495e40"
-    },
-    {
       "addr": "004f6930",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930"
@@ -288,6 +293,11 @@
       "addr": "004f6cd0",
       "is_variadic": false,
       "name": "core_mission.cpp_FUN_004f6cd0"
+    },
+    {
+      "addr": "004f7c00",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_004f7c00"
     },
     {
       "addr": "004fc310",
@@ -308,6 +318,11 @@
       "addr": "00512020",
       "is_variadic": false,
       "name": "core_platfrm.cpp_CPlatform_startMovement_FUN_00512020"
+    },
+    {
+      "addr": "00527200",
+      "is_variadic": false,
+      "name": "core_prye.cpp_FUN_00527200"
     },
     {
       "addr": "00530990",
@@ -523,21 +538,6 @@
       "addr": "00486a40",
       "is_variadic": false,
       "name": "shape_edittool.cpp_wildcardStringMatch_FUN_00486a40"
-    },
-    {
-      "addr": "00495e60",
-      "is_variadic": false,
-      "name": "unkafter_mimic.cpp_FUN_00495e60"
-    },
-    {
-      "addr": "004f7c00",
-      "is_variadic": false,
-      "name": "unkafter_mission.cpp_FUN_004f7c00"
-    },
-    {
-      "addr": "00527200",
-      "is_variadic": false,
-      "name": "unkafter_stranger.cpp_FUN_00527200"
     }
   ],
   "globals": [
@@ -5411,7 +5411,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1029,
+      "line": 1028,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5419,7 +5419,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1044,
+      "line": 1043,
       "match": "(int *)((int)local_39ac",
       "severity": "moderate",
       "text": "if (*(int *)((int)local_39ac + iVar14) != 0) {",
@@ -5427,7 +5427,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1060,
+      "line": 1059,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[7] + 1)] & 0xe0)",
@@ -5435,7 +5435,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1070,
+      "line": 1069,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5443,7 +5443,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1077,
+      "line": 1076,
       "match": "DAT_005ce895",
       "severity": "mild",
       "text": "(pcVar17,&DAT_005ce895,4);",
@@ -5451,7 +5451,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1079,
+      "line": 1078,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[4] + 1)] & 0xe0)",
@@ -5459,7 +5459,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1088,
+      "line": 1087,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5467,7 +5467,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1099,
+      "line": 1098,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xc] + 1)] &",
@@ -5475,7 +5475,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1108,
+      "line": 1107,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5483,7 +5483,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1121,
+      "line": 1120,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5491,7 +5491,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1137,
+      "line": 1136,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -5499,7 +5499,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1158,
+      "line": 1157,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0x11] + 1)] &",
@@ -5507,7 +5507,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1167,
+      "line": 1166,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5515,7 +5515,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1187,
+      "line": 1186,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -5523,7 +5523,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1208,
+      "line": 1207,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xf] + 1)] &",
@@ -5531,7 +5531,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1217,
+      "line": 1216,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5539,7 +5539,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1236,
+      "line": 1235,
       "match": "DAT_005ce9bf",
       "severity": "mild",
       "text": "(local_133c,&DAT_005ce9bf);",
@@ -5547,7 +5547,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1245,
+      "line": 1244,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5555,7 +5555,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1259,
+      "line": 1258,
       "match": "DAT_005ce9e8",
       "severity": "mild",
       "text": "(pcVar17,&DAT_005ce9e8,3);",
@@ -5563,7 +5563,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1261,
+      "line": 1260,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[3] + 1)] &",
@@ -5571,7 +5571,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1275,
+      "line": 1274,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[6] + 1)] &",
@@ -5579,7 +5579,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1302,
+      "line": 1301,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[7] + 1)] &",
@@ -5587,7 +5587,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1331,
+      "line": 1330,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[7] + 1)] &",
@@ -5595,7 +5595,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1340,
+      "line": 1339,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5603,7 +5603,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1355,
+      "line": 1354,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5611,7 +5611,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1363,
+      "line": 1362,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5619,7 +5619,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1395,
+      "line": 1394,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5627,7 +5627,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1405,
+      "line": 1404,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[9] + 1)] &",
@@ -5635,7 +5635,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1414,
+      "line": 1413,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5643,7 +5643,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1426,
+      "line": 1425,
       "match": "DAT_005ceb10",
       "severity": "mild",
       "text": ",&DAT_005ceb10);",
@@ -5651,7 +5651,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1443,
+      "line": 1442,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xf] + 1)] &",
@@ -5659,7 +5659,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1452,
+      "line": 1451,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5667,7 +5667,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1483,
+      "line": 1482,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[5] + 1)] &",
@@ -5675,7 +5675,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1494,
+      "line": 1493,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,pcVar17);",
@@ -5683,7 +5683,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1500,
+      "line": 1499,
       "match": "DAT_005cebad",
       "severity": "mild",
       "text": "&DAT_005cebad);",
@@ -5691,7 +5691,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1524,
+      "line": 1523,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5699,7 +5699,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1534,
+      "line": 1533,
       "match": "DAT_005cec22",
       "severity": "mild",
       "text": "local_160 = &DAT_005cec22;",
@@ -5707,7 +5707,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1537,
+      "line": 1536,
       "match": "DAT_005cec22",
       "severity": "mild",
       "text": "local_160 = &DAT_005cec22;",
@@ -5715,7 +5715,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1542,
+      "line": 1541,
       "match": "DAT_005cec23",
       "severity": "mild",
       "text": "(pcVar17,&DAT_005cec23,4);",
@@ -5723,7 +5723,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1544,
+      "line": 1543,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[4] + 1)] &",
@@ -5731,7 +5731,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1558,
+      "line": 1557,
       "match": "DAT_005cec5d",
       "severity": "mild",
       "text": "local_160 = &DAT_005cec5d;",
@@ -5739,7 +5739,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1561,
+      "line": 1560,
       "match": "DAT_005cec5d",
       "severity": "mild",
       "text": "local_160 = &DAT_005cec5d;",
@@ -5747,7 +5747,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1566,
+      "line": 1565,
       "match": "DAT_005cec5e",
       "severity": "mild",
       "text": "(pcVar17,&DAT_005cec5e,4);",
@@ -5755,7 +5755,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1568,
+      "line": 1567,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[4] + 1)] &",
@@ -5763,7 +5763,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1591,
+      "line": 1590,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xd] + 1)] &",
@@ -5771,7 +5771,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1600,
+      "line": 1599,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5779,7 +5779,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1625,
+      "line": 1624,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5787,7 +5787,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1660,
+      "line": 1659,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5795,7 +5795,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1666,
+      "line": 1665,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(local_fc + 0x154) + 0x144)",
@@ -5803,7 +5803,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1672,
+      "line": 1671,
       "match": "DAT_005ced2c",
       "severity": "mild",
       "text": "(pcVar17,&DAT_005ced2c,4);",
@@ -5811,7 +5811,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1674,
+      "line": 1673,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[4] + 1)] &",
@@ -5819,7 +5819,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1684,
+      "line": 1683,
       "match": "DAT_005ced31",
       "severity": "mild",
       "text": "(pcVar17,&DAT_005ced31,2);",
@@ -5827,7 +5827,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1686,
+      "line": 1685,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[2] + 1)] &",
@@ -5835,7 +5835,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1703,
+      "line": 1702,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5843,7 +5843,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1709,
+      "line": 1708,
       "match": "DAT_005ced6a",
       "severity": "mild",
       "text": "text,&DAT_005ced6a,4);",
@@ -5851,7 +5851,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1721,
+      "line": 1720,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xb] + 1)] &",
@@ -5859,7 +5859,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1731,
+      "line": 1730,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5867,7 +5867,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1747,
+      "line": 1746,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[9] + 1)] &",
@@ -5875,7 +5875,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1757,
+      "line": 1756,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -5883,7 +5883,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1778,
+      "line": 1777,
       "match": "DAT_005cedb4",
       "severity": "mild",
       "text": "(local_52c,&DAT_005cedb4);",
@@ -5891,7 +5891,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1789,
+      "line": 1788,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5899,7 +5899,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1810,
+      "line": 1809,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar6 + 0x154) + 0x150))",
@@ -5907,7 +5907,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1812,
+      "line": 1811,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)g_CGamePtr->vtable)(g_CGamePtr,0);",
@@ -5915,7 +5915,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1835,
+      "line": 1833,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xe] + 1)] &",
@@ -5923,7 +5923,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1856,
+      "line": 1854,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "&DAT_01ed6810);",
@@ -5931,7 +5931,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1868,
+      "line": 1866,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xe] + 1)] &",
@@ -5939,7 +5939,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1888,
+      "line": 1886,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[6] + 1)] &",
@@ -5947,7 +5947,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1897,
+      "line": 1895,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5955,7 +5955,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1923,
+      "line": 1921,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5963,7 +5963,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1941,
+      "line": 1939,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5971,7 +5971,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1957,
+      "line": 1955,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xd] + 1)] &",
@@ -5979,7 +5979,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1967,
+      "line": 1965,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -5987,7 +5987,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1986,
+      "line": 1984,
       "match": "(code **)((int)g_CGamePtr",
       "severity": "moderate",
       "text": "(**(code **)((int)g_CGamePtr->vtable + 4))",
@@ -5995,7 +5995,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1986,
+      "line": 1984,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)((int)g_CGamePtr->vtable + 4))",
@@ -6003,7 +6003,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1995,
+      "line": 1993,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xc] + 1)] &",
@@ -6011,7 +6011,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2004,
+      "line": 2002,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6019,7 +6019,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2020,
+      "line": 2018,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6027,7 +6027,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2039,
+      "line": 2037,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[8] + 1)] &",
@@ -6035,7 +6035,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2048,
+      "line": 2046,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6043,7 +6043,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 2071,
+      "line": 2069,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar6 = (**(code **)(*(int *)(iVar14 + 0x154)",
@@ -6051,7 +6051,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 2078,
+      "line": 2076,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar14 + 0x154) + 0x11c)",
@@ -6059,7 +6059,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2089,
+      "line": 2087,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xb] + 1)] &",
@@ -6067,7 +6067,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2098,
+      "line": 2096,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6075,7 +6075,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2118,
+      "line": 2116,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6083,7 +6083,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2134,
+      "line": 2132,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[5] + 1)] &",
@@ -6091,7 +6091,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2143,
+      "line": 2141,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6099,7 +6099,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2157,
+      "line": 2155,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -6107,7 +6107,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2178,
+      "line": 2176,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xd] + 1)] &",
@@ -6115,7 +6115,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2187,
+      "line": 2185,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6123,7 +6123,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2206,
+      "line": 2204,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6131,7 +6131,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2223,
+      "line": 2221,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0x1b] + 1)] &",
@@ -6139,7 +6139,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2232,
+      "line": 2230,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6147,7 +6147,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2254,
+      "line": 2252,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0x17] + 1)] &",
@@ -6155,7 +6155,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2263,
+      "line": 2261,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6163,7 +6163,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2283,
+      "line": 2281,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6171,7 +6171,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2299,
+      "line": 2297,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -6179,7 +6179,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2316,
+      "line": 2314,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6187,7 +6187,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2343,
+      "line": 2341,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[10] + 1)] &",
@@ -6195,7 +6195,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2352,
+      "line": 2350,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6203,7 +6203,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2359,
+      "line": 2357,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6211,7 +6211,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2375,
+      "line": 2373,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[6] + 1)] &",
@@ -6219,7 +6219,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2383,
+      "line": 2381,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6227,7 +6227,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2398,
+      "line": 2396,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xb] + 1)] &",
@@ -6235,7 +6235,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2408,
+      "line": 2406,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6243,7 +6243,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2421,
+      "line": 2419,
       "match": "DAT_005cf297",
       "severity": "mild",
       "text": "(pcVar17,&DAT_005cf297,3);",
@@ -6251,7 +6251,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2423,
+      "line": 2421,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[3] + 1)] &",
@@ -6259,7 +6259,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2433,
+      "line": 2431,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -6267,7 +6267,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2451,
+      "line": 2449,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6275,7 +6275,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2486,
+      "line": 2484,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xc] + 1)] &",
@@ -6283,7 +6283,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2495,
+      "line": 2493,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6291,7 +6291,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2548,
+      "line": 2546,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0x10] + 1)] &",
@@ -6299,7 +6299,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2557,
+      "line": 2555,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6307,7 +6307,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2594,
+      "line": 2592,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xf] + 1)] &",
@@ -6315,7 +6315,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2614,
+      "line": 2612,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xe] + 1)] &",
@@ -6323,7 +6323,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2623,
+      "line": 2621,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6331,7 +6331,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2650,
+      "line": 2648,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6339,7 +6339,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2660,
+      "line": 2658,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0x12] + 1)] &",
@@ -6347,7 +6347,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2669,
+      "line": 2667,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6355,7 +6355,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2691,
+      "line": 2689,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[7] + 1)] &",
@@ -6363,7 +6363,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2700,
+      "line": 2698,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6371,7 +6371,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2724,
+      "line": 2722,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xc] + 1)] &",
@@ -6379,7 +6379,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2734,
+      "line": 2732,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -6387,7 +6387,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2760,
+      "line": 2758,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0x18] + 1)] &",
@@ -6395,7 +6395,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2779,
+      "line": 2777,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xd] + 1)] &",
@@ -6403,7 +6403,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2788,
+      "line": 2786,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -6411,7 +6411,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2820,
+      "line": 2818,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xb] + 1)] &",
@@ -6419,7 +6419,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2829,
+      "line": 2827,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6427,7 +6427,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2855,
+      "line": 2853,
       "match": "DAT_005cf539",
       "severity": "mild",
       "text": "(local_400,&DAT_005cf539);",
@@ -6435,7 +6435,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2871,
+      "line": 2869,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6443,7 +6443,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2890,
+      "line": 2888,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[9] + 1)] &",
@@ -6451,7 +6451,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2899,
+      "line": 2897,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6459,7 +6459,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2909,
+      "line": 2907,
       "match": "DAT_005cf59c",
       "severity": "mild",
       "text": ",&DAT_005cf59c);",
@@ -6467,7 +6467,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2921,
+      "line": 2919,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[8] + 1)] &",
@@ -6475,7 +6475,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2930,
+      "line": 2928,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6483,7 +6483,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2952,
+      "line": 2950,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0x12] + 1)] &",
@@ -6491,7 +6491,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2961,
+      "line": 2959,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6499,7 +6499,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2975,
+      "line": 2973,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6507,7 +6507,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2991,
+      "line": 2989,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xc] + 1)] &",
@@ -6515,7 +6515,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3001,
+      "line": 2999,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -6523,7 +6523,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3019,
+      "line": 3017,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6531,7 +6531,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3032,
+      "line": 3030,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[10] + 1)] &",
@@ -6539,7 +6539,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3070,
+      "line": 3068,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xd] + 1)] &",
@@ -6547,7 +6547,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3080,
+      "line": 3078,
       "match": "DAT_005cf69f",
       "severity": "mild",
       "text": "(local_6bc,&DAT_005cf69f);",
@@ -6555,7 +6555,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3081,
+      "line": 3079,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6563,7 +6563,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3085,
+      "line": 3083,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -6571,7 +6571,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3103,
+      "line": 3101,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[9] + 1)] &",
@@ -6579,7 +6579,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3112,
+      "line": 3110,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6587,7 +6587,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3132,
+      "line": 3130,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6595,7 +6595,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3155,
+      "line": 3153,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6603,7 +6603,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3170,
+      "line": 3168,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xe] + 1)] &",
@@ -6611,7 +6611,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3179,
+      "line": 3177,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6619,7 +6619,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 3192,
+      "line": 3190,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar6 + 0x154) + 0x138))",
@@ -6627,7 +6627,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3201,
+      "line": 3199,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[10] + 1)] &",
@@ -6635,7 +6635,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3210,
+      "line": 3208,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6643,7 +6643,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3263,
+      "line": 3261,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[8] + 1)] &",
@@ -6651,7 +6651,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3272,
+      "line": 3270,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -6659,7 +6659,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3290,
+      "line": 3288,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6667,7 +6667,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3312,
+      "line": 3310,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xc] + 1)] &",
@@ -6675,7 +6675,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3321,
+      "line": 3319,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -6683,7 +6683,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3347,
+      "line": 3345,
       "match": "DAT_005cf826",
       "severity": "mild",
       "text": "pcVar18 = &DAT_005cf826;",
@@ -6691,7 +6691,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3370,
+      "line": 3368,
       "match": "DAT_005cf828",
       "severity": "mild",
       "text": "(local_17ec,&DAT_005cf828);",
@@ -6699,7 +6699,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3373,
+      "line": 3371,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -6707,7 +6707,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3395,
+      "line": 3393,
       "match": "DAT_005cf84f",
       "severity": "mild",
       "text": "&DAT_005cf84f),",
@@ -6715,7 +6715,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3397,
+      "line": 3395,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6723,7 +6723,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3412,
+      "line": 3410,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[0xc] + 1)] &",
@@ -6731,7 +6731,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3422,
+      "line": 3420,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "pcVar19 = &DAT_01ed6810;",
@@ -6739,7 +6739,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3440,
+      "line": 3438,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6747,7 +6747,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3471,
+      "line": 3469,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[10] + 1)] &",
@@ -6755,7 +6755,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3480,
+      "line": 3478,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6763,7 +6763,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 3501,
+      "line": 3499,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar6 + 0x154) + 0x134))",
@@ -6771,7 +6771,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3507,
+      "line": 3505,
       "match": "DAT_005cf8d9",
       "severity": "mild",
       "text": "(pcVar17,&DAT_005cf8d9,4);",
@@ -6779,7 +6779,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3509,
+      "line": 3507,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[4] + 1)] &",
@@ -6787,7 +6787,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3518,
+      "line": 3516,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6795,7 +6795,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3534,
+      "line": 3532,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[7] + 1)] &",
@@ -6803,7 +6803,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3554,
+      "line": 3552,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "(((&DAT_006074b8)[(byte)(pcVar17[6] + 1)] &",
@@ -6811,7 +6811,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3566,
+      "line": 3564,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6819,7 +6819,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3581,
+      "line": 3579,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6827,7 +6827,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3594,
+      "line": 3592,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6835,7 +6835,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3602,
+      "line": 3600,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,",
@@ -6843,7 +6843,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 3619,
+      "line": 3617,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar6 + 0x154) + 0x130))",
@@ -6851,7 +6851,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3703,
+      "line": 3701,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,\"Extra characters \\\"%s\\\" on line %d\");",
@@ -6859,7 +6859,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 3712,
+      "line": 3710,
       "match": "DAT_01ed6810",
       "severity": "mild",
       "text": "_sprintf(&DAT_01ed6810,\"Overrun past the end of the script.\");",
@@ -6883,7 +6883,7 @@
     },
     {
       "description": "Pointer value `&local_1c0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1006,
+      "line": 1005,
       "match": "(int)&local_1c0",
       "severity": "moderate",
       "text": "*(float *)((int)&local_1c0 + (uint)bVar21 * -8 + 4",
@@ -6891,7 +6891,7 @@
     },
     {
       "description": "Pointer value `&local_1c0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 1008,
+      "line": 1007,
       "match": "(int)&local_1c0",
       "severity": "moderate",
       "text": "*(float *)((int)&local_1c0 +",
@@ -6971,7 +6971,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1138,
+      "line": 1137,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -6979,7 +6979,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1188,
+      "line": 1187,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -6987,7 +6987,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1758,
+      "line": 1757,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -6995,7 +6995,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2158,
+      "line": 2156,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7003,7 +7003,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2300,
+      "line": 2298,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7011,7 +7011,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2434,
+      "line": 2432,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7019,7 +7019,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2735,
+      "line": 2733,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7027,7 +7027,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 2789,
+      "line": 2787,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7035,7 +7035,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3002,
+      "line": 3000,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7043,7 +7043,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3086,
+      "line": 3084,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7051,7 +7051,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3273,
+      "line": 3271,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7059,7 +7059,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3322,
+      "line": 3320,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7067,7 +7067,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3360,
+      "line": 3358,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7075,7 +7075,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3374,
+      "line": 3372,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7083,7 +7083,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3423,
+      "line": 3421,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7091,7 +7091,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3449,
+      "line": 3447,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -7107,7 +7107,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1006,
+      "line": 1005,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_1c0 + (uint)bVar21 * -8 + 4",
@@ -7115,7 +7115,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1008,
+      "line": 1007,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&local_1c0 +",
@@ -7131,7 +7131,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1617,
+      "line": 1616,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -7139,7 +7139,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 3351,
+      "line": 3349,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -7155,7 +7155,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 3351,
+      "line": 3349,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -7163,7 +7163,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ',' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ',') in a .keep.",
-      "line": 3336,
+      "line": 3334,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

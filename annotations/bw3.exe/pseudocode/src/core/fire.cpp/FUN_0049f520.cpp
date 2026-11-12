@@ -117,7 +117,7 @@ void core_fire_cpp_FUN_0049f520(int *param_1)
     if (*param_1 == 0) {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
                 (DAT_005f2afc,world_position);
-      engine_matrix_c_FUN_0046d250(DAT_005f2afc);
+      engine_drender_cpp_FUN_0046d250(DAT_005f2afc);
       local_54.x = local_24;
       *(int *)((int)&local_54 + (uint)bVar6 * -8 + 4) = aiStack_20[(uint)bVar6 * -2];
       *(int *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
@@ -156,7 +156,7 @@ void core_fire_cpp_FUN_0049f520(int *param_1)
       engine_special_cpp_FUN_005632a3
                 (&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_78);
       engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730(DAT_005f2afc,&local_e8);
-      engine_matrix_c_pop_FUN_0046d080();
+      engine_drender_cpp_pop_FUN_0046d080();
     }
     else {
       local_60.x = (int)ROUND(world_position->x * _DAT_005df8e4);

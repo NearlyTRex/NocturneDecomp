@@ -8,6 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[9]:
+;   core_bird.cpp_CBird_dtor_FUN_004159f0 at 00415a05
 ;   core_hero.cpp_FUN_004ea980 at 004ea9ba
 ;   core_hiram.cpp_CHiram_dtor_FUN_004ed1f0 at 004ed20f
 ;   core_hiram.cpp_CNPC_dtor_FUN_004ed400 at 004ed415
@@ -16,7 +17,6 @@
 ;   core_passngr.cpp_CPassenger_dtor_FUN_00532850 at 005328a3
 ;   core_tbplayer.cpp_CBassPlayer_dtor_FUN_00594d50 at 00594d65
 ;   core_tbplayer.cpp_CDrummer_dtor_FUN_00594cb0 at 00594cc5
-;   unkafter_bird.cpp_CBird_dtor_FUN_004159f0 at 00415a05
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01e6be48

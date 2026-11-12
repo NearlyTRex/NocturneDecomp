@@ -2,26 +2,26 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      13818
-  Named globals:             7351
-  DAT_ globals:              6467
-Gaps found:                  3799
-  With exact size bounds:    3783
+Total globals analyzed:      13829
+  Named globals:             7354
+  DAT_ globals:              6475
+Gaps found:                  3804
+  With exact size bounds:    3788
   With estimated bounds:     16
-Total gap bytes:             45,155,469
-  Exact gap bytes:           45,149,199
-Overlaps (size <= 0):        6604
+Total gap bytes:             45,155,477
+  Exact gap bytes:           45,149,207
+Overlaps (size <= 0):        6605
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          1939
-  5-16 bytes (small vars)                       332
-  17-64 bytes (structs/small arrays)            729
+  1-4 bytes (likely padding/alignment)          1940
+  5-16 bytes (small vars)                       333
+  17-64 bytes (structs/small arrays)            730
   65-256 bytes (medium data)                    237
-  257-1024 bytes (large structs/arrays)         240
+  257-1024 bytes (large structs/arrays)         241
   1-4 KB                                        125
-  4-64 KB                                       155
+  4-64 KB                                       156
   64+ KB                                        42
 
 --------------------------------------------------------------------------------
@@ -131,7 +131,7 @@ LARGEST GAPS (top 50)
     before: DAT_01c6eaa0                             undefined4           at 0x01c6eaa0
       80,248 bytes  at 0x005a5528
     after: switchdataD_005a5524                     undefined1*          at 0x005a5524  size=4
-    before: switchdataD_005b8ea0                     undefined1*          at 0x005b8ea0
+    before: switchdataD_005b8ea0                     undefined4           at 0x005b8ea0
       79,992 bytes  at 0x01bef228
     after: DAT_01bef224                             undefined4           at 0x01bef224  size=4
     before: DAT_01c02aa0                             undefined4           at 0x01c02aa0
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: switchdataD_004693a8                     undefined1*          at 0x004693a8
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (3783) - size bounds are known precisely
+ALL EXACT GAPS (3788) - size bounds are known precisely
 --------------------------------------------------------------------------------
    7,372,800 bytes  at 0x00b81ca8  between DAT_00b81ca4                   and DAT_01289ca8
    6,291,656 bytes  at 0x0152d2a8  between DAT_0152d2a4                   and DAT_01b2d370
@@ -234,7 +234,7 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
       49,016 bytes  at 0x004d084c  between switchdataD_004d0848           and switchdataD_004dc7c4
       48,092 bytes  at 0x00560614  between switchdataD_00560610           and switchdataD_0056c1f0
       46,340 bytes  at 0x00485d44  between switchdataD_00485d40           and PTR_caseD_1_00491248
-      41,792 bytes  at 0x01c9f9d4  between g_GlassParticlePool[1].base.vt and DAT_01ca9d14
+      41,756 bytes  at 0x01c9f9d4  between g_GlassParticlePool[1].base.vt and DAT_01ca9cf0
       41,247 bytes  at 0x00780004  between DAT_00780000                   and DAT_0078a123
       40,484 bytes  at 0x00541e0c  between switchdataD_00541e08           and switchdataD_0054bc30
       36,260 bytes  at 0x0041bb24  between switchdataD_0041bb20           and switchdataD_004248c8
@@ -250,7 +250,6 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
       32,549 bytes  at 0x00608577  between DAT_00608573                   and DAT_0061049c
       32,512 bytes  at 0x00413c20  between switchdataD_00413c1c           and switchdataD_0041bb20
       32,407 bytes  at 0x00000069  between DAT_00000065                   and DAT_00007f00
-      32,268 bytes  at 0x0043de58  between PTR_caseD_3_0043de54           and switchdataD_00445c64
       31,740 bytes  at 0x01c45ad4  between DAT_01c45ad0                   and DAT_01c4d6d0
       31,584 bytes  at 0x004adae4  between switchdataD_004adae0           and switchdataD_004b5644
       31,296 bytes  at 0x0050d62c  between switchdataD_0050d628           and PTR_caseD_1_0051506c
@@ -261,6 +260,7 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
       26,788 bytes  at 0x02c79354  between g_SfxSamples[1].locked_length  and DAT_02c7fbf8
       26,560 bytes  at 0x005c4bfc  between switchdataD_005c4bf8           and switchdataD_005cb3bc
       26,456 bytes  at 0x00585ae4  between switchdataD_00585ae0           and switchdataD_0058c23c
+      26,332 bytes  at 0x0043de58  between PTR_caseD_3_0043de54           and switchdataD_00444534
       25,496 bytes  at 0x004e0c38  between switchdataD_004e0c34           and switchdataD_004e6fd0
       25,096 bytes  at 0x01d2d918  between DAT_01d2d914                   and DAT_01d33b20
       24,704 bytes  at 0x004a70b0  between switchdataD_004a70ac           and switchdataD_004ad130
@@ -347,6 +347,7 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
        5,772 bytes  at 0x0051fdd0  between switchdataD_0051fdcc           and switchdataD_0052145c
        5,732 bytes  at 0x01c9db54  between CFirefly_ARRAY_01c9dab8[1].bas and DAT_01c9f1b8
        5,680 bytes  at 0x007c3984  between DAT_007c3980                   and g_CBodyPartClassInfo
+       5,659 bytes  at 0x00444649  between caseD_4+4                      and switchdataD_00445c64
        5,432 bytes  at 0x00618628  between DAT_00618620                   and DAT_00619b60
        5,356 bytes  at 0x004f0e3c  between switchdataD_004f0e38           and switchdataD_004f2328
        5,228 bytes  at 0x01cadbfc  between CLeaf_ARRAY_01cadb68[1].base.v and DAT_01caf068
@@ -708,6 +709,7 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
          276 bytes  at 0x02c78ff4  between DAT_02c78ff0                   and g_SfxSamples[0].sample_info.re
          272 bytes  at 0x01483930  between DAT_0148392c                   and DAT_01483a40
          272 bytes  at 0x01d3ec78  between DAT_01d3ec74                   and DAT_01d3ed88
+         269 bytes  at 0x00444538  between switchdataD_00444534           and caseD_4+4
          268 bytes  at 0x005e8b77  between DAT_005e8b73                   and DAT_005e8c83
          268 bytes  at 0x006005c4  between DAT_006005c0                   and g_CFlameThrowerTypeInfo
          268 bytes  at 0x006074d4  between DAT_006074d0                   and g_CTurretTypeInfo
@@ -831,7 +833,7 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
          141 bytes  at 0x00626b7c  between PTR_crt_unknown.c_FUN_005cdfd0 and DAT_00626c09
          140 bytes  at 0x005d85ad  between DAT_005d85a9                   and s_movscrn_raw_005d8639
          140 bytes  at 0x005fff08  between g_CFilmProjectorTypeInfo       and DAT_005fff94
-         140 bytes  at 0x006072c8  between g_CTriggerTypeInfo             and PTR_unkaddr_0059f520.cpp_FUN_0
+         140 bytes  at 0x006072c8  between g_CTriggerTypeInfo             and PTR_support_trstream.cpp_FUN_0
          140 bytes  at 0x00610c24  between DAT_00610c20                   and DAT_00610cb0
          140 bytes  at 0x00713b38  between DAT_00713b34                   and DAT_00713bc4
          139 bytes  at 0x005f7843  between DAT_005f783f                   and s_engine_texture_cpp_005f78ce
@@ -899,7 +901,7 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
           92 bytes  at 0x005e73e1  between DAT_005e73dd                   and DAT_005e743d
           92 bytes  at 0x005ebe74  between DAT_005ebe70                   and DAT_005ebed0
           92 bytes  at 0x005f4634  between DAT_005f4630                   and DAT_005f4690
-          92 bytes  at 0x005fc8e8  between g_CCharacterTypeInfo           and PTR_unkafter_alphabit.cpp_FUN_
+          92 bytes  at 0x005fc8e8  between g_CCharacterTypeInfo           and PTR_engine_alphabit.cpp_FUN_00
           92 bytes  at 0x005fc978  between g_CAudioRecPuzzleVTable        and g_CChemPuzzleVTable
           92 bytes  at 0x006112cc  between g_CActorDestinationClassVersio and g_GlobalFilters
           92 bytes  at 0x0061d828  between g_CFliesClassVersion           and g_CGabriellaClassVersion
@@ -1153,7 +1155,7 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
           45 bytes  at 0x005e7274  between s_If_you_think_you_have_at_005 and s_anon_005e72a1
           44 bytes  at 0x005e6544  between DAT_005e6540                   and s_CWeapon_005e6570
           44 bytes  at 0x005fb448  between g_CVectorTypeInfo              and g_CAmmoVTable
-          44 bytes  at 0x005fc948  between PTR_unkafter_alphabit.cpp_FUN_ and g_CAudioRecPuzzleVTable
+          44 bytes  at 0x005fc948  between PTR_engine_alphabit.cpp_FUN_00 and g_CAudioRecPuzzleVTable
           44 bytes  at 0x005fd3e8  between g_CBugsTypeInfo                and PTR_core_camview.cpp_CCameraVi
           44 bytes  at 0x005fd958  between PTR_support_codec.cpp_CCodec_d and PTR_support_codec.cpp_CLZWComp
           44 bytes  at 0x005fd988  between PTR_support_codec.cpp_CLZWComp and PTR_support_codec.cpp_CLZWDeco
@@ -1163,7 +1165,7 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
           44 bytes  at 0x00601f98  between g_CHeroPlaceholderTypeInfo     and g_CHiramVTable
           44 bytes  at 0x00603c68  between g_CMineCarTypeInfo             and DAT_00603c94
           44 bytes  at 0x00605ac8  between g_CSmileyTypeInfo              and DAT_00605af4
-          44 bytes  at 0x00607358  between PTR_unkaddr_0059f520.cpp_FUN_0 and g_CInStreamFileVTable
+          44 bytes  at 0x00607358  between PTR_support_trstream.cpp_FUN_0 and g_CInStreamFileVTable
           44 bytes  at 0x00607428  between g_COutStreamFileVTable         and g_COutStreamMemoryVTable
           44 bytes  at 0x00607e48  between g_CWayPointTypeInfo            and g_CWeaponVTable
           44 bytes  at 0x006081e4  between DAT_006081e0                   and DAT_00608210
@@ -1348,6 +1350,7 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
           32 bytes  at 0x00625c48  between g_CVehicleClassVersion         and g_CCryptVesselClassVersion
           32 bytes  at 0x007c3958  between DAT_007c3954                   and DAT_007c3978
           32 bytes  at 0x007c7568  between DAT_007c7564                   and DAT_007c7588
+          32 bytes  at 0x01ca9cf4  between DAT_01ca9cf0                   and DAT_01ca9d14
           32 bytes  at 0x01ca9d18  between DAT_01ca9d14                   and DAT_01ca9d38
           32 bytes  at 0x01cb5828  between DAT_01cb5824                   and DAT_01cb5848
           32 bytes  at 0x01ccc3fc  between g_CDemonLightInstance.base.bas and g_CDemonLightInstance.base.bas
@@ -1788,6 +1791,8 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
           12 bytes  at 0x005f70cd  between s_Bip01_L_Forearm_005f70c8+1   and s_Bip01_L_Forearm_005f70d9
           12 bytes  at 0x005f8ee0  between s_voicusummon_wav_005f8edb+1   and s_voicusummon_wav_005f8eec
           12 bytes  at 0x005f9132  between DAT_005f912e                   and DAT_005f913e
+          12 bytes  at 0x005fa328  between DAT_005fa324                   and DAT_005fa334
+          12 bytes  at 0x005fa338  between DAT_005fa334                   and s_limb_wav_005fa344
           12 bytes  at 0x005fd21c  between DAT_005fd218                   and DAT_005fd228
           12 bytes  at 0x005fd764  between g_CCharacterVTable             and g_SFireTypeInfo
           12 bytes  at 0x005fd8dc  between DAT_005fd8d8                   and DAT_005fd8e8
@@ -1882,7 +1887,6 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
            8 bytes  at 0x005e1288  between DAT_005e1284                   and s_Enter_Movie_FPS_005e128f+1
            8 bytes  at 0x005e34e4  between DAT_005e34e0                   and DAT_005e34ec
            8 bytes  at 0x005e3dbd  between s_go_berzerk_005e3db8+1        and s_ghoul_die_wav_1_6_005e3dc5
-           8 bytes  at 0x005f0e2d  between DAT_005f0e29                   and s_core_setcolid_cpp_005f0e35
            8 bytes  at 0x005fa958  between s_lookForHead_005fa953+1       and s_f_zombie_die_wav_005fa960
            8 bytes  at 0x005fb2e8  between g_CInStreamFileTypeInfo        and g_COutStreamFileTypeInfo
            8 bytes  at 0x005fb308  between g_COutStreamFileTypeInfo       and DAT_005fb310
@@ -3228,6 +3232,7 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
            4 bytes  at 0x005f0baa  between DAT_005f0ba6                   and s_core_set_cpp_005f0bae
            4 bytes  at 0x005f0bf2  between DAT_005f0bee                   and DAT_005f0bf6
            4 bytes  at 0x005f0bfa  between DAT_005f0bf6                   and s_Set_state_version_005f0bfd+1
+           4 bytes  at 0x005f0e31  between DAT_005f0e2d                   and s_core_setcolid_cpp_005f0e35
            4 bytes  at 0x005f0ec9  between DAT_005f0ec5                   and s_core_setcolid_cpp_005f0ecd
            4 bytes  at 0x005f0fe1  between DAT_005f0fdd                   and DAT_005f0fe5
            4 bytes  at 0x005f0fe9  between DAT_005f0fe5                   and DAT_005f0fed
@@ -3966,7 +3971,7 @@ ALL EXACT GAPS (3783) - size bounds are known precisely
            1 bytes  at 0x006267c8  between DAT_006267c4                   and DAT_006267c9
 
 --------------------------------------------------------------------------------
-OVERLAPS (6604) - next global starts inside previous
+OVERLAPS (6605) - next global starts inside previous
 --------------------------------------------------------------------------------
   248 bytes overlap ~
     s_vga_act_005d2004                       TerminatedCString    at 0x005d2004  size=256
@@ -6239,9 +6244,12 @@ OVERLAPS (6604) - next global starts inside previous
   243 bytes overlap ~
     s_Bip01_Spine2_005d6c5d                  TerminatedCString    at 0x005d6c5d  size=256
     s_Bip01_Spine_005d6c6a                   TerminatedCString    at 0x005d6c6a
-  183 bytes overlap ~
+  244 bytes overlap ~
     s_Bip01_Spine_005d6c6a                   TerminatedCString    at 0x005d6c6a  size=256
-    DAT_005d6cb3                             undefined4           at 0x005d6cb3
+    s_s_confused_while_walking_005d6c76      TerminatedCString    at 0x005d6c76
+  211 bytes overlap ~
+    s_s_confused_while_walking_005d6c76      TerminatedCString    at 0x005d6c76  size=256
+    DAT_005d6ca3                             undefined4           at 0x005d6ca3
   1 bytes overlap
     DAT_005d6cf7                             undefined4           at 0x005d6cf7  size=4
     DAT_005d6cfa                             undefined4           at 0x005d6cfa
@@ -22652,9 +22660,9 @@ OVERLAPS (6604) - next global starts inside previous
   249 bytes overlap ~
     s_rthigh_005fa26e                        TerminatedCString    at 0x005fa26e  size=256
     s_lthigh_005fa275                        TerminatedCString    at 0x005fa275
-  49 bytes overlap ~
+  81 bytes overlap ~
     s_lthigh_005fa275                        TerminatedCString    at 0x005fa275  size=256
-    s_limb_wav_005fa344                      TerminatedCString    at 0x005fa344
+    DAT_005fa324                             undefined4           at 0x005fa324
   240 bytes overlap ~
     s_limb_wav_005fa344                      TerminatedCString    at 0x005fa344  size=256
     DAT_005fa354                             undefined4           at 0x005fa354

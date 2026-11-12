@@ -7,7 +7,7 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CPrye_ctor_FUN_00517f80 at 00517f86
+;   core_prye.cpp_CPrye_ctor_FUN_00517f80 at 00517f86
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042ac20

@@ -216,3 +216,11 @@ int __cdecl CRuleList::findFirst(CRuleList *this_ptr);
 // Original: core_event.cpp_CRuleList_evaluateAndRun_FUN_004aaf30
 // Address: 004aaf30
 int __cdecl CRuleList::evaluateAndRun(CRuleList *this_ptr);
+
+// Original: core_event.cpp_copyQuaternion_FUN_004aafc0
+// Address: 004aafc0
+void __cdecl copyQuaternion(undefined4 *param_1,undefined4 *param_2);
+
+// Original: core_event.cpp_FUN_004aafe0
+// Address: 004aafe0
+undefined4 FUN_004aafe0(int param_1);

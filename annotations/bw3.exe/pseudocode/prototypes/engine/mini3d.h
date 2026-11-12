@@ -5,6 +5,82 @@
 // Function prototypes for engine/mini3d.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_mini3d.cpp_staticInit_FUN_004ec6f0
+// Address: 004ec6f0
+void staticInit(void);
+
+// Original: engine_mini3d.cpp_CMini3D_ctor_FUN_004ec730
+// Address: 004ec730
+CMini3D * CMini3D::ctor(CMini3D *this_ptr);
+
+// Original: engine_mini3d.cpp_CMini3D_dtor_FUN_004ec7f0
+// Address: 004ec7f0
+CMini3D * CMini3D::dtor(CMini3D *this_ptr,uint flags);
+
+// Original: engine_mini3d.cpp_FUN_004ec7fe
+// Address: 004ec7fe
+undefined4 FUN_004ec7fe(void);
+
+// Original: engine_mini3d.cpp_FUN_004ec81e
+// Address: 004ec81e
+undefined4 FUN_004ec81e(void);
+
+// Original: engine_mini3d.cpp_FUN_004ec8ce
+// Address: 004ec8ce
+void FUN_004ec8ce(void);
+
+// Original: engine_mini3d.cpp_FUN_004ec930
+// Address: 004ec930
+void FUN_004ec930(void);
+
+// Original: engine_mini3d.cpp_FUN_004ec940
+// Address: 004ec940
+void FUN_004ec940(void);
+
+// Original: engine_mini3d.cpp_FUN_004ec94e
+// Address: 004ec94e
+undefined4 FUN_004ec94e(void);
+
+// Original: engine_mini3d.cpp_FUN_004ec96e
+// Address: 004ec96e
+undefined4 FUN_004ec96e(void);
+
+// Original: engine_mini3d.cpp_FUN_004ec98e
+// Address: 004ec98e
+void FUN_004ec98e(undefined4 *param_1);
+
+// Original: engine_mini3d.cpp_FUN_004ec9b0
+// Address: 004ec9b0
+void FUN_004ec9b0(undefined4 param_1);
+
+// Original: engine_mini3d.cpp_FUN_004ec9c0
+// Address: 004ec9c0
+void FUN_004ec9c0(float param_1);
+
+// Original: engine_mini3d.cpp_FUN_004eca10
+// Address: 004eca10
+void FUN_004eca10(float *param_1);
+
+// Original: engine_mini3d.cpp_FUN_004eceb0
+// Address: 004eceb0
+void FUN_004eceb0(float *param_1);
+
+// Original: engine_mini3d.cpp_FUN_004ecf60
+// Address: 004ecf60
+void FUN_004ecf60(void);
+
+// Original: engine_mini3d.cpp_FUN_004ecf90
+// Address: 004ecf90
+float FUN_004ecf90(void);
+
+// Original: engine_mini3d.cpp_FUN_004ed020
+// Address: 004ed020
+void FUN_004ed020(float param_1,float param_2,float param_3,float param_4);
+
+// Original: engine_mini3d.cpp_FUN_004ed150
+// Address: 004ed150
+void FUN_004ed150(float *param_1,float *param_2,float *param_3,float *param_4);
+
 // Original: engine_mini3d.cpp_FUN_004ed1de
 // Address: 004ed1de
 void FUN_004ed1de(int param_1,float *param_2);

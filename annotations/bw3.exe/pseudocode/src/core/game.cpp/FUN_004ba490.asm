@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
+;   core_bmppuzzl.cpp_FUN_004119a0 at 004119ce
 ;   core_game.cpp_CGame_playerControls_FUN_004b92e0 at 004b9325
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b833c
 ;   core_game.cpp_FUN_004bec20 at 004befbf
 ;   core_script.cpp_CScript_executeInitSection_FUN_00529920 at 005299bd
 ;   core_script.cpp_CScript_process_FUN_00528e00 at 00528e83
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052dd0f
-;   unkafter_alphabit.cpp_FUN_004119a0 at 004119ce
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba18

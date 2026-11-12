@@ -10,12 +10,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
+;   core_bmppuzzl.cpp_CExamplePuzzle_render_FUN_0059ada0 at 0059add8
 ;   core_game.cpp_FUN_004b5190 at 004b5c3f
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 004837d2
 ;   shape_edittool.cpp_FUN_0047c0f0 at 0047c6f6
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047ba6e
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0 at 0047b42f
-;   unkaddr_0059aa80.cpp_CExamplePuzzle_render_FUN_0059ada0 at 0059add8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d2487

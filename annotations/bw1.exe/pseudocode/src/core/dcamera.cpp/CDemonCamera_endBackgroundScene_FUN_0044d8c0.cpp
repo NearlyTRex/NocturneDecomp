@@ -24,7 +24,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044d8c0(CDemo
   bVar8 = 0;
   _DAT_01482658 = _DAT_01482658 + -1;
   if (_DAT_01482658 == 0) {
-    engine_matrix_c_popViewport_FUN_00483c40();
+    engine_drender_cpp_popViewport_FUN_00483c40();
     (this_ptr->cached_projection).half_width_fixed = _DAT_01c4eff8;
     (this_ptr->cached_projection).neg_half_height_fixed = _DAT_01c4effc;
     (this_ptr->cached_projection).center_x_fixed = _DAT_01c4f000;

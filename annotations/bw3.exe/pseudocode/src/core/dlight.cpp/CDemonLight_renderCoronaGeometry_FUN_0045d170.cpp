@@ -92,7 +92,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170(CDemo
   pCVar7 = DAT_005f2afc;
   DAT_005f2afc->vertex_buffer_ptr[0x10].r = 0xffff;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(pCVar7,1);
-  engine_matrix_c_FUN_0046d1c0(DAT_005f2afc);
+  engine_drender_cpp_FUN_0046d1c0(DAT_005f2afc);
   bVar1 = false;
   afStack_78[2] = local_58;
   afStack_78[(uint)bVar4 * -2 + 3] = afStack_78[(uint)bVar4 * -2 + 9];
@@ -164,7 +164,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170(CDemo
               (DAT_005f2afc,&local_d4,core_dcamera_cpp_renderCoronaDepthScanline_FUN_0044d060);
     iVar2 = iVar3;
   } while (iVar3 < 0xe);
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,0);
   core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045ed70(this_ptr);
   return;

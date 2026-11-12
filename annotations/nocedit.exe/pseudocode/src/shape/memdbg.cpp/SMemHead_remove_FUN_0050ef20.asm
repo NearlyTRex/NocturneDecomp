@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(SMemHead *header)
+; void __cdecl shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(SMemHead *this_ptr)
 ;
 ; Parameters:
-; SMemHead *       Stack[0x4]:4   header
+; SMemHead *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460 at 0050f4e8

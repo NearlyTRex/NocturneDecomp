@@ -5,58 +5,6 @@
 // Function prototypes for engine/matrix.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_matrix.c_matrixPush_FUN_0046d070
-// Address: 0046d070
-void __cdecl matrixPush(void);
-
-// Original: engine_matrix.c_pop_FUN_0046d080
-// Address: 0046d080
-void __cdecl pop(void);
-
-// Original: engine_matrix.c_FUN_0046d090
-// Address: 0046d090
-void FUN_0046d090(undefined4 param_1,float param_2);
-
-// Original: engine_matrix.c_FUN_0046d0d0
-// Address: 0046d0d0
-void FUN_0046d0d0(undefined4 param_1,float param_2);
-
-// Original: engine_matrix.c_FUN_0046d100
-// Address: 0046d100
-void FUN_0046d100(undefined4 param_1,int *param_2);
-
-// Original: engine_matrix.c_FUN_0046d120
-// Address: 0046d120
-void FUN_0046d120(undefined4 param_1,float *param_2);
-
-// Original: engine_matrix.c_FUN_0046d1a0
-// Address: 0046d1a0
-void FUN_0046d1a0(void);
-
-// Original: engine_matrix.c_FUN_0046d1c0
-// Address: 0046d1c0
-void FUN_0046d1c0(void);
-
-// Original: engine_matrix.c_FUN_0046d230
-// Address: 0046d230
-void FUN_0046d230(void);
-
-// Original: engine_matrix.c_FUN_0046d250
-// Address: 0046d250
-void FUN_0046d250(void);
-
-// Original: engine_matrix.c_FUN_0046d2d0
-// Address: 0046d2d0
-float FUN_0046d2d0(void);
-
-// Original: engine_matrix.c_FUN_0046d2f0
-// Address: 0046d2f0
-void FUN_0046d2f0(undefined4 param_1,int param_2,int param_3,int param_4,int param_5);
-
-// Original: engine_matrix.c_popViewport_FUN_0046d320
-// Address: 0046d320
-void __cdecl popViewport(void);
-
 // Original: engine_matrix.c_FUN_004e4d90
 // Address: 004e4d90
 int __cdecl FUN_004e4d90(int angle);

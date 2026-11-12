@@ -80,3 +80,7 @@ void __cdecl CPlatform::attachActor(CPlatform *this_ptr,CDemonActor *actor);
 // Original: core_platfrm.cpp_FUN_00512be0
 // Address: 00512be0
 void __cdecl FUN_00512be0(CPlatform *this_ptr);
+
+// Original: core_platfrm.cpp_CPlatform_dtor_FUN_00512cf0
+// Address: 00512cf0
+CPlatform * __cdecl CPlatform::dtor(CPlatform *this_ptr,uint flags);

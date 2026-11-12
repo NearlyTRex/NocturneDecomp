@@ -10,6 +10,7 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0050fa90
+;   cockpit_pkbitmap.cpp_FUN_00510670
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadStoredACTFile_FUN_00510fb0
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_00510f90
 ;   cockpit_pkbmpset.cpp_FUN_005106a0
@@ -21,7 +22,6 @@
 ;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_dosio.cpp_FUN_004659c0
 ;   engine_dosio.cpp_getFileSize_FUN_004657f0
-;   unkafter_pkbitmap.cpp_FUN_00510670
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1ac]     ; 0051081a
     MOV EBP,dword ptr [ESP + 0x1b8]     ; 00510821
     PUSH EBX                            ; 00510828
-    CALL unkafter_pkbitmap.cpp_FUN_00510670 ; 00510829
-        ;   XREF to: 00510670 (UNCONDITIONAL_CALL)  ; undefined unkafter_pkbitmap.cpp_FUN_00510670()
+    CALL cockpit_pkbitmap.cpp_FUN_00510670 ; 00510829
+        ;   XREF to: 00510670 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_00510670()
     ADD ESP,0x4                         ; 0051082e
     MOV EDX,dword ptr [ESP + 0x1b0]     ; 00510831
     PUSH EDX                            ; 00510838

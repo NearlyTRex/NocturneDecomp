@@ -35,8 +35,9 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[16]:
+; XREF[17]:
 ;   core_charactr.cpp_FUN_00432cb0 at 00432db0
+;   core_charactr.cpp_FUN_004342c0 at 00434308
 ;   core_doc.cpp_FUN_0046caa0 at 0046e621
 ;   core_doc.cpp_FUN_0046ea80 at 0046ee0f
 ;   core_doc.cpp_FUN_0046f200 at 0046f354
@@ -45,8 +46,7 @@
 ;   core_gabriela.cpp_FUN_004caff0 at 004cb0e0
 ;   core_ghoul.cpp_CGhoul_process_FUN_004de330 at 004de686
 ;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004eed9f
-;   core_icepick.cpp_FUN_004f1670 at 004f16ef
-;   ... and 6 more
+;   ... and 7 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f24d1

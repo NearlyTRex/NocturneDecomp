@@ -12,6 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
+;   core_armour.cpp_FUN_00410370
 ;   core_cloth.cpp_CClothList_dtor_FUN_0043f900
 ;   core_cloth.cpp_FUN_0043c280
 ;   core_morph.cpp_CMorph_dtor_FUN_004fa8c0
@@ -19,7 +20,6 @@
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
-;   unkafter_armour.cpp_FUN_00410370
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH 0x0                            ; 0059df8d
     SUB EAX,0x97f8                      ; 0059df8f
     PUSH EAX                            ; 0059df94
-    CALL unkafter_armour.cpp_FUN_00410370 ; 0059df95
-        ;   XREF to: 00410370 (UNCONDITIONAL_CALL)  ; undefined unkafter_armour.cpp_FUN_00410370()
+    CALL core_armour.cpp_FUN_00410370   ; 0059df95
+        ;   XREF to: 00410370 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_00410370()
     ADD ESP,0x8                         ; 0059df9a
     PUSH 0x0                            ; 0059df9d
     SUB EAX,0x954                       ; 0059df9f

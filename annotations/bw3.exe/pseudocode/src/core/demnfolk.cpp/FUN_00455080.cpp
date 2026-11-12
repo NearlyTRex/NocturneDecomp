@@ -307,7 +307,7 @@ LAB_0045511e:
             (pCVar5->base).actor_name[0x11] = '\0';
             (pCVar5->base).actor_name[0x12] = '\0';
             (pCVar5->base).actor_name[0x13] = '\0';
-            iVar13 = unkafter_demnfolk_cpp_FUN_004580a0();
+            iVar13 = core_demnfolk_cpp_FUN_004580a0();
             if (-1 < iVar13) {
               core_charactr_cpp_FUN_004319d0(param_1,iVar13,iVar9);
               engine_console_cpp_FUN_00441ff0
@@ -389,13 +389,13 @@ LAB_0045515b:
                (iVar9 = (*(((param_1->victim->base).vtable._uc)->_uc).getGrabbed)
                                   (param_1->victim,(CDemonActor *)param_1,0), iVar9 != 0)) {
               if (fStack_28 == 0.0) {
-                unkafter_demnfolk_cpp_FUN_00458fb0();
+                core_demnfolk_cpp_FUN_00458fb0();
               }
               goto LAB_0045511e;
             }
           }
         }
-        unkafter_demnfolk_cpp_FUN_00458fb0();
+        core_demnfolk_cpp_FUN_00458fb0();
         goto LAB_0045511e;
       }
       if (uVar10 != 10) {
@@ -420,7 +420,7 @@ LAB_0045515b:
           fVar26 = CStack_338.x - (param_1->victim->base).location.position.x;
           fVar3 = CStack_338.z - (param_1->victim->base).location.position.z;
           if ((float)_DAT_005ba722 < SQRT(fVar3 * fVar3 + fVar26 * fVar26)) {
-            unkafter_demnfolk_cpp_FUN_00458fb0();
+            core_demnfolk_cpp_FUN_00458fb0();
             goto LAB_0045511e;
           }
         }
@@ -429,7 +429,7 @@ LAB_0045515b:
                     (*(((param_1->victim->base).vtable._uc)->_uc).getGrabber)(param_1->victim);
           if (pCVar11 != param_1) {
             in_stack_fffff9bc = param_1;
-            unkafter_demnfolk_cpp_FUN_00458fb0();
+            core_demnfolk_cpp_FUN_00458fb0();
             goto LAB_0045511e;
           }
         }
@@ -455,17 +455,17 @@ LAB_0045515b:
         EVar12 = (*(((param_1->victim->base).vtable._uc)->_uc).getDeathState)(param_1->victim);
         if (0 < (int)EVar12) {
           (*(((param_1->victim->base).vtable._uc)->_uc).releaseFromGrab)(param_1->victim);
-          unkafter_demnfolk_cpp_FUN_00458fb0();
+          core_demnfolk_cpp_FUN_00458fb0();
         }
         in_stack_fffff9c4 = (char *)param_1;
         (*((param_1->base).base.vtable._ub)->playSound)
                   ((CDemonActor *)param_1,"ghoul-eat-?.wav");
         goto LAB_0045511e;
       }
-      unkafter_demnfolk_cpp_FUN_00458fb0();
+      core_demnfolk_cpp_FUN_00458fb0();
     }
     else if (uVar10 < 0xc) {
-      iVar9 = unkafter_demnfolk_cpp_FUN_004580a0();
+      iVar9 = core_demnfolk_cpp_FUN_004580a0();
       if (iVar9 < 0) {
         _DAT_01d71de0 = "..\\core\\demnfolk.cpp";
         _DAT_01d71de4 = 0x21f;
@@ -485,7 +485,7 @@ LAB_0045515b:
       }
     }
     else if (uVar10 < 0xd) {
-      fStack_b0 = (float)unkafter_demnfolk_cpp_FUN_004580a0();
+      fStack_b0 = (float)core_demnfolk_cpp_FUN_004580a0();
       if ((int)fStack_b0 < 0) {
         _DAT_01d71de0 = "..\\core\\demnfolk.cpp";
         _DAT_01d71de4 = 0x236;
@@ -698,7 +698,7 @@ LAB_0045515b:
       if (iVar9 == 0) {
         iVar9 = core_enemy_cpp_CEnemy_updatePatrol_FUN_00489ff0(param_1,param_2);
         if (iVar9 != 0) {
-          unkafter_demnfolk_cpp_FUN_00458fb0();
+          core_demnfolk_cpp_FUN_00458fb0();
         }
         (*(((param_1->base).base.vtable._ue)->_ue).updateVictim)(param_1,param_2);
         if (param_1->victim == (CCharacter *)0x0) {
@@ -710,7 +710,7 @@ LAB_0045515b:
           param_1->victim = *(CCharacter **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
         }
         if (param_1->victim != (CCharacter *)0x0) {
-          unkafter_demnfolk_cpp_FUN_00458fb0();
+          core_demnfolk_cpp_FUN_00458fb0();
           in_stack_fffff9bc = (CEnemy *)0x456532;
           iVar9 = sound_sndmain_cpp_FUN_00556700
                             ((uint)param_1[1].base.base.platform_position_delta.z);
@@ -811,7 +811,7 @@ LAB_00456085:
                           (&(param_1->base).model.base,0xb,1);
               }
               else {
-                unkafter_demnfolk_cpp_FUN_00458fb0();
+                core_demnfolk_cpp_FUN_00458fb0();
               }
             }
           }
@@ -830,7 +830,7 @@ LAB_00456085:
         iVar9 = core_demnfolk_cpp_FUN_00457740();
         if (iVar9 == 0) {
           fStack_7c = 0x3FA66666;
-          fStack_78 = (float)unkafter_demnfolk_cpp_FUN_004580a0();
+          fStack_78 = (float)core_demnfolk_cpp_FUN_004580a0();
           if (((-1 < (int)fStack_78) &&
               (pCVar16 = (param_1->base).carry_hands[(int)fStack_78].carry_actor,
               pCVar16 != (CDemonActor *)0x0)) &&
@@ -879,7 +879,7 @@ LAB_00456085:
           }
           else if (iVar9 < 1) {
             in_stack_fffff9bc = *(CEnemy **)(param_1[1].base.base.actor_name + 0x14);
-            fStack_64 = (float)unkafter_demnfolk_cpp_FUN_004580a0();
+            fStack_64 = (float)core_demnfolk_cpp_FUN_004580a0();
             pCVar5 = param_1->victim;
             fStack_47c = (param_1->base).base.location.position.x -
                          (pCVar5->base).location.position.x;
@@ -978,10 +978,10 @@ LAB_00456085:
     case 0xc:
       if (param_1->victim == (CCharacter *)0x0) {
 LAB_00456ca5:
-        unkafter_demnfolk_cpp_FUN_00458fb0();
+        core_demnfolk_cpp_FUN_00458fb0();
       }
       else {
-        iVar9 = unkafter_demnfolk_cpp_FUN_004580a0();
+        iVar9 = core_demnfolk_cpp_FUN_004580a0();
         if (((-1 < iVar9) &&
             (EVar12 = (*(((param_1->victim->base).vtable._uc)->_uc).getDeathState)(param_1->victim),
             (int)EVar12 < 1)) &&
@@ -1040,7 +1040,7 @@ LAB_00456ca5:
           }
         }
         engine_console_cpp_FUN_00441ff0(g_CConsolePtr);
-        unkafter_demnfolk_cpp_FUN_00458fb0();
+        core_demnfolk_cpp_FUN_00458fb0();
       }
       break;
     case 0xd:
@@ -1048,7 +1048,7 @@ LAB_00456ca5:
       if ((pCVar5 == (CCharacter *)0x0) ||
          (EVar12 = (*(((pCVar5->base).vtable._uc)->_uc).getDeathState)(pCVar5), 0 < (int)EVar12)) {
 LAB_004566b3:
-        unkafter_demnfolk_cpp_FUN_00458fb0();
+        core_demnfolk_cpp_FUN_00458fb0();
       }
       else {
         in_stack_fffff9bc = (CEnemy *)param_1->victim;
@@ -1230,7 +1230,7 @@ LAB_004566b3:
                          fVar26,(float)in_stack_fffff9bc);
       if (iVar9 != 1) {
         engine_console_cpp_FUN_00441ff0();
-        unkafter_demnfolk_cpp_FUN_00458fb0();
+        core_demnfolk_cpp_FUN_00458fb0();
         (param_1->base).turn_angle_accumulator = 0.0;
       }
     }
@@ -1425,7 +1425,7 @@ LAB_00455cd6:
     }
     core_charactr_cpp_FUN_0042fc90();
   }
-  iVar9 = unkafter_demnfolk_cpp_FUN_004580a0();
+  iVar9 = core_demnfolk_cpp_FUN_004580a0();
   if (((fStack_9c != 0.0) && (-1 < iVar9)) &&
      (pCVar16 = (param_1->base).carry_hands[iVar9].carry_actor, pCVar16 != (CDemonActor *)0x0)) {
     (*((pCVar16->vtable)._ub)->processMeleeHit)(pCVar16,2);

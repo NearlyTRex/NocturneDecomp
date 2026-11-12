@@ -6,9 +6,9 @@
 ;
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_archive_FUN_0042b450 at 0042b55c
-;   core_hostage.cpp_CDemnfolk_archive_FUN_004583c0 at 004584c1
+;   core_demnfolk.cpp_CDemnfolk_archive_FUN_004583c0 at 004584c1
 ;   core_zombie.cpp_CZombie_archive_FUN_0058c060 at 0058c161
-;   core_zombprie.cpp_CZombiePriest_archive_FUN_0058f510 at 0058f57c
+;   core_zombiepriest.cpp_CZombiePriest_archive_FUN_0058f510 at 0058f57c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Cloth_list_opening_brace_005b5c4d

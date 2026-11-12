@@ -13,6 +13,10 @@ void __fastcall ::memset(void *dest,int fill_byte,uint size);
 // Address: 00481a28
 void __fastcall ::memcpy(void *dest,void *src,uint size);
 
+// Original: crt_watcom.c_FUN_00481b0c
+// Address: 00481b0c
+void FUN_00481b0c(void);
+
 // Original: crt_watcom.c__mkdir_FUN_00565e40
 // Address: 00565e40
 int __cdecl ::mkdir(char *path);

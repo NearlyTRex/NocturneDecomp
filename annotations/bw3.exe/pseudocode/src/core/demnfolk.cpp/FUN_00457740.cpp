@@ -132,14 +132,14 @@ uint core_demnfolk_cpp_FUN_00457740(CCharacter *param_1,float param_2)
         afStack_60[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
              *(float *)((int)&CStack_d8 + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + 1) * 4);
         in_stack_fffffdd4 = (CCharacter *)0x457ee5;
-        local_20 = unkafter_hostage_cpp_FUN_004549e0();
+        local_20 = core_demnfolk_cpp_FUN_004549e0();
         if (((local_20 != 0) &&
-            (in_stack_fffffdd4 = param_1, iVar4 = unkafter_demnfolk_cpp_FUN_00458140(), iVar4 != 0))
-           && ((in_stack_fffffdd4 = this_ptr,
-               iVar4 = core_actor_cpp_isOfClass_FUN_0040c790(&this_ptr->base,"CBodyPart"),
-               iVar4 == 0 ||
-               (((this_ptr->base).direction_hint & 3U) ==
-                ((uint)param_1[1].model.bone_origins[0x12].y & 3))))) {
+            (in_stack_fffffdd4 = param_1, iVar4 = core_demnfolk_cpp_FUN_00458140(), iVar4 != 0)) &&
+           ((in_stack_fffffdd4 = this_ptr,
+            iVar4 = core_actor_cpp_isOfClass_FUN_0040c790(&this_ptr->base,"CBodyPart"),
+            iVar4 == 0 ||
+            (((this_ptr->base).direction_hint & 3U) ==
+             ((uint)param_1[1].model.bone_origins[0x12].y & 3))))) {
           afStack_f8[1] = (this_ptr->base).location.position.x - *local_18;
           afStack_f8[2] = (this_ptr->base).location.position.y - local_18[1];
           afStack_f8[3] = (this_ptr->base).location.position.z - local_18[2];
@@ -184,7 +184,7 @@ uint core_demnfolk_cpp_FUN_00457740(CCharacter *param_1,float param_2)
                param_1[1].model.bone_origins[0x13].y);
     param_1[1].model.bone_origins[0x13].y = 0.0;
     param_1[1].model.bone_origins[0x13].x = 0.0;
-    unkafter_demnfolk_cpp_FUN_00458fb0(param_1);
+    core_demnfolk_cpp_FUN_00458fb0(param_1);
     return 0;
   }
   fVar9 = param_1[1].model.bone_origins[0x13].y;
@@ -197,12 +197,12 @@ uint core_demnfolk_cpp_FUN_00457740(CCharacter *param_1,float param_2)
   fVar9 = param_1[1].model.bone_origins[0x13].z;
   param_1[1].model.bone_origins[0x13].x =
        param_2 * fStack_234 + param_1[1].model.bone_origins[0x13].x;
-  iStack_38 = unkafter_demnfolk_cpp_FUN_004580a0(param_1,fVar9);
+  iStack_38 = core_demnfolk_cpp_FUN_004580a0(param_1,fVar9);
   iVar4 = -1;
   if ((((-1 < iStack_38) && (param_1[1].model.bone_origins[0x13].x < 0.0)) &&
       (fVar9 = param_1[1].model.bone_origins[0x13].y,
       iVar3 = (**(code **)(*(int *)((int)fVar9 + 0x154) + 0x84))(fVar9,param_1), iVar3 == 3)) &&
-     (iVar3 = unkafter_demnfolk_cpp_FUN_00458140(param_1,param_1[1].model.bone_origins[0x13].z),
+     (iVar3 = core_demnfolk_cpp_FUN_00458140(param_1,param_1[1].model.bone_origins[0x13].z),
      iVar3 != 0)) {
     fVar9 = param_1[1].model.bone_origins[0x13].z;
     if ((uint)fVar9 < 2) {
@@ -332,7 +332,7 @@ LAB_00457d36:
                param_1[1].model.bone_origins[0x13].y);
     param_1[1].model.bone_origins[0x13].y = 0.0;
     param_1[1].model.bone_origins[0x13].x = 20.0;
-    unkafter_demnfolk_cpp_FUN_00458fb0(param_1);
+    core_demnfolk_cpp_FUN_00458fb0(param_1);
     return 0;
   }
   if (iVar4 < 1) {

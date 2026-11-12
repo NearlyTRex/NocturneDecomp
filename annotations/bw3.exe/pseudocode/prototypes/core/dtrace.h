@@ -153,6 +153,10 @@ void FUN_00477d90(int param_1);
 // Address: 00477db0
 void FUN_00477db0(int param_1);
 
+// Original: core_dtrace.cpp_FUN_00477dd0
+// Address: 00477dd0
+void FUN_00477dd0(int param_1,int param_2);
+
 // Original: core_dtrace.cpp_FUN_00477e60
 // Address: 00477e60
 void __cdecl FUN_00477e60(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent,CVector3f *light_position);

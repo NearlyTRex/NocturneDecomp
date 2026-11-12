@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_game.cpp_FUN_004bb9b0 at 004bbc94
 ;   core_game.cpp_FUN_004bbf70 at 004bc21f
-;   unkaddr_0057b9a0.cpp_CInStreamFile_ctorOpen_FUN_0057cdb0 at 0057ce0b
+;   support_trstream.cpp_CInStreamFile_ctorOpen_FUN_0057cdb0 at 0057ce0b
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateFileA_005c8518 = 001c8c64

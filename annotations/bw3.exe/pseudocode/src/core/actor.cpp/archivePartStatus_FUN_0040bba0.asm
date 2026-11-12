@@ -12,11 +12,11 @@
 ; XREF[8]:
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419070 at 00419161
 ;   core_carved.cpp_CCarved_archive_FUN_00428650 at 0042869b
-;   core_constrct.cpp_CConstruct_archive_FUN_00443ca0 at 00443dfd
+;   core_construc.cpp_CConstruct_archive_FUN_00443ca0 at 00443dfd
+;   core_demnfolk.cpp_CDemnfolk_archive_FUN_004583c0 at 00458444
 ;   core_ghoul.cpp_CGhoul_archive_FUN_004c8cc0 at 004c8d7f
 ;   core_hero.cpp_CHero_archive_FUN_004d27b0 at 004d2810
-;   core_hostage.cpp_CDemnfolk_archive_FUN_004583c0 at 00458444
-;   core_thehand.cpp_CTheHand_archive_FUN_0056c8c0 at 0056c8f6
+;   core_toxhand.cpp_CTheHand_archive_FUN_0056c8c0 at 0056c8f6
 ;   core_zombie.cpp_CZombie_archive_FUN_0058c060 at 0058c0e4
 ;
 ; Referenced Globals:

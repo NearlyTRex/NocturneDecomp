@@ -8,18 +8,18 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[63]:
+; XREF[64]:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0 at 00408aeb
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 00410231
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411f39
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 004138e8
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_0059b430 at 0059b4d8
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090 at 0041c22a
 ;   core_bugs.cpp_FUN_00420840 at 00420bf4
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420 at 00429aca
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 at 00428970
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850 at 0042389d
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000 at 00423324
-;   ... and 53 more
+;   ... and 54 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005caf3e

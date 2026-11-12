@@ -1,6 +1,6 @@
 // Name: core_ground.cpp_staticInit_FUN_004cf850
 // Address: 004cf850
-// Address Range: [[004cf850, 004cf850]]
+// Address Range: [[004cf850, 004cf874]]
 // Convention: unknown
 // Signature: void core_ground_cpp_staticInit_FUN_004cf850(void)
 

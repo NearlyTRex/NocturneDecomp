@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0(SCurtainVertex *objs,uint flags)
+; SCurtainVertex * __cdecl core_curtain_cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0(SCurtainVertex *this_ptr,uint flags)
 ;
 ; Parameters:
-; SCurtainVertex * Stack[0x4]:4   objs
+; SCurtainVertex * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

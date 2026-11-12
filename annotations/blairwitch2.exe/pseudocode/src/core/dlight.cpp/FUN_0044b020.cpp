@@ -60,7 +60,7 @@ void __cdecl core_dlight_cpp_FUN_0044b020(CDemonLight *this_ptr)
   world_position = &(this_ptr->base).base.position;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
             (DAT_0060b280,&world_position->f);
-  engine_matrix_c_FUN_0046b670(DAT_0060b280);
+  engine_drender_cpp_FUN_0046b670(DAT_0060b280);
   translation = (CVector3f *)0x0;
   local_70.x = local_64;
   *(int *)((int)&local_70 + (uint)bVar4 * -8 + 4) = aiStack_60[(uint)bVar4 * -2];
@@ -68,7 +68,7 @@ void __cdecl core_dlight_cpp_FUN_0044b020(CDemonLight *this_ptr)
        aiStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
             (DAT_0060b280,&local_70,translation);
-  engine_matrix_c_FUN_0046b5c0(DAT_0060b280);
+  engine_drender_cpp_FUN_0046b5c0(DAT_0060b280);
   local_34 = aiStack_60[2];
   local_30[(uint)bVar4 * -2] = aiStack_60[(uint)bVar4 * -2 + 3];
   local_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
@@ -185,7 +185,7 @@ void __cdecl core_dlight_cpp_FUN_0044b020(CDemonLight *this_ptr)
     engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930(DAT_0060b280,&SStack_f8);
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960(this_ptr);
   return;
 }

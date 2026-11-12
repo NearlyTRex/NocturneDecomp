@@ -63,7 +63,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter *t
         afStack_68[2] = 0.0;
         afStack_68[3] = 0.0;
         afStack_68[4] = 0.0;
-        piStack_1c = (int *)unkafter_special_cpp_FUN_0059e0f0(&this_ptr->follow_formation);
+        piStack_1c = (int *)core_muzzle_cpp_FUN_0059e0f0(&this_ptr->follow_formation);
         piStack_20 = piStack_1c;
         for (; (piStack_1c != (int *)0x0 && (*piStack_1c != 0)); piStack_1c = (int *)piStack_1c[0xe]
             ) {

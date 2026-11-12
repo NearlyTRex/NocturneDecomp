@@ -12,7 +12,7 @@
 ; XREF[11]:
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_0041d0d0 at 0041d1c1
 ;   core_carved.cpp_CCarved_archive_FUN_0042b3c0 at 0042b40b
-;   core_constrct.cpp_CConstruct_archive_FUN_00446e30 at 00446f8d
+;   core_construc.cpp_CConstruct_archive_FUN_00446e30 at 00446f8d
 ;   core_demnfolk.cpp_CDemnfolk_archive_FUN_0045c1e0 at 0045c264
 ;   core_djien.cpp_CDjien_archive_FUN_00460e80 at 00460f79
 ;   core_ghoul.cpp_CGhoul_archive_FUN_004e0130 at 004e01ef

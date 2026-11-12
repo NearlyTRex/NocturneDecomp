@@ -1,0 +1,120 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 50,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 62
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0053ce50",
+    "address_range": [
+      [
+        "0053ce50",
+        "0053cebc"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_pod.cpp_FUN_0053ce50",
+    "signature": "undefined4 engine_pod_cpp_FUN_0053ce50(undefined4 param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0053b1a0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_ctor_FUN_0053b1a0"
+    },
+    {
+      "addr": "0053b210",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_dtor_FUN_0053b210"
+    },
+    {
+      "addr": "0053b250",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_FUN_0053b250"
+    },
+    {
+      "addr": "0053bfc0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_FUN_0053bfc0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.205128205128205,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 27,
+      "INT_ADD": 15,
+      "INT_AND": 21,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 16,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 164
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint engine_pod_cpp_FUN_0053ce50(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint engine_pod_cpp_FUN_0053ce50(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = engine_pod_cpp_FUN_0053b250(&CStack_430,param_2,0);",
+      "type": "unnamed_param"
+    }
+  ]
+}

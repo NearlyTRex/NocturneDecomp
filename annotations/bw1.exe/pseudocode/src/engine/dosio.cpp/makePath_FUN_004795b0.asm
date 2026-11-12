@@ -12,6 +12,7 @@
 ;
 ; XREF[13]:
 ;   engine_dosio.cpp_FUN_004795e0 at 00479630
+;   engine_dosio.cpp_FUN_00479770 at 0047985f
 ;   engine_dosio.cpp_changeFileExtension_FUN_004796b0 at 00479703
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0 at 004c0e3d
 ;   engine_font.cpp_FUN_004c0fa0 at 004c10f2
@@ -20,7 +21,6 @@
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00499c80 at 00499d1e
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00499ed0 at 00499fb4
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_0049a0d0 at 0049a1b4
-;   shape_edittool.cpp_FUN_0049517e at 0049531a
 ;   ... and 3 more
 ;
 ; Called Functions:

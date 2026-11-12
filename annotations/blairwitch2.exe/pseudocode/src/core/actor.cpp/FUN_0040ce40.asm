@@ -8,7 +8,7 @@
 ;   core_script.cpp_FUN_00522350 at 00527653
 ;
 ; Called Functions:
-;   unkaddr_005a7eb0.cpp_CSimpleParticleSystem_start_FUN_005a80d0
+;   core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     ADD EDX,0x154                       ; 0040ce57
     ADD EAX,EDX                         ; 0040ce5d
     PUSH EAX                            ; 0040ce5f
-    CALL unkaddr_005a7eb0.cpp_CSimpleParticleSystem_start_FUN_005a80d0 ; 0040ce60
-        ;   XREF to: 005a80d0 (UNCONDITIONAL_CALL)  ; void unkaddr_005a7eb0.cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem * this_ptr, int param_2)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0 ; 0040ce60
+        ;   XREF to: 005a80d0 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_start_FUN_005a80d0(CSimpleParticleSystem * this_ptr, int param_2)
     ADD ESP,0x8                         ; 0040ce65
     RET                                 ; 0040ce68
 

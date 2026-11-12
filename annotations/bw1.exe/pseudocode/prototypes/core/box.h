@@ -17,6 +17,10 @@ CBox * __cdecl CBox::dtor(CBox *this_ptr,uint flags);
 // Address: 0041dac0
 void __cdecl CBox::setupCorners(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);
 
+// Original: core_box.cpp_FUN_0041dcf0
+// Address: 0041dcf0
+void FUN_0041dcf0(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
+
 // Original: core_box.cpp_FUN_0041de90
 // Address: 0041de90
 void __cdecl FUN_0041de90(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);

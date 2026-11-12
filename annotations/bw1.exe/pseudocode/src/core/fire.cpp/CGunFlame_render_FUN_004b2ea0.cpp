@@ -64,7 +64,7 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004b2ea0(CGunFlame *this_ptr)
             (DAT_00612560,(SMRGLTextureBasic *)((int)local_28 * 0x18 + 0x1c58588));
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
             (DAT_00612560,&this_ptr->position);
-  engine_matrix_c_FUN_00483b70(DAT_00612560);
+  engine_drender_cpp_FUN_00483b70(DAT_00612560);
   translation = (CVector3f *)0x0;
   local_90.x = local_80[2];
   *(float *)((int)&local_90 + (uint)bVar4 * -8 + 4) = local_80[(uint)bVar4 * -2 + 3];
@@ -76,7 +76,7 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004b2ea0(CGunFlame *this_ptr)
   fVar1 = (float)(fVar5 * (float10)_DAT_005df514 + (float10)_DAT_005df51c);
   local_f4 = fVar1;
   if ((float10)(double)fVar5 < (float10)_DAT_005df51c) {
-    engine_matrix_c_FUN_00483ae0(DAT_00612560);
+    engine_drender_cpp_FUN_00483ae0(DAT_00612560);
     local_54 = local_9c;
     local_50[(uint)bVar4 * -2] = afStack_98[(uint)bVar4 * -2];
     local_50[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
@@ -182,6 +182,6 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004b2ea0(CGunFlame *this_ptr)
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(this_ptr_00,1);
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30(DAT_00612560,&local_e8);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
-  engine_matrix_c_pop_FUN_004839a0();
+  engine_drender_cpp_pop_FUN_004839a0();
   return;
 }

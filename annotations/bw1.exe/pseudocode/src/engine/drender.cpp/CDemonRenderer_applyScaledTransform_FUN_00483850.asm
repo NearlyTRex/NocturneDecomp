@@ -17,12 +17,12 @@
 ;   core_anvil.cpp_CAnvil_renderOpaque_FUN_0040e7b0 at 0040e7ea
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_004101f0 at 004102bf
 ;   core_battery.cpp_CBattery_renderOpaque_FUN_00414500 at 0041452a
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0 at 004171a2
 ;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00418fc0 at 0041909a
 ;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_004224f0 at 00422565
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00422600 at 0042264d
 ;   core_bugs.cpp_CBugs_renderOpaque_FUN_00425480 at 00425550
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0 at 0042f49d
-;   core_cloth.cpp_FUN_00441500 at 00441552
 ;   ... and 45 more
 ;
 ; Referenced Globals:

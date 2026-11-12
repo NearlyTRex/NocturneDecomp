@@ -23,6 +23,6 @@ void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_0049d1c0(CFireEffect *this
   core_fire_cpp_loadGunFlashAssets_FUN_00496c40();
   core_fire_cpp_loadLightningBoltAssets_FUN_0049aab0();
   core_fire_cpp_loadDebrisAssets_FUN_00498c90();
-  unkaddr_0059d350_cpp_FUN_0059d5f0();
+  core_muzzle_cpp_FUN_0059d5f0();
   return;
 }

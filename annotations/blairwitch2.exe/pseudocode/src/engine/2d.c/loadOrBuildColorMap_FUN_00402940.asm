@@ -31,16 +31,16 @@
 ;   core_main.c_FUN_004e4500
 ;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_buildColorLookupTable_FUN_00402880
+;   support_trstream.cpp_CInStreamFile_close_FUN_0057d180
+;   support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50
+;   support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0
 ;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390
+;   support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0
 ;   support_trstream.cpp_COutStreamFile_close_FUN_0057dd60
 ;   support_trstream.cpp_COutStreamFile_ctor_FUN_0057db80
 ;   support_trstream.cpp_COutStreamFile_dtor_FUN_0057dc10
 ;   support_trstream.cpp_COutStreamFile_openInDirectory_FUN_0057ddd0
 ;   support_trstream.cpp_COutStreamFile_write_FUN_0057dca0
-;   unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180
-;   unkaddr_0057b9a0.cpp_CInStreamFile_read_FUN_0057cfe0
-;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50
-;   unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x8c]      ; 00402948
     LEA EAX,[ESP + 0x50]                ; 0040294f
     PUSH EAX                            ; 00402953
-    CALL unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50 ; 00402954
-        ;   XREF to: 0057cd50 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50 ; 00402954
+        ;   XREF to: 0057cd50 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00402959
     MOV EDI,ESP                         ; 0040295c
     MOV DL,0x2e                         ; 0040295e
@@ -176,8 +176,8 @@ section .text
         ;   Label: LAB_00402a78
     LEA EAX,[ESP + 0x54]                ; 00402a7a
     PUSH EAX                            ; 00402a7e
-    CALL unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0 ; 00402a7f
-        ;   XREF to: 0057cec0 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0(CInStreamFile * this_ptr, uint flags)
+    CALL support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0 ; 00402a7f
+        ;   XREF to: 0057cec0 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00402a84
     ADD ESP,0x80                        ; 00402a87
     POP EDI                             ; 00402a8d
@@ -188,13 +188,13 @@ section .text
     PUSH 0x1c2c910                      ; 00402a95 | DAT_01c2c910
     LEA EAX,[ESP + 0x58]                ; 00402a9a
     PUSH EAX                            ; 00402a9e
-    CALL unkaddr_0057b9a0.cpp_CInStreamFile_read_FUN_0057cfe0 ; 00402a9f
-        ;   XREF to: 0057cfe0 (UNCONDITIONAL_CALL)  ; int unkaddr_0057b9a0.cpp_CInStreamFile_read_FUN_0057cfe0(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
+    CALL support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0 ; 00402a9f
+        ;   XREF to: 0057cfe0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
     ADD ESP,0xc                         ; 00402aa4
     LEA EAX,[ESP + 0x50]                ; 00402aa7
     PUSH EAX                            ; 00402aab
-    CALL unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180 ; 00402aac
-        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0057b9a0.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_close_FUN_0057d180 ; 00402aac
+        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00402ab1
     JMP 0x00402a78                      ; 00402ab4
         ;   XREF to: 00402a78 (UNCONDITIONAL_JUMP)  ; LAB_00402a78

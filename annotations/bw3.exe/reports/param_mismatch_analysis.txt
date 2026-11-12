@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5400
-Functions with no callers: 2526
-Parameter mismatches detected: 1060
-Signature accuracy rate: 63.1%
+Functions with parameter estimates: 5456
+Functions with no callers: 2570
+Parameter mismatches detected: 1068
+Signature accuracy rate: 63.0%
 
 Mismatches by confidence:
-  High confidence:   127 (multiple call sites agree)
-  Medium confidence: 194 (some agreement)
-  Low confidence:    739 (limited data)
+  High confidence:   126 (multiple call sites agree)
+  Medium confidence: 198 (some agreement)
+  Low confidence:    744 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -174,7 +174,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Signature: undefined4 __cdecl support_trisock_cpp_buildIPAddress_FUN_0056f630(undefined1 *param_1,int param_2,int param_3,int param_4,int param_5)
     Sample call sites:
       support_trisock.cpp_parseIPCom at 0056f612: 0 reg [], 5 stack (20 bytes, via push_count)
-      unkafter_trisock.cpp_FUN_00571 at 00572142: 0 reg [], 5 stack (20 bytes, via add_esp)
+      support_trisock.cpp_FUN_00571f at 00572142: 0 reg [], 5 stack (20 bytes, via add_esp)
       support_trisock.cpp_buildIPAdd at 0056f52d: 0 reg [], 5 stack (20 bytes, via add_esp)
 
   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0
@@ -259,7 +259,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
 
   crt_stdio.c_fwrite_FUN_005a48e0
     Declared: 0 params (0 bytes), Estimated: 4 stack slots (16 bytes) [+4]
-    Call sites: 8, Confidence: high
+    Call sites: 10, Confidence: high
     File: crt/stdio.c
     Signature: uint __cdecl crt_stdio_c_fwrite_FUN_005a48e0(undefined4 *param_1,uint param_2,int param_3,int *param_4)
     Sample call sites:
@@ -276,16 +276,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       engine_drender.cpp_CDemonRende at 0046e53d: 0 reg [], 4 stack (16 bytes, via add_esp)
       core_set.cpp_CDemonSet_buildDi at 0053a03e: 0 reg [], 4 stack (16 bytes, via add_esp)
       shape_edittool.cpp_CStrList_so at 00482429: 0 reg [], 4 stack (16 bytes, via push_count)
-
-  crt_unknown.c_FUN_005aee30
-    Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
-    Call sites: 3, Confidence: high
-    File: crt/unknown.c
-    Signature: void crt_unknown_c_FUN_005aee30(FILETIME *param_1,LPWORD param_2,LPWORD param_3)
-    Sample call sites:
-      crt_unknown.c_FUN_005aaed4 at 005ab088: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
-      crt_unknown.c_FUN_005aaed4 at 005ab0c6: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
-      crt_unknown.c_FUN_005aaed4 at 005ab12b: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
 
   crt_unknown.c_FUN_005b121c
     Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
@@ -409,7 +399,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
 
   crt_stdio.c_vsprintf_FUN_005a2898
     Declared: 0 params (0 bytes), Estimated: 3 stack slots (12 bytes) [+3]
-    Call sites: 27, Confidence: high
+    Call sites: 30, Confidence: high
     File: crt/stdio.c
     Signature: void __cdecl crt_stdio_c_vsprintf_FUN_005a2898(int param_1,undefined4 param_2,undefined4 param_3)
     Sample call sites:
@@ -517,11 +507,11 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       engine_clipper.c_clipPolygonTo at 0043a536: 0 reg [], 3 stack (12 bytes, via add_esp)
       engine_3d.c_clipAndDrawLine2D_ at 00407bd7: 0 reg [], 3 stack (12 bytes, via add_esp)
 
-  engine_matrix.c_FUN_0046d090
+  engine_drender.cpp_FUN_0046d090
     Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
     Call sites: 12, Confidence: high
-    File: engine/matrix.c
-    Signature: void engine_matrix_c_FUN_0046d090(undefined4 param_1,float param_2)
+    File: engine/drender.cpp
+    Signature: void engine_drender_cpp_FUN_0046d090(undefined4 param_1,float param_2)
     Sample call sites:
       core_moon.cpp_CMoon_render_FUN at 004f9710: 1 reg [ECX], 2 stack (8 bytes, via add_esp)
       core_dlight.cpp_CDemonLight_be at 0045c5da: 1 reg [EDX], 2 stack (8 bytes, via add_esp)
@@ -545,7 +535,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       engine_clipper.c_clipPolygonTo at 00439f10: 0 reg [], 3 stack (12 bytes, via add_esp)
       engine_clipper.c_clipPolygonTo at 0043bc04: 0 reg [], 3 stack (12 bytes, via add_esp)
-      unkafter_dpart.cpp_FUN_00466d5 at 00466dd1: 0 reg [], 3 stack (12 bytes, via add_esp)
+      core_dpart.cpp_FUN_00466d50 at 00466dd1: 0 reg [], 3 stack (12 bytes, via add_esp)
 
   engine_special.cpp_drawPolygon_FUN_00565c10
     Declared: 0 params (0 bytes), Estimated: 3 stack slots (12 bytes) [+3]
@@ -579,7 +569,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
 
   support_trisock.cpp_createNetworkAddr_FUN_0056f730
     Declared: 0 params (0 bytes), Estimated: 3 stack slots (12 bytes) [+3]
-    Call sites: 4, Confidence: high
+    Call sites: 5, Confidence: high
     File: support/trisock.cpp
     Signature: void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0056f730(undefined4 *param_1,undefined4 param_2,undefined2 param_3)
     Sample call sites:
@@ -594,7 +584,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Signature: void __cdecl core_actor_cpp_archiveClothList_FUN_0040bf20(int *param_1,char *param_2)
     Sample call sites:
       core_charactr.cpp_CCharacter_a at 0042b55c: 0 reg [], 2 stack (8 bytes, via add_esp)
-      core_hostage.cpp_CDemnfolk_arc at 004584c1: 0 reg [], 2 stack (8 bytes, via add_esp)
+      core_demnfolk.cpp_CDemnfolk_ar at 004584c1: 0 reg [], 2 stack (8 bytes, via add_esp)
       core_zombie.cpp_CZombie_archiv at 0058c161: 0 reg [], 2 stack (8 bytes, via add_esp)
 
   core_actor.cpp_archiveFloat_FUN_0040b830
@@ -625,7 +615,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       core_boneguy.cpp_CBoneGuy_arch at 004191e7: 0 reg [], 2 stack (8 bytes, via add_esp)
       core_boneguy.cpp_CBoneGuy_arch at 004191f9: 0 reg [], 2 stack (8 bytes, via add_esp)
-      core_constrct.cpp_CConstruct_a at 00443e8b: 0 reg [], 2 stack (8 bytes, via add_esp)
+      core_construc.cpp_CConstruct_a at 00443e8b: 0 reg [], 2 stack (8 bytes, via add_esp)
 
   core_actor.cpp_archiveVector_FUN_0040b400
     Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
@@ -725,7 +715,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Sample call sites:
       core_prye.cpp_FUN_00518cd0 at 00519c68: 0 reg [], 2 stack (8 bytes, via add_esp)
       core_prye.cpp_FUN_00518cd0 at 00519e29: 0 reg [], 2 stack (8 bytes, via add_esp)
-      unkafter_prye.cpp_FUN_005263c0 at 00526746: 0 reg [], 2 stack (8 bytes, via add_esp)
+      core_prye.cpp_FUN_005263c0 at 00526746: 0 reg [], 2 stack (8 bytes, via add_esp)
 
   core_script.cpp_FUN_00528d50
     Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
@@ -754,8 +744,8 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Signature: undefined4 __cdecl crt_memory_c___arrfini_FUN_005a3de6(undefined4 param_1,undefined4 param_2,undefined4 param_3)
     Sample call sites:
       crt_memory.c___vec_delete_FUN_ at 005a30aa: 0 reg [], 3 stack (12 bytes, via add_esp)
-      unkafter_fldnotes.cpp_FUN_004a at 004ad41c: 0 reg [], 2 stack (8 bytes, via push_count)
-      unkafter_armour.cpp_FUN_004103 at 0041037c: 0 reg [], 2 stack (8 bytes, via push_count)
+      core_fldnotes.cpp_FUN_004ad410 at 004ad41c: 0 reg [], 2 stack (8 bytes, via push_count)
+      core_armour.cpp_FUN_00410370 at 0041037c: 0 reg [], 2 stack (8 bytes, via push_count)
 
   crt_memory.c___vec_delete_FUN_005a308f
     Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
@@ -833,7 +823,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: engine/prim.c
     Signature: void __cdecl engine_prim_c_prepareDepthBuffer_FUN_00515920(int param_1,int param_2)
     Sample call sites:
-      unkafter_dpart.cpp_FUN_004673d at 004674ea: 0 reg [], 2 stack (8 bytes, via add_esp)
+      core_dpart.cpp_FUN_004673d0 at 004674ea: 0 reg [], 2 stack (8 bytes, via add_esp)
       core_asgaya.cpp_FUN_005a1ea0 at 005a21b0: 0 reg [], 2 stack (8 bytes, via add_esp)
       engine_prim.c_renderScanlinePo at 005170e3: 0 reg [], 2 stack (8 bytes, via add_esp)
 
@@ -843,7 +833,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: engine/prim.c
     Signature: void __cdecl engine_prim_c_replaceWWithDepth_FUN_00515a80(int param_1,int param_2)
     Sample call sites:
-      unkafter_dpart.cpp_FUN_004673d at 00467747: 0 reg [], 2 stack (8 bytes, via add_esp)
+      core_dpart.cpp_FUN_004673d0 at 00467747: 0 reg [], 2 stack (8 bytes, via add_esp)
       engine_drender.cpp_CDemonRende at 0046e6f9: 0 reg [], 2 stack (8 bytes, via add_esp)
       core_asgaya.cpp_FUN_005a1ea0 at 005a21c7: 0 reg [], 2 stack (8 bytes, via add_esp)
 
@@ -885,6 +875,26 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       sound_sndmain.cpp_findBestReco at 00558983: 0 reg [], 2 stack (8 bytes, via add_esp)
       sound_sndmain.cpp_findBestReco at 005589a4: 0 reg [], 2 stack (8 bytes, via add_esp)
 
+  support_trstream.cpp_FUN_00572530
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
+    Call sites: 8, Confidence: high
+    File: support/trstream.cpp
+    Signature: void support_trstream_cpp_FUN_00572530(undefined4 *param_1)
+    Sample call sites:
+      support_trstream.cpp_CInStream at 005738c5: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      support_trstream.cpp_CInStream at 00574157: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+      support_trstream.cpp_CInStream at 00573927: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
+
+  support_trstream.cpp_FUN_00572540
+    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
+    Call sites: 3, Confidence: high
+    File: support/trstream.cpp
+    Signature: void support_trstream_cpp_FUN_00572540(undefined4 *param_1)
+    Sample call sites:
+      support_trstream.cpp_CInStream at 00573a5e: 0 reg [], 2 stack (8 bytes, via add_esp)
+      support_trstream.cpp_CInStream at 005741ee: 0 reg [], 2 stack (8 bytes, via add_esp)
+      support_codec.cpp_CInStreamPip at 004418de: 0 reg [], 2 stack (8 bytes, via add_esp)
+
   support_trstream.cpp_FUN_005744a0
     Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
     Call sites: 10, Confidence: high
@@ -894,26 +904,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       support_trstream.cpp_COutStrea at 005747c5: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
       support_trstream.cpp_COutStrea at 005747e7: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
       support_trstream.cpp_COutStrea at 0057486e: 0 reg [], 2 stack (8 bytes, via add_esp)
-
-  unkafter_turret.cpp_FUN_00572530
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (4 bytes) [+2]
-    Call sites: 7, Confidence: high
-    File: unkafter/turret.cpp
-    Signature: void unkafter_turret_cpp_FUN_00572530(undefined4 *param_1)
-    Sample call sites:
-      unkafter_turret.cpp_CInStreamF at 005738c5: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
-      support_trstream.cpp_CInStream at 00574157: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
-      unkafter_turret.cpp_CInStreamF at 00573927: 1 reg [EDX], 1 stack (4 bytes, via add_esp)
-
-  unkafter_turret.cpp_FUN_00572540
-    Declared: 0 params (0 bytes), Estimated: 2 stack slots (8 bytes) [+2]
-    Call sites: 3, Confidence: high
-    File: unkafter/turret.cpp
-    Signature: void unkafter_turret_cpp_FUN_00572540(undefined4 *param_1)
-    Sample call sites:
-      unkafter_turret.cpp_CInStreamF at 00573a5e: 0 reg [], 2 stack (8 bytes, via add_esp)
-      support_trstream.cpp_CInStream at 005741ee: 0 reg [], 2 stack (8 bytes, via add_esp)
-      support_codec.cpp_CInStreamPip at 004418de: 0 reg [], 2 stack (8 bytes, via add_esp)
 
   core_actor.cpp_createActorByName_FUN_0040c4f0
     Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
@@ -994,6 +984,16 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_charactr.cpp_FUN_004300e0 at 00430410: 0 reg [], 1 stack (4 bytes, via add_esp)
       core_charactr.cpp_FUN_0042ff70 at 0042ffca: 0 reg [], 1 stack (4 bytes, via add_esp)
       core_enemy.cpp_CEnemy_randomiz at 0048a261: 0 reg [], 1 stack (4 bytes, via add_esp)
+
+  core_fldnotes.cpp_SPageResource_dtor_FUN_004a83a0
+    Declared: 1 params (4 bytes), Estimated: 2 stack slots (8 bytes) [+1]
+    Call sites: 4, Confidence: high
+    File: core/fldnotes.cpp
+    Signature: int __cdecl core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0(SPageResource *this_ptr)
+    Sample call sites:
+      core_fldnotes.cpp_SPageResourc at 004a8526: 0 reg [], 2 stack (8 bytes, via add_esp)
+      core_fldnotes.cpp_SPageResourc at 004a8740: 0 reg [], 2 stack (8 bytes, via add_esp)
+      core_fldnotes.cpp_SPageResourc at 004a89bf: 0 reg [], 2 stack (8 bytes, via add_esp)
 
   core_gargoyle.cpp_FUN_004c51a0
     Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
@@ -1214,21 +1214,21 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       engine_dosio.cpp_getFileSize_F at 00465816: 0 reg [], 1 stack (4 bytes, via add_esp)
       engine_texture.cpp_CTextureCac at 00569826: 0 reg [], 1 stack (4 bytes, via add_esp)
 
-  engine_matrix.c_popViewport_FUN_0046d320
+  engine_drender.cpp_popViewport_FUN_0046d320
     Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
     Call sites: 7, Confidence: high
-    File: engine/matrix.c
-    Signature: void __cdecl engine_matrix_c_popViewport_FUN_0046d320(void)
+    File: engine/drender.cpp
+    Signature: void __cdecl engine_drender_cpp_popViewport_FUN_0046d320(void)
     Sample call sites:
       core_dlight.cpp_CDemonLight_en at 0045c862: 0 reg [], 1 stack (4 bytes, via add_esp)
       core_dcamera.cpp_CDemonCamera_ at 004497e7: 0 reg [], 1 stack (4 bytes, via add_esp)
       core_dcamera.cpp_CDemonCamera_ at 00449a23: 0 reg [], 1 stack (4 bytes, via add_esp)
 
-  engine_matrix.c_pop_FUN_0046d080
+  engine_drender.cpp_pop_FUN_0046d080
     Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
     Call sites: 50, Confidence: high
-    File: engine/matrix.c
-    Signature: void __cdecl engine_matrix_c_pop_FUN_0046d080(void)
+    File: engine/drender.cpp
+    Signature: void __cdecl engine_drender_cpp_pop_FUN_0046d080(void)
     Sample call sites:
       core_actor.cpp_CDemonActor_res at 00408837: 0 reg [], 1 stack (4 bytes, via push_count)
       core_fire.cpp_CBulletHole_rend at 004978b7: 0 reg [], 1 stack (4 bytes, via add_esp)
@@ -1284,16 +1284,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       sound_sndmain.cpp_readIni_FUN_ at 005594b5: 0 reg [], 1 stack (4 bytes, via add_esp)
       sound_sndmain.cpp_FUN_00559520 at 005596af: 0 reg [], 1 stack (4 bytes, via add_esp)
 
-  unkaddr_004a76f0.cpp_SPageResource_dtor_FUN_004a83a0
-    Declared: 1 params (4 bytes), Estimated: 2 stack slots (8 bytes) [+1]
-    Call sites: 4, Confidence: high
-    File: unkaddr/004a76f0.cpp
-    Signature: int __cdecl unkaddr_004a76f0_cpp_SPageResource_dtor_FUN_004a83a0(SPageResource *this_ptr)
-    Sample call sites:
-      core_fldnotes.cpp_SPageResourc at 004a8526: 0 reg [], 2 stack (8 bytes, via add_esp)
-      core_fldnotes.cpp_SPageResourc at 004a8740: 0 reg [], 2 stack (8 bytes, via add_esp)
-      core_fldnotes.cpp_SPageResourc at 004a89bf: 0 reg [], 2 stack (8 bytes, via add_esp)
-
 ====================================================================================================
 MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
@@ -1311,6 +1301,7 @@ MEDIUM CONFIDENCE MISMATCHES
   core_fire.cpp_FUN_004a3fd0                         declared:0 est:8 (+8) [2 calls]
   shape_edittool.cpp_FUN_004850a0                    declared:0 est:8 (+8) [7 calls]
   crt_unknown.c_FUN_005a82c0                         declared:0 est:7 (+7) [2 calls]
+  crt_unknown.c_FUN_005b1090                         declared:0 est:7 (+7) [2 calls]
   sound_mp3.cpp_calculateMainDataSize_FUN_00502190   declared:0 est:7 (+7) [2 calls]
   cockpit_drawsurf.cpp_FUN_00469e70                  declared:0 est:6 (+6) [2 calls]
   cockpit_drawsurf.cpp_FUN_00469f40                  declared:0 est:6 (+6) [2 calls]
@@ -1331,6 +1322,7 @@ MEDIUM CONFIDENCE MISMATCHES
   core_box.cpp_FUN_0041eed0                          declared:0 est:5 (+5) [2 calls]
   core_dmodel.cpp_FUN_004618a0                       declared:0 est:5 (+5) [2 calls]
   core_dtrace.cpp_FUN_00474940                       declared:0 est:5 (+5) [2 calls]
+  core_flashlit.cpp_FUN_004a8180                     declared:0 est:5 (+5) [2 calls]
   core_gore.cpp_FUN_004cc970                         declared:0 est:5 (+5) [13 calls]
   core_xform.cpp_lerpMatrix3x4_FUN_005854a0          declared:0 est:5 (+5) [9 calls]
   crt_unknown.c_FUN_005a6a00                         declared:0 est:5 (+5) [2 calls]
@@ -1339,23 +1331,21 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_005addd0                         declared:0 est:5 (+5) [2 calls]
   crt_unknown.c_FUN_005afd80                         declared:0 est:5 (+5) [2 calls]
   engine_ini.cpp_FUN_004d8c90                        declared:0 est:5 (+5) [50 calls]
+  engine_pod.cpp_FUN_00512fb0                        declared:0 est:5 (+5) [4 calls]
   support_trisock.cpp_buildIPAddressOrDie_FUN_0056f5 declared:0 est:5 (+5) [2 calls]
-  unkaddr_004a76f0.cpp_FUN_004a8180                  declared:0 est:5 (+5) [2 calls]
   core_box.cpp_FUN_0041ee30                          declared:0 est:4 (+4) [4 calls]
   core_dcamera.cpp_blendCoronaTextureSpan_FUN_0044e5 declared:0 est:4 (+4) [2 calls]
   core_dcamera.cpp_sampleFogAlongRay_FUN_00448980    declared:0 est:4 (+4) [2 calls]
   core_dtrace.cpp_FUN_00477a10                       declared:0 est:4 (+4) [2 calls]
   core_mirror.cpp_computePlaneIntersection_FUN_004f3 declared:0 est:4 (+4) [2 calls]
-  core_skeleton.cpp_computeBoneModelMatrices_FUN_005 declared:0 est:4 (+4) [2 calls]
-  core_xform.cpp_FUN_00583260                        declared:0 est:4 (+4) [50 calls]
 
-  ... and 144 more
+  ... and 148 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  739 functions with low-confidence mismatches
+  744 functions with low-confidence mismatches
   Sample:
     engine_2d.c_FUN_00401590                      declared:0 est:1 (+1)
     engine_2d.c_drawTextRightAlignedColor_FUN_004 declared:3 est:0 (-3)
@@ -1366,7 +1356,7 @@ LOW CONFIDENCE MISMATCHES (limited data)
     engine_3d.c_renderPolygonAlphaBlendedPlaneMas declared:0 est:1 (+1)
     engine_3d.c_renderPolygonFullEffectsBufferedO declared:0 est:1 (+1)
     engine_3d.c_FUN_00407720                      declared:0 est:4 (+4)
-    core_actor.cpp_initTransformCache_FUN_004085c declared:0 est:1 (+1)
+    engine_3d.c_clipAndDrawLine3D_FUN_00407e30    declared:0 est:27 (+27)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
@@ -1375,7 +1365,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 28
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 1032
+Functions where declaration has FEWER params than estimated: 1040
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -1385,18 +1375,19 @@ Distribution of differences (estimated - declared):
   -3 params: 1 functions
   -2 params: 5 functions
   -1 params: 18 functions
-  +1 params: 196 functions
-  +2 params: 253 functions
-  +3 params: 183 functions
-  +4 params: 153 functions
-  +5 params: 91 functions
+  +1 params: 198 functions
+  +2 params: 254 functions
+  +3 params: 185 functions
+  +4 params: 152 functions
+  +5 params: 92 functions
   +6 params: 63 functions
   +7 params: 33 functions
-  +8 params: 32 functions
+  +8 params: 33 functions
   +9 params: 11 functions
   +10 params: 8 functions
-  +11 params: 5 functions
+  +11 params: 6 functions
   +12 params: 1 functions
   +15 params: 1 functions
   +26 params: 1 functions
+  +27 params: 1 functions
   +28 params: 1 functions

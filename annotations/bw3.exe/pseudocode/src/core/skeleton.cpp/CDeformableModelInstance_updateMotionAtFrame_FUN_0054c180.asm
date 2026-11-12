@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   core_prye.cpp_CPrye_setup_FUN_00518680 at 0051890f
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0054e850 at 0054e88e
-;   core_thehand.cpp_CTheHand_process_FUN_0056c140 at 0056c554
+;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c554
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10

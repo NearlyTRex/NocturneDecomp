@@ -9,9 +9,9 @@
 ;
 ; XREF[4]:
 ;   core_boxactor.cpp_CLightActor_process_FUN_0041d020 at 0041d037
+;   core_hpbox.cpp_CParticleBox_process_FUN_005ac960 at 005ac976
+;   core_mine.cpp_CSpiritMine_process_FUN_005ad530 at 005ad564
 ;   core_necklace.cpp_CNecklace_process_FUN_005adad0 at 005adaec
-;   core_partibox.cpp_CParticleBox_process_FUN_005ac960 at 005ac976
-;   core_spirmine.cpp_CSpiritMine_process_FUN_005ad530 at 005ad564
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cc519

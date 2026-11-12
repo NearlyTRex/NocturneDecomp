@@ -72,7 +72,7 @@ void engine_texture_cpp_FUN_0057514e(int param_1,char *param_2)
       _DAT_01d046a4 = 0x57b;
       core_main_c_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
     }
-    unkclass_instream_cpp_CInStreamFile_ctor_FUN_0057cd50(&CStack_60);
+    support_trstream_cpp_CInStreamFile_ctor_FUN_0057cd50(&CStack_60);
     iVar3 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
                       (&CStack_60,0x5ecae5,param_2);
     if (iVar3 == 0) {
@@ -80,9 +80,9 @@ void engine_texture_cpp_FUN_0057514e(int param_1,char *param_2)
       _DAT_01d046a4 = 0x580;
       core_main_c_FUN_004e4500("cacheTextureAtFullSize - Can't open texture %s, but for some reason, I got it's length",param_1 + 8);
     }
-    unkaddr_0057b9a0_cpp_CInStreamFile_read_FUN_0057cfe0
+    support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
               (&CStack_60,puStack_2c,(int)puStack_14 * (int)puStack_14);
-    unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&CStack_60);
+    support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&CStack_60);
     engine_dosio_cpp_splitPath_FUN_00461070(param_2,(char *)0x0,(char *)0x0,acStack_360,(char *)0x0)
     ;
     engine_dosio_cpp_makePath_FUN_004610a0
@@ -96,8 +96,8 @@ void engine_texture_cpp_FUN_0057514e(int param_1,char *param_2)
       _DAT_01d046a4 = 0x58d;
       core_main_c_FUN_004e4500("cacheTextureAtFullSize - Can't open %s",acStack_260);
     }
-    unkaddr_0057b9a0_cpp_CInStreamFile_read_FUN_0057cfe0(&CStack_60,puStack_38,0x300);
-    unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&CStack_60);
+    support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0(&CStack_60,puStack_38,0x300);
+    support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&CStack_60);
     iVar3 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
                       (&CStack_60,0x5ecba1,acStack_160);
     if (iVar3 != 0) {
@@ -107,9 +107,9 @@ void engine_texture_cpp_FUN_0057514e(int param_1,char *param_2)
         _DAT_01d046a4 = 0x595;
         core_main_c_FUN_004e4500("cacheTextureAtFullSize - Out of memory");
       }
-      unkaddr_0057b9a0_cpp_CInStreamFile_read_FUN_0057cfe0
+      support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0
                 (&CStack_60,puStack_18,(int)puStack_14 * (int)puStack_14);
-      unkaddr_0057b9a0_cpp_CInStreamFile_close_FUN_0057d180(&CStack_60);
+      support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&CStack_60);
     }
     pvStack_30 = malloc((int)puStack_14 * (int)puStack_14 * 4);
     if (pvStack_30 == (void *)0x0) {
@@ -170,7 +170,7 @@ void engine_texture_cpp_FUN_0057514e(int param_1,char *param_2)
       FUN_005b86a0(puStack_18);
     }
     engine_texture_cpp_FUN_00574ea0(param_1,(int)puStack_14 * 2,pvStack_30,puStack_38,puStack_28);
-    unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&CStack_60,0);
+    support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(&CStack_60,0);
     return;
   }
   pcVar10 = (char *)(param_1 + 8);

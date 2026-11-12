@@ -33,7 +33,7 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[20]:
+; XREF[21]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a3d7
 ;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 004113bf
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 0042684d
@@ -43,8 +43,8 @@
 ;   core_demnfolk.cpp_FUN_00455080 at 00455b5b
 ;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 0048822d
 ;   core_enemy.cpp_FUN_004893f0 at 00489476
-;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004af346
-;   ... and 10 more
+;   core_enemy.cpp_FUN_00489490 at 00489514
+;   ... and 11 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40

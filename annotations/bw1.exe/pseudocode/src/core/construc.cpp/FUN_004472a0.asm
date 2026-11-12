@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_constrct.cpp_CConstruct_processDamage_FUN_00447090 at 00447189
-;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 004461ab
+;   core_construc.cpp_CConstruct_processDamage_FUN_00447090 at 00447189
+;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 004461ab
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_construc_cpp_005d7095

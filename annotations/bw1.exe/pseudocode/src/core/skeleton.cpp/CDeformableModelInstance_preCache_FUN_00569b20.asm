@@ -16,7 +16,7 @@
 ;   core_bride.cpp_CBride_setup_FUN_00423940 at 00423951
 ;   core_carved.cpp_CCarved_setup_FUN_004287e0 at 004287ee
 ;   core_charactr.cpp_CCharacter_setup_FUN_0042c510 at 0042c59e
-;   core_constrct.cpp_CConstruct_setup_FUN_004459c0 at 004459fd
+;   core_construc.cpp_CConstruct_setup_FUN_004459c0 at 004459fd
 ;   ... and 31 more
 ;
 ; Called Functions:

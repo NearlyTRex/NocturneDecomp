@@ -36,10 +36,10 @@
 ;   core_fire.cpp_CFireEffect_createLaserPath_FUN_004a2b70
 ;   core_inv.cpp_FUN_004db9e0
 ;   core_prye.cpp_FUN_0051f360
+;   core_prye.cpp_FUN_00524800
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_0053ec90
-;   core_setcolid.cpp_FUN_0053cff0
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -134,8 +134,8 @@ section .text
     PUSH EBX                            ; 005221aa
     LEA ESI,[EBP + -0x42]               ; 005221ab
     LEA EDI,[EBP + -0x12]               ; 005221ae
-    CALL unkafter_prye.cpp_FUN_00524800 ; 005221b1
-        ;   XREF to: 00524800 (UNCONDITIONAL_CALL)  ; undefined unkafter_prye.cpp_FUN_00524800()
+    CALL core_prye.cpp_FUN_00524800     ; 005221b1
+        ;   XREF to: 00524800 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00524800()
     ADD ESP,0x4                         ; 005221b6
     LEA EAX,[EBP + -0x12]               ; 005221b9
     LEA ESI,[EBP + -0x42]               ; 005221bc
@@ -416,8 +416,8 @@ section .text
     ADD ESP,0xc                         ; 005224e9
     MOV EDX,dword ptr [0x005f2afc]      ; 005224ec | DAT_005f2afc
     PUSH EDX                            ; 005224f2 | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 005224f3
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 005224f3
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 005224f8
     PUSH EBX                            ; 005224fb
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830 ; 005224fc
@@ -542,8 +542,8 @@ section .text
     ADD ESP,0xc                         ; 00522674
     MOV EDX,dword ptr [0x005f2afc]      ; 00522677 | DAT_005f2afc
     PUSH EDX                            ; 0052267d | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0052267e
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0052267e
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 00522683
     PUSH EBX                            ; 00522686
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830 ; 00522687

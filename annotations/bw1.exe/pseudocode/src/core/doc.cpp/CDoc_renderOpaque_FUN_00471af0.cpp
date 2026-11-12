@@ -225,7 +225,7 @@ LAB_00471d62:
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850(pCVar7,pCVar8,pCVar9);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
                 ((CKeyFramedModelInstance *)(iStack_28 + 0x158),0.0,-1);
-      engine_matrix_c_pop_FUN_004839a0();
+      engine_drender_cpp_pop_FUN_004839a0();
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
     }
   }
@@ -291,7 +291,7 @@ LAB_00471d62:
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850(pCVar7,pCVar8,pCVar9);
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
                 ((CKeyFramedModelInstance *)(iStack_2c + 0x158),0.0,-1);
-      engine_matrix_c_pop_FUN_004839a0();
+      engine_drender_cpp_pop_FUN_004839a0();
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0((CDemonActor *)this_ptr);
     }
   }

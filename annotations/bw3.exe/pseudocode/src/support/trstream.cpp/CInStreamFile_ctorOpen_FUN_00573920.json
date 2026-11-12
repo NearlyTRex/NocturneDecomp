@@ -1,0 +1,162 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 62,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 48
+  },
+  "cross_references": [
+    {
+      "addr": "00440a70",
+      "from_addr": "00440a84",
+      "name": "support_codec.cpp_FUN_00440a70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00573920",
+    "address_range": [
+      [
+        "00573920",
+        "0057398d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trstream.cpp_CInStreamFile_ctorOpen_FUN_00573920",
+    "signature": "undefined4 * __cdecl support_trstream_cpp_CInStreamFile_ctorOpen_FUN_00573920(CInStreamFile *this_ptr,LPCSTR param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00573f50",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_open_FUN_00573f50"
+    },
+    {
+      "addr": "00572530",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_FUN_00572530"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e5a84",
+      "name": "g_CInStreamFileVTable",
+      "type": "undefined1*",
+      "value": "00573a40"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00440a84",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_00440a70",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3214285714285716,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 25,
+      "INT_ADD": 17,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 8,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 93
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInStreamFile *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint * __cdecl support_trstream_cpp_CInStreamFile_ctorOpen_FUN_00573920(CInStreamFile *this_ptr,LPCSTR param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint * __cdecl support_trstream_cpp_CInStreamFile_ctorOpen_FUN_00573920(CInStreamFile *this_ptr,LPCSTR param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "support_trstream_cpp_CInStreamFile_open_FUN_00573f50(this_ptr_00,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "support_trstream_cpp_CInStreamFile_open_FUN_00573f50(this_ptr_00,param_2,param_3);",
+      "type": "unnamed_param"
+    }
+  ]
+}

@@ -75,7 +75,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452de0(CDem
   float local_18;
   float local_14;
   
-  engine_matrix_c_matrixPush_FUN_00483990();
+  engine_drender_cpp_matrixPush_FUN_00483990();
   fVar4 = (float10)_DAT_005d78f7;
   fVar5 = ((float10)(this_ptr->base).position.f.x - (float10)position->x) * fVar4;
   fVar6 = ((float10)(this_ptr->base).position.f.y - (float10)position->y) * fVar4;
@@ -194,7 +194,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452de0(CDem
   if (((uVar3 & 0x80000000) != 0) && ((char)uVar3 != '\0')) {
     iVar2 = 0;
   }
-  engine_matrix_c_pop_FUN_004839a0();
-  engine_matrix_c_pop_FUN_004839a0();
+  engine_drender_cpp_pop_FUN_004839a0();
+  engine_drender_cpp_pop_FUN_004839a0();
   return iVar2;
 }

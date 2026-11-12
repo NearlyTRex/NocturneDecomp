@@ -31,7 +31,7 @@
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00448fd0
 ;   core_main.c_FUN_004e4330
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046d520
-;   engine_matrix.c_popViewport_FUN_0046d320
+;   engine_drender.cpp_popViewport_FUN_0046d320
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     ADD ESP,0x8                         ; 0045c858
     MOV ECX,dword ptr [0x005f2afc]      ; 0045c85b | DAT_005f2afc
     PUSH ECX                            ; 0045c861 | DAT_01bdd7e4
-    CALL engine_matrix.c_popViewport_FUN_0046d320 ; 0045c862
-        ;   XREF to: 0046d320 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0046d320()
+    CALL engine_drender.cpp_popViewport_FUN_0046d320 ; 0045c862
+        ;   XREF to: 0046d320 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_0046d320()
     ADD ESP,0x4                         ; 0045c867
     MOV EBX,dword ptr [ESI + 0x1cc4]    ; 0045c86a
     XOR EAX,EAX                         ; 0045c870

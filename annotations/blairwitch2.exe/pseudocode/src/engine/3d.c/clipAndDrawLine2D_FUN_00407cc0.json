@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 261,
     "complexity_score": 1244,
-    "cross_reference_count": 5,
+    "cross_reference_count": 6,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
@@ -21,9 +21,9 @@
   },
   "cross_references": [
     {
-      "addr": "005424ac",
+      "addr": "005424b0",
       "from_addr": "005425d6",
-      "name": "core_skeleton.cpp_FUN_005424ac",
+      "name": "core_skeleton.cpp_FUN_005424b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -36,6 +36,12 @@
       "addr": "00404590",
       "from_addr": "00404616",
       "name": "engine_3d.c_drawLineStrip2D_FUN_00404590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047fd00",
+      "from_addr": "0047fdf8",
+      "name": "shape_edittool.cpp_FUN_0047fd00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -146,7 +152,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 7,
+    "call_site_count": 10,
     "call_sites": [
       {
         "call_addr": "00407ca5",
@@ -217,7 +223,40 @@
       {
         "call_addr": "005425d6",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_005424ac",
+        "caller": "core_skeleton.cpp_FUN_005424b0",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "0047fdf8",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047fd00",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "0047fe41",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047fd00",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "0047fe92",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047fd00",
         "estimated_params": 24,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1140,7 +1179,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "call_site_count": 7,
+      "call_site_count": 10,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 24,

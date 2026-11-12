@@ -21,7 +21,7 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processMotionEvent_FUN_005a252
     uVar2 = 0x41C80000;
     break;
   case 0x1fa5:
-    iVar1 = unkafter_basicene_cpp_FUN_0059f740
+    iVar1 = core_basicene_cpp_FUN_0059f740
                       (this_ptr,0x40A00000,this_ptr->right_finger_bone,0x3f800000);
     if (iVar1 == 0) {
       return;
@@ -45,7 +45,7 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_processMotionEvent_FUN_005a252
   default:
     goto switchD_005a2537_default;
   }
-  iVar1 = unkafter_basicene_cpp_FUN_0059f740(this_ptr,uVar2,iVar1,uVar3);
+  iVar1 = core_basicene_cpp_FUN_0059f740(this_ptr,uVar2,iVar1,uVar3);
 switchD_005a2537_default:
   if (iVar1 == 0) {
     return;

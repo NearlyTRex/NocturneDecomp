@@ -34,7 +34,7 @@ void __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004ae550(CFireball *th
   _DAT_01c570ac = 1;
   _DAT_01c570b0 = 2;
   _DAT_01c570b4 = 3;
-  engine_matrix_c_FUN_00483b50(DAT_00612560);
+  engine_drender_cpp_FUN_00483b50(DAT_00612560);
   _DAT_01c57078 = local_18;
   *(uint *)(&DAT_01c5707c + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffffec + (uint)bVar4 * -8);

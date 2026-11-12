@@ -21,7 +21,7 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004b1060(CGabriella *t
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
     core_cloth_cpp_CCloth_render_FUN_005b0fe0(&this_ptr->coat_cloth,(CDeformableModelInstance *)0x0)
     ;
-    engine_matrix_c_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
     this_ptr_00 = (this_ptr->base).inventories[0].selected_weapons
                   [(this_ptr->base).inventories[0].current_group];
     if (((this_ptr_00 != (CWeapon *)0x0) &&

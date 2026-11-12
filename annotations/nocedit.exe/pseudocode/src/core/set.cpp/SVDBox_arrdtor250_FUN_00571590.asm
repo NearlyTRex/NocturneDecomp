@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SVDBox * __cdecl core_set_cpp_SVDBox_arrdtor250_FUN_00571590(SVDBox *objs,uint flags)
+; SVDBox * __cdecl core_set_cpp_SVDBox_arrdtor250_FUN_00571590(SVDBox *this_ptr,uint flags)
 ;
 ; Parameters:
-; SVDBox *         Stack[0x4]:4   objs
+; SVDBox *         Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

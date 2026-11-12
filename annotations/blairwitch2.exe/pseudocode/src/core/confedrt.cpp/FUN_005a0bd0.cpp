@@ -67,19 +67,19 @@ void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2)
   float fStack_14;
   
   bVar5 = 0;
-  iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,"Death");
+  iVar1 = core_muzzle_cpp_FUN_0059daa0(param_1 + 0x10af8,"Death");
   if (iVar1 == 0) {
-    iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,"Animation");
+    iVar1 = core_muzzle_cpp_FUN_0059daa0(param_1 + 0x10af8,"Animation");
     if (iVar1 == 0) {
       (**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);
     }
   }
   pCStack_1c = (CSimpleParticleSystem *)(param_1 + 0x154);
-  unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180(pCStack_1c,param_2);
+  core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180(pCStack_1c,param_2);
   param_2 = *(float *)(param_1 + 0x2a8) - param_2;
   *(float *)(param_1 + 0x2a8) = param_2;
   if (param_2 <= 0.0) {
-    iVar1 = unkafter_superopt_cpp_CSimpleParticleSystem_isActive_FUN_005a8130(pCStack_1c);
+    iVar1 = core_bwspart_cpp_CSimpleParticleSystem_isActive_FUN_005a8130(pCStack_1c);
     if (iVar1 != 0) {
       core_xform_cpp_FUN_00591530
                 (&DAT_0265370c,param_1 + 0x1134 + *(int *)(param_1 + 0x11860) * 0x30);
@@ -92,7 +92,7 @@ void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2)
       *(uint *)(param_1 + 0x2a8) = 0x3d4ccccd;
       pCStack_18 = pCStack_1c;
       do {
-        iVar2 = unkaddr_005a7eb0_cpp_FUN_005a7ed0();
+        iVar2 = core_bwgrndma_cpp_FUN_005a7ed0();
         if (iVar2 != 0) {
           afStack_44[3] = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
           fStack_14 = afStack_44[3];
@@ -200,7 +200,7 @@ void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2)
           fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar6,fVar7);
           fStack_14 = fVar6;
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.3,0.6);
-          unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+          core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                     (pCStack_18,0x3f800000,0x3f800000,0,0x3f333333,0,fStack_14,fVar6,uVar8,pfVar9,
                      puVar4,puVar3,uVar11);
         }
@@ -210,9 +210,9 @@ void core_confedrt_cpp_FUN_005a0bd0(int param_1,float param_2)
   }
   iVar1 = (**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);
   if (iVar1 != 0) {
-    iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,"Chasing");
+    iVar1 = core_muzzle_cpp_FUN_0059daa0(param_1 + 0x10af8,"Chasing");
     if (iVar1 != 0) {
-      iVar1 = unkaddr_0059d350_cpp_FUN_0059dae0
+      iVar1 = core_muzzle_cpp_FUN_0059dae0
                         (param_1 + 0x10af8,"ChaseComplete","RangeAttack");
       if (iVar1 != 0) {
         fVar7 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x20) - *(float *)(param_1 + 0x20);

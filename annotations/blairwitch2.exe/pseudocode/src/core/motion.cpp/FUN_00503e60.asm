@@ -15,12 +15,12 @@
 ;   core_confedrt.cpp_FUN_005a1180 at 005a1216
 ;   core_doc.cpp_FUN_00450c60 at 004513d0
 ;   core_doc.cpp_FUN_004555c0 at 004556e5
-;   core_dog1.cpp_CDog_processLeapAttackState_FUN_005ac200 at 005ac23d
+;   core_fforest.cpp_FUN_005a2ac0 at 005a2b07
 ;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004add1d
 ;   core_ghostchi.cpp_CGhostChild_processMeleeAttackState_FUN_005a9580 at 005a9601
 ;   core_ghoul.cpp_CGhoul_process_FUN_004c1bb0 at 004c3419
-;   core_hag.cpp_CHag_processMeleeAttackState_FUN_005aab50 at 005aac51
 ;   core_hand.cpp_CHand_processMeleeAttackState_FUN_005a9ed0 at 005a9f76
+;   core_hand.cpp_CHand_renderTransparent_FUN_005aa4a0 at 005aa4fb
 ;   ... and 9 more
 ;
 ; *****************************************************************************

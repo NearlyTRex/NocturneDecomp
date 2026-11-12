@@ -13,7 +13,7 @@ void __cdecl core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590(CDemon
 {
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
             (DAT_00612560,(CVector3f *)&DAT_020af5ac);
-  engine_matrix_c_FUN_004839b0(DAT_00612560,_DAT_020af5c4);
+  engine_drender_cpp_FUN_004839b0(DAT_00612560,_DAT_020af5c4);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
             (DAT_00612560,(CVector3f *)&DAT_020af5b8);
   engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_00484190(DAT_00612560,0);

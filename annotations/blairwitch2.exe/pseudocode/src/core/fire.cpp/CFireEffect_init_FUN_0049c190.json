@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 396,
+    "complexity_score": 406,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 44,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 166,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
@@ -531,6 +531,14 @@
       "match": "DAT_01c8672c",
       "severity": "mild",
       "text": "} while (puVar5 != (uint *)&DAT_01c8672c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_01c91264",
+      "severity": "mild",
+      "text": "} while (pCVar7 != (CGlassParticle *)&DAT_01c91264);",
       "type": "undefined_data"
     },
     {

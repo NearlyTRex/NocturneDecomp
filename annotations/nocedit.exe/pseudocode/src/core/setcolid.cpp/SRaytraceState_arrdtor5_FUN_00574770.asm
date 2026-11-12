@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_arrdtor5_FUN_00574770(SRaytraceState *objs,uint flags)
+; SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_arrdtor5_FUN_00574770(SRaytraceState *this_ptr,uint flags)
 ;
 ; Parameters:
-; SRaytraceState * Stack[0x4]:4   objs
+; SRaytraceState * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

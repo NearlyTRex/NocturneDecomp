@@ -19,10 +19,10 @@
 ;   core_baal.cpp_FUN_00597700 at 005977a9
 ;   core_baal.cpp_FUN_00597be0 at 00597bff
 ;   core_bird.cpp_CBird_renderOpaque_FUN_0040fe90 at 0040ff09
+;   core_bird.cpp_FUN_00410030 at 0041008b
+;   core_bmppuzzl.cpp_CChemPuzzle_load_FUN_004133c0 at 00413b62
+;   core_bmppuzzl.cpp_CChemPuzzle_reset_FUN_004132c0 at 0041335a
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400 at 004174ee
-;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930 at 00418efd
-;   core_boxactor.cpp_CLightActor_process_FUN_00420420 at 00420497
-;   core_bugs.cpp_CBugs_ctor_FUN_00420ea0 at 00420efb
 ;   ... and 63 more
 ;
 ; Referenced Globals:

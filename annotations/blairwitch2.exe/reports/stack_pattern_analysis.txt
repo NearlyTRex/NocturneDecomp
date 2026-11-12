@@ -7,11 +7,11 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 692 / 6215
+Functions with stack patterns: 704 / 6259
 
 Pattern type counts:
-  stack_alignment                  442
-  alt_frame_pointer                407
+  stack_alignment                  446
+  alt_frame_pointer                424
   dynamic_alloca                     4
   pushf                              3
 
@@ -63,6 +63,12 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00407c5a: MOV EDI,ESP
     - [alt_frame_pointer] at 00407c91: MOV EDI,ESP
     - [alt_frame_pointer] at 00407ca1: MOV EDI,ESP
+
+  engine_3d.c_FUN_00407f40
+    File: engine/3d.c, Suspects: 10
+    - [alt_frame_pointer] at 00407f5a: MOV EDI,ESP
+    - [alt_frame_pointer] at 00407f91: MOV EDI,ESP
+    - [alt_frame_pointer] at 00407fa1: MOV EDI,ESP
 
   core_actor.cpp_FUN_00408290
     File: core/actor.cpp, Suspects: 93
@@ -129,6 +135,10 @@ MEDIUM SEVERITY - May cause decompiler artifacts
   core_actor.cpp_getRandomInt_FUN_0040cfc0
     File: core/actor.cpp, Suspects: 1
     - [stack_alignment] at 0040cfc8: AND ESP,0xfffffff8
+
+  core_actor.cpp_FUN_0040d370
+    File: core/actor.cpp, Suspects: 7
+    - [stack_alignment] at 0040d376: AND ESP,0xfffffff8
 
   core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040e170
     File: core/ammo.cpp, Suspects: 10
@@ -249,15 +259,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/boneguy.cpp, Suspects: 58
     - [alt_frame_pointer] at 00418456: MOV EDI,ESP
 
-  core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00419520
-    File: core/boneguy.cpp, Suspects: 29
-    - [stack_alignment] at 0041952c: AND ESP,0xfffffff8
-
-  core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0c0
-    File: core/boneguy.cpp, Suspects: 13
-    - [alt_frame_pointer] at 0041a25d: MOV ESI,ESP
-
-  ... and 638 more functions
+  ... and 650 more functions
 
 ====================================================================================================
 CORRELATION: Stack patterns vs suspect counts
@@ -265,5 +267,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 28.4 suspects/function
+  With stack patterns:    avg 28.5 suspects/function
   Without stack patterns: avg 7.8 suspects/function

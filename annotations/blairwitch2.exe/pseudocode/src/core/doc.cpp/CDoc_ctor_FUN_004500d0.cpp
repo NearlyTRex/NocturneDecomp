@@ -1,6 +1,6 @@
 // Name: core_doc.cpp_CDoc_ctor_FUN_004500d0
 // Address: 004500d0
-// Address Range: [[004500d0, 0045019e]]
+// Address Range: [[004500d0, 00450578]]
 // Convention: unknown
 // Signature: CDoc * core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)
 

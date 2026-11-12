@@ -14,7 +14,7 @@ SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_ctor_FUN_004a2140(SP
   int extraout_EAX;
   CAlphaBitmap *pCVar1;
   
-  unkaddr_004a1200_cpp_SPageResource_ctor_FUN_004a1e60(&this_ptr->base);
+  core_fldnotes_cpp_SPageResource_ctor_FUN_004a1e60(&this_ptr->base);
   pCVar1 = engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420((CAlphaBitmap *)(extraout_EAX + 0x18))
   ;
   pCVar1[-1].height = (int)&g_SPageResourceBitmapVTable;

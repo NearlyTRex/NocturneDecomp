@@ -5,10 +5,6 @@
 // Function prototypes for core/stranger.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_stranger.cpp_adjustAimAngleForOffset_FUN_00459db0
-// Address: 00459db0
-void __cdecl adjustAimAngleForOffset(float *angle,float distance,float offset);
-
 // Original: core_stranger.cpp_staticInit_FUN_00562560
 // Address: 00562560
 void __cdecl staticInit(void);
@@ -32,10 +28,6 @@ CDemonActorType * CStranger::getActorType(CStranger *this_ptr);
 // Original: core_stranger.cpp_CStranger_ctor_FUN_005627f0
 // Address: 005627f0
 CStranger * CStranger::ctor(CStranger *this_ptr);
-
-// Original: core_stranger.cpp_FUN_005628b4
-// Address: 005628b4
-void FUN_005628b4(void);
 
 // Original: core_stranger.cpp_CStranger_setup_FUN_00562b90
 // Address: 00562b90

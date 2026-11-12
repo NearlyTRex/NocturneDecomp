@@ -17,7 +17,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240
 ;   core_cloth.cpp_CCloth_render_FUN_00441800
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     ADD ESP,0x8                         ; 004c9fea
     MOV EDX,dword ptr [0x00612560]      ; 004c9fed | DAT_00612560
     PUSH EDX                            ; 004c9ff3 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 004c9ff4
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 004c9ff4
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004c9ff9
     JMP 0x004c9fb8                      ; 004c9ffc
         ;   XREF to: 004c9fb8 (UNCONDITIONAL_JUMP)  ; LAB_004c9fb8

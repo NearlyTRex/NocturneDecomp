@@ -9,6 +9,10 @@
 // Address: 00517670
 void FUN_00517670(int *param_1,int param_2);
 
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00517710
+// Address: 00517710
+void __cdecl CPackedBitmapSet::loadBitmapSetFromRange(CPackedBitmapSet *this_ptr,char *param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
+
 // Original: cockpit_pkbmpset.cpp_FUN_005177de
 // Address: 005177de
 void FUN_005177de(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,int param_8);

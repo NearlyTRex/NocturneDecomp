@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5289
-Functions with no callers: 2565
-Parameter mismatches detected: 168
-Signature accuracy rate: 93.8%
+Functions with parameter estimates: 5306
+Functions with no callers: 2575
+Parameter mismatches detected: 172
+Signature accuracy rate: 93.7%
 
 Mismatches by confidence:
-  High confidence:   10 (multiple call sites agree)
-  Medium confidence: 45 (some agreement)
-  Low confidence:    113 (limited data)
+  High confidence:   9 (multiple call sites agree)
+  Medium confidence: 49 (some agreement)
+  Low confidence:    114 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -36,16 +36,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       crt_unknown.c_FUN_00567560 at 005676ef: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
       crt_unknown.c_FUN_00567560 at 00567706: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
       crt_unknown.c_FUN_00567560 at 0056771d: 1 reg [EAX], 4 stack (16 bytes, via add_esp)
-
-  crt_unknown.c_FUN_005708c0
-    Declared: 0 params (0 bytes), Estimated: 4 stack slots (12 bytes) [+4]
-    Call sites: 3, Confidence: high
-    File: crt/unknown.c
-    Signature: void crt_unknown_c_FUN_005708c0(FILETIME *param_1,LPWORD param_2,LPWORD param_3)
-    Sample call sites:
-      crt_io.c_getFileStat_FUN_0056c at 0056ca18: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
-      crt_io.c_getFileStat_FUN_0056c at 0056ca56: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
-      crt_io.c_getFileStat_FUN_0056c at 0056cabb: 1 reg [EAX], 3 stack (12 bytes, via add_esp)
 
   crt_unknown.c_FUN_0056ce57
     Declared: 0 params (0 bytes), Estimated: 3 stack slots (8 bytes) [+3]
@@ -136,12 +126,15 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_005698b0                         declared:0 est:5 (+5) [2 calls]
   crt_unknown.c_FUN_0056e890                         declared:0 est:5 (+5) [2 calls]
   crt_unknown.c_FUN_00571410                         declared:0 est:5 (+5) [4 calls]
+  crt_fstream.cpp_FUN_0057264c                       declared:0 est:4 (+4) [1 calls]
   crt_unknown.c_FUN_00567bc0                         declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_0056d308                         declared:0 est:4 (+4) [2 calls]
+  crt_unknown.c_FUN_005708c0                         declared:0 est:4 (+4) [4 calls]
   crt_unknown.c_FUN_0056ced8                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_0056f170                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_00572e00                         declared:0 est:3 (+3) [2 calls]
-  shape_edittool.cpp_FUN_00470230                    declared:0 est:3 (+3) [2 calls]
+  crt_fstream.cpp_FUN_00572809                       declared:0 est:2 (+2) [1 calls]
+  crt_fstream.cpp_FUN_005729a6                       declared:0 est:2 (+2) [1 calls]
   crt_unknown.c_FUN_0056e174                         declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_0056e56c                         declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_0056e608                         declared:0 est:2 (+2) [2 calls]
@@ -175,13 +168,14 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_005684f8                         declared:0 est:1 (+1) [4 calls]
   crt_unknown.c_FUN_0056dfc0                         declared:0 est:1 (+1) [1 calls]
   crt_unknown.c_FUN_0056e664                         declared:0 est:1 (+1) [2 calls]
+  crt_unknown.c_FUN_00573ff0                         declared:0 est:1 (+1) [1 calls]
   engine_drender.cpp_CDemonRenderer_renderFacetList_ declared:5 est:4 (-1) [2 calls]
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  113 functions with low-confidence mismatches
+  114 functions with low-confidence mismatches
   Sample:
     engine_2d.c_drawTextColor_FUN_00402a60        declared:3 est:2 (-1)
     engine_3d.c_renderSortedPolygonList_FUN_00405 declared:1 est:0 (-1)
@@ -201,7 +195,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 47
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 121
+Functions where declaration has FEWER params than estimated: 125
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -211,10 +205,10 @@ Distribution of differences (estimated - declared):
   -3 params: 4 functions
   -2 params: 8 functions
   -1 params: 32 functions
-  +1 params: 37 functions
-  +2 params: 21 functions
-  +3 params: 22 functions
-  +4 params: 17 functions
+  +1 params: 38 functions
+  +2 params: 24 functions
+  +3 params: 21 functions
+  +4 params: 18 functions
   +5 params: 11 functions
   +6 params: 7 functions
   +7 params: 4 functions

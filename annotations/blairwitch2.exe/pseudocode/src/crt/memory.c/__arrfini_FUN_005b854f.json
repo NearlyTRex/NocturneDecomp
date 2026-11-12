@@ -17,9 +17,27 @@
   },
   "cross_references": [
     {
+      "addr": "0040d400",
+      "from_addr": "0040d40c",
+      "name": "core_actor.cpp_FUN_0040d400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0040f2b0",
       "from_addr": "0040f2bc",
       "name": "core_armour.cpp_FUN_0040f2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059bfe0",
+      "from_addr": "0059bfec",
+      "name": "core_bmppuzzl.cpp_CAlphaBitmap_arrdtor4_FUN_0059bfe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059bfc0",
+      "from_addr": "0059bfcc",
+      "name": "core_bmppuzzl.cpp_FUN_0059bfc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -113,6 +131,30 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004a6710",
+      "from_addr": "004a671c",
+      "name": "core_fldnotes.cpp_CAlphaBitmap_arrdtor6_FUN_004a6710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a66f0",
+      "from_addr": "004a66fc",
+      "name": "core_fldnotes.cpp_FUN_004a66f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a6730",
+      "from_addr": "004a673c",
+      "name": "core_fldnotes.cpp_SNotesMap_arrdtor4_FUN_004a6730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a6750",
+      "from_addr": "004a675c",
+      "name": "core_fldnotes.cpp_SNotesSection_arrdtor6_FUN_004a6750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004ca0a0",
       "from_addr": "004ca0af",
       "name": "core_gore.cpp_CBloodParticle_arrdtor256_FUN_004ca0a0",
@@ -140,6 +182,12 @@
       "addr": "005145d0",
       "from_addr": "005145dc",
       "name": "core_path.cpp_CPathMap_arrdtor12_FUN_005145d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00534d80",
+      "from_addr": "00534d8f",
+      "name": "core_set.cpp_FUN_00534d80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -183,54 +231,6 @@
       "from_addr": "00554aac",
       "name": "sound_sndmain.cpp_CSfxSample_arrdtor64_FUN_00554aa0",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a6710",
-      "from_addr": "004a671c",
-      "name": "unkaddr_004a1200.cpp_CAlphaBitmap_arrdtor6_FUN_004a6710",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a6730",
-      "from_addr": "004a673c",
-      "name": "unkaddr_004a1200.cpp_SNotesMap_arrdtor4_FUN_004a6730",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a6750",
-      "from_addr": "004a675c",
-      "name": "unkaddr_004a1200.cpp_SNotesSection_arrdtor6_FUN_004a6750",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059bfe0",
-      "from_addr": "0059bfec",
-      "name": "unkaddr_0059aa80.cpp_CAlphaBitmap_arrdtor4_FUN_0059bfe0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0040d400",
-      "from_addr": "0040d40c",
-      "name": "unkafter_actor.cpp_FUN_0040d400",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00534d80",
-      "from_addr": "00534d8f",
-      "name": "unkafter_box.cpp_FUN_00534d80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a66f0",
-      "from_addr": "004a66fc",
-      "name": "unkafter_fldnotes.cpp_FUN_004a66f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059bfc0",
-      "from_addr": "0059bfcc",
-      "name": "unkafter_superopt.cpp_FUN_0059bfc0",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -270,7 +270,7 @@
       {
         "call_addr": "004a66fc",
         "call_type": "direct",
-        "caller": "unkafter_fldnotes.cpp_FUN_004a66f0",
+        "caller": "core_fldnotes.cpp_FUN_004a66f0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -281,7 +281,7 @@
       {
         "call_addr": "0040d40c",
         "call_type": "direct",
-        "caller": "unkafter_actor.cpp_FUN_0040d400",
+        "caller": "core_actor.cpp_FUN_0040d400",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -325,7 +325,7 @@
       {
         "call_addr": "0059bfcc",
         "call_type": "direct",
-        "caller": "unkafter_superopt.cpp_FUN_0059bfc0",
+        "caller": "core_bmppuzzl.cpp_FUN_0059bfc0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -336,7 +336,7 @@
       {
         "call_addr": "00534d8f",
         "call_type": "direct",
-        "caller": "unkafter_box.cpp_FUN_00534d80",
+        "caller": "core_set.cpp_FUN_00534d80",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",

@@ -15,7 +15,7 @@
 ; float            Stack[0x24]:4   param_9
 ;
 ; XREF[2]:
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 0043723a
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 0043723a
 ;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 00486f9b
 ;
 ; Referenced Globals:

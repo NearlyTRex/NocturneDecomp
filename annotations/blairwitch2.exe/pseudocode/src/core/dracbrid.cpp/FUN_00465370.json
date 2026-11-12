@@ -1,0 +1,278 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 254,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 21,
+    "suspect_types": [
+      "stack_alignment_array",
+      "stack_ref",
+      "unaffected_reg",
+      "unnamed_param"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00465370",
+    "address_range": [
+      [
+        "00465370",
+        "004653f4"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_dracbrid.cpp_FUN_00465370",
+    "signature": "void core_dracbrid_cpp_FUN_00465370(float param_1,float param_2,float param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.27906976744186,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 96,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 3,
+      "INT_ADD": 32,
+      "INT_AND": 10,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_MULT": 12,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 5,
+      "INT_SUB": 24,
+      "INT_ZEXT": 12,
+      "LOAD": 15,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 270
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004653d5",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004653e6",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_dracbrid_cpp_FUN_00465370(float param_1,float param_2,float param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_dracbrid_cpp_FUN_00465370(float param_1,float param_2,float param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void core_dracbrid_cpp_FUN_00465370(float param_1,float param_2,float param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "float *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 7,
+      "match": "afStackY_1000",
+      "severity": "moderate",
+      "text": "float afStackY_1000 [1016];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = fStack_c + param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = fStack_c + param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = fStack_c + param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = fStack_c + param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = fStack_c + param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = fStack_c + param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_18 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(float *)(&stack0xffffffec + (uint)bVar1 * -8) = (&param_2)[(uint)bVar1 * -2];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(float *)(&stack0xffffffec + (uint)bVar1 * -8) = (&param_2)[(uint)bVar1 * -2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(float *)(&stack0xfffffff0 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(&param_3)[(uint)bVar1 * -2 + (uint)bVar1 * -2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = fStack_18;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = *(float *)(&stack0xffffffec + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = *(float *)(&stack0xffffffec + (uint)bVar1 * -8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(float *)(&stack0xfffffff0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    }
+  ]
+}

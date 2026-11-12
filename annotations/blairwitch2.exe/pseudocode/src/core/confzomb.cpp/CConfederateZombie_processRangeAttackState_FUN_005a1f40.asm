@@ -25,10 +25,10 @@
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
+;   core_muzzle.cpp_FUN_0059d7f0
+;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_FUN_0059dcb0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
-;   unkaddr_0059d350.cpp_FUN_0059d7f0
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
-;   unkaddr_0059d350.cpp_FUN_0059dcb0
 ;
 ; *****************************************************************************
 
@@ -93,18 +93,18 @@ section .text
     FLD float ptr [0x005fef90]          ; 005a1fe3 | DAT_005fef90
     PUSH ESI                            ; 005a1fe9
     FSTP float ptr [EBX + 0x11394]      ; 005a1fea
-    CALL unkaddr_0059d350.cpp_FUN_0059d7f0 ; 005a1ff0
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a1ff0
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
     ADD ESP,0xc                         ; 005a1ff5
     PUSH 0x3dcccccd                     ; 005a1ff8
     PUSH ESI                            ; 005a1ffd
-    CALL unkaddr_0059d350.cpp_FUN_0059dcb0 ; 005a1ffe
-        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059dcb0()
+    CALL core_muzzle.cpp_FUN_0059dcb0   ; 005a1ffe
+        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dcb0()
     ADD ESP,0x8                         ; 005a2003
     PUSH 0x5efe29                       ; 005a2006 | = "Chasing"
     PUSH ESI                            ; 005a200b
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005a200c
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a200c
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005a2011
     MOV ESP,EBP                         ; 005a2014
         ;   Label: LAB_005a2014
@@ -129,13 +129,13 @@ section .text
     FLD float ptr [0x005fef94]          ; 005a203d | DAT_005fef94
     PUSH ESI                            ; 005a2043
     FSTP float ptr [EBX + 0x11394]      ; 005a2044
-    CALL unkaddr_0059d350.cpp_FUN_0059d7f0 ; 005a204a
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a204a
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
     ADD ESP,0xc                         ; 005a204f
     PUSH 0x5efe4b                       ; 005a2052 | = "MeleeAttack"
     PUSH ESI                            ; 005a2057
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005a2058
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a2058
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005a205d
     MOV ESP,EBP                         ; 005a2060
     POP EBP                             ; 005a2062

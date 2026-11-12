@@ -112,7 +112,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
                     (this_ptr_01,euler_angles,translation);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
                     ((CKeyFramedModelInstance *)(local_14 + 0x25744),0.0,-1);
-          engine_matrix_c_pop_FUN_0046b4a0();
+          engine_drender_cpp_pop_FUN_0046b4a0();
         }
         core_charactr_cpp_CCharacter_renderAttachedModels_FUN_00425aa0((CCharacter *)this_ptr);
         if ((_DAT_01d1cdc8 != 0) &&
@@ -122,7 +122,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr)
           core_motion_cpp_FUN_005042e0(&this_ptr_00->base,(CDemonActor *)this_ptr);
           core_motion_cpp_FUN_005035c0(this_ptr_00);
         }
-        engine_matrix_c_pop_FUN_0046b4a0();
+        engine_drender_cpp_pop_FUN_0046b4a0();
         engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046bc90
                   (DAT_0060b280,aiStack_24[2]);
       }

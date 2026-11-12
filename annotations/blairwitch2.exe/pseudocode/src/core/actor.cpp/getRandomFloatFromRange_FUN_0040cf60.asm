@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[154]:
+; XREF[155]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60 at 0040ccd1
 ;   core_ammo.cpp_CAmmo_process_FUN_0040ded0 at 0040df8a
 ;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fb5f
@@ -23,7 +23,7 @@
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411d62
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 0041375e
 ;   core_bodypart.cpp_CBodyPart_addFire_FUN_00417690 at 004177ba
-;   ... and 144 more
+;   ... and 145 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005caf1a

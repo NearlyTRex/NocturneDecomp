@@ -156,7 +156,7 @@ void __cdecl core_necklace_cpp_CNecklace_process_FUN_005adad0(CNecklace *this_pt
   fStack_48 = fStack_48 + (this_ptr->base).base.location.position.x;
   fStack_44 = fStack_44 + (this_ptr->base).base.location.position.y;
   fStack_40 = fStack_40 + (this_ptr->base).base.location.position.z;
-  unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+  core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
             (g_CSimpleParticleSystemPtr,0x3f800000,0x3f800000,0,0x3ecccccd,0,0x3ed26e98,0x3ee66666,
              0x3f800000,&stack0xffffffb8,&stack0xffffff94,&stack0xffffff4c,0);
   return;

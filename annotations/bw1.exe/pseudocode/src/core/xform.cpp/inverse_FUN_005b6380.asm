@@ -26,7 +26,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[7]:
+; XREF[8]:
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00430440 at 004307db
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0 at 00432b36
 ;   core_charactr.cpp_FUN_00432690 at 00432773
@@ -34,6 +34,7 @@
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005188e0 at 00518d01
 ;   core_tentacle.cpp_CTentacle_process_FUN_005952f0 at 0059560f
 ;   core_thehand.cpp_CTheHand_process_FUN_00599150 at 005993c2
+;   core_xform.cpp_FUN_005b62b0 at 005b62c4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_xform_cpp_005fa11c

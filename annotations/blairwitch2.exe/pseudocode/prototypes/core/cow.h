@@ -5,13 +5,13 @@
 // Function prototypes for core/cow.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_cow.cpp_staticInit_FUN_00438430
-// Address: 00438430
+// Original: core_cow.cpp_staticInit_FUN_00439080
+// Address: 00439080
 void staticInit(void);
 
-// Original: core_cow.cpp_factoryFuncConveyor_FUN_00438460
-// Address: 00438460
-void factoryFuncConveyor(void);
+// Original: core_cow.cpp_factoryFuncZombieCow_FUN_004390b0
+// Address: 004390b0
+void factoryFuncZombieCow(void);
 
 // Original: core_cow.cpp_CZombieCow_getActorType_FUN_004390d0
 // Address: 004390d0

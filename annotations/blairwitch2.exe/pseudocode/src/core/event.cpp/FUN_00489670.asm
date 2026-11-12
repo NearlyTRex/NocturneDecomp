@@ -1008,14 +1008,14 @@ section .text
         ;   XREF to: 00489cc7 (CONDITIONAL_JUMP)  ; LAB_00489cc7
     PUSH 0x0                            ; 00489cbc
     PUSH ECX                            ; 00489cbe
-    CALL unkaddr_0059aa80.cpp_FUN_0059ab70 ; 00489cbf
-        ;   XREF to: 0059ab70 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059aa80.cpp_FUN_0059ab70()
+    CALL core_zombie.cpp_FUN_0059ab70   ; 00489cbf
+        ;   XREF to: 0059ab70 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059ab70()
     ADD ESP,0x8                         ; 00489cc4
     PUSH 0x1                            ; 00489cc7
         ;   Label: LAB_00489cc7
     PUSH EDI                            ; 00489cc9
-    CALL unkaddr_0059aa80.cpp_FUN_0059ab70 ; 00489cca
-        ;   XREF to: 0059ab70 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059aa80.cpp_FUN_0059ab70()
+    CALL core_zombie.cpp_FUN_0059ab70   ; 00489cca
+        ;   XREF to: 0059ab70 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059ab70()
     ADD ESP,0x8                         ; 00489ccf
     JMP 0x00489af6                      ; 00489cd2
         ;   XREF to: 00489af6 (UNCONDITIONAL_JUMP)  ; caseD_6

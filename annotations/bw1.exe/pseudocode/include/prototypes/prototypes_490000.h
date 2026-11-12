@@ -130,6 +130,7 @@ void __cdecl shape_edittool_cpp_CStrList_clear_FUN_00499470(CStrList *this_ptr);
 void __cdecl shape_edittool_cpp_CStrList_add_FUN_004994d0(CStrList *this_ptr,char *string_data);
 void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00499510(CStrList *this_ptr,int insert_index,char *string_data);
 void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00499600(CStrList *this_ptr,int new_capacity);
+void __cdecl shape_edittool_cpp_CStrList_insertRange_FUN_004996b0(CStrList *this_ptr,int param_2,CStrList *param_3);
 void __cdecl shape_edittool_cpp_CStrList_remove_FUN_00499730(CStrList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CStrList_sortAll_FUN_004997f0(CStrList *this_ptr);
 int __cdecl shape_edittool_cpp_qsortByString_FUN_00499810(char *a,char *b);

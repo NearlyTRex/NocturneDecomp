@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_FUN_005035c0
-;   unkaddr_0059d350.cpp_FUN_0059daa0
+;   core_muzzle.cpp_FUN_0059daa0
 ;
 ; *****************************************************************************
 
@@ -25,16 +25,16 @@ section .text
     PUSH 0x5f0a80                       ; 005aa265 | = "Death"
     ADD EBX,0x10af8                     ; 005aa26a
     PUSH EBX                            ; 005aa270
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005aa271
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005aa271
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005aa276
     TEST EAX,EAX                        ; 005aa279
     JNZ 0x005aa28f                      ; 005aa27b
         ;   XREF to: 005aa28f (CONDITIONAL_JUMP)  ; LAB_005aa28f
     PUSH 0x5f0a86                       ; 005aa27d | = "Animation"
     PUSH EBX                            ; 005aa282
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005aa283
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005aa283
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005aa288
     TEST EAX,EAX                        ; 005aa28b
     JZ 0x005aa2b4                       ; 005aa28d
@@ -59,8 +59,8 @@ section .text
     PUSH 0x5f0a90                       ; 005aa2b4 | = "Sleeping"
         ;   Label: LAB_005aa2b4
     PUSH EBX                            ; 005aa2b9
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005aa2ba
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005aa2ba
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005aa2bf
     TEST EAX,EAX                        ; 005aa2c2
     JNZ 0x005aa28f                      ; 005aa2c4

@@ -47,7 +47,7 @@
 ;   core_doc.cpp_FUN_00450c60 at 00450ec2
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_d_doc_cpp_005d000a+1
+;   TerminatedCString s_actionPending_d_doc_cpp_005d000b
 ;   TerminatedCString s_actionPending_d_doc_cpp_005d002e
 ;   TerminatedCString s_Object_to_pick_up_is_now_005d0051
 ;   TerminatedCString s_actionPending_d_doc_cpp_005d007f
@@ -232,8 +232,8 @@ section .text
         ;   XREF to: 004533c6 (CONDITIONAL_JUMP)  ; LAB_004533c6
     PUSH 0x87a                          ; 00453419
     PUSH EDI                            ; 0045341e
-    MOV EAX,0x5d000b                    ; 0045341f | s_actionPending_d_doc_cpp_005d000a+1
-    PUSH EAX                            ; 00453424 | s_actionPending_d_doc_cpp_005d000a+1
+    MOV EAX,0x5d000b                    ; 0045341f | = "actionPending = %d\ndoc.cpp line %d"
+    PUSH EAX                            ; 00453424 | = "actionPending = %d\ndoc.cpp line %d"
     MOV ECX,dword ptr [0x006138e0]      ; 00453425 | g_CEditorToolsPtr
     PUSH ECX                            ; 0045342b
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 0045342c

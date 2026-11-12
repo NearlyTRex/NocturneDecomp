@@ -34,6 +34,6 @@ int __cdecl core_crate_cpp_CCrate_renderOpaque_FUN_00445fa0(CCrate *this_ptr)
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
               (&this_ptr->model,0.0,-1);
   }
-  engine_matrix_c_pop_FUN_0046d080();
+  engine_drender_cpp_pop_FUN_0046d080();
   return iVar1;
 }

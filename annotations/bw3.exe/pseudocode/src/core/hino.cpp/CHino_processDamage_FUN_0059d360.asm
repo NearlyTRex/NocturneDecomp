@@ -9,10 +9,10 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
+;   core_enemy.cpp_FUN_0048a1b0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
-;   unkafter_enemy.cpp_FUN_0048a1b0
 ;
 ; *****************************************************************************
 
@@ -79,8 +79,8 @@ section .text
     PUSH dword ptr [EDI + 0x4]          ; 0059d3e6
         ;   Label: LAB_0059d3e6
     PUSH EBX                            ; 0059d3e9
-    CALL unkafter_enemy.cpp_FUN_0048a1b0 ; 0059d3ea
-        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_enemy.cpp_FUN_0048a1b0()
+    CALL core_enemy.cpp_FUN_0048a1b0    ; 0059d3ea
+        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0048a1b0()
     ADD ESP,0x8                         ; 0059d3ef
     TEST EAX,EAX                        ; 0059d3f2
     JZ 0x0059d3d8                       ; 0059d3f4

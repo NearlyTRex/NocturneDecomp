@@ -36,6 +36,9 @@
 ;   ... and 41 more
 ;
 ; Called Functions:
+;   core_flashlit.cpp_FUN_004b9e30
+;   core_flashlit.cpp_FUN_004ba490
+;   core_flashlit.cpp_FUN_004ba540
 ;   core_fldnotes.cpp_SNotesSection_layout_FUN_004bc130
 ;   core_fldnotes.cpp_STextPage_findResourceAt_FUN_004bb110
 ;   core_fldnotes.cpp_STextView_drawPage_FUN_004bbc70
@@ -48,9 +51,6 @@
 ;   engine_alphabit.cpp_FUN_0040d1c0
 ;   engine_alphabit.cpp_FUN_0040d660
 ;   engine_alphabit.cpp_FUN_0040d970
-;   engine_dosio.cpp_splitPath_FUN_00479580
-;   engine_font.cpp_FUN_004c1dd0
-;   support_newmsg.cpp_getLocalizedString_FUN_00531090
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -193,8 +193,8 @@ section .text
     PUSH EDI                            ; 004be289
     MOV EBP,dword ptr [0x01c4353c]      ; 004be28a | DAT_01c4353c
     PUSH EBP                            ; 004be290
-    CALL unkaddr_004b9ab0.cpp_FUN_004ba490 ; 004be291
-        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; undefined unkaddr_004b9ab0.cpp_FUN_004ba490()
+    CALL core_flashlit.cpp_FUN_004ba490 ; 004be291
+        ;   XREF to: 004ba490 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004ba490()
     ADD ESP,0x8                         ; 004be296
     TEST EAX,EAX                        ; 004be299
     JL 0x004be2d0                       ; 004be29b
@@ -211,8 +211,8 @@ section .text
     ADD EAX,0x1cc4474                   ; 004be2b3
     ADD EAX,0x40                        ; 004be2b8
     PUSH EAX                            ; 004be2bb
-    CALL unkaddr_004b9ab0.cpp_FUN_004b9e30 ; 004be2bc
-        ;   XREF to: 004b9e30 (UNCONDITIONAL_CALL)  ; undefined unkaddr_004b9ab0.cpp_FUN_004b9e30()
+    CALL core_flashlit.cpp_FUN_004b9e30 ; 004be2bc
+        ;   XREF to: 004b9e30 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004b9e30()
     MOV EAX,0x1                         ; 004be2c1
     ADD ESP,0x4                         ; 004be2c6
     MOV dword ptr [ESP + 0x508],EAX     ; 004be2c9
@@ -221,8 +221,8 @@ section .text
     PUSH EDX                            ; 004be2d6
     MOV ECX,dword ptr [0x01c4353c]      ; 004be2d7 | DAT_01c4353c
     PUSH ECX                            ; 004be2dd
-    CALL unkaddr_004b9ab0.cpp_FUN_004ba540 ; 004be2de
-        ;   XREF to: 004ba540 (UNCONDITIONAL_CALL)  ; undefined unkaddr_004b9ab0.cpp_FUN_004ba540()
+    CALL core_flashlit.cpp_FUN_004ba540 ; 004be2de
+        ;   XREF to: 004ba540 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004ba540()
     ADD ESP,0x8                         ; 004be2e3
     TEST EAX,EAX                        ; 004be2e6
     JZ 0x004be2f5                       ; 004be2e8
@@ -705,8 +705,8 @@ section .text
     ADD ESP,0x4                         ; 004be8dd
     PUSH EAX                            ; 004be8e0
     MOV EBX,0x1                         ; 004be8e1
-    CALL unkaddr_004b9ab0.cpp_FUN_004b9e30 ; 004be8e6
-        ;   XREF to: 004b9e30 (UNCONDITIONAL_CALL)  ; undefined unkaddr_004b9ab0.cpp_FUN_004b9e30()
+    CALL core_flashlit.cpp_FUN_004b9e30 ; 004be8e6
+        ;   XREF to: 004b9e30 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004b9e30()
     ADD ESP,0x4                         ; 004be8eb
     MOV dword ptr [ESP + 0x508],EBX     ; 004be8ee
     JMP 0x004be3f5                      ; 004be8f5

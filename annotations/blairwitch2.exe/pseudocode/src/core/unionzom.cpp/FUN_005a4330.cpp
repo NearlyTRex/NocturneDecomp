@@ -30,42 +30,41 @@ void core_unionzom_cpp_FUN_005a4330(int param_1,float param_2)
   float afStack_1c [4];
   
   bVar5 = 0;
-  unkafter_superopt_cpp_CSimpleParticleSystem_process_FUN_005a8180
+  core_bwspart_cpp_CSimpleParticleSystem_process_FUN_005a8180
             ((CSimpleParticleSystem *)(param_1 + 0x264),param_2);
-  iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,&DAT_005f0312);
+  iVar3 = core_muzzle_cpp_FUN_0059daa0(param_1 + 0x10af8,&DAT_005f0312);
   if (iVar3 != 0) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
               ((CMotionController *)(param_1 + 0x2b4),8,1);
   }
   iVar3 = param_1 + 0x10af8;
-  iVar4 = unkaddr_0059d350_cpp_FUN_0059daa0(iVar3,"Death");
+  iVar4 = core_muzzle_cpp_FUN_0059daa0(iVar3,"Death");
   if (((iVar4 == 0) &&
-      (iVar4 = unkaddr_0059d350_cpp_FUN_0059daa0(iVar3,"Animation"), iVar4 == 0)) &&
-     (iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(iVar3,&DAT_005f0327), iVar3 == 0)) {
+      (iVar4 = core_muzzle_cpp_FUN_0059daa0(iVar3,"Animation"), iVar4 == 0)) &&
+     (iVar3 = core_muzzle_cpp_FUN_0059daa0(iVar3,&DAT_005f0327), iVar3 == 0)) {
     (**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);
   }
   if (*(int *)(param_1 + 0x10a78) != 0) {
     iVar3 = param_1 + 0x10af8;
-    iVar4 = unkaddr_0059d350_cpp_FUN_0059daa0(iVar3,"Chasing");
+    iVar4 = core_muzzle_cpp_FUN_0059daa0(iVar3,"Chasing");
     if (((iVar4 != 0) &&
-        (iVar4 = unkaddr_0059d350_cpp_FUN_0059dae0
-                           (iVar3,"ChaseComplete","MeleeAttack"), iVar4 != 0)) &&
+        (iVar4 = core_muzzle_cpp_FUN_0059dae0(iVar3,"ChaseComplete","MeleeAttack")
+        , iVar4 != 0)) &&
        (fVar1 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x20) - *(float *)(param_1 + 0x20),
        fVar2 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x28) - *(float *)(param_1 + 0x28),
        _DAT_005ff540 <= SQRT(fVar2 * fVar2 + fVar1 * fVar1))) {
       *(float *)(param_1 + 0x11394) = _DAT_005ff540;
-      unkaddr_0059d350_cpp_FUN_0059d7f0(iVar3,"ChaseComplete","VanishAttack");
+      core_muzzle_cpp_FUN_0059d7f0(iVar3,"ChaseComplete","VanishAttack");
     }
   }
   iVar3 = param_1 + 0x10af8;
-  iVar4 = unkaddr_0059d350_cpp_FUN_0059daa0(iVar3,&DAT_005f0369);
-  if ((((iVar4 != 0) ||
-       (iVar4 = unkaddr_0059d350_cpp_FUN_0059daa0(iVar3,"Chasing"), iVar4 != 0)) ||
-      ((iVar4 = unkaddr_0059d350_cpp_FUN_0059daa0(iVar3,"MeleeAttack"), iVar4 != 0 ||
-       (iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(iVar3,"RangeAttack"), iVar3 != 0)))) &&
+  iVar4 = core_muzzle_cpp_FUN_0059daa0(iVar3,&DAT_005f0369);
+  if ((((iVar4 != 0) || (iVar4 = core_muzzle_cpp_FUN_0059daa0(iVar3,"Chasing"), iVar4 != 0)
+       ) || ((iVar4 = core_muzzle_cpp_FUN_0059daa0(iVar3,"MeleeAttack"), iVar4 != 0 ||
+             (iVar3 = core_muzzle_cpp_FUN_0059daa0(iVar3,"RangeAttack"), iVar3 != 0)))) &&
      ((*(int *)(param_1 + 0x113b8) == 0 && (*(int *)(param_1 + 0x113c4) != 0x3f800000)))) {
-    unkafter_basicene_cpp_FUN_005a01a0(param_1,*(int *)(param_1 + 0x113c4),0x3f800000,0x3f000000);
-    unkafter_basicene_cpp_FUN_0059f570(param_1);
+    core_basicene_cpp_FUN_005a01a0(param_1,*(int *)(param_1 + 0x113c4),0x3f800000,0x3f000000);
+    core_basicene_cpp_FUN_0059f570(param_1);
   }
   fStack_38 = *(float *)(param_1 + 0x11354) * _DAT_005f038e;
   fStack_34 = *(float *)(param_1 + 0x11358) * _DAT_005f038e;

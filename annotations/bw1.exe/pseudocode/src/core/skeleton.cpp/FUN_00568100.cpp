@@ -15,8 +15,8 @@ void core_skeleton_cpp_FUN_00568100(CDeformableModelInstance *param_1,int param_
   CVector3f *pCVar2;
   float fVar3;
   CQuaternion4f *pCVar4;
+  EBoneUpdateMode EVar5;
   CSkeleton *this_ptr;
-  int iVar5;
   int iVar6;
   float *pfVar7;
   float *pfVar8;
@@ -89,7 +89,7 @@ void core_skeleton_cpp_FUN_00568100(CDeformableModelInstance *param_1,int param_
   int local_28;
   int local_24;
   int local_20;
-  int local_1c;
+  EBoneUpdateMode local_1c;
   int local_18;
   
   bVar9 = 0;
@@ -98,17 +98,17 @@ void core_skeleton_cpp_FUN_00568100(CDeformableModelInstance *param_1,int param_
               (&param_1->base,param_2,param_3,&local_5c,&local_54,&stack0xfffff680);
     this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(param_1);
     local_1c = param_1->bone_update_mode;
-    if (local_1c == 0) {
+    if (local_1c == BONE_UPDATE_SIMPLE_FLAT) {
       if (0 < this_ptr->bone_count) {
         local_3c = (param_1->bone_transform).pose_data.bone_rotations;
         local_44 = param_1;
         do {
-          iVar6 = local_1c;
-          iVar5 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_00563630
+          EVar5 = local_1c;
+          iVar6 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_00563630
                             (this_ptr,local_1c,param_5);
-          if (-1 < iVar5) {
-            local_18 = (*param_6)(iVar6,param_5,param_4,iVar5,param_1);
-            core_skeleton_cpp_FUN_005635a0(this_ptr,iVar6,local_5c,local_54,local_980,local_18);
+          if (-1 < iVar6) {
+            local_18 = (*param_6)(EVar5,param_5,param_4,iVar6,param_1);
+            core_skeleton_cpp_FUN_005635a0(this_ptr,EVar5,local_5c,local_54,local_980,local_18);
             pCVar4 = local_3c;
             pfVar7 = afStack_1a8 + 0x13;
             afStack_15c[0] = (float)uStack_13c;
@@ -126,13 +126,13 @@ void core_skeleton_cpp_FUN_00568100(CDeformableModelInstance *param_1,int param_
             pfVar8[(uint)bVar9 * -2 + 1] =
                  (afStack_1a8 + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1];
           }
-          local_1c = local_1c + 1;
+          local_1c = local_1c + BONE_UPDATE_HIERARCHICAL_ACCUM;
           local_44 = (CDeformableModelInstance *)&(local_44->base).tween_speed;
           local_3c = local_3c + 1;
-        } while (local_1c < this_ptr->bone_count);
+        } while ((int)local_1c < this_ptr->bone_count);
       }
     }
-    else if (local_1c == 1) {
+    else if (local_1c == BONE_UPDATE_HIERARCHICAL_ACCUM) {
       local_20 = 0;
       if (0 < this_ptr->bone_count) {
         local_40 = 0;

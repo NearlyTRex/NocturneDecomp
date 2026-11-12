@@ -208,7 +208,7 @@ LAB_004c836f:
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
             (DAT_0060b280,(SMRGLHeaderPrimitive *)0x1cb8288);
   if (param_1[4] == 1) {
-    engine_matrix_c_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
     return;
   }
   return;

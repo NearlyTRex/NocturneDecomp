@@ -1,6 +1,6 @@
 // Name: core_icepick.cpp_CIcePick_ctor_FUN_004d4990
 // Address: 004d4990
-// Address Range: [[004d4990, 004d49bb]]
+// Address Range: [[004d4990, 004d4a11]]
 // Convention: unknown
 // Signature: CIcePick * core_icepick_cpp_CIcePick_ctor_FUN_004d4990(CIcePick *this_ptr)
 

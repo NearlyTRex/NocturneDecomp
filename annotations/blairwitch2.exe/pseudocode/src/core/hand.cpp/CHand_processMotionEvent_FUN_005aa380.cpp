@@ -14,16 +14,14 @@ void __cdecl core_hand_cpp_CHand_processMotionEvent_FUN_005aa380(CHand *this_ptr
   iVar1 = 0;
   switch(event_id) {
   case 0x2134:
-    iVar1 = unkafter_basicene_cpp_FUN_0059f740(this_ptr,0x41200000,this_ptr->hand_bone,0x40000000)
-    ;
+    iVar1 = core_basicene_cpp_FUN_0059f740(this_ptr,0x41200000,this_ptr->hand_bone,0x40000000);
   default:
     if (iVar1 == 0) {
       return;
     }
     break;
   case 0x2135:
-    iVar1 = unkafter_basicene_cpp_FUN_0059f740(this_ptr,0x41700000,this_ptr->hand_bone,0x40000000)
-    ;
+    iVar1 = core_basicene_cpp_FUN_0059f740(this_ptr,0x41700000,this_ptr->hand_bone,0x40000000);
     if (iVar1 == 0) {
       return;
     }

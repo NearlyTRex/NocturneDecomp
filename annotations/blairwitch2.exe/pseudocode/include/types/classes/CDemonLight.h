@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonCamera.h"
+#include "types/enums/EShadowBoundsMode.h"
 
 // Structure: CDemonLight
 // Ghidra size: 0x2fb0 (12208 bytes)
@@ -26,7 +27,7 @@ typedef struct CDemonLight {
     int unused; // 0x1c70
     char filter_name[64]; // 0x1c74
     int light_enabled_flag; // 0x1cb4
-    int shadow_bounds_mode; // 0x1cb8, 0=rectangular, 1=circular
+    EShadowBoundsMode shadow_bounds_mode; // 0x1cb8, 0=rectangular, 1=circular
     int volumetric_enabled; // 0x1cbc
     int shadow_map_width; // 0x1cc0
     int shadow_map_height; // 0x1cc4

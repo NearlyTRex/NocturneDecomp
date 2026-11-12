@@ -8,7 +8,7 @@
 ;
 ; XREF[7]:
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50 at 00419d41
-;   core_conveyor.cpp_CConstruct_archive_FUN_00437b80 at 00437cdd
+;   core_construc.cpp_CConstruct_archive_FUN_00437b80 at 00437cdd
 ;   core_ghoul.cpp_CGhoul_archive_FUN_004c39b0 at 004c3a6f
 ;   core_hero.cpp_FUN_004ce590 at 004ce5f8
 ;   core_hostage.cpp_CHostage_archive_FUN_004d2df0 at 004d2e56

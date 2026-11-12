@@ -23,7 +23,7 @@
 ;   undefined4 DAT_005f2afc
 ;
 ; Called Functions:
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_pop_FUN_0046d080
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     MOV EDX,dword ptr [0x005f2afc]      ; 00408830 | DAT_005f2afc
         ;   Label: core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
     PUSH EDX                            ; 00408836
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 00408837
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 00408837
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0040883c
     RET                                 ; 0040883f
 

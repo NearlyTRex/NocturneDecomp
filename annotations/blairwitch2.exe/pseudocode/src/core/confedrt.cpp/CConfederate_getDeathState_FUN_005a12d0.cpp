@@ -14,9 +14,9 @@ EDeathState __cdecl core_confedrt_cpp_CConfederate_getDeathState_FUN_005a12d0(CC
   SStateMachine *pSVar3;
   
   pSVar3 = &(this_ptr->base).state_machine;
-  iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar3,"Death");
+  iVar2 = core_muzzle_cpp_FUN_0059daa0(pSVar3,"Death");
   if ((iVar2 == 0) &&
-     (iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar3,"Animation"), iVar2 == 0)) {
+     (iVar2 = core_muzzle_cpp_FUN_0059daa0(pSVar3,"Animation"), iVar2 == 0)) {
     return DEATH_STATE_ALIVE;
   }
   iVar2 = core_motion_cpp_FUN_005035c0(&(this_ptr->base).base.base.model);

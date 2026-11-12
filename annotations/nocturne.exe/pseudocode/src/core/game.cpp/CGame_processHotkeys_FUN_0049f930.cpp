@@ -172,7 +172,8 @@ LAB_0049f9d8:
       _fclose(file_handle);
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                          ("Restore quick saved game?");
-      iVar4 = shape_edittool_cpp_FUN_00470230(g_CEditorToolsPtr,pcVar6);
+      iVar4 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00470230
+                        (g_CEditorToolsPtr,pcVar6);
       if (iVar4 != 0) {
         pcVar7 = "quicksavedgame.noc";
         pcVar6 = this_ptr->chapter_reload_filename;

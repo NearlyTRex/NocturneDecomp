@@ -22,7 +22,7 @@
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0046cad0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;   engine_special.cpp_FUN_0055d9ec
 ;
 ; *****************************************************************************
@@ -129,8 +129,8 @@ section .text
     ADD ESP,0x10                        ; 0049b7d2
     MOV ECX,dword ptr [0x0060b280]      ; 0049b7d5 | DAT_0060b280
     PUSH ECX                            ; 0049b7db | DAT_01ba5c50
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 0049b7dc
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 0049b7dc
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 0049b7e1
     ADD ESP,0xc                         ; 0049b7e4
     POP EBP                             ; 0049b7e7

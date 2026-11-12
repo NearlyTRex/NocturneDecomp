@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 1011,
     "complexity_score": 2081,
-    "cross_reference_count": 3,
+    "cross_reference_count": 4,
     "function_call_count": 19,
     "global_count": 13,
     "max_suspect_severity": "moderate",
@@ -45,6 +45,12 @@
       "addr": "0053cc5c",
       "from_addr": "0053cca0",
       "name": "engine_pod.cpp_FUN_0053cc5c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053ce50",
+      "from_addr": "0053ce71",
+      "name": "engine_pod.cpp_FUN_0053ce50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -117,44 +123,44 @@
       "name": "support_newmsg.cpp_getLocalizedString_FUN_00531090"
     },
     {
+      "addr": "005a0dc0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0"
+    },
+    {
+      "addr": "005a08d0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_005a08d0"
+    },
+    {
+      "addr": "005a0a50",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_005a0a50"
+    },
+    {
+      "addr": "005a0d70",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_isOpen_FUN_005a0d70"
+    },
+    {
       "addr": "005a0f60",
       "is_variadic": false,
       "name": "support_trstream.cpp_CInStreamFile_open_FUN_005a0f60"
     },
     {
-      "addr": "005a0dc0",
-      "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0"
-    },
-    {
-      "addr": "005a0d70",
-      "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_CInStreamFile_isOpen_FUN_005a0d70"
-    },
-    {
       "addr": "005a0c10",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10"
+      "name": "support_trstream.cpp_CInStreamFile_read_FUN_005a0c10"
     },
     {
       "addr": "005a0d00",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_CInStreamFile_seek_FUN_005a0d00"
+      "name": "support_trstream.cpp_CInStreamFile_seek_FUN_005a0d00"
     },
     {
       "addr": "005a0d50",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_CInStreamFile_tell_FUN_005a0d50"
-    },
-    {
-      "addr": "005a08d0",
-      "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0"
-    },
-    {
-      "addr": "005a0a50",
-      "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50"
+      "name": "support_trstream.cpp_CInStreamFile_tell_FUN_005a0d50"
     }
   ],
   "globals": [
@@ -238,7 +244,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 3,
+    "call_site_count": 4,
     "call_sites": [
       {
         "call_addr": "0053c67a",
@@ -282,9 +288,23 @@
         ],
         "stack_bytes": 12,
         "stack_params": 3
+      },
+      {
+        "call_addr": "0053ce71",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_0053ce50",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 5,
@@ -1923,7 +1943,7 @@
       "type": "pointer_stride_bytecount"
     },
     {
-      "call_site_count": 3,
+      "call_site_count": 4,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 5,

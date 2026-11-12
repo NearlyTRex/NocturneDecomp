@@ -60,3 +60,7 @@ int __cdecl CNPC::isInvulnerable(CNPC *this_ptr);
 // Original: core_npc.cpp_CNPC_getPathMap_FUN_00510c90
 // Address: 00510c90
 CPathMap * __cdecl CNPC::getPathMap(CNPC *this_ptr);
+
+// Original: core_npc.cpp_FUN_00510ca0
+// Address: 00510ca0
+CFont * __cdecl FUN_00510ca0(CFont *this_ptr);

@@ -81,6 +81,17 @@ def test_relocated_dwords_read_as_zero_and_trailing_padding_is_trimmed(tmp_path)
     assert pe.off(DATA + 0x80) is None
 
 
+def test_a_known_range_reads_whole_with_relocs_zeroed(tmp_path):
+    path = tmp_path / "a.exe"
+    path.write_bytes(image({0x10: b"\xff\x25\x01\x02\x03\x04"}, relocs = (0x12,)))
+    pe = df.Image(str(path))
+    # jmp [import]: the masked address is the range's last four bytes, and they stay
+    assert pe.range_bytes(CODE + 0x10, CODE + 0x16) == b"\xff\x25\0\0\0\0"
+    assert pe.range_bytes(CODE + 0x10, CODE + 0x10) is None
+    assert pe.range_bytes(0x00300000, CODE) is None
+    assert pe.range_bytes(CODE + 0xf0, CODE + 0x200) is None
+
+
 def test_a_reloc_table_that_ends_on_a_block_boundary_reads_every_block(tmp_path):
     path = tmp_path / "a.exe"
     path.write_bytes(image(SOURCE, relocs = (0x56,)))

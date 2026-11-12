@@ -5,8 +5,8 @@
 ;
 ;
 ; Called Functions:
+;   core_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0
 ;   crt_memory.c_operator_new_FUN_005a3cb2
-;   unkafter_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00419aa1
     PUSH EAX                            ; 00419aa2
         ;   Label: LAB_00419aa2
-    CALL unkafter_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0 ; 00419aa3
-        ;   XREF to: 00419ac0 (UNCONDITIONAL_CALL)  ; CBaalSkel * unkafter_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0(CBaalSkel * this_ptr)
+    CALL core_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0 ; 00419aa3
+        ;   XREF to: 00419ac0 (UNCONDITIONAL_CALL)  ; CBaalSkel * core_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0(CBaalSkel * this_ptr)
     ADD ESP,0x4                         ; 00419aa8
     RET                                 ; 00419aab
 

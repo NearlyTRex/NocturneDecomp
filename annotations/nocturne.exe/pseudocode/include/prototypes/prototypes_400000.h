@@ -262,6 +262,7 @@ void __cdecl core_actor_cpp_CDemonActor_doNothing_FUN_0040a380(CDemonActor *this
 int __cdecl core_actor_cpp_CDemonActor_testCylinderCollision_FUN_0040a390(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_0040a420(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type);
+float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_0040a6c0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,int ray_type,CBoundingBox3D *clip_bounds);
 float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
 void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_0040ab10(CDemonActor *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_actor_cpp_CDemonActor_updateCollisionData_FUN_0040ab30(CDemonActor *this_ptr);

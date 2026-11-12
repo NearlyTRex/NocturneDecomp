@@ -147,7 +147,7 @@ uint core_prye_cpp_FUN_00521880(CCharacter *param_1)
           }
           fStack_18 = param_1[2].flames[0x15].base.previous_transform_state.orientation.vec.z -
                       param_1[2].flames[0x15].base.previous_transform_state.position.z;
-          local_14 = (float)core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00517e80
+          local_14 = (float)core_prye_cpp_getCarriedObjectVerticalOffset_FUN_00517e80
                                       (param_1->carry_hands[1].carry_actor);
           param_1[2].flames[0x15].base.dead2 =
                (int)((fStack_18 - local_14) + (float)param_1[2].flames[0x15].base.dead2);

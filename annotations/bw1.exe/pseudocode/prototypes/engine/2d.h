@@ -97,6 +97,10 @@ void __cdecl drawString(char *text,int x_pos,int y_pos,int color);
 // Address: 00402140
 void __cdecl drawTextXY(int x,int y,char *text);
 
+// Original: engine_2d.c_FUN_00402160
+// Address: 00402160
+void FUN_00402160(int param_1,int param_2,undefined4 param_3);
+
 // Original: engine_2d.c_drawTextColor_FUN_00402440
 // Address: 00402440
 void __cdecl drawTextColor(char *text,int x,int y);

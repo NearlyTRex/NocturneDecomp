@@ -5886,15 +5886,33 @@
   },
   {
     "addr":"0043b500",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_0043b500",
-    "name":"core_course.cpp_FUN_0043b500",
+    "method":"assignInt",
+    "name":"core_course.cpp_assignInt_FUN_0043b500",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"int",
+      "ptr":1
     },
     "tu":"core/course.cpp",
     "variadic":false
@@ -6374,14 +6392,33 @@
   },
   {
     "addr":"0044ae80",
-    "conv":"unknown",
+    "cls":"CDemonCube",
+    "conv":"__cdecl",
     "instructions":31,
-    "method":"FUN_0044ae80",
-    "name":"core_dcube.cpp_FUN_0044ae80",
-    "receiver":false,
+    "method":"setBounds",
+    "name":"core_dcube.cpp_CDemonCube_setBounds_FUN_0044ae80",
+    "params":[
+      {
+        "name":"min_bounds",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"max_bounds",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dcube.cpp",
@@ -6697,15 +6734,33 @@
   },
   {
     "addr":"00452500",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_00452500",
-    "name":"core_dlight.cpp_FUN_00452500",
+    "method":"assignInt",
+    "name":"core_dlight.cpp_assignInt_FUN_00452500",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"int",
+      "ptr":1
     },
     "tu":"core/dlight.cpp",
     "variadic":false
@@ -9923,30 +9978,30 @@
     "addr":"00477680",
     "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_00477680",
-    "name":"shape_edittool.cpp_FUN_00477680",
+    "method":"assignInt",
+    "name":"shape_edittool.cpp_assignInt_FUN_00477680",
     "params":[
       {
-        "name":"param_1",
+        "name":"dest",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":1
         }
       },
       {
-        "name":"param_2",
+        "name":"src",
         "type":{
-          "kind":"undefined",
-          "name":"undefined4",
+          "kind":"builtin",
+          "name":"int",
           "ptr":1
         }
       }
     ],
     "receiver":false,
     "ret":{
-      "kind":"undefined",
-      "name":"undefined4",
+      "kind":"builtin",
+      "name":"int",
       "ptr":1
     },
     "tu":"shape/edittool.cpp",
@@ -16614,14 +16669,15 @@
   },
   {
     "addr":"004f5d00",
-    "conv":"unknown",
+    "cls":"CPackedBitmap",
+    "conv":"__cdecl",
     "instructions":3,
-    "method":"FUN_004f5d00",
-    "name":"cockpit_pkbmpset.cpp_FUN_004f5d00",
-    "receiver":false,
+    "method":"getHeight",
+    "name":"cockpit_pkbmpset.cpp_CPackedBitmap_getHeight_FUN_004f5d00",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"cockpit/pkbmpset.cpp",
@@ -19864,6 +19920,7 @@
       "005257e0",
       "005265a0",
       "00528780",
+      "00529bb0",
       "00529c10",
       "00529de0",
       "00529f60",
@@ -21654,6 +21711,21 @@
       "ptr":1
     },
     "tu":"core/waypoint.cpp",
+    "variadic":false
+  },
+  {
+    "addr":"00552880",
+    "conv":"unknown",
+    "instructions":39,
+    "method":"cleanupDirectDrawSurfaces",
+    "name":"wincore_wddvmem.cpp_cleanupDirectDrawSurfaces_FUN_00552880",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"wincore/wddvmem.cpp",
     "variadic":false
   },
   {

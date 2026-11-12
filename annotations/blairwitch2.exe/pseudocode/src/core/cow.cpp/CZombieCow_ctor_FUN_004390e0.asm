@@ -7,7 +7,7 @@
 ; CZombieCow *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_crate.cpp_factoryFuncZombieCow_FUN_004390b0 at 004390c3
+;   core_cow.cpp_factoryFuncZombieCow_FUN_004390b0 at 004390c3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f49ac

@@ -9,6 +9,7 @@
 ; int              Stack[0xc]:4   error_on_not_found
 ;
 ; XREF[12]:
+;   core_bird.cpp_FUN_00415830 at 00415875
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_00433cd0 at 00433d1e
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00432050 at 00432099
 ;   core_event.cpp_FUN_004a1d00 at 004a5b56
@@ -18,7 +19,6 @@
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_00524850 at 00524860
 ;   core_npc.cpp_CNPC_process_FUN_005317c0 at 00531aa5
 ;   core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00531cc0 at 00531d05
-;   core_zombie.cpp_CZombie_process_FUN_005bafb0 at 005baffb
 ;   ... and 2 more
 ;
 ; Referenced Globals:

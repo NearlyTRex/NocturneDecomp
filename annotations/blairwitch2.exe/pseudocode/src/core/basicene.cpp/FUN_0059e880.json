@@ -1,0 +1,311 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 136,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 11,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_param"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [
+    {
+      "addr": "005a1350",
+      "from_addr": "005a137b",
+      "name": "core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a2e30",
+      "from_addr": "005a2e67",
+      "name": "core_fforest.cpp_CTwigZombie_processMotionEvent_FUN_005a2e30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a3420",
+      "from_addr": "005a345e",
+      "name": "core_schngeis.cpp_CSchnellGeist_processMotionEvent_FUN_005a3420",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059e880",
+    "address_range": [
+      [
+        "0059e880",
+        "0059e8b3"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_basicene.cpp_FUN_0059e880",
+    "signature": "void core_basicene_cpp_FUN_0059e880(CDemonActor *param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0055ae50",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_0055ae50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061c068",
+      "name": "DAT_0061c068",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "005a137b",
+        "call_type": "direct",
+        "caller": "core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a13c7",
+        "call_type": "direct",
+        "caller": "core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a1411",
+        "call_type": "direct",
+        "caller": "core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a1450",
+        "call_type": "direct",
+        "caller": "core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a147b",
+        "call_type": "direct",
+        "caller": "core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a345e",
+        "call_type": "direct",
+        "caller": "core_schngeis.cpp_CSchnellGeist_processMotionEvent_FUN_005a3420",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a349d",
+        "call_type": "direct",
+        "caller": "core_schngeis.cpp_CSchnellGeist_processMotionEvent_FUN_005a3420",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a2e67",
+        "call_type": "direct",
+        "caller": "core_fforest.cpp_CTwigZombie_processMotionEvent_FUN_005a2e30",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.125,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 10,
+      "INT_ADD": 8,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 66
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_basicene_cpp_FUN_0059e880(CDemonActor *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_basicene_cpp_FUN_0059e880(CDemonActor *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 == 7000) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2) != '\\0')) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": ",&(param_1->location).position);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&param_1[0x66].particle_systems[4].fade_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 6,
+      "match": "(int)&param_1[0x66].particle_systems[4].fade_start",
+      "severity": "moderate",
+      "text": "(*(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2) != '\\0')) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&param_1[0x66].particle_systems[4].fade_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 8,
+      "match": "(int)&param_1[0x66].particle_systems[4].fade_start",
+      "severity": "moderate",
+      "text": "(0x0264B290,param_1,(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 6,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(*(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2) != '\\0')) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 8,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(0x0264B290,param_1,(char *)((int)&param_1[0x66].particle_systems[4].fade_start + 2)",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 360,
+        "vtable_addr": "005fec04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

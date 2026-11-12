@@ -44,7 +44,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00533a80(CDemonSet
               (DAT_0060b280,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
   }
-  engine_matrix_c_FUN_0046b5c0(DAT_0060b280);
+  engine_drender_cpp_FUN_0046b5c0(DAT_0060b280);
   local_20 = 0;
   if (0 < count) {
     do {

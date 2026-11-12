@@ -7,7 +7,7 @@
 ; COutStreamDebug * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   unkaddr_0057b9a0.cpp_FUN_0057b9a0 at 0057b9a5
+;   core_terrain.cpp_FUN_0057b9a0 at 0057b9a5
 ;
 ; Called Functions:
 ;   support_trstream.cpp_FUN_0057d860

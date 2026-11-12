@@ -63,9 +63,9 @@
 ;   engine_font.cpp_FUN_004c1dd0
 ;   engine_matrix.c_popViewport_FUN_00509210
 ;   engine_matrix.c_pushViewport_FUN_005090b0
+;   engine_mini3d.cpp_FUN_00511850
+;   engine_mini3d.cpp_FUN_00511980
 ;   engine_mini3d.cpp_FUN_00512320
-;   engine_mini3d.cpp_FUN_00517d50
-;   engine_mini3d.cpp_FUN_00518010
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -127,8 +127,8 @@ section .text
     PUSH EAX                            ; 00496f83
     LEA EAX,[ESP + 0xc]                 ; 00496f84
     PUSH EAX                            ; 00496f88
-    CALL unkafter_minecar.cpp_FUN_00511980 ; 00496f89
-        ;   XREF to: 00511980 (UNCONDITIONAL_CALL)  ; undefined unkafter_minecar.cpp_FUN_00511980()
+    CALL engine_mini3d.cpp_FUN_00511980 ; 00496f89
+        ;   XREF to: 00511980 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00511980()
     MOV EAX,dword ptr [EBX + 0xc]       ; 00496f8e
     ADD ESP,0x10                        ; 00496f91
     INC EAX                             ; 00496f94
@@ -148,8 +148,8 @@ section .text
     SUB ESP,0x4                         ; 00496fbe
     FILD dword ptr [EBX]                ; 00496fc1
     FSTP float ptr [ESP]                ; 00496fc3
-    CALL unkafter_minecar.cpp_FUN_00511850 ; 00496fc6
-        ;   XREF to: 00511850 (UNCONDITIONAL_CALL)  ; undefined unkafter_minecar.cpp_FUN_00511850()
+    CALL engine_mini3d.cpp_FUN_00511850 ; 00496fc6
+        ;   XREF to: 00511850 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00511850()
     MOV EAX,[0x01c3f54c]                ; 00496fcb | DAT_01c3f54c
     MOV EBP,dword ptr [0x01c3f544]      ; 00496fd0 | DAT_01c3f544
     ADD ESP,0x10                        ; 00496fd6
@@ -278,8 +278,8 @@ section .text
     PUSH dword ptr [ESP + 0xc]          ; 0049711e
     PUSH dword ptr [ESP + 0xc]          ; 00497122
     PUSH dword ptr [ESP + 0xc]          ; 00497126
-    CALL unkafter_minecar.cpp_FUN_00511850 ; 0049712a
-        ;   XREF to: 00511850 (UNCONDITIONAL_CALL)  ; undefined unkafter_minecar.cpp_FUN_00511850()
+    CALL engine_mini3d.cpp_FUN_00511850 ; 0049712a
+        ;   XREF to: 00511850 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00511850()
     ADD ESP,0x10                        ; 0049712f
     CMP byte ptr [EBX + 0x48],0x0       ; 00497132
         ;   Label: LAB_00497132

@@ -17,8 +17,8 @@
 ;   undefined4 DAT_0061c068
 ;
 ; Called Functions:
+;   core_basicene.cpp_FUN_0059f740
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
-;   unkafter_basicene.cpp_FUN_0059f740
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     PUSH EDI                            ; 005aa3aa
     PUSH dword ptr [0x00600890]         ; 005aa3ab | DAT_00600890
     PUSH EBX                            ; 005aa3b1
-    CALL unkafter_basicene.cpp_FUN_0059f740 ; 005aa3b2
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_FUN_0059f740 ; 005aa3b2
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
     MOV ESI,EAX                         ; 005aa3b7
     ADD ESP,0x10                        ; 005aa3b9
     POP EDI                             ; 005aa3bc
@@ -63,8 +63,8 @@ section .text
     PUSH ESI                            ; 005aa3d0
     PUSH dword ptr [0x00600894]         ; 005aa3d1 | DAT_00600894
     PUSH EBX                            ; 005aa3d7
-    CALL unkafter_basicene.cpp_FUN_0059f740 ; 005aa3d8
-        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined unkafter_basicene.cpp_FUN_0059f740()
+    CALL core_basicene.cpp_FUN_0059f740 ; 005aa3d8
+        ;   XREF to: 0059f740 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059f740()
     MOV ESI,EAX                         ; 005aa3dd
     ADD ESP,0x10                        ; 005aa3df
     TEST ESI,ESI                        ; 005aa3e2

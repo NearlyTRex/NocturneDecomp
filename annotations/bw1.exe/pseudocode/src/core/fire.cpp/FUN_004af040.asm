@@ -17,7 +17,7 @@
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_00551c30
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00483800
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
     MOV EBP,dword ptr [0x00612560]      ; 004af097 | DAT_00612560
         ;   Label: LAB_004af097
     PUSH EBP                            ; 004af09d | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 004af09e
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 004af09e
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004af0a3
     ADD ESP,0x18                        ; 004af0a6
     POP EBP                             ; 004af0a9

@@ -24,6 +24,7 @@
 ;   undefined4 DAT_01cc4270
 ;
 ; Called Functions:
+;   core_flashlit.cpp_FUN_004b9c50
 ;   core_fldnotes.cpp_STextView_appendWord_FUN_004bbb90
 ;   core_fldnotes.cpp_STextView_flushWord_FUN_004bb570
 ;   core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0
@@ -31,7 +32,6 @@
 ;   core_fldnotes.cpp_STextView_newPage_FUN_004bb6c0
 ;   core_fldnotes.cpp_STextView_wordFits_FUN_004bbb30
 ;   crt_unknown.c_sprintf_FUN_005bfb40
-;   unkaddr_004b9ab0.cpp_FUN_004b9c50
 ;
 ; *****************************************************************************
 
@@ -153,8 +153,8 @@ section .text
     MOV byte ptr [ESP + EAX*0x1 + 0x200],DH ; 004bb3f6
     LEA EAX,[ESP + 0x200]               ; 004bb3fd
     PUSH EAX                            ; 004bb404
-    CALL unkaddr_004b9ab0.cpp_FUN_004b9c50 ; 004bb405
-        ;   XREF to: 004b9c50 (UNCONDITIONAL_CALL)  ; undefined unkaddr_004b9ab0.cpp_FUN_004b9c50()
+    CALL core_flashlit.cpp_FUN_004b9c50 ; 004bb405
+        ;   XREF to: 004b9c50 (UNCONDITIONAL_CALL)  ; undefined core_flashlit.cpp_FUN_004b9c50()
     ADD ESP,0x4                         ; 004bb40a
     LEA EAX,[ESP + 0x200]               ; 004bb40d
     PUSH EAX                            ; 004bb414

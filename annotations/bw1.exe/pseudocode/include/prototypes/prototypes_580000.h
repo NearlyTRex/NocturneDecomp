@@ -46,6 +46,7 @@ int __cdecl engine_special_cpp_FUN_00582000(void);
 undefined4 engine_special_cpp_FUN_00582020(undefined4 param_1);
 undefined4 engine_special_cpp_FUN_0058205e(undefined4 param_1);
 undefined4 engine_special_cpp_FUN_0058209e(undefined4 param_1,undefined4 param_2);
+undefined4 engine_special_cpp_FUN_005820e0(undefined4 param_1,undefined4 param_2);
 undefined4 engine_special_cpp_FUN_0058215c(undefined4 param_1,undefined4 param_2);
 undefined4 engine_special_cpp_FUN_0058219c(undefined4 param_1);
 int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_005821c0(int width,int height,int bits_per_pixel);
@@ -97,6 +98,8 @@ ECollisionType __cdecl core_spike_cpp_CSpike_getCollisionType_FUN_005836f0(CSpik
 void __cdecl core_spike_cpp_FUN_00583700(CSpike *this_ptr);
 CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_00583d10(CSpike *this_ptr,uint flags);
 void __cdecl core_spline_cpp_FUN_00583d60(float *out_basis,float t,float tension);
+float core_spline_cpp_evaluateSplineScalar_FUN_00583ef0(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
+int core_spline_cpp_evaluateSplintInt_FUN_00583f30(float *param_1,int param_2,int param_3,int param_4,int param_5);
 void core_spline_cpp_FUN_00583f90(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5);
 float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_00584130(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);
 void core_spline_cpp_FUN_005841d0(int param_1,float *param_2,float *param_3,float *param_4,float *param_5);

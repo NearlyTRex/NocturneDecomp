@@ -30,7 +30,7 @@ ushort * __cdecl core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0
     iVar5 = uVar1 + projected_coord->x;
     uVar1 = iVar5 >> 0x10;
     iVar6 = (int)(uVar3 + projected_coord->y) >> 0x10;
-    if (this_ptr->shadow_bounds_mode == 0) {
+    if (this_ptr->shadow_bounds_mode == SHADOW_BOUNDS_RECTANGULAR) {
       if ((((-1 < (int)uVar1) && ((int)uVar1 < this_ptr->shadow_map_width)) && (-1 < iVar6)) &&
          (iVar6 < this_ptr->shadow_map_height)) goto LAB_0045cdb3;
     }

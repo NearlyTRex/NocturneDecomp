@@ -110,10 +110,10 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_00493dd0(CBulletHole *this_ptr
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
             (DAT_0060b280,(SMRGLHeaderPrimitive *)0x1c3ded0);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
-    engine_matrix_c_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
     return;
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(this_ptr->actor_ptr);
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   return;
 }

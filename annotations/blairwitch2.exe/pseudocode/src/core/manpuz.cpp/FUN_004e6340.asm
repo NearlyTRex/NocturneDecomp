@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     ADD ESP,0xc                         ; 004e6391
     MOV EBX,dword ptr [0x0060b280]      ; 004e6394 | DAT_0060b280
     PUSH EBX                            ; 004e639a
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 004e639b
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 004e639b
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 004e63a0
     POP EBX                             ; 004e63a3
     LEA EAX,[EAX]                       ; 004e63a4

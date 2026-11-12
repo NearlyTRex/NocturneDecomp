@@ -10,9 +10,9 @@
 ; undefined        Stack[-0x38]:1  local_38
 ;
 ; XREF[3]:
-;   core_grandma.cpp_CGrandma_getCarryObjToBodyXForm_FUN_005a7cf0 at 005a7d5b
+;   core_bwgrndma.cpp_CGrandma_getCarryObjToBodyXForm_FUN_005a7cf0 at 005a7d5b
 ;   core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004d31d0 at 004d36c3
-;   core_robin.cpp_CRobin_getCarryObjToBodyXForm_FUN_005a67a0 at 005a682b
+;   core_weaver.cpp_CRobin_getCarryObjToBodyXForm_FUN_005a67a0 at 005a682b
 ;
 ; Called Functions:
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0

@@ -1,0 +1,445 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 113,
+    "complexity_score": 226,
+    "cross_reference_count": 11,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 16,
+    "suspect_types": [
+      "pointer_cast",
+      "unnamed_param",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 164
+  },
+  "cross_references": [
+    {
+      "addr": "0043b2e0",
+      "from_addr": "0043b364",
+      "name": "cockpit_ckptutil.c_FUN_0043b2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437490",
+      "from_addr": "00437564",
+      "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401590",
+      "from_addr": "004015ca",
+      "name": "engine_2d.c_FUN_00401590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401010",
+      "from_addr": "004010ef",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402940",
+      "from_addr": "00402aa6",
+      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c0fa0",
+      "from_addr": "004c1154",
+      "name": "engine_font.cpp_FUN_004c0fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053b250",
+      "from_addr": "0053b3fc",
+      "name": "engine_pod.cpp_FUN_0053b250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005967a0",
+      "from_addr": "00596ab3",
+      "name": "engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00597d6e",
+      "from_addr": "00597e96",
+      "name": "engine_texture.cpp_FUN_00597d6e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e830",
+      "from_addr": "0056eb89",
+      "name": "sound_sndmain.cpp_FUN_0056e830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570460",
+      "from_addr": "00570994",
+      "name": "sound_sndmain.cpp_FUN_00570460",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a0c10",
+    "address_range": [
+      [
+        "005a0c10",
+        "005a0cf2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trstream.cpp_CInStreamFile_read_FUN_005a0c10",
+    "signature": "int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,undefined4 *param_2,uint param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a0ec0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_fillBuffer_FUN_005a0ec0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 27,
+    "call_sites": [
+      {
+        "call_addr": "004010ef",
+        "call_type": "direct",
+        "caller": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004015ca",
+        "call_type": "direct",
+        "caller": "engine_2d.c_FUN_00401590",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00402aa6",
+        "call_type": "direct",
+        "caller": "engine_2d.c_loadOrBuildColorMap_FUN_00402940",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043b364",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_FUN_0043b2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056eb89",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_0056e830",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00570994",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00570460",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00596ab3",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00596b05",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00596b53",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00596d6d",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.297872340425532,
+    "instruction_count": 94,
+    "opcode_distribution": {
+      "BOOL_AND": 3,
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 4,
+      "BRANCH": 2,
+      "CALL": 1,
+      "CBRANCH": 11,
+      "COPY": 89,
+      "INT_ADD": 52,
+      "INT_AND": 68,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 58,
+      "INT_LESS": 11,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 27,
+      "INT_SUB": 26,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 41,
+      "POPCOUNT": 26,
+      "RETURN": 3,
+      "STORE": 15
+    },
+    "pcode_op_count": 498
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInStreamFile *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "undefined4 *"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,uint *param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,uint *param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((int)uVar1 < (int)param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = uVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((int)param_3 < 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((int)param_3 < (int)uVar1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uVar1 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = param_3 - uVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = param_3 - uVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar5 = (char *)param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(uint *)((int)param_2",
+      "severity": "moderate",
+      "text": "param_2 = (uint *)((int)param_2 + uVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = (uint *)((int)param_2 + uVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = (uint *)((int)param_2 + uVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 38,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar1 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005a0caa, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 74,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005a0caa: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CInStreamFile",
+        "offset": 16,
+        "vtable_addr": "00607384"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

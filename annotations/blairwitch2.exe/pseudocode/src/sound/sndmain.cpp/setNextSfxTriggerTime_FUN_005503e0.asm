@@ -10,11 +10,11 @@
 ; XREF[8]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418d67
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090 at 0041c2ff
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 00437598
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 00437598
 ;   core_drone.cpp_CDrone_process_FUN_0046d870 at 0046df27
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_00491be0 at 00491c26
 ;   core_flame.cpp_CFlame_process_FUN_0049f2e0 at 0049f68a
-;   core_hag.cpp_FUN_005ab260 at 005ab46b
+;   core_hellhag.cpp_FUN_005ab260 at 005ab46b
 ;   core_tommygun.cpp_CTommyGun_process_FUN_00576130 at 00576310
 ;
 ; Referenced Globals:

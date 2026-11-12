@@ -17,7 +17,7 @@
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90 at 0042feaf
 ;   core_charactr.cpp_FUN_0042fc90 at 0042fcfc
 ;   core_charactr.cpp_FUN_0042fdc0 at 0042fddf
-;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 00443616
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00443616
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00445730 at 004457b6
 ;   core_demnfolk.cpp_FUN_00455080 at 0045725b
 ;   ... and 26 more

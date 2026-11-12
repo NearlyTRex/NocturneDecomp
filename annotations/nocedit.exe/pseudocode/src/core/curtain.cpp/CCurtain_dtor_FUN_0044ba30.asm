@@ -31,7 +31,7 @@ section .text
     ADD EBX,0x208                       ; 0044ba3e
     PUSH EBX                            ; 0044ba44
     CALL core_curtain.cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0 ; 0044ba45
-        ;   XREF to: 0044bad0 (UNCONDITIONAL_CALL)  ; SCurtainVertex * core_curtain.cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0(SCurtainVertex * objs, uint flags)
+        ;   XREF to: 0044bad0 (UNCONDITIONAL_CALL)  ; SCurtainVertex * core_curtain.cpp_SCurtainVertex_arrdtor1000_FUN_0044bad0(SCurtainVertex * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044ba4a
     PUSH 0x1                            ; 0044ba4d
     LEA EBX,[EAX + 0xfffffdf8]          ; 0044ba4f

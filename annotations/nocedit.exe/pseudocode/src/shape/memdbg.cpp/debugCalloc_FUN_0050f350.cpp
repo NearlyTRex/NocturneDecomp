@@ -11,7 +11,7 @@ void * __cdecl shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T siz
 {
   SMemHead *dest;
   char *pcVar1;
-  SMemHead *header;
+  SMemHead *this_ptr;
   ulong count_00;
   
   if (g_RecursiveCallFlag == 0) {
@@ -24,23 +24,23 @@ void * __cdecl shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T siz
   shape_memdbg_cpp_traceMemory_FUN_0050f150
             ("debugCalloc(%d, %d, %s, %d)",count,size,filename,line_number);
   if (count_00 != 0) {
-    header = (SMemHead *)malloc(count_00 + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
-    if (header == (SMemHead *)0x0) {
+    this_ptr = (SMemHead *)malloc(count_00 + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
+    if (this_ptr == (SMemHead *)0x0) {
       shape_memdbg_cpp_traceMemory_FUN_0050f150("   !!FAILED!!");
       wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
       return (void *)0x0;
     }
-    header->num_bytes = count_00;
-    shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(header,filename);
-    header->source_line = line_number;
-    dest = header + 1;
-    header->front_guard = GAME_DEADBEEF;
-    pcVar1 = dest->source_file + header->num_bytes + -0xc;
+    this_ptr->num_bytes = count_00;
+    shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(this_ptr,filename);
+    this_ptr->source_line = line_number;
+    dest = this_ptr + 1;
+    this_ptr->front_guard = GAME_DEADBEEF;
+    pcVar1 = dest->source_file + this_ptr->num_bytes + -0xc;
     pcVar1[0] = -0x53;
     pcVar1[1] = -0x22;
     pcVar1[2] = -0x11;
     pcVar1[3] = -0x42;
-    shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(header);
+    shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(this_ptr);
     memset(dest,0,count_00);
     shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",dest);
     wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);

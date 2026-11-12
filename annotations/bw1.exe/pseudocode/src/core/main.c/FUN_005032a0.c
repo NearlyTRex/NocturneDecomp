@@ -45,7 +45,7 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
     }
   }
   _freopen("stderr.txt","wt");
-  unkafter_flattn_cpp_FUN_004bf770();
+  core_flattn_cpp_FUN_004bf770();
   core_inivar_cpp_readIniData_FUN_004f4f50();
   _DAT_02c8337c = 2;
   engine_pod_cpp_CPod_init_FUN_0053c8a0(&g_CDemonPodPtr->base);
@@ -60,7 +60,7 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
     core_main_c_FUN_005030e0();
   }
   pcVar11 = &stack0xfffff8d8;
-  unkafter_marquee_cpp_FUN_005072c0();
+  core_marquee_cpp_FUN_005072c0();
   engine_3d_c_initTextureCache_FUN_00403790();
   engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_005b21e0();
@@ -499,7 +499,7 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
   } while (iVar8 < 4);
   engine_ncursfx_cpp_CMouse_load_FUN_005312c0(g_CMousePtr);
   core_netgame_cpp_CNetGame_init_FUN_0052c520(g_CNetGamePtr);
-  unkafter_alphabit_cpp_FUN_00415c20();
+  engine_alphabit_cpp_FUN_00415c20();
   wincore_winrun_cpp_setRegistryStringValue_FUN_005b3a10
             ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank","0");
   return;

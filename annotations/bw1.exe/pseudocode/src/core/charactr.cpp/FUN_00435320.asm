@@ -4,7 +4,7 @@
 ; void core_charactr_cpp_FUN_00435320(int param_1,float param_2)
 ;
 ;
-; XREF[40]:
+; XREF[42]:
 ;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040eb19
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f59b
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411638
@@ -14,8 +14,8 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bf70
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423c6f
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429b7a
-;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 00446588
-;   ... and 30 more
+;   core_colonel.cpp_CColonel_process_FUN_00444550 at 004445f6
+;   ... and 32 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ghost_005d5fe3

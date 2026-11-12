@@ -9,12 +9,12 @@
 ;
 ; XREF[7]:
 ;   core_belling.cpp_CBelling_ctor_FUN_005a8f80 at 005a900b
+;   core_bwgrndma.cpp_CGrandma_ctor_FUN_005a7b10 at 005a7b9b
 ;   core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440 at 0042b516
-;   core_doc.cpp_FUN_004501a2 at 0045042b
-;   core_grandma.cpp_CGrandma_ctor_FUN_005a7b10 at 005a7b9b
-;   core_hag.cpp_CHag_ctor_FUN_005aa600 at 005aa63c
-;   core_steuben.cpp_CSteuben_ctor_FUN_005a5b40 at 005a5bcb
-;   core_stranger.cpp_FUN_005628b4 at 00562b6e
+;   core_doc.cpp_CDoc_ctor_FUN_004500d0 at 0045042b
+;   core_hellhag.cpp_CHag_ctor_FUN_005aa600 at 005aa63c
+;   core_stranger.cpp_CStranger_ctor_FUN_005627f0 at 00562b6e
+;   core_villain.cpp_CSteuben_ctor_FUN_005a5b40 at 005a5bcb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005f11e9

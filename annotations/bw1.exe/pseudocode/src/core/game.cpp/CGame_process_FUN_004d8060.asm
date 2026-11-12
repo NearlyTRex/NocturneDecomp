@@ -361,8 +361,8 @@ section .text
     CALL core_fldnotes.cpp_FUN_004be970 ; 004d8446
         ;   XREF to: 004be970 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004be970()
     ADD ESP,0x4                         ; 004d844b
-    CALL unkafter_alphabit.cpp_FUN_00415cd0 ; 004d844e
-        ;   XREF to: 00415cd0 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_00415cd0()
+    CALL engine_alphabit.cpp_FUN_00415cd0 ; 004d844e
+        ;   XREF to: 00415cd0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415cd0()
     MOV EAX,[0x0061d418]                ; 004d8453 | g_CFieldNotesPtr
     CMP dword ptr [EAX + 0x40],0x0      ; 004d8458 | g_CFieldNotesInstance.is_displayed
     JZ 0x004d8584                       ; 004d845c

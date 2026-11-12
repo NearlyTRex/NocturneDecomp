@@ -16,12 +16,12 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
+;   core_enemy.cpp_FUN_0048a1b0
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   sound_sndmain.cpp_FUN_00556700
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
-;   unkafter_enemy.cpp_FUN_0048a1b0
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x30]      ; 004d601c
     PUSH dword ptr [EAX + 0x4]          ; 004d6020
     PUSH EBP                            ; 004d6023
-    CALL unkafter_enemy.cpp_FUN_0048a1b0 ; 004d6024
-        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_enemy.cpp_FUN_0048a1b0()
+    CALL core_enemy.cpp_FUN_0048a1b0    ; 004d6024
+        ;   XREF to: 0048a1b0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0048a1b0()
     ADD ESP,0x8                         ; 004d6029
     TEST EAX,EAX                        ; 004d602c
     JZ 0x004d6058                       ; 004d602e

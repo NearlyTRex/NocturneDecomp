@@ -94,7 +94,7 @@ LAB_0056e898:
       }
       iVar7 = _stricmp(&local_23c,&DAT_005f2fab);
       if (iVar7 == 0) {
-        unkclass_instream_cpp_CInStreamFile_ctor_FUN_005a08d0(&local_3c);
+        support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(&local_3c);
         iVar7 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
                           (&local_3c,"sound",filename,1);
         if (iVar7 == 0) {
@@ -119,7 +119,7 @@ LAB_0056e898:
           pCVar6->data_size_bytes = iVar7;
           iVar7 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0056feb0(pCVar6);
           if (iVar7 != 0) {
-            unkaddr_0059f520_cpp_CInStreamFile_seek_FUN_005a0d00(&local_3c,pCVar6->file_offset,0);
+            support_trstream_cpp_CInStreamFile_seek_FUN_005a0d00(&local_3c,pCVar6->file_offset,0);
             puVar3 = (uint *)
                      sound_sndmain_cpp_FUN_00570160(pCVar6,0,(pCVar6->sample_info).sample_count);
             if (puVar3 == (uint *)0x0) {
@@ -127,9 +127,9 @@ LAB_0056e898:
             }
             else {
               uVar5 = sound_sndmain_cpp_FUN_00572400(pCVar6,(pCVar6->sample_info).sample_count);
-              uVar4 = unkaddr_0059f520_cpp_CInStreamFile_read_FUN_005a0c10(&local_3c,puVar3,uVar5);
+              uVar4 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_3c,puVar3,uVar5);
               if (uVar4 == uVar5) {
-                unkaddr_0059f520_cpp_CInStreamFile_close_FUN_005a0dc0(&local_3c);
+                support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_3c);
                 if (((pCVar6->sample_info).bit_depth == 0x10) &&
                    (iVar7 = 0, 0 < (pCVar6->sample_info).sample_count)) {
                   do {
@@ -137,7 +137,7 @@ LAB_0056e898:
                   } while (iVar7 < (pCVar6->sample_info).sample_count);
                 }
                 sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00570260(pCVar6);
-                unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_3c,0);
+                support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_3c,0);
                 goto LAB_0056ebeb;
               }
               pcVar11 = "Error reading file data for %s\n";
@@ -145,7 +145,7 @@ LAB_0056e898:
             sound_sndmain_cpp_FUN_005773f0(pcVar11,filename);
           }
         }
-        unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_3c,0);
+        support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_3c,0);
       }
       else {
         iVar7 = _stricmp(&local_23c,&DAT_005f3012);

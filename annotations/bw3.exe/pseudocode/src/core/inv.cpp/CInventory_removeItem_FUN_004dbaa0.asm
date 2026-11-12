@@ -12,8 +12,8 @@
 ;   core_inv.cpp_CInventory_clear_FUN_004da440 at 004da463
 ;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_004de6e0 at 004de71c
 ;   core_inv.cpp_CInventory_select_FUN_004dcb40 at 004dcd3d
+;   core_prye.cpp_FUN_00524940 at 00524c0c
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052e150
-;   unkafter_prye.cpp_FUN_00524940 at 00524c0c
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_004085a0

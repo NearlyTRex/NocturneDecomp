@@ -19,15 +19,15 @@ void __cdecl releaseDebugMutex(void);
 
 // Original: shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0
 // Address: 0050eea0
-void __cdecl SMemHead::recordSourceFile(SMemHead *header,char *source_filename);
+void __cdecl SMemHead::recordSourceFile(SMemHead *this_ptr,char *source_filename);
 
 // Original: shape_memdbg.cpp_SMemHead_add_FUN_0050eef0
 // Address: 0050eef0
-void __cdecl SMemHead::add(SMemHead *header);
+void __cdecl SMemHead::add(SMemHead *this_ptr);
 
 // Original: shape_memdbg.cpp_SMemHead_remove_FUN_0050ef20
 // Address: 0050ef20
-void __cdecl SMemHead::remove(SMemHead *header);
+void __cdecl SMemHead::remove(SMemHead *this_ptr);
 
 // Original: shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0
 // Address: 0050efa0
@@ -39,7 +39,7 @@ void __cdecl checkAllMemory(char *source_filename,int source_line);
 
 // Original: shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020
 // Address: 0050f020
-void __cdecl SMemHead::checkMemory(SMemHead *header,char *filename,int line_number);
+void __cdecl SMemHead::checkMemory(SMemHead *this_ptr,char *filename,int line_number);
 
 // Original: shape_memdbg.cpp_traceMemory_FUN_0050f150
 // Address: 0050f150

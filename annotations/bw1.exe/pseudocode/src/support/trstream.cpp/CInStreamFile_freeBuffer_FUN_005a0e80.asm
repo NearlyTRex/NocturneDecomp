@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_005a0e10 at 005a0e16
-;   unkaddr_0059f520.cpp_CInStreamFile_close_FUN_005a0dc0 at 005a0de2
+;   support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0 at 005a0de2
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c09f0

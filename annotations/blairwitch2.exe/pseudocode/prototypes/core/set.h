@@ -320,3 +320,7 @@ SRoom * SRoom::ctor(SRoom *this_ptr);
 // Original: core_set.cpp_SVDBox_ctor_FUN_00534d10
 // Address: 00534d10
 SVDBox * SVDBox::ctor(SVDBox *this_ptr);
+
+// Original: core_set.cpp_FUN_00534d80
+// Address: 00534d80
+void FUN_00534d80(undefined4 param_1);

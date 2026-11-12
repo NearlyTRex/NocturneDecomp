@@ -32,7 +32,7 @@ void __cdecl core_hand_cpp_CHand_processMeleeAttackState_FUN_005a9ed0(CHand *thi
      fVar2 = (this_ptr->base).base.base.base.location.position.z -
              (pCVar1->base).location.position.z, _DAT_0060088c < SQRT(fVar2 * fVar2 + fVar4 * fVar4)
      )) {
-    unkaddr_0059d350_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"Sleeping");
+    core_muzzle_cpp_FUN_0059d8e0(&(this_ptr->base).state_machine,"Sleeping");
     return;
   }
   if (this_ptr->attack_variant == 0) {

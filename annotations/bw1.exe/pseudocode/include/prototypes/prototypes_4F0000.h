@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CHighPriestOfGardath.h"
@@ -242,4 +243,5 @@ void core_lightgun_cpp_factoryFuncLightGun_FUN_004ffe80(void);
 CDemonActorType * core_lightgun_cpp_CLightGun_getActorType_FUN_004ffea0(CLightGun *this_ptr);
 CLightGun * core_lightgun_cpp_CLightGun_ctor_FUN_004ffeb0(CLightGun *this_ptr);
 undefined4 core_lightgun_cpp_FUN_004fff70(CDemonActor *param_1);
+undefined4 core_lightgun_cpp_FUN_004ffff0(CCharacter *param_1);
 

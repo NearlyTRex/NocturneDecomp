@@ -9,10 +9,10 @@
 void __cdecl shape_memdbg_cpp_checkAllMemory_FUN_0050efe0(char *source_filename,int source_line)
 
 {
-  SMemHead *header;
+  SMemHead *this_ptr;
   
-  for (header = g_MemoryListHead; header != (SMemHead *)0x0; header = header->next) {
-    shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(header,source_filename,source_line);
+  for (this_ptr = g_MemoryListHead; this_ptr != (SMemHead *)0x0; this_ptr = this_ptr->next) {
+    shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(this_ptr,source_filename,source_line);
   }
   g_MemCheckLastLine = source_line;
   g_MemCheckLastFile = source_filename;

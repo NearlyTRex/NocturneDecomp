@@ -9,6 +9,7 @@
 ; char *           Stack[0xc]:4   sound_name
 ;
 ; XREF[12]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00412ee0 at 00413167
 ;   core_event.cpp_FUN_0048c2e0 at 0048f261
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb17f
 ;   core_game.cpp_FUN_004c4a60 at 004c4b56
@@ -18,7 +19,6 @@
 ;   core_script.cpp_CScript_startDialogLine_FUN_00530150 at 005302ca
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_00560940 at 00560992
 ;   core_sound.cpp_FUN_0055fd30 at 0055fe25
-;   core_weather.cpp_CWeather_createThunder_FUN_0057c840 at 0057c872
 ;   ... and 2 more
 ;
 ; Called Functions:

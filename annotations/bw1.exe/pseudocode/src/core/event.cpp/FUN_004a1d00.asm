@@ -1059,14 +1059,14 @@ section .text
         ;   XREF to: 004a23cb (CONDITIONAL_JUMP)  ; LAB_004a23cb
     PUSH 0x0                            ; 004a23c0
     PUSH EBX                            ; 004a23c2
-    CALL unkafter_alphabit.cpp_FUN_00415be0 ; 004a23c3
-        ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_00415be0()
+    CALL engine_alphabit.cpp_FUN_00415be0 ; 004a23c3
+        ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415be0()
     ADD ESP,0x8                         ; 004a23c8
     PUSH 0x1                            ; 004a23cb
         ;   Label: LAB_004a23cb
     PUSH EDI                            ; 004a23cd
-    CALL unkafter_alphabit.cpp_FUN_00415be0 ; 004a23ce
-        ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_00415be0()
+    CALL engine_alphabit.cpp_FUN_00415be0 ; 004a23ce
+        ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415be0()
     ADD ESP,0x8                         ; 004a23d3
     JMP 0x004a21fb                      ; 004a23d6
         ;   XREF to: 004a21fb (UNCONDITIONAL_JUMP)  ; caseD_6

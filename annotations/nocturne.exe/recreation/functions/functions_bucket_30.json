@@ -6344,14 +6344,14 @@
     ],
     "instructions":11,
     "method":"staticInit",
-    "name":"core_console.cpp_staticInit_FUN_0043abb0",
+    "name":"engine_console.cpp_staticInit_FUN_0043abb0",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"void",
       "ptr":0
     },
-    "tu":"core/console.cpp",
+    "tu":"engine/console.cpp",
     "variadic":false
   },
   {
@@ -6420,14 +6420,25 @@
     "calls":[
       "00564570"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_0043b5b0",
-    "name":"core_course.cpp_FUN_0043b5b0",
+    "method":"skipLine",
+    "name":"core_course.cpp_skipLine_FUN_0043b5b0",
+    "params":[
+      {
+        "name":"file_handle",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/course.cpp",
@@ -9406,18 +9417,29 @@
       "004ee370",
       "00563a08"
     ],
-    "conv":"unknown",
+    "cls":"CEditorTools",
+    "conv":"__cdecl",
     "instructions":70,
-    "method":"FUN_00470230",
-    "name":"shape_edittool.cpp_FUN_00470230",
-    "receiver":false,
+    "method":"showDestructiveActionConfirmDialog",
+    "name":"shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00470230",
+    "params":[
+      {
+        "name":"format_string",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "receiver":true,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"shape/edittool.cpp",
-    "variadic":false
+    "variadic":true
   },
   {
     "addr":"00470730",
@@ -10752,14 +10774,24 @@
   },
   {
     "addr":"00481930",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_00481930",
-    "name":"core_event.cpp_FUN_00481930",
+    "method":"isCharacterSpeaking",
+    "name":"core_event.cpp_isCharacterSpeaking_FUN_00481930",
+    "params":[
+      {
+        "name":"char_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/event.cpp",
@@ -16622,7 +16654,7 @@
     ],
     "cls":"CPackedBitmap",
     "conv":"__cdecl",
-    "instructions":147,
+    "instructions":159,
     "method":"load",
     "name":"cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0",
     "params":[
@@ -16983,14 +17015,24 @@
   },
   {
     "addr":"004fbbb0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":9,
-    "method":"FUN_004fbbb0",
-    "name":"core_scat.cpp_FUN_004fbbb0",
+    "method":"getWeaponHoldType",
+    "name":"core_scat.cpp_getWeaponHoldType_FUN_004fbbb0",
+    "params":[
+      {
+        "name":"weapon",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/scat.cpp",
@@ -17372,15 +17414,33 @@
   },
   {
     "addr":"005143b0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_005143b0",
-    "name":"core_setdir.cpp_FUN_005143b0",
+    "method":"assignInt2",
+    "name":"core_setdir.cpp_assignInt2_FUN_005143b0",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"int",
+      "ptr":1
     },
     "tu":"core/setdir.cpp",
     "variadic":false
@@ -18833,6 +18893,26 @@
     "variadic":false
   },
   {
+    "addr":"00529bb0",
+    "calls":[
+      "00529980",
+      "00529a90",
+      "00563c90"
+    ],
+    "conv":"unknown",
+    "instructions":25,
+    "method":"checkDirectSoundError",
+    "name":"sound_snddx.cpp_checkDirectSoundError_FUN_00529bb0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"sound/snddx.cpp",
+    "variadic":false
+  },
+  {
     "addr":"0052ab30",
     "cls":"CDirectSoundDevice",
     "conv":"__cdecl",
@@ -19175,15 +19255,33 @@
   },
   {
     "addr":"0052ee30",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_0052ee30",
-    "name":"core_sound.cpp_FUN_0052ee30",
+    "method":"assignInt1",
+    "name":"core_sound.cpp_assignInt1_FUN_0052ee30",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"int",
+      "ptr":1
     },
     "tu":"core/sound.cpp",
     "variadic":false
@@ -22281,7 +22379,9 @@
       "0056e890",
       "0056e940",
       "0056e990",
+      "00570f50",
       "00571ee0",
+      "00572cb0",
       "00573930",
       "00573afc",
       "005740b0",
@@ -22293,10 +22393,6 @@
       "005635c0"
     ],
     "conv":"__cdecl",
-    "data_refs":[
-      "00570f55",
-      "00572d07"
-    ],
     "instructions":5,
     "method":"malloc",
     "name":"crt_memory.c_malloc_FUN_005635b0",
@@ -22348,7 +22444,7 @@
       "0043b890",
       "0043dad0",
       "00440d40",
-      "00442d9c",
+      "00442d90",
       "00444920",
       "00445fe0",
       "00446740",
@@ -23172,6 +23268,12 @@
   },
   {
     "addr":"00570630",
+    "calls":[
+      "00572446",
+      "0057264c",
+      "00572809",
+      "005729a6"
+    ],
     "conv":"unknown",
     "data_refs":[
       "005c26c4"
@@ -23296,6 +23398,29 @@
     "instructions":22,
     "method":"FUN_00571630",
     "name":"crt_unknown.c_FUN_00571630",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
+      "ptr":0
+    },
+    "tu":"crt/unknown.c",
+    "variadic":false
+  },
+  {
+    "addr":"00572cb0",
+    "callers":[
+      "0057104c"
+    ],
+    "calls":[
+      "005635b0",
+      "005638d0",
+      "00564a70"
+    ],
+    "conv":"unknown",
+    "instructions":54,
+    "method":"FUN_00572cb0",
+    "name":"crt_unknown.c_FUN_00572cb0",
     "receiver":false,
     "ret":{
       "kind":"builtin",

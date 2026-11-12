@@ -16,7 +16,7 @@
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c0344
 ;   support_codec.cpp_CInStreamPipe_close_FUN_00443f00
-;   unkaddr_0059f520.cpp_FUN_0059f550
+;   support_trstream.cpp_FUN_0059f550
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     ADD ESP,0x4                         ; 00443c78
     PUSH 0x1                            ; 00443c7b
     PUSH EBX                            ; 00443c7d
-    CALL unkaddr_0059f520.cpp_FUN_0059f550 ; 00443c7e
-        ;   XREF to: 0059f550 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_0059f550()
+    CALL support_trstream.cpp_FUN_0059f550 ; 00443c7e
+        ;   XREF to: 0059f550 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0059f550()
     ADD ESP,0x8                         ; 00443c83
     MOV DL,byte ptr [ESP + 0xc]         ; 00443c86
     MOV EBX,EAX                         ; 00443c8a

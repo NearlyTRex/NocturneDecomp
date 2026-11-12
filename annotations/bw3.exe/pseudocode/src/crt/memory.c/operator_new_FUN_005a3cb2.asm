@@ -4,7 +4,7 @@
 ; void * crt_memory_c_operator_new_FUN_005a3cb2(ulong param_1)
 ;
 ;
-; XREF[149]:
+; XREF[150]:
 ;   core_ammo.cpp_FUN_0040e0c0 at 0040e0c5
 ;   core_ammo.cpp_FUN_0040e230 at 0040e235
 ;   core_ammo.cpp_FUN_0040e3a0 at 0040e3a5
@@ -15,7 +15,7 @@
 ;   core_baal.cpp_factoryFuncBaal_FUN_00596630 at 00596635
 ;   core_barrier.cpp_factoryFuncBarrier_FUN_0040ea90 at 0040ea95
 ;   core_bat.cpp_factoryFuncBat_FUN_0040edb0 at 0040edb5
-;   ... and 139 more
+;   ... and 140 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02d25908

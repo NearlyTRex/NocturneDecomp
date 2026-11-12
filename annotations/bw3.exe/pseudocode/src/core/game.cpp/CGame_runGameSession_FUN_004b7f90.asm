@@ -37,6 +37,8 @@
 ;   ... and 66 more
 ;
 ; Called Functions:
+;   core_bmppuzzl.cpp_FUN_004119a0
+;   core_bmppuzzl.cpp_FUN_00411a40
 ;   core_dlight.cpp_CDemonLight_init_FUN_0045c2a0
 ;   core_event.cpp_FUN_004946f0
 ;   core_fire.cpp_FUN_004a1480
@@ -50,8 +52,6 @@
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004bfa40
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b4430
 ;   core_game.cpp_CGame_setGameRes_FUN_004b7de0
-;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0
-;   core_game.cpp_CGame_updateStatusDisplays_FUN_004b4d50
 ;   ... and 52 more
 ;
 ; *****************************************************************************
@@ -166,8 +166,8 @@ section .text
     MOV EAX,[0x005fe4b0]                ; 004b818a | g_CFieldNotesPtr
     MOV dword ptr [0x01d22200],ECX      ; 004b818f | DAT_01d22200
     MOV dword ptr [EAX + 0x40],ECX      ; 004b8195 | g_CFieldNotesInstance.is_displayed
-    CALL unkafter_alphabit.cpp_FUN_00411a40 ; 004b8198
-        ;   XREF to: 00411a40 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_00411a40()
+    CALL core_bmppuzzl.cpp_FUN_00411a40 ; 004b8198
+        ;   XREF to: 00411a40 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_00411a40()
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b819d
     XOR EBX,EBX                         ; 004b81a0
     PUSH EAX                            ; 004b81a2
@@ -438,8 +438,8 @@ section .text
         ;   XREF to: 004b84af (CONDITIONAL_JUMP)  ; LAB_004b84af
     PUSH 0x0                            ; 004b84a4
     PUSH EBX                            ; 004b84a6
-    CALL unkafter_alphabit.cpp_FUN_004119a0 ; 004b84a7
-        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_004119a0()
+    CALL core_bmppuzzl.cpp_FUN_004119a0 ; 004b84a7
+        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_004119a0()
     ADD ESP,0x8                         ; 004b84ac
     MOV EAX,[0x00603b28]                ; 004b84af | g_CDemonSetPtr
         ;   Label: LAB_004b84af
@@ -545,8 +545,8 @@ section .text
     MOV EBX,dword ptr [0x00600530]      ; 004b85c9 | DAT_00600530
         ;   Label: LAB_004b85c9
     PUSH EBX                            ; 004b85cf | DAT_01d81080
-    CALL unkafter_mission.cpp_FUN_004f7bf0 ; 004b85d0
-        ;   XREF to: 004f7bf0 (UNCONDITIONAL_CALL)  ; undefined unkafter_mission.cpp_FUN_004f7bf0()
+    CALL core_mission.cpp_FUN_004f7bf0  ; 004b85d0
+        ;   XREF to: 004f7bf0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f7bf0()
     ADD ESP,0x4                         ; 004b85d5
     PUSH 0x0                            ; 004b85d8
     MOV ESI,dword ptr [0x00600284]      ; 004b85da | DAT_00600284
@@ -561,8 +561,8 @@ section .text
     CALL core_sound.cpp_CSound_shutdown_FUN_0055fee0 ; 004b85f9
         ;   XREF to: 0055fee0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_shutdown_FUN_0055fee0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004b85fe
-    CALL unkafter_alphabit.cpp_FUN_00411a40 ; 004b8601
-        ;   XREF to: 00411a40 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_00411a40()
+    CALL core_bmppuzzl.cpp_FUN_00411a40 ; 004b8601
+        ;   XREF to: 00411a40 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_00411a40()
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b8606
     PUSH EAX                            ; 004b8609
     CALL core_game.cpp_FUN_004c49f0     ; 004b860a
@@ -774,8 +774,8 @@ section .text
         ;   XREF to: 004b888e (CONDITIONAL_JUMP)  ; LAB_004b888e
     PUSH EBX                            ; 004b887f
     PUSH ESI                            ; 004b8880
-    CALL unkafter_alphabit.cpp_FUN_004119a0 ; 004b8881
-        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_004119a0()
+    CALL core_bmppuzzl.cpp_FUN_004119a0 ; 004b8881
+        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_004119a0()
     ADD ESP,0x8                         ; 004b8886
     JMP 0x004b8719                      ; 004b8889
         ;   XREF to: 004b8719 (UNCONDITIONAL_JUMP)  ; LAB_004b8719

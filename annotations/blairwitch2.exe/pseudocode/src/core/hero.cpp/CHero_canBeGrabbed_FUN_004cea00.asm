@@ -26,6 +26,9 @@ section .text
         ;   XREF to: 004cea16 (CONDITIONAL_JUMP)  ; LAB_004cea16
     LEA EAX,[EAX]                       ; 004cea08
     MOV EDX,EDX                         ; 004cea0e
+    MOV EAX,0x1                         ; 004cea10
+        ;   Label: caseD_1
+    RET                                 ; 004cea15
     PUSH EDX                            ; 004cea16
         ;   Label: LAB_004cea16
     MOV EAX,dword ptr [ESP + 0x8]       ; 004cea17
@@ -41,7 +44,7 @@ section .text
     ADD ESP,0xc                         ; 004cea34
     TEST EAX,EAX                        ; 004cea37
     JGE 0x004cea10                      ; 004cea39
-        ;   XREF to: 004cea10 (CONDITIONAL_JUMP)  ; caseD_2
+        ;   XREF to: 004cea10 (CONDITIONAL_JUMP)  ; caseD_1
     LEA EAX,[EAX]                       ; 004cea3b
     MOV ECX,ECX                         ; 004cea3e
 

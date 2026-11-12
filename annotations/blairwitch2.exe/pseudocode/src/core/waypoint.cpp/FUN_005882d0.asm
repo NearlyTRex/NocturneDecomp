@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
+;   core_basicene.cpp_FUN_0059ee00 at 0059eec1
 ;   core_charactr.cpp_FUN_0042b420 at 0042b434
 ;   core_hostage.cpp_CHostage_process_FUN_004d1660 at 004d227a
-;   unkafter_basicene.cpp_FUN_0059ee00 at 0059eec1
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8

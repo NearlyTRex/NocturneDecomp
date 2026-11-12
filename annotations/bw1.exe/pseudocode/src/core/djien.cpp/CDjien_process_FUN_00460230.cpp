@@ -141,7 +141,7 @@ LAB_004605ea:
                            (0x01C51D80,"DjienInZone");
         if (iVar11 == 0) {
           engine_console_cpp_FUN_00445430(g_CConsolePtr,"DJIEN: got outside of box - hesitating\n");
-          unkafter_djien_cpp_FUN_00460960(this_ptr);
+          core_djien_cpp_FUN_00460960(this_ptr);
         }
         else {
           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time)
@@ -149,7 +149,7 @@ LAB_004605ea:
           fVar9 = 0x41000000;
           if ((this_ptr->base).victim == (CCharacter *)0x0) {
             engine_console_cpp_FUN_00445430(g_CConsolePtr,"DJIEN: lost victim - hesitating\n");
-            unkafter_djien_cpp_FUN_00460960(this_ptr);
+            core_djien_cpp_FUN_00460960(this_ptr);
           }
           else {
             fStack_18 = 0x41000000;
@@ -172,7 +172,7 @@ LAB_004605ea:
                                 pCVar15,min_distance,max_distance);
             if (iVar11 != 0) {
               engine_console_cpp_FUN_00445430(g_CConsolePtr,"DJIEN: reached victim or got confused - hesitating\n");
-              unkafter_djien_cpp_FUN_00460960(this_ptr);
+              core_djien_cpp_FUN_00460960(this_ptr);
             }
           }
         }
@@ -253,7 +253,7 @@ LAB_00460332:
         (this_ptr->base).pool_me = 1;
         this_ptr->sfx_handle = uVar13;
         if (this_ptr->blown_up == 0) {
-          unkafter_djien_cpp_FUN_00460cb0(this_ptr);
+          core_djien_cpp_FUN_00460cb0(this_ptr);
           core_motion_cpp_CMotionController_jumpToMotion_FUN_00524b10(&pCVar1->base,0xf,0.0);
         }
       }

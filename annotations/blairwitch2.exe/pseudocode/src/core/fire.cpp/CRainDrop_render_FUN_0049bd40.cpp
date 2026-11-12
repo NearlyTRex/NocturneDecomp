@@ -48,7 +48,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_0049bd40(CRainDrop *this_ptr)
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
             (DAT_0060b280,(CVector3f *)this_ptr);
-  engine_matrix_c_FUN_0046b650(DAT_0060b280);
+  engine_drender_cpp_FUN_0046b650(DAT_0060b280);
   rotation = (CVector3i *)0x0;
   CStack_38.x = iStack_20;
   *(int *)((int)&CStack_38 + (uint)bVar2 * -8 + 4) = aiStack_1c[(uint)bVar2 * -2];
@@ -122,6 +122,6 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_0049bd40(CRainDrop *this_ptr)
   uStack_88 = 2;
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930(DAT_0060b280,&SStack_a8);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   return;
 }

@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 SUB_00572cb0
 ;   undefined4 DAT_005c1d09
 ;   undefined4 DAT_02de54a4
 ;   undefined4 DAT_02de5d60
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0
+;   crt_unknown.c_FUN_00572cb0
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
     PUSH ESI                            ; 0057104c
         ;   Label: crt_unknown.c_FUN_0057104c
     PUSH EBP                            ; 0057104d
-    CALL 0x00572cb0                     ; 0057104e
-        ;   XREF to: 00572cb0 (UNCONDITIONAL_CALL)  ; SUB_00572cb0
+    CALL crt_unknown.c_FUN_00572cb0     ; 0057104e
+        ;   XREF to: 00572cb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00572cb0()
     MOV EDX,dword ptr [0x02de54a4]      ; 00571053 | DAT_02de54a4
     TEST EDX,EDX                        ; 00571059
     JZ 0x0057106e                       ; 0057105b

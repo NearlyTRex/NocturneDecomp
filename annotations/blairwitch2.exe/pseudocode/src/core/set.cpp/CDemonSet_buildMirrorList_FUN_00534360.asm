@@ -28,7 +28,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_box.cpp_FUN_0041a840
 ;   core_main.c_FUN_004e4500
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;
 ; *****************************************************************************
 
@@ -106,8 +106,8 @@ section .text
     MOV EDX,dword ptr [0x0060b280]      ; 0053443b | DAT_0060b280
         ;   Label: LAB_0053443b
     PUSH EDX                            ; 00534441 | DAT_01ba5c50
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 00534442
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 00534442
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 00534447
     MOV EBX,dword ptr [ESP + 0x30]      ; 0053444a
         ;   Label: LAB_0053444a

@@ -59,6 +59,6 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004af9f0(CGlassParticle *th
   DAT_00629090 = (this_ptr->uv_v_per_vertex).z;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050(DAT_00612560,&SStack_68);
-  engine_matrix_c_pop_FUN_004839a0();
+  engine_drender_cpp_pop_FUN_004839a0();
   return;
 }

@@ -7,7 +7,7 @@
 ; CConveyor *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_cow.cpp_factoryFuncConveyor_FUN_00438460 at 00438473
+;   core_conveyor.cpp_factoryFuncConveyor_FUN_00438460 at 00438473
 ;
 ; Called Functions:
 ;   core_platfrm.cpp_CPlatform_ctor_FUN_005180b0

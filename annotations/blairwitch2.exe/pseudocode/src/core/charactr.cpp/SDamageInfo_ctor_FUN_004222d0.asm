@@ -11,12 +11,12 @@
 ;   core_anvil.cpp_CAnvil_process_FUN_0040eae0 at 0040ebc5
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 0041029b
 ;   core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380 at 005a03ba
+;   core_basicene.cpp_FUN_0059f740 at 0059f75f
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411d50
 ;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413746
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004162b0 at 0041644f
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418dd3
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090 at 0041c537
-;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041e0dd
 ;   ... and 52 more
 ;
 ; *****************************************************************************

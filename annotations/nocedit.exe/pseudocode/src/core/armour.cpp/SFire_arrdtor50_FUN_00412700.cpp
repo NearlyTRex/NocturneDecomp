@@ -2,15 +2,15 @@
 // Address: 00412700
 // Address Range: [[00412700, 00412714]]
 // Convention: __cdecl
-// Signature: SFire * __cdecl core_armour_cpp_SFire_arrdtor50_FUN_00412700(SFire *objs,uint flags)
+// Signature: SFire * __cdecl core_armour_cpp_SFire_arrdtor50_FUN_00412700(SFire *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-SFire * __cdecl core_armour_cpp_SFire_arrdtor50_FUN_00412700(SFire *objs,uint flags)
+SFire * __cdecl core_armour_cpp_SFire_arrdtor50_FUN_00412700(SFire *this_ptr,uint flags)
 
 {
   SFire *pSVar1;
   
-  pSVar1 = (SFire *)__arrfini(objs,0x32,&g_SFireTypeInfo);
+  pSVar1 = (SFire *)__arrfini(this_ptr,0x32,&g_SFireTypeInfo);
   return pSVar1;
 }

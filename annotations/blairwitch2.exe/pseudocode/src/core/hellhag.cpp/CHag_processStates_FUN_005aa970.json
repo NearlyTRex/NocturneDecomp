@@ -1,0 +1,199 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 121,
+    "complexity_score": 66,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 41,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 162
+  },
+  "cross_references": [
+    {
+      "addr": "005aa600",
+      "from_addr": "005aa6d8",
+      "name": "core_hellhag.cpp_CHag_ctor_FUN_005aa600",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005aa970",
+    "address_range": [
+      [
+        "005aa970",
+        "005aaa7d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hellhag.cpp_CHag_processStates_FUN_005aa970",
+    "signature": "void __cdecl core_hellhag_cpp_CHag_processStates_FUN_005aa970(CHag *this_ptr,float delta_time,int mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059e8c0",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_FUN_0059e8c0"
+    },
+    {
+      "addr": "0059d650",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059d650"
+    },
+    {
+      "addr": "0059daa0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059daa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f0b88",
+      "name": "s_HagAlert_005f0b88",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0b91",
+      "name": "s_HagAlert_005f0b91",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0b9a",
+      "name": "s_MeleeAttack_005f0b9a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0ba6",
+      "name": "s_MeleeAttack_005f0ba6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0bb2",
+      "name": "s_Healing_005f0bb2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0bba",
+      "name": "s_Healing_005f0bba",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005aa6d8",
+        "call_type": "direct",
+        "caller": "core_hellhag.cpp_CHag_ctor_FUN_005aa600",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.404494382022472,
+    "instruction_count": 89,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 3,
+      "BRANCH": 3,
+      "CALL": 7,
+      "CALLIND": 3,
+      "CBRANCH": 10,
+      "COPY": 71,
+      "INT_ADD": 40,
+      "INT_AND": 47,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 40,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 20,
+      "INT_SUB": 36,
+      "LOAD": 27,
+      "POPCOUNT": 20,
+      "RETURN": 5,
+      "STORE": 33
+    },
+    "pcode_op_count": 392
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHag *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "SPlayerInput *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "((CDemonActor *)this_ptr,(UOrientationVector *)delta_time,unaff_ESI);",
+      "type": "unaffected_reg"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 352,
+        "vtable_addr": "00600a84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

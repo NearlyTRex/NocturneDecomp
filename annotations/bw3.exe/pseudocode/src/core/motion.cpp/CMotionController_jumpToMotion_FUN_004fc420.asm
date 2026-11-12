@@ -11,7 +11,7 @@
 ; XREF[18]:
 ;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 00419bab
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417a3b
-;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 00442dd9
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00442dd9
 ;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 0059891c
 ;   core_event.cpp_FUN_0048c2e0 at 00490ce6
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004f7710 at 004f7810

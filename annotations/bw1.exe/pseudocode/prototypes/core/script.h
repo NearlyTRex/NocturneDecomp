@@ -5,10 +5,6 @@
 // Function prototypes for core/script.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_script.cpp_staticInit_FUN_00503070
-// Address: 00503070
-void __cdecl staticInit(void);
-
 // Original: core_script.cpp_staticInit_FUN_005430c0
 // Address: 005430c0
 void staticInit(void);

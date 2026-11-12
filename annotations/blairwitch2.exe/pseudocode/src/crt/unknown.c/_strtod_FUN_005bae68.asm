@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   unkaddr_0057b9a0.cpp_FUN_0057bb80 at 0057cac3
+;   core_terrain.cpp_FUN_0057bb80 at 0057cac3
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c1f32

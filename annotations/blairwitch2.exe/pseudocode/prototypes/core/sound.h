@@ -41,6 +41,10 @@ CSound * __cdecl CSound::ctor(CSound *this_ptr);
 // Address: 0055a100
 void __cdecl FUN_0055a100(CSound *this_ptr);
 
+// Original: core_sound.cpp_shutdownSoundSystem_FUN_0055a160
+// Address: 0055a160
+void __cdecl shutdownSoundSystem(void);
+
 // Original: core_sound.cpp_syncChannel3WithChannel0_FUN_0055a16e
 // Address: 0055a16e
 void syncChannel3WithChannel0(void);

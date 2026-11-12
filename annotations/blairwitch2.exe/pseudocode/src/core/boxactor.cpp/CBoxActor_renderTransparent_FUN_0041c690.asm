@@ -7,8 +7,8 @@
 ; CBoxActor *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_partibox.cpp_CParticleBox_renderTransparent_FUN_005ad300 at 005ad342
-;   core_spirmine.cpp_CSpiritMine_renderTransparent_FUN_005ad910 at 005ad916
+;   core_hpbox.cpp_CParticleBox_renderTransparent_FUN_005ad300 at 005ad342
+;   core_mine.cpp_CSpiritMine_renderTransparent_FUN_005ad910 at 005ad916
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b27c
@@ -22,7 +22,7 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;
 ; *****************************************************************************
 
@@ -113,8 +113,8 @@ section .text
     MOV EDX,dword ptr [0x0060b27c]      ; 0041c776 | DAT_0060b27c
         ;   Label: LAB_0041c776
     PUSH EDX                            ; 0041c77c
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 0041c77d
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 0041c77d
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 0041c782
     MOV EAX,ESI                         ; 0041c785
     POP ESI                             ; 0041c787

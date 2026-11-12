@@ -166,7 +166,7 @@ LAB_0051e8aa:
                  core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60(param_1,3);
       local_f0 = (1.0 - (float)local_18) * local_e8 * local_f0;
       if (0.0 < local_f0) {
-        pcVar15 = unkafter_prye_cpp_FUN_00517ce0;
+        pcVar15 = core_prye_cpp_FUN_00517ce0;
         iVar14 = _DAT_01ed3720;
         core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(fVar2);
         pCVar12 = &local_e0;
@@ -192,7 +192,7 @@ LAB_0051e8aa:
       puVar5[(uint)bVar10 * -2 + 1] =
            (afStack_6c + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170
-                (&param_1->model,&local_80,local_38,_DAT_01ed3720,unkafter_prye_cpp_FUN_00517ce0);
+                (&param_1->model,&local_80,local_38,_DAT_01ed3720,core_prye_cpp_FUN_00517ce0);
       iVar14 = core_actor_cpp_castToClassHash_FUN_0040c840
                          (param_1->carry_hands[0].carry_actor,DAT_007e1a50);
       if ((iVar14 != 0) && (*(int *)(param_1[2].flames[0x15].base.create_event + 0x44) != 0)) {
@@ -229,7 +229,7 @@ LAB_0051e8aa:
       core_xform_cpp_quaternionFromAngleX_FUN_00585cd0
                 (*(uint *)(param_1[2].flames[0x15].base.create_event + 8));
       fVar2 = local_30;
-      pcVar15 = unkafter_prye_cpp_FUN_00517ce0;
+      pcVar15 = core_prye_cpp_FUN_00517ce0;
       pCVar12 = &local_c0;
       local_c0.w = local_b0;
       pfVar7 = (float *)((int)&local_c0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -246,7 +246,7 @@ LAB_0051e8aa:
                 (*(uint *)(param_1[2].flames[0x15].base.create_event + 0xc));
       pCVar11 = local_18;
       fVar2 = local_30;
-      pcVar15 = unkafter_prye_cpp_FUN_00517ce0;
+      pcVar15 = core_prye_cpp_FUN_00517ce0;
       pCVar12 = &local_d0;
       local_d0.w = local_90;
       pfVar7 = (float *)((int)&local_d0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);

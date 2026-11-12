@@ -9,6 +9,10 @@
 // Address: 004fb280
 void __cdecl FUN_004fb280(CMotionList *this_ptr,_FILE *file_handle);
 
+// Original: core_motion.cpp_FUN_004fb6b0
+// Address: 004fb6b0
+void FUN_004fb6b0(int *param_1,undefined4 param_2);
+
 // Original: core_motion.cpp_FUN_004fb72e
 // Address: 004fb72e
 void FUN_004fb72e(void);

@@ -108,7 +108,7 @@ void engine_drender_cpp_FUN_0046de6e(int *param_1,ushort *param_2,int param_3,in
             } while (iVar3 < param_4);
           }
           if (param_1[4] == 0) {
-            unkafter_dpart_cpp_FUN_004673d0(aCStack_68,iVar3);
+            core_dpart_cpp_FUN_004673d0(aCStack_68,iVar3);
           }
           else {
             core_xform_cpp_transformAndClipGeometry_FUN_00587cd0(iVar3,&aCStack_68[0].x);

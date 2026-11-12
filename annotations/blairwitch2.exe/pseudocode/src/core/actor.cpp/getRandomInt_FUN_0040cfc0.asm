@@ -18,11 +18,11 @@
 ;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00412760 at 00412838
 ;   core_batman.cpp_CBatman_processDamage_FUN_00414290 at 00414368
 ;   core_biggs.cpp_CBiggs_processDamage_FUN_004152e0 at 0041531a
+;   core_bmppuzzl.cpp_CExamplePuzzle_load_FUN_0059ad20 at 0059ad39
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_004182d0 at 004183be
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00419520 at 00419aed
 ;   core_boxactor.cpp_CLightActor_process_FUN_0041d020 at 0041d093
 ;   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00421800 at 004219db
-;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10 at 00421d4b
 ;   ... and 49 more
 ;
 ; Referenced Globals:

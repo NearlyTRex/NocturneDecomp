@@ -18,7 +18,7 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;
 ; *****************************************************************************
 
@@ -109,8 +109,8 @@ section .text
     MOV EDX,dword ptr [0x0061255c]      ; 004226e6 | DAT_0061255c
         ;   Label: LAB_004226e6
     PUSH EDX                            ; 004226ec
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 004226ed
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 004226ed
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004226f2
     MOV EAX,ESI                         ; 004226f5
     POP ESI                             ; 004226f7

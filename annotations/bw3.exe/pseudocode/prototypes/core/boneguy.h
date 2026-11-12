@@ -137,6 +137,10 @@ void FUN_00419a90(void);
 // Address: 00419ab0
 CDemonActorType * __cdecl CBaalSkel::getActorType(CBaalSkel *this_ptr);
 
+// Original: core_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0
+// Address: 00419ac0
+CBaalSkel * CBaalSkel::ctor(CBaalSkel *this_ptr);
+
 // Original: core_boneguy.cpp_CBaalSkel_process_FUN_00419b40
 // Address: 00419b40
 void __cdecl CBaalSkel::process(CBaalSkel *this_ptr,float delta_time);
@@ -144,6 +148,10 @@ void __cdecl CBaalSkel::process(CBaalSkel *this_ptr,float delta_time);
 // Original: core_boneguy.cpp_CBaalSkel_processDamage_FUN_0041a810
 // Address: 0041a810
 void __cdecl CBaalSkel::processDamage(CBaalSkel *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_boneguy.cpp_CBaalSkel_dtor_FUN_0041a8c0
+// Address: 0041a8c0
+CBaalSkel * CBaalSkel::dtor(CBaalSkel *this_ptr,uint flags);
 
 // Original: core_boneguy.cpp_CSkeletonDemon_dtor_FUN_0041a950
 // Address: 0041a950

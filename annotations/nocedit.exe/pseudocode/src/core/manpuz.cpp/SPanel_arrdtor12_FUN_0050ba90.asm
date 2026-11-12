@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SPanel * __cdecl core_manpuz_cpp_SPanel_arrdtor12_FUN_0050ba90(SPanel *objs,uint flags)
+; SPanel * __cdecl core_manpuz_cpp_SPanel_arrdtor12_FUN_0050ba90(SPanel *this_ptr,uint flags)
 ;
 ; Parameters:
-; SPanel *         Stack[0x4]:4   objs
+; SPanel *         Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

@@ -10,7 +10,7 @@
 ;
 ; XREF[9]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bbab
-;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 004461d2
+;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 004461d2
 ;   core_djien.cpp_CDjien_process_FUN_00460230 at 004603e9
 ;   core_event.cpp_FUN_004a1d00 at 004a6339
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30 at 0051c030

@@ -17,8 +17,8 @@
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90 at 0042fed1
 ;   core_charactr.cpp_FUN_0042fdc0 at 0042fe01
 ;   core_charactr.cpp_FUN_00432330 at 00432480
-;   core_constrct.cpp_CConstruct_getTargetPoints_FUN_00444010 at 00444035
-;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 00442ad5
+;   core_construc.cpp_CConstruct_getTargetPoints_FUN_00444010 at 00444035
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00442ad5
 ;   ... and 29 more
 ;
 ; *****************************************************************************

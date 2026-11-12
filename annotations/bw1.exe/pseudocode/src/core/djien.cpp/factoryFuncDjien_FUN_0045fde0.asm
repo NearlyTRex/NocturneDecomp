@@ -5,8 +5,8 @@
 ;
 ;
 ; Called Functions:
+;   core_djien.cpp_CDjien_ctor_FUN_0045fe10
 ;   crt_memory.c_operator_new_FUN_005c0f32
-;   unkafter_djien.cpp_CDjien_ctor_FUN_0045fe10
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 0045fdf1
     PUSH EAX                            ; 0045fdf2
         ;   Label: LAB_0045fdf2
-    CALL unkafter_djien.cpp_CDjien_ctor_FUN_0045fe10 ; 0045fdf3
-        ;   XREF to: 0045fe10 (UNCONDITIONAL_CALL)  ; CDjien * unkafter_djien.cpp_CDjien_ctor_FUN_0045fe10(CDjien * this_ptr)
+    CALL core_djien.cpp_CDjien_ctor_FUN_0045fe10 ; 0045fdf3
+        ;   XREF to: 0045fe10 (UNCONDITIONAL_CALL)  ; CDjien * core_djien.cpp_CDjien_ctor_FUN_0045fe10(CDjien * this_ptr)
     ADD ESP,0x4                         ; 0045fdf8
     RET                                 ; 0045fdfb
 

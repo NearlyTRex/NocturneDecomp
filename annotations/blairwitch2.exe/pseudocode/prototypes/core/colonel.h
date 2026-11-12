@@ -21,10 +21,6 @@ CDemonActorType * CColonel::getActorType(CColonel *this_ptr);
 // Address: 00435610
 CColonel * CColonel::ctor(CColonel *this_ptr);
 
-// Original: core_colonel.cpp_FUN_0043563f
-// Address: 0043563f
-void FUN_0043563f(void);
-
 // Original: core_colonel.cpp_CColonel_setup_FUN_00435680
 // Address: 00435680
 void __cdecl CColonel::setup(CColonel *this_ptr);

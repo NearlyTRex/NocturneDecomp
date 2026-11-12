@@ -109,7 +109,7 @@ CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_004e434
 void __cdecl core_litecone_cpp_CLightCone_archive_FUN_004e43a0(CLightCone *this_ptr);
 ECollisionType __cdecl core_litecone_cpp_CLightCone_getCollisionType_FUN_004e4430(CLightCone *this_ptr,SCollisionInfo *collision_info);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_004e4440(CLightCone *this_ptr,uint flags);
-void __cdecl core_script_cpp_staticInit_FUN_004e4490(void);
+void __cdecl core_main_c_staticInit_FUN_004e4490(void);
 void core_main_c_FUN_004e4500(undefined4 param_1);
 void core_main_c_FUN_004e45e0(void);
 int __cdecl core_main_c_FUN_004e46b0(void);
@@ -135,6 +135,7 @@ void __cdecl core_manpuz_cpp_FUN_004e63c0(CMansionPuzzleCircle *this_ptr,int gem
 void __cdecl core_manpuz_cpp_FUN_004e6820(CMansionPuzzleCircle *this_ptr,int reflector_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_004e68c0(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004e6a50(CMansionPuzzleCircle *this_ptr,int panel_index,float *out_r,float *out_g,float *out_b);
+undefined4 core_manpuz_cpp_stepToward_FUN_004e6ac0(float *param_1,float param_2,float param_3);
 undefined4 __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_004e6b20(float *param_1,float param_2,float param_3,uint *param_4,undefined4 param_5,float *param_6);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40(CMansionPuzzleCircle *this_ptr,int gem_index,float delta_time);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_004e6f20(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time);
@@ -178,8 +179,8 @@ void __cdecl core_marquee_cpp_CMarquee_archive_FUN_004e84a0(CMarquee *this_ptr);
 ECollisionType __cdecl core_marquee_cpp_CMarquee_getCollisionType_FUN_004e8520(CMarquee *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_004e8530(CMarquee *this_ptr,CBoundingBox3D *out_box);
 CMarquee * core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags);
-undefined8 unkafter_marquee_cpp_FUN_004e8620(void);
-void unkafter_marquee_cpp_FUN_004e86a0(void);
+undefined8 core_marquee_cpp_FUN_004e8620(void);
+void core_marquee_cpp_FUN_004e86a0(void);
 int __cdecl engine_matrix_c_FUN_004e86b0(int angle);
 int __cdecl engine_matrix_c_FUN_004e86f0(int angle);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004e8730(void);
@@ -222,7 +223,7 @@ void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004eacc0(CMelee *th
 void __cdecl core_melee_cpp_CMelee_process_FUN_004eacf0(CMelee *this_ptr,float delta_time);
 void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_004ead10(CMelee *this_ptr,int weapon_state);
 CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_004ead30(CMelee *this_ptr,uint flags);
-void unkafter_melee_cpp_FUN_004eada0(undefined4 param_1);
+void core_melee_cpp_FUN_004eada0(undefined4 param_1);
 void __cdecl core_menu_cpp_staticInit_FUN_004eae70(void);
 void __cdecl core_menu_cpp_FUN_004eaf30(int x_center,int y_top,int height_half);
 int __cdecl core_menu_cpp_FUN_004eb0e0(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
@@ -241,5 +242,6 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_004ee3f0(void);
 void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_004ee8e0(int *key_code_ptr,char *key_name);
 char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004ee960(int param_1);
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004eeba0(EInputCodeType *key_code_ptr,char *description);
+int core_menu_cpp_FUN_004eece0(void);
 void core_menu_cpp_FUN_004eed60(void);
 

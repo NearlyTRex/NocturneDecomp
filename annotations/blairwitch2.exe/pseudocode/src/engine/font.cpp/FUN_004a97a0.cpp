@@ -28,6 +28,6 @@ void engine_font_cpp_FUN_004a97a0(int param_1)
     *(uint *)(param_1 + 0x1dd8) = 0;
     return;
   }
-  unkafter_palette_cpp_FUN_00510d50(*(uint *)(param_1 + 0x4214));
+  engine_palette_cpp_FUN_00510d50(*(uint *)(param_1 + 0x4214));
   return;
 }

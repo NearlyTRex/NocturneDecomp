@@ -23,8 +23,8 @@ void core_confedrt_cpp_FUN_005a1030(CCharacter *param_1)
     if (param_1[1].model.bone_transform.pose_data.bone_rotations[0x49].w == 0.0) {
       param_1[1].model.rest_bone_scales[0x5b] = _DAT_005fedb4;
       param_1[1].model.rest_bone_scales[0x5c] = 0.0;
-      unkaddr_0059d350_cpp_FUN_0059d7f0(pcVar1,"ChaseComplete","MeleeAttack");
-      unkaddr_0059d350_cpp_FUN_0059d8e0(pcVar1,"Chasing");
+      core_muzzle_cpp_FUN_0059d7f0(pcVar1,"ChaseComplete","MeleeAttack");
+      core_muzzle_cpp_FUN_0059d8e0(pcVar1,"Chasing");
       return;
     }
     iVar5 = core_motion_cpp_FUN_005035c0(&param_1->model);
@@ -44,8 +44,8 @@ LAB_005a1166:
         }
         param_1[1].model.rest_bone_scales[0x5c] = 5.0;
         param_1[1].model.rest_bone_scales[0x5b] = fVar3;
-        unkaddr_0059d350_cpp_FUN_0059d7f0(pcVar1,"ChaseComplete","MeleeAttack");
-        unkaddr_0059d350_cpp_FUN_0059d8e0(pcVar1,"Chasing");
+        core_muzzle_cpp_FUN_0059d7f0(pcVar1,"ChaseComplete","MeleeAttack");
+        core_muzzle_cpp_FUN_0059d8e0(pcVar1,"Chasing");
         return;
       }
       if (uVar2 != 0xd) goto LAB_005a1166;

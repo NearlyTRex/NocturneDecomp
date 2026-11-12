@@ -33,7 +33,7 @@ void __cdecl core_baal_cpp_CBaal_processDamage_FUN_00597af0(CBaal *this_ptr,SDam
       }
     }
     else {
-      iVar3 = unkafter_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
+      iVar3 = core_enemy_cpp_FUN_0048a1b0(this_ptr,damage_info->damage_amount);
       if (iVar3 != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,7,1);
       }

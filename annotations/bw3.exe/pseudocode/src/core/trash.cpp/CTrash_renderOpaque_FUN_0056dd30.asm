@@ -16,7 +16,7 @@
 ;   core_box.cpp_FUN_0041daf0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_pop_FUN_0046d080
 ;
 ; *****************************************************************************
 
@@ -98,8 +98,8 @@ section .text
     ADD ESP,0xc                         ; 0056dde6
     MOV EDI,dword ptr [0x005f2afc]      ; 0056dde9 | DAT_005f2afc
     PUSH EDI                            ; 0056ddef
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0056ddf0
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0056ddf0
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0056ddf5
     PUSH EBX                            ; 0056ddf8
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830 ; 0056ddf9

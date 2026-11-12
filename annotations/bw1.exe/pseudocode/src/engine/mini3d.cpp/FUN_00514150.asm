@@ -12,8 +12,8 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
+;   engine_mini3d.cpp_FUN_005116e0
 ;   engine_mini3d.cpp_FUN_005124f0
-;   unkafter_minecar.cpp_FUN_005116e0
 ;
 ; *****************************************************************************
 
@@ -107,8 +107,8 @@ section .text
     RET                                 ; 0051423d
     PUSH 0x2c8af28                      ; 0051423e
         ;   Label: LAB_0051423e
-    CALL unkafter_minecar.cpp_FUN_005116e0 ; 00514243
-        ;   XREF to: 005116e0 (UNCONDITIONAL_CALL)  ; undefined unkafter_minecar.cpp_FUN_005116e0()
+    CALL engine_mini3d.cpp_FUN_005116e0 ; 00514243
+        ;   XREF to: 005116e0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_005116e0()
     ADD ESP,0x4                         ; 00514248
     CALL engine_mini3d.cpp_FUN_005124f0 ; 0051424b
         ;   XREF to: 005124f0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_005124f0()

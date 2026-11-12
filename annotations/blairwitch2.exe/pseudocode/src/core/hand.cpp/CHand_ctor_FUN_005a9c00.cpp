@@ -13,7 +13,7 @@ CHand * core_hand_cpp_CHand_ctor_FUN_005a9c00(CHand *this_ptr)
 {
   CHand *this_ptr_00;
   
-  this_ptr_00 = (CHand *)unkafter_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
+  this_ptr_00 = (CHand *)core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
   (this_ptr_00->base).base.base.base.vtable._ub = &g_CHandVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(this_ptr_00->base).base.base.model,(char *)0x5f09e9);
@@ -33,9 +33,9 @@ CHand * core_hand_cpp_CHand_ctor_FUN_005a9c00(CHand *this_ptr)
   this_ptr_00->sleep_timer = 0.0;
   this_ptr_00->unused_11854 = 0;
   core_hand_cpp_CHand_processStates_FUN_005a9e10(this_ptr_00,0.0,0);
-  unkaddr_0059d350_cpp_FUN_0059d6f0(&(this_ptr_00->base).state_machine);
-  unkaddr_0059d350_cpp_FUN_0059d990();
-  unkaddr_0059d350_cpp_FUN_0059dc80();
+  core_muzzle_cpp_FUN_0059d6f0(&(this_ptr_00->base).state_machine);
+  core_muzzle_cpp_FUN_0059d990();
+  core_muzzle_cpp_FUN_0059dc80();
   (this_ptr_00->base).head_bone = -1;
   (this_ptr_00->base).flinch_bone = -1;
   (this_ptr_00->base).base.base.gravity_enabled = 0;

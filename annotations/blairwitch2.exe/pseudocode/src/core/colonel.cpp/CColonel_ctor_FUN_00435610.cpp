@@ -1,6 +1,6 @@
 // Name: core_colonel.cpp_CColonel_ctor_FUN_00435610
 // Address: 00435610
-// Address Range: [[00435610, 0043563b]]
+// Address Range: [[00435610, 00435673]]
 // Convention: unknown
 // Signature: CColonel * core_colonel_cpp_CColonel_ctor_FUN_00435610(CColonel *this_ptr)
 

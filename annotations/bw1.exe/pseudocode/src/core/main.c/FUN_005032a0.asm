@@ -31,8 +31,10 @@
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_0045dc30
 ;   core_dfont.cpp_FUN_0045e000
+;   core_flattn.cpp_FUN_004bf770
 ;   core_inivar.cpp_readIniData_FUN_004f4f50
 ;   core_main.c_FUN_005030e0
+;   core_marquee.cpp_FUN_005072c0
 ;   core_menu.cpp_showCalibrationTest_FUN_0050a9c0
 ;   core_mission.cpp_FUN_0051a2d0
 ;   core_mmx.c_detectCPUFeatures_FUN_0051c450
@@ -42,8 +44,6 @@
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fopen_FUN_005c157c
 ;   crt_stdio.c_freopen_FUN_005c1614
-;   crt_unknown.c_sprintf_FUN_005bfb40
-;   engine_2d.c_initGraphicsSystem_FUN_00401010
 ;   ... and 23 more
 ;
 ; *****************************************************************************
@@ -79,8 +79,8 @@ section .text
     CALL crt_stdio.c_freopen_FUN_005c1614 ; 005032f6
         ;   XREF to: 005c1614 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_freopen_FUN_005c1614()
     ADD ESP,0xc                         ; 005032fb
-    CALL unkafter_flattn.cpp_FUN_004bf770 ; 005032fe
-        ;   XREF to: 004bf770 (UNCONDITIONAL_CALL)  ; undefined unkafter_flattn.cpp_FUN_004bf770()
+    CALL core_flattn.cpp_FUN_004bf770   ; 005032fe
+        ;   XREF to: 004bf770 (UNCONDITIONAL_CALL)  ; undefined core_flattn.cpp_FUN_004bf770()
     CALL core_inivar.cpp_readIniData_FUN_004f4f50 ; 00503303
         ;   XREF to: 004f4f50 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_readIniData_FUN_004f4f50()
     MOV EDX,dword ptr [0x00622a6c]      ; 00503308 | g_CDemonPodPtr
@@ -119,8 +119,8 @@ section .text
     CALL core_main.c_FUN_005030e0       ; 0050337a
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0050337f
-    CALL unkafter_marquee.cpp_FUN_005072c0 ; 00503382
-        ;   XREF to: 005072c0 (UNCONDITIONAL_CALL)  ; undefined unkafter_marquee.cpp_FUN_005072c0()
+    CALL core_marquee.cpp_FUN_005072c0  ; 00503382
+        ;   XREF to: 005072c0 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_005072c0()
         ;   Label: LAB_00503382
     CALL engine_3d.c_initTextureCache_FUN_00403790 ; 00503387
         ;   XREF to: 00403790 (UNCONDITIONAL_CALL)  ; CTextureCache * engine_3d.c_initTextureCache_FUN_00403790()
@@ -775,8 +775,8 @@ section .text
     CALL core_netgame.cpp_CNetGame_init_FUN_0052c520 ; 00503986
         ;   XREF to: 0052c520 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_init_FUN_0052c520(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0050398b
-    CALL unkafter_alphabit.cpp_FUN_00415c20 ; 0050398e
-        ;   XREF to: 00415c20 (UNCONDITIONAL_CALL)  ; undefined unkafter_alphabit.cpp_FUN_00415c20()
+    CALL engine_alphabit.cpp_FUN_00415c20 ; 0050398e
+        ;   XREF to: 00415c20 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415c20()
     PUSH 0x5e7394                       ; 00503993 | = "0"
     PUSH 0x5e7396                       ; 00503998 | = "Flip on VBlank"
     PUSH 0x5e73a5                       ; 0050399d | = "SOFTWARE\\Matrox\\PowerDesk\\Current ..."

@@ -10,6 +10,7 @@
 ;
 ; XREF[16]:
 ;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a10c3
+;   core_bird.cpp_FUN_00410030 at 00410075
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_004331a0 at 004331ee
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00431470 at 004314b9
 ;   core_event.cpp_FUN_0048c2e0 at 00490485
@@ -18,7 +19,6 @@
 ;   core_hero.cpp_FUN_004d2c20 at 004d2c66
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004fc160 at 004fc170
 ;   core_npc.cpp_CNPC_process_FUN_00509120 at 00509457
-;   core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00509900 at 00509945
 ;   ... and 6 more
 ;
 ; Referenced Globals:

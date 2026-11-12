@@ -119,9 +119,9 @@ void shape_edittool_cpp_FUN_0047fa80(void)
     }
   }
   else {
-    unkafter_minecar_cpp_FUN_004ed150(&local_44,&local_40,&local_3c,&local_38);
+    engine_mini3d_cpp_FUN_004ed150(&local_44,&local_40,&local_3c,&local_38);
     local_14 = *(int *)(iVar5 + 0x1c5b110) + 1;
-    unkafter_minecar_cpp_FUN_004ed020
+    engine_mini3d_cpp_FUN_004ed020
               ((float)*piVar6,(float)*(int *)(iVar5 + 0x1c5b10c),(float)local_14,
                (float)(*(int *)(iVar5 + 0x1c5b114) + 1));
     uVar8 = _DAT_01c5baf4;
@@ -165,7 +165,7 @@ void shape_edittool_cpp_FUN_0047fa80(void)
     engine_mini3d_cpp_FUN_004f3ad0
               (*(int *)(iVar5 + 0x1c5b110) + -1,*(uint *)(iVar5 + 0x1c5b10c),
                *(int *)(iVar5 + 0x1c5b114) + -1);
-    unkafter_minecar_cpp_FUN_004ed020(local_44,local_40,local_3c,local_38);
+    engine_mini3d_cpp_FUN_004ed020(local_44,local_40,local_3c,local_38);
   }
   if (*(char *)(iVar5 + 0x1c5b150) != '\0') {
     local_30 = _DAT_01c6b5ac;

@@ -5,6 +5,46 @@
 // Function prototypes for core/construc.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_construc.cpp_staticInit_FUN_00436aa0
+// Address: 00436aa0
+void staticInit(void);
+
+// Original: core_construc.cpp_factoryFuncConstruct_FUN_00436ad0
+// Address: 00436ad0
+void factoryFuncConstruct(void);
+
+// Original: core_construc.cpp_CConstruct_getActorType_FUN_00436af0
+// Address: 00436af0
+CDemonActorType * CConstruct::getActorType(CConstruct *this_ptr);
+
+// Original: core_construc.cpp_CConstruct_ctor_FUN_00436b00
+// Address: 00436b00
+CConstruct * CConstruct::ctor(CConstruct *this_ptr);
+
+// Original: core_construc.cpp_CConstruct_setup_FUN_00436be0
+// Address: 00436be0
+void __cdecl CConstruct::setup(CConstruct *this_ptr);
+
+// Original: core_construc.cpp_CConstruct_process_FUN_00436e80
+// Address: 00436e80
+void __cdecl CConstruct::process(CConstruct *this_ptr,float delta_time);
+
+// Original: core_construc.cpp_CConstruct_renderOpaque_FUN_00437b70
+// Address: 00437b70
+int __cdecl CConstruct::renderOpaque(CConstruct *this_ptr);
+
+// Original: core_construc.cpp_CConstruct_archive_FUN_00437b80
+// Address: 00437b80
+void __cdecl CConstruct::archive(CConstruct *this_ptr);
+
+// Original: core_construc.cpp_CConstruct_processDamage_FUN_00437de0
+// Address: 00437de0
+void __cdecl CConstruct::processDamage(CConstruct *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_construc.cpp_CConstruct_getTargetPoints_FUN_00437ee0
+// Address: 00437ee0
+int __cdecl CConstruct::getTargetPoints(CConstruct *this_ptr,CVector3f *out_points_array);
+
 // Original: core_construc.cpp_FUN_00438060
 // Address: 00438060
 void FUN_00438060(CCharacter *param_1);

@@ -40,7 +40,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
     }
     if (DAT_0061b49c == 0x1e0) {
       if (this_ptr->use_custom_viewport != 0) {
-        engine_matrix_c_FUN_00483c10
+        engine_drender_cpp_FUN_00483c10
                   (DAT_00612560,this_ptr->viewport_x,this_ptr->viewport_y,this_ptr->viewport_width,
                    this_ptr->viewport_height);
       }
@@ -50,7 +50,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
       if (this_ptr->use_custom_viewport != 0) {
         local_14 = 0x42a80000;
       }
-      engine_matrix_c_FUN_004839b0(DAT_00612560,local_14);
+      engine_drender_cpp_FUN_004839b0(DAT_00612560,local_14);
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
                 (DAT_00612560,(CVector3f *)&DAT_02c8af28);
       local_20.z = 36.0;
@@ -144,7 +144,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader *this_
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00467270
                 (&g_LoadingMoonModel,0,(CKeyFramedModelInstance *)0x0,0x205);
       if (this_ptr->use_custom_viewport != 0) {
-        engine_matrix_c_popViewport_FUN_00483c40();
+        engine_drender_cpp_popViewport_FUN_00483c40();
       }
       g_CDemonSetPtr->rendering_mode = 0;
       local_c = _DAT_0152d244;

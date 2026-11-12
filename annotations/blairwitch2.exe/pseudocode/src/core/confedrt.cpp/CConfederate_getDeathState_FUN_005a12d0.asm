@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_FUN_005035c0
-;   unkaddr_0059d350.cpp_FUN_0059daa0
+;   core_muzzle.cpp_FUN_0059daa0
 ;
 ; *****************************************************************************
 
@@ -24,16 +24,16 @@ section .text
     PUSH 0x5efcd7                       ; 005a12d5 | = "Death"
     ADD EBX,0x10af8                     ; 005a12da
     PUSH EBX                            ; 005a12e0
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a12e1
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a12e1
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a12e6
     TEST EAX,EAX                        ; 005a12e9
     JNZ 0x005a12ff                      ; 005a12eb
         ;   XREF to: 005a12ff (CONDITIONAL_JUMP)  ; LAB_005a12ff
     PUSH 0x5efcdd                       ; 005a12ed | = "Animation"
     PUSH EBX                            ; 005a12f2
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a12f3
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a12f3
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a12f8
     TEST EAX,EAX                        ; 005a12fb
     JZ 0x005a132e                       ; 005a12fd

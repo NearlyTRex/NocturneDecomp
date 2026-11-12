@@ -7,11 +7,11 @@
 ; XREF[7]:
 ;   core_asgaya.cpp_FUN_005a1ea0 at 005a21b0
 ;   core_asgaya.cpp_FUN_005a23c0 at 005a264b
+;   core_dpart.cpp_FUN_004673d0 at 004674ea
 ;   engine_3d.c_clipAndDrawLine3D_FUN_00407e30 at 00408091
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480 at 005175f2
 ;   engine_prim.c_renderPolygonSoftware_FUN_00515e80 at 00516088
 ;   engine_prim.c_renderScanlinePolygon_FUN_00516de0 at 005170e3
-;   unkafter_dpart.cpp_FUN_004673d0 at 004674ea
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6e2b0

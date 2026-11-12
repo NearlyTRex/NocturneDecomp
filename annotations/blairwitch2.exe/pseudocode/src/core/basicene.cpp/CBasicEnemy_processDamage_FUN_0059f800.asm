@@ -11,8 +11,8 @@
 ;
 ; XREF[4]:
 ;   core_confedrt.cpp_CConfederate_processDamage_FUN_005a1a70 at 005a1a98
+;   core_fforest.cpp_CTwigZombie_processDamage_FUN_005a2e90 at 005a2ea1
 ;   core_schngeis.cpp_CSchnellGeist_processDamage_FUN_005a3ba0 at 005a3bdf
-;   core_twigzomb.cpp_CTwigZombie_processDamage_FUN_005a2e90 at 005a2ea1
 ;   core_union.cpp_CUnion_processDamage_FUN_005a59f0 at 005a5a26
 ;
 ; Referenced Globals:
@@ -26,9 +26,9 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
+;   core_muzzle.cpp_FUN_0059d8e0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;   sound_sndmain.cpp_FUN_00550b70
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
 ;
 ; *****************************************************************************
 
@@ -76,8 +76,8 @@ section .text
     ADD EBX,0x10af8                     ; 0059f862
     PUSH EBX                            ; 0059f868
     MOV dword ptr [EBX + 0xffff1ab0],0x0 ; 0059f869
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 0059f873
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 0059f873
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 0059f878
         ;   Label: LAB_0059f878
     ADD ESP,0x4                         ; 0059f87b

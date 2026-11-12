@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01c8672c
 ;
 ; Called Functions:
-;   unkaddr_0059d350.cpp_CMuzzleEffect_init_FUN_0059d360
+;   core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 0049d1a9
     PUSH EDI                            ; 0049d1ad
     PUSH EAX                            ; 0049d1ae
-    CALL unkaddr_0059d350.cpp_CMuzzleEffect_init_FUN_0059d360 ; 0049d1af
-        ;   XREF to: 0059d360 (UNCONDITIONAL_CALL)  ; void unkaddr_0059d350.cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect * this_ptr, CVector3f * param_2, undefined4 param_3)
+    CALL core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360 ; 0049d1af
+        ;   XREF to: 0059d360 (UNCONDITIONAL_CALL)  ; void core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360(CMuzzleEffect * this_ptr, CVector3f * param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 0049d1b4
     POP EDI                             ; 0049d1b7
     POP ESI                             ; 0049d1b8

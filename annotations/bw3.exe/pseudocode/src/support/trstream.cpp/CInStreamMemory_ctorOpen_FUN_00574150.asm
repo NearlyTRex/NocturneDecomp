@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   support_trstream.cpp_CInStreamMemory_open_FUN_00574440
-;   unkafter_turret.cpp_FUN_00572530
+;   support_trstream.cpp_FUN_00572530
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     PUSH ESI                            ; 00574151
     MOV EDX,dword ptr [ESP + 0xc]       ; 00574152
     PUSH EDX                            ; 00574156
-    CALL unkafter_turret.cpp_FUN_00572530 ; 00574157
-        ;   XREF to: 00572530 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00572530()
+    CALL support_trstream.cpp_FUN_00572530 ; 00574157
+        ;   XREF to: 00572530 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00572530()
     ADD ESP,0x4                         ; 0057415c
     MOV dword ptr [EAX],0x5e5ac4        ; 0057415f | g_CInStreamMemoryVTable
     MOV ECX,dword ptr [ESP + 0x14]      ; 00574165

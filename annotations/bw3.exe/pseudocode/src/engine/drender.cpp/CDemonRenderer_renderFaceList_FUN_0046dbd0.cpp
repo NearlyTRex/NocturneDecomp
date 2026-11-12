@@ -48,7 +48,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0(CDemo
               this_ptr->vertex_buffer_ptr[local_24.z].v = (uint)face_array->v_coord_2 << 8;
             }
             face_array = face_array + 1;
-            unkafter_dpart_cpp_FUN_00466d50(&local_24.x,3);
+            core_dpart_cpp_FUN_00466d50(&local_24.x,3);
           }
         }
         else {
@@ -95,7 +95,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0(CDemo
             local_24.z = (int)(face_array->vertex_indices).vertex_index_2;
             face_count = face_count + -1;
             face_array = face_array + 1;
-            unkafter_dpart_cpp_FUN_004673d0(&local_24,3);
+            core_dpart_cpp_FUN_004673d0(&local_24,3);
             uVar1 = _DAT_01c6e2b4;
             uVar2 = _DAT_01c6e2b8;
           } while (0 < face_count);

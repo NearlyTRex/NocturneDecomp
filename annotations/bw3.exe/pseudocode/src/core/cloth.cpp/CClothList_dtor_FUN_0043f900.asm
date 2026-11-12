@@ -10,14 +10,14 @@
 ; XREF[62]:
 ;   core_asgaya.cpp_CAsgaya_dtor_FUN_005a1b50 at 005a1b95
 ;   core_baal.cpp_CBaal_dtor_FUN_00597d00 at 00597d25
+;   core_bird.cpp_CBird_dtor_FUN_004101f0 at 00410225
+;   core_boneguy.cpp_CBaalSkel_dtor_FUN_0041a8c0 at 0041a8e5
 ;   core_boneguy.cpp_CBoneGuy_dtor_FUN_0041ab00 at 0041ab25
 ;   core_boneguy.cpp_CSkeletonDemon_dtor_FUN_0041a950 at 0041a975
 ;   core_boneguy.cpp_CSkeletonForest_dtor_FUN_0041aa70 at 0041aa95
 ;   core_boneguy.cpp_CSkeletonIndian_dtor_FUN_0041a9e0 at 0041aa05
 ;   core_bugs.cpp_CBugs_dtor_FUN_00424330 at 00424355
 ;   core_carved.cpp_CCarved_dtor_FUN_004291f0 at 00429215
-;   core_charactr.cpp_CCharacter_dtor_FUN_00410290 at 004102b5
-;   core_construc.cpp_CConstructBone_dtor_FUN_004446f0 at 00444715
 ;   ... and 52 more
 ;
 ; Called Functions:

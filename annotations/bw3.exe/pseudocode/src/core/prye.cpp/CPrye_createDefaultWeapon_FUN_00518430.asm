@@ -7,7 +7,7 @@
 ; CPrye *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CPrye_ctor_FUN_00517f80 at 00517f9b
+;   core_prye.cpp_CPrye_ctor_FUN_00517f80 at 00517f9b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CFlintlock_005ccd33

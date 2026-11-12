@@ -24,8 +24,8 @@ void __cdecl core_confzomb_cpp_CConfederateZombie_setup_FUN_005a1d90(CConfederat
                     (this_ptr_01,"Bip01 R Finger1",1);
   this_ptr_00 = (this_ptr->base).base.base.base.particle_systems + 4;
   this_ptr->right_finger_bone = iVar1;
-  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(this_ptr_00,0x100);
-  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_attach_FUN_005a8050(this_ptr_00,this_ptr);
-  unkaddr_005a7eb0_cpp_CSimpleParticleSystem_start_FUN_005a80d0(this_ptr_00,0);
+  core_bwspart_cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030(this_ptr_00,0x100);
+  core_bwspart_cpp_CSimpleParticleSystem_attach_FUN_005a8050(this_ptr_00,this_ptr);
+  core_bwspart_cpp_CSimpleParticleSystem_start_FUN_005a80d0(this_ptr_00,0);
   return;
 }

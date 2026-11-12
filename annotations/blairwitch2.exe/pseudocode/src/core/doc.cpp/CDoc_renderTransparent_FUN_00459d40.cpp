@@ -19,7 +19,7 @@ int __cdecl core_doc_cpp_CDoc_renderTransparent_FUN_00459d40(CDoc *this_ptr)
   if (this_ptr_00 != (CWeapon *)0x0) {
     (*((this_ptr_00->base).vtable._ub)->renderTransparent)(&this_ptr_00->base);
   }
-  unkafter_superopt_cpp_CSimpleParticleSystem_render_FUN_005a8290
+  core_bwspart_cpp_CSimpleParticleSystem_render_FUN_005a8290
             ((this_ptr->base).base.base.particle_systems);
   return 1;
 }

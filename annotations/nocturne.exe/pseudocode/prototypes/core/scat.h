@@ -9,13 +9,13 @@
 // Address: 004fbb40
 void __cdecl staticInit(void);
 
-// Original: core_scat.cpp_FUN_004fbb70
+// Original: core_scat.cpp_getWeaponInteractionType_FUN_004fbb70
 // Address: 004fbb70
-undefined4 FUN_004fbb70(void);
+int __cdecl getWeaponInteractionType(CWeapon *weapon);
 
-// Original: core_scat.cpp_FUN_004fbbb0
+// Original: core_scat.cpp_getWeaponHoldType_FUN_004fbbb0
 // Address: 004fbbb0
-undefined4 FUN_004fbbb0(int param_1);
+int __cdecl getWeaponHoldType(CWeapon *weapon);
 
 // Original: core_scat.cpp_factoryFuncScat_FUN_004fbbd0
 // Address: 004fbbd0

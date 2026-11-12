@@ -20,8 +20,7 @@ SPageResourceText * core_fldnotes_cpp_SPageResourceText_dtor_FUN_004a2000(SPageR
     return this_ptr;
   }
   (this_ptr->base).vtable = &g_SPageResourceTextVTable;
-  pSVar1 = (SPageResourceText *)
-           unkaddr_004a1200_cpp_SPageResource_dtor_FUN_004a1e90(&this_ptr->base);
+  pSVar1 = (SPageResourceText *)core_fldnotes_cpp_SPageResource_dtor_FUN_004a1e90(&this_ptr->base);
   if ((flags & 2) == 0) {
     return pSVar1;
   }

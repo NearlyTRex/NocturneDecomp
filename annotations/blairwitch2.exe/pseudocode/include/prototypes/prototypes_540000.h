@@ -62,16 +62,19 @@ CDeformableModel * core_skeleton_cpp_CDeformableModel_dtor_FUN_00541140(CDeforma
 void __cdecl core_skeleton_cpp_CDeformableModel_free_FUN_00541160(CDeformableModel *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_00541250(CDeformableModel *this_ptr,int num_lods,int num_texture_sets,int num_textures,int num_parts);
 void core_skeleton_cpp_FUN_00541370(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5);
+void core_skeleton_cpp_FUN_00541500(int param_1,char *param_2);
 void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_00541540(CDeformableModel *this_ptr);
 CSkeleton * __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0(CDeformableModel *this_ptr);
 CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_00541620(CDeformableModel *this_ptr,int index);
 void __cdecl core_skeleton_cpp_FUN_00541640(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer,SPartInstanceData *part_data);
+undefined4 * core_skeleton_cpp_FUN_00541820(int param_1,int param_2,int param_3,int param_4);
 void __cdecl core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_00541990(CDeformableModel *this_ptr,int lod_index,int *input_vertices);
 void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_005419c0(CDeformableModel *this_ptr,int lod_index,CVector3i *skinned_vertices);
 void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_00541a00(CDeformableModel *this_ptr,int lod_index,CVector3i *lod_vertices);
 void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00541a60(CDeformableModel *this_ptr,int lod_index,int *part_visibility_flags,int *texture_set_indices,int render_flags,int skip_texture_capture);
 void __cdecl core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_00542410(CDeformableModel *this_ptr,int lod_level);
 CSkeleton * core_skeleton_cpp_FUN_005424ac(CDeformableModel *param_1,undefined4 param_2,int param_3,byte param_4);
+CSkeleton * core_skeleton_cpp_FUN_005424b0(CDeformableModel *param_1,undefined4 param_2,int param_3,byte param_4);
 void core_skeleton_cpp_FUN_005426be(CDeformableModel *param_1,int param_2);
 void __cdecl core_skeleton_cpp_CDeformableModel_load_FUN_005427c0(CDeformableModel *this_ptr,char *filename);
 void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00542850(CDeformableModel *this_ptr,_FILE *file_handle);
@@ -134,6 +137,7 @@ inline void core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_00547110(CDeformableModelInstance *this_ptr,float scale_factor,int target_bone_index);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170(CDeformableModelInstance *this_ptr,int lod_index,uint render_flags,int lighting_mode ,int render_pass);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005471f0(CDeformableModelInstance *this_ptr,int lod_index);
+void core_skeleton_cpp_FUN_00547230(CDeformableModelInstance *param_1,undefined4 param_2,undefined4 param_3);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_00547280(CDeformableModelInstance *this_ptr,int lod_index);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005472d0(CDeformableModelInstance *this_ptr,int lod_index);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_00547320(CDeformableModelInstance *this_ptr,int lod_index);
@@ -158,8 +162,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_shatter_FUN_005485c0(CDe
 SPose * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620(CDeformableModelInstance *this_ptr,SPose *bone_transform);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005486f0(CDeformableModelInstance *this_ptr,SPose *bone_transform);
 undefined4 * core_skeleton_cpp_FUN_005487d0(CDeformableModelInstance *param_1);
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_005488f0(CDeformableModelInstance *this_ptr,undefined4 param_2,undefined4 param_3);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_00548940(CDeformableModelInstance *this_ptr,int u_offset,int v_offset);
 void core_skeleton_cpp_computeBoneModelMatrices_FUN_00548a90(float *param_1,CDeformableModelInstance *param_2);
+void core_skeleton_cpp_FUN_00548cc0(float *param_1,float *param_2,float *param_3,float param_4,CDeformableModelInstance *param_5);
 CDeformableModel * core_skeleton_cpp_FUN_00548e80(char *param_1);
 void __cdecl core_skeleton_cpp_FUN_00548f80(void);
 CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_00548fc0(char *filename);
@@ -191,7 +197,8 @@ CSmiley * core_smiley_cpp_CSmiley_dtor_FUN_0054ad80(CSmiley *this_ptr,uint flags
 void __cdecl sound_sndmain_cpp_staticInit_FUN_0054ae20(void);
 void sound_sndmain_cpp_FUN_0054b15e(undefined4 *param_1,int param_2,int param_3,int param_4);
 undefined4 sound_sndmain_cpp_FUN_0054b4a0(int *param_1,int *param_2,int param_3);
-void sound_sndmain_cpp_FUN_0054b940(void);
+int sound_sndmain_cpp_FUN_0054b890(void);
+CSfxSample * sound_sndmain_cpp_FUN_0054b8f0(void);
 int __cdecl sound_sndmain_cpp_FUN_0054b960(int requested_bytes);
 void __cdecl sound_sndmain_cpp_trimLineAndRemoveComments_FUN_0054ba30(char *line);
 void sound_sndmain_cpp_FUN_0054bac0(char *param_1);

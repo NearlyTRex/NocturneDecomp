@@ -89,6 +89,10 @@ void __cdecl blitSpanBasedSpriteVerticallyClipped(void *sprite_data,void *span_d
 // Address: 00438700
 void __cdecl blitWithTransparencyFallback(void *src_data,int width,int height,void *background_base,int dest_x,int dest_y);
 
+// Original: cockpit_ckptutil.c_copyScreenRegion_FUN_00438790
+// Address: 00438790
+void copyScreenRegion(undefined4 *param_1,int param_2,int param_3,int param_4,uint param_5,int param_6);
+
 // Original: cockpit_ckptutil.c_FUN_004387f0
 // Address: 004387f0
 void FUN_004387f0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7);
@@ -169,9 +173,17 @@ void * rotateBitmap(char *param_1,void *param_2,uint param_3,uint param_4,int pa
 // Address: 0043a200
 void FUN_0043a200(undefined4 *param_1,int param_2,uint param_3,uint param_4);
 
+// Original: cockpit_ckptutil.c_setEdgeData_FUN_0043a3c0
+// Address: 0043a3c0
+void setEdgeData(int param_1,int param_2,undefined2 param_3,undefined2 param_4,undefined2 param_5,ushort param_6,byte param_7);
+
 // Original: cockpit_ckptutil.c_traceConnectedEdges_FUN_0043a45e
 // Address: 0043a45e
 void * traceConnectedEdges(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
+
+// Original: cockpit_ckptutil.c_flipEdgeArrayHorizontally_FUN_0043af20
+// Address: 0043af20
+void flipEdgeArrayHorizontally(ushort *param_1,int param_2,short param_3);
 
 // Original: cockpit_ckptutil.c_FUN_0043b090
 // Address: 0043b090

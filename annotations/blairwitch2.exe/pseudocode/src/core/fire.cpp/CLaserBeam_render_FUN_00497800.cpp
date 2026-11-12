@@ -174,7 +174,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00497800(CLaserBeam *this_ptr)
   local_380 = this_ptr->beam_width;
   local_394 = this_ptr->reticle_intensity;
   local_390 = 0.0;
-  engine_matrix_c_FUN_0046b5e0(DAT_0060b280);
+  engine_drender_cpp_FUN_0046b5e0(DAT_0060b280);
   local_168[2] = local_130;
   local_168[(uint)bVar10 * -2 + 3] = afStack_12c[(uint)bVar10 * -2];
   local_168[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
@@ -206,7 +206,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00497800(CLaserBeam *this_ptr)
   fVar1 = local_1d0 * local_1c4 + local_1e0[2] * local_1cc + local_1e0[3] * local_1c8;
   if (0.0 < fVar1) {
     if (this_ptr->cone_angle <= 0.0) {
-      engine_matrix_c_FUN_0046b5e0(DAT_0060b280);
+      engine_drender_cpp_FUN_0046b5e0(DAT_0060b280);
       local_270[2] = local_208;
       local_270[(uint)bVar10 * -2 + 3] = local_21c[(uint)bVar10 * -2 + 6];
       local_270[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4] =
@@ -282,7 +282,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00497800(CLaserBeam *this_ptr)
       }
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
                 (DAT_0060b280,&local_178);
-      engine_matrix_c_FUN_0046b670(DAT_0060b280);
+      engine_drender_cpp_FUN_0046b670(DAT_0060b280);
       iVar7 = local_20;
       pCVar13 = (CVector3f *)0x0;
       local_1f0.x = local_28c;
@@ -360,7 +360,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00497800(CLaserBeam *this_ptr)
       this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
       engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930(this_ptr_00,&local_2e8)
       ;
-      engine_matrix_c_pop_FUN_0046b4a0();
+      engine_drender_cpp_pop_FUN_0046b4a0();
       local_20 = local_20 + 1;
     } while (local_20 < 0x19);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
@@ -496,7 +496,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00497800(CLaserBeam *this_ptr)
         local_1c = local_1c + 1;
       } while (local_1c <= (int)local_24);
     }
-    engine_matrix_c_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
   }
   if (0.0 < local_394) {
     fVar2 = 1.0 / fVar2;
@@ -597,7 +597,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00497800(CLaserBeam *this_ptr)
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,local_18);
     engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046ac20
               (DAT_0060b280,(SMRGLPrimitivePoly *)local_378);
-    engine_matrix_c_pop_FUN_0046b4a0();
+    engine_drender_cpp_pop_FUN_0046b4a0();
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);

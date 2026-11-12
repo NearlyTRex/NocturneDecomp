@@ -19,6 +19,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[20]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_00416d60 at 00416dbd
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00416790 at 004168b9
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_turnKnob_FUN_00416e20 at 00416eb0
 ;   core_doc.cpp_FUN_00469550 at 0046bd07
 ;   core_dracbrid.cpp_FUN_0047d920 at 0047ddd0
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004aa550 at 004aa5a9
@@ -26,9 +29,6 @@
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004c59f0 at 004c5a2f
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d91d2
 ;   core_lightgun.cpp_CLightGun_process_FUN_00500d20 at 00500efc
-;   core_lightpis.cpp_CLightPis_process_FUN_00502480 at 0050265c
-;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_00505ec0 at 00506024
-;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_00506060 at 005060da
 ;   ... and 10 more
 ;
 ; Referenced Globals:
@@ -582,8 +582,8 @@ section .text
     POP EDI                             ; 00573358
         ;   Label: LAB_00573358
     PUSH ECX                            ; 00573359
-    CALL unkaddr_0059f520.cpp_CInStreamFile_tell_FUN_005a0d50 ; 0057335a
-        ;   XREF to: 005a0d50 (UNCONDITIONAL_CALL)  ; undefined4 unkaddr_0059f520.cpp_CInStreamFile_tell_FUN_005a0d50(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_tell_FUN_005a0d50 ; 0057335a
+        ;   XREF to: 005a0d50 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_tell_FUN_005a0d50(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0057335f
     PUSH EDI                            ; 00573362
     MOV dword ptr [EDI + 0x178],EAX     ; 00573363

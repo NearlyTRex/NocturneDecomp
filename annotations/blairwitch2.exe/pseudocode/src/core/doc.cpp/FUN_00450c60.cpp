@@ -262,7 +262,7 @@ void core_doc_cpp_FUN_00450c60(CHero *param_1,float param_2)
   float local_14;
   
   bVar25 = 0;
-  unkafter_special_cpp_FUN_0059e110(&(param_1->base).follow_formation,param_2);
+  core_muzzle_cpp_FUN_0059e110(&(param_1->base).follow_formation,param_2);
   local_3c = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
                        (0x01C38BC0,"?DebugActionPending" + 1);
   pCVar9 = (param_1->base).carry_hands[1].carry_actor;
@@ -1340,7 +1340,7 @@ LAB_004514a7:
       }
     }
     if (((param_1->player_input).action_state.light != 0) &&
-       (iVar20 = unkafter_stranger_cpp_FUN_0045df30(), iVar20 == 0)) {
+       (iVar20 = core_doc_cpp_FUN_0045df30(), iVar20 == 0)) {
       if (param_1[1].base.base.blood_effect_color == 0) {
         param_1[1].base.base.blood_effect_color = 1;
       }
@@ -1350,7 +1350,7 @@ LAB_004514a7:
     }
   }
   if (local_4c != 0) {
-    unkafter_stranger_cpp_FUN_0045bdc0();
+    core_doc_cpp_FUN_0045bdc0();
   }
   if (*(int *)param_1[1].base.base.actor_name == 0) {
     fVar27 = *(float *)(param_1[1].base.base.actor_name + 4) - param_2 / _DAT_005f5120;
@@ -1385,11 +1385,11 @@ LAB_004514a7:
     param_1[1].base.base.orient_matrix.m[0].z = 0.0;
   }
   if (local_34 != 0) {
-    unkafter_stranger_cpp_FUN_0045c960();
+    core_doc_cpp_FUN_0045c960();
   }
   core_doc_cpp_FUN_00453d80();
-  unkafter_stranger_cpp_FUN_0045b510(param_1);
-  unkafter_stranger_cpp_FUN_0045db40();
+  core_doc_cpp_FUN_0045b510(param_1);
+  core_doc_cpp_FUN_0045db40();
   core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429420(&param_1->base,param_2,0);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00429e90(&param_1->base,param_2);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0
@@ -1398,7 +1398,7 @@ LAB_004514a7:
   *(float *)&(param_1->base).base.field_0x2a8 = fVar27;
   if (fVar27 <= 0.0) {
     local_8c = (param_1->base).base.particle_systems;
-    iVar20 = unkafter_superopt_cpp_CSimpleParticleSystem_isActive_FUN_005a8130(local_8c);
+    iVar20 = core_bwspart_cpp_CSimpleParticleSystem_isActive_FUN_005a8130(local_8c);
     if (iVar20 != 0) {
       core_xform_cpp_FUN_00591530();
       pCVar18 = local_8c;
@@ -1410,7 +1410,7 @@ LAB_004514a7:
       *(uint *)&(param_1->base).base.field_0x2a8 = 0x3dcccccd;
       local_2c = 0;
       do {
-        iVar20 = unkaddr_005a7eb0_cpp_FUN_005a7ed0();
+        iVar20 = core_bwgrndma_cpp_FUN_005a7ed0();
         if (iVar20 != 0) {
           local_a4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
           local_14 = local_a4;
@@ -1497,7 +1497,7 @@ LAB_004514a7:
           fVar27 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(fVar27,fVar28);
           local_14 = fVar27;
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.2,0.4);
-          unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+          core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                     (local_30,0x3f19999a,0x3f800000,0,0x3f333333,0,local_14,fVar27,uVar29,pfVar30,
                      pfVar24,pfVar22,fVar33);
         }
@@ -1542,10 +1542,10 @@ LAB_004514a7:
       }
     }
   }
-  unkafter_stranger_cpp_FUN_00459ff0(param_1);
-  unkafter_stranger_cpp_FUN_0045d2c0();
+  core_doc_cpp_FUN_00459ff0(param_1);
+  core_doc_cpp_FUN_0045d2c0();
   core_inv_cpp_CInventory_updateInventory_FUN_004dccd0(param_1->inventories);
-  unkafter_stranger_cpp_FUN_0045dbf0();
+  core_doc_cpp_FUN_0045dbf0();
   if (local_34 == 0) {
     core_hero_cpp_FUN_004cf200();
   }

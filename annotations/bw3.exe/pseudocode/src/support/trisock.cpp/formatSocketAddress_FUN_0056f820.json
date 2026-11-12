@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 43,
     "complexity_score": 152,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
@@ -17,6 +17,12 @@
     "total_lines": 60
   },
   "cross_references": [
+    {
+      "addr": "0056fef0",
+      "from_addr": "0056ffeb",
+      "name": "support_trisock.cpp_FUN_0056fef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00571340",
       "from_addr": "00571c10",
@@ -57,7 +63,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "00571c10",
@@ -69,9 +75,20 @@
         "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
+      },
+      {
+        "call_addr": "0056ffeb",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0056fef0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 2,
@@ -200,7 +217,7 @@
       "type": "undefined_data"
     },
     {
-      "call_site_count": 1,
+      "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 2,

@@ -15,9 +15,9 @@
 ;   core_biggs.cpp_CBiggs_process_FUN_00414b30 at 00414d46
 ;   core_bird.cpp_CBird_renderOpaque_FUN_00415690 at 004156f5
 ;   core_bird.cpp_CBird_renderTransparent_FUN_00415730 at 0041574e
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00415fc0 at 00416407
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419740 at 004198cc
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bb63
-;   core_bugs.cpp_CBugs_process_FUN_004253c0 at 00425419
 ;   ... and 65 more
 ;
 ; Referenced Globals:

@@ -117,9 +117,29 @@ int __cdecl CSocket::setSocketBlocking(CSocket *this_ptr,int blocking_mode);
 // Address: 00579500
 int __cdecl startupWinsock(void);
 
+// Original: support_trisock.cpp_FUN_00579550
+// Address: 00579550
+bool FUN_00579550(undefined4 *param_1,char *param_2);
+
+// Original: support_trisock.cpp_FUN_00579720
+// Address: 00579720
+undefined4 FUN_00579720(char *param_1,char *param_2);
+
+// Original: support_trisock.cpp_FUN_005797b0
+// Address: 005797b0
+void FUN_005797b0(uchar param_1,undefined1 param_2,undefined1 param_3,undefined1 param_4,undefined4 param_5,undefined4 param_6,uint param_7);
+
+// Original: support_trisock.cpp_FUN_00579820
+// Address: 00579820
+undefined4 FUN_00579820(void *param_1);
+
 // Original: support_trisock.cpp_FUN_0057987e
 // Address: 0057987e
 bool FUN_0057987e(int param_1);
+
+// Original: support_trisock.cpp_FUN_00579890
+// Address: 00579890
+undefined4 FUN_00579890(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,CSocket *param_6,code *param_7);
 
 // Original: support_trisock.cpp_FUN_00579cc0
 // Address: 00579cc0
@@ -165,6 +185,10 @@ undefined1 * FUN_0057a6d0(int param_1);
 // Address: 0057a750
 void FUN_0057a750(char *param_1,char *param_2);
 
+// Original: support_trisock.cpp_FUN_0057a790
+// Address: 0057a790
+void FUN_0057a790(undefined1 *param_1,undefined4 param_2);
+
 // Original: support_trisock.cpp_FUN_0057a7c0
 // Address: 0057a7c0
 undefined4 FUN_0057a7c0(int param_1,undefined4 *param_2);
@@ -204,3 +228,15 @@ undefined4 FUN_0057ad10(int param_1,char *param_2);
 // Original: support_trisock.cpp_FUN_0057b680
 // Address: 0057b680
 uint FUN_0057b680(int param_1,int param_2);
+
+// Original: support_trisock.cpp_IpAddr_ctor_FUN_0057b780
+// Address: 0057b780
+SIpAddr * IpAddr::ctor(SIpAddr *this_ptr);
+
+// Original: support_trisock.cpp_FUN_0057b7a0
+// Address: 0057b7a0
+int FUN_0057b7a0(int param_1);
+
+// Original: support_trisock.cpp_FUN_0057b7c0
+// Address: 0057b7c0
+void FUN_0057b7c0(undefined4 *param_1,undefined4 *param_2);

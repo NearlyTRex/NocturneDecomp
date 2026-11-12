@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 21,
     "complexity_score": 34,
-    "cross_reference_count": 0,
+    "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
@@ -14,7 +14,14 @@
     ],
     "total_lines": 30
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "0048546e",
+      "from_addr": "004854f8",
+      "name": "shape_edittool.cpp_FUN_0048546e",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "00485580",
     "address_range": [
@@ -49,9 +56,21 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004854f8",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0048546e",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
     "declared_params": 1,
     "declared_stack_bytes": 4,
     "estimated_params": 1,

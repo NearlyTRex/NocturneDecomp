@@ -12,6 +12,6 @@ void __cdecl core_basicnpc_cpp_CBasicNPC_processStates_FUN_005a4880(CBasicNPC *t
   if (mode == 0) {
     return;
   }
-  unkafter_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
+  core_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
   return;
 }

@@ -133,7 +133,7 @@ void core_gore_cpp_FUN_004cd690(uint *param_1,int param_2)
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
               (DAT_005f2afc,(SMRGLHeaderPrimitive *)0x1d22e48);
     if (param_1[5] == 1) {
-      engine_matrix_c_pop_FUN_0046d080();
+      engine_drender_cpp_pop_FUN_0046d080();
       return;
     }
   }

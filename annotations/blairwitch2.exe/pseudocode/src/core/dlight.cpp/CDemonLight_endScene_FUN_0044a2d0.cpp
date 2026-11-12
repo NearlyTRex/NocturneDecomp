@@ -36,7 +36,7 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_0044a2d0(CDemonLight *this
     (this_ptr->base).max_distance = (float)uVar5 * (float)_DAT_005cf35f;
   }
   engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,0);
-  engine_matrix_c_popViewport_FUN_0046b740();
+  engine_drender_cpp_popViewport_FUN_0046b740();
   iVar3 = 0;
   pCVar4 = this_ptr;
   if (0 < this_ptr->shadow_map_height) {

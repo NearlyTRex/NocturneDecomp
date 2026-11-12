@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ;
-; XREF[46]:
+; XREF[48]:
 ;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040eb65
 ;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f6ca
 ;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 0041182a
@@ -18,7 +18,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c16a
 ;   core_bride.cpp_CBride_process_FUN_00423b70 at 00424763
 ;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429884
-;   ... and 36 more
+;   ... and 38 more
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433b30

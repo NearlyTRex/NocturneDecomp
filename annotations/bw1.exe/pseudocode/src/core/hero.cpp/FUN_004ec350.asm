@@ -11,7 +11,7 @@
 ;
 ; XREF[7]:
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0 at 0040fd08
-;   core_colonel.cpp_FUN_00444b4e at 00444c3a
+;   core_colonel.cpp_FUN_00444b50 at 00444c3a
 ;   core_gabriela.cpp_FUN_004c7aa0 at 004c7b9d
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004e98b0 at 004e99af
 ;   core_icepick.cpp_FUN_004f1b50 at 004f1c99

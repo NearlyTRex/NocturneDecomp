@@ -14,7 +14,7 @@ void engine_2d_c_FUN_00401590(uint param_1)
   int iVar1;
   CInStreamFile local_2c;
   
-  unkclass_instream_cpp_CInStreamFile_ctor_FUN_005a08d0(&local_2c);
+  support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(&local_2c);
   iVar1 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
                     (&local_2c,"art",param_1,1);
   if (iVar1 == 0) {
@@ -22,8 +22,8 @@ void engine_2d_c_FUN_00401590(uint param_1)
     _DAT_01d1d404 = 0x29b;
     core_main_c_FUN_005030e0("Unable to open VGA palette");
   }
-  unkaddr_0059f520_cpp_CInStreamFile_read_FUN_005a0c10(&local_2c,(uint *)&DAT_01c4e9f8,0x300);
-  unkaddr_0059f520_cpp_CInStreamFile_close_FUN_005a0dc0(&local_2c);
-  unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_2c,0);
+  support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_2c,(uint *)&DAT_01c4e9f8,0x300);
+  support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_2c);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_2c,0);
   return;
 }

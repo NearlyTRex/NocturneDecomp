@@ -153,6 +153,10 @@ void FUN_00476d20(int param_1);
 // Address: 00476d40
 void FUN_00476d40(int param_1);
 
+// Original: core_dtrace.cpp_FUN_00476d60
+// Address: 00476d60
+void FUN_00476d60(int param_1,int param_2);
+
 // Original: core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00476df0
 // Address: 00476df0
 void __cdecl CDemonRaytrace::markShadowVoxels(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent,CVector3f *light_position);

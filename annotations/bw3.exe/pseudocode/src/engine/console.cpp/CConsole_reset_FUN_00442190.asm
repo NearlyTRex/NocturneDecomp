@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
-;   unkafter_dosio.cpp_FUN_00466220
+;   engine_dosio.cpp_FUN_00466220
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     MOV dword ptr [EBX + 0xfa8],0x0     ; 004421a8
     PUSH 0x5f1698                       ; 004421b2 | = "console.txt"
     MOV dword ptr [EBX + 0xfac],0x0     ; 004421b7
-    CALL unkafter_dosio.cpp_FUN_00466220 ; 004421c1
-        ;   XREF to: 00466220 (UNCONDITIONAL_CALL)  ; undefined unkafter_dosio.cpp_FUN_00466220()
+    CALL engine_dosio.cpp_FUN_00466220  ; 004421c1
+        ;   XREF to: 00466220 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_00466220()
     ADD ESP,0x4                         ; 004421c6
     POP EBX                             ; 004421c9
     RET                                 ; 004421ca

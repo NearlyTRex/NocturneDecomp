@@ -13,13 +13,13 @@
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60 at 0040cdd3
 ;   core_actor.cpp_CDemonActor_playSound_FUN_00408e50 at 00408e66
 ;   core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800 at 0059f855
+;   core_basicene.cpp_FUN_0059e880 at 0059e8ab
 ;   core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350 at 005a13b8
 ;   core_confedrt.cpp_FUN_005a14e0 at 005a1741
 ;   core_confzomb.cpp_CConfederateZombie_processMotionEvent_FUN_005a2520 at 005a25f4
+;   core_cross.cpp_FUN_005a6cf0 at 005a6d60
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0 at 0043a9fb
-;   core_dog1.cpp_CDog_processMotionEvent_FUN_005ac610 at 005ac65e
-;   core_elephant.cpp_CElephantGun_fire_FUN_00485b40 at 00485edd
-;   core_fire.cpp_CFireEffect_createExplosion_FUN_0049e360 at 0049e3bb
+;   core_doc.cpp_FUN_0045bdc0 at 0045c749
 ;   ... and 18 more
 ;
 ; Called Functions:

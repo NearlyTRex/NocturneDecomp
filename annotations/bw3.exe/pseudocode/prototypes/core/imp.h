@@ -60,3 +60,7 @@ ECollisionType __cdecl CImp::getCollisionType(CImp *this_ptr,SCollisionInfo *col
 // Original: core_imp.cpp_CImp_dtor_FUN_004d81f0
 // Address: 004d81f0
 CImp * CImp::dtor(CImp *this_ptr,uint flags);
+
+// Original: core_imp.cpp_FUN_004d8280
+// Address: 004d8280
+void FUN_004d8280(void);

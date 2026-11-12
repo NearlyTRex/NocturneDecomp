@@ -21,7 +21,7 @@ void __cdecl core_confedrt_cpp_CConfederate_processMotionEvent_FUN_005a1350(CCon
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
                 (0x0264B290,(CDemonActor *)this_ptr,"confedstab01.wav",
                  &(this_ptr->base).base.base.base.location.position);
-      unkafter_basicene_cpp_FUN_0059e880(this_ptr,event_id);
+      core_basicene_cpp_FUN_0059e880(this_ptr,event_id);
       return;
     }
     break;
@@ -29,29 +29,28 @@ void __cdecl core_confedrt_cpp_CConfederate_processMotionEvent_FUN_005a1350(CCon
     core_sound_cpp_CSound_playActorSound_FUN_0055ae50
               (0x0264B290,(CDemonActor *)this_ptr,"confedbutt01.wav",
                &(this_ptr->base).base.base.base.location.position);
-    unkafter_basicene_cpp_FUN_0059e880(this_ptr,event_id);
+    core_basicene_cpp_FUN_0059e880(this_ptr,event_id);
     return;
   case 0x206f:
-    iVar1 = unkafter_basicene_cpp_FUN_0059f740(this_ptr,0x40200000,this_ptr->gun2_bone,0x3f800000)
-    ;
+    iVar1 = core_basicene_cpp_FUN_0059f740(this_ptr,0x40200000,this_ptr->gun2_bone,0x3f800000);
     if (iVar1 != 0) {
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
                 (0x0264B290,(CDemonActor *)this_ptr,"swordimpactflesh0?.wav",
                  &(this_ptr->base).base.base.base.location.position);
-      unkafter_basicene_cpp_FUN_0059e880(this_ptr,event_id);
+      core_basicene_cpp_FUN_0059e880(this_ptr,event_id);
       return;
     }
     break;
   case 0x2070:
-    iVar1 = unkafter_basicene_cpp_FUN_0059f740(this_ptr,0x40200000,this_ptr->gun_bone,0x3f800000);
+    iVar1 = core_basicene_cpp_FUN_0059f740(this_ptr,0x40200000,this_ptr->gun_bone,0x3f800000);
     if (iVar1 != 0) {
       core_sound_cpp_CSound_playActorSound_FUN_0055ae50
                 (0x0264B290,(CDemonActor *)this_ptr,"riflebutt01",
                  &(this_ptr->base).base.base.base.location.position);
-      unkafter_basicene_cpp_FUN_0059e880(this_ptr,event_id);
+      core_basicene_cpp_FUN_0059e880(this_ptr,event_id);
       return;
     }
   }
-  unkafter_basicene_cpp_FUN_0059e880(this_ptr,event_id);
+  core_basicene_cpp_FUN_0059e880(this_ptr,event_id);
   return;
 }

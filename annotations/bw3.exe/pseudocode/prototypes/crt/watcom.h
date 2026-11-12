@@ -13,6 +13,10 @@ void ::memset(uint param_1);
 // Address: 00495f68
 void ::memcpy(uint param_1);
 
+// Original: crt_watcom.c_FUN_0049604c
+// Address: 0049604c
+void FUN_0049604c(void);
+
 // Original: crt_watcom.c__mkdir_FUN_005a4e10
 // Address: 005a4e10
 int __cdecl ::mkdir(char *path);

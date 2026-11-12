@@ -18,10 +18,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[17]:
+; XREF[18]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 004188b3
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429b40 at 00429bf9
-;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 00437067
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 00437067
 ;   core_course.cpp_FUN_00438cf0 at 00438e8a
 ;   core_doc.cpp_FUN_004555c0 at 00455927
 ;   core_doc.cpp_FUN_00455d10 at 00455f3d
@@ -29,7 +29,7 @@
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afcea
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310 at 00518426
 ;   core_scat.cpp_FUN_00520140 at 005202b9
-;   ... and 7 more
+;   ... and 8 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eeda6

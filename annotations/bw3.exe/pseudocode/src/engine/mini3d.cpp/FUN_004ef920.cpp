@@ -49,7 +49,7 @@ void engine_mini3d_cpp_FUN_004ef920(uint *param_1,CVector3f *param_2,float param
     *(float *)(iVar3 + 0x1d797b0) = *(float *)(iVar3 + 0x1d797b0) * param_4;
     *(float *)(iVar3 + 0x1d797c0) = 1.0 / param_3;
     if ((pcVar2 != (code *)0x0) && (_DAT_01c6cee8 != 0)) {
-      unkafter_minecar_cpp_FUN_004eceb0(&DAT_02cfd900);
+      engine_mini3d_cpp_FUN_004eceb0(&DAT_02cfd900);
       engine_mini3d_cpp_FUN_004edcc0();
       uStack_28 = *(uint *)(iVar3 + 0x1d7979c);
       uStack_24 = *(uint *)(iVar3 + 0x1d797a8);

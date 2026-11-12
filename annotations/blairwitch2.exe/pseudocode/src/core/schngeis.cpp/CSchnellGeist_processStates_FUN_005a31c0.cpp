@@ -13,13 +13,13 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processStates_FUN_005a31c0(CSchnell
   int iVar2;
   
   if (mode == 0) {
-    unkaddr_0059d350_cpp_FUN_0059d650(&(this_ptr->base).state_machine,"MeleeAttack");
+    core_muzzle_cpp_FUN_0059d650(&(this_ptr->base).state_machine,"MeleeAttack");
   }
   else {
-    unkafter_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
+    core_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
     if ((mode == 1) &&
-       (iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0
-                          (&(this_ptr->base).state_machine,"MeleeAttack"), iVar2 != 0)) {
+       (iVar2 = core_muzzle_cpp_FUN_0059daa0(&(this_ptr->base).state_machine,"MeleeAttack")
+       , iVar2 != 0)) {
       (*(this_ptr->base).base.base.base.vtable._ub[1].startInteraction)
                 ((CDemonActor *)this_ptr,(CDemonActor *)delta_time);
       return;
@@ -27,11 +27,11 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processStates_FUN_005a31c0(CSchnell
   }
   pSVar1 = &(this_ptr->base).state_machine;
   if (mode == 0) {
-    unkaddr_0059d350_cpp_FUN_0059d650(pSVar1,"LeapAttack");
+    core_muzzle_cpp_FUN_0059d650(pSVar1,"LeapAttack");
     return;
   }
   if ((mode == 1) &&
-     (iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0(pSVar1,"LeapAttack"), iVar2 != 0)) {
+     (iVar2 = core_muzzle_cpp_FUN_0059daa0(pSVar1,"LeapAttack"), iVar2 != 0)) {
     (*(this_ptr->base).base.base.base.vtable._ub[1].getInteractionInfo)
               ((CDemonActor *)this_ptr,(SInteractionInfo *)delta_time);
     return;

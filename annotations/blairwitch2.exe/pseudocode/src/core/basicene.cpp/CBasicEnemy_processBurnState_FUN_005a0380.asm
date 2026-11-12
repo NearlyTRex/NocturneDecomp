@@ -21,13 +21,13 @@
 ;   core_actor.cpp_FUN_00408d70
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
+;   core_bwgrndma.cpp_FUN_005a7ed0
+;   core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
+;   core_muzzle.cpp_FUN_0059d880
 ;   core_xform.cpp_FUN_00591530
 ;   crt_string.c_strstr_FUN_005ba9e0
-;   unkaddr_0059d350.cpp_FUN_0059d880
-;   unkaddr_005a7eb0.cpp_FUN_005a7ed0
-;   unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     POP ESI                             ; 005a046d
     POP EBX                             ; 005a046e
     RET                                 ; 005a046f
-    CALL unkaddr_005a7eb0.cpp_FUN_005a7ed0 ; 005a0470
-        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_005a7eb0.cpp_FUN_005a7ed0()
+    CALL core_bwgrndma.cpp_FUN_005a7ed0 ; 005a0470
+        ;   XREF to: 005a7ed0 (UNCONDITIONAL_CALL)  ; undefined core_bwgrndma.cpp_FUN_005a7ed0()
         ;   Label: LAB_005a0470
     TEST EAX,EAX                        ; 005a0475
     JZ 0x005a0716                       ; 005a0477
@@ -240,8 +240,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x118]     ; 005a0661
     FSTP float ptr [ESP]                ; 005a0668
     PUSH EDI                            ; 005a066b
-    CALL unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005a066c
-        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void unkafter_superopt.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+    CALL core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300 ; 005a066c
+        ;   XREF to: 005a8300 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300(CSimpleParticleSystem * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
     ADD ESP,0x34                        ; 005a0671
     PUSH 0x32                           ; 005a0674
     PUSH 0x0                            ; 005a0676
@@ -311,8 +311,8 @@ section .text
     ADD EAX,0x10af8                     ; 005a0754
     PUSH EAX                            ; 005a0759
     MOV dword ptr [EAX + 0x938],0x0     ; 005a075a
-    CALL unkaddr_0059d350.cpp_FUN_0059d880 ; 005a0764
-        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d880()
+    CALL core_muzzle.cpp_FUN_0059d880   ; 005a0764
+        ;   XREF to: 0059d880 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d880()
     ADD ESP,0x8                         ; 005a0769
     MOV ESP,EBP                         ; 005a076c
     POP EBP                             ; 005a076e

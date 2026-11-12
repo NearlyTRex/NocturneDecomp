@@ -14,8 +14,9 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[1]:
+; XREF[2]:
 ;   crt_unknown.c_FUN_005bb938 at 005bbd68
+;   crt_unknown.c_FUN_005c22a0 at 005c22fc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0123456789abcdefghijkl_0061f664

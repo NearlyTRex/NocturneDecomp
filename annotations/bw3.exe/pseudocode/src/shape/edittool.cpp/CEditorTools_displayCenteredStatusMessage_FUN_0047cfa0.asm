@@ -16,7 +16,7 @@
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270 at 00504283
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00506018
 ;   core_netgame.cpp_FUN_00503efc at 00503f16
-;   engine_pod.cpp_FUN_00513d1e at 00513d76
+;   engine_pod.cpp_FUN_00513d20 at 00513d76
 ;   engine_pod.cpp_FUN_005149bc at 005149de
 ;
 ; Referenced Globals:

@@ -174,7 +174,7 @@ LAB_005a6f19:
          *(float *)&(this_ptr->base).base.base.field_0x2a8 - delta_time;
     if ((0.0 < fVar15) && (*(float *)&(this_ptr->base).base.base.field_0x2a8 <= 0.0)) {
       *(uint *)&(this_ptr->base).base.base.field_0x2a8 = 0x3e19999a;
-      iVar3 = unkaddr_005a7eb0_cpp_FUN_005a7ed0();
+      iVar3 = core_bwgrndma_cpp_FUN_005a7ed0();
       if (iVar3 != 0) {
         core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr);
         core_xform_cpp_FUN_00591c10();
@@ -270,7 +270,7 @@ LAB_005a6f19:
         uVar8 = 0;
         fVar15 = this_ptr->charge;
         fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.5,1.5);
-        unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+        core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                   (g_CSimpleParticleSystemPtr,fStack_14 * this_ptr->charge,fVar15,uVar8,fVar17,uVar9
                    ,uVar10,uVar11,uVar12,pfVar13,puVar4,puVar14,uVar16);
         uVar16 = 0;
@@ -285,7 +285,7 @@ LAB_005a6f19:
         uVar8 = 0;
         fVar15 = this_ptr->charge;
         fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.5,1.5);
-        unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+        core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                   (g_CSimpleParticleSystemPtr,fStack_14 * this_ptr->charge,fVar15,uVar8,fVar17,uVar9
                    ,uVar10,uVar11,uVar12,pfVar13,puVar4,puVar14,uVar16);
         uVar16 = 0;
@@ -300,7 +300,7 @@ LAB_005a6f19:
         uVar8 = 0;
         fVar15 = this_ptr->charge;
         fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.5,1.5);
-        unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+        core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                   (g_CSimpleParticleSystemPtr,fStack_14 * this_ptr->charge,fVar15,uVar8,fVar17,uVar9
                    ,uVar10,uVar11,uVar12,pfVar13,puVar4,puVar14,uVar16);
         uVar16 = 0;
@@ -315,7 +315,7 @@ LAB_005a6f19:
         uVar8 = 0;
         fVar15 = this_ptr->charge;
         fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.5,1.5);
-        unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+        core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                   (g_CSimpleParticleSystemPtr,fStack_14 * this_ptr->charge,fVar15,uVar8,fVar17,uVar9
                    ,uVar10,uVar11,uVar12,pfVar13,puVar4,puVar14,uVar16);
         uStack_9c = 0x3f333333;
@@ -413,7 +413,7 @@ LAB_005a6f19:
           fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.2,0.7);
           iVar3 = iStack_2c + 1;
           iStack_2c = iVar3;
-          unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+          core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                     (g_CSimpleParticleSystemPtr,fStack_14 * this_ptr->charge,fVar15,uVar8,fVar17,
                      uVar9,uVar10,uVar11,uVar12,pfVar13,puVar4,puVar14,uVar16);
         } while (iVar3 < 5);
@@ -425,7 +425,7 @@ LAB_005a6f19:
       pCStack_28 = &(this_ptr->base).base.base.location;
       iStack_24 = 0;
       do {
-        iVar3 = unkaddr_005a7eb0_cpp_FUN_005a7ed0();
+        iVar3 = core_bwgrndma_cpp_FUN_005a7ed0();
         if (iVar3 != 0) {
           fVar15 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
           fVar7 = (float10)fcos((float10)fVar15);
@@ -466,7 +466,7 @@ LAB_005a6f19:
           fStack_12c = fStack_12c + (pCStack_28->position).y;
           fStack_128 = fStack_128 + (pCStack_28->position).z;
           fStack_14 = fStack_1bc;
-          unkafter_superopt_cpp_CSimpleParticleSystem_emit_FUN_005a8300
+          core_bwspart_cpp_CSimpleParticleSystem_emit_FUN_005a8300
                     (g_CSimpleParticleSystemPtr,this_ptr->blast_strength * (float)_DAT_005f07a5,
                      this_ptr->blast_strength,0,this_ptr->blast_strength * (float)_DAT_005f0785,0,
                      0x3f4ccccd,0x3f4ccccd,0x3f800000,&stack0xfffffed0,&stack0xffffff30,

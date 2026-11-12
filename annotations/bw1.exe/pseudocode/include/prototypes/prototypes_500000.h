@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CLightCone.h"
@@ -46,6 +47,7 @@ void core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void);
 CDemonActorType * core_lightpis_cpp_CLightPis_getActorType_FUN_00501600(CLightPis *this_ptr);
 CLightPis * core_lightpis_cpp_CLightPis_ctor_FUN_00501610(CLightPis *this_ptr);
 undefined4 core_lightpis_cpp_FUN_005016d0(CDemonActor *param_1);
+undefined4 core_lightpis_cpp_FUN_00501750(CCharacter *param_1);
 void core_lightpis_cpp_FUN_005017f0(int param_1);
 CVector3f * __cdecl core_lightpis_cpp_CLightPis_getMuzzlePoint_FUN_005018c0(CLightPis *this_ptr,CVector3f *out_point);
 int __cdecl core_lightpis_cpp_CLightPis_fire_FUN_00501a70(CLightPis *this_ptr);
@@ -64,7 +66,7 @@ CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_00502f2
 void __cdecl core_litecone_cpp_CLightCone_archive_FUN_00502f80(CLightCone *this_ptr);
 ECollisionType __cdecl core_litecone_cpp_CLightCone_getCollisionType_FUN_00503010(CLightCone *this_ptr,SCollisionInfo *collision_info);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_00503020(CLightCone *this_ptr,uint flags);
-void __cdecl core_script_cpp_staticInit_FUN_00503070(void);
+void __cdecl core_main_c_staticInit_FUN_00503070(void);
 void core_main_c_FUN_005030e0(undefined4 param_1);
 void core_main_c_FUN_005031c0(void);
 int __cdecl core_main_c_FUN_00503290(void);
@@ -90,6 +92,7 @@ void __cdecl core_manpuz_cpp_FUN_00505060(CMansionPuzzleCircle *this_ptr,int gem
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_005054c0(CMansionPuzzleCircle *this_ptr,int reflector_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_00505560(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_005056f0(CMansionPuzzleCircle *this_ptr,int panel_index,float *out_r,float *out_g,float *out_b);
+undefined4 core_manpuz_cpp_stepToward_FUN_00505760(float *param_1,float param_2,float param_3);
 undefined4 __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_005057c0(float *param_1,float param_2,float param_3,uint *param_4,char *param_5,float *param_6);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0(CMansionPuzzleCircle *this_ptr,int gem_index,float delta_time);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time);
@@ -133,8 +136,8 @@ void __cdecl core_marquee_cpp_CMarquee_archive_FUN_00507140(CMarquee *this_ptr);
 ECollisionType __cdecl core_marquee_cpp_CMarquee_getCollisionType_FUN_005071c0(CMarquee *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_005071d0(CMarquee *this_ptr,CBoundingBox3D *out_box);
 CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_00507250(CMarquee *this_ptr,uint flags);
-undefined8 unkafter_marquee_cpp_FUN_005072c0(void);
-void unkafter_marquee_cpp_FUN_00507340(void);
+undefined8 core_marquee_cpp_FUN_005072c0(void);
+void core_marquee_cpp_FUN_00507340(void);
 int __cdecl engine_matrix_c_FUN_00507350(int angle);
 int engine_matrix_c_FUN_00507390(uint param_1);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_005073d0(void);
@@ -177,7 +180,7 @@ void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_00509970(CMelee *th
 void __cdecl core_melee_cpp_CMelee_process_FUN_005099a0(CMelee *this_ptr,float delta_time);
 void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_00509a70(CMelee *this_ptr,int weapon_state);
 CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_00509a90(CMelee *this_ptr,uint flags);
-void unkafter_melee_cpp_FUN_00509b00(undefined4 param_1);
+void core_melee_cpp_FUN_00509b00(undefined4 param_1);
 void __cdecl core_menu_cpp_staticInit_FUN_00509bd0(void);
 void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_00509c90(int x_center,int y_top,int height_half);
 int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
@@ -195,10 +198,11 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_0050cc90(void);
 void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_0050d1a0(int *key_code_ptr,char *key_name);
 char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_0050d220(EInputCodeType key_code);
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType *key_code_ptr,char *description);
+int core_menu_cpp_FUN_0050d5b0(void);
 void core_menu_cpp_FUN_0050d640(void);
-void shape_meshlod_cpp_staticInit_FUN_0050f000(void);
+void core_mimic_cpp_staticInit_FUN_0050f000(void);
 void __cdecl core_mimic_cpp_mirrorXTransform_FUN_0050f030(void);
-void shape_meshlod_cpp_factoryFuncMimic_FUN_0050f090(void);
+void core_mimic_cpp_factoryFuncMimic_FUN_0050f090(void);
 CDemonActorType * core_mimic_cpp_CMimic_getActorType_FUN_0050f0b0(CMimic *this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0050f0c0(CMimic *this_ptr);
 CMimic * core_mimic_cpp_CMimic_dtor_FUN_0050f1b0(CMimic *this_ptr,uint flags);

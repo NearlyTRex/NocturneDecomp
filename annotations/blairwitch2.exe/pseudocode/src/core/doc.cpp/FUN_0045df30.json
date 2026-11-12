@@ -1,0 +1,213 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 96,
+    "complexity_score": 140,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 10,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 126
+  },
+  "cross_references": [
+    {
+      "addr": "00450c60",
+      "from_addr": "004514f1",
+      "name": "core_doc.cpp_FUN_00450c60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045df30",
+    "address_range": [
+      [
+        "0045df30",
+        "0045e00d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_doc.cpp_FUN_0045df30",
+    "signature": "undefined4 core_doc_cpp_FUN_0045df30(CCharacter *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042a5a0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0"
+    },
+    {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005035c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004514f1",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00450c60",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.774647887323944,
+    "instruction_count": 71,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 7,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 11,
+      "COPY": 177,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_NAN": 8,
+      "INT2FLOAT": 4,
+      "INT_ADD": 19,
+      "INT_AND": 47,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 16,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "INT_ZEXT": 16,
+      "LOAD": 12,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 481
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint core_doc_cpp_FUN_0045df30(CCharacter *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)param_1[2].flames[2].base.create_event != 0) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((float)param_1[2].flames[2].globe.linear_radius_scaled < 1.0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)param_1[2].flames[2].base.create_event == 0) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0.0 < (float)param_1[2].flames[2].globe.linear_radius_scaled)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = core_motion_cpp_FUN_005035c0(&param_1->model);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(fVar2 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,2),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->carry_hands[1].carry_actor != (CDemonActor *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

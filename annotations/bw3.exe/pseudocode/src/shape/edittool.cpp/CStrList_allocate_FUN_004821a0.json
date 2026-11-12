@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 70,
     "complexity_score": 57,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 8,
     "max_suspect_severity": "moderate",
@@ -20,6 +20,12 @@
       "addr": "00481fc0",
       "from_addr": "00481fe5",
       "name": "shape_edittool.cpp_CStrList_copyFrom_FUN_00481fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482250",
+      "from_addr": "00482264",
+      "name": "shape_edittool.cpp_CStrList_insertRange_FUN_00482250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -104,7 +110,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "004820f8",
@@ -121,6 +127,17 @@
         "call_addr": "00481fe5",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CStrList_copyFrom_FUN_00481fc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00482264",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_insertRange_FUN_00482250",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

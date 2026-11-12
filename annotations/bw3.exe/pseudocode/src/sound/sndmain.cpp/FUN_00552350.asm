@@ -284,8 +284,8 @@ section .text
     POP EDI                             ; 005525ea
         ;   Label: LAB_005525ea
     PUSH ECX                            ; 005525eb
-    CALL unkafter_turret.cpp_CInStreamFile_tell_FUN_00573d40 ; 005525ec
-        ;   XREF to: 00573d40 (UNCONDITIONAL_CALL)  ; undefined4 unkafter_turret.cpp_CInStreamFile_tell_FUN_00573d40(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_tell_FUN_00573d40 ; 005525ec
+        ;   XREF to: 00573d40 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_tell_FUN_00573d40(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 005525f1
     PUSH EBP                            ; 005525f4
     MOV dword ptr [EBP + 0x178],EAX     ; 005525f5

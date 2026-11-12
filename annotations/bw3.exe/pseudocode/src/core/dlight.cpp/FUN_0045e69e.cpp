@@ -214,7 +214,7 @@ void core_dlight_cpp_FUN_0045e69e(int param_1)
       } while (iVar2 < 0x10);
       iStack_ec = iStack_ec + 1;
     } while (iStack_ec < 0x10);
-    engine_matrix_c_pop_FUN_0046d080();
+    engine_drender_cpp_pop_FUN_0046d080();
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
     return;
   }

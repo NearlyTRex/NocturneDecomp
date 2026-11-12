@@ -10,6 +10,7 @@
 ; XREF[56]:
 ;   core_armour.cpp_CArmour_dtor_FUN_0040f120 at 0040f155
 ;   core_armour.cpp_CEnemy_dtor_FUN_0040f1c0 at 0040f1f5
+;   core_basicene.cpp_FUN_005a0780 at 005a07ac
 ;   core_basicnpc.cpp_CBasicNPC_dtor_FUN_005a4980 at 005a49b5
 ;   core_batcreat.cpp_CBatCreature_dtor_FUN_00412a20 at 00412a55
 ;   core_batman.cpp_CBatman_dtor_FUN_00414620 at 00414655
@@ -17,7 +18,6 @@
 ;   core_belling.cpp_CBelling_dtor_FUN_005a9130 at 005a9165
 ;   core_biggs.cpp_CBiggs_dtor_FUN_00415410 at 00415455
 ;   core_boneguy.cpp_CBoneGuy_dtor_FUN_0041a3d0 at 0041a405
-;   core_bride.cpp_CBride_dtor_FUN_0041ee50 at 0041ee85
 ;   ... and 46 more
 ;
 ; Called Functions:

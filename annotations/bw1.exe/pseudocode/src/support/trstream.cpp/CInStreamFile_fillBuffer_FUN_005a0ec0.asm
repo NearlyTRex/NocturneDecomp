@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   unkaddr_0059f520.cpp_CInStreamFile_readByteAt_FUN_005a0ba0 at 005a0bf1
-;   unkaddr_0059f520.cpp_CInStreamFile_read_FUN_005a0c10 at 005a0c6e
+;   support_trstream.cpp_CInStreamFile_readByteAt_FUN_005a0ba0 at 005a0bf1
+;   support_trstream.cpp_CInStreamFile_read_FUN_005a0c10 at 005a0c6e
 ;
 ; Referenced Globals:
 ;   void* PTR_ReadFile_005d0618 = 001d10fa

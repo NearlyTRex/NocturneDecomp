@@ -5,8 +5,8 @@
 ;
 ;
 ; Called Functions:
+;   core_spawner.cpp_CSpawner_ctor_FUN_005638a0
 ;   crt_memory.c_operator_new_FUN_005a3cb2
-;   engine_special.cpp_CSpawner_ctor_FUN_005638a0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     RET                                 ; 00563881
     PUSH EAX                            ; 00563882
         ;   Label: LAB_00563882
-    CALL engine_special.cpp_CSpawner_ctor_FUN_005638a0 ; 00563883
-        ;   XREF to: 005638a0 (UNCONDITIONAL_CALL)  ; CSpawner * engine_special.cpp_CSpawner_ctor_FUN_005638a0(CSpawner * this_ptr)
+    CALL core_spawner.cpp_CSpawner_ctor_FUN_005638a0 ; 00563883
+        ;   XREF to: 005638a0 (UNCONDITIONAL_CALL)  ; CSpawner * core_spawner.cpp_CSpawner_ctor_FUN_005638a0(CSpawner * this_ptr)
     ADD ESP,0x4                         ; 00563888
     RET                                 ; 0056388b
 

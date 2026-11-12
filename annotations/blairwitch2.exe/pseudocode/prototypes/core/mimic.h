@@ -5,13 +5,17 @@
 // Function prototypes for core/mimic.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_mimic.cpp_copyQuaternion_FUN_00492610
-// Address: 00492610
-void __cdecl copyQuaternion(undefined4 *param_1,undefined4 *param_2);
+// Original: core_mimic.cpp_staticInit_FUN_004f0250
+// Address: 004f0250
+void staticInit(void);
 
 // Original: core_mimic.cpp_mirrorXTransform_FUN_004f0280
 // Address: 004f0280
 void __cdecl mirrorXTransform(void);
+
+// Original: core_mimic.cpp_factoryFuncMimic_FUN_004f02e0
+// Address: 004f02e0
+void factoryFuncMimic(void);
 
 // Original: core_mimic.cpp_CMimic_getActorType_FUN_004f0300
 // Address: 004f0300
@@ -80,11 +84,3 @@ void __cdecl CMimic::beginMorph(CMimic *this_ptr);
 // Original: core_mimic.cpp_CMimic_processMorph_FUN_004f1e90
 // Address: 004f1e90
 void __cdecl CMimic::processMorph(CMimic *this_ptr,float delta_time);
-
-// Original: core_mimic.cpp_staticInit_FUN_004f2000
-// Address: 004f2000
-void staticInit(void);
-
-// Original: core_mimic.cpp_factoryFuncMineCar_FUN_004f2030
-// Address: 004f2030
-void factoryFuncMineCar(void);

@@ -37,7 +37,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_005a9440(CCryptVessel 
   }
   iVar1 = core_box_cpp_FUN_004207b0(auStack_48);
   this_ptr->is_visible = iVar1;
-  engine_matrix_c_pop_FUN_004839a0();
+  engine_drender_cpp_pop_FUN_004839a0();
   if (this_ptr->is_visible == 0) {
     return this_ptr->is_visible;
   }
@@ -58,6 +58,6 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_005a9440(CCryptVessel 
               (&this_ptr->model,0.0,0x2e7);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(DAT_00612560);
   }
-  engine_matrix_c_pop_FUN_004839a0();
+  engine_drender_cpp_pop_FUN_004839a0();
   return this_ptr->is_visible;
 }

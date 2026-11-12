@@ -16,7 +16,7 @@
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_004184c0 at 00418662
 ;   core_bride.cpp_CBride_setup_FUN_0041d9c0 at 0041db9e
 ;   core_bugs.cpp_CBugs_setup_FUN_0041f0f0 at 0041f113
-;   core_conveyor.cpp_CConstruct_setup_FUN_00436be0 at 00436be8
+;   core_construc.cpp_CConstruct_setup_FUN_00436be0 at 00436be8
 ;   ... and 20 more
 ;
 ; Called Functions:

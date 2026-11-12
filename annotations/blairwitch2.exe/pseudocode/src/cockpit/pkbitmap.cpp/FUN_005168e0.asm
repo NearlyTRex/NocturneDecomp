@@ -11,8 +11,9 @@
 ; int              Stack[0x14]:4   transparency_color
 ; int              Stack[0x18]:4   apply_palette_flag
 ;
-; XREF[1]:
+; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_00516160 at 00516198
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00517710 at 005177b8
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_FUN_0042c520

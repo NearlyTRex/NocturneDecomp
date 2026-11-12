@@ -11,6 +11,7 @@ struct CVector3i;
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CMotionController.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EBoneUpdateMode.h"
 #include "types/structs/SPartInstanceData.h"
 #include "types/structs/SPose.h"
 
@@ -28,7 +29,7 @@ typedef struct CDeformableModelInstance {
     int cached_skinned_lod_index; // 0x2230
     struct CVector3i* skinned_vertices_buffer; // 0x2234
     CBoundingBox3D bounding_box; // 0x2238
-    int bone_update_mode; // 0x2250, 0=simple_flat,1=hierarchical_accum,2=hierarchical_restpose
+    EBoneUpdateMode bone_update_mode; // 0x2250, 0=simple_flat,1=hierarchical_accum,2=hierarchical_restpose
     CVector3f accumulated_root_motion; // 0x2254
     char model_name[80]; // 0x2260
     struct CDeformableModel* model_ptr; // 0x22b0

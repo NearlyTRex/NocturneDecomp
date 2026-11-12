@@ -20,8 +20,7 @@ CConfederate * core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfederate *th
   char *pcVar5;
   char *pcVar6;
   
-  this_ptr_00 = (CConfederate *)unkafter_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base)
-  ;
+  this_ptr_00 = (CConfederate *)core_basicene_cpp_CBasicEnemy_ctor_FUN_0059e3b0(&this_ptr->base);
   (this_ptr_00->base).base.base.base.vtable._ub = &g_CConfederateVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             (&(this_ptr_00->base).base.base.model,"con_david.dfm");
@@ -53,9 +52,9 @@ CConfederate * core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfederate *th
   } while (cVar2 != '\0');
   core_confedrt_cpp_CConfederate_processStates_FUN_005a0b20(this_ptr_00,0.0,0);
   pSVar1 = &(this_ptr_00->base).state_machine;
-  unkaddr_0059d350_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete");
-  unkaddr_0059d350_cpp_FUN_0059d990(pSVar1);
-  unkaddr_0059d350_cpp_FUN_0059dc80();
+  core_muzzle_cpp_FUN_0059d7f0(pSVar1,"ChaseComplete");
+  core_muzzle_cpp_FUN_0059d990(pSVar1);
+  core_muzzle_cpp_FUN_0059dc80();
   pcVar6 = (this_ptr_00->base).hit_sound;
   pcVar5 = "confedhit0?.wav";
   do {

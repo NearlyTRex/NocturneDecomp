@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_bat.cpp_CBat_dtor_FUN_0040f3d0 at 0040f3e5
-;   core_conveyor.cpp_CPlatform_dtor_FUN_00512cf0 at 00512d05
+;   core_platfrm.cpp_CPlatform_dtor_FUN_00512cf0 at 00512d05
 ;
 ; Called Functions:
 ;   core_course.cpp_FUN_00444aa0

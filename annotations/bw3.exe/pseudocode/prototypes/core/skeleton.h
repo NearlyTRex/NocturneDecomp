@@ -81,6 +81,10 @@ void __cdecl CDeformableModel::allocMemory(CDeformableModel *this_ptr,int num_lo
 // Address: 00548580
 void FUN_00548580(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5);
 
+// Original: core_skeleton.cpp_FUN_00548710
+// Address: 00548710
+void FUN_00548710(int param_1,char *param_2);
+
 // Original: core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00548750
 // Address: 00548750
 void __cdecl CDeformableModel::captureTextures(CDeformableModel *this_ptr);
@@ -96,6 +100,10 @@ CVector3f * __cdecl CDeformableModel::getVertexPoolPtr(CDeformableModel *this_pt
 // Original: core_skeleton.cpp_FUN_00548850
 // Address: 00548850
 void __cdecl FUN_00548850(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer,SPartInstanceData *part_data);
+
+// Original: core_skeleton.cpp_FUN_00548a30
+// Address: 00548a30
+undefined4 * FUN_00548a30(int param_1,int param_2,int param_3,int param_4);
 
 // Original: core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_00548ba0
 // Address: 00548ba0
@@ -120,6 +128,10 @@ void __cdecl CDeformableModel::renderWireframe(CDeformableModel *this_ptr,int lo
 // Original: core_skeleton.cpp_FUN_005496bc
 // Address: 005496bc
 CSkeleton * FUN_005496bc(CDeformableModel *param_1,undefined4 param_2,int param_3,byte param_4);
+
+// Original: core_skeleton.cpp_FUN_005496c0
+// Address: 005496c0
+CSkeleton * FUN_005496c0(CDeformableModel *param_1,undefined4 param_2,int param_3,byte param_4);
 
 // Original: core_skeleton.cpp_FUN_005498ce
 // Address: 005498ce
@@ -289,6 +301,10 @@ void __cdecl CDeformableModelInstance::renderWithOptions(CDeformableModelInstanc
 // Address: 0054e420
 void __cdecl CDeformableModelInstance::skinVerticesForLOD(CDeformableModelInstance *this_ptr,int lod_index);
 
+// Original: core_skeleton.cpp_FUN_0054e460
+// Address: 0054e460
+void FUN_0054e460(CDeformableModelInstance *param_1,undefined4 param_2,undefined4 param_3);
+
 // Original: core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0054e4b0
 // Address: 0054e4b0
 void __cdecl CDeformableModelInstance::skinAndRotateVertices(CDeformableModelInstance *this_ptr,int lod_index);
@@ -381,6 +397,10 @@ void __cdecl CDeformableModelInstance::setBoneTransform(CDeformableModelInstance
 // Address: 0054fa00
 undefined4 * FUN_0054fa00(CDeformableModelInstance *param_1);
 
+// Original: core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_0054fb20
+// Address: 0054fb20
+void __cdecl CDeformableModelInstance::renderSkeleton(CDeformableModelInstance *this_ptr,undefined4 param_2,undefined4 param_3);
+
 // Original: core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0054fb70
 // Address: 0054fb70
 void __cdecl CDeformableModelInstance::computeCylindricalUVs(CDeformableModelInstance *this_ptr,int u_offset,int v_offset);
@@ -388,6 +408,10 @@ void __cdecl CDeformableModelInstance::computeCylindricalUVs(CDeformableModelIns
 // Original: core_skeleton.cpp_computeBoneModelMatrices_FUN_0054fcc0
 // Address: 0054fcc0
 void computeBoneModelMatrices(float *param_1,CDeformableModelInstance *param_2);
+
+// Original: core_skeleton.cpp_FUN_0054fef0
+// Address: 0054fef0
+void FUN_0054fef0(float *param_1,float *param_2,float *param_3,float param_4,CDeformableModelInstance *param_5);
 
 // Original: core_skeleton.cpp_FUN_005500b0
 // Address: 005500b0
@@ -421,6 +445,10 @@ void FUN_005503f0(void);
 // Address: 00550450
 void FUN_00550450(char *param_1);
 
+// Original: core_skeleton.cpp_calculateDistanceSquared_FUN_005504e0
+// Address: 005504e0
+float __cdecl calculateDistanceSquared(float *param_1,float *param_2);
+
 // Original: core_skeleton.cpp_SVert_ctor_FUN_00550520
 // Address: 00550520
 SVert * __cdecl SVert::ctor(SVert *this_ptr);
@@ -432,3 +460,7 @@ CSkeleton * CSkeleton::arrdtor40(CSkeleton *this_ptr,uint flags);
 // Original: core_skeleton.cpp_CDeformableModel_arrdtor64_FUN_00550560
 // Address: 00550560
 CDeformableModel * CDeformableModel::arrdtor64(CDeformableModel *this_ptr,uint flags);
+
+// Original: core_skeleton.cpp_FUN_00550580
+// Address: 00550580
+void FUN_00550580(void);

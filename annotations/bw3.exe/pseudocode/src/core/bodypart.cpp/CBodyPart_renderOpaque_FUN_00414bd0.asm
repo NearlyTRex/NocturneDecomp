@@ -19,7 +19,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_pop_FUN_0046d080
 ;
 ; *****************************************************************************
 
@@ -117,8 +117,8 @@ section .text
     PUSH EDX                            ; 00414cc6 | DAT_01bdd7e4
     ADD EDI,0x194                       ; 00414cc7
     ADD ESI,0x194                       ; 00414ccd
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 00414cd3
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 00414cd3
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     MOV ECX,dword ptr [EBP + 0x28c]     ; 00414cd8
     ADD ESP,0x4                         ; 00414cde
     CMP EBX,ECX                         ; 00414ce1
@@ -130,8 +130,8 @@ section .text
     MOV EBX,dword ptr [0x005f2afc]      ; 00414cf0 | DAT_005f2afc
         ;   Label: LAB_00414cf0
     PUSH EBX                            ; 00414cf6 | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 00414cf7
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 00414cf7
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     MOV EAX,[0x00603b28]                ; 00414cfc | g_CDemonSetPtr
     MOV dword ptr [EAX + 0x15ac98],0x0  ; 00414d01 | g_CDemonSetInstance.disable_directional_lighting
     ADD ESP,0x4                         ; 00414d0b

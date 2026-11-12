@@ -49,6 +49,10 @@ float FUN_00536490(CDemonSet *param_1,float param_2,CBoundingBox3D *param_3,floa
 // Address: 00536990
 int __cdecl CDemonSet::isActorIgnored(CDemonSet *this_ptr,CDemonActor *actor);
 
+// Original: core_setcolid.cpp_intersectXZCylinder_FUN_005369f0
+// Address: 005369f0
+undefined4 intersectXZCylinder(float *param_1,float param_2,float param_3,int param_4);
+
 // Original: core_setcolid.cpp_FUN_00536cb0
 // Address: 00536cb0
 int __cdecl FUN_00536cb0(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);

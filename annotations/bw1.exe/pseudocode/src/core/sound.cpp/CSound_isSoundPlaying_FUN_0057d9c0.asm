@@ -12,12 +12,12 @@
 ;   core_cow.cpp_CZombieCow_processDamage_FUN_00448df0 at 00448e3e
 ;   core_cow.cpp_CZombieCow_process_FUN_00448570 at 00448987
 ;   core_djien.cpp_CDjien_process_FUN_00460230 at 004606e3
+;   core_djien.cpp_FUN_004609c0 at 00460c6c
 ;   core_dog.cpp_CZombieDog_processDamage_FUN_00477060 at 004770a3
 ;   core_dog.cpp_CZombieDog_process_FUN_004768a0 at 00476c5a
 ;   core_flame.cpp_CFlame_process_FUN_004b7b90 at 004b7d2c
 ;   core_flamegun.cpp_CFlameThrower_process_FUN_004b9710 at 004b976c
 ;   core_ghoul.cpp_CGhoul_process_FUN_004de330 at 004de6ec
-;   core_inv.cpp_FUN_004f6b50 at 004f6b61
 ;   ... and 8 more
 ;
 ; Called Functions:

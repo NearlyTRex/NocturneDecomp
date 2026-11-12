@@ -13,7 +13,7 @@
 ;   core_basicene.cpp_CBasicEnemy_renderOpaque_FUN_0059fa20 at 0059fa33
 ;   core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_00419b50 at 00419b69
 ;   core_colonel.cpp_CColonel_renderOpaque_FUN_00436490 at 00436495
-;   core_conveyor.cpp_CConstruct_renderOpaque_FUN_00437b70 at 00437b75
+;   core_construc.cpp_CConstruct_renderOpaque_FUN_00437b70 at 00437b75
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 004599aa
 ;   core_gabriela.cpp_CGabriella_renderOpaque_FUN_004b1060 at 004b106a
 ;   core_gargoyle.cpp_CGargoyle_renderOpaque_FUN_004c0b30 at 004c0b35
@@ -39,12 +39,12 @@
 ;   core_box.cpp_FUN_0041a840
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0
 ;   core_motion.cpp_FUN_005042e0
+;   core_muzzle.cpp_FUN_0059e0f0
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407c40
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_special.cpp_FUN_0055d723
-;   unkafter_special.cpp_FUN_0059e0f0
 ;
 ; *****************************************************************************
 
@@ -181,8 +181,8 @@ section .text
     PUSH EAX                            ; 004255ff
     MOV dword ptr [ESP + 0x80],EBX      ; 00425600
     MOV dword ptr [ESP + 0x84],EBX      ; 00425607
-    CALL unkafter_special.cpp_FUN_0059e0f0 ; 0042560e
-        ;   XREF to: 0059e0f0 (UNCONDITIONAL_CALL)  ; undefined unkafter_special.cpp_FUN_0059e0f0()
+    CALL core_muzzle.cpp_FUN_0059e0f0   ; 0042560e
+        ;   XREF to: 0059e0f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059e0f0()
     ADD ESP,0x4                         ; 00425613
     MOV dword ptr [ESP + 0xb8],EAX      ; 00425616
     MOV dword ptr [ESP + 0xbc],EAX      ; 0042561d

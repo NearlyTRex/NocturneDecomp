@@ -7,14 +7,15 @@
 ; CBitFont *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   text_string
 ;
-; XREF[7]:
+; XREF[8]:
+;   core_flashlit.cpp_FUN_004a1570 at 004a1618
 ;   core_menu.cpp_FUN_004eb0e0 at 004eb1ec
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047e2b0 at 0047e447
 ;   shape_edittool.cpp_FUN_0047e870 at 0047ec0f
 ;   shape_edittool.cpp_FUN_00484f20 at 00484f7b
+;   shape_edittool.cpp_FUN_0048546e at 004854e5
 ;   shape_edittool.cpp_calculateButtonHeight_FUN_00485380 at 00485403
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047b8cc
-;   unkaddr_004a1200.cpp_FUN_004a1570 at 004a1618
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560

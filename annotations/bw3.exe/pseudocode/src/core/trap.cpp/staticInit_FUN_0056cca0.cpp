@@ -1,6 +1,6 @@
 // Name: core_trap.cpp_staticInit_FUN_0056cca0
 // Address: 0056cca0
-// Address Range: [[0056cca0, 0056ccab]]
+// Address Range: [[0056cca0, 0056ccc3]]
 // Convention: unknown
 // Signature: void core_trap_cpp_staticInit_FUN_0056cca0(void)
 

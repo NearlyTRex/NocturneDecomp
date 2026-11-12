@@ -41,9 +41,9 @@
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005188e0
 ;   engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_00484190
 ;   engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_00484170
-;   engine_matrix.c_FUN_00483ae0
-;   engine_matrix.c_FUN_00483b70
-;   engine_matrix.c_FUN_00483bf0
+;   engine_drender.cpp_FUN_00483ae0
+;   engine_drender.cpp_FUN_00483b70
+;   engine_drender.cpp_FUN_00483bf0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH EDX                            ; 00555471 | DAT_01bc120c
     LEA ESI,[ESP + 0x4]                 ; 00555472
     LEA EDI,[ESP + 0x28]                ; 00555476
-    CALL engine_matrix.c_FUN_00483ae0   ; 0055547a
-        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00483ae0()
+    CALL engine_drender.cpp_FUN_00483ae0 ; 0055547a
+        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483ae0()
     LEA ESI,[ESP + 0x4]                 ; 0055547f
     ADD ESP,0x4                         ; 00555483
     LEA EAX,[ESP + 0x24]                ; 00555486
@@ -82,8 +82,8 @@ section .text
     PUSH ECX                            ; 005554b5 | DAT_01bc120c
     LEA ESI,[ESP + 0x10]                ; 005554b6
     LEA EDI,[ESP + 0x1c]                ; 005554ba
-    CALL engine_matrix.c_FUN_00483b70   ; 005554be
-        ;   XREF to: 00483b70 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00483b70()
+    CALL engine_drender.cpp_FUN_00483b70 ; 005554be
+        ;   XREF to: 00483b70 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483b70()
     LEA ESI,[ESP + 0x10]                ; 005554c3
     ADD ESP,0x4                         ; 005554c7
     LEA EAX,[ESP + 0x18]                ; 005554ca
@@ -102,8 +102,8 @@ section .text
     MOV ESI,dword ptr [0x00612560]      ; 005554f3 | DAT_00612560
         ;   Label: LAB_005554f3
     PUSH ESI                            ; 005554f9 | DAT_01bc120c
-    CALL engine_matrix.c_FUN_00483bf0   ; 005554fa
-        ;   XREF to: 00483bf0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00483bf0()
+    CALL engine_drender.cpp_FUN_00483bf0 ; 005554fa
+        ;   XREF to: 00483bf0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483bf0()
     MOV dword ptr [ESP + 0x34],EAX      ; 005554ff
     LEA ESI,[EBX*0x4 + 0x0]             ; 00555503
     FLD float ptr [ESP + 0x34]          ; 0055550a

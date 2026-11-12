@@ -131,8 +131,8 @@ section .text
     PUSH 0x0                            ; 0055a03d
     MOV ESI,dword ptr [0x00612560]      ; 0055a03f | DAT_00612560
     PUSH ESI                            ; 0055a045 | DAT_01bc120c
-    CALL engine_matrix.c_FUN_00483c10   ; 0055a046
-        ;   XREF to: 00483c10 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00483c10()
+    CALL engine_drender.cpp_FUN_00483c10 ; 0055a046
+        ;   XREF to: 00483c10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483c10()
     ADD ESP,0x14                        ; 0055a04b
     MOV EDI,dword ptr [EBP + 0x18]      ; 0055a04e
     MOV EAX,dword ptr [EBP + 0x18]      ; 0055a051
@@ -431,8 +431,8 @@ section .text
         ;   XREF to: 0055a4e6 (CONDITIONAL_JUMP)  ; LAB_0055a4e6
     MOV EAX,[0x00612560]                ; 0055a4fa | DAT_00612560
     PUSH EAX                            ; 0055a4ff | DAT_01bc120c
-    CALL engine_matrix.c_popViewport_FUN_00483c40 ; 0055a500
-        ;   XREF to: 00483c40 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_00483c40()
+    CALL engine_drender.cpp_popViewport_FUN_00483c40 ; 0055a500
+        ;   XREF to: 00483c40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_00483c40()
     ADD ESP,0x4                         ; 0055a505
     MOV EDX,dword ptr [ESP + 0x33c]     ; 0055a508
     PUSH EDX                            ; 0055a50f
@@ -800,8 +800,8 @@ section .text
     MOV EDI,dword ptr [0x00612560]      ; 0055a978 | DAT_00612560
     PUSH dword ptr [EBX + 0x144]        ; 0055a97e
     PUSH EDI                            ; 0055a984 | DAT_01bc120c
-    CALL engine_matrix.c_FUN_004839b0   ; 0055a985
-        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_004839b0()
+    CALL engine_drender.cpp_FUN_004839b0 ; 0055a985
+        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_004839b0()
     ADD ESP,0x8                         ; 0055a98a
     LEA EAX,[EBX + 0x10c]               ; 0055a98d
     PUSH EAX                            ; 0055a993

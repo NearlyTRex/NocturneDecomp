@@ -148,3 +148,11 @@ int __cdecl CDemonMission::createHeros(CDemonMission *this_ptr,CCharacter *exist
 // Original: core_mission.cpp_FUN_0051c240
 // Address: 0051c240
 void __cdecl FUN_0051c240(CDemonMission *this_ptr);
+
+// Original: core_mission.cpp_FUN_0051c410
+// Address: 0051c410
+undefined4 FUN_0051c410(void);
+
+// Original: core_mission.cpp_FUN_0051c420
+// Address: 0051c420
+void FUN_0051c420(undefined4 param_1,char *param_2);

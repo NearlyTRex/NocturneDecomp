@@ -151,6 +151,7 @@ DEFAULT_OPTIONS = {
     "allow_size_mismatch": False,
     "allow_name_address_mismatch": False,
     "allow_this_ptr_mismatch": False,
+    "allow_tu_name_violations": False,
     "allow_duplicate_data_types": False,
     "pseudocode_options": {},
 }
@@ -165,7 +166,8 @@ def category_arguments(category, options):
         return dict(strict=options["strict"], allow_size_mismatch=options["allow_size_mismatch"])
     if category == "functions":
         return dict(allow_name_address_mismatch=options["allow_name_address_mismatch"],
-                    allow_this_ptr_mismatch=options["allow_this_ptr_mismatch"])
+                    allow_this_ptr_mismatch=options["allow_this_ptr_mismatch"],
+                    allow_tu_name_violations=options["allow_tu_name_violations"])
     if category == "data_types":
         return dict(allow_duplicates=options["allow_duplicate_data_types"])
     return {}
@@ -182,6 +184,8 @@ def run_export(currentProgram, output_folder, categories, options=None):
             is not its entry point, not fail
         allow_this_ptr_mismatch: report a class method whose parameter 0 is not
             `this_ptr` of its own class, not fail
+        allow_tu_name_violations: report a TU in a placeholder folder or not 8.3,
+            not fail
         allow_duplicate_data_types: report two data types sharing a name, not fail
         pseudocode_options: export_pseudocode's header_compile, function_compile
             and static_analysis switches (all on if absent)
@@ -206,6 +210,7 @@ def run_export(currentProgram, output_folder, categories, options=None):
     log_info("Allow struct size mismatch: %s" % options["allow_size_mismatch"])
     log_info("Allow name/address mismatch: %s" % options["allow_name_address_mismatch"])
     log_info("Allow this_ptr mismatch: %s" % options["allow_this_ptr_mismatch"])
+    log_info("Allow TU name violations: %s" % options["allow_tu_name_violations"])
     log_info("Allow duplicate data types: %s" % options["allow_duplicate_data_types"])
     for option, enabled in sorted(options["pseudocode_options"].items()):
         log_info("Pseudocode %s: %s" % (option.replace("_", " "), enabled))
@@ -299,6 +304,11 @@ Available categories:
                              "(by default that fails the export, because an absent or "
                              "mistyped receiver degrades the decompilation of every "
                              "caller)")
+    parser.add_argument("--allow-tu-name-violations", action="store_true",
+                        help="Export even if a function's TU has a placeholder folder "
+                             "(unkafter_, unkaddr_, unkclass_) or is not a DOS 8.3 name "
+                             "(by default that fails the export; real exceptions go in "
+                             "check_tu_alignment_skip.txt)")
     parser.add_argument("--allow-duplicate-data-types", action="store_true",
                         help="Export even if two data types in the program share a "
                              "name (by default that fails the export, because the "
@@ -339,6 +349,7 @@ def export_options(args, program_name):
         "allow_size_mismatch": args.allow_struct_size_mismatch,
         "allow_name_address_mismatch": args.allow_name_address_mismatch,
         "allow_this_ptr_mismatch": args.allow_this_ptr_mismatch,
+        "allow_tu_name_violations": args.allow_tu_name_violations,
         "allow_duplicate_data_types": args.allow_duplicate_data_types,
         "pseudocode_options": pseudocode_options(args, program_name),
     }

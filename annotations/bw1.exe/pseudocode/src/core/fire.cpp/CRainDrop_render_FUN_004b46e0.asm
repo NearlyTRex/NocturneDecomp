@@ -33,8 +33,8 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
-;   engine_matrix.c_FUN_00483b50
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_FUN_00483b50
+;   engine_drender.cpp_pop_FUN_004839a0
 ;   engine_special.cpp_FUN_00580173
 ;   engine_special.cpp_FUN_0058043c
 ;
@@ -93,8 +93,8 @@ section .text
     PUSH EBX                            ; 004b4763 | DAT_01bc120c
     LEA ESI,[ESP + 0x90]                ; 004b4764
     LEA EDI,[ESP + 0x78]                ; 004b476b
-    CALL engine_matrix.c_FUN_00483b50   ; 004b476f
-        ;   XREF to: 00483b50 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00483b50()
+    CALL engine_drender.cpp_FUN_00483b50 ; 004b476f
+        ;   XREF to: 00483b50 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483b50()
     ADD ESP,0x4                         ; 004b4774
     LEA ESI,[ESP + 0x8c]                ; 004b4777
     LEA EAX,[ESP + 0x74]                ; 004b477e
@@ -306,8 +306,8 @@ section .text
     ADD ESP,0x8                         ; 004b4a65
     MOV EBX,dword ptr [0x00612560]      ; 004b4a68 | DAT_00612560
     PUSH EBX                            ; 004b4a6e | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 004b4a6f
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 004b4a6f
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004b4a74
     POP EDI                             ; 004b4a77
     ADD ESP,0x9c                        ; 004b4a78

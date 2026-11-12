@@ -9,7 +9,7 @@
 ; undefined4       Stack[0xc]:4   param_3
 ; int              Stack[0x10]:4   param_4
 ;
-; XREF[14]:
+; XREF[15]:
 ;   cockpit_ckptutil.c_FUN_00438ef0 at 00438f2e
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_004350a0 at 00435156
 ;   engine_2d.c_FUN_00401590 at 004015af
@@ -20,7 +20,7 @@
 ;   engine_font.cpp_FUN_004b01ce at 004b0235
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790 at 00569a8a
 ;   engine_texture.cpp_FUN_0056ad5e at 0056ae5b
-;   ... and 4 more
+;   ... and 5 more
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateFileA_005b3524 = 001b3c7a

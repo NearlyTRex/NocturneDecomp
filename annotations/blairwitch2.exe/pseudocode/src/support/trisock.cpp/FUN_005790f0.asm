@@ -7,6 +7,9 @@
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined        Stack[-0x18]:1  local_18
 ;
+; XREF[1]:
+;   support_trisock.cpp_FUN_00579890 at 005799ec
+;
 ; Called Functions:
 ;   crt_wsock32.c_connect
 ;   crt_wsock32.c_WSAGetLastError

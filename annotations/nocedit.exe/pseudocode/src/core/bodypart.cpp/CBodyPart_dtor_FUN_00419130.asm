@@ -48,13 +48,13 @@ section .text
     SUB EAX,0x57c                       ; 00419166
     PUSH EAX                            ; 0041916b
     CALL core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_0041b6b0 ; 0041916c
-        ;   XREF to: 0041b6b0 (UNCONDITIONAL_CALL)  ; SBodyPartFire * core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_0041b6b0(SBodyPartFire * objs, uint flags)
+        ;   XREF to: 0041b6b0 (UNCONDITIONAL_CALL)  ; SBodyPartFire * core_bodypart.cpp_SBodyPartFire_arrdtor2_FUN_0041b6b0(SBodyPartFire * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00419171
     PUSH 0x0                            ; 00419174
     SUB EAX,0x4c0                       ; 00419176
     PUSH EAX                            ; 0041917b
     CALL core_bodypart.cpp_SBodyPartModel_arrdtor3_FUN_0041b690 ; 0041917c
-        ;   XREF to: 0041b690 (UNCONDITIONAL_CALL)  ; SBodyPartModel * core_bodypart.cpp_SBodyPartModel_arrdtor3_FUN_0041b690(SBodyPartModel * objs, uint flags)
+        ;   XREF to: 0041b690 (UNCONDITIONAL_CALL)  ; SBodyPartModel * core_bodypart.cpp_SBodyPartModel_arrdtor3_FUN_0041b690(SBodyPartModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00419181
     PUSH 0x1                            ; 00419184
     LEA EBX,[EAX + 0xfffffd70]          ; 00419186

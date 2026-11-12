@@ -6,9 +6,10 @@
 ; Parameters:
 ; CPodFile *       Stack[0x4]:4   this_ptr
 ;
-; XREF[2]:
+; XREF[3]:
 ;   engine_pod.cpp_FUN_005143b0 at 00514405
 ;   engine_pod.cpp_FUN_005149bc at 005149e9
+;   engine_pod.cpp_FUN_00514bb0 at 00514bba
 ;
 ; *****************************************************************************
 

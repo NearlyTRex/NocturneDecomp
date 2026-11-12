@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined        Stack[-0x14]:1  local_14
 ;
-; XREF[94]:
+; XREF[95]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a609
 ;   core_actor.cpp_FUN_004093a0 at 004094d2
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 004101b4
@@ -20,7 +20,7 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 at 00428900
 ;   core_charactr.cpp_CCharacter_testDamageLine_FUN_00427c80 at 00427cb4
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850 at 00423868
-;   ... and 84 more
+;   ... and 85 more
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_004495a0

@@ -1,3 +1,4 @@
+import os
 import re
 
 from ghidra.program.model.address import AddressSet
@@ -18,6 +19,10 @@ class FunctionNameAddressMismatchError(Exception):
 
 class ThisPtrMismatchError(Exception):
     """A class method's receiver contradicts the class its name claims."""
+
+
+class TUNameError(Exception):
+    """A function's TU cannot be an original file: a placeholder folder or not 8.3."""
 
 
 # folder_file.ext_functionName_FUN_<address> -- the trailing address is a
@@ -531,7 +536,7 @@ def import_functions(currentProgram, path):
     log_info("Import complete")
 
 def export_functions(currentProgram, path, allow_name_address_mismatch=False,
-                     allow_this_ptr_mismatch=False):
+                     allow_this_ptr_mismatch=False, allow_tu_name_violations=False):
 
     # The importable flags are the user's, kept from the previous export; everything else is Ghidra's
     existing_importable = {fn_data["addr"]: fn_data.get("importable", False)
@@ -629,9 +634,7 @@ def export_functions(currentProgram, path, allow_name_address_mismatch=False,
 
     # Same placement and the same reason: an `undefined` or absent receiver
     # degrades the decompilation of every caller, so it must not reach the
-    # pseudocode tree. Only this check gates - the contiguity, link-order and
-    # DOS 8.3 checks in check_tu_alignment.py stay report-only, because they
-    # still have outstanding findings that nothing can currently fix.
+    # pseudocode tree.
     this_ptr_defects = find_this_ptr_defects(functions,
                                              known_class_names(currentProgram))
     if this_ptr_defects:
@@ -647,3 +650,21 @@ def export_functions(currentProgram, path, allow_name_address_mismatch=False,
             "--allow-this-ptr-mismatch to export anyway.\n"
             % (len(this_ptr_defects), RECEIVER_NAME)
             + "\n".join(this_ptr_defects))
+
+    # A TU is a file the original build compiled: a real folder and an 8.3 name
+    # (check_tu_alignment.gate; its skip file holds the exceptions).
+    # The folder of `path` is the program's own name: the Blair Witch builds all
+    # call themselves nocturne.exe.
+    import check_tu_alignment
+    tu_violations = check_tu_alignment.gate(os.path.basename(os.path.normpath(path)), functions)
+    if tu_violations:
+        log_warning("TU NAME VIOLATIONS (%d):" % len(tu_violations))
+        for msg in tu_violations:
+            log_warning("  " + msg)
+    if tu_violations and not allow_tu_name_violations:
+        raise TUNameError(
+            "TU names: %d function TU(s) cannot be an original file. Rename them in "
+            "Ghidra (see research/24-bw_units), list a real exception in "
+            "scripts/Python/check_tu_alignment_skip.txt with its reason, or pass "
+            "--allow-tu-name-violations to export anyway.\n" % len(tu_violations)
+            + "\n".join(tu_violations))

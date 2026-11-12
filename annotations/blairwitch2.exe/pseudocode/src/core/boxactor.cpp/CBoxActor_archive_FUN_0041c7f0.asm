@@ -11,7 +11,7 @@
 ;
 ; XREF[3]:
 ;   core_boxactor.cpp_CLightActor_archive_FUN_0041d270 at 0041d27a
-;   core_spirmine.cpp_CSpiritMine_archive_FUN_005ad9f0 at 005ad9f6
+;   core_mine.cpp_CSpiritMine_archive_FUN_005ad9f0 at 005ad9f6
 ;   core_stone.cpp_CTempleStone_archive_FUN_00562460 at 00562465
 ;
 ; Referenced Globals:

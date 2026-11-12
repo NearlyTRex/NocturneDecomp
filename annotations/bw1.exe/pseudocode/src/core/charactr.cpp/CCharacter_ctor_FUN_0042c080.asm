@@ -21,11 +21,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
+;   core_bird.cpp_CBird_ctor_FUN_004151f0 at 004151f9
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410 at 004a041b
 ;   core_hero.cpp_CHero_ctor_FUN_004ea830 at 004ea836
 ;   core_moocow.cpp_CMooCow_ctor_FUN_00521300 at 00521306
 ;   core_npc.cpp_CNPC_ctor_FUN_00531670 at 00531679
-;   unkafter_bird.cpp_CBird_ctor_FUN_004151f0 at 004151f9
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo

@@ -65,6 +65,10 @@ EDeathState __cdecl CDraculaBride::getDeathState(CDraculaBride *this_ptr);
 // Address: 0047d790
 int __cdecl CDraculaBride::getTargetPoints(CDraculaBride *this_ptr,CVector3f *out_points_array);
 
+// Original: core_dracbrid.cpp_FUN_0047d890
+// Address: 0047d890
+void FUN_0047d890(float param_1,float param_2,float param_3);
+
 // Original: core_dracbrid.cpp_FUN_0047d920
 // Address: 0047d920
 void __cdecl FUN_0047d920(CDraculaBride *this_ptr,char *sound_name,float volume);
@@ -84,3 +88,7 @@ SFreaky * SFreaky::dtor(SFreaky *this_ptr,uint flags);
 // Original: core_dracbrid.cpp_CDraculaBride_dtor_FUN_0047e180
 // Address: 0047e180
 CDraculaBride * CDraculaBride::dtor(CDraculaBride *this_ptr,uint flags);
+
+// Original: core_dracbrid.cpp_FUN_0047e20e
+// Address: 0047e20e
+CDrawSurface * FUN_0047e20e(CDrawSurface *param_1);

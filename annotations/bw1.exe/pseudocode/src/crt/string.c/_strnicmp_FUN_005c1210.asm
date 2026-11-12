@@ -15,10 +15,10 @@
 ;   core_charactr.cpp_FUN_0042d750 at 0042dd25
 ;   core_charactr.cpp_FUN_00435320 at 00435352
 ;   core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_0045b120 at 0045b17f
+;   core_demnfolk.cpp_FUN_0045bec0 at 0045bef6
 ;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f57e
 ;   core_event.cpp_FUN_004a1d00 at 004a1f58
 ;   core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0 at 004bb7c4
-;   core_game.cpp_FUN_004d6990 at 004d6dae
 ;   ... and 12 more
 ;
 ; *****************************************************************************

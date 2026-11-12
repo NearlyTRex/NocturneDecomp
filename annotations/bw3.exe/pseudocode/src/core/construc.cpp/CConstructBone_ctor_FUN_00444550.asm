@@ -10,7 +10,7 @@
 ;   core_construc.cpp_FUN_00444520 at 00444533
 ;
 ; Called Functions:
-;   core_constrct.cpp_CConstruct_ctor_FUN_00442420
+;   core_construc.cpp_CConstruct_ctor_FUN_00442420
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;   crt_math.c_round_FUN_005a3120
 ;
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_construc.cpp_CConstructBone_ctor_FUN_00444550
     MOV EDX,dword ptr [ESP + 0x8]       ; 00444551
     PUSH EDX                            ; 00444555
-    CALL core_constrct.cpp_CConstruct_ctor_FUN_00442420 ; 00444556
-        ;   XREF to: 00442420 (UNCONDITIONAL_CALL)  ; CConstruct * core_constrct.cpp_CConstruct_ctor_FUN_00442420(CConstruct * this_ptr)
+    CALL core_construc.cpp_CConstruct_ctor_FUN_00442420 ; 00444556
+        ;   XREF to: 00442420 (UNCONDITIONAL_CALL)  ; CConstruct * core_construc.cpp_CConstruct_ctor_FUN_00442420(CConstruct * this_ptr)
     ADD ESP,0x4                         ; 0044455b
     PUSH 0x5b97f6                       ; 0044455e
     MOV EBX,EAX                         ; 00444563

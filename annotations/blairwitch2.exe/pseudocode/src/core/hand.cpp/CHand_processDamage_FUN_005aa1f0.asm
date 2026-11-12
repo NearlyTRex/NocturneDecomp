@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_FUN_0059d8e0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     FLD float ptr [EBX + 0xd68]         ; 005aa213
     PUSH EBX                            ; 005aa219
     FSTP float ptr [EBX + 0xd6c]        ; 005aa21a
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005aa220
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005aa220
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005aa225
     POP EBX                             ; 005aa228
     RET                                 ; 005aa229

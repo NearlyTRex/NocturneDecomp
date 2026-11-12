@@ -21,10 +21,6 @@ CDemonActorType * CHaystack::getActorType(CHaystack *this_ptr);
 // Address: 004cc760
 CHaystack * CHaystack::ctor(CHaystack *this_ptr);
 
-// Original: core_haystack.cpp_FUN_004cc78f
-// Address: 004cc78f
-void FUN_004cc78f(void);
-
 // Original: core_haystack.cpp_CHaystack_setup_FUN_004cc7d0
 // Address: 004cc7d0
 void __cdecl CHaystack::setup(CHaystack *this_ptr);

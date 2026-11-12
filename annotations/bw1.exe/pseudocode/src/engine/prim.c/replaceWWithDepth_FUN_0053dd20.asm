@@ -7,13 +7,13 @@
 ; XREF[9]:
 ;   core_dpart.cpp_FUN_0047ab00 at 0047ae77
 ;   core_flies.cpp_CFlies_renderOpaque_FUN_004c0080 at 004c046b
+;   core_zombie.cpp_FUN_005bf120 at 005bf447
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70 at 00484122
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_00484fd0 at 00485019
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720 at 0053f95f
 ;   engine_prim.c_renderPolygonSoftware_FUN_0053e120 at 0053e384
 ;   engine_prim.c_renderScanlinePolygon_FUN_0053f080 at 0053f3df
 ;   engine_zraster.c_rasterizePolygonCustom_FUN_005bf640 at 005bf927
-;   unkafter_zombie.cpp_FUN_005bf120 at 005bf447
 ;
 ; *****************************************************************************
 

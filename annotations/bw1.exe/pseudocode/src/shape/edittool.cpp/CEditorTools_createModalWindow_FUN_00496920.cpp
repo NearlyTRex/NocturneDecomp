@@ -141,9 +141,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00496920(CEdi
   *(uint *)(iVar1 + 0x1c3eb9c) = _DAT_01c4f004;
   *(uint *)(iVar1 + 0x1c3eba0) = _DAT_01c4f018;
   *(uint *)(iVar1 + 0x1c3eba4) = _DAT_01c4f01c;
-  unkafter_minecar_cpp_FUN_00511980
+  engine_mini3d_cpp_FUN_00511980
             (iVar1 + 0x1c3eb80,iVar1 + 0x1c3eb84,iVar1 + 0x1c3eb88,iVar1 + 0x1c3eb8c);
-  unkafter_minecar_cpp_FUN_00511850((float)left,(float)top,(float)right,(float)bottom);
+  engine_mini3d_cpp_FUN_00511850((float)left,(float)top,(float)right,(float)bottom);
   *(int *)(iVar1 + 0x1c3eb60) = left;
   *(int *)(iVar1 + 0x1c3eb64) = top;
   *(int *)(iVar1 + 0x1c3eb68) = right;

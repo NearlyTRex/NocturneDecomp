@@ -70,10 +70,10 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_p
                     (DAT_00612560,pCVar3,(CVector3f *)0x0);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
                     (this_ptr_00,0.0,-1);
-          engine_matrix_c_pop_FUN_004839a0();
+          engine_drender_cpp_pop_FUN_004839a0();
           iVar2 = iVar2 + 1;
           translation = (CVector3f *)&translation[0x24].y;
-          engine_matrix_c_pop_FUN_004839a0();
+          engine_drender_cpp_pop_FUN_004839a0();
           pCVar3 = (CVector3f *)&pCVar3[0x24].y;
           this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
           pCVar9 = (CVector3f *)(&pCVar9->y + 0x6c);

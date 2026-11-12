@@ -15,7 +15,7 @@ CSfxSample * sound_sndmain_cpp_CSfxSample_ctor_FUN_0056fe10(CSfxSample *this_ptr
   CInStreamFile *pCVar2;
   
   pCVar1 = sound_sndmain_cpp_CSfxSample_init_FUN_00572340(this_ptr);
-  pCVar2 = unkclass_instream_cpp_CInStreamFile_ctor_FUN_005a08d0(&pCVar1->file_stream);
+  pCVar2 = support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(&pCVar1->file_stream);
   pCVar2[-3].binary_mode = 0;
   pCVar2[-1].file_handle = (HANDLE)0x0;
   pCVar2[-1].file_size = 0;

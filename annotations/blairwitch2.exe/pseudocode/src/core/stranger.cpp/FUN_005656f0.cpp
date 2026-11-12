@@ -196,7 +196,7 @@ LAB_00565858:
           else {
             if (param_1->action_pending == 6) goto LAB_00565858;
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
-                      (g_CEditorToolsPtr,"<actionPending = %d\nstranger.cpp line %d" + 1);
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d");
           }
           iVar5 = (param_1->base).base.layer_action_index;
           (param_1->base).target_actor = (CDemonActor *)0x0;

@@ -1,5 +1,6 @@
 # Imports
 import importlib
+import json
 import os
 import runpy
 import sys
@@ -165,6 +166,36 @@ def test_each_receiver_defect_gets_its_own_repair():
         == "a.cpp_CMineCar_m_FUN_00000030"
 
 
+SCAT_FIX = {"program": "nocturne.exe", "addr": "004fcd20",
+            "expect": "core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20",
+            "name": "core_scat.cpp_CScat_isWeaponDrawn_FUN_004fcd20",
+            "ret": "int", "conv": "__cdecl", "params": [("this_ptr", "CScat *")], "note": "n"}
+KEYS_FIX = {"program": "nocturne.exe", "addr": "004c41b0",
+            "expect": "engine_keys.cpp_CKeys_clearKeypresses_FUN_004c41b0",
+            "name": "engine_keys.cpp_clearKeypresses_FUN_004c41b0",
+            "ret": "void", "conv": "__cdecl", "params": [], "note": "n"}
+POD_FIX = {"program": "nocturne.exe", "addr": "004f8570",
+           "expect": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570",
+           "name": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570",
+           "ret": "CPodAuditRecord *", "conv": "__stack2_esi",
+           "params": [("this_ptr", "CPodFile *"), ("record_index", "int"),
+                      ("out_record", "CPodAuditRecord *")], "note": "n"}
+LOCAL_FIX = {"program": "nocedit.exe", "addr": "00478010",
+             "func": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010",
+             "renames": [("this_ptr", "bounds_ptr_bits"), ("this_ptr_00", "frame_bounds_ptr")],
+             "note": "n"}
+FIXES = {"prototypes": [SCAT_FIX, KEYS_FIX, POD_FIX], "local_renames": [LOCAL_FIX]}
+
+
+def test_curated_repairs_load_from_a_json_file(tmp_path):
+    assert ftp.load_fixes(None) == {"prototypes": [], "local_renames": []}
+    path = tmp_path / "fixes.json"
+    path.write_text(json.dumps(FIXES))
+    assert ftp.load_fixes(str(path)) == FIXES
+    path.write_text("{}")
+    assert ftp.load_fixes(str(path)) == {"prototypes": [], "local_renames": []}
+
+
 def curated_program(name, params = (), conv = "__cdecl", ret = None):
     program = program_with(StructureDataType("CScat", length = 8))
     f = method(program, name, 0x4fcd20, params, conv = conv, ret = ret or UNDEFINED)
@@ -173,7 +204,7 @@ def curated_program(name, params = (), conv = "__cdecl", ret = None):
 
 def test_a_curated_entry_wins_over_derivation_and_applies_its_prototype():
     program, f = curated_program("core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20")
-    _total, rows = ftp.plan(program, "nocturne.exe", set(), lambda _f: pytest.fail("not derived"))
+    _total, rows = ftp.plan(program, "nocturne.exe", set(), lambda _f: pytest.fail("not derived"), FIXES)
     assert names(rows) == {"proto": ["core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20"]}
     assert ftp.apply_plan(program, rows)
     assert f.getName() == "core_scat.cpp_CScat_isWeaponDrawn_FUN_004fcd20"
@@ -183,25 +214,24 @@ def test_a_curated_entry_wins_over_derivation_and_applies_its_prototype():
 def test_a_curated_entry_already_applied_is_left():
     scat = PointerDataType(StructureDataType("CScat", length = 8))
     program, f = curated_program("core_scat.cpp_CScat_isWeaponDrawn_FUN_004fcd20", [("this_ptr", scat)], ret = INT)
-    assert not any(ftp.plan(program, "nocturne.exe", set())[1].values())
+    assert not any(ftp.plan(program, "nocturne.exe", set(), fixes = FIXES)[1].values())
     # Named right already, typed wrong: only the prototype is written
     f.return_type = UNDEFINED
-    assert ftp.apply_plan(program, ftp.plan(program, "nocturne.exe", set())[1])
+    assert ftp.apply_plan(program, ftp.plan(program, "nocturne.exe", set(), fixes = FIXES)[1])
     assert f.prototype is not None and f.getSource() == "DEFAULT"
 
 
 def test_a_curated_entry_reports_each_difference():
-    fix = next(f for f in ftp.NO_PARAM_FIXES if f["addr"] == "004fcd20")
     _program, f = curated_program("x", [("me", INT)], conv = "__stdcall")
-    assert [d[0] for d in ftp.proto_diffs(f, fix)] == ["name", "ret", "conv", "params"]
+    assert [d[0] for d in ftp.proto_diffs(f, SCAT_FIX)] == ["name", "ret", "conv", "params"]
 
 
 def test_a_curated_entry_is_blocked_when_stale_or_missing_types():
     program, _f = curated_program("core_scat.cpp_somethingElse_FUN_004fcd20")
-    assert ftp.plan(program, "nocturne.exe", set())[1]["blocked"][0]["why"].startswith("STALE")
+    assert ftp.plan(program, "nocturne.exe", set(), fixes = FIXES)[1]["blocked"][0]["why"].startswith("STALE")
     program = program_with()
     method(program, "engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570", 0x4f8570)
-    why = ftp.plan(program, "nocturne.exe", set())[1]["blocked"][0]["why"]
+    why = ftp.plan(program, "nocturne.exe", set(), fixes = FIXES)[1]["blocked"][0]["why"]
     assert why == "type(s) not in this program's database: CPodAuditRecord *, CPodFile *"
 
 
@@ -215,14 +245,15 @@ def local_program(*locals_):
 
 def test_a_local_squatting_on_the_receiver_name_moves_first():
     program, f = local_program("this_ptr", "this_ptr_00", "frame_bounds_ptr")
-    rows = ftp.plan(program, "nocedit.exe", set())[1]
+    rows = ftp.plan(program, "nocedit.exe", set(), fixes = FIXES)[1]
     assert rows["local_rename"][0]["renames"] == [("this_ptr", "bounds_ptr_bits")]
     assert ftp.apply_plan(program, rows)
     assert [v.getName() for v in f.getLocalVariables()] == ["bounds_ptr_bits", "this_ptr_00", "frame_bounds_ptr"]
-    # Another program, or a function that is not there, has nothing to move
-    assert ftp.plan(program, "bw1.exe", set())[1]["local_rename"] == []
-    assert ftp.plan_locals(program_with(), "nocedit.exe") == []
-    assert ftp.plan(local_program("other")[0], "nocedit.exe", set())[1]["local_rename"] == []
+    # Another program, a function that is not there, or no fixes file has nothing to move
+    assert ftp.plan(program, "bw1.exe", set(), fixes = FIXES)[1]["local_rename"] == []
+    assert ftp.plan_locals(program_with(), "nocedit.exe", [LOCAL_FIX]) == []
+    assert ftp.plan(local_program("other")[0], "nocedit.exe", set(), fixes = FIXES)[1]["local_rename"] == []
+    assert ftp.plan(local_program("this_ptr")[0], "nocedit.exe", set())[1]["local_rename"] == []
 
 
 def test_a_failed_edit_is_counted_and_the_rest_still_land(capsys):
@@ -237,15 +268,14 @@ def test_a_failed_edit_is_counted_and_the_rest_still_land(capsys):
 
 def every_kind_of_row():
     page = PointerDataType(PAGE)
-    fix = next(f for f in ftp.NO_PARAM_FIXES if f["addr"] == "004fcd20")
     return {
         "local_rename": [{"addr": "1", "name": "L", "renames": [("this_ptr", "x")]}],
         "param_rename": [{"addr": "2", "name": f"P{i}", "from": "objs", "type": "SPageResource *"}
                          for i in range(3)],
         "func_rename": [{"addr": "3", "name": "F", "want": "G", "cls": "CMinecar", "have_cls": "CMineCar"}],
         "derive": [{"addr": "4", "name": "D", "params": [("this_ptr", page), ("b", INT)], "ret": INT}],
-        "proto": [{"addr": "5", "have": "C", "fix": fix},
-                  {"addr": "6", "have": "K", "fix": next(f for f in ftp.NO_PARAM_FIXES if not f["params"])}],
+        "proto": [{"addr": "5", "have": "C", "fix": SCAT_FIX},
+                  {"addr": "6", "have": "K", "fix": KEYS_FIX}],
         "blocked": [{"addr": "7", "name": "B", "why": "because"}],
     }
 
@@ -370,7 +400,10 @@ def test_main_reports_without_writing(monkeypatch, capsys, tmp_path, decompiler)
     program, f = bw_program(decompiler)
     skip = tmp_path / "skip.txt"
     skip.write_text("nothing\n")
-    assert run_main(monkeypatch, FakePyghidra(program), "bw1.exe", "--skip-file", str(skip)) == 0
+    fixes = tmp_path / "fixes.json"
+    fixes.write_text(json.dumps(FIXES))
+    assert run_main(monkeypatch, FakePyghidra(program), "bw1.exe", "--skip-file", str(skip),
+                    "--fixes", str(fixes)) == 0
     out = capsys.readouterr().out
     assert "skip.txt: 1 exemption(s)" in out and "[dry-run]" in out
     assert f.prototype is None and program.getDomainFile().saves == 0

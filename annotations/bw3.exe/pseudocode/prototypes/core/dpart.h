@@ -52,3 +52,11 @@ void __cdecl setupDepthOnlyEdgeInterpolation(SSoftwareEdge *vertex_a,SSoftwareEd
 // Original: core_dpart.cpp_findEdgeByYStart_FUN_00466d0e
 // Address: 00466d0e
 int * findEdgeByYStart(int param_1,int *param_2);
+
+// Original: core_dpart.cpp_FUN_00466d50
+// Address: 00466d50
+void __cdecl FUN_00466d50(int *vertex_indices,int vertex_count);
+
+// Original: core_dpart.cpp_FUN_004673d0
+// Address: 004673d0
+void __cdecl FUN_004673d0(CVector3i *vertex_indices,int vertex_count);

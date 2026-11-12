@@ -31,9 +31,9 @@
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
-;   engine_matrix.c_FUN_004839b0
-;   engine_matrix.c_FUN_00483c10
-;   engine_matrix.c_popViewport_FUN_00483c40
+;   engine_drender.cpp_FUN_004839b0
+;   engine_drender.cpp_FUN_00483c10
+;   engine_drender.cpp_popViewport_FUN_00483c40
 ;   engine_special.cpp_clearZBufferNative_FUN_0057dca4
 ;
 ; *****************************************************************************
@@ -64,8 +64,8 @@ section .text
     PUSH 0x0                            ; 0055b361
     MOV EBX,dword ptr [0x00612560]      ; 0055b363 | DAT_00612560
     PUSH EBX                            ; 0055b369 | DAT_01bc120c
-    CALL engine_matrix.c_FUN_00483c10   ; 0055b36a
-        ;   XREF to: 00483c10 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00483c10()
+    CALL engine_drender.cpp_FUN_00483c10 ; 0055b36a
+        ;   XREF to: 00483c10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483c10()
     ADD ESP,0x14                        ; 0055b36f
     MOV EAX,dword ptr [ESP + 0x28]      ; 0055b372
     MOV ESI,dword ptr [EAX]             ; 0055b376
@@ -97,8 +97,8 @@ section .text
     MOV EDX,dword ptr [0x0061255c]      ; 0055b3cb | DAT_0061255c
     PUSH dword ptr [EBX + 0x144]        ; 0055b3d1
     PUSH EDX                            ; 0055b3d7 | DAT_01bc120c
-    CALL engine_matrix.c_FUN_004839b0   ; 0055b3d8
-        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_004839b0()
+    CALL engine_drender.cpp_FUN_004839b0 ; 0055b3d8
+        ;   XREF to: 004839b0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_004839b0()
     ADD ESP,0x8                         ; 0055b3dd
     MOV ECX,dword ptr [ESP + 0x8]       ; 0055b3e0
     PUSH ECX                            ; 0055b3e4
@@ -159,8 +159,8 @@ section .text
     MOV EBP,dword ptr [0x00612560]      ; 0055b48d | DAT_00612560
         ;   Label: LAB_0055b48d
     PUSH EBP                            ; 0055b493 | DAT_01bc120c
-    CALL engine_matrix.c_popViewport_FUN_00483c40 ; 0055b494
-        ;   XREF to: 00483c40 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_00483c40()
+    CALL engine_drender.cpp_popViewport_FUN_00483c40 ; 0055b494
+        ;   XREF to: 00483c40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_00483c40()
     ADD ESP,0x4                         ; 0055b499
     MOV EAX,dword ptr [ESP]             ; 0055b49c
     PUSH EAX                            ; 0055b49f

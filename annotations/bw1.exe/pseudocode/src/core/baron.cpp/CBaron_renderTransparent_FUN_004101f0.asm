@@ -123,8 +123,8 @@ section .text
     ADD ESP,0xc                         ; 004102d5
     MOV EDI,dword ptr [0x00612560]      ; 004102d8 | DAT_00612560
     PUSH EDI                            ; 004102de | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 004102df
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 004102df
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004102e4
     PUSH EBX                            ; 004102e7
         ;   Label: LAB_004102e7

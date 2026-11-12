@@ -81,6 +81,14 @@ int __cdecl CBitFont::drawTextFV(CBitFont *this_ptr,int x_pos,int y_pos,int colo
 // Address: 004a91a0
 int __cdecl CBitFont::drawTextRight(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
 
+// Original: engine_font.cpp_FUN_004a91e0
+// Address: 004a91e0
+void FUN_004a91e0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+
+// Original: engine_font.cpp_FUN_004a9230
+// Address: 004a9230
+void FUN_004a9230(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6 ,undefined4 param_7);
+
 // Original: engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0
 // Address: 004a92a0
 int __cdecl CBitFont::drawTextCenter(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
@@ -180,3 +188,19 @@ void __cdecl CBitFont::setFontReady(CBitFont *this_ptr,int value);
 // Original: engine_font.cpp_CBitFont_remapPalette_FUN_004ab630
 // Address: 004ab630
 void __cdecl CBitFont::remapPalette(CBitFont *this_ptr);
+
+// Original: engine_font.cpp_FUN_004ab840
+// Address: 004ab840
+int FUN_004ab840(int param_1,byte *param_2,int param_3,int param_4,int param_5);
+
+// Original: engine_font.cpp_FUN_004abbee
+// Address: 004abbee
+uint FUN_004abbee(int param_1,int param_2,uint param_3);
+
+// Original: engine_font.cpp_FUN_004abc40
+// Address: 004abc40
+undefined4 FUN_004abc40(void);
+
+// Original: engine_font.cpp_FUN_004abd8e
+// Address: 004abd8e
+int * FUN_004abd8e(int param_1,int *param_2);

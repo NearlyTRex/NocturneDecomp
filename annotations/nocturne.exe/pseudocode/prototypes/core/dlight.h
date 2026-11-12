@@ -137,14 +137,14 @@ void __cdecl CDemonLight::setVolumetricIntensity(CDemonLight *this_ptr,float int
 // Address: 00452110
 void __cdecl CDemonLight::drawShadowDepthBuffer(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
 
-// Original: core_dlight.cpp_FUN_00452500
+// Original: core_dlight.cpp_assignInt_FUN_00452500
 // Address: 00452500
-undefined4 * FUN_00452500(void);
+int * __cdecl assignInt(int *dest,int *src);
 
-// Original: core_dlight.cpp_FUN_00452510
+// Original: core_dlight.cpp_assignInt1_FUN_00452510
 // Address: 00452510
-undefined4 * FUN_00452510(void);
+int * __cdecl assignInt1(int *dest,int *src);
 
-// Original: core_dlight.cpp_FUN_00452520
+// Original: core_dlight.cpp_assignInt2_FUN_00452520
 // Address: 00452520
-undefined4 * FUN_00452520(void);
+int * __cdecl assignInt2(int *dest,int *src);

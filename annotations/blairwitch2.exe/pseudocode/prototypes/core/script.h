@@ -5,10 +5,6 @@
 // Function prototypes for core/script.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_script.cpp_staticInit_FUN_004e4490
-// Address: 004e4490
-void __cdecl staticInit(void);
-
 // Original: core_script.cpp_staticInit_FUN_00520f90
 // Address: 00520f90
 void staticInit(void);
@@ -164,3 +160,7 @@ uint __cdecl CScript::computeChecksum(CScript *this_ptr);
 // Original: core_script.cpp_getDeformableModelFilename_FUN_0052a690
 // Address: 0052a690
 char * __cdecl getDeformableModelFilename(CDeformableModel *model_ptr);
+
+// Original: core_script.cpp_FUN_0052a6a0
+// Address: 0052a6a0
+undefined4 FUN_0052a6a0(int param_1);

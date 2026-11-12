@@ -78,7 +78,7 @@ section .text
     SUB EAX,0x4b0                       ; 00545c94
     PUSH EAX                            ; 00545c99
     CALL core_armour.cpp_SFire_arrdtor50_FUN_00412700 ; 00545c9a
-        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_SFire_arrdtor50_FUN_00412700(SFire * objs, uint flags)
+        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_SFire_arrdtor50_FUN_00412700(SFire * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00545c9f
     PUSH 0x0                            ; 00545ca2
     SUB EAX,0x20c                       ; 00545ca4

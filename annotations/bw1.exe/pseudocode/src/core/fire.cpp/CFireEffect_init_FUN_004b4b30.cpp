@@ -74,7 +74,7 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004b4b30(CFireEffect *this_ptr)
     pCVar7 = pCVar6 + 1;
     (pCVar6->base).lifetime_remaining = 0.0;
     pCVar6 = pCVar7;
-  } while (pCVar7 != (CGlassParticle *)0x1ca9cf0);
+  } while (pCVar7 != (CGlassParticle *)&DAT_01ca9cf0);
   puVar9 = (byte *)0x1ca9cf4;
   do {
     puVar8 = puVar9 + 0x24;
