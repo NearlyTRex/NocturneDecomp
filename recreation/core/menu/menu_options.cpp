@@ -103,6 +103,9 @@ private:
 // Escape alone, not on the window closing.
 // deferred: the cheats, which nothing in the original lists (the decomp's cheats.h
 //   nocturne_cheats_menu), with the cheats menu
+// deferred: over the sound the pause menu holds, the menu music started without configure's
+//   reset, and only the menu's own sounds stopped after it in place of reset (the decomp's
+//   PAUSE_SOUND), with the pause menu
 // nocedit 0x00512d30
 void CMenu::showOptionsScreen(int initialize_systems) {
     if (initialize_systems != 0) {

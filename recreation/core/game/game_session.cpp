@@ -106,8 +106,17 @@ void CGame::setGameRes(const SGameSessionOwners &session) {
 //   NETPLAY), with CNetGame::initializeNetworkToJoin
 // deferred: the pause menu on Escape: Return, Options (redrawing the scene after, the decomp's
 //   OPTIONS_RESUMES_GAME, with its menu font), Load game, Save game, Warps (the decomp's
-//   CHEAT_MENU), Quit with a confirm, and Skip cinematic in a letterboxed cinematic, the sound
-//   stopped while it shows, with showOptionsScreen, promptLoadGame, saveGame and skipCinematic
+//   CHEAT_MENU), Quit with a confirm, and Skip cinematic in a letterboxed cinematic, with
+//   showOptionsScreen, promptLoadGame, saveGame and skipCinematic
+// deferred: the sound held while the pause menu shows (the decomp's PAUSE_SOUND), not
+//   CSound::shutdown and init, which lost a dialogue line and restarted the music. The slots
+//   playing as it opens are held, neither computed nor heard, and written down with their
+//   sample, options, position and serial; the menu's own sounds play. Return, Save or Options
+//   lets them go from the same sample, after stopping the menu's sounds; one lost meanwhile (an
+//   output reopened, muting, its channel off and on) starts again where it was, in its own slot
+//   under its own serial, so the game's handle still finds it. Load, Warps, Skip cinematic and
+//   Quit shut the sound down and start it again as shipped. With CSound::init and shutdown, and
+//   a stop on CSfxVoice that keeps its frame
 // deferred: Escape closing the automap first, and ignored while the hero dies (the decomp's
 //   AUTOMAP and DEATH_FADE_SKIP), with the automap and getDeathState
 // deferred: the host's abort and the client's leave dialogs, with respawn and skip votes (the

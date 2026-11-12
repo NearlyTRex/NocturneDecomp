@@ -712,6 +712,18 @@ int __cdecl sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005ab590(void) {
     return stand.mixing;
 }
 
+extern "C" int nocturne_pause_sound_held(void) {
+    return stand.pause_held;
+}
+
+extern "C" void nocturne_pause_sound_menu_music(void) {
+    front_support::log("pauseMenuMusic");
+}
+
+extern "C" void nocturne_pause_sound_quiet(void) {
+    front_support::log("pauseQuiet");
+}
+
 void __cdecl sound_sndmain_cpp_enableHwSoundMixing_FUN_005ab550(int enable) {
     stand.mixing = enable;
 }

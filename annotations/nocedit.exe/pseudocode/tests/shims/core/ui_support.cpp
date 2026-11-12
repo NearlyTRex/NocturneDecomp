@@ -183,6 +183,7 @@ CWinFont *g_MediumWinFont = nullptr;
 CWinFont *g_TinyWinFont = nullptr;
 CWinFont *g_ThemeWinFont = nullptr;
 CWinFont *g_DebugWinFont = nullptr;
+char g_OSFontName[128] = "Arial";
 
 // The height kept where the stand's text routines read it.
 CWinFont *__cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_ptr, char *,

@@ -61,6 +61,8 @@ CSfxSlot::~CSfxSlot() = default;
 // The original also printed its working to the console for a slot setSfxIsActive picked, which
 // nothing in the game ever did, and worked out a delay for each ear from its distance, which the
 // per-ear gains make up for.
+// deferred: a slot the pause menu holds left as it is, its voice stopped on its frame and
+//   nothing counted down (the decomp's PAUSE_SOUND), with the pause menu
 // nocedit 0x005a7100
 bool CSfxSlot::compute(float delta_time) {
     if (sample == nullptr) {

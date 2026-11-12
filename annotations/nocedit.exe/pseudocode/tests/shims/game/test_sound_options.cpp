@@ -156,6 +156,19 @@ NOCTURNE_TEST(a_channel_steps_in_fifths) {
     CHECK_EQ(stand.count("soundConfigure"), 0);
 }
 
+// Over a game sound the pause menu holds, the menu's music starts again
+// without the reset that would cost it.
+NOCTURNE_TEST(a_held_game_sound_is_left_alone) {
+    stand.reset();
+    stand.pause_held = 1;
+    stand.channel_on[1] = 0;
+    stand.muted = 1;
+    sound({pick(MUSIC), pick(MUTE)});
+    CHECK_EQ(stand.muted, 0);
+    CHECK_EQ(stand.count("soundConfigure"), 0);
+    CHECK_EQ(stand.count("pauseMenuMusic"), 2);
+}
+
 // Movie Vol steps the same way, its Off a level of 0.
 NOCTURNE_TEST(movie_vol_steps_in_fifths) {
     const struct {

@@ -47,6 +47,10 @@ constexpr int kFixedShift = 16;
 
 } // namespace
 
+// deferred: over the sound the pause menu holds, the music started again (channel back on,
+//   unmuted) without configure's reset; a change that reopens the output still loses the held
+//   sounds, which the pause menu starts again where they were (the decomp's PAUSE_SOUND), with
+//   the pause menu
 // nocedit 0x00511e50
 void CMenu::configureSoundOptions() {
     owners_.game.saveClockTime();

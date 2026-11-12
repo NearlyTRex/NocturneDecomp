@@ -49,6 +49,7 @@ struct Stand {
     std::deque<int> attract;     // nocturne_attract_tick; 0 after
     bool continue_found = true;  // nocturne_save_continue_target
     int muted = 0;               // isSoundMuted
+    int pause_held = 0;          // nocturne_pause_sound_held
     int upscaler = NOCTURNE_UPSCALER_STANDARD;
     int antialias = NOCTURNE_ANTIALIAS_OFF;
     const char *gl_version = "";

@@ -92,6 +92,7 @@
 // | `NOCTURNE_AUTHENTIC_GOGGLES_CAMERA_HOLD` | 0 | defect | a script's timed camera hold runs out while the goggles are on |
 // | `NOCTURNE_AUTHENTIC_LIGHT_FILTER_LOAD` | 0 | defect | the HQ projector keeps its briefing slides after a save load |
 // | `NOCTURNE_AUTHENTIC_HELPER_DEATH` | 0 | defect | a companion's death holds the hero still and ends on Game Over |
+// | `NOCTURNE_AUTHENTIC_PAUSE_SOUND` | 0 | defect | pausing holds every sound where it is, dialogue and music included |
 // | `NOCTURNE_AUTHENTIC_PICKUP_WIELDS` | 0 | choice | a pickup is never drawn without the player asking |
 // | `NOCTURNE_AUTHENTIC_OPTIONS_RESUMES_GAME` | 0 | choice | leaving Options returns to the pause menu |
 // | `NOCTURNE_AUTHENTIC_CONFIRM_PROMPTS` | 0 | choice | no bracketed hotkey letters, and a short form when the long one will not fit |
@@ -1837,6 +1838,29 @@
 //   Override with -DNOCTURNE_AUTHENTIC_HELPER_DEATH=1.
 #ifndef NOCTURNE_AUTHENTIC_HELPER_DEATH
 #define NOCTURNE_AUTHENTIC_HELPER_DEATH 0
+#endif
+
+// NOCTURNE_AUTHENTIC_PAUSE_SOUND
+//   What the pause menu does to the sound.
+//
+//   runGameSession opens the menu with CALL CSound::shutdown at 004db754,
+//   whose resetSoundDevice kills every sound, and closes it with CALL
+//   CSound::init at 004db97d, which starts the ambient loop and the event
+//   list's sounds again from their beginnings. A line of dialogue is in
+//   neither, so pausing a cutscene left it silent until its next line, and
+//   the music began again from the top.
+//
+//   1: shipped behaviour - every sound stops, and only some start again.
+//   0: the sounds playing are held where they are, while Options plays its
+//      music, and Return, Save or Options carries on from the same sample. A
+//      held sound lost to an Options change that reopens the output starts
+//      again where it was. Load, Warps, Skip cinematic and Quit still shut the
+//      sound down as shipped.
+//      See shims/game/pause_sound.h.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_PAUSE_SOUND=1.
+#ifndef NOCTURNE_AUTHENTIC_PAUSE_SOUND
+#define NOCTURNE_AUTHENTIC_PAUSE_SOUND 0
 #endif
 
 // =============================================================================
