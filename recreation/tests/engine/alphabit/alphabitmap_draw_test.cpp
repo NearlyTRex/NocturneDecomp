@@ -179,6 +179,31 @@ TEST_F(CAlphaBitmapDrawTest, AScaledImageIsClippedAndNothingDrawsNothing) {
     EXPECT_EQ(screen_.pixel(0, 0), kBackground);
 }
 
+// Each way a scaled image can have nothing to draw, or miss the screen wholly, on its own.
+TEST_F(CAlphaBitmapDrawTest, AScaledImageThatIsEmptyOrWhollyOffScreenDrawsNothing) {
+    const int width = screen_.getWindowWidth();
+    const int height = screen_.getWindowHeight();
+    loadCounting(2, 2);
+    bitmap_.displayScaled(0, 0, 4, 0, kFullAlpha, EBitmapFilter::Nearest);
+    bitmap_.displayScaled(-5, 0, 4, 4, kFullAlpha, EBitmapFilter::Nearest);
+    bitmap_.displayScaled(width, 0, 4, 4, kFullAlpha, EBitmapFilter::Nearest);
+    bitmap_.displayScaled(0, -5, 4, 4, kFullAlpha, EBitmapFilter::Nearest);
+    bitmap_.displayScaled(0, height, 4, 4, kFullAlpha, EBitmapFilter::Nearest);
+    loadCounting(0, 2);
+    bitmap_.displayScaled(0, 0, 4, 4, kFullAlpha, EBitmapFilter::Nearest);
+    loadCounting(2, 0);
+    bitmap_.displayScaled(0, 0, 4, 4, kFullAlpha, EBitmapFilter::Nearest);
+    EXPECT_EQ(screen_.pixel(0, 0), kBackground);
+}
+
+// Its own width is not its own size: the height is scaled.
+TEST_F(CAlphaBitmapDrawTest, ScaledInHeightAloneItIsStillScaled) {
+    loadCounting(2, 1);
+    bitmap_.displayScaled(0, 0, 2, 2, kFullAlpha, EBitmapFilter::Nearest);
+    EXPECT_EQ(screen_.pixel(0, 1), ramp(1));
+    EXPECT_EQ(screen_.pixel(1, 1), ramp(2));
+}
+
 TEST_F(CAlphaBitmapDraw16Test, SixteenBitsDrawsScaledPixelsEitherWay) {
     givenImage("pic", std::string(1, '\x40'));
     bitmap_.load("pic", 1, 1);
@@ -187,6 +212,15 @@ TEST_F(CAlphaBitmapDraw16Test, SixteenBitsDrawsScaledPixelsEitherWay) {
     screen_.fill(kBackground);
     bitmap_.displayScaled(0, 0, 2, 2, kFullAlpha, EBitmapFilter::Smooth);
     EXPECT_EQ(screen_.pixel(1, 1), CMemoryScreen::pack16(0x40, 0x80, 0xc0));
+}
+
+TEST_F(CAlphaBitmapDraw16Test, SixteenBitsSmoothLeavesWhatIsTooFaintToDraw) {
+    givenImage("pic", std::string{'\x01', '\x00'});
+    bitmap_.load("pic", 2, 1);
+    const std::uint32_t before = screen_.pixel(3, 0);
+    bitmap_.displayScaled(0, 0, 4, 1, kFullAlpha, EBitmapFilter::Smooth);
+    EXPECT_NE(screen_.pixel(0, 0), before);
+    EXPECT_EQ(screen_.pixel(3, 0), before);
 }
 
 TEST_F(CAlphaBitmapDraw8Test, EightBitsDrawsNothingScaled) {

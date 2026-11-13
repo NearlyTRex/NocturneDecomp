@@ -243,6 +243,9 @@ TEST_F(CBitFontScaledTest, AnOsFontMadeAtTheScaleDrawsAndMeasuresTheScaledText) 
     EXPECT_EQ(rig.font.drawTextScaled("ab", 1, 2, 3, 4, kUpscale), 14);
     EXPECT_CALL(scaled_font, getStringWidth(std::string_view("ab"))).WillOnce(Return(20));
     EXPECT_EQ(rig.font.getTextWidthScaled("ab", kUpscale), 20);
+    // With a font at the scale, the sheet's measures are scaled too: 'X' made 4 tall is 6.
+    rig.font.setCharYOffsetRange(4, 'X');
+    EXPECT_EQ(rig.font.getCharHeightScaled('X', kUpscale), 6);
     // Another scale is drawn by the unscaled font, at its own size.
     EXPECT_CALL(os_font, getStringWidth(std::string_view("ab"))).WillOnce(Return(10));
     EXPECT_EQ(rig.font.getTextWidthScaled("ab", kUpscale * 2), 10);

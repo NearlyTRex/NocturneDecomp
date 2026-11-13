@@ -232,6 +232,12 @@ TEST_F(CDFontTest, NoOsFontScaleIsMadeAtOneOrForBitmapText) {
     fonts_.setOsFontScale(2.0F);
 }
 
+TEST_F(CDFontTest, AScaleBeforeTheFontsAreMadeHasNothingToSet) {
+    EXPECT_CALL(os_fonts_, createOsFont).Times(0);
+    fonts_.setOsFontScale(2.0F);
+    EXPECT_EQ(fonts_.getThemeFont(), nullptr);
+}
+
 TEST_F(CDFontTest, TheSystemChoiceUsesOsFontsWithoutAMessageFile) {
     fonts_.setOsFontChoice(EOsFontChoice::System);
     EXPECT_CALL(os_fonts_, createOsFont).Times(4);

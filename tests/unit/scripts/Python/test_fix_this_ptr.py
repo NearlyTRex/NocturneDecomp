@@ -66,7 +66,8 @@ def test_the_resolver_finds_types_by_path_or_name_and_wraps_pointers():
     # Cached, so a second ask is the same object
     first = resolve("SPageResource **")
     assert resolve("SPageResource **") is first
-    program.getDataTypeManager().getDataType = lambda _path: None
+    # Either of Ghidra's overloads finds nothing
+    program.getDataTypeManager().getDataType = lambda _path_or_category, _name = None: None
     assert ftp.make_resolver(program)("int") is INT
 
 

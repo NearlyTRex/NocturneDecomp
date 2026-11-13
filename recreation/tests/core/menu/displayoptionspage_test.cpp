@@ -498,6 +498,16 @@ TEST_F(CDisplayOptionsPageTest, TheModeItHasOrOneRefusedChangesNothing) {
     EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
 }
 
+// The width it has is not the mode it has: a new height is a new mode too.
+TEST_F(CDisplayOptionsPageTest, ANewHeightAloneIsANewMode) {
+    loadRenderer();
+    CDisplayOptionsPage page(menu_, menu_owners_);
+    static_cast<void>(texts(page));
+    setResolution(640, 600);
+    EXPECT_CALL(screen_, setScreenResolution(640, 600, _)).WillOnce(Return(true));
+    EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
+}
+
 TEST_F(CDisplayOptionsPageTest, CancelLeaves) {
     CDisplayOptionsPage page(menu_, menu_owners_);
     static_cast<void>(texts(page));

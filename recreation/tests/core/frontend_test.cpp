@@ -17,6 +17,7 @@ TEST(GetFrontEndMode, WithoutAccelerationOrBelowTheLayoutItIs640x480) {
     EXPECT_EQ(getFrontEndMode(1920, 1080, false), layout);
     EXPECT_EQ(getFrontEndMode(512, 384, true), layout);
     EXPECT_EQ(getFrontEndMode(400, 480, true), layout);
+    EXPECT_EQ(getFrontEndMode(1920, 400, true), layout);
 }
 
 TEST(GetFrontEndLayout, At480LinesItIsTheLayoutCentred) {
