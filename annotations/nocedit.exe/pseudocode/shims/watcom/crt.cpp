@@ -428,7 +428,9 @@ static FILE *fopen_text_aware(const char *path, const char *mode) {
     // NOT equal "N underlying bytes". Unbuffered mode sends every fseek
     // straight to cookie_seek with the caller's exact offset. The
     // underlying FILE* keeps its own libc buffer, so per-byte fgetc from
-    // the cookie stream is still fast.
+    // the cookie stream is still fast. `underlying` belongs to the cookie now:
+    // text_cookie_close closes it with `cooked`.
+    // NOLINTNEXTLINE(clang-analyzer-unix.Stream)
     setvbuf(cooked, nullptr, _IONBF, 0);
     return cooked;
 }

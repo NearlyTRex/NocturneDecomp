@@ -141,13 +141,12 @@ void notifyAbnormalTermination() {
 
 void __STK() {}
 
+// Watcom's probe touched each page of a large frame below the stack pointer, in
+// order, so Windows' guard page committed them. The host's stack grows on its
+// own, and the host compiler probes its own frames, so there is nothing to do;
+// reading below an argument's address would be outside any object.
 void __STK(size_t size) {
-    volatile char *p = (volatile char *)&size;
-    while (size > 4096) {
-        p -= 4096;
-        (void)*p;
-        size -= 4096;
-    }
+    (void)size;
 }
 
 // =============================================================================

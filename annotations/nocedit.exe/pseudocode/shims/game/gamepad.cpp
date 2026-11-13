@@ -14,6 +14,7 @@
 #include "shim_config.h"
 
 #include <SDL.h>
+#include <array>
 #include <cstddef>
 #include <cstring>
 #include <filesystem>
@@ -624,15 +625,22 @@ extern "C" void nocturne_gamepad_apply_defaults(CGame *game) {
 
 namespace {
 
+// key_walk through key_next_ammo.
+constexpr size_t kBindingCount = 27;
+
 // The bindable actions, in the order the Customize Keys screen lists them.
-int *binding_fields(CGame *game, int *count) {
-    // key_walk is the first and key_next_ammo the last, and CGame declares
-    // them contiguously (0x28..0x90), so the set is one run of ints. Asserted
-    // rather than assumed, since a struct change would silently widen it.
-    static_assert(offsetof(CGame, key_next_ammo) - offsetof(CGame, key_walk) == 26 * sizeof(int),
+// key_walk is the first and key_next_ammo the last, and CGame declares them
+// contiguously (0x28..0x90), so the set is one run of ints, copied out of the
+// struct's bytes: indexing past key_walk itself would read beyond that field.
+// Asserted rather than assumed, since a struct change would silently widen it.
+std::array<int, kBindingCount> binding_fields(const CGame *game) {
+    static_assert(offsetof(CGame, key_next_ammo) - offsetof(CGame, key_walk) ==
+                      (kBindingCount - 1) * sizeof(int),
                   "the key_* bindings are no longer one contiguous run");
-    *count = 27;
-    return &game->key_walk;
+    std::array<int, kBindingCount> fields{};
+    const char *bytes = reinterpret_cast<const char *>(game);
+    std::memcpy(fields.data(), bytes + offsetof(CGame, key_walk), sizeof(fields));
+    return fields;
 }
 
 bool is_pad_binding(int code) {
@@ -652,16 +660,13 @@ extern "C" void nocturne_gamepad_reseed_for_mode(CGame *game) {
     // screen to have nothing left to ask.
     nocturne_gamepad_seed_calibration(game);
 
-    int count = 0;
-    const int *fields = binding_fields(game, &count);
-
     int pad_bindings = 0;
     int other_bindings = 0;
-    for (int i = 0; i < count; i++) {
-        if (fields[i] == INPUT_NONE) {
+    for (const int field : binding_fields(game)) {
+        if (field == INPUT_NONE) {
             continue;
         }
-        if (is_pad_binding(fields[i])) {
+        if (is_pad_binding(field)) {
             pad_bindings++;
         } else {
             other_bindings++;
