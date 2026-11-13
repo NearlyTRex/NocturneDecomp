@@ -6,6 +6,7 @@
 #include "engine/dosio/foundfileinfo.h"
 #include "platform/file.h"
 #include "platform/filesystem.h"
+#include "common/checksum/crc32_mpeg2.h"
 
 #include <algorithm>
 #include <array>
