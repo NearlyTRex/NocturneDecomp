@@ -168,6 +168,10 @@ jobs:
     permissions:
       contents: read
     with:
+      # Held on 24.04: on the 26.04 image clang 21's MinGW driver finds neither
+      # the mingw-w64 import libraries nor libgcc, so even CMake's compiler
+      # check fails to link.
+      runs-on: ubuntu-24.04
       apt-packages: cmake clang lld ninja-build pkg-config python3 g++-mingw-w64-x86-64
       cache-paths: |
         build/exe-windows-x86_64/_deps
