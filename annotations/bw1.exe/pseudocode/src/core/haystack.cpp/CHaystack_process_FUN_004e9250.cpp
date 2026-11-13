@@ -126,7 +126,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004e9250(CHaystack *this_pt
                iVar9 != 0)) goto LAB_004e965f;
             iVar9 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
             if (iVar9 != 0) {
-              core_hero_cpp_FUN_004eb7f0(this_ptr);
+              core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(&this_ptr->base);
               goto LAB_004e965f;
             }
           }

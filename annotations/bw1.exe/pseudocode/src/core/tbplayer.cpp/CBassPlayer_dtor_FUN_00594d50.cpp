@@ -1,14 +1,12 @@
 // Name: core_tbplayer.cpp_CBassPlayer_dtor_FUN_00594d50
 // Address: 00594d50
 // Address Range: [[00594d50, 00594de4]]
-// Convention: unknown
-// Signature: CBassPlayer * core_tbplayer_cpp_CBassPlayer_dtor_FUN_00594d50(CBassPlayer *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_00594d50(CBassPlayer *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBassPlayer * core_tbplayer_cpp_CBassPlayer_dtor_FUN_00594d50(CBassPlayer *this_ptr,uint flags)
+CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_00594d50(CBassPlayer *this_ptr,uint flags)
 
 {
   CPathMap *pCVar1;

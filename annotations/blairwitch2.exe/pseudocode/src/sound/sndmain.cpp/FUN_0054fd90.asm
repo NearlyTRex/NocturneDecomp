@@ -10,7 +10,7 @@
 ;   sound_sndmain.cpp_FUN_0054c7f0 at 0054c9e9
 ;   sound_sndmain.cpp_FUN_0054daf0 at 0054db7b
 ;   sound_sndmain.cpp_FUN_0054ddf0 at 0054e1fe
-;   sound_sndmain.cpp_FUN_005516ce at 005517ae
+;   sound_sndmain.cpp_FUN_005516d0 at 005517ae
 ;
 ; *****************************************************************************
 

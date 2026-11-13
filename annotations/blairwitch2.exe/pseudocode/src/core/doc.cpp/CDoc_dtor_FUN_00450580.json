@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 43,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 27,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "0045061c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_doc.cpp_CDoc_dtor_FUN_00450580",
-    "signature": "CDoc * core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)"
+    "signature": "CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -150,7 +150,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 22,
       "match": "pCVar1[-3].",
       "severity": "mild",
       "text": "((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal.y,1);",

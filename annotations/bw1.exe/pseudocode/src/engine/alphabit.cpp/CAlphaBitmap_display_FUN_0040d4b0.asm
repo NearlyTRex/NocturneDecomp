@@ -20,7 +20,7 @@
 ; XREF[20]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_00416620 at 00416644
 ;   core_bmppuzzl.cpp_CChemPuzzle_render_FUN_00418140 at 00418161
-;   core_fldnotes.cpp_FUN_004be0f0 at 004be1ae
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0 at 004be1ae
 ;   core_fldnotes.cpp_SNotesMap_draw_FUN_004bc830 at 004bc85b
 ;   core_fldnotes.cpp_SPageResourceBitmap_draw_FUN_004bab40 at 004bab54
 ;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004ba930 at 004ba9a3

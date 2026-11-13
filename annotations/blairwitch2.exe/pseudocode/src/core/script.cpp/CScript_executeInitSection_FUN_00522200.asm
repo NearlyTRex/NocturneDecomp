@@ -32,7 +32,7 @@
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250
 ;   core_main.c_FUN_004e4500
 ;   core_script.cpp_CScript_findLabelIndex_FUN_005299b0
-;   core_script.cpp_FUN_00522350
+;   core_script.cpp_CScript_step_FUN_00522350
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     PUSH EBX                            ; 0052226e
     MOV EDI,dword ptr [EBX + 0x44]      ; 0052226f
     MOV dword ptr [ESP + 0xc],ECX       ; 00522272
-    CALL core_script.cpp_FUN_00522350   ; 00522276
-        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00522350()
+    CALL core_script.cpp_CScript_step_FUN_00522350 ; 00522276
+        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_00522350(CScript * this_ptr, float * param_2)
     ADD ESP,0x8                         ; 0052227b
     TEST EAX,EAX                        ; 0052227e
     JL 0x005222e1                       ; 00522280

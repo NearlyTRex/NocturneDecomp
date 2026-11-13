@@ -1,14 +1,12 @@
 // Name: core_basicnpc.cpp_CBasicNPC_dtor_FUN_005a4980
 // Address: 005a4980
 // Address Range: [[005a4980, 005a4a14]]
-// Convention: unknown
-// Signature: CBasicNPC * core_basicnpc_cpp_CBasicNPC_dtor_FUN_005a4980(CBasicNPC *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBasicNPC * __cdecl core_basicnpc_cpp_CBasicNPC_dtor_FUN_005a4980(CBasicNPC *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBasicNPC * core_basicnpc_cpp_CBasicNPC_dtor_FUN_005a4980(CBasicNPC *this_ptr,uint flags)
+CBasicNPC * __cdecl core_basicnpc_cpp_CBasicNPC_dtor_FUN_005a4980(CBasicNPC *this_ptr,uint flags)
 
 {
   int iVar1;

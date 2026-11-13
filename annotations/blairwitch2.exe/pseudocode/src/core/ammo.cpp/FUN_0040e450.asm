@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_doc.cpp_FUN_0045d2c0 at 0045d678
-;   core_inv.cpp_FUN_004dc8c0 at 004dc9fa
+;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dc9fa
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cb23d

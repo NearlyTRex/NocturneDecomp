@@ -1,0 +1,120 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 30,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 32
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f2a50",
+    "address_range": [
+      [
+        "004f2a50",
+        "004f2a8b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_setFrameTranslation2_FUN_004f2a50",
+    "signature": "void __cdecl engine_mini3d_cpp_setFrameTranslation2_FUN_004f2a50(CVector3f *position)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d098b0",
+      "name": "DAT_01d098b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098b4",
+      "name": "DAT_01d098b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098b8",
+      "name": "DAT_01d098b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09918",
+      "name": "DAT_01d09918",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0c398",
+      "name": "DAT_01d0c398",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.0625,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "COPY": 69,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 7,
+      "LOAD": 5,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 97
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005117e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

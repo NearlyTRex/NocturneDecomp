@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f691
-;   core_set.cpp_FUN_0054e69e at 0054e98f
+;   core_set.cpp_FUN_0054e6a0 at 0054e98f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_005f1151

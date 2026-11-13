@@ -28,7 +28,7 @@ uint engine_pod_cpp_FUN_0053b250(CPodFile *param_1,char *param_2,char *param_3)
   bool bVar14;
   SFoundFileInfo local_8cc;
   char local_6b8 [512];
-  uint local_4b8 [2];
+  byte local_4b8 [8];
   char local_4b0 [80];
   int local_460;
   int local_45c;
@@ -38,11 +38,11 @@ uint engine_pod_cpp_FUN_0053b250(CPodFile *param_1,char *param_2,char *param_3)
   int local_3b0;
   ulong local_3a8;
   int local_3a4;
-  uint local_398;
+  byte local_398 [4];
   char local_394 [256];
   int local_294;
   char local_288 [256];
-  uint local_188 [2];
+  byte local_188 [8];
   char local_180 [80];
   int local_130;
   int local_12c;
@@ -109,7 +109,7 @@ uint engine_pod_cpp_FUN_0053b250(CPodFile *param_1,char *param_2,char *param_3)
       iVar6 = _stricmp(local_288,&DAT_005ed68a);
       if ((iVar6 == 0) ||
          (iVar6 = _stricmp(local_288,&DAT_005ed68e), iVar6 == 0)) {
-        iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_84,&local_398,0x110);
+        iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_84,local_398,0x110);
         if (iVar6 == 0x110) {
           pcVar12 = local_394;
           pcVar2 = param_1->description;
@@ -134,8 +134,7 @@ uint engine_pod_cpp_FUN_0053b250(CPodFile *param_1,char *param_2,char *param_3)
           if (0 < param_1->file_count) {
             local_2c = 0;
             do {
-              iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10
-                                (&local_84,(uint *)local_d4,0x50);
+              iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_84,local_d4,0x50);
               if (iVar6 != 0x50) goto LAB_0053b40b;
               *(ulong *)((int)&param_1->directory_entries->name + local_2c) = uVar9;
               uVar7 = 0xffffffff;
@@ -214,8 +213,7 @@ LAB_0053b65d:
         }
       }
       else {
-        iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10
-                          (&local_84,(uint *)&local_30,4);
+        iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_84,&local_30,4);
         if (iVar6 == 4) {
           support_trstream_cpp_CInStreamFile_seek_FUN_005a0d00(&local_84,0,0);
           if ((((local_30 == 'P') && (local_2f == 'O')) && (local_2e == 'D')) && (local_2d == '3'))
@@ -283,7 +281,7 @@ LAB_0053b733:
               support_trstream_cpp_CInStreamFile_seek_FUN_005a0d00(&local_84,local_3b0,0);
               uVar11 = param_1->file_count * 0x14;
               uVar7 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10
-                                (&local_84,&param_1->directory_entries->name,uVar11);
+                                (&local_84,param_1->directory_entries,uVar11);
               if (uVar7 == uVar11) {
                 uVar7 = uVar7 ^ uVar11;
                 if (0 < param_1->file_count) {
@@ -297,7 +295,7 @@ LAB_0053b733:
                 param_1->file_data_buffer = pcVar2;
                 if (pcVar2 == (char *)0x0) goto LAB_0053b733;
                 uVar9 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10
-                                  (&local_84,(uint *)pcVar2,local_3a8);
+                                  (&local_84,pcVar2,local_3a8);
                 if (uVar9 == local_3a8) {
                   uVar7 = support_trstream_cpp_CInStreamFile_tell_FUN_005a0d50(&local_84);
                   param_1->dependency_records_offset = uVar7;
@@ -333,8 +331,7 @@ LAB_0053b733:
               param_1->directory_entries = pCVar3;
               if (pCVar3 == (CPodDirectoryEntry *)0x0) goto LAB_0053b733;
               uVar11 = param_1->file_count * 0x14;
-              uVar7 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10
-                                (&local_84,&pCVar3->name,uVar11);
+              uVar7 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_84,pCVar3,uVar11);
               if (uVar7 == uVar11) {
                 uVar7 = uVar7 ^ uVar11;
                 if (0 < param_1->file_count) {
@@ -348,8 +345,8 @@ LAB_0053b733:
                 pcVar2 = (char *)malloc(uVar9);
                 param_1->file_data_buffer = pcVar2;
                 if (pcVar2 == (char *)0x0) goto LAB_0053b733;
-                uVar5 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10
-                                  (&local_84,(uint *)pcVar2,uVar9);
+                uVar5 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_84,pcVar2,uVar9)
+                ;
                 if (uVar5 == uVar9) {
                   iVar6 = param_1->file_count + -1;
                   param_1->total_file_size =
@@ -388,7 +385,7 @@ LAB_0053b733:
                     local_14 = 0;
                     do {
                       iVar6 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10
-                                        (&local_84,(uint *)local_58,0x28);
+                                        (&local_84,local_58,0x28);
                       if (iVar6 != 0x28) goto LAB_0053b40b;
                       *(ulong *)((int)&param_1->directory_entries->name + local_14) = uVar9;
                       uVar7 = 0xffffffff;

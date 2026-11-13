@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CIniFile * engine_ini_cpp_CIniFile_dtor_FUN_004d8940(CIniFile *this_ptr,uint flags)
+; CIniFile * __cdecl engine_ini_cpp_CIniFile_dtor_FUN_004d8940(CIniFile *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CIniFile *       Stack[0x4]:4   this_ptr
@@ -11,7 +11,7 @@
 ;   core_game.cpp_FUN_004bc840 at 004bca90
 ;   core_inivar.cpp_readIniData_FUN_004d8d60 at 004d9496
 ;   core_inivar.cpp_writeIniData_FUN_004d94d0 at 004d9b93
-;   core_script.cpp_FUN_00522350 at 00525696
+;   core_script.cpp_CScript_step_FUN_00522350 at 00525696
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CIniFileTypeInfo

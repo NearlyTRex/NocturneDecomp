@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   engine_mini3d.cpp_FUN_00516060 at 0051686b
-;   engine_mini3d.cpp_FUN_005168c0 at 00516c13
+;   engine_mini3d.cpp_fillPolygon_FUN_005168c0 at 00516c13
+;   engine_mini3d.cpp_rasterizeTriangle_FUN_00516060 at 0051686b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00623964

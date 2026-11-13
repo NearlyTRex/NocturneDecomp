@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[39]:
-;   core_dcube.cpp_FUN_00446f4e at 00446fc7
+; XREF[41]:
+;   core_dcube.cpp_FUN_00446f50 at 00446fc7
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be04f
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be702
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6d7a
@@ -22,8 +22,8 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e1b40
 ;   core_main.c_FUN_004e45e0 at 004e4627
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4c96
-;   core_menu.cpp_FUN_004ebf10 at 004ec3e2
-;   ... and 29 more
+;   core_menu.cpp_FUN_004eba50 at 004ebc36
+;   ... and 31 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005ee43c

@@ -7,7 +7,7 @@
 
 // Original: core_crate.cpp_staticInit_FUN_00445b70
 // Address: 00445b70
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_crate.cpp_factoryFuncCrate_FUN_00445ba0
 // Address: 00445ba0
@@ -15,7 +15,7 @@ CCrate * __cdecl factoryFuncCrate(void);
 
 // Original: core_crate.cpp_CCrate_getActorType_FUN_00445bc0
 // Address: 00445bc0
-CDemonActorType * CCrate::getActorType(CCrate *this_ptr);
+CDemonActorType * __cdecl CCrate::getActorType(CCrate *this_ptr);
 
 // Original: core_crate.cpp_CCrate_ctor_FUN_00445bd0
 // Address: 00445bd0

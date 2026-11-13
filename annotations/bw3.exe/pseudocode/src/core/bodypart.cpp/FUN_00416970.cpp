@@ -90,7 +90,7 @@ void core_bodypart_cpp_FUN_00416970(int param_1)
     return;
   }
   *(uint *)(param_1 + 0x70) = 2;
-  core_bodypart_cpp_FUN_00414910(param_1,0,0);
+  core_bodypart_cpp_setCounts_FUN_00414910(param_1,0,0);
   puVar2 = (uint *)(param_1 + 0x168);
   if (puVar2 != (uint *)&DAT_02cfd900) {
     *puVar2 = _DAT_02cfd900;

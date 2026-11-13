@@ -13,8 +13,8 @@ void __cdecl SPageResource::ctor(SPageResource *this_ptr);
 // Address: 004a1e90
 int __cdecl SPageResource::dtor(SPageResource *this_ptr);
 
-// Original: core_fldnotes.cpp_SPageResource_setLink_FUN_004a1ebe
-// Address: 004a1ebe
+// Original: core_fldnotes.cpp_SPageResource_setLink_FUN_004a1ec0
+// Address: 004a1ec0
 void __cdecl SPageResource::setLink(SPageResource *this_ptr,char *param_2);
 
 // Original: core_fldnotes.cpp_SPageResource_onMouse_FUN_004a1f60
@@ -23,11 +23,11 @@ bool __cdecl SPageResource::onMouse(SPageResource *this_ptr);
 
 // Original: core_fldnotes.cpp_SPageResourceText_ctor_FUN_004a1f80
 // Address: 004a1f80
-int __cdecl SPageResourceText::ctor(SPageResourceText *this_ptr,char *param_2,undefined4 param_3);
+SPageResourceText * __cdecl SPageResourceText::ctor(SPageResourceText *this_ptr,char *text,CBitFont *font);
 
 // Original: core_fldnotes.cpp_SPageResourceText_dtor_FUN_004a2000
 // Address: 004a2000
-SPageResourceText * SPageResourceText::dtor(SPageResourceText *this_ptr,uint flags);
+SPageResourceText * __cdecl SPageResourceText::dtor(SPageResourceText *this_ptr,uint flags);
 
 // Original: core_fldnotes.cpp_SPageResourceText_draw_FUN_004a2060
 // Address: 004a2060
@@ -35,15 +35,15 @@ void __cdecl SPageResourceText::draw(SPageResourceText *this_ptr);
 
 // Original: core_fldnotes.cpp_SPageResourceBitmap_ctor_FUN_004a2140
 // Address: 004a2140
-SPageResourceBitmap * SPageResourceBitmap::ctor(SPageResourceBitmap *this_ptr);
+SPageResourceBitmap * __cdecl SPageResourceBitmap::ctor(SPageResourceBitmap *this_ptr);
 
 // Original: core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170
 // Address: 004a2170
-int * __cdecl SPageResourceBitmap::ctorFromFile(SPageResourceBitmap *this_ptr,char *param_2,int param_3,int param_4);
+SPageResourceBitmap * __cdecl SPageResourceBitmap::ctorFromFile(SPageResourceBitmap *this_ptr,char *path,int width,int height);
 
 // Original: core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004a2200
 // Address: 004a2200
-SPageResourceBitmap * SPageResourceBitmap::dtor(SPageResourceBitmap *this_ptr,uint flags);
+SPageResourceBitmap * __cdecl SPageResourceBitmap::dtor(SPageResourceBitmap *this_ptr,uint flags);
 
 // Original: core_fldnotes.cpp_SPageResourceBitmap_draw_FUN_004a2270
 // Address: 004a2270
@@ -51,23 +51,23 @@ void __cdecl SPageResourceBitmap::draw(SPageResourceBitmap *this_ptr);
 
 // Original: core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004a2290
 // Address: 004a2290
-SPageResourceBitmap * __cdecl SPageResourceTwanaCharacter::ctor(SPageResourceTwanaCharacter *this_ptr,char *param_2);
+SPageResourceTwanaCharacter * __cdecl SPageResourceTwanaCharacter::ctor(SPageResourceTwanaCharacter *this_ptr,char *character);
 
 // Original: core_fldnotes.cpp_SPageResourceTwanaCharacter_dtor_FUN_004a2320
 // Address: 004a2320
-SPageResourceTwanaCharacter * SPageResourceTwanaCharacter::dtor(SPageResourceTwanaCharacter *this_ptr,uint flags);
+SPageResourceTwanaCharacter * __cdecl SPageResourceTwanaCharacter::dtor(SPageResourceTwanaCharacter *this_ptr,uint flags);
 
 // Original: core_fldnotes.cpp_SPageResourceTwanaCharacter_onMouse_FUN_004a2380
 // Address: 004a2380
-undefined4 __cdecl SPageResourceTwanaCharacter::onMouse(SPageResourceTwanaCharacter *this_ptr,int param_2);
+int __cdecl SPageResourceTwanaCharacter::onMouse(SPageResourceTwanaCharacter *this_ptr,int clicked,int x,int y);
 
 // Original: core_fldnotes.cpp_SPageResourceTwanaEntry_ctor_FUN_004a23c0
 // Address: 004a23c0
-SPageResourceTwanaEntry * SPageResourceTwanaEntry::ctor(SPageResourceTwanaEntry *this_ptr);
+SPageResourceTwanaEntry * __cdecl SPageResourceTwanaEntry::ctor(SPageResourceTwanaEntry *this_ptr);
 
 // Original: core_fldnotes.cpp_SPageResourceTwanaEntry_dtor_FUN_004a2470
 // Address: 004a2470
-SPageResourceTwanaEntry * SPageResourceTwanaEntry::dtor(SPageResourceTwanaEntry *this_ptr,uint flags);
+SPageResourceTwanaEntry * __cdecl SPageResourceTwanaEntry::dtor(SPageResourceTwanaEntry *this_ptr,uint flags);
 
 // Original: core_fldnotes.cpp_SPageResourceTwanaEntry_draw_FUN_004a24f0
 // Address: 004a24f0
@@ -75,7 +75,7 @@ void __cdecl SPageResourceTwanaEntry::draw(SPageResourceTwanaEntry *this_ptr);
 
 // Original: core_fldnotes.cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a2620
 // Address: 004a2620
-void __cdecl SPageResourceTwanaEntry::addCharacter(SPageResourceTwanaEntry *this_ptr,char *param_2);
+void __cdecl SPageResourceTwanaEntry::addCharacter(SPageResourceTwanaEntry *this_ptr,char *character);
 
 // Original: core_fldnotes.cpp_STextPage_init_FUN_004a2690
 // Address: 004a2690
@@ -87,11 +87,11 @@ void __cdecl STextPage::clear(STextPage *this_ptr);
 
 // Original: core_fldnotes.cpp_STextPage_addResource_FUN_004a26e0
 // Address: 004a26e0
-void __cdecl STextPage::addResource(STextPage *this_ptr,int param_2);
+void __cdecl STextPage::addResource(STextPage *this_ptr,SPageResource *resource);
 
 // Original: core_fldnotes.cpp_STextPage_findResourceAt_FUN_004a2730
 // Address: 004a2730
-int * __cdecl STextPage::findResourceAt(STextPage *this_ptr,int param_2,int param_3);
+SPageResource * __cdecl STextPage::findResourceAt(STextPage *this_ptr,int x,int y);
 
 // Original: core_fldnotes.cpp_STextPage_draw_FUN_004a2780
 // Address: 004a2780
@@ -99,11 +99,11 @@ void __cdecl STextPage::draw(STextPage *this_ptr);
 
 // Original: core_fldnotes.cpp_STextView_ctor_FUN_004a27b0
 // Address: 004a27b0
-STextView * STextView::ctor(STextView *this_ptr);
+STextView * __cdecl STextView::ctor(STextView *this_ptr);
 
 // Original: core_fldnotes.cpp_STextView_dtor_FUN_004a27c0
 // Address: 004a27c0
-STextView * STextView::dtor(STextView *this_ptr,uint flags);
+STextView * __cdecl STextView::dtor(STextView *this_ptr,uint flags);
 
 // Original: core_fldnotes.cpp_STextView_reset_FUN_004a27e0
 // Address: 004a27e0
@@ -111,15 +111,15 @@ void __cdecl STextView::reset(STextView *this_ptr);
 
 // Original: core_fldnotes.cpp_STextView_setRect_FUN_004a2890
 // Address: 004a2890
-void __cdecl STextView::setRect(STextView *this_ptr,int param_2,int param_3,int param_4,int param_5);
+void __cdecl STextView::setRect(STextView *this_ptr,int left,int top,int right,int bottom);
 
 // Original: core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0
 // Address: 004a28b0
-int __cdecl STextView::layoutChunk(STextView *this_ptr,char *param_2);
+int __cdecl STextView::layoutChunk(STextView *this_ptr,char *text);
 
 // Original: core_fldnotes.cpp_STextView_placeResource_FUN_004a2ad0
 // Address: 004a2ad0
-undefined4 __cdecl STextView::placeResource(STextView *this_ptr,undefined4 *param_2);
+int __cdecl STextView::placeResource(STextView *this_ptr,SPageResource *resource);
 
 // Original: core_fldnotes.cpp_STextView_flushWord_FUN_004a2b30
 // Address: 004a2b30
@@ -127,7 +127,7 @@ void __cdecl STextView::flushWord(STextView *this_ptr);
 
 // Original: core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0
 // Address: 004a2bb0
-void __cdecl STextView::addResource(STextView *this_ptr,int param_2);
+void __cdecl STextView::addResource(STextView *this_ptr,SPageResource *resource);
 
 // Original: core_fldnotes.cpp_STextView_newLine_FUN_004a2bf0
 // Address: 004a2bf0
@@ -139,19 +139,19 @@ void __cdecl STextView::newPage(STextView *this_ptr);
 
 // Original: core_fldnotes.cpp_STextView_handleTag_FUN_004a2cc0
 // Address: 004a2cc0
-undefined4 __cdecl STextView::handleTag(STextView *this_ptr,char *param_2);
+int __cdecl STextView::handleTag(STextView *this_ptr,char *tag);
 
 // Original: core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0
 // Address: 004a30a0
-undefined4 __cdecl STextView::ensureSpace(STextView *this_ptr,int param_2,int param_3);
+int __cdecl STextView::ensureSpace(STextView *this_ptr,int width,int height);
 
 // Original: core_fldnotes.cpp_STextView_wordFits_FUN_004a3100
 // Address: 004a3100
-undefined4 __cdecl STextView::wordFits(STextView *this_ptr,char *param_2);
+int __cdecl STextView::wordFits(STextView *this_ptr,char *word);
 
 // Original: core_fldnotes.cpp_STextView_appendWord_FUN_004a3160
 // Address: 004a3160
-void __cdecl STextView::appendWord(STextView *this_ptr,char *param_2);
+void __cdecl STextView::appendWord(STextView *this_ptr,char *word);
 
 // Original: core_fldnotes.cpp_STextView_ensurePage_FUN_004a31c0
 // Address: 004a31c0
@@ -159,7 +159,7 @@ void __cdecl STextView::ensurePage(STextView *this_ptr);
 
 // Original: core_fldnotes.cpp_STextView_drawPage_FUN_004a3240
 // Address: 004a3240
-void __cdecl STextView::drawPage(STextView *this_ptr,int param_2);
+void __cdecl STextView::drawPage(STextView *this_ptr,int page);
 
 // Original: core_fldnotes.cpp_SNotesEntry_ctor_FUN_004a3280
 // Address: 004a3280
@@ -171,15 +171,15 @@ char *** __cdecl SNotesEntry::dtor(SNotesEntry *this_ptr);
 
 // Original: core_fldnotes.cpp_SNotesEntry_layout_FUN_004a32e0
 // Address: 004a32e0
-undefined4 __cdecl SNotesEntry::layout(SNotesEntry *this_ptr,int param_2);
+int __cdecl SNotesEntry::layout(SNotesEntry *this_ptr,STextView *view);
 
 // Original: core_fldnotes.cpp_SNotesSection_ctor_FUN_004a3520
 // Address: 004a3520
-SNotesSection * SNotesSection::ctor(SNotesSection *this_ptr);
+SNotesSection * __cdecl SNotesSection::ctor(SNotesSection *this_ptr);
 
 // Original: core_fldnotes.cpp_SNotesSection_dtor_FUN_004a3550
 // Address: 004a3550
-SNotesSection * SNotesSection::dtor(SNotesSection *this_ptr,uint flags);
+SNotesSection * __cdecl SNotesSection::dtor(SNotesSection *this_ptr,uint flags);
 
 // Original: core_fldnotes.cpp_SNotesSection_clear_FUN_004a3570
 // Address: 004a3570
@@ -187,23 +187,23 @@ void __cdecl SNotesSection::clear(SNotesSection *this_ptr);
 
 // Original: core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0
 // Address: 004a35e0
-undefined4 __cdecl SNotesSection::findEntry(SNotesSection *this_ptr,char *param_2);
+SNotesEntry * __cdecl SNotesSection::findEntry(SNotesSection *this_ptr,char *name);
 
 // Original: core_fldnotes.cpp_SNotesSection_addEntry_FUN_004a3630
 // Address: 004a3630
-char * __cdecl SNotesSection::addEntry(SNotesSection *this_ptr,char *param_2,int param_3);
+SNotesEntry * __cdecl SNotesSection::addEntry(SNotesSection *this_ptr,char *name,int kind);
 
 // Original: core_fldnotes.cpp_SNotesSection_layout_FUN_004a3740
 // Address: 004a3740
-undefined4 __cdecl SNotesSection::layout(SNotesSection *this_ptr,int param_2);
+int __cdecl SNotesSection::layout(SNotesSection *this_ptr,STextView *view);
 
 // Original: core_fldnotes.cpp_SNotesMap_ctor_FUN_004a37c0
 // Address: 004a37c0
-SNotesMap * SNotesMap::ctor(SNotesMap *this_ptr);
+SNotesMap * __cdecl SNotesMap::ctor(SNotesMap *this_ptr);
 
 // Original: core_fldnotes.cpp_SNotesMap_dtor_FUN_004a3820
 // Address: 004a3820
-SNotesMap * SNotesMap::dtor(SNotesMap *this_ptr,uint flags);
+SNotesMap * __cdecl SNotesMap::dtor(SNotesMap *this_ptr,uint flags);
 
 // Original: core_fldnotes.cpp_SNotesMap_reset_FUN_004a3860
 // Address: 004a3860
@@ -219,23 +219,23 @@ void __cdecl SNotesMap::revealAtHero(SNotesMap *this_ptr);
 
 // Original: core_fldnotes.cpp_SNotesMap_showAnnotation_FUN_004a3b50
 // Address: 004a3b50
-undefined4 __cdecl SNotesMap::showAnnotation(SNotesMap *this_ptr,char *param_2);
+int __cdecl SNotesMap::showAnnotation(SNotesMap *this_ptr,char *name);
 
 // Original: core_fldnotes.cpp_SNotesMap_revealCircle_FUN_004a3bb0
 // Address: 004a3bb0
-void __cdecl SNotesMap::revealCircle(SNotesMap *this_ptr,int param_2,int param_3,int param_4);
+void __cdecl SNotesMap::revealCircle(SNotesMap *this_ptr,int x,int y,int radius);
 
 // Original: core_fldnotes.cpp_SNotesMap_revealPixel_FUN_004a3ca0
 // Address: 004a3ca0
-void __cdecl SNotesMap::revealPixel(SNotesMap *this_ptr,int param_2,int param_3,int param_4);
+void __cdecl SNotesMap::revealPixel(SNotesMap *this_ptr,int x,int y,int alpha);
 
 // Original: core_fldnotes.cpp_SNotesMap_worldToMap_FUN_004a3d00
 // Address: 004a3d00
-int __cdecl SNotesMap::worldToMap(SNotesMap *this_ptr,float *param_2);
+int __cdecl SNotesMap::worldToMap(SNotesMap *this_ptr,CLocation *location,int *map_x,int *map_y);
 
 // Original: core_fldnotes.cpp_SNotesMap_draw_FUN_004a3e40
 // Address: 004a3e40
-void __cdecl SNotesMap::draw(SNotesMap *this_ptr,int param_2,int param_3);
+void __cdecl SNotesMap::draw(SNotesMap *this_ptr,int x,int y);
 
 // Original: core_fldnotes.cpp_SNotesMap_applyReveal_FUN_004a3fc0
 // Address: 004a3fc0
@@ -243,11 +243,11 @@ void __cdecl SNotesMap::applyReveal(SNotesMap *this_ptr);
 
 // Original: core_fldnotes.cpp_SNotesMap_paginate_FUN_004a4070
 // Address: 004a4070
-undefined4 __cdecl SNotesMap::paginate(SNotesMap *this_ptr,STextView *param_2);
+int __cdecl SNotesMap::paginate(SNotesMap *this_ptr,STextView *view);
 
 // Original: core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004a4120
 // Address: 004a4120
-void __cdecl SPageResourceMap::ctor(SPageResourceMap *this_ptr,int param_2);
+SPageResourceMap * __cdecl SPageResourceMap::ctor(SPageResourceMap *this_ptr,SNotesMap *map);
 
 // Original: core_fldnotes.cpp_SPageResourceMap_draw_FUN_004a4150
 // Address: 004a4150
@@ -255,76 +255,76 @@ void __cdecl SPageResourceMap::draw(SPageResourceMap *this_ptr);
 
 // Original: core_fldnotes.cpp_CFieldNotes_ctor_FUN_004a4170
 // Address: 004a4170
-CFieldNotes * CFieldNotes::ctor(CFieldNotes *this_ptr);
+CFieldNotes * __cdecl CFieldNotes::ctor(CFieldNotes *this_ptr);
 
 // Original: core_fldnotes.cpp_CFieldNotes_dtor_FUN_004a4180
 // Address: 004a4180
-CFieldNotes * CFieldNotes::dtor(CFieldNotes *this_ptr,uint flags);
+CFieldNotes * __cdecl CFieldNotes::dtor(CFieldNotes *this_ptr,uint flags);
 
 // Original: core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0
 // Address: 004a41b0
-undefined4 __cdecl CFieldNotes::loadFile(CFieldNotes *this_ptr,char *param_2,char *param_3);
+int __cdecl CFieldNotes::loadFile(CFieldNotes *this_ptr,char *file_name,char *error_text);
 
 // Original: core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0
 // Address: 004a50b0
 void __cdecl CFieldNotes::clear(CFieldNotes *this_ptr);
 
-// Original: core_fldnotes.cpp_FUN_004a5200
+// Original: core_fldnotes.cpp_CFieldNotes_showMapAnnotation_FUN_004a5200
 // Address: 004a5200
-undefined4 FUN_004a5200(undefined4 param_1,char *param_2,char *param_3,char *param_4);
+int __cdecl CFieldNotes::showMapAnnotation(CFieldNotes *this_ptr,char *entry_name,char *annotation_name,char *error_text);
 
 // Original: core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310
 // Address: 004a5310
-void __cdecl CFieldNotes::enableEntry(CFieldNotes *this_ptr,char *param_2);
+void __cdecl CFieldNotes::enableEntry(CFieldNotes *this_ptr,char *entry_name);
 
-// Original: core_fldnotes.cpp_FUN_004a5430
+// Original: core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004a5430
 // Address: 004a5430
-undefined4 FUN_004a5430(undefined4 param_1,char *param_2);
+int __cdecl CFieldNotes::getEntryKind(CFieldNotes *this_ptr,char *entry_name);
 
 // Original: core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490
 // Address: 004a5490
-void __cdecl CFieldNotes::turnToEntry(CFieldNotes *this_ptr,char *param_2);
+void __cdecl CFieldNotes::turnToEntry(CFieldNotes *this_ptr,char *entry_name);
 
 // Original: core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004a55b0
 // Address: 004a55b0
-void __cdecl CFieldNotes::completeTask(CFieldNotes *this_ptr,char *param_2);
+void __cdecl CFieldNotes::completeTask(CFieldNotes *this_ptr,char *entry_name);
 
-// Original: core_fldnotes.cpp_FUN_004a56c0
+// Original: core_fldnotes.cpp_CFieldNotes_setImageSuffix_FUN_004a56c0
 // Address: 004a56c0
-void FUN_004a56c0(undefined4 param_1,char *param_2);
+void __cdecl CFieldNotes::setImageSuffix(CFieldNotes *this_ptr,char *suffix);
 
-// Original: core_fldnotes.cpp_FUN_004a5700
+// Original: core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700
 // Address: 004a5700
-void FUN_004a5700(int param_1);
+void __cdecl CFieldNotes::draw(CFieldNotes *this_ptr);
 
-// Original: core_fldnotes.cpp_FUN_004a5f60
+// Original: core_fldnotes.cpp_CFieldNotes_process_FUN_004a5f60
 // Address: 004a5f60
-void FUN_004a5f60(int param_1);
+void __cdecl CFieldNotes::process(CFieldNotes *this_ptr);
 
-// Original: core_fldnotes.cpp_FUN_004a61b0
+// Original: core_fldnotes.cpp_CFieldNotes_loadState_FUN_004a61b0
 // Address: 004a61b0
-void FUN_004a61b0(CFieldNotes *param_1,_FILE *param_2);
+void __cdecl CFieldNotes::loadState(CFieldNotes *this_ptr,_FILE *file);
 
-// Original: core_fldnotes.cpp_FUN_004a6470
+// Original: core_fldnotes.cpp_CFieldNotes_saveState_FUN_004a6470
 // Address: 004a6470
-void FUN_004a6470(undefined4 param_1,undefined4 param_2);
+void __cdecl CFieldNotes::saveState(CFieldNotes *this_ptr,_FILE *file);
 
 // Original: core_fldnotes.cpp_SPageResourceMap_dtor_FUN_004a66a0
 // Address: 004a66a0
-SPageResourceMap * SPageResourceMap::dtor(SPageResourceMap *this_ptr,uint flags);
+SPageResourceMap * __cdecl SPageResourceMap::dtor(SPageResourceMap *this_ptr,uint flags);
 
-// Original: core_fldnotes.cpp_FUN_004a66f0
+// Original: core_fldnotes.cpp_CAlphaBitmap_arrdtor3_FUN_004a66f0
 // Address: 004a66f0
-void FUN_004a66f0(void *param_1);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor3(CAlphaBitmap *this_ptr,uint flags);
 
 // Original: core_fldnotes.cpp_CAlphaBitmap_arrdtor6_FUN_004a6710
 // Address: 004a6710
-CAlphaBitmap * CAlphaBitmap::arrdtor6(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor6(CAlphaBitmap *this_ptr,uint flags);
 
 // Original: core_fldnotes.cpp_SNotesMap_arrdtor4_FUN_004a6730
 // Address: 004a6730
-SNotesMap * SNotesMap::arrdtor4(SNotesMap *this_ptr,uint flags);
+SNotesMap * __cdecl SNotesMap::arrdtor4(SNotesMap *this_ptr,uint flags);
 
 // Original: core_fldnotes.cpp_SNotesSection_arrdtor6_FUN_004a6750
 // Address: 004a6750
-SNotesSection * SNotesSection::arrdtor6(SNotesSection *this_ptr,uint flags);
+SNotesSection * __cdecl SNotesSection::arrdtor6(SNotesSection *this_ptr,uint flags);

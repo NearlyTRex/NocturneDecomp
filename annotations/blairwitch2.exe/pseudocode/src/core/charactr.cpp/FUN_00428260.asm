@@ -26,7 +26,7 @@
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_004287f0 at 00428a43
 ;   core_hostage.cpp_CHostage_process_FUN_004d1660 at 004d22d0
-;   core_shadow.cpp_FUN_0053c500 at 0053d2d5
+;   core_shadow.cpp_CShadow_process_FUN_0053c500 at 0053d2d5
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_00581910 at 00582c11
 ;
 ; Referenced Globals:

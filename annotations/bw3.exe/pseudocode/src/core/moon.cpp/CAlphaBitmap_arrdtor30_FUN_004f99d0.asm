@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAlphaBitmap * core_moon_cpp_CAlphaBitmap_arrdtor30_FUN_004f99d0(CAlphaBitmap *this_ptr,uint flags)
+; CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor30_FUN_004f99d0(CAlphaBitmap *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAlphaBitmap *   Stack[0x4]:4   this_ptr

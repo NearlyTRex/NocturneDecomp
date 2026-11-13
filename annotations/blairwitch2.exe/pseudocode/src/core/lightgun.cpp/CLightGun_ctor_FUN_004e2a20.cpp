@@ -1,15 +1,14 @@
 // Name: core_lightgun.cpp_CLightGun_ctor_FUN_004e2a20
 // Address: 004e2a20
 // Address Range: [[004e2a20, 004e2adf]]
-// Convention: unknown
-// Signature: CLightGun * core_lightgun_cpp_CLightGun_ctor_FUN_004e2a20(CLightGun *this_ptr)
+// Convention: __cdecl
+// Signature: CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_004e2a20(CLightGun *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CLightGun * core_lightgun_cpp_CLightGun_ctor_FUN_004e2a20(CLightGun *this_ptr)
+CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_004e2a20(CLightGun *this_ptr)
 
 {
   float fVar1;

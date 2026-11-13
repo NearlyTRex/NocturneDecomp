@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bird_cpp_factoryFuncBird_FUN_0040f9c0(void)
+; CBird * __cdecl core_bird_cpp_factoryFuncBird_FUN_0040f9c0(void)
 ;
 ;
 ; Called Functions:

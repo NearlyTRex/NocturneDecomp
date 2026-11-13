@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_backgnd_cpp_staticInit_FUN_0040f2d0(void)
+; void __cdecl core_backgnd_cpp_staticInit_FUN_0040f2d0(void)
 ;
 ;
 ; Called Functions:

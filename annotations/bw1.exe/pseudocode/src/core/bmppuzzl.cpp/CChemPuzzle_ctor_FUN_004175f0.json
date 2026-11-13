@@ -2,25 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 77,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 11,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data"
     ],
-    "total_lines": 33
+    "total_lines": 32
   },
   "cross_references": [
     {
       "addr": "00415b20",
       "from_addr": "00415b81",
-      "name": "engine_alphabit.cpp_staticInit_FUN_00415b20",
+      "name": "core_bmppuzzl.cpp_staticInit_FUN_00415b20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -32,11 +32,16 @@
         "00417625"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bmppuzzl.cpp_CChemPuzzle_ctor_FUN_004175f0",
-    "signature": "CChemPuzzle * core_bmppuzzl_cpp_CChemPuzzle_ctor_FUN_004175f0(CChemPuzzle *this_ptr)"
+    "signature": "CChemPuzzle * __cdecl core_bmppuzzl_cpp_CChemPuzzle_ctor_FUN_004175f0(CChemPuzzle *this_ptr)"
   },
   "function_calls": [
+    {
+      "addr": "00415ba0",
+      "is_variadic": false,
+      "name": "core_bmppuzzl.cpp_CPuzzle_ctor_FUN_00415ba0"
+    },
     {
       "addr": "005c0357",
       "is_variadic": false,
@@ -46,11 +51,6 @@
       "addr": "0040d0a0",
       "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d0a0"
-    },
-    {
-      "addr": "00415ba0",
-      "is_variadic": false,
-      "name": "engine_alphabit.cpp_FUN_00415ba0"
     }
   ],
   "globals": [],
@@ -60,7 +60,7 @@
       {
         "call_addr": "00415b81",
         "call_type": "direct",
-        "caller": "engine_alphabit.cpp_staticInit_FUN_00415b20",
+        "caller": "core_bmppuzzl.cpp_staticInit_FUN_00415b20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,7 +124,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 11,
       "match": "DAT_005fca90",
       "severity": "mild",
       "text": "pvVar3 = __arrinit(&pCVar2[5].act,0x32,(WatcomTypeInfo *)&DAT_005fca90);",
@@ -132,15 +132,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 12,
       "match": "(CChemPuzzle *)((int)pvVar3",
       "severity": "moderate",
-      "text": "((CChemPuzzle *)((int)pvVar3 + -0x70))->vtable = &g_CChemPuzzleVTable;",
+      "text": "(((CChemPuzzle *)((int)pvVar3 + -0x70))->base).vtable = &g_CChemPuzzleVTable;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 13,
       "match": "(CChemPuzzle *)((int)pvVar3",
       "severity": "moderate",
       "text": "return (CChemPuzzle *)((int)pvVar3 + -0x70);",
@@ -148,15 +148,15 @@
     },
     {
       "description": "Pointer value `pvVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 14,
+      "line": 12,
       "match": "(int)pvVar3",
       "severity": "moderate",
-      "text": "((CChemPuzzle *)((int)pvVar3 + -0x70))->vtable = &g_CChemPuzzleVTable;",
+      "text": "(((CChemPuzzle *)((int)pvVar3 + -0x70))->base).vtable = &g_CChemPuzzleVTable;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pvVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 15,
+      "line": 13,
       "match": "(int)pvVar3",
       "severity": "moderate",
       "text": "return (CChemPuzzle *)((int)pvVar3 + -0x70);",

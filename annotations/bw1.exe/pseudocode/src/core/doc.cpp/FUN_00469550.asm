@@ -1046,8 +1046,8 @@ section .text
         ;   XREF to: 0046f610 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0046f610()
     ADD ESP,0x8                         ; 0046a2b9
     PUSH EBX                            ; 0046a2bc
-    CALL core_doc.cpp_FUN_00473160      ; 0046a2bd
-        ;   XREF to: 00473160 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_00473160()
+    CALL core_doc.cpp_CDoc_aimLeftPistol_FUN_00473160 ; 0046a2bd
+        ;   XREF to: 00473160 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_aimLeftPistol_FUN_00473160(CDoc * this_ptr)
     ADD ESP,0x4                         ; 0046a2c2
     PUSH EBX                            ; 0046a2c5
     CALL core_doc.cpp_FUN_0046caa0      ; 0046a2c6

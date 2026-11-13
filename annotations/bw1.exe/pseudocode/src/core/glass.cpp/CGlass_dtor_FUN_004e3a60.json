@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 36,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 20,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 68
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "004e3ac4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_glass.cpp_CGlass_dtor_FUN_004e3a60",
-    "signature": "CGlass * core_glass_cpp_CGlass_dtor_FUN_004e3a60(CGlass *this_ptr,uint flags)"
+    "signature": "CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004e3a60(CGlass *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -145,7 +145,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 17,
       "match": "pCVar1[-2].",
       "severity": "mild",
       "text": "((CDemonActor *)&pCVar1[-2].reflection.mirror_transform_matrix.m[2].x,1);",

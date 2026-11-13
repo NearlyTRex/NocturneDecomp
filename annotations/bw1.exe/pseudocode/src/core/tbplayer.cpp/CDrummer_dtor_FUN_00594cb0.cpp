@@ -1,14 +1,12 @@
 // Name: core_tbplayer.cpp_CDrummer_dtor_FUN_00594cb0
 // Address: 00594cb0
 // Address Range: [[00594cb0, 00594d44]]
-// Convention: unknown
-// Signature: CDrummer * core_tbplayer_cpp_CDrummer_dtor_FUN_00594cb0(CDrummer *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDrummer * __cdecl core_tbplayer_cpp_CDrummer_dtor_FUN_00594cb0(CDrummer *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDrummer * core_tbplayer_cpp_CDrummer_dtor_FUN_00594cb0(CDrummer *this_ptr,uint flags)
+CDrummer * __cdecl core_tbplayer_cpp_CDrummer_dtor_FUN_00594cb0(CDrummer *this_ptr,uint flags)
 
 {
   CPathMap *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSpawner * core_spawner_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr)
+; CSpawner * __cdecl core_spawner_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr)
 ;
 ; Parameters:
 ; CSpawner *       Stack[0x4]:4   this_ptr

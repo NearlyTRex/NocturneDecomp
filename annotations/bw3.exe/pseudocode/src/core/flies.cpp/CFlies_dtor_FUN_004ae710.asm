@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFlies * core_flies_cpp_CFlies_dtor_FUN_004ae710(CFlies *this_ptr,uint flags)
+; CFlies * __cdecl core_flies_cpp_CFlies_dtor_FUN_004ae710(CFlies *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CFlies *         Stack[0x4]:4   this_ptr

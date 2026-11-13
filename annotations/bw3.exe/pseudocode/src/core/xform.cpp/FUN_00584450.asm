@@ -18,7 +18,7 @@
 ;   core_prye.cpp_CPrye_renderOpaque_FUN_005220d0 at 005224aa
 ;   core_prye.cpp_CPrye_updateWeaponPosition_FUN_0051f360 at 0051f45f
 ;   core_skeleton.cpp_FUN_005496c0 at 00549717
-;   core_skeleton.cpp_FUN_005498ce at 00549917
+;   core_skeleton.cpp_FUN_005498d0 at 00549917
 ;   core_tawiscara.cpp_CTawiscara_renderTransparent_FUN_00595d20 at 00595dd0
 ;   core_toxhand.cpp_CTheHand_attractActorToward_FUN_0056ca00 at 0056cb0a
 ;   ... and 3 more

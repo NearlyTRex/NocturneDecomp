@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bird_cpp_staticInit_FUN_00415190(void)
+; void __cdecl core_bird_cpp_staticInit_FUN_00415190(void)
 ;
 ;
 ; Called Functions:

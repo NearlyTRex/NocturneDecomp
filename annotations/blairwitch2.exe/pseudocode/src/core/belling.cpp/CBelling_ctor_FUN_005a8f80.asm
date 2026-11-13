@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBelling * core_belling_cpp_CBelling_ctor_FUN_005a8f80(CBelling *this_ptr)
+; CBelling * __cdecl core_belling_cpp_CBelling_ctor_FUN_005a8f80(CBelling *this_ptr)
 ;
 ; Parameters:
 ; CBelling *       Stack[0x4]:4   this_ptr

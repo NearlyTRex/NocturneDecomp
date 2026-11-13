@@ -7,7 +7,7 @@
 
 // Original: core_shotgun.cpp_staticInit_FUN_00561560
 // Address: 00561560
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_shotgun.cpp_factoryFuncShotgun_FUN_00561590
 // Address: 00561590
@@ -15,7 +15,7 @@ CShotgun * __cdecl factoryFuncShotgun(void);
 
 // Original: core_shotgun.cpp_CShotgun_getActorType_FUN_005615b0
 // Address: 005615b0
-CDemonActorType * CShotgun::getActorType(CShotgun *this_ptr);
+CDemonActorType * __cdecl CShotgun::getActorType(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_CShotgun_ctor_FUN_005615c0
 // Address: 005615c0

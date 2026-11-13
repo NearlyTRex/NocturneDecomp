@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStake * core_fire_cpp_CStake_arrdtor256_FUN_004a4a50(CStake *this_ptr,uint flags)
+; CStake * __cdecl core_fire_cpp_CStake_arrdtor256_FUN_004a4a50(CStake *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CStake *         Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SPageResourceTwanaCharacter * core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004a2320(SPageResourceTwanaCharacter *this_ptr,uint flags)
+; SPageResourceTwanaCharacter * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004a2320(SPageResourceTwanaCharacter *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SPageResourceTwanaCharacter * Stack[0x4]:4   this_ptr

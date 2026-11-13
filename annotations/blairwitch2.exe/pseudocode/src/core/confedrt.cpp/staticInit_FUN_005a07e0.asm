@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_confedrt_cpp_staticInit_FUN_005a07e0(void)
+; void __cdecl core_confedrt_cpp_staticInit_FUN_005a07e0(void)
 ;
 ;
 ; Called Functions:

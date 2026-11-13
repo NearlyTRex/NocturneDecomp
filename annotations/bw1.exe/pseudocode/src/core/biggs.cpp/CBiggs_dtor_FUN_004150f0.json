@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 43,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 27,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 93
+    "total_lines": 92
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "00415184"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_biggs.cpp_CBiggs_dtor_FUN_004150f0",
-    "signature": "CBiggs * core_biggs_cpp_CBiggs_dtor_FUN_004150f0(CBiggs *this_ptr,uint flags)"
+    "signature": "CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_004150f0(CBiggs *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -156,7 +156,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 26,
+      "line": 24,
       "match": "pCVar4[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);",

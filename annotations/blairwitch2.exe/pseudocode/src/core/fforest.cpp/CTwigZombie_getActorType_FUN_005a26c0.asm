@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_fforest_cpp_CTwigZombie_getActorType_FUN_005a26c0(CTwigZombie *this_ptr)
+; CDemonActorType * __cdecl core_fforest_cpp_CTwigZombie_getActorType_FUN_005a26c0(CTwigZombie *this_ptr)
 ;
 ; Parameters:
 ; CTwigZombie *    Stack[0x4]:4   this_ptr

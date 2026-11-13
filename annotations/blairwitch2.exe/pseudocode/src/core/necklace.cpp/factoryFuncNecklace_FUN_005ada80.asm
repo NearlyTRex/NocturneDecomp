@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_necklace_cpp_factoryFuncNecklace_FUN_005ada80(void)
+; CNecklace * __cdecl core_necklace_cpp_factoryFuncNecklace_FUN_005ada80(void)
 ;
 ;
 ; Called Functions:

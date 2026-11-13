@@ -10,12 +10,12 @@
 ;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670 at 0040e696
 ;   core_game.cpp_FUN_004b8e10 at 004b8ee1
 ;   core_game.cpp_FUN_004b90d0 at 004b9af6
-;   core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fce at 004b9053
+;   core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fd0 at 004b9053
 ;   core_hero.cpp_FUN_004cff90 at 004d0011
 ;   core_hostage.cpp_CHostage_process_FUN_004d1660 at 004d19c3
 ;   core_inv.cpp_FUN_004db760 at 004db81a
 ;   core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20 at 0051ec6c
-;   core_script.cpp_FUN_00522350 at 00523e4f
+;   core_script.cpp_CScript_step_FUN_00522350 at 00523e4f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_You_ve_found_005db527
@@ -48,8 +48,8 @@
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9f10
 ;   core_menu.cpp_getKeyDisplayName_FUN_004ee960
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
 ;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_004fc270
-;   core_mission.cpp_FUN_004fc7b0
 ;   crt_string.c__strcmp_FUN_005b8c30
 ;   ... and 5 more
 ;
@@ -782,8 +782,8 @@ section .text
     PUSH ESI                            ; 004db4c3
     MOV EDI,dword ptr [0x00618170]      ; 004db4c4 | DAT_00618170
     PUSH EDI                            ; 004db4ca
-    CALL core_mission.cpp_FUN_004fc7b0  ; 004db4cb
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fc7b0()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 004db4cb
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     MOV EAX,0x1                         ; 004db4d0
     ADD ESP,0xc                         ; 004db4d5
     ADD ESP,0x31c                       ; 004db4d8
@@ -871,8 +871,8 @@ section .text
     MOV ESI,dword ptr [0x00618170]      ; 004db5bf | DAT_00618170
     PUSH ESI                            ; 004db5c5
     MOV dword ptr [EAX + 0x430],ECX     ; 004db5c6
-    CALL core_mission.cpp_FUN_004fc7b0  ; 004db5cc
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fc7b0()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 004db5cc
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     MOV EAX,0x1                         ; 004db5d1
     ADD ESP,0xc                         ; 004db5d6
     ADD ESP,0x31c                       ; 004db5d9
@@ -934,8 +934,8 @@ section .text
     INC EBP                             ; 004db662
     PUSH EDI                            ; 004db663
     MOV dword ptr [EBX + 0x10],EBP      ; 004db664
-    CALL core_mission.cpp_FUN_004fc7b0  ; 004db667
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fc7b0()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 004db667
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 004db66c
     MOV EAX,ESI                         ; 004db66f
     PUSH EBX                            ; 004db671
@@ -1007,8 +1007,8 @@ section .text
     PUSH EBP                            ; 004db73b
     MOV EAX,[0x00618170]                ; 004db73c | DAT_00618170
     PUSH EAX                            ; 004db741
-    CALL core_mission.cpp_FUN_004fc7b0  ; 004db742
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fc7b0()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 004db742
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     MOV EAX,0x1                         ; 004db747
     ADD ESP,0xc                         ; 004db74c
     ADD ESP,0x31c                       ; 004db74f

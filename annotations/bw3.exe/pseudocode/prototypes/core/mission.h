@@ -73,9 +73,9 @@ void __cdecl CDemonMission::buildSetActorList(CDemonMission *this_ptr);
 // Address: 004f6ca0
 void __cdecl CDemonMission::removeActor(CDemonMission *this_ptr,CDemonActor *actor,int should_delete);
 
-// Original: core_mission.cpp_FUN_004f6cd0
+// Original: core_mission.cpp_CDemonMission_changeSetName_FUN_004f6cd0
 // Address: 004f6cd0
-void FUN_004f6cd0(int *param_1,int param_2,char *param_3);
+void __cdecl CDemonMission::changeSetName(CDemonMission *this_ptr,int param_2,char *param_3);
 
 // Original: core_mission.cpp_CDemonMission_removeAllActors_FUN_004f6d70
 // Address: 004f6d70
@@ -93,9 +93,9 @@ CDemonActor * __cdecl CDemonMission::findActorByName(CDemonMission *this_ptr,cha
 // Address: 004f6ed0
 void __cdecl CDemonMission::setTeleportTarget(CDemonMission *this_ptr,CLocation *teleport_target);
 
-// Original: core_mission.cpp_FUN_004f6f10
+// Original: core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10
 // Address: 004f6f10
-void FUN_004f6f10(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CDemonMission::markActorToDelete(CDemonMission *this_ptr,CDemonActor *param_2,uint param_3);
 
 // Original: core_mission.cpp_FUN_004f6f80
 // Address: 004f6f80
@@ -105,9 +105,9 @@ void FUN_004f6f80(int *param_1);
 // Address: 004f70a0
 void __cdecl CDemonMission::process(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_004f722c
-// Address: 004f722c
-void FUN_004f722c(CDemonMission *param_1,char *param_2);
+// Original: core_mission.cpp_FUN_004f7230
+// Address: 004f7230
+void FUN_004f7230(void);
 
 // Original: core_mission.cpp_CDemonMission_run_FUN_004f72a0
 // Address: 004f72a0

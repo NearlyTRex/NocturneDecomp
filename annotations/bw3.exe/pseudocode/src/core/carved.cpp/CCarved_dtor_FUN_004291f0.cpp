@@ -1,14 +1,12 @@
 // Name: core_carved.cpp_CCarved_dtor_FUN_004291f0
 // Address: 004291f0
 // Address Range: [[004291f0, 00429274]]
-// Convention: unknown
-// Signature: CCarved * core_carved_cpp_CCarved_dtor_FUN_004291f0(CCarved *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CCarved * __cdecl core_carved_cpp_CCarved_dtor_FUN_004291f0(CCarved *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CCarved * core_carved_cpp_CCarved_dtor_FUN_004291f0(CCarved *this_ptr,uint flags)
+CCarved * __cdecl core_carved_cpp_CCarved_dtor_FUN_004291f0(CCarved *this_ptr,uint flags)
 
 {
   int iVar1;

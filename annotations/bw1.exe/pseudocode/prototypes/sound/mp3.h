@@ -97,8 +97,8 @@ void __cdecl applyScalefactorsToSubbands(float *spectral_samples,int *scalefacto
 // Address: 00527130
 void __cdecl applyScalefactorsToLayer2Samples(float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info);
 
-// Original: sound_mp3.cpp_initializeSynthesisDctTable_FUN_0052718e
-// Address: 0052718e
+// Original: sound_mp3.cpp_initializeSynthesisDctTable_FUN_00527190
+// Address: 00527190
 void __cdecl initializeSynthesisDctTable(float *output_dct_table);
 
 // Original: sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_00527280

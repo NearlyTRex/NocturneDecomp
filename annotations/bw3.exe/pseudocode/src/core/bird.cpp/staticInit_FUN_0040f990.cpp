@@ -1,12 +1,12 @@
 // Name: core_bird.cpp_staticInit_FUN_0040f990
 // Address: 0040f990
 // Address Range: [[0040f990, 0040f9b3]]
-// Convention: unknown
-// Signature: void core_bird_cpp_staticInit_FUN_0040f990(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bird_cpp_staticInit_FUN_0040f990(void)
 
 #include "nocturne.h"
 
-void core_bird_cpp_staticInit_FUN_0040f990(void)
+void __cdecl core_bird_cpp_staticInit_FUN_0040f990(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

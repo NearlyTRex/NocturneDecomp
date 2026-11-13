@@ -8,7 +8,7 @@
 ; CQuaternion4f *  Stack[0x8]:4   src
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00526a5f
+;   core_script.cpp_CScript_step_FUN_00522350 at 00526a5f
 ;
 ; *****************************************************************************
 

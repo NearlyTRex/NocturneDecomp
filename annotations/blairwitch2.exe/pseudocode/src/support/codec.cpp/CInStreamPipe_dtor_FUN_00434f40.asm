@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CInStreamPipe * support_codec_cpp_CInStreamPipe_dtor_FUN_00434f40(CInStreamPipe *this_ptr,uint flags)
+; CInStreamPipe * __cdecl support_codec_cpp_CInStreamPipe_dtor_FUN_00434f40(CInStreamPipe *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr
@@ -12,11 +12,11 @@
 ;   WatcomTypeInfo g_CInStreamPipeTypeInfo
 ;
 ; Called Functions:
-;   core_terrain.cpp_FUN_0057b9d0
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
 ;   support_codec.cpp_CInStreamPipe_close_FUN_004351e0
+;   support_trstream.cpp_CInStream_dtor_FUN_0057b9d0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     ADD ESP,0x4                         ; 00434f58
     PUSH 0x1                            ; 00434f5b
     PUSH EBX                            ; 00434f5d
-    CALL core_terrain.cpp_FUN_0057b9d0  ; 00434f5e
-        ;   XREF to: 0057b9d0 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057b9d0()
+    CALL support_trstream.cpp_CInStream_dtor_FUN_0057b9d0 ; 00434f5e
+        ;   XREF to: 0057b9d0 (UNCONDITIONAL_CALL)  ; CInStream * support_trstream.cpp_CInStream_dtor_FUN_0057b9d0(CInStream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00434f63
     MOV DL,byte ptr [ESP + 0xc]         ; 00434f66
     MOV EBX,EAX                         ; 00434f6a

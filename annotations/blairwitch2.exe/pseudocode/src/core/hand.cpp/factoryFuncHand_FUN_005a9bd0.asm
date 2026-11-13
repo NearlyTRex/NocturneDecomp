@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hand_cpp_factoryFuncHand_FUN_005a9bd0(void)
+; CHand * __cdecl core_hand_cpp_factoryFuncHand_FUN_005a9bd0(void)
 ;
 ;
 ; Called Functions:

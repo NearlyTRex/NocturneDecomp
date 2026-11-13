@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHiram * core_hiram_cpp_CHiram_dtor_FUN_004d0f90(CHiram *this_ptr,uint flags)
+; CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004d0f90(CHiram *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CHiram *         Stack[0x4]:4   this_ptr

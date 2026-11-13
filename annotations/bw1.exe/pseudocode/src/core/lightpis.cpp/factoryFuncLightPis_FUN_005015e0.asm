@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void)
+; CLightPis * __cdecl core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void)
 ;
 ;
 ; Called Functions:

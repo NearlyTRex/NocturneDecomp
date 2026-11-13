@@ -10,12 +10,12 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_00421300(CBugs *this_ptr,float delt
 
 {
   CCharacter *pCVar1;
-  uint uVar2;
-  int iVar3;
-  uint uVar4;
+  CDemonMission *this_ptr_00;
+  int iVar2;
+  uint uVar3;
   
-  iVar3 = (*(((this_ptr->base).base.base.vtable._ue)->_ue).randomize)(&this_ptr->base);
-  if (iVar3 != 0) {
+  iVar2 = (*(((this_ptr->base).base.base.vtable._ue)->_ue).randomize)(&this_ptr->base);
+  if (iVar2 != 0) {
     this_ptr->max_life_timer = this_ptr->max_life_timer - delta_time;
     if (this_ptr->max_life_timer < 0.0) {
       this_ptr->max_life_timer = 0.0;
@@ -26,38 +26,38 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_00421300(CBugs *this_ptr,float delt
       this_ptr->attack_timer = 0.0;
     }
     if ((this_ptr->allow_chase == 0) &&
-       (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                          (0x01C6E360,this_ptr->allow_chase_event), iVar3 != 0)) {
+       (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
+                          (0x01C6E360,this_ptr->allow_chase_event), iVar2 != 0)) {
       this_ptr->allow_chase = 1;
     }
     if ((this_ptr->allow_swarm == 0) &&
-       (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                          (0x01C6E360,this_ptr->allow_swarm_event), iVar3 != 0)) {
+       (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
+                          (0x01C6E360,this_ptr->allow_swarm_event), iVar2 != 0)) {
       this_ptr->allow_swarm = 1;
     }
     switch(this_ptr->state) {
     case BUGS_STATE_IDLE:
-      iVar3 = sound_sndmain_cpp_FUN_00556700(this_ptr->loop_sfx_handle);
-      if (iVar3 == 0) {
-        uVar4 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
+      iVar2 = sound_sndmain_cpp_FUN_00556700(this_ptr->loop_sfx_handle);
+      if (iVar2 == 0) {
+        uVar3 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
                           (0x02CF5680,(CDemonActor *)this_ptr,"?wp_disease_loop.wav" + 1,
                            &(this_ptr->base).base.base.location.position);
-        this_ptr->loop_sfx_handle = uVar4;
+        this_ptr->loop_sfx_handle = uVar3;
       }
       core_bugs_cpp_CBugs_updateBugsBehavior_FUN_004221c0(this_ptr,delta_time);
       break;
     case BUGS_STATE_ATTACK:
-      iVar3 = sound_sndmain_cpp_FUN_00556700(this_ptr->loop_sfx_handle);
-      if (iVar3 != 0) {
+      iVar2 = sound_sndmain_cpp_FUN_00556700(this_ptr->loop_sfx_handle);
+      if (iVar2 != 0) {
         sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->loop_sfx_handle);
         this_ptr->loop_sfx_handle = 0;
       }
-      iVar3 = sound_sndmain_cpp_FUN_00556700(this_ptr->munch_sfx_handle);
-      if (iVar3 == 0) {
-        uVar4 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
+      iVar2 = sound_sndmain_cpp_FUN_00556700(this_ptr->munch_sfx_handle);
+      if (iVar2 == 0) {
+        uVar3 = core_sound_cpp_CSound_playActorSound_FUN_005609d0
                           (0x02CF5680,(CDemonActor *)this_ptr,"wp_disease_munch.wav",
                            &(this_ptr->base).base.base.location.position);
-        this_ptr->munch_sfx_handle = uVar4;
+        this_ptr->munch_sfx_handle = uVar3;
       }
       core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422570(this_ptr,delta_time);
       break;
@@ -75,17 +75,17 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_00421300(CBugs *this_ptr,float delt
       this_ptr->remove_bug_timer = 0.1;
       this_ptr->count = this_ptr->count + -3;
     }
-    uVar2 = 0x01D81080;
+    this_ptr_00 = 0x01D81080;
     if (this_ptr->count < 1) {
       this_ptr->count = 0;
-      core_mission_cpp_FUN_004f6f10(uVar2,this_ptr,1);
-      iVar3 = sound_sndmain_cpp_FUN_00556700(this_ptr->loop_sfx_handle);
-      if (iVar3 != 0) {
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(this_ptr_00,this_ptr,1);
+      iVar2 = sound_sndmain_cpp_FUN_00556700(this_ptr->loop_sfx_handle);
+      if (iVar2 != 0) {
         sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->loop_sfx_handle);
         this_ptr->loop_sfx_handle = 0;
       }
-      iVar3 = sound_sndmain_cpp_FUN_00556700(this_ptr->munch_sfx_handle);
-      if (iVar3 != 0) {
+      iVar2 = sound_sndmain_cpp_FUN_00556700(this_ptr->munch_sfx_handle);
+      if (iVar2 != 0) {
         sound_sndmain_cpp_killSfx_FUN_00556be0(this_ptr->munch_sfx_handle);
         this_ptr->munch_sfx_handle = 0;
         return;

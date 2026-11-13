@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAlphaBitmap * core_bmppuzzl_cpp_CAlphaBitmap_arrdtor4_FUN_0059bfe0(CAlphaBitmap *this_ptr,uint flags)
+; CAlphaBitmap * __cdecl core_bmppuzzl_cpp_CAlphaBitmap_arrdtor4_FUN_0059bfe0(CAlphaBitmap *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAlphaBitmap *   Stack[0x4]:4   this_ptr

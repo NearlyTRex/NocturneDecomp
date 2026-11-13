@@ -7,19 +7,19 @@
 
 // Original: core_djien.cpp_staticInit_FUN_0045fdb0
 // Address: 0045fdb0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_djien.cpp_factoryFuncDjien_FUN_0045fde0
 // Address: 0045fde0
-void factoryFuncDjien(void);
+CDjien * __cdecl factoryFuncDjien(void);
 
 // Original: core_djien.cpp_CDjien_getActorType_FUN_0045fe00
 // Address: 0045fe00
-CDemonActorType * CDjien::getActorType(CDjien *this_ptr);
+CDemonActorType * __cdecl CDjien::getActorType(CDjien *this_ptr);
 
 // Original: core_djien.cpp_CDjien_ctor_FUN_0045fe10
 // Address: 0045fe10
-CDjien * CDjien::ctor(CDjien *this_ptr);
+CDjien * __cdecl CDjien::ctor(CDjien *this_ptr);
 
 // Original: core_djien.cpp_CDjien_setup_FUN_0045ff00
 // Address: 0045ff00
@@ -75,11 +75,11 @@ int FUN_004615b0(int param_1,int param_2,int param_3);
 
 // Original: core_djien.cpp_CDjien_dtor_FUN_004623b0
 // Address: 004623b0
-CDjien * CDjien::dtor(CDjien *this_ptr,uint flags);
+CDjien * __cdecl CDjien::dtor(CDjien *this_ptr,uint flags);
 
 // Original: core_djien.cpp_SDjienBox_ctor_FUN_00462440
 // Address: 00462440
-SDjienBox * SDjienBox::ctor(SDjienBox *this_ptr);
+SDjienBox * __cdecl SDjienBox::ctor(SDjienBox *this_ptr);
 
 // Original: core_djien.cpp_FUN_00462450
 // Address: 00462450

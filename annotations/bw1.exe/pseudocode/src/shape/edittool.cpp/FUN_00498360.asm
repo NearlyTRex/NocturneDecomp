@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   core_cloth.cpp_FUN_00441500 at 004416fd
 ;   core_skeleton.cpp_FUN_00564b20 at 00564cf6
-;   shape_edittool.cpp_FUN_004985ae at 00498640
+;   shape_edittool.cpp_FUN_004985b0 at 00498640
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005dc278
@@ -33,8 +33,8 @@
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_FUN_004c1dd0
 ;   engine_matrix.c_transformToCache_FUN_00507b00
-;   engine_mini3d.cpp_FUN_00512320
-;   engine_mini3d.cpp_FUN_00517d50
+;   engine_mini3d.cpp_setAlpha_FUN_00512320
+;   engine_mini3d.cpp_setColor_FUN_00517d50
 ;
 ; *****************************************************************************
 
@@ -85,8 +85,8 @@ section .text
     AND EAX,0xff                        ; 004983eb
     OR EBX,EAX                          ; 004983f0
     PUSH EBX                            ; 004983f2
-    CALL engine_mini3d.cpp_FUN_00517d50 ; 004983f3
-        ;   XREF to: 00517d50 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517d50()
+    CALL engine_mini3d.cpp_setColor_FUN_00517d50 ; 004983f3
+        ;   XREF to: 00517d50 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setColor_FUN_00517d50(uint rgb)
     ADD ESP,0x4                         ; 004983f8
     LEA EAX,[ESP + 0x14]                ; 004983fb
         ;   Label: LAB_004983fb
@@ -219,8 +219,8 @@ section .text
         ;   XREF to: 00406bd0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bd0(int alpha_color_value)
     ADD ESP,0x4                         ; 00498571
     PUSH 0x3f800000                     ; 00498574
-    CALL engine_mini3d.cpp_FUN_00512320 ; 00498579
-        ;   XREF to: 00512320 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00512320()
+    CALL engine_mini3d.cpp_setAlpha_FUN_00512320 ; 00498579
+        ;   XREF to: 00512320 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_00512320(float alpha)
     ADD ESP,0x4                         ; 0049857e
     PUSH -0x1                           ; 00498581
     MOV EDX,dword ptr [0x01c3f594]      ; 00498583 | DAT_01c3f594

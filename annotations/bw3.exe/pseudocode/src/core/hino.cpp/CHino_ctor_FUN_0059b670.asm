@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHino * core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
+; CHino * __cdecl core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
 ;
 ; Parameters:
 ; CHino *          Stack[0x4]:4   this_ptr

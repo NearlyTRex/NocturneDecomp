@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CShadowsc * core_shadowsc_cpp_CShadowsc_ctor_FUN_005604a0(CShadowsc *this_ptr)
+; CShadowsc * __cdecl core_shadowsc_cpp_CShadowsc_ctor_FUN_005604a0(CShadowsc *this_ptr)
 ;
 ; Parameters:
 ; CShadowsc *      Stack[0x4]:4   this_ptr

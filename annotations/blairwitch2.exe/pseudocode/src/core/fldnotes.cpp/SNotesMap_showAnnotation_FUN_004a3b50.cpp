@@ -2,11 +2,11 @@
 // Address: 004a3b50
 // Address Range: [[004a3b50, 004a3bae]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_fldnotes_cpp_SNotesMap_showAnnotation_FUN_004a3b50(SNotesMap *this_ptr,char *param_2)
+// Signature: int __cdecl core_fldnotes_cpp_SNotesMap_showAnnotation_FUN_004a3b50(SNotesMap *this_ptr,char *name)
 
 #include "nocturne.h"
 
-uint __cdecl core_fldnotes_cpp_SNotesMap_showAnnotation_FUN_004a3b50(SNotesMap *this_ptr,char *param_2)
+int __cdecl core_fldnotes_cpp_SNotesMap_showAnnotation_FUN_004a3b50(SNotesMap *this_ptr,char *name)
 
 {
   int iVar1;
@@ -17,7 +17,7 @@ uint __cdecl core_fldnotes_cpp_SNotesMap_showAnnotation_FUN_004a3b50(SNotesMap *
   if (0 < this_ptr->annotation_count) {
     str1 = this_ptr->annotations;
     do {
-      iVar1 = _stricmp(str1->name,param_2);
+      iVar1 = _stricmp(str1->name,name);
       if (iVar1 == 0) {
         this_ptr->annotations[iVar2].visible = 1;
         return 1;

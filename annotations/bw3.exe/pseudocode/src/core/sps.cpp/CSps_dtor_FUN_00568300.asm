@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSps * core_sps_cpp_CSps_dtor_FUN_00568300(CSps *this_ptr,uint flags)
+; CSps * __cdecl core_sps_cpp_CSps_dtor_FUN_00568300(CSps *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSps *           Stack[0x4]:4   this_ptr

@@ -429,7 +429,8 @@ LAB_005bb060:
           iVar7 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005bdec0
                             (this_ptr,this_ptr->object_shape_class);
           if (-1 < iVar7) {
-            core_charactr_cpp_FUN_004325b0(this_ptr,iVar7,pCVar16,0x3e4ccccd,0);
+            core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0
+                      ((CCharacter *)this_ptr,iVar7,(int)pCVar16,0x3e4ccccd,0);
             engine_console_cpp_CConsole_printf_FUN_00445430
                       (g_CConsolePtr,"%s picked up %s using hand %d\n");
           }

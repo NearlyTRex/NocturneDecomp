@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_00573bdf
     PUSH EBX                            ; 00573be0
     CALL support_trstream.cpp_CInStreamFile_fillBuffer_FUN_00573eb0 ; 00573be1
-        ;   XREF to: 00573eb0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStreamFile * this_ptr, int param_2)
+        ;   XREF to: 00573eb0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStreamFile * this_ptr, int position)
     ADD ESP,0x8                         ; 00573be6
     TEST EAX,EAX                        ; 00573be9
     JNZ 0x00573bb8                      ; 00573beb

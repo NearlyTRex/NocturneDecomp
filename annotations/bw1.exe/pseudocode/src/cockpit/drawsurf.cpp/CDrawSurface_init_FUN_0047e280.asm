@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0047e240 at 0047e262
-;   core_dracbrid.cpp_FUN_0047e20e at 0047e22a
+;   core_dracbrid.cpp_FUN_0047e210 at 0047e22a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b498

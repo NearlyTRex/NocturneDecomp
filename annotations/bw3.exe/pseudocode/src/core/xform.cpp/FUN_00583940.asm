@@ -21,7 +21,7 @@
 ;   core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_00427780 at 00427817
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042f770 at 0042f9ce
 ;   core_charactr.cpp_CCharacter_archive_FUN_0042b450 at 0042b7dd
-;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00431d10 at 00431e1a
+;   core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0 at 00431b14
 ;   ... and 21 more
 ;
 ; Called Functions:

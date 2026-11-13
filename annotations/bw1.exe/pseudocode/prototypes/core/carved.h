@@ -7,7 +7,7 @@
 
 // Original: core_carved.cpp_staticInit_FUN_004282c0
 // Address: 004282c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_carved.cpp_FUN_004282f0
 // Address: 004282f0
@@ -27,15 +27,15 @@ undefined4 FUN_00428550(float *param_1);
 
 // Original: core_carved.cpp_factoryFuncCarved_FUN_004286a0
 // Address: 004286a0
-void factoryFuncCarved(void);
+CCarved * __cdecl factoryFuncCarved(void);
 
 // Original: core_carved.cpp_CCarved_getActorType_FUN_004286c0
 // Address: 004286c0
-CDemonActorType * CCarved::getActorType(CCarved *this_ptr);
+CDemonActorType * __cdecl CCarved::getActorType(CCarved *this_ptr);
 
 // Original: core_carved.cpp_CCarved_ctor_FUN_004286d0
 // Address: 004286d0
-CCarved * CCarved::ctor(CCarved *this_ptr);
+CCarved * __cdecl CCarved::ctor(CCarved *this_ptr);
 
 // Original: core_carved.cpp_CCarved_setup_FUN_004287e0
 // Address: 004287e0
@@ -111,4 +111,4 @@ void FUN_0042be20(int param_1);
 
 // Original: core_carved.cpp_CCarved_dtor_FUN_0042bf50
 // Address: 0042bf50
-CCarved * CCarved::dtor(CCarved *this_ptr,uint flags);
+CCarved * __cdecl CCarved::dtor(CCarved *this_ptr,uint flags);

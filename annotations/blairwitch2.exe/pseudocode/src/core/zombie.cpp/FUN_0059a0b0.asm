@@ -18,7 +18,7 @@
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590 at 0046964c
-;   engine_drender.cpp_FUN_0046c28e at 0046c36c
+;   engine_drender.cpp_FUN_0046c290 at 0046c36c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141e0

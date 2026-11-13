@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamFile_openHandle_FUN_005a1090(CInStreamFile *this_ptr,int param_2,int param_3,int param_4)
+; int __cdecl support_trstream_cpp_CInStreamFile_openHandle_FUN_005a1090(CInStreamFile *this_ptr,HANDLE handle,int file_size,int file_offset)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
+; HANDLE           Stack[0x8]:4   handle
+; int              Stack[0xc]:4   file_size
+; int              Stack[0x10]:4   file_offset
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_trstream_cpp_005f88d3

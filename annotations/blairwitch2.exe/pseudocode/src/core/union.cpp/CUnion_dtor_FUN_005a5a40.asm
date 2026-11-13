@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CUnion * core_union_cpp_CUnion_dtor_FUN_005a5a40(CUnion *this_ptr,uint flags)
+; CUnion * __cdecl core_union_cpp_CUnion_dtor_FUN_005a5a40(CUnion *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CUnion *         Stack[0x4]:4   this_ptr

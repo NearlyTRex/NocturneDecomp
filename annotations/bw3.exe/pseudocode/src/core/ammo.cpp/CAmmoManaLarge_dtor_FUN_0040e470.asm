@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAmmoManaLarge * core_ammo_cpp_CAmmoManaLarge_dtor_FUN_0040e470(CAmmoManaLarge *this_ptr,uint flags)
+; CAmmoManaLarge * __cdecl core_ammo_cpp_CAmmoManaLarge_dtor_FUN_0040e470(CAmmoManaLarge *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAmmoManaLarge * Stack[0x4]:4   this_ptr

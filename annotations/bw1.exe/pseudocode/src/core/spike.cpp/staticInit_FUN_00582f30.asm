@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spike_cpp_staticInit_FUN_00582f30(void)
+; void __cdecl core_spike_cpp_staticInit_FUN_00582f30(void)
 ;
 ;
 ; Called Functions:

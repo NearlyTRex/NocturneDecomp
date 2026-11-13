@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_styldemo_cpp_staticInit_FUN_0059e010(void)
+; void __cdecl core_styldemo_cpp_staticInit_FUN_0059e010(void)
 ;
 ;
 ; Called Functions:

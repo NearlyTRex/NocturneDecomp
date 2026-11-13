@@ -1,15 +1,14 @@
 // Name: engine_mini3d.cpp_CMini3D_ctor_FUN_00510f60
 // Address: 00510f60
 // Address Range: [[00510f60, 0051101b]]
-// Convention: unknown
-// Signature: CMini3D * engine_mini3d_cpp_CMini3D_ctor_FUN_00510f60(CMini3D *this_ptr)
+// Convention: __cdecl
+// Signature: CMini3D * __cdecl engine_mini3d_cpp_CMini3D_ctor_FUN_00510f60(CMini3D *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CMini3D * engine_mini3d_cpp_CMini3D_ctor_FUN_00510f60(CMini3D *this_ptr)
+CMini3D * __cdecl engine_mini3d_cpp_CMini3D_ctor_FUN_00510f60(CMini3D *this_ptr)
 
 {
   _DAT_01d224bc = 0;

@@ -1,14 +1,12 @@
 // Name: core_armour.cpp_CEnemy_dtor_FUN_0040f1c0
 // Address: 0040f1c0
 // Address Range: [[0040f1c0, 0040f254]]
-// Convention: unknown
-// Signature: CEnemy * core_armour_cpp_CEnemy_dtor_FUN_0040f1c0(CEnemy *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CEnemy * __cdecl core_armour_cpp_CEnemy_dtor_FUN_0040f1c0(CEnemy *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CEnemy * core_armour_cpp_CEnemy_dtor_FUN_0040f1c0(CEnemy *this_ptr,uint flags)
+CEnemy * __cdecl core_armour_cpp_CEnemy_dtor_FUN_0040f1c0(CEnemy *this_ptr,uint flags)
 
 {
   int iVar1;

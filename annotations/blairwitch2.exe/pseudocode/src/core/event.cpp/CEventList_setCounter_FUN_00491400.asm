@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_FUN_00489670 at 0048b8ba
-;   core_script.cpp_FUN_00522350 at 00525688
+;   core_script.cpp_CScript_step_FUN_00522350 at 00525688
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_005d4e0b

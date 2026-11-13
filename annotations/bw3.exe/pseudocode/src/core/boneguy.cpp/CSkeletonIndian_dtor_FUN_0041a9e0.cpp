@@ -1,14 +1,12 @@
 // Name: core_boneguy.cpp_CSkeletonIndian_dtor_FUN_0041a9e0
 // Address: 0041a9e0
 // Address Range: [[0041a9e0, 0041aa64]]
-// Convention: unknown
-// Signature: CSkeletonIndian * core_boneguy_cpp_CSkeletonIndian_dtor_FUN_0041a9e0(CSkeletonIndian *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSkeletonIndian * __cdecl core_boneguy_cpp_CSkeletonIndian_dtor_FUN_0041a9e0(CSkeletonIndian *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSkeletonIndian * core_boneguy_cpp_CSkeletonIndian_dtor_FUN_0041a9e0(CSkeletonIndian *this_ptr,uint flags)
+CSkeletonIndian * __cdecl core_boneguy_cpp_CSkeletonIndian_dtor_FUN_0041a9e0(CSkeletonIndian *this_ptr,uint flags)
 
 {
   int iVar1;

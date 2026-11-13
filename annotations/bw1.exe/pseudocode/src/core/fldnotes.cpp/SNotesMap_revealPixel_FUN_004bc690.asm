@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_SNotesMap_revealPixel_FUN_004bc690(SNotesMap *this_ptr,int param_2,int param_3,int param_4)
+; void __cdecl core_fldnotes_cpp_SNotesMap_revealPixel_FUN_004bc690(SNotesMap *this_ptr,int x,int y,int alpha)
 ;
 ; Parameters:
 ; SNotesMap *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   alpha
 ;
 ; XREF[1]:
 ;   core_fldnotes.cpp_SNotesMap_revealCircle_FUN_004bc5a0 at 004bc67a

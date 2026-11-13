@@ -1,14 +1,12 @@
 // Name: core_fire.cpp_CFirefly_arrdtor64_FUN_004b7970
 // Address: 004b7970
 // Address Range: [[004b7970, 004b7984]]
-// Convention: unknown
-// Signature: CFirefly * core_fire_cpp_CFirefly_arrdtor64_FUN_004b7970(CFirefly *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CFirefly * __cdecl core_fire_cpp_CFirefly_arrdtor64_FUN_004b7970(CFirefly *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CFirefly * core_fire_cpp_CFirefly_arrdtor64_FUN_004b7970(CFirefly *this_ptr,uint flags)
+CFirefly * __cdecl core_fire_cpp_CFirefly_arrdtor64_FUN_004b7970(CFirefly *this_ptr,uint flags)
 
 {
   CFirefly *pCVar1;

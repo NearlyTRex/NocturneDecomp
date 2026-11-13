@@ -7,11 +7,11 @@
 
 // Original: core_enemy.cpp_CEnemy_dtor_FUN_0041aba0
 // Address: 0041aba0
-CEnemy * CEnemy::dtor(CEnemy *this_ptr,uint flags);
+CEnemy * __cdecl CEnemy::dtor(CEnemy *this_ptr,uint flags);
 
 // Original: core_enemy.cpp_staticInit_FUN_00488fa0
 // Address: 00488fa0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
 // Address: 00488fd0
@@ -77,9 +77,9 @@ void __cdecl CEnemy::releaseVictim(CEnemy *this_ptr);
 // Address: 0048a100
 void __cdecl CEnemy::onVictimLost(CEnemy *this_ptr,CDemonActor *lost_actor);
 
-// Original: core_enemy.cpp_FUN_0048a12e
-// Address: 0048a12e
-int FUN_0048a12e(CDemonActor *param_1);
+// Original: core_enemy.cpp_FUN_0048a130
+// Address: 0048a130
+int FUN_0048a130(void);
 
 // Original: core_enemy.cpp_FUN_0048a1b0
 // Address: 0048a1b0

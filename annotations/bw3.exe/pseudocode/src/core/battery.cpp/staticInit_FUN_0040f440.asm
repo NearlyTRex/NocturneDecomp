@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_battery_cpp_staticInit_FUN_0040f440(void)
+; void __cdecl core_battery_cpp_staticInit_FUN_0040f440(void)
 ;
 ;
 ; Called Functions:

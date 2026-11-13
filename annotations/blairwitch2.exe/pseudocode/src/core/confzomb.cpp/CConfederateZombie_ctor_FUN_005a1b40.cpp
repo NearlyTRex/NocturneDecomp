@@ -1,15 +1,14 @@
 // Name: core_confzomb.cpp_CConfederateZombie_ctor_FUN_005a1b40
 // Address: 005a1b40
 // Address Range: [[005a1b40, 005a1cbd]]
-// Convention: unknown
-// Signature: CConfederateZombie * core_confzomb_cpp_CConfederateZombie_ctor_FUN_005a1b40(CConfederateZombie *this_ptr)
+// Convention: __cdecl
+// Signature: CConfederateZombie * __cdecl core_confzomb_cpp_CConfederateZombie_ctor_FUN_005a1b40(CConfederateZombie *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CConfederateZombie * core_confzomb_cpp_CConfederateZombie_ctor_FUN_005a1b40(CConfederateZombie *this_ptr)
+CConfederateZombie * __cdecl core_confzomb_cpp_CConfederateZombie_ctor_FUN_005a1b40(CConfederateZombie *this_ptr)
 
 {
   SStateMachine *pSVar1;

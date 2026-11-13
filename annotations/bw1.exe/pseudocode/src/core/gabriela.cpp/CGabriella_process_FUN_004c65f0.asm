@@ -1696,8 +1696,8 @@ section .text
     JZ 0x004c7926                       ; 004c78fe
         ;   XREF to: 004c7926 (CONDITIONAL_JUMP)  ; LAB_004c7926
     PUSH EBX                            ; 004c7900
-    CALL core_hero.cpp_FUN_004eb7f0     ; 004c7901
-        ;   XREF to: 004eb7f0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb7f0()
+    CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0 ; 004c7901
+        ;   XREF to: 004eb7f0 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004c7906
     JMP 0x004c6c79                      ; 004c7909
         ;   XREF to: 004c6c79 (UNCONDITIONAL_JUMP)  ; LAB_004c6c79

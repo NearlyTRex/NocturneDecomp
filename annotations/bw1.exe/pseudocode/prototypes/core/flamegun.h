@@ -7,7 +7,7 @@
 
 // Original: core_flamegun.cpp_staticInit_FUN_004b9560
 // Address: 004b9560
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_flamegun.cpp_factoryFuncFlameThrower_FUN_004b9590
 // Address: 004b9590
@@ -15,7 +15,7 @@ CFlameThrower * __cdecl factoryFuncFlameThrower(void);
 
 // Original: core_flamegun.cpp_CFlameThrower_getActorType_FUN_004b95b0
 // Address: 004b95b0
-CDemonActorType * CFlameThrower::getActorType(CFlameThrower *this_ptr);
+CDemonActorType * __cdecl CFlameThrower::getActorType(CFlameThrower *this_ptr);
 
 // Original: core_flamegun.cpp_CFlameThrower_ctor_FUN_004b95c0
 // Address: 004b95c0

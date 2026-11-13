@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 181,
+    "complexity_score": 106,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 14,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -28,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_CInStreamFile_openHandle_FUN_005a1090",
-    "signature": "undefined4 __cdecl support_trstream_cpp_CInStreamFile_openHandle_FUN_005a1090(CInStreamFile *this_ptr,int param_2,int param_3,int param_4)"
+    "signature": "int __cdecl support_trstream_cpp_CInStreamFile_openHandle_FUN_005a1090(CInStreamFile *this_ptr,HANDLE handle,int file_size,int file_offset)"
   },
   "function_calls": [
     {
@@ -135,21 +134,21 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "handle",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "HANDLE"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "file_size",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "file_offset",
         "offset": 16,
         "size": 4,
         "type": "int"
@@ -166,35 +165,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_CInStreamFile_openHandle_FUN_005a1090(CInStreamFile *this_ptr,int param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_CInStreamFile_openHandle_FUN_005a1090(CInStreamFile *this_ptr,int param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_CInStreamFile_openHandle_FUN_005a1090(CInStreamFile *this_ptr,int param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 12,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);",
       "type": "pointer_cast"
     },
     {
@@ -202,47 +177,15 @@
       "line": 12,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->file_handle = (HANDLE)param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "this_ptr->file_size = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "this_ptr->file_offset = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "_fseek(this_ptr->file_handle,param_4 + this_ptr->position,0);",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)((int)this_ptr->vtable + 0x1c))(this_ptr);",
+      "text": "iVar1 = (**(code **)((int)(this_ptr->base).vtable + 0x1c))(this_ptr);",
       "type": "pointer_cast"
     },
     {
@@ -250,15 +193,15 @@
       "line": 18,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)((int)this_ptr->vtable + 0x1c))(this_ptr);",
+      "text": "iVar1 = (**(code **)((int)(this_ptr->base).vtable + 0x1c))(this_ptr);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 23,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);",
       "type": "pointer_cast"
     },
     {
@@ -266,7 +209,7 @@
       "line": 23,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);",
       "type": "unresolved_funcptr"
     }
   ],

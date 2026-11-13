@@ -59,7 +59,7 @@ bool FUN_0041bc20(undefined4 param_1,float *param_2,float param_3);
 
 // Original: core_box.cpp_CBoundingBox3D_ctor_FUN_00534d20
 // Address: 00534d20
-CBoundingBox3D * CBoundingBox3D::ctor(CBoundingBox3D *this_ptr);
+CBoundingBox3D * __cdecl CBoundingBox3D::ctor(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBox_ctor_FUN_005b1bc0
 // Address: 005b1bc0
@@ -103,4 +103,4 @@ void __cdecl CBox::setupVelocities(CBox *this_ptr,CVector3f *linear_velocity,CVe
 
 // Original: core_box.cpp_SScrape_ctor_FUN_005b46b0
 // Address: 005b46b0
-SScrape * SScrape::ctor(SScrape *this_ptr);
+SScrape * __cdecl SScrape::ctor(SScrape *this_ptr);

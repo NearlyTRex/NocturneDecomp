@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDog * core_helldog_cpp_CDog_dtor_FUN_005abd30(CDog *this_ptr,uint flags)
+; CDog * __cdecl core_helldog_cpp_CDog_dtor_FUN_005abd30(CDog *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDog *           Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_staticInit_FUN_00492920(void)
+; void __cdecl shape_edittool_cpp_staticInit_FUN_00492920(void)
 ;
 ;
 ; Called Functions:

@@ -7,7 +7,7 @@
 
 // Original: core_hostage.cpp_staticInit_FUN_004ed4a0
 // Address: 004ed4a0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hostage.cpp_factoryFuncHostage_FUN_004ed4d0
 // Address: 004ed4d0
@@ -15,7 +15,7 @@ CHostage * __cdecl factoryFuncHostage(void);
 
 // Original: core_hostage.cpp_CHostage_getActorType_FUN_004ed4f0
 // Address: 004ed4f0
-CDemonActorType * CHostage::getActorType(CHostage *this_ptr);
+CDemonActorType * __cdecl CHostage::getActorType(CHostage *this_ptr);
 
 // Original: core_hostage.cpp_CHostage_ctor_FUN_004ed500
 // Address: 004ed500
@@ -67,4 +67,4 @@ CMatrix3x4f * __stack2_esi CHostage::getCarryObjToBodyXForm(CHostage *this_ptr,i
 
 // Original: core_hostage.cpp_CHostage_dtor_FUN_004ef910
 // Address: 004ef910
-CHostage * CHostage::dtor(CHostage *this_ptr,uint flags);
+CHostage * __cdecl CHostage::dtor(CHostage *this_ptr,uint flags);

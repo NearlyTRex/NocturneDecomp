@@ -1,15 +1,14 @@
 // Name: core_rifle.cpp_CRifle_ctor_FUN_0053ff20
 // Address: 0053ff20
 // Address Range: [[0053ff20, 0053ffa9]]
-// Convention: unknown
-// Signature: CRifle * core_rifle_cpp_CRifle_ctor_FUN_0053ff20(CRifle *this_ptr)
+// Convention: __cdecl
+// Signature: CRifle * __cdecl core_rifle_cpp_CRifle_ctor_FUN_0053ff20(CRifle *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CRifle * core_rifle_cpp_CRifle_ctor_FUN_0053ff20(CRifle *this_ptr)
+CRifle * __cdecl core_rifle_cpp_CRifle_ctor_FUN_0053ff20(CRifle *this_ptr)
 
 {
   float fVar1;

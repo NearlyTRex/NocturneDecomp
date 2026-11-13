@@ -1,16 +1,15 @@
 // Name: core_boneguy.cpp_CBoneGuy_ctor_FUN_004182d0
 // Address: 004182d0
 // Address Range: [[004182d0, 004184b6]]
-// Convention: unknown
-// Signature: CBoneGuy * core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
+// Convention: __cdecl
+// Signature: CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CBoneGuy * core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
+CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
 
 {
   char cVar1;

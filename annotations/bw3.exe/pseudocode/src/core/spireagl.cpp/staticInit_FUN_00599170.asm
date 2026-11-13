@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spireagl_cpp_staticInit_FUN_00599170(void)
+; void __cdecl core_spireagl_cpp_staticInit_FUN_00599170(void)
 ;
 ;
 ; Called Functions:

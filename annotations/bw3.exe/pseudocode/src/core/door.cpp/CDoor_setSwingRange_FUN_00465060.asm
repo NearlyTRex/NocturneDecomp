@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 004267c9
-;   core_demnfolk.cpp_FUN_00455080 at 00455acc
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00455acc
 ;
 ; *****************************************************************************
 

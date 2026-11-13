@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_firestff_cpp_staticInit_FUN_004a4a70(void)
+; void __cdecl core_firestff_cpp_staticInit_FUN_004a4a70(void)
 ;
 ;
 ; Called Functions:

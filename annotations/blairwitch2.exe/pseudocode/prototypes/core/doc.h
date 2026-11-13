@@ -7,15 +7,15 @@
 
 // Original: core_doc.cpp_staticInit_FUN_0044fdd0
 // Address: 0044fdd0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_doc.cpp_FUN_0044fe40
 // Address: 0044fe40
 float FUN_0044fe40(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
 
-// Original: core_doc.cpp_FUN_0044febe
-// Address: 0044febe
-undefined4 FUN_0044febe(CDemonActor *param_1);
+// Original: core_doc.cpp_FUN_0044fec0
+// Address: 0044fec0
+undefined4 FUN_0044fec0(void);
 
 // Original: core_doc.cpp_FUN_0044ffd0
 // Address: 0044ffd0
@@ -23,19 +23,19 @@ float FUN_0044ffd0(CDemonActor *param_1);
 
 // Original: core_doc.cpp_factoryFuncDoc_FUN_004500a0
 // Address: 004500a0
-void factoryFuncDoc(void);
+CDoc * __cdecl factoryFuncDoc(void);
 
 // Original: core_doc.cpp_CDoc_getActorType_FUN_004500c0
 // Address: 004500c0
-CDemonActorType * CDoc::getActorType(CDoc *this_ptr);
+CDemonActorType * __cdecl CDoc::getActorType(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_ctor_FUN_004500d0
 // Address: 004500d0
-CDoc * CDoc::ctor(CDoc *this_ptr);
+CDoc * __cdecl CDoc::ctor(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_dtor_FUN_00450580
 // Address: 00450580
-CDoc * CDoc::dtor(CDoc *this_ptr,uint flags);
+CDoc * __cdecl CDoc::dtor(CDoc *this_ptr,uint flags);
 
 // Original: core_doc.cpp_CDoc_setup_FUN_00450620
 // Address: 00450620
@@ -57,9 +57,9 @@ void FUN_00450c60(CHero *param_1,float param_2);
 // Address: 00453250
 void FUN_00453250(CHero *param_1,float param_2);
 
-// Original: core_doc.cpp_FUN_00453c5e
-// Address: 00453c5e
-undefined4 FUN_00453c5e(int param_1);
+// Original: core_doc.cpp_FUN_00453c60
+// Address: 00453c60
+undefined4 FUN_00453c60(void);
 
 // Original: core_doc.cpp_FUN_00453cc0
 // Address: 00453cc0
@@ -67,7 +67,7 @@ void FUN_00453cc0(int param_1);
 
 // Original: core_doc.cpp_FUN_00453d80
 // Address: 00453d80
-void FUN_00453d80(int param_1);
+void FUN_00453d80(CDoc *param_1);
 
 // Original: core_doc.cpp_FUN_00455170
 // Address: 00455170
@@ -81,9 +81,9 @@ void FUN_00455270(int param_1,float param_2);
 // Address: 00455580
 void __cdecl CDoc::setPositionAndOrientation(CDoc *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 
-// Original: core_doc.cpp_FUN_004555c0
+// Original: core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0
 // Address: 004555c0
-void FUN_004555c0(CCharacter *param_1);
+void __cdecl CDoc::makeDrawDecision(CDoc *this_ptr);
 
 // Original: core_doc.cpp_FUN_00455d10
 // Address: 00455d10
@@ -109,9 +109,9 @@ void FUN_00458320(int param_1);
 // Address: 004583a0
 void FUN_004583a0(int param_1);
 
-// Original: core_doc.cpp_FUN_004583ec
-// Address: 004583ec
-undefined4 FUN_004583ec(CCharacter *param_1);
+// Original: core_doc.cpp_FUN_004583f0
+// Address: 004583f0
+undefined4 FUN_004583f0(void);
 
 // Original: core_doc.cpp_FUN_00459555
 // Address: 00459555
@@ -197,21 +197,21 @@ void FUN_0045db40(int param_1);
 // Address: 0045dbf0
 void FUN_0045dbf0(int param_1,undefined4 param_2);
 
-// Original: core_doc.cpp_FUN_0045dc20
+// Original: core_doc.cpp_CDoc_isWeaponDrawn_FUN_0045dc20
 // Address: 0045dc20
-undefined4 FUN_0045dc20(int param_1);
+int __cdecl CDoc::isWeaponDrawn(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_0045dc30
+// Original: core_doc.cpp_CDoc_drawWeapon_FUN_0045dc30
 // Address: 0045dc30
-void FUN_0045dc30(int param_1,undefined4 param_2);
+void __cdecl CDoc::drawWeapon(CDoc *this_ptr,int param_2);
 
 // Original: core_doc.cpp_CDoc_getGrabbed_FUN_0045dc40
 // Address: 0045dc40
 int __cdecl CDoc::getGrabbed(CDoc *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_doc.cpp_FUN_0045dd30
+// Original: core_doc.cpp_CDoc_reset_FUN_0045dd30
 // Address: 0045dd30
-void FUN_0045dd30(CHero *param_1);
+void __cdecl CDoc::reset(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_getDeathState_FUN_0045dda0
 // Address: 0045dda0

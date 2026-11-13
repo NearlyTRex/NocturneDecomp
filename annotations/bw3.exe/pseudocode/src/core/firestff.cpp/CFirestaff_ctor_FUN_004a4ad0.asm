@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFirestaff * core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr)
+; CFirestaff * __cdecl core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr)
 ;
 ; Parameters:
 ; CFirestaff *     Stack[0x4]:4   this_ptr

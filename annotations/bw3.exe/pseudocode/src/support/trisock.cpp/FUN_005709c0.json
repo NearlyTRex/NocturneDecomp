@@ -24,9 +24,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0057125e",
+      "addr": "00571260",
       "from_addr": "005712a9",
-      "name": "support_trisock.cpp_FUN_0057125e",
+      "name": "support_trisock.cpp_FUN_00571260",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -59,21 +59,6 @@
     "call_site_count": 2,
     "call_sites": [
       {
-        "call_addr": "005712a9",
-        "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0057125e",
-        "estimated_params": 8,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
-        ],
-        "stack_bytes": 20,
-        "stack_params": 5
-      },
-      {
         "call_addr": "0056ff30",
         "call_type": "direct",
         "caller": "support_trisock.cpp_FUN_0056fef0",
@@ -88,12 +73,27 @@
         ],
         "stack_bytes": 20,
         "stack_params": 5
+      },
+      {
+        "call_addr": "005712a9",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_00571260",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
       }
     ],
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 8,
+    "estimated_params": 9,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -433,11 +433,11 @@
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 8,
+      "estimated_params": 9,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:8",
-      "param_delta": 8,
-      "text": "Function declares 0 params but call sites push 8 (8 missing)",
+      "match": "declared:0 vs estimated:9",
+      "param_delta": 9,
+      "text": "Function declares 0 params but call sites push 9 (9 missing)",
       "type": "param_count_too_few"
     }
   ]

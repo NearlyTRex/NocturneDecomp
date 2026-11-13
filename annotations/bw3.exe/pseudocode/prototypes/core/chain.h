@@ -7,7 +7,7 @@
 
 // Original: core_chain.cpp_staticInit_FUN_00429280
 // Address: 00429280
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_chain.cpp_factoryFuncChain_FUN_004292b0
 // Address: 004292b0
@@ -15,7 +15,7 @@ CChain * __cdecl factoryFuncChain(void);
 
 // Original: core_chain.cpp_CChain_getActorType_FUN_004292d0
 // Address: 004292d0
-CDemonActorType * CChain::getActorType(CChain *this_ptr);
+CDemonActorType * __cdecl CChain::getActorType(CChain *this_ptr);
 
 // Original: core_chain.cpp_CChain_ctor_FUN_004292e0
 // Address: 004292e0
@@ -59,8 +59,8 @@ float __cdecl fastSqrt(float value);
 
 // Original: core_chain.cpp_CChain_dtor_FUN_0042ab20
 // Address: 0042ab20
-CChain * CChain::dtor(CChain *this_ptr,uint flags);
+CChain * __cdecl CChain::dtor(CChain *this_ptr,uint flags);
 
 // Original: core_chain.cpp_SChainVertex_ctor_FUN_0042ab70
 // Address: 0042ab70
-SChainVertex * SChainVertex::ctor(SChainVertex *this_ptr);
+SChainVertex * __cdecl SChainVertex::ctor(SChainVertex *this_ptr);

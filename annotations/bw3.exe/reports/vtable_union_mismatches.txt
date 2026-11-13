@@ -11,15 +11,15 @@ from the wrong vtable struct, producing misleading pseudocode.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total mismatches found: 75
+  Total mismatches found: 77
 
   By union member used:
-    _uc (CCharacter_vtable): 74
+    _uc (CCharacter_vtable): 76
     _ue (CEnemy_vtable): 1
 
   By source file:
     core/blundrbs.cpp                        22
-    core/lightsta.cpp                        20
+    core/lightsta.cpp                        22
     core/flintlck.cpp                        6
     core/exorcism.cpp                        5
     core/elephant.cpp                        4
@@ -34,7 +34,7 @@ SUMMARY
 
   By object type:
     CBlunderbus               22  (CBlunderbus -> CWeapon -> CDemonActor)
-    CLightStaff               20  (CLightStaff -> CWeapon -> CDemonActor)
+    CLightStaff               22  (CLightStaff -> CWeapon -> CDemonActor)
     CFlintlock                6  (CFlintlock -> CWeapon -> CDemonActor)
     CExorcism                 5  (CExorcism -> CWeapon -> CDemonActor)
     CElephantGun              4  (CElephantGun -> CWeapon -> CDemonActor)
@@ -75,7 +75,9 @@ DETAILED FINDINGS
     CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
 
-  core/lightsta.cpp (20)
+  core/lightsta.cpp (22)
+    CLightStaff_fire_FUN_004e1070                       this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_fire_FUN_004e1070                       this_ptr on CLightStaff      used _uc, need _uw  getGrabbed -> getDamage
     CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint

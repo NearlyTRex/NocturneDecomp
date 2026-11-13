@@ -9,7 +9,7 @@
 ;
 ; XREF[9]:
 ;   core_boneguy.cpp_CBoneGuy_getCollisionType_FUN_00419860 at 00419876
-;   core_construc.cpp_FUN_004444c0 at 004444e1
+;   core_construc.cpp_CConstruct_getCollisionType_FUN_004444c0 at 004444e1
 ;   core_gargoyle.cpp_CGargoyle_getCollisionType_FUN_004c6530 at 004c653a
 ;   core_hino.cpp_CHino_getCollisionType_FUN_0059d640 at 0059d64a
 ;   core_hotdemon.cpp_CHotDemon_getCollisionType_FUN_004d62c0 at 004d62ca

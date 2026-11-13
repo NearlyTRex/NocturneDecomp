@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   variable_name
 ;
 ; XREF[2]:
-;   core_script.cpp_FUN_00522350 at 00525743
+;   core_script.cpp_CScript_step_FUN_00522350 at 00525743
 ;   core_script.cpp_getActor_FUN_00521290 at 005212b4
 ;
 ; Referenced Globals:

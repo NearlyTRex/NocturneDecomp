@@ -7,7 +7,7 @@
 
 // Original: core_svetlana.cpp_staticInit_FUN_00592da0
 // Address: 00592da0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_svetlana.cpp_factoryFuncSvetlana_FUN_00592dd0
 // Address: 00592dd0
@@ -15,7 +15,7 @@ CSvetlana * __cdecl factoryFuncSvetlana(void);
 
 // Original: core_svetlana.cpp_CSvetlana_getActorType_FUN_00592df0
 // Address: 00592df0
-CDemonActorType * CSvetlana::getActorType(CSvetlana *this_ptr);
+CDemonActorType * __cdecl CSvetlana::getActorType(CSvetlana *this_ptr);
 
 // Original: core_svetlana.cpp_CSvetlana_ctor_FUN_00592e00
 // Address: 00592e00

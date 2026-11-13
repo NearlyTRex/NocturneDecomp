@@ -1,14 +1,12 @@
 // Name: core_bugs.cpp_CBugs_ctor_FUN_00420ea0
 // Address: 00420ea0
 // Address Range: [[00420ea0, 00421051]]
-// Convention: unknown
-// Signature: CBugs * core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)
+// Convention: __cdecl
+// Signature: CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBugs * core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)
+CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)
 
 {
   char cVar1;

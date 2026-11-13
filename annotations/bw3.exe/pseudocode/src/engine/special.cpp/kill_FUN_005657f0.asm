@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_menu.cpp_FUN_004e85a0 at 004e8d95
-;   engine_special.cpp_switchRenderer_FUN_0056678e at 00566792
+;   engine_special.cpp_switchRenderer_FUN_00566790 at 00566792
 ;   wincore_wddvmem.cpp_FUN_00579a60 at 00579a8c
 ;
 ; Referenced Globals:

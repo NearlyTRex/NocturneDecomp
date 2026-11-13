@@ -7,7 +7,7 @@
 
 // Original: core_gargoyle.cpp_staticInit_FUN_004dc210
 // Address: 004dc210
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_gargoyle.cpp_factoryFuncGargoyle_FUN_004dc240
 // Address: 004dc240
@@ -15,7 +15,7 @@ CGargoyle * __cdecl factoryFuncGargoyle(void);
 
 // Original: core_gargoyle.cpp_CGargoyle_getActorType_FUN_004dc260
 // Address: 004dc260
-CDemonActorType * CGargoyle::getActorType(CGargoyle *this_ptr);
+CDemonActorType * __cdecl CGargoyle::getActorType(CGargoyle *this_ptr);
 
 // Original: core_gargoyle.cpp_CGargoyle_ctor_FUN_004dc270
 // Address: 004dc270
@@ -59,4 +59,4 @@ ECollisionType __cdecl CGargoyle::getCollisionType(CGargoyle *this_ptr,SCollisio
 
 // Original: core_gargoyle.cpp_CGargoyle_dtor_FUN_004dd9d0
 // Address: 004dd9d0
-CGargoyle * CGargoyle::dtor(CGargoyle *this_ptr,uint flags);
+CGargoyle * __cdecl CGargoyle::dtor(CGargoyle *this_ptr,uint flags);

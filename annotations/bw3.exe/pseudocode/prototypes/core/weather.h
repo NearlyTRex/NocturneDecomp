@@ -7,7 +7,7 @@
 
 // Original: core_weather.cpp_staticInit_FUN_0057bd20
 // Address: 0057bd20
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_weather.cpp_FUN_0057bd80
 // Address: 0057bd80

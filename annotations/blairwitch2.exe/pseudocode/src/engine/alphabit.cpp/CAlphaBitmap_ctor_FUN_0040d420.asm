@@ -9,6 +9,7 @@
 ; XREF[18]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_0059be60 at 0059be71
 ;   core_bmppuzzl.cpp_SButtonStruct_ctor_FUN_0059bf30 at 0059bf35
+;   core_bmppuzzl.cpp_staticInit_FUN_0059aa80 at 0059aad8
 ;   core_flashlit.cpp_FUN_004a1200 at 004a1247
 ;   core_fldnotes.cpp_SNotesMap_ctor_FUN_004a37c0 at 004a37c9
 ;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170 at 004a218c
@@ -16,7 +17,6 @@
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be0ba
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be472
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0 at 004b6109
-;   core_game.cpp_FUN_004bdc1e at 004bdc32
 ;   ... and 8 more
 ;
 ; *****************************************************************************

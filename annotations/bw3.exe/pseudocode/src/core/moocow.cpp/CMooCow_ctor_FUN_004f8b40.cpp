@@ -1,15 +1,14 @@
 // Name: core_moocow.cpp_CMooCow_ctor_FUN_004f8b40
 // Address: 004f8b40
 // Address Range: [[004f8b40, 004f8baf]]
-// Convention: unknown
-// Signature: CMooCow * core_moocow_cpp_CMooCow_ctor_FUN_004f8b40(CMooCow *this_ptr)
+// Convention: __cdecl
+// Signature: CMooCow * __cdecl core_moocow_cpp_CMooCow_ctor_FUN_004f8b40(CMooCow *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CMooCow * core_moocow_cpp_CMooCow_ctor_FUN_004f8b40(CMooCow *this_ptr)
+CMooCow * __cdecl core_moocow_cpp_CMooCow_ctor_FUN_004f8b40(CMooCow *this_ptr)
 
 {
   float fVar1;

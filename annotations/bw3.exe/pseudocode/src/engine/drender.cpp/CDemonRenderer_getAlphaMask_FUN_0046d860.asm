@@ -10,7 +10,7 @@
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042e220 at 0042e230
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044a210 at 0044a23c
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0 at 0044a3f7
-;   core_dcamera.cpp_FUN_0044a7de at 0044a875
+;   core_dcamera.cpp_FUN_0044a7e0 at 0044a875
 ;   core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00537390 at 005373be
 ;
 ; *****************************************************************************

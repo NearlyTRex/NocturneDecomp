@@ -8,10 +8,9 @@
 ; SRenderVertex *  Stack[0x8]:4   v2
 ; SRenderVertex *  Stack[0xc]:4   output
 ;
-; XREF[5]:
+; XREF[4]:
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407af0 at 00407bcc
 ;   engine_3d.c_clipAndDrawLine3D_FUN_00407df0 at 00407ecc
-;   engine_clipper.c_clipPolygonBottomPlane_FUN_0043bd8e at 0043be59
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190 at 0043c95a
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70 at 00483f9b
 ;

@@ -1,12 +1,12 @@
 // Name: core_wateract.cpp_staticInit_FUN_005aa550
 // Address: 005aa550
 // Address Range: [[005aa550, 005aa59b]]
-// Convention: unknown
-// Signature: void core_wateract_cpp_staticInit_FUN_005aa550(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_wateract_cpp_staticInit_FUN_005aa550(void)
 
 #include "nocturne.h"
 
-void core_wateract_cpp_staticInit_FUN_005aa550(void)
+void __cdecl core_wateract_cpp_staticInit_FUN_005aa550(void)
 
 {
   __arrinit((void *)0x2c93018,100,&g_CVectorTypeInfo);

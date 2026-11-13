@@ -7,7 +7,7 @@
 
 // Original: core_boneguy.cpp_staticInit_FUN_0041b1b0
 // Address: 0041b1b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_boneguy.cpp_FUN_0041b1e0
 // Address: 0041b1e0
@@ -23,11 +23,11 @@ CBoneGuy * __cdecl factoryFuncBoneGuy(void);
 
 // Original: core_boneguy.cpp_CBoneGuy_getActorType_FUN_0041b3c0
 // Address: 0041b3c0
-CDemonActorType * CBoneGuy::getActorType(CBoneGuy *this_ptr);
+CDemonActorType * __cdecl CBoneGuy::getActorType(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_rgbToHsv_FUN_0041b3cc
-// Address: 0041b3cc
-void rgbToHsv(float *param_1);
+// Original: core_boneguy.cpp_rgbToHsv_FUN_0041b3d0
+// Address: 0041b3d0
+void rgbToHsv(void);
 
 // Original: core_boneguy.cpp_hsvToRgb_FUN_0041b590
 // Address: 0041b590
@@ -35,7 +35,7 @@ void hsvToRgb(float *param_1);
 
 // Original: core_boneguy.cpp_CBoneGuy_ctor_FUN_0041b750
 // Address: 0041b750
-CBoneGuy * CBoneGuy::ctor(CBoneGuy *this_ptr);
+CBoneGuy * __cdecl CBoneGuy::ctor(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_CBoneGuy_setup_FUN_0041b940
 // Address: 0041b940
@@ -91,8 +91,8 @@ ECollisionType __cdecl CBoneGuy::getCollisionType(CBoneGuy *this_ptr,SCollisionI
 
 // Original: core_boneguy.cpp_CBoneGuy_dtor_FUN_0041d850
 // Address: 0041d850
-CBoneGuy * CBoneGuy::dtor(CBoneGuy *this_ptr,uint flags);
+CBoneGuy * __cdecl CBoneGuy::dtor(CBoneGuy *this_ptr,uint flags);
 
 // Original: core_boneguy.cpp_SBoneGuyBox_ctor_FUN_0041d8e0
 // Address: 0041d8e0
-SBoneGuyBox * SBoneGuyBox::ctor(SBoneGuyBox *this_ptr);
+SBoneGuyBox * __cdecl SBoneGuyBox::ctor(SBoneGuyBox *this_ptr);

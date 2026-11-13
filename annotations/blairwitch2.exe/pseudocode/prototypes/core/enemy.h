@@ -7,7 +7,7 @@
 
 // Original: core_enemy.cpp_staticInit_FUN_00487d80
 // Address: 00487d80
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_enemy.cpp_CEnemy_ctor_FUN_00487db0
 // Address: 00487db0
@@ -69,6 +69,6 @@ void __cdecl CEnemy::releaseVictim(CEnemy *this_ptr);
 // Address: 00488a80
 void __cdecl CEnemy::onVictimLost(CEnemy *this_ptr,CDemonActor *lost_actor);
 
-// Original: core_enemy.cpp_FUN_00488aae
-// Address: 00488aae
-int FUN_00488aae(undefined4 param_1);
+// Original: core_enemy.cpp_FUN_00488ab0
+// Address: 00488ab0
+int FUN_00488ab0(void);

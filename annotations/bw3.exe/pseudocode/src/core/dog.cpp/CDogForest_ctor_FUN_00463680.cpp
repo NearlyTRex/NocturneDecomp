@@ -1,14 +1,12 @@
 // Name: core_dog.cpp_CDogForest_ctor_FUN_00463680
 // Address: 00463680
 // Address Range: [[00463680, 004636d5]]
-// Convention: unknown
-// Signature: CDogForest * core_dog_cpp_CDogForest_ctor_FUN_00463680(CDogForest *this_ptr)
+// Convention: __cdecl
+// Signature: CDogForest * __cdecl core_dog_cpp_CDogForest_ctor_FUN_00463680(CDogForest *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDogForest * core_dog_cpp_CDogForest_ctor_FUN_00463680(CDogForest *this_ptr)
+CDogForest * __cdecl core_dog_cpp_CDogForest_ctor_FUN_00463680(CDogForest *this_ptr)
 
 {
   CZombieDog *pCVar1;

@@ -15,9 +15,9 @@
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0 at 00504086
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270 at 00504283
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00506018
-;   core_netgame.cpp_FUN_00503efc at 00503f16
+;   core_netgame.cpp_FUN_00503f00 at 00503f16
 ;   engine_pod.cpp_FUN_00513d20 at 00513d76
-;   engine_pod.cpp_FUN_005149bc at 005149de
+;   engine_pod.cpp_FUN_005149c0 at 005149de
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bcd25
@@ -37,7 +37,7 @@
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004b0ea0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
-;   engine_mini3d.cpp_FUN_004edaf0
+;   engine_mini3d.cpp_setAlpha_FUN_004edaf0
 ;   engine_special.cpp_clearScreen_FUN_00560d70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
 ;
@@ -84,8 +84,8 @@ section .text
         ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
     ADD ESP,0x4                         ; 0047d01b
     PUSH 0x3f800000                     ; 0047d01e
-    CALL engine_mini3d.cpp_FUN_004edaf0 ; 0047d023
-        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edaf0()
+    CALL engine_mini3d.cpp_setAlpha_FUN_004edaf0 ; 0047d023
+        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004edaf0(float alpha)
     ADD ESP,0x4                         ; 0047d028
     MOV EAX,ESP                         ; 0047d02b
     PUSH EAX                            ; 0047d02d

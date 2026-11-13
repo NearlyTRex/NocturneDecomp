@@ -1,14 +1,12 @@
 // Name: core_dog.cpp_CEtherealDog_dtor_FUN_00463810
 // Address: 00463810
 // Address Range: [[00463810, 00463894]]
-// Convention: unknown
-// Signature: CEtherealDog * core_dog_cpp_CEtherealDog_dtor_FUN_00463810(CEtherealDog *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CEtherealDog * __cdecl core_dog_cpp_CEtherealDog_dtor_FUN_00463810(CEtherealDog *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CEtherealDog * core_dog_cpp_CEtherealDog_dtor_FUN_00463810(CEtherealDog *this_ptr,uint flags)
+CEtherealDog * __cdecl core_dog_cpp_CEtherealDog_dtor_FUN_00463810(CEtherealDog *this_ptr,uint flags)
 
 {
   int iVar1;

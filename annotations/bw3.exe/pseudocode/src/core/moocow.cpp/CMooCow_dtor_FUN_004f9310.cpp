@@ -1,14 +1,12 @@
 // Name: core_moocow.cpp_CMooCow_dtor_FUN_004f9310
 // Address: 004f9310
 // Address Range: [[004f9310, 004f9394]]
-// Convention: unknown
-// Signature: CMooCow * core_moocow_cpp_CMooCow_dtor_FUN_004f9310(CMooCow *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CMooCow * __cdecl core_moocow_cpp_CMooCow_dtor_FUN_004f9310(CMooCow *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CMooCow * core_moocow_cpp_CMooCow_dtor_FUN_004f9310(CMooCow *this_ptr,uint flags)
+CMooCow * __cdecl core_moocow_cpp_CMooCow_dtor_FUN_004f9310(CMooCow *this_ptr,uint flags)
 
 {
   int iVar1;

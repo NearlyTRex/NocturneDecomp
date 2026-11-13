@@ -1,14 +1,12 @@
 // Name: support_trstream.cpp_CInStreamMemory_dtor_FUN_005a11e0
 // Address: 005a11e0
 // Address Range: [[005a11e0, 005a123c]]
-// Convention: unknown
-// Signature: CInStreamMemory * support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0(CInStreamMemory *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CInStreamMemory * __cdecl support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0(CInStreamMemory *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CInStreamMemory * support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0(CInStreamMemory *this_ptr,uint flags)
+CInStreamMemory * __cdecl support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0(CInStreamMemory *this_ptr,uint flags)
 
 {
   CInStreamMemory *pCVar1;
@@ -19,9 +17,9 @@ CInStreamMemory * support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0(CInStre
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  this_ptr->vtable = &g_CInStreamMemoryVTable;
+  (this_ptr->base).vtable = &g_CInStreamMemoryVTable;
   support_trstream_cpp_CInStreamMemory_close_FUN_005a1400(this_ptr);
-  pCVar1 = (CInStreamMemory *)support_trstream_cpp_FUN_0059f550(this_ptr,1);
+  pCVar1 = (CInStreamMemory *)support_trstream_cpp_CInStream_dtor_FUN_0059f550(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

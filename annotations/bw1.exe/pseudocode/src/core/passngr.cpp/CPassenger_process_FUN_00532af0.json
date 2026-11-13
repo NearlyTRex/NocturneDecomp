@@ -65,7 +65,7 @@
     {
       "addr": "0051b740",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_0051b740"
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740"
     },
     {
       "addr": "00524270",
@@ -266,7 +266,7 @@
       "line": 70,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar9 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar8 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -274,7 +274,7 @@
       "line": 71,
       "match": "&stack0xffffffe4",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe4 + (uint)bVar9 * -8);",
+      "text": "*(uint *)(&stack0xffffffe4 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
@@ -282,7 +282,7 @@
       "line": 72,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -290,7 +290,7 @@
       "line": 73,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
+      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
@@ -298,7 +298,7 @@
       "line": 70,
       "match": "(int)&stack0xffffffd8",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar9 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar8 * -8) =",
       "type": "pointer_truncation"
     },
     {
@@ -306,15 +306,15 @@
       "line": 72,
       "match": "(int)&stack0xffffffdc",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1d2c900 assigned to bare local `pCVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x1d2c900 assigned to bare local `this_ptr_01`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_01` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 38,
       "match": "0x1d2c900",
       "severity": "moderate",
-      "text": "pCVar6 = 0x01D2C900;",
+      "text": "this_ptr_01 = 0x01D2C900;",
       "type": "raw_address_constant"
     },
     {
@@ -338,7 +338,7 @@
       "line": 70,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar9 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar8 * -8) =",
       "type": "pointer_cast"
     },
     {
@@ -346,7 +346,7 @@
       "line": 72,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
       "type": "pointer_cast"
     }
   ],

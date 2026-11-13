@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CConstructRed * core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConstructRed *this_ptr)
+; CConstructRed * __cdecl core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConstructRed *this_ptr)
 ;
 ; Parameters:
 ; CConstructRed *  Stack[0x4]:4   this_ptr

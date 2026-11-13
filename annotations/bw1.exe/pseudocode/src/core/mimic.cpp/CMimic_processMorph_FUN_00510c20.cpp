@@ -30,7 +30,7 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00510c20(CMimic *this_ptr,fl
     core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
               (0x01D2C900,this_ptr->morph_target_actor);
     this_ptr->morph_target_actor = (CDemonActor *)0x0;
-    core_mission_cpp_FUN_0051b740(0x01D2C900,this_ptr,1);
+    core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(0x01D2C900,this_ptr,1);
   }
   else {
     local_18[0] = delta_time;

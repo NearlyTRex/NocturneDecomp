@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   crt_unknown.c_FUN_005aaed4 at 005aafaf
-;   shape_edittool.cpp_FUN_0047dd1e at 0047e090
+;   shape_edittool.cpp_FUN_0047dd20 at 0047e090
 ;
 ; Referenced Globals:
 ;   void* PTR_SetCurrentDirectoryA_005b3628 = 001b4146

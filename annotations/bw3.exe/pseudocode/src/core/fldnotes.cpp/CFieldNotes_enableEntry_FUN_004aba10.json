@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 163,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 53,
-    "suspect_count": 9,
+    "pseudocode_lines": 52,
+    "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 163
+    "total_lines": 162
   },
   "cross_references": [
     {
@@ -35,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004aba10",
-    "signature": "void __cdecl core_fldnotes_cpp_CFieldNotes_enableEntry_FUN_004aba10(CFieldNotes *this_ptr,char *param_2)"
+    "signature": "void __cdecl core_fldnotes_cpp_CFieldNotes_enableEntry_FUN_004aba10(CFieldNotes *this_ptr,char *entry_name)"
   },
   "function_calls": [
     {
@@ -202,7 +201,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "entry_name",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -225,22 +224,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fldnotes_cpp_CFieldNotes_enableEntry_FUN_004aba10(CFieldNotes *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a9c30(this_ptr_00,param_2);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -268,7 +251,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 48,
       "match": "DAT_005fe374",
       "severity": "mild",
       "text": "DAT_005fe374 = 1;",
@@ -276,7 +259,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 54,
       "match": "DAT_005fe374",
       "severity": "mild",
       "text": "DAT_005fe374 = 1;",

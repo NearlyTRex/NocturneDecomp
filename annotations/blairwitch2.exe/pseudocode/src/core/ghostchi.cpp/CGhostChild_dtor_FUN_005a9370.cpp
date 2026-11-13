@@ -1,15 +1,14 @@
 // Name: core_ghostchi.cpp_CGhostChild_dtor_FUN_005a9370
 // Address: 005a9370
 // Address Range: [[005a9370, 005a9430]]
-// Convention: unknown
-// Signature: CGhostChild * core_ghostchi_cpp_CGhostChild_dtor_FUN_005a9370(CGhostChild *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CGhostChild * __cdecl core_ghostchi_cpp_CGhostChild_dtor_FUN_005a9370(CGhostChild *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CGhostChild * core_ghostchi_cpp_CGhostChild_dtor_FUN_005a9370(CGhostChild *this_ptr,uint flags)
+CGhostChild * __cdecl core_ghostchi_cpp_CGhostChild_dtor_FUN_005a9370(CGhostChild *this_ptr,uint flags)
 
 {
   CSimpleParticleSystem *this_ptr_00;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flintlck_cpp_factoryFuncFlintlock_FUN_004ae7b0(void)
+; CFlintlock * __cdecl core_flintlck_cpp_factoryFuncFlintlock_FUN_004ae7b0(void)
 ;
 ;
 ; Called Functions:

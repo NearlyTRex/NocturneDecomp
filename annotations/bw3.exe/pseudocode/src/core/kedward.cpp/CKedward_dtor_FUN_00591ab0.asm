@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CKedward * core_kedward_cpp_CKedward_dtor_FUN_00591ab0(CKedward *this_ptr,uint flags)
+; CKedward * __cdecl core_kedward_cpp_CKedward_dtor_FUN_00591ab0(CKedward *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CKedward *       Stack[0x4]:4   this_ptr

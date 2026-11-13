@@ -1,0 +1,172 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 74,
+    "complexity_score": 72,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 42,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [
+    {
+      "addr": "005159c0",
+      "from_addr": "00515a55",
+      "name": "engine_mini3d.cpp_clipAndFillPolygon_FUN_005159c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00515850",
+      "from_addr": "00515912",
+      "name": "engine_mini3d.cpp_clipBatchTriangle_FUN_00515850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00517240",
+      "from_addr": "00517333",
+      "name": "engine_mini3d.cpp_drawSurfaceTriangle_FUN_00517240",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00515530",
+    "address_range": [
+      [
+        "00515530",
+        "005155c2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_clampClippedPolygon_FUN_00515530",
+    "signature": "void __cdecl engine_mini3d_cpp_clampClippedPolygon_FUN_00515530(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d227f8",
+      "name": "DAT_01d227f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d247fc",
+      "name": "DAT_01d247fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24804",
+      "name": "DAT_01d24804",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2483c",
+      "name": "DAT_01d2483c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24840",
+      "name": "DAT_01d24840",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24844",
+      "name": "DAT_01d24844",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.814814814814815,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 7,
+      "BRANCH": 4,
+      "CBRANCH": 7,
+      "COPY": 122,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_NAN": 8,
+      "FLOAT_NEG": 1,
+      "INT_ADD": 17,
+      "INT_AND": 38,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 16,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 22,
+      "INT_OR": 20,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "INT_ZEXT": 16,
+      "LOAD": 16,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 368
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f67b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f0d00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_01d247fc",
+      "severity": "mild",
+      "text": "pfVar3 = (float *)&DAT_01d247fc;",
+      "type": "undefined_data"
+    }
+  ]
+}

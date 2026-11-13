@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   message_text
 ;
 ; XREF[3]:
-;   core_dtrace.cpp_FUN_004725fe at 00472617
+;   core_dtrace.cpp_FUN_00472600 at 00472617
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0 at 0050b951
 ;   engine_pod.cpp_FUN_0051aa80 at 0051abd5
 ;

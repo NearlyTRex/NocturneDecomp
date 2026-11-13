@@ -17,7 +17,7 @@ void __cdecl core_weaver_cpp_CRobin_processStates_FUN_005a60d0(CRobin *this_ptr,
     core_muzzle_cpp_FUN_0059d650(&(this_ptr->base).base.state_machine,"MeleeAttack");
     return;
   }
-  core_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
+  core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0((CBasicEnemy *)this_ptr,delta_time,mode);
   if ((mode == 1) &&
      (iVar1 = core_muzzle_cpp_FUN_0059daa0
                         (&(this_ptr->base).base.state_machine,"MeleeAttack"), iVar1 != 0))

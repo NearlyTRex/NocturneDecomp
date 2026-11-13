@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1011,
-    "complexity_score": 2079,
+    "complexity_score": 2076,
     "cross_reference_count": 4,
     "function_call_count": 19,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 484,
+    "pseudocode_lines": 481,
     "suspect_count": 152,
     "suspect_types": [
       "alloc_magic_size",
@@ -26,7 +26,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1495
+    "total_lines": 1492
   },
   "cross_references": [
     {
@@ -42,9 +42,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053cc5c",
+      "addr": "0053cc60",
       "from_addr": "0053cca0",
-      "name": "engine_pod.cpp_FUN_0053cc5c",
+      "name": "engine_pod.cpp_FUN_0053cc60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -276,20 +276,6 @@
         "stack_params": 3
       },
       {
-        "call_addr": "0053cca0",
-        "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_0053cc5c",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
         "call_addr": "0053ce71",
         "call_type": "direct",
         "caller": "engine_pod.cpp_FUN_0053ce50",
@@ -299,6 +285,20 @@
         "reg_params": [
           "EAX",
           "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0053cca0",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_0053cc60",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX"
         ],
         "stack_bytes": 12,
         "stack_params": 3
@@ -896,7 +896,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 132,
       "match": "param_1",
       "severity": "mild",
       "text": "*(ulong *)((int)&param_1->directory_entries->name + local_2c) = uVar9;",
@@ -904,7 +904,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 144,
+      "line": 143,
       "match": "param_1",
       "severity": "mild",
       "text": "local_28 = (param_1->file_count - local_20) * 0x30 + uVar9;",
@@ -912,7 +912,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 145,
+      "line": 144,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar2 = (char *)realloc(param_1->file_data_buffer,local_28);",
@@ -920,10 +920,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 146,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->file_data_buffer = pcVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 149,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar12 = param_1->file_data_buffer +",
       "type": "unnamed_param"
     },
     {
@@ -931,20 +939,12 @@
       "line": 150,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar12 = param_1->file_data_buffer +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 151,
-      "match": "param_1",
-      "severity": "mild",
       "text": "*(int *)((int)&param_1->directory_entries->name + local_2c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 161,
+      "line": 160,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)&param_1->directory_entries->size + local_2c) = local_94;",
@@ -952,7 +952,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 161,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)&param_1->directory_entries->offset + local_2c) = local_90;",
@@ -960,7 +960,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 163,
+      "line": 162,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)&param_1->directory_entries->checksum + local_2c) = local_88;",
@@ -968,7 +968,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 166,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)&param_1->directory_entries->timestamp + local_2c) = param_1->timestamp",
@@ -976,7 +976,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 166,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)&param_1->directory_entries->timestamp + local_2c) = param_1->timestamp",
@@ -984,7 +984,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 169,
+      "line": 168,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_20 < param_1->file_count);",
@@ -992,7 +992,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 171,
+      "line": 170,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar14 = SBORROW4(uVar9,local_28);",
@@ -1000,7 +1000,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 179,
+      "line": 178,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar14) != 0) {",
@@ -1008,7 +1008,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 182,
+      "line": 181,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar2 = (char *)realloc(param_1->file_data_buffer,uVar9);",
@@ -1016,7 +1016,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 183,
+      "line": 182,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->file_data_buffer = pcVar2;",
@@ -1024,7 +1024,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 191,
+      "line": 190,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->file_count) {",
@@ -1032,7 +1032,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 194,
+      "line": 193,
       "match": "param_1",
       "severity": "mild",
       "text": "piVar4 = (int *)((int)&param_1->directory_entries->name + iVar8);",
@@ -1040,7 +1040,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 196,
+      "line": 195,
       "match": "param_1",
       "severity": "mild",
       "text": "*piVar4 = (int)(param_1->file_data_buffer + *piVar4);",
@@ -1048,7 +1048,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 199,
+      "line": 198,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar6 < param_1->file_count);",
@@ -1056,7 +1056,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 202,
+      "line": 201,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directory_entries,param_1->file_count,0x14,",
@@ -1064,7 +1064,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 202,
+      "line": 201,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->directory_entries,param_1->file_count,0x14,",
@@ -1072,7 +1072,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 219,
+      "line": 217,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar2 = param_1->description;",
@@ -1080,7 +1080,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 220,
+      "line": 218,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->pod_format_version = 300;",
@@ -1088,7 +1088,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 231,
+      "line": 229,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar2 = param_1->author_info;",
@@ -1096,7 +1096,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 242,
+      "line": 240,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar2 = param_1->copyright_info;",
@@ -1104,7 +1104,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 252,
+      "line": 250,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->file_count = local_460;",
@@ -1112,7 +1112,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 253,
+      "line": 251,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->audit_count = local_45c;",
@@ -1120,7 +1120,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 254,
+      "line": 252,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->dependency_count = local_3a4;",
@@ -1128,7 +1128,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 255,
+      "line": 253,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = param_1->file_count;",
@@ -1136,7 +1136,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 256,
+      "line": 254,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->mount_priority = local_454;",
@@ -1144,10 +1144,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 259,
+      "line": 257,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->directory_entries = pCVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 275,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar11 = param_1->file_count * 0x14;",
       "type": "unnamed_param"
     },
     {
@@ -1155,23 +1163,23 @@
       "line": 277,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar11 = param_1->file_count * 0x14;",
+      "text": "(&local_84,param_1->directory_entries,uVar11);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 279,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&local_84,&param_1->directory_entries->name,uVar11);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 282,
+      "line": 280,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->file_count) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 283,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while ((int)uVar7 < param_1->file_count);",
       "type": "unnamed_param"
     },
     {
@@ -1179,20 +1187,12 @@
       "line": 285,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while ((int)uVar7 < param_1->file_count);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 287,
-      "match": "param_1",
-      "severity": "mild",
       "text": "if (((int)local_3a8 < param_1->file_count) ||",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 288,
+      "line": 286,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->file_count * 0x100 < (int)local_3a8)) goto LAB_0053b6fe;",
@@ -1200,7 +1200,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 290,
+      "line": 288,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->file_data_buffer = pcVar2;",
@@ -1208,7 +1208,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 296,
+      "line": 294,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->dependency_records_offset = uVar7;",
@@ -1216,7 +1216,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 297,
+      "line": 295,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->total_file_size =",
@@ -1224,7 +1224,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 298,
+      "line": 296,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->dependency_records_offset + param_1->dependency_count * 0x108;",
@@ -1232,7 +1232,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 298,
+      "line": 296,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->dependency_records_offset + param_1->dependency_count * 0x108;",
@@ -1240,7 +1240,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 310,
+      "line": 308,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar2 = param_1->description;",
@@ -1248,7 +1248,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 311,
+      "line": 309,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->pod_format_version = 200;",
@@ -1256,7 +1256,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 321,
+      "line": 319,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->file_count = local_130;",
@@ -1264,7 +1264,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 322,
+      "line": 320,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = param_1->file_count;",
@@ -1272,7 +1272,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 323,
+      "line": 321,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->audit_count = local_12c;",
@@ -1280,7 +1280,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 326,
+      "line": 324,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->directory_entries = pCVar3;",
@@ -1288,7 +1288,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 328,
+      "line": 326,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar11 = param_1->file_count * 0x14;",
@@ -1296,7 +1296,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 333,
+      "line": 330,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->file_count) {",
@@ -1304,7 +1304,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 336,
+      "line": 333,
       "match": "param_1",
       "severity": "mild",
       "text": "} while ((int)uVar7 < param_1->file_count);",
@@ -1312,7 +1312,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 338,
+      "line": 335,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = param_1->file_count;",
@@ -1320,7 +1320,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 339,
+      "line": 336,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar9 = (param_1->directory_entries->offset - 0x60) + iVar6 * -0x14;",
@@ -1328,7 +1328,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 342,
+      "line": 339,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->file_data_buffer = pcVar2;",
@@ -1336,7 +1336,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 347,
+      "line": 344,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = param_1->file_count + -1;",
@@ -1344,7 +1344,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 348,
+      "line": 345,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->total_file_size =",
@@ -1352,7 +1352,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 349,
+      "line": 346,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->directory_entries[iVar6].offset +",
@@ -1360,7 +1360,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 350,
+      "line": 347,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->directory_entries[iVar6].size;",
@@ -1368,7 +1368,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 357,
+      "line": 354,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->pod_format_version = 1;",
@@ -1376,7 +1376,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 361,
+      "line": 358,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar2 = param_1->description;",
@@ -1384,7 +1384,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 362,
+      "line": 359,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->file_count = local_128;",
@@ -1392,7 +1392,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 372,
+      "line": 369,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = param_1->file_count;",
@@ -1400,7 +1400,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 375,
+      "line": 372,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->directory_entries = pCVar3;",
@@ -1408,7 +1408,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 380,
+      "line": 377,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1->file_count) {",
@@ -1416,7 +1416,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 386,
+      "line": 383,
       "match": "param_1",
       "severity": "mild",
       "text": "*(ulong *)((int)&param_1->directory_entries->name + local_14) = uVar9;",
@@ -1424,7 +1424,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 397,
+      "line": 394,
       "match": "param_1",
       "severity": "mild",
       "text": "local_24 = (param_1->file_count - local_18) * 0x30 + uVar9;",
@@ -1432,7 +1432,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 399,
+      "line": 396,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->file_data_buffer,local_24);",
@@ -1440,7 +1440,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 401,
+      "line": 398,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->file_data_buffer = pcVar2;",
@@ -1448,7 +1448,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 409,
+      "line": 406,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar12 = param_1->file_data_buffer +",
@@ -1456,7 +1456,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 410,
+      "line": 407,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)((int)&param_1->directory_entries->name + local_14);",
@@ -1464,7 +1464,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 420,
+      "line": 417,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)((int)&param_1->directory_entries->size + local_14) = local_38;",
@@ -1472,7 +1472,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 421,
+      "line": 418,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)&param_1->directory_entries->offset + local_14) = local_34;",
@@ -1480,7 +1480,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 422,
+      "line": 419,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)&param_1->directory_entries->checksum + local_14) = 0;",
@@ -1488,7 +1488,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 424,
+      "line": 421,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)&param_1->directory_entries->timestamp + local_14) =",
@@ -1496,7 +1496,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 425,
+      "line": 422,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->timestamp;",
@@ -1504,7 +1504,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 428,
+      "line": 425,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_18 < param_1->file_count);",
@@ -1512,7 +1512,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 430,
+      "line": 427,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar14 = SBORROW4(uVar9,local_24);",
@@ -1520,7 +1520,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 471,
+      "line": 468,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_pod_cpp_CPodFile_cleanup_FUN_0053be30(param_1);",
@@ -1528,7 +1528,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 472,
+      "line": 469,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != (char *)0x0) {",
@@ -1536,7 +1536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 476,
+      "line": 473,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = cVar1;",
@@ -1544,7 +1544,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 480,
+      "line": 477,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3[1] = cVar1;",
@@ -1552,7 +1552,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 481,
+      "line": 478,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = param_3 + 2;",
@@ -1560,7 +1560,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 481,
+      "line": 478,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = param_3 + 2;",
@@ -1568,7 +1568,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 133,
+      "line": 132,
       "match": "(int)&param_1->directory_entries->name",
       "severity": "moderate",
       "text": "*(ulong *)((int)&param_1->directory_entries->name + local_2c) = uVar9;",
@@ -1576,7 +1576,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 151,
+      "line": 150,
       "match": "(int)&param_1->directory_entries->name",
       "severity": "moderate",
       "text": "*(int *)((int)&param_1->directory_entries->name + local_2c);",
@@ -1584,7 +1584,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 161,
+      "line": 160,
       "match": "(int)&param_1->directory_entries->size",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->size + local_2c) = local_94;",
@@ -1592,7 +1592,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->offset` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 162,
+      "line": 161,
       "match": "(int)&param_1->directory_entries->offset",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->offset + local_2c) = local_90;",
@@ -1600,7 +1600,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->checksum` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 163,
+      "line": 162,
       "match": "(int)&param_1->directory_entries->checksum",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->checksum + local_2c) = local_88;",
@@ -1608,7 +1608,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->timestamp` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 166,
+      "line": 165,
       "match": "(int)&param_1->directory_entries->timestamp",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->timestamp + local_2c) = param_1->timestamp",
@@ -1616,7 +1616,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 194,
+      "line": 193,
       "match": "(int)&param_1->directory_entries->name",
       "severity": "moderate",
       "text": "piVar4 = (int *)((int)&param_1->directory_entries->name + iVar8);",
@@ -1624,7 +1624,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 386,
+      "line": 383,
       "match": "(int)&param_1->directory_entries->name",
       "severity": "moderate",
       "text": "*(ulong *)((int)&param_1->directory_entries->name + local_14) = uVar9;",
@@ -1632,7 +1632,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->name` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 410,
+      "line": 407,
       "match": "(int)&param_1->directory_entries->name",
       "severity": "moderate",
       "text": "*(int *)((int)&param_1->directory_entries->name + local_14);",
@@ -1640,7 +1640,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 420,
+      "line": 417,
       "match": "(int)&param_1->directory_entries->size",
       "severity": "moderate",
       "text": "*(int *)((int)&param_1->directory_entries->size + local_14) = local_38;",
@@ -1648,7 +1648,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->offset` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 421,
+      "line": 418,
       "match": "(int)&param_1->directory_entries->offset",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->offset + local_14) = local_34;",
@@ -1656,7 +1656,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->checksum` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 422,
+      "line": 419,
       "match": "(int)&param_1->directory_entries->checksum",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->checksum + local_14) = 0;",
@@ -1664,7 +1664,7 @@
     },
     {
       "description": "Pointer value `&param_1->directory_entries->timestamp` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 424,
+      "line": 421,
       "match": "(int)&param_1->directory_entries->timestamp",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->timestamp + local_14) =",
@@ -1688,7 +1688,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 152,
+      "line": 151,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1696,7 +1696,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 221,
+      "line": 219,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1704,7 +1704,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 232,
+      "line": 230,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1712,7 +1712,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 243,
+      "line": 241,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1720,7 +1720,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 265,
+      "line": 263,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1728,7 +1728,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 312,
+      "line": 310,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1736,7 +1736,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 363,
+      "line": 360,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1744,7 +1744,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 411,
+      "line": 408,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1752,7 +1752,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 440,
+      "line": 437,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1760,7 +1760,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 458,
+      "line": 455,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1768,7 +1768,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 474,
+      "line": 471,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1784,7 +1784,7 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 179,
+      "line": 178,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar14) != 0) {",
@@ -1792,7 +1792,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 133,
+      "line": 132,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(ulong *)((int)&param_1->directory_entries->name + local_2c) = uVar9;",
@@ -1800,7 +1800,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 151,
+      "line": 150,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&param_1->directory_entries->name + local_2c);",
@@ -1808,7 +1808,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 161,
+      "line": 160,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->size + local_2c) = local_94;",
@@ -1816,7 +1816,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 162,
+      "line": 161,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->offset + local_2c) = local_90;",
@@ -1824,7 +1824,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 163,
+      "line": 162,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->checksum + local_2c) = local_88;",
@@ -1832,7 +1832,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 166,
+      "line": 165,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->timestamp + local_2c) = param_1->timestamp",
@@ -1840,7 +1840,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 194,
+      "line": 193,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar4 = (int *)((int)&param_1->directory_entries->name + iVar8);",
@@ -1848,7 +1848,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 386,
+      "line": 383,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(ulong *)((int)&param_1->directory_entries->name + local_14) = uVar9;",
@@ -1856,7 +1856,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 410,
+      "line": 407,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&param_1->directory_entries->name + local_14);",
@@ -1864,7 +1864,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 420,
+      "line": 417,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&param_1->directory_entries->size + local_14) = local_38;",
@@ -1872,7 +1872,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 421,
+      "line": 418,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->offset + local_14) = local_34;",
@@ -1880,7 +1880,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 422,
+      "line": 419,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->checksum + local_14) = 0;",
@@ -1888,7 +1888,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 424,
+      "line": 421,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&param_1->directory_entries->timestamp + local_14) =",
@@ -1896,7 +1896,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 136,
+      "line": 135,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1904,7 +1904,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 389,
+      "line": 386,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1920,7 +1920,7 @@
     },
     {
       "description": "Allocation size hardcodes 0x14 == sizeof(CPodDirectoryEntry). Replace the magic with sizeof(CPodDirectoryEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 258,
+      "line": 256,
       "match": "(CPodDirectoryEntry*) alloc stride 0x14",
       "severity": "moderate",
       "text": "(CPodDirectoryEntry *)malloc(iVar6 * 0x14)",
@@ -1928,7 +1928,7 @@
     },
     {
       "description": "Allocation size hardcodes 0x14 == sizeof(CPodDirectoryEntry). Replace the magic with sizeof(CPodDirectoryEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 325,
+      "line": 323,
       "match": "(CPodDirectoryEntry*) alloc stride 0x14",
       "severity": "moderate",
       "text": "(CPodDirectoryEntry *)malloc(iVar6 * 0x14)",
@@ -1936,7 +1936,7 @@
     },
     {
       "description": "Allocation size hardcodes 0x14 == sizeof(CPodDirectoryEntry). Replace the magic with sizeof(CPodDirectoryEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 374,
+      "line": 371,
       "match": "(CPodDirectoryEntry*) alloc stride 0x14",
       "severity": "moderate",
       "text": "(CPodDirectoryEntry *)malloc(iVar6 * 0x14)",
@@ -1944,7 +1944,7 @@
     },
     {
       "description": "_qsort element width is the literal 0x14 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
-      "line": 201,
+      "line": 200,
       "match": "_qsort",
       "severity": "moderate",
       "text": "_qsort",

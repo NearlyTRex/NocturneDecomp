@@ -9,7 +9,7 @@
 void __cdecl core_stranger_cpp_CStranger_archive_FUN_0056b600(CStranger *this_ptr)
 
 {
-  core_hero_cpp_FUN_004ce590(this_ptr);
+  core_hero_cpp_CHero_archive_FUN_004ce590(&this_ptr->base);
   if ((1 < g_CStrangerClassVersion) && (g_CStrangerClassVersion < 5)) {
     core_actor_cpp_archiveActor_FUN_0040b9e0
               (&(this_ptr->base).object_to_pick_up,"@objectToPickUp" + 1);

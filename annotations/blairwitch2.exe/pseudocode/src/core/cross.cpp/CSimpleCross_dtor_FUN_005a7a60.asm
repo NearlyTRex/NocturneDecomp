@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSimpleCross * core_cross_cpp_CSimpleCross_dtor_FUN_005a7a60(CSimpleCross *this_ptr,uint flags)
+; CSimpleCross * __cdecl core_cross_cpp_CSimpleCross_dtor_FUN_005a7a60(CSimpleCross *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSimpleCross *   Stack[0x4]:4   this_ptr

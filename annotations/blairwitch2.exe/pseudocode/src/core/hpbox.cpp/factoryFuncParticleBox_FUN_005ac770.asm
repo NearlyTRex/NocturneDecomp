@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hpbox_cpp_factoryFuncParticleBox_FUN_005ac770(void)
+; CParticleBox * __cdecl core_hpbox_cpp_factoryFuncParticleBox_FUN_005ac770(void)
 ;
 ;
 ; Called Functions:

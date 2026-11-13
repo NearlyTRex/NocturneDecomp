@@ -5,14 +5,15 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CLever.h"
 #include "types/classes/CLightCone.h"
 #include "types/classes/CLightStaff.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMelee.h"
 #include "types/classes/CMini3D.h"
+#include "types/classes/COutStream.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
@@ -26,9 +27,9 @@
 // =============================================================================
 
 void core_level_cpp_FUN_004e0000(int *param_1,undefined4 param_2,int param_3);
-void core_lever_cpp_staticInit_FUN_004e00a0(void);
+void __cdecl core_lever_cpp_staticInit_FUN_004e00a0(void);
 CLever * __cdecl core_lever_cpp_factoryFuncLever_FUN_004e00d0(void);
-CDemonActorType * core_lever_cpp_CLever_getActorType_FUN_004e00f0(CLever *this_ptr);
+CDemonActorType * __cdecl core_lever_cpp_CLever_getActorType_FUN_004e00f0(CLever *this_ptr);
 CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_004e0100(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_setup_FUN_004e01d0(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_process_FUN_004e0250(CLever *this_ptr,float delta_time);
@@ -42,26 +43,26 @@ ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_004e0a10(CLeve
 undefined4 core_lever_cpp_FUN_004e0a30(int param_1,undefined4 param_2);
 CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_004e0ab0(CLever *this_ptr,uint flags);
 void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004e0b10(int light_level);
-int __cdecl engine_light_cpp_getAmbientLightLevel_FUN_004e0b3e(void);
+int __cdecl engine_light_cpp_getAmbientLightLevel_FUN_004e0b40(void);
 void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004e0b50(int dir_x,int dir_y,int dir_z);
 void engine_light_cpp_FUN_004e0b80(undefined4 param_1);
 int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004e0bb0(int world_x,int world_y,int world_z);
 int __cdecl engine_light_cpp_calculateLighting_FUN_004e0e00(int normal_x,int normal_y,int normal_z);
 void __cdecl engine_light_cpp_calculateAndStoreVertexLight_FUN_004e0ed0(int vertex_index,CVector3i *vertex_position);
-void core_lightsta_cpp_staticInit_FUN_004e0f10(void);
-void core_lightsta_cpp_factoryFuncLightStaff_FUN_004e0f40(void);
-CDemonActorType * core_lightsta_cpp_CLightStaff_getActorType_FUN_004e0f60(CLightStaff *this_ptr);
-CLightStaff * core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaff *this_ptr);
-undefined4 core_lightsta_cpp_FUN_004e1070(CCharacter *param_1);
+void __cdecl core_lightsta_cpp_staticInit_FUN_004e0f10(void);
+CLightStaff * __cdecl core_lightsta_cpp_factoryFuncLightStaff_FUN_004e0f40(void);
+CDemonActorType * __cdecl core_lightsta_cpp_CLightStaff_getActorType_FUN_004e0f60(CLightStaff *this_ptr);
+CLightStaff * __cdecl core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaff *this_ptr);
+undefined4 __cdecl core_lightsta_cpp_CLightStaff_fire_FUN_004e1070(CLightStaff *this_ptr);
 void __cdecl core_lightsta_cpp_CLightStaff_process_FUN_004e2050(CLightStaff *this_ptr,float delta_time);
 float __cdecl core_lightsta_cpp_CLightStaff_getDamage_FUN_004e3db0(CLightStaff *this_ptr);
 CVector3f * __cdecl core_lightsta_cpp_CLightStaff_getMuzzlePoint_FUN_004e3de0(CLightStaff *this_ptr,CVector3f *out_point);
 void __cdecl core_lightsta_cpp_CLightStaff_setWeaponState_FUN_004e3e60(CLightStaff *this_ptr,int weapon_state);
 void __cdecl core_lightsta_cpp_CLightStaff_setup_FUN_004e3eb0(CLightStaff *this_ptr);
-CLightStaff * core_lightsta_cpp_CLightStaff_dtor_FUN_004e3f10(CLightStaff *this_ptr,uint flags);
-void core_litecone_cpp_staticInit_FUN_004e3f60(void);
+CLightStaff * __cdecl core_lightsta_cpp_CLightStaff_dtor_FUN_004e3f10(CLightStaff *this_ptr,uint flags);
+void __cdecl core_litecone_cpp_staticInit_FUN_004e3f60(void);
 CLightCone * __cdecl core_litecone_cpp_factoryFuncLightCone_FUN_004e3f90(void);
-CDemonActorType * core_litecone_cpp_CLightCone_getActorType_FUN_004e3fb0(CLightCone *this_ptr);
+CDemonActorType * __cdecl core_litecone_cpp_CLightCone_getActorType_FUN_004e3fb0(CLightCone *this_ptr);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004e3fc0(CLightCone *this_ptr);
 void __cdecl core_litecone_cpp_CLightCone_setup_FUN_004e4060(CLightCone *this_ptr);
 void __cdecl core_litecone_cpp_CLightCone_process_FUN_004e4070(CLightCone *this_ptr,float delta_time);
@@ -99,11 +100,11 @@ void __esi engine_matrix_c_getCameraOrigin_FUN_004e6a90(CVector3i *output);
 void __esi engine_matrix_c_getCameraRotation_FUN_004e6ac0(CVector3i *output);
 void __cdecl engine_matrix_c_pushViewport_FUN_004e6af0(int x,int y,int width,int height);
 void __cdecl engine_matrix_c_popViewport_FUN_004e6c50(void);
-void engine_matrix_c_FUN_004e6e0e(int param_1,int param_2,int param_3);
+void engine_matrix_c_FUN_004e6e10(void);
 void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_004e6ec0(void);
-void core_melee_cpp_staticInit_FUN_004e6f30(void);
+void __cdecl core_melee_cpp_staticInit_FUN_004e6f30(void);
 CMelee * __cdecl core_melee_cpp_factoryFuncMelee_FUN_004e6f60(void);
-CDemonActorType * core_melee_cpp_CMelee_getActorType_FUN_004e6f80(CMelee *this_ptr);
+CDemonActorType * __cdecl core_melee_cpp_CMelee_getActorType_FUN_004e6f80(CMelee *this_ptr);
 CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_004e6f90(CMelee *this_ptr);
 void __cdecl core_melee_cpp_CMelee_archive_FUN_004e70e0(CMelee *this_ptr);
 int __cdecl core_melee_cpp_CMelee_fire_FUN_004e7200(CMelee *this_ptr);
@@ -117,7 +118,7 @@ void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004e73b0(CMelee *th
 void __cdecl core_melee_cpp_CMelee_process_FUN_004e73e0(CMelee *this_ptr,float delta_time);
 void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_004e74b0(CMelee *this_ptr,int weapon_state);
 CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_004e74d0(CMelee *this_ptr,uint flags);
-void core_melee_cpp_FUN_004e7540(undefined4 param_1);
+void core_melee_cpp_FUN_004e7540(COutStream *param_1);
 void __cdecl core_menu_cpp_staticInit_FUN_004e7610(void);
 void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004e76d0(int x_center,int y_top,int height_half);
 int __cdecl core_menu_cpp_FUN_004e7860(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
@@ -126,7 +127,7 @@ void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004e80f0(int *sensitivity_
 void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004e8380(char *message_text);
 void __cdecl core_menu_cpp_showCalibrationTest_FUN_004e84d0(void);
 void __cdecl core_menu_cpp_FUN_004e85a0(void);
-undefined4 core_menu_cpp_FUN_004e8f2e(void);
+undefined4 core_menu_cpp_FUN_004e8f30(void);
 void __cdecl core_menu_cpp_FUN_004e8f80(void);
 void __cdecl core_menu_cpp_FUN_004e94f0(void);
 void __cdecl core_menu_cpp_FUN_004ea280(int initialize_systems);
@@ -136,75 +137,74 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004eaa60(EInputCodeType key_c
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004eacb0(EInputCodeType *key_code_ptr,char *description);
 int core_menu_cpp_FUN_004eadf0(void);
 void core_menu_cpp_FUN_004eae80(void);
-void engine_mini3d_cpp_staticInit_FUN_004ec6f0(void);
-CMini3D * engine_mini3d_cpp_CMini3D_ctor_FUN_004ec730(CMini3D *this_ptr);
-CMini3D * engine_mini3d_cpp_CMini3D_dtor_FUN_004ec7f0(CMini3D *this_ptr,uint flags);
-undefined4 engine_mini3d_cpp_FUN_004ec7fe(void);
-undefined4 engine_mini3d_cpp_FUN_004ec81e(void);
-void engine_mini3d_cpp_FUN_004ec8ce(void);
-void engine_mini3d_cpp_FUN_004ec930(void);
-void engine_mini3d_cpp_FUN_004ec940(void);
-undefined4 engine_mini3d_cpp_FUN_004ec94e(void);
-undefined4 engine_mini3d_cpp_FUN_004ec96e(void);
-void engine_mini3d_cpp_FUN_004ec98e(undefined4 *param_1);
-void engine_mini3d_cpp_FUN_004ec9b0(undefined4 param_1);
-void engine_mini3d_cpp_FUN_004ec9c0(float param_1);
-void engine_mini3d_cpp_FUN_004eca10(float *param_1);
-void engine_mini3d_cpp_FUN_004eceb0(float *param_1);
-void engine_mini3d_cpp_FUN_004ecf60(void);
-float engine_mini3d_cpp_FUN_004ecf90(void);
-void engine_mini3d_cpp_FUN_004ed020(float param_1,float param_2,float param_3,float param_4);
-void engine_mini3d_cpp_FUN_004ed150(float *param_1,float *param_2,float *param_3,float *param_4);
-void engine_mini3d_cpp_FUN_004ed1de(int param_1,float *param_2);
-void engine_mini3d_cpp_FUN_004ed520(float *param_1,float *param_2);
-void engine_mini3d_cpp_FUN_004ed71e(undefined4 *param_1);
-void engine_mini3d_cpp_FUN_004ed790(void);
-void engine_mini3d_cpp_FUN_004ed7fc(void);
-void engine_mini3d_cpp_FUN_004ed870(float *param_1);
-void engine_mini3d_cpp_FUN_004ed910(void);
-void engine_mini3d_cpp_FUN_004ed980(undefined4 param_1);
-void engine_mini3d_cpp_FUN_004ed9d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void engine_mini3d_cpp_FUN_004eda20(void);
-void engine_mini3d_cpp_FUN_004eda40(undefined4 param_1,undefined4 param_2);
-void engine_mini3d_cpp_FUN_004eda6e(undefined4 param_1);
-undefined4 engine_mini3d_cpp_FUN_004eda80(void);
-void engine_mini3d_cpp_FUN_004edad0(undefined4 param_1);
-void engine_mini3d_cpp_FUN_004edae0(undefined4 param_1);
-void engine_mini3d_cpp_FUN_004edaf0(float param_1);
-void engine_mini3d_cpp_FUN_004edb80(int param_1,int param_2,uint param_3,float param_4,float param_5);
-void engine_mini3d_cpp_FUN_004edc90(void);
-void engine_mini3d_cpp_FUN_004edca0(void);
-void engine_mini3d_cpp_FUN_004edcb0(void);
-void engine_mini3d_cpp_FUN_004edcc0(void);
-void engine_mini3d_cpp_FUN_004ede40(void);
-void engine_mini3d_cpp_FUN_004edea0(int param_1,int param_2,undefined4 param_3,int param_4);
-void engine_mini3d_cpp_FUN_004ee110(undefined4 param_1,int param_2,undefined4 param_3,int param_4);
-void engine_mini3d_cpp_FUN_004ee1a0(int param_1,int param_2,undefined4 param_3,int param_4);
-void engine_mini3d_cpp_FUN_004ee39e(undefined4 param_1,int param_2,undefined4 param_3,int param_4);
-void engine_mini3d_cpp_FUN_004ee430(int param_1,int param_2,undefined4 param_3,int param_4);
-void engine_mini3d_cpp_FUN_004ee51e(void);
-void engine_mini3d_cpp_FUN_004ee5b0(float *param_1,int param_2,ushort *param_3,int param_4);
-void engine_mini3d_cpp_FUN_004ee9f0(undefined4 param_1,undefined4 param_2);
-void engine_mini3d_cpp_FUN_004eea30(float *param_1,float *param_2);
-void engine_mini3d_cpp_FUN_004eeb40(float *param_1,float *param_2);
-void engine_mini3d_cpp_FUN_004eec50(float *param_1,float *param_2);
-undefined4 engine_mini3d_cpp_FUN_004eedd0(float *param_1);
-int engine_mini3d_cpp_FUN_004eeeb0(float *param_1);
-void engine_mini3d_cpp_FUN_004eef00(float *param_1,float *param_2);
-undefined * engine_mini3d_cpp_FUN_004eef80(void);
-float engine_mini3d_cpp_FUN_004eef8e(float param_1,float *param_2);
-void engine_mini3d_cpp_FUN_004ef020(float param_1,float param_2,float *param_3);
-float engine_mini3d_cpp_FUN_004ef0ce(float *param_1);
-undefined4 engine_mini3d_cpp_FUN_004ef110(float *param_1,float param_2);
-void engine_mini3d_cpp_FUN_004ef22e(float *param_1,float *param_2);
-void engine_mini3d_cpp_FUN_004ef29e(float *param_1,float *param_2);
-void engine_mini3d_cpp_FUN_004ef360(undefined4 param_1);
-void engine_mini3d_cpp_FUN_004ef38e(float *param_1,float param_2);
-void engine_mini3d_cpp_FUN_004ef470(float *param_1,float *param_2);
-void engine_mini3d_cpp_FUN_004ef890(int param_1);
-void engine_mini3d_cpp_FUN_004ef8f0(void);
-void engine_mini3d_cpp_FUN_004ef920(undefined4 *param_1,CVector3f *param_2,float param_3,float param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7);
-void engine_mini3d_cpp_FUN_004efa90(float *param_1,float *param_2,float *param_3,float *param_4);
-void engine_mini3d_cpp_FUN_004efd80(float *param_1);
-void engine_mini3d_cpp_FUN_004efe20(void);
+void __cdecl engine_mini3d_cpp_staticInit_FUN_004ec6f0(void);
+CMini3D * __cdecl engine_mini3d_cpp_CMini3D_ctor_FUN_004ec730(CMini3D *this_ptr);
+CMini3D * __cdecl engine_mini3d_cpp_CMini3D_dtor_FUN_004ec7f0(CMini3D *this_ptr,uint flags);
+int __cdecl engine_mini3d_cpp_init_FUN_004ec800(void);
+void __cdecl engine_mini3d_cpp_kill_FUN_004ec820(void);
+void __cdecl engine_mini3d_cpp_swapBuffers_FUN_004ec8d0(void);
+void __cdecl engine_mini3d_cpp_lockFrame_FUN_004ec930(void);
+void __cdecl engine_mini3d_cpp_unlockFrame_FUN_004ec940(void);
+int __cdecl engine_mini3d_cpp_clear_FUN_004ec950(void);
+int __cdecl engine_mini3d_cpp_clearZBuffer_FUN_004ec970(void);
+void __cdecl engine_mini3d_cpp_setCameraOrigin_FUN_004ec990(CVector3f *origin);
+void __cdecl engine_mini3d_cpp_setProjectionScale_FUN_004ec9b0(float scale);
+void __cdecl engine_mini3d_cpp_setZoom_FUN_004ec9c0(float value);
+void __cdecl engine_mini3d_cpp_setCameraMatrix_FUN_004eca10(CMatrix3x3f *rotation);
+void __cdecl engine_mini3d_cpp_setFrameTranslation_FUN_004eceb0(CVector3f *position);
+void __esi engine_mini3d_cpp_getCameraRotation_FUN_004ecf60(CVector3f *output);
+float __cdecl engine_mini3d_cpp_getZoom_FUN_004ecf90(void);
+void __cdecl engine_mini3d_cpp_setRenderViewport_FUN_004ed020(float left,float top,float right,float bottom);
+void __cdecl engine_mini3d_cpp_getRenderViewport_FUN_004ed150(float *left,float *top,float *right,float *bottom);
+void __cdecl engine_mini3d_cpp_matrixPushAndTransform_FUN_004ed1e0(CVector3f *angles,CVector3f *position);
+void __cdecl engine_mini3d_cpp_matrixPushAndTransformMatrix_FUN_004ed520(CMatrix3x3f *rotation,CVector3f *position);
+void __cdecl engine_mini3d_cpp_matrixPushLoad_FUN_004ed720(float *frame);
+void __cdecl engine_mini3d_cpp_matrixPush_FUN_004ed790(void);
+void __cdecl engine_mini3d_cpp_pop_FUN_004ed800(void);
+void __cdecl engine_mini3d_cpp_pushMatrixRelativeOffset_FUN_004ed870(CVector3f *offset);
+void __cdecl engine_mini3d_cpp_popMatrixRelativeOffset_FUN_004ed910(void);
+void __cdecl engine_mini3d_cpp_useTexture_FUN_004ed980(int texture);
+void __cdecl engine_mini3d_cpp_loadTexture_FUN_004ed9d0(int arg1,int arg2,int arg3,int arg4,int arg5);
+void __cdecl engine_mini3d_cpp_resetTextureCache_FUN_004eda20(void);
+void __cdecl engine_mini3d_cpp_setTextureClamp_FUN_004eda40(int clamp_u,int clamp_v);
+void __cdecl engine_mini3d_cpp_setRendererOption_FUN_004eda70(int value);
+int __cdecl engine_mini3d_cpp_getTextureHandle_FUN_004eda80(void);
+void __cdecl engine_mini3d_cpp_setRenderFlags_FUN_004edad0(int flags);
+void __cdecl engine_mini3d_cpp_setExtraRenderFlags_FUN_004edae0(int value);
+void __cdecl engine_mini3d_cpp_setAlpha_FUN_004edaf0(float alpha);
+void __cdecl engine_mini3d_cpp_setFog_FUN_004edb80(int red,int green,int blue,float fog_near,float fog_far);
+void __cdecl engine_mini3d_cpp_disableFog_FUN_004edc90(void);
+void __cdecl engine_mini3d_cpp_enableExtraRenderState_FUN_004edca0(void);
+void __cdecl engine_mini3d_cpp_disableExtraRenderState_FUN_004edcb0(void);
+void __cdecl engine_mini3d_cpp_updateTransform_FUN_004edcc0(void);
+void __cdecl engine_mini3d_cpp_allocVertexList_FUN_004ede40(void);
+void __cdecl engine_mini3d_cpp_polyList_FUN_004edea0(float *vertices,int vertex_count,ushort *indices,int triangle_count);
+void __cdecl engine_mini3d_cpp_polyList2_FUN_004ee110(float *vertices,int vertex_count,ushort *indices,int triangle_count);
+void __cdecl engine_mini3d_cpp_polyListD3DL_FUN_004ee1a0(float *vertices,int vertex_count,ushort *indices,int triangle_count);
+void __cdecl engine_mini3d_cpp_polyListD3DL2_FUN_004ee3a0(float *vertices,int vertex_count,ushort *indices,int triangle_count);
+void __cdecl engine_mini3d_cpp_polyListL_FUN_004ee430(float *vertices,int vertex_count,ushort *indices,int triangle_count);
+void __cdecl engine_mini3d_cpp_polyListD3DTL_FUN_004ee5b0(float *vertices,int vertex_count,ushort *indices,int triangle_count);
+void __cdecl engine_mini3d_cpp_lineListD3DTL_FUN_004ee9f0(float *vertices,int vertex_count);
+void __cdecl engine_mini3d_cpp_transformVertex_FUN_004eea30(CVector3f *point,float *out);
+void __cdecl engine_mini3d_cpp_transformVertexSurface_FUN_004eeb40(CVector3f *point,float *out);
+void __cdecl engine_mini3d_cpp_transformVertexOrtho_FUN_004eec50(CVector3f *point,float *out);
+int __cdecl engine_mini3d_cpp_getClipFlags_FUN_004eedd0(CVector3f *point);
+int __cdecl engine_mini3d_cpp_getBehindClipFlag_FUN_004eeeb0(CVector3f *point);
+void __cdecl engine_mini3d_cpp_rotateByView_FUN_004eef00(CVector3f *input,CVector3f *output);
+float * __cdecl engine_mini3d_cpp_getTransformMatrix_FUN_004eef80(void);
+float __cdecl engine_mini3d_cpp_getProjectedSize_FUN_004eef90(float size,CVector3f *point);
+void __cdecl engine_mini3d_cpp_screenToWorldRay_FUN_004ef020(float screen_x,float screen_y,CVector3f *output);
+float __cdecl engine_mini3d_cpp_getViewDepth_FUN_004ef0d0(CVector3f *point);
+int __cdecl engine_mini3d_cpp_isSphereVisible_FUN_004ef110(CVector3f *center,float radius);
+void __cdecl engine_mini3d_cpp_rotateByInverseCamera_FUN_004ef230(CVector3f *input,CVector3f *output);
+void __cdecl engine_mini3d_cpp_unprojectPoint_FUN_004ef2a0(float *screen_point,CVector3f *output);
+void __cdecl engine_mini3d_cpp_setAmbientLight_FUN_004ef360(float ambient);
+void __cdecl engine_mini3d_cpp_setLightVector_FUN_004ef390(CVector3f *direction,float intensity);
+void __cdecl engine_mini3d_cpp_lightVertex_FUN_004ef470(float *vertex,float *out_color);
+void __cdecl engine_mini3d_cpp_computeVertexFog_FUN_004ef890(float *vertex);
+void __cdecl engine_mini3d_cpp_resetDynamicLight_FUN_004ef8f0(void);
+void __cdecl engine_mini3d_cpp_addDynamicLight_FUN_004ef920(CVector3f *position,CVector3f *rotation,float range,float cone_scale,uint arg5,uint arg6,uint arg7);
+void __cdecl engine_mini3d_cpp_dynamicLightHint_FUN_004efa90(float *arg1,float *arg2,float *arg3,float *arg4);
+void __cdecl engine_mini3d_cpp_projectVertex_FUN_004efd80(float *vertex);
+void __cdecl engine_mini3d_cpp_buildLightMatrix_FUN_004efe20(void);
 

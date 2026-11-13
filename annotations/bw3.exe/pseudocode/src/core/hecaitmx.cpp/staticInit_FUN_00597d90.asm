@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hecaitmx_cpp_staticInit_FUN_00597d90(void)
+; void __cdecl core_hecaitmx_cpp_staticInit_FUN_00597d90(void)
 ;
 ;
 ; Called Functions:

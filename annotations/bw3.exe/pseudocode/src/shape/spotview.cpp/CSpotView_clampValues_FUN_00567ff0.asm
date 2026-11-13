@@ -7,7 +7,7 @@
 ; CSpotView *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   shape_spotview.cpp_FUN_00567d0e at 00567fa2
+;   shape_spotview.cpp_FUN_00567d10 at 00567fa2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d5c26

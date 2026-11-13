@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_basicene.cpp_FUN_0059e8c0 at 0059e9ca
+;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 at 0059e9ca
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamMemory_ungetChar_FUN_005a1290(CInStreamMemory *this_ptr,int param_2)
+; int __cdecl support_trstream_cpp_CInStreamMemory_ungetChar_FUN_005a1290(CInStreamMemory *this_ptr,int ch)
 ;
 ; Parameters:
 ; CInStreamMemory * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   ch
 ;
 ; *****************************************************************************
 

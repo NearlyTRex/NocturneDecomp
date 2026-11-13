@@ -16,7 +16,7 @@
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0044ac60 at 0044adca
 ;   core_dlight.cpp_CDemonLight_testVisibility_FUN_0044d9f0 at 0044da22
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_0044e7d0 at 0044e80f
-;   core_dpart.cpp_FUN_00461a4e at 00461a64
+;   core_dpart.cpp_FUN_00461a50 at 00461a64
 ;   core_dtrace.cpp_FUN_00474020 at 004743ff
 ;   ... and 12 more
 ;

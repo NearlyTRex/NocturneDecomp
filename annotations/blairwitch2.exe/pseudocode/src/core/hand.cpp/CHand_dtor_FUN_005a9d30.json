@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 43,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 27,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 94
+    "total_lines": 93
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "005a9dce"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hand.cpp_CHand_dtor_FUN_005a9d30",
-    "signature": "CHand * core_hand_cpp_CHand_dtor_FUN_005a9d30(CHand *this_ptr,uint flags)"
+    "signature": "CHand * __cdecl core_hand_cpp_CHand_dtor_FUN_005a9d30(CHand *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -142,7 +142,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 26,
+      "line": 24,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "(pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",

@@ -1,12 +1,12 @@
 // Name: core_chain.cpp_staticInit_FUN_00435600
 // Address: 00435600
 // Address Range: [[00435600, 00435623]]
-// Convention: unknown
-// Signature: void core_chain_cpp_staticInit_FUN_00435600(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_chain_cpp_staticInit_FUN_00435600(void)
 
 #include "nocturne.h"
 
-void core_chain_cpp_staticInit_FUN_00435600(void)
+void __cdecl core_chain_cpp_staticInit_FUN_00435600(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

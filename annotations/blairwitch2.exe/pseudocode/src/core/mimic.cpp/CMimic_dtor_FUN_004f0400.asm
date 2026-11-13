@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMimic * core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint flags)
+; CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMimic *         Stack[0x4]:4   this_ptr

@@ -1,15 +1,14 @@
 // Name: core_shadowsc.cpp_CShadowsc_ctor_FUN_005604a0
 // Address: 005604a0
 // Address Range: [[005604a0, 0056050f]]
-// Convention: unknown
-// Signature: CShadowsc * core_shadowsc_cpp_CShadowsc_ctor_FUN_005604a0(CShadowsc *this_ptr)
+// Convention: __cdecl
+// Signature: CShadowsc * __cdecl core_shadowsc_cpp_CShadowsc_ctor_FUN_005604a0(CShadowsc *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CShadowsc * core_shadowsc_cpp_CShadowsc_ctor_FUN_005604a0(CShadowsc *this_ptr)
+CShadowsc * __cdecl core_shadowsc_cpp_CShadowsc_ctor_FUN_005604a0(CShadowsc *this_ptr)
 
 {
   float fVar1;

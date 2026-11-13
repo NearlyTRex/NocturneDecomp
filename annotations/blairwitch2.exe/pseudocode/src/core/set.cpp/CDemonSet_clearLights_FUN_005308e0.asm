@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6807
 ;   core_mission.cpp_CDemonMission_process_FUN_004fc940 at 004fca4b
-;   core_set.cpp_FUN_0052d3be at 0052d95c
+;   core_set.cpp_FUN_0052d3c0 at 0052d95c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fc8d00

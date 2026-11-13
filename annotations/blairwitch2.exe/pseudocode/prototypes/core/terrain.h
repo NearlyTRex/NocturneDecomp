@@ -21,42 +21,6 @@ void __cdecl CTerrain::render(CTerrain *this_ptr,int render_pass);
 // Address: 0057b970
 void __cdecl CTerrain::process(CTerrain *this_ptr);
 
-// Original: core_terrain.cpp_FUN_0057b9a0
-// Address: 0057b9a0
-void FUN_0057b9a0(void);
-
-// Original: core_terrain.cpp_FUN_0057b9c0
-// Address: 0057b9c0
-void FUN_0057b9c0(undefined4 *param_1);
-
-// Original: core_terrain.cpp_FUN_0057b9d0
-// Address: 0057b9d0
-void FUN_0057b9d0(undefined4 *param_1);
-
-// Original: core_terrain.cpp_FUN_0057b9de
-// Address: 0057b9de
-void FUN_0057b9de(undefined4 *param_1);
-
-// Original: core_terrain.cpp_FUN_0057ba00
-// Address: 0057ba00
-undefined4 FUN_0057ba00(void);
-
-// Original: core_terrain.cpp_FUN_0057ba10
-// Address: 0057ba10
-undefined4 FUN_0057ba10(void);
-
-// Original: core_terrain.cpp_FUN_0057ba20
-// Address: 0057ba20
-void FUN_0057ba20(undefined4 param_1,undefined4 param_2);
-
-// Original: core_terrain.cpp_FUN_0057bb80
-// Address: 0057bb80
-int FUN_0057bb80(int *param_1,byte *param_2,int *param_3);
-
-// Original: core_terrain.cpp_FUN_0057cc20
-// Address: 0057cc20
-int FUN_0057cc20(int *param_1,undefined1 *param_2,int param_3);
-
-// Original: core_terrain.cpp_FUN_0057ccc0
-// Address: 0057ccc0
-int FUN_0057ccc0(int *param_1);
+// Original: core_terrain.cpp_FUN_0057b9e0
+// Address: 0057b9e0
+void FUN_0057b9e0(void);

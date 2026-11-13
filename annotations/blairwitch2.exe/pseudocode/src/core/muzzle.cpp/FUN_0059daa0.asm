@@ -6,9 +6,9 @@
 ;
 ; XREF[42]:
 ;   core_basicene.cpp_CBasicEnemy_checkVictim_FUN_0059f6b0 at 0059f6c2
+;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 at 0059e9b5
 ;   core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270 at 005a029e
 ;   core_basicene.cpp_CBasicNPC_getDeathState_FUN_0059f930 at 0059f93f
-;   core_basicene.cpp_FUN_0059e8c0 at 0059e9b5
 ;   core_basicnpc.cpp_FUN_005a48d0 at 005a48e2
 ;   core_belling.cpp_FUN_005a9080 at 005a9092
 ;   core_bwgrndma.cpp_FUN_005a7c40 at 005a7c52

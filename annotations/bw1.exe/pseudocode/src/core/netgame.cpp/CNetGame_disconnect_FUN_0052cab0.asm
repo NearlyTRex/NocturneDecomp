@@ -25,7 +25,7 @@
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_0052d450 at 0052dccc
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e46b
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_0052c5d0 at 0052c5d7
-;   core_netgame.cpp_FUN_0052c5fc at 0052c621
+;   core_netgame.cpp_FUN_0052c600 at 0052c621
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Disconnecting_from_serve_005eb85a

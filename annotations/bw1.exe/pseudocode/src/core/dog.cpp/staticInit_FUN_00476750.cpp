@@ -1,12 +1,12 @@
 // Name: core_dog.cpp_staticInit_FUN_00476750
 // Address: 00476750
 // Address Range: [[00476750, 00476773]]
-// Convention: unknown
-// Signature: void core_dog_cpp_staticInit_FUN_00476750(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dog_cpp_staticInit_FUN_00476750(void)
 
 #include "nocturne.h"
 
-void core_dog_cpp_staticInit_FUN_00476750(void)
+void __cdecl core_dog_cpp_staticInit_FUN_00476750(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

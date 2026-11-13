@@ -1,0 +1,318 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 182,
+    "complexity_score": 175,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 65,
+    "suspect_count": 9,
+    "suspect_types": [
+      "pointer_cast",
+      "unaffected_reg",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 247
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005129d0",
+    "address_range": [
+      [
+        "005129d0",
+        "00512bca"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_polyListD3DL_FUN_005129d0",
+    "signature": "void __cdecl engine_mini3d_cpp_polyListD3DL_FUN_005129d0(float *vertices,int vertex_count,ushort *indices,int triangle_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "00512670",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_allocVertexList_FUN_00512670"
+    },
+    {
+      "addr": "005140c0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_computeVertexFog_FUN_005140c0"
+    },
+    {
+      "addr": "00515ae0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_drawTransformedList_FUN_00515ae0"
+    },
+    {
+      "addr": "00516cc0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_polyListSurface_FUN_00516cc0"
+    },
+    {
+      "addr": "00513260",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_transformVertex_FUN_00513260"
+    },
+    {
+      "addr": "00516c60",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_updateRenderState_FUN_00516c60"
+    },
+    {
+      "addr": "005124f0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_updateTransform_FUN_005124f0"
+    },
+    {
+      "addr": "00517660",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_userClipPolyList_FUN_00517660"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e8da3",
+      "name": "DAT_005e8da3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c50948",
+      "name": "DAT_01c50948",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d14",
+      "name": "DAT_01c51d14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d224b4",
+      "name": "DAT_01d224b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d227e0",
+      "name": "DAT_01d227e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d25f14",
+      "name": "DAT_01d25f14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d25f18",
+      "name": "DAT_01d25f18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e7dac8",
+      "name": "DAT_01e7dac8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c83464",
+      "name": "DAT_02c83464",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.246753246753247,
+    "instruction_count": 154,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 22,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 9,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 207,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_MULT": 4,
+      "INT2FLOAT": 4,
+      "INT_ADD": 59,
+      "INT_AND": 119,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 70,
+      "INT_LEFT": 2,
+      "INT_LESS": 6,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 21,
+      "INT_RIGHT": 6,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 38,
+      "INT_SUB": 47,
+      "INT_XOR": 4,
+      "LOAD": 36,
+      "POPCOUNT": 33,
+      "RETURN": 2,
+      "STORE": 52
+    },
+    "pcode_op_count": 808
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f3c40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9497
+    },
+    "bw3.exe": {
+      "addr": "004ee1a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "indices",
+        "offset": 12,
+        "size": 4,
+        "type": "ushort *"
+      },
+      {
+        "is_param": true,
+        "name": "triangle_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 22,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((_DAT_02c83464 == (code *)0x0) || (_DAT_01c50948 == 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(CVector3f *)((int)vertices",
+      "severity": "moderate",
+      "text": "fVar1 = ((CVector3f *)((int)vertices + 0xc))->y;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(CVector3f *)((int)vertices",
+      "severity": "moderate",
+      "text": "out[7] = ((CVector3f *)((int)vertices + 0x18))->x;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(CVector3f *)((int)vertices",
+      "severity": "moderate",
+      "text": "out[8] = ((CVector3f *)((int)vertices + 0x18))->y;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(uint *)(iVar5 + 0x10 + (int)_DAT_01d227e0",
+      "severity": "moderate",
+      "text": "clip_flags = clip_flags | *(uint *)(iVar5 + 0x10 + (int)_DAT_01d227e0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(CVector3f *)((int)vertices",
+      "severity": "moderate",
+      "text": "vertices = &((CVector3f *)((int)vertices + 0x18))->z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "} while (iVar6 < unaff_ESI);",
+      "type": "unaffected_reg"
+    }
+  ]
+}

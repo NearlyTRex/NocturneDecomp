@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_inv.cpp_FUN_004dc8c0
+;   core_inv.cpp_CInventory_select_FUN_004dc8c0
 ;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
@@ -99,8 +99,8 @@ section .text
     ADD ESP,0x8                         ; 004df0a5
     PUSH ESI                            ; 004df0a8
     PUSH EDI                            ; 004df0a9
-    CALL core_inv.cpp_FUN_004dc8c0      ; 004df0aa
-        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dc8c0()
+    CALL core_inv.cpp_CInventory_select_FUN_004dc8c0 ; 004df0aa
+        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; undefined4 core_inv.cpp_CInventory_select_FUN_004dc8c0(CInventory * this_ptr, CDemonActor * param_2)
     JMP 0x004df077                      ; 004df0af
         ;   XREF to: 004df077 (UNCONDITIONAL_JUMP)  ; LAB_004df077
     TEST EAX,EAX                        ; 004df0b1
@@ -109,8 +109,8 @@ section .text
         ;   XREF to: 004df05b (CONDITIONAL_JUMP)  ; LAB_004df05b
     PUSH EAX                            ; 004df0b5
     PUSH EDI                            ; 004df0b6
-    CALL core_inv.cpp_FUN_004dc8c0      ; 004df0b7
-        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dc8c0()
+    CALL core_inv.cpp_CInventory_select_FUN_004dc8c0 ; 004df0b7
+        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; undefined4 core_inv.cpp_CInventory_select_FUN_004dc8c0(CInventory * this_ptr, CDemonActor * param_2)
     ADD ESP,0x8                         ; 004df0bc
     PUSH 0x5dbb7b                       ; 004df0bf | = "Auto use health\n"
     MOV EBX,dword ptr [0x00609ed0]      ; 004df0c4 | g_CConsolePtr

@@ -13,7 +13,7 @@
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407820 at 00407922
 ;   engine_3d.c_updateAnimatedTexture_FUN_00404f10 at 00404f7d
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 at 00484f07
-;   engine_mini3d.cpp_FUN_005121b0 at 005121bf
+;   engine_mini3d.cpp_useTexture_FUN_005121b0 at 005121bf
 ;   engine_texture.cpp_FUN_00597c90 at 00597c96
 ;   ... and 3 more
 ;

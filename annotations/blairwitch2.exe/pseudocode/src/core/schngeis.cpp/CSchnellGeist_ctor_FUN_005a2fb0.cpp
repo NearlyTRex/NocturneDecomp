@@ -1,15 +1,14 @@
 // Name: core_schngeis.cpp_CSchnellGeist_ctor_FUN_005a2fb0
 // Address: 005a2fb0
 // Address Range: [[005a2fb0, 005a313f]]
-// Convention: unknown
-// Signature: CSchnellGeist * core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchnellGeist *this_ptr)
+// Convention: __cdecl
+// Signature: CSchnellGeist * __cdecl core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchnellGeist *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CSchnellGeist * core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchnellGeist *this_ptr)
+CSchnellGeist * __cdecl core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchnellGeist *this_ptr)
 
 {
   SStateMachine *pSVar1;

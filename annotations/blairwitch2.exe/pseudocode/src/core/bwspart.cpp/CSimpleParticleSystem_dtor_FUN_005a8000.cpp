@@ -1,14 +1,12 @@
 // Name: core_bwspart.cpp_CSimpleParticleSystem_dtor_FUN_005a8000
 // Address: 005a8000
 // Address Range: [[005a8000, 005a8026]]
-// Convention: unknown
-// Signature: CSimpleParticleSystem * core_bwspart_cpp_CSimpleParticleSystem_dtor_FUN_005a8000(CSimpleParticleSystem *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_dtor_FUN_005a8000(CSimpleParticleSystem *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSimpleParticleSystem * core_bwspart_cpp_CSimpleParticleSystem_dtor_FUN_005a8000(CSimpleParticleSystem *this_ptr,uint flags)
+CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_dtor_FUN_005a8000(CSimpleParticleSystem *this_ptr,uint flags)
 
 {
   this_ptr->vtable = (void *)0x6002e4;

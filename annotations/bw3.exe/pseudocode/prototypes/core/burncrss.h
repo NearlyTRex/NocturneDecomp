@@ -7,19 +7,19 @@
 
 // Original: core_burncrss.cpp_staticInit_FUN_004243d0
 // Address: 004243d0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_burncrss.cpp_factoryFuncBurncross_FUN_00424400
 // Address: 00424400
-void factoryFuncBurncross(void);
+CBurncross * __cdecl factoryFuncBurncross(void);
 
 // Original: core_burncrss.cpp_CBurncross_getActorType_FUN_00424420
 // Address: 00424420
-CDemonActorType * CBurncross::getActorType(CBurncross *this_ptr);
+CDemonActorType * __cdecl CBurncross::getActorType(CBurncross *this_ptr);
 
 // Original: core_burncrss.cpp_CBurncross_ctor_FUN_00424430
 // Address: 00424430
-CBurncross * CBurncross::ctor(CBurncross *this_ptr);
+CBurncross * __cdecl CBurncross::ctor(CBurncross *this_ptr);
 
 // Original: core_burncrss.cpp_CBurncross_fire_FUN_00424550
 // Address: 00424550
@@ -47,7 +47,7 @@ void __cdecl CBurncross::setup(CBurncross *this_ptr);
 
 // Original: core_burncrss.cpp_CBurncross_dtor_FUN_00425420
 // Address: 00425420
-CBurncross * CBurncross::dtor(CBurncross *this_ptr,uint flags);
+CBurncross * __cdecl CBurncross::dtor(CBurncross *this_ptr,uint flags);
 
 // Original: core_burncrss.cpp_FUN_00425490
 // Address: 00425490

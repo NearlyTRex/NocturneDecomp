@@ -46,7 +46,7 @@ section .text
     XOR ECX,ECX                         ; 0057a2b4
         ;   Label: LAB_0057a2b4
     PUSH ECX                            ; 0057a2b6
-    PUSH 0x579f70                       ; 0057a2b7 | LAB_00579f70
+    PUSH 0x579f70                       ; 0057a2b7
     MOV dword ptr [0x006235d0],ECX      ; 0057a2bc | DAT_006235d0
     CALL crt_dsound.c_DirectSoundEnumerateA ; 0057a2c2
         ;   XREF to: 005cf85c (UNCONDITIONAL_CALL)  ; HRESULT crt_dsound.c_DirectSoundEnumerateA(LPDSENUMCALLBACKA lp_ds_enum_callback, LPVOID lp_context)

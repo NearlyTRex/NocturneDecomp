@@ -1,14 +1,12 @@
 // Name: core_imp.cpp_CImp_dtor_FUN_004d80d0
 // Address: 004d80d0
 // Address Range: [[004d80d0, 004d8164]]
-// Convention: unknown
-// Signature: CImp * core_imp_cpp_CImp_dtor_FUN_004d80d0(CImp *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004d80d0(CImp *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CImp * core_imp_cpp_CImp_dtor_FUN_004d80d0(CImp *this_ptr,uint flags)
+CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004d80d0(CImp *this_ptr,uint flags)
 
 {
   int iVar1;

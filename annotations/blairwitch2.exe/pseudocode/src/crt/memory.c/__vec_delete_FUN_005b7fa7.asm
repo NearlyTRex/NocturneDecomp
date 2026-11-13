@@ -8,7 +8,7 @@
 ; WatcomTypeInfo * Stack[0x8]:4   type_info
 ;
 ; XREF[172]:
-;   cockpit_pkbmpset.cpp_FUN_00517640 at 0051764e
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_00517640 at 0051764e
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930 at 00408987
 ;   core_ammo.cpp_CAmmo_dtor_FUN_0040de50 at 0040de86
 ;   core_ammobox.cpp_CAmmoBox_dtor_FUN_0040e980 at 0040e9ac

@@ -17,7 +17,7 @@
 ;   core_actor.cpp_archiveFloat_FUN_0040b8e0
 ;   core_actor.cpp_archiveInteger_FUN_0040b960
 ;   core_actor.cpp_archiveString_FUN_0040b730
-;   core_hero.cpp_FUN_004ce590
+;   core_hero.cpp_CHero_archive_FUN_004ce590
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
         ;   Label: core_moloch.cpp_CMoloch_archive_FUN_00502200
     MOV EBX,dword ptr [ESP + 0x8]       ; 00502201
     PUSH EBX                            ; 00502205
-    CALL core_hero.cpp_FUN_004ce590     ; 00502206
-        ;   XREF to: 004ce590 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce590()
+    CALL core_hero.cpp_CHero_archive_FUN_004ce590 ; 00502206
+        ;   XREF to: 004ce590 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_archive_FUN_004ce590(CHero * this_ptr)
     ADD ESP,0x4                         ; 0050220b
     PUSH 0x5df269                       ; 0050220e | = "humanToDemonCond"
     LEA EAX,[EBX + 0x27900]             ; 00502213

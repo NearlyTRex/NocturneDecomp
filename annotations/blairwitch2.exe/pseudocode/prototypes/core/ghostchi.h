@@ -7,23 +7,23 @@
 
 // Original: core_ghostchi.cpp_staticInit_FUN_005a91d0
 // Address: 005a91d0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_ghostchi.cpp_factoryFuncGhostChild_FUN_005a9200
 // Address: 005a9200
-void factoryFuncGhostChild(void);
+CGhostChild * __cdecl factoryFuncGhostChild(void);
 
 // Original: core_ghostchi.cpp_CGhostChild_getActorType_FUN_005a9220
 // Address: 005a9220
-CDemonActorType * CGhostChild::getActorType(CGhostChild *this_ptr);
+CDemonActorType * __cdecl CGhostChild::getActorType(CGhostChild *this_ptr);
 
 // Original: core_ghostchi.cpp_CGhostChild_ctor_FUN_005a9230
 // Address: 005a9230
-CGhostChild * CGhostChild::ctor(CGhostChild *this_ptr);
+CGhostChild * __cdecl CGhostChild::ctor(CGhostChild *this_ptr);
 
 // Original: core_ghostchi.cpp_CGhostChild_dtor_FUN_005a9370
 // Address: 005a9370
-CGhostChild * CGhostChild::dtor(CGhostChild *this_ptr,uint flags);
+CGhostChild * __cdecl CGhostChild::dtor(CGhostChild *this_ptr,uint flags);
 
 // Original: core_ghostchi.cpp_CGhostChild_setup_FUN_005a9440
 // Address: 005a9440

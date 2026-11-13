@@ -2,11 +2,11 @@
 // Address: 004bb2f0
 // Address Range: [[004bb2f0, 004bb50a]]
 // Convention: __cdecl
-// Signature: int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this_ptr,char *param_2)
+// Signature: int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this_ptr,char *text)
 
 #include "nocturne.h"
 
-int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this_ptr,char *param_2)
+int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this_ptr,char *text)
 
 {
   char cVar1;
@@ -21,7 +21,7 @@ int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this
   int local_14;
   
   local_14 = this_ptr->page_index;
-  pcVar5 = param_2;
+  pcVar5 = text;
   do {
     do {
       pcVar4 = pcVar5;
@@ -88,5 +88,5 @@ int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this
     }
     pcVar5 = pcVar6;
   } while (local_14 == this_ptr->page_index);
-  return (int)pcVar6 - (int)param_2;
+  return (int)pcVar6 - (int)text;
 }

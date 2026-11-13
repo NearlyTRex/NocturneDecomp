@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_0049dc50 at 0049dc55
-;   shape_edittool.cpp_FUN_0049dace at 0049db58
+;   shape_edittool.cpp_FUN_0049dad0 at 0049db58
 ;   shape_edittool.cpp_FUN_0049dc70 at 0049dc9f
 ;
 ; Referenced Globals:

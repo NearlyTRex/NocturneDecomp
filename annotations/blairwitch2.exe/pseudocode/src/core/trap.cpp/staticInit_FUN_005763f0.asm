@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trap_cpp_staticInit_FUN_005763f0(void)
+; void __cdecl core_trap_cpp_staticInit_FUN_005763f0(void)
 ;
 ;
 ; Called Functions:

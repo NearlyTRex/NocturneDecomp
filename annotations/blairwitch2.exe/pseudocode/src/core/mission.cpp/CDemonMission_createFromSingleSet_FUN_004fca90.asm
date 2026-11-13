@@ -14,7 +14,7 @@
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004fc6b0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350
 ;   core_mission.cpp_CDemonMission_removeAllActors_FUN_004fc640
-;   core_script.cpp_FUN_00521630
+;   core_script.cpp_CScript_clear_FUN_00521630
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     ADD ESP,0x4                         ; 004fcacb
     MOV EDX,dword ptr [0x0061b460]      ; 004fcace | g_CScriptPtr
     PUSH EDX                            ; 004fcad4
-    CALL core_script.cpp_FUN_00521630   ; 004fcad5
-        ;   XREF to: 00521630 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00521630()
+    CALL core_script.cpp_CScript_clear_FUN_00521630 ; 004fcad5
+        ;   XREF to: 00521630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_clear_FUN_00521630(CScript * this_ptr)
     ADD ESP,0x4                         ; 004fcada
     PUSH EBX                            ; 004fcadd
     CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350 ; 004fcade

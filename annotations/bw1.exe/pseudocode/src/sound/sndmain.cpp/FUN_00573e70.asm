@@ -13,8 +13,8 @@
 ;   sound_sndmain.cpp_FUN_005738d0 at 00573901
 ;   sound_sndmain.cpp_FUN_00573950 at 00573972
 ;   sound_sndmain.cpp_FUN_00573980 at 005739c7
-;   sound_sndmain.cpp_FUN_00573e4c at 00573e60
-;   sound_sndmain.cpp_FUN_00573eae at 00573ebe
+;   sound_sndmain.cpp_FUN_00573e50 at 00573e60
+;   sound_sndmain.cpp_FUN_00573eb0 at 00573ebe
 ;   ... and 28 more
 ;
 ; Referenced Globals:

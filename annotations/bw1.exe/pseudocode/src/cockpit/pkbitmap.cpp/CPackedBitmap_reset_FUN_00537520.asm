@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_00537490 at 00537496
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550 at 0053756a
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_005374b0 at 005374b9
-;   cockpit_pkbitmap.cpp_FUN_00537550 at 0053756a
 ;
 ; *****************************************************************************
 

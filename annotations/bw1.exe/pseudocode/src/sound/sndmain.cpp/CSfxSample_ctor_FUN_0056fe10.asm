@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSfxSample * sound_sndmain_cpp_CSfxSample_ctor_FUN_0056fe10(CSfxSample *this_ptr)
+; CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_ctor_FUN_0056fe10(CSfxSample *this_ptr)
 ;
 ; Parameters:
 ; CSfxSample *     Stack[0x4]:4   this_ptr

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 233,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 19,
+    "suspect_count": 12,
     "suspect_types": [
       "extra_output",
-      "unnamed_param",
       "unrolled_strcpy"
     ],
     "total_lines": 80
@@ -34,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_SPageResourceText_ctor_FUN_004a1f80",
-    "signature": "int __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004a1f80(SPageResourceText *this_ptr,char *param_2,undefined4 param_3)"
+    "signature": "SPageResourceText * __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004a1f80(SPageResourceText *this_ptr,char *text,CBitFont *font)"
   },
   "function_calls": [
     {
@@ -136,51 +135,27 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "text",
         "offset": 8,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "font",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "CBitFont *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004a1f80(SPageResourceText *this_ptr,char *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "int __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004a1f80(SPageResourceText *this_ptr,char *param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
+      "line": 7,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "*(byte ***)(extraout_EAX + 0x14) = &g_SPageResourceTextVTable;",
+      "text": "SPageResourceText *extraout_EAX;",
       "type": "extra_output"
     },
     {
@@ -188,63 +163,31 @@
       "line": 12,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "*(uint *)(extraout_EAX + 0x11c) = param_3;",
+      "text": "(extraout_EAX->base).vtable = &g_SPageResourceTextVTable;",
       "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(extraout_EAX + 0x11c) = param_3;",
-      "type": "unnamed_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 13,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "pcVar3 = (char *)(extraout_EAX + 0x1c);",
+      "text": "extraout_EAX->font = font;",
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "pcVar3 = extraout_EAX->text;",
+      "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
+      "line": 24,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "*(uint *)(extraout_EAX + 0x18) = 0;",
+      "text": "extraout_EAX->underlined = 0;",
       "type": "extra_output"
     },
     {
@@ -252,7 +195,7 @@
       "line": 25,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "(*(CBitFont **)(extraout_EAX + 0x11c),(char *)(extraout_EAX + 0x1c));",
+      "text": "iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(extraout_EAX->font,extraout_EAX->text);",
       "type": "extra_output"
     },
     {
@@ -260,7 +203,7 @@
       "line": 25,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "(*(CBitFont **)(extraout_EAX + 0x11c),(char *)(extraout_EAX + 0x1c));",
+      "text": "iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(extraout_EAX->font,extraout_EAX->text);",
       "type": "extra_output"
     },
     {
@@ -268,15 +211,15 @@
       "line": 26,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "*(int *)(extraout_EAX + 8) = iVar2;",
+      "text": "this_ptr_00 = extraout_EAX->font;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
+      "line": 27,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "(*(CBitFont **)(extraout_EAX + 0x11c),0x6a);",
+      "text": "(extraout_EAX->base).width = iVar2;",
       "type": "extra_output"
     },
     {
@@ -284,7 +227,7 @@
       "line": 29,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "*(int *)(extraout_EAX + 0xc) = iVar2;",
+      "text": "(extraout_EAX->base).height = iVar2;",
       "type": "extra_output"
     },
     {
@@ -297,7 +240,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 14,
+      "line": 15,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_carved_cpp_staticInit_FUN_00425550(void)
+; void __cdecl core_carved_cpp_staticInit_FUN_00425550(void)
 ;
 ;
 ; Called Functions:

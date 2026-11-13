@@ -12,7 +12,7 @@
 ; XREF[3]:
 ;   sound_sndmain.cpp_FUN_0054c1c0 at 0054c3ca
 ;   sound_sndmain.cpp_FUN_0054c7f0 at 0054c9f8
-;   sound_sndmain.cpp_FUN_005516ce at 005517bd
+;   sound_sndmain.cpp_FUN_005516d0 at 005517bd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_allocateHwSample_failed_005e7f32

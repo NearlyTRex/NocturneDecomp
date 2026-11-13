@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBugs * core_bugs_cpp_CBugs_dtor_FUN_00428180(CBugs *this_ptr,uint flags)
+; CBugs * __cdecl core_bugs_cpp_CBugs_dtor_FUN_00428180(CBugs *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr

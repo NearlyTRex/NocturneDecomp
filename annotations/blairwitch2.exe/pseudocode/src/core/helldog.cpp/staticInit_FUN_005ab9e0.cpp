@@ -1,12 +1,12 @@
 // Name: core_helldog.cpp_staticInit_FUN_005ab9e0
 // Address: 005ab9e0
 // Address Range: [[005ab9e0, 005aba03]]
-// Convention: unknown
-// Signature: void core_helldog_cpp_staticInit_FUN_005ab9e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_helldog_cpp_staticInit_FUN_005ab9e0(void)
 
 #include "nocturne.h"
 
-void core_helldog_cpp_staticInit_FUN_005ab9e0(void)
+void __cdecl core_helldog_cpp_staticInit_FUN_005ab9e0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

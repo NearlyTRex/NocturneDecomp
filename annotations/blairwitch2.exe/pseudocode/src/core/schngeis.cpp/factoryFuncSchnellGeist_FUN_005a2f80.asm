@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_schngeis_cpp_factoryFuncSchnellGeist_FUN_005a2f80(void)
+; CSchnellGeist * __cdecl core_schngeis_cpp_factoryFuncSchnellGeist_FUN_005a2f80(void)
 ;
 ;
 ; Called Functions:

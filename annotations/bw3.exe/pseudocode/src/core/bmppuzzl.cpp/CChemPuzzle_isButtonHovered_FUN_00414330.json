@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 83,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 56
@@ -26,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_bmppuzzl.cpp_CChemPuzzle_isButtonHovered_FUN_00414330",
-    "signature": "undefined4 __cdecl core_bmppuzzl_cpp_CChemPuzzle_isButtonHovered_FUN_00414330(CChemPuzzle *this_ptr,int param_2)"
+    "signature": "int __cdecl core_bmppuzzl_cpp_CChemPuzzle_isButtonHovered_FUN_00414330(CChemPuzzle *this_ptr,int button)"
   },
   "function_calls": [],
   "globals": [
@@ -105,7 +104,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "button",
         "offset": 8,
         "size": 4,
         "type": "int"
@@ -120,46 +119,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_bmppuzzl_cpp_CChemPuzzle_isButtonHovered_FUN_00414330(CChemPuzzle *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = this_ptr->buttons[param_2].x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = this_ptr->buttons[param_2].y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((iVar1 <= _DAT_01c5fadc) && (_DAT_01c5fadc <= this_ptr->buttons[param_2].width + iVar1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(iVar2 <= _DAT_01c5fae0)) && (_DAT_01c5fae0 <= this_ptr->buttons[param_2].height + iVar2)) {",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

@@ -26,7 +26,7 @@ void __cdecl engine_mini3d_cpp_setRenderViewport_FUN_004f2ac0(float left,float t
   if (((_DAT_01d0d2b4 == 0) && (_DAT_0264bc74 != (code *)0x0)) && (_DAT_01c37788 != 0)) {
     (*_DAT_0264bc74)(left,top,right,bottom,_DAT_01d098dc,_DAT_01d098e0);
   }
-  engine_mini3d_cpp_FUN_004f53d0();
+  engine_mini3d_cpp_resetDynamicLight_FUN_004f53d0();
   _DAT_01d0c398 = 1;
   return;
 }

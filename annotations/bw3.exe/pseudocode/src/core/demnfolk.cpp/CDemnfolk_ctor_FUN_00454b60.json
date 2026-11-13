@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 111,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 65,
     "suspect_count": 3,
     "suspect_types": [
       "raw_address_constant",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 170
+    "total_lines": 169
   },
   "cross_references": [
     {
@@ -32,9 +32,9 @@
         "00454d17"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_demnfolk.cpp_CDemnfolk_ctor_FUN_00454b60",
-    "signature": "CDemnfolk * core_demnfolk_cpp_CDemnfolk_ctor_FUN_00454b60(CDemnfolk *this_ptr)"
+    "signature": "CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00454b60(CDemnfolk *this_ptr)"
   },
   "function_calls": [
     {
@@ -164,7 +164,7 @@
     },
     {
       "description": "Raw hex address 0x1c6e360 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 59,
+      "line": 58,
       "match": "0x1c6e360",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x01C6E360;",
@@ -172,7 +172,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 31,
+      "line": 30,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

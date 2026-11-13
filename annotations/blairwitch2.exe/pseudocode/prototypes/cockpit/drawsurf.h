@@ -113,13 +113,13 @@ void __cdecl FUN_004677e0(CDrawSurface *this_ptr);
 // Address: 004678e0
 undefined4 FUN_004678e0(void);
 
-// Original: cockpit_drawsurf.cpp_FUN_004678ec
-// Address: 004678ec
-undefined4 FUN_004678ec(void);
+// Original: cockpit_drawsurf.cpp_FUN_004678f0
+// Address: 004678f0
+undefined4 FUN_004678f0(void);
 
-// Original: cockpit_drawsurf.cpp_FUN_004678fc
-// Address: 004678fc
-void FUN_004678fc(undefined4 param_1);
+// Original: cockpit_drawsurf.cpp_FUN_00467900
+// Address: 00467900
+void FUN_00467900(void);
 
 // Original: cockpit_drawsurf.cpp_FUN_00467910
 // Address: 00467910
@@ -233,9 +233,9 @@ void __cdecl CDrawSurface::drawTextCenteredFullSurface(CDrawSurface *this_ptr,ch
 // Address: 00468a90
 void __cdecl CDrawSurface::drawTextCenteredFullSurfacePrintf(CDrawSurface *this_ptr,char *format);
 
-// Original: cockpit_drawsurf.cpp_FUN_00468aec
-// Address: 00468aec
-int FUN_00468aec(undefined4 param_1,int param_2);
+// Original: cockpit_drawsurf.cpp_FUN_00468af0
+// Address: 00468af0
+int FUN_00468af0(void);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00468b30
 // Address: 00468b30

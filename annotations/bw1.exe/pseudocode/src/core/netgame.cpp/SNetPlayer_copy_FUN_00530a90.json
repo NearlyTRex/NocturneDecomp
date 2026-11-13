@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 51,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
+    "pseudocode_lines": 35,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 110
+    "total_lines": 109
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "00530b53"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_netgame.cpp_SNetPlayer_copy_FUN_00530a90",
-    "signature": "SNetPlayer * core_netgame_cpp_SNetPlayer_copy_FUN_00530a90(SNetPlayer *this_ptr,SNetPlayer *other)"
+    "signature": "SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_00530a90(SNetPlayer *this_ptr,SNetPlayer *other)"
   },
   "function_calls": [],
   "globals": [],
@@ -113,7 +113,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (26 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 12,
+      "line": 10,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "this_ptr->hero_number = other->hero_number;",

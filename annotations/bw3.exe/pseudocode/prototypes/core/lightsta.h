@@ -7,23 +7,23 @@
 
 // Original: core_lightsta.cpp_staticInit_FUN_004e0f10
 // Address: 004e0f10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_lightsta.cpp_factoryFuncLightStaff_FUN_004e0f40
 // Address: 004e0f40
-void factoryFuncLightStaff(void);
+CLightStaff * __cdecl factoryFuncLightStaff(void);
 
 // Original: core_lightsta.cpp_CLightStaff_getActorType_FUN_004e0f60
 // Address: 004e0f60
-CDemonActorType * CLightStaff::getActorType(CLightStaff *this_ptr);
+CDemonActorType * __cdecl CLightStaff::getActorType(CLightStaff *this_ptr);
 
 // Original: core_lightsta.cpp_CLightStaff_ctor_FUN_004e0f70
 // Address: 004e0f70
-CLightStaff * CLightStaff::ctor(CLightStaff *this_ptr);
+CLightStaff * __cdecl CLightStaff::ctor(CLightStaff *this_ptr);
 
-// Original: core_lightsta.cpp_FUN_004e1070
+// Original: core_lightsta.cpp_CLightStaff_fire_FUN_004e1070
 // Address: 004e1070
-undefined4 FUN_004e1070(CCharacter *param_1);
+undefined4 __cdecl CLightStaff::fire(CLightStaff *this_ptr);
 
 // Original: core_lightsta.cpp_CLightStaff_process_FUN_004e2050
 // Address: 004e2050
@@ -47,4 +47,4 @@ void __cdecl CLightStaff::setup(CLightStaff *this_ptr);
 
 // Original: core_lightsta.cpp_CLightStaff_dtor_FUN_004e3f10
 // Address: 004e3f10
-CLightStaff * CLightStaff::dtor(CLightStaff *this_ptr,uint flags);
+CLightStaff * __cdecl CLightStaff::dtor(CLightStaff *this_ptr,uint flags);

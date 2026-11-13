@@ -7,7 +7,7 @@
 
 // Original: core_colonel.cpp_staticInit_FUN_004442d0
 // Address: 004442d0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_colonel.cpp_factoryFuncColonel_FUN_00444300
 // Address: 00444300
@@ -15,7 +15,7 @@ CColonel * __cdecl factoryFuncColonel(void);
 
 // Original: core_colonel.cpp_CColonel_getActorType_FUN_00444320
 // Address: 00444320
-CDemonActorType * CColonel::getActorType(CColonel *this_ptr);
+CDemonActorType * __cdecl CColonel::getActorType(CColonel *this_ptr);
 
 // Original: core_colonel.cpp_CColonel_ctor_FUN_00444330
 // Address: 00444330

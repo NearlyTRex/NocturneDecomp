@@ -17,7 +17,7 @@ void engine_palette_cpp_FUN_00510d50(int *param_1)
   int iVar6;
   int *piVar7;
   
-  engine_mini3d_cpp_FUN_004f23d0();
+  engine_mini3d_cpp_lockFrame_FUN_004f23d0();
   iVar6 = 0;
   if (0 < *param_1) {
     piVar5 = param_1;
@@ -33,7 +33,7 @@ void engine_palette_cpp_FUN_00510d50(int *param_1)
       piVar7 = piVar7 + 0x40;
     } while (iVar6 < *param_1);
   }
-  engine_mini3d_cpp_FUN_004f23e0();
+  engine_mini3d_cpp_unlockFrame_FUN_004f23e0();
   *param_1 = 0;
   return;
 }

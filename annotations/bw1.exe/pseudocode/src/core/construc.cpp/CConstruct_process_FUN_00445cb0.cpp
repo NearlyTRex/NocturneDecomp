@@ -145,7 +145,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00445cb0(CConstruct *this_
     (this_ptr->base).pool_me = 1;
     this_ptr->recombine_interpolation = 0.0;
     if (this_ptr->blown_up == 0) {
-      core_construc_cpp_FUN_004472a0(this_ptr);
+      core_construc_cpp_CConstruct_explode_FUN_004472a0(this_ptr);
       core_event_cpp_CEventList_executeCommands_FUN_004a1b70(0x01C51D80,"ConstructDead");
     }
     core_motion_cpp_CMotionController_jumpToMotion_FUN_00524b10
@@ -383,7 +383,8 @@ LAB_00445e87:
     pCVar15 = this_ptr;
     if (0 < this_ptr->box_count) {
       do {
-        core_mission_cpp_FUN_0051b740(0x01D2C900);
+        core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740
+                  (0x01D2C900,pCVar15->boxes[0].body_part,1);
         pCVar15->boxes[0].body_part = (CBodyPart *)0x0;
         iVar8 = iVar8 + 1;
         pCVar15 = (CConstruct *)((pCVar15->base).base.base.orient_matrix.m + 1);

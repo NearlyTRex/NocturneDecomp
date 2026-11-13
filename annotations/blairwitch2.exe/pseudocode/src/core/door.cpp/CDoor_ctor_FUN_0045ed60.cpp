@@ -1,14 +1,12 @@
 // Name: core_door.cpp_CDoor_ctor_FUN_0045ed60
 // Address: 0045ed60
 // Address Range: [[0045ed60, 0045ef37]]
-// Convention: unknown
-// Signature: CDoor * core_door_cpp_CDoor_ctor_FUN_0045ed60(CDoor *this_ptr)
+// Convention: __cdecl
+// Signature: CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0045ed60(CDoor *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDoor * core_door_cpp_CDoor_ctor_FUN_0045ed60(CDoor *this_ptr)
+CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0045ed60(CDoor *this_ptr)
 
 {
   char cVar1;

@@ -7,7 +7,7 @@
 
 // Original: core_hero.cpp_staticInit_FUN_004ea5f0
 // Address: 004ea5f0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hero.cpp_closestHeroToPoint_FUN_004ea640
 // Address: 004ea640
@@ -97,9 +97,9 @@ int __cdecl CHero::tryOpenDoor(CHero *this_ptr);
 // Address: 004eb660
 int __cdecl FUN_004eb660(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004eb7f0
+// Original: core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0
 // Address: 004eb7f0
-undefined4 FUN_004eb7f0(int param_1);
+undefined4 __cdecl CHero::toggleLeverNow(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004eb890
 // Address: 004eb890
@@ -187,7 +187,7 @@ CDemonActorType * __cdecl CHeroPlaceholder::getActorType(CHeroPlaceholder *this_
 
 // Original: core_hero.cpp_CHeroPlaceholder_ctor_FUN_004ecba0
 // Address: 004ecba0
-CHeroPlaceholder * CHeroPlaceholder::ctor(CHeroPlaceholder *this_ptr);
+CHeroPlaceholder * __cdecl CHeroPlaceholder::ctor(CHeroPlaceholder *this_ptr);
 
 // Original: core_hero.cpp_CHeroPlaceholder_dtor_FUN_004ecc00
 // Address: 004ecc00
@@ -205,6 +205,6 @@ CDemonActor * FUN_004ecca0(int param_1);
 // Address: 004ecd50
 void __cdecl CHeroPlaceholder::archive(CHeroPlaceholder *this_ptr);
 
-// Original: core_hero.cpp_FUN_004ecd9e
-// Address: 004ecd9e
-undefined8 FUN_004ecd9e(void);
+// Original: core_hero.cpp_FUN_004ecda0
+// Address: 004ecda0
+undefined8 FUN_004ecda0(void);

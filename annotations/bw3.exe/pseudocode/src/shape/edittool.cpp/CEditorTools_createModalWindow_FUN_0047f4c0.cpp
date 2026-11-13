@@ -141,9 +141,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047f4c0(CEdi
   *(uint *)(iVar1 + 0x1c5b144) = _DAT_01c6b5a4;
   *(uint *)(iVar1 + 0x1c5b148) = _DAT_01c6b5b8;
   *(uint *)(iVar1 + 0x1c5b14c) = _DAT_01c6b5bc;
-  engine_mini3d_cpp_FUN_004ed150
-            (iVar1 + 0x1c5b128,iVar1 + 0x1c5b12c,iVar1 + 0x1c5b130,iVar1 + 0x1c5b134);
-  engine_mini3d_cpp_FUN_004ed020((float)left,(float)top,(float)right,(float)bottom);
+  engine_mini3d_cpp_getRenderViewport_FUN_004ed150
+            ((float *)(iVar1 + 0x1c5b128),(float *)(iVar1 + 0x1c5b12c),(float *)(iVar1 + 0x1c5b130),
+             (float *)(iVar1 + 0x1c5b134));
+  engine_mini3d_cpp_setRenderViewport_FUN_004ed020
+            ((float)left,(float)top,(float)right,(float)bottom);
   *(int *)(iVar1 + 0x1c5b108) = left;
   *(int *)(iVar1 + 0x1c5b10c) = top;
   *(int *)(iVar1 + 0x1c5b110) = right;

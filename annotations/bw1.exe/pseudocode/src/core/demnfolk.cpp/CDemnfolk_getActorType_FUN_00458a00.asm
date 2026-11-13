@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_demnfolk_cpp_CDemnfolk_getActorType_FUN_00458a00(CDemnfolk *this_ptr)
+; CDemonActorType * __cdecl core_demnfolk_cpp_CDemnfolk_getActorType_FUN_00458a00(CDemnfolk *this_ptr)
 ;
 ; Parameters:
 ; CDemnfolk *      Stack[0x4]:4   this_ptr

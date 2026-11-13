@@ -1,20 +1,20 @@
 // Name: core_shadow.cpp_factoryFuncShadow_FUN_0055daa0
 // Address: 0055daa0
 // Address Range: [[0055daa0, 0055dabb]]
-// Convention: unknown
-// Signature: void core_shadow_cpp_factoryFuncShadow_FUN_0055daa0(void)
+// Convention: __cdecl
+// Signature: CShadow * __cdecl core_shadow_cpp_factoryFuncShadow_FUN_0055daa0(void)
 
 #include "nocturne.h"
 
-void core_shadow_cpp_factoryFuncShadow_FUN_0055daa0(void)
+CShadow * __cdecl core_shadow_cpp_factoryFuncShadow_FUN_0055daa0(void)
 
 {
-  CShadow *this_ptr;
+  CShadow *pCVar1;
   
-  this_ptr = (CShadow *)operator_new(0xc314);
-  if (this_ptr == (CShadow *)0x0) {
-    return;
+  pCVar1 = (CShadow *)operator_new(0xc314);
+  if (pCVar1 == (CShadow *)0x0) {
+    return (CShadow *)0x0;
   }
-  core_shadow_cpp_CShadow_ctor_FUN_0055dad0(this_ptr);
-  return;
+  pCVar1 = core_shadow_cpp_CShadow_ctor_FUN_0055dad0(pCVar1);
+  return pCVar1;
 }

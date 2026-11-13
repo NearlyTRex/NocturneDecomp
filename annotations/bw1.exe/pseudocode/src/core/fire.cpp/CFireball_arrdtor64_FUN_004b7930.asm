@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFireball * core_fire_cpp_CFireball_arrdtor64_FUN_004b7930(CFireball *this_ptr,uint flags)
+; CFireball * __cdecl core_fire_cpp_CFireball_arrdtor64_FUN_004b7930(CFireball *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CFireball *      Stack[0x4]:4   this_ptr

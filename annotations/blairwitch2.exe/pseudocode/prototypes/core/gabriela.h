@@ -27,11 +27,11 @@ CGabriella * __cdecl factoryFuncGabriella(void);
 
 // Original: core_gabriela.cpp_CGabriella_getActorType_FUN_004ad2b0
 // Address: 004ad2b0
-CDemonActorType * CGabriella::getActorType(CGabriella *this_ptr);
+CDemonActorType * __cdecl CGabriella::getActorType(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_ctor_FUN_004ad2c0
 // Address: 004ad2c0
-CGabriella * CGabriella::ctor(CGabriella *this_ptr);
+CGabriella * __cdecl CGabriella::ctor(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_setup_FUN_004ad3e0
 // Address: 004ad3e0

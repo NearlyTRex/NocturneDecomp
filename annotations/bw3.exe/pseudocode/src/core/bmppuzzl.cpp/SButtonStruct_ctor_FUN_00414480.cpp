@@ -1,14 +1,12 @@
 // Name: core_bmppuzzl.cpp_SButtonStruct_ctor_FUN_00414480
 // Address: 00414480
 // Address Range: [[00414480, 0041448d]]
-// Convention: unknown
-// Signature: SButtonStruct * core_bmppuzzl_cpp_SButtonStruct_ctor_FUN_00414480(SButtonStruct *this_ptr)
+// Convention: __cdecl
+// Signature: SButtonStruct * __cdecl core_bmppuzzl_cpp_SButtonStruct_ctor_FUN_00414480(SButtonStruct *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-SButtonStruct * core_bmppuzzl_cpp_SButtonStruct_ctor_FUN_00414480(SButtonStruct *this_ptr)
+SButtonStruct * __cdecl core_bmppuzzl_cpp_SButtonStruct_ctor_FUN_00414480(SButtonStruct *this_ptr)
 
 {
   SButtonStruct *pSVar1;

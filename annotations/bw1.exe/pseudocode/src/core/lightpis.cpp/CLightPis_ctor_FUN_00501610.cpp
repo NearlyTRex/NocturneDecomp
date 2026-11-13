@@ -1,15 +1,14 @@
 // Name: core_lightpis.cpp_CLightPis_ctor_FUN_00501610
 // Address: 00501610
 // Address Range: [[00501610, 005016cf]]
-// Convention: unknown
-// Signature: CLightPis * core_lightpis_cpp_CLightPis_ctor_FUN_00501610(CLightPis *this_ptr)
+// Convention: __cdecl
+// Signature: CLightPis * __cdecl core_lightpis_cpp_CLightPis_ctor_FUN_00501610(CLightPis *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CLightPis * core_lightpis_cpp_CLightPis_ctor_FUN_00501610(CLightPis *this_ptr)
+CLightPis * __cdecl core_lightpis_cpp_CLightPis_ctor_FUN_00501610(CLightPis *this_ptr)
 
 {
   float fVar1;

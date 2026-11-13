@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   enabled
 ;
 ; XREF[2]:
-;   core_script.cpp_FUN_00522350 at 00525089
+;   core_script.cpp_CScript_step_FUN_00522350 at 00525089
 ;   core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00534720 at 00534757
 ;
 ; *****************************************************************************

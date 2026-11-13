@@ -22,9 +22,9 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[5]:
+;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051eb98
 ;   core_prye.cpp_FUN_0051c1c0 at 0051c555
 ;   core_prye.cpp_FUN_0051e280 at 0051e344
-;   core_prye.cpp_FUN_0051e6d0 at 0051eb98
 ;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c802
 ;   core_zombiepriest.cpp_FUN_0058e8d0 at 0058ebc2
 ;

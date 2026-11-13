@@ -7,13 +7,14 @@ struct _FILE;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/COutStream.h"
 
 // Structure: COutStreamFile
 // RTTI size 8; ctor 0057db80 calls the out-stream base ctor then zeroes +4
 // Ghidra size: 0x8 (8 bytes)
 #pragma pack(push, 1)
 typedef struct COutStreamFile {
-    void* vtable; // 0x0, stream vtable pointer; the abstract output-stream base ctor (0057d860) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB
+    COutStream base; // 0x0, derived
     struct _FILE* file; // 0x4, open 0057dd90 stores fopen(path, mode); putChar 0057dc70 fputc()s to it, write fwrite()s, seek/tell fseek/ftell; close 0057dd60 fclose()s and zeroes it; attach stores a caller FILE
 } COutStreamFile;
 #pragma pack(pop)

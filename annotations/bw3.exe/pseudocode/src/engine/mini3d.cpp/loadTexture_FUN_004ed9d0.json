@@ -1,0 +1,143 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 21,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "004afbf0",
+      "from_addr": "004afe55",
+      "name": "engine_font.cpp_FUN_004afbf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ed9d0",
+    "address_range": [
+      [
+        "004ed9d0",
+        "004ed9f7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_loadTexture_FUN_004ed9d0",
+    "signature": "void __cdecl engine_mini3d_cpp_loadTexture_FUN_004ed9d0(int arg1,int arg2,int arg3,int arg4,int arg5)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056aab0",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_FUN_0056aab0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004afe55",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_FUN_004afbf0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.473684210526316,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 19,
+      "INT_ADD": 10,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 9,
+      "LOAD": 9,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 66
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f33d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00512200",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "arg1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "arg2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "arg3",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "arg4",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "arg5",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

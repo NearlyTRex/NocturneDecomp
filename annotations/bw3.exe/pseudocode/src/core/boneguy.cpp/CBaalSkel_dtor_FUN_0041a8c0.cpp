@@ -1,14 +1,12 @@
 // Name: core_boneguy.cpp_CBaalSkel_dtor_FUN_0041a8c0
 // Address: 0041a8c0
 // Address Range: [[0041a8c0, 0041a944]]
-// Convention: unknown
-// Signature: CBaalSkel * core_boneguy_cpp_CBaalSkel_dtor_FUN_0041a8c0(CBaalSkel *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBaalSkel * __cdecl core_boneguy_cpp_CBaalSkel_dtor_FUN_0041a8c0(CBaalSkel *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBaalSkel * core_boneguy_cpp_CBaalSkel_dtor_FUN_0041a8c0(CBaalSkel *this_ptr,uint flags)
+CBaalSkel * __cdecl core_boneguy_cpp_CBaalSkel_dtor_FUN_0041a8c0(CBaalSkel *this_ptr,uint flags)
 
 {
   int iVar1;

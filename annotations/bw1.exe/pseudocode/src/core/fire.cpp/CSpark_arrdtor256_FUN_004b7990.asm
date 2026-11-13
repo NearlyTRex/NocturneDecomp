@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSpark * core_fire_cpp_CSpark_arrdtor256_FUN_004b7990(CSpark *this_ptr,uint flags)
+; CSpark * __cdecl core_fire_cpp_CSpark_arrdtor256_FUN_004b7990(CSpark *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSpark *         Stack[0x4]:4   this_ptr

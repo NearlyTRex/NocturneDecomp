@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPuzzle *this_ptr,int param_2,int param_3)
+; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPuzzle *this_ptr,int knob0,int knob1,int knob2,int speed,int transport_state)
 ;
 ; Parameters:
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   knob0
+; int              Stack[0xc]:4   knob1
+; int              Stack[0x10]:4   knob2
+; int              Stack[0x14]:4   speed
+; int              Stack[0x18]:4   transport_state
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d4002

@@ -7,7 +7,7 @@
 
 // Original: core_door.cpp_staticInit_FUN_00463a50
 // Address: 00463a50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_door.cpp_factoryFuncDoor_FUN_00463a80
 // Address: 00463a80
@@ -15,11 +15,11 @@ CDoor * __cdecl factoryFuncDoor(void);
 
 // Original: core_door.cpp_CDoor_getActorType_FUN_00463aa0
 // Address: 00463aa0
-CDemonActorType * CDoor::getActorType(CDoor *this_ptr);
+CDemonActorType * __cdecl CDoor::getActorType(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_ctor_FUN_00463ab0
 // Address: 00463ab0
-CDoor * CDoor::ctor(CDoor *this_ptr);
+CDoor * __cdecl CDoor::ctor(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_setup_FUN_00463c90
 // Address: 00463c90
@@ -31,11 +31,11 @@ void __cdecl CDoor::onOpened(CDoor *this_ptr);
 
 // Original: core_door.cpp_FUN_00463d30
 // Address: 00463d30
-void FUN_00463d30(int param_1,int param_2);
+void FUN_00463d30(CDoor *param_1,EDoorState param_2);
 
-// Original: core_door.cpp_FUN_00463d80
+// Original: core_door.cpp_CDoor_reposition_FUN_00463d80
 // Address: 00463d80
-void FUN_00463d80(CDemonActor *param_1);
+void __cdecl CDoor::reposition(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_process_FUN_004642f0
 // Address: 004642f0
@@ -81,9 +81,9 @@ int __cdecl CDoor::getBlockVirtualDirectorFlag(CDoor *this_ptr);
 // Address: 00465080
 int __cdecl CDoor::allowBulletHoles(CDoor *this_ptr);
 
-// Original: core_door.cpp_FUN_004650a0
+// Original: core_door.cpp_CDoor_getOpenStandPos_FUN_004650a0
 // Address: 004650a0
-float * FUN_004650a0(int param_1,float *param_2,undefined4 param_3);
+float * __cdecl CDoor::getOpenStandPos(CDoor *this_ptr,float *param_2,undefined4 param_3);
 
 // Original: core_door.cpp_CDoor_updateCollisionData_FUN_00465330
 // Address: 00465330

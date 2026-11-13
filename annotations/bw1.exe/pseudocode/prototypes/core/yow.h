@@ -7,44 +7,44 @@
 
 // Original: core_yow.cpp_staticInit_FUN_005b8100
 // Address: 005b8100
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_yow.cpp_factoryFuncYow_FUN_005b8130
 // Address: 005b8130
-void factoryFuncYow(void);
+CYow * __cdecl factoryFuncYow(void);
 
 // Original: core_yow.cpp_CYow_getActorType_FUN_005b8150
 // Address: 005b8150
-CDemonActorType * CYow::getActorType(CYow *this_ptr);
+CDemonActorType * __cdecl CYow::getActorType(CYow *this_ptr);
 
 // Original: core_yow.cpp_CYow_ctor_FUN_005b8160
 // Address: 005b8160
-CYow * CYow::ctor(CYow *this_ptr);
+CYow * __cdecl CYow::ctor(CYow *this_ptr);
 
-// Original: core_yow.cpp_FUN_005b81d0
+// Original: core_yow.cpp_CYow_setup_FUN_005b81d0
 // Address: 005b81d0
-void FUN_005b81d0(CEnemy *param_1);
+void __cdecl CYow::setup(CYow *this_ptr);
 
-// Original: core_yow.cpp_FUN_005b8440
+// Original: core_yow.cpp_CYow_process_FUN_005b8440
 // Address: 005b8440
-void FUN_005b8440(CEnemy *param_1,float param_2);
+void __cdecl CYow::process(CYow *this_ptr,float param_2);
 
 // Original: core_yow.cpp_FUN_005b8eb0
 // Address: 005b8eb0
 void FUN_005b8eb0(CCharacter *param_1,int *param_2);
 
-// Original: core_yow.cpp_FUN_005b9110
+// Original: core_yow.cpp_CYow_archive_FUN_005b9110
 // Address: 005b9110
-void FUN_005b9110(CEnemy *param_1);
+void __cdecl CYow::archive(CYow *this_ptr);
 
-// Original: core_yow.cpp_FUN_005b9170
+// Original: core_yow.cpp_CYow_processDamage_FUN_005b9170
 // Address: 005b9170
-void FUN_005b9170(CEnemy *param_1,SDamageInfo *param_2);
+void __cdecl CYow::processDamage(CYow *this_ptr,SDamageInfo *param_2);
 
-// Original: core_yow.cpp_FUN_005b9290
+// Original: core_yow.cpp_CYow_getTargetPoints_FUN_005b9290
 // Address: 005b9290
-int FUN_005b9290(int param_1,float *param_2);
+int __cdecl CYow::getTargetPoints(CYow *this_ptr,float *param_2);
 
 // Original: core_yow.cpp_CYow_dtor_FUN_005b95a0
 // Address: 005b95a0
-CYow * CYow::dtor(CYow *this_ptr,uint flags);
+CYow * __cdecl CYow::dtor(CYow *this_ptr,uint flags);

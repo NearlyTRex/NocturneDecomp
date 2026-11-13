@@ -17,7 +17,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_FUN_00516200
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200
 ;   core_main.c_FUN_004e4500
 ;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_memory.c_operator_new_array_FUN_005b8df8
@@ -37,8 +37,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 00516f37
     MOV EBP,dword ptr [ESP + 0x34]      ; 00516f3b
     PUSH EBX                            ; 00516f3f
-    CALL cockpit_pkbitmap.cpp_FUN_00516200 ; 00516f40
-        ;   XREF to: 00516200 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_00516200()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200 ; 00516f40
+        ;   XREF to: 00516200 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 00516f45
         ;   Label: LAB_00516f45
     PUSH EBP                            ; 00516f48

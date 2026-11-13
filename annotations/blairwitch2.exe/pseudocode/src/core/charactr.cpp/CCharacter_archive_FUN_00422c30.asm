@@ -13,7 +13,7 @@
 ;
 ; XREF[3]:
 ;   core_enemy.cpp_CEnemy_archive_FUN_00487ec0 at 00487f31
-;   core_hero.cpp_FUN_004ce590 at 004ce634
+;   core_hero.cpp_CHero_archive_FUN_004ce590 at 004ce634
 ;   core_npc.cpp_CNPC_archive_FUN_005109e0 at 005109f4
 ;
 ; Referenced Globals:

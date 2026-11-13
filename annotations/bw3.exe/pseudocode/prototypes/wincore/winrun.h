@@ -29,8 +29,8 @@ int __cdecl getNextKeypress(void);
 // Address: 00580800
 int __cdecl wasKeyPressed(void);
 
-// Original: wincore_winrun.cpp_getValue_FUN_0058081c
-// Address: 0058081c
+// Original: wincore_winrun.cpp_getValue_FUN_00580820
+// Address: 00580820
 char __cdecl getValue(void);
 
 // Original: wincore_winrun.cpp_enqueueInput_FUN_00580830
@@ -69,9 +69,9 @@ void __cdecl FUN_00580f70(void);
 // Address: 00581010
 void FUN_00581010(void);
 
-// Original: wincore_winrun.cpp_FUN_0058105e
-// Address: 0058105e
-void FUN_0058105e(void);
+// Original: wincore_winrun.cpp_FUN_00581060
+// Address: 00581060
+void FUN_00581060(void);
 
 // Original: wincore_winrun.cpp_winMain_FUN_00581080
 // Address: 00581080
@@ -117,8 +117,8 @@ void FUN_00581a20(HANDLE param_1);
 // Address: 00581a40
 void __cdecl sleep(double seconds);
 
-// Original: wincore_winrun.cpp_getComputerAndUserName_FUN_00581a9c
-// Address: 00581a9c
+// Original: wincore_winrun.cpp_getComputerAndUserName_FUN_00581aa0
+// Address: 00581aa0
 void __cdecl getComputerAndUserName(char *buffer);
 
 // Original: wincore_winrun.cpp_getRegistryStringValue_FUN_00581b70
@@ -153,9 +153,9 @@ float FUN_00581e70(int param_1,int *param_2,float param_3,float param_4);
 // Address: 00581f50
 void FUN_00581f50(int param_1);
 
-// Original: wincore_winrun.cpp_FUN_0058236e
-// Address: 0058236e
-void FUN_0058236e(void);
+// Original: wincore_winrun.cpp_FUN_00582370
+// Address: 00582370
+void FUN_00582370(void);
 
 // Original: wincore_winrun.cpp_FUN_005823a0
 // Address: 005823a0
@@ -173,9 +173,9 @@ void FUN_005824d0(void);
 // Address: 00582500
 void FUN_00582500(float param_1);
 
-// Original: wincore_winrun.cpp_FUN_0058257c
-// Address: 0058257c
-float FUN_0058257c(void);
+// Original: wincore_winrun.cpp_FUN_00582580
+// Address: 00582580
+float FUN_00582580(void);
 
 // Original: wincore_winrun.cpp_FUN_005825e0
 // Address: 005825e0
@@ -193,9 +193,9 @@ undefined4 FUN_00582640(undefined4 param_1);
 // Address: 00582680
 void FUN_00582680(undefined4 param_1);
 
-// Original: wincore_winrun.cpp_FUN_0058282c
-// Address: 0058282c
-void FUN_0058282c(undefined4 param_1);
+// Original: wincore_winrun.cpp_FUN_00582830
+// Address: 00582830
+void FUN_00582830(void);
 
 // Original: wincore_winrun.cpp_FUN_00582aa0
 // Address: 00582aa0

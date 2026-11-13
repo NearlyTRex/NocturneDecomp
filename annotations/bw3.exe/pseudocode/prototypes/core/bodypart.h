@@ -7,7 +7,7 @@
 
 // Original: core_bodypart.cpp_staticInit_FUN_00414520
 // Address: 00414520
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_bodypart.cpp_createBodyPart_FUN_00414550
 // Address: 00414550
@@ -19,7 +19,7 @@ CBodyPart * __cdecl factoryFuncBodyPart(void);
 
 // Original: core_bodypart.cpp_CBodyPart_getActorType_FUN_00414740
 // Address: 00414740
-CDemonActorType * CBodyPart::getActorType(CBodyPart *this_ptr);
+CDemonActorType * __cdecl CBodyPart::getActorType(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_ctor_FUN_00414750
 // Address: 00414750
@@ -27,11 +27,11 @@ CBodyPart * __cdecl CBodyPart::ctor(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_dtor_FUN_00414880
 // Address: 00414880
-CBodyPart * CBodyPart::dtor(CBodyPart *this_ptr,uint flags);
+CBodyPart * __cdecl CBodyPart::dtor(CBodyPart *this_ptr,uint flags);
 
-// Original: core_bodypart.cpp_FUN_00414910
+// Original: core_bodypart.cpp_setCounts_FUN_00414910
 // Address: 00414910
-void FUN_00414910(int param_1,undefined4 param_2,undefined4 param_3);
+void setCounts(int param_1,undefined4 param_2,undefined4 param_3);
 
 // Original: core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00414a60
 // Address: 00414a60

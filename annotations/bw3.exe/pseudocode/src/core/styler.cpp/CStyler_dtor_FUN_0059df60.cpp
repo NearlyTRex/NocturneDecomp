@@ -1,14 +1,12 @@
 // Name: core_styler.cpp_CStyler_dtor_FUN_0059df60
 // Address: 0059df60
 // Address Range: [[0059df60, 0059e004]]
-// Convention: unknown
-// Signature: CStyler * core_styler_cpp_CStyler_dtor_FUN_0059df60(CStyler *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CStyler * __cdecl core_styler_cpp_CStyler_dtor_FUN_0059df60(CStyler *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CStyler * core_styler_cpp_CStyler_dtor_FUN_0059df60(CStyler *this_ptr,uint flags)
+CStyler * __cdecl core_styler_cpp_CStyler_dtor_FUN_0059df60(CStyler *this_ptr,uint flags)
 
 {
   CMorph *pCVar1;

@@ -7,19 +7,19 @@
 
 // Original: core_hecaitmx.cpp_staticInit_FUN_00597d90
 // Address: 00597d90
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hecaitmx.cpp_factoryFuncHecaitomix_FUN_00597dc0
 // Address: 00597dc0
-void factoryFuncHecaitomix(void);
+CHecaitomix * __cdecl factoryFuncHecaitomix(void);
 
 // Original: core_hecaitmx.cpp_CHecaitomix_getActorType_FUN_00597de0
 // Address: 00597de0
-CDemonActorType * CHecaitomix::getActorType(CHecaitomix *this_ptr);
+CDemonActorType * __cdecl CHecaitomix::getActorType(CHecaitomix *this_ptr);
 
 // Original: core_hecaitmx.cpp_CHecaitomix_ctor_FUN_00597df0
 // Address: 00597df0
-CHecaitomix * CHecaitomix::ctor(CHecaitomix *this_ptr);
+CHecaitomix * __cdecl CHecaitomix::ctor(CHecaitomix *this_ptr);
 
 // Original: core_hecaitmx.cpp_CHecaitomix_setup_FUN_00597e50
 // Address: 00597e50
@@ -47,4 +47,4 @@ int __cdecl CHecaitomix::getTargetPoints(CHecaitomix *this_ptr,CVector3f *out_po
 
 // Original: core_hecaitmx.cpp_CHecaitomix_dtor_FUN_00598670
 // Address: 00598670
-CHecaitomix * CHecaitomix::dtor(CHecaitomix *this_ptr,uint flags);
+CHecaitomix * __cdecl CHecaitomix::dtor(CHecaitomix *this_ptr,uint flags);

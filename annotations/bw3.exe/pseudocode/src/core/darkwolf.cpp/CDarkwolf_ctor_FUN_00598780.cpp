@@ -1,15 +1,14 @@
 // Name: core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780
 // Address: 00598780
 // Address Range: [[00598780, 005987fb]]
-// Convention: unknown
-// Signature: CDarkwolf * core_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(CDarkwolf *this_ptr)
+// Convention: __cdecl
+// Signature: CDarkwolf * __cdecl core_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(CDarkwolf *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CDarkwolf * core_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(CDarkwolf *this_ptr)
+CDarkwolf * __cdecl core_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(CDarkwolf *this_ptr)
 
 {
   int iVar1;

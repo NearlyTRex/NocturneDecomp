@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 222,
+    "complexity_score": 221,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 86,
     "suspect_count": 11,
     "suspect_types": [
       "derived_field_index_pun",
@@ -16,7 +16,7 @@
       "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 212
+    "total_lines": 211
   },
   "cross_references": [
     {
@@ -34,9 +34,9 @@
         "00421051"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bugs.cpp_CBugs_ctor_FUN_00420ea0",
-    "signature": "CBugs * core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)"
+    "signature": "CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)"
   },
   "function_calls": [
     {
@@ -161,7 +161,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 18,
       "match": "(void *)((int)pvVar3",
       "severity": "moderate",
       "text": "((void *)((int)pvVar3 + 0x6404),1,&g_CKeyFramedModelInstanceTypeInfo);",
@@ -169,7 +169,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
+      "line": 27,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
       "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;",
@@ -177,7 +177,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
       "match": "(char *)((int)piVar7",
       "severity": "moderate",
       "text": "*(char *)((int)piVar7 + 1) = cVar1;",
@@ -185,7 +185,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(int *)((int)piVar7",
       "severity": "moderate",
       "text": "piVar7 = (int *)((int)piVar7 + 2);",
@@ -193,7 +193,7 @@
     },
     {
       "description": "Pointer value `pvVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 20,
+      "line": 18,
       "match": "(int)pvVar3",
       "severity": "moderate",
       "text": "((void *)((int)pvVar3 + 0x6404),1,&g_CKeyFramedModelInstanceTypeInfo);",
@@ -201,7 +201,7 @@
     },
     {
       "description": "Pointer value `&g_CBugsVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
+      "line": 19,
       "match": "(int)&g_CBugsVTable",
       "severity": "moderate",
       "text": "this_ptr_00[-0xcf].part_visibility_flags[0xe] = (int)&g_CBugsVTable;",
@@ -209,7 +209,7 @@
     },
     {
       "description": "Pointer value `piVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 53,
       "match": "(int)piVar7",
       "severity": "moderate",
       "text": "*(char *)((int)piVar7 + 1) = cVar1;",
@@ -217,7 +217,7 @@
     },
     {
       "description": "Pointer value `piVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 56,
+      "line": 54,
       "match": "(int)piVar7",
       "severity": "moderate",
       "text": "piVar7 = (int *)((int)piVar7 + 2);",
@@ -225,7 +225,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 61,
+      "line": 59,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -233,7 +233,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 72,
+      "line": 70,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -241,7 +241,7 @@
     },
     {
       "description": "'pCVar2[1].base.base.actor_name + 8' walks 1 x sizeof(CEnemy) (0xd054) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0xd05c, which is exactly offsetof(CBoneGuy, search_timer). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar2)->search_timer (\u00a7de-pun/\u00a712). Ambiguous: CBugs::bugs, CCarved::pickup_scan_timer, CConstruct::fall_event[8] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 18,
+      "line": 16,
       "severity": "moderate",
       "text": "(pCVar2[1].base.base.actor_name + 8,400,&g_SBugTypeInfo);",
       "type": "derived_field_index_pun"

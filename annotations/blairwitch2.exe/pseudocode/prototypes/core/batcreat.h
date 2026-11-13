@@ -7,7 +7,7 @@
 
 // Original: core_batcreat.cpp_staticInit_FUN_00411630
 // Address: 00411630
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_batcreat.cpp_factoryFuncBatCreature_FUN_00411660
 // Address: 00411660
@@ -15,7 +15,7 @@ CBatCreature * __cdecl factoryFuncBatCreature(void);
 
 // Original: core_batcreat.cpp_CBatCreature_getActorType_FUN_00411680
 // Address: 00411680
-CDemonActorType * CBatCreature::getActorType(CBatCreature *this_ptr);
+CDemonActorType * __cdecl CBatCreature::getActorType(CBatCreature *this_ptr);
 
 // Original: core_batcreat.cpp_CBatCreature_ctor_FUN_00411690
 // Address: 00411690
@@ -51,4 +51,4 @@ ECollisionType __cdecl CBatCreature::getCollisionType(CBatCreature *this_ptr,SCo
 
 // Original: core_batcreat.cpp_CBatCreature_dtor_FUN_00412a20
 // Address: 00412a20
-CBatCreature * CBatCreature::dtor(CBatCreature *this_ptr,uint flags);
+CBatCreature * __cdecl CBatCreature::dtor(CBatCreature *this_ptr,uint flags);

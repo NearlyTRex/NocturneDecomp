@@ -1,15 +1,14 @@
 // Name: core_lantern.cpp_CLantern_ctor_FUN_0059cbd0
 // Address: 0059cbd0
 // Address Range: [[0059cbd0, 0059ccb3]]
-// Convention: unknown
-// Signature: CLantern * core_lantern_cpp_CLantern_ctor_FUN_0059cbd0(CLantern *this_ptr)
+// Convention: __cdecl
+// Signature: CLantern * __cdecl core_lantern_cpp_CLantern_ctor_FUN_0059cbd0(CLantern *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CLantern * core_lantern_cpp_CLantern_ctor_FUN_0059cbd0(CLantern *this_ptr)
+CLantern * __cdecl core_lantern_cpp_CLantern_ctor_FUN_0059cbd0(CLantern *this_ptr)
 
 {
   CKeyFramedModelInstance *this_ptr_00;

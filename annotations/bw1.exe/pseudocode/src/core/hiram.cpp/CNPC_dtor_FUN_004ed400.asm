@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CNPC * core_hiram_cpp_CNPC_dtor_FUN_004ed400(CNPC *this_ptr,uint flags)
+; CNPC * __cdecl core_hiram_cpp_CNPC_dtor_FUN_004ed400(CNPC *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CNPC *           Stack[0x4]:4   this_ptr

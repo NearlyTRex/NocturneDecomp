@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CIniFile * engine_ini_cpp_CIniFile_dtor_FUN_004f4b30(CIniFile *this_ptr,uint flags)
+; CIniFile * __cdecl engine_ini_cpp_CIniFile_dtor_FUN_004f4b30(CIniFile *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CIniFile *       Stack[0x4]:4   this_ptr

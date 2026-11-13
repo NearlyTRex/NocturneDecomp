@@ -1,14 +1,12 @@
 // Name: core_curtain.cpp_CCurtain_dtor_FUN_0044c510
 // Address: 0044c510
 // Address Range: [[0044c510, 0044c55d]]
-// Convention: unknown
-// Signature: CCurtain * core_curtain_cpp_CCurtain_dtor_FUN_0044c510(CCurtain *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CCurtain * __cdecl core_curtain_cpp_CCurtain_dtor_FUN_0044c510(CCurtain *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CCurtain * core_curtain_cpp_CCurtain_dtor_FUN_0044c510(CCurtain *this_ptr,uint flags)
+CCurtain * __cdecl core_curtain_cpp_CCurtain_dtor_FUN_0044c510(CCurtain *this_ptr,uint flags)
 
 {
   CCurtain *pCVar1;

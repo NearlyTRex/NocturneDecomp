@@ -2,11 +2,11 @@
 // Address: 0059bad0
 // Address Range: [[0059bad0, 0059bb35]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0(CAudioRecPuzzle *this_ptr,int param_2,int param_3)
+// Signature: int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0(CAudioRecPuzzle *this_ptr,int x,int y)
 
 #include "nocturne.h"
 
-uint __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0(CAudioRecPuzzle *this_ptr,int param_2,int param_3)
+int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0(CAudioRecPuzzle *this_ptr,int x,int y)
 
 {
   int iVar1;
@@ -21,8 +21,8 @@ uint __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0(CAudi
       if (pCVar3->buttons[0].visible == 1) {
         iVar1 = pCVar3->buttons[0].x;
         iVar2 = pCVar3->buttons[0].y;
-        if ((((iVar1 <= param_2) && (param_2 <= pCVar3->buttons[0].width + iVar1)) &&
-            (iVar2 <= param_3)) && (param_3 <= pCVar3->buttons[0].height + iVar2)) {
+        if ((((iVar1 <= x) && (x <= pCVar3->buttons[0].width + iVar1)) && (iVar2 <= y)) &&
+           (y <= pCVar3->buttons[0].height + iVar2)) {
           this_ptr->selected_button = iVar4;
           return 1;
         }

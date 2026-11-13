@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 155,
+    "complexity_score": 154,
     "cross_reference_count": 133,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 44,
     "suspect_count": 9,
     "suspect_types": [
       "displaced_global_access",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 134
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -825,9 +825,9 @@
         "0040c523"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_actor.cpp_registerActorClass_FUN_0040c450",
-    "signature": "CDemonActorType * core_actor_cpp_registerActorClass_FUN_0040c450(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factory_func,int *max_version,int version,CDemonActorType *parent_class_info)"
+    "signature": "CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c450(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factory_func,int *max_version,int version,CDemonActorType *parent_class_info)"
   },
   "function_calls": [
     {
@@ -1124,7 +1124,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 30,
       "match": "DAT_007bc044",
       "severity": "mild",
       "text": "iVar3 = DAT_007bc044;",
@@ -1132,7 +1132,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 34,
       "match": "DAT_0061ed94",
       "severity": "mild",
       "text": "if (((&DAT_0061ed94)[(byte)(bVar2 + 1)] & 0xe0) != 0) {",
@@ -1140,7 +1140,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_007bc048",
       "severity": "mild",
       "text": "(&DAT_007bc048)[DAT_007bc044] = this_ptr;",
@@ -1148,7 +1148,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_007bc044",
       "severity": "mild",
       "text": "(&DAT_007bc048)[DAT_007bc044] = this_ptr;",
@@ -1156,7 +1156,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_007bc044",
       "severity": "mild",
       "text": "DAT_007bc044 = DAT_007bc044 + 1;",
@@ -1164,7 +1164,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_007bc044",
       "severity": "mild",
       "text": "DAT_007bc044 = DAT_007bc044 + 1;",
@@ -1172,7 +1172,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 15,
+      "line": 14,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

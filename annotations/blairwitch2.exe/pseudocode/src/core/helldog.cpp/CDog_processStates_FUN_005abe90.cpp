@@ -17,7 +17,7 @@ void __cdecl core_helldog_cpp_CDog_processStates_FUN_005abe90(CDog *this_ptr,flo
     core_muzzle_cpp_FUN_0059d650(&(this_ptr->base).state_machine,"MeleeAttack");
   }
   else {
-    core_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
+    core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(&this_ptr->base,delta_time,mode);
     if ((mode == 1) &&
        (iVar2 = core_muzzle_cpp_FUN_0059daa0(&(this_ptr->base).state_machine,"MeleeAttack")
        , iVar2 != 0)) {

@@ -1,14 +1,12 @@
 // Name: core_rifle.cpp_CRifle_dtor_FUN_005409c0
 // Address: 005409c0
 // Address Range: [[005409c0, 00540a0d]]
-// Convention: unknown
-// Signature: CRifle * core_rifle_cpp_CRifle_dtor_FUN_005409c0(CRifle *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CRifle * __cdecl core_rifle_cpp_CRifle_dtor_FUN_005409c0(CRifle *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CRifle * core_rifle_cpp_CRifle_dtor_FUN_005409c0(CRifle *this_ptr,uint flags)
+CRifle * __cdecl core_rifle_cpp_CRifle_dtor_FUN_005409c0(CRifle *this_ptr,uint flags)
 
 {
   CRifle *pCVar1;

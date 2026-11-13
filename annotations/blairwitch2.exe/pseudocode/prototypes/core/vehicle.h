@@ -7,7 +7,7 @@
 
 // Original: core_vehicle.cpp_staticInit_FUN_00583990
 // Address: 00583990
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_vehicle.cpp_factoryFuncVehicle_FUN_005839c0
 // Address: 005839c0
@@ -15,7 +15,7 @@ CVehicle * __cdecl factoryFuncVehicle(void);
 
 // Original: core_vehicle.cpp_CVehicle_getActorType_FUN_005839e0
 // Address: 005839e0
-CDemonActorType * CVehicle::getActorType(CVehicle *this_ptr);
+CDemonActorType * __cdecl CVehicle::getActorType(CVehicle *this_ptr);
 
 // Original: core_vehicle.cpp_CVehicle_ctor_FUN_005839f0
 // Address: 005839f0
@@ -59,7 +59,7 @@ uint __cdecl CVehicle::playTrackedSound(CVehicle *this_ptr,char *sound_name);
 
 // Original: core_vehicle.cpp_CVehicle_dtor_FUN_00584de0
 // Address: 00584de0
-CVehicle * CVehicle::dtor(CVehicle *this_ptr,uint flags);
+CVehicle * __cdecl CVehicle::dtor(CVehicle *this_ptr,uint flags);
 
 // Original: core_vehicle.cpp_CTire_ctor_FUN_00584e50
 // Address: 00584e50

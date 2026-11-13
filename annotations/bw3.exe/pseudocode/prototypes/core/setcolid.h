@@ -51,7 +51,7 @@ int __cdecl CDemonSet::isActorIgnored(CDemonSet *this_ptr,CDemonActor *actor);
 
 // Original: core_setcolid.cpp_intersectXZCylinder_FUN_0053d7d0
 // Address: 0053d7d0
-undefined4 intersectXZCylinder(float *param_1,float param_2,float param_3,int param_4);
+int __cdecl intersectXZCylinder(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info);
 
 // Original: core_setcolid.cpp_FUN_0053da90
 // Address: 0053da90
@@ -127,8 +127,8 @@ int __cdecl CDemonSet::isPointInWater(CDemonSet *this_ptr,CVector3f *point);
 
 // Original: core_setcolid.cpp_SRaytraceState_ctor_FUN_0053f0b0
 // Address: 0053f0b0
-SRaytraceState * SRaytraceState::ctor(SRaytraceState *this_ptr);
+SRaytraceState * __cdecl SRaytraceState::ctor(SRaytraceState *this_ptr);
 
 // Original: core_setcolid.cpp_SRaytraceState_dtor_FUN_0053f0c0
 // Address: 0053f0c0
-SRaytraceState * SRaytraceState::dtor(SRaytraceState *this_ptr,uint flags);
+SRaytraceState * __cdecl SRaytraceState::dtor(SRaytraceState *this_ptr,uint flags);

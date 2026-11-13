@@ -1,14 +1,12 @@
 // Name: core_fldnotes.cpp_SNotesMap_dtor_FUN_004a3820
 // Address: 004a3820
 // Address Range: [[004a3820, 004a3851]]
-// Convention: unknown
-// Signature: SNotesMap * core_fldnotes_cpp_SNotesMap_dtor_FUN_004a3820(SNotesMap *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_dtor_FUN_004a3820(SNotesMap *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-SNotesMap * core_fldnotes_cpp_SNotesMap_dtor_FUN_004a3820(SNotesMap *this_ptr,uint flags)
+SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_dtor_FUN_004a3820(SNotesMap *this_ptr,uint flags)
 
 {
   CAlphaBitmap *pCVar1;

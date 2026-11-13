@@ -1,14 +1,12 @@
 // Name: core_bird.cpp_CBird_dtor_FUN_004101f0
 // Address: 004101f0
 // Address Range: [[004101f0, 00410284]]
-// Convention: unknown
-// Signature: CBird * core_bird_cpp_CBird_dtor_FUN_004101f0(CBird *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBird * __cdecl core_bird_cpp_CBird_dtor_FUN_004101f0(CBird *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBird * core_bird_cpp_CBird_dtor_FUN_004101f0(CBird *this_ptr,uint flags)
+CBird * __cdecl core_bird_cpp_CBird_dtor_FUN_004101f0(CBird *this_ptr,uint flags)
 
 {
   CPathMap *pCVar1;

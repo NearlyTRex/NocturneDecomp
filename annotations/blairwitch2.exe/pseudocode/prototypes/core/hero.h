@@ -7,7 +7,7 @@
 
 // Original: core_hero.cpp_staticInit_FUN_004ce000
 // Address: 004ce000
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hero.cpp_closestHeroToPoint_FUN_004ce050
 // Address: 004ce050
@@ -45,9 +45,9 @@ int __cdecl CHero::testCylinderCollision(CHero *this_ptr,SCollisionReturnInfo *c
 // Address: 004ce540
 int __cdecl CHero::testLineIntersection(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 
-// Original: core_hero.cpp_FUN_004ce590
+// Original: core_hero.cpp_CHero_archive_FUN_004ce590
 // Address: 004ce590
-void FUN_004ce590(CCharacter *param_1);
+void __cdecl CHero::archive(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_getPathMap_FUN_004ce9c0
 // Address: 004ce9c0
@@ -191,7 +191,7 @@ CDemonActorType * __cdecl CHeroPlaceholder::getActorType(CHeroPlaceholder *this_
 
 // Original: core_hero.cpp_CHeroPlaceholder_ctor_FUN_004d0940
 // Address: 004d0940
-CHeroPlaceholder * CHeroPlaceholder::ctor(CHeroPlaceholder *this_ptr);
+CHeroPlaceholder * __cdecl CHeroPlaceholder::ctor(CHeroPlaceholder *this_ptr);
 
 // Original: core_hero.cpp_CHeroPlaceholder_dtor_FUN_004d09a0
 // Address: 004d09a0
@@ -209,6 +209,6 @@ CDemonActor * FUN_004d0a40(int param_1);
 // Address: 004d0af0
 void __cdecl CHeroPlaceholder::archive(CHeroPlaceholder *this_ptr);
 
-// Original: core_hero.cpp_FUN_004d0b3e
-// Address: 004d0b3e
-undefined8 FUN_004d0b3e(void);
+// Original: core_hero.cpp_FUN_004d0b40
+// Address: 004d0b40
+undefined8 FUN_004d0b40(void);

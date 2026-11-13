@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonTriangle * core_dtri_cpp_CDemonTriangle_dtor_FUN_00479f70(CDemonTriangle *this_ptr,uint flags)
+; CDemonTriangle * __cdecl core_dtri_cpp_CDemonTriangle_dtor_FUN_00479f70(CDemonTriangle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   this_ptr

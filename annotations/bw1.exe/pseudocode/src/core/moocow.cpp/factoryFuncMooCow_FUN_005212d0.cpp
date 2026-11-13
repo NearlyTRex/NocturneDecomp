@@ -1,20 +1,20 @@
 // Name: core_moocow.cpp_factoryFuncMooCow_FUN_005212d0
 // Address: 005212d0
 // Address Range: [[005212d0, 005212eb]]
-// Convention: unknown
-// Signature: void core_moocow_cpp_factoryFuncMooCow_FUN_005212d0(void)
+// Convention: __cdecl
+// Signature: CMooCow * __cdecl core_moocow_cpp_factoryFuncMooCow_FUN_005212d0(void)
 
 #include "nocturne.h"
 
-void core_moocow_cpp_factoryFuncMooCow_FUN_005212d0(void)
+CMooCow * __cdecl core_moocow_cpp_factoryFuncMooCow_FUN_005212d0(void)
 
 {
-  CMooCow *this_ptr;
+  CMooCow *pCVar1;
   
-  this_ptr = (CMooCow *)operator_new(0xc1f4);
-  if (this_ptr == (CMooCow *)0x0) {
-    return;
+  pCVar1 = (CMooCow *)operator_new(0xc1f4);
+  if (pCVar1 == (CMooCow *)0x0) {
+    return (CMooCow *)0x0;
   }
-  core_moocow_cpp_CMooCow_ctor_FUN_00521300(this_ptr);
-  return;
+  pCVar1 = core_moocow_cpp_CMooCow_ctor_FUN_00521300(pCVar1);
+  return pCVar1;
 }

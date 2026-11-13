@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_prye_cpp_staticInit_FUN_00517c20(void)
+; void __cdecl core_prye_cpp_staticInit_FUN_00517c20(void)
 ;
 ;
 ; Referenced Globals:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_stone_cpp_CTempleStone_getActorType_FUN_00584ea0(CTempleStone *this_ptr)
+; CDemonActorType * __cdecl core_stone_cpp_CTempleStone_getActorType_FUN_00584ea0(CTempleStone *this_ptr)
 ;
 ; Parameters:
 ; CTempleStone *   Stack[0x4]:4   this_ptr

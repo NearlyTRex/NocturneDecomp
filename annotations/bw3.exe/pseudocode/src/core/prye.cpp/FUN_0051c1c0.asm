@@ -293,9 +293,9 @@
 ;   core_motion.cpp_FUN_004fc350
 ;   core_motion.cpp_FUN_004fca20
 ;   core_prye.cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0
+;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0
 ;   core_prye.cpp_FUN_0051c0f0
 ;   core_prye.cpp_FUN_0051e280
-;   core_prye.cpp_FUN_0051e6d0
 ;   ... and 16 more
 ;
 ; *****************************************************************************
@@ -385,8 +385,8 @@ section .text
     ADD ESP,0x14                        ; 0051c2ae
     PUSH EBX                            ; 0051c2b1
         ;   Label: LAB_0051c2b1
-    CALL core_prye.cpp_FUN_0051e6d0     ; 0051c2b2
-        ;   XREF to: 0051e6d0 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_0051e6d0()
+    CALL core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 ; 0051c2b2
+        ;   XREF to: 0051e6d0 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0(CPrye * this_ptr)
     ADD ESP,0x4                         ; 0051c2b7
     LEA EAX,[EBX + 0x158]               ; 0051c2ba
     PUSH EAX                            ; 0051c2c0

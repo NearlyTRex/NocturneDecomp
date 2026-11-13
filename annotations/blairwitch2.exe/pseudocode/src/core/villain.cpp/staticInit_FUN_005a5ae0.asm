@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_villain_cpp_staticInit_FUN_005a5ae0(void)
+; void __cdecl core_villain_cpp_staticInit_FUN_005a5ae0(void)
 ;
 ;
 ; Called Functions:

@@ -14,7 +14,7 @@
 ;   shape_edittool.cpp_FUN_0047fa80 at 0047fe1f
 ;   shape_edittool.cpp_FUN_00486120 at 0048617b
 ;   shape_edittool.cpp_FUN_00486580 at 00486603
-;   shape_edittool.cpp_FUN_0048666e at 004866e5
+;   shape_edittool.cpp_FUN_00486670 at 004866e5
 ;   shape_edittool.cpp_FUN_00486810 at 0048686a
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0 at 0047c9ac
 ;

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 299,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 99,
-    "suspect_count": 16,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "unnamed_param",
       "unrolled_memcpy",
       "unrolled_strcat",
       "unrolled_strcpy",
@@ -39,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_SPageResourceTwanaEntry_addCharacter_FUN_004baf50",
-    "signature": "void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004baf50(SPageResourceTwanaEntry *this_ptr,char *param_2)"
+    "signature": "void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004baf50(SPageResourceTwanaEntry *this_ptr,char *character)"
   },
   "function_calls": [
     {
@@ -143,7 +142,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "character",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -182,46 +181,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004baf50(SPageResourceTwanaEntry *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Complex pointer cast",
       "line": 48,

@@ -1261,7 +1261,7 @@ LAB_005199e6:
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10
               ((CDeformableModelInstance *)((int)param_1 + 0x158));
     core_prye_cpp_CPrye_updateWeaponPosition_FUN_0051f360((CPrye *)&param_1->vec,0);
-    core_prye_cpp_FUN_00523800();
+    core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800((CPrye *)&param_1->vec);
     core_prye_cpp_FUN_0051c1c0();
   }
   core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170((CPrye *)&param_1->vec,param_2,iStack_28);

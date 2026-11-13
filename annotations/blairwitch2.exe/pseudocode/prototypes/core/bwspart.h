@@ -7,7 +7,7 @@
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_ctor_FUN_005a7ef0
 // Address: 005a7ef0
-CSimpleParticleSystem * CSimpleParticleSystem::ctor(CSimpleParticleSystem *this_ptr);
+CSimpleParticleSystem * __cdecl CSimpleParticleSystem::ctor(CSimpleParticleSystem *this_ptr);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50
 // Address: 005a7f50
@@ -15,7 +15,7 @@ int __cdecl CSimpleParticleSystem::ctorCapacity(CSimpleParticleSystem *this_ptr,
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_dtor_FUN_005a8000
 // Address: 005a8000
-CSimpleParticleSystem * CSimpleParticleSystem::dtor(CSimpleParticleSystem *this_ptr,uint flags);
+CSimpleParticleSystem * __cdecl CSimpleParticleSystem::dtor(CSimpleParticleSystem *this_ptr,uint flags);
 
 // Original: core_bwspart.cpp_CSimpleParticleSystem_setMaxParticles_FUN_005a8030
 // Address: 005a8030

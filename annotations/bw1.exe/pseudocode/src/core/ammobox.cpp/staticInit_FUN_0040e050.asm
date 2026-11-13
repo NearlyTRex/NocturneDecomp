@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ammobox_cpp_staticInit_FUN_0040e050(void)
+; void __cdecl core_ammobox_cpp_staticInit_FUN_0040e050(void)
 ;
 ;
 ; Called Functions:

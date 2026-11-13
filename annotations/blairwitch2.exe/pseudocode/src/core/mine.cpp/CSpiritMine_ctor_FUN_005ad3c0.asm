@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSpiritMine * core_mine_cpp_CSpiritMine_ctor_FUN_005ad3c0(CSpiritMine *this_ptr)
+; CSpiritMine * __cdecl core_mine_cpp_CSpiritMine_ctor_FUN_005ad3c0(CSpiritMine *this_ptr)
 ;
 ; Parameters:
 ; CSpiritMine *    Stack[0x4]:4   this_ptr

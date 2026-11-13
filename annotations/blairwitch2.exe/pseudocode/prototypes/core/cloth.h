@@ -13,9 +13,9 @@ float __cdecl fastInvSqrt(float dist_sq);
 // Address: 005ade20
 void __cdecl CCloth::allocMemory(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_FUN_005ade80
+// Original: core_cloth.cpp_CCloth_free_FUN_005ade80
 // Address: 005ade80
-void FUN_005ade80(int param_1);
+void __cdecl CCloth::free(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_CCloth_load_FUN_005adeb0
 // Address: 005adeb0
@@ -49,9 +49,9 @@ void __cdecl CCloth::process(CCloth *this_ptr,CVector3f *position,CVector3f *eul
 // Address: 005afe20
 void __cdecl CCloth::step(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 
-// Original: core_cloth.cpp_FUN_005b0c8c
-// Address: 005b0c8c
-void FUN_005b0c8c(int param_1);
+// Original: core_cloth.cpp_FUN_005b0c90
+// Address: 005b0c90
+void FUN_005b0c90(void);
 
 // Original: core_cloth.cpp_FUN_005b0ce0
 // Address: 005b0ce0
@@ -127,7 +127,7 @@ CVector3f * __cdecl applyLightAttenuation(CVector3f *v);
 
 // Original: core_cloth.cpp_SClothBone_ctor_FUN_005b1b90
 // Address: 005b1b90
-SClothBone * SClothBone::ctor(SClothBone *this_ptr);
+SClothBone * __cdecl SClothBone::ctor(SClothBone *this_ptr);
 
 // Original: core_cloth.cpp_SClothVertex_ctor_FUN_005b1ba0
 // Address: 005b1ba0

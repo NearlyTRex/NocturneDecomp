@@ -12,9 +12,9 @@
 ; XREF[9]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433000 at 00433061
 ;   core_charactr.cpp_FUN_0042cd70 at 0042cf0a
+;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051ebd9
 ;   core_prye.cpp_FUN_0051c1c0 at 0051c50e
 ;   core_prye.cpp_FUN_0051e280 at 0051e321
-;   core_prye.cpp_FUN_0051e6d0 at 0051ebd9
 ;   core_prye.cpp_FUN_0051ee10 at 0051ee54
 ;   core_skeleton.cpp_FUN_0054dfd0 at 0054e0e0
 ;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c813

@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 00560620
-;   core_sound.cpp_FUN_0055f6ae at 0055f712
+;   core_sound.cpp_FUN_0055f6b0 at 0055f712
 ;   core_weather.cpp_FUN_0057d1a0 at 0057d300
 ;
 ; *****************************************************************************

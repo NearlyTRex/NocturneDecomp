@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_STextPage_addResource_FUN_004a26e0(STextPage *this_ptr,int param_2)
+; void __cdecl core_fldnotes_cpp_STextPage_addResource_FUN_004a26e0(STextPage *this_ptr,SPageResource *resource)
 ;
 ; Parameters:
 ; STextPage *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; SPageResource *  Stack[0x8]:4   resource
 ;
 ; XREF[1]:
 ;   core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0 at 004a2bdd

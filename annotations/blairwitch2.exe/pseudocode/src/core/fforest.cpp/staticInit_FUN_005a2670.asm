@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fforest_cpp_staticInit_FUN_005a2670(void)
+; void __cdecl core_fforest_cpp_staticInit_FUN_005a2670(void)
 ;
 ;
 ; Called Functions:

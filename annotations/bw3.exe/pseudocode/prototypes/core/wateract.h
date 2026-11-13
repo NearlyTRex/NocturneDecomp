@@ -7,7 +7,7 @@
 
 // Original: core_wateract.cpp_staticInit_FUN_00577cf0
 // Address: 00577cf0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_wateract.cpp_factoryFuncWaterActor_FUN_00577d60
 // Address: 00577d60
@@ -15,7 +15,7 @@ CWaterActor * __cdecl factoryFuncWaterActor(void);
 
 // Original: core_wateract.cpp_CWaterActor_getActorType_FUN_00577d80
 // Address: 00577d80
-CDemonActorType * CWaterActor::getActorType(CWaterActor *this_ptr);
+CDemonActorType * __cdecl CWaterActor::getActorType(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_ctor_FUN_00577d90
 // Address: 00577d90
@@ -75,16 +75,16 @@ CDemonActorType * __cdecl CLava::getActorType(CLava *this_ptr);
 
 // Original: core_wateract.cpp_CLava_ctor_FUN_00579020
 // Address: 00579020
-CLava * CLava::ctor(CLava *this_ptr);
+CLava * __cdecl CLava::ctor(CLava *this_ptr);
 
 // Original: core_wateract.cpp_CLava_dtor_FUN_00579050
 // Address: 00579050
-CLava * CLava::dtor(CLava *this_ptr,uint flags);
+CLava * __cdecl CLava::dtor(CLava *this_ptr,uint flags);
 
 // Original: core_wateract.cpp_CWaterActor_dtor_FUN_005790a0
 // Address: 005790a0
-CWaterActor * CWaterActor::dtor(CWaterActor *this_ptr,uint flags);
+CWaterActor * __cdecl CWaterActor::dtor(CWaterActor *this_ptr,uint flags);
 
 // Original: core_wateract.cpp_SWaterVertex_ctor_FUN_005790f0
 // Address: 005790f0
-SWaterVertex * SWaterVertex::ctor(SWaterVertex *this_ptr);
+SWaterVertex * __cdecl SWaterVertex::ctor(SWaterVertex *this_ptr);

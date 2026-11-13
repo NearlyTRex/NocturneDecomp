@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CInStreamFile * support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(CInStreamFile *this_ptr,uint flags)
+; CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(CInStreamFile *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
@@ -16,8 +16,8 @@
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010d1
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a7f
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7f60
-;   engine_font.cpp_FUN_004a7fe2 at 004a830c
-;   engine_font.cpp_FUN_004a859e at 004a8619
+;   engine_font.cpp_FUN_004a7fd0 at 004a830c
+;   engine_font.cpp_FUN_004a85a0 at 004a8619
 ;   ... and 7 more
 ;
 ; Referenced Globals:
@@ -25,10 +25,10 @@
 ;   undefined1* g_CInStreamFileVTable = 0057cec0
 ;
 ; Called Functions:
-;   core_terrain.cpp_FUN_0057b9d0
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
+;   support_trstream.cpp_CInStream_dtor_FUN_0057b9d0
 ;   support_trstream.cpp_CInStreamFile_close_FUN_0057d180
 ;
 ; *****************************************************************************
@@ -44,12 +44,12 @@ section .text
     PUSH EBX                            ; 0057cecc
     MOV dword ptr [EBX],0x5fd3e4        ; 0057cecd | g_CInStreamFileVTable
     CALL support_trstream.cpp_CInStreamFile_close_FUN_0057d180 ; 0057ced3
-        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
+        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0057ced8
     PUSH 0x1                            ; 0057cedb
     PUSH EBX                            ; 0057cedd
-    CALL core_terrain.cpp_FUN_0057b9d0  ; 0057cede
-        ;   XREF to: 0057b9d0 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057b9d0()
+    CALL support_trstream.cpp_CInStream_dtor_FUN_0057b9d0 ; 0057cede
+        ;   XREF to: 0057b9d0 (UNCONDITIONAL_CALL)  ; CInStream * support_trstream.cpp_CInStream_dtor_FUN_0057b9d0(CInStream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0057cee3
     MOV DL,byte ptr [ESP + 0xc]         ; 0057cee6
     MOV EBX,EAX                         ; 0057ceea

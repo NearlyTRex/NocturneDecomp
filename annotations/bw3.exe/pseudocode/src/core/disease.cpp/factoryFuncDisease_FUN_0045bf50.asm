@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_disease_cpp_factoryFuncDisease_FUN_0045bf50(void)
+; CDisease * __cdecl core_disease_cpp_factoryFuncDisease_FUN_0045bf50(void)
 ;
 ;
 ; Called Functions:

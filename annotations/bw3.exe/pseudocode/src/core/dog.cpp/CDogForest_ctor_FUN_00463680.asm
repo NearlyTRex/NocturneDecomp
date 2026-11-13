@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDogForest * core_dog_cpp_CDogForest_ctor_FUN_00463680(CDogForest *this_ptr)
+; CDogForest * __cdecl core_dog_cpp_CDogForest_ctor_FUN_00463680(CDogForest *this_ptr)
 ;
 ; Parameters:
 ; CDogForest *     Stack[0x4]:4   this_ptr

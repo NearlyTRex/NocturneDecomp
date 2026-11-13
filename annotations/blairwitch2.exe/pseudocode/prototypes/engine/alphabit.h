@@ -13,9 +13,9 @@ CAlphaBitmap * __cdecl CAlphaBitmap::ctor(CAlphaBitmap *this_ptr);
 // Address: 0040d440
 CAlphaBitmap * __cdecl CAlphaBitmap::dtor(CAlphaBitmap *this_ptr,uint flags);
 
-// Original: engine_alphabit.cpp_FUN_0040d460
+// Original: engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d460
 // Address: 0040d460
-void FUN_0040d460(CAlphaBitmap *param_1,int param_2,int param_3);
+void __cdecl CAlphaBitmap::allocate(CAlphaBitmap *this_ptr,int param_2,int param_3);
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540
 // Address: 0040d540

@@ -1,12 +1,12 @@
 // Name: core_script.cpp_staticInit_FUN_005430c0
 // Address: 005430c0
 // Address Range: [[005430c0, 005430f4]]
-// Convention: unknown
-// Signature: void core_script_cpp_staticInit_FUN_005430c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_script_cpp_staticInit_FUN_005430c0(void)
 
 #include "nocturne.h"
 
-void core_script_cpp_staticInit_FUN_005430c0(void)
+void __cdecl core_script_cpp_staticInit_FUN_005430c0(void)
 
 {
   shape_edittool_cpp_CPickList_ctor_FUN_0049a620(&g_ScriptPickList);

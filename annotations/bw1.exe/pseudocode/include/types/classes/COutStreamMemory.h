@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/COutStream.h"
 
 // Structure: COutStreamMemory
 // RTTI size 24; ctor 005a1a90 calls the out-stream base ctor, zeroes +4..+0x10 and sets +0x14 = 1
 // Ghidra size: 0x18 (24 bytes)
 #pragma pack(push, 1)
 typedef struct COutStreamMemory {
-    void* vtable; // 0x0, stream vtable pointer; the abstract output-stream base ctor (005a14b0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB
+    COutStream base; // 0x0, derived
     char* buffer; // 0x4, open 005a1d60 stores the buffer arg; putChar 005a1bc0 writes buffer[position] and realloc()s it by 0x4000 when growable; close 005a1d20 frees it when growable
     int capacity; // 0x8, open stores the size arg; putChar/write grow it with realloc
     int position; // 0xc, putChar/write advance it; seek sets it; tell returns it (codec callers subtract it from the remaining length)

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CGlass * core_glass_cpp_CGlass_dtor_FUN_004c72f0(CGlass *this_ptr,uint flags)
+; CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004c72f0(CGlass *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr

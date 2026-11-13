@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSteuben * core_villain_cpp_CSteuben_dtor_FUN_005a5d70(CSteuben *this_ptr,uint flags)
+; CSteuben * __cdecl core_villain_cpp_CSteuben_dtor_FUN_005a5d70(CSteuben *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSteuben *       Stack[0x4]:4   this_ptr

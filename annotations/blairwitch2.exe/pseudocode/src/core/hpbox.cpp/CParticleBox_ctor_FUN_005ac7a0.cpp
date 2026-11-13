@@ -1,14 +1,12 @@
 // Name: core_hpbox.cpp_CParticleBox_ctor_FUN_005ac7a0
 // Address: 005ac7a0
 // Address Range: [[005ac7a0, 005ac7e1]]
-// Convention: unknown
-// Signature: CParticleBox * core_hpbox_cpp_CParticleBox_ctor_FUN_005ac7a0(CParticleBox *this_ptr)
+// Convention: __cdecl
+// Signature: CParticleBox * __cdecl core_hpbox_cpp_CParticleBox_ctor_FUN_005ac7a0(CParticleBox *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CParticleBox * core_hpbox_cpp_CParticleBox_ctor_FUN_005ac7a0(CParticleBox *this_ptr)
+CParticleBox * __cdecl core_hpbox_cpp_CParticleBox_ctor_FUN_005ac7a0(CParticleBox *this_ptr)
 
 {
   CParticleBox *pCVar1;

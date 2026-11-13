@@ -7,7 +7,7 @@
 
 // Original: core_weapon.cpp_staticInit_FUN_0057ad40
 // Address: 0057ad40
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_weapon.cpp_CWeapon_ctor_FUN_0057ad70
 // Address: 0057ad70

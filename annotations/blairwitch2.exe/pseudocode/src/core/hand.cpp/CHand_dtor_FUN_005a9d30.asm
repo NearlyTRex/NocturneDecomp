@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHand * core_hand_cpp_CHand_dtor_FUN_005a9d30(CHand *this_ptr,uint flags)
+; CHand * __cdecl core_hand_cpp_CHand_dtor_FUN_005a9d30(CHand *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CHand *          Stack[0x4]:4   this_ptr

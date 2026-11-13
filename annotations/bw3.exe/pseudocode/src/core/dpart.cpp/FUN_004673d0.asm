@@ -22,7 +22,7 @@
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160 at 0046b196
 ;   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0 at 0046ddb2
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0046d960 at 0046da0d
-;   engine_drender.cpp_FUN_0046de6e at 0046dfa4
+;   engine_drender.cpp_FUN_0046de70 at 0046dfa4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b014

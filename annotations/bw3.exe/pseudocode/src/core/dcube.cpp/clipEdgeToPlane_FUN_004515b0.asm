@@ -14,8 +14,7 @@
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ;
-; XREF[3]:
-;   core_dcube.cpp_FUN_0045322e at 00453841
+; XREF[2]:
 ;   core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00451a20 at 00451afa
 ;   core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00451e50 at 00451f32
 ;

@@ -1,14 +1,12 @@
 // Name: core_hecaitmx.cpp_CHecaitomix_dtor_FUN_00598670
 // Address: 00598670
 // Address Range: [[00598670, 005986f4]]
-// Convention: unknown
-// Signature: CHecaitomix * core_hecaitmx_cpp_CHecaitomix_dtor_FUN_00598670(CHecaitomix *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CHecaitomix * __cdecl core_hecaitmx_cpp_CHecaitomix_dtor_FUN_00598670(CHecaitomix *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHecaitomix * core_hecaitmx_cpp_CHecaitomix_dtor_FUN_00598670(CHecaitomix *this_ptr,uint flags)
+CHecaitomix * __cdecl core_hecaitmx_cpp_CHecaitomix_dtor_FUN_00598670(CHecaitomix *this_ptr,uint flags)
 
 {
   int iVar1;

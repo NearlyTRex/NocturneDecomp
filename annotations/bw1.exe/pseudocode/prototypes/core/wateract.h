@@ -7,7 +7,7 @@
 
 // Original: core_wateract.cpp_staticInit_FUN_005aa550
 // Address: 005aa550
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_wateract.cpp_factoryFuncWaterActor_FUN_005aa5a0
 // Address: 005aa5a0
@@ -15,7 +15,7 @@ CWaterActor * __cdecl factoryFuncWaterActor(void);
 
 // Original: core_wateract.cpp_CWaterActor_getActorType_FUN_005aa5c0
 // Address: 005aa5c0
-CDemonActorType * CWaterActor::getActorType(CWaterActor *this_ptr);
+CDemonActorType * __cdecl CWaterActor::getActorType(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_ctor_FUN_005aa5d0
 // Address: 005aa5d0
@@ -67,8 +67,8 @@ void __cdecl CWaterActor::onLaserHit(CWaterActor *this_ptr,SLaserInfo *laser_inf
 
 // Original: core_wateract.cpp_CWaterActor_dtor_FUN_005ab7f0
 // Address: 005ab7f0
-CWaterActor * CWaterActor::dtor(CWaterActor *this_ptr,uint flags);
+CWaterActor * __cdecl CWaterActor::dtor(CWaterActor *this_ptr,uint flags);
 
 // Original: core_wateract.cpp_SWaterVertex_ctor_FUN_005ab840
 // Address: 005ab840
-SWaterVertex * SWaterVertex::ctor(SWaterVertex *this_ptr);
+SWaterVertex * __cdecl SWaterVertex::ctor(SWaterVertex *this_ptr);

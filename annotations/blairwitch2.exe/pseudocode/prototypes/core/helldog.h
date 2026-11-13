@@ -7,23 +7,23 @@
 
 // Original: core_helldog.cpp_staticInit_FUN_005ab9e0
 // Address: 005ab9e0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_helldog.cpp_factoryFuncDog_FUN_005aba10
 // Address: 005aba10
-void factoryFuncDog(void);
+CDog * __cdecl factoryFuncDog(void);
 
 // Original: core_helldog.cpp_CDog_getActorType_FUN_005aba30
 // Address: 005aba30
-CDemonActorType * CDog::getActorType(CDog *this_ptr);
+CDemonActorType * __cdecl CDog::getActorType(CDog *this_ptr);
 
 // Original: core_helldog.cpp_CDog_ctor_FUN_005aba40
 // Address: 005aba40
-CDog * CDog::ctor(CDog *this_ptr);
+CDog * __cdecl CDog::ctor(CDog *this_ptr);
 
 // Original: core_helldog.cpp_CDog_dtor_FUN_005abd30
 // Address: 005abd30
-CDog * CDog::dtor(CDog *this_ptr,uint flags);
+CDog * __cdecl CDog::dtor(CDog *this_ptr,uint flags);
 
 // Original: core_helldog.cpp_CDog_setup_FUN_005abdd0
 // Address: 005abdd0

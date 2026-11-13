@@ -1,20 +1,20 @@
 // Name: core_weaver.cpp_factoryFuncRobin_FUN_005a5e40
 // Address: 005a5e40
 // Address Range: [[005a5e40, 005a5e5b]]
-// Convention: unknown
-// Signature: void core_weaver_cpp_factoryFuncRobin_FUN_005a5e40(void)
+// Convention: __cdecl
+// Signature: CRobin * __cdecl core_weaver_cpp_factoryFuncRobin_FUN_005a5e40(void)
 
 #include "nocturne.h"
 
-void core_weaver_cpp_factoryFuncRobin_FUN_005a5e40(void)
+CRobin * __cdecl core_weaver_cpp_factoryFuncRobin_FUN_005a5e40(void)
 
 {
-  CRobin *this_ptr;
+  CRobin *pCVar1;
   
-  this_ptr = (CRobin *)operator_new(0x11858);
-  if (this_ptr == (CRobin *)0x0) {
-    return;
+  pCVar1 = (CRobin *)operator_new(0x11858);
+  if (pCVar1 == (CRobin *)0x0) {
+    return (CRobin *)0x0;
   }
-  core_weaver_cpp_CRobin_ctor_FUN_005a5e70(this_ptr);
-  return;
+  pCVar1 = core_weaver_cpp_CRobin_ctor_FUN_005a5e70(pCVar1);
+  return pCVar1;
 }

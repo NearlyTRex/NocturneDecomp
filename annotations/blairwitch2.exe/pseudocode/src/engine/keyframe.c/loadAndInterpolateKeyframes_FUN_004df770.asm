@@ -171,7 +171,7 @@ section .text
         ;   Label: LAB_004df8be
     PUSH EAX                            ; 004df8c1
     CALL engine_model.c_loadModelFile_FUN_00500720 ; 004df8c2
-        ;   XREF to: 00500720 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_loadModelFile_FUN_00500720()
+        ;   XREF to: 00500720 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_model.c_loadModelFile_FUN_00500720(char * filename)
     ADD ESP,0x4                         ; 004df8c7
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004df8ca
     MOV dword ptr [EDX + 0x14],EAX      ; 004df8ce

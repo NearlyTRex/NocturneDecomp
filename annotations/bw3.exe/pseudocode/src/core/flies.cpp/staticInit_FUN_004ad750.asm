@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flies_cpp_staticInit_FUN_004ad750(void)
+; void __cdecl core_flies_cpp_staticInit_FUN_004ad750(void)
 ;
 ;
 ; Called Functions:

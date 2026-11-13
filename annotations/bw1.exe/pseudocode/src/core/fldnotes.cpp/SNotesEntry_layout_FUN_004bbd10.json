@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 230,
-    "complexity_score": 263,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 98,
-    "suspect_count": 15,
+    "pseudocode_lines": 93,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 328
+    "total_lines": 323
   },
   "cross_references": [
     {
@@ -34,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_SNotesEntry_layout_FUN_004bbd10",
-    "signature": "undefined4 __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004bbd10(SNotesEntry *this_ptr,int param_2)"
+    "signature": "int __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004bbd10(SNotesEntry *this_ptr,STextView *view)"
   },
   "function_calls": [
     {
@@ -210,10 +209,10 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "view",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "STextView *"
       }
     ]
   },
@@ -227,116 +226,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004bbd10(SNotesEntry *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->page = *(int *)(param_2 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((STextView *)param_2,\"<image box 32 32>\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((STextView *)param_2,\"<image check 32 32>\"), iVar5 == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(SNotesMap_ARRAY_01cc55d0 + this_ptr->map_index,param_2), iVar5 == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (iVar5 != *(int *)(param_2 + 0x10)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((STextView *)param_2,&DAT_005dfb63);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 57,
       "match": "DAT_005dfb63",
       "severity": "mild",
-      "text": "((STextView *)param_2,&DAT_005dfb63);",
+      "text": "iVar2 = core_fldnotes_cpp_STextView_addText_FUN_004bb290(view,&DAT_005dfb63);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((STextView *)param_2,this_ptr->title);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar5 = core_fldnotes_cpp_STextView_addText_FUN_004bb290((STextView *)param_2,pcVar4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((STextView *)param_2,\"</ul><br>\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)(param_2 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 83,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar3 = core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0((STextView *)param_2,pcVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((STextView *)param_2,\"ERROR: item won't fit<br>\");",
-      "type": "unnamed_param"
     }
   ]
 }

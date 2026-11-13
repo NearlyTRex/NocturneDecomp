@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonFilter * core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_00423810(CDemonFilter *this_ptr,uint flags)
+; CDemonFilter * __cdecl core_boxactor_cpp_CDemonFilter_arrdtor8_FUN_00423810(CDemonFilter *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonFilter *   Stack[0x4]:4   this_ptr

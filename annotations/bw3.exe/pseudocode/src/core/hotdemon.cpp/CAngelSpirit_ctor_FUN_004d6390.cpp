@@ -1,14 +1,12 @@
 // Name: core_hotdemon.cpp_CAngelSpirit_ctor_FUN_004d6390
 // Address: 004d6390
 // Address Range: [[004d6390, 004d63db]]
-// Convention: unknown
-// Signature: CAngelSpirit * core_hotdemon_cpp_CAngelSpirit_ctor_FUN_004d6390(CAngelSpirit *this_ptr)
+// Convention: __cdecl
+// Signature: CAngelSpirit * __cdecl core_hotdemon_cpp_CAngelSpirit_ctor_FUN_004d6390(CAngelSpirit *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAngelSpirit * core_hotdemon_cpp_CAngelSpirit_ctor_FUN_004d6390(CAngelSpirit *this_ptr)
+CAngelSpirit * __cdecl core_hotdemon_cpp_CAngelSpirit_ctor_FUN_004d6390(CAngelSpirit *this_ptr)
 
 {
   CHotDemon *pCVar1;

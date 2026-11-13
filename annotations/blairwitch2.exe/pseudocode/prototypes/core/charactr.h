@@ -7,7 +7,7 @@
 
 // Original: core_charactr.cpp_staticInit_FUN_004222a0
 // Address: 004222a0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 // Address: 004222d0
@@ -15,7 +15,7 @@ SDamageInfo * __cdecl SDamageInfo::ctor(SDamageInfo *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_ctor_FUN_00422340
 // Address: 00422340
-CCharacter * CCharacter::ctor(CCharacter *this_ptr);
+CCharacter * __cdecl CCharacter::ctor(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_setup_FUN_00422930
 // Address: 00422930
@@ -269,13 +269,13 @@ void __cdecl CCharacter::clearDoorTarget(CCharacter *this_ptr);
 // Address: 00428af0
 int __cdecl CCharacter::hasDoorTarget(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00428b10
+// Original: core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 // Address: 00428b10
-void FUN_00428b10(int param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl CCharacter::pickupObjectNow(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5);
 
-// Original: core_charactr.cpp_FUN_00428bd0
+// Original: core_charactr.cpp_CCharacter_computePickup_FUN_00428bd0
 // Address: 00428bd0
-void FUN_00428bd0(int param_1,int param_2,float param_3,int *param_4);
+void __cdecl CCharacter::computePickup(CCharacter *this_ptr,int param_2,float param_3,int *param_4);
 
 // Original: core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00428d60
 // Address: 00428d60
@@ -435,12 +435,12 @@ undefined4 FUN_0042bff0(int param_1);
 
 // Original: core_charactr.cpp_CCharacter_dtor_FUN_0042c000
 // Address: 0042c000
-CCharacter * CCharacter::dtor(CCharacter *this_ptr,uint flags);
+CCharacter * __cdecl CCharacter::dtor(CCharacter *this_ptr,uint flags);
 
 // Original: core_charactr.cpp_SFire_ctor_FUN_0042c0a0
 // Address: 0042c0a0
-SFire * SFire::ctor(SFire *this_ptr);
+SFire * __cdecl SFire::ctor(SFire *this_ptr);
 
-// Original: core_charactr.cpp_FUN_0042c0be
-// Address: 0042c0be
-undefined4 FUN_0042c0be(undefined4 *param_1,byte *param_2,int param_3);
+// Original: core_charactr.cpp_FUN_0042c0c0
+// Address: 0042c0c0
+undefined4 FUN_0042c0c0(void);

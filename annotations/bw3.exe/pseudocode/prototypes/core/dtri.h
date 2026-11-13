@@ -77,18 +77,18 @@ CDemonTriangle * __cdecl buildClipTriangleFan(int flags);
 // Address: 0047ae80
 undefined4 FUN_0047ae80(void);
 
-// Original: core_dtri.cpp_FUN_0047ae8c
-// Address: 0047ae8c
-undefined * FUN_0047ae8c(void);
+// Original: core_dtri.cpp_FUN_0047ae90
+// Address: 0047ae90
+undefined * FUN_0047ae90(void);
 
-// Original: core_dtri.cpp_FUN_0047ae9c
-// Address: 0047ae9c
-void FUN_0047ae9c(float *param_1);
+// Original: core_dtri.cpp_FUN_0047aea0
+// Address: 0047aea0
+void FUN_0047aea0(void);
 
 // Original: core_dtri.cpp_CDemonTriangle_ctor_FUN_0047aff0
 // Address: 0047aff0
-CDemonTriangle * CDemonTriangle::ctor(CDemonTriangle *this_ptr);
+CDemonTriangle * __cdecl CDemonTriangle::ctor(CDemonTriangle *this_ptr);
 
 // Original: core_dtri.cpp_CDemonTriangle_dtor_FUN_0047b000
 // Address: 0047b000
-CDemonTriangle * CDemonTriangle::dtor(CDemonTriangle *this_ptr,uint flags);
+CDemonTriangle * __cdecl CDemonTriangle::dtor(CDemonTriangle *this_ptr,uint flags);

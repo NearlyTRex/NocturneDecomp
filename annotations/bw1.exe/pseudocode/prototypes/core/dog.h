@@ -7,7 +7,7 @@
 
 // Original: core_dog.cpp_staticInit_FUN_00476750
 // Address: 00476750
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_dog.cpp_factoryFuncZombieDog_FUN_00476780
 // Address: 00476780
@@ -15,7 +15,7 @@ CZombieDog * __cdecl factoryFuncZombieDog(void);
 
 // Original: core_dog.cpp_CZombieDog_getActorType_FUN_004767a0
 // Address: 004767a0
-CDemonActorType * CZombieDog::getActorType(CZombieDog *this_ptr);
+CDemonActorType * __cdecl CZombieDog::getActorType(CZombieDog *this_ptr);
 
 // Original: core_dog.cpp_CZombieDog_ctor_FUN_004767b0
 // Address: 004767b0
@@ -43,4 +43,4 @@ int __cdecl CZombieDog::getTargetPoints(CZombieDog *this_ptr,CVector3f *out_poin
 
 // Original: core_dog.cpp_CZombieDog_dtor_FUN_00477180
 // Address: 00477180
-CZombieDog * CZombieDog::dtor(CZombieDog *this_ptr,uint flags);
+CZombieDog * __cdecl CZombieDog::dtor(CZombieDog *this_ptr,uint flags);

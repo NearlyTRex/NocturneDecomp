@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHag * core_hellhag_cpp_CHag_dtor_FUN_005aa7e0(CHag *this_ptr,uint flags)
+; CHag * __cdecl core_hellhag_cpp_CHag_dtor_FUN_005aa7e0(CHag *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CHag *           Stack[0x4]:4   this_ptr

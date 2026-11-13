@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_storm_cpp_factoryFuncStorm_FUN_00568a80(void)
+; CStorm * __cdecl core_storm_cpp_factoryFuncStorm_FUN_00568a80(void)
 ;
 ;
 ; Called Functions:

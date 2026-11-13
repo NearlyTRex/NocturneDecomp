@@ -10,7 +10,7 @@
 ; XREF[4]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0 at 0048f184
 ;   core_game.cpp_FUN_004b90d0 at 004b9a88
-;   core_script.cpp_FUN_00522350 at 00526a1f
+;   core_script.cpp_CScript_step_FUN_00522350 at 00526a1f
 ;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160 at 00583336
 ;
 ; Called Functions:

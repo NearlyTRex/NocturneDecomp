@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_npc_cpp_CNPC_getActorType_FUN_00508f30(CNPC *this_ptr)
+; CDemonActorType * __cdecl core_npc_cpp_CNPC_getActorType_FUN_00508f30(CNPC *this_ptr)
 ;
 ; Parameters:
 ; CNPC *           Stack[0x4]:4   this_ptr

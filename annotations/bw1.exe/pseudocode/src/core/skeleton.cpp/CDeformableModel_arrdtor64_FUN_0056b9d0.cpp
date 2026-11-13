@@ -1,14 +1,12 @@
 // Name: core_skeleton.cpp_CDeformableModel_arrdtor64_FUN_0056b9d0
 // Address: 0056b9d0
 // Address Range: [[0056b9d0, 0056b9e4]]
-// Convention: unknown
-// Signature: CDeformableModel * core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_0056b9d0(CDeformableModel *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_0056b9d0(CDeformableModel *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDeformableModel * core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_0056b9d0(CDeformableModel *this_ptr,uint flags)
+CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_0056b9d0(CDeformableModel *this_ptr,uint flags)
 
 {
   CDeformableModel *pCVar1;

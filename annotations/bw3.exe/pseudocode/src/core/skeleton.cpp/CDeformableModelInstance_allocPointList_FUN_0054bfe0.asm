@@ -17,8 +17,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
+;   core_skeleton.cpp_CDeformableModelInstance_free_FUN_0054c060
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
-;   core_skeleton.cpp_FUN_0054c060
 ;   crt_memory.c_operator_new_array_FUN_005a40df
 ;
 ; *****************************************************************************
@@ -30,8 +30,8 @@ section .text
     PUSH ESI                            ; 0054bfe1
     MOV EBX,dword ptr [ESP + 0xc]       ; 0054bfe2
     PUSH EBX                            ; 0054bfe6
-    CALL core_skeleton.cpp_FUN_0054c060 ; 0054bfe7
-        ;   XREF to: 0054c060 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054c060()
+    CALL core_skeleton.cpp_CDeformableModelInstance_free_FUN_0054c060 ; 0054bfe7
+        ;   XREF to: 0054c060 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_free_FUN_0054c060(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054bfec
     PUSH EBX                            ; 0054bfef
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40 ; 0054bff0

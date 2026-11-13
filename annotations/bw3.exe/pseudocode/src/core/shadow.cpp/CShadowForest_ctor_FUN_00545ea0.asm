@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CShadowForest * core_shadow_cpp_CShadowForest_ctor_FUN_00545ea0(CShadowForest *this_ptr)
+; CShadowForest * __cdecl core_shadow_cpp_CShadowForest_ctor_FUN_00545ea0(CShadowForest *this_ptr)
 ;
 ; Parameters:
 ; CShadowForest *  Stack[0x4]:4   this_ptr

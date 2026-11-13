@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CZombieSpirit * core_zombie_cpp_CZombieSpirit_ctor_FUN_0058cde0(CZombieSpirit *this_ptr)
+; CZombieSpirit * __cdecl core_zombie_cpp_CZombieSpirit_ctor_FUN_0058cde0(CZombieSpirit *this_ptr)
 ;
 ; Parameters:
 ; CZombieSpirit *  Stack[0x4]:4   this_ptr

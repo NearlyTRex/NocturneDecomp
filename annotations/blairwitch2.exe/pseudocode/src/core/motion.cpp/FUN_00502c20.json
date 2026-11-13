@@ -1,0 +1,133 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 298,
+    "complexity_score": 131,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 66,
+    "suspect_count": 6,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 364
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00502c20",
+    "address_range": [
+      [
+        "00502c20",
+        "00502f03"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_motion.cpp_FUN_00502c20",
+    "signature": "void core_motion_cpp_FUN_00502c20(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8010",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8010"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7896825396825395,
+    "instruction_count": 252,
+    "opcode_distribution": {
+      "BOOL_OR": 5,
+      "CALL": 25,
+      "CBRANCH": 10,
+      "COPY": 283,
+      "FLOAT2FLOAT": 12,
+      "INT_ADD": 93,
+      "INT_AND": 125,
+      "INT_CARRY": 32,
+      "INT_EQUAL": 120,
+      "INT_LESS": 12,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 10,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 37,
+      "INT_SLESS": 60,
+      "INT_SUB": 121,
+      "INT_XOR": 6,
+      "LOAD": 58,
+      "POPCOUNT": 60,
+      "RETURN": 1,
+      "STORE": 119
+    },
+    "pcode_op_count": 1207
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "int *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (0 < *in_stack_00000004) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "} while (iVar1 < *in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (0 < in_stack_00000004[0x709]) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "piStack_14 = in_stack_00000004 + 0x70a;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "} while (iStack_18 < in_stack_00000004[0x709]);",
+      "type": "stack_param"
+    }
+  ]
+}

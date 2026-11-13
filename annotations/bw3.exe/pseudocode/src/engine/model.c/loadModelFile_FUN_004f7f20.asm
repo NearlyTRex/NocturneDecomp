@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_004f7f20(char *param_1)
+; SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_004f7f20(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x5c]:1  local_5c
 ;

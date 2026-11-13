@@ -1,14 +1,12 @@
 // Name: core_burncrss.cpp_CBurncross_ctor_FUN_00424430
 // Address: 00424430
 // Address Range: [[00424430, 00424549]]
-// Convention: unknown
-// Signature: CBurncross * core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr)
+// Convention: __cdecl
+// Signature: CBurncross * __cdecl core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBurncross * core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr)
+CBurncross * __cdecl core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr)
 
 {
   CWeapon *pCVar1;

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 165,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 15,
-    "suspect_count": 13,
+    "suspect_count": 7,
     "suspect_types": [
       "extra_output",
       "negative_offset",
-      "pointer_truncation",
-      "unnamed_param"
+      "pointer_truncation"
     ],
     "total_lines": 61
   },
@@ -35,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170",
-    "signature": "int * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170(SPageResourceBitmap *this_ptr,char *param_2,int param_3,int param_4)"
+    "signature": "SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170(SPageResourceBitmap *this_ptr,char *path,int width,int height)"
   },
   "function_calls": [
     {
@@ -147,21 +146,21 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "path",
         "offset": 8,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "width",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "height",
         "offset": 16,
         "size": 4,
         "type": "int"
@@ -169,30 +168,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170(SPageResourceBitmap *this_ptr,char *param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "int * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170(SPageResourceBitmap *this_ptr,char *param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "int * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170(SPageResourceBitmap *this_ptr,char *param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 5,
@@ -218,30 +193,6 @@
       "type": "negative_offset"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_splitPath_FUN_00461070(param_2,(char *)0x0,(char *)0x0,local_108,(char *)0x0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(this_ptr_00,local_108,param_3,param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(this_ptr_00,local_108,param_3,param_4);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 15,
       "match": "this_ptr_00[-1].",
@@ -262,7 +213,7 @@
       "line": 17,
       "match": "this_ptr_00[-2].",
       "severity": "mild",
-      "text": "return &this_ptr_00[-2].height;",
+      "text": "return (SPageResourceBitmap *)&this_ptr_00[-2].height;",
       "type": "negative_offset"
     },
     {

@@ -13,10 +13,10 @@
 ;   core_game.cpp_FUN_004b90d0 at 004b91f4
 ;   core_game.cpp_checkCheatCode_FUN_004b8d90 at 004b8dc8
 ;   core_main.c_FUN_004e45e0 at 004e463c
-;   core_terrain.cpp_FUN_0057bb80 at 0057bdd9
 ;   core_texlist.cpp_CTextureList_load_FUN_005734b0 at 00573678
 ;   crt_unknown.c_FUN_005bbf9c at 005bbfac
 ;   crt_unknown.c_FUN_005c6580 at 005c65a1
+;   engine_dosio.cpp_FUN_00460c70 at 00460caa
 ;   ... and 6 more
 ;
 ; *****************************************************************************

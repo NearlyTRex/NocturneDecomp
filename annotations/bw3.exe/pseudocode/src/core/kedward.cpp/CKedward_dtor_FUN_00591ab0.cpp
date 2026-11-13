@@ -1,14 +1,12 @@
 // Name: core_kedward.cpp_CKedward_dtor_FUN_00591ab0
 // Address: 00591ab0
 // Address Range: [[00591ab0, 00591b34]]
-// Convention: unknown
-// Signature: CKedward * core_kedward_cpp_CKedward_dtor_FUN_00591ab0(CKedward *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CKedward * __cdecl core_kedward_cpp_CKedward_dtor_FUN_00591ab0(CKedward *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CKedward * core_kedward_cpp_CKedward_dtor_FUN_00591ab0(CKedward *this_ptr,uint flags)
+CKedward * __cdecl core_kedward_cpp_CKedward_dtor_FUN_00591ab0(CKedward *this_ptr,uint flags)
 
 {
   int iVar1;

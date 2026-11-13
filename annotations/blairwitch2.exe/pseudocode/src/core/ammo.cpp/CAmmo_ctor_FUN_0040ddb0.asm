@@ -10,7 +10,7 @@
 ;   core_ammo.cpp_factoryFuncAmmo_FUN_0040dd80 at 0040dd93
 ;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670 at 0040e6c7
 ;   core_game.cpp_FUN_004b90d0 at 004b9d9f
-;   core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fce at 004b8feb
+;   core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fd0 at 004b8feb
 ;   core_inv.cpp_FUN_004db760 at 004db784
 ;
 ; Referenced Globals:

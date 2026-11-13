@@ -7,7 +7,7 @@
 
 // Original: core_crossbow.cpp_staticInit_FUN_00449710
 // Address: 00449710
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_crossbow.cpp_factoryFuncCrossbow_FUN_00449740
 // Address: 00449740
@@ -15,7 +15,7 @@ CCrossbow * __cdecl factoryFuncCrossbow(void);
 
 // Original: core_crossbow.cpp_CCrossbow_getActorType_FUN_00449760
 // Address: 00449760
-CDemonActorType * CCrossbow::getActorType(CCrossbow *this_ptr);
+CDemonActorType * __cdecl CCrossbow::getActorType(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_ctor_FUN_00449770
 // Address: 00449770

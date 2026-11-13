@@ -136,9 +136,9 @@
     {
       "description": "Complex pointer cast",
       "line": 7,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)((int)this_ptr->vtable + 0xc))(this_ptr);",
+      "text": "iVar1 = (**(code **)((int)(this_ptr->base).vtable + 0xc))(this_ptr);",
       "type": "pointer_cast"
     },
     {
@@ -146,7 +146,7 @@
       "line": 7,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)((int)this_ptr->vtable + 0xc))(this_ptr);",
+      "text": "iVar1 = (**(code **)((int)(this_ptr->base).vtable + 0xc))(this_ptr);",
       "type": "unresolved_funcptr"
     }
   ],

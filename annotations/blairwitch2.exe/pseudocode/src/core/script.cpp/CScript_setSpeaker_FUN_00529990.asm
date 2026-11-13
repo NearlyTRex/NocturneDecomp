@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0 at 00424554
 ;   core_script.cpp_CScript_resetDialogState_FUN_00529b00 at 00529b0a
-;   core_script.cpp_FUN_00522350 at 0052474e
+;   core_script.cpp_CScript_step_FUN_00522350 at 0052474e
 ;
 ; *****************************************************************************
 

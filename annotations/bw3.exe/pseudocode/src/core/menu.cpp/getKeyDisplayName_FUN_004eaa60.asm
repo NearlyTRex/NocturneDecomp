@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_FUN_004b51e0 at 004b57b7
-;   core_game.cpp_drawKeyBindingEntry_FUN_004b50ee at 004b510a
+;   core_game.cpp_drawKeyBindingEntry_FUN_004b50f0 at 004b510a
 ;   core_inv.cpp_FUN_004da880 at 004daac9
 ;   core_menu.cpp_FUN_004eae80 at 004ebd4c
 ;

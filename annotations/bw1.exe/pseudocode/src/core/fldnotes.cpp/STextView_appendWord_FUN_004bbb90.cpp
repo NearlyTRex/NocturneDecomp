@@ -2,11 +2,11 @@
 // Address: 004bbb90
 // Address Range: [[004bbb90, 004bbbee]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fldnotes_cpp_STextView_appendWord_FUN_004bbb90(STextView *this_ptr,char *param_2)
+// Signature: void __cdecl core_fldnotes_cpp_STextView_appendWord_FUN_004bbb90(STextView *this_ptr,char *word)
 
 #include "nocturne.h"
 
-void __cdecl core_fldnotes_cpp_STextView_appendWord_FUN_004bbb90(STextView *this_ptr,char *param_2)
+void __cdecl core_fldnotes_cpp_STextView_appendWord_FUN_004bbb90(STextView *this_ptr,char *word)
 
 {
   char cVar1;
@@ -30,11 +30,11 @@ void __cdecl core_fldnotes_cpp_STextView_appendWord_FUN_004bbb90(STextView *this
   } while (cVar1 != '\0');
   pcVar4 = pcVar4 + -1;
   do {
-    cVar1 = *param_2;
+    cVar1 = *word;
     *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = param_2[1];
-    param_2 = param_2 + 2;
+    cVar1 = word[1];
+    word = word + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');

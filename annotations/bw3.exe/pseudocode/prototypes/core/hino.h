@@ -7,19 +7,19 @@
 
 // Original: core_hino.cpp_staticInit_FUN_0059b610
 // Address: 0059b610
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hino.cpp_factoryFuncHino_FUN_0059b640
 // Address: 0059b640
-void factoryFuncHino(void);
+CHino * __cdecl factoryFuncHino(void);
 
 // Original: core_hino.cpp_CHino_getActorType_FUN_0059b660
 // Address: 0059b660
-CDemonActorType * CHino::getActorType(CHino *this_ptr);
+CDemonActorType * __cdecl CHino::getActorType(CHino *this_ptr);
 
 // Original: core_hino.cpp_CHino_ctor_FUN_0059b670
 // Address: 0059b670
-CHino * CHino::ctor(CHino *this_ptr);
+CHino * __cdecl CHino::ctor(CHino *this_ptr);
 
 // Original: core_hino.cpp_FUN_0059b740
 // Address: 0059b740
@@ -63,4 +63,4 @@ ECollisionType __cdecl CHino::getCollisionType(CHino *this_ptr,SCollisionInfo *c
 
 // Original: core_hino.cpp_CHino_dtor_FUN_0059d660
 // Address: 0059d660
-CHino * CHino::dtor(CHino *this_ptr,uint flags);
+CHino * __cdecl CHino::dtor(CHino *this_ptr,uint flags);

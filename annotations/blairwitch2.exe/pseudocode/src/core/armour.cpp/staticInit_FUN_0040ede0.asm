@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_armour_cpp_staticInit_FUN_0040ede0(void)
+; void __cdecl core_armour_cpp_staticInit_FUN_0040ede0(void)
 ;
 ;
 ; Called Functions:

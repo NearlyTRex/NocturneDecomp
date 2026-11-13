@@ -7,7 +7,7 @@
 
 // Original: core_lightgun.cpp_staticInit_FUN_004e29c0
 // Address: 004e29c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_lightgun.cpp_factoryFuncLightGun_FUN_004e29f0
 // Address: 004e29f0
@@ -15,11 +15,11 @@ CLightGun * __cdecl factoryFuncLightGun(void);
 
 // Original: core_lightgun.cpp_CLightGun_getActorType_FUN_004e2a10
 // Address: 004e2a10
-CDemonActorType * CLightGun::getActorType(CLightGun *this_ptr);
+CDemonActorType * __cdecl CLightGun::getActorType(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_ctor_FUN_004e2a20
 // Address: 004e2a20
-CLightGun * CLightGun::ctor(CLightGun *this_ptr);
+CLightGun * __cdecl CLightGun::ctor(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_FUN_004e2ae0
 // Address: 004e2ae0

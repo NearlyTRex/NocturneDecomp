@@ -1,14 +1,12 @@
 // Name: core_ammo.cpp_CAmmo_dtor_FUN_0040de50
 // Address: 0040de50
 // Address Range: [[0040de50, 0040dea7]]
-// Convention: unknown
-// Signature: CAmmo * core_ammo_cpp_CAmmo_dtor_FUN_0040de50(CAmmo *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CAmmo * __cdecl core_ammo_cpp_CAmmo_dtor_FUN_0040de50(CAmmo *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAmmo * core_ammo_cpp_CAmmo_dtor_FUN_0040de50(CAmmo *this_ptr,uint flags)
+CAmmo * __cdecl core_ammo_cpp_CAmmo_dtor_FUN_0040de50(CAmmo *this_ptr,uint flags)
 
 {
   CAmmo *pCVar1;

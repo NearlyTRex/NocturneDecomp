@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctorFromFile_FUN_004a8680(SPageResourceBitmap *this_ptr,char *param_2,int param_3,int param_4)
+; SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctorFromFile_FUN_004a8680(SPageResourceBitmap *this_ptr,char *path,int width,int height)
 ;
 ; Parameters:
 ; SPageResourceBitmap * Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
+; char *           Stack[0x8]:4   path
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
 ; Local Variables:
 ; undefined        Stack[-0x108]:1  local_108
 ;

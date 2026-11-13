@@ -1,17 +1,15 @@
 // Name: core_bmppuzzl.cpp_CAudioRecPuzzle_dtor_FUN_00415df0
 // Address: 00415df0
 // Address Range: [[00415df0, 00415e62]]
-// Convention: unknown
-// Signature: CAudioRecPuzzle * core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0(CAudioRecPuzzle *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CAudioRecPuzzle * __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0(CAudioRecPuzzle *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAudioRecPuzzle * core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0(CAudioRecPuzzle *this_ptr,uint flags)
+CAudioRecPuzzle * __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0(CAudioRecPuzzle *this_ptr,uint flags)
 
 {
-  int iVar1;
+  SButtonStruct *pSVar1;
   CAlphaBitmap *pCVar2;
   CAudioRecPuzzle *pCVar3;
   void *ptr;
@@ -21,10 +19,12 @@ CAudioRecPuzzle * core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0(CAudioRecP
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  this_ptr->vtable = &g_CAudioRecPuzzleVTable;
-  iVar1 = core_bmppuzzl_cpp_FUN_004188b0(this_ptr->buttons,0);
-  pCVar2 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)(iVar1 + -0x5c),0);
-  pCVar3 = (CAudioRecPuzzle *)engine_alphabit_cpp_FUN_00415bc0(&pCVar2[-1].height,1);
+  (this_ptr->base).vtable = &g_CAudioRecPuzzleVTable;
+  pSVar1 = core_bmppuzzl_cpp_SButtonStruct_arrdtor50_FUN_004188b0(this_ptr->buttons,0);
+  pCVar2 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)&pSVar1[-3].visible,0)
+  ;
+  pCVar3 = (CAudioRecPuzzle *)
+           core_bmppuzzl_cpp_CPuzzle_dtor_FUN_00415bc0((CPuzzle *)&pCVar2[-1].height,1);
   if ((flags & 2) == 0) {
     return pCVar3;
   }

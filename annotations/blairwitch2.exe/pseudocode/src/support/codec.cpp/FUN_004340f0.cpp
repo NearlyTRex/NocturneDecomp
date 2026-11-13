@@ -2,11 +2,11 @@
 // Address: 004340f0
 // Address Range: [[004340f0, 004341d0]]
 // Convention: unknown
-// Signature: undefined4 support_codec_cpp_FUN_004340f0(int *param_1,undefined4 param_2,undefined4 param_3)
+// Signature: undefined4 support_codec_cpp_FUN_004340f0(int *param_1,char *param_2,char *param_3)
 
 #include "nocturne.h"
 
-uint support_codec_cpp_FUN_004340f0(int *param_1,uint param_2,uint param_3)
+uint support_codec_cpp_FUN_004340f0(int *param_1,char *param_2,char *param_3)
 
 {
   bool bVar1;

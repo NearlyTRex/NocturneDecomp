@@ -7,15 +7,15 @@
 
 // Original: core_smiley.cpp_staticInit_FUN_0056bdf0
 // Address: 0056bdf0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_smiley.cpp_factoryFuncSmiley_FUN_0056be20
 // Address: 0056be20
-void factoryFuncSmiley(void);
+CSmiley * __cdecl factoryFuncSmiley(void);
 
 // Original: core_smiley.cpp_CSmiley_getActorType_FUN_0056be40
 // Address: 0056be40
-CDemonActorType * CSmiley::getActorType(CSmiley *this_ptr);
+CDemonActorType * __cdecl CSmiley::getActorType(CSmiley *this_ptr);
 
 // Original: core_smiley.cpp_CSmiley_ctor_FUN_0056be50
 // Address: 0056be50
@@ -59,4 +59,4 @@ ECollisionType __cdecl CSmiley::getCollisionType(CSmiley *this_ptr,SCollisionInf
 
 // Original: core_smiley.cpp_CSmiley_dtor_FUN_0056d400
 // Address: 0056d400
-CSmiley * CSmiley::dtor(CSmiley *this_ptr,uint flags);
+CSmiley * __cdecl CSmiley::dtor(CSmiley *this_ptr,uint flags);

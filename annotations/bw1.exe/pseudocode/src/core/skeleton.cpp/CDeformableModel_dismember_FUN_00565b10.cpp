@@ -101,7 +101,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00565b10(CDeformab
       }
       iVar9 = iVar9 + 4;
     }
-    core_bodypart_cpp_FUN_00418d00
+    core_bodypart_cpp_setCounts_FUN_00418d00
               (body_part_ptr,iVar6,
                body_part_ptr->tri_count + this_ptr->parts[part_index].tri_counts[lod_index] +
                this_ptr->parts[part_index].cap_tri_counts[lod_index]);

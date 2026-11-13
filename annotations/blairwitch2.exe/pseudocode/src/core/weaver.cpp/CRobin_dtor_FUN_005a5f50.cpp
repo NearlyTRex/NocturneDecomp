@@ -1,15 +1,14 @@
 // Name: core_weaver.cpp_CRobin_dtor_FUN_005a5f50
 // Address: 005a5f50
 // Address Range: [[005a5f50, 005a602a]]
-// Convention: unknown
-// Signature: CRobin * core_weaver_cpp_CRobin_dtor_FUN_005a5f50(CRobin *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CRobin * __cdecl core_weaver_cpp_CRobin_dtor_FUN_005a5f50(CRobin *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CRobin * core_weaver_cpp_CRobin_dtor_FUN_005a5f50(CRobin *this_ptr,uint flags)
+CRobin * __cdecl core_weaver_cpp_CRobin_dtor_FUN_005a5f50(CRobin *this_ptr,uint flags)
 
 {
   CSimpleParticleSystem *pCVar1;

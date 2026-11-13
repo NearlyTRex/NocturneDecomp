@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_texlist_cpp_staticInit_FUN_00569080(void)
+; void __cdecl core_texlist_cpp_staticInit_FUN_00569080(void)
 ;
 ;
 ; Called Functions:

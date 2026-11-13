@@ -10,7 +10,8 @@
 ; char *           Stack[0x10]:4   text_content
 ; uint             Stack[0x14]:4   window_flags
 ;
-; XREF[8]:
+; XREF[9]:
+;   core_menu.cpp_FUN_004eba50 at 004eba88
 ;   core_menu.cpp_FUN_004ebf10 at 004ec98e
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb7f8
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047db40 at 0047dbc4

@@ -7,7 +7,7 @@
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   support_trstream.cpp_FUN_0057d280
+;   support_trstream.cpp_CInStreamFile_fillBuffer_FUN_0057d280
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     RET                                 ; 0057cfca
     PUSH EBX                            ; 0057cfcb
         ;   Label: LAB_0057cfcb
-    CALL support_trstream.cpp_FUN_0057d280 ; 0057cfcc
-        ;   XREF to: 0057d280 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d280()
+    CALL support_trstream.cpp_CInStreamFile_fillBuffer_FUN_0057d280 ; 0057cfcc
+        ;   XREF to: 0057d280 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_fillBuffer_FUN_0057d280(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0057cfd1
     TEST EAX,EAX                        ; 0057cfd4
     JNZ 0x0057cfa5                      ; 0057cfd6

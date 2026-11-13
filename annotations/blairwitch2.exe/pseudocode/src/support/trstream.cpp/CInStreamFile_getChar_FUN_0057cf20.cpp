@@ -11,7 +11,7 @@ int __cdecl support_trstream_cpp_CInStreamFile_getChar_FUN_0057cf20(CInStreamFil
 {
   int iVar1;
   
-  iVar1 = (**(code **)((int)this_ptr->vtable + 0xc))(this_ptr);
+  iVar1 = (**(code **)((int)(this_ptr->base).vtable + 0xc))(this_ptr);
   if (-1 < iVar1) {
     this_ptr->position = this_ptr->position + 1;
   }

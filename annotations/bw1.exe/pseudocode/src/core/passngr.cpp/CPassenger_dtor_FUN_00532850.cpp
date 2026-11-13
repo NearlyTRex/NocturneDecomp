@@ -1,14 +1,12 @@
 // Name: core_passngr.cpp_CPassenger_dtor_FUN_00532850
 // Address: 00532850
 // Address Range: [[00532850, 00532922]]
-// Convention: unknown
-// Signature: CPassenger * core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CPassenger * core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *this_ptr,uint flags)
+CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *this_ptr,uint flags)
 
 {
   CWerewolf *this_ptr_00;

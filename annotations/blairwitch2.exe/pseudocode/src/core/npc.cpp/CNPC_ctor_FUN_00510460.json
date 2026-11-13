@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 123,
+    "complexity_score": 122,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 22,
     "suspect_count": 9,
     "suspect_types": [
       "negative_offset",
       "pointer_truncation"
     ],
-    "total_lines": 63
+    "total_lines": 62
   },
   "cross_references": [
     {
@@ -67,9 +67,9 @@
         "0051050f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_npc.cpp_CNPC_ctor_FUN_00510460",
-    "signature": "CNPC * core_npc_cpp_CNPC_ctor_FUN_00510460(CNPC *this_ptr)"
+    "signature": "CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_00510460(CNPC *this_ptr)"
   },
   "function_calls": [
     {
@@ -101,12 +101,10 @@
         "call_addr": "004d0f38",
         "call_type": "direct",
         "caller": "core_hiram.cpp_CHiram_ctor_FUN_004d0f30",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -114,12 +112,10 @@
         "call_addr": "004d12d8",
         "call_type": "direct",
         "caller": "core_hostage.cpp_CHostage_ctor_FUN_004d12d0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -127,12 +123,10 @@
         "call_addr": "004d4788",
         "call_type": "direct",
         "caller": "core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004d4780",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -140,12 +134,10 @@
         "call_addr": "00511418",
         "call_type": "direct",
         "caller": "core_passngr.cpp_CPassenger_ctor_FUN_00511410",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -153,12 +145,10 @@
         "call_addr": "00571b36",
         "call_type": "direct",
         "caller": "core_tbplayer.cpp_CBassPlayer_ctor_FUN_00571b30",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -166,12 +156,10 @@
         "call_addr": "00571db6",
         "call_type": "direct",
         "caller": "core_tbplayer.cpp_CDrummer_ctor_FUN_00571db0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -190,7 +178,7 @@
     "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 2,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -261,7 +249,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 11,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache[0x1f][0x23] = (int)&g_CNPCVTable;",
@@ -269,7 +257,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 14,
+      "line": 12,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache[0x3f][3] = 0x3f19999a;",
@@ -277,7 +265,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
+      "line": 13,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache[0x3f][4] = 0x3f666666;",
@@ -285,7 +273,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 14,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache[0x3f][7] = 0x3fcccccd;",
@@ -293,7 +281,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
+      "line": 15,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache[0x3f][8] = -0x3b864000;",
@@ -301,7 +289,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 19,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x1f] + 0x24),",
@@ -309,7 +297,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 21,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache[0x37][0x22] = 0;",
@@ -317,7 +305,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 26,
+      "line": 24,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "return (CNPC *)(pCVar2[-1].height_cache[0x1d] + 0x3f);",
@@ -325,7 +313,7 @@
     },
     {
       "description": "Pointer value `&g_CNPCVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 13,
+      "line": 11,
       "match": "(int)&g_CNPCVTable",
       "severity": "moderate",
       "text": "pCVar2[-1].height_cache[0x1f][0x23] = (int)&g_CNPCVTable;",

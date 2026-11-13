@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHecaitomix * core_hecaitmx_cpp_CHecaitomix_dtor_FUN_00598670(CHecaitomix *this_ptr,uint flags)
+; CHecaitomix * __cdecl core_hecaitmx_cpp_CHecaitomix_dtor_FUN_00598670(CHecaitomix *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CHecaitomix *    Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_curtain_cpp_staticInit_FUN_0044a190(void)
+; void __cdecl core_curtain_cpp_staticInit_FUN_0044a190(void)
 ;
 ;
 ; Called Functions:

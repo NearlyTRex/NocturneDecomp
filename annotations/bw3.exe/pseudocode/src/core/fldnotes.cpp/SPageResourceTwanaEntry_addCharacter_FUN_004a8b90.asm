@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a8b90(SPageResourceTwanaEntry *this_ptr,char *param_2)
+; void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a8b90(SPageResourceTwanaEntry *this_ptr,char *character)
 ;
 ; Parameters:
 ; SPageResourceTwanaEntry * Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   character
 ;
 ; XREF[1]:
 ;   core_fldnotes.cpp_SPageResourceTwanaCharacter_onMouse_FUN_004a8890 at 004a88b3

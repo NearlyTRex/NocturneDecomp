@@ -195,7 +195,8 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,f
       pCVar11 = this_ptr->target_weapon;
       if (pCVar11 != (CDemonActor *)0x0) {
         this_ptr->target_weapon = (CDemonActor *)0x0;
-        core_charactr_cpp_FUN_00428b10(this_ptr,1,pCVar11);
+        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
+                  ((CCharacter *)this_ptr,1,(int)pCVar11,0x3e4ccccd,0);
       }
     }
     else {

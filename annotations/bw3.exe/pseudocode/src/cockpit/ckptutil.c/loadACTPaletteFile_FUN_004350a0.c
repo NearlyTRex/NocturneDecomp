@@ -70,7 +70,7 @@ LAB_00435123:
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
   iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
-                    (&CStack_38,0x5b8933,acStack_d8,1);
+                    (&CStack_38,(char *)0x5b8933,acStack_d8,1);
   if (iVar2 == 0) {
     puVar5 = (uchar *)0x1c6b298;
     for (iVar2 = 0xc0; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -85,8 +85,7 @@ LAB_00435123:
     }
   }
   else {
-    iVar2 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00
-                      (&CStack_38,(uint *)output_buffer,0x300);
+    iVar2 = support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&CStack_38,output_buffer,0x300);
     if (iVar2 != 0x300) {
       _sprintf(acStack_88,"Error reading %s.");
       _DAT_01d71de0 = "..\\cockpit\\ckptutil.c";

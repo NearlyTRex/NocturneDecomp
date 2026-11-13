@@ -2,17 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 117,
+    "complexity_score": 168,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 102,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 103,
+    "suspect_count": 5,
     "suspect_types": [
+      "stack_param",
+      "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 319
+    "total_lines": 320
   },
   "cross_references": [
     {
@@ -44,7 +46,7 @@
     {
       "addr": "00516200",
       "is_variadic": false,
-      "name": "cockpit_pkbitmap.cpp_FUN_00516200"
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200"
     },
     {
       "addr": "004e4500",
@@ -243,6 +245,38 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 54,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((this_ptr->width + -1 != iStack_14 || (this_ptr->height + -1 != unaff_EBP))))",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "if (in_stack_00000010 != 0) {",
+      "type": "stack_param"
     }
   ]
 }

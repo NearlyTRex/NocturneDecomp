@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAmmoMana * core_ammo_cpp_CAmmoMana_dtor_FUN_0040e4c0(CAmmoMana *this_ptr,uint flags)
+; CAmmoMana * __cdecl core_ammo_cpp_CAmmoMana_dtor_FUN_0040e4c0(CAmmoMana *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAmmoMana *      Stack[0x4]:4   this_ptr

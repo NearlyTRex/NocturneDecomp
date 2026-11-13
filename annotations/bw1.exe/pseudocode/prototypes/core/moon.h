@@ -7,15 +7,15 @@
 
 // Original: core_moon.cpp_staticInit_FUN_00521b60
 // Address: 00521b60
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_moon.cpp_CMoon_ctor_FUN_00521bc0
 // Address: 00521bc0
-CMoon * CMoon::ctor(CMoon *this_ptr);
+CMoon * __cdecl CMoon::ctor(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_dtor_FUN_00521c00
 // Address: 00521c00
-CMoon * CMoon::dtor(CMoon *this_ptr,uint flags);
+CMoon * __cdecl CMoon::dtor(CMoon *this_ptr,uint flags);
 
 // Original: core_moon.cpp_CMoon_init_FUN_00521c50
 // Address: 00521c50
@@ -39,4 +39,4 @@ int __cdecl CMoon::isAnimationFirstHalf(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CAlphaBitmap_arrdtor30_FUN_005220d0
 // Address: 005220d0
-CAlphaBitmap * CAlphaBitmap::arrdtor30(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor30(CAlphaBitmap *this_ptr,uint flags);

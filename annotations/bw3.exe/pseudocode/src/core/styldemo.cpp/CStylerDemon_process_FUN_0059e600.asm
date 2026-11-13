@@ -35,12 +35,12 @@
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042c230
 ;   ... and 27 more
 ;
 ; *****************************************************************************
@@ -165,8 +165,8 @@ section .text
     PUSH ECX                            ; 0059e762
     PUSH 0x0                            ; 0059e763
     PUSH EBX                            ; 0059e765
-    CALL core_charactr.cpp_FUN_004319d0 ; 0059e766
-        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004319d0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 ; 0059e766
+        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 0059e76b
     MOV dword ptr [EBX + 0xdca0],0x1    ; 0059e76e
     PUSH dword ptr [EBP + 0x92]         ; 0059e778
@@ -1465,8 +1465,8 @@ section .text
     MOV EDX,dword ptr [0x00600530]      ; 0059f6bc | DAT_00600530
     PUSH EDX                            ; 0059f6c2 | DAT_01d81080
     MOV dword ptr [EBX + 0xd060],0x0    ; 0059f6c3
-    CALL core_mission.cpp_FUN_004f6f10  ; 0059f6cd
-        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f6f10()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 0059f6cd
+        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 0059f6d2
     MOV EAX,dword ptr [EBX + 0xcdd0]    ; 0059f6d5
         ;   Label: caseD_6

@@ -1,12 +1,12 @@
 // Name: core_pendulum.cpp_staticInit_FUN_00514c70
 // Address: 00514c70
 // Address Range: [[00514c70, 00514c93]]
-// Convention: unknown
-// Signature: void core_pendulum_cpp_staticInit_FUN_00514c70(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_pendulum_cpp_staticInit_FUN_00514c70(void)
 
 #include "nocturne.h"
 
-void core_pendulum_cpp_staticInit_FUN_00514c70(void)
+void __cdecl core_pendulum_cpp_staticInit_FUN_00514c70(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

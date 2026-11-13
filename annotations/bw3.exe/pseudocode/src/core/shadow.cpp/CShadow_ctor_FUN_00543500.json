@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 84,
+    "complexity_score": 83,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
+    "pseudocode_lines": 53,
     "suspect_count": 2,
     "suspect_types": [
       "raw_address_constant",
       "warning_overlapping_globals"
     ],
-    "total_lines": 120
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -49,9 +49,9 @@
         "0054366b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_shadow.cpp_CShadow_ctor_FUN_00543500",
-    "signature": "CShadow * core_shadow_cpp_CShadow_ctor_FUN_00543500(CShadow *this_ptr)"
+    "signature": "CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_00543500(CShadow *this_ptr)"
   },
   "function_calls": [
     {
@@ -103,12 +103,10 @@
         "call_addr": "00545ea6",
         "call_type": "direct",
         "caller": "core_shadow.cpp_CShadowForest_ctor_FUN_00545ea0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -116,12 +114,10 @@
         "call_addr": "00545f36",
         "call_type": "direct",
         "caller": "core_shadow.cpp_CSpiritShadow_ctor_FUN_00545f30",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -129,12 +125,10 @@
         "call_addr": "00545fc6",
         "call_type": "direct",
         "caller": "core_shadow.cpp_CDemonShadow_ctor_FUN_00545fc0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -153,7 +147,7 @@
     "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 2,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -220,7 +214,7 @@
     },
     {
       "description": "Raw hex address 0x1c6e360 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 40,
+      "line": 39,
       "match": "0x1c6e360",
       "severity": "moderate",
       "text": "this_ptr_00 = 0x01C6E360;",

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_moloch_cpp_staticInit_FUN_00520290(void)
+; void __cdecl core_moloch_cpp_staticInit_FUN_00520290(void)
 ;
 ;
 ; Called Functions:

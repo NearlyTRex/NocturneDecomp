@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_COutStreamDebug_tell_FUN_005a1fb0(COutStreamDebug *this_ptr)
+; int __cdecl support_trstream_cpp_COutStreamDebug_tell_FUN_005a1fb0(COutStreamDebug *this_ptr)
 ;
 ; Parameters:
 ; COutStreamDebug * Stack[0x4]:4   this_ptr

@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_event.cpp_FUN_00489670 at 0048c78f
 ;   core_platfrm.cpp_CPlatform_process_FUN_005184c0 at 005185bf
-;   core_script.cpp_FUN_00522350 at 00524fef
+;   core_script.cpp_CScript_step_FUN_00522350 at 00524fef
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130

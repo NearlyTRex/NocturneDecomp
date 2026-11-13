@@ -1,14 +1,12 @@
 // Name: core_gargoyle.cpp_CGargoyle_dtor_FUN_004c1240
 // Address: 004c1240
 // Address Range: [[004c1240, 004c12d4]]
-// Convention: unknown
-// Signature: CGargoyle * core_gargoyle_cpp_CGargoyle_dtor_FUN_004c1240(CGargoyle *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_dtor_FUN_004c1240(CGargoyle *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CGargoyle * core_gargoyle_cpp_CGargoyle_dtor_FUN_004c1240(CGargoyle *this_ptr,uint flags)
+CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_dtor_FUN_004c1240(CGargoyle *this_ptr,uint flags)
 
 {
   int iVar1;

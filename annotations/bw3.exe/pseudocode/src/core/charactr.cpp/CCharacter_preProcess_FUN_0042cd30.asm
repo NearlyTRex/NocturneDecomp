@@ -19,7 +19,7 @@
 ;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00443598
 ;   core_cow.cpp_CZombieCow_process_FUN_00445130 at 0044536e
 ;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598c06
-;   core_demnfolk.cpp_FUN_00455080 at 00455d36
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00455d36
 ;   ... and 26 more
 ;
 ; Called Functions:

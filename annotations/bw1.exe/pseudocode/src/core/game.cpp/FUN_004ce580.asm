@@ -33,7 +33,7 @@
 ;   core_dcamera.cpp_FUN_0044dd70
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_event.cpp_CEventList_render_FUN_004a6d80
-;   core_fldnotes.cpp_FUN_004be0f0
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0
 ;   core_game.cpp_CGame_drawScreenBorder_FUN_004cc0c0
 ;   core_game.cpp_CGame_process_FUN_004d8060
 ;   core_game.cpp_CGame_renderIrisFade_FUN_004d61e0
@@ -166,8 +166,8 @@ section .text
         ;   XREF to: 004cf08d (CONDITIONAL_JUMP)  ; LAB_004cf08d
     LEA EAX,[ESP + 0x688]               ; 004ce6af
     PUSH EAX                            ; 004ce6b6
-    CALL core_slew.cpp_FUN_0056ba00     ; 004ce6b7
-        ;   XREF to: 0056ba00 (UNCONDITIONAL_CALL)  ; undefined core_slew.cpp_FUN_0056ba00()
+    CALL core_slew.cpp_CSlew_init_FUN_0056ba00 ; 004ce6b7
+        ;   XREF to: 0056ba00 (UNCONDITIONAL_CALL)  ; undefined8 core_slew.cpp_CSlew_init_FUN_0056ba00(CSlew * this_ptr)
     MOV EAX,[0x01d06ab4]                ; 004ce6bc | DAT_01d06ab4
     MOV EDX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 004ce6c1
     LEA EAX,[ESP + 0x68c]               ; 004ce6c8
@@ -326,8 +326,8 @@ section .text
     JZ 0x004cf0d7                       ; 004ce8f9
         ;   XREF to: 004cf0d7 (CONDITIONAL_JUMP)  ; LAB_004cf0d7
     PUSH EAX                            ; 004ce8ff | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004be0f0 ; 004ce900
-        ;   XREF to: 004be0f0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004be0f0()
+    CALL core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0 ; 004ce900
+        ;   XREF to: 004be0f0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004ce905
         ;   Label: LAB_004ce905
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ce908

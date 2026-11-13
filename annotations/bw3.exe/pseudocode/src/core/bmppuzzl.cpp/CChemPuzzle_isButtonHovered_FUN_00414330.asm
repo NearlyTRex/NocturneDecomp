@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_bmppuzzl_cpp_CChemPuzzle_isButtonHovered_FUN_00414330(CChemPuzzle *this_ptr,int param_2)
+; int __cdecl core_bmppuzzl_cpp_CChemPuzzle_isButtonHovered_FUN_00414330(CChemPuzzle *this_ptr,int button)
 ;
 ; Parameters:
 ; CChemPuzzle *    Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   button
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c5fadc

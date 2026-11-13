@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_SNotesMap_revealCircle_FUN_004a3bb0(SNotesMap *this_ptr,int param_2,int param_3,int param_4)
+; void __cdecl core_fldnotes_cpp_SNotesMap_revealCircle_FUN_004a3bb0(SNotesMap *this_ptr,int x,int y,int radius)
 ;
 ; Parameters:
 ; SNotesMap *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   radius
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
@@ -118,7 +118,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x30]      ; 004a3c85
     PUSH ECX                            ; 004a3c89
     CALL core_fldnotes.cpp_SNotesMap_revealPixel_FUN_004a3ca0 ; 004a3c8a
-        ;   XREF to: 004a3ca0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SNotesMap_revealPixel_FUN_004a3ca0(SNotesMap * this_ptr, int param_2, int param_3, int param_4)
+        ;   XREF to: 004a3ca0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SNotesMap_revealPixel_FUN_004a3ca0(SNotesMap * this_ptr, int x, int y, int alpha)
     ADD ESP,0x10                        ; 004a3c8f
     JMP 0x004a3c2e                      ; 004a3c92
         ;   XREF to: 004a3c2e (UNCONDITIONAL_JUMP)  ; LAB_004a3c2e

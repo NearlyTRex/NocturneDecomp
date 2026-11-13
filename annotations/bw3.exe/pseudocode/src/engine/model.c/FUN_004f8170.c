@@ -14,7 +14,7 @@ uint * engine_model_c_FUN_004f8170(int *param_1)
   int *piVar1;
   uint uVar2;
   uint uVar3;
-  uint uVar4;
+  SMRGLHeaderExtended *pSVar4;
   int iVar5;
   int extraout_ECX;
   int iVar6;
@@ -55,8 +55,8 @@ uint * engine_model_c_FUN_004f8170(int *param_1)
   
   bVar13 = 0;
   if (*param_1 == 0x20) {
-    uVar4 = engine_model_c_loadModelFile_FUN_004f7f20(param_1 + 6);
-    engine_model_c_FUN_004f8170(uVar4);
+    pSVar4 = engine_model_c_loadModelFile_FUN_004f7f20((char *)(param_1 + 6));
+    engine_model_c_FUN_004f8170(pSVar4);
     puVar11 = auStack_74;
     puVar10 = &uStack_a8;
     for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -64,7 +64,7 @@ uint * engine_model_c_FUN_004f8170(int *param_1)
       puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
       puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
     }
-    engine_model_c_freeMRGLData_FUN_004f80f0(uVar4);
+    engine_model_c_freeMRGLData_FUN_004f80f0(pSVar4);
     iVar6 = 0xd;
     puVar11 = auStack_110;
     puVar10 = &uStack_a8;

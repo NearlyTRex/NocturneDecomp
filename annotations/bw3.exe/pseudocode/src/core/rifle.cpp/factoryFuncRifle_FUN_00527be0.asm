@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_rifle_cpp_factoryFuncRifle_FUN_00527be0(void)
+; CRifle * __cdecl core_rifle_cpp_factoryFuncRifle_FUN_00527be0(void)
 ;
 ;
 ; Called Functions:

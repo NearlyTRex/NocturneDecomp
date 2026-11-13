@@ -7,7 +7,7 @@
 
 // Original: core_backgnd.cpp_staticInit_FUN_0040ee50
 // Address: 0040ee50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_backgnd.cpp_factoryFuncBackgroundActor_FUN_0040ee80
 // Address: 0040ee80
@@ -15,11 +15,11 @@ CBackgroundActor * __cdecl factoryFuncBackgroundActor(void);
 
 // Original: core_backgnd.cpp_CBackgroundActor_getActorType_FUN_0040eea0
 // Address: 0040eea0
-CDemonActorType * CBackgroundActor::getActorType(CBackgroundActor *this_ptr);
+CDemonActorType * __cdecl CBackgroundActor::getActorType(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040eeb0
 // Address: 0040eeb0
-CBackgroundActor * CBackgroundActor::ctor(CBackgroundActor *this_ptr);
+CBackgroundActor * __cdecl CBackgroundActor::ctor(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ef20
 // Address: 0040ef20

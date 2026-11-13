@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tawiscara_cpp_staticInit_FUN_00593d40(void)
+; void __cdecl core_tawiscara_cpp_staticInit_FUN_00593d40(void)
 ;
 ;
 ; Referenced Globals:

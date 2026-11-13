@@ -1,14 +1,12 @@
 // Name: core_fldnotes.cpp_CFieldNotes_ctor_FUN_004aa7d0
 // Address: 004aa7d0
 // Address Range: [[004aa7d0, 004aa7d7]]
-// Convention: unknown
-// Signature: CFieldNotes * core_fldnotes_cpp_CFieldNotes_ctor_FUN_004aa7d0(CFieldNotes *this_ptr)
+// Convention: __cdecl
+// Signature: CFieldNotes * __cdecl core_fldnotes_cpp_CFieldNotes_ctor_FUN_004aa7d0(CFieldNotes *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CFieldNotes * core_fldnotes_cpp_CFieldNotes_ctor_FUN_004aa7d0(CFieldNotes *this_ptr)
+CFieldNotes * __cdecl core_fldnotes_cpp_CFieldNotes_ctor_FUN_004aa7d0(CFieldNotes *this_ptr)
 
 {
   this_ptr->file_name[0] = '\0';

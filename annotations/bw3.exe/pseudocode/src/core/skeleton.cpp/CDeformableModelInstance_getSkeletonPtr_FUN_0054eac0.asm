@@ -12,11 +12,11 @@
 ;   core_bird.cpp_CBird_setup_FUN_0040fac0 at 0040fad6
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_00417630 at 0041764a
 ;   core_carved.cpp_CCarved_setup_FUN_00425ab0 at 00425ac7
+;   core_charactr.cpp_CCharacter_applyGesture_FUN_004320d0 at 00432103
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0 at 00433fec
 ;   core_charactr.cpp_CCharacter_renderFlames_FUN_0042f6f0 at 0042f704
 ;   core_charactr.cpp_CCharacter_setup_FUN_0042b0e0 at 0042b17e
 ;   core_charactr.cpp_FUN_0042cd70 at 0042ce17
-;   core_charactr.cpp_FUN_0042e8c0 at 0042e8d9
 ;   ... and 65 more
 ;
 ; Called Functions:

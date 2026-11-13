@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
+;   core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0 at 00415c0e
 ;   core_game.cpp_CGame_playerControls_FUN_004d0860 at 004d08a5
 ;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf98c
 ;   core_game.cpp_FUN_004d77d0 at 004d7b6f
 ;   core_script.cpp_CScript_executeInitSection_FUN_00544310 at 005443ad
 ;   core_script.cpp_CScript_process_FUN_005437f0 at 00543873
 ;   core_script.cpp_CScript_step_FUN_00544460 at 0054861f
-;   engine_alphabit.cpp_FUN_00415be0 at 00415c0e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b498

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_event_cpp_staticInit_FUN_0048b780(void)
+; void __cdecl core_event_cpp_staticInit_FUN_0048b780(void)
 ;
 ;
 ; Referenced Globals:

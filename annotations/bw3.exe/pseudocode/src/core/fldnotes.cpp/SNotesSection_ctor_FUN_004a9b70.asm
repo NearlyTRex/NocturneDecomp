@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SNotesSection * core_fldnotes_cpp_SNotesSection_ctor_FUN_004a9b70(SNotesSection *this_ptr)
+; SNotesSection * __cdecl core_fldnotes_cpp_SNotesSection_ctor_FUN_004a9b70(SNotesSection *this_ptr)
 ;
 ; Parameters:
 ; SNotesSection *  Stack[0x4]:4   this_ptr

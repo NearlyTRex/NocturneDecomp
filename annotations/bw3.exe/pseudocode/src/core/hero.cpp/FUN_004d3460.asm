@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004d4520 at 004d4621
+;   core_hero.cpp_CHero_doHeroAction_FUN_004d4520 at 004d4621
 ;   core_prye.cpp_FUN_0051b550 at 0051bf66
 ;
 ; Referenced Globals:

@@ -7,7 +7,7 @@
 
 // Original: core_imp.cpp_staticInit_FUN_004f2790
 // Address: 004f2790
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_imp.cpp_factoryFuncImp_FUN_004f27c0
 // Address: 004f27c0
@@ -15,7 +15,7 @@ CImp * __cdecl factoryFuncImp(void);
 
 // Original: core_imp.cpp_CImp_getActorType_FUN_004f27e0
 // Address: 004f27e0
-CDemonActorType * CImp::getActorType(CImp *this_ptr);
+CDemonActorType * __cdecl CImp::getActorType(CImp *this_ptr);
 
 // Original: core_imp.cpp_CImp_ctor_FUN_004f27f0
 // Address: 004f27f0
@@ -59,4 +59,4 @@ ECollisionType __cdecl CImp::getCollisionType(CImp *this_ptr,SCollisionInfo *col
 
 // Original: core_imp.cpp_CImp_dtor_FUN_004f42d0
 // Address: 004f42d0
-CImp * CImp::dtor(CImp *this_ptr,uint flags);
+CImp * __cdecl CImp::dtor(CImp *this_ptr,uint flags);

@@ -1,20 +1,20 @@
 // Name: core_villain.cpp_factoryFuncSteuben_FUN_005a5b10
 // Address: 005a5b10
 // Address Range: [[005a5b10, 005a5b2b]]
-// Convention: unknown
-// Signature: void core_villain_cpp_factoryFuncSteuben_FUN_005a5b10(void)
+// Convention: __cdecl
+// Signature: CSteuben * __cdecl core_villain_cpp_factoryFuncSteuben_FUN_005a5b10(void)
 
 #include "nocturne.h"
 
-void core_villain_cpp_factoryFuncSteuben_FUN_005a5b10(void)
+CSteuben * __cdecl core_villain_cpp_factoryFuncSteuben_FUN_005a5b10(void)
 
 {
-  CSteuben *this_ptr;
+  CSteuben *pCVar1;
   
-  this_ptr = (CSteuben *)operator_new(0x11850);
-  if (this_ptr == (CSteuben *)0x0) {
-    return;
+  pCVar1 = (CSteuben *)operator_new(0x11850);
+  if (pCVar1 == (CSteuben *)0x0) {
+    return (CSteuben *)0x0;
   }
-  core_villain_cpp_CSteuben_ctor_FUN_005a5b40(this_ptr);
-  return;
+  pCVar1 = core_villain_cpp_CSteuben_ctor_FUN_005a5b40(pCVar1);
+  return pCVar1;
 }

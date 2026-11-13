@@ -1,16 +1,15 @@
 // Name: core_union.cpp_CUnion_ctor_FUN_005a4a80
 // Address: 005a4a80
 // Address Range: [[005a4a80, 005a4bf3]]
-// Convention: unknown
-// Signature: CUnion * core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr)
+// Convention: __cdecl
+// Signature: CUnion * __cdecl core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CUnion * core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr)
+CUnion * __cdecl core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr)
 
 {
   SStateMachine *pSVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStyler * core_styler_cpp_CStyler_dtor_FUN_0059df60(CStyler *this_ptr,uint flags)
+; CStyler * __cdecl core_styler_cpp_CStyler_dtor_FUN_0059df60(CStyler *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CStyler *        Stack[0x4]:4   this_ptr

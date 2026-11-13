@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CEmitter * core_emitter_cpp_CEmitter_ctor_FUN_0049ee40(CEmitter *this_ptr)
+; CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_0049ee40(CEmitter *this_ptr)
 ;
 ; Parameters:
 ; CEmitter *       Stack[0x4]:4   this_ptr

@@ -1,14 +1,12 @@
 // Name: core_boneguy.cpp_CSkeletonDemon_ctor_FUN_00419a20
 // Address: 00419a20
 // Address Range: [[00419a20, 00419a81]]
-// Convention: unknown
-// Signature: CSkeletonDemon * core_boneguy_cpp_CSkeletonDemon_ctor_FUN_00419a20(CSkeletonDemon *this_ptr)
+// Convention: __cdecl
+// Signature: CSkeletonDemon * __cdecl core_boneguy_cpp_CSkeletonDemon_ctor_FUN_00419a20(CSkeletonDemon *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSkeletonDemon * core_boneguy_cpp_CSkeletonDemon_ctor_FUN_00419a20(CSkeletonDemon *this_ptr)
+CSkeletonDemon * __cdecl core_boneguy_cpp_CSkeletonDemon_ctor_FUN_00419a20(CSkeletonDemon *this_ptr)
 
 {
   CBoneGuy *pCVar1;

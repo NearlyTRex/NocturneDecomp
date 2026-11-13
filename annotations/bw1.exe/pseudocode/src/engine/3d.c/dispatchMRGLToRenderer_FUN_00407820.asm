@@ -57,7 +57,7 @@ section .text
         ;   XREF to: 00407a02 (CONDITIONAL_JUMP)  ; LAB_00407a02
     PUSH EDI                            ; 0040785c
     CALL engine_3d.c_transformAndBufferVertices_FUN_00403840 ; 0040785d
-        ;   XREF to: 00403840 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_transformAndBufferVertices_FUN_00403840()
+        ;   XREF to: 00403840 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended * mrgl)
     MOV ESI,dword ptr [0x0061b4c0]      ; 00407862 | DAT_0061b4c0
     ADD ESP,0x4                         ; 00407868
     TEST ESI,ESI                        ; 0040786b

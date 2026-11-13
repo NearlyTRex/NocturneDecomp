@@ -38,9 +38,9 @@
 ;   core_carved.cpp_FUN_0042be20
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
-;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   ... and 31 more
 ;
 ; *****************************************************************************
@@ -529,8 +529,8 @@ section .text
     PUSH EDI                            ; 0042904e
     PUSH EAX                            ; 0042904f
     PUSH EBX                            ; 00429050
-    CALL core_charactr.cpp_FUN_004325b0 ; 00429051
-        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004325b0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0 ; 00429051
+        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 00429056
     PUSH ESI                            ; 00429059
     PUSH EDI                            ; 0042905a

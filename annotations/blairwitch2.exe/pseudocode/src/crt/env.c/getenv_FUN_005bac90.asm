@@ -14,7 +14,7 @@
 ;   crt_unknown.c_FUN_005be9ac at 005be9c4
 ;   crt_unknown.c_FUN_005c1168 at 005c116d
 ;   crt_unknown.c_FUN_005c59e0 at 005c59ec
-;   wincore_winrun.cpp_getComputerAndUserName_FUN_0058fdec at 0058fe4f
+;   wincore_winrun.cpp_getComputerAndUserName_FUN_0058fdf0 at 0058fe4f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_026807e4

@@ -1,14 +1,12 @@
 // Name: core_bwgrndma.cpp_CGrandma_dtor_FUN_005a7e10
 // Address: 005a7e10
 // Address Range: [[005a7e10, 005a7ea4]]
-// Convention: unknown
-// Signature: CGrandma * core_bwgrndma_cpp_CGrandma_dtor_FUN_005a7e10(CGrandma *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CGrandma * __cdecl core_bwgrndma_cpp_CGrandma_dtor_FUN_005a7e10(CGrandma *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CGrandma * core_bwgrndma_cpp_CGrandma_dtor_FUN_005a7e10(CGrandma *this_ptr,uint flags)
+CGrandma * __cdecl core_bwgrndma_cpp_CGrandma_dtor_FUN_005a7e10(CGrandma *this_ptr,uint flags)
 
 {
   int iVar1;

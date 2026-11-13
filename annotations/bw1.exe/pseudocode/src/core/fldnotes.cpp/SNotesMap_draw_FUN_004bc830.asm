@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_SNotesMap_draw_FUN_004bc830(SNotesMap *this_ptr,int param_2,int param_3)
+; void __cdecl core_fldnotes_cpp_SNotesMap_draw_FUN_004bc830(SNotesMap *this_ptr,int x,int y)
 ;
 ; Parameters:
 ; SNotesMap *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ;
 ; XREF[1]:
 ;   core_fldnotes.cpp_SPageResourceMap_draw_FUN_004bcb40 at 004bcb50
@@ -131,7 +131,7 @@ section .text
     PUSH EAX                            ; 004bc92e
     PUSH EDI                            ; 004bc92f
     CALL core_fldnotes.cpp_SNotesMap_worldToMap_FUN_004bc6f0 ; 004bc930
-        ;   XREF to: 004bc6f0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SNotesMap_worldToMap_FUN_004bc6f0(SNotesMap * this_ptr, float * param_2)
+        ;   XREF to: 004bc6f0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SNotesMap_worldToMap_FUN_004bc6f0(SNotesMap * this_ptr, CLocation * location, int * map_x, int * map_y)
     ADD ESP,0x10                        ; 004bc935
     TEST EAX,EAX                        ; 004bc938
     JL 0x004bc8c3                       ; 004bc93a

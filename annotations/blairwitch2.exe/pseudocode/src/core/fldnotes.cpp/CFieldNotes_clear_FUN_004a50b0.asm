@@ -9,7 +9,7 @@
 ; XREF[6]:
 ;   core_fldnotes.cpp_CFieldNotes_dtor_FUN_004a4180 at 004a4186
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a41d2
-;   core_fldnotes.cpp_FUN_004a61b0 at 004a61c2
+;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004a61b0 at 004a61c2
 ;   core_game.cpp_FUN_004bbf70 at 004bc011
 ;   core_game.cpp_FUN_004bc840 at 004bc99b
 ;   core_mission.cpp_CDemonMission_run_FUN_004fcb00 at 004fcbe7

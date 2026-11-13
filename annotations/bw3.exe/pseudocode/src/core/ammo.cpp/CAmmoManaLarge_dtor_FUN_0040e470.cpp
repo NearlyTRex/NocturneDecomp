@@ -1,14 +1,12 @@
 // Name: core_ammo.cpp_CAmmoManaLarge_dtor_FUN_0040e470
 // Address: 0040e470
 // Address Range: [[0040e470, 0040e4bd]]
-// Convention: unknown
-// Signature: CAmmoManaLarge * core_ammo_cpp_CAmmoManaLarge_dtor_FUN_0040e470(CAmmoManaLarge *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CAmmoManaLarge * __cdecl core_ammo_cpp_CAmmoManaLarge_dtor_FUN_0040e470(CAmmoManaLarge *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAmmoManaLarge * core_ammo_cpp_CAmmoManaLarge_dtor_FUN_0040e470(CAmmoManaLarge *this_ptr,uint flags)
+CAmmoManaLarge * __cdecl core_ammo_cpp_CAmmoManaLarge_dtor_FUN_0040e470(CAmmoManaLarge *this_ptr,uint flags)
 
 {
   CDemonActor *pCVar1;

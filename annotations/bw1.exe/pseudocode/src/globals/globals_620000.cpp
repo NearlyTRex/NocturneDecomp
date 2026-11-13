@@ -105,7 +105,7 @@ RuntimeHandlerEntry g_InitHandlers[187] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)engine_alphabit_cpp_staticInit_FUN_00415b20
+        .func = (RUNTIME_HANDLER_FUNC *)core_bmppuzzl_cpp_staticInit_FUN_00415b20
     },
     {
         .status = 0x00,

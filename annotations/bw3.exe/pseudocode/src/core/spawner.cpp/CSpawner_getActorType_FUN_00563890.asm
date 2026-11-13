@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_spawner_cpp_CSpawner_getActorType_FUN_00563890(CSpawner *this_ptr)
+; CDemonActorType * __cdecl core_spawner_cpp_CSpawner_getActorType_FUN_00563890(CSpawner *this_ptr)
 ;
 ; Parameters:
 ; CSpawner *       Stack[0x4]:4   this_ptr

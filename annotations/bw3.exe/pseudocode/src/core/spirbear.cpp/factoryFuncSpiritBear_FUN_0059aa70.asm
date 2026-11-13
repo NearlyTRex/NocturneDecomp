@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spirbear_cpp_factoryFuncSpiritBear_FUN_0059aa70(void)
+; CSpiritBear * __cdecl core_spirbear_cpp_factoryFuncSpiritBear_FUN_0059aa70(void)
 ;
 ;
 ; Called Functions:

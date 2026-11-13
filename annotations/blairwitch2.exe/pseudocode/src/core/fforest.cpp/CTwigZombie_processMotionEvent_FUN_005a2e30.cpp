@@ -24,6 +24,6 @@ void __cdecl core_fforest_cpp_CTwigZombie_processMotionEvent_FUN_005a2e30(CTwigZ
                &(this_ptr->base).base.base.base.location.position);
   }
 LAB_005a2e65:
-  core_basicene_cpp_FUN_0059e880(this_ptr,event_id);
+  core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(&this_ptr->base,event_id);
   return;
 }

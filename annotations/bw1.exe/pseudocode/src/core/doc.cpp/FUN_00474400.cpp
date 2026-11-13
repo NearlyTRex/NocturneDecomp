@@ -420,7 +420,8 @@ LAB_0047463c:
         core_inv_cpp_FUN_004f8d00(local_18,param_1->target_actor,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
                   (0x01D2C900,param_1->target_actor);
-        core_charactr_cpp_FUN_004325b0(param_1,1,param_1->target_actor,0,0);
+        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0
+                  (&param_1->base,1,(int)param_1->target_actor,0,0);
         iVar6 = core_actor_cpp_isOfClass_FUN_0040c550(param_1->target_actor,"CTrap");
         if (iVar6 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(local_34,0x19,1);

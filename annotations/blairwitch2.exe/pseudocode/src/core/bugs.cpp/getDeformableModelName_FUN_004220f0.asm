@@ -7,7 +7,7 @@
 ; CDeformableModelInstance * Stack[0x4]:4   model_ptr
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00525537
+;   core_script.cpp_CScript_step_FUN_00522350 at 00525537
 ;
 ; *****************************************************************************
 

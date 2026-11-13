@@ -18,7 +18,7 @@
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 004276db
 ;   core_carved.cpp_FUN_00429090 at 004290c1
 ;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598d26
-;   core_demnfolk.cpp_FUN_00455080 at 004565d1
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 004565d1
 ;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c872a
 ;   core_hecaitmx.cpp_CHecaitomix_process_FUN_00597f40 at 0059827b
 ;   ... and 11 more

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CTawiscara * core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0(CTawiscara *this_ptr)
+; CTawiscara * __cdecl core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0(CTawiscara *this_ptr)
 ;
 ; Parameters:
 ; CTawiscara *     Stack[0x4]:4   this_ptr

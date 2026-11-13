@@ -7,23 +7,23 @@
 
 // Original: core_hellhag.cpp_staticInit_FUN_005aa5a0
 // Address: 005aa5a0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hellhag.cpp_factoryFuncHag_FUN_005aa5d0
 // Address: 005aa5d0
-void factoryFuncHag(void);
+CHag * __cdecl factoryFuncHag(void);
 
 // Original: core_hellhag.cpp_CHag_getActorType_FUN_005aa5f0
 // Address: 005aa5f0
-CDemonActorType * CHag::getActorType(CHag *this_ptr);
+CDemonActorType * __cdecl CHag::getActorType(CHag *this_ptr);
 
 // Original: core_hellhag.cpp_CHag_ctor_FUN_005aa600
 // Address: 005aa600
-CHag * CHag::ctor(CHag *this_ptr);
+CHag * __cdecl CHag::ctor(CHag *this_ptr);
 
 // Original: core_hellhag.cpp_CHag_dtor_FUN_005aa7e0
 // Address: 005aa7e0
-CHag * CHag::dtor(CHag *this_ptr,uint flags);
+CHag * __cdecl CHag::dtor(CHag *this_ptr,uint flags);
 
 // Original: core_hellhag.cpp_CHag_setup_FUN_005aa8c0
 // Address: 005aa8c0

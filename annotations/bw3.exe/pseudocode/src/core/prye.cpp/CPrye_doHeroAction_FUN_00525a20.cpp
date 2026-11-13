@@ -61,7 +61,7 @@ void __cdecl core_prye_cpp_CPrye_doHeroAction_FUN_00525a20(CPrye *this_ptr)
   case 1:
   case 2:
   case 10:
-    core_hero_cpp_FUN_004d4520(this_ptr);
+    core_hero_cpp_CHero_doHeroAction_FUN_004d4520(&this_ptr->base);
     core_hero_cpp_FUN_004d3210(this_ptr_00);
     return;
   case 3:

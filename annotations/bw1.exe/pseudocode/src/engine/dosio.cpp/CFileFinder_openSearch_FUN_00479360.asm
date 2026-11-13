@@ -11,7 +11,7 @@
 ;   core_podmain.cpp_FUN_0053d580 at 0053d5c2
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00499ed0 at 0049a021
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_0049a0d0 at 0049a214
-;   shape_edittool.cpp_FUN_0049517e at 00495269
+;   shape_edittool.cpp_FUN_00495180 at 00495269
 ;   shape_edittool.cpp_FUN_0049a300 at 0049a36d
 ;   shape_edittool.cpp_FUN_0049a480 at 0049a554
 ;
@@ -20,8 +20,8 @@
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_CFileFinder_closeSearch_FUN_00479460
+;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_004794b0
 ;   engine_dosio.cpp_CFileFinder_reset_FUN_004794a0
-;   engine_dosio.cpp_FUN_004794b0
 ;   FindFirstFileA
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
     MOV EAX,ESP                         ; 004793ab
     PUSH EAX                            ; 004793ad
     PUSH EBX                            ; 004793ae
-    CALL engine_dosio.cpp_FUN_004794b0  ; 004793af
-        ;   XREF to: 004794b0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_004794b0()
+    CALL engine_dosio.cpp_CFileFinder_convertStruct_FUN_004794b0 ; 004793af
+        ;   XREF to: 004794b0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_CFileFinder_convertStruct_FUN_004794b0(CFileFinder * this_ptr, byte * param_2)
     ADD ESP,0x8                         ; 004793b4
     MOV dword ptr [EBX + 0x10c],0x1     ; 004793b7
     JMP 0x00479397                      ; 004793c1

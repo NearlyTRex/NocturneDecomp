@@ -1,12 +1,12 @@
 // Name: core_imp.cpp_staticInit_FUN_004d66a0
 // Address: 004d66a0
 // Address Range: [[004d66a0, 004d66c3]]
-// Convention: unknown
-// Signature: void core_imp_cpp_staticInit_FUN_004d66a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_imp_cpp_staticInit_FUN_004d66a0(void)
 
 #include "nocturne.h"
 
-void core_imp_cpp_staticInit_FUN_004d66a0(void)
+void __cdecl core_imp_cpp_staticInit_FUN_004d66a0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

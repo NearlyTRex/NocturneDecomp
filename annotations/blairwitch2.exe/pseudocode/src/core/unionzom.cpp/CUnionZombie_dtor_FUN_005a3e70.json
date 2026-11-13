@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 63,
+    "complexity_score": 62,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 32,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
       "warning_type_propagation"
     ],
-    "total_lines": 113
+    "total_lines": 112
   },
   "cross_references": [],
   "function": {
@@ -24,9 +24,9 @@
         "005a3f30"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_unionzom.cpp_CUnionZombie_dtor_FUN_005a3e70",
-    "signature": "CUnionZombie * core_unionzom_cpp_CUnionZombie_dtor_FUN_005a3e70(CUnionZombie *this_ptr,uint flags)"
+    "signature": "CUnionZombie * __cdecl core_unionzom_cpp_CUnionZombie_dtor_FUN_005a3e70(CUnionZombie *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -161,7 +161,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 31,
+      "line": 30,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",

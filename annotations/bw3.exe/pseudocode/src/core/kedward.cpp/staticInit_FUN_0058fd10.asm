@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_kedward_cpp_staticInit_FUN_0058fd10(void)
+; void __cdecl core_kedward_cpp_staticInit_FUN_0058fd10(void)
 ;
 ;
 ; Called Functions:

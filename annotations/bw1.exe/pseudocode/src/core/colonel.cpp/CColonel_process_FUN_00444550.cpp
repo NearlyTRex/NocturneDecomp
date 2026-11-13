@@ -128,7 +128,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_00444550(CColonel *this_ptr,f
                iVar8 != 0)) goto LAB_00444948;
             iVar8 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
             if (iVar8 != 0) {
-              core_hero_cpp_FUN_004eb7f0(this_ptr);
+              core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(&this_ptr->base);
               goto LAB_00444948;
             }
           }

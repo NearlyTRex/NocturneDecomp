@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 550,
-    "complexity_score": 1079,
+    "complexity_score": 1080,
     "cross_reference_count": 2,
     "function_call_count": 16,
     "global_count": 29,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 239,
+    "pseudocode_lines": 240,
     "suspect_count": 79,
     "suspect_types": [
       "concat_reconstruction",
@@ -21,7 +21,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 789
+    "total_lines": 790
   },
   "cross_references": [
     {
@@ -528,7 +528,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "if (-1 < param_1->streaming_slot_index) {",
@@ -536,7 +536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_1->streaming_slot_index * 0x11c;",
@@ -544,7 +544,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 40,
       "match": "DAT_02c74650",
       "severity": "mild",
       "text": "if ((*(int *)(&DAT_02c74650 + iVar1) == 0) ||",
@@ -552,7 +552,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1 != *(CSfxSample **)(&DAT_02c74654 + iVar1))) {",
@@ -560,7 +560,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 41,
       "match": "DAT_02c74654",
       "severity": "mild",
       "text": "(param_1 != *(CSfxSample **)(&DAT_02c74654 + iVar1))) {",
@@ -568,7 +568,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->loop_marker_count != 1) {",
@@ -576,7 +576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "core_main_c_FUN_005030e0(\"SfxSample::pollStream - cannot stream sample with exotic loop points: %s\",param_1);",
@@ -584,7 +584,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 55,
       "match": "DAT_02c7464c",
       "severity": "mild",
       "text": "if (*(int *)(&DAT_02c7464c + iVar1) != 0) {",
@@ -592,7 +592,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00570020(param_1);",
@@ -600,7 +600,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_00572680(param_1);",
@@ -608,7 +608,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "if (((iVar5 == 0) && (-1 < (param_1->sample_info).sample_count)) &&",
@@ -616,7 +616,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "((double)(param_1->sample_info).sample_count <= *(double *)(iVar1 + 0x2c7463c)))",
@@ -624,23 +624,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar12 = (float10)(param_1->sample_info).sample_rate * (float10)param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar12 = (float10)(param_1->sample_info).sample_rate * (float10)param_2;",
+      "text": "fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 70,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = param_1->streaming_buffer_size;",
@@ -648,15 +648,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar12 = (float10)param_1->stream_write_position - (float10)*(double *)(iVar1 + 0x2c746f8);",
+      "text": "fVar13 = (float10)param_1->stream_write_position - (float10)*(double *)(iVar1 + 0x2c746f8);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
       "text": "local_30 = local_30 + param_1->streaming_buffer_size;",
@@ -664,7 +664,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->buffer_id != 0) {",
@@ -672,7 +672,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "local_2c = sound_sndmain_cpp_FUN_005723e0(param_1,0x3c00);",
@@ -680,23 +680,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar12 = (float10)(param_1->sample_info).sample_rate * (float10)param_3;",
+      "text": "fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 88,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar12 = (float10)(param_1->sample_info).sample_rate * (float10)param_3;",
+      "text": "fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 97,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->stream_write_position < 0) ||",
@@ -704,7 +704,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 98,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->streaming_buffer_size <= param_1->stream_write_position)) {",
@@ -712,18 +712,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 98,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->streaming_buffer_size <= param_1->stream_write_position)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(\"nextLoadSampleDest = %d, allocLength = %d\",param_1->stream_write_position,",
       "type": "unnamed_param"
     },
     {
@@ -731,12 +723,20 @@
       "line": 102,
       "match": "param_1",
       "severity": "mild",
+      "text": "(\"nextLoadSampleDest = %d, allocLength = %d\",param_1->stream_write_position,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1->streaming_buffer_size);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = param_1->streaming_buffer_size - param_1->stream_write_position;",
@@ -744,7 +744,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = param_1->streaming_buffer_size - param_1->stream_write_position;",
@@ -752,7 +752,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = (param_1->sample_info).sample_count;",
@@ -760,7 +760,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 115,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->stream_read_position < iVar6) {",
@@ -768,7 +768,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 116,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = iVar6 - param_1->stream_read_position;",
@@ -776,7 +776,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 123,
       "match": "DAT_02c74654",
       "severity": "mild",
       "text": "(*(CSfxSample **)(&DAT_02c74654 + iVar1));",
@@ -784,7 +784,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 124,
+      "line": 125,
       "match": "DAT_02c74654",
       "severity": "mild",
       "text": "(this_ptr = *(CSfxSample **)(&DAT_02c74654 + iVar1),",
@@ -792,7 +792,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 127,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->buffer_id == 0) {",
@@ -800,7 +800,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 134,
       "match": "param_1",
       "severity": "mild",
       "text": "(this_ptr,0,param_1->stream_write_position);",
@@ -808,7 +808,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 137,
+      "line": 138,
       "match": "DAT_02c68388",
       "severity": "mild",
       "text": "output_buffer = (short *)&DAT_02c68388;",
@@ -816,7 +816,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 140,
+      "line": 141,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->buffer_id == 0) {",
@@ -824,7 +824,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 143,
+      "line": 144,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,param_1->stream_write_position,iVar5);",
@@ -832,7 +832,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 143,
+      "line": 144,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,param_1->stream_write_position,iVar5);",
@@ -840,15 +840,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 151,
+      "line": 152,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_005773f0(pcVar13,param_1);",
+      "text": "sound_sndmain_cpp_FUN_005773f0(pcVar14,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 158,
       "match": "DAT_02c74654",
       "severity": "mild",
       "text": "count = *(int *)(*(int *)(&DAT_02c74654 + iVar1) + 0x108) * iVar5;",
@@ -856,7 +856,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 159,
       "match": "DAT_02c74654",
       "severity": "mild",
       "text": "uVar8 = *(uint *)(*(int *)(&DAT_02c74654 + iVar1) + 0x104);",
@@ -864,7 +864,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 174,
       "match": "param_1",
       "severity": "mild",
       "text": "else if (param_1->mp3_data == (CMP3Decoder *)0x0) {",
@@ -872,7 +872,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 175,
       "match": "param_1",
       "severity": "mild",
       "text": "bVar4 = support_trstream_cpp_CInStreamFile_isOpen_FUN_005a0d70(&param_1->file_stream);",
@@ -880,7 +880,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 175,
+      "line": 176,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar4) == 0) {",
@@ -888,23 +888,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 180,
+      "line": 181,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar8 = sound_sndmain_cpp_FUN_00572400(param_1,iVar5);",
+      "text": "iVar6 = sound_sndmain_cpp_FUN_00572400(param_1,iVar5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 182,
+      "line": 183,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&param_1->file_stream,(uint *)output_buffer,uVar8);",
+      "text": "(&param_1->file_stream,output_buffer,iVar6);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 184,
+      "line": 185,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00570260(param_1);",
@@ -912,7 +912,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 188,
+      "line": 189,
       "match": "DAT_02c74654",
       "severity": "mild",
       "text": "if (*(int *)(*(int *)(&DAT_02c74654 + iVar1) + 0x104) == 0x10) {",
@@ -920,7 +920,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 189,
+      "line": 190,
       "match": "DAT_02c74654",
       "severity": "mild",
       "text": "for (iVar6 = 0; iVar6 < *(int *)(*(int *)(&DAT_02c74654 + iVar1) + 0x108) * iVar5;",
@@ -928,7 +928,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 196,
+      "line": 197,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->mp3_data,output_buffer,iVar5);",
@@ -936,7 +936,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 200,
+      "line": 201,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_FUN_00570160(param_1,param_1->stream_write_position,local_18)",
@@ -944,7 +944,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 200,
+      "line": 201,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_FUN_00570160(param_1,param_1->stream_write_position,local_18)",
@@ -952,7 +952,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 206,
+      "line": 207,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar8 = sound_sndmain_cpp_FUN_00572400(param_1,local_18);",
@@ -960,31 +960,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 207,
+      "line": 208,
       "match": "DAT_02c68388",
       "severity": "mild",
-      "text": "puVar10 = (uint *)&DAT_02c68388;",
+      "text": "puVar11 = (uint *)&DAT_02c68388;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 215,
-      "match": "(uint *)((int)puVar10",
+      "line": 216,
+      "match": "(uint *)((int)puVar11",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
+      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 216,
+      "line": 217,
       "match": "(uint *)((int)puVar7",
       "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar12 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 219,
+      "line": 220,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00570260(param_1);",
@@ -992,7 +992,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 228,
+      "line": 229,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->sample_info).sample_count = param_1->stream_read_position + local_18;",
@@ -1000,7 +1000,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 228,
+      "line": 229,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->sample_info).sample_count = param_1->stream_read_position + local_18;",
@@ -1008,7 +1008,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 231,
+      "line": 232,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = param_1->stream_write_position + local_18;",
@@ -1016,15 +1016,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 232,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1->stream_read_position = param_1->stream_read_position + local_18;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 232,
+      "line": 233,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->stream_read_position = param_1->stream_read_position + local_18;",
@@ -1035,7 +1027,7 @@
       "line": 233,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->stream_write_position = iVar5;",
+      "text": "param_1->stream_read_position = param_1->stream_read_position + local_18;",
       "type": "unnamed_param"
     },
     {
@@ -1043,7 +1035,7 @@
       "line": 234,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->streaming_buffer_size <= iVar5) {",
+      "text": "param_1->stream_write_position = iVar5;",
       "type": "unnamed_param"
     },
     {
@@ -1051,36 +1043,44 @@
       "line": 235,
       "match": "param_1",
       "severity": "mild",
+      "text": "if (param_1->streaming_buffer_size <= iVar5) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 236,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1->stream_write_position = 0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 215,
-      "match": "(int)puVar10",
+      "description": "Pointer value `puVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 216,
+      "match": "(int)puVar11",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
+      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 216,
+      "line": 217,
       "match": "(int)puVar7",
       "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar12 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 208,
+      "line": 209,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {",
+      "text": "for (uVar10 = uVar8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 213,
+      "line": 214,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {",
@@ -1088,7 +1088,7 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 175,
+      "line": 176,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "if (CONCAT31(extraout_var,bVar4) == 0) {",

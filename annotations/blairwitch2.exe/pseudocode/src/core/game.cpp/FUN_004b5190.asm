@@ -75,7 +75,7 @@
 ;   core_event.cpp_CEventList_findTimer_FUN_004915e0
 ;   core_event.cpp_CEventList_render_FUN_0048e490
 ;   core_event.cpp_FUN_00491240
-;   core_fldnotes.cpp_FUN_004a5700
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700
 ;   core_game.cpp_CGame_drawScreenBorder_FUN_004b30d0
 ;   core_game.cpp_CGame_process_FUN_004bd570
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b32c0
@@ -209,8 +209,8 @@ section .text
         ;   XREF to: 004b5cb0 (CONDITIONAL_JUMP)  ; LAB_004b5cb0
     LEA EAX,[EBP + -0x26]               ; 004b52ce
     PUSH EAX                            ; 004b52d1
-    CALL core_slew.cpp_FUN_00549380     ; 004b52d2
-        ;   XREF to: 00549380 (UNCONDITIONAL_CALL)  ; undefined core_slew.cpp_FUN_00549380()
+    CALL core_slew.cpp_CSlew_init_FUN_00549380 ; 004b52d2
+        ;   XREF to: 00549380 (UNCONDITIONAL_CALL)  ; undefined8 core_slew.cpp_CSlew_init_FUN_00549380(CSlew * this_ptr)
     MOV EDX,dword ptr [0x01cedef4]      ; 004b52d7 | DAT_01cedef4
     MOV EDX,dword ptr [EDX*0x4 + 0x1cedee4] ; 004b52dd
     LEA EAX,[EBP + -0x26]               ; 004b52e4
@@ -370,8 +370,8 @@ section .text
     JZ 0x004b5cfa                       ; 004b54bf
         ;   XREF to: 004b5cfa (CONDITIONAL_JUMP)  ; LAB_004b5cfa
     PUSH EAX                            ; 004b54c5
-    CALL core_fldnotes.cpp_FUN_004a5700 ; 004b54c6
-        ;   XREF to: 004a5700 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a5700()
+    CALL core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700 ; 004b54c6
+        ;   XREF to: 004a5700 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004b54cb
         ;   Label: LAB_004b54cb
     MOV EAX,dword ptr [EBP + 0x92]      ; 004b54ce

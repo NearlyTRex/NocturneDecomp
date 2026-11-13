@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40
-;   core_bodypart.cpp_FUN_00418d00
+;   core_bodypart.cpp_setCounts_FUN_00418d00
 ;   core_box.cpp_CBox_setupCorners_FUN_0041dac0
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     PUSH 0x0                            ; 0041ad62
     PUSH EBX                            ; 0041ad64
     MOV dword ptr [EBX + 0x70],0x2      ; 0041ad65
-    CALL core_bodypart.cpp_FUN_00418d00 ; 0041ad6c
-        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00418d00()
+    CALL core_bodypart.cpp_setCounts_FUN_00418d00 ; 0041ad6c
+        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00418d00()
     LEA EAX,[EBX + 0x168]               ; 0041ad71
     ADD ESP,0xc                         ; 0041ad77
     MOV EDX,EAX                         ; 0041ad7a

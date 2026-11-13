@@ -7,7 +7,7 @@
 
 // Original: core_glass.cpp_staticInit_FUN_004e0fb0
 // Address: 004e0fb0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_glass.cpp_factoryFuncGlass_FUN_004e0fe0
 // Address: 004e0fe0
@@ -15,7 +15,7 @@ CGlass * __cdecl factoryFuncGlass(void);
 
 // Original: core_glass.cpp_CGlass_getActorType_FUN_004e1000
 // Address: 004e1000
-CDemonActorType * CGlass::getActorType(CGlass *this_ptr);
+CDemonActorType * __cdecl CGlass::getActorType(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_ctor_FUN_004e1010
 // Address: 004e1010
@@ -79,4 +79,4 @@ int __cdecl CGlass::checkBreakableCondition(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_dtor_FUN_004e3a60
 // Address: 004e3a60
-CGlass * CGlass::dtor(CGlass *this_ptr,uint flags);
+CGlass * __cdecl CGlass::dtor(CGlass *this_ptr,uint flags);

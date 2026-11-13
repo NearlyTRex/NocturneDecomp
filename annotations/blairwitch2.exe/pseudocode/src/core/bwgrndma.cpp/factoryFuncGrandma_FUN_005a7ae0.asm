@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bwgrndma_cpp_factoryFuncGrandma_FUN_005a7ae0(void)
+; CGrandma * __cdecl core_bwgrndma_cpp_factoryFuncGrandma_FUN_005a7ae0(void)
 ;
 ;
 ; Called Functions:

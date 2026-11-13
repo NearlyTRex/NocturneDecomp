@@ -1,14 +1,12 @@
 // Name: core_construc.cpp_CConstructBone_ctor_FUN_00444550
 // Address: 00444550
 // Address Range: [[00444550, 004445c0]]
-// Convention: unknown
-// Signature: CConstructBone * core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBone *this_ptr)
+// Convention: __cdecl
+// Signature: CConstructBone * __cdecl core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBone *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CConstructBone * core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBone *this_ptr)
+CConstructBone * __cdecl core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBone *this_ptr)
 
 {
   CConstruct *pCVar1;

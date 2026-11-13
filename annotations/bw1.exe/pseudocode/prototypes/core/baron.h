@@ -15,7 +15,7 @@ CBaron * __cdecl factoryFuncBaron(void);
 
 // Original: core_baron.cpp_CBaron_getActorType_FUN_0040f200
 // Address: 0040f200
-CDemonActorType * CBaron::getActorType(CBaron *this_ptr);
+CDemonActorType * __cdecl CBaron::getActorType(CBaron *this_ptr);
 
 // Original: core_baron.cpp_CBaron_ctor_FUN_0040f210
 // Address: 0040f210

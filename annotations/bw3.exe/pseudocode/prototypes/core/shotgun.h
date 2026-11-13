@@ -7,19 +7,19 @@
 
 // Original: core_shotgun.cpp_staticInit_FUN_00546260
 // Address: 00546260
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_shotgun.cpp_factoryFuncShadowsc_FUN_00546290
 // Address: 00546290
-void factoryFuncShadowsc(void);
+CShadowsc * __cdecl factoryFuncShadowsc(void);
 
 // Original: core_shotgun.cpp_CShadowsc_getActorType_FUN_005462b0
 // Address: 005462b0
-CDemonActorType * CShadowsc::getActorType(CShadowsc *this_ptr);
+CDemonActorType * __cdecl CShadowsc::getActorType(CShadowsc *this_ptr);
 
 // Original: core_shotgun.cpp_CShadowsc_ctor_FUN_005462c0
 // Address: 005462c0
-CShadowsc * CShadowsc::ctor(CShadowsc *this_ptr);
+CShadowsc * __cdecl CShadowsc::ctor(CShadowsc *this_ptr);
 
 // Original: core_shotgun.cpp_CShadowsc_setup_FUN_00546360
 // Address: 00546360
@@ -43,4 +43,4 @@ int __cdecl CShadowsc::getTargetPoints(CShadowsc *this_ptr,CVector3f *out_points
 
 // Original: core_shotgun.cpp_CShadowsc_dtor_FUN_00546f40
 // Address: 00546f40
-CShadowsc * CShadowsc::dtor(CShadowsc *this_ptr,uint flags);
+CShadowsc * __cdecl CShadowsc::dtor(CShadowsc *this_ptr,uint flags);

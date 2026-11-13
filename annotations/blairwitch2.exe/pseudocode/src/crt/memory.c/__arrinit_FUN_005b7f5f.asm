@@ -17,12 +17,12 @@
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409af0 at 00409b0d
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 0041031f
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_0059be60 at 0059be84
+;   core_bmppuzzl.cpp_staticInit_FUN_0059aa80 at 0059aa8c
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_004156e0 at 004156fa
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_004182d0 at 004182f0
 ;   core_box.cpp_CBox_ctor_FUN_005b1bc0 at 005b1bd1
 ;   core_boxactor.cpp_staticInit_FUN_0041bc90 at 0041bcbf
 ;   core_bugs.cpp_CBugs_ctor_FUN_0041ef50 at 0041ef70
-;   core_chain.cpp_CChain_ctor_FUN_005b4720 at 005b473c
 ;   ... and 77 more
 ;
 ; *****************************************************************************

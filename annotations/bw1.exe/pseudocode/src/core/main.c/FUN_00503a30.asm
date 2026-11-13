@@ -16,6 +16,7 @@
 ;   undefined4 DAT_01d2c900
 ;
 ; Called Functions:
+;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_00415c20
 ;   core_dfont.cpp_FUN_0045e7a0
 ;   core_dmodel.cpp_freeAllModels_FUN_00468830
 ;   core_inivar.cpp_writeIniData_FUN_004f5760
@@ -27,7 +28,6 @@
 ;   core_sound.cpp_shutdownSoundSystem_FUN_0057cb90
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_00401120
 ;   engine_3d.c_freeTextureCache_FUN_004037a0
-;   engine_alphabit.cpp_FUN_00415c20
 ;   engine_ncursfx.cpp_CMouse_reset_FUN_005313a0
 ;   engine_pod.cpp_CPod_cleanup_FUN_0053c8f0
 ;   wincore_winrun.cpp_doNothing2_FUN_005b3b10
@@ -41,8 +41,8 @@ section .text
         ;   Label: core_main.c_FUN_00503a30
     PUSH ESI                            ; 00503a31
     PUSH EDI                            ; 00503a32
-    CALL engine_alphabit.cpp_FUN_00415c20 ; 00503a33
-        ;   XREF to: 00415c20 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415c20()
+    CALL core_bmppuzzl.cpp_resetAllPuzzles_FUN_00415c20 ; 00503a33
+        ;   XREF to: 00415c20 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_resetAllPuzzles_FUN_00415c20()
     MOV EDX,dword ptr [0x00622580]      ; 00503a38 | g_CNetGamePtr
     PUSH EDX                            ; 00503a3e
     CALL core_netgame.cpp_CNetGame_shutdown_FUN_0052c5d0 ; 00503a3f

@@ -1,14 +1,12 @@
 // Name: core_boneguy.cpp_CBoneGuy_dtor_FUN_0041a3d0
 // Address: 0041a3d0
 // Address Range: [[0041a3d0, 0041a464]]
-// Convention: unknown
-// Signature: CBoneGuy * core_boneguy_cpp_CBoneGuy_dtor_FUN_0041a3d0(CBoneGuy *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_dtor_FUN_0041a3d0(CBoneGuy *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBoneGuy * core_boneguy_cpp_CBoneGuy_dtor_FUN_0041a3d0(CBoneGuy *this_ptr,uint flags)
+CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_dtor_FUN_0041a3d0(CBoneGuy *this_ptr,uint flags)
 
 {
   int iVar1;

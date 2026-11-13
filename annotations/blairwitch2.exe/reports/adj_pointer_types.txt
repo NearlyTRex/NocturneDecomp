@@ -1,7 +1,7 @@
-Scanning 556 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/blairwitch2.exe/pseudocode/src...
+Scanning 562 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/blairwitch2.exe/pseudocode/src...
 
 ======================================================================
-UNFINISHED CTORS/DTORS (183 files still need ADJ)
+UNFINISHED CTORS/DTORS (184 files still need ADJ)
 ======================================================================
 
   [core/actor.cpp]
@@ -33,6 +33,12 @@ UNFINISHED CTORS/DTORS (183 files still need ADJ)
   [core/backgnd.cpp]
     CBackgroundActor_ctor_FUN_0040f330:
       CKeyFramedModelInstance_ctor @ this+0x2b8 (696) -> CBackgroundActor_ptr_696
+
+  [core/basicene.cpp]
+    CBasicEnemy_dtor_FUN_005a0780:
+      CClothList_dtor @ ??? (UNKNOWN)
+      CDeformableModelInstance_dtor @ ??? (UNKNOWN)
+      CDemonActor_dtor @ ??? (UNKNOWN)
 
   [core/basicnpc.cpp]
     CBasicNPC_dtor_FUN_005a4980:
@@ -87,11 +93,12 @@ UNFINISHED CTORS/DTORS (183 files still need ADJ)
 
   [core/bmppuzzl.cpp]
     CAudioRecPuzzle_ctor_FUN_0059be60:
-      CAlphaBitmap_ctor @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CAlphaBitmap_ctor @ this+0x4 (4) -> CAudioRecPuzzle_ptr_4
+      _arrinit @ this+0x4c (76) -> CAudioRecPuzzle_ptr_76
+      CKeyFramedModelInstance_ctor @ this+0x574 (1396) -> CAudioRecPuzzle_ptr_1396
+      CKeyFramedModelInstance_ctor @ this+0x6f0 (1776) -> CAudioRecPuzzle_ptr_1776
     CAudioRecPuzzle_dtor_FUN_0059bec0:
+      CPuzzle_dtor @ this+0x4c (76) -> CAudioRecPuzzle_ptr_76
       CAlphaBitmap_dtor @ ??? (UNKNOWN)
 
   [core/bodypart.cpp]
@@ -806,6 +813,10 @@ NEEDED ADJ POINTER TYPES
   CAmmoBox_ptr_692  (0x2b4)
   CAnvil_ptr_692  (0x2b4)
   CArmour_ptr_14880  (0x3a20)
+  CAudioRecPuzzle_ptr_4  (0x4)
+  CAudioRecPuzzle_ptr_76  (0x4c)
+  CAudioRecPuzzle_ptr_1396  (0x574)
+  CAudioRecPuzzle_ptr_1776  (0x6f0)
   CBackgroundActor_ptr_696  (0x2b8)
   CBasicNPC_ptr_14880  (0x3a20)
   CBassPlayer_ptr_68192  (0x10a60)
@@ -994,16 +1005,19 @@ NEEDED ADJ POINTER TYPES
   SPageResourceTwanaEntry_ptr_216  (0xd8)
   SVert_ptr_16  (0x10)
 
-Total: 191 types across 138 classes
+Total: 195 types across 139 classes
 
 ======================================================================
-MANUAL REVIEW NEEDED (127 calls with unknown offset)
+MANUAL REVIEW NEEDED (126 calls with unknown offset)
 ======================================================================
   CDemonActor_ctor_FUN_00408790.asm: _arrinit
   CArmour_dtor_FUN_0040f120.asm: CClothList_dtor
   CArmour_dtor_FUN_0040f120.asm: CDeformableModelInstance_dtor
   CEnemy_dtor_FUN_0040f1c0.asm: CClothList_dtor
   CEnemy_dtor_FUN_0040f1c0.asm: CDeformableModelInstance_dtor
+  CBasicEnemy_dtor_FUN_005a0780.asm: CClothList_dtor
+  CBasicEnemy_dtor_FUN_005a0780.asm: CDeformableModelInstance_dtor
+  CBasicEnemy_dtor_FUN_005a0780.asm: CDemonActor_dtor
   CBasicNPC_dtor_FUN_005a4980.asm: CClothList_dtor
   CBasicNPC_dtor_FUN_005a4980.asm: CDeformableModelInstance_dtor
   CBatCreature_dtor_FUN_00412a20.asm: CClothList_dtor
@@ -1016,10 +1030,6 @@ MANUAL REVIEW NEEDED (127 calls with unknown offset)
   CBelling_dtor_FUN_005a9130.asm: CDeformableModelInstance_dtor
   CBiggs_dtor_FUN_00415410.asm: CClothList_dtor
   CBiggs_dtor_FUN_00415410.asm: CDeformableModelInstance_dtor
-  CAudioRecPuzzle_ctor_FUN_0059be60.asm: CAlphaBitmap_ctor
-  CAudioRecPuzzle_ctor_FUN_0059be60.asm: _arrinit
-  CAudioRecPuzzle_ctor_FUN_0059be60.asm: CKeyFramedModelInstance_ctor
-  CAudioRecPuzzle_ctor_FUN_0059be60.asm: CKeyFramedModelInstance_ctor
   CAudioRecPuzzle_dtor_FUN_0059bec0.asm: CAlphaBitmap_dtor
   CBoneGuy_dtor_FUN_0041a3d0.asm: CClothList_dtor
   CBoneGuy_dtor_FUN_0041a3d0.asm: CDeformableModelInstance_dtor

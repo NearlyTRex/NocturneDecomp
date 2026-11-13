@@ -53,8 +53,8 @@
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30
 ;   engine_font.cpp_FUN_004b2e40
-;   engine_mini3d.cpp_FUN_004ed020
-;   engine_mini3d.cpp_FUN_004ed150
+;   engine_mini3d.cpp_getRenderViewport_FUN_004ed150
+;   engine_mini3d.cpp_setRenderViewport_FUN_004ed020
 ;   shape_edittool.cpp_CEditorTools_backupScreen_FUN_0047cbd0
 ;
 ; *****************************************************************************
@@ -359,8 +359,8 @@ section .text
     PUSH EAX                            ; 0047f85b
     LEA EAX,[EBX + 0x20]                ; 0047f85c
     PUSH EAX                            ; 0047f85f
-    CALL engine_mini3d.cpp_FUN_004ed150 ; 0047f860
-        ;   XREF to: 004ed150 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004ed150()
+    CALL engine_mini3d.cpp_getRenderViewport_FUN_004ed150 ; 0047f860
+        ;   XREF to: 004ed150 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_getRenderViewport_FUN_004ed150(float * left, float * top, float * right, float * bottom)
     ADD ESP,0x10                        ; 0047f865
     MOV EAX,dword ptr [ESP + 0x40]      ; 0047f868
     MOV dword ptr [ESP + 0x18],EAX      ; 0047f86c
@@ -382,8 +382,8 @@ section .text
     FILD dword ptr [ESP + 0x24]         ; 0047f8a6
     SUB ESP,0x4                         ; 0047f8aa
     FSTP float ptr [ESP]                ; 0047f8ad
-    CALL engine_mini3d.cpp_FUN_004ed020 ; 0047f8b0
-        ;   XREF to: 004ed020 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004ed020()
+    CALL engine_mini3d.cpp_setRenderViewport_FUN_004ed020 ; 0047f8b0
+        ;   XREF to: 004ed020 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setRenderViewport_FUN_004ed020(float left, float top, float right, float bottom)
     ADD ESP,0x10                        ; 0047f8b5
     MOV EAX,dword ptr [ESP + 0x34]      ; 0047f8b8
     MOV dword ptr [EBX],EAX             ; 0047f8bc

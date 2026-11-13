@@ -32,11 +32,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_setRandomSeed_FUN_0040cdc0
-;   core_bmppuzzl.cpp_FUN_00411a90
+;   core_bmppuzzl.cpp_processActivePuzzle_FUN_00411a90
 ;   core_dfilter.cpp_CFilterFX_process_FUN_00459e90
 ;   core_event.cpp_CEventList_process_FUN_0048c020
 ;   core_fire.cpp_FUN_004a1760
-;   core_fldnotes.cpp_FUN_004ac6b0
+;   core_fldnotes.cpp_CFieldNotes_process_FUN_004ac6b0
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100
 ;   core_game.cpp_CGame_saveClockTime_FUN_004b4430
 ;   core_game.cpp_CGame_updateFadeTransition_FUN_004bd6d0
@@ -358,11 +358,11 @@ section .text
     ADD ESP,0x4                         ; 004bf88c
     MOV EDI,dword ptr [0x005fe4b0]      ; 004bf88f | g_CFieldNotesPtr
     PUSH EDI                            ; 004bf895 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004ac6b0 ; 004bf896
-        ;   XREF to: 004ac6b0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004ac6b0()
+    CALL core_fldnotes.cpp_CFieldNotes_process_FUN_004ac6b0 ; 004bf896
+        ;   XREF to: 004ac6b0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_process_FUN_004ac6b0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004bf89b
-    CALL core_bmppuzzl.cpp_FUN_00411a90 ; 004bf89e
-        ;   XREF to: 00411a90 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_00411a90()
+    CALL core_bmppuzzl.cpp_processActivePuzzle_FUN_00411a90 ; 004bf89e
+        ;   XREF to: 00411a90 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_processActivePuzzle_FUN_00411a90()
     MOV EAX,[0x005fe4b0]                ; 004bf8a3 | g_CFieldNotesPtr
     CMP dword ptr [EAX + 0x40],0x0      ; 004bf8a8 | g_CFieldNotesInstance.is_displayed
     JZ 0x004bf9d4                       ; 004bf8ac

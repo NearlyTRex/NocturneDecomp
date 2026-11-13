@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_actor.cpp_archiveInteger_FUN_0040b960
 ;   core_actor.cpp_archiveString_FUN_0040b730
-;   core_hero.cpp_FUN_004ce590
+;   core_hero.cpp_CHero_archive_FUN_004ce590
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   Label: core_baron.cpp_CBaron_archive_FUN_00410600
     MOV EBX,dword ptr [ESP + 0x8]       ; 00410601
     PUSH EBX                            ; 00410605
-    CALL core_hero.cpp_FUN_004ce590     ; 00410606
-        ;   XREF to: 004ce590 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce590()
+    CALL core_hero.cpp_CHero_archive_FUN_004ce590 ; 00410606
+        ;   XREF to: 004ce590 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_archive_FUN_004ce590(CHero * this_ptr)
     MOV EDX,dword ptr [0x0060980c]      ; 0041060b | g_CBaronClassVersion
     ADD ESP,0x4                         ; 00410611
     CMP EDX,0x2                         ; 00410614

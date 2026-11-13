@@ -1,14 +1,12 @@
 // Name: core_schngeis.cpp_CSchnellGeist_dtor_FUN_005a3c30
 // Address: 005a3c30
 // Address Range: [[005a3c30, 005a3cc4]]
-// Convention: unknown
-// Signature: CSchnellGeist * core_schngeis_cpp_CSchnellGeist_dtor_FUN_005a3c30(CSchnellGeist *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSchnellGeist * __cdecl core_schngeis_cpp_CSchnellGeist_dtor_FUN_005a3c30(CSchnellGeist *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSchnellGeist * core_schngeis_cpp_CSchnellGeist_dtor_FUN_005a3c30(CSchnellGeist *this_ptr,uint flags)
+CSchnellGeist * __cdecl core_schngeis_cpp_CSchnellGeist_dtor_FUN_005a3c30(CSchnellGeist *this_ptr,uint flags)
 
 {
   int iVar1;

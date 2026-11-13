@@ -36,6 +36,8 @@
 ;   ... and 65 more
 ;
 ; Called Functions:
+;   core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0
+;   core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00415c80
 ;   core_dlight.cpp_CDemonLight_init_FUN_00462590
 ;   core_event.cpp_FUN_004a9870
 ;   core_fire.cpp_CFireEffect_init_FUN_004b4b30
@@ -49,8 +51,6 @@
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004d85f0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10
 ;   core_game.cpp_CGame_setGameRes_FUN_004cf430
-;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530
-;   core_game.cpp_CGame_updateStatusDisplays_FUN_004cc810
 ;   ... and 48 more
 ;
 ; *****************************************************************************
@@ -165,8 +165,8 @@ section .text
     MOV EAX,[0x0061d418]                ; 004cf7da | g_CFieldNotesPtr
     MOV dword ptr [0x01cd01f8],ECX      ; 004cf7df | DAT_01cd01f8
     MOV dword ptr [EAX + 0x40],ECX      ; 004cf7e5 | g_CFieldNotesInstance.is_displayed
-    CALL engine_alphabit.cpp_FUN_00415c80 ; 004cf7e8
-        ;   XREF to: 00415c80 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415c80()
+    CALL core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00415c80 ; 004cf7e8
+        ;   XREF to: 00415c80 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00415c80()
     MOV EAX,dword ptr [EBP + 0x14]      ; 004cf7ed
     XOR EBX,EBX                         ; 004cf7f0
     PUSH EAX                            ; 004cf7f2
@@ -432,8 +432,8 @@ section .text
         ;   XREF to: 004cfaf0 (CONDITIONAL_JUMP)  ; LAB_004cfaf0
     PUSH 0x0                            ; 004cfae5
     PUSH ECX                            ; 004cfae7
-    CALL engine_alphabit.cpp_FUN_00415be0 ; 004cfae8
-        ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415be0()
+    CALL core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0 ; 004cfae8
+        ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 004cfaed
     MOV EAX,[0x00622c18]                ; 004cfaf0 | g_CDemonSetPtr
         ;   Label: LAB_004cfaf0
@@ -608,8 +608,8 @@ section .text
     CALL core_sound.cpp_CSound_shutdown_FUN_0057cdb0 ; 004cfccb
         ;   XREF to: 0057cdb0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_shutdown_FUN_0057cdb0(CSound * this_ptr)
     ADD ESP,0x4                         ; 004cfcd0
-    CALL engine_alphabit.cpp_FUN_00415c80 ; 004cfcd3
-        ;   XREF to: 00415c80 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415c80()
+    CALL core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00415c80 ; 004cfcd3
+        ;   XREF to: 00415c80 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00415c80()
     MOV EDX,dword ptr [EBP + 0x14]      ; 004cfcd8
     PUSH EDX                            ; 004cfcdb
     CALL core_game.cpp_FUN_004dc180     ; 004cfcdc
@@ -777,8 +777,8 @@ section .text
         ;   XREF to: 004cfecd (CONDITIONAL_JUMP)  ; LAB_004cfecd
     PUSH EBX                            ; 004cfebe
     PUSH EAX                            ; 004cfebf
-    CALL engine_alphabit.cpp_FUN_00415be0 ; 004cfec0
-        ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415be0()
+    CALL core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0 ; 004cfec0
+        ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 004cfec5
     JMP 0x004cfde8                      ; 004cfec8
         ;   XREF to: 004cfde8 (UNCONDITIONAL_JUMP)  ; LAB_004cfde8

@@ -1,14 +1,12 @@
 // Name: core_bwsearch.cpp_CSearchParty_ctor_FUN_005a8cf0
 // Address: 005a8cf0
 // Address Range: [[005a8cf0, 005a8d9d]]
-// Convention: unknown
-// Signature: CSearchParty * core_bwsearch_cpp_CSearchParty_ctor_FUN_005a8cf0(CSearchParty *this_ptr)
+// Convention: __cdecl
+// Signature: CSearchParty * __cdecl core_bwsearch_cpp_CSearchParty_ctor_FUN_005a8cf0(CSearchParty *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSearchParty * core_bwsearch_cpp_CSearchParty_ctor_FUN_005a8cf0(CSearchParty *this_ptr)
+CSearchParty * __cdecl core_bwsearch_cpp_CSearchParty_ctor_FUN_005a8cf0(CSearchParty *this_ptr)
 
 {
   CBasicNPC *this_ptr_00;

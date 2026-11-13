@@ -89,8 +89,8 @@ void FUN_00578be0(undefined4 param_1,int param_2);
 // Address: 00578cc0
 int FUN_00578cc0(undefined4 param_1,int param_2);
 
-// Original: sound_snddx.cpp_isValidSfxHandle_FUN_00578f4c
-// Address: 00578f4c
+// Original: sound_snddx.cpp_isValidSfxHandle_FUN_00578f50
+// Address: 00578f50
 int __cdecl isValidSfxHandle(int sfx_handle);
 
 // Original: sound_snddx.cpp_FUN_00578f80
@@ -113,8 +113,8 @@ undefined4 FUN_00579ad0(int *param_1,int param_2);
 // Address: 00579f30
 void FUN_00579f30(undefined4 param_1,int param_2);
 
-// Original: sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f6e
-// Address: 00579f6e
+// Original: sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f70
+// Address: 00579f70
 int __cdecl directSoundEnumerationCallback(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0057a1e0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_rifle_cpp_staticInit_FUN_0053fec0(void)
+; void __cdecl core_rifle_cpp_staticInit_FUN_0053fec0(void)
 ;
 ;
 ; Called Functions:

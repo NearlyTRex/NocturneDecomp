@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hellhag_cpp_staticInit_FUN_005aa5a0(void)
+; void __cdecl core_hellhag_cpp_staticInit_FUN_005aa5a0(void)
 ;
 ;
 ; Called Functions:

@@ -11,7 +11,7 @@
 ; XREF[6]:
 ;   core_bird.cpp_CBird_setup_FUN_0040fac0 at 0040fac7
 ;   core_enemy.cpp_CEnemy_setup_FUN_00489110 at 00489115
-;   core_hero.cpp_FUN_004d26b0 at 004d26c5
+;   core_hero.cpp_CHero_setup_FUN_004d26b0 at 004d26c5
 ;   core_moocow.cpp_CMooCow_setup_FUN_004f8bb0 at 004f8bfe
 ;   core_npc.cpp_CNPC_setup_FUN_00509020 at 0050902c
 ;   core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0 at 005992f9

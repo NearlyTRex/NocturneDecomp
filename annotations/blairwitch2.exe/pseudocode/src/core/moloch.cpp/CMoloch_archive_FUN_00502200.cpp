@@ -9,7 +9,7 @@
 void __cdecl core_moloch_cpp_CMoloch_archive_FUN_00502200(CMoloch *this_ptr)
 
 {
-  core_hero_cpp_FUN_004ce590(this_ptr);
+  core_hero_cpp_CHero_archive_FUN_004ce590(&this_ptr->base);
   core_actor_cpp_archiveString_FUN_0040b730
             (this_ptr->human_to_demon_condition,"humanToDemonCond");
   core_actor_cpp_archiveString_FUN_0040b730

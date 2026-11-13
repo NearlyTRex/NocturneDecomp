@@ -1,20 +1,20 @@
 // Name: core_zombiepriest.cpp_factoryFuncZombiePriest_FUN_0058d4b0
 // Address: 0058d4b0
 // Address Range: [[0058d4b0, 0058d4cb]]
-// Convention: unknown
-// Signature: void core_zombiepriest_cpp_factoryFuncZombiePriest_FUN_0058d4b0(void)
+// Convention: __cdecl
+// Signature: CZombiePriest * __cdecl core_zombiepriest_cpp_factoryFuncZombiePriest_FUN_0058d4b0(void)
 
 #include "nocturne.h"
 
-void core_zombiepriest_cpp_factoryFuncZombiePriest_FUN_0058d4b0(void)
+CZombiePriest * __cdecl core_zombiepriest_cpp_factoryFuncZombiePriest_FUN_0058d4b0(void)
 
 {
-  CZombiePriest *this_ptr;
+  CZombiePriest *pCVar1;
   
-  this_ptr = (CZombiePriest *)operator_new(0xd114);
-  if (this_ptr == (CZombiePriest *)0x0) {
-    return;
+  pCVar1 = (CZombiePriest *)operator_new(0xd114);
+  if (pCVar1 == (CZombiePriest *)0x0) {
+    return (CZombiePriest *)0x0;
   }
-  core_zombiepriest_cpp_CZombiePriest_ctor_FUN_0058d4e0(this_ptr);
-  return;
+  pCVar1 = core_zombiepriest_cpp_CZombiePriest_ctor_FUN_0058d4e0(pCVar1);
+  return pCVar1;
 }

@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_drawVLine_FUN_00403040
-;   engine_mini3d.cpp_FUN_004f93b0
+;   engine_mini3d.cpp_drawVLine_FUN_004f93b0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH EAX                            ; 0047a975
     PUSH ECX                            ; 0047a976
     PUSH EDX                            ; 0047a977
-    CALL engine_mini3d.cpp_FUN_004f93b0 ; 0047a978
-        ;   XREF to: 004f93b0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f93b0()
+    CALL engine_mini3d.cpp_drawVLine_FUN_004f93b0 ; 0047a978
+        ;   XREF to: 004f93b0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawVLine_FUN_004f93b0(int x, int y1, int y2)
     ADD ESP,0xc                         ; 0047a97d
     RET                                 ; 0047a980
     PUSH EAX                            ; 0047a981

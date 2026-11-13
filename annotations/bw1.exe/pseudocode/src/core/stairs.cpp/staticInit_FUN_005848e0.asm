@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stairs_cpp_staticInit_FUN_005848e0(void)
+; void __cdecl core_stairs_cpp_staticInit_FUN_005848e0(void)
 ;
 ;
 ; Called Functions:

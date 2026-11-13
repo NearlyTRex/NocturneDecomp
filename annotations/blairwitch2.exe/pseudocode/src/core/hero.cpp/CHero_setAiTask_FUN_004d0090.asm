@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   ai_task
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00528459
+;   core_script.cpp_CScript_step_FUN_00522350 at 00528459
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0

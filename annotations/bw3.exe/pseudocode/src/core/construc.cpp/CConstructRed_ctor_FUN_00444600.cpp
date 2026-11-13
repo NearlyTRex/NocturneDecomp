@@ -1,14 +1,12 @@
 // Name: core_construc.cpp_CConstructRed_ctor_FUN_00444600
 // Address: 00444600
 // Address Range: [[00444600, 0044465a]]
-// Convention: unknown
-// Signature: CConstructRed * core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConstructRed *this_ptr)
+// Convention: __cdecl
+// Signature: CConstructRed * __cdecl core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConstructRed *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CConstructRed * core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConstructRed *this_ptr)
+CConstructRed * __cdecl core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConstructRed *this_ptr)
 
 {
   CConstruct *pCVar1;

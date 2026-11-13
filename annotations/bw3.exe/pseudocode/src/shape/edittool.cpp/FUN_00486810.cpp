@@ -50,7 +50,7 @@ void shape_edittool_cpp_FUN_00486810(CEdCheck *param_1)
       _DAT_01c6b5c0 = _DAT_01c5baec;
     }
     else {
-      engine_mini3d_cpp_FUN_004f3520
+      engine_mini3d_cpp_setColor_FUN_004f3520
                 ((uint)DAT_01c6af9a | (uint)DAT_01c6af99 << 8 | (uint)DAT_01c6af98 << 0x10);
     }
     engine_2d_c_clipLineGlobal_FUN_00402ca0(iVar5 + 1,iVar1 + 1,iVar2 + -2,unaff_EBX + -2);

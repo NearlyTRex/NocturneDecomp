@@ -7,19 +7,19 @@
 
 // Original: core_baal.cpp_staticInit_FUN_00596600
 // Address: 00596600
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_baal.cpp_factoryFuncBaal_FUN_00596630
 // Address: 00596630
-void factoryFuncBaal(void);
+CBaal * __cdecl factoryFuncBaal(void);
 
 // Original: core_baal.cpp_CBaal_getActorType_FUN_00596650
 // Address: 00596650
-CDemonActorType * CBaal::getActorType(CBaal *this_ptr);
+CDemonActorType * __cdecl CBaal::getActorType(CBaal *this_ptr);
 
 // Original: core_baal.cpp_CBaal_ctor_FUN_00596660
 // Address: 00596660
-CBaal * CBaal::ctor(CBaal *this_ptr);
+CBaal * __cdecl CBaal::ctor(CBaal *this_ptr);
 
 // Original: core_baal.cpp_CBaal_setup_FUN_00596730
 // Address: 00596730
@@ -59,4 +59,4 @@ void __cdecl CBaal::archive(CBaal *this_ptr);
 
 // Original: core_baal.cpp_CBaal_dtor_FUN_00597d00
 // Address: 00597d00
-CBaal * CBaal::dtor(CBaal *this_ptr,uint flags);
+CBaal * __cdecl CBaal::dtor(CBaal *this_ptr,uint flags);

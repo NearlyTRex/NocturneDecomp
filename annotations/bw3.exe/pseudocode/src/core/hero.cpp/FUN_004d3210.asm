@@ -6,7 +6,7 @@
 ;
 ; XREF[5]:
 ;   core_game.cpp_FUN_004c07b0 at 004c2845
-;   core_hero.cpp_FUN_004d4520 at 004d453b
+;   core_hero.cpp_CHero_doHeroAction_FUN_004d4520 at 004d453b
 ;   core_hero.cpp_FUN_004d4900 at 004d491f
 ;   core_prye.cpp_CPrye_doHeroAction_FUN_00525a20 at 00525a44
 ;   core_prye.cpp_FUN_00518cd0 at 0051b530

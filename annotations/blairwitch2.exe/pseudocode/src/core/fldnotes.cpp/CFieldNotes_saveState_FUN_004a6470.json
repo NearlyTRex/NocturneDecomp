@@ -1,0 +1,350 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 198,
+    "complexity_score": 187,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 20,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 92,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 290
+  },
+  "cross_references": [
+    {
+      "addr": "004bb9b0",
+      "from_addr": "004bbc30",
+      "name": "core_game.cpp_FUN_004bb9b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a6470",
+    "address_range": [
+      [
+        "004a6470",
+        "004a6689"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_CFieldNotes_saveState_FUN_004a6470",
+    "signature": "void __cdecl core_fldnotes_cpp_CFieldNotes_saveState_FUN_004a6470(CFieldNotes *this_ptr,_FILE *file)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b8010",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8010"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004a6438",
+      "name": "switchdataD_004a6438",
+      "type": "void*",
+      "value": "004a6515"
+    },
+    {
+      "addr": "004a6454",
+      "name": "switchdataD_004a6454",
+      "type": "void*",
+      "value": "004a65a5"
+    },
+    {
+      "addr": "005d6553",
+      "name": "s_BEGIN_FIELD_NOTES_005d6553",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d658a",
+      "name": "s_field_notes_file_version_005d658a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d65a7",
+      "name": "DAT_005d65a7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d65ab",
+      "name": "s_filename_005d65ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d65b8",
+      "name": "s_s_005d65b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d65be",
+      "name": "s_core_fldnotes_cpp_005d65be",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d65d3",
+      "name": "s_Invalid_entry_item_type_005d65d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d65eb",
+      "name": "s_entry_count_list_name_ty_005d65eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d660f",
+      "name": "DAT_005d660f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6613",
+      "name": "s_s_d_005d6613",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d661d",
+      "name": "s_core_fldnotes_cpp_005d661d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6632",
+      "name": "s_Invalid_entry_item_type_005d6632",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d664a",
+      "name": "s_core_fldnotes_cpp_005d664a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d665f",
+      "name": "s_Hell_froze_005d665f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d666a",
+      "name": "s_END_FIELD_NOTES_005d666a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cab9f0",
+      "name": "DAT_01cab9f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bbc30",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bb9b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.264900662251655,
+    "instruction_count": 151,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 6,
+      "BRANCH": 5,
+      "BRANCHIND": 2,
+      "CALL": 12,
+      "CBRANCH": 11,
+      "COPY": 111,
+      "INT_ADD": 53,
+      "INT_AND": 83,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 78,
+      "INT_LESS": 7,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 9,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 21,
+      "INT_SEXT": 3,
+      "INT_SLESS": 39,
+      "INT_SUB": 50,
+      "INT_XOR": 5,
+      "LOAD": 29,
+      "POPCOUNT": 39,
+      "RETURN": 1,
+      "STORE": 48,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 644
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004bf1c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.318
+    },
+    "bw3.exe": {
+      "addr": "004acf00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3128
+    }
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFieldNotes *"
+      },
+      {
+        "is_param": true,
+        "name": "file",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_005d65a7",
+      "severity": "mild",
+      "text": "FUN_005b8010(file,&DAT_005d65a7,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)SNotesSection_ARRAY_01cab9f4",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + local_14 + -4)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(int *)((int)SNotesSection_ARRAY_01cab9f4",
+      "severity": "moderate",
+      "text": "(*(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + iVar4) + 0x140)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)SNotesSection_ARRAY_01cab9f4",
+      "severity": "moderate",
+      "text": "} while (iVar2 < *(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + local_14 + -4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_005d660f",
+      "severity": "mild",
+      "text": "FUN_005b8010(file,&DAT_005d660f,iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)SNotesSection_ARRAY_01cab9f4",
+      "severity": "moderate",
+      "text": "(*(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + iVar4) + 0x140)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(int *)((int)SNotesSection_ARRAY_01cab9f4",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)SNotesSection_ARRAY_01cab9f4[0].entries + iVar4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

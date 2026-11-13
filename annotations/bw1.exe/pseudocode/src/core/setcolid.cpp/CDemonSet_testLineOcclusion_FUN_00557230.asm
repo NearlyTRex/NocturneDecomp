@@ -18,7 +18,7 @@
 ;   core_doc.cpp_FUN_004724a0 at 00472d28
 ;   core_gabriela.cpp_FUN_004caff0 at 004cb17f
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d553
-;   core_sound.cpp_FUN_0057c57e at 0057c645
+;   core_sound.cpp_FUN_0057c580 at 0057c645
 ;   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0058eb50 at 0058f3d8
 ;   core_zombie.cpp_CZombie_process_FUN_005bafb0 at 005bb291
 ;

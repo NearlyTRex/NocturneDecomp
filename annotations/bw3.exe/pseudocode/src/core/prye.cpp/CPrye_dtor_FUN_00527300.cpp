@@ -1,14 +1,12 @@
 // Name: core_prye.cpp_CPrye_dtor_FUN_00527300
 // Address: 00527300
 // Address Range: [[00527300, 0052734d]]
-// Convention: unknown
-// Signature: CPrye * core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CPrye * __cdecl core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CPrye * core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags)
+CPrye * __cdecl core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags)
 
 {
   CPrye *pCVar1;

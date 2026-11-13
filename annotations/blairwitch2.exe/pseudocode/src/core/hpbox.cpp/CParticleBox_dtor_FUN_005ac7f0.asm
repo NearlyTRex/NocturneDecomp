@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CParticleBox * core_hpbox_cpp_CParticleBox_dtor_FUN_005ac7f0(CParticleBox *this_ptr,uint flags)
+; CParticleBox * __cdecl core_hpbox_cpp_CParticleBox_dtor_FUN_005ac7f0(CParticleBox *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CParticleBox *   Stack[0x4]:4   this_ptr

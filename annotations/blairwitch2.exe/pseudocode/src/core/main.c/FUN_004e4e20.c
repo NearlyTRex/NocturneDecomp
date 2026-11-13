@@ -9,7 +9,7 @@
 void core_main_c_FUN_004e4e20(void)
 
 {
-  core_zombie_cpp_FUN_0059abb0();
+  core_bmppuzzl_cpp_resetAllPuzzles_FUN_0059abb0();
   core_netgame_cpp_CNetGame_shutdown_FUN_0050b3f0(g_CNetGamePtr);
   engine_ncursfx_cpp_CMouse_reset_FUN_00510190(g_CMousePtr);
   core_mission_cpp_CDemonMission_clearMission_FUN_004fb440(0x01D182F0);

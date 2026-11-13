@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_FUN_00509b00(undefined4 param_1)
+; void core_melee_cpp_FUN_00509b00(COutStream *param_1)
 ;
 ;
 ; Called Functions:
 ;   crt_heap.c__heapwalk_FUN_005c2ce0
-;   support_trstream.cpp_FUN_005a14c0
+;   support_trstream.cpp_COutStream_printf_FUN_005a14c0
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH EDI                            ; 00509b64
     PUSH 0x5e7988                       ; 00509b65
     PUSH EBX                            ; 00509b6a
-    CALL support_trstream.cpp_FUN_005a14c0 ; 00509b6b
-        ;   XREF to: 005a14c0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a14c0()
+    CALL support_trstream.cpp_COutStream_printf_FUN_005a14c0 ; 00509b6b
+        ;   XREF to: 005a14c0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStream_printf_FUN_005a14c0(COutStream * this_ptr, char * format)
     ADD ESP,0x18                        ; 00509b70
     JMP 0x00509b17                      ; 00509b73
         ;   XREF to: 00509b17 (UNCONDITIONAL_JUMP)  ; LAB_00509b17

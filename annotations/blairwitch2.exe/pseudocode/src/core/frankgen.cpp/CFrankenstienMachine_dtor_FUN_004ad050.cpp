@@ -1,14 +1,12 @@
 // Name: core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004ad050
 // Address: 004ad050
 // Address Range: [[004ad050, 004ad0b4]]
-// Convention: unknown
-// Signature: CFrankenstienMachine * core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004ad050(CFrankenstienMachine *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004ad050(CFrankenstienMachine *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CFrankenstienMachine * core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004ad050(CFrankenstienMachine *this_ptr,uint flags)
+CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004ad050(CFrankenstienMachine *this_ptr,uint flags)
 
 {
   CCourse *pCVar1;

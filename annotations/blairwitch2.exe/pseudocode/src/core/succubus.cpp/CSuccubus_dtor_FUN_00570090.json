@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 68,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 32,
     "suspect_count": 3,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 116
+    "total_lines": 115
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "00570158"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_succubus.cpp_CSuccubus_dtor_FUN_00570090",
-    "signature": "CSuccubus * core_succubus_cpp_CSuccubus_dtor_FUN_00570090(CSuccubus *this_ptr,uint flags)"
+    "signature": "CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_00570090(CSuccubus *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -161,7 +161,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 19,
       "match": "pCVar1[-1].",
       "severity": "mild",
       "text": "((CClothList *)(pCVar1[-1].models[1].textures + 0xe),0);",
@@ -169,7 +169,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 22,
       "match": "pCVar3[-7].",
       "severity": "mild",
       "text": "iVar4 = core_armour_cpp_FUN_0040f2b0(pCVar3[-7].part_data.texture_set_indices + 0x17,0);",
@@ -177,7 +177,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 31,
+      "line": 29,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",

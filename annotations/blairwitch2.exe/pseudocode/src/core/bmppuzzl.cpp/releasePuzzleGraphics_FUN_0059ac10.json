@@ -1,0 +1,160 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 51,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 61
+  },
+  "cross_references": [
+    {
+      "addr": "004b6170",
+      "from_addr": "004b6398",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059ac10",
+    "address_range": [
+      [
+        "0059ac10",
+        "0059ac58"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_0059ac10",
+    "signature": "void __cdecl core_bmppuzzl_cpp_releasePuzzleGraphics_FUN_0059ac10(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059ab70",
+      "is_variadic": false,
+      "name": "core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "026677b4",
+      "name": "DAT_026677b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "026677e0",
+      "name": "DAT_026677e0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004b6398",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+        "estimated_params": 0,
+        "instructions_analyzed": 30,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004b67e4",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+        "estimated_params": 0,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.633333333333334,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 27,
+      "INT_ADD": 10,
+      "INT_AND": 20,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 9,
+      "INT_XOR": 2,
+      "LOAD": 7,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 139
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00415c80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00411a40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 21,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)*puVar1 + 0x10))((int *)*puVar1);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

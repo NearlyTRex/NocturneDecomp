@@ -7,7 +7,7 @@
 
 // Original: core_conveyor.cpp_staticInit_FUN_00438430
 // Address: 00438430
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_conveyor.cpp_factoryFuncConveyor_FUN_00438460
 // Address: 00438460
@@ -15,7 +15,7 @@ CConveyor * __cdecl factoryFuncConveyor(void);
 
 // Original: core_conveyor.cpp_CConveyor_getActorType_FUN_00438480
 // Address: 00438480
-CDemonActorType * CConveyor::getActorType(CConveyor *this_ptr);
+CDemonActorType * __cdecl CConveyor::getActorType(CConveyor *this_ptr);
 
 // Original: core_conveyor.cpp_CConveyor_ctor_FUN_00438490
 // Address: 00438490
@@ -33,17 +33,17 @@ void __cdecl CConveyor::process(CConveyor *this_ptr,float delta_time);
 // Address: 00438760
 int __cdecl CConveyor::renderOpaque(CConveyor *this_ptr);
 
-// Original: core_conveyor.cpp_FUN_00438770
+// Original: core_conveyor.cpp_CConveyor_renderBackground_FUN_00438770
 // Address: 00438770
-void FUN_00438770(void);
+void __cdecl CConveyor::renderBackground(CConveyor *this_ptr);
 
 // Original: core_conveyor.cpp_CConveyor_archive_FUN_00438780
 // Address: 00438780
 void __cdecl CConveyor::archive(CConveyor *this_ptr);
 
-// Original: core_conveyor.cpp_FUN_00438820
+// Original: core_conveyor.cpp_CConveyor_getCollisionType_FUN_00438820
 // Address: 00438820
-undefined4 FUN_00438820(void);
+undefined4 __cdecl CConveyor::getCollisionType(CConveyor *this_ptr);
 
 // Original: core_conveyor.cpp_CConveyor_getBoundingBox_FUN_00438830
 // Address: 00438830

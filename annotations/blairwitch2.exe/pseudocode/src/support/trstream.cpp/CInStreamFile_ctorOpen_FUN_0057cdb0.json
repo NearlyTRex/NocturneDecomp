@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 42,
+    "complexity_score": 17,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 44
   },
   "cross_references": [
@@ -32,13 +30,13 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_CInStreamFile_ctorOpen_FUN_0057cdb0",
-    "signature": "undefined4 * __cdecl support_trstream_cpp_CInStreamFile_ctorOpen_FUN_0057cdb0(CInStreamFile *this_ptr,LPCSTR param_2)"
+    "signature": "CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctorOpen_FUN_0057cdb0(CInStreamFile *this_ptr,char *path)"
   },
   "function_calls": [
     {
       "addr": "0057b9c0",
       "is_variadic": false,
-      "name": "core_terrain.cpp_FUN_0057b9c0"
+      "name": "support_trstream.cpp_CInStream_ctor_FUN_0057b9c0"
     },
     {
       "addr": "0057d320",
@@ -125,29 +123,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "path",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint * __cdecl support_trstream_cpp_CInStreamFile_ctorOpen_FUN_0057cdb0(CInStreamFile *this_ptr,LPCSTR param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "support_trstream_cpp_CInStreamFile_open_FUN_0057d320(this_ptr_00,param_2);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

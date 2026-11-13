@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mattnntt_cpp_factoryFuncMattanntote_FUN_00591b70(void)
+; CMattanntote * __cdecl core_mattnntt_cpp_factoryFuncMattanntote_FUN_00591b70(void)
 ;
 ;
 ; Called Functions:

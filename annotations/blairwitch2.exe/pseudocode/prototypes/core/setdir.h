@@ -13,8 +13,8 @@ void __cdecl staticInit(void);
 // Address: 00538390
 void __cdecl restoreZBufferTable(int count);
 
-// Original: core_setdir.cpp_setPixelGrayscale_FUN_005383fe
-// Address: 005383fe
+// Original: core_setdir.cpp_setPixelGrayscale_FUN_00538400
+// Address: 00538400
 void __cdecl setPixelGrayscale(int x,int y,int grayscale_value);
 
 // Original: core_setdir.cpp_CZThumb_ctor_FUN_00538430
@@ -127,7 +127,7 @@ int __cdecl CDemonSet::findVdirBoxAtPosition(CDemonSet *this_ptr,CVector3f *posi
 
 // Original: core_setdir.cpp_CBoundingBox3D_dtor_FUN_0053a7b0
 // Address: 0053a7b0
-CBoundingBox3D * CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flags);
+CBoundingBox3D * __cdecl CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flags);
 
 // Original: core_setdir.cpp_CZThumb_arrdtor1500_FUN_0053a7c0
 // Address: 0053a7c0

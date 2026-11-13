@@ -124,7 +124,7 @@ void __cdecl core_game_cpp_FUN_004bb9b0(CGame *this_ptr,char *save_filename)
              (double)this_ptr->total_game_time,this_ptr->damageable_enemy_count,
              this_ptr->total_kill_count);
   core_set_cpp_CDemonSet_saveStateInfo_FUN_00534a10(g_CDemonSetPtr,file_handle);
-  core_fldnotes_cpp_FUN_004a6470(g_CFieldNotesPtr,file_handle);
+  core_fldnotes_cpp_CFieldNotes_saveState_FUN_004a6470(g_CFieldNotesPtr,file_handle);
   _fclose(file_handle);
   DAT_007bc040 = 0;
   if (local_14 != 0) {

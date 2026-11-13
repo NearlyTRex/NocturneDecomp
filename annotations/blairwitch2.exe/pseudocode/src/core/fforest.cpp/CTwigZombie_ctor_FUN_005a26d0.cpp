@@ -1,15 +1,14 @@
 // Name: core_fforest.cpp_CTwigZombie_ctor_FUN_005a26d0
 // Address: 005a26d0
 // Address Range: [[005a26d0, 005a281b]]
-// Convention: unknown
-// Signature: CTwigZombie * core_fforest_cpp_CTwigZombie_ctor_FUN_005a26d0(CTwigZombie *this_ptr)
+// Convention: __cdecl
+// Signature: CTwigZombie * __cdecl core_fforest_cpp_CTwigZombie_ctor_FUN_005a26d0(CTwigZombie *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CTwigZombie * core_fforest_cpp_CTwigZombie_ctor_FUN_005a26d0(CTwigZombie *this_ptr)
+CTwigZombie * __cdecl core_fforest_cpp_CTwigZombie_ctor_FUN_005a26d0(CTwigZombie *this_ptr)
 
 {
   SStateMachine *pSVar1;

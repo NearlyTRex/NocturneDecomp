@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 160,
+    "complexity_score": 95,
     "cross_reference_count": 15,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 12,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 92
@@ -60,9 +59,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b01ce",
+      "addr": "004b01d0",
       "from_addr": "004b0235",
-      "name": "engine_font.cpp_FUN_004b01ce",
+      "name": "engine_font.cpp_FUN_004b01d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -72,9 +71,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056ad5e",
+      "addr": "0056ad60",
       "from_addr": "0056ae5b",
-      "name": "engine_texture.cpp_FUN_0056ad5e",
+      "name": "engine_texture.cpp_FUN_0056ad60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -104,7 +103,7 @@
     {
       "addr": "00573990",
       "from_addr": "005739f7",
-      "name": "support_trstream.cpp_FUN_00573990",
+      "name": "support_trstream.cpp_CInStreamFile_ctorOpenInDirectory_FUN_00573990",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -118,7 +117,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0",
-    "signature": "undefined4 __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile *this_ptr,undefined4 param_2,undefined4 param_3,int param_4)"
+    "signature": "int __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile *this_ptr,char *directory,char *filename,int binary_mode)"
   },
   "function_calls": [
     {
@@ -325,21 +324,21 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "directory",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "filename",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "binary_mode",
         "offset": 16,
         "size": 4,
         "type": "int"
@@ -348,35 +347,11 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile *this_ptr,uint param_2,uint param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile *this_ptr,uint param_2,uint param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile *this_ptr,uint param_2,uint param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 9,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);",
       "type": "pointer_cast"
     },
     {
@@ -384,31 +359,15 @@
       "line": 9,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465660(&SStack_218,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465660(&SStack_218,param_2,param_3);",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 20,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)((int)this_ptr->vtable + 0x1c))(this_ptr);",
+      "text": "iVar1 = (**(code **)((int)(this_ptr->base).vtable + 0x1c))(this_ptr);",
       "type": "pointer_cast"
     },
     {
@@ -416,23 +375,15 @@
       "line": 20,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)((int)this_ptr->vtable + 0x1c))(this_ptr);",
+      "text": "iVar1 = (**(code **)((int)(this_ptr->base).vtable + 0x1c))(this_ptr);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "this_ptr->binary_mode = param_4;",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 26,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);",
       "type": "pointer_cast"
     },
     {
@@ -440,7 +391,7 @@
       "line": 26,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);",
       "type": "unresolved_funcptr"
     }
   ],

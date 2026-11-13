@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SPlayer * core_netgame_cpp_SPlayer_ctor_FUN_00530a50(SPlayer *this_ptr)
+; SPlayer * __cdecl core_netgame_cpp_SPlayer_ctor_FUN_00530a50(SPlayer *this_ptr)
 ;
 ; Parameters:
 ; SPlayer *        Stack[0x4]:4   this_ptr

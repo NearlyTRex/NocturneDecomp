@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2217,
-    "complexity_score": 2919,
+    "complexity_score": 2921,
     "cross_reference_count": 10,
     "function_call_count": 20,
     "global_count": 66,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1279,
+    "pseudocode_lines": 1281,
     "suspect_count": 159,
     "suspect_types": [
       "derived_field_index_pun",
@@ -21,7 +21,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 3496
+    "total_lines": 3498
   },
   "cross_references": [
     {
@@ -37,9 +37,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d25fe",
+      "addr": "004d2600",
       "from_addr": "004d2680",
-      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004d25fe",
+      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004d2600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -159,14 +159,14 @@
       "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60"
     },
     {
+      "addr": "0051b740",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740"
+    },
+    {
       "addr": "0051b1d0",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_removeActorFromList_FUN_0051b1d0"
-    },
-    {
-      "addr": "0051b740",
-      "is_variadic": false,
-      "name": "core_mission.cpp_FUN_0051b740"
     },
     {
       "addr": "005c0f80",
@@ -735,7 +735,7 @@
     },
     {
       "description": "Raw hex address 0x1d2c900 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 1164,
+      "line": 1165,
       "match": "0x1d2c900",
       "severity": "moderate",
       "text": "pCVar3 = 0x01D2C900;",
@@ -743,7 +743,7 @@
     },
     {
       "description": "Raw hex address 0x1d2c900 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 1190,
+      "line": 1191,
       "match": "0x1d2c900",
       "severity": "moderate",
       "text": "pCVar3 = 0x01D2C900;",
@@ -1167,7 +1167,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 1161,
+      "line": 1162,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "*(EAmmoType *)(pCVar5[4].actor_name + 0xc) = pCStack_24->ammo_type;",
@@ -1175,7 +1175,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 1208,
+      "line": 1209,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "(*(int *)(pCVar10[4].actor_name + 0xc) == *(int *)(pCVar5[4].actor_name + 0xc))) {",
@@ -1183,7 +1183,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 1245,
+      "line": 1247,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "*(uintptr_t *)(actor[4].actor_name + 0xc) = pCVar10[2].validation_magic;",
@@ -1207,7 +1207,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar12->owner`). Replace `pCVar12->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1154,
+      "line": 1155,
       "match": "pCVar12 = (T *)&pCVar12->FIELD",
       "severity": "moderate",
       "text": "pCVar12 = (CInventory *)&pCVar12->owner;",
@@ -1215,7 +1215,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_20` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_20->owner`). Replace `pCStack_20->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1225,
+      "line": 1227,
       "match": "pCStack_20 = (T *)&pCStack_20->FIELD",
       "severity": "moderate",
       "text": "pCStack_20 = (CInventory *)&pCStack_20->owner;",
@@ -1223,7 +1223,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_18->owner`). Replace `pCStack_18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1256,
+      "line": 1258,
       "match": "pCStack_18 = (T *)&pCStack_18->FIELD",
       "severity": "moderate",
       "text": "pCStack_18 = (CInventory *)&pCStack_18->owner;",
@@ -1931,28 +1931,28 @@
     },
     {
       "description": "'pCVar10[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar10)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[15], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 1208,
+      "line": 1209,
       "severity": "moderate",
       "text": "(*(int *)(pCVar10[4].actor_name + 0xc) == *(int *)(pCVar5[4].actor_name + 0xc))) {",
       "type": "derived_field_index_pun"
     },
     {
       "description": "'pCVar5[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar5)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[15], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 1208,
+      "line": 1209,
       "severity": "moderate",
       "text": "(*(int *)(pCVar10[4].actor_name + 0xc) == *(int *)(pCVar5[4].actor_name + 0xc))) {",
       "type": "derived_field_index_pun"
     },
     {
       "description": "'pCVar5[4].actor_name + 8' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x8 = 0x568, which is exactly offsetof(CChain, dampen). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar5)->dampen (\u00a7de-pun/\u00a712). Ambiguous: CWeapon::ammo_count also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 1212,
+      "line": 1213,
       "severity": "moderate",
       "text": "if ((pCVar5 != (CDemonActor *)0x0) && (200 < *(int *)(pCVar5[4].actor_name + 8))) {",
       "type": "derived_field_index_pun"
     },
     {
       "description": "'(char *)&pCVar10[2].location.position.y' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.y) (0x24) + 0x0 = 0x2d4, which is exactly offsetof(CAmmo, weapon_class_name). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar10)->weapon_class_name (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name, CAnvil::drop_condition, CBattery::carrier also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 1238,
+      "line": 1240,
       "severity": "moderate",
       "text": "((char *)&pCVar10[2].location.position.y,pcVar13);",
       "type": "derived_field_index_pun"

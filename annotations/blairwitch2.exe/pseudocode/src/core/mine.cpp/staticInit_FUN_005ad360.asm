@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mine_cpp_staticInit_FUN_005ad360(void)
+; void __cdecl core_mine_cpp_staticInit_FUN_005ad360(void)
 ;
 ;
 ; Called Functions:

@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   core_event.cpp_FUN_00489670 at 0048dbe4
 ;   core_platfrm.cpp_CPlatform_process_FUN_005184c0 at 005185eb
-;   core_script.cpp_FUN_00522350 at 00529111
+;   core_script.cpp_CScript_step_FUN_00522350 at 00529111
 ;
 ; *****************************************************************************
 

@@ -17,7 +17,7 @@
 ;   core_fire.cpp_FUN_004a36e0
 ;   core_flame.cpp_CFlame_process_FUN_004a5b10
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110
-;   core_mission.cpp_FUN_004f6f10
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10
 ;
 ; *****************************************************************************
 
@@ -77,8 +77,8 @@ section .text
     PUSH EBX                            ; 004a71d7
     MOV ESI,dword ptr [0x00600530]      ; 004a71d8 | DAT_00600530
     PUSH ESI                            ; 004a71de
-    CALL core_mission.cpp_FUN_004f6f10  ; 004a71df
-        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f6f10()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 004a71df
+        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 004a71e4
     MOV EAX,dword ptr [EBX + 0x154]     ; 004a71e7
     PUSH EBX                            ; 004a71ed

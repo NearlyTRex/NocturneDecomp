@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CZombie * core_zombie_cpp_CZombie_dtor_FUN_0058d230(CZombie *this_ptr,uint flags)
+; CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_0058d230(CZombie *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr

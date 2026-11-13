@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_cross_cpp_CCross_getActorType_FUN_005a69e0(CCross *this_ptr)
+; CDemonActorType * __cdecl core_cross_cpp_CCross_getActorType_FUN_005a69e0(CCross *this_ptr)
 ;
 ; Parameters:
 ; CCross *         Stack[0x4]:4   this_ptr

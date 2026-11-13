@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 25,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
+    "pseudocode_lines": 9,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 38
+    "total_lines": 37
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "005023d3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_moon.cpp_CMoon_dtor_FUN_00502390",
-    "signature": "CMoon * core_moon_cpp_CMoon_dtor_FUN_00502390(CMoon *this_ptr,uint flags)"
+    "signature": "CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_00502390(CMoon *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -123,7 +123,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 11,
       "match": "pCVar1[-1].",
       "severity": "mild",
       "text": "return (CMoon *)&pCVar1[-1].rotation_matrix_workspace.m[2].z;",

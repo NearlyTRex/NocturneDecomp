@@ -25,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamDebug_seek_FUN_0057e330",
-    "signature": "undefined4 __cdecl support_trstream_cpp_COutStreamDebug_seek_FUN_0057e330(COutStreamDebug *this_ptr)"
+    "signature": "int __cdecl support_trstream_cpp_COutStreamDebug_seek_FUN_0057e330(COutStreamDebug *this_ptr,int offset,int origin)"
   },
   "function_calls": [
     {
@@ -64,9 +64,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "declared_stack_bytes": 4,
-    "estimated_params": 1,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -105,10 +105,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -117,6 +117,20 @@
         "offset": 4,
         "size": 4,
         "type": "COutStreamDebug *"
+      },
+      {
+        "is_param": true,
+        "name": "offset",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "origin",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },

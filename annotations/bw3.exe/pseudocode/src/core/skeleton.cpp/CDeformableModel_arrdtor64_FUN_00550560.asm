@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDeformableModel * core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_00550560(CDeformableModel *this_ptr,uint flags)
+; CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_00550560(CDeformableModel *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr

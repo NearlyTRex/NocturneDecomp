@@ -2,13 +2,13 @@
 // Address: 00401590
 // Address Range: [[00401590, 00401616]]
 // Convention: unknown
-// Signature: void engine_2d_c_FUN_00401590(undefined4 param_1)
+// Signature: void engine_2d_c_FUN_00401590(char *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void engine_2d_c_FUN_00401590(uint param_1)
+void engine_2d_c_FUN_00401590(char *param_1)
 
 {
   int iVar1;
@@ -22,7 +22,7 @@ void engine_2d_c_FUN_00401590(uint param_1)
     _DAT_01d71de4 = 0x29b;
     core_main_c_FUN_004e4330("Unable to open VGA palette (probably need to mount startup.pod or delete pod.ini).");
   }
-  support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_2c,(uint *)&DAT_01c6af98,0x300);
+  support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_2c,&DAT_01c6af98,0x300);
   support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_2c);
   support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_2c,0);
   return;

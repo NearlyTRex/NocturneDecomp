@@ -1,23 +1,21 @@
 // Name: core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00411b50
 // Address: 00411b50
 // Address Range: [[00411b50, 00411ba3]]
-// Convention: unknown
-// Signature: CAudioRecPuzzle * core_bmppuzzl_cpp_CAudioRecPuzzle_ctor_FUN_00411b50(CAudioRecPuzzle *this_ptr)
+// Convention: __cdecl
+// Signature: CAudioRecPuzzle * __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_ctor_FUN_00411b50(CAudioRecPuzzle *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAudioRecPuzzle * core_bmppuzzl_cpp_CAudioRecPuzzle_ctor_FUN_00411b50(CAudioRecPuzzle *this_ptr)
+CAudioRecPuzzle * __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_ctor_FUN_00411b50(CAudioRecPuzzle *this_ptr)
 
 {
-  int iVar1;
+  CPuzzle *pCVar1;
   CAlphaBitmap *pCVar2;
   void *pvVar3;
   CKeyFramedModelInstance *pCVar4;
   
-  iVar1 = core_bmppuzzl_cpp_FUN_00411960(this_ptr);
-  pCVar2 = engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d2e0((CAlphaBitmap *)(iVar1 + 4));
+  pCVar1 = core_bmppuzzl_cpp_CPuzzle_ctor_FUN_00411960(&this_ptr->base);
+  pCVar2 = engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d2e0((CAlphaBitmap *)(pCVar1 + 1));
   pvVar3 = __arrinit(pCVar2 + 4,0x32,&g_buttonStructTypeInfo);
   pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500
                      ((CKeyFramedModelInstance *)((int)pvVar3 + 0x898));

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDjien * core_djien_cpp_CDjien_dtor_FUN_004623b0(CDjien *this_ptr,uint flags)
+; CDjien * __cdecl core_djien_cpp_CDjien_dtor_FUN_004623b0(CDjien *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDjien *         Stack[0x4]:4   this_ptr

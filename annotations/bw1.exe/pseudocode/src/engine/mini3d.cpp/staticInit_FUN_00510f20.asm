@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_mini3d_cpp_staticInit_FUN_00510f20(void)
+; void __cdecl engine_mini3d_cpp_staticInit_FUN_00510f20(void)
 ;
 ;
 ; Referenced Globals:

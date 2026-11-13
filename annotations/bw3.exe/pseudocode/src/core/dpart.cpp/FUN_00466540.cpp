@@ -1,6 +1,6 @@
 // Name: core_dpart.cpp_FUN_00466540
 // Address: 00466540
-// Address Range: [[00466540, 0046678f] [004667ff, 0046682a]]
+// Address Range: [[00466540, 0046682a]]
 // Convention: unknown
 // Signature: void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4)
 

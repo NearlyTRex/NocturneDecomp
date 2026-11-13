@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flame_cpp_staticInit_FUN_004b79d0(void)
+; void __cdecl core_flame_cpp_staticInit_FUN_004b79d0(void)
 ;
 ;
 ; Called Functions:

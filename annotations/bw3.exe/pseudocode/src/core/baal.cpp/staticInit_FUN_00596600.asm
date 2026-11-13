@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baal_cpp_staticInit_FUN_00596600(void)
+; void __cdecl core_baal_cpp_staticInit_FUN_00596600(void)
 ;
 ;
 ; Called Functions:

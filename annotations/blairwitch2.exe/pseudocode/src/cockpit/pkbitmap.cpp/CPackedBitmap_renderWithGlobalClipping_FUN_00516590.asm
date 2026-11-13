@@ -13,7 +13,7 @@
 ; int              Stack[0x1c]:4   height
 ;
 ; XREF[1]:
-;   cockpit_pkbitmap.cpp_FUN_0051668e at 00516735
+;   cockpit_pkbitmap.cpp_FUN_00516690 at 00516735
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c35e48

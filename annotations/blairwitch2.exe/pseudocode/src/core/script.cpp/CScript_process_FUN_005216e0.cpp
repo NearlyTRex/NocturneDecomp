@@ -30,7 +30,7 @@ void __cdecl core_script_cpp_CScript_process_FUN_005216e0(CScript *this_ptr)
     do {
       if (((local_18 <= 0.0) || (this_ptr->script_state == 2)) || (this_ptr->mission_ended != 0))
       goto LAB_00521753;
-      iVar1 = core_script_cpp_FUN_00522350(this_ptr,&local_18);
+      iVar1 = core_script_cpp_CScript_step_FUN_00522350(this_ptr,&local_18);
       if (iVar1 == 0) goto LAB_00521753;
       if (iVar1 < 0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0047be40

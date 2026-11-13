@@ -1,14 +1,12 @@
 // Name: core_tawiscara.cpp_CTawiscara_dtor_FUN_00596570
 // Address: 00596570
 // Address Range: [[00596570, 005965f4]]
-// Convention: unknown
-// Signature: CTawiscara * core_tawiscara_cpp_CTawiscara_dtor_FUN_00596570(CTawiscara *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CTawiscara * __cdecl core_tawiscara_cpp_CTawiscara_dtor_FUN_00596570(CTawiscara *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CTawiscara * core_tawiscara_cpp_CTawiscara_dtor_FUN_00596570(CTawiscara *this_ptr,uint flags)
+CTawiscara * __cdecl core_tawiscara_cpp_CTawiscara_dtor_FUN_00596570(CTawiscara *this_ptr,uint flags)
 
 {
   int iVar1;

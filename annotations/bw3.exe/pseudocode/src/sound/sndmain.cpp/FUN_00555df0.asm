@@ -11,7 +11,7 @@
 ;   core_fire.cpp_CFireball_onCollision_FUN_00499eb0 at 00499fc6
 ;   core_game.cpp_FUN_004c4a60 at 004c4b35
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 005606f3
-;   core_sound.cpp_FUN_0055f6ae at 0055f9d7
+;   core_sound.cpp_FUN_0055f6b0 at 0055f9d7
 ;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f23b
 ;
 ; Referenced Globals:

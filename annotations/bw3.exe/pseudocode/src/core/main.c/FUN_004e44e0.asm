@@ -29,7 +29,7 @@
 ;   ... and 70 more
 ;
 ; Called Functions:
-;   core_bmppuzzl.cpp_FUN_004119e0
+;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_004119e0
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_00459b80
 ;   core_dfont.cpp_FUN_00459f50
 ;   core_flattn.cpp_FUN_004ad4c0
@@ -775,8 +775,8 @@ section .text
     CALL core_netgame.cpp_CNetGame_init_FUN_00503e20 ; 004e4bc6
         ;   XREF to: 00503e20 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_init_FUN_00503e20(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004e4bcb
-    CALL core_bmppuzzl.cpp_FUN_004119e0 ; 004e4bce
-        ;   XREF to: 004119e0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_004119e0()
+    CALL core_bmppuzzl.cpp_resetAllPuzzles_FUN_004119e0 ; 004e4bce
+        ;   XREF to: 004119e0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_resetAllPuzzles_FUN_004119e0()
     PUSH 0x5c6e6a                       ; 004e4bd3 | DAT_005c6e6a
     PUSH 0x5c6e6c                       ; 004e4bd8 | = "Flip on VBlank"
     PUSH 0x5c6e7b                       ; 004e4bdd | = "SOFTWARE\\Matrox\\PowerDesk\\Current ..."

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSkeletonIndian * core_boneguy_cpp_CSkeletonIndian_dtor_FUN_0041a9e0(CSkeletonIndian *this_ptr,uint flags)
+; CSkeletonIndian * __cdecl core_boneguy_cpp_CSkeletonIndian_dtor_FUN_0041a9e0(CSkeletonIndian *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSkeletonIndian * Stack[0x4]:4   this_ptr

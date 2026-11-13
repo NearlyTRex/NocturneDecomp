@@ -404,7 +404,7 @@ LAB_0046bf49:
         }
       }
       else if (bone_index < 0x18) {
-        core_hero_cpp_FUN_004eb7f0(param_1);
+        core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(param_1);
       }
       else if (bone_index < 0x29a) {
         if (bone_index != 0x18) goto LAB_0046c965;

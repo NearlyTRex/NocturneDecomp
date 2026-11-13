@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_disease_cpp_CDisease_getActorType_FUN_0045bf70(CDisease *this_ptr)
+; CDemonActorType * __cdecl core_disease_cpp_CDisease_getActorType_FUN_0045bf70(CDisease *this_ptr)
 ;
 ; Parameters:
 ; CDisease *       Stack[0x4]:4   this_ptr

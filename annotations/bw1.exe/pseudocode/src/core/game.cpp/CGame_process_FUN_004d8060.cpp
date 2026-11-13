@@ -94,8 +94,8 @@ void __cdecl core_game_cpp_CGame_process_FUN_004d8060(CGame *this_ptr)
   core_terrain_cpp_CTerrain_process_FUN_0059f4f0(0x02C8AE68);
   core_weather_cpp_CWeather_update_FUN_005ae190(0x02C997C0);
   core_game_cpp_CGame_processCheatCodes_FUN_004d27b0(this_ptr);
-  core_fldnotes_cpp_FUN_004be970();
-  engine_alphabit_cpp_FUN_00415cd0();
+  core_fldnotes_cpp_CFieldNotes_process_FUN_004be970(g_CFieldNotesPtr);
+  core_bmppuzzl_cpp_processActivePuzzle_FUN_00415cd0();
   if (g_CFieldNotesPtr->is_displayed == 0) {
     core_set_cpp_CDemonSet_processActors_FUN_0054fc20(g_CDemonSetPtr);
   }

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStreamFile *this_ptr,int param_2)
+; int __cdecl support_trstream_cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStreamFile *this_ptr,int position)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   position
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

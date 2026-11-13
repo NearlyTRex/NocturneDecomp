@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_setdir_cpp_staticInit_FUN_00559710(void)
+; void __cdecl core_setdir_cpp_staticInit_FUN_00559710(void)
 ;
 ;
 ; Called Functions:

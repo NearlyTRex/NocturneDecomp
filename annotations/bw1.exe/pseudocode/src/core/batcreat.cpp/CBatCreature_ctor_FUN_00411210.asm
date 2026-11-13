@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBatCreature * core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCreature *this_ptr)
+; CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCreature *this_ptr)
 ;
 ; Parameters:
 ; CBatCreature *   Stack[0x4]:4   this_ptr

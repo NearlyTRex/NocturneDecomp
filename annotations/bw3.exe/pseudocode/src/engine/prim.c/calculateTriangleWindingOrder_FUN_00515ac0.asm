@@ -19,10 +19,10 @@
 ;   core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0 at 005a2623
 ;   core_dpart.cpp_FUN_00466d50 at 00466e31
 ;   core_dpart.cpp_FUN_004673d0 at 004674ad
-;   engine_clipper.c_FUN_0043b3bc at 0043b3fc
+;   engine_clipper.c_FUN_0043b3c0 at 0043b3fc
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00439da0 at 00439e94
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043bac0 at 0043bb8c
-;   engine_drender.cpp_FUN_0046de6e at 0046df85
+;   engine_drender.cpp_FUN_0046de70 at 0046df85
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480 at 005174cd
 ;   engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0 at 005163fd
 ;   ... and 2 more

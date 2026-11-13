@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gasmask_cpp_staticInit_FUN_004c12e0(void)
+; void __cdecl core_gasmask_cpp_staticInit_FUN_004c12e0(void)
 ;
 ;
 ; Called Functions:

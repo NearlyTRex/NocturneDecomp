@@ -650,7 +650,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x26]      ; 0044ce65
     MOV dword ptr [EBX + 0x80],EAX      ; 0044ce68
     MOV EBX,dword ptr [EDX]             ; 0044ce6e | DAT_01ba5c50
-    PUSH 0x43f980                       ; 0044ce70 | LAB_0043f980
+    PUSH 0x43f980                       ; 0044ce70
     MOV EAX,dword ptr [EBP + 0x26]      ; 0044ce75
     MOV EDI,0x4                         ; 0044ce78
     MOV ECX,0x1                         ; 0044ce7d

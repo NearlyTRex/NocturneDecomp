@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60
-;   core_mission.cpp_FUN_0051b740
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
@@ -94,8 +94,8 @@ section .text
     PUSH EBX                            ; 0044969e
     MOV EDI,dword ptr [0x0061f650]      ; 0044969f | DAT_0061f650
     PUSH EDI                            ; 004496a5 | DAT_01d2c900
-    CALL core_mission.cpp_FUN_0051b740  ; 004496a6
-        ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b740()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 004496a6
+        ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 004496ab
     MOV dword ptr [EBX + 0x70],0x2      ; 004496ae
     POP ESI                             ; 004496b5

@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 203,
+    "complexity_score": 204,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 114,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 355
+    "total_lines": 356
   },
   "cross_references": [],
   "function": {
@@ -239,7 +239,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 82,
       "match": "DAT_00629014",
       "severity": "mild",
       "text": "((SRenderVertex *)&DAT_00629014,(SMRGLPrimitiveQuad **)0x7c1074,_DAT_007c1070,",
@@ -247,7 +247,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 104,
+      "line": 105,
       "match": "*(SMRGLHeaderExtended **)(_DAT_007c1070 * 4 + 0x7c1074",
       "severity": "moderate",
       "text": "*(SMRGLHeaderExtended **)(_DAT_007c1070 * 4 + 0x7c1074) = mrgl;",
@@ -255,7 +255,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 114,
+      "line": 115,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);",

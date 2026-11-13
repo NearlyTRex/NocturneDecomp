@@ -1,0 +1,132 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 27,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 30
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f2a00",
+    "address_range": [
+      [
+        "004f2a00",
+        "004f2a2e"
+      ]
+    ],
+    "convention": "__esi",
+    "name": "engine_mini3d.cpp_getCameraRotation_FUN_004f2a00",
+    "signature": "void __esi engine_mini3d_cpp_getCameraRotation_FUN_004f2a00(CVector3f *output)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d098bc",
+      "name": "DAT_01d098bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098c0",
+      "name": "DAT_01d098c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098c4",
+      "name": "DAT_01d098c4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.764705882352941,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "COPY": 21,
+      "INT_ADD": 11,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 8,
+      "INT_ZEXT": 6,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 81
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00511790",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004ecf60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004f2a21",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

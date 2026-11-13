@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lightsta_cpp_staticInit_FUN_004e0f10(void)
+; void __cdecl core_lightsta_cpp_staticInit_FUN_004e0f10(void)
 ;
 ;
 ; Called Functions:

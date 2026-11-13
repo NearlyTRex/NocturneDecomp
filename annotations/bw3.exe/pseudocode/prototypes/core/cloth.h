@@ -11,15 +11,15 @@ CCloth * __cdecl CCloth::ctor(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_FUN_0043c280
 // Address: 0043c280
-void FUN_0043c280(CKeyFramedModel *param_1);
+void FUN_0043c280(CCloth *param_1);
 
 // Original: core_cloth.cpp_CCloth_allocMemory_FUN_0043c2a0
 // Address: 0043c2a0
 void __cdecl CCloth::allocMemory(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_FUN_0043c300
+// Original: core_cloth.cpp_CCloth_free_FUN_0043c300
 // Address: 0043c300
-void FUN_0043c300(int param_1);
+void __cdecl CCloth::free(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_CCloth_load_FUN_0043c330
 // Address: 0043c330
@@ -53,9 +53,9 @@ void __cdecl CCloth::process(CCloth *this_ptr,CVector3f *position,CVector3f *eul
 // Address: 0043e2a0
 void __cdecl CCloth::step(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 
-// Original: core_cloth.cpp_FUN_0043f10c
-// Address: 0043f10c
-void FUN_0043f10c(int param_1);
+// Original: core_cloth.cpp_FUN_0043f110
+// Address: 0043f110
+void FUN_0043f110(void);
 
 // Original: core_cloth.cpp_FUN_0043f160
 // Address: 0043f160
@@ -89,9 +89,9 @@ void __cdecl CClothList::reset(CClothList *this_ptr);
 // Address: 0043fa40
 void __cdecl CClothList::add(CClothList *this_ptr,char *filename);
 
-// Original: core_cloth.cpp_FUN_0043fabe
-// Address: 0043fabe
-void FUN_0043fabe(int *param_1,int param_2);
+// Original: core_cloth.cpp_FUN_0043fac0
+// Address: 0043fac0
+void FUN_0043fac0(void);
 
 // Original: core_cloth.cpp_CClothList_setup_FUN_0043fbc0
 // Address: 0043fbc0
@@ -105,9 +105,9 @@ void __cdecl CClothList::process(CClothList *this_ptr,CVector3f *position,CVecto
 // Address: 0043fc50
 void __cdecl CClothList::render(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
 
-// Original: core_cloth.cpp_FUN_0043fd0e
-// Address: 0043fd0e
-void FUN_0043fd0e(int *param_1,undefined4 *param_2);
+// Original: core_cloth.cpp_FUN_0043fd10
+// Address: 0043fd10
+void FUN_0043fd10(void);
 
 // Original: core_cloth.cpp_CCloth_grabCloth_FUN_0043fd60
 // Address: 0043fd60
@@ -127,7 +127,7 @@ CVector3f * __cdecl applyLightAttenuation(CVector3f *v);
 
 // Original: core_cloth.cpp_SClothBone_ctor_FUN_004400a0
 // Address: 004400a0
-SClothBone * SClothBone::ctor(SClothBone *this_ptr);
+SClothBone * __cdecl SClothBone::ctor(SClothBone *this_ptr);
 
 // Original: core_cloth.cpp_SClothVertex_ctor_FUN_004400b0
 // Address: 004400b0

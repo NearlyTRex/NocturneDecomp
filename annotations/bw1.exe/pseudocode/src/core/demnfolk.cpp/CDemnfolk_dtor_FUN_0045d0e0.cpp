@@ -1,14 +1,12 @@
 // Name: core_demnfolk.cpp_CDemnfolk_dtor_FUN_0045d0e0
 // Address: 0045d0e0
 // Address Range: [[0045d0e0, 0045d164]]
-// Convention: unknown
-// Signature: CDemnfolk * core_demnfolk_cpp_CDemnfolk_dtor_FUN_0045d0e0(CDemnfolk *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_dtor_FUN_0045d0e0(CDemnfolk *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDemnfolk * core_demnfolk_cpp_CDemnfolk_dtor_FUN_0045d0e0(CDemnfolk *this_ptr,uint flags)
+CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_dtor_FUN_0045d0e0(CDemnfolk *this_ptr,uint flags)
 
 {
   int iVar1;

@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPackedBitmap * cockpit_pkbitmap_cpp_parsePBGFile_FUN_00517280(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6)
+; CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_00517280(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index)
 ;
+; Parameters:
+; CPackedBitmapSet * Stack[0x4]:4   bitmap_set_ptr
+; _FILE *          Stack[0x8]:4   file_handle
+; int              Stack[0xc]:4   frames_per_bitmap
+; int              Stack[0x10]:4   skip_data_load
+; int              Stack[0x14]:4   selected_bitmap_index
 ;
 ; XREF[1]:
 ;   cockpit_pkbitmap.cpp_FUN_00517400 at 0051744f

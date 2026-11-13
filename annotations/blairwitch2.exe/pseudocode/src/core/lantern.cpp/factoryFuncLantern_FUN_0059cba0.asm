@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lantern_cpp_factoryFuncLantern_FUN_0059cba0(void)
+; CLantern * __cdecl core_lantern_cpp_factoryFuncLantern_FUN_0059cba0(void)
 ;
 ;
 ; Called Functions:

@@ -7,7 +7,7 @@
 
 // Original: core_larva.cpp_staticInit_FUN_004e0520
 // Address: 004e0520
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_larva.cpp_factoryFuncLarva_FUN_004e0550
 // Address: 004e0550
@@ -15,11 +15,11 @@ CLarva * __cdecl factoryFuncLarva(void);
 
 // Original: core_larva.cpp_CLarva_getActorType_FUN_004e0570
 // Address: 004e0570
-CDemonActorType * CLarva::getActorType(CLarva *this_ptr);
+CDemonActorType * __cdecl CLarva::getActorType(CLarva *this_ptr);
 
 // Original: core_larva.cpp_CLarva_ctor_FUN_004e0580
 // Address: 004e0580
-CLarva * CLarva::ctor(CLarva *this_ptr);
+CLarva * __cdecl CLarva::ctor(CLarva *this_ptr);
 
 // Original: core_larva.cpp_CLarva_setup_FUN_004e0610
 // Address: 004e0610
@@ -47,4 +47,4 @@ int __cdecl CLarva::getTargetPoints(CLarva *this_ptr,CVector3f *out_points_array
 
 // Original: core_larva.cpp_CLarva_dtor_FUN_004e13a0
 // Address: 004e13a0
-CLarva * CLarva::dtor(CLarva *this_ptr,uint flags);
+CLarva * __cdecl CLarva::dtor(CLarva *this_ptr,uint flags);

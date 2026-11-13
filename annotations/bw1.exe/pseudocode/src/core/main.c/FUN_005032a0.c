@@ -502,7 +502,7 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
   } while (iVar9 < 4);
   engine_ncursfx_cpp_CMouse_load_FUN_005312c0(g_CMousePtr);
   core_netgame_cpp_CNetGame_init_FUN_0052c520(g_CNetGamePtr);
-  engine_alphabit_cpp_FUN_00415c20();
+  core_bmppuzzl_cpp_resetAllPuzzles_FUN_00415c20();
   wincore_winrun_cpp_setRegistryStringValue_FUN_005b3a10
             ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank","0");
   return;

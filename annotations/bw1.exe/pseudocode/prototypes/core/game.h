@@ -7,7 +7,7 @@
 
 // Original: core_game.cpp_staticInit_FUN_004cb7d0
 // Address: 004cb7d0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_game.cpp_setupMovieRecording_FUN_004cb870
 // Address: 004cb870
@@ -23,7 +23,7 @@ CGame * __cdecl CGame::ctor(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_dtor_FUN_004cbf00
 // Address: 004cbf00
-CGame * CGame::dtor(CGame *this_ptr,uint flags);
+CGame * __cdecl CGame::dtor(CGame *this_ptr,uint flags);
 
 // Original: core_game.cpp_CGame_saveClockTime_FUN_004cbf10
 // Address: 004cbf10
@@ -65,8 +65,8 @@ void __cdecl CGame::setFudgeTarget(CGame *this_ptr,CVector3f *fudge_target,float
 // Address: 004cc9c0
 void __cdecl CGame::processFudge(CGame *this_ptr);
 
-// Original: core_game.cpp_drawCreditsLine_FUN_004ccafe
-// Address: 004ccafe
+// Original: core_game.cpp_drawCreditsLine_FUN_004ccb00
+// Address: 004ccb00
 void __cdecl drawCreditsLine(char *text_string);
 
 // Original: core_game.cpp_drawKeyBindingEntry_FUN_004ccb80
@@ -113,17 +113,17 @@ void __cdecl CGame::processJoystickControls(CGame *this_ptr,SPlayerInput *player
 // Address: 004d0d70
 void __cdecl pollKeyStateOnChange(int key_index,int *output_state);
 
-// Original: core_game.cpp_FUN_004d0d9e
-// Address: 004d0d9e
-void FUN_004d0d9e(int param_1,uint *param_2);
+// Original: core_game.cpp_FUN_004d0da0
+// Address: 004d0da0
+void FUN_004d0da0(void);
 
-// Original: core_game.cpp_FUN_004d0dce
-// Address: 004d0dce
-void FUN_004d0dce(int param_1,int param_2,float *param_3,float param_4,float param_5);
+// Original: core_game.cpp_FUN_004d0dd0
+// Address: 004d0dd0
+void FUN_004d0dd0(void);
 
-// Original: core_game.cpp_FUN_004d0e6e
-// Address: 004d0e6e
-void FUN_004d0e6e(float *param_1,float param_2,float param_3);
+// Original: core_game.cpp_FUN_004d0e70
+// Address: 004d0e70
+void FUN_004d0e70(void);
 
 // Original: core_game.cpp_FUN_004d0ee0
 // Address: 004d0ee0
@@ -157,8 +157,8 @@ int __cdecl checkCheatCode(char *cheat_string);
 // Address: 004d2540
 void __cdecl giveHeroWeapon(char *class_name);
 
-// Original: core_game.cpp_giveHeroWeaponAmmo_FUN_004d25fe
-// Address: 004d25fe
+// Original: core_game.cpp_giveHeroWeaponAmmo_FUN_004d2600
+// Address: 004d2600
 void __cdecl giveHeroWeaponAmmo(char *class_name,EAmmoType ammo_type);
 
 // Original: core_game.cpp_checkCheatAndGiveWeapon_FUN_004d2690
@@ -229,9 +229,9 @@ void __cdecl FUN_004d6990(CGame *this_ptr,char *save_filename,int load_mode);
 // Address: 004d7250
 void FUN_004d7250(CGame *param_1,int param_2);
 
-// Original: core_game.cpp_FUN_004d7730
+// Original: core_game.cpp_CGame_displayBitmap_FUN_004d7730
 // Address: 004d7730
-void FUN_004d7730(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,uint param_5);
+void __cdecl CGame::displayBitmap(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5);
 
 // Original: core_game.cpp_FUN_004d77d0
 // Address: 004d77d0
@@ -245,8 +245,8 @@ void __cdecl joinNetworkGame(void);
 // Address: 004d7f50
 void __cdecl CGame::slamDT(CGame *this_ptr,float delta_time);
 
-// Original: core_game.cpp_beginProfileTimer_FUN_004d7fbc
-// Address: 004d7fbc
+// Original: core_game.cpp_beginProfileTimer_FUN_004d7fc0
+// Address: 004d7fc0
 void __cdecl beginProfileTimer(void);
 
 // Original: core_game.cpp_endProfileTimer_FUN_004d7fe0

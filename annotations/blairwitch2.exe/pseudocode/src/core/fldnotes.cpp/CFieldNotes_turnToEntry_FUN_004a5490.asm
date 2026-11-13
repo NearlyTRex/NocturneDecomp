@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004a5490(CFieldNotes *this_ptr,char *param_2)
+; void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004a5490(CFieldNotes *this_ptr,char *entry_name)
 ;
 ; Parameters:
 ; CFieldNotes *    Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   entry_name
 ;
 ; XREF[1]:
 ;   core_event.cpp_FUN_00489670 at 0048dded
@@ -46,7 +46,7 @@ section .text
         ;   Label: LAB_004a54af
     PUSH ESI                            ; 004a54b0
     CALL core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0 ; 004a54b1
-        ;   XREF to: 004a35e0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection * this_ptr, char * param_2)
+        ;   XREF to: 004a35e0 (UNCONDITIONAL_CALL)  ; SNotesEntry * core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection * this_ptr, char * name)
     ADD ESP,0x8                         ; 004a54b6
     MOV EDX,EAX                         ; 004a54b9
     TEST EAX,EAX                        ; 004a54bb
@@ -72,7 +72,7 @@ section .text
     PUSH 0x60                           ; 004a54eb
     PUSH 0x1caf240                      ; 004a54ed
     CALL core_fldnotes.cpp_STextView_setRect_FUN_004a2890 ; 004a54f2
-        ;   XREF to: 004a2890 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_setRect_FUN_004a2890(STextView * this_ptr, undefined4 param_2, undefined4 param_3, undefined4 param_4, ...)
+        ;   XREF to: 004a2890 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_setRect_FUN_004a2890(STextView * this_ptr, int left, int top, int right, ...)
     ADD ESP,0x14                        ; 004a54f7
     PUSH 0x1caf240                      ; 004a54fa
     XOR ESI,ESI                         ; 004a54ff
@@ -90,7 +90,7 @@ section .text
         ;   Label: LAB_004a5520
     PUSH EBX                            ; 004a5525
     CALL core_fldnotes.cpp_SNotesSection_layout_FUN_004a3740 ; 004a5526
-        ;   XREF to: 004a3740 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesSection_layout_FUN_004a3740(SNotesSection * this_ptr, int param_2)
+        ;   XREF to: 004a3740 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SNotesSection_layout_FUN_004a3740(SNotesSection * this_ptr, STextView * view)
     ADD ESP,0x8                         ; 004a552b
     TEST EAX,EAX                        ; 004a552e
     JZ 0x004a554b                       ; 004a5530

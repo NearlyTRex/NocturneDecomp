@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CRobin * core_weaver_cpp_CRobin_ctor_FUN_005a5e70(CRobin *this_ptr)
+; CRobin * __cdecl core_weaver_cpp_CRobin_ctor_FUN_005a5e70(CRobin *this_ptr)
 ;
 ; Parameters:
 ; CRobin *         Stack[0x4]:4   this_ptr

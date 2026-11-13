@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CInStreamFile * support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile *this_ptr,uint flags)
+; CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
@@ -17,7 +17,7 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a86
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004af920 at 004afb82
 ;   engine_font.cpp_FUN_004afbf0 at 004aff42
-;   engine_font.cpp_FUN_004b01ce at 004b024b
+;   engine_font.cpp_FUN_004b01d0 at 004b024b
 ;   ... and 8 more
 ;
 ; Referenced Globals:
@@ -28,8 +28,8 @@
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
+;   support_trstream.cpp_CInStream_dtor_FUN_00572540
 ;   support_trstream.cpp_CInStreamFile_close_FUN_00573db0
-;   support_trstream.cpp_FUN_00572540
 ;
 ; *****************************************************************************
 
@@ -44,12 +44,12 @@ section .text
     PUSH EBX                            ; 00573a4c
     MOV dword ptr [EBX],0x5e5a84        ; 00573a4d | g_CInStreamFileVTable
     CALL support_trstream.cpp_CInStreamFile_close_FUN_00573db0 ; 00573a53
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00573a58
     PUSH 0x1                            ; 00573a5b
     PUSH EBX                            ; 00573a5d
-    CALL support_trstream.cpp_FUN_00572540 ; 00573a5e
-        ;   XREF to: 00572540 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00572540()
+    CALL support_trstream.cpp_CInStream_dtor_FUN_00572540 ; 00573a5e
+        ;   XREF to: 00572540 (UNCONDITIONAL_CALL)  ; CInStream * support_trstream.cpp_CInStream_dtor_FUN_00572540(CInStream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00573a63
     MOV DL,byte ptr [ESP + 0xc]         ; 00573a66
     MOV EBX,EAX                         ; 00573a6a

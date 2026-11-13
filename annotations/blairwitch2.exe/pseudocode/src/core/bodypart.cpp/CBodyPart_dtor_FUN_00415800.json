@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 39,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 23,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 84
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "0041588b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bodypart.cpp_CBodyPart_dtor_FUN_00415800",
-    "signature": "CBodyPart * core_bodypart_cpp_CBodyPart_dtor_FUN_00415800(CBodyPart *this_ptr,uint flags)"
+    "signature": "CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00415800(CBodyPart *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -163,7 +163,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 18,
       "match": "pCVar1[-4].",
       "severity": "mild",
       "text": "iVar2 = core_bodypart_cpp_FUN_00417d10(&pCVar1[-4].scrape_points[2].transformed_position.y,0);",

@@ -7,7 +7,7 @@
 ; CGrave *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_demnfolk.cpp_FUN_00455080 at 0045640f
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 0045640f
 ;   core_grave.cpp_CGrave_process_FUN_004cf370 at 004cf3c5
 ;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 0058a2d6
 ;

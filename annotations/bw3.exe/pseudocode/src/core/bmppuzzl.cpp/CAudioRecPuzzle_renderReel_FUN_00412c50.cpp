@@ -2,13 +2,13 @@
 // Address: 00412c50
 // Address Range: [[00412c50, 00412ed0]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRecPuzzle *this_ptr,int param_2,int param_3,float param_4,int param_5)
+// Signature: void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRecPuzzle *this_ptr,int x,int y,float angle,int draw_reel)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRecPuzzle *this_ptr,int param_2,int param_3,float param_4,int param_5)
+void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRecPuzzle *this_ptr,int x,int y,float angle,int draw_reel)
 
 {
   CDemonSet *pCVar1;
@@ -43,8 +43,8 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRec
   bVar6 = 0;
   width = 0xfc;
   if (0x280 < DAT_005fba18) {
-    param_2 = (param_2 * 0x280) / DAT_005fba18;
-    param_3 = (param_3 * 0x1e0) / DAT_005fba1c;
+    x = (x * 0x280) / DAT_005fba18;
+    y = (y * 0x1e0) / DAT_005fba1c;
     width = (int)(0x27600 / (longlong)DAT_005fba18);
   }
   g_CDemonSetPtr->rendering_mode = 1;
@@ -52,8 +52,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRec
   (pCVar1->light_direction).y = -0x482b;
   (pCVar1->light_direction).z = 0x482b;
   pCVar1->ambient_base_quick = 32000;
-  engine_special_cpp_fillDepthRegion_FUN_00560ec2
-            (param_2,param_2 + width + -1,param_3,param_3 + width + -1);
+  engine_special_cpp_fillDepthRegion_FUN_00560ec2(x,x + width + -1,y,y + width + -1);
   this_ptr_01 = &this_ptr->reel_model;
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr_01);
   pCVar4 = pCVar2->frame_bounds;
@@ -63,8 +62,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRec
     pCVar4 = (CBoundingBox3D *)((int)pCVar4 + (uint)bVar6 * -8 + 4);
     pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
   }
-  engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046d2f0
-            (DAT_005f2afc,param_2,param_3,width,width);
+  engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046d2f0(DAT_005f2afc,x,y,width,width);
   CStack_4c.z = -2.0;
   CStack_4c.x = 0.0;
   CStack_4c.y = 0.0;
@@ -83,7 +81,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRec
   afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
        afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
   translation = (CVector3f *)0x0;
-  CStack_1c.z = param_4;
+  CStack_1c.z = angle;
   euler_angles = &CStack_1c;
   _DAT_01c6e24c = 0;
   fStack_40 = fStack_28 * _DAT_005b67c6;
@@ -98,7 +96,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_00412c50(CAudioRec
             (this_ptr_00,euler_angles,translation);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
             (DAT_005f2afc,(CVector3f *)&DAT_02cfd900,&CStack_58);
-  if (param_5 == 0) {
+  if (draw_reel == 0) {
     this_ptr_01 = &this_ptr->reel_shadow_model;
   }
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540(this_ptr_01,0.0,-1);

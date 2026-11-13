@@ -1,14 +1,12 @@
 // Name: sound_sndmain.cpp_CSfxSample_dtor_FUN_0054d810
 // Address: 0054d810
 // Address Range: [[0054d810, 0054d835]]
-// Convention: unknown
-// Signature: CSfxSample * sound_sndmain_cpp_CSfxSample_dtor_FUN_0054d810(CSfxSample *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_0054d810(CSfxSample *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSfxSample * sound_sndmain_cpp_CSfxSample_dtor_FUN_0054d810(CSfxSample *this_ptr,uint flags)
+CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_0054d810(CSfxSample *this_ptr,uint flags)
 
 {
   CInStreamFile *pCVar1;

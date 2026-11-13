@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a2cc0(STextView *this_ptr,char *param_2)
+; int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a2cc0(STextView *this_ptr,char *tag)
 ;
 ; Parameters:
 ; STextView *      Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   tag
 ; Local Variables:
 ; undefined        Stack[-0x220]:1  local_220
 ; undefined        Stack[-0x120]:1  local_120
@@ -181,7 +181,7 @@ section .text
     PUSH ECX                            ; 004a2dfe
     PUSH EBX                            ; 004a2dff
     CALL core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0 ; 004a2e00
-        ;   XREF to: 004a30a0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0(STextView * this_ptr, int param_2, int param_3)
+        ;   XREF to: 004a30a0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0(STextView * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 004a2e05
     TEST EAX,EAX                        ; 004a2e08
     JZ 0x004a2d08                       ; 004a2e0a
@@ -201,7 +201,7 @@ section .text
     PUSH ESI                            ; 004a2e35
     PUSH EAX                            ; 004a2e36
     CALL core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170 ; 004a2e37
-        ;   XREF to: 004a2170 (UNCONDITIONAL_CALL)  ; int * core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170(SPageResourceBitmap * this_ptr, char * param_2, int param_3, int param_4)
+        ;   XREF to: 004a2170 (UNCONDITIONAL_CALL)  ; SPageResourceBitmap * core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a2170(SPageResourceBitmap * this_ptr, char * path, int width, int height)
     ADD ESP,0x10                        ; 004a2e3c
     MOV ESI,EAX                         ; 004a2e3f
         ;   Label: LAB_004a2e3f
@@ -228,7 +228,7 @@ section .text
     PUSH EBX                            ; 004a2e7f
     MOV dword ptr [EBX + 0x14],EDX      ; 004a2e80
     CALL core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0 ; 004a2e83
-        ;   XREF to: 004a2bb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0(STextView * this_ptr, undefined4 param_2)
+        ;   XREF to: 004a2bb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0(STextView * this_ptr, SPageResource * resource)
     MOV EAX,0x1                         ; 004a2e88
     ADD ESP,0x8                         ; 004a2e8d
     ADD ESP,0x210                       ; 004a2e90
@@ -287,7 +287,7 @@ section .text
     PUSH ESI                            ; 004a2f1b
     PUSH EAX                            ; 004a2f1c
     CALL core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004a2290 ; 004a2f1d
-        ;   XREF to: 004a2290 (UNCONDITIONAL_CALL)  ; SPageResourceBitmap * core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004a2290(SPageResourceTwanaCharacter * this_ptr, char * param_2)
+        ;   XREF to: 004a2290 (UNCONDITIONAL_CALL)  ; SPageResourceTwanaCharacter * core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004a2290(SPageResourceTwanaCharacter * this_ptr, char * character)
     ADD ESP,0x8                         ; 004a2f22
     MOV ESI,EAX                         ; 004a2f25
         ;   Label: LAB_004a2f25
@@ -309,7 +309,7 @@ section .text
     PUSH ECX                            ; 004a2f54
     PUSH EBX                            ; 004a2f55
     CALL core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0 ; 004a2f56
-        ;   XREF to: 004a30a0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0(STextView * this_ptr, int param_2, int param_3)
+        ;   XREF to: 004a30a0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0(STextView * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 004a2f5b
     TEST EAX,EAX                        ; 004a2f5e
     JZ 0x004a2fb5                       ; 004a2f60
@@ -325,7 +325,7 @@ section .text
     PUSH EBX                            ; 004a2f76
     MOV dword ptr [EBX + 0x14],EDI      ; 004a2f77
     CALL core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0 ; 004a2f7a
-        ;   XREF to: 004a2bb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0(STextView * this_ptr, undefined4 param_2)
+        ;   XREF to: 004a2bb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0(STextView * this_ptr, SPageResource * resource)
     MOV EAX,0x1                         ; 004a2f7f
     ADD ESP,0x8                         ; 004a2f84
     ADD ESP,0x210                       ; 004a2f87
@@ -401,7 +401,7 @@ section .text
     PUSH EBP                            ; 004a302d
     PUSH EBX                            ; 004a302e
     CALL core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0 ; 004a302f
-        ;   XREF to: 004a30a0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0(STextView * this_ptr, int param_2, int param_3)
+        ;   XREF to: 004a30a0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0(STextView * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 004a3034
     TEST EAX,EAX                        ; 004a3037
     JZ 0x004a2fb5                       ; 004a3039
@@ -417,7 +417,7 @@ section .text
     PUSH EBX                            ; 004a3053
     MOV dword ptr [EBX + 0x14],EDX      ; 004a3054
     CALL core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0 ; 004a3057
-        ;   XREF to: 004a2bb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0(STextView * this_ptr, undefined4 param_2)
+        ;   XREF to: 004a2bb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0(STextView * this_ptr, SPageResource * resource)
     MOV EAX,0x1                         ; 004a305c
     ADD ESP,0x8                         ; 004a3061
     ADD ESP,0x210                       ; 004a3064

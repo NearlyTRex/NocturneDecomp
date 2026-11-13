@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CInStreamMemory * support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0(CInStreamMemory *this_ptr,uint flags)
+; CInStreamMemory * __cdecl support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0(CInStreamMemory *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CInStreamMemory * Stack[0x4]:4   this_ptr
@@ -19,8 +19,8 @@
 ;   crt_memory.c___vec_delete_FUN_005c030f
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c0344
+;   support_trstream.cpp_CInStream_dtor_FUN_0059f550
 ;   support_trstream.cpp_CInStreamMemory_close_FUN_005a1400
-;   support_trstream.cpp_FUN_0059f550
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     ADD ESP,0x4                         ; 005a11f8
     PUSH 0x1                            ; 005a11fb
     PUSH EBX                            ; 005a11fd
-    CALL support_trstream.cpp_FUN_0059f550 ; 005a11fe
-        ;   XREF to: 0059f550 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0059f550()
+    CALL support_trstream.cpp_CInStream_dtor_FUN_0059f550 ; 005a11fe
+        ;   XREF to: 0059f550 (UNCONDITIONAL_CALL)  ; CInStream * support_trstream.cpp_CInStream_dtor_FUN_0059f550(CInStream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a1203
     MOV DL,byte ptr [ESP + 0xc]         ; 005a1206
     MOV EBX,EAX                         ; 005a120a

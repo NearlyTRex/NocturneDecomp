@@ -77,7 +77,8 @@ void sound_sndmain_cpp_FUN_00551620(char *param_1)
     local_1c = 0;
     local_24 = param_1 + 0x114;
     local_14 = 0;
-    while (iVar6 = support_trstream_cpp_FUN_00573790(), -1 < iVar6) {
+    while (iVar6 = support_trstream_cpp_CInStream_readLine_FUN_00573790
+                             (&local_58.base,local_484,300), -1 < iVar6) {
       local_14 = local_14 + 1;
       pcVar8 = strstr(local_484,&DAT_005d253c);
       pcVar7 = local_484;

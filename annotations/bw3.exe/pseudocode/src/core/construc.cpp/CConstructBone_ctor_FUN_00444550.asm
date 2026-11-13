@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CConstructBone * core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBone *this_ptr)
+; CConstructBone * __cdecl core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBone *this_ptr)
 ;
 ; Parameters:
 ; CConstructBone * Stack[0x4]:4   this_ptr

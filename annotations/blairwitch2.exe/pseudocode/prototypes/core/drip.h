@@ -15,7 +15,7 @@ CDrip * __cdecl factoryFuncDrip(void);
 
 // Original: core_drip.cpp_CDrip_getActorType_FUN_0046ce60
 // Address: 0046ce60
-CDemonActorType * CDrip::getActorType(CDrip *this_ptr);
+CDemonActorType * __cdecl CDrip::getActorType(CDrip *this_ptr);
 
 // Original: core_drip.cpp_CDrip_ctor_FUN_0046ce70
 // Address: 0046ce70

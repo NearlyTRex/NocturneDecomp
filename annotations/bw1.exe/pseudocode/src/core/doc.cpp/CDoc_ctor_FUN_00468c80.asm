@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDoc * core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
+; CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
 ;
 ; Parameters:
 ; CDoc *           Stack[0x4]:4   this_ptr

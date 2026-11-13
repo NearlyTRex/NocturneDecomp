@@ -37,7 +37,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_tawiscara.cpp_FUN_00594000 at 00594484
+;   core_tawiscara.cpp_CTawiscara_process_FUN_00594000 at 00594484
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chain_stretched_to_f_005d9469

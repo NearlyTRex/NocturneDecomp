@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CGhostChild * core_ghostchi_cpp_CGhostChild_dtor_FUN_005a9370(CGhostChild *this_ptr,uint flags)
+; CGhostChild * __cdecl core_ghostchi_cpp_CGhostChild_dtor_FUN_005a9370(CGhostChild *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGhostChild *    Stack[0x4]:4   this_ptr

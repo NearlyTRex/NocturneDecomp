@@ -1,15 +1,14 @@
 // Name: core_demnfolk.cpp_CDemnfolk_ctor_FUN_00458a10
 // Address: 00458a10
 // Address Range: [[00458a10, 00458bb5]]
-// Convention: unknown
-// Signature: CDemnfolk * core_demnfolk_cpp_CDemnfolk_ctor_FUN_00458a10(CDemnfolk *this_ptr)
+// Convention: __cdecl
+// Signature: CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00458a10(CDemnfolk *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CDemnfolk * core_demnfolk_cpp_CDemnfolk_ctor_FUN_00458a10(CDemnfolk *this_ptr)
+CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00458a10(CDemnfolk *this_ptr)
 
 {
   char cVar1;

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004bc020(SNotesSection *this_ptr,char *param_2,int param_3)
+; SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004bc020(SNotesSection *this_ptr,char *name,int kind)
 ;
 ; Parameters:
 ; SNotesSection *  Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   name
+; int              Stack[0xc]:4   kind
 ;
 ; XREF[1]:
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 at 004bd1eb

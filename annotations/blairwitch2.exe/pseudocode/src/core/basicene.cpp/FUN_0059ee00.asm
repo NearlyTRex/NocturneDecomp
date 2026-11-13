@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_basicene.cpp_FUN_0059e8c0 at 0059ea7c
+;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 at 0059ea7c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chasing_005ef968

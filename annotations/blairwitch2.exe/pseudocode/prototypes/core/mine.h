@@ -7,23 +7,23 @@
 
 // Original: core_mine.cpp_staticInit_FUN_005ad360
 // Address: 005ad360
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_mine.cpp_factoryFuncSpiritMine_FUN_005ad390
 // Address: 005ad390
-void factoryFuncSpiritMine(void);
+CSpiritMine * __cdecl factoryFuncSpiritMine(void);
 
 // Original: core_mine.cpp_CSpiritMine_getActorType_FUN_005ad3b0
 // Address: 005ad3b0
-CDemonActorType * CSpiritMine::getActorType(CSpiritMine *this_ptr);
+CDemonActorType * __cdecl CSpiritMine::getActorType(CSpiritMine *this_ptr);
 
 // Original: core_mine.cpp_CSpiritMine_ctor_FUN_005ad3c0
 // Address: 005ad3c0
-CSpiritMine * CSpiritMine::ctor(CSpiritMine *this_ptr);
+CSpiritMine * __cdecl CSpiritMine::ctor(CSpiritMine *this_ptr);
 
 // Original: core_mine.cpp_CSpiritMine_dtor_FUN_005ad460
 // Address: 005ad460
-CSpiritMine * CSpiritMine::dtor(CSpiritMine *this_ptr,uint flags);
+CSpiritMine * __cdecl CSpiritMine::dtor(CSpiritMine *this_ptr,uint flags);
 
 // Original: core_mine.cpp_CSpiritMine_setup_FUN_005ad4f0
 // Address: 005ad4f0

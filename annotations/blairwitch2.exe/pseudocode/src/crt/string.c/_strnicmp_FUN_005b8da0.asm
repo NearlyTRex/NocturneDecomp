@@ -18,7 +18,7 @@
 ;   core_game.cpp_FUN_004bbf70 at 004bc391
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004fcd00 at 004fcd2f
 ;   core_script.cpp_CScript_skipCommands_FUN_00529a10 at 00529a8f
-;   core_script.cpp_FUN_00522350 at 00522576
+;   core_script.cpp_CScript_step_FUN_00522350 at 00522576
 ;   ... and 8 more
 ;
 ; *****************************************************************************

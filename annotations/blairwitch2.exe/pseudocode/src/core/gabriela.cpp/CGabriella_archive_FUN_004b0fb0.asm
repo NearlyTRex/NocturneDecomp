@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040b9e0
-;   core_hero.cpp_FUN_004ce590
+;   core_hero.cpp_CHero_archive_FUN_004ce590
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
         ;   Label: core_gabriela.cpp_CGabriella_archive_FUN_004b0fb0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004b0fb1
     PUSH EBX                            ; 004b0fb5
-    CALL core_hero.cpp_FUN_004ce590     ; 004b0fb6
-        ;   XREF to: 004ce590 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce590()
+    CALL core_hero.cpp_CHero_archive_FUN_004ce590 ; 004b0fb6
+        ;   XREF to: 004ce590 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_archive_FUN_004ce590(CHero * this_ptr)
     MOV EDX,dword ptr [0x006163d4]      ; 004b0fbb | g_CGabriellaClassVersion
     ADD ESP,0x4                         ; 004b0fc1
     CMP EDX,0x2                         ; 004b0fc4

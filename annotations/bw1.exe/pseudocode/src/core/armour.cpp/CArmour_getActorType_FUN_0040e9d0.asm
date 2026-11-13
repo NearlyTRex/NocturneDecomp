@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_armour_cpp_CArmour_getActorType_FUN_0040e9d0(CArmour *this_ptr)
+; CDemonActorType * __cdecl core_armour_cpp_CArmour_getActorType_FUN_0040e9d0(CArmour *this_ptr)
 ;
 ; Parameters:
 ; CArmour *        Stack[0x4]:4   this_ptr

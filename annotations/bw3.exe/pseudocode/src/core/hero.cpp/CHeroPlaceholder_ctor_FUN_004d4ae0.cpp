@@ -1,14 +1,12 @@
 // Name: core_hero.cpp_CHeroPlaceholder_ctor_FUN_004d4ae0
 // Address: 004d4ae0
 // Address Range: [[004d4ae0, 004d4b38]]
-// Convention: unknown
-// Signature: CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d4ae0(CHeroPlaceholder *this_ptr)
+// Convention: __cdecl
+// Signature: CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d4ae0(CHeroPlaceholder *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d4ae0(CHeroPlaceholder *this_ptr)
+CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d4ae0(CHeroPlaceholder *this_ptr)
 
 {
   char cVar1;

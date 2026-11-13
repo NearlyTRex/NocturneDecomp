@@ -2,21 +2,21 @@
 // Address: 0057ddd0
 // Address Range: [[0057ddd0, 0057de12]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_trstream_cpp_COutStreamFile_openInDirectory_FUN_0057ddd0(COutStreamFile *this_ptr,char *param_2,char *param_3,char *param_4)
+// Signature: int __cdecl support_trstream_cpp_COutStreamFile_openInDirectory_FUN_0057ddd0(COutStreamFile *this_ptr,char *directory,char *filename,char *mode)
 
 #include "nocturne.h"
 
-uint __cdecl support_trstream_cpp_COutStreamFile_openInDirectory_FUN_0057ddd0(COutStreamFile *this_ptr,char *param_2,char *param_3,char *param_4)
+int __cdecl support_trstream_cpp_COutStreamFile_openInDirectory_FUN_0057ddd0(COutStreamFile *this_ptr,char *directory,char *filename,char *mode)
 
 {
   _FILE *p_Var1;
   
-  (**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);
-  p_Var1 = engine_dosio_cpp_FUN_00460c70(param_2,param_3,param_4);
+  (**(code **)((int)(this_ptr->base).vtable + 0x18))(this_ptr);
+  p_Var1 = engine_dosio_cpp_FUN_00460c70(directory,filename,mode);
   this_ptr->file = p_Var1;
   if (p_Var1 != (_FILE *)0x0) {
     return 1;
   }
-  (**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);
+  (**(code **)((int)(this_ptr->base).vtable + 0x18))(this_ptr);
   return 0;
 }

@@ -2,16 +2,16 @@
 // Address: 004bb270
 // Address Range: [[004bb270, 004bb28f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fldnotes_cpp_STextView_setRect_FUN_004bb270(STextView *this_ptr,int param_2,int param_3,int param_4,int param_5)
+// Signature: void __cdecl core_fldnotes_cpp_STextView_setRect_FUN_004bb270(STextView *this_ptr,int left,int top,int right,int bottom)
 
 #include "nocturne.h"
 
-void __cdecl core_fldnotes_cpp_STextView_setRect_FUN_004bb270(STextView *this_ptr,int param_2,int param_3,int param_4,int param_5)
+void __cdecl core_fldnotes_cpp_STextView_setRect_FUN_004bb270(STextView *this_ptr,int left,int top,int right,int bottom)
 
 {
-  this_ptr->rect_left = param_2;
-  this_ptr->rect_top = param_3;
-  this_ptr->rect_right = param_4;
-  this_ptr->rect_bottom = param_5;
+  this_ptr->rect_left = left;
+  this_ptr->rect_top = top;
+  this_ptr->rect_right = right;
+  this_ptr->rect_bottom = bottom;
   return;
 }

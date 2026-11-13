@@ -7,7 +7,7 @@
 
 // Original: core_passngr.cpp_staticInit_FUN_0050a3f0
 // Address: 0050a3f0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_passngr.cpp_factoryFuncPassenger_FUN_0050a420
 // Address: 0050a420
@@ -15,7 +15,7 @@ CPassenger * __cdecl factoryFuncPassenger(void);
 
 // Original: core_passngr.cpp_CPassenger_getActorType_FUN_0050a440
 // Address: 0050a440
-CDemonActorType * CPassenger::getActorType(CPassenger *this_ptr);
+CDemonActorType * __cdecl CPassenger::getActorType(CPassenger *this_ptr);
 
 // Original: core_passngr.cpp_CPassenger_ctor_FUN_0050a450
 // Address: 0050a450
@@ -23,7 +23,7 @@ CPassenger * __cdecl CPassenger::ctor(CPassenger *this_ptr);
 
 // Original: core_passngr.cpp_CPassenger_dtor_FUN_0050a530
 // Address: 0050a530
-CPassenger * CPassenger::dtor(CPassenger *this_ptr,uint flags);
+CPassenger * __cdecl CPassenger::dtor(CPassenger *this_ptr,uint flags);
 
 // Original: core_passngr.cpp_CPassenger_setup_FUN_0050a610
 // Address: 0050a610
@@ -45,10 +45,10 @@ void __cdecl CPassenger::archive(CPassenger *this_ptr);
 // Address: 0050ab80
 void FUN_0050ab80(void);
 
-// Original: core_passngr.cpp_FUN_0050ab9e
-// Address: 0050ab9e
-bool FUN_0050ab9e(void);
+// Original: core_passngr.cpp_FUN_0050aba0
+// Address: 0050aba0
+bool FUN_0050aba0(void);
 
-// Original: core_passngr.cpp_FUN_0050abbc
-// Address: 0050abbc
-void FUN_0050abbc(int param_1,undefined4 param_2,int param_3,undefined1 param_4);
+// Original: core_passngr.cpp_FUN_0050abc0
+// Address: 0050abc0
+void FUN_0050abc0(void);

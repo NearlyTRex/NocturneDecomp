@@ -18,7 +18,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0 at 00464c60
 ;   core_mimic.cpp_CMimic_renderBackground_FUN_004f1b80 at 004f1bf3
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004f1890 at 004f19a8
-;   core_shadow.cpp_FUN_0053e6c0 at 0053e7b1
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_0053e6c0 at 0053e7b1
 ;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_0056fe50 at 0056feea
 ;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00582ec0 at 00582f48
 ;

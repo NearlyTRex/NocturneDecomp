@@ -1,20 +1,20 @@
 // Name: core_doc.cpp_factoryFuncDoc_FUN_004500a0
 // Address: 004500a0
 // Address Range: [[004500a0, 004500bb]]
-// Convention: unknown
-// Signature: void core_doc_cpp_factoryFuncDoc_FUN_004500a0(void)
+// Convention: __cdecl
+// Signature: CDoc * __cdecl core_doc_cpp_factoryFuncDoc_FUN_004500a0(void)
 
 #include "nocturne.h"
 
-void core_doc_cpp_factoryFuncDoc_FUN_004500a0(void)
+CDoc * __cdecl core_doc_cpp_factoryFuncDoc_FUN_004500a0(void)
 
 {
-  CDoc *this_ptr;
+  CDoc *pCVar1;
   
-  this_ptr = (CDoc *)operator_new(0x26188);
-  if (this_ptr == (CDoc *)0x0) {
-    return;
+  pCVar1 = (CDoc *)operator_new(0x26188);
+  if (pCVar1 == (CDoc *)0x0) {
+    return (CDoc *)0x0;
   }
-  core_doc_cpp_CDoc_ctor_FUN_004500d0(this_ptr);
-  return;
+  pCVar1 = core_doc_cpp_CDoc_ctor_FUN_004500d0(pCVar1);
+  return pCVar1;
 }

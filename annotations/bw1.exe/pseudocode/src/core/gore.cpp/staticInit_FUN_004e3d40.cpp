@@ -1,12 +1,12 @@
 // Name: core_gore.cpp_staticInit_FUN_004e3d40
 // Address: 004e3d40
 // Address Range: [[004e3d40, 004e3dc0]]
-// Convention: unknown
-// Signature: void core_gore_cpp_staticInit_FUN_004e3d40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gore_cpp_staticInit_FUN_004e3d40(void)
 
 #include "nocturne.h"
 
-void core_gore_cpp_staticInit_FUN_004e3d40(void)
+void __cdecl core_gore_cpp_staticInit_FUN_004e3d40(void)
 
 {
   core_gore_cpp_CGore_ctor_FUN_004e5bd0(&g_CGoreInstance);

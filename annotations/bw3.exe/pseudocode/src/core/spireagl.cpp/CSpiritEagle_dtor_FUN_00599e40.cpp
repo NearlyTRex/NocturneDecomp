@@ -1,14 +1,12 @@
 // Name: core_spireagl.cpp_CSpiritEagle_dtor_FUN_00599e40
 // Address: 00599e40
 // Address Range: [[00599e40, 00599ef8]]
-// Convention: unknown
-// Signature: CSpiritEagle * core_spireagl_cpp_CSpiritEagle_dtor_FUN_00599e40(CSpiritEagle *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSpiritEagle * __cdecl core_spireagl_cpp_CSpiritEagle_dtor_FUN_00599e40(CSpiritEagle *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSpiritEagle * core_spireagl_cpp_CSpiritEagle_dtor_FUN_00599e40(CSpiritEagle *this_ptr,uint flags)
+CSpiritEagle * __cdecl core_spireagl_cpp_CSpiritEagle_dtor_FUN_00599e40(CSpiritEagle *this_ptr,uint flags)
 
 {
   CMorph *pCVar1;

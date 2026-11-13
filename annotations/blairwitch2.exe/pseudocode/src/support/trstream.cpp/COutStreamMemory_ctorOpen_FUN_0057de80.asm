@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl support_trstream_cpp_COutStreamMemory_ctorOpen_FUN_0057de80(COutStreamMemory *this_ptr,int param_2,int param_3)
+; COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_ctorOpen_FUN_0057de80(COutStreamMemory *this_ptr,char *buffer,int capacity)
 ;
 ; Parameters:
 ; COutStreamMemory * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   buffer
+; int              Stack[0xc]:4   capacity
 ;
 ; XREF[3]:
 ;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00435300 at 0043533a
@@ -17,8 +17,8 @@
 ;   undefined1* g_COutStreamMemoryVTable = 0057df10
 ;
 ; Called Functions:
+;   support_trstream.cpp_COutStream_dtor_FUN_0057d860
 ;   support_trstream.cpp_COutStreamMemory_open_FUN_0057e110
-;   support_trstream.cpp_FUN_0057d860
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH ESI                            ; 0057de81
     MOV EDX,dword ptr [ESP + 0xc]       ; 0057de82
     PUSH EDX                            ; 0057de86
-    CALL support_trstream.cpp_FUN_0057d860 ; 0057de87
-        ;   XREF to: 0057d860 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d860()
+    CALL support_trstream.cpp_COutStream_dtor_FUN_0057d860 ; 0057de87
+        ;   XREF to: 0057d860 (UNCONDITIONAL_CALL)  ; COutStream * support_trstream.cpp_COutStream_dtor_FUN_0057d860(COutStream * this_ptr, uint flags)
     MOV dword ptr [EAX],0x5fd4b4        ; 0057de8c | g_COutStreamMemoryVTable
     ADD ESP,0x4                         ; 0057de92
     MOV dword ptr [EAX + 0x4],0x0       ; 0057de95

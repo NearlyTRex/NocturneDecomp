@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ladder_cpp_staticInit_FUN_004fd2d0(void)
+; void __cdecl core_ladder_cpp_staticInit_FUN_004fd2d0(void)
 ;
 ;
 ; Called Functions:

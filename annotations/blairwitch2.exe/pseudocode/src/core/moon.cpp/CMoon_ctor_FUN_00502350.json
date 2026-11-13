@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 27,
+    "complexity_score": 26,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 11,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 32
+    "total_lines": 31
   },
   "cross_references": [
     {
@@ -30,9 +30,9 @@
         "00502387"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_moon.cpp_CMoon_ctor_FUN_00502350",
-    "signature": "CMoon * core_moon_cpp_CMoon_ctor_FUN_00502350(CMoon *this_ptr)"
+    "signature": "CMoon * __cdecl core_moon_cpp_CMoon_ctor_FUN_00502350(CMoon *this_ptr)"
   },
   "function_calls": [
     {
@@ -130,7 +130,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 11,
       "match": "pCVar1[-3].",
       "severity": "mild",
       "text": "pfVar2 = &pCVar1[-3].rotation_matrix_workspace.m[2].z;",

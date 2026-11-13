@@ -7,19 +7,19 @@
 
 // Original: core_shadowsc.cpp_staticInit_FUN_00560440
 // Address: 00560440
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_shadowsc.cpp_factoryFuncShadowsc_FUN_00560470
 // Address: 00560470
-void factoryFuncShadowsc(void);
+CShadowsc * __cdecl factoryFuncShadowsc(void);
 
 // Original: core_shadowsc.cpp_CShadowsc_getActorType_FUN_00560490
 // Address: 00560490
-CDemonActorType * CShadowsc::getActorType(CShadowsc *this_ptr);
+CDemonActorType * __cdecl CShadowsc::getActorType(CShadowsc *this_ptr);
 
 // Original: core_shadowsc.cpp_CShadowsc_ctor_FUN_005604a0
 // Address: 005604a0
-CShadowsc * CShadowsc::ctor(CShadowsc *this_ptr);
+CShadowsc * __cdecl CShadowsc::ctor(CShadowsc *this_ptr);
 
 // Original: core_shadowsc.cpp_CShadowsc_setup_FUN_00560510
 // Address: 00560510
@@ -71,4 +71,4 @@ int __cdecl CShadowsc::getTargetPoints(CShadowsc *this_ptr,CVector3f *out_points
 
 // Original: core_shadowsc.cpp_CShadowsc_dtor_FUN_005614d0
 // Address: 005614d0
-CShadowsc * CShadowsc::dtor(CShadowsc *this_ptr,uint flags);
+CShadowsc * __cdecl CShadowsc::dtor(CShadowsc *this_ptr,uint flags);

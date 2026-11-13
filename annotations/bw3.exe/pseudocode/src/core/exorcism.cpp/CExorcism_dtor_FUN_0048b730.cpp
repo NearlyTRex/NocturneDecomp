@@ -1,14 +1,12 @@
 // Name: core_exorcism.cpp_CExorcism_dtor_FUN_0048b730
 // Address: 0048b730
 // Address Range: [[0048b730, 0048b77d]]
-// Convention: unknown
-// Signature: CExorcism * core_exorcism_cpp_CExorcism_dtor_FUN_0048b730(CExorcism *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CExorcism * __cdecl core_exorcism_cpp_CExorcism_dtor_FUN_0048b730(CExorcism *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CExorcism * core_exorcism_cpp_CExorcism_dtor_FUN_0048b730(CExorcism *this_ptr,uint flags)
+CExorcism * __cdecl core_exorcism_cpp_CExorcism_dtor_FUN_0048b730(CExorcism *this_ptr,uint flags)
 
 {
   CExorcism *pCVar1;

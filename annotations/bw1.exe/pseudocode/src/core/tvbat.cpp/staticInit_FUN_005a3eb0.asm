@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tvbat_cpp_staticInit_FUN_005a3eb0(void)
+; void __cdecl core_tvbat_cpp_staticInit_FUN_005a3eb0(void)
 ;
 ;
 ; Called Functions:

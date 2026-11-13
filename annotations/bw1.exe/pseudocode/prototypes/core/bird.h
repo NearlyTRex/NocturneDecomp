@@ -7,19 +7,19 @@
 
 // Original: core_bird.cpp_staticInit_FUN_00415190
 // Address: 00415190
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_bird.cpp_factoryFuncBird_FUN_004151c0
 // Address: 004151c0
-void factoryFuncBird(void);
+CBird * __cdecl factoryFuncBird(void);
 
 // Original: core_bird.cpp_CBird_getActorType_FUN_004151e0
 // Address: 004151e0
-CDemonActorType * CBird::getActorType(CBird *this_ptr);
+CDemonActorType * __cdecl CBird::getActorType(CBird *this_ptr);
 
 // Original: core_bird.cpp_CBird_ctor_FUN_004151f0
 // Address: 004151f0
-CBird * CBird::ctor(CBird *this_ptr);
+CBird * __cdecl CBird::ctor(CBird *this_ptr);
 
 // Original: core_bird.cpp_CBird_setup_FUN_004152c0
 // Address: 004152c0
@@ -63,4 +63,4 @@ CPathMap * __cdecl CBird::getPathMap(CBird *this_ptr);
 
 // Original: core_bird.cpp_CBird_dtor_FUN_004159f0
 // Address: 004159f0
-CBird * CBird::dtor(CBird *this_ptr,uint flags);
+CBird * __cdecl CBird::dtor(CBird *this_ptr,uint flags);

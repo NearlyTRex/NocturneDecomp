@@ -104,7 +104,8 @@ void __cdecl core_asgaya_cpp_CAsgaya_process_FUN_005a0be0(CAsgaya *this_ptr,floa
       (this_ptr->bible->base).base.is_transparent = 1;
       (this_ptr->bible->base).base.is_renderable = 0;
     }
-    core_charactr_cpp_FUN_004319d0(this_ptr,0,this_ptr->bible,0,0);
+    core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
+              ((CCharacter *)this_ptr,0,(int)this_ptr->bible,0,0);
     core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
               (0x01D81080,(CDemonActor *)this_ptr->bible);
     this_ptr->bible_spawned = 1;

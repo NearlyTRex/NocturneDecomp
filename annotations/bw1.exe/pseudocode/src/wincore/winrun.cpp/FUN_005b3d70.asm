@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   wincore_winrun.cpp_FUN_005b418e at 005b4194
+;   wincore_winrun.cpp_FUN_005b4190 at 005b4194
 ;   wincore_winrun.cpp_FUN_005b4450 at 005b4455
 ;   wincore_winrun.cpp_FUN_005b4460 at 005b4473
 ;

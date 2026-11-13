@@ -1,14 +1,12 @@
 // Name: core_armour.cpp_CArmour_dtor_FUN_0040f120
 // Address: 0040f120
 // Address Range: [[0040f120, 0040f1b4]]
-// Convention: unknown
-// Signature: CArmour * core_armour_cpp_CArmour_dtor_FUN_0040f120(CArmour *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CArmour * __cdecl core_armour_cpp_CArmour_dtor_FUN_0040f120(CArmour *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CArmour * core_armour_cpp_CArmour_dtor_FUN_0040f120(CArmour *this_ptr,uint flags)
+CArmour * __cdecl core_armour_cpp_CArmour_dtor_FUN_0040f120(CArmour *this_ptr,uint flags)
 
 {
   int iVar1;

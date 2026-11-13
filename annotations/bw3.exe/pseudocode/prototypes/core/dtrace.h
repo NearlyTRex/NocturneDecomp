@@ -33,9 +33,9 @@ void __cdecl CDemonRaytrace::allocNewCubeList(CDemonRaytrace *this_ptr);
 // Address: 00473630
 void __cdecl CDemonRaytrace::freeNewCubeList(CDemonRaytrace *this_ptr);
 
-// Original: core_dtrace.cpp_FUN_0047366e
-// Address: 0047366e
-void FUN_0047366e(int param_1);
+// Original: core_dtrace.cpp_FUN_00473670
+// Address: 00473670
+void FUN_00473670(void);
 
 // Original: core_dtrace.cpp_FUN_004737f0
 // Address: 004737f0
@@ -45,9 +45,9 @@ void FUN_004737f0(int param_1);
 // Address: 00473860
 void FUN_00473860(int param_1);
 
-// Original: core_dtrace.cpp_FUN_00473940
+// Original: core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_00473940
 // Address: 00473940
-void FUN_00473940(CDemonRaytrace *param_1,_FILE *param_2);
+void __cdecl CDemonRaytrace::loadBinary(CDemonRaytrace *this_ptr,_FILE *param_2);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00473b20
 // Address: 00473b20

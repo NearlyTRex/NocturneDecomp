@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_flintlck_cpp_CFlintlock_getActorType_FUN_004ae7d0(CFlintlock *this_ptr)
+; CDemonActorType * __cdecl core_flintlck_cpp_CFlintlock_getActorType_FUN_004ae7d0(CFlintlock *this_ptr)
 ;
 ; Parameters:
 ; CFlintlock *     Stack[0x4]:4   this_ptr

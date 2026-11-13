@@ -1,14 +1,12 @@
 // Name: core_moon.cpp_CMoon_dtor_FUN_00502390
 // Address: 00502390
 // Address Range: [[00502390, 005023d3]]
-// Convention: unknown
-// Signature: CMoon * core_moon_cpp_CMoon_dtor_FUN_00502390(CMoon *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_00502390(CMoon *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CMoon * core_moon_cpp_CMoon_dtor_FUN_00502390(CMoon *this_ptr,uint flags)
+CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_00502390(CMoon *this_ptr,uint flags)
 
 {
   CKeyFramedModel *pCVar1;

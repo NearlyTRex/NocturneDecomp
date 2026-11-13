@@ -9,7 +9,7 @@
 ;
 ; XREF[3]:
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e493
-;   support_trisock.cpp_FUN_0059daec at 0059dcfa
+;   support_trisock.cpp_FUN_0059daf0 at 0059dcfa
 ;   support_trisock.cpp_formatSocketAddress_FUN_0059c830 at 0059c83c
 ;
 ; Referenced Globals:

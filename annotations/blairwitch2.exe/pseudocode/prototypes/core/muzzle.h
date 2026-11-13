@@ -139,4 +139,4 @@ void FUN_0059e110(int *param_1,float param_2);
 
 // Original: core_muzzle.cpp_SFollowSlotStruct_ctor_FUN_0059e370
 // Address: 0059e370
-SFollowSlotStruct * SFollowSlotStruct::ctor(SFollowSlotStruct *this_ptr);
+SFollowSlotStruct * __cdecl SFollowSlotStruct::ctor(SFollowSlotStruct *this_ptr);

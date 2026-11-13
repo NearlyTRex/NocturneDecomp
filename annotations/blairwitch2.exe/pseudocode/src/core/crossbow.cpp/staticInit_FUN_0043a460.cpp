@@ -1,12 +1,12 @@
 // Name: core_crossbow.cpp_staticInit_FUN_0043a460
 // Address: 0043a460
 // Address Range: [[0043a460, 0043a483]]
-// Convention: unknown
-// Signature: void core_crossbow_cpp_staticInit_FUN_0043a460(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_crossbow_cpp_staticInit_FUN_0043a460(void)
 
 #include "nocturne.h"
 
-void core_crossbow_cpp_staticInit_FUN_0043a460(void)
+void __cdecl core_crossbow_cpp_staticInit_FUN_0043a460(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

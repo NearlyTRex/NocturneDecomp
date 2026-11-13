@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSkeletonForest * core_boneguy_cpp_CSkeletonForest_dtor_FUN_0041aa70(CSkeletonForest *this_ptr,uint flags)
+; CSkeletonForest * __cdecl core_boneguy_cpp_CSkeletonForest_dtor_FUN_0041aa70(CSkeletonForest *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSkeletonForest * Stack[0x4]:4   this_ptr

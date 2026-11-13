@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   char_code
 ;
 ; XREF[4]:
-;   cockpit_drawsurf.cpp_FUN_00480ffc at 00481013
+;   cockpit_drawsurf.cpp_FUN_00481000 at 00481013
 ;   core_game.cpp_CGame_renderOverlay_FUN_004cc2b0 at 004cc34b
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004ccc40 at 004ccc83
 ;   shape_edittool.cpp_FUN_0049d580 at 0049d834

@@ -1,14 +1,12 @@
 // Name: core_spireagl.cpp_CSpiritEagle_ctor_FUN_005991d0
 // Address: 005991d0
 // Address Range: [[005991d0, 005992e2]]
-// Convention: unknown
-// Signature: CSpiritEagle * core_spireagl_cpp_CSpiritEagle_ctor_FUN_005991d0(CSpiritEagle *this_ptr)
+// Convention: __cdecl
+// Signature: CSpiritEagle * __cdecl core_spireagl_cpp_CSpiritEagle_ctor_FUN_005991d0(CSpiritEagle *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSpiritEagle * core_spireagl_cpp_CSpiritEagle_ctor_FUN_005991d0(CSpiritEagle *this_ptr)
+CSpiritEagle * __cdecl core_spireagl_cpp_CSpiritEagle_ctor_FUN_005991d0(CSpiritEagle *this_ptr)
 
 {
   char cVar1;

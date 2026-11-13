@@ -7,23 +7,23 @@
 
 // Original: core_pryemorp.cpp_staticInit_FUN_00527350
 // Address: 00527350
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_pryemorp.cpp_factoryFuncPryeMorph_FUN_00527380
 // Address: 00527380
-void factoryFuncPryeMorph(void);
+CPryeMorph * __cdecl factoryFuncPryeMorph(void);
 
 // Original: core_pryemorp.cpp_CPryeMorph_getActorType_FUN_005273a0
 // Address: 005273a0
-CDemonActorType * CPryeMorph::getActorType(CPryeMorph *this_ptr);
+CDemonActorType * __cdecl CPryeMorph::getActorType(CPryeMorph *this_ptr);
 
 // Original: core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0
 // Address: 005273b0
-CPryeMorph * CPryeMorph::ctor(CPryeMorph *this_ptr);
+CPryeMorph * __cdecl CPryeMorph::ctor(CPryeMorph *this_ptr);
 
 // Original: core_pryemorp.cpp_CPryeMorph_dtor_FUN_005274e0
 // Address: 005274e0
-CPryeMorph * CPryeMorph::dtor(CPryeMorph *this_ptr,uint flags);
+CPryeMorph * __cdecl CPryeMorph::dtor(CPryeMorph *this_ptr,uint flags);
 
 // Original: core_pryemorp.cpp_CPryeMorph_setup_FUN_005275c0
 // Address: 005275c0

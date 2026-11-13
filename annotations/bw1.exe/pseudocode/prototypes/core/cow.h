@@ -7,7 +7,7 @@
 
 // Original: core_cow.cpp_staticInit_FUN_00448340
 // Address: 00448340
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_cow.cpp_factoryFuncZombieCow_FUN_00448370
 // Address: 00448370
@@ -15,11 +15,11 @@ CZombieCow * __cdecl factoryFuncZombieCow(void);
 
 // Original: core_cow.cpp_CZombieCow_getActorType_FUN_00448390
 // Address: 00448390
-CDemonActorType * CZombieCow::getActorType(CZombieCow *this_ptr);
+CDemonActorType * __cdecl CZombieCow::getActorType(CZombieCow *this_ptr);
 
 // Original: core_cow.cpp_CZombieCow_ctor_FUN_004483a0
 // Address: 004483a0
-CZombieCow * CZombieCow::ctor(CZombieCow *this_ptr);
+CZombieCow * __cdecl CZombieCow::ctor(CZombieCow *this_ptr);
 
 // Original: core_cow.cpp_CZombieCow_setup_FUN_00448410
 // Address: 00448410
@@ -47,4 +47,4 @@ int __cdecl CZombieCow::getTargetPoints(CZombieCow *this_ptr,CVector3f *out_poin
 
 // Original: core_cow.cpp_CZombieCow_dtor_FUN_00448f20
 // Address: 00448f20
-CZombieCow * CZombieCow::dtor(CZombieCow *this_ptr,uint flags);
+CZombieCow * __cdecl CZombieCow::dtor(CZombieCow *this_ptr,uint flags);

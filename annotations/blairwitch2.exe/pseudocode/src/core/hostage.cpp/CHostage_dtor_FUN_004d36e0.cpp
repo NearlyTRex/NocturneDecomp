@@ -1,14 +1,12 @@
 // Name: core_hostage.cpp_CHostage_dtor_FUN_004d36e0
 // Address: 004d36e0
 // Address Range: [[004d36e0, 004d3784]]
-// Convention: unknown
-// Signature: CHostage * core_hostage_cpp_CHostage_dtor_FUN_004d36e0(CHostage *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CHostage * __cdecl core_hostage_cpp_CHostage_dtor_FUN_004d36e0(CHostage *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHostage * core_hostage_cpp_CHostage_dtor_FUN_004d36e0(CHostage *this_ptr,uint flags)
+CHostage * __cdecl core_hostage_cpp_CHostage_dtor_FUN_004d36e0(CHostage *this_ptr,uint flags)
 
 {
   CPathMap *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_smiley_cpp_staticInit_FUN_0056bdf0(void)
+; void __cdecl core_smiley_cpp_staticInit_FUN_0056bdf0(void)
 ;
 ;
 ; Called Functions:

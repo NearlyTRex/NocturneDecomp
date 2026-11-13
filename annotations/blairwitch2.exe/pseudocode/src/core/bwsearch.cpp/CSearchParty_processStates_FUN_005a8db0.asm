@@ -12,7 +12,7 @@
 ;   core_bwsearch.cpp_CSearchParty_ctor_FUN_005a8cf0 at 005a8d74
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_0059e8c0
+;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 005a8dba
     PUSH dword ptr [ESP + 0xc]          ; 005a8dbe
     PUSH EDX                            ; 005a8dc2
-    CALL core_basicene.cpp_FUN_0059e8c0 ; 005a8dc3
-        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059e8c0()
+    CALL core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 ; 005a8dc3
+        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy * this_ptr, undefined4 param_2, int param_3)
     ADD ESP,0xc                         ; 005a8dc8
     RET                                 ; 005a8dcb
 

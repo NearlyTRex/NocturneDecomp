@@ -7,19 +7,19 @@
 
 // Original: core_necklace.cpp_staticInit_FUN_005ada50
 // Address: 005ada50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_necklace.cpp_factoryFuncNecklace_FUN_005ada80
 // Address: 005ada80
-void factoryFuncNecklace(void);
+CNecklace * __cdecl factoryFuncNecklace(void);
 
 // Original: core_necklace.cpp_CNecklace_getActorType_FUN_005adaa0
 // Address: 005adaa0
-CDemonActorType * CNecklace::getActorType(CNecklace *this_ptr);
+CDemonActorType * __cdecl CNecklace::getActorType(CNecklace *this_ptr);
 
 // Original: core_necklace.cpp_CNecklace_ctor_FUN_005adab0
 // Address: 005adab0
-CNecklace * CNecklace::ctor(CNecklace *this_ptr);
+CNecklace * __cdecl CNecklace::ctor(CNecklace *this_ptr);
 
 // Original: core_necklace.cpp_CNecklace_process_FUN_005adad0
 // Address: 005adad0
@@ -27,7 +27,7 @@ void __cdecl CNecklace::process(CNecklace *this_ptr,float delta_time);
 
 // Original: core_necklace.cpp_CNecklace_dtor_FUN_005add30
 // Address: 005add30
-CNecklace * CNecklace::dtor(CNecklace *this_ptr,uint flags);
+CNecklace * __cdecl CNecklace::dtor(CNecklace *this_ptr,uint flags);
 
 // Original: core_necklace.cpp_FUN_005adda0
 // Address: 005adda0
@@ -35,4 +35,4 @@ int FUN_005adda0(CKeyFramedModel *param_1);
 
 // Original: core_necklace.cpp_FUN_005ade00
 // Address: 005ade00
-void FUN_005ade00(CKeyFramedModel *param_1);
+void FUN_005ade00(CCloth *param_1);

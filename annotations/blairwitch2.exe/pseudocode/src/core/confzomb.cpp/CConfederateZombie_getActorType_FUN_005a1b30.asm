@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_confzomb_cpp_CConfederateZombie_getActorType_FUN_005a1b30(CConfederateZombie *this_ptr)
+; CDemonActorType * __cdecl core_confzomb_cpp_CConfederateZombie_getActorType_FUN_005a1b30(CConfederateZombie *this_ptr)
 ;
 ; Parameters:
 ; CConfederateZombie * Stack[0x4]:4   this_ptr

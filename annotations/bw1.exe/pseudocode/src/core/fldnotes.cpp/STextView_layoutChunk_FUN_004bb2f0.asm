@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this_ptr,char *param_2)
+; int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004bb2f0(STextView *this_ptr,char *text)
 ;
 ; Parameters:
 ; STextView *      Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   text
 ; Local Variables:
 ; undefined1       Stack[-0x314]:1  local_314
 ; undefined        Stack[-0x114]:1  local_114
@@ -94,7 +94,7 @@ section .text
     PUSH EAX                            ; 004bb376
     PUSH EDI                            ; 004bb377
     CALL core_fldnotes.cpp_STextView_wordFits_FUN_004bbb30 ; 004bb378
-        ;   XREF to: 004bbb30 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_STextView_wordFits_FUN_004bbb30(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004bbb30 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_wordFits_FUN_004bbb30(STextView * this_ptr, char * word)
     ADD ESP,0x8                         ; 004bb37d
     TEST EAX,EAX                        ; 004bb380
     JZ 0x004bb4fd                       ; 004bb382
@@ -104,7 +104,7 @@ section .text
     PUSH EDI                            ; 004bb38b
     MOV EBX,ESI                         ; 004bb38c
     CALL core_fldnotes.cpp_STextView_appendWord_FUN_004bbb90 ; 004bb38e
-        ;   XREF to: 004bbb90 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_appendWord_FUN_004bbb90(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004bbb90 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_appendWord_FUN_004bbb90(STextView * this_ptr, char * word)
     ADD ESP,0x8                         ; 004bb393
     MOV EAX,dword ptr [ESP + 0x300]     ; 004bb396
         ;   Label: LAB_004bb396
@@ -161,7 +161,7 @@ section .text
     PUSH EDI                            ; 004bb415
     INC EBX                             ; 004bb416
     CALL core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0 ; 004bb417
-        ;   XREF to: 004bb6f0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004bb6f0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0(STextView * this_ptr, char * tag)
     ADD ESP,0x8                         ; 004bb41c
     TEST EAX,EAX                        ; 004bb41f
     JL 0x004bb48d                       ; 004bb421

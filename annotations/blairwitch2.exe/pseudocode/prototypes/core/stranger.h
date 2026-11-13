@@ -23,11 +23,11 @@ CStranger * __cdecl factoryFuncStranger(void);
 
 // Original: core_stranger.cpp_CStranger_getActorType_FUN_005627e0
 // Address: 005627e0
-CDemonActorType * CStranger::getActorType(CStranger *this_ptr);
+CDemonActorType * __cdecl CStranger::getActorType(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_ctor_FUN_005627f0
 // Address: 005627f0
-CStranger * CStranger::ctor(CStranger *this_ptr);
+CStranger * __cdecl CStranger::ctor(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_setup_FUN_00562b90
 // Address: 00562b90
@@ -117,13 +117,13 @@ int __cdecl CStranger::renderOpaque(CStranger *this_ptr);
 // Address: 0056bc80
 int __cdecl CStranger::renderTransparent(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_FUN_0056bcbe
-// Address: 0056bcbe
-void FUN_0056bcbe(float *param_1,float param_2,float param_3);
+// Original: core_stranger.cpp_FUN_0056bcc0
+// Address: 0056bcc0
+void FUN_0056bcc0(void);
 
-// Original: core_stranger.cpp_FUN_0056bd4e
-// Address: 0056bd4e
-float * FUN_0056bd4e(float *param_1,float *param_2);
+// Original: core_stranger.cpp_FUN_0056bd50
+// Address: 0056bd50
+float * FUN_0056bd50(void);
 
 // Original: core_stranger.cpp_FUN_0056bf00
 // Address: 0056bf00

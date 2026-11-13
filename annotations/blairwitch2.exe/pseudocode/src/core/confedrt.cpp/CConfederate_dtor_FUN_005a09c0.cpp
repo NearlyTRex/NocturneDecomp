@@ -1,14 +1,12 @@
 // Name: core_confedrt.cpp_CConfederate_dtor_FUN_005a09c0
 // Address: 005a09c0
 // Address Range: [[005a09c0, 005a0a80]]
-// Convention: unknown
-// Signature: CConfederate * core_confedrt_cpp_CConfederate_dtor_FUN_005a09c0(CConfederate *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CConfederate * __cdecl core_confedrt_cpp_CConfederate_dtor_FUN_005a09c0(CConfederate *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CConfederate * core_confedrt_cpp_CConfederate_dtor_FUN_005a09c0(CConfederate *this_ptr,uint flags)
+CConfederate * __cdecl core_confedrt_cpp_CConfederate_dtor_FUN_005a09c0(CConfederate *this_ptr,uint flags)
 
 {
   CSimpleParticleSystem *this_ptr_00;

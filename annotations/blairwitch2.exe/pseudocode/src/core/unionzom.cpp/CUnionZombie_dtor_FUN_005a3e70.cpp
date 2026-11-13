@@ -1,15 +1,14 @@
 // Name: core_unionzom.cpp_CUnionZombie_dtor_FUN_005a3e70
 // Address: 005a3e70
 // Address Range: [[005a3e70, 005a3f30]]
-// Convention: unknown
-// Signature: CUnionZombie * core_unionzom_cpp_CUnionZombie_dtor_FUN_005a3e70(CUnionZombie *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CUnionZombie * __cdecl core_unionzom_cpp_CUnionZombie_dtor_FUN_005a3e70(CUnionZombie *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CUnionZombie * core_unionzom_cpp_CUnionZombie_dtor_FUN_005a3e70(CUnionZombie *this_ptr,uint flags)
+CUnionZombie * __cdecl core_unionzom_cpp_CUnionZombie_dtor_FUN_005a3e70(CUnionZombie *this_ptr,uint flags)
 
 {
   CSimpleParticleSystem *this_ptr_00;

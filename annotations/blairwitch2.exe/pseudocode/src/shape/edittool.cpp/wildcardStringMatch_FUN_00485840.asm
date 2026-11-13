@@ -11,7 +11,7 @@
 ; XREF[8]:
 ;   core_charactr.cpp_FUN_0042b300 at 0042b38f
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004c1980 at 004c1a3f
-;   core_script.cpp_FUN_00522350 at 00527222
+;   core_script.cpp_CScript_step_FUN_00522350 at 00527222
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_005593d0 at 00559416
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_00558cb0 at 00558ce2
 ;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_00578570 at 005785a5

@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   frame_number
 ;
 ; XREF[7]:
-;   core_doc.cpp_FUN_0045dd30 at 0045dd7e
+;   core_doc.cpp_CDoc_reset_FUN_0045dd30 at 0045dd7e
 ;   core_dracbrid.cpp_CDraculaBride_archive_FUN_00464cc0 at 00464d79
 ;   core_mimic.cpp_CMimic_setupCloth_FUN_004f17a0 at 004f181e
 ;   core_moloch.cpp_CMoloch_process_FUN_00501530 at 00501af6

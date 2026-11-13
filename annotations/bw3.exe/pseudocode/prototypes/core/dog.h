@@ -7,7 +7,7 @@
 
 // Original: core_dog.cpp_staticInit_FUN_00462650
 // Address: 00462650
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_dog.cpp_factoryFuncZombieDog_FUN_004626e0
 // Address: 004626e0
@@ -15,7 +15,7 @@ CZombieDog * __cdecl factoryFuncZombieDog(void);
 
 // Original: core_dog.cpp_CZombieDog_getActorType_FUN_00462700
 // Address: 00462700
-CDemonActorType * CZombieDog::getActorType(CZombieDog *this_ptr);
+CDemonActorType * __cdecl CZombieDog::getActorType(CZombieDog *this_ptr);
 
 // Original: core_dog.cpp_CZombieDog_ctor_FUN_00462710
 // Address: 00462710
@@ -51,7 +51,7 @@ CDemonActorType * __cdecl CDogForest::getActorType(CDogForest *this_ptr);
 
 // Original: core_dog.cpp_CDogForest_ctor_FUN_00463680
 // Address: 00463680
-CDogForest * CDogForest::ctor(CDogForest *this_ptr);
+CDogForest * __cdecl CDogForest::ctor(CDogForest *this_ptr);
 
 // Original: core_dog.cpp_FUN_004636e0
 // Address: 004636e0
@@ -63,7 +63,7 @@ CDemonActorType * __cdecl CDemonDog::getActorType(CDemonDog *this_ptr);
 
 // Original: core_dog.cpp_CDemonDog_ctor_FUN_00463710
 // Address: 00463710
-CDemonDog * CDemonDog::ctor(CDemonDog *this_ptr);
+CDemonDog * __cdecl CDemonDog::ctor(CDemonDog *this_ptr);
 
 // Original: core_dog.cpp_FUN_00463780
 // Address: 00463780
@@ -75,20 +75,20 @@ CDemonActorType * __cdecl CEtherealDog::getActorType(CEtherealDog *this_ptr);
 
 // Original: core_dog.cpp_CEtherealDog_ctor_FUN_004637b0
 // Address: 004637b0
-CEtherealDog * CEtherealDog::ctor(CEtherealDog *this_ptr);
+CEtherealDog * __cdecl CEtherealDog::ctor(CEtherealDog *this_ptr);
 
 // Original: core_dog.cpp_CEtherealDog_dtor_FUN_00463810
 // Address: 00463810
-CEtherealDog * CEtherealDog::dtor(CEtherealDog *this_ptr,uint flags);
+CEtherealDog * __cdecl CEtherealDog::dtor(CEtherealDog *this_ptr,uint flags);
 
 // Original: core_dog.cpp_CDemonDog_dtor_FUN_004638a0
 // Address: 004638a0
-CDemonDog * CDemonDog::dtor(CDemonDog *this_ptr,uint flags);
+CDemonDog * __cdecl CDemonDog::dtor(CDemonDog *this_ptr,uint flags);
 
 // Original: core_dog.cpp_CDogForest_dtor_FUN_00463930
 // Address: 00463930
-CDogForest * CDogForest::dtor(CDogForest *this_ptr,uint flags);
+CDogForest * __cdecl CDogForest::dtor(CDogForest *this_ptr,uint flags);
 
 // Original: core_dog.cpp_CZombieDog_dtor_FUN_004639c0
 // Address: 004639c0
-CZombieDog * CZombieDog::dtor(CZombieDog *this_ptr,uint flags);
+CZombieDog * __cdecl CZombieDog::dtor(CZombieDog *this_ptr,uint flags);

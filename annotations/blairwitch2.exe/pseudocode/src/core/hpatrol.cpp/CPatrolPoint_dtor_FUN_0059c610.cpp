@@ -1,14 +1,12 @@
 // Name: core_hpatrol.cpp_CPatrolPoint_dtor_FUN_0059c610
 // Address: 0059c610
 // Address Range: [[0059c610, 0059c667]]
-// Convention: unknown
-// Signature: CPatrolPoint * core_hpatrol_cpp_CPatrolPoint_dtor_FUN_0059c610(CPatrolPoint *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CPatrolPoint * __cdecl core_hpatrol_cpp_CPatrolPoint_dtor_FUN_0059c610(CPatrolPoint *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CPatrolPoint * core_hpatrol_cpp_CPatrolPoint_dtor_FUN_0059c610(CPatrolPoint *this_ptr,uint flags)
+CPatrolPoint * __cdecl core_hpatrol_cpp_CPatrolPoint_dtor_FUN_0059c610(CPatrolPoint *this_ptr,uint flags)
 
 {
   CTrigger *pCVar1;

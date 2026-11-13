@@ -1,0 +1,586 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 100,
+    "complexity_score": 672,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 52,
+    "suspect_count": 59,
+    "suspect_types": [
+      "concat_reconstruction",
+      "pointer_cast",
+      "pointer_truncation",
+      "register_param",
+      "stack_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 152
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0042c0c0",
+    "address_range": [
+      [
+        "0042c0c0",
+        "0042c1a9"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_charactr.cpp_FUN_0042c0c0",
+    "signature": "undefined4 core_charactr_cpp_FUN_0042c0c0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006141d4",
+      "name": "DAT_006141d4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.951807228915663,
+    "instruction_count": 83,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BRANCH": 2,
+      "CBRANCH": 7,
+      "COPY": 67,
+      "INT_ADD": 38,
+      "INT_AND": 64,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 42,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 11,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 24,
+      "INT_SUB": 18,
+      "INT_XOR": 2,
+      "INT_ZEXT": 6,
+      "LOAD": 36,
+      "POPCOUNT": 20,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 411
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "00434b30",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00431410",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0042cde0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "uint *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "byte *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (((uint)in_stack_00000004 & 2) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*(ushort *)in_stack_00000004 = *(ushort *)((uint)*in_stack_00000008 * 2 + 0x1c35614);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "*(ushort *)in_stack_00000004 = *(ushort *)((uint)*in_stack_00000008 * 2 + 0x1c35614);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = (uint *)((int)in_stack_00000004 + 2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = (uint *)((int)in_stack_00000004 + 2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = (uint *)((int)in_stack_00000004 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_0000000c = in_stack_0000000c + -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_0000000c = in_stack_0000000c + -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "if (in_stack_0000000c < 2) break;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*in_stack_00000004 =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "CONCAT22(*(ushort *)((uint)in_stack_00000008[1] * 2 + 0x1c35614),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "*(ushort *)((uint)*in_stack_00000008 * 2 + 0x1c35614));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_0000000c = in_stack_0000000c + -2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_0000000c = in_stack_0000000c + -2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "if (in_stack_0000000c + -2 == -1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*(ushort *)in_stack_00000004 = *(ushort *)((uint)*in_stack_00000008 * 2 + 0x1c35614);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "*(ushort *)in_stack_00000004 = *(ushort *)((uint)*in_stack_00000008 * 2 + 0x1c35614);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 34,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "return in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (((uint)in_stack_00000004 & 2) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*(ushort *)in_stack_00000004 = *(ushort *)((uint)*in_stack_00000008 * 2 + 0x1c35614);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "*(ushort *)in_stack_00000004 = *(ushort *)((uint)*in_stack_00000008 * 2 + 0x1c35614);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = (uint *)((int)in_stack_00000004 + 2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = (uint *)((int)in_stack_00000004 + 2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = (uint *)((int)in_stack_00000004 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_0000000c = in_stack_0000000c + -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_0000000c = in_stack_0000000c + -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "while (1 < in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "pbVar1 = in_stack_00000008 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "bVar2 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*in_stack_00000004 =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_0000000c = in_stack_0000000c + -2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_0000000c = in_stack_0000000c + -2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "if (in_stack_0000000c + -2 == -1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*(ushort *)in_stack_00000004 = *(ushort *)((uint)*in_stack_00000008 * 2 + 0x1c35614);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "*(ushort *)in_stack_00000004 = *(ushort *)((uint)*in_stack_00000008 * 2 + 0x1c35614);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 55,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "return in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Pointer value `in_stack_00000004` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(uint)in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (((uint)in_stack_00000004 & 2) != 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_stack_00000004` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = (uint *)((int)in_stack_00000004 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_stack_00000004` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(uint)in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (((uint)in_stack_00000004 & 2) != 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_stack_00000004` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = (uint *)((int)in_stack_00000004 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 25,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "CONCAT22(*(ushort *)((uint)in_stack_00000008[1] * 2 + 0x1c35614),",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 47,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "CONCAT22(*(ushort *)((uint)*pbVar1 * 2 + 0x1c35614),",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

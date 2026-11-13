@@ -7,7 +7,7 @@
 
 // Original: core_chain.cpp_staticInit_FUN_00435600
 // Address: 00435600
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_chain.cpp_factoryFuncChain_FUN_00435630
 // Address: 00435630
@@ -15,7 +15,7 @@ CChain * __cdecl factoryFuncChain(void);
 
 // Original: core_chain.cpp_CChain_getActorType_FUN_00435650
 // Address: 00435650
-CDemonActorType * CChain::getActorType(CChain *this_ptr);
+CDemonActorType * __cdecl CChain::getActorType(CChain *this_ptr);
 
 // Original: core_chain.cpp_CChain_ctor_FUN_00435660
 // Address: 00435660
@@ -53,14 +53,14 @@ void __cdecl CChain::archive(CChain *this_ptr);
 // Address: 00436e80
 ECollisionType __cdecl CChain::getCollisionType(CChain *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_chain.cpp_FUN_00436eae
-// Address: 00436eae
-int FUN_00436eae(int param_1);
+// Original: core_chain.cpp_FUN_00436eb0
+// Address: 00436eb0
+int FUN_00436eb0(void);
 
 // Original: core_chain.cpp_CChain_dtor_FUN_00436ec0
 // Address: 00436ec0
-CChain * CChain::dtor(CChain *this_ptr,uint flags);
+CChain * __cdecl CChain::dtor(CChain *this_ptr,uint flags);
 
 // Original: core_chain.cpp_SChainVertex_ctor_FUN_00436f10
 // Address: 00436f10
-SChainVertex * SChainVertex::ctor(SChainVertex *this_ptr);
+SChainVertex * __cdecl SChainVertex::ctor(SChainVertex *this_ptr);

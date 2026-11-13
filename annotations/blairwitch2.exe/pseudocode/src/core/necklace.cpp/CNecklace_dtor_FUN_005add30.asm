@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CNecklace * core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,uint flags)
+; CNecklace * __cdecl core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CNecklace *      Stack[0x4]:4   this_ptr

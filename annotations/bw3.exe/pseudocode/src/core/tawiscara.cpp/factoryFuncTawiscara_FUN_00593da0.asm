@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tawiscara_cpp_factoryFuncTawiscara_FUN_00593da0(void)
+; CTawiscara * __cdecl core_tawiscara_cpp_factoryFuncTawiscara_FUN_00593da0(void)
 ;
 ;
 ; Called Functions:

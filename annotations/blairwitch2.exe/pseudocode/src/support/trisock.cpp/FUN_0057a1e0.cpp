@@ -26,7 +26,7 @@ uint support_trisock_cpp_FUN_0057a1e0(CSocket *param_1)
   bVar8 = 0;
   pcVar7 = acStack_814;
   if (in_stack_0000001c == (code *)0x0) {
-    in_stack_0000001c = (code *)0x579880;
+    in_stack_0000001c = support_trisock_cpp_FUN_00579880;
   }
   pcVar6 = "Requesting document";
   do {

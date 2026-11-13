@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_heal_cpp_CHeal_getActorType_FUN_004d1950(CHeal *this_ptr)
+; CDemonActorType * __cdecl core_heal_cpp_CHeal_getActorType_FUN_004d1950(CHeal *this_ptr)
 ;
 ; Parameters:
 ; CHeal *          Stack[0x4]:4   this_ptr

@@ -1,12 +1,12 @@
 // Name: core_moon.cpp_staticInit_FUN_004f93a0
 // Address: 004f93a0
 // Address Range: [[004f93a0, 004f940f]]
-// Convention: unknown
-// Signature: void core_moon_cpp_staticInit_FUN_004f93a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_moon_cpp_staticInit_FUN_004f93a0(void)
 
 #include "nocturne.h"
 
-void core_moon_cpp_staticInit_FUN_004f93a0(void)
+void __cdecl core_moon_cpp_staticInit_FUN_004f93a0(void)
 
 {
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d2e0(&CAlphaBitmap_01d883a8);

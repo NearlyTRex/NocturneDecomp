@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_buildParsedLines_FUN_005295e0 at 005295ec
-;   core_script.cpp_FUN_00528d50 at 00528d62
+;   core_script.cpp_CScript_clear_FUN_00528d50 at 00528d62
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a3770

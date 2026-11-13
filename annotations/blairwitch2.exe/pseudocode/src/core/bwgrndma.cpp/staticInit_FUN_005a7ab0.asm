@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bwgrndma_cpp_staticInit_FUN_005a7ab0(void)
+; void __cdecl core_bwgrndma_cpp_staticInit_FUN_005a7ab0(void)
 ;
 ;
 ; Called Functions:

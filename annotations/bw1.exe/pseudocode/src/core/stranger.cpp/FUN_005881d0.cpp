@@ -320,7 +320,7 @@ LAB_0058833e:
         }
       }
       else if (bone_index < 0x18) {
-        core_hero_cpp_FUN_004eb7f0(param_1);
+        core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(&param_1->base);
       }
       else if (bone_index < 0x29a) {
         if (bone_index != 0x18) goto LAB_0058899d;

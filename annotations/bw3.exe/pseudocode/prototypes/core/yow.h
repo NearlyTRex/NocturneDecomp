@@ -7,40 +7,40 @@
 
 // Original: core_yow.cpp_staticInit_FUN_005862e0
 // Address: 005862e0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_yow.cpp_factoryFuncYow_FUN_00586310
 // Address: 00586310
-void factoryFuncYow(void);
+CYow * __cdecl factoryFuncYow(void);
 
 // Original: core_yow.cpp_CYow_getActorType_FUN_00586330
 // Address: 00586330
-CDemonActorType * CYow::getActorType(CYow *this_ptr);
+CDemonActorType * __cdecl CYow::getActorType(CYow *this_ptr);
 
 // Original: core_yow.cpp_CYow_ctor_FUN_00586340
 // Address: 00586340
-CYow * CYow::ctor(CYow *this_ptr);
+CYow * __cdecl CYow::ctor(CYow *this_ptr);
 
-// Original: core_yow.cpp_FUN_005863e0
+// Original: core_yow.cpp_CYow_setup_FUN_005863e0
 // Address: 005863e0
-void FUN_005863e0(CEnemy *param_1);
+void __cdecl CYow::setup(CYow *this_ptr);
 
-// Original: core_yow.cpp_FUN_00586500
+// Original: core_yow.cpp_CYow_process_FUN_00586500
 // Address: 00586500
-void FUN_00586500(CEnemy *param_1,float param_2);
+void __cdecl CYow::process(CYow *this_ptr,float param_2);
 
-// Original: core_yow.cpp_FUN_00586e50
+// Original: core_yow.cpp_CYow_archive_FUN_00586e50
 // Address: 00586e50
-void FUN_00586e50(CEnemy *param_1);
+void __cdecl CYow::archive(CYow *this_ptr);
 
-// Original: core_yow.cpp_FUN_00586eb0
+// Original: core_yow.cpp_CYow_processDamage_FUN_00586eb0
 // Address: 00586eb0
-void FUN_00586eb0(CEnemy *param_1,SDamageInfo *param_2);
+void __cdecl CYow::processDamage(CYow *this_ptr,SDamageInfo *param_2);
 
-// Original: core_yow.cpp_FUN_00586fa0
+// Original: core_yow.cpp_CYow_getTargetPoints_FUN_00586fa0
 // Address: 00586fa0
-int FUN_00586fa0(int param_1,float *param_2);
+int __cdecl CYow::getTargetPoints(CYow *this_ptr,float *param_2);
 
 // Original: core_yow.cpp_CYow_dtor_FUN_005872b0
 // Address: 005872b0
-CYow * CYow::dtor(CYow *this_ptr,uint flags);
+CYow * __cdecl CYow::dtor(CYow *this_ptr,uint flags);

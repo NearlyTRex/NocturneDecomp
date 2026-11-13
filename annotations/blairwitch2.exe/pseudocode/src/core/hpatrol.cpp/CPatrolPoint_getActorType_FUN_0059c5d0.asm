@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_hpatrol_cpp_CPatrolPoint_getActorType_FUN_0059c5d0(CPatrolPoint *this_ptr)
+; CDemonActorType * __cdecl core_hpatrol_cpp_CPatrolPoint_getActorType_FUN_0059c5d0(CPatrolPoint *this_ptr)
 ;
 ; Parameters:
 ; CPatrolPoint *   Stack[0x4]:4   this_ptr

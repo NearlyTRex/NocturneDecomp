@@ -7,7 +7,7 @@
 
 // Original: core_marquee.cpp_staticInit_FUN_005068c0
 // Address: 005068c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_marquee.cpp_factoryFuncMarquee_FUN_005068f0
 // Address: 005068f0
@@ -15,7 +15,7 @@ CMarquee * __cdecl factoryFuncMarquee(void);
 
 // Original: core_marquee.cpp_CMarquee_getActorType_FUN_00506910
 // Address: 00506910
-CDemonActorType * CMarquee::getActorType(CMarquee *this_ptr);
+CDemonActorType * __cdecl CMarquee::getActorType(CMarquee *this_ptr);
 
 // Original: core_marquee.cpp_CMarquee_ctor_FUN_00506920
 // Address: 00506920

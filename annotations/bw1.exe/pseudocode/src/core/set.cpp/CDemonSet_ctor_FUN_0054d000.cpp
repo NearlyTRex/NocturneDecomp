@@ -1,14 +1,12 @@
 // Name: core_set.cpp_CDemonSet_ctor_FUN_0054d000
 // Address: 0054d000
 // Address Range: [[0054d000, 0054d33e]]
-// Convention: unknown
-// Signature: CDemonSet * core_set_cpp_CDemonSet_ctor_FUN_0054d000(CDemonSet *this_ptr)
+// Convention: __cdecl
+// Signature: CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_0054d000(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDemonSet * core_set_cpp_CDemonSet_ctor_FUN_0054d000(CDemonSet *this_ptr)
+CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_0054d000(CDemonSet *this_ptr)
 
 {
   CDemonSet *this_ptr_00;

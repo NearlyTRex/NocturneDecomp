@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPryeMorph * core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)
+; CPryeMorph * __cdecl core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)
 ;
 ; Parameters:
 ; CPryeMorph *     Stack[0x4]:4   this_ptr

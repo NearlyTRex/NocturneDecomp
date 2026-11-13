@@ -1,14 +1,12 @@
 // Name: core_storm.cpp_CStorm_dtor_FUN_00568c80
 // Address: 00568c80
 // Address Range: [[00568c80, 00568ccd]]
-// Convention: unknown
-// Signature: CStorm * core_storm_cpp_CStorm_dtor_FUN_00568c80(CStorm *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CStorm * __cdecl core_storm_cpp_CStorm_dtor_FUN_00568c80(CStorm *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CStorm * core_storm_cpp_CStorm_dtor_FUN_00568c80(CStorm *this_ptr,uint flags)
+CStorm * __cdecl core_storm_cpp_CStorm_dtor_FUN_00568c80(CStorm *this_ptr,uint flags)
 
 {
   CWeapon *pCVar1;

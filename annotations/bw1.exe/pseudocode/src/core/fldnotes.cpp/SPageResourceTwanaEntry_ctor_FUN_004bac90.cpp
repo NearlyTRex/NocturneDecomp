@@ -1,15 +1,14 @@
 // Name: core_fldnotes.cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90
 // Address: 004bac90
 // Address Range: [[004bac90, 004bad37]]
-// Convention: unknown
-// Signature: SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90(SPageResourceTwanaEntry *this_ptr)
+// Convention: __cdecl
+// Signature: SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90(SPageResourceTwanaEntry *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90(SPageResourceTwanaEntry *this_ptr)
+SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90(SPageResourceTwanaEntry *this_ptr)
 
 {
   SPageResourceTwanaEntry *pSVar1;

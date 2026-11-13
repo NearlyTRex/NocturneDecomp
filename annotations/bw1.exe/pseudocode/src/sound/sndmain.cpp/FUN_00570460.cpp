@@ -21,13 +21,14 @@ uint sound_sndmain_cpp_FUN_00570460(CSfxSample *param_1,float param_2,float para
   uint *puVar7;
   uint uVar8;
   undefined3 extraout_var;
-  uint uVar9;
+  int iVar9;
+  uint uVar10;
   ulong count;
   short *output_buffer;
-  uint *puVar10;
-  byte bVar11;
-  float10 fVar12;
-  char *pcVar13;
+  uint *puVar11;
+  byte bVar12;
+  float10 fVar13;
+  char *pcVar14;
   int local_38;
   int local_34;
   int local_30;
@@ -35,7 +36,7 @@ uint sound_sndmain_cpp_FUN_00570460(CSfxSample *param_1,float param_2,float para
   int local_1c;
   int local_18;
   
-  bVar11 = 0;
+  bVar12 = 0;
   if (_DAT_02c807ec < 1) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x90a;
@@ -73,16 +74,16 @@ LAB_00570713:
          ((double)(param_1->sample_info).sample_count <= *(double *)(iVar1 + 0x2c7463c)))
       goto LAB_00570713;
     }
-    fVar12 = (float10)(param_1->sample_info).sample_rate * (float10)param_2;
+    fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_2;
     iVar5 = param_1->streaming_buffer_size;
     round();
-    local_38 = (int)ROUND(fVar12);
-    if (iVar5 < (int)ROUND(fVar12)) {
+    local_38 = (int)ROUND(fVar13);
+    if (iVar5 < (int)ROUND(fVar13)) {
       local_38 = iVar5;
     }
-    fVar12 = (float10)param_1->stream_write_position - (float10)*(double *)(iVar1 + 0x2c746f8);
+    fVar13 = (float10)param_1->stream_write_position - (float10)*(double *)(iVar1 + 0x2c746f8);
     round();
-    local_30 = (int)ROUND(fVar12);
+    local_30 = (int)ROUND(fVar13);
     if (local_30 < 0) {
       local_30 = local_30 + param_1->streaming_buffer_size;
     }
@@ -91,10 +92,10 @@ LAB_00570713:
       if (param_1->buffer_id != 0) {
         local_2c = sound_sndmain_cpp_FUN_005723e0(param_1,0x3c00);
       }
-      fVar12 = (float10)(param_1->sample_info).sample_rate * (float10)param_3;
+      fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_3;
       iVar5 = round();
-      local_34 = (int)ROUND(fVar12);
-      if (iVar5 < (int)ROUND(fVar12)) {
+      local_34 = (int)ROUND(fVar13);
+      if (iVar5 < (int)ROUND(fVar13)) {
         local_34 = iVar5;
       }
       local_1c = local_34 - local_30;
@@ -153,9 +154,9 @@ LAB_00570713:
               bVar2 = true;
               goto LAB_005707e9;
             }
-            pcVar13 = "Error locking %s while streaming\n";
+            pcVar14 = "Error locking %s while streaming\n";
 LAB_0057070b:
-            sound_sndmain_cpp_FUN_005773f0(pcVar13,param_1);
+            sound_sndmain_cpp_FUN_005773f0(pcVar14,param_1);
             goto LAB_00570713;
           }
 LAB_005707e9:
@@ -184,12 +185,12 @@ LAB_00570810:
               _DAT_01d1d404 = 0x9c0;
               core_main_c_FUN_005030e0("Can't stream unless we have mp3 decoder or open wav file!");
             }
-            uVar8 = sound_sndmain_cpp_FUN_00572400(param_1,iVar5);
-            uVar9 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10
-                              (&param_1->file_stream,(uint *)output_buffer,uVar8);
-            if (uVar9 != uVar8) {
+            iVar6 = sound_sndmain_cpp_FUN_00572400(param_1,iVar5);
+            iVar9 = support_trstream_cpp_CInStreamFile_read_FUN_005a0c10
+                              (&param_1->file_stream,output_buffer,iVar6);
+            if (iVar9 != iVar6) {
               sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00570260(param_1);
-              pcVar13 = "Error reading %s while streaming\n";
+              pcVar14 = "Error reading %s while streaming\n";
               goto LAB_0057070b;
             }
             if (*(int *)(*(int *)(&DAT_02c74654 + iVar1) + 0x104) == 0x10) {
@@ -207,20 +208,20 @@ LAB_00570810:
                      sound_sndmain_cpp_FUN_00570160(param_1,param_1->stream_write_position,local_18)
             ;
             if (puVar7 == (uint *)0x0) {
-              pcVar13 = "Error locking %s while streaming\n";
+              pcVar14 = "Error locking %s while streaming\n";
               goto LAB_0057070b;
             }
             uVar8 = sound_sndmain_cpp_FUN_00572400(param_1,local_18);
-            puVar10 = (uint *)&DAT_02c68388;
-            for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-              *puVar7 = *puVar10;
-              puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
-              puVar7 = puVar7 + (uint)bVar11 * -2 + 1;
+            puVar11 = (uint *)&DAT_02c68388;
+            for (uVar10 = uVar8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+              *puVar7 = *puVar11;
+              puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
+              puVar7 = puVar7 + (uint)bVar12 * -2 + 1;
             }
             for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-              *(byte *)puVar7 = *(byte *)puVar10;
-              puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);
-              puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);
+              *(byte *)puVar7 = *(byte *)puVar11;
+              puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);
+              puVar7 = (uint *)((int)puVar7 + (uint)bVar12 * -2 + 1);
             }
 LAB_0057088d:
             sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00570260(param_1);

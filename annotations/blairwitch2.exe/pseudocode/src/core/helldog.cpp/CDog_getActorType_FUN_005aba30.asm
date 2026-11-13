@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_helldog_cpp_CDog_getActorType_FUN_005aba30(CDog *this_ptr)
+; CDemonActorType * __cdecl core_helldog_cpp_CDog_getActorType_FUN_005aba30(CDog *this_ptr)
 ;
 ; Parameters:
 ; CDog *           Stack[0x4]:4   this_ptr

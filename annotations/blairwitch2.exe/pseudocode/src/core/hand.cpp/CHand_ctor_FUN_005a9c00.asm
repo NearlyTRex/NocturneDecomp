@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHand * core_hand_cpp_CHand_ctor_FUN_005a9c00(CHand *this_ptr)
+; CHand * __cdecl core_hand_cpp_CHand_ctor_FUN_005a9c00(CHand *this_ptr)
 ;
 ; Parameters:
 ; CHand *          Stack[0x4]:4   this_ptr

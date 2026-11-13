@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_basicene_cpp_staticInit_FUN_0059e380(void)
+; void __cdecl core_basicene_cpp_staticInit_FUN_0059e380(void)
 ;
 ;
 ; Called Functions:

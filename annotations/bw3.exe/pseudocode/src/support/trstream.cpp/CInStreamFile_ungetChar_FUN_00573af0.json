@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 68,
+    "complexity_score": 23,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 23,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 85
   },
   "cross_references": [],
@@ -25,7 +23,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_CInStreamFile_ungetChar_FUN_00573af0",
-    "signature": "undefined4 __cdecl support_trstream_cpp_CInStreamFile_ungetChar_FUN_00573af0(CInStreamFile *this_ptr,int param_2)"
+    "signature": "int __cdecl support_trstream_cpp_CInStreamFile_ungetChar_FUN_00573af0(CInStreamFile *this_ptr,int ch)"
   },
   "function_calls": [
     {
@@ -102,47 +100,14 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "ch",
         "offset": 8,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_CInStreamFile_ungetChar_FUN_00573af0(CInStreamFile *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((-1 < param_2) && (param_2 < 0x100)) && (this_ptr->file_handle != (HANDLE)0x0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((-1 < param_2) && (param_2 < 0x100)) && (this_ptr->file_handle != (HANDLE)0x0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (((param_2 == 10) && (this_ptr->binary_mode == 0)) && (0 < iVar1)) {",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

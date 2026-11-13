@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile *this_ptr)
+; int __cdecl support_trstream_cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile *this_ptr)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
@@ -16,7 +16,7 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402ab3
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004af920 at 004afb3e
 ;   engine_font.cpp_FUN_004afbf0 at 004afdb4
-;   engine_font.cpp_FUN_004b01ce at 004b03d5
+;   engine_font.cpp_FUN_004b01d0 at 004b03d5
 ;   ... and 7 more
 ;
 ; Referenced Globals:

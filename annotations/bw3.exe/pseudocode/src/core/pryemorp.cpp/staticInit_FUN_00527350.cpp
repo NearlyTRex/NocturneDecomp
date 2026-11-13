@@ -1,12 +1,12 @@
 // Name: core_pryemorp.cpp_staticInit_FUN_00527350
 // Address: 00527350
 // Address Range: [[00527350, 00527373]]
-// Convention: unknown
-// Signature: void core_pryemorp_cpp_staticInit_FUN_00527350(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_pryemorp_cpp_staticInit_FUN_00527350(void)
 
 #include "nocturne.h"
 
-void core_pryemorp_cpp_staticInit_FUN_00527350(void)
+void __cdecl core_pryemorp_cpp_staticInit_FUN_00527350(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

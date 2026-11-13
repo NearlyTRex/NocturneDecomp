@@ -7,7 +7,7 @@
 
 // Original: core_elephant.cpp_staticInit_FUN_00486b40
 // Address: 00486b40
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_elephant.cpp_factoryFuncElephantGun_FUN_00486b70
 // Address: 00486b70
@@ -15,7 +15,7 @@ CElephantGun * __cdecl factoryFuncElephantGun(void);
 
 // Original: core_elephant.cpp_CElephantGun_getActorType_FUN_00486b90
 // Address: 00486b90
-CDemonActorType * CElephantGun::getActorType(CElephantGun *this_ptr);
+CDemonActorType * __cdecl CElephantGun::getActorType(CElephantGun *this_ptr);
 
 // Original: core_elephant.cpp_CElephantGun_ctor_FUN_00486ba0
 // Address: 00486ba0

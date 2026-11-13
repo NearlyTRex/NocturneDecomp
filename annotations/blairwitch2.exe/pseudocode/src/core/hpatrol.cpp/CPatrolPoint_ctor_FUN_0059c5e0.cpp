@@ -1,14 +1,12 @@
 // Name: core_hpatrol.cpp_CPatrolPoint_ctor_FUN_0059c5e0
 // Address: 0059c5e0
 // Address Range: [[0059c5e0, 0059c601]]
-// Convention: unknown
-// Signature: CPatrolPoint * core_hpatrol_cpp_CPatrolPoint_ctor_FUN_0059c5e0(CPatrolPoint *this_ptr)
+// Convention: __cdecl
+// Signature: CPatrolPoint * __cdecl core_hpatrol_cpp_CPatrolPoint_ctor_FUN_0059c5e0(CPatrolPoint *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CPatrolPoint * core_hpatrol_cpp_CPatrolPoint_ctor_FUN_0059c5e0(CPatrolPoint *this_ptr)
+CPatrolPoint * __cdecl core_hpatrol_cpp_CPatrolPoint_ctor_FUN_0059c5e0(CPatrolPoint *this_ptr)
 
 {
   CWayPoint *pCVar1;

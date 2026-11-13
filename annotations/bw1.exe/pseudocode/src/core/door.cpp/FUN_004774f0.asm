@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_door_cpp_FUN_004774f0(int param_1,int param_2)
+; void core_door_cpp_FUN_004774f0(CDoor *param_1,EDoorState param_2)
 ;
 ;
 ; XREF[1]:
 ;   core_event.cpp_FUN_004a1d00 at 004a547f
 ;
 ; Called Functions:
-;   core_door.cpp_FUN_00477540
+;   core_door.cpp_CDoor_reposition_FUN_00477540
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV dword ptr [EAX + 0x9ac],EDX     ; 00477511
     PUSH EAX                            ; 00477517
         ;   Label: LAB_00477517
-    CALL core_door.cpp_FUN_00477540     ; 00477518
-        ;   XREF to: 00477540 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_FUN_00477540()
+    CALL core_door.cpp_CDoor_reposition_FUN_00477540 ; 00477518
+        ;   XREF to: 00477540 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_reposition_FUN_00477540(CDoor * this_ptr)
     ADD ESP,0x4                         ; 0047751d
     RET                                 ; 00477520
     MOV dword ptr [EAX + 0x9ac],EDX     ; 00477521

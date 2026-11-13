@@ -971,6 +971,21 @@ Ghidra source location: `~/Repositories/Ghidra/`
   - **Body matches:** 20 from nocturne.
 - **`CMini3D` is 1 byte** (RTTI `typeinfo_size`). Its constructor ignores `this` and sets module
   globals. The next global sits 4 bytes after the instance only because of alignment.
+- **`mini3d.cpp` is BW's float 3D layer**, beside nocedit's fixed-point `matrix.c`. It holds the
+  camera, a 10-deep matrix stack (60-byte frames), wrappers over the renderer's `APIDLL*` entry
+  points, a software clip and raster fallback, and 2D drawing; only `drawRect` has a nocedit twin.
+  The wrappers take their names from the 73 export strings `loadExternalRenderer` resolves, and
+  `getCameraOrigin`/`getCameraRotation` write through ESI (`__esi`), like `matrix.c`'s.
+- **About 160 BW functions per build started on Watcom alignment filler** (`MOV r,r`,
+  `LEA r,[r]`), a quarter of them in `mini3d.cpp`. Nothing calls them, so auto-analysis entered
+  them at the filler; `fix_function_boundaries.py` moved each to the next 16-aligned address.
+  Two of those, and bw2's six mid-instruction entries, were not functions: they were aligned
+  branch targets inside the function before. The sign is that the only reference to the corrected
+  entry is a `Jcc` from that function, which falls through the padding into it; `mini3d.cpp`
+  `00512d4e` (bw3 `004ee51e`) and `motion.cpp` `00523e30` (bw3 `004fb730`) are merged into their
+  owners. bw2's `004ebc20` and `00485690` are mid-function: the real starts are `004eba50`,
+  `004855f0` and `00485610`. The functions referenced as pointers (`directSoundEnumerationCallback`,
+  `renderVolumetricLightScanline`) are real. The CRT fall-through chains are left as they are.
 - **BW has `CSlew`:** its `slew.cpp` `init` is byte-identical to nocedit's. nocedit's 28-byte type
   is imported into all three builds.
 
@@ -1120,7 +1135,9 @@ Ghidra source location: `~/Repositories/Ghidra/`
   from hand-read shifts; `CGunFlame` is re-ordered, and its flames burn what is near them in bw3.
 - **BW's own helper classes are laid out** (`bw_own_structs.json`): the stream classes, ciphers,
   leaf and firefly particles, `CFieldNotes`, the puzzles and the rest, 63 layouts at their RTTI
-  sizes, with 331 of their functions named.
+  sizes, with 331 of their functions named. The stream classes derive from `CInStream` and
+  `COutStream`, vtable-only bases with no RTTI, and the puzzles from `CPuzzle`; every stream,
+  puzzle and field-notes method is typed.
 - **Every class method in the BW programs takes `this_ptr` of its class** (`fix_this_ptr.py`, now
   covering S-prefixed structs and deriving the 153 missing receivers from the decompiler's
   prototypes).

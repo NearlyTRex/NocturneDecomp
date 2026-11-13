@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPassenger * core_passngr_cpp_CPassenger_dtor_FUN_0050a530(CPassenger *this_ptr,uint flags)
+; CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_0050a530(CPassenger *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CPassenger *     Stack[0x4]:4   this_ptr

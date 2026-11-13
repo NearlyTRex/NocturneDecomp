@@ -7,19 +7,19 @@
 
 // Original: core_kedward.cpp_staticInit_FUN_0058fd10
 // Address: 0058fd10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_kedward.cpp_factoryFuncKedward_FUN_0058fd40
 // Address: 0058fd40
-void factoryFuncKedward(void);
+CKedward * __cdecl factoryFuncKedward(void);
 
 // Original: core_kedward.cpp_CKedward_getActorType_FUN_0058fd60
 // Address: 0058fd60
-CDemonActorType * CKedward::getActorType(CKedward *this_ptr);
+CDemonActorType * __cdecl CKedward::getActorType(CKedward *this_ptr);
 
 // Original: core_kedward.cpp_CKedward_ctor_FUN_0058fd70
 // Address: 0058fd70
-CKedward * CKedward::ctor(CKedward *this_ptr);
+CKedward * __cdecl CKedward::ctor(CKedward *this_ptr);
 
 // Original: core_kedward.cpp_CKedward_setup_FUN_0058fe70
 // Address: 0058fe70
@@ -51,4 +51,4 @@ void __cdecl CKedward::archive(CKedward *this_ptr);
 
 // Original: core_kedward.cpp_CKedward_dtor_FUN_00591ab0
 // Address: 00591ab0
-CKedward * CKedward::dtor(CKedward *this_ptr,uint flags);
+CKedward * __cdecl CKedward::dtor(CKedward *this_ptr,uint flags);

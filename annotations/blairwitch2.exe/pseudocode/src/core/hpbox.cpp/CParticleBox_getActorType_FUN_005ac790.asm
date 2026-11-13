@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_hpbox_cpp_CParticleBox_getActorType_FUN_005ac790(CParticleBox *this_ptr)
+; CDemonActorType * __cdecl core_hpbox_cpp_CParticleBox_getActorType_FUN_005ac790(CParticleBox *this_ptr)
 ;
 ; Parameters:
 ; CParticleBox *   Stack[0x4]:4   this_ptr

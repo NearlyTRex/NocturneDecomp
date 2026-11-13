@@ -7,7 +7,7 @@
 
 // Original: core_tvbat.cpp_staticInit_FUN_00580260
 // Address: 00580260
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_tvbat.cpp_factoryFuncTVBat_FUN_00580290
 // Address: 00580290
@@ -15,7 +15,7 @@ CTVBat * __cdecl factoryFuncTVBat(void);
 
 // Original: core_tvbat.cpp_CTVBat_getActorType_FUN_005802b0
 // Address: 005802b0
-CDemonActorType * CTVBat::getActorType(CTVBat *this_ptr);
+CDemonActorType * __cdecl CTVBat::getActorType(CTVBat *this_ptr);
 
 // Original: core_tvbat.cpp_CTVBat_ctor_FUN_005802f0
 // Address: 005802f0
@@ -63,4 +63,4 @@ void __cdecl CTVBat::processDamage(CTVBat *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_tvbat.cpp_CTVBat_dtor_FUN_00581430
 // Address: 00581430
-CTVBat * CTVBat::dtor(CTVBat *this_ptr,uint flags);
+CTVBat * __cdecl CTVBat::dtor(CTVBat *this_ptr,uint flags);

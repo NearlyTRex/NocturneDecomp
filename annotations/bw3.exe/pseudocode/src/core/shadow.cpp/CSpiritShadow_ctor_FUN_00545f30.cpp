@@ -1,14 +1,12 @@
 // Name: core_shadow.cpp_CSpiritShadow_ctor_FUN_00545f30
 // Address: 00545f30
 // Address Range: [[00545f30, 00545f85]]
-// Convention: unknown
-// Signature: CSpiritShadow * core_shadow_cpp_CSpiritShadow_ctor_FUN_00545f30(CSpiritShadow *this_ptr)
+// Convention: __cdecl
+// Signature: CSpiritShadow * __cdecl core_shadow_cpp_CSpiritShadow_ctor_FUN_00545f30(CSpiritShadow *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSpiritShadow * core_shadow_cpp_CSpiritShadow_ctor_FUN_00545f30(CSpiritShadow *this_ptr)
+CSpiritShadow * __cdecl core_shadow_cpp_CSpiritShadow_ctor_FUN_00545f30(CSpiritShadow *this_ptr)
 
 {
   CShadow *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bugs_cpp_staticInit_FUN_00420e40(void)
+; void __cdecl core_bugs_cpp_staticInit_FUN_00420e40(void)
 ;
 ;
 ; Called Functions:

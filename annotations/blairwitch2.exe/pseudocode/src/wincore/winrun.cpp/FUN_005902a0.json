@@ -22,9 +22,9 @@
   },
   "cross_references": [
     {
-      "addr": "0059064e",
+      "addr": "00590650",
       "from_addr": "00590654",
-      "name": "wincore_winrun.cpp_FUN_0059064e",
+      "name": "wincore_winrun.cpp_FUN_00590650",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -83,19 +83,6 @@
     "call_site_count": 3,
     "call_sites": [
       {
-        "call_addr": "00590654",
-        "call_type": "direct",
-        "caller": "wincore_winrun.cpp_FUN_0059064e",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
         "call_addr": "00590915",
         "call_type": "direct",
         "caller": "wincore_winrun.cpp_FUN_00590910",
@@ -120,12 +107,25 @@
         ],
         "stack_bytes": 4,
         "stack_params": 1
+      },
+      {
+        "call_addr": "00590654",
+        "call_type": "direct",
+        "caller": "wincore_winrun.cpp_FUN_00590650",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 2,
+    "estimated_params": 1,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -351,11 +351,11 @@
       "call_site_count": 3,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
+      "estimated_params": 1,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
     }
   ]

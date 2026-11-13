@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSearchParty * core_bwsearch_cpp_CSearchParty_ctor_FUN_005a8cf0(CSearchParty *this_ptr)
+; CSearchParty * __cdecl core_bwsearch_cpp_CSearchParty_ctor_FUN_005a8cf0(CSearchParty *this_ptr)
 ;
 ; Parameters:
 ; CSearchParty *   Stack[0x4]:4   this_ptr

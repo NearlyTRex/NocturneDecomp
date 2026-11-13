@@ -1,14 +1,12 @@
 // Name: core_spirindi.cpp_CSpiritIndian_ctor_FUN_00599f60
 // Address: 00599f60
 // Address Range: [[00599f60, 0059a05e]]
-// Convention: unknown
-// Signature: CSpiritIndian * core_spirindi_cpp_CSpiritIndian_ctor_FUN_00599f60(CSpiritIndian *this_ptr)
+// Convention: __cdecl
+// Signature: CSpiritIndian * __cdecl core_spirindi_cpp_CSpiritIndian_ctor_FUN_00599f60(CSpiritIndian *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSpiritIndian * core_spirindi_cpp_CSpiritIndian_ctor_FUN_00599f60(CSpiritIndian *this_ptr)
+CSpiritIndian * __cdecl core_spirindi_cpp_CSpiritIndian_ctor_FUN_00599f60(CSpiritIndian *this_ptr)
 
 {
   char cVar1;

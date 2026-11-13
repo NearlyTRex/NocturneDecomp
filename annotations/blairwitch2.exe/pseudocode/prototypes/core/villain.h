@@ -7,19 +7,19 @@
 
 // Original: core_villain.cpp_staticInit_FUN_005a5ae0
 // Address: 005a5ae0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_villain.cpp_factoryFuncSteuben_FUN_005a5b10
 // Address: 005a5b10
-void factoryFuncSteuben(void);
+CSteuben * __cdecl factoryFuncSteuben(void);
 
 // Original: core_villain.cpp_CSteuben_getActorType_FUN_005a5b30
 // Address: 005a5b30
-CDemonActorType * CSteuben::getActorType(CSteuben *this_ptr);
+CDemonActorType * __cdecl CSteuben::getActorType(CSteuben *this_ptr);
 
 // Original: core_villain.cpp_CSteuben_ctor_FUN_005a5b40
 // Address: 005a5b40
-CSteuben * CSteuben::ctor(CSteuben *this_ptr);
+CSteuben * __cdecl CSteuben::ctor(CSteuben *this_ptr);
 
 // Original: core_villain.cpp_CSteuben_setup_FUN_005a5c10
 // Address: 005a5c10
@@ -55,4 +55,4 @@ void __cdecl CSteuben::archive(CSteuben *this_ptr);
 
 // Original: core_villain.cpp_CSteuben_dtor_FUN_005a5d70
 // Address: 005a5d70
-CSteuben * CSteuben::dtor(CSteuben *this_ptr,uint flags);
+CSteuben * __cdecl CSteuben::dtor(CSteuben *this_ptr,uint flags);

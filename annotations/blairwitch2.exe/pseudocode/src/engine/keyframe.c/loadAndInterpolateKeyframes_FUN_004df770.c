@@ -27,7 +27,8 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004df770(SMRGLKey
   int local_14;
   
   if (keyframe_model->base_keyframes == (SMRGLKeyframe *)0x0) {
-    pSVar6 = (SMRGLKeyframe *)engine_model_c_loadModelFile_FUN_00500720(keyframe_model->filenames);
+    pSVar6 = (SMRGLKeyframe *)
+             engine_model_c_loadModelFile_FUN_00500720(keyframe_model->filenames[0]);
     keyframe_model->base_keyframes = pSVar6;
   }
   iVar4 = engine_model_c_FUN_00500f30(&keyframe_model->base_keyframes->header);

@@ -9,7 +9,7 @@
 ; XREF[4]:
 ;   core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004b1e00 at 004b1ec7
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a6b8
-;   core_sound.cpp_FUN_00559b4e at 00559bb2
+;   core_sound.cpp_FUN_00559b50 at 00559bb2
 ;   core_weather.cpp_CWeather_setOriginAndRotation_FUN_0058b4f0 at 0058b62f
 ;
 ; *****************************************************************************

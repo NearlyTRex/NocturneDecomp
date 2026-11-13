@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vampboss_cpp_staticInit_FUN_005814d0(void)
+; void __cdecl core_vampboss_cpp_staticInit_FUN_005814d0(void)
 ;
 ;
 ; Called Functions:

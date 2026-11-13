@@ -184,8 +184,8 @@ section .text
     PUSH EBX                            ; 0058bac2
     MOV EAX,[0x00618170]                ; 0058bac3 | DAT_00618170
     PUSH EAX                            ; 0058bac8 | DAT_01d182f0
-    CALL core_mission.cpp_FUN_004fc7b0  ; 0058bac9
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fc7b0()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 0058bac9
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 0058bace
     JMP 0x0058b9b5                      ; 0058bad1
         ;   XREF to: 0058b9b5 (UNCONDITIONAL_JUMP)  ; LAB_0058b9b5

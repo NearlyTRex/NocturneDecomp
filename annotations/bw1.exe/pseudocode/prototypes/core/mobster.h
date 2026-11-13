@@ -7,7 +7,7 @@
 
 // Original: core_mobster.cpp_staticInit_FUN_0051c5b0
 // Address: 0051c5b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_mobster.cpp_FUN_0051c5e0
 // Address: 0051c5e0
@@ -23,7 +23,7 @@ CMobster * __cdecl factoryFuncMobster(void);
 
 // Original: core_mobster.cpp_CMobster_getActorType_FUN_0051c7c0
 // Address: 0051c7c0
-CDemonActorType * CMobster::getActorType(CMobster *this_ptr);
+CDemonActorType * __cdecl CMobster::getActorType(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_ctor_FUN_0051c7d0
 // Address: 0051c7d0
@@ -91,4 +91,4 @@ void __cdecl CMobster::playTaunt(CMobster *this_ptr,int taunt_category);
 
 // Original: core_mobster.cpp_CMobster_dtor_FUN_0051f4b0
 // Address: 0051f4b0
-CMobster * CMobster::dtor(CMobster *this_ptr,uint flags);
+CMobster * __cdecl CMobster::dtor(CMobster *this_ptr,uint flags);

@@ -16,7 +16,7 @@
 ;   engine_2d.c_clipLineGlobal_FUN_00402ca0
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30
 ;   engine_font.cpp_FUN_004b0a20
-;   engine_mini3d.cpp_FUN_004f3520
+;   engine_mini3d.cpp_setColor_FUN_004f3520
 ;   shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004867c0
 ;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00486780
 ;   shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004867f0
@@ -163,8 +163,8 @@ section .text
     MOV AL,[0x01c6af9a]                 ; 0048692e | DAT_01c6af9a
     OR EAX,EDX                          ; 00486933
     PUSH EAX                            ; 00486935
-    CALL engine_mini3d.cpp_FUN_004f3520 ; 00486936
-        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3520()
+    CALL engine_mini3d.cpp_setColor_FUN_004f3520 ; 00486936
+        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setColor_FUN_004f3520(uint rgb)
     ADD ESP,0x4                         ; 0048693b
     JMP 0x004868dd                      ; 0048693e
         ;   XREF to: 004868dd (UNCONDITIONAL_JUMP)  ; LAB_004868dd

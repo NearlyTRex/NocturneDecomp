@@ -1,14 +1,12 @@
 // Name: core_construc.cpp_CConstructRed_dtor_FUN_00444660
 // Address: 00444660
 // Address Range: [[00444660, 004446e4]]
-// Convention: unknown
-// Signature: CConstructRed * core_construc_cpp_CConstructRed_dtor_FUN_00444660(CConstructRed *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CConstructRed * __cdecl core_construc_cpp_CConstructRed_dtor_FUN_00444660(CConstructRed *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CConstructRed * core_construc_cpp_CConstructRed_dtor_FUN_00444660(CConstructRed *this_ptr,uint flags)
+CConstructRed * __cdecl core_construc_cpp_CConstructRed_dtor_FUN_00444660(CConstructRed *this_ptr,uint flags)
 
 {
   int iVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_moocow_cpp_staticInit_FUN_004f8ae0(void)
+; void __cdecl core_moocow_cpp_staticInit_FUN_004f8ae0(void)
 ;
 ;
 ; Called Functions:

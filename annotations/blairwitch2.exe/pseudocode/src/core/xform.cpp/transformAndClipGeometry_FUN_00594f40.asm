@@ -17,7 +17,7 @@
 ; XREF[3]:
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590 at 00469633
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0046b750 at 0046b7ae
-;   engine_drender.cpp_FUN_0046c28e at 0046c353
+;   engine_drender.cpp_FUN_0046c290 at 0046c353
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00594efc = 005950cc

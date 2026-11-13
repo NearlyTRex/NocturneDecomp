@@ -9,8 +9,8 @@
 ;   engine_font.cpp_FUN_004b13a0 at 004b13df
 ;
 ; Called Functions:
-;   engine_mini3d.cpp_FUN_004ec930
-;   engine_mini3d.cpp_FUN_004ec940
+;   engine_mini3d.cpp_lockFrame_FUN_004ec930
+;   engine_mini3d.cpp_unlockFrame_FUN_004ec940
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
         ;   Label: engine_palette.cpp_FUN_00509d90
     PUSH EBP                            ; 00509d91
     MOV ESI,dword ptr [ESP + 0xc]       ; 00509d92
-    CALL engine_mini3d.cpp_FUN_004ec930 ; 00509d96
-        ;   XREF to: 004ec930 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004ec930()
+    CALL engine_mini3d.cpp_lockFrame_FUN_004ec930 ; 00509d96
+        ;   XREF to: 004ec930 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_lockFrame_FUN_004ec930()
     MOV EDX,dword ptr [ESI]             ; 00509d9b
     XOR EBP,EBP                         ; 00509d9d
     TEST EDX,EDX                        ; 00509d9f
@@ -54,8 +54,8 @@ section .text
         ;   XREF to: 00509dad (CONDITIONAL_JUMP)  ; LAB_00509dad
     POP EBX                             ; 00509de4
     POP EDI                             ; 00509de5
-    CALL engine_mini3d.cpp_FUN_004ec940 ; 00509de6
-        ;   XREF to: 004ec940 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004ec940()
+    CALL engine_mini3d.cpp_unlockFrame_FUN_004ec940 ; 00509de6
+        ;   XREF to: 004ec940 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_unlockFrame_FUN_004ec940()
         ;   Label: LAB_00509de6
     MOV dword ptr [ESI],0x0             ; 00509deb
     POP EBP                             ; 00509df1

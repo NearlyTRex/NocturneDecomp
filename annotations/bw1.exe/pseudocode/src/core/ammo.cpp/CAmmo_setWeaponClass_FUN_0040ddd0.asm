@@ -10,7 +10,7 @@
 ; XREF[6]:
 ;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210 at 0040e2a0
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d4159
-;   core_game.cpp_giveHeroWeaponAmmo_FUN_004d25fe at 004d2657
+;   core_game.cpp_giveHeroWeaponAmmo_FUN_004d2600 at 004d2657
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0 at 004fa535
 ;   core_inv.cpp_FUN_004f7690 at 004f8443
 ;   core_inv.cpp_FUN_004f8b70 at 004f8bea

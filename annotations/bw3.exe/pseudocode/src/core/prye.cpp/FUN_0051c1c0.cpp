@@ -306,7 +306,7 @@ void core_prye_cpp_FUN_0051c1c0(CPrye *param_1)
     core_skeleton_cpp_CDeformableModelInstance_blendWithPoseData_FUN_0054d3c0
               (pCVar11,&local_2404,(float)local_2420,-1,core_skeleton_cpp_FUN_0054bef0);
   }
-  core_prye_cpp_FUN_0051e6d0();
+  core_prye_cpp_CPrye_makeDrawDecision_FUN_0051e6d0(param_1);
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
                      (&(param_1->base).base.model.base);
   local_1c = pSVar5->state_index;

@@ -7,7 +7,7 @@
 
 // Original: core_npc.cpp_staticInit_FUN_00531610
 // Address: 00531610
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_npc.cpp_factoryFuncNPC_FUN_00531640
 // Address: 00531640
@@ -15,11 +15,11 @@ CNPC * __cdecl factoryFuncNPC(void);
 
 // Original: core_npc.cpp_CNPC_getActorType_FUN_00531660
 // Address: 00531660
-CDemonActorType * CNPC::getActorType(CNPC *this_ptr);
+CDemonActorType * __cdecl CNPC::getActorType(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_ctor_FUN_00531670
 // Address: 00531670
-CNPC * CNPC::ctor(CNPC *this_ptr);
+CNPC * __cdecl CNPC::ctor(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_setup_FUN_00531720
 // Address: 00531720

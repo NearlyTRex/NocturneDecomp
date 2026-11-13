@@ -5,13 +5,14 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/winnt.h"
+#include "types/classes/CInStream.h"
 
 // Structure: CInStreamFile
 // RTTI size 44; ctor 005738c0 calls the in-stream base ctor then zeroes +4..+0x24; same code as bw1 (normalized pseudocode compared)
 // Ghidra size: 0x2c (44 bytes)
 #pragma pack(push, 1)
 typedef struct CInStreamFile {
-    void* vtable; // 0x0, stream vtable pointer; the abstract base ctor (00572530) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB
+    CInStream base; // 0x0, derived
     HANDLE file_handle; // 0x4, open 00573f50 stores CreateFileA(path, GENERIC_READ); close 00573db0 CloseHandle()s and zeroes it; every read slot returns -2 when it is 0
     int file_size; // 0x8, open stores GetFileSize(); openInDirectory 00573fc0 stores the found entry's size; read/seek/isEof bound position against it
     int file_offset; // 0xc, openInDirectory 00573fc0 stores the entry's start offset; fillBuffer adds it to the page position before SetFilePointer

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 58,
+    "complexity_score": 57,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 27,
     "suspect_count": 2,
     "suspect_types": [
       "derived_field_index_pun",
       "warning_overlapping_globals"
     ],
-    "total_lines": 59
+    "total_lines": 58
   },
   "cross_references": [
     {
@@ -37,9 +37,9 @@
         "005987fb"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780",
-    "signature": "CDarkwolf * core_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(CDarkwolf *this_ptr)"
+    "signature": "CDarkwolf * __cdecl core_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(CDarkwolf *this_ptr)"
   },
   "function_calls": [
     {
@@ -79,12 +79,10 @@
         "call_addr": "00598fe6",
         "call_type": "direct",
         "caller": "core_darkwolf.cpp_CWhitewolf_ctor_FUN_00598fe0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -100,11 +98,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 2,
-    "matches_declared": false
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.0,
@@ -154,7 +152,7 @@
     },
     {
       "description": "'pCVar3[1].base.base.actor_name + 0x10' walks 1 x sizeof(CEnemy) (0xd054) + offsetof(base.base.actor_name) (0x0) + 0x10 = 0xd064, which is exactly offsetof(CBaal, fade_timer). Ghidra had no CBaal type here and reached the field by index arithmetic; write it as ((CBaal *)pCVar3)->fade_timer (\u00a7de-pun/\u00a712). Ambiguous: CBoneGuy::pickup_target, CCarved::pickup_target, CConstruct::fall_event[16] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 15,
+      "line": 14,
       "severity": "moderate",
       "text": "((CMorph *)(pCVar3[1].base.base.actor_name + 0x10));",
       "type": "derived_field_index_pun"

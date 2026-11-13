@@ -11,10 +11,10 @@
 ;
 ; XREF[8]:
 ;   core_prye.cpp_CPrye_canDoHeroAction_FUN_005260b0 at 0052628f
+;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051eb31
 ;   core_prye.cpp_CPrye_renderOpaque_FUN_005220d0 at 00522314
-;   core_prye.cpp_FUN_0051e6d0 at 0051eb31
 ;   core_prye.cpp_FUN_0051f490 at 0051f77a
-;   core_prye.cpp_FUN_00520dec at 00520e0f
+;   core_prye.cpp_FUN_00520df0 at 00520e0f
 ;   core_prye.cpp_FUN_00521880 at 005218b8
 ;   core_prye.cpp_FUN_00524940 at 00524dca
 ;   core_prye.cpp_FUN_005263c0 at 0052645c

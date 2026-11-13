@@ -4,18 +4,18 @@
 ; void __cdecl engine_2d_c_clearInputAndWait_FUN_004032b0(void)
 ;
 ;
-; XREF[26]:
-;   core_dcube.cpp_FUN_00446f4e at 00446f63
+; XREF[27]:
+;   core_dcube.cpp_FUN_00446f50 at 00446f63
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be074
 ;   core_game.cpp_CGame_process_FUN_004bd570 at 004bd6ef
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be454
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b66a5
 ;   core_game.cpp_FUN_004bcbf0 at 004bcfaa
 ;   core_main.c_FUN_004e45e0 at 004e45e9
+;   core_menu.cpp_FUN_004eba50 at 004ebabd
 ;   core_menu.cpp_FUN_004ebf10 at 004ec9b8
 ;   core_menu.cpp_FUN_004eed60 at 004efdd9
-;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb82d
-;   ... and 16 more
+;   ... and 17 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c37790

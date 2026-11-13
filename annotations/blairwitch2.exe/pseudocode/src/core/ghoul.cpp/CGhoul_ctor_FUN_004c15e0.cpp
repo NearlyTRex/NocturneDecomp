@@ -1,15 +1,14 @@
 // Name: core_ghoul.cpp_CGhoul_ctor_FUN_004c15e0
 // Address: 004c15e0
 // Address Range: [[004c15e0, 004c170d]]
-// Convention: unknown
-// Signature: CGhoul * core_ghoul_cpp_CGhoul_ctor_FUN_004c15e0(CGhoul *this_ptr)
+// Convention: __cdecl
+// Signature: CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004c15e0(CGhoul *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CGhoul * core_ghoul_cpp_CGhoul_ctor_FUN_004c15e0(CGhoul *this_ptr)
+CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004c15e0(CGhoul *this_ptr)
 
 {
   CGhoul *pCVar1;

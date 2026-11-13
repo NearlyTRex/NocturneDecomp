@@ -199,7 +199,7 @@ section .text
     LEA EAX,[ESP + 0x438]               ; 004afab4
     PUSH EAX                            ; 004afabb
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0 ; 004afabc
-        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
+        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile * this_ptr, char * directory, char * filename, int binary_mode)
     ADD ESP,0x10                        ; 004afac1
     TEST EAX,EAX                        ; 004afac4
     JZ 0x004afbbd                       ; 004afac6
@@ -237,7 +237,7 @@ section .text
     LEA EAX,[ESP + 0x42c]               ; 004afb36
     PUSH EAX                            ; 004afb3d
     CALL support_trstream.cpp_CInStreamFile_close_FUN_00573db0 ; 004afb3e
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004afb43
     MOV ESI,dword ptr [ESP + 0x47c]     ; 004afb46
         ;   Label: LAB_004afb46

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SPageResourceText * core_fldnotes_cpp_SPageResourceText_dtor_FUN_004a2000(SPageResourceText *this_ptr,uint flags)
+; SPageResourceText * __cdecl core_fldnotes_cpp_SPageResourceText_dtor_FUN_004a2000(SPageResourceText *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SPageResourceText * Stack[0x4]:4   this_ptr

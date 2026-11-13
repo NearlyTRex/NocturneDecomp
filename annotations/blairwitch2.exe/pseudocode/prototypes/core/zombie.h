@@ -7,7 +7,7 @@
 
 // Original: core_zombie.cpp_staticInit_FUN_00595680
 // Address: 00595680
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_zombie.cpp_FUN_005956b0
 // Address: 005956b0
@@ -31,11 +31,11 @@ CZombie * __cdecl factoryFuncZombie(void);
 
 // Original: core_zombie.cpp_CZombie_getActorType_FUN_00595a80
 // Address: 00595a80
-CDemonActorType * CZombie::getActorType(CZombie *this_ptr);
+CDemonActorType * __cdecl CZombie::getActorType(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_ctor_FUN_00595a90
 // Address: 00595a90
-CZombie * CZombie::ctor(CZombie *this_ptr);
+CZombie * __cdecl CZombie::ctor(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_setup_FUN_00595c00
 // Address: 00595c00
@@ -115,15 +115,15 @@ void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_dtor_FUN_00599d70
 // Address: 00599d70
-CZombie * CZombie::dtor(CZombie *this_ptr,uint flags);
+CZombie * __cdecl CZombie::dtor(CZombie *this_ptr,uint flags);
 
-// Original: core_zombie.cpp_FUN_00599e0e
-// Address: 00599e0e
-void FUN_00599e0e(int param_1,int param_2);
+// Original: core_zombie.cpp_FUN_00599e10
+// Address: 00599e10
+void FUN_00599e10(void);
 
-// Original: core_zombie.cpp_FUN_0059a06e
-// Address: 0059a06e
-int * FUN_0059a06e(int param_1,int *param_2);
+// Original: core_zombie.cpp_FUN_0059a070
+// Address: 0059a070
+int * FUN_0059a070(void);
 
 // Original: core_zombie.cpp_FUN_0059a0b0
 // Address: 0059a0b0
@@ -132,39 +132,3 @@ void __cdecl FUN_0059a0b0(SRenderVertex *vertex_buffer,int vertex_count);
 // Original: core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0
 // Address: 0059a5d0
 void __cdecl rasterizePolygonCustom(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);
-
-// Original: core_zombie.cpp_FUN_0059aa80
-// Address: 0059aa80
-void FUN_0059aa80(void);
-
-// Original: core_zombie.cpp_FUN_0059ab30
-// Address: 0059ab30
-void FUN_0059ab30(undefined4 *param_1);
-
-// Original: core_zombie.cpp_FUN_0059ab50
-// Address: 0059ab50
-undefined4 * FUN_0059ab50(undefined4 *param_1);
-
-// Original: core_zombie.cpp_FUN_0059ab60
-// Address: 0059ab60
-void FUN_0059ab60(void);
-
-// Original: core_zombie.cpp_FUN_0059ab70
-// Address: 0059ab70
-void FUN_0059ab70(int *param_1,int *param_2);
-
-// Original: core_zombie.cpp_FUN_0059abb0
-// Address: 0059abb0
-void FUN_0059abb0(void);
-
-// Original: core_zombie.cpp_FUN_0059abe0
-// Address: 0059abe0
-void FUN_0059abe0(void);
-
-// Original: core_zombie.cpp_FUN_0059ac10
-// Address: 0059ac10
-void FUN_0059ac10(void);
-
-// Original: core_zombie.cpp_FUN_0059ac60
-// Address: 0059ac60
-void FUN_0059ac60(void);

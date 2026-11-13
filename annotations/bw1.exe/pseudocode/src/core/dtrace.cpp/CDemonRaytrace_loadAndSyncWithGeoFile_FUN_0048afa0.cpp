@@ -15,7 +15,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_0048afa0(C
   if (p_Var1 == (_FILE *)0x0) {
     return 0;
   }
-  core_dtrace_cpp_FUN_0048adc0(this_ptr,p_Var1);
+  core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_0048adc0(this_ptr,p_Var1);
   _fclose(p_Var1);
   return 1;
 }

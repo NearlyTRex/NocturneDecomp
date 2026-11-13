@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamFile_ungetChar_FUN_0057cf40(CInStreamFile *this_ptr,int param_2)
+; int __cdecl support_trstream_cpp_CInStreamFile_ungetChar_FUN_0057cf40(CInStreamFile *this_ptr,int ch)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   ch
 ;
 ; *****************************************************************************
 

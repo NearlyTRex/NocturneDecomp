@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 150,
+    "complexity_score": 175,
     "cross_reference_count": 10,
     "function_call_count": 9,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 110,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
+      "pointer_truncation",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
@@ -93,7 +94,7 @@
     {
       "addr": "0059e8c0",
       "is_variadic": false,
-      "name": "core_basicene.cpp_FUN_0059e8c0"
+      "name": "core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0"
     },
     {
       "addr": "00487db0",
@@ -344,6 +345,22 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer value `this_ptr_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)this_ptr_00",
+      "severity": "moderate",
+      "text": "return (int)this_ptr_00;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `this_ptr_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 113,
+      "match": "(int)this_ptr_00",
+      "severity": "moderate",
+      "text": "return (int)this_ptr_00;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

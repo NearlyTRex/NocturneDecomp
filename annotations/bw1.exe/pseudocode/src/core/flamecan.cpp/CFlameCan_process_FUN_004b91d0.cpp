@@ -32,7 +32,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004b91d0(CFlameCan *this_pt
   if (0.0 < fVar1) {
     return;
   }
-  core_mission_cpp_FUN_0051b740(0x01D2C900,this_ptr,1);
+  core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(0x01D2C900,this_ptr,1);
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,unaff_ESI);
   core_fire_cpp_CFireEffect_createExplosion_FUN_004b6c60
             (0x01C57074,&(this_ptr->flame).base.location.position,16.0,1500.0,4.0);

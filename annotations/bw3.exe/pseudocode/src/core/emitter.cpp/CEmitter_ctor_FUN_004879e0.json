@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 227,
+    "complexity_score": 226,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 117,
+    "pseudocode_lines": 116,
     "suspect_count": 9,
     "suspect_types": [
       "derived_field_index_pun",
@@ -15,7 +15,7 @@
       "pointer_cast",
       "unrolled_strcpy"
     ],
-    "total_lines": 211
+    "total_lines": 210
   },
   "cross_references": [
     {
@@ -33,9 +33,9 @@
         "00487ba4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_emitter.cpp_CEmitter_ctor_FUN_004879e0",
-    "signature": "CEmitter * core_emitter_cpp_CEmitter_ctor_FUN_004879e0(CEmitter *this_ptr)"
+    "signature": "CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004879e0(CEmitter *this_ptr)"
   },
   "function_calls": [
     {
@@ -145,7 +145,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 14,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
       "text": "*(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 0x10) = &g_CEmitterVTable;",
@@ -153,7 +153,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 30,
+      "line": 28,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
       "text": "pcVar4 = this_ptr_00[-1].model_name + 0x28;",
@@ -161,7 +161,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 45,
+      "line": 43,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
       "text": "pcVar4 = this_ptr_00[-1].model_name + 0x8c;",
@@ -169,7 +169,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 75,
+      "line": 73,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
       "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;",
@@ -177,7 +177,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 120,
+      "line": 118,
       "match": "this_ptr_00[-2].",
       "severity": "mild",
       "text": "return (CEmitter *)(this_ptr_00[-2].model_name + 0x38);",
@@ -185,7 +185,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 35,
+      "line": 33,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -193,7 +193,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 46,
+      "line": 44,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -201,7 +201,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 103,
+      "line": 101,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "*(byte *)(this_ptr_00[1].part_visibility_flags + 0xd) = 0;",
@@ -209,7 +209,7 @@
     },
     {
       "description": "'(CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(platform_orientation_delta.y) (0xf0) + 0x0 = 0x248, which is exactly offsetof(CChain, move_wav_name[44]). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar2)->move_wav_name[44] (\u00a7de-pun/\u00a712). Ambiguous: CEmitter::model, CFlame::off_event[44], CTrigger::on_event[36] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 15,
+      "line": 13,
       "severity": "moderate",
       "text": "((CKeyFramedModelInstance *)&pCVar2[1].platform_orientation_delta.y);",
       "type": "derived_field_index_pun"

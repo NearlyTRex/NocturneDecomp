@@ -97,8 +97,8 @@ void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)
   core_terrain_cpp_CTerrain_process_FUN_0057b970(0x0265364C);
   core_weather_cpp_CWeather_update_FUN_0058a660(0x02661F80);
   core_game_cpp_FUN_004b90d0();
-  core_fldnotes_cpp_FUN_004a5f60();
-  core_zombie_cpp_FUN_0059ac60();
+  core_fldnotes_cpp_CFieldNotes_process_FUN_004a5f60(g_CFieldNotesPtr);
+  core_bmppuzzl_cpp_processActivePuzzle_FUN_0059ac60();
   core_set_cpp_CDemonSet_processActors_FUN_0052e940(g_CDemonSetPtr);
   if (g_CGamePtr->profile_mode == 1) {
     _DAT_01cb8118 = wincore_winrun_cpp_getTime_FUN_0058e9e0();

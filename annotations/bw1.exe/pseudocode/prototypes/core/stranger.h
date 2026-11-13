@@ -23,11 +23,11 @@ CStranger * __cdecl factoryFuncStranger(void);
 
 // Original: core_stranger.cpp_CStranger_getActorType_FUN_00585260
 // Address: 00585260
-CDemonActorType * CStranger::getActorType(CStranger *this_ptr);
+CDemonActorType * __cdecl CStranger::getActorType(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_ctor_FUN_00585270
 // Address: 00585270
-CStranger * CStranger::ctor(CStranger *this_ptr);
+CStranger * __cdecl CStranger::ctor(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_setup_FUN_00585670
 // Address: 00585670
@@ -117,13 +117,13 @@ int __cdecl CStranger::renderOpaque(CStranger *this_ptr);
 // Address: 0058e8d0
 int __cdecl CStranger::renderTransparent(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_adjustAimAngleForOffset_FUN_0058e90e
-// Address: 0058e90e
+// Original: core_stranger.cpp_adjustAimAngleForOffset_FUN_0058e910
+// Address: 0058e910
 void __cdecl adjustAimAngleForOffset(float *angle,float distance,float offset);
 
-// Original: core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0058e99e
-// Address: 0058e99e
-float * calculateAimAnglesWithOffset(float *param_1,float *param_2);
+// Original: core_stranger.cpp_calculateAimAnglesWithOffset_FUN_0058e9a0
+// Address: 0058e9a0
+float * calculateAimAnglesWithOffset(void);
 
 // Original: core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0058eb50
 // Address: 0058eb50

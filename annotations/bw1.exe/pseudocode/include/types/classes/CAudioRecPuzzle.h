@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CPuzzle.h"
 #include "types/structs/SButtonStruct.h"
 
 // Structure: CAudioRecPuzzle
@@ -13,7 +14,7 @@
 // Ghidra size: 0xc38 (3128 bytes)
 #pragma pack(push, 1)
 typedef struct CAudioRecPuzzle {
-    void* vtable; // 0x0, puzzle base ctor 00415ba0 stores the base vtable at +0
+    CPuzzle base; // 0x0, derived
     CAlphaBitmap background; // 0x4, load 00415fc0 loads 'radioback'; render 00416620 displays it
     int cursor_index; // 0x18, render displays pointer bitmap [cursor_index]
     int button_count; // 0x1c, addButton 00416570 increments it

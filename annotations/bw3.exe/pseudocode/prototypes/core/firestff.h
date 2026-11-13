@@ -7,19 +7,19 @@
 
 // Original: core_firestff.cpp_staticInit_FUN_004a4a70
 // Address: 004a4a70
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_firestff.cpp_factoryFuncFirestaff_FUN_004a4aa0
 // Address: 004a4aa0
-void factoryFuncFirestaff(void);
+CFirestaff * __cdecl factoryFuncFirestaff(void);
 
 // Original: core_firestff.cpp_CFirestaff_getActorType_FUN_004a4ac0
 // Address: 004a4ac0
-CDemonActorType * CFirestaff::getActorType(CFirestaff *this_ptr);
+CDemonActorType * __cdecl CFirestaff::getActorType(CFirestaff *this_ptr);
 
 // Original: core_firestff.cpp_CFirestaff_ctor_FUN_004a4ad0
 // Address: 004a4ad0
-CFirestaff * CFirestaff::ctor(CFirestaff *this_ptr);
+CFirestaff * __cdecl CFirestaff::ctor(CFirestaff *this_ptr);
 
 // Original: core_firestff.cpp_CFirestaff_fillAttackDamageInfo_FUN_004a4cd0
 // Address: 004a4cd0
@@ -47,7 +47,7 @@ void __cdecl CFirestaff::setup(CFirestaff *this_ptr);
 
 // Original: core_firestff.cpp_CFirestaff_dtor_FUN_004a58c0
 // Address: 004a58c0
-CFirestaff * CFirestaff::dtor(CFirestaff *this_ptr,uint flags);
+CFirestaff * __cdecl CFirestaff::dtor(CFirestaff *this_ptr,uint flags);
 
 // Original: core_firestff.cpp_FUN_004a5930
 // Address: 004a5930

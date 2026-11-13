@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 107,
+    "complexity_score": 62,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 12,
-    "suspect_count": 8,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 41
@@ -46,7 +45,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamFile_open_FUN_005749d0",
-    "signature": "undefined4 __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005749d0(COutStreamFile *this_ptr,char *param_2,char *param_3)"
+    "signature": "int __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005749d0(COutStreamFile *this_ptr,char *path,char *mode)"
   },
   "function_calls": [
     {
@@ -152,43 +151,27 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "path",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "mode",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005749d0(COutStreamFile *this_ptr,char *param_2,char *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005749d0(COutStreamFile *this_ptr,char *param_2,char *param_3)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 7,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x18))(this_ptr);",
       "type": "pointer_cast"
     },
     {
@@ -196,31 +179,15 @@
       "line": 7,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x18))(this_ptr);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "p_Var1 = _fopen(param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "p_Var1 = _fopen(param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x18))(this_ptr);",
       "type": "pointer_cast"
     },
     {
@@ -228,7 +195,7 @@
       "line": 13,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x18))(this_ptr);",
       "type": "unresolved_funcptr"
     }
   ],

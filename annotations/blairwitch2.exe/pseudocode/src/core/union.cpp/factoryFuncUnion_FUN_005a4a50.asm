@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_union_cpp_factoryFuncUnion_FUN_005a4a50(void)
+; CUnion * __cdecl core_union_cpp_factoryFuncUnion_FUN_005a4a50(void)
 ;
 ;
 ; Called Functions:

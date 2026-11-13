@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_3d_c_dispatchMRGLBlockChain_FUN_004078b0(int *param_1)
+; void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_004078b0(SMRGLHeaderExtended *chain)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   chain
 ;
 ; XREF[2]:
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_004079f0 at 00407a9e

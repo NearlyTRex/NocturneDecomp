@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 377,
+    "complexity_score": 376,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 86,
     "suspect_count": 26,
     "suspect_types": [
       "negative_offset",
@@ -17,7 +17,7 @@
       "stack_ref",
       "unrolled_memcpy"
     ],
-    "total_lines": 201
+    "total_lines": 200
   },
   "cross_references": [
     {
@@ -35,9 +35,9 @@
         "005112a2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_platfrm.cpp_CPlatform_ctor_FUN_005110e0",
-    "signature": "CPlatform * core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)"
+    "signature": "CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)"
   },
   "function_calls": [
     {
@@ -160,7 +160,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
+      "line": 16,
       "match": "auStackY_17ec",
       "severity": "moderate",
       "text": "uint auStackY_17ec [509];",
@@ -168,7 +168,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 19,
+      "line": 17,
       "match": "apCStackY_ff8",
       "severity": "moderate",
       "text": "CCourseFrame *apCStackY_ff8 [1014];",
@@ -176,7 +176,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 37,
+      "line": 35,
       "match": "pCVar5[-5].",
       "severity": "mild",
       "text": "pCVar5[-5].len = 0;",
@@ -184,7 +184,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 38,
+      "line": 36,
       "match": "pCVar5[-5].",
       "severity": "mild",
       "text": "pCVar5[-5].loop = 0;",
@@ -192,7 +192,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 39,
+      "line": 37,
       "match": "pCVar5[-3].",
       "severity": "mild",
       "text": "pCVar5[-3].len = 0x40000000;",
@@ -200,7 +200,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 40,
+      "line": 38,
       "match": "pCVar5[-4].",
       "severity": "mild",
       "text": "pCVar5[-4].loop = 0x40000000;",
@@ -208,7 +208,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 41,
+      "line": 39,
       "match": "pCVar5[-5].",
       "severity": "mild",
       "text": "pCVar5[-5].frames = (CCourseFrame *)0x0;",
@@ -216,7 +216,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 43,
+      "line": 41,
       "match": "pCVar5[-3].",
       "severity": "mild",
       "text": "*(byte *)&pCVar5[-3].frames = 0;",
@@ -224,7 +224,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
       "match": "(uint *)((int)pCVar5",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
@@ -232,7 +232,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
+      "line": 56,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
       "text": "*puVar7 = *(uint *)(&stack0xfffffff4 + (uint)bVar11 * -8);",
@@ -240,7 +240,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 57,
       "match": "&stack0xfffffff8",
       "severity": "moderate",
       "text": "*puVar8 = *(uint *)(&stack0xfffffff8 + (uint)bVar11 * -8 + (uint)bVar11 * -8);",
@@ -248,7 +248,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 60,
       "match": "&stack0xfffffff8",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffff8 + (uint)bVar11 * -8 + (uint)bVar11 * -8) +",
@@ -256,7 +256,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 62,
       "match": "(uint *)((int)pCVar5",
       "severity": "moderate",
       "text": "puVar9 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x28);",
@@ -264,7 +264,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 63,
       "match": "(uint *)((int)pCVar5",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
@@ -272,7 +272,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 79,
+      "line": 77,
       "match": "pCVar5[-4].",
       "severity": "mild",
       "text": "pCVar5[-4].len = 0;",
@@ -280,7 +280,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 80,
+      "line": 78,
       "match": "pCVar5[-4].",
       "severity": "mild",
       "text": "pCVar5[-4].frames = (CCourseFrame *)0x0;",
@@ -288,7 +288,7 @@
     },
     {
       "description": "Pointer value `&g_CPlatformVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 28,
+      "line": 26,
       "match": "(int)&g_CPlatformVTable",
       "severity": "moderate",
       "text": "pCVar5[-0x25].len = (int)&g_CPlatformVTable;",
@@ -296,7 +296,7 @@
     },
     {
       "description": "Pointer value `pCVar5[-0x3f].frames` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 43,
       "match": "(int)pCVar5[-0x3f].frames",
       "severity": "moderate",
       "text": "pCVar1->len = (int)pCVar5[-0x3f].frames;",
@@ -304,7 +304,7 @@
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 53,
       "match": "(int)pCVar5",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
@@ -312,7 +312,7 @@
     },
     {
       "description": "Pointer value `(&stack0xfffffff8 + (uint)bVar11 * -8 + (uint)bVar11 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 60,
       "match": "(int)(&stack0xfffffff8 + (uint)bVar11 * -8 + (uint)bVar11 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffff8 + (uint)bVar11 * -8 + (uint)bVar11 * -8) +",
@@ -320,7 +320,7 @@
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 64,
+      "line": 62,
       "match": "(int)pCVar5",
       "severity": "moderate",
       "text": "puVar9 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x28);",
@@ -328,7 +328,7 @@
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 65,
+      "line": 63,
       "match": "(int)pCVar5",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
@@ -336,7 +336,7 @@
     },
     {
       "description": "Pointer value `pCVar5[4].frames` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
+      "line": 64,
       "match": "(int)pCVar5[4].frames",
       "severity": "moderate",
       "text": "pCVar5[3].len = (int)pCVar5[4].frames;",
@@ -344,7 +344,7 @@
     },
     {
       "description": "Pointer value `(piVar6 + 0xd)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 83,
+      "line": 81,
       "match": "(int)(piVar6 + 0xd)",
       "severity": "moderate",
       "text": "iVar2 = (int)(piVar6 + 0xd);",
@@ -352,7 +352,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 50,
+      "line": 48,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar5[1].len = pCVar1->len;",
@@ -360,7 +360,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 27,
+      "line": 25,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "((CCourse *)(pCVar4[1].part_visibility_flags + 0xf));",

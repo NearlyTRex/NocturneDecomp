@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_burncrss_cpp_CBurncross_getActorType_FUN_00424420(CBurncross *this_ptr)
+; CDemonActorType * __cdecl core_burncrss_cpp_CBurncross_getActorType_FUN_00424420(CBurncross *this_ptr)
 ;
 ; Parameters:
 ; CBurncross *     Stack[0x4]:4   this_ptr

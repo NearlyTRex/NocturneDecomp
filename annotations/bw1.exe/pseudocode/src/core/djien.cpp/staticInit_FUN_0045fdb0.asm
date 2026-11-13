@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_djien_cpp_staticInit_FUN_0045fdb0(void)
+; void __cdecl core_djien_cpp_staticInit_FUN_0045fdb0(void)
 ;
 ;
 ; Called Functions:

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1358,
-    "complexity_score": 2892,
+    "complexity_score": 2904,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 31,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 617,
-    "suspect_count": 220,
+    "pseudocode_lines": 619,
+    "suspect_count": 221,
     "suspect_types": [
       "bit_int_float_compare",
       "derived_field_index_pun",
@@ -26,7 +26,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1975
+    "total_lines": 1977
   },
   "cross_references": [
     {
@@ -83,7 +83,7 @@
     {
       "addr": "004319d0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_004319d0"
+      "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0"
     },
     {
       "addr": "0047b1e0",
@@ -2025,15 +2025,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 561,
+      "line": 562,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004319d0(param_1,0,pCVar4,0,0);",
+      "text": "(&param_1->base,0,(int)pCVar4,0,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 566,
+      "line": 567,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->light_radius = 15.0;",
@@ -2041,7 +2041,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 574,
+      "line": 575,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->action_pending == 9) && (local_20 == 3)) {",
@@ -2049,7 +2049,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 576,
+      "line": 577,
       "match": "param_1",
       "severity": "mild",
       "text": "((param_1->base).carry_hands[0].carry_actor,DAT_007e1a50);",
@@ -2057,7 +2057,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 576,
+      "line": 577,
       "match": "DAT_007e1a50",
       "severity": "mild",
       "text": "((param_1->base).carry_hands[0].carry_actor,DAT_007e1a50);",
@@ -2065,7 +2065,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 579,
+      "line": 580,
       "match": "param_1",
       "severity": "mild",
       "text": "((param_1->base).carry_hands[0].carry_actor,DAT_007e1a50);",
@@ -2073,7 +2073,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 579,
+      "line": 580,
       "match": "DAT_007e1a50",
       "severity": "mild",
       "text": "((param_1->base).carry_hands[0].carry_actor,DAT_007e1a50);",
@@ -2081,7 +2081,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 584,
+      "line": 585,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1->base).carry_hands[0].carry_actor = (CDemonActor *)0x0;",
@@ -2089,7 +2089,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 585,
+      "line": 586,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->light_radius = 0.0;",
@@ -2097,7 +2097,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 590,
+      "line": 591,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->target_actor != (CDemonActor *)0x0) && (local_20 == 3)) {",
@@ -2105,7 +2105,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 591,
+      "line": 592,
       "match": "param_1",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_removeItem_FUN_004dbaa0(apCStack_60[2],param_1->target_actor,0);",
@@ -2113,7 +2113,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 593,
+      "line": 594,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x01D81080,param_1->target_actor);",
@@ -2121,23 +2121,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 594,
+      "line": 596,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004319d0(param_1,1,param_1->target_actor,0,0);",
+      "text": "(&param_1->base,1,(int)param_1->target_actor,0,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 594,
+      "line": 596,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004319d0(param_1,1,param_1->target_actor,0,0);",
+      "text": "(&param_1->base,1,(int)param_1->target_actor,0,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 595,
+      "line": 597,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = core_actor_cpp_isOfClass_FUN_0040c790(param_1->target_actor,\"CTrap\");",
@@ -2145,7 +2145,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 598,
+      "line": 600,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->action_pending != 0) {",
@@ -2153,7 +2153,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 600,
+      "line": 602,
       "match": "param_1",
       "severity": "mild",
       "text": "(g_CEditorToolsPtr,\"actionPending = %d\\nprye.cpp line %d\",param_1->action_pending",
@@ -2161,7 +2161,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 603,
+      "line": 605,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->action_pending = 2;",
@@ -2169,7 +2169,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 607,
+      "line": 609,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->action_pending = 6;",
@@ -2177,7 +2177,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 609,
+      "line": 611,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->target_actor = (CDemonActor *)0x0;",
@@ -2185,7 +2185,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 611,
+      "line": 613,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->action_pending == 7) && ((local_20 == 0 || (local_20 == 8)))) {",
@@ -2193,7 +2193,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 612,
+      "line": 614,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->action_pending = 0;",
@@ -2201,7 +2201,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 614,
+      "line": 616,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_00433ae0(&param_1->base,local_1c);",
@@ -2256,6 +2256,14 @@
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 562,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "(&param_1->base,0,(int)pCVar4,0,0);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 253,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -2289,7 +2297,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 569,
+      "line": 570,
       "match": "pCVar11 = (T *)&pCVar11->FIELD",
       "severity": "moderate",
       "text": "pCVar11 = (CInventory *)&pCVar11->owner;",

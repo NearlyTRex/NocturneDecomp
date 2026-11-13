@@ -1,0 +1,167 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 101,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 16,
+    "suspect_count": 6,
+    "suspect_types": [
+      "concat_reconstruction",
+      "fnstsw_flag_artifact",
+      "nan_function_artifact",
+      "nonstandard_int",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 45
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004eeeb0",
+    "address_range": [
+      [
+        "004eeeb0",
+        "004eeef0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_getBehindClipFlag_FUN_004eeeb0",
+    "signature": "int __cdecl engine_mini3d_cpp_getBehindClipFlag_FUN_004eeeb0(CVector3f *point)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d76cfc",
+      "name": "DAT_01d76cfc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.423076923076923,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CBRANCH": 1,
+      "COPY": 87,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 1,
+      "INT_ADD": 13,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 1,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 12,
+      "POPCOUNT": 4,
+      "RETURN": 2
+    },
+    "pcode_op_count": 193
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f4990",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005136e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "point",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 8,
+      "match": "uint3",
+      "severity": "mild",
+      "text": "uint3 uVar2;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 13,
+      "match": "CONCAT22((short)((uint)_DAT_01d76cfc >> 0x10",
+      "severity": "severe",
+      "text": "uVar2 = (uint3)(CONCAT22((short)((uint)_DAT_01d76cfc >> 0x10),",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 13,
+      "match": "uint3",
+      "severity": "mild",
+      "text": "uVar2 = (uint3)(CONCAT22((short)((uint)_DAT_01d76cfc >> 0x10),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "NAN() function call (FNSTSW comparison artifact)",
+      "line": 14,
+      "match": "NAN(",
+      "severity": "severe",
+      "text": "(ushort)(0.0 < fVar1) << 8 | (ushort)NAN(fVar1) << 10 |",
+      "type": "nan_function_artifact"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 17,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "return CONCAT31(uVar2,0x10);",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

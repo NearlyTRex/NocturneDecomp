@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 76,
+    "complexity_score": 75,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 11,
+    "pseudocode_lines": 10,
     "suspect_count": 5,
     "suspect_types": [
       "extra_output",
       "negative_offset",
       "pointer_truncation"
     ],
-    "total_lines": 25
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -32,9 +32,9 @@
         "004a8673"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fldnotes.cpp_SPageResourceBitmap_ctor_FUN_004a8650",
-    "signature": "SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_ctor_FUN_004a8650(SPageResourceBitmap *this_ptr)"
+    "signature": "SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctor_FUN_004a8650(SPageResourceBitmap *this_ptr)"
   },
   "function_calls": [
     {
@@ -63,12 +63,10 @@
         "call_addr": "004a87b1",
         "call_type": "direct",
         "caller": "core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004a87a0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
@@ -76,7 +74,7 @@
     "confidence": "medium",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 2,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -134,7 +132,7 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
+      "line": 5,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "int extraout_EAX;",
@@ -142,7 +140,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 9,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "pCVar1 = engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d2e0((CAlphaBitmap *)(extraout_EAX + 0x18))",
@@ -150,7 +148,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 11,
       "match": "pCVar1[-1].",
       "severity": "mild",
       "text": "pCVar1[-1].height = (int)&g_SPageResourceBitmapVTable;",
@@ -158,7 +156,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 14,
+      "line": 12,
       "match": "pCVar1[-2].",
       "severity": "mild",
       "text": "return (SPageResourceBitmap *)&pCVar1[-2].height;",
@@ -166,7 +164,7 @@
     },
     {
       "description": "Pointer value `&g_SPageResourceBitmapVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 13,
+      "line": 11,
       "match": "(int)&g_SPageResourceBitmapVTable",
       "severity": "moderate",
       "text": "pCVar1[-1].height = (int)&g_SPageResourceBitmapVTable;",

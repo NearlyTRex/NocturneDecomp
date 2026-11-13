@@ -1,14 +1,12 @@
 // Name: support_codec.cpp_CAsciiArmor_ctor_FUN_004414f0
 // Address: 004414f0
 // Address Range: [[004414f0, 00441503]]
-// Convention: unknown
-// Signature: CAsciiArmor * support_codec_cpp_CAsciiArmor_ctor_FUN_004414f0(CAsciiArmor *this_ptr)
+// Convention: __cdecl
+// Signature: CAsciiArmor * __cdecl support_codec_cpp_CAsciiArmor_ctor_FUN_004414f0(CAsciiArmor *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAsciiArmor * support_codec_cpp_CAsciiArmor_ctor_FUN_004414f0(CAsciiArmor *this_ptr)
+CAsciiArmor * __cdecl support_codec_cpp_CAsciiArmor_ctor_FUN_004414f0(CAsciiArmor *this_ptr)
 
 {
   CAsciiArmor *pCVar1;

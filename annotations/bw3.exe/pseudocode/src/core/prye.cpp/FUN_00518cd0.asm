@@ -1250,8 +1250,8 @@ section .text
         ;   XREF to: 0051f360 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_updateWeaponPosition_FUN_0051f360(CPrye * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 00519c6d
     PUSH EBX                            ; 00519c70
-    CALL core_prye.cpp_FUN_00523800     ; 00519c71
-        ;   XREF to: 00523800 (UNCONDITIONAL_CALL)  ; undefined core_prye.cpp_FUN_00523800()
+    CALL core_prye.cpp_CPrye_aimLeftPistol_FUN_00523800 ; 00519c71
+        ;   XREF to: 00523800 (UNCONDITIONAL_CALL)  ; void core_prye.cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye * this_ptr)
     ADD ESP,0x4                         ; 00519c76
     PUSH EBX                            ; 00519c79
     CALL core_prye.cpp_FUN_0051c1c0     ; 00519c7a

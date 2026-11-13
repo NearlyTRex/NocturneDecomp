@@ -3248,8 +3248,8 @@ section .text
     PUSH EDI                            ; 005464a7
     MOV EAX,[0x0061f650]                ; 005464a8 | DAT_0061f650
     PUSH EAX                            ; 005464ad | DAT_01d2c900
-    CALL core_mission.cpp_FUN_0051b500  ; 005464ae
-        ;   XREF to: 0051b500 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b500()
+    CALL core_mission.cpp_CDemonMission_changeSetName_FUN_0051b500 ; 005464ae
+        ;   XREF to: 0051b500 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_changeSetName_FUN_0051b500(CDemonMission * this_ptr, int param_2, char * param_3)
     ADD ESP,0xc                         ; 005464b3
     JMP 0x0054450b                      ; 005464b6
         ;   XREF to: 0054450b (UNCONDITIONAL_JUMP)  ; LAB_0054450b
@@ -5406,7 +5406,7 @@ section .text
     MOV EDI,dword ptr [0x0061d418]      ; 00547f24 | g_CFieldNotesPtr
     PUSH EDI                            ; 00547f2a | g_CFieldNotesInstance
     CALL core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 ; 00547f2b
-        ;   XREF to: 004bcba0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes * this_ptr, char * param_2, char * param_3)
+        ;   XREF to: 004bcba0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes * this_ptr, char * file_name, char * error_text)
     ADD ESP,0xc                         ; 00547f30
     TEST EAX,EAX                        ; 00547f33
     JNZ 0x0054450b                      ; 00547f35
@@ -5420,7 +5420,7 @@ section .text
     MOV ECX,dword ptr [0x0061d418]      ; 00547f49 | g_CFieldNotesPtr
     PUSH ECX                            ; 00547f4f | g_CFieldNotesInstance
     CALL core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 ; 00547f50
-        ;   XREF to: 004bcba0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes * this_ptr, char * param_2, char * param_3)
+        ;   XREF to: 004bcba0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes * this_ptr, char * file_name, char * error_text)
     ADD ESP,0xc                         ; 00547f55
     JMP 0x0054450b                      ; 00547f58
         ;   XREF to: 0054450b (UNCONDITIONAL_JUMP)  ; LAB_0054450b
@@ -7252,8 +7252,8 @@ section .text
     PUSH EAX                            ; 00549598
     MOV EDX,dword ptr [0x0061d418]      ; 00549599 | g_CFieldNotesPtr
     PUSH EDX                            ; 0054959f | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004be0b0 ; 005495a0
-        ;   XREF to: 004be0b0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004be0b0()
+    CALL core_fldnotes.cpp_CFieldNotes_setImageSuffix_FUN_004be0b0 ; 005495a0
+        ;   XREF to: 004be0b0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_setImageSuffix_FUN_004be0b0(CFieldNotes * this_ptr, char * suffix)
     ADD ESP,0x8                         ; 005495a5
     JMP 0x0054450b                      ; 005495a8
         ;   XREF to: 0054450b (UNCONDITIONAL_JUMP)  ; LAB_0054450b

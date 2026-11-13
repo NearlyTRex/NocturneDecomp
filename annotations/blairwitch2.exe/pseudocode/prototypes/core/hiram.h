@@ -7,7 +7,7 @@
 
 // Original: core_hiram.cpp_staticInit_FUN_004d0ed0
 // Address: 004d0ed0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hiram.cpp_factoryFuncHiram_FUN_004d0f00
 // Address: 004d0f00
@@ -15,7 +15,7 @@ CHiram * __cdecl factoryFuncHiram(void);
 
 // Original: core_hiram.cpp_CHiram_getActorType_FUN_004d0f20
 // Address: 004d0f20
-CDemonActorType * CHiram::getActorType(CHiram *this_ptr);
+CDemonActorType * __cdecl CHiram::getActorType(CHiram *this_ptr);
 
 // Original: core_hiram.cpp_CHiram_ctor_FUN_004d0f30
 // Address: 004d0f30
@@ -23,7 +23,7 @@ CHiram * __cdecl CHiram::ctor(CHiram *this_ptr);
 
 // Original: core_hiram.cpp_CHiram_dtor_FUN_004d0f90
 // Address: 004d0f90
-CHiram * CHiram::dtor(CHiram *this_ptr,uint flags);
+CHiram * __cdecl CHiram::dtor(CHiram *this_ptr,uint flags);
 
 // Original: core_hiram.cpp_CHiram_setup_FUN_004d1050
 // Address: 004d1050
@@ -39,4 +39,4 @@ void __cdecl CHiram::archive(CHiram *this_ptr);
 
 // Original: core_hiram.cpp_CNPC_dtor_FUN_004d11c0
 // Address: 004d11c0
-CNPC * CNPC::dtor(CNPC *this_ptr,uint flags);
+CNPC * __cdecl CNPC::dtor(CNPC *this_ptr,uint flags);

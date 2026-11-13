@@ -6,8 +6,8 @@
 ;
 ; XREF[4]:
 ;   core_flashlit.cpp_FUN_004a7d70 at 004a7e97
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004ac3cc
 ;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004ac900 at 004aceac
-;   core_fldnotes.cpp_FUN_004abe00 at 004ac3cc
 ;   core_fldnotes.cpp_SNotesMap_load_FUN_004a9f30 at 004a9fe2
 ;
 ; Called Functions:

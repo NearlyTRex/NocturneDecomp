@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
-;   engine_mini3d.cpp_FUN_004edaf0
+;   engine_mini3d.cpp_setAlpha_FUN_004edaf0
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     FMUL float ptr [0x005bcd65]         ; 0047b9fa | DAT_005bcd65
     SUB ESP,0x4                         ; 0047ba00
     FSTP float ptr [ESP]                ; 0047ba03
-    CALL engine_mini3d.cpp_FUN_004edaf0 ; 0047ba06
-        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edaf0()
+    CALL engine_mini3d.cpp_setAlpha_FUN_004edaf0 ; 0047ba06
+        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004edaf0(float alpha)
     ADD ESP,0x4                         ; 0047ba0b
     ADD ESP,0x4                         ; 0047ba0e
     RET                                 ; 0047ba11

@@ -1,12 +1,12 @@
 // Name: core_hero.cpp_staticInit_FUN_004ce000
 // Address: 004ce000
 // Address Range: [[004ce000, 004ce043]]
-// Convention: unknown
-// Signature: void core_hero_cpp_staticInit_FUN_004ce000(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hero_cpp_staticInit_FUN_004ce000(void)
 
 #include "nocturne.h"
 
-void core_hero_cpp_staticInit_FUN_004ce000(void)
+void __cdecl core_hero_cpp_staticInit_FUN_004ce000(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

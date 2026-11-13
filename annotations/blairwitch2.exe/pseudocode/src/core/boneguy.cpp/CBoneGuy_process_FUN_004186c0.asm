@@ -33,6 +33,7 @@
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00419520
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_00424430
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_004244b0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
@@ -40,7 +41,6 @@
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
 ;   core_charactr.cpp_FUN_00423a10
 ;   core_charactr.cpp_FUN_00423a60
-;   core_charactr.cpp_FUN_00428b10
 ;   ... and 24 more
 ;
 ; *****************************************************************************
@@ -339,8 +339,8 @@ section .text
     MOV EDX,dword ptr [0x00618170]      ; 004189e2 | DAT_00618170
     PUSH EDX                            ; 004189e8 | DAT_01d182f0
     ADD ESI,0x48                        ; 004189e9
-    CALL core_mission.cpp_FUN_004fc7b0  ; 004189ec
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fc7b0()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 004189ec
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     MOV dword ptr [ESI + 0x10b74],0x0   ; 004189f1
     INC EDI                             ; 004189fb
     MOV ECX,dword ptr [EBX + 0x10b74]   ; 004189fc
@@ -413,8 +413,8 @@ section .text
     PUSH 0x1                            ; 00418aba
     PUSH EBX                            ; 00418abc
     MOV dword ptr [EBX + 0x10b04],0x0   ; 00418abd
-    CALL core_charactr.cpp_FUN_00428b10 ; 00418ac7
-        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428b10()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10 ; 00418ac7
+        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 00418acc
     JMP 0x00418a72                      ; 00418acf
         ;   XREF to: 00418a72 (UNCONDITIONAL_JUMP)  ; LAB_00418a72

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 130,
+    "complexity_score": 14,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 11,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 55
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
   },
   "cross_references": [
     {
@@ -32,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_SNotesMap_revealPixel_FUN_004bc690",
-    "signature": "void __cdecl core_fldnotes_cpp_SNotesMap_revealPixel_FUN_004bc690(SNotesMap *this_ptr,int param_2,int param_3,int param_4)"
+    "signature": "void __cdecl core_fldnotes_cpp_SNotesMap_revealPixel_FUN_004bc690(SNotesMap *this_ptr,int x,int y,int alpha)"
   },
   "function_calls": [],
   "globals": [],
@@ -114,115 +112,26 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "x",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "y",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "alpha",
         "offset": 16,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fldnotes_cpp_SNotesMap_revealPixel_FUN_004bc690(SNotesMap *this_ptr,int param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_fldnotes_cpp_SNotesMap_revealPixel_FUN_004bc690(SNotesMap *this_ptr,int param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_fldnotes_cpp_SNotesMap_revealPixel_FUN_004bc690(SNotesMap *this_ptr,int param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((-1 < param_2) && (-1 < param_3)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((((-1 < param_2) && (-1 < param_3)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(iVar1 = (this_ptr->reveal_mask).width, param_2 < iVar1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "((param_3 < (this_ptr->reveal_mask).height &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(pbVar2 = (byte *)((this_ptr->reveal_mask).opa + param_2 + param_3 * iVar1),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(pbVar2 = (byte *)((this_ptr->reveal_mask).opa + param_2 + param_3 * iVar1),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(int)(uint)*pbVar2 < param_4)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*pbVar2 = (byte)param_4;",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

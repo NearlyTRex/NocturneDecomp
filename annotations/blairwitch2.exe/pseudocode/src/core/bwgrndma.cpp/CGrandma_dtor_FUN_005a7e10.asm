@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CGrandma * core_bwgrndma_cpp_CGrandma_dtor_FUN_005a7e10(CGrandma *this_ptr,uint flags)
+; CGrandma * __cdecl core_bwgrndma_cpp_CGrandma_dtor_FUN_005a7e10(CGrandma *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGrandma *       Stack[0x4]:4   this_ptr

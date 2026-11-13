@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CEnemy * core_armour_cpp_CEnemy_dtor_FUN_0040f1c0(CEnemy *this_ptr,uint flags)
+; CEnemy * __cdecl core_armour_cpp_CEnemy_dtor_FUN_0040f1c0(CEnemy *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CEnemy *         Stack[0x4]:4   this_ptr

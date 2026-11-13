@@ -1,14 +1,12 @@
 // Name: core_platfrm.cpp_CPlatform_ctor_FUN_005110e0
 // Address: 005110e0
 // Address Range: [[005110e0, 005112a2]]
-// Convention: unknown
-// Signature: CPlatform * core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)
+// Convention: __cdecl
+// Signature: CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CPlatform * core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)
+CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)
 
 {
   CCourse *pCVar1;

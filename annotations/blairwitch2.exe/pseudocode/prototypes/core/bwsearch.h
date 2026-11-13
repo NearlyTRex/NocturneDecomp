@@ -7,19 +7,19 @@
 
 // Original: core_bwsearch.cpp_staticInit_FUN_005a8c90
 // Address: 005a8c90
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_bwsearch.cpp_factoryFuncSearchParty_FUN_005a8cc0
 // Address: 005a8cc0
-void factoryFuncSearchParty(void);
+CSearchParty * __cdecl factoryFuncSearchParty(void);
 
 // Original: core_bwsearch.cpp_CSearchParty_getActorType_FUN_005a8ce0
 // Address: 005a8ce0
-CDemonActorType * CSearchParty::getActorType(CSearchParty *this_ptr);
+CDemonActorType * __cdecl CSearchParty::getActorType(CSearchParty *this_ptr);
 
 // Original: core_bwsearch.cpp_CSearchParty_ctor_FUN_005a8cf0
 // Address: 005a8cf0
-CSearchParty * CSearchParty::ctor(CSearchParty *this_ptr);
+CSearchParty * __cdecl CSearchParty::ctor(CSearchParty *this_ptr);
 
 // Original: core_bwsearch.cpp_CSearchParty_setup_FUN_005a8da0
 // Address: 005a8da0
@@ -55,4 +55,4 @@ void __cdecl CSearchParty::archive(CSearchParty *this_ptr);
 
 // Original: core_bwsearch.cpp_CSearchParty_dtor_FUN_005a8e80
 // Address: 005a8e80
-CSearchParty * CSearchParty::dtor(CSearchParty *this_ptr,uint flags);
+CSearchParty * __cdecl CSearchParty::dtor(CSearchParty *this_ptr,uint flags);

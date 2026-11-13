@@ -1,20 +1,20 @@
 // Name: core_smiley.cpp_factoryFuncSmiley_FUN_005497a0
 // Address: 005497a0
 // Address Range: [[005497a0, 005497bb]]
-// Convention: unknown
-// Signature: void core_smiley_cpp_factoryFuncSmiley_FUN_005497a0(void)
+// Convention: __cdecl
+// Signature: CSmiley * __cdecl core_smiley_cpp_factoryFuncSmiley_FUN_005497a0(void)
 
 #include "nocturne.h"
 
-void core_smiley_cpp_factoryFuncSmiley_FUN_005497a0(void)
+CSmiley * __cdecl core_smiley_cpp_factoryFuncSmiley_FUN_005497a0(void)
 
 {
-  CSmiley *this_ptr;
+  CSmiley *pCVar1;
   
-  this_ptr = (CSmiley *)operator_new(0x10b3c);
-  if (this_ptr == (CSmiley *)0x0) {
-    return;
+  pCVar1 = (CSmiley *)operator_new(0x10b3c);
+  if (pCVar1 == (CSmiley *)0x0) {
+    return (CSmiley *)0x0;
   }
-  core_smiley_cpp_CSmiley_ctor_FUN_005497d0(this_ptr);
-  return;
+  pCVar1 = core_smiley_cpp_CSmiley_ctor_FUN_005497d0(pCVar1);
+  return pCVar1;
 }

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1712,
-    "complexity_score": 2060,
+    "complexity_score": 2061,
     "cross_reference_count": 8,
     "function_call_count": 22,
     "global_count": 58,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 840,
+    "pseudocode_lines": 841,
     "suspect_count": 116,
     "suspect_types": [
       "derived_field_index_pun",
@@ -23,7 +23,7 @@
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 2552
+    "total_lines": 2553
   },
   "cross_references": [
     {
@@ -149,14 +149,14 @@
       "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530"
     },
     {
+      "addr": "004f6f10",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10"
+    },
+    {
       "addr": "004f69a0",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_removeActorFromList_FUN_004f69a0"
-    },
-    {
-      "addr": "004f6f10",
-      "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6f10"
     },
     {
       "addr": "005609d0",
@@ -1175,7 +1175,7 @@
     },
     {
       "description": "Raw hex address 0x1d81080 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 836,
+      "line": 837,
       "match": "0x1d81080",
       "severity": "moderate",
       "text": "pCVar3 = 0x01D81080;",
@@ -1439,7 +1439,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 815,
+      "line": 816,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "severity": "moderate",
       "text": "*(uintptr_t *)(actor[4].actor_name + 0xc) = pCVar5[2].validation_magic;",
@@ -1447,7 +1447,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 795,
+      "line": 796,
       "match": "pCVar9 = (T *)&pCVar9->FIELD",
       "severity": "moderate",
       "text": "pCVar9 = (CInventory *)&pCVar9->owner;",
@@ -1455,7 +1455,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_18->owner`). Replace `local_18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 826,
+      "line": 827,
       "match": "local_18 = (T *)&local_18->FIELD",
       "severity": "moderate",
       "text": "local_18 = (CInventory *)&local_18->owner;",
@@ -1861,7 +1861,7 @@
     },
     {
       "description": "'(char *)&pCVar5[2].location.position.y' walks 2 x sizeof(CDemonActor) (0x158) + offsetof(location.position.y) (0x24) + 0x0 = 0x2d4, which is exactly offsetof(CAmmo, weapon_class_name). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar5)->weapon_class_name (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name, CBattery::carrier, CBoxActor::loop_wav_name also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 808,
+      "line": 809,
       "severity": "moderate",
       "text": "iVar7 = _strcmp((char *)&pCVar5[2].location.position.y,pcVar16);",
       "type": "derived_field_index_pun"

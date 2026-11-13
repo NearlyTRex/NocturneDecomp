@@ -1,15 +1,14 @@
 // Name: core_construc.cpp_CConstruct_ctor_FUN_00445820
 // Address: 00445820
 // Address Range: [[00445820, 004459b1]]
-// Convention: unknown
-// Signature: CConstruct * core_construc_cpp_CConstruct_ctor_FUN_00445820(CConstruct *this_ptr)
+// Convention: __cdecl
+// Signature: CConstruct * __cdecl core_construc_cpp_CConstruct_ctor_FUN_00445820(CConstruct *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CConstruct * core_construc_cpp_CConstruct_ctor_FUN_00445820(CConstruct *this_ptr)
+CConstruct * __cdecl core_construc_cpp_CConstruct_ctor_FUN_00445820(CConstruct *this_ptr)
 
 {
   char cVar1;

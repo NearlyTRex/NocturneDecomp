@@ -17,7 +17,7 @@ void * __cdecl cockpit_ckptutil_c_FUN_00438ef0(char *filename,void *buffer,int s
   
   if (buffer == (void *)0x0) {
     buffer = malloc(size);
-    if (buffer == (uint *)0x0) {
+    if (buffer == (void *)0x0) {
       _sprintf(local_8c,"Unable to allocate %u bytes for bitmap file (%s).");
       _DAT_01d71de0 = "..\\cockpit\\ckptutil.c";
       _DAT_01d71de4 = 0x98b;

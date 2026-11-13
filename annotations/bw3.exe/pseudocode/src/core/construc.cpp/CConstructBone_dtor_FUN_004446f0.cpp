@@ -1,14 +1,12 @@
 // Name: core_construc.cpp_CConstructBone_dtor_FUN_004446f0
 // Address: 004446f0
 // Address Range: [[004446f0, 00444774]]
-// Convention: unknown
-// Signature: CConstructBone * core_construc_cpp_CConstructBone_dtor_FUN_004446f0(CConstructBone *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CConstructBone * __cdecl core_construc_cpp_CConstructBone_dtor_FUN_004446f0(CConstructBone *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CConstructBone * core_construc_cpp_CConstructBone_dtor_FUN_004446f0(CConstructBone *this_ptr,uint flags)
+CConstructBone * __cdecl core_construc_cpp_CConstructBone_dtor_FUN_004446f0(CConstructBone *this_ptr,uint flags)
 
 {
   int iVar1;

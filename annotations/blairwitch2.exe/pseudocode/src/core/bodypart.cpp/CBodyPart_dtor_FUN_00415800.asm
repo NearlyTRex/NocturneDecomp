@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBodyPart * core_bodypart_cpp_CBodyPart_dtor_FUN_00415800(CBodyPart *this_ptr,uint flags)
+; CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00415800(CBodyPart *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr

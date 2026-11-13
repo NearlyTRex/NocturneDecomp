@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bwsearch_cpp_factoryFuncSearchParty_FUN_005a8cc0(void)
+; CSearchParty * __cdecl core_bwsearch_cpp_factoryFuncSearchParty_FUN_005a8cc0(void)
 ;
 ;
 ; Called Functions:

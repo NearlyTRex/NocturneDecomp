@@ -12,7 +12,7 @@
 ;   core_moocow.cpp_CMooCow_process_FUN_00521480 at 005214ac
 ;   core_npc.cpp_CNPC_process_FUN_005317c0 at 00531a52
 ;   core_shadowsc.cpp_CShadowsc_process_FUN_00560630 at 005606ae
-;   core_yow.cpp_FUN_005b8440 at 005b84bc
+;   core_yow.cpp_CYow_process_FUN_005b8440 at 005b84bc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_head_005d5cff

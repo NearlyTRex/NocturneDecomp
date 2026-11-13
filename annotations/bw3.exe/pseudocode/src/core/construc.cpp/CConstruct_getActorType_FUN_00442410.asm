@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_construc_cpp_CConstruct_getActorType_FUN_00442410(CConstruct *this_ptr)
+; CDemonActorType * __cdecl core_construc_cpp_CConstruct_getActorType_FUN_00442410(CConstruct *this_ptr)
 ;
 ; Parameters:
 ; CConstruct *     Stack[0x4]:4   this_ptr

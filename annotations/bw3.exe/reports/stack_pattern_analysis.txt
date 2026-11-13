@@ -7,7 +7,7 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 635 / 5701
+Functions with stack patterns: 635 / 5697
 
 Pattern type counts:
   alt_frame_pointer                430
@@ -43,8 +43,8 @@ HIGH SEVERITY - Severe decompilation impact
 MEDIUM SEVERITY - May cause decompiler artifacts
 ====================================================================================================
 
-  engine_2d.c_wrapTextToWidth_FUN_00401d8e
-    File: engine/2d.c, Suspects: 32
+  engine_2d.c_wrapTextToWidth_FUN_00401d90
+    File: engine/2d.c, Suspects: 33
     - [alt_frame_pointer] at 00401e1d: MOV EDI,ESP
 
   engine_2d.c_loadOrBuildColorMap_FUN_00402940
@@ -190,11 +190,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0041049c: AND ESP,0xfffffff8
 
   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50
-    File: core/bmppuzzl.cpp, Suspects: 40
+    File: core/bmppuzzl.cpp, Suspects: 24
     - [alt_frame_pointer] at 00412d2a: MOV EDI,ESP
 
   core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00412ee0
-    File: core/bmppuzzl.cpp, Suspects: 32
+    File: core/bmppuzzl.cpp, Suspects: 29
     - [stack_alignment] at 00412eec: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_process_FUN_00415350
@@ -239,7 +239,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00416f58: AND ESP,0xfffffff8
     - [alt_frame_pointer] at 00416f81: MOV ESI,ESP
 
-  core_boneguy.cpp_rgbToHsv_FUN_0041707c
+  core_boneguy.cpp_rgbToHsv_FUN_00417080
     File: core/boneguy.cpp, Suspects: 9
     - [stack_alignment] at 00417088: AND ESP,0xfffffff8
 
@@ -267,5 +267,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 30.5 suspects/function
-  Without stack patterns: avg 7.6 suspects/function
+  With stack patterns:    avg 29.7 suspects/function
+  Without stack patterns: avg 7.0 suspects/function

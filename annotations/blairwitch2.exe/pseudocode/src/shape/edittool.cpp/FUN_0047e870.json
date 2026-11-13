@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 710,
     "complexity_score": 557,
-    "cross_reference_count": 8,
+    "cross_reference_count": 10,
     "function_call_count": 21,
     "global_count": 22,
     "max_suspect_severity": "mild",
@@ -17,6 +17,12 @@
     "total_lines": 952
   },
   "cross_references": [
+    {
+      "addr": "004eba50",
+      "from_addr": "004ebaef",
+      "name": "core_menu.cpp_FUN_004eba50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004ebf10",
       "from_addr": "004ec9f1",
@@ -39,6 +45,12 @@
       "addr": "004831d0",
       "from_addr": "004831e1",
       "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047bf80",
+      "from_addr": "0047bfdc",
+      "name": "shape_edittool.cpp_FUN_0047bf80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -140,39 +152,39 @@
       "name": "engine_matrix.c_pushViewport_FUN_004ea410"
     },
     {
-      "addr": "004f3570",
+      "addr": "004f9390",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f3570"
-    },
-    {
-      "addr": "004f8e20",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f8e20"
-    },
-    {
-      "addr": "004f90d0",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f90d0"
+      "name": "engine_mini3d.cpp_drawHLine_FUN_004f9390"
     },
     {
       "addr": "004f9340",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f9340"
-    },
-    {
-      "addr": "004f9390",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f9390"
+      "name": "engine_mini3d.cpp_drawRect_FUN_004f9340"
     },
     {
       "addr": "004f93b0",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f93b0"
+      "name": "engine_mini3d.cpp_drawVLine_FUN_004f93b0"
+    },
+    {
+      "addr": "004f90d0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_fillRect_FUN_004f90d0"
     },
     {
       "addr": "004f2ba0",
       "is_variadic": false,
       "name": "engine_mini3d.cpp_getRenderViewport_FUN_004f2ba0"
+    },
+    {
+      "addr": "004f3570",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setAlpha_FUN_004f3570"
+    },
+    {
+      "addr": "004f8e20",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setColor_FUN_004f8e20"
     },
     {
       "addr": "004f2ac0",
@@ -320,7 +332,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 10,
     "call_sites": [
       {
         "call_addr": "0047b9d5",
@@ -430,12 +442,40 @@
         ],
         "stack_bytes": 4,
         "stack_params": 1
+      },
+      {
+        "call_addr": "004ebaef",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eba50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047bfdc",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047bf80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 2,
+    "estimated_params": 3,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -836,14 +876,14 @@
       "type": "undefined_data"
     },
     {
-      "call_site_count": 8,
+      "call_site_count": 10,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
     }
   ]

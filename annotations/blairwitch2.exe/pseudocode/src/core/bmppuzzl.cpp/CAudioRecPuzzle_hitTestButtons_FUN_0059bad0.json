@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 105,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_param"
+      "shadow_pointer_walk"
     ],
     "total_lines": 84
   },
@@ -26,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0",
-    "signature": "undefined4 __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0(CAudioRecPuzzle *this_ptr,int param_2,int param_3)"
+    "signature": "int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0(CAudioRecPuzzle *this_ptr,int x,int y)"
   },
   "function_calls": [],
   "globals": [],
@@ -96,14 +95,14 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "x",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "y",
         "offset": 12,
         "size": 4,
         "type": "int"
@@ -111,54 +110,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0(CAudioRecPuzzle *this_ptr,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_0059bad0(CAudioRecPuzzle *this_ptr,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((iVar1 <= param_2) && (param_2 <= pCVar3->buttons[0].width + iVar1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((iVar1 <= param_2) && (param_2 <= pCVar3->buttons[0].width + iVar1)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(iVar2 <= param_3)) && (param_3 <= pCVar3->buttons[0].height + iVar2)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(iVar2 <= param_3)) && (param_3 <= pCVar3->buttons[0].height + iVar2)) {",
-      "type": "unnamed_param"
-    },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 24,

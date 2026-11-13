@@ -1,0 +1,138 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 30,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 52
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055fcd0",
+    "address_range": [
+      [
+        "0055fcd0",
+        "0055fd27"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_syncChannel3WithChannel0_FUN_0055fcd0",
+    "signature": "void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0055fcd0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00556db0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_enableSfxChannel_FUN_00556db0"
+    },
+    {
+      "addr": "00556d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_00556d20"
+    },
+    {
+      "addr": "00556e30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30"
+    },
+    {
+      "addr": "00556c90",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02cf5ec8",
+      "name": "DAT_02cf5ec8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.586206896551724,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 29,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 11,
+      "INT_AND": 21,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 14,
+      "LOAD": 3,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 14
+    },
+    "pcode_op_count": 162
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055a170",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0057cba0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b2d70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0052dd90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

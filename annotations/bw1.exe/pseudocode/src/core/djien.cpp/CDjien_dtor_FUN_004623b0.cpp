@@ -1,14 +1,12 @@
 // Name: core_djien.cpp_CDjien_dtor_FUN_004623b0
 // Address: 004623b0
 // Address Range: [[004623b0, 00462434]]
-// Convention: unknown
-// Signature: CDjien * core_djien_cpp_CDjien_dtor_FUN_004623b0(CDjien *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDjien * __cdecl core_djien_cpp_CDjien_dtor_FUN_004623b0(CDjien *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDjien * core_djien_cpp_CDjien_dtor_FUN_004623b0(CDjien *this_ptr,uint flags)
+CDjien * __cdecl core_djien_cpp_CDjien_dtor_FUN_004623b0(CDjien *this_ptr,uint flags)
 
 {
   int iVar1;

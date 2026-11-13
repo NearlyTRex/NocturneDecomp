@@ -30,7 +30,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00415350(CBodyPart *this_pt
   bVar8 = 0;
   if ((this_ptr->vertex_count < 3) || (this_ptr->tri_count < 1)) {
     (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
-    core_bodypart_cpp_FUN_00414910(this_ptr,0,0);
+    core_bodypart_cpp_setCounts_FUN_00414910(this_ptr,0,0);
     pCVar2 = &(this_ptr->bounding_box).max;
     if (pCVar2 != (CVector3f *)&DAT_02cfd900) {
       pCVar2->x = _DAT_02cfd900;

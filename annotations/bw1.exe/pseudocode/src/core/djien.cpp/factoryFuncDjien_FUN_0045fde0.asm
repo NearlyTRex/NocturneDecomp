@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_djien_cpp_factoryFuncDjien_FUN_0045fde0(void)
+; CDjien * __cdecl core_djien_cpp_factoryFuncDjien_FUN_0045fde0(void)
 ;
 ;
 ; Called Functions:

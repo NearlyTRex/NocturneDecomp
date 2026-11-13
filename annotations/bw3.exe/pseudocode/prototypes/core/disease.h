@@ -7,19 +7,19 @@
 
 // Original: core_disease.cpp_staticInit_FUN_0045bf20
 // Address: 0045bf20
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_disease.cpp_factoryFuncDisease_FUN_0045bf50
 // Address: 0045bf50
-void factoryFuncDisease(void);
+CDisease * __cdecl factoryFuncDisease(void);
 
 // Original: core_disease.cpp_CDisease_getActorType_FUN_0045bf70
 // Address: 0045bf70
-CDemonActorType * CDisease::getActorType(CDisease *this_ptr);
+CDemonActorType * __cdecl CDisease::getActorType(CDisease *this_ptr);
 
 // Original: core_disease.cpp_CDisease_ctor_FUN_0045bf80
 // Address: 0045bf80
-CDisease * CDisease::ctor(CDisease *this_ptr);
+CDisease * __cdecl CDisease::ctor(CDisease *this_ptr);
 
 // Original: core_disease.cpp_CDisease_fire_FUN_0045c040
 // Address: 0045c040
@@ -31,7 +31,7 @@ void __cdecl CDisease::setup(CDisease *this_ptr);
 
 // Original: core_disease.cpp_CDisease_dtor_FUN_0045c110
 // Address: 0045c110
-CDisease * CDisease::dtor(CDisease *this_ptr,uint flags);
+CDisease * __cdecl CDisease::dtor(CDisease *this_ptr,uint flags);
 
 // Original: core_disease.cpp_FUN_0045c160
 // Address: 0045c160

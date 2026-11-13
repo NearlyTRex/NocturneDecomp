@@ -15,7 +15,7 @@ CWerewolf * __cdecl factoryFuncWerewolf(void);
 
 // Original: core_werewolf.cpp_CWerewolf_getActorType_FUN_005af2c0
 // Address: 005af2c0
-CDemonActorType * CWerewolf::getActorType(CWerewolf *this_ptr);
+CDemonActorType * __cdecl CWerewolf::getActorType(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_CWerewolf_ctor_FUN_005af2d0
 // Address: 005af2d0
@@ -67,4 +67,4 @@ void FUN_005b1850(CCharacter *param_1);
 
 // Original: core_werewolf.cpp_CWerewolf_dtor_FUN_005b1a40
 // Address: 005b1a40
-CWerewolf * CWerewolf::dtor(CWerewolf *this_ptr,uint flags);
+CWerewolf * __cdecl CWerewolf::dtor(CWerewolf *this_ptr,uint flags);

@@ -158,7 +158,7 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 00551ac8
     PUSH EAX                            ; 00551acf
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 ; 00551ad0
-        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile * this_ptr, char * directory, char * filename)
     ADD ESP,0xc                         ; 00551ad5
     TEST EAX,EAX                        ; 00551ad8
     JZ 0x00551b5f                       ; 00551ada
@@ -166,7 +166,7 @@ section .text
     LEA EAX,[ESP + 0x100]               ; 00551ae0
     PUSH EAX                            ; 00551ae7
     CALL support_trstream.cpp_CInStreamFile_tell_FUN_0057d110 ; 00551ae8
-        ;   XREF to: 0057d110 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_tell_FUN_0057d110(CInStreamFile * this_ptr)
+        ;   XREF to: 0057d110 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_tell_FUN_0057d110(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00551aed
     PUSH EBP                            ; 00551af0
     MOV dword ptr [ESP + 0x12c],EAX     ; 00551af1
@@ -183,7 +183,7 @@ section .text
     LEA EAX,[ESP + 0x100]               ; 00551b14
     PUSH EAX                            ; 00551b1b
     CALL support_trstream.cpp_CInStreamFile_close_FUN_0057d180 ; 00551b1c
-        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
+        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00551b21
     PUSH 0x0                            ; 00551b24
     LEA EAX,[ESP + 0x104]               ; 00551b26

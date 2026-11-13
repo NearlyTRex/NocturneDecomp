@@ -7,7 +7,7 @@
 
 // Original: core_inv.cpp_staticInit_FUN_004d9c00
 // Address: 004d9c00
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_inv.cpp_getItemModel_FUN_004d9db0
 // Address: 004d9db0
@@ -113,13 +113,13 @@ void __cdecl CInventory::load(CInventory *this_ptr,_FILE *file_handle);
 // Address: 004dc810
 void __cdecl CInventory::loadItems(CInventory *this_ptr);
 
-// Original: core_inv.cpp_FUN_004dc850
+// Original: core_inv.cpp_setupItems_FUN_004dc850
 // Address: 004dc850
-void FUN_004dc850(int param_1);
+void setupItems(int param_1);
 
-// Original: core_inv.cpp_FUN_004dc8c0
+// Original: core_inv.cpp_CInventory_select_FUN_004dc8c0
 // Address: 004dc8c0
-undefined4 FUN_004dc8c0(int param_1,CDemonActor *param_2);
+undefined4 __cdecl CInventory::select(CInventory *this_ptr,CDemonActor *param_2);
 
 // Original: core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0
 // Address: 004dccb0

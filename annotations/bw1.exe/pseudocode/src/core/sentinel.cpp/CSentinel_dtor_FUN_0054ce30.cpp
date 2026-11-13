@@ -1,14 +1,12 @@
 // Name: core_sentinel.cpp_CSentinel_dtor_FUN_0054ce30
 // Address: 0054ce30
 // Address Range: [[0054ce30, 0054ceb4]]
-// Convention: unknown
-// Signature: CSentinel * core_sentinel_cpp_CSentinel_dtor_FUN_0054ce30(CSentinel *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_0054ce30(CSentinel *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSentinel * core_sentinel_cpp_CSentinel_dtor_FUN_0054ce30(CSentinel *this_ptr,uint flags)
+CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_0054ce30(CSentinel *this_ptr,uint flags)
 
 {
   int iVar1;

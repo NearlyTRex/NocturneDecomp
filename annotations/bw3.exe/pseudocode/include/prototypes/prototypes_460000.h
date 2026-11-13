@@ -28,6 +28,7 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CZombieDog.h"
 #include "types/enums/ECollisionType.h"
+#include "types/enums/EDoorState.h"
 #include "types/enums/EGroundType.h"
 #include "types/enums/ETextAlignment.h"
 #include "types/funcdefs/CustomScanlineFunc.h"
@@ -83,10 +84,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580(CKeyFramedModelInstance *this_ptr);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(CKeyFramedModelInstance *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(CKeyFramedModelInstance *this_ptr,char *filename);
-CKeyFramedModel * core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_00462630(CKeyFramedModel *this_ptr,uint flags);
-void core_dog_cpp_staticInit_FUN_00462650(void);
+CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_00462630(CKeyFramedModel *this_ptr,uint flags);
+void __cdecl core_dog_cpp_staticInit_FUN_00462650(void);
 CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_004626e0(void);
-CDemonActorType * core_dog_cpp_CZombieDog_getActorType_FUN_00462700(CZombieDog *this_ptr);
+CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_00462700(CZombieDog *this_ptr);
 CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_00462710(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_setup_FUN_00462790(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,float delta_time);
@@ -95,25 +96,25 @@ void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_004634d0(CZombieDog *this
 int __cdecl core_dog_cpp_CZombieDog_getTargetPoints_FUN_004635e0(CZombieDog *this_ptr,CVector3f *out_points_array);
 void core_dog_cpp_FUN_00463650(void);
 CDemonActorType * __cdecl core_dog_cpp_CDogForest_getActorType_FUN_00463670(CDogForest *this_ptr);
-CDogForest * core_dog_cpp_CDogForest_ctor_FUN_00463680(CDogForest *this_ptr);
+CDogForest * __cdecl core_dog_cpp_CDogForest_ctor_FUN_00463680(CDogForest *this_ptr);
 void core_dog_cpp_FUN_004636e0(void);
 CDemonActorType * __cdecl core_dog_cpp_CDemonDog_getActorType_FUN_00463700(CDemonDog *this_ptr);
-CDemonDog * core_dog_cpp_CDemonDog_ctor_FUN_00463710(CDemonDog *this_ptr);
+CDemonDog * __cdecl core_dog_cpp_CDemonDog_ctor_FUN_00463710(CDemonDog *this_ptr);
 void core_dog_cpp_FUN_00463780(void);
 CDemonActorType * __cdecl core_dog_cpp_CEtherealDog_getActorType_FUN_004637a0(CEtherealDog *this_ptr);
-CEtherealDog * core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr);
-CEtherealDog * core_dog_cpp_CEtherealDog_dtor_FUN_00463810(CEtherealDog *this_ptr,uint flags);
-CDemonDog * core_dog_cpp_CDemonDog_dtor_FUN_004638a0(CDemonDog *this_ptr,uint flags);
-CDogForest * core_dog_cpp_CDogForest_dtor_FUN_00463930(CDogForest *this_ptr,uint flags);
-CZombieDog * core_dog_cpp_CZombieDog_dtor_FUN_004639c0(CZombieDog *this_ptr,uint flags);
-void core_door_cpp_staticInit_FUN_00463a50(void);
+CEtherealDog * __cdecl core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr);
+CEtherealDog * __cdecl core_dog_cpp_CEtherealDog_dtor_FUN_00463810(CEtherealDog *this_ptr,uint flags);
+CDemonDog * __cdecl core_dog_cpp_CDemonDog_dtor_FUN_004638a0(CDemonDog *this_ptr,uint flags);
+CDogForest * __cdecl core_dog_cpp_CDogForest_dtor_FUN_00463930(CDogForest *this_ptr,uint flags);
+CZombieDog * __cdecl core_dog_cpp_CZombieDog_dtor_FUN_004639c0(CZombieDog *this_ptr,uint flags);
+void __cdecl core_door_cpp_staticInit_FUN_00463a50(void);
 CDoor * __cdecl core_door_cpp_factoryFuncDoor_FUN_00463a80(void);
-CDemonActorType * core_door_cpp_CDoor_getActorType_FUN_00463aa0(CDoor *this_ptr);
-CDoor * core_door_cpp_CDoor_ctor_FUN_00463ab0(CDoor *this_ptr);
+CDemonActorType * __cdecl core_door_cpp_CDoor_getActorType_FUN_00463aa0(CDoor *this_ptr);
+CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_00463ab0(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setup_FUN_00463c90(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_onOpened_FUN_00463d10(CDoor *this_ptr);
-void core_door_cpp_FUN_00463d30(int param_1,int param_2);
-void core_door_cpp_FUN_00463d80(CDemonActor *param_1);
+void core_door_cpp_FUN_00463d30(CDoor *param_1,EDoorState param_2);
+void __cdecl core_door_cpp_CDoor_reposition_FUN_00463d80(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_process_FUN_004642f0(CDoor *this_ptr,float delta_time);
 int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_00464a60(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_renderBackground_FUN_00464b40(CDoor *this_ptr,int layer_flag);
@@ -125,7 +126,7 @@ EGroundType __cdecl core_door_cpp_CDoor_getGroundType_FUN_00465050(CDoor *this_p
 void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00465060(CDoor *this_ptr,float swing_range);
 int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00465070(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00465080(CDoor *this_ptr);
-float * core_door_cpp_FUN_004650a0(int param_1,float *param_2,undefined4 param_3);
+float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_004650a0(CDoor *this_ptr,float *param_2,undefined4 param_3);
 void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_00465330(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00465380(CDoor *this_ptr,CDemonActor *opener);
 uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00465550(CDoor *this_ptr);
@@ -162,14 +163,13 @@ CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_00466290(CDemonPart *thi
 void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004662b0(CDemonPart *this_ptr);
 void core_dpart_cpp_FUN_004663b0(int param_1);
 void core_dpart_cpp_FUN_004663f2(void);
-void core_dpart_cpp_FUN_0046640c(void);
+void core_dpart_cpp_FUN_00466410(void);
 void __cdecl core_dpart_cpp_CDemonPart_save_FUN_00466440(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00466470(CDemonPart *this_ptr);
 void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4);
-void core_dpart_cpp_FUN_00466790(void);
-void core_dpart_cpp_FUN_0046682e(int param_1);
+void core_dpart_cpp_FUN_00466830(void);
 void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00466bf0(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
-SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00466d0e(int scanline_y,SSoftwareEdge *exclude_edge);
+SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00466d10(int scanline_y,SSoftwareEdge *exclude_edge);
 void __cdecl core_dpart_cpp_FUN_00466d50(int *vertex_indices,int vertex_count);
 void __cdecl core_dpart_cpp_FUN_004673d0(CVector3i *vertex_indices,int vertex_count);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00467900(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
@@ -199,8 +199,8 @@ void cockpit_drawsurf_cpp_FUN_00469080(CDrawSurface *param_1,int param_2,int par
 void __cdecl cockpit_drawsurf_cpp_FUN_004691e0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_FUN_004693b0(CDrawSurface *this_ptr);
 undefined4 cockpit_drawsurf_cpp_FUN_004694b0(void);
-undefined4 cockpit_drawsurf_cpp_FUN_004694bc(void);
-void cockpit_drawsurf_cpp_FUN_004694cc(undefined4 param_1);
+undefined4 cockpit_drawsurf_cpp_FUN_004694c0(void);
+void cockpit_drawsurf_cpp_FUN_004694d0(void);
 void cockpit_drawsurf_cpp_FUN_004694e0(undefined4 param_1);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_004694f0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00469690(CDrawSurface *this_ptr);
@@ -229,11 +229,11 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_0046a510(CDrawSurface *this_ptr,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0046a640(CDrawSurface *this_ptr,char *text);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0046a660(CDrawSurface *this_ptr,char *format);
-int cockpit_drawsurf_cpp_FUN_0046a6bc(undefined4 param_1,int param_2);
+int cockpit_drawsurf_cpp_FUN_0046a6c0(void);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0046a700(CDrawSurface *this_ptr);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getTextWidth_FUN_0046a720(CDrawSurface *this_ptr,char *text);
 void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0046a750(CBitFont *test_font);
-void engine_drender_cpp_staticInit_FUN_0046b0d0(void);
+void __cdecl engine_drender_cpp_staticInit_FUN_0046b0d0(void);
 CDemonRenderer * __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0046b0e0(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160(CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
@@ -246,20 +246,20 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_004
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0046b8f0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0046ba70(CDemonRenderer *this_ptr,SInputFace *face,int render_flags);
-void engine_drender_cpp_FUN_0046bb8c(CDemonRenderer *param_1,int param_2);
+void engine_drender_cpp_FUN_0046bb90(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046bc20(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
-void engine_drender_cpp_FUN_0046bd7e(void);
+void engine_drender_cpp_FUN_0046bd80(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0046be60(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0046bf90(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0046c090(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
-void engine_drender_cpp_FUN_0046c16e(CDemonRenderer *param_1,int param_2);
-void engine_drender_cpp_FUN_0046c2ce(CDemonRenderer *param_1,int param_2);
+void engine_drender_cpp_FUN_0046c170(void);
+void engine_drender_cpp_FUN_0046c2d0(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046c3b0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046c5e0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
-void engine_drender_cpp_FUN_0046c94e(CDemonRenderer *param_1,int param_2);
+void engine_drender_cpp_FUN_0046c950(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ca20(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0046cb70(CDemonRenderer *this_ptr,CVector3i *origin);
 void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90(CDemonRenderer *this_ptr,CVector3f *point_ptr);
@@ -305,7 +305,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleBatch_FUN_0046d880(
 void __cdecl engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_0046d8f0(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int primitive_stride,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags);
-void engine_drender_cpp_FUN_0046de6e(int *param_1,ushort *param_2,int param_3,int param_4,uint param_5);
+void engine_drender_cpp_FUN_0046de70(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(CDemonRenderer *this_ptr,int enable_advanced_mode);
 void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_0046e160(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_0046e200(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *quad_primitive,int render_flags);
@@ -320,7 +320,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0046e7
 void __cdecl engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0046e880(CDemonRenderer *this_ptr,SCameraViewportState *output_state);
 void __cdecl core_drip_cpp_staticInit_FUN_0046e9e0(void);
 CDrip * __cdecl core_drip_cpp_factoryFuncDrip_FUN_0046ea20(void);
-CDemonActorType * core_drip_cpp_CDrip_getActorType_FUN_0046ea40(CDrip *this_ptr);
+CDemonActorType * __cdecl core_drip_cpp_CDrip_getActorType_FUN_0046ea40(CDrip *this_ptr);
 CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_0046ea50(CDrip *this_ptr);
 void __cdecl core_drip_cpp_CDrip_setup_FUN_0046eb30(CDrip *this_ptr);
 void __cdecl core_drip_cpp_CDrip_archive_FUN_0046ebc0(CDrip *this_ptr);

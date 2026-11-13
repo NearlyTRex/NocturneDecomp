@@ -47,7 +47,7 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_004244b0(CCharacte
       pCVar5 = this_ptr;
       do {
         if (pCVar5->carry_hands[0].carry_actor != (CDemonActor *)0x0) {
-          core_charactr_cpp_FUN_00428bd0(this_ptr,iVar4,0,0);
+          core_charactr_cpp_CCharacter_computePickup_FUN_00428bd0(this_ptr,iVar4,0.0,(int *)0x0);
         }
         iVar4 = iVar4 + 1;
         pCVar5 = (CCharacter *)(pCVar5->base).create_event;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_mine_cpp_CSpiritMine_getActorType_FUN_005ad3b0(CSpiritMine *this_ptr)
+; CDemonActorType * __cdecl core_mine_cpp_CSpiritMine_getActorType_FUN_005ad3b0(CSpiritMine *this_ptr)
 ;
 ; Parameters:
 ; CSpiritMine *    Stack[0x4]:4   this_ptr

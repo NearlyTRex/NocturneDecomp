@@ -32,10 +32,10 @@
 ;   core_charactr.cpp_FUN_0042d700
 ;   core_charactr.cpp_FUN_0042d750
 ;   core_charactr.cpp_FUN_00435320
+;   core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0
 ;   core_hero.cpp_CHero_tryInteract_FUN_004eb090
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240
-;   core_hero.cpp_FUN_004eb3e0
 ;   ... and 17 more
 ;
 ; *****************************************************************************
@@ -567,8 +567,8 @@ section .text
         ;   XREF to: 004f1415 (UNCONDITIONAL_JUMP)  ; LAB_004f1415
     PUSH EBX                            ; 004f144b
         ;   Label: LAB_004f144b
-    CALL core_hero.cpp_FUN_004eb7f0     ; 004f144c
-        ;   XREF to: 004eb7f0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004eb7f0()
+    CALL core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0 ; 004f144c
+        ;   XREF to: 004eb7f0 (UNCONDITIONAL_CALL)  ; undefined4 core_hero.cpp_CHero_toggleLeverNow_FUN_004eb7f0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004f1451
     JMP 0x004f12f7                      ; 004f1454
         ;   XREF to: 004f12f7 (UNCONDITIONAL_JUMP)  ; LAB_004f12f7

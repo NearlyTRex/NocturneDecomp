@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fldnotes_cpp_STextView_addText_FUN_004a8ed0(STextView *this_ptr,char *param_2)
+; int __cdecl core_fldnotes_cpp_STextView_addText_FUN_004a8ed0(STextView *this_ptr,char *text)
 ;
 ; Parameters:
 ; STextView *      Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   text
 ;
 ; XREF[3]:
 ;   core_fldnotes.cpp_SNotesEntry_layout_FUN_004a9950 at 004a9a0a
@@ -38,7 +38,7 @@ section .text
         ;   Label: LAB_004a8ee5
     PUSH EDI                            ; 004a8ee6
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a8f30 ; 004a8ee7
-        ;   XREF to: 004a8f30 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a8f30(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a8f30 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a8f30(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a8eec
     TEST EAX,EAX                        ; 004a8eef
     JL 0x004a8f05                       ; 004a8ef1
@@ -70,7 +70,7 @@ section .text
     PUSH 0x5c0e40                       ; 004a8f11 | = "ERROR: item won't fit<br>"
     PUSH EDI                            ; 004a8f16
     CALL core_fldnotes.cpp_STextView_addText_FUN_004a8ed0 ; 004a8f17
-        ;   XREF to: 004a8ed0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_STextView_addText_FUN_004a8ed0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a8ed0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_addText_FUN_004a8ed0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a8f1c
     MOV EAX,0x1                         ; 004a8f1f
     POP EDI                             ; 004a8f24

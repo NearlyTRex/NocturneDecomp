@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6417
 ;   core_mission.cpp_CDemonMission_process_FUN_004fc940 at 004fca5a
-;   core_set.cpp_FUN_0052d3be at 0052d68c
+;   core_set.cpp_FUN_0052d3c0 at 0052d68c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Initializing_scene_005e5708

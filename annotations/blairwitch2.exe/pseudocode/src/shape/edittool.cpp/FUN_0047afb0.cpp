@@ -37,15 +37,15 @@ void shape_edittool_cpp_FUN_0047afb0(CInputString *param_1,int param_2,int param
     }
     else {
       iVar3 = (_DAT_01c263a8 & 0xff) * 3;
-      engine_mini3d_cpp_FUN_004f8e20
+      engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)(byte)(&DAT_01c3583a)[iVar3] |
                  (uint)(byte)(&DAT_01c35838)[iVar3] << 0x10 |
                  (uint)(byte)(&DAT_01c35839)[iVar3] << 8);
-      engine_mini3d_cpp_FUN_004f90d0(iVar2,param_3,x2,y2);
+      engine_mini3d_cpp_fillRect_FUN_004f90d0(iVar2,param_3,x2,y2);
     }
   }
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
-  engine_mini3d_cpp_FUN_004f3570(0x3f800000);
+  engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
   uVar4 = _DAT_01c25590;
   pCVar5 = param_1;
   uVar6 = _DAT_01c263ac;
@@ -69,7 +69,7 @@ void shape_edittool_cpp_FUN_0047afb0(CInputString *param_1,int param_2,int param
     }
     else {
       iVar2 = (_DAT_01c263b0 & 0xff) * 3;
-      engine_mini3d_cpp_FUN_004f8e20
+      engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)(byte)(&DAT_01c3583a)[iVar2] |
                  (uint)(byte)(&DAT_01c35838)[iVar2] << 0x10 |
                  (uint)(byte)(&DAT_01c35839)[iVar2] << 8);

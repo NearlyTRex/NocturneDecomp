@@ -750,7 +750,7 @@ LAB_0054630a:
                                       return -1;
                                     }
                                     if (_DAT_01e810a8 == 0) {
-                                      core_mission_cpp_FUN_0051b500
+                                      core_mission_cpp_CDemonMission_changeSetName_FUN_0051b500
                                                 (0x01D2C900,local_160,local_3bac);
                                     }
                                   }
@@ -2788,8 +2788,9 @@ LAB_005494ec:
                                                             (&local_34,local_3aac,0x100);
                                                   if (pcVar16 != (char *)0x0) goto LAB_005494ec;
                                                   if (_DAT_01e810a8 == 0) {
-                                                    core_fldnotes_cpp_FUN_004be0b0
-                                                              (g_CFieldNotesPtr,local_3aac);
+                                                                                                        
+                                                  core_fldnotes_cpp_CFieldNotes_setImageSuffix_FUN_004be0b0
+                                                            (g_CFieldNotesPtr,local_3aac);
                                                   }
                                                   }
                                                   else {

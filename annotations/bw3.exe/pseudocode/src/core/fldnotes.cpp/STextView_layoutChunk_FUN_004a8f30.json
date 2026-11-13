@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 220,
-    "complexity_score": 187,
+    "complexity_score": 152,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 82,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_truncation",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 302
   },
@@ -40,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_STextView_layoutChunk_FUN_004a8f30",
-    "signature": "int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004a8f30(STextView *this_ptr,char *param_2)"
+    "signature": "int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004a8f30(STextView *this_ptr,char *text)"
   },
   "function_calls": [
     {
@@ -234,7 +233,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "text",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -242,22 +241,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int __cdecl core_fldnotes_cpp_STextView_layoutChunk_FUN_004a8f30(STextView *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar5 = param_2;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 22,
@@ -299,19 +282,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "return (int)pcVar6 - (int)param_2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer value `pcVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 84,
       "match": "(int)pcVar6",
       "severity": "moderate",
-      "text": "return (int)pcVar6 - (int)param_2;",
+      "text": "return (int)pcVar6 - (int)text;",
       "type": "pointer_truncation"
     }
   ]

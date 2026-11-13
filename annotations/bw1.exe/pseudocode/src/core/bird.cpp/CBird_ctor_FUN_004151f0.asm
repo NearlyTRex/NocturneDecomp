@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBird * core_bird_cpp_CBird_ctor_FUN_004151f0(CBird *this_ptr)
+; CBird * __cdecl core_bird_cpp_CBird_ctor_FUN_004151f0(CBird *this_ptr)
 ;
 ; Parameters:
 ; CBird *          Stack[0x4]:4   this_ptr

@@ -1,14 +1,12 @@
 // Name: core_dracbrid.cpp_CDraculaBride_dtor_FUN_0047e180
 // Address: 0047e180
 // Address Range: [[0047e180, 0047e204]]
-// Convention: unknown
-// Signature: CDraculaBride * core_dracbrid_cpp_CDraculaBride_dtor_FUN_0047e180(CDraculaBride *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_0047e180(CDraculaBride *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDraculaBride * core_dracbrid_cpp_CDraculaBride_dtor_FUN_0047e180(CDraculaBride *this_ptr,uint flags)
+CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_0047e180(CDraculaBride *this_ptr,uint flags)
 
 {
   int iVar1;

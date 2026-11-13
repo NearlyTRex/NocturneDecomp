@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_demnfolk.cpp_FUN_00455080 at 00456864
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00456864
 ;
 ; Referenced Globals:
 ;   undefined4 s_s_can_t_pick_up_s_sombod_005ba741+1

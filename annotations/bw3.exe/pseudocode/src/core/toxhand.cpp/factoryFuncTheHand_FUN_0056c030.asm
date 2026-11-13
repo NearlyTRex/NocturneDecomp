@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_toxhand_cpp_factoryFuncTheHand_FUN_0056c030(void)
+; CTheHand * __cdecl core_toxhand_cpp_factoryFuncTheHand_FUN_0056c030(void)
 ;
 ;
 ; Called Functions:

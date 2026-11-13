@@ -1,12 +1,12 @@
 // Name: core_inv.cpp_staticInit_FUN_004d9c00
 // Address: 004d9c00
 // Address Range: [[004d9c00, 004d9da0]]
-// Convention: unknown
-// Signature: void core_inv_cpp_staticInit_FUN_004d9c00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_inv_cpp_staticInit_FUN_004d9c00(void)
 
 #include "nocturne.h"
 
-void core_inv_cpp_staticInit_FUN_004d9c00(void)
+void __cdecl core_inv_cpp_staticInit_FUN_004d9c00(void)
 
 {
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420(&CAlphaBitmap_01cf01b0);

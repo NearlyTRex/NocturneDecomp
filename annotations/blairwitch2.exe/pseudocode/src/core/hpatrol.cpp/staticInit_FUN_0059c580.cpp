@@ -1,12 +1,12 @@
 // Name: core_hpatrol.cpp_staticInit_FUN_0059c580
 // Address: 0059c580
 // Address Range: [[0059c580, 0059c5a3]]
-// Convention: unknown
-// Signature: void core_hpatrol_cpp_staticInit_FUN_0059c580(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hpatrol_cpp_staticInit_FUN_0059c580(void)
 
 #include "nocturne.h"
 
-void core_hpatrol_cpp_staticInit_FUN_0059c580(void)
+void __cdecl core_hpatrol_cpp_staticInit_FUN_0059c580(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

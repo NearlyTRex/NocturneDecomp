@@ -1,14 +1,12 @@
 // Name: core_thehand.cpp_CTheHand_ctor_FUN_00599070
 // Address: 00599070
 // Address Range: [[00599070, 005990c5]]
-// Convention: unknown
-// Signature: CTheHand * core_thehand_cpp_CTheHand_ctor_FUN_00599070(CTheHand *this_ptr)
+// Convention: __cdecl
+// Signature: CTheHand * __cdecl core_thehand_cpp_CTheHand_ctor_FUN_00599070(CTheHand *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CTheHand * core_thehand_cpp_CTheHand_ctor_FUN_00599070(CTheHand *this_ptr)
+CTheHand * __cdecl core_thehand_cpp_CTheHand_ctor_FUN_00599070(CTheHand *this_ptr)
 
 {
   CTheHand *pCVar1;

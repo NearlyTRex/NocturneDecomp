@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 11,
     "complexity_score": 23,
-    "cross_reference_count": 5,
+    "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
@@ -25,6 +25,12 @@
       "addr": "004b8250",
       "from_addr": "004b82ca",
       "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eba50",
+      "from_addr": "004ebada",
+      "name": "core_menu.cpp_FUN_004eba50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,7 +92,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 6,
+    "call_site_count": 7,
     "call_sites": [
       {
         "call_addr": "004849a7",
@@ -147,6 +153,17 @@
         "call_addr": "004ec9d9",
         "call_type": "direct",
         "caller": "core_menu.cpp_FUN_004ebf10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ebada",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eba50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

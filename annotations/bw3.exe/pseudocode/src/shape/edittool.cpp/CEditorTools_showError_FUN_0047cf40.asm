@@ -19,7 +19,7 @@
 ;   core_game.cpp_FUN_004bda10 at 004bdf0e
 ;   core_game.cpp_FUN_004bdfb0 at 004be4d1
 ;   core_game.cpp_FUN_004bec20 at 004bf035
-;   core_hero.cpp_FUN_004d4520 at 004d4567
+;   core_hero.cpp_CHero_doHeroAction_FUN_004d4520 at 004d4567
 ;   core_menu.cpp_FUN_004eae80 at 004ec6d5
 ;   ... and 17 more
 ;

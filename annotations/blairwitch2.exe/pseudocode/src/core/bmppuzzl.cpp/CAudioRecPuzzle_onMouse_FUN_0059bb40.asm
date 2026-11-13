@@ -1,10 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_onMouse_FUN_0059bb40(CAudioRecPuzzle *this_ptr)
+; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_onMouse_FUN_0059bb40(CAudioRecPuzzle *this_ptr,int x,int y,int button,int pressed)
 ;
 ; Parameters:
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   button
+; int              Stack[0x14]:4   pressed
 ;
 ; *****************************************************************************
 

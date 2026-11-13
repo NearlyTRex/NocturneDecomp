@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00415fc0(CAudioRecPuzzle *this_ptr,int param_2)
+; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00415fc0(CAudioRecPuzzle *this_ptr,int activate)
 ;
 ; Parameters:
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   activate
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4d0

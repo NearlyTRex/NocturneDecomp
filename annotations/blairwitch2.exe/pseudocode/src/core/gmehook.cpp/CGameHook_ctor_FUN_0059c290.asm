@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CGameHook * core_gmehook_cpp_CGameHook_ctor_FUN_0059c290(CGameHook *this_ptr)
+; CGameHook * __cdecl core_gmehook_cpp_CGameHook_ctor_FUN_0059c290(CGameHook *this_ptr)
 ;
 ; Parameters:
 ; CGameHook *      Stack[0x4]:4   this_ptr

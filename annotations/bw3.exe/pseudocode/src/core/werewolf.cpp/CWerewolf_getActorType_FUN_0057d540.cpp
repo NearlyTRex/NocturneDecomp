@@ -1,14 +1,12 @@
 // Name: core_werewolf.cpp_CWerewolf_getActorType_FUN_0057d540
 // Address: 0057d540
 // Address Range: [[0057d540, 0057d545]]
-// Convention: unknown
-// Signature: CDemonActorType * core_werewolf_cpp_CWerewolf_getActorType_FUN_0057d540(CWerewolf *this_ptr)
+// Convention: __cdecl
+// Signature: CDemonActorType * __cdecl core_werewolf_cpp_CWerewolf_getActorType_FUN_0057d540(CWerewolf *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDemonActorType * core_werewolf_cpp_CWerewolf_getActorType_FUN_0057d540(CWerewolf *this_ptr)
+CDemonActorType * __cdecl core_werewolf_cpp_CWerewolf_getActorType_FUN_0057d540(CWerewolf *this_ptr)
 
 {
   return &g_CWerewolfClassInfo;

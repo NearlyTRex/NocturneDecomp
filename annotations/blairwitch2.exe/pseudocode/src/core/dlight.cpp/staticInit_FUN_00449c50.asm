@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dlight_cpp_staticInit_FUN_00449c50(void)
+; void __cdecl core_dlight_cpp_staticInit_FUN_00449c50(void)
 ;
 ;
 ; Referenced Globals:

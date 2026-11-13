@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPackedBitmap * cockpit_pkbitmap_cpp_FUN_00517400(int *param_1,char *param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6)
+; CPackedBitmap * cockpit_pkbitmap_cpp_FUN_00517400(CPackedBitmapSet *param_1,CPackedBitmap *param_2,undefined4 param_3,int param_4,int param_5,int param_6,char *param_7,int param_8)
 ;
 ;
 ; Referenced Globals:
@@ -50,7 +50,7 @@ section .text
     PUSH EBX                            ; 0051744d
     PUSH EDI                            ; 0051744e
     CALL cockpit_pkbitmap.cpp_parsePBGFile_FUN_00517280 ; 0051744f
-        ;   XREF to: 00517280 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_parsePBGFile_FUN_00517280()
+        ;   XREF to: 00517280 (UNCONDITIONAL_CALL)  ; CPackedBitmap * cockpit_pkbitmap.cpp_parsePBGFile_FUN_00517280(CPackedBitmapSet * bitmap_set_ptr, _FILE * file_handle, int frames_per_bitmap, int skip_data_load, ...)
     ADD ESP,0x14                        ; 00517454
     PUSH EBX                            ; 00517457
     MOV ESI,EAX                         ; 00517458

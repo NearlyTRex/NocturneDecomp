@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDisease * core_disease_cpp_CDisease_dtor_FUN_0045c110(CDisease *this_ptr,uint flags)
+; CDisease * __cdecl core_disease_cpp_CDisease_dtor_FUN_0045c110(CDisease *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDisease *       Stack[0x4]:4   this_ptr

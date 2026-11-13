@@ -1,12 +1,12 @@
 // Name: core_darkwolf.cpp_staticInit_FUN_00598700
 // Address: 00598700
 // Address Range: [[00598700, 00598746]]
-// Convention: unknown
-// Signature: void core_darkwolf_cpp_staticInit_FUN_00598700(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_darkwolf_cpp_staticInit_FUN_00598700(void)
 
 #include "nocturne.h"
 
-void core_darkwolf_cpp_staticInit_FUN_00598700(void)
+void __cdecl core_darkwolf_cpp_staticInit_FUN_00598700(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

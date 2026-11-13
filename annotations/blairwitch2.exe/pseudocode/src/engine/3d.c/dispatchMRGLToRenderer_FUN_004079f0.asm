@@ -57,7 +57,7 @@ section .text
         ;   XREF to: 00407bd2 (CONDITIONAL_JUMP)  ; LAB_00407bd2
     PUSH EDI                            ; 00407a2c
     CALL engine_3d.c_transformAndBufferVertices_FUN_00403890 ; 00407a2d
-        ;   XREF to: 00403890 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_transformAndBufferVertices_FUN_00403890()
+        ;   XREF to: 00403890 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00403890(SMRGLHeaderExtended * mrgl)
     MOV ESI,dword ptr [0x006141e0]      ; 00407a32 | DAT_006141e0
     ADD ESP,0x4                         ; 00407a38
     TEST ESI,ESI                        ; 00407a3b
@@ -103,7 +103,7 @@ section .text
     PUSH EDI                            ; 00407a9d
         ;   Label: LAB_00407a9d
     CALL engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0 ; 00407a9e
-        ;   XREF to: 004078b0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0()
+        ;   XREF to: 004078b0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0(SMRGLHeaderExtended * chain)
     ADD ESP,0x4                         ; 00407aa3
     ADD ESP,0x100                       ; 00407aa6
     POP EBP                             ; 00407aac

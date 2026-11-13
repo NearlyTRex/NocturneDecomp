@@ -140,7 +140,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004642f0(CDoor *this_ptr,float delt
   }
   core_event_cpp_CEventList_executeCommands_FUN_0048c150(0x01C6E360,commands);
 LAB_004643c7:
-  core_door_cpp_FUN_00463d80(this_ptr);
+  core_door_cpp_CDoor_reposition_FUN_00463d80(this_ptr);
   if ((this_ptr->param != fStack_58) && (this_ptr->door_type != DOOR_TYPE_TILT)) {
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_fffffef8);
     pCStack_14 = &(this_ptr->base).location;
@@ -224,7 +224,7 @@ LAB_00464830:
       (this_ptr->base).location.position.y = fStack_80;
       (this_ptr->base).location.position.z = fStack_7c;
       this_ptr->param = fStack_50;
-      core_door_cpp_FUN_00463d80(this_ptr);
+      core_door_cpp_CDoor_reposition_FUN_00463d80(this_ptr);
       return;
     }
   }

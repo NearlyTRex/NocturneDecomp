@@ -1,14 +1,12 @@
 // Name: core_fldnotes.cpp_CAlphaBitmap_arrdtor6_FUN_004bf6e0
 // Address: 004bf6e0
 // Address Range: [[004bf6e0, 004bf6f4]]
-// Convention: unknown
-// Signature: CAlphaBitmap * core_fldnotes_cpp_CAlphaBitmap_arrdtor6_FUN_004bf6e0(CAlphaBitmap *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CAlphaBitmap * __cdecl core_fldnotes_cpp_CAlphaBitmap_arrdtor6_FUN_004bf6e0(CAlphaBitmap *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAlphaBitmap * core_fldnotes_cpp_CAlphaBitmap_arrdtor6_FUN_004bf6e0(CAlphaBitmap *this_ptr,uint flags)
+CAlphaBitmap * __cdecl core_fldnotes_cpp_CAlphaBitmap_arrdtor6_FUN_004bf6e0(CAlphaBitmap *this_ptr,uint flags)
 
 {
   CAlphaBitmap *pCVar1;

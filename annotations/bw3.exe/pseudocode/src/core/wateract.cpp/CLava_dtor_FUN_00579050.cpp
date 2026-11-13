@@ -1,14 +1,12 @@
 // Name: core_wateract.cpp_CLava_dtor_FUN_00579050
 // Address: 00579050
 // Address Range: [[00579050, 0057909d]]
-// Convention: unknown
-// Signature: CLava * core_wateract_cpp_CLava_dtor_FUN_00579050(CLava *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CLava * __cdecl core_wateract_cpp_CLava_dtor_FUN_00579050(CLava *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CLava * core_wateract_cpp_CLava_dtor_FUN_00579050(CLava *this_ptr,uint flags)
+CLava * __cdecl core_wateract_cpp_CLava_dtor_FUN_00579050(CLava *this_ptr,uint flags)
 
 {
   CDemonActor *pCVar1;

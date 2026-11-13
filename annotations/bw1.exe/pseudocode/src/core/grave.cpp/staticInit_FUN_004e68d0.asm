@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_grave_cpp_staticInit_FUN_004e68d0(void)
+; void __cdecl core_grave_cpp_staticInit_FUN_004e68d0(void)
 ;
 ;
 ; Called Functions:

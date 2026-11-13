@@ -7,7 +7,7 @@
 
 // Original: core_sentinel.cpp_staticInit_FUN_0054b9b0
 // Address: 0054b9b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_sentinel.cpp_factoryFuncSentinel_FUN_0054b9e0
 // Address: 0054b9e0
@@ -15,7 +15,7 @@ CSentinel * __cdecl factoryFuncSentinel(void);
 
 // Original: core_sentinel.cpp_CSentinel_getActorType_FUN_0054ba00
 // Address: 0054ba00
-CDemonActorType * CSentinel::getActorType(CSentinel *this_ptr);
+CDemonActorType * __cdecl CSentinel::getActorType(CSentinel *this_ptr);
 
 // Original: core_sentinel.cpp_CSentinel_ctor_FUN_0054ba10
 // Address: 0054ba10
@@ -51,4 +51,4 @@ ECollisionType __cdecl CSentinel::getCollisionType(CSentinel *this_ptr,SCollisio
 
 // Original: core_sentinel.cpp_CSentinel_dtor_FUN_0054ce30
 // Address: 0054ce30
-CSentinel * CSentinel::dtor(CSentinel *this_ptr,uint flags);
+CSentinel * __cdecl CSentinel::dtor(CSentinel *this_ptr,uint flags);

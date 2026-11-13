@@ -7,7 +7,7 @@
 
 // Original: core_flame.cpp_staticInit_FUN_0049f120
 // Address: 0049f120
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_flame.cpp_factoryFuncFlame_FUN_0049f150
 // Address: 0049f150
@@ -15,7 +15,7 @@ CFlame * __cdecl factoryFuncFlame(void);
 
 // Original: core_flame.cpp_CFlame_getActorType_FUN_0049f170
 // Address: 0049f170
-CDemonActorType * CFlame::getActorType(CFlame *this_ptr);
+CDemonActorType * __cdecl CFlame::getActorType(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_ctor_FUN_0049f180
 // Address: 0049f180

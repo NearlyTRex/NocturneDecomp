@@ -11,10 +11,10 @@
 ;   core_doc.cpp_FUN_0045ab40 at 0045b06a
 ;   core_doc.cpp_adjustAimAngleForOffset_FUN_00459db0 at 00459dfd
 ;   core_fire.cpp_FUN_0049db20 at 0049e32a
-;   core_fire.cpp_safeAcos_FUN_004933bc at 004933ff
+;   core_fire.cpp_safeAcos_FUN_004933c0 at 004933ff
 ;   core_stranger.cpp_CStranger_aimLeftPistol_FUN_0056ca10 at 0056cf3a
 ;   core_stranger.cpp_FUN_00565ff0 at 005665cd
-;   core_stranger.cpp_FUN_0056bcbe at 0056bd0d
+;   core_stranger.cpp_FUN_0056bcc0 at 0056bd0d
 ;   ... and 5 more
 ;
 ; Referenced Globals:

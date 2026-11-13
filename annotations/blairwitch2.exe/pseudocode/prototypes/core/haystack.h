@@ -7,7 +7,7 @@
 
 // Original: core_haystack.cpp_staticInit_FUN_004cc700
 // Address: 004cc700
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_haystack.cpp_factoryFuncHaystack_FUN_004cc730
 // Address: 004cc730
@@ -15,11 +15,11 @@ CHaystack * __cdecl factoryFuncHaystack(void);
 
 // Original: core_haystack.cpp_CHaystack_getActorType_FUN_004cc750
 // Address: 004cc750
-CDemonActorType * CHaystack::getActorType(CHaystack *this_ptr);
+CDemonActorType * __cdecl CHaystack::getActorType(CHaystack *this_ptr);
 
 // Original: core_haystack.cpp_CHaystack_ctor_FUN_004cc760
 // Address: 004cc760
-CHaystack * CHaystack::ctor(CHaystack *this_ptr);
+CHaystack * __cdecl CHaystack::ctor(CHaystack *this_ptr);
 
 // Original: core_haystack.cpp_CHaystack_setup_FUN_004cc7d0
 // Address: 004cc7d0

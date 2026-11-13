@@ -7,7 +7,7 @@
 
 // Original: core_vecdir.cpp_staticInit_FUN_005838d0
 // Address: 005838d0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 // Address: 005838f0

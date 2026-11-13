@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   filter_mode
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00523f6b
+;   core_script.cpp_CScript_step_FUN_00522350 at 00523f6b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_005e6462

@@ -1,12 +1,12 @@
 // Name: core_larva.cpp_staticInit_FUN_004e0520
 // Address: 004e0520
 // Address Range: [[004e0520, 004e0543]]
-// Convention: unknown
-// Signature: void core_larva_cpp_staticInit_FUN_004e0520(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_larva_cpp_staticInit_FUN_004e0520(void)
 
 #include "nocturne.h"
 
-void core_larva_cpp_staticInit_FUN_004e0520(void)
+void __cdecl core_larva_cpp_staticInit_FUN_004e0520(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

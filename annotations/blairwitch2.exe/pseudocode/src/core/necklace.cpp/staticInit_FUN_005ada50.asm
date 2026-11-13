@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_necklace_cpp_staticInit_FUN_005ada50(void)
+; void __cdecl core_necklace_cpp_staticInit_FUN_005ada50(void)
 ;
 ;
 ; Called Functions:

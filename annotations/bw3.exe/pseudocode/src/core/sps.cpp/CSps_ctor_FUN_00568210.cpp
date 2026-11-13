@@ -1,14 +1,12 @@
 // Name: core_sps.cpp_CSps_ctor_FUN_00568210
 // Address: 00568210
 // Address Range: [[00568210, 00568283]]
-// Convention: unknown
-// Signature: CSps * core_sps_cpp_CSps_ctor_FUN_00568210(CSps *this_ptr)
+// Convention: __cdecl
+// Signature: CSps * __cdecl core_sps_cpp_CSps_ctor_FUN_00568210(CSps *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSps * core_sps_cpp_CSps_ctor_FUN_00568210(CSps *this_ptr)
+CSps * __cdecl core_sps_cpp_CSps_ctor_FUN_00568210(CSps *this_ptr)
 
 {
   CWeapon *pCVar1;

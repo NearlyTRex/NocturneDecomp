@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 153,
+    "complexity_score": 152,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 67,
     "suspect_count": 7,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 143
+    "total_lines": 142
   },
   "cross_references": [
     {
@@ -32,9 +32,9 @@
         "005992e2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_spireagl.cpp_CSpiritEagle_ctor_FUN_005991d0",
-    "signature": "CSpiritEagle * core_spireagl_cpp_CSpiritEagle_ctor_FUN_005991d0(CSpiritEagle *this_ptr)"
+    "signature": "CSpiritEagle * __cdecl core_spireagl_cpp_CSpiritEagle_ctor_FUN_005991d0(CSpiritEagle *this_ptr)"
   },
   "function_calls": [
     {
@@ -134,7 +134,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 46,
+      "line": 44,
       "match": "pCVar6[-1].",
       "severity": "mild",
       "text": "piVar9 = &pCVar6[-1].models[1].textures[0xe].base.count;",
@@ -142,7 +142,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 48,
+      "line": 46,
       "match": "pCVar6[-1].",
       "severity": "mild",
       "text": "pCVar6[-1].models[1].textures[0xe].base.type = 1;",
@@ -150,7 +150,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 49,
+      "line": 47,
       "match": "pCVar6[-1].",
       "severity": "mild",
       "text": "*(float *)(pCVar6[-1].dead + 0x14) = fVar7;",
@@ -158,7 +158,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(char *)((int)piVar9",
       "severity": "moderate",
       "text": "*(char *)((int)piVar9 + 1) = cVar1;",
@@ -166,7 +166,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(int *)((int)piVar9",
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)piVar9 + 2);",
@@ -174,7 +174,7 @@
     },
     {
       "description": "Pointer value `piVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 56,
+      "line": 54,
       "match": "(int)piVar9",
       "severity": "moderate",
       "text": "*(char *)((int)piVar9 + 1) = cVar1;",
@@ -182,7 +182,7 @@
     },
     {
       "description": "Pointer value `piVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
+      "line": 55,
       "match": "(int)piVar9",
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)piVar9 + 2);",

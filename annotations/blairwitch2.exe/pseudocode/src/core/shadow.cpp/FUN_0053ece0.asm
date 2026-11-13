@@ -37,7 +37,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_shadow.cpp_FUN_0053c500 at 0053c954
+;   core_shadow.cpp_CShadow_process_FUN_0053c500 at 0053c954
 ;
 ; Referenced Globals:
 ;   undefined4 s_Chain_stretched_to_f_005e679b+2

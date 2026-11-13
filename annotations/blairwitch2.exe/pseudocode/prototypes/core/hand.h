@@ -7,23 +7,23 @@
 
 // Original: core_hand.cpp_staticInit_FUN_005a9ba0
 // Address: 005a9ba0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hand.cpp_factoryFuncHand_FUN_005a9bd0
 // Address: 005a9bd0
-void factoryFuncHand(void);
+CHand * __cdecl factoryFuncHand(void);
 
 // Original: core_hand.cpp_CHand_getActorType_FUN_005a9bf0
 // Address: 005a9bf0
-CDemonActorType * CHand::getActorType(CHand *this_ptr);
+CDemonActorType * __cdecl CHand::getActorType(CHand *this_ptr);
 
 // Original: core_hand.cpp_CHand_ctor_FUN_005a9c00
 // Address: 005a9c00
-CHand * CHand::ctor(CHand *this_ptr);
+CHand * __cdecl CHand::ctor(CHand *this_ptr);
 
 // Original: core_hand.cpp_CHand_dtor_FUN_005a9d30
 // Address: 005a9d30
-CHand * CHand::dtor(CHand *this_ptr,uint flags);
+CHand * __cdecl CHand::dtor(CHand *this_ptr,uint flags);
 
 // Original: core_hand.cpp_CHand_setup_FUN_005a9dd0
 // Address: 005a9dd0

@@ -7,7 +7,7 @@
 
 // Original: core_vampboss.cpp_staticInit_FUN_005a5110
 // Address: 005a5110
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_vampboss.cpp_factoryFuncVampireBoss_FUN_005a5140
 // Address: 005a5140
@@ -15,7 +15,7 @@ CVampireBoss * __cdecl factoryFuncVampireBoss(void);
 
 // Original: core_vampboss.cpp_CVampireBoss_getActorType_FUN_005a5160
 // Address: 005a5160
-CDemonActorType * CVampireBoss::getActorType(CVampireBoss *this_ptr);
+CDemonActorType * __cdecl CVampireBoss::getActorType(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_CVampireBoss_ctor_FUN_005a5170
 // Address: 005a5170
@@ -87,4 +87,4 @@ ECollisionType __cdecl CVampireBoss::getCollisionType(CVampireBoss *this_ptr,SCo
 
 // Original: core_vampboss.cpp_CVampireBoss_dtor_FUN_005a7420
 // Address: 005a7420
-CVampireBoss * CVampireBoss::dtor(CVampireBoss *this_ptr,uint flags);
+CVampireBoss * __cdecl CVampireBoss::dtor(CVampireBoss *this_ptr,uint flags);

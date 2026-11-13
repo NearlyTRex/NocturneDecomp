@@ -2,11 +2,11 @@
 // Address: 005a0c10
 // Address Range: [[005a0c10, 005a0cf2]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,undefined4 *param_2,uint param_3)
+// Signature: int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,void *buffer,int count)
 
 #include "nocturne.h"
 
-int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,uint *param_2,uint param_3)
+int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,void *buffer,int count)
 
 {
   uint uVar1;
@@ -23,12 +23,12 @@ int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *
       return -1;
     }
     uVar1 = this_ptr->file_size - this_ptr->position;
-    if ((int)uVar1 < (int)param_3) {
-      param_3 = uVar1;
+    if ((int)uVar1 < count) {
+      count = uVar1;
     }
     local_18 = 0;
     while( true ) {
-      if ((int)param_3 < 1) {
+      if (count < 1) {
         return local_18;
       }
       if (((this_ptr->position < this_ptr->buffer_start) ||
@@ -36,12 +36,12 @@ int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *
          (iVar2 = support_trstream_cpp_CInStreamFile_fillBuffer_FUN_005a0ec0
                             (this_ptr,this_ptr->position), iVar2 == 0)) break;
       uVar1 = (this_ptr->buffer_start + this_ptr->buffer_length) - this_ptr->position;
-      if ((int)param_3 < (int)uVar1) {
-        uVar1 = param_3;
+      if (count < (int)uVar1) {
+        uVar1 = count;
       }
-      param_3 = param_3 - uVar1;
+      count = count - uVar1;
       pcVar4 = this_ptr->buffer + (this_ptr->position - this_ptr->buffer_start);
-      pcVar5 = (char *)param_2;
+      pcVar5 = buffer;
       for (uVar3 = uVar1 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
         *(uint *)pcVar5 = *(uint *)pcVar4;
         pcVar4 = pcVar4 + ((uint)bVar6 * -2 + 1) * 4;
@@ -52,7 +52,7 @@ int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *
         pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
         pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
       }
-      param_2 = (uint *)((int)param_2 + uVar1);
+      buffer = (void *)((int)buffer + uVar1);
       local_18 = local_18 + uVar1;
       this_ptr->position = this_ptr->position + uVar1;
     }

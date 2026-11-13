@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weaver_cpp_staticInit_FUN_005a5e10(void)
+; void __cdecl core_weaver_cpp_staticInit_FUN_005a5e10(void)
 ;
 ;
 ; Called Functions:

@@ -7,19 +7,19 @@
 
 // Original: core_construc.cpp_staticInit_FUN_00436aa0
 // Address: 00436aa0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_construc.cpp_factoryFuncConstruct_FUN_00436ad0
 // Address: 00436ad0
-void factoryFuncConstruct(void);
+CConstruct * __cdecl factoryFuncConstruct(void);
 
 // Original: core_construc.cpp_CConstruct_getActorType_FUN_00436af0
 // Address: 00436af0
-CDemonActorType * CConstruct::getActorType(CConstruct *this_ptr);
+CDemonActorType * __cdecl CConstruct::getActorType(CConstruct *this_ptr);
 
 // Original: core_construc.cpp_CConstruct_ctor_FUN_00436b00
 // Address: 00436b00
-CConstruct * CConstruct::ctor(CConstruct *this_ptr);
+CConstruct * __cdecl CConstruct::ctor(CConstruct *this_ptr);
 
 // Original: core_construc.cpp_CConstruct_setup_FUN_00436be0
 // Address: 00436be0
@@ -45,18 +45,18 @@ void __cdecl CConstruct::processDamage(CConstruct *this_ptr,SDamageInfo *damage_
 // Address: 00437ee0
 int __cdecl CConstruct::getTargetPoints(CConstruct *this_ptr,CVector3f *out_points_array);
 
-// Original: core_construc.cpp_FUN_00438060
+// Original: core_construc.cpp_CConstruct_explode_FUN_00438060
 // Address: 00438060
-void FUN_00438060(CCharacter *param_1);
+void __cdecl CConstruct::explode(CConstruct *this_ptr);
 
 // Original: core_construc.cpp_FUN_004382a0
 // Address: 004382a0
 void FUN_004382a0(int param_1);
 
-// Original: core_construc.cpp_FUN_00438370
+// Original: core_construc.cpp_CConstruct_getCollisionType_FUN_00438370
 // Address: 00438370
-ECollisionType FUN_00438370(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CConstruct::getCollisionType(CConstruct *this_ptr,SCollisionInfo *param_2);
 
 // Original: core_construc.cpp_CConstruct_dtor_FUN_00438390
 // Address: 00438390
-CConstruct * CConstruct::dtor(CConstruct *this_ptr,uint flags);
+CConstruct * __cdecl CConstruct::dtor(CConstruct *this_ptr,uint flags);

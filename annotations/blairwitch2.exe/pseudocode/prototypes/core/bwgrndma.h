@@ -7,19 +7,19 @@
 
 // Original: core_bwgrndma.cpp_staticInit_FUN_005a7ab0
 // Address: 005a7ab0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_bwgrndma.cpp_factoryFuncGrandma_FUN_005a7ae0
 // Address: 005a7ae0
-void factoryFuncGrandma(void);
+CGrandma * __cdecl factoryFuncGrandma(void);
 
 // Original: core_bwgrndma.cpp_CGrandma_getActorType_FUN_005a7b00
 // Address: 005a7b00
-CDemonActorType * CGrandma::getActorType(CGrandma *this_ptr);
+CDemonActorType * __cdecl CGrandma::getActorType(CGrandma *this_ptr);
 
 // Original: core_bwgrndma.cpp_CGrandma_ctor_FUN_005a7b10
 // Address: 005a7b10
-CGrandma * CGrandma::ctor(CGrandma *this_ptr);
+CGrandma * __cdecl CGrandma::ctor(CGrandma *this_ptr);
 
 // Original: core_bwgrndma.cpp_CGrandma_setup_FUN_005a7be0
 // Address: 005a7be0
@@ -59,7 +59,7 @@ CMatrix3x4f * __stack2_esi CGrandma::getCarryObjToBodyXForm(CGrandma *this_ptr,i
 
 // Original: core_bwgrndma.cpp_CGrandma_dtor_FUN_005a7e10
 // Address: 005a7e10
-CGrandma * CGrandma::dtor(CGrandma *this_ptr,uint flags);
+CGrandma * __cdecl CGrandma::dtor(CGrandma *this_ptr,uint flags);
 
 // Original: core_bwgrndma.cpp_FUN_005a7eb0
 // Address: 005a7eb0

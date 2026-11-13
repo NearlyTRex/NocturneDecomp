@@ -1,12 +1,12 @@
 // Name: core_mimic.cpp_staticInit_FUN_0050f000
 // Address: 0050f000
 // Address Range: [[0050f000, 0050f023]]
-// Convention: unknown
-// Signature: void core_mimic_cpp_staticInit_FUN_0050f000(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_mimic_cpp_staticInit_FUN_0050f000(void)
 
 #include "nocturne.h"
 
-void core_mimic_cpp_staticInit_FUN_0050f000(void)
+void __cdecl core_mimic_cpp_staticInit_FUN_0050f000(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

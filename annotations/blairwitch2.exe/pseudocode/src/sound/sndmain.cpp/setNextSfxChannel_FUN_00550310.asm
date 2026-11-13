@@ -12,7 +12,7 @@
 ;   core_script.cpp_CScript_startDialogLine_FUN_00529750 at 005298b6
 ;   core_sound.cpp_CSound_configure_FUN_0055ac50 at 0055ad47
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a765
-;   core_sound.cpp_FUN_00559b4e at 00559f85
+;   core_sound.cpp_FUN_00559b50 at 00559c5f
 ;   core_sound.cpp_FUN_0055a1d0 at 0055a2ad
 ;
 ; Referenced Globals:

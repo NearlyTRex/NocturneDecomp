@@ -1,15 +1,14 @@
 // Name: core_actor.cpp_registerActorClass_FUN_0040c160
 // Address: 0040c160
 // Address Range: [[0040c160, 0040c233]]
-// Convention: unknown
-// Signature: CDemonActorType * core_actor_cpp_registerActorClass_FUN_0040c160(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factory_func,int *max_version,int version,CDemonActorType *parent_class_info)
+// Convention: __cdecl
+// Signature: CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c160(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factory_func,int *max_version,int version,CDemonActorType *parent_class_info)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CDemonActorType * core_actor_cpp_registerActorClass_FUN_0040c160(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factory_func,int *max_version,int version,CDemonActorType *parent_class_info)
+CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c160(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factory_func,int *max_version,int version,CDemonActorType *parent_class_info)
 
 {
   char cVar1;

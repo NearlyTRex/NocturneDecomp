@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_CFieldNotes_completeTask_FUN_004bdfa0(CFieldNotes *this_ptr,char *param_2)
+; void __cdecl core_fldnotes_cpp_CFieldNotes_completeTask_FUN_004bdfa0(CFieldNotes *this_ptr,char *entry_name)
 ;
 ; Parameters:
 ; CFieldNotes *    Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   entry_name
 ;
 ; XREF[1]:
 ;   core_event.cpp_FUN_004a1d00 at 004a2a34
@@ -48,7 +48,7 @@ section .text
         ;   Label: LAB_004bdfbf
     PUSH ESI                            ; 004bdfc0
     CALL core_fldnotes.cpp_SNotesSection_findEntry_FUN_004bbfd0 ; 004bdfc1
-        ;   XREF to: 004bbfd0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesSection_findEntry_FUN_004bbfd0(SNotesSection * this_ptr, char * param_2)
+        ;   XREF to: 004bbfd0 (UNCONDITIONAL_CALL)  ; SNotesEntry * core_fldnotes.cpp_SNotesSection_findEntry_FUN_004bbfd0(SNotesSection * this_ptr, char * name)
     ADD ESP,0x8                         ; 004bdfc6
     MOV EDX,EAX                         ; 004bdfc9
     TEST EAX,EAX                        ; 004bdfcb

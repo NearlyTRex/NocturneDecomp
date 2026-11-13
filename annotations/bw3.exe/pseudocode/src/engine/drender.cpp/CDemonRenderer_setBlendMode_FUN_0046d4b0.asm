@@ -15,7 +15,7 @@
 ;   core_charactr.cpp_FUN_0042f310 at 0042f32a
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0 at 0045e1e8
 ;   core_dlight.cpp_FUN_0045d530 at 0045da56
-;   core_dlight.cpp_FUN_0045e69e at 0045e726
+;   core_dlight.cpp_FUN_0045e6a0 at 0045e726
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_0045f5a0 at 0045f614
 ;   core_fire.cpp_CFirefly_render_FUN_00498b40 at 00498c6b
 ;   ... and 30 more

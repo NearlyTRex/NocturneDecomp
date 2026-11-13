@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   key_mask
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00526be2
+;   core_script.cpp_CScript_step_FUN_00522350 at 00526be2
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_004def40

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_script_cpp_staticInit_FUN_00520f90(void)
+; void __cdecl core_script_cpp_staticInit_FUN_00520f90(void)
 ;
 ;
 ; Called Functions:

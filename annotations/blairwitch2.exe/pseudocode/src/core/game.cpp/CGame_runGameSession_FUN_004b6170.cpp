@@ -77,7 +77,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b6170(CGame *this_ptr)
   this_ptr->collision_render_enabled = 0;
   _DAT_01cb7788 = 0;
   g_CFieldNotesPtr->is_displayed = 0;
-  core_zombie_cpp_FUN_0059ac10();
+  core_bmppuzzl_cpp_releasePuzzleGraphics_FUN_0059ac10();
   this_ptr->developer_mode_enabled = 0;
   core_game_cpp_CGame_setGameRes_FUN_004b5fd0(this_ptr);
   pcVar3 = getenv("VELOCITY");
@@ -150,8 +150,8 @@ LAB_004b6569:
        iVar5 != 0)) {
       this_ptr->goggles_active = 0;
       pCVar2->is_displayed = 0;
-      if (_DAT_026677e0 != 0) {
-        core_zombie_cpp_FUN_0059ab70(_DAT_026677e0,0);
+      if (_DAT_026677e0 != (CPuzzle *)0x0) {
+        core_bmppuzzl_cpp_activatePuzzle_FUN_0059ab70(_DAT_026677e0,0);
       }
     }
     if (g_CDemonSetPtr->selected_camera_index < 0) {
@@ -176,7 +176,7 @@ LAB_004b6635:
         shape_edittool_cpp_CPickList_clear_FUN_00483d10(&g_CPickList);
         this_ptr->wait_for_keypress = 0;
         if (g_CFieldNotesPtr->is_displayed == 0) {
-          if (_DAT_026677e0 == 0) {
+          if (_DAT_026677e0 == (CPuzzle *)0x0) {
             iVar6 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
             iVar6 = (**(code **)(*(int *)(iVar6 + 0x2b0) + 0x114))(iVar6);
             if (1 < iVar6) goto LAB_004b66e4;
@@ -280,7 +280,7 @@ LAB_004b6635:
             }
           }
           else {
-            core_zombie_cpp_FUN_0059ab70(_DAT_026677e0,0);
+            core_bmppuzzl_cpp_activatePuzzle_FUN_0059ab70(_DAT_026677e0,0);
           }
         }
         else {
@@ -376,7 +376,7 @@ LAB_004b66e4:
   this_ptr->damageable_enemy_count = iVar4;
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004dfee0(this_ptr_00,0);
   core_sound_cpp_CSound_shutdown_FUN_0055a360(0x0264B290);
-  core_zombie_cpp_FUN_0059ac10();
+  core_bmppuzzl_cpp_releasePuzzleGraphics_FUN_0059ac10();
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0(this_ptr);
   (*0x01D02F84->vtable->clearKeyPresses)(0x01D02F84);
   core_set_cpp_CDemonSet_clearLights_FUN_005308e0(g_CDemonSetPtr);

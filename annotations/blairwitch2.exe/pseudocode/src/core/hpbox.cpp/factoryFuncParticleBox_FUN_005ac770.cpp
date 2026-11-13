@@ -1,20 +1,20 @@
 // Name: core_hpbox.cpp_factoryFuncParticleBox_FUN_005ac770
 // Address: 005ac770
 // Address Range: [[005ac770, 005ac78b]]
-// Convention: unknown
-// Signature: void core_hpbox_cpp_factoryFuncParticleBox_FUN_005ac770(void)
+// Convention: __cdecl
+// Signature: CParticleBox * __cdecl core_hpbox_cpp_factoryFuncParticleBox_FUN_005ac770(void)
 
 #include "nocturne.h"
 
-void core_hpbox_cpp_factoryFuncParticleBox_FUN_005ac770(void)
+CParticleBox * __cdecl core_hpbox_cpp_factoryFuncParticleBox_FUN_005ac770(void)
 
 {
-  CParticleBox *this_ptr;
+  CParticleBox *pCVar1;
   
-  this_ptr = (CParticleBox *)operator_new(0x7d8);
-  if (this_ptr == (CParticleBox *)0x0) {
-    return;
+  pCVar1 = (CParticleBox *)operator_new(0x7d8);
+  if (pCVar1 == (CParticleBox *)0x0) {
+    return (CParticleBox *)0x0;
   }
-  core_hpbox_cpp_CParticleBox_ctor_FUN_005ac7a0(this_ptr);
-  return;
+  pCVar1 = core_hpbox_cpp_CParticleBox_ctor_FUN_005ac7a0(pCVar1);
+  return pCVar1;
 }

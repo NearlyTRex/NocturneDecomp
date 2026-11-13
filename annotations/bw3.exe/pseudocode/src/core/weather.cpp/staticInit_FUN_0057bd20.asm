@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weather_cpp_staticInit_FUN_0057bd20(void)
+; void __cdecl core_weather_cpp_staticInit_FUN_0057bd20(void)
 ;
 ;
 ; Called Functions:

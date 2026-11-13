@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_kedward_cpp_factoryFuncKedward_FUN_0058fd40(void)
+; CKedward * __cdecl core_kedward_cpp_factoryFuncKedward_FUN_0058fd40(void)
 ;
 ;
 ; Called Functions:

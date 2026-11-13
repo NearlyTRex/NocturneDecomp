@@ -47,7 +47,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_0051e6d0 at 0051ec3c
+;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051ec3c
 ;
 ; Referenced Globals:
 ;   undefined4 s_Bip01_L_Finger1_005cd466+1

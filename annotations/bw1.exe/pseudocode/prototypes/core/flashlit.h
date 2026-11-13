@@ -7,7 +7,7 @@
 
 // Original: core_flashlit.cpp_staticInit_FUN_004b98b0
 // Address: 004b98b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_flashlit.cpp_factoryFuncFlashlight_FUN_004b98e0
 // Address: 004b98e0
@@ -15,7 +15,7 @@ CFlashlight * __cdecl factoryFuncFlashlight(void);
 
 // Original: core_flashlit.cpp_CFlashlight_getActorType_FUN_004b9900
 // Address: 004b9900
-CDemonActorType * CFlashlight::getActorType(CFlashlight *this_ptr);
+CDemonActorType * __cdecl CFlashlight::getActorType(CFlashlight *this_ptr);
 
 // Original: core_flashlit.cpp_CFlashlight_ctor_FUN_004b9910
 // Address: 004b9910
@@ -59,7 +59,7 @@ undefined4 FUN_004b9d10(byte *param_1,byte *param_2,byte *param_3);
 
 // Original: core_flashlit.cpp_FUN_004b9db0
 // Address: 004b9db0
-int FUN_004b9db0(char *param_1,int *param_2);
+SNotesEntry * FUN_004b9db0(char *param_1,int *param_2);
 
 // Original: core_flashlit.cpp_FUN_004b9e00
 // Address: 004b9e00
@@ -101,10 +101,10 @@ undefined4 FUN_004ba540(int param_1,int param_2);
 // Address: 004ba5e0
 undefined4 FUN_004ba5e0(int param_1,int param_2);
 
-// Original: core_flashlit.cpp_FUN_004ba62e
-// Address: 004ba62e
-undefined4 FUN_004ba62e(void);
+// Original: core_flashlit.cpp_FUN_004ba630
+// Address: 004ba630
+undefined4 FUN_004ba630(void);
 
-// Original: core_flashlit.cpp_FUN_004ba6ae
-// Address: 004ba6ae
-void FUN_004ba6ae(void);
+// Original: core_flashlit.cpp_FUN_004ba6b0
+// Address: 004ba6b0
+void FUN_004ba6b0(void);

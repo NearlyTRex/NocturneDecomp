@@ -21,9 +21,9 @@ void __cdecl invertTransformMatrix(void);
 // Address: 004e8a10
 void __cdecl buildRotationMatrix(int pitch,int yaw,int roll);
 
-// Original: engine_matrix.c_transformWorldToView_FUN_004e8d2e
-// Address: 004e8d2e
-void transformWorldToView(int *param_1);
+// Original: engine_matrix.c_transformWorldToView_FUN_004e8d30
+// Address: 004e8d30
+void transformWorldToView(void);
 
 // Original: engine_matrix.c_calculateTransformedZ_FUN_004e8e00
 // Address: 004e8e00
@@ -97,9 +97,9 @@ void __cdecl pushViewport(int x,int y,int width,int height);
 // Address: 004ea570
 void __cdecl popViewport(void);
 
-// Original: engine_matrix.c_FUN_004ea72e
-// Address: 004ea72e
-void FUN_004ea72e(int param_1,int param_2,int param_3);
+// Original: engine_matrix.c_FUN_004ea730
+// Address: 004ea730
+void FUN_004ea730(void);
 
 // Original: engine_matrix.c_popMatrixRelativeOffset_FUN_004ea7e0
 // Address: 004ea7e0

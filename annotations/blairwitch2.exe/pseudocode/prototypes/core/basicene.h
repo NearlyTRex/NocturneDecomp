@@ -7,7 +7,7 @@
 
 // Original: core_basicene.cpp_staticInit_FUN_0059e380
 // Address: 0059e380
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_basicene.cpp_CBasicEnemy_ctor_FUN_0059e3b0
 // Address: 0059e3b0
@@ -29,13 +29,13 @@ void FUN_0059e7c0(int param_1,undefined4 param_2);
 // Address: 0059e7d0
 void __cdecl CBasicEnemy::advanceMotion(CBasicEnemy *this_ptr,float delta_time);
 
-// Original: core_basicene.cpp_FUN_0059e880
+// Original: core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880
 // Address: 0059e880
-void FUN_0059e880(CDemonActor *param_1,int param_2);
+void __cdecl CBasicEnemy::processMotionEvent(CBasicEnemy *this_ptr,int param_2);
 
-// Original: core_basicene.cpp_FUN_0059e8c0
+// Original: core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0
 // Address: 0059e8c0
-void FUN_0059e8c0(int param_1,undefined4 param_2,int param_3);
+void __cdecl CBasicEnemy::processStates(CBasicEnemy *this_ptr,CDemonActor *param_2,int param_3);
 
 // Original: core_basicene.cpp_FUN_0059ebc0
 // Address: 0059ebc0
@@ -149,6 +149,6 @@ void __cdecl CBasicEnemy::startBurn(CBasicEnemy *this_ptr,CVector3f *direction,f
 // Address: 005a0380
 void __cdecl CBasicEnemy::processBurnState(CBasicEnemy *this_ptr,float delta_time);
 
-// Original: core_basicene.cpp_FUN_005a0780
+// Original: core_basicene.cpp_CBasicEnemy_dtor_FUN_005a0780
 // Address: 005a0780
-void FUN_005a0780(int param_1);
+void __cdecl CBasicEnemy::dtor(CBasicEnemy *this_ptr);

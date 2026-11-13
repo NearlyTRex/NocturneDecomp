@@ -19,7 +19,7 @@
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_00531460 at 00531608
 ;   core_set.cpp_FUN_0052fad0 at 0052fd50
 ;   core_set.cpp_FUN_0052fea0 at 00530111
-;   core_shadow.cpp_FUN_0053c500 at 0053cadb
+;   core_shadow.cpp_CShadow_process_FUN_0053c500 at 0053cadb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fc9608

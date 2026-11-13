@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSchnellGeist * core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchnellGeist *this_ptr)
+; CSchnellGeist * __cdecl core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchnellGeist *this_ptr)
 ;
 ; Parameters:
 ; CSchnellGeist *  Stack[0x4]:4   this_ptr

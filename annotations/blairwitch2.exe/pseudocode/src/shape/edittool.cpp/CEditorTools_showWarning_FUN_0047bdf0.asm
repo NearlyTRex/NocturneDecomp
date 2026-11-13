@@ -12,7 +12,7 @@
 ; XREF[10]:
 ;   core_doc.cpp_FUN_00453250 at 00453bcb
 ;   core_doc.cpp_FUN_00458320 at 0045838e
-;   core_fldnotes.cpp_FUN_004a61b0 at 004a63a7
+;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004a61b0 at 004a63a7
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4a70
 ;   core_script.cpp_CScript_loadState_FUN_0052a0d0 at 0052a3e4
 ;   core_set.cpp_CDemonSet_loadStateInfo_FUN_00534a90 at 00534b00

@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
-;   core_construc.cpp_FUN_00444110
+;   core_construc.cpp_CConstruct_explode_FUN_00444110
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -124,8 +124,8 @@ section .text
     ADD ESP,0x8                         ; 00443ff9
     PUSH EBX                            ; 00443ffc
     MOV dword ptr [EBX + 0xd10c],EAX    ; 00443ffd
-    CALL core_construc.cpp_FUN_00444110 ; 00444003
-        ;   XREF to: 00444110 (UNCONDITIONAL_CALL)  ; undefined core_construc.cpp_FUN_00444110()
+    CALL core_construc.cpp_CConstruct_explode_FUN_00444110 ; 00444003
+        ;   XREF to: 00444110 (UNCONDITIONAL_CALL)  ; void core_construc.cpp_CConstruct_explode_FUN_00444110(CConstruct * this_ptr)
     ADD ESP,0x4                         ; 00444008
     JMP 0x00443fba                      ; 0044400b
         ;   XREF to: 00443fba (UNCONDITIONAL_JUMP)  ; LAB_00443fba

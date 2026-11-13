@@ -7,7 +7,7 @@
 
 // Original: core_inv.cpp_staticInit_FUN_004f5ef0
 // Address: 004f5ef0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_inv.cpp_FUN_004f60c0
 // Address: 004f60c0
@@ -29,9 +29,9 @@ void FUN_004f63c0(float param_1,float param_2);
 // Address: 004f64f0
 void FUN_004f64f0(void);
 
-// Original: core_inv.cpp_FUN_004f655e
-// Address: 004f655e
-void FUN_004f655e(void);
+// Original: core_inv.cpp_FUN_004f6560
+// Address: 004f6560
+void FUN_004f6560(void);
 
 // Original: core_inv.cpp_FUN_004f6b50
 // Address: 004f6b50
@@ -129,9 +129,9 @@ void __cdecl CInventory::load(CInventory *this_ptr,_FILE *file_handle);
 // Address: 004f9ae0
 void __cdecl CInventory::loadItems(CInventory *this_ptr);
 
-// Original: core_inv.cpp_FUN_004f9b20
+// Original: core_inv.cpp_setupItems_FUN_004f9b20
 // Address: 004f9b20
-void FUN_004f9b20(int param_1);
+void setupItems(int param_1);
 
 // Original: core_inv.cpp_CInventory_select_FUN_004f9bd0
 // Address: 004f9bd0

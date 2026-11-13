@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00527831
+;   core_script.cpp_CScript_step_FUN_00522350 at 00527831
 ;
 ; Called Functions:
 ;   core_bwspart.cpp_CSimpleParticleSystem_setFade_FUN_005a8140

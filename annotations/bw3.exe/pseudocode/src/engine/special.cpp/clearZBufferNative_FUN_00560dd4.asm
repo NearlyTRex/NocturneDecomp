@@ -8,7 +8,7 @@
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00448ff0 at 0044921a
 ;   core_set.cpp_FUN_005365c0 at 00536928
 ;   core_setdir.cpp_FUN_00540cf0 at 00540dc8
-;   engine_mini3d.cpp_FUN_004ec96e at 004ec97e
+;   engine_mini3d.cpp_clearZBuffer_FUN_004ec970 at 004ec97e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba18

@@ -9,9 +9,9 @@
 // Address: 00550980
 void __cdecl staticInit(void);
 
-// Original: sound_sndmain.cpp_FUN_00550cbe
-// Address: 00550cbe
-void FUN_00550cbe(undefined4 *param_1,int param_2,int param_3,int param_4);
+// Original: sound_sndmain.cpp_FUN_00550cc0
+// Address: 00550cc0
+void FUN_00550cc0(void);
 
 // Original: sound_sndmain.cpp_FUN_00551000
 // Address: 00551000
@@ -37,16 +37,16 @@ void __cdecl trimLineAndRemoveComments(char *line);
 // Address: 00551620
 void FUN_00551620(char *param_1);
 
-// Original: sound_sndmain.cpp_FUN_00551cde
-// Address: 00551cde
-CSfxSample * FUN_00551cde(char *param_1);
+// Original: sound_sndmain.cpp_FUN_00551ce0
+// Address: 00551ce0
+CSfxSample * FUN_00551ce0(void);
 
 // Original: sound_sndmain.cpp_FUN_00551d20
 // Address: 00551d20
 CSfxSample * __cdecl FUN_00551d20(char *filename);
 
-// Original: sound_sndmain.cpp_isStreamableFile_FUN_005522ce
-// Address: 005522ce
+// Original: sound_sndmain.cpp_isStreamableFile_FUN_005522d0
+// Address: 005522d0
 int __cdecl isStreamableFile(char *filename);
 
 // Original: sound_sndmain.cpp_FUN_00552350
@@ -99,11 +99,11 @@ double __cdecl mixResampleStereoToStereo(short *sample_data,SStereoBuffers *chan
 
 // Original: sound_sndmain.cpp_CSfxSample_ctor_FUN_00553310
 // Address: 00553310
-CSfxSample * CSfxSample::ctor(CSfxSample *this_ptr);
+CSfxSample * __cdecl CSfxSample::ctor(CSfxSample *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSample_dtor_FUN_00553380
 // Address: 00553380
-CSfxSample * CSfxSample::dtor(CSfxSample *this_ptr,uint flags);
+CSfxSample * __cdecl CSfxSample::dtor(CSfxSample *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005533b0
 // Address: 005533b0
@@ -385,17 +385,17 @@ uint FUN_00556ec0(uint param_1);
 // Address: 00556f80
 int __cdecl countActiveSfx(void);
 
-// Original: sound_sndmain.cpp_FUN_00556fac
-// Address: 00556fac
-void FUN_00556fac(int param_1);
+// Original: sound_sndmain.cpp_FUN_00556fb0
+// Address: 00556fb0
+void FUN_00556fb0(void);
 
 // Original: sound_sndmain.cpp_FUN_00556fd0
 // Address: 00556fd0
 void __cdecl FUN_00556fd0(void);
 
-// Original: sound_sndmain.cpp_FUN_0055700e
-// Address: 0055700e
-void FUN_0055700e(undefined4 param_1);
+// Original: sound_sndmain.cpp_FUN_00557010
+// Address: 00557010
+void FUN_00557010(void);
 
 // Original: sound_sndmain.cpp_FUN_00557020
 // Address: 00557020
@@ -421,9 +421,9 @@ undefined4 FUN_00557170(double param_1,double param_2,double param_3,float param
 // Address: 005571e0
 undefined4 FUN_005571e0(double param_1,double param_2,double param_3);
 
-// Original: sound_sndmain.cpp_FUN_0055725e
-// Address: 0055725e
-undefined4 FUN_0055725e(char *param_1);
+// Original: sound_sndmain.cpp_FUN_00557260
+// Address: 00557260
+undefined4 FUN_00557260(void);
 
 // Original: sound_sndmain.cpp_FUN_00557390
 // Address: 00557390
@@ -569,8 +569,8 @@ int __cdecl closeSoundDevice(void);
 // Address: 00558840
 int __cdecl FUN_00558840(void);
 
-// Original: sound_sndmain.cpp_getMixBufferCount_FUN_0055884c
-// Address: 0055884c
+// Original: sound_sndmain.cpp_getMixBufferCount_FUN_00558850
+// Address: 00558850
 int __cdecl getMixBufferCount(void);
 
 // Original: sound_sndmain.cpp_set3DListenerOrientRight_FUN_00558860
@@ -617,8 +617,8 @@ int __cdecl getCurrentRecordingDevice(void);
 // Address: 00558b20
 int __cdecl setRecordingFormat(int bits_per_sample,int channels,int sample_rate,int signed_samples);
 
-// Original: sound_sndmain.cpp_getRecordingFormat_FUN_00558bbe
-// Address: 00558bbe
+// Original: sound_sndmain.cpp_getRecordingFormat_FUN_00558bc0
+// Address: 00558bc0
 void __cdecl getRecordingFormat(int *out_bits_per_sample,int *out_channels,int *out_sample_rate,int *out_signed);
 
 // Original: sound_sndmain.cpp_startRecording_FUN_00558c10
@@ -711,15 +711,15 @@ CSfxSlot * __cdecl CSfxSlot::ctor(CSfxSlot *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_dtor_FUN_0055a620
 // Address: 0055a620
-CSfxSlot * CSfxSlot::dtor(CSfxSlot *this_ptr,uint flags);
+CSfxSlot * __cdecl CSfxSlot::dtor(CSfxSlot *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_CSfxOptions_dtor_FUN_0055a630
 // Address: 0055a630
-CSfxOptions * CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
+CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_CSfxSample_arrdtor64_FUN_0055a640
 // Address: 0055a640
-CSfxSample * CSfxSample::arrdtor64(CSfxSample *this_ptr,uint flags);
+CSfxSample * __cdecl CSfxSample::arrdtor64(CSfxSample *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_FUN_0055a660
 // Address: 0055a660

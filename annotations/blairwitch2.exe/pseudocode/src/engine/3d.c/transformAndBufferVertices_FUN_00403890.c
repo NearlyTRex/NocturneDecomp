@@ -1,14 +1,14 @@
 // Name: engine_3d.c_transformAndBufferVertices_FUN_00403890
 // Address: 00403890
 // Address Range: [[00403890, 00403961]]
-// Convention: unknown
-// Signature: int engine_3d_c_transformAndBufferVertices_FUN_00403890(int param_1)
+// Convention: __cdecl
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403890(SMRGLHeaderExtended *mrgl)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int engine_3d_c_transformAndBufferVertices_FUN_00403890(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403890(SMRGLHeaderExtended *mrgl)
 
 {
   int iVar1;
@@ -18,11 +18,11 @@ int engine_3d_c_transformAndBufferVertices_FUN_00403890(int param_1)
   
   iVar1 = 0;
   DAT_006141e0 = 1;
-  output = (SProjectedVertex *)(&DAT_00622014 + (*(int *)(param_1 + 4) + DAT_0070ca60) * 0xc);
-  input = (CVector3i *)(param_1 + 0xc);
+  output = (SProjectedVertex *)(&DAT_00622014 + ((mrgl->base).count + DAT_0070ca60) * 0xc);
+  input = (CVector3i *)(mrgl + 1);
   iStack_14 = 0;
   _DAT_0070ca94 = input;
-  if (0 < *(int *)(param_1 + 8)) {
+  if (0 < mrgl->child_count) {
     do {
       engine_special_cpp_FUN_0055d723(output,input);
       output[1].screen_y = _DAT_01c38aec;
@@ -32,13 +32,13 @@ int engine_3d_c_transformAndBufferVertices_FUN_00403890(int param_1)
       output = output + 2;
       iVar1 = iVar1 + 1;
       input = input + 1;
-    } while (iVar1 < *(int *)(param_1 + 8));
+    } while (iVar1 < mrgl->child_count);
   }
   if (DAT_0070ca60 == 0) {
     _DAT_0070ca64 = DAT_0070ca60;
   }
-  if (iStack_14 == *(int *)(param_1 + 8)) {
+  if (iStack_14 == mrgl->child_count) {
     DAT_006141e0 = 0;
   }
-  return param_1 + 0xc + *(int *)(param_1 + 8) * 0xc;
+  return mrgl + mrgl->child_count + 1;
 }

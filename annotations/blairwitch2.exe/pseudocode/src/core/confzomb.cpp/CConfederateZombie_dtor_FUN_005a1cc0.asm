@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CConfederateZombie * core_confzomb_cpp_CConfederateZombie_dtor_FUN_005a1cc0(CConfederateZombie *this_ptr,uint flags)
+; CConfederateZombie * __cdecl core_confzomb_cpp_CConfederateZombie_dtor_FUN_005a1cc0(CConfederateZombie *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CConfederateZombie * Stack[0x4]:4   this_ptr

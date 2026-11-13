@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CUnionZombie * core_unionzom_cpp_CUnionZombie_dtor_FUN_005a3e70(CUnionZombie *this_ptr,uint flags)
+; CUnionZombie * __cdecl core_unionzom_cpp_CUnionZombie_dtor_FUN_005a3e70(CUnionZombie *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CUnionZombie *   Stack[0x4]:4   this_ptr

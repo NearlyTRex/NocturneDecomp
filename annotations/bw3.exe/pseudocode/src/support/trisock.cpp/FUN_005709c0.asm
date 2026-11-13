@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   support_trisock.cpp_FUN_0056fef0 at 0056ff30
-;   support_trisock.cpp_FUN_0057125e at 005712a9
+;   support_trisock.cpp_FUN_00571260 at 005712a9
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005a5b9c

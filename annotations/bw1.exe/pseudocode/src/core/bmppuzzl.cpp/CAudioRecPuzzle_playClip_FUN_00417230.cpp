@@ -2,13 +2,13 @@
 // Address: 00417230
 // Address Range: [[00417230, 00417598]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPuzzle *this_ptr,int param_2,int param_3)
+// Signature: void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPuzzle *this_ptr,int knob0,int knob1,int knob2,int speed,int transport_state)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPuzzle *this_ptr,int param_2,int param_3)
+void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPuzzle *this_ptr,int knob0,int knob1,int knob2,int speed,int transport_state)
 
 {
   char cVar1;
@@ -36,8 +36,8 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPu
   _sprintf(acStack_34,&DAT_005d4002);
   _sprintf(acStack_40,&DAT_005d4005);
   _sprintf(acStack_4c,&DAT_005d4008);
-  fStack_18 = ABS((float)(param_2 - this_ptr->solution[0]));
-  iStack_14 = param_3 - this_ptr->solution[1];
+  fStack_18 = ABS((float)(knob0 - this_ptr->solution[0]));
+  iStack_14 = knob1 - this_ptr->solution[1];
   fStack_1c = ABS((float)iStack_14);
   _sprintf(acStack_64c,&DAT_005d400b);
   _sprintf(acStack_44c,&DAT_005d400e);

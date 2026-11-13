@@ -21,7 +21,8 @@ void __cdecl core_fldnotes_cpp_SNotesMap_revealAtHero_FUN_004bc450(SNotesMap *th
   if (((*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) != 0) && (this_ptr->entry != (SNotesEntry *)0x0)) &&
      (this_ptr->entry->kind == 6)) {
     iVar1 = core_fldnotes_cpp_SNotesMap_worldToMap_FUN_004bc6f0
-                      (this_ptr,(float *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x20));
+                      (this_ptr,(CLocation *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x20),
+                       &local_10,&local_14);
     if (-1 < iVar1) {
       dVar3 = floor
                         ((double)(this_ptr->sets[iVar1].reveal_scale * (float)_DAT_005dfc62));

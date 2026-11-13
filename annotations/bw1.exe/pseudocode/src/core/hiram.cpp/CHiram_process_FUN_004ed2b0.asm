@@ -23,7 +23,7 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   core_glass.cpp_FUN_004e34b0
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0
-;   core_mission.cpp_FUN_0051b740
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
@@ -97,8 +97,8 @@ section .text
     PUSH EBX                            ; 004ed33a
     MOV EDI,dword ptr [0x0061f650]      ; 004ed33b | DAT_0061f650
     PUSH EDI                            ; 004ed341 | DAT_01d2c900
-    CALL core_mission.cpp_FUN_0051b740  ; 004ed342
-        ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b740()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 004ed342
+        ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 004ed347
     JMP 0x004ed311                      ; 004ed34a
         ;   XREF to: 004ed311 (UNCONDITIONAL_JUMP)  ; LAB_004ed311

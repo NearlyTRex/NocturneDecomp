@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBatman * core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)
+; CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)
 ;
 ; Parameters:
 ; CBatman *        Stack[0x4]:4   this_ptr

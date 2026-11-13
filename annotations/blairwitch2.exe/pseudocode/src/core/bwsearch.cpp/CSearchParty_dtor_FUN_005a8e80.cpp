@@ -1,14 +1,12 @@
 // Name: core_bwsearch.cpp_CSearchParty_dtor_FUN_005a8e80
 // Address: 005a8e80
 // Address Range: [[005a8e80, 005a8f14]]
-// Convention: unknown
-// Signature: CSearchParty * core_bwsearch_cpp_CSearchParty_dtor_FUN_005a8e80(CSearchParty *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSearchParty * __cdecl core_bwsearch_cpp_CSearchParty_dtor_FUN_005a8e80(CSearchParty *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSearchParty * core_bwsearch_cpp_CSearchParty_dtor_FUN_005a8e80(CSearchParty *this_ptr,uint flags)
+CSearchParty * __cdecl core_bwsearch_cpp_CSearchParty_dtor_FUN_005a8e80(CSearchParty *this_ptr,uint flags)
 
 {
   int iVar1;

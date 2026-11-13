@@ -51,7 +51,7 @@ section .text
     PUSH ESI                            ; 004bb596
     PUSH EAX                            ; 004bb597
     CALL core_fldnotes.cpp_SPageResourceText_ctor_FUN_004ba850 ; 004bb598
-        ;   XREF to: 004ba850 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SPageResourceText_ctor_FUN_004ba850(SPageResourceText * this_ptr, char * param_2, undefined4 param_3)
+        ;   XREF to: 004ba850 (UNCONDITIONAL_CALL)  ; SPageResourceText * core_fldnotes.cpp_SPageResourceText_ctor_FUN_004ba850(SPageResourceText * this_ptr, char * text, CBitFont * font)
     ADD ESP,0xc                         ; 004bb59d
     MOV ESI,EAX                         ; 004bb5a0
         ;   Label: LAB_004bb5a0
@@ -78,7 +78,7 @@ section .text
     PUSH EBX                            ; 004bb5da
     MOV dword ptr [ESI + 0x18],EAX      ; 004bb5db
     CALL core_fldnotes.cpp_STextView_addResource_FUN_004bb5f0 ; 004bb5de
-        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004bb5f0(STextView * this_ptr, undefined4 param_2)
+        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004bb5f0(STextView * this_ptr, SPageResource * resource)
     ADD ESP,0x8                         ; 004bb5e3
     MOV byte ptr [EBX + 0x48],0x0       ; 004bb5e6
     POP ESI                             ; 004bb5ea

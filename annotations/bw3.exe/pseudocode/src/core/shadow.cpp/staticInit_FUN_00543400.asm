@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shadow_cpp_staticInit_FUN_00543400(void)
+; void __cdecl core_shadow_cpp_staticInit_FUN_00543400(void)
 ;
 ;
 ; Referenced Globals:

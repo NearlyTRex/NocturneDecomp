@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CInStreamPipe * support_codec_cpp_CInStreamPipe_ctor_FUN_004417f0(CInStreamPipe *this_ptr)
+; CInStreamPipe * __cdecl support_codec_cpp_CInStreamPipe_ctor_FUN_004417f0(CInStreamPipe *this_ptr)
 ;
 ; Parameters:
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   support_trstream.cpp_FUN_00572530
+;   support_trstream.cpp_CInStream_ctor_FUN_00572530
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004417f0
         ;   Label: support_codec.cpp_CInStreamPipe_ctor_FUN_004417f0
     PUSH EDX                            ; 004417f4
-    CALL support_trstream.cpp_FUN_00572530 ; 004417f5
-        ;   XREF to: 00572530 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00572530()
+    CALL support_trstream.cpp_CInStream_ctor_FUN_00572530 ; 004417f5
+        ;   XREF to: 00572530 (UNCONDITIONAL_CALL)  ; CInStream * support_trstream.cpp_CInStream_ctor_FUN_00572530(CInStream * this_ptr)
     MOV dword ptr [EAX],0x5dd554        ; 004417fa
     MOV dword ptr [EAX + 0x4],0x0       ; 00441800
     MOV dword ptr [EAX + 0x8],0x0       ; 00441807

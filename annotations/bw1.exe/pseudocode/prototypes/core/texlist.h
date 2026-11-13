@@ -7,7 +7,7 @@
 
 // Original: core_texlist.cpp_staticInit_FUN_00596090
 // Address: 00596090
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_texlist.cpp_CTextureList_ctor_FUN_005960b0
 // Address: 005960b0

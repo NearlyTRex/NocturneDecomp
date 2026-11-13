@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[12]:
-;   core_basicene.cpp_FUN_0059e8c0 at 0059e9a2
+;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 at 0059e9a2
 ;   core_confedrt.cpp_CConfederate_processStates_FUN_005a0b20 at 005a0b65
 ;   core_confzomb.cpp_CConfederateZombie_processStates_FUN_005a1e10 at 005a1e55
 ;   core_fforest.cpp_CTwigZombie_processStates_FUN_005a28a0 at 005a28d6

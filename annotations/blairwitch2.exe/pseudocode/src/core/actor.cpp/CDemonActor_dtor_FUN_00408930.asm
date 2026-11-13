@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_actor_cpp_CDemonActor_dtor_FUN_00408930(CDemonActor *this_ptr,uint flags)
+; CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408930(CDemonActor *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
@@ -16,7 +16,7 @@
 ;   core_armour.cpp_CFlame_dtor_FUN_0040f260 at 0040f26f
 ;   core_backgnd.cpp_CBackgroundActor_dtor_FUN_0040f5b0 at 0040f5bf
 ;   core_barrier.cpp_CBarrier_dtor_FUN_00410e80 at 00410e8f
-;   core_basicene.cpp_FUN_005a0780 at 005a07cc
+;   core_basicene.cpp_CBasicEnemy_dtor_FUN_005a0780 at 005a07cc
 ;   core_basicnpc.cpp_CBasicNPC_dtor_FUN_005a4980 at 005a49d6
 ;   ... and 104 more
 ;

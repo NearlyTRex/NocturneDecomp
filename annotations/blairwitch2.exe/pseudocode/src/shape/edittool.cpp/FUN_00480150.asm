@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00480150(undefined4 param_1,int *param_2,int *param_3,int param_4)
+; void shape_edittool_cpp_FUN_00480150(undefined4 param_1,int *param_2,int *param_3,uint param_4)
 ;
 ;
 ; XREF[1]:
@@ -18,7 +18,7 @@
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407cc0
 ;   engine_matrix.c_transformToCache_FUN_004e8e60
-;   engine_mini3d.cpp_FUN_004f8e20
+;   engine_mini3d.cpp_setColor_FUN_004f8e20
 ;
 ; *****************************************************************************
 
@@ -103,8 +103,8 @@ section .text
     AND EAX,0xff                        ; 0048022b
     OR EAX,EDX                          ; 00480230
     PUSH EAX                            ; 00480232
-    CALL engine_mini3d.cpp_FUN_004f8e20 ; 00480233
-        ;   XREF to: 004f8e20 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f8e20()
+    CALL engine_mini3d.cpp_setColor_FUN_004f8e20 ; 00480233
+        ;   XREF to: 004f8e20 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setColor_FUN_004f8e20(uint rgb)
     ADD ESP,0x4                         ; 00480238
     XOR ECX,ECX                         ; 0048023b
         ;   Label: LAB_0048023b

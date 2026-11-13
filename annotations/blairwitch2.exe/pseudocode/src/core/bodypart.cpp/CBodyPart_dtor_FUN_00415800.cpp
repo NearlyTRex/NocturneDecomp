@@ -1,14 +1,12 @@
 // Name: core_bodypart.cpp_CBodyPart_dtor_FUN_00415800
 // Address: 00415800
 // Address Range: [[00415800, 0041588b]]
-// Convention: unknown
-// Signature: CBodyPart * core_bodypart_cpp_CBodyPart_dtor_FUN_00415800(CBodyPart *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00415800(CBodyPart *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBodyPart * core_bodypart_cpp_CBodyPart_dtor_FUN_00415800(CBodyPart *this_ptr,uint flags)
+CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00415800(CBodyPart *this_ptr,uint flags)
 
 {
   CBox *pCVar1;

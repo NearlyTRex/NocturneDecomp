@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 106,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 60,
     "suspect_count": 3,
     "suspect_types": [
       "unknown_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 147
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -32,9 +32,9 @@
         "00458bb5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_demnfolk.cpp_CDemnfolk_ctor_FUN_00458a10",
-    "signature": "CDemnfolk * core_demnfolk_cpp_CDemnfolk_ctor_FUN_00458a10(CDemnfolk *this_ptr)"
+    "signature": "CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_ctor_FUN_00458a10(CDemnfolk *this_ptr)"
   },
   "function_calls": [
     {
@@ -153,7 +153,7 @@
     },
     {
       "description": "Parameter/variable named unknown (needs investigation)",
-      "line": 61,
+      "line": 60,
       "match": "unknown_0xc364",
       "severity": "mild",
       "text": "pCVar3->unknown_0xc364 = 0;",
@@ -161,7 +161,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 30,
+      "line": 29,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

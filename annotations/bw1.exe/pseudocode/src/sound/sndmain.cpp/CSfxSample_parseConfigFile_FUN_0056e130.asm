@@ -56,10 +56,10 @@
 ;   engine_dosio.cpp_getFileSize_FUN_00478fb0
 ;   engine_dosio.cpp_makePath_FUN_004795b0
 ;   engine_dosio.cpp_splitPath_FUN_00479580
+;   support_trstream.cpp_CInStream_readLine_FUN_005a07a0
 ;   support_trstream.cpp_CInStreamFile_ctor_FUN_005a08d0
 ;   support_trstream.cpp_CInStreamFile_dtor_FUN_005a0a50
 ;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0
-;   support_trstream.cpp_FUN_005a07a0
 ;
 ; *****************************************************************************
 
@@ -147,7 +147,7 @@ section .text
     LEA EAX,[ESP + 0x43c]               ; 0056e24e
     PUSH EAX                            ; 0056e255
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 0056e256
-        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
+        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile * this_ptr, char * directory, char * filename, int binary_mode)
     ADD ESP,0x10                        ; 0056e25b
     TEST EAX,EAX                        ; 0056e25e
     JZ 0x0056e30e                       ; 0056e260
@@ -171,8 +171,8 @@ section .text
     PUSH EAX                            ; 0056e2b3
     LEA EAX,[ESP + 0x438]               ; 0056e2b4
     PUSH EAX                            ; 0056e2bb
-    CALL support_trstream.cpp_FUN_005a07a0 ; 0056e2bc
-        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a07a0()
+    CALL support_trstream.cpp_CInStream_readLine_FUN_005a07a0 ; 0056e2bc
+        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStream_readLine_FUN_005a07a0(CInStream * this_ptr, char * buffer, int size)
     ADD ESP,0xc                         ; 0056e2c1
     TEST EAX,EAX                        ; 0056e2c4
     JGE 0x0056e311                      ; 0056e2c6

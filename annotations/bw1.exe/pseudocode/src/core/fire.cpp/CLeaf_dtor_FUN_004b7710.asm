@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLeaf * core_fire_cpp_CLeaf_dtor_FUN_004b7710(CLeaf *this_ptr,uint flags)
+; CLeaf * __cdecl core_fire_cpp_CLeaf_dtor_FUN_004b7710(CLeaf *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLeaf *          Stack[0x4]:4   this_ptr

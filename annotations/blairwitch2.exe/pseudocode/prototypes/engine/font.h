@@ -29,9 +29,9 @@ void __cdecl CBitFont::openFontFile(CBitFont *this_ptr,char *filename,int width,
 // Address: 004a7d00
 void __cdecl CBitFont::loadBitmap(CBitFont *this_ptr,char *filename,int width,int height,int first_char);
 
-// Original: engine_font.cpp_FUN_004a7fe2
-// Address: 004a7fe2
-void FUN_004a7fe2(void);
+// Original: engine_font.cpp_FUN_004a7fd0
+// Address: 004a7fd0
+void FUN_004a7fd0(void);
 
 // Original: engine_font.cpp_FUN_004a8540
 // Address: 004a8540
@@ -41,9 +41,9 @@ void FUN_004a8540(int param_1,float param_2);
 // Address: 004a8560
 void __cdecl CBitFont::loadNewBitmap(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
 
-// Original: engine_font.cpp_FUN_004a859e
-// Address: 004a859e
-void FUN_004a859e(CBitFont *param_1,char *param_2);
+// Original: engine_font.cpp_FUN_004a85a0
+// Address: 004a85a0
+void FUN_004a85a0(void);
 
 // Original: engine_font.cpp_FUN_004a8850
 // Address: 004a8850
@@ -161,9 +161,9 @@ undefined4 FUN_004ab090(CBitFont *param_1,char *param_2,char *param_3,int param_
 // Address: 004ab2b0
 int FUN_004ab2b0(undefined4 param_1,int param_2,void *param_3,int param_4,int param_5,undefined4 param_6);
 
-// Original: engine_font.cpp_FUN_004ab35e
-// Address: 004ab35e
-int FUN_004ab35e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
+// Original: engine_font.cpp_FUN_004ab360
+// Address: 004ab360
+int FUN_004ab360(void);
 
 // Original: engine_font.cpp_CBitFont_getCharWidth_FUN_004ab530
 // Address: 004ab530
@@ -193,14 +193,14 @@ void __cdecl CBitFont::remapPalette(CBitFont *this_ptr);
 // Address: 004ab840
 int FUN_004ab840(int param_1,byte *param_2,int param_3,int param_4,int param_5);
 
-// Original: engine_font.cpp_FUN_004abbee
-// Address: 004abbee
-uint FUN_004abbee(int param_1,int param_2,uint param_3);
+// Original: engine_font.cpp_FUN_004abbf0
+// Address: 004abbf0
+uint FUN_004abbf0(void);
 
 // Original: engine_font.cpp_FUN_004abc40
 // Address: 004abc40
 undefined4 FUN_004abc40(void);
 
-// Original: engine_font.cpp_FUN_004abd8e
-// Address: 004abd8e
-int * FUN_004abd8e(int param_1,int *param_2);
+// Original: engine_font.cpp_FUN_004abd90
+// Address: 004abd90
+int * FUN_004abd90(void);

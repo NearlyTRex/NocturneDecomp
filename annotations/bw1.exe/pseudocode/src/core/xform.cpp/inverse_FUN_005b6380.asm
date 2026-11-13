@@ -28,8 +28,8 @@
 ;
 ; XREF[8]:
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00430440 at 004307db
+;   core_charactr.cpp_CCharacter_computePickup_FUN_00432690 at 00432773
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0 at 00432b36
-;   core_charactr.cpp_FUN_00432690 at 00432773
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043fbd0 at 0043fc20
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005188e0 at 00518d01
 ;   core_tentacle.cpp_CTentacle_process_FUN_005952f0 at 0059560f

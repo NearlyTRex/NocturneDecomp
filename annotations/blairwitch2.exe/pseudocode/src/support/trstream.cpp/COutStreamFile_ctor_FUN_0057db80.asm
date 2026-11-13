@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; COutStreamFile * support_trstream_cpp_COutStreamFile_ctor_FUN_0057db80(COutStreamFile *this_ptr)
+; COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctor_FUN_0057db80(COutStreamFile *this_ptr)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
@@ -15,7 +15,7 @@
 ;   undefined1* g_COutStreamFileVTable = 0057dc10
 ;
 ; Called Functions:
-;   support_trstream.cpp_FUN_0057d860
+;   support_trstream.cpp_COutStream_dtor_FUN_0057d860
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0057db80
         ;   Label: support_trstream.cpp_COutStreamFile_ctor_FUN_0057db80
     PUSH EDX                            ; 0057db84
-    CALL support_trstream.cpp_FUN_0057d860 ; 0057db85
-        ;   XREF to: 0057d860 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d860()
+    CALL support_trstream.cpp_COutStream_dtor_FUN_0057d860 ; 0057db85
+        ;   XREF to: 0057d860 (UNCONDITIONAL_CALL)  ; COutStream * support_trstream.cpp_COutStream_dtor_FUN_0057d860(COutStream * this_ptr, uint flags)
     MOV dword ptr [EAX],0x5fd484        ; 0057db8a | g_COutStreamFileVTable
     ADD ESP,0x4                         ; 0057db90
     MOV dword ptr [EAX + 0x4],0x0       ; 0057db93

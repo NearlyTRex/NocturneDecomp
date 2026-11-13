@@ -1,15 +1,14 @@
 // Name: core_hecaitmx.cpp_CHecaitomix_ctor_FUN_00597df0
 // Address: 00597df0
 // Address Range: [[00597df0, 00597e4b]]
-// Convention: unknown
-// Signature: CHecaitomix * core_hecaitmx_cpp_CHecaitomix_ctor_FUN_00597df0(CHecaitomix *this_ptr)
+// Convention: __cdecl
+// Signature: CHecaitomix * __cdecl core_hecaitmx_cpp_CHecaitomix_ctor_FUN_00597df0(CHecaitomix *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CHecaitomix * core_hecaitmx_cpp_CHecaitomix_ctor_FUN_00597df0(CHecaitomix *this_ptr)
+CHecaitomix * __cdecl core_hecaitmx_cpp_CHecaitomix_ctor_FUN_00597df0(CHecaitomix *this_ptr)
 
 {
   float fVar1;

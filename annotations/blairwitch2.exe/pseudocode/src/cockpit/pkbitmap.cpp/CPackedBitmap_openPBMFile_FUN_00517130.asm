@@ -17,9 +17,9 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_00516d60
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_00516270
-;   cockpit_pkbitmap.cpp_FUN_00516200
 ;   core_main.c_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -35,8 +35,8 @@ section .text
     SUB ESP,0x64                        ; 00517132
     MOV EBX,dword ptr [ESP + 0x70]      ; 00517135
     PUSH EBX                            ; 00517139
-    CALL cockpit_pkbitmap.cpp_FUN_00516200 ; 0051713a
-        ;   XREF to: 00516200 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_00516200()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200 ; 0051713a
+        ;   XREF to: 00516200 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 0051713f
     MOV EDX,dword ptr [ESP + 0x74]      ; 00517142
     PUSH EDX                            ; 00517146

@@ -1,16 +1,15 @@
 // Name: core_helldog.cpp_CDog_ctor_FUN_005aba40
 // Address: 005aba40
 // Address Range: [[005aba40, 005abd2e]]
-// Convention: unknown
-// Signature: CDog * core_helldog_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
+// Convention: __cdecl
+// Signature: CDog * __cdecl core_helldog_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CDog * core_helldog_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
+CDog * __cdecl core_helldog_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
 
 {
   SStateMachine *pSVar1;

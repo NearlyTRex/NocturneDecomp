@@ -1,0 +1,132 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 71,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 58
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a1b60",
+    "address_range": [
+      [
+        "004a1b60",
+        "004a1bad"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_flashlit.cpp_FUN_004a1b60",
+    "signature": "int core_flashlit_cpp_FUN_004a1b60(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01cab9f0",
+      "name": "DAT_01cab9f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.607142857142857,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 25,
+      "INT_ADD": 12,
+      "INT_AND": 17,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 17,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 129
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ba440",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a8080",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if ((pSVar1->first_page <= in_stack_00000004) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004 < pSVar1->first_page + pSVar1->page_count)) {",
+      "type": "stack_param"
+    }
+  ]
+}

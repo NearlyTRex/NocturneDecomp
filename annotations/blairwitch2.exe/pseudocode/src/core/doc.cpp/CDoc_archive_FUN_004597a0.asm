@@ -29,7 +29,7 @@
 ;   core_actor.cpp_archiveFloat_FUN_0040b8e0
 ;   core_actor.cpp_archiveInteger_FUN_0040b960
 ;   core_actor.cpp_archiveString_FUN_0040b730
-;   core_hero.cpp_FUN_004ce590
+;   core_hero.cpp_CHero_archive_FUN_004ce590
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     SUB ESP,0xc                         ; 004597a1
     MOV EBX,dword ptr [ESP + 0x14]      ; 004597a4
     PUSH EBX                            ; 004597a8
-    CALL core_hero.cpp_FUN_004ce590     ; 004597a9
-        ;   XREF to: 004ce590 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce590()
+    CALL core_hero.cpp_CHero_archive_FUN_004ce590 ; 004597a9
+        ;   XREF to: 004ce590 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_archive_FUN_004ce590(CHero * this_ptr)
     MOV EDX,dword ptr [0x0060b1ec]      ; 004597ae | g_CDocClassVersion
     ADD ESP,0x4                         ; 004597b4
     CMP EDX,0x2                         ; 004597b7

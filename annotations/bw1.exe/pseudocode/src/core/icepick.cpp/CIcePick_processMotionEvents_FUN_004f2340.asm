@@ -16,8 +16,8 @@
 ;   undefined4 DAT_01d06cac
 ;
 ; Called Functions:
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
-;   core_charactr.cpp_FUN_004325b0
 ;   core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004f2430
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
@@ -115,8 +115,8 @@ section .text
     PUSH 0x1                            ; 004f23f1
     PUSH EBX                            ; 004f23f3
     MOV dword ptr [EBX + 0x1ffd0],0x0   ; 004f23f4
-    CALL core_charactr.cpp_FUN_004325b0 ; 004f23fe
-        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004325b0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0 ; 004f23fe
+        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 004f2403
     JMP 0x004f2390                      ; 004f2406
         ;   XREF to: 004f2390 (UNCONDITIONAL_JUMP)  ; LAB_004f2390

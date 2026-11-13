@@ -1,14 +1,12 @@
 // Name: core_mobster.cpp_CMobster_dtor_FUN_005004f0
 // Address: 005004f0
 // Address Range: [[005004f0, 00500584]]
-// Convention: unknown
-// Signature: CMobster * core_mobster_cpp_CMobster_dtor_FUN_005004f0(CMobster *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_005004f0(CMobster *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CMobster * core_mobster_cpp_CMobster_dtor_FUN_005004f0(CMobster *this_ptr,uint flags)
+CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_005004f0(CMobster *this_ptr,uint flags)
 
 {
   int iVar1;

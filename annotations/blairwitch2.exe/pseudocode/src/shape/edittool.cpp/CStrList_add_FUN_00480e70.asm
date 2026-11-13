@@ -15,8 +15,8 @@
 ;   core_menu.cpp_FUN_004eed60 at 004ef9fa
 ;   core_mission.cpp_FUN_004fd280 at 004fd2bd
 ;   core_script.cpp_CScript_startDialogLine_FUN_00529750 at 0052981c
+;   core_script.cpp_CScript_step_FUN_00522350 at 005247b6
 ;   core_script.cpp_FUN_00521cf0 at 00521e00
-;   core_script.cpp_FUN_00522350 at 005247b6
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_0055b110 at 0055b133
 ;   ... and 9 more
 ;

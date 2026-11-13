@@ -244,7 +244,8 @@ LAB_00428b77:
             this_ptr->pickup_target = (CDemonActor *)0x0;
             iVar7 = core_carved_cpp_FUN_0042b290(this_ptr);
             if (-1 < iVar7) {
-              core_charactr_cpp_FUN_004325b0(this_ptr,iVar7,pCVar14,0x3e4ccccd);
+              core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0
+                        ((CCharacter *)this_ptr,iVar7,(int)pCVar14,0x3e4ccccd,0);
               engine_console_cpp_CConsole_printf_FUN_00445430
                         (g_CConsolePtr,"%s picked up %s using hand %d\n");
             }

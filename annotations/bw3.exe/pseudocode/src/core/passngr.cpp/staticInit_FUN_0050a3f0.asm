@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_passngr_cpp_staticInit_FUN_0050a3f0(void)
+; void __cdecl core_passngr_cpp_staticInit_FUN_0050a3f0(void)
 ;
 ;
 ; Called Functions:

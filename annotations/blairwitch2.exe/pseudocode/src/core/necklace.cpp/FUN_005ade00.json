@@ -69,13 +69,13 @@
     ],
     "convention": "unknown",
     "name": "core_necklace.cpp_FUN_005ade00",
-    "signature": "void core_necklace_cpp_FUN_005ade00(CKeyFramedModel *param_1)"
+    "signature": "void core_necklace_cpp_FUN_005ade00(CCloth *param_1)"
   },
   "function_calls": [
     {
       "addr": "005ade80",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_005ade80"
+      "name": "core_cloth.cpp_CCloth_free_FUN_005ade80"
     },
     {
       "addr": "0044dcb0",
@@ -262,7 +262,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_necklace_cpp_FUN_005ade00(CKeyFramedModel *param_1)",
+      "text": "void core_necklace_cpp_FUN_005ade00(CCloth *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -270,7 +270,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_cloth_cpp_FUN_005ade80(param_1);",
+      "text": "core_cloth_cpp_CCloth_free_FUN_005ade80(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -278,7 +278,7 @@
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_dmodel_cpp_CKeyFramedModel_dtor_FUN_0044dcb0(param_1,1);",
+      "text": "core_dmodel_cpp_CKeyFramedModel_dtor_FUN_0044dcb0(&param_1->model,1);",
       "type": "unnamed_param"
     },
     {

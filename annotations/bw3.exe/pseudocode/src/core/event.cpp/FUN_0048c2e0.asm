@@ -308,8 +308,8 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
-;   core_bmppuzzl.cpp_FUN_004119a0
-;   core_charactr.cpp_FUN_004319d0
+;   core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_door.cpp_FUN_00463d30
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   core_event.cpp_CEventList_getCounterValue_FUN_00494d00
@@ -1085,14 +1085,14 @@ section .text
         ;   XREF to: 0048c9a2 (CONDITIONAL_JUMP)  ; LAB_0048c9a2
     PUSH 0x0                            ; 0048c997
     PUSH EBX                            ; 0048c999
-    CALL core_bmppuzzl.cpp_FUN_004119a0 ; 0048c99a
-        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_004119a0()
+    CALL core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0 ; 0048c99a
+        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 0048c99f
     PUSH 0x1                            ; 0048c9a2
         ;   Label: LAB_0048c9a2
     PUSH EDI                            ; 0048c9a4
-    CALL core_bmppuzzl.cpp_FUN_004119a0 ; 0048c9a5
-        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_004119a0()
+    CALL core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0 ; 0048c9a5
+        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 0048c9aa
     JMP 0x0048c7d2                      ; 0048c9ad
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -1235,7 +1235,7 @@ section .text
     MOV EBX,dword ptr [0x005fe4b0]      ; 0048caeb | g_CFieldNotesPtr
     PUSH EBX                            ; 0048caf1 | g_CFieldNotesInstance
     CALL core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004aba10 ; 0048caf2
-        ;   XREF to: 004aba10 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004aba10(CFieldNotes * this_ptr, char * param_2)
+        ;   XREF to: 004aba10 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004aba10(CFieldNotes * this_ptr, char * entry_name)
     ADD ESP,0x8                         ; 0048caf7
     JMP 0x0048c7d2                      ; 0048cafa
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -1270,8 +1270,8 @@ section .text
     PUSH EAX                            ; 0048cb43
     MOV ESI,dword ptr [0x005fe4b0]      ; 0048cb44 | g_CFieldNotesPtr
     PUSH ESI                            ; 0048cb4a | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004abb30 ; 0048cb4b
-        ;   XREF to: 004abb30 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004abb30()
+    CALL core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004abb30 ; 0048cb4b
+        ;   XREF to: 004abb30 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004abb30(CFieldNotes * this_ptr, char * entry_name)
     INC EAX                             ; 0048cb50
     ADD ESP,0x8                         ; 0048cb51
     CMP EAX,0x7                         ; 0048cb54
@@ -1648,8 +1648,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0xa6]      ; 0048cef4
     PUSH EBX                            ; 0048cefa
     PUSH ESI                            ; 0048cefb
-    CALL core_charactr.cpp_FUN_004319d0 ; 0048cefc
-        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004319d0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 ; 0048cefc
+        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 0048cf01
     JMP 0x0048c7d2                      ; 0048cf04
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -1770,7 +1770,7 @@ section .text
     MOV EBX,dword ptr [0x005fe4b0]      ; 0048d013 | g_CFieldNotesPtr
     PUSH EBX                            ; 0048d019 | g_CFieldNotesInstance
     CALL core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004abcb0 ; 0048d01a
-        ;   XREF to: 004abcb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004abcb0(CFieldNotes * this_ptr, char * param_2)
+        ;   XREF to: 004abcb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004abcb0(CFieldNotes * this_ptr, char * entry_name)
     ADD ESP,0x8                         ; 0048d01f
     JMP 0x0048c7d2                      ; 0048d022
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -1805,8 +1805,8 @@ section .text
     PUSH EAX                            ; 0048d06b
     MOV ESI,dword ptr [0x005fe4b0]      ; 0048d06c | g_CFieldNotesPtr
     PUSH ESI                            ; 0048d072 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004abb30 ; 0048d073
-        ;   XREF to: 004abb30 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004abb30()
+    CALL core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004abb30 ; 0048d073
+        ;   XREF to: 004abb30 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004abb30(CFieldNotes * this_ptr, char * entry_name)
     INC EAX                             ; 0048d078
     ADD ESP,0x8                         ; 0048d079
     CMP EAX,0x7                         ; 0048d07c
@@ -2375,8 +2375,8 @@ section .text
     PUSH EAX                            ; 0048d5de
     MOV ECX,dword ptr [0x005fe9dc]      ; 0048d5df | g_CGamePtr
     PUSH ECX                            ; 0048d5e5
-    CALL core_game.cpp_FUN_004beb80     ; 0048d5e6
-        ;   XREF to: 004beb80 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004beb80()
+    CALL core_game.cpp_CGame_displayBitmap_FUN_004beb80 ; 0048d5e6
+        ;   XREF to: 004beb80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayBitmap_FUN_004beb80(CGame * this_ptr, char * param_2, undefined4 param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 0048d5eb
     JMP 0x0048c7d2                      ; 0048d5ee
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -2999,7 +2999,7 @@ section .text
     MOV EDI,dword ptr [0x005fe4b0]      ; 0048dbb3 | g_CFieldNotesPtr
     PUSH EDI                            ; 0048dbb9 | g_CFieldNotesInstance
     CALL core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004aba10 ; 0048dbba
-        ;   XREF to: 004aba10 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004aba10(CFieldNotes * this_ptr, char * param_2)
+        ;   XREF to: 004aba10 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004aba10(CFieldNotes * this_ptr, char * entry_name)
     ADD ESP,0x8                         ; 0048dbbf
     JMP 0x0048c7d2                      ; 0048dbc2
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -3034,8 +3034,8 @@ section .text
     PUSH EAX                            ; 0048dc0b
     MOV EAX,[0x005fe4b0]                ; 0048dc0c | g_CFieldNotesPtr
     PUSH EAX                            ; 0048dc11 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004abb30 ; 0048dc12
-        ;   XREF to: 004abb30 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004abb30()
+    CALL core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004abb30 ; 0048dc12
+        ;   XREF to: 004abb30 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004abb30(CFieldNotes * this_ptr, char * entry_name)
     INC EAX                             ; 0048dc17
     ADD ESP,0x8                         ; 0048dc18
     CMP EAX,0x7                         ; 0048dc1b
@@ -3215,8 +3215,8 @@ section .text
     PUSH EAX                            ; 0048ddb1
     MOV EDI,dword ptr [0x005fe4b0]      ; 0048ddb2 | g_CFieldNotesPtr
     PUSH EDI                            ; 0048ddb8 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004ab8f0 ; 0048ddb9
-        ;   XREF to: 004ab8f0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004ab8f0()
+    CALL core_fldnotes.cpp_CFieldNotes_showMapAnnotation_FUN_004ab8f0 ; 0048ddb9
+        ;   XREF to: 004ab8f0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_CFieldNotes_showMapAnnotation_FUN_004ab8f0(CFieldNotes * this_ptr, char * entry_name, char * annotation_name, char * error_text)
     ADD ESP,0x10                        ; 0048ddbe
     TEST EAX,EAX                        ; 0048ddc1
     JNZ 0x0048c7d2                      ; 0048ddc3
@@ -3263,8 +3263,8 @@ section .text
     PUSH EAX                            ; 0048de27
     MOV EAX,[0x005fe4b0]                ; 0048de28 | g_CFieldNotesPtr
     PUSH EAX                            ; 0048de2d | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004abb30 ; 0048de2e
-        ;   XREF to: 004abb30 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004abb30()
+    CALL core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004abb30 ; 0048de2e
+        ;   XREF to: 004abb30 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004abb30(CFieldNotes * this_ptr, char * entry_name)
     INC EAX                             ; 0048de33
     ADD ESP,0x8                         ; 0048de34
     CMP EAX,0x7                         ; 0048de37
@@ -8472,8 +8472,8 @@ section .text
     PUSH EAX                            ; 00491015
     MOV EDX,dword ptr [0x005fe4b0]      ; 00491016 | g_CFieldNotesPtr
     PUSH EDX                            ; 0049101c | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004abb30 ; 0049101d
-        ;   XREF to: 004abb30 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004abb30()
+    CALL core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004abb30 ; 0049101d
+        ;   XREF to: 004abb30 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004abb30(CFieldNotes * this_ptr, char * entry_name)
     INC EAX                             ; 00491022
     ADD ESP,0x8                         ; 00491023
     CMP EAX,0x7                         ; 00491026
@@ -8500,7 +8500,7 @@ section .text
     MOV EAX,[0x005fe4b0]                ; 00491058 | g_CFieldNotesPtr
     PUSH EAX                            ; 0049105d | g_CFieldNotesInstance
     CALL core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90 ; 0049105e
-        ;   XREF to: 004abb90 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90(CFieldNotes * this_ptr, char * param_2)
+        ;   XREF to: 004abb90 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90(CFieldNotes * this_ptr, char * entry_name)
     ADD ESP,0x8                         ; 00491063
     JMP 0x0048c7d2                      ; 00491066
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6

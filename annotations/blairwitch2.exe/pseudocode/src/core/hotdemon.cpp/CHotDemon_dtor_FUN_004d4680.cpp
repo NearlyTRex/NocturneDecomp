@@ -1,14 +1,12 @@
 // Name: core_hotdemon.cpp_CHotDemon_dtor_FUN_004d4680
 // Address: 004d4680
 // Address Range: [[004d4680, 004d4714]]
-// Convention: unknown
-// Signature: CHotDemon * core_hotdemon_cpp_CHotDemon_dtor_FUN_004d4680(CHotDemon *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004d4680(CHotDemon *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHotDemon * core_hotdemon_cpp_CHotDemon_dtor_FUN_004d4680(CHotDemon *this_ptr,uint flags)
+CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004d4680(CHotDemon *this_ptr,uint flags)
 
 {
   int iVar1;

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_bmppuzzl_cpp_CChemPuzzle_hitTestButtons_FUN_004143a0(CChemPuzzle *this_ptr,int param_2,int param_3)
+; int __cdecl core_bmppuzzl_cpp_CChemPuzzle_hitTestButtons_FUN_004143a0(CChemPuzzle *this_ptr,int x,int y)
 ;
 ; Parameters:
 ; CChemPuzzle *    Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ;
 ; *****************************************************************************
 

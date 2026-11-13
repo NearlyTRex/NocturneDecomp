@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 41,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 25,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 85
+    "total_lines": 84
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "00599ca4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_thehand.cpp_CTheHand_dtor_FUN_00599c20",
-    "signature": "CTheHand * core_thehand_cpp_CTheHand_dtor_FUN_00599c20(CTheHand *this_ptr,uint flags)"
+    "signature": "CTheHand * __cdecl core_thehand_cpp_CTheHand_dtor_FUN_00599c20(CTheHand *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -139,7 +139,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 22,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);",

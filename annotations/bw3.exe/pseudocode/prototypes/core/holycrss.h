@@ -7,19 +7,19 @@
 
 // Original: core_holycrss.cpp_staticInit_FUN_004d5070
 // Address: 004d5070
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_holycrss.cpp_factoryFuncHolycross_FUN_004d50a0
 // Address: 004d50a0
-void factoryFuncHolycross(void);
+CHolycross * __cdecl factoryFuncHolycross(void);
 
 // Original: core_holycrss.cpp_CHolycross_getActorType_FUN_004d50c0
 // Address: 004d50c0
-CDemonActorType * CHolycross::getActorType(CHolycross *this_ptr);
+CDemonActorType * __cdecl CHolycross::getActorType(CHolycross *this_ptr);
 
 // Original: core_holycrss.cpp_CHolycross_ctor_FUN_004d50d0
 // Address: 004d50d0
-CHolycross * CHolycross::ctor(CHolycross *this_ptr);
+CHolycross * __cdecl CHolycross::ctor(CHolycross *this_ptr);
 
 // Original: core_holycrss.cpp_CHolycross_fire_FUN_004d5170
 // Address: 004d5170
@@ -47,4 +47,4 @@ void __cdecl CHolycross::setup(CHolycross *this_ptr);
 
 // Original: core_holycrss.cpp_CHolycross_dtor_FUN_004d5320
 // Address: 004d5320
-CHolycross * CHolycross::dtor(CHolycross *this_ptr,uint flags);
+CHolycross * __cdecl CHolycross::dtor(CHolycross *this_ptr,uint flags);

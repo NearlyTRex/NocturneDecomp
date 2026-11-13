@@ -15,6 +15,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CZombieDog.h"
 #include "types/enums/EDeathState.h"
+#include "types/enums/EDoorState.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SPose.h"
 
@@ -22,29 +23,29 @@
 // FUNCTION PROTOTYPES - Range 0x450000
 // =============================================================================
 
-void core_doc_cpp_factoryFuncDoc_FUN_004500a0(void);
-CDemonActorType * core_doc_cpp_CDoc_getActorType_FUN_004500c0(CDoc *this_ptr);
-CDoc * core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr);
-CDoc * core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags);
+CDoc * __cdecl core_doc_cpp_factoryFuncDoc_FUN_004500a0(void);
+CDemonActorType * __cdecl core_doc_cpp_CDoc_getActorType_FUN_004500c0(CDoc *this_ptr);
+CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr);
+CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags);
 void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_setCharacterModel_FUN_00450a60(CDoc *this_ptr,char *model_name,char *cloth_name);
 void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_time);
 void core_doc_cpp_FUN_00450c60(CHero *param_1,float param_2);
 void core_doc_cpp_FUN_00453250(CHero *param_1,float param_2);
-undefined4 core_doc_cpp_FUN_00453c5e(int param_1);
+undefined4 core_doc_cpp_FUN_00453c60(void);
 void core_doc_cpp_FUN_00453cc0(int param_1);
-void core_doc_cpp_FUN_00453d80(int param_1);
+void core_doc_cpp_FUN_00453d80(CDoc *param_1);
 void core_doc_cpp_FUN_00455170(int param_1,SPose *param_2);
 void core_doc_cpp_FUN_00455270(int param_1,float param_2);
 void __cdecl core_doc_cpp_CDoc_setPositionAndOrientation_FUN_00455580(CDoc *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
-void core_doc_cpp_FUN_004555c0(CCharacter *param_1);
+void __cdecl core_doc_cpp_CDoc_makeDrawDecision_FUN_004555c0(CDoc *this_ptr);
 void core_doc_cpp_FUN_00455d10(CDemonActor *param_1,float param_2);
 void core_doc_cpp_FUN_004562a0(int param_1,int param_2);
 void core_doc_cpp_FUN_004567c0(int param_1,int param_2);
 float * core_doc_cpp_FUN_004568e0(CCharacter *param_1,CDemonActor *param_2,float param_3);
 void core_doc_cpp_FUN_00458320(int param_1);
 void core_doc_cpp_FUN_004583a0(int param_1);
-undefined4 core_doc_cpp_FUN_004583ec(CCharacter *param_1);
+undefined4 core_doc_cpp_FUN_004583f0(void);
 undefined4 core_doc_cpp_FUN_00459555(void);
 void __cdecl core_doc_cpp_CDoc_archive_FUN_004597a0(CDoc *this_ptr);
 int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr);
@@ -66,10 +67,10 @@ void core_doc_cpp_FUN_0045d2c0(CCharacter *param_1);
 int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
 void core_doc_cpp_FUN_0045db40(int param_1);
 void core_doc_cpp_FUN_0045dbf0(int param_1,undefined4 param_2);
-undefined4 core_doc_cpp_FUN_0045dc20(int param_1);
-void core_doc_cpp_FUN_0045dc30(int param_1,undefined4 param_2);
+int __cdecl core_doc_cpp_CDoc_isWeaponDrawn_FUN_0045dc20(CDoc *this_ptr);
+void __cdecl core_doc_cpp_CDoc_drawWeapon_FUN_0045dc30(CDoc *this_ptr,int param_2);
 int __cdecl core_doc_cpp_CDoc_getGrabbed_FUN_0045dc40(CDoc *this_ptr,CDemonActor *grabber,int grab_type);
-void core_doc_cpp_FUN_0045dd30(CHero *param_1);
+void __cdecl core_doc_cpp_CDoc_reset_FUN_0045dd30(CDoc *this_ptr);
 EDeathState __cdecl core_doc_cpp_CDoc_getDeathState_FUN_0045dda0(CDoc *this_ptr);
 void __cdecl core_doc_cpp_CDoc_dropCarriedObject_FUN_0045ddd0(CDoc *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_doc_cpp_CDoc_drop_FUN_0045de30(CDoc *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
@@ -80,24 +81,24 @@ float core_doc_cpp_FUN_0045e010(float *param_1,float *param_2);
 void core_doc_cpp_FUN_0045e040(float *param_1,float *param_2);
 float __cdecl core_doc_cpp_getVectorDistance_FUN_0045e070(CVector3f *a,CVector3f *b);
 undefined4 core_doc_cpp_FUN_0045e1b0(int param_1);
-void core_dog_cpp_staticInit_FUN_0045e210(void);
+void __cdecl core_dog_cpp_staticInit_FUN_0045e210(void);
 CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_0045e240(void);
-CDemonActorType * core_dog_cpp_CZombieDog_getActorType_FUN_0045e260(CZombieDog *this_ptr);
+CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_0045e260(CZombieDog *this_ptr);
 CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_0045e270(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_setup_FUN_0045e2e0(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_process_FUN_0045e360(CZombieDog *this_ptr,float delta_time);
 void __cdecl core_dog_cpp_CZombieDog_archive_FUN_0045eab0(CZombieDog *this_ptr);
 void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_0045eb20(CZombieDog *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_dog_cpp_CZombieDog_getTargetPoints_FUN_0045ebd0(CZombieDog *this_ptr,CVector3f *out_points_array);
-CZombieDog * core_dog_cpp_CZombieDog_dtor_FUN_0045ec60(CZombieDog *this_ptr,uint flags);
-void core_door_cpp_staticInit_FUN_0045ed00(void);
+CZombieDog * __cdecl core_dog_cpp_CZombieDog_dtor_FUN_0045ec60(CZombieDog *this_ptr,uint flags);
+void __cdecl core_door_cpp_staticInit_FUN_0045ed00(void);
 CDoor * __cdecl core_door_cpp_factoryFuncDoor_FUN_0045ed30(void);
-CDemonActorType * core_door_cpp_CDoor_getActorType_FUN_0045ed50(CDoor *this_ptr);
-CDoor * core_door_cpp_CDoor_ctor_FUN_0045ed60(CDoor *this_ptr);
+CDemonActorType * __cdecl core_door_cpp_CDoor_getActorType_FUN_0045ed50(CDoor *this_ptr);
+CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0045ed60(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setup_FUN_0045ef40(CDoor *this_ptr);
 void __cdecl core_door_cpp_FUN_0045efc0(CDoor *this_ptr);
-void core_door_cpp_FUN_0045efe0(int param_1,int param_2);
-void core_door_cpp_FUN_0045f030(CDemonActor *param_1);
+void core_door_cpp_FUN_0045efe0(CDoor *param_1,EDoorState param_2);
+void __cdecl core_door_cpp_CDoor_reposition_FUN_0045f030(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delta_time);
 int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_0045fd10(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_renderBackground_FUN_0045fdf0(CDoor *this_ptr,int layer_flag);

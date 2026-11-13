@@ -1,0 +1,117 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 59,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 3,
+    "suspect_types": [
+      "stack_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 26
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00573eb0",
+    "address_range": [
+      [
+        "00573eb0",
+        "00573ebf"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "sound_sndmain.cpp_FUN_00573eb0",
+    "signature": "void sound_sndmain_cpp_FUN_00573eb0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00575d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_lockSound_FUN_00575d20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02c7fc88",
+      "name": "DAT_02c7fc88",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.0,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 1,
+      "COPY": 2,
+      "INT_ADD": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 8
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00551480",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00557010",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "uint in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "_DAT_02c7fc88 = in_stack_00000004;",
+      "type": "stack_param"
+    }
+  ]
+}

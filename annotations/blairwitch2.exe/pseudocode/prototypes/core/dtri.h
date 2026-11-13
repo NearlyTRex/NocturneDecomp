@@ -69,18 +69,18 @@ int __cdecl clipTriangleToBounds(CVector3f *triangle_vertices,CVector3f *bounds_
 // Address: 00479df0
 undefined4 FUN_00479df0(void);
 
-// Original: core_dtri.cpp_FUN_00479dfc
-// Address: 00479dfc
-undefined * FUN_00479dfc(void);
+// Original: core_dtri.cpp_FUN_00479e00
+// Address: 00479e00
+undefined * FUN_00479e00(void);
 
-// Original: core_dtri.cpp_FUN_00479e0c
-// Address: 00479e0c
-void FUN_00479e0c(float *param_1);
+// Original: core_dtri.cpp_FUN_00479e10
+// Address: 00479e10
+void FUN_00479e10(void);
 
 // Original: core_dtri.cpp_CDemonTriangle_ctor_FUN_00479f60
 // Address: 00479f60
-CDemonTriangle * CDemonTriangle::ctor(CDemonTriangle *this_ptr);
+CDemonTriangle * __cdecl CDemonTriangle::ctor(CDemonTriangle *this_ptr);
 
 // Original: core_dtri.cpp_CDemonTriangle_dtor_FUN_00479f70
 // Address: 00479f70
-CDemonTriangle * CDemonTriangle::dtor(CDemonTriangle *this_ptr,uint flags);
+CDemonTriangle * __cdecl CDemonTriangle::dtor(CDemonTriangle *this_ptr,uint flags);

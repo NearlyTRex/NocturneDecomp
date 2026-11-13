@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CShadowsc * core_shotgun_cpp_CShadowsc_dtor_FUN_00546f40(CShadowsc *this_ptr,uint flags)
+; CShadowsc * __cdecl core_shotgun_cpp_CShadowsc_dtor_FUN_00546f40(CShadowsc *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CShadowsc *      Stack[0x4]:4   this_ptr

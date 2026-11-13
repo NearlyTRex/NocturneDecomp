@@ -23,7 +23,7 @@
 ;   core_elephant.cpp_CElephantGun_fire_FUN_00486d40 at 0048754b
 ;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004aef94
 ;   core_gun.cpp_CGun_fire_FUN_004d0fc0 at 004d1865
-;   core_lightsta.cpp_FUN_004e1070 at 004e1ffd
+;   core_lightsta.cpp_CLightStaff_fire_FUN_004e1070 at 004e1ffd
 ;   core_rifle.cpp_CRifle_fire_FUN_00527d70 at 005284b7
 ;   core_tommygun.cpp_CTommyGun_fire_FUN_0056b410 at 0056bcfa
 ;

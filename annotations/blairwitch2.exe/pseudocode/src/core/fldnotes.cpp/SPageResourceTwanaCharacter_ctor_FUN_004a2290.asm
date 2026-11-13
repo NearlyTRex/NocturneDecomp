@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_ctor_FUN_004a2290(SPageResourceTwanaCharacter *this_ptr,char *param_2)
+; SPageResourceTwanaCharacter * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_ctor_FUN_004a2290(SPageResourceTwanaCharacter *this_ptr,char *character)
 ;
 ; Parameters:
 ; SPageResourceTwanaCharacter * Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   character
 ; Local Variables:
 ; undefined        Stack[-0x10c]:1  local_10c
 ;

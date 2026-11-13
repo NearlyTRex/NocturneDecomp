@@ -1,14 +1,12 @@
 // Name: core_batcreat.cpp_CBatCreature_dtor_FUN_00412690
 // Address: 00412690
 // Address Range: [[00412690, 00412714]]
-// Convention: unknown
-// Signature: CBatCreature * core_batcreat_cpp_CBatCreature_dtor_FUN_00412690(CBatCreature *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_dtor_FUN_00412690(CBatCreature *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBatCreature * core_batcreat_cpp_CBatCreature_dtor_FUN_00412690(CBatCreature *this_ptr,uint flags)
+CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_dtor_FUN_00412690(CBatCreature *this_ptr,uint flags)
 
 {
   int iVar1;

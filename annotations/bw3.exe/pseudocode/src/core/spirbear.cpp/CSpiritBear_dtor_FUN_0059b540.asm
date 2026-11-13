@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSpiritBear * core_spirbear_cpp_CSpiritBear_dtor_FUN_0059b540(CSpiritBear *this_ptr,uint flags)
+; CSpiritBear * __cdecl core_spirbear_cpp_CSpiritBear_dtor_FUN_0059b540(CSpiritBear *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSpiritBear *    Stack[0x4]:4   this_ptr

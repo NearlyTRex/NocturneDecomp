@@ -13,7 +13,7 @@
 ;   core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_00544ae0 at 00544af0
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00544380 at 005443d4
 ;   core_skeleton.cpp_FUN_005424b0 at 005424bc
-;   core_skeleton.cpp_FUN_005426be at 005426cc
+;   core_skeleton.cpp_FUN_005426c0 at 005426cc
 ;   core_skeleton.cpp_FUN_005487d0 at 005487ea
 ;
 ; Referenced Globals:

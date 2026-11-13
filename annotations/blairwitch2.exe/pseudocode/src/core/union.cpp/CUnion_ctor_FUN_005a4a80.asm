@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CUnion * core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr)
+; CUnion * __cdecl core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr)
 ;
 ; Parameters:
 ; CUnion *         Stack[0x4]:4   this_ptr

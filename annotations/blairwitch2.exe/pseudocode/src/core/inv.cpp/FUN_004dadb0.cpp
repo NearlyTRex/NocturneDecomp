@@ -354,7 +354,7 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
                (float)((int)pCVar5[1].particle_systems[1].fade_start + pCStack_1c->ammo_count);
           engine_console_cpp_CConsole_printf_FUN_00436710
                     (this_ptr,"Found existing ammo... adding count");
-          core_mission_cpp_FUN_004fc7b0(0x01D182F0,param_2,1);
+          core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,param_2,1);
           return 1;
         }
         iVar7 = iVar7 + 1;
@@ -407,7 +407,7 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
         pCVar5[1].particle_systems[0].fade_end =
              (float)((int)pCVar5[1].particle_systems[0].fade_end +
                     (int)pCStack_2c[1].particle_systems[0].fade_end);
-        core_mission_cpp_FUN_004fc7b0(pCVar2,param_2,1);
+        core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(pCVar2,param_2,1);
         return 1;
       }
       iVar7 = iVar7 + 1;
@@ -424,7 +424,7 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
               ) = local_24;
       pCVar2 = 0x01D182F0;
       *(int *)(param_1->actor_name + 0x10) = *(int *)(param_1->actor_name + 0x10) + 1;
-      core_mission_cpp_FUN_004fc7b0(pCVar2,param_2,0);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(pCVar2,param_2,0);
       (*((param_2->vtable)._ub)->onPickup)(param_2,param_1);
       return 1;
     }
@@ -454,7 +454,7 @@ uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int par
             }
             engine_console_cpp_CConsole_printf_FUN_00436710
                       (g_CConsolePtr,"Found same weapon, increasing ammoCount\n");
-            core_mission_cpp_FUN_004fc7b0(0x01D182F0,param_2,1);
+            core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,param_2,1);
             return 1;
           }
         }

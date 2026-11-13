@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPathMap * core_path_cpp_CPathMap_arrdtor12_FUN_0050d600(CPathMap *this_ptr,uint flags)
+; CPathMap * __cdecl core_path_cpp_CPathMap_arrdtor12_FUN_0050d600(CPathMap *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CPathMap *       Stack[0x4]:4   this_ptr

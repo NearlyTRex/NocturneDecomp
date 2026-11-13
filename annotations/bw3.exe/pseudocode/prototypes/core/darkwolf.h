@@ -7,19 +7,19 @@
 
 // Original: core_darkwolf.cpp_staticInit_FUN_00598700
 // Address: 00598700
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_darkwolf.cpp_factoryFuncDarkwolf_FUN_00598750
 // Address: 00598750
-void factoryFuncDarkwolf(void);
+CDarkwolf * __cdecl factoryFuncDarkwolf(void);
 
 // Original: core_darkwolf.cpp_CDarkwolf_getActorType_FUN_00598770
 // Address: 00598770
-CDemonActorType * CDarkwolf::getActorType(CDarkwolf *this_ptr);
+CDemonActorType * __cdecl CDarkwolf::getActorType(CDarkwolf *this_ptr);
 
 // Original: core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780
 // Address: 00598780
-CDarkwolf * CDarkwolf::ctor(CDarkwolf *this_ptr);
+CDarkwolf * __cdecl CDarkwolf::ctor(CDarkwolf *this_ptr);
 
 // Original: core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800
 // Address: 00598800
@@ -55,12 +55,12 @@ CDemonActorType * __cdecl CWhitewolf::getActorType(CWhitewolf *this_ptr);
 
 // Original: core_darkwolf.cpp_CWhitewolf_ctor_FUN_00598fe0
 // Address: 00598fe0
-CWhitewolf * CWhitewolf::ctor(CWhitewolf *this_ptr);
+CWhitewolf * __cdecl CWhitewolf::ctor(CWhitewolf *this_ptr);
 
 // Original: core_darkwolf.cpp_CWhitewolf_dtor_FUN_00599030
 // Address: 00599030
-CWhitewolf * CWhitewolf::dtor(CWhitewolf *this_ptr,uint flags);
+CWhitewolf * __cdecl CWhitewolf::dtor(CWhitewolf *this_ptr,uint flags);
 
 // Original: core_darkwolf.cpp_CDarkwolf_dtor_FUN_005990d0
 // Address: 005990d0
-CDarkwolf * CDarkwolf::dtor(CDarkwolf *this_ptr,uint flags);
+CDarkwolf * __cdecl CDarkwolf::dtor(CDarkwolf *this_ptr,uint flags);

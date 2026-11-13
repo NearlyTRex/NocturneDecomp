@@ -7,23 +7,23 @@
 
 // Original: core_cross.cpp_staticInit_FUN_005a6970
 // Address: 005a6970
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_cross.cpp_factoryFuncCross_FUN_005a69c0
 // Address: 005a69c0
-void factoryFuncCross(void);
+CCross * __cdecl factoryFuncCross(void);
 
 // Original: core_cross.cpp_CCross_getActorType_FUN_005a69e0
 // Address: 005a69e0
-CDemonActorType * CCross::getActorType(CCross *this_ptr);
+CDemonActorType * __cdecl CCross::getActorType(CCross *this_ptr);
 
 // Original: core_cross.cpp_CCross_ctor_FUN_005a69f0
 // Address: 005a69f0
-CCross * CCross::ctor(CCross *this_ptr);
+CCross * __cdecl CCross::ctor(CCross *this_ptr);
 
 // Original: core_cross.cpp_CCross_dtor_FUN_005a6b30
 // Address: 005a6b30
-CCross * CCross::dtor(CCross *this_ptr,uint flags);
+CCross * __cdecl CCross::dtor(CCross *this_ptr,uint flags);
 
 // Original: core_cross.cpp_CCross_setup_FUN_005a6b90
 // Address: 005a6b90
@@ -55,8 +55,8 @@ CDemonActorType * __cdecl CSimpleCross::getActorType(CSimpleCross *this_ptr);
 
 // Original: core_cross.cpp_CSimpleCross_ctor_FUN_005a7980
 // Address: 005a7980
-CSimpleCross * CSimpleCross::ctor(CSimpleCross *this_ptr);
+CSimpleCross * __cdecl CSimpleCross::ctor(CSimpleCross *this_ptr);
 
 // Original: core_cross.cpp_CSimpleCross_dtor_FUN_005a7a60
 // Address: 005a7a60
-CSimpleCross * CSimpleCross::dtor(CSimpleCross *this_ptr,uint flags);
+CSimpleCross * __cdecl CSimpleCross::dtor(CSimpleCross *this_ptr,uint flags);

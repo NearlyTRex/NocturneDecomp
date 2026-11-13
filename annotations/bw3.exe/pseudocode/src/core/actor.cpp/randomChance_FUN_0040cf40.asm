@@ -19,7 +19,7 @@
 ;   core_charactr.cpp_FUN_0042fdc0 at 0042fddf
 ;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00443616
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00445730 at 004457b6
-;   core_demnfolk.cpp_FUN_00455080 at 0045725b
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 0045725b
 ;   ... and 26 more
 ;
 ; Referenced Globals:

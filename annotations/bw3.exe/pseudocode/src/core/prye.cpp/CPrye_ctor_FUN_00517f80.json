@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 143,
+    "complexity_score": 142,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 128,
+    "pseudocode_lines": 127,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_memset"
     ],
-    "total_lines": 475
+    "total_lines": 474
   },
   "cross_references": [
     {
@@ -30,9 +30,9 @@
         "0051842c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_prye.cpp_CPrye_ctor_FUN_00517f80",
-    "signature": "CPrye * core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)"
+    "signature": "CPrye * __cdecl core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)"
   },
   "function_calls": [
     {
@@ -130,7 +130,7 @@
   "suspects": [
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 51,
+      "line": 49,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr_00->pending_velocity).z = 0.0;",

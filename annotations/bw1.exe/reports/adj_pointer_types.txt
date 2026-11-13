@@ -1,4 +1,4 @@
-Scanning 524 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw1.exe/pseudocode/src...
+Scanning 529 ctor/dtor asm files in /home/aryie/Repositories/NocturneDecomp/annotations/bw1.exe/pseudocode/src...
 
 ======================================================================
 UNFINISHED CTORS/DTORS (175 files still need ADJ)
@@ -80,16 +80,18 @@ UNFINISHED CTORS/DTORS (175 files still need ADJ)
 
   [core/bmppuzzl.cpp]
     CAudioRecPuzzle_ctor_FUN_00415d90:
-      CAlphaBitmap_ctor @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
-      CKeyFramedModelInstance_ctor @ ??? (UNKNOWN)
+      CAlphaBitmap_ctor @ this+0x4 (4) -> CAudioRecPuzzle_ptr_4
+      _arrinit @ this+0x60 (96) -> CAudioRecPuzzle_ptr_96
+      CKeyFramedModelInstance_ctor @ this+0x8f8 (2296) -> CAudioRecPuzzle_ptr_2296
+      CKeyFramedModelInstance_ctor @ this+0xa74 (2676) -> CAudioRecPuzzle_ptr_2676
     CAudioRecPuzzle_dtor_FUN_00415df0:
+      CPuzzle_dtor @ this+0x60 (96) -> CAudioRecPuzzle_ptr_96
       CAlphaBitmap_dtor @ ??? (UNKNOWN)
     CChemPuzzle_ctor_FUN_004175f0:
-      CAlphaBitmap_ctor @ ??? (UNKNOWN)
-      _arrinit @ ??? (UNKNOWN)
+      CAlphaBitmap_ctor @ this+0x4 (4) -> CChemPuzzle_ptr_4
+      _arrinit @ this+0x70 (112) -> CChemPuzzle_ptr_112
     CChemPuzzle_dtor_FUN_00417630:
+      CPuzzle_dtor @ this+0x70 (112) -> CChemPuzzle_ptr_112
       CAlphaBitmap_dtor @ ??? (UNKNOWN)
 
   [core/bodypart.cpp]
@@ -752,6 +754,10 @@ NEEDED ADJ POINTER TYPES
   CAmmoBox_ptr_344  (0x158)
   CAnvil_ptr_344  (0x158)
   CArmour_ptr_13788  (0x35dc)
+  CAudioRecPuzzle_ptr_4  (0x4)
+  CAudioRecPuzzle_ptr_96  (0x60)
+  CAudioRecPuzzle_ptr_2296  (0x8f8)
+  CAudioRecPuzzle_ptr_2676  (0xa74)
   CBackgroundActor_ptr_348  (0x15c)
   CBassPlayer_ptr_49616  (0xc1d0)
   CBat_ptr_376  (0x178)
@@ -783,6 +789,8 @@ NEEDED ADJ POINTER TYPES
   CCharacter_ptr_12060  (0x2f1c)
   CCharacter_ptr_12588  (0x312c)
   CCharacter_ptr_13788  (0x35dc)
+  CChemPuzzle_ptr_4  (0x4)
+  CChemPuzzle_ptr_112  (0x70)
   CCloth_ptr_920  (0x398)
   CCloth_ptr_228176  (0x37b50)
   CConstruct_ptr_13788  (0x35dc)
@@ -936,10 +944,10 @@ NEEDED ADJ POINTER TYPES
   SPageResourceTwanaEntry_ptr_220  (0xdc)
   SVert_ptr_16  (0x10)
 
-Total: 187 types across 129 classes
+Total: 193 types across 131 classes
 
 ======================================================================
-MANUAL REVIEW NEEDED (102 calls with unknown offset)
+MANUAL REVIEW NEEDED (96 calls with unknown offset)
 ======================================================================
   CArmour_dtor_FUN_0040ecc0.asm: CClothList_dtor
   CArmour_dtor_FUN_0040ecc0.asm: CDeformableModelInstance_dtor
@@ -955,13 +963,7 @@ MANUAL REVIEW NEEDED (102 calls with unknown offset)
   CBiggs_dtor_FUN_004150f0.asm: CDeformableModelInstance_dtor
   CBird_dtor_FUN_004159f0.asm: CClothList_dtor
   CBird_dtor_FUN_004159f0.asm: CDeformableModelInstance_dtor
-  CAudioRecPuzzle_ctor_FUN_00415d90.asm: CAlphaBitmap_ctor
-  CAudioRecPuzzle_ctor_FUN_00415d90.asm: _arrinit
-  CAudioRecPuzzle_ctor_FUN_00415d90.asm: CKeyFramedModelInstance_ctor
-  CAudioRecPuzzle_ctor_FUN_00415d90.asm: CKeyFramedModelInstance_ctor
   CAudioRecPuzzle_dtor_FUN_00415df0.asm: CAlphaBitmap_dtor
-  CChemPuzzle_ctor_FUN_004175f0.asm: CAlphaBitmap_ctor
-  CChemPuzzle_ctor_FUN_004175f0.asm: _arrinit
   CChemPuzzle_dtor_FUN_00417630.asm: CAlphaBitmap_dtor
   CBoneGuy_dtor_FUN_0041d850.asm: CClothList_dtor
   CBoneGuy_dtor_FUN_0041d850.asm: CDeformableModelInstance_dtor

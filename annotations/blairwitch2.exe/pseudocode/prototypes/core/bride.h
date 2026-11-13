@@ -15,11 +15,11 @@ CBride * __cdecl factoryFuncBride(void);
 
 // Original: core_bride.cpp_CBride_getActorType_FUN_0041d940
 // Address: 0041d940
-CDemonActorType * CBride::getActorType(CBride *this_ptr);
+CDemonActorType * __cdecl CBride::getActorType(CBride *this_ptr);
 
 // Original: core_bride.cpp_CBride_ctor_FUN_0041d950
 // Address: 0041d950
-CBride * CBride::ctor(CBride *this_ptr);
+CBride * __cdecl CBride::ctor(CBride *this_ptr);
 
 // Original: core_bride.cpp_CBride_setup_FUN_0041d9c0
 // Address: 0041d9c0
@@ -51,4 +51,4 @@ CVector3f * __cdecl CBride::getTargetPoint(CBride *this_ptr,CVector3f *out_point
 
 // Original: core_bride.cpp_CBride_dtor_FUN_0041ee50
 // Address: 0041ee50
-CBride * CBride::dtor(CBride *this_ptr,uint flags);
+CBride * __cdecl CBride::dtor(CBride *this_ptr,uint flags);

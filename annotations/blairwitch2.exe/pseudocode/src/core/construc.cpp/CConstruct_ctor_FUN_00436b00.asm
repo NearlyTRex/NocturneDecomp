@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CConstruct * core_construc_cpp_CConstruct_ctor_FUN_00436b00(CConstruct *this_ptr)
+; CConstruct * __cdecl core_construc_cpp_CConstruct_ctor_FUN_00436b00(CConstruct *this_ptr)
 ;
 ; Parameters:
 ; CConstruct *     Stack[0x4]:4   this_ptr

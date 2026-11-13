@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SDjienBox * core_djien_cpp_SDjienBox_ctor_FUN_00462440(SDjienBox *this_ptr)
+; SDjienBox * __cdecl core_djien_cpp_SDjienBox_ctor_FUN_00462440(SDjienBox *this_ptr)
 ;
 ; Parameters:
 ; SDjienBox *      Stack[0x4]:4   this_ptr

@@ -21,10 +21,10 @@
 ;   ... and 29 more
 ;
 ; Called Functions:
+;   core_charactr.cpp_CCharacter_applyGesture_FUN_004320d0
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433000
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004322a0
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00431d10
-;   core_charactr.cpp_FUN_004320d0
 ;   core_cloth.cpp_CClothList_process_FUN_0043fc00
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10
 ;
@@ -36,8 +36,8 @@ section .text
         ;   Label: core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
     MOV EBX,dword ptr [ESP + 0x8]       ; 00433351
     PUSH EBX                            ; 00433355
-    CALL core_charactr.cpp_FUN_004320d0 ; 00433356
-        ;   XREF to: 004320d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004320d0()
+    CALL core_charactr.cpp_CCharacter_applyGesture_FUN_004320d0 ; 00433356
+        ;   XREF to: 004320d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGesture_FUN_004320d0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0043335b
     PUSH EBX                            ; 0043335e
     CALL core_charactr.cpp_CCharacter_applyLookAt_FUN_00433000 ; 0043335f

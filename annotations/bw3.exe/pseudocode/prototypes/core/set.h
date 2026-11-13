@@ -19,11 +19,11 @@ void FUN_005326b0(int param_1);
 
 // Original: core_set.cpp_CDemonSet_ctor_FUN_005327c0
 // Address: 005327c0
-CDemonSet * CDemonSet::ctor(CDemonSet *this_ptr);
+CDemonSet * __cdecl CDemonSet::ctor(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_dtor_FUN_00532b00
 // Address: 00532b00
-CDemonSet * CDemonSet::dtor(CDemonSet *this_ptr,uint flags);
+CDemonSet * __cdecl CDemonSet::dtor(CDemonSet *this_ptr,uint flags);
 
 // Original: core_set.cpp_CDemonSet_clear_FUN_00532b30
 // Address: 00532b30
@@ -37,9 +37,9 @@ CDemonSet * FUN_00532b80(CDemonSet *param_1,char *param_2);
 // Address: 00533b80
 void __cdecl CDemonSet::renderSceneGeometry(CDemonSet *this_ptr,float frustum_param,int render_mode);
 
-// Original: core_set.cpp_FUN_00533e5e
-// Address: 00533e5e
-void FUN_00533e5e(CDemonSet *param_1,int param_2);
+// Original: core_set.cpp_FUN_00533e60
+// Address: 00533e60
+void FUN_00533e60(void);
 
 // Original: core_set.cpp_CDemonSet_initScene_FUN_00534420
 // Address: 00534420
@@ -197,9 +197,9 @@ void __cdecl CDemonSet::renderEnvMapPrimitives(CDemonSet *this_ptr,SMRGLHeaderPr
 // Address: 0053a6c0
 void __cdecl CDemonSet::renderEnvMapTriangles(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
 
-// Original: core_set.cpp_FUN_0053ab0e
-// Address: 0053ab0e
-void FUN_0053ab0e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4);
+// Original: core_set.cpp_FUN_0053ab10
+// Address: 0053ab10
+void FUN_0053ab10(void);
 
 // Original: core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80
 // Address: 0053ab80
@@ -315,11 +315,11 @@ void __cdecl CDemonSet::renderDecals(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_SRoom_ctor_FUN_0053baf0
 // Address: 0053baf0
-SRoom * SRoom::ctor(SRoom *this_ptr);
+SRoom * __cdecl SRoom::ctor(SRoom *this_ptr);
 
 // Original: core_set.cpp_SVDBox_ctor_FUN_0053bb00
 // Address: 0053bb00
-SVDBox * SVDBox::ctor(SVDBox *this_ptr);
+SVDBox * __cdecl SVDBox::ctor(SVDBox *this_ptr);
 
 // Original: core_set.cpp_FUN_0053bb60
 // Address: 0053bb60

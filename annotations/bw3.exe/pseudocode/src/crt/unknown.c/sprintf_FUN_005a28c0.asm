@@ -12,13 +12,13 @@
 ; XREF[172]:
 ;   cockpit_ckptutil.c_FUN_004367e0 at 0043681e
 ;   cockpit_ckptutil.c_FUN_00436a50 at 00436a8e
-;   cockpit_ckptutil.c_FUN_00436c9e at 00436d18
+;   cockpit_ckptutil.c_FUN_00436ca0 at 00436d18
 ;   cockpit_ckptutil.c_FUN_00437e10 at 00437f0c
 ;   cockpit_ckptutil.c_FUN_00438ca0 at 00438dc7
 ;   cockpit_ckptutil.c_FUN_00438ef0 at 00438f45
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_004350a0 at 00435190
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_00437c50 at 00437cdb
-;   cockpit_ckptutil.c_traceConnectedEdges_FUN_0043806e at 0043817b
+;   cockpit_ckptutil.c_traceConnectedEdges_FUN_00438070 at 0043817b
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0050fa90 at 0050fbdd
 ;   ... and 162 more
 ;

@@ -1,14 +1,12 @@
 // Name: core_villain.cpp_CSteuben_ctor_FUN_005a5b40
 // Address: 005a5b40
 // Address Range: [[005a5b40, 005a5c01]]
-// Convention: unknown
-// Signature: CSteuben * core_villain_cpp_CSteuben_ctor_FUN_005a5b40(CSteuben *this_ptr)
+// Convention: __cdecl
+// Signature: CSteuben * __cdecl core_villain_cpp_CSteuben_ctor_FUN_005a5b40(CSteuben *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSteuben * core_villain_cpp_CSteuben_ctor_FUN_005a5b40(CSteuben *this_ptr)
+CSteuben * __cdecl core_villain_cpp_CSteuben_ctor_FUN_005a5b40(CSteuben *this_ptr)
 
 {
   CBasicNPC *this_ptr_00;

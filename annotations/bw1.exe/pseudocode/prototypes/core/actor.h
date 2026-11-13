@@ -315,7 +315,7 @@ uint __cdecl hashClassName(char *class_name);
 
 // Original: core_actor.cpp_registerActorClass_FUN_0040c160
 // Address: 0040c160
-CDemonActorType * registerActorClass(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factory_func,int *max_version,int version,CDemonActorType *parent_class_info);
+CDemonActorType * __cdecl registerActorClass(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factory_func,int *max_version,int version,CDemonActorType *parent_class_info);
 
 // Original: core_actor.cpp_getActorClassByName_FUN_0040c240
 // Address: 0040c240
@@ -427,7 +427,7 @@ float FUN_0040cfc0(float *param_1);
 
 // Original: core_actor.cpp_CVector3f_ctor_FUN_0040cfe0
 // Address: 0040cfe0
-CVector3f * CVector3f::ctor(CVector3f *this_ptr);
+CVector3f * __cdecl CVector3f::ctor(CVector3f *this_ptr);
 
 // Original: core_actor.cpp_FUN_0040cff0
 // Address: 0040cff0
@@ -443,4 +443,4 @@ void __cdecl CVector3f::toFixed8(CVector3f *this_ptr,CVector3i *other);
 
 // Original: core_actor.cpp_CVector3f_dtor_FUN_0040d090
 // Address: 0040d090
-CVector3f * CVector3f::dtor(CVector3f *this_ptr,uint flags);
+CVector3f * __cdecl CVector3f::dtor(CVector3f *this_ptr,uint flags);

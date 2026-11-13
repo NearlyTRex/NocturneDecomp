@@ -85,7 +85,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470
         pcVar2 = pcVar2 + 2;
       } while (cVar1 != '\0');
       engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
-      engine_mini3d_cpp_FUN_004edaf0(0x3f800000);
+      engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
       engine_font_cpp_FUN_004b0a20
                 (_DAT_01c5b0e0,local_360,_DAT_01c6b5a8,_DAT_01c6b5ac,_DAT_01c5bb24,0xffffffff);
     }
@@ -94,7 +94,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470
       uVar6 = _DAT_01c5bb28;
     }
     engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
-    engine_mini3d_cpp_FUN_004edaf0(0x3f800000);
+    engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
     uVar11 = 0xffffffff;
     iVar3 = _DAT_01c6b5ac + _DAT_01c5bae4;
     iVar4 = _DAT_01c6b5a8;

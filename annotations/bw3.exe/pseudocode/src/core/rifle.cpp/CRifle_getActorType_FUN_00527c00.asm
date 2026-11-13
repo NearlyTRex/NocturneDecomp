@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_rifle_cpp_CRifle_getActorType_FUN_00527c00(CRifle *this_ptr)
+; CDemonActorType * __cdecl core_rifle_cpp_CRifle_getActorType_FUN_00527c00(CRifle *this_ptr)
 ;
 ; Parameters:
 ; CRifle *         Stack[0x4]:4   this_ptr

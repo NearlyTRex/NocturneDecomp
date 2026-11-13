@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBaalSkel * core_boneguy_cpp_CBaalSkel_dtor_FUN_0041a8c0(CBaalSkel *this_ptr,uint flags)
+; CBaalSkel * __cdecl core_boneguy_cpp_CBaalSkel_dtor_FUN_0041a8c0(CBaalSkel *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBaalSkel *      Stack[0x4]:4   this_ptr

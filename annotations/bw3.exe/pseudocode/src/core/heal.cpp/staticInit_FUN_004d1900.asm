@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_heal_cpp_staticInit_FUN_004d1900(void)
+; void __cdecl core_heal_cpp_staticInit_FUN_004d1900(void)
 ;
 ;
 ; Called Functions:

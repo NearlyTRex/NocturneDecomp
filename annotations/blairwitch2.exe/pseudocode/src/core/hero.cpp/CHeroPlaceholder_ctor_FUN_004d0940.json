@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 56,
+    "complexity_score": 55,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 25,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 60
+    "total_lines": 59
   },
   "cross_references": [
     {
@@ -37,9 +37,9 @@
         "004d0998"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hero.cpp_CHeroPlaceholder_ctor_FUN_004d0940",
-    "signature": "CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceholder *this_ptr)"
+    "signature": "CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceholder *this_ptr)"
   },
   "function_calls": [
     {
@@ -181,7 +181,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 10,
       "match": "DAT_005da037",
       "severity": "mild",
       "text": "pcVar3 = &DAT_005da037;",
@@ -189,7 +189,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 18,
+      "line": 16,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

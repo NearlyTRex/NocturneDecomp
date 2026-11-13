@@ -1,15 +1,14 @@
 // Name: core_bride.cpp_CBride_ctor_FUN_004238c0
 // Address: 004238c0
 // Address Range: [[004238c0, 00423939]]
-// Convention: unknown
-// Signature: CBride * core_bride_cpp_CBride_ctor_FUN_004238c0(CBride *this_ptr)
+// Convention: __cdecl
+// Signature: CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_004238c0(CBride *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CBride * core_bride_cpp_CBride_ctor_FUN_004238c0(CBride *this_ptr)
+CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_004238c0(CBride *this_ptr)
 
 {
   float fVar1;

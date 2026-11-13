@@ -30,7 +30,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_zombiepriest.cpp_FUN_0058d960 at 0058de4c
+;   core_zombiepriest.cpp_CZombiePriest_process_FUN_0058d960 at 0058de4c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_zombiepriest_cpp_005d8bb8

@@ -1,14 +1,12 @@
 // Name: core_ghostchi.cpp_CGhostChild_ctor_FUN_005a9230
 // Address: 005a9230
 // Address Range: [[005a9230, 005a9367]]
-// Convention: unknown
-// Signature: CGhostChild * core_ghostchi_cpp_CGhostChild_ctor_FUN_005a9230(CGhostChild *this_ptr)
+// Convention: __cdecl
+// Signature: CGhostChild * __cdecl core_ghostchi_cpp_CGhostChild_ctor_FUN_005a9230(CGhostChild *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CGhostChild * core_ghostchi_cpp_CGhostChild_ctor_FUN_005a9230(CGhostChild *this_ptr)
+CGhostChild * __cdecl core_ghostchi_cpp_CGhostChild_ctor_FUN_005a9230(CGhostChild *this_ptr)
 
 {
   SStateMachine *pSVar1;

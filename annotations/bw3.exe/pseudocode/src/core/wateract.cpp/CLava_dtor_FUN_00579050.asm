@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLava * core_wateract_cpp_CLava_dtor_FUN_00579050(CLava *this_ptr,uint flags)
+; CLava * __cdecl core_wateract_cpp_CLava_dtor_FUN_00579050(CLava *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLava *          Stack[0x4]:4   this_ptr

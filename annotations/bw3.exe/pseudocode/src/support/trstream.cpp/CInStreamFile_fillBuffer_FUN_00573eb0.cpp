@@ -2,11 +2,11 @@
 // Address: 00573eb0
 // Address Range: [[00573eb0, 00573f42]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_trstream_cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStreamFile *this_ptr,int param_2)
+// Signature: int __cdecl support_trstream_cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStreamFile *this_ptr,int position)
 
 #include "nocturne.h"
 
-uint __cdecl support_trstream_cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStreamFile *this_ptr,int param_2)
+int __cdecl support_trstream_cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStreamFile *this_ptr,int position)
 
 {
   uint lDistanceToMove;
@@ -15,7 +15,7 @@ uint __cdecl support_trstream_cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStrea
   uint uVar3;
   DWORD local_14;
   
-  lDistanceToMove = param_2 + this_ptr->file_offset & 0xfffff000;
+  lDistanceToMove = position + this_ptr->file_offset & 0xfffff000;
   iVar1 = lDistanceToMove - this_ptr->file_offset;
   iVar2 = this_ptr->file_size - iVar1;
   this_ptr->buffer_length = iVar2;

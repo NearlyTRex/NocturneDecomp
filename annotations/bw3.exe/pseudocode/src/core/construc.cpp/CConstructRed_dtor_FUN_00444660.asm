@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CConstructRed * core_construc_cpp_CConstructRed_dtor_FUN_00444660(CConstructRed *this_ptr,uint flags)
+; CConstructRed * __cdecl core_construc_cpp_CConstructRed_dtor_FUN_00444660(CConstructRed *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CConstructRed *  Stack[0x4]:4   this_ptr

@@ -16,7 +16,7 @@
 ;   crt_unknown.c_FUN_005bfdd4 at 005c00bb
 ;   crt_unknown.c_FUN_005c3f24 at 005c3f5a
 ;   crt_unknown.c_FUN_005c59e0 at 005c5a2e
-;   engine_dosio.cpp_FUN_00460fa0 at 00460fc8
+;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_00460fa0 at 00460fc8
 ;   engine_ini.cpp_CIni_getProfileString_FUN_004d8180 at 004d8347
 ;   engine_pod.cpp_findFilesByExtension_FUN_0051b3c0 at 0051b52a
 ;   ... and 3 more

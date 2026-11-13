@@ -7,7 +7,7 @@
 
 // Original: core_trash.cpp_staticInit_FUN_005768d0
 // Address: 005768d0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_trash.cpp_factoryFuncTrash_FUN_00576900
 // Address: 00576900
@@ -15,7 +15,7 @@ CTrash * __cdecl factoryFuncTrash(void);
 
 // Original: core_trash.cpp_CTrash_getActorType_FUN_00576920
 // Address: 00576920
-CDemonActorType * CTrash::getActorType(CTrash *this_ptr);
+CDemonActorType * __cdecl CTrash::getActorType(CTrash *this_ptr);
 
 // Original: core_trash.cpp_CTrash_ctor_FUN_00576930
 // Address: 00576930

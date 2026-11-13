@@ -7,19 +7,19 @@
 
 // Original: core_rifle.cpp_staticInit_FUN_0053fec0
 // Address: 0053fec0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_rifle.cpp_factoryFuncRifle_FUN_0053fef0
 // Address: 0053fef0
-void factoryFuncRifle(void);
+CRifle * __cdecl factoryFuncRifle(void);
 
 // Original: core_rifle.cpp_CRifle_getActorType_FUN_0053ff10
 // Address: 0053ff10
-CDemonActorType * CRifle::getActorType(CRifle *this_ptr);
+CDemonActorType * __cdecl CRifle::getActorType(CRifle *this_ptr);
 
 // Original: core_rifle.cpp_CRifle_ctor_FUN_0053ff20
 // Address: 0053ff20
-CRifle * CRifle::ctor(CRifle *this_ptr);
+CRifle * __cdecl CRifle::ctor(CRifle *this_ptr);
 
 // Original: core_rifle.cpp_CRifle_getMuzzlePoint_FUN_0053ffb0
 // Address: 0053ffb0
@@ -47,4 +47,4 @@ void __cdecl CRifle::renderAimBeam(CRifle *this_ptr);
 
 // Original: core_rifle.cpp_CRifle_dtor_FUN_005409c0
 // Address: 005409c0
-CRifle * CRifle::dtor(CRifle *this_ptr,uint flags);
+CRifle * __cdecl CRifle::dtor(CRifle *this_ptr,uint flags);

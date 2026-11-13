@@ -20,7 +20,7 @@ int __cdecl sound_sndmain_cpp_FUN_00557570(CSfxSample *out_sample)
   char local_140;
   byte local_13f [255];
   CInStreamFile local_40;
-  uint local_14;
+  int local_14;
   
   bVar6 = 0;
   sound_sndmain_cpp_lockSound_FUN_00558e90();
@@ -94,7 +94,7 @@ LAB_005576c8:
   }
   support_trstream_cpp_CInStreamFile_ctor_FUN_005738c0(&local_40);
   iVar4 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0
-                    (&local_40,"sound",out_sample,1);
+                    (&local_40,"sound",(char *)out_sample,1);
   if (iVar4 != 0) {
     local_14 = support_trstream_cpp_CInStreamFile_tell_FUN_00573d40(&local_40);
     iVar4 = sound_sndmain_cpp_FUN_00551000(&local_40,&local_14,out_sample);

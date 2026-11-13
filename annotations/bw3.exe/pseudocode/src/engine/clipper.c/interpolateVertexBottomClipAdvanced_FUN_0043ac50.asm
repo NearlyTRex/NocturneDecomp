@@ -8,8 +8,7 @@
 ; SRenderVertex *  Stack[0x8]:4   v2
 ; SRenderVertex *  Stack[0xc]:4   output
 ;
-; XREF[2]:
-;   engine_clipper.c_clipPolygonBottomPlaneGlobal_FUN_0043b14e at 0043b211
+; XREF[1]:
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043bac0 at 0043c16c
 ;
 ; *****************************************************************************

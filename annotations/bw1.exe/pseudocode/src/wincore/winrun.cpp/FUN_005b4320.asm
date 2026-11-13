@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   wincore_winrun.cpp_FUN_005b418e at 005b41b4
+;   wincore_winrun.cpp_FUN_005b4190 at 005b41b4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c9c7e0

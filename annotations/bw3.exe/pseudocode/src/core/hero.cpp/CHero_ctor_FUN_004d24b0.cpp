@@ -17,7 +17,7 @@ CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004d24b0(CHero *this_ptr)
   pCVar2 = core_path_cpp_CPathMap_ctor_FUN_0050acc0((CPathMap *)&pCVar1[1].base.orient_matrix);
   pCVar3 = core_inv_cpp_CInventory_ctor_FUN_004da360((CInventory *)&pCVar2[1].current_position.y);
   pCVar3->owner = (CDemonActor *)(pCVar3[-0x75].items + 0xd);
-  pCVar3[-0x75].items[0x62] = (CDemonActor *)&PTR_core_hero_cpp_FUN_004d26b0_005e1534;
+  pCVar3[-0x75].items[0x62] = (CDemonActor *)&PTR_core_hero_cpp_CHero_setup_FUN_004d26b0_005e1534;
   memset(pCVar3[-0x47].item_angles + 0x16,0,0x34);
   pCVar3[-0x47].item_angles[0x14] = 0.0;
   pCVar3[-0x6a].item_angles[0x10] = 0.6;

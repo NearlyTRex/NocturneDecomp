@@ -31,19 +31,19 @@ void FUN_00454b30(void);
 
 // Original: core_demnfolk.cpp_CDemnfolk_getActorType_FUN_00454b50
 // Address: 00454b50
-CDemonActorType * CDemnfolk::getActorType(CDemnfolk *this_ptr);
+CDemonActorType * __cdecl CDemnfolk::getActorType(CDemnfolk *this_ptr);
 
 // Original: core_demnfolk.cpp_CDemnfolk_ctor_FUN_00454b60
 // Address: 00454b60
-CDemnfolk * CDemnfolk::ctor(CDemnfolk *this_ptr);
+CDemnfolk * __cdecl CDemnfolk::ctor(CDemnfolk *this_ptr);
 
-// Original: core_demnfolk.cpp_FUN_00454d20
+// Original: core_demnfolk.cpp_CDemnfolk_setup_FUN_00454d20
 // Address: 00454d20
-void FUN_00454d20(CEnemy *param_1);
+void __cdecl CDemnfolk::setup(CDemnfolk *this_ptr);
 
-// Original: core_demnfolk.cpp_FUN_00455080
+// Original: core_demnfolk.cpp_CDemnfolk_process_FUN_00455080
 // Address: 00455080
-void FUN_00455080(CEnemy *param_1,float param_2);
+void __cdecl CDemnfolk::process(CDemnfolk *this_ptr,float param_2);
 
 // Original: core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_00457300
 // Address: 00457300
@@ -115,4 +115,4 @@ void FUN_00458fb0(int param_1);
 
 // Original: core_demnfolk.cpp_CDemnfolk_dtor_FUN_00459030
 // Address: 00459030
-CDemnfolk * CDemnfolk::dtor(CDemnfolk *this_ptr,uint flags);
+CDemnfolk * __cdecl CDemnfolk::dtor(CDemnfolk *this_ptr,uint flags);

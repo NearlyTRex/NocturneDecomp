@@ -7,19 +7,19 @@
 
 // Original: core_bindevil.cpp_staticInit_FUN_0040f720
 // Address: 0040f720
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_bindevil.cpp_factoryFuncBindEvil_FUN_0040f750
 // Address: 0040f750
-void factoryFuncBindEvil(void);
+CBindEvil * __cdecl factoryFuncBindEvil(void);
 
 // Original: core_bindevil.cpp_CBindEvil_getActorType_FUN_0040f770
 // Address: 0040f770
-CDemonActorType * CBindEvil::getActorType(CBindEvil *this_ptr);
+CDemonActorType * __cdecl CBindEvil::getActorType(CBindEvil *this_ptr);
 
 // Original: core_bindevil.cpp_CBindEvil_ctor_FUN_0040f780
 // Address: 0040f780
-CBindEvil * CBindEvil::ctor(CBindEvil *this_ptr);
+CBindEvil * __cdecl CBindEvil::ctor(CBindEvil *this_ptr);
 
 // Original: core_bindevil.cpp_CBindEvil_fire_FUN_0040f840
 // Address: 0040f840
@@ -35,4 +35,4 @@ void __cdecl CBindEvil::setup(CBindEvil *this_ptr);
 
 // Original: core_bindevil.cpp_CBindEvil_dtor_FUN_0040f940
 // Address: 0040f940
-CBindEvil * CBindEvil::dtor(CBindEvil *this_ptr,uint flags);
+CBindEvil * __cdecl CBindEvil::dtor(CBindEvil *this_ptr,uint flags);

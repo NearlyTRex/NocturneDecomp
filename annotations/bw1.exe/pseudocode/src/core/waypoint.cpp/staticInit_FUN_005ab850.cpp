@@ -1,12 +1,12 @@
 // Name: core_waypoint.cpp_staticInit_FUN_005ab850
 // Address: 005ab850
 // Address Range: [[005ab850, 005ab873]]
-// Convention: unknown
-// Signature: void core_waypoint_cpp_staticInit_FUN_005ab850(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_waypoint_cpp_staticInit_FUN_005ab850(void)
 
 #include "nocturne.h"
 
-void core_waypoint_cpp_staticInit_FUN_005ab850(void)
+void __cdecl core_waypoint_cpp_staticInit_FUN_005ab850(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

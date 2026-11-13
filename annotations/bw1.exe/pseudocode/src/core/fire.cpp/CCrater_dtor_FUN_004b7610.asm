@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCrater * core_fire_cpp_CCrater_dtor_FUN_004b7610(CCrater *this_ptr,uint flags)
+; CCrater * __cdecl core_fire_cpp_CCrater_dtor_FUN_004b7610(CCrater *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CCrater *        Stack[0x4]:4   this_ptr

@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_ctor_FUN_004b2d80 at 004b2fda
-;   core_script.cpp_FUN_00522350 at 00527baf
+;   core_script.cpp_CScript_step_FUN_00522350 at 00527baf
 ;
 ; *****************************************************************************
 

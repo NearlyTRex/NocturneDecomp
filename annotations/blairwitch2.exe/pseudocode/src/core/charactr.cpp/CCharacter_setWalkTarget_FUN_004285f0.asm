@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_shadow.cpp_FUN_0053df10 at 0053df34
+;   core_shadow.cpp_CShadow_setWalkTarget_FUN_0053df10 at 0053df34
 ;   core_werewolf.cpp_CWerewolf_setWalkTarget_FUN_0058d020 at 0058d04d
 ;
 ; Referenced Globals:

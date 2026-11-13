@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_demnfolk.cpp_FUN_00455080 at 0045604a
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 0045604a
 ;   core_demnfolk.cpp_FUN_00457740 at 00457bec
 ;
 ; Called Functions:

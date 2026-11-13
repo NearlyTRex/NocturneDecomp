@@ -1,14 +1,12 @@
 // Name: core_moon.cpp_CAlphaBitmap_arrdtor30_FUN_005220d0
 // Address: 005220d0
 // Address Range: [[005220d0, 005220e4]]
-// Convention: unknown
-// Signature: CAlphaBitmap * core_moon_cpp_CAlphaBitmap_arrdtor30_FUN_005220d0(CAlphaBitmap *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor30_FUN_005220d0(CAlphaBitmap *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAlphaBitmap * core_moon_cpp_CAlphaBitmap_arrdtor30_FUN_005220d0(CAlphaBitmap *this_ptr,uint flags)
+CAlphaBitmap * __cdecl core_moon_cpp_CAlphaBitmap_arrdtor30_FUN_005220d0(CAlphaBitmap *this_ptr,uint flags)
 
 {
   CAlphaBitmap *pCVar1;

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 63,
+    "complexity_score": 62,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 37,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 129
+    "total_lines": 128
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "005115d2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_passngr.cpp_CPassenger_dtor_FUN_005114f0",
-    "signature": "CPassenger * core_passngr_cpp_CPassenger_dtor_FUN_005114f0(CPassenger *this_ptr,uint flags)"
+    "signature": "CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_005114f0(CPassenger *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -179,7 +179,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
+      "line": 27,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "iVar3 = core_armour_cpp_FUN_0040f2b0(pCVar2[-1].height_cache[0x42] + 0x53,0);",
@@ -187,7 +187,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 36,
+      "line": 34,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar5[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",

@@ -7,19 +7,19 @@
 
 // Original: core_thehand.cpp_staticInit_FUN_00599010
 // Address: 00599010
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_thehand.cpp_factoryFuncTheHand_FUN_00599040
 // Address: 00599040
-void factoryFuncTheHand(void);
+CTheHand * __cdecl factoryFuncTheHand(void);
 
 // Original: core_thehand.cpp_CTheHand_getActorType_FUN_00599060
 // Address: 00599060
-CDemonActorType * CTheHand::getActorType(CTheHand *this_ptr);
+CDemonActorType * __cdecl CTheHand::getActorType(CTheHand *this_ptr);
 
 // Original: core_thehand.cpp_CTheHand_ctor_FUN_00599070
 // Address: 00599070
-CTheHand * CTheHand::ctor(CTheHand *this_ptr);
+CTheHand * __cdecl CTheHand::ctor(CTheHand *this_ptr);
 
 // Original: core_thehand.cpp_CTheHand_setup_FUN_005990d0
 // Address: 005990d0
@@ -55,4 +55,4 @@ void FUN_00599be0(int param_1);
 
 // Original: core_thehand.cpp_CTheHand_dtor_FUN_00599c20
 // Address: 00599c20
-CTheHand * CTheHand::dtor(CTheHand *this_ptr,uint flags);
+CTheHand * __cdecl CTheHand::dtor(CTheHand *this_ptr,uint flags);

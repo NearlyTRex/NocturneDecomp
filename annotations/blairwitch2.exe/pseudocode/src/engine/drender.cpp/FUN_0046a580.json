@@ -1,0 +1,298 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 135,
+    "complexity_score": 299,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 64,
+    "suspect_count": 22,
+    "suspect_types": [
+      "stack_param",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 199
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0046a580",
+    "address_range": [
+      [
+        "0046a580",
+        "0046a6e3"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_drender.cpp_FUN_0046a580",
+    "signature": "void engine_drender_cpp_FUN_0046a580(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403970",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403970"
+    },
+    {
+      "addr": "00469590",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006141c0",
+      "name": "DAT_006141c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e6c",
+      "name": "DAT_01c35e6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b54",
+      "name": "DAT_01c38b54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b58",
+      "name": "DAT_01c38b58",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.672897196261682,
+    "instruction_count": 107,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 11,
+      "COPY": 93,
+      "INT_ADD": 44,
+      "INT_AND": 80,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 63,
+      "INT_LEFT": 2,
+      "INT_LESS": 7,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 11,
+      "INT_SEXT": 3,
+      "INT_SLESS": 33,
+      "INT_SUB": 18,
+      "INT_XOR": 6,
+      "LOAD": 32,
+      "POPCOUNT": 31,
+      "RETURN": 1,
+      "STORE": 15,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 500
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CDemonRenderer *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if ((in_stack_00000004->plane_culling_enabled == 0) ||",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(iVar3 = engine_3d_c_isVisiblePlane_FUN_00403970((SClipPlane *)(in_stack_00000008 + 8)),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)(in_stack_00000008 + 4)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "iVar4 = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_01ba5c84",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01ba5c84 + iVar2) = iVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "} while (iVar3 < *(int *)(in_stack_00000008 + 4));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (in_stack_00000004->shadow_pass_active == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "if (DAT_006141c0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if ((in_stack_00000004->skip_uv_extraction == 0) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(iVar3 = 0, 0 < *(int *)(in_stack_00000008 + 4))) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "iVar4 = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_01ba5c84",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(&DAT_01ba5c84 + iVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->vertex_buffer_ptr[iVar1].u = *(int *)(iVar4 + 0x1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->vertex_buffer_ptr[iVar1].v = *(int *)(iVar4 + 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "} while (iVar3 < *(int *)(in_stack_00000008 + 4));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,*(int *)(in_stack_00000008 + 4),(int *)&DAT_01ba5c84);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,*(int *)(in_stack_00000008 + 4),(int *)&DAT_01ba5c84);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_01ba5c84",
+      "severity": "mild",
+      "text": "(in_stack_00000004,*(int *)(in_stack_00000008 + 4),(int *)&DAT_01ba5c84);",
+      "type": "undefined_data"
+    }
+  ]
+}

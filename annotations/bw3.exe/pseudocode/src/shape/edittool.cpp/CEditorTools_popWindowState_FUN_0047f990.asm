@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_unknown.c_FUN_005a3770
-;   engine_mini3d.cpp_FUN_004ed020
+;   engine_mini3d.cpp_setRenderViewport_FUN_004ed020
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
     PUSH dword ptr [EBX + 0x28]         ; 0047f9d2
     PUSH dword ptr [EBX + 0x24]         ; 0047f9d5
     PUSH dword ptr [EBX + 0x20]         ; 0047f9d8
-    CALL engine_mini3d.cpp_FUN_004ed020 ; 0047f9db
-        ;   XREF to: 004ed020 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004ed020()
+    CALL engine_mini3d.cpp_setRenderViewport_FUN_004ed020 ; 0047f9db
+        ;   XREF to: 004ed020 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setRenderViewport_FUN_004ed020(float left, float top, float right, float bottom)
     MOV EAX,dword ptr [EBX + 0x10]      ; 0047f9e0
     MOV [0x01c6b5a8],EAX                ; 0047f9e3 | DAT_01c6b5a8
     MOV EAX,dword ptr [EBX + 0x14]      ; 0047f9e8

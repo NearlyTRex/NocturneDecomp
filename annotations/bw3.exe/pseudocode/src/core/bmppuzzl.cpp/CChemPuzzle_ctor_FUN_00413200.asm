@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CChemPuzzle * core_bmppuzzl_cpp_CChemPuzzle_ctor_FUN_00413200(CChemPuzzle *this_ptr)
+; CChemPuzzle * __cdecl core_bmppuzzl_cpp_CChemPuzzle_ctor_FUN_00413200(CChemPuzzle *this_ptr)
 ;
 ; Parameters:
 ; CChemPuzzle *    Stack[0x4]:4   this_ptr
@@ -10,7 +10,7 @@
 ;   core_bmppuzzl.cpp_staticInit_FUN_004118e0 at 00411941
 ;
 ; Called Functions:
-;   core_bmppuzzl.cpp_FUN_00411960
+;   core_bmppuzzl.cpp_CPuzzle_ctor_FUN_00411960
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d2e0
 ;
@@ -21,8 +21,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00413200
         ;   Label: core_bmppuzzl.cpp_CChemPuzzle_ctor_FUN_00413200
     PUSH EAX                            ; 00413204
-    CALL core_bmppuzzl.cpp_FUN_00411960 ; 00413205
-        ;   XREF to: 00411960 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_00411960()
+    CALL core_bmppuzzl.cpp_CPuzzle_ctor_FUN_00411960 ; 00413205
+        ;   XREF to: 00411960 (UNCONDITIONAL_CALL)  ; CPuzzle * core_bmppuzzl.cpp_CPuzzle_ctor_FUN_00411960(CPuzzle * this_ptr)
     ADD ESP,0x4                         ; 0041320a
     ADD EAX,0x4                         ; 0041320d
     PUSH EAX                            ; 00413210

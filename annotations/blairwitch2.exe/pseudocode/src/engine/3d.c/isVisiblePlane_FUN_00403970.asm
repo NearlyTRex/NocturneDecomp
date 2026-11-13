@@ -8,7 +8,7 @@
 ;
 ; XREF[81]:
 ;   core_box.cpp_FUN_0041aa20 at 0041ab8c
-;   core_dpart.cpp_FUN_00461a4e at 00461ad5
+;   core_dpart.cpp_FUN_00461a50 at 00461ad5
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_004079f0 at 00407b30
 ;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404b00 at 00404b15
 ;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406450 at 00406464

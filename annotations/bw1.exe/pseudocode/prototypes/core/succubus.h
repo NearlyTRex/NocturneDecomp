@@ -7,7 +7,7 @@
 
 // Original: core_succubus.cpp_staticInit_FUN_00591eb0
 // Address: 00591eb0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_succubus.cpp_factoryFuncSuccubus_FUN_00591ee0
 // Address: 00591ee0
@@ -15,7 +15,7 @@ CSuccubus * __cdecl factoryFuncSuccubus(void);
 
 // Original: core_succubus.cpp_CSuccubus_getActorType_FUN_00591f00
 // Address: 00591f00
-CDemonActorType * CSuccubus::getActorType(CSuccubus *this_ptr);
+CDemonActorType * __cdecl CSuccubus::getActorType(CSuccubus *this_ptr);
 
 // Original: core_succubus.cpp_CSuccubus_ctor_FUN_00591f10
 // Address: 00591f10
@@ -51,4 +51,4 @@ ECollisionType __cdecl CSuccubus::getCollisionType(CSuccubus *this_ptr,SCollisio
 
 // Original: core_succubus.cpp_CSuccubus_dtor_FUN_00592ce0
 // Address: 00592ce0
-CSuccubus * CSuccubus::dtor(CSuccubus *this_ptr,uint flags);
+CSuccubus * __cdecl CSuccubus::dtor(CSuccubus *this_ptr,uint flags);

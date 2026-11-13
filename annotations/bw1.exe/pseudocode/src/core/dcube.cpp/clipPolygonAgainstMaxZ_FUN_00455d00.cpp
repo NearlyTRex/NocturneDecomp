@@ -11,6 +11,7 @@
 void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00455d00(float max_z_plane)
 
 {
+  CVector3f *vertex2;
   byte bVar1;
   uint uVar2;
   int iVar3;
@@ -19,14 +20,15 @@ void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00455d00(float max_z_plan
   
   iVar4 = 0;
   if (0 < (int)_DAT_0152c120) {
-    vertex1 = (CVector3f *)&DAT_0152c124;
+    vertex1 = (CVector3f *)0x152c124;
     do {
       uVar2 = iVar4 + 1;
       if (uVar2 == _DAT_0152c120) {
         uVar2 = uVar2 ^ _DAT_0152c120;
       }
+      vertex2 = (CVector3f *)(uVar2 * 0xc + 0x152c124);
       bVar1 = max_z_plane < vertex1->z;
-      if (max_z_plane < *(float *)(&DAT_0152c12c + uVar2 * 0xc)) {
+      if (max_z_plane < *(float *)(uVar2 * 0xc + 0x152c12c)) {
         bVar1 = bVar1 | 2;
       }
       switch(bVar1) {
@@ -40,8 +42,7 @@ void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00455d00(float max_z_plan
         break;
       case 1:
         core_dcube_cpp_clipEdgeToPlane_FUN_00455460
-                  ((CVector3f *)(&DAT_0152c124 + uVar2 * 0xc),vertex1,
-                   (CVector3f *)(&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc),0.0,0.0,-1.0,
+                  (vertex2,vertex1,(CVector3f *)(&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc),0.0,0.0,-1.0,
                    (double)max_z_plane);
         break;
       case 2:
@@ -53,8 +54,7 @@ void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00455d00(float max_z_plan
         }
         _DAT_0152c1e4 = _DAT_0152c1e4 + 1;
         core_dcube_cpp_clipEdgeToPlane_FUN_00455460
-                  (vertex1,(CVector3f *)(&DAT_0152c124 + uVar2 * 0xc),
-                   (CVector3f *)(&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc),0.0,0.0,-1.0,
+                  (vertex1,vertex2,(CVector3f *)(&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc),0.0,0.0,-1.0,
                    (double)max_z_plane);
         break;
       default:

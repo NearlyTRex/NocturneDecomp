@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_goggles_cpp_factoryFuncGoggles_FUN_0059c030(void)
+; CGoggles * __cdecl core_goggles_cpp_factoryFuncGoggles_FUN_0059c030(void)
 ;
 ;
 ; Called Functions:

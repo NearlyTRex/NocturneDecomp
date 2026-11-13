@@ -1,14 +1,12 @@
 // Name: core_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0
 // Address: 00419ac0
 // Address Range: [[00419ac0, 00419b21]]
-// Convention: unknown
-// Signature: CBaalSkel * core_boneguy_cpp_CBaalSkel_ctor_FUN_00419ac0(CBaalSkel *this_ptr)
+// Convention: __cdecl
+// Signature: CBaalSkel * __cdecl core_boneguy_cpp_CBaalSkel_ctor_FUN_00419ac0(CBaalSkel *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBaalSkel * core_boneguy_cpp_CBaalSkel_ctor_FUN_00419ac0(CBaalSkel *this_ptr)
+CBaalSkel * __cdecl core_boneguy_cpp_CBaalSkel_ctor_FUN_00419ac0(CBaalSkel *this_ptr)
 
 {
   CBoneGuy *pCVar1;

@@ -7,63 +7,63 @@
 
 // Original: support_trstream.cpp_staticInit_FUN_00572510
 // Address: 00572510
-void staticInit(void);
+void __cdecl staticInit(void);
 
-// Original: support_trstream.cpp_FUN_00572530
+// Original: support_trstream.cpp_CInStream_ctor_FUN_00572530
 // Address: 00572530
-void FUN_00572530(undefined4 *param_1);
+CInStream * __cdecl CInStream::ctor(CInStream *this_ptr);
 
-// Original: support_trstream.cpp_FUN_00572540
+// Original: support_trstream.cpp_CInStream_dtor_FUN_00572540
 // Address: 00572540
-void FUN_00572540(undefined4 *param_1);
+CInStream * __cdecl CInStream::dtor(CInStream *this_ptr,uint flags);
 
-// Original: support_trstream.cpp_FUN_0057254e
-// Address: 0057254e
-void FUN_0057254e(undefined4 *param_1);
+// Original: support_trstream.cpp_FUN_00572550
+// Address: 00572550
+void FUN_00572550(void);
 
-// Original: support_trstream.cpp_FUN_00572570
+// Original: support_trstream.cpp_CInStream_ungetChar_FUN_00572570
 // Address: 00572570
-undefined4 FUN_00572570(void);
+int __cdecl CInStream::ungetChar(CInStream *this_ptr,int ch);
 
-// Original: support_trstream.cpp_FUN_00572580
+// Original: support_trstream.cpp_CInStream_tell_FUN_00572580
 // Address: 00572580
-undefined4 FUN_00572580(void);
+int __cdecl CInStream::tell(CInStream *this_ptr);
 
-// Original: support_trstream.cpp_FUN_00572590
+// Original: support_trstream.cpp_CInStream_scanf_FUN_00572590
 // Address: 00572590
-void FUN_00572590(undefined4 param_1,undefined4 param_2);
+int __cdecl CInStream::scanf(CInStream *this_ptr,char *format,...) __attribute__((format(scanf, 2, 3)));
 
-// Original: support_trstream.cpp_FUN_005726f0
+// Original: support_trstream.cpp_CInStream_vscanf_FUN_005726f0
 // Address: 005726f0
-int FUN_005726f0(int *param_1,byte *param_2,int *param_3);
+int __cdecl CInStream::vscanf(CInStream *this_ptr,char *format,va_list_t args);
 
-// Original: support_trstream.cpp_FUN_00573790
+// Original: support_trstream.cpp_CInStream_readLine_FUN_00573790
 // Address: 00573790
-int FUN_00573790(int *param_1,undefined1 *param_2,int param_3);
+int __cdecl CInStream::readLine(CInStream *this_ptr,char *buffer,int size);
 
-// Original: support_trstream.cpp_FUN_00573830
+// Original: support_trstream.cpp_CInStream_skipWhitespace_FUN_00573830
 // Address: 00573830
-int FUN_00573830(int *param_1);
+int __cdecl CInStream::skipWhitespace(CInStream *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0
 // Address: 005738c0
-CInStreamFile * CInStreamFile::ctor(CInStreamFile *this_ptr);
+CInStreamFile * __cdecl CInStreamFile::ctor(CInStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamFile_ctorOpen_FUN_00573920
 // Address: 00573920
-undefined4 * __cdecl CInStreamFile::ctorOpen(CInStreamFile *this_ptr,LPCSTR param_2,int param_3);
+CInStreamFile * __cdecl CInStreamFile::ctorOpen(CInStreamFile *this_ptr,char *path,int binary_mode);
 
-// Original: support_trstream.cpp_FUN_00573990
+// Original: support_trstream.cpp_CInStreamFile_ctorOpenInDirectory_FUN_00573990
 // Address: 00573990
-CInStreamFile * FUN_00573990(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4);
+CInStreamFile * __cdecl CInStreamFile::ctorOpenInDirectory(CInStreamFile *this_ptr,char *directory,char *filename,int binary_mode);
 
 // Original: support_trstream.cpp_CInStreamFile_copy_FUN_00573a10
 // Address: 00573a10
-CInStreamFile * CInStreamFile::copy(CInStreamFile *this_ptr,CInStreamFile *other);
+CInStreamFile * __cdecl CInStreamFile::copy(CInStreamFile *this_ptr,CInStreamFile *other);
 
 // Original: support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40
 // Address: 00573a40
-CInStreamFile * CInStreamFile::dtor(CInStreamFile *this_ptr,uint flags);
+CInStreamFile * __cdecl CInStreamFile::dtor(CInStreamFile *this_ptr,uint flags);
 
 // Original: support_trstream.cpp_CInStreamFile_getChar_FUN_00573aa0
 // Address: 00573aa0
@@ -71,7 +71,7 @@ int __cdecl CInStreamFile::getChar(CInStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamFile_ungetChar_FUN_00573af0
 // Address: 00573af0
-undefined4 __cdecl CInStreamFile::ungetChar(CInStreamFile *this_ptr,int param_2);
+int __cdecl CInStreamFile::ungetChar(CInStreamFile *this_ptr,int ch);
 
 // Original: support_trstream.cpp_CInStreamFile_peekChar_FUN_00573b60
 // Address: 00573b60
@@ -83,15 +83,15 @@ uint __cdecl CInStreamFile::readByteAt(CInStreamFile *this_ptr,int param_2);
 
 // Original: support_trstream.cpp_CInStreamFile_read_FUN_00573c00
 // Address: 00573c00
-int __cdecl CInStreamFile::read(CInStreamFile *this_ptr,undefined4 *param_2,uint param_3);
+int __cdecl CInStreamFile::read(CInStreamFile *this_ptr,void *buffer,int count);
 
 // Original: support_trstream.cpp_CInStreamFile_seek_FUN_00573cf0
 // Address: 00573cf0
-undefined4 __cdecl CInStreamFile::seek(CInStreamFile *this_ptr,int param_2,uint param_3);
+int __cdecl CInStreamFile::seek(CInStreamFile *this_ptr,int offset,int origin);
 
 // Original: support_trstream.cpp_CInStreamFile_tell_FUN_00573d40
 // Address: 00573d40
-undefined4 __cdecl CInStreamFile::tell(CInStreamFile *this_ptr);
+int __cdecl CInStreamFile::tell(CInStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamFile_isOpen_FUN_00573d60
 // Address: 00573d60
@@ -99,11 +99,11 @@ bool __cdecl CInStreamFile::isOpen(CInStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamFile_isEof_FUN_00573d80
 // Address: 00573d80
-undefined4 __cdecl CInStreamFile::isEof(CInStreamFile *this_ptr);
+int __cdecl CInStreamFile::isEof(CInStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamFile_close_FUN_00573db0
 // Address: 00573db0
-undefined4 __cdecl CInStreamFile::close(CInStreamFile *this_ptr);
+int __cdecl CInStreamFile::close(CInStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamFile_allocBuffer_FUN_00573e00
 // Address: 00573e00
@@ -115,35 +115,35 @@ void __cdecl CInStreamFile::freeBuffer(CInStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamFile_fillBuffer_FUN_00573eb0
 // Address: 00573eb0
-undefined4 __cdecl CInStreamFile::fillBuffer(CInStreamFile *this_ptr,int param_2);
+int __cdecl CInStreamFile::fillBuffer(CInStreamFile *this_ptr,int position);
 
 // Original: support_trstream.cpp_CInStreamFile_open_FUN_00573f50
 // Address: 00573f50
-undefined4 __cdecl CInStreamFile::open(CInStreamFile *this_ptr,LPCSTR param_2,int param_3);
+int __cdecl CInStreamFile::open(CInStreamFile *this_ptr,char *path,int binary_mode);
 
 // Original: support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0
 // Address: 00573fc0
-undefined4 __cdecl CInStreamFile::openInDirectory(CInStreamFile *this_ptr,undefined4 param_2,undefined4 param_3,int param_4);
+int __cdecl CInStreamFile::openInDirectory(CInStreamFile *this_ptr,char *directory,char *filename,int binary_mode);
 
 // Original: support_trstream.cpp_CInStreamFile_openHandle_FUN_00574080
 // Address: 00574080
-undefined4 __cdecl CInStreamFile::openHandle(CInStreamFile *this_ptr,int param_2,int param_3,int param_4);
+int __cdecl CInStreamFile::openHandle(CInStreamFile *this_ptr,HANDLE handle,int file_size,int file_offset);
 
 // Original: support_trstream.cpp_CInStreamMemory_ctor_FUN_00574120
 // Address: 00574120
-CInStreamMemory * CInStreamMemory::ctor(CInStreamMemory *this_ptr);
+CInStreamMemory * __cdecl CInStreamMemory::ctor(CInStreamMemory *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_00574150
 // Address: 00574150
-undefined4 * __cdecl CInStreamMemory::ctorOpen(CInStreamMemory *this_ptr,int param_2,int param_3);
+CInStreamMemory * __cdecl CInStreamMemory::ctorOpen(CInStreamMemory *this_ptr,char *data,int size);
 
 // Original: support_trstream.cpp_CInStreamMemory_copy_FUN_005741a0
 // Address: 005741a0
-CInStreamMemory * CInStreamMemory::copy(CInStreamMemory *this_ptr,CInStreamMemory *other);
+CInStreamMemory * __cdecl CInStreamMemory::copy(CInStreamMemory *this_ptr,CInStreamMemory *other);
 
 // Original: support_trstream.cpp_CInStreamMemory_dtor_FUN_005741d0
 // Address: 005741d0
-CInStreamMemory * CInStreamMemory::dtor(CInStreamMemory *this_ptr,uint flags);
+CInStreamMemory * __cdecl CInStreamMemory::dtor(CInStreamMemory *this_ptr,uint flags);
 
 // Original: support_trstream.cpp_CInStreamMemory_getChar_FUN_00574230
 // Address: 00574230
@@ -151,7 +151,7 @@ uint __cdecl CInStreamMemory::getChar(CInStreamMemory *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamMemory_ungetChar_FUN_00574280
 // Address: 00574280
-undefined4 __cdecl CInStreamMemory::ungetChar(CInStreamMemory *this_ptr,int param_2);
+int __cdecl CInStreamMemory::ungetChar(CInStreamMemory *this_ptr,int ch);
 
 // Original: support_trstream.cpp_CInStreamMemory_peekChar_FUN_005742c0
 // Address: 005742c0
@@ -159,27 +159,27 @@ uint __cdecl CInStreamMemory::peekChar(CInStreamMemory *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamMemory_read_FUN_005742f0
 // Address: 005742f0
-uint __cdecl CInStreamMemory::read(CInStreamMemory *this_ptr,undefined4 *param_2,uint param_3);
+int __cdecl CInStreamMemory::read(CInStreamMemory *this_ptr,void *buffer,int count);
 
 // Original: support_trstream.cpp_CInStreamMemory_seek_FUN_00574350
 // Address: 00574350
 longlong __cdecl CInStreamMemory::seek(CInStreamMemory *this_ptr,int param_2,uint param_3);
 
-// Original: support_trstream.cpp_FUN_00574380
+// Original: support_trstream.cpp_COutStream_seek_FUN_00574380
 // Address: 00574380
-undefined4 FUN_00574380(void);
+int __cdecl COutStream::seek(COutStream *this_ptr,int offset,int origin);
 
 // Original: support_trstream.cpp_CInStreamMemory_tell_FUN_005743a0
 // Address: 005743a0
-undefined4 __cdecl CInStreamMemory::tell(CInStreamMemory *this_ptr);
+int __cdecl CInStreamMemory::tell(CInStreamMemory *this_ptr);
 
-// Original: support_trstream.cpp_FUN_005743b0
+// Original: support_trstream.cpp_COutStream_tell_FUN_005743b0
 // Address: 005743b0
-undefined4 FUN_005743b0(void);
+int __cdecl COutStream::tell(COutStream *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamMemory_isEof_FUN_005743c0
 // Address: 005743c0
-undefined4 __cdecl CInStreamMemory::isEof(CInStreamMemory *this_ptr);
+int __cdecl CInStreamMemory::isEof(CInStreamMemory *this_ptr);
 
 // Original: support_trstream.cpp_CInStreamMemory_close_FUN_005743f0
 // Address: 005743f0
@@ -193,33 +193,33 @@ void __cdecl CInStreamMemory::open(CInStreamMemory *this_ptr,int param_2,int par
 // Address: 00574470
 void __cdecl CInStreamMemory::openOwned(CInStreamMemory *this_ptr,int param_2,int param_3);
 
-// Original: support_trstream.cpp_FUN_005744a0
+// Original: support_trstream.cpp_COutStream_dtor_FUN_005744a0
 // Address: 005744a0
-void FUN_005744a0(undefined4 *param_1);
+COutStream * __cdecl COutStream::dtor(COutStream *this_ptr,uint flags);
 
-// Original: support_trstream.cpp_FUN_005744b0
+// Original: support_trstream.cpp_COutStream_printf_FUN_005744b0
 // Address: 005744b0
-void FUN_005744b0(undefined4 param_1,undefined4 param_2);
+int __cdecl COutStream::printf(COutStream *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
-// Original: support_trstream.cpp_FUN_005744e0
+// Original: support_trstream.cpp_COutStream_vprintf_FUN_005744e0
 // Address: 005744e0
-int FUN_005744e0(int *param_1,byte *param_2,int *param_3);
+int __cdecl COutStream::vprintf(COutStream *this_ptr,char *format,va_list_t args);
 
 // Original: support_trstream.cpp_COutStreamFile_ctor_FUN_005747c0
 // Address: 005747c0
-COutStreamFile * COutStreamFile::ctor(COutStreamFile *this_ptr);
+COutStreamFile * __cdecl COutStreamFile::ctor(COutStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005747e0
 // Address: 005747e0
-undefined4 * __cdecl COutStreamFile::ctorOpen(COutStreamFile *this_ptr,undefined4 param_2,undefined4 param_3);
+COutStreamFile * __cdecl COutStreamFile::ctorOpen(COutStreamFile *this_ptr,char *path,char *mode);
 
 // Original: support_trstream.cpp_COutStreamFile_copy_FUN_00574820
 // Address: 00574820
-COutStreamFile * COutStreamFile::copy(COutStreamFile *this_ptr,COutStreamFile *other);
+COutStreamFile * __cdecl COutStreamFile::copy(COutStreamFile *this_ptr,COutStreamFile *other);
 
 // Original: support_trstream.cpp_COutStreamFile_dtor_FUN_00574850
 // Address: 00574850
-COutStreamFile * COutStreamFile::dtor(COutStreamFile *this_ptr,uint flags);
+COutStreamFile * __cdecl COutStreamFile::dtor(COutStreamFile *this_ptr,uint flags);
 
 // Original: support_trstream.cpp_COutStreamFile_putChar_FUN_005748b0
 // Address: 005748b0
@@ -235,7 +235,7 @@ bool __cdecl COutStreamFile::seek(COutStreamFile *this_ptr,long param_2,int para
 
 // Original: support_trstream.cpp_COutStreamFile_tell_FUN_00574960
 // Address: 00574960
-undefined4 __cdecl COutStreamFile::tell(COutStreamFile *this_ptr);
+int __cdecl COutStreamFile::tell(COutStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_COutStreamFile_isOpen_FUN_00574980
 // Address: 00574980
@@ -243,15 +243,15 @@ bool __cdecl COutStreamFile::isOpen(COutStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_COutStreamFile_close_FUN_005749a0
 // Address: 005749a0
-undefined4 __cdecl COutStreamFile::close(COutStreamFile *this_ptr);
+int __cdecl COutStreamFile::close(COutStreamFile *this_ptr);
 
 // Original: support_trstream.cpp_COutStreamFile_open_FUN_005749d0
 // Address: 005749d0
-undefined4 __cdecl COutStreamFile::open(COutStreamFile *this_ptr,char *param_2,char *param_3);
+int __cdecl COutStreamFile::open(COutStreamFile *this_ptr,char *path,char *mode);
 
 // Original: support_trstream.cpp_COutStreamFile_openInDirectory_FUN_00574a10
 // Address: 00574a10
-undefined4 __cdecl COutStreamFile::openInDirectory(COutStreamFile *this_ptr,char *param_2,char *param_3,char *param_4);
+int __cdecl COutStreamFile::openInDirectory(COutStreamFile *this_ptr,char *directory,char *filename,char *mode);
 
 // Original: support_trstream.cpp_COutStreamFile_attach_FUN_00574a60
 // Address: 00574a60
@@ -259,31 +259,31 @@ void __cdecl COutStreamFile::attach(COutStreamFile *this_ptr,int param_2);
 
 // Original: support_trstream.cpp_COutStreamMemory_ctor_FUN_00574a80
 // Address: 00574a80
-COutStreamMemory * COutStreamMemory::ctor(COutStreamMemory *this_ptr);
+COutStreamMemory * __cdecl COutStreamMemory::ctor(COutStreamMemory *this_ptr);
 
 // Original: support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_00574ac0
 // Address: 00574ac0
-undefined4 * __cdecl COutStreamMemory::ctorOpen(COutStreamMemory *this_ptr,int param_2,int param_3);
+COutStreamMemory * __cdecl COutStreamMemory::ctorOpen(COutStreamMemory *this_ptr,char *buffer,int capacity);
 
 // Original: support_trstream.cpp_COutStreamMemory_copy_FUN_00574b20
 // Address: 00574b20
-COutStreamMemory * COutStreamMemory::copy(COutStreamMemory *this_ptr,COutStreamMemory *other);
+COutStreamMemory * __cdecl COutStreamMemory::copy(COutStreamMemory *this_ptr,COutStreamMemory *other);
 
 // Original: support_trstream.cpp_COutStreamMemory_dtor_FUN_00574b50
 // Address: 00574b50
-COutStreamMemory * COutStreamMemory::dtor(COutStreamMemory *this_ptr,uint flags);
+COutStreamMemory * __cdecl COutStreamMemory::dtor(COutStreamMemory *this_ptr,uint flags);
 
 // Original: support_trstream.cpp_COutStreamMemory_putChar_FUN_00574bb0
 // Address: 00574bb0
-undefined4 __cdecl COutStreamMemory::putChar(COutStreamMemory *this_ptr,char param_2);
+int __cdecl COutStreamMemory::putChar(COutStreamMemory *this_ptr,char ch);
 
 // Original: support_trstream.cpp_COutStreamMemory_write_FUN_00574c20
 // Address: 00574c20
-uint __cdecl COutStreamMemory::write(COutStreamMemory *this_ptr,undefined4 *param_2,uint param_3);
+int __cdecl COutStreamMemory::write(COutStreamMemory *this_ptr,void *data,int size);
 
 // Original: support_trstream.cpp_COutStreamMemory_seek_FUN_00574cb0
 // Address: 00574cb0
-undefined4 __cdecl COutStreamMemory::seek(COutStreamMemory *this_ptr,int param_2,uint param_3);
+int __cdecl COutStreamMemory::seek(COutStreamMemory *this_ptr,int offset,int origin);
 
 // Original: support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00
 // Address: 00574d00
@@ -303,24 +303,24 @@ int __cdecl COutStreamMemory::detachBuffer(COutStreamMemory *this_ptr,int *param
 
 // Original: support_trstream.cpp_COutStreamDebug_ctor_FUN_00574e00
 // Address: 00574e00
-COutStreamDebug * COutStreamDebug::ctor(COutStreamDebug *this_ptr);
+COutStreamDebug * __cdecl COutStreamDebug::ctor(COutStreamDebug *this_ptr);
 
 // Original: support_trstream.cpp_COutStreamDebug_dtor_FUN_00574e20
 // Address: 00574e20
-COutStreamDebug * COutStreamDebug::dtor(COutStreamDebug *this_ptr,uint flags);
+COutStreamDebug * __cdecl COutStreamDebug::dtor(COutStreamDebug *this_ptr,uint flags);
 
 // Original: support_trstream.cpp_COutStreamDebug_putChar_FUN_00574e80
 // Address: 00574e80
-undefined4 __cdecl COutStreamDebug::putChar(COutStreamDebug *this_ptr,undefined1 param_2);
+int __cdecl COutStreamDebug::putChar(COutStreamDebug *this_ptr,char ch);
 
 // Original: support_trstream.cpp_COutStreamDebug_write_FUN_00574eb0
 // Address: 00574eb0
-uint __cdecl COutStreamDebug::write(COutStreamDebug *this_ptr,undefined4 *param_2,uint param_3);
+int __cdecl COutStreamDebug::write(COutStreamDebug *this_ptr,void *data,int size);
 
 // Original: support_trstream.cpp_COutStreamDebug_seek_FUN_00574f70
 // Address: 00574f70
-undefined4 __cdecl COutStreamDebug::seek(COutStreamDebug *this_ptr);
+int __cdecl COutStreamDebug::seek(COutStreamDebug *this_ptr,int offset,int origin);
 
 // Original: support_trstream.cpp_COutStreamDebug_tell_FUN_00574fa0
 // Address: 00574fa0
-undefined4 __cdecl COutStreamDebug::tell(COutStreamDebug *this_ptr);
+int __cdecl COutStreamDebug::tell(COutStreamDebug *this_ptr);

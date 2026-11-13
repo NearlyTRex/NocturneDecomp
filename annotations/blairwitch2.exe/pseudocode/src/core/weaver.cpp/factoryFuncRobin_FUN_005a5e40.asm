@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weaver_cpp_factoryFuncRobin_FUN_005a5e40(void)
+; CRobin * __cdecl core_weaver_cpp_factoryFuncRobin_FUN_005a5e40(void)
 ;
 ;
 ; Called Functions:

@@ -1,15 +1,14 @@
 // Name: core_lightsta.cpp_CLightStaff_ctor_FUN_004e0f70
 // Address: 004e0f70
 // Address Range: [[004e0f70, 004e106b]]
-// Convention: unknown
-// Signature: CLightStaff * core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaff *this_ptr)
+// Convention: __cdecl
+// Signature: CLightStaff * __cdecl core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaff *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CLightStaff * core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaff *this_ptr)
+CLightStaff * __cdecl core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaff *this_ptr)
 
 {
   float fVar1;

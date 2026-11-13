@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWhitewolf * core_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030(CWhitewolf *this_ptr,uint flags)
+; CWhitewolf * __cdecl core_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030(CWhitewolf *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CWhitewolf *     Stack[0x4]:4   this_ptr

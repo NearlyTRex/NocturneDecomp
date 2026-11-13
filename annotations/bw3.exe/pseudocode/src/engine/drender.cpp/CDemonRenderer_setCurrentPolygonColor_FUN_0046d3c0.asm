@@ -9,8 +9,8 @@
 ;
 ; XREF[5]:
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004217c0 at 004218bc
-;   core_cloth.cpp_FUN_0043f10c at 0043f124
-;   core_dpart.cpp_FUN_0046682e at 00466917
+;   core_cloth.cpp_FUN_0043f110 at 0043f124
+;   core_dpart.cpp_FUN_00466830 at 00466917
 ;   core_dtrace.cpp_FUN_00475090 at 00475443
 ;   core_water.cpp_CWater_render_FUN_00577760 at 00577cba
 ;

@@ -759,7 +759,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_terrain_cpp_FUN_0057b9a0
+        .func = (RUNTIME_HANDLER_FUNC *)support_trstream_cpp_staticInit_FUN_0057b9a0
     },
     {
         .status = 0x00,
@@ -829,7 +829,7 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_zombie_cpp_FUN_0059aa80
+        .func = (RUNTIME_HANDLER_FUNC *)core_bmppuzzl_cpp_staticInit_FUN_0059aa80
     },
     {
         .status = 0x00,

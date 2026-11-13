@@ -7,19 +7,19 @@
 
 // Original: core_spirindi.cpp_staticInit_FUN_00599f00
 // Address: 00599f00
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_spirindi.cpp_factoryFuncSpiritIndian_FUN_00599f30
 // Address: 00599f30
-void factoryFuncSpiritIndian(void);
+CSpiritIndian * __cdecl factoryFuncSpiritIndian(void);
 
 // Original: core_spirindi.cpp_CSpiritIndian_getActorType_FUN_00599f50
 // Address: 00599f50
-CDemonActorType * CSpiritIndian::getActorType(CSpiritIndian *this_ptr);
+CDemonActorType * __cdecl CSpiritIndian::getActorType(CSpiritIndian *this_ptr);
 
 // Original: core_spirindi.cpp_CSpiritIndian_ctor_FUN_00599f60
 // Address: 00599f60
-CSpiritIndian * CSpiritIndian::ctor(CSpiritIndian *this_ptr);
+CSpiritIndian * __cdecl CSpiritIndian::ctor(CSpiritIndian *this_ptr);
 
 // Original: core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060
 // Address: 0059a060
@@ -59,4 +59,4 @@ CPathMap * __cdecl CSpiritIndian::getPathMap(CSpiritIndian *this_ptr);
 
 // Original: core_spirindi.cpp_CSpiritIndian_dtor_FUN_0059a970
 // Address: 0059a970
-CSpiritIndian * CSpiritIndian::dtor(CSpiritIndian *this_ptr,uint flags);
+CSpiritIndian * __cdecl CSpiritIndian::dtor(CSpiritIndian *this_ptr,uint flags);

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_inv.cpp_FUN_004dc8c0 at 004dca46
+;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dca46
 ;
 ; *****************************************************************************
 

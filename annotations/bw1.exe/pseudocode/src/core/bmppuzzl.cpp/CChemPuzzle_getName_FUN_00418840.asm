@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * __cdecl core_bmppuzzl_cpp_CChemPuzzle_getName_FUN_00418840(CChemPuzzle *this_ptr)
+; char * __cdecl core_bmppuzzl_cpp_CChemPuzzle_getName_FUN_00418840(CChemPuzzle *this_ptr)
 ;
 ; Parameters:
 ; CChemPuzzle *    Stack[0x4]:4   this_ptr

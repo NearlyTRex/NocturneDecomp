@@ -7,7 +7,7 @@
 
 // Original: core_zombie.cpp_staticInit_FUN_005ba700
 // Address: 005ba700
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_zombie.cpp_FUN_005ba730
 // Address: 005ba730
@@ -31,11 +31,11 @@ CZombie * __cdecl factoryFuncZombie(void);
 
 // Original: core_zombie.cpp_CZombie_getActorType_FUN_005bab00
 // Address: 005bab00
-CDemonActorType * CZombie::getActorType(CZombie *this_ptr);
+CDemonActorType * __cdecl CZombie::getActorType(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_ctor_FUN_005bab10
 // Address: 005bab10
-CZombie * CZombie::ctor(CZombie *this_ptr);
+CZombie * __cdecl CZombie::ctor(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_setup_FUN_005bac80
 // Address: 005bac80
@@ -115,15 +115,15 @@ void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_dtor_FUN_005bedf0
 // Address: 005bedf0
-CZombie * CZombie::dtor(CZombie *this_ptr,uint flags);
+CZombie * __cdecl CZombie::dtor(CZombie *this_ptr,uint flags);
 
-// Original: core_zombie.cpp_FUN_005bee7e
-// Address: 005bee7e
-void FUN_005bee7e(int param_1,int param_2);
+// Original: core_zombie.cpp_FUN_005bee80
+// Address: 005bee80
+void FUN_005bee80(void);
 
-// Original: core_zombie.cpp_FUN_005bf0de
-// Address: 005bf0de
-int * FUN_005bf0de(int param_1,int *param_2);
+// Original: core_zombie.cpp_FUN_005bf0e0
+// Address: 005bf0e0
+int * FUN_005bf0e0(void);
 
 // Original: core_zombie.cpp_FUN_005bf120
 // Address: 005bf120

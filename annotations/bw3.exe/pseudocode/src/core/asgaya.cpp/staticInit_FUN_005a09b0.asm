@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_asgaya_cpp_staticInit_FUN_005a09b0(void)
+; void __cdecl core_asgaya_cpp_staticInit_FUN_005a09b0(void)
 ;
 ;
 ; Called Functions:

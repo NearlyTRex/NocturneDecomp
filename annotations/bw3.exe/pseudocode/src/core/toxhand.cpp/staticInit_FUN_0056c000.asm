@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_toxhand_cpp_staticInit_FUN_0056c000(void)
+; void __cdecl core_toxhand_cpp_staticInit_FUN_0056c000(void)
 ;
 ;
 ; Called Functions:

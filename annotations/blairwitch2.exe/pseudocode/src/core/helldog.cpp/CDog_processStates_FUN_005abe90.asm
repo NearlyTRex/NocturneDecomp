@@ -20,7 +20,7 @@
 ;   TerminatedCString s_LeapAttack_005f0d84
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_0059e8c0
+;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0
 ;   core_muzzle.cpp_FUN_0059d650
 ;   core_muzzle.cpp_FUN_0059daa0
 ;
@@ -68,8 +68,8 @@ section .text
         ;   Label: LAB_005abeda
     PUSH dword ptr [ESP + 0x14]         ; 005abedb
     PUSH ESI                            ; 005abedf
-    CALL core_basicene.cpp_FUN_0059e8c0 ; 005abee0
-        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059e8c0()
+    CALL core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 ; 005abee0
+        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy * this_ptr, undefined4 param_2, int param_3)
     ADD ESP,0xc                         ; 005abee5
     JMP 0x005abe9e                      ; 005abee8
         ;   XREF to: 005abe9e (UNCONDITIONAL_JUMP)  ; LAB_005abe9e

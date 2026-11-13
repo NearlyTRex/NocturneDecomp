@@ -1,0 +1,604 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 377,
+    "complexity_score": 907,
+    "cross_reference_count": 0,
+    "function_call_count": 19,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 437,
+    "suspect_count": 42,
+    "suspect_types": [
+      "fast_sqrt_inline",
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_constant",
+      "stack_alignment_array",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memset",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 814
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005b8440",
+    "address_range": [
+      [
+        "005b8440",
+        "005b882a"
+      ],
+      [
+        "005b8e8b",
+        "005b8e9f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_yow.cpp_CYow_process_FUN_005b8440",
+    "signature": "void __cdecl core_yow_cpp_CYow_process_FUN_005b8440(CYow *this_ptr,float param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc60"
+    },
+    {
+      "addr": "00433e80",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80"
+    },
+    {
+      "addr": "0042e120",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120"
+    },
+    {
+      "addr": "0042e160",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_preProcess_FUN_0042e160"
+    },
+    {
+      "addr": "0042e1a0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0"
+    },
+    {
+      "addr": "00434a80",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_00434a80"
+    },
+    {
+      "addr": "00432240",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00432240"
+    },
+    {
+      "addr": "0042d700",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042d700"
+    },
+    {
+      "addr": "0042d750",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042d750"
+    },
+    {
+      "addr": "00432f10",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_00432f10"
+    },
+    {
+      "addr": "00434790",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_00434790"
+    },
+    {
+      "addr": "00435320",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_00435320"
+    },
+    {
+      "addr": "00524270",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advance_FUN_00524270"
+    },
+    {
+      "addr": "00524770",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770"
+    },
+    {
+      "addr": "005247c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0"
+    },
+    {
+      "addr": "00525020",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_00525020"
+    },
+    {
+      "addr": "00559250",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_00559250"
+    },
+    {
+      "addr": "005675a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0"
+    },
+    {
+      "addr": "00445430",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fa324",
+      "name": "DAT_005fa324",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa334",
+      "name": "DAT_005fa334",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00611100",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007db5f0"
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "01e82168",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.80983606557377,
+    "instruction_count": 305,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 10,
+      "BRANCH": 6,
+      "BRANCHIND": 1,
+      "CALL": 25,
+      "CALLIND": 2,
+      "CBRANCH": 20,
+      "COPY": 632,
+      "FLOAT2FLOAT": 50,
+      "FLOAT_ADD": 6,
+      "FLOAT_EQUAL": 5,
+      "FLOAT_LESS": 5,
+      "FLOAT_MULT": 7,
+      "FLOAT_NAN": 10,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 156,
+      "INT_AND": 122,
+      "INT_CARRY": 28,
+      "INT_EQUAL": 92,
+      "INT_LEFT": 20,
+      "INT_LESS": 12,
+      "INT_MULT": 21,
+      "INT_NOTEQUAL": 25,
+      "INT_OR": 25,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 28,
+      "INT_SLESS": 46,
+      "INT_SUB": 112,
+      "INT_XOR": 1,
+      "INT_ZEXT": 38,
+      "LOAD": 76,
+      "POPCOUNT": 46,
+      "RETURN": 1,
+      "STORE": 121
+    },
+    "pcode_op_count": 1772
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "00586500",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0521
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CYow *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_yow_cpp_CYow_process_FUN_005b8440(CYow *this_ptr,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 21,
+      "match": "afStackY_1108",
+      "severity": "moderate",
+      "text": "float afStackY_1108 [997];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar6 = core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0((CCharacter *)this_ptr,param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_00434790(this_ptr,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_00432f10(this_ptr,param_2,(this_ptr->base).pool_me == 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_2c = param_2 * (this_ptr->base).speed * this_ptr->difficulty_speed_scale;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_00435320(this_ptr,param_2 * fVar14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_00432240((CCharacter *)this_ptr,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a0fe0(&this_ptr->base,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 112,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 170,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 173,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a0fe0(&this_ptr->base,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 296,
+      "match": "DAT_02c8af28",
+      "severity": "mild",
+      "text": "(&DAT_02c8af28,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 392,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 403,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_0042d700(this_ptr,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 404,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_e4 = (this_ptr->base).base.velocity.x * param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 405,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "afStack_e0[0] = (this_ptr->base).base.velocity.y * param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 406,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "afStack_e0[1] = (this_ptr->base).base.velocity.z * param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 439,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80((CCharacter *)this_ptr,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&CStack_90` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 307,
+      "match": "(int)&CStack_90",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_90 + (uint)bVar11 * -8 + 4) = afStack_11c[(uint)bVar11 * -2 + 6];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_90` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 309,
+      "match": "(int)&CStack_90",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_90 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 334,
+      "match": "(int)&CStack_54",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_54 + (uint)bVar11 * -8 + 4) = afStack_e0[(uint)bVar11 * -2 + 0xf];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 336,
+      "match": "(int)&CStack_54",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_54 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 424,
+      "match": "(int)&CStack_f0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_f0 + (uint)bVar11 * -8 + 4) = afStack_68[(uint)bVar11 * -2 + 3];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 425,
+      "match": "(int)&CStack_f0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_f0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x2c82a60 assigned to bare local `pCVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 235,
+      "match": "0x2c82a60",
+      "severity": "moderate",
+      "text": "pCVar5 = 0x02C82A60;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x2c82a60 assigned to bare local `pCVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 273,
+      "match": "0x2c82a60",
+      "severity": "moderate",
+      "text": "pCVar5 = 0x02C82A60;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1c51d80 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 339,
+      "match": "0x1c51d80",
+      "severity": "moderate",
+      "text": "this_ptr_00 = 0x01C51D80;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 82,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 249,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 385,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 427,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.position_delta.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 430,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 307,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_90 + (uint)bVar11 * -8 + 4) = afStack_11c[(uint)bVar11 * -2 + 6];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 309,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_90 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 334,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_54 + (uint)bVar11 * -8 + 4) = afStack_e0[(uint)bVar11 * -2 + 0xf];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 336,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_54 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 424,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_f0 + (uint)bVar11 * -8 + 4) = afStack_68[(uint)bVar11 * -2 + 3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 425,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_f0 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01cc804c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01cc804c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 127,
+      "match": "fStack_30 = (float)(((int)fStack_34 >> 1) + _DAT_01cc804c);",
+      "severity": "moderate",
+      "text": "fStack_30 = (float)(((int)fStack_34 >> 1) + _DAT_01cc804c);",
+      "type": "fast_sqrt_inline"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CYow",
+        "offset": 12,
+        "vtable_addr": "00608224"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

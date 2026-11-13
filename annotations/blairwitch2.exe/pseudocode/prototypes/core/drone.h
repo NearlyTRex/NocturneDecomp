@@ -7,7 +7,7 @@
 
 // Original: core_drone.cpp_staticInit_FUN_0046d6f0
 // Address: 0046d6f0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_drone.cpp_factoryFuncDrone_FUN_0046d720
 // Address: 0046d720
@@ -15,7 +15,7 @@ CDrone * __cdecl factoryFuncDrone(void);
 
 // Original: core_drone.cpp_CDrone_getActorType_FUN_0046d740
 // Address: 0046d740
-CDemonActorType * CDrone::getActorType(CDrone *this_ptr);
+CDemonActorType * __cdecl CDrone::getActorType(CDrone *this_ptr);
 
 // Original: core_drone.cpp_CDrone_ctor_FUN_0046d750
 // Address: 0046d750
@@ -43,4 +43,4 @@ int __cdecl CDrone::getTargetPoints(CDrone *this_ptr,CVector3f *out_points_array
 
 // Original: core_drone.cpp_CDrone_dtor_FUN_0046e1c0
 // Address: 0046e1c0
-CDrone * CDrone::dtor(CDrone *this_ptr,uint flags);
+CDrone * __cdecl CDrone::dtor(CDrone *this_ptr,uint flags);

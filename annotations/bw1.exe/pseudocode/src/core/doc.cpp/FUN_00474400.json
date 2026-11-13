@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1009,
-    "complexity_score": 2057,
+    "complexity_score": 2058,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 482,
+    "pseudocode_lines": 483,
     "suspect_count": 151,
     "suspect_types": [
       "bit_int_float_compare",
@@ -24,7 +24,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1491
+    "total_lines": 1492
   },
   "cross_references": [
     {
@@ -81,7 +81,7 @@
     {
       "addr": "004325b0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_004325b0"
+      "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0"
     },
     {
       "addr": "004742a0",
@@ -1432,18 +1432,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 416,
+      "line": 417,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004325b0(param_1,1,param_1->target_actor,0,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 416,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004325b0(param_1,1,param_1->target_actor,0,0);",
+      "text": "(&param_1->base,1,(int)param_1->target_actor,0,0);",
       "type": "unnamed_param"
     },
     {
@@ -1451,12 +1443,20 @@
       "line": 417,
       "match": "param_1",
       "severity": "mild",
+      "text": "(&param_1->base,1,(int)param_1->target_actor,0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 418,
+      "match": "param_1",
+      "severity": "mild",
       "text": "iVar6 = core_actor_cpp_isOfClass_FUN_0040c550(param_1->target_actor,\"CTrap\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 420,
+      "line": 421,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1->action_pending != 0) {",
@@ -1464,7 +1464,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 422,
+      "line": 423,
       "match": "param_1",
       "severity": "mild",
       "text": "(g_CEditorToolsPtr,\"actionPending = %d\\ndoc.cpp line %d\",param_1->action_pending,",
@@ -1472,7 +1472,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 425,
+      "line": 426,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->action_pending = 2;",
@@ -1480,7 +1480,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 429,
+      "line": 430,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->action_pending = 6;",
@@ -1488,7 +1488,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 431,
+      "line": 432,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->target_actor = (CDemonActor *)0x0;",
@@ -1496,7 +1496,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 435,
+      "line": 436,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_wearing_gas_mask = GAS_MASK_IN_HAND;",
@@ -1504,7 +1504,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 438,
+      "line": 439,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_wearing_gas_mask = GAS_MASK_ON_FACE;",
@@ -1512,7 +1512,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 441,
+      "line": 442,
       "match": "param_1",
       "severity": "mild",
       "text": "else if ((local_44 == 3) && ((int)param_1->is_wearing_gas_mask < 2)) {",
@@ -1520,7 +1520,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 443,
+      "line": 444,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_wearing_gas_mask = GAS_MASK_AWAY;",
@@ -1528,7 +1528,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 446,
+      "line": 447,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_wearing_gas_mask = GAS_MASK_IN_HAND;",
@@ -1536,7 +1536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 452,
+      "line": 453,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_wearing_goggles = 1;",
@@ -1544,7 +1544,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 455,
+      "line": 456,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_wearing_goggles = 2;",
@@ -1552,7 +1552,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 457,
+      "line": 458,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)pCVar4->vtable)(pCVar4,local_24 != (CWeapon *)0x0);",
@@ -1560,7 +1560,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 459,
+      "line": 460,
       "match": "param_1",
       "severity": "mild",
       "text": "else if ((local_44 == 3) && (param_1->is_wearing_goggles < 2)) {",
@@ -1568,7 +1568,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 461,
+      "line": 462,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_wearing_goggles = 0;",
@@ -1576,7 +1576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 464,
+      "line": 465,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->is_wearing_goggles = 1;",
@@ -1584,7 +1584,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 467,
+      "line": 468,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1->action_pending == 7) && ((local_44 == 0 || (local_44 == 8)))) {",
@@ -1592,7 +1592,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 468,
+      "line": 469,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1->action_pending = 0;",
@@ -1600,7 +1600,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 470,
+      "line": 471,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_00434610(&param_1->base,local_1c);",
@@ -1608,7 +1608,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 474,
+      "line": 475,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)param_1[1].base.base.actor_name == 0) {",
@@ -1616,7 +1616,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 479,
+      "line": 480,
       "match": "param_1",
       "severity": "mild",
       "text": "((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,\"CFlashlight\"",

@@ -13,8 +13,8 @@
 ; XREF[19]:
 ;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041e074
 ;   core_confedrt.cpp_FUN_005a1180 at 005a1216
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 004556e5
 ;   core_doc.cpp_FUN_00450c60 at 004513d0
-;   core_doc.cpp_FUN_004555c0 at 004556e5
 ;   core_fforest.cpp_FUN_005a2ac0 at 005a2b07
 ;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004add1d
 ;   core_ghostchi.cpp_CGhostChild_processMeleeAttackState_FUN_005a9580 at 005a9601

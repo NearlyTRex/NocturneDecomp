@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSkeleton * core_skeleton_cpp_CSkeleton_arrdtor40_FUN_0056b9b0(CSkeleton *this_ptr,uint flags)
+; CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_arrdtor40_FUN_0056b9b0(CSkeleton *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSkeleton *      Stack[0x4]:4   this_ptr

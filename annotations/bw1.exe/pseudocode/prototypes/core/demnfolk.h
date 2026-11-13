@@ -7,7 +7,7 @@
 
 // Original: core_demnfolk.cpp_staticInit_FUN_00458600
 // Address: 00458600
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_demnfolk.cpp_FUN_00458630
 // Address: 00458630
@@ -27,15 +27,15 @@ undefined4 FUN_00458890(float *param_1);
 
 // Original: core_demnfolk.cpp_factoryFuncDemnfolk_FUN_004589e0
 // Address: 004589e0
-void factoryFuncDemnfolk(void);
+CDemnfolk * __cdecl factoryFuncDemnfolk(void);
 
 // Original: core_demnfolk.cpp_CDemnfolk_getActorType_FUN_00458a00
 // Address: 00458a00
-CDemonActorType * CDemnfolk::getActorType(CDemnfolk *this_ptr);
+CDemonActorType * __cdecl CDemnfolk::getActorType(CDemnfolk *this_ptr);
 
 // Original: core_demnfolk.cpp_CDemnfolk_ctor_FUN_00458a10
 // Address: 00458a10
-CDemnfolk * CDemnfolk::ctor(CDemnfolk *this_ptr);
+CDemnfolk * __cdecl CDemnfolk::ctor(CDemnfolk *this_ptr);
 
 // Original: core_demnfolk.cpp_CDemnfolk_setup_FUN_00458bc0
 // Address: 00458bc0
@@ -131,4 +131,4 @@ void FUN_0045d060(int param_1);
 
 // Original: core_demnfolk.cpp_CDemnfolk_dtor_FUN_0045d0e0
 // Address: 0045d0e0
-CDemnfolk * CDemnfolk::dtor(CDemnfolk *this_ptr,uint flags);
+CDemnfolk * __cdecl CDemnfolk::dtor(CDemnfolk *this_ptr,uint flags);

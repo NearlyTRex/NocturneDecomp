@@ -17,7 +17,7 @@
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00482820 at 0048292d
-;   shape_edittool.cpp_FUN_0047dd1e at 0047e149
+;   shape_edittool.cpp_FUN_0047dd20 at 0047e149
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_a_b_d_H_M_S_Y_005da78c

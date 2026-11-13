@@ -7,6 +7,7 @@
 ; WatcomStaticDestructorNode * Stack[0x4]:4   exit_node
 ;
 ; XREF[35]:
+;   core_bmppuzzl.cpp_staticInit_FUN_0059aa80 at 0059aa99
 ;   core_boxactor.cpp_staticInit_FUN_0041bc90 at 0041bccc
 ;   core_bwgrndma.cpp_FUN_005a7eb0 at 005a7ec7
 ;   core_dcamera.cpp_staticInit_FUN_0043aee0 at 0043af10
@@ -16,7 +17,6 @@
 ;   core_flashlit.cpp_FUN_004a1200 at 004a1219
 ;   core_game.cpp_staticInit_FUN_004b28b0 at 004b28cc
 ;   core_goggles.cpp_FUN_0059c270 at 0059c282
-;   core_gore.cpp_staticInit_FUN_004c7360 at 004c7372
 ;   ... and 25 more
 ;
 ; Called Functions:

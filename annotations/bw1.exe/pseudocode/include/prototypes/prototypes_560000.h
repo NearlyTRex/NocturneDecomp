@@ -7,7 +7,6 @@
 #include "system/stdio.h"
 #include "types/classes/CBodyPart.h"
 #include "types/classes/CBoundingBox3D.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDeformableModel.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
@@ -22,6 +21,7 @@
 #include "types/classes/CShovel.h"
 #include "types/classes/CSimBox.h"
 #include "types/classes/CSkeleton.h"
+#include "types/classes/CSlew.h"
 #include "types/classes/CSmiley.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
@@ -44,12 +44,12 @@
 
 EDeathState __cdecl core_shadow_cpp_CShadow_getDeathState_FUN_00560110(CShadow *this_ptr);
 int __cdecl core_shadow_cpp_CShadow_getTargetPoints_FUN_00560150(CShadow *this_ptr,CVector3f *out_points_array);
-void core_shadow_cpp_FUN_005601bc(CCharacter *param_1);
-CShadow * core_shadow_cpp_CShadow_dtor_FUN_005603b0(CShadow *this_ptr,uint flags);
-void core_shadowsc_cpp_staticInit_FUN_00560440(void);
-void core_shadowsc_cpp_factoryFuncShadowsc_FUN_00560470(void);
-CDemonActorType * core_shadowsc_cpp_CShadowsc_getActorType_FUN_00560490(CShadowsc *this_ptr);
-CShadowsc * core_shadowsc_cpp_CShadowsc_ctor_FUN_005604a0(CShadowsc *this_ptr);
+void core_shadow_cpp_FUN_005601c0(void);
+CShadow * __cdecl core_shadow_cpp_CShadow_dtor_FUN_005603b0(CShadow *this_ptr,uint flags);
+void __cdecl core_shadowsc_cpp_staticInit_FUN_00560440(void);
+CShadowsc * __cdecl core_shadowsc_cpp_factoryFuncShadowsc_FUN_00560470(void);
+CDemonActorType * __cdecl core_shadowsc_cpp_CShadowsc_getActorType_FUN_00560490(CShadowsc *this_ptr);
+CShadowsc * __cdecl core_shadowsc_cpp_CShadowsc_ctor_FUN_005604a0(CShadowsc *this_ptr);
 void __cdecl core_shadowsc_cpp_CShadowsc_setup_FUN_00560510(CShadowsc *this_ptr);
 void __cdecl core_shadowsc_cpp_CShadowsc_process_FUN_00560630(CShadowsc *this_ptr,float delta_time);
 void core_shadowsc_cpp_FUN_00560fe0(int param_1);
@@ -62,10 +62,10 @@ int __cdecl core_shadowsc_cpp_CShadowsc_renderTransparent_FUN_005611a0(CShadowsc
 void __cdecl core_shadowsc_cpp_CShadowsc_archive_FUN_005612d0(CShadowsc *this_ptr);
 void __cdecl core_shadowsc_cpp_CShadowsc_processDamage_FUN_00561330(CShadowsc *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_shadowsc_cpp_CShadowsc_getTargetPoints_FUN_00561460(CShadowsc *this_ptr,CVector3f *out_points_array);
-CShadowsc * core_shadowsc_cpp_CShadowsc_dtor_FUN_005614d0(CShadowsc *this_ptr,uint flags);
-void core_shotgun_cpp_staticInit_FUN_00561560(void);
+CShadowsc * __cdecl core_shadowsc_cpp_CShadowsc_dtor_FUN_005614d0(CShadowsc *this_ptr,uint flags);
+void __cdecl core_shotgun_cpp_staticInit_FUN_00561560(void);
 CShotgun * __cdecl core_shotgun_cpp_factoryFuncShotgun_FUN_00561590(void);
-CDemonActorType * core_shotgun_cpp_CShotgun_getActorType_FUN_005615b0(CShotgun *this_ptr);
+CDemonActorType * __cdecl core_shotgun_cpp_CShotgun_getActorType_FUN_005615b0(CShotgun *this_ptr);
 CShotgun * __cdecl core_shotgun_cpp_CShotgun_ctor_FUN_005615c0(CShotgun *this_ptr);
 void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00561650(CShotgun *this_ptr,float delta_time);
 int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00561760(CShotgun *this_ptr);
@@ -73,17 +73,17 @@ void __cdecl core_shotgun_cpp_CShotgun_onFired_FUN_00561f80(CShotgun *this_ptr);
 float __cdecl core_shotgun_cpp_CShotgun_getDamage_FUN_005620c0(CShotgun *this_ptr);
 void __cdecl core_shotgun_cpp_CShotgun_renderAimBeam_FUN_00562100(CShotgun *this_ptr);
 CShotgun * __cdecl core_shotgun_cpp_CShotgun_dtor_FUN_00562360(CShotgun *this_ptr,uint flags);
-void core_shovel_cpp_staticInit_FUN_005623b0(void);
+void __cdecl core_shovel_cpp_staticInit_FUN_005623b0(void);
 CShovel * __cdecl core_shovel_cpp_factoryFuncShovel_FUN_005623e0(void);
-CDemonActorType * core_shovel_cpp_CShovel_getActorType_FUN_00562400(CShovel *this_ptr);
+CDemonActorType * __cdecl core_shovel_cpp_CShovel_getActorType_FUN_00562400(CShovel *this_ptr);
 CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00562410(CShovel *this_ptr);
 int __cdecl core_shovel_cpp_CShovel_fire_FUN_00562490(CShovel *this_ptr);
 float __cdecl core_shovel_cpp_CShovel_getDamage_FUN_005624b0(CShovel *this_ptr);
 void __cdecl core_shovel_cpp_CShovel_renderAimBeam_FUN_005624e0(CShovel *this_ptr);
 CShovel * __cdecl core_shovel_cpp_CShovel_dtor_FUN_005624f0(CShovel *this_ptr,uint flags);
-void core_simbox_cpp_staticInit_FUN_00562540(void);
+void __cdecl core_simbox_cpp_staticInit_FUN_00562540(void);
 CSimBox * __cdecl core_simbox_cpp_factoryFuncSimBox_FUN_00562570(void);
-CDemonActorType * core_simbox_cpp_CSimBox_getActorType_FUN_00562590(CSimBox *this_ptr);
+CDemonActorType * __cdecl core_simbox_cpp_CSimBox_getActorType_FUN_00562590(CSimBox *this_ptr);
 CSimBox * __cdecl core_simbox_cpp_CSimBox_ctor_FUN_005625a0(CSimBox *this_ptr);
 void __cdecl core_simbox_cpp_CSimBox_setup_FUN_00562660(CSimBox *this_ptr);
 void __cdecl core_simbox_cpp_CSimBox_process_FUN_005627a0(CSimBox *this_ptr,float delta_time);
@@ -95,8 +95,8 @@ CSimBox * __cdecl core_simbox_cpp_CSimBox_dtor_FUN_00562b00(CSimBox *this_ptr,ui
 void __cdecl core_skeleton_cpp_staticInit_FUN_00562b70(void);
 void __cdecl core_skeleton_cpp_skipToEndOfLine_FUN_00562bc0(_FILE *file_ptr);
 float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_00562be0(CVector3f *line_start,CVector3f *line_end,CVector3f *test_point);
-CSkeleton * core_skeleton_cpp_CSkeleton_ctor_FUN_00562dd0(CSkeleton *this_ptr);
-CSkeleton * core_skeleton_cpp_CSkeleton_dtor_FUN_00562e30(CSkeleton *this_ptr,uint flags);
+CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_00562dd0(CSkeleton *this_ptr);
+CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_00562e30(CSkeleton *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00562e60(CSkeleton *this_ptr,int bone_count,int frame_count);
 void core_skeleton_cpp_FUN_00562f70(int param_1,int param_2);
 void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00563000(CSkeleton *this_ptr,char *filename);
@@ -106,8 +106,8 @@ CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_0056
 CQuaternion4f * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_005635a0(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation,CQuaternion4f *result_out);
 int __cdecl core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_00563630(CSkeleton *this_ptr,int start_bone_index,int target_bone_index);
 int __cdecl core_skeleton_cpp_CSkeleton_calculateFrameDataSize_FUN_00563670(CSkeleton *this_ptr);
-CDeformableModel * core_skeleton_cpp_CDeformableModel_ctor_FUN_00563690(CDeformableModel *this_ptr);
-CDeformableModel * core_skeleton_cpp_CDeformableModel_dtor_FUN_005637b0(CDeformableModel *this_ptr,uint flags);
+CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_ctor_FUN_00563690(CDeformableModel *this_ptr);
+CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_dtor_FUN_005637b0(CDeformableModel *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CDeformableModel_free_FUN_005637d0(CDeformableModel *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_005638c0(CDeformableModel *this_ptr,int num_lods,int num_texture_sets,int num_textures,int num_parts);
 void core_skeleton_cpp_FUN_005639e0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5);
@@ -123,7 +123,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_00564070(CD
 void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_005640d0(CDeformableModel *this_ptr,int lod_index,int *part_visibility_flags,int *texture_set_indices,int render_flags,int skip_texture_capture);
 void __cdecl core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_00564a80(CDeformableModel *this_ptr,int lod_level);
 CSkeleton * core_skeleton_cpp_FUN_00564b20(CDeformableModel *param_1,undefined4 param_2,int param_3,byte param_4);
-void core_skeleton_cpp_FUN_00564d3e(CDeformableModel *param_1,int param_2);
+void core_skeleton_cpp_FUN_00564d40(void);
 void __cdecl core_skeleton_cpp_CDeformableModel_load_FUN_00564e40(CDeformableModel *this_ptr,char *filename);
 void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00564ed0(CDeformableModel *this_ptr,_FILE *file_handle);
 void __cdecl core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_00565730(CDeformableModel *this_ptr,CSkeleton *skeleton_ptr);
@@ -144,7 +144,7 @@ undefined4 core_skeleton_cpp_FUN_00567360(undefined4 param_1,undefined4 param_2,
 CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00567370(CDeformableModelInstance *this_ptr);
 CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0(CDeformableModelInstance *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_00567450(CDeformableModelInstance *this_ptr);
-void core_skeleton_cpp_FUN_005674d0(int param_1);
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_free_FUN_005674d0(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_00567500(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00567580(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_005675a0(CDeformableModelInstance *this_ptr);
@@ -223,14 +223,14 @@ void core_skeleton_cpp_FUN_0056b860(void);
 void core_skeleton_cpp_FUN_0056b8c0(char *param_1);
 float __cdecl core_skeleton_cpp_calculateDistanceSquared_FUN_0056b950(CVector3f *point1,CVector3f *point2);
 SVert * __cdecl core_skeleton_cpp_SVert_ctor_FUN_0056b990(SVert *this_ptr);
-CSkeleton * core_skeleton_cpp_CSkeleton_arrdtor40_FUN_0056b9b0(CSkeleton *this_ptr,uint flags);
-CDeformableModel * core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_0056b9d0(CDeformableModel *this_ptr,uint flags);
-void core_slew_cpp_staticInit_FUN_0056b9f0(void);
-undefined8 core_slew_cpp_FUN_0056ba00(undefined4 *param_1);
+CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_arrdtor40_FUN_0056b9b0(CSkeleton *this_ptr,uint flags);
+CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_0056b9d0(CDeformableModel *this_ptr,uint flags);
+void __cdecl core_slew_cpp_staticInit_FUN_0056b9f0(void);
+undefined8 __cdecl core_slew_cpp_CSlew_init_FUN_0056ba00(CSlew *this_ptr);
 void core_slew_cpp_FUN_0056ba50(float *param_1);
-void core_smiley_cpp_staticInit_FUN_0056bdf0(void);
-void core_smiley_cpp_factoryFuncSmiley_FUN_0056be20(void);
-CDemonActorType * core_smiley_cpp_CSmiley_getActorType_FUN_0056be40(CSmiley *this_ptr);
+void __cdecl core_smiley_cpp_staticInit_FUN_0056bdf0(void);
+CSmiley * __cdecl core_smiley_cpp_factoryFuncSmiley_FUN_0056be20(void);
+CDemonActorType * __cdecl core_smiley_cpp_CSmiley_getActorType_FUN_0056be40(CSmiley *this_ptr);
 CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_0056be50(CSmiley *this_ptr);
 void __cdecl core_smiley_cpp_CSmiley_setup_FUN_0056bef0(CSmiley *this_ptr);
 void __cdecl core_smiley_cpp_CSmiley_process_FUN_0056c220(CSmiley *this_ptr,float delta_time);
@@ -241,21 +241,21 @@ void __cdecl core_smiley_cpp_CSmiley_processDismemberment_FUN_0056ce10(CSmiley *
 void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_0056d0f0(CSmiley *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_0056d200(CSmiley *this_ptr,CVector3f *out_points_array);
 ECollisionType __cdecl core_smiley_cpp_CSmiley_getCollisionType_FUN_0056d3e0(CSmiley *this_ptr,SCollisionInfo *collision_info);
-CSmiley * core_smiley_cpp_CSmiley_dtor_FUN_0056d400(CSmiley *this_ptr,uint flags);
+CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_0056d400(CSmiley *this_ptr,uint flags);
 void __cdecl sound_sndmain_cpp_staticInit_FUN_0056d490(void);
-void sound_sndmain_cpp_FUN_0056d7ce(undefined4 *param_1,int param_2,int param_3,int param_4);
+void sound_sndmain_cpp_FUN_0056d7d0(void);
 undefined4 sound_sndmain_cpp_FUN_0056db10(int *param_1,int *param_2,int param_3);
 int sound_sndmain_cpp_FUN_0056df00(void);
 CSfxSample * sound_sndmain_cpp_FUN_0056df60(void);
 int __cdecl sound_sndmain_cpp_FUN_0056dfd0(int requested_bytes);
 void __cdecl sound_sndmain_cpp_trimLineAndRemoveComments_FUN_0056e0a0(char *line);
 void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_0056e130(CSfxSample *this_ptr);
-CSfxSample * sound_sndmain_cpp_FUN_0056e7ee(char *param_1);
+CSfxSample * sound_sndmain_cpp_FUN_0056e7f0(void);
 CSfxSample * __cdecl sound_sndmain_cpp_FUN_0056e830(char *filename);
-int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_0056edde(char *filename);
+int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_0056ede0(char *filename);
 void sound_sndmain_cpp_FUN_0056f1e0(void);
 int sound_sndmain_cpp_allocateHwSample_FUN_0056f360(void);
-float __cdecl sound_sndmain_cpp_calculateDistanceGain_FUN_0056f3fe(float distance,float reference_distance,float min_distance,float max_distance);
+float __cdecl sound_sndmain_cpp_calculateDistanceGain_FUN_0056f400(float distance,float reference_distance,float min_distance,float max_distance);
 void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_0056f470(int requested_size,int num_buffers);
 void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_0056f630(void);
 void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_0056f6d0(void);
@@ -263,7 +263,7 @@ void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0056f890(float *input_s
 CSfxSlot * __cdecl sound_sndmain_cpp_FUN_0056fa10(uint sfx_handle,int check_hardware_playback);
 double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_0056fb90(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process);
 double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_0056fcd0(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process);
-CSfxSample * sound_sndmain_cpp_CSfxSample_ctor_FUN_0056fe10(CSfxSample *this_ptr);
-CSfxSample * sound_sndmain_cpp_CSfxSample_dtor_FUN_0056fe80(CSfxSample *this_ptr,uint flags);
+CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_ctor_FUN_0056fe10(CSfxSample *this_ptr);
+CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_0056fe80(CSfxSample *this_ptr,uint flags);
 int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0056feb0(CSfxSample *this_ptr);
 

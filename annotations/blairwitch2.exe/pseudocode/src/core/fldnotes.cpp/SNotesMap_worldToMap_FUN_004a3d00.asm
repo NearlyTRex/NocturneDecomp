@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_fldnotes_cpp_SNotesMap_worldToMap_FUN_004a3d00(SNotesMap *this_ptr,float *param_2)
+; int __cdecl core_fldnotes_cpp_SNotesMap_worldToMap_FUN_004a3d00(SNotesMap *this_ptr,CLocation *location,int *map_x,int *map_y)
 ;
 ; Parameters:
 ; SNotesMap *      Stack[0x4]:4   this_ptr
-; float *          Stack[0x8]:4   param_2
+; CLocation *      Stack[0x8]:4   location
+; int *            Stack[0xc]:4   map_x
+; int *            Stack[0x10]:4   map_y
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

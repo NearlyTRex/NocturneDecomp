@@ -1,14 +1,12 @@
 // Name: core_darkwolf.cpp_CWhitewolf_dtor_FUN_00599030
 // Address: 00599030
 // Address Range: [[00599030, 005990c4]]
-// Convention: unknown
-// Signature: CWhitewolf * core_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030(CWhitewolf *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CWhitewolf * __cdecl core_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030(CWhitewolf *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CWhitewolf * core_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030(CWhitewolf *this_ptr,uint flags)
+CWhitewolf * __cdecl core_darkwolf_cpp_CWhitewolf_dtor_FUN_00599030(CWhitewolf *this_ptr,uint flags)
 
 {
   CMorph *pCVar1;

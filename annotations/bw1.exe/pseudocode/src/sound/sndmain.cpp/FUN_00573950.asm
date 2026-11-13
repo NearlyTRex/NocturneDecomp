@@ -13,7 +13,7 @@
 ;   core_lightpis.cpp_CLightPis_process_FUN_00502480 at 00502560
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_005057c0 at 00505859
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057cef3
-;   core_sound.cpp_FUN_0057c57e at 0057c918
+;   core_sound.cpp_FUN_0057c580 at 0057c918
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_0056fa10

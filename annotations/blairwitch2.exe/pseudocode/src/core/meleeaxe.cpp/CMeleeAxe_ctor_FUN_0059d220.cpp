@@ -1,14 +1,12 @@
 // Name: core_meleeaxe.cpp_CMeleeAxe_ctor_FUN_0059d220
 // Address: 0059d220
 // Address Range: [[0059d220, 0059d2f6]]
-// Convention: unknown
-// Signature: CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)
+// Convention: __cdecl
+// Signature: CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)
+CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)
 
 {
   char cVar1;

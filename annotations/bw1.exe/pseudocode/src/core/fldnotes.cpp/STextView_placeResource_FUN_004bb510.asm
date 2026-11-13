@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fldnotes_cpp_STextView_placeResource_FUN_004bb510(STextView *this_ptr,undefined4 *param_2)
+; int __cdecl core_fldnotes_cpp_STextView_placeResource_FUN_004bb510(STextView *this_ptr,SPageResource *resource)
 ;
 ; Parameters:
 ; STextView *      Stack[0x4]:4   this_ptr
-; undefined4 *     Stack[0x8]:4   param_2
+; SPageResource *  Stack[0x8]:4   resource
 ;
 ; XREF[1]:
 ;   core_fldnotes.cpp_SNotesMap_paginate_FUN_004bca60 at 004bcaa2
@@ -35,7 +35,7 @@ section .text
     PUSH ECX                            ; 004bb52a
     PUSH EBX                            ; 004bb52b
     CALL core_fldnotes.cpp_STextView_ensureSpace_FUN_004bbad0 ; 004bb52c
-        ;   XREF to: 004bbad0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_STextView_ensureSpace_FUN_004bbad0(STextView * this_ptr, int param_2, int param_3)
+        ;   XREF to: 004bbad0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_ensureSpace_FUN_004bbad0(STextView * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 004bb531
     TEST EAX,EAX                        ; 004bb534
     JZ 0x004bb562                       ; 004bb536
@@ -52,7 +52,7 @@ section .text
     PUSH EBX                            ; 004bb54d
     MOV dword ptr [EBX + 0x14],EDI      ; 004bb54e
     CALL core_fldnotes.cpp_STextView_addResource_FUN_004bb5f0 ; 004bb551
-        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004bb5f0(STextView * this_ptr, undefined4 param_2)
+        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004bb5f0(STextView * this_ptr, SPageResource * resource)
     MOV EAX,0x1                         ; 004bb556
     ADD ESP,0x8                         ; 004bb55b
     POP EDI                             ; 004bb55e

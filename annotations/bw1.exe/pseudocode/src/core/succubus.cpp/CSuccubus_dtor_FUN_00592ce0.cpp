@@ -1,14 +1,12 @@
 // Name: core_succubus.cpp_CSuccubus_dtor_FUN_00592ce0
 // Address: 00592ce0
 // Address Range: [[00592ce0, 00592d98]]
-// Convention: unknown
-// Signature: CSuccubus * core_succubus_cpp_CSuccubus_dtor_FUN_00592ce0(CSuccubus *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_00592ce0(CSuccubus *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSuccubus * core_succubus_cpp_CSuccubus_dtor_FUN_00592ce0(CSuccubus *this_ptr,uint flags)
+CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_00592ce0(CSuccubus *this_ptr,uint flags)
 
 {
   CMorph *pCVar1;

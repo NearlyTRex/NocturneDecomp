@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90(SPageResourceTwanaEntry *this_ptr)
+; SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_ctor_FUN_004bac90(SPageResourceTwanaEntry *this_ptr)
 ;
 ; Parameters:
 ; SPageResourceTwanaEntry * Stack[0x4]:4   this_ptr

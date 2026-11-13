@@ -7,23 +7,23 @@
 
 // Original: core_unionzom.cpp_staticInit_FUN_005a3cd0
 // Address: 005a3cd0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_unionzom.cpp_factoryFuncUnionZombie_FUN_005a3d00
 // Address: 005a3d00
-void factoryFuncUnionZombie(void);
+CUnionZombie * __cdecl factoryFuncUnionZombie(void);
 
 // Original: core_unionzom.cpp_CUnionZombie_getActorType_FUN_005a3d20
 // Address: 005a3d20
-CDemonActorType * CUnionZombie::getActorType(CUnionZombie *this_ptr);
+CDemonActorType * __cdecl CUnionZombie::getActorType(CUnionZombie *this_ptr);
 
 // Original: core_unionzom.cpp_CUnionZombie_ctor_FUN_005a3d30
 // Address: 005a3d30
-CUnionZombie * CUnionZombie::ctor(CUnionZombie *this_ptr);
+CUnionZombie * __cdecl CUnionZombie::ctor(CUnionZombie *this_ptr);
 
 // Original: core_unionzom.cpp_CUnionZombie_dtor_FUN_005a3e70
 // Address: 005a3e70
-CUnionZombie * CUnionZombie::dtor(CUnionZombie *this_ptr,uint flags);
+CUnionZombie * __cdecl CUnionZombie::dtor(CUnionZombie *this_ptr,uint flags);
 
 // Original: core_unionzom.cpp_CUnionZombie_setup_FUN_005a3f40
 // Address: 005a3f40

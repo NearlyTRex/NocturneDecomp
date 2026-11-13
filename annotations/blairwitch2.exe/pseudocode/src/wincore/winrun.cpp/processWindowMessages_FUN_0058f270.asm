@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b68e4
-;   engine_mini3d.cpp_FUN_004f236e at 004f2383
+;   engine_mini3d.cpp_swapBuffers_FUN_004f2370 at 004f2383
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560 at 0058963a
 ;   wincore_winvideo.cpp_playMovie_FUN_00591190 at 0059147f
 ;

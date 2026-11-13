@@ -7,19 +7,19 @@
 
 // Original: core_lantern.cpp_staticInit_FUN_0059cb70
 // Address: 0059cb70
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_lantern.cpp_factoryFuncLantern_FUN_0059cba0
 // Address: 0059cba0
-void factoryFuncLantern(void);
+CLantern * __cdecl factoryFuncLantern(void);
 
 // Original: core_lantern.cpp_CLantern_getActorType_FUN_0059cbc0
 // Address: 0059cbc0
-CDemonActorType * CLantern::getActorType(CLantern *this_ptr);
+CDemonActorType * __cdecl CLantern::getActorType(CLantern *this_ptr);
 
 // Original: core_lantern.cpp_CLantern_ctor_FUN_0059cbd0
 // Address: 0059cbd0
-CLantern * CLantern::ctor(CLantern *this_ptr);
+CLantern * __cdecl CLantern::ctor(CLantern *this_ptr);
 
 // Original: core_lantern.cpp_CLantern_setup_FUN_0059ccc0
 // Address: 0059ccc0
@@ -63,4 +63,4 @@ CVector3f * __cdecl CLantern::getMuzzlePoint(CLantern *this_ptr,CVector3f *out_p
 
 // Original: core_lantern.cpp_CLantern_dtor_FUN_0059d170
 // Address: 0059d170
-CLantern * CLantern::dtor(CLantern *this_ptr,uint flags);
+CLantern * __cdecl CLantern::dtor(CLantern *this_ptr,uint flags);

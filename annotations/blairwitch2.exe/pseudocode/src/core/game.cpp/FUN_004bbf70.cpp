@@ -298,7 +298,7 @@ LAB_004bc1c9:
           core_set_cpp_CDemonSet_loadStateInfo_FUN_00534a90(g_CDemonSetPtr,file_handle);
         }
         if (9 < local_34) {
-          core_fldnotes_cpp_FUN_004a61b0(g_CFieldNotesPtr,file_handle);
+          core_fldnotes_cpp_CFieldNotes_loadState_FUN_004a61b0(g_CFieldNotesPtr,file_handle);
         }
         _fclose(file_handle);
         if (load_mode == 0) {

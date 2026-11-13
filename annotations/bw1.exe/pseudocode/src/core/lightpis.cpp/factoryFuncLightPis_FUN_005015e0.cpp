@@ -1,20 +1,20 @@
 // Name: core_lightpis.cpp_factoryFuncLightPis_FUN_005015e0
 // Address: 005015e0
 // Address Range: [[005015e0, 005015fb]]
-// Convention: unknown
-// Signature: void core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void)
+// Convention: __cdecl
+// Signature: CLightPis * __cdecl core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void)
 
 #include "nocturne.h"
 
-void core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void)
+CLightPis * __cdecl core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void)
 
 {
-  CLightPis *this_ptr;
+  CLightPis *pCVar1;
   
-  this_ptr = (CLightPis *)operator_new(0x598);
-  if (this_ptr == (CLightPis *)0x0) {
-    return;
+  pCVar1 = (CLightPis *)operator_new(0x598);
+  if (pCVar1 == (CLightPis *)0x0) {
+    return (CLightPis *)0x0;
   }
-  core_lightpis_cpp_CLightPis_ctor_FUN_00501610(this_ptr);
-  return;
+  pCVar1 = core_lightpis_cpp_CLightPis_ctor_FUN_00501610(pCVar1);
+  return pCVar1;
 }

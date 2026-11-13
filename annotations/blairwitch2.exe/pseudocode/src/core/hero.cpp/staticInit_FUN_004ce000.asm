@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hero_cpp_staticInit_FUN_004ce000(void)
+; void __cdecl core_hero_cpp_staticInit_FUN_004ce000(void)
 ;
 ;
 ; Called Functions:

@@ -23,7 +23,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x18]      ; 004a415c
     PUSH EBX                            ; 004a415f
     CALL core_fldnotes.cpp_SNotesMap_draw_FUN_004a3e40 ; 004a4160
-        ;   XREF to: 004a3e40 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SNotesMap_draw_FUN_004a3e40(SNotesMap * this_ptr, int param_2, int param_3)
+        ;   XREF to: 004a3e40 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SNotesMap_draw_FUN_004a3e40(SNotesMap * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 004a4165
     POP EBX                             ; 004a4168
     RET                                 ; 004a4169

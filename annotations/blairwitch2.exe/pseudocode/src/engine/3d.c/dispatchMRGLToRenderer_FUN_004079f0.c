@@ -16,7 +16,6 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_004079f0(SMRGLHeaderExtended
   byte bVar3;
   int iVar4;
   int iVar5;
-  char acStack_110 [256];
   
   cVar2 = (char)(mrgl->base).type;
   _DAT_007ba070 = 0;
@@ -58,10 +57,10 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_004079f0(SMRGLHeaderExtended
         }
         else {
 LAB_00407bd2:
-          _sprintf(acStack_110,"Unknown primitive : %d");
+          _sprintf(&stack0xfffffef0,"Unknown primitive : %d");
           _DAT_01d046a4 = 0xcff;
           _DAT_01d046a0 = "..\\engine\\3d.c";
-          core_main_c_FUN_004e4500(acStack_110);
+          core_main_c_FUN_004e4500(&stack0xfffffef0);
         }
       }
       else if (bVar3 < 4) {

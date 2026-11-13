@@ -1,15 +1,14 @@
 // Name: core_carved.cpp_CCarved_ctor_FUN_004286d0
 // Address: 004286d0
 // Address Range: [[004286d0, 004287d4]]
-// Convention: unknown
-// Signature: CCarved * core_carved_cpp_CCarved_ctor_FUN_004286d0(CCarved *this_ptr)
+// Convention: __cdecl
+// Signature: CCarved * __cdecl core_carved_cpp_CCarved_ctor_FUN_004286d0(CCarved *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CCarved * core_carved_cpp_CCarved_ctor_FUN_004286d0(CCarved *this_ptr)
+CCarved * __cdecl core_carved_cpp_CCarved_ctor_FUN_004286d0(CCarved *this_ptr)
 
 {
   float fVar1;

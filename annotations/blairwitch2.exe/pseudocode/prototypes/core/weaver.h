@@ -7,23 +7,23 @@
 
 // Original: core_weaver.cpp_staticInit_FUN_005a5e10
 // Address: 005a5e10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_weaver.cpp_factoryFuncRobin_FUN_005a5e40
 // Address: 005a5e40
-void factoryFuncRobin(void);
+CRobin * __cdecl factoryFuncRobin(void);
 
 // Original: core_weaver.cpp_CRobin_getActorType_FUN_005a5e60
 // Address: 005a5e60
-CDemonActorType * CRobin::getActorType(CRobin *this_ptr);
+CDemonActorType * __cdecl CRobin::getActorType(CRobin *this_ptr);
 
 // Original: core_weaver.cpp_CRobin_ctor_FUN_005a5e70
 // Address: 005a5e70
-CRobin * CRobin::ctor(CRobin *this_ptr);
+CRobin * __cdecl CRobin::ctor(CRobin *this_ptr);
 
 // Original: core_weaver.cpp_CRobin_dtor_FUN_005a5f50
 // Address: 005a5f50
-CRobin * CRobin::dtor(CRobin *this_ptr,uint flags);
+CRobin * __cdecl CRobin::dtor(CRobin *this_ptr,uint flags);
 
 // Original: core_weaver.cpp_CRobin_setup_FUN_005a6030
 // Address: 005a6030

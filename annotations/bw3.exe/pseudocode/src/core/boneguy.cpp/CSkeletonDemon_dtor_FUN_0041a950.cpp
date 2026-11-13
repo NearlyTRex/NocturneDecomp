@@ -1,14 +1,12 @@
 // Name: core_boneguy.cpp_CSkeletonDemon_dtor_FUN_0041a950
 // Address: 0041a950
 // Address Range: [[0041a950, 0041a9d4]]
-// Convention: unknown
-// Signature: CSkeletonDemon * core_boneguy_cpp_CSkeletonDemon_dtor_FUN_0041a950(CSkeletonDemon *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSkeletonDemon * __cdecl core_boneguy_cpp_CSkeletonDemon_dtor_FUN_0041a950(CSkeletonDemon *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSkeletonDemon * core_boneguy_cpp_CSkeletonDemon_dtor_FUN_0041a950(CSkeletonDemon *this_ptr,uint flags)
+CSkeletonDemon * __cdecl core_boneguy_cpp_CSkeletonDemon_dtor_FUN_0041a950(CSkeletonDemon *this_ptr,uint flags)
 
 {
   int iVar1;

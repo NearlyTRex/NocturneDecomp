@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_bodypart_cpp_CBodyPart_getActorType_FUN_00418b30(CBodyPart *this_ptr)
+; CDemonActorType * __cdecl core_bodypart_cpp_CBodyPart_getActorType_FUN_00418b30(CBodyPart *this_ptr)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr

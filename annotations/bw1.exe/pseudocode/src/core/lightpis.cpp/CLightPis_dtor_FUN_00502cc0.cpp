@@ -1,14 +1,12 @@
 // Name: core_lightpis.cpp_CLightPis_dtor_FUN_00502cc0
 // Address: 00502cc0
 // Address Range: [[00502cc0, 00502d0d]]
-// Convention: unknown
-// Signature: CLightPis * core_lightpis_cpp_CLightPis_dtor_FUN_00502cc0(CLightPis *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CLightPis * __cdecl core_lightpis_cpp_CLightPis_dtor_FUN_00502cc0(CLightPis *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CLightPis * core_lightpis_cpp_CLightPis_dtor_FUN_00502cc0(CLightPis *this_ptr,uint flags)
+CLightPis * __cdecl core_lightpis_cpp_CLightPis_dtor_FUN_00502cc0(CLightPis *this_ptr,uint flags)
 
 {
   CLightPis *pCVar1;

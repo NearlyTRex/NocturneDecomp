@@ -7,7 +7,7 @@
 
 // Original: core_batman.cpp_staticInit_FUN_00412ac0
 // Address: 00412ac0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_batman.cpp_factoryFuncBatman_FUN_00412af0
 // Address: 00412af0
@@ -15,7 +15,7 @@ CBatman * __cdecl factoryFuncBatman(void);
 
 // Original: core_batman.cpp_CBatman_getActorType_FUN_00412b10
 // Address: 00412b10
-CDemonActorType * CBatman::getActorType(CBatman *this_ptr);
+CDemonActorType * __cdecl CBatman::getActorType(CBatman *this_ptr);
 
 // Original: core_batman.cpp_CBatman_ctor_FUN_00412b20
 // Address: 00412b20
@@ -59,4 +59,4 @@ ECollisionType __cdecl CBatman::getCollisionType(CBatman *this_ptr,SCollisionInf
 
 // Original: core_batman.cpp_CBatman_dtor_FUN_00414620
 // Address: 00414620
-CBatman * CBatman::dtor(CBatman *this_ptr,uint flags);
+CBatman * __cdecl CBatman::dtor(CBatman *this_ptr,uint flags);

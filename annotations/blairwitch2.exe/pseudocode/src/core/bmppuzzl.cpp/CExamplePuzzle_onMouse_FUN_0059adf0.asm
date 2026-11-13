@@ -1,19 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bmppuzzl_cpp_CExamplePuzzle_onMouse_FUN_0059adf0(CExamplePuzzle *this_ptr,int param_2,int param_3)
+; void __cdecl core_bmppuzzl_cpp_CExamplePuzzle_onMouse_FUN_0059adf0(CExamplePuzzle *this_ptr,int x,int y,int button,int pressed)
 ;
 ; Parameters:
 ; CExamplePuzzle * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   button
+; int              Stack[0x14]:4   pressed
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141f0
 ;
 ; Called Functions:
+;   core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
-;   core_zombie.cpp_FUN_0059ab70
 ;
 ; *****************************************************************************
 
@@ -48,8 +50,8 @@ section .text
     ADD ESP,0x8                         ; 0059ae23
     PUSH 0x0                            ; 0059ae26
     PUSH EBX                            ; 0059ae28
-    CALL core_zombie.cpp_FUN_0059ab70   ; 0059ae29
-        ;   XREF to: 0059ab70 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059ab70()
+    CALL core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70 ; 0059ae29
+        ;   XREF to: 0059ab70 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 0059ae2e
     POP EBX                             ; 0059ae31
     RET                                 ; 0059ae32

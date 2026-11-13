@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_spotview_cpp_staticInit_FUN_00584380(void)
+; void __cdecl shape_spotview_cpp_staticInit_FUN_00584380(void)
 ;
 ;
 ; Called Functions:

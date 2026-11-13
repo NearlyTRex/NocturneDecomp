@@ -15,7 +15,7 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00522200(CScript *th
   int iVar2;
   int iVar3;
   int iVar4;
-  uint local_14;
+  float local_14;
   int local_10;
   
   _DAT_01e650f8 = 0;
@@ -35,8 +35,8 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00522200(CScript *th
       iVar2 = 0;
       while( true ) {
         iVar1 = this_ptr->next_cmd;
-        local_14 = 0x3e800000;
-        iVar4 = core_script_cpp_FUN_00522350(this_ptr,&local_14);
+        local_14 = 0.25;
+        iVar4 = core_script_cpp_CScript_step_FUN_00522350(this_ptr,&local_14);
         if (iVar4 < 0) {
           _DAT_01d046a0 = "..\\core\\script.cpp";
           _DAT_01d046a4 = 0x449;

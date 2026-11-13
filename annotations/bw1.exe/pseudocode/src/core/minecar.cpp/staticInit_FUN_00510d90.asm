@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_minecar_cpp_staticInit_FUN_00510d90(void)
+; void __cdecl core_minecar_cpp_staticInit_FUN_00510d90(void)
 ;
 ;
 ; Called Functions:

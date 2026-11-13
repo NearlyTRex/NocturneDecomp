@@ -1,20 +1,20 @@
 // Name: core_goggles.cpp_factoryFuncGoggles_FUN_0059c030
 // Address: 0059c030
 // Address Range: [[0059c030, 0059c04b]]
-// Convention: unknown
-// Signature: void core_goggles_cpp_factoryFuncGoggles_FUN_0059c030(void)
+// Convention: __cdecl
+// Signature: CGoggles * __cdecl core_goggles_cpp_factoryFuncGoggles_FUN_0059c030(void)
 
 #include "nocturne.h"
 
-void core_goggles_cpp_factoryFuncGoggles_FUN_0059c030(void)
+CGoggles * __cdecl core_goggles_cpp_factoryFuncGoggles_FUN_0059c030(void)
 
 {
-  CGoggles *this_ptr;
+  CGoggles *pCVar1;
   
-  this_ptr = (CGoggles *)operator_new(0x434);
-  if (this_ptr == (CGoggles *)0x0) {
-    return;
+  pCVar1 = (CGoggles *)operator_new(0x434);
+  if (pCVar1 == (CGoggles *)0x0) {
+    return (CGoggles *)0x0;
   }
-  core_goggles_cpp_CGoggles_ctor_FUN_0059c060(this_ptr);
-  return;
+  pCVar1 = core_goggles_cpp_CGoggles_ctor_FUN_0059c060(pCVar1);
+  return pCVar1;
 }

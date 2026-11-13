@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_toxhand_cpp_CTheHand_getActorType_FUN_0056c050(CTheHand *this_ptr)
+; CDemonActorType * __cdecl core_toxhand_cpp_CTheHand_getActorType_FUN_0056c050(CTheHand *this_ptr)
 ;
 ; Parameters:
 ; CTheHand *       Stack[0x4]:4   this_ptr

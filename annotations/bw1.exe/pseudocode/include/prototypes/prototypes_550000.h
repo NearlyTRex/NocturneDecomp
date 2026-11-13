@@ -25,7 +25,6 @@
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
-#include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SRaytraceState.h"
 #include "types/structs/SRoom.h"
 #include "types/structs/SVDBox.h"
@@ -67,7 +66,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_00554a60(CDemonSet 
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00554a90(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha);
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00554ac0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha,int stride);
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
-void core_set_cpp_FUN_0055517e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4);
+void core_set_cpp_FUN_00555180(void);
 void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags);
 void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_005552f0(CDemonSet *this_ptr,SInputFace *faces,int count,int flags);
 void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_00555360(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count);
@@ -96,8 +95,8 @@ void core_set_cpp_FUN_00555e30(int *param_1,_FILE *param_2);
 int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_00555fe0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_00556040(CDemonSet *this_ptr,int expire_flag);
 void __cdecl core_set_cpp_CDemonSet_renderDecals_FUN_00556080(CDemonSet *this_ptr);
-SRoom * core_set_cpp_SRoom_ctor_FUN_00556130(SRoom *this_ptr);
-SVDBox * core_set_cpp_SVDBox_ctor_FUN_00556140(SVDBox *this_ptr);
+SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_00556130(SRoom *this_ptr);
+SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_00556140(SVDBox *this_ptr);
 void core_set_cpp_FUN_005561a0(void *param_1);
 void __cdecl core_setcolid_cpp_staticInit_FUN_005561c0(void);
 float * core_setcolid_cpp_FUN_005562c0(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CBoundingBox3D *param_7);
@@ -110,7 +109,7 @@ undefined4 core_setcolid_cpp_FUN_005574c0(int param_1);
 float core_setcolid_cpp_FUN_00557630(undefined4 param_1,float *param_2,float *param_3);
 float core_setcolid_cpp_FUN_005578b0(CDemonSet *param_1,float param_2,CBoundingBox3D *param_3,float *param_4,float param_5);
 int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00557db0(CDemonSet *this_ptr,CDemonActor *actor);
-undefined4 core_setcolid_cpp_intersectXZCylinder_FUN_00557e10(float *param_1,float param_2,float param_3,int param_4);
+int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00557e10(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info);
 int __cdecl core_setcolid_cpp_FUN_005580d0(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
 float core_setcolid_cpp_FUN_00558450(CDemonSet *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,float param_7,float param_8);
 void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00558eb0(CDemonSet *this_ptr);
@@ -129,9 +128,9 @@ void __cdecl core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00559440(CDemonSet 
 void __cdecl core_setcolid_cpp_CDemonSet_transferVoxelShadow_FUN_005594e0(CDemonSet *this_ptr,CDemonActor *actor);
 void __cdecl core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_00559580(CDemonSet *this_ptr);
 int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_005595a0(CDemonSet *this_ptr,CVector3f *point);
-SRaytraceState * core_setcolid_cpp_SRaytraceState_ctor_FUN_005596f0(SRaytraceState *this_ptr);
-SRaytraceState * core_setcolid_cpp_SRaytraceState_dtor_FUN_00559700(SRaytraceState *this_ptr,uint flags);
-void core_setdir_cpp_staticInit_FUN_00559710(void);
+SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_ctor_FUN_005596f0(SRaytraceState *this_ptr);
+SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_dtor_FUN_00559700(SRaytraceState *this_ptr,uint flags);
+void __cdecl core_setdir_cpp_staticInit_FUN_00559710(void);
 float core_setdir_cpp_FUN_00559c10(void);
 undefined4 core_setdir_cpp_FUN_00559f80(CDemonSet *param_1,CDemonActor *param_2,int param_3);
 void __cdecl core_setdir_cpp_CDemonSet_setPendingCamera_FUN_0055b1e0(CDemonSet *this_ptr,int camera_index,float hold_time);
@@ -168,12 +167,12 @@ void __cdecl core_setutil_cpp_C3DSLight_setFilterFrame_FUN_0055d3f0(C3DSLight *t
 void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_0055d490(C3DSLight *this_ptr,char *filter_name,float duration,int filter_mode);
 void __cdecl core_setutil_cpp_C3DSLight_reset_FUN_0055d580(C3DSLight *this_ptr);
 void __cdecl core_setutil_cpp_generateSphereVertex_FUN_0055d610(int longitude_index,int latitude_index,int vertex_buffer_index,float radius);
-void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0055d71c(C3DSLight *this_ptr);
+void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_0055d720(C3DSLight *this_ptr);
 int __cdecl core_setutil_cpp_C3DSLight_isVisible_FUN_0055d9c0(C3DSLight *this_ptr);
-void core_shadow_cpp_staticInit_FUN_0055da40(void);
-void core_shadow_cpp_factoryFuncShadow_FUN_0055daa0(void);
-CDemonActorType * core_shadow_cpp_CShadow_getActorType_FUN_0055dac0(CShadow *this_ptr);
-CShadow * core_shadow_cpp_CShadow_ctor_FUN_0055dad0(CShadow *this_ptr);
+void __cdecl core_shadow_cpp_staticInit_FUN_0055da40(void);
+CShadow * __cdecl core_shadow_cpp_factoryFuncShadow_FUN_0055daa0(void);
+CDemonActorType * __cdecl core_shadow_cpp_CShadow_getActorType_FUN_0055dac0(CShadow *this_ptr);
+CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_0055dad0(CShadow *this_ptr);
 void __cdecl core_shadow_cpp_CShadow_setup_FUN_0055dbf0(CShadow *this_ptr);
 void __cdecl core_shadow_cpp_CShadow_process_FUN_0055de50(CShadow *this_ptr,float delta_time);
 void __cdecl core_shadow_cpp_CShadow_setWalkTarget_FUN_0055f3d0(CShadow *this_ptr,CDemonActor *target,float min_distance,float max_distance);

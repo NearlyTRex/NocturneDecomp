@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAmmoMana * core_ammo_cpp_CAmmoMana_ctor_FUN_0040e0f0(CAmmoMana *this_ptr)
+; CAmmoMana * __cdecl core_ammo_cpp_CAmmoMana_ctor_FUN_0040e0f0(CAmmoMana *this_ptr)
 ;
 ; Parameters:
 ; CAmmoMana *      Stack[0x4]:4   this_ptr

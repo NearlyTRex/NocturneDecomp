@@ -7,7 +7,7 @@
 
 // Original: core_vessel.cpp_staticInit_FUN_00584e70
 // Address: 00584e70
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_vessel.cpp_factoryFuncCryptVessel_FUN_00584ea0
 // Address: 00584ea0
@@ -15,7 +15,7 @@ CCryptVessel * __cdecl factoryFuncCryptVessel(void);
 
 // Original: core_vessel.cpp_CCryptVessel_getActorType_FUN_00584ec0
 // Address: 00584ec0
-CDemonActorType * CCryptVessel::getActorType(CCryptVessel *this_ptr);
+CDemonActorType * __cdecl CCryptVessel::getActorType(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_CCryptVessel_ctor_FUN_00584ed0
 // Address: 00584ed0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPrye * core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
+; CPrye * __cdecl core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
 ;
 ; Parameters:
 ; CPrye *          Stack[0x4]:4   this_ptr

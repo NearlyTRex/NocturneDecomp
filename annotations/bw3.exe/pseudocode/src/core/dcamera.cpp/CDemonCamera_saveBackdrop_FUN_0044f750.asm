@@ -134,7 +134,7 @@ section .text
     LEA EAX,[ESP + 0x1b8]               ; 0044f80d
     PUSH EAX                            ; 0044f814
     CALL support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005747e0 ; 0044f815
-        ;   XREF to: 005747e0 (UNCONDITIONAL_CALL)  ; undefined4 * support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005747e0(COutStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 005747e0 (UNCONDITIONAL_CALL)  ; COutStreamFile * support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005747e0(COutStreamFile * this_ptr, char * path, char * mode)
     ADD ESP,0xc                         ; 0044f81a
     LEA EAX,[ESP + 0x1b0]               ; 0044f81d
     PUSH EAX                            ; 0044f824

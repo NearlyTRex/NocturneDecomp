@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SRaytraceState * core_setcolid_cpp_SRaytraceState_ctor_FUN_005382d0(SRaytraceState *this_ptr)
+; SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_ctor_FUN_005382d0(SRaytraceState *this_ptr)
 ;
 ; Parameters:
 ; SRaytraceState * Stack[0x4]:4   this_ptr

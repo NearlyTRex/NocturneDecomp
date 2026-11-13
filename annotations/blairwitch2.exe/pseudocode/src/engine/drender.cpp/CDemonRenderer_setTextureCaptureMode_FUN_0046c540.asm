@@ -14,7 +14,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0 at 00464c38
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbd80 at 004dc1e8
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_005b6c90 at 005b6ca4
-;   core_shadow.cpp_FUN_0053e6c0 at 0053e797
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_0053e6c0 at 0053e797
 ;   core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00585810 at 00585925
 ;
 ; Referenced Globals:

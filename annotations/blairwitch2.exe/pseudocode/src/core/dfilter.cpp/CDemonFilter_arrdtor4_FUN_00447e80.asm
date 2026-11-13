@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonFilter * core_dfilter_cpp_CDemonFilter_arrdtor4_FUN_00447e80(CDemonFilter *this_ptr,uint flags)
+; CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor4_FUN_00447e80(CDemonFilter *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonFilter *   Stack[0x4]:4   this_ptr

@@ -7,7 +7,7 @@
 
 // Original: core_gore.cpp_staticInit_FUN_004e3d40
 // Address: 004e3d40
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_gore.cpp_CBloodParticle_setup_FUN_004e3e20
 // Address: 004e3e20
@@ -91,7 +91,7 @@ CGore * __cdecl CGore::ctor(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_dtor_FUN_004e5bf0
 // Address: 004e5bf0
-CGore * CGore::dtor(CGore *this_ptr,uint flags);
+CGore * __cdecl CGore::dtor(CGore *this_ptr,uint flags);
 
 // Original: core_gore.cpp_CGore_reset_FUN_004e5c00
 // Address: 004e5c00
@@ -165,8 +165,8 @@ int __cdecl CGore::load(CGore *this_ptr,_FILE *file_handle);
 // Address: 004e6730
 int __cdecl CGore::save(CGore *this_ptr,_FILE *file_handle);
 
-// Original: core_gore.cpp_convertVecFloatToFixed_FUN_004e67de
-// Address: 004e67de
+// Original: core_gore.cpp_convertVecFloatToFixed_FUN_004e67e0
+// Address: 004e67e0
 CVector3f * __cdecl convertVecFloatToFixed(CVector3f *src,CVector3i *dst);
 
 // Original: core_gore.cpp_CFootstep_ctor_FUN_004e6810
@@ -175,23 +175,23 @@ CFootstep * __cdecl CFootstep::ctor(CFootstep *this_ptr);
 
 // Original: core_gore.cpp_CFootstep_dtor_FUN_004e6830
 // Address: 004e6830
-CFootstep * CFootstep::dtor(CFootstep *this_ptr,uint flags);
+CFootstep * __cdecl CFootstep::dtor(CFootstep *this_ptr,uint flags);
 
 // Original: core_gore.cpp_CBloodPool_ctor_FUN_004e6840
 // Address: 004e6840
-CBloodPool * CBloodPool::ctor(CBloodPool *this_ptr);
+CBloodPool * __cdecl CBloodPool::ctor(CBloodPool *this_ptr);
 
 // Original: core_gore.cpp_CBloodPool_dtor_FUN_004e6850
 // Address: 004e6850
-CBloodPool * CBloodPool::dtor(CBloodPool *this_ptr,uint flags);
+CBloodPool * __cdecl CBloodPool::dtor(CBloodPool *this_ptr,uint flags);
 
 // Original: core_gore.cpp_CBloodSplat_ctor_FUN_004e6860
 // Address: 004e6860
-CBloodSplat * CBloodSplat::ctor(CBloodSplat *this_ptr);
+CBloodSplat * __cdecl CBloodSplat::ctor(CBloodSplat *this_ptr);
 
 // Original: core_gore.cpp_CBloodSplat_dtor_FUN_004e6870
 // Address: 004e6870
-CBloodSplat * CBloodSplat::dtor(CBloodSplat *this_ptr,uint flags);
+CBloodSplat * __cdecl CBloodSplat::dtor(CBloodSplat *this_ptr,uint flags);
 
 // Original: core_gore.cpp_CBloodParticle_ctor_FUN_004e6880
 // Address: 004e6880
@@ -203,4 +203,4 @@ CBloodParticle * __cdecl CBloodParticle::dtor(CBloodParticle *this_ptr,uint flag
 
 // Original: core_gore.cpp_CBloodParticle_arrdtor256_FUN_004e68b0
 // Address: 004e68b0
-CBloodParticle * CBloodParticle::arrdtor256(CBloodParticle *this_ptr,uint flags);
+CBloodParticle * __cdecl CBloodParticle::arrdtor256(CBloodParticle *this_ptr,uint flags);

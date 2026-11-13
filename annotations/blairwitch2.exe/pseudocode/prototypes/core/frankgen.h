@@ -7,7 +7,7 @@
 
 // Original: core_frankgen.cpp_staticInit_FUN_004ac140
 // Address: 004ac140
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_frankgen.cpp_factoryFuncFrankenstienMachine_FUN_004ac170
 // Address: 004ac170
@@ -15,7 +15,7 @@ CFrankenstienMachine * __cdecl factoryFuncFrankenstienMachine(void);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_getActorType_FUN_004ac190
 // Address: 004ac190
-CDemonActorType * CFrankenstienMachine::getActorType(CFrankenstienMachine *this_ptr);
+CDemonActorType * __cdecl CFrankenstienMachine::getActorType(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_004ac1a0
 // Address: 004ac1a0
@@ -71,4 +71,4 @@ ECollisionType __cdecl CFrankenstienMachine::getCollisionType(CFrankenstienMachi
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004ad050
 // Address: 004ad050
-CFrankenstienMachine * CFrankenstienMachine::dtor(CFrankenstienMachine *this_ptr,uint flags);
+CFrankenstienMachine * __cdecl CFrankenstienMachine::dtor(CFrankenstienMachine *this_ptr,uint flags);

@@ -1,14 +1,12 @@
 // Name: core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f0a90
 // Address: 004f0a90
 // Address Range: [[004f0a90, 004f0b24]]
-// Convention: unknown
-// Signature: CHighPriestOfGardath * core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_004f0a90(CHighPriestOfGardath *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_004f0a90(CHighPriestOfGardath *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHighPriestOfGardath * core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_004f0a90(CHighPriestOfGardath *this_ptr,uint flags)
+CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_004f0a90(CHighPriestOfGardath *this_ptr,uint flags)
 
 {
   CPathMap *pCVar1;

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 112,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_strlen"
     ],
     "total_lines": 81
@@ -33,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_STextView_wordFits_FUN_004bbb30",
-    "signature": "undefined4 __cdecl core_fldnotes_cpp_STextView_wordFits_FUN_004bbb30(STextView *this_ptr,char *param_2)"
+    "signature": "int __cdecl core_fldnotes_cpp_STextView_wordFits_FUN_004bbb30(STextView *this_ptr,char *word)"
   },
   "function_calls": [
     {
@@ -123,7 +122,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "word",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -131,46 +130,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_fldnotes_cpp_STextView_wordFits_FUN_004bbb30(STextView *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(this_ptr->font,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + (uint)bVar6 * -2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + (uint)bVar6 * -2 + 1;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 17,

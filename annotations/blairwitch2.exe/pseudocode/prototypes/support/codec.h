@@ -55,11 +55,11 @@ int __cdecl FUN_00433f50(CCodec *this_ptr,void *ostream);
 
 // Original: support_codec.cpp_FUN_00433f60
 // Address: 00433f60
-undefined4 FUN_00433f60(int *param_1,undefined4 param_2,undefined4 param_3,int *param_4,int param_5);
+undefined4 FUN_00433f60(int *param_1,undefined4 param_2,char *param_3,int *param_4,int param_5);
 
 // Original: support_codec.cpp_FUN_00433ff0
 // Address: 00433ff0
-bool FUN_00433ff0(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4);
+bool FUN_00433ff0(int *param_1,char *param_2,int *param_3,undefined4 param_4);
 
 // Original: support_codec.cpp_CCodec_processBuffer_FUN_00434070
 // Address: 00434070
@@ -67,11 +67,11 @@ int __cdecl CCodec::processBuffer(CCodec *this_ptr,char *input,int *input_length
 
 // Original: support_codec.cpp_FUN_004340f0
 // Address: 004340f0
-undefined4 FUN_004340f0(int *param_1,undefined4 param_2,undefined4 param_3);
+undefined4 FUN_004340f0(int *param_1,char *param_2,char *param_3);
 
 // Original: support_codec.cpp_FUN_004341e0
 // Address: 004341e0
-bool FUN_004341e0(int *param_1,undefined4 param_2,int *param_3);
+bool FUN_004341e0(int *param_1,char *param_2,int *param_3);
 
 // Original: support_codec.cpp_CLZWDictionary_ctor_FUN_00434250
 // Address: 00434250
@@ -155,7 +155,7 @@ int FUN_00434b10(uint param_1);
 
 // Original: support_codec.cpp_CAsciiArmor_ctor_FUN_00434b70
 // Address: 00434b70
-CAsciiArmor * CAsciiArmor::ctor(CAsciiArmor *this_ptr);
+CAsciiArmor * __cdecl CAsciiArmor::ctor(CAsciiArmor *this_ptr);
 
 // Original: support_codec.cpp_FUN_00434b90
 // Address: 00434b90
@@ -171,7 +171,7 @@ undefined4 __cdecl CAsciiArmor::flush(CAsciiArmor *this_ptr,int *param_2);
 
 // Original: support_codec.cpp_CAsciiUnarmor_ctor_FUN_00434c70
 // Address: 00434c70
-CAsciiUnarmor * CAsciiUnarmor::ctor(CAsciiUnarmor *this_ptr);
+CAsciiUnarmor * __cdecl CAsciiUnarmor::ctor(CAsciiUnarmor *this_ptr);
 
 // Original: support_codec.cpp_CAsciiUnarmor_decode_FUN_00434c90
 // Address: 00434c90
@@ -203,11 +203,11 @@ void __cdecl CCheesyCipher::advanceKey(CCheesyCipher *this_ptr);
 
 // Original: support_codec.cpp_CInStreamPipe_ctor_FUN_00434e70
 // Address: 00434e70
-CInStreamPipe * CInStreamPipe::ctor(CInStreamPipe *this_ptr);
+CInStreamPipe * __cdecl CInStreamPipe::ctor(CInStreamPipe *this_ptr);
 
 // Original: support_codec.cpp_CInStreamPipe_dtor_FUN_00434f40
 // Address: 00434f40
-CInStreamPipe * CInStreamPipe::dtor(CInStreamPipe *this_ptr,uint flags);
+CInStreamPipe * __cdecl CInStreamPipe::dtor(CInStreamPipe *this_ptr,uint flags);
 
 // Original: support_codec.cpp_CInStreamPipe_getChar_FUN_00434fa0
 // Address: 00434fa0
@@ -255,15 +255,15 @@ undefined4 __cdecl CInStreamPipe::fillBuffer(CInStreamPipe *this_ptr);
 
 // Original: support_codec.cpp_CCheesyCipher_dtor_FUN_00435400
 // Address: 00435400
-CCheesyCipher * CCheesyCipher::dtor(CCheesyCipher *this_ptr,uint flags);
+CCheesyCipher * __cdecl CCheesyCipher::dtor(CCheesyCipher *this_ptr,uint flags);
 
 // Original: support_codec.cpp_CAsciiUnarmor_dtor_FUN_00435450
 // Address: 00435450
-CAsciiUnarmor * CAsciiUnarmor::dtor(CAsciiUnarmor *this_ptr,uint flags);
+CAsciiUnarmor * __cdecl CAsciiUnarmor::dtor(CAsciiUnarmor *this_ptr,uint flags);
 
 // Original: support_codec.cpp_CAsciiArmor_dtor_FUN_004354a0
 // Address: 004354a0
-CAsciiArmor * CAsciiArmor::dtor(CAsciiArmor *this_ptr,uint flags);
+CAsciiArmor * __cdecl CAsciiArmor::dtor(CAsciiArmor *this_ptr,uint flags);
 
 // Original: support_codec.cpp_CLZWDecompress_dtor_FUN_004354f0
 // Address: 004354f0

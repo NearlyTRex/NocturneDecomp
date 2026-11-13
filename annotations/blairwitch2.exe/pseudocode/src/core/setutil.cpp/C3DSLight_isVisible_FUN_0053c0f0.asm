@@ -7,7 +7,7 @@
 ; C3DSLight *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0052d3be at 0052d8ff
+;   core_set.cpp_FUN_0052d3c0 at 0052d8ff
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280

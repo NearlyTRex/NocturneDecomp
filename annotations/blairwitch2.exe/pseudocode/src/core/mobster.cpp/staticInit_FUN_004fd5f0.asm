@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mobster_cpp_staticInit_FUN_004fd5f0(void)
+; void __cdecl core_mobster_cpp_staticInit_FUN_004fd5f0(void)
 ;
 ;
 ; Called Functions:

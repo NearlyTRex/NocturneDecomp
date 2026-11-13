@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 50,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 25,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 86
   },
   "cross_references": [],
@@ -25,7 +23,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamMemory_putChar_FUN_0057df70",
-    "signature": "undefined4 __cdecl support_trstream_cpp_COutStreamMemory_putChar_FUN_0057df70(COutStreamMemory *this_ptr,char param_2)"
+    "signature": "int __cdecl support_trstream_cpp_COutStreamMemory_putChar_FUN_0057df70(COutStreamMemory *this_ptr,char ch)"
   },
   "function_calls": [
     {
@@ -100,31 +98,14 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "ch",
         "offset": 8,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_COutStreamMemory_putChar_FUN_0057df70(COutStreamMemory *this_ptr,char param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->buffer[this_ptr->position] = param_2;",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

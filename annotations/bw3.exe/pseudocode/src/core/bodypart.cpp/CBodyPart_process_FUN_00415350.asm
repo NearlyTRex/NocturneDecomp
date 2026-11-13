@@ -22,7 +22,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_bodypart.cpp_CBodyPart_processFires_FUN_00415570
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_00416b20
-;   core_bodypart.cpp_FUN_00414910
+;   core_bodypart.cpp_setCounts_FUN_00414910
 ;   core_box.cpp_CBox_process_FUN_0041b410
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
@@ -96,8 +96,8 @@ section .text
     PUSH 0x0                            ; 004153e4
     PUSH EBX                            ; 004153e6
     MOV dword ptr [EBX + 0x70],0x2      ; 004153e7
-    CALL core_bodypart.cpp_FUN_00414910 ; 004153ee
-        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00414910()
+    CALL core_bodypart.cpp_setCounts_FUN_00414910 ; 004153ee
+        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00414910()
     LEA EAX,[EBX + 0x168]               ; 004153f3
     ADD ESP,0xc                         ; 004153f9
     MOV EDX,EAX                         ; 004153fc

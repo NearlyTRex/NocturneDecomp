@@ -9,8 +9,8 @@
 // Address: 0050aed0
 void __cdecl staticInit(void);
 
-// Original: core_netgame.cpp_resetGameTime_FUN_0050af1e
-// Address: 0050af1e
+// Original: core_netgame.cpp_resetGameTime_FUN_0050af20
+// Address: 0050af20
 void __cdecl resetGameTime(void);
 
 // Original: core_netgame.cpp_updateGameTime_FUN_0050af50
@@ -33,9 +33,9 @@ void resetChatCounts(void);
 // Address: 0050b070
 void __cdecl removeChatOut(int index);
 
-// Original: core_netgame.cpp_FUN_0050b10e
-// Address: 0050b10e
-int FUN_0050b10e(int param_1);
+// Original: core_netgame.cpp_FUN_0050b110
+// Address: 0050b110
+int FUN_0050b110(void);
 
 // Original: core_netgame.cpp_allocSimFrame_FUN_0050b160
 // Address: 0050b160
@@ -171,23 +171,23 @@ void __cdecl CNetGame::sendSimFrameAck(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_SPlayer_ctor_FUN_0050f830
 // Address: 0050f830
-SPlayer * SPlayer::ctor(SPlayer *this_ptr);
+SPlayer * __cdecl SPlayer::ctor(SPlayer *this_ptr);
 
 // Original: core_netgame.cpp_SChatHistory_ctor_FUN_0050f840
 // Address: 0050f840
-SChatHistory * SChatHistory::ctor(SChatHistory *this_ptr);
+SChatHistory * __cdecl SChatHistory::ctor(SChatHistory *this_ptr);
 
 // Original: core_netgame.cpp_SChatHistory_dtor_FUN_0050f850
 // Address: 0050f850
-SChatHistory * SChatHistory::dtor(SChatHistory *this_ptr,uint flags);
+SChatHistory * __cdecl SChatHistory::dtor(SChatHistory *this_ptr,uint flags);
 
 // Original: core_netgame.cpp_SNetPlayer_ctor_FUN_0050f860
 // Address: 0050f860
-SNetPlayer * SNetPlayer::ctor(SNetPlayer *this_ptr);
+SNetPlayer * __cdecl SNetPlayer::ctor(SNetPlayer *this_ptr);
 
 // Original: core_netgame.cpp_SNetPlayer_copy_FUN_0050f870
 // Address: 0050f870
-SNetPlayer * SNetPlayer::copy(SNetPlayer *this_ptr,SNetPlayer *other);
+SNetPlayer * __cdecl SNetPlayer::copy(SNetPlayer *this_ptr,SNetPlayer *other);
 
 // Original: core_netgame.cpp_IpAddr_copy_FUN_0050f9c0
 // Address: 0050f9c0

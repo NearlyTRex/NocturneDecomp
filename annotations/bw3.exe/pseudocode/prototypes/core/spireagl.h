@@ -7,19 +7,19 @@
 
 // Original: core_spireagl.cpp_staticInit_FUN_00599170
 // Address: 00599170
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_spireagl.cpp_factoryFuncSpiritEagle_FUN_005991a0
 // Address: 005991a0
-void factoryFuncSpiritEagle(void);
+CSpiritEagle * __cdecl factoryFuncSpiritEagle(void);
 
 // Original: core_spireagl.cpp_CSpiritEagle_getActorType_FUN_005991c0
 // Address: 005991c0
-CDemonActorType * CSpiritEagle::getActorType(CSpiritEagle *this_ptr);
+CDemonActorType * __cdecl CSpiritEagle::getActorType(CSpiritEagle *this_ptr);
 
 // Original: core_spireagl.cpp_CSpiritEagle_ctor_FUN_005991d0
 // Address: 005991d0
-CSpiritEagle * CSpiritEagle::ctor(CSpiritEagle *this_ptr);
+CSpiritEagle * __cdecl CSpiritEagle::ctor(CSpiritEagle *this_ptr);
 
 // Original: core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0
 // Address: 005992f0
@@ -63,4 +63,4 @@ CPathMap * __cdecl CSpiritEagle::getPathMap(CSpiritEagle *this_ptr);
 
 // Original: core_spireagl.cpp_CSpiritEagle_dtor_FUN_00599e40
 // Address: 00599e40
-CSpiritEagle * CSpiritEagle::dtor(CSpiritEagle *this_ptr,uint flags);
+CSpiritEagle * __cdecl CSpiritEagle::dtor(CSpiritEagle *this_ptr,uint flags);

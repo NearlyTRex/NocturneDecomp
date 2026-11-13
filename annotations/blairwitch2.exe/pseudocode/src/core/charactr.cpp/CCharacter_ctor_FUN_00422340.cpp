@@ -1,15 +1,14 @@
 // Name: core_charactr.cpp_CCharacter_ctor_FUN_00422340
 // Address: 00422340
 // Address Range: [[00422340, 00422921]]
-// Convention: unknown
-// Signature: CCharacter * core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *this_ptr)
+// Convention: __cdecl
+// Signature: CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CCharacter * core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *this_ptr)
+CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *this_ptr)
 
 {
   uint uVar1;

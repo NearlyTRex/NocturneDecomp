@@ -1,14 +1,12 @@
 // Name: core_emitter.cpp_CEmitter_ctor_FUN_004879e0
 // Address: 004879e0
 // Address Range: [[004879e0, 00487ba4]]
-// Convention: unknown
-// Signature: CEmitter * core_emitter_cpp_CEmitter_ctor_FUN_004879e0(CEmitter *this_ptr)
+// Convention: __cdecl
+// Signature: CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004879e0(CEmitter *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CEmitter * core_emitter_cpp_CEmitter_ctor_FUN_004879e0(CEmitter *this_ptr)
+CEmitter * __cdecl core_emitter_cpp_CEmitter_ctor_FUN_004879e0(CEmitter *this_ptr)
 
 {
   char cVar1;

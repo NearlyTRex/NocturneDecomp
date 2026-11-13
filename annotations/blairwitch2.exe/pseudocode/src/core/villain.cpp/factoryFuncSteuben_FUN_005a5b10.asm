@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_villain_cpp_factoryFuncSteuben_FUN_005a5b10(void)
+; CSteuben * __cdecl core_villain_cpp_factoryFuncSteuben_FUN_005a5b10(void)
 ;
 ;
 ; Called Functions:

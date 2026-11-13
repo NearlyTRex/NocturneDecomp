@@ -11,10 +11,10 @@
 ;   core_doc.cpp_FUN_00453250 at 004535a8
 ;   core_game.cpp_FUN_004b76c0 at 004b7ee0
 ;   core_game.cpp_FUN_004be8a0 at 004bf637
+;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dca99
 ;   core_inv.cpp_FUN_004dadb0 at 004db433
-;   core_inv.cpp_FUN_004dc8c0 at 004dca99
 ;   core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20 at 0051ec7b
-;   core_script.cpp_FUN_00522350 at 00526fce
+;   core_script.cpp_CScript_step_FUN_00522350 at 00526fce
 ;
 ; Referenced Globals:
 ;   undefined4 g_CWeaponClassInfo.name_hash

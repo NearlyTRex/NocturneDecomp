@@ -1,14 +1,12 @@
 // Name: engine_ini.cpp_CIniFile_dtor_FUN_004f4b30
 // Address: 004f4b30
 // Address Range: [[004f4b30, 004f4b76]]
-// Convention: unknown
-// Signature: CIniFile * engine_ini_cpp_CIniFile_dtor_FUN_004f4b30(CIniFile *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CIniFile * __cdecl engine_ini_cpp_CIniFile_dtor_FUN_004f4b30(CIniFile *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CIniFile * engine_ini_cpp_CIniFile_dtor_FUN_004f4b30(CIniFile *this_ptr,uint flags)
+CIniFile * __cdecl engine_ini_cpp_CIniFile_dtor_FUN_004f4b30(CIniFile *this_ptr,uint flags)
 
 {
   void *ptr;

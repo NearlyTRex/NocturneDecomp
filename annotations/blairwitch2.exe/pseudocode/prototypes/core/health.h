@@ -7,7 +7,7 @@
 
 // Original: core_health.cpp_staticInit_FUN_004cda10
 // Address: 004cda10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_health.cpp_factoryFuncHealthItem_FUN_004cda40
 // Address: 004cda40
@@ -15,11 +15,11 @@ CHealthItem * __cdecl factoryFuncHealthItem(void);
 
 // Original: core_health.cpp_CHealthItem_getActorType_FUN_004cda60
 // Address: 004cda60
-CDemonActorType * CHealthItem::getActorType(CHealthItem *this_ptr);
+CDemonActorType * __cdecl CHealthItem::getActorType(CHealthItem *this_ptr);
 
 // Original: core_health.cpp_CHealthItem_ctor_FUN_004cda70
 // Address: 004cda70
-CHealthItem * CHealthItem::ctor(CHealthItem *this_ptr);
+CHealthItem * __cdecl CHealthItem::ctor(CHealthItem *this_ptr);
 
 // Original: core_health.cpp_CHealthItem_setup_FUN_004cdae0
 // Address: 004cdae0
@@ -27,7 +27,7 @@ void __cdecl CHealthItem::setup(CHealthItem *this_ptr);
 
 // Original: core_health.cpp_CHealthItem_dtor_FUN_004cdb00
 // Address: 004cdb00
-CHealthItem * CHealthItem::dtor(CHealthItem *this_ptr,uint flags);
+CHealthItem * __cdecl CHealthItem::dtor(CHealthItem *this_ptr,uint flags);
 
 // Original: core_health.cpp_CHealthItem_process_FUN_004cdb60
 // Address: 004cdb60

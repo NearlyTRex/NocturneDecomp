@@ -7,19 +7,19 @@
 
 // Original: core_belling.cpp_staticInit_FUN_005a8f20
 // Address: 005a8f20
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_belling.cpp_factoryFuncBelling_FUN_005a8f50
 // Address: 005a8f50
-void factoryFuncBelling(void);
+CBelling * __cdecl factoryFuncBelling(void);
 
 // Original: core_belling.cpp_CBelling_getActorType_FUN_005a8f70
 // Address: 005a8f70
-CDemonActorType * CBelling::getActorType(CBelling *this_ptr);
+CDemonActorType * __cdecl CBelling::getActorType(CBelling *this_ptr);
 
 // Original: core_belling.cpp_CBelling_ctor_FUN_005a8f80
 // Address: 005a8f80
-CBelling * CBelling::ctor(CBelling *this_ptr);
+CBelling * __cdecl CBelling::ctor(CBelling *this_ptr);
 
 // Original: core_belling.cpp_CBelling_setup_FUN_005a9050
 // Address: 005a9050
@@ -55,4 +55,4 @@ void __cdecl CBelling::archive(CBelling *this_ptr);
 
 // Original: core_belling.cpp_CBelling_dtor_FUN_005a9130
 // Address: 005a9130
-CBelling * CBelling::dtor(CBelling *this_ptr,uint flags);
+CBelling * __cdecl CBelling::dtor(CBelling *this_ptr,uint flags);

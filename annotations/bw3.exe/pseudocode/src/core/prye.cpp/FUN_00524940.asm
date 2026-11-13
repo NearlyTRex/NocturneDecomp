@@ -56,7 +56,7 @@
 ;   core_charactr.cpp_CCharacter_advanceLayerAction_FUN_00433580
 ;   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_00433ae0
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
-;   core_charactr.cpp_FUN_004319d0
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_dynamite.cpp_CDynamite_lightFuse_FUN_0047b1e0
 ;   core_dynamite.cpp_FUN_0047b230
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
@@ -320,8 +320,8 @@ section .text
     PUSH EAX                            ; 00524c34
     PUSH 0x1                            ; 00524c35
     PUSH EBX                            ; 00524c37
-    CALL core_charactr.cpp_FUN_004319d0 ; 00524c38
-        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004319d0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 ; 00524c38
+        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 00524c3d
     PUSH 0x5cd7a9                       ; 00524c40 | = "CTrap"
     MOV EDX,dword ptr [EBX + 0x20bac]   ; 00524c45
@@ -1363,8 +1363,8 @@ section .text
     PUSH EAX                            ; 00525844
     PUSH 0x0                            ; 00525845
     PUSH EBX                            ; 00525847
-    CALL core_charactr.cpp_FUN_004319d0 ; 00525848
-        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004319d0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 ; 00525848
+        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     MOV dword ptr [ESI + 0x23a0],0x1    ; 0052584d
     ADD ESP,0x14                        ; 00525857
     MOV dword ptr [EBX + 0x20b88],0x41700000 ; 0052585a

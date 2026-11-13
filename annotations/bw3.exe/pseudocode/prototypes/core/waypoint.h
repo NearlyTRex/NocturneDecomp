@@ -7,7 +7,7 @@
 
 // Original: core_waypoint.cpp_staticInit_FUN_00579100
 // Address: 00579100
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_waypoint.cpp_FUN_00579130
 // Address: 00579130
@@ -19,7 +19,7 @@ CWayPoint * __cdecl factoryFuncWayPoint(void);
 
 // Original: core_waypoint.cpp_CWayPoint_getActorType_FUN_00579260
 // Address: 00579260
-CDemonActorType * CWayPoint::getActorType(CWayPoint *this_ptr);
+CDemonActorType * __cdecl CWayPoint::getActorType(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWayPoint_ctor_FUN_00579270
 // Address: 00579270

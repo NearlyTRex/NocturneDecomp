@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 6,
+    "complexity_score": 23,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 6,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 18
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
+    "total_lines": 20
   },
   "cross_references": [],
   "function": {
@@ -21,9 +23,9 @@
         "004cf874"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_ground.cpp_staticInit_FUN_004cf850",
-    "signature": "void core_ground_cpp_staticInit_FUN_004cf850(void)"
+    "signature": "void __cdecl core_ground_cpp_staticInit_FUN_004cf850(void)"
   },
   "function_calls": [
     {
@@ -114,5 +116,14 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Raw hex address 0x4cf871 assigned to bare local `uStack00000004`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack00000004` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 8,
+      "match": "0x4cf871",
+      "severity": "moderate",
+      "text": "uStack00000004 = 0x4cf871;",
+      "type": "raw_address_constant"
+    }
+  ]
 }

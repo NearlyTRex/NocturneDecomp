@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_executeInitSection_FUN_00522200 at 0052222d
-;   core_script.cpp_FUN_00522350 at 005224f5
+;   core_script.cpp_CScript_step_FUN_00522350 at 005224f5
 ;
 ; Called Functions:
 ;   core_script.cpp_skipWhitespace_FUN_00521180

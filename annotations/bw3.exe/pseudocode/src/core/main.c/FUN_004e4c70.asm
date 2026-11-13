@@ -16,7 +16,7 @@
 ;   CNetGame g_CNetGameInstance
 ;
 ; Called Functions:
-;   core_bmppuzzl.cpp_FUN_004119e0
+;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_004119e0
 ;   core_dfont.cpp_FUN_0045a8d0
 ;   core_dmodel.cpp_freeAllModels_FUN_004624d0
 ;   core_inivar.cpp_writeIniData_FUN_004d95c0
@@ -41,8 +41,8 @@ section .text
         ;   Label: core_main.c_FUN_004e4c70
     PUSH ESI                            ; 004e4c71
     PUSH EDI                            ; 004e4c72
-    CALL core_bmppuzzl.cpp_FUN_004119e0 ; 004e4c73
-        ;   XREF to: 004119e0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_004119e0()
+    CALL core_bmppuzzl.cpp_resetAllPuzzles_FUN_004119e0 ; 004e4c73
+        ;   XREF to: 004119e0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_resetAllPuzzles_FUN_004119e0()
     MOV EDX,dword ptr [0x00603450]      ; 004e4c78 | g_CNetGamePtr
     PUSH EDX                            ; 004e4c7e | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_shutdown_FUN_00503ed0 ; 004e4c7f

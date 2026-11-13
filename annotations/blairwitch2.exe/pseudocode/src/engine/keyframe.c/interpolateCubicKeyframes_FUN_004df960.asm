@@ -350,7 +350,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x14]      ; 004dfcdd
     PUSH ECX                            ; 004dfce0
     CALL engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0 ; 004dfce1
-        ;   XREF to: 004078b0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0()
+        ;   XREF to: 004078b0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0(SMRGLHeaderExtended * chain)
     ADD ESP,0x4                         ; 004dfce6
     MOV EAX,dword ptr [EBP + 0x14]      ; 004dfce9
     ADD EAX,0x158                       ; 004dfcec

@@ -1,14 +1,12 @@
 // Name: core_spawner.cpp_CSpawner_dtor_FUN_00563f70
 // Address: 00563f70
 // Address Range: [[00563f70, 00563fd4]]
-// Convention: unknown
-// Signature: CSpawner * core_spawner_cpp_CSpawner_dtor_FUN_00563f70(CSpawner *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSpawner * __cdecl core_spawner_cpp_CSpawner_dtor_FUN_00563f70(CSpawner *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSpawner * core_spawner_cpp_CSpawner_dtor_FUN_00563f70(CSpawner *this_ptr,uint flags)
+CSpawner * __cdecl core_spawner_cpp_CSpawner_dtor_FUN_00563f70(CSpawner *this_ptr,uint flags)
 
 {
   CDeformableModelInstance *pCVar1;

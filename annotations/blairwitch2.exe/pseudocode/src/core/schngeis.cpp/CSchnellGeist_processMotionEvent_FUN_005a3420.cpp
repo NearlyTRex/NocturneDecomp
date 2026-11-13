@@ -27,7 +27,7 @@ void __cdecl core_schngeis_cpp_CSchnellGeist_processMotionEvent_FUN_005a3420(CSc
     break;
   case 0x1f42:
     this_ptr->breath_state = 0;
-    core_basicene_cpp_FUN_0059e880(this_ptr,event_id);
+    core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(&this_ptr->base,event_id);
     return;
   case 0x1f43:
     iVar2 = this_ptr->tongue_attack_bone;
@@ -64,6 +64,6 @@ LAB_005a344f:
               (0x0264B290,(CDemonActor *)this_ptr,"schnelldeath01.wav",
                &(this_ptr->base).base.base.base.location.position);
   }
-  core_basicene_cpp_FUN_0059e880(this_ptr,event_id);
+  core_basicene_cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(&this_ptr->base,event_id);
   return;
 }

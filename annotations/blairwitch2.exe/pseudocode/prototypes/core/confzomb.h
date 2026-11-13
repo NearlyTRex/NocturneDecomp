@@ -7,23 +7,23 @@
 
 // Original: core_confzomb.cpp_staticInit_FUN_005a1ae0
 // Address: 005a1ae0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_confzomb.cpp_factoryFuncConfederateZombie_FUN_005a1b10
 // Address: 005a1b10
-void factoryFuncConfederateZombie(void);
+CConfederateZombie * __cdecl factoryFuncConfederateZombie(void);
 
 // Original: core_confzomb.cpp_CConfederateZombie_getActorType_FUN_005a1b30
 // Address: 005a1b30
-CDemonActorType * CConfederateZombie::getActorType(CConfederateZombie *this_ptr);
+CDemonActorType * __cdecl CConfederateZombie::getActorType(CConfederateZombie *this_ptr);
 
 // Original: core_confzomb.cpp_CConfederateZombie_ctor_FUN_005a1b40
 // Address: 005a1b40
-CConfederateZombie * CConfederateZombie::ctor(CConfederateZombie *this_ptr);
+CConfederateZombie * __cdecl CConfederateZombie::ctor(CConfederateZombie *this_ptr);
 
 // Original: core_confzomb.cpp_CConfederateZombie_dtor_FUN_005a1cc0
 // Address: 005a1cc0
-CConfederateZombie * CConfederateZombie::dtor(CConfederateZombie *this_ptr,uint flags);
+CConfederateZombie * __cdecl CConfederateZombie::dtor(CConfederateZombie *this_ptr,uint flags);
 
 // Original: core_confzomb.cpp_CConfederateZombie_setup_FUN_005a1d90
 // Address: 005a1d90

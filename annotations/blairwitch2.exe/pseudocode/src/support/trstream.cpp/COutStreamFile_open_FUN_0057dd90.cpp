@@ -2,21 +2,21 @@
 // Address: 0057dd90
 // Address Range: [[0057dd90, 0057ddca]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_trstream_cpp_COutStreamFile_open_FUN_0057dd90(COutStreamFile *this_ptr,char *param_2,char *param_3)
+// Signature: int __cdecl support_trstream_cpp_COutStreamFile_open_FUN_0057dd90(COutStreamFile *this_ptr,char *path,char *mode)
 
 #include "nocturne.h"
 
-uint __cdecl support_trstream_cpp_COutStreamFile_open_FUN_0057dd90(COutStreamFile *this_ptr,char *param_2,char *param_3)
+int __cdecl support_trstream_cpp_COutStreamFile_open_FUN_0057dd90(COutStreamFile *this_ptr,char *path,char *mode)
 
 {
   _FILE *p_Var1;
   
-  (**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);
-  p_Var1 = _fopen(param_2,param_3);
+  (**(code **)((int)(this_ptr->base).vtable + 0x18))(this_ptr);
+  p_Var1 = _fopen(path,mode);
   this_ptr->file = p_Var1;
   if (p_Var1 != (_FILE *)0x0) {
     return 1;
   }
-  (**(code **)((int)this_ptr->vtable + 0x18))(this_ptr);
+  (**(code **)((int)(this_ptr->base).vtable + 0x18))(this_ptr);
   return 0;
 }

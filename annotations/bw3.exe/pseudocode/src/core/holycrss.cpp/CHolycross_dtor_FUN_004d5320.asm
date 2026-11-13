@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHolycross * core_holycrss_cpp_CHolycross_dtor_FUN_004d5320(CHolycross *this_ptr,uint flags)
+; CHolycross * __cdecl core_holycrss_cpp_CHolycross_dtor_FUN_004d5320(CHolycross *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CHolycross *     Stack[0x4]:4   this_ptr

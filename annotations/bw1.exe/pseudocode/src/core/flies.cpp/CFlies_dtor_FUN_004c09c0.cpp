@@ -1,14 +1,12 @@
 // Name: core_flies.cpp_CFlies_dtor_FUN_004c09c0
 // Address: 004c09c0
 // Address Range: [[004c09c0, 004c0a0d]]
-// Convention: unknown
-// Signature: CFlies * core_flies_cpp_CFlies_dtor_FUN_004c09c0(CFlies *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CFlies * __cdecl core_flies_cpp_CFlies_dtor_FUN_004c09c0(CFlies *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CFlies * core_flies_cpp_CFlies_dtor_FUN_004c09c0(CFlies *this_ptr,uint flags)
+CFlies * __cdecl core_flies_cpp_CFlies_dtor_FUN_004c09c0(CFlies *this_ptr,uint flags)
 
 {
   CFlies *pCVar1;

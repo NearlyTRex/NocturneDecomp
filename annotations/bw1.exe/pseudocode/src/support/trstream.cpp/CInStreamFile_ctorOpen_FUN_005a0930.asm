@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl support_trstream_cpp_CInStreamFile_ctorOpen_FUN_005a0930(CInStreamFile *this_ptr,LPCSTR param_2,int param_3)
+; CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctorOpen_FUN_005a0930(CInStreamFile *this_ptr,char *path,int binary_mode)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   path
+; int              Stack[0xc]:4   binary_mode
 ;
 ; XREF[1]:
 ;   support_codec.cpp_FUN_00442e10 at 00442e24
@@ -15,8 +15,8 @@
 ;   undefined1* g_CInStreamFileVTable = 005a0a50
 ;
 ; Called Functions:
+;   support_trstream.cpp_CInStream_ctor_FUN_0059f540
 ;   support_trstream.cpp_CInStreamFile_open_FUN_005a0f60
-;   support_trstream.cpp_FUN_0059f540
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH ESI                            ; 005a0931
     MOV EDX,dword ptr [ESP + 0xc]       ; 005a0932
     PUSH EDX                            ; 005a0936
-    CALL support_trstream.cpp_FUN_0059f540 ; 005a0937
-        ;   XREF to: 0059f540 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0059f540()
+    CALL support_trstream.cpp_CInStream_ctor_FUN_0059f540 ; 005a0937
+        ;   XREF to: 0059f540 (UNCONDITIONAL_CALL)  ; CInStream * support_trstream.cpp_CInStream_ctor_FUN_0059f540(CInStream * this_ptr)
     MOV dword ptr [EAX],0x607384        ; 005a093c | g_CInStreamFileVTable
     MOV dword ptr [EAX + 0x4],0x0       ; 005a0942
     MOV dword ptr [EAX + 0x8],0x0       ; 005a0949
@@ -47,7 +47,7 @@ section .text
     MOV EBX,EAX                         ; 005a0988
     MOV dword ptr [EAX + 0x24],0x0      ; 005a098a
     CALL support_trstream.cpp_CInStreamFile_open_FUN_005a0f60 ; 005a0991
-        ;   XREF to: 005a0f60 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_open_FUN_005a0f60(CInStreamFile * this_ptr, LPCSTR param_2, int param_3)
+        ;   XREF to: 005a0f60 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_open_FUN_005a0f60(CInStreamFile * this_ptr, char * path, int binary_mode)
     ADD ESP,0xc                         ; 005a0996
     MOV EAX,EBX                         ; 005a0999
     POP ESI                             ; 005a099b

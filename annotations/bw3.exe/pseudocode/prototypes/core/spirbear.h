@@ -7,19 +7,19 @@
 
 // Original: core_spirbear.cpp_staticInit_FUN_0059aa40
 // Address: 0059aa40
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_spirbear.cpp_factoryFuncSpiritBear_FUN_0059aa70
 // Address: 0059aa70
-void factoryFuncSpiritBear(void);
+CSpiritBear * __cdecl factoryFuncSpiritBear(void);
 
 // Original: core_spirbear.cpp_CSpiritBear_getActorType_FUN_0059aa90
 // Address: 0059aa90
-CDemonActorType * CSpiritBear::getActorType(CSpiritBear *this_ptr);
+CDemonActorType * __cdecl CSpiritBear::getActorType(CSpiritBear *this_ptr);
 
 // Original: core_spirbear.cpp_CSpiritBear_ctor_FUN_0059aaa0
 // Address: 0059aaa0
-CSpiritBear * CSpiritBear::ctor(CSpiritBear *this_ptr);
+CSpiritBear * __cdecl CSpiritBear::ctor(CSpiritBear *this_ptr);
 
 // Original: core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0
 // Address: 0059aba0
@@ -59,4 +59,4 @@ CPathMap * __cdecl CSpiritBear::getPathMap(CSpiritBear *this_ptr);
 
 // Original: core_spirbear.cpp_CSpiritBear_dtor_FUN_0059b540
 // Address: 0059b540
-CSpiritBear * CSpiritBear::dtor(CSpiritBear *this_ptr,uint flags);
+CSpiritBear * __cdecl CSpiritBear::dtor(CSpiritBear *this_ptr,uint flags);

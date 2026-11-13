@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CRifle * core_rifle_cpp_CRifle_dtor_FUN_00528660(CRifle *this_ptr,uint flags)
+; CRifle * __cdecl core_rifle_cpp_CRifle_dtor_FUN_00528660(CRifle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CRifle *         Stack[0x4]:4   this_ptr

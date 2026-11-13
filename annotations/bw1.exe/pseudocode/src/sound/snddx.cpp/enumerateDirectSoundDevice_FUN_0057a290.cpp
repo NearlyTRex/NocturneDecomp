@@ -14,7 +14,8 @@ int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0057a290(UINT device_
   
   if (DAT_006235d0 < 0) {
     DAT_006235d0 = 0;
-    DirectSoundEnumerateA((LPDSENUMCALLBACKA)0x579f70,(LPVOID)0x0);
+    DirectSoundEnumerateA
+              (sound_snddx_cpp_directSoundEnumerationCallback_FUN_00579f70,(LPVOID)0x0);
   }
   if ((-1 < (int)device_id) && ((int)device_id < DAT_006235d0)) {
     device_info->device_id = device_id;

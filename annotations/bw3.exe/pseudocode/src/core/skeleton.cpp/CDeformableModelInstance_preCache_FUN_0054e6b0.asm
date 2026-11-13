@@ -15,7 +15,7 @@
 ;   core_construc.cpp_CConstruct_setup_FUN_004425f0 at 0044262d
 ;   core_cow.cpp_CZombieCow_setup_FUN_00444fd0 at 00444fde
 ;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 00598817
-;   core_demnfolk.cpp_FUN_00454d20 at 00454d31
+;   core_demnfolk.cpp_CDemnfolk_setup_FUN_00454d20 at 00454d31
 ;   core_dog.cpp_CZombieDog_setup_FUN_00462790 at 0046279d
 ;   ... and 28 more
 ;

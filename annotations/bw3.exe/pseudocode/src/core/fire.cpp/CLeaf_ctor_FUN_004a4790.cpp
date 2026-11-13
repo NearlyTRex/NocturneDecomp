@@ -1,14 +1,12 @@
 // Name: core_fire.cpp_CLeaf_ctor_FUN_004a4790
 // Address: 004a4790
 // Address Range: [[004a4790, 004a47a4]]
-// Convention: unknown
-// Signature: CLeaf * core_fire_cpp_CLeaf_ctor_FUN_004a4790(CLeaf *this_ptr)
+// Convention: __cdecl
+// Signature: CLeaf * __cdecl core_fire_cpp_CLeaf_ctor_FUN_004a4790(CLeaf *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CLeaf * core_fire_cpp_CLeaf_ctor_FUN_004a4790(CLeaf *this_ptr)
+CLeaf * __cdecl core_fire_cpp_CLeaf_ctor_FUN_004a4790(CLeaf *this_ptr)
 
 {
   CLeaf *pCVar1;

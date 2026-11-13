@@ -69,6 +69,6 @@ void __cdecl CEnemy::releaseVictim(CEnemy *this_ptr);
 // Address: 004a10f0
 void __cdecl CEnemy::onVictimLost(CEnemy *this_ptr,CDemonActor *lost_actor);
 
-// Original: core_enemy.cpp_FUN_004a111e
-// Address: 004a111e
-int FUN_004a111e(CDemonActor *param_1);
+// Original: core_enemy.cpp_FUN_004a1120
+// Address: 004a1120
+int FUN_004a1120(void);

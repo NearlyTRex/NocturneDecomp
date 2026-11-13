@@ -7,7 +7,7 @@
 
 // Original: core_tommygun.cpp_staticInit_FUN_00575700
 // Address: 00575700
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_tommygun.cpp_factoryFuncTommyGun_FUN_00575730
 // Address: 00575730
@@ -15,7 +15,7 @@ CTommyGun * __cdecl factoryFuncTommyGun(void);
 
 // Original: core_tommygun.cpp_CTommyGun_getActorType_FUN_00575750
 // Address: 00575750
-CDemonActorType * CTommyGun::getActorType(CTommyGun *this_ptr);
+CDemonActorType * __cdecl CTommyGun::getActorType(CTommyGun *this_ptr);
 
 // Original: core_tommygun.cpp_CTommyGun_ctor_FUN_00575760
 // Address: 00575760

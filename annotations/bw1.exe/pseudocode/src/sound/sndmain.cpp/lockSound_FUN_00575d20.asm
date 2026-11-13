@@ -7,12 +7,12 @@
 ; XREF[27]:
 ;   core_tommygun.cpp_CTommyGun_process_FUN_00598d50 at 00598e5d
 ;   sound_sndmain.cpp_FUN_0056fa10 at 0056fa62
-;   sound_sndmain.cpp_FUN_00573e4c at 00573e50
-;   sound_sndmain.cpp_FUN_00573eae at 00573eb0
+;   sound_sndmain.cpp_FUN_00573e50 at 00573e50
+;   sound_sndmain.cpp_FUN_00573eb0 at 00573eb0
 ;   sound_sndmain.cpp_FUN_00573ec0 at 00573ec0
 ;   sound_sndmain.cpp_FUN_00573f20 at 00573f20
 ;   sound_sndmain.cpp_FUN_00573fa0 at 00573fa0
-;   sound_sndmain.cpp_FUN_005740fe at 0057410e
+;   sound_sndmain.cpp_FUN_00574100 at 0057410e
 ;   sound_sndmain.cpp_FUN_00574230 at 00574238
 ;   sound_sndmain.cpp_FUN_005742c0 at 005742c3
 ;   ... and 17 more

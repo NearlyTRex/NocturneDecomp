@@ -13,10 +13,6 @@ void __cdecl CMotionList::load(CMotionList *this_ptr,_FILE *file_handle);
 // Address: 00523db0
 void FUN_00523db0(int *param_1,undefined4 param_2);
 
-// Original: core_motion.cpp_FUN_00523e2e
-// Address: 00523e2e
-void FUN_00523e2e(void);
-
 // Original: core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
 // Address: 005240c0
 int __cdecl CMotionList::findMotionIndex(CMotionList *this_ptr,char *motion_name,int error_on_not_found);

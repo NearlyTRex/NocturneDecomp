@@ -9,7 +9,7 @@
 ;
 ; XREF[5]:
 ;   core_dtrace.cpp_FUN_00474020 at 00474434
-;   core_dtri.cpp_FUN_00479e0c at 00479f4d
+;   core_dtri.cpp_FUN_00479e10 at 00479f4d
 ;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00534130 at 00534196
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00541a60 at 005421f1
 ;   core_water.cpp_CWater_render_FUN_005862e0 at 005868f2

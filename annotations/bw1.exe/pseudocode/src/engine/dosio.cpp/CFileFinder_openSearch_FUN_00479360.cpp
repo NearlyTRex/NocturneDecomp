@@ -22,7 +22,7 @@ int __cdecl engine_dosio_cpp_CFileFinder_openSearch_FUN_00479360(CFileFinder *th
   }
   else {
     this_ptr->search_handle = pvVar1;
-    engine_dosio_cpp_FUN_004794b0(this_ptr,&_Stack_144);
+    engine_dosio_cpp_CFileFinder_convertStruct_FUN_004794b0(this_ptr,(byte *)&_Stack_144);
     this_ptr->has_results = 1;
   }
   return this_ptr->has_results;

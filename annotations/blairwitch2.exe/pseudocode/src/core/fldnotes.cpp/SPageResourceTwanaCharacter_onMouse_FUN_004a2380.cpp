@@ -2,19 +2,19 @@
 // Address: 004a2380
 // Address Range: [[004a2380, 004a23b0]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_onMouse_FUN_004a2380(SPageResourceTwanaCharacter *this_ptr,int param_2)
+// Signature: int __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_onMouse_FUN_004a2380(SPageResourceTwanaCharacter *this_ptr,int clicked,int x,int y)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_onMouse_FUN_004a2380(SPageResourceTwanaCharacter *this_ptr,int param_2)
+int __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_onMouse_FUN_004a2380(SPageResourceTwanaCharacter *this_ptr,int clicked,int x,int y)
 
 {
   if (_DAT_01cab780 == (SPageResourceTwanaEntry *)0x0) {
     return 0;
   }
-  if (param_2 != 1) {
+  if (clicked != 1) {
     return 1;
   }
   core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a2620

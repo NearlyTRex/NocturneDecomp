@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombiepriest_cpp_factoryFuncZombiePriest_FUN_0058d4b0(void)
+; CZombiePriest * __cdecl core_zombiepriest_cpp_factoryFuncZombiePriest_FUN_0058d4b0(void)
 ;
 ;
 ; Called Functions:

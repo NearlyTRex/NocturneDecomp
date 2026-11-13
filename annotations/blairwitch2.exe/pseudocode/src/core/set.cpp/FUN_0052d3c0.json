@@ -1,0 +1,598 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 401,
+    "complexity_score": 719,
+    "cross_reference_count": 0,
+    "function_call_count": 17,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 209,
+    "suspect_count": 46,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
+      "unaffected_reg",
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 610
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0052d3c0",
+    "address_range": [
+      [
+        "0052d3c0",
+        "0052d976"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_set.cpp_FUN_0052d3c0",
+    "signature": "void core_set_cpp_FUN_0052d3c0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043b7f0",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0043b7f0"
+    },
+    {
+      "addr": "00440630",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00440630"
+    },
+    {
+      "addr": "0043bf50",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0043bf50"
+    },
+    {
+      "addr": "00440560",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00440560"
+    },
+    {
+      "addr": "0043d220",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0043d220"
+    },
+    {
+      "addr": "0043d870",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0043d870"
+    },
+    {
+      "addr": "00443610",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_FUN_00443610"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005308e0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_005308e0"
+    },
+    {
+      "addr": "0052d980",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0052d980"
+    },
+    {
+      "addr": "0052d0e0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0"
+    },
+    {
+      "addr": "0053ad20",
+      "is_variadic": false,
+      "name": "core_setutil.cpp_C3DSCamera_apply_FUN_0053ad20"
+    },
+    {
+      "addr": "0053c0f0",
+      "is_variadic": false,
+      "name": "core_setutil.cpp_C3DSLight_isVisible_FUN_0053c0f0"
+    },
+    {
+      "addr": "005b8c30",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005b8c30"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00401fe0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fe0"
+    },
+    {
+      "addr": "00589560",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc8d00",
+      "name": "DAT_01fc8d00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc8e84",
+      "name": "DAT_01fc8e84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc9608",
+      "name": "DAT_01fc9608",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc9c68",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    },
+    {
+      "addr": "01fc9cd4",
+      "name": "DAT_01fc9cd4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.744744744744745,
+    "instruction_count": 333,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "BRANCH": 7,
+      "CALL": 23,
+      "CBRANCH": 19,
+      "COPY": 360,
+      "FLOAT2FLOAT": 12,
+      "INT_ADD": 185,
+      "INT_AND": 161,
+      "INT_CARRY": 42,
+      "INT_EQUAL": 156,
+      "INT_LESS": 18,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 8,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 45,
+      "INT_SEXT": 9,
+      "INT_SLESS": 77,
+      "INT_SUB": 105,
+      "INT_XOR": 7,
+      "INT_ZEXT": 10,
+      "LOAD": 86,
+      "POPCOUNT": 77,
+      "RETURN": 2,
+      "STORE": 123,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 1580
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0054e6a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CDemonSet *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 27,
+      "match": "auStackY_1830",
+      "severity": "moderate",
+      "text": "uint auStackY_1830 [1435];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "core_set_cpp_CDemonSet_initScene_FUN_0052d980(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (0 < in_stack_00000004->camera_count) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "pCStack_38 = in_stack_00000004->lights;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "iStack_44 = in_stack_00000008 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CStack_54.y_max = (int)in_stack_00000004->cameras;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "pCStack_3c = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0(in_stack_00000004,9999.9,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 97,
+      "match": "&stack0xfffffe74",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffe74,\"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 98,
+      "match": "&stack0xfffffe74",
+      "severity": "moderate",
+      "text": "engine_2d_c_drawText_FUN_00401fe0(&stack0xfffffe74,0,0x16);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iStack_24 = in_stack_00000004->light_count;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 103,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "if (in_stack_00000008 != -1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 105,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "iStack_14 = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 111,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iStack_18 = (int)in_stack_00000004->cameras + iStack_14 * 0x1898 + iStack_20 + -4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar6 = (int)in_stack_00000004->cameras + iStack_40 + iStack_14 * 0x1898 + -4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 116,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (in_stack_00000004->lights[iStack_14].light_type == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 123,
+      "match": "DAT_01fc8d04",
+      "severity": "mild",
+      "text": "((char *)(*(int *)(&DAT_01fc8d04 + iVar7) + 0x40),pCVar3->name);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 134,
+      "match": "DAT_01fc8d04",
+      "severity": "mild",
+      "text": "light_source = *(CDemonLight **)(&DAT_01fc8d04 + iVar5 * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 140,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(char *)(unaff_EBP + 0x19b58) = (char)iVar5;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 150,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if (*(char *)(unaff_EBP + 0x19b58) != '\\0') {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 161,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->lights[iVar7].visible_flags[iVar5] = (char)iVar4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 164,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(int)(in_stack_00000004->lights[iVar7].visible_flags + 0xf8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 170,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(int)in_stack_00000004->lights[iVar7].camera_light_bounds;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 176,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(int)&in_stack_00000004->lights[iVar7].camera_light_bounds[0].x_max;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 182,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(int)&in_stack_00000004->lights[iVar7].camera_light_bounds[0].y_min;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 189,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->lights[iStack_14].visible_flags[iStack_20] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 197,
+      "match": "&stack0xfffffe74",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffe74,\"Precomputing lights from camera : %d\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 198,
+      "match": "&stack0xfffffe74",
+      "severity": "moderate",
+      "text": "engine_2d_c_drawText_FUN_00401fe0(&stack0xfffffe74,0,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 204,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "} while (iVar6 < in_stack_00000004->camera_count);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 207,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "core_set_cpp_CDemonSet_clearLights_FUN_005308e0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Pointer value `&CStack_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 146,
+      "match": "(int)&CStack_54",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)((int)&CStack_54 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 147,
+      "match": "(int)&CStack_54",
+      "severity": "moderate",
+      "text": "*puVar11 = *(uint *)((int)&CStack_54 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&in_stack_00000004->lights[iVar7].camera_light_bounds[0].x_max` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 176,
+      "match": "(int)&in_stack_00000004->lights[iVar7].camera_light_bounds[0].x_max",
+      "severity": "moderate",
+      "text": "(int)&in_stack_00000004->lights[iVar7].camera_light_bounds[0].x_max;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&in_stack_00000004->lights[iVar7].camera_light_bounds[0].y_min` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 182,
+      "match": "(int)&in_stack_00000004->lights[iVar7].camera_light_bounds[0].y_min",
+      "severity": "moderate",
+      "text": "(int)&in_stack_00000004->lights[iVar7].camera_light_bounds[0].y_min;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 81,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 146,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)((int)&CStack_54 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 147,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*puVar11 = *(uint *)((int)&CStack_54 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 176,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(int)&in_stack_00000004->lights[iVar7].camera_light_bounds[0].x_max;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 182,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(int)&in_stack_00000004->lights[iVar7].camera_light_bounds[0].y_min;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 175,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "pcVar2 = pCStack_28->cameras[0].name +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 181,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "pcVar2 = pCStack_28->cameras[0].name +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_3c` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCStack_3c->vertices[0].a`). Replace `pCStack_3c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 201,
+      "match": "pCStack_3c = (T *)&pCStack_3c->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCStack_3c = (CDemonSet *)&pCStack_3c->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

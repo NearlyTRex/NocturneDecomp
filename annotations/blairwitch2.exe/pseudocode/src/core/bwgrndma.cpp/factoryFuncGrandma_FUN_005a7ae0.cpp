@@ -1,20 +1,20 @@
 // Name: core_bwgrndma.cpp_factoryFuncGrandma_FUN_005a7ae0
 // Address: 005a7ae0
 // Address Range: [[005a7ae0, 005a7afb]]
-// Convention: unknown
-// Signature: void core_bwgrndma_cpp_factoryFuncGrandma_FUN_005a7ae0(void)
+// Convention: __cdecl
+// Signature: CGrandma * __cdecl core_bwgrndma_cpp_factoryFuncGrandma_FUN_005a7ae0(void)
 
 #include "nocturne.h"
 
-void core_bwgrndma_cpp_factoryFuncGrandma_FUN_005a7ae0(void)
+CGrandma * __cdecl core_bwgrndma_cpp_factoryFuncGrandma_FUN_005a7ae0(void)
 
 {
-  CGrandma *this_ptr;
+  CGrandma *pCVar1;
   
-  this_ptr = (CGrandma *)operator_new(0x11854);
-  if (this_ptr == (CGrandma *)0x0) {
-    return;
+  pCVar1 = (CGrandma *)operator_new(0x11854);
+  if (pCVar1 == (CGrandma *)0x0) {
+    return (CGrandma *)0x0;
   }
-  core_bwgrndma_cpp_CGrandma_ctor_FUN_005a7b10(this_ptr);
-  return;
+  pCVar1 = core_bwgrndma_cpp_CGrandma_ctor_FUN_005a7b10(pCVar1);
+  return pCVar1;
 }

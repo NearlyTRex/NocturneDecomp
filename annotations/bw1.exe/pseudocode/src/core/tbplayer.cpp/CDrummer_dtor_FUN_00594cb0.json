@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 53,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 27,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 93
+    "total_lines": 92
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "00594d44"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_tbplayer.cpp_CDrummer_dtor_FUN_00594cb0",
-    "signature": "CDrummer * core_tbplayer_cpp_CDrummer_dtor_FUN_00594cb0(CDrummer *this_ptr,uint flags)"
+    "signature": "CDrummer * __cdecl core_tbplayer_cpp_CDrummer_dtor_FUN_00594cb0(CDrummer *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -156,7 +156,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 18,
       "match": "pCVar1[-1].",
       "severity": "mild",
       "text": "iVar2 = core_armour_cpp_FUN_0040ee30(pCVar1[-1].height_cache_tags[10] + 0x36,0);",
@@ -164,7 +164,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 26,
+      "line": 24,
       "match": "pCVar4[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);",

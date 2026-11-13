@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 491,
-    "complexity_score": 580,
+    "complexity_score": 592,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 225,
-    "suspect_count": 32,
+    "pseudocode_lines": 227,
+    "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -18,7 +18,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 716
+    "total_lines": 718
   },
   "cross_references": [],
   "function": {
@@ -31,13 +31,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00412530",
-    "signature": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00412530(CAudioRecPuzzle *this_ptr)"
+    "signature": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00412530(CAudioRecPuzzle *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
       "addr": "004119a0",
       "is_variadic": false,
-      "name": "core_bmppuzzl.cpp_FUN_004119a0"
+      "name": "core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0"
     },
     {
       "addr": "0048c150",
@@ -121,9 +121,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 1,
-    "declared_stack_bytes": 4,
-    "estimated_params": 1,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -180,10 +180,10 @@
     }
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -192,6 +192,13 @@
         "offset": 4,
         "size": 4,
         "type": "CAudioRecPuzzle *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -206,7 +213,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 20,
+      "line": 21,
       "match": "*(code **)(*0x01D70A78",
       "severity": "moderate",
       "text": "(**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x200);",
@@ -214,7 +221,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 21,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x200);",
@@ -222,23 +229,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(code **)((int)this_ptr",
+      "line": 31,
+      "match": "(code **)((int)pvVar1",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)((int)this_ptr->vtable + 0x2c))(this_ptr,iVar7,uVar3);",
+      "text": "iVar8 = (**(code **)((int)pvVar1 + 0x2c))(this_ptr,iVar8,uVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 29,
+      "line": 31,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)((int)this_ptr->vtable + 0x2c))(this_ptr,iVar7,uVar3);",
+      "text": "iVar8 = (**(code **)((int)pvVar1 + 0x2c))(this_ptr,iVar8,uVar4);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 33,
       "match": "DAT_007dffb8",
       "severity": "mild",
       "text": "DAT_007dffb8 = 0xffffffff;",
@@ -246,7 +253,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 48,
       "match": "DAT_007dffb8",
       "severity": "mild",
       "text": "if (DAT_007dffb8 == -1) {",
@@ -254,7 +261,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 49,
       "match": "DAT_007dffb8",
       "severity": "mild",
       "text": "DAT_007dffb8 = _DAT_01c5fadc;",
@@ -262,7 +269,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 51,
       "match": "DAT_007dffb8",
       "severity": "mild",
       "text": "if (_DAT_005b67be < ABS((double)(_DAT_01c5fadc - DAT_007dffb8))) {",
@@ -270,71 +277,71 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(code **)((int)this_ptr",
+      "line": 52,
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x34))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x34))(this_ptr);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
+      "line": 52,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x34))(this_ptr);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x34))(this_ptr);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(code **)((int)this_ptr",
+      "line": 56,
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x38))(this_ptr,iVar7);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x38))(this_ptr,iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
+      "line": 56,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x38))(this_ptr,iVar7);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x38))(this_ptr,iVar8);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(code **)((int)this_ptr",
+      "line": 65,
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "iVar6 = (**(code **)((int)this_ptr->vtable + 0x54))(this_ptr,iVar7);",
+      "text": "iVar7 = (**(code **)((int)(this_ptr->base).vtable + 0x54))(this_ptr,iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
+      "line": 65,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar6 = (**(code **)((int)this_ptr->vtable + 0x54))(this_ptr,iVar7);",
+      "text": "iVar7 = (**(code **)((int)(this_ptr->base).vtable + 0x54))(this_ptr,iVar8);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
-      "match": "(code **)((int)this_ptr",
+      "line": 137,
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x58))(this_ptr,iVar2,iVar6,iVar7,iVar1,iVar5);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x58))(this_ptr,iVar3,iVar7,iVar8,iVar2,iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 135,
+      "line": 137,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x58))(this_ptr,iVar2,iVar6,iVar7,iVar1,iVar5);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x58))(this_ptr,iVar3,iVar7,iVar8,iVar2,iVar6);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 159,
       "match": "DAT_007dffb8",
       "severity": "mild",
       "text": "DAT_007dffb8 = -1;",
@@ -342,114 +349,122 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 176,
-      "match": "(code **)((int)this_ptr",
+      "line": 178,
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)((int)this_ptr->vtable + 0x54))(this_ptr,uVar8);",
+      "text": "iVar8 = (**(code **)((int)(this_ptr->base).vtable + 0x54))(this_ptr,uVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 176,
+      "line": 178,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)((int)this_ptr->vtable + 0x54))(this_ptr,uVar8);",
+      "text": "iVar8 = (**(code **)((int)(this_ptr->base).vtable + 0x54))(this_ptr,uVar9);",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)pvVar1",
+      "severity": "moderate",
+      "text": "iVar8 = (**(code **)((int)pvVar1 + 0x2c))(this_ptr,iVar8,uVar4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `&this_ptr->buttons[10].bitmap.opa` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 111,
+      "line": 113,
       "match": "(int)&this_ptr->buttons[10].bitmap.opa",
       "severity": "moderate",
-      "text": "iVar5 = (int)&this_ptr->buttons[10].bitmap.opa + iVar7;",
+      "text": "iVar6 = (int)&this_ptr->buttons[10].bitmap.opa + iVar8;",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 111,
+      "line": 113,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "iVar5 = (int)&this_ptr->buttons[10].bitmap.opa + iVar7;",
+      "text": "iVar6 = (int)&this_ptr->buttons[10].bitmap.opa + iVar8;",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 91,
-      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 93,
+      "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "text": "pCVar10 = (CAudioRecPuzzle *)&pCVar10->click_handled;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 120,
-      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 122,
+      "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->background;",
+      "text": "pCVar10 = (CAudioRecPuzzle *)&pCVar10->background;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 167,
-      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 169,
+      "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "text": "pCVar10 = (CAudioRecPuzzle *)&pCVar10->click_handled;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 173,
-      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 175,
+      "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "text": "pCVar10 = (CAudioRecPuzzle *)&pCVar10->click_handled;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 185,
-      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 187,
+      "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "text": "pCVar10 = (CAudioRecPuzzle *)&pCVar10->click_handled;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 192,
-      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 194,
+      "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "text": "pCVar10 = (CAudioRecPuzzle *)&pCVar10->click_handled;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 199,
-      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 201,
+      "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "text": "pCVar10 = (CAudioRecPuzzle *)&pCVar10->click_handled;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 210,
-      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 212,
+      "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "text": "pCVar10 = (CAudioRecPuzzle *)&pCVar10->click_handled;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 220,
-      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 222,
+      "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "text": "pCVar10 = (CAudioRecPuzzle *)&pCVar10->click_handled;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 227,
-      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 229,
+      "match": "pCVar10 = (T *)&pCVar10->FIELD",
       "severity": "moderate",
-      "text": "pCVar9 = (CAudioRecPuzzle *)&pCVar9->click_handled;",
+      "text": "pCVar10 = (CAudioRecPuzzle *)&pCVar10->click_handled;",
       "type": "shadow_pointer_walk"
     }
   ],

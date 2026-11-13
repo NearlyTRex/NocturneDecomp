@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 36,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 20,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 68
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "00563fd4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_spawner.cpp_CSpawner_dtor_FUN_00563f70",
-    "signature": "CSpawner * core_spawner_cpp_CSpawner_dtor_FUN_00563f70(CSpawner *this_ptr,uint flags)"
+    "signature": "CSpawner * __cdecl core_spawner_cpp_CSpawner_dtor_FUN_00563f70(CSpawner *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -119,7 +119,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 17,
       "match": "pCVar1[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar1[-1].part_data.visibility_flags + 0x25),1);",
@@ -134,7 +134,7 @@
         "vtable_addr": "005e4b04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CSpawner",
         "offset": 208,
         "vtable_addr": "005e4a24"
       }

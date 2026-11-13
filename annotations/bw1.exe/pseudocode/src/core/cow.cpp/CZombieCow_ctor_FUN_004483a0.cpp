@@ -1,15 +1,14 @@
 // Name: core_cow.cpp_CZombieCow_ctor_FUN_004483a0
 // Address: 004483a0
 // Address Range: [[004483a0, 0044840f]]
-// Convention: unknown
-// Signature: CZombieCow * core_cow_cpp_CZombieCow_ctor_FUN_004483a0(CZombieCow *this_ptr)
+// Convention: __cdecl
+// Signature: CZombieCow * __cdecl core_cow_cpp_CZombieCow_ctor_FUN_004483a0(CZombieCow *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CZombieCow * core_cow_cpp_CZombieCow_ctor_FUN_004483a0(CZombieCow *this_ptr)
+CZombieCow * __cdecl core_cow_cpp_CZombieCow_ctor_FUN_004483a0(CZombieCow *this_ptr)
 
 {
   float fVar1;

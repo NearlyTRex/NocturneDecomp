@@ -7,7 +7,7 @@
 
 // Original: core_melee.cpp_staticInit_FUN_004e6f30
 // Address: 004e6f30
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_melee.cpp_factoryFuncMelee_FUN_004e6f60
 // Address: 004e6f60
@@ -15,7 +15,7 @@ CMelee * __cdecl factoryFuncMelee(void);
 
 // Original: core_melee.cpp_CMelee_getActorType_FUN_004e6f80
 // Address: 004e6f80
-CDemonActorType * CMelee::getActorType(CMelee *this_ptr);
+CDemonActorType * __cdecl CMelee::getActorType(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_ctor_FUN_004e6f90
 // Address: 004e6f90
@@ -71,4 +71,4 @@ CMelee * __cdecl CMelee::dtor(CMelee *this_ptr,uint flags);
 
 // Original: core_melee.cpp_FUN_004e7540
 // Address: 004e7540
-void FUN_004e7540(undefined4 param_1);
+void FUN_004e7540(COutStream *param_1);

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   support_trisock.cpp_FUN_00570adc at 00570bc4
+;   support_trisock.cpp_FUN_00570ae0 at 00570bc4
 ;
 ; Called Functions:
 ;   crt_wsock32.c_gethostbyaddr

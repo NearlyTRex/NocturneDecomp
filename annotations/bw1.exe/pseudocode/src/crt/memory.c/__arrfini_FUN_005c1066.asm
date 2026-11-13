@@ -14,8 +14,8 @@
 ;
 ; XREF[37]:
 ;   core_armour.cpp_FUN_0040ee30 at 0040ee3c
-;   core_bmppuzzl.cpp_FUN_00418890 at 0041889c
-;   core_bmppuzzl.cpp_FUN_004188b0 at 004188bc
+;   core_bmppuzzl.cpp_SButtonStruct_arrdtor50Chem_FUN_00418890 at 0041889c
+;   core_bmppuzzl.cpp_SButtonStruct_arrdtor50_FUN_004188b0 at 004188bc
 ;   core_bodypart.cpp_FUN_0041b190 at 0041b19c
 ;   core_boxactor.cpp_CDemonFilter_arrdtor8_FUN_00423810 at 0042381c
 ;   core_dcube.cpp_CVector3f_arrdtor16_FUN_004fc490 at 004fc49c

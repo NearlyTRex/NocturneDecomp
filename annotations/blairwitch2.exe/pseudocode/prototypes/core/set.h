@@ -19,11 +19,11 @@ void FUN_0052bca0(int param_1);
 
 // Original: core_set.cpp_CDemonSet_ctor_FUN_0052bd20
 // Address: 0052bd20
-CDemonSet * CDemonSet::ctor(CDemonSet *this_ptr);
+CDemonSet * __cdecl CDemonSet::ctor(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_dtor_FUN_0052c060
 // Address: 0052c060
-CDemonSet * CDemonSet::dtor(CDemonSet *this_ptr,uint flags);
+CDemonSet * __cdecl CDemonSet::dtor(CDemonSet *this_ptr,uint flags);
 
 // Original: core_set.cpp_CDemonSet_clear_FUN_0052c090
 // Address: 0052c090
@@ -37,9 +37,9 @@ void __cdecl CDemonSet::load(CDemonSet *this_ptr,char *filename);
 // Address: 0052d0e0
 void __cdecl CDemonSet::renderSceneGeometry(CDemonSet *this_ptr,float frustum_param,int render_mode);
 
-// Original: core_set.cpp_FUN_0052d3be
-// Address: 0052d3be
-void FUN_0052d3be(CDemonSet *param_1,int param_2);
+// Original: core_set.cpp_FUN_0052d3c0
+// Address: 0052d3c0
+void FUN_0052d3c0(void);
 
 // Original: core_set.cpp_CDemonSet_initScene_FUN_0052d980
 // Address: 0052d980
@@ -197,9 +197,9 @@ void __cdecl CDemonSet::renderEnvMapPrimitives(CDemonSet *this_ptr,SMRGLHeaderPr
 // Address: 00533a80
 void __cdecl CDemonSet::renderEnvMapTriangles(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
 
-// Original: core_set.cpp_FUN_00533ece
-// Address: 00533ece
-void FUN_00533ece(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4);
+// Original: core_set.cpp_FUN_00533ed0
+// Address: 00533ed0
+void FUN_00533ed0(void);
 
 // Original: core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40
 // Address: 00533f40
@@ -315,11 +315,11 @@ void __cdecl CDemonSet::renderDecals(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_SRoom_ctor_FUN_00534d00
 // Address: 00534d00
-SRoom * SRoom::ctor(SRoom *this_ptr);
+SRoom * __cdecl SRoom::ctor(SRoom *this_ptr);
 
 // Original: core_set.cpp_SVDBox_ctor_FUN_00534d10
 // Address: 00534d10
-SVDBox * SVDBox::ctor(SVDBox *this_ptr);
+SVDBox * __cdecl SVDBox::ctor(SVDBox *this_ptr);
 
 // Original: core_set.cpp_FUN_00534d80
 // Address: 00534d80

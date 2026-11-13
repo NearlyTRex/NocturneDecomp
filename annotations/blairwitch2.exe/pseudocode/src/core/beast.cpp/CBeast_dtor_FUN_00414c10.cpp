@@ -1,14 +1,12 @@
 // Name: core_beast.cpp_CBeast_dtor_FUN_00414c10
 // Address: 00414c10
 // Address Range: [[00414c10, 00414ca4]]
-// Convention: unknown
-// Signature: CBeast * core_beast_cpp_CBeast_dtor_FUN_00414c10(CBeast *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBeast * __cdecl core_beast_cpp_CBeast_dtor_FUN_00414c10(CBeast *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBeast * core_beast_cpp_CBeast_dtor_FUN_00414c10(CBeast *this_ptr,uint flags)
+CBeast * __cdecl core_beast_cpp_CBeast_dtor_FUN_00414c10(CBeast *this_ptr,uint flags)
 
 {
   int iVar1;

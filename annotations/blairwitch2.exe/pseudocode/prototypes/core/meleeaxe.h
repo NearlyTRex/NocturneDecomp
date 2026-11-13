@@ -7,23 +7,23 @@
 
 // Original: core_meleeaxe.cpp_staticInit_FUN_0059d1c0
 // Address: 0059d1c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_meleeaxe.cpp_factoryFuncMeleeAxe_FUN_0059d1f0
 // Address: 0059d1f0
-void factoryFuncMeleeAxe(void);
+CMeleeAxe * __cdecl factoryFuncMeleeAxe(void);
 
 // Original: core_meleeaxe.cpp_CMeleeAxe_getActorType_FUN_0059d210
 // Address: 0059d210
-CDemonActorType * CMeleeAxe::getActorType(CMeleeAxe *this_ptr);
+CDemonActorType * __cdecl CMeleeAxe::getActorType(CMeleeAxe *this_ptr);
 
 // Original: core_meleeaxe.cpp_CMeleeAxe_ctor_FUN_0059d220
 // Address: 0059d220
-CMeleeAxe * CMeleeAxe::ctor(CMeleeAxe *this_ptr);
+CMeleeAxe * __cdecl CMeleeAxe::ctor(CMeleeAxe *this_ptr);
 
 // Original: core_meleeaxe.cpp_CMeleeAxe_dtor_FUN_0059d300
 // Address: 0059d300
-CMeleeAxe * CMeleeAxe::dtor(CMeleeAxe *this_ptr,uint flags);
+CMeleeAxe * __cdecl CMeleeAxe::dtor(CMeleeAxe *this_ptr,uint flags);
 
 // Original: core_meleeaxe.cpp_FUN_0059d350
 // Address: 0059d350

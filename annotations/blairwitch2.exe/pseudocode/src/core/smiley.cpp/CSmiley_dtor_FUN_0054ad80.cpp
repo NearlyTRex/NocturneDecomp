@@ -1,14 +1,12 @@
 // Name: core_smiley.cpp_CSmiley_dtor_FUN_0054ad80
 // Address: 0054ad80
 // Address Range: [[0054ad80, 0054ae14]]
-// Convention: unknown
-// Signature: CSmiley * core_smiley_cpp_CSmiley_dtor_FUN_0054ad80(CSmiley *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_0054ad80(CSmiley *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSmiley * core_smiley_cpp_CSmiley_dtor_FUN_0054ad80(CSmiley *this_ptr,uint flags)
+CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_0054ad80(CSmiley *this_ptr,uint flags)
 
 {
   int iVar1;

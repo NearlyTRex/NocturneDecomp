@@ -64,7 +64,7 @@ section .text
     LEA EAX,[ESP + 0x58]                ; 0042c557
     PUSH EAX                            ; 0042c55b
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 ; 0042c55c
-        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile * this_ptr, char * directory, char * filename)
     ADD ESP,0xc                         ; 0042c561
     TEST EAX,EAX                        ; 0042c564
     JNZ 0x0042c59b                      ; 0042c566
@@ -91,7 +91,7 @@ section .text
     LEA EAX,[ESP + 0x58]                ; 0042c59d
     PUSH EAX                            ; 0042c5a1
     CALL support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0 ; 0042c5a2
-        ;   XREF to: 0057cfe0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
+        ;   XREF to: 0057cfe0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0(CInStreamFile * this_ptr, void * buffer, int count)
     ADD ESP,0xc                         ; 0042c5a7
     CMP EAX,EDI                         ; 0042c5aa
     JNZ 0x0042c621                      ; 0042c5ac
@@ -100,7 +100,7 @@ section .text
         ;   Label: LAB_0042c5ae
     PUSH EAX                            ; 0042c5b2
     CALL support_trstream.cpp_CInStreamFile_close_FUN_0057d180 ; 0042c5b3
-        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
+        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0042c5b8
     PUSH 0x0                            ; 0042c5bb
     LEA EAX,[ESP + 0x54]                ; 0042c5bd
@@ -154,7 +154,7 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 0042c634
     PUSH EAX                            ; 0042c638
     CALL support_trstream.cpp_CInStreamFile_close_FUN_0057d180 ; 0042c639
-        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
+        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
     MOV EDX,0x5cd3ea                    ; 0042c63e | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x4                         ; 0042c643
     MOV EAX,ESP                         ; 0042c646

@@ -1,14 +1,12 @@
 // Name: core_lightsta.cpp_CLightStaff_dtor_FUN_004e3f10
 // Address: 004e3f10
 // Address Range: [[004e3f10, 004e3f5d]]
-// Convention: unknown
-// Signature: CLightStaff * core_lightsta_cpp_CLightStaff_dtor_FUN_004e3f10(CLightStaff *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CLightStaff * __cdecl core_lightsta_cpp_CLightStaff_dtor_FUN_004e3f10(CLightStaff *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CLightStaff * core_lightsta_cpp_CLightStaff_dtor_FUN_004e3f10(CLightStaff *this_ptr,uint flags)
+CLightStaff * __cdecl core_lightsta_cpp_CLightStaff_dtor_FUN_004e3f10(CLightStaff *this_ptr,uint flags)
 
 {
   CLightStaff *pCVar1;

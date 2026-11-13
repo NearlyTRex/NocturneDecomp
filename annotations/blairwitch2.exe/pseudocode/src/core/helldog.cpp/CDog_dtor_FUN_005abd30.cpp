@@ -1,14 +1,12 @@
 // Name: core_helldog.cpp_CDog_dtor_FUN_005abd30
 // Address: 005abd30
 // Address Range: [[005abd30, 005abdce]]
-// Convention: unknown
-// Signature: CDog * core_helldog_cpp_CDog_dtor_FUN_005abd30(CDog *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDog * __cdecl core_helldog_cpp_CDog_dtor_FUN_005abd30(CDog *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDog * core_helldog_cpp_CDog_dtor_FUN_005abd30(CDog *this_ptr,uint flags)
+CDog * __cdecl core_helldog_cpp_CDog_dtor_FUN_005abd30(CDog *this_ptr,uint flags)
 
 {
   int iVar1;

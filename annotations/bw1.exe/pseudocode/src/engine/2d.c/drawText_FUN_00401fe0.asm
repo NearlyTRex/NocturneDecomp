@@ -18,7 +18,7 @@
 ;   core_motion.cpp_FUN_005254b0 at 00525596
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e1e1
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_0052cf90 at 0052d061
-;   core_path.cpp_FUN_0053489e at 00534947
+;   core_path.cpp_FUN_005348a0 at 00534947
 ;   ... and 9 more
 ;
 ; Referenced Globals:

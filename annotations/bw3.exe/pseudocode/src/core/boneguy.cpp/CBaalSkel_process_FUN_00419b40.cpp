@@ -217,7 +217,8 @@ void __cdecl core_boneguy_cpp_CBaalSkel_process_FUN_00419b40(CBaalSkel *this_ptr
     pCVar13 = (CVector3f *)this_ptr;
     if (0 < (this_ptr->base).box_count) {
       do {
-        core_mission_cpp_FUN_004f6f10();
+        core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+                  (0x01D81080,*(CBodyPart **)(pCVar13 + 0x116f),1);
         pCVar13[0x116f].x = 0;
         iVar7 = iVar7 + 1;
         pCVar13 = pCVar13 + 6;
@@ -245,7 +246,8 @@ void __cdecl core_boneguy_cpp_CBaalSkel_process_FUN_00419b40(CBaalSkel *this_ptr
       pCVar11 = (this_ptr->base).pickup_target;
       if (pCVar11 != (CDemonActor *)0x0) {
         (this_ptr->base).pickup_target = (CDemonActor *)0x0;
-        core_charactr_cpp_FUN_004319d0(this_ptr,1,pCVar11,0x3e4ccccd);
+        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
+                  ((CCharacter *)this_ptr,1,(int)pCVar11,0x3e4ccccd,0);
       }
     }
     else {

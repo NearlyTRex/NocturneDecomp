@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_baal_cpp_factoryFuncBaal_FUN_00596630(void)
+; CBaal * __cdecl core_baal_cpp_factoryFuncBaal_FUN_00596630(void)
 ;
 ;
 ; Called Functions:

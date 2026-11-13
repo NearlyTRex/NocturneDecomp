@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSpiritEagle * core_spireagl_cpp_CSpiritEagle_dtor_FUN_00599e40(CSpiritEagle *this_ptr,uint flags)
+; CSpiritEagle * __cdecl core_spireagl_cpp_CSpiritEagle_dtor_FUN_00599e40(CSpiritEagle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSpiritEagle *   Stack[0x4]:4   this_ptr

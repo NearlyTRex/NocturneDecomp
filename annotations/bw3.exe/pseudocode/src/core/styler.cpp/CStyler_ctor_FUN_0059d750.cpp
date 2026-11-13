@@ -1,15 +1,14 @@
 // Name: core_styler.cpp_CStyler_ctor_FUN_0059d750
 // Address: 0059d750
 // Address Range: [[0059d750, 0059d7ed]]
-// Convention: unknown
-// Signature: CStyler * core_styler_cpp_CStyler_ctor_FUN_0059d750(CStyler *this_ptr)
+// Convention: __cdecl
+// Signature: CStyler * __cdecl core_styler_cpp_CStyler_ctor_FUN_0059d750(CStyler *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CStyler * core_styler_cpp_CStyler_ctor_FUN_0059d750(CStyler *this_ptr)
+CStyler * __cdecl core_styler_cpp_CStyler_ctor_FUN_0059d750(CStyler *this_ptr)
 
 {
   SMRGLTextureModel *pSVar1;

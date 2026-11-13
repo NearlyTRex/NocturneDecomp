@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamFile_tell_FUN_00573d40(CInStreamFile *this_ptr)
+; int __cdecl support_trstream_cpp_CInStreamFile_tell_FUN_00573d40(CInStreamFile *this_ptr)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr

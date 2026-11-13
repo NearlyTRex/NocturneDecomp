@@ -15,7 +15,7 @@ CDynamite * __cdecl factoryFuncDynamite(void);
 
 // Original: core_dynamite.cpp_CDynamite_getActorType_FUN_0047b070
 // Address: 0047b070
-CDemonActorType * CDynamite::getActorType(CDynamite *this_ptr);
+CDemonActorType * __cdecl CDynamite::getActorType(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_ctor_FUN_0047b080
 // Address: 0047b080

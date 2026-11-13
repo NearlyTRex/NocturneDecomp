@@ -30,7 +30,7 @@
 ;   core_actor.cpp_archiveInteger_FUN_0040b670
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c040
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
-;   core_bodypart.cpp_FUN_00418d00
+;   core_bodypart.cpp_setCounts_FUN_00418d00
 ;   crt_stdio.c_fscanf_FUN_005c04b0
 ;   crt_unknown.c_FUN_005c03c0
 ;
@@ -248,8 +248,8 @@ section .text
     PUSH EDI                            ; 00419602
     PUSH EBX                            ; 00419603
     XOR EBP,EBP                         ; 00419604
-    CALL core_bodypart.cpp_FUN_00418d00 ; 00419606
-        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00418d00()
+    CALL core_bodypart.cpp_setCounts_FUN_00418d00 ; 00419606
+        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00418d00()
     MOV EAX,dword ptr [EBX + 0x174]     ; 0041960b
     ADD ESP,0xc                         ; 00419611
     TEST EAX,EAX                        ; 00419614

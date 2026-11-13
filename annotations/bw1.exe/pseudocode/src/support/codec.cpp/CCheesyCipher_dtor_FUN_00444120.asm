@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCheesyCipher * support_codec_cpp_CCheesyCipher_dtor_FUN_00444120(CCheesyCipher *this_ptr,uint flags)
+; CCheesyCipher * __cdecl support_codec_cpp_CCheesyCipher_dtor_FUN_00444120(CCheesyCipher *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CCheesyCipher *  Stack[0x4]:4   this_ptr

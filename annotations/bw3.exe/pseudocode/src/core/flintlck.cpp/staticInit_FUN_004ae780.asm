@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flintlck_cpp_staticInit_FUN_004ae780(void)
+; void __cdecl core_flintlck_cpp_staticInit_FUN_004ae780(void)
 ;
 ;
 ; Called Functions:

@@ -34,7 +34,7 @@
 ;   core_charactr.cpp_FUN_00434850
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004cec40
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
-;   core_mission.cpp_FUN_004f6f10
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10
 ;   core_motion.cpp_CMotionController_advance_FUN_004fbb70
 ;   ... and 8 more
 ;
@@ -456,8 +456,8 @@ section .text
     MOV EDX,dword ptr [0x00600530]      ; 0059b28a | DAT_00600530
     PUSH EDX                            ; 0059b290 | DAT_01d81080
     MOV dword ptr [EBX + 0x34170],0x0   ; 0059b291
-    CALL core_mission.cpp_FUN_004f6f10  ; 0059b29b
-        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f6f10()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 0059b29b
+        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 0059b2a0
     JMP 0x0059b196                      ; 0059b2a3
         ;   XREF to: 0059b196 (UNCONDITIONAL_JUMP)  ; LAB_0059b196

@@ -13,14 +13,14 @@
 ;
 ; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910 at 0050f956
-;   cockpit_pkbmpset.cpp_FUN_0051080e at 005109dd
+;   cockpit_pkbmpset.cpp_FUN_00510810 at 005109dd
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_FUN_0050f230
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0050f230
 ;   core_main.c_FUN_004e4330
 ;   crt_memory.c_operator_new_array_FUN_005a40df
 ;   crt_memory.c_realloc_FUN_005a3e50
@@ -38,8 +38,8 @@ section .text
     SUB ESP,0x144                       ; 0050fa94
     MOV EBP,dword ptr [ESP + 0x158]     ; 0050fa9a
     PUSH EBP                            ; 0050faa1
-    CALL cockpit_pkbitmap.cpp_FUN_0050f230 ; 0050faa2
-        ;   XREF to: 0050f230 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_0050f230()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0050f230 ; 0050faa2
+        ;   XREF to: 0050f230 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0050f230(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 0050faa7
     MOV EAX,dword ptr [ESP + 0x160]     ; 0050faaa
     MOV dword ptr [EBP + 0x18],EAX      ; 0050fab1

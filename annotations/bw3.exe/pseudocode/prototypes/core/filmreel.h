@@ -7,7 +7,7 @@
 
 // Original: core_filmreel.cpp_staticInit_FUN_004960f0
 // Address: 004960f0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_filmreel.cpp_factoryFuncFilmReel_FUN_00496140
 // Address: 00496140
@@ -15,7 +15,7 @@ CFilmReel * __cdecl factoryFuncFilmReel(void);
 
 // Original: core_filmreel.cpp_CFilmReel_getActorType_FUN_00496160
 // Address: 00496160
-CDemonActorType * CFilmReel::getActorType(CFilmReel *this_ptr);
+CDemonActorType * __cdecl CFilmReel::getActorType(CFilmReel *this_ptr);
 
 // Original: core_filmreel.cpp_CFilmReel_ctor_FUN_00496170
 // Address: 00496170

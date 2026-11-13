@@ -1,12 +1,12 @@
 // Name: core_level.cpp_staticInit_FUN_004e1440
 // Address: 004e1440
 // Address Range: [[004e1440, 004e1467]]
-// Convention: unknown
-// Signature: void core_level_cpp_staticInit_FUN_004e1440(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_level_cpp_staticInit_FUN_004e1440(void)
 
 #include "nocturne.h"
 
-void core_level_cpp_staticInit_FUN_004e1440(void)
+void __cdecl core_level_cpp_staticInit_FUN_004e1440(void)
 
 {
   core_level_cpp_CLevelLoader_reset_FUN_004e1470((CLevelLoader *)0x1d03000);

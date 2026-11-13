@@ -36,7 +36,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e7ca
-;   core_set.cpp_FUN_0052d3be at 0052d809
+;   core_set.cpp_FUN_0052d3c0 at 0052d809
 ;
 ; Referenced Globals:
 ;   undefined4 s_movscrn_raw_005ce3d5+1

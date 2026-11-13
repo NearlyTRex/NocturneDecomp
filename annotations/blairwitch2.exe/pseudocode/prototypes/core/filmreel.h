@@ -15,7 +15,7 @@ CFilmReel * __cdecl factoryFuncFilmReel(void);
 
 // Original: core_filmreel.cpp_CFilmReel_getActorType_FUN_00492910
 // Address: 00492910
-CDemonActorType * CFilmReel::getActorType(CFilmReel *this_ptr);
+CDemonActorType * __cdecl CFilmReel::getActorType(CFilmReel *this_ptr);
 
 // Original: core_filmreel.cpp_CFilmReel_ctor_FUN_00492920
 // Address: 00492920

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_00407100(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_00407100(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; XREF[1]:
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407860 at 00407a07

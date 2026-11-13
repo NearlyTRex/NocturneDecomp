@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_confedrt_cpp_factoryFuncConfederate_FUN_005a0810(void)
+; CConfederate * __cdecl core_confedrt_cpp_factoryFuncConfederate_FUN_005a0810(void)
 ;
 ;
 ; Called Functions:

@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_yow.cpp_FUN_005b9170 at 005b917e
+;   core_yow.cpp_CYow_processDamage_FUN_005b9170 at 005b917e
 ;
 ; Referenced Globals:
 ;   undefined4 switchdataD_005b8ea0

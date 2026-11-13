@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 160,
+    "complexity_score": 159,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 85,
+    "pseudocode_lines": 84,
     "suspect_count": 6,
     "suspect_types": [
       "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 234
+    "total_lines": 233
   },
   "cross_references": [
     {
@@ -32,9 +32,9 @@
         "005aa7d8"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hellhag.cpp_CHag_ctor_FUN_005aa600",
-    "signature": "CHag * core_hellhag_cpp_CHag_ctor_FUN_005aa600(CHag *this_ptr)"
+    "signature": "CHag * __cdecl core_hellhag_cpp_CHag_ctor_FUN_005aa600(CHag *this_ptr)"
   },
   "function_calls": [
     {
@@ -154,7 +154,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 27,
+      "line": 26,
       "match": "field_0x2a8",
       "severity": "mild",
       "text": "*(uint *)&(this_ptr_01->base).base.base.base.field_0x2a8 = 0x3dcccccd;",
@@ -162,7 +162,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 38,
+      "line": 37,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -170,7 +170,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 55,
+      "line": 54,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -178,7 +178,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 66,
+      "line": 65,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -186,7 +186,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 77,
+      "line": 76,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

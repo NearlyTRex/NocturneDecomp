@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_0051e6d0 at 0051eb60
+;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051eb60
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cca87

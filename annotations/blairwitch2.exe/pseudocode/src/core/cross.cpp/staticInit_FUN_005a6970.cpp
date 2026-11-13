@@ -1,12 +1,12 @@
 // Name: core_cross.cpp_staticInit_FUN_005a6970
 // Address: 005a6970
 // Address Range: [[005a6970, 005a69b6]]
-// Convention: unknown
-// Signature: void core_cross_cpp_staticInit_FUN_005a6970(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_cross_cpp_staticInit_FUN_005a6970(void)
 
 #include "nocturne.h"
 
-void core_cross_cpp_staticInit_FUN_005a6970(void)
+void __cdecl core_cross_cpp_staticInit_FUN_005a6970(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

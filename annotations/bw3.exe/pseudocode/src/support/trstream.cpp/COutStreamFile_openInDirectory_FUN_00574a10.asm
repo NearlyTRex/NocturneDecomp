@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_COutStreamFile_openInDirectory_FUN_00574a10(COutStreamFile *this_ptr,char *param_2,char *param_3,char *param_4)
+; int __cdecl support_trstream_cpp_COutStreamFile_openInDirectory_FUN_00574a10(COutStreamFile *this_ptr,char *directory,char *filename,char *mode)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
-; char *           Stack[0xc]:4   param_3
-; char *           Stack[0x10]:4   param_4
+; char *           Stack[0x8]:4   directory
+; char *           Stack[0xc]:4   filename
+; char *           Stack[0x10]:4   mode
 ;
 ; XREF[1]:
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a15

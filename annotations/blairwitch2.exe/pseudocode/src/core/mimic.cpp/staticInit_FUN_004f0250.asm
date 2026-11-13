@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mimic_cpp_staticInit_FUN_004f0250(void)
+; void __cdecl core_mimic_cpp_staticInit_FUN_004f0250(void)
 ;
 ;
 ; Called Functions:

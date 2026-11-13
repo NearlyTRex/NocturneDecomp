@@ -1,0 +1,148 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 13,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "00518680",
+      "from_addr": "0051868c",
+      "name": "core_prye.cpp_CPrye_setup_FUN_00518680",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d26b0",
+    "address_range": [
+      [
+        "004d26b0",
+        "004d2719"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_setup_FUN_004d26b0",
+    "signature": "void __cdecl core_hero_cpp_CHero_setup_FUN_004d26b0(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042b0e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_0042b0e0"
+    },
+    {
+      "addr": "004dcad0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_setupItems_FUN_004dcad0"
+    },
+    {
+      "addr": "0054e6b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0051868c",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_setup_FUN_00518680",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8095238095238093,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 15,
+      "INT_ADD": 14,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 80
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ce4a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9756
+    },
+    "bw1.exe": {
+      "addr": "004eaa10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9756
+    },
+    "nocedit.exe": {
+      "addr": "004f2540",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8108
+    },
+    "nocturne.exe": {
+      "addr": "004b48d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8108
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHero",
+        "offset": 0,
+        "vtable_addr": "005e1534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

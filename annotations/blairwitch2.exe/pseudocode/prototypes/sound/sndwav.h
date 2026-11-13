@@ -77,9 +77,9 @@ CWavOutDevice * __cdecl getWavOutDevice(UINT device_id);
 // Address: 00558a30
 int __cdecl enumerateWavInDevice(UINT device_id,SRecordingDeviceInfo *device_info);
 
-// Original: sound_sndwav.cpp_getWavInDevice_FUN_00558ace
-// Address: 00558ace
-undefined * getWavInDevice(undefined4 param_1,UINT_PTR param_2);
+// Original: sound_sndwav.cpp_getWavInDevice_FUN_00558ad0
+// Address: 00558ad0
+undefined * getWavInDevice(void);
 
 // Original: sound_sndwav.cpp_FUN_00558b20
 // Address: 00558b20

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_staticInit_FUN_004cb7d0(void)
+; void __cdecl core_game_cpp_staticInit_FUN_004cb7d0(void)
 ;
 ;
 ; Called Functions:

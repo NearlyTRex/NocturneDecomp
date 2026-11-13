@@ -1,14 +1,12 @@
 // Name: core_styldemo.cpp_CStylerDemon_dtor_FUN_005a0910
 // Address: 005a0910
 // Address Range: [[005a0910, 005a09a4]]
-// Convention: unknown
-// Signature: CStylerDemon * core_styldemo_cpp_CStylerDemon_dtor_FUN_005a0910(CStylerDemon *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CStylerDemon * __cdecl core_styldemo_cpp_CStylerDemon_dtor_FUN_005a0910(CStylerDemon *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CStylerDemon * core_styldemo_cpp_CStylerDemon_dtor_FUN_005a0910(CStylerDemon *this_ptr,uint flags)
+CStylerDemon * __cdecl core_styldemo_cpp_CStylerDemon_dtor_FUN_005a0910(CStylerDemon *this_ptr,uint flags)
 
 {
   CMorph *pCVar1;

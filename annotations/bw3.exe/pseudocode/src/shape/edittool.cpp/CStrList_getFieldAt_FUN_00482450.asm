@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70 at 0047dbe8
-;   shape_edittool.cpp_FUN_0047dd1e at 0047de7e
+;   shape_edittool.cpp_FUN_0047dd20 at 0047de7e
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00482440

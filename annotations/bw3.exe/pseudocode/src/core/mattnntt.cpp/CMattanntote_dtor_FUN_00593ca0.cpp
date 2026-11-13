@@ -1,14 +1,12 @@
 // Name: core_mattnntt.cpp_CMattanntote_dtor_FUN_00593ca0
 // Address: 00593ca0
 // Address Range: [[00593ca0, 00593d34]]
-// Convention: unknown
-// Signature: CMattanntote * core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattanntote *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CMattanntote * __cdecl core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattanntote *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CMattanntote * core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattanntote *this_ptr,uint flags)
+CMattanntote * __cdecl core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattanntote *this_ptr,uint flags)
 
 {
   int iVar1;

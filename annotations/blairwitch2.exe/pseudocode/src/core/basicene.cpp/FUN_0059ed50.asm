@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_basicene.cpp_FUN_0059e8c0 at 0059eb35
+;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 at 0059eb35
 ;
 ; Called Functions:
 ;   core_basicene.cpp_FUN_0059ec10

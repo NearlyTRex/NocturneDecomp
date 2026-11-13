@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMattanntote * core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattanntote *this_ptr,uint flags)
+; CMattanntote * __cdecl core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattanntote *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMattanntote *   Stack[0x4]:4   this_ptr

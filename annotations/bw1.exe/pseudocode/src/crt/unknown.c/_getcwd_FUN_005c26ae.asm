@@ -8,7 +8,7 @@
 ; SIZE_T           Stack[0x8]:4   size
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_0049517e at 0049519c
+;   shape_edittool.cpp_FUN_00495180 at 0049519c
 ;
 ; *****************************************************************************
 

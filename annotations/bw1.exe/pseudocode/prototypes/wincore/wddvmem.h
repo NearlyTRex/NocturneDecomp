@@ -21,13 +21,13 @@ void __cdecl cleanupDirectDrawSurfaces(void);
 // Address: 005abde0
 int __cdecl reinitializeDirectDraw(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005abf1e
-// Address: 005abf1e
-void FUN_005abf1e(void);
+// Original: wincore_wddvmem.cpp_FUN_005abf20
+// Address: 005abf20
+void FUN_005abf20(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005abfec
-// Address: 005abfec
-void FUN_005abfec(void);
+// Original: wincore_wddvmem.cpp_FUN_005abff0
+// Address: 005abff0
+void FUN_005abff0(void);
 
 // Original: wincore_wddvmem.cpp_FUN_005ac040
 // Address: 005ac040
@@ -37,9 +37,9 @@ int __cdecl FUN_005ac040(int width,int height);
 // Address: 005ac1b0
 void __cdecl FUN_005ac1b0(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005ac26e
-// Address: 005ac26e
-void FUN_005ac26e(void);
+// Original: wincore_wddvmem.cpp_FUN_005ac270
+// Address: 005ac270
+void FUN_005ac270(void);
 
 // Original: wincore_wddvmem.cpp_FUN_005ac300
 // Address: 005ac300

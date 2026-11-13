@@ -1,14 +1,12 @@
 // Name: core_doc.cpp_CDoc_ctor_FUN_00468c80
 // Address: 00468c80
 // Address Range: [[00468c80, 00469052]]
-// Convention: unknown
-// Signature: CDoc * core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
+// Convention: __cdecl
+// Signature: CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDoc * core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
+CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
 
 {
   float fVar1;

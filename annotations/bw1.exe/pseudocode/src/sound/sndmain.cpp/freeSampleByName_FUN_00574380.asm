@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   kill_active_slots
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_005740fe at 00574116
+;   sound_sndmain.cpp_FUN_00574100 at 00574116
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005c04e0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hino_cpp_staticInit_FUN_0059b610(void)
+; void __cdecl core_hino_cpp_staticInit_FUN_0059b610(void)
 ;
 ;
 ; Called Functions:

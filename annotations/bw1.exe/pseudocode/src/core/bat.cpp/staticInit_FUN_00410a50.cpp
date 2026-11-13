@@ -1,12 +1,12 @@
 // Name: core_bat.cpp_staticInit_FUN_00410a50
 // Address: 00410a50
 // Address Range: [[00410a50, 00410a73]]
-// Convention: unknown
-// Signature: void core_bat_cpp_staticInit_FUN_00410a50(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bat_cpp_staticInit_FUN_00410a50(void)
 
 #include "nocturne.h"
 
-void core_bat_cpp_staticInit_FUN_00410a50(void)
+void __cdecl core_bat_cpp_staticInit_FUN_00410a50(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

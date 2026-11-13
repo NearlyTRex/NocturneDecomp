@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBasicNPC * core_basicnpc_cpp_CBasicNPC_dtor_FUN_005a4980(CBasicNPC *this_ptr,uint flags)
+; CBasicNPC * __cdecl core_basicnpc_cpp_CBasicNPC_dtor_FUN_005a4980(CBasicNPC *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBasicNPC *      Stack[0x4]:4   this_ptr

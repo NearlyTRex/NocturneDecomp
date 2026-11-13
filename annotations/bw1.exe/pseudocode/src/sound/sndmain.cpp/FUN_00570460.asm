@@ -544,7 +544,7 @@ section .text
     PUSH ECX                            ; 00570991
     MOV EDI,EAX                         ; 00570992
     CALL support_trstream.cpp_CInStreamFile_read_FUN_005a0c10 ; 00570994
-        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
+        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile * this_ptr, void * buffer, int count)
     ADD ESP,0xc                         ; 00570999
     CMP EAX,EDI                         ; 0057099c
     JNZ 0x005709fb                      ; 0057099e

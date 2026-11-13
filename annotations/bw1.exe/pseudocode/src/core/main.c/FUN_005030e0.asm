@@ -6,18 +6,18 @@
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[568]:
+; XREF[566]:
 ;   cockpit_ckptutil.c_FUN_004387f0 at 004389af
 ;   cockpit_ckptutil.c_FUN_00438bd0 at 00438c2a
 ;   cockpit_ckptutil.c_FUN_00438e40 at 00438e9e
-;   cockpit_ckptutil.c_FUN_0043908e at 00439128
+;   cockpit_ckptutil.c_FUN_00439090 at 00439128
 ;   cockpit_ckptutil.c_FUN_0043a200 at 0043a318
 ;   cockpit_ckptutil.c_FUN_0043b090 at 0043b1d3
 ;   cockpit_ckptutil.c_FUN_0043b2e0 at 0043b355
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490 at 004375a3
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a0f4
-;   cockpit_ckptutil.c_traceConnectedEdges_FUN_0043a45e at 0043a58b
-;   ... and 558 more
+;   cockpit_ckptutil.c_traceConnectedEdges_FUN_0043a460 at 0043a58b
+;   ... and 556 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006236b8

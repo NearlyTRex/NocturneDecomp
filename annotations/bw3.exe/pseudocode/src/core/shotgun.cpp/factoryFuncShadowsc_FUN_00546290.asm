@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shotgun_cpp_factoryFuncShadowsc_FUN_00546290(void)
+; CShadowsc * __cdecl core_shotgun_cpp_factoryFuncShadowsc_FUN_00546290(void)
 ;
 ;
 ; Called Functions:

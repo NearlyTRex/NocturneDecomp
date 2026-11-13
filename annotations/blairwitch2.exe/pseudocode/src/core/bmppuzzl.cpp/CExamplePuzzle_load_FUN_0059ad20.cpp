@@ -2,16 +2,16 @@
 // Address: 0059ad20
 // Address Range: [[0059ad20, 0059ad91]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bmppuzzl_cpp_CExamplePuzzle_load_FUN_0059ad20(CExamplePuzzle *this_ptr,int param_2)
+// Signature: void __cdecl core_bmppuzzl_cpp_CExamplePuzzle_load_FUN_0059ad20(CExamplePuzzle *this_ptr,int activate)
 
 #include "nocturne.h"
 
-void __cdecl core_bmppuzzl_cpp_CExamplePuzzle_load_FUN_0059ad20(CExamplePuzzle *this_ptr,int param_2)
+void __cdecl core_bmppuzzl_cpp_CExamplePuzzle_load_FUN_0059ad20(CExamplePuzzle *this_ptr,int activate)
 
 {
   int iVar1;
   
-  if (param_2 == 0) {
+  if (activate == 0) {
     return;
   }
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(10,DAT_006141b8 + -0x14);

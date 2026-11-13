@@ -29,6 +29,7 @@
 ;   ... and 68 more
 ;
 ; Called Functions:
+;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_0059abb0
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_00447ad0
 ;   core_dfont.cpp_FUN_00447ea0
 ;   core_flattn.cpp_FUN_004a67a0
@@ -40,7 +41,6 @@
 ;   core_mmx.c_detectCPUFeatures_FUN_004fd490
 ;   core_netgame.cpp_CNetGame_init_FUN_0050b340
 ;   core_sound.cpp_FUN_0055a100
-;   core_zombie.cpp_FUN_0059abb0
 ;   crt_io.c__chmod_FUN_005b99e0
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fopen_FUN_005b910c
@@ -753,8 +753,8 @@ section .text
     CALL core_netgame.cpp_CNetGame_init_FUN_0050b340 ; 004e4d76
         ;   XREF to: 0050b340 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_init_FUN_0050b340(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004e4d7b
-    CALL core_zombie.cpp_FUN_0059abb0   ; 004e4d7e
-        ;   XREF to: 0059abb0 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059abb0()
+    CALL core_bmppuzzl.cpp_resetAllPuzzles_FUN_0059abb0 ; 004e4d7e
+        ;   XREF to: 0059abb0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_resetAllPuzzles_FUN_0059abb0()
     PUSH 0x5dc445                       ; 004e4d83 | DAT_005dc445
     PUSH 0x5dc447                       ; 004e4d88 | = "Flip on VBlank"
     PUSH 0x5dc456                       ; 004e4d8d | = "SOFTWARE\\Matrox\\PowerDesk\\Current ..."

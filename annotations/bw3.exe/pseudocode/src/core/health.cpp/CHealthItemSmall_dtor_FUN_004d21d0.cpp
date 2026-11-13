@@ -1,14 +1,12 @@
 // Name: core_health.cpp_CHealthItemSmall_dtor_FUN_004d21d0
 // Address: 004d21d0
 // Address Range: [[004d21d0, 004d221d]]
-// Convention: unknown
-// Signature: CHealthItemSmall * core_health_cpp_CHealthItemSmall_dtor_FUN_004d21d0(CHealthItemSmall *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CHealthItemSmall * __cdecl core_health_cpp_CHealthItemSmall_dtor_FUN_004d21d0(CHealthItemSmall *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHealthItemSmall * core_health_cpp_CHealthItemSmall_dtor_FUN_004d21d0(CHealthItemSmall *this_ptr,uint flags)
+CHealthItemSmall * __cdecl core_health_cpp_CHealthItemSmall_dtor_FUN_004d21d0(CHealthItemSmall *this_ptr,uint flags)
 
 {
   CDemonActor *pCVar1;

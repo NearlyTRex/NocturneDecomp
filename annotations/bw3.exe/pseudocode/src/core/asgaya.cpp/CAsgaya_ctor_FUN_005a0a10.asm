@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAsgaya * core_asgaya_cpp_CAsgaya_ctor_FUN_005a0a10(CAsgaya *this_ptr)
+; CAsgaya * __cdecl core_asgaya_cpp_CAsgaya_ctor_FUN_005a0a10(CAsgaya *this_ptr)
 ;
 ; Parameters:
 ; CAsgaya *        Stack[0x4]:4   this_ptr

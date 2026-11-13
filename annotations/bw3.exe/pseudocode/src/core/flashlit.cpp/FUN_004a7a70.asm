@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_fldnotes.cpp_FUN_004abe00 at 004abfe1
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004abfe1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba18

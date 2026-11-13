@@ -105,25 +105,25 @@ int __cdecl FUN_0055f5b0(void);
 // Address: 0055f5d0
 undefined4 FUN_0055f5d0(undefined4 param_1);
 
-// Original: engine_special.cpp_FUN_0055f60e
-// Address: 0055f60e
-undefined4 FUN_0055f60e(undefined4 param_1);
+// Original: engine_special.cpp_FUN_0055f610
+// Address: 0055f610
+undefined4 FUN_0055f610(void);
 
-// Original: engine_special.cpp_FUN_0055f64e
-// Address: 0055f64e
-undefined4 FUN_0055f64e(undefined4 param_1,undefined4 param_2);
+// Original: engine_special.cpp_FUN_0055f650
+// Address: 0055f650
+undefined4 FUN_0055f650(void);
 
 // Original: engine_special.cpp_FUN_0055f690
 // Address: 0055f690
 undefined4 FUN_0055f690(undefined4 param_1,undefined4 param_2);
 
-// Original: engine_special.cpp_FUN_0055f70c
-// Address: 0055f70c
-undefined4 FUN_0055f70c(undefined4 param_1,undefined4 param_2);
+// Original: engine_special.cpp_FUN_0055f710
+// Address: 0055f710
+undefined4 FUN_0055f710(void);
 
-// Original: engine_special.cpp_FUN_0055f74c
-// Address: 0055f74c
-undefined4 FUN_0055f74c(undefined4 param_1);
+// Original: engine_special.cpp_FUN_0055f750
+// Address: 0055f750
+undefined4 FUN_0055f750(void);
 
 // Original: engine_special.cpp_setResolutionAndColorTable_FUN_0055f770
 // Address: 0055f770
@@ -161,8 +161,8 @@ int __cdecl drawPolyList3(SRenderVertex *vertex_buffer,STrianglePackedIndices *p
 // Address: 0055fc9e
 int __cdecl addParticle(void *particle_data,int particle_type);
 
-// Original: engine_special.cpp_flushParticleList_FUN_0055fcce
-// Address: 0055fcce
+// Original: engine_special.cpp_flushParticleList_FUN_0055fcd0
+// Address: 0055fcd0
 int __cdecl flushParticleList(void);
 
 // Original: engine_special.cpp_add3dLine_FUN_0055fcf0
@@ -233,25 +233,25 @@ int __cdecl FUN_00560140(void);
 // Address: 00560160
 undefined4 FUN_00560160(undefined4 param_1);
 
-// Original: engine_special.cpp_FUN_0056017e
-// Address: 0056017e
-undefined4 FUN_0056017e(void);
+// Original: engine_special.cpp_FUN_00560180
+// Address: 00560180
+undefined4 FUN_00560180(void);
 
 // Original: engine_special.cpp_FUN_005601a0
 // Address: 005601a0
 undefined4 FUN_005601a0(undefined4 param_1);
 
-// Original: engine_special.cpp_FUN_005601be
-// Address: 005601be
-undefined4 FUN_005601be(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+// Original: engine_special.cpp_FUN_005601c0
+// Address: 005601c0
+undefined4 FUN_005601c0(void);
 
-// Original: engine_special.cpp_FUN_0056023e
-// Address: 0056023e
-undefined4 FUN_0056023e(void);
+// Original: engine_special.cpp_FUN_00560240
+// Address: 00560240
+undefined4 FUN_00560240(void);
 
-// Original: engine_special.cpp_FUN_0056029c
-// Address: 0056029c
-undefined4 FUN_0056029c(void);
+// Original: engine_special.cpp_FUN_005602a0
+// Address: 005602a0
+undefined4 FUN_005602a0(void);
 
 // Original: engine_special.cpp_CExternalRenderer_ctor_FUN_005602c0
 // Address: 005602c0
@@ -261,10 +261,10 @@ void __cdecl CExternalRenderer::ctor(CExternalRenderer *this_ptr);
 // Address: 00560310
 int __cdecl CExternalRenderer::validate(CExternalRenderer *this_ptr,CExternalRenderer *capabilities);
 
-// Original: engine_special.cpp_switchRenderer_FUN_0056046e
-// Address: 0056046e
-void switchRenderer(char *param_1,undefined4 param_2);
+// Original: engine_special.cpp_switchRenderer_FUN_00560470
+// Address: 00560470
+void switchRenderer(void);
 
-// Original: engine_special.cpp_FUN_005604be
-// Address: 005604be
-undefined1 * FUN_005604be(undefined4 *param_1);
+// Original: engine_special.cpp_FUN_005604c0
+// Address: 005604c0
+undefined1 * FUN_005604c0(void);

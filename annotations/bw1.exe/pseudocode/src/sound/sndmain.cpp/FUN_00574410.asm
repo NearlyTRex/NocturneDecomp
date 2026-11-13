@@ -159,7 +159,7 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 005744fa
     PUSH EAX                            ; 00574501
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0 ; 00574502
-        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
+        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile * this_ptr, char * directory, char * filename, int binary_mode)
     ADD ESP,0x10                        ; 00574507
     TEST EAX,EAX                        ; 0057450a
     JZ 0x00574591                       ; 0057450c
@@ -167,7 +167,7 @@ section .text
     LEA EAX,[ESP + 0x100]               ; 00574512
     PUSH EAX                            ; 00574519
     CALL support_trstream.cpp_CInStreamFile_tell_FUN_005a0d50 ; 0057451a
-        ;   XREF to: 005a0d50 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_tell_FUN_005a0d50(CInStreamFile * this_ptr)
+        ;   XREF to: 005a0d50 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_tell_FUN_005a0d50(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0057451f
     PUSH EBP                            ; 00574522
     MOV dword ptr [ESP + 0x130],EAX     ; 00574523
@@ -184,7 +184,7 @@ section .text
     LEA EAX,[ESP + 0x100]               ; 00574546
     PUSH EAX                            ; 0057454d
     CALL support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0 ; 0057454e
-        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile * this_ptr)
+        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00574553
     PUSH 0x0                            ; 00574556
     LEA EAX,[ESP + 0x104]               ; 00574558

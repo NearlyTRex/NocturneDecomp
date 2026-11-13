@@ -1,12 +1,12 @@
 // Name: core_bmppuzzl.cpp_staticInit_FUN_004118e0
 // Address: 004118e0
 // Address Range: [[004118e0, 00411956]]
-// Convention: unknown
-// Signature: void core_bmppuzzl_cpp_staticInit_FUN_004118e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bmppuzzl_cpp_staticInit_FUN_004118e0(void)
 
 #include "nocturne.h"
 
-void core_bmppuzzl_cpp_staticInit_FUN_004118e0(void)
+void __cdecl core_bmppuzzl_cpp_staticInit_FUN_004118e0(void)
 
 {
   __arrinit(CAlphaBitmap_ARRAY_007dffc0,4,&g_CAlphaBitmapTypeInfo);

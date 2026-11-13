@@ -40,7 +40,7 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0(CMans
     iVar2 = 0;
     do {
       core_manpuz_cpp_FUN_004e6340(this_ptr,iVar2);
-      core_manpuz_cpp_FUN_004e63c0(this_ptr,iVar2);
+      core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0(this_ptr,iVar2);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0xc);
     if ((*(int *)(0x01D182F0 + 0x1008) != 0) &&

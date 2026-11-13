@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bmppuzzl_cpp_CExamplePuzzle_load_FUN_0059ad20(CExamplePuzzle *this_ptr,int param_2)
+; void __cdecl core_bmppuzzl_cpp_CExamplePuzzle_load_FUN_0059ad20(CExamplePuzzle *this_ptr,int activate)
 ;
 ; Parameters:
 ; CExamplePuzzle * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   activate
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141b8

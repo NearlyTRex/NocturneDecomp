@@ -14,9 +14,9 @@
 ;   core_bird.cpp_CBird_setup_FUN_0040fac0 at 0040fae8
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_00417630 at 0041765c
 ;   core_carved.cpp_CCarved_setup_FUN_00425ab0 at 00425ad9
+;   core_charactr.cpp_CCharacter_applyGesture_FUN_004320d0 at 0043210c
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0 at 00433ff5
 ;   core_charactr.cpp_CCharacter_setup_FUN_0042b0e0 at 0042b18a
-;   core_charactr.cpp_FUN_004320d0 at 0043210c
 ;   core_charactr.cpp_FUN_00432330 at 00432381
 ;   core_charactr.cpp_FUN_00433c60 at 00433d88
 ;   ... and 33 more

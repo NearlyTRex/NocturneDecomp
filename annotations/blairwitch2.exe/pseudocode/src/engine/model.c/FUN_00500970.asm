@@ -316,7 +316,7 @@ section .text
         ;   Label: LAB_00500d80
     PUSH EAX                            ; 00500d83
     CALL engine_model.c_loadModelFile_FUN_00500720 ; 00500d84
-        ;   XREF to: 00500720 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_loadModelFile_FUN_00500720()
+        ;   XREF to: 00500720 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_model.c_loadModelFile_FUN_00500720(char * filename)
     ADD ESP,0x4                         ; 00500d89
     LEA ESI,[ESP + 0xec]                ; 00500d8c
     PUSH EAX                            ; 00500d93

@@ -7,10 +7,10 @@
 
 // Original: core_water.cpp_staticInit_FUN_00585d40
 // Address: 00585d40
-void staticInit(void);
+void __cdecl staticInit(void);
 
-// Original: core_water.cpp_calculateWaveHeight_FUN_00585d5e
-// Address: 00585d5e
+// Original: core_water.cpp_calculateWaveHeight_FUN_00585d60
+// Address: 00585d60
 float __cdecl calculateWaveHeight(int x,int y);
 
 // Original: core_water.cpp_CWater_ctor_FUN_00585db0
@@ -19,7 +19,7 @@ CWater * __cdecl CWater::ctor(CWater *this_ptr);
 
 // Original: core_water.cpp_CWater_dtor_FUN_00585dd0
 // Address: 00585dd0
-CWater * CWater::dtor(CWater *this_ptr,uint flags);
+CWater * __cdecl CWater::dtor(CWater *this_ptr,uint flags);
 
 // Original: core_water.cpp_CWater_captureTextures_FUN_00585de0
 // Address: 00585de0

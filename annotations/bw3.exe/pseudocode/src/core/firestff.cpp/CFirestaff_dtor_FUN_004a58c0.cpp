@@ -1,14 +1,12 @@
 // Name: core_firestff.cpp_CFirestaff_dtor_FUN_004a58c0
 // Address: 004a58c0
 // Address Range: [[004a58c0, 004a5924]]
-// Convention: unknown
-// Signature: CFirestaff * core_firestff_cpp_CFirestaff_dtor_FUN_004a58c0(CFirestaff *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CFirestaff * __cdecl core_firestff_cpp_CFirestaff_dtor_FUN_004a58c0(CFirestaff *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CFirestaff * core_firestff_cpp_CFirestaff_dtor_FUN_004a58c0(CFirestaff *this_ptr,uint flags)
+CFirestaff * __cdecl core_firestff_cpp_CFirestaff_dtor_FUN_004a58c0(CFirestaff *this_ptr,uint flags)
 
 {
   int iVar1;

@@ -716,7 +716,7 @@ LAB_004c6bf3:
               core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004c99e0(this_ptr);
             }
             else {
-              core_hero_cpp_FUN_004eb7f0(this_ptr);
+              core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(&this_ptr->base);
             }
           }
           else {

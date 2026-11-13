@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hecaitmx_cpp_factoryFuncHecaitomix_FUN_00597dc0(void)
+; CHecaitomix * __cdecl core_hecaitmx_cpp_factoryFuncHecaitomix_FUN_00597dc0(void)
 ;
 ;
 ; Called Functions:

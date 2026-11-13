@@ -1,0 +1,281 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 110,
+    "complexity_score": 76,
+    "cross_reference_count": 5,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 156
+  },
+  "cross_references": [
+    {
+      "addr": "004ee1a0",
+      "from_addr": "004ee38b",
+      "name": "engine_mini3d.cpp_polyListD3DL_FUN_004ee1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ee5b0",
+      "from_addr": "004ee91b",
+      "name": "engine_mini3d.cpp_polyListD3DTL_FUN_004ee5b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ee430",
+      "from_addr": "004ee59f",
+      "name": "engine_mini3d.cpp_polyListL_FUN_004ee430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004edea0",
+      "from_addr": "004ee0f1",
+      "name": "engine_mini3d.cpp_polyList_FUN_004edea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2e30",
+      "from_addr": "004f337e",
+      "name": "engine_mini3d.cpp_userClipPolyList_FUN_004f2e30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f12b0",
+    "address_range": [
+      [
+        "004f12b0",
+        "004f1398"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_drawTransformedList_FUN_004f12b0",
+    "signature": "void __cdecl engine_mini3d_cpp_drawTransformedList_FUN_004f12b0(float *vertices,int vertex_count,ushort *indices,int triangle_count,int clip_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f0da0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_beginTriangleBatch_FUN_004f0da0"
+    },
+    {
+      "addr": "004f1020",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_clipBatchTriangle_FUN_004f1020"
+    },
+    {
+      "addr": "004f0f20",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_flushTriangleBatch_FUN_004f0f20"
+    },
+    {
+      "addr": "004f1830",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_rasterizeTriangle_FUN_004f1830"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c6cee8",
+      "name": "DAT_01c6cee8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b4",
+      "name": "DAT_01c6e2b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d76f60",
+      "name": "DAT_01d76f60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf60cc",
+      "name": "DAT_02cf60cc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004ee91b",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_polyListD3DTL_FUN_004ee5b0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004ee0f1",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_polyList_FUN_004edea0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004f337e",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_userClipPolyList_FUN_004f2e30",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004ee38b",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_polyListD3DL_FUN_004ee1a0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004ee59f",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_polyListL_FUN_004ee430",
+        "estimated_params": 4,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.054945054945055,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 32,
+      "BOOL_OR": 2,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 82,
+      "INT_ADD": 34,
+      "INT_AND": 138,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 76,
+      "INT_LEFT": 12,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 30,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 47,
+      "INT_SUB": 31,
+      "INT_XOR": 14,
+      "LOAD": 22,
+      "POPCOUNT": 35,
+      "RETURN": 3,
+      "STORE": 20
+    },
+    "pcode_op_count": 642
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f6d00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00515ae0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "indices",
+        "offset": 12,
+        "size": 4,
+        "type": "ushort *"
+      },
+      {
+        "is_param": true,
+        "name": "triangle_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "clip_flags",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 31,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((_DAT_02cf60cc != (code *)0x0) && (_DAT_01c6cee8 != 0)) {",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

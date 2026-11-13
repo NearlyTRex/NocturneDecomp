@@ -7,27 +7,27 @@
 
 // Original: core_tawiscara.cpp_staticInit_FUN_00593d40
 // Address: 00593d40
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_tawiscara.cpp_factoryFuncTawiscara_FUN_00593da0
 // Address: 00593da0
-void factoryFuncTawiscara(void);
+CTawiscara * __cdecl factoryFuncTawiscara(void);
 
 // Original: core_tawiscara.cpp_CTawiscara_getActorType_FUN_00593dc0
 // Address: 00593dc0
-CDemonActorType * CTawiscara::getActorType(CTawiscara *this_ptr);
+CDemonActorType * __cdecl CTawiscara::getActorType(CTawiscara *this_ptr);
 
 // Original: core_tawiscara.cpp_CTawiscara_ctor_FUN_00593dd0
 // Address: 00593dd0
-CTawiscara * CTawiscara::ctor(CTawiscara *this_ptr);
+CTawiscara * __cdecl CTawiscara::ctor(CTawiscara *this_ptr);
 
-// Original: core_tawiscara.cpp_FUN_00593e80
+// Original: core_tawiscara.cpp_CTawiscara_setup_FUN_00593e80
 // Address: 00593e80
-void FUN_00593e80(CEnemy *param_1);
+void __cdecl CTawiscara::setup(CTawiscara *this_ptr);
 
-// Original: core_tawiscara.cpp_FUN_00594000
+// Original: core_tawiscara.cpp_CTawiscara_process_FUN_00594000
 // Address: 00594000
-void FUN_00594000(CEnemy *param_1,float param_2);
+void __cdecl CTawiscara::process(CTawiscara *this_ptr,float param_2);
 
 // Original: core_tawiscara.cpp_CTawiscara_setWalkTarget_FUN_005956d0
 // Address: 005956d0
@@ -67,4 +67,4 @@ void FUN_00596380(CCharacter *param_1);
 
 // Original: core_tawiscara.cpp_CTawiscara_dtor_FUN_00596570
 // Address: 00596570
-CTawiscara * CTawiscara::dtor(CTawiscara *this_ptr,uint flags);
+CTawiscara * __cdecl CTawiscara::dtor(CTawiscara *this_ptr,uint flags);

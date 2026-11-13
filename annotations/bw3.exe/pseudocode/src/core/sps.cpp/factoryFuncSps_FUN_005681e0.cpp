@@ -1,20 +1,20 @@
 // Name: core_sps.cpp_factoryFuncSps_FUN_005681e0
 // Address: 005681e0
 // Address Range: [[005681e0, 005681fb]]
-// Convention: unknown
-// Signature: void core_sps_cpp_factoryFuncSps_FUN_005681e0(void)
+// Convention: __cdecl
+// Signature: CSps * __cdecl core_sps_cpp_factoryFuncSps_FUN_005681e0(void)
 
 #include "nocturne.h"
 
-void core_sps_cpp_factoryFuncSps_FUN_005681e0(void)
+CSps * __cdecl core_sps_cpp_factoryFuncSps_FUN_005681e0(void)
 
 {
-  CSps *this_ptr;
+  CSps *pCVar1;
   
-  this_ptr = (CSps *)operator_new(0x594);
-  if (this_ptr == (CSps *)0x0) {
-    return;
+  pCVar1 = (CSps *)operator_new(0x594);
+  if (pCVar1 == (CSps *)0x0) {
+    return (CSps *)0x0;
   }
-  core_sps_cpp_CSps_ctor_FUN_00568210(this_ptr);
-  return;
+  pCVar1 = core_sps_cpp_CSps_ctor_FUN_00568210(pCVar1);
+  return pCVar1;
 }

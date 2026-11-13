@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPrye * core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags)
+; CPrye * __cdecl core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CPrye *          Stack[0x4]:4   this_ptr

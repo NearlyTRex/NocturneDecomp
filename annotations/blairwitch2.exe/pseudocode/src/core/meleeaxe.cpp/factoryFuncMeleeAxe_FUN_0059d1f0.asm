@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_meleeaxe_cpp_factoryFuncMeleeAxe_FUN_0059d1f0(void)
+; CMeleeAxe * __cdecl core_meleeaxe_cpp_factoryFuncMeleeAxe_FUN_0059d1f0(void)
 ;
 ;
 ; Called Functions:

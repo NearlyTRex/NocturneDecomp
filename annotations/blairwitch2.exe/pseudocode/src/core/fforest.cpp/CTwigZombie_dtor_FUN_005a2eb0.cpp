@@ -1,14 +1,12 @@
 // Name: core_fforest.cpp_CTwigZombie_dtor_FUN_005a2eb0
 // Address: 005a2eb0
 // Address Range: [[005a2eb0, 005a2f44]]
-// Convention: unknown
-// Signature: CTwigZombie * core_fforest_cpp_CTwigZombie_dtor_FUN_005a2eb0(CTwigZombie *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CTwigZombie * __cdecl core_fforest_cpp_CTwigZombie_dtor_FUN_005a2eb0(CTwigZombie *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CTwigZombie * core_fforest_cpp_CTwigZombie_dtor_FUN_005a2eb0(CTwigZombie *this_ptr,uint flags)
+CTwigZombie * __cdecl core_fforest_cpp_CTwigZombie_dtor_FUN_005a2eb0(CTwigZombie *this_ptr,uint flags)
 
 {
   int iVar1;

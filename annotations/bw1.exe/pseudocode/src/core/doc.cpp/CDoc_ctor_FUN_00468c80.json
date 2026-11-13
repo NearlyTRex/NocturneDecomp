@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 263,
-    "complexity_score": 138,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 108,
+    "pseudocode_lines": 107,
     "suspect_count": 2,
     "suspect_types": [
       "raw_address_constant",
       "unrolled_memset"
     ],
-    "total_lines": 371
+    "total_lines": 370
   },
   "cross_references": [
     {
@@ -31,10 +31,10 @@
         "00469052"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_doc.cpp_CDoc_ctor_FUN_00468c80",
-    "signature": "CDoc * core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)"
+    "signature": "CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)"
   },
   "function_calls": [
     {
@@ -140,7 +140,7 @@
   "suspects": [
     {
       "description": "Raw hex address 0x469041 assigned to bare local `uStack000001a8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack000001a8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 107,
+      "line": 105,
       "match": "0x469041",
       "severity": "moderate",
       "text": "uStack000001a8 = 0x469041;",
@@ -148,7 +148,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 51,
+      "line": 49,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr_00->pending_velocity).z = 0.0;",

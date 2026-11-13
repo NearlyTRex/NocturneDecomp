@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CZombieIndian * core_zombie_cpp_CZombieIndian_ctor_FUN_0058ce70(CZombieIndian *this_ptr)
+; CZombieIndian * __cdecl core_zombie_cpp_CZombieIndian_ctor_FUN_0058ce70(CZombieIndian *this_ptr)
 ;
 ; Parameters:
 ; CZombieIndian *  Stack[0x4]:4   this_ptr

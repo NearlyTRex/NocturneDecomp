@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_trigger_cpp_CTrigger_getActorType_FUN_0056df90(CTrigger *this_ptr)
+; CDemonActorType * __cdecl core_trigger_cpp_CTrigger_getActorType_FUN_0056df90(CTrigger *this_ptr)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr

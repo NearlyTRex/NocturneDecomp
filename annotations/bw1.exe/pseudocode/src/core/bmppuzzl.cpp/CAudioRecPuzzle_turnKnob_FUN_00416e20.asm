@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00416e20(CAudioRecPuzzle *this_ptr,int param_2)
+; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00416e20(CAudioRecPuzzle *this_ptr,int knob)
 ;
 ; Parameters:
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   knob
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_REC_DIAL_WAV_005d3fe0

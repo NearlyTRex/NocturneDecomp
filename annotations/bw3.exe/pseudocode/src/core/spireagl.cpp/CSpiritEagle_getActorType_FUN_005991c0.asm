@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_spireagl_cpp_CSpiritEagle_getActorType_FUN_005991c0(CSpiritEagle *this_ptr)
+; CDemonActorType * __cdecl core_spireagl_cpp_CSpiritEagle_getActorType_FUN_005991c0(CSpiritEagle *this_ptr)
 ;
 ; Parameters:
 ; CSpiritEagle *   Stack[0x4]:4   this_ptr

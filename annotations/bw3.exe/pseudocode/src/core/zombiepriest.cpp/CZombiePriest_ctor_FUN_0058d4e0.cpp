@@ -1,15 +1,14 @@
 // Name: core_zombiepriest.cpp_CZombiePriest_ctor_FUN_0058d4e0
 // Address: 0058d4e0
 // Address Range: [[0058d4e0, 0058d5dd]]
-// Convention: unknown
-// Signature: CZombiePriest * core_zombiepriest_cpp_CZombiePriest_ctor_FUN_0058d4e0(CZombiePriest *this_ptr)
+// Convention: __cdecl
+// Signature: CZombiePriest * __cdecl core_zombiepriest_cpp_CZombiePriest_ctor_FUN_0058d4e0(CZombiePriest *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CZombiePriest * core_zombiepriest_cpp_CZombiePriest_ctor_FUN_0058d4e0(CZombiePriest *this_ptr)
+CZombiePriest * __cdecl core_zombiepriest_cpp_CZombiePriest_ctor_FUN_0058d4e0(CZombiePriest *this_ptr)
 
 {
   char cVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,uint flags)
+; CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMeleeAxe *      Stack[0x4]:4   this_ptr

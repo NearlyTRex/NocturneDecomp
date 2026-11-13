@@ -1,14 +1,12 @@
 // Name: core_werewolf.cpp_CWerewolf_dtor_FUN_005b1a40
 // Address: 005b1a40
 // Address Range: [[005b1a40, 005b1ac4]]
-// Convention: unknown
-// Signature: CWerewolf * core_werewolf_cpp_CWerewolf_dtor_FUN_005b1a40(CWerewolf *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_005b1a40(CWerewolf *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CWerewolf * core_werewolf_cpp_CWerewolf_dtor_FUN_005b1a40(CWerewolf *this_ptr,uint flags)
+CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_005b1a40(CWerewolf *this_ptr,uint flags)
 
 {
   int iVar1;

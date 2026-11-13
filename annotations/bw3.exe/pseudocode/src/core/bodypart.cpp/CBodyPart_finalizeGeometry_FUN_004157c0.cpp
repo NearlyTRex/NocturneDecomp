@@ -224,7 +224,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_004157c0(CBodyPart
     return;
   }
   (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
-  core_bodypart_cpp_FUN_00414910(this_ptr,0,0);
+  core_bodypart_cpp_setCounts_FUN_00414910(this_ptr,0,0);
   pCVar1 = &(this_ptr->bounding_box).max;
   if (pCVar1 != (CVector3f *)&DAT_02cfd900) {
     pCVar1->x = _DAT_02cfd900;

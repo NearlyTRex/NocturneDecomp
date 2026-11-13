@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamFile_seek_FUN_0057d0c0(CInStreamFile *this_ptr,int param_2,uint param_3)
+; int __cdecl support_trstream_cpp_CInStreamFile_seek_FUN_0057d0c0(CInStreamFile *this_ptr,int offset,int origin)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; uint             Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   offset
+; int              Stack[0xc]:4   origin
 ;
 ; XREF[3]:
 ;   core_game.cpp_FUN_004bbf70 at 004bc23b

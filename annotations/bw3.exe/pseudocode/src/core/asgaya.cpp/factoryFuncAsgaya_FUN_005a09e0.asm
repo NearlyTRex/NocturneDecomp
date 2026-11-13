@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_asgaya_cpp_factoryFuncAsgaya_FUN_005a09e0(void)
+; CAsgaya * __cdecl core_asgaya_cpp_factoryFuncAsgaya_FUN_005a09e0(void)
 ;
 ;
 ; Called Functions:

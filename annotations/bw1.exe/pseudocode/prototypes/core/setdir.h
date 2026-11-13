@@ -7,7 +7,7 @@
 
 // Original: core_setdir.cpp_staticInit_FUN_00559710
 // Address: 00559710
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_setdir.cpp_FUN_00559c10
 // Address: 00559c10

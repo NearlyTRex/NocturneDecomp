@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_smiley_cpp_factoryFuncSmiley_FUN_005497a0(void)
+; CSmiley * __cdecl core_smiley_cpp_factoryFuncSmiley_FUN_005497a0(void)
 ;
 ;
 ; Called Functions:

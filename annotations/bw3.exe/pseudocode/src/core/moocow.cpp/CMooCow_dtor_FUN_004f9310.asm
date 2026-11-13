@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMooCow * core_moocow_cpp_CMooCow_dtor_FUN_004f9310(CMooCow *this_ptr,uint flags)
+; CMooCow * __cdecl core_moocow_cpp_CMooCow_dtor_FUN_004f9310(CMooCow *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMooCow *        Stack[0x4]:4   this_ptr

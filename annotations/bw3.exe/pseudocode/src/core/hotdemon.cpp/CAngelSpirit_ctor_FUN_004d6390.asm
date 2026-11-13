@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAngelSpirit * core_hotdemon_cpp_CAngelSpirit_ctor_FUN_004d6390(CAngelSpirit *this_ptr)
+; CAngelSpirit * __cdecl core_hotdemon_cpp_CAngelSpirit_ctor_FUN_004d6390(CAngelSpirit *this_ptr)
 ;
 ; Parameters:
 ; CAngelSpirit *   Stack[0x4]:4   this_ptr

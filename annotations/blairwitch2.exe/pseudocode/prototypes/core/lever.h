@@ -7,7 +7,7 @@
 
 // Original: core_lever.cpp_staticInit_FUN_004e1bc0
 // Address: 004e1bc0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_lever.cpp_factoryFuncLever_FUN_004e1bf0
 // Address: 004e1bf0
@@ -15,7 +15,7 @@ CLever * __cdecl factoryFuncLever(void);
 
 // Original: core_lever.cpp_CLever_getActorType_FUN_004e1c10
 // Address: 004e1c10
-CDemonActorType * CLever::getActorType(CLever *this_ptr);
+CDemonActorType * __cdecl CLever::getActorType(CLever *this_ptr);
 
 // Original: core_lever.cpp_CLever_ctor_FUN_004e1c20
 // Address: 004e1c20

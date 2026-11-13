@@ -1102,7 +1102,7 @@ int __cdecl core_inv_cpp_FUN_004f7690(CInventory *this_ptr,CDemonActor *item_act
           pCVar5[2].health = pCVar5[2].health + pCStack_24->ammo_count;
           engine_console_cpp_CConsole_printf_FUN_00445430
                     (g_CConsolePtr,"Found existing ammo, but no weapon\n");
-          core_mission_cpp_FUN_0051b740(0x01D2C900,item_actor,1);
+          core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(0x01D2C900,item_actor,1);
           return 1;
         }
         iVar11 = iVar11 + 1;
@@ -1151,7 +1151,8 @@ LAB_004f84d6:
                 pCVar5[4].actor_name[10] = '\0';
                 pCVar5[4].actor_name[0xb] = '\0';
               }
-              core_mission_cpp_FUN_0051b740(0x01D2C900,item_actor,1);
+              core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740
+                        (0x01D2C900,item_actor,1);
               engine_console_cpp_CConsole_printf_FUN_00445430
                         (g_CConsolePtr,"Found weapon to put this ammo into\n");
               return 1;
@@ -1170,7 +1171,7 @@ LAB_004f84d6:
       this_ptr->items[this_ptr->item_count] = pCVar5;
       pCVar3 = 0x01D2C900;
       this_ptr->item_count = this_ptr->item_count + 1;
-      core_mission_cpp_FUN_0051b740(pCVar3,item_actor,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(pCVar3,item_actor,1);
       engine_console_cpp_CConsole_printf_FUN_00445430
                 (g_CConsolePtr,"Found new type of ammo for existing weapon.  Making new weapon for it\n");
       return 1;
@@ -1196,7 +1197,7 @@ LAB_004f84d6:
       this_ptr->items[this_ptr->item_count] = item_actor;
       pCVar3 = 0x01D2C900;
       this_ptr->item_count = this_ptr->item_count + 1;
-      core_mission_cpp_FUN_0051b740(pCVar3,item_actor,0);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(pCVar3,item_actor,0);
       (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);
       return 1;
     }
@@ -1224,7 +1225,8 @@ LAB_004f84d6:
             }
             engine_console_cpp_CConsole_printf_FUN_00445430
                       (g_CConsolePtr,"Found same weapon, increasing ammoCount\n");
-            core_mission_cpp_FUN_0051b740(0x01D2C900,item_actor,1);
+            core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(0x01D2C900,item_actor,1)
+            ;
             return 1;
           }
         }
@@ -1265,7 +1267,7 @@ LAB_004f84d6:
       } while (iStack_1c < this_ptr->item_count);
     }
     if (bVar2) {
-      core_mission_cpp_FUN_0051b740(0x01D2C900,pCVar5,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(0x01D2C900,pCVar5,1);
       return 1;
     }
   }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_teleport_cpp_staticInit_FUN_00568cd0(void)
+; void __cdecl core_teleport_cpp_staticInit_FUN_00568cd0(void)
 ;
 ;
 ; Called Functions:

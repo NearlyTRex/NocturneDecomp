@@ -20,8 +20,8 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
+;   engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
-;   engine_alphabit.cpp_FUN_0040d0e0
 ;   engine_alphabit.cpp_FUN_0040d970
 ;
 ; *****************************************************************************
@@ -97,8 +97,8 @@ section .text
     PUSH ECX                            ; 004bc36f
     LEA ESI,[EBX + 0x88]                ; 004bc370
     PUSH ESI                            ; 004bc376
-    CALL engine_alphabit.cpp_FUN_0040d0e0 ; 004bc377
-        ;   XREF to: 0040d0e0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040d0e0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0 ; 004bc377
+        ;   XREF to: 0040d0e0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0(CAlphaBitmap * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 004bc37c
     PUSH 0x0                            ; 004bc37f
     PUSH ESI                            ; 004bc381

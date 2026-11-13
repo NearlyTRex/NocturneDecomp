@@ -1,14 +1,12 @@
 // Name: core_fire.cpp_CFirefly_ctor_FUN_004b7780
 // Address: 004b7780
 // Address Range: [[004b7780, 004b7794]]
-// Convention: unknown
-// Signature: CFirefly * core_fire_cpp_CFirefly_ctor_FUN_004b7780(CFirefly *this_ptr)
+// Convention: __cdecl
+// Signature: CFirefly * __cdecl core_fire_cpp_CFirefly_ctor_FUN_004b7780(CFirefly *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CFirefly * core_fire_cpp_CFirefly_ctor_FUN_004b7780(CFirefly *this_ptr)
+CFirefly * __cdecl core_fire_cpp_CFirefly_ctor_FUN_004b7780(CFirefly *this_ptr)
 
 {
   CFirefly *pCVar1;

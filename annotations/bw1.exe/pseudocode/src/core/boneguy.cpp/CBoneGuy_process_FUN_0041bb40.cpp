@@ -230,7 +230,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,f
     pCVar12 = this_ptr;
     if (0 < this_ptr->box_count) {
       do {
-        core_mission_cpp_FUN_0051b740();
+        core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740
+                  (0x01D2C900,pCVar12->boxes[0].body_part,1);
         pCVar12->boxes[0].body_part = (CBodyPart *)0x0;
         iVar8 = iVar8 + 1;
         pCVar12 = (CBoneGuy *)((pCVar12->base).base.base.orient_matrix.m + 1);
@@ -257,7 +258,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bb40(CBoneGuy *this_ptr,f
       pCVar4 = this_ptr->pickup_target;
       if (pCVar4 != (CDemonActor *)0x0) {
         this_ptr->pickup_target = (CDemonActor *)0x0;
-        core_charactr_cpp_FUN_004325b0(this_ptr,1,pCVar4,0x3e4ccccd);
+        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0
+                  ((CCharacter *)this_ptr,1,(int)pCVar4,0x3e4ccccd,0);
       }
     }
     else {

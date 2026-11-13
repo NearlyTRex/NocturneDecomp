@@ -7,23 +7,23 @@
 
 // Original: core_hpbox.cpp_staticInit_FUN_005ac740
 // Address: 005ac740
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hpbox.cpp_factoryFuncParticleBox_FUN_005ac770
 // Address: 005ac770
-void factoryFuncParticleBox(void);
+CParticleBox * __cdecl factoryFuncParticleBox(void);
 
 // Original: core_hpbox.cpp_CParticleBox_getActorType_FUN_005ac790
 // Address: 005ac790
-CDemonActorType * CParticleBox::getActorType(CParticleBox *this_ptr);
+CDemonActorType * __cdecl CParticleBox::getActorType(CParticleBox *this_ptr);
 
 // Original: core_hpbox.cpp_CParticleBox_ctor_FUN_005ac7a0
 // Address: 005ac7a0
-CParticleBox * CParticleBox::ctor(CParticleBox *this_ptr);
+CParticleBox * __cdecl CParticleBox::ctor(CParticleBox *this_ptr);
 
 // Original: core_hpbox.cpp_CParticleBox_dtor_FUN_005ac7f0
 // Address: 005ac7f0
-CParticleBox * CParticleBox::dtor(CParticleBox *this_ptr,uint flags);
+CParticleBox * __cdecl CParticleBox::dtor(CParticleBox *this_ptr,uint flags);
 
 // Original: core_hpbox.cpp_CParticleBox_setup_FUN_005ac8d0
 // Address: 005ac8d0

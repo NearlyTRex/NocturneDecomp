@@ -25,7 +25,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(CAlphaBitmap *th
   int local_18;
   _FILE *local_14;
   
-  engine_alphabit_cpp_FUN_0040d460(this_ptr,width,height);
+  engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d460(this_ptr,width,height);
   _sprintf(local_124,"%s.raw");
   local_14 = engine_dosio_cpp_FUN_00460c70(&DAT_005cb02a,local_124,&DAT_005cb027);
   if (local_14 == (_FILE *)0x0) {

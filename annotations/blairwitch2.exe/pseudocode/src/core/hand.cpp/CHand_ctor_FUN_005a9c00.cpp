@@ -1,14 +1,12 @@
 // Name: core_hand.cpp_CHand_ctor_FUN_005a9c00
 // Address: 005a9c00
 // Address Range: [[005a9c00, 005a9d2e]]
-// Convention: unknown
-// Signature: CHand * core_hand_cpp_CHand_ctor_FUN_005a9c00(CHand *this_ptr)
+// Convention: __cdecl
+// Signature: CHand * __cdecl core_hand_cpp_CHand_ctor_FUN_005a9c00(CHand *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHand * core_hand_cpp_CHand_ctor_FUN_005a9c00(CHand *this_ptr)
+CHand * __cdecl core_hand_cpp_CHand_ctor_FUN_005a9c00(CHand *this_ptr)
 
 {
   CHand *this_ptr_00;

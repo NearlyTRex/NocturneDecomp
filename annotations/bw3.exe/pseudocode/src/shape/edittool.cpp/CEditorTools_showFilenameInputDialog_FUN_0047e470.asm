@@ -50,7 +50,7 @@
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
 ;   engine_font.cpp_FUN_004b0a20
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004df580
-;   engine_mini3d.cpp_FUN_004edaf0
+;   engine_mini3d.cpp_setAlpha_FUN_004edaf0
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0
 ;   shape_edittool.cpp_CInputString_backspace_FUN_0047bc60
 ;   shape_edittool.cpp_CInputString_deleteSelection_FUN_0047bc10
@@ -195,8 +195,8 @@ section .text
         ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
     ADD ESP,0x4                         ; 0047e5e2
     PUSH 0x3f800000                     ; 0047e5e5
-    CALL engine_mini3d.cpp_FUN_004edaf0 ; 0047e5ea
-        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edaf0()
+    CALL engine_mini3d.cpp_setAlpha_FUN_004edaf0 ; 0047e5ea
+        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004edaf0(float alpha)
     ADD ESP,0x4                         ; 0047e5ef
     PUSH -0x1                           ; 0047e5f2
     MOV EDX,dword ptr [0x01c5bb24]      ; 0047e5f4 | DAT_01c5bb24
@@ -223,8 +223,8 @@ section .text
         ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
     ADD ESP,0x4                         ; 0047e63b
     PUSH 0x3f800000                     ; 0047e63e
-    CALL engine_mini3d.cpp_FUN_004edaf0 ; 0047e643
-        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edaf0()
+    CALL engine_mini3d.cpp_setAlpha_FUN_004edaf0 ; 0047e643
+        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004edaf0(float alpha)
     ADD ESP,0x4                         ; 0047e648
     PUSH -0x1                           ; 0047e64b
     MOV EAX,[0x01c6b5ac]                ; 0047e64d | DAT_01c6b5ac

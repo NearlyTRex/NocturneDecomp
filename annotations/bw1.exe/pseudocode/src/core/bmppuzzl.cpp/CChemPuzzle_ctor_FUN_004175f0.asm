@@ -1,18 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CChemPuzzle * core_bmppuzzl_cpp_CChemPuzzle_ctor_FUN_004175f0(CChemPuzzle *this_ptr)
+; CChemPuzzle * __cdecl core_bmppuzzl_cpp_CChemPuzzle_ctor_FUN_004175f0(CChemPuzzle *this_ptr)
 ;
 ; Parameters:
 ; CChemPuzzle *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   engine_alphabit.cpp_staticInit_FUN_00415b20 at 00415b81
+;   core_bmppuzzl.cpp_staticInit_FUN_00415b20 at 00415b81
 ;
 ; Called Functions:
+;   core_bmppuzzl.cpp_CPuzzle_ctor_FUN_00415ba0
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d0a0
-;   engine_alphabit.cpp_FUN_00415ba0
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 004175f0
         ;   Label: core_bmppuzzl.cpp_CChemPuzzle_ctor_FUN_004175f0
     PUSH EAX                            ; 004175f4
-    CALL engine_alphabit.cpp_FUN_00415ba0 ; 004175f5
-        ;   XREF to: 00415ba0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415ba0()
+    CALL core_bmppuzzl.cpp_CPuzzle_ctor_FUN_00415ba0 ; 004175f5
+        ;   XREF to: 00415ba0 (UNCONDITIONAL_CALL)  ; CPuzzle * core_bmppuzzl.cpp_CPuzzle_ctor_FUN_00415ba0(CPuzzle * this_ptr)
     ADD ESP,0x4                         ; 004175fa
     ADD EAX,0x4                         ; 004175fd
     PUSH EAX                            ; 00417600

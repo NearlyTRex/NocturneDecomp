@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_prye_cpp_CPrye_getActorType_FUN_00517f70(CPrye *this_ptr)
+; CDemonActorType * __cdecl core_prye_cpp_CPrye_getActorType_FUN_00517f70(CPrye *this_ptr)
 ;
 ; Parameters:
 ; CPrye *          Stack[0x4]:4   this_ptr

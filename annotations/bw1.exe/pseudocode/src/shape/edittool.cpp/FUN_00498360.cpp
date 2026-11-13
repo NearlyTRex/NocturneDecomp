@@ -63,7 +63,10 @@ void __cdecl shape_edittool_cpp_FUN_00498360(CEditorTools *this_ptr,float scale_
   iStack_14 = (int)ROUND(fVar6);
   iVar17 = text_color;
   if (iVar1 != 0) {
-    engine_mini3d_cpp_FUN_00517d50();
+    iVar1 = (text_color & 0xffU) * 3;
+    engine_mini3d_cpp_setColor_FUN_00517d50
+              ((uint)(byte)(&DAT_01c4e9f8)[iVar1] << 0x10 | (uint)(byte)(&DAT_01c4e9f9)[iVar1] << 8
+               | (uint)(byte)(&DAT_01c4e9fa)[iVar1]);
     iVar17 = _DAT_01c4f020;
   }
   _DAT_01c4f020 = iVar17;
@@ -209,7 +212,7 @@ void __cdecl shape_edittool_cpp_FUN_00498360(CEditorTools *this_ptr,float scale_
     if ((*(byte *)((int)puVar2 + 0x13) & 0x80) == 0) {
       _sprintf((char *)&iStack_14,(char *)0x5dc26e);
       engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
-      engine_mini3d_cpp_FUN_00512320();
+      engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
       engine_font_cpp_FUN_004c1dd0();
     }
     iVar1 = iVar1 + 1;

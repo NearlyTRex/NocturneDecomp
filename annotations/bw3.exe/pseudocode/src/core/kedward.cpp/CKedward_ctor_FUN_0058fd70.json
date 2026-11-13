@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 81,
+    "complexity_score": 80,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
+    "pseudocode_lines": 35,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
       "unknown_param"
     ],
-    "total_lines": 75
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -32,9 +32,9 @@
         "0058fe6b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_kedward.cpp_CKedward_ctor_FUN_0058fd70",
-    "signature": "CKedward * core_kedward_cpp_CKedward_ctor_FUN_0058fd70(CKedward *this_ptr)"
+    "signature": "CKedward * __cdecl core_kedward_cpp_CKedward_ctor_FUN_0058fd70(CKedward *this_ptr)"
   },
   "function_calls": [
     {
@@ -109,7 +109,7 @@
   "suspects": [
     {
       "description": "Parameter/variable named unknown (needs investigation)",
-      "line": 28,
+      "line": 26,
       "match": "unknown_0xd090",
       "severity": "mild",
       "text": "pCVar1->unknown_0xd090 = 0;",
@@ -117,7 +117,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 38,
+      "line": 36,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "} while (pCVar3 != (CKedward *)((int)&(pCVar1->base).base.base.orient + 4));",
@@ -125,7 +125,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar2` is advanced into scratch `pCVar3`, then rebound via a later `pCVar2 = pCVar3;`. Functionally identical to the single-line self-update; replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
-      "line": 35,
+      "line": 33,
       "match": "pCVar3 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar2 = pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CKedward *)((pCVar2->base).base.base.actor_name + 4);",

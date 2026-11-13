@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSentinel * core_sentinel_cpp_CSentinel_dtor_FUN_0052bb40(CSentinel *this_ptr,uint flags)
+; CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_0052bb40(CSentinel *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSentinel *      Stack[0x4]:4   this_ptr

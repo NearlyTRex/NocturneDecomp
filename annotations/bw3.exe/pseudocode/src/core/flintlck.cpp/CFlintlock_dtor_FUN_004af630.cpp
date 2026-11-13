@@ -1,14 +1,12 @@
 // Name: core_flintlck.cpp_CFlintlock_dtor_FUN_004af630
 // Address: 004af630
 // Address Range: [[004af630, 004af67d]]
-// Convention: unknown
-// Signature: CFlintlock * core_flintlck_cpp_CFlintlock_dtor_FUN_004af630(CFlintlock *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CFlintlock * __cdecl core_flintlck_cpp_CFlintlock_dtor_FUN_004af630(CFlintlock *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CFlintlock * core_flintlck_cpp_CFlintlock_dtor_FUN_004af630(CFlintlock *this_ptr,uint flags)
+CFlintlock * __cdecl core_flintlck_cpp_CFlintlock_dtor_FUN_004af630(CFlintlock *this_ptr,uint flags)
 
 {
   CWeapon *pCVar1;

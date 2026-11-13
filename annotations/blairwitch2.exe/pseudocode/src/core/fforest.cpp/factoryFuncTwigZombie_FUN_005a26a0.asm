@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fforest_cpp_factoryFuncTwigZombie_FUN_005a26a0(void)
+; CTwigZombie * __cdecl core_fforest_cpp_factoryFuncTwigZombie_FUN_005a26a0(void)
 ;
 ;
 ; Called Functions:

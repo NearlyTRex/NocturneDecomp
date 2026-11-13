@@ -1,15 +1,14 @@
 // Name: core_firestff.cpp_CFirestaff_ctor_FUN_004a4ad0
 // Address: 004a4ad0
 // Address Range: [[004a4ad0, 004a4cc7]]
-// Convention: unknown
-// Signature: CFirestaff * core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr)
+// Convention: __cdecl
+// Signature: CFirestaff * __cdecl core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CFirestaff * core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr)
+CFirestaff * __cdecl core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr)
 
 {
   CFirestaff *pCVar1;

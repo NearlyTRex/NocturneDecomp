@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_shadowsc_cpp_CShadowsc_getActorType_FUN_00560490(CShadowsc *this_ptr)
+; CDemonActorType * __cdecl core_shadowsc_cpp_CShadowsc_getActorType_FUN_00560490(CShadowsc *this_ptr)
 ;
 ; Parameters:
 ; CShadowsc *      Stack[0x4]:4   this_ptr

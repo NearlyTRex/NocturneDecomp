@@ -17,13 +17,13 @@ void __cdecl convertPaletteToDirectColor(void);
 // Address: 00588530
 int __cdecl reinitializeDirectDraw(void);
 
-// Original: wincore_wddvmem.cpp_FUN_0058866e
-// Address: 0058866e
-void FUN_0058866e(void);
+// Original: wincore_wddvmem.cpp_FUN_00588670
+// Address: 00588670
+void FUN_00588670(void);
 
-// Original: wincore_wddvmem.cpp_FUN_0058873c
-// Address: 0058873c
-void FUN_0058873c(void);
+// Original: wincore_wddvmem.cpp_FUN_00588740
+// Address: 00588740
+void FUN_00588740(void);
 
 // Original: wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_00588790
 // Address: 00588790
@@ -33,9 +33,9 @@ int __cdecl initializeGraphicsSystem(int width,int height);
 // Address: 00588900
 void __cdecl FUN_00588900(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005889be
-// Address: 005889be
-void FUN_005889be(void);
+// Original: wincore_wddvmem.cpp_FUN_005889c0
+// Address: 005889c0
+void FUN_005889c0(void);
 
 // Original: wincore_wddvmem.cpp_FUN_00588a50
 // Address: 00588a50

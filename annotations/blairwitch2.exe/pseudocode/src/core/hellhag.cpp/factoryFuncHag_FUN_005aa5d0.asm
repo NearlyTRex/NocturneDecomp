@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hellhag_cpp_factoryFuncHag_FUN_005aa5d0(void)
+; CHag * __cdecl core_hellhag_cpp_factoryFuncHag_FUN_005aa5d0(void)
 ;
 ;
 ; Called Functions:

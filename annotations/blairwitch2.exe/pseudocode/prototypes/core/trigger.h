@@ -7,7 +7,7 @@
 
 // Original: core_trigger.cpp_staticInit_FUN_00577690
 // Address: 00577690
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_trigger.cpp_factoryFuncTrigger_FUN_005776c0
 // Address: 005776c0
@@ -15,7 +15,7 @@ CTrigger * __cdecl factoryFuncTrigger(void);
 
 // Original: core_trigger.cpp_CTrigger_getActorType_FUN_005776e0
 // Address: 005776e0
-CDemonActorType * CTrigger::getActorType(CTrigger *this_ptr);
+CDemonActorType * __cdecl CTrigger::getActorType(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_ctor_FUN_005776f0
 // Address: 005776f0

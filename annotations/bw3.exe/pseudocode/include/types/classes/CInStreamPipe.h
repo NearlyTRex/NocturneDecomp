@@ -7,13 +7,14 @@ struct CCodec;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CInStream.h"
 
 // Structure: CInStreamPipe
 // RTTI size 36; ctor 004417f0 calls the in-stream base ctor then zeroes +4..+0x20
 // Ghidra size: 0x24 (36 bytes)
 #pragma pack(push, 1)
 typedef struct CInStreamPipe {
-    void* vtable; // 0x0, stream vtable pointer; the abstract base ctor (00572530) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB
+    CInStream base; // 0x0, derived
     struct CCodec* codec; // 0x4, open 00441bf0 stores arg 1 and calls its reset slot; fillBuffer 00441c80 calls its process(source, out) and flush(out) slots; close 00441b60 deletes it when owns_streams
     void* source; // 0x8, open stores arg 2 (an in-stream; no stream base type in the DB); passed to codec process; isOpen forwards to its isOpen slot; deleted by close when owns_streams
     int owns_streams; // 0xc, open stores arg 3; close calls the codec and source dtors with flag 2 only when set

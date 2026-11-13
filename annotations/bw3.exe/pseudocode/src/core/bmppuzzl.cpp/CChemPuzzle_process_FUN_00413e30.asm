@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bmppuzzl_cpp_CChemPuzzle_process_FUN_00413e30(CChemPuzzle *this_ptr)
+; void __cdecl core_bmppuzzl_cpp_CChemPuzzle_process_FUN_00413e30(CChemPuzzle *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CChemPuzzle *    Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_SolvedChemistryPuzzle_005b69ee
@@ -17,7 +18,7 @@
 ;   undefined4 DAT_01d70a78
 ;
 ; Called Functions:
-;   core_bmppuzzl.cpp_FUN_004119a0
+;   core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;
 ; *****************************************************************************
@@ -312,8 +313,8 @@ section .text
     PUSH EDI                            ; 004141a6
     PUSH EBX                            ; 004141a7
     MOV dword ptr [0x01c5fae4],EDI      ; 004141a8 | DAT_01c5fae4
-    CALL core_bmppuzzl.cpp_FUN_004119a0 ; 004141ae
-        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_004119a0()
+    CALL core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0 ; 004141ae
+        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 004141b3
     POP EBP                             ; 004141b6
     POP EDI                             ; 004141b7
@@ -357,8 +358,8 @@ section .text
     PUSH EAX                            ; 00414217
     PUSH EBX                            ; 00414218
     MOV [0x01c5fae4],EAX                ; 00414219 | DAT_01c5fae4
-    CALL core_bmppuzzl.cpp_FUN_004119a0 ; 0041421e
-        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_004119a0()
+    CALL core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0 ; 0041421e
+        ;   XREF to: 004119a0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 00414223
     MOV dword ptr [EBX + 0x930],0xffffffff ; 00414226
     POP EBP                             ; 00414230

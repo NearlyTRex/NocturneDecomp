@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spireagl_cpp_factoryFuncSpiritEagle_FUN_005991a0(void)
+; CSpiritEagle * __cdecl core_spireagl_cpp_factoryFuncSpiritEagle_FUN_005991a0(void)
 ;
 ;
 ; Called Functions:

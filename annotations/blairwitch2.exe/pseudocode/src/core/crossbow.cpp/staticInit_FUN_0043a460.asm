@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_crossbow_cpp_staticInit_FUN_0043a460(void)
+; void __cdecl core_crossbow_cpp_staticInit_FUN_0043a460(void)
 ;
 ;
 ; Called Functions:

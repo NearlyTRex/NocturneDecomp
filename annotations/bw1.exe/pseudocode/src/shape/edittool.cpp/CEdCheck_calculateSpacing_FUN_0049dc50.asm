@@ -7,7 +7,7 @@
 ; CEdCheck *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_0049dace at 0049db66
+;   shape_edittool.cpp_FUN_0049dad0 at 0049db66
 ;   shape_edittool.cpp_FUN_0049dc70 at 0049dceb
 ;
 ; Called Functions:

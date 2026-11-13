@@ -1,0 +1,171 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 135,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 30,
+    "suspect_count": 10,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 76
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0043fd10",
+    "address_range": [
+      [
+        "0043fd10",
+        "0043fd5f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_cloth.cpp_FUN_0043fd10",
+    "signature": "void core_cloth_cpp_FUN_0043fd10(void)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 35,
+      "INT_ADD": 20,
+      "INT_AND": 21,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 17,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 171
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b1890",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00438660",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "int *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "uint *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "piVar2 = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (0 < *in_stack_00000004) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "if ((uint *)(iVar1 + 0x3ab24) == in_stack_00000008) break;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar1 + 0x3ab24) = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar1 + 0x3ab28) = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar1 + 0x3ab2c) = in_stack_00000008[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (*in_stack_00000004 <= iVar3) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "} while (iVar3 < *in_stack_00000004);",
+      "type": "stack_param"
+    }
+  ]
+}

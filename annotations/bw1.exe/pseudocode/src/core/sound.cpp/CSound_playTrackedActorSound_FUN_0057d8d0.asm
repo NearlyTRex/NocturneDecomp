@@ -14,7 +14,7 @@
 ;   core_chain.cpp_CChain_process_FUN_00435c70 at 00436554
 ;   core_pendulum.cpp_CPendulum_updateSwing_FUN_00536a20 at 00536f51
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d3fa
-;   core_sound.cpp_FUN_0057c57e at 0057ca01
+;   core_sound.cpp_FUN_0057c580 at 0057ca01
 ;   core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005a89c0 at 005a89f4
 ;
 ; Called Functions:

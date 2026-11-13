@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 163,
+    "complexity_score": 162,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 27,
     "suspect_count": 12,
     "suspect_types": [
       "negative_offset",
       "pointer_truncation",
       "suspect_float"
     ],
-    "total_lines": 73
+    "total_lines": 72
   },
   "cross_references": [
     {
@@ -32,9 +32,9 @@
         "005a0af1"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_asgaya.cpp_CAsgaya_ctor_FUN_005a0a10",
-    "signature": "CAsgaya * core_asgaya_cpp_CAsgaya_ctor_FUN_005a0a10(CAsgaya *this_ptr)"
+    "signature": "CAsgaya * __cdecl core_asgaya_cpp_CAsgaya_ctor_FUN_005a0a10(CAsgaya *this_ptr)"
   },
   "function_calls": [
     {
@@ -122,7 +122,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 11,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].height_cache[0x45][0x11] = (int)&g_CAsgayaVTable;",
@@ -130,7 +130,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 14,
+      "line": 12,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].height_cache_tags[0][0x3b] = 0x3f19999a;",
@@ -138,7 +138,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
+      "line": 13,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].height_cache_tags[0][0x3c] = 0x3f666666;",
@@ -146,7 +146,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 14,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].height_cache_tags[0][0x3f] = 0x3fcccccd;",
@@ -154,7 +154,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
+      "line": 15,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].height_cache_tags[0][0x40] = -0x3b864000;",
@@ -162,7 +162,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 19,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "((CDeformableModelInstance *)(pCVar2[-2].height_cache[0x45] + 0x12),",
@@ -170,7 +170,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 21,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "pCVar2[-2].height_cache[0x5d][0x4c] = 0;",
@@ -178,7 +178,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 28,
+      "line": 26,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].path_heading.y = 1.4013e-43;",
@@ -186,7 +186,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 28,
+      "line": 26,
       "match": "1.4013e-43",
       "severity": "mild",
       "text": "pCVar2[-1].path_heading.y = 1.4013e-43;",
@@ -194,7 +194,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
+      "line": 27,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].update_timer = 0x40000000;",
@@ -202,7 +202,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 31,
+      "line": 29,
       "match": "pCVar2[-2].",
       "severity": "mild",
       "text": "return (CAsgaya *)(pCVar2[-2].height_cache[0x44] + 0x20);",
@@ -210,7 +210,7 @@
     },
     {
       "description": "Pointer value `&g_CAsgayaVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 13,
+      "line": 11,
       "match": "(int)&g_CAsgayaVTable",
       "severity": "moderate",
       "text": "pCVar2[-2].height_cache[0x45][0x11] = (int)&g_CAsgayaVTable;",

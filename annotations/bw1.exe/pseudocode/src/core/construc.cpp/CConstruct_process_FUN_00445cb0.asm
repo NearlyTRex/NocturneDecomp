@@ -443,8 +443,8 @@ section .text
     JNZ 0x004461c7                      ; 004461a8
         ;   XREF to: 004461c7 (CONDITIONAL_JUMP)  ; LAB_004461c7
     PUSH EBX                            ; 004461aa
-    CALL core_construc.cpp_FUN_004472a0 ; 004461ab
-        ;   XREF to: 004472a0 (UNCONDITIONAL_CALL)  ; undefined core_construc.cpp_FUN_004472a0()
+    CALL core_construc.cpp_CConstruct_explode_FUN_004472a0 ; 004461ab
+        ;   XREF to: 004472a0 (UNCONDITIONAL_CALL)  ; void core_construc.cpp_CConstruct_explode_FUN_004472a0(CConstruct * this_ptr)
     ADD ESP,0x4                         ; 004461b0
     PUSH 0x5d6e46                       ; 004461b3 | = "ConstructDead"
     MOV ESI,dword ptr [0x0061b4d0]      ; 004461b8 | DAT_0061b4d0
@@ -674,8 +674,8 @@ section .text
     MOV EAX,[0x0061f650]                ; 00446457 | DAT_0061f650
     PUSH EAX                            ; 0044645c | DAT_01d2c900
     ADD ESI,0x48                        ; 0044645d
-    CALL core_mission.cpp_FUN_0051b740  ; 00446460
-        ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b740()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 00446460
+        ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     MOV dword ptr [ESI + 0xc394],0x0    ; 00446465
     INC EDI                             ; 0044646f
     MOV EDX,dword ptr [EBX + 0xc394]    ; 00446470

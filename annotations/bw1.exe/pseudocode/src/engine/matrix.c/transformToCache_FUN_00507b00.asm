@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   shape_edittool.cpp_FUN_00498360 at 0049840f
 ;   shape_edittool.cpp_FUN_00498660 at 0049869e
-;   shape_edittool.cpp_FUN_004987ae at 004988ed
+;   shape_edittool.cpp_FUN_004987b0 at 004988ed
 ;
 ; Called Functions:
 ;   engine_special.cpp_FUN_00580173

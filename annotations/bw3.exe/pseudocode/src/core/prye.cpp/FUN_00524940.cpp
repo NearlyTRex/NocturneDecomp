@@ -565,7 +565,8 @@ LAB_00524bde:
             for (local_14 = 0; local_14 < pCStack_18->item_count; local_14 = local_14 + 1) {
               pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar11->items[0],DAT_007e1a50);
               if (pCVar4 != (CDemonActor *)0x0) {
-                core_charactr_cpp_FUN_004319d0(param_1,0,pCVar4,0,0);
+                core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
+                          (&param_1->base,0,(int)pCVar4,0,0);
                 pCVar4[0x1a].create_event[0x38] = '\x01';
                 pCVar4[0x1a].create_event[0x39] = '\0';
                 pCVar4[0x1a].create_event[0x3a] = '\0';
@@ -598,7 +599,8 @@ LAB_00524bde:
         core_inv_cpp_CInventory_removeItem_FUN_004dbaa0(apCStack_60[2],param_1->target_actor,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
                   (0x01D81080,param_1->target_actor);
-        core_charactr_cpp_FUN_004319d0(param_1,1,param_1->target_actor,0,0);
+        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
+                  (&param_1->base,1,(int)param_1->target_actor,0,0);
         iVar5 = core_actor_cpp_isOfClass_FUN_0040c790(param_1->target_actor,"CTrap");
         if (iVar5 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(pCStack_34,0x21,1);

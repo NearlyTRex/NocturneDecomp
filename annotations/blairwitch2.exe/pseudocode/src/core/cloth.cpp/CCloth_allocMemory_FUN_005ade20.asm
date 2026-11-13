@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_005ade80
+;   core_cloth.cpp_CCloth_free_FUN_005ade80
 ;   core_main.c_FUN_004e4500
 ;   crt_memory.c_operator_new_array_FUN_005b8df8
 ;
@@ -28,8 +28,8 @@ section .text
         ;   Label: core_cloth.cpp_CCloth_allocMemory_FUN_005ade20
     MOV EBX,dword ptr [ESP + 0x8]       ; 005ade21
     PUSH EBX                            ; 005ade25
-    CALL core_cloth.cpp_FUN_005ade80    ; 005ade26
-        ;   XREF to: 005ade80 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_005ade80()
+    CALL core_cloth.cpp_CCloth_free_FUN_005ade80 ; 005ade26
+        ;   XREF to: 005ade80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_free_FUN_005ade80(CCloth * this_ptr)
     MOV EAX,dword ptr [EBX + 0x104]     ; 005ade2b
     ADD ESP,0x4                         ; 005ade31
     SHL EAX,0x2                         ; 005ade34

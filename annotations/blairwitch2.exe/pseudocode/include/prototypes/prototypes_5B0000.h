@@ -37,7 +37,7 @@
 // FUNCTION PROTOTYPES - Range 0x5B0000
 // =============================================================================
 
-void core_cloth_cpp_FUN_005b0c8c(int param_1);
+void core_cloth_cpp_FUN_005b0c90(void);
 void core_cloth_cpp_FUN_005b0ce0(int param_1,int param_2,int param_3);
 int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_005b0ef0(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_render_FUN_005b0fe0(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
@@ -56,7 +56,7 @@ void __cdecl core_cloth_cpp_FUN_005b1980(CCloth *this_ptr,int vertex_index);
 void core_cloth_cpp_FUN_005b19b0(int param_1,float *param_2);
 float __cdecl core_cloth_cpp_vectorLengthFast_FUN_005b1b10(CVector3f *v);
 CVector3f * __cdecl core_cloth_cpp_applyLightAttenuation_FUN_005b1b40(CVector3f *v);
-SClothBone * core_cloth_cpp_SClothBone_ctor_FUN_005b1b90(SClothBone *this_ptr);
+SClothBone * __cdecl core_cloth_cpp_SClothBone_ctor_FUN_005b1b90(SClothBone *this_ptr);
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_005b1ba0(SClothVertex *this_ptr);
 CBox * __cdecl core_box_cpp_CBox_ctor_FUN_005b1bc0(CBox *this_ptr);
 CBox * __cdecl core_box_cpp_CBox_dtor_FUN_005b1c70(CBox *this_ptr,uint flags);
@@ -68,10 +68,10 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float 
 void __cdecl core_box_cpp_CBox_loadFromFile_FUN_005b4300(CBox *this_ptr,_FILE *file_handle);
 void __cdecl core_box_cpp_CBox_saveToFile_FUN_005b44b0(CBox *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_box_cpp_CBox_setupVelocities_FUN_005b4610(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity);
-SScrape * core_box_cpp_SScrape_ctor_FUN_005b46b0(SScrape *this_ptr);
+SScrape * __cdecl core_box_cpp_SScrape_ctor_FUN_005b46b0(SScrape *this_ptr);
 void __cdecl core_chain_cpp_staticInit_FUN_005b46c0(void);
 CChain * __cdecl core_chain_cpp_factoryFuncChain_FUN_005b46f0(void);
-CDemonActorType * core_chain_cpp_CChain_getActorType_FUN_005b4710(CChain *this_ptr);
+CDemonActorType * __cdecl core_chain_cpp_CChain_getActorType_FUN_005b4710(CChain *this_ptr);
 CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_005b4720(CChain *this_ptr);
 void core_chain_cpp_FUN_005b4860(int param_1);
 void __cdecl core_chain_cpp_CChain_setup_FUN_005b48e0(CChain *this_ptr);
@@ -81,8 +81,8 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_005b56c0(CChain *this_pt
 CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_005b5ca0(CChain *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_chain_cpp_CChain_archive_FUN_005b5e10(CChain *this_ptr);
 undefined4 core_chain_cpp_FUN_005b5f40(void);
-CChain * core_chain_cpp_CChain_dtor_FUN_005b5f50(CChain *this_ptr,uint flags);
-SChainVertex * core_chain_cpp_SChainVertex_ctor_FUN_005b5fa0(SChainVertex *this_ptr);
+CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_005b5f50(CChain *this_ptr,uint flags);
+SChainVertex * __cdecl core_chain_cpp_SChainVertex_ctor_FUN_005b5fa0(SChainVertex *this_ptr);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_005b5fe0(CMorphModel *this_ptr);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_dtor_FUN_005b6010(CMorphModel *this_ptr,uint flags);
 void __cdecl core_morph_cpp_CMorphModel_free_FUN_005b6030(CMorphModel *this_ptr);

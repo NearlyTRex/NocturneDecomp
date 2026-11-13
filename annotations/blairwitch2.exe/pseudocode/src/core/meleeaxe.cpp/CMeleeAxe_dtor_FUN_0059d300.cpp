@@ -1,14 +1,12 @@
 // Name: core_meleeaxe.cpp_CMeleeAxe_dtor_FUN_0059d300
 // Address: 0059d300
 // Address Range: [[0059d300, 0059d34d]]
-// Convention: unknown
-// Signature: CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,uint flags)
+CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_dtor_FUN_0059d300(CMeleeAxe *this_ptr,uint flags)
 
 {
   CWeapon *pCVar1;

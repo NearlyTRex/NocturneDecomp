@@ -2,13 +2,13 @@
 // Address: 005a1f80
 // Address Range: [[005a1f80, 005a1fa5]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_trstream_cpp_COutStreamDebug_seek_FUN_005a1f80(COutStreamDebug *this_ptr)
+// Signature: int __cdecl support_trstream_cpp_COutStreamDebug_seek_FUN_005a1f80(COutStreamDebug *this_ptr,int offset,int origin)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl support_trstream_cpp_COutStreamDebug_seek_FUN_005a1f80(COutStreamDebug *this_ptr)
+int __cdecl support_trstream_cpp_COutStreamDebug_seek_FUN_005a1f80(COutStreamDebug *this_ptr,int offset,int origin)
 
 {
   _DAT_01d1d400 = "..\\support\\trstream.cpp";

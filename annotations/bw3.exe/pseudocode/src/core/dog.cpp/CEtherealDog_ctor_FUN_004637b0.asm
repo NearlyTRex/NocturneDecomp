@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CEtherealDog * core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr)
+; CEtherealDog * __cdecl core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr)
 ;
 ; Parameters:
 ; CEtherealDog *   Stack[0x4]:4   this_ptr

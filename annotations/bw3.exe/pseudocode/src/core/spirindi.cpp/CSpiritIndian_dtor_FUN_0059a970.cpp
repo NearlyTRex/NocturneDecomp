@@ -1,14 +1,12 @@
 // Name: core_spirindi.cpp_CSpiritIndian_dtor_FUN_0059a970
 // Address: 0059a970
 // Address Range: [[0059a970, 0059aa38]]
-// Convention: unknown
-// Signature: CSpiritIndian * core_spirindi_cpp_CSpiritIndian_dtor_FUN_0059a970(CSpiritIndian *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSpiritIndian * __cdecl core_spirindi_cpp_CSpiritIndian_dtor_FUN_0059a970(CSpiritIndian *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSpiritIndian * core_spirindi_cpp_CSpiritIndian_dtor_FUN_0059a970(CSpiritIndian *this_ptr,uint flags)
+CSpiritIndian * __cdecl core_spirindi_cpp_CSpiritIndian_dtor_FUN_0059a970(CSpiritIndian *this_ptr,uint flags)
 
 {
   CMorph *pCVar1;

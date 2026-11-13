@@ -1,14 +1,12 @@
 // Name: core_shadow.cpp_CDemonShadow_ctor_FUN_00545fc0
 // Address: 00545fc0
 // Address Range: [[00545fc0, 00546015]]
-// Convention: unknown
-// Signature: CDemonShadow * core_shadow_cpp_CDemonShadow_ctor_FUN_00545fc0(CDemonShadow *this_ptr)
+// Convention: __cdecl
+// Signature: CDemonShadow * __cdecl core_shadow_cpp_CDemonShadow_ctor_FUN_00545fc0(CDemonShadow *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDemonShadow * core_shadow_cpp_CDemonShadow_ctor_FUN_00545fc0(CDemonShadow *this_ptr)
+CDemonShadow * __cdecl core_shadow_cpp_CDemonShadow_ctor_FUN_00545fc0(CDemonShadow *this_ptr)
 
 {
   CShadow *pCVar1;

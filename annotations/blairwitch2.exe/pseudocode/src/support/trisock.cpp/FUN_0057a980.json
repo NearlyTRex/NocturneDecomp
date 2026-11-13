@@ -19,9 +19,9 @@
   },
   "cross_references": [
     {
-      "addr": "0057a47c",
+      "addr": "0057a480",
       "from_addr": "0057a5b3",
-      "name": "support_trisock.cpp_FUN_0057a47c",
+      "name": "support_trisock.cpp_FUN_0057a480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -79,21 +79,6 @@
     "call_site_count": 2,
     "call_sites": [
       {
-        "call_addr": "0057a5b3",
-        "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0057a47c",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
         "call_addr": "0057a827",
         "call_type": "direct",
         "caller": "support_trisock.cpp_FUN_0057a820",
@@ -105,12 +90,27 @@
         ],
         "stack_bytes": 8,
         "stack_params": 2
+      },
+      {
+        "call_addr": "0057a5b3",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0057a480",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 5,
+    "estimated_params": 3,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -214,11 +214,11 @@
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
     }
   ]

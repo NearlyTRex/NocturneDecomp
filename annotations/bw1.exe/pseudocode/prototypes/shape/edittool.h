@@ -7,27 +7,27 @@
 
 // Original: shape_edittool.cpp_staticInit_FUN_00492920
 // Address: 00492920
-void staticInit(void);
+void __cdecl staticInit(void);
 
-// Original: shape_edittool.cpp_FUN_0049293e
-// Address: 0049293e
-void FUN_0049293e(int param_1,int param_2);
+// Original: shape_edittool.cpp_FUN_00492940
+// Address: 00492940
+void FUN_00492940(void);
 
 // Original: shape_edittool.cpp_FUN_00492970
 // Address: 00492970
 void FUN_00492970(int param_1,int param_2,int param_3);
 
-// Original: shape_edittool.cpp_FUN_004929dc
-// Address: 004929dc
-void FUN_004929dc(void);
+// Original: shape_edittool.cpp_FUN_004929e0
+// Address: 004929e0
+void FUN_004929e0(void);
 
 // Original: shape_edittool.cpp_FUN_00492a40
 // Address: 00492a40
 void FUN_00492a40(int param_1,int param_2,int param_3,int param_4,int param_5);
 
-// Original: shape_edittool.cpp_FUN_00492bce
-// Address: 00492bce
-void FUN_00492bce(uint param_1);
+// Original: shape_edittool.cpp_FUN_00492bd0
+// Address: 00492bd0
+void FUN_00492bd0(void);
 
 // Original: shape_edittool.cpp_FUN_00492c20
 // Address: 00492c20
@@ -37,9 +37,9 @@ void FUN_00492c20(int param_1,int param_2,int param_3,int param_4,uint param_5,u
 // Address: 00492d40
 void FUN_00492d40(int param_1,int param_2,int param_3,int param_4,uint param_5);
 
-// Original: shape_edittool.cpp_FUN_00492dde
-// Address: 00492dde
-void FUN_00492dde(int param_1,int param_2,int param_3);
+// Original: shape_edittool.cpp_FUN_00492de0
+// Address: 00492de0
+void FUN_00492de0(void);
 
 // Original: shape_edittool.cpp_FUN_00492e10
 // Address: 00492e10
@@ -103,7 +103,7 @@ CEditorTools * __cdecl CEditorTools::ctor(CEditorTools *this_ptr);
 
 // Original: shape_edittool.cpp_CEditorTools_dtor_FUN_00493bd0
 // Address: 00493bd0
-CEditorTools * CEditorTools::dtor(CEditorTools *this_ptr,uint flags);
+CEditorTools * __cdecl CEditorTools::dtor(CEditorTools *this_ptr,uint flags);
 
 // Original: shape_edittool.cpp_CEditorTools_init_FUN_00493c30
 // Address: 00493c30
@@ -141,13 +141,13 @@ void __cdecl CEditorTools::showError(CEditorTools *this_ptr,char *format);
 // Address: 00494400
 void __cdecl CEditorTools::displayCenteredStatusMessage(CEditorTools *this_ptr,char *format);
 
-// Original: shape_edittool.cpp_FUN_004944fe
-// Address: 004944fe
-void FUN_004944fe(undefined4 param_1,char *param_2);
+// Original: shape_edittool.cpp_FUN_00494500
+// Address: 00494500
+void FUN_00494500(void);
 
-// Original: shape_edittool.cpp_FUN_004945fe
-// Address: 004945fe
-void FUN_004945fe(CEditorTools *param_1,char *param_2);
+// Original: shape_edittool.cpp_FUN_00494600
+// Address: 00494600
+void FUN_00494600(void);
 
 // Original: shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690
 // Address: 00494690
@@ -169,9 +169,9 @@ undefined4 FUN_00494ea0(undefined4 param_1,char *param_2);
 // Address: 00494fd0
 int __cdecl CEditorTools::showFileSelectionDialog(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags);
 
-// Original: shape_edittool.cpp_FUN_0049517e
-// Address: 0049517e
-undefined4 FUN_0049517e(CEditorTools *param_1,undefined4 param_2,char *param_3,char *param_4,byte param_5);
+// Original: shape_edittool.cpp_FUN_00495180
+// Address: 00495180
+undefined4 FUN_00495180(void);
 
 // Original: shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0
 // Address: 004958d0
@@ -253,17 +253,17 @@ void __cdecl CEditorTools::setClipboardText(CEditorTools *this_ptr,char *text_da
 // Address: 00498360
 void __cdecl FUN_00498360(CEditorTools *this_ptr,float scale_factor,int text_color);
 
-// Original: shape_edittool.cpp_FUN_004985ae
-// Address: 004985ae
-void FUN_004985ae(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5);
+// Original: shape_edittool.cpp_FUN_004985b0
+// Address: 004985b0
+void FUN_004985b0(void);
 
 // Original: shape_edittool.cpp_FUN_00498660
 // Address: 00498660
 void FUN_00498660(float *param_1,float *param_2);
 
-// Original: shape_edittool.cpp_FUN_004987ae
-// Address: 004987ae
-void FUN_004987ae(undefined4 param_1,int *param_2,int *param_3,int param_4);
+// Original: shape_edittool.cpp_FUN_004987b0
+// Address: 004987b0
+void FUN_004987b0(void);
 
 // Original: shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_00498e40
 // Address: 00498e40
@@ -273,9 +273,9 @@ void __cdecl CEditorTools::displayMemoryDiagnostics(CEditorTools *this_ptr,char 
 // Address: 00498f10
 void FUN_00498f10(undefined4 param_1,int param_2,int param_3,int param_4);
 
-// Original: shape_edittool.cpp_FUN_004991ce
-// Address: 004991ce
-void FUN_004991ce(undefined4 param_1,float *param_2,undefined4 param_3);
+// Original: shape_edittool.cpp_FUN_004991d0
+// Address: 004991d0
+void FUN_004991d0(void);
 
 // Original: shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_00499250
 // Address: 00499250
@@ -285,9 +285,9 @@ void __cdecl CEditorTools::setMousePointerType(CEditorTools *this_ptr,int cursor
 // Address: 00499350
 undefined4 FUN_00499350(void);
 
-// Original: shape_edittool.cpp_FUN_0049935c
-// Address: 0049935c
-void FUN_0049935c(undefined4 param_1,undefined4 param_2);
+// Original: shape_edittool.cpp_FUN_00499360
+// Address: 00499360
+void FUN_00499360(void);
 
 // Original: shape_edittool.cpp_CStrList_ctor_FUN_00499380
 // Address: 00499380
@@ -561,13 +561,13 @@ int __cdecl calculateButtonWidth(char *button_text);
 // Address: 0049d9e0
 int __cdecl FUN_0049d9e0(char *button_text);
 
-// Original: shape_edittool.cpp_FUN_0049dace
-// Address: 0049dace
-void FUN_0049dace(CEdCheck *param_1,int param_2,int param_3,char *param_4);
+// Original: shape_edittool.cpp_FUN_0049dad0
+// Address: 0049dad0
+void FUN_0049dad0(void);
 
-// Original: shape_edittool.cpp_FUN_0049dbbe
-// Address: 0049dbbe
-void FUN_0049dbbe(int param_1);
+// Original: shape_edittool.cpp_FUN_0049dbc0
+// Address: 0049dbc0
+void FUN_0049dbc0(void);
 
 // Original: shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_0049dbe0
 // Address: 0049dbe0

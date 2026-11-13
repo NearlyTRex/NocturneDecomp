@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHeal * core_heal_cpp_CHeal_ctor_FUN_004d1960(CHeal *this_ptr)
+; CHeal * __cdecl core_heal_cpp_CHeal_ctor_FUN_004d1960(CHeal *this_ptr)
 ;
 ; Parameters:
 ; CHeal *          Stack[0x4]:4   this_ptr

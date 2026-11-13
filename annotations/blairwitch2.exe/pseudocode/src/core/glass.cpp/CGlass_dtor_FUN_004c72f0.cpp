@@ -1,14 +1,12 @@
 // Name: core_glass.cpp_CGlass_dtor_FUN_004c72f0
 // Address: 004c72f0
 // Address Range: [[004c72f0, 004c7354]]
-// Convention: unknown
-// Signature: CGlass * core_glass_cpp_CGlass_dtor_FUN_004c72f0(CGlass *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004c72f0(CGlass *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CGlass * core_glass_cpp_CGlass_dtor_FUN_004c72f0(CGlass *this_ptr,uint flags)
+CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004c72f0(CGlass *this_ptr,uint flags)
 
 {
   CMirror *pCVar1;

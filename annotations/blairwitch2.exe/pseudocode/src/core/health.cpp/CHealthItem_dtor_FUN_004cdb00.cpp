@@ -1,14 +1,12 @@
 // Name: core_health.cpp_CHealthItem_dtor_FUN_004cdb00
 // Address: 004cdb00
 // Address Range: [[004cdb00, 004cdb57]]
-// Convention: unknown
-// Signature: CHealthItem * core_health_cpp_CHealthItem_dtor_FUN_004cdb00(CHealthItem *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004cdb00(CHealthItem *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHealthItem * core_health_cpp_CHealthItem_dtor_FUN_004cdb00(CHealthItem *this_ptr,uint flags)
+CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004cdb00(CHealthItem *this_ptr,uint flags)
 
 {
   CHealthItem *pCVar1;

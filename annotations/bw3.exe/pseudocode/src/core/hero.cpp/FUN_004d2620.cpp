@@ -15,7 +15,7 @@ void core_hero_cpp_FUN_004d2620(int param_1)
   CClothList *pCVar4;
   CDeformableModelInstance *pCVar5;
   
-  *(byte ***)(param_1 + 0x154) = &PTR_core_hero_cpp_FUN_004d26b0_005e1534;
+  *(byte ***)(param_1 + 0x154) = &PTR_core_hero_cpp_CHero_setup_FUN_004d26b0_005e1534;
   iVar1 = 0;
   do {
     if (param_1 == *(int *)(iVar1 + 0x1d5ba04)) {

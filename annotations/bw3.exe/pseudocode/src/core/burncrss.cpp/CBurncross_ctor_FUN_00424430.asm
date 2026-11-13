@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBurncross * core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr)
+; CBurncross * __cdecl core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr)
 ;
 ; Parameters:
 ; CBurncross *     Stack[0x4]:4   this_ptr

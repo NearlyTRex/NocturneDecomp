@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_carved_cpp_CCarved_getActorType_FUN_004286c0(CCarved *this_ptr)
+; CDemonActorType * __cdecl core_carved_cpp_CCarved_getActorType_FUN_004286c0(CCarved *this_ptr)
 ;
 ; Parameters:
 ; CCarved *        Stack[0x4]:4   this_ptr

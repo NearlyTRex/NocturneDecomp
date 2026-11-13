@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 79,
+    "complexity_score": 78,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 48,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 129
+    "total_lines": 128
   },
   "cross_references": [
     {
@@ -31,9 +31,9 @@
         "005a3e6b"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_unionzom.cpp_CUnionZombie_ctor_FUN_005a3d30",
-    "signature": "CUnionZombie * core_unionzom_cpp_CUnionZombie_ctor_FUN_005a3d30(CUnionZombie *this_ptr)"
+    "signature": "CUnionZombie * __cdecl core_unionzom_cpp_CUnionZombie_ctor_FUN_005a3d30(CUnionZombie *this_ptr)"
   },
   "function_calls": [
     {
@@ -154,7 +154,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 33,
+      "line": 32,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

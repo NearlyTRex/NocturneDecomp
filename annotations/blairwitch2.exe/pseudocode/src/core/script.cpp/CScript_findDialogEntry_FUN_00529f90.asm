@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_dbLoad_FUN_00529c10 at 00529dc8
-;   core_script.cpp_FUN_00522350 at 005246b7
+;   core_script.cpp_CScript_step_FUN_00522350 at 005246b7
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_mobster_cpp_CMobster_getActorType_FUN_0051c7c0(CMobster *this_ptr)
+; CDemonActorType * __cdecl core_mobster_cpp_CMobster_getActorType_FUN_0051c7c0(CMobster *this_ptr)
 ;
 ; Parameters:
 ; CMobster *       Stack[0x4]:4   this_ptr

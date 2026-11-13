@@ -11,17 +11,17 @@ from the wrong vtable struct, producing misleading pseudocode.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total mismatches found: 39
+  Total mismatches found: 40
 
   By union member used:
     _uc (CCharacter_vtable): 33
     _ue (CEnemy_vtable): 2
-    _uh (CHero_vtable): 4
+    _uh (CHero_vtable): 5
 
   By source file:
     core/turret.cpp                          6
+    core/basicene.cpp                        5
     core/lightgun.cpp                        5
-    core/basicene.cpp                        4
     core/crossbow.cpp                        4
     core/elephant.cpp                        4
     core/shotgun.cpp                         4
@@ -35,8 +35,8 @@ SUMMARY
 
   By object type:
     CTurret                   6  (CTurret -> CWeapon -> CDemonActor)
+    CBasicEnemy               5  (CBasicEnemy -> CEnemy -> CCharacter -> CDemonActor)
     CLightGun                 5  (CLightGun -> CWeapon -> CDemonActor)
-    CBasicEnemy               4  (CBasicEnemy -> CEnemy -> CCharacter -> CDemonActor)
     CCrossbow                 4  (CCrossbow -> CWeapon -> CDemonActor)
     CElephantGun              4  (CElephantGun -> CWeapon -> CDemonActor)
     CShotgun                  4  (CShotgun -> CWeapon -> CDemonActor)
@@ -60,18 +60,19 @@ DETAILED FINDINGS
     CTurret_updateInteraction_FUN_0057f970              this_ptr on CTurret          used _uc, need _uw  isGrabbable -> fire
     CTurret_updatePatrol_FUN_0057fa00                   this_ptr on CTurret          used _uc, need _uw  isGrabbable -> fire
 
+  core/basicene.cpp (5)
+    CBasicEnemy_advanceMotion_FUN_0059e7d0              this_ptr on CBasicEnemy      used _uh, need _ue  canDoHeroAction -> ?
+    CBasicEnemy_processStates_FUN_0059e8c0              this_ptr on CBasicEnemy      used _uh, need _ue  reset -> ?
+    CBasicEnemy_process_FUN_0059f420                    this_ptr on CBasicEnemy      used _uh, need _ue  canReachPickup -> ?
+    CBasicEnemy_process_FUN_0059f420                    this_ptr on CBasicEnemy      used _uh, need _ue  doHeroAction -> ?
+    CBasicEnemy_process_FUN_0059f420                    this_ptr on CBasicEnemy      used _uh, need _ue  isWeaponDrawn -> ?
+
   core/lightgun.cpp (5)
     CLightGun_fire_FUN_004e2e70                         this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CLightGun_fire_FUN_004e2e70                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
     CLightGun_fire_FUN_004e2e70                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
     CLightGun_renderAimBeam_FUN_004e3b10                this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
     CLightGun_renderAimBeam_FUN_004e3b10                this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
-
-  core/basicene.cpp (4)
-    CBasicEnemy_advanceMotion_FUN_0059e7d0              this_ptr on CBasicEnemy      used _uh, need _ue  canDoHeroAction -> ?
-    CBasicEnemy_process_FUN_0059f420                    this_ptr on CBasicEnemy      used _uh, need _ue  canReachPickup -> ?
-    CBasicEnemy_process_FUN_0059f420                    this_ptr on CBasicEnemy      used _uh, need _ue  doHeroAction -> ?
-    CBasicEnemy_process_FUN_0059f420                    this_ptr on CBasicEnemy      used _uh, need _ue  isWeaponDrawn -> ?
 
   core/crossbow.cpp (4)
     CCrossbow_fire_FUN_0043a7a0                         this_ptr on CCrossbow        used _uc, need _uw  isInvulnerable -> getMuzzlePoint

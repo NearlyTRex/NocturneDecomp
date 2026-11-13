@@ -625,6 +625,10 @@
       "type":"struct"
     },
     {
+      "name":"CInStream",
+      "type":"struct"
+    },
+    {
       "name":"CInStreamMemory",
       "type":"struct"
     },
@@ -721,6 +725,10 @@
       "type":"struct"
     },
     {
+      "name":"COutStream",
+      "type":"struct"
+    },
+    {
       "name":"COutStreamDebug",
       "type":"struct"
     },
@@ -806,6 +814,10 @@
     },
     {
       "name":"CPod_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CPuzzle",
       "type":"struct"
     },
     {
@@ -3058,6 +3070,10 @@
     },
     {
       "name":"CDemonActorTransformState",
+      "type":"struct"
+    },
+    {
+      "name":"CSlew",
       "type":"struct"
     },
     {
@@ -13823,11 +13839,11 @@
       "desc":"RTTI 3128; existing layout from bw_own_structs.json plus +0x54",
       "fields":[
         {
-          "comment":"puzzle base ctor 00415ba0 stores the base vtable at +0",
+          "comment":"derived",
           "len":4,
-          "name":"vtable",
+          "name":"base",
           "offset":0,
-          "type":"void*"
+          "type":"CPuzzle"
         },
         {
           "comment":"load 00415fc0 loads 'radioback'; render 00416620 displays it",
@@ -17118,11 +17134,11 @@
       "desc":"RTTI size 2372; ctor 004175f0: puzzle base ctor 00415ba0, CAlphaBitmap ctor at +4, arrinit 50 buttonStructs at +0x70, then the CChemPuzzle vtable at +0",
       "fields":[
         {
-          "comment":"puzzle vtable pointer: the shared puzzle base ctor (00415ba0) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field",
+          "comment":"derived",
           "len":4,
-          "name":"vtable",
+          "name":"base",
           "offset":0,
-          "type":"void*"
+          "type":"CPuzzle"
         },
         {
           "comment":"load 004177b0 loads 'chembackground' 640x480 into this+4; render 00418140 displays it first",
@@ -26481,14 +26497,33 @@
     {
       "alig":1,
       "cat":"/Nocturne/Class/Game",
-      "desc":"RTTI size 44; ctor 005a08d0 calls the in-stream base ctor then zeroes +4..+0x24",
+      "desc":"abstract input-stream base with no RTTI record; ctor 0059f540 and dtor 0059f550 store vtable 00607354, whose 9 slots are dtor, getChar, ungetChar, peekChar, read, seek, tell, isOpen, isEof; getChar, peekChar, read, isOpen and isEof hold the pure-virtual stub, ungetChar and seek share 0059f580 (returns 0), tell is 0059f590 (returns -1)",
       "fields":[
         {
-          "comment":"stream vtable pointer; the abstract base ctor (0059f540) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB",
+          "comment":"in-stream vtable pointer; each derived ctor overwrites the base's",
           "len":4,
           "name":"vtable",
           "offset":0,
           "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CInStream",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"RTTI size 44; ctor 005a08d0 calls the in-stream base ctor then zeroes +4..+0x24",
+      "fields":[
+        {
+          "comment":"derived",
+          "len":4,
+          "name":"base",
+          "offset":0,
+          "type":"CInStream"
         },
         {
           "comment":"open 005a0f60 stores CreateFileA(path, GENERIC_READ); close 005a0dc0 CloseHandle()s and zeroes it; every read slot returns -2 when it is 0",
@@ -26573,11 +26608,11 @@
       "desc":"RTTI size 20; ctor 005a1130 calls the in-stream base ctor then zeroes +4..+0x10",
       "fields":[
         {
-          "comment":"stream vtable pointer; the abstract base ctor (0059f540) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB",
+          "comment":"derived",
           "len":4,
-          "name":"vtable",
+          "name":"base",
           "offset":0,
-          "type":"void*"
+          "type":"CInStream"
         },
         {
           "comment":"open 005a1450 / openOwned 005a1480 store the buffer arg; getChar 005a1240 reads data[position]; close 005a1400 frees it when owns_data",
@@ -26620,11 +26655,11 @@
       "desc":"RTTI size 36; ctor 00443b90 calls the in-stream base ctor then zeroes +4..+0x20",
       "fields":[
         {
-          "comment":"stream vtable pointer; the abstract base ctor (0059f540) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB",
+          "comment":"derived",
           "len":4,
-          "name":"vtable",
+          "name":"base",
           "offset":0,
-          "type":"void*"
+          "type":"CInStream"
         },
         {
           "comment":"open 00443f90 stores arg 1 and calls its reset slot; fillBuffer 00444020 calls its process(source, out) and flush(out) slots; close 00443f00 deletes it when owns_streams",
@@ -29561,14 +29596,33 @@
     {
       "alig":1,
       "cat":"/Nocturne/Class/Game",
-      "desc":"RTTI size 4; ctor 005a1e10 calls the out-stream base ctor and stores its vtable; seek/tell (005a1f80) only report 'invalid operation'",
+      "desc":"abstract output-stream base with no RTTI record; 005a14b0 is both its ctor and dtor and stores vtable 00607404, whose 5 slots are dtor, putChar, write, seek, tell; putChar and write hold the pure-virtual stub, seek is 005a1390 (returns 0), tell is 005a13c0 (returns -1)",
       "fields":[
         {
-          "comment":"stream vtable pointer; the abstract output-stream base ctor (005a14b0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB",
+          "comment":"out-stream vtable pointer; each derived ctor overwrites the base's",
           "len":4,
           "name":"vtable",
           "offset":0,
           "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"COutStream",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"RTTI size 4; ctor 005a1e10 calls the out-stream base ctor and stores its vtable; seek/tell (005a1f80) only report 'invalid operation'",
+      "fields":[
+        {
+          "comment":"derived",
+          "len":4,
+          "name":"base",
+          "offset":0,
+          "type":"COutStream"
         }
       ],
       "importable":true,
@@ -29583,11 +29637,11 @@
       "desc":"RTTI size 8; ctor 005a17d0 calls the out-stream base ctor then zeroes +4",
       "fields":[
         {
-          "comment":"stream vtable pointer; the abstract output-stream base ctor (005a14b0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB",
+          "comment":"derived",
           "len":4,
-          "name":"vtable",
+          "name":"base",
           "offset":0,
-          "type":"void*"
+          "type":"COutStream"
         },
         {
           "comment":"open 005a19e0 stores fopen(path, mode); putChar 005a18c0 fputc()s to it, write fwrite()s, seek/tell fseek/ftell; close 005a19b0 fclose()s and zeroes it; attach stores a caller FILE",
@@ -29609,11 +29663,11 @@
       "desc":"RTTI size 24; ctor 005a1a90 calls the out-stream base ctor, zeroes +4..+0x10 and sets +0x14 = 1",
       "fields":[
         {
-          "comment":"stream vtable pointer; the abstract output-stream base ctor (005a14b0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB",
+          "comment":"derived",
           "len":4,
-          "name":"vtable",
+          "name":"base",
           "offset":0,
-          "type":"void*"
+          "type":"COutStream"
         },
         {
           "comment":"open 005a1d60 stores the buffer arg; putChar 005a1bc0 writes buffer[position] and realloc()s it by 0x4000 when growable; close 005a1d20 frees it when growable",
@@ -30841,6 +30895,25 @@
       "importable":true,
       "len":64,
       "name":"CPopcorn",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"abstract puzzle base with no RTTI record (name inferred from its subclasses); ctor 00415ba0 stores vtable 005fc944 and appends this to the puzzle list (count 007c394c, 10 entries from 007c3950, active puzzle 007c3978); dtor 00415bc0. Its 10 slots are dtor, getName (pure), reset, slot 3, slot 4, load, render, slot 7, process, onMouse; slots 2-9 default to the empty 00415bd0",
+      "fields":[
+        {
+          "comment":"puzzle vtable pointer; each derived ctor overwrites the base's",
+          "len":4,
+          "name":"vtable",
+          "offset":0,
+          "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"CPuzzle",
       "pack":false,
       "type":"struct"
     },
@@ -32206,6 +32279,37 @@
       "importable":true,
       "len":126108,
       "name":"CSkeleton",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
+          "name":"position",
+          "offset":0,
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"orientation",
+          "offset":12,
+          "type":"UOrientationVector"
+        },
+        {
+          "len":4,
+          "name":"slew_rate",
+          "offset":24,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "min_alig":1,
+      "name":"CSlew",
       "pack":false,
       "type":"struct"
     },

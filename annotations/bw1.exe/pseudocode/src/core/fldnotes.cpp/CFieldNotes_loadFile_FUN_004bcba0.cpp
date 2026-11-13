@@ -2,33 +2,31 @@
 // Address: 004bcba0
 // Address Range: [[004bcba0, 004bda9d]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes *this_ptr,char *param_2,char *param_3)
+// Signature: int __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes *this_ptr,char *file_name,char *error_text)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes *this_ptr,char *param_2,char *param_3)
+int __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes *this_ptr,char *file_name,char *error_text)
 
 {
   char cVar1;
   byte bVar2;
-  SNotesEntry *pSVar3;
-  _FILE *p_Var4;
-  bool bVar5;
-  long lVar6;
-  char *pcVar7;
-  undefined3 extraout_var;
-  int iVar8;
-  SNotesMap *pSVar9;
-  SNotesSection *pSVar10;
-  byte *pbVar11;
+  _FILE *p_Var3;
+  long lVar4;
+  char *pcVar5;
+  int iVar6;
+  SNotesEntry *pSVar7;
+  SNotesMap *pSVar8;
+  SNotesSection *pSVar9;
+  byte *pbVar10;
+  int iVar11;
   int iVar12;
-  int iVar13;
-  byte *pbVar14;
-  CFieldNotes *pCVar15;
+  byte *pbVar13;
+  CFieldNotes *pCVar14;
+  byte *pbVar15;
   byte *pbVar16;
-  byte *pbVar17;
   byte local_5b4 [1024];
   byte local_1b4 [256];
   char local_b4 [100];
@@ -51,17 +49,17 @@ uint __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes *th
   
   local_50 = (_FILE *)0x0;
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(this_ptr);
-  pCVar15 = this_ptr;
+  pCVar14 = this_ptr;
   do {
-    cVar1 = *param_2;
-    pCVar15->file_name[0] = cVar1;
+    cVar1 = *file_name;
+    pCVar14->file_name[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = param_2[1];
-    param_2 = param_2 + 2;
-    pCVar15->file_name[1] = cVar1;
-    pCVar15 = (CFieldNotes *)(pCVar15->file_name + 2);
+    cVar1 = file_name[1];
+    file_name = file_name + 2;
+    pCVar14->file_name[1] = cVar1;
+    pCVar14 = (CFieldNotes *)(pCVar14->file_name + 2);
   } while (cVar1 != '\0');
-  _DAT_01cc4268 = (uint)(param_3 != (char *)0x0);
+  _DAT_01cc4268 = (uint)(error_text != (char *)0x0);
   local_4c = engine_dosio_cpp_getFileSize_FUN_00478fb0("world",this_ptr->file_name);
   if (-1 < local_4c) {
     local_50 = engine_dosio_cpp_FUN_00479180("world",this_ptr->file_name,&DAT_005dfd0d);
@@ -70,363 +68,360 @@ uint __cdecl core_fldnotes_cpp_CFieldNotes_loadFile_FUN_004bcba0(CFieldNotes *th
       _DAT_01d1d404 = 0x8ee;
       core_main_c_FUN_005030e0("Can't open field notes file %s",this_ptr);
     }
-    lVar6 = _ftell(local_50);
+    lVar4 = _ftell(local_50);
     local_48 = (SNotesSection *)0x0;
     local_44 = (SNotesEntry *)0x0;
-    local_4c = local_4c + lVar6;
+    local_4c = local_4c + lVar4;
     do {
-      lVar6 = _ftell(local_50);
-      if ((local_4c <= lVar6) ||
-         (pcVar7 = _fgets((char *)local_5b4,0x400,local_50),
-         (byte *)pcVar7 != local_5b4)) goto LAB_004bccbd;
-      pcVar7 = strstr((char *)local_5b4,&DAT_005df822);
-      if (pcVar7 != (char *)0x0) {
-        *pcVar7 = '\0';
+      lVar4 = _ftell(local_50);
+      if ((local_4c <= lVar4) ||
+         (pcVar5 = _fgets((char *)local_5b4,0x400,local_50),
+         (byte *)pcVar5 != local_5b4)) goto LAB_004bccbd;
+      pcVar5 = strstr((char *)local_5b4,&DAT_005df822);
+      if (pcVar5 != (char *)0x0) {
+        *pcVar5 = '\0';
       }
       core_flashlit_cpp_FUN_004b9c50(local_5b4);
       if (local_5b4[0] != 0) {
-        pcVar7 = "section";
+        pcVar5 = "section";
         local_40 = local_1b4;
-        pbVar14 = local_5b4;
+        pbVar13 = local_5b4;
         do {
-          pbVar11 = pbVar14;
-          pbVar14 = pbVar11 + 1;
-        } while (((&DAT_00626114)[(byte)(*pbVar11 + 1)] & 2) != 0);
-        pbVar16 = local_40;
+          pbVar10 = pbVar13;
+          pbVar13 = pbVar10 + 1;
+        } while (((&DAT_00626114)[(byte)(*pbVar10 + 1)] & 2) != 0);
+        pbVar15 = local_40;
         bVar2 = "section"[0];
-        if (*pbVar11 == 0x5c) {
-          while (local_40 = pbVar16, bVar2 != 0) {
-            iVar13 = toupper((uint)*pbVar14);
-            iVar8 = toupper((uint)(byte)*pcVar7);
-            if (iVar13 != iVar8) goto LAB_004bceb4;
-            pbVar11 = (byte *)(pcVar7 + 1);
-            pcVar7 = pcVar7 + 1;
-            pbVar14 = pbVar14 + 1;
-            pbVar16 = local_40;
-            bVar2 = *pbVar11;
+        if (*pbVar10 == 0x5c) {
+          while (local_40 = pbVar15, bVar2 != 0) {
+            iVar12 = toupper((uint)*pbVar13);
+            iVar6 = toupper((uint)(byte)*pcVar5);
+            if (iVar12 != iVar6) goto LAB_004bceb4;
+            pbVar10 = (byte *)(pcVar5 + 1);
+            pcVar5 = pcVar5 + 1;
+            pbVar13 = pbVar13 + 1;
+            pbVar15 = local_40;
+            bVar2 = *pbVar10;
           }
-          while (((&DAT_00626114)[(byte)(*pbVar14 + 1)] & 2) != 0) {
-            pbVar14 = pbVar14 + 1;
+          while (((&DAT_00626114)[(byte)(*pbVar13 + 1)] & 2) != 0) {
+            pbVar13 = pbVar13 + 1;
           }
           do {
-            bVar2 = *pbVar14;
-            *pbVar16 = bVar2;
+            bVar2 = *pbVar13;
+            *pbVar15 = bVar2;
             if (bVar2 == 0) break;
-            bVar2 = pbVar14[1];
-            pbVar14 = pbVar14 + 2;
-            pbVar16[1] = bVar2;
-            pbVar16 = pbVar16 + 2;
+            bVar2 = pbVar13[1];
+            pbVar13 = pbVar13 + 2;
+            pbVar15[1] = bVar2;
+            pbVar15 = pbVar15 + 2;
           } while (bVar2 != 0);
           if (5 < _DAT_01cc4470) {
             _sprintf(&DAT_01cc4270,"Too many field notes sections in %s, line %d");
             goto LAB_004bcdbb;
           }
           local_48 = SNotesSection_ARRAY_01cc4474 + _DAT_01cc4470;
-          pbVar14 = local_1b4;
-          pSVar10 = local_48;
+          pbVar13 = local_1b4;
+          pSVar9 = local_48;
           do {
-            bVar2 = *pbVar14;
-            pSVar10->name[0] = bVar2;
+            bVar2 = *pbVar13;
+            pSVar9->name[0] = bVar2;
             if (bVar2 == 0) break;
-            bVar2 = pbVar14[1];
-            pbVar14 = pbVar14 + 2;
-            pSVar10->name[1] = bVar2;
-            pSVar10 = (SNotesSection *)(pSVar10->name + 2);
+            bVar2 = pbVar13[1];
+            pbVar13 = pbVar13 + 2;
+            pSVar9->name[1] = bVar2;
+            pSVar9 = (SNotesSection *)(pSVar9->name + 2);
           } while (bVar2 != 0);
           local_44 = (SNotesEntry *)0x0;
           _DAT_01cc4470 = _DAT_01cc4470 + 1;
         }
         else {
 LAB_004bceb4:
-          pcVar7 = "title";
+          pcVar5 = "title";
           local_3c = local_1b4;
-          pbVar14 = local_5b4;
+          pbVar13 = local_5b4;
           do {
-            pbVar11 = pbVar14;
-            pbVar14 = pbVar11 + 1;
-          } while (((&DAT_00626114)[(byte)(*pbVar11 + 1)] & 2) != 0);
-          pbVar16 = local_3c;
-          pSVar10 = local_48;
-          pSVar3 = local_44;
+            pbVar10 = pbVar13;
+            pbVar13 = pbVar10 + 1;
+          } while (((&DAT_00626114)[(byte)(*pbVar10 + 1)] & 2) != 0);
+          pbVar15 = local_3c;
+          pSVar9 = local_48;
+          pSVar7 = local_44;
           bVar2 = "title"[0];
-          if (*pbVar11 == 0x5c) {
-            while (local_48 = pSVar10, local_44 = pSVar3, local_3c = pbVar16, bVar2 != 0) {
-              iVar13 = toupper((uint)*pbVar14);
-              iVar8 = toupper((uint)(byte)*pcVar7);
-              if (iVar13 != iVar8) goto LAB_004bcfcf;
-              pbVar11 = (byte *)(pcVar7 + 1);
-              pcVar7 = pcVar7 + 1;
-              pbVar14 = pbVar14 + 1;
-              pbVar16 = local_3c;
-              pSVar10 = local_48;
-              pSVar3 = local_44;
-              bVar2 = *pbVar11;
+          if (*pbVar10 == 0x5c) {
+            while (local_48 = pSVar9, local_44 = pSVar7, local_3c = pbVar15, bVar2 != 0) {
+              iVar12 = toupper((uint)*pbVar13);
+              iVar6 = toupper((uint)(byte)*pcVar5);
+              if (iVar12 != iVar6) goto LAB_004bcfcf;
+              pbVar10 = (byte *)(pcVar5 + 1);
+              pcVar5 = pcVar5 + 1;
+              pbVar13 = pbVar13 + 1;
+              pbVar15 = local_3c;
+              pSVar9 = local_48;
+              pSVar7 = local_44;
+              bVar2 = *pbVar10;
             }
-            while (((&DAT_00626114)[(byte)(*pbVar14 + 1)] & 2) != 0) {
-              pbVar14 = pbVar14 + 1;
+            while (((&DAT_00626114)[(byte)(*pbVar13 + 1)] & 2) != 0) {
+              pbVar13 = pbVar13 + 1;
             }
             do {
-              bVar2 = *pbVar14;
-              *pbVar16 = bVar2;
+              bVar2 = *pbVar13;
+              *pbVar15 = bVar2;
               if (bVar2 == 0) break;
-              bVar2 = pbVar14[1];
-              pbVar14 = pbVar14 + 2;
-              pbVar16[1] = bVar2;
-              pbVar16 = pbVar16 + 2;
+              bVar2 = pbVar13[1];
+              pbVar13 = pbVar13 + 2;
+              pbVar15[1] = bVar2;
+              pbVar15 = pbVar15 + 2;
             } while (bVar2 != 0);
-            if (pSVar3 == (SNotesEntry *)0x0) {
-              if (pSVar10 == (SNotesSection *)0x0) {
+            if (pSVar7 == (SNotesEntry *)0x0) {
+              if (pSVar9 == (SNotesSection *)0x0) {
                 _sprintf(&DAT_01cc4270,"Didn't expect '\\title' in %s, line %d");
                 goto LAB_004bcdbb;
               }
-              pbVar14 = local_1b4;
-              pcVar7 = pSVar10->title;
+              pbVar13 = local_1b4;
+              pcVar5 = pSVar9->title;
               do {
-                bVar2 = *pbVar14;
-                *pcVar7 = bVar2;
+                bVar2 = *pbVar13;
+                *pcVar5 = bVar2;
                 if (bVar2 == 0) break;
-                bVar2 = pbVar14[1];
-                pbVar14 = pbVar14 + 2;
-                pcVar7[1] = bVar2;
-                pcVar7 = pcVar7 + 2;
+                bVar2 = pbVar13[1];
+                pbVar13 = pbVar13 + 2;
+                pcVar5[1] = bVar2;
+                pcVar5 = pcVar5 + 2;
               } while (bVar2 != 0);
             }
             else {
-              pbVar14 = local_1b4;
-              pcVar7 = pSVar3->title;
+              pbVar13 = local_1b4;
+              pcVar5 = pSVar7->title;
               do {
-                bVar2 = *pbVar14;
-                *pcVar7 = bVar2;
+                bVar2 = *pbVar13;
+                *pcVar5 = bVar2;
                 if (bVar2 == 0) break;
-                bVar2 = pbVar14[1];
-                pbVar14 = pbVar14 + 2;
-                pcVar7[1] = bVar2;
-                pcVar7 = pcVar7 + 2;
+                bVar2 = pbVar13[1];
+                pbVar13 = pbVar13 + 2;
+                pcVar5[1] = bVar2;
+                pcVar5 = pcVar5 + 2;
               } while (bVar2 != 0);
             }
           }
           else {
 LAB_004bcfcf:
-            pcVar7 = "entry";
+            pcVar5 = "entry";
             local_38 = local_1b4;
-            pbVar14 = local_5b4;
+            pbVar13 = local_5b4;
             do {
-              pbVar11 = pbVar14;
-              pbVar14 = pbVar11 + 1;
-            } while (((&DAT_00626114)[(byte)(*pbVar11 + 1)] & 2) != 0);
-            pbVar16 = local_38;
-            pSVar10 = local_48;
+              pbVar10 = pbVar13;
+              pbVar13 = pbVar10 + 1;
+            } while (((&DAT_00626114)[(byte)(*pbVar10 + 1)] & 2) != 0);
+            pbVar15 = local_38;
+            pSVar9 = local_48;
             bVar2 = "entry"[0];
-            if (*pbVar11 == 0x5c) {
-              while (local_48 = pSVar10, local_38 = pbVar16, bVar2 != 0) {
-                iVar13 = toupper((uint)*pbVar14);
-                iVar8 = toupper((uint)(byte)*pcVar7);
-                if (iVar13 != iVar8) goto LAB_004bd0f5;
-                pbVar11 = (byte *)(pcVar7 + 1);
-                pcVar7 = pcVar7 + 1;
-                pbVar14 = pbVar14 + 1;
-                pbVar16 = local_38;
-                pSVar10 = local_48;
-                bVar2 = *pbVar11;
+            if (*pbVar10 == 0x5c) {
+              while (local_48 = pSVar9, local_38 = pbVar15, bVar2 != 0) {
+                iVar12 = toupper((uint)*pbVar13);
+                iVar6 = toupper((uint)(byte)*pcVar5);
+                if (iVar12 != iVar6) goto LAB_004bd0f5;
+                pbVar10 = (byte *)(pcVar5 + 1);
+                pcVar5 = pcVar5 + 1;
+                pbVar13 = pbVar13 + 1;
+                pbVar15 = local_38;
+                pSVar9 = local_48;
+                bVar2 = *pbVar10;
               }
-              while (((&DAT_00626114)[(byte)(*pbVar14 + 1)] & 2) != 0) {
-                pbVar14 = pbVar14 + 1;
+              while (((&DAT_00626114)[(byte)(*pbVar13 + 1)] & 2) != 0) {
+                pbVar13 = pbVar13 + 1;
               }
               do {
-                bVar2 = *pbVar14;
-                *pbVar16 = bVar2;
+                bVar2 = *pbVar13;
+                *pbVar15 = bVar2;
                 if (bVar2 == 0) break;
-                bVar2 = pbVar14[1];
-                pbVar14 = pbVar14 + 2;
-                pbVar16[1] = bVar2;
-                pbVar16 = pbVar16 + 2;
+                bVar2 = pbVar13[1];
+                pbVar13 = pbVar13 + 2;
+                pbVar15[1] = bVar2;
+                pbVar15 = pbVar15 + 2;
               } while (bVar2 != 0);
-              if (pSVar10 == (SNotesSection *)0x0) {
+              if (pSVar9 == (SNotesSection *)0x0) {
                 _sprintf(&DAT_01cc4270,"Didn't expect '\\entry' in %s, line %d");
                 goto LAB_004bcdbb;
               }
-              iVar13 = 0;
+              iVar12 = 0;
               local_34 = (int *)0x0;
               if (0 < _DAT_01cc4470) {
-                pSVar10 = SNotesSection_ARRAY_01cc4474;
+                pSVar9 = SNotesSection_ARRAY_01cc4474;
                 do {
-                  iVar8 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004bbfd0
-                                    (pSVar10,(char *)local_1b4);
-                  if (iVar8 != 0) {
+                  pSVar7 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004bbfd0
+                                     (pSVar9,(char *)local_1b4);
+                  if (pSVar7 != (SNotesEntry *)0x0) {
                     if (local_34 != (int *)0x0) {
-                      *local_34 = iVar13;
+                      *local_34 = iVar12;
                     }
-                    if (iVar8 != 0) {
+                    if (pSVar7 != (SNotesEntry *)0x0) {
                       _sprintf(&DAT_01cc4270,"Duplicate entry '%s' in %s");
                       goto LAB_004bcdbb;
                     }
                     break;
                   }
-                  iVar13 = iVar13 + 1;
-                  pSVar10 = pSVar10 + 1;
-                } while (iVar13 < _DAT_01cc4470);
+                  iVar12 = iVar12 + 1;
+                  pSVar9 = pSVar9 + 1;
+                } while (iVar12 < _DAT_01cc4470);
               }
-              local_44 = (SNotesEntry *)
-                         core_fldnotes_cpp_SNotesSection_addEntry_FUN_004bc020
+              local_44 = core_fldnotes_cpp_SNotesSection_addEntry_FUN_004bc020
                                    (local_48,(char *)local_1b4,0);
             }
             else {
 LAB_004bd0f5:
-              pbVar11 = &DAT_005dfdf2;
+              pbVar10 = &DAT_005dfdf2;
               local_30 = local_1b4;
-              pbVar14 = local_5b4;
+              pbVar13 = local_5b4;
               do {
-                pbVar16 = pbVar14;
-                pbVar14 = pbVar16 + 1;
-              } while (((&DAT_00626114)[(byte)(*pbVar16 + 1)] & 2) != 0);
-              pbVar17 = local_30;
-              pSVar10 = local_48;
+                pbVar15 = pbVar13;
+                pbVar13 = pbVar15 + 1;
+              } while (((&DAT_00626114)[(byte)(*pbVar15 + 1)] & 2) != 0);
+              pbVar16 = local_30;
+              pSVar9 = local_48;
               bVar2 = 0x74;
-              if (*pbVar16 == 0x5c) {
-                while (local_48 = pSVar10, local_30 = pbVar17, bVar2 != 0) {
-                  iVar13 = toupper((uint)*pbVar14);
-                  iVar8 = toupper((uint)*pbVar11);
-                  if (iVar13 != iVar8) goto LAB_004bd25d;
-                  pbVar16 = pbVar11 + 1;
-                  pbVar11 = pbVar11 + 1;
-                  pbVar14 = pbVar14 + 1;
-                  pbVar17 = local_30;
-                  pSVar10 = local_48;
-                  bVar2 = *pbVar16;
+              if (*pbVar15 == 0x5c) {
+                while (local_48 = pSVar9, local_30 = pbVar16, bVar2 != 0) {
+                  iVar12 = toupper((uint)*pbVar13);
+                  iVar6 = toupper((uint)*pbVar10);
+                  if (iVar12 != iVar6) goto LAB_004bd25d;
+                  pbVar15 = pbVar10 + 1;
+                  pbVar10 = pbVar10 + 1;
+                  pbVar13 = pbVar13 + 1;
+                  pbVar16 = local_30;
+                  pSVar9 = local_48;
+                  bVar2 = *pbVar15;
                 }
-                while (((&DAT_00626114)[(byte)(*pbVar14 + 1)] & 2) != 0) {
-                  pbVar14 = pbVar14 + 1;
+                while (((&DAT_00626114)[(byte)(*pbVar13 + 1)] & 2) != 0) {
+                  pbVar13 = pbVar13 + 1;
                 }
                 do {
-                  bVar2 = *pbVar14;
-                  *pbVar17 = bVar2;
+                  bVar2 = *pbVar13;
+                  *pbVar16 = bVar2;
                   if (bVar2 == 0) break;
-                  bVar2 = pbVar14[1];
-                  pbVar14 = pbVar14 + 2;
-                  pbVar17[1] = bVar2;
-                  pbVar17 = pbVar17 + 2;
+                  bVar2 = pbVar13[1];
+                  pbVar13 = pbVar13 + 2;
+                  pbVar16[1] = bVar2;
+                  pbVar16 = pbVar16 + 2;
                 } while (bVar2 != 0);
-                if (pSVar10 == (SNotesSection *)0x0) {
+                if (pSVar9 == (SNotesSection *)0x0) {
                   _sprintf(&DAT_01cc4270,"Didn't expect '\\task' in %s, line %d");
                   goto LAB_004bcdbb;
                 }
                 local_2c = local_1b4;
-                iVar13 = 0;
+                iVar12 = 0;
                 local_28 = (int *)0x0;
                 if (0 < _DAT_01cc4470) {
-                  pSVar10 = SNotesSection_ARRAY_01cc4474;
+                  pSVar9 = SNotesSection_ARRAY_01cc4474;
                   do {
-                    iVar8 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004bbfd0
-                                      (pSVar10,(char *)local_2c);
-                    if (iVar8 != 0) {
+                    pSVar7 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004bbfd0
+                                       (pSVar9,(char *)local_2c);
+                    if (pSVar7 != (SNotesEntry *)0x0) {
                       if (local_28 != (int *)0x0) {
-                        *local_28 = iVar13;
+                        *local_28 = iVar12;
                       }
-                      if (iVar8 != 0) {
+                      if (pSVar7 != (SNotesEntry *)0x0) {
                         _sprintf(&DAT_01cc4270,"Duplicate entry '%s' in %s");
                         goto LAB_004bcdbb;
                       }
                       break;
                     }
-                    iVar13 = iVar13 + 1;
-                    pSVar10 = pSVar10 + 1;
-                  } while (iVar13 < _DAT_01cc4470);
+                    iVar12 = iVar12 + 1;
+                    pSVar9 = pSVar9 + 1;
+                  } while (iVar12 < _DAT_01cc4470);
                 }
-                local_44 = (SNotesEntry *)
-                           core_fldnotes_cpp_SNotesSection_addEntry_FUN_004bc020
+                local_44 = core_fldnotes_cpp_SNotesSection_addEntry_FUN_004bc020
                                      (local_48,(char *)local_1b4,2);
               }
               else {
 LAB_004bd25d:
-                pbVar11 = &DAT_005dfe37;
+                pbVar10 = &DAT_005dfe37;
                 local_24 = local_1b4;
-                pbVar14 = local_5b4;
+                pbVar13 = local_5b4;
                 do {
-                  pbVar16 = pbVar14;
-                  pbVar14 = pbVar16 + 1;
-                } while (((&DAT_00626114)[(byte)(*pbVar16 + 1)] & 2) != 0);
-                pbVar17 = local_24;
-                pSVar10 = local_48;
+                  pbVar15 = pbVar13;
+                  pbVar13 = pbVar15 + 1;
+                } while (((&DAT_00626114)[(byte)(*pbVar15 + 1)] & 2) != 0);
+                pbVar16 = local_24;
+                pSVar9 = local_48;
                 bVar2 = 0x6D;
-                if (*pbVar16 == 0x5c) {
-                  while (local_48 = pSVar10, local_24 = pbVar17, bVar2 != 0) {
-                    iVar13 = toupper((uint)*pbVar14);
-                    iVar8 = toupper((uint)*pbVar11);
-                    if (iVar13 != iVar8) goto LAB_004bd3d9;
-                    pbVar16 = pbVar11 + 1;
-                    pbVar11 = pbVar11 + 1;
-                    pbVar14 = pbVar14 + 1;
-                    pbVar17 = local_24;
-                    pSVar10 = local_48;
-                    bVar2 = *pbVar16;
+                if (*pbVar15 == 0x5c) {
+                  while (local_48 = pSVar9, local_24 = pbVar16, bVar2 != 0) {
+                    iVar12 = toupper((uint)*pbVar13);
+                    iVar6 = toupper((uint)*pbVar10);
+                    if (iVar12 != iVar6) goto LAB_004bd3d9;
+                    pbVar15 = pbVar10 + 1;
+                    pbVar10 = pbVar10 + 1;
+                    pbVar13 = pbVar13 + 1;
+                    pbVar16 = local_24;
+                    pSVar9 = local_48;
+                    bVar2 = *pbVar15;
                   }
-                  while (((&DAT_00626114)[(byte)(*pbVar14 + 1)] & 2) != 0) {
-                    pbVar14 = pbVar14 + 1;
+                  while (((&DAT_00626114)[(byte)(*pbVar13 + 1)] & 2) != 0) {
+                    pbVar13 = pbVar13 + 1;
                   }
                   do {
-                    bVar2 = *pbVar14;
-                    *pbVar17 = bVar2;
+                    bVar2 = *pbVar13;
+                    *pbVar16 = bVar2;
                     if (bVar2 == 0) break;
-                    bVar2 = pbVar14[1];
-                    pbVar14 = pbVar14 + 2;
-                    pbVar17[1] = bVar2;
-                    pbVar17 = pbVar17 + 2;
+                    bVar2 = pbVar13[1];
+                    pbVar13 = pbVar13 + 2;
+                    pbVar16[1] = bVar2;
+                    pbVar16 = pbVar16 + 2;
                   } while (bVar2 != 0);
-                  if (pSVar10 == (SNotesSection *)0x0) {
+                  if (pSVar9 == (SNotesSection *)0x0) {
                     _sprintf(&DAT_01cc4270,"Didn't expect '\\map' in %s, line %d");
                     goto LAB_004bcdbb;
                   }
                   if (3 < _DAT_01cc55cc) {
-                    pcVar7 = "Too many maps!  (max is %d)";
+                    pcVar5 = "Too many maps!  (max is %d)";
                     goto LAB_004bcdae;
                   }
-                  local_44 = (SNotesEntry *)
-                             core_fldnotes_cpp_SNotesSection_addEntry_FUN_004bc020
-                                       (pSVar10,(char *)local_1b4,5);
+                  local_44 = core_fldnotes_cpp_SNotesSection_addEntry_FUN_004bc020
+                                       (pSVar9,(char *)local_1b4,5);
                   local_44->map_index = _DAT_01cc55cc;
-                  pSVar9 = SNotesMap_ARRAY_01cc55d0 + _DAT_01cc55cc;
+                  pSVar8 = SNotesMap_ARRAY_01cc55d0 + _DAT_01cc55cc;
                   SNotesMap_ARRAY_01cc55d0[_DAT_01cc55cc].annotation_count = 0;
                   _DAT_01cc55cc = _DAT_01cc55cc + 1;
-                  pSVar9->entry = local_44;
+                  pSVar8->entry = local_44;
                 }
                 else {
 LAB_004bd3d9:
-                  pcVar7 = "image";
+                  pcVar5 = "image";
                   local_20 = local_1b4;
-                  pbVar14 = local_5b4;
+                  pbVar13 = local_5b4;
                   do {
-                    pbVar11 = pbVar14;
-                    pbVar14 = pbVar11 + 1;
-                  } while (((&DAT_00626114)[(byte)(*pbVar11 + 1)] & 2) != 0);
-                  pbVar16 = local_20;
-                  pSVar3 = local_44;
+                    pbVar10 = pbVar13;
+                    pbVar13 = pbVar10 + 1;
+                  } while (((&DAT_00626114)[(byte)(*pbVar10 + 1)] & 2) != 0);
+                  pbVar15 = local_20;
+                  pSVar7 = local_44;
                   bVar2 = "image"[0];
-                  if (*pbVar11 == 0x5c) {
-                    while (local_44 = pSVar3, local_20 = pbVar16, bVar2 != 0) {
-                      iVar13 = toupper((uint)*pbVar14);
-                      iVar8 = toupper((uint)(byte)*pcVar7);
-                      if (iVar13 != iVar8) goto LAB_004bd503;
-                      pbVar11 = (byte *)(pcVar7 + 1);
-                      pcVar7 = pcVar7 + 1;
-                      pbVar14 = pbVar14 + 1;
-                      pbVar16 = local_20;
-                      pSVar3 = local_44;
-                      bVar2 = *pbVar11;
+                  if (*pbVar10 == 0x5c) {
+                    while (local_44 = pSVar7, local_20 = pbVar15, bVar2 != 0) {
+                      iVar12 = toupper((uint)*pbVar13);
+                      iVar6 = toupper((uint)(byte)*pcVar5);
+                      if (iVar12 != iVar6) goto LAB_004bd503;
+                      pbVar10 = (byte *)(pcVar5 + 1);
+                      pcVar5 = pcVar5 + 1;
+                      pbVar13 = pbVar13 + 1;
+                      pbVar15 = local_20;
+                      pSVar7 = local_44;
+                      bVar2 = *pbVar10;
                     }
-                    while (((&DAT_00626114)[(byte)(*pbVar14 + 1)] & 2) != 0) {
-                      pbVar14 = pbVar14 + 1;
+                    while (((&DAT_00626114)[(byte)(*pbVar13 + 1)] & 2) != 0) {
+                      pbVar13 = pbVar13 + 1;
                     }
                     do {
-                      bVar2 = *pbVar14;
-                      *pbVar16 = bVar2;
+                      bVar2 = *pbVar13;
+                      *pbVar15 = bVar2;
                       if (bVar2 == 0) break;
-                      bVar2 = pbVar14[1];
-                      pbVar14 = pbVar14 + 2;
-                      pbVar16[1] = bVar2;
-                      pbVar16 = pbVar16 + 2;
+                      bVar2 = pbVar13[1];
+                      pbVar13 = pbVar13 + 2;
+                      pbVar15[1] = bVar2;
+                      pbVar15 = pbVar15 + 2;
                     } while (bVar2 != 0);
-                    if ((pSVar3 == (SNotesEntry *)0x0) || (pSVar3->kind != 5)) {
-                      pcVar7 = "Can only use \\image in a \\map entry on line %d.  (Did you mean to use <image>?)";
+                    if ((pSVar7 == (SNotesEntry *)0x0) || (pSVar7->kind != 5)) {
+                      pcVar5 = "Can only use \\image in a \\map entry on line %d.  (Did you mean to use <image>?)";
                       goto LAB_004bcdae;
                     }
                     if (_DAT_01cc55cc < 1) {
@@ -434,58 +429,58 @@ LAB_004bd3d9:
                       _DAT_01d1d404 = 0x969;
                       core_main_c_FUN_005030e0("Hell froze!");
                     }
-                    iVar13 = _DAT_01cc55cc + -1;
-                    iVar8 = sscanf((char *)local_1b4,"%s %d %d");
-                    if (iVar8 != 3) {
-                      pcVar7 = "Syntax error in \\image parms on line %d";
+                    iVar12 = _DAT_01cc55cc + -1;
+                    iVar6 = sscanf((char *)local_1b4,"%s %d %d");
+                    if (iVar6 != 3) {
+                      pcVar5 = "Syntax error in \\image parms on line %d";
                       goto LAB_004bcdae;
                     }
-                    if (SNotesMap_ARRAY_01cc55d0[iVar13].image_name[0] != '\0') {
+                    if (SNotesMap_ARRAY_01cc55d0[iVar12].image_name[0] != '\0') {
                       _sprintf(&DAT_01cc4270,"Multiple \\image tags found in map %s at line %d");
                       goto LAB_004bcdbb;
                     }
                     engine_dosio_cpp_splitPath_FUN_00479580
                               (local_b4,(char *)0x0,(char *)0x0,
-                               SNotesMap_ARRAY_01cc55d0[iVar13].image_name,(char *)0x0);
+                               SNotesMap_ARRAY_01cc55d0[iVar12].image_name,(char *)0x0);
                   }
                   else {
 LAB_004bd503:
-                    pbVar11 = &DAT_005dff53;
+                    pbVar10 = &DAT_005dff53;
                     local_1c = local_1b4;
-                    pbVar14 = local_5b4;
+                    pbVar13 = local_5b4;
                     do {
-                      pbVar16 = pbVar14;
-                      pbVar14 = pbVar16 + 1;
-                    } while (((&DAT_00626114)[(byte)(*pbVar16 + 1)] & 2) != 0);
-                    pbVar17 = local_1c;
-                    pSVar3 = local_44;
+                      pbVar15 = pbVar13;
+                      pbVar13 = pbVar15 + 1;
+                    } while (((&DAT_00626114)[(byte)(*pbVar15 + 1)] & 2) != 0);
+                    pbVar16 = local_1c;
+                    pSVar7 = local_44;
                     bVar2 = 0x73;
-                    if (*pbVar16 == 0x5c) {
-                      while (local_44 = pSVar3, local_1c = pbVar17, bVar2 != 0) {
-                        iVar13 = toupper((uint)*pbVar14);
-                        iVar8 = toupper((uint)*pbVar11);
-                        if (iVar13 != iVar8) goto LAB_004bd681;
-                        pbVar16 = pbVar11 + 1;
-                        pbVar11 = pbVar11 + 1;
-                        pbVar14 = pbVar14 + 1;
-                        pbVar17 = local_1c;
-                        pSVar3 = local_44;
-                        bVar2 = *pbVar16;
+                    if (*pbVar15 == 0x5c) {
+                      while (local_44 = pSVar7, local_1c = pbVar16, bVar2 != 0) {
+                        iVar12 = toupper((uint)*pbVar13);
+                        iVar6 = toupper((uint)*pbVar10);
+                        if (iVar12 != iVar6) goto LAB_004bd681;
+                        pbVar15 = pbVar10 + 1;
+                        pbVar10 = pbVar10 + 1;
+                        pbVar13 = pbVar13 + 1;
+                        pbVar16 = local_1c;
+                        pSVar7 = local_44;
+                        bVar2 = *pbVar15;
                       }
-                      while (((&DAT_00626114)[(byte)(*pbVar14 + 1)] & 2) != 0) {
-                        pbVar14 = pbVar14 + 1;
+                      while (((&DAT_00626114)[(byte)(*pbVar13 + 1)] & 2) != 0) {
+                        pbVar13 = pbVar13 + 1;
                       }
                       do {
-                        bVar2 = *pbVar14;
-                        *pbVar17 = bVar2;
+                        bVar2 = *pbVar13;
+                        *pbVar16 = bVar2;
                         if (bVar2 == 0) break;
-                        bVar2 = pbVar14[1];
-                        pbVar14 = pbVar14 + 2;
-                        pbVar17[1] = bVar2;
-                        pbVar17 = pbVar17 + 2;
+                        bVar2 = pbVar13[1];
+                        pbVar13 = pbVar13 + 2;
+                        pbVar16[1] = bVar2;
+                        pbVar16 = pbVar16 + 2;
                       } while (bVar2 != 0);
-                      if ((pSVar3 == (SNotesEntry *)0x0) || (pSVar3->kind != 5)) {
-                        pcVar7 = "Can only use \\set in a \\map entry on line %d.";
+                      if ((pSVar7 == (SNotesEntry *)0x0) || (pSVar7->kind != 5)) {
+                        pcVar5 = "Can only use \\set in a \\map entry on line %d.";
                         goto LAB_004bcdae;
                       }
                       if (_DAT_01cc55cc < 1) {
@@ -493,60 +488,60 @@ LAB_004bd503:
                         _DAT_01d1d404 = 0x98d;
                         core_main_c_FUN_005030e0("Hell froze!");
                       }
-                      iVar8 = _DAT_01cc55cc + -1;
-                      iVar13 = SNotesMap_ARRAY_01cc55d0[iVar8].set_count;
-                      if (3 < iVar13) {
+                      iVar6 = _DAT_01cc55cc + -1;
+                      iVar12 = SNotesMap_ARRAY_01cc55d0[iVar6].set_count;
+                      if (3 < iVar12) {
                         _sprintf(&DAT_01cc4270,"Too many \\sets in map %s at line %d.");
                         goto LAB_004bcdbb;
                       }
-                      SNotesMap_ARRAY_01cc55d0[iVar8].set_count = iVar13 + 1;
-                      iVar12 = sscanf
+                      SNotesMap_ARRAY_01cc55d0[iVar6].set_count = iVar12 + 1;
+                      iVar11 = sscanf
                                          ((char *)local_1b4,"%s %d , %d , %d , %d , %f , %f , %f , %f");
-                      if (iVar12 != 9) {
-                        pcVar7 = "Syntax error in \\image parms on line %d";
+                      if (iVar11 != 9) {
+                        pcVar5 = "Syntax error in \\image parms on line %d";
                         goto LAB_004bcdae;
                       }
                       engine_dosio_cpp_changeFileExtension_FUN_004796b0
-                                ((char *)(iVar8 * 0x970 + 0x1cc5670 + iVar13 * 0x88),&DAT_005e001c);
+                                ((char *)(iVar6 * 0x970 + 0x1cc5670 + iVar12 * 0x88),&DAT_005e001c);
                     }
                     else {
 LAB_004bd681:
-                      pcVar7 = "annotation";
+                      pcVar5 = "annotation";
                       local_18 = local_1b4;
-                      pbVar14 = local_5b4;
+                      pbVar13 = local_5b4;
                       do {
-                        pbVar11 = pbVar14;
-                        pbVar14 = pbVar11 + 1;
-                      } while (((&DAT_00626114)[(byte)(*pbVar11 + 1)] & 2) != 0);
-                      pbVar16 = local_18;
-                      pSVar3 = local_44;
+                        pbVar10 = pbVar13;
+                        pbVar13 = pbVar10 + 1;
+                      } while (((&DAT_00626114)[(byte)(*pbVar10 + 1)] & 2) != 0);
+                      pbVar15 = local_18;
+                      pSVar7 = local_44;
                       bVar2 = "annotation"[0];
-                      if (*pbVar11 == 0x5c) {
-                        while (local_44 = pSVar3, local_18 = pbVar16, bVar2 != 0) {
-                          iVar13 = toupper((uint)*pbVar14);
-                          iVar8 = toupper((uint)(byte)*pcVar7);
-                          if (iVar13 != iVar8) goto LAB_004bd820;
-                          pbVar11 = (byte *)(pcVar7 + 1);
-                          pcVar7 = pcVar7 + 1;
-                          pbVar14 = pbVar14 + 1;
-                          pbVar16 = local_18;
-                          pSVar3 = local_44;
-                          bVar2 = *pbVar11;
+                      if (*pbVar10 == 0x5c) {
+                        while (local_44 = pSVar7, local_18 = pbVar15, bVar2 != 0) {
+                          iVar12 = toupper((uint)*pbVar13);
+                          iVar6 = toupper((uint)(byte)*pcVar5);
+                          if (iVar12 != iVar6) goto LAB_004bd820;
+                          pbVar10 = (byte *)(pcVar5 + 1);
+                          pcVar5 = pcVar5 + 1;
+                          pbVar13 = pbVar13 + 1;
+                          pbVar15 = local_18;
+                          pSVar7 = local_44;
+                          bVar2 = *pbVar10;
                         }
-                        while (((&DAT_00626114)[(byte)(*pbVar14 + 1)] & 2) != 0) {
-                          pbVar14 = pbVar14 + 1;
+                        while (((&DAT_00626114)[(byte)(*pbVar13 + 1)] & 2) != 0) {
+                          pbVar13 = pbVar13 + 1;
                         }
                         do {
-                          bVar2 = *pbVar14;
-                          *pbVar16 = bVar2;
+                          bVar2 = *pbVar13;
+                          *pbVar15 = bVar2;
                           if (bVar2 == 0) break;
-                          bVar2 = pbVar14[1];
-                          pbVar14 = pbVar14 + 2;
-                          pbVar16[1] = bVar2;
-                          pbVar16 = pbVar16 + 2;
+                          bVar2 = pbVar13[1];
+                          pbVar13 = pbVar13 + 2;
+                          pbVar15[1] = bVar2;
+                          pbVar15 = pbVar15 + 2;
                         } while (bVar2 != 0);
-                        if ((pSVar3 == (SNotesEntry *)0x0) || (pSVar3->kind != 5)) {
-                          pcVar7 = "Can only use \\annotation in a \\map entry on line %d.";
+                        if ((pSVar7 == (SNotesEntry *)0x0) || (pSVar7->kind != 5)) {
+                          pcVar5 = "Can only use \\annotation in a \\map entry on line %d.";
                           goto LAB_004bcdae;
                         }
                         if (_DAT_01cc55cc < 1) {
@@ -554,49 +549,49 @@ LAB_004bd681:
                           _DAT_01d1d404 = 0x9b9;
                           core_main_c_FUN_005030e0("Hell froze!");
                         }
-                        iVar8 = _DAT_01cc55cc + -1;
-                        iVar13 = SNotesMap_ARRAY_01cc55d0[iVar8].annotation_count;
-                        if (7 < iVar13) {
+                        iVar6 = _DAT_01cc55cc + -1;
+                        iVar12 = SNotesMap_ARRAY_01cc55d0[iVar6].annotation_count;
+                        if (7 < iVar12) {
                           _sprintf(&DAT_01cc4270,"Too many \\annotations in map %s at line %d.");
                           goto LAB_004bcdbb;
                         }
-                        iVar12 = iVar13 * 0xd4 + iVar8 * 0x970 + 0x1cc5894;
-                        SNotesMap_ARRAY_01cc55d0[iVar8].annotation_count = iVar13 + 1;
-                        iVar13 = sscanf((char *)local_1b4,"%[^,], %d , %d , \"%[^\"]\"");
-                        if (iVar13 != 4) {
-                          pcVar7 = "Syntax error in \\annotation parms on line %d";
+                        iVar11 = iVar12 * 0xd4 + iVar6 * 0x970 + 0x1cc5894;
+                        SNotesMap_ARRAY_01cc55d0[iVar6].annotation_count = iVar12 + 1;
+                        iVar12 = sscanf((char *)local_1b4,"%[^,], %d , %d , \"%[^\"]\"");
+                        if (iVar12 != 4) {
+                          pcVar5 = "Syntax error in \\annotation parms on line %d";
                           goto LAB_004bcdae;
                         }
-                        core_flashlit_cpp_FUN_004b9c50(iVar12);
-                        core_flashlit_cpp_FUN_004b9c50(iVar12 + 100);
-                        *(uint *)(iVar12 + 0xd0) = 0;
+                        core_flashlit_cpp_FUN_004b9c50(iVar11);
+                        core_flashlit_cpp_FUN_004b9c50(iVar11 + 100);
+                        *(uint *)(iVar11 + 0xd0) = 0;
                       }
                       else {
 LAB_004bd820:
-                        pbVar11 = &DAT_005e00f4;
+                        pbVar10 = &DAT_005e00f4;
                         local_14 = local_1b4;
-                        pbVar14 = local_5b4;
+                        pbVar13 = local_5b4;
                         do {
-                          pbVar16 = pbVar14;
-                          pbVar14 = pbVar16 + 1;
-                        } while (((&DAT_00626114)[(byte)(*pbVar16 + 1)] & 2) != 0);
-                        pbVar17 = local_14;
-                        p_Var4 = local_50;
+                          pbVar15 = pbVar13;
+                          pbVar13 = pbVar15 + 1;
+                        } while (((&DAT_00626114)[(byte)(*pbVar15 + 1)] & 2) != 0);
+                        pbVar16 = local_14;
+                        p_Var3 = local_50;
                         bVar2 = 0x65;
-                        if (*pbVar16 == 0x5c) {
+                        if (*pbVar15 == 0x5c) {
                           while( true ) {
-                            local_14 = pbVar17;
+                            local_14 = pbVar16;
                             if (bVar2 == 0) goto LAB_004bda1e;
-                            local_50 = p_Var4;
-                            iVar13 = toupper((uint)*pbVar14);
-                            iVar8 = toupper((uint)*pbVar11);
-                            if (iVar13 != iVar8) break;
-                            pbVar16 = pbVar11 + 1;
-                            pbVar11 = pbVar11 + 1;
-                            pbVar14 = pbVar14 + 1;
-                            pbVar17 = local_14;
-                            p_Var4 = local_50;
-                            bVar2 = *pbVar16;
+                            local_50 = p_Var3;
+                            iVar12 = toupper((uint)*pbVar13);
+                            iVar6 = toupper((uint)*pbVar10);
+                            if (iVar12 != iVar6) break;
+                            pbVar15 = pbVar10 + 1;
+                            pbVar10 = pbVar10 + 1;
+                            pbVar13 = pbVar13 + 1;
+                            pbVar16 = local_14;
+                            p_Var3 = local_50;
+                            bVar2 = *pbVar15;
                           }
                         }
                         if (local_5b4[0] == 0x5c) {
@@ -620,72 +615,72 @@ LAB_004bd820:
       }
     } while( true );
   }
-  pcVar7 = "Can't open field notes file %s";
+  pcVar5 = "Can't open field notes file %s";
 LAB_004bcdae:
-  _sprintf(&DAT_01cc4270,pcVar7);
+  _sprintf(&DAT_01cc4270,pcVar5);
 LAB_004bcdbb:
   if (local_50 != (_FILE *)0x0) {
     _fclose(local_50);
   }
-  if (param_3 == (char *)0x0) {
+  if (error_text == (char *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_004943a0(g_CEditorToolsPtr,&DAT_01cc4270);
   }
   else {
-    pcVar7 = &DAT_01cc4270;
+    pcVar5 = &DAT_01cc4270;
     do {
-      cVar1 = *pcVar7;
-      *param_3 = cVar1;
+      cVar1 = *pcVar5;
+      *error_text = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
-      param_3[1] = cVar1;
-      param_3 = param_3 + 2;
+      cVar1 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
+      error_text[1] = cVar1;
+      error_text = error_text + 2;
     } while (cVar1 != '\0');
   }
   core_fldnotes_cpp_CFieldNotes_clear_FUN_004bdaa0(this_ptr);
   return 0;
 LAB_004bda1e:
-  while (((&DAT_00626114)[(byte)(*pbVar14 + 1)] & 2) != 0) {
-    pbVar14 = pbVar14 + 1;
+  while (((&DAT_00626114)[(byte)(*pbVar13 + 1)] & 2) != 0) {
+    pbVar13 = pbVar13 + 1;
   }
   do {
-    bVar2 = *pbVar14;
-    *pbVar17 = bVar2;
-    local_50 = p_Var4;
+    bVar2 = *pbVar13;
+    *pbVar16 = bVar2;
+    local_50 = p_Var3;
     if (bVar2 == 0) break;
-    bVar2 = pbVar14[1];
-    pbVar14 = pbVar14 + 2;
-    pbVar17[1] = bVar2;
-    pbVar17 = pbVar17 + 2;
+    bVar2 = pbVar13[1];
+    pbVar13 = pbVar13 + 2;
+    pbVar16[1] = bVar2;
+    pbVar16 = pbVar16 + 2;
   } while (bVar2 != 0);
 LAB_004bccbd:
-  iVar13 = 0;
+  iVar12 = 0;
   _fclose(local_50);
   local_50 = (_FILE *)0x0;
   if (0 < _DAT_01cc55cc) {
-    pSVar9 = SNotesMap_ARRAY_01cc55d0;
+    pSVar8 = SNotesMap_ARRAY_01cc55d0;
     do {
-      core_fldnotes_cpp_SNotesMap_load_FUN_004bc2d0(pSVar9);
-      iVar13 = iVar13 + 1;
-      pSVar9 = pSVar9 + 1;
-    } while (iVar13 < _DAT_01cc55cc);
+      core_fldnotes_cpp_SNotesMap_load_FUN_004bc2d0(pSVar8);
+      iVar12 = iVar12 + 1;
+      pSVar8 = pSVar8 + 1;
+    } while (iVar12 < _DAT_01cc55cc);
   }
   DAT_0061d2e4 = 1;
   DAT_0061d2e0 = 1;
-  if (param_3 != (char *)0x0) {
+  if (error_text != (char *)0x0) {
     core_fldnotes_cpp_STextView_setRect_FUN_004bb270(&g_STextViewInstance,0x60,0x40,0x1eb,0x1b8);
-    iVar13 = 0;
+    iVar12 = 0;
     core_fldnotes_cpp_STextView_reset_FUN_004bb1c0(&g_STextViewInstance);
     DAT_01cc4270 = 0;
     DAT_0061d2e4 = 0;
     if (0 < _DAT_01cc4470) {
-      pSVar10 = SNotesSection_ARRAY_01cc4474;
+      pSVar9 = SNotesSection_ARRAY_01cc4474;
       do {
-        bVar5 = core_fldnotes_cpp_SNotesSection_layout_FUN_004bc130(pSVar10,0x1cc7cd4);
-        if (CONCAT31(extraout_var,bVar5) == 0) goto LAB_004bcdbb;
-        iVar13 = iVar13 + 1;
-        pSVar10 = pSVar10 + 1;
-      } while (iVar13 < _DAT_01cc4470);
+        iVar6 = core_fldnotes_cpp_SNotesSection_layout_FUN_004bc130(pSVar9,&g_STextViewInstance);
+        if (iVar6 == 0) goto LAB_004bcdbb;
+        iVar12 = iVar12 + 1;
+        pSVar9 = pSVar9 + 1;
+      } while (iVar12 < _DAT_01cc4470);
     }
   }
   return 1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHighPriestOfGardath * core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_004d4880(CHighPriestOfGardath *this_ptr,uint flags)
+; CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_dtor_FUN_004d4880(CHighPriestOfGardath *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CHighPriestOfGardath * Stack[0x4]:4   this_ptr

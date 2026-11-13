@@ -74,8 +74,8 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00432240(CCharacter 
                &this_ptr->walk_state);
     return 1;
   }
-  core_door_cpp_FUN_00478860
-            (this_ptr->door_target,&this_ptr->look_offset,&(this_ptr->base).location);
+  core_door_cpp_CDoor_getOpenStandPos_FUN_00478860
+            (this_ptr->door_target,&(this_ptr->look_offset).x,&(this_ptr->base).location);
   fVar8 = 0.0;
   fVar7 = 0.0;
   local_30.x = local_48;

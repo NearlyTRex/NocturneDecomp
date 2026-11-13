@@ -7,19 +7,19 @@
 
 // Original: core_flintlck.cpp_staticInit_FUN_004ae780
 // Address: 004ae780
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_flintlck.cpp_factoryFuncFlintlock_FUN_004ae7b0
 // Address: 004ae7b0
-void factoryFuncFlintlock(void);
+CFlintlock * __cdecl factoryFuncFlintlock(void);
 
 // Original: core_flintlck.cpp_CFlintlock_getActorType_FUN_004ae7d0
 // Address: 004ae7d0
-CDemonActorType * CFlintlock::getActorType(CFlintlock *this_ptr);
+CDemonActorType * __cdecl CFlintlock::getActorType(CFlintlock *this_ptr);
 
 // Original: core_flintlck.cpp_CFlintlock_ctor_FUN_004ae7e0
 // Address: 004ae7e0
-CFlintlock * CFlintlock::ctor(CFlintlock *this_ptr);
+CFlintlock * __cdecl CFlintlock::ctor(CFlintlock *this_ptr);
 
 // Original: core_flintlck.cpp_CFlintlock_fire_FUN_004ae850
 // Address: 004ae850
@@ -35,4 +35,4 @@ void __cdecl CFlintlock::setup(CFlintlock *this_ptr);
 
 // Original: core_flintlck.cpp_CFlintlock_dtor_FUN_004af630
 // Address: 004af630
-CFlintlock * CFlintlock::dtor(CFlintlock *this_ptr,uint flags);
+CFlintlock * __cdecl CFlintlock::dtor(CFlintlock *this_ptr,uint flags);

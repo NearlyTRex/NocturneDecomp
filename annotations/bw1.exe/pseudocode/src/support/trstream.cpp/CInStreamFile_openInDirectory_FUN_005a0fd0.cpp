@@ -2,20 +2,20 @@
 // Address: 005a0fd0
 // Address Range: [[005a0fd0, 005a108e]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile *this_ptr,undefined4 param_2,undefined4 param_3,int param_4)
+// Signature: int __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile *this_ptr,char *directory,char *filename,int binary_mode)
 
 #include "nocturne.h"
 
-uint __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile *this_ptr,uint param_2,uint param_3,int param_4)
+int __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CInStreamFile *this_ptr,char *directory,char *filename,int binary_mode)
 
 {
   int iVar1;
   HANDLE pvVar2;
   SFoundFileInfo SStack_218;
   
-  (**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);
+  (**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);
   this_ptr->position = 0;
-  engine_dosio_cpp_FUN_00478e20(&SStack_218,param_2,param_3);
+  engine_dosio_cpp_FUN_00478e20(&SStack_218,directory,filename);
   iVar1 = engine_dosio_cpp_findFile_FUN_00478e90(&SStack_218);
   if (iVar1 != 0) {
     this_ptr->file_size = SStack_218.file_size;
@@ -24,12 +24,12 @@ uint __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_005a0fd0(CIn
                          (HANDLE)0x0);
     this_ptr->file_handle = pvVar2;
   }
-  iVar1 = (**(code **)((int)this_ptr->vtable + 0x1c))(this_ptr);
+  iVar1 = (**(code **)((int)(this_ptr->base).vtable + 0x1c))(this_ptr);
   if (iVar1 != 0) {
     support_trstream_cpp_CInStreamFile_allocBuffer_FUN_005a0e10(this_ptr);
-    this_ptr->binary_mode = param_4;
+    this_ptr->binary_mode = binary_mode;
     return 1;
   }
-  (**(code **)((int)this_ptr->vtable + 0x24))(this_ptr);
+  (**(code **)((int)(this_ptr->base).vtable + 0x24))(this_ptr);
   return 0;
 }

@@ -7,13 +7,13 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
+;   core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70 at 0059ab9e
 ;   core_game.cpp_CGame_playerControls_FUN_004b7050 at 004b708b
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b651e
 ;   core_game.cpp_FUN_004bcbf0 at 004bcfb0
 ;   core_script.cpp_CScript_executeInitSection_FUN_00522200 at 0052229d
 ;   core_script.cpp_CScript_process_FUN_005216e0 at 00521763
-;   core_script.cpp_FUN_00522350 at 005265ff
-;   core_zombie.cpp_FUN_0059ab70 at 0059ab9e
+;   core_script.cpp_CScript_step_FUN_00522350 at 005265ff
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141b8

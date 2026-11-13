@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CRing * core_fire_cpp_CRing_ctor_FUN_004a4600(CRing *this_ptr)
+; CRing * __cdecl core_fire_cpp_CRing_ctor_FUN_004a4600(CRing *this_ptr)
 ;
 ; Parameters:
 ; CRing *          Stack[0x4]:4   this_ptr

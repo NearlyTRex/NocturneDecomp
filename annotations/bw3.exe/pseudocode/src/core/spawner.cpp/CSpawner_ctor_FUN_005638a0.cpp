@@ -1,14 +1,12 @@
 // Name: core_spawner.cpp_CSpawner_ctor_FUN_005638a0
 // Address: 005638a0
 // Address Range: [[005638a0, 0056390a]]
-// Convention: unknown
-// Signature: CSpawner * core_spawner_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr)
+// Convention: __cdecl
+// Signature: CSpawner * __cdecl core_spawner_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSpawner * core_spawner_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr)
+CSpawner * __cdecl core_spawner_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr)
 
 {
   CDemonActor *pCVar1;

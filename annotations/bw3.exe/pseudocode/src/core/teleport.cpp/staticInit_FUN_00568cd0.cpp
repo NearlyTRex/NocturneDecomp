@@ -1,12 +1,12 @@
 // Name: core_teleport.cpp_staticInit_FUN_00568cd0
 // Address: 00568cd0
 // Address Range: [[00568cd0, 00568d16]]
-// Convention: unknown
-// Signature: void core_teleport_cpp_staticInit_FUN_00568cd0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_teleport_cpp_staticInit_FUN_00568cd0(void)
 
 #include "nocturne.h"
 
-void core_teleport_cpp_staticInit_FUN_00568cd0(void)
+void __cdecl core_teleport_cpp_staticInit_FUN_00568cd0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

@@ -25,7 +25,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_004193c0(CBodyPart *this_pt
   core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->texture_count,"textureCount");
   if (DAT_007c3038 == 1) {
     iVar8 = 0;
-    core_bodypart_cpp_FUN_00418d00(this_ptr,this_ptr->vertex_count,this_ptr->tri_count);
+    core_bodypart_cpp_setCounts_FUN_00418d00(this_ptr,this_ptr->vertex_count,this_ptr->tri_count);
     if (0 < this_ptr->vertex_count) {
       do {
         iVar8 = iVar8 + 1;

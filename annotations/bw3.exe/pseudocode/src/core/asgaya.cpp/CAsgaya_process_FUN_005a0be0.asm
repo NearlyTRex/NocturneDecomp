@@ -29,13 +29,13 @@
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
 ;   core_actor.cpp_FUN_00408b80
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_FUN_0042c1e0
 ;   core_charactr.cpp_FUN_0042c230
 ;   core_charactr.cpp_FUN_0042cd70
-;   core_charactr.cpp_FUN_004319d0
 ;   core_charactr.cpp_FUN_00432330
 ;   core_charactr.cpp_FUN_00433c60
 ;   core_charactr.cpp_FUN_00434850
@@ -165,8 +165,8 @@ section .text
     PUSH 0x0                            ; 005a0d35
     PUSH EAX                            ; 005a0d37
     MOV EDI,EAX                         ; 005a0d38
-    CALL core_charactr.cpp_FUN_004319d0 ; 005a0d3a
-        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004319d0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 ; 005a0d3a
+        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     MOV EAX,EDI                         ; 005a0d3f
     ADD ESP,0x14                        ; 005a0d41
     MOV EDX,dword ptr [EAX + 0x33fd0]   ; 005a0d44

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStylerDemon * core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)
+; CStylerDemon * __cdecl core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)
 ;
 ; Parameters:
 ; CStylerDemon *   Stack[0x4]:4   this_ptr

@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   support_trisock.cpp_FUN_00579820 at 00579866
 ;   support_trisock.cpp_FUN_00579890 at 0057993c
-;   support_trisock.cpp_FUN_0057a47c at 0057a640
+;   support_trisock.cpp_FUN_0057a480 at 0057a640
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0

@@ -16,7 +16,7 @@
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406e00 at 00406e69
 ;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004056b0 at 0040570d
 ;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057d0 at 0040582d
-;   engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404e5e at 00404eb2
+;   engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404e60 at 00404eb2
 ;   engine_3d.c_renderPolygonAlphaTexturedNormalized2_FUN_00405040 at 00405092
 ;   ... and 48 more
 ;

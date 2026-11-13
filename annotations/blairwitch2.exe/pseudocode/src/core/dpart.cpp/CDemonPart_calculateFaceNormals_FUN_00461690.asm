@@ -7,7 +7,7 @@
 ; CDemonPart *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dpart.cpp_FUN_004619b0 at 004619b1
+;   core_dpart.cpp_FUN_00461760 at 004619b1
 ;
 ; Called Functions:
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0

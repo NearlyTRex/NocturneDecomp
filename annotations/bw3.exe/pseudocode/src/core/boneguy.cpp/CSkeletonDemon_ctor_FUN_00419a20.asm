@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSkeletonDemon * core_boneguy_cpp_CSkeletonDemon_ctor_FUN_00419a20(CSkeletonDemon *this_ptr)
+; CSkeletonDemon * __cdecl core_boneguy_cpp_CSkeletonDemon_ctor_FUN_00419a20(CSkeletonDemon *this_ptr)
 ;
 ; Parameters:
 ; CSkeletonDemon * Stack[0x4]:4   this_ptr

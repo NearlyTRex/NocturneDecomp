@@ -1275,7 +1275,7 @@ LAB_0046a09c:
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180
               (&(param_1->base).base.model);
     core_doc_cpp_FUN_0046f610(param_1);
-    core_doc_cpp_FUN_00473160();
+    core_doc_cpp_CDoc_aimLeftPistol_FUN_00473160(param_1);
     core_doc_cpp_FUN_0046caa0();
   }
   core_doc_cpp_CDoc_updateArmRecoilBlend_FUN_00473c10(param_1,param_2,iStack_1c);

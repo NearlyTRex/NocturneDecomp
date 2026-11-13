@@ -37,10 +37,10 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_render_FUN_00416620(CAudioRecPuzz
   }
   fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(this_ptr->reel_angle);
   this_ptr->reel_angle = fVar1;
-  (**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,1,0x10,this_ptr->reel_angle,0);
-  (**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,4,4,this_ptr->reel_angle,1);
-  (**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,0x17d,0x10,this_ptr->reel_angle,0);
-  (**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,0x181,4,this_ptr->reel_angle,1);
+  (**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,1,0x10,this_ptr->reel_angle,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,4,4,this_ptr->reel_angle,1);
+  (**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x17d,0x10,this_ptr->reel_angle,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x181,4,this_ptr->reel_angle,1);
   iVar3 = this_ptr->cursor_index;
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0
             (CAlphaBitmap_ARRAY_007c3984 + iVar3,_DAT_01c4353c - this_ptr->cursor_offset_x[iVar3],

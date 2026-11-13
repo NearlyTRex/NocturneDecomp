@@ -2,13 +2,13 @@
 // Address: 00481350
 // Address Range: [[00481350, 00481916]]
 // Convention: unknown
-// Signature: void shape_edittool_cpp_FUN_00481350(undefined4 param_1,int *param_2,int *param_3,int param_4)
+// Signature: void shape_edittool_cpp_FUN_00481350(undefined4 param_1,int *param_2,int *param_3,uint param_4)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void shape_edittool_cpp_FUN_00481350(uint param_1,int *param_2,int *param_3,int param_4)
+void shape_edittool_cpp_FUN_00481350(uint param_1,int *param_2,int *param_3,uint param_4)
 
 {
   SRenderVertex vertex1;
@@ -102,12 +102,16 @@ void shape_edittool_cpp_FUN_00481350(uint param_1,int *param_2,int *param_3,int 
       uVar1 = uVar1 + 1;
       *(float *)(&stack0xfffffe8c + iVar3) = fStack_14;
       if (7 < (int)uVar1) {
-        iVar3 = param_4;
+        uVar1 = param_4;
         if (_DAT_01c5baec != 0) {
-          engine_mini3d_cpp_FUN_004f3520();
-          iVar3 = _DAT_01c6b5c0;
+          iVar3 = (param_4 & 0xff) * 3;
+          engine_mini3d_cpp_setColor_FUN_004f3520
+                    ((uint)(byte)(&DAT_01c6af9a)[iVar3] |
+                     (uint)(byte)(&DAT_01c6af98)[iVar3] << 0x10 |
+                     (uint)(byte)(&DAT_01c6af99)[iVar3] << 8);
+          uVar1 = _DAT_01c6b5c0;
         }
-        _DAT_01c6b5c0 = iVar3;
+        _DAT_01c6b5c0 = uVar1;
         pfVar2 = (float *)&stack0xfffffe84;
         auStack_28._8_4_ = 0;
         do {
@@ -339,7 +343,7 @@ void shape_edittool_cpp_FUN_00481350(uint param_1,int *param_2,int *param_3,int 
           engine_3d_c_clipAndDrawLine2D_FUN_00407b30(vertex1_01,vertex2_01);
           param_4 = param_4 + 1;
           pfVar2 = pfVar2 + 3;
-        } while (param_4 < 8);
+        } while ((int)param_4 < 8);
         return;
       }
       if ((uVar1 & 1) == 0) break;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_weapon_cpp_staticInit_FUN_0057ad40(void)
+; void __cdecl core_weapon_cpp_staticInit_FUN_0057ad40(void)
 ;
 ;
 ; Called Functions:

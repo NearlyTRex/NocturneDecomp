@@ -7,7 +7,7 @@
 
 // Original: core_dracbrid.cpp_staticInit_FUN_00462af0
 // Address: 00462af0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_dracbrid.cpp_factoryFuncDraculaBride_FUN_00462b70
 // Address: 00462b70
@@ -15,7 +15,7 @@ CDraculaBride * __cdecl factoryFuncDraculaBride(void);
 
 // Original: core_dracbrid.cpp_CDraculaBride_getActorType_FUN_00462b90
 // Address: 00462b90
-CDemonActorType * CDraculaBride::getActorType(CDraculaBride *this_ptr);
+CDemonActorType * __cdecl CDraculaBride::getActorType(CDraculaBride *this_ptr);
 
 // Original: core_dracbrid.cpp_CDraculaBride_ctor_FUN_00462ba0
 // Address: 00462ba0
@@ -83,12 +83,12 @@ SFreaky * __cdecl SFreaky::ctor(SFreaky *this_ptr);
 
 // Original: core_dracbrid.cpp_SFreaky_dtor_FUN_00465c50
 // Address: 00465c50
-SFreaky * SFreaky::dtor(SFreaky *this_ptr,uint flags);
+SFreaky * __cdecl SFreaky::dtor(SFreaky *this_ptr,uint flags);
 
 // Original: core_dracbrid.cpp_CDraculaBride_dtor_FUN_00465c60
 // Address: 00465c60
-CDraculaBride * CDraculaBride::dtor(CDraculaBride *this_ptr,uint flags);
+CDraculaBride * __cdecl CDraculaBride::dtor(CDraculaBride *this_ptr,uint flags);
 
-// Original: core_dracbrid.cpp_FUN_00465cfe
-// Address: 00465cfe
-CDrawSurface * FUN_00465cfe(CDrawSurface *param_1);
+// Original: core_dracbrid.cpp_FUN_00465d00
+// Address: 00465d00
+CDrawSurface * FUN_00465d00(void);

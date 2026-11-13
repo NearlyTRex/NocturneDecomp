@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hino_cpp_factoryFuncHino_FUN_0059b640(void)
+; CHino * __cdecl core_hino_cpp_factoryFuncHino_FUN_0059b640(void)
 ;
 ;
 ; Called Functions:

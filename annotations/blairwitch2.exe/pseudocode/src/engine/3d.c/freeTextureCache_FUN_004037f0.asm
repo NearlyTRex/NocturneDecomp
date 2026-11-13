@@ -15,7 +15,7 @@
 section .text
 
     CALL engine_texture.cpp_freeTextureCache_FUN_00574db0 ; 004037f0
-        ;   XREF to: 00574db0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_freeTextureCache_FUN_00574db0()
+        ;   XREF to: 00574db0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_freeTextureCache_FUN_00574db0()
         ;   Label: engine_3d.c_freeTextureCache_FUN_004037f0
     RET                                 ; 004037f5
 

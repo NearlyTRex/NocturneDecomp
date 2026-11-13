@@ -64,6 +64,9 @@ import os
 import sys
 import argparse
 
+# A body that ends in padding "falls into" the next entry without being split from it
+from alignment_nop import is_alignment_nop
+
 SEVERITY_ORDER = ["MEDIUM", "HIGH"]
 
 
@@ -89,21 +92,6 @@ def is_undefined(program, addr):
         return not cu.isDefined()
     return False
 
-
-def is_alignment_nop(instr):
-    """True for padding Watcom aligns the next function with: NOP, MOV r,r and
-    LEA r,[r] / [r + 0x0]. A body that ends in padding "falls into" the next entry
-    without being split from it."""
-    mnemonic = instr.getMnemonicString().upper()
-    if mnemonic == "NOP":
-        return True
-    if mnemonic not in ("MOV", "LEA") or instr.getNumOperands() != 2:
-        return False
-    dst = instr.getDefaultOperandRepresentation(0).upper()
-    src = instr.getDefaultOperandRepresentation(1).upper().replace(" ", "")
-    if mnemonic == "MOV":
-        return src == dst
-    return src in ("[%s]" % dst, "[%s+0X0]" % dst)
 
 
 def scan_function(program, func, exec_set, fm):

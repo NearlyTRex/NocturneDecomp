@@ -32,13 +32,13 @@
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
 ;   core_charactr.cpp_FUN_0042c230
-;   core_charactr.cpp_FUN_004319d0
 ;   core_charactr.cpp_FUN_00434850
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   ... and 22 more
@@ -337,8 +337,8 @@ section .text
     MOV EDX,dword ptr [0x00600530]      ; 00419e96 | DAT_00600530
     PUSH EDX                            ; 00419e9c | DAT_01d81080
     ADD ESI,0x48                        ; 00419e9d
-    CALL core_mission.cpp_FUN_004f6f10  ; 00419ea0
-        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f6f10()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 00419ea0
+        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     MOV dword ptr [ESI + 0xd0ec],0x0    ; 00419ea5
     INC EDI                             ; 00419eaf
     MOV ECX,dword ptr [EBX + 0xd0e8]    ; 00419eb0
@@ -412,8 +412,8 @@ section .text
     PUSH 0x1                            ; 00419f70
     PUSH EBX                            ; 00419f72
     MOV dword ptr [EBX + 0xd064],0x0    ; 00419f73
-    CALL core_charactr.cpp_FUN_004319d0 ; 00419f7d
-        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004319d0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 ; 00419f7d
+        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 00419f82
     JMP 0x00419f28                      ; 00419f85
         ;   XREF to: 00419f28 (UNCONDITIONAL_JUMP)  ; LAB_00419f28

@@ -1,14 +1,14 @@
 // Name: engine_texture.cpp_freeTextureCache_FUN_0056a9c0
 // Address: 0056a9c0
 // Address Range: [[0056a9c0, 0056aa01]]
-// Convention: unknown
-// Signature: void engine_texture_cpp_freeTextureCache_FUN_0056a9c0(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_texture_cpp_freeTextureCache_FUN_0056a9c0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void engine_texture_cpp_freeTextureCache_FUN_0056a9c0(void)
+void __cdecl engine_texture_cpp_freeTextureCache_FUN_0056a9c0(void)
 
 {
   CTextureCache *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vehicle_cpp_staticInit_FUN_005a75c0(void)
+; void __cdecl core_vehicle_cpp_staticInit_FUN_005a75c0(void)
 ;
 ;
 ; Called Functions:

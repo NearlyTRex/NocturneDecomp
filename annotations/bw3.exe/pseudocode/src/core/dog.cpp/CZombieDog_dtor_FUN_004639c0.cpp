@@ -1,14 +1,12 @@
 // Name: core_dog.cpp_CZombieDog_dtor_FUN_004639c0
 // Address: 004639c0
 // Address Range: [[004639c0, 00463a44]]
-// Convention: unknown
-// Signature: CZombieDog * core_dog_cpp_CZombieDog_dtor_FUN_004639c0(CZombieDog *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CZombieDog * __cdecl core_dog_cpp_CZombieDog_dtor_FUN_004639c0(CZombieDog *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CZombieDog * core_dog_cpp_CZombieDog_dtor_FUN_004639c0(CZombieDog *this_ptr,uint flags)
+CZombieDog * __cdecl core_dog_cpp_CZombieDog_dtor_FUN_004639c0(CZombieDog *this_ptr,uint flags)
 
 {
   int iVar1;

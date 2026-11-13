@@ -1,14 +1,12 @@
 // Name: core_villain.cpp_CSteuben_dtor_FUN_005a5d70
 // Address: 005a5d70
 // Address Range: [[005a5d70, 005a5e04]]
-// Convention: unknown
-// Signature: CSteuben * core_villain_cpp_CSteuben_dtor_FUN_005a5d70(CSteuben *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSteuben * __cdecl core_villain_cpp_CSteuben_dtor_FUN_005a5d70(CSteuben *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSteuben * core_villain_cpp_CSteuben_dtor_FUN_005a5d70(CSteuben *this_ptr,uint flags)
+CSteuben * __cdecl core_villain_cpp_CSteuben_dtor_FUN_005a5d70(CSteuben *this_ptr,uint flags)
 
 {
   int iVar1;

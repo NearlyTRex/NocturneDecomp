@@ -11,7 +11,7 @@
 ;
 ; XREF[3]:
 ;   sound_sndmain.cpp_FUN_0056e830 at 0056ea3c
-;   sound_sndmain.cpp_FUN_005740fe at 005741ed
+;   sound_sndmain.cpp_FUN_00574100 at 005741ed
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20 at 005732b6
 ;
 ; Referenced Globals:

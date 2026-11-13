@@ -10,7 +10,7 @@
 ; float            Stack[0x10]:4   bottom
 ;
 ; XREF[4]:
-;   engine_mini3d.cpp_FUN_004f5dec at 004f5e34
+;   engine_mini3d.cpp_setRenderSurface_FUN_004f5df0 at 004f5e34
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047e2b0 at 0047e6a0
 ;   shape_edittool.cpp_CEditorTools_popWindowState_FUN_0047e780 at 0047e7cb
 ;   shape_edittool.cpp_FUN_0047e870 at 0047e956
@@ -34,7 +34,7 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   engine_mini3d.cpp_FUN_004f53d0
+;   engine_mini3d.cpp_resetDynamicLight_FUN_004f53d0
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     ADD ESP,0x18                        ; 004f2b85
     MOV ESI,0x1                         ; 004f2b88
         ;   Label: LAB_004f2b88
-    CALL engine_mini3d.cpp_FUN_004f53d0 ; 004f2b8d
-        ;   XREF to: 004f53d0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f53d0()
+    CALL engine_mini3d.cpp_resetDynamicLight_FUN_004f53d0 ; 004f2b8d
+        ;   XREF to: 004f53d0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_resetDynamicLight_FUN_004f53d0()
     MOV dword ptr [0x01d0c398],ESI      ; 004f2b92 | DAT_01d0c398
     ADD ESP,0x8                         ; 004f2b98
     POP ESI                             ; 004f2b9b

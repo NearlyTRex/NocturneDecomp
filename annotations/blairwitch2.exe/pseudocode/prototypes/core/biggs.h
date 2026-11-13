@@ -7,7 +7,7 @@
 
 // Original: core_biggs.cpp_staticInit_FUN_00414cb0
 // Address: 00414cb0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_biggs.cpp_factoryFuncBiggs_FUN_00414ce0
 // Address: 00414ce0
@@ -15,7 +15,7 @@ CBiggs * __cdecl factoryFuncBiggs(void);
 
 // Original: core_biggs.cpp_CBiggs_getActorType_FUN_00414d00
 // Address: 00414d00
-CDemonActorType * CBiggs::getActorType(CBiggs *this_ptr);
+CDemonActorType * __cdecl CBiggs::getActorType(CBiggs *this_ptr);
 
 // Original: core_biggs.cpp_CBiggs_ctor_FUN_00414d10
 // Address: 00414d10
@@ -51,4 +51,4 @@ ECollisionType __cdecl CBiggs::getCollisionType(CBiggs *this_ptr,SCollisionInfo 
 
 // Original: core_biggs.cpp_CBiggs_dtor_FUN_00415410
 // Address: 00415410
-CBiggs * CBiggs::dtor(CBiggs *this_ptr,uint flags);
+CBiggs * __cdecl CBiggs::dtor(CBiggs *this_ptr,uint flags);

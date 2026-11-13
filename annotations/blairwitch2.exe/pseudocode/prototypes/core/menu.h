@@ -17,9 +17,9 @@ void __cdecl FUN_004eaf30(int x_center,int y_top,int height_half);
 // Address: 004eb0e0
 int __cdecl FUN_004eb0e0(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
 
-// Original: core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3ce
-// Address: 004eb3ce
-void showJoystickCalibrationScreen(char *param_1);
+// Original: core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3d0
+// Address: 004eb3d0
+void showJoystickCalibrationScreen(void);
 
 // Original: core_menu.cpp_calibrateGamepad_FUN_004eb490
 // Address: 004eb490
@@ -29,13 +29,9 @@ int __cdecl calibrateGamepad(void);
 // Address: 004eb7c0
 void __cdecl adjustMouseSensitivity(int *sensitivity_value_ptr,char *window_title);
 
-// Original: core_menu.cpp_FUN_004ebbf8
-// Address: 004ebbf8
-void FUN_004ebbf8(void);
-
-// Original: core_menu.cpp_FUN_004ebc2a
-// Address: 004ebc2a
-void FUN_004ebc2a(void);
+// Original: core_menu.cpp_FUN_004eba50
+// Address: 004eba50
+void FUN_004eba50(int *param_1,char *param_2);
 
 // Original: core_menu.cpp_showCalibrationTestPattern_FUN_004ebce0
 // Address: 004ebce0

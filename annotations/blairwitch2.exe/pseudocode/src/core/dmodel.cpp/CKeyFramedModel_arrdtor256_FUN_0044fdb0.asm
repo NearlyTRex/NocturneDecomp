@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CKeyFramedModel * core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_0044fdb0(CKeyFramedModel *this_ptr,uint flags)
+; CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_0044fdb0(CKeyFramedModel *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; longlong __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_isButtonHovered_FUN_0059b900(CAudioRecPuzzle *this_ptr,int param_2)
+; int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_isButtonHovered_FUN_0059b900(CAudioRecPuzzle *this_ptr,int button)
 ;
 ; Parameters:
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   button
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c2a37c

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[7]:
-;   core_bmppuzzl.cpp_FUN_004119a0 at 004119ce
+;   core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0 at 004119ce
 ;   core_game.cpp_CGame_playerControls_FUN_004b92e0 at 004b9325
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b833c
 ;   core_game.cpp_FUN_004bec20 at 004befbf

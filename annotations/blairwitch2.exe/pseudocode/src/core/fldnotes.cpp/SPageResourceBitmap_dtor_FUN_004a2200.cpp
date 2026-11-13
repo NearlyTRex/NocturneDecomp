@@ -1,14 +1,12 @@
 // Name: core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004a2200
 // Address: 004a2200
 // Address Range: [[004a2200, 004a226e]]
-// Convention: unknown
-// Signature: SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004a2200(SPageResourceBitmap *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004a2200(SPageResourceBitmap *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004a2200(SPageResourceBitmap *this_ptr,uint flags)
+SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004a2200(SPageResourceBitmap *this_ptr,uint flags)
 
 {
   CAlphaBitmap *pCVar1;

@@ -7,7 +7,7 @@
 
 // Original: core_teleport.cpp_staticInit_FUN_00594df0
 // Address: 00594df0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_teleport.cpp_factoryFuncTeleportDest_FUN_00594e40
 // Address: 00594e40
@@ -15,7 +15,7 @@ CTeleportDest * __cdecl factoryFuncTeleportDest(void);
 
 // Original: core_teleport.cpp_CTeleportDest_getActorType_FUN_00594e60
 // Address: 00594e60
-CDemonActorType * CTeleportDest::getActorType(CTeleportDest *this_ptr);
+CDemonActorType * __cdecl CTeleportDest::getActorType(CTeleportDest *this_ptr);
 
 // Original: core_teleport.cpp_CTeleportDest_ctor_FUN_00594e70
 // Address: 00594e70

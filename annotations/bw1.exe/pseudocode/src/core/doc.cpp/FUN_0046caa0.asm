@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_doc_cpp_FUN_0046caa0(int param_1)
+; void core_doc_cpp_FUN_0046caa0(CDoc *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x22b4]:4  local_22b4
@@ -253,9 +253,9 @@
 ;   core_actor.cpp_FUN_00408bb0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dirmat.cpp_FUN_0045f690
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80
 ;   core_doc.cpp_FUN_00468b80
 ;   core_doc.cpp_FUN_0046e630
-;   core_doc.cpp_FUN_0046ea80
 ;   core_door.cpp_FUN_004783d0
 ;   core_lever.cpp_FUN_004ff6b0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
@@ -349,8 +349,8 @@ section .text
     ADD ESP,0x14                        ; 0046cb7f
     PUSH EBX                            ; 0046cb82
         ;   Label: LAB_0046cb82
-    CALL core_doc.cpp_FUN_0046ea80      ; 0046cb83
-        ;   XREF to: 0046ea80 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_0046ea80()
+    CALL core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 ; 0046cb83
+        ;   XREF to: 0046ea80 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80(CDoc * this_ptr)
     ADD ESP,0x4                         ; 0046cb88
     LEA EAX,[EBX + 0x158]               ; 0046cb8b
     PUSH EAX                            ; 0046cb91

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 41,
+    "complexity_score": 40,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 25,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_strcpy"
     ],
-    "total_lines": 60
+    "total_lines": 59
   },
   "cross_references": [
     {
@@ -36,9 +36,9 @@
         "004ecbf8"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hero.cpp_CHeroPlaceholder_ctor_FUN_004ecba0",
-    "signature": "CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004ecba0(CHeroPlaceholder *this_ptr)"
+    "signature": "CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004ecba0(CHeroPlaceholder *this_ptr)"
   },
   "function_calls": [
     {
@@ -180,7 +180,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 18,
+      "line": 16,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

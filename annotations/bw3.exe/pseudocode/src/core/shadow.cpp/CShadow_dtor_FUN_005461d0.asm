@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CShadow * core_shadow_cpp_CShadow_dtor_FUN_005461d0(CShadow *this_ptr,uint flags)
+; CShadow * __cdecl core_shadow_cpp_CShadow_dtor_FUN_005461d0(CShadow *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CShadow *        Stack[0x4]:4   this_ptr

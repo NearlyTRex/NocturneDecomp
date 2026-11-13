@@ -1,0 +1,60 @@
+// Name: core_fldnotes.cpp_SPageResource_setLink_FUN_004a83d0
+// Address: 004a83d0
+// Address Range: [[004a83d0, 004a8463]]
+// Convention: __cdecl
+// Signature: void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a83d0(SPageResource *this_ptr,char *param_2)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_fldnotes_cpp_SPageResource_setLink_FUN_004a83d0(SPageResource *this_ptr,char *param_2)
+
+{
+  char cVar1;
+  char *pcVar2;
+  uint uVar3;
+  byte bVar4;
+  
+  bVar4 = 0;
+  if (this_ptr->link == (char *)0x0) {
+    if (param_2 == (char *)0x0) {
+      return;
+    }
+  }
+  else {
+    FUN_005a3770(this_ptr->link);
+    this_ptr->link = (char *)0x0;
+    if (param_2 == (char *)0x0) {
+      return;
+    }
+  }
+  uVar3 = 0xffffffff;
+  pcVar2 = param_2;
+  do {
+    if (uVar3 == 0) break;
+    uVar3 = uVar3 - 1;
+    cVar1 = *pcVar2;
+    pcVar2 = pcVar2 + (uint)bVar4 * -2 + 1;
+  } while (cVar1 != '\0');
+  pcVar2 = (char *)malloc(~uVar3);
+  this_ptr->link = pcVar2;
+  if (pcVar2 == (char *)0x0) {
+    _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
+    _DAT_01d71de4 = 0x36c;
+    core_main_c_FUN_004e4330("Out of memory");
+  }
+  pcVar2 = this_ptr->link;
+  do {
+    cVar1 = *param_2;
+    *pcVar2 = cVar1;
+    if (cVar1 == '\0') {
+      return;
+    }
+    cVar1 = param_2[1];
+    param_2 = param_2 + 2;
+    pcVar2[1] = cVar1;
+    pcVar2 = pcVar2 + 2;
+  } while (cVar1 != '\0');
+  return;
+}

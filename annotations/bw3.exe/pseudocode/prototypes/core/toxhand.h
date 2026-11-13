@@ -7,19 +7,19 @@
 
 // Original: core_toxhand.cpp_staticInit_FUN_0056c000
 // Address: 0056c000
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_toxhand.cpp_factoryFuncTheHand_FUN_0056c030
 // Address: 0056c030
-void factoryFuncTheHand(void);
+CTheHand * __cdecl factoryFuncTheHand(void);
 
 // Original: core_toxhand.cpp_CTheHand_getActorType_FUN_0056c050
 // Address: 0056c050
-CDemonActorType * CTheHand::getActorType(CTheHand *this_ptr);
+CDemonActorType * __cdecl CTheHand::getActorType(CTheHand *this_ptr);
 
 // Original: core_toxhand.cpp_CTheHand_ctor_FUN_0056c060
 // Address: 0056c060
-CTheHand * CTheHand::ctor(CTheHand *this_ptr);
+CTheHand * __cdecl CTheHand::ctor(CTheHand *this_ptr);
 
 // Original: core_toxhand.cpp_CTheHand_setup_FUN_0056c0c0
 // Address: 0056c0c0
@@ -55,4 +55,4 @@ void FUN_0056cbd0(int param_1);
 
 // Original: core_toxhand.cpp_CTheHand_dtor_FUN_0056cc10
 // Address: 0056cc10
-CTheHand * CTheHand::dtor(CTheHand *this_ptr,uint flags);
+CTheHand * __cdecl CTheHand::dtor(CTheHand *this_ptr,uint flags);

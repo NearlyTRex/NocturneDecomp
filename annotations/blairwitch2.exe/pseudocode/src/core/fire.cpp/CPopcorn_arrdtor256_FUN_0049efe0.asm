@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPopcorn * core_fire_cpp_CPopcorn_arrdtor256_FUN_0049efe0(CPopcorn *this_ptr,uint flags)
+; CPopcorn * __cdecl core_fire_cpp_CPopcorn_arrdtor256_FUN_0049efe0(CPopcorn *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CPopcorn *       Stack[0x4]:4   this_ptr

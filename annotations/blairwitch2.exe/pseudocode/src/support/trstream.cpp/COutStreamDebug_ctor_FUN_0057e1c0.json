@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 8,
+    "complexity_score": 9,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 8,
+    "pseudocode_lines": 9,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 16
+    "total_lines": 17
   },
   "cross_references": [
     {
       "addr": "0057b9a0",
       "from_addr": "0057b9a5",
-      "name": "core_terrain.cpp_FUN_0057b9a0",
+      "name": "support_trstream.cpp_staticInit_FUN_0057b9a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -28,15 +28,15 @@
         "0057e1d3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamDebug_ctor_FUN_0057e1c0",
-    "signature": "COutStreamDebug * support_trstream_cpp_COutStreamDebug_ctor_FUN_0057e1c0(COutStreamDebug *this_ptr)"
+    "signature": "COutStreamDebug * __cdecl support_trstream_cpp_COutStreamDebug_ctor_FUN_0057e1c0(COutStreamDebug *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "0057d860",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057d860"
+      "name": "support_trstream.cpp_COutStream_dtor_FUN_0057d860"
     }
   ],
   "globals": [],
@@ -46,7 +46,7 @@
       {
         "call_addr": "0057b9a5",
         "call_type": "direct",
-        "caller": "core_terrain.cpp_FUN_0057b9a0",
+        "caller": "support_trstream.cpp_staticInit_FUN_0057b9a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -7,19 +7,19 @@
 
 // Original: core_storm.cpp_staticInit_FUN_00568a50
 // Address: 00568a50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_storm.cpp_factoryFuncStorm_FUN_00568a80
 // Address: 00568a80
-void factoryFuncStorm(void);
+CStorm * __cdecl factoryFuncStorm(void);
 
 // Original: core_storm.cpp_CStorm_getActorType_FUN_00568aa0
 // Address: 00568aa0
-CDemonActorType * CStorm::getActorType(CStorm *this_ptr);
+CDemonActorType * __cdecl CStorm::getActorType(CStorm *this_ptr);
 
 // Original: core_storm.cpp_CStorm_ctor_FUN_00568ab0
 // Address: 00568ab0
-CStorm * CStorm::ctor(CStorm *this_ptr);
+CStorm * __cdecl CStorm::ctor(CStorm *this_ptr);
 
 // Original: core_storm.cpp_CStorm_fire_FUN_00568b50
 // Address: 00568b50
@@ -35,4 +35,4 @@ int __cdecl CStorm::renderOpaque(CStorm *this_ptr);
 
 // Original: core_storm.cpp_CStorm_dtor_FUN_00568c80
 // Address: 00568c80
-CStorm * CStorm::dtor(CStorm *this_ptr,uint flags);
+CStorm * __cdecl CStorm::dtor(CStorm *this_ptr,uint flags);

@@ -25,7 +25,7 @@
 ;   ... and 46 more
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004d26b0
+;   core_hero.cpp_CHero_setup_FUN_004d26b0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004fc310
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0
 ;   core_prye.cpp_FUN_0051c1c0
@@ -48,8 +48,8 @@ section .text
     SUB ESP,0x30                        ; 00518684
     MOV EBP,dword ptr [ESP + 0x44]      ; 00518687
     PUSH EBP                            ; 0051868b
-    CALL core_hero.cpp_FUN_004d26b0     ; 0051868c
-        ;   XREF to: 004d26b0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d26b0()
+    CALL core_hero.cpp_CHero_setup_FUN_004d26b0 ; 0051868c
+        ;   XREF to: 004d26b0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_setup_FUN_004d26b0(CHero * this_ptr)
     ADD ESP,0x4                         ; 00518691
     LEA ESI,[EBP + 0x158]               ; 00518694
     PUSH ESI                            ; 0051869a

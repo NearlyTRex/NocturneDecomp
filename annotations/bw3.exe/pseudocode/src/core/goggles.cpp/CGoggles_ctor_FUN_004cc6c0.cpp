@@ -1,14 +1,12 @@
 // Name: core_goggles.cpp_CGoggles_ctor_FUN_004cc6c0
 // Address: 004cc6c0
 // Address Range: [[004cc6c0, 004cc70d]]
-// Convention: unknown
-// Signature: CGoggles * core_goggles_cpp_CGoggles_ctor_FUN_004cc6c0(CGoggles *this_ptr)
+// Convention: __cdecl
+// Signature: CGoggles * __cdecl core_goggles_cpp_CGoggles_ctor_FUN_004cc6c0(CGoggles *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CGoggles * core_goggles_cpp_CGoggles_ctor_FUN_004cc6c0(CGoggles *this_ptr)
+CGoggles * __cdecl core_goggles_cpp_CGoggles_ctor_FUN_004cc6c0(CGoggles *this_ptr)
 
 {
   CDemonActor *pCVar1;

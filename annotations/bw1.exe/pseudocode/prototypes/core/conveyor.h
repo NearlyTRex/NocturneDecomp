@@ -7,7 +7,7 @@
 
 // Original: core_conveyor.cpp_staticInit_FUN_004476f0
 // Address: 004476f0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_conveyor.cpp_factoryFuncConveyor_FUN_00447720
 // Address: 00447720
@@ -15,7 +15,7 @@ CConveyor * __cdecl factoryFuncConveyor(void);
 
 // Original: core_conveyor.cpp_CConveyor_getActorType_FUN_00447740
 // Address: 00447740
-CDemonActorType * CConveyor::getActorType(CConveyor *this_ptr);
+CDemonActorType * __cdecl CConveyor::getActorType(CConveyor *this_ptr);
 
 // Original: core_conveyor.cpp_CConveyor_ctor_FUN_00447750
 // Address: 00447750

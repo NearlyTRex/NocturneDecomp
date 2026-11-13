@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_pryemorp_cpp_CPryeMorph_getActorType_FUN_005273a0(CPryeMorph *this_ptr)
+; CDemonActorType * __cdecl core_pryemorp_cpp_CPryeMorph_getActorType_FUN_005273a0(CPryeMorph *this_ptr)
 ;
 ; Parameters:
 ; CPryeMorph *     Stack[0x4]:4   this_ptr

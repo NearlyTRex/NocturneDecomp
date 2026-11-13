@@ -128,24 +128,6 @@ def test_a_code_unit_that_is_not_data_counts_as_defined(monkeypatch):
     assert not vfr.is_undefined(program, at(BASE))
 
 
-@pytest.mark.parametrize("instruction, padding", [
-    (Instruction("NOP"), True),
-    (Instruction("nop"), True),
-    (Instruction("MOV", "EAX", "EAX"), True),
-    (Instruction("mov", "eax", "eax"), True),
-    (Instruction("LEA", "EAX", "[EAX]"), True),
-    (Instruction("LEA", "EAX", "[EAX + 0x0]"), True),
-    (Instruction("MOV", "EAX", "EBX"), False),
-    (Instruction("LEA", "EAX", "[EBX]"), False),
-    (Instruction("LEA", "EAX", "[EAX + 0x4]"), False),
-    (Instruction("XCHG", "EAX", "EAX"), False),
-    (Instruction("MOV", "EAX"), False),
-    (Instruction("LEA", "EAX", "[EAX]", "EAX"), False),
-])
-def test_alignment_padding_is_nop_or_a_register_moved_onto_itself(instruction, padding):
-    assert vfr.is_alignment_nop(instruction) is padding
-
-
 # --- scanning one function ----------------------------------------------------------------------
 
 def test_an_entry_never_disassembled_is_flagged_but_not_one_holding_data_or_code():

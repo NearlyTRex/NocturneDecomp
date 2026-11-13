@@ -17,7 +17,7 @@
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be047
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be6c1
 ;   core_game.cpp_FUN_004b5190 at 004b5bcf
-;   core_game.cpp_FUN_004bdc1e at 004bdf57
+;   core_game.cpp_FUN_004bdc20 at 004bdf57
 ;   engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004a9440 at 004a949a
 ;
 ; Called Functions:

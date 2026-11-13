@@ -140,7 +140,7 @@ switchD_005935af_caseD_9:
                iVar8 != 0)) goto LAB_00593649;
             iVar8 = core_hero_cpp_FUN_004eb660(&this_ptr->base);
             if (iVar8 != 0) {
-              core_hero_cpp_FUN_004eb7f0(this_ptr);
+              core_hero_cpp_CHero_toggleLeverNow_FUN_004eb7f0(&this_ptr->base);
               goto LAB_00593649;
             }
           }

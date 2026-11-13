@@ -1,15 +1,14 @@
 // Name: core_styldemo.cpp_CStylerDemon_ctor_FUN_0059e070
 // Address: 0059e070
 // Address Range: [[0059e070, 0059e127]]
-// Convention: unknown
-// Signature: CStylerDemon * core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)
+// Convention: __cdecl
+// Signature: CStylerDemon * __cdecl core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CStylerDemon * core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)
+CStylerDemon * __cdecl core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)
 
 {
   SMRGLTextureModel *pSVar1;

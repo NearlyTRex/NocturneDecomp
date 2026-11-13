@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_yow_cpp_CYow_getActorType_FUN_00586330(CYow *this_ptr)
+; CDemonActorType * __cdecl core_yow_cpp_CYow_getActorType_FUN_00586330(CYow *this_ptr)
 ;
 ; Parameters:
 ; CYow *           Stack[0x4]:4   this_ptr

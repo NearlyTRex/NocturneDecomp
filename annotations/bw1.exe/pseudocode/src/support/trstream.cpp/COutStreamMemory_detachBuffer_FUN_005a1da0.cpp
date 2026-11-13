@@ -10,10 +10,12 @@ int __cdecl support_trstream_cpp_COutStreamMemory_detachBuffer_FUN_005a1da0(COut
 
 {
   char *pcVar1;
+  void *pvVar2;
   
   pcVar1 = this_ptr->buffer;
   *param_2 = this_ptr->length;
+  pvVar2 = (this_ptr->base).vtable;
   this_ptr->buffer = (char *)0x0;
-  (**(code **)((int)this_ptr->vtable + 0x14))(this_ptr);
+  (**(code **)((int)pvVar2 + 0x14))(this_ptr);
   return (int)pcVar1;
 }

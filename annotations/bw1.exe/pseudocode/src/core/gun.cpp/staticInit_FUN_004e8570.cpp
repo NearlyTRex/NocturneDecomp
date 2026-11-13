@@ -1,12 +1,12 @@
 // Name: core_gun.cpp_staticInit_FUN_004e8570
 // Address: 004e8570
 // Address Range: [[004e8570, 004e8593]]
-// Convention: unknown
-// Signature: void core_gun_cpp_staticInit_FUN_004e8570(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_gun_cpp_staticInit_FUN_004e8570(void)
 
 #include "nocturne.h"
 
-void core_gun_cpp_staticInit_FUN_004e8570(void)
+void __cdecl core_gun_cpp_staticInit_FUN_004e8570(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

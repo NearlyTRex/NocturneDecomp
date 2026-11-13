@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void support_trstream_cpp_staticInit_FUN_00572510(void)
+; void __cdecl support_trstream_cpp_staticInit_FUN_00572510(void)
 ;
 ;
 ; Called Functions:

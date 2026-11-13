@@ -7,7 +7,7 @@
 
 // Original: core_boxactor.cpp_staticInit_FUN_00421c00
 // Address: 00421c00
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_boxactor.cpp_factoryFuncBoxActor_FUN_00421c70
 // Address: 00421c70
@@ -15,7 +15,7 @@ CBoxActor * __cdecl factoryFuncBoxActor(void);
 
 // Original: core_boxactor.cpp_CBoxActor_getActorType_FUN_00421c90
 // Address: 00421c90
-CDemonActorType * CBoxActor::getActorType(CBoxActor *this_ptr);
+CDemonActorType * __cdecl CBoxActor::getActorType(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_ctor_FUN_00421ca0
 // Address: 00421ca0
@@ -135,4 +135,4 @@ CBoxActor * __cdecl CBoxActor::dtor(CBoxActor *this_ptr,uint flags);
 
 // Original: core_boxactor.cpp_CDemonFilter_arrdtor8_FUN_00423810
 // Address: 00423810
-CDemonFilter * CDemonFilter::arrdtor8(CDemonFilter *this_ptr,uint flags);
+CDemonFilter * __cdecl CDemonFilter::arrdtor8(CDemonFilter *this_ptr,uint flags);

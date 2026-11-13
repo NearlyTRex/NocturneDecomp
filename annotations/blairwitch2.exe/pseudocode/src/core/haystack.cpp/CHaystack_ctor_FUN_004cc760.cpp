@@ -1,14 +1,12 @@
 // Name: core_haystack.cpp_CHaystack_ctor_FUN_004cc760
 // Address: 004cc760
 // Address Range: [[004cc760, 004cc7c3]]
-// Convention: unknown
-// Signature: CHaystack * core_haystack_cpp_CHaystack_ctor_FUN_004cc760(CHaystack *this_ptr)
+// Convention: __cdecl
+// Signature: CHaystack * __cdecl core_haystack_cpp_CHaystack_ctor_FUN_004cc760(CHaystack *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHaystack * core_haystack_cpp_CHaystack_ctor_FUN_004cc760(CHaystack *this_ptr)
+CHaystack * __cdecl core_haystack_cpp_CHaystack_ctor_FUN_004cc760(CHaystack *this_ptr)
 
 {
   CHaystack *pCVar1;

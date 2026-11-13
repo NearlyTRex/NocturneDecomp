@@ -1,0 +1,245 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 287,
+    "complexity_score": 200,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 80,
+    "suspect_count": 11,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 367
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00511a10",
+    "address_range": [
+      [
+        "00511a10",
+        "00511d40"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_matrixPushAndTransform_FUN_00511a10",
+    "signature": "void __cdecl engine_mini3d_cpp_matrixPushAndTransform_FUN_00511a10(CVector3f *angles,CVector3f *position)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045fd80",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045fd80"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2257c",
+      "name": "DAT_01d2257c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22580",
+      "name": "DAT_01d22580",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24ffc",
+      "name": "DAT_01d24ffc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.267857142857143,
+    "instruction_count": 280,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 1,
+      "COPY": 1322,
+      "FLOAT2FLOAT": 129,
+      "FLOAT_ADD": 34,
+      "FLOAT_MULT": 59,
+      "FLOAT_NEG": 3,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 143,
+      "INT_AND": 48,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 28,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 17,
+      "INT_SUB": 23,
+      "INT_XOR": 2,
+      "LOAD": 110,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 44
+    },
+    "pcode_op_count": 2035
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f2be0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004ed1e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "angles",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_01d22584",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01d22584 + iVar15) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_01d22588",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01d22588 + iVar15) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_01d2258c",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01d2258c + iVar15) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_01d22590",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01d22590 + iVar15) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_01d22594",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01d22594 + iVar15) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 71,
+      "match": "DAT_01d22598",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01d22598 + iVar15) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 73,
+      "match": "DAT_01d2259c",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01d2259c + iVar15) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_01d225a0",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01d225a0 + iVar15) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 81,
+      "match": "DAT_01d22584",
+      "severity": "mild",
+      "text": "_DAT_01d2257c = (float *)(&DAT_01d22584 + iVar15);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 82,
+      "match": "DAT_01d225a4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_01d225a4 + iVar15) = afStack_44[0] * *pfVar3 + fVar14 * *pfVar2 + fVar6 * *pfVar1;",
+      "type": "undefined_data"
+    }
+  ]
+}

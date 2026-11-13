@@ -7,7 +7,7 @@
 
 // Original: core_ladder.cpp_staticInit_FUN_004dff00
 // Address: 004dff00
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_ladder.cpp_factoryFuncLadder_FUN_004dff30
 // Address: 004dff30
@@ -15,7 +15,7 @@ CLadder * __cdecl factoryFuncLadder(void);
 
 // Original: core_ladder.cpp_CLadder_getActorType_FUN_004dff50
 // Address: 004dff50
-CDemonActorType * CLadder::getActorType(CLadder *this_ptr);
+CDemonActorType * __cdecl CLadder::getActorType(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_ctor_FUN_004dff60
 // Address: 004dff60

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_health_cpp_staticInit_FUN_004d1d00(void)
+; void __cdecl core_health_cpp_staticInit_FUN_004d1d00(void)
 ;
 ;
 ; Called Functions:

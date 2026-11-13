@@ -25,7 +25,7 @@
 ;   core_actor.cpp_archiveActor_FUN_0040b9e0
 ;   core_actor.cpp_archiveFloat_FUN_0040b8e0
 ;   core_actor.cpp_archiveInteger_FUN_0040b960
-;   core_hero.cpp_FUN_004ce590
+;   core_hero.cpp_CHero_archive_FUN_004ce590
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
         ;   Label: core_stranger.cpp_CStranger_archive_FUN_0056b600
     MOV EBX,dword ptr [ESP + 0x8]       ; 0056b601
     PUSH EBX                            ; 0056b605
-    CALL core_hero.cpp_FUN_004ce590     ; 0056b606
-        ;   XREF to: 004ce590 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ce590()
+    CALL core_hero.cpp_CHero_archive_FUN_004ce590 ; 0056b606
+        ;   XREF to: 004ce590 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_archive_FUN_004ce590(CHero * this_ptr)
     MOV EDX,dword ptr [0x0061e2e0]      ; 0056b60b | g_CStrangerClassVersion
     ADD ESP,0x4                         ; 0056b611
     CMP EDX,0x2                         ; 0056b614

@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[10]:
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046ed3f
 ;   core_doc.cpp_FUN_0046caa0 at 0046e5ea
-;   core_doc.cpp_FUN_0046ea80 at 0046ed3f
 ;   core_doc.cpp_FUN_0046f200 at 0046f30f
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8d18
 ;   core_ghoul.cpp_CGhoul_process_FUN_004de330 at 004de640

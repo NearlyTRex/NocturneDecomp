@@ -1,14 +1,12 @@
 // Name: core_sps.cpp_CSps_dtor_FUN_00568300
 // Address: 00568300
 // Address Range: [[00568300, 0056834d]]
-// Convention: unknown
-// Signature: CSps * core_sps_cpp_CSps_dtor_FUN_00568300(CSps *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSps * __cdecl core_sps_cpp_CSps_dtor_FUN_00568300(CSps *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSps * core_sps_cpp_CSps_dtor_FUN_00568300(CSps *this_ptr,uint flags)
+CSps * __cdecl core_sps_cpp_CSps_dtor_FUN_00568300(CSps *this_ptr,uint flags)
 
 {
   CWeapon *pCVar1;

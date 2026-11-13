@@ -1,14 +1,12 @@
 // Name: core_stranger.cpp_CStranger_ctor_FUN_00585270
 // Address: 00585270
 // Address Range: [[00585270, 00585661]]
-// Convention: unknown
-// Signature: CStranger * core_stranger_cpp_CStranger_ctor_FUN_00585270(CStranger *this_ptr)
+// Convention: __cdecl
+// Signature: CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_00585270(CStranger *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CStranger * core_stranger_cpp_CStranger_ctor_FUN_00585270(CStranger *this_ptr)
+CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_00585270(CStranger *this_ptr)
 
 {
   CStranger *this_ptr_00;

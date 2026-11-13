@@ -1,15 +1,14 @@
 // Name: core_weaver.cpp_CRobin_ctor_FUN_005a5e70
 // Address: 005a5e70
 // Address Range: [[005a5e70, 005a5f4e]]
-// Convention: unknown
-// Signature: CRobin * core_weaver_cpp_CRobin_ctor_FUN_005a5e70(CRobin *this_ptr)
+// Convention: __cdecl
+// Signature: CRobin * __cdecl core_weaver_cpp_CRobin_ctor_FUN_005a5e70(CRobin *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CRobin * core_weaver_cpp_CRobin_ctor_FUN_005a5e70(CRobin *this_ptr)
+CRobin * __cdecl core_weaver_cpp_CRobin_ctor_FUN_005a5e70(CRobin *this_ptr)
 
 {
   CRobin *this_ptr_00;

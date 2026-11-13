@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 37,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 1,
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 76
+    "total_lines": 77
   },
   "cross_references": [],
   "function": {
@@ -23,15 +23,20 @@
         "00415e62"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_dtor_FUN_00415df0",
-    "signature": "CAudioRecPuzzle * core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0(CAudioRecPuzzle *this_ptr,uint flags)"
+    "signature": "CAudioRecPuzzle * __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00415df0(CAudioRecPuzzle *this_ptr,uint flags)"
   },
   "function_calls": [
     {
+      "addr": "00415bc0",
+      "is_variadic": false,
+      "name": "core_bmppuzzl.cpp_CPuzzle_dtor_FUN_00415bc0"
+    },
+    {
       "addr": "004188b0",
       "is_variadic": false,
-      "name": "core_bmppuzzl.cpp_FUN_004188b0"
+      "name": "core_bmppuzzl.cpp_SButtonStruct_arrdtor50_FUN_004188b0"
     },
     {
       "addr": "005c030f",
@@ -52,11 +57,6 @@
       "addr": "0040d0c0",
       "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d0c0"
-    },
-    {
-      "addr": "00415bc0",
-      "is_variadic": false,
-      "name": "engine_alphabit.cpp_FUN_00415bc0"
     }
   ],
   "globals": [
@@ -146,10 +146,18 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "pSVar1[-3].",
+      "severity": "mild",
+      "text": "pCVar2 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)&pSVar1[-3].visible,0)",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "pCVar3 = (CAudioRecPuzzle *)engine_alphabit_cpp_FUN_00415bc0(&pCVar2[-1].height,1);",
+      "text": "core_bmppuzzl_cpp_CPuzzle_dtor_FUN_00415bc0((CPuzzle *)&pCVar2[-1].height,1);",
       "type": "negative_offset"
     }
   ],

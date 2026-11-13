@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[23]:
-;   cockpit_pkbmpset.cpp_FUN_0051080e at 0051083e
+;   cockpit_pkbmpset.cpp_FUN_00510810 at 0051083e
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044c130 at 0044c34c
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_00459980 at 004599bb
 ;   core_event.cpp_FUN_0048c2e0 at 0048d5ab

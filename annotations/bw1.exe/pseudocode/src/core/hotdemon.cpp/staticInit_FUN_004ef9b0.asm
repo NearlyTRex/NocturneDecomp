@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hotdemon_cpp_staticInit_FUN_004ef9b0(void)
+; void __cdecl core_hotdemon_cpp_staticInit_FUN_004ef9b0(void)
 ;
 ;
 ; Called Functions:

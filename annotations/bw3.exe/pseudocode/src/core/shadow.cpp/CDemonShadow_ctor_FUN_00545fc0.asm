@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonShadow * core_shadow_cpp_CDemonShadow_ctor_FUN_00545fc0(CDemonShadow *this_ptr)
+; CDemonShadow * __cdecl core_shadow_cpp_CDemonShadow_ctor_FUN_00545fc0(CDemonShadow *this_ptr)
 ;
 ; Parameters:
 ; CDemonShadow *   Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CGlassParticle * core_fire_cpp_CGlassParticle_arrdtor256_FUN_0049f0a0(CGlassParticle *this_ptr,uint flags)
+; CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_arrdtor256_FUN_0049f0a0(CGlassParticle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGlassParticle * Stack[0x4]:4   this_ptr

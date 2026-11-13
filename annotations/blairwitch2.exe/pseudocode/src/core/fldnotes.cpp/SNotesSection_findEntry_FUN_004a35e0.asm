@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection *this_ptr,char *param_2)
+; SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection *this_ptr,char *name)
 ;
 ; Parameters:
 ; SNotesSection *  Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[8]:
 ;   core_flashlit.cpp_FUN_004a14f0 at 004a150a
 ;   core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004a55b0 at 004a55d1
 ;   core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310 at 004a5331
+;   core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004a5430 at 004a544d
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a47ca
+;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004a61b0 at 004a6367
+;   core_fldnotes.cpp_CFieldNotes_showMapAnnotation_FUN_004a5200 at 004a5221
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490 at 004a54b1
-;   core_fldnotes.cpp_FUN_004a5200 at 004a5221
-;   core_fldnotes.cpp_FUN_004a5430 at 004a544d
-;   core_fldnotes.cpp_FUN_004a61b0 at 004a6367
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130

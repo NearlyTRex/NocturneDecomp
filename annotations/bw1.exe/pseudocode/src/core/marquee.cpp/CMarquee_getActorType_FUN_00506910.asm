@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_marquee_cpp_CMarquee_getActorType_FUN_00506910(CMarquee *this_ptr)
+; CDemonActorType * __cdecl core_marquee_cpp_CMarquee_getActorType_FUN_00506910(CMarquee *this_ptr)
 ;
 ; Parameters:
 ; CMarquee *       Stack[0x4]:4   this_ptr

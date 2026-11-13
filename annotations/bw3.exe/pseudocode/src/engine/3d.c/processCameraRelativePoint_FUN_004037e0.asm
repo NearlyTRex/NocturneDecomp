@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046ce60 at 0046ce7e
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90 at 0046cec7
-;   shape_edittool.cpp_FUN_0048114e at 00481183
+;   shape_edittool.cpp_FUN_00481150 at 00481183
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00730408

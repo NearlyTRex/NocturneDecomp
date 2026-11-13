@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAudioRecPuzzle * core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00411bb0(CAudioRecPuzzle *this_ptr,uint flags)
+; CAudioRecPuzzle * __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_00411bb0(CAudioRecPuzzle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
@@ -12,8 +12,8 @@
 ;   WatcomTypeInfo g_CAudioRecPuzzleTypeInfo
 ;
 ; Called Functions:
-;   core_bmppuzzl.cpp_FUN_00411980
-;   core_bmppuzzl.cpp_FUN_004144c0
+;   core_bmppuzzl.cpp_CPuzzle_dtor_FUN_00411980
+;   core_bmppuzzl.cpp_SButtonStruct_arrdtor50_FUN_004144c0
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
@@ -33,8 +33,8 @@ section .text
     MOV dword ptr [EBX],0x5dbe84        ; 00411bbe | g_CAudioRecPuzzleVTable
     ADD EBX,0x54                        ; 00411bc4
     PUSH EBX                            ; 00411bc7
-    CALL core_bmppuzzl.cpp_FUN_004144c0 ; 00411bc8
-        ;   XREF to: 004144c0 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_004144c0()
+    CALL core_bmppuzzl.cpp_SButtonStruct_arrdtor50_FUN_004144c0 ; 00411bc8
+        ;   XREF to: 004144c0 (UNCONDITIONAL_CALL)  ; SButtonStruct * core_bmppuzzl.cpp_SButtonStruct_arrdtor50_FUN_004144c0(SButtonStruct * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00411bcd
     PUSH 0x0                            ; 00411bd0
     SUB EAX,0x50                        ; 00411bd2
@@ -45,8 +45,8 @@ section .text
     PUSH 0x1                            ; 00411bde
     LEA EBX,[EAX + -0x4]                ; 00411be0
     PUSH EBX                            ; 00411be3
-    CALL core_bmppuzzl.cpp_FUN_00411980 ; 00411be4
-        ;   XREF to: 00411980 (UNCONDITIONAL_CALL)  ; undefined core_bmppuzzl.cpp_FUN_00411980()
+    CALL core_bmppuzzl.cpp_CPuzzle_dtor_FUN_00411980 ; 00411be4
+        ;   XREF to: 00411980 (UNCONDITIONAL_CALL)  ; CPuzzle * core_bmppuzzl.cpp_CPuzzle_dtor_FUN_00411980(CPuzzle * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00411be9
     MOV DL,byte ptr [ESP + 0xc]         ; 00411bec
     MOV EBX,EAX                         ; 00411bf0

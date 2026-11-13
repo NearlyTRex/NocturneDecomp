@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 469,
-    "complexity_score": 595,
+    "complexity_score": 371,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 200,
-    "suspect_count": 37,
+    "pseudocode_lines": 201,
+    "suspect_count": 15,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 669
+    "total_lines": 670
   },
   "cross_references": [
     {
@@ -36,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_CFieldNotes_loadState_FUN_004bebc0",
-    "signature": "void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004bebc0(CFieldNotes *this_ptr,_FILE *param_2)"
+    "signature": "void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004bebc0(CFieldNotes *this_ptr,_FILE *file)"
   },
   "function_calls": [
     {
@@ -382,6 +381,12 @@
     "pcode_op_count": 1592
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a61b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5944
+    },
     "bw3.exe": {
       "addr": "004ac900",
       "by": "name",
@@ -531,10 +536,10 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "file",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       }
     ]
   },
@@ -548,291 +553,115 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004bebc0(CFieldNotes *this_ptr,_FILE *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e02da);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 41,
       "match": "DAT_005e02da",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e02da);",
+      "text": "_fscanf(file,&DAT_005e02da);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 47,
       "match": "DAT_0061d420",
       "severity": "mild",
-      "text": "puVar4 = &DAT_0061d420;",
+      "text": "puVar5 = &DAT_0061d420;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\" \\\"%[^\\\"]\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e0349);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 56,
       "match": "DAT_005e0349",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e0349);",
+      "text": "_fscanf(file,&DAT_005e0349);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e0354);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 61,
       "match": "DAT_005e0354",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e0354);",
+      "text": "_fscanf(file,&DAT_005e0354);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 72,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"\\\"%[^\\\"]\\\", %d\\n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 115,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e03bd);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 117,
       "match": "DAT_005e03bd",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e03bd);",
+      "text": "_fscanf(file,&DAT_005e03bd);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 127,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 129,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\" %[^,], %d, %d\\n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 165,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 169,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e04b7);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 169,
+      "line": 170,
       "match": "DAT_005e04b7",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e04b7);",
+      "text": "_fscanf(file,&DAT_005e04b7);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 175,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e04b9);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 175,
+      "line": 176,
       "match": "DAT_005e04b9",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e04b9);",
+      "text": "_fscanf(file,&DAT_005e04b9);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 181,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e04bd);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 181,
+      "line": 182,
       "match": "DAT_005e04bd",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e04bd);",
+      "text": "_fscanf(file,&DAT_005e04bd);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 187,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 188,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e04c7);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 188,
+      "line": 189,
       "match": "DAT_005e04c7",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e04c7);",
+      "text": "_fscanf(file,&DAT_005e04c7);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 191,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e04cb);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 191,
+      "line": 192,
       "match": "DAT_005e04cb",
       "severity": "mild",
-      "text": "_fscanf(param_2,&DAT_005e04cb);",
+      "text": "_fscanf(file,&DAT_005e04cb);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 202,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
-      "type": "unnamed_param"
     },
     {
       "description": "Raw hex literal 0x1cc5658 matches address of SNotesMap_ARRAY_01cc55d0 (+136 bytes into) (type SNotesMap[4]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 106,
+      "line": 107,
       "match": "0x1cc5658",
       "severity": "moderate",
-      "text": "engine_alphabit_cpp_FUN_0040d970(iVar2 + 0x1cc5658,0xff);",
+      "text": "engine_alphabit_cpp_FUN_0040d970(iVar3 + 0x1cc5658,0xff);",
       "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 48,
+      "line": 49,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 67,
+      "line": 68,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 122,
+      "line": 123,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     }
   ]

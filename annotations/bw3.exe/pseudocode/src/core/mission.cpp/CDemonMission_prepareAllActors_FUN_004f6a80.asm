@@ -10,7 +10,7 @@
 ;
 ; XREF[3]:
 ;   core_mission.cpp_FUN_004f6de0 at 004f6e5d
-;   core_mission.cpp_FUN_004f722c at 004f727e
+;   core_mission.cpp_FUN_004f7230 at 004f727e
 ;   core_mission.cpp_FUN_004f7590 at 004f75d9
 ;
 ; Referenced Globals:

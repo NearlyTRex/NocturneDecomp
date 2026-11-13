@@ -10,7 +10,7 @@
 ; uint             Stack[0x10]:4   blue
 ;
 ; XREF[1]:
-;   core_dimage.cpp_FUN_0045b2fe at 0045b49a
+;   core_dimage.cpp_FUN_0045b300 at 0045b49a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6af74

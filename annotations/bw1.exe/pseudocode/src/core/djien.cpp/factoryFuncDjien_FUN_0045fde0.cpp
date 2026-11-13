@@ -1,20 +1,20 @@
 // Name: core_djien.cpp_factoryFuncDjien_FUN_0045fde0
 // Address: 0045fde0
 // Address Range: [[0045fde0, 0045fdfb]]
-// Convention: unknown
-// Signature: void core_djien_cpp_factoryFuncDjien_FUN_0045fde0(void)
+// Convention: __cdecl
+// Signature: CDjien * __cdecl core_djien_cpp_factoryFuncDjien_FUN_0045fde0(void)
 
 #include "nocturne.h"
 
-void core_djien_cpp_factoryFuncDjien_FUN_0045fde0(void)
+CDjien * __cdecl core_djien_cpp_factoryFuncDjien_FUN_0045fde0(void)
 
 {
-  CDjien *this_ptr;
+  CDjien *pCVar1;
   
-  this_ptr = (CDjien *)operator_new(0xc9cc);
-  if (this_ptr == (CDjien *)0x0) {
-    return;
+  pCVar1 = (CDjien *)operator_new(0xc9cc);
+  if (pCVar1 == (CDjien *)0x0) {
+    return (CDjien *)0x0;
   }
-  core_djien_cpp_CDjien_ctor_FUN_0045fe10(this_ptr);
-  return;
+  pCVar1 = core_djien_cpp_CDjien_ctor_FUN_0045fe10(pCVar1);
+  return pCVar1;
 }

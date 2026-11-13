@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 408,
+    "complexity_score": 407,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 223,
+    "pseudocode_lines": 222,
     "suspect_count": 17,
     "suspect_types": [
       "derived_field_index_pun",
       "negative_offset",
       "raw_address_constant"
     ],
-    "total_lines": 493
+    "total_lines": 492
   },
   "cross_references": [
     {
@@ -32,10 +32,10 @@
         "00585661"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_stranger.cpp_CStranger_ctor_FUN_00585270",
-    "signature": "CStranger * core_stranger_cpp_CStranger_ctor_FUN_00585270(CStranger *this_ptr)"
+    "signature": "CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_00585270(CStranger *this_ptr)"
   },
   "function_calls": [
     {
@@ -158,7 +158,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 109,
+      "line": 107,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar5[-1].model_name + 0x14) = uVar1;",
@@ -166,7 +166,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 118,
+      "line": 116,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "uVar1 = *(uint *)(pCVar5[-1].model_name + 0x18);",
@@ -174,7 +174,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 119,
+      "line": 117,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "uVar2 = *(uint *)(pCVar5[-1].model_name + 0x40);",
@@ -182,7 +182,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 120,
+      "line": 118,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "uVar3 = *(uint *)(pCVar5[-1].model_name + 0x38);",
@@ -190,7 +190,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 121,
+      "line": 119,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar5[-1].model_name + 0x24) = *(uint *)(pCVar5[-1].model_name + 0x20);",
@@ -198,7 +198,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 121,
+      "line": 119,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar5[-1].model_name + 0x24) = *(uint *)(pCVar5[-1].model_name + 0x20);",
@@ -206,7 +206,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 122,
+      "line": 120,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar5[-1].model_name + 0x1c) = uVar1;",
@@ -214,7 +214,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 123,
+      "line": 121,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar5[-1].model_name + 0x44) = uVar2;",
@@ -222,7 +222,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 124,
+      "line": 122,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar5[-1].model_name + 0x3c) = uVar3;",
@@ -230,7 +230,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 148,
+      "line": 146,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar5[-1].model_name + 0xa8) = *(uint *)(pCVar5[-1].model_name + 0xac);",
@@ -238,7 +238,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 148,
+      "line": 146,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar5[-1].model_name + 0xa8) = *(uint *)(pCVar5[-1].model_name + 0xac);",
@@ -246,7 +246,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 149,
+      "line": 147,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar5[-1].model_name + 0xa4) = *(uint *)(pCVar5[-1].model_name + 0xa8);",
@@ -254,7 +254,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 149,
+      "line": 147,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar5[-1].model_name + 0xa4) = *(uint *)(pCVar5[-1].model_name + 0xa8);",
@@ -262,7 +262,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 166,
+      "line": 164,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "pCVar5[-1].part_visibility_flags[0xb] = 0;",
@@ -270,7 +270,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 176,
+      "line": 174,
       "match": "pCVar5[-2].",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)(pCVar5[-2].part_visibility_flags[0x1b] + 0x158),",
@@ -278,7 +278,7 @@
     },
     {
       "description": "Raw hex address 0x585650 assigned to bare local `uStack000001a8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack000001a8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 222,
+      "line": 220,
       "match": "0x585650",
       "severity": "moderate",
       "text": "uStack000001a8 = 0x585650;",
@@ -286,7 +286,7 @@
     },
     {
       "description": "'(CKeyFramedModelInstance *)&pCVar4[1].base.base.collision_disabled' walks 1 x sizeof(CHero) (0x1ffac) + offsetof(base.base.collision_disabled) (0x100) + 0x0 = 0x200ac, which is exactly offsetof(CDoc, ladder_offset). Ghidra had no CDoc type here and reached the field by index arithmetic; write it as ((CDoc *)pCVar4)->ladder_offset (\u00a7de-pun/\u00a712). Ambiguous: CStranger::model also has a field there \u2014 confirm the real class from the .asm before rewriting.",
-      "line": 17,
+      "line": 15,
       "severity": "moderate",
       "text": "((CKeyFramedModelInstance *)&pCVar4[1].base.base.collision_disabled);",
       "type": "derived_field_index_pun"

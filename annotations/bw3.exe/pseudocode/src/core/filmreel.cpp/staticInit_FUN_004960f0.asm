@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_filmreel_cpp_staticInit_FUN_004960f0(void)
+; void __cdecl core_filmreel_cpp_staticInit_FUN_004960f0(void)
 ;
 ;
 ; Called Functions:

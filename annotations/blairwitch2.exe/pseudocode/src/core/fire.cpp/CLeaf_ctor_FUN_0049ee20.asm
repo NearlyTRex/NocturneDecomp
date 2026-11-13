@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLeaf * core_fire_cpp_CLeaf_ctor_FUN_0049ee20(CLeaf *this_ptr)
+; CLeaf * __cdecl core_fire_cpp_CLeaf_ctor_FUN_0049ee20(CLeaf *this_ptr)
 ;
 ; Parameters:
 ; CLeaf *          Stack[0x4]:4   this_ptr

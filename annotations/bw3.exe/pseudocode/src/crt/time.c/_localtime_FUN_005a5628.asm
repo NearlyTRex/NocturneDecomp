@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   crt_unknown.c_FUN_005ab1d0 at 005ab254
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00482820 at 00482909
-;   shape_edittool.cpp_FUN_0047dd1e at 0047e131
+;   shape_edittool.cpp_FUN_0047dd20 at 0047e131
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a7f3c_006079a0 = 005a7f3c

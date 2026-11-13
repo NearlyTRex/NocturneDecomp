@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b82a9
-;   core_script.cpp_FUN_00528d50 at 00528d7d
+;   core_script.cpp_CScript_clear_FUN_00528d50 at 00528d7d
 ;   core_script.cpp_FUN_00529710 at 0052973c
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004832b0 at 004832c4
 ;

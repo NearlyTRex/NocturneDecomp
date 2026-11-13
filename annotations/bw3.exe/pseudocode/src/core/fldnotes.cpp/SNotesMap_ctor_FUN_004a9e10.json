@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 58,
+    "complexity_score": 57,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 12,
     "suspect_count": 4,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 38
+    "total_lines": 37
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "004a9e61"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fldnotes.cpp_SNotesMap_ctor_FUN_004a9e10",
-    "signature": "SNotesMap * core_fldnotes_cpp_SNotesMap_ctor_FUN_004a9e10(SNotesMap *this_ptr)"
+    "signature": "SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_ctor_FUN_004a9e10(SNotesMap *this_ptr)"
   },
   "function_calls": [
     {
@@ -102,7 +102,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 11,
+      "line": 9,
       "match": "pCVar1[-7].",
       "severity": "mild",
       "text": "*(byte *)&pCVar1[-7].act = 0;",
@@ -110,7 +110,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 12,
+      "line": 10,
       "match": "pCVar1[-1].",
       "severity": "mild",
       "text": "pCVar1[-1].height = 0;",
@@ -118,7 +118,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
+      "line": 13,
       "match": "pCVar1[-7].",
       "severity": "mild",
       "text": "core_fldnotes_cpp_SNotesMap_reset_FUN_004a9eb0((SNotesMap *)&pCVar1[-7].opa);",
@@ -126,7 +126,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 14,
       "match": "pCVar1[-7].",
       "severity": "mild",
       "text": "return (SNotesMap *)&pCVar1[-7].opa;",

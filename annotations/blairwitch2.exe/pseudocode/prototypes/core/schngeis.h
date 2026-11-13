@@ -7,19 +7,19 @@
 
 // Original: core_schngeis.cpp_staticInit_FUN_005a2f50
 // Address: 005a2f50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_schngeis.cpp_factoryFuncSchnellGeist_FUN_005a2f80
 // Address: 005a2f80
-void factoryFuncSchnellGeist(void);
+CSchnellGeist * __cdecl factoryFuncSchnellGeist(void);
 
 // Original: core_schngeis.cpp_CSchnellGeist_getActorType_FUN_005a2fa0
 // Address: 005a2fa0
-CDemonActorType * CSchnellGeist::getActorType(CSchnellGeist *this_ptr);
+CDemonActorType * __cdecl CSchnellGeist::getActorType(CSchnellGeist *this_ptr);
 
 // Original: core_schngeis.cpp_CSchnellGeist_ctor_FUN_005a2fb0
 // Address: 005a2fb0
-CSchnellGeist * CSchnellGeist::ctor(CSchnellGeist *this_ptr);
+CSchnellGeist * __cdecl CSchnellGeist::ctor(CSchnellGeist *this_ptr);
 
 // Original: core_schngeis.cpp_CSchnellGeist_setup_FUN_005a3140
 // Address: 005a3140
@@ -63,4 +63,4 @@ void __cdecl CSchnellGeist::archive(CSchnellGeist *this_ptr);
 
 // Original: core_schngeis.cpp_CSchnellGeist_dtor_FUN_005a3c30
 // Address: 005a3c30
-CSchnellGeist * CSchnellGeist::dtor(CSchnellGeist *this_ptr,uint flags);
+CSchnellGeist * __cdecl CSchnellGeist::dtor(CSchnellGeist *this_ptr,uint flags);

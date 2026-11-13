@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CInStream.h"
 
 // Structure: CInStreamMemory
 // RTTI size 20; ctor 005a1130 calls the in-stream base ctor then zeroes +4..+0x10
 // Ghidra size: 0x14 (20 bytes)
 #pragma pack(push, 1)
 typedef struct CInStreamMemory {
-    void* vtable; // 0x0, stream vtable pointer; the abstract base ctor (0059f540) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB
+    CInStream base; // 0x0, derived
     char* data; // 0x4, open 005a1450 / openOwned 005a1480 store the buffer arg; getChar 005a1240 reads data[position]; close 005a1400 frees it when owns_data
     int size; // 0x8, open stores the length arg; reads, seek and isEof bound position against it
     int position; // 0xc, getChar increments it; seek 005a1360 sets it; tell returns it

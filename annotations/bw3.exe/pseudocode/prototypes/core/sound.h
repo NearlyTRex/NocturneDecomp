@@ -25,13 +25,13 @@ void __cdecl CSound::findRandomSoundFile(CSound *this_ptr,char *out_result,char 
 // Address: 0055f020
 uint __cdecl playSfxInternal(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
 
-// Original: core_sound.cpp_FUN_0055f60e
-// Address: 0055f60e
-void FUN_0055f60e(void);
+// Original: core_sound.cpp_FUN_0055f610
+// Address: 0055f610
+void FUN_0055f610(void);
 
-// Original: core_sound.cpp_FUN_0055f6ae
-// Address: 0055f6ae
-uint FUN_0055f6ae(void);
+// Original: core_sound.cpp_FUN_0055f6b0
+// Address: 0055f6b0
+uint FUN_0055f6b0(void);
 
 // Original: core_sound.cpp_CSound_ctor_FUN_0055fc40
 // Address: 0055fc40
@@ -45,8 +45,8 @@ void __cdecl FUN_0055fc60(CSound *this_ptr);
 // Address: 0055fcc0
 void __cdecl shutdownSoundSystem(void);
 
-// Original: core_sound.cpp_syncChannel3WithChannel0_FUN_0055fcce
-// Address: 0055fcce
+// Original: core_sound.cpp_syncChannel3WithChannel0_FUN_0055fcd0
+// Address: 0055fcd0
 void __cdecl syncChannel3WithChannel0(void);
 
 // Original: core_sound.cpp_FUN_0055fd30
@@ -105,9 +105,9 @@ void __cdecl CSound::killSound(CSound *this_ptr,uint sfx_handle);
 // Address: 00560b10
 float __cdecl CSound::getSoundDuration(CSound *this_ptr,char *sound_name);
 
-// Original: core_sound.cpp_FUN_00560bdc
-// Address: 00560bdc
-undefined4 FUN_00560bdc(undefined4 param_1,int param_2);
+// Original: core_sound.cpp_FUN_00560be0
+// Address: 00560be0
+undefined4 FUN_00560be0(void);
 
 // Original: core_sound.cpp_CSound_set3DListenerOrientRight_FUN_00560c00
 // Address: 00560c00
@@ -127,8 +127,8 @@ void __cdecl CSound::setVolumeFade(CSound *this_ptr,float target_volume,float fa
 
 // Original: core_sound.cpp_STrainNoise_ctor_FUN_00560d50
 // Address: 00560d50
-STrainNoise * STrainNoise::ctor(STrainNoise *this_ptr);
+STrainNoise * __cdecl STrainNoise::ctor(STrainNoise *this_ptr);
 
 // Original: core_sound.cpp_STrainNoise_dtor_FUN_00560d60
 // Address: 00560d60
-STrainNoise * STrainNoise::dtor(STrainNoise *this_ptr,uint flags);
+STrainNoise * __cdecl STrainNoise::dtor(STrainNoise *this_ptr,uint flags);

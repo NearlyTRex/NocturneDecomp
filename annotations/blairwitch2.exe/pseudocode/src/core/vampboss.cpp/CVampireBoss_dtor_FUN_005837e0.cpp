@@ -1,14 +1,12 @@
 // Name: core_vampboss.cpp_CVampireBoss_dtor_FUN_005837e0
 // Address: 005837e0
 // Address Range: [[005837e0, 005838c8]]
-// Convention: unknown
-// Signature: CVampireBoss * core_vampboss_cpp_CVampireBoss_dtor_FUN_005837e0(CVampireBoss *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005837e0(CVampireBoss *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CVampireBoss * core_vampboss_cpp_CVampireBoss_dtor_FUN_005837e0(CVampireBoss *this_ptr,uint flags)
+CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005837e0(CVampireBoss *this_ptr,uint flags)
 
 {
   CMorph *pCVar1;

@@ -2,25 +2,25 @@
 // Address: 00416570
 // Address Range: [[00416570, 00416614]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00416570(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)
+// Signature: void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00416570(CAudioRecPuzzle *this_ptr,int index,char *filename,int width,int height,int enabled,int x,int y,int visible)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00416570(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)
+void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00416570(CAudioRecPuzzle *this_ptr,int index,char *filename,int width,int height,int enabled,int x,int y,int visible)
 
 {
   int iVar1;
   
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220
-            (&this_ptr->buttons[param_2].bitmap,param_3,param_4,param_5);
-  this_ptr->buttons[param_2].enabled = param_6;
-  this_ptr->buttons[param_2].x = param_7;
-  this_ptr->buttons[param_2].y = param_8;
-  this_ptr->buttons[param_2].width = param_4;
-  this_ptr->buttons[param_2].height = param_5;
-  this_ptr->buttons[param_2].visible = param_9;
+            (&this_ptr->buttons[index].bitmap,filename,width,height);
+  this_ptr->buttons[index].enabled = enabled;
+  this_ptr->buttons[index].x = x;
+  this_ptr->buttons[index].y = y;
+  this_ptr->buttons[index].width = width;
+  this_ptr->buttons[index].height = height;
+  this_ptr->buttons[index].visible = visible;
   iVar1 = this_ptr->button_count + 1;
   this_ptr->button_count = iVar1;
   if (iVar1 < 0x33) {

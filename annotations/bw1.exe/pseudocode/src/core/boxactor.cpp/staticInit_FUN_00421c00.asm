@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boxactor_cpp_staticInit_FUN_00421c00(void)
+; void __cdecl core_boxactor_cpp_staticInit_FUN_00421c00(void)
 ;
 ;
 ; Called Functions:

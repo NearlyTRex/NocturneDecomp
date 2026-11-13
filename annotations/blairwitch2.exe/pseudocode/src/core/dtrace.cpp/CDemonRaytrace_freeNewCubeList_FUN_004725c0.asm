@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00472440 at 00472458
-;   core_dtrace.cpp_FUN_004728d0 at 004728e0
+;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004728d0 at 004728e0
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CDemonCubeTypeInfo

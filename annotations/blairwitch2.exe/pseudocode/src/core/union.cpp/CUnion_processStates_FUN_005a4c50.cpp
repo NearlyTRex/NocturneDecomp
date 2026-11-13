@@ -16,7 +16,8 @@ void __cdecl core_union_cpp_CUnion_processStates_FUN_005a4c50(CUnion *this_ptr,f
     core_muzzle_cpp_FUN_0059d650(&(this_ptr->base).base.state_machine,"RangeAttack");
   }
   else {
-    core_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
+    core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0
+              ((CBasicEnemy *)this_ptr,delta_time,mode);
     if ((mode == 1) &&
        (iVar2 = core_muzzle_cpp_FUN_0059daa0
                           (&(this_ptr->base).base.state_machine,"RangeAttack"), iVar2 != 0)

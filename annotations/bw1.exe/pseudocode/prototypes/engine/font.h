@@ -41,9 +41,9 @@ void FUN_004c1520(int param_1,float param_2);
 // Address: 004c1540
 void __cdecl CBitFont::loadNewBitmap(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
 
-// Original: engine_font.cpp_FUN_004c157e
-// Address: 004c157e
-void FUN_004c157e(CBitFont *param_1,char *param_2);
+// Original: engine_font.cpp_FUN_004c1580
+// Address: 004c1580
+void FUN_004c1580(void);
 
 // Original: engine_font.cpp_FUN_004c1830
 // Address: 004c1830
@@ -161,9 +161,9 @@ undefined4 FUN_004c4030(CBitFont *param_1,char *param_2,char *param_3,int param_
 // Address: 004c4260
 int FUN_004c4260(undefined4 param_1,int param_2,void *param_3,int param_4,int param_5,undefined4 param_6);
 
-// Original: engine_font.cpp_FUN_004c430e
-// Address: 004c430e
-int FUN_004c430e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
+// Original: engine_font.cpp_FUN_004c4310
+// Address: 004c4310
+int FUN_004c4310(void);
 
 // Original: engine_font.cpp_CBitFont_getCharWidth_FUN_004c44e0
 // Address: 004c44e0
@@ -193,9 +193,9 @@ void __cdecl CBitFont::remapPalette(CBitFont *this_ptr);
 // Address: 004c47f0
 int FUN_004c47f0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
 
-// Original: engine_font.cpp_FUN_004c4b9e
-// Address: 004c4b9e
-uint FUN_004c4b9e(int param_1,int param_2,uint param_3);
+// Original: engine_font.cpp_FUN_004c4ba0
+// Address: 004c4ba0
+uint FUN_004c4ba0(void);
 
 // Original: engine_font.cpp_FUN_004c4bf0
 // Address: 004c4bf0
@@ -205,6 +205,6 @@ undefined4 FUN_004c4bf0(void);
 // Address: 004c4c51
 void FUN_004c4c51(void);
 
-// Original: engine_font.cpp_FUN_004c4d3e
-// Address: 004c4d3e
-int * FUN_004c4d3e(int param_1,int *param_2);
+// Original: engine_font.cpp_FUN_004c4d40
+// Address: 004c4d40
+int * FUN_004c4d40(void);

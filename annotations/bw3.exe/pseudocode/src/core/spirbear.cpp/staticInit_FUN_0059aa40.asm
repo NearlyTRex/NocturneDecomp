@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spirbear_cpp_staticInit_FUN_0059aa40(void)
+; void __cdecl core_spirbear_cpp_staticInit_FUN_0059aa40(void)
 ;
 ;
 ; Called Functions:

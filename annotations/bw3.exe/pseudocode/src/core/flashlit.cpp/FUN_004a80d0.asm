@@ -8,8 +8,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_fldnotes.cpp_FUN_004abe00 at 004abfb6
-;   core_fldnotes.cpp_FUN_004ac6b0 at 004ac7ef
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004abfb6
+;   core_fldnotes.cpp_CFieldNotes_process_FUN_004ac6b0 at 004ac7ef
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d0d210

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hpatrol_cpp_factoryFuncPatrolPoint_FUN_0059c5b0(void)
+; CPatrolPoint * __cdecl core_hpatrol_cpp_factoryFuncPatrolPoint_FUN_0059c5b0(void)
 ;
 ;
 ; Called Functions:

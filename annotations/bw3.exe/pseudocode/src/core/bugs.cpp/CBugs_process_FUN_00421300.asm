@@ -21,7 +21,7 @@
 ;   core_bugs.cpp_CBugs_updateBoundingBox_FUN_004229f0
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_mission.cpp_FUN_004f6f10
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10
 ;   core_sound.cpp_CSound_playActorSound_FUN_005609d0
 ;   sound_sndmain.cpp_FUN_00556700
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
@@ -260,8 +260,8 @@ section .text
     MOV ESI,dword ptr [0x00600530]      ; 0042156e | DAT_00600530
     PUSH ESI                            ; 00421574 | DAT_01d81080
     MOV dword ptr [EBX + 0xd058],0x0    ; 00421575
-    CALL core_mission.cpp_FUN_004f6f10  ; 0042157f
-        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f6f10()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 0042157f
+        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 00421584
     MOV EDI,dword ptr [EBX + 0x1be9c]   ; 00421587
     PUSH EDI                            ; 0042158d

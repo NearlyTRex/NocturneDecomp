@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 54,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 28,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 100
+    "total_lines": 99
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "005721b4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_tbplayer.cpp_CBassPlayer_dtor_FUN_00572110",
-    "signature": "CBassPlayer * core_tbplayer_cpp_CBassPlayer_dtor_FUN_00572110(CBassPlayer *this_ptr,uint flags)"
+    "signature": "CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_00572110(CBassPlayer *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -161,7 +161,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 18,
       "match": "pCVar1[-1].",
       "severity": "mild",
       "text": "iVar2 = core_armour_cpp_FUN_0040f2b0(pCVar1[-1].height_cache[0x42] + 0x53,0);",
@@ -169,7 +169,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 27,
+      "line": 25,
       "match": "pCVar4[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar4[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",

@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   engine_texture.cpp_FUN_0056aa10 at 0056aa43
 ;   engine_texture.cpp_FUN_0056aab0 at 0056aadf
-;   engine_texture.cpp_FUN_0056ab6c at 0056ab9f
+;   engine_texture.cpp_FUN_0056ab70 at 0056ab9f
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005a3260

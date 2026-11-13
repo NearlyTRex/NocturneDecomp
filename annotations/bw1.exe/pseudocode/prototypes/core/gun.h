@@ -7,7 +7,7 @@
 
 // Original: core_gun.cpp_staticInit_FUN_004e8570
 // Address: 004e8570
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_gun.cpp_factoryFuncGun_FUN_004e85a0
 // Address: 004e85a0
@@ -15,7 +15,7 @@ CGun * __cdecl factoryFuncGun(void);
 
 // Original: core_gun.cpp_CGun_getActorType_FUN_004e85c0
 // Address: 004e85c0
-CDemonActorType * CGun::getActorType(CGun *this_ptr);
+CDemonActorType * __cdecl CGun::getActorType(CGun *this_ptr);
 
 // Original: core_gun.cpp_CGun_ctor_FUN_004e85d0
 // Address: 004e85d0

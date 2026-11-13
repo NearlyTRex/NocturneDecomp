@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ghostchi_cpp_factoryFuncGhostChild_FUN_005a9200(void)
+; CGhostChild * __cdecl core_ghostchi_cpp_factoryFuncGhostChild_FUN_005a9200(void)
 ;
 ;
 ; Called Functions:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHeal * core_heal_cpp_CHeal_dtor_FUN_004d1cb0(CHeal *this_ptr,uint flags)
+; CHeal * __cdecl core_heal_cpp_CHeal_dtor_FUN_004d1cb0(CHeal *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CHeal *          Stack[0x4]:4   this_ptr

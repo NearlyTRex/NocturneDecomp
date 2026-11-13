@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemnfolk * core_demnfolk_cpp_CDemnfolk_dtor_FUN_00459030(CDemnfolk *this_ptr,uint flags)
+; CDemnfolk * __cdecl core_demnfolk_cpp_CDemnfolk_dtor_FUN_00459030(CDemnfolk *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemnfolk *      Stack[0x4]:4   this_ptr

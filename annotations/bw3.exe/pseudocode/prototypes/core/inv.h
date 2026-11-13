@@ -7,7 +7,7 @@
 
 // Original: core_inv.cpp_staticInit_FUN_004d9c90
 // Address: 004d9c90
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_inv.cpp_FUN_004d9d20
 // Address: 004d9d20
@@ -93,9 +93,9 @@ void __cdecl CInventory::selectWeapon(CInventory *this_ptr,CDemonActor *specific
 // Address: 004dbc40
 void __cdecl CInventory::selectItem(CInventory *this_ptr,int direction);
 
-// Original: core_inv.cpp_FUN_004dbd7e
-// Address: 004dbd7e
-void FUN_004dbd7e(CInventory *param_1,int param_2);
+// Original: core_inv.cpp_FUN_004dbd80
+// Address: 004dbd80
+void FUN_004dbd80(void);
 
 // Original: core_inv.cpp_FUN_004dbe70
 // Address: 004dbe70
@@ -117,9 +117,9 @@ void __cdecl CInventory::load(CInventory *this_ptr,_FILE *file_handle);
 // Address: 004dca90
 void __cdecl CInventory::loadItems(CInventory *this_ptr);
 
-// Original: core_inv.cpp_FUN_004dcad0
+// Original: core_inv.cpp_setupItems_FUN_004dcad0
 // Address: 004dcad0
-void FUN_004dcad0(int param_1);
+void setupItems(int param_1);
 
 // Original: core_inv.cpp_CInventory_select_FUN_004dcb40
 // Address: 004dcb40

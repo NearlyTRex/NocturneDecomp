@@ -63,7 +63,7 @@
 ;   engine_pod.cpp_CPod_remount_FUN_0051b1e0 at 0051b224
 ;   engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0 at 0051b8ef
 ;   engine_pod.cpp_FUN_0051b110 at 0051b173
-;   engine_pod.cpp_FUN_0051b6dc at 0051b71e
+;   engine_pod.cpp_FUN_0051b6e0 at 0051b71e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e2407

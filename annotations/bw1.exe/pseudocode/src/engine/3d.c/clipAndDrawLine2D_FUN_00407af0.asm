@@ -15,7 +15,7 @@
 ;   engine_3d.c_drawLineStrip2D_FUN_00404440 at 004044c6
 ;   shape_edittool.cpp_FUN_00498360 at 00498458
 ;   shape_edittool.cpp_FUN_00498660 at 00498792
-;   shape_edittool.cpp_FUN_004987ae at 00498a2c
+;   shape_edittool.cpp_FUN_004987b0 at 00498a2c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007135b4

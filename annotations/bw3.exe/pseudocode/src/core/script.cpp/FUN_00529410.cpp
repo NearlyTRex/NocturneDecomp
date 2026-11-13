@@ -26,7 +26,7 @@ uint core_script_cpp_FUN_00529410(CScript *param_1,char *param_2)
   char *pcVar10;
   
   bVar11 = 0;
-  core_script_cpp_FUN_00528d50(param_1);
+  core_script_cpp_CScript_clear_FUN_00528d50(param_1);
   iVar3 = engine_dosio_cpp_getFileSize_FUN_004657f0("world",param_2);
   if (0 < iVar3) {
     splitpath(param_2,(char *)0x0,(char *)0x0,local_118,(char *)0x0);
@@ -71,7 +71,7 @@ uint core_script_cpp_FUN_00529410(CScript *param_1,char *param_2)
               shape_edittool_cpp_FUN_00486af0(&param_1->script_text);
               shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
                         (g_CEditorToolsPtr,"Probable non-text file %s detected near line %d.  Cannot use script.");
-              core_script_cpp_FUN_00528d50(param_1);
+              core_script_cpp_CScript_clear_FUN_00528d50(param_1);
               return 0;
             }
             local_318[iVar7] = (char)iVar6;

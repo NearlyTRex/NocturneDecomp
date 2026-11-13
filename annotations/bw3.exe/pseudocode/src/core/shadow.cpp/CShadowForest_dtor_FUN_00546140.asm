@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CShadowForest * core_shadow_cpp_CShadowForest_dtor_FUN_00546140(CShadowForest *this_ptr,uint flags)
+; CShadowForest * __cdecl core_shadow_cpp_CShadowForest_dtor_FUN_00546140(CShadowForest *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CShadowForest *  Stack[0x4]:4   this_ptr

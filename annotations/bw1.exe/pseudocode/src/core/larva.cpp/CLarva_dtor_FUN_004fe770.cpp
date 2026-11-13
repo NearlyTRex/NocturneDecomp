@@ -1,14 +1,12 @@
 // Name: core_larva.cpp_CLarva_dtor_FUN_004fe770
 // Address: 004fe770
 // Address Range: [[004fe770, 004fe7f4]]
-// Convention: unknown
-// Signature: CLarva * core_larva_cpp_CLarva_dtor_FUN_004fe770(CLarva *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CLarva * __cdecl core_larva_cpp_CLarva_dtor_FUN_004fe770(CLarva *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CLarva * core_larva_cpp_CLarva_dtor_FUN_004fe770(CLarva *this_ptr,uint flags)
+CLarva * __cdecl core_larva_cpp_CLarva_dtor_FUN_004fe770(CLarva *this_ptr,uint flags)
 
 {
   int iVar1;

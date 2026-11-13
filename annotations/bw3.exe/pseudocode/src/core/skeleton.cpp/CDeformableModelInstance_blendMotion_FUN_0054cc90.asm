@@ -43,10 +43,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[7]:
-;   core_charactr.cpp_FUN_004320d0 at 004321d0
+;   core_charactr.cpp_CCharacter_applyGesture_FUN_004320d0 at 004321d0
 ;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c720d
+;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051e9e7
 ;   core_prye.cpp_FUN_0051c1c0 at 0051cbea
-;   core_prye.cpp_FUN_0051e6d0 at 0051e9e7
 ;   core_prye.cpp_FUN_0051ee10 at 0051ef50
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130 at 0054c169
 ;   core_zombiepriest.cpp_FUN_0058e8d0 at 0058eb7a

@@ -7,7 +7,7 @@
 ; CDemonImage *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dimage.cpp_FUN_0044902e at 004490a7
+;   core_dimage.cpp_FUN_00449030 at 004490a7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0

@@ -7,7 +7,7 @@
 
 // Original: core_bat.cpp_staticInit_FUN_00410a50
 // Address: 00410a50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_bat.cpp_factoryFuncBat_FUN_00410b20
 // Address: 00410b20
@@ -15,7 +15,7 @@ CBat * __cdecl factoryFuncBat(void);
 
 // Original: core_bat.cpp_CBat_getActorType_FUN_00410b40
 // Address: 00410b40
-CDemonActorType * CBat::getActorType(CBat *this_ptr);
+CDemonActorType * __cdecl CBat::getActorType(CBat *this_ptr);
 
 // Original: core_bat.cpp_CBat_ctor_FUN_00410b50
 // Address: 00410b50

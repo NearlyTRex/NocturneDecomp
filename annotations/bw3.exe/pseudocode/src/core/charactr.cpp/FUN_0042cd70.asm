@@ -48,8 +48,8 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_box.cpp_FUN_0041daf0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
+;   core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0
 ;   core_charactr.cpp_FUN_0042e8c0
-;   core_charactr.cpp_FUN_00431ab0
 ;   core_charactr.cpp_FUN_00432220
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004bd930
 ;   core_hero.cpp_isAnyHeroWithinCylinder_FUN_004d23f0
@@ -497,8 +497,8 @@ section .text
     PUSH 0x0                            ; 0042d2f1
     PUSH EDI                            ; 0042d2f3
     PUSH EBX                            ; 0042d2f4
-    CALL core_charactr.cpp_FUN_00431ab0 ; 0042d2f5
-        ;   XREF to: 00431ab0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00431ab0()
+    CALL core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0 ; 0042d2f5
+        ;   XREF to: 00431ab0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0(CCharacter * this_ptr, int param_2, float param_3, int * param_4)
     ADD ESP,0x10                        ; 0042d2fa
     INC EDI                             ; 0042d2fd
     ADD ESI,0x78                        ; 0042d2fe

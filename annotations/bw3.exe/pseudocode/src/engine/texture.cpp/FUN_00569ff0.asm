@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_texture.cpp_FUN_0056ab6c at 0056ac02
+;   engine_texture.cpp_FUN_0056ab70 at 0056ac02
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0

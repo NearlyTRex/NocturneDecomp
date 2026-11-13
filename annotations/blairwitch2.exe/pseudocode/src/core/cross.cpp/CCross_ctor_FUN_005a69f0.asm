@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCross * core_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
+; CCross * __cdecl core_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
 ;
 ; Parameters:
 ; CCross *         Stack[0x4]:4   this_ptr

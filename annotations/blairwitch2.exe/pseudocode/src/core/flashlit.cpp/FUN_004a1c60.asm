@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_fldnotes.cpp_FUN_004a5700 at 004a58ee
-;   core_fldnotes.cpp_FUN_004a5f60 at 004a60d7
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700 at 004a58ee
+;   core_fldnotes.cpp_CFieldNotes_process_FUN_004a5f60 at 004a60d7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00616018

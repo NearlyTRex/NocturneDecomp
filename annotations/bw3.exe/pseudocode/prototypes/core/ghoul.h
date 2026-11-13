@@ -15,11 +15,11 @@ CGhoul * __cdecl factoryFuncGhoul(void);
 
 // Original: core_ghoul.cpp_CGhoul_getActorType_FUN_004c68d0
 // Address: 004c68d0
-CDemonActorType * CGhoul::getActorType(CGhoul *this_ptr);
+CDemonActorType * __cdecl CGhoul::getActorType(CGhoul *this_ptr);
 
 // Original: core_ghoul.cpp_CGhoul_ctor_FUN_004c68e0
 // Address: 004c68e0
-CGhoul * CGhoul::ctor(CGhoul *this_ptr);
+CGhoul * __cdecl CGhoul::ctor(CGhoul *this_ptr);
 
 // Original: core_ghoul.cpp_CGhoul_setup_FUN_004c6a10
 // Address: 004c6a10
@@ -63,4 +63,4 @@ int __cdecl CGhoul::getTargetPoints(CGhoul *this_ptr,CVector3f *out_points_array
 
 // Original: core_ghoul.cpp_CGhoul_dtor_FUN_004c9ab0
 // Address: 004c9ab0
-CGhoul * CGhoul::dtor(CGhoul *this_ptr,uint flags);
+CGhoul * __cdecl CGhoul::dtor(CGhoul *this_ptr,uint flags);

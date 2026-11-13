@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 34,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 8,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 31
+    "total_lines": 30
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "004a3851"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fldnotes.cpp_SNotesMap_dtor_FUN_004a3820",
-    "signature": "SNotesMap * core_fldnotes_cpp_SNotesMap_dtor_FUN_004a3820(SNotesMap *this_ptr,uint flags)"
+    "signature": "SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_dtor_FUN_004a3820(SNotesMap *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -111,7 +111,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 11,
+      "line": 9,
       "match": "pCVar1[-2].",
       "severity": "mild",
       "text": "pCVar1 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440((CAlphaBitmap *)&pCVar1[-2].height,0);",
@@ -119,7 +119,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 12,
+      "line": 10,
       "match": "pCVar1[-6].",
       "severity": "mild",
       "text": "return (SNotesMap *)&pCVar1[-6].act;",

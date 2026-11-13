@@ -1,15 +1,14 @@
 // Name: core_hellhag.cpp_CHag_dtor_FUN_005aa7e0
 // Address: 005aa7e0
 // Address Range: [[005aa7e0, 005aa8ba]]
-// Convention: unknown
-// Signature: CHag * core_hellhag_cpp_CHag_dtor_FUN_005aa7e0(CHag *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CHag * __cdecl core_hellhag_cpp_CHag_dtor_FUN_005aa7e0(CHag *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CHag * core_hellhag_cpp_CHag_dtor_FUN_005aa7e0(CHag *this_ptr,uint flags)
+CHag * __cdecl core_hellhag_cpp_CHag_dtor_FUN_005aa7e0(CHag *this_ptr,uint flags)
 
 {
   CSimpleParticleSystem *pCVar1;

@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_helldog.cpp_CDog_processDeathState_FUN_005ac520 at 005ac58c
-;   core_script.cpp_FUN_00522350 at 00527eaf
+;   core_script.cpp_CScript_step_FUN_00522350 at 00527eaf
 ;
 ; *****************************************************************************
 

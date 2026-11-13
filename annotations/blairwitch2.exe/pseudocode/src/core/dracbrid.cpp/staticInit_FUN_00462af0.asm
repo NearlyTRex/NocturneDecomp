@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dracbrid_cpp_staticInit_FUN_00462af0(void)
+; void __cdecl core_dracbrid_cpp_staticInit_FUN_00462af0(void)
 ;
 ;
 ; Referenced Globals:

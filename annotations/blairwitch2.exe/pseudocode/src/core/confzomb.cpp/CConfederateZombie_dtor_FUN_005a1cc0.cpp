@@ -1,15 +1,14 @@
 // Name: core_confzomb.cpp_CConfederateZombie_dtor_FUN_005a1cc0
 // Address: 005a1cc0
 // Address Range: [[005a1cc0, 005a1d80]]
-// Convention: unknown
-// Signature: CConfederateZombie * core_confzomb_cpp_CConfederateZombie_dtor_FUN_005a1cc0(CConfederateZombie *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CConfederateZombie * __cdecl core_confzomb_cpp_CConfederateZombie_dtor_FUN_005a1cc0(CConfederateZombie *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CConfederateZombie * core_confzomb_cpp_CConfederateZombie_dtor_FUN_005a1cc0(CConfederateZombie *this_ptr,uint flags)
+CConfederateZombie * __cdecl core_confzomb_cpp_CConfederateZombie_dtor_FUN_005a1cc0(CConfederateZombie *this_ptr,uint flags)
 
 {
   CSimpleParticleSystem *this_ptr_00;

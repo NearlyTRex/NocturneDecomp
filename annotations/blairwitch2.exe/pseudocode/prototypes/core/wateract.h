@@ -7,7 +7,7 @@
 
 // Original: core_wateract.cpp_staticInit_FUN_00586920
 // Address: 00586920
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_wateract.cpp_factoryFuncWaterActor_FUN_00586970
 // Address: 00586970
@@ -15,7 +15,7 @@ CWaterActor * __cdecl factoryFuncWaterActor(void);
 
 // Original: core_wateract.cpp_CWaterActor_getActorType_FUN_00586990
 // Address: 00586990
-CDemonActorType * CWaterActor::getActorType(CWaterActor *this_ptr);
+CDemonActorType * __cdecl CWaterActor::getActorType(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_ctor_FUN_005869a0
 // Address: 005869a0
@@ -67,12 +67,12 @@ void __cdecl CWaterActor::onLaserHit(CWaterActor *this_ptr,SLaserInfo *laser_inf
 
 // Original: core_wateract.cpp_CWaterActor_dtor_FUN_00587b90
 // Address: 00587b90
-CWaterActor * CWaterActor::dtor(CWaterActor *this_ptr,uint flags);
+CWaterActor * __cdecl CWaterActor::dtor(CWaterActor *this_ptr,uint flags);
 
 // Original: core_wateract.cpp_SWaterVertex_ctor_FUN_00587be0
 // Address: 00587be0
-SWaterVertex * SWaterVertex::ctor(SWaterVertex *this_ptr);
+SWaterVertex * __cdecl SWaterVertex::ctor(SWaterVertex *this_ptr);
 
 // Original: core_wateract.cpp_SCollisionInfo_dtor_FUN_00587bf0
 // Address: 00587bf0
-SCollisionInfo * SCollisionInfo::dtor(SCollisionInfo *this_ptr,uint flags);
+SCollisionInfo * __cdecl SCollisionInfo::dtor(SCollisionInfo *this_ptr,uint flags);

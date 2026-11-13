@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl support_trstream_cpp_COutStreamFile_ctorOpen_FUN_0057dba0(COutStreamFile *this_ptr,undefined4 param_2,undefined4 param_3)
+; COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctorOpen_FUN_0057dba0(COutStreamFile *this_ptr,char *path,char *mode)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   path
+; char *           Stack[0xc]:4   mode
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50 at 00442015
@@ -16,8 +16,8 @@
 ;   undefined1* g_COutStreamFileVTable = 0057dc10
 ;
 ; Called Functions:
+;   support_trstream.cpp_COutStream_dtor_FUN_0057d860
 ;   support_trstream.cpp_COutStreamFile_open_FUN_0057dd90
-;   support_trstream.cpp_FUN_0057d860
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     PUSH ESI                            ; 0057dba1
     MOV EDX,dword ptr [ESP + 0xc]       ; 0057dba2
     PUSH EDX                            ; 0057dba6
-    CALL support_trstream.cpp_FUN_0057d860 ; 0057dba7
-        ;   XREF to: 0057d860 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d860()
+    CALL support_trstream.cpp_COutStream_dtor_FUN_0057d860 ; 0057dba7
+        ;   XREF to: 0057d860 (UNCONDITIONAL_CALL)  ; COutStream * support_trstream.cpp_COutStream_dtor_FUN_0057d860(COutStream * this_ptr, uint flags)
     ADD ESP,0x4                         ; 0057dbac
     MOV ECX,dword ptr [ESP + 0x14]      ; 0057dbaf
     PUSH ECX                            ; 0057dbb3
@@ -40,7 +40,7 @@ section .text
     MOV EBX,EAX                         ; 0057dbc0
     MOV dword ptr [EAX + 0x4],0x0       ; 0057dbc2
     CALL support_trstream.cpp_COutStreamFile_open_FUN_0057dd90 ; 0057dbc9
-        ;   XREF to: 0057dd90 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamFile_open_FUN_0057dd90(COutStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 0057dd90 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_open_FUN_0057dd90(COutStreamFile * this_ptr, char * path, char * mode)
     ADD ESP,0xc                         ; 0057dbce
     MOV EAX,EBX                         ; 0057dbd1
     POP ESI                             ; 0057dbd3

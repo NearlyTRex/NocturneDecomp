@@ -15,7 +15,7 @@
 ;   undefined4 DAT_005bca04
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00473940
+;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_00473940
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   engine_dosio.cpp_FUN_004659c0
 ;
@@ -42,8 +42,8 @@ section .text
         ;   Label: LAB_00473b40
     MOV ECX,dword ptr [ESP + 0xc]       ; 00473b41
     PUSH ECX                            ; 00473b45
-    CALL core_dtrace.cpp_FUN_00473940   ; 00473b46
-        ;   XREF to: 00473940 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00473940()
+    CALL core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_00473940 ; 00473b46
+        ;   XREF to: 00473940 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_00473940(CDemonRaytrace * this_ptr, _FILE * param_2)
     ADD ESP,0x8                         ; 00473b4b
     PUSH EBX                            ; 00473b4e
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 00473b4f

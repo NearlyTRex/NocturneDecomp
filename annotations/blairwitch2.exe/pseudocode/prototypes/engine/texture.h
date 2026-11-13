@@ -13,9 +13,9 @@ void __cdecl CTextureCache::reset(CTextureCache *this_ptr);
 // Address: 005739b0
 void __cdecl FUN_005739b0(CTextureCache *this_ptr);
 
-// Original: engine_texture.cpp_FUN_00573a60
+// Original: engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00573a60
 // Address: 00573a60
-int FUN_00573a60(int *param_1);
+int __cdecl CTextureCache::findFreeSlot(CTextureCache *this_ptr);
 
 // Original: engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80
 // Address: 00573b80
@@ -23,11 +23,11 @@ int __cdecl CTextureCache::loadTexture(CTextureCache *this_ptr,char *texture_nam
 
 // Original: engine_texture.cpp_FUN_00574240
 // Address: 00574240
-int FUN_00574240(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+int FUN_00574240(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4,uchar *param_5,uchar *param_6);
 
 // Original: engine_texture.cpp_FUN_005742b0
 // Address: 005742b0
-int FUN_005742b0(int param_1,char *param_2,undefined4 param_3,undefined4 param_4);
+int FUN_005742b0(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4);
 
 // Original: engine_texture.cpp_FUN_00574310
 // Address: 00574310
@@ -57,9 +57,9 @@ void FUN_00574a80(int param_1,int param_2);
 // Address: 00574af0
 int __cdecl CTextureCache::getTextureCacheStats(CTextureCache *this_ptr,char *output_buffer);
 
-// Original: engine_texture.cpp_FUN_00574bbe
-// Address: 00574bbe
-void FUN_00574bbe(int param_1,undefined4 param_2,int param_3);
+// Original: engine_texture.cpp_FUN_00574bc0
+// Address: 00574bc0
+void FUN_00574bc0(void);
 
 // Original: engine_texture.cpp_FUN_00574ce0
 // Address: 00574ce0
@@ -71,7 +71,7 @@ void FUN_00574d50(void);
 
 // Original: engine_texture.cpp_freeTextureCache_FUN_00574db0
 // Address: 00574db0
-void freeTextureCache(void);
+void __cdecl freeTextureCache(void);
 
 // Original: engine_texture.cpp_FUN_00574e00
 // Address: 00574e00
@@ -85,9 +85,9 @@ SMRGLHeaderExtended * __cdecl loadTextureAndGetData(SMRGLTextureBasic *texture_i
 // Address: 00574ea0
 void FUN_00574ea0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
 
-// Original: engine_texture.cpp_FUN_00574f5c
-// Address: 00574f5c
-void FUN_00574f5c(int param_1,undefined4 param_2,undefined4 param_3);
+// Original: engine_texture.cpp_FUN_00574f60
+// Address: 00574f60
+void FUN_00574f60(void);
 
 // Original: engine_texture.cpp_FUN_00575010
 // Address: 00575010
@@ -109,18 +109,18 @@ void __cdecl enableTextureFiltering(int enabled);
 // Address: 005750b0
 void __cdecl getTextureCacheStats(char *output_buffer);
 
-// Original: engine_texture.cpp_FUN_005750ce
-// Address: 005750ce
-void FUN_005750ce(void);
+// Original: engine_texture.cpp_FUN_005750d0
+// Address: 005750d0
+void FUN_005750d0(void);
 
 // Original: engine_texture.cpp_getCurrentTexture_FUN_005750e0
 // Address: 005750e0
 SMRGLTextureBasic * __cdecl getCurrentTexture(void);
 
-// Original: engine_texture.cpp_FUN_0057513c
-// Address: 0057513c
-void FUN_0057513c(void);
+// Original: engine_texture.cpp_FUN_00575140
+// Address: 00575140
+void FUN_00575140(void);
 
-// Original: engine_texture.cpp_FUN_0057514e
-// Address: 0057514e
-void FUN_0057514e(int param_1,char *param_2);
+// Original: engine_texture.cpp_FUN_00575150
+// Address: 00575150
+void FUN_00575150(void);

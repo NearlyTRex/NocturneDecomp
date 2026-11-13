@@ -1,15 +1,14 @@
 // Name: core_djien.cpp_CDjien_ctor_FUN_0045fe10
 // Address: 0045fe10
 // Address Range: [[0045fe10, 0045fef8]]
-// Convention: unknown
-// Signature: CDjien * core_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
+// Convention: __cdecl
+// Signature: CDjien * __cdecl core_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CDjien * core_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
+CDjien * __cdecl core_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
 
 {
   uint uVar1;

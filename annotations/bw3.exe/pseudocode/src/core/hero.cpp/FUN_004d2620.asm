@@ -8,7 +8,7 @@
 ;   core_prye.cpp_CPrye_dtor_FUN_00527300 at 0052730f
 ;
 ; Referenced Globals:
-;   void* PTR_core_hero.cpp_FUN_004d26b0_005e1534 = 004d26b0
+;   void* PTR_core_hero.cpp_CHero_setup_FUN_004d26b0_005e1534 = 004d26b0
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 004d2620
         ;   Label: core_hero.cpp_FUN_004d2620
     MOV EDX,dword ptr [ESP + 0x8]       ; 004d2621
-    MOV dword ptr [EDX + 0x154],0x5e1534 ; 004d2625 | PTR_core_hero.cpp_FUN_004d26b0_005e1534
+    MOV dword ptr [EDX + 0x154],0x5e1534 ; 004d2625 | PTR_core_hero.cpp_CHero_setup_FUN_004d26b0_005e1534
     XOR EAX,EAX                         ; 004d262f
     CMP EDX,dword ptr [EAX + 0x1d5ba04] ; 004d2631
         ;   Label: LAB_004d2631

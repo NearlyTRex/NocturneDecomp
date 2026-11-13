@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_moloch_cpp_CMoloch_getActorType_FUN_005202e0(CMoloch *this_ptr)
+; CDemonActorType * __cdecl core_moloch_cpp_CMoloch_getActorType_FUN_005202e0(CMoloch *this_ptr)
 ;
 ; Parameters:
 ; CMoloch *        Stack[0x4]:4   this_ptr

@@ -7,19 +7,19 @@
 
 // Original: core_lightpis.cpp_staticInit_FUN_005015b0
 // Address: 005015b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_lightpis.cpp_factoryFuncLightPis_FUN_005015e0
 // Address: 005015e0
-void factoryFuncLightPis(void);
+CLightPis * __cdecl factoryFuncLightPis(void);
 
 // Original: core_lightpis.cpp_CLightPis_getActorType_FUN_00501600
 // Address: 00501600
-CDemonActorType * CLightPis::getActorType(CLightPis *this_ptr);
+CDemonActorType * __cdecl CLightPis::getActorType(CLightPis *this_ptr);
 
 // Original: core_lightpis.cpp_CLightPis_ctor_FUN_00501610
 // Address: 00501610
-CLightPis * CLightPis::ctor(CLightPis *this_ptr);
+CLightPis * __cdecl CLightPis::ctor(CLightPis *this_ptr);
 
 // Original: core_lightpis.cpp_FUN_005016d0
 // Address: 005016d0
@@ -55,4 +55,4 @@ void __cdecl CLightPis::renderAimBeam(CLightPis *this_ptr);
 
 // Original: core_lightpis.cpp_CLightPis_dtor_FUN_00502cc0
 // Address: 00502cc0
-CLightPis * CLightPis::dtor(CLightPis *this_ptr,uint flags);
+CLightPis * __cdecl CLightPis::dtor(CLightPis *this_ptr,uint flags);

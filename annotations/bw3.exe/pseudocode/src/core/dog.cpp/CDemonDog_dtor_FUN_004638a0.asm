@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonDog * core_dog_cpp_CDemonDog_dtor_FUN_004638a0(CDemonDog *this_ptr,uint flags)
+; CDemonDog * __cdecl core_dog_cpp_CDemonDog_dtor_FUN_004638a0(CDemonDog *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonDog *      Stack[0x4]:4   this_ptr

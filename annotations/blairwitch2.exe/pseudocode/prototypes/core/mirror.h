@@ -61,9 +61,9 @@ int __cdecl CMirror::renderReflectedPrimitive(CMirror *this_ptr,SMRGLHeaderPrimi
 // Address: 004facd0
 void __cdecl CMirror::renderMirroredPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 
-// Original: core_mirror.cpp_FUN_004fad5e
-// Address: 004fad5e
-int FUN_004fad5e(float *param_1);
+// Original: core_mirror.cpp_FUN_004fad60
+// Address: 004fad60
+int FUN_004fad60(void);
 
 // Original: core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004faef0
 // Address: 004faef0
@@ -79,4 +79,4 @@ void FUN_004fb150(undefined4 param_1,int *param_2,int *param_3);
 
 // Original: core_mirror.cpp_SClipPlane_ctor_FUN_004fb340
 // Address: 004fb340
-SClipPlane * SClipPlane::ctor(SClipPlane *this_ptr);
+SClipPlane * __cdecl SClipPlane::ctor(SClipPlane *this_ptr);

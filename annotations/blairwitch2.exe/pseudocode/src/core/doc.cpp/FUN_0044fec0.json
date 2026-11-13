@@ -1,0 +1,115 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 74,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 45
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0044fec0",
+    "address_range": [
+      [
+        "0044fec0",
+        "0044fed9"
+      ],
+      [
+        "0044fee0",
+        "0044fee2"
+      ],
+      [
+        "0044ff06",
+        "0044ff0b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_doc.cpp_FUN_0044fec0",
+    "signature": "undefined4 core_doc_cpp_FUN_0044fec0(void)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.454545454545454,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCHIND": 1,
+      "CBRANCH": 2,
+      "COPY": 8,
+      "INT_ADD": 5,
+      "INT_AND": 7,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 1,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 2
+    },
+    "pcode_op_count": 49
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (in_stack_00000004 == (CDemonActor *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "switch(in_stack_00000004[1].particle_systems[0].stop_after_fade) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,g_CMeleeClassInfo.name_hash);",
+      "type": "stack_param"
+    }
+  ]
+}

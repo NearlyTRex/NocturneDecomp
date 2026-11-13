@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_mission.cpp_CDemonMission_clearMissionData_FUN_0051a3b0 at 0051a3b6
-;   core_mission.cpp_FUN_0051ba5c at 0051ba96
+;   core_mission.cpp_FUN_0051ba60 at 0051ba96
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e82168

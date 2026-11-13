@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMini3D * engine_mini3d_cpp_CMini3D_dtor_FUN_004f2290(CMini3D *this_ptr,uint flags)
+; CMini3D * __cdecl engine_mini3d_cpp_CMini3D_dtor_FUN_004f2290(CMini3D *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMini3D *        Stack[0x4]:4   this_ptr

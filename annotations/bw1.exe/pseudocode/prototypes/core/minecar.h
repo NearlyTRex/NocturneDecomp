@@ -7,7 +7,7 @@
 
 // Original: core_minecar.cpp_staticInit_FUN_00510d90
 // Address: 00510d90
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_minecar.cpp_factoryFuncMineCar_FUN_00510dc0
 // Address: 00510dc0
@@ -15,7 +15,7 @@ CMineCar * __cdecl factoryFuncMineCar(void);
 
 // Original: core_minecar.cpp_CMineCar_getActorType_FUN_00510df0
 // Address: 00510df0
-CDemonActorType * CMineCar::getActorType(CMineCar *this_ptr);
+CDemonActorType * __cdecl CMineCar::getActorType(CMineCar *this_ptr);
 
 // Original: core_minecar.cpp_CMineCar_setup_FUN_00510e00
 // Address: 00510e00

@@ -1,14 +1,12 @@
 // Name: core_boneguy.cpp_CSkeletonIndian_ctor_FUN_00419980
 // Address: 00419980
 // Address Range: [[00419980, 004199e1]]
-// Convention: unknown
-// Signature: CSkeletonIndian * core_boneguy_cpp_CSkeletonIndian_ctor_FUN_00419980(CSkeletonIndian *this_ptr)
+// Convention: __cdecl
+// Signature: CSkeletonIndian * __cdecl core_boneguy_cpp_CSkeletonIndian_ctor_FUN_00419980(CSkeletonIndian *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSkeletonIndian * core_boneguy_cpp_CSkeletonIndian_ctor_FUN_00419980(CSkeletonIndian *this_ptr)
+CSkeletonIndian * __cdecl core_boneguy_cpp_CSkeletonIndian_ctor_FUN_00419980(CSkeletonIndian *this_ptr)
 
 {
   CBoneGuy *pCVar1;

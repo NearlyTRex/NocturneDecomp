@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile *this_ptr,undefined4 param_2,undefined4 param_3,int param_4)
+; int __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile *this_ptr,char *directory,char *filename,int binary_mode)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
+; char *           Stack[0x8]:4   directory
+; char *           Stack[0xc]:4   filename
+; int              Stack[0x10]:4   binary_mode
 ;
 ; XREF[15]:
 ;   cockpit_ckptutil.c_FUN_00438ef0 at 00438f2e
@@ -17,9 +17,9 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029dc
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004af920 at 004afabc
 ;   engine_font.cpp_FUN_004afbf0 at 004afd71
-;   engine_font.cpp_FUN_004b01ce at 004b0235
+;   engine_font.cpp_FUN_004b01d0 at 004b0235
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790 at 00569a8a
-;   engine_texture.cpp_FUN_0056ad5e at 0056ae5b
+;   engine_texture.cpp_FUN_0056ad60 at 0056ae5b
 ;   ... and 5 more
 ;
 ; Referenced Globals:

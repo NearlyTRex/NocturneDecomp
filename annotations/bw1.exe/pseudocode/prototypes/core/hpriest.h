@@ -7,7 +7,7 @@
 
 // Original: core_hpriest.cpp_staticInit_FUN_004f0930
 // Address: 004f0930
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hpriest.cpp_factoryFuncHighPriestOfGardath_FUN_004f0960
 // Address: 004f0960
@@ -15,7 +15,7 @@ CHighPriestOfGardath * __cdecl factoryFuncHighPriestOfGardath(void);
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_getActorType_FUN_004f0980
 // Address: 004f0980
-CDemonActorType * CHighPriestOfGardath::getActorType(CHighPriestOfGardath *this_ptr);
+CDemonActorType * __cdecl CHighPriestOfGardath::getActorType(CHighPriestOfGardath *this_ptr);
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004f0990
 // Address: 004f0990
@@ -35,4 +35,4 @@ void __cdecl CHighPriestOfGardath::processDamage(CHighPriestOfGardath *this_ptr,
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f0a90
 // Address: 004f0a90
-CHighPriestOfGardath * CHighPriestOfGardath::dtor(CHighPriestOfGardath *this_ptr,uint flags);
+CHighPriestOfGardath * __cdecl CHighPriestOfGardath::dtor(CHighPriestOfGardath *this_ptr,uint flags);

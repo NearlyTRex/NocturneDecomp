@@ -53,7 +53,7 @@ int __cdecl core_fldnotes_cpp_SNotesMap_load_FUN_004bc2d0(SNotesMap *this_ptr)
   if (iVar3 < 1) {
     iVar3 = 1;
   }
-  engine_alphabit_cpp_FUN_0040d0e0(&this_ptr->reveal_mask,iVar2,iVar3);
+  engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d0e0(&this_ptr->reveal_mask,iVar2,iVar3);
   iVar2 = engine_alphabit_cpp_FUN_0040d970(&this_ptr->reveal_mask,0);
   iVar3 = 0;
   if (0 < this_ptr->set_count) {

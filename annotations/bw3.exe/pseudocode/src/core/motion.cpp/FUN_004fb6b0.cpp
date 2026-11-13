@@ -1,6 +1,6 @@
 // Name: core_motion.cpp_FUN_004fb6b0
 // Address: 004fb6b0
-// Address Range: [[004fb6b0, 004fb72d]]
+// Address Range: [[004fb6b0, 004fb9be]]
 // Convention: unknown
 // Signature: void core_motion_cpp_FUN_004fb6b0(int *param_1,undefined4 param_2)
 

@@ -35,7 +35,7 @@
 ;   core_shadowsc.cpp_CShadowsc_process_FUN_00560630 at 00560691
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 00585ce2
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 005931ca
-;   core_yow.cpp_FUN_005b8440 at 005b849b
+;   core_yow.cpp_CYow_process_FUN_005b8440 at 005b849b
 ;
 ; Referenced Globals:
 ;   undefined4 s_CZombieDog_005d5ef6+1

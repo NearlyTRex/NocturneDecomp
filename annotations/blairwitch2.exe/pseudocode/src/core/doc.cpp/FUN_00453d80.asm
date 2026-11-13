@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_doc_cpp_FUN_00453d80(int param_1)
+; void core_doc_cpp_FUN_00453d80(CDoc *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2084]:4  local_2084
@@ -172,9 +172,9 @@
 ;   core_actor.cpp_FUN_00408de0
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_FUN_00449530
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0
 ;   core_doc.cpp_FUN_0044ffd0
 ;   core_doc.cpp_FUN_00455170
-;   core_doc.cpp_FUN_004555c0
 ;   core_doc.cpp_FUN_00455d10
 ;   core_lever.cpp_FUN_004e2220
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
@@ -269,8 +269,8 @@ section .text
     ADD ESP,0x14                        ; 00453e59
     PUSH EBX                            ; 00453e5c
         ;   Label: LAB_00453e5c
-    CALL core_doc.cpp_FUN_004555c0      ; 00453e5d
-        ;   XREF to: 004555c0 (UNCONDITIONAL_CALL)  ; undefined core_doc.cpp_FUN_004555c0()
+    CALL core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 ; 00453e5d
+        ;   XREF to: 004555c0 (UNCONDITIONAL_CALL)  ; void core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0(CDoc * this_ptr)
     ADD ESP,0x4                         ; 00453e62
     MOV EAX,[0x00616494]                ; 00453e65 | g_CGamePtr
     SUB ESP,0x4                         ; 00453e6a

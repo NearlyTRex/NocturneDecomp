@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bat_cpp_staticInit_FUN_0040ece0(void)
+; void __cdecl core_bat_cpp_staticInit_FUN_0040ece0(void)
 ;
 ;
 ; Called Functions:

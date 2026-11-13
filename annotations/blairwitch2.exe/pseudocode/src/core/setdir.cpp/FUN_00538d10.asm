@@ -16,7 +16,7 @@
 ;   core_game.cpp_FUN_004b7fc0 at 004b7ff7
 ;   core_game.cpp_FUN_004b8030 at 004b8067
 ;   core_game.cpp_FUN_004b82e0 at 004b89b4
-;   core_script.cpp_FUN_00522350 at 00525e3c
+;   core_script.cpp_CScript_step_FUN_00522350 at 00525e3c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setdir_cpp_005e5f5d

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLightPis * core_lightpis_cpp_CLightPis_dtor_FUN_00502cc0(CLightPis *this_ptr,uint flags)
+; CLightPis * __cdecl core_lightpis_cpp_CLightPis_dtor_FUN_00502cc0(CLightPis *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLightPis *      Stack[0x4]:4   this_ptr

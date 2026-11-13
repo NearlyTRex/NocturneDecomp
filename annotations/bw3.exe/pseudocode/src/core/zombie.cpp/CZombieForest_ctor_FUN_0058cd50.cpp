@@ -1,14 +1,12 @@
 // Name: core_zombie.cpp_CZombieForest_ctor_FUN_0058cd50
 // Address: 0058cd50
 // Address Range: [[0058cd50, 0058cda5]]
-// Convention: unknown
-// Signature: CZombieForest * core_zombie_cpp_CZombieForest_ctor_FUN_0058cd50(CZombieForest *this_ptr)
+// Convention: __cdecl
+// Signature: CZombieForest * __cdecl core_zombie_cpp_CZombieForest_ctor_FUN_0058cd50(CZombieForest *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CZombieForest * core_zombie_cpp_CZombieForest_ctor_FUN_0058cd50(CZombieForest *this_ptr)
+CZombieForest * __cdecl core_zombie_cpp_CZombieForest_ctor_FUN_0058cd50(CZombieForest *this_ptr)
 
 {
   CZombie *pCVar1;

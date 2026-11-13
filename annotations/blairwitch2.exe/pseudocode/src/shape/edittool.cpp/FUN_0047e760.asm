@@ -4,9 +4,10 @@
 ; void shape_edittool_cpp_FUN_0047e760(CEditorTools *param_1)
 ;
 ;
-; XREF[11]:
-;   core_dtrace.cpp_FUN_004725fe at 00472768
+; XREF[12]:
+;   core_dtrace.cpp_FUN_00472600 at 00472768
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b66b0
+;   core_menu.cpp_FUN_004eba50 at 004ebc8c
 ;   core_menu.cpp_FUN_004ebf10 at 004ecb8d
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb9fc
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0 at 0050ba48
@@ -14,8 +15,7 @@
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270 at 0047d54b
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250 at 004822ff
 ;   shape_edittool.cpp_FUN_0047c0f0 at 0047c742
-;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047bac0
-;   ... and 1 more
+;   ... and 2 more
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CEditorTools_popWindowState_FUN_0047e780

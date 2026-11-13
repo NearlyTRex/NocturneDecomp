@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_COutStreamMemory_seek_FUN_005a1cc0(COutStreamMemory *this_ptr,int param_2,uint param_3)
+; int __cdecl support_trstream_cpp_COutStreamMemory_seek_FUN_005a1cc0(COutStreamMemory *this_ptr,int offset,int origin)
 ;
 ; Parameters:
 ; COutStreamMemory * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; uint             Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   offset
+; int              Stack[0xc]:4   origin
 ;
 ; *****************************************************************************
 

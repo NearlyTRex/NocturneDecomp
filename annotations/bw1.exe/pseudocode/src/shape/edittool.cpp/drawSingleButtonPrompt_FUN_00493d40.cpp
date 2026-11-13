@@ -62,7 +62,7 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_00493d40(char *title,
     shape_edittool_cpp_FUN_00496ee0(g_CEditorToolsPtr);
     shape_edittool_cpp_FUN_00497660(g_CEditorToolsPtr,1);
     engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
-    engine_mini3d_cpp_FUN_00512320(0x3f800000);
+    engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
     engine_font_cpp_FUN_004c1dd0
               (_DAT_01c3eb50,message,((_DAT_01c4f008 + _DAT_01c4f010) - iVar3) / 2,
                (((_DAT_01c4f00c + _DAT_01c4f014) - iVar1) - iVar2) / 2,color,0xffffffff);

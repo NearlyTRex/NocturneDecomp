@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CZombiePriest * core_zombiepriest_cpp_CZombiePriest_dtor_FUN_0058fc80(CZombiePriest *this_ptr,uint flags)
+; CZombiePriest * __cdecl core_zombiepriest_cpp_CZombiePriest_dtor_FUN_0058fc80(CZombiePriest *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CZombiePriest *  Stack[0x4]:4   this_ptr

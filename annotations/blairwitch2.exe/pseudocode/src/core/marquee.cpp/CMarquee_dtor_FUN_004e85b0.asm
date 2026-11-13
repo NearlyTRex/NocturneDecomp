@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMarquee * core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags)
+; CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMarquee *       Stack[0x4]:4   this_ptr

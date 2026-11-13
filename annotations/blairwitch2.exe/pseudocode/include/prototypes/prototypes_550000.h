@@ -4,7 +4,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/basetsd.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
@@ -78,16 +77,16 @@ int __cdecl sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(int channel_index
 uint __cdecl sound_sndmain_cpp_getFirstActiveSfx_FUN_005512f0(void);
 uint sound_sndmain_cpp_FUN_00551330(uint param_1);
 int __cdecl sound_sndmain_cpp_countActiveSfx_FUN_005513f0(void);
-void sound_sndmain_cpp_FUN_0055141c(int param_1);
+void sound_sndmain_cpp_FUN_00551420(void);
 void sound_sndmain_cpp_FUN_00551440(void);
-void sound_sndmain_cpp_FUN_0055147e(undefined4 param_1);
+void sound_sndmain_cpp_FUN_00551480(void);
 void sound_sndmain_cpp_FUN_00551490(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
 void sound_sndmain_cpp_FUN_005514f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
 void sound_sndmain_cpp_FUN_00551570(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 void sound_sndmain_cpp_FUN_005515b0(float param_1);
 undefined4 sound_sndmain_cpp_FUN_005515e0(double param_1,double param_2,double param_3,float param_4);
 undefined4 sound_sndmain_cpp_FUN_00551650(double param_1,double param_2,double param_3);
-undefined4 sound_sndmain_cpp_FUN_005516ce(char *param_1);
+undefined4 sound_sndmain_cpp_FUN_005516d0(void);
 int sound_sndmain_cpp_FUN_00551800(char *param_1,undefined4 param_2,undefined4 param_3);
 void sound_sndmain_cpp_FUN_00551890(char *param_1);
 void __cdecl sound_sndmain_cpp_killSfxByName_FUN_005518e0(char *sample_name);
@@ -135,7 +134,7 @@ int __cdecl sound_sndmain_cpp_isRecordingSystemActive_FUN_00552f50(void);
 int __cdecl sound_sndmain_cpp_isRecordingStarted_FUN_00552f60(void);
 int __cdecl sound_sndmain_cpp_getCurrentRecordingDevice_FUN_00552f70(void);
 int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_00552f80(int bits_per_sample,int channels,int sample_rate,int signed_samples);
-void __cdecl sound_sndmain_cpp_getRecordingFormat_FUN_0055301e(int *out_bits_per_sample,int *out_channels,int *out_sample_rate,int *out_signed);
+void __cdecl sound_sndmain_cpp_getRecordingFormat_FUN_00553020(int *out_bits_per_sample,int *out_channels,int *out_sample_rate,int *out_signed);
 int __cdecl sound_sndmain_cpp_startRecording_FUN_00553070(void);
 int __cdecl sound_sndmain_cpp_pollRecordingDevice_FUN_005530f0(short *output_buffer,int num_samples);
 int __cdecl sound_sndmain_cpp_stopRecordingDevice_FUN_00553140(void);
@@ -159,9 +158,9 @@ undefined4 sound_sndmain_cpp_FUN_00554780(uint param_1,float param_2);
 void sound_sndmain_cpp_FUN_005549c0(char *param_1);
 CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_ctor_FUN_00554a30(CSfxOptions *this_ptr);
 CSfxSlot * __cdecl sound_sndmain_cpp_CSfxSlot_ctor_FUN_00554a60(CSfxSlot *this_ptr);
-CSfxSlot * sound_sndmain_cpp_CSfxSlot_dtor_FUN_00554a80(CSfxSlot *this_ptr,uint flags);
-CSfxOptions * sound_sndmain_cpp_CSfxOptions_dtor_FUN_00554a90(CSfxOptions *this_ptr,uint flags);
-CSfxSample * sound_sndmain_cpp_CSfxSample_arrdtor64_FUN_00554aa0(CSfxSample *this_ptr,uint flags);
+CSfxSlot * __cdecl sound_sndmain_cpp_CSfxSlot_dtor_FUN_00554a80(CSfxSlot *this_ptr,uint flags);
+CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_00554a90(CSfxOptions *this_ptr,uint flags);
+CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_arrdtor64_FUN_00554aa0(CSfxSample *this_ptr,uint flags);
 void sound_sndmain_cpp_FUN_00554ac0(void);
 char * __cdecl sound_snddx_cpp_FUN_00554ad0(uint error_code);
 int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_00554c80(void);
@@ -184,13 +183,13 @@ void sound_snddx_cpp_FUN_00555ff0(undefined4 param_1,int param_2);
 int sound_snddx_cpp_FUN_00556050(undefined4 param_1,int param_2,int param_3,int param_4);
 void sound_snddx_cpp_FUN_005561b0(undefined4 param_1,int param_2);
 int sound_snddx_cpp_FUN_00556290(undefined4 param_1,int param_2);
-int __cdecl sound_snddx_cpp_isValidSfxHandle_FUN_0055651c(int sfx_handle);
+int __cdecl sound_snddx_cpp_isValidSfxHandle_FUN_00556520(int sfx_handle);
 int sound_snddx_cpp_FUN_00556550(undefined4 param_1,int *param_2,uint param_3);
 undefined4 sound_snddx_cpp_FUN_00556ed0(undefined4 param_1,int param_2);
 double sound_snddx_cpp_FUN_00556f80(undefined4 param_1,int param_2);
 undefined4 sound_snddx_cpp_FUN_005570a0(int *param_1,int param_2);
 void sound_snddx_cpp_FUN_00557500(undefined4 param_1,int param_2);
-int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_0055753e(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context);
+int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_00557540(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context);
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005577b0(CDirectSoundDevice *this_ptr);
 void sound_snddx_cpp_FUN_00557800(void);
 int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_00557860(UINT device_id,SSoundDeviceInfo *device_info);
@@ -213,7 +212,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005587b0(CWavInDevice *this_p
 int __cdecl sound_sndwav_cpp_enumerateWavOutDevice_FUN_00558940(UINT device_id,SSoundDeviceInfo *device_info);
 CWavOutDevice * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_005589e0(UINT device_id);
 int __cdecl sound_sndwav_cpp_enumerateWavInDevice_FUN_00558a30(UINT device_id,SRecordingDeviceInfo *device_info);
-undefined * sound_sndwav_cpp_getWavInDevice_FUN_00558ace(undefined4 param_1,UINT_PTR param_2);
+undefined * sound_sndwav_cpp_getWavInDevice_FUN_00558ad0(void);
 undefined4 sound_sndwav_cpp_FUN_00558b20(void);
 void sound_sndwav_cpp_FUN_00558b30(void);
 void sound_sndwav_cpp_FUN_00558b40(void);
@@ -236,12 +235,12 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_00558cb0(char *wildcar
 void __cdecl core_sound_cpp_updateListeners_FUN_00558d50(void);
 void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_005593d0(CSound *this_ptr,char *out_result,char *wildcard_pattern);
 uint __cdecl core_sound_cpp_playSfxInternal_FUN_005594c0(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
-void core_sound_cpp_FUN_00559aae(void);
-uint core_sound_cpp_FUN_00559b4e(void);
+void core_sound_cpp_FUN_00559ab0(void);
+uint core_sound_cpp_FUN_00559b50(void);
 CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_0055a0e0(CSound *this_ptr);
 void __cdecl core_sound_cpp_FUN_0055a100(CSound *this_ptr);
 void __cdecl core_sound_cpp_shutdownSoundSystem_FUN_0055a160(void);
-void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0055a16e(void);
+void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_0055a170(void);
 void __cdecl core_sound_cpp_FUN_0055a1d0(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_shutdown_FUN_0055a360(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_process_FUN_0055a3c0(CSound *this_ptr);
@@ -256,13 +255,13 @@ uint __cdecl core_sound_cpp_CSound_playTrackedActorSoundWithDelay_FUN_0055af30(C
 int __cdecl core_sound_cpp_CSound_isSoundPlaying_FUN_0055af70(CSound *this_ptr,uint sfx_handle);
 void __cdecl core_sound_cpp_CSound_killSound_FUN_0055af80(CSound *this_ptr,uint sfx_handle);
 float __cdecl core_sound_cpp_CSound_getSoundDuration_FUN_0055af90(CSound *this_ptr,char *sound_name);
-undefined4 core_sound_cpp_FUN_0055b05c(undefined4 param_1,int param_2);
+undefined4 core_sound_cpp_FUN_0055b060(void);
 void __cdecl core_sound_cpp_CSound_set3DListenerOrientRight_FUN_0055b080(CSound *this_ptr,float listener_orient_x,float listener_orient_y,float listener_orient_z);
 void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_0055b0b0(CSound *this_ptr,int index);
 int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_0055b110(CSound *this_ptr,char *title,int *selection_inout);
 void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_0055b1b0(CSound *this_ptr,float target_volume,float fade_time);
-STrainNoise * core_sound_cpp_STrainNoise_ctor_FUN_0055b1d0(STrainNoise *this_ptr);
-STrainNoise * core_sound_cpp_STrainNoise_dtor_FUN_0055b1e0(STrainNoise *this_ptr,uint flags);
+STrainNoise * __cdecl core_sound_cpp_STrainNoise_ctor_FUN_0055b1d0(STrainNoise *this_ptr);
+STrainNoise * __cdecl core_sound_cpp_STrainNoise_dtor_FUN_0055b1e0(STrainNoise *this_ptr,uint flags);
 void __cdecl engine_special_cpp_clearScreen_FUN_0055b1f0(void);
 void __cdecl engine_special_cpp_clearZBufferNative_FUN_0055b254(void);
 void __cdecl engine_special_cpp_clearScreenRegion_FUN_0055b2b7(int color);
@@ -288,11 +287,11 @@ int __cdecl engine_special_cpp_unlockFrame_FUN_0055f550(int clear_lock_flag);
 int __cdecl engine_special_cpp_FUN_0055f590(void);
 int __cdecl engine_special_cpp_FUN_0055f5b0(void);
 undefined4 engine_special_cpp_FUN_0055f5d0(undefined4 param_1);
-undefined4 engine_special_cpp_FUN_0055f60e(undefined4 param_1);
-undefined4 engine_special_cpp_FUN_0055f64e(undefined4 param_1,undefined4 param_2);
+undefined4 engine_special_cpp_FUN_0055f610(void);
+undefined4 engine_special_cpp_FUN_0055f650(void);
 undefined4 engine_special_cpp_FUN_0055f690(undefined4 param_1,undefined4 param_2);
-undefined4 engine_special_cpp_FUN_0055f70c(undefined4 param_1,undefined4 param_2);
-undefined4 engine_special_cpp_FUN_0055f74c(undefined4 param_1);
+undefined4 engine_special_cpp_FUN_0055f710(void);
+undefined4 engine_special_cpp_FUN_0055f750(void);
 int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_0055f770(int width,int height,int bits_per_pixel);
 int __cdecl engine_special_cpp_setColorTable16_FUN_0055f890(void);
 int __cdecl engine_special_cpp_restoreVideoMode_FUN_0055f8c0(void);
@@ -302,7 +301,7 @@ int __cdecl engine_special_cpp_drawPolyList_FUN_0055f950(SRenderVertex *vertex_b
 int __cdecl engine_special_cpp_drawPolyList2_FUN_0055fa90(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags );
 int __cdecl engine_special_cpp_drawPolyList3_FUN_0055fbd0(SRenderVertex *vertex_buffer,STrianglePackedIndices *polygons,int polygon_count,int render_flags);
 int __cdecl engine_special_cpp_addParticle_FUN_0055fc9e(void *particle_data,int particle_type);
-int __cdecl engine_special_cpp_flushParticleList_FUN_0055fcce(void);
+int __cdecl engine_special_cpp_flushParticleList_FUN_0055fcd0(void);
 int __cdecl engine_special_cpp_add3dLine_FUN_0055fcf0(void *start_point,void *end_point,int line_style);
 int __cdecl engine_special_cpp_flushLineList_FUN_0055fd20(void);
 int __cdecl engine_special_cpp_clear_FUN_0055fd40(void);

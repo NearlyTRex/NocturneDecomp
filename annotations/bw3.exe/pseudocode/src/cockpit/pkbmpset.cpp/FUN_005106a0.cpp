@@ -13,9 +13,9 @@ void __cdecl cockpit_pkbmpset_cpp_FUN_005106a0(CPackedBitmapSet *this_ptr,int bi
 {
   uint uVar1;
   CPackedBitmap *pCVar2;
-  char acStack_d0 [200];
+  char acStack_cc [196];
   
-  cockpit_pkbmpset_cpp_FUN_00510670(this_ptr);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00510670(this_ptr);
   if (bitmap_count < 1) {
     return;
   }
@@ -24,10 +24,10 @@ void __cdecl cockpit_pkbmpset_cpp_FUN_005106a0(CPackedBitmapSet *this_ptr,int bi
   pCVar2 = (CPackedBitmap *)__vec_new(uVar1);
   this_ptr->bitmap_array = pCVar2;
   if (pCVar2 == (CPackedBitmap *)0x0) {
-    _sprintf(acStack_d0,"Unable to allocate %u bytes for %u CPackedBitmaps in CPackedBitmapSet::alloc");
+    _sprintf(acStack_cc,"Unable to allocate %u bytes for %u CPackedBitmaps in CPackedBitmapSet::alloc");
     _DAT_01d71de4 = 0x6e;
     _DAT_01d71de0 = "..\\cockpit\\pkbmpset.cpp";
-    core_main_c_FUN_004e4330(acStack_d0);
+    core_main_c_FUN_004e4330(acStack_cc);
   }
   this_ptr->bitmap_count = bitmap_count;
   return;

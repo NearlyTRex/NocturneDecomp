@@ -17,6 +17,12 @@
   },
   "cross_references": [
     {
+      "addr": "0059ab70",
+      "from_addr": "0059ab9e",
+      "name": "core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b7050",
       "from_addr": "004b708b",
       "name": "core_game.cpp_CGame_playerControls_FUN_004b7050",
@@ -49,13 +55,7 @@
     {
       "addr": "00522350",
       "from_addr": "005265ff",
-      "name": "core_script.cpp_FUN_00522350",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059ab70",
-      "from_addr": "0059ab9e",
-      "name": "core_zombie.cpp_FUN_0059ab70",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -234,7 +234,7 @@
       {
         "call_addr": "005265ff",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -245,7 +245,7 @@
       {
         "call_addr": "005267eb",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -256,7 +256,7 @@
       {
         "call_addr": "0059ab9e",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0059ab70",
+        "caller": "core_bmppuzzl.cpp_activatePuzzle_FUN_0059ab70",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "method": "push_count",

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fldnotes_cpp_SNotesMap_paginate_FUN_004a4070(SNotesMap *this_ptr,STextView *param_2)
+; int __cdecl core_fldnotes_cpp_SNotesMap_paginate_FUN_004a4070(SNotesMap *this_ptr,STextView *view)
 ;
 ; Parameters:
 ; SNotesMap *      Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
+; STextView *      Stack[0x8]:4   view
 ;
 ; XREF[1]:
 ;   core_fldnotes.cpp_SNotesEntry_layout_FUN_004a32e0 at 004a3429
@@ -61,7 +61,7 @@ section .text
         ;   Label: LAB_004a40b0
     PUSH ESI                            ; 004a40b1
     CALL core_fldnotes.cpp_STextView_placeResource_FUN_004a2ad0 ; 004a40b2
-        ;   XREF to: 004a2ad0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_STextView_placeResource_FUN_004a2ad0(STextView * this_ptr, undefined4 * param_2)
+        ;   XREF to: 004a2ad0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_placeResource_FUN_004a2ad0(STextView * this_ptr, SPageResource * resource)
     ADD ESP,0x8                         ; 004a40b7
     TEST EAX,EAX                        ; 004a40ba
     JZ 0x004a40d7                       ; 004a40bc
@@ -77,7 +77,7 @@ section .text
     PUSH EDX                            ; 004a40cb
     PUSH EAX                            ; 004a40cc
     CALL core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004a4120 ; 004a40cd
-        ;   XREF to: 004a4120 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004a4120(SPageResourceMap * this_ptr, int param_2)
+        ;   XREF to: 004a4120 (UNCONDITIONAL_CALL)  ; SPageResourceMap * core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004a4120(SPageResourceMap * this_ptr, SNotesMap * map)
     ADD ESP,0x8                         ; 004a40d2
     JMP 0x004a4085                      ; 004a40d5
         ;   XREF to: 004a4085 (UNCONDITIONAL_JUMP)  ; LAB_004a4085
@@ -85,12 +85,12 @@ section .text
         ;   Label: LAB_004a40d7
     PUSH ESI                            ; 004a40dc
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a40dd
-        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a40e2
     PUSH EBX                            ; 004a40e5
     PUSH ESI                            ; 004a40e6
     CALL core_fldnotes.cpp_STextView_placeResource_FUN_004a2ad0 ; 004a40e7
-        ;   XREF to: 004a2ad0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_STextView_placeResource_FUN_004a2ad0(STextView * this_ptr, undefined4 * param_2)
+        ;   XREF to: 004a2ad0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_placeResource_FUN_004a2ad0(STextView * this_ptr, SPageResource * resource)
     ADD ESP,0x8                         ; 004a40ec
     TEST EAX,EAX                        ; 004a40ef
     JNZ 0x004a40be                      ; 004a40f1

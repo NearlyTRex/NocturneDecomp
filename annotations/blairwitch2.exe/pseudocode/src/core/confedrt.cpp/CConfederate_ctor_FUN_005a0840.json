@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 121,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 71,
+    "pseudocode_lines": 70,
     "suspect_count": 4,
     "suspect_types": [
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 186
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -31,9 +31,9 @@
         "005a09b3"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_confedrt.cpp_CConfederate_ctor_FUN_005a0840",
-    "signature": "CConfederate * core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfederate *this_ptr)"
+    "signature": "CConfederate * __cdecl core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfederate *this_ptr)"
   },
   "function_calls": [
     {
@@ -154,7 +154,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 37,
+      "line": 36,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -162,7 +162,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 53,
+      "line": 52,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -170,7 +170,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 64,
+      "line": 63,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

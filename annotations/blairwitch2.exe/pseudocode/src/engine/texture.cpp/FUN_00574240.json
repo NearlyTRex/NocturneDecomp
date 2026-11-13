@@ -34,13 +34,13 @@
     ],
     "convention": "unknown",
     "name": "engine_texture.cpp_FUN_00574240",
-    "signature": "int engine_texture_cpp_FUN_00574240(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)"
+    "signature": "int engine_texture_cpp_FUN_00574240(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4,uchar *param_5,uchar *param_6)"
   },
   "function_calls": [
     {
       "addr": "00573a60",
       "is_variadic": false,
-      "name": "engine_texture.cpp_FUN_00573a60"
+      "name": "engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00573a60"
     }
   ],
   "globals": [],
@@ -126,7 +126,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int engine_texture_cpp_FUN_00574240(int param_1,char *param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
+      "text": "int engine_texture_cpp_FUN_00574240(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4,uchar *param_5,uchar *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -134,7 +134,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "int engine_texture_cpp_FUN_00574240(int param_1,char *param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
+      "text": "int engine_texture_cpp_FUN_00574240(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4,uchar *param_5,uchar *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -142,7 +142,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "int engine_texture_cpp_FUN_00574240(int param_1,char *param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
+      "text": "int engine_texture_cpp_FUN_00574240(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4,uchar *param_5,uchar *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -150,7 +150,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "int engine_texture_cpp_FUN_00574240(int param_1,char *param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
+      "text": "int engine_texture_cpp_FUN_00574240(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4,uchar *param_5,uchar *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -158,7 +158,7 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "int engine_texture_cpp_FUN_00574240(int param_1,char *param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
+      "text": "int engine_texture_cpp_FUN_00574240(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4,uchar *param_5,uchar *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -166,7 +166,7 @@
       "line": 2,
       "match": "param_6",
       "severity": "mild",
-      "text": "int engine_texture_cpp_FUN_00574240(int param_1,char *param_2,uint param_3,uint param_4,uint param_5,uint param_6)",
+      "text": "int engine_texture_cpp_FUN_00574240(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4,uchar *param_5,uchar *param_6)",
       "type": "unnamed_param"
     },
     {
@@ -174,7 +174,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = engine_texture_cpp_FUN_00573a60(param_1);",
+      "text": "iVar2 = engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00573a60(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -182,7 +182,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar3 = (uint *)(param_1 + 4 + iVar2 * 0x60);",
+      "text": "pSVar3 = param_1->entries + iVar2;",
       "type": "unnamed_param"
     },
     {
@@ -222,7 +222,7 @@
       "line": 23,
       "match": "param_3",
       "severity": "mild",
-      "text": "*puVar3 = param_3;",
+      "text": "pSVar3->dimension = param_3;",
       "type": "unnamed_param"
     },
     {
@@ -230,7 +230,7 @@
       "line": 24,
       "match": "param_4",
       "severity": "mild",
-      "text": "puVar3[0x11] = param_4;",
+      "text": "pSVar3->texture_data = param_4;",
       "type": "unnamed_param"
     },
     {
@@ -238,7 +238,7 @@
       "line": 25,
       "match": "param_5",
       "severity": "mild",
-      "text": "puVar3[0x13] = param_5;",
+      "text": "pSVar3->palette_data = param_5;",
       "type": "unnamed_param"
     },
     {
@@ -246,7 +246,7 @@
       "line": 26,
       "match": "param_6",
       "severity": "mild",
-      "text": "puVar3[0x12] = param_6;",
+      "text": "pSVar3->opacity_data = param_6;",
       "type": "unnamed_param"
     },
     {

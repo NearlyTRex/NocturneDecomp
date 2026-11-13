@@ -30,7 +30,13 @@ bw3.
   `special.cpp`. Each is its own unit, opened by its `staticInit`.
 - **Stray inits** belong to the unit after them: bw3's `alphabit` init is
   `bmppuzzl.cpp`'s, and the `memdbg`/`turret` inits are `trstream.cpp`'s.
-- **CAudioRecPuzzle and CChemPuzzle** are `bmppuzzl.cpp` in all three builds.
+- **bw2's `trstream.cpp` starts at its `staticInit` (`0057b9a0`)**, not after `0057ccc0`: the
+  init, the `CInStream` base and its `scanf`/`readLine` helpers were filed under `terrain.cpp`.
+  bw1 and bw3 hold the same functions in the same order at the head of `trstream.cpp`.
+- **CAudioRecPuzzle and CChemPuzzle** are `bmppuzzl.cpp` in all three builds, and so are the
+  unit's `staticInit` and the `CPuzzle` base functions that open it: bw1 filed those under
+  `alphabit.cpp` and bw2 under `zombie.cpp`. bw1's `CAlphaBitmap_arrdtor4`/`arrdtor5`
+  (`004188f0`/`004188d0`) follow the bmppuzzl code and are likely its array destructors.
 - **A `staticInit` heads its unit**: all 156 in nocedit are their unit's first
   function. The ones that weren't were misnamed:
   - mini3d's, named minecar's;

@@ -35,7 +35,7 @@ uint core_hero_cpp_FUN_004cfc80(CHero *param_1)
         if (iVar1 != 0) {
           return 0;
         }
-        uVar2 = core_inv_cpp_FUN_004dc8c0
+        uVar2 = core_inv_cpp_CInventory_select_FUN_004dc8c0
                           (param_1->inventories,
                            param_1->inventories[0].selected_items
                            [param_1->inventories[0].current_group]);
@@ -43,7 +43,7 @@ uint core_hero_cpp_FUN_004cfc80(CHero *param_1)
       }
     }
   }
-  uVar2 = core_inv_cpp_FUN_004dc8c0
+  uVar2 = core_inv_cpp_CInventory_select_FUN_004dc8c0
                     (param_1->inventories,
                      param_1->inventories[0].selected_items[param_1->inventories[0].current_group]);
   return uVar2;

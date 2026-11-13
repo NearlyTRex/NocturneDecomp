@@ -802,17 +802,32 @@
     ]
    },
    {
-    "name": "CInStreamFile",
-    "size": 44,
+    "name": "CInStream",
+    "size": 4,
     "base": null,
-    "basis": "RTTI size 44; ctor 005a08d0 calls the in-stream base ctor then zeroes +4..+0x24",
+    "basis": "abstract input-stream base with no RTTI record; ctor 0059f540 and dtor 0059f550 store vtable 00607354, whose 9 slots are dtor, getChar, ungetChar, peekChar, read, seek, tell, isOpen, isEof; getChar, peekChar, read, isOpen and isEof hold the pure-virtual stub, ungetChar and seek share 0059f580 (returns 0), tell is 0059f590 (returns -1)",
     "fields": [
      {
       "offset": "0x0",
       "name": "vtable",
       "type": "void *",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract base ctor (0059f540) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "in-stream vtable pointer; each derived ctor overwrites the base's"
+     }
+    ]
+   },
+   {
+    "name": "CInStreamFile",
+    "size": 44,
+    "base": "CInStream",
+    "basis": "RTTI size 44; ctor 005a08d0 calls the in-stream base ctor then zeroes +4..+0x24",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "CInStream",
+      "len": 4,
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -889,15 +904,15 @@
    {
     "name": "CInStreamMemory",
     "size": 20,
-    "base": null,
+    "base": "CInStream",
     "basis": "RTTI size 20; ctor 005a1130 calls the in-stream base ctor then zeroes +4..+0x10",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "CInStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract base ctor (0059f540) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -932,15 +947,15 @@
    {
     "name": "CInStreamPipe",
     "size": 36,
-    "base": null,
+    "base": "CInStream",
     "basis": "RTTI size 36; ctor 00443b90 calls the in-stream base ctor then zeroes +4..+0x20",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "CInStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract base ctor (0059f540) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -1001,32 +1016,47 @@
     ]
    },
    {
-    "name": "COutStreamDebug",
+    "name": "COutStream",
     "size": 4,
     "base": null,
-    "basis": "RTTI size 4; ctor 005a1e10 calls the out-stream base ctor and stores its vtable; seek/tell (005a1f80) only report 'invalid operation'",
+    "basis": "abstract output-stream base with no RTTI record; 005a14b0 is both its ctor and dtor and stores vtable 00607404, whose 5 slots are dtor, putChar, write, seek, tell; putChar and write hold the pure-virtual stub, seek is 005a1390 (returns 0), tell is 005a13c0 (returns -1)",
     "fields": [
      {
       "offset": "0x0",
       "name": "vtable",
       "type": "void *",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract output-stream base ctor (005a14b0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "out-stream vtable pointer; each derived ctor overwrites the base's"
+     }
+    ]
+   },
+   {
+    "name": "COutStreamDebug",
+    "size": 4,
+    "base": "COutStream",
+    "basis": "RTTI size 4; ctor 005a1e10 calls the out-stream base ctor and stores its vtable; seek/tell (005a1f80) only report 'invalid operation'",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "COutStream",
+      "len": 4,
+      "basis": "derived"
      }
     ]
    },
    {
     "name": "COutStreamFile",
     "size": 8,
-    "base": null,
+    "base": "COutStream",
     "basis": "RTTI size 8; ctor 005a17d0 calls the out-stream base ctor then zeroes +4",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "COutStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract output-stream base ctor (005a14b0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -1040,15 +1070,15 @@
    {
     "name": "COutStreamMemory",
     "size": 24,
-    "base": null,
+    "base": "COutStream",
     "basis": "RTTI size 24; ctor 005a1a90 calls the out-stream base ctor, zeroes +4..+0x10 and sets +0x14 = 1",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "COutStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract output-stream base ctor (005a14b0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -1304,17 +1334,32 @@
     ]
    },
    {
-    "name": "CChemPuzzle",
-    "size": 2372,
+    "name": "CPuzzle",
+    "size": 4,
     "base": null,
-    "basis": "RTTI size 2372; ctor 004175f0: puzzle base ctor 00415ba0, CAlphaBitmap ctor at +4, arrinit 50 buttonStructs at +0x70, then the CChemPuzzle vtable at +0",
+    "basis": "abstract puzzle base with no RTTI record (name inferred from its subclasses); ctor 00415ba0 stores vtable 005fc944 and appends this to the puzzle list (count 007c394c, 10 entries from 007c3950, active puzzle 007c3978); dtor 00415bc0. Its 10 slots are dtor, getName (pure), reset, slot 3, slot 4, load, render, slot 7, process, onMouse; slots 2-9 default to the empty 00415bd0",
     "fields": [
      {
       "offset": "0x0",
       "name": "vtable",
       "type": "void *",
       "len": 4,
-      "basis": "puzzle vtable pointer: the shared puzzle base ctor (00415ba0) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field"
+      "basis": "puzzle vtable pointer; each derived ctor overwrites the base's"
+     }
+    ]
+   },
+   {
+    "name": "CChemPuzzle",
+    "size": 2372,
+    "base": "CPuzzle",
+    "basis": "RTTI size 2372; ctor 004175f0: puzzle base ctor 00415ba0, CAlphaBitmap ctor at +4, arrinit 50 buttonStructs at +0x70, then the CChemPuzzle vtable at +0",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "CPuzzle",
+      "len": 4,
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -2841,14 +2886,15 @@
    {
     "name": "CAudioRecPuzzle",
     "size": 3128,
+    "base": "CPuzzle",
     "basis": "RTTI 3128; existing layout from bw_own_structs.json plus +0x54",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void*",
+      "name": "base",
+      "type": "CPuzzle",
       "len": 4,
-      "basis": "puzzle base ctor 00415ba0 stores the base vtable at +0"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -3909,17 +3955,32 @@
     ]
    },
    {
-    "name": "CInStreamFile",
-    "size": 40,
+    "name": "CInStream",
+    "size": 4,
     "base": null,
-    "basis": "RTTI size 40; ctor 0057cd50 calls the in-stream base ctor then zeroes +4..+0x24; bla's open takes no text/binary flag and nothing touches +0x28, hence 40 bytes",
+    "basis": "abstract input-stream base with no RTTI record; ctor 0057b9c0 and dtor 0057b9d0 store vtable 005fd3b4, whose 9 slots are dtor, getChar, ungetChar, peekChar, read, seek, tell, isOpen, isEof; getChar, peekChar, read, isOpen and isEof hold the pure-virtual stub, ungetChar and seek share 0057ba00 (returns 0), tell is 0057ba10 (returns -1)",
     "fields": [
      {
       "offset": "0x0",
       "name": "vtable",
       "type": "void *",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract base ctor (0057b9c0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "in-stream vtable pointer; each derived ctor overwrites the base's"
+     }
+    ]
+   },
+   {
+    "name": "CInStreamFile",
+    "size": 40,
+    "base": "CInStream",
+    "basis": "RTTI size 40; ctor 0057cd50 calls the in-stream base ctor then zeroes +4..+0x24; bla's open takes no text/binary flag and nothing touches +0x28, hence 40 bytes",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "CInStream",
+      "len": 4,
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -3989,15 +4050,15 @@
    {
     "name": "CInStreamMemory",
     "size": 20,
-    "base": null,
+    "base": "CInStream",
     "basis": "RTTI size 20; ctor 0057d4f0 calls the in-stream base ctor then zeroes +4..+0x10",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "CInStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract base ctor (0057b9c0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -4032,15 +4093,15 @@
    {
     "name": "CInStreamPipe",
     "size": 36,
-    "base": null,
+    "base": "CInStream",
     "basis": "RTTI size 36; ctor 00434e70 calls the in-stream base ctor then zeroes +4..+0x20",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "CInStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract base ctor (0057b9c0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -4101,32 +4162,47 @@
     ]
    },
    {
-    "name": "COutStreamDebug",
+    "name": "COutStream",
     "size": 4,
     "base": null,
-    "basis": "RTTI size 4; ctor 0057e1c0 calls the out-stream base ctor and stores its vtable; seek/tell (0057e330) only report 'invalid operation'",
+    "basis": "abstract output-stream base with no RTTI record; 0057d860 is both its ctor and dtor and stores vtable 005fd464, whose 5 slots are dtor, putChar, write, seek, tell; putChar and write hold the pure-virtual stub, seek is 0057d740 (returns 0), tell is 0057d770 (returns -1)",
     "fields": [
      {
       "offset": "0x0",
       "name": "vtable",
       "type": "void *",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract output-stream base ctor (0057d860) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "out-stream vtable pointer; each derived ctor overwrites the base's"
+     }
+    ]
+   },
+   {
+    "name": "COutStreamDebug",
+    "size": 4,
+    "base": "COutStream",
+    "basis": "RTTI size 4; ctor 0057e1c0 calls the out-stream base ctor and stores its vtable; seek/tell (0057e330) only report 'invalid operation'",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "COutStream",
+      "len": 4,
+      "basis": "derived"
      }
     ]
    },
    {
     "name": "COutStreamFile",
     "size": 8,
-    "base": null,
+    "base": "COutStream",
     "basis": "RTTI size 8; ctor 0057db80 calls the out-stream base ctor then zeroes +4",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "COutStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract output-stream base ctor (0057d860) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -4140,15 +4216,15 @@
    {
     "name": "COutStreamMemory",
     "size": 24,
-    "base": null,
+    "base": "COutStream",
     "basis": "RTTI size 24; ctor 0057de40 calls the out-stream base ctor, zeroes +4..+0x10 and sets +0x14 = 1",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "COutStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract output-stream base ctor (0057d860) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -4440,17 +4516,32 @@
     ]
    },
    {
-    "name": "CAudioRecPuzzle",
-    "size": 2188,
+    "name": "CPuzzle",
+    "size": 4,
     "base": null,
-    "basis": "RTTI size 2188; ctor 0059be60: puzzle base ctor 0059ab30, CAlphaBitmap at +4, arrinit 30 buttonStructs at 0x4c, two CKeyFramedModelInstance at 0x574/0x6f0, vtable at +0; bla's radio has no clip playback/solution block and 30 buttons",
+    "basis": "abstract puzzle base with no RTTI record (name inferred from its subclasses); ctor 0059ab30 stores vtable 005fe4f4 and appends this to the puzzle list (count 026677b4, 10 entries after it, active puzzle 026677e0); dtor 0059ab50. Its 10 slots are dtor, getName (pure), reset, slot 3, slot 4, load, render, slot 7, process, onMouse; slots 2-9 default to the empty 0059ab60",
     "fields": [
      {
       "offset": "0x0",
       "name": "vtable",
       "type": "void *",
       "len": 4,
-      "basis": "puzzle vtable pointer: the shared puzzle base ctor (0059ab30) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field"
+      "basis": "puzzle vtable pointer; each derived ctor overwrites the base's"
+     }
+    ]
+   },
+   {
+    "name": "CAudioRecPuzzle",
+    "size": 2188,
+    "base": "CPuzzle",
+    "basis": "RTTI size 2188; ctor 0059be60: puzzle base ctor 0059ab30, CAlphaBitmap at +4, arrinit 30 buttonStructs at 0x4c, two CKeyFramedModelInstance at 0x574/0x6f0, vtable at +0; bla's radio has no clip playback/solution block and 30 buttons",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "CPuzzle",
+      "len": 4,
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -4676,15 +4767,15 @@
    {
     "name": "CExamplePuzzle",
     "size": 20,
-    "base": null,
+    "base": "CPuzzle",
     "basis": "RTTI size 20; ctor 0059bf50 calls the puzzle base ctor 0059ab30 then stores the CExamplePuzzle vtable at +0",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "CPuzzle",
       "len": 4,
-      "basis": "puzzle vtable pointer: the shared puzzle base ctor (0059ab30) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -7538,17 +7629,32 @@
     ]
    },
    {
-    "name": "CInStreamFile",
-    "size": 44,
+    "name": "CInStream",
+    "size": 4,
     "base": null,
-    "basis": "RTTI size 44; ctor 005738c0 calls the in-stream base ctor then zeroes +4..+0x24; same code as bw1 (normalized pseudocode compared)",
+    "basis": "abstract input-stream base with no RTTI record; ctor 00572530 and dtor 00572540 store vtable 005e5a54, whose 9 slots are dtor, getChar, ungetChar, peekChar, read, seek, tell, isOpen, isEof; getChar, peekChar, read, isOpen and isEof hold the pure-virtual stub, ungetChar and seek share 00572570 (returns 0), tell is 00572580 (returns -1)",
     "fields": [
      {
       "offset": "0x0",
       "name": "vtable",
       "type": "void *",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract base ctor (00572530) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "in-stream vtable pointer; each derived ctor overwrites the base's"
+     }
+    ]
+   },
+   {
+    "name": "CInStreamFile",
+    "size": 44,
+    "base": "CInStream",
+    "basis": "RTTI size 44; ctor 005738c0 calls the in-stream base ctor then zeroes +4..+0x24; same code as bw1 (normalized pseudocode compared)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "CInStream",
+      "len": 4,
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -7625,15 +7731,15 @@
    {
     "name": "CInStreamMemory",
     "size": 20,
-    "base": null,
+    "base": "CInStream",
     "basis": "RTTI size 20; ctor 00574120 calls the in-stream base ctor then zeroes +4..+0x10",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "CInStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract base ctor (00572530) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -7668,15 +7774,15 @@
    {
     "name": "CInStreamPipe",
     "size": 36,
-    "base": null,
+    "base": "CInStream",
     "basis": "RTTI size 36; ctor 004417f0 calls the in-stream base ctor then zeroes +4..+0x20",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "CInStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract base ctor (00572530) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -7737,32 +7843,47 @@
     ]
    },
    {
-    "name": "COutStreamDebug",
+    "name": "COutStream",
     "size": 4,
     "base": null,
-    "basis": "RTTI size 4; ctor 00574e00 calls the out-stream base ctor and stores its vtable; seek/tell (00574f70) only report 'invalid operation'",
+    "basis": "abstract output-stream base with no RTTI record; 005744a0 is both its ctor and dtor and stores vtable 005e5b04, whose 5 slots are dtor, putChar, write, seek, tell; putChar and write hold the pure-virtual stub, seek is 00574380 (returns 0), tell is 005743b0 (returns -1)",
     "fields": [
      {
       "offset": "0x0",
       "name": "vtable",
       "type": "void *",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract output-stream base ctor (005744a0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "out-stream vtable pointer; each derived ctor overwrites the base's"
+     }
+    ]
+   },
+   {
+    "name": "COutStreamDebug",
+    "size": 4,
+    "base": "COutStream",
+    "basis": "RTTI size 4; ctor 00574e00 calls the out-stream base ctor and stores its vtable; seek/tell (00574f70) only report 'invalid operation'",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "COutStream",
+      "len": 4,
+      "basis": "derived"
      }
     ]
    },
    {
     "name": "COutStreamFile",
     "size": 8,
-    "base": null,
+    "base": "COutStream",
     "basis": "RTTI size 8; ctor 005747c0 calls the out-stream base ctor then zeroes +4",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "COutStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract output-stream base ctor (005744a0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -7776,15 +7897,15 @@
    {
     "name": "COutStreamMemory",
     "size": 24,
-    "base": null,
+    "base": "COutStream",
     "basis": "RTTI size 24; ctor 00574a80 calls the out-stream base ctor, zeroes +4..+0x10 and sets +0x14 = 1",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "COutStream",
       "len": 4,
-      "basis": "stream vtable pointer; the abstract output-stream base ctor (005744a0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -8118,17 +8239,32 @@
     ]
    },
    {
-    "name": "CChemPuzzle",
-    "size": 2372,
+    "name": "CPuzzle",
+    "size": 4,
     "base": null,
-    "basis": "RTTI size 2372; ctor 00413200: puzzle base ctor 00411960, CAlphaBitmap ctor at +4, arrinit 50 buttonStructs at +0x70, then the CChemPuzzle vtable at +0; every method uses the same offsets as bw1 (process logic differs)",
+    "basis": "abstract puzzle base with no RTTI record (name inferred from its subclasses); ctor 00411960 stores vtable 005dbe54 and appends this to the puzzle list (count 007dff88, 10 entries after it, active puzzle 007dffb4); dtor 00411980. Its 10 slots are dtor, getName (pure), reset, slot 3, slot 4, load, render, slot 7, process, onMouse; slots 2-9 default to the empty 00411990",
     "fields": [
      {
       "offset": "0x0",
       "name": "vtable",
       "type": "void *",
       "len": 4,
-      "basis": "puzzle vtable pointer: the shared puzzle base ctor (00411960) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field"
+      "basis": "puzzle vtable pointer; each derived ctor overwrites the base's"
+     }
+    ]
+   },
+   {
+    "name": "CChemPuzzle",
+    "size": 2372,
+    "base": "CPuzzle",
+    "basis": "RTTI size 2372; ctor 00413200: puzzle base ctor 00411960, CAlphaBitmap ctor at +4, arrinit 50 buttonStructs at +0x70, then the CChemPuzzle vtable at +0; every method uses the same offsets as bw1 (process logic differs)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "CPuzzle",
+      "len": 4,
+      "basis": "derived"
      },
      {
       "offset": "0x4",
@@ -8261,15 +8397,15 @@
    {
     "name": "CAudioRecPuzzle",
     "size": 3116,
-    "base": null,
+    "base": "CPuzzle",
     "basis": "RTTI size 3116; ctor 00411b50: puzzle base ctor 00411960, CAlphaBitmap at +4, arrinit 50 buttonStructs at 0x54, two CKeyFramedModelInstance at 0x8ec/0xa68, vtable at +0; bw3 drops bw1's dial_sfx/0x54/switch_sfx block, so everything from reel_angle on sits 12 bytes lower",
     "fields": [
      {
       "offset": "0x0",
-      "name": "vtable",
-      "type": "void *",
+      "name": "base",
+      "type": "CPuzzle",
       "len": 4,
-      "basis": "puzzle vtable pointer: the shared puzzle base ctor (00411960) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field"
+      "basis": "derived"
      },
      {
       "offset": "0x4",

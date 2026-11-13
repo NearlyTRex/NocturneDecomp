@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_004495a0
-;   core_door.cpp_FUN_0045f030
+;   core_door.cpp_CDoor_reposition_FUN_0045f030
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
 ;   core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00538020
@@ -103,8 +103,8 @@ section .text
     ADD ESP,0x8                         ; 0045f674
     PUSH EBP                            ; 0045f677
         ;   Label: LAB_0045f677
-    CALL core_door.cpp_FUN_0045f030     ; 0045f678
-        ;   XREF to: 0045f030 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_FUN_0045f030()
+    CALL core_door.cpp_CDoor_reposition_FUN_0045f030 ; 0045f678
+        ;   XREF to: 0045f030 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_reposition_FUN_0045f030(CDoor * this_ptr)
     ADD ESP,0x4                         ; 0045f67d
     FLD float ptr [EBP + 0xb08]         ; 0045f680
     FCOMP float ptr [ESP + 0xb0]        ; 0045f686
@@ -449,8 +449,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xb0]      ; 0045fafd
     PUSH EBP                            ; 0045fb04
     MOV dword ptr [EBP + 0xb08],EAX     ; 0045fb05
-    CALL core_door.cpp_FUN_0045f030     ; 0045fb0b
-        ;   XREF to: 0045f030 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_FUN_0045f030()
+    CALL core_door.cpp_CDoor_reposition_FUN_0045f030 ; 0045fb0b
+        ;   XREF to: 0045f030 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_reposition_FUN_0045f030(CDoor * this_ptr)
     ADD ESP,0x4                         ; 0045fb10
     ADD ESP,0xf8                        ; 0045fb13
     POP EBP                             ; 0045fb19

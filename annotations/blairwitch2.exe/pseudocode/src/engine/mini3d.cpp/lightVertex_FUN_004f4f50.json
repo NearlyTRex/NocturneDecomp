@@ -1,0 +1,360 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 351,
+    "complexity_score": 182,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 97,
+    "suspect_count": 7,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "fast_sqrt_inline",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 448
+  },
+  "cross_references": [
+    {
+      "addr": "004f5c50",
+      "from_addr": "004f5c7b",
+      "name": "engine_mini3d.cpp_convertVertexD3DL_FUN_004f5c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f5d50",
+      "from_addr": "004f5d6f",
+      "name": "engine_mini3d.cpp_convertVertexL_FUN_004f5d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f3920",
+      "from_addr": "004f3b10",
+      "name": "engine_mini3d.cpp_polyList_FUN_004f3920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f4f50",
+    "address_range": [
+      [
+        "004f4f50",
+        "004f5363"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "engine_mini3d.cpp_lightVertex_FUN_004f4f50",
+    "signature": "void __cdecl engine_mini3d_cpp_lightVertex_FUN_004f4f50(float *vertex,float *out_color)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01caf5b4",
+      "name": "DAT_01caf5b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09860",
+      "name": "DAT_01d09860",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098e4",
+      "name": "DAT_01d098e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098f0",
+      "name": "DAT_01d098f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09918",
+      "name": "DAT_01d09918",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0c3a0",
+      "name": "DAT_01d0c3a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d12118",
+      "name": "DAT_01d12118",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1211c",
+      "name": "DAT_01d1211c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d12120",
+      "name": "DAT_01d12120",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d12128",
+      "name": "DAT_01d12128",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1212c",
+      "name": "DAT_01d1212c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d12130",
+      "name": "DAT_01d12130",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d12138",
+      "name": "DAT_01d12138",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1213c",
+      "name": "DAT_01d1213c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d12140",
+      "name": "DAT_01d12140",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d12148",
+      "name": "DAT_01d12148",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1214c",
+      "name": "DAT_01d1214c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d12150",
+      "name": "DAT_01d12150",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004f3b10",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_polyList_FUN_004f3920",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f5c7b",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_convertVertexD3DL_FUN_004f5c50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f5d6f",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_convertVertexL_FUN_004f5d50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.32475884244373,
+    "instruction_count": 311,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 21,
+      "BRANCH": 5,
+      "CBRANCH": 20,
+      "COPY": 1280,
+      "FLOAT2FLOAT": 134,
+      "FLOAT_ADD": 33,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 10,
+      "FLOAT_LESS": 10,
+      "FLOAT_MULT": 48,
+      "FLOAT_NAN": 20,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 9,
+      "INT_ADD": 121,
+      "INT_AND": 93,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 42,
+      "INT_LEFT": 40,
+      "INT_LESS": 9,
+      "INT_NOTEQUAL": 58,
+      "INT_OR": 50,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 20,
+      "INT_SRIGHT": 1,
+      "INT_SUB": 13,
+      "INT_XOR": 5,
+      "INT_ZEXT": 40,
+      "LOAD": 104,
+      "POPCOUNT": 20,
+      "RETURN": 1,
+      "STORE": 41
+    },
+    "pcode_op_count": 2278
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00513ca0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004ef470",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertex",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "out_color",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004f4f59",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01caf5b4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01caf5b4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 74,
+      "match": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01caf5b4)) * _DAT_01d098e4 * fSt",
+      "severity": "moderate",
+      "text": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + _DAT_01caf5b4)) * _DAT_01d098e4 * fStack_2c * (1.0 - fVar2 / pfVar6[0xd]);",
+      "type": "fast_sqrt_inline"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 25,
+      "match": "0x3f800000 < (int)fStack_78)",
+      "severity": "moderate",
+      "text": "if (0x3f800000 < (int)fStack_78) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 34,
+      "match": "0x3f800000 < (int)fStack_78)",
+      "severity": "moderate",
+      "text": "if (0x3f800000 < (int)fStack_78) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 73,
+      "match": "(int)fVar1 < 0x3f800000",
+      "severity": "moderate",
+      "text": "fVar1 = fVar1 * fVar1 + fVar5 * fVar5, (int)fVar1 < 0x3f800000)))) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 92,
+      "match": "0x3f800000 < (int)out_color[1])",
+      "severity": "moderate",
+      "text": "if (0x3f800000 < (int)out_color[1]) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 96,
+      "match": "0x3f800000 < (int)out_color[2])",
+      "severity": "moderate",
+      "text": "if (0x3f800000 < (int)out_color[2]) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_fldnotes.cpp_FUN_004a5f60 at 004a5f75
+;   core_fldnotes.cpp_CFieldNotes_process_FUN_004a5f60 at 004a5f75
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d5df8
@@ -62,7 +62,7 @@ section .text
     PUSH EAX                            ; 004a3aa2
     PUSH EBX                            ; 004a3aa3
     CALL core_fldnotes.cpp_SNotesMap_worldToMap_FUN_004a3d00 ; 004a3aa4
-        ;   XREF to: 004a3d00 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SNotesMap_worldToMap_FUN_004a3d00(SNotesMap * this_ptr, float * param_2)
+        ;   XREF to: 004a3d00 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SNotesMap_worldToMap_FUN_004a3d00(SNotesMap * this_ptr, CLocation * location, int * map_x, int * map_y)
     ADD ESP,0x10                        ; 004a3aa9
     TEST EAX,EAX                        ; 004a3aac
     JL 0x004a3a89                       ; 004a3aae
@@ -110,7 +110,7 @@ section .text
     PUSH EAX                            ; 004a3b30
     PUSH EBX                            ; 004a3b31
     CALL core_fldnotes.cpp_SNotesMap_revealCircle_FUN_004a3bb0 ; 004a3b32
-        ;   XREF to: 004a3bb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SNotesMap_revealCircle_FUN_004a3bb0(SNotesMap * this_ptr, int param_2, int param_3, int param_4)
+        ;   XREF to: 004a3bb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SNotesMap_revealCircle_FUN_004a3bb0(SNotesMap * this_ptr, int x, int y, int radius)
     ADD ESP,0x10                        ; 004a3b37
     POP ESI                             ; 004a3b3a
     POP EDI                             ; 004a3b3b

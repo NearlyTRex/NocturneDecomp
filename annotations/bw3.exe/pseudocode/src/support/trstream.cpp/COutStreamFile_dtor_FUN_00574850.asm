@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; COutStreamFile * support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(COutStreamFile *this_ptr,uint flags)
+; COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(COutStreamFile *this_ptr,uint flags)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
@@ -22,8 +22,8 @@
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
+;   support_trstream.cpp_COutStream_dtor_FUN_005744a0
 ;   support_trstream.cpp_COutStreamFile_close_FUN_005749a0
-;   support_trstream.cpp_FUN_005744a0
 ;
 ; *****************************************************************************
 
@@ -38,12 +38,12 @@ section .text
     PUSH EBX                            ; 0057485c
     MOV dword ptr [EBX],0x5e5b24        ; 0057485d | g_COutStreamFileVTable
     CALL support_trstream.cpp_COutStreamFile_close_FUN_005749a0 ; 00574863
-        ;   XREF to: 005749a0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamFile_close_FUN_005749a0(COutStreamFile * this_ptr)
+        ;   XREF to: 005749a0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_close_FUN_005749a0(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00574868
     PUSH 0x1                            ; 0057486b
     PUSH EBX                            ; 0057486d
-    CALL support_trstream.cpp_FUN_005744a0 ; 0057486e
-        ;   XREF to: 005744a0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005744a0()
+    CALL support_trstream.cpp_COutStream_dtor_FUN_005744a0 ; 0057486e
+        ;   XREF to: 005744a0 (UNCONDITIONAL_CALL)  ; COutStream * support_trstream.cpp_COutStream_dtor_FUN_005744a0(COutStream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00574873
     MOV DL,byte ptr [ESP + 0xc]         ; 00574876
     MOV EBX,EAX                         ; 0057487a

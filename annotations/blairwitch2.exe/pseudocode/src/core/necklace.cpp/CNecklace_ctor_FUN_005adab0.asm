@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CNecklace * core_necklace_cpp_CNecklace_ctor_FUN_005adab0(CNecklace *this_ptr)
+; CNecklace * __cdecl core_necklace_cpp_CNecklace_ctor_FUN_005adab0(CNecklace *this_ptr)
 ;
 ; Parameters:
 ; CNecklace *      Stack[0x4]:4   this_ptr

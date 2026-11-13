@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fldnotes_cpp_STextView_placeResource_FUN_004a2ad0(STextView *this_ptr,undefined4 *param_2)
+; int __cdecl core_fldnotes_cpp_STextView_placeResource_FUN_004a2ad0(STextView *this_ptr,SPageResource *resource)
 ;
 ; Parameters:
 ; STextView *      Stack[0x4]:4   this_ptr
-; undefined4 *     Stack[0x8]:4   param_2
+; SPageResource *  Stack[0x8]:4   resource
 ;
 ; XREF[1]:
 ;   core_fldnotes.cpp_SNotesMap_paginate_FUN_004a4070 at 004a40b2
@@ -35,7 +35,7 @@ section .text
     PUSH ECX                            ; 004a2aea
     PUSH EBX                            ; 004a2aeb
     CALL core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0 ; 004a2aec
-        ;   XREF to: 004a30a0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0(STextView * this_ptr, int param_2, int param_3)
+        ;   XREF to: 004a30a0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0(STextView * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 004a2af1
     TEST EAX,EAX                        ; 004a2af4
     JZ 0x004a2b22                       ; 004a2af6
@@ -52,7 +52,7 @@ section .text
     PUSH EBX                            ; 004a2b0d
     MOV dword ptr [EBX + 0x14],EDI      ; 004a2b0e
     CALL core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0 ; 004a2b11
-        ;   XREF to: 004a2bb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0(STextView * this_ptr, undefined4 param_2)
+        ;   XREF to: 004a2bb0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextView_addResource_FUN_004a2bb0(STextView * this_ptr, SPageResource * resource)
     MOV EAX,0x1                         ; 004a2b16
     ADD ESP,0x8                         ; 004a2b1b
     POP EDI                             ; 004a2b1e

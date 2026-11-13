@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SButtonStruct * core_bmppuzzl_cpp_SButtonStruct_ctor_FUN_0059bf30(SButtonStruct *this_ptr)
+; SButtonStruct * __cdecl core_bmppuzzl_cpp_SButtonStruct_ctor_FUN_0059bf30(SButtonStruct *this_ptr)
 ;
 ; Parameters:
 ; SButtonStruct *  Stack[0x4]:4   this_ptr

@@ -25,8 +25,8 @@ CMatrix3x4f * __cdecl multiplyMatrix3x4InPlace(CMatrix3x4f *matrix_a,CMatrix3x4f
 // Address: 005b53f0
 void __cdecl setIdentityMatrix3x4(CMatrix3x4f *matrix);
 
-// Original: core_xform.cpp_somebodyWriteMe_FUN_005b544e
-// Address: 005b544e
+// Original: core_xform.cpp_somebodyWriteMe_FUN_005b5450
+// Address: 005b5450
 void __cdecl somebodyWriteMe(void);
 
 // Original: core_xform.cpp_setRotationScaleIdentity_FUN_005b5480
@@ -97,9 +97,9 @@ CMatrix3x4f * __stack_esi buildRotationY(float angle_radians,CMatrix3x4f *matrix
 // Address: 005b7030
 CMatrix3x4f * __stack_esi buildXFlipMatrix(float x_offset,CMatrix3x4f *matrix_out);
 
-// Original: core_xform.cpp_FUN_005b708e
-// Address: 005b708e
-void FUN_005b708e(float param_1);
+// Original: core_xform.cpp_FUN_005b7090
+// Address: 005b7090
+void FUN_005b7090(void);
 
 // Original: core_xform.cpp_buildZFlipMatrix_FUN_005b70f0
 // Address: 005b70f0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_holycrss_cpp_factoryFuncHolycross_FUN_004d50a0(void)
+; CHolycross * __cdecl core_holycrss_cpp_factoryFuncHolycross_FUN_004d50a0(void)
 ;
 ;
 ; Called Functions:

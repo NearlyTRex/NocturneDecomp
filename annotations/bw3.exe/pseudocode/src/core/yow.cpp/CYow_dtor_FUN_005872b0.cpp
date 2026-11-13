@@ -1,14 +1,12 @@
 // Name: core_yow.cpp_CYow_dtor_FUN_005872b0
 // Address: 005872b0
 // Address Range: [[005872b0, 00587334]]
-// Convention: unknown
-// Signature: CYow * core_yow_cpp_CYow_dtor_FUN_005872b0(CYow *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CYow * __cdecl core_yow_cpp_CYow_dtor_FUN_005872b0(CYow *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CYow * core_yow_cpp_CYow_dtor_FUN_005872b0(CYow *this_ptr,uint flags)
+CYow * __cdecl core_yow_cpp_CYow_dtor_FUN_005872b0(CYow *this_ptr,uint flags)
 
 {
   int iVar1;

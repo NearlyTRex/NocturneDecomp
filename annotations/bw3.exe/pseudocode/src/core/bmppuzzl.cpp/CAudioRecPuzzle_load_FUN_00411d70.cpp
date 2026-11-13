@@ -2,17 +2,17 @@
 // Address: 00411d70
 // Address Range: [[00411d70, 0041231e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00411d70(CAudioRecPuzzle *this_ptr,int param_2)
+// Signature: void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00411d70(CAudioRecPuzzle *this_ptr,int activate)
 
 #include "nocturne.h"
 
-void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00411d70(CAudioRecPuzzle *this_ptr,int param_2)
+void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00411d70(CAudioRecPuzzle *this_ptr,int activate)
 
 {
   int iVar1;
   CAlphaBitmap *this_ptr_00;
   
-  if (param_2 == 0) {
+  if (activate == 0) {
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&this_ptr->background);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap_ARRAY_007dffc0);
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap_ARRAY_007dffc0 + 1);
@@ -54,54 +54,54 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00411d70(CAudioRecPuzzle
             (CAlphaBitmap_ARRAY_007dffc0 + 2,"radiotunersleft",0x15,0xc);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
             (CAlphaBitmap_ARRAY_007dffc0 + 3,"radiotunersright",0x15,0xc);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0,"poweron",0x3d,0x3a,1,0x1f9,0x195,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,1,"poweroff",0x3d,0x3a,1,0x1f9,0x195,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,2,"playreverse",0x2d,0x4c,2,0x128,0x8a,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,3,"playstop",0x2d,0x4c,2,0x128,0x8a,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,4,"playforward",0x2d,0x4c,2,0x128,0x8a,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,5,0x5b6661,0x16,0x20,3,0x171,0x12e,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,6,0x5b6668,0x16,0x20,3,0x195,0x12e,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,7,0x5b666f,0x16,0x20,3,0x1bd,0x12e,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,8,0x5b6676,0x16,0x20,3,0x1e3,0x12e,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,9,0x5b667d,0x16,0x20,3,0x20a,0x12e,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,5,0x5b6661,0x16,0x20,3,0x171,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,6,0x5b6668,0x16,0x20,3,0x195,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,7,0x5b666f,0x16,0x20,3,0x1bd,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,8,0x5b6676,0x16,0x20,3,0x1e3,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,9,0x5b667d,0x16,0x20,3,0x20a,0x12e,0);
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,10,"lighton",0x14,0x15,0,0x135,0x62,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0xb,"lightoff",0x14,0x15,0,0x135,0x62,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0xc,"knobArrow1",0x27,0x27,2,0x4b,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0xd,"knobArrow2",0x27,0x27,2,0x4b,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0xe,"knobArrow3",0x27,0x27,2,0x4b,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0xf,"knobArrow4",0x27,0x27,2,0x4b,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x10,"knobArrow5",0x27,0x27,2,0x4b,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x11,"knobArrow1",0x27,0x27,2,0xaf,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x12,"knobArrow2",0x27,0x27,2,0xaf,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x13,"knobArrow3",0x27,0x27,2,0xaf,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x14,"knobArrow4",0x27,0x27,2,0xaf,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x15,"knobArrow5",0x27,0x27,2,0xaf,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x16,"knobArrow1",0x27,0x27,2,0x111,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x17,"knobArrow2",0x27,0x27,2,0x111,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x18,"knobArrow3",0x27,0x27,2,0x111,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x19,"knobArrow4",0x27,0x27,2,0x111,0x1a3,0);
-  (**(code **)((int)this_ptr->vtable + 0x28))
+  (**(code **)((int)(this_ptr->base).vtable + 0x28))
             (this_ptr,0x1a,"knobArrow5",0x27,0x27,2,0x111,0x1a3,0);
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
                     (0x01C6E360,"AudioPuzzleTelOsMah");

@@ -50,7 +50,7 @@
 ;   core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042a0c0
 ;   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042a620
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
-;   core_charactr.cpp_FUN_00428b10
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 ;   core_cross.cpp_FUN_005a6cf0
 ;   core_doc.cpp_FUN_0045bba0
 ;   core_dynamite.cpp_CDynamite_isFuseLit_FUN_0047a1a0
@@ -1083,8 +1083,8 @@ section .text
     PUSH EDI                            ; 0045c885
     PUSH 0x1                            ; 0045c886
     PUSH EBX                            ; 0045c888
-    CALL core_charactr.cpp_FUN_00428b10 ; 0045c889
-        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428b10()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10 ; 0045c889
+        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     MOV dword ptr [EBX + 0x25698],0x0   ; 0045c88e
     MOV dword ptr [EBX + 0x25640],0x0   ; 0045c898
     MOV dword ptr [EBX + 0x2d04],0x2    ; 0045c8a2
@@ -1113,8 +1113,8 @@ section .text
     PUSH EDI                            ; 0045c8ee
     PUSH 0x1                            ; 0045c8ef
     PUSH EBX                            ; 0045c8f1
-    CALL core_charactr.cpp_FUN_00428b10 ; 0045c8f2
-        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428b10()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10 ; 0045c8f2
+        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 0045c8f7
     JMP 0x0045c040                      ; 0045c8fa
         ;   XREF to: 0045c040 (UNCONDITIONAL_JUMP)  ; LAB_0045c040

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_carved_cpp_factoryFuncCarved_FUN_004286a0(void)
+; CCarved * __cdecl core_carved_cpp_factoryFuncCarved_FUN_004286a0(void)
 ;
 ;
 ; Called Functions:

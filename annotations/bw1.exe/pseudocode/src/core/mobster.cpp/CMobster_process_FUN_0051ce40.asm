@@ -33,6 +33,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042e120
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
@@ -40,7 +41,6 @@
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_0042d700
-;   core_charactr.cpp_FUN_0042d750
 ;   ... and 25 more
 ;
 ; *****************************************************************************
@@ -286,8 +286,8 @@ section .text
     PUSH EDX                            ; 0051d0f8
     PUSH EBX                            ; 0051d0f9
     MOV dword ptr [EBX + 0xc274],0x0    ; 0051d0fa
-    CALL core_charactr.cpp_FUN_004325b0 ; 0051d104
-        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004325b0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0 ; 0051d104
+        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 0051d109
     JMP 0x0051cfd9                      ; 0051d10c
         ;   XREF to: 0051cfd9 (UNCONDITIONAL_JUMP)  ; LAB_0051cfd9

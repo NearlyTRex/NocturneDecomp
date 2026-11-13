@@ -2,17 +2,17 @@
 // Address: 004a5490
 // Address Range: [[004a5490, 004a5594]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004a5490(CFieldNotes *this_ptr,char *param_2)
+// Signature: void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004a5490(CFieldNotes *this_ptr,char *entry_name)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004a54c7) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004a5490(CFieldNotes *this_ptr,char *param_2)
+void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004a5490(CFieldNotes *this_ptr,char *entry_name)
 
 {
-  int iVar1;
+  SNotesEntry *pSVar1;
   int iVar2;
   int iVar3;
   SNotesSection *pSVar4;
@@ -21,15 +21,15 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004a5490(CFieldNotes 
   if (0 < _DAT_01cab9f0) {
     pSVar4 = SNotesSection_ARRAY_01cab9f4;
     do {
-      iVar1 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(pSVar4,param_2);
-      if (iVar1 != 0) goto LAB_004a54cc;
+      pSVar1 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(pSVar4,entry_name);
+      if (pSVar1 != (SNotesEntry *)0x0) goto LAB_004a54cc;
       iVar3 = iVar3 + 1;
       pSVar4 = pSVar4 + 1;
     } while (iVar3 < _DAT_01cab9f0);
   }
-  iVar1 = 0;
+  pSVar1 = (SNotesEntry *)0x0;
 LAB_004a54cc:
-  if (iVar1 == 0) {
+  if (pSVar1 == (SNotesEntry *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
               (g_CEditorToolsPtr,"CFieldNotes::turnToEntry - entry '%s' not found");
     return;
@@ -42,7 +42,7 @@ LAB_004a54cc:
     if (0 < _DAT_01cab9f0) {
       pSVar4 = SNotesSection_ARRAY_01cab9f4;
       do {
-        iVar2 = core_fldnotes_cpp_SNotesSection_layout_FUN_004a3740(pSVar4,0x1caf240);
+        iVar2 = core_fldnotes_cpp_SNotesSection_layout_FUN_004a3740(pSVar4,&g_STextViewInstance);
         if (iVar2 == 0) goto LAB_004a554b;
         iVar3 = iVar3 + 1;
         pSVar4 = pSVar4 + 1;
@@ -51,6 +51,6 @@ LAB_004a54cc:
     DAT_00616014 = 0;
   }
 LAB_004a554b:
-  _DAT_01caf110 = *(uint *)(iVar1 + 0x144);
+  _DAT_01caf110 = pSVar1->page;
   return;
 }

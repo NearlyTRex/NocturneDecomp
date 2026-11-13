@@ -8,7 +8,7 @@
 ;
 ; XREF[5]:
 ;   sound_sndmain.cpp_lockSound_FUN_00558e90 at 00558ed5
-;   support_trisock.cpp_FUN_00570adc at 00570bd5
+;   support_trisock.cpp_FUN_00570ae0 at 00570bd5
 ;   support_trisock.cpp_FUN_00570ea0 at 00570ec8
 ;   support_trisock.cpp_FUN_00570fb0 at 00571007
 ;   support_trisock.cpp_FUN_00571f10 at 00571f46

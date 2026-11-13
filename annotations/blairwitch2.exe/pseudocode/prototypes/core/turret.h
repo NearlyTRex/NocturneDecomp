@@ -7,7 +7,7 @@
 
 // Original: core_turret.cpp_staticInit_FUN_0057e390
 // Address: 0057e390
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_turret.cpp_factoryFuncTurret_FUN_0057e3c0
 // Address: 0057e3c0
@@ -15,11 +15,11 @@ CTurret * __cdecl factoryFuncTurret(void);
 
 // Original: core_turret.cpp_CTurret_getActorType_FUN_0057e3e0
 // Address: 0057e3e0
-CDemonActorType * CTurret::getActorType(CTurret *this_ptr);
+CDemonActorType * __cdecl CTurret::getActorType(CTurret *this_ptr);
 
 // Original: core_turret.cpp_CTurret_ctor_FUN_0057e3f0
 // Address: 0057e3f0
-CTurret * CTurret::ctor(CTurret *this_ptr);
+CTurret * __cdecl CTurret::ctor(CTurret *this_ptr);
 
 // Original: core_turret.cpp_CTurret_setup_FUN_0057e550
 // Address: 0057e550

@@ -29,7 +29,7 @@ void __cdecl core_prye_cpp_CPrye_setup_FUN_00518680(CPrye *this_ptr)
   float fStack_1c;
   
   bVar2 = 0;
-  core_hero_cpp_FUN_004d26b0(this_ptr);
+  core_hero_cpp_CHero_setup_FUN_004d26b0(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr_00);
   _DAT_01ed36dc =

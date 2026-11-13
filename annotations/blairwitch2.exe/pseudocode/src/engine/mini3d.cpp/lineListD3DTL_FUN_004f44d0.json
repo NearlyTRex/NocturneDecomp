@@ -1,0 +1,171 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 41,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "004f9000",
+      "from_addr": "004f90b9",
+      "name": "engine_mini3d.cpp_drawLine_FUN_004f9000",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f44d0",
+    "address_range": [
+      [
+        "004f44d0",
+        "004f450d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_lineListD3DTL_FUN_004f44d0",
+    "signature": "void __cdecl engine_mini3d_cpp_lineListD3DTL_FUN_004f44d0(float *vertices,int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f7da0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_updateRenderState_FUN_004f7da0"
+    },
+    {
+      "addr": "004f3740",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_updateTransform_FUN_004f3740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c37788",
+      "name": "DAT_01c37788",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b54",
+      "name": "DAT_01c38b54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bcb0",
+      "name": "DAT_0264bcb0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f90b9",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_drawLine_FUN_004f9000",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8636363636363638,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 18,
+      "INT_ADD": 8,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 11,
+      "LOAD": 7,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 85
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00513220",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004ee9f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((_DAT_0264bcb0 != (code *)0x0) && (_DAT_01c37788 != 0)) {",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

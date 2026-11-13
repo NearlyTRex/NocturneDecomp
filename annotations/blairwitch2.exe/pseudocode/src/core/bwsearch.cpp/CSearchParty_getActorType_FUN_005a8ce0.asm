@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_bwsearch_cpp_CSearchParty_getActorType_FUN_005a8ce0(CSearchParty *this_ptr)
+; CDemonActorType * __cdecl core_bwsearch_cpp_CSearchParty_getActorType_FUN_005a8ce0(CSearchParty *this_ptr)
 ;
 ; Parameters:
 ; CSearchParty *   Stack[0x4]:4   this_ptr

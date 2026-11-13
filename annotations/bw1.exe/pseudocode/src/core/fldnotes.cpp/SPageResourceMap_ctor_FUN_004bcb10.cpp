@@ -2,19 +2,19 @@
 // Address: 004bcb10
 // Address Range: [[004bcb10, 004bcb3a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004bcb10(SPageResourceMap *this_ptr,int param_2)
+// Signature: SPageResourceMap * __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004bcb10(SPageResourceMap *this_ptr,SNotesMap *map)
 
 #include "nocturne.h"
 
-void __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004bcb10(SPageResourceMap *this_ptr,int param_2)
+SPageResourceMap * __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004bcb10(SPageResourceMap *this_ptr,SNotesMap *map)
 
 {
-  int extraout_EAX;
+  SPageResourceMap *extraout_EAX;
   
   core_fldnotes_cpp_SPageResource_ctor_FUN_004ba730(&this_ptr->base);
-  *(byte ***)(extraout_EAX + 0x14) = &g_SPageResourceMapVTable;
-  *(int *)(extraout_EAX + 0x18) = param_2;
-  *(uint *)(extraout_EAX + 8) = *(uint *)(param_2 + 0x68);
-  *(uint *)(extraout_EAX + 0xc) = *(uint *)(*(int *)(extraout_EAX + 0x18) + 0x6c);
-  return;
+  (extraout_EAX->base).vtable = &g_SPageResourceMapVTable;
+  extraout_EAX->map = map;
+  (extraout_EAX->base).width = map->width;
+  (extraout_EAX->base).height = extraout_EAX->map->height;
+  return extraout_EAX;
 }

@@ -1,14 +1,12 @@
 // Name: core_bwspart.cpp_CSimpleParticleSystem_ctor_FUN_005a7ef0
 // Address: 005a7ef0
 // Address Range: [[005a7ef0, 005a7f4f]]
-// Convention: unknown
-// Signature: CSimpleParticleSystem * core_bwspart_cpp_CSimpleParticleSystem_ctor_FUN_005a7ef0(CSimpleParticleSystem *this_ptr)
+// Convention: __cdecl
+// Signature: CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctor_FUN_005a7ef0(CSimpleParticleSystem *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSimpleParticleSystem * core_bwspart_cpp_CSimpleParticleSystem_ctor_FUN_005a7ef0(CSimpleParticleSystem *this_ptr)
+CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctor_FUN_005a7ef0(CSimpleParticleSystem *this_ptr)
 
 {
   this_ptr->max_particles = 0x40;

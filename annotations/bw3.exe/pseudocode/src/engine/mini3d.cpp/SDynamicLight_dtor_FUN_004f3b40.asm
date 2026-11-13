@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SDynamicLight * engine_mini3d_cpp_SDynamicLight_dtor_FUN_004f3b40(SDynamicLight *this_ptr,uint flags)
+; SDynamicLight * __cdecl engine_mini3d_cpp_SDynamicLight_dtor_FUN_004f3b40(SDynamicLight *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SDynamicLight *  Stack[0x4]:4   this_ptr

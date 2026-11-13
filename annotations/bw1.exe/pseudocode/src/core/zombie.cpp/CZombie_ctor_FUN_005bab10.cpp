@@ -1,15 +1,14 @@
 // Name: core_zombie.cpp_CZombie_ctor_FUN_005bab10
 // Address: 005bab10
 // Address Range: [[005bab10, 005bac71]]
-// Convention: unknown
-// Signature: CZombie * core_zombie_cpp_CZombie_ctor_FUN_005bab10(CZombie *this_ptr)
+// Convention: __cdecl
+// Signature: CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005bab10(CZombie *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CZombie * core_zombie_cpp_CZombie_ctor_FUN_005bab10(CZombie *this_ptr)
+CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005bab10(CZombie *this_ptr)
 
 {
   char cVar1;

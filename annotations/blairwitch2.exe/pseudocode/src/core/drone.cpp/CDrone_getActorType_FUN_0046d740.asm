@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_drone_cpp_CDrone_getActorType_FUN_0046d740(CDrone *this_ptr)
+; CDemonActorType * __cdecl core_drone_cpp_CDrone_getActorType_FUN_0046d740(CDrone *this_ptr)
 ;
 ; Parameters:
 ; CDrone *         Stack[0x4]:4   this_ptr

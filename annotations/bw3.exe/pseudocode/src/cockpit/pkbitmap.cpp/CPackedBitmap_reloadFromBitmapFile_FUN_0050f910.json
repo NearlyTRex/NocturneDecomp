@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 63,
+    "complexity_score": 94,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 4,
+    "pseudocode_lines": 19,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 77
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -52,6 +52,11 @@
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0050fd90"
     },
     {
+      "addr": "0050f230",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0050f230"
+    },
+    {
       "addr": "0050fa90",
       "is_variadic": false,
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0050fa90"
@@ -60,11 +65,6 @@
       "addr": "0050f2a0",
       "is_variadic": false,
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0050f2a0"
-    },
-    {
-      "addr": "0050f230",
-      "is_variadic": false,
-      "name": "cockpit_pkbitmap.cpp_FUN_0050f230"
     },
     {
       "addr": "005a3770",
@@ -222,25 +222,49 @@
     {
       "description": "Unresolved stack parameter",
       "line": 7,
-      "match": "in_stack_00000038",
+      "match": "in_stack_00000020",
       "severity": "moderate",
-      "text": "int in_stack_00000038;",
+      "text": "int in_stack_00000020;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 8,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "int in_stack_0000003c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
       "match": "in_stack_0000001c",
       "severity": "moderate",
-      "text": "(this_ptr,bitmap_data,width,apply_palette_flag,in_stack_0000001c,width);",
+      "text": "(this_ptr->filename,(void *)0x0,in_stack_0000001c * width);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000038",
+      "line": 15,
+      "match": "in_stack_0000001c",
       "severity": "moderate",
-      "text": "if (in_stack_00000038 == 0) {",
+      "text": "(this_ptr,bitmap_data,width,in_stack_0000001c,in_stack_00000020,width);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000020",
+      "severity": "moderate",
+      "text": "(this_ptr,bitmap_data,width,in_stack_0000001c,in_stack_00000020,width);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "if (in_stack_0000003c == 0) {",
       "type": "stack_param"
     }
   ]

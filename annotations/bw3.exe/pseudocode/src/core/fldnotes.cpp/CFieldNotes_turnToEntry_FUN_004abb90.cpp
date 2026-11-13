@@ -2,19 +2,18 @@
 // Address: 004abb90
 // Address Range: [[004abb90, 004abc92]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004abb90(CFieldNotes *this_ptr,char *param_2)
+// Signature: void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004abb90(CFieldNotes *this_ptr,char *entry_name)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004abbc7) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004abb90(CFieldNotes *this_ptr,char *param_2)
+void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004abb90(CFieldNotes *this_ptr,char *entry_name)
 
 {
-  bool bVar1;
+  SNotesEntry *pSVar1;
   int iVar2;
-  undefined3 extraout_var;
   int iVar3;
   SNotesSection *pSVar4;
   
@@ -22,15 +21,15 @@ void __cdecl core_fldnotes_cpp_CFieldNotes_turnToEntry_FUN_004abb90(CFieldNotes 
   if (0 < _DAT_01d0d210) {
     pSVar4 = SNotesSection_ARRAY_01d0d214;
     do {
-      iVar2 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a9c30(pSVar4,param_2);
-      if (iVar2 != 0) goto LAB_004abbcc;
+      pSVar1 = core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a9c30(pSVar4,entry_name);
+      if (pSVar1 != (SNotesEntry *)0x0) goto LAB_004abbcc;
       iVar3 = iVar3 + 1;
       pSVar4 = pSVar4 + 1;
     } while (iVar3 < _DAT_01d0d210);
   }
-  iVar2 = 0;
+  pSVar1 = (SNotesEntry *)0x0;
 LAB_004abbcc:
-  if (iVar2 == 0) {
+  if (pSVar1 == (SNotesEntry *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
               (g_CEditorToolsPtr,"CFieldNotes::turnToEntry - entry '%s' not found");
     return;
@@ -44,13 +43,13 @@ LAB_004abbcc:
     if (0 < _DAT_01d0d210) {
       pSVar4 = SNotesSection_ARRAY_01d0d214;
       do {
-        bVar1 = core_fldnotes_cpp_SNotesSection_layout_FUN_004a9d90(pSVar4,0x1d19d30);
-        if (CONCAT31(extraout_var,bVar1) == 0) break;
+        iVar2 = core_fldnotes_cpp_SNotesSection_layout_FUN_004a9d90(pSVar4,&g_STextViewInstance);
+        if (iVar2 == 0) break;
         iVar3 = iVar3 + 1;
         pSVar4 = pSVar4 + 1;
       } while (iVar3 < _DAT_01d0d210);
     }
   }
-  _DAT_01d19ba8 = *(uint *)(iVar2 + 0x144);
+  _DAT_01d19ba8 = pSVar1->page;
   return;
 }

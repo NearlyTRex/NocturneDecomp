@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; STextView * core_fldnotes_cpp_STextView_dtor_FUN_004bb1a0(STextView *this_ptr,uint flags)
+; STextView * __cdecl core_fldnotes_cpp_STextView_dtor_FUN_004bb1a0(STextView *this_ptr,uint flags)
 ;
 ; Parameters:
 ; STextView *      Stack[0x4]:4   this_ptr

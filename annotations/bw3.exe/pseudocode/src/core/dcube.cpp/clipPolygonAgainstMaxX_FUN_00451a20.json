@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 199,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 59,
-    "suspect_count": 13,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 200
@@ -178,102 +177,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01548788",
-      "severity": "mild",
-      "text": "vertex1 = (CVector3f *)&DAT_01548788;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01548788",
-      "severity": "mild",
-      "text": "vertex2 = (CVector3f *)(&DAT_01548788 + uVar2 * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_0154884c",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_0154884c + iVar3) != vertex1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_0154884c",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_0154884c + iVar3))->x = vertex1->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_01548850",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01548850 + iVar3) = vertex1->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_01548854",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01548854 + iVar3) = vertex1->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_0154884c",
-      "severity": "mild",
-      "text": "(vertex2,vertex1,(CVector3f *)(&DAT_0154884c + _DAT_01548848 * 0xc),1.0,0.0,0.0,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_0154884c",
-      "severity": "mild",
-      "text": "if ((CVector3f *)(&DAT_0154884c + iVar3) != vertex1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_0154884c",
-      "severity": "mild",
-      "text": "((CVector3f *)(&DAT_0154884c + iVar3))->x = vertex1->x;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_01548850",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01548850 + iVar3) = vertex1->y;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_01548854",
-      "severity": "mild",
-      "text": "*(float *)(&DAT_01548854 + iVar3) = vertex1->z;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_0154884c",
-      "severity": "mild",
-      "text": "(vertex1,vertex2,(CVector3f *)(&DAT_0154884c + _DAT_01548848 * 0xc),1.0,0.0,0.0,",
-      "type": "undefined_data"
     }
   ]
 }

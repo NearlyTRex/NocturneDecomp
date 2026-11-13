@@ -30,7 +30,7 @@ void __cdecl core_construc_cpp_CConstruct_processDamage_FUN_00447090(CConstruct 
       (this_ptr->base).base.hit_points = 1.0;
       uVar5 = (*pCVar1->playSound)((CDemonActor *)this_ptr,"stick-leaps.wav");
       this_ptr->sfx_handles[7] = uVar5;
-      core_construc_cpp_FUN_004472a0(this_ptr);
+      core_construc_cpp_CConstruct_explode_FUN_004472a0(this_ptr);
     }
     else {
       force_immediate = 1;

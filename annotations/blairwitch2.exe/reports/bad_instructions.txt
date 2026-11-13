@@ -1,4 +1,4 @@
-blairwitch2.exe: 2 failed-to-disassemble bookmark(s), 2 MID-INSTRUCTION
+blairwitch2.exe: 6 failed-to-disassemble bookmark(s), 2 MID-INSTRUCTION, 4 STALE
 
 005baa3d  MID-INSTRUCTION    conflicting instruction at 005baa3d
   in        crt_string.c_strstr_FUN_005ba9e0
@@ -9,3 +9,17 @@ blairwitch2.exe: 2 failed-to-disassemble bookmark(s), 2 MID-INSTRUCTION
   in        crt_string.c_strstr_FUN_005ba9e0
   from      005baa65 CONDITIONAL_JUMP  crt_string.c_strstr_FUN_005ba9e0
   from      005baa6d CONDITIONAL_JUMP  crt_string.c_strstr_FUN_005ba9e0
+
+0047a4f9  STALE              conflicting instruction at 0047a4fb
+  in        shape_edittool.cpp_FUN_0047a4f0
+  from      0047a540 UNCONDITIONAL_JUMP  shape_edittool.cpp_FUN_0047a4f0
+
+0047bf94  STALE              conflicting instruction at 0047bf96
+  in        shape_edittool.cpp_FUN_0047bf80
+  from      0047c058 UNCONDITIONAL_JUMP  shape_edittool.cpp_FUN_0047bf80
+
+004a7fdf  STALE              conflicting instruction at 004a7fe2
+  in        engine_font.cpp_FUN_004a7fd0
+
+004ebbf5  STALE              conflicting instruction at 004ebbf8
+  in        core_menu.cpp_FUN_004eba50

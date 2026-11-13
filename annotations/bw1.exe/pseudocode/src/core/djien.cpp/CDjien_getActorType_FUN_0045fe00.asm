@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_djien_cpp_CDjien_getActorType_FUN_0045fe00(CDjien *this_ptr)
+; CDemonActorType * __cdecl core_djien_cpp_CDjien_getActorType_FUN_0045fe00(CDjien *this_ptr)
 ;
 ; Parameters:
 ; CDjien *         Stack[0x4]:4   this_ptr

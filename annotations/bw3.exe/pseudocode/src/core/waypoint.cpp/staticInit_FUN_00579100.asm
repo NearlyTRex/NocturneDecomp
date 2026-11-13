@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_waypoint_cpp_staticInit_FUN_00579100(void)
+; void __cdecl core_waypoint_cpp_staticInit_FUN_00579100(void)
 ;
 ;
 ; Called Functions:

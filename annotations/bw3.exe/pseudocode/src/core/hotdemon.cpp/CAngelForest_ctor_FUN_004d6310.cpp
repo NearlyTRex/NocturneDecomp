@@ -1,14 +1,12 @@
 // Name: core_hotdemon.cpp_CAngelForest_ctor_FUN_004d6310
 // Address: 004d6310
 // Address Range: [[004d6310, 004d635b]]
-// Convention: unknown
-// Signature: CAngelForest * core_hotdemon_cpp_CAngelForest_ctor_FUN_004d6310(CAngelForest *this_ptr)
+// Convention: __cdecl
+// Signature: CAngelForest * __cdecl core_hotdemon_cpp_CAngelForest_ctor_FUN_004d6310(CAngelForest *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAngelForest * core_hotdemon_cpp_CAngelForest_ctor_FUN_004d6310(CAngelForest *this_ptr)
+CAngelForest * __cdecl core_hotdemon_cpp_CAngelForest_ctor_FUN_004d6310(CAngelForest *this_ptr)
 
 {
   CHotDemon *pCVar1;

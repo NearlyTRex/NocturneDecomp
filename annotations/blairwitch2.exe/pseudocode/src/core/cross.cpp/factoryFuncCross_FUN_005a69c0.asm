@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cross_cpp_factoryFuncCross_FUN_005a69c0(void)
+; CCross * __cdecl core_cross_cpp_factoryFuncCross_FUN_005a69c0(void)
 ;
 ;
 ; Called Functions:

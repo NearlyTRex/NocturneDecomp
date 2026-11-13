@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl support_trstream_cpp_COutStreamMemory_write_FUN_005a1c30(COutStreamMemory *this_ptr,undefined4 *param_2,uint param_3)
+; int __cdecl support_trstream_cpp_COutStreamMemory_write_FUN_005a1c30(COutStreamMemory *this_ptr,void *data,int size)
 ;
 ; Parameters:
 ; COutStreamMemory * Stack[0x4]:4   this_ptr
-; undefined4 *     Stack[0x8]:4   param_2
-; uint             Stack[0xc]:4   param_3
+; void *           Stack[0x8]:4   data
+; int              Stack[0xc]:4   size
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_005c10d0

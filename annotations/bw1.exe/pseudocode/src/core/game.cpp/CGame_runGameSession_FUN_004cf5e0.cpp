@@ -75,7 +75,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004cf5e0(CGame *this_ptr)
   this_ptr->collision_render_enabled = 0;
   _DAT_01cd01f8 = 0;
   g_CFieldNotesPtr->is_displayed = 0;
-  engine_alphabit_cpp_FUN_00415c80();
+  core_bmppuzzl_cpp_releasePuzzleGraphics_FUN_00415c80();
   _DAT_01cd0c24 = 0;
   this_ptr->developer_mode_enabled = 0;
   core_game_cpp_CGame_setGameRes_FUN_004cf430(this_ptr);
@@ -137,7 +137,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004cf5e0(CGame *this_ptr)
 LAB_004cf9e0:
     iVar4 = _DAT_01cd0c60;
     if (_DAT_01cd0c34 != 0) {
-      if ((DAT_007c3978 == 0) && (g_CFieldNotesPtr->is_displayed == 0)) {
+      if ((DAT_007c3978 == (CPuzzle *)0x0) && (g_CFieldNotesPtr->is_displayed == 0)) {
         iVar4 = 0;
       }
       else {
@@ -169,8 +169,8 @@ LAB_004cf9e0:
       if (pCVar2->is_displayed != 0) {
         pCVar2->is_displayed = 0;
       }
-      if (DAT_007c3978 != 0) {
-        engine_alphabit_cpp_FUN_00415be0(DAT_007c3978,0);
+      if (DAT_007c3978 != (CPuzzle *)0x0) {
+        core_bmppuzzl_cpp_activatePuzzle_FUN_00415be0(DAT_007c3978,0);
       }
     }
     if (g_CDemonSetPtr->selected_camera_index < 0) {
@@ -196,7 +196,7 @@ LAB_004cfb22:
       shape_edittool_cpp_CPickList_clear_FUN_0049c370(&g_CPickList);
       this_ptr->wait_for_keypress = 0;
       if (g_CFieldNotesPtr->is_displayed == 0) {
-        if (DAT_007c3978 == 0) {
+        if (DAT_007c3978 == (CPuzzle *)0x0) {
           iVar5 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
           iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x10c))(iVar5);
           if (1 < iVar5) goto LAB_004cfbd7;
@@ -298,7 +298,7 @@ LAB_004cfb22:
           }
         }
         else {
-          engine_alphabit_cpp_FUN_00415be0(DAT_007c3978,0);
+          core_bmppuzzl_cpp_activatePuzzle_FUN_00415be0(DAT_007c3978,0);
         }
       }
       else {
@@ -416,7 +416,7 @@ LAB_004cfbd7:
   this_ptr->damageable_enemy_count = iVar4;
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004fd2b0(this_ptr_00,0);
   core_sound_cpp_CSound_shutdown_FUN_0057cdb0(0x02C82A60);
-  engine_alphabit_cpp_FUN_00415c80();
+  core_bmppuzzl_cpp_releasePuzzleGraphics_FUN_00415c80();
   core_game_cpp_FUN_004dc180(this_ptr);
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530(this_ptr);
   (*0x01D1BCA0->vtable->clearKeyPresses)(0x01D1BCA0);

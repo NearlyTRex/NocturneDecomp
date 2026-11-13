@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   count
 ;
 ; XREF[1]:
-;   core_dpart.cpp_FUN_00461a4e at 00461b92
+;   core_dpart.cpp_FUN_00461a50 at 00461b92
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280

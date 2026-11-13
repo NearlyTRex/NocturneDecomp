@@ -1,14 +1,12 @@
 // Name: core_cross.cpp_CCross_ctor_FUN_005a69f0
 // Address: 005a69f0
 // Address Range: [[005a69f0, 005a6b2a]]
-// Convention: unknown
-// Signature: CCross * core_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
+// Convention: __cdecl
+// Signature: CCross * __cdecl core_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CCross * core_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
+CCross * __cdecl core_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
 
 {
   char cVar1;

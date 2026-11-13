@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CZombieCemetery * core_zombie_cpp_CZombieCemetery_dtor_FUN_0058d1a0(CZombieCemetery *this_ptr,uint flags)
+; CZombieCemetery * __cdecl core_zombie_cpp_CZombieCemetery_dtor_FUN_0058d1a0(CZombieCemetery *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CZombieCemetery * Stack[0x4]:4   this_ptr

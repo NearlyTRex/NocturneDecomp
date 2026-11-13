@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004a32e0(SNotesEntry *this_ptr,int param_2)
+; int __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004a32e0(SNotesEntry *this_ptr,STextView *view)
 ;
 ; Parameters:
 ; SNotesEntry *    Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; STextView *      Stack[0x8]:4   view
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -106,7 +106,7 @@ section .text
         ;   Label: LAB_004a3393
     PUSH EBX                            ; 004a3394
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a3395
-        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a339a
     TEST EAX,EAX                        ; 004a339d
     JL 0x004a34af                       ; 004a339f
@@ -145,7 +145,7 @@ section .text
         ;   Label: LAB_004a33dc
     PUSH EBX                            ; 004a33e1
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a33e2
-        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a33e7
     TEST EAX,EAX                        ; 004a33ea
     JG 0x004a3322                       ; 004a33ec
@@ -161,7 +161,7 @@ section .text
         ;   Label: LAB_004a33fc
     PUSH EBX                            ; 004a3401
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a3402
-        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a3407
     TEST EAX,EAX                        ; 004a340a
     JG 0x004a3322                       ; 004a340c
@@ -179,7 +179,7 @@ section .text
     ADD EAX,0x1cacb50                   ; 004a3423
     PUSH EAX                            ; 004a3428
     CALL core_fldnotes.cpp_SNotesMap_paginate_FUN_004a4070 ; 004a3429
-        ;   XREF to: 004a4070 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesMap_paginate_FUN_004a4070(SNotesMap * this_ptr, undefined4 param_2)
+        ;   XREF to: 004a4070 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SNotesMap_paginate_FUN_004a4070(SNotesMap * this_ptr, STextView * view)
     ADD ESP,0x8                         ; 004a342e
     TEST EAX,EAX                        ; 004a3431
     JNZ 0x004a3334                      ; 004a3433
@@ -194,7 +194,7 @@ section .text
         ;   Label: LAB_004a3441
     PUSH EBX                            ; 004a3446
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a3447
-        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a344c
     TEST EAX,EAX                        ; 004a344f
     JG 0x004a345d                       ; 004a3451
@@ -211,7 +211,7 @@ section .text
     PUSH EDX                            ; 004a3461
     PUSH EBX                            ; 004a3462
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a3463
-        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a3468
     TEST EAX,EAX                        ; 004a346b
     JLE 0x004a348f                      ; 004a346d
@@ -226,7 +226,7 @@ section .text
     PUSH EAX                            ; 004a3481
     PUSH EBX                            ; 004a3482
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a3483
-        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a3488
     TEST EAX,EAX                        ; 004a348b
     JG 0x004a3499                       ; 004a348d
@@ -243,7 +243,7 @@ section .text
         ;   Label: LAB_004a3499
     PUSH EBX                            ; 004a349e
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a349f
-        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a34a4
     TEST EAX,EAX                        ; 004a34a7
     JG 0x004a3390                       ; 004a34a9
@@ -264,7 +264,7 @@ section .text
     PUSH 0x5d5cff                       ; 004a34c3 | = "ERROR: item won't fit<br>"
     PUSH EBX                            ; 004a34c8
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a34c9
-        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a34ce
     INC dword ptr [ESP]                 ; 004a34d1
     JMP 0x004a3356                      ; 004a34d4
@@ -273,7 +273,7 @@ section .text
         ;   Label: LAB_004a34d9
     PUSH EBX                            ; 004a34de
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a34df
-        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a34e4
     TEST EAX,EAX                        ; 004a34e7
     JG 0x004a34f5                       ; 004a34e9
@@ -289,7 +289,7 @@ section .text
         ;   Label: LAB_004a34f5
     PUSH EBX                            ; 004a34fa
     CALL core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0 ; 004a34fb
-        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * param_2)
+        ;   XREF to: 004a28b0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0(STextView * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a3500
     TEST EAX,EAX                        ; 004a3503
     JG 0x004a33cf                       ; 004a3505

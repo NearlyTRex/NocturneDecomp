@@ -1,15 +1,14 @@
 // Name: core_moocow.cpp_CMooCow_ctor_FUN_00521300
 // Address: 00521300
 // Address Range: [[00521300, 0052136f]]
-// Convention: unknown
-// Signature: CMooCow * core_moocow_cpp_CMooCow_ctor_FUN_00521300(CMooCow *this_ptr)
+// Convention: __cdecl
+// Signature: CMooCow * __cdecl core_moocow_cpp_CMooCow_ctor_FUN_00521300(CMooCow *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CMooCow * core_moocow_cpp_CMooCow_ctor_FUN_00521300(CMooCow *this_ptr)
+CMooCow * __cdecl core_moocow_cpp_CMooCow_ctor_FUN_00521300(CMooCow *this_ptr)
 
 {
   float fVar1;

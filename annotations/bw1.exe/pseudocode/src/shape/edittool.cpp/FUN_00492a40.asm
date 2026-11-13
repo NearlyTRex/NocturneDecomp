@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130
-;   engine_mini3d.cpp_FUN_00517f10
+;   engine_mini3d.cpp_drawPixel_FUN_00517f10
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 00492aa1
     PUSH ECX                            ; 00492aa5
     PUSH ESI                            ; 00492aa6
-    CALL engine_mini3d.cpp_FUN_00517f10 ; 00492aa7
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
+    CALL engine_mini3d.cpp_drawPixel_FUN_00517f10 ; 00492aa7
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawPixel_FUN_00517f10(int x, int y)
     ADD ESP,0x8                         ; 00492aac
         ;   Label: LAB_00492aac
     MOV EDX,dword ptr [ESP + 0x28]      ; 00492aaf
@@ -100,8 +100,8 @@ section .text
     PUSH ESI                            ; 00492ae6
     MOV ECX,dword ptr [ESP + 0x2c]      ; 00492ae7
     PUSH ECX                            ; 00492aeb
-    CALL engine_mini3d.cpp_FUN_00517f10 ; 00492aec
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
+    CALL engine_mini3d.cpp_drawPixel_FUN_00517f10 ; 00492aec
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawPixel_FUN_00517f10(int x, int y)
     ADD ESP,0x8                         ; 00492af1
         ;   Label: LAB_00492af1
     INC ESI                             ; 00492af4
@@ -132,8 +132,8 @@ section .text
         ;   XREF to: 00492baf (CONDITIONAL_JUMP)  ; LAB_00492baf
     PUSH EBP                            ; 00492b2b
     PUSH ESI                            ; 00492b2c
-    CALL engine_mini3d.cpp_FUN_00517f10 ; 00492b2d
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
+    CALL engine_mini3d.cpp_drawPixel_FUN_00517f10 ; 00492b2d
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawPixel_FUN_00517f10(int x, int y)
     ADD ESP,0x8                         ; 00492b32
         ;   Label: LAB_00492b32
     MOV EAX,dword ptr [ESP + 0x20]      ; 00492b35
@@ -164,8 +164,8 @@ section .text
     PUSH ESI                            ; 00492b62
     MOV EDX,dword ptr [ESP + 0x24]      ; 00492b63
     PUSH EDX                            ; 00492b67
-    CALL engine_mini3d.cpp_FUN_00517f10 ; 00492b68
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
+    CALL engine_mini3d.cpp_drawPixel_FUN_00517f10 ; 00492b68
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawPixel_FUN_00517f10(int x, int y)
     ADD ESP,0x8                         ; 00492b6d
         ;   Label: LAB_00492b6d
     MOV EDX,dword ptr [ESP + 0x24]      ; 00492b70

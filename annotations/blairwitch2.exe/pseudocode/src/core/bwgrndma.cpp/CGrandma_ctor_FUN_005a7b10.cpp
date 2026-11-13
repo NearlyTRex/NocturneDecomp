@@ -1,15 +1,14 @@
 // Name: core_bwgrndma.cpp_CGrandma_ctor_FUN_005a7b10
 // Address: 005a7b10
 // Address Range: [[005a7b10, 005a7bd1]]
-// Convention: unknown
-// Signature: CGrandma * core_bwgrndma_cpp_CGrandma_ctor_FUN_005a7b10(CGrandma *this_ptr)
+// Convention: __cdecl
+// Signature: CGrandma * __cdecl core_bwgrndma_cpp_CGrandma_ctor_FUN_005a7b10(CGrandma *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CGrandma * core_bwgrndma_cpp_CGrandma_ctor_FUN_005a7b10(CGrandma *this_ptr)
+CGrandma * __cdecl core_bwgrndma_cpp_CGrandma_ctor_FUN_005a7b10(CGrandma *this_ptr)
 
 {
   CGrandma *this_ptr_00;

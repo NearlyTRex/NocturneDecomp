@@ -1,14 +1,12 @@
 // Name: core_dog.cpp_CDogForest_dtor_FUN_00463930
 // Address: 00463930
 // Address Range: [[00463930, 004639b4]]
-// Convention: unknown
-// Signature: CDogForest * core_dog_cpp_CDogForest_dtor_FUN_00463930(CDogForest *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDogForest * __cdecl core_dog_cpp_CDogForest_dtor_FUN_00463930(CDogForest *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDogForest * core_dog_cpp_CDogForest_dtor_FUN_00463930(CDogForest *this_ptr,uint flags)
+CDogForest * __cdecl core_dog_cpp_CDogForest_dtor_FUN_00463930(CDogForest *this_ptr,uint flags)
 
 {
   int iVar1;

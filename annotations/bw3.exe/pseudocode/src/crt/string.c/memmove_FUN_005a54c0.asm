@@ -18,7 +18,7 @@
 ;   core_event.cpp_FUN_0048c2e0 at 0048c607
 ;   core_event.cpp_FUN_004946f0 at 0049486a
 ;   core_event.cpp_FUN_004948e0 at 00494a5a
-;   core_event.cpp_FUN_00495b4e at 00495be0
+;   core_event.cpp_FUN_00495b50 at 00495be0
 ;   ... and 34 more
 ;
 ; *****************************************************************************

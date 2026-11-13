@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 727,
+    "complexity_score": 702,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 122,
-    "suspect_count": 58,
+    "suspect_count": 56,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 606
@@ -29,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00415fc0",
-    "signature": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00415fc0(CAudioRecPuzzle *this_ptr,int param_2)"
+    "signature": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00415fc0(CAudioRecPuzzle *this_ptr,int activate)"
   },
   "function_calls": [
     {
@@ -138,7 +137,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "activate",
         "offset": 8,
         "size": 4,
         "type": "int"
@@ -146,22 +145,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_load_FUN_00415fc0(CAudioRecPuzzle *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 == 0) {",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 32,
@@ -173,9 +156,9 @@
     {
       "description": "Complex pointer cast",
       "line": 50,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -183,15 +166,15 @@
       "line": 50,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 52,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -199,15 +182,15 @@
       "line": 52,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 54,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -215,15 +198,15 @@
       "line": 54,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 56,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -231,15 +214,15 @@
       "line": 56,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 58,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -247,15 +230,15 @@
       "line": 58,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 60,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,5,0x5d3e15,0x16,0x20,3,0x171,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,5,0x5d3e15,0x16,0x20,3,0x171,0x12e,0);",
       "type": "pointer_cast"
     },
     {
@@ -263,15 +246,15 @@
       "line": 60,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,5,0x5d3e15,0x16,0x20,3,0x171,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,5,0x5d3e15,0x16,0x20,3,0x171,0x12e,0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 61,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,6,0x5d3e1c,0x16,0x20,3,0x195,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,6,0x5d3e1c,0x16,0x20,3,0x195,0x12e,0);",
       "type": "pointer_cast"
     },
     {
@@ -279,15 +262,15 @@
       "line": 61,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,6,0x5d3e1c,0x16,0x20,3,0x195,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,6,0x5d3e1c,0x16,0x20,3,0x195,0x12e,0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 62,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,7,0x5d3e23,0x16,0x20,3,0x1bd,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,7,0x5d3e23,0x16,0x20,3,0x1bd,0x12e,0);",
       "type": "pointer_cast"
     },
     {
@@ -295,15 +278,15 @@
       "line": 62,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,7,0x5d3e23,0x16,0x20,3,0x1bd,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,7,0x5d3e23,0x16,0x20,3,0x1bd,0x12e,0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 63,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,8,0x5d3e2a,0x16,0x20,3,0x1e3,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,8,0x5d3e2a,0x16,0x20,3,0x1e3,0x12e,0);",
       "type": "pointer_cast"
     },
     {
@@ -311,15 +294,15 @@
       "line": 63,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,8,0x5d3e2a,0x16,0x20,3,0x1e3,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,8,0x5d3e2a,0x16,0x20,3,0x1e3,0x12e,0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 64,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,9,0x5d3e31,0x16,0x20,3,0x20a,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,9,0x5d3e31,0x16,0x20,3,0x20a,0x12e,0);",
       "type": "pointer_cast"
     },
     {
@@ -327,15 +310,15 @@
       "line": 64,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))(this_ptr,9,0x5d3e31,0x16,0x20,3,0x20a,0x12e,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))(this_ptr,9,0x5d3e31,0x16,0x20,3,0x20a,0x12e,0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 65,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -343,15 +326,15 @@
       "line": 65,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 67,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -359,15 +342,15 @@
       "line": 67,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 69,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -375,15 +358,15 @@
       "line": 69,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 71,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -391,15 +374,15 @@
       "line": 71,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 73,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -407,15 +390,15 @@
       "line": 73,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 75,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -423,15 +406,15 @@
       "line": 75,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 77,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -439,15 +422,15 @@
       "line": 77,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 79,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -455,15 +438,15 @@
       "line": 79,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 81,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -471,15 +454,15 @@
       "line": 81,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 83,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -487,15 +470,15 @@
       "line": 83,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 85,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -503,15 +486,15 @@
       "line": 85,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 87,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -519,15 +502,15 @@
       "line": 87,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 89,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -535,15 +518,15 @@
       "line": 89,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 91,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -551,15 +534,15 @@
       "line": 91,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 93,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -567,15 +550,15 @@
       "line": 93,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 95,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -583,15 +566,15 @@
       "line": 95,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 97,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "pointer_cast"
     },
     {
@@ -599,7 +582,7 @@
       "line": 97,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x28))",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x28))",
       "type": "unresolved_funcptr"
     },
     {

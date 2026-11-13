@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_baal_cpp_CBaal_getActorType_FUN_00596650(CBaal *this_ptr)
+; CDemonActorType * __cdecl core_baal_cpp_CBaal_getActorType_FUN_00596650(CBaal *this_ptr)
 ;
 ; Parameters:
 ; CBaal *          Stack[0x4]:4   this_ptr

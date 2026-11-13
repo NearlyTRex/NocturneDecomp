@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFieldNotes * core_fldnotes_cpp_CFieldNotes_dtor_FUN_004a4180(CFieldNotes *this_ptr,uint flags)
+; CFieldNotes * __cdecl core_fldnotes_cpp_CFieldNotes_dtor_FUN_004a4180(CFieldNotes *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CFieldNotes *    Stack[0x4]:4   this_ptr

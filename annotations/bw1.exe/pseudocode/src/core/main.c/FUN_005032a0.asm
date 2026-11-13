@@ -29,6 +29,7 @@
 ;   ... and 70 more
 ;
 ; Called Functions:
+;   core_bmppuzzl.cpp_resetAllPuzzles_FUN_00415c20
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_0045dc30
 ;   core_dfont.cpp_FUN_0045e000
 ;   core_flattn.cpp_FUN_004bf770
@@ -43,7 +44,6 @@
 ;   crt_io.c__chmod_FUN_005c1dc0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fopen_FUN_005c157c
-;   crt_stdio.c_freopen_FUN_005c1614
 ;   ... and 23 more
 ;
 ; *****************************************************************************
@@ -775,8 +775,8 @@ section .text
     CALL core_netgame.cpp_CNetGame_init_FUN_0052c520 ; 00503986
         ;   XREF to: 0052c520 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_init_FUN_0052c520(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0050398b
-    CALL engine_alphabit.cpp_FUN_00415c20 ; 0050398e
-        ;   XREF to: 00415c20 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415c20()
+    CALL core_bmppuzzl.cpp_resetAllPuzzles_FUN_00415c20 ; 0050398e
+        ;   XREF to: 00415c20 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_resetAllPuzzles_FUN_00415c20()
     PUSH 0x5e7394                       ; 00503993 | = "0"
     PUSH 0x5e7396                       ; 00503998 | = "Flip on VBlank"
     PUSH 0x5e73a5                       ; 0050399d | = "SOFTWARE\\Matrox\\PowerDesk\\Current ..."

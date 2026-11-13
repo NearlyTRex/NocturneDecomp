@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_styldemo_cpp_CStylerDemon_getActorType_FUN_0059e060(CStylerDemon *this_ptr)
+; CDemonActorType * __cdecl core_styldemo_cpp_CStylerDemon_getActorType_FUN_0059e060(CStylerDemon *this_ptr)
 ;
 ; Parameters:
 ; CStylerDemon *   Stack[0x4]:4   this_ptr

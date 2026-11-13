@@ -1,12 +1,12 @@
 // Name: core_bodypart.cpp_staticInit_FUN_00414520
 // Address: 00414520
 // Address Range: [[00414520, 00414543]]
-// Convention: unknown
-// Signature: void core_bodypart_cpp_staticInit_FUN_00414520(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bodypart_cpp_staticInit_FUN_00414520(void)
 
 #include "nocturne.h"
 
-void core_bodypart_cpp_staticInit_FUN_00414520(void)
+void __cdecl core_bodypart_cpp_staticInit_FUN_00414520(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

@@ -10,7 +10,7 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6d5f
-;   engine_mini3d.cpp_FUN_004f236e at 004f237b
+;   engine_mini3d.cpp_swapBuffers_FUN_004f2370 at 004f237b
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560 at 00589648
 ;
 ; Referenced Globals:

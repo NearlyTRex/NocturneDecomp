@@ -1,15 +1,14 @@
 // Name: core_shadow.cpp_CShadow_ctor_FUN_0053c200
 // Address: 0053c200
 // Address Range: [[0053c200, 0053c307]]
-// Convention: unknown
-// Signature: CShadow * core_shadow_cpp_CShadow_ctor_FUN_0053c200(CShadow *this_ptr)
+// Convention: __cdecl
+// Signature: CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_0053c200(CShadow *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CShadow * core_shadow_cpp_CShadow_ctor_FUN_0053c200(CShadow *this_ptr)
+CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_0053c200(CShadow *this_ptr)
 
 {
   float fVar1;

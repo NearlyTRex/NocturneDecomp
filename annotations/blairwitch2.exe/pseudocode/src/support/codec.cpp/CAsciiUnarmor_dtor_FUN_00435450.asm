@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAsciiUnarmor * support_codec_cpp_CAsciiUnarmor_dtor_FUN_00435450(CAsciiUnarmor *this_ptr,uint flags)
+; CAsciiUnarmor * __cdecl support_codec_cpp_CAsciiUnarmor_dtor_FUN_00435450(CAsciiUnarmor *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAsciiUnarmor *  Stack[0x4]:4   this_ptr

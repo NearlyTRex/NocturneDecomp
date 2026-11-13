@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hpbox_cpp_staticInit_FUN_005ac740(void)
+; void __cdecl core_hpbox_cpp_staticInit_FUN_005ac740(void)
 ;
 ;
 ; Called Functions:

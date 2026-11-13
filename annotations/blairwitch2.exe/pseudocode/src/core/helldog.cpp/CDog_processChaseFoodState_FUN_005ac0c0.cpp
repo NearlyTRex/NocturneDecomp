@@ -44,7 +44,7 @@ void __cdecl core_helldog_cpp_CDog_processChaseFoodState_FUN_005ac0c0(CDog *this
     return;
   }
   (*((this_ptr->food->vtable)._ub)->onDropped)(this_ptr->food,(CVector3f *)0x0);
-  core_mission_cpp_FUN_004fc7b0(0x01D182F0,this_ptr->food,1);
+  core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,this_ptr->food,1);
   pSVar5 = &(this_ptr->base).state_machine;
   uVar4 = core_muzzle_cpp_FUN_0059db90(pSVar5);
   core_muzzle_cpp_FUN_0059d8e0(pSVar5,uVar4);

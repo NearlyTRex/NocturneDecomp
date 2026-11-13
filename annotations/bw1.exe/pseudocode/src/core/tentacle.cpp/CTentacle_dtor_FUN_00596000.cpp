@@ -1,14 +1,12 @@
 // Name: core_tentacle.cpp_CTentacle_dtor_FUN_00596000
 // Address: 00596000
 // Address Range: [[00596000, 00596084]]
-// Convention: unknown
-// Signature: CTentacle * core_tentacle_cpp_CTentacle_dtor_FUN_00596000(CTentacle *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CTentacle * __cdecl core_tentacle_cpp_CTentacle_dtor_FUN_00596000(CTentacle *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CTentacle * core_tentacle_cpp_CTentacle_dtor_FUN_00596000(CTentacle *this_ptr,uint flags)
+CTentacle * __cdecl core_tentacle_cpp_CTentacle_dtor_FUN_00596000(CTentacle *this_ptr,uint flags)
 
 {
   int iVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSimpleCross * core_cross_cpp_CSimpleCross_ctor_FUN_005a7980(CSimpleCross *this_ptr)
+; CSimpleCross * __cdecl core_cross_cpp_CSimpleCross_ctor_FUN_005a7980(CSimpleCross *this_ptr)
 ;
 ; Parameters:
 ; CSimpleCross *   Stack[0x4]:4   this_ptr

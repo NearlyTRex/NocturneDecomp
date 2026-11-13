@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_0047fd00(undefined4 param_1,float param_2,undefined4 param_3)
+; void shape_edittool_cpp_FUN_0047fd00(undefined4 param_1,float param_2,uint param_3)
 ;
 ;
 ; XREF[3]:
 ;   core_cloth.cpp_FUN_005b0ce0 at 005b0edd
 ;   core_skeleton.cpp_FUN_005424b0 at 0054267c
-;   shape_edittool.cpp_FUN_0047ff4e at 0047ffe0
+;   shape_edittool.cpp_FUN_0047ff50 at 0047ffe0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d24df
@@ -29,8 +29,8 @@
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_FUN_004a8df0
 ;   engine_matrix.c_transformToCache_FUN_004e8e60
-;   engine_mini3d.cpp_FUN_004f3570
-;   engine_mini3d.cpp_FUN_004f8e20
+;   engine_mini3d.cpp_setAlpha_FUN_004f3570
+;   engine_mini3d.cpp_setColor_FUN_004f8e20
 ;
 ; *****************************************************************************
 
@@ -81,8 +81,8 @@ section .text
     AND EAX,0xff                        ; 0047fd8b
     OR EBX,EAX                          ; 0047fd90
     PUSH EBX                            ; 0047fd92
-    CALL engine_mini3d.cpp_FUN_004f8e20 ; 0047fd93
-        ;   XREF to: 004f8e20 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f8e20()
+    CALL engine_mini3d.cpp_setColor_FUN_004f8e20 ; 0047fd93
+        ;   XREF to: 004f8e20 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setColor_FUN_004f8e20(uint rgb)
     ADD ESP,0x4                         ; 0047fd98
     LEA EAX,[ESP + 0x14]                ; 0047fd9b
         ;   Label: LAB_0047fd9b
@@ -215,8 +215,8 @@ section .text
         ;   XREF to: 00406da0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406da0(int alpha_color_value)
     ADD ESP,0x4                         ; 0047ff11
     PUSH 0x3f800000                     ; 0047ff14
-    CALL engine_mini3d.cpp_FUN_004f3570 ; 0047ff19
-        ;   XREF to: 004f3570 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3570()
+    CALL engine_mini3d.cpp_setAlpha_FUN_004f3570 ; 0047ff19
+        ;   XREF to: 004f3570 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004f3570(float alpha)
     ADD ESP,0x4                         ; 0047ff1e
     PUSH -0x1                           ; 0047ff21
     MOV EDX,dword ptr [0x01c263d4]      ; 0047ff23 | DAT_01c263d4

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 245,
+    "complexity_score": 256,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 21,
+    "pseudocode_lines": 26,
+    "suspect_count": 22,
     "suspect_types": [
       "stack_param",
       "unnamed_param"
     ],
-    "total_lines": 103
+    "total_lines": 104
   },
   "cross_references": [],
   "function": {
@@ -42,7 +42,7 @@
     {
       "addr": "00517640",
       "is_variadic": false,
-      "name": "cockpit_pkbmpset.cpp_FUN_00517640"
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_00517640"
     },
     {
       "addr": "00517670",
@@ -254,17 +254,17 @@
       "type": "stack_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "cockpit_pkbmpset_cpp_FUN_00517670(this_ptr,(param_6 - param_5) + 1);",
-      "type": "unnamed_param"
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "int in_stack_00000028;",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_5",
+      "line": 13,
+      "match": "param_6",
       "severity": "mild",
       "text": "cockpit_pkbmpset_cpp_FUN_00517670(this_ptr,(param_6 - param_5) + 1);",
       "type": "unnamed_param"
@@ -274,15 +274,15 @@
       "line": 13,
       "match": "param_5",
       "severity": "mild",
-      "text": "this_ptr->height = param_5;",
+      "text": "cockpit_pkbmpset_cpp_FUN_00517670(this_ptr,(param_6 - param_5) + 1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 14,
-      "match": "param_4",
+      "match": "param_6",
       "severity": "mild",
-      "text": "this_ptr->width = param_4;",
+      "text": "this_ptr->height = param_6;",
       "type": "unnamed_param"
     },
     {
@@ -290,12 +290,20 @@
       "line": 15,
       "match": "param_5",
       "severity": "mild",
+      "text": "this_ptr->width = param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_5",
+      "severity": "mild",
       "text": "if (param_5 <= param_6) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_6",
       "severity": "mild",
       "text": "if (param_5 <= param_6) {",
@@ -303,7 +311,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_5",
       "severity": "mild",
       "text": "iVar1 = param_5;",
@@ -311,47 +319,47 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "_sprintf(acStack_70,(char *)param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_4",
       "severity": "mild",
-      "text": "((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar2),acStack_70,param_4,",
+      "text": "_sprintf(acStack_6c,(char *)param_4);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000024",
-      "severity": "moderate",
-      "text": "param_5,param_8,in_stack_00000024);",
-      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 23,
       "match": "param_5",
       "severity": "mild",
-      "text": "param_5,param_8,in_stack_00000024);",
+      "text": "((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar2),acStack_6c,param_5,",
       "type": "unnamed_param"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000024",
+      "severity": "moderate",
+      "text": "param_6,in_stack_00000024,in_stack_00000028);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "param_6,in_stack_00000024,in_stack_00000028);",
+      "type": "stack_param"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_8",
+      "line": 24,
+      "match": "param_6",
       "severity": "mild",
-      "text": "param_5,param_8,in_stack_00000024);",
+      "text": "param_6,in_stack_00000024,in_stack_00000028);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_6",
       "severity": "mild",
       "text": "} while (iVar1 <= param_6);",

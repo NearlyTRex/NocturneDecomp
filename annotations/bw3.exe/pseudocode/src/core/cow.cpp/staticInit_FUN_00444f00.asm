@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_cow_cpp_staticInit_FUN_00444f00(void)
+; void __cdecl core_cow_cpp_staticInit_FUN_00444f00(void)
 ;
 ;
 ; Called Functions:

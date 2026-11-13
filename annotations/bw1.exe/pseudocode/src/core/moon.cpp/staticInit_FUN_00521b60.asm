@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_moon_cpp_staticInit_FUN_00521b60(void)
+; void __cdecl core_moon_cpp_staticInit_FUN_00521b60(void)
 ;
 ;
 ; Called Functions:

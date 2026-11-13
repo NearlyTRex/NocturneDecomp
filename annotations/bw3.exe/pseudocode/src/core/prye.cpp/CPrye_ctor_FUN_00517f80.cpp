@@ -1,14 +1,12 @@
 // Name: core_prye.cpp_CPrye_ctor_FUN_00517f80
 // Address: 00517f80
 // Address Range: [[00517f80, 0051842c]]
-// Convention: unknown
-// Signature: CPrye * core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
+// Convention: __cdecl
+// Signature: CPrye * __cdecl core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CPrye * core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
+CPrye * __cdecl core_prye_cpp_CPrye_ctor_FUN_00517f80(CPrye *this_ptr)
 
 {
   float fVar1;

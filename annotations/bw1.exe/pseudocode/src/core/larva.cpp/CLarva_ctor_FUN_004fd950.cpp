@@ -1,15 +1,14 @@
 // Name: core_larva.cpp_CLarva_ctor_FUN_004fd950
 // Address: 004fd950
 // Address Range: [[004fd950, 004fd9dd]]
-// Convention: unknown
-// Signature: CLarva * core_larva_cpp_CLarva_ctor_FUN_004fd950(CLarva *this_ptr)
+// Convention: __cdecl
+// Signature: CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_004fd950(CLarva *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CLarva * core_larva_cpp_CLarva_ctor_FUN_004fd950(CLarva *this_ptr)
+CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_004fd950(CLarva *this_ptr)
 
 {
   float fVar1;

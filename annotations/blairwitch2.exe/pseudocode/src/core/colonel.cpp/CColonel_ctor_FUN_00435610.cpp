@@ -1,14 +1,12 @@
 // Name: core_colonel.cpp_CColonel_ctor_FUN_00435610
 // Address: 00435610
 // Address Range: [[00435610, 00435673]]
-// Convention: unknown
-// Signature: CColonel * core_colonel_cpp_CColonel_ctor_FUN_00435610(CColonel *this_ptr)
+// Convention: __cdecl
+// Signature: CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_00435610(CColonel *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CColonel * core_colonel_cpp_CColonel_ctor_FUN_00435610(CColonel *this_ptr)
+CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_00435610(CColonel *this_ptr)
 
 {
   CColonel *pCVar1;

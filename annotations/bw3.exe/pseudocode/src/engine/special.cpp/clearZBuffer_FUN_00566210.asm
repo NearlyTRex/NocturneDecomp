@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00448ff0 at 0044922d
-;   engine_mini3d.cpp_FUN_004ec96e at 004ec977
+;   engine_mini3d.cpp_clearZBuffer_FUN_004ec970 at 004ec977
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6cee8

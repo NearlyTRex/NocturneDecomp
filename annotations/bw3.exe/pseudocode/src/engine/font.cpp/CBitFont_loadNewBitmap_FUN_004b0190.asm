@@ -14,7 +14,7 @@
 ;
 ; XREF[2]:
 ;   engine_font.cpp_CBitFont_openFontFile_FUN_004af8f0 at 004af913
-;   engine_font.cpp_FUN_004b01ce at 004b0415
+;   engine_font.cpp_FUN_004b01d0 at 004b0415
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004af920

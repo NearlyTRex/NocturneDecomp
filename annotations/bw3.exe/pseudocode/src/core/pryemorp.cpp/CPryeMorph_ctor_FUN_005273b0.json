@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 273,
+    "complexity_score": 272,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 78,
+    "pseudocode_lines": 77,
     "suspect_count": 17,
     "suspect_types": [
       "derived_field_index_pun",
@@ -16,7 +16,7 @@
       "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 204
+    "total_lines": 203
   },
   "cross_references": [
     {
@@ -34,9 +34,9 @@
         "005274df"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0",
-    "signature": "CPryeMorph * core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)"
+    "signature": "CPryeMorph * __cdecl core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)"
   },
   "function_calls": [
     {
@@ -125,7 +125,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
+      "line": 15,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "pcVar5 = pCVar3[-1].models[1].textures[0x11].texture_name + 4;",
@@ -133,7 +133,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
+      "line": 27,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "piVar6 = &pCVar3[-1].models[1].textures[0x12].base.count;",
@@ -141,7 +141,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(char *)((int)piVar6",
       "severity": "moderate",
       "text": "*(char *)((int)piVar6 + 1) = cVar1;",
@@ -149,7 +149,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 35,
       "match": "(int *)((int)piVar6",
       "severity": "moderate",
       "text": "piVar6 = (int *)((int)piVar6 + 2);",
@@ -157,7 +157,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 40,
+      "line": 38,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "pcVar5 = pCVar3[-1].models[1].textures[0x12].texture_name + 0x1c;",
@@ -165,7 +165,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 51,
+      "line": 49,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "pcVar5 = pCVar3[-1].models[1].textures[0xf].texture_name + 0x30;",
@@ -173,7 +173,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 62,
+      "line": 60,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "pCVar3[-1].rescale_enabled = 0;",
@@ -181,7 +181,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 66,
+      "line": 64,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "pcVar5 = pCVar3[-1].models[1].textures[0x11].texture_name + 0x24;",
@@ -189,7 +189,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 77,
+      "line": 75,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "pCVar3[-1].models[1].textures[0x12].texture_name[0x3c] = '\\0';",
@@ -197,7 +197,7 @@
     },
     {
       "description": "Pointer value `&g_CPryeMorphVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 18,
+      "line": 16,
       "match": "(int)&g_CPryeMorphVTable",
       "severity": "moderate",
       "text": "pCVar3[-0x2b].models[0].textures[0xf].base.count = (int)&g_CPryeMorphVTable;",
@@ -205,7 +205,7 @@
     },
     {
       "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
+      "line": 34,
       "match": "(int)piVar6",
       "severity": "moderate",
       "text": "*(char *)((int)piVar6 + 1) = cVar1;",
@@ -213,7 +213,7 @@
     },
     {
       "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "(int)piVar6",
       "severity": "moderate",
       "text": "piVar6 = (int *)((int)piVar6 + 2);",
@@ -221,7 +221,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 19,
+      "line": 17,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -229,7 +229,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 41,
+      "line": 39,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -237,7 +237,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -245,7 +245,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 68,
+      "line": 66,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -253,7 +253,7 @@
     },
     {
       "description": "'(CMorph *)&pCVar2[1].base.base.next_actor' walks 1 x sizeof(CNPC) (0x206c8) + offsetof(base.base.next_actor) (0x14c) + 0x0 = 0x20814, which is exactly offsetof(CPryeMorph, morph). Ghidra had no CPryeMorph type here and reached the field by index arithmetic; write it as ((CPryeMorph *)pCVar2)->morph (\u00a7de-pun/\u00a712).",
-      "line": 16,
+      "line": 14,
       "severity": "moderate",
       "text": "pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].base.base.next_actor);",
       "type": "derived_field_index_pun"

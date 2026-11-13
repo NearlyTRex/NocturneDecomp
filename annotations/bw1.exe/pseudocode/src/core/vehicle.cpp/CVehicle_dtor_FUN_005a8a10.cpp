@@ -1,14 +1,12 @@
 // Name: core_vehicle.cpp_CVehicle_dtor_FUN_005a8a10
 // Address: 005a8a10
 // Address Range: [[005a8a10, 005a8a74]]
-// Convention: unknown
-// Signature: CVehicle * core_vehicle_cpp_CVehicle_dtor_FUN_005a8a10(CVehicle *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CVehicle * __cdecl core_vehicle_cpp_CVehicle_dtor_FUN_005a8a10(CVehicle *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CVehicle * core_vehicle_cpp_CVehicle_dtor_FUN_005a8a10(CVehicle *this_ptr,uint flags)
+CVehicle * __cdecl core_vehicle_cpp_CVehicle_dtor_FUN_005a8a10(CVehicle *this_ptr,uint flags)
 
 {
   CCourse *pCVar1;

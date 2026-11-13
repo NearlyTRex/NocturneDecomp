@@ -9,9 +9,9 @@
 // Address: 0054ae20
 void __cdecl staticInit(void);
 
-// Original: sound_sndmain.cpp_FUN_0054b15e
-// Address: 0054b15e
-void FUN_0054b15e(undefined4 *param_1,int param_2,int param_3,int param_4);
+// Original: sound_sndmain.cpp_FUN_0054b160
+// Address: 0054b160
+void FUN_0054b160(void);
 
 // Original: sound_sndmain.cpp_FUN_0054b4a0
 // Address: 0054b4a0
@@ -45,8 +45,8 @@ CSfxSample * FUN_0054c180(char *param_1);
 // Address: 0054c1c0
 CSfxSample * __cdecl FUN_0054c1c0(char *filename);
 
-// Original: sound_sndmain.cpp_isStreamableFile_FUN_0054c76e
-// Address: 0054c76e
+// Original: sound_sndmain.cpp_isStreamableFile_FUN_0054c770
+// Address: 0054c770
 int __cdecl isStreamableFile(char *filename);
 
 // Original: sound_sndmain.cpp_FUN_0054c7f0
@@ -61,8 +61,8 @@ void FUN_0054cb70(void);
 // Address: 0054ccf0
 int allocateHwSample(void);
 
-// Original: sound_sndmain.cpp_calculateDistanceGain_FUN_0054cd8e
-// Address: 0054cd8e
+// Original: sound_sndmain.cpp_calculateDistanceGain_FUN_0054cd90
+// Address: 0054cd90
 float __cdecl calculateDistanceGain(float distance,float reference_distance,float min_distance,float max_distance);
 
 // Original: sound_sndmain.cpp_allocMixBuffers_FUN_0054ce00
@@ -99,11 +99,11 @@ double __cdecl mixResampleStereoToStereo(short *sample_data,SStereoBuffers *chan
 
 // Original: sound_sndmain.cpp_CSfxSample_ctor_FUN_0054d7a0
 // Address: 0054d7a0
-CSfxSample * CSfxSample::ctor(CSfxSample *this_ptr);
+CSfxSample * __cdecl CSfxSample::ctor(CSfxSample *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSample_dtor_FUN_0054d810
 // Address: 0054d810
-CSfxSample * CSfxSample::dtor(CSfxSample *this_ptr,uint flags);
+CSfxSample * __cdecl CSfxSample::dtor(CSfxSample *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840
 // Address: 0054d840
@@ -385,17 +385,17 @@ uint FUN_00551330(uint param_1);
 // Address: 005513f0
 int __cdecl countActiveSfx(void);
 
-// Original: sound_sndmain.cpp_FUN_0055141c
-// Address: 0055141c
-void FUN_0055141c(int param_1);
+// Original: sound_sndmain.cpp_FUN_00551420
+// Address: 00551420
+void FUN_00551420(void);
 
 // Original: sound_sndmain.cpp_FUN_00551440
 // Address: 00551440
 void FUN_00551440(void);
 
-// Original: sound_sndmain.cpp_FUN_0055147e
-// Address: 0055147e
-void FUN_0055147e(undefined4 param_1);
+// Original: sound_sndmain.cpp_FUN_00551480
+// Address: 00551480
+void FUN_00551480(void);
 
 // Original: sound_sndmain.cpp_FUN_00551490
 // Address: 00551490
@@ -421,9 +421,9 @@ undefined4 FUN_005515e0(double param_1,double param_2,double param_3,float param
 // Address: 00551650
 undefined4 FUN_00551650(double param_1,double param_2,double param_3);
 
-// Original: sound_sndmain.cpp_FUN_005516ce
-// Address: 005516ce
-undefined4 FUN_005516ce(char *param_1);
+// Original: sound_sndmain.cpp_FUN_005516d0
+// Address: 005516d0
+undefined4 FUN_005516d0(void);
 
 // Original: sound_sndmain.cpp_FUN_00551800
 // Address: 00551800
@@ -613,8 +613,8 @@ int __cdecl getCurrentRecordingDevice(void);
 // Address: 00552f80
 int __cdecl setRecordingFormat(int bits_per_sample,int channels,int sample_rate,int signed_samples);
 
-// Original: sound_sndmain.cpp_getRecordingFormat_FUN_0055301e
-// Address: 0055301e
+// Original: sound_sndmain.cpp_getRecordingFormat_FUN_00553020
+// Address: 00553020
 void __cdecl getRecordingFormat(int *out_bits_per_sample,int *out_channels,int *out_sample_rate,int *out_signed);
 
 // Original: sound_sndmain.cpp_startRecording_FUN_00553070
@@ -711,15 +711,15 @@ CSfxSlot * __cdecl CSfxSlot::ctor(CSfxSlot *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_dtor_FUN_00554a80
 // Address: 00554a80
-CSfxSlot * CSfxSlot::dtor(CSfxSlot *this_ptr,uint flags);
+CSfxSlot * __cdecl CSfxSlot::dtor(CSfxSlot *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_CSfxOptions_dtor_FUN_00554a90
 // Address: 00554a90
-CSfxOptions * CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
+CSfxOptions * __cdecl CSfxOptions::dtor(CSfxOptions *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_CSfxSample_arrdtor64_FUN_00554aa0
 // Address: 00554aa0
-CSfxSample * CSfxSample::arrdtor64(CSfxSample *this_ptr,uint flags);
+CSfxSample * __cdecl CSfxSample::arrdtor64(CSfxSample *this_ptr,uint flags);
 
 // Original: sound_sndmain.cpp_FUN_00554ac0
 // Address: 00554ac0

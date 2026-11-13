@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 37,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
@@ -23,15 +23,20 @@
         "004176a2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bmppuzzl.cpp_CChemPuzzle_dtor_FUN_00417630",
-    "signature": "CChemPuzzle * core_bmppuzzl_cpp_CChemPuzzle_dtor_FUN_00417630(CChemPuzzle *this_ptr,uint flags)"
+    "signature": "CChemPuzzle * __cdecl core_bmppuzzl_cpp_CChemPuzzle_dtor_FUN_00417630(CChemPuzzle *this_ptr,uint flags)"
   },
   "function_calls": [
     {
+      "addr": "00415bc0",
+      "is_variadic": false,
+      "name": "core_bmppuzzl.cpp_CPuzzle_dtor_FUN_00415bc0"
+    },
+    {
       "addr": "00418890",
       "is_variadic": false,
-      "name": "core_bmppuzzl.cpp_FUN_00418890"
+      "name": "core_bmppuzzl.cpp_SButtonStruct_arrdtor50Chem_FUN_00418890"
     },
     {
       "addr": "005c030f",
@@ -52,11 +57,6 @@
       "addr": "0040d0c0",
       "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d0c0"
-    },
-    {
-      "addr": "00415bc0",
-      "is_variadic": false,
-      "name": "engine_alphabit.cpp_FUN_00415bc0"
     }
   ],
   "globals": [
@@ -140,10 +140,18 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 17,
+      "match": "pSVar1[-3].",
+      "severity": "mild",
+      "text": "pCVar2 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)&pSVar1[-3].x,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 19,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "pCVar3 = (CChemPuzzle *)engine_alphabit_cpp_FUN_00415bc0(&pCVar2[-1].height,1);",
+      "text": "core_bmppuzzl_cpp_CPuzzle_dtor_FUN_00415bc0((CPuzzle *)&pCVar2[-1].height,1);",
       "type": "negative_offset"
     }
   ],

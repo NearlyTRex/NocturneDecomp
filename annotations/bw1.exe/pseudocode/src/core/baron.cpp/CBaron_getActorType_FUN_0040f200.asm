@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_baron_cpp_CBaron_getActorType_FUN_0040f200(CBaron *this_ptr)
+; CDemonActorType * __cdecl core_baron_cpp_CBaron_getActorType_FUN_0040f200(CBaron *this_ptr)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr

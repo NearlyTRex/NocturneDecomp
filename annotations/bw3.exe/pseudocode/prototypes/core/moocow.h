@@ -7,19 +7,19 @@
 
 // Original: core_moocow.cpp_staticInit_FUN_004f8ae0
 // Address: 004f8ae0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_moocow.cpp_factoryFuncMooCow_FUN_004f8b10
 // Address: 004f8b10
-void factoryFuncMooCow(void);
+CMooCow * __cdecl factoryFuncMooCow(void);
 
 // Original: core_moocow.cpp_CMooCow_getActorType_FUN_004f8b30
 // Address: 004f8b30
-CDemonActorType * CMooCow::getActorType(CMooCow *this_ptr);
+CDemonActorType * __cdecl CMooCow::getActorType(CMooCow *this_ptr);
 
 // Original: core_moocow.cpp_CMooCow_ctor_FUN_004f8b40
 // Address: 004f8b40
-CMooCow * CMooCow::ctor(CMooCow *this_ptr);
+CMooCow * __cdecl CMooCow::ctor(CMooCow *this_ptr);
 
 // Original: core_moocow.cpp_CMooCow_setup_FUN_004f8bb0
 // Address: 004f8bb0
@@ -47,4 +47,4 @@ int __cdecl CMooCow::getTargetPoints(CMooCow *this_ptr,CVector3f *out_points_arr
 
 // Original: core_moocow.cpp_CMooCow_dtor_FUN_004f9310
 // Address: 004f9310
-CMooCow * CMooCow::dtor(CMooCow *this_ptr,uint flags);
+CMooCow * __cdecl CMooCow::dtor(CMooCow *this_ptr,uint flags);

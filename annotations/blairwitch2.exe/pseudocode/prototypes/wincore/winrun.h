@@ -29,8 +29,8 @@ int __cdecl getNextKeypress(void);
 // Address: 0058eb40
 int __cdecl wasKeyPressed(void);
 
-// Original: wincore_winrun.cpp_getValue_FUN_0058eb5c
-// Address: 0058eb5c
+// Original: wincore_winrun.cpp_getValue_FUN_0058eb60
+// Address: 0058eb60
 char __cdecl getValue(void);
 
 // Original: wincore_winrun.cpp_enqueueInput_FUN_0058eb70
@@ -105,8 +105,8 @@ int __cdecl setThreadPriority(HANDLE hThread,int priority_level);
 // Address: 0058fd90
 void __cdecl sleep(double seconds);
 
-// Original: wincore_winrun.cpp_getComputerAndUserName_FUN_0058fdec
-// Address: 0058fdec
+// Original: wincore_winrun.cpp_getComputerAndUserName_FUN_0058fdf0
+// Address: 0058fdf0
 void __cdecl getComputerAndUserName(char *buffer);
 
 // Original: wincore_winrun.cpp_getRegistryStringValue_FUN_0058fec0
@@ -141,9 +141,9 @@ float FUN_005901c0(int param_1,int *param_2,float param_3,float param_4);
 // Address: 005902a0
 void FUN_005902a0(int param_1);
 
-// Original: wincore_winrun.cpp_FUN_0059064e
-// Address: 0059064e
-void FUN_0059064e(void);
+// Original: wincore_winrun.cpp_FUN_00590650
+// Address: 00590650
+void FUN_00590650(void);
 
 // Original: wincore_winrun.cpp_FUN_00590680
 // Address: 00590680
@@ -161,9 +161,9 @@ void FUN_005907b0(void);
 // Address: 005907e0
 void FUN_005907e0(float param_1);
 
-// Original: wincore_winrun.cpp_FUN_0059085c
-// Address: 0059085c
-float FUN_0059085c(void);
+// Original: wincore_winrun.cpp_FUN_00590860
+// Address: 00590860
+float FUN_00590860(void);
 
 // Original: wincore_winrun.cpp_FUN_005908c0
 // Address: 005908c0
@@ -181,9 +181,9 @@ undefined4 FUN_00590920(undefined4 param_1);
 // Address: 00590960
 void FUN_00590960(undefined4 param_1);
 
-// Original: wincore_winrun.cpp_FUN_00590b0c
-// Address: 00590b0c
-void FUN_00590b0c(undefined4 param_1);
+// Original: wincore_winrun.cpp_FUN_00590b10
+// Address: 00590b10
+void FUN_00590b10(void);
 
 // Original: wincore_winrun.cpp_FUN_00590d80
 // Address: 00590d80

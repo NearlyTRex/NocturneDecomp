@@ -1,15 +1,14 @@
 // Name: core_confedrt.cpp_CConfederate_ctor_FUN_005a0840
 // Address: 005a0840
 // Address Range: [[005a0840, 005a09b3]]
-// Convention: unknown
-// Signature: CConfederate * core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfederate *this_ptr)
+// Convention: __cdecl
+// Signature: CConfederate * __cdecl core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfederate *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CConfederate * core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfederate *this_ptr)
+CConfederate * __cdecl core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfederate *this_ptr)
 
 {
   SStateMachine *pSVar1;

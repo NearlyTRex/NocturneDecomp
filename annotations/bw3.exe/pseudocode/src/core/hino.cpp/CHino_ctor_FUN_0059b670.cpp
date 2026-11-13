@@ -1,15 +1,14 @@
 // Name: core_hino.cpp_CHino_ctor_FUN_0059b670
 // Address: 0059b670
 // Address Range: [[0059b670, 0059b735]]
-// Convention: unknown
-// Signature: CHino * core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
+// Convention: __cdecl
+// Signature: CHino * __cdecl core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CHino * core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
+CHino * __cdecl core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
 
 {
   float fVar1;

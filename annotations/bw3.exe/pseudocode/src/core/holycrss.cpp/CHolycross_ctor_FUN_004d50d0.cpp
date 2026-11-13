@@ -1,14 +1,12 @@
 // Name: core_holycrss.cpp_CHolycross_ctor_FUN_004d50d0
 // Address: 004d50d0
 // Address Range: [[004d50d0, 004d516b]]
-// Convention: unknown
-// Signature: CHolycross * core_holycrss_cpp_CHolycross_ctor_FUN_004d50d0(CHolycross *this_ptr)
+// Convention: __cdecl
+// Signature: CHolycross * __cdecl core_holycrss_cpp_CHolycross_ctor_FUN_004d50d0(CHolycross *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHolycross * core_holycrss_cpp_CHolycross_ctor_FUN_004d50d0(CHolycross *this_ptr)
+CHolycross * __cdecl core_holycrss_cpp_CHolycross_ctor_FUN_004d50d0(CHolycross *this_ptr)
 
 {
   CWeapon *pCVar1;

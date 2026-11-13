@@ -27,7 +27,7 @@
 ;   undefined4 DAT_005febf0
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_0059e8c0
+;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0
 ;   core_muzzle.cpp_FUN_0059d610
 ;   core_muzzle.cpp_FUN_0059d6f0
@@ -122,8 +122,8 @@ section .text
     MOV dword ptr [EBX + 0x11410],0x3f000000 ; 0059e544
     PUSH EBX                            ; 0059e54e
     MOV dword ptr [EBX + 0x11414],0x3e800000 ; 0059e54f
-    CALL core_basicene.cpp_FUN_0059e8c0 ; 0059e559
-        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059e8c0()
+    CALL core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 ; 0059e559
+        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy * this_ptr, undefined4 param_2, int param_3)
     ADD ESP,0xc                         ; 0059e55e
     PUSH 0x5ef868                       ; 0059e561
     PUSH 0x5ef870                       ; 0059e566

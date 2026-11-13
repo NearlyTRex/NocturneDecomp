@@ -1,14 +1,12 @@
 // Name: core_boneguy.cpp_CSkeletonForest_dtor_FUN_0041aa70
 // Address: 0041aa70
 // Address Range: [[0041aa70, 0041aaf4]]
-// Convention: unknown
-// Signature: CSkeletonForest * core_boneguy_cpp_CSkeletonForest_dtor_FUN_0041aa70(CSkeletonForest *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSkeletonForest * __cdecl core_boneguy_cpp_CSkeletonForest_dtor_FUN_0041aa70(CSkeletonForest *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSkeletonForest * core_boneguy_cpp_CSkeletonForest_dtor_FUN_0041aa70(CSkeletonForest *this_ptr,uint flags)
+CSkeletonForest * __cdecl core_boneguy_cpp_CSkeletonForest_dtor_FUN_0041aa70(CSkeletonForest *this_ptr,uint flags)
 
 {
   int iVar1;

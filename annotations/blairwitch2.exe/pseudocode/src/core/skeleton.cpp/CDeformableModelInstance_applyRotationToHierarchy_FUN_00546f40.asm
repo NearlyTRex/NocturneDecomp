@@ -22,9 +22,9 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[9]:
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 00455a50
 ;   core_doc.cpp_FUN_00453d80 at 00453fe2
 ;   core_doc.cpp_FUN_00455170 at 00455234
-;   core_doc.cpp_FUN_004555c0 at 00455a50
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004b0143
 ;   core_icepick.cpp_FUN_004d5470 at 004d556e
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004fef30 at 004ff234

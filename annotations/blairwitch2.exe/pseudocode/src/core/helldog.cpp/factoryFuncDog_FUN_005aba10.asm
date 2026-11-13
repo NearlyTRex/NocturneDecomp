@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_helldog_cpp_factoryFuncDog_FUN_005aba10(void)
+; CDog * __cdecl core_helldog_cpp_factoryFuncDog_FUN_005aba10(void)
 ;
 ;
 ; Called Functions:

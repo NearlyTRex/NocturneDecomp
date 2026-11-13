@@ -1,14 +1,12 @@
 // Name: core_darkwolf.cpp_CWhitewolf_ctor_FUN_00598fe0
 // Address: 00598fe0
 // Address Range: [[00598fe0, 0059902b]]
-// Convention: unknown
-// Signature: CWhitewolf * core_darkwolf_cpp_CWhitewolf_ctor_FUN_00598fe0(CWhitewolf *this_ptr)
+// Convention: __cdecl
+// Signature: CWhitewolf * __cdecl core_darkwolf_cpp_CWhitewolf_ctor_FUN_00598fe0(CWhitewolf *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CWhitewolf * core_darkwolf_cpp_CWhitewolf_ctor_FUN_00598fe0(CWhitewolf *this_ptr)
+CWhitewolf * __cdecl core_darkwolf_cpp_CWhitewolf_ctor_FUN_00598fe0(CWhitewolf *this_ptr)
 
 {
   CDarkwolf *pCVar1;

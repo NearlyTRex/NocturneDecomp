@@ -1,14 +1,12 @@
 // Name: core_bindevil.cpp_CBindEvil_ctor_FUN_0040f780
 // Address: 0040f780
 // Address Range: [[0040f780, 0040f83d]]
-// Convention: unknown
-// Signature: CBindEvil * core_bindevil_cpp_CBindEvil_ctor_FUN_0040f780(CBindEvil *this_ptr)
+// Convention: __cdecl
+// Signature: CBindEvil * __cdecl core_bindevil_cpp_CBindEvil_ctor_FUN_0040f780(CBindEvil *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBindEvil * core_bindevil_cpp_CBindEvil_ctor_FUN_0040f780(CBindEvil *this_ptr)
+CBindEvil * __cdecl core_bindevil_cpp_CBindEvil_ctor_FUN_0040f780(CBindEvil *this_ptr)
 
 {
   CBindEvil *pCVar1;

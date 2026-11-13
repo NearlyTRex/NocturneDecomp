@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60(CAudioRecPuzzle *this_ptr,int param_2,int param_3,float param_4,int param_5)
+; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60(CAudioRecPuzzle *this_ptr,int x,int y,float angle,int draw_reel)
 ;
 ; Parameters:
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; float            Stack[0x10]:4   param_4
-; int              Stack[0x14]:4   param_5
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; float            Stack[0x10]:4   angle
+; int              Stack[0x14]:4   draw_reel
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ef5a4

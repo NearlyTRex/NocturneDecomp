@@ -1,14 +1,12 @@
 // Name: core_mine.cpp_CSpiritMine_ctor_FUN_005ad3c0
 // Address: 005ad3c0
 // Address Range: [[005ad3c0, 005ad451]]
-// Convention: unknown
-// Signature: CSpiritMine * core_mine_cpp_CSpiritMine_ctor_FUN_005ad3c0(CSpiritMine *this_ptr)
+// Convention: __cdecl
+// Signature: CSpiritMine * __cdecl core_mine_cpp_CSpiritMine_ctor_FUN_005ad3c0(CSpiritMine *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSpiritMine * core_mine_cpp_CSpiritMine_ctor_FUN_005ad3c0(CSpiritMine *this_ptr)
+CSpiritMine * __cdecl core_mine_cpp_CSpiritMine_ctor_FUN_005ad3c0(CSpiritMine *this_ptr)
 
 {
   CSpiritMine *pCVar1;

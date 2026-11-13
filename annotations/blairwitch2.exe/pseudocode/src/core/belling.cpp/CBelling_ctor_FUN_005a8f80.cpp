@@ -1,14 +1,12 @@
 // Name: core_belling.cpp_CBelling_ctor_FUN_005a8f80
 // Address: 005a8f80
 // Address Range: [[005a8f80, 005a9041]]
-// Convention: unknown
-// Signature: CBelling * core_belling_cpp_CBelling_ctor_FUN_005a8f80(CBelling *this_ptr)
+// Convention: __cdecl
+// Signature: CBelling * __cdecl core_belling_cpp_CBelling_ctor_FUN_005a8f80(CBelling *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBelling * core_belling_cpp_CBelling_ctor_FUN_005a8f80(CBelling *this_ptr)
+CBelling * __cdecl core_belling_cpp_CBelling_ctor_FUN_005a8f80(CBelling *this_ptr)
 
 {
   CBasicNPC *this_ptr_00;

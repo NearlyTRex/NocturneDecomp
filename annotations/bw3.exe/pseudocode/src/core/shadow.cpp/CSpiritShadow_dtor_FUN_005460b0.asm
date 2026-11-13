@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSpiritShadow * core_shadow_cpp_CSpiritShadow_dtor_FUN_005460b0(CSpiritShadow *this_ptr,uint flags)
+; CSpiritShadow * __cdecl core_shadow_cpp_CSpiritShadow_dtor_FUN_005460b0(CSpiritShadow *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSpiritShadow *  Stack[0x4]:4   this_ptr

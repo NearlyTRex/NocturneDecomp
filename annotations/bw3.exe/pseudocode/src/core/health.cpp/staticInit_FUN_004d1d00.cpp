@@ -1,12 +1,12 @@
 // Name: core_health.cpp_staticInit_FUN_004d1d00
 // Address: 004d1d00
 // Address Range: [[004d1d00, 004d1d46]]
-// Convention: unknown
-// Signature: void core_health_cpp_staticInit_FUN_004d1d00(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_health_cpp_staticInit_FUN_004d1d00(void)
 
 #include "nocturne.h"
 
-void core_health_cpp_staticInit_FUN_004d1d00(void)
+void __cdecl core_health_cpp_staticInit_FUN_004d1d00(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

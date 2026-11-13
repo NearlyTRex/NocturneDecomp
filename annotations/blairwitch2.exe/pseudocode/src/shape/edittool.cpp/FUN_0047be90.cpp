@@ -25,7 +25,7 @@ void shape_edittool_cpp_FUN_0047be90(uint param_1,char *param_2)
   local_14 = (byte *)0x0;
   engine_special_cpp_clearScreen_FUN_0055b1f0();
   engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
-  engine_mini3d_cpp_FUN_004f3570(0x3f800000);
+  engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
   engine_font_cpp_CBitFont_drawTextCenter_FUN_004a92a0
             (_DAT_01c25590,DAT_006141b8 / 2,DAT_006141bc / 2,_DAT_01c263b4,-1,(char *)0x1c231f0);
   wincore_wddvmem_cpp_swapBuffers_FUN_00589560();

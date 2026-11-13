@@ -13,7 +13,7 @@
 ;   sound_sndmain.cpp_FUN_0056dfd0 at 0056e07a
 ;   sound_sndmain.cpp_FUN_0056e830 at 0056e8a7
 ;   sound_sndmain.cpp_FUN_00570460 at 00570721
-;   sound_sndmain.cpp_FUN_005740fe at 0057420f
+;   sound_sndmain.cpp_FUN_00574100 at 0057420f
 ;   sound_sndmain.cpp_allocateHwSample_FUN_0056f360 at 0056f3eb
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_00575670 at 00575687
 ;   sound_sndmain.cpp_freeAllSamples_FUN_005746a0 at 005746b8
@@ -76,7 +76,7 @@ section .text
     PUSH EAX                            ; 0057007e
     MOV dword ptr [EBX + 0x174],0x0     ; 0057007f
     CALL support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0 ; 00570089
-        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile * this_ptr)
+        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0(CInStreamFile * this_ptr)
     MOV byte ptr [EBX],0x0              ; 0057008e
     MOV dword ptr [EBX + 0x150],0x0     ; 00570091
     MOV dword ptr [EBX + 0x15c],0x0     ; 0057009b

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWhitewolf * core_darkwolf_cpp_CWhitewolf_ctor_FUN_00598fe0(CWhitewolf *this_ptr)
+; CWhitewolf * __cdecl core_darkwolf_cpp_CWhitewolf_ctor_FUN_00598fe0(CWhitewolf *this_ptr)
 ;
 ; Parameters:
 ; CWhitewolf *     Stack[0x4]:4   this_ptr

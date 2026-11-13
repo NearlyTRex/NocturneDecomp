@@ -30,7 +30,7 @@
 ;   core_actor.cpp_FUN_00408b00
 ;   core_actor.cpp_FUN_00408bb0
 ;   core_actor.cpp_randomChance_FUN_0040cd00
-;   core_charactr.cpp_FUN_004325b0
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_course.cpp_CCourse_evaluate_FUN_00447f00
 ;   core_main.c_FUN_005030e0
@@ -670,8 +670,8 @@ section .text
     PUSH EDI                            ; 005a8335
     PUSH 0x1                            ; 005a8336
     PUSH ESI                            ; 005a8338
-    CALL core_charactr.cpp_FUN_004325b0 ; 005a8339
-        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004325b0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0 ; 005a8339
+        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 005a833e
     PUSH ESI                            ; 005a8341
     MOV ECX,dword ptr [0x0061f650]      ; 005a8342 | DAT_0061f650

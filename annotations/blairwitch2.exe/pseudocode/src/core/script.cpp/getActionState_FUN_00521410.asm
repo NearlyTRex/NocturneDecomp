@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   action_name
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 005265d3
+;   core_script.cpp_CScript_step_FUN_00522350 at 005265d3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e2dce

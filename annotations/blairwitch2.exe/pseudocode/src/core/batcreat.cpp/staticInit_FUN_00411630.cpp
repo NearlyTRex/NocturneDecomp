@@ -1,12 +1,12 @@
 // Name: core_batcreat.cpp_staticInit_FUN_00411630
 // Address: 00411630
 // Address Range: [[00411630, 00411653]]
-// Convention: unknown
-// Signature: void core_batcreat_cpp_staticInit_FUN_00411630(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_batcreat_cpp_staticInit_FUN_00411630(void)
 
 #include "nocturne.h"
 
-void core_batcreat_cpp_staticInit_FUN_00411630(void)
+void __cdecl core_batcreat_cpp_staticInit_FUN_00411630(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

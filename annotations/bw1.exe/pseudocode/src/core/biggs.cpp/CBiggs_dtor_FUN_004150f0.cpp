@@ -1,14 +1,12 @@
 // Name: core_biggs.cpp_CBiggs_dtor_FUN_004150f0
 // Address: 004150f0
 // Address Range: [[004150f0, 00415184]]
-// Convention: unknown
-// Signature: CBiggs * core_biggs_cpp_CBiggs_dtor_FUN_004150f0(CBiggs *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_004150f0(CBiggs *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBiggs * core_biggs_cpp_CBiggs_dtor_FUN_004150f0(CBiggs *this_ptr,uint flags)
+CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_004150f0(CBiggs *this_ptr,uint flags)
 
 {
   CMorph *pCVar1;

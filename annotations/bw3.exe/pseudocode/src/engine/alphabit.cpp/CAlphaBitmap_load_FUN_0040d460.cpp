@@ -20,7 +20,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(CAlphaBitmap *th
   char local_114 [256];
   _FILE *local_14;
   
-  engine_alphabit_cpp_FUN_0040d320(this_ptr,width,height);
+  engine_alphabit_cpp_CAlphaBitmap_allocate_FUN_0040d320(this_ptr,width,height);
   _sprintf(local_114,"%s.raw");
   local_14 = engine_dosio_cpp_FUN_004659c0(&DAT_005b5ff5,local_114,&DAT_005b5ff2);
   if (local_14 == (_FILE *)0x0) {

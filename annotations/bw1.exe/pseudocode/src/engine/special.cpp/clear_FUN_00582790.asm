@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0 at 0044d0e8
-;   engine_mini3d.cpp_FUN_0051117e at 00511187
+;   engine_mini3d.cpp_clear_FUN_00511180 at 00511187
 ;   engine_special.cpp_clearScreen_FUN_0057dc40 at 0057dc4b
 ;
 ; Referenced Globals:

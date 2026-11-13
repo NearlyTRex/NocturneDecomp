@@ -1,14 +1,12 @@
 // Name: core_shadow.cpp_CShadowForest_dtor_FUN_00546140
 // Address: 00546140
 // Address Range: [[00546140, 005461c4]]
-// Convention: unknown
-// Signature: CShadowForest * core_shadow_cpp_CShadowForest_dtor_FUN_00546140(CShadowForest *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CShadowForest * __cdecl core_shadow_cpp_CShadowForest_dtor_FUN_00546140(CShadowForest *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CShadowForest * core_shadow_cpp_CShadowForest_dtor_FUN_00546140(CShadowForest *this_ptr,uint flags)
+CShadowForest * __cdecl core_shadow_cpp_CShadowForest_dtor_FUN_00546140(CShadowForest *this_ptr,uint flags)
 
 {
   int iVar1;

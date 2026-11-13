@@ -1,14 +1,12 @@
 // Name: core_hino.cpp_CHino_dtor_FUN_0059d660
 // Address: 0059d660
 // Address Range: [[0059d660, 0059d6e4]]
-// Convention: unknown
-// Signature: CHino * core_hino_cpp_CHino_dtor_FUN_0059d660(CHino *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CHino * __cdecl core_hino_cpp_CHino_dtor_FUN_0059d660(CHino *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHino * core_hino_cpp_CHino_dtor_FUN_0059d660(CHino *this_ptr,uint flags)
+CHino * __cdecl core_hino_cpp_CHino_dtor_FUN_0059d660(CHino *this_ptr,uint flags)
 
 {
   int iVar1;

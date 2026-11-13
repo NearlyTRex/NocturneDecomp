@@ -14,7 +14,7 @@
 ; int              Stack[0x20]:4   y_max
 ;
 ; XREF[1]:
-;   engine_2d.c_clipLineGlobal_FUN_00402c9e at 00402cd4
+;   engine_2d.c_clipLineGlobal_FUN_00402ca0 at 00402cd4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0

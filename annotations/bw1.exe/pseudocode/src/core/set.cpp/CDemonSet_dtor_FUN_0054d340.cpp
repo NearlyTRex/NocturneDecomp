@@ -1,14 +1,12 @@
 // Name: core_set.cpp_CDemonSet_dtor_FUN_0054d340
 // Address: 0054d340
 // Address Range: [[0054d340, 0054d360]]
-// Convention: unknown
-// Signature: CDemonSet * core_set_cpp_CDemonSet_dtor_FUN_0054d340(CDemonSet *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_0054d340(CDemonSet *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDemonSet * core_set_cpp_CDemonSet_dtor_FUN_0054d340(CDemonSet *this_ptr,uint flags)
+CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_0054d340(CDemonSet *this_ptr,uint flags)
 
 {
   int iVar1;

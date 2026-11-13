@@ -1,15 +1,14 @@
 // Name: core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
 // Address: 005a47b0
 // Address Range: [[005a47b0, 005a4869]]
-// Convention: unknown
-// Signature: CBasicNPC * core_basicnpc_cpp_CBasicNPC_ctor_FUN_005a47b0(CBasicNPC *this_ptr)
+// Convention: __cdecl
+// Signature: CBasicNPC * __cdecl core_basicnpc_cpp_CBasicNPC_ctor_FUN_005a47b0(CBasicNPC *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CBasicNPC * core_basicnpc_cpp_CBasicNPC_ctor_FUN_005a47b0(CBasicNPC *this_ptr)
+CBasicNPC * __cdecl core_basicnpc_cpp_CBasicNPC_ctor_FUN_005a47b0(CBasicNPC *this_ptr)
 
 {
   float fVar1;

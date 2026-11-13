@@ -256,7 +256,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0046
               local_174 = 3;
               local_2c = iVar3;
               engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00483c50
-                        (this_ptr_00,&local_18c,(CustomScanlineFunc *)0x451040);
+                        (this_ptr_00,&local_18c,
+                         core_dcamera_cpp_renderVolumetricLightScanline_FUN_00451040);
             } while (iVar3 < 4);
             local_50 = local_50 + 1;
           } while (local_50 < 0x10);

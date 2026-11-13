@@ -7,7 +7,7 @@
 
 // Original: core_keyactor.cpp_staticInit_FUN_004fc4b0
 // Address: 004fc4b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_keyactor.cpp_factoryFuncKeyActor_FUN_004fc4e0
 // Address: 004fc4e0
@@ -15,7 +15,7 @@ CKeyActor * __cdecl factoryFuncKeyActor(void);
 
 // Original: core_keyactor.cpp_CKeyActor_getActorType_FUN_004fc500
 // Address: 004fc500
-CDemonActorType * CKeyActor::getActorType(CKeyActor *this_ptr);
+CDemonActorType * __cdecl CKeyActor::getActorType(CKeyActor *this_ptr);
 
 // Original: core_keyactor.cpp_CKeyActor_ctor_FUN_004fc510
 // Address: 004fc510

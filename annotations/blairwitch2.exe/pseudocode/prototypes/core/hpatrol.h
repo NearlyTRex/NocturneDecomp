@@ -7,23 +7,23 @@
 
 // Original: core_hpatrol.cpp_staticInit_FUN_0059c580
 // Address: 0059c580
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hpatrol.cpp_factoryFuncPatrolPoint_FUN_0059c5b0
 // Address: 0059c5b0
-void factoryFuncPatrolPoint(void);
+CPatrolPoint * __cdecl factoryFuncPatrolPoint(void);
 
 // Original: core_hpatrol.cpp_CPatrolPoint_getActorType_FUN_0059c5d0
 // Address: 0059c5d0
-CDemonActorType * CPatrolPoint::getActorType(CPatrolPoint *this_ptr);
+CDemonActorType * __cdecl CPatrolPoint::getActorType(CPatrolPoint *this_ptr);
 
 // Original: core_hpatrol.cpp_CPatrolPoint_ctor_FUN_0059c5e0
 // Address: 0059c5e0
-CPatrolPoint * CPatrolPoint::ctor(CPatrolPoint *this_ptr);
+CPatrolPoint * __cdecl CPatrolPoint::ctor(CPatrolPoint *this_ptr);
 
 // Original: core_hpatrol.cpp_CPatrolPoint_dtor_FUN_0059c610
 // Address: 0059c610
-CPatrolPoint * CPatrolPoint::dtor(CPatrolPoint *this_ptr,uint flags);
+CPatrolPoint * __cdecl CPatrolPoint::dtor(CPatrolPoint *this_ptr,uint flags);
 
 // Original: core_hpatrol.cpp_CPatrolPoint_setup_FUN_0059c670
 // Address: 0059c670

@@ -7,7 +7,7 @@
 
 // Original: core_hero.cpp_staticInit_FUN_004d2270
 // Address: 004d2270
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hero.cpp_closestHeroToPoint_FUN_004d22c0
 // Address: 004d22c0
@@ -29,9 +29,9 @@ CHero * __cdecl CHero::ctor(CHero *this_ptr);
 // Address: 004d2620
 void FUN_004d2620(int param_1);
 
-// Original: core_hero.cpp_FUN_004d26b0
+// Original: core_hero.cpp_CHero_setup_FUN_004d26b0
 // Address: 004d26b0
-void FUN_004d26b0(CCharacter *param_1);
+void __cdecl CHero::setup(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_testCylinderCollision_FUN_004d2720
 // Address: 004d2720
@@ -49,9 +49,9 @@ void __cdecl CHero::archive(CHero *this_ptr);
 // Address: 004d2a70
 CPathMap * __cdecl CHero::getPathMap(CHero *this_ptr);
 
-// Original: core_hero.cpp_FUN_004d2a80
+// Original: core_hero.cpp_CHero_isGrabbable_FUN_004d2a80
 // Address: 004d2a80
-bool FUN_004d2a80(undefined4 param_1,CDemonActor *param_2);
+bool __cdecl CHero::isGrabbable(CHero *this_ptr,CDemonActor *param_2);
 
 // Original: core_hero.cpp_CHero_canBeGrabbed_FUN_004d2aa0
 // Address: 004d2aa0
@@ -161,9 +161,9 @@ void __cdecl CHero::kill(CHero *this_ptr,int damage_type,CVector3f *damage_direc
 // Address: 004d4410
 void FUN_004d4410(int param_1);
 
-// Original: core_hero.cpp_FUN_004d4520
+// Original: core_hero.cpp_CHero_doHeroAction_FUN_004d4520
 // Address: 004d4520
-void FUN_004d4520(CHero *param_1);
+void __cdecl CHero::doHeroAction(CHero *this_ptr);
 
 // Original: core_hero.cpp_FUN_004d4840
 // Address: 004d4840
@@ -187,7 +187,7 @@ CDemonActorType * __cdecl CHeroPlaceholder::getActorType(CHeroPlaceholder *this_
 
 // Original: core_hero.cpp_CHeroPlaceholder_ctor_FUN_004d4ae0
 // Address: 004d4ae0
-CHeroPlaceholder * CHeroPlaceholder::ctor(CHeroPlaceholder *this_ptr);
+CHeroPlaceholder * __cdecl CHeroPlaceholder::ctor(CHeroPlaceholder *this_ptr);
 
 // Original: core_hero.cpp_CHeroPlaceholder_dtor_FUN_004d4b40
 // Address: 004d4b40
@@ -205,6 +205,6 @@ CDemonActor * FUN_004d4be0(int param_1);
 // Address: 004d4c90
 void __cdecl CHeroPlaceholder::archive(CHeroPlaceholder *this_ptr);
 
-// Original: core_hero.cpp_FUN_004d4cde
-// Address: 004d4cde
-undefined8 FUN_004d4cde(void);
+// Original: core_hero.cpp_FUN_004d4ce0
+// Address: 004d4ce0
+undefined8 FUN_004d4ce0(void);

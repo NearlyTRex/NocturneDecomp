@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool support_codec_cpp_FUN_00442d10(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4)
+; bool support_codec_cpp_FUN_00442d10(int *param_1,char *param_2,int *param_3,undefined4 param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
@@ -32,7 +32,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00442d23
     PUSH EAX                            ; 00442d27
     CALL support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_005a1160 ; 00442d28
-        ;   XREF to: 005a1160 (UNCONDITIONAL_CALL)  ; undefined4 * support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_005a1160(CInStreamMemory * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 005a1160 (UNCONDITIONAL_CALL)  ; CInStreamMemory * support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_005a1160(CInStreamMemory * this_ptr, char * data, int size)
     ADD ESP,0xc                         ; 00442d2d
     MOV EBX,dword ptr [ESP + 0x34]      ; 00442d30
     PUSH EBX                            ; 00442d34
@@ -48,7 +48,7 @@ section .text
     MOV EAX,ESP                         ; 00442d4d
     PUSH EAX                            ; 00442d4f
     CALL support_trstream.cpp_CInStreamMemory_tell_FUN_005a13b0 ; 00442d50
-        ;   XREF to: 005a13b0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamMemory_tell_FUN_005a13b0(CInStreamMemory * this_ptr)
+        ;   XREF to: 005a13b0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamMemory_tell_FUN_005a13b0(CInStreamMemory * this_ptr)
     MOV EBP,dword ptr [ESI]             ; 00442d55
     SUB EBP,EAX                         ; 00442d57
     ADD ESP,0x4                         ; 00442d59

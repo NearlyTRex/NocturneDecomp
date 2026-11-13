@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAlphaBitmap * core_fldnotes_cpp_CAlphaBitmap_arrdtor6_FUN_004bf6e0(CAlphaBitmap *this_ptr,uint flags)
+; CAlphaBitmap * __cdecl core_fldnotes_cpp_CAlphaBitmap_arrdtor6_FUN_004bf6e0(CAlphaBitmap *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAlphaBitmap *   Stack[0x4]:4   this_ptr

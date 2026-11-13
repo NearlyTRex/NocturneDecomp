@@ -1,15 +1,14 @@
 // Name: core_shotgun.cpp_CShadowsc_ctor_FUN_005462c0
 // Address: 005462c0
 // Address Range: [[005462c0, 0054635a]]
-// Convention: unknown
-// Signature: CShadowsc * core_shotgun_cpp_CShadowsc_ctor_FUN_005462c0(CShadowsc *this_ptr)
+// Convention: __cdecl
+// Signature: CShadowsc * __cdecl core_shotgun_cpp_CShadowsc_ctor_FUN_005462c0(CShadowsc *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CShadowsc * core_shotgun_cpp_CShadowsc_ctor_FUN_005462c0(CShadowsc *this_ptr)
+CShadowsc * __cdecl core_shotgun_cpp_CShadowsc_ctor_FUN_005462c0(CShadowsc *this_ptr)
 
 {
   float fVar1;

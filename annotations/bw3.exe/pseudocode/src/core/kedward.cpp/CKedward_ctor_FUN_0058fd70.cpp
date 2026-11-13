@@ -1,14 +1,12 @@
 // Name: core_kedward.cpp_CKedward_ctor_FUN_0058fd70
 // Address: 0058fd70
 // Address Range: [[0058fd70, 0058fe6b]]
-// Convention: unknown
-// Signature: CKedward * core_kedward_cpp_CKedward_ctor_FUN_0058fd70(CKedward *this_ptr)
+// Convention: __cdecl
+// Signature: CKedward * __cdecl core_kedward_cpp_CKedward_ctor_FUN_0058fd70(CKedward *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CKedward * core_kedward_cpp_CKedward_ctor_FUN_0058fd70(CKedward *this_ptr)
+CKedward * __cdecl core_kedward_cpp_CKedward_ctor_FUN_0058fd70(CKedward *this_ptr)
 
 {
   CKedward *pCVar1;

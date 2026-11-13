@@ -1,14 +1,12 @@
 // Name: core_dog.cpp_CEtherealDog_ctor_FUN_004637b0
 // Address: 004637b0
 // Address Range: [[004637b0, 0046380f]]
-// Convention: unknown
-// Signature: CEtherealDog * core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr)
+// Convention: __cdecl
+// Signature: CEtherealDog * __cdecl core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CEtherealDog * core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr)
+CEtherealDog * __cdecl core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr)
 
 {
   CZombieDog *pCVar1;

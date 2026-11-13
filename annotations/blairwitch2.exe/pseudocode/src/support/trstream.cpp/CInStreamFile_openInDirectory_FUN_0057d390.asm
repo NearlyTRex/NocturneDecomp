@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile *this_ptr,undefined4 param_2,undefined4 param_3)
+; int __cdecl support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile *this_ptr,char *directory,char *filename)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   directory
+; char *           Stack[0xc]:4   filename
 ;
 ; XREF[15]:
 ;   cockpit_ckptutil.c_FUN_0042c520 at 0042c55c
@@ -15,10 +15,10 @@
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010be
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029d8
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7e9a
-;   engine_font.cpp_FUN_004a7fe2 at 004a813b
-;   engine_font.cpp_FUN_004a859e at 004a8603
+;   engine_font.cpp_FUN_004a7fd0 at 004a813b
+;   engine_font.cpp_FUN_004a85a0 at 004a8603
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80 at 00573e76
-;   engine_texture.cpp_FUN_0057514e at 00575249
+;   engine_texture.cpp_FUN_00575150 at 00575249
 ;   ... and 5 more
 ;
 ; Referenced Globals:
@@ -28,7 +28,7 @@
 ;   CreateFileA
 ;   engine_dosio.cpp_findFile_FUN_00460980
 ;   engine_dosio.cpp_FUN_00460910
-;   support_trstream.cpp_FUN_0057d1d0
+;   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_0057d1d0
 ;
 ; *****************************************************************************
 
@@ -83,8 +83,8 @@ section .text
     JZ 0x0057d432                       ; 0057d41a
         ;   XREF to: 0057d432 (CONDITIONAL_JUMP)  ; LAB_0057d432
     PUSH EBX                            ; 0057d41c
-    CALL support_trstream.cpp_FUN_0057d1d0 ; 0057d41d
-        ;   XREF to: 0057d1d0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d1d0()
+    CALL support_trstream.cpp_CInStreamFile_allocBuffer_FUN_0057d1d0 ; 0057d41d
+        ;   XREF to: 0057d1d0 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_CInStreamFile_allocBuffer_FUN_0057d1d0(CInStreamFile * this_ptr)
     MOV EAX,0x1                         ; 0057d422
     ADD ESP,0x4                         ; 0057d427
     ADD ESP,0x214                       ; 0057d42a

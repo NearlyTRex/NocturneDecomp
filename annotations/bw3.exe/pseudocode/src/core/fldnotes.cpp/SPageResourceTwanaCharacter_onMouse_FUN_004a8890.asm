@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_onMouse_FUN_004a8890(SPageResourceTwanaCharacter *this_ptr,int param_2)
+; int __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_onMouse_FUN_004a8890(SPageResourceTwanaCharacter *this_ptr,int clicked,int x,int y)
 ;
 ; Parameters:
 ; SPageResourceTwanaCharacter * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   clicked
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d0cfa0
@@ -36,7 +38,7 @@ section .text
     PUSH EAX                            ; 004a88b1
     PUSH EDX                            ; 004a88b2
     CALL core_fldnotes.cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a8b90 ; 004a88b3
-        ;   XREF to: 004a8b90 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a8b90(SPageResourceTwanaEntry * this_ptr, char * param_2)
+        ;   XREF to: 004a8b90 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a8b90(SPageResourceTwanaEntry * this_ptr, char * character)
     ADD ESP,0x8                         ; 004a88b8
     MOV EAX,0x1                         ; 004a88bb
     RET                                 ; 004a88c0

@@ -7,7 +7,7 @@
 
 // Original: core_beast.cpp_staticInit_FUN_004149a0
 // Address: 004149a0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_beast.cpp_factoryFuncBeast_FUN_004149d0
 // Address: 004149d0
@@ -15,7 +15,7 @@ CBeast * __cdecl factoryFuncBeast(void);
 
 // Original: core_beast.cpp_CBeast_getActorType_FUN_004149f0
 // Address: 004149f0
-CDemonActorType * CBeast::getActorType(CBeast *this_ptr);
+CDemonActorType * __cdecl CBeast::getActorType(CBeast *this_ptr);
 
 // Original: core_beast.cpp_CBeast_ctor_FUN_00414a00
 // Address: 00414a00
@@ -51,4 +51,4 @@ ECollisionType __cdecl CBeast::getCollisionType(CBeast *this_ptr,SCollisionInfo 
 
 // Original: core_beast.cpp_CBeast_dtor_FUN_00414c10
 // Address: 00414c10
-CBeast * CBeast::dtor(CBeast *this_ptr,uint flags);
+CBeast * __cdecl CBeast::dtor(CBeast *this_ptr,uint flags);

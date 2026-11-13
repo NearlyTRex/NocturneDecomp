@@ -12,7 +12,7 @@
 ;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 0042479f
 ;   core_exorcism.cpp_CExorcism_fire_FUN_0048b020 at 0048b23e
 ;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004aea5b
-;   core_lightsta.cpp_FUN_004e1070 at 004e1f37
+;   core_lightsta.cpp_CLightStaff_fire_FUN_004e1070 at 004e1f37
 ;   core_weapon.cpp_CWeapon_renderAimBeam_FUN_0057bb60 at 0057bcc3
 ;
 ; *****************************************************************************

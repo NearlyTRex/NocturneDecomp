@@ -36,10 +36,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[17]:
+;   core_charactr.cpp_CCharacter_applyGesture_FUN_00432cb0 at 00432db0
 ;   core_charactr.cpp_CCharacter_blendLayerActionMotion_FUN_004342c0 at 00434308
-;   core_charactr.cpp_FUN_00432cb0 at 00432db0
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046ee0f
 ;   core_doc.cpp_FUN_0046caa0 at 0046e621
-;   core_doc.cpp_FUN_0046ea80 at 0046ee0f
 ;   core_doc.cpp_FUN_0046f200 at 0046f354
 ;   core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004cad20 at 004cafb1
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8d42

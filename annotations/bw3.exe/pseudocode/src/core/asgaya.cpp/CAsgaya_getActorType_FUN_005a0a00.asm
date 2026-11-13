@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_asgaya_cpp_CAsgaya_getActorType_FUN_005a0a00(CAsgaya *this_ptr)
+; CDemonActorType * __cdecl core_asgaya_cpp_CAsgaya_getActorType_FUN_005a0a00(CAsgaya *this_ptr)
 ;
 ; Parameters:
 ; CAsgaya *        Stack[0x4]:4   this_ptr

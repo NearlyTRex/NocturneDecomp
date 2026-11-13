@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamFile_open_FUN_00573f50(CInStreamFile *this_ptr,LPCSTR param_2,int param_3)
+; int __cdecl support_trstream_cpp_CInStreamFile_open_FUN_00573f50(CInStreamFile *this_ptr,char *path,int binary_mode)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; LPCSTR           Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   path
+; int              Stack[0xc]:4   binary_mode
 ;
 ; XREF[4]:
 ;   core_game.cpp_FUN_004bda10 at 004bdd1d

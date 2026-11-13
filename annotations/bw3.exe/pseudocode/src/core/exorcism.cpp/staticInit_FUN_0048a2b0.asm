@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_exorcism_cpp_staticInit_FUN_0048a2b0(void)
+; void __cdecl core_exorcism_cpp_staticInit_FUN_0048a2b0(void)
 ;
 ;
 ; Called Functions:

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 45,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 22,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 73
+    "total_lines": 75
   },
   "cross_references": [],
   "function": {
@@ -23,20 +23,20 @@
         "0059bf2c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_dtor_FUN_0059bec0",
-    "signature": "CAudioRecPuzzle * core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_0059bec0(CAudioRecPuzzle *this_ptr,uint flags)"
+    "signature": "CAudioRecPuzzle * __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_dtor_FUN_0059bec0(CAudioRecPuzzle *this_ptr,uint flags)"
   },
   "function_calls": [
     {
-      "addr": "0059bfc0",
-      "is_variadic": false,
-      "name": "core_bmppuzzl.cpp_CAlphaBitmap_arrdtor30_FUN_0059bfc0"
-    },
-    {
       "addr": "0059ab50",
       "is_variadic": false,
-      "name": "core_zombie.cpp_FUN_0059ab50"
+      "name": "core_bmppuzzl.cpp_CPuzzle_dtor_FUN_0059ab50"
+    },
+    {
+      "addr": "0059bfc0",
+      "is_variadic": false,
+      "name": "core_bmppuzzl.cpp_SButtonStruct_arrdtor30_FUN_0059bfc0"
     },
     {
       "addr": "005b7fa7",
@@ -141,17 +141,17 @@
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 17,
-      "match": "pCVar1[-4].",
+      "match": "pSVar1[-2].",
       "severity": "mild",
-      "text": "pCVar1 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440((CAlphaBitmap *)&pCVar1[-4].act,0);",
+      "text": "((CAlphaBitmap *)&pSVar1[-2].bitmap.height,0);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
-      "match": "pCVar1[-1].",
+      "line": 19,
+      "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "pCVar2 = (CAudioRecPuzzle *)core_zombie_cpp_FUN_0059ab50(&pCVar1[-1].height,1);",
+      "text": "core_bmppuzzl_cpp_CPuzzle_dtor_FUN_0059ab50((CPuzzle *)&pCVar2[-1].height,1);",
       "type": "negative_offset"
     }
   ],

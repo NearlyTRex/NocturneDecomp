@@ -7,7 +7,7 @@
 
 // Original: core_doc.cpp_staticInit_FUN_004689b0
 // Address: 004689b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_doc.cpp_FUN_00468a20
 // Address: 00468a20
@@ -23,15 +23,15 @@ float FUN_00468b80(CDemonActor *param_1);
 
 // Original: core_doc.cpp_factoryFuncDoc_FUN_00468c50
 // Address: 00468c50
-void factoryFuncDoc(void);
+CDoc * __cdecl factoryFuncDoc(void);
 
 // Original: core_doc.cpp_CDoc_getActorType_FUN_00468c70
 // Address: 00468c70
-CDemonActorType * CDoc::getActorType(CDoc *this_ptr);
+CDemonActorType * __cdecl CDoc::getActorType(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_ctor_FUN_00468c80
 // Address: 00468c80
-CDoc * CDoc::ctor(CDoc *this_ptr);
+CDoc * __cdecl CDoc::ctor(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_setup_FUN_00469060
 // Address: 00469060
@@ -59,7 +59,7 @@ void FUN_0046c9e0(int param_1);
 
 // Original: core_doc.cpp_FUN_0046caa0
 // Address: 0046caa0
-void FUN_0046caa0(int param_1);
+void FUN_0046caa0(CDoc *param_1);
 
 // Original: core_doc.cpp_FUN_0046e630
 // Address: 0046e630
@@ -73,9 +73,9 @@ void FUN_0046e730(int param_1,float param_2);
 // Address: 0046ea40
 void __cdecl CDoc::setPositionAndOrientation(CDoc *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 
-// Original: core_doc.cpp_FUN_0046ea80
+// Original: core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80
 // Address: 0046ea80
-void FUN_0046ea80(CCharacter *param_1);
+void __cdecl CDoc::makeDrawDecision(CDoc *this_ptr);
 
 // Original: core_doc.cpp_FUN_0046f200
 // Address: 0046f200
@@ -97,9 +97,9 @@ void FUN_00470750(int param_1);
 // Address: 004707d0
 void FUN_004707d0(int param_1);
 
-// Original: core_doc.cpp_FUN_0047081c
-// Address: 0047081c
-undefined4 FUN_0047081c(CCharacter *param_1);
+// Original: core_doc.cpp_FUN_00470820
+// Address: 00470820
+undefined4 FUN_00470820(void);
 
 // Original: core_doc.cpp_FUN_004712b0
 // Address: 004712b0
@@ -117,21 +117,21 @@ int __cdecl CDoc::renderOpaque(CDoc *this_ptr);
 // Address: 00472220
 int __cdecl CDoc::renderTransparent(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_0047225e
-// Address: 0047225e
-void FUN_0047225e(float *param_1,float param_2,float param_3);
+// Original: core_doc.cpp_FUN_00472260
+// Address: 00472260
+void FUN_00472260(void);
 
-// Original: core_doc.cpp_FUN_004722ee
-// Address: 004722ee
-float * FUN_004722ee(float *param_1,float *param_2);
+// Original: core_doc.cpp_FUN_004722f0
+// Address: 004722f0
+float * FUN_004722f0(void);
 
 // Original: core_doc.cpp_FUN_004724a0
 // Address: 004724a0
 void FUN_004724a0(CDemonActor *param_1,int param_2,float param_3);
 
-// Original: core_doc.cpp_FUN_00473160
+// Original: core_doc.cpp_CDoc_aimLeftPistol_FUN_00473160
 // Address: 00473160
-void FUN_00473160(CDemonActor *param_1);
+void __cdecl CDoc::aimLeftPistol(CDoc *this_ptr);
 
 // Original: core_doc.cpp_CDoc_processDamage_FUN_004737b0
 // Address: 004737b0
@@ -231,4 +231,4 @@ undefined4 FUN_004766f0(int param_1);
 
 // Original: core_doc.cpp_CDoc_dtor_FUN_00476700
 // Address: 00476700
-CDoc * CDoc::dtor(CDoc *this_ptr,uint flags);
+CDoc * __cdecl CDoc::dtor(CDoc *this_ptr,uint flags);

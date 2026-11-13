@@ -1,14 +1,12 @@
 // Name: core_shadow.cpp_CShadowForest_ctor_FUN_00545ea0
 // Address: 00545ea0
 // Address Range: [[00545ea0, 00545ef5]]
-// Convention: unknown
-// Signature: CShadowForest * core_shadow_cpp_CShadowForest_ctor_FUN_00545ea0(CShadowForest *this_ptr)
+// Convention: __cdecl
+// Signature: CShadowForest * __cdecl core_shadow_cpp_CShadowForest_ctor_FUN_00545ea0(CShadowForest *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CShadowForest * core_shadow_cpp_CShadowForest_ctor_FUN_00545ea0(CShadowForest *this_ptr)
+CShadowForest * __cdecl core_shadow_cpp_CShadowForest_ctor_FUN_00545ea0(CShadowForest *this_ptr)
 
 {
   CShadow *pCVar1;

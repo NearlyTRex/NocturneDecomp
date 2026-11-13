@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SRoom * core_set_cpp_SRoom_ctor_FUN_0053baf0(SRoom *this_ptr)
+; SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_0053baf0(SRoom *this_ptr)
 ;
 ; Parameters:
 ; SRoom *          Stack[0x4]:4   this_ptr

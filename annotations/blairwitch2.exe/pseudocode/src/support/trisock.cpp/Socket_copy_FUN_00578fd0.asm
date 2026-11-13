@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SSocket * support_trisock_cpp_Socket_copy_FUN_00578fd0(SSocket *this_ptr,SSocket *other)
+; SSocket * __cdecl support_trisock_cpp_Socket_copy_FUN_00578fd0(SSocket *this_ptr,SSocket *other)
 ;
 ; Parameters:
 ; SSocket *        Stack[0x4]:4   this_ptr

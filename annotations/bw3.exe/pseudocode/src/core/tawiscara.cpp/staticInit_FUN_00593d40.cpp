@@ -1,14 +1,14 @@
 // Name: core_tawiscara.cpp_staticInit_FUN_00593d40
 // Address: 00593d40
 // Address Range: [[00593d40, 00593d9f]]
-// Convention: unknown
-// Signature: void core_tawiscara_cpp_staticInit_FUN_00593d40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_tawiscara_cpp_staticInit_FUN_00593d40(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_tawiscara_cpp_staticInit_FUN_00593d40(void)
+void __cdecl core_tawiscara_cpp_staticInit_FUN_00593d40(void)
 
 {
   _DAT_02d24a54 = 0xbe8f5c29;

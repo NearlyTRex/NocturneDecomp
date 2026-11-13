@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,undefined4 *param_2,uint param_3)
+; int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(CInStreamFile *this_ptr,void *buffer,int count)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; undefined4 *     Stack[0x8]:4   param_2
-; uint             Stack[0xc]:4   param_3
+; void *           Stack[0x8]:4   buffer
+; int              Stack[0xc]:4   count
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -20,7 +20,7 @@
 ;   engine_font.cpp_FUN_004c0fa0 at 004c1154
 ;   engine_pod.cpp_FUN_0053b250 at 0053b3fc
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0 at 00596ab3
-;   engine_texture.cpp_FUN_00597d6e at 00597e96
+;   engine_texture.cpp_FUN_00597d70 at 00597e96
 ;   sound_sndmain.cpp_FUN_0056e830 at 0056eb89
 ;   ... and 1 more
 ;
@@ -76,7 +76,7 @@ section .text
     PUSH EDX                            ; 005a0c6c
     PUSH EBX                            ; 005a0c6d
     CALL support_trstream.cpp_CInStreamFile_fillBuffer_FUN_005a0ec0 ; 005a0c6e
-        ;   XREF to: 005a0ec0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_fillBuffer_FUN_005a0ec0(CInStreamFile * this_ptr, int param_2)
+        ;   XREF to: 005a0ec0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_fillBuffer_FUN_005a0ec0(CInStreamFile * this_ptr, int position)
     ADD ESP,0x8                         ; 005a0c73
     TEST EAX,EAX                        ; 005a0c76
     JZ 0x005a0cd9                       ; 005a0c78

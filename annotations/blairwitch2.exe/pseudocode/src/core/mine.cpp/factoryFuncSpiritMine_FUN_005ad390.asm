@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mine_cpp_factoryFuncSpiritMine_FUN_005ad390(void)
+; CSpiritMine * __cdecl core_mine_cpp_factoryFuncSpiritMine_FUN_005ad390(void)
 ;
 ;
 ; Called Functions:

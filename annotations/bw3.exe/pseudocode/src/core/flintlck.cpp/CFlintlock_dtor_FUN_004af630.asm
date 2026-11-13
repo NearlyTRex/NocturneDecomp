@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFlintlock * core_flintlck_cpp_CFlintlock_dtor_FUN_004af630(CFlintlock *this_ptr,uint flags)
+; CFlintlock * __cdecl core_flintlck_cpp_CFlintlock_dtor_FUN_004af630(CFlintlock *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CFlintlock *     Stack[0x4]:4   this_ptr

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   format
 ; va_list_t        Stack[0xc]:4   args
 ;
-; XREF[29]:
+; XREF[30]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_004685e0 at 0046860c
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00468a90 at 00468aba
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00468940 at 0046896b
@@ -19,7 +19,7 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_004682a0 at 004682cc
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_00468510 at 0046853c
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00468370 at 0046839c
-;   ... and 19 more
+;   ... and 20 more
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005bb050

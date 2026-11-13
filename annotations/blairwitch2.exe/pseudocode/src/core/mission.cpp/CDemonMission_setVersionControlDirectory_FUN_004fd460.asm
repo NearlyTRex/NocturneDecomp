@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   directory
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00528251
+;   core_script.cpp_CScript_step_FUN_00522350 at 00528251
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d1c698

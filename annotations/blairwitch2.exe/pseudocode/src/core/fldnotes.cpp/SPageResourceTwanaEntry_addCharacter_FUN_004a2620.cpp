@@ -2,11 +2,11 @@
 // Address: 004a2620
 // Address Range: [[004a2620, 004a2683]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a2620(SPageResourceTwanaEntry *this_ptr,char *param_2)
+// Signature: void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a2620(SPageResourceTwanaEntry *this_ptr,char *character)
 
 #include "nocturne.h"
 
-void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a2620(SPageResourceTwanaEntry *this_ptr,char *param_2)
+void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a2620(SPageResourceTwanaEntry *this_ptr,char *character)
 
 {
   char cVar1;
@@ -29,13 +29,13 @@ void __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_addCharacter_FUN_004a2620
   }
   pcVar4 = this_ptr->selected_character_0 + iVar3 * 0x20;
   do {
-    cVar1 = *param_2;
+    cVar1 = *character;
     *pcVar4 = cVar1;
     if (cVar1 == '\0') {
       return;
     }
-    cVar1 = param_2[1];
-    param_2 = param_2 + 2;
+    cVar1 = character[1];
+    character = character + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');

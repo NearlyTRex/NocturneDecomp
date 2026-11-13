@@ -1,14 +1,12 @@
 // Name: core_drone.cpp_CDrone_dtor_FUN_004866c0
 // Address: 004866c0
 // Address Range: [[004866c0, 00486744]]
-// Convention: unknown
-// Signature: CDrone * core_drone_cpp_CDrone_dtor_FUN_004866c0(CDrone *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDrone * __cdecl core_drone_cpp_CDrone_dtor_FUN_004866c0(CDrone *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDrone * core_drone_cpp_CDrone_dtor_FUN_004866c0(CDrone *this_ptr,uint flags)
+CDrone * __cdecl core_drone_cpp_CDrone_dtor_FUN_004866c0(CDrone *this_ptr,uint flags)
 
 {
   int iVar1;

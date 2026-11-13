@@ -9,7 +9,7 @@
 ; XREF[19]:
 ;   core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00415d90 at 00415da1
 ;   core_bmppuzzl.cpp_CChemPuzzle_ctor_FUN_004175f0 at 00417601
-;   core_bmppuzzl.cpp_FUN_00418850 at 00418855
+;   core_bmppuzzl.cpp_SButtonStruct_ctorChem_FUN_00418850 at 00418855
 ;   core_bmppuzzl.cpp_SButtonStruct_ctor_FUN_00418870 at 00418875
 ;   core_flashlit.cpp_FUN_004b9ab0 at 004b9af7
 ;   core_fldnotes.cpp_SNotesMap_ctor_FUN_004bc1b0 at 004bc1b9

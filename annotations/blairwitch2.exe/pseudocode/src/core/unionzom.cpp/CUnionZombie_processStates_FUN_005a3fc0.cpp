@@ -16,7 +16,7 @@ void __cdecl core_unionzom_cpp_CUnionZombie_processStates_FUN_005a3fc0(CUnionZom
     core_muzzle_cpp_FUN_0059d650(&(this_ptr->base).state_machine,"VanishAttack");
   }
   else {
-    core_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
+    core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(&this_ptr->base,delta_time,mode);
     if ((mode == 1) &&
        (iVar2 = core_muzzle_cpp_FUN_0059daa0
                           (&(this_ptr->base).state_machine,"VanishAttack"), iVar2 != 0)) {

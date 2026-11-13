@@ -117,9 +117,9 @@ CVector3i * __stack2_esi CDemonCamera::worldToScreenWithFrustumCull(CDemonCamera
 // Address: 0044a6a0
 CVector3i * __stack2_esi CDemonCamera::worldToCameraSpace(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector);
 
-// Original: core_dcamera.cpp_FUN_0044a7de
-// Address: 0044a7de
-void FUN_0044a7de(int param_1,int *param_2);
+// Original: core_dcamera.cpp_FUN_0044a7e0
+// Address: 0044a7e0
+void FUN_0044a7e0(void);
 
 // Original: core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044a9f0
 // Address: 0044a9f0
@@ -145,9 +145,9 @@ int __cdecl CDemonCamera::sampleLightingAntialiased(CDemonCamera *this_ptr,CVect
 // Address: 0044bb00
 int FUN_0044bb00(CDemonCamera *param_1,CVector3i *param_2,CDemonLight *param_3,int *param_4);
 
-// Original: core_dcamera.cpp_FUN_0044bfde
-// Address: 0044bfde
-void FUN_0044bfde(void);
+// Original: core_dcamera.cpp_FUN_0044bfe0
+// Address: 0044bfe0
+void FUN_0044bfe0(void);
 
 // Original: core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044c060
 // Address: 0044c060
@@ -165,8 +165,8 @@ void __cdecl initializeCoronaBuffers(void);
 // Address: 0044d060
 void __cdecl renderCoronaDepthScanline(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left);
 
-// Original: core_dcamera.cpp_renderVolumetricLightScanline_FUN_0044d17e
-// Address: 0044d17e
+// Original: core_dcamera.cpp_renderVolumetricLightScanline_FUN_0044d180
+// Address: 0044d180
 void __cdecl renderVolumetricLightScanline(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left);
 
 // Original: core_dcamera.cpp_renderFlatColorScanline_FUN_0044d320
@@ -181,8 +181,8 @@ void __cdecl renderCoronaProjectedTextureScanline(int scanline_y,int x_start,int
 // Address: 0044d6f0
 void __cdecl CDemonCamera::blurCoronaBufferAndClearEdges(CDemonCamera *this_ptr);
 
-// Original: core_dcamera.cpp_log2Custom_FUN_0044d7cc
-// Address: 0044d7cc
+// Original: core_dcamera.cpp_log2Custom_FUN_0044d7d0
+// Address: 0044d7d0
 double __cdecl log2Custom(double val);
 
 // Original: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_0044d800
@@ -217,9 +217,9 @@ int __cdecl CDemonCamera::lockAndRenderToBuffer(CDemonCamera *this_ptr);
 // Address: 0044dff0
 int __cdecl testCoronaVisibility(int start_x,int start_y,int depth_reciprocal);
 
-// Original: core_dcamera.cpp_FUN_0044e24e
-// Address: 0044e24e
-void FUN_0044e24e(int param_1,int param_2,int param_3,int param_4);
+// Original: core_dcamera.cpp_FUN_0044e250
+// Address: 0044e250
+void FUN_0044e250(void);
 
 // Original: core_dcamera.cpp_blendCoronaTextureSpan_FUN_0044e590
 // Address: 0044e590
@@ -309,8 +309,8 @@ void __cdecl CDemonCamera::blendLightmapPixel16(CDemonCamera *this_ptr,int scree
 // Address: 00450c00
 void __cdecl loadCameraFog(SFog *fog,_FILE *file_handle,int file_version);
 
-// Original: core_dcamera.cpp_saveCameraFog_FUN_00450cbe
-// Address: 00450cbe
+// Original: core_dcamera.cpp_saveCameraFog_FUN_00450cc0
+// Address: 00450cc0
 void __cdecl saveCameraFog(SFog *fog,_FILE *file_handle);
 
 // Original: core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00450d70

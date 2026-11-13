@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_fldnotes.cpp_FUN_004abe00 at 004ac5e5
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004ac5e5
 ;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004a8570 at 004a8619
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90 at 004de085
 ;

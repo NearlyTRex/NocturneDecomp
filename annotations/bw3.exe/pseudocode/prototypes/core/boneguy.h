@@ -7,7 +7,7 @@
 
 // Original: core_boneguy.cpp_staticInit_FUN_00416de0
 // Address: 00416de0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_boneguy.cpp_FUN_00416e90
 // Address: 00416e90
@@ -23,11 +23,11 @@ CBoneGuy * __cdecl factoryFuncBoneGuy(void);
 
 // Original: core_boneguy.cpp_CBoneGuy_getActorType_FUN_00417070
 // Address: 00417070
-CDemonActorType * CBoneGuy::getActorType(CBoneGuy *this_ptr);
+CDemonActorType * __cdecl CBoneGuy::getActorType(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_rgbToHsv_FUN_0041707c
-// Address: 0041707c
-void rgbToHsv(float *param_1);
+// Original: core_boneguy.cpp_rgbToHsv_FUN_00417080
+// Address: 00417080
+void rgbToHsv(void);
 
 // Original: core_boneguy.cpp_hsvToRgb_FUN_00417240
 // Address: 00417240
@@ -103,7 +103,7 @@ CDemonActorType * __cdecl CSkeletonForest::getActorType(CSkeletonForest *this_pt
 
 // Original: core_boneguy.cpp_CSkeletonForest_ctor_FUN_004198e0
 // Address: 004198e0
-CSkeletonForest * CSkeletonForest::ctor(CSkeletonForest *this_ptr);
+CSkeletonForest * __cdecl CSkeletonForest::ctor(CSkeletonForest *this_ptr);
 
 // Original: core_boneguy.cpp_FUN_00419950
 // Address: 00419950
@@ -115,7 +115,7 @@ CDemonActorType * __cdecl CSkeletonIndian::getActorType(CSkeletonIndian *this_pt
 
 // Original: core_boneguy.cpp_CSkeletonIndian_ctor_FUN_00419980
 // Address: 00419980
-CSkeletonIndian * CSkeletonIndian::ctor(CSkeletonIndian *this_ptr);
+CSkeletonIndian * __cdecl CSkeletonIndian::ctor(CSkeletonIndian *this_ptr);
 
 // Original: core_boneguy.cpp_FUN_004199f0
 // Address: 004199f0
@@ -127,7 +127,7 @@ CDemonActorType * __cdecl CSkeletonDemon::getActorType(CSkeletonDemon *this_ptr)
 
 // Original: core_boneguy.cpp_CSkeletonDemon_ctor_FUN_00419a20
 // Address: 00419a20
-CSkeletonDemon * CSkeletonDemon::ctor(CSkeletonDemon *this_ptr);
+CSkeletonDemon * __cdecl CSkeletonDemon::ctor(CSkeletonDemon *this_ptr);
 
 // Original: core_boneguy.cpp_FUN_00419a90
 // Address: 00419a90
@@ -139,7 +139,7 @@ CDemonActorType * __cdecl CBaalSkel::getActorType(CBaalSkel *this_ptr);
 
 // Original: core_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0
 // Address: 00419ac0
-CBaalSkel * CBaalSkel::ctor(CBaalSkel *this_ptr);
+CBaalSkel * __cdecl CBaalSkel::ctor(CBaalSkel *this_ptr);
 
 // Original: core_boneguy.cpp_CBaalSkel_process_FUN_00419b40
 // Address: 00419b40
@@ -151,24 +151,24 @@ void __cdecl CBaalSkel::processDamage(CBaalSkel *this_ptr,SDamageInfo *damage_in
 
 // Original: core_boneguy.cpp_CBaalSkel_dtor_FUN_0041a8c0
 // Address: 0041a8c0
-CBaalSkel * CBaalSkel::dtor(CBaalSkel *this_ptr,uint flags);
+CBaalSkel * __cdecl CBaalSkel::dtor(CBaalSkel *this_ptr,uint flags);
 
 // Original: core_boneguy.cpp_CSkeletonDemon_dtor_FUN_0041a950
 // Address: 0041a950
-CSkeletonDemon * CSkeletonDemon::dtor(CSkeletonDemon *this_ptr,uint flags);
+CSkeletonDemon * __cdecl CSkeletonDemon::dtor(CSkeletonDemon *this_ptr,uint flags);
 
 // Original: core_boneguy.cpp_CSkeletonIndian_dtor_FUN_0041a9e0
 // Address: 0041a9e0
-CSkeletonIndian * CSkeletonIndian::dtor(CSkeletonIndian *this_ptr,uint flags);
+CSkeletonIndian * __cdecl CSkeletonIndian::dtor(CSkeletonIndian *this_ptr,uint flags);
 
 // Original: core_boneguy.cpp_CSkeletonForest_dtor_FUN_0041aa70
 // Address: 0041aa70
-CSkeletonForest * CSkeletonForest::dtor(CSkeletonForest *this_ptr,uint flags);
+CSkeletonForest * __cdecl CSkeletonForest::dtor(CSkeletonForest *this_ptr,uint flags);
 
 // Original: core_boneguy.cpp_CBoneGuy_dtor_FUN_0041ab00
 // Address: 0041ab00
-CBoneGuy * CBoneGuy::dtor(CBoneGuy *this_ptr,uint flags);
+CBoneGuy * __cdecl CBoneGuy::dtor(CBoneGuy *this_ptr,uint flags);
 
 // Original: core_boneguy.cpp_SBoneGuyBox_ctor_FUN_0041ab90
 // Address: 0041ab90
-SBoneGuyBox * SBoneGuyBox::ctor(SBoneGuyBox *this_ptr);
+SBoneGuyBox * __cdecl SBoneGuyBox::ctor(SBoneGuyBox *this_ptr);

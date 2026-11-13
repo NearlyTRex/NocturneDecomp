@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_anvil_cpp_CAnvil_getActorType_FUN_0040ea20(CAnvil *this_ptr)
+; CDemonActorType * __cdecl core_anvil_cpp_CAnvil_getActorType_FUN_0040ea20(CAnvil *this_ptr)
 ;
 ; Parameters:
 ; CAnvil *         Stack[0x4]:4   this_ptr

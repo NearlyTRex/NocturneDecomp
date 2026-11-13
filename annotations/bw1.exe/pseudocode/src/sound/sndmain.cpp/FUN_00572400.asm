@@ -9,7 +9,7 @@
 ;   sound_sndmain.cpp_FUN_0056e830 at 0056ea2d
 ;   sound_sndmain.cpp_FUN_00570160 at 005701eb
 ;   sound_sndmain.cpp_FUN_00570460 at 0057086e
-;   sound_sndmain.cpp_FUN_005740fe at 005741de
+;   sound_sndmain.cpp_FUN_00574100 at 005741de
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20 at 005732a7
 ;
 ; *****************************************************************************

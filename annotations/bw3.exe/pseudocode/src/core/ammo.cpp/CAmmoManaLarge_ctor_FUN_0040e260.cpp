@@ -1,14 +1,12 @@
 // Name: core_ammo.cpp_CAmmoManaLarge_ctor_FUN_0040e260
 // Address: 0040e260
 // Address Range: [[0040e260, 0040e2a1]]
-// Convention: unknown
-// Signature: CAmmoManaLarge * core_ammo_cpp_CAmmoManaLarge_ctor_FUN_0040e260(CAmmoManaLarge *this_ptr)
+// Convention: __cdecl
+// Signature: CAmmoManaLarge * __cdecl core_ammo_cpp_CAmmoManaLarge_ctor_FUN_0040e260(CAmmoManaLarge *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAmmoManaLarge * core_ammo_cpp_CAmmoManaLarge_ctor_FUN_0040e260(CAmmoManaLarge *this_ptr)
+CAmmoManaLarge * __cdecl core_ammo_cpp_CAmmoManaLarge_ctor_FUN_0040e260(CAmmoManaLarge *this_ptr)
 
 {
   CAmmo *pCVar1;

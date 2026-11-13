@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_cloth.cpp_FUN_0043f10c at 0043f13b
+;   core_cloth.cpp_FUN_0043f110 at 0043f13b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b9144

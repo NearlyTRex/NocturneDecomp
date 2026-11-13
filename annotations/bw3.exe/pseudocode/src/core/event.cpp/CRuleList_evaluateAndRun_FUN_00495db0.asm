@@ -7,7 +7,7 @@
 ; CRuleList *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004d4520 at 004d460a
+;   core_hero.cpp_CHero_doHeroAction_FUN_004d4520 at 004d460a
 ;   core_prye.cpp_CPrye_doHeroAction_FUN_00525a20 at 00525aad
 ;
 ; Referenced Globals:

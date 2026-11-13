@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_darkwolf_cpp_CDarkwolf_getActorType_FUN_00598770(CDarkwolf *this_ptr)
+; CDemonActorType * __cdecl core_darkwolf_cpp_CDarkwolf_getActorType_FUN_00598770(CDarkwolf *this_ptr)
 ;
 ; Parameters:
 ; CDarkwolf *      Stack[0x4]:4   this_ptr

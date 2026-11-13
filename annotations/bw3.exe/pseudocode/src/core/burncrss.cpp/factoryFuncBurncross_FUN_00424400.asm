@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_burncrss_cpp_factoryFuncBurncross_FUN_00424400(void)
+; CBurncross * __cdecl core_burncrss_cpp_factoryFuncBurncross_FUN_00424400(void)
 ;
 ;
 ; Called Functions:

@@ -7,7 +7,7 @@
 
 // Original: core_battery.cpp_staticInit_FUN_004143b0
 // Address: 004143b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_battery.cpp_factoryFuncBattery_FUN_004143e0
 // Address: 004143e0
@@ -15,7 +15,7 @@ CBattery * __cdecl factoryFuncBattery(void);
 
 // Original: core_battery.cpp_CBattery_getActorType_FUN_00414400
 // Address: 00414400
-CDemonActorType * CBattery::getActorType(CBattery *this_ptr);
+CDemonActorType * __cdecl CBattery::getActorType(CBattery *this_ptr);
 
 // Original: core_battery.cpp_CBattery_ctor_FUN_00414410
 // Address: 00414410

@@ -6,9 +6,11 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005dabfd
+;   undefined4 DAT_005dac05
 ;
 ; Called Functions:
 ;   core_dpart.cpp_CDemonPart_alloc_FUN_004799e0
+;   core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00479ba0
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_stdio.c_fread_FUN_005c0b10
 ;   crt_string.c__strcmp_FUN_005c0f80
@@ -204,7 +206,7 @@ section .text
         ;   Label: LAB_00479e3a
     TEST EDI,EDI                        ; 00479e3e
     JZ 0x00479ec0                       ; 00479e40
-        ;   XREF to: 00479ec0 (CONDITIONAL_JUMP)
+        ;   XREF to: 00479ec0 (CONDITIONAL_JUMP)  ; LAB_00479ec0
     FLD double ptr [0x005dabfd]         ; 00479e46 | DAT_005dabfd
     FLD float ptr [EDI]                 ; 00479e4c
     FMUL ST1                            ; 00479e4e
@@ -230,7 +232,7 @@ section .text
     FISTP dword ptr [ESP]               ; 00479e80
     TEST EBP,EBP                        ; 00479e83
     JLE 0x00479ec0                      ; 00479e85
-        ;   XREF to: 00479ec0 (CONDITIONAL_JUMP)
+        ;   XREF to: 00479ec0 (CONDITIONAL_JUMP)  ; LAB_00479ec0
     XOR EDX,EDX                         ; 00479e87
     MOV EDI,dword ptr [EBX + 0x2c]      ; 00479e89
         ;   Label: LAB_00479e89
@@ -251,6 +253,38 @@ section .text
     LEA EAX,[EAX]                       ; 00479eb3
     LEA EDX,[EDX]                       ; 00479eb9
     NOP                                 ; 00479ebf
+    PUSH EBX                            ; 00479ec0
+        ;   Label: LAB_00479ec0
+    CALL core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00479ba0 ; 00479ec1
+        ;   XREF to: 00479ba0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00479ba0(CDemonPart * this_ptr)
+    FLD double ptr [0x005dac05]         ; 00479ec6 | DAT_005dac05
+    FILD dword ptr [EBX + 0x354]        ; 00479ecc
+    FMUL ST1                            ; 00479ed2
+    FILD dword ptr [EBX + 0x358]        ; 00479ed4
+    FMUL ST2                            ; 00479eda
+    FILD dword ptr [EBX + 0x35c]        ; 00479edc
+    FMUL ST3                            ; 00479ee2
+    FILD dword ptr [EBX + 0x360]        ; 00479ee4
+    FMUL ST4                            ; 00479eea
+    FILD dword ptr [EBX + 0x364]        ; 00479eec
+    FMUL ST5                            ; 00479ef2
+    FILD dword ptr [EBX + 0x368]        ; 00479ef4
+    FMULP ST6                           ; 00479efa
+    ADD ESP,0x4                         ; 00479efc
+    FXCH ST4                            ; 00479eff
+    FSTP float ptr [EBX + 0x36c]        ; 00479f01
+    FXCH ST2                            ; 00479f07
+    FSTP float ptr [EBX + 0x370]        ; 00479f09
+    FSTP float ptr [EBX + 0x374]        ; 00479f0f
+    FSTP float ptr [EBX + 0x378]        ; 00479f15
+    FSTP float ptr [EBX + 0x37c]        ; 00479f1b
+    FSTP float ptr [EBX + 0x380]        ; 00479f21
+    ADD ESP,0xc                         ; 00479f27
+    POP EBP                             ; 00479f2a
+    POP EDI                             ; 00479f2b
+    POP ESI                             ; 00479f2c
+    POP EBX                             ; 00479f2d
+    RET                                 ; 00479f2e
     MOV ESI,dword ptr [EBX + 0x34]      ; 00479f2f
         ;   Label: LAB_00479f2f
     LEA ECX,[ESI + EAX*0x1]             ; 00479f32

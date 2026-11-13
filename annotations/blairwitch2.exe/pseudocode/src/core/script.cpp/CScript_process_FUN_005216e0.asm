@@ -27,7 +27,7 @@
 ; Called Functions:
 ;   core_charactr.cpp_FUN_0042bff0
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250
-;   core_script.cpp_FUN_00522350
+;   core_script.cpp_CScript_step_FUN_00522350
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
@@ -112,8 +112,8 @@ section .text
     PUSH EAX                            ; 0052178c
     PUSH EBX                            ; 0052178d
     MOV EDI,dword ptr [EBX + 0x44]      ; 0052178e
-    CALL core_script.cpp_FUN_00522350   ; 00521791
-        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00522350()
+    CALL core_script.cpp_CScript_step_FUN_00522350 ; 00521791
+        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_00522350(CScript * this_ptr, float * param_2)
     ADD ESP,0x8                         ; 00521796
     TEST EAX,EAX                        ; 00521799
     JZ 0x00521753                       ; 0052179b

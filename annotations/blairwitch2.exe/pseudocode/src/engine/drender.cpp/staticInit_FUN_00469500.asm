@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_drender_cpp_staticInit_FUN_00469500(void)
+; void __cdecl engine_drender_cpp_staticInit_FUN_00469500(void)
 ;
 ;
 ; Called Functions:

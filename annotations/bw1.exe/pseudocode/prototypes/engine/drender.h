@@ -7,7 +7,7 @@
 
 // Original: engine_drender.cpp_staticInit_FUN_00481a10
 // Address: 00481a10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_ctor_FUN_00481a20
 // Address: 00481a20
@@ -41,9 +41,9 @@ int __cdecl CDemonRenderer::renderDepthProfiledDirect(CDemonRenderer *this_ptr,S
 // Address: 00481fa0
 void __cdecl CDemonRenderer::renderNearPlaneTexturedPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
-// Original: engine_drender.cpp_FUN_004820ec
-// Address: 004820ec
-void FUN_004820ec(CDemonRenderer *param_1,int param_2);
+// Original: engine_drender.cpp_FUN_004820f0
+// Address: 004820f0
+void FUN_004820f0(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170
 // Address: 00482170
@@ -57,17 +57,17 @@ void __cdecl CDemonRenderer::renderTexturedPoly(CDemonRenderer *this_ptr,SMRGLPr
 // Address: 00482390
 void __cdecl CDemonRenderer::renderTexturedFace(CDemonRenderer *this_ptr,SInputFace *face,int render_flags);
 
-// Original: engine_drender.cpp_FUN_004824ac
-// Address: 004824ac
-void FUN_004824ac(CDemonRenderer *param_1,int param_2);
+// Original: engine_drender.cpp_FUN_004824b0
+// Address: 004824b0
+void FUN_004824b0(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_00482540
 // Address: 00482540
 void __cdecl CDemonRenderer::renderAlphaBlendedPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
-// Original: engine_drender.cpp_FUN_0048269e
-// Address: 0048269e
-void FUN_0048269e(void);
+// Original: engine_drender.cpp_FUN_004826a0
+// Address: 004826a0
+void FUN_004826a0(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_00482780
 // Address: 00482780
@@ -81,13 +81,13 @@ void __cdecl CDemonRenderer::renderSolidTexturedPoly(CDemonRenderer *this_ptr,SM
 // Address: 004829b0
 void __cdecl CDemonRenderer::renderFullEffectsDirect(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
-// Original: engine_drender.cpp_FUN_00482a8e
-// Address: 00482a8e
-void FUN_00482a8e(CDemonRenderer *param_1,int param_2);
+// Original: engine_drender.cpp_FUN_00482a90
+// Address: 00482a90
+void FUN_00482a90(void);
 
-// Original: engine_drender.cpp_FUN_00482bee
-// Address: 00482bee
-void FUN_00482bee(CDemonRenderer *param_1,int param_2);
+// Original: engine_drender.cpp_FUN_00482bf0
+// Address: 00482bf0
+void FUN_00482bf0(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_00482cd0
 // Address: 00482cd0
@@ -109,9 +109,9 @@ void __cdecl CDemonRenderer::renderBlendedDirect(CDemonRenderer *this_ptr,SMRGLH
 // Address: 00483120
 void __cdecl CDemonRenderer::renderBlendedPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
-// Original: engine_drender.cpp_FUN_0048326e
-// Address: 0048326e
-void FUN_0048326e(CDemonRenderer *param_1,int param_2);
+// Original: engine_drender.cpp_FUN_00483270
+// Address: 00483270
+void FUN_00483270(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_00483340
 // Address: 00483340
@@ -277,9 +277,9 @@ void __cdecl CDemonRenderer::renderFacetList(CDemonRenderer *this_ptr,SMRGLPrimi
 // Address: 004844f0
 void __cdecl CDemonRenderer::renderFaceList(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags);
 
-// Original: engine_drender.cpp_FUN_0048478e
-// Address: 0048478e
-void FUN_0048478e(int *param_1,ushort *param_2,int param_3,int param_4,uint param_5);
+// Original: engine_drender.cpp_FUN_00484790
+// Address: 00484790
+void FUN_00484790(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40
 // Address: 00484a40

@@ -7,7 +7,7 @@
 
 // Original: core_gasmask.cpp_staticInit_FUN_004c65e0
 // Address: 004c65e0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_gasmask.cpp_factoryFuncGasMask_FUN_004c6610
 // Address: 004c6610
@@ -15,7 +15,7 @@ CGasMask * __cdecl factoryFuncGasMask(void);
 
 // Original: core_gasmask.cpp_CGasMask_getActorType_FUN_004c6630
 // Address: 004c6630
-CDemonActorType * CGasMask::getActorType(CGasMask *this_ptr);
+CDemonActorType * __cdecl CGasMask::getActorType(CGasMask *this_ptr);
 
 // Original: core_gasmask.cpp_CGasMask_ctor_FUN_004c6640
 // Address: 004c6640

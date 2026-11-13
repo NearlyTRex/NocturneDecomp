@@ -7,19 +7,19 @@
 
 // Original: core_styler.cpp_staticInit_FUN_0059d6f0
 // Address: 0059d6f0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_styler.cpp_factoryFuncStyler_FUN_0059d720
 // Address: 0059d720
-void factoryFuncStyler(void);
+CStyler * __cdecl factoryFuncStyler(void);
 
 // Original: core_styler.cpp_CStyler_getActorType_FUN_0059d740
 // Address: 0059d740
-CDemonActorType * CStyler::getActorType(CStyler *this_ptr);
+CDemonActorType * __cdecl CStyler::getActorType(CStyler *this_ptr);
 
 // Original: core_styler.cpp_CStyler_ctor_FUN_0059d750
 // Address: 0059d750
-CStyler * CStyler::ctor(CStyler *this_ptr);
+CStyler * __cdecl CStyler::ctor(CStyler *this_ptr);
 
 // Original: core_styler.cpp_CStyler_setup_FUN_0059d7f0
 // Address: 0059d7f0
@@ -47,4 +47,4 @@ void __cdecl CStyler::archive(CStyler *this_ptr);
 
 // Original: core_styler.cpp_CStyler_dtor_FUN_0059df60
 // Address: 0059df60
-CStyler * CStyler::dtor(CStyler *this_ptr,uint flags);
+CStyler * __cdecl CStyler::dtor(CStyler *this_ptr,uint flags);

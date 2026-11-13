@@ -1,14 +1,12 @@
 // Name: core_doc.cpp_CDoc_dtor_FUN_00450580
 // Address: 00450580
 // Address Range: [[00450580, 0045061c]]
-// Convention: unknown
-// Signature: CDoc * core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDoc * core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)
+CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)
 
 {
   CSimpleParticleSystem *this_ptr_00;

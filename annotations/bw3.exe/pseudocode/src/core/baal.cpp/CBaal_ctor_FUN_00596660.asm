@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBaal * core_baal_cpp_CBaal_ctor_FUN_00596660(CBaal *this_ptr)
+; CBaal * __cdecl core_baal_cpp_CBaal_ctor_FUN_00596660(CBaal *this_ptr)
 ;
 ; Parameters:
 ; CBaal *          Stack[0x4]:4   this_ptr

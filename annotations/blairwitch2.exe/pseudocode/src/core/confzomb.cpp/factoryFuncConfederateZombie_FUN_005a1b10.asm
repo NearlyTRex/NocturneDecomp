@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_confzomb_cpp_factoryFuncConfederateZombie_FUN_005a1b10(void)
+; CConfederateZombie * __cdecl core_confzomb_cpp_factoryFuncConfederateZombie_FUN_005a1b10(void)
 ;
 ;
 ; Called Functions:

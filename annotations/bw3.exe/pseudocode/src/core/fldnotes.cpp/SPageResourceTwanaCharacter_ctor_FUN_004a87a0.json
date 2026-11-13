@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 135,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 9,
+    "pseudocode_lines": 28,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_param"
+      "unrolled_strcpy"
     ],
-    "total_lines": 82
+    "total_lines": 85
   },
   "cross_references": [
     {
@@ -35,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004a87a0",
-    "signature": "SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_ctor_FUN_004a87a0(SPageResourceTwanaCharacter *this_ptr,char *param_2)"
+    "signature": "SPageResourceTwanaCharacter * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_ctor_FUN_004a87a0(SPageResourceTwanaCharacter *this_ptr,char *character)"
   },
   "function_calls": [
     {
@@ -150,7 +148,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "character",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -159,76 +157,20 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_ctor_FUN_004a87a0(SPageResourceTwanaCharacter *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 24,
       "match": "DAT_005c0d9a",
       "severity": "mild",
       "text": "_sprintf(local_10c,&DAT_005c0d9a);",
       "type": "undefined_data"
     },
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 19,
-      "match": "(int)&NAME used in byte-offset arithmetic",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 15,
+      "match": "do {",
       "severity": "moderate",
-      "text": "*(char *)((int)&(pSVar3->base).x + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 20,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pSVar3 = (SPageResourceBitmap *)((int)&(pSVar3->base).x + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 20,
-      "match": "pSVar3 = (T *)((int)&(pSVar3->FIELD).SUBFIELD + CONST)",
-      "severity": "moderate",
-      "text": "pSVar3 = (SPageResourceBitmap *)((int)&(pSVar3->base).x + 2);",
-      "type": "shadow_pointer_walk"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

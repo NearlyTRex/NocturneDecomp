@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_setcolid_cpp_intersectXZCylinder_FUN_00557e10(float *param_1,float param_2,float param_3,int param_4)
+; int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00557e10(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info)
 ;
+; Parameters:
+; SIntersectXZCylinder * Stack[0x4]:4   cylinder
+; float            Stack[0x8]:4   obstacle_x
+; float            Stack[0xc]:4   obstacle_y
+; SCollisionInfo * Stack[0x10]:4   collision_info
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f0e2d

@@ -1,20 +1,20 @@
 // Name: core_prye.cpp_factoryFuncPrye_FUN_00517f50
 // Address: 00517f50
 // Address Range: [[00517f50, 00517f6b]]
-// Convention: unknown
-// Signature: void core_prye_cpp_factoryFuncPrye_FUN_00517f50(void)
+// Convention: __cdecl
+// Signature: CPrye * __cdecl core_prye_cpp_factoryFuncPrye_FUN_00517f50(void)
 
 #include "nocturne.h"
 
-void core_prye_cpp_factoryFuncPrye_FUN_00517f50(void)
+CPrye * __cdecl core_prye_cpp_factoryFuncPrye_FUN_00517f50(void)
 
 {
-  CPrye *this_ptr;
+  CPrye *pCVar1;
   
-  this_ptr = (CPrye *)operator_new(0x20d04);
-  if (this_ptr == (CPrye *)0x0) {
-    return;
+  pCVar1 = (CPrye *)operator_new(0x20d04);
+  if (pCVar1 == (CPrye *)0x0) {
+    return (CPrye *)0x0;
   }
-  core_prye_cpp_CPrye_ctor_FUN_00517f80(this_ptr);
-  return;
+  pCVar1 = core_prye_cpp_CPrye_ctor_FUN_00517f80(pCVar1);
+  return pCVar1;
 }

@@ -130,7 +130,7 @@ section .text
     LEA EAX,[ESP + 0xac]                ; 0043514e
     PUSH EAX                            ; 00435155
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0 ; 00435156
-        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
+        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile * this_ptr, char * directory, char * filename, int binary_mode)
     ADD ESP,0x10                        ; 0043515b
     TEST EAX,EAX                        ; 0043515e
     JZ 0x004351e7                       ; 00435160
@@ -140,7 +140,7 @@ section .text
     LEA EAX,[ESP + 0xa8]                ; 0043516c
     PUSH EAX                            ; 00435173
     CALL support_trstream.cpp_CInStreamFile_read_FUN_00573c00 ; 00435174
-        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
+        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, void * buffer, int count)
     ADD ESP,0xc                         ; 00435179
     CMP EAX,0x300                       ; 0043517c
     JZ 0x004351bb                       ; 00435181
@@ -166,7 +166,7 @@ section .text
         ;   Label: LAB_004351bb
     PUSH EAX                            ; 004351c2
     CALL support_trstream.cpp_CInStreamFile_close_FUN_00573db0 ; 004351c3
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004351c8
     PUSH 0x0                            ; 004351cb
         ;   Label: LAB_004351cb

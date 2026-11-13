@@ -81,8 +81,8 @@ void __cdecl C3DSLight::reset(C3DSLight *this_ptr);
 // Address: 0055d610
 void __cdecl generateSphereVertex(int longitude_index,int latitude_index,int vertex_buffer_index,float radius);
 
-// Original: core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_0055d71c
-// Address: 0055d71c
+// Original: core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_0055d720
+// Address: 0055d720
 void __cdecl C3DSLight::renderVolumetricSphere(C3DSLight *this_ptr);
 
 // Original: core_setutil.cpp_C3DSLight_isVisible_FUN_0055d9c0

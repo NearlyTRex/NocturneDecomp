@@ -1,20 +1,20 @@
 // Name: core_bwsearch.cpp_factoryFuncSearchParty_FUN_005a8cc0
 // Address: 005a8cc0
 // Address Range: [[005a8cc0, 005a8cdb]]
-// Convention: unknown
-// Signature: void core_bwsearch_cpp_factoryFuncSearchParty_FUN_005a8cc0(void)
+// Convention: __cdecl
+// Signature: CSearchParty * __cdecl core_bwsearch_cpp_factoryFuncSearchParty_FUN_005a8cc0(void)
 
 #include "nocturne.h"
 
-void core_bwsearch_cpp_factoryFuncSearchParty_FUN_005a8cc0(void)
+CSearchParty * __cdecl core_bwsearch_cpp_factoryFuncSearchParty_FUN_005a8cc0(void)
 
 {
-  CSearchParty *this_ptr;
+  CSearchParty *pCVar1;
   
-  this_ptr = (CSearchParty *)operator_new(0x11850);
-  if (this_ptr == (CSearchParty *)0x0) {
-    return;
+  pCVar1 = (CSearchParty *)operator_new(0x11850);
+  if (pCVar1 == (CSearchParty *)0x0) {
+    return (CSearchParty *)0x0;
   }
-  core_bwsearch_cpp_CSearchParty_ctor_FUN_005a8cf0(this_ptr);
-  return;
+  pCVar1 = core_bwsearch_cpp_CSearchParty_ctor_FUN_005a8cf0(pCVar1);
+  return pCVar1;
 }

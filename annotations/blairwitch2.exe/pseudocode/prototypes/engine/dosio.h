@@ -65,9 +65,9 @@ void __cdecl CFileFinder::closeSearch(CFileFinder *this_ptr);
 // Address: 00460f90
 void __cdecl CFileFinder::reset(CFileFinder *this_ptr);
 
-// Original: engine_dosio.cpp_FUN_00460fa0
+// Original: engine_dosio.cpp_CFileFinder_convertStruct_FUN_00460fa0
 // Address: 00460fa0
-void FUN_00460fa0(char *param_1,byte *param_2);
+void __cdecl CFileFinder::convertStruct(CFileFinder *this_ptr,byte *param_2);
 
 // Original: engine_dosio.cpp_splitPath_FUN_00461070
 // Address: 00461070

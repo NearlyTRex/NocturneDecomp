@@ -17,7 +17,7 @@
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590 at 004fbb56
 ;   core_mission.cpp_FUN_004fd280 at 004fd3c5
 ;   core_passngr.cpp_CPassenger_process_FUN_005117a0 at 005118c6
-;   core_script.cpp_FUN_00522350 at 00526a6f
+;   core_script.cpp_CScript_step_FUN_00522350 at 00526a6f
 ;   ... and 4 more
 ;
 ; Called Functions:

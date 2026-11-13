@@ -14,7 +14,8 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[3]:
+; XREF[4]:
+;   core_menu.cpp_FUN_004eba50 at 004ebc2e
 ;   core_menu.cpp_FUN_004ebf10 at 004ecb4b
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb99e
 ;   shape_edittool.cpp_FUN_0047dc40 at 0047dd3c

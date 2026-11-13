@@ -11,10 +11,10 @@
 ;
 ; XREF[19]:
 ;   core_doc.cpp_CDoc_canDoHeroAction_FUN_00475650 at 00475838
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046ef54
 ;   core_doc.cpp_CDoc_renderOpaque_FUN_00471af0 at 00471cf4
-;   core_doc.cpp_FUN_0046ea80 at 0046ef54
 ;   core_doc.cpp_FUN_0046f740 at 0046f9d6
-;   core_doc.cpp_FUN_0047081c at 0047083f
+;   core_doc.cpp_FUN_00470820 at 0047083f
 ;   core_doc.cpp_FUN_004712b0 at 004712e8
 ;   core_doc.cpp_FUN_00474400 at 00474807
 ;   core_doc.cpp_FUN_00475920 at 00475a19

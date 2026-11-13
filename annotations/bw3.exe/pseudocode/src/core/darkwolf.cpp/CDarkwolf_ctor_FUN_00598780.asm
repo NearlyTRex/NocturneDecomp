@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDarkwolf * core_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(CDarkwolf *this_ptr)
+; CDarkwolf * __cdecl core_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(CDarkwolf *this_ptr)
 ;
 ; Parameters:
 ; CDarkwolf *      Stack[0x4]:4   this_ptr

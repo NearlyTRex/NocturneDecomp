@@ -7,19 +7,19 @@
 
 // Original: core_shadow.cpp_staticInit_FUN_0055da40
 // Address: 0055da40
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_shadow.cpp_factoryFuncShadow_FUN_0055daa0
 // Address: 0055daa0
-void factoryFuncShadow(void);
+CShadow * __cdecl factoryFuncShadow(void);
 
 // Original: core_shadow.cpp_CShadow_getActorType_FUN_0055dac0
 // Address: 0055dac0
-CDemonActorType * CShadow::getActorType(CShadow *this_ptr);
+CDemonActorType * __cdecl CShadow::getActorType(CShadow *this_ptr);
 
 // Original: core_shadow.cpp_CShadow_ctor_FUN_0055dad0
 // Address: 0055dad0
-CShadow * CShadow::ctor(CShadow *this_ptr);
+CShadow * __cdecl CShadow::ctor(CShadow *this_ptr);
 
 // Original: core_shadow.cpp_CShadow_setup_FUN_0055dbf0
 // Address: 0055dbf0
@@ -89,10 +89,10 @@ EDeathState __cdecl CShadow::getDeathState(CShadow *this_ptr);
 // Address: 00560150
 int __cdecl CShadow::getTargetPoints(CShadow *this_ptr,CVector3f *out_points_array);
 
-// Original: core_shadow.cpp_FUN_005601bc
-// Address: 005601bc
-void FUN_005601bc(CCharacter *param_1);
+// Original: core_shadow.cpp_FUN_005601c0
+// Address: 005601c0
+void FUN_005601c0(void);
 
 // Original: core_shadow.cpp_CShadow_dtor_FUN_005603b0
 // Address: 005603b0
-CShadow * CShadow::dtor(CShadow *this_ptr,uint flags);
+CShadow * __cdecl CShadow::dtor(CShadow *this_ptr,uint flags);

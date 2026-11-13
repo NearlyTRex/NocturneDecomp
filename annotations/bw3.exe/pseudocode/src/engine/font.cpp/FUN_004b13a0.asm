@@ -8,13 +8,13 @@
 ;   engine_font.cpp_FUN_004b33d0 at 004b34d5
 ;
 ; Called Functions:
-;   engine_mini3d.cpp_FUN_004ed980
-;   engine_mini3d.cpp_FUN_004edad0
-;   engine_mini3d.cpp_FUN_004edc90
-;   engine_mini3d.cpp_FUN_004edca0
-;   engine_mini3d.cpp_FUN_004edcb0
-;   engine_mini3d.cpp_FUN_004ee5b0
-;   engine_mini3d.cpp_FUN_004f02b0
+;   engine_mini3d.cpp_disableClipping_FUN_004f02b0
+;   engine_mini3d.cpp_disableExtraRenderState_FUN_004edcb0
+;   engine_mini3d.cpp_disableFog_FUN_004edc90
+;   engine_mini3d.cpp_enableExtraRenderState_FUN_004edca0
+;   engine_mini3d.cpp_polyListD3DTL_FUN_004ee5b0
+;   engine_mini3d.cpp_setRenderFlags_FUN_004edad0
+;   engine_mini3d.cpp_useTexture_FUN_004ed980
 ;   engine_palette.cpp_FUN_00509d90
 ;
 ; *****************************************************************************
@@ -53,19 +53,19 @@ section .text
         ;   Label: LAB_004b13ea
     LEA EAX,[EBX + 0x1db4]              ; 004b13eb
     PUSH EAX                            ; 004b13f1
-    CALL engine_mini3d.cpp_FUN_004ed980 ; 004b13f2
-        ;   XREF to: 004ed980 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004ed980()
+    CALL engine_mini3d.cpp_useTexture_FUN_004ed980 ; 004b13f2
+        ;   XREF to: 004ed980 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_useTexture_FUN_004ed980(int texture)
     ADD ESP,0x4                         ; 004b13f7
     PUSH 0x0                            ; 004b13fa
-    CALL engine_mini3d.cpp_FUN_004edad0 ; 004b13fc
-        ;   XREF to: 004edad0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edad0()
+    CALL engine_mini3d.cpp_setRenderFlags_FUN_004edad0 ; 004b13fc
+        ;   XREF to: 004edad0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setRenderFlags_FUN_004edad0(int flags)
     ADD ESP,0x4                         ; 004b1401
-    CALL engine_mini3d.cpp_FUN_004f02b0 ; 004b1404
-        ;   XREF to: 004f02b0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f02b0()
-    CALL engine_mini3d.cpp_FUN_004edc90 ; 004b1409
-        ;   XREF to: 004edc90 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edc90()
-    CALL engine_mini3d.cpp_FUN_004edca0 ; 004b140e
-        ;   XREF to: 004edca0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edca0()
+    CALL engine_mini3d.cpp_disableClipping_FUN_004f02b0 ; 004b1404
+        ;   XREF to: 004f02b0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_disableClipping_FUN_004f02b0()
+    CALL engine_mini3d.cpp_disableFog_FUN_004edc90 ; 004b1409
+        ;   XREF to: 004edc90 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_disableFog_FUN_004edc90()
+    CALL engine_mini3d.cpp_enableExtraRenderState_FUN_004edca0 ; 004b140e
+        ;   XREF to: 004edca0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_enableExtraRenderState_FUN_004edca0()
     MOV EAX,dword ptr [EBX + 0x1ddc]    ; 004b1413
     MOV EDX,EAX                         ; 004b1419
     MOV ECX,0x3                         ; 004b141b
@@ -78,14 +78,14 @@ section .text
     PUSH EBP                            ; 004b1433
     MOV EAX,dword ptr [EBX + 0x1dd0]    ; 004b1434
     PUSH EAX                            ; 004b143a
-    CALL engine_mini3d.cpp_FUN_004ee5b0 ; 004b143b
-        ;   XREF to: 004ee5b0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004ee5b0()
+    CALL engine_mini3d.cpp_polyListD3DTL_FUN_004ee5b0 ; 004b143b
+        ;   XREF to: 004ee5b0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_polyListD3DTL_FUN_004ee5b0(float * vertices, int vertex_count, ushort * indices, int triangle_count)
     ADD ESP,0x10                        ; 004b1440
-    CALL engine_mini3d.cpp_FUN_004edcb0 ; 004b1443
-        ;   XREF to: 004edcb0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edcb0()
+    CALL engine_mini3d.cpp_disableExtraRenderState_FUN_004edcb0 ; 004b1443
+        ;   XREF to: 004edcb0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_disableExtraRenderState_FUN_004edcb0()
     PUSH 0xc0                           ; 004b1448
-    CALL engine_mini3d.cpp_FUN_004edad0 ; 004b144d
-        ;   XREF to: 004edad0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edad0()
+    CALL engine_mini3d.cpp_setRenderFlags_FUN_004edad0 ; 004b144d
+        ;   XREF to: 004edad0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setRenderFlags_FUN_004edad0(int flags)
     ADD ESP,0x4                         ; 004b1452
     POP EDI                             ; 004b1455
     JMP 0x004b13c1                      ; 004b1456

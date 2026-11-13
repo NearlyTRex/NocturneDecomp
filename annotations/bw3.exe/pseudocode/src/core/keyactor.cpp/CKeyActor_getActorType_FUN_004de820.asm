@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_keyactor_cpp_CKeyActor_getActorType_FUN_004de820(CKeyActor *this_ptr)
+; CDemonActorType * __cdecl core_keyactor_cpp_CKeyActor_getActorType_FUN_004de820(CKeyActor *this_ptr)
 ;
 ; Parameters:
 ; CKeyActor *      Stack[0x4]:4   this_ptr

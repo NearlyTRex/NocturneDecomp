@@ -1,15 +1,14 @@
 // Name: core_batman.cpp_CBatman_ctor_FUN_00412780
 // Address: 00412780
 // Address Range: [[00412780, 0041283a]]
-// Convention: unknown
-// Signature: CBatman * core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)
+// Convention: __cdecl
+// Signature: CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CBatman * core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)
+CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)
 
 {
   char cVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CTwigZombie * core_fforest_cpp_CTwigZombie_ctor_FUN_005a26d0(CTwigZombie *this_ptr)
+; CTwigZombie * __cdecl core_fforest_cpp_CTwigZombie_ctor_FUN_005a26d0(CTwigZombie *this_ptr)
 ;
 ; Parameters:
 ; CTwigZombie *    Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_boneguy_cpp_CBoneGuy_getActorType_FUN_00417070(CBoneGuy *this_ptr)
+; CDemonActorType * __cdecl core_boneguy_cpp_CBoneGuy_getActorType_FUN_00417070(CBoneGuy *this_ptr)
 ;
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr

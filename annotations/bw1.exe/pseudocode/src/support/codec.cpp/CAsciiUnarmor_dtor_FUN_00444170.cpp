@@ -1,14 +1,12 @@
 // Name: support_codec.cpp_CAsciiUnarmor_dtor_FUN_00444170
 // Address: 00444170
 // Address Range: [[00444170, 004441bd]]
-// Convention: unknown
-// Signature: CAsciiUnarmor * support_codec_cpp_CAsciiUnarmor_dtor_FUN_00444170(CAsciiUnarmor *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CAsciiUnarmor * __cdecl support_codec_cpp_CAsciiUnarmor_dtor_FUN_00444170(CAsciiUnarmor *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAsciiUnarmor * support_codec_cpp_CAsciiUnarmor_dtor_FUN_00444170(CAsciiUnarmor *this_ptr,uint flags)
+CAsciiUnarmor * __cdecl support_codec_cpp_CAsciiUnarmor_dtor_FUN_00444170(CAsciiUnarmor *this_ptr,uint flags)
 
 {
   CAsciiUnarmor *pCVar1;

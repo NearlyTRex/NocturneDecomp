@@ -43,7 +43,8 @@ void __cdecl core_icepick_cpp_CIcePick_processMotionEvents_FUN_004f2340(CIcePick
       pCVar1 = this_ptr->pending_pickup_target;
       if (pCVar1 != (CDemonActor *)0x0) {
         this_ptr->pending_pickup_target = (CDemonActor *)0x0;
-        core_charactr_cpp_FUN_004325b0(this_ptr,1,pCVar1,0x3e4ccccd,0);
+        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0
+                  ((CCharacter *)this_ptr,1,(int)pCVar1,0x3e4ccccd,0);
       }
       break;
     case 0x69:

@@ -1,12 +1,12 @@
 // Name: core_fire.cpp_staticInit_FUN_004930e0
 // Address: 004930e0
 // Address Range: [[004930e0, 004933b5]]
-// Convention: unknown
-// Signature: void core_fire_cpp_staticInit_FUN_004930e0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_staticInit_FUN_004930e0(void)
 
 #include "nocturne.h"
 
-void core_fire_cpp_staticInit_FUN_004930e0(void)
+void __cdecl core_fire_cpp_staticInit_FUN_004930e0(void)
 
 {
   core_fire_cpp_CFireEffect_ctor_FUN_0049c170((CFireEffect *)0x1c3deb4);

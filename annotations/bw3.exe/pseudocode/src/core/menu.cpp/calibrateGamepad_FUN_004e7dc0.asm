@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_004e8f2e at 004e8f45
+;   core_menu.cpp_FUN_004e8f30 at 004e8f45
 ;   core_menu.cpp_FUN_004e8f80 at 004e94ad
 ;   core_menu.cpp_FUN_004eae80 at 004ebe19
 ;

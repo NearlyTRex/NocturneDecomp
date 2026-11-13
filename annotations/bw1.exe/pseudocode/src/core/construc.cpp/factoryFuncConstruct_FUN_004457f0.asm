@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_construc_cpp_factoryFuncConstruct_FUN_004457f0(void)
+; CConstruct * __cdecl core_construc_cpp_factoryFuncConstruct_FUN_004457f0(void)
 ;
 ;
 ; Called Functions:

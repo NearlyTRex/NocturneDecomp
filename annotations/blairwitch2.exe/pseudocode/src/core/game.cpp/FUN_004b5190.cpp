@@ -33,12 +33,7 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
   char local_2e0 [256];
   char local_1e0 [200];
   char local_118 [100];
-  uint local_b4;
-  uint local_b0;
-  uint local_ac;
-  uint local_a8;
-  uint local_a4;
-  uint local_a0;
+  CSlew local_b4;
   int local_98;
   float afStack_94 [4];
   float local_84;
@@ -92,22 +87,22 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
       core_sound_cpp_CSound_process_FUN_0055a3c0(0x0264B290);
     }
     else {
-      core_slew_cpp_FUN_00549380(&local_b4);
+      core_slew_cpp_CSlew_init_FUN_00549380(&local_b4);
       iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-      if (&local_b4 != (uint *)(iVar2 + 0x20)) {
-        local_b4 = *(uint *)(iVar2 + 0x20);
-        local_b0 = *(uint *)(iVar2 + 0x24);
-        local_ac = *(uint *)(iVar2 + 0x28);
+      if (&local_b4 != (CSlew *)(iVar2 + 0x20)) {
+        local_b4.position.x = (((CSlew *)(iVar2 + 0x20))->position).x;
+        local_b4.position.y = *(float *)(iVar2 + 0x24);
+        local_b4.position.z = *(float *)(iVar2 + 0x28);
       }
       iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-      if (&local_a8 != (uint *)(iVar2 + 0x30)) {
-        local_a8 = *(uint *)(iVar2 + 0x30);
-        local_a4 = *(uint *)(iVar2 + 0x34);
-        local_a0 = *(uint *)(iVar2 + 0x38);
+      if (&local_b4.orientation != (UOrientationVector *)(iVar2 + 0x30)) {
+        local_b4.orientation.vec.x = (((UOrientationVector *)(iVar2 + 0x30))->vec).x;
+        local_b4.orientation.vec.y = *(float *)(iVar2 + 0x34);
+        local_b4.orientation.vec.z = *(float *)(iVar2 + 0x38);
       }
       core_slew_cpp_FUN_005493d0(&local_b4);
       iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);
-      (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x70))(iVar2,&local_b4,&local_a8);
+      (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x70))(iVar2,&local_b4,&local_b4.orientation);
       if ((DAT_01c2a384 & 1) != 0) {
         core_dcamera_cpp_FUN_0043c6b0(&g_CDemonCameraInstance,_DAT_01c2a37c,_DAT_01c2a380);
         input_ptr = &local_80;
@@ -161,7 +156,7 @@ void core_game_cpp_FUN_004b5190(CGame *param_1)
         }
       }
       else {
-        core_fldnotes_cpp_FUN_004a5700(g_CFieldNotesPtr);
+        core_fldnotes_cpp_CFieldNotes_draw_FUN_004a5700(g_CFieldNotesPtr);
       }
       if (((param_1->developer_mode_enabled != 0) ||
           (pcVar10 = getenv("SPOOKHOUSE"), pcVar10 != (char *)0x0))

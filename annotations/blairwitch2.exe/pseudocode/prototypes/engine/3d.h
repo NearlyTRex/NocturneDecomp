@@ -23,7 +23,7 @@ SMRGLHeaderExtended * __cdecl processCameraRelativePoint(SMRGLPoint *block);
 
 // Original: engine_3d.c_transformAndBufferVertices_FUN_00403890
 // Address: 00403890
-int transformAndBufferVertices(int param_1);
+SMRGLHeaderExtended * __cdecl transformAndBufferVertices(SMRGLHeaderExtended *mrgl);
 
 // Original: engine_3d.c_isVisiblePlane_FUN_00403970
 // Address: 00403970
@@ -149,9 +149,9 @@ SMRGLHeaderExtended * __cdecl renderPolygonFogColorDepthOp27(SMRGLHeaderPrimitiv
 // Address: 00404e10
 SMRGLHeaderExtended * __cdecl abortOldFuncOp28(SMRGLHeaderExtended *primitive);
 
-// Original: engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404e5e
-// Address: 00404e5e
-int renderPolygonAlphaTexturedNearPlane(int param_1);
+// Original: engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404e60
+// Address: 00404e60
+int renderPolygonAlphaTexturedNearPlane(void);
 
 // Original: engine_3d.c_renderPolygonTexturedNearPlane_FUN_00404f00
 // Address: 00404f00
@@ -347,7 +347,7 @@ void FUN_004078a0(undefined4 param_1);
 
 // Original: engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0
 // Address: 004078b0
-void dispatchMRGLBlockChain(int *param_1);
+void __cdecl dispatchMRGLBlockChain(SMRGLHeaderExtended *chain);
 
 // Original: engine_3d.c_FUN_004078f0
 // Address: 004078f0

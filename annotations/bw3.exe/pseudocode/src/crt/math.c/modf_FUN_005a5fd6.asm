@@ -12,7 +12,7 @@
 ; XREF[3]:
 ;   crt_math.c_floor_FUN_005a3600 at 005a3613
 ;   sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_004feb90 at 004fedbe
-;   sound_mp3.cpp_initializeSynthesisDctTable_FUN_004fea9e at 004feb11
+;   sound_mp3.cpp_initializeSynthesisDctTable_FUN_004feaa0 at 004feb11
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120

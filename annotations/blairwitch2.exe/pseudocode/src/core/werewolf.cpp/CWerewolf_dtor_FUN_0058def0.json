@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 42,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 26,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 92
+    "total_lines": 91
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "0058df84"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_werewolf.cpp_CWerewolf_dtor_FUN_0058def0",
-    "signature": "CWerewolf * core_werewolf_cpp_CWerewolf_dtor_FUN_0058def0(CWerewolf *this_ptr,uint flags)"
+    "signature": "CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_0058def0(CWerewolf *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -162,7 +162,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 25,
+      "line": 23,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",

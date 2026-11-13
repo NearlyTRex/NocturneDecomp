@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   motion_name
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00525570
+;   core_script.cpp_CScript_step_FUN_00522350 at 00525570
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860

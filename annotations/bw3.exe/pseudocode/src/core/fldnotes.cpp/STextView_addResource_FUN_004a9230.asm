@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_STextView_addResource_FUN_004a9230(STextView *this_ptr,int param_2)
+; void __cdecl core_fldnotes_cpp_STextView_addResource_FUN_004a9230(STextView *this_ptr,SPageResource *resource)
 ;
 ; Parameters:
 ; STextView *      Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
+; SPageResource *  Stack[0x8]:4   resource
 ;
 ; XREF[3]:
 ;   core_fldnotes.cpp_STextView_flushWord_FUN_004a91b0 at 004a921e
@@ -39,7 +39,7 @@ section .text
     ADD EAX,EDX                         ; 004a925a
     PUSH EAX                            ; 004a925c
     CALL core_fldnotes.cpp_STextPage_addResource_FUN_004a8d00 ; 004a925d
-        ;   XREF to: 004a8d00 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextPage_addResource_FUN_004a8d00(STextPage * this_ptr, int param_2)
+        ;   XREF to: 004a8d00 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_STextPage_addResource_FUN_004a8d00(STextPage * this_ptr, SPageResource * resource)
     ADD ESP,0x8                         ; 004a9262
     POP EBX                             ; 004a9265
     RET                                 ; 004a9266

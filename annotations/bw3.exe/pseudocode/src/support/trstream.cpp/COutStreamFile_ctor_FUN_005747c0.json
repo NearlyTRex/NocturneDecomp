@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 9,
+    "complexity_score": 10,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 10,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 18
+    "total_lines": 19
   },
   "cross_references": [
     {
@@ -40,15 +40,15 @@
         "005747da"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamFile_ctor_FUN_005747c0",
-    "signature": "COutStreamFile * support_trstream_cpp_COutStreamFile_ctor_FUN_005747c0(COutStreamFile *this_ptr)"
+    "signature": "COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctor_FUN_005747c0(COutStreamFile *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "005744a0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005744a0"
+      "name": "support_trstream.cpp_COutStream_dtor_FUN_005744a0"
     }
   ],
   "globals": [
@@ -66,12 +66,10 @@
         "call_addr": "004be24b",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004bdfb0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -79,12 +77,10 @@
         "call_addr": "004029f6",
         "call_type": "direct",
         "caller": "engine_2d.c_loadOrBuildColorMap_FUN_00402940",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -92,12 +88,10 @@
         "call_addr": "004bdcf7",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004bda10",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
@@ -105,7 +99,7 @@
     "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 2,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {

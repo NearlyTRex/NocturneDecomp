@@ -1,14 +1,12 @@
 // Name: core_gun.cpp_CGun_ctor_FUN_004cbd50
 // Address: 004cbd50
 // Address Range: [[004cbd50, 004cbdb9]]
-// Convention: unknown
-// Signature: CGun * core_gun_cpp_CGun_ctor_FUN_004cbd50(CGun *this_ptr)
+// Convention: __cdecl
+// Signature: CGun * __cdecl core_gun_cpp_CGun_ctor_FUN_004cbd50(CGun *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CGun * core_gun_cpp_CGun_ctor_FUN_004cbd50(CGun *this_ptr)
+CGun * __cdecl core_gun_cpp_CGun_ctor_FUN_004cbd50(CGun *this_ptr)
 
 {
   CWeapon *pCVar1;

@@ -1,14 +1,12 @@
 // Name: core_belling.cpp_CBelling_dtor_FUN_005a9130
 // Address: 005a9130
 // Address Range: [[005a9130, 005a91c4]]
-// Convention: unknown
-// Signature: CBelling * core_belling_cpp_CBelling_dtor_FUN_005a9130(CBelling *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBelling * __cdecl core_belling_cpp_CBelling_dtor_FUN_005a9130(CBelling *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBelling * core_belling_cpp_CBelling_dtor_FUN_005a9130(CBelling *this_ptr,uint flags)
+CBelling * __cdecl core_belling_cpp_CBelling_dtor_FUN_005a9130(CBelling *this_ptr,uint flags)
 
 {
   int iVar1;

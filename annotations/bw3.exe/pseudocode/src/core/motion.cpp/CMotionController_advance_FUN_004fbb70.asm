@@ -35,7 +35,7 @@
 ;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 0044334e
 ;   core_cow.cpp_CZombieCow_process_FUN_00445130 at 004453a1
 ;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598a70
-;   core_demnfolk.cpp_FUN_00455080 at 00455136
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00455136
 ;   ... and 28 more
 ;
 ; Referenced Globals:

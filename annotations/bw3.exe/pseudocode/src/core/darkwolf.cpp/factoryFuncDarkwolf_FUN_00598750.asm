@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_darkwolf_cpp_factoryFuncDarkwolf_FUN_00598750(void)
+; CDarkwolf * __cdecl core_darkwolf_cpp_factoryFuncDarkwolf_FUN_00598750(void)
 ;
 ;
 ; Called Functions:

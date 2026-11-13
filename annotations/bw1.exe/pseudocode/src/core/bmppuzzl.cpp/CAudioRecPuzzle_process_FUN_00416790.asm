@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00416790(CAudioRecPuzzle *this_ptr)
+; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_process_FUN_00416790(CAudioRecPuzzle *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_AudioRecPuzzleActive_005d3f4a
@@ -23,8 +24,8 @@
 ;   undefined4 DAT_01d1bca0
 ;
 ; Called Functions:
+;   core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
-;   engine_alphabit.cpp_FUN_00415be0
 ;   sound_sndmain.cpp_FUN_005735a0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
@@ -71,8 +72,8 @@ section .text
     PUSH EAX                            ; 004167ee
     PUSH EBX                            ; 004167ef
     MOV [0x01c43544],EAX                ; 004167f0 | DAT_01c43544
-    CALL engine_alphabit.cpp_FUN_00415be0 ; 004167f5
-        ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415be0()
+    CALL core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0 ; 004167f5
+        ;   XREF to: 00415be0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_activatePuzzle_FUN_00415be0(CPuzzle * puzzle, int activate)
     ADD ESP,0x8                         ; 004167fa
     MOV EDX,dword ptr [EBX + 0x24]      ; 004167fd
         ;   Label: LAB_004167fd

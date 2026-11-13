@@ -46,7 +46,7 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004d1070(CHiram *this_ptr,float d
   while (0.0 < afStack_18[0]) {
     iVar2 = core_motion_cpp_CMotionController_advance_FUN_005030c0(&pCVar1->base,afStack_18);
     if (iVar2 == 0x29a) {
-      core_mission_cpp_FUN_004fc7b0(0x01D182F0,this_ptr,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,this_ptr,1);
     }
     else {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042aa00((CCharacter *)this_ptr,iVar2);

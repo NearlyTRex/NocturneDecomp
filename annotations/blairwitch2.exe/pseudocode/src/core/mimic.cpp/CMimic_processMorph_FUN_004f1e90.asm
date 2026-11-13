@@ -26,7 +26,7 @@
 ;   core_main.c_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
-;   core_mission.cpp_FUN_004fc7b0
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
 ;   core_morph.cpp_CMorph_updateModelFromDeformable_FUN_005b7150
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
 ;
@@ -107,8 +107,8 @@ section .text
     MOV dword ptr [EBX + 0x4c350],0x0   ; 004f1f43
     MOV EBX,dword ptr [0x00618170]      ; 004f1f4d | DAT_00618170
     PUSH EBX                            ; 004f1f53 | DAT_01d182f0
-    CALL core_mission.cpp_FUN_004fc7b0  ; 004f1f54
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fc7b0()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 004f1f54
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 004f1f59
     LEA EAX,[EAX]                       ; 004f1f5c
     MOV ESP,EBP                         ; 004f1f60

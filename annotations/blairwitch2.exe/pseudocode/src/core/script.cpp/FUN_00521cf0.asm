@@ -25,9 +25,9 @@
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_buildParsedLines_FUN_00521ec0
+;   core_script.cpp_CScript_clear_FUN_00521630
 ;   core_script.cpp_CScript_dbLoad_FUN_00529c10
 ;   core_script.cpp_CScript_initRuntime_FUN_00522080
-;   core_script.cpp_FUN_00521630
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_ftell_FUN_005baab0
@@ -50,8 +50,8 @@ section .text
     SUB ESP,0x308                       ; 00521cf4
     MOV EDX,dword ptr [ESP + 0x31c]     ; 00521cfa
     PUSH EDX                            ; 00521d01
-    CALL core_script.cpp_FUN_00521630   ; 00521d02
-        ;   XREF to: 00521630 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00521630()
+    CALL core_script.cpp_CScript_clear_FUN_00521630 ; 00521d02
+        ;   XREF to: 00521630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_clear_FUN_00521630(CScript * this_ptr)
     ADD ESP,0x4                         ; 00521d07
     MOV ECX,dword ptr [ESP + 0x320]     ; 00521d0a
     PUSH ECX                            ; 00521d11
@@ -221,8 +221,8 @@ section .text
     ADD ESP,0x10                        ; 00521e9d
     MOV ECX,dword ptr [ESP + 0x31c]     ; 00521ea0
     PUSH ECX                            ; 00521ea7
-    CALL core_script.cpp_FUN_00521630   ; 00521ea8
-        ;   XREF to: 00521630 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00521630()
+    CALL core_script.cpp_CScript_clear_FUN_00521630 ; 00521ea8
+        ;   XREF to: 00521630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_clear_FUN_00521630(CScript * this_ptr)
     ADD ESP,0x4                         ; 00521ead
     XOR EAX,EAX                         ; 00521eb0
     ADD ESP,0x308                       ; 00521eb2

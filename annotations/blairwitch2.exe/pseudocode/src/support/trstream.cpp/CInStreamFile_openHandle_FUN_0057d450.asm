@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamFile_openHandle_FUN_0057d450(CInStreamFile *this_ptr,int param_2,int param_3,int param_4)
+; int __cdecl support_trstream_cpp_CInStreamFile_openHandle_FUN_0057d450(CInStreamFile *this_ptr,HANDLE handle,int file_size,int file_offset)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
+; HANDLE           Stack[0x8]:4   handle
+; int              Stack[0xc]:4   file_size
+; int              Stack[0x10]:4   file_offset
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_trstream_cpp_005ed577
@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   crt_stdio.c_fseek_FUN_005b929c
-;   support_trstream.cpp_FUN_0057d1d0
+;   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_0057d1d0
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     JZ 0x0057d4d2                       ; 0057d4be
         ;   XREF to: 0057d4d2 (CONDITIONAL_JUMP)  ; LAB_0057d4d2
     PUSH EBX                            ; 0057d4c0
-    CALL support_trstream.cpp_FUN_0057d1d0 ; 0057d4c1
-        ;   XREF to: 0057d1d0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d1d0()
+    CALL support_trstream.cpp_CInStreamFile_allocBuffer_FUN_0057d1d0 ; 0057d4c1
+        ;   XREF to: 0057d1d0 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_CInStreamFile_allocBuffer_FUN_0057d1d0(CInStreamFile * this_ptr)
     MOV EAX,0x1                         ; 0057d4c6
     ADD ESP,0x4                         ; 0057d4cb
     POP EDI                             ; 0057d4ce

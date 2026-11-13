@@ -1,14 +1,12 @@
 // Name: core_bird.cpp_CBird_ctor_FUN_0040f9f0
 // Address: 0040f9f0
 // Address Range: [[0040f9f0, 0040fab3]]
-// Convention: unknown
-// Signature: CBird * core_bird_cpp_CBird_ctor_FUN_0040f9f0(CBird *this_ptr)
+// Convention: __cdecl
+// Signature: CBird * __cdecl core_bird_cpp_CBird_ctor_FUN_0040f9f0(CBird *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBird * core_bird_cpp_CBird_ctor_FUN_0040f9f0(CBird *this_ptr)
+CBird * __cdecl core_bird_cpp_CBird_ctor_FUN_0040f9f0(CBird *this_ptr)
 
 {
   CCharacter *pCVar1;

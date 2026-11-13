@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_firestff_cpp_factoryFuncFirestaff_FUN_004a4aa0(void)
+; CFirestaff * __cdecl core_firestff_cpp_factoryFuncFirestaff_FUN_004a4aa0(void)
 ;
 ;
 ; Called Functions:

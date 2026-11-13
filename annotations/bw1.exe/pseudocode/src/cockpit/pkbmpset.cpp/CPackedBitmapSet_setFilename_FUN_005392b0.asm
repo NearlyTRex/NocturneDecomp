@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
-;   cockpit_pkbmpset.cpp_FUN_00538b2e at 00538d34
+;   cockpit_pkbmpset.cpp_FUN_00538b30 at 00538d34
 ;
 ; Called Functions:
 ;   crt_string.c__strncpy_FUN_005c20d0

@@ -7,7 +7,7 @@
 
 // Original: core_stairs.cpp_staticInit_FUN_00568350
 // Address: 00568350
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_stairs.cpp_factoryFuncStairs_FUN_00568380
 // Address: 00568380
@@ -15,7 +15,7 @@ CStairs * __cdecl factoryFuncStairs(void);
 
 // Original: core_stairs.cpp_CStairs_getActorType_FUN_005683a0
 // Address: 005683a0
-CDemonActorType * CStairs::getActorType(CStairs *this_ptr);
+CDemonActorType * __cdecl CStairs::getActorType(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CStairs_ctor_FUN_005683b0
 // Address: 005683b0
@@ -67,4 +67,4 @@ void __cdecl CStairs::buildCollision(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CStairs_dtor_FUN_00568870
 // Address: 00568870
-CStairs * CStairs::dtor(CStairs *this_ptr,uint flags);
+CStairs * __cdecl CStairs::dtor(CStairs *this_ptr,uint flags);

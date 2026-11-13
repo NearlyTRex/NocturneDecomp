@@ -5,7 +5,6 @@
 // =============================================================================
 
 // string
-string caseD_0 = "k=XM~";
 string caseD_2 = "k=XM~";
 string caseD_0 = "k=\\M~";
 string caseD_2 = "k=\\M~";

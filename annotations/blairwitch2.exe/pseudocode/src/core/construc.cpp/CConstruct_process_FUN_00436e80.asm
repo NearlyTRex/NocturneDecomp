@@ -74,8 +74,8 @@ section .text
     JNZ 0x00436ee0                      ; 00436ed5
         ;   XREF to: 00436ee0 (CONDITIONAL_JUMP)  ; LAB_00436ee0
     PUSH EBX                            ; 00436ed7
-    CALL core_construc.cpp_FUN_00438060 ; 00436ed8
-        ;   XREF to: 00438060 (UNCONDITIONAL_CALL)  ; undefined core_construc.cpp_FUN_00438060()
+    CALL core_construc.cpp_CConstruct_explode_FUN_00438060 ; 00436ed8
+        ;   XREF to: 00438060 (UNCONDITIONAL_CALL)  ; void core_construc.cpp_CConstruct_explode_FUN_00438060(CConstruct * this_ptr)
     ADD ESP,0x4                         ; 00436edd
     PUSH 0x0                            ; 00436ee0
         ;   Label: LAB_00436ee0
@@ -419,8 +419,8 @@ section .text
     MOV EDX,dword ptr [0x00618170]      ; 004372a9 | DAT_00618170
     PUSH EDX                            ; 004372af | DAT_01d182f0
     ADD ESI,0x48                        ; 004372b0
-    CALL core_mission.cpp_FUN_004fc7b0  ; 004372b3
-        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004fc7b0()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0 ; 004372b3
+        ;   XREF to: 004fc7b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     MOV dword ptr [ESI + 0x10c14],0x0   ; 004372b8
     INC EDI                             ; 004372c2
     MOV ECX,dword ptr [EBX + 0x10c14]   ; 004372c3

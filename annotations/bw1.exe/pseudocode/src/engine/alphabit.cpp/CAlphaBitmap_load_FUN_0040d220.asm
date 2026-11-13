@@ -19,7 +19,7 @@
 ;   core_bmppuzzl.cpp_CChemPuzzle_load_FUN_004177b0 at 004178da
 ;   core_flashlit.cpp_FUN_004ba0b0 at 004ba112
 ;   core_flashlit.cpp_FUN_004ba130 at 004ba23e
-;   core_fldnotes.cpp_FUN_004be0f0 at 004be667
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0 at 004be667
 ;   core_fldnotes.cpp_SNotesMap_load_FUN_004bc2d0 at 004bc2eb
 ;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004baa40 at 004baaa2
 ;   core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004bab60 at 004babda
@@ -49,7 +49,7 @@
 ;   crt_stdio.c_fgetc_FUN_005c0530
 ;   crt_stdio.c_fread_FUN_005c0b10
 ;   crt_unknown.c_sprintf_FUN_005bfb40
-;   engine_alphabit.cpp_FUN_0040d0e0
+;   engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0
 ;   engine_dosio.cpp_FUN_00479180
 ;
 ; *****************************************************************************
@@ -68,8 +68,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x124]     ; 0040d239
     PUSH ECX                            ; 0040d240
     PUSH EBX                            ; 0040d241
-    CALL engine_alphabit.cpp_FUN_0040d0e0 ; 0040d242
-        ;   XREF to: 0040d0e0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040d0e0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0 ; 0040d242
+        ;   XREF to: 0040d0e0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0(CAlphaBitmap * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 0040d247
     MOV ESI,dword ptr [ESP + 0x11c]     ; 0040d24a
     PUSH ESI                            ; 0040d251

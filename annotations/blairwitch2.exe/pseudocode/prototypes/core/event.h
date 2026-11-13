@@ -7,7 +7,7 @@
 
 // Original: core_event.cpp_staticInit_FUN_00488b30
 // Address: 00488b30
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_event.cpp_setEventError_FUN_00488b70
 // Address: 00488b70
@@ -25,8 +25,8 @@ char * __cdecl skipWhitespace(char *str);
 // Address: 00488bf0
 int * __cdecl skipWhitespaceIndexed(char *expression,int *parse_position);
 
-// Original: core_event.cpp_parseComparisonOp_FUN_00488c1e
-// Address: 00488c1e
+// Original: core_event.cpp_parseComparisonOp_FUN_00488c20
+// Address: 00488c20
 int __cdecl parseComparisonOp(char *str);
 
 // Original: core_event.cpp_parseIntOrCounter_FUN_00488cc0
@@ -205,13 +205,13 @@ int __cdecl CEventList::saveState(CEventList *this_ptr,_FILE *file_handle);
 // Address: 00492350
 void __cdecl CRuleList::clear(CRuleList *this_ptr);
 
-// Original: core_event.cpp_FUN_0049235e
-// Address: 0049235e
-void FUN_0049235e(int *param_1,int param_2,char *param_3,char *param_4);
+// Original: core_event.cpp_FUN_00492360
+// Address: 00492360
+void FUN_00492360(void);
 
-// Original: core_event.cpp_FUN_0049249e
-// Address: 0049249e
-void FUN_0049249e(int *param_1,int param_2);
+// Original: core_event.cpp_FUN_004924a0
+// Address: 004924a0
+void FUN_004924a0(void);
 
 // Original: core_event.cpp_CRuleList_findFirst_FUN_00492570
 // Address: 00492570

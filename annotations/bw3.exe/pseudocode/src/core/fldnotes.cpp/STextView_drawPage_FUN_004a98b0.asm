@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_STextView_drawPage_FUN_004a98b0(STextView *this_ptr,int param_2)
+; void __cdecl core_fldnotes_cpp_STextView_drawPage_FUN_004a98b0(STextView *this_ptr,int page)
 ;
 ; Parameters:
 ; STextView *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   page
 ;
 ; XREF[1]:
-;   core_fldnotes.cpp_FUN_004abe00 at 004abf8d
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004abf8d
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_STextPage_draw_FUN_004a8da0

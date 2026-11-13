@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBlunderbus * core_blundrbs_cpp_CBlunderbus_dtor_FUN_00411890(CBlunderbus *this_ptr,uint flags)
+; CBlunderbus * __cdecl core_blundrbs_cpp_CBlunderbus_dtor_FUN_00411890(CBlunderbus *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBlunderbus *    Stack[0x4]:4   this_ptr

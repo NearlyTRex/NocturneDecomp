@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cfc0
-;   core_construc.cpp_FUN_00438060
+;   core_construc.cpp_CConstruct_explode_FUN_00438060
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   sound_sndmain.cpp_FUN_00550b70
@@ -56,8 +56,8 @@ section .text
         ;   XREF to: 00437e87 (CONDITIONAL_JUMP)  ; LAB_00437e87
     PUSH EBX                            ; 00437e31
     MOV dword ptr [EBX + 0x25a8],0x3f800000 ; 00437e32
-    CALL core_construc.cpp_FUN_00438060 ; 00437e3c
-        ;   XREF to: 00438060 (UNCONDITIONAL_CALL)  ; undefined core_construc.cpp_FUN_00438060()
+    CALL core_construc.cpp_CConstruct_explode_FUN_00438060 ; 00437e3c
+        ;   XREF to: 00438060 (UNCONDITIONAL_CALL)  ; void core_construc.cpp_CConstruct_explode_FUN_00438060(CConstruct * this_ptr)
     ADD ESP,0x4                         ; 00437e41
     MOV EAX,dword ptr [EBX + 0x10b9c]   ; 00437e44
     PUSH EAX                            ; 00437e4a

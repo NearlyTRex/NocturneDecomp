@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_water_cpp_staticInit_FUN_005771c0(void)
+; void __cdecl core_water_cpp_staticInit_FUN_005771c0(void)
 ;
 ;
 ; Called Functions:

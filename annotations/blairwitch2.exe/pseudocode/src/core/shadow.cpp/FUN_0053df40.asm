@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_shadow.cpp_FUN_0053ea00 at 0053eaeb
+;   core_shadow.cpp_CShadow_processDamage_FUN_0053ea00 at 0053eaeb
 ;
 ; Referenced Globals:
 ;   undefined4 s_shb_alert_wav_005e66a7+2

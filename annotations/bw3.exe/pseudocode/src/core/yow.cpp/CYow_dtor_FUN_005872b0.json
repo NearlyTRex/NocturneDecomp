@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 40,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 24,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 84
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "00587334"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_yow.cpp_CYow_dtor_FUN_005872b0",
-    "signature": "CYow * core_yow_cpp_CYow_dtor_FUN_005872b0(CYow *this_ptr,uint flags)"
+    "signature": "CYow * __cdecl core_yow_cpp_CYow_dtor_FUN_005872b0(CYow *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -139,7 +139,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 21,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);",
@@ -154,7 +154,7 @@
         "vtable_addr": "005e6744"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CYow",
         "offset": 208,
         "vtable_addr": "005e65f4"
       }

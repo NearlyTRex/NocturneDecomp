@@ -203,7 +203,8 @@ void __cdecl core_styldemo_cpp_CStylerDemon_process_FUN_0059e600(CStylerDemon *t
       (pCVar9->orient).vec.z = (this_ptr->base).base.base.orient.vec.z;
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(this_ptr->exorcism);
-    core_charactr_cpp_FUN_004319d0(this_ptr,0,this_ptr->exorcism);
+    core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004319d0
+              ((CCharacter *)this_ptr,0,(int)this_ptr->exorcism,0,0);
     this_ptr->exorcism_spawned = 1;
   }
   pCVar9 = (CDemonActor *)0x59e78b;
@@ -1021,8 +1022,9 @@ switchD_005a0147_caseD_3:
       this_ptr->morph_time = fVar23;
       if ((1.0 <= fVar23) && (this_ptr->styler != (CDemonActor *)0x0)) {
         core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(0x01D81080,this_ptr->styler);
+        pCVar7 = 0x01D81080;
         this_ptr->styler = (CDemonActor *)0x0;
-        core_mission_cpp_FUN_004f6f10();
+        core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(pCVar7,this_ptr,1);
       }
     case 6:
     case 0xf:

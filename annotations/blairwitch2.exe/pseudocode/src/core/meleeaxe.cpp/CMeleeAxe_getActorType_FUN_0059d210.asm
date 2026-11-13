@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_meleeaxe_cpp_CMeleeAxe_getActorType_FUN_0059d210(CMeleeAxe *this_ptr)
+; CDemonActorType * __cdecl core_meleeaxe_cpp_CMeleeAxe_getActorType_FUN_0059d210(CMeleeAxe *this_ptr)
 ;
 ; Parameters:
 ; CMeleeAxe *      Stack[0x4]:4   this_ptr

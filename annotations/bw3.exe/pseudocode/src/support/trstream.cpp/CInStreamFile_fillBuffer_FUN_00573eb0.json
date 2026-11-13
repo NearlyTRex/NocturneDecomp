@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 53,
+    "complexity_score": 28,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 28,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 93
   },
   "cross_references": [
@@ -38,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_CInStreamFile_fillBuffer_FUN_00573eb0",
-    "signature": "undefined4 __cdecl support_trstream_cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStreamFile *this_ptr,int param_2)"
+    "signature": "int __cdecl support_trstream_cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStreamFile *this_ptr,int position)"
   },
   "function_calls": [
     {
@@ -125,6 +123,12 @@
     "pcode_op_count": 263
   },
   "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057d280",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
     "bw1.exe": {
       "addr": "005a0ec0",
       "by": "name",
@@ -155,29 +159,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "position",
         "offset": 8,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl support_trstream_cpp_CInStreamFile_fillBuffer_FUN_00573eb0(CInStreamFile *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "lDistanceToMove = param_2 + this_ptr->file_offset & 0xfffff000;",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

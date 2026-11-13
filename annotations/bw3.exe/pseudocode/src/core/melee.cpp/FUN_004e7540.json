@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 139,
+    "complexity_score": 140,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 40,
     "suspect_count": 9,
     "suspect_types": [
       "raw_address_constant",
       "unnamed_param"
     ],
-    "total_lines": 98
+    "total_lines": 99
   },
   "cross_references": [],
   "function": {
@@ -31,7 +31,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_melee.cpp_FUN_004e7540",
-    "signature": "void core_melee_cpp_FUN_004e7540(undefined4 param_1)"
+    "signature": "void core_melee_cpp_FUN_004e7540(COutStream *param_1)"
   },
   "function_calls": [
     {
@@ -41,8 +41,8 @@
     },
     {
       "addr": "005744b0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005744b0"
+      "is_variadic": true,
+      "name": "support_trstream.cpp_COutStream_printf_FUN_005744b0"
     }
   ],
   "globals": [],
@@ -112,7 +112,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_melee_cpp_FUN_004e7540(uint param_1)",
+      "text": "void core_melee_cpp_FUN_004e7540(COutStream *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -120,7 +120,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,\"%08X %4s %d\\n\",uStack_20,uStack_1c,uVar2,uStack_1a);",
+      "text": "(param_1,\"%08X %4s %d\\n\",uStack_20,(uint)uStack_1c,uVar2,uStack_1a);",
       "type": "unnamed_param"
     },
     {
@@ -128,7 +128,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005744b0(param_1,\"OK - empty heap\\n\");",
+      "text": "support_trstream_cpp_COutStream_printf_FUN_005744b0(param_1,\"OK - empty heap\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -136,7 +136,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005744b0(param_1,\"ERROR - bad start of heap\\n\");",
+      "text": "support_trstream_cpp_COutStream_printf_FUN_005744b0(param_1,\"ERROR - bad start of heap\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -144,7 +144,7 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005744b0(param_1,\"ERROR - bad node in heap\\n\");",
+      "text": "support_trstream_cpp_COutStream_printf_FUN_005744b0(param_1,\"ERROR - bad node in heap\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -152,7 +152,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005744b0(param_1,\"OK - end of heap\\n\");",
+      "text": "support_trstream_cpp_COutStream_printf_FUN_005744b0(param_1,\"OK - end of heap\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -160,7 +160,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005744b0(param_1,\"ERROR - bad pointer to heap\\n\");",
+      "text": "support_trstream_cpp_COutStream_printf_FUN_005744b0(param_1,\"ERROR - bad pointer to heap\\n\")",
       "type": "unnamed_param"
     },
     {

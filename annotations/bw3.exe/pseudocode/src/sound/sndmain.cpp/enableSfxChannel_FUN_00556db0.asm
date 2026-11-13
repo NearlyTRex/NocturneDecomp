@@ -11,7 +11,7 @@
 ;   core_menu.cpp_FUN_004e94f0 at 004e9e11
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 005601a1
 ;   core_sound.cpp_FUN_0055fd30 at 0055fdd6
-;   core_sound.cpp_syncChannel3WithChannel0_FUN_0055fcce at 0055fce5
+;   core_sound.cpp_syncChannel3WithChannel0_FUN_0055fcd0 at 0055fce5
 ;   sound_sndmain.cpp_readIni_FUN_00559220 at 00559496
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00557f60 at 00557f74
 ;

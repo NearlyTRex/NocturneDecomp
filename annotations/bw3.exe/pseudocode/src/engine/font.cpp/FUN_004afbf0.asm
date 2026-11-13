@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00481efc at 00481f16
+;   shape_edittool.cpp_FUN_00481f00 at 00481f16
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6cee8
@@ -21,7 +21,7 @@
 ;   engine_dosio.cpp_makePath_FUN_00465e80
 ;   engine_dosio.cpp_splitPath_FUN_00465e50
 ;   engine_font.cpp_FUN_004b0170
-;   engine_mini3d.cpp_FUN_004ed9d0
+;   engine_mini3d.cpp_loadTexture_FUN_004ed9d0
 ;   support_trstream.cpp_CInStreamFile_close_FUN_00573db0
 ;   support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0
 ;   support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40
@@ -141,7 +141,7 @@ section .text
     LEA EAX,[ESP + 0x414]               ; 004afd69
     PUSH EAX                            ; 004afd70
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0 ; 004afd71
-        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
+        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile * this_ptr, char * directory, char * filename, int binary_mode)
     ADD ESP,0x10                        ; 004afd76
     TEST EAX,EAX                        ; 004afd79
     JZ 0x004b0041                       ; 004afd7b
@@ -157,13 +157,13 @@ section .text
     LEA EAX,[ESP + 0x410]               ; 004afd9c
     PUSH EAX                            ; 004afda3
     CALL support_trstream.cpp_CInStreamFile_read_FUN_00573c00 ; 004afda4
-        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
+        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, void * buffer, int count)
     ADD ESP,0xc                         ; 004afda9
     LEA EAX,[ESP + 0x408]               ; 004afdac
         ;   Label: LAB_004afdac
     PUSH EAX                            ; 004afdb3
     CALL support_trstream.cpp_CInStreamFile_close_FUN_00573db0 ; 004afdb4
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004afdb9
     MOV ECX,dword ptr [ESP + 0x444]     ; 004afdbc
         ;   Label: LAB_004afdbc
@@ -215,8 +215,8 @@ section .text
     PUSH EBP                            ; 004afe4e
     ADD EAX,0x1db4                      ; 004afe4f
     PUSH EAX                            ; 004afe54
-    CALL engine_mini3d.cpp_FUN_004ed9d0 ; 004afe55
-        ;   XREF to: 004ed9d0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004ed9d0()
+    CALL engine_mini3d.cpp_loadTexture_FUN_004ed9d0 ; 004afe55
+        ;   XREF to: 004ed9d0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_loadTexture_FUN_004ed9d0(int arg1, int arg2, int arg3, int arg4, ...)
     ADD ESP,0x14                        ; 004afe5a
     PUSH 0x7d20                         ; 004afe5d
     CALL crt_memory.c_malloc_FUN_005a3650 ; 004afe62
@@ -332,7 +332,7 @@ section .text
     LEA EAX,[ESP + 0x410]               ; 004affdb
     PUSH EAX                            ; 004affe2
     CALL support_trstream.cpp_CInStreamFile_read_FUN_00573c00 ; 004affe3
-        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
+        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, void * buffer, int count)
     ADD ESP,0xc                         ; 004affe8
     XOR ECX,ECX                         ; 004affeb
     TEST EBP,EBP                        ; 004affed

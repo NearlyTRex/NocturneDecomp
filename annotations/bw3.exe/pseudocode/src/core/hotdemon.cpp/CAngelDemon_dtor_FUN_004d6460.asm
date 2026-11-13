@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAngelDemon * core_hotdemon_cpp_CAngelDemon_dtor_FUN_004d6460(CAngelDemon *this_ptr,uint flags)
+; CAngelDemon * __cdecl core_hotdemon_cpp_CAngelDemon_dtor_FUN_004d6460(CAngelDemon *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAngelDemon *    Stack[0x4]:4   this_ptr

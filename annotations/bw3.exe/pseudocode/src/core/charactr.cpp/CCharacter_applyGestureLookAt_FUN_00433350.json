@@ -76,7 +76,7 @@
     {
       "addr": "00455080",
       "from_addr": "00455d59",
-      "name": "core_demnfolk.cpp_FUN_00455080",
+      "name": "core_demnfolk.cpp_CDemnfolk_process_FUN_00455080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -214,7 +214,7 @@
     {
       "addr": "00594000",
       "from_addr": "0059447b",
-      "name": "core_tawiscara.cpp_FUN_00594000",
+      "name": "core_tawiscara.cpp_CTawiscara_process_FUN_00594000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -232,7 +232,7 @@
     {
       "addr": "00586500",
       "from_addr": "005867ee",
-      "name": "core_yow.cpp_FUN_00586500",
+      "name": "core_yow.cpp_CYow_process_FUN_00586500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -244,7 +244,7 @@
     {
       "addr": "0058d960",
       "from_addr": "0058de5b",
-      "name": "core_zombiepriest.cpp_FUN_0058d960",
+      "name": "core_zombiepriest.cpp_CZombiePriest_process_FUN_0058d960",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -262,6 +262,11 @@
   },
   "function_calls": [
     {
+      "addr": "004320d0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_applyGesture_FUN_004320d0"
+    },
+    {
       "addr": "00433000",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_applyLookAt_FUN_00433000"
@@ -275,11 +280,6 @@
       "addr": "00431d10",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00431d10"
-    },
-    {
-      "addr": "004320d0",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_004320d0"
     },
     {
       "addr": "0043fc00",
@@ -354,7 +354,7 @@
       {
         "call_addr": "00455d59",
         "call_type": "direct",
-        "caller": "core_demnfolk.cpp_FUN_00455080",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00455080",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

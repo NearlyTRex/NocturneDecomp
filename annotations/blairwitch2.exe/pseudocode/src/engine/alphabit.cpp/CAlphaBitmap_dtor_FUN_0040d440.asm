@@ -15,7 +15,7 @@
 ;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be41e
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be77a
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0 at 004b614f
-;   core_game.cpp_FUN_004bdc1e at 004bdf9b
+;   core_game.cpp_FUN_004bdc20 at 004bdf9b
 ;   core_level.cpp_FUN_004e1480 at 004e15b5
 ;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4ca5
 ;   ... and 1 more

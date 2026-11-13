@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDog * core_helldog_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
+; CDog * __cdecl core_helldog_cpp_CDog_ctor_FUN_005aba40(CDog *this_ptr)
 ;
 ; Parameters:
 ; CDog *           Stack[0x4]:4   this_ptr

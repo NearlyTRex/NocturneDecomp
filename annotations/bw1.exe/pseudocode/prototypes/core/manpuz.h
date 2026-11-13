@@ -15,7 +15,7 @@ CMansionPuzzleCircle * __cdecl factoryFuncMansionPuzzleCircle(void);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_getActorType_FUN_00503b30
 // Address: 00503b30
-CDemonActorType * CMansionPuzzleCircle::getActorType(CMansionPuzzleCircle *this_ptr);
+CDemonActorType * __cdecl CMansionPuzzleCircle::getActorType(CMansionPuzzleCircle *this_ptr);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00503b40
 // Address: 00503b40
@@ -69,9 +69,9 @@ void FUN_00504ee0(int param_1,int param_2);
 // Address: 00504fe0
 void FUN_00504fe0(int param_1,int param_2);
 
-// Original: core_manpuz.cpp_FUN_00505060
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00505060
 // Address: 00505060
-void __cdecl FUN_00505060(CMansionPuzzleCircle *this_ptr,int gem_index);
+void __cdecl CMansionPuzzleCircle::renderGem(CMansionPuzzleCircle *this_ptr,int gem_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_005054c0
 // Address: 005054c0
@@ -191,11 +191,11 @@ CMirrorHack * __cdecl CMirrorHack::dtor(CMirrorHack *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_dtor_FUN_00506760
 // Address: 00506760
-CMansionPuzzleCircle * CMansionPuzzleCircle::dtor(CMansionPuzzleCircle *this_ptr,uint flags);
+CMansionPuzzleCircle * __cdecl CMansionPuzzleCircle::dtor(CMansionPuzzleCircle *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_SReflector_ctor_FUN_005067b0
 // Address: 005067b0
-SReflector * SReflector::ctor(SReflector *this_ptr);
+SReflector * __cdecl SReflector::ctor(SReflector *this_ptr);
 
 // Original: core_manpuz.cpp_SGem_ctor_FUN_005067c0
 // Address: 005067c0
@@ -203,4 +203,4 @@ SGem * __cdecl SGem::ctor(SGem *this_ptr);
 
 // Original: core_manpuz.cpp_SPanel_ctor_FUN_005067e0
 // Address: 005067e0
-SPanel * SPanel::ctor(SPanel *this_ptr);
+SPanel * __cdecl SPanel::ctor(SPanel *this_ptr);

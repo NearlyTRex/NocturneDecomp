@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSearchParty * core_bwsearch_cpp_CSearchParty_dtor_FUN_005a8e80(CSearchParty *this_ptr,uint flags)
+; CSearchParty * __cdecl core_bwsearch_cpp_CSearchParty_dtor_FUN_005a8e80(CSearchParty *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSearchParty *   Stack[0x4]:4   this_ptr

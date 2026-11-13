@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_004555c0 at 00455a0f
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 00455a0f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cfb6f

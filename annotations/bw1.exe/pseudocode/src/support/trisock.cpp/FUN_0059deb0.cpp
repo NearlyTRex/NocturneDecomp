@@ -1,6 +1,6 @@
 // Name: support_trisock.cpp_FUN_0059deb0
 // Address: 0059deb0
-// Address Range: [[0059deb0, 0059df0f]]
+// Address Range: [[0059deb0, 0059dfbc]]
 // Convention: unknown
 // Signature: void support_trisock_cpp_FUN_0059deb0(int param_1)
 
@@ -31,7 +31,7 @@ void support_trisock_cpp_FUN_0059deb0(int param_1)
   if (_DAT_02c8ae64 < 1) {
     _DAT_02c8ae64 = 1;
     pvVar3 = wincore_winrun_cpp_createThread_FUN_005b37d0
-                       ((LPTHREAD_START_ROUTINE)0x59daf0,(LPVOID)0x0);
+                       (support_trisock_cpp_FUN_0059daf0,(LPVOID)0x0);
     while (_DAT_02c8ae64 == 1) {
       wincore_winrun_cpp_sleep_FUN_005b3860(0.0);
     }

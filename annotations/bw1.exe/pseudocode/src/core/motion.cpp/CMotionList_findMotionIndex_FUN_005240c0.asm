@@ -11,9 +11,9 @@
 ; XREF[23]:
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_004343c0 at 00434448
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_00432c70 at 00432c96
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046ed28
 ;   core_doc.cpp_CDoc_setup_FUN_00469060 at 00469250
 ;   core_doc.cpp_FUN_0046caa0 at 0046e5d9
-;   core_doc.cpp_FUN_0046ea80 at 0046ed28
 ;   core_doc.cpp_FUN_0046f200 at 0046f2f6
 ;   core_event.cpp_FUN_004a1d00 at 004a631f
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004c6390 at 004c6564

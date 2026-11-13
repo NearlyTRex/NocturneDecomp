@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dog_cpp_staticInit_FUN_0045e210(void)
+; void __cdecl core_dog_cpp_staticInit_FUN_0045e210(void)
 ;
 ;
 ; Called Functions:

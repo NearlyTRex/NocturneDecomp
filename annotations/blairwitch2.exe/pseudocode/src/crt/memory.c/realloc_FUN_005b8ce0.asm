@@ -8,7 +8,7 @@
 ; ulong            Stack[0x8]:4   new_size
 ;
 ; XREF[31]:
-;   cockpit_ckptutil.c_FUN_0042f74e at 0043017f
+;   cockpit_ckptutil.c_FUN_0042f750 at 0043017f
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_00516a60 at 00516b83
 ;   cockpit_pkbitmap.cpp_FUN_00516c88 at 00516c8d
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_00415890 at 004158c6

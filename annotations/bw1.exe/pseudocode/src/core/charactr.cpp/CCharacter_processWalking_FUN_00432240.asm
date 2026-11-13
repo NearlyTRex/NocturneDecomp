@@ -37,7 +37,7 @@
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
 ;   core_charactr.cpp_FUN_00431cc0
 ;   core_charactr.cpp_FUN_004354a0
-;   core_door.cpp_FUN_00478860
+;   core_door.cpp_CDoor_getOpenStandPos_FUN_00478860
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
@@ -136,8 +136,8 @@ section .text
     PUSH EAX                            ; 00432338
     PUSH ESI                            ; 00432339
     LEA ESI,[ESP + 0x30]                ; 0043233a
-    CALL core_door.cpp_FUN_00478860     ; 0043233e
-        ;   XREF to: 00478860 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_FUN_00478860()
+    CALL core_door.cpp_CDoor_getOpenStandPos_FUN_00478860 ; 0043233e
+        ;   XREF to: 00478860 (UNCONDITIONAL_CALL)  ; float * core_door.cpp_CDoor_getOpenStandPos_FUN_00478860(CDoor * this_ptr, float * param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 00432343
     LEA EDI,[ESP + 0x3c]                ; 00432346
     PUSH 0x0                            ; 0043234a

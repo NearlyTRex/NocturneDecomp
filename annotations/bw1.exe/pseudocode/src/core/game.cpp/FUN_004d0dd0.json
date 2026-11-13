@@ -1,0 +1,296 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 290,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 30,
+    "suspect_count": 25,
+    "suspect_types": [
+      "stack_param",
+      "undefined_data"
+    ],
+    "total_lines": 92
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d0dd0",
+    "address_range": [
+      [
+        "004d0dd0",
+        "004d0e64"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_FUN_004d0dd0",
+    "signature": "void core_game_cpp_FUN_004d0dd0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.423076923076923,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 6,
+      "CBRANCH": 6,
+      "COPY": 135,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 8,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 20,
+      "INT_AND": 32,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LEFT": 16,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 3,
+      "INT_ZEXT": 16,
+      "LOAD": 24,
+      "POPCOUNT": 6,
+      "RETURN": 3,
+      "STORE": 5
+    },
+    "pcode_op_count": 386
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "float *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "float in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "float in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if ((&DAT_01c50950)[in_stack_00000004] == '\\0') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_01c50950",
+      "severity": "mild",
+      "text": "if ((&DAT_01c50950)[in_stack_00000004] == '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "if ((((&DAT_01c50950)[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "if ((((&DAT_01c50950)[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "if ((((&DAT_01c50950)[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_01c50950",
+      "severity": "mild",
+      "text": "if ((((&DAT_01c50950)[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "&& (fVar1 = (g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "&& (fVar1 = (g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "*in_stack_0000000c = in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "*in_stack_0000000c = in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "fVar1 = -in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "if ((fVar1 < *in_stack_0000000c) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "(fVar2 = *in_stack_0000000c -",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "(g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "(g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "*in_stack_0000000c = fVar2, fVar2 < fVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "*in_stack_0000000c = fVar1;",
+      "type": "stack_param"
+    }
+  ]
+}

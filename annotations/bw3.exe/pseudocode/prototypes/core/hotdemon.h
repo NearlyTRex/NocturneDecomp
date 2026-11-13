@@ -7,7 +7,7 @@
 
 // Original: core_hotdemon.cpp_staticInit_FUN_004d5370
 // Address: 004d5370
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hotdemon.cpp_factoryFuncHotDemon_FUN_004d5400
 // Address: 004d5400
@@ -15,7 +15,7 @@ CHotDemon * __cdecl factoryFuncHotDemon(void);
 
 // Original: core_hotdemon.cpp_CHotDemon_getActorType_FUN_004d5420
 // Address: 004d5420
-CDemonActorType * CHotDemon::getActorType(CHotDemon *this_ptr);
+CDemonActorType * __cdecl CHotDemon::getActorType(CHotDemon *this_ptr);
 
 // Original: core_hotdemon.cpp_CHotDemon_ctor_FUN_004d5430
 // Address: 004d5430
@@ -59,7 +59,7 @@ CDemonActorType * __cdecl CAngelForest::getActorType(CAngelForest *this_ptr);
 
 // Original: core_hotdemon.cpp_CAngelForest_ctor_FUN_004d6310
 // Address: 004d6310
-CAngelForest * CAngelForest::ctor(CAngelForest *this_ptr);
+CAngelForest * __cdecl CAngelForest::ctor(CAngelForest *this_ptr);
 
 // Original: core_hotdemon.cpp_FUN_004d6360
 // Address: 004d6360
@@ -71,7 +71,7 @@ CDemonActorType * __cdecl CAngelSpirit::getActorType(CAngelSpirit *this_ptr);
 
 // Original: core_hotdemon.cpp_CAngelSpirit_ctor_FUN_004d6390
 // Address: 004d6390
-CAngelSpirit * CAngelSpirit::ctor(CAngelSpirit *this_ptr);
+CAngelSpirit * __cdecl CAngelSpirit::ctor(CAngelSpirit *this_ptr);
 
 // Original: core_hotdemon.cpp_FUN_004d63e0
 // Address: 004d63e0
@@ -83,20 +83,20 @@ CDemonActorType * __cdecl CAngelDemon::getActorType(CAngelDemon *this_ptr);
 
 // Original: core_hotdemon.cpp_CAngelDemon_ctor_FUN_004d6410
 // Address: 004d6410
-CAngelDemon * CAngelDemon::ctor(CAngelDemon *this_ptr);
+CAngelDemon * __cdecl CAngelDemon::ctor(CAngelDemon *this_ptr);
 
 // Original: core_hotdemon.cpp_CAngelDemon_dtor_FUN_004d6460
 // Address: 004d6460
-CAngelDemon * CAngelDemon::dtor(CAngelDemon *this_ptr,uint flags);
+CAngelDemon * __cdecl CAngelDemon::dtor(CAngelDemon *this_ptr,uint flags);
 
 // Original: core_hotdemon.cpp_CAngelSpirit_dtor_FUN_004d64f0
 // Address: 004d64f0
-CAngelSpirit * CAngelSpirit::dtor(CAngelSpirit *this_ptr,uint flags);
+CAngelSpirit * __cdecl CAngelSpirit::dtor(CAngelSpirit *this_ptr,uint flags);
 
 // Original: core_hotdemon.cpp_CAngelForest_dtor_FUN_004d6580
 // Address: 004d6580
-CAngelForest * CAngelForest::dtor(CAngelForest *this_ptr,uint flags);
+CAngelForest * __cdecl CAngelForest::dtor(CAngelForest *this_ptr,uint flags);
 
 // Original: core_hotdemon.cpp_CHotDemon_dtor_FUN_004d6610
 // Address: 004d6610
-CHotDemon * CHotDemon::dtor(CHotDemon *this_ptr,uint flags);
+CHotDemon * __cdecl CHotDemon::dtor(CHotDemon *this_ptr,uint flags);

@@ -1,20 +1,20 @@
 // Name: core_fforest.cpp_factoryFuncTwigZombie_FUN_005a26a0
 // Address: 005a26a0
 // Address Range: [[005a26a0, 005a26bb]]
-// Convention: unknown
-// Signature: void core_fforest_cpp_factoryFuncTwigZombie_FUN_005a26a0(void)
+// Convention: __cdecl
+// Signature: CTwigZombie * __cdecl core_fforest_cpp_factoryFuncTwigZombie_FUN_005a26a0(void)
 
 #include "nocturne.h"
 
-void core_fforest_cpp_factoryFuncTwigZombie_FUN_005a26a0(void)
+CTwigZombie * __cdecl core_fforest_cpp_factoryFuncTwigZombie_FUN_005a26a0(void)
 
 {
-  CTwigZombie *this_ptr;
+  CTwigZombie *pCVar1;
   
-  this_ptr = (CTwigZombie *)operator_new(0x11858);
-  if (this_ptr == (CTwigZombie *)0x0) {
-    return;
+  pCVar1 = (CTwigZombie *)operator_new(0x11858);
+  if (pCVar1 == (CTwigZombie *)0x0) {
+    return (CTwigZombie *)0x0;
   }
-  core_fforest_cpp_CTwigZombie_ctor_FUN_005a26d0(this_ptr);
-  return;
+  pCVar1 = core_fforest_cpp_CTwigZombie_ctor_FUN_005a26d0(pCVar1);
+  return pCVar1;
 }

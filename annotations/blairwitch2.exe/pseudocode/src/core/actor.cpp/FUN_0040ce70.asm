@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00527734
+;   core_script.cpp_CScript_step_FUN_00522350 at 00527734
 ;
 ; Called Functions:
 ;   core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100

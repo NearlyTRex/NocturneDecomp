@@ -65,8 +65,7 @@ LAB_00402994:
     support_trstream_cpp_COutStreamFile_dtor_FUN_00574850(&local_10,0);
   }
   else {
-    support_trstream_cpp_CInStreamFile_read_FUN_00573c00
-              (&local_3c,(uint *)&DAT_01c62070,0x8000);
+    support_trstream_cpp_CInStreamFile_read_FUN_00573c00(&local_3c,&DAT_01c62070,0x8000);
     support_trstream_cpp_CInStreamFile_close_FUN_00573db0(&local_3c);
   }
   support_trstream_cpp_CInStreamFile_dtor_FUN_00573a40(&local_3c,0);

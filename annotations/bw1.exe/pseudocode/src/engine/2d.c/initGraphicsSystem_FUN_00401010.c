@@ -38,7 +38,7 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
     support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_30,0);
     return;
   }
-  support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_30,(uint *)0x1c4ecf8,0x300);
+  support_trstream_cpp_CInStreamFile_read_FUN_005a0c10(&local_30,(void *)0x1c4ecf8,0x300);
   support_trstream_cpp_CInStreamFile_close_FUN_005a0dc0(&local_30);
   support_trstream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_30,0);
   return;

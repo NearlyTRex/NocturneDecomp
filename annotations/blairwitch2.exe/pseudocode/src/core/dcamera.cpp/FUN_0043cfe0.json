@@ -1,0 +1,501 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 187,
+    "complexity_score": 547,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 77,
+    "suspect_count": 43,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
+      "unaffected_reg",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 264
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0043cfe0",
+    "address_range": [
+      [
+        "0043cfe0",
+        "0043d1ec"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_dcamera.cpp_FUN_0043cfe0",
+    "signature": "void core_dcamera_cpp_FUN_0043cfe0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0046bc80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.950819672131148,
+    "instruction_count": 183,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 81,
+      "BOOL_OR": 12,
+      "BOOL_XOR": 12,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 160,
+      "INT_ADD": 125,
+      "INT_AND": 302,
+      "INT_CARRY": 49,
+      "INT_EQUAL": 126,
+      "INT_LEFT": 17,
+      "INT_LESS": 1,
+      "INT_MULT": 39,
+      "INT_NOTEQUAL": 74,
+      "INT_OR": 95,
+      "INT_RIGHT": 30,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 49,
+      "INT_SEXT": 81,
+      "INT_SLESS": 87,
+      "INT_SUB": 49,
+      "INT_XOR": 16,
+      "INT_ZEXT": 24,
+      "LOAD": 75,
+      "POPCOUNT": 55,
+      "RETURN": 2,
+      "STORE": 20,
+      "SUBPIECE": 54
+    },
+    "pcode_op_count": 1638
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0044e6a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0044a7e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00441a10",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 3,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0043d089",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0043d0b5",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0043d0e5",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "auStackY_1000",
+      "severity": "moderate",
+      "text": "uint auStackY_1000 [1014];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)in_stack_00000008[1] * (longlong)_DAT_01c38ba8 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(longlong)*in_stack_00000008 * (longlong)_DAT_01c38b9c +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(longlong)in_stack_00000008[2] * (longlong)_DAT_01c38bb4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)in_stack_00000008[1] * (longlong)_DAT_01c38bac +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(longlong)*in_stack_00000008 * (longlong)_DAT_01c38ba0 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(longlong)in_stack_00000008[2] * (longlong)_DAT_01c38bb8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)in_stack_00000008[1] * (longlong)_DAT_01c38bb0 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(longlong)*in_stack_00000008 * (longlong)_DAT_01c38ba4 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(longlong)in_stack_00000008[2] * (longlong)_DAT_01c38bbc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0046bc80(DAT_0060b280);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)(int)uStack_20 * (longlong)*(int *)(in_stack_00000004 + 0x1a8) +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(longlong)(int)uStack_24 * (longlong)*(int *)(in_stack_00000004 + 0x19c) +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(longlong)(int)uStack_1c * (longlong)*(int *)(in_stack_00000004 + 0x1b4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)(int)uStack_20 * (longlong)*(int *)(in_stack_00000004 + 0x1ac) +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(longlong)(int)uStack_24 * (longlong)*(int *)(in_stack_00000004 + 0x1a0) +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(longlong)(int)uStack_1c * (longlong)*(int *)(in_stack_00000004 + 0x1b8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)(int)uStack_20 * (longlong)*(int *)(in_stack_00000004 + 0x1b0) +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(longlong)(int)uStack_24 * (longlong)*(int *)(in_stack_00000004 + 0x1a4) +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(longlong)(int)uStack_1c * (longlong)*(int *)(in_stack_00000004 + 0x1bc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = uStack_18;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 52,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 53,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(unaff_ESI + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 54,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar4 = in_stack_00000004 + iVar4 * 4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 76,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = uStack_18;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 77,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 77,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 78,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(unaff_ESI + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 79,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)&stack0xffffffec",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 54,
+      "match": "(int)&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 77,
+      "match": "(int)&stack0xffffffec",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 79,
+      "match": "(int)&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 52,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 54,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 77,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 79,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

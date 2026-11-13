@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_prye_cpp_factoryFuncPrye_FUN_00517f50(void)
+; CPrye * __cdecl core_prye_cpp_factoryFuncPrye_FUN_00517f50(void)
 ;
 ;
 ; Called Functions:

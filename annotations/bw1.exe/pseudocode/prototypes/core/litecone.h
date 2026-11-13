@@ -7,7 +7,7 @@
 
 // Original: core_litecone.cpp_staticInit_FUN_00502d10
 // Address: 00502d10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_litecone.cpp_factoryFuncLightCone_FUN_00502d40
 // Address: 00502d40
@@ -15,7 +15,7 @@ CLightCone * __cdecl factoryFuncLightCone(void);
 
 // Original: core_litecone.cpp_CLightCone_getActorType_FUN_00502d60
 // Address: 00502d60
-CDemonActorType * CLightCone::getActorType(CLightCone *this_ptr);
+CDemonActorType * __cdecl CLightCone::getActorType(CLightCone *this_ptr);
 
 // Original: core_litecone.cpp_CLightCone_ctor_FUN_00502d70
 // Address: 00502d70

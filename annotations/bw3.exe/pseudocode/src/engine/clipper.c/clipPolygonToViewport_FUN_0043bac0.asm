@@ -26,7 +26,7 @@
 ;   engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_004075b0 at 004076ed
 ;   engine_3d.c_renderPolygonWithRenderFlags_FUN_004074b0 at 00407596
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160 at 0046b1f4
-;   engine_drender.cpp_FUN_0046de6e at 0046e02e
+;   engine_drender.cpp_FUN_0046de70 at 0046e02e
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0043ba78 = 0043bd4c

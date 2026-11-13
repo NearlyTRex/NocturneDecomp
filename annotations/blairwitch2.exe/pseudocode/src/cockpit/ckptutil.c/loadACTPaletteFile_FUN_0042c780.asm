@@ -129,7 +129,7 @@ section .text
     LEA EAX,[ESP + 0xa8]                ; 0042c82a
     PUSH EAX                            ; 0042c831
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 ; 0042c832
-        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile * this_ptr, char * directory, char * filename)
     ADD ESP,0xc                         ; 0042c837
     TEST EAX,EAX                        ; 0042c83a
     JZ 0x0042c8c3                       ; 0042c83c
@@ -139,7 +139,7 @@ section .text
     LEA EAX,[ESP + 0xa8]                ; 0042c848
     PUSH EAX                            ; 0042c84f
     CALL support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0 ; 0042c850
-        ;   XREF to: 0057cfe0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0(CInStreamFile * this_ptr, undefined4 * param_2, uint param_3)
+        ;   XREF to: 0057cfe0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0(CInStreamFile * this_ptr, void * buffer, int count)
     ADD ESP,0xc                         ; 0042c855
     CMP EAX,0x300                       ; 0042c858
     JZ 0x0042c897                       ; 0042c85d
@@ -165,7 +165,7 @@ section .text
         ;   Label: LAB_0042c897
     PUSH EAX                            ; 0042c89e
     CALL support_trstream.cpp_CInStreamFile_close_FUN_0057d180 ; 0042c89f
-        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
+        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0042c8a4
     PUSH 0x0                            ; 0042c8a7
         ;   Label: LAB_0042c8a7

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004a1f80(SPageResourceText *this_ptr,char *param_2,undefined4 param_3)
+; SPageResourceText * __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004a1f80(SPageResourceText *this_ptr,char *text,CBitFont *font)
 ;
 ; Parameters:
 ; SPageResourceText * Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   text
+; CBitFont *       Stack[0xc]:4   font
 ;
 ; XREF[1]:
 ;   core_fldnotes.cpp_STextView_flushWord_FUN_004a2b30 at 004a2b58

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_styldemo_cpp_factoryFuncStylerDemon_FUN_0059e040(void)
+; CStylerDemon * __cdecl core_styldemo_cpp_factoryFuncStylerDemon_FUN_0059e040(void)
 ;
 ;
 ; Called Functions:

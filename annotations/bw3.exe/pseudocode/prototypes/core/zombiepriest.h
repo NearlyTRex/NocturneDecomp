@@ -7,7 +7,7 @@
 
 // Original: core_zombiepriest.cpp_staticInit_FUN_0058d2c0
 // Address: 0058d2c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_zombiepriest.cpp_FUN_0058d2f0
 // Address: 0058d2f0
@@ -19,23 +19,23 @@ void FUN_0058d3b0(int param_1);
 
 // Original: core_zombiepriest.cpp_factoryFuncZombiePriest_FUN_0058d4b0
 // Address: 0058d4b0
-void factoryFuncZombiePriest(void);
+CZombiePriest * __cdecl factoryFuncZombiePriest(void);
 
 // Original: core_zombiepriest.cpp_CZombiePriest_getActorType_FUN_0058d4d0
 // Address: 0058d4d0
-CDemonActorType * CZombiePriest::getActorType(CZombiePriest *this_ptr);
+CDemonActorType * __cdecl CZombiePriest::getActorType(CZombiePriest *this_ptr);
 
 // Original: core_zombiepriest.cpp_CZombiePriest_ctor_FUN_0058d4e0
 // Address: 0058d4e0
-CZombiePriest * CZombiePriest::ctor(CZombiePriest *this_ptr);
+CZombiePriest * __cdecl CZombiePriest::ctor(CZombiePriest *this_ptr);
 
-// Original: core_zombiepriest.cpp_FUN_0058d5e0
+// Original: core_zombiepriest.cpp_CZombiePriest_setup_FUN_0058d5e0
 // Address: 0058d5e0
-void FUN_0058d5e0(CEnemy *param_1);
+void __cdecl CZombiePriest::setup(CZombiePriest *this_ptr);
 
-// Original: core_zombiepriest.cpp_FUN_0058d960
+// Original: core_zombiepriest.cpp_CZombiePriest_process_FUN_0058d960
 // Address: 0058d960
-void FUN_0058d960(CZombiePriest *param_1,float param_2);
+void __cdecl CZombiePriest::process(CZombiePriest *this_ptr,float param_2);
 
 // Original: core_zombiepriest.cpp_FUN_0058e8d0
 // Address: 0058e8d0
@@ -79,4 +79,4 @@ ECollisionType __cdecl CZombiePriest::getCollisionType(CZombiePriest *this_ptr,S
 
 // Original: core_zombiepriest.cpp_CZombiePriest_dtor_FUN_0058fc80
 // Address: 0058fc80
-CZombiePriest * CZombiePriest::dtor(CZombiePriest *this_ptr,uint flags);
+CZombiePriest * __cdecl CZombiePriest::dtor(CZombiePriest *this_ptr,uint flags);

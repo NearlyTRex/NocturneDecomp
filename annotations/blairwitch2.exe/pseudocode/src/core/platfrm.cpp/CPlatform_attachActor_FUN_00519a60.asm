@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   core_platfrm.cpp_CPlatform_setup_FUN_00518280 at 005182fa
-;   core_script.cpp_FUN_00522350 at 005241e9
+;   core_script.cpp_CScript_step_FUN_00522350 at 005241e9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_platfrm_cpp_005e23cc

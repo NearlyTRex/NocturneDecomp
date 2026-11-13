@@ -14,7 +14,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_door.cpp_FUN_00477540
+;   core_door.cpp_CDoor_reposition_FUN_00477540
 ;   core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00559440
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     RET                                 ; 00478b0d
     PUSH EBX                            ; 00478b0e
         ;   Label: LAB_00478b0e
-    CALL core_door.cpp_FUN_00477540     ; 00478b0f
-        ;   XREF to: 00477540 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_FUN_00477540()
+    CALL core_door.cpp_CDoor_reposition_FUN_00477540 ; 00478b0f
+        ;   XREF to: 00477540 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_reposition_FUN_00477540(CDoor * this_ptr)
     ADD ESP,0x4                         ; 00478b14
     PUSH EBX                            ; 00478b17
     MOV EBX,dword ptr [0x00622c18]      ; 00478b18 | g_CDemonSetPtr

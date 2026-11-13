@@ -35,7 +35,7 @@ CIniFile * __cdecl FUN_004d8a20(CIniFile *this_ptr,char *filename,char *section)
 
 // Original: engine_ini.cpp_CIniFile_dtor_FUN_004d8a50
 // Address: 004d8a50
-CIniFile * CIniFile::dtor(CIniFile *this_ptr,uint flags);
+CIniFile * __cdecl CIniFile::dtor(CIniFile *this_ptr,uint flags);
 
 // Original: engine_ini.cpp_initIniFile_FUN_004d8aa0
 // Address: 004d8aa0
@@ -69,9 +69,9 @@ void FUN_004d8cd0(int param_1,undefined4 param_2);
 // Address: 004d8d40
 void FUN_004d8d40(int param_1,undefined4 param_2);
 
-// Original: engine_ini.cpp_FUN_004d8d8e
-// Address: 004d8d8e
-void FUN_004d8d8e(int param_1,undefined4 param_2);
+// Original: engine_ini.cpp_FUN_004d8d90
+// Address: 004d8d90
+void FUN_004d8d90(void);
 
 // Original: engine_ini.cpp_FUN_004d8e00
 // Address: 004d8e00
@@ -79,8 +79,8 @@ void FUN_004d8e00(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_CIni_ctor_FUN_004d8e50
 // Address: 004d8e50
-CIni * CIni::ctor(CIni *this_ptr);
+CIni * __cdecl CIni::ctor(CIni *this_ptr);
 
 // Original: engine_ini.cpp_CIni_dtor_FUN_004d8e60
 // Address: 004d8e60
-CIni * CIni::dtor(CIni *this_ptr,uint flags);
+CIni * __cdecl CIni::dtor(CIni *this_ptr,uint flags);

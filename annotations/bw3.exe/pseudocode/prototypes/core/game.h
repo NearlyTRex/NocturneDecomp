@@ -7,7 +7,7 @@
 
 // Original: core_game.cpp_staticInit_FUN_004b3cd0
 // Address: 004b3cd0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_game.cpp_setupMovieRecording_FUN_004b3d70
 // Address: 004b3d70
@@ -23,7 +23,7 @@ CGame * __cdecl CGame::ctor(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_dtor_FUN_004b4420
 // Address: 004b4420
-CGame * CGame::dtor(CGame *this_ptr,uint flags);
+CGame * __cdecl CGame::dtor(CGame *this_ptr,uint flags);
 
 // Original: core_game.cpp_CGame_saveClockTime_FUN_004b4430
 // Address: 004b4430
@@ -61,13 +61,13 @@ void __cdecl CGame::updateStatusDisplays(CGame *this_ptr);
 // Address: 004b4f00
 void __cdecl CGame::processFudge(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004b503e
-// Address: 004b503e
-void FUN_004b503e(undefined4 param_1);
+// Original: core_game.cpp_FUN_004b5040
+// Address: 004b5040
+void FUN_004b5040(void);
 
-// Original: core_game.cpp_drawKeyBindingEntry_FUN_004b50ee
-// Address: 004b50ee
-void drawKeyBindingEntry(EInputCodeType param_1);
+// Original: core_game.cpp_drawKeyBindingEntry_FUN_004b50f0
+// Address: 004b50f0
+void drawKeyBindingEntry(void);
 
 // Original: core_game.cpp_FUN_004b51e0
 // Address: 004b51e0
@@ -109,17 +109,17 @@ void __cdecl CGame::processJoystickControls(CGame *this_ptr,SPlayerInput *player
 // Address: 004b97f0
 void __cdecl pollKeyStateOnChange(int key_index,int *output_state);
 
-// Original: core_game.cpp_FUN_004b981e
-// Address: 004b981e
-void FUN_004b981e(int param_1,uint *param_2);
+// Original: core_game.cpp_FUN_004b9820
+// Address: 004b9820
+void FUN_004b9820(void);
 
-// Original: core_game.cpp_FUN_004b984e
-// Address: 004b984e
-void FUN_004b984e(int param_1,int param_2,float *param_3,float param_4,float param_5);
+// Original: core_game.cpp_FUN_004b9850
+// Address: 004b9850
+void FUN_004b9850(void);
 
-// Original: core_game.cpp_FUN_004b98ee
-// Address: 004b98ee
-void FUN_004b98ee(float *param_1,float param_2,float param_3);
+// Original: core_game.cpp_FUN_004b98f0
+// Address: 004b98f0
+void FUN_004b98f0(void);
 
 // Original: core_game.cpp_FUN_004b9960
 // Address: 004b9960
@@ -193,9 +193,9 @@ void __cdecl CGame::renderIrisFade(CGame *this_ptr);
 // Address: 004bd8d0
 uint __cdecl CGame::fadeIn(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004bd8ee
-// Address: 004bd8ee
-void FUN_004bd8ee(void);
+// Original: core_game.cpp_FUN_004bd8f0
+// Address: 004bd8f0
+void FUN_004bd8f0(void);
 
 // Original: core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004bd910
 // Address: 004bd910
@@ -217,9 +217,9 @@ void __cdecl FUN_004bdfb0(CGame *this_ptr,char *save_filename,int load_mode);
 // Address: 004be8d0
 void FUN_004be8d0(CGame *param_1,int param_2);
 
-// Original: core_game.cpp_FUN_004beb80
+// Original: core_game.cpp_CGame_displayBitmap_FUN_004beb80
 // Address: 004beb80
-void FUN_004beb80(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,uint param_5);
+void __cdecl CGame::displayBitmap(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5);
 
 // Original: core_game.cpp_FUN_004bec20
 // Address: 004bec20
@@ -233,8 +233,8 @@ void __cdecl joinNetworkGame(void);
 // Address: 004bf3a0
 void __cdecl CGame::slamDT(CGame *this_ptr,float delta_time);
 
-// Original: core_game.cpp_beginProfileTimer_FUN_004bf40c
-// Address: 004bf40c
+// Original: core_game.cpp_beginProfileTimer_FUN_004bf410
+// Address: 004bf410
 void __cdecl beginProfileTimer(void);
 
 // Original: core_game.cpp_endProfileTimer_FUN_004bf430

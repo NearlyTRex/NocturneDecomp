@@ -1,14 +1,12 @@
 // Name: core_pryemorp.cpp_CPryeMorph_dtor_FUN_005274e0
 // Address: 005274e0
 // Address Range: [[005274e0, 005275b2]]
-// Convention: unknown
-// Signature: CPryeMorph * core_pryemorp_cpp_CPryeMorph_dtor_FUN_005274e0(CPryeMorph *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CPryeMorph * __cdecl core_pryemorp_cpp_CPryeMorph_dtor_FUN_005274e0(CPryeMorph *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CPryeMorph * core_pryemorp_cpp_CPryeMorph_dtor_FUN_005274e0(CPryeMorph *this_ptr,uint flags)
+CPryeMorph * __cdecl core_pryemorp_cpp_CPryeMorph_dtor_FUN_005274e0(CPryeMorph *this_ptr,uint flags)
 
 {
   CDemonActor *this_ptr_00;

@@ -19,11 +19,11 @@ float __cdecl distancePointToLineSegment(CVector3f *line_start,CVector3f *line_e
 
 // Original: core_skeleton.cpp_CSkeleton_ctor_FUN_005407e0
 // Address: 005407e0
-CSkeleton * CSkeleton::ctor(CSkeleton *this_ptr);
+CSkeleton * __cdecl CSkeleton::ctor(CSkeleton *this_ptr);
 
 // Original: core_skeleton.cpp_CSkeleton_dtor_FUN_00540840
 // Address: 00540840
-CSkeleton * CSkeleton::dtor(CSkeleton *this_ptr,uint flags);
+CSkeleton * __cdecl CSkeleton::dtor(CSkeleton *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CSkeleton_allocMemory_FUN_00540870
 // Address: 00540870
@@ -63,11 +63,11 @@ int __cdecl CSkeleton::calculateFrameDataSize(CSkeleton *this_ptr);
 
 // Original: core_skeleton.cpp_CDeformableModel_ctor_FUN_00541020
 // Address: 00541020
-CDeformableModel * CDeformableModel::ctor(CDeformableModel *this_ptr);
+CDeformableModel * __cdecl CDeformableModel::ctor(CDeformableModel *this_ptr);
 
 // Original: core_skeleton.cpp_CDeformableModel_dtor_FUN_00541140
 // Address: 00541140
-CDeformableModel * CDeformableModel::dtor(CDeformableModel *this_ptr,uint flags);
+CDeformableModel * __cdecl CDeformableModel::dtor(CDeformableModel *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CDeformableModel_free_FUN_00541160
 // Address: 00541160
@@ -129,9 +129,9 @@ void __cdecl CDeformableModel::renderWireframe(CDeformableModel *this_ptr,int lo
 // Address: 005424b0
 CSkeleton * FUN_005424b0(CDeformableModel *param_1,undefined4 param_2,int param_3,byte param_4);
 
-// Original: core_skeleton.cpp_FUN_005426be
-// Address: 005426be
-void FUN_005426be(CDeformableModel *param_1,int param_2);
+// Original: core_skeleton.cpp_FUN_005426c0
+// Address: 005426c0
+void FUN_005426c0(void);
 
 // Original: core_skeleton.cpp_CDeformableModel_load_FUN_005427c0
 // Address: 005427c0
@@ -213,9 +213,9 @@ CDeformableModelInstance * __cdecl CDeformableModelInstance::dtor(CDeformableMod
 // Address: 00544db0
 void __cdecl CDeformableModelInstance::allocPointList(CDeformableModelInstance *this_ptr);
 
-// Original: core_skeleton.cpp_FUN_00544e30
+// Original: core_skeleton.cpp_CDeformableModelInstance_free_FUN_00544e30
 // Address: 00544e30
-void FUN_00544e30(int param_1);
+void __cdecl CDeformableModelInstance::free(CDeformableModelInstance *this_ptr);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00544e60
 // Address: 00544e60
@@ -451,8 +451,8 @@ SVert * __cdecl SVert::ctor(SVert *this_ptr);
 
 // Original: core_skeleton.cpp_CSkeleton_arrdtor40_FUN_00549330
 // Address: 00549330
-CSkeleton * CSkeleton::arrdtor40(CSkeleton *this_ptr,uint flags);
+CSkeleton * __cdecl CSkeleton::arrdtor40(CSkeleton *this_ptr,uint flags);
 
 // Original: core_skeleton.cpp_CDeformableModel_arrdtor64_FUN_00549350
 // Address: 00549350
-CDeformableModel * CDeformableModel::arrdtor64(CDeformableModel *this_ptr,uint flags);
+CDeformableModel * __cdecl CDeformableModel::arrdtor64(CDeformableModel *this_ptr,uint flags);

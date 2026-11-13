@@ -7,19 +7,19 @@
 
 // Original: core_blundrbs.cpp_staticInit_FUN_00410390
 // Address: 00410390
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_blundrbs.cpp_factoryFuncBlunderbus_FUN_004103c0
 // Address: 004103c0
-void factoryFuncBlunderbus(void);
+CBlunderbus * __cdecl factoryFuncBlunderbus(void);
 
 // Original: core_blundrbs.cpp_CBlunderbus_getActorType_FUN_004103e0
 // Address: 004103e0
-CDemonActorType * CBlunderbus::getActorType(CBlunderbus *this_ptr);
+CDemonActorType * __cdecl CBlunderbus::getActorType(CBlunderbus *this_ptr);
 
 // Original: core_blundrbs.cpp_CBlunderbus_ctor_FUN_004103f0
 // Address: 004103f0
-CBlunderbus * CBlunderbus::ctor(CBlunderbus *this_ptr);
+CBlunderbus * __cdecl CBlunderbus::ctor(CBlunderbus *this_ptr);
 
 // Original: core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490
 // Address: 00410490
@@ -39,4 +39,4 @@ void __cdecl CBlunderbus::setup(CBlunderbus *this_ptr);
 
 // Original: core_blundrbs.cpp_CBlunderbus_dtor_FUN_00411890
 // Address: 00411890
-CBlunderbus * CBlunderbus::dtor(CBlunderbus *this_ptr,uint flags);
+CBlunderbus * __cdecl CBlunderbus::dtor(CBlunderbus *this_ptr,uint flags);

@@ -12,7 +12,7 @@
 ;   core_game.cpp_FUN_004bc840 at 004bc8fc
 ;   core_inivar.cpp_readIniData_FUN_004d8d60 at 004d8d90
 ;   core_inivar.cpp_writeIniData_FUN_004d94d0 at 004d94e6
-;   core_script.cpp_FUN_00522350 at 0052562f
+;   core_script.cpp_CScript_step_FUN_00522350 at 0052562f
 ;
 ; Referenced Globals:
 ;   void* PTR_engine_ini.cpp_CIniFile_dtor_FUN_004d8940_005f8ef4 = 004d8940

@@ -1,14 +1,12 @@
 // Name: core_batman.cpp_CBatman_dtor_FUN_00414620
 // Address: 00414620
 // Address Range: [[00414620, 004146b4]]
-// Convention: unknown
-// Signature: CBatman * core_batman_cpp_CBatman_dtor_FUN_00414620(CBatman *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBatman * __cdecl core_batman_cpp_CBatman_dtor_FUN_00414620(CBatman *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBatman * core_batman_cpp_CBatman_dtor_FUN_00414620(CBatman *this_ptr,uint flags)
+CBatman * __cdecl core_batman_cpp_CBatman_dtor_FUN_00414620(CBatman *this_ptr,uint flags)
 
 {
   int iVar1;

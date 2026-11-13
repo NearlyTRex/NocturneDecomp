@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBugs * core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)
+; CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)
 ;
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr

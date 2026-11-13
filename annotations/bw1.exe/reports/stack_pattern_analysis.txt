@@ -7,7 +7,7 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 715 / 5987
+Functions with stack patterns: 715 / 5983
 
 Pattern type counts:
   stack_alignment                  457
@@ -50,8 +50,8 @@ HIGH SEVERITY - Severe decompilation impact
 MEDIUM SEVERITY - May cause decompiler artifacts
 ====================================================================================================
 
-  engine_2d.c_wrapTextToWidth_FUN_00401d8e
-    File: engine/2d.c, Suspects: 32
+  engine_2d.c_wrapTextToWidth_FUN_00401d90
+    File: engine/2d.c, Suspects: 33
     - [alt_frame_pointer] at 00401e1d: MOV EDI,ESP
 
   engine_2d.c_loadOrBuildColorMap_FUN_00402940
@@ -221,11 +221,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 004158c8: MOV EDI,ESP
 
   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0
-    File: core/bmppuzzl.cpp, Suspects: 40
+    File: core/bmppuzzl.cpp, Suspects: 24
     - [alt_frame_pointer] at 0041707a: MOV EDI,ESP
 
   core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00417230
-    File: core/bmppuzzl.cpp, Suspects: 38
+    File: core/bmppuzzl.cpp, Suspects: 34
     - [stack_alignment] at 0041723c: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_process_FUN_00419740
@@ -273,5 +273,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 28.8 suspects/function
-  Without stack patterns: avg 7.3 suspects/function
+  With stack patterns:    avg 28.0 suspects/function
+  Without stack patterns: avg 6.9 suspects/function

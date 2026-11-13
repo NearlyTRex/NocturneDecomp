@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_initRuntime_FUN_00522080
-;   core_script.cpp_FUN_00522350
+;   core_script.cpp_CScript_step_FUN_00522350
 ;   shape_edittool.cpp_CPickList_clear_FUN_00483d10
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     MOV EAX,ESP                         ; 00522039
     PUSH EAX                            ; 0052203b
     PUSH EBX                            ; 0052203c
-    CALL core_script.cpp_FUN_00522350   ; 0052203d
-        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00522350()
+    CALL core_script.cpp_CScript_step_FUN_00522350 ; 0052203d
+        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_00522350(CScript * this_ptr, float * param_2)
     ADD ESP,0x8                         ; 00522042
     TEST EAX,EAX                        ; 00522045
     JL 0x00522066                       ; 00522047

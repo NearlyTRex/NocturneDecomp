@@ -5,9 +5,9 @@
 // Function prototypes for core/slew.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_slew.cpp_FUN_00550590
+// Original: core_slew.cpp_CSlew_init_FUN_00550590
 // Address: 00550590
-undefined8 FUN_00550590(undefined4 *param_1);
+undefined8 __cdecl CSlew::init(CSlew *this_ptr);
 
 // Original: core_slew.cpp_FUN_005505e0
 // Address: 005505e0

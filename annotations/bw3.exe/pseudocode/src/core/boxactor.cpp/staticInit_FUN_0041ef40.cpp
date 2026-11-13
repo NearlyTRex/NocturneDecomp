@@ -1,12 +1,12 @@
 // Name: core_boxactor.cpp_staticInit_FUN_0041ef40
 // Address: 0041ef40
 // Address Range: [[0041ef40, 0041efa7]]
-// Convention: unknown
-// Signature: void core_boxactor_cpp_staticInit_FUN_0041ef40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_boxactor_cpp_staticInit_FUN_0041ef40(void)
 
 #include "nocturne.h"
 
-void core_boxactor_cpp_staticInit_FUN_0041ef40(void)
+void __cdecl core_boxactor_cpp_staticInit_FUN_0041ef40(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

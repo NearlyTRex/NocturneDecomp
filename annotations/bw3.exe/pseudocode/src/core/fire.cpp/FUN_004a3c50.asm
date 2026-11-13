@@ -10,8 +10,8 @@
 ;   core_exorcism.cpp_CExorcism_process_FUN_0048a420 at 0048aa3a
 ;   core_fire.cpp_CRing_process_FUN_0049fdf0 at 0049ffd4
 ;   core_hino.cpp_CHino_process_FUN_0059b960 at 0059cfae
+;   core_lightsta.cpp_CLightStaff_fire_FUN_004e1070 at 004e1345
 ;   core_lightsta.cpp_CLightStaff_process_FUN_004e2050 at 004e2d2e
-;   core_lightsta.cpp_FUN_004e1070 at 004e1345
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_helldog_cpp_staticInit_FUN_005ab9e0(void)
+; void __cdecl core_helldog_cpp_staticInit_FUN_005ab9e0(void)
 ;
 ;
 ; Called Functions:

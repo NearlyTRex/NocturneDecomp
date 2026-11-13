@@ -66,7 +66,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_0056e130(CSfxSampl
     local_1c = 0;
     local_24 = &(this_ptr->sample_info).reference_distance;
     local_14 = 0;
-    while (iVar5 = support_trstream_cpp_FUN_005a07a0(), -1 < iVar5) {
+    while (iVar5 = support_trstream_cpp_CInStream_readLine_FUN_005a07a0
+                             (&local_58.base,local_484,300), -1 < iVar5) {
       local_14 = local_14 + 1;
       pcVar7 = strstr(local_484,&DAT_005f2c52);
       pcVar9 = local_484;

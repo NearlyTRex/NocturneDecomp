@@ -13,7 +13,7 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00438af0(CCourse *this_ptr,char *f
 {
   _FILE *file;
   int iVar1;
-  uint local_14;
+  int local_14;
   
   core_course_cpp_FUN_00438c20(this_ptr);
   file = engine_dosio_cpp_FUN_00460c70(&DAT_005ce01c,filename,&DAT_005ce019);
@@ -32,7 +32,7 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00438af0(CCourse *this_ptr,char *f
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   _fscanf(file,"%d,%d\n");
-  core_course_cpp_FUN_00438a90(this_ptr,local_14);
+  core_course_cpp_CCourse_allocMemory_FUN_00438a90(this_ptr,local_14);
   do {
     iVar1 = _fgetc(file);
     if (iVar1 < 0) break;

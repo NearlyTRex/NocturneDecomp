@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CYow * core_yow_cpp_CYow_ctor_FUN_005b8160(CYow *this_ptr)
+; CYow * __cdecl core_yow_cpp_CYow_ctor_FUN_005b8160(CYow *this_ptr)
 ;
 ; Parameters:
 ; CYow *           Stack[0x4]:4   this_ptr

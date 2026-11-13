@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004ce590 at 004ce932
+;   core_hero.cpp_CHero_archive_FUN_004ce590 at 004ce932
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_Inventory_005db7be

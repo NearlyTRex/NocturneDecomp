@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CPuzzle.h"
 #include "types/structs/SButtonStruct.h"
 
 // Structure: CChemPuzzle
@@ -12,7 +13,7 @@
 // Ghidra size: 0x944 (2372 bytes)
 #pragma pack(push, 1)
 typedef struct CChemPuzzle {
-    void* vtable; // 0x0, puzzle vtable pointer: the shared puzzle base ctor (00415ba0) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field
+    CPuzzle base; // 0x0, derived
     CAlphaBitmap background; // 0x4, load 004177b0 loads 'chembackground' 640x480 into this+4; render 00418140 displays it first
     int dropper_level; // 0x18, render displays dropper bitmap [dropper_level] at the cursor; process copies selection_count into it
     int selection_count; // 0x1c, process 00418220 appends to selected_chemicals while it is < 3 and clears it after mixing

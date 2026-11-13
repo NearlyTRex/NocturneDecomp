@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_setup_FUN_0042c510
-;   core_inv.cpp_FUN_004f9b20
+;   core_inv.cpp_setupItems_FUN_004f9b20
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
     LEA EAX,[EBX + 0x1fae8]             ; 004eaa2d
     PUSH EAX                            ; 004eaa33
     MOV dword ptr [EBX + 0xc1d0],0x0    ; 004eaa34
-    CALL core_inv.cpp_FUN_004f9b20      ; 004eaa3e
-        ;   XREF to: 004f9b20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004f9b20()
+    CALL core_inv.cpp_setupItems_FUN_004f9b20 ; 004eaa3e
+        ;   XREF to: 004f9b20 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_setupItems_FUN_004f9b20()
     MOV dword ptr [EBX + 0x1ff60],0x0   ; 004eaa43
     MOV dword ptr [EBX + 0x1ff64],0x0   ; 004eaa4d
     MOV dword ptr [EBX + 0x1ff68],0x0   ; 004eaa57

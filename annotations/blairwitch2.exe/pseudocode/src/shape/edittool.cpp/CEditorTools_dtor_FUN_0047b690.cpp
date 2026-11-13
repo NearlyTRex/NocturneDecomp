@@ -1,15 +1,14 @@
 // Name: shape_edittool.cpp_CEditorTools_dtor_FUN_0047b690
 // Address: 0047b690
 // Address Range: [[0047b690, 0047b6e6]]
-// Convention: unknown
-// Signature: CEditorTools * shape_edittool_cpp_CEditorTools_dtor_FUN_0047b690(CEditorTools *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0047b690(CEditorTools *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CEditorTools * shape_edittool_cpp_CEditorTools_dtor_FUN_0047b690(CEditorTools *this_ptr,uint flags)
+CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0047b690(CEditorTools *this_ptr,uint flags)
 
 {
   while (0 < _DAT_01c2559c) {

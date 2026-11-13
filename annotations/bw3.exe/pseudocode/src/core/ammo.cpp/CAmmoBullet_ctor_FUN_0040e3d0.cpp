@@ -1,14 +1,12 @@
 // Name: core_ammo.cpp_CAmmoBullet_ctor_FUN_0040e3d0
 // Address: 0040e3d0
 // Address Range: [[0040e3d0, 0040e411]]
-// Convention: unknown
-// Signature: CAmmoBullet * core_ammo_cpp_CAmmoBullet_ctor_FUN_0040e3d0(CAmmoBullet *this_ptr)
+// Convention: __cdecl
+// Signature: CAmmoBullet * __cdecl core_ammo_cpp_CAmmoBullet_ctor_FUN_0040e3d0(CAmmoBullet *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAmmoBullet * core_ammo_cpp_CAmmoBullet_ctor_FUN_0040e3d0(CAmmoBullet *this_ptr)
+CAmmoBullet * __cdecl core_ammo_cpp_CAmmoBullet_ctor_FUN_0040e3d0(CAmmoBullet *this_ptr)
 
 {
   CAmmo *pCVar1;

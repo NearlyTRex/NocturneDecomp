@@ -1,14 +1,12 @@
 // Name: core_heal.cpp_CHeal_dtor_FUN_004d1cb0
 // Address: 004d1cb0
 // Address Range: [[004d1cb0, 004d1cfd]]
-// Convention: unknown
-// Signature: CHeal * core_heal_cpp_CHeal_dtor_FUN_004d1cb0(CHeal *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CHeal * __cdecl core_heal_cpp_CHeal_dtor_FUN_004d1cb0(CHeal *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHeal * core_heal_cpp_CHeal_dtor_FUN_004d1cb0(CHeal *this_ptr,uint flags)
+CHeal * __cdecl core_heal_cpp_CHeal_dtor_FUN_004d1cb0(CHeal *this_ptr,uint flags)
 
 {
   CHeal *pCVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_conveyor_cpp_staticInit_FUN_00438430(void)
+; void __cdecl core_conveyor_cpp_staticInit_FUN_00438430(void)
 ;
 ;
 ; Called Functions:

@@ -11,7 +11,7 @@
 ;
 ; XREF[3]:
 ;   core_boneguy.cpp_CBoneGuy_getDeathState_FUN_00419880 at 00419885
-;   core_construc.cpp_FUN_004444f0 at 004444f5
+;   core_construc.cpp_CConstruct_getDeathState_FUN_004444f0 at 004444f5
 ;   core_prye.cpp_CPrye_getDeathState_FUN_00526fc0 at 00526fe0
 ;
 ; Referenced Globals:

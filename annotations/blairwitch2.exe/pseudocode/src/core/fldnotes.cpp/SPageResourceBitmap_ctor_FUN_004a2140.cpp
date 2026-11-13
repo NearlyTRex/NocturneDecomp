@@ -1,14 +1,12 @@
 // Name: core_fldnotes.cpp_SPageResourceBitmap_ctor_FUN_004a2140
 // Address: 004a2140
 // Address Range: [[004a2140, 004a2163]]
-// Convention: unknown
-// Signature: SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_ctor_FUN_004a2140(SPageResourceBitmap *this_ptr)
+// Convention: __cdecl
+// Signature: SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctor_FUN_004a2140(SPageResourceBitmap *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_ctor_FUN_004a2140(SPageResourceBitmap *this_ptr)
+SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctor_FUN_004a2140(SPageResourceBitmap *this_ptr)
 
 {
   int extraout_EAX;

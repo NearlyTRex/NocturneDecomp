@@ -523,15 +523,15 @@ LAB_0045bfdc:
             core_inv_cpp_FUN_004db8e0(local_24,iVar5,0);
             core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
                       (0x01D182F0,*(CDemonActor **)(param_1[2].flames[1].on_event + 0x28));
-            core_charactr_cpp_FUN_00428b10
-                      (param_1,1,*(uint *)(param_1[2].flames[1].on_event + 0x28),0,0);
+            core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
+                      (param_1,1,*(int *)(param_1[2].flames[1].on_event + 0x28),0,0);
           }
           else if (local_20 == 6) {
             core_inv_cpp_FUN_004db8e0(local_24,iVar5,0);
             core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
                       (0x01D182F0,*(CDemonActor **)(param_1[2].flames[1].on_event + 0x28));
-            core_charactr_cpp_FUN_00428b10
-                      (param_1,1,*(uint *)(param_1[2].flames[1].on_event + 0x28),0,0);
+            core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
+                      (param_1,1,*(int *)(param_1[2].flames[1].on_event + 0x28),0,0);
             pCVar3 = param_1[2].flames;
             pCVar3[1].off_event[0x40] = '\0';
             pCVar3[1].off_event[0x41] = '\0';

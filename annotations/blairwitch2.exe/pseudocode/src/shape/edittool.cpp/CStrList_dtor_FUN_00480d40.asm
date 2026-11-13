@@ -12,8 +12,8 @@
 ;   core_script.cpp_CScript_dtor_FUN_00521600 at 00521614
 ;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760 at 0047c7dc
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004820b0 at 00482104
-;   shape_edittool.cpp_FUN_0047c7ee at 0047c86c
-;   shape_edittool.cpp_FUN_0047c87e at 0047c926
+;   shape_edittool.cpp_FUN_0047c7f0 at 0047c86c
+;   shape_edittool.cpp_FUN_0047c880 at 0047c926
 ;
 ; Referenced Globals:
 ;   undefined1* g_CStrListVTable = 00480d40

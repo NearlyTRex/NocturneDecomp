@@ -15,7 +15,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_00544
   CDeformableModel *pCVar2;
   CVector3i *pCVar3;
   
-  core_skeleton_cpp_FUN_00544e30(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_free_FUN_00544e30(this_ptr);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr);
   iVar1 = pCVar2->vertex_count[0];
   pCVar3 = (CVector3i *)operator_new_array(iVar1 * 0xc);

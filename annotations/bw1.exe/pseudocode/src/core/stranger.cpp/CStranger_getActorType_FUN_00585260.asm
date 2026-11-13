@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_stranger_cpp_CStranger_getActorType_FUN_00585260(CStranger *this_ptr)
+; CDemonActorType * __cdecl core_stranger_cpp_CStranger_getActorType_FUN_00585260(CStranger *this_ptr)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr

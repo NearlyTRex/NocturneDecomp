@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBiggs * core_biggs_cpp_CBiggs_dtor_FUN_00415410(CBiggs *this_ptr,uint flags)
+; CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_00415410(CBiggs *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBiggs *         Stack[0x4]:4   this_ptr

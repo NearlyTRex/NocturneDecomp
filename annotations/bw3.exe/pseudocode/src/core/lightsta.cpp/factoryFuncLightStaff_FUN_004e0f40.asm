@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lightsta_cpp_factoryFuncLightStaff_FUN_004e0f40(void)
+; CLightStaff * __cdecl core_lightsta_cpp_factoryFuncLightStaff_FUN_004e0f40(void)
 ;
 ;
 ; Called Functions:

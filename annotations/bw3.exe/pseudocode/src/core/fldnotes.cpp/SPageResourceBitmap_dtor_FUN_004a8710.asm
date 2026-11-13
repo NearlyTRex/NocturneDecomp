@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SPageResourceBitmap * core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004a8710(SPageResourceBitmap *this_ptr,uint flags)
+; SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceBitmap_dtor_FUN_004a8710(SPageResourceBitmap *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SPageResourceBitmap * Stack[0x4]:4   this_ptr

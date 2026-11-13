@@ -20,13 +20,14 @@ void shape_edittool_cpp_FUN_0047dc40(uint param_1,float param_2,float param_3)
   float fVar5;
   uint uVar6;
   int iVar7;
-  int y;
+  int y1;
   int iVar8;
   int y2;
   int iVar9;
   int x1;
   int x2;
   float10 fVar10;
+  double dVar11;
   float local_54;
   
   if (_DAT_01c2559c < 1) {
@@ -52,15 +53,15 @@ void shape_edittool_cpp_FUN_0047dc40(uint param_1,float param_2,float param_3)
   if ((iVar2 != *(int *)(iVar1 + 0x1c25790)) || (0x47ffff < iVar7 - *(int *)(iVar1 + 0x1c25794))) {
     shape_edittool_cpp_FUN_0047e870(param_1);
     engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
-    engine_mini3d_cpp_FUN_004f3570(0x3f800000);
+    engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0
               (_DAT_01c25590,_DAT_01c35e48,_DAT_01c35e50,_DAT_01c35e4c,_DAT_01c263b8,-1,
                "%d%% complete");
     iVar4 = _DAT_01c35e50;
     iVar9 = _DAT_01c35e48;
     uVar6 = _DAT_01c263c4;
-    y = _DAT_01c25f7c * 2 + _DAT_01c35e4c;
-    iVar1 = y + 1;
+    y1 = _DAT_01c25f7c * 2 + _DAT_01c35e4c;
+    iVar1 = y1 + 1;
     x1 = _DAT_01c35e48 + 1;
     x2 = _DAT_01c35e50 + -1;
     iVar8 = _DAT_01c25f7c * 4 + _DAT_01c35e4c;
@@ -70,25 +71,25 @@ void shape_edittool_cpp_FUN_0047dc40(uint param_1,float param_2,float param_3)
     }
     else {
       iVar3 = (_DAT_01c263cc & 0xff) * 3;
-      engine_mini3d_cpp_FUN_004f8e20
+      engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)(byte)(&DAT_01c35839)[iVar3] << 8 |
                  (uint)(byte)(&DAT_01c35838)[iVar3] << 0x10 | (uint)(byte)(&DAT_01c3583a)[iVar3]);
-      engine_mini3d_cpp_FUN_004f9340(iVar9,y,iVar4,iVar8);
+      engine_mini3d_cpp_drawRect_FUN_004f9340(iVar9,y1,iVar4,iVar8);
       if (_DAT_01c25f84 == 0) {
         _DAT_01c35e60 = uVar6;
       }
       else {
         iVar8 = (uVar6 & 0xff) * 3;
-        engine_mini3d_cpp_FUN_004f8e20
+        engine_mini3d_cpp_setColor_FUN_004f8e20
                   ((uint)(byte)(&DAT_01c35838)[iVar8] << 0x10 |
                    (uint)(byte)(&DAT_01c35839)[iVar8] << 8 | (uint)(byte)(&DAT_01c3583a)[iVar8]);
       }
-      engine_mini3d_cpp_FUN_004f90d0(x1,iVar1,x2,y2);
+      engine_mini3d_cpp_fillRect_FUN_004f90d0(x1,iVar1,x2,y2);
     }
     uVar6 = _DAT_01c263d0;
     if (_DAT_01c25f84 != 0) {
       iVar8 = (_DAT_01c263d0 & 0xff) * 3;
-      engine_mini3d_cpp_FUN_004f8e20
+      engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)(byte)(&DAT_01c3583a)[iVar8] |
                  (uint)(byte)(&DAT_01c35838)[iVar8] << 0x10 |
                  (uint)(byte)(&DAT_01c35839)[iVar8] << 8);
@@ -96,16 +97,16 @@ void shape_edittool_cpp_FUN_0047dc40(uint param_1,float param_2,float param_3)
     }
     _DAT_01c35e60 = uVar6;
     if (_DAT_01c25f84 == 0) {
-      engine_2d_c_drawHLine_FUN_00402f30(iVar9,y,x2);
+      engine_2d_c_drawHLine_FUN_00402f30(iVar9,y1,x2);
     }
     else {
-      engine_mini3d_cpp_FUN_004f9390(iVar9,y,x2);
+      engine_mini3d_cpp_drawHLine_FUN_004f9390(iVar9,y1,x2);
     }
     if (_DAT_01c25f84 == 0) {
-      engine_2d_c_drawVLine_FUN_00403040(iVar9,y,y2);
+      engine_2d_c_drawVLine_FUN_00403040(iVar9,y1,y2);
     }
     else {
-      engine_mini3d_cpp_FUN_004f93b0(iVar9,y,y2);
+      engine_mini3d_cpp_drawVLine_FUN_004f93b0(iVar9,y1,y2);
     }
     fVar10 = (float10)((x2 - x1) + 1) * (float10)local_54 + (float10)_DAT_005d233f;
     round();
@@ -119,24 +120,25 @@ void shape_edittool_cpp_FUN_0047dc40(uint param_1,float param_2,float param_3)
       }
       else {
         iVar4 = (_DAT_01c263c8 & 0xff) * 3;
-        engine_mini3d_cpp_FUN_004f8e20
+        engine_mini3d_cpp_setColor_FUN_004f8e20
                   ((uint)(byte)(&DAT_01c3583a)[iVar4] |
                    (uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |
                    (uint)(byte)(&DAT_01c35839)[iVar4] << 8);
-        engine_mini3d_cpp_FUN_004f90d0(x1,iVar1,iVar9,y2);
+        engine_mini3d_cpp_fillRect_FUN_004f90d0(x1,iVar1,iVar9,y2);
       }
     }
     if (0 < iVar2) {
       fVar5 = (float)(iVar7 - *(int *)((_DAT_01c2559c + -1) * 0x1f8 + 0x1c2578c)) *
               (float)_DAT_005d2347;
+      dVar11 = (double)fVar5;
       if ((float)_DAT_005d234f < fVar5) {
         fVar10 = (((float10)param_3 - (float10)param_2) * (float10)fVar5) / (float10)param_2 +
                  (float10)_DAT_005d233f;
-        round((double)fVar5);
+        round(dVar11);
         if (0 < (int)ROUND(fVar10)) {
-          round();
+          round(dVar11);
           engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
-          engine_mini3d_cpp_FUN_004f3570(0x3f800000);
+          engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0
                     (_DAT_01c25590,_DAT_01c35e48,_DAT_01c35e50,_DAT_01c35e54 - _DAT_01c25f7c,
                      _DAT_01c263b8,-1,"%d:%02d elapsed, approximately %d:%02d remaining");

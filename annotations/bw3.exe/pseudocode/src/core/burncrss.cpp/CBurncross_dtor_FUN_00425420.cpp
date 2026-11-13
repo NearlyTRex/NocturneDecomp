@@ -1,14 +1,12 @@
 // Name: core_burncrss.cpp_CBurncross_dtor_FUN_00425420
 // Address: 00425420
 // Address Range: [[00425420, 00425484]]
-// Convention: unknown
-// Signature: CBurncross * core_burncrss_cpp_CBurncross_dtor_FUN_00425420(CBurncross *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBurncross * __cdecl core_burncrss_cpp_CBurncross_dtor_FUN_00425420(CBurncross *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBurncross * core_burncrss_cpp_CBurncross_dtor_FUN_00425420(CBurncross *this_ptr,uint flags)
+CBurncross * __cdecl core_burncrss_cpp_CBurncross_dtor_FUN_00425420(CBurncross *this_ptr,uint flags)
 
 {
   int iVar1;

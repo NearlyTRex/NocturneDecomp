@@ -7,11 +7,11 @@
 
 // Original: core_gmehook.cpp_CGameHook_ctor_FUN_0059c290
 // Address: 0059c290
-CGameHook * CGameHook::ctor(CGameHook *this_ptr);
+CGameHook * __cdecl CGameHook::ctor(CGameHook *this_ptr);
 
 // Original: core_gmehook.cpp_CGameHook_dtor_FUN_0059c2b0
 // Address: 0059c2b0
-CGameHook * CGameHook::dtor(CGameHook *this_ptr,uint flags);
+CGameHook * __cdecl CGameHook::dtor(CGameHook *this_ptr,uint flags);
 
 // Original: core_gmehook.cpp_CGameHook_printBanner_FUN_0059c2c0
 // Address: 0059c2c0

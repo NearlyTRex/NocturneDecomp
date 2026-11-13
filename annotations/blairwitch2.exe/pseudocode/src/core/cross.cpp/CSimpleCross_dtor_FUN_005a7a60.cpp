@@ -1,14 +1,12 @@
 // Name: core_cross.cpp_CSimpleCross_dtor_FUN_005a7a60
 // Address: 005a7a60
 // Address Range: [[005a7a60, 005a7aad]]
-// Convention: unknown
-// Signature: CSimpleCross * core_cross_cpp_CSimpleCross_dtor_FUN_005a7a60(CSimpleCross *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSimpleCross * __cdecl core_cross_cpp_CSimpleCross_dtor_FUN_005a7a60(CSimpleCross *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSimpleCross * core_cross_cpp_CSimpleCross_dtor_FUN_005a7a60(CSimpleCross *this_ptr,uint flags)
+CSimpleCross * __cdecl core_cross_cpp_CSimpleCross_dtor_FUN_005a7a60(CSimpleCross *this_ptr,uint flags)
 
 {
   CWeapon *pCVar1;

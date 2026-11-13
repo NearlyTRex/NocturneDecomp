@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004ac900(CFieldNotes *this_ptr,_FILE *param_2)
+; void __cdecl core_fldnotes_cpp_CFieldNotes_loadState_FUN_004ac900(CFieldNotes *this_ptr,_FILE *file)
 ;
 ; Parameters:
 ; CFieldNotes *    Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
+; _FILE *          Stack[0x8]:4   file
 ; Local Variables:
 ; undefined        Stack[-0x34c]:1  local_34c
 ; undefined        Stack[-0x24c]:1  local_24c
@@ -155,7 +155,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x458]     ; 004aca0b
     PUSH ECX                            ; 004aca12
     CALL core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 ; 004aca13
-        ;   XREF to: 004aa810 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810(CFieldNotes * this_ptr, char * param_2, char * param_3)
+        ;   XREF to: 004aa810 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810(CFieldNotes * this_ptr, char * file_name, char * error_text)
     ADD ESP,0xc                         ; 004aca18
     PUSH 0x5c183b                       ; 004aca1b | = "%*[^\n]\n"
     XOR EBX,EBX                         ; 004aca20
@@ -205,7 +205,7 @@ section .text
     PUSH EDI                            ; 004acabe
     PUSH ESI                            ; 004acabf
     CALL core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30 ; 004acac0
-        ;   XREF to: 004a9c30 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30(SNotesSection * this_ptr, char * param_2)
+        ;   XREF to: 004a9c30 (UNCONDITIONAL_CALL)  ; SNotesEntry * core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30(SNotesSection * this_ptr, char * name)
     ADD ESP,0x8                         ; 004acac5
     MOV EDI,EAX                         ; 004acac8
     TEST EAX,EAX                        ; 004acaca
@@ -333,7 +333,7 @@ section .text
     PUSH ECX                            ; 004acc57
     PUSH ESI                            ; 004acc58
     CALL core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30 ; 004acc59
-        ;   XREF to: 004a9c30 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30(SNotesSection * this_ptr, char * param_2)
+        ;   XREF to: 004a9c30 (UNCONDITIONAL_CALL)  ; SNotesEntry * core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30(SNotesSection * this_ptr, char * name)
     ADD ESP,0x8                         ; 004acc5e
     MOV EDI,EAX                         ; 004acc61
     TEST EAX,EAX                        ; 004acc63
@@ -479,7 +479,7 @@ section .text
     PUSH EAX                            ; 004ace1d
     PUSH EDI                            ; 004ace1e
     CALL core_fldnotes.cpp_SNotesMap_showAnnotation_FUN_004aa1a0 ; 004ace1f
-        ;   XREF to: 004aa1a0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesMap_showAnnotation_FUN_004aa1a0(SNotesMap * this_ptr, char * param_2)
+        ;   XREF to: 004aa1a0 (UNCONDITIONAL_CALL)  ; int core_fldnotes.cpp_SNotesMap_showAnnotation_FUN_004aa1a0(SNotesMap * this_ptr, char * name)
     ADD ESP,0x8                         ; 004ace24
     INC ESI                             ; 004ace27
     CMP ESI,dword ptr [ESP + 0x418]     ; 004ace28

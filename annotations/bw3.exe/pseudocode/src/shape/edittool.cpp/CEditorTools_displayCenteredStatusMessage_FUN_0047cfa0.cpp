@@ -26,7 +26,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_00
   local_14 = (byte *)0x0;
   engine_special_cpp_clearScreen_FUN_00560d70();
   engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
-  engine_mini3d_cpp_FUN_004edaf0(0x3f800000);
+  engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
   engine_font_cpp_CBitFont_drawTextCenter_FUN_004b0ea0
             (_DAT_01c5b0e0,DAT_005fba18 / 2,DAT_005fba1c / 2,_DAT_01c5bb1c,-1,local_414);
   wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();

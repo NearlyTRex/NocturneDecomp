@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_startSoundThread_FUN_00558d70 at 00558db5
-;   support_trisock.cpp_FUN_00570f00 at 00570f62
+;   support_trisock.cpp_FUN_00570ea0 at 00570f62
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateThread_005b352c = 001b3c98

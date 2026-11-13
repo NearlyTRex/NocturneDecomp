@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCurtain * core_curtain_cpp_CCurtain_dtor_FUN_00448650(CCurtain *this_ptr,uint flags)
+; CCurtain * __cdecl core_curtain_cpp_CCurtain_dtor_FUN_00448650(CCurtain *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr

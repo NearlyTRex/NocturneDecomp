@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CRainDrop * core_fire_cpp_CRainDrop_arrdtor256_FUN_0049efc0(CRainDrop *this_ptr,uint flags)
+; CRainDrop * __cdecl core_fire_cpp_CRainDrop_arrdtor256_FUN_0049efc0(CRainDrop *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CRainDrop *      Stack[0x4]:4   this_ptr

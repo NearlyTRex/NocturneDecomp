@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDjien * core_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
+; CDjien * __cdecl core_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
 ;
 ; Parameters:
 ; CDjien *         Stack[0x4]:4   this_ptr

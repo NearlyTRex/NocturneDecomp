@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bindevil_cpp_factoryFuncBindEvil_FUN_0040f750(void)
+; CBindEvil * __cdecl core_bindevil_cpp_factoryFuncBindEvil_FUN_0040f750(void)
 ;
 ;
 ; Called Functions:

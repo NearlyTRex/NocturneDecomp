@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAngelForest * core_hotdemon_cpp_CAngelForest_dtor_FUN_004d6580(CAngelForest *this_ptr,uint flags)
+; CAngelForest * __cdecl core_hotdemon_cpp_CAngelForest_dtor_FUN_004d6580(CAngelForest *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAngelForest *   Stack[0x4]:4   this_ptr

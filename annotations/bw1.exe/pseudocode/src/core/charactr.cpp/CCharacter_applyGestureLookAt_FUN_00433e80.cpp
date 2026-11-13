@@ -11,7 +11,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_00433e80(CChara
 {
   EDeathState EVar1;
   
-  core_charactr_cpp_FUN_00432cb0(this_ptr);
+  core_charactr_cpp_CCharacter_applyGesture_FUN_00432cb0(this_ptr);
   core_charactr_cpp_CCharacter_applyLookAt_FUN_00433b30(this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180(&this_ptr->model);
   core_charactr_cpp_CCharacter_computeBoundingBox_FUN_00432e80(this_ptr);

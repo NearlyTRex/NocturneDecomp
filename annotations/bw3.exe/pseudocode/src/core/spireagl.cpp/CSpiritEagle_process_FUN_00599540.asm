@@ -40,7 +40,7 @@
 ;   core_charactr.cpp_FUN_00434850
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004cec40
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
-;   core_mission.cpp_FUN_004f6f10
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -372,8 +372,8 @@ section .text
     MOV EDX,dword ptr [0x00600530]      ; 005998b0 | DAT_00600530
     PUSH EDX                            ; 005998b6 | DAT_01d81080
     MOV dword ptr [EAX + 0x20870],0x0   ; 005998b7
-    CALL core_mission.cpp_FUN_004f6f10  ; 005998c1
-        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f6f10()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 005998c1
+        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 005998c6
     CMP dword ptr [EBP + -0x4],0x0      ; 005998c9
         ;   Label: LAB_005998c9

@@ -1,12 +1,12 @@
 // Name: core_toxhand.cpp_staticInit_FUN_0056c000
 // Address: 0056c000
 // Address Range: [[0056c000, 0056c023]]
-// Convention: unknown
-// Signature: void core_toxhand_cpp_staticInit_FUN_0056c000(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_toxhand_cpp_staticInit_FUN_0056c000(void)
 
 #include "nocturne.h"
 
-void core_toxhand_cpp_staticInit_FUN_0056c000(void)
+void __cdecl core_toxhand_cpp_staticInit_FUN_0056c000(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

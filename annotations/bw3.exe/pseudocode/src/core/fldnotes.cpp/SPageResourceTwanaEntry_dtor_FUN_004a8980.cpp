@@ -1,18 +1,17 @@
 // Name: core_fldnotes.cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980
 // Address: 004a8980
 // Address Range: [[004a8980, 004a89fd]]
-// Convention: unknown
-// Signature: SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980(SPageResourceTwanaEntry *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980(SPageResourceTwanaEntry *this_ptr,uint flags)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980(SPageResourceTwanaEntry *this_ptr,uint flags)
+SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980(SPageResourceTwanaEntry *this_ptr,uint flags)
 
 {
-  int iVar1;
+  CAlphaBitmap *pCVar1;
   SPageResourceTwanaEntry *pSVar2;
   void *ptr;
   
@@ -26,9 +25,9 @@ SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004
   if (this_ptr == pSVar2) {
     _DAT_01d0cfa0 = (SPageResourceTwanaEntry *)0x0;
   }
-  iVar1 = core_fldnotes_cpp_FUN_004ad410(this_ptr->slot_bitmaps,0);
+  pCVar1 = core_fldnotes_cpp_CAlphaBitmap_arrdtor3_FUN_004ad410(this_ptr->slot_bitmaps,0);
   pSVar2 = (SPageResourceTwanaEntry *)
-           core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0((SPageResource *)(iVar1 + -0xdc));
+           core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0((SPageResource *)(pCVar1 + -0xb));
   if ((flags & 2) == 0) {
     return pSVar2;
   }

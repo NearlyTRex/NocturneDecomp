@@ -1,14 +1,12 @@
 // Name: core_skeleton.cpp_CSkeleton_ctor_FUN_005407e0
 // Address: 005407e0
 // Address Range: [[005407e0, 00540830]]
-// Convention: unknown
-// Signature: CSkeleton * core_skeleton_cpp_CSkeleton_ctor_FUN_005407e0(CSkeleton *this_ptr)
+// Convention: __cdecl
+// Signature: CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_005407e0(CSkeleton *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSkeleton * core_skeleton_cpp_CSkeleton_ctor_FUN_005407e0(CSkeleton *this_ptr)
+CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_005407e0(CSkeleton *this_ptr)
 
 {
   CSkeleton *pCVar1;

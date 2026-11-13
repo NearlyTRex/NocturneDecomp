@@ -46,7 +46,7 @@
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_00419550 at 004196ce
 ;   core_carved.cpp_FUN_00428810 at 00428a32
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_00430520 at 0043057d
-;   core_construc.cpp_FUN_00444110 at 00444252
+;   core_construc.cpp_CConstruct_explode_FUN_00444110 at 00444252
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00445730 at 004458bc
 ;   core_demnfolk.cpp_FUN_00458680 at 0045881f
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004c5f10 at 004c6096
@@ -66,8 +66,8 @@
 ;   core_actor.cpp_FUN_00408b80
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00416330
-;   core_bodypart.cpp_FUN_00414910
 ;   core_bodypart.cpp_FUN_00416970
+;   core_bodypart.cpp_setCounts_FUN_00414910
 ;   core_dirmat.cpp_FUN_0045b870
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -97,8 +97,8 @@ section .text
     PUSH 0x0                            ; 004157e6
     PUSH EBX                            ; 004157e8
     MOV dword ptr [EBX + 0x70],0x2      ; 004157e9
-    CALL core_bodypart.cpp_FUN_00414910 ; 004157f0
-        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00414910()
+    CALL core_bodypart.cpp_setCounts_FUN_00414910 ; 004157f0
+        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00414910()
     LEA EAX,[EBX + 0x168]               ; 004157f5
     ADD ESP,0xc                         ; 004157fb
     MOV EDX,EAX                         ; 004157fe

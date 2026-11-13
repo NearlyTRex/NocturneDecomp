@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_zombiepriest_cpp_CZombiePriest_getActorType_FUN_0058d4d0(CZombiePriest *this_ptr)
+; CDemonActorType * __cdecl core_zombiepriest_cpp_CZombiePriest_getActorType_FUN_0058d4d0(CZombiePriest *this_ptr)
 ;
 ; Parameters:
 ; CZombiePriest *  Stack[0x4]:4   this_ptr

@@ -1,20 +1,20 @@
 // Name: core_toxhand.cpp_factoryFuncTheHand_FUN_0056c030
 // Address: 0056c030
 // Address Range: [[0056c030, 0056c04b]]
-// Convention: unknown
-// Signature: void core_toxhand_cpp_factoryFuncTheHand_FUN_0056c030(void)
+// Convention: __cdecl
+// Signature: CTheHand * __cdecl core_toxhand_cpp_factoryFuncTheHand_FUN_0056c030(void)
 
 #include "nocturne.h"
 
-void core_toxhand_cpp_factoryFuncTheHand_FUN_0056c030(void)
+CTheHand * __cdecl core_toxhand_cpp_factoryFuncTheHand_FUN_0056c030(void)
 
 {
-  CTheHand *this_ptr;
+  CTheHand *pCVar1;
   
-  this_ptr = (CTheHand *)operator_new(0xd0cc);
-  if (this_ptr == (CTheHand *)0x0) {
-    return;
+  pCVar1 = (CTheHand *)operator_new(0xd0cc);
+  if (pCVar1 == (CTheHand *)0x0) {
+    return (CTheHand *)0x0;
   }
-  core_toxhand_cpp_CTheHand_ctor_FUN_0056c060(this_ptr);
-  return;
+  pCVar1 = core_toxhand_cpp_CTheHand_ctor_FUN_0056c060(pCVar1);
+  return pCVar1;
 }

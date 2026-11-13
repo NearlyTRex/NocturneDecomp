@@ -7,23 +7,23 @@
 
 // Original: core_confedrt.cpp_staticInit_FUN_005a07e0
 // Address: 005a07e0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_confedrt.cpp_factoryFuncConfederate_FUN_005a0810
 // Address: 005a0810
-void factoryFuncConfederate(void);
+CConfederate * __cdecl factoryFuncConfederate(void);
 
 // Original: core_confedrt.cpp_CConfederate_getActorType_FUN_005a0830
 // Address: 005a0830
-CDemonActorType * CConfederate::getActorType(CConfederate *this_ptr);
+CDemonActorType * __cdecl CConfederate::getActorType(CConfederate *this_ptr);
 
 // Original: core_confedrt.cpp_CConfederate_ctor_FUN_005a0840
 // Address: 005a0840
-CConfederate * CConfederate::ctor(CConfederate *this_ptr);
+CConfederate * __cdecl CConfederate::ctor(CConfederate *this_ptr);
 
 // Original: core_confedrt.cpp_CConfederate_dtor_FUN_005a09c0
 // Address: 005a09c0
-CConfederate * CConfederate::dtor(CConfederate *this_ptr,uint flags);
+CConfederate * __cdecl CConfederate::dtor(CConfederate *this_ptr,uint flags);
 
 // Original: core_confedrt.cpp_CConfederate_setup_FUN_005a0a90
 // Address: 005a0a90

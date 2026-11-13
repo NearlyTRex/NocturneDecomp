@@ -7,7 +7,7 @@
 
 // Original: core_emitter.cpp_staticInit_FUN_00487980
 // Address: 00487980
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_emitter.cpp_factoryFuncEmitter_FUN_004879b0
 // Address: 004879b0
@@ -15,11 +15,11 @@ CEmitter * __cdecl factoryFuncEmitter(void);
 
 // Original: core_emitter.cpp_CEmitter_getActorType_FUN_004879d0
 // Address: 004879d0
-CDemonActorType * CEmitter::getActorType(CEmitter *this_ptr);
+CDemonActorType * __cdecl CEmitter::getActorType(CEmitter *this_ptr);
 
 // Original: core_emitter.cpp_CEmitter_ctor_FUN_004879e0
 // Address: 004879e0
-CEmitter * CEmitter::ctor(CEmitter *this_ptr);
+CEmitter * __cdecl CEmitter::ctor(CEmitter *this_ptr);
 
 // Original: core_emitter.cpp_CEmitter_setup_FUN_00487bb0
 // Address: 00487bb0

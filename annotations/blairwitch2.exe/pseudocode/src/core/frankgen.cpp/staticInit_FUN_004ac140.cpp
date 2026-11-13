@@ -1,12 +1,12 @@
 // Name: core_frankgen.cpp_staticInit_FUN_004ac140
 // Address: 004ac140
 // Address Range: [[004ac140, 004ac163]]
-// Convention: unknown
-// Signature: void core_frankgen_cpp_staticInit_FUN_004ac140(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_frankgen_cpp_staticInit_FUN_004ac140(void)
 
 #include "nocturne.h"
 
-void core_frankgen_cpp_staticInit_FUN_004ac140(void)
+void __cdecl core_frankgen_cpp_staticInit_FUN_004ac140(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

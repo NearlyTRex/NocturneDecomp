@@ -1,14 +1,12 @@
 // Name: core_zombie.cpp_CZombieIndian_ctor_FUN_0058ce70
 // Address: 0058ce70
 // Address Range: [[0058ce70, 0058cec5]]
-// Convention: unknown
-// Signature: CZombieIndian * core_zombie_cpp_CZombieIndian_ctor_FUN_0058ce70(CZombieIndian *this_ptr)
+// Convention: __cdecl
+// Signature: CZombieIndian * __cdecl core_zombie_cpp_CZombieIndian_ctor_FUN_0058ce70(CZombieIndian *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CZombieIndian * core_zombie_cpp_CZombieIndian_ctor_FUN_0058ce70(CZombieIndian *this_ptr)
+CZombieIndian * __cdecl core_zombie_cpp_CZombieIndian_ctor_FUN_0058ce70(CZombieIndian *this_ptr)
 
 {
   CZombie *pCVar1;

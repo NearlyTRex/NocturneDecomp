@@ -162,9 +162,9 @@
     {
       "description": "Complex pointer cast",
       "line": 33,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,1,0x10,this_ptr->reel_angle,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,1,0x10,this_ptr->reel_angle,0);",
       "type": "pointer_cast"
     },
     {
@@ -172,15 +172,15 @@
       "line": 33,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,1,0x10,this_ptr->reel_angle,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,1,0x10,this_ptr->reel_angle,0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 34,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,4,4,this_ptr->reel_angle,1);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,4,4,this_ptr->reel_angle,1);",
       "type": "pointer_cast"
     },
     {
@@ -188,15 +188,15 @@
       "line": 34,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,4,4,this_ptr->reel_angle,1);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,4,4,this_ptr->reel_angle,1);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 35,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,0x17d,0x10,this_ptr->reel_angle,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x17d,0x10,this_ptr->reel_angle,0);",
       "type": "pointer_cast"
     },
     {
@@ -204,15 +204,15 @@
       "line": 35,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,0x17d,0x10,this_ptr->reel_angle,0);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x17d,0x10,this_ptr->reel_angle,0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
       "line": 36,
-      "match": "(code **)((int)this_ptr",
+      "match": "(code **)((int)(this_ptr->base).vtable",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,0x181,4,this_ptr->reel_angle,1);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x181,4,this_ptr->reel_angle,1);",
       "type": "pointer_cast"
     },
     {
@@ -220,7 +220,7 @@
       "line": 36,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)this_ptr->vtable + 0x3c))(this_ptr,0x181,4,this_ptr->reel_angle,1);",
+      "text": "(**(code **)((int)(this_ptr->base).vtable + 0x3c))(this_ptr,0x181,4,this_ptr->reel_angle,1);",
       "type": "unresolved_funcptr"
     },
     {

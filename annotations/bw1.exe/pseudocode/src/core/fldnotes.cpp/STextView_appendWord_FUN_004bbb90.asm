@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_STextView_appendWord_FUN_004bbb90(STextView *this_ptr,char *param_2)
+; void __cdecl core_fldnotes_cpp_STextView_appendWord_FUN_004bbb90(STextView *this_ptr,char *word)
 ;
 ; Parameters:
 ; STextView *      Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   word
 ;
 ; XREF[1]:
 ;   core_fldnotes.cpp_STextView_layoutChunk_FUN_004bb2f0 at 004bb38e

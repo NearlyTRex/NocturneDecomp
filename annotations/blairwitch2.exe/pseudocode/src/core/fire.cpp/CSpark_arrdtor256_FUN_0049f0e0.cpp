@@ -1,14 +1,12 @@
 // Name: core_fire.cpp_CSpark_arrdtor256_FUN_0049f0e0
 // Address: 0049f0e0
 // Address Range: [[0049f0e0, 0049f0f7]]
-// Convention: unknown
-// Signature: CSpark * core_fire_cpp_CSpark_arrdtor256_FUN_0049f0e0(CSpark *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSpark * __cdecl core_fire_cpp_CSpark_arrdtor256_FUN_0049f0e0(CSpark *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSpark * core_fire_cpp_CSpark_arrdtor256_FUN_0049f0e0(CSpark *this_ptr,uint flags)
+CSpark * __cdecl core_fire_cpp_CSpark_arrdtor256_FUN_0049f0e0(CSpark *this_ptr,uint flags)
 
 {
   CSpark *pCVar1;

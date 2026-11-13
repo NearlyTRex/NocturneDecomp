@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CTVBat * core_tvbat_cpp_CTVBat_dtor_FUN_00581430(CTVBat *this_ptr,uint flags)
+; CTVBat * __cdecl core_tvbat_cpp_CTVBat_dtor_FUN_00581430(CTVBat *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr

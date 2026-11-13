@@ -1,14 +1,12 @@
 // Name: core_mine.cpp_CSpiritMine_dtor_FUN_005ad460
 // Address: 005ad460
 // Address Range: [[005ad460, 005ad4ec]]
-// Convention: unknown
-// Signature: CSpiritMine * core_mine_cpp_CSpiritMine_dtor_FUN_005ad460(CSpiritMine *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CSpiritMine * __cdecl core_mine_cpp_CSpiritMine_dtor_FUN_005ad460(CSpiritMine *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSpiritMine * core_mine_cpp_CSpiritMine_dtor_FUN_005ad460(CSpiritMine *this_ptr,uint flags)
+CSpiritMine * __cdecl core_mine_cpp_CSpiritMine_dtor_FUN_005ad460(CSpiritMine *this_ptr,uint flags)
 
 {
   CSimpleParticleSystem *this_ptr_00;

@@ -12,6 +12,6 @@ void __cdecl core_bwsearch_cpp_CSearchParty_processStates_FUN_005a8db0(CSearchPa
   if (mode == 0) {
     return;
   }
-  core_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
+  core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0((CBasicEnemy *)this_ptr,delta_time,mode);
   return;
 }

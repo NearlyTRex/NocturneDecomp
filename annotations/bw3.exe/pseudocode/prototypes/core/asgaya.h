@@ -7,19 +7,19 @@
 
 // Original: core_asgaya.cpp_staticInit_FUN_005a09b0
 // Address: 005a09b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_asgaya.cpp_factoryFuncAsgaya_FUN_005a09e0
 // Address: 005a09e0
-void factoryFuncAsgaya(void);
+CAsgaya * __cdecl factoryFuncAsgaya(void);
 
 // Original: core_asgaya.cpp_CAsgaya_getActorType_FUN_005a0a00
 // Address: 005a0a00
-CDemonActorType * CAsgaya::getActorType(CAsgaya *this_ptr);
+CDemonActorType * __cdecl CAsgaya::getActorType(CAsgaya *this_ptr);
 
 // Original: core_asgaya.cpp_CAsgaya_ctor_FUN_005a0a10
 // Address: 005a0a10
-CAsgaya * CAsgaya::ctor(CAsgaya *this_ptr);
+CAsgaya * __cdecl CAsgaya::ctor(CAsgaya *this_ptr);
 
 // Original: core_asgaya.cpp_CAsgaya_setup_FUN_005a0b00
 // Address: 005a0b00
@@ -63,15 +63,15 @@ CPathMap * __cdecl CAsgaya::getPathMap(CAsgaya *this_ptr);
 
 // Original: core_asgaya.cpp_CAsgaya_dtor_FUN_005a1b50
 // Address: 005a1b50
-CAsgaya * CAsgaya::dtor(CAsgaya *this_ptr,uint flags);
+CAsgaya * __cdecl CAsgaya::dtor(CAsgaya *this_ptr,uint flags);
 
-// Original: core_asgaya.cpp_FUN_005a1bfe
-// Address: 005a1bfe
-void FUN_005a1bfe(int param_1,int param_2);
+// Original: core_asgaya.cpp_FUN_005a1c00
+// Address: 005a1c00
+void FUN_005a1c00(void);
 
-// Original: core_asgaya.cpp_FUN_005a1e5e
-// Address: 005a1e5e
-int * FUN_005a1e5e(int param_1,int *param_2);
+// Original: core_asgaya.cpp_FUN_005a1e60
+// Address: 005a1e60
+int * FUN_005a1e60(void);
 
 // Original: core_asgaya.cpp_FUN_005a1ea0
 // Address: 005a1ea0

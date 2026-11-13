@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool support_codec_cpp_FUN_00442f00(int *param_1,undefined4 param_2,int *param_3)
+; bool support_codec_cpp_FUN_00442f00(int *param_1,char *param_2,int *param_3)
 ;
 ;
 ; Called Functions:
@@ -27,7 +27,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00442f13
     PUSH EAX                            ; 00442f17
     CALL support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0 ; 00442f18
-        ;   XREF to: 005a1ad0 (UNCONDITIONAL_CALL)  ; undefined4 * support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0(COutStreamMemory * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 005a1ad0 (UNCONDITIONAL_CALL)  ; COutStreamMemory * support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0(COutStreamMemory * this_ptr, char * buffer, int capacity)
     ADD ESP,0xc                         ; 00442f1d
     MOV EAX,ESP                         ; 00442f20
     PUSH EAX                            ; 00442f22

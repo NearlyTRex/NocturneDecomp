@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 386,
-    "complexity_score": 340,
+    "complexity_score": 239,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 130,
-    "suspect_count": 19,
+    "pseudocode_lines": 134,
+    "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 516
+    "total_lines": 520
   },
   "cross_references": [
     {
@@ -35,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_STextView_handleTag_FUN_004a2cc0",
-    "signature": "undefined4 __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a2cc0(STextView *this_ptr,char *param_2)"
+    "signature": "int __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a2cc0(STextView *this_ptr,char *tag)"
   },
   "function_calls": [
     {
@@ -352,7 +351,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "tag",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -386,100 +385,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_fldnotes_cpp_STextView_handleTag_FUN_004a2cc0(STextView *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_005d5b91);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 21,
       "match": "DAT_005d5b91",
       "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_005d5b91);",
+      "text": "iVar1 = _stricmp(tag,&DAT_005d5b91);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_005d5b94);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 30,
       "match": "DAT_005d5b94",
       "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_005d5b94);",
+      "text": "iVar1 = _stricmp(tag,&DAT_005d5b94);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_005d5b97);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 35,
       "match": "DAT_005d5b97",
       "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_005d5b97);",
+      "text": "iVar1 = _stricmp(tag,&DAT_005d5b97);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_005d5b9a);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 40,
       "match": "DAT_005d5b9a",
       "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,&DAT_005d5b9a);",
+      "text": "iVar1 = _stricmp(tag,&DAT_005d5b9a);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _strnicmp(param_2,\"image\",5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _strnicmp(param_2,\"twanachar\",9);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "sscanf(param_2 + 9,\" %s%n\");",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -490,16 +425,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = _stricmp(param_2,\"twanaentry\");",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 82,
       "match": "DAT_01cab7f0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01cab7f0,\"Ignoring unknown markup tag: %s\");",
@@ -507,23 +434,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 103,
+      "line": 107,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(pSVar4->base).vtable)(pSVar4,2);",
+      "text": "(**(code **)(((SPageResourceBitmap *)&resource_00->base)->base).vtable)(resource_00,2);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "sscanf(param_2 + 5,\"%s %d %d%n\");",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 113,
       "match": "DAT_01cab7f0",
       "severity": "mild",
       "text": "_sprintf(&DAT_01cab7f0,\"Error parsing 'image' tag parms: '%s'\");",

@@ -13,7 +13,7 @@
 ;   core_stranger.cpp_FUN_005656f0 at 00565983
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00428b10
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004cff6a
     PUSH ESI                            ; 004cff6e
     PUSH EBX                            ; 004cff6f
-    CALL core_charactr.cpp_FUN_00428b10 ; 004cff70
-        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428b10()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10 ; 004cff70
+        ;   XREF to: 00428b10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428b10(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 004cff75
     MOV dword ptr [EBX + 0x25608],0x0   ; 004cff78
     POP ESI                             ; 004cff82

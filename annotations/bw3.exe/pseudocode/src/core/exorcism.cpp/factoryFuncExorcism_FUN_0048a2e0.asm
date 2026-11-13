@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_exorcism_cpp_factoryFuncExorcism_FUN_0048a2e0(void)
+; CExorcism * __cdecl core_exorcism_cpp_factoryFuncExorcism_FUN_0048a2e0(void)
 ;
 ;
 ; Called Functions:

@@ -13,7 +13,7 @@
 ;   undefined4 DAT_0061c068
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_0059e880
+;   core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     PUSH ESI                            ; 005a2e65
         ;   Label: LAB_005a2e65
     PUSH EBX                            ; 005a2e66
-    CALL core_basicene.cpp_FUN_0059e880 ; 005a2e67
-        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059e880()
+    CALL core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880 ; 005a2e67
+        ;   XREF to: 0059e880 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processMotionEvent_FUN_0059e880(CBasicEnemy * this_ptr, int param_2)
     ADD ESP,0x8                         ; 005a2e6c
     POP ESI                             ; 005a2e6f
     POP EBX                             ; 005a2e70

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CInStreamFile * support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(CInStreamFile *this_ptr)
+; CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_ctor_FUN_005a08d0(CInStreamFile *this_ptr)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
@@ -16,14 +16,14 @@
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402954
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0 at 004c0e4d
 ;   engine_font.cpp_FUN_004c0fa0 at 004c1102
-;   engine_font.cpp_FUN_004c157e at 004c15a0
+;   engine_font.cpp_FUN_004c1580 at 004c15a0
 ;   ... and 7 more
 ;
 ; Referenced Globals:
 ;   undefined1* g_CInStreamFileVTable = 005a0a50
 ;
 ; Called Functions:
-;   support_trstream.cpp_FUN_0059f540
+;   support_trstream.cpp_CInStream_ctor_FUN_0059f540
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005a08d0
         ;   Label: support_trstream.cpp_CInStreamFile_ctor_FUN_005a08d0
     PUSH EDX                            ; 005a08d4
-    CALL support_trstream.cpp_FUN_0059f540 ; 005a08d5
-        ;   XREF to: 0059f540 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0059f540()
+    CALL support_trstream.cpp_CInStream_ctor_FUN_0059f540 ; 005a08d5
+        ;   XREF to: 0059f540 (UNCONDITIONAL_CALL)  ; CInStream * support_trstream.cpp_CInStream_ctor_FUN_0059f540(CInStream * this_ptr)
     MOV dword ptr [EAX],0x607384        ; 005a08da | g_CInStreamFileVTable
     MOV dword ptr [EAX + 0x4],0x0       ; 005a08e0
     MOV dword ptr [EAX + 0x8],0x0       ; 005a08e7

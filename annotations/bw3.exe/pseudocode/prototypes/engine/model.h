@@ -7,7 +7,7 @@
 
 // Original: engine_model.c_loadModelFile_FUN_004f7f20
 // Address: 004f7f20
-SMRGLHeaderExtended * __cdecl loadModelFile(char *param_1);
+SMRGLHeaderExtended * __cdecl loadModelFile(char *filename);
 
 // Original: engine_model.c_freeMRGLData_FUN_004f80f0
 // Address: 004f80f0

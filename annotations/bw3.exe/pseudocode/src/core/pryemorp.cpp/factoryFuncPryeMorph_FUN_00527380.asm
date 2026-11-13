@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_pryemorp_cpp_factoryFuncPryeMorph_FUN_00527380(void)
+; CPryeMorph * __cdecl core_pryemorp_cpp_factoryFuncPryeMorph_FUN_00527380(void)
 ;
 ;
 ; Called Functions:

@@ -8,12 +8,12 @@
 ;   core_tommygun.cpp_CTommyGun_process_FUN_00576130 at 0057623d
 ;   sound_sndmain.cpp_FUN_0054d3a0 at 0054d3f2
 ;   sound_sndmain.cpp_FUN_005506b0 at 00550756
-;   sound_sndmain.cpp_FUN_0055141c at 00551420
-;   sound_sndmain.cpp_FUN_0055147e at 00551480
+;   sound_sndmain.cpp_FUN_00551420 at 00551420
+;   sound_sndmain.cpp_FUN_00551480 at 00551480
 ;   sound_sndmain.cpp_FUN_00551490 at 00551490
 ;   sound_sndmain.cpp_FUN_005514f0 at 005514f0
 ;   sound_sndmain.cpp_FUN_00551570 at 00551570
-;   sound_sndmain.cpp_FUN_005516ce at 005516de
+;   sound_sndmain.cpp_FUN_005516d0 at 005516de
 ;   sound_sndmain.cpp_FUN_00551800 at 00551808
 ;   ... and 17 more
 ;

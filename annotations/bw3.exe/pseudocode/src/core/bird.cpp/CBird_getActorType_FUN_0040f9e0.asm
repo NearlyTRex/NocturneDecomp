@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_bird_cpp_CBird_getActorType_FUN_0040f9e0(CBird *this_ptr)
+; CDemonActorType * __cdecl core_bird_cpp_CBird_getActorType_FUN_0040f9e0(CBird *this_ptr)
 ;
 ; Parameters:
 ; CBird *          Stack[0x4]:4   this_ptr

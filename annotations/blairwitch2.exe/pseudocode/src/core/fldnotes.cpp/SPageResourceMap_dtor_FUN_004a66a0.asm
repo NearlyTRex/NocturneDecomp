@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SPageResourceMap * core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004a66a0(SPageResourceMap *this_ptr,uint flags)
+; SPageResourceMap * __cdecl core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004a66a0(SPageResourceMap *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SPageResourceMap * Stack[0x4]:4   this_ptr

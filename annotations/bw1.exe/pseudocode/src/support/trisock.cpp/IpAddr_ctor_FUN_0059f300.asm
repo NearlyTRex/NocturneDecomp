@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SIpAddr * support_trisock_cpp_IpAddr_ctor_FUN_0059f300(SIpAddr *this_ptr)
+; SIpAddr * __cdecl support_trisock_cpp_IpAddr_ctor_FUN_0059f300(SIpAddr *this_ptr)
 ;
 ; Parameters:
 ; SIpAddr *        Stack[0x4]:4   this_ptr

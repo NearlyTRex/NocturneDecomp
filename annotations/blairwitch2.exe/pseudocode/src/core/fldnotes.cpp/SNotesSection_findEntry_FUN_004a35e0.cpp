@@ -2,11 +2,11 @@
 // Address: 004a35e0
 // Address Range: [[004a35e0, 004a362d]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection *this_ptr,char *param_2)
+// Signature: SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection *this_ptr,char *name)
 
 #include "nocturne.h"
 
-uint __cdecl core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection *this_ptr,char *param_2)
+SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection *this_ptr,char *name)
 
 {
   int iVar1;
@@ -17,7 +17,7 @@ uint __cdecl core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSectio
   pSVar2 = this_ptr;
   if (0 < this_ptr->entry_count) {
     do {
-      iVar1 = _stricmp(pSVar2->entries[0]->name,param_2);
+      iVar1 = _stricmp(pSVar2->entries[0]->name,name);
       if (iVar1 == 0) {
         return pSVar2->entries[0];
       }
@@ -25,5 +25,5 @@ uint __cdecl core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSectio
       pSVar2 = (SNotesSection *)(pSVar2->name + 4);
     } while (iVar3 < this_ptr->entry_count);
   }
-  return 0;
+  return (SNotesEntry *)0x0;
 }

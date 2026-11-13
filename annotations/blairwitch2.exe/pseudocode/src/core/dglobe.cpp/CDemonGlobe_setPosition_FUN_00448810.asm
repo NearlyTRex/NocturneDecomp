@@ -17,7 +17,7 @@
 ;   core_keyactor.cpp_CKeyActor_process_FUN_004df1c0 at 004df1ea
 ;   core_mine.cpp_FUN_005ad940 at 005ad99a
 ;   core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360 at 0059d374
-;   core_shadow.cpp_FUN_0053c500 at 0053cfe3
+;   core_shadow.cpp_CShadow_process_FUN_0053c500 at 0053cfe3
 ;   ... and 1 more
 ;
 ; Referenced Globals:

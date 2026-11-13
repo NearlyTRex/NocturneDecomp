@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCarved * core_carved_cpp_CCarved_dtor_FUN_004291f0(CCarved *this_ptr,uint flags)
+; CCarved * __cdecl core_carved_cpp_CCarved_dtor_FUN_004291f0(CCarved *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CCarved *        Stack[0x4]:4   this_ptr

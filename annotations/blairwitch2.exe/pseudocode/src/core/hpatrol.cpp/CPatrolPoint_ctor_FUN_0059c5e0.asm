@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPatrolPoint * core_hpatrol_cpp_CPatrolPoint_ctor_FUN_0059c5e0(CPatrolPoint *this_ptr)
+; CPatrolPoint * __cdecl core_hpatrol_cpp_CPatrolPoint_ctor_FUN_0059c5e0(CPatrolPoint *this_ptr)
 ;
 ; Parameters:
 ; CPatrolPoint *   Stack[0x4]:4   this_ptr

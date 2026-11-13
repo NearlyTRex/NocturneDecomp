@@ -7,7 +7,7 @@
 
 // Original: core_script.cpp_staticInit_FUN_005430c0
 // Address: 005430c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_script.cpp_validateActorVariableName_FUN_00543100
 // Address: 00543100
@@ -53,9 +53,9 @@ CScript * __cdecl CScript::ctor(CScript *this_ptr);
 // Address: 00543710
 CScript * __cdecl CScript::dtor(CScript *this_ptr,uint flags);
 
-// Original: core_script.cpp_FUN_00543740
+// Original: core_script.cpp_CScript_clear_FUN_00543740
 // Address: 00543740
-void FUN_00543740(CScript *param_1);
+void __cdecl CScript::clear(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_freeParsedLines_FUN_00543790
 // Address: 00543790

@@ -15,8 +15,8 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_box.cpp_FUN_0041a840
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0
 ;   core_manpuz.cpp_FUN_004e6340
-;   core_manpuz.cpp_FUN_004e63c0
 ;   core_manpuz.cpp_FUN_004e6820
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_special.cpp_FUN_0055d723
@@ -95,8 +95,8 @@ section .text
     ADD ESP,0x8                         ; 004e577a
     PUSH EBX                            ; 004e577d
     PUSH EBP                            ; 004e577e
-    CALL core_manpuz.cpp_FUN_004e63c0   ; 004e577f
-        ;   XREF to: 004e63c0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_FUN_004e63c0(CMansionPuzzleCircle * this_ptr, int gem_index)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0 ; 004e577f
+        ;   XREF to: 004e63c0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_004e63c0(CMansionPuzzleCircle * this_ptr, int gem_index)
     INC EBX                             ; 004e5784
     ADD ESP,0x8                         ; 004e5785
     CMP EBX,0xc                         ; 004e5788

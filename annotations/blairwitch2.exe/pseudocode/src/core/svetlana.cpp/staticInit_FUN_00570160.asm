@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_svetlana_cpp_staticInit_FUN_00570160(void)
+; void __cdecl core_svetlana_cpp_staticInit_FUN_00570160(void)
 ;
 ;
 ; Called Functions:

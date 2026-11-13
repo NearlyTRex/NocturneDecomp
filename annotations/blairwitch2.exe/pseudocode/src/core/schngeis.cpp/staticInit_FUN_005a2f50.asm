@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_schngeis_cpp_staticInit_FUN_005a2f50(void)
+; void __cdecl core_schngeis_cpp_staticInit_FUN_005a2f50(void)
 ;
 ;
 ; Called Functions:

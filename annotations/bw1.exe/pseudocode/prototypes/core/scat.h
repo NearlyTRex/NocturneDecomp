@@ -7,7 +7,7 @@
 
 // Original: core_scat.cpp_staticInit_FUN_00540a10
 // Address: 00540a10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_scat.cpp_factoryFuncScat_FUN_00540aa0
 // Address: 00540aa0
@@ -15,7 +15,7 @@ CScat * __cdecl factoryFuncScat(void);
 
 // Original: core_scat.cpp_CScat_getActorType_FUN_00540ac0
 // Address: 00540ac0
-CDemonActorType * CScat::getActorType(CScat *this_ptr);
+CDemonActorType * __cdecl CScat::getActorType(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_ctor_FUN_00540ad0
 // Address: 00540ad0

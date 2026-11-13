@@ -111,7 +111,7 @@
     {
       "addr": "004f6f10",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6f10"
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10"
     },
     {
       "addr": "004fbb70",
@@ -384,7 +384,7 @@
       "line": 66,
       "match": "&stack0xffffff80",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff80 + (uint)bVar14 * -8);",
+      "text": "*(uint *)(&stack0xffffff80 + (uint)bVar13 * -8);",
       "type": "stack_ref"
     },
     {
@@ -392,7 +392,7 @@
       "line": 68,
       "match": "&stack0xffffff84",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff84 + (uint)bVar14 * -8 + (uint)bVar14 * -8);",
+      "text": "*(uint *)(&stack0xffffff84 + (uint)bVar13 * -8 + (uint)bVar13 * -8);",
       "type": "stack_ref"
     },
     {
@@ -400,7 +400,7 @@
       "line": 121,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar8),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar7),",
       "type": "pointer_cast"
     },
     {
@@ -424,7 +424,7 @@
       "line": 65,
       "match": "(int)&CStack_54",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_54 + (uint)bVar14 * -8 + 4) =",
+      "text": "*(uint *)((int)&CStack_54 + (uint)bVar13 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -432,15 +432,15 @@
       "line": 67,
       "match": "(int)&CStack_54",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_54 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_54 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1d81080 assigned to bare local `pCVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x1d81080 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 93,
       "match": "0x1d81080",
       "severity": "moderate",
-      "text": "pCVar6 = 0x01D81080;",
+      "text": "this_ptr_00 = 0x01D81080;",
       "type": "raw_address_constant"
     },
     {
@@ -456,7 +456,7 @@
       "line": 126,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_30.x = (pCVar10->location).position.x;",
+      "text": "CStack_30.x = (pCVar9->location).position.x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -480,7 +480,7 @@
       "line": 65,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_54 + (uint)bVar14 * -8 + 4) =",
+      "text": "*(uint *)((int)&CStack_54 + (uint)bVar13 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -488,7 +488,7 @@
       "line": 67,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_54 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_54 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =",
       "type": "pointer_cast"
     }
   ],

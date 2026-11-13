@@ -1,0 +1,148 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 65,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_param",
+      "undefined_data"
+    ],
+    "total_lines": 48
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004414b0",
+    "address_range": [
+      [
+        "004414b0",
+        "004414f1"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_cloth.cpp_FUN_004414b0",
+    "signature": "void core_cloth_cpp_FUN_004414b0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00441500",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_FUN_00441500"
+    },
+    {
+      "addr": "00483ce0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00483ce0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.384615384615385,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 23,
+      "INT_ADD": 10,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "LOAD": 7,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 114
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b0c90",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0043f110",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00437a60",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00483ce0(DAT_00612560,0xff);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x37b4c)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "} while (iVar1 < *(int *)(in_stack_00000004 + 0x37b4c));",
+      "type": "stack_param"
+    }
+  ]
+}

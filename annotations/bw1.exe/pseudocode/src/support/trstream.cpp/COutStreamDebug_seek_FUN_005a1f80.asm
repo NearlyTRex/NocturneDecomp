@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_COutStreamDebug_seek_FUN_005a1f80(COutStreamDebug *this_ptr)
+; int __cdecl support_trstream_cpp_COutStreamDebug_seek_FUN_005a1f80(COutStreamDebug *this_ptr,int offset,int origin)
 ;
 ; Parameters:
 ; COutStreamDebug * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   offset
+; int              Stack[0xc]:4   origin
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_trstream_cpp_005f8924

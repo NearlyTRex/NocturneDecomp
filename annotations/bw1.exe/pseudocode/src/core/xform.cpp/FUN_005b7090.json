@@ -1,0 +1,204 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 143,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 9,
+    "suspect_types": [
+      "stack_param",
+      "unaffected_reg",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 63
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005b7090",
+    "address_range": [
+      [
+        "005b7090",
+        "005b70ec"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_xform.cpp_FUN_005b7090",
+    "signature": "void core_xform_cpp_FUN_005b7090(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005fa15c",
+      "name": "DAT_005fa15c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.344827586206897,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CBRANCH": 1,
+      "COPY": 47,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 18,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 7,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 126
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00593540",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00585270",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f6f40",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0055ca30",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005b70af",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "float in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "afStack_38[7] = in_stack_00000004 * _DAT_005fa15c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = *pfVar2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = unaff_ESI + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = unaff_ESI + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 31,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005b70e5, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 26,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005b70e5: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

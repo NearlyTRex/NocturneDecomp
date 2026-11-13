@@ -53,7 +53,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_doc.cpp_FUN_004555c0 at 00455b0c
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 00455b0c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d0287

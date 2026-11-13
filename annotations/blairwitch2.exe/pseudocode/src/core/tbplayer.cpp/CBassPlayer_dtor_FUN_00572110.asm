@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBassPlayer * core_tbplayer_cpp_CBassPlayer_dtor_FUN_00572110(CBassPlayer *this_ptr,uint flags)
+; CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_00572110(CBassPlayer *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBassPlayer *    Stack[0x4]:4   this_ptr

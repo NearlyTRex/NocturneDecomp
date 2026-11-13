@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d91c5
 ;   core_menu.cpp_FUN_0050ba70 at 0050c4ae
 ;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d0f7
-;   core_sound.cpp_FUN_0057c57e at 0057c685
+;   core_sound.cpp_FUN_0057c580 at 0057c685
 ;   core_sound.cpp_playSfxInternal_FUN_0057bef0 at 0057c0f2
 ;
 ; Referenced Globals:

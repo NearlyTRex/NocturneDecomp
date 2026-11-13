@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBulletTrail * core_fire_cpp_CBulletTrail_ctor_FUN_004b7670(CBulletTrail *this_ptr)
+; CBulletTrail * __cdecl core_fire_cpp_CBulletTrail_ctor_FUN_004b7670(CBulletTrail *this_ptr)
 ;
 ; Parameters:
 ; CBulletTrail *   Stack[0x4]:4   this_ptr

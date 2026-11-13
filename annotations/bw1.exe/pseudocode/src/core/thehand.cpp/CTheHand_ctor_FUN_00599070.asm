@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CTheHand * core_thehand_cpp_CTheHand_ctor_FUN_00599070(CTheHand *this_ptr)
+; CTheHand * __cdecl core_thehand_cpp_CTheHand_ctor_FUN_00599070(CTheHand *this_ptr)
 ;
 ; Parameters:
 ; CTheHand *       Stack[0x4]:4   this_ptr

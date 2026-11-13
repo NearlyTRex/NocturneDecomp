@@ -18,7 +18,7 @@
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_005036b0 at 005036c0
 ;   core_npc.cpp_CNPC_process_FUN_005105b0 at 00510895
 ;   core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00510ab0 at 00510af5
-;   core_script.cpp_FUN_00522350 at 00527568
+;   core_script.cpp_CScript_step_FUN_00522350 at 00527568
 ;   ... and 2 more
 ;
 ; Referenced Globals:

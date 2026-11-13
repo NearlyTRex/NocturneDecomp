@@ -1,14 +1,12 @@
 // Name: core_gore.cpp_CBloodParticle_arrdtor256_FUN_004e68b0
 // Address: 004e68b0
 // Address Range: [[004e68b0, 004e68c7]]
-// Convention: unknown
-// Signature: CBloodParticle * core_gore_cpp_CBloodParticle_arrdtor256_FUN_004e68b0(CBloodParticle *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_arrdtor256_FUN_004e68b0(CBloodParticle *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBloodParticle * core_gore_cpp_CBloodParticle_arrdtor256_FUN_004e68b0(CBloodParticle *this_ptr,uint flags)
+CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_arrdtor256_FUN_004e68b0(CBloodParticle *this_ptr,uint flags)
 
 {
   CBloodParticle *pCVar1;

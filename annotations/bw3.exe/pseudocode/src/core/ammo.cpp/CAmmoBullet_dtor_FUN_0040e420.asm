@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAmmoBullet * core_ammo_cpp_CAmmoBullet_dtor_FUN_0040e420(CAmmoBullet *this_ptr,uint flags)
+; CAmmoBullet * __cdecl core_ammo_cpp_CAmmoBullet_dtor_FUN_0040e420(CAmmoBullet *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAmmoBullet *    Stack[0x4]:4   this_ptr

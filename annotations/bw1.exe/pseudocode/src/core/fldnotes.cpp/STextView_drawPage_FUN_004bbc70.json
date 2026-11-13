@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 53,
+    "complexity_score": 8,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 32
   },
   "cross_references": [
     {
       "addr": "004be0f0",
       "from_addr": "004be268",
-      "name": "core_fldnotes.cpp_FUN_004be0f0",
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -32,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_STextView_drawPage_FUN_004bbc70",
-    "signature": "void __cdecl core_fldnotes_cpp_STextView_drawPage_FUN_004bbc70(STextView *this_ptr,int param_2)"
+    "signature": "void __cdecl core_fldnotes_cpp_STextView_drawPage_FUN_004bbc70(STextView *this_ptr,int page)"
   },
   "function_calls": [
     {
@@ -48,7 +46,7 @@
       {
         "call_addr": "004be268",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004be0f0",
+        "caller": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -122,45 +120,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "page",
         "offset": 8,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fldnotes_cpp_STextView_drawPage_FUN_004bbc70(STextView *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((-1 < param_2) && (param_2 < this_ptr->page_count)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((-1 < param_2) && (param_2 < this_ptr->page_count)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_fldnotes_cpp_STextPage_draw_FUN_004bb160(this_ptr->pages + param_2);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

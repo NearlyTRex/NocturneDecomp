@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_tawiscara_cpp_CTawiscara_getActorType_FUN_00593dc0(CTawiscara *this_ptr)
+; CDemonActorType * __cdecl core_tawiscara_cpp_CTawiscara_getActorType_FUN_00593dc0(CTawiscara *this_ptr)
 ;
 ; Parameters:
 ; CTawiscara *     Stack[0x4]:4   this_ptr

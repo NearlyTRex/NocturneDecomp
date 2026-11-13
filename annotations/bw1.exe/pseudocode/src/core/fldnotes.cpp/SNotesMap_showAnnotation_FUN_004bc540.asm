@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fldnotes_cpp_SNotesMap_showAnnotation_FUN_004bc540(SNotesMap *this_ptr,char *param_2)
+; int __cdecl core_fldnotes_cpp_SNotesMap_showAnnotation_FUN_004bc540(SNotesMap *this_ptr,char *name)
 ;
 ; Parameters:
 ; SNotesMap *      Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   name
 ;
 ; XREF[2]:
 ;   core_fldnotes.cpp_CFieldNotes_loadState_FUN_004bebc0 at 004bf0df
-;   core_fldnotes.cpp_FUN_004bdbf0 at 004bdc53
+;   core_fldnotes.cpp_CFieldNotes_showMapAnnotation_FUN_004bdbf0 at 004bdc53
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005c04e0

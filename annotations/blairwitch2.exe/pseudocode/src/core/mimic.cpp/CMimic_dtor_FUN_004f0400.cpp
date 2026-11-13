@@ -1,14 +1,12 @@
 // Name: core_mimic.cpp_CMimic_dtor_FUN_004f0400
 // Address: 004f0400
 // Address Range: [[004f0400, 004f04e8]]
-// Convention: unknown
-// Signature: CMimic * core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CMimic * core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint flags)
+CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint flags)
 
 {
   CDemonActor *this_ptr_00;

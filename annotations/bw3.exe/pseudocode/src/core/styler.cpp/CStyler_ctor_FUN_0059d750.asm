@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStyler * core_styler_cpp_CStyler_ctor_FUN_0059d750(CStyler *this_ptr)
+; CStyler * __cdecl core_styler_cpp_CStyler_ctor_FUN_0059d750(CStyler *this_ptr)
 ;
 ; Parameters:
 ; CStyler *        Stack[0x4]:4   this_ptr

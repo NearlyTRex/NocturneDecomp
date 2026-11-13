@@ -1,12 +1,12 @@
 // Name: core_tbplayer.cpp_staticInit_FUN_00594700
 // Address: 00594700
 // Address Range: [[00594700, 00594746]]
-// Convention: unknown
-// Signature: void core_tbplayer_cpp_staticInit_FUN_00594700(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_tbplayer_cpp_staticInit_FUN_00594700(void)
 
 #include "nocturne.h"
 
-void core_tbplayer_cpp_staticInit_FUN_00594700(void)
+void __cdecl core_tbplayer_cpp_staticInit_FUN_00594700(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

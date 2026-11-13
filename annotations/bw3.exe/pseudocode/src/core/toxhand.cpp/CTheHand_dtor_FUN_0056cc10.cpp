@@ -1,14 +1,12 @@
 // Name: core_toxhand.cpp_CTheHand_dtor_FUN_0056cc10
 // Address: 0056cc10
 // Address Range: [[0056cc10, 0056cc94]]
-// Convention: unknown
-// Signature: CTheHand * core_toxhand_cpp_CTheHand_dtor_FUN_0056cc10(CTheHand *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CTheHand * __cdecl core_toxhand_cpp_CTheHand_dtor_FUN_0056cc10(CTheHand *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CTheHand * core_toxhand_cpp_CTheHand_dtor_FUN_0056cc10(CTheHand *this_ptr,uint flags)
+CTheHand * __cdecl core_toxhand_cpp_CTheHand_dtor_FUN_0056cc10(CTheHand *this_ptr,uint flags)
 
 {
   int iVar1;

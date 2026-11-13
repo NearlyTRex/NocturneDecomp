@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStorm * core_storm_cpp_CStorm_dtor_FUN_00568c80(CStorm *this_ptr,uint flags)
+; CStorm * __cdecl core_storm_cpp_CStorm_dtor_FUN_00568c80(CStorm *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CStorm *         Stack[0x4]:4   this_ptr

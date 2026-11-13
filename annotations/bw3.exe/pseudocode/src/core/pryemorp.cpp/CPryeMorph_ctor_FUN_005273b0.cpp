@@ -1,14 +1,12 @@
 // Name: core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0
 // Address: 005273b0
 // Address Range: [[005273b0, 005274df]]
-// Convention: unknown
-// Signature: CPryeMorph * core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)
+// Convention: __cdecl
+// Signature: CPryeMorph * __cdecl core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CPryeMorph * core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)
+CPryeMorph * __cdecl core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)
 
 {
   char cVar1;

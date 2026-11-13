@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_yow_cpp_factoryFuncYow_FUN_005b8130(void)
+; CYow * __cdecl core_yow_cpp_factoryFuncYow_FUN_005b8130(void)
 ;
 ;
 ; Called Functions:

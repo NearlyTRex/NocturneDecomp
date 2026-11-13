@@ -7,7 +7,7 @@
 
 // Original: core_bugs.cpp_staticInit_FUN_00420e40
 // Address: 00420e40
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_bugs.cpp_factoryFuncBugs_FUN_00420e70
 // Address: 00420e70
@@ -15,11 +15,11 @@ CBugs * __cdecl factoryFuncBugs(void);
 
 // Original: core_bugs.cpp_CBugs_getActorType_FUN_00420e90
 // Address: 00420e90
-CDemonActorType * CBugs::getActorType(CBugs *this_ptr);
+CDemonActorType * __cdecl CBugs::getActorType(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_ctor_FUN_00420ea0
 // Address: 00420ea0
-CBugs * CBugs::ctor(CBugs *this_ptr);
+CBugs * __cdecl CBugs::ctor(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_setup_FUN_00421060
 // Address: 00421060
@@ -127,8 +127,8 @@ float __cdecl maxFloat(float a,float b);
 
 // Original: core_bugs.cpp_CBugs_dtor_FUN_00424330
 // Address: 00424330
-CBugs * CBugs::dtor(CBugs *this_ptr,uint flags);
+CBugs * __cdecl CBugs::dtor(CBugs *this_ptr,uint flags);
 
 // Original: core_bugs.cpp_SBug_ctor_FUN_004243c0
 // Address: 004243c0
-SBug * SBug::ctor(SBug *this_ptr);
+SBug * __cdecl SBug::ctor(SBug *this_ptr);

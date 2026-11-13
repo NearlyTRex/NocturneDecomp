@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tentacle_cpp_staticInit_FUN_00572570(void)
+; void __cdecl core_tentacle_cpp_staticInit_FUN_00572570(void)
 ;
 ;
 ; Called Functions:

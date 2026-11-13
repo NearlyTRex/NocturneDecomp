@@ -1,14 +1,12 @@
 // Name: core_baal.cpp_CBaal_dtor_FUN_00597d00
 // Address: 00597d00
 // Address Range: [[00597d00, 00597d84]]
-// Convention: unknown
-// Signature: CBaal * core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBaal * __cdecl core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBaal * core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags)
+CBaal * __cdecl core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags)
 
 {
   int iVar1;

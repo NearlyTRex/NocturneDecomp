@@ -40,8 +40,8 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00431660(CCharacter 
     if ((this_ptr->walk_timeout < 0.0) ||
        (fVar7 = this_ptr->walk_timeout - delta_time, this_ptr->walk_timeout = fVar7, 0.0 < fVar7)) {
       if (this_ptr->door_target != (CDoor *)0x0) {
-        core_door_cpp_FUN_004650a0
-                  (this_ptr->door_target,&this_ptr->look_offset,&(this_ptr->base).location);
+        core_door_cpp_CDoor_getOpenStandPos_FUN_004650a0
+                  (this_ptr->door_target,&(this_ptr->look_offset).x,&(this_ptr->base).location);
         fVar8 = 0.0;
         fVar7 = 0.0;
         local_30.x = local_48;

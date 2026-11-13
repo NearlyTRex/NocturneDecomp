@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ncursfx_cpp_staticInit_FUN_0050fff0(void)
+; void __cdecl engine_ncursfx_cpp_staticInit_FUN_0050fff0(void)
 ;
 ;
 ; Called Functions:

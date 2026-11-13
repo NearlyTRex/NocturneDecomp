@@ -1,14 +1,14 @@
 // Name: engine_mini3d.cpp_staticInit_FUN_004f2190
 // Address: 004f2190
 // Address Range: [[004f2190, 004f21ca]]
-// Convention: unknown
-// Signature: void engine_mini3d_cpp_staticInit_FUN_004f2190(void)
+// Convention: __cdecl
+// Signature: void __cdecl engine_mini3d_cpp_staticInit_FUN_004f2190(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void engine_mini3d_cpp_staticInit_FUN_004f2190(void)
+void __cdecl engine_mini3d_cpp_staticInit_FUN_004f2190(void)
 
 {
   engine_mini3d_cpp_CMini3D_ctor_FUN_004f21d0(&g_CMini3DInstance);

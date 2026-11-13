@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CExamplePuzzle * core_bmppuzzl_cpp_CExamplePuzzle_dtor_FUN_0059bf70(CExamplePuzzle *this_ptr,uint flags)
+; CExamplePuzzle * __cdecl core_bmppuzzl_cpp_CExamplePuzzle_dtor_FUN_0059bf70(CExamplePuzzle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CExamplePuzzle * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
-;   core_zombie.cpp_FUN_0059ab50
+;   core_bmppuzzl.cpp_CPuzzle_dtor_FUN_0059ab50
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 0059bf96 (CONDITIONAL_JUMP)  ; LAB_0059bf96
     PUSH 0x1                            ; 0059bf7c
     PUSH EBX                            ; 0059bf7e
-    CALL core_zombie.cpp_FUN_0059ab50   ; 0059bf7f
-        ;   XREF to: 0059ab50 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059ab50()
+    CALL core_bmppuzzl.cpp_CPuzzle_dtor_FUN_0059ab50 ; 0059bf7f
+        ;   XREF to: 0059ab50 (UNCONDITIONAL_CALL)  ; CPuzzle * core_bmppuzzl.cpp_CPuzzle_dtor_FUN_0059ab50(CPuzzle * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0059bf84
     MOV DL,byte ptr [ESP + 0xc]         ; 0059bf87
     MOV EBX,EAX                         ; 0059bf8b

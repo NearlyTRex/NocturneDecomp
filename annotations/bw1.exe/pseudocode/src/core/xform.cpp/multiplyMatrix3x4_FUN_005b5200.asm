@@ -27,10 +27,10 @@
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004263d0 at 004264fa
 ;   core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_0042a4f0 at 0042a726
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00430440 at 00430757
+;   core_charactr.cpp_CCharacter_computePickup_FUN_00432690 at 00432714
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210 at 0043137f
 ;   core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00432be0 at 00432c24
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0 at 0042f445
-;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0 at 004329a0
 ;   ... and 38 more
 ;
 ; *****************************************************************************

@@ -11,7 +11,7 @@
 ;
 ; XREF[13]:
 ;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0 at 004feb45
-;   core_manpuz.cpp_FUN_00505060 at 00505104
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00505060 at 00505104
 ;   core_menu.cpp_FUN_0050b470 at 0050b4db
 ;   core_menu.cpp_FUN_0050ba70 at 0050bae0
 ;   core_menu.cpp_FUN_0050c990 at 0050ca03

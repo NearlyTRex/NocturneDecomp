@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_firestff_cpp_CFirestaff_getActorType_FUN_004a4ac0(CFirestaff *this_ptr)
+; CDemonActorType * __cdecl core_firestff_cpp_CFirestaff_getActorType_FUN_004a4ac0(CFirestaff *this_ptr)
 ;
 ; Parameters:
 ; CFirestaff *     Stack[0x4]:4   this_ptr

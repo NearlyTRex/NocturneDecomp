@@ -1,0 +1,451 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 345,
+    "complexity_score": 293,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 17,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 148,
+    "suspect_count": 13,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 493
+  },
+  "cross_references": [
+    {
+      "addr": "005159c0",
+      "from_addr": "00515ac8",
+      "name": "engine_mini3d.cpp_clipAndFillPolygon_FUN_005159c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00512de0",
+      "from_addr": "005130b7",
+      "name": "engine_mini3d.cpp_polyListD3DTL_FUN_00512de0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005168c0",
+    "address_range": [
+      [
+        "005168c0",
+        "00516c58"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_fillPolygon_FUN_005168c0",
+    "signature": "void __cdecl engine_mini3d_cpp_fillPolygon_FUN_005168c0(float *vertices,int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00515bd0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setupScanEdge_FUN_00515bd0"
+    },
+    {
+      "addr": "0057eeac",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_0057eeac"
+    },
+    {
+      "addr": "0057f473",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_0057f473"
+    },
+    {
+      "addr": "0057fd39",
+      "is_variadic": false,
+      "name": "engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_0057fd39"
+    },
+    {
+      "addr": "0057fb03",
+      "is_variadic": false,
+      "name": "engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b4a0",
+      "name": "DAT_0061b4a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d00",
+      "name": "DAT_01c51d00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22578",
+      "name": "DAT_01d22578",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c0c4",
+      "name": "DAT_01d2c0c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c0c8",
+      "name": "DAT_01d2c0c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c0d0",
+      "name": "DAT_01d2c0d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c0d4",
+      "name": "DAT_01d2c0d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c0d8",
+      "name": "DAT_01d2c0d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c0e0",
+      "name": "DAT_01d2c0e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c0e4",
+      "name": "DAT_01d2c0e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c0e8",
+      "name": "DAT_01d2c0e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c0ec",
+      "name": "DAT_01d2c0ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c0f0",
+      "name": "DAT_01d2c0f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c0f4",
+      "name": "DAT_01d2c0f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c118",
+      "name": "DAT_01d2c118",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c5c8",
+      "name": "DAT_01d2c5c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c5cc",
+      "name": "DAT_01d2c5cc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005130b7",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_polyListD3DTL_FUN_00512de0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00515ac8",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_clipAndFillPolygon_FUN_005159c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.250922509225092,
+    "instruction_count": 271,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 8,
+      "BRANCH": 8,
+      "CALL": 5,
+      "CBRANCH": 31,
+      "COPY": 362,
+      "FLOAT2FLOAT": 22,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 4,
+      "INT_ADD": 146,
+      "INT_AND": 180,
+      "INT_CARRY": 26,
+      "INT_EQUAL": 149,
+      "INT_LEFT": 10,
+      "INT_LESS": 19,
+      "INT_NOTEQUAL": 25,
+      "INT_OR": 15,
+      "INT_SBORROW": 19,
+      "INT_SCARRY": 32,
+      "INT_SLESS": 76,
+      "INT_SUB": 31,
+      "INT_XOR": 12,
+      "INT_ZEXT": 8,
+      "LOAD": 95,
+      "POPCOUNT": 74,
+      "RETURN": 1,
+      "STORE": 43
+    },
+    "pcode_op_count": 1423
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f7a50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.761
+    },
+    "bw3.exe": {
+      "addr": "004f2090",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_01d2c0c8",
+      "severity": "mild",
+      "text": "local_20 = (SSoftwareEdge *)&DAT_01d2c0c8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_01d2c0c8",
+      "severity": "mild",
+      "text": "local_24 = (SSoftwareEdge *)&DAT_01d2c0c8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 72,
+      "match": "DAT_01d2c0c8",
+      "severity": "mild",
+      "text": "local_20 = (SSoftwareEdge *)&DAT_01d2c0c8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 89,
+      "match": "DAT_01d2c0c8",
+      "severity": "mild",
+      "text": "local_24 = (SSoftwareEdge *)&DAT_01d2c0c8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "if (DAT_0061b4a0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "else if (DAT_0061b4a0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 130,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(int *)&local_20->field_0x48 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 131,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(int *)&local_20->field_0x48 + *(int *)&local_20->field_0x4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 131,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "*(int *)&local_20->field_0x48 + *(int *)&local_20->field_0x4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 145,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(int *)&local_24->field_0x48 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 146,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(int *)&local_24->field_0x48 + *(int *)&local_24->field_0x4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 146,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "*(int *)&local_24->field_0x48 + *(int *)&local_24->field_0x4c;",
+      "type": "unnamed_field"
+    }
+  ]
+}

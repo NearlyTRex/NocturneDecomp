@@ -57,7 +57,7 @@ section .text
         ;   XREF to: 00407a42 (CONDITIONAL_JUMP)  ; LAB_00407a42
     PUSH EDI                            ; 0040789c
     CALL engine_3d.c_transformAndBufferVertices_FUN_00403840 ; 0040789d
-        ;   XREF to: 00403840 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_transformAndBufferVertices_FUN_00403840()
+        ;   XREF to: 00403840 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended * mrgl)
     MOV ESI,dword ptr [0x005fba40]      ; 004078a2 | DAT_005fba40
     ADD ESP,0x4                         ; 004078a8
     TEST ESI,ESI                        ; 004078ab
@@ -204,7 +204,7 @@ section .text
     PUSH EDI                            ; 00407a06
         ;   Label: LAB_00407a06
     CALL engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407100 ; 00407a07
-        ;   XREF to: 00407100 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407100()
+        ;   XREF to: 00407100 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407100(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00407a0c
     JMP 0x004078af                      ; 00407a0f
         ;   XREF to: 004078af (UNCONDITIONAL_JUMP)  ; LAB_004078af

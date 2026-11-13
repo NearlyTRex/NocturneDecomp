@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLightStaff * core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaff *this_ptr)
+; CLightStaff * __cdecl core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaff *this_ptr)
 ;
 ; Parameters:
 ; CLightStaff *    Stack[0x4]:4   this_ptr

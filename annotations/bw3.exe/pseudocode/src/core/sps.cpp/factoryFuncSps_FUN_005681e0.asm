@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sps_cpp_factoryFuncSps_FUN_005681e0(void)
+; CSps * __cdecl core_sps_cpp_factoryFuncSps_FUN_005681e0(void)
 ;
 ;
 ; Called Functions:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_wateract_cpp_staticInit_FUN_00586920(void)
+; void __cdecl core_wateract_cpp_staticInit_FUN_00586920(void)
 ;
 ;
 ; Called Functions:

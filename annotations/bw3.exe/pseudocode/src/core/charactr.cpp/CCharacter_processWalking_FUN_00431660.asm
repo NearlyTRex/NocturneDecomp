@@ -20,7 +20,7 @@
 ;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00443407
 ;   core_cow.cpp_CZombieCow_process_FUN_00445130 at 004451da
 ;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598ad3
-;   core_demnfolk.cpp_FUN_00455080 at 00455c96
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00455c96
 ;   ... and 25 more
 ;
 ; Referenced Globals:
@@ -37,7 +37,7 @@
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_004310e0
 ;   core_charactr.cpp_FUN_004349d0
-;   core_door.cpp_FUN_004650a0
+;   core_door.cpp_CDoor_getOpenStandPos_FUN_004650a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 ;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
@@ -141,8 +141,8 @@ section .text
     PUSH EAX                            ; 0043176b
     PUSH ESI                            ; 0043176c
     LEA ESI,[ESP + 0x30]                ; 0043176d
-    CALL core_door.cpp_FUN_004650a0     ; 00431771
-        ;   XREF to: 004650a0 (UNCONDITIONAL_CALL)  ; undefined core_door.cpp_FUN_004650a0()
+    CALL core_door.cpp_CDoor_getOpenStandPos_FUN_004650a0 ; 00431771
+        ;   XREF to: 004650a0 (UNCONDITIONAL_CALL)  ; float * core_door.cpp_CDoor_getOpenStandPos_FUN_004650a0(CDoor * this_ptr, float * param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 00431776
     LEA EDI,[ESP + 0x3c]                ; 00431779
     PUSH 0x0                            ; 0043177d

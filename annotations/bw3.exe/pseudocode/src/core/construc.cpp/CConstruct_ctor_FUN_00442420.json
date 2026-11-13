@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 742,
+    "complexity_score": 741,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 82,
+    "pseudocode_lines": 81,
     "suspect_count": 64,
     "suspect_types": [
       "pointer_cast",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 199
+    "total_lines": 198
   },
   "cross_references": [
     {
@@ -45,9 +45,9 @@
         "004425ed"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_construc.cpp_CConstruct_ctor_FUN_00442420",
-    "signature": "CConstruct * core_construc_cpp_CConstruct_ctor_FUN_00442420(CConstruct *this_ptr)"
+    "signature": "CConstruct * __cdecl core_construc_cpp_CConstruct_ctor_FUN_00442420(CConstruct *this_ptr)"
   },
   "function_calls": [
     {
@@ -92,12 +92,10 @@
         "call_addr": "00444556",
         "call_type": "direct",
         "caller": "core_construc.cpp_CConstructBone_ctor_FUN_00444550",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -116,20 +114,18 @@
         "call_addr": "00444605",
         "call_type": "direct",
         "caller": "core_construc.cpp_CConstructRed_ctor_FUN_00444600",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 2,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -198,7 +194,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 21,
       "match": "(CConstruct_full_vtable **)((int)dest",
       "severity": "moderate",
       "text": "*(CConstruct_full_vtable **)((int)dest + -0xd030) = &g_CConstructVTable;",
@@ -206,7 +202,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 23,
       "match": "(CDeformableModelInstance *)((int)dest",
       "severity": "moderate",
       "text": "((CDeformableModelInstance *)((int)dest + -0xd02c),\"construct1.dfm\");",
@@ -214,7 +210,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(char *)((int)dest",
       "severity": "moderate",
       "text": "pcVar7 = (char *)((int)dest + -0x130);",
@@ -222,7 +218,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 26,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x9f18) = 0x3f19999a;",
@@ -230,7 +226,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 28,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x9f14) = 0x40000000;",
@@ -238,7 +234,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 29,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x9f10) = uVar2;",
@@ -246,7 +242,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 30,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x9f0c) = uVar3;",
@@ -254,7 +250,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 41,
       "match": "(char *)((int)dest",
       "severity": "moderate",
       "text": "pcVar7 = (char *)((int)dest + -0x70);",
@@ -262,7 +258,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 52,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0xc) = 0x41000000;",
@@ -270,7 +266,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + 0x6c0) = 0;",
@@ -278,7 +274,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 55,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x74) = 2;",
@@ -286,7 +282,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 65,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -4) = 0;",
@@ -294,7 +290,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 67,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x32c) = 0x40c00000;",
@@ -302,7 +298,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 68,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + 0x6cc) = 0;",
@@ -310,7 +306,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 69,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -4) = 0;",
@@ -318,7 +314,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 70,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x94) = 0;",
@@ -326,7 +322,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 71,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x90) = 0;",
@@ -334,7 +330,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 72,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x8c) = 0;",
@@ -342,7 +338,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 73,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x88) = 0;",
@@ -350,7 +346,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 74,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x84) = 0;",
@@ -358,7 +354,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 75,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x80) = 0;",
@@ -366,7 +362,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 76,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x7c) = 0;",
@@ -374,7 +370,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 77,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x78) = 0;",
@@ -382,7 +378,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 78,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0xac4c) = 0x42340000;",
@@ -390,7 +386,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 79,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x328) = 0x41200000;",
@@ -398,7 +394,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 80,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x324) = 0x41200000;",
@@ -406,7 +402,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 81,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + 0x6d8) = 1;",
@@ -414,7 +410,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 82,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + 0x6c4) = 0xffffffff;",
@@ -422,7 +418,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 83,
       "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + 0x6c8) = 0;",
@@ -430,7 +426,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 84,
       "match": "(CConstruct *)((int)dest",
       "severity": "moderate",
       "text": "return (CConstruct *)((int)dest + -0xd184);",
@@ -438,7 +434,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 22,
+      "line": 21,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(CConstruct_full_vtable **)((int)dest + -0xd030) = &g_CConstructVTable;",
@@ -446,7 +442,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 24,
+      "line": 23,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "((CDeformableModelInstance *)((int)dest + -0xd02c),\"construct1.dfm\");",
@@ -454,7 +450,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
+      "line": 25,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "pcVar7 = (char *)((int)dest + -0x130);",
@@ -462,7 +458,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 27,
+      "line": 26,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x9f18) = 0x3f19999a;",
@@ -470,7 +466,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 29,
+      "line": 28,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x9f14) = 0x40000000;",
@@ -478,7 +474,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
+      "line": 29,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x9f10) = uVar2;",
@@ -486,7 +482,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
+      "line": 30,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x9f0c) = uVar3;",
@@ -494,7 +490,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 42,
+      "line": 41,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "pcVar7 = (char *)((int)dest + -0x70);",
@@ -502,7 +498,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 53,
+      "line": 52,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0xc) = 0x41000000;",
@@ -510,7 +506,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 54,
+      "line": 53,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + 0x6c0) = 0;",
@@ -518,7 +514,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 56,
+      "line": 55,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x74) = 2;",
@@ -526,7 +522,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
+      "line": 65,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -4) = 0;",
@@ -534,7 +530,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
+      "line": 67,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x32c) = 0x40c00000;",
@@ -542,7 +538,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 69,
+      "line": 68,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + 0x6cc) = 0;",
@@ -550,7 +546,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 70,
+      "line": 69,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -4) = 0;",
@@ -558,7 +554,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 71,
+      "line": 70,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x94) = 0;",
@@ -566,7 +562,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 72,
+      "line": 71,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x90) = 0;",
@@ -574,7 +570,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 73,
+      "line": 72,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x8c) = 0;",
@@ -582,7 +578,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 74,
+      "line": 73,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x88) = 0;",
@@ -590,7 +586,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 75,
+      "line": 74,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x84) = 0;",
@@ -598,7 +594,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 76,
+      "line": 75,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x80) = 0;",
@@ -606,7 +602,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 77,
+      "line": 76,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x7c) = 0;",
@@ -614,7 +610,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 78,
+      "line": 77,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x78) = 0;",
@@ -622,7 +618,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 79,
+      "line": 78,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0xac4c) = 0x42340000;",
@@ -630,7 +626,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 80,
+      "line": 79,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x328) = 0x41200000;",
@@ -638,7 +634,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 81,
+      "line": 80,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + -0x324) = 0x41200000;",
@@ -646,7 +642,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 82,
+      "line": 81,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + 0x6d8) = 1;",
@@ -654,7 +650,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 83,
+      "line": 82,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + 0x6c4) = 0xffffffff;",
@@ -662,7 +658,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 84,
+      "line": 83,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + 0x6c8) = 0;",
@@ -670,7 +666,7 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 85,
+      "line": 84,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "return (CConstruct *)((int)dest + -0xd184);",
@@ -678,7 +674,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 32,
+      "line": 31,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -686,7 +682,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 44,
+      "line": 43,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -694,7 +690,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 57,
+      "line": 56,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

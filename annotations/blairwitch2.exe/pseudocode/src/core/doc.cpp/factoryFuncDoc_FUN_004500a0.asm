@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_doc_cpp_factoryFuncDoc_FUN_004500a0(void)
+; CDoc * __cdecl core_doc_cpp_factoryFuncDoc_FUN_004500a0(void)
 ;
 ;
 ; Called Functions:

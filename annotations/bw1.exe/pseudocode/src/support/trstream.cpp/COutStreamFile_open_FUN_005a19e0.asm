@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(COutStreamFile *this_ptr,char *param_2,char *param_3)
+; int __cdecl support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(COutStreamFile *this_ptr,char *path,char *mode)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
+; char *           Stack[0x8]:4   path
+; char *           Stack[0xc]:4   mode
 ;
 ; XREF[3]:
 ;   core_game.cpp_FUN_004d6420 at 004d6748

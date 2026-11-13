@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_vampboss_cpp_CVampireBoss_getActorType_FUN_00581520(CVampireBoss *this_ptr)
+; CDemonActorType * __cdecl core_vampboss_cpp_CVampireBoss_getActorType_FUN_00581520(CVampireBoss *this_ptr)
 ;
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr

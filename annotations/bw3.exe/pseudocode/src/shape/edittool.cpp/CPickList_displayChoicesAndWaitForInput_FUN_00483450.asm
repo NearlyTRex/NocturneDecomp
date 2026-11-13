@@ -17,7 +17,7 @@
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_00560c90 at 00560cdc
 ;   engine_pod.cpp_FUN_00513d20 at 00513f71
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70 at 0047dc57
-;   shape_edittool.cpp_FUN_0047dd1e at 0047df9e
+;   shape_edittool.cpp_FUN_0047dd20 at 0047df9e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bcd25

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 41,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 25,
     "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 85
+    "total_lines": 84
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "005965f4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_tawiscara.cpp_CTawiscara_dtor_FUN_00596570",
-    "signature": "CTawiscara * core_tawiscara_cpp_CTawiscara_dtor_FUN_00596570(CTawiscara *this_ptr,uint flags)"
+    "signature": "CTawiscara * __cdecl core_tawiscara_cpp_CTawiscara_dtor_FUN_00596570(CTawiscara *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -131,7 +131,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 22,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);",
@@ -141,7 +141,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CTawiscara",
         "offset": 208,
         "vtable_addr": "005e7544"
       },

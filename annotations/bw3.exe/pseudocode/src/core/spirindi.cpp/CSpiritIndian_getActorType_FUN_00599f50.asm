@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_spirindi_cpp_CSpiritIndian_getActorType_FUN_00599f50(CSpiritIndian *this_ptr)
+; CDemonActorType * __cdecl core_spirindi_cpp_CSpiritIndian_getActorType_FUN_00599f50(CSpiritIndian *this_ptr)
 ;
 ; Parameters:
 ; CSpiritIndian *  Stack[0x4]:4   this_ptr

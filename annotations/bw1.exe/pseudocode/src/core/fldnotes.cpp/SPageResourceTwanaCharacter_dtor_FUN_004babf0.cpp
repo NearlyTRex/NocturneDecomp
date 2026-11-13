@@ -1,14 +1,12 @@
 // Name: core_fldnotes.cpp_SPageResourceTwanaCharacter_dtor_FUN_004babf0
 // Address: 004babf0
 // Address Range: [[004babf0, 004bac44]]
-// Convention: unknown
-// Signature: SPageResourceTwanaCharacter * core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004babf0(SPageResourceTwanaCharacter *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: SPageResourceTwanaCharacter * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004babf0(SPageResourceTwanaCharacter *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-SPageResourceTwanaCharacter * core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004babf0(SPageResourceTwanaCharacter *this_ptr,uint flags)
+SPageResourceTwanaCharacter * __cdecl core_fldnotes_cpp_SPageResourceTwanaCharacter_dtor_FUN_004babf0(SPageResourceTwanaCharacter *this_ptr,uint flags)
 
 {
   SPageResourceTwanaCharacter *pSVar1;

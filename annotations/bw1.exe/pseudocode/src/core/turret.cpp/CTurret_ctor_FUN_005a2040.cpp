@@ -1,15 +1,14 @@
 // Name: core_turret.cpp_CTurret_ctor_FUN_005a2040
 // Address: 005a2040
 // Address Range: [[005a2040, 005a2199]]
-// Convention: unknown
-// Signature: CTurret * core_turret_cpp_CTurret_ctor_FUN_005a2040(CTurret *this_ptr)
+// Convention: __cdecl
+// Signature: CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005a2040(CTurret *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CTurret * core_turret_cpp_CTurret_ctor_FUN_005a2040(CTurret *this_ptr)
+CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005a2040(CTurret *this_ptr)
 
 {
   char cVar1;

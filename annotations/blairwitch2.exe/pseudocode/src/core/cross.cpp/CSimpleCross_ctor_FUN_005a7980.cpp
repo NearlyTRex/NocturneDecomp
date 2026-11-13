@@ -1,14 +1,12 @@
 // Name: core_cross.cpp_CSimpleCross_ctor_FUN_005a7980
 // Address: 005a7980
 // Address Range: [[005a7980, 005a7a56]]
-// Convention: unknown
-// Signature: CSimpleCross * core_cross_cpp_CSimpleCross_ctor_FUN_005a7980(CSimpleCross *this_ptr)
+// Convention: __cdecl
+// Signature: CSimpleCross * __cdecl core_cross_cpp_CSimpleCross_ctor_FUN_005a7980(CSimpleCross *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSimpleCross * core_cross_cpp_CSimpleCross_ctor_FUN_005a7980(CSimpleCross *this_ptr)
+CSimpleCross * __cdecl core_cross_cpp_CSimpleCross_ctor_FUN_005a7980(CSimpleCross *this_ptr)
 
 {
   char cVar1;

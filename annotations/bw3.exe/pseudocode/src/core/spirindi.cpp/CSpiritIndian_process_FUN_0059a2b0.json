@@ -105,7 +105,7 @@
     {
       "addr": "004f6f10",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6f10"
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10"
     },
     {
       "addr": "004fbb70",
@@ -339,7 +339,7 @@
       "line": 60,
       "match": "&stack0xffffff50",
       "severity": "moderate",
-      "text": "iVar10 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar2->base,&stack0xffffff50);",
+      "text": "iVar9 = core_motion_cpp_CMotionController_advance_FUN_004fbb70(&pCVar2->base,&stack0xffffff50);",
       "type": "stack_ref"
     },
     {
@@ -347,7 +347,7 @@
       "line": 78,
       "match": "&stack0xffffff64",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff64 + (uint)bVar12 * -8);",
+      "text": "*(uint *)(&stack0xffffff64 + (uint)bVar11 * -8);",
       "type": "stack_ref"
     },
     {
@@ -355,7 +355,7 @@
       "line": 81,
       "match": "&stack0xffffff68",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff68 + (uint)bVar12 * -8 + (uint)bVar12 * -8);",
+      "text": "*(uint *)(&stack0xffffff68 + (uint)bVar11 * -8 + (uint)bVar11 * -8);",
       "type": "stack_ref"
     },
     {
@@ -363,7 +363,7 @@
       "line": 141,
       "match": "DAT_005d9aac",
       "severity": "mild",
-      "text": "pcVar14 = &DAT_005d9aac;",
+      "text": "pcVar13 = &DAT_005d9aac;",
       "type": "undefined_data"
     },
     {
@@ -371,7 +371,7 @@
       "line": 152,
       "match": "DAT_005d9aa8",
       "severity": "mild",
-      "text": "pcVar14 = &DAT_005d9aa8;",
+      "text": "pcVar13 = &DAT_005d9aa8;",
       "type": "undefined_data"
     },
     {
@@ -379,7 +379,7 @@
       "line": 176,
       "match": "&stack0xffffff58",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff58 + (uint)bVar12 * -8) = afStack_84[(uint)bVar12 * -2];",
+      "text": "*(float *)((int)&stack0xffffff58 + (uint)bVar11 * -8) = afStack_84[(uint)bVar11 * -2];",
       "type": "stack_ref"
     },
     {
@@ -387,7 +387,7 @@
       "line": 177,
       "match": "&stack0xffffff5c",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff5c + (uint)bVar12 * -8 + (uint)bVar12 * -8) =",
+      "text": "*(float *)((int)&stack0xffffff5c + (uint)bVar11 * -8 + (uint)bVar11 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -395,7 +395,7 @@
       "line": 77,
       "match": "(int)&CStack_70",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_70 + (uint)bVar12 * -8 + 4) =",
+      "text": "*(uint *)((int)&CStack_70 + (uint)bVar11 * -8 + 4) =",
       "type": "pointer_truncation"
     },
     {
@@ -403,7 +403,7 @@
       "line": 80,
       "match": "(int)&CStack_70",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_70 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_70 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
@@ -411,7 +411,7 @@
       "line": 176,
       "match": "(int)&stack0xffffff58",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff58 + (uint)bVar12 * -8) = afStack_84[(uint)bVar12 * -2];",
+      "text": "*(float *)((int)&stack0xffffff58 + (uint)bVar11 * -8) = afStack_84[(uint)bVar11 * -2];",
       "type": "pointer_truncation"
     },
     {
@@ -419,7 +419,7 @@
       "line": 177,
       "match": "(int)&stack0xffffff5c",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff5c + (uint)bVar12 * -8 + (uint)bVar12 * -8) =",
+      "text": "*(float *)((int)&stack0xffffff5c + (uint)bVar11 * -8 + (uint)bVar11 * -8) =",
       "type": "pointer_truncation"
     },
     {
@@ -427,7 +427,7 @@
       "line": 192,
       "match": "(int)&CStack_94",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_94 + (uint)bVar12 * -8 + 4) = afStack_60[(uint)bVar12 * -2];",
+      "text": "*(float *)((int)&CStack_94 + (uint)bVar11 * -8 + 4) = afStack_60[(uint)bVar11 * -2];",
       "type": "pointer_truncation"
     },
     {
@@ -435,15 +435,15 @@
       "line": 193,
       "match": "(int)&CStack_94",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "text": "*(float *)((int)&CStack_94 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1d81080 assigned to bare local `pCVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x1d81080 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 106,
       "match": "0x1d81080",
       "severity": "moderate",
-      "text": "pCVar8 = 0x01D81080;",
+      "text": "this_ptr_00 = 0x01D81080;",
       "type": "raw_address_constant"
     },
     {
@@ -483,7 +483,7 @@
       "line": 77,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_70 + (uint)bVar12 * -8 + 4) =",
+      "text": "*(uint *)((int)&CStack_70 + (uint)bVar11 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -491,7 +491,7 @@
       "line": 80,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_70 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "text": "*(uint *)((int)&CStack_70 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
@@ -499,7 +499,7 @@
       "line": 176,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff58 + (uint)bVar12 * -8) = afStack_84[(uint)bVar12 * -2];",
+      "text": "*(float *)((int)&stack0xffffff58 + (uint)bVar11 * -8) = afStack_84[(uint)bVar11 * -2];",
       "type": "pointer_cast"
     },
     {
@@ -507,7 +507,7 @@
       "line": 177,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff5c + (uint)bVar12 * -8 + (uint)bVar12 * -8) =",
+      "text": "*(float *)((int)&stack0xffffff5c + (uint)bVar11 * -8 + (uint)bVar11 * -8) =",
       "type": "pointer_cast"
     },
     {
@@ -515,7 +515,7 @@
       "line": 192,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_94 + (uint)bVar12 * -8 + 4) = afStack_60[(uint)bVar12 * -2];",
+      "text": "*(float *)((int)&CStack_94 + (uint)bVar11 * -8 + 4) = afStack_60[(uint)bVar11 * -2];",
       "type": "pointer_cast"
     },
     {
@@ -523,7 +523,7 @@
       "line": 193,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "text": "*(float *)((int)&CStack_94 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
       "type": "pointer_cast"
     }
   ],

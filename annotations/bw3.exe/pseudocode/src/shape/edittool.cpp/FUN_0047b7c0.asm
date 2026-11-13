@@ -10,9 +10,9 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_fillRectWithBorder_FUN_00403250
-;   engine_mini3d.cpp_FUN_004f3520
-;   engine_mini3d.cpp_FUN_004f37e0
-;   engine_mini3d.cpp_FUN_004f3a60
+;   engine_mini3d.cpp_drawRect_FUN_004f3a60
+;   engine_mini3d.cpp_fillRect_FUN_004f37e0
+;   engine_mini3d.cpp_setColor_FUN_004f3520
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     PUSH EAX                            ; 0047b7fc
     LEA EAX,[EBX + -0x1]                ; 0047b7fd
     PUSH EAX                            ; 0047b800
-    CALL engine_mini3d.cpp_FUN_004f3a60 ; 0047b801
-        ;   XREF to: 004f3a60 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3a60()
+    CALL engine_mini3d.cpp_drawRect_FUN_004f3a60 ; 0047b801
+        ;   XREF to: 004f3a60 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawRect_FUN_004f3a60(int x1, int y1, int x2, int y2)
     MOV ECX,dword ptr [0x01c5baec]      ; 0047b806 | DAT_01c5baec
     ADD ESP,0x10                        ; 0047b80c
     TEST ECX,ECX                        ; 0047b80f
@@ -67,15 +67,15 @@ section .text
     AND EAX,0xff                        ; 0047b84a
     OR EDX,EAX                          ; 0047b84f
     PUSH EDX                            ; 0047b851
-    CALL engine_mini3d.cpp_FUN_004f3520 ; 0047b852
-        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3520()
+    CALL engine_mini3d.cpp_setColor_FUN_004f3520 ; 0047b852
+        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setColor_FUN_004f3520(uint rgb)
     ADD ESP,0x4                         ; 0047b857
     PUSH EBP                            ; 0047b85a
     PUSH ESI                            ; 0047b85b
     PUSH EDI                            ; 0047b85c
     PUSH EBX                            ; 0047b85d
-    CALL engine_mini3d.cpp_FUN_004f37e0 ; 0047b85e
-        ;   XREF to: 004f37e0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f37e0()
+    CALL engine_mini3d.cpp_fillRect_FUN_004f37e0 ; 0047b85e
+        ;   XREF to: 004f37e0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_fillRect_FUN_004f37e0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0047b863
     POP EBP                             ; 0047b866
     POP EDI                             ; 0047b867
@@ -99,8 +99,8 @@ section .text
     AND EAX,0xff                        ; 0047b897
     OR EAX,EDX                          ; 0047b89c
     PUSH EAX                            ; 0047b89e
-    CALL engine_mini3d.cpp_FUN_004f3520 ; 0047b89f
-        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3520()
+    CALL engine_mini3d.cpp_setColor_FUN_004f3520 ; 0047b89f
+        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setColor_FUN_004f3520(uint rgb)
     ADD ESP,0x4                         ; 0047b8a4
     JMP 0x0047b7f1                      ; 0047b8a7
         ;   XREF to: 0047b7f1 (UNCONDITIONAL_JUMP)  ; LAB_0047b7f1
@@ -111,8 +111,8 @@ section .text
     PUSH ESI                            ; 0047b8b6
     PUSH EDI                            ; 0047b8b7
     PUSH EBX                            ; 0047b8b8
-    CALL engine_mini3d.cpp_FUN_004f37e0 ; 0047b8b9
-        ;   XREF to: 004f37e0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f37e0()
+    CALL engine_mini3d.cpp_fillRect_FUN_004f37e0 ; 0047b8b9
+        ;   XREF to: 004f37e0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_fillRect_FUN_004f37e0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0047b8be
     POP EBP                             ; 0047b8c1
     POP EDI                             ; 0047b8c2

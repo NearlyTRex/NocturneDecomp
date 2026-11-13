@@ -18,10 +18,10 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_0050a7d0(CPassenger *this_p
   float fVar3;
   int iVar4;
   CWerewolf *pCVar5;
-  CDemonMission *pCVar6;
-  SMotion *pSVar7;
-  int iVar8;
-  byte bVar9;
+  CDemonMission *this_ptr_01;
+  SMotion *pSVar6;
+  int iVar7;
+  byte bVar8;
   float afStackY_1014 [1014];
   float fStack_30;
   float fStack_2c;
@@ -29,28 +29,28 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_0050a7d0(CPassenger *this_p
   float fStack_24;
   float fStack_20;
   
-  bVar9 = 0;
+  bVar8 = 0;
   if (1.0 <= this_ptr->morph_time) {
     return;
   }
   this_ptr_00 = &(this_ptr->base).base.model;
-  pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&this_ptr_00->base);
-  iVar4 = pSVar7->state_index;
+  pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(&this_ptr_00->base);
+  iVar4 = pSVar6->state_index;
   if ((iVar4 == 1) || (iVar4 == 2)) {
     if ((iVar4 == 2) &&
        ((fVar2 = delta_time / _DAT_005e2fd8 + this_ptr->morph_time, this_ptr->morph_time = fVar2,
         1.0 <= fVar2 && (this_ptr->werewolf_actor != (CWerewolf *)0x0)))) {
       core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930
                 (0x01D81080,(CDemonActor *)this_ptr->werewolf_actor);
-      pCVar6 = 0x01D81080;
+      this_ptr_01 = 0x01D81080;
       this_ptr->werewolf_actor = (CWerewolf *)0x0;
-      core_mission_cpp_FUN_004f6f10(pCVar6,this_ptr,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(this_ptr_01,this_ptr,1);
     }
   }
   else {
-    iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
+    iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
                       (0x01C6E360,this_ptr->transform_event);
-    if (iVar8 != 0) {
+    if (iVar7 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004fc0d0(&this_ptr_00->base,1,1);
       if (this_ptr->transform_wav[0] != '\0') {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -66,18 +66,18 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_0050a7d0(CPassenger *this_p
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
   while (0.0 < fStack_30) {
-    iVar8 = core_motion_cpp_CMotionController_advance_FUN_004fbb70
+    iVar7 = core_motion_cpp_CMotionController_advance_FUN_004fbb70
                       (&(this_ptr->base).base.model.base,&stack0xffffffd0);
-    core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar8);
+    core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,iVar7);
   }
   if (iVar4 != 0) {
     core_actor_cpp_FUN_00408b00(this_ptr,&(this_ptr->base).base.model.accumulated_root_motion);
     pCVar1 = &(this_ptr->base).base.base.location;
     fStack_2c = fStack_20;
-    *(uint *)((int)&stack0xffffffd8 + (uint)bVar9 * -8) =
-         *(uint *)(&stack0xffffffe4 + (uint)bVar9 * -8);
-    *(uint *)((int)&stack0xffffffdc + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-         *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
+    *(uint *)((int)&stack0xffffffd8 + (uint)bVar8 * -8) =
+         *(uint *)(&stack0xffffffe4 + (uint)bVar8 * -8);
+    *(uint *)((int)&stack0xffffffdc + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+         *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
     fVar2 = (this_ptr->base).base.base.location.position.y;
     fVar3 = (this_ptr->base).base.base.location.position.z;
     (pCVar1->position).x = (pCVar1->position).x + fStack_2c;

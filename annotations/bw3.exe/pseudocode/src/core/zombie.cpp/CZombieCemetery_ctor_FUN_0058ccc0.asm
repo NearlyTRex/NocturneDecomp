@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CZombieCemetery * core_zombie_cpp_CZombieCemetery_ctor_FUN_0058ccc0(CZombieCemetery *this_ptr)
+; CZombieCemetery * __cdecl core_zombie_cpp_CZombieCemetery_ctor_FUN_0058ccc0(CZombieCemetery *this_ptr)
 ;
 ; Parameters:
 ; CZombieCemetery * Stack[0x4]:4   this_ptr

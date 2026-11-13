@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 58,
+    "complexity_score": 40,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
-    "suspect_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_param"
+      "unaffected_reg"
     ],
-    "total_lines": 40
+    "total_lines": 42
   },
   "cross_references": [
     {
@@ -44,18 +44,18 @@
     ],
     "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0",
-    "signature": "undefined4 * __cdecl support_trstream_cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0(COutStreamMemory *this_ptr,int param_2,int param_3)"
+    "signature": "COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0(COutStreamMemory *this_ptr,char *buffer,int capacity)"
   },
   "function_calls": [
+    {
+      "addr": "005a14b0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStream_dtor_FUN_005a14b0"
+    },
     {
       "addr": "005a1d60",
       "is_variadic": false,
       "name": "support_trstream.cpp_COutStreamMemory_open_FUN_005a1d60"
-    },
-    {
-      "addr": "005a14b0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a14b0"
     }
   ],
   "globals": [
@@ -159,52 +159,36 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "buffer",
         "offset": 8,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "capacity",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint * __cdecl support_trstream_cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0(COutStreamMemory *this_ptr,int param_2,int param_3)",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint * __cdecl support_trstream_cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0(COutStreamMemory *this_ptr,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "support_trstream_cpp_COutStreamMemory_open_FUN_005a1d60(this_ptr_00,param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "support_trstream_cpp_COutStreamMemory_open_FUN_005a1d60(this_ptr_00,param_2,param_3);",
-      "type": "unnamed_param"
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "support_trstream_cpp_COutStream_dtor_FUN_005a14b0(&this_ptr->base,unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ]
 }

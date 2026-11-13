@@ -1,14 +1,12 @@
 // Name: core_asgaya.cpp_CAsgaya_dtor_FUN_005a1b50
 // Address: 005a1b50
 // Address Range: [[005a1b50, 005a1bf4]]
-// Convention: unknown
-// Signature: CAsgaya * core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CAsgaya * __cdecl core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAsgaya * core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags)
+CAsgaya * __cdecl core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags)
 
 {
   CPathMap *pCVar1;

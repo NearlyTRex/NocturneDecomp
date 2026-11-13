@@ -42,23 +42,23 @@ void shape_edittool_cpp_FUN_00484440(CEdScrollBar *param_1)
     uVar2 = _DAT_01c263f0;
     if (_DAT_01c25f84 != 0) {
       iVar1 = (_DAT_01c263f0 & 0xff) * 3;
-      engine_mini3d_cpp_FUN_004f8e20
+      engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)(byte)(&DAT_01c35838)[iVar1] << 0x10 |
                  (uint)(byte)(&DAT_01c35839)[iVar1] << 8 | (uint)(byte)(&DAT_01c3583a)[iVar1]);
       uVar2 = _DAT_01c35e60;
     }
     _DAT_01c35e60 = uVar2;
-    engine_mini3d_cpp_FUN_004f9340(iVar11,iVar9,iVar5 + -1,iVar4 + -1);
+    engine_mini3d_cpp_drawRect_FUN_004f9340(iVar11,iVar9,iVar5 + -1,iVar4 + -1);
     if (_DAT_01c25f84 != 0) {
       iVar4 = (uVar10 & 0xff) * 3;
-      engine_mini3d_cpp_FUN_004f8e20
+      engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)(byte)(&DAT_01c3583a)[iVar4] |
                  (uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |
                  (uint)(byte)(&DAT_01c35839)[iVar4] << 8);
       uVar10 = _DAT_01c35e60;
     }
     _DAT_01c35e60 = uVar10;
-    engine_mini3d_cpp_FUN_004f90d0(iVar3,iVar7,iVar6,y2);
+    engine_mini3d_cpp_fillRect_FUN_004f90d0(iVar3,iVar7,iVar6,y2);
   }
   iVar4 = param_1->bounds_right + -1;
   iVar5 = param_1->bounds_bottom + -1;

@@ -198,8 +198,27 @@ the build added or ones whose new offset is not yet known.
   `CAudioRecPuzzle` (bw3 drops bw1's sound-handle block; bw2's is a different radio with 30
   buttons), and bw2's `CExamplePuzzle`, `CGameHook`, `CMuzzleEffect` (nocedit `CMuzzleFlash`'s
   layout), `SFollowSlotStruct` and `CSimpleParticleSystem`, bw1's `SDjienBox` and bw3's `CRing`.
-  `CMini3D` is empty. Their bases with no type (the stream and puzzle interfaces, a vtable only)
-  are a `vtable` field at `+0`. Bytes no code touches are left undefined.
+  `CMini3D` is empty. Bytes no code touches are left undefined.
+- **The puzzle base is `CPuzzle`**, a 4-byte vtable-only type embedded as `base` at `+0` of each
+  puzzle. It has no RTTI record, so its name is inferred. Its ctor appends the object to a global
+  list of 10 puzzles with a count and an active-puzzle pointer, which `activatePuzzle`,
+  `resetAllPuzzles` and `processActivePuzzle` drive. Its 10 slots are dtor, getName (pure),
+  reset, two unnamed slots, load, render, a third unnamed slot, process(dt) and
+  onMouse(x, y, button, pressed); all but dtor and getName default to an empty body. Every
+  implementation of slots 3, 4 and 7 is empty in all three builds, so their names are guesses
+  from the call sites: slot 4 (`releaseGraphics`) goes to every puzzle when none is active, from
+  `runGameSession` before each resolution change (`releasePuzzleGraphics`); slot 3
+  (`restoreGraphics`) is its counterpart, sent to every puzzle by `restorePuzzleGraphics`, which
+  nothing calls; slot 7 (`renderBehindFieldNotes`) goes to the active puzzle each frame while
+  `CFieldNotes.is_displayed` is set.
+- **The stream bases are `CInStream` and `COutStream`**, 4-byte vtable-only types embedded as
+  `base` at `+0` of each stream class. Neither has an RTTI record, so the names are inferred from
+  their subclasses. `CInStream`'s 9 slots are dtor, getChar, ungetChar, peekChar, read, seek,
+  tell, isOpen and isEof, with defaults only for ungetChar/seek (0) and tell (-1). `COutStream`'s
+  5 slots are dtor, putChar, write, seek and tell, with defaults only for seek (0) and tell (-1).
+  `CInStream` also carries `scanf`/`vscanf`, `readLine` and `skipWhitespace`, and `COutStream`
+  carries `printf`/`vprintf`. bw2's `COutStreamMemory::write` returns 0 on success; bw1's and
+  bw3's return the byte count.
 - **Every class method in the BW programs takes `this_ptr` of its class.** Methods with no
   parameters get the prototype the decompiler infers when its first parameter is the first stack
   argument, where Watcom passes `this`, or `this` alone when the body reads nothing and a slot of

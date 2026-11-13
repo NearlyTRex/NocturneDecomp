@@ -24,9 +24,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_00496df0(CEditor
     FUN_005c09f0(*(int *)(iVar1 + 0x1c3ed38));
     *(uint *)(iVar1 + 0x1c3ed38) = 0;
   }
-  engine_mini3d_cpp_FUN_00511850
-            (*(uint *)(iVar1 + 0x1c3eb80),*(uint *)(iVar1 + 0x1c3eb84),
-             *(uint *)(iVar1 + 0x1c3eb88),*(uint *)(iVar1 + 0x1c3eb8c));
+  engine_mini3d_cpp_setRenderViewport_FUN_00511850
+            (*(float *)(iVar1 + 0x1c3eb80),*(float *)(iVar1 + 0x1c3eb84),
+             *(float *)(iVar1 + 0x1c3eb88),*(float *)(iVar1 + 0x1c3eb8c));
   _DAT_01c4f008 = *(uint *)(iVar1 + 0x1c3eb70);
   _DAT_01c4f00c = *(uint *)(iVar1 + 0x1c3eb74);
   _DAT_01c4f010 = *(uint *)(iVar1 + 0x1c3eb78);

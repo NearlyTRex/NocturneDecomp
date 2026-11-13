@@ -9,7 +9,7 @@
 ; XREF[4]:
 ;   core_menu.cpp_FUN_004e94f0 at 004e9e3a
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 00560227
-;   core_sound.cpp_FUN_0055f6ae at 0055f7b5
+;   core_sound.cpp_FUN_0055f6b0 at 0055f7b5
 ;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f222
 ;
 ; Referenced Globals:

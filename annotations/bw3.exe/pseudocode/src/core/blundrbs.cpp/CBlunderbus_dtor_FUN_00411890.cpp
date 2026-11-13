@@ -1,14 +1,12 @@
 // Name: core_blundrbs.cpp_CBlunderbus_dtor_FUN_00411890
 // Address: 00411890
 // Address Range: [[00411890, 004118dd]]
-// Convention: unknown
-// Signature: CBlunderbus * core_blundrbs_cpp_CBlunderbus_dtor_FUN_00411890(CBlunderbus *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBlunderbus * __cdecl core_blundrbs_cpp_CBlunderbus_dtor_FUN_00411890(CBlunderbus *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBlunderbus * core_blundrbs_cpp_CBlunderbus_dtor_FUN_00411890(CBlunderbus *this_ptr,uint flags)
+CBlunderbus * __cdecl core_blundrbs_cpp_CBlunderbus_dtor_FUN_00411890(CBlunderbus *this_ptr,uint flags)
 
 {
   CBlunderbus *pCVar1;

@@ -19,7 +19,7 @@
 ;
 ; XREF[4]:
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426c11
-;   core_demnfolk.cpp_FUN_00455080 at 00455e28
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00455e28
 ;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c8c3e
 ;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 00589c5e
 ;

@@ -7,7 +7,7 @@
 
 // Original: core_marquee.cpp_staticInit_FUN_004e7c20
 // Address: 004e7c20
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_marquee.cpp_factoryFuncMarquee_FUN_004e7c50
 // Address: 004e7c50
@@ -15,7 +15,7 @@ CMarquee * __cdecl factoryFuncMarquee(void);
 
 // Original: core_marquee.cpp_CMarquee_getActorType_FUN_004e7c70
 // Address: 004e7c70
-CDemonActorType * CMarquee::getActorType(CMarquee *this_ptr);
+CDemonActorType * __cdecl CMarquee::getActorType(CMarquee *this_ptr);
 
 // Original: core_marquee.cpp_CMarquee_ctor_FUN_004e7c80
 // Address: 004e7c80
@@ -59,7 +59,7 @@ CBoundingBox3D * __cdecl CMarquee::getBoundingBox(CMarquee *this_ptr,CBoundingBo
 
 // Original: core_marquee.cpp_CMarquee_dtor_FUN_004e85b0
 // Address: 004e85b0
-CMarquee * CMarquee::dtor(CMarquee *this_ptr,uint flags);
+CMarquee * __cdecl CMarquee::dtor(CMarquee *this_ptr,uint flags);
 
 // Original: core_marquee.cpp_FUN_004e8620
 // Address: 004e8620

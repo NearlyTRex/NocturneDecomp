@@ -196,7 +196,7 @@ uint core_charactr_cpp_FUN_0042cd70(CCharacter *param_1,float param_2)
     do {
       while ((pCVar8->carry_hands[0].carry_actor != (CDemonActor *)0x0 &&
              (pCVar8->carry_hands[0].has_carry_offset == 0))) {
-        core_charactr_cpp_FUN_00431ab0(param_1,iVar5,0,0);
+        core_charactr_cpp_CCharacter_computePickup_FUN_00431ab0(param_1,iVar5,0.0,(int *)0x0);
         iVar5 = iVar5 + 1;
         pCVar8 = (CCharacter *)(pCVar8->base).create_event;
         if (1 < iVar5) goto LAB_0042d163;

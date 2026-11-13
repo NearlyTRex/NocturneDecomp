@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSimpleParticleSystem * core_bwspart_cpp_CSimpleParticleSystem_dtor_FUN_005a8000(CSimpleParticleSystem *this_ptr,uint flags)
+; CSimpleParticleSystem * __cdecl core_bwspart_cpp_CSimpleParticleSystem_dtor_FUN_005a8000(CSimpleParticleSystem *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSimpleParticleSystem * Stack[0x4]:4   this_ptr

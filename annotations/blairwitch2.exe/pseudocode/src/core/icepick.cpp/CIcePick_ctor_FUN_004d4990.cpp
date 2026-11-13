@@ -1,14 +1,12 @@
 // Name: core_icepick.cpp_CIcePick_ctor_FUN_004d4990
 // Address: 004d4990
 // Address Range: [[004d4990, 004d4a11]]
-// Convention: unknown
-// Signature: CIcePick * core_icepick_cpp_CIcePick_ctor_FUN_004d4990(CIcePick *this_ptr)
+// Convention: __cdecl
+// Signature: CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004d4990(CIcePick *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CIcePick * core_icepick_cpp_CIcePick_ctor_FUN_004d4990(CIcePick *this_ptr)
+CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004d4990(CIcePick *this_ptr)
 
 {
   CIcePick *pCVar1;

@@ -1,14 +1,12 @@
 // Name: core_cow.cpp_CZombieCow_dtor_FUN_00439c60
 // Address: 00439c60
 // Address Range: [[00439c60, 00439cf4]]
-// Convention: unknown
-// Signature: CZombieCow * core_cow_cpp_CZombieCow_dtor_FUN_00439c60(CZombieCow *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CZombieCow * __cdecl core_cow_cpp_CZombieCow_dtor_FUN_00439c60(CZombieCow *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CZombieCow * core_cow_cpp_CZombieCow_dtor_FUN_00439c60(CZombieCow *this_ptr,uint flags)
+CZombieCow * __cdecl core_cow_cpp_CZombieCow_dtor_FUN_00439c60(CZombieCow *this_ptr,uint flags)
 
 {
   int iVar1;

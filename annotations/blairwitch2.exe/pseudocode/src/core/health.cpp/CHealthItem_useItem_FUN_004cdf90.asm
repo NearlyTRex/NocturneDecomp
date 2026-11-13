@@ -8,7 +8,7 @@
 ; CCharacter *     Stack[0x8]:4   user
 ;
 ; XREF[1]:
-;   core_inv.cpp_FUN_004dc8c0 at 004dcbe7
+;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dcbe7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d99f4

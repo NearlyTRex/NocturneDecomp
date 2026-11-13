@@ -34,13 +34,13 @@
 ;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_0042ccf0
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_0042cd30
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_0042c1e0
-;   core_charactr.cpp_FUN_0042c230
 ;   ... and 32 more
 ;
 ; *****************************************************************************
@@ -517,8 +517,8 @@ section .text
     PUSH ESI                            ; 00589437
     PUSH EAX                            ; 00589438
     PUSH EBX                            ; 00589439
-    CALL core_charactr.cpp_FUN_004319d0 ; 0058943a
-        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004319d0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0 ; 0058943a
+        ;   XREF to: 004319d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 0058943f
     PUSH EDI                            ; 00589442
     PUSH ESI                            ; 00589443

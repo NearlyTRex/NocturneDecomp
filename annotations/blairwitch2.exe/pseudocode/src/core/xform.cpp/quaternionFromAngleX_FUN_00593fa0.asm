@@ -12,9 +12,9 @@
 ; XREF[17]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429b40 at 00429b7e
 ;   core_confedrt.cpp_FUN_005a0bd0 at 005a0d64
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 00455a27
 ;   core_doc.cpp_FUN_00450c60 at 00451749
 ;   core_doc.cpp_FUN_00453d80 at 00453fa3
-;   core_doc.cpp_FUN_004555c0 at 00455a27
 ;   core_doc.cpp_FUN_00455d10 at 00455e26
 ;   core_doc.cpp_FUN_004562a0 at 00456324
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afbb5

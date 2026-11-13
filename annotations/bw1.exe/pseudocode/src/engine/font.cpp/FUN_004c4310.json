@@ -1,0 +1,433 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 198,
+    "complexity_score": 521,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 106,
+    "suspect_count": 40,
+    "suspect_types": [
+      "stack_param",
+      "undefined_data",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 304
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004c4310",
+    "address_range": [
+      [
+        "004c4310",
+        "004c44d9"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_font.cpp_FUN_004c4310",
+    "signature": "int engine_font_cpp_FUN_004c4310(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    },
+    {
+      "addr": "004c3ea0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.225806451612903,
+    "instruction_count": 155,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 3,
+      "BRANCH": 6,
+      "CALL": 3,
+      "CBRANCH": 21,
+      "COPY": 136,
+      "INT_ADD": 78,
+      "INT_AND": 125,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 106,
+      "INT_LESS": 10,
+      "INT_MULT": 9,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 18,
+      "INT_SEXT": 9,
+      "INT_SLESS": 51,
+      "INT_SUB": 34,
+      "INT_XOR": 6,
+      "INT_ZEXT": 5,
+      "LOAD": 49,
+      "POPCOUNT": 50,
+      "RETURN": 2,
+      "STORE": 31,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 810
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ab360",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b2ef0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CBitFont *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000020",
+      "severity": "moderate",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "memset(in_stack_0000000c,0,in_stack_00000010 * in_stack_00000014);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "memset(in_stack_0000000c,0,in_stack_00000010 * in_stack_00000014);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "memset(in_stack_0000000c,0,in_stack_00000010 * in_stack_00000014);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "if (in_stack_00000008 == (char *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "if (0 < in_stack_00000010) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "pcStack_1c = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "for (; (((&DAT_00626114)[(byte)(*in_stack_00000008 + 1)] & 2) != 0 &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "for (; (((&DAT_00626114)[(byte)(*in_stack_00000008 + 1)] & 2) != 0 &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(*in_stack_00000008 != '\\n')); in_stack_00000008 = in_stack_00000008 + 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(*in_stack_00000008 != '\\n')); in_stack_00000008 = in_stack_00000008 + 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(*in_stack_00000008 != '\\n')); in_stack_00000008 = in_stack_00000008 + 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "if (*in_stack_00000008 == '\\0') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "pcVar4 = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "if (((&DAT_00626114)[(byte)(cVar1 + 1)] & 2) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "if ((int)uVar8 < in_stack_00000014 + -1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_00000020",
+      "severity": "moderate",
+      "text": "if ((iStack_14 < 2) && (in_stack_00000020 == 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,(char *)0x1cc88d0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar2 = in_stack_00000004->char_widths[0x20];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,(char *)0x1cc88d0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "iVar5 = iVar5 + iVar2 * in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "if (iVar5 <= in_stack_00000018) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "pcVar4 = in_stack_00000008 + uVar8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "if (((&DAT_00626114)[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "pcVar4 = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 102,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "if (in_stack_00000008[uVar8] == '\\n') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 105,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + uVar8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 105,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + uVar8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 106,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "pcStack_1c = pcStack_1c + in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 107,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "} while (iStack_14 < in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 91,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 96,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar6 = uVar7 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004c43f8, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 103,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004c43f8: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

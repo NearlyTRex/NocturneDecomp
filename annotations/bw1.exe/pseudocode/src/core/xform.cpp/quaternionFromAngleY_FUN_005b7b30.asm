@@ -11,9 +11,9 @@
 ;
 ; XREF[14]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433b30 at 00433b91
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046f003
 ;   core_doc.cpp_FUN_0046caa0 at 0046cde5
 ;   core_doc.cpp_FUN_0046e630 at 0046e6d1
-;   core_doc.cpp_FUN_0046ea80 at 0046f003
 ;   core_doc.cpp_FUN_0046f200 at 0046f244
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8b7f
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_0051def0 at 0051e204

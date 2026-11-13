@@ -1,14 +1,12 @@
 // Name: core_npc.cpp_CNPC_ctor_FUN_00508f40
 // Address: 00508f40
 // Address Range: [[00508f40, 00509017]]
-// Convention: unknown
-// Signature: CNPC * core_npc_cpp_CNPC_ctor_FUN_00508f40(CNPC *this_ptr)
+// Convention: __cdecl
+// Signature: CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_00508f40(CNPC *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CNPC * core_npc_cpp_CNPC_ctor_FUN_00508f40(CNPC *this_ptr)
+CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_00508f40(CNPC *this_ptr)
 
 {
   CCharacter *pCVar1;

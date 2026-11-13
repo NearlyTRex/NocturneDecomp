@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 282,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 25,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 81
@@ -26,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_addButton_FUN_00412320",
-    "signature": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)"
+    "signature": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecPuzzle *this_ptr,int index,char *filename,int width,int height,int enabled,int x,int y,int visible)"
   },
   "function_calls": [
     {
@@ -135,59 +134,59 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "index",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "filename",
         "offset": 12,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "width",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_5",
+        "name": "height",
         "offset": 20,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_6",
+        "name": "enabled",
         "offset": 24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_7",
+        "name": "x",
         "offset": 28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_8",
+        "name": "y",
         "offset": 32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "param_9",
+        "name": "visible",
         "offset": 36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       }
     ]
   },
@@ -199,198 +198,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_9",
-      "severity": "mild",
-      "text": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00412320(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(&this_ptr->buttons[param_2].bitmap,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&this_ptr->buttons[param_2].bitmap,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(&this_ptr->buttons[param_2].bitmap,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(&this_ptr->buttons[param_2].bitmap,param_3,param_4,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].enabled = param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].enabled = param_6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].x = param_7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].x = param_7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].y = param_8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].y = param_8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].width = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].width = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].height = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].height = param_5;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].visible = param_9;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_9",
-      "severity": "mild",
-      "text": "this_ptr->buttons[param_2].visible = param_9;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

@@ -1,14 +1,12 @@
 // Name: core_manpuz.cpp_CMansionPuzzleCircle_dtor_FUN_004e7ac0
 // Address: 004e7ac0
 // Address Range: [[004e7ac0, 004e7b0d]]
-// Convention: unknown
-// Signature: CMansionPuzzleCircle * core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_004e7ac0(CMansionPuzzleCircle *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_004e7ac0(CMansionPuzzleCircle *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CMansionPuzzleCircle * core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_004e7ac0(CMansionPuzzleCircle *this_ptr,uint flags)
+CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_004e7ac0(CMansionPuzzleCircle *this_ptr,uint flags)
 
 {
   CMansionPuzzleCircle *pCVar1;

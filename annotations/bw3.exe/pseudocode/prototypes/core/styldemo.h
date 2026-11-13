@@ -7,19 +7,19 @@
 
 // Original: core_styldemo.cpp_staticInit_FUN_0059e010
 // Address: 0059e010
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_styldemo.cpp_factoryFuncStylerDemon_FUN_0059e040
 // Address: 0059e040
-void factoryFuncStylerDemon(void);
+CStylerDemon * __cdecl factoryFuncStylerDemon(void);
 
 // Original: core_styldemo.cpp_CStylerDemon_getActorType_FUN_0059e060
 // Address: 0059e060
-CDemonActorType * CStylerDemon::getActorType(CStylerDemon *this_ptr);
+CDemonActorType * __cdecl CStylerDemon::getActorType(CStylerDemon *this_ptr);
 
 // Original: core_styldemo.cpp_CStylerDemon_ctor_FUN_0059e070
 // Address: 0059e070
-CStylerDemon * CStylerDemon::ctor(CStylerDemon *this_ptr);
+CStylerDemon * __cdecl CStylerDemon::ctor(CStylerDemon *this_ptr);
 
 // Original: core_styldemo.cpp_CStylerDemon_setup_FUN_0059e130
 // Address: 0059e130
@@ -67,4 +67,4 @@ ECollisionType __cdecl CStylerDemon::getCollisionType(CStylerDemon *this_ptr,SCo
 
 // Original: core_styldemo.cpp_CStylerDemon_dtor_FUN_005a0910
 // Address: 005a0910
-CStylerDemon * CStylerDemon::dtor(CStylerDemon *this_ptr,uint flags);
+CStylerDemon * __cdecl CStylerDemon::dtor(CStylerDemon *this_ptr,uint flags);

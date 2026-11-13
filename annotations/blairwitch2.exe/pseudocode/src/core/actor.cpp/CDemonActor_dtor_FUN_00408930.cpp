@@ -1,14 +1,12 @@
 // Name: core_actor.cpp_CDemonActor_dtor_FUN_00408930
 // Address: 00408930
 // Address Range: [[00408930, 0040897f] [00408981, 004089a8]]
-// Convention: unknown
-// Signature: CDemonActor * core_actor_cpp_CDemonActor_dtor_FUN_00408930(CDemonActor *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408930(CDemonActor *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDemonActor * core_actor_cpp_CDemonActor_dtor_FUN_00408930(CDemonActor *this_ptr,uint flags)
+CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408930(CDemonActor *this_ptr,uint flags)
 
 {
   CDemonActor *pCVar1;

@@ -32,12 +32,7 @@ void core_game_cpp_FUN_004b6f30(CGame *param_1)
   char acStack_2d4 [256];
   char acStack_1d4 [200];
   char acStack_10c [100];
-  uint uStack_a8;
-  uint uStack_a4;
-  uint uStack_a0;
-  uint uStack_9c;
-  uint uStack_98;
-  uint uStack_94;
+  CSlew CStack_a8;
   CVector3i CStack_8c;
   CVector3i CStack_80;
   float fStack_74;
@@ -90,22 +85,22 @@ void core_game_cpp_FUN_004b6f30(CGame *param_1)
       core_sound_cpp_CSound_process_FUN_0055ff40(0x02CF5680);
     }
     else {
-      core_slew_cpp_FUN_00550590(&uStack_a8);
+      core_slew_cpp_CSlew_init_FUN_00550590(&CStack_a8);
       iVar2 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-      if (&uStack_a8 != (uint *)(iVar2 + 0x20)) {
-        uStack_a8 = *(uint *)(iVar2 + 0x20);
-        uStack_a4 = *(uint *)(iVar2 + 0x24);
-        uStack_a0 = *(uint *)(iVar2 + 0x28);
+      if (&CStack_a8 != (CSlew *)(iVar2 + 0x20)) {
+        CStack_a8.position.x = (((CSlew *)(iVar2 + 0x20))->position).x;
+        CStack_a8.position.y = *(float *)(iVar2 + 0x24);
+        CStack_a8.position.z = *(float *)(iVar2 + 0x28);
       }
       iVar2 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-      if (&uStack_9c != (uint *)(iVar2 + 0x30)) {
-        uStack_9c = *(uint *)(iVar2 + 0x30);
-        uStack_98 = *(uint *)(iVar2 + 0x34);
-        uStack_94 = *(uint *)(iVar2 + 0x38);
+      if (&CStack_a8.orientation != (UOrientationVector *)(iVar2 + 0x30)) {
+        CStack_a8.orientation.vec.x = (((UOrientationVector *)(iVar2 + 0x30))->vec).x;
+        CStack_a8.orientation.vec.y = *(float *)(iVar2 + 0x34);
+        CStack_a8.orientation.vec.z = *(float *)(iVar2 + 0x38);
       }
-      core_slew_cpp_FUN_005505e0(&uStack_a8);
+      core_slew_cpp_FUN_005505e0(&CStack_a8);
       iVar2 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);
-      (**(code **)(*(int *)(iVar2 + 0x154) + 0x68))(iVar2,&uStack_a8,&uStack_9c);
+      (**(code **)(*(int *)(iVar2 + 0x154) + 0x68))(iVar2,&CStack_a8,&CStack_a8.orientation);
       if ((DAT_01c5fae4 & 1) != 0) {
         core_dcamera_cpp_FUN_00449eb0(&g_CDemonCameraInstance,_DAT_01c5fadc,_DAT_01c5fae0);
         input_ptr = &CStack_8c;
@@ -159,7 +154,7 @@ void core_game_cpp_FUN_004b6f30(CGame *param_1)
         }
       }
       else {
-        core_fldnotes_cpp_FUN_004abe00(g_CFieldNotesPtr);
+        core_fldnotes_cpp_CFieldNotes_draw_FUN_004abe00(g_CFieldNotesPtr);
       }
       if (((param_1->developer_mode_enabled != 0) ||
           (pcVar10 = getenv("SPOOKHOUSE"), pcVar10 != (char *)0x0))

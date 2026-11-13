@@ -49,7 +49,7 @@
 ;   core_bride.cpp_CBride_processDismemberment_FUN_004248e0 at 00424a12
 ;   core_carved.cpp_FUN_0042b580 at 0042b71f
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_004311a0 at 004311fd
-;   core_construc.cpp_FUN_004472a0 at 004473e8
+;   core_construc.cpp_CConstruct_explode_FUN_004472a0 at 004473e8
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00448b70 at 00448cfc
 ;   core_demnfolk.cpp_FUN_0045c4a0 at 0045c63f
 ;   ... and 12 more
@@ -66,8 +66,8 @@
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041a700
-;   core_bodypart.cpp_FUN_00418d00
 ;   core_bodypart.cpp_FUN_0041ad40
+;   core_bodypart.cpp_setCounts_FUN_00418d00
 ;   core_dirmat.cpp_FUN_0045f700
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_memory.c_memset_FUN_005bfb70
@@ -97,8 +97,8 @@ section .text
     PUSH 0x0                            ; 00419bb6
     PUSH EBX                            ; 00419bb8
     MOV dword ptr [EBX + 0x70],0x2      ; 00419bb9
-    CALL core_bodypart.cpp_FUN_00418d00 ; 00419bc0
-        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00418d00()
+    CALL core_bodypart.cpp_setCounts_FUN_00418d00 ; 00419bc0
+        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00418d00()
     LEA EAX,[EBX + 0x168]               ; 00419bc5
     ADD ESP,0xc                         ; 00419bcb
     MOV EDX,EAX                         ; 00419bce

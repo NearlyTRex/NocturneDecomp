@@ -1,14 +1,12 @@
 // Name: core_stairs.cpp_CStairs_dtor_FUN_00568870
 // Address: 00568870
 // Address Range: [[00568870, 005688bd]]
-// Convention: unknown
-// Signature: CStairs * core_stairs_cpp_CStairs_dtor_FUN_00568870(CStairs *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_00568870(CStairs *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CStairs * core_stairs_cpp_CStairs_dtor_FUN_00568870(CStairs *this_ptr,uint flags)
+CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_00568870(CStairs *this_ptr,uint flags)
 
 {
   CStairs *pCVar1;

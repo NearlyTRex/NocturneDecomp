@@ -1,14 +1,12 @@
 // Name: core_charactr.cpp_CCharacter_dtor_FUN_0042c000
 // Address: 0042c000
 // Address Range: [[0042c000, 0042c094]]
-// Convention: unknown
-// Signature: CCharacter * core_charactr_cpp_CCharacter_dtor_FUN_0042c000(CCharacter *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CCharacter * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042c000(CCharacter *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CCharacter * core_charactr_cpp_CCharacter_dtor_FUN_0042c000(CCharacter *this_ptr,uint flags)
+CCharacter * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042c000(CCharacter *this_ptr,uint flags)
 
 {
   int iVar1;

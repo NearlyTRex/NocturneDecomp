@@ -1,14 +1,14 @@
 // Name: core_shadow.cpp_staticInit_FUN_00543400
 // Address: 00543400
 // Address Range: [[00543400, 005434c8]]
-// Convention: unknown
-// Signature: void core_shadow_cpp_staticInit_FUN_00543400(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_shadow_cpp_staticInit_FUN_00543400(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_shadow_cpp_staticInit_FUN_00543400(void)
+void __cdecl core_shadow_cpp_staticInit_FUN_00543400(void)
 
 {
   _DAT_0270f7c0 = 0xbe8f5c29;

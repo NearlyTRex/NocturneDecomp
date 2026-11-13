@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_glass_cpp_staticInit_FUN_004c4840(void)
+; void __cdecl core_glass_cpp_staticInit_FUN_004c4840(void)
 ;
 ;
 ; Called Functions:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,undefined4 param_2,undefined4 param_3)
+; undefined4 * __cdecl support_trstream_cpp_CInStreamFile_ctorOpenInDirectory_FUN_0057ce20(CInStreamFile *this_ptr,char *param_2,char *param_3)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ; undefined4       Stack[0xc]:4   param_3
 ;
 ; Called Functions:
-;   core_terrain.cpp_FUN_0057b9c0
+;   support_trstream.cpp_CInStream_ctor_FUN_0057b9c0
 ;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390
 ;
 ; *****************************************************************************
@@ -21,8 +21,8 @@ section .text
     PUSH ESI                            ; 0057ce21
     MOV EDX,dword ptr [ESP + 0xc]       ; 0057ce22
     PUSH EDX                            ; 0057ce26
-    CALL core_terrain.cpp_FUN_0057b9c0  ; 0057ce27
-        ;   XREF to: 0057b9c0 (UNCONDITIONAL_CALL)  ; undefined core_terrain.cpp_FUN_0057b9c0()
+    CALL support_trstream.cpp_CInStream_ctor_FUN_0057b9c0 ; 0057ce27
+        ;   XREF to: 0057b9c0 (UNCONDITIONAL_CALL)  ; CInStream * support_trstream.cpp_CInStream_ctor_FUN_0057b9c0(CInStream * this_ptr)
     MOV dword ptr [EAX],0x5fd3e4        ; 0057ce2c
     MOV dword ptr [EAX + 0x4],0x0       ; 0057ce32
     MOV dword ptr [EAX + 0x8],0x0       ; 0057ce39
@@ -41,7 +41,7 @@ section .text
     MOV EBX,EAX                         ; 0057ce78
     MOV dword ptr [EAX + 0x24],0x0      ; 0057ce7a
     CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390 ; 0057ce81
-        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390(CInStreamFile * this_ptr, char * directory, char * filename)
     ADD ESP,0xc                         ; 0057ce86
     MOV EAX,EBX                         ; 0057ce89
     POP ESI                             ; 0057ce8b

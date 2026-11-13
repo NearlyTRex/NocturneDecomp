@@ -2,21 +2,21 @@
 // Address: 00569ec0
 // Address Range: [[00569ec0, 00569f17]]
 // Convention: unknown
-// Signature: int engine_texture_cpp_FUN_00569ec0(int param_1,char *param_2,undefined4 param_3,undefined4 param_4)
+// Signature: int engine_texture_cpp_FUN_00569ec0(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4)
 
 #include "nocturne.h"
 
-int engine_texture_cpp_FUN_00569ec0(int param_1,char *param_2,uint param_3,uint param_4)
+int engine_texture_cpp_FUN_00569ec0(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4)
 
 {
   char cVar1;
   int iVar2;
-  uint *puVar3;
+  STextureCacheEntry *pSVar3;
   char *pcVar4;
   
-  iVar2 = engine_texture_cpp_FUN_00569670(param_1);
-  puVar3 = (uint *)(param_1 + 4 + iVar2 * 0x60);
-  pcVar4 = (char *)(puVar3 + 1);
+  iVar2 = engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00569670(param_1);
+  pSVar3 = param_1->entries + iVar2;
+  pcVar4 = pSVar3->texture_name;
   do {
     cVar1 = *param_2;
     *pcVar4 = cVar1;
@@ -26,8 +26,8 @@ int engine_texture_cpp_FUN_00569ec0(int param_1,char *param_2,uint param_3,uint 
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  puVar3[0x16] = 1;
-  puVar3[0x14] = param_4;
-  *puVar3 = param_3;
+  pSVar3->is_locked = 1;
+  pSVar3->true_color_data = param_4;
+  pSVar3->dimension = param_3;
   return iVar2;
 }

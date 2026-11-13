@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_hero.cpp_CHero_findItemUseTarget_FUN_004cfb00
-;   core_inv.cpp_FUN_004dc8c0
+;   core_inv.cpp_CInventory_select_FUN_004dc8c0
 ;
 ; *****************************************************************************
 
@@ -85,8 +85,8 @@ section .text
     PUSH EAX                            ; 004cfd1a
     ADD ESI,0x2437c                     ; 004cfd1b
     PUSH ESI                            ; 004cfd21
-    CALL core_inv.cpp_FUN_004dc8c0      ; 004cfd22
-        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dc8c0()
+    CALL core_inv.cpp_CInventory_select_FUN_004dc8c0 ; 004cfd22
+        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; undefined4 core_inv.cpp_CInventory_select_FUN_004dc8c0(CInventory * this_ptr, CDemonActor * param_2)
     ADD ESP,0x8                         ; 004cfd27
     POP EBP                             ; 004cfd2a
     POP ESI                             ; 004cfd2b
@@ -110,8 +110,8 @@ section .text
     MOV EAX,dword ptr [EBX + EAX*0x4 + 0x5fc] ; 004cfd47
     PUSH EAX                            ; 004cfd4e
     PUSH EBX                            ; 004cfd4f
-    CALL core_inv.cpp_FUN_004dc8c0      ; 004cfd50
-        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004dc8c0()
+    CALL core_inv.cpp_CInventory_select_FUN_004dc8c0 ; 004cfd50
+        ;   XREF to: 004dc8c0 (UNCONDITIONAL_CALL)  ; undefined4 core_inv.cpp_CInventory_select_FUN_004dc8c0(CInventory * this_ptr, CDemonActor * param_2)
     ADD ESP,0x8                         ; 004cfd55
     POP EBP                             ; 004cfd58
     POP ESI                             ; 004cfd59

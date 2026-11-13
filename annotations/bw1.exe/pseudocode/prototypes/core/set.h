@@ -19,11 +19,11 @@ void FUN_0054cf80(int param_1);
 
 // Original: core_set.cpp_CDemonSet_ctor_FUN_0054d000
 // Address: 0054d000
-CDemonSet * CDemonSet::ctor(CDemonSet *this_ptr);
+CDemonSet * __cdecl CDemonSet::ctor(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_dtor_FUN_0054d340
 // Address: 0054d340
-CDemonSet * CDemonSet::dtor(CDemonSet *this_ptr,uint flags);
+CDemonSet * __cdecl CDemonSet::dtor(CDemonSet *this_ptr,uint flags);
 
 // Original: core_set.cpp_CDemonSet_clear_FUN_0054d370
 // Address: 0054d370
@@ -37,9 +37,9 @@ CDemonSet * FUN_0054d3c0(CDemonSet *param_1,char *param_2);
 // Address: 0054e3c0
 void __cdecl CDemonSet::renderSceneGeometry(CDemonSet *this_ptr,float frustum_param,int render_mode);
 
-// Original: core_set.cpp_FUN_0054e69e
-// Address: 0054e69e
-void FUN_0054e69e(CDemonSet *param_1,int param_2);
+// Original: core_set.cpp_FUN_0054e6a0
+// Address: 0054e6a0
+void FUN_0054e6a0(void);
 
 // Original: core_set.cpp_CDemonSet_initScene_FUN_0054ec60
 // Address: 0054ec60
@@ -197,9 +197,9 @@ void __cdecl CDemonSet::renderEnvMapPrimitives(CDemonSet *this_ptr,SMRGLHeaderPr
 // Address: 00554d30
 void __cdecl CDemonSet::renderEnvMapTriangles(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
 
-// Original: core_set.cpp_FUN_0055517e
-// Address: 0055517e
-void FUN_0055517e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4);
+// Original: core_set.cpp_FUN_00555180
+// Address: 00555180
+void FUN_00555180(void);
 
 // Original: core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0
 // Address: 005551f0
@@ -315,11 +315,11 @@ void __cdecl CDemonSet::renderDecals(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_SRoom_ctor_FUN_00556130
 // Address: 00556130
-SRoom * SRoom::ctor(SRoom *this_ptr);
+SRoom * __cdecl SRoom::ctor(SRoom *this_ptr);
 
 // Original: core_set.cpp_SVDBox_ctor_FUN_00556140
 // Address: 00556140
-SVDBox * SVDBox::ctor(SVDBox *this_ptr);
+SVDBox * __cdecl SVDBox::ctor(SVDBox *this_ptr);
 
 // Original: core_set.cpp_FUN_005561a0
 // Address: 005561a0

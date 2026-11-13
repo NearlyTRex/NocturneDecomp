@@ -13,7 +13,7 @@
 ;   engine_texture.cpp_FUN_00597900 at 0059794a
 ;   engine_texture.cpp_FUN_00597a20 at 00597a88
 ;   engine_texture.cpp_FUN_00597ac0 at 00597b3b
-;   engine_texture.cpp_FUN_00597b7c at 00597bf1
+;   engine_texture.cpp_FUN_00597b80 at 00597bf1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0

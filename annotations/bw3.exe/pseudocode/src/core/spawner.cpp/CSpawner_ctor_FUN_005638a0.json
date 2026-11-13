@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 134,
+    "complexity_score": 133,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 38,
     "suspect_count": 8,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 63
+    "total_lines": 62
   },
   "cross_references": [
     {
@@ -32,9 +32,9 @@
         "0056390a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_spawner.cpp_CSpawner_ctor_FUN_005638a0",
-    "signature": "CSpawner * core_spawner_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr)"
+    "signature": "CSpawner * __cdecl core_spawner_cpp_CSpawner_ctor_FUN_005638a0(CSpawner *this_ptr)"
   },
   "function_calls": [
     {
@@ -111,7 +111,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 11,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].bounding_box.min.x = (float)&g_CSpawnerVTable;",
@@ -119,7 +119,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
+      "line": 16,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "*(byte *)((int)&pCVar2[-1].accumulated_root_motion.y + 2) = 0;",
@@ -127,7 +127,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 17,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].model_name[0x18] = '\\0';",
@@ -135,7 +135,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 18,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].part_data.texture_set_indices[0x29] = 1;",
@@ -143,7 +143,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 41,
+      "line": 39,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].model_ptr = (CDeformableModel *)0x42c80000;",
@@ -151,7 +151,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 42,
+      "line": 40,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "return (CSpawner *)(pCVar2[-1].part_data.visibility_flags + 0x25);",
@@ -159,7 +159,7 @@
     },
     {
       "description": "Pointer value `&pCVar2[-1].accumulated_root_motion.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 18,
+      "line": 16,
       "match": "(int)&pCVar2[-1].accumulated_root_motion.y",
       "severity": "moderate",
       "text": "*(byte *)((int)&pCVar2[-1].accumulated_root_motion.y + 2) = 0;",
@@ -167,7 +167,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 18,
+      "line": 16,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(byte *)((int)&pCVar2[-1].accumulated_root_motion.y + 2) = 0;",

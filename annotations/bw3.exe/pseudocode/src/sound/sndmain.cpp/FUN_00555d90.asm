@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 005604ec
-;   core_sound.cpp_FUN_0055f6ae at 0055faf2
+;   core_sound.cpp_FUN_0055f6b0 at 0055faf2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02ceb91c

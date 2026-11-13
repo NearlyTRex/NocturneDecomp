@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_fldnotes_cpp_STextView_ensureSpace_FUN_004bbad0(STextView *this_ptr,int param_2,int param_3)
+; int __cdecl core_fldnotes_cpp_STextView_ensureSpace_FUN_004bbad0(STextView *this_ptr,int width,int height)
 ;
 ; Parameters:
 ; STextView *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   width
+; int              Stack[0xc]:4   height
 ;
 ; XREF[2]:
 ;   core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0 at 004bb830

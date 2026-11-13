@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_zombiepriest.cpp_FUN_0058d960 at 0058e25d
+;   core_zombiepriest.cpp_CZombiePriest_process_FUN_0058d960 at 0058e25d
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40

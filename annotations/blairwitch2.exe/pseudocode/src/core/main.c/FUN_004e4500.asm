@@ -11,10 +11,10 @@
 ;   cockpit_ckptutil.c_FUN_0042dae0 at 0042dc9f
 ;   cockpit_ckptutil.c_FUN_0042dec0 at 0042df1a
 ;   cockpit_ckptutil.c_FUN_0042e130 at 0042e18e
-;   cockpit_ckptutil.c_FUN_0042e37e at 0042e418
+;   cockpit_ckptutil.c_FUN_0042e380 at 0042e418
 ;   cockpit_ckptutil.c_FUN_0042f330 at 0042f3e4
 ;   cockpit_ckptutil.c_FUN_0042f4f0 at 0042f608
-;   cockpit_ckptutil.c_FUN_0042f74e at 0042f87b
+;   cockpit_ckptutil.c_FUN_0042f750 at 0042f87b
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780 at 0042c88f
 ;   cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00466ca0 at 00466f6d
 ;   ... and 562 more

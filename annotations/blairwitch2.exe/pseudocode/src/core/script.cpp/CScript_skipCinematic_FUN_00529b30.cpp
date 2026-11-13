@@ -13,7 +13,7 @@ int __cdecl core_script_cpp_CScript_skipCinematic_FUN_00529b30(CScript *this_ptr
 {
   int iVar1;
   int iVar2;
-  uint local_c;
+  float local_c;
   
   if (this_ptr->saved_cmd_index < 0) {
     return 0;
@@ -22,8 +22,8 @@ int __cdecl core_script_cpp_CScript_skipCinematic_FUN_00529b30(CScript *this_ptr
   iVar2 = 0;
   this_ptr->next_cmd = this_ptr->saved_cmd_index;
   while ((g_CGamePtr->letterbox_mode != 0 && (this_ptr->mission_ended == 0))) {
-    local_c = 0x3e800000;
-    iVar1 = core_script_cpp_FUN_00522350(this_ptr,&local_c);
+    local_c = 0.25;
+    iVar1 = core_script_cpp_CScript_step_FUN_00522350(this_ptr,&local_c);
     if (iVar1 < 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
                 (g_CEditorToolsPtr,"Error processing script to skip cinematic.\nLine: %d\nText: %s\nWhat's wrong: %s\n");

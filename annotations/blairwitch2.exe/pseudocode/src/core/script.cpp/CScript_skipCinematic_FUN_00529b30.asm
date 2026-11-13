@@ -24,7 +24,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   core_script.cpp_CScript_resetDialogState_FUN_00529b00
-;   core_script.cpp_FUN_00522350
+;   core_script.cpp_CScript_step_FUN_00522350
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 ;
 ; *****************************************************************************
@@ -68,8 +68,8 @@ section .text
     MOV dword ptr [ESP + 0xc],EBP       ; 00529b85
     PUSH EBX                            ; 00529b89
     MOV EDI,dword ptr [EBX + 0x44]      ; 00529b8a
-    CALL core_script.cpp_FUN_00522350   ; 00529b8d
-        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00522350()
+    CALL core_script.cpp_CScript_step_FUN_00522350 ; 00529b8d
+        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_step_FUN_00522350(CScript * this_ptr, float * param_2)
     ADD ESP,0x8                         ; 00529b92
     TEST EAX,EAX                        ; 00529b95
     JL 0x00529bd0                       ; 00529b97

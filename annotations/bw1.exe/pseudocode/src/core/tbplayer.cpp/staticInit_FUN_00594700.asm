@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tbplayer_cpp_staticInit_FUN_00594700(void)
+; void __cdecl core_tbplayer_cpp_staticInit_FUN_00594700(void)
 ;
 ;
 ; Called Functions:

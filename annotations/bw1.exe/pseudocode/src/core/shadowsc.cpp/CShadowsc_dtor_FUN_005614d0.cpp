@@ -1,14 +1,12 @@
 // Name: core_shadowsc.cpp_CShadowsc_dtor_FUN_005614d0
 // Address: 005614d0
 // Address Range: [[005614d0, 00561554]]
-// Convention: unknown
-// Signature: CShadowsc * core_shadowsc_cpp_CShadowsc_dtor_FUN_005614d0(CShadowsc *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CShadowsc * __cdecl core_shadowsc_cpp_CShadowsc_dtor_FUN_005614d0(CShadowsc *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CShadowsc * core_shadowsc_cpp_CShadowsc_dtor_FUN_005614d0(CShadowsc *this_ptr,uint flags)
+CShadowsc * __cdecl core_shadowsc_cpp_CShadowsc_dtor_FUN_005614d0(CShadowsc *this_ptr,uint flags)
 
 {
   int iVar1;

@@ -1,15 +1,14 @@
 // Name: core_armour.cpp_CArmour_ctor_FUN_0040e9e0
 // Address: 0040e9e0
 // Address Range: [[0040e9e0, 0040ea7c]]
-// Convention: unknown
-// Signature: CArmour * core_armour_cpp_CArmour_ctor_FUN_0040e9e0(CArmour *this_ptr)
+// Convention: __cdecl
+// Signature: CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_0040e9e0(CArmour *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CArmour * core_armour_cpp_CArmour_ctor_FUN_0040e9e0(CArmour *this_ptr)
+CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_0040e9e0(CArmour *this_ptr)
 
 {
   char cVar1;

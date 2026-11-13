@@ -7,11 +7,11 @@
 
 // Original: core_charactr.cpp_CCharacter_dtor_FUN_00410290
 // Address: 00410290
-CCharacter * CCharacter::dtor(CCharacter *this_ptr,uint flags);
+CCharacter * __cdecl CCharacter::dtor(CCharacter *this_ptr,uint flags);
 
 // Original: core_charactr.cpp_staticInit_FUN_0042ab80
 // Address: 0042ab80
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 // Address: 0042abb0
@@ -19,7 +19,7 @@ SDamageInfo * __cdecl SDamageInfo::ctor(SDamageInfo *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_ctor_FUN_0042ac20
 // Address: 0042ac20
-CCharacter * CCharacter::ctor(CCharacter *this_ptr);
+CCharacter * __cdecl CCharacter::ctor(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_setup_FUN_0042b0e0
 // Address: 0042b0e0
@@ -281,13 +281,13 @@ void __cdecl CCharacter::clearDoorTarget(CCharacter *this_ptr);
 // Address: 004319b0
 int __cdecl CCharacter::hasDoorTarget(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_FUN_004319d0
+// Original: core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004319d0
 // Address: 004319d0
-void FUN_004319d0(int param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl CCharacter::pickupObjectNow(CCharacter *this_ptr,int param_2,int param_3,float param_4,int *param_5);
 
-// Original: core_charactr.cpp_FUN_00431ab0
+// Original: core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0
 // Address: 00431ab0
-void FUN_00431ab0(int param_1,int param_2,float param_3,int *param_4);
+void __cdecl CCharacter::computePickup(CCharacter *this_ptr,int param_2,float param_3,int *param_4);
 
 // Original: core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00431c40
 // Address: 00431c40
@@ -313,9 +313,9 @@ int __cdecl CCharacter::isCarryingAnything(CCharacter *this_ptr);
 // Address: 00432090
 int __cdecl CCharacter::initGesture(CCharacter *this_ptr,char *motion_name);
 
-// Original: core_charactr.cpp_FUN_004320d0
+// Original: core_charactr.cpp_CCharacter_applyGesture_FUN_004320d0
 // Address: 004320d0
-void FUN_004320d0(int param_1);
+void __cdecl CCharacter::applyGesture(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_FUN_00432220
 // Address: 00432220
@@ -419,8 +419,8 @@ undefined4 FUN_00434b00(int param_1);
 
 // Original: core_charactr.cpp_SFire_ctor_FUN_00434b10
 // Address: 00434b10
-SFire * SFire::ctor(SFire *this_ptr);
+SFire * __cdecl SFire::ctor(SFire *this_ptr);
 
-// Original: core_charactr.cpp_FUN_00434b2e
-// Address: 00434b2e
-undefined4 FUN_00434b2e(undefined4 *param_1,byte *param_2,int param_3);
+// Original: core_charactr.cpp_FUN_00434b30
+// Address: 00434b30
+undefined4 FUN_00434b30(void);

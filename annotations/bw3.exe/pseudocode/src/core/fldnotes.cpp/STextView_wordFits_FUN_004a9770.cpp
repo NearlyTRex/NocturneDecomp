@@ -2,11 +2,11 @@
 // Address: 004a9770
 // Address Range: [[004a9770, 004a97c7]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_fldnotes_cpp_STextView_wordFits_FUN_004a9770(STextView *this_ptr,char *param_2)
+// Signature: int __cdecl core_fldnotes_cpp_STextView_wordFits_FUN_004a9770(STextView *this_ptr,char *word)
 
 #include "nocturne.h"
 
-uint __cdecl core_fldnotes_cpp_STextView_wordFits_FUN_004a9770(STextView *this_ptr,char *param_2)
+int __cdecl core_fldnotes_cpp_STextView_wordFits_FUN_004a9770(STextView *this_ptr,char *word)
 
 {
   char cVar1;
@@ -17,7 +17,7 @@ uint __cdecl core_fldnotes_cpp_STextView_wordFits_FUN_004a9770(STextView *this_p
   byte bVar6;
   
   bVar6 = 0;
-  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(this_ptr->font,param_2);
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(this_ptr->font,word);
   if (iVar2 + this_ptr->cursor_x < this_ptr->margin_right) {
     uVar3 = 0xffffffff;
     pcVar5 = this_ptr->word;
@@ -31,8 +31,8 @@ uint __cdecl core_fldnotes_cpp_STextView_wordFits_FUN_004a9770(STextView *this_p
     do {
       if (uVar4 == 0) break;
       uVar4 = uVar4 - 1;
-      cVar1 = *param_2;
-      param_2 = param_2 + (uint)bVar6 * -2 + 1;
+      cVar1 = *word;
+      word = word + (uint)bVar6 * -2 + 1;
     } while (cVar1 != '\0');
     if (~uVar3 + (~uVar4 - 2) < 0xfa) {
       return 1;

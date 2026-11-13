@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_heal_cpp_factoryFuncHeal_FUN_004d1930(void)
+; CHeal * __cdecl core_heal_cpp_factoryFuncHeal_FUN_004d1930(void)
 ;
 ;
 ; Called Functions:

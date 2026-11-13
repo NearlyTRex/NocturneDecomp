@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 127,
+    "complexity_score": 126,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 26,
     "suspect_count": 9,
     "suspect_types": [
       "negative_offset",
       "pointer_truncation"
     ],
-    "total_lines": 71
+    "total_lines": 70
   },
   "cross_references": [
     {
@@ -61,9 +61,9 @@
         "00509017"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_npc.cpp_CNPC_ctor_FUN_00508f40",
-    "signature": "CNPC * core_npc_cpp_CNPC_ctor_FUN_00508f40(CNPC *this_ptr)"
+    "signature": "CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_00508f40(CNPC *this_ptr)"
   },
   "function_calls": [
     {
@@ -95,12 +95,10 @@
         "call_addr": "0050a458",
         "call_type": "direct",
         "caller": "core_passngr.cpp_CPassenger_ctor_FUN_0050a450",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -108,12 +106,10 @@
         "call_addr": "005273b8",
         "call_type": "direct",
         "caller": "core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -121,12 +117,10 @@
         "call_addr": "00599f6b",
         "call_type": "direct",
         "caller": "core_spirindi.cpp_CSpiritIndian_ctor_FUN_00599f60",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -134,12 +128,10 @@
         "call_addr": "0059aaab",
         "call_type": "direct",
         "caller": "core_spirbear.cpp_CSpiritBear_ctor_FUN_0059aaa0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -147,12 +139,10 @@
         "call_addr": "005a0a19",
         "call_type": "direct",
         "caller": "core_asgaya.cpp_CAsgaya_ctor_FUN_005a0a10",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -171,7 +161,7 @@
     "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 2,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -242,7 +232,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 11,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache[0x45][0x19] = (int)&g_CNPCVTable;",
@@ -250,7 +240,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 14,
+      "line": 12,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache_tags[0][0x43] = 0x3f19999a;",
@@ -258,7 +248,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
+      "line": 13,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache_tags[0][0x44] = 0x3f666666;",
@@ -266,7 +256,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 14,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache_tags[0][0x47] = 0x3fcccccd;",
@@ -274,7 +264,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
+      "line": 15,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache_tags[0][0x48] = -0x3b864000;",
@@ -282,7 +272,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 19,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x45] + 0x1a),",
@@ -290,7 +280,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 21,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "pCVar2[-1].height_cache[0x5d][0x54] = 0;",
@@ -298,7 +288,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 30,
+      "line": 28,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "return (CNPC *)(pCVar2[-1].height_cache[0x44] + 0x28);",
@@ -306,7 +296,7 @@
     },
     {
       "description": "Pointer value `&g_CNPCVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 13,
+      "line": 11,
       "match": "(int)&g_CNPCVTable",
       "severity": "moderate",
       "text": "pCVar2[-1].height_cache[0x45][0x19] = (int)&g_CNPCVTable;",

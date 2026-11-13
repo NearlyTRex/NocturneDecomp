@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spawner_cpp_factoryFuncSpawner_FUN_00563870(void)
+; CSpawner * __cdecl core_spawner_cpp_factoryFuncSpawner_FUN_00563870(void)
 ;
 ;
 ; Called Functions:

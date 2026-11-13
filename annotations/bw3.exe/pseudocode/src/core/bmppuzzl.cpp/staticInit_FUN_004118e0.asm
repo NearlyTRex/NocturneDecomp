@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bmppuzzl_cpp_staticInit_FUN_004118e0(void)
+; void __cdecl core_bmppuzzl_cpp_staticInit_FUN_004118e0(void)
 ;
 ;
 ; Called Functions:

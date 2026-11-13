@@ -13,7 +13,7 @@ byte * core_script_cpp_FUN_00521ff0(CScript *param_1,int *param_2,int param_3)
 {
   int iVar1;
   int iVar2;
-  uint uStack_14;
+  float fStack_14;
   
   _DAT_01e650f8 = 1;
   core_script_cpp_CScript_initRuntime_FUN_00522080(param_1);
@@ -21,8 +21,8 @@ byte * core_script_cpp_FUN_00521ff0(CScript *param_1,int *param_2,int param_3)
   if (param_1->next_cmd < param_1->parsed_line_count) {
     do {
       iVar2 = param_1->next_cmd;
-      uStack_14 = 0x3e800000;
-      iVar1 = core_script_cpp_FUN_00522350(param_1,&uStack_14);
+      fStack_14 = 0.25;
+      iVar1 = core_script_cpp_CScript_step_FUN_00522350(param_1,&fStack_14);
       if ((iVar1 < 0) &&
          (iVar1 = param_1->parsed_lines[iVar2].line_number + -1, *param_2 = iVar1, param_3 <= iVar1)
          ) {

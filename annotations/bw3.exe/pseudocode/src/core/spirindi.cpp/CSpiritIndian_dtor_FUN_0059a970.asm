@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSpiritIndian * core_spirindi_cpp_CSpiritIndian_dtor_FUN_0059a970(CSpiritIndian *this_ptr,uint flags)
+; CSpiritIndian * __cdecl core_spirindi_cpp_CSpiritIndian_dtor_FUN_0059a970(CSpiritIndian *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSpiritIndian *  Stack[0x4]:4   this_ptr

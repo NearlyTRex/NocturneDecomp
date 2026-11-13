@@ -9,7 +9,7 @@
 ;
 ; XREF[7]:
 ;   core_dtrace.cpp_FUN_0048c510 at 0048c924
-;   core_dtri.cpp_FUN_004922fc at 0049243d
+;   core_dtri.cpp_FUN_00492300 at 0049243d
 ;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_005553e0 at 00555446
 ;   core_setdir.cpp_FUN_00559c10 at 00559d06
 ;   core_setdir.cpp_FUN_00559f80 at 0055ae9b

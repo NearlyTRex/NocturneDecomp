@@ -7,7 +7,7 @@
 
 // Original: core_dlight.cpp_staticInit_FUN_00449c50
 // Address: 00449c50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_dlight.cpp_CDemonLight_ctor_FUN_00449c70
 // Address: 00449c70
@@ -109,9 +109,9 @@ void __cdecl captureLightTextures(void);
 // Address: 0044b960
 void __cdecl CDemonLight::renderVolumetricLightShaft(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_FUN_0044c15e
-// Address: 0044c15e
-void FUN_0044c15e(int param_1);
+// Original: core_dlight.cpp_FUN_0044c160
+// Address: 0044c160
+void FUN_0044c160(void);
 
 // Original: core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0044c830
 // Address: 0044c830

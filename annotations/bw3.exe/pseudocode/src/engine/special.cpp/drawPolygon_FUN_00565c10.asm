@@ -10,7 +10,7 @@
 ;
 ; XREF[5]:
 ;   core_asgaya.cpp_FUN_005a1ea0 at 005a2190
-;   engine_mini3d.cpp_FUN_004f1830 at 004f1fb7
+;   engine_mini3d.cpp_rasterizeTriangle_FUN_004f1830 at 004f1fb7
 ;   engine_prim.c_renderPolygonSoftware_FUN_00515e80 at 0051606e
 ;   engine_prim.c_renderScanlinePolygon_FUN_00516de0 at 005170b8
 ;   engine_special.cpp_drawFullScreenQuad_FUN_00566080 at 0056611d

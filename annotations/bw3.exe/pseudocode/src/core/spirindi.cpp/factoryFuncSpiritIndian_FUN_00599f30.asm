@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spirindi_cpp_factoryFuncSpiritIndian_FUN_00599f30(void)
+; CSpiritIndian * __cdecl core_spirindi_cpp_factoryFuncSpiritIndian_FUN_00599f30(void)
 ;
 ;
 ; Called Functions:

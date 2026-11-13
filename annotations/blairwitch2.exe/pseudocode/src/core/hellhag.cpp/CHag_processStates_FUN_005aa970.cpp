@@ -17,7 +17,7 @@ void __cdecl core_hellhag_cpp_CHag_processStates_FUN_005aa970(CHag *this_ptr,flo
     core_muzzle_cpp_FUN_0059d650(&(this_ptr->base).state_machine,"HagAlert");
   }
   else {
-    core_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
+    core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(&this_ptr->base,delta_time,mode);
     if ((mode == 1) &&
        (iVar2 = core_muzzle_cpp_FUN_0059daa0(&(this_ptr->base).state_machine,"HagAlert"),
        iVar2 != 0)) {

@@ -17,7 +17,7 @@
 ;   core_menu.cpp_FUN_004e94f0 at 004e9e47
 ;   core_sound.cpp_CSound_configure_FUN_005607d0 at 005608ea
 ;   core_sound.cpp_CSound_process_FUN_0055ff40 at 0056056a
-;   core_sound.cpp_FUN_0055f6ae at 0055f9e4
+;   core_sound.cpp_FUN_0055f6b0 at 0055f9e4
 ;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f257
 ;
 ; Referenced Globals:

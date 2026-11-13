@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHostage * core_hostage_cpp_CHostage_dtor_FUN_004ef910(CHostage *this_ptr,uint flags)
+; CHostage * __cdecl core_hostage_cpp_CHostage_dtor_FUN_004ef910(CHostage *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CHostage *       Stack[0x4]:4   this_ptr

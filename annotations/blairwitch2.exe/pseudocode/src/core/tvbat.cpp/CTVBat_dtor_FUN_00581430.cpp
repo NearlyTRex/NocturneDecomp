@@ -1,14 +1,12 @@
 // Name: core_tvbat.cpp_CTVBat_dtor_FUN_00581430
 // Address: 00581430
 // Address Range: [[00581430, 005814c4]]
-// Convention: unknown
-// Signature: CTVBat * core_tvbat_cpp_CTVBat_dtor_FUN_00581430(CTVBat *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CTVBat * __cdecl core_tvbat_cpp_CTVBat_dtor_FUN_00581430(CTVBat *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CTVBat * core_tvbat_cpp_CTVBat_dtor_FUN_00581430(CTVBat *this_ptr,uint flags)
+CTVBat * __cdecl core_tvbat_cpp_CTVBat_dtor_FUN_00581430(CTVBat *this_ptr,uint flags)
 
 {
   int iVar1;

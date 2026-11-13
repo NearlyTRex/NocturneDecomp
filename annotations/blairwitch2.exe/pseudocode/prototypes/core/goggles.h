@@ -7,19 +7,19 @@
 
 // Original: core_goggles.cpp_staticInit_FUN_0059c000
 // Address: 0059c000
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_goggles.cpp_factoryFuncGoggles_FUN_0059c030
 // Address: 0059c030
-void factoryFuncGoggles(void);
+CGoggles * __cdecl factoryFuncGoggles(void);
 
 // Original: core_goggles.cpp_CGoggles_getActorType_FUN_0059c050
 // Address: 0059c050
-CDemonActorType * CGoggles::getActorType(CGoggles *this_ptr);
+CDemonActorType * __cdecl CGoggles::getActorType(CGoggles *this_ptr);
 
 // Original: core_goggles.cpp_CGoggles_ctor_FUN_0059c060
 // Address: 0059c060
-CGoggles * CGoggles::ctor(CGoggles *this_ptr);
+CGoggles * __cdecl CGoggles::ctor(CGoggles *this_ptr);
 
 // Original: core_goggles.cpp_CGoggles_setup_FUN_0059c0b0
 // Address: 0059c0b0
@@ -51,7 +51,7 @@ CBoundingBox3D * __cdecl CGoggles::getBoundingBox(CGoggles *this_ptr,CBoundingBo
 
 // Original: core_goggles.cpp_CGoggles_dtor_FUN_0059c220
 // Address: 0059c220
-CGoggles * CGoggles::dtor(CGoggles *this_ptr,uint flags);
+CGoggles * __cdecl CGoggles::dtor(CGoggles *this_ptr,uint flags);
 
 // Original: core_goggles.cpp_FUN_0059c270
 // Address: 0059c270

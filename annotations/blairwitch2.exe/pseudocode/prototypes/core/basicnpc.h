@@ -7,19 +7,19 @@
 
 // Original: core_basicnpc.cpp_staticInit_FUN_005a4750
 // Address: 005a4750
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_basicnpc.cpp_factoryFuncBasicNPC_FUN_005a4780
 // Address: 005a4780
-void factoryFuncBasicNPC(void);
+CBasicNPC * __cdecl factoryFuncBasicNPC(void);
 
 // Original: core_basicnpc.cpp_CBasicNPC_getActorType_FUN_005a47a0
 // Address: 005a47a0
-CDemonActorType * CBasicNPC::getActorType(CBasicNPC *this_ptr);
+CDemonActorType * __cdecl CBasicNPC::getActorType(CBasicNPC *this_ptr);
 
 // Original: core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
 // Address: 005a47b0
-CBasicNPC * CBasicNPC::ctor(CBasicNPC *this_ptr);
+CBasicNPC * __cdecl CBasicNPC::ctor(CBasicNPC *this_ptr);
 
 // Original: core_basicnpc.cpp_CBasicNPC_setup_FUN_005a4870
 // Address: 005a4870
@@ -59,4 +59,4 @@ int __cdecl CBasicNPC::isGrabbable(CBasicNPC *this_ptr,CDemonActor *grabber);
 
 // Original: core_basicnpc.cpp_CBasicNPC_dtor_FUN_005a4980
 // Address: 005a4980
-CBasicNPC * CBasicNPC::dtor(CBasicNPC *this_ptr,uint flags);
+CBasicNPC * __cdecl CBasicNPC::dtor(CBasicNPC *this_ptr,uint flags);

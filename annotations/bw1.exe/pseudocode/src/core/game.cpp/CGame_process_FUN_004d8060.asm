@@ -32,10 +32,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_setRandomSeed_FUN_0040cb80
+;   core_bmppuzzl.cpp_processActivePuzzle_FUN_00415cd0
 ;   core_dfilter.cpp_CFilterFX_process_FUN_0045df40
 ;   core_event.cpp_CEventList_process_FUN_004a1a40
 ;   core_fire.cpp_CFireEffect_process_FUN_004b4dd0
-;   core_fldnotes.cpp_FUN_004be970
+;   core_fldnotes.cpp_CFieldNotes_process_FUN_004be970
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10
 ;   core_game.cpp_CGame_updateFadeTransition_FUN_004d60e0
@@ -45,7 +46,6 @@
 ;   core_set.cpp_CDemonSet_process_FUN_005542c0
 ;   core_set.cpp_CDemonSet_processActors_FUN_0054fc20
 ;   core_setdir.cpp_FUN_00559f80
-;   core_sound.cpp_FUN_0057cc00
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -358,11 +358,11 @@ section .text
     ADD ESP,0x4                         ; 004d843c
     MOV EDI,dword ptr [0x0061d418]      ; 004d843f | g_CFieldNotesPtr
     PUSH EDI                            ; 004d8445 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004be970 ; 004d8446
-        ;   XREF to: 004be970 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004be970()
+    CALL core_fldnotes.cpp_CFieldNotes_process_FUN_004be970 ; 004d8446
+        ;   XREF to: 004be970 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_process_FUN_004be970(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004d844b
-    CALL engine_alphabit.cpp_FUN_00415cd0 ; 004d844e
-        ;   XREF to: 00415cd0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_00415cd0()
+    CALL core_bmppuzzl.cpp_processActivePuzzle_FUN_00415cd0 ; 004d844e
+        ;   XREF to: 00415cd0 (UNCONDITIONAL_CALL)  ; void core_bmppuzzl.cpp_processActivePuzzle_FUN_00415cd0()
     MOV EAX,[0x0061d418]                ; 004d8453 | g_CFieldNotesPtr
     CMP dword ptr [EAX + 0x40],0x0      ; 004d8458 | g_CFieldNotesInstance.is_displayed
     JZ 0x004d8584                       ; 004d845c

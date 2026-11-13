@@ -117,7 +117,7 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
     (this_ptr->base).pool_me = 1;
     this_ptr->recombine_interpolation = 0.0;
     if (this_ptr->blown_up == 0) {
-      core_construc_cpp_FUN_00438060(this_ptr);
+      core_construc_cpp_CConstruct_explode_FUN_00438060(this_ptr);
     }
     core_motion_cpp_CMotionController_jumpToMotion_FUN_00503980
               (&(this_ptr->base).base.model.base,0xb,0.0);
@@ -250,7 +250,8 @@ void __cdecl core_construc_cpp_CConstruct_process_FUN_00436e80(CConstruct *this_
     pCVar12 = this_ptr;
     if (0 < this_ptr->box_count) {
       do {
-        core_mission_cpp_FUN_004fc7b0(0x01D182F0,pCVar12->boxes[0].body_part,1);
+        core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0
+                  (0x01D182F0,pCVar12->boxes[0].body_part,1);
         pCVar12->boxes[0].body_part = (CBodyPart *)0x0;
         iVar7 = iVar7 + 1;
         pCVar12 = (CConstruct *)((pCVar12->base).base.base.orient_matrix.m + 1);

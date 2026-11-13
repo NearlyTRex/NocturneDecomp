@@ -7,7 +7,7 @@
 
 // Original: core_trap.cpp_staticInit_FUN_00599cb0
 // Address: 00599cb0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_trap.cpp_factoryFuncTrap_FUN_00599ce0
 // Address: 00599ce0
@@ -15,7 +15,7 @@ CTrap * __cdecl factoryFuncTrap(void);
 
 // Original: core_trap.cpp_CTrap_getActorType_FUN_00599d00
 // Address: 00599d00
-CDemonActorType * CTrap::getActorType(CTrap *this_ptr);
+CDemonActorType * __cdecl CTrap::getActorType(CTrap *this_ptr);
 
 // Original: core_trap.cpp_CTrap_ctor_FUN_00599d10
 // Address: 00599d10

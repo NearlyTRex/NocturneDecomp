@@ -211,7 +211,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_0057d720(CWerewolf *this_pt
                 (g_CGorePtr,&CStack_1bc,(CVector3f *)0x0,iStack_58,blood_type);
     }
     else if (uVar8 == 0x29a) {
-      core_mission_cpp_FUN_004f6f10(0x01D81080,this_ptr);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(0x01D81080,this_ptr,1);
     }
     else {
       core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0((CCharacter *)this_ptr,uVar8);

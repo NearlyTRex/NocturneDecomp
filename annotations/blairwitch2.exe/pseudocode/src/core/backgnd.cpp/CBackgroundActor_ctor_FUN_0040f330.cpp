@@ -1,14 +1,12 @@
 // Name: core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040f330
 // Address: 0040f330
 // Address Range: [[0040f330, 0040f391]]
-// Convention: unknown
-// Signature: CBackgroundActor * core_backgnd_cpp_CBackgroundActor_ctor_FUN_0040f330(CBackgroundActor *this_ptr)
+// Convention: __cdecl
+// Signature: CBackgroundActor * __cdecl core_backgnd_cpp_CBackgroundActor_ctor_FUN_0040f330(CBackgroundActor *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBackgroundActor * core_backgnd_cpp_CBackgroundActor_ctor_FUN_0040f330(CBackgroundActor *this_ptr)
+CBackgroundActor * __cdecl core_backgnd_cpp_CBackgroundActor_ctor_FUN_0040f330(CBackgroundActor *this_ptr)
 
 {
   CDemonActor *pCVar1;

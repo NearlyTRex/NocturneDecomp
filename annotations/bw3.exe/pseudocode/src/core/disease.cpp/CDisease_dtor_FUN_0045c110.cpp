@@ -1,14 +1,12 @@
 // Name: core_disease.cpp_CDisease_dtor_FUN_0045c110
 // Address: 0045c110
 // Address Range: [[0045c110, 0045c15d]]
-// Convention: unknown
-// Signature: CDisease * core_disease_cpp_CDisease_dtor_FUN_0045c110(CDisease *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDisease * __cdecl core_disease_cpp_CDisease_dtor_FUN_0045c110(CDisease *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDisease * core_disease_cpp_CDisease_dtor_FUN_0045c110(CDisease *this_ptr,uint flags)
+CDisease * __cdecl core_disease_cpp_CDisease_dtor_FUN_0045c110(CDisease *this_ptr,uint flags)
 
 {
   CDisease *pCVar1;

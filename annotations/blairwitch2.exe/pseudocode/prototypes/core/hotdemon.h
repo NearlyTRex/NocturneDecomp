@@ -7,7 +7,7 @@
 
 // Original: core_hotdemon.cpp_staticInit_FUN_004d3790
 // Address: 004d3790
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hotdemon.cpp_factoryFuncHotDemon_FUN_004d37c0
 // Address: 004d37c0
@@ -15,7 +15,7 @@ CHotDemon * __cdecl factoryFuncHotDemon(void);
 
 // Original: core_hotdemon.cpp_CHotDemon_getActorType_FUN_004d37e0
 // Address: 004d37e0
-CDemonActorType * CHotDemon::getActorType(CHotDemon *this_ptr);
+CDemonActorType * __cdecl CHotDemon::getActorType(CHotDemon *this_ptr);
 
 // Original: core_hotdemon.cpp_CHotDemon_ctor_FUN_004d37f0
 // Address: 004d37f0
@@ -51,4 +51,4 @@ ECollisionType __cdecl CHotDemon::getCollisionType(CHotDemon *this_ptr,SCollisio
 
 // Original: core_hotdemon.cpp_CHotDemon_dtor_FUN_004d4680
 // Address: 004d4680
-CHotDemon * CHotDemon::dtor(CHotDemon *this_ptr,uint flags);
+CHotDemon * __cdecl CHotDemon::dtor(CHotDemon *this_ptr,uint flags);

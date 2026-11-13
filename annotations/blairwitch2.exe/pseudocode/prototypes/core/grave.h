@@ -7,7 +7,7 @@
 
 // Original: core_grave.cpp_staticInit_FUN_004ca0c0
 // Address: 004ca0c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_grave.cpp_factoryFuncGrave_FUN_004ca0f0
 // Address: 004ca0f0
@@ -15,7 +15,7 @@ CGrave * __cdecl factoryFuncGrave(void);
 
 // Original: core_grave.cpp_CGrave_getActorType_FUN_004ca110
 // Address: 004ca110
-CDemonActorType * CGrave::getActorType(CGrave *this_ptr);
+CDemonActorType * __cdecl CGrave::getActorType(CGrave *this_ptr);
 
 // Original: core_grave.cpp_CGrave_ctor_FUN_004ca120
 // Address: 004ca120

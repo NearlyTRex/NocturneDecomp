@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   support_trisock.cpp_FUN_0057074c at 00570820
+;   support_trisock.cpp_FUN_00570750 at 00570820
 ;   support_trisock.cpp_FUN_00570840 at 005709a3
 ;
 ; Called Functions:

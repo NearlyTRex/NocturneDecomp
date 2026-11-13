@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_COutStreamDebug_putChar_FUN_0057e240(COutStreamDebug *this_ptr,undefined1 param_2)
+; int __cdecl support_trstream_cpp_COutStreamDebug_putChar_FUN_0057e240(COutStreamDebug *this_ptr,char ch)
 ;
 ; Parameters:
 ; COutStreamDebug * Stack[0x4]:4   this_ptr
-; undefined1       Stack[0x8]:1   param_2
+; char             Stack[0x8]:1   ch
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_FUN_0058ffc0

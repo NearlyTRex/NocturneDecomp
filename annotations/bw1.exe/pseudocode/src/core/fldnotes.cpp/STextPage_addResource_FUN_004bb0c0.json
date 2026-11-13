@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 65,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 15,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 44
@@ -33,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_STextPage_addResource_FUN_004bb0c0",
-    "signature": "void __cdecl core_fldnotes_cpp_STextPage_addResource_FUN_004bb0c0(STextPage *this_ptr,int param_2)"
+    "signature": "void __cdecl core_fldnotes_cpp_STextPage_addResource_FUN_004bb0c0(STextPage *this_ptr,SPageResource *resource)"
   },
   "function_calls": [
     {
@@ -143,10 +142,10 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "resource",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "SPageResource *"
       }
     ]
   },
@@ -158,30 +157,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fldnotes_cpp_STextPage_addResource_FUN_004bb0c0(STextPage *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->resources[this_ptr->resource_count] = (SPageResource *)param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->resources[this_ptr->resource_count] = (SPageResource *)param_2;",
-      "type": "unnamed_param"
     }
   ]
 }

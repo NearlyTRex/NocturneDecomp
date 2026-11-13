@@ -323,7 +323,7 @@ section .text
     LEA EAX,[ESP + 0x50c]               ; 004be27a
     PUSH EAX                            ; 004be281
     CALL support_trstream.cpp_CInStreamFile_open_FUN_00573f50 ; 004be282
-        ;   XREF to: 00573f50 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_open_FUN_00573f50(CInStreamFile * this_ptr, LPCSTR param_2, int param_3)
+        ;   XREF to: 00573f50 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_open_FUN_00573f50(CInStreamFile * this_ptr, char * path, int binary_mode)
     ADD ESP,0xc                         ; 004be287
     TEST EAX,EAX                        ; 004be28a
     JZ 0x004be4bc                       ; 004be28c
@@ -333,14 +333,14 @@ section .text
     LEA EAX,[ESP + 0x50c]               ; 004be296
     PUSH EAX                            ; 004be29d
     CALL support_trstream.cpp_CInStreamFile_seek_FUN_00573cf0 ; 004be29e
-        ;   XREF to: 00573cf0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_seek_FUN_00573cf0(CInStreamFile * this_ptr, int param_2, uint param_3)
+        ;   XREF to: 00573cf0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_seek_FUN_00573cf0(CInStreamFile * this_ptr, int offset, int origin)
     ADD ESP,0xc                         ; 004be2a3
     PUSH 0x5c36bd                       ; 004be2a6 | DAT_005c36bd
     PUSH 0x5fe9f8                       ; 004be2ab | = "save\\$$SAVE$$.TMP"
     LEA EAX,[ESP + 0x538]               ; 004be2b0
     PUSH EAX                            ; 004be2b7
     CALL support_trstream.cpp_COutStreamFile_open_FUN_005749d0 ; 004be2b8
-        ;   XREF to: 005749d0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamFile_open_FUN_005749d0(COutStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 005749d0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_open_FUN_005749d0(COutStreamFile * this_ptr, char * path, char * mode)
     ADD ESP,0xc                         ; 004be2bd
     TEST EAX,EAX                        ; 004be2c0
     JZ 0x004be508                       ; 004be2c2
@@ -376,12 +376,12 @@ section .text
     LEA EAX,[ESP + 0x504]               ; 004be327
     PUSH EAX                            ; 004be32e
     CALL support_trstream.cpp_CInStreamFile_close_FUN_00573db0 ; 004be32f
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004be334
     LEA EAX,[ESP + 0x530]               ; 004be337
     PUSH EAX                            ; 004be33e
     CALL support_trstream.cpp_COutStreamFile_close_FUN_005749a0 ; 004be33f
-        ;   XREF to: 005749a0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamFile_close_FUN_005749a0(COutStreamFile * this_ptr)
+        ;   XREF to: 005749a0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_close_FUN_005749a0(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004be344
     PUSH 0x5c36f0                       ; 004be347 | DAT_005c36f0
     PUSH 0x5fe9f8                       ; 004be34c | = "save\\$$SAVE$$.TMP"
@@ -787,7 +787,7 @@ section .text
     MOV ECX,dword ptr [0x005fe4b0]      ; 004be7ea | g_CFieldNotesPtr
     PUSH ECX                            ; 004be7f0 | g_CFieldNotesInstance
     CALL core_fldnotes.cpp_CFieldNotes_loadState_FUN_004ac900 ; 004be7f1
-        ;   XREF to: 004ac900 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_loadState_FUN_004ac900(CFieldNotes * this_ptr, undefined4 param_2)
+        ;   XREF to: 004ac900 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_loadState_FUN_004ac900(CFieldNotes * this_ptr, _FILE * file)
     ADD ESP,0x8                         ; 004be7f6
     PUSH 0x5c37be                       ; 004be7f9 | = "JustLoadedGame"
         ;   Label: LAB_004be7f9

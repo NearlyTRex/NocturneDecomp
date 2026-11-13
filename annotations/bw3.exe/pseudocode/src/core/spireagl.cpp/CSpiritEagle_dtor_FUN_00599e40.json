@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 68,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 32,
     "suspect_count": 3,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 110
+    "total_lines": 109
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "00599ef8"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_spireagl.cpp_CSpiritEagle_dtor_FUN_00599e40",
-    "signature": "CSpiritEagle * core_spireagl_cpp_CSpiritEagle_dtor_FUN_00599e40(CSpiritEagle *this_ptr,uint flags)"
+    "signature": "CSpiritEagle * __cdecl core_spireagl_cpp_CSpiritEagle_dtor_FUN_00599e40(CSpiritEagle *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -141,7 +141,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
+      "line": 20,
       "match": "pCVar1[-1].",
       "severity": "mild",
       "text": "((CClothList *)(pCVar1[-1].models[1].textures + 0xe),0);",
@@ -149,7 +149,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 25,
+      "line": 23,
       "match": "pCVar3[-1].",
       "severity": "mild",
       "text": "iVar4 = core_armour_cpp_FUN_00410370(pCVar3[-1].height_cache_tags[4] + 0x2f,0);",
@@ -157,7 +157,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 31,
+      "line": 29,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);",

@@ -1,14 +1,12 @@
 // Name: core_chain.cpp_CChain_dtor_FUN_0042ab20
 // Address: 0042ab20
 // Address Range: [[0042ab20, 0042ab6d]]
-// Convention: unknown
-// Signature: CChain * core_chain_cpp_CChain_dtor_FUN_0042ab20(CChain *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_0042ab20(CChain *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CChain * core_chain_cpp_CChain_dtor_FUN_0042ab20(CChain *this_ptr,uint flags)
+CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_0042ab20(CChain *this_ptr,uint flags)
 
 {
   CChain *pCVar1;

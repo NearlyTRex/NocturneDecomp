@@ -1,14 +1,12 @@
 // Name: core_union.cpp_CUnion_dtor_FUN_005a5a40
 // Address: 005a5a40
 // Address Range: [[005a5a40, 005a5ad4]]
-// Convention: unknown
-// Signature: CUnion * core_union_cpp_CUnion_dtor_FUN_005a5a40(CUnion *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CUnion * __cdecl core_union_cpp_CUnion_dtor_FUN_005a5a40(CUnion *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CUnion * core_union_cpp_CUnion_dtor_FUN_005a5a40(CUnion *this_ptr,uint flags)
+CUnion * __cdecl core_union_cpp_CUnion_dtor_FUN_005a5a40(CUnion *this_ptr,uint flags)
 
 {
   int iVar1;

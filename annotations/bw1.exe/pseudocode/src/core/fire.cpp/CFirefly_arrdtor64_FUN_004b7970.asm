@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFirefly * core_fire_cpp_CFirefly_arrdtor64_FUN_004b7970(CFirefly *this_ptr,uint flags)
+; CFirefly * __cdecl core_fire_cpp_CFirefly_arrdtor64_FUN_004b7970(CFirefly *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CFirefly *       Stack[0x4]:4   this_ptr

@@ -12,7 +12,7 @@
 ;   core_villain.cpp_CSteuben_ctor_FUN_005a5b40 at 005a5bd8
 ;
 ; Called Functions:
-;   core_basicene.cpp_FUN_0059e8c0
+;   core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 005a5c2a
     PUSH dword ptr [ESP + 0xc]          ; 005a5c2e
     PUSH EDX                            ; 005a5c32
-    CALL core_basicene.cpp_FUN_0059e8c0 ; 005a5c33
-        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; undefined core_basicene.cpp_FUN_0059e8c0()
+    CALL core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0 ; 005a5c33
+        ;   XREF to: 0059e8c0 (UNCONDITIONAL_CALL)  ; void core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0(CBasicEnemy * this_ptr, undefined4 param_2, int param_3)
     ADD ESP,0xc                         ; 005a5c38
     RET                                 ; 005a5c3b
 

@@ -14,13 +14,13 @@
 ;
 ; XREF[23]:
 ;   core_flashlit.cpp_FUN_004a7bb0 at 004a7c24
-;   core_fldnotes.cpp_FUN_004abe00 at 004ac107
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004ac107
 ;   core_fldnotes.cpp_SNotesMap_draw_FUN_004aa490 at 004aa572
 ;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004a8570 at 004a858e
 ;   core_game.cpp_CGame_renderOverlay_FUN_004b47d0 at 004b4a5e
-;   core_game.cpp_FUN_004b503e at 004b5066
+;   core_game.cpp_FUN_004b5040 at 004b5066
 ;   core_game.cpp_FUN_004b51e0 at 004b5274
-;   core_game.cpp_drawKeyBindingEntry_FUN_004b50ee at 004b5147
+;   core_game.cpp_drawKeyBindingEntry_FUN_004b50f0 at 004b5147
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90 at 004ddcad
 ;   core_menu.cpp_FUN_004e7860 at 004e7999
 ;   ... and 13 more

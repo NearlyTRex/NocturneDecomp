@@ -1,14 +1,12 @@
 // Name: core_bodypart.cpp_CBodyPart_dtor_FUN_00418c70
 // Address: 00418c70
 // Address Range: [[00418c70, 00418cfb]]
-// Convention: unknown
-// Signature: CBodyPart * core_bodypart_cpp_CBodyPart_dtor_FUN_00418c70(CBodyPart *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00418c70(CBodyPart *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBodyPart * core_bodypart_cpp_CBodyPart_dtor_FUN_00418c70(CBodyPart *this_ptr,uint flags)
+CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00418c70(CBodyPart *this_ptr,uint flags)
 
 {
   CBox *pCVar1;
@@ -22,7 +20,7 @@ CBodyPart * core_bodypart_cpp_CBodyPart_dtor_FUN_00418c70(CBodyPart *this_ptr,ui
     return this_ptr;
   }
   (this_ptr->base).vtable._ub = &g_CBodyPartVTable;
-  core_bodypart_cpp_FUN_00418d00(this_ptr,0,0);
+  core_bodypart_cpp_setCounts_FUN_00418d00(this_ptr,0,0);
   pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dab0(&this_ptr->physics_box,0);
   iVar2 = core_bodypart_cpp_FUN_0041b190(&pCVar1[-3].scrape_points[4].local_position.y,0);
   pCVar3 = (CBodyPart *)

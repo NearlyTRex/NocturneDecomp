@@ -759,12 +759,12 @@ LAB_004daa67:
   this_ptr->message_display_timer = (float)(int)local_14 * (float)_DAT_005c627f;
 LAB_004db104:
   if ((local_38 != (CDemonActor *)0x0) && (!bVar2)) {
-    core_mission_cpp_FUN_004f6f10(0x01D81080,item_actor,1);
+    core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(0x01D81080,item_actor,1);
     return 1;
   }
   local_24 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c840(item_actor,g_CAmmoClassInfo.name_hash);
   if (local_24 != (CDemonActor *)0x0) {
-    core_mission_cpp_FUN_004f6f10(0x01D81080,item_actor,1);
+    core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(0x01D81080,item_actor,1);
     return 1;
   }
   pCVar4 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c840(item_actor,g_CWeaponClassInfo.name_hash);
@@ -774,7 +774,7 @@ LAB_004db104:
       this_ptr->items[this_ptr->item_count] = item_actor;
       pCVar3 = 0x01D81080;
       this_ptr->item_count = this_ptr->item_count + 1;
-      core_mission_cpp_FUN_004f6f10(pCVar3,item_actor,0);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(pCVar3,item_actor,0);
       (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);
       return 1;
     }
@@ -795,7 +795,8 @@ LAB_004db104:
                  *(int *)(pCVar5[4].actor_name + 8) + *(int *)(pCVar4[4].actor_name + 8);
             engine_console_cpp_CConsole_printf_FUN_00441ff0
                       (g_CConsolePtr,"Found same weapon, increasing ammoCount\n");
-            core_mission_cpp_FUN_004f6f10(0x01D81080,item_actor,1);
+            core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(0x01D81080,item_actor,1)
+            ;
             return 1;
           }
         }
@@ -835,7 +836,7 @@ LAB_004db104:
       } while (local_20 < this_ptr->item_count);
     }
     if (bVar2) {
-      core_mission_cpp_FUN_004f6f10(0x01D81080,pCVar4,1);
+      core_mission_cpp_CDemonMission_markActorToDelete_FUN_004f6f10(0x01D81080,pCVar4,1);
       return 1;
     }
   }

@@ -26,7 +26,6 @@
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
-#include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SRaytraceState.h"
 #include "types/structs/SRoom.h"
 #include "types/structs/SVDBox.h"
@@ -51,9 +50,9 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_00530ad0(CScript *this_ptr,_F
 void __cdecl core_script_cpp_CScript_saveState_FUN_00530e00(CScript *this_ptr,_FILE *file_handle);
 uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00531030(CScript *this_ptr);
 char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_00531090(CDeformableModel *model_ptr);
-void core_sentinel_cpp_staticInit_FUN_005310a0(void);
+void __cdecl core_sentinel_cpp_staticInit_FUN_005310a0(void);
 CSentinel * __cdecl core_sentinel_cpp_factoryFuncSentinel_FUN_005310d0(void);
-CDemonActorType * core_sentinel_cpp_CSentinel_getActorType_FUN_005310f0(CSentinel *this_ptr);
+CDemonActorType * __cdecl core_sentinel_cpp_CSentinel_getActorType_FUN_005310f0(CSentinel *this_ptr);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00531100(CSentinel *this_ptr);
 void __cdecl core_sentinel_cpp_CSentinel_setup_FUN_00531170(CSentinel *this_ptr);
 void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00531380(CSentinel *this_ptr,float delta_time);
@@ -62,16 +61,16 @@ void __cdecl core_sentinel_cpp_CSentinel_archive_FUN_00532210(CSentinel *this_pt
 void __cdecl core_sentinel_cpp_CSentinel_processDamage_FUN_00532270(CSentinel *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00532370(CSentinel *this_ptr,CVector3f *out_points_array);
 ECollisionType __cdecl core_sentinel_cpp_CSentinel_getCollisionType_FUN_00532500(CSentinel *this_ptr,SCollisionInfo *collision_info);
-CSentinel * core_sentinel_cpp_CSentinel_dtor_FUN_00532520(CSentinel *this_ptr,uint flags);
+CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_00532520(CSentinel *this_ptr,uint flags);
 void __cdecl core_set_cpp_staticInit_FUN_005325b0(void);
 void core_set_cpp_FUN_00532630(void);
 void core_set_cpp_FUN_005326b0(int param_1);
-CDemonSet * core_set_cpp_CDemonSet_ctor_FUN_005327c0(CDemonSet *this_ptr);
-CDemonSet * core_set_cpp_CDemonSet_dtor_FUN_00532b00(CDemonSet *this_ptr,uint flags);
+CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_005327c0(CDemonSet *this_ptr);
+CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_00532b00(CDemonSet *this_ptr,uint flags);
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_00532b30(CDemonSet *this_ptr);
 CDemonSet * core_set_cpp_FUN_00532b80(CDemonSet *param_1,char *param_2);
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00533b80(CDemonSet *this_ptr,float frustum_param,int render_mode);
-void core_set_cpp_FUN_00533e5e(CDemonSet *param_1,int param_2);
+void core_set_cpp_FUN_00533e60(void);
 void __cdecl core_set_cpp_CDemonSet_initScene_FUN_00534420(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_005346b0(CDemonSet *this_ptr,int layer_flag);
 void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00534820(CDemonSet *this_ptr,CDemonActor *actor);
@@ -111,7 +110,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0053a3f0(CDemonSet 
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0053a420(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha);
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0053a450(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha,int stride);
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_0053a6c0(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
-void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4);
+void core_set_cpp_FUN_0053ab10(void);
 void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags);
 void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0053ac80(CDemonSet *this_ptr,SInputFace *faces,int count,int flags);
 void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0053acf0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count);
@@ -140,8 +139,8 @@ void core_set_cpp_FUN_0053b7f0(int *param_1,_FILE *param_2);
 int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_0053b9a0(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_0053ba00(CDemonSet *this_ptr,int expire_flag);
 void __cdecl core_set_cpp_CDemonSet_renderDecals_FUN_0053ba40(CDemonSet *this_ptr);
-SRoom * core_set_cpp_SRoom_ctor_FUN_0053baf0(SRoom *this_ptr);
-SVDBox * core_set_cpp_SVDBox_ctor_FUN_0053bb00(SVDBox *this_ptr);
+SRoom * __cdecl core_set_cpp_SRoom_ctor_FUN_0053baf0(SRoom *this_ptr);
+SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_0053bb00(SVDBox *this_ptr);
 void core_set_cpp_FUN_0053bb60(void *param_1);
 void __cdecl core_setcolid_cpp_staticInit_FUN_0053bb80(void);
 float * core_setcolid_cpp_FUN_0053bc80(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CBoundingBox3D *param_7);
@@ -154,7 +153,7 @@ undefined4 core_setcolid_cpp_FUN_0053ce80(int param_1);
 float core_setcolid_cpp_FUN_0053cff0(undefined4 param_1,float *param_2,float *param_3);
 float core_setcolid_cpp_FUN_0053d270(CDemonSet *param_1,float param_2,CBoundingBox3D *param_3,float *param_4,float param_5);
 int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_0053d770(CDemonSet *this_ptr,CDemonActor *actor);
-undefined4 core_setcolid_cpp_intersectXZCylinder_FUN_0053d7d0(float *param_1,float param_2,float param_3,int param_4);
+int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_0053d7d0(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info);
 int __cdecl core_setcolid_cpp_FUN_0053da90(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
 float core_setcolid_cpp_FUN_0053de10(CDemonSet *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,float param_7,float param_8);
 void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_0053e870(CDemonSet *this_ptr);
@@ -173,9 +172,9 @@ void __cdecl core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_0053ee00(CDemonSet 
 void __cdecl core_setcolid_cpp_CDemonSet_transferVoxelShadow_FUN_0053eea0(CDemonSet *this_ptr,CDemonActor *actor);
 void __cdecl core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_0053ef40(CDemonSet *this_ptr);
 int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_0053ef60(CDemonSet *this_ptr,CVector3f *point);
-SRaytraceState * core_setcolid_cpp_SRaytraceState_ctor_FUN_0053f0b0(SRaytraceState *this_ptr);
-SRaytraceState * core_setcolid_cpp_SRaytraceState_dtor_FUN_0053f0c0(SRaytraceState *this_ptr,uint flags);
-void core_setdir_cpp_staticInit_FUN_0053f0d0(void);
+SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_ctor_FUN_0053f0b0(SRaytraceState *this_ptr);
+SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_dtor_FUN_0053f0c0(SRaytraceState *this_ptr,uint flags);
+void __cdecl core_setdir_cpp_staticInit_FUN_0053f0d0(void);
 float core_setdir_cpp_FUN_0053f5d0(void);
 undefined4 core_setdir_cpp_FUN_0053f940(CDemonSet *param_1,CDemonActor *param_2,int param_3);
 

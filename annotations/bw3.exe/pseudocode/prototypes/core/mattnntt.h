@@ -7,19 +7,19 @@
 
 // Original: core_mattnntt.cpp_staticInit_FUN_00591b40
 // Address: 00591b40
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_mattnntt.cpp_factoryFuncMattanntote_FUN_00591b70
 // Address: 00591b70
-void factoryFuncMattanntote(void);
+CMattanntote * __cdecl factoryFuncMattanntote(void);
 
 // Original: core_mattnntt.cpp_CMattanntote_getActorType_FUN_00591b90
 // Address: 00591b90
-CDemonActorType * CMattanntote::getActorType(CMattanntote *this_ptr);
+CDemonActorType * __cdecl CMattanntote::getActorType(CMattanntote *this_ptr);
 
 // Original: core_mattnntt.cpp_CMattanntote_ctor_FUN_00591ba0
 // Address: 00591ba0
-CMattanntote * CMattanntote::ctor(CMattanntote *this_ptr);
+CMattanntote * __cdecl CMattanntote::ctor(CMattanntote *this_ptr);
 
 // Original: core_mattnntt.cpp_CMattanntote_setup_FUN_00591d10
 // Address: 00591d10
@@ -55,4 +55,4 @@ void __cdecl CMattanntote::archive(CMattanntote *this_ptr);
 
 // Original: core_mattnntt.cpp_CMattanntote_dtor_FUN_00593ca0
 // Address: 00593ca0
-CMattanntote * CMattanntote::dtor(CMattanntote *this_ptr,uint flags);
+CMattanntote * __cdecl CMattanntote::dtor(CMattanntote *this_ptr,uint flags);

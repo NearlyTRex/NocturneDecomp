@@ -7,7 +7,7 @@
 
 // Original: core_spike.cpp_staticInit_FUN_00582f30
 // Address: 00582f30
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_spike.cpp_factoryFuncSpike_FUN_00582f60
 // Address: 00582f60
@@ -15,7 +15,7 @@ CSpike * __cdecl factoryFuncSpike(void);
 
 // Original: core_spike.cpp_CSpike_getActorType_FUN_00582f80
 // Address: 00582f80
-CDemonActorType * CSpike::getActorType(CSpike *this_ptr);
+CDemonActorType * __cdecl CSpike::getActorType(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_ctor_FUN_00582f90
 // Address: 00582f90

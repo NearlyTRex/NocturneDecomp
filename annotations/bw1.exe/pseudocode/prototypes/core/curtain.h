@@ -7,7 +7,7 @@
 
 // Original: core_curtain.cpp_staticInit_FUN_0044a190
 // Address: 0044a190
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_curtain.cpp_factoryFuncCurtain_FUN_0044a1e0
 // Address: 0044a1e0
@@ -15,7 +15,7 @@ CCurtain * __cdecl factoryFuncCurtain(void);
 
 // Original: core_curtain.cpp_CCurtain_getActorType_FUN_0044a200
 // Address: 0044a200
-CDemonActorType * CCurtain::getActorType(CCurtain *this_ptr);
+CDemonActorType * __cdecl CCurtain::getActorType(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_ctor_FUN_0044a210
 // Address: 0044a210
@@ -71,12 +71,12 @@ int __cdecl CCurtain::getBlockVirtualDirectorFlag(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_dtor_FUN_0044c510
 // Address: 0044c510
-CCurtain * CCurtain::dtor(CCurtain *this_ptr,uint flags);
+CCurtain * __cdecl CCurtain::dtor(CCurtain *this_ptr,uint flags);
 
 // Original: core_curtain.cpp_SCurtainVertex_ctor_FUN_0044c560
 // Address: 0044c560
-SCurtainVertex * SCurtainVertex::ctor(SCurtainVertex *this_ptr);
+SCurtainVertex * __cdecl SCurtainVertex::ctor(SCurtainVertex *this_ptr);
 
 // Original: core_curtain.cpp_SCollisionInfo_dtor_FUN_0044c570
 // Address: 0044c570
-SCollisionInfo * SCollisionInfo::dtor(SCollisionInfo *this_ptr,uint flags);
+SCollisionInfo * __cdecl SCollisionInfo::dtor(SCollisionInfo *this_ptr,uint flags);

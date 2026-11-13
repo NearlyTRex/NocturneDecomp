@@ -1,14 +1,12 @@
 // Name: core_hiram.cpp_CNPC_dtor_FUN_004ed400
 // Address: 004ed400
 // Address Range: [[004ed400, 004ed494]]
-// Convention: unknown
-// Signature: CNPC * core_hiram_cpp_CNPC_dtor_FUN_004ed400(CNPC *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CNPC * __cdecl core_hiram_cpp_CNPC_dtor_FUN_004ed400(CNPC *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CNPC * core_hiram_cpp_CNPC_dtor_FUN_004ed400(CNPC *this_ptr,uint flags)
+CNPC * __cdecl core_hiram_cpp_CNPC_dtor_FUN_004ed400(CNPC *this_ptr,uint flags)
 
 {
   CPathMap *pCVar1;

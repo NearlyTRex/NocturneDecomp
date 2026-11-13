@@ -7,19 +7,19 @@
 
 // Original: core_exorcism.cpp_staticInit_FUN_0048a2b0
 // Address: 0048a2b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_exorcism.cpp_factoryFuncExorcism_FUN_0048a2e0
 // Address: 0048a2e0
-void factoryFuncExorcism(void);
+CExorcism * __cdecl factoryFuncExorcism(void);
 
 // Original: core_exorcism.cpp_CExorcism_getActorType_FUN_0048a300
 // Address: 0048a300
-CDemonActorType * CExorcism::getActorType(CExorcism *this_ptr);
+CDemonActorType * __cdecl CExorcism::getActorType(CExorcism *this_ptr);
 
 // Original: core_exorcism.cpp_CExorcism_ctor_FUN_0048a310
 // Address: 0048a310
-CExorcism * CExorcism::ctor(CExorcism *this_ptr);
+CExorcism * __cdecl CExorcism::ctor(CExorcism *this_ptr);
 
 // Original: core_exorcism.cpp_CExorcism_process_FUN_0048a420
 // Address: 0048a420
@@ -47,4 +47,4 @@ void __cdecl CExorcism::setup(CExorcism *this_ptr);
 
 // Original: core_exorcism.cpp_CExorcism_dtor_FUN_0048b730
 // Address: 0048b730
-CExorcism * CExorcism::dtor(CExorcism *this_ptr,uint flags);
+CExorcism * __cdecl CExorcism::dtor(CExorcism *this_ptr,uint flags);

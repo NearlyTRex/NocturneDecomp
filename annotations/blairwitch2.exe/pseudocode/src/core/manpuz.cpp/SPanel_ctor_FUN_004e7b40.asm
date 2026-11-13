@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SPanel * core_manpuz_cpp_SPanel_ctor_FUN_004e7b40(SPanel *this_ptr)
+; SPanel * __cdecl core_manpuz_cpp_SPanel_ctor_FUN_004e7b40(SPanel *this_ptr)
 ;
 ; Parameters:
 ; SPanel *         Stack[0x4]:4   this_ptr

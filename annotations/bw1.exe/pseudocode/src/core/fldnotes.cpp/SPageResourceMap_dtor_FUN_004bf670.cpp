@@ -1,14 +1,12 @@
 // Name: core_fldnotes.cpp_SPageResourceMap_dtor_FUN_004bf670
 // Address: 004bf670
 // Address Range: [[004bf670, 004bf6bd]]
-// Convention: unknown
-// Signature: SPageResourceMap * core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004bf670(SPageResourceMap *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: SPageResourceMap * __cdecl core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004bf670(SPageResourceMap *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-SPageResourceMap * core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004bf670(SPageResourceMap *this_ptr,uint flags)
+SPageResourceMap * __cdecl core_fldnotes_cpp_SPageResourceMap_dtor_FUN_004bf670(SPageResourceMap *this_ptr,uint flags)
 
 {
   SPageResourceMap *pSVar1;

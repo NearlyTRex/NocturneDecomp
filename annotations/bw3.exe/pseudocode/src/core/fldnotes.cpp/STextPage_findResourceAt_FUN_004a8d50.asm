@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl core_fldnotes_cpp_STextPage_findResourceAt_FUN_004a8d50(STextPage *this_ptr,int param_2,int param_3)
+; SPageResource * __cdecl core_fldnotes_cpp_STextPage_findResourceAt_FUN_004a8d50(STextPage *this_ptr,int x,int y)
 ;
 ; Parameters:
 ; STextPage *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ;
 ; XREF[2]:
-;   core_fldnotes.cpp_FUN_004abe00 at 004ac048
-;   core_fldnotes.cpp_FUN_004ac6b0 at 004ac87f
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004ac048
+;   core_fldnotes.cpp_CFieldNotes_process_FUN_004ac6b0 at 004ac87f
 ;
 ; *****************************************************************************
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSteuben * core_villain_cpp_CSteuben_ctor_FUN_005a5b40(CSteuben *this_ptr)
+; CSteuben * __cdecl core_villain_cpp_CSteuben_ctor_FUN_005a5b40(CSteuben *this_ptr)
 ;
 ; Parameters:
 ; CSteuben *       Stack[0x4]:4   this_ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flamegun_cpp_staticInit_FUN_004a0cb0(void)
+; void __cdecl core_flamegun_cpp_staticInit_FUN_004a0cb0(void)
 ;
 ;
 ; Called Functions:

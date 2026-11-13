@@ -7,7 +7,7 @@
 
 // Original: core_ammo.cpp_staticInit_FUN_0040db60
 // Address: 0040db60
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_ammo.cpp_factoryFuncAmmo_FUN_0040db90
 // Address: 0040db90
@@ -15,7 +15,7 @@ CAmmo * __cdecl factoryFuncAmmo(void);
 
 // Original: core_ammo.cpp_CAmmo_getActorType_FUN_0040dbb0
 // Address: 0040dbb0
-CDemonActorType * CAmmo::getActorType(CAmmo *this_ptr);
+CDemonActorType * __cdecl CAmmo::getActorType(CAmmo *this_ptr);
 
 // Original: core_ammo.cpp_CAmmo_ctor_FUN_0040dbc0
 // Address: 0040dbc0

@@ -1,14 +1,12 @@
 // Name: core_dog.cpp_CDemonDog_dtor_FUN_004638a0
 // Address: 004638a0
 // Address Range: [[004638a0, 00463924]]
-// Convention: unknown
-// Signature: CDemonDog * core_dog_cpp_CDemonDog_dtor_FUN_004638a0(CDemonDog *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CDemonDog * __cdecl core_dog_cpp_CDemonDog_dtor_FUN_004638a0(CDemonDog *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDemonDog * core_dog_cpp_CDemonDog_dtor_FUN_004638a0(CDemonDog *this_ptr,uint flags)
+CDemonDog * __cdecl core_dog_cpp_CDemonDog_dtor_FUN_004638a0(CDemonDog *this_ptr,uint flags)
 
 {
   int iVar1;

@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAudioRecPuzzle * core_bmppuzzl_cpp_CAudioRecPuzzle_ctor_FUN_0059be60(CAudioRecPuzzle *this_ptr)
+; CAudioRecPuzzle * __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_ctor_FUN_0059be60(CAudioRecPuzzle *this_ptr)
 ;
 ; Parameters:
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
+;   core_bmppuzzl.cpp_CPuzzle_ctor_FUN_0059ab30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
-;   core_zombie.cpp_FUN_0059ab30
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d420
 ;
@@ -19,8 +19,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 0059be60
         ;   Label: core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_0059be60
     PUSH EAX                            ; 0059be64
-    CALL core_zombie.cpp_FUN_0059ab30   ; 0059be65
-        ;   XREF to: 0059ab30 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_FUN_0059ab30()
+    CALL core_bmppuzzl.cpp_CPuzzle_ctor_FUN_0059ab30 ; 0059be65
+        ;   XREF to: 0059ab30 (UNCONDITIONAL_CALL)  ; CPuzzle * core_bmppuzzl.cpp_CPuzzle_ctor_FUN_0059ab30(CPuzzle * this_ptr)
     ADD ESP,0x4                         ; 0059be6a
     ADD EAX,0x4                         ; 0059be6d
     PUSH EAX                            ; 0059be70

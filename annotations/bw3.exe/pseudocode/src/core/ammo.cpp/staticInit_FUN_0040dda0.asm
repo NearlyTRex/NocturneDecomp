@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ammo_cpp_staticInit_FUN_0040dda0(void)
+; void __cdecl core_ammo_cpp_staticInit_FUN_0040dda0(void)
 ;
 ;
 ; Referenced Globals:

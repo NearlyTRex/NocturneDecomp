@@ -1,19 +1,17 @@
 // Name: support_trstream.cpp_CInStreamFile_copy_FUN_005a0a20
 // Address: 005a0a20
 // Address Range: [[005a0a20, 005a0a33]]
-// Convention: unknown
-// Signature: CInStreamFile * support_trstream_cpp_CInStreamFile_copy_FUN_005a0a20(CInStreamFile *this_ptr,CInStreamFile *other)
+// Convention: __cdecl
+// Signature: CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_copy_FUN_005a0a20(CInStreamFile *this_ptr,CInStreamFile *other)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CInStreamFile * support_trstream_cpp_CInStreamFile_copy_FUN_005a0a20(CInStreamFile *this_ptr,CInStreamFile *other)
+CInStreamFile * __cdecl support_trstream_cpp_CInStreamFile_copy_FUN_005a0a20(CInStreamFile *this_ptr,CInStreamFile *other)
 
 {
   CInStreamFile *pCVar1;
   
-  pCVar1 = (CInStreamFile *)support_trstream_cpp_FUN_0059f540(this_ptr);
-  pCVar1->vtable = &g_CInStreamFileVTable;
+  pCVar1 = (CInStreamFile *)support_trstream_cpp_CInStream_ctor_FUN_0059f540(&this_ptr->base);
+  (pCVar1->base).vtable = &g_CInStreamFileVTable;
   return pCVar1;
 }

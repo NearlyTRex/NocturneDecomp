@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_hand_cpp_CHand_getActorType_FUN_005a9bf0(CHand *this_ptr)
+; CDemonActorType * __cdecl core_hand_cpp_CHand_getActorType_FUN_005a9bf0(CHand *this_ptr)
 ;
 ; Parameters:
 ; CHand *          Stack[0x4]:4   this_ptr

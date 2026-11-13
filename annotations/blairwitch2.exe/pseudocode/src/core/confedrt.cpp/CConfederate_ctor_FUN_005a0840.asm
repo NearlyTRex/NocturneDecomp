@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CConfederate * core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfederate *this_ptr)
+; CConfederate * __cdecl core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(CConfederate *this_ptr)
 ;
 ; Parameters:
 ; CConfederate *   Stack[0x4]:4   this_ptr

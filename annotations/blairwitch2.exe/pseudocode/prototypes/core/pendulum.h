@@ -7,7 +7,7 @@
 
 // Original: core_pendulum.cpp_staticInit_FUN_00514c70
 // Address: 00514c70
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_pendulum.cpp_factoryFuncPendulum_FUN_00514ca0
 // Address: 00514ca0
@@ -15,7 +15,7 @@ CPendulum * __cdecl factoryFuncPendulum(void);
 
 // Original: core_pendulum.cpp_CPendulum_getActorType_FUN_00514cc0
 // Address: 00514cc0
-CDemonActorType * CPendulum::getActorType(CPendulum *this_ptr);
+CDemonActorType * __cdecl CPendulum::getActorType(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_CPendulum_ctor_FUN_00514cd0
 // Address: 00514cd0
@@ -29,8 +29,8 @@ void __cdecl CPendulum::setup(CPendulum *this_ptr);
 // Address: 00514f40
 void __cdecl CPendulum::testCollisionWithActor(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor);
 
-// Original: core_pendulum.cpp_didPhaseCross_FUN_005155de
-// Address: 005155de
+// Original: core_pendulum.cpp_didPhaseCross_FUN_005155e0
+// Address: 005155e0
 int __cdecl didPhaseCross(float threshold,float old_phase,float new_phase);
 
 // Original: core_pendulum.cpp_CPendulum_updateSwing_FUN_005156d0

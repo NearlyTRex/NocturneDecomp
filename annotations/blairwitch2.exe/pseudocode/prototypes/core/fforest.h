@@ -7,19 +7,19 @@
 
 // Original: core_fforest.cpp_staticInit_FUN_005a2670
 // Address: 005a2670
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_fforest.cpp_factoryFuncTwigZombie_FUN_005a26a0
 // Address: 005a26a0
-void factoryFuncTwigZombie(void);
+CTwigZombie * __cdecl factoryFuncTwigZombie(void);
 
 // Original: core_fforest.cpp_CTwigZombie_getActorType_FUN_005a26c0
 // Address: 005a26c0
-CDemonActorType * CTwigZombie::getActorType(CTwigZombie *this_ptr);
+CDemonActorType * __cdecl CTwigZombie::getActorType(CTwigZombie *this_ptr);
 
 // Original: core_fforest.cpp_CTwigZombie_ctor_FUN_005a26d0
 // Address: 005a26d0
-CTwigZombie * CTwigZombie::ctor(CTwigZombie *this_ptr);
+CTwigZombie * __cdecl CTwigZombie::ctor(CTwigZombie *this_ptr);
 
 // Original: core_fforest.cpp_CTwigZombie_setup_FUN_005a2820
 // Address: 005a2820
@@ -55,4 +55,4 @@ void __cdecl CTwigZombie::processDamage(CTwigZombie *this_ptr,SDamageInfo *damag
 
 // Original: core_fforest.cpp_CTwigZombie_dtor_FUN_005a2eb0
 // Address: 005a2eb0
-CTwigZombie * CTwigZombie::dtor(CTwigZombie *this_ptr,uint flags);
+CTwigZombie * __cdecl CTwigZombie::dtor(CTwigZombie *this_ptr,uint flags);

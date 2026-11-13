@@ -1,14 +1,12 @@
 // Name: core_spirbear.cpp_CSpiritBear_ctor_FUN_0059aaa0
 // Address: 0059aaa0
 // Address Range: [[0059aaa0, 0059ab9e]]
-// Convention: unknown
-// Signature: CSpiritBear * core_spirbear_cpp_CSpiritBear_ctor_FUN_0059aaa0(CSpiritBear *this_ptr)
+// Convention: __cdecl
+// Signature: CSpiritBear * __cdecl core_spirbear_cpp_CSpiritBear_ctor_FUN_0059aaa0(CSpiritBear *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSpiritBear * core_spirbear_cpp_CSpiritBear_ctor_FUN_0059aaa0(CSpiritBear *this_ptr)
+CSpiritBear * __cdecl core_spirbear_cpp_CSpiritBear_ctor_FUN_0059aaa0(CSpiritBear *this_ptr)
 
 {
   char cVar1;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamMemory_isEof_FUN_0057d780(CInStreamMemory *this_ptr)
+; int __cdecl support_trstream_cpp_CInStreamMemory_isEof_FUN_0057d780(CInStreamMemory *this_ptr)
 ;
 ; Parameters:
 ; CInStreamMemory * Stack[0x4]:4   this_ptr

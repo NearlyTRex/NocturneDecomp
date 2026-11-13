@@ -1,14 +1,12 @@
 // Name: core_hiram.cpp_CHiram_dtor_FUN_004d0f90
 // Address: 004d0f90
 // Address Range: [[004d0f90, 004d1042]]
-// Convention: unknown
-// Signature: CHiram * core_hiram_cpp_CHiram_dtor_FUN_004d0f90(CHiram *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004d0f90(CHiram *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHiram * core_hiram_cpp_CHiram_dtor_FUN_004d0f90(CHiram *this_ptr,uint flags)
+CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004d0f90(CHiram *this_ptr,uint flags)
 
 {
   CPathMap *pCVar1;

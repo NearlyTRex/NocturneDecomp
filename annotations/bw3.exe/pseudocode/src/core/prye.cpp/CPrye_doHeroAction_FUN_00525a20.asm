@@ -29,9 +29,9 @@
 ;   core_actor.cpp_FUN_00408b80
 ;   core_actor.cpp_FUN_00408bf0
 ;   core_event.cpp_CRuleList_evaluateAndRun_FUN_00495db0
+;   core_hero.cpp_CHero_doHeroAction_FUN_004d4520
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250
 ;   core_hero.cpp_FUN_004d3210
-;   core_hero.cpp_FUN_004d4520
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   core_skeleton.cpp_FUN_0054dbd0
 ;   engine_console.cpp_CConsole_printf_FUN_00441ff0
@@ -283,8 +283,8 @@ section .text
     RET                                 ; 00525c86
     PUSH EBX                            ; 00525c87
         ;   Label: caseD_1
-    CALL core_hero.cpp_FUN_004d4520     ; 00525c88
-        ;   XREF to: 004d4520 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004d4520()
+    CALL core_hero.cpp_CHero_doHeroAction_FUN_004d4520 ; 00525c88
+        ;   XREF to: 004d4520 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_doHeroAction_FUN_004d4520(CHero * this_ptr)
     ADD ESP,0x4                         ; 00525c8d
     PUSH EBX                            ; 00525c90
     CALL core_hero.cpp_FUN_004d3210     ; 00525c91

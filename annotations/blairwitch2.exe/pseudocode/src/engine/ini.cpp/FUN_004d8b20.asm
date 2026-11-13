@@ -9,9 +9,9 @@
 ; XREF[5]:
 ;   core_game.cpp_FUN_004bc840 at 004bc91f
 ;   core_inivar.cpp_readIniData_FUN_004d8d60 at 004d8dbb
-;   core_script.cpp_FUN_00522350 at 00525669
+;   core_script.cpp_CScript_step_FUN_00522350 at 00525669
 ;   sound_sndmain.cpp_readIni_FUN_00553680 at 00553794
-;   wincore_winrun.cpp_FUN_00590b0c at 00590b59
+;   wincore_winrun.cpp_FUN_00590b10 at 00590b59
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005dad87

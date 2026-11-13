@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_villain_cpp_CSteuben_getActorType_FUN_005a5b30(CSteuben *this_ptr)
+; CDemonActorType * __cdecl core_villain_cpp_CSteuben_getActorType_FUN_005a5b30(CSteuben *this_ptr)
 ;
 ; Parameters:
 ; CSteuben *       Stack[0x4]:4   this_ptr

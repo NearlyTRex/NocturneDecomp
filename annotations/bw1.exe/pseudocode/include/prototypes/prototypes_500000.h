@@ -16,6 +16,7 @@
 #include "types/classes/CMelee.h"
 #include "types/classes/CMimic.h"
 #include "types/classes/CMirrorHack.h"
+#include "types/classes/COutStream.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
@@ -43,10 +44,10 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00500d20(CLightGun *this_pt
 float __cdecl core_lightgun_cpp_CLightGun_getDamage_FUN_00500f20(CLightGun *this_ptr);
 void __cdecl core_lightgun_cpp_CLightGun_renderAimBeam_FUN_00500f90(CLightGun *this_ptr);
 CLightGun * __cdecl core_lightgun_cpp_CLightGun_dtor_FUN_00501560(CLightGun *this_ptr,uint flags);
-void core_lightpis_cpp_staticInit_FUN_005015b0(void);
-void core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void);
-CDemonActorType * core_lightpis_cpp_CLightPis_getActorType_FUN_00501600(CLightPis *this_ptr);
-CLightPis * core_lightpis_cpp_CLightPis_ctor_FUN_00501610(CLightPis *this_ptr);
+void __cdecl core_lightpis_cpp_staticInit_FUN_005015b0(void);
+CLightPis * __cdecl core_lightpis_cpp_factoryFuncLightPis_FUN_005015e0(void);
+CDemonActorType * __cdecl core_lightpis_cpp_CLightPis_getActorType_FUN_00501600(CLightPis *this_ptr);
+CLightPis * __cdecl core_lightpis_cpp_CLightPis_ctor_FUN_00501610(CLightPis *this_ptr);
 undefined4 core_lightpis_cpp_FUN_005016d0(CDemonActor *param_1);
 undefined4 core_lightpis_cpp_FUN_00501750(CCharacter *param_1);
 void core_lightpis_cpp_FUN_005017f0(int param_1);
@@ -55,10 +56,10 @@ int __cdecl core_lightpis_cpp_CLightPis_fire_FUN_00501a70(CLightPis *this_ptr);
 void __cdecl core_lightpis_cpp_CLightPis_process_FUN_00502480(CLightPis *this_ptr,float delta_time);
 float __cdecl core_lightpis_cpp_CLightPis_getDamage_FUN_00502680(CLightPis *this_ptr);
 void __cdecl core_lightpis_cpp_CLightPis_renderAimBeam_FUN_005026f0(CLightPis *this_ptr);
-CLightPis * core_lightpis_cpp_CLightPis_dtor_FUN_00502cc0(CLightPis *this_ptr,uint flags);
-void core_litecone_cpp_staticInit_FUN_00502d10(void);
+CLightPis * __cdecl core_lightpis_cpp_CLightPis_dtor_FUN_00502cc0(CLightPis *this_ptr,uint flags);
+void __cdecl core_litecone_cpp_staticInit_FUN_00502d10(void);
 CLightCone * __cdecl core_litecone_cpp_factoryFuncLightCone_FUN_00502d40(void);
-CDemonActorType * core_litecone_cpp_CLightCone_getActorType_FUN_00502d60(CLightCone *this_ptr);
+CDemonActorType * __cdecl core_litecone_cpp_CLightCone_getActorType_FUN_00502d60(CLightCone *this_ptr);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_00502d70(CLightCone *this_ptr);
 void __cdecl core_litecone_cpp_CLightCone_setup_FUN_00502e10(CLightCone *this_ptr);
 void __cdecl core_litecone_cpp_CLightCone_process_FUN_00502e20(CLightCone *this_ptr,float delta_time);
@@ -75,7 +76,7 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv);
 void core_main_c_FUN_00503a30(void);
 void __cdecl core_manpuz_cpp_staticInit_FUN_00503ac0(void);
 CMansionPuzzleCircle * __cdecl core_manpuz_cpp_factoryFuncMansionPuzzleCircle_FUN_00503b10(void);
-CDemonActorType * core_manpuz_cpp_CMansionPuzzleCircle_getActorType_FUN_00503b30(CMansionPuzzleCircle *this_ptr);
+CDemonActorType * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getActorType_FUN_00503b30(CMansionPuzzleCircle *this_ptr);
 CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_00503b40(CMansionPuzzleCircle *this_ptr);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00503c90(CMansionPuzzleCircle *this_ptr);
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0(CMansionPuzzleCircle *this_ptr);
@@ -89,7 +90,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_00504ba0(CMansi
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_00504cb0(CMansionPuzzleCircle *this_ptr);
 void core_manpuz_cpp_FUN_00504ee0(int param_1,int param_2);
 void core_manpuz_cpp_FUN_00504fe0(int param_1,int param_2);
-void __cdecl core_manpuz_cpp_FUN_00505060(CMansionPuzzleCircle *this_ptr,int gem_index);
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00505060(CMansionPuzzleCircle *this_ptr,int gem_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_005054c0(CMansionPuzzleCircle *this_ptr,int reflector_index);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_00505560(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_005056f0(CMansionPuzzleCircle *this_ptr,int panel_index,float *out_r,float *out_g,float *out_b);
@@ -119,13 +120,13 @@ int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_00506670(CMirrorHac
 int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_00506690(CMirrorHack *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
 void __cdecl core_manpuz_cpp_CMirrorHack_stopInteraction_FUN_005066f0(CMirrorHack *this_ptr,CDemonActor *user);
 CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_dtor_FUN_00506710(CMirrorHack *this_ptr,uint flags);
-CMansionPuzzleCircle * core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_00506760(CMansionPuzzleCircle *this_ptr,uint flags);
-SReflector * core_manpuz_cpp_SReflector_ctor_FUN_005067b0(SReflector *this_ptr);
+CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_00506760(CMansionPuzzleCircle *this_ptr,uint flags);
+SReflector * __cdecl core_manpuz_cpp_SReflector_ctor_FUN_005067b0(SReflector *this_ptr);
 SGem * __cdecl core_manpuz_cpp_SGem_ctor_FUN_005067c0(SGem *this_ptr);
-SPanel * core_manpuz_cpp_SPanel_ctor_FUN_005067e0(SPanel *this_ptr);
-void core_marquee_cpp_staticInit_FUN_005068c0(void);
+SPanel * __cdecl core_manpuz_cpp_SPanel_ctor_FUN_005067e0(SPanel *this_ptr);
+void __cdecl core_marquee_cpp_staticInit_FUN_005068c0(void);
 CMarquee * __cdecl core_marquee_cpp_factoryFuncMarquee_FUN_005068f0(void);
-CDemonActorType * core_marquee_cpp_CMarquee_getActorType_FUN_00506910(CMarquee *this_ptr);
+CDemonActorType * __cdecl core_marquee_cpp_CMarquee_getActorType_FUN_00506910(CMarquee *this_ptr);
 CMarquee * __cdecl core_marquee_cpp_CMarquee_ctor_FUN_00506920(CMarquee *this_ptr);
 void __cdecl core_marquee_cpp_CMarquee_computeBoundingBox_FUN_005069f0(CMarquee *this_ptr);
 void __cdecl core_marquee_cpp_CMarquee_setup_FUN_00506b20(CMarquee *this_ptr);
@@ -143,7 +144,7 @@ int __cdecl engine_matrix_c_FUN_00507350(int angle);
 int engine_matrix_c_FUN_00507390(uint param_1);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_005073d0(void);
 void __cdecl engine_matrix_c_buildRotationMatrix_FUN_005076b0(int pitch,int yaw,int roll);
-void engine_matrix_c_transformWorldToView_FUN_005079ce(int *param_1);
+void engine_matrix_c_transformWorldToView_FUN_005079d0(void);
 int __cdecl engine_matrix_c_calculateTransformedZ_FUN_00507aa0(int *input_coords);
 void __cdecl engine_matrix_c_transformToCache_FUN_00507b00(int cacheIndex,CVector3i *inputPoint);
 void __cdecl engine_matrix_c_projectCachedPoint_FUN_00507b30(int cacheIndex);
@@ -162,11 +163,11 @@ void __esi engine_matrix_c_getCameraOrigin_FUN_00509050(CVector3i *output);
 void __esi engine_matrix_c_getCameraRotation_FUN_00509080(CVector3i *output);
 void __cdecl engine_matrix_c_pushViewport_FUN_005090b0(int x,int y,int width,int height);
 void __cdecl engine_matrix_c_popViewport_FUN_00509210(void);
-void engine_matrix_c_FUN_005093ce(int param_1,int param_2,int param_3);
+void engine_matrix_c_FUN_005093d0(void);
 void __cdecl engine_matrix_c_popMatrixRelativeOffset_FUN_00509480(void);
-void core_melee_cpp_staticInit_FUN_005094f0(void);
+void __cdecl core_melee_cpp_staticInit_FUN_005094f0(void);
 CMelee * __cdecl core_melee_cpp_factoryFuncMelee_FUN_00509520(void);
-CDemonActorType * core_melee_cpp_CMelee_getActorType_FUN_00509540(CMelee *this_ptr);
+CDemonActorType * __cdecl core_melee_cpp_CMelee_getActorType_FUN_00509540(CMelee *this_ptr);
 CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_00509550(CMelee *this_ptr);
 void __cdecl core_melee_cpp_CMelee_archive_FUN_005096a0(CMelee *this_ptr);
 int __cdecl core_melee_cpp_CMelee_fire_FUN_005097c0(CMelee *this_ptr);
@@ -180,7 +181,7 @@ void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_00509970(CMelee *th
 void __cdecl core_melee_cpp_CMelee_process_FUN_005099a0(CMelee *this_ptr,float delta_time);
 void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_00509a70(CMelee *this_ptr,int weapon_state);
 CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_00509a90(CMelee *this_ptr,uint flags);
-void core_melee_cpp_FUN_00509b00(undefined4 param_1);
+void core_melee_cpp_FUN_00509b00(COutStream *param_1);
 void __cdecl core_menu_cpp_staticInit_FUN_00509bd0(void);
 void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_00509c90(int x_center,int y_top,int height_half);
 int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
@@ -200,12 +201,12 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_0050d220(EInputCodeType key_c
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType *key_code_ptr,char *description);
 int core_menu_cpp_FUN_0050d5b0(void);
 void core_menu_cpp_FUN_0050d640(void);
-void core_mimic_cpp_staticInit_FUN_0050f000(void);
+void __cdecl core_mimic_cpp_staticInit_FUN_0050f000(void);
 void __cdecl core_mimic_cpp_mirrorXTransform_FUN_0050f030(void);
 CMimic * __cdecl core_mimic_cpp_factoryFuncMimic_FUN_0050f090(void);
-CDemonActorType * core_mimic_cpp_CMimic_getActorType_FUN_0050f0b0(CMimic *this_ptr);
+CDemonActorType * __cdecl core_mimic_cpp_CMimic_getActorType_FUN_0050f0b0(CMimic *this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0050f0c0(CMimic *this_ptr);
-CMimic * core_mimic_cpp_CMimic_dtor_FUN_0050f1b0(CMimic *this_ptr,uint flags);
+CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0050f1b0(CMimic *this_ptr,uint flags);
 void __cdecl core_mimic_cpp_CMimic_setup_FUN_0050f290(CMimic *this_ptr);
 void __cdecl core_mimic_cpp_CMimic_process_FUN_0050f630(CMimic *this_ptr,float delta_time);
 void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0050f7e0(CMimic *this_ptr);

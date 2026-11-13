@@ -1,0 +1,141 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 39,
+    "complexity_score": 68,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 52
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00582c10",
+    "address_range": [
+      [
+        "00582c10",
+        "00582c5d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_special.cpp_FUN_00582c10",
+    "signature": "undefined4 engine_special_cpp_FUN_00582c10(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02c83430",
+      "name": "DAT_02c83430",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c834d4",
+      "name": "DAT_02c834d4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.823529411764706,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 41,
+      "INT_ADD": 15,
+      "INT_AND": 12,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 9,
+      "INT_XOR": 2,
+      "LOAD": 14,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 130
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005601c0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005664e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b7e90",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "uint in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((_DAT_02c83430 != (code *)0x0) && (iVar1 = (*_DAT_02c83430)(), iVar1 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "_DAT_02c834d4 = in_stack_0000000c;",
+      "type": "stack_param"
+    }
+  ]
+}

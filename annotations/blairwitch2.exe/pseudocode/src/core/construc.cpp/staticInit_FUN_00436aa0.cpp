@@ -1,12 +1,12 @@
 // Name: core_construc.cpp_staticInit_FUN_00436aa0
 // Address: 00436aa0
 // Address Range: [[00436aa0, 00436ac3]]
-// Convention: unknown
-// Signature: void core_construc_cpp_staticInit_FUN_00436aa0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_construc_cpp_staticInit_FUN_00436aa0(void)
 
 #include "nocturne.h"
 
-void core_construc_cpp_staticInit_FUN_00436aa0(void)
+void __cdecl core_construc_cpp_staticInit_FUN_00436aa0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

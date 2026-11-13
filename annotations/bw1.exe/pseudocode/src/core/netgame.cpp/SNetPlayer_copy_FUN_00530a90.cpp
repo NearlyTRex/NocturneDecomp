@@ -1,14 +1,12 @@
 // Name: core_netgame.cpp_SNetPlayer_copy_FUN_00530a90
 // Address: 00530a90
 // Address Range: [[00530a90, 00530b53]]
-// Convention: unknown
-// Signature: SNetPlayer * core_netgame_cpp_SNetPlayer_copy_FUN_00530a90(SNetPlayer *this_ptr,SNetPlayer *other)
+// Convention: __cdecl
+// Signature: SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_00530a90(SNetPlayer *this_ptr,SNetPlayer *other)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-SNetPlayer * core_netgame_cpp_SNetPlayer_copy_FUN_00530a90(SNetPlayer *this_ptr,SNetPlayer *other)
+SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_00530a90(SNetPlayer *this_ptr,SNetPlayer *other)
 
 {
   *(uint *)this_ptr->name = *(uint *)other->name;

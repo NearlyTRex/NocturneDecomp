@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_styler_cpp_factoryFuncStyler_FUN_0059d720(void)
+; CStyler * __cdecl core_styler_cpp_factoryFuncStyler_FUN_0059d720(void)
 ;
 ;
 ; Called Functions:

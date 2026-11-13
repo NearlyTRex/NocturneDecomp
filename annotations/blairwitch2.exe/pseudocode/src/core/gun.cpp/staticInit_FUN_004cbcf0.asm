@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gun_cpp_staticInit_FUN_004cbcf0(void)
+; void __cdecl core_gun_cpp_staticInit_FUN_004cbcf0(void)
 ;
 ;
 ; Called Functions:

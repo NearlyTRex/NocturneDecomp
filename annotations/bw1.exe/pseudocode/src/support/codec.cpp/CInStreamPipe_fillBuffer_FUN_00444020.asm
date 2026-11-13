@@ -49,7 +49,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00444055
     PUSH EAX                            ; 00444059
     CALL support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0 ; 0044405a
-        ;   XREF to: 005a1ad0 (UNCONDITIONAL_CALL)  ; undefined4 * support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0(COutStreamMemory * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 005a1ad0 (UNCONDITIONAL_CALL)  ; COutStreamMemory * support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0(COutStreamMemory * this_ptr, char * buffer, int capacity)
     ADD ESP,0xc                         ; 0044405f
     MOV EDX,ESP                         ; 00444062
     PUSH EDX                            ; 00444064

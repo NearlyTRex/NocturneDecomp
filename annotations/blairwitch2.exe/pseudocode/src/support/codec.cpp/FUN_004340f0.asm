@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_FUN_004340f0(int *param_1,undefined4 param_2,undefined4 param_3)
+; undefined4 support_codec_cpp_FUN_004340f0(int *param_1,char *param_2,char *param_3)
 ;
 ;
 ; Referenced Globals:
@@ -28,7 +28,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004340fd
     PUSH EAX                            ; 00434101
     CALL support_trstream.cpp_CInStreamFile_ctorOpen_FUN_0057cdb0 ; 00434102
-        ;   XREF to: 0057cdb0 (UNCONDITIONAL_CALL)  ; undefined4 * support_trstream.cpp_CInStreamFile_ctorOpen_FUN_0057cdb0(CInStreamFile * this_ptr, undefined4 param_2)
+        ;   XREF to: 0057cdb0 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_ctorOpen_FUN_0057cdb0(CInStreamFile * this_ptr, char * path)
     ADD ESP,0x8                         ; 00434107
     MOV EAX,ESP                         ; 0043410a
     PUSH EAX                            ; 0043410c
@@ -44,7 +44,7 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 00434127
     PUSH EAX                            ; 0043412b
     CALL support_trstream.cpp_COutStreamFile_ctorOpen_FUN_0057dba0 ; 0043412c
-        ;   XREF to: 0057dba0 (UNCONDITIONAL_CALL)  ; undefined4 * support_trstream.cpp_COutStreamFile_ctorOpen_FUN_0057dba0(COutStreamFile * this_ptr, undefined4 param_2, undefined4 param_3)
+        ;   XREF to: 0057dba0 (UNCONDITIONAL_CALL)  ; COutStreamFile * support_trstream.cpp_COutStreamFile_ctorOpen_FUN_0057dba0(COutStreamFile * this_ptr, char * path, char * mode)
     ADD ESP,0xc                         ; 00434131
     LEA EAX,[ESP + 0x28]                ; 00434134
     PUSH EAX                            ; 00434138

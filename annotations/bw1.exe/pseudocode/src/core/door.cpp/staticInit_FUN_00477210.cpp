@@ -1,12 +1,12 @@
 // Name: core_door.cpp_staticInit_FUN_00477210
 // Address: 00477210
 // Address Range: [[00477210, 00477233]]
-// Convention: unknown
-// Signature: void core_door_cpp_staticInit_FUN_00477210(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_door_cpp_staticInit_FUN_00477210(void)
 
 #include "nocturne.h"
 
-void core_door_cpp_staticInit_FUN_00477210(void)
+void __cdecl core_door_cpp_staticInit_FUN_00477210(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

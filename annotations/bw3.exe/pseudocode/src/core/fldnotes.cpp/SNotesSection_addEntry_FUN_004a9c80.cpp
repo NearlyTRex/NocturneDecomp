@@ -2,13 +2,13 @@
 // Address: 004a9c80
 // Address Range: [[004a9c80, 004a9d85]]
 // Convention: __cdecl
-// Signature: char * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSection *this_ptr,char *param_2,int param_3)
+// Signature: SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSection *this_ptr,char *name,int kind)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-char * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSection *this_ptr,char *param_2,int param_3)
+SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSection *this_ptr,char *name,int kind)
 
 {
   char cVar1;
@@ -23,7 +23,7 @@ char * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSecti
   if (99 < this_ptr->entry_count) {
     _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
     _DAT_01d71de4 = 0x722;
-    core_main_c_FUN_004e4330("Too many field note entries in section %s, adding entry %s",this_ptr,param_2);
+    core_main_c_FUN_004e4330("Too many field note entries in section %s, adding entry %s",this_ptr,name);
   }
   pSVar2 = (SNotesEntry *)operator_new(0x15c);
   pSVar3 = (SNotesEntry *)0x0;
@@ -37,7 +37,7 @@ char * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSecti
     core_main_c_FUN_004e4330("Out of memory!");
   }
   uVar4 = 0xffffffff;
-  pcVar5 = param_2;
+  pcVar5 = name;
   do {
     if (uVar4 == 0) break;
     uVar4 = uVar4 - 1;
@@ -48,19 +48,19 @@ char * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSecti
   if (0x3f < ~uVar4 - 1) {
     _DAT_01d71de0 = "..\\core\\fldnotes.cpp";
     _DAT_01d71de4 = 0x72d;
-    core_main_c_FUN_004e4330("Entry name '%s' is too long",param_2);
+    core_main_c_FUN_004e4330("Entry name '%s' is too long",name);
   }
   do {
-    cVar1 = *param_2;
+    cVar1 = *name;
     pSVar2->name[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = param_2[1];
-    param_2 = param_2 + 2;
+    cVar1 = name[1];
+    name = name + 2;
     pSVar2->name[1] = cVar1;
     pSVar2 = (SNotesEntry *)(pSVar2->name + 2);
   } while (cVar1 != '\0');
-  pSVar3->kind = param_3;
+  pSVar3->kind = kind;
   this_ptr->entries[this_ptr->entry_count] = pSVar3;
   this_ptr->entry_count = this_ptr->entry_count + 1;
-  return pSVar3->name;
+  return pSVar3;
 }

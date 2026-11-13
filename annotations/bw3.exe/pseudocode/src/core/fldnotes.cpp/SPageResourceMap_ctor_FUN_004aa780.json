@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 110,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 10,
-    "suspect_count": 9,
+    "suspect_count": 7,
     "suspect_types": [
-      "extra_output",
-      "unnamed_param"
+      "extra_output"
     ],
     "total_lines": 25
   },
@@ -33,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004aa780",
-    "signature": "void __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004aa780(SPageResourceMap *this_ptr,int param_2)"
+    "signature": "SPageResourceMap * __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004aa780(SPageResourceMap *this_ptr,SNotesMap *map)"
   },
   "function_calls": [
     {
@@ -121,28 +120,20 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "map",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "SNotesMap *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004aa780(SPageResourceMap *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 5,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "int extraout_EAX;",
+      "text": "SPageResourceMap *extraout_EAX;",
       "type": "extra_output"
     },
     {
@@ -150,7 +141,7 @@
       "line": 8,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "*(byte ***)(extraout_EAX + 0x14) = &g_SPageResourceMapVTable;",
+      "text": "(extraout_EAX->base).vtable = &g_SPageResourceMapVTable;",
       "type": "extra_output"
     },
     {
@@ -158,39 +149,15 @@
       "line": 9,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "*(int *)(extraout_EAX + 0x18) = param_2;",
+      "text": "extraout_EAX->map = map;",
       "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(int *)(extraout_EAX + 0x18) = param_2;",
-      "type": "unnamed_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 10,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "*(uint *)(extraout_EAX + 8) = *(uint *)(param_2 + 0x68);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)(extraout_EAX + 8) = *(uint *)(param_2 + 0x68);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "*(uint *)(extraout_EAX + 0xc) = *(uint *)(*(int *)(extraout_EAX + 0x18) + 0x6c);",
+      "text": "(extraout_EAX->base).width = map->width;",
       "type": "extra_output"
     },
     {
@@ -198,7 +165,23 @@
       "line": 11,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "*(uint *)(extraout_EAX + 0xc) = *(uint *)(*(int *)(extraout_EAX + 0x18) + 0x6c);",
+      "text": "(extraout_EAX->base).height = extraout_EAX->map->height;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "(extraout_EAX->base).height = extraout_EAX->map->height;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "return extraout_EAX;",
       "type": "extra_output"
     }
   ]

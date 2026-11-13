@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_platfrm.cpp_CPlatform_process_FUN_005184c0 at 0051854a
-;   core_script.cpp_FUN_00522350 at 0052635e
+;   core_script.cpp_CScript_step_FUN_00522350 at 0052635e
 ;
 ; *****************************************************************************
 

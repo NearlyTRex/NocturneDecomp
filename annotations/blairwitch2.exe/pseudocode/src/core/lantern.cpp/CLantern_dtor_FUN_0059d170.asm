@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLantern * core_lantern_cpp_CLantern_dtor_FUN_0059d170(CLantern *this_ptr,uint flags)
+; CLantern * __cdecl core_lantern_cpp_CLantern_dtor_FUN_0059d170(CLantern *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CLantern *       Stack[0x4]:4   this_ptr

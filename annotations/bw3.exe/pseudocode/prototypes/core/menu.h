@@ -37,9 +37,9 @@ void __cdecl showCalibrationTest(void);
 // Address: 004e85a0
 void __cdecl FUN_004e85a0(void);
 
-// Original: core_menu.cpp_FUN_004e8f2e
-// Address: 004e8f2e
-undefined4 FUN_004e8f2e(void);
+// Original: core_menu.cpp_FUN_004e8f30
+// Address: 004e8f30
+undefined4 FUN_004e8f30(void);
 
 // Original: core_menu.cpp_FUN_004e8f80
 // Address: 004e8f80

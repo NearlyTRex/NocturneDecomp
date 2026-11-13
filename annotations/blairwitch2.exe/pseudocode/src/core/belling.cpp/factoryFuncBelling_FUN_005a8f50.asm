@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_belling_cpp_factoryFuncBelling_FUN_005a8f50(void)
+; CBelling * __cdecl core_belling_cpp_factoryFuncBelling_FUN_005a8f50(void)
 ;
 ;
 ; Called Functions:

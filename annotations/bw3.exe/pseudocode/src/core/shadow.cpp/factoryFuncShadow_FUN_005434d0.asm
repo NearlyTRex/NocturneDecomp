@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shadow_cpp_factoryFuncShadow_FUN_005434d0(void)
+; CShadow * __cdecl core_shadow_cpp_factoryFuncShadow_FUN_005434d0(void)
 ;
 ;
 ; Called Functions:

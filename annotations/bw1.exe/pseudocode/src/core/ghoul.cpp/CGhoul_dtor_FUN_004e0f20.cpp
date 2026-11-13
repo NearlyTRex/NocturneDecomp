@@ -1,14 +1,12 @@
 // Name: core_ghoul.cpp_CGhoul_dtor_FUN_004e0f20
 // Address: 004e0f20
 // Address Range: [[004e0f20, 004e0fa4]]
-// Convention: unknown
-// Signature: CGhoul * core_ghoul_cpp_CGhoul_dtor_FUN_004e0f20(CGhoul *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CGhoul * __cdecl core_ghoul_cpp_CGhoul_dtor_FUN_004e0f20(CGhoul *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CGhoul * core_ghoul_cpp_CGhoul_dtor_FUN_004e0f20(CGhoul *this_ptr,uint flags)
+CGhoul * __cdecl core_ghoul_cpp_CGhoul_dtor_FUN_004e0f20(CGhoul *this_ptr,uint flags)
 
 {
   int iVar1;

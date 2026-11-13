@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFrankenstienMachine * core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004ad050(CFrankenstienMachine *this_ptr,uint flags)
+; CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004ad050(CFrankenstienMachine *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr

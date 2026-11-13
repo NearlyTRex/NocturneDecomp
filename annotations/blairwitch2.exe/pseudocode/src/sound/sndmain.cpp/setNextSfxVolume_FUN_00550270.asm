@@ -14,7 +14,7 @@
 ;   core_lightgun.cpp_CLightGun_process_FUN_004e38d0 at 004e3a93
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20 at 004e6be5
 ;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055aa1e
-;   core_sound.cpp_FUN_00559b4e at 00559e77
+;   core_sound.cpp_FUN_00559b50 at 00559e77
 ;   core_sound.cpp_playSfxInternal_FUN_005594c0 at 005596db
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 005656a8
 ;

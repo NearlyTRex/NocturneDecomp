@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SNotesMap * core_fldnotes_cpp_SNotesMap_ctor_FUN_004bc1b0(SNotesMap *this_ptr)
+; SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_ctor_FUN_004bc1b0(SNotesMap *this_ptr)
 ;
 ; Parameters:
 ; SNotesMap *      Stack[0x4]:4   this_ptr

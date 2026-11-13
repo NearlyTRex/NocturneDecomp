@@ -1,14 +1,12 @@
 // Name: core_bride.cpp_CBride_dtor_FUN_0041ee50
 // Address: 0041ee50
 // Address Range: [[0041ee50, 0041eee4]]
-// Convention: unknown
-// Signature: CBride * core_bride_cpp_CBride_dtor_FUN_0041ee50(CBride *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBride * __cdecl core_bride_cpp_CBride_dtor_FUN_0041ee50(CBride *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBride * core_bride_cpp_CBride_dtor_FUN_0041ee50(CBride *this_ptr,uint flags)
+CBride * __cdecl core_bride_cpp_CBride_dtor_FUN_0041ee50(CBride *this_ptr,uint flags)
 
 {
   int iVar1;

@@ -2,11 +2,11 @@
 // Address: 00412ee0
 // Address Range: [[00412ee0, 004131ac]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00412ee0(CAudioRecPuzzle *this_ptr,undefined4 param_2,int param_3)
+// Signature: void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00412ee0(CAudioRecPuzzle *this_ptr,int knob0,int knob1,int knob2,int speed,int transport_state)
 
 #include "nocturne.h"
 
-void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00412ee0(CAudioRecPuzzle *this_ptr,uint param_2,int param_3)
+void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00412ee0(CAudioRecPuzzle *this_ptr,int knob0,int knob1,int knob2,int speed,int transport_state)
 
 {
   char cVar1;
@@ -127,7 +127,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00412ee0(CAudioRecPu
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iStack_18 = param_3 - this_ptr->solution[1];
+  iStack_18 = knob1 - this_ptr->solution[1];
   _sprintf(acStack_34c,&DAT_005b67de);
   _sprintf(acStack_44c,&DAT_005b67e1);
   pcVar5 = &DAT_005b67e4;

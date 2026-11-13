@@ -10,7 +10,7 @@
 ; XREF[56]:
 ;   core_armour.cpp_CArmour_dtor_FUN_0040f120 at 0040f155
 ;   core_armour.cpp_CEnemy_dtor_FUN_0040f1c0 at 0040f1f5
-;   core_basicene.cpp_FUN_005a0780 at 005a07ac
+;   core_basicene.cpp_CBasicEnemy_dtor_FUN_005a0780 at 005a07ac
 ;   core_basicnpc.cpp_CBasicNPC_dtor_FUN_005a4980 at 005a49b5
 ;   core_batcreat.cpp_CBatCreature_dtor_FUN_00412a20 at 00412a55
 ;   core_batman.cpp_CBatman_dtor_FUN_00414620 at 00414655

@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_STextView_setRect_FUN_004a8eb0(STextView *this_ptr,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl core_fldnotes_cpp_STextView_setRect_FUN_004a8eb0(STextView *this_ptr,int left,int top,int right,int bottom)
 ;
 ; Parameters:
 ; STextView *      Stack[0x4]:4   this_ptr
-; undefined4       Stack[0x8]:4   param_2
-; undefined4       Stack[0xc]:4   param_3
-; undefined4       Stack[0x10]:4   param_4
-; undefined4       Stack[0x14]:4   param_5
+; int              Stack[0x8]:4   left
+; int              Stack[0xc]:4   top
+; int              Stack[0x10]:4   right
+; int              Stack[0x14]:4   bottom
 ;
 ; XREF[5]:
-;   core_flashlit.cpp_FUN_004a826e at 004a8286
-;   core_flashlit.cpp_FUN_004a82ee at 004a8313
+;   core_flashlit.cpp_FUN_004a8270 at 004a8286
+;   core_flashlit.cpp_FUN_004a82f0 at 004a8313
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004abe5f
 ;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aa9af
 ;   core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90 at 004abbf2
-;   core_fldnotes.cpp_FUN_004abe00 at 004abe5f
 ;
 ; *****************************************************************************
 

@@ -1,20 +1,20 @@
 // Name: core_tawiscara.cpp_factoryFuncTawiscara_FUN_00593da0
 // Address: 00593da0
 // Address Range: [[00593da0, 00593dbb]]
-// Convention: unknown
-// Signature: void core_tawiscara_cpp_factoryFuncTawiscara_FUN_00593da0(void)
+// Convention: __cdecl
+// Signature: CTawiscara * __cdecl core_tawiscara_cpp_factoryFuncTawiscara_FUN_00593da0(void)
 
 #include "nocturne.h"
 
-void core_tawiscara_cpp_factoryFuncTawiscara_FUN_00593da0(void)
+CTawiscara * __cdecl core_tawiscara_cpp_factoryFuncTawiscara_FUN_00593da0(void)
 
 {
-  CTawiscara *this_ptr;
+  CTawiscara *pCVar1;
   
-  this_ptr = (CTawiscara *)operator_new(0xd09c);
-  if (this_ptr == (CTawiscara *)0x0) {
-    return;
+  pCVar1 = (CTawiscara *)operator_new(0xd09c);
+  if (pCVar1 == (CTawiscara *)0x0) {
+    return (CTawiscara *)0x0;
   }
-  core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0(this_ptr);
-  return;
+  pCVar1 = core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0(pCVar1);
+  return pCVar1;
 }

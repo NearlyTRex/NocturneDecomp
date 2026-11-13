@@ -18,13 +18,14 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPacked
   ushort *buffer;
   uint uVar4;
   int iVar5;
+  int unaff_EBP;
   byte *pbVar6;
   byte *pbVar7;
   bool bVar8;
   bool bVar9;
   byte bVar10;
-  byte abStack_2c [4];
-  int iStack_28;
+  int in_stack_00000010;
+  byte abStack_28 [4];
   int iStack_24;
   int iStack_20;
   int iStack_1c;
@@ -32,15 +33,15 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPacked
   int iStack_14;
   
   bVar10 = 0;
-  cockpit_pkbitmap_cpp_FUN_00537550(this_ptr);
+  cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_00537550(this_ptr);
   do {
-    SVar1 = _fread(abStack_2c,0x1c,1,file_handle);
+    SVar1 = _fread(abStack_28,0x1c,1,file_handle);
     if (SVar1 != 1) goto LAB_0053830e;
     iVar5 = 4;
     bVar8 = false;
     iVar2 = 0;
     bVar9 = true;
-    pbVar6 = abStack_2c;
+    pbVar6 = abStack_28;
     pbVar7 = (byte *)0x62281c;
     do {
       if (iVar5 == 0) break;
@@ -53,11 +54,11 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPacked
     if (!bVar9) {
       iVar2 = (1 - (uint)bVar8) - (uint)(bVar8 != 0);
     }
-    if (((iVar2 == 0) && (iStack_28 != 0)) && (iStack_24 != 0)) {
-      this_ptr->width = iStack_28;
-      this_ptr->height = iStack_24;
-      if (((iStack_20 != 0) || (iStack_1c != 0)) ||
-         ((this_ptr->width + -1 != iStack_18 || (this_ptr->height + -1 != iStack_14))))
+    if (((iVar2 == 0) && (iStack_24 != 0)) && (iStack_20 != 0)) {
+      this_ptr->width = iStack_24;
+      this_ptr->height = iStack_20;
+      if (((iStack_1c != 0) || (iStack_18 != 0)) ||
+         ((this_ptr->width + -1 != iStack_14 || (this_ptr->height + -1 != unaff_EBP))))
       goto LAB_005382ca;
       piVar3 = (int *)operator_new_array((this_ptr->height + 1) * 4);
       this_ptr->row_offsets = piVar3;
@@ -76,7 +77,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPacked
             } while (iVar2 < this_ptr->height);
           }
           size = this_ptr->row_offsets[this_ptr->height];
-          if (skip_data_load != 0) {
+          if (in_stack_00000010 != 0) {
             _fseek(file_handle,size,1);
             return;
           }

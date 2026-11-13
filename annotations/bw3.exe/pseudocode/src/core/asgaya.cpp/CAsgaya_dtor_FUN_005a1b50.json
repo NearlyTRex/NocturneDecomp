@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 65,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 29,
     "suspect_count": 3,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 101
+    "total_lines": 100
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "005a1bf4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_asgaya.cpp_CAsgaya_dtor_FUN_005a1b50",
-    "signature": "CAsgaya * core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags)"
+    "signature": "CAsgaya * __cdecl core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -136,7 +136,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 19,
       "match": "pCVar1[-2].",
       "severity": "mild",
       "text": "((CPathMap *)&pCVar1[-2].last_pathfinding_result,0);",
@@ -144,7 +144,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
+      "line": 20,
       "match": "pCVar1[-1].",
       "severity": "mild",
       "text": "iVar2 = core_armour_cpp_FUN_00410370(pCVar1[-1].height_cache_tags[4] + 0x2f,0);",
@@ -152,7 +152,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 28,
+      "line": 26,
       "match": "pCVar4[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);",

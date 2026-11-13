@@ -1,14 +1,12 @@
 // Name: core_bugs.cpp_CBugs_dtor_FUN_00428180
 // Address: 00428180
 // Address Range: [[00428180, 00428204]]
-// Convention: unknown
-// Signature: CBugs * core_bugs_cpp_CBugs_dtor_FUN_00428180(CBugs *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBugs * __cdecl core_bugs_cpp_CBugs_dtor_FUN_00428180(CBugs *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBugs * core_bugs_cpp_CBugs_dtor_FUN_00428180(CBugs *this_ptr,uint flags)
+CBugs * __cdecl core_bugs_cpp_CBugs_dtor_FUN_00428180(CBugs *this_ptr,uint flags)
 
 {
   int iVar1;

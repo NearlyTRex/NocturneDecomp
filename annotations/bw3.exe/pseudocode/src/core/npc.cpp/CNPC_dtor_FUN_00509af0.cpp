@@ -1,14 +1,12 @@
 // Name: core_npc.cpp_CNPC_dtor_FUN_00509af0
 // Address: 00509af0
 // Address Range: [[00509af0, 00509b84]]
-// Convention: unknown
-// Signature: CNPC * core_npc_cpp_CNPC_dtor_FUN_00509af0(CNPC *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CNPC * __cdecl core_npc_cpp_CNPC_dtor_FUN_00509af0(CNPC *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CNPC * core_npc_cpp_CNPC_dtor_FUN_00509af0(CNPC *this_ptr,uint flags)
+CNPC * __cdecl core_npc_cpp_CNPC_dtor_FUN_00509af0(CNPC *this_ptr,uint flags)
 
 {
   CPathMap *pCVar1;

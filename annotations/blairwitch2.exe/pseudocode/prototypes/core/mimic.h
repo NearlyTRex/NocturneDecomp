@@ -7,7 +7,7 @@
 
 // Original: core_mimic.cpp_staticInit_FUN_004f0250
 // Address: 004f0250
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_mimic.cpp_mirrorXTransform_FUN_004f0280
 // Address: 004f0280
@@ -19,7 +19,7 @@ CMimic * __cdecl factoryFuncMimic(void);
 
 // Original: core_mimic.cpp_CMimic_getActorType_FUN_004f0300
 // Address: 004f0300
-CDemonActorType * CMimic::getActorType(CMimic *this_ptr);
+CDemonActorType * __cdecl CMimic::getActorType(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_ctor_FUN_004f0310
 // Address: 004f0310
@@ -27,7 +27,7 @@ CMimic * __cdecl CMimic::ctor(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_dtor_FUN_004f0400
 // Address: 004f0400
-CMimic * CMimic::dtor(CMimic *this_ptr,uint flags);
+CMimic * __cdecl CMimic::dtor(CMimic *this_ptr,uint flags);
 
 // Original: core_mimic.cpp_CMimic_setup_FUN_004f04f0
 // Address: 004f04f0

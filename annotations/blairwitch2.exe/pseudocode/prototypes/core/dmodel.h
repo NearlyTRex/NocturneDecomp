@@ -119,4 +119,4 @@ void __cdecl CKeyFramedModelInstance::setModelName(CKeyFramedModelInstance *this
 
 // Original: core_dmodel.cpp_CKeyFramedModel_arrdtor256_FUN_0044fdb0
 // Address: 0044fdb0
-CKeyFramedModel * CKeyFramedModel::arrdtor256(CKeyFramedModel *this_ptr,uint flags);
+CKeyFramedModel * __cdecl CKeyFramedModel::arrdtor256(CKeyFramedModel *this_ptr,uint flags);

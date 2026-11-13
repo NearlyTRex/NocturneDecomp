@@ -1,0 +1,332 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 92,
+    "complexity_score": 302,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 47,
+    "suspect_count": 24,
+    "suspect_types": [
+      "stack_param",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 139
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00485470",
+    "address_range": [
+      [
+        "00485470",
+        "00485551"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "shape_edittool.cpp_FUN_00485470",
+    "signature": "void shape_edittool_cpp_FUN_00485470(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "004aafb0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0"
+    },
+    {
+      "addr": "004aaf00",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
+    },
+    {
+      "addr": "00485580",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00485580"
+    },
+    {
+      "addr": "004855f0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_004855f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c25590",
+      "name": "DAT_01c25590",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25f78",
+      "name": "DAT_01c25f78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25f7c",
+      "name": "DAT_01c25f7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9066666666666667,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 4,
+      "COPY": 55,
+      "INT_ADD": 33,
+      "INT_AND": 33,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 32,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 16,
+      "INT_SUB": 23,
+      "LOAD": 15,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 26
+    },
+    "pcode_op_count": 293
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CEdCheck *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "char *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "if (in_stack_00000010 == (char *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "in_stack_00000010 = (char *)0x5d2b05;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->x_position = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000004->x_position = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "pcVar6 = in_stack_00000004->checkbox_text;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->y_position = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_00000004->y_position = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "cVar1 = *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "cVar1 = in_stack_00000010[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "in_stack_00000010 = in_stack_00000010 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "in_stack_00000010 = in_stack_00000010 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(_DAT_01c25590,in_stack_00000004->checkbox_text);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->right_boundary = in_stack_00000004->y_position + iVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->right_boundary = in_stack_00000004->y_position + iVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar3 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00485580(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar2 = in_stack_00000004->x_position;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(_DAT_01c25590,in_stack_00000004->checkbox_text);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->total_width = iVar2 + iVar3 + iVar4 + iVar5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 25,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

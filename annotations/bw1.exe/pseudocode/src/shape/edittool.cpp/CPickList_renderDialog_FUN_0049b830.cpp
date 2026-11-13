@@ -64,15 +64,15 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_0049b830(CPickList *t
             }
             else {
               iVar3 = (uVar10 & 0xff) * 3;
-              engine_mini3d_cpp_FUN_00517d50
+              engine_mini3d_cpp_setColor_FUN_00517d50
                         ((uint)(&DAT_01c4e9fa)[iVar3] |
                          (uint)(&DAT_01c4e9f8)[iVar3] << 0x10 | (uint)(&DAT_01c4e9f9)[iVar3] << 8);
-              engine_mini3d_cpp_FUN_00518010(iVar7,iVar6,local_38,local_30);
+              engine_mini3d_cpp_fillRect_FUN_00518010(iVar7,iVar6,local_38,local_30);
             }
             if (this_ptr->selection_state == -1) {
               uVar10 = _DAT_01c3f544;
               if (_DAT_01c3f544 != 0) {
-                engine_mini3d_cpp_FUN_00517d50
+                engine_mini3d_cpp_setColor_FUN_00517d50
                           ((uint)DAT_01c4e9fa | (uint)DAT_01c4e9f9 << 8 | (uint)DAT_01c4e9f8 << 0x10
                           );
                 uVar10 = _DAT_01c4f020;
@@ -102,7 +102,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_0049b830(CPickList *t
             }
             *pcVar12 = '\0';
             engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
-            engine_mini3d_cpp_FUN_00512320(0x3f800000);
+            engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
             engine_font_cpp_FUN_004c1dd0(_DAT_01c3eb50,local_164,iVar6,local_1c,local_20,0xffffffff)
             ;
             piVar1 = local_14 + 1;
@@ -120,7 +120,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_0049b830(CPickList *t
         uVar5 = _DAT_01c3f5a8;
         if (_DAT_01c3f544 != 0) {
           iVar7 = (_DAT_01c3f5a8 & 0xff) * 3;
-          engine_mini3d_cpp_FUN_00517d50
+          engine_mini3d_cpp_setColor_FUN_00517d50
                     ((uint)(&DAT_01c4e9fa)[iVar7] |
                      (uint)(&DAT_01c4e9f9)[iVar7] << 8 | (uint)(&DAT_01c4e9f8)[iVar7] << 0x10);
           uVar5 = _DAT_01c4f020;

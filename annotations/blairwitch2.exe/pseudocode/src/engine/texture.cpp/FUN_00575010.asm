@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee492
 ;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_004fcf50 at 004fcf50
-;   engine_mini3d.cpp_FUN_004f3420 at 004f3420
+;   engine_mini3d.cpp_resetTextureCache_FUN_004f3420 at 004f3420
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02652eb0

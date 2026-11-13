@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hpatrol_cpp_staticInit_FUN_0059c580(void)
+; void __cdecl core_hpatrol_cpp_staticInit_FUN_0059c580(void)
 ;
 ;
 ; Called Functions:

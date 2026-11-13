@@ -97,9 +97,9 @@ void __cdecl CPod::initSearch(CPod *this_ptr,char *search_pattern,CPodSearchCont
 // Address: 0051b5d0
 int __cdecl CPod::getNextSearchResult(CPod *this_ptr,CPodSearchContext *search_context);
 
-// Original: engine_pod.cpp_FUN_0051b6dc
-// Address: 0051b6dc
-void FUN_0051b6dc(undefined4 param_1,char *param_2);
+// Original: engine_pod.cpp_FUN_0051b6e0
+// Address: 0051b6e0
+void FUN_0051b6e0(void);
 
 // Original: engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0
 // Address: 0051b8d0

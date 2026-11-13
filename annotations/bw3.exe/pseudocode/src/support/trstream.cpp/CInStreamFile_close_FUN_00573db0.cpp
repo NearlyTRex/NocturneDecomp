@@ -2,11 +2,11 @@
 // Address: 00573db0
 // Address Range: [[00573db0, 00573df1]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_trstream_cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile *this_ptr)
+// Signature: int __cdecl support_trstream_cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl support_trstream_cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile *this_ptr)
+int __cdecl support_trstream_cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile *this_ptr)
 
 {
   if (this_ptr->file_handle != (HANDLE)0x0) {

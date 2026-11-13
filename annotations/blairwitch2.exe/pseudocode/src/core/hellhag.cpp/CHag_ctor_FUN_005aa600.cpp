@@ -1,15 +1,14 @@
 // Name: core_hellhag.cpp_CHag_ctor_FUN_005aa600
 // Address: 005aa600
 // Address Range: [[005aa600, 005aa7d8]]
-// Convention: unknown
-// Signature: CHag * core_hellhag_cpp_CHag_ctor_FUN_005aa600(CHag *this_ptr)
+// Convention: __cdecl
+// Signature: CHag * __cdecl core_hellhag_cpp_CHag_ctor_FUN_005aa600(CHag *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CHag * core_hellhag_cpp_CHag_ctor_FUN_005aa600(CHag *this_ptr)
+CHag * __cdecl core_hellhag_cpp_CHag_ctor_FUN_005aa600(CHag *this_ptr)
 
 {
   CClothList *this_ptr_00;

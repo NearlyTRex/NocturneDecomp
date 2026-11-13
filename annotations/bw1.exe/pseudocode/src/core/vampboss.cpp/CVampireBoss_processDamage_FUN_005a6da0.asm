@@ -25,7 +25,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_getRandomInt_FUN_0040cc60
-;   core_charactr.cpp_FUN_004325b0
+;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0
 ;   core_inv.cpp_FUN_004f8c40
@@ -249,8 +249,8 @@ section .text
     PUSH EDI                            ; 005a6fa5
     PUSH 0x0                            ; 005a6fa6
     PUSH EBP                            ; 005a6fa8
-    CALL core_charactr.cpp_FUN_004325b0 ; 005a6fa9
-        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004325b0()
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0 ; 005a6fa9
+        ;   XREF to: 004325b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_004325b0(CCharacter * this_ptr, int param_2, int param_3, undefined4 param_4, ...)
     ADD ESP,0x14                        ; 005a6fae
     PUSH 0x5f8e9a                       ; 005a6fb1 | = "VampireBossBitesIt"
     MOV ECX,dword ptr [0x0061b4d0]      ; 005a6fb6 | DAT_0061b4d0

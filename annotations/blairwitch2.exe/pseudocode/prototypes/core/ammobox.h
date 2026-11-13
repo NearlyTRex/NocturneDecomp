@@ -7,7 +7,7 @@
 
 // Original: core_ammobox.cpp_staticInit_FUN_0040e4b0
 // Address: 0040e4b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_ammobox.cpp_factoryFuncAmmoBox_FUN_0040e4e0
 // Address: 0040e4e0
@@ -15,7 +15,7 @@ CAmmoBox * __cdecl factoryFuncAmmoBox(void);
 
 // Original: core_ammobox.cpp_CAmmoBox_getActorType_FUN_0040e500
 // Address: 0040e500
-CDemonActorType * CAmmoBox::getActorType(CAmmoBox *this_ptr);
+CDemonActorType * __cdecl CAmmoBox::getActorType(CAmmoBox *this_ptr);
 
 // Original: core_ammobox.cpp_CAmmoBox_ctor_FUN_0040e510
 // Address: 0040e510

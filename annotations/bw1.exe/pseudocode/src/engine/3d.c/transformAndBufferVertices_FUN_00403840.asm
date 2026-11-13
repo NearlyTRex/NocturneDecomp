@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_3d_c_transformAndBufferVertices_FUN_00403840(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended *mrgl)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ;
 ; XREF[1]:
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407820 at 0040785d

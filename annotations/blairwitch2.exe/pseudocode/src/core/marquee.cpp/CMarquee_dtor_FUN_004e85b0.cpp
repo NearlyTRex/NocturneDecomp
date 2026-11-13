@@ -1,14 +1,12 @@
 // Name: core_marquee.cpp_CMarquee_dtor_FUN_004e85b0
 // Address: 004e85b0
 // Address Range: [[004e85b0, 004e8614]]
-// Convention: unknown
-// Signature: CMarquee * core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CMarquee * core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags)
+CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags)
 
 {
   CCourse *pCVar1;

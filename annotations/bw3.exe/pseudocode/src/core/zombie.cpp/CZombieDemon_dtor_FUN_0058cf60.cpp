@@ -1,14 +1,12 @@
 // Name: core_zombie.cpp_CZombieDemon_dtor_FUN_0058cf60
 // Address: 0058cf60
 // Address Range: [[0058cf60, 0058cfe4]]
-// Convention: unknown
-// Signature: CZombieDemon * core_zombie_cpp_CZombieDemon_dtor_FUN_0058cf60(CZombieDemon *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CZombieDemon * __cdecl core_zombie_cpp_CZombieDemon_dtor_FUN_0058cf60(CZombieDemon *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CZombieDemon * core_zombie_cpp_CZombieDemon_dtor_FUN_0058cf60(CZombieDemon *this_ptr,uint flags)
+CZombieDemon * __cdecl core_zombie_cpp_CZombieDemon_dtor_FUN_0058cf60(CZombieDemon *this_ptr,uint flags)
 
 {
   int iVar1;

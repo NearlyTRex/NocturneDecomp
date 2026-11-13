@@ -1,15 +1,14 @@
 // Name: core_tawiscara.cpp_CTawiscara_ctor_FUN_00593dd0
 // Address: 00593dd0
 // Address Range: [[00593dd0, 00593e7d]]
-// Convention: unknown
-// Signature: CTawiscara * core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0(CTawiscara *this_ptr)
+// Convention: __cdecl
+// Signature: CTawiscara * __cdecl core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0(CTawiscara *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CTawiscara * core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0(CTawiscara *this_ptr)
+CTawiscara * __cdecl core_tawiscara_cpp_CTawiscara_ctor_FUN_00593dd0(CTawiscara *this_ptr)
 
 {
   float fVar1;

@@ -46,7 +46,7 @@
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;   engine_font.cpp_FUN_004a8df0
-;   engine_mini3d.cpp_FUN_004f3570
+;   engine_mini3d.cpp_setAlpha_FUN_004f3570
 ;   shape_edittool.cpp_calculateButtonHeight_FUN_00485380
 ;   shape_edittool.cpp_calculateButtonWidth_FUN_004852f0
 ;   shape_edittool.cpp_CEdButton_ctor_FUN_00484e20
@@ -226,8 +226,8 @@ section .text
         ;   XREF to: 00406da0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406da0(int alpha_color_value)
     ADD ESP,0x4                         ; 0047b9f8
     PUSH 0x3f800000                     ; 0047b9fb
-    CALL engine_mini3d.cpp_FUN_004f3570 ; 0047ba00
-        ;   XREF to: 004f3570 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3570()
+    CALL engine_mini3d.cpp_setAlpha_FUN_004f3570 ; 0047ba00
+        ;   XREF to: 004f3570 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004f3570(float alpha)
     MOV EDX,dword ptr [0x01c35e4c]      ; 0047ba05 | DAT_01c35e4c
     MOV ECX,dword ptr [0x01c35e54]      ; 0047ba0b | DAT_01c35e54
     ADD ESP,0x4                         ; 0047ba11

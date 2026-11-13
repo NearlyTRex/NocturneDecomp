@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_dtor_FUN_004fbb00
-;   core_skeleton.cpp_FUN_0054c060
+;   core_skeleton.cpp_CDeformableModelInstance_free_FUN_0054c060
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
@@ -43,8 +43,8 @@ section .text
         ;   XREF to: 0054bfb6 (CONDITIONAL_JUMP)  ; LAB_0054bfb6
     PUSH EBX                            ; 0054bf8c
     MOV dword ptr [EBX + 0x50],0x5e4784 ; 0054bf8d | g_CDeformableModelInstanceVTable
-    CALL core_skeleton.cpp_FUN_0054c060 ; 0054bf94
-        ;   XREF to: 0054c060 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054c060()
+    CALL core_skeleton.cpp_CDeformableModelInstance_free_FUN_0054c060 ; 0054bf94
+        ;   XREF to: 0054c060 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_free_FUN_0054c060(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054bf99
     PUSH 0x1                            ; 0054bf9c
     PUSH EBX                            ; 0054bf9e

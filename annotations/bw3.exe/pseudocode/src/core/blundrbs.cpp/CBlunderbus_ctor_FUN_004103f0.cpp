@@ -1,15 +1,14 @@
 // Name: core_blundrbs.cpp_CBlunderbus_ctor_FUN_004103f0
 // Address: 004103f0
 // Address Range: [[004103f0, 0041048d]]
-// Convention: unknown
-// Signature: CBlunderbus * core_blundrbs_cpp_CBlunderbus_ctor_FUN_004103f0(CBlunderbus *this_ptr)
+// Convention: __cdecl
+// Signature: CBlunderbus * __cdecl core_blundrbs_cpp_CBlunderbus_ctor_FUN_004103f0(CBlunderbus *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CBlunderbus * core_blundrbs_cpp_CBlunderbus_ctor_FUN_004103f0(CBlunderbus *this_ptr)
+CBlunderbus * __cdecl core_blundrbs_cpp_CBlunderbus_ctor_FUN_004103f0(CBlunderbus *this_ptr)
 
 {
   float fVar1;

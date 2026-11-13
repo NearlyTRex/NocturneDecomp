@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_startDialogLine_FUN_00529750 at 0052978e
-;   core_script.cpp_FUN_00522350 at 00523de5
+;   core_script.cpp_CScript_step_FUN_00522350 at 00523de5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Must_specify_actor_name_005e2cc9

@@ -7,19 +7,19 @@
 
 // Original: core_union.cpp_staticInit_FUN_005a4a20
 // Address: 005a4a20
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_union.cpp_factoryFuncUnion_FUN_005a4a50
 // Address: 005a4a50
-void factoryFuncUnion(void);
+CUnion * __cdecl factoryFuncUnion(void);
 
 // Original: core_union.cpp_CUnion_getActorType_FUN_005a4a70
 // Address: 005a4a70
-CDemonActorType * CUnion::getActorType(CUnion *this_ptr);
+CDemonActorType * __cdecl CUnion::getActorType(CUnion *this_ptr);
 
 // Original: core_union.cpp_CUnion_ctor_FUN_005a4a80
 // Address: 005a4a80
-CUnion * CUnion::ctor(CUnion *this_ptr);
+CUnion * __cdecl CUnion::ctor(CUnion *this_ptr);
 
 // Original: core_union.cpp_CUnion_setup_FUN_005a4c00
 // Address: 005a4c00
@@ -75,4 +75,4 @@ void __cdecl CUnion::processDamage(CUnion *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_union.cpp_CUnion_dtor_FUN_005a5a40
 // Address: 005a5a40
-CUnion * CUnion::dtor(CUnion *this_ptr,uint flags);
+CUnion * __cdecl CUnion::dtor(CUnion *this_ptr,uint flags);

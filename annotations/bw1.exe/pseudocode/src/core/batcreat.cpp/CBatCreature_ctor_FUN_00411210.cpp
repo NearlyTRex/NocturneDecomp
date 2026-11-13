@@ -1,15 +1,14 @@
 // Name: core_batcreat.cpp_CBatCreature_ctor_FUN_00411210
 // Address: 00411210
 // Address Range: [[00411210, 00411275]]
-// Convention: unknown
-// Signature: CBatCreature * core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCreature *this_ptr)
+// Convention: __cdecl
+// Signature: CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCreature *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CBatCreature * core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCreature *this_ptr)
+CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCreature *this_ptr)
 
 {
   float fVar1;

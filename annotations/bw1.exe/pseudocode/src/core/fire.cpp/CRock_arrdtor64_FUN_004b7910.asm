@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CRock * core_fire_cpp_CRock_arrdtor64_FUN_004b7910(CRock *this_ptr,uint flags)
+; CRock * __cdecl core_fire_cpp_CRock_arrdtor64_FUN_004b7910(CRock *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CRock *          Stack[0x4]:4   this_ptr

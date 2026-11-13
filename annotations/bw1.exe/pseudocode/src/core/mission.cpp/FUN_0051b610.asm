@@ -7,7 +7,7 @@
 ; XREF[4]:
 ;   core_mission.cpp_CDemonMission_process_FUN_0051b8d0 at 0051ba10
 ;   core_mission.cpp_CDemonMission_run_FUN_0051bad0 at 0051bb27
-;   core_mission.cpp_FUN_0051ba5c at 0051babf
+;   core_mission.cpp_FUN_0051ba60 at 0051babf
 ;   core_mission.cpp_FUN_0051bdc0 at 0051be62
 ;
 ; Referenced Globals:

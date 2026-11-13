@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_unionzom_cpp_staticInit_FUN_005a3cd0(void)
+; void __cdecl core_unionzom_cpp_staticInit_FUN_005a3cd0(void)
 ;
 ;
 ; Called Functions:

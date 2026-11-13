@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_demnfolk_cpp_factoryFuncDemnfolk_FUN_004589e0(void)
+; CDemnfolk * __cdecl core_demnfolk_cpp_factoryFuncDemnfolk_FUN_004589e0(void)
 ;
 ;
 ; Called Functions:

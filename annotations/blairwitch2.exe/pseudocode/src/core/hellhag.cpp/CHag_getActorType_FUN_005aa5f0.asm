@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_hellhag_cpp_CHag_getActorType_FUN_005aa5f0(CHag *this_ptr)
+; CDemonActorType * __cdecl core_hellhag_cpp_CHag_getActorType_FUN_005aa5f0(CHag *this_ptr)
 ;
 ; Parameters:
 ; CHag *           Stack[0x4]:4   this_ptr

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 230,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
-    "suspect_count": 15,
+    "suspect_count": 5,
     "suspect_types": [
       "extra_output",
-      "unnamed_param",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
@@ -36,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fldnotes.cpp_SNotesSection_addEntry_FUN_004a9c80",
-    "signature": "char * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSection *this_ptr,char *param_2,int param_3)"
+    "signature": "SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSection *this_ptr,char *name,int kind)"
   },
   "function_calls": [
     {
@@ -207,17 +206,17 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "name",
         "offset": 8,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "kind",
         "offset": 12,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       }
     ]
   },
@@ -231,22 +230,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "char * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSection *this_ptr,char *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "char * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSection *this_ptr,char *param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 9,
       "match": "extraout_EAX",
@@ -255,76 +238,12 @@
       "type": "extra_output"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4330(\"Too many field note entries in section %s, adding entry %s\",this_ptr,param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 25,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "pSVar3 = extraout_EAX;",
       "type": "extra_output"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar5 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4330(\"Entry name '%s' is too long\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = param_2[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pSVar3->kind = param_3;",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBodyPart * core_bodypart_cpp_CBodyPart_dtor_FUN_00418c70(CBodyPart *this_ptr,uint flags)
+; CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00418c70(CBodyPart *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr
@@ -13,8 +13,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408730
-;   core_bodypart.cpp_FUN_00418d00
 ;   core_bodypart.cpp_FUN_0041b190
+;   core_bodypart.cpp_setCounts_FUN_00418d00
 ;   core_box.cpp_CBox_dtor_FUN_0041dab0
 ;   crt_memory.c___vec_delete_FUN_005c030f
 ;   crt_unknown.c_FUN_005c0336
@@ -34,8 +34,8 @@ section .text
     PUSH 0x0                            ; 00418c7e
     PUSH EBX                            ; 00418c80
     MOV dword ptr [EBX + 0x154],0x5fcad4 ; 00418c81 | g_CBodyPartVTable
-    CALL core_bodypart.cpp_FUN_00418d00 ; 00418c8b
-        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00418d00()
+    CALL core_bodypart.cpp_setCounts_FUN_00418d00 ; 00418c8b
+        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00418d00()
     ADD ESP,0xc                         ; 00418c90
     PUSH 0x0                            ; 00418c93
     ADD EBX,0xcd0                       ; 00418c95

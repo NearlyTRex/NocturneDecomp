@@ -1,12 +1,12 @@
 // Name: core_game.cpp_staticInit_FUN_004b3cd0
 // Address: 004b3cd0
 // Address Range: [[004b3cd0, 004b3d63]]
-// Convention: unknown
-// Signature: void core_game_cpp_staticInit_FUN_004b3cd0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_game_cpp_staticInit_FUN_004b3cd0(void)
 
 #include "nocturne.h"
 
-void core_game_cpp_staticInit_FUN_004b3cd0(void)
+void __cdecl core_game_cpp_staticInit_FUN_004b3cd0(void)
 
 {
   core_dlight_cpp_CDemonLight_ctor_FUN_0045c180(&g_CDemonLightInstance,0x100,0x100);

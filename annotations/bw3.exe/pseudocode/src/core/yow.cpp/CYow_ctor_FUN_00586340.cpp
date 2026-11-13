@@ -1,15 +1,14 @@
 // Name: core_yow.cpp_CYow_ctor_FUN_00586340
 // Address: 00586340
 // Address Range: [[00586340, 005863da]]
-// Convention: unknown
-// Signature: CYow * core_yow_cpp_CYow_ctor_FUN_00586340(CYow *this_ptr)
+// Convention: __cdecl
+// Signature: CYow * __cdecl core_yow_cpp_CYow_ctor_FUN_00586340(CYow *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CYow * core_yow_cpp_CYow_ctor_FUN_00586340(CYow *this_ptr)
+CYow * __cdecl core_yow_cpp_CYow_ctor_FUN_00586340(CYow *this_ptr)
 
 {
   float fVar1;

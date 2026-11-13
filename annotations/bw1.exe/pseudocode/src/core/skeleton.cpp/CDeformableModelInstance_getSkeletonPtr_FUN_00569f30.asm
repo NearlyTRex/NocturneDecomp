@@ -15,8 +15,8 @@
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_0041b940 at 0041b957
 ;   core_bride.cpp_CBride_setup_FUN_00423940 at 00423964
 ;   core_carved.cpp_CCarved_setup_FUN_004287e0 at 00428823
+;   core_charactr.cpp_CCharacter_applyGesture_FUN_00432cb0 at 00432ce3
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_004308a0 at 00430932
-;   core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0 at 0042f8f6
 ;   ... and 84 more
 ;
 ; Called Functions:

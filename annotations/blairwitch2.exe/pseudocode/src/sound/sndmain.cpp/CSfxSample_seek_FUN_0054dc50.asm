@@ -166,7 +166,7 @@ section .text
     PUSH EAX                            ; 0054dda5
     PUSH ESI                            ; 0054dda6
     CALL support_trstream.cpp_CInStreamFile_seek_FUN_0057d0c0 ; 0054dda7
-        ;   XREF to: 0057d0c0 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_CInStreamFile_seek_FUN_0057d0c0(CInStreamFile * this_ptr, int param_2, uint param_3)
+        ;   XREF to: 0057d0c0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_seek_FUN_0057d0c0(CInStreamFile * this_ptr, int offset, int origin)
     ADD ESP,0xc                         ; 0054ddac
     ADD ESP,0xc                         ; 0054ddaf
     POP EBP                             ; 0054ddb2

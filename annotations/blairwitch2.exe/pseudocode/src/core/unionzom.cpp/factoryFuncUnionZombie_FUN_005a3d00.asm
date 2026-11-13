@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_unionzom_cpp_factoryFuncUnionZombie_FUN_005a3d00(void)
+; CUnionZombie * __cdecl core_unionzom_cpp_factoryFuncUnionZombie_FUN_005a3d00(void)
 ;
 ;
 ; Called Functions:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SNotesMap * core_fldnotes_cpp_SNotesMap_dtor_FUN_004a3820(SNotesMap *this_ptr,uint flags)
+; SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_dtor_FUN_004a3820(SNotesMap *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SNotesMap *      Stack[0x4]:4   this_ptr

@@ -60,7 +60,8 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_00583160(CVampireB
             }
           }
         }
-        core_charactr_cpp_FUN_00428b10(this_ptr,0,this_ptr_00,0x3e4ccccd,0);
+        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
+                  ((CCharacter *)this_ptr,0,(int)this_ptr_00,0x3e4ccccd,0);
         core_event_cpp_CEventList_executeCommands_FUN_004894f0
                   (0x01C38BC0,"VampireBossBitesIt");
         sound_sndmain_cpp_killSfx_FUN_00551050(this_ptr->sfx_handle);

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 325,
-    "complexity_score": 815,
+    "complexity_score": 814,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 215,
+    "pseudocode_lines": 214,
     "suspect_count": 57,
     "suspect_types": [
       "negative_offset",
@@ -17,7 +17,7 @@
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 540
+    "total_lines": 539
   },
   "cross_references": [
     {
@@ -35,9 +35,9 @@
         "00450578"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_doc.cpp_CDoc_ctor_FUN_004500d0",
-    "signature": "CDoc * core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)"
+    "signature": "CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)"
   },
   "function_calls": [
     {
@@ -154,7 +154,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 25,
+      "line": 23,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.scrape_points[0].raytrace_normal.x = 0.0;",
@@ -162,7 +162,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 26,
+      "line": 24,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].rpm.y = 0.0;",
@@ -170,7 +170,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 27,
+      "line": 25,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].rpm.z = 0.0;",
@@ -178,7 +178,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 28,
+      "line": 26,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].fps = 0.0;",
@@ -186,7 +186,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
+      "line": 27,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].anim_frame = -0.5235988;",
@@ -194,7 +194,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 34,
+      "line": 32,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].push_sfx_handle = 0;",
@@ -202,7 +202,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 35,
+      "line": 33,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].pushed_by_actor = (CDemonActor *)0x0;",
@@ -210,7 +210,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 36,
+      "line": 34,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].carrier_actor = (CDemonActor *)0x0;",
@@ -218,7 +218,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 69,
+      "line": 67,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.rotation_matrix.m[1].x = 0.0;",
@@ -226,7 +226,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 87,
+      "line": 85,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.linear_velocity.z = -1e+30;",
@@ -234,7 +234,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 88,
+      "line": 86,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].pickup_type = EVar5;",
@@ -242,7 +242,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 89,
+      "line": 87,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.rotation_matrix.m[2].x = -1e+30;",
@@ -250,7 +250,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 90,
+      "line": 88,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].cam_orientation.heading = 0.0;",
@@ -258,7 +258,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 92,
+      "line": 90,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "uVar2 = *(uint *)(pCVar7[-1].push_sound + 0x14);",
@@ -266,7 +266,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 93,
+      "line": 91,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "uVar3 = *(uint *)(pCVar7[-1].push_sound + 0xc);",
@@ -274,7 +274,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 94,
+      "line": 92,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].constrain_extents_actor = pCVar7[-1].pushed_by_actor;",
@@ -282,7 +282,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 94,
+      "line": 92,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].constrain_extents_actor = pCVar7[-1].pushed_by_actor;",
@@ -290,7 +290,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 95,
+      "line": 93,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].can_be_pushed = (int)pCVar7[-1].carrier_actor;",
@@ -298,7 +298,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 95,
+      "line": 93,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].can_be_pushed = (int)pCVar7[-1].carrier_actor;",
@@ -306,7 +306,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 96,
+      "line": 94,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar7[-1].push_sound + 0x18) = uVar2;",
@@ -314,7 +314,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 97,
+      "line": 95,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "*(uint *)(pCVar7[-1].push_sound + 0x10) = uVar3;",
@@ -322,7 +322,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 113,
+      "line": 111,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.rotation_matrix.m[0].x = 0.0;",
@@ -330,7 +330,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 114,
+      "line": 112,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.orientation.z = pCVar7[-1].physics_box.rotation_matrix.m[0].x;",
@@ -338,7 +338,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 114,
+      "line": 112,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.orientation.z = pCVar7[-1].physics_box.rotation_matrix.m[0].x;",
@@ -346,7 +346,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 115,
+      "line": 113,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.orientation.y = pCVar7[-1].physics_box.orientation.z;",
@@ -354,7 +354,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 115,
+      "line": 113,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.orientation.y = pCVar7[-1].physics_box.orientation.z;",
@@ -362,7 +362,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 116,
+      "line": 114,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.rotation_matrix.m[0].y = -NAN;",
@@ -370,7 +370,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 133,
+      "line": 131,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.rotation_matrix.m[0].z = 0.0;",
@@ -378,7 +378,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 134,
+      "line": 132,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.rotation_matrix.m[1].y = 0.0;",
@@ -386,7 +386,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 171,
+      "line": 169,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.scrape_points[0].raytrace_intersection = 0.0;",
@@ -394,7 +394,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 172,
+      "line": 170,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.angular_momentum.x = 0.0;",
@@ -402,7 +402,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 173,
+      "line": 171,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].physics_box.scrape_points[0].local_position.z = 0.0;",
@@ -410,7 +410,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 174,
+      "line": 172,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar7[-1].cam_orientation.heading = 0.0;",
@@ -418,7 +418,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 176,
+      "line": 174,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pfVar9 = &pCVar7[-1].physics_box.scrape_points[0].raytrace_normal.y;",
@@ -426,7 +426,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 181,
+      "line": 179,
       "match": "(char *)((int)pfVar8",
       "severity": "moderate",
       "text": "cVar4 = *(char *)((int)pfVar8 + 1);",
@@ -434,7 +434,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 182,
+      "line": 180,
       "match": "(float *)((int)pfVar8",
       "severity": "moderate",
       "text": "pfVar8 = (float *)((int)pfVar8 + 2);",
@@ -442,7 +442,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 183,
+      "line": 181,
       "match": "(char *)((int)pfVar9",
       "severity": "moderate",
       "text": "*(char *)((int)pfVar9 + 1) = cVar4;",
@@ -450,7 +450,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 184,
+      "line": 182,
       "match": "(float *)((int)pfVar9",
       "severity": "moderate",
       "text": "pfVar9 = (float *)((int)pfVar9 + 2);",
@@ -458,7 +458,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 187,
+      "line": 185,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar10 = &pCVar7[-1].physics_box.scrape_points[5].raytrace_normal;",
@@ -466,7 +466,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 192,
+      "line": 190,
       "match": "(char *)((int)pfVar8",
       "severity": "moderate",
       "text": "cVar4 = *(char *)((int)pfVar8 + 1);",
@@ -474,7 +474,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 193,
+      "line": 191,
       "match": "(float *)((int)pfVar8",
       "severity": "moderate",
       "text": "pfVar8 = (float *)((int)pfVar8 + 2);",
@@ -482,7 +482,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 197,
+      "line": 195,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "pCVar7[-0x4d].base.particle_systems[2].fade_timer = 1.4013e-45;",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 200,
+      "line": 198,
       "match": "&stack0x00000110",
       "severity": "moderate",
       "text": "if (pfVar8 != (float *)&stack0x00000110) {",
@@ -498,7 +498,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 206,
+      "line": 204,
       "match": "&stack0x00000128",
       "severity": "moderate",
       "text": "if (piVar1 != (int *)&stack0x00000128) {",
@@ -506,7 +506,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 212,
+      "line": 210,
       "match": "&stack0x0000011c",
       "severity": "moderate",
       "text": "if (piVar1 == (int *)&stack0x0000011c) {",
@@ -514,7 +514,7 @@
     },
     {
       "description": "Pointer value `pCVar7[-1].carrier_actor` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 95,
+      "line": 93,
       "match": "(int)pCVar7[-1].carrier_actor",
       "severity": "moderate",
       "text": "pCVar7[-1].can_be_pushed = (int)pCVar7[-1].carrier_actor;",
@@ -522,7 +522,7 @@
     },
     {
       "description": "Pointer value `pfVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 181,
+      "line": 179,
       "match": "(int)pfVar8",
       "severity": "moderate",
       "text": "cVar4 = *(char *)((int)pfVar8 + 1);",
@@ -530,7 +530,7 @@
     },
     {
       "description": "Pointer value `pfVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 182,
+      "line": 180,
       "match": "(int)pfVar8",
       "severity": "moderate",
       "text": "pfVar8 = (float *)((int)pfVar8 + 2);",
@@ -538,7 +538,7 @@
     },
     {
       "description": "Pointer value `pfVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 183,
+      "line": 181,
       "match": "(int)pfVar9",
       "severity": "moderate",
       "text": "*(char *)((int)pfVar9 + 1) = cVar4;",
@@ -546,7 +546,7 @@
     },
     {
       "description": "Pointer value `pfVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 184,
+      "line": 182,
       "match": "(int)pfVar9",
       "severity": "moderate",
       "text": "pfVar9 = (float *)((int)pfVar9 + 2);",
@@ -554,7 +554,7 @@
     },
     {
       "description": "Pointer value `pfVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 192,
+      "line": 190,
       "match": "(int)pfVar8",
       "severity": "moderate",
       "text": "cVar4 = *(char *)((int)pfVar8 + 1);",
@@ -562,7 +562,7 @@
     },
     {
       "description": "Pointer value `pfVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 193,
+      "line": 191,
       "match": "(int)pfVar8",
       "severity": "moderate",
       "text": "pfVar8 = (float *)((int)pfVar8 + 2);",
@@ -570,7 +570,7 @@
     },
     {
       "description": "Pointer value `&pCVar10->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 194,
+      "line": 192,
       "match": "(int)&pCVar10->x",
       "severity": "moderate",
       "text": "*(char *)((int)&pCVar10->x + 1) = cVar4;",
@@ -578,7 +578,7 @@
     },
     {
       "description": "Pointer value `&pCVar10->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 195,
+      "line": 193,
       "match": "(int)&pCVar10->x",
       "severity": "moderate",
       "text": "pCVar10 = (CVector3f *)((int)&pCVar10->x + 2);",
@@ -586,7 +586,7 @@
     },
     {
       "description": "Raw hex address 0x450430 assigned to bare local `uStack00000104`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack00000104` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 167,
+      "line": 165,
       "match": "0x450430",
       "severity": "moderate",
       "text": "uStack00000104 = 0x450430;",
@@ -594,7 +594,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 194,
+      "line": 192,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(char *)((int)&pCVar10->x + 1) = cVar4;",
@@ -602,7 +602,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 195,
+      "line": 193,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pCVar10 = (CVector3f *)((int)&pCVar10->x + 2);",

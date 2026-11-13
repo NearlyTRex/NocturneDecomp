@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_wateract_cpp_CWaterActor_getActorType_FUN_00577d80(CWaterActor *this_ptr)
+; CDemonActorType * __cdecl core_wateract_cpp_CWaterActor_getActorType_FUN_00577d80(CWaterActor *this_ptr)
 ;
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr

@@ -1,14 +1,12 @@
 // Name: core_baal.cpp_CBaal_ctor_FUN_00596660
 // Address: 00596660
 // Address Range: [[00596660, 0059672b]]
-// Convention: unknown
-// Signature: CBaal * core_baal_cpp_CBaal_ctor_FUN_00596660(CBaal *this_ptr)
+// Convention: __cdecl
+// Signature: CBaal * __cdecl core_baal_cpp_CBaal_ctor_FUN_00596660(CBaal *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBaal * core_baal_cpp_CBaal_ctor_FUN_00596660(CBaal *this_ptr)
+CBaal * __cdecl core_baal_cpp_CBaal_ctor_FUN_00596660(CBaal *this_ptr)
 
 {
   CBaal *pCVar1;

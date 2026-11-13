@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bwsearch_cpp_staticInit_FUN_005a8c90(void)
+; void __cdecl core_bwsearch_cpp_staticInit_FUN_005a8c90(void)
 ;
 ;
 ; Called Functions:

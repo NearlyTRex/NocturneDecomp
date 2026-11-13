@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0(CInStreamFile *this_ptr,undefined4 *param_2,uint param_3)
+; int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0(CInStreamFile *this_ptr,void *buffer,int count)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; undefined4 *     Stack[0x8]:4   param_2
-; uint             Stack[0xc]:4   param_3
+; void *           Stack[0x8]:4   buffer
+; int              Stack[0xc]:4   count
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -17,14 +17,14 @@
 ;   engine_2d.c_FUN_00401590 at 004015c8
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010ed
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a9f
-;   engine_font.cpp_FUN_004a7fe2 at 004a816e
+;   engine_font.cpp_FUN_004a7fd0 at 004a816e
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80 at 00573e8f
-;   engine_texture.cpp_FUN_0057514e at 00575274
+;   engine_texture.cpp_FUN_00575150 at 00575274
 ;   sound_sndmain.cpp_FUN_0054c1c0 at 0054c517
 ;   sound_sndmain.cpp_FUN_0054ddf0 at 0054e324
 ;
 ; Called Functions:
-;   support_trstream.cpp_FUN_0057d280
+;   support_trstream.cpp_CInStreamFile_fillBuffer_FUN_0057d280
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
         ;   XREF to: 0057d046 (CONDITIONAL_JUMP)  ; LAB_0057d046
     PUSH EBX                            ; 0057d039
         ;   Label: LAB_0057d039
-    CALL support_trstream.cpp_FUN_0057d280 ; 0057d03a
-        ;   XREF to: 0057d280 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d280()
+    CALL support_trstream.cpp_CInStreamFile_fillBuffer_FUN_0057d280 ; 0057d03a
+        ;   XREF to: 0057d280 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_fillBuffer_FUN_0057d280(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0057d03f
     TEST EAX,EAX                        ; 0057d042
     JZ 0x0057d0a5                       ; 0057d044

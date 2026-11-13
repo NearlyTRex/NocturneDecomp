@@ -35,7 +35,7 @@ int __cdecl FUN_00401450(int red,int green,int blue,int start_index,int end_inde
 
 // Original: engine_2d.c_FUN_00401590
 // Address: 00401590
-void FUN_00401590(undefined4 param_1);
+void FUN_00401590(char *param_1);
 
 // Original: engine_2d.c_drawCharacter_FUN_00401620
 // Address: 00401620
@@ -53,9 +53,9 @@ void __cdecl setupViewportAndClipping(int left,int top,int right,int bottom);
 // Address: 004018b0
 int __cdecl getStringWidth(char *text);
 
-// Original: engine_2d.c_drawCharacterMasked_FUN_0040190e
-// Address: 0040190e
-int drawCharacterMasked(int param_1,int param_2,int param_3);
+// Original: engine_2d.c_drawCharacterMasked_FUN_00401910
+// Address: 00401910
+int drawCharacterMasked(void);
 
 // Original: engine_2d.c_drawCharacterMaskedColor_FUN_00401a20
 // Address: 00401a20
@@ -73,9 +73,9 @@ void __cdecl drawTextWrapped(char *text,int x_start,int y_start,int x_max,int y_
 // Address: 00401d00
 void __cdecl drawTextMultiline(char *text,int x_start,int y_start,int x_max,int y_max);
 
-// Original: engine_2d.c_wrapTextToWidth_FUN_00401d8e
-// Address: 00401d8e
-void wrapTextToWidth(char *param_1,int param_2,char *param_3);
+// Original: engine_2d.c_wrapTextToWidth_FUN_00401d90
+// Address: 00401d90
+void wrapTextToWidth(void);
 
 // Original: engine_2d.c_drawTextWrappedColor_FUN_00401ec0
 // Address: 00401ec0
@@ -161,9 +161,9 @@ void __cdecl resetGraphicsSystem(void);
 // Address: 00402ad0
 void __cdecl reinitializeGraphicsSystem(void);
 
-// Original: engine_2d.c_draw320x200SizeDot_FUN_00402ade
-// Address: 00402ade
-void draw320x200SizeDot(int param_1,int param_2,int param_3);
+// Original: engine_2d.c_draw320x200SizeDot_FUN_00402ae0
+// Address: 00402ae0
+void draw320x200SizeDot(void);
 
 // Original: engine_2d.c_computeOutcode_FUN_00402c60
 // Address: 00402c60
@@ -201,9 +201,9 @@ void __cdecl fillRectWithBorder(int x1,int y1,int x2,int y2,int fill_color,int b
 // Address: 004032b0
 void __cdecl clearInputAndWait(void);
 
-// Original: engine_2d.c_getInputWithPrompt_FUN_0040330e
-// Address: 0040330e
-uint getInputWithPrompt(undefined1 *param_1,int param_2,int param_3,int param_4);
+// Original: engine_2d.c_getInputWithPrompt_FUN_00403310
+// Address: 00403310
+uint getInputWithPrompt(void);
 
 // Original: engine_2d.c_setSolidColor_FUN_004033f0
 // Address: 004033f0

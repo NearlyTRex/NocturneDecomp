@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 224,
+    "complexity_score": 79,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 39,
-    "suspect_count": 17,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 118
@@ -27,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_turnKnob_FUN_00412b00",
-    "signature": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00412b00(CAudioRecPuzzle *this_ptr,int param_2)"
+    "signature": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00412b00(CAudioRecPuzzle *this_ptr,int knob)"
   },
   "function_calls": [],
   "globals": [
@@ -110,7 +109,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "knob",
         "offset": 8,
         "size": 4,
         "type": "int"
@@ -127,30 +126,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_turnKnob_FUN_00412b00(CAudioRecPuzzle *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = param_2 * 5 + 0xc;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 * 5 + 0x11 <= iVar1) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_007dffb8",
@@ -159,100 +134,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->knob_positions[param_2] = this_ptr->knob_positions[param_2] + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->knob_positions[param_2] = this_ptr->knob_positions[param_2] + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (4 < this_ptr->knob_positions[param_2]) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->knob_positions[param_2] = 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->knob_positions[param_2] = this_ptr->knob_positions[param_2] + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->knob_positions[param_2] = this_ptr->knob_positions[param_2] + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (this_ptr->knob_positions[param_2] < 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->knob_positions[param_2] = 0;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 32,
       "match": "DAT_007dffb8",
       "severity": "mild",
       "text": "DAT_007dffb8 = _DAT_01c5fadc;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((this_ptr->knob_positions[param_2] < 4) && (0 < this_ptr->knob_positions[param_2])) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((this_ptr->knob_positions[param_2] < 4) && (0 < this_ptr->knob_positions[param_2])) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (this_ptr->knob_positions[param_2] != 4) {",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

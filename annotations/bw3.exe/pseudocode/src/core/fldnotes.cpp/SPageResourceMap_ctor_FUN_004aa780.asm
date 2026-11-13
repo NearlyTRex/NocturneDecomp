@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004aa780(SPageResourceMap *this_ptr,int param_2)
+; SPageResourceMap * __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004aa780(SPageResourceMap *this_ptr,SNotesMap *map)
 ;
 ; Parameters:
 ; SPageResourceMap * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; SNotesMap *      Stack[0x8]:4   map
 ;
 ; XREF[1]:
 ;   core_fldnotes.cpp_SNotesMap_paginate_FUN_004aa6d0 at 004aa72d

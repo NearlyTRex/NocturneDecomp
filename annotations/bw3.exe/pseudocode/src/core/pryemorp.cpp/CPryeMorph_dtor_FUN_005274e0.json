@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 62,
+    "complexity_score": 61,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 36,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
     ],
-    "total_lines": 122
+    "total_lines": 121
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "005275b2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_pryemorp.cpp_CPryeMorph_dtor_FUN_005274e0",
-    "signature": "CPryeMorph * core_pryemorp_cpp_CPryeMorph_dtor_FUN_005274e0(CPryeMorph *this_ptr,uint flags)"
+    "signature": "CPryeMorph * __cdecl core_pryemorp_cpp_CPryeMorph_dtor_FUN_005274e0(CPryeMorph *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -148,7 +148,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
+      "line": 27,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "iVar3 = core_armour_cpp_FUN_00410370(pCVar2[-1].height_cache_tags[4] + 0x2f,0);",
@@ -156,7 +156,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 35,
+      "line": 33,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);",

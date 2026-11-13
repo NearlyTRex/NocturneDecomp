@@ -24,9 +24,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005177de",
+      "addr": "005177e0",
       "from_addr": "005178b6",
-      "name": "cockpit_pkbmpset.cpp_FUN_005177de",
+      "name": "cockpit_pkbmpset.cpp_FUN_005177e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -40,13 +40,13 @@
     ],
     "convention": "unknown",
     "name": "cockpit_pkbmpset.cpp_FUN_00517670",
-    "signature": "void cockpit_pkbmpset_cpp_FUN_00517670(int *param_1,int param_2)"
+    "signature": "void cockpit_pkbmpset_cpp_FUN_00517670(CPackedBitmapSet *param_1,int param_2)"
   },
   "function_calls": [
     {
       "addr": "00517640",
       "is_variadic": false,
-      "name": "cockpit_pkbmpset.cpp_FUN_00517640"
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_00517640"
     },
     {
       "addr": "004e4500",
@@ -87,17 +87,6 @@
     "call_site_count": 2,
     "call_sites": [
       {
-        "call_addr": "005178b6",
-        "call_type": "direct",
-        "caller": "cockpit_pkbmpset.cpp_FUN_005177de",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
         "call_addr": "00517742",
         "call_type": "direct",
         "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00517710",
@@ -109,12 +98,23 @@
         ],
         "stack_bytes": 8,
         "stack_params": 2
+      },
+      {
+        "call_addr": "005178b6",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_FUN_005177e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 2,
+    "estimated_params": 3,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -169,7 +169,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void cockpit_pkbmpset_cpp_FUN_00517670(int *param_1,int param_2)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_00517670(CPackedBitmapSet *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -177,7 +177,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void cockpit_pkbmpset_cpp_FUN_00517670(int *param_1,int param_2)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_00517670(CPackedBitmapSet *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -185,7 +185,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "cockpit_pkbmpset_cpp_FUN_00517640(param_1);",
+      "text": "cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00517640(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -217,7 +217,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1] = iVar2;",
+      "text": "param_1->bitmap_array = pCVar2;",
       "type": "unnamed_param"
     },
     {
@@ -225,7 +225,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = param_2;",
+      "text": "param_1->bitmap_count = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -233,18 +233,18 @@
       "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_1 = param_2;",
+      "text": "param_1->bitmap_count = param_2;",
       "type": "unnamed_param"
     },
     {
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
     }
   ]

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAsgaya * core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags)
+; CAsgaya * __cdecl core_asgaya_cpp_CAsgaya_dtor_FUN_005a1b50(CAsgaya *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAsgaya *        Stack[0x4]:4   this_ptr

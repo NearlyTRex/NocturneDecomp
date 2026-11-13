@@ -23,7 +23,7 @@ SMRGLHeaderExtended * __cdecl processCameraRelativePoint(SMRGLPoint *block);
 
 // Original: engine_3d.c_transformAndBufferVertices_FUN_00403840
 // Address: 00403840
-int transformAndBufferVertices(int param_1);
+SMRGLHeaderExtended * __cdecl transformAndBufferVertices(SMRGLHeaderExtended *mrgl);
 
 // Original: engine_3d.c_isVisiblePlane_FUN_00403920
 // Address: 00403920
@@ -299,7 +299,7 @@ void __cdecl flushPremiumRenderBuffer(void);
 
 // Original: engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407100
 // Address: 00407100
-int renderPolygonFullEffectsBufferedOp65(int param_1);
+SMRGLHeaderExtended * __cdecl renderPolygonFullEffectsBufferedOp65(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_renderPolygonFullEffectsDirectOp66_FUN_00407300
 // Address: 00407300
@@ -325,9 +325,9 @@ void FUN_00407710(undefined4 param_1);
 // Address: 00407720
 void FUN_00407720(int *param_1);
 
-// Original: engine_3d.c_FUN_0040775e
-// Address: 0040775e
-void FUN_0040775e(int *param_1);
+// Original: engine_3d.c_FUN_00407760
+// Address: 00407760
+void FUN_00407760(void);
 
 // Original: engine_3d.c_flushRenderQueue_FUN_004077f0
 // Address: 004077f0

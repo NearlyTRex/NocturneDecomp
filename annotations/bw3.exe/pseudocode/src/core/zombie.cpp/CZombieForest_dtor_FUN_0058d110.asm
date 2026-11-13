@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CZombieForest * core_zombie_cpp_CZombieForest_dtor_FUN_0058d110(CZombieForest *this_ptr,uint flags)
+; CZombieForest * __cdecl core_zombie_cpp_CZombieForest_dtor_FUN_0058d110(CZombieForest *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CZombieForest *  Stack[0x4]:4   this_ptr

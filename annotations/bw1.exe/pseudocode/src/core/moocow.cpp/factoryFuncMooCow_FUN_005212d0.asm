@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_moocow_cpp_factoryFuncMooCow_FUN_005212d0(void)
+; CMooCow * __cdecl core_moocow_cpp_factoryFuncMooCow_FUN_005212d0(void)
 ;
 ;
 ; Called Functions:

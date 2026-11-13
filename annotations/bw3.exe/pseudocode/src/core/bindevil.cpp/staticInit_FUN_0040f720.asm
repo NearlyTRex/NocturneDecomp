@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bindevil_cpp_staticInit_FUN_0040f720(void)
+; void __cdecl core_bindevil_cpp_staticInit_FUN_0040f720(void)
 ;
 ;
 ; Called Functions:

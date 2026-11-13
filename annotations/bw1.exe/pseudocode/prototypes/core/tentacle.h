@@ -7,7 +7,7 @@
 
 // Original: core_tentacle.cpp_staticInit_FUN_005951a0
 // Address: 005951a0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_tentacle.cpp_factoryFuncTentacle_FUN_005951d0
 // Address: 005951d0
@@ -15,7 +15,7 @@ CTentacle * __cdecl factoryFuncTentacle(void);
 
 // Original: core_tentacle.cpp_CTentacle_getActorType_FUN_005951f0
 // Address: 005951f0
-CDemonActorType * CTentacle::getActorType(CTentacle *this_ptr);
+CDemonActorType * __cdecl CTentacle::getActorType(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_CTentacle_ctor_FUN_00595200
 // Address: 00595200
@@ -55,4 +55,4 @@ void FUN_00595f10(int param_1);
 
 // Original: core_tentacle.cpp_CTentacle_dtor_FUN_00596000
 // Address: 00596000
-CTentacle * CTentacle::dtor(CTentacle *this_ptr,uint flags);
+CTentacle * __cdecl CTentacle::dtor(CTentacle *this_ptr,uint flags);

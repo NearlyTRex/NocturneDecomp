@@ -1,14 +1,12 @@
 // Name: core_health.cpp_CHealthItemSmall_ctor_FUN_004d2180
 // Address: 004d2180
 // Address Range: [[004d2180, 004d21c1]]
-// Convention: unknown
-// Signature: CHealthItemSmall * core_health_cpp_CHealthItemSmall_ctor_FUN_004d2180(CHealthItemSmall *this_ptr)
+// Convention: __cdecl
+// Signature: CHealthItemSmall * __cdecl core_health_cpp_CHealthItemSmall_ctor_FUN_004d2180(CHealthItemSmall *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHealthItemSmall * core_health_cpp_CHealthItemSmall_ctor_FUN_004d2180(CHealthItemSmall *this_ptr)
+CHealthItemSmall * __cdecl core_health_cpp_CHealthItemSmall_ctor_FUN_004d2180(CHealthItemSmall *this_ptr)
 
 {
   CHealthItem *pCVar1;

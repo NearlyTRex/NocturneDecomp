@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_blundrbs_cpp_factoryFuncBlunderbus_FUN_004103c0(void)
+; CBlunderbus * __cdecl core_blundrbs_cpp_factoryFuncBlunderbus_FUN_004103c0(void)
 ;
 ;
 ; Called Functions:

@@ -7,7 +7,7 @@
 
 // Original: engine_ncursfx.cpp_staticInit_FUN_00508ad0
 // Address: 00508ad0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: engine_ncursfx.cpp_CMouse_ctor_FUN_00508af0
 // Address: 00508af0

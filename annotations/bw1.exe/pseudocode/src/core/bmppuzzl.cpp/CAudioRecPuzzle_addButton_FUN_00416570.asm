@@ -1,18 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00416570(CAudioRecPuzzle *this_ptr,int param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8,int param_9)
+; void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_addButton_FUN_00416570(CAudioRecPuzzle *this_ptr,int index,char *filename,int width,int height,int enabled,int x,int y,int visible)
 ;
 ; Parameters:
 ; CAudioRecPuzzle * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; char *           Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
-; int              Stack[0x14]:4   param_5
-; undefined4       Stack[0x18]:4   param_6
-; undefined4       Stack[0x1c]:4   param_7
-; undefined4       Stack[0x20]:4   param_8
-; undefined4       Stack[0x24]:4   param_9
+; int              Stack[0x8]:4   index
+; char *           Stack[0xc]:4   filename
+; int              Stack[0x10]:4   width
+; int              Stack[0x14]:4   height
+; int              Stack[0x18]:4   enabled
+; int              Stack[0x1c]:4   x
+; int              Stack[0x20]:4   y
+; int              Stack[0x24]:4   visible
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_bmppuzzl_cpp_005d3f12

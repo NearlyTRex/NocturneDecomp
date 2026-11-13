@@ -70,29 +70,29 @@ void shape_edittool_cpp_FUN_0047e870(void)
       uVar1 = _DAT_01c2638c;
       if (_DAT_01c25f84 != 0) {
         iVar2 = (_DAT_01c2638c & 0xff) * 3;
-        engine_mini3d_cpp_FUN_004f8e20
+        engine_mini3d_cpp_setColor_FUN_004f8e20
                   ((uint)(byte)(&DAT_01c3583a)[iVar2] |
                    (uint)(byte)(&DAT_01c35838)[iVar2] << 0x10 |
                    (uint)(byte)(&DAT_01c35839)[iVar2] << 8);
         uVar1 = _DAT_01c35e60;
       }
       _DAT_01c35e60 = uVar1;
-      engine_mini3d_cpp_FUN_004f9340(local_1c + -1,local_20 + -1,local_18 + 1,iVar4 + -1);
+      engine_mini3d_cpp_drawRect_FUN_004f9340(local_1c + -1,local_20 + -1,local_18 + 1,iVar4 + -1);
       if (_DAT_01c25f84 != 0) {
         iVar4 = (uVar8 & 0xff) * 3;
-        engine_mini3d_cpp_FUN_004f8e20
+        engine_mini3d_cpp_setColor_FUN_004f8e20
                   ((uint)(byte)(&DAT_01c3583a)[iVar4] |
                    (uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |
                    (uint)(byte)(&DAT_01c35839)[iVar4] << 8);
         uVar8 = _DAT_01c35e60;
       }
       _DAT_01c35e60 = uVar8;
-      engine_mini3d_cpp_FUN_004f90d0(local_1c,local_20,local_18,iVar7);
+      engine_mini3d_cpp_fillRect_FUN_004f90d0(local_1c,local_20,local_18,iVar7);
     }
     uVar8 = _DAT_01c26390;
     if (_DAT_01c25f84 != 0) {
       iVar4 = (_DAT_01c26390 & 0xff) * 3;
-      engine_mini3d_cpp_FUN_004f8e20
+      engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)(byte)(&DAT_01c3583a)[iVar4] |
                  (uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |
                  (uint)(byte)(&DAT_01c35839)[iVar4] << 8);
@@ -105,7 +105,7 @@ void shape_edittool_cpp_FUN_0047e870(void)
       engine_2d_c_drawHLine_FUN_00402f30(*piVar6,iVar7,iVar4);
     }
     else {
-      engine_mini3d_cpp_FUN_004f9390(*piVar6,iVar7,iVar4);
+      engine_mini3d_cpp_drawHLine_FUN_004f9390(*piVar6,iVar7,iVar4);
     }
     iVar4 = *(int *)(iVar5 + 0x1c255a8) + -1;
     iVar7 = *(int *)(iVar5 + 0x1c255ac) + -1;
@@ -114,7 +114,7 @@ void shape_edittool_cpp_FUN_0047e870(void)
       engine_matrix_c_popViewport_FUN_004ea570();
     }
     else {
-      engine_mini3d_cpp_FUN_004f93b0(iVar4,*(int *)(iVar5 + 0x1c255a4),iVar7);
+      engine_mini3d_cpp_drawVLine_FUN_004f93b0(iVar4,*(int *)(iVar5 + 0x1c255a4),iVar7);
       engine_matrix_c_popViewport_FUN_004ea570();
     }
   }
@@ -127,43 +127,43 @@ void shape_edittool_cpp_FUN_0047e870(void)
     uVar8 = _DAT_01c2638c;
     if (_DAT_01c25f84 != 0) {
       iVar4 = (_DAT_01c2638c & 0xff) * 3;
-      engine_mini3d_cpp_FUN_004f8e20
+      engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)(byte)(&DAT_01c3583a)[iVar4] |
                  (uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |
                  (uint)(byte)(&DAT_01c35839)[iVar4] << 8);
       uVar8 = _DAT_01c35e60;
     }
     _DAT_01c35e60 = uVar8;
-    engine_mini3d_cpp_FUN_004f9340
-              (*piVar6,*(uint *)(iVar5 + 0x1c255a4),*(int *)(iVar5 + 0x1c255a8) + -1,
+    engine_mini3d_cpp_drawRect_FUN_004f9340
+              (*piVar6,*(int *)(iVar5 + 0x1c255a4),*(int *)(iVar5 + 0x1c255a8) + -1,
                *(int *)(iVar5 + 0x1c255ac) + -1);
     uVar8 = _DAT_01c26388;
     if (_DAT_01c25f84 != 0) {
       iVar4 = (_DAT_01c26388 & 0xff) * 3;
-      engine_mini3d_cpp_FUN_004f8e20
+      engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)(byte)(&DAT_01c3583a)[iVar4] |
                  (uint)(byte)(&DAT_01c35839)[iVar4] << 8 |
                  (uint)(byte)(&DAT_01c35838)[iVar4] << 0x10);
       uVar8 = _DAT_01c35e60;
     }
     _DAT_01c35e60 = uVar8;
-    engine_mini3d_cpp_FUN_004f90d0
+    engine_mini3d_cpp_fillRect_FUN_004f90d0
               (*piVar6 + 1,*(int *)(iVar5 + 0x1c255a4) + 1,*(int *)(iVar5 + 0x1c255a8) + -2,
                *(int *)(iVar5 + 0x1c255ac) + -2);
     uVar8 = _DAT_01c26390;
     if (_DAT_01c25f84 != 0) {
       iVar4 = (_DAT_01c26390 & 0xff) * 3;
-      engine_mini3d_cpp_FUN_004f8e20
+      engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)(byte)(&DAT_01c3583a)[iVar4] |
                  (uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |
                  (uint)(byte)(&DAT_01c35839)[iVar4] << 8);
       uVar8 = _DAT_01c35e60;
     }
     _DAT_01c35e60 = uVar8;
-    engine_mini3d_cpp_FUN_004f9390
+    engine_mini3d_cpp_drawHLine_FUN_004f9390
               (*piVar6,*(int *)(iVar5 + 0x1c255ac) + -1,*(int *)(iVar5 + 0x1c255a8) + -1);
-    engine_mini3d_cpp_FUN_004f93b0
-              (*(int *)(iVar5 + 0x1c255a8) + -1,*(uint *)(iVar5 + 0x1c255a4),
+    engine_mini3d_cpp_drawVLine_FUN_004f93b0
+              (*(int *)(iVar5 + 0x1c255a8) + -1,*(int *)(iVar5 + 0x1c255a4),
                *(int *)(iVar5 + 0x1c255ac) + -1);
     engine_mini3d_cpp_setRenderViewport_FUN_004f2ac0(local_44,local_40,local_3c,local_38);
   }
@@ -183,17 +183,17 @@ void shape_edittool_cpp_FUN_0047e870(void)
       uVar8 = _DAT_01c26398;
       if (_DAT_01c25f84 != 0) {
         iVar4 = (_DAT_01c26398 & 0xff) * 3;
-        engine_mini3d_cpp_FUN_004f8e20
+        engine_mini3d_cpp_setColor_FUN_004f8e20
                   ((uint)(byte)(&DAT_01c3583a)[iVar4] |
                    (uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |
                    (uint)(byte)(&DAT_01c35839)[iVar4] << 8);
         uVar8 = _DAT_01c35e60;
       }
       _DAT_01c35e60 = uVar8;
-      engine_mini3d_cpp_FUN_004f90d0(local_2c,local_34,iVar7,local_24);
+      engine_mini3d_cpp_fillRect_FUN_004f90d0(local_2c,local_34,iVar7,local_24);
     }
     engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
-    engine_mini3d_cpp_FUN_004f3570(0x3f800000);
+    engine_mini3d_cpp_setAlpha_FUN_004f3570(1.0);
     uVar10 = 0xffffffff;
     iVar2 = _DAT_01c25f7c / 2 + *(int *)(iVar5 + 0x1c255a4);
     text = (char *)(iVar5 + 0x1c255e8);
@@ -213,7 +213,7 @@ void shape_edittool_cpp_FUN_0047e870(void)
     uVar8 = _DAT_01c2638c;
     if (_DAT_01c25f84 != 0) {
       iVar7 = (_DAT_01c2638c & 0xff) * 3;
-      engine_mini3d_cpp_FUN_004f8e20
+      engine_mini3d_cpp_setColor_FUN_004f8e20
                 ((uint)(byte)(&DAT_01c3583a)[iVar7] |
                  (uint)(byte)(&DAT_01c35839)[iVar7] << 8 |
                  (uint)(byte)(&DAT_01c35838)[iVar7] << 0x10);
@@ -225,13 +225,13 @@ void shape_edittool_cpp_FUN_0047e870(void)
       engine_2d_c_drawHLine_FUN_00402f30(*piVar6 + 1,iVar4,iVar7);
     }
     else {
-      engine_mini3d_cpp_FUN_004f9390(*piVar6 + 1,iVar4,iVar7);
+      engine_mini3d_cpp_drawHLine_FUN_004f9390(*piVar6 + 1,iVar4,iVar7);
     }
     if (_DAT_01c26390 != _DAT_01c2638c) {
       uVar8 = _DAT_01c26390;
       if (_DAT_01c25f84 != 0) {
         iVar7 = (_DAT_01c26390 & 0xff) * 3;
-        engine_mini3d_cpp_FUN_004f8e20
+        engine_mini3d_cpp_setColor_FUN_004f8e20
                   ((uint)(byte)(&DAT_01c3583a)[iVar7] |
                    (uint)(byte)(&DAT_01c35838)[iVar7] << 0x10 |
                    (uint)(byte)(&DAT_01c35839)[iVar7] << 8);
@@ -243,7 +243,7 @@ void shape_edittool_cpp_FUN_0047e870(void)
         engine_2d_c_drawHLine_FUN_00402f30(*piVar6 + 1,iVar4 + -1,iVar5);
       }
       else {
-        engine_mini3d_cpp_FUN_004f9390(*piVar6 + 1,iVar4 + -1,iVar5);
+        engine_mini3d_cpp_drawHLine_FUN_004f9390(*piVar6 + 1,iVar4 + -1,iVar5);
       }
     }
     _DAT_01c35e4c = local_30;

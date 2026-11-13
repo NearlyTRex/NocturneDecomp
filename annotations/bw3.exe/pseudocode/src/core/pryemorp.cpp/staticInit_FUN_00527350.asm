@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_pryemorp_cpp_staticInit_FUN_00527350(void)
+; void __cdecl core_pryemorp_cpp_staticInit_FUN_00527350(void)
 ;
 ;
 ; Called Functions:

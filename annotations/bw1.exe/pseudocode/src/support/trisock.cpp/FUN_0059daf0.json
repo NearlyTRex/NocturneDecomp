@@ -1,0 +1,230 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 212,
+    "complexity_score": 154,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 99,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unrolled_memcpy",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 311
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0059daf0",
+    "address_range": [
+      [
+        "0059daf0",
+        "0059dd39"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "support_trisock.cpp_FUN_0059daf0",
+    "signature": "undefined4 support_trisock_cpp_FUN_0059daf0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c0357",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005c0357"
+    },
+    {
+      "addr": "0059c590",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_formatIPAddress_FUN_0059c590"
+    },
+    {
+      "addr": "0059dfc0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_0059dfc0"
+    },
+    {
+      "addr": "0059f1a0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_0059f1a0"
+    },
+    {
+      "addr": "0059f230",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_0059f230"
+    },
+    {
+      "addr": "005b3a90",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_005b3a90"
+    },
+    {
+      "addr": "005b37b0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_releaseMutex_FUN_005b37b0"
+    },
+    {
+      "addr": "005b3860",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_sleep_FUN_005b3860"
+    },
+    {
+      "addr": "005b3750",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_waitForMutex_FUN_005b3750"
+    },
+    {
+      "addr": "005b3770",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_waitForMutexTimeout_FUN_005b3770"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02c8ae58",
+      "name": "DAT_02c8ae58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8ae5c",
+      "name": "DAT_02c8ae5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8ae60",
+      "name": "DAT_02c8ae60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8ae64",
+      "name": "DAT_02c8ae64",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9135802469135803,
+    "instruction_count": 162,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 3,
+      "BRANCH": 7,
+      "CALL": 19,
+      "CBRANCH": 11,
+      "COPY": 121,
+      "INT_ADD": 49,
+      "INT_AND": 78,
+      "INT_CARRY": 21,
+      "INT_EQUAL": 74,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 36,
+      "INT_SUB": 62,
+      "INT_XOR": 3,
+      "INT_ZEXT": 2,
+      "LOAD": 16,
+      "POPCOUNT": 36,
+      "RETURN": 2,
+      "STORE": 58
+    },
+    "pcode_op_count": 634
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057a480",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00570ae0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0059dafc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "0059dc16",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 43,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 93,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar3 = 0xae; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0059dc18, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 107,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0059dc18: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

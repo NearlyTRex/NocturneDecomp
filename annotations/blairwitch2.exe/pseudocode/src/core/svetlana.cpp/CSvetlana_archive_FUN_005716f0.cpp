@@ -9,6 +9,6 @@
 void __cdecl core_svetlana_cpp_CSvetlana_archive_FUN_005716f0(CSvetlana *this_ptr)
 
 {
-  core_hero_cpp_FUN_004ce590(this_ptr);
+  core_hero_cpp_CHero_archive_FUN_004ce590(&this_ptr->base);
   return;
 }

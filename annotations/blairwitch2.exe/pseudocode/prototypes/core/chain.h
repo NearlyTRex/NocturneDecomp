@@ -19,7 +19,7 @@ CChain * __cdecl factoryFuncChain(void);
 
 // Original: core_chain.cpp_CChain_getActorType_FUN_005b4710
 // Address: 005b4710
-CDemonActorType * CChain::getActorType(CChain *this_ptr);
+CDemonActorType * __cdecl CChain::getActorType(CChain *this_ptr);
 
 // Original: core_chain.cpp_CChain_ctor_FUN_005b4720
 // Address: 005b4720
@@ -59,8 +59,8 @@ undefined4 FUN_005b5f40(void);
 
 // Original: core_chain.cpp_CChain_dtor_FUN_005b5f50
 // Address: 005b5f50
-CChain * CChain::dtor(CChain *this_ptr,uint flags);
+CChain * __cdecl CChain::dtor(CChain *this_ptr,uint flags);
 
 // Original: core_chain.cpp_SChainVertex_ctor_FUN_005b5fa0
 // Address: 005b5fa0
-SChainVertex * SChainVertex::ctor(SChainVertex *this_ptr);
+SChainVertex * __cdecl SChainVertex::ctor(SChainVertex *this_ptr);

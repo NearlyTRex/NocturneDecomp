@@ -1,12 +1,12 @@
 // Name: core_curtain.cpp_staticInit_FUN_004462d0
 // Address: 004462d0
 // Address Range: [[004462d0, 0044631b]]
-// Convention: unknown
-// Signature: void core_curtain_cpp_staticInit_FUN_004462d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_curtain_cpp_staticInit_FUN_004462d0(void)
 
 #include "nocturne.h"
 
-void core_curtain_cpp_staticInit_FUN_004462d0(void)
+void __cdecl core_curtain_cpp_staticInit_FUN_004462d0(void)
 
 {
   __arrinit((void *)0x7f8fd0,100,&g_CVectorTypeInfo);

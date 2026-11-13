@@ -2,17 +2,17 @@
 // Address: 005a1970
 // Address Range: [[005a1970, 005a198a]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl support_trstream_cpp_COutStreamFile_tell_FUN_005a1970(COutStreamFile *this_ptr)
+// Signature: int __cdecl support_trstream_cpp_COutStreamFile_tell_FUN_005a1970(COutStreamFile *this_ptr)
 
 #include "nocturne.h"
 
-uint __cdecl support_trstream_cpp_COutStreamFile_tell_FUN_005a1970(COutStreamFile *this_ptr)
+int __cdecl support_trstream_cpp_COutStreamFile_tell_FUN_005a1970(COutStreamFile *this_ptr)
 
 {
   long lVar1;
   
   if (this_ptr->file == (_FILE *)0x0) {
-    return 0xffffffff;
+    return -1;
   }
   lVar1 = _ftell(this_ptr->file);
   return lVar1;

@@ -7,7 +7,7 @@
 
 // Original: core_level.cpp_staticInit_FUN_004e1440
 // Address: 004e1440
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_level.cpp_CLevelLoader_reset_FUN_004e1470
 // Address: 004e1470

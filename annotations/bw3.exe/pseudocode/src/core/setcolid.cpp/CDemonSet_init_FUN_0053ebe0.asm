@@ -14,7 +14,7 @@
 ;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426072
 ;   core_charactr.cpp_FUN_0042c230 at 0042c713
 ;   core_charactr.cpp_FUN_00432330 at 0043298d
-;   core_demnfolk.cpp_FUN_00455080 at 004561ee
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 004561ee
 ;   core_elephant.cpp_CElephantGun_fire_FUN_00486d40 at 00486fea
 ;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004889b0 at 004889f1
 ;   ... and 27 more

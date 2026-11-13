@@ -47,7 +47,7 @@ void __cdecl CBox::setupVelocities(CBox *this_ptr,CVector3f *linear_velocity,CVe
 
 // Original: core_box.cpp_SScrape_ctor_FUN_0041d830
 // Address: 0041d830
-SScrape * SScrape::ctor(SScrape *this_ptr);
+SScrape * __cdecl SScrape::ctor(SScrape *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_expand_FUN_0041d840
 // Address: 0041d840
@@ -103,8 +103,8 @@ bool FUN_0041eed0(undefined4 param_1,float *param_2,float param_3);
 
 // Original: core_box.cpp_CBoundingBox3D_ctor_FUN_004fb160
 // Address: 004fb160
-CBoundingBox3D * CBoundingBox3D::ctor(CBoundingBox3D *this_ptr);
+CBoundingBox3D * __cdecl CBoundingBox3D::ctor(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_dtor_FUN_004fb170
 // Address: 004fb170
-CBoundingBox3D * CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flags);
+CBoundingBox3D * __cdecl CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flags);

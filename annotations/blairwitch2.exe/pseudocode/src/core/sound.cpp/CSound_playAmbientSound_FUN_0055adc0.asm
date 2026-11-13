@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_initRuntime_FUN_00522080 at 005221ba
-;   core_script.cpp_FUN_00522350 at 00527180
+;   core_script.cpp_CScript_step_FUN_00522350 at 00527180
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8

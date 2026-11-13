@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SPageResourceTwanaEntry * core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980(SPageResourceTwanaEntry *this_ptr,uint flags)
+; SPageResourceTwanaEntry * __cdecl core_fldnotes_cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980(SPageResourceTwanaEntry *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SPageResourceTwanaEntry * Stack[0x4]:4   this_ptr
@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01d0cfa0
 ;
 ; Called Functions:
-;   core_fldnotes.cpp_FUN_004ad410
+;   core_fldnotes.cpp_CAlphaBitmap_arrdtor3_FUN_004ad410
 ;   core_fldnotes.cpp_SPageResource_dtor_FUN_004a83a0
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
@@ -40,8 +40,8 @@ section .text
         ;   Label: LAB_004a89a5
     ADD EBX,0xdc                        ; 004a89a7
     PUSH EBX                            ; 004a89ad
-    CALL core_fldnotes.cpp_FUN_004ad410 ; 004a89ae
-        ;   XREF to: 004ad410 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004ad410()
+    CALL core_fldnotes.cpp_CAlphaBitmap_arrdtor3_FUN_004ad410 ; 004a89ae
+        ;   XREF to: 004ad410 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * core_fldnotes.cpp_CAlphaBitmap_arrdtor3_FUN_004ad410(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004a89b3
     PUSH 0x1                            ; 004a89b6
     LEA EBX,[EAX + 0xffffff24]          ; 004a89b8

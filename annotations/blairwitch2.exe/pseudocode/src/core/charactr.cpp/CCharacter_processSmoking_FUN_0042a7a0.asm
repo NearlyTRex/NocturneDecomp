@@ -31,7 +31,7 @@
 ; XREF[5]:
 ;   core_dog.cpp_CZombieDog_process_FUN_0045e360 at 0045e397
 ;   core_npc.cpp_CNPC_process_FUN_005105b0 at 005105dd
-;   core_shadow.cpp_FUN_0053c500 at 0053c54c
+;   core_shadow.cpp_CShadow_process_FUN_0053c500 at 0053c54c
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 00563242
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00570510 at 0057058a
 ;

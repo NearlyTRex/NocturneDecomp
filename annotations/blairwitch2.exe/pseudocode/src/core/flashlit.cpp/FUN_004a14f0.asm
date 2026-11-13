@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_flashlit_cpp_FUN_004a14f0(char *param_1,int *param_2)
+; SNotesEntry * core_flashlit_cpp_FUN_004a14f0(char *param_1,int *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -29,7 +29,7 @@ section .text
         ;   Label: LAB_004a1508
     PUSH ESI                            ; 004a1509
     CALL core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0 ; 004a150a
-        ;   XREF to: 004a35e0 (UNCONDITIONAL_CALL)  ; undefined4 core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection * this_ptr, char * param_2)
+        ;   XREF to: 004a35e0 (UNCONDITIONAL_CALL)  ; SNotesEntry * core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection * this_ptr, char * name)
     ADD ESP,0x8                         ; 004a150f
     MOV EDX,EAX                         ; 004a1512
     TEST EAX,EAX                        ; 004a1514

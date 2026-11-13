@@ -21,6 +21,6 @@ void __cdecl CDemonImage::freeMemory(CDemonImage *this_ptr);
 // Address: 00448fd0
 ushort __cdecl CDemonImage::packColor(CDemonImage *this_ptr,uint red,uint green,uint blue);
 
-// Original: core_dimage.cpp_FUN_0044902e
-// Address: 0044902e
-void FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,SIZE_T param_3,int param_4,SIZE_T param_5);
+// Original: core_dimage.cpp_FUN_00449030
+// Address: 00449030
+void FUN_00449030(void);

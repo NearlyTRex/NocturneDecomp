@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CShell * core_fire_cpp_CShell_arrdtor50_FUN_004b78b0(CShell *this_ptr,uint flags)
+; CShell * __cdecl core_fire_cpp_CShell_arrdtor50_FUN_004b78b0(CShell *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CShell *         Stack[0x4]:4   this_ptr

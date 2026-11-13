@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shovel_cpp_staticInit_FUN_00546fd0(void)
+; void __cdecl core_shovel_cpp_staticInit_FUN_00546fd0(void)
 ;
 ;
 ; Called Functions:

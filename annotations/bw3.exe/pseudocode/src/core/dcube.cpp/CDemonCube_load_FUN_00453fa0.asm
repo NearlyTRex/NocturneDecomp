@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_dtrace.cpp_FUN_00473940 at 00473a88
+;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_00473940 at 00473a88
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00453d90

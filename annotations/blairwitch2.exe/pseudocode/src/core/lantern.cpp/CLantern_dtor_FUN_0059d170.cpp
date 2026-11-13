@@ -1,14 +1,12 @@
 // Name: core_lantern.cpp_CLantern_dtor_FUN_0059d170
 // Address: 0059d170
 // Address Range: [[0059d170, 0059d1bd]]
-// Convention: unknown
-// Signature: CLantern * core_lantern_cpp_CLantern_dtor_FUN_0059d170(CLantern *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CLantern * __cdecl core_lantern_cpp_CLantern_dtor_FUN_0059d170(CLantern *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CLantern * core_lantern_cpp_CLantern_dtor_FUN_0059d170(CLantern *this_ptr,uint flags)
+CLantern * __cdecl core_lantern_cpp_CLantern_dtor_FUN_0059d170(CLantern *this_ptr,uint flags)
 
 {
   CLantern *pCVar1;

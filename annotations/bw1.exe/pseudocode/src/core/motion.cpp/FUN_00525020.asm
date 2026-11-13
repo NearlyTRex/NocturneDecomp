@@ -17,8 +17,8 @@
 ;   core_djien.cpp_CDjien_processDamage_FUN_004613b0 at 004614c1
 ;   core_djien.cpp_CDjien_process_FUN_00460230 at 0046057e
 ;   core_doc.cpp_CDoc_getGrabbed_FUN_00476260 at 004762d8
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046ec55
 ;   core_doc.cpp_FUN_00469550 at 00469faf
-;   core_doc.cpp_FUN_0046ea80 at 0046ec55
 ;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c6cd3
 ;   core_ghoul.cpp_CGhoul_process_FUN_004de330 at 004dfb99
 ;   ... and 8 more

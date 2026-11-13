@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trstream_cpp_CInStreamFile_open_FUN_0057d320(CInStreamFile *this_ptr,LPCSTR param_2)
+; int __cdecl support_trstream_cpp_CInStreamFile_open_FUN_0057d320(CInStreamFile *this_ptr,char *path)
 ;
 ; Parameters:
 ; CInStreamFile *  Stack[0x4]:4   this_ptr
-; LPCSTR           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   path
 ;
 ; XREF[3]:
 ;   core_game.cpp_FUN_004bb9b0 at 004bbc94
@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   CreateFileA
 ;   GetFileSize
-;   support_trstream.cpp_FUN_0057d1d0
+;   support_trstream.cpp_CInStreamFile_allocBuffer_FUN_0057d1d0
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     JL 0x0057d37a                       ; 0057d368
         ;   XREF to: 0057d37a (CONDITIONAL_JUMP)  ; LAB_0057d37a
     PUSH EBX                            ; 0057d36a
-    CALL support_trstream.cpp_FUN_0057d1d0 ; 0057d36b
-        ;   XREF to: 0057d1d0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d1d0()
+    CALL support_trstream.cpp_CInStreamFile_allocBuffer_FUN_0057d1d0 ; 0057d36b
+        ;   XREF to: 0057d1d0 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_CInStreamFile_allocBuffer_FUN_0057d1d0(CInStreamFile * this_ptr)
     MOV EAX,0x1                         ; 0057d370
     ADD ESP,0x4                         ; 0057d375
     POP EBX                             ; 0057d378

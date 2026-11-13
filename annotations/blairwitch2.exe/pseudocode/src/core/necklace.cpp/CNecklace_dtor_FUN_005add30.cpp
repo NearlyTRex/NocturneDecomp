@@ -1,14 +1,12 @@
 // Name: core_necklace.cpp_CNecklace_dtor_FUN_005add30
 // Address: 005add30
 // Address Range: [[005add30, 005add94]]
-// Convention: unknown
-// Signature: CNecklace * core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CNecklace * __cdecl core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CNecklace * core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,uint flags)
+CNecklace * __cdecl core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,uint flags)
 
 {
   CBox *pCVar1;

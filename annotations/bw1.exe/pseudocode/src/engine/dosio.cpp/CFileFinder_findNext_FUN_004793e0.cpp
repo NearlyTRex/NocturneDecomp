@@ -21,7 +21,7 @@ int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_004793e0(CFileFinder *this
   }
   BVar1 = FindNextFileA(this_ptr->search_handle,&_Stack_148);
   if (BVar1 != 0) {
-    engine_dosio_cpp_FUN_004794b0(this_ptr,&_Stack_148);
+    engine_dosio_cpp_CFileFinder_convertStruct_FUN_004794b0(this_ptr,(byte *)&_Stack_148);
     return 1;
   }
   engine_dosio_cpp_CFileFinder_reset_FUN_004794a0(this_ptr);

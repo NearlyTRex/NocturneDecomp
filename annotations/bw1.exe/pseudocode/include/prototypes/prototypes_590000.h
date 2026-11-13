@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdarg.h"
 #include "system/stdint.h"
 #include "system/winsock.h"
 #include "types/classes/CBassPlayer.h"
@@ -11,6 +12,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDrummer.h"
+#include "types/classes/CInStream.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CSocket.h"
 #include "types/classes/CStranger.h"
@@ -61,9 +63,9 @@ EDeathState __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_00591d50(CStra
 void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_00591d80(CStranger *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_stranger_cpp_CStranger_drop_FUN_00591de0(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_00591e60(CStranger *this_ptr,uint flags);
-void core_succubus_cpp_staticInit_FUN_00591eb0(void);
+void __cdecl core_succubus_cpp_staticInit_FUN_00591eb0(void);
 CSuccubus * __cdecl core_succubus_cpp_factoryFuncSuccubus_FUN_00591ee0(void);
-CDemonActorType * core_succubus_cpp_CSuccubus_getActorType_FUN_00591f00(CSuccubus *this_ptr);
+CDemonActorType * __cdecl core_succubus_cpp_CSuccubus_getActorType_FUN_00591f00(CSuccubus *this_ptr);
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_00591f10(CSuccubus *this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_00591ff0(CSuccubus *this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_process_FUN_00592320(CSuccubus *this_ptr,float delta_time);
@@ -72,10 +74,10 @@ void __cdecl core_succubus_cpp_CSuccubus_archive_FUN_00592c40(CSuccubus *this_pt
 void __cdecl core_succubus_cpp_CSuccubus_processDamage_FUN_00592c90(CSuccubus *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_succubus_cpp_CSuccubus_getTargetPoints_FUN_00592cb0(CSuccubus *this_ptr,CVector3f *out_points_array);
 ECollisionType __cdecl core_succubus_cpp_CSuccubus_getCollisionType_FUN_00592cc0(CSuccubus *this_ptr,SCollisionInfo *collision_info);
-CSuccubus * core_succubus_cpp_CSuccubus_dtor_FUN_00592ce0(CSuccubus *this_ptr,uint flags);
-void core_svetlana_cpp_staticInit_FUN_00592da0(void);
+CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_00592ce0(CSuccubus *this_ptr,uint flags);
+void __cdecl core_svetlana_cpp_staticInit_FUN_00592da0(void);
 CSvetlana * __cdecl core_svetlana_cpp_factoryFuncSvetlana_FUN_00592dd0(void);
-CDemonActorType * core_svetlana_cpp_CSvetlana_getActorType_FUN_00592df0(CSvetlana *this_ptr);
+CDemonActorType * __cdecl core_svetlana_cpp_CSvetlana_getActorType_FUN_00592df0(CSvetlana *this_ptr);
 CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_00592e00(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_00592e90(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_00593150(CSvetlana *this_ptr,float delta_time);
@@ -89,9 +91,9 @@ int __cdecl core_svetlana_cpp_CSvetlana_getGrabbed_FUN_00594650(CSvetlana *this_
 int __cdecl core_svetlana_cpp_CSvetlana_isWeaponDrawn_FUN_00594660(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_drawWeapon_FUN_00594670(CSvetlana *this_ptr,int drawn);
 CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_dtor_FUN_00594680(CSvetlana *this_ptr,uint flags);
-void core_tbplayer_cpp_staticInit_FUN_00594700(void);
+void __cdecl core_tbplayer_cpp_staticInit_FUN_00594700(void);
 CBassPlayer * __cdecl core_tbplayer_cpp_factoryFuncBassPlayer_FUN_00594750(void);
-CDemonActorType * core_tbplayer_cpp_CBassPlayer_getActorType_FUN_00594770(CBassPlayer *this_ptr);
+CDemonActorType * __cdecl core_tbplayer_cpp_CBassPlayer_getActorType_FUN_00594770(CBassPlayer *this_ptr);
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_ctor_FUN_00594780(CBassPlayer *this_ptr);
 void __cdecl core_tbplayer_cpp_CBassPlayer_setup_FUN_005947b0(CBassPlayer *this_ptr);
 CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00594850(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
@@ -102,11 +104,11 @@ CDrummer * __cdecl core_tbplayer_cpp_CDrummer_ctor_FUN_00594a00(CDrummer *this_p
 void __cdecl core_tbplayer_cpp_CDrummer_setup_FUN_00594a30(CDrummer *this_ptr);
 CMatrix3x4f * __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_00594ab0(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_tbplayer_cpp_CDrummer_processDamage_FUN_00594c80(CDrummer *this_ptr,SDamageInfo *damage_info);
-CDrummer * core_tbplayer_cpp_CDrummer_dtor_FUN_00594cb0(CDrummer *this_ptr,uint flags);
-CBassPlayer * core_tbplayer_cpp_CBassPlayer_dtor_FUN_00594d50(CBassPlayer *this_ptr,uint flags);
-void core_teleport_cpp_staticInit_FUN_00594df0(void);
+CDrummer * __cdecl core_tbplayer_cpp_CDrummer_dtor_FUN_00594cb0(CDrummer *this_ptr,uint flags);
+CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_00594d50(CBassPlayer *this_ptr,uint flags);
+void __cdecl core_teleport_cpp_staticInit_FUN_00594df0(void);
 CTeleportDest * __cdecl core_teleport_cpp_factoryFuncTeleportDest_FUN_00594e40(void);
-CDemonActorType * core_teleport_cpp_CTeleportDest_getActorType_FUN_00594e60(CTeleportDest *this_ptr);
+CDemonActorType * __cdecl core_teleport_cpp_CTeleportDest_getActorType_FUN_00594e60(CTeleportDest *this_ptr);
 CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_ctor_FUN_00594e70(CTeleportDest *this_ptr);
 CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_00594e90(CTeleportDest *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_teleport_cpp_CTeleportDest_getCollisionType_FUN_00594ee0(CTeleportDest *this_ptr,SCollisionInfo *collision_info);
@@ -118,9 +120,9 @@ CBoundingBox3D * __cdecl core_teleport_cpp_CTeleport_getBoundingBox_FUN_00595040
 void __cdecl core_teleport_cpp_CTeleport_archive_FUN_005950c0(CTeleport *this_ptr);
 CTeleport * __cdecl core_teleport_cpp_CTeleport_dtor_FUN_00595100(CTeleport *this_ptr,uint flags);
 CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_dtor_FUN_00595150(CTeleportDest *this_ptr,uint flags);
-void core_tentacle_cpp_staticInit_FUN_005951a0(void);
+void __cdecl core_tentacle_cpp_staticInit_FUN_005951a0(void);
 CTentacle * __cdecl core_tentacle_cpp_factoryFuncTentacle_FUN_005951d0(void);
-CDemonActorType * core_tentacle_cpp_CTentacle_getActorType_FUN_005951f0(CTentacle *this_ptr);
+CDemonActorType * __cdecl core_tentacle_cpp_CTentacle_getActorType_FUN_005951f0(CTentacle *this_ptr);
 CTentacle * __cdecl core_tentacle_cpp_CTentacle_ctor_FUN_00595200(CTentacle *this_ptr);
 void __cdecl core_tentacle_cpp_CTentacle_setup_FUN_00595260(CTentacle *this_ptr);
 void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005952f0(CTentacle *this_ptr,float delta_time);
@@ -130,8 +132,8 @@ int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_00595c40(CTentacle 
 int __cdecl core_tentacle_cpp_CTentacle_attractActorToward_FUN_00595d40(CTentacle *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 int __cdecl core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_00595ed0(CTentacle *this_ptr);
 void core_tentacle_cpp_FUN_00595f10(int param_1);
-CTentacle * core_tentacle_cpp_CTentacle_dtor_FUN_00596000(CTentacle *this_ptr,uint flags);
-void core_texlist_cpp_staticInit_FUN_00596090(void);
+CTentacle * __cdecl core_tentacle_cpp_CTentacle_dtor_FUN_00596000(CTentacle *this_ptr,uint flags);
+void __cdecl core_texlist_cpp_staticInit_FUN_00596090(void);
 CTextureList * __cdecl core_texlist_cpp_CTextureList_ctor_FUN_005960b0(CTextureList *this_ptr);
 CTextureList * __cdecl core_texlist_cpp_CTextureList_dtor_FUN_005960c0(CTextureList *this_ptr,uint flags);
 void __cdecl core_texlist_cpp_CTextureList_load_FUN_005960d0(CTextureList *this_ptr,char *filename);
@@ -141,10 +143,10 @@ void __cdecl core_texlist_cpp_CTextureList_captureTexture_FUN_00596530(CTextureL
 undefined4 * core_texlist_cpp_FUN_00596560(undefined4 *param_1);
 void __cdecl engine_texture_cpp_CTextureCache_reset_FUN_005965c0(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_FUN_005965d0(CTextureCache *this_ptr);
-int engine_texture_cpp_FUN_00596680(int *param_1);
+int __cdecl engine_texture_cpp_CTextureCache_findFreeSlot_FUN_00596680(CTextureCache *this_ptr);
 int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005967a0(CTextureCache *this_ptr,char *texture_name);
-int engine_texture_cpp_FUN_00596e60(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-int engine_texture_cpp_FUN_00596ed0(int param_1,char *param_2,undefined4 param_3,undefined4 param_4);
+int engine_texture_cpp_FUN_00596e60(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4,uchar *param_5,uchar *param_6);
+int engine_texture_cpp_FUN_00596ed0(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4);
 void engine_texture_cpp_FUN_00596f30(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
 void engine_texture_cpp_FUN_00597000(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
 int engine_texture_cpp_FUN_005970b0(int param_1,int param_2,char *param_3);
@@ -152,36 +154,36 @@ void engine_texture_cpp_FUN_00597140(int param_1,int param_2,int param_3);
 void engine_texture_cpp_FUN_00597620(int param_1,int param_2);
 void engine_texture_cpp_FUN_005976a0(int param_1,int param_2);
 int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_00597710(CTextureCache *this_ptr,char *output_buffer);
-void engine_texture_cpp_FUN_005977de(int param_1,undefined4 param_2,int param_3);
+void engine_texture_cpp_FUN_005977e0(void);
 void engine_texture_cpp_FUN_00597900(int param_1);
 void engine_texture_cpp_FUN_00597970(void);
-void engine_texture_cpp_freeTextureCache_FUN_005979d0(void);
+void __cdecl engine_texture_cpp_freeTextureCache_FUN_005979d0(void);
 int engine_texture_cpp_FUN_00597a20(int param_1);
 SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_00597aa0(SMRGLTextureBasic *texture_info);
 void engine_texture_cpp_FUN_00597ac0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void engine_texture_cpp_FUN_00597b7c(int param_1,undefined4 param_2,undefined4 param_3);
+void engine_texture_cpp_FUN_00597b80(void);
 void engine_texture_cpp_FUN_00597c30(void);
 void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_00597c60(SMRGLTextureBasic *texture);
 void __cdecl engine_texture_cpp_FUN_00597c90(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_00597cc0(int enabled);
 void __cdecl engine_texture_cpp_getTextureCacheStats_FUN_00597cd0(char *output_buffer);
-void engine_texture_cpp_FUN_00597cee(void);
+void engine_texture_cpp_FUN_00597cf0(void);
 SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_00597d00(void);
-void engine_texture_cpp_FUN_00597d5c(void);
-void engine_texture_cpp_FUN_00597d6e(int param_1,char *param_2);
-void core_tommygun_cpp_staticInit_FUN_00598320(void);
+void engine_texture_cpp_FUN_00597d60(void);
+void engine_texture_cpp_FUN_00597d70(void);
+void __cdecl core_tommygun_cpp_staticInit_FUN_00598320(void);
 CTommyGun * __cdecl core_tommygun_cpp_factoryFuncTommyGun_FUN_00598350(void);
-CDemonActorType * core_tommygun_cpp_CTommyGun_getActorType_FUN_00598370(CTommyGun *this_ptr);
+CDemonActorType * __cdecl core_tommygun_cpp_CTommyGun_getActorType_FUN_00598370(CTommyGun *this_ptr);
 CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_00598380(CTommyGun *this_ptr);
 int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00598420(CTommyGun *this_ptr);
 float __cdecl core_tommygun_cpp_CTommyGun_getDamage_FUN_00598d20(CTommyGun *this_ptr);
 void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_00598d50(CTommyGun *this_ptr,float delta_time);
 void __cdecl core_tommygun_cpp_CTommyGun_setWeaponState_FUN_00598f90(CTommyGun *this_ptr,int weapon_state);
 CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_dtor_FUN_00598fc0(CTommyGun *this_ptr,uint flags);
-void core_thehand_cpp_staticInit_FUN_00599010(void);
-void core_thehand_cpp_factoryFuncTheHand_FUN_00599040(void);
-CDemonActorType * core_thehand_cpp_CTheHand_getActorType_FUN_00599060(CTheHand *this_ptr);
-CTheHand * core_thehand_cpp_CTheHand_ctor_FUN_00599070(CTheHand *this_ptr);
+void __cdecl core_thehand_cpp_staticInit_FUN_00599010(void);
+CTheHand * __cdecl core_thehand_cpp_factoryFuncTheHand_FUN_00599040(void);
+CDemonActorType * __cdecl core_thehand_cpp_CTheHand_getActorType_FUN_00599060(CTheHand *this_ptr);
+CTheHand * __cdecl core_thehand_cpp_CTheHand_ctor_FUN_00599070(CTheHand *this_ptr);
 void __cdecl core_thehand_cpp_CTheHand_setup_FUN_005990d0(CTheHand *this_ptr);
 void __cdecl core_thehand_cpp_CTheHand_process_FUN_00599150(CTheHand *this_ptr,float delta_time);
 int __cdecl core_thehand_cpp_CTheHand_renderOpaque_FUN_00599890(CTheHand *this_ptr);
@@ -190,10 +192,10 @@ undefined4 core_thehand_cpp_FUN_00599910(CDemonActor *param_1,char *param_2);
 int __cdecl core_thehand_cpp_CTheHand_attractActorToward_FUN_00599a10(CTheHand *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 int __cdecl core_thehand_cpp_CTheHand_shouldIgnoreForTargeting_FUN_00599ba0(CTheHand *this_ptr);
 void core_thehand_cpp_FUN_00599be0(int param_1);
-CTheHand * core_thehand_cpp_CTheHand_dtor_FUN_00599c20(CTheHand *this_ptr,uint flags);
-void core_trap_cpp_staticInit_FUN_00599cb0(void);
+CTheHand * __cdecl core_thehand_cpp_CTheHand_dtor_FUN_00599c20(CTheHand *this_ptr,uint flags);
+void __cdecl core_trap_cpp_staticInit_FUN_00599cb0(void);
 CTrap * __cdecl core_trap_cpp_factoryFuncTrap_FUN_00599ce0(void);
-CDemonActorType * core_trap_cpp_CTrap_getActorType_FUN_00599d00(CTrap *this_ptr);
+CDemonActorType * __cdecl core_trap_cpp_CTrap_getActorType_FUN_00599d00(CTrap *this_ptr);
 CTrap * __cdecl core_trap_cpp_CTrap_ctor_FUN_00599d10(CTrap *this_ptr);
 void __cdecl core_trap_cpp_CTrap_setup_FUN_00599d60(CTrap *this_ptr);
 int __cdecl core_trap_cpp_CTrap_canPickup_FUN_00599d90(CTrap *this_ptr,CDemonActor *picker);
@@ -206,9 +208,9 @@ int __cdecl core_trap_cpp_CTrap_renderOpaque_FUN_0059a010(CTrap *this_ptr);
 void __cdecl core_trap_cpp_CTrap_archive_FUN_0059a0c0(CTrap *this_ptr);
 CBoundingBox3D * __cdecl core_trap_cpp_CTrap_getBoundingBox_FUN_0059a100(CTrap *this_ptr,CBoundingBox3D *out_box);
 CTrap * __cdecl core_trap_cpp_CTrap_dtor_FUN_0059a140(CTrap *this_ptr,uint flags);
-void core_trash_cpp_staticInit_FUN_0059a190(void);
+void __cdecl core_trash_cpp_staticInit_FUN_0059a190(void);
 CTrash * __cdecl core_trash_cpp_factoryFuncTrash_FUN_0059a1c0(void);
-CDemonActorType * core_trash_cpp_CTrash_getActorType_FUN_0059a1e0(CTrash *this_ptr);
+CDemonActorType * __cdecl core_trash_cpp_CTrash_getActorType_FUN_0059a1e0(CTrash *this_ptr);
 CTrash * __cdecl core_trash_cpp_CTrash_ctor_FUN_0059a1f0(CTrash *this_ptr);
 void __cdecl core_trash_cpp_CTrash_setup_FUN_0059a240(CTrash *this_ptr);
 void __cdecl core_trash_cpp_CTrash_archive_FUN_0059a300(CTrash *this_ptr);
@@ -217,9 +219,9 @@ int __cdecl core_trash_cpp_CTrash_renderOpaque_FUN_0059ad40(CTrash *this_ptr);
 CBoundingBox3D * __cdecl core_trash_cpp_CTrash_getBoundingBox_FUN_0059ae20(CTrash *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_trash_cpp_CTrash_getCollisionType_FUN_0059aef0(CTrash *this_ptr,SCollisionInfo *collision_info);
 CTrash * __cdecl core_trash_cpp_CTrash_dtor_FUN_0059af00(CTrash *this_ptr,uint flags);
-void core_trigger_cpp_staticInit_FUN_0059af50(void);
+void __cdecl core_trigger_cpp_staticInit_FUN_0059af50(void);
 CTrigger * __cdecl core_trigger_cpp_factoryFuncTrigger_FUN_0059af80(void);
-CDemonActorType * core_trigger_cpp_CTrigger_getActorType_FUN_0059afa0(CTrigger *this_ptr);
+CDemonActorType * __cdecl core_trigger_cpp_CTrigger_getActorType_FUN_0059afa0(CTrigger *this_ptr);
 CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_0059afb0(CTrigger *this_ptr);
 void __cdecl core_trigger_cpp_CTrigger_setup_FUN_0059b100(CTrigger *this_ptr);
 void __cdecl core_trigger_cpp_CTrigger_process_FUN_0059b240(CTrigger *this_ptr,float delta_time);
@@ -250,7 +252,7 @@ void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0059c740(SNetworkAddr *de
 SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_0059c760(SNetworkAddr *dest_addr,SOCKADDR *src_addr);
 void support_trisock_cpp_buildSockaddrIn_FUN_0059c7d0(SNetworkAddr *param_1);
 void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0059c830(SNetworkAddr *network_addr,char *output_buffer);
-SSocket * support_trisock_cpp_Socket_copy_FUN_0059c8b0(SSocket *this_ptr,SSocket *other);
+SSocket * __cdecl support_trisock_cpp_Socket_copy_FUN_0059c8b0(SSocket *this_ptr,SSocket *other);
 CSocket * __cdecl support_trisock_cpp_CSocket_ctor_FUN_0059c8e0(CSocket *this_ptr);
 CSocket * __cdecl support_trisock_cpp_CSocket_dtor_FUN_0059c8f0(CSocket *this_ptr,uint flags);
 int __cdecl support_trisock_cpp_CSocket_createSocket_FUN_0059c910(CSocket *this_ptr);
@@ -270,20 +272,19 @@ void support_trisock_cpp_FUN_0059d330(undefined4 *param_1,undefined4 param_2);
 uint support_trisock_cpp_FUN_0059d360(int *param_1,code *param_2,undefined4 param_3);
 undefined4 support_trisock_cpp_FUN_0059d430(int *param_1,undefined1 *param_2,int param_3,undefined4 param_4,undefined4 param_5);
 undefined4 support_trisock_cpp_FUN_0059d4b0(undefined4 param_1,int *param_2,undefined4 param_3,code *param_4);
-void support_trisock_cpp_FUN_0059d75c(CSocket *param_1);
+void support_trisock_cpp_FUN_0059d760(void);
 undefined4 support_trisock_cpp_FUN_0059d850(CSocket *param_1);
 undefined4 support_trisock_cpp_FUN_0059d9d0(char *param_1,char *param_2,undefined2 *param_3,char *param_4,int param_5);
-undefined4 support_trisock_cpp_FUN_0059daec(void);
+undefined4 support_trisock_cpp_FUN_0059daf0(void);
 undefined1 * support_trisock_cpp_FUN_0059dd40(int param_1);
 void support_trisock_cpp_FUN_0059ddc0(char *param_1,char *param_2);
 void support_trisock_cpp_FUN_0059de00(undefined1 *param_1,undefined4 param_2);
 undefined4 support_trisock_cpp_FUN_0059de30(int param_1,undefined4 *param_2);
 void support_trisock_cpp_FUN_0059de90(int param_1);
 void support_trisock_cpp_FUN_0059deb0(int param_1);
-void support_trisock_cpp_FUN_0059df10(void);
 void support_trisock_cpp_FUN_0059dfc0(int param_1);
 void * support_trisock_cpp_FUN_0059e040(int param_1);
-void support_trisock_cpp_FUN_0059e26e(int param_1,char *param_2);
+void support_trisock_cpp_FUN_0059e270(void);
 undefined4 support_trisock_cpp_FUN_0059e350(int param_1,char *param_2);
 void support_trisock_cpp_FUN_0059ed20(int param_1);
 undefined4 support_trisock_cpp_FUN_0059ed90(int param_1,int param_2);
@@ -294,7 +295,7 @@ bool support_trisock_cpp_FUN_0059efd0(undefined4 *param_1,char *param_2);
 undefined4 support_trisock_cpp_FUN_0059f1a0(char *param_1,char *param_2);
 void support_trisock_cpp_FUN_0059f230(uchar param_1,undefined1 param_2,undefined1 param_3,undefined1 param_4,undefined4 param_5,undefined4 param_6,uint param_7);
 undefined4 support_trisock_cpp_FUN_0059f2a0(void *param_1);
-SIpAddr * support_trisock_cpp_IpAddr_ctor_FUN_0059f300(SIpAddr *this_ptr);
+SIpAddr * __cdecl support_trisock_cpp_IpAddr_ctor_FUN_0059f300(SIpAddr *this_ptr);
 int support_trisock_cpp_FUN_0059f320(int param_1);
 void support_trisock_cpp_FUN_0059f340(undefined4 *param_1,undefined4 *param_2);
 void __cdecl core_terrain_cpp_CTerrain_init_FUN_0059f380(CTerrain *this_ptr);
@@ -302,11 +303,11 @@ void __cdecl core_terrain_cpp_CTerrain_free_FUN_0059f3c0(CTerrain *this_ptr);
 void __cdecl core_terrain_cpp_CTerrain_render_FUN_0059f3e0(CTerrain *this_ptr,int render_pass);
 void __cdecl core_terrain_cpp_CTerrain_process_FUN_0059f4f0(CTerrain *this_ptr);
 void __cdecl support_trstream_cpp_staticInit_FUN_0059f520(void);
-void support_trstream_cpp_FUN_0059f540(undefined4 *param_1);
-void support_trstream_cpp_FUN_0059f550(undefined4 *param_1);
-void support_trstream_cpp_FUN_0059f55e(undefined4 *param_1);
-undefined4 support_trstream_cpp_FUN_0059f580(void);
-undefined4 support_trstream_cpp_FUN_0059f590(void);
-void support_trstream_cpp_FUN_0059f5a0(undefined4 param_1,undefined4 param_2);
-int support_trstream_cpp_FUN_0059f700(int *param_1,byte *param_2,int *param_3);
+CInStream * __cdecl support_trstream_cpp_CInStream_ctor_FUN_0059f540(CInStream *this_ptr);
+CInStream * __cdecl support_trstream_cpp_CInStream_dtor_FUN_0059f550(CInStream *this_ptr,uint flags);
+void support_trstream_cpp_FUN_0059f560(void);
+int __cdecl support_trstream_cpp_CInStream_ungetChar_FUN_0059f580(CInStream *this_ptr,int ch);
+int __cdecl support_trstream_cpp_CInStream_tell_FUN_0059f590(CInStream *this_ptr);
+int __cdecl support_trstream_cpp_CInStream_scanf_FUN_0059f5a0(CInStream *this_ptr,char *format,...) __attribute__((format(scanf, 2, 3)));
+int __cdecl support_trstream_cpp_CInStream_vscanf_FUN_0059f700(CInStream *this_ptr,char *format,va_list_t args);
 

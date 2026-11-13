@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFirefly * core_fire_cpp_CFirefly_ctor_FUN_004a4820(CFirefly *this_ptr)
+; CFirefly * __cdecl core_fire_cpp_CFirefly_ctor_FUN_004a4820(CFirefly *this_ptr)
 ;
 ; Parameters:
 ; CFirefly *       Stack[0x4]:4   this_ptr

@@ -14,7 +14,7 @@
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00506b00 at 0050715d
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0 at 00504003
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_00504d60 at 00504f3a
-;   core_netgame.cpp_FUN_00503efc at 00503f62
+;   core_netgame.cpp_FUN_00503f00 at 00503f62
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005cab0b

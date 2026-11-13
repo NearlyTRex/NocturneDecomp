@@ -1,14 +1,12 @@
 // Name: core_asgaya.cpp_CAsgaya_ctor_FUN_005a0a10
 // Address: 005a0a10
 // Address Range: [[005a0a10, 005a0af1]]
-// Convention: unknown
-// Signature: CAsgaya * core_asgaya_cpp_CAsgaya_ctor_FUN_005a0a10(CAsgaya *this_ptr)
+// Convention: __cdecl
+// Signature: CAsgaya * __cdecl core_asgaya_cpp_CAsgaya_ctor_FUN_005a0a10(CAsgaya *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAsgaya * core_asgaya_cpp_CAsgaya_ctor_FUN_005a0a10(CAsgaya *this_ptr)
+CAsgaya * __cdecl core_asgaya_cpp_CAsgaya_ctor_FUN_005a0a10(CAsgaya *this_ptr)
 
 {
   CNPC *pCVar1;
